@@ -209,8 +209,6 @@ class GameData:
 		self.iCongressTurns = 8
 		self.iPlayersWithNationalism = 0
 		
-		self.currentCongress = None
-		
 		self.bNoCongressOption = False
 		
 		# Plague

@@ -1062,3 +1062,6 @@ lNetworkEvents = {
 }
 
 newline = "[NEWLINE]"
+bullet = "[ICON_BULLET]"
+event_bullet = "INTERFACE_EVENT_BULLET"
+event_cancel = "INTERFACE_BUTTONS_CANCEL"

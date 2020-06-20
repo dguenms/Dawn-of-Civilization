@@ -11,13 +11,11 @@ from StoredData import data # edead
 from Events import handler
 from Popups import popup
 
+import Popups
+
 from Locations import *
 from Core import *
 
-
-### Singleton ###
-
-currentCongress = None
 
 ### Event Handlers ###
 
@@ -33,9 +31,7 @@ def checkTurn(iGameTurn):
 	
 		if data.iCongressTurns == 0:
 			data.iCongressTurns = getCongressInterval()
-			currentCongress = Congress()
-			data.currentCongress = currentCongress
-			currentCongress.startCongress()
+			Congress().start()
 
 
 @handler("changeWar")
@@ -96,7 +92,7 @@ def endGlobalWar(iAttacker, iDefender):
 	if not player(iAttacker).isAlive() or not player(iDefender).isAlive():
 		return
 		
-	if data.currentCongress:
+	if data.iCongressTurns == getCongressInterval():
 		return
 	
 	lAttackers = [iAttacker]
@@ -127,10 +123,7 @@ def endGlobalWar(iAttacker, iDefender):
 		lWinners = lDefenders
 		lLosers = lAttackers
 	
-	currentCongress = Congress(players.of(*lWinners), players.of(*lLosers))
-	data.iCongressTurns = getCongressInterval()
-	data.currentCongress = currentCongress
-	currentCongress.startCongress()
+	Congress(players.of(*lWinners), players.of(*lLosers)).start()
 	
 def getNumInvitations():
 	return min(10, game.countCivPlayersAlive())
@@ -161,71 +154,56 @@ class Congress:
 		self.iNumBribes = 0
 		self.lBriberyOptions = []
 		
-		base_introduction = popup.option(self.applyIntroduction, "TXT_KEY_CONGRESS_OK")
-		
-		self.introduction_peace = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION").build()
-		self.introduction_peace_excluded = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_AI").build()
-		self.introduction_peace_excluded_own_war = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED").build()
-		self.introduction_war_won = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON").build()
-		self.introduction_war_lost = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST").build()
-		self.introduction_war_neutral = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR").build()
-		self.introduction_war_excluded = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI").build()
+		self.introduction = popup.option(self.applyIntroduction, "TXT_KEY_CONGRESS_OK", '').build()
 			
-		self.claim_city = popup.text("TXT_KEY_CONGRESS_CLAIM_CITY").selection(self.applyClaimCity).option(None, "TXT_KEY_CONGRESS_NO_REQUEST").build()
+		self.claim_city = popup.text("TXT_KEY_CONGRESS_CLAIM_CITY") \
+							   .selection(self.applyClaimCity) \
+							   .option(self.noClaim, "TXT_KEY_CONGRESS_NO_REQUEST", event_cancel) \
+							   .build()
 	
-		base_vote = popup.option(self.approveClaim, "TXT_KEY_POPUP_VOTE_YES").option(self.abstainClaim, "TXT_KEY_POPUP_ABSTAIN").option(self.rejectClaim, "TXT_KEY_POPUP_VOTE_NO")
+		self.vote_claim = popup.option(self.approveClaim, "TXT_KEY_POPUP_VOTE_YES") \
+							   .option(self.abstainClaim, "TXT_KEY_POPUP_ABSTAIN") \
+							   .option(self.denyClaim, "TXT_KEY_POPUP_VOTE_NO") \
+							   .build()
 		
-		self.vote_city = base_vote.text("TEXT_KEY_CONGRESS_REQUEST_CITY").build()
-		self.vote_settle_own = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN").build()
-		self.vote_settle_foreign = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN").build()
-		self.vote_settle_empty = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY").build()
-		
-		base_bribery = popup.option(self.noBribe, "TXT_KEY_CONGRESS_NO_BRIBE", "INTERFACE_BUTTONS_CANCEL") \
-		                    .option(self.cannotAffordBribe, "TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE", "INTERFACE_BUTTONS_CANCEL") \
-							.selection(self.bribeGold, "TXT_KEY_CONGRESS_BRIBE_GOLD", infos.commerce(iCommerceType).getButton()) \
-							.selection(self.bribeManipulate, "TXT_KEY_CONGRESS_MANIPULATION", 'Art/Interface/Buttons/Espionage.dds') \
-							.build()
+		base_bribery = popup.option(self.noBribe, "TXT_KEY_CONGRESS_NO_BRIBE", event_cancel) \
+		                    .option(self.cannotAffordBribe, "TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE", event_cancel) \
+							.selection(self.bribeGold, "TXT_KEY_CONGRESS_BRIBE_GOLD", infos.commerce(CommerceTypes.COMMERCE_GOLD).getButton()) \
+							.selection(self.bribeManipulate, "TXT_KEY_CONGRESS_MANIPULATION", 'Art/Interface/Buttons/Espionage.dds')
 		
 		self.bribe_other_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").build()
 		self.bribe_other_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").build()
 		self.bribe_own_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CITY").build()
 		self.bribe_own_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
 		
-		bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK")
-		
-		self.bribery_result_human_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS").build()
-		self.bribery_result_human_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE").build()
-		self.bribery_result_other_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS").build()
-		self.bribery_result_other_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE").build()
+		self.bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK", '').build()
+			
+		self.results = popup.cancel("TXT_KEY_CONGRESS_OK", "").build()
 	
 	### Popups ###
 	
-	def getIntroductionEvent(self, bHumanInvited, bHumanInGlobalWar):
+	def startIntroduction(self, bHumanInvited, bHumanInGlobalWar = False):
+		other_players = itemize(self.invites.without(active()), fullname)
+		
 		if self.bPostWar:
 			if bHumanInvited:
 				if active() in self.winners:
-					return self.introduction_war_won
-				if active() in self.losers:
-					return self.introduction_war_lost
-				
-				return self.introduction_war_neutral
-			
-			return self.introduction_war_excluded
+					text_key = "TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON"
+				elif active() in self.losers:
+					text_key = "TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST"
+				else:
+					text_key = "TXT_KEY_CONGRESS_INTRODUCTION_WAR"
+			else:
+				text_key = "TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI"
 		
-		if bHumanInvited:
-			return self.introduction_peace
-		if bHumanInGlobalWar:
-			return self.introduction_peace_excluded_own_war
+		elif bHumanInvited:
+			text_key = "TXT_KEY_CONGRESS_INTRODUCTION"
+		elif bHumanInGlobalWar:
+			text_key = "TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED"
+		else:
+			text_key = "TXT_KEY_CONGRESS_INTRODUCTION_AI"
 		
-		return self.introduction_peace_excluded
-		
-	
-	def startIntroduction(self, bHumanInvited, bHumanInGlobalWar = False):
-		other_players = [text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer)) for iPlayer in self.invites.without(active())]
-	
-		event = self.getIntroductionEvent(bHumanInvited, bHumanInGlobalWar)
-		
-		event.text(self.sHostCityName, newline.join(other_players)).launch()
+		self.introduction.text(text_key, self.sHostCityName, other_players).applyIntroduction().launch()
 		
 	def applyIntroduction(self):
 		# check one more time if player has collapsed in the meantime
@@ -255,14 +233,17 @@ class Congress:
 		for x, y, _ in self.dPossibleClaims[active()]:
 			city = city_(x, y)
 			if city:
-				event.applyClaimCity(city.getName(), infos.civ(city).getButton())
+				event.applyClaimCity(city.getName(), button=infos.civ(city).getButton())
 			else:
-				event.applyClaimCity(cnm.getFoundName(active(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
+				event.applyClaimCity(cnm.getFoundName(active(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
 				
-		event.launch()
+		event.noClaim().launch()
 
 	def applyClaimCity(self, iChoice):
 		self.dCityClaims[active()] = self.dPossibleClaims[active()][iChoice]
+		self.voteOnClaims()
+	
+	def noClaim(self):
 		self.voteOnClaims()
 		
 	def startVoteCityEvent(self, iClaimant, (x, y)):
@@ -272,13 +253,13 @@ class Congress:
 			plot.cameraLookAt()
 		
 		if plot.isCity():
-			event = self.vote_city.text(name(iClaimant), adjective(plot), city(plot).getName())
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_CITY", name(iClaimant), adjective(plot), city(plot).getName())
 		elif plot.getOwner() == iClaimant:
-			event = self.vote_settle_own.text(name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
 		elif plot.isOwned():
-			event.text(name(iClaimant), adjective(plot), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cnm.getFoundName(iClaimant, (x, y)))
 		else:
-			event.text(name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
 			
 		event.approveClaim().abstainClaim().denyClaim().launch(iClaimant, plot.getOwner())
 		
@@ -392,7 +373,13 @@ class Congress:
 		# to continue the process
 		self.applyBriberyResult()
 		
-	def applyBribery(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
+	def bribeGold(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
+		self.applyBribe(iChoice, iBribedPlayer, iClaimant, iClaimValidity)
+	
+	def bribeManipulate(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
+		self.applyBribe(iChoice, iBribedPlayer, iClaimant, iClaimValidity)
+		
+	def applyBribe(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
 		iCommerceType, iCost, iThreshold = self.lBriberyOptions[iChoice]
 		iRand = rand(100)
 		
@@ -412,22 +399,24 @@ class Congress:
 			player(iBribedPlayer).AI_changeMemoryCount(active(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, 1)
 			player(iBribedPlayer).AI_changeAttitudeExtra(active(), -2)
 		
-		
 		self.startBriberyResult(iBribedPlayer, iClaimant, bHumanClaim, bSuccess)
+		
+		self.bribery_result_human_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS").build()
+		self.bribery_result_human_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE").build()
+		self.bribery_result_other_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS").build()
+		self.bribery_result_other_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE").build()
 				
 	def startBriberyResult(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):
 		if bSuccess:
 			if bHumanClaim:
-				event = self.bribery_result_human_success
+				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS", name(iBribedPlayer)).launch()
 			else:
-				event = self.bribery_result_other_success
+				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE", name(iBribedPlayer)).launch()
 		else:
 			if bHumanClaim:
-				event = self.bribery_result_human_failure
+				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS", name(iBribedPlayer)).launch()
 			else:
-				event = self.bribery_result_other_failure
-				
-		event.text(name(iBribedPlayer)).launch()
+				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", name(iBribedPlayer)).launch()
 		
 	def applyBriberyResult(self):
 		# just continue to the next bribe if there is one
@@ -496,26 +485,41 @@ class Congress:
 		else:
 			self.finishCongress()
 			
-		self.results = popup.option(None, "TXT_KEY_CONGRESS_OK")
-			
 	def startResults(self):
 		if not autoplay():
 			content = []
-			content.append(text("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName))
+			content.append(("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName))
 			
 			for sName, iOldOwner, iNewOwner in self.lAssignments:
 				content.append(text("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", sName, adjective(iOldOwner), adjective(iNewOwner)))
 				
 			for sName, iOldOwner, iNewOwner in self.lColonies:
 				if iOldOwner >= 0:
-					content.append(text("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner)))
+					content.append(("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner)))
 				else:
-					content.append(text("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
+					content.append(("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
 			
 			if not self.lAssignments and not self.lColonies:
-				content.append(text("TXT_KEY_CONGRESS_NO_RESULTS"))
+				content.append("TXT_KEY_CONGRESS_NO_RESULTS")
 				
-			self.results.text(newline.join(content)).launch()
+			if self.lAssignments or self.lColonies:
+				text_key = "TXT_KEY_CONGRESS_RESULTS"
+				
+				content = []
+				for sName, iOldOwner, iNewOwner in self.lAssignments:
+					content.append(("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", sName, adjective(iOldOwner), adjective(iNewOwner)))
+				
+				for sName, iOldOwner, iNewOwner in self.lColonies:
+					if iOldOwner >= 0:
+						content.append(("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner)))
+					else:
+						content.append(("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
+						
+				results = itemize(content, lambda row: text(row[0], *row[1:]))
+			else:
+				text_key = "TXT_KEY_CONGRESS_NO_RESULTS"
+				
+			self.results.text(text_key, self.sHostCityName, results).cancel().launch()
 			
 		# if this was triggered by a war, reset belligerents
 		if isGlobalWar():
@@ -527,12 +531,12 @@ class Congress:
 
 	### Other Methods ###
 
-	def startCongress(self):
+	def start(self):
 		self.bPostWar = self.winners.any()
 		
 		debug('Congress takes place')
 
-		self.inviteToCongress()
+		self.invite()
 		
 		if self.bPostWar:
 			iHostPlayer = self.winners.alive().first()
@@ -681,7 +685,7 @@ class Congress:
 				team(iBelligerent).declareWar(active(), False, WarPlanTypes.WARPLAN_DOGPILE)
 				
 		# display Congress results
-		self.startResultsEvent()
+		self.startResults()
 				
 	def voteOnClaimsHuman(self):
 		for iClaimant in self.dCityClaims:
@@ -881,7 +885,7 @@ class Congress:
 		sDebugText += '\nFavorOwner: ' + str(iFavorOwner)
 		sDebugText += '\nClaim Validity: ' + str(iClaimValidity)
 		
-		print sDebugText + '\n'
+		debug(sDebugText)
 				
 		bThreatenedClaimant = (2 * tVoter.getPower(True) < team(iClaimant).getPower(True))
 		if bOwner: bThreatenedOwner = (2 * tVoter.getPower(True) < team(iOwner).getPower(True))
@@ -889,38 +893,38 @@ class Congress:
 		# always vote for claims on empty territory unless claim is invalid
 		if not bOwner:
 			if iClaimValidity >= 0:
-				print 'Voted YES: empty territory'
+				debug('Voted YES: empty territory')
 				self.vote(iVoter, iClaimant, 1)
 				return
 		
 		# always vote for own claims unless threatened by owner
 		if bOwnClaim:
 			if not bOwner or not bThreatenedOwner:
-				print 'Voted YES: own claim'
+				debug('Voted YES: own claim')
 				self.vote(iVoter, iClaimant, 1)
 				return
 				
 		# always vote against claims on own cities unless threatened by owner
 		if bOwner and bOwnCity:
 			if not bThreatenedClaimant:
-				print 'Voted NO: claim on own city'
+				debug('Voted NO: claim on own city')
 				self.vote(iVoter, iClaimant, -1)
 				return
 				
 		# vote yes to asking minor cities if there is a valid claim
 		if bOwner and bMinor:
 			if iClaimValidity > 0:
-				print 'Voted YES: valid claim on minors'
+				debug('Voted YES: valid claim on minors')
 				self.vote(iVoter, iClaimant, 1)
 			else:
-				print 'Voted NO: invalid claim on minors'
+				debug('Voted NO: invalid claim on minors')
 				self.vote(iVoter, iClaimant, -1)
 			return
 			
 		# always vote no against claims against a common enemy
 		if bOwner and not bOwnClaim:
 			if tVoter.isAtWar(iClaimant) and team(iOwner).isAtWar(iClaimant) and not tVoter.isAtWar(iOwner):
-				print 'Voted NO: claimant is common enemy'
+				debug('Voted NO: claimant is common enemy')
 				self.vote(iVoter, iClaimant, -1)
 			
 		# maybe include threatened here?
@@ -928,38 +932,38 @@ class Congress:
 		if iClaimValidity > 0 or (bOwner and bWarClaim):
 			# claim insufficient to overcome dislike
 			if iFavorClaimant + iClaimValidity < iFavorOwner:
-				print 'Voted NO: claimant favor and validity lower than owner favor'
+				debug('Voted NO: claimant favor and validity lower than owner favor')
 				self.vote(iVoter, iClaimant, -1)
 			# valid claim and claimant is more liked
 			elif iFavorClaimant > iFavorOwner:
-				print 'Voted YES: claimant favor higher than owner favor'
+				debug('Voted YES: claimant favor higher than owner favor')
 				self.vote(iVoter, iClaimant, 1)
 			# less liked, but justified by claim
 			elif iFavorClaimant + iClaimValidity >= iFavorOwner:
 				# human can bribe on a close call if own claim or own city
 				if (player(iClaimant).isHuman() or (bOwner and player(iOwner).isHuman())) and iClaimValidity < 50 and iFavorOwner - iFavorClaimant > 0:
 					# return the relevant data to be added to the list of possible bribes in the calling method
-					print 'NO VOTE: open for bribes'
+					debug('NO VOTE: open for bribes')
 					return (iVoter, iClaimant, tPlot, iFavorOwner - iFavorClaimant, iClaimValidity)
 				else:
 					iRand = rand(50)
 					if iRand < iClaimValidity:
-						print 'Voted YES: random'
+						debug('Voted YES: random')
 						self.vote(iVoter, iClaimant, 1)
 					else:
-						print 'Voted NO: random'
+						debug('Voted NO: random')
 						self.vote(iVoter, iClaimant, -1)
 				
 		else:
 			# like them enough to overcome bad claim
 			if iFavorClaimant + iClaimValidity > iFavorOwner:
-				print 'Voted YES: likes claimant enough despite bad claim'
+				debug('Voted YES: likes claimant enough despite bad claim')
 				self.vote(iVoter, iClaimant, 1)
 			else:
-				print 'Voted NO: bad claim'
+				debug('Voted NO: bad claim')
 				self.vote(iVoter, iClaimant, -1)
 				
-		print 'End vote city AI'
+		debug('End vote city AI')
 				
 		# return none to signify that no bribe is possible
 		return None
@@ -970,7 +974,7 @@ class Congress:
 		if iVote == 1 and iVoter not in self.dVotedFor[iClaimant]: self.dVotedFor[iClaimant].append(iVoter)
 				
 	def makeClaimHuman(self):
-		self.startClaimCityEvent()
+		self.startClaimCity()
 		
 	def makeClaimAI(self, iPlayer):
 		if not self.dPossibleClaims[iPlayer]: return
@@ -1097,7 +1101,7 @@ class Congress:
 	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
 		return players.of(lPlayers).highest(iNumPlayers, game.getPlayerRank)
 		
-	def inviteToCongress(self):
+	def invite(self):
 		rank = lambda x: game.getPlayerRank(x)
 		self.invites = players.none()
 		
