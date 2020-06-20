@@ -11,13 +11,13 @@ class PopupLauncherBuilderFactory(object):
 	def text(self, text):
 		return PopupLauncherBuilderBuilder(text=text)
 	
-	def option(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def option(self, func, label='', button=event_bullet):
 		return PopupLauncherBuilderBuilder(options={func.__name__: (func, label, button)})
 	
-	def selection(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def selection(self, func, label='', button=event_bullet):
 		return PopupLauncherBuilderBuilder(selections={func.__name__: (func, label, button)})
 		
-	def cancel(self, label='', button='INTERFACE_BUTTONS_CANCEL'):
+	def cancel(self, label='', button=event_cancel):
 		return PopupLauncherBuilderBuilder(cancel=(label, button))
 
 
@@ -32,17 +32,17 @@ class PopupLauncherBuilderBuilder(object):
 	def text(self, text):
 		return PopupLauncherBuilderBuilder(text, self._option_types, self._selection_types, self._cancel_type)	
 		
-	def option(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def option(self, func, label='', button=event_bullet):
 		option_types = self._option_types.copy()
 		option_types[func.__name__] = (func, label, button)
 		return PopupLauncherBuilderBuilder(self._text, option_types, self._selection_types, self._cancel_type)
 		
-	def selection(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def selection(self, func, label='', button=event_bullet):
 		selection_types = self._selection_types.copy()
 		selection_types[func.__name__] = (func, label, button)
 		return PopupLauncherBuilderBuilder(self._text, self._option_types, selection_types, self._cancel_type)
 		
-	def cancel(self, label='', button='INTERFACE_BUTTONS_CANCEL'):
+	def cancel(self, label='', button=event_cancel):
 		return PopupLauncherBuilderBuilder(self._text, self._option_types, self._selection_types, (label, button))
 	
 	def build(self):
@@ -63,7 +63,7 @@ class PopupLauncherBuilder(object):
 		for func, label, button in selection_types.values():
 			self.selection_type(func, label, button)
 	
-	def option_type(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def option_type(self, func, label='', button=event_bullet):
 		func_name = func.__name__
 		
 		self._option_types[func_name] = (func, label, button)
@@ -75,7 +75,7 @@ class PopupLauncherBuilder(object):
 		
 		self.__dict__[func_name] = func_option
 		
-	def selection_type(self, func, label='', button='INTERFACE_EVENT_BULLET'):
+	def selection_type(self, func, label='', button=event_bullet):
 		func_name = func.__name__
 		
 		self._selection_types[func_name] = (func, label, button)
@@ -93,14 +93,14 @@ class PopupLauncherBuilder(object):
 	def text(self, *format):
 		return self.launcher().text(*format)
 	
-	def option(self, func_name, *format):
-		return self.launcher().option(func_name, *format)
+	def option(self, func_name, *format, **optional):
+		return self.launcher().option(func_name, *format, **optional)
 	
-	def selection(self, func_name, *format):
-		return self.launcher().selection(func_name, *format)
+	def selection(self, func_name, *format, **optional):
+		return self.launcher().selection(func_name, *format, **optional)
 		
-	def cancel(self, *format):
-		return self.launcher().cancel(*format)
+	def cancel(self, *format, **optional):
+		return self.launcher().cancel(*format, **optional)
 
 
 class PopupLauncher(object):
@@ -132,14 +132,14 @@ class PopupLauncher(object):
 			return ', '.join(format)
 		
 	def register_option(self, func_name):
-		def func(*format):
-			return self.option(func_name, *format)
+		def func(*format, **optional):
+			return self.option(func_name, *format, **optional)
 			
 		self.__dict__[func_name] = func
 		
 	def register_selection(self, func_name):
-		def func(*format):
-			return self.selection(func_name, *format)
+		def func(*format, **optional):
+			return self.selection(func_name, *format, **optional)
 		
 		self.__dict__[func_name] = func
 	
@@ -150,21 +150,27 @@ class PopupLauncher(object):
 			self._text = text(*format)
 		return self
 		
-	def option(self, func_name, *format):
+	def option(self, func_name, *format, **optional):
 		handle, label, button = self._option_types[func_name]
+		label = retrieve(optional, 'label', label)
+		button = retrieve(optional, 'button', button)
 		self._choices.append(('option', handle, self.format_label(label, *format), button))
 		return self
 	
-	def selection(self, func_name, *format):
+	def selection(self, func_name, *format, **optional):
 		handle, label, button = self._selection_types[func_name]
+		label = retrieve(optional, 'label', label)
+		button = retrieve(optional, 'button', button)
 		self._choices.append(('selection', handle, self.format_label(label, *format), button))
 		return self
 		
 	def no_handle(self):
 		return
 	
-	def cancel(self, *format):
+	def cancel(self, *format, **optional):
 		label, button = self._cancel_type
+		label = retrieve(optional, 'label', label)
+		button = retrieve(optional, 'button', button)
 		self._choices.append(('option', self.no_handle, self.format_label(label, *format), button))
 		return self
 	
@@ -214,11 +220,3 @@ class PopupLauncher(object):
 
 
 popup = PopupLauncherBuilderFactory()
-
-
-def choice(i):
-	print "clicked %d" % i
-
-
-def test():
-	popup.selection(choice, "choice").cancel("cancel").build().text("This text should show up: %s", "also this").choice().choice().choice().cancel().launch()

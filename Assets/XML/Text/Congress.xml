@@ -211,7 +211,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A new international congress is being held. The leaders of the world's most important civilizations convene to discuss the balance of the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization is allowed to either claim a city or request to colonize unsettled territory. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A new international congress is being held. The leaders of the world's most important civilizations convene to discuss the balance of the world. Besides our civilization, the participants are:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization is allowed to either claim a city or request to colonize unsettled territory. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Un nouveau congr&#232;s international est en cours. Les dirigeants des civilisations les plus importantes se r&#233;unissent pour discuter de l'&#233;quilibre mondial. En plus de notre civilisation, les participants sont :[NEWLINE]%s2[NEWLINE][NEWLINE]Chaque civilisation peut revendiquer une ville ou demander de coloniser un territoire inhabit&#233;. Si assez de civilisations donnent leur approbation, la demande est accord&#233;e. Tout refus d'accepter une d&#233;cision du congr&#232;s risque de causer une guerre avec les civilisations qui l'ont appuy&#233;e !</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINe]Ein neuer internationaler Kongress wird abgehalten. Die Anf&#252;hrer der wichtigsten Zivilisationen der Welt kommen zusammen, um das Gleichgewicht der Welt zu diskutieren. Neben unserer Zivilisation sind unter den Teilnehmern:[NEWLINE]%s2[NEWLINE][NEWLINE]Jede Zivilisation darf entweder eine Stadt beanspruchen oder um die Kolonisierung unbesiedelter Gebiete anfragen. Falls gen&#252;gen Zivilisationen zustimmen, wird der Anfrage stattgegeben. Eine Weigerung, der Entscheidung des Kongresses nachzukommen, kann zum Krieg mit den Zivilisationen f&#252;hren, die sie unterst&#252;tzt haben!</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A new international congress is being held. The leaders of the world's most important civilizations convene to discuss the balance of the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization is allowed to either claim a city or request to colonize unsettled territory. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</Italian>
@@ -219,7 +219,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_AI</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A world congress is being held, but we haven't been invited. Apparently we are not important enough. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A world congress is being held, but we haven't been invited. Apparently we are not important enough. The fate of the world is now in the hands of the following civilizations:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Un congr&#232;s mondial est en cours, mais nous n'avons pas &#233;t&#233; invit&#233;s. Il semble que nous ne soyons pas assez importants. Le sort du monde est d&#233;sormais entre les mains des civilisations suivantes :[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Nous ne pouvons qu'attendre leurs d&#233;cisions et avoir confiance en leur jugement.</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein Weltkongress wird abgehalten, aber wir wurden nicht eingeladen. Scheinbar sind wir nicht wichtig genug. Das Schicksal der Welt liegt nun in den H&#228;nden der folgenden Zivilisationen:[NEWLINE]%s2[NEWLINE][NEWLINE]Jetzt k&#246;nnen wir nur noch ihre Entscheidungen abwarten und auf ihren gesunden Menschenverstand vertrauen.</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A world congress is being held, but we haven't been invited. Apparently we are not important enough. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</Italian>
@@ -227,7 +227,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A congress is being held while we are involved in a global war, so he haven't been invited. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A congress is being held while we are involved in a global war, so he haven't been invited. The fate of the world is now in the hands of the following civilizations:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
 		<French>[H1]Congress of %s1[\H1][NEWLINE]A congress is being held while we are involved in a global war, so he haven't been invited. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</French> <!-- needs translation -->
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein Weltkongress wird abgehalten w&#228;hrend wir in einem global Krieg involviert sind, also wurden wir nicht eingeladen. Das Schicksal der Welt liegt nun in den H&#228;nden der folgenden Zivilisationen:[NEWLINE]%s2[NEWLINE][NEWLINE]Jetzt k&#246;nnen wir nur noch ihre Entscheidungen abwarten und auf ihren gesunden Menschenverstand vertrauen.</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A congress is being held while we are involved in a global war, so he haven't been invited. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</Italian>
@@ -235,7 +235,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. We were not involved, but were still invited due to our international importance. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization on the winning side of the war is allowed to claim a city from the losing side, while the civilizations that have lost may reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. We were not involved, but were still invited due to our international importance. Besides our civilization, the participants are:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization on the winning side of the war is allowed to claim a city from the losing side, while the civilizations that have lost may reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Une grande guerre internationale a pris fin. Les puissances impliqu&#233;es se r&#233;unissent en congr&#232;s pour discuter de la restauration de l'ordre mondial. Nous n'avons pas particip&#233; &#224; la guerre, mais nous avons tout de m&#234;me &#233;t&#233; invit&#233;s en raison de notre poids international. En plus de notre civilisation, les participants sont :[NEWLINE]%s2[NEWLINE][NEWLINE]Chaque vainqueur peut revendiquer une ville appartenant &#224; une civilisation vaincue, tandis que chaque vaincu peut demander de r&#233;cup&#233;rer une ville perdue pendant la guerre. Si assez de civilisations donnent leur approbation, la demande est accord&#233;e. Tout refus d'accepter une d&#233;cision du congr&#232;s risque de causer une guerre avec les civilisations qui l'ont appuy&#233;e !</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein gro&#223;er internationaler Krieg ist zu Ende gegangen. Die involvierten M&#228;chte kommen zusammen, um Ordnung in der Welt wiederherzustellen. Wir waren nicht beteiligt, aber wurden wegen unserer internationalen Bedeutung dennoch eingeladen. Neben unserer Zivilisation sind unter den Teilnehmern:[NEWLINE]%s2[NEWLINE][NEWLINE]Jede Zivilisation auf der Gewinnerseite des Kriegen darf eine Stadt von der Verliererseite beanspruchen, w&#228;hrend die Zivilisationen, die verloren haben, w&#228;hrend des Kriegens eroberte St&#228;dte zur&#252;ckfordern k&#246;nnen. Falls gen&#252;gen Zivilisationen zustimmen, wird der Anfrage stattgegeben. Eine Weigerung, der Entscheidung des Kongresses nachzukommen, kann zum Krieg mit den Zivilisationen f&#252;hren, die sie unterst&#252;tzt haben!</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. We were not involved, but were still invited due to our international importance. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization on the winning side of the war is allowed to claim a city from the losing side, while the civilizations that have lost may reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</Italian>
@@ -243,7 +243,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Since we are on the winning side we can claim cities from the losers of the war, while they may attempt to reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]Since we are on the winning side we can claim cities from the losers of the war, while they may attempt to reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Une grande guerre internationale a pris fin. Les puissances impliqu&#233;es se r&#233;unissent en congr&#232;s pour discuter de la restauration de l'ordre mondial. En plus de notre civilisation, les participants sont :[NEWLINE]%s2[NEWLINE][NEWLINE]Puisque nous sommes du c&#244;t&#233; des vainqueurs, nous pouvons revendiquer des villes appartenant aux vaincus. Ces derniers tenteront quant &#224; eux de r&#233;cup&#233;rer des villes perdues durant la guerre. Si assez de civilisations donnent leur approbation, la demande est accord&#233;e. Tout refus d'accepter une d&#233;cision du congr&#232;s risque de causer une guerre avec les civilisations qui l'ont appuy&#233;e !</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein gro&#223;er internationaler Krieg ist zu Ende gegangen. Die involvierten M&#228;chte kommen zusammen, um Ordnung in der Welt wiederherzustellen. Neben unserer Zivilisation sind unter den Teilnehmern:[NEWLINE]%s2[NEWLINE][NEWLINE]Da wir auf der Gewinnerseite sind, k&#246;nnen wir St&#228;dte von den Verlierern des Krieges beanspruchen, w&#228;hrend diese im Laufe des Krieges eroberte St&#228;dte zur&#252;ckfordern k&#246;nnen. Falls gen&#252;gen Zivilisationen zustimmen, wird der Anfrage stattgegeben. Eine Weigerung, der Entscheidung des Kongresses nachzukommen, kann zum Krieg mit den Zivilisationen f&#252;hren, die sie unterst&#252;tzt haben!</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Since we are on the winning side we can claim cities from the losers of the war, while they may attempt to reclaim cities conquered during the war. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</Italian>
@@ -251,7 +251,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]As a loser of the war we can attempt to reclaim cities lost during the war, while the winners may make additional claims against us. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]As a loser of the war we can attempt to reclaim cities lost during the war, while the winners may make additional claims against us. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Une grande guerre internationale a pris fin. Les puissances impliqu&#233;es se r&#233;unissent en congr&#232;s pour discuter de la restauration de l'ordre mondial. En plus de notre civilisation, les participants sont :[NEWLINE]%s2[NEWLINE][NEWLINE]En tant que vaincus, nous pouvons tenter de r&#233;cup&#233;rer les villes perdues pendant la guerre, tandis que les vainqueurs peuvent faire des revendications additionnelles &#224; notre endroit. Si assez de civilisations donnent leur approbation, la demande est accord&#233;e. Tout refus d'accepter une d&#233;cision du congr&#232;s risque de causer une guerre avec les civilisations qui l'ont appuy&#233;e !</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein gro&#223;er internationaler Krieg ist zu Ende gegangen. Die involvierten M&#228;chte kommen zusammen, um Ordnung in der Welt wiederherzustellen. Neben unserer Zivilisation sind unter den Teilnehmern:[NEWLINE]%s2[NEWLINE][NEWLINE]Als Verlierer des Krieges k&#246;nnen wir versuchen, im Laufe des Krieges verlorene St&#228;dte zur&#252;ckzufordern, w&#228;hrend die Gewinner zus&#228;tzliche Anspr&#252;che gegen uns geltend machen k&#246;nnen. Falls gen&#252;gen Zivilisationen zustimmen, wird der Anfrage stattgegeben. Eine Weigerung, der Entscheidung des Kongresses nachzukommen, kann zum Krieg mit den Zivilisationen f&#252;hren, die sie unterst&#252;tzt haben!</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The involved powers convene in a congress to discuss how to restore order to the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]As a loser of the war we can attempt to reclaim cities lost during the war, while the winners may make additional claims against us. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</Italian>
@@ -259,7 +259,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The belligerents convene in a congress to discuss how to restore order to the world, but we were neither involved nor important enough to influence the process:[NEWLINE]%s2[NEWLINE][NEWLINE]As a non-belligerent, nobody can claim our cities.</English>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The belligerents convene in a congress to discuss how to restore order to the world, but we were neither involved nor important enough to influence the process:[NEWLINE][NEWLINE]%s2[NEWLINE][NEWLINE]As a non-belligerent, nobody can claim our cities.</English>
 		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Une grande guerre internationale a pris fin. Les bellig&#233;rants se r&#233;unissent en congr&#232;s pour discuter de la restauration de l'ordre mondial, mais comme nous ne sommes pas concern&#233;s et ne sommes pas assez importants, nous ne pouvons pas influencer le processus :[NEWLINE]%s2[NEWLINE][NEWLINE]Puisque nous n'avons pas particip&#233; &#224; la guerre, personne ne peut revendiquer nos villes.</French>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein gro&#223;er internationaler Krieg ist zu Ende gegangen. Die kriegf&#252;hrenden M&#228;chte kommen zusammen, um Ordnung in der Welt wiederherzustellen, aber wir waren nicht beteiligt und sind nicht wichtig genug um die Entscheidungen zu beeinflussen:[NEWLINE]%s2[NEWLINE][NEWLINE]Als Unbeteiligter kann niemand unsere St&#228;dte einfordern.</German>
 		<Italian>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The belligerents convene in a congress to discuss how to restore order to the world, but we were neither involved nor important enough to influence the process:[NEWLINE]%s2[NEWLINE][NEWLINE]As a non-belligerent, nobody can claim our cities.</Italian>
@@ -272,14 +272,6 @@
 		<German>In 2 Runden wird ein internationaler Kongress stattfinden. Ihr wurdet eingeladen, daran teilzunehmen. Nehmt Ihr die Einladung an?</German>
 		<Italian>Fra 2 turni si terr&#224; un congresso internazionale. Sei stato invitato a partecipare. Accetterai l'invito?</Italian>
 		<Spanish>Se va a celebrar un Congreso internacional en 2 turnos. Se os ha invitado a participar. &#191;Acept&#225;is la invitaci&#243;n?</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CONGRESS_INVITE</Tag>
-		<English>[NEWLINE][ICON_BULLET]%s1</English>
-		<French>[NEWLINE][ICON_BULLET]%s1</French>
-		<German>[NEWLINE][ICON_BULLET]%s1</German>
-		<Italian>[NEWLINE][ICON_BULLET]%s1</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]%s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_MANIPULATION</Tag>
@@ -499,34 +491,34 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_ASSIGNMENT</Tag>
-		<English>[ICON_BULLET]%s2 %s1 falls under %s3 control.</English>
-		<French>[ICON_BULLET]%s2 %s1 tombe sous contr&#244;le %s3.</French>
-		<German>[ICON_BULLET]%s2 %s1 f&#228;llt unter %s3 Kontrolle.</German>
-		<Italian>[ICON_BULLET]%s2 %s1 falls under %s3 control.</Italian>
-		<Spanish>[ICON_BULLET]%s2 %s1 falls under %s3 control.</Spanish>
+		<English>%s2 %s1 falls under %s3 control.</English>
+		<French>%s2 %s1 tombe sous contr&#244;le %s3.</French>
+		<German>%s2 %s1 f&#228;llt unter %s3 Kontrolle.</German>
+		<Italian>%s2 %s1 falls under %s3 control.</Italian>
+		<Spanish>%s2 %s1 falls under %s3 control.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY</Tag>
-		<English>[ICON_BULLET]%s2 may found %s1.</English>
-		<French>[ICON_BULLET]%s2 peut fonder %s1.</French>
-		<German>[ICON_BULLET]%s2 darf %s1 gr&#252;nden.</German>
-		<Italian>[ICON_BULLET]%s2 may found %s1.</Italian>
-		<Spanish>[ICON_BULLET]%s2 may found %s1.</Spanish>
+		<English>%s2 may found %s1.</English>
+		<French>%s2 peut fonder %s1.</French>
+		<German>%s2 darf %s1 gr&#252;nden.</German>
+		<Italian>%s2 may found %s1.</Italian>
+		<Spanish>%s2 may found %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY</Tag>
-		<English>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</English>
-		<French>[ICON_BULLET]%s3 peut fonder %s1 en territoire %s2.</French>
-		<German>[ICON_BULLET]%s3 darf %s1 in %s2 Territorium gr&#252;nden.</German>
-		<Italian>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</Italian>
-		<Spanish>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</Spanish>
+		<English>%s3 may found %s1 in %s2 territory.</English>
+		<French>%s3 peut fonder %s1 en territoire %s2.</French>
+		<German>%s3 darf %s1 in %s2 Territorium gr&#252;nden.</German>
+		<Italian>%s3 may found %s1 in %s2 territory.</Italian>
+		<Spanish>%s3 may found %s1 in %s2 territory.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULTS</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</English>
-		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Au bout de longues n&#233;gociations, les d&#233;l&#233;gu&#233;s du congr&#232;s en sont arriv&#233;s &#224; la d&#233;cision suivante :</French>
-		<German>[H1]Kongress von %s1[\H1][NEWLINE]Nach langen Verhandlung sind die stimmberechtigen Mitglieder des Kongresses zu folgender Entscheidung gekommen:</German>
-		<Italian>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</Italian>
-		<Spanish>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</Spanish>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE][NEWLINE]%s2[NEWLINE]</English>
+		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Au bout de longues n&#233;gociations, les d&#233;l&#233;gu&#233;s du congr&#232;s en sont arriv&#233;s &#224; la d&#233;cision suivante :[NEWLINE][NEWLINE]%s2[NEWLINE]</French>
+		<German>[H1]Kongress von %s1[\H1][NEWLINE]Nach langen Verhandlung sind die stimmberechtigen Mitglieder des Kongresses zu folgender Entscheidung gekommen:[NEWLINE][NEWLINE]%s2[NEWLINE]</German>
+		<Italian>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE][NEWLINE]%s2[NEWLINE]</Italian>
+		<Spanish>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE][NEWLINE]%s2[NEWLINE]</Spanish>
 	</TEXT>
 </Civ4GameText>

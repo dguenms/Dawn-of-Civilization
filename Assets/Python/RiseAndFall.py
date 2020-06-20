@@ -21,6 +21,7 @@ import Periods as periods
 from Events import events, handler
 
 from Locations import *
+from Popups import popup
 from Core import *
 
 MainOpt = BugCore.game.MainInterface
@@ -408,29 +409,7 @@ def convertSurroundingPlotCulture(iPlayer, plots):
 
 
 ### Screen popups ###
-# (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
-
-def startNewCivSwitchEvent(iPlayer):
-	if MainOpt.isSwitchPopup():
-		popup = CyPopupInfo()
-		popup.setText(text("TXT_KEY_INTERFACE_NEW_CIV_SWITCH", adjective(iPlayer)))
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyNewCivSwitchEvent")
-		
-		popup.setData1(iPlayer)
-		popup.addPythonButton(text("TXT_KEY_POPUP_NO"), infos.art('INTERFACE_EVENT_BULLET'))
-		popup.addPythonButton(text("TXT_KEY_POPUP_YES"), infos.art('INTERFACE_EVENT_BULLET'))
-		
-		popup.addPopup(active())
-	
-def applyNewCivSwitchEvent(argsList):
-	iButton = argsList[0]
-	iPlayer = argsList[1]
-	
-	if iButton == 1:
-		handleNewCiv(iPlayer)
-		
-### Utility methods ###
+# (Slowly migrate event handlers here when rewriting to use Popups.popup and more idiomatic code)
 
 def handleNewCiv(iPlayer):
 	iPreviousPlayer = active()
@@ -467,6 +446,18 @@ def handleNewCiv(iPlayer):
 	for iLoopPlayer in players.major():
 		player(iPlayer).setEspionageSpendingWeightAgainstTeam(iLoopPlayer, 0)
 
+
+new_civ_switch = popup.text("TXT_KEY_INTERFACE_NEW_CIV_SWITCH") \
+					  .cancel("TXT_KEY_POPUP_NO", event_bullet) \
+					  .option(handleNewCiv, "TXT_KEY_POPUP_YES") \
+					  .build()
+
+def startNewCivSwitchEvent(iPlayer):
+	if MainOpt.isSwitchPopup():
+		new_civ_switch.text(adjective(iPlayer)).cancel().handleNewCiv().launch(iPlayer)
+		
+### Utility methods ###
+
 @handler("BeginGameTurn")
 def checkMinorTechs():
 	iMinor = players.independent().alive().periodic(20)
@@ -492,7 +483,7 @@ def flipPopup(iNewPlayer, lPlots):
 		
 	flipText += text("TXT_KEY_FLIPMESSAGE2")
 						
-	popup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
+	eventpopup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
 	data.iFlipNewPlayer = iNewPlayer
 	data.iFlipOldPlayer = active()
 	data.lTempPlots = lPlots
@@ -559,7 +550,7 @@ class RiseAndFall:
 		game.autosave()
 				
 	def rebellionPopup(self, iRebelCiv):
-		popup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
+		eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
 
 	def eventApply7622(self, popupReturn):
 		iRebelCiv = data.iRebelCiv
