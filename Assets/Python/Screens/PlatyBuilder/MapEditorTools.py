@@ -2,421 +2,206 @@ from CvPythonExtensions import *
 from Consts import *
 from Core import *
 from RFCUtils import *
-import Popup as PyPopup
-import SettlerMaps
-import WarMaps
-import RegionMap
 import Setup
 import os
 
 IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
+iLongestName = len("Netherlands") #Netherlands currently has the longest civ name
 
 gc = CyGlobalContext()
 
-def changeCore(iPlayer, tPlot):
-	x, y = tPlot
-	bCore = gc.getMap().plot(x, y).isCore(iPlayer)
-	plot = gc.getMap().plot(x, y)
-	if plot.isWater() or (plot.isPeak() and tPlot not in lPeakExceptions): return
-	plot.setCore(iPlayer, not bCore)
-
-def changeCoreForce(iPlayer, tPlot, bAdd):
-	x, y = tPlot
-	plot = gc.getMap().plot(x, y)
-	if plot.isWater() or (plot.isPeak() and tPlot not in lPeakExceptions): return
-	plot.setCore(iPlayer, bAdd)
-
-def changeSettlerValue(iPlayer, tPlot, iValue):
-	x, y = tPlot
-	plot = gc.getMap().plot(x, y)
-	if plot.isWater() or (plot.isPeak() and tPlot not in lPeakExceptions): return
-	plot.setSettlerValue(iPlayer, iValue)
-
-def changeWarValue(iPlayer, tPlot, iValue):
-	x, y = tPlot
-	plot = gc.getMap().plot(x, y)
-	if plot.isWater() or (plot.isPeak() and tPlot not in lPeakExceptions): return
-	plot.setWarValue(iPlayer, iValue)
-
-def changeReligionValue(iReligion, pPlot, iValue):
-	if pPlot.isWater(): return
-	pPlot.setSpreadFactor(iReligion, iValue)
-
-def changeRegionID(pPlot, iRegion):
-	if pPlot.isWater(): return
-	pPlot.setRegionID(iRegion)
-
-def resetPlotRegionID(pPlot):
-	if pPlot.isWater(): return
-	pPlot.setRegionID(RegionMap.getMapValue(pPlot.getX(), pPlot.getY()))
-
-def resetCore(iPlayer):
-	Setup.updateCore(iPlayer)
-
-def resetSettler(iPlayer):
-	SettlerMaps.updateMap(iPlayer)
-
-def resetWarMap(iPlayer):
-	WarMaps.updateMap(iPlayer)
-
-def resetReligionMap(iReligion):
-	RegionMap.updateReligionSpread(iReligion)
-
-def resetRegionMap():
-	RegionMap.updateRegionMap()
-
 def getTLBR(lPlots):
-	lPlotX = [x for (x, y) in lPlots]
-	lPlotY = [y for (x, y) in lPlots]
+	lPlotX = [plot.getX() for plot in plots.of(lPlots)]
+	lPlotY = [plot.getY() for plot in plots.of(lPlots)]
 	TL = (min(lPlotX), min(lPlotY))
 	BR = (max(lPlotX), max(lPlotY))
 	return TL, BR
 
-def exportFlip(iPlayer, dFlipZoneEdits):
-	if iPlayer not in dFlipZoneEdits.keys():
-		sText = "No changes between current flipzone and flipzone defined in python"
-		popup = PyPopup.PyPopup()
-		popup.setBodyString(sText)
-		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
-		return
+def getCivName(iPlayer):
+	if civ(player(iPlayer)) == iHolyRome:
+		return "HolyRome"
+	elif civ(player(iPlayer)) == iTurks:
+		return "Turks"
+	elif civ(player(iPlayer)) == iOttomans:
+		return "Ottomans"
+	return name(iPlayer)
 
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iCiv == iHolyRome:
-		sName = "HolyRome"
-	elif iCiv == iAztecs:
-		sName = "Aztecs"
+def exportFlip(iPlayer, (lHumanFlipPlot, lAIFlipPlots)):
+	sLocation = "FlipZones"
+	sName = getCivName(iPlayer)
+	sDictName = "dBirthArea"
+	
+	BL, TR = getTLBR(lHumanFlipPlot)
+	lExtended = lHumanFlipPlot + lAIFlipPlots
+	BLai, TRai = getTLBR(lExtended)
+	
+	tExceptions = None
+	lExceptions = plots.rectangle(BLai, TRai).without(lExtended)
+	if lExceptions:
+		tExceptions = ("dBirthAreaExceptions", lExceptions)
+	
+	lExtraDictList = None
+	if lAIFlipPlots:
+		lExtraDictList = [("dExtendedBirthArea", (BLai, TRai))]
+		
+	writeTRBLDictFile(sLocation, sName, (BL, TR), sDictName, tExceptions, lExtraDictList = lExtraDictList)
+	
+	show("Flipzone of %s exported" % sName) 
 
-	lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
-	lOldFlipPlotList = plots.getBirthArea(iCiv)
-	bFlipChanged = len(lOldFlipPlotList) != len(lNewFlipPlotList)
-	if not bFlipChanged:
-		for tPlot in lNewFlipPlotList:
-			if tPlot not in lOldFlipPlotList:
-				bFlipChanged = True
-				break
-		else:
-			if iPlayer in dExtendedBirthArea:
-				tTL, tBR = birthRectangle(iCiv, True)
-				lOldAIPlotList = plots.rectangle(tTL, tBR).without(dBirthAreaExceptions[iCiv]).without(lOldFlipPlotList)
-			else:
-				lOldAIPlotList = []
-			bFlipChanged = len(lOldAIPlotList) != len(lNewAIPlotList)
-			if not bFlipChanged:
-				for tPlot in lNewAIPlotList:
-					if tPlot not in lOldAIPlotList:
-						bFlipChanged = True
-						break
+def exportCore(iPlayer):
+	sLocation = "Cores"
+	sName = getCivName(iPlayer)
+	sDictName = "dCoreArea"
+	
+	lCorePlots = plots.core(iPlayer)
+	BL, TR = getTLBR(lCorePlots)
 
-	if bFlipChanged:
-		lPlots = [tPlot for tPlot in lNewFlipPlotList if tPlot not in lNewAIPlotList]
-		BL, TR = getTLBR(lPlots)
+	tExceptions = None
+	lExceptions = plots.rectangle(BL, TR).land().where(lambda p: not (p.isPeak() and location(p) not in lPeakExceptions) and not p.isCore(iPlayer))
+	if lExceptions:
+		tExceptions = ("dCoreAreaExceptions", lExceptions)
+	
+	writeTRBLDictFile(sLocation, sName, (BL, TR), sDictName, tExceptions)
+	
+	show("Core of %s exported" % sName) 
 
-		lExceptions = []
-		for plot in plots.start(BL).end(TR).without(lNewFlipPlotList):
-			lExceptions.append(location(plot))
+def exportSettlerMap(iPlayer):
+	sLocation = "SettlerValues"
+	sName = getCivName(iPlayer)
+	valueFunction = getSettlerValue
+	writeMapFile(sLocation, sName, valueFunction, iPlayer = iPlayer, bDictStyle = True)
+	
+	show("Settlermap of %s exported" % sName)
+	
+def getSettlerValue(plot, *args, **kwargs):
+	iPlayer = kwargs.get('iPlayer', None)
+	
+	if plot.isWater():
+		return 20
+	elif plot.isPeak() and location(plot) in lPeakExceptions:
+		return 20
+		
+	if iPlayer is not None:
+		return player(iPlayer).getSettlerValue(plot.getX(), plot.getY())
+		
+	return 20
 
-		if lNewAIPlotList:
-			lPlots = lNewAIPlotList+lNewFlipPlotList
-			BLAI, TRAI = getTLBR(lPlots)
+def exportWarMap(iPlayer):
+	sLocation = "WarMaps"
+	sName = getCivName(iPlayer)
+	valueFunction = getWarValue
+	writeMapFile(sLocation, sName, valueFunction, iPlayer = iPlayer, bDictStyle = True)
+	
+	show("Warmap of %s exported" % sName)
+	
+def getWarValue(plot, *args, **kwargs):
+	iPlayer = kwargs.get('iPlayer', None)
+	if iPlayer is not None:
+		return player(iPlayer).getWarValue(plot.getX(), plot.getY())
+	return 0
 
-		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
-		try:
-			file.write("# tBirthArea\n")
-			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-			if lExceptions:
-				file.write("\n\n# dBirthAreaExceptions\n")
-				file.write("i" + sName + " : " + str(lExceptions) + ",")
-			if lNewAIPlotList:
-				file.write("\n\n# dExtendedBirthArea\n")
-				file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
-		finally:
-			file.close()
-		sText = "Flipzone map of %s exported" %sName
-	else:
-		sText = "No changes between current flipzone and flipzone defined in python"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
-def exportAllFlip(dFlipZoneEdits):
-	lAllFlips = []
-	lAllExceptions = []
-	lAllAIPlots = []
-	for iPlayer in players.major():
-		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-		if iCiv == iHolyRome:
-			sName = "HolyRome"
-		elif iCiv == iAztecs:
-			sName = "Aztecs"
-			
-		if iPlayer in dFlipZoneEdits.keys():
-			lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
-		else:
-			lNewFlipPlotList = plots.birth(iCiv)
-			
-			if iPlayer in dExtendedBirthArea:
-				tTL, tBR = birthRectangle(iCiv, True)
-				lNewAIPlotList = plots.rectangle(tTL, tBR).without(dBirthAreaExceptions[iCiv]).without(lNewFlipPlotList)
-			else:
-				lNewAIPlotList = []
+#TODO: use export to csv function in map branch when merged
+def exportRegionMap():
+	sLocation = "other"
+	sName = "RegionMap"
+	valueFunction = getRegionValue
+	writeMapFile(sLocation, sName, valueFunction, sMapName = "tRegionMap")
+	
+	show("Regionmap exported")
+	
+def getRegionValue(plot, *args, **kwargs):
 
-		lPlots = [tPlot for tPlot in lNewFlipPlotList if tPlot not in lNewAIPlotList]
-		BL, TR = getTLBR(lPlots)
-
-		lExceptions = []
-		for plot in plots.start(BL).end(TR):
-			lExceptions.append(location(plot))
-
-		if lNewAIPlotList:
-			lPlots = [tPlot for tPlot in lNewAIPlotList+lNewFlipPlotList if tPlot not in lExceptions]
-			BLAI, TRAI = getTLBR(lPlots)
-
-		lAllFlips.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-		if lExceptions:
-			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
-		if lNewAIPlotList:
-			lAllAIPlots.append("i" + sName + " : (" + str(BLAI) + ",\t" + str(TRAI) + "),")
-
-	file = open(IMAGE_LOCATION + "\FlipZones\\AllFlipZones.txt", 'wt')
-	try:
-		file.write("tBirthArea = (\n")
-		for sString in lAllFlips:
-			file.write(sString + "\n")
-		file.write(")")
-		if lAllAIPlots:
-			file.write("\n\ndExtendedBirthArea = {\n")
-			for sString in lAllAIPlots:
-				file.write(sString + "\n")
-			file.write("}")
-		if lAllExceptions:
-			file.write("\n\ndBirthAreaExceptions = {\n")
-			for sString in lAllExceptions:
-				file.write(sString + "\n")
-			file.write("}")
-	finally:
-		file.close()
-	sText = "All flipzone maps exported"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
-
-def exportCore(iPlayer, bForce = False):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iCiv == iHolyRome:
-		sName = "HolyRome"
-	elif iCiv == iAztecs:
-		sName = "Aztecs"
-
-	lCorePlotList = plots.core(iCiv)
-	bCoreChanged = bForce
-	if not bCoreChanged:
-		for plot in plots.all():
-			bOldCore = (x, y) in lCorePlotList
-			if plot.isCore(iPlayer) != bOldCore:
-				bCoreChanged = True
-				break
-	if bCoreChanged:
-		lCorePlots = plots.all().core(iPlayer)
-		BL, TR = getTLBR(lCorePlots)
-
-		lExceptions = []
-		for plot in plots.start(BL).end(TR):
-			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions)):
-				lExceptions.append(location(plot))
-
-		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
-		try:
-			file.write("# tCoreArea\n")
-			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-			if lExceptions:
-				file.write("\n\n# dCoreAreaExceptions\n")
-				file.write("i" + sName + " : " + str(lExceptions) + ",")
-		finally:
-			file.close()
-		sText = "Core map of %s exported" %sName
-	else:
-		sText = "No changes between current core and core defined in python"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
-
-def exportAllCores():
-	lAllCores = []
-	lAllExceptions = []
-	for iPlayer in players.major():
-		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-		if iCiv == iHolyRome:
-			sName = "HolyRome"
-		elif iCiv == iAztecs:
-			sName = "Aztecs"
-
-		lCorePlots = plots.all().core(iPlayer)
-		BL, TR = getTLBR(lCorePlots)
-
-		lExceptions = []
-		for plot in plots.start(BL).end(TR):
-			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions)):
-				lExceptions.append(location(plot))
-
-		lAllCores.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-		if lExceptions:
-			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
-
-	file = open(IMAGE_LOCATION + "\Cores\\AllCores.txt", 'wt')
-	try:
-		file.write("tCoreArea = (\n")
-		for sString in lAllCores:
-			file.write(sString + "\n")
-		file.write(")")
-		file.write("\n\ndCoreAreaExceptions = {\n")
-		for sString in lAllExceptions:
-			file.write(sString + "\n")
-		file.write("}")
-	finally:
-		file.close()
-	sText = "All core maps exported"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
-
-def exportSettlerMap(iPlayer, bForce = False):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iCiv == iHolyRome:
-		sName = "HolyRome"
-	elif iCiv == iAztecs:
-		sName = "Aztecs"
-
-	bSettlerValueChanged = bForce
-	if not bSettlerValueChanged:
-		for plot in plots.all():
-			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iPlayer, location(plot)):
-				bSettlerValueChanged = True
-				break
-	if bSettlerValueChanged:
-		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName + ".txt", 'wt')
-		try:
-			file.write("(")
-			for y in reversed(range(iWorldY)):
-				sLine = "(\t"
-				for x in range(iWorldX):
-					plot = gc.getMap().plot(x, y)
-					if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
-						iValue = 20
-					else:
-						iValue = plot.getSettlerValue(iPlayer)
-					sLine += "%d,\t" % iValue
-				if y == 0:
-					sLine += ")),"
-				else:
-					sLine += "),\n"
-				file.write(sLine)
-		finally:
-			file.close()
-		sText = "Settlermap of %s exported" %sName
-	else:
-		sText = "No changes between current settlervalues and values defined in python"
-
-def exportWarMap(iPlayer, bForce = False):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iCiv == iHolyRome:
-		sName = "HolyRome"
-	elif iCiv == iAztecs:
-		sName = "Aztecs"
-
-	bWarMapChanged = bForce
-	if not bWarMapChanged:
-		for plot in plots.all():
-			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iPlayer, location(plot)):
-				bWarMapChanged = True
-				break
-	if bWarMapChanged:
-		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName + ".txt", 'wt')
-		try:
-			file.write("(")
-			for y in reversed(range(iWorldY)):
-				sLine = "(\t"
-				for x in range(iWorldX):
-					plot = gc.getMap().plot(x, y)
-					if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
-						iValue = 0
-					elif plot.isCore(iPlayer):
-						iValue = max(8, plot.getWarValue(iPlayer))
-					else:
-						iValue = plot.getWarValue(iPlayer)
-					sLine += "%d,\t" % iValue
-				if y == 0:
-					sLine += ")),"
-				else:
-					sLine += "),\n"
-				file.write(sLine)
-		finally:
-			file.close()
-		sText = "Warmap of %s exported" %sName
-	else:
-		sText = "No changes between current warvalues and values defined in python"
-
-def exportRegionMap(bForce = False):
+	#TODO: bAutoWater should be removed if water features get their own region ID
 	bAutoWater = True
+	if plot.isWater() and bAutoWater:
+		return -1
+		
+	return plot.getRegionID()
 
-	bMapChanged = bForce
-	if not bMapChanged:
-		for plot in plots.all():
-			if plot.getRegionID() != RegionMap.getMapValue(plot.getX(), plot.getY()):
-				bMapChanged = True
-				break
-	if bMapChanged:
-		file = open(IMAGE_LOCATION + "\Other\\RegionMap.txt", 'wt')
-		try:
-			file.write("tRegionMap = ( \n")
-			for y in reversed(range(iWorldY)):
-				sLine = "(\t"
-				for x in range(iWorldX):
-					plot = gc.getMap().plot(x, y)
-					if plot.isWater() and bAutoWater:
-						iValue = -1
-					else:
-						iValue = plot.getRegionID()
-					sLine += "%d,\t" % iValue
-				sLine += "),\n"
-				file.write(sLine)
-			file.write(")")
-		finally:
-			file.close()
-		sText = "Regionmap exported"
-	else:
-		sText = "No changes between current regionmap and values defined in python"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
 def exportAreaExport(lPlots, bWaterException, bPeakException):
 	if lPlots:
+		sLocation = "other"
+		sName = "NewArea"
+		sDictName = "NewArea"
+	
 		BL, TR = getTLBR(lPlots)
-		lExceptions = [plot for plot in plots.start(BL).end(TR) if location(plot) not in lPlots and (bWaterException and plot.isWater()) and (bPeakException and plot.isPeak())]
+		
+		tExceptions = None
+		lExceptions = plots.start(BL).end(TR).where(lambda p: location(p) not in lPlots)
 		
 		if bWaterException:
-			lExceptions.extend([(x, y) for (x, y) in lPlots if plot(x, y).isWater() and (x, y) not in lExceptions])
+			lExceptions = plots.start(BL).end(TR).where(lambda p: p.isWater() or p in lExceptions)
 		if bPeakException:
-			lExceptions.extend([(x, y) for (x, y) in lPlots if plot(x, y).isPeak() and (x, y) not in lExceptions])
-
-		file = open(IMAGE_LOCATION + "\Other\\NewArea.txt", 'wt')
-		try:
-			file.write("# tBL, tTR\n")
-			file.write("("+ str(BL) + ",\t" + str(TR) + ")")
-			if lExceptions:
-				file.write("\n\n# lExceptions\n")
-				file.write(str(lExceptions))
-		finally:
-			file.close()
-		sText = "Area exported"
+			lExceptions = plots.start(BL).end(TR).where(lambda p: p.isPeak() or p in lExceptions)
+			
+		if lExceptions:
+			tExceptions = ("Exceptions", lExceptions)
+			
+		writeTRBLDictFile(sLocation, sName, (BL, TR), sDictName, tExceptions, False)
+		
+		show("Area exported")
 	else:
-		sText = "No area selected"
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+		show("No area selected")
+
+
+def writeMapFile(sFileLocaton, sName, valueFunction, *args, **kwargs):
+	sMapName = kwargs.get('sMapName', None)
+	bDictStyle = kwargs.get('bDictStyle', False)
+	
+	file = open(IMAGE_LOCATION + "\\" + sFileLocaton + "\\" + sName + ".txt", 'wt')
+
+	try:
+		if sMapName:
+			file.write(sMapName + " = ( \n")
+		else:
+			file.write("(")
+		for y in reversed(range(iWorldY)):
+			sLine = "(\t"
+			for x in range(iWorldX):
+				plot = plot_(x, y)
+				iValue = valueFunction(plot, *args, **kwargs)
+				sLine += "%d,\t" % iValue
+			if y == 0 and bDictStyle:
+				sLine += ")),"
+			else:
+				sLine += "),\n"
+			file.write(sLine)
+		if not bDictStyle:
+			file.write(")")
+	finally:
+		file.close()
+
+def writeTRBLDictFile(sFileLocaton, sName, tSquare, sDictName, tExceptions = None, bIsDictionary = True, lExtraDictList = None):
+	BL, TR = tSquare
+	
+	sIdentifierText = ""
+	if bIsDictionary:
+		sIdentifier = "i" + sName
+		# allign tabs
+		iTabs = (iLongestName - len(sName) - 1) // 4 + 1
+		sIdentifierText = sIdentifier + " :" + iTabs*"\t"
+	
+	file = open(IMAGE_LOCATION + "\\" + sFileLocaton + "\\" + sName + ".txt", 'wt')
+	try:
+		file.write("# " + sDictName + "\n")
+		file.write(sIdentifierText + "("+ str(BL) + ",\t" + str(TR) + ")")
+		if bIsDictionary:
+			file.write(",")
+			
+		if tExceptions:
+			sExceptionName, lExceptions = tExceptions
+			file.write("\n\n# " + sExceptionName + "\n")
+			file.write(sIdentifierText + str(lExceptions))
+			if bIsDictionary:
+				file.write(",")
+				
+		if lExtraDictList:
+			for sListName, lList in lExtraDictList:
+				file.write("\n\n# " + sListName + "\n")
+				file.write(sIdentifierText + str(lList))
+				if bIsDictionary:
+					file.write(",")
+	finally:
+		file.close()

@@ -1,7 +1,8 @@
 from Core import *
 from Events import handler
 
-(iNone, iMinority, iPeriphery, iHistorical, iCore) = range(5)
+iNumReligionMapTypes = 5
+(iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
 
 def getMapValue(x, y):
 	return tRegionMap[iWorldY-1-y][x]
