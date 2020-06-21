@@ -17531,7 +17531,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=39
-	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
