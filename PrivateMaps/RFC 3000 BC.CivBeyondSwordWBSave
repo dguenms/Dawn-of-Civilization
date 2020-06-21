@@ -49883,7 +49883,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=39
-	BonusType=BONUS_COAL
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -49911,8 +49910,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=43
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=109,y=44
@@ -50354,8 +50354,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=43
+	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=110,y=44
