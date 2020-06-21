@@ -16,18 +16,12 @@ gc = CyGlobalContext()
 from Consts import *
 from RFCUtils import *
 import MapEditorTools as met
+from CvPlatyBuilderSettings import *
 
 bSensibility = True
 iEditType = 0
-iChange = 1
 iCounter = -1
 iCulturePlayer = 0
-iSelectedClass = -1
-bRemove = False
-
-# Merijn
-iChangeType = 1
-iSetValue = 3
 
 class WBPlotScreen:
 

@@ -13,8 +13,7 @@ import CvPlatyBuilderScreen
 import Popup
 import DynamicCivs as dc
 gc = CyGlobalContext()
-iChange = 1
-bRemove = False
+from CvPlatyBuilderSettings import *
 
 from StoredData import data
 from Core import *

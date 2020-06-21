@@ -15,6 +15,7 @@ import WBPromotionScreen
 import WBPlotScreen
 import WBEventScreen
 import CvPlatyBuilderScreen
+from CvPlatyBuilderSettings import *
 
 gc = CyGlobalContext()
 iCityID = -1
@@ -22,8 +23,6 @@ iCityOwner = -1
 iUnitID = -1
 iUnitOwner = -1
 iCopyType = 0
-iOwnerType = 1
-iPlotType = 2
 iActivityType = 0
 
 class WBPlayerUnits:

@@ -11,9 +11,9 @@ import WBInfoScreen
 import CvPlatyBuilderScreen
 import WBStoredDataScreen
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
 bHoly = False
-iOwnerType = 0
 lCities = []
 
 class WBReligionScreen:

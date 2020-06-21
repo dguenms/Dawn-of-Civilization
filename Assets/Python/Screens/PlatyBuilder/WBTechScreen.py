@@ -9,9 +9,8 @@ import WBPlayerUnits
 import WBInfoScreen
 import DynamicCivs as dc
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-iChangeType = 2
-bApplyAll = False
 bNoBarb = True
 iSelectedEra = -1
 

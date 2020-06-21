@@ -12,15 +12,11 @@ import CvPlatyBuilderScreen
 import WBInfoScreen
 import Popup
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
 from Core import *
 
-bRemove = False
-iChange = 1
 iCopyType = 0
-iOwnerType = 0
-iPlotType = 0
-iChangeType = 0
 iCommandUnitType = 0
 iSelectedClass = -2
 iMissionType = 0

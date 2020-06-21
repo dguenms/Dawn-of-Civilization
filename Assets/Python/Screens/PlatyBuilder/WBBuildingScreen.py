@@ -18,11 +18,9 @@ import DynamicCivs as dc
 from Consts import *
 gc = CyGlobalContext()
 
-iChangeType = 2
-iOwnerType = 0
-iPlotType = 2
+from CvPlatyBuilderSettings import *
+
 iSelectedClass = 0
-bApplyAll = False
 
 class WBBuildingScreen:
 

@@ -11,9 +11,9 @@ import WBTechScreen
 import WBProjectScreen
 import CvPlatyBuilderScreen
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
 iMode = 0
-iSelectedPlayer = -1
 iItem = -1
 lItems = []
 lSelectedItem = [-1, -1]

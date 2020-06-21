@@ -16,9 +16,7 @@ import CvPlatyBuilderScreen
 import Popup
 gc = CyGlobalContext()
 
-iChange = 1
-iOwnerType = 0
-iPlotType = 2
+from CvPlatyBuilderSettings import *
 
 class WBCityEditScreen:
 

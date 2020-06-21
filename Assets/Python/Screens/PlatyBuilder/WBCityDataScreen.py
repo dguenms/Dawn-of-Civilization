@@ -15,11 +15,8 @@ import WBInfoScreen
 import CvPlatyBuilderScreen
 gc = CyGlobalContext()
 
-iChange = 1
-iOwnerType = 0
-iPlotType = 2
-iSelectedClass = -1
-bRemove = False
+from CvPlatyBuilderSettings import *
+
 bWonder = False
 iSelectedYield = 0
 

@@ -9,12 +9,11 @@ import WBInfoScreen
 import WBStoredDataScreen
 gc = CyGlobalContext()
 
-iChange = 1
+from CvPlatyBuilderSettings import *
+
 bHiddenOption = True
 bRepeat = False
-iSelectedCiv = -1
 iSelectedLeader = -1
-bRemove = False
 
 from StoredData import data
 from Consts import *
