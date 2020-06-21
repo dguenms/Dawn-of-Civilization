@@ -26509,6 +26509,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=31
+	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
