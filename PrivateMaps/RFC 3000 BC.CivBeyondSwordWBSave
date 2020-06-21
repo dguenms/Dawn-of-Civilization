@@ -44025,6 +44025,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
+	BonusType=BONUS_RARE_EARTHS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -44460,7 +44461,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=47
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	BonusType=BONUS_OPIUM
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -44899,17 +44905,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=47
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=48
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=98,y=49
+	RiverNSDirection=2
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
@@ -44920,6 +44931,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=51
+	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -45343,7 +45355,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=49
-	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
