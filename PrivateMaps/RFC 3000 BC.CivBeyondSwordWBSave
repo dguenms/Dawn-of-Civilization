@@ -54865,13 +54865,13 @@ EndPlot
 BeginPlot
 	x=120,y=38
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=120,y=39
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
@@ -55322,7 +55322,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=37
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
