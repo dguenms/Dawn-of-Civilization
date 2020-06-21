@@ -55865,6 +55865,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=47
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -55893,8 +55894,9 @@ BeginPlot
 	x=122,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=122,y=52
@@ -56342,6 +56344,7 @@ BeginPlot
 	x=123,y=47
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56357,7 +56360,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -56796,6 +56800,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_RARE_EARTHS
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56808,12 +56813,12 @@ BeginPlot
 	x=124,y=46
 	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=124,y=47
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -57251,6 +57256,7 @@ EndPlot
 BeginPlot
 	x=125,y=44
 	BonusType=BONUS_SUGAR
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57277,7 +57283,7 @@ EndPlot
 BeginPlot
 	x=125,y=48
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -57286,7 +57292,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -57336,7 +57341,7 @@ BeginPlot
 	x=125,y=56
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -57721,11 +57726,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=44
+	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=126,y=45
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57737,7 +57745,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=47
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -58189,7 +58198,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=45
-	BonusType=BONUS_STONE
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -58212,7 +58221,7 @@ BeginPlot
 	x=127,y=48
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_TEA
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -58220,11 +58229,13 @@ EndPlot
 BeginPlot
 	x=127,y=49
 	BonusType=BONUS_RICE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=127,y=50
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58232,6 +58243,7 @@ BeginPlot
 	x=127,y=51
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58247,7 +58259,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=53
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -58671,6 +58683,7 @@ BeginPlot
 	x=128,y=49
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58686,7 +58699,7 @@ BeginPlot
 	RiverWEDirection=1
 	BonusType=BONUS_JADE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -58701,7 +58714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=54
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -59137,6 +59150,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=50
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
