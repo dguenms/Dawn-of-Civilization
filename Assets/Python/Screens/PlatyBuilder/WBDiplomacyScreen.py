@@ -9,11 +9,10 @@ import WBTradeScreen
 import DynamicCivs as dc
 gc = CyGlobalContext()
 
-iChange = 1
-bRemove = False
+from CvPlatyBuilderSettings import *
+
 bTowardsPlayer = False
 iSelectedMemory = 0
-iSelectedPlayer = 0
 iSelectedTeam = 0
 lPlayers = []
 bHideDead = True

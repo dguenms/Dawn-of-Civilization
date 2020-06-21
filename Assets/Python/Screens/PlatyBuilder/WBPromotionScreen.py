@@ -12,12 +12,9 @@ import WBInfoScreen
 import CvPlatyBuilderScreen
 import CvEventManager
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-bApplyAll = False
 iCopyType = 0
-iPlotType = 0
-iChangeType = 2
-iOwnerType = 0
 iSelectedClass = -2
 
 class WBPromotionScreen:

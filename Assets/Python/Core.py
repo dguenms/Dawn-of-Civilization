@@ -856,7 +856,7 @@ class PlotsCorner:
 		
 	def end(self, *args):
 		x, y = _parse_tile(*args)
-		return Plots([(i, j) for i in range(min(self.x, x), min(max(self.x, x)+1, iWorldX)) for j in range(min(self.y, y), min(max(self.y, y)+1, iWorldY))])
+		return Plots([wrap(i, j) for i in range(min(self.x, x), max(self.x, x)+1) for j in range(min(self.y, y), max(self.y, y)+1)])
 	
 
 class PlotFactory:

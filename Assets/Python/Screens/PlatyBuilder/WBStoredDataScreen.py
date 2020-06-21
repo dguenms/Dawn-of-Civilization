@@ -12,10 +12,8 @@ import AIWars
 import BugData
 import DynamicCivs as dc
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-iChange = 1
-iSelectedCiv = -1
-bRemove = False
 iSelectedMode = 0
 
 scriptDict = {}

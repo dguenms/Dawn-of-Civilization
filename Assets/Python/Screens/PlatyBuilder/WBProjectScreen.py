@@ -10,10 +10,8 @@ import WBInfoScreen
 import CvPlatyBuilderScreen
 import CvEventManager
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-iChange = 1
-bRemove = False
-bApplyAll = False
 bNoBarb = True
 iProjectType = 0
 

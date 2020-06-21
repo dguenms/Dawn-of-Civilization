@@ -308,6 +308,14 @@
 		<Spanish>Revelar unidades invisibles</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_REVEAL_SATELLITE</Tag>
+		<English>Reveal Satellites</English>
+		<French>Reveal Satellites</French>
+		<German>Reveal Satellites</German>
+		<Italian>Reveal Satellites</Italian>
+		<Spanish>Reveal Satellites</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_WB_ADD_UNITS</Tag>
 		<English>Add Units</English>
 		<French>Add Units</French>

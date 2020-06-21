@@ -37,6 +37,7 @@ import MapEditorTools as met
 import SettlerMaps
 import WarMaps
 import RiseAndFall
+import RegionMap
 import DynamicCivs as dc
 
 from Core import *
@@ -45,6 +46,20 @@ rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
+
+iNumModes = 45
+(iModeOwnership, iModeUnits, iModeBuildings, iModeCity, iModeStartingPlot, iModeAddLandMark, iModePlotData, iModeRiver, iModeImprovements, iModeBonus,
+iModePlotType, iModeTerrain, iModeRoutes, iModeFeatures, iModeFlip, iModeCore, iModeSettlerValue, iModeWarMap, iModeReligionMap, iModeRegionMap,
+iModeVictoryMap, iModeRevealPlot, iModeInvisibleSubmarine, iModeInvisibleStealth, iModeBlockade, iModeInvisibleSatellite, iModeAreaExporter1, iModeAreaExporter2, iModeAreaExporter3, iModeMoveMap,
+iModeMoveMap2, iModeEditUnit, iModeEditCity, iModeEraseAll, iModeCityDataI, iModePromotions, iModeCityDataII, iModeCityBuildings, iModeMoveCity, iModeMoveCityPlus,
+iModeDuplicateCity, iModeDuplicateCityPlus, iModeTargetPlot, iModeMoveUnits, iModeEvents) = range(iNumModes)
+
+lPlayerModes = [iModeOwnership, iModeUnits, iModeBuildings, iModeCity, iModeStartingPlot]
+lMapModes = [iModeAddLandMark, iModePlotData, iModeRiver, iModeImprovements, iModeBonus, iModePlotType, iModeTerrain, iModeRoutes, iModeFeatures]
+lDoCMapModes = [iModeFlip, iModeCore, iModeSettlerValue, iModeWarMap, iModeReligionMap, iModeRegionMap, iModeVictoryMap]
+lRevealModes = [iModeRevealPlot, iModeInvisibleSubmarine, iModeInvisibleStealth, iModeBlockade, iModeInvisibleSatellite]
+lAreaExportModes = [iModeAreaExporter1, iModeAreaExporter2, iModeAreaExporter3]
+lMoveMapModes = [iModeMoveMap, iModeMoveMap2]
 
 class CvWorldBuilderScreen:
 
@@ -56,8 +71,6 @@ class CvWorldBuilderScreen:
 		self.m_iAdvancedStartCurrentList = []
 		self.m_iCurrentPlayer = 0
 		self.m_iCurrentTeam = 0
-		self.m_iCurrentX = -1
-		self.m_iCurrentY = -1
 		self.m_pCurrentPlot = 0
 		self.m_pRiverStartPlot = -1
 		self.m_iCurrentReligion = 0
@@ -83,15 +96,9 @@ class CvWorldBuilderScreen:
 		self.m_iCost = 0
 
 ## Platy Builder ##
-		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"]
-		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
-		self.DoCMapMode = ["Flip", "Core", "SettlerValue", "WarMap", "ReligionMap", "RegionMap", "VictoryMap"]
-		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
-		self.AreaExport = ["AreaExporter1", "AreaExporter2", "AreaExporter3"]
-		self.MoveMap = ["MoveMap", "MoveMap2"]
 		self.iBrushWidth = 1
 		self.iBrushHeight = 1
-		self.iPlayerAddMode = "Units"
+		self.iPlayerAddMode = iModeUnits
 		self.iSelection = -1
 		self.iSelectClass = -2
 		self.bSensibility = True
@@ -99,8 +106,6 @@ class CvWorldBuilderScreen:
 		self.bVictoryRectangle = False
 		self.lMoveUnit = []
 		self.iMoveCity = -1
-		self.iTargetPlotX = -1
-		self.iTargetPlotY = -1
 		self.TempInfo = []
 ## Platy Builder ##
 
@@ -142,38 +147,38 @@ class CvWorldBuilderScreen:
 	def mouseOverPlot (self, argsList):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		self.m_pCurrentPlot = CyInterface().getMouseOverPlot()
-		self.m_iCurrentX = self.m_pCurrentPlot.getX()
-		self.m_iCurrentY = self.m_pCurrentPlot.getY()
+		x, y = location(self.m_pCurrentPlot)
+		iPlayer = self.m_iCurrentPlayer
 		if not CyInterface().isInAdvancedStart():
-			sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
+			sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), x, y)
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 
-			if self.iPlayerAddMode in self.DoCMapMode:
+			if self.iPlayerAddMode in lDoCMapModes + [iModeCity]:
 				sDoCText = ""
-				if self.iPlayerAddMode == "ReligionMap":
+				if self.iPlayerAddMode == iModeReligionMap:
 					iValue = self.m_pCurrentPlot.getSpreadFactor(self.m_iCurrentReligion)
 					if iValue != -1:
 						sDoCText += "<font=3b>%s</font>" % (gc.getReligionInfo(self.m_iCurrentReligion).getDescription() + ": " + localText.getText(lReligionMapTexts[iValue], ()))
-				elif self.iPlayerAddMode == "RegionMap":
+				elif self.iPlayerAddMode == iModeRegionMap:
 					iRegion = self.m_pCurrentPlot.getRegionID()
 					if iRegion != -1:
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
-				elif self.iPlayerAddMode == "VictoryMap":
-					iVictoryRegion = CvScreensInterface.getUHVTileInfo((self.m_iCurrentX, self.m_iCurrentY, self.m_iCurrentPlayer))
+				elif self.iPlayerAddMode == iModeVictoryMap:
+					iVictoryRegion = CvScreensInterface.getUHVTileInfo((x, y, iPlayer)) # TODO: change player to civ
 					if iVictoryRegion != -1:
 						TextKey = "TXT_KEY_UHV_AREA_%d" % iVictoryRegion
 						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
 				else:
 					# CNM and settlervalue
-					if self.m_iCurrentX > -1 and self.m_iCurrentY > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
-						sCityName = cnm.getFoundName(self.m_iCurrentPlayer, (self.m_iCurrentX, self.m_iCurrentY))
+					if x > -1 and y > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
+						sCityName = cnm.getFoundName(iPlayer, (x, y))
 						sDoCText += "<font=3b>%s</font>" % sCityName
-					if self.iPlayerAddMode == "WarMap":
-						iPlotWarValue = self.m_pCurrentPlot.getWarValue(self.m_iCurrentPlayer)
+					if self.iPlayerAddMode == iModeWarMap:
+						iPlotWarValue = self.m_pCurrentPlot.getWarValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_WARVALUE", ()), iPlotWarValue)
 					else:
-						iPlotSettlerValue = self.m_pCurrentPlot.getSettlerValue(self.m_iCurrentPlayer)
+						iPlotSettlerValue = self.m_pCurrentPlot.getSettlerValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_SETTLERVALUE", ()), iPlotSettlerValue)
 				if sDoCText == "":
 					screen.deleteWidget("CNMName")
@@ -182,7 +187,7 @@ class CvWorldBuilderScreen:
 			else:
 				screen.deleteWidget("CNMName")
 
-		if self.iPlayerAddMode in self.RevealMode:
+		if self.iPlayerAddMode in lRevealModes:
 			if CyInterface().isLeftMouseDown():
 				self.setMultipleReveal(True)
 			elif CyInterface().isRightMouseDown():
@@ -194,11 +199,13 @@ class CvWorldBuilderScreen:
 					self.placeMultipleObjects()
 				else:
 					self.placeObject()
+				self.updateOverlay()
 			elif CyInterface().isRightMouseDown():
 				if self.useLargeBrush():
 					self.removeMultipleObjects()
 				else:
 					self.removeObject()
+				self.updateOverlay()
 		return
 
 	def getHighlightPlot (self, argsList):
@@ -208,14 +215,14 @@ class CvWorldBuilderScreen:
 				if self.m_iCost <= 0:
 					return []
 
-		if ((self.m_pCurrentPlot != 0) and not self.m_bShowBigBrush and isMouseOverGameSurface()):
-			return (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+		if self.m_pCurrentPlot != 0 and not self.m_bShowBigBrush and isMouseOverGameSurface():
+			return location(self.m_pCurrentPlot)
 		return []
 
 	def update(self, fDelta):
-		if (not self.m_bChangeFocus) and (not isMouseOverGameSurface()):
+		if not self.m_bChangeFocus and not isMouseOverGameSurface():
 			self.m_bChangeFocus = True
-		if (self.m_bChangeFocus and isMouseOverGameSurface() and (self.iPlayerAddMode != "EditUnit" and self.iPlayerAddMode != "EditCity")):
+		if self.m_bChangeFocus and isMouseOverGameSurface() and self.iPlayerAddMode not in [iModeEditUnit, iModeEditCity]:
 			self.m_bChangeFocus = False
 			setFocusToCVG()
 		return
@@ -224,18 +231,18 @@ class CvWorldBuilderScreen:
 	def updateScreen(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 
-		if (CyInterface().isInAdvancedStart()):
-			if (self.m_bSideMenuDirty):
+		if CyInterface().isInAdvancedStart():
+			if self.m_bSideMenuDirty:
 				self.refreshSideMenu()
-			if (self.m_bASItemCostDirty):
+			if self.m_bASItemCostDirty:
 				self.refreshASItemCost()
 
-		if (CyInterface().isDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT) and not CyInterface().isFocusedWidget()):
+		if CyInterface().isDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT) and not CyInterface().isFocusedWidget():
 			self.refreshAdvancedStartTabCtrl(True)
 			CyInterface().setDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT, False)
 
 		self.m_bShowBigBrush = self.useLargeBrush()
-		if self.iPlayerAddMode == "River":
+		if self.iPlayerAddMode == iModeRiver:
 			if self.m_pRiverStartPlot != -1:
 				self.setRiverHighlights()
 				return 0
@@ -244,7 +251,7 @@ class CvWorldBuilderScreen:
 		return 0
 
 	def highlightBrush(self):
-		if self.iPlayerAddMode == "StartingPlot": return
+		if self.iPlayerAddMode == iModeStartingPlot: return
 		if self.m_pCurrentPlot == 0: return
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_WORLD_BUILDER)
 		lPlots = self.getMultiplePlotData()
@@ -254,142 +261,144 @@ class CvWorldBuilderScreen:
 
 	def refreshReveal(self) :
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
-		for i in xrange(CyMap().numPlots()):
-			pPlot = CyMap().plotByIndex(i)
-			if pPlot.isNone(): continue
-			self.showRevealed(pPlot)
+		for plot in plots.all():
+			self.showRevealed(plot)
 
 	def refreshStartingPlots(self) :
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
-		for iPlayerX in xrange(gc.getMAX_PLAYERS()):
-			pPlayerX = gc.getPlayer(iPlayerX)
-			pPlot = pPlayerX.getStartingPlot()
-			if not pPlot.isNone():
-				sColor = gc.getColorInfo(gc.getPlayerColorInfo(pPlayerX.getPlayerColor()).getColorTypePrimary()).getType()
-				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
+		for iPlayer in players.major():
+			pPlayer = player(iPlayer)
+			plot = pPlayerX.getStartingPlot()
+			if not plot.isNone():
+				sColor = gc.getColorInfo(gc.getPlayerColorInfo(pPlayer.getPlayerColor()).getColorTypePrimary()).getType()
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
 
 	########################################################
 	### Advanced Start Stuff
 	########################################################
 
 	def refreshASItemCost(self):
-		if (CyInterface().isInAdvancedStart()):
+		if CyInterface().isInAdvancedStart():
 			self.m_iCost = 0
-			if (self.m_pCurrentPlot != 0):
-				if (self.m_pCurrentPlot.isRevealed(CyGame().getActiveTeam(), False)):
+			if self.m_pCurrentPlot != 0:
+				if self.m_pCurrentPlot.isRevealed(CyGame().getActiveTeam(), False):
 
 					# Unit mode
-					if (self.getASActiveUnit() != -1):
+					if self.getASActiveUnit() != -1:
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartUnitCost(self.getASActiveUnit(), True, self.m_pCurrentPlot)
-					elif (self.getASActiveCity() != -1):
+					elif self.getASActiveCity() != -1:
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartCityCost(True, self.m_pCurrentPlot)
-					elif (self.getASActivePop() != -1 and self.m_pCurrentPlot.isCity()):
+					elif self.getASActivePop() != -1 and self.m_pCurrentPlot.isCity():
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartPopCost(True, self.m_pCurrentPlot.getPlotCity())
-					elif (self.getASActiveCulture() != -1 and self.m_pCurrentPlot.isCity()):
+					elif self.getASActiveCulture() != -1 and self.m_pCurrentPlot.isCity():
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartCultureCost(True, self.m_pCurrentPlot.getPlotCity())
-					elif (self.getASActiveBuilding() != -1 and self.m_pCurrentPlot.isCity()):
+					elif self.getASActiveBuilding() != -1 and self.m_pCurrentPlot.isCity():
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartBuildingCost(self.getASActiveBuilding(), True, self.m_pCurrentPlot.getPlotCity())
-					elif (self.getASActiveRoute() != -1):
+					elif self.getASActiveRoute() != -1:
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartRouteCost(self.getASActiveRoute(), True, self.m_pCurrentPlot)
-					elif (self.getASActiveImprovement() != -1):
+					elif self.getASActiveImprovement() != -1:
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartImprovementCost(self.getASActiveImprovement(), True, self.m_pCurrentPlot)
 
 				elif (self.m_pCurrentPlot.isAdjacentNonrevealed(CyGame().getActiveTeam())):
-					if (self.getASActiveVisibility() != -1):
+					if self.getASActiveVisibility() != -1:
 						self.m_iCost = gc.getPlayer(self.m_iCurrentPlayer).getAdvancedStartVisibilityCost(True, self.m_pCurrentPlot)
 			self.m_iCost = max(0, self.m_iCost)
 			self.refreshSideMenu()
 
 	def getASActiveUnit(self):
 		# Unit Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASUnitTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASUnitTabID:
 			iUnitType = getASUnit(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 			return iUnitType
 		return -1
 
 	def getASActiveCity(self):
 		# City Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 			# City List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 				iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 				# Place City
-				if (iOptionID == 0):
+				if iOptionID == 0:
 					return 1
 		return -1
 
 	def getASActivePop(self):
 		# City Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 			# City List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 				iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 				# Place Pop
-				if (iOptionID == 1):
+				if iOptionID == 1:
 					return 1
 		return -1
 
 	def getASActiveCulture(self):
 		# City Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 			# City List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 				iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 				# Place Culture
-				if (iOptionID == 2):
+				if iOptionID == 2:
 					return 1
 		return -1
 
 	def getASActiveBuilding(self):
 		# Building Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 			# Buildings List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASBuildingsListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASBuildingsListID:
 				iBuildingType = getASBuilding(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 				return iBuildingType
 		return -1
 
 	def getASActiveRoute(self):
 		# Improvements Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID:
 			# Routes List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASRoutesListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASRoutesListID:
 				iRouteType = getASRoute(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
-				if -1 == iRouteType:
+				if iRouteType == -1:
 					self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] = self.m_iASImprovementsListID
 				return iRouteType
 		return -1
 
 	def getASActiveImprovement(self):
 		# Improvements Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID:
 			# Improvements List
-			if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASImprovementsListID):
+			if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASImprovementsListID:
 				iImprovementType = getASImprovement(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
-				if -1 == iImprovementType:
+				if iImprovementType == -1:
 					self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] = self.m_iASRoutesListID
 				return iImprovementType
 		return -1
 
 	def getASActiveVisibility(self):
 		# Visibility Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASVisibilityTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASVisibilityTabID:
 			return 1
 		return -1
 
-	def getASActiveTech(self):
+	def getASActiveTech(self): #unused
 		# Tech Tab
-		if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASTechTabID):
+		if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASTechTabID:
 			return 1
 		return -1
 
-	def placeObject( self, bMulti=False ) :
-		if self.m_iCurrentX == -1 or self.m_iCurrentY == -1: return
+	def placeObject( self ) :
+		x, y = location(self.m_pCurrentPlot)
+		pPlot = self.m_pCurrentPlot
+		iPlayer = self.m_iCurrentPlayer
+		pPlayer = player(iPlayer)
+		
+		if x == -1 or y == -1: return
+		
 		if CyInterface().isInAdvancedStart():
-			pPlayer = gc.getPlayer(self.m_iCurrentPlayer)
-			pPlot = CyMap().plot(self.m_iCurrentX, self.m_iCurrentY)
 			iActiveTeam = CyGame().getActiveTeam()
-			if self.m_pCurrentPlot.isRevealed(iActiveTeam, False):
+			if pPlot.isRevealed(iActiveTeam, False):
 				# City Tab
 				if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 					# City List
@@ -398,21 +407,21 @@ class CvWorldBuilderScreen:
 						# Place City
 						if iOptionID == 0:
 							if pPlayer.getAdvancedStartCityCost(True, pPlot) > -1:
-								CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, -1, True)	#Action, Player, X, Y, Data, bAdd
+								CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Population
 						elif iOptionID == 1:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartPopCost(True, pCity) > -1:
-									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, -1, True)	#Action, Player, X, Y, Data, bAdd
+									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Culture
 						elif iOptionID == 2:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartCultureCost(True, pCity) > -1:
-									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CULTURE, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, -1, True)	#Action, Player, X, Y, Data, bAdd
+									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CULTURE, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 					# Buildings List
 					elif self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASBuildingsListID:
@@ -420,13 +429,13 @@ class CvWorldBuilderScreen:
 								pCity = pPlot.getPlotCity()
 								iBuildingType = getASBuilding(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 								if (iBuildingType != -1 and pPlayer.getAdvancedStartBuildingCost(iBuildingType, True, pCity) != -1):
-									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_BUILDING, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iBuildingType, True)	#Action, Player, X, Y, Data, bAdd
+									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_BUILDING, iPlayer, x, y, iBuildingType, True)	#Action, Player, X, Y, Data, bAdd
 
 				# Unit Tab
 				elif self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASUnitTabID:
 					iUnitType = getASUnit(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 					if iUnitType > -1 and pPlayer.getAdvancedStartUnitCost(iUnitType, True, pPlot) > -1:
-						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_UNIT, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iUnitType, True)	#Action, Player, X, Y, Data, bAdd
+						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_UNIT, iPlayer, x, y, iUnitType, True)	#Action, Player, X, Y, Data, bAdd
 
 				# Improvements Tab
 				elif self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID:
@@ -434,36 +443,37 @@ class CvWorldBuilderScreen:
 					if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASRoutesListID:
 						iRouteType = getASRoute(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 						if iRouteType > -1 and pPlayer.getAdvancedStartRouteCost(iRouteType, True, pPlot) > -1:
-							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_ROUTE, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iRouteType, True)	#Action, Player, X, Y, Data, bAdd
+							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_ROUTE, iPlayer, x, y, iRouteType, True)	#Action, Player, X, Y, Data, bAdd
 
 					# Improvements List
 					elif self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASImprovementsListID:
 						iImprovementType = getASImprovement(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 						if iImprovementType > -1 and pPlayer.getAdvancedStartImprovementCost(iImprovementType, True, pPlot) > -1:
-							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_IMPROVEMENT, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iImprovementType, True)	#Action, Player, X, Y, Data, bAdd
+							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_IMPROVEMENT, iPlayer, x, y, iImprovementType, True)	#Action, Player, X, Y, Data, bAdd
 
 			# Adjacent nonrevealed
 			else:
 				# Visibility Tab
 				if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASVisibilityTabID:
 					if pPlayer.getAdvancedStartVisibilityCost(True, pPlot) > -1:
-						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_VISIBILITY, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, -1, True)	#Action, Player, X, Y, Data, bAdd
+						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_VISIBILITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 			self.m_bSideMenuDirty = True
 			self.m_bASItemCostDirty = True
 			return 1
 
-		if self.iPlayerAddMode == "EraseAll":
-			self.m_pCurrentPlot.erase()
-			CyEngine().removeLandmark(self.m_pCurrentPlot)
-			for iPlayerX in xrange(gc.getMAX_PLAYERS()):
-				CyEngine().removeSign(self.m_pCurrentPlot, iPlayerX)
-		elif self.iPlayerAddMode == "AddLandMark":
+		if self.iPlayerAddMode == iModeEraseAll:
+			pPlot.erase()
+			CyEngine().removeLandmark(pPlot)
+			for iLoopPlayer in players.all():
+				CyEngine().removeSign(pPlot, iLoopPlayer)
+				
+		elif self.iPlayerAddMode == iModeAddLandMark:
 			iIndex = -1
 			for i in xrange(CyEngine().getNumSigns()):
 				pSign = CyEngine().getSignByIndex(i)
-				if pSign.getPlot().getX() != self.m_pCurrentPlot.getX(): continue
-				if pSign.getPlot().getY() != self.m_pCurrentPlot.getY(): continue
-				if pSign.getPlayerType() == self.m_iCurrentPlayer:
+				if pSign.getPlot().getX() != x: continue
+				if pSign.getPlot().getY() != y: continue
+				if pSign.getPlayerType() == iPlayer:
 					iIndex = i
 					break
 			sText = ""
@@ -471,400 +481,375 @@ class CvWorldBuilderScreen:
 				sText = CyEngine().getSignByIndex(iIndex).getCaption()
 			popup = Popup.PyPopup(CvUtil.EventWBLandmarkPopup, EventContextTypes.EVENTCONTEXT_ALL)
 			popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_LANDMARK_START", ()))
-			popup.setUserData((self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), self.m_iCurrentPlayer, iIndex))
+			popup.setUserData((x, y, iPlayer, iIndex))
 			popup.createEditBox(sText)
 			popup.launch()
-		elif self.iSelection == -1: return
-		elif self.iPlayerAddMode == "Ownership":
-			self.m_pCurrentPlot.setOwner(self.m_iCurrentPlayer)
+			
+		elif self.iSelection == -1:
+			return
+			
+		elif self.iPlayerAddMode == iModeOwnership:
+			pPlot.setOwner(iPlayer)
+			
 	## Python Effects ##
-		elif self.iPlayerAddMode == "Units":
+		elif self.iPlayerAddMode == iModeUnits:
 			for i in xrange(abs(iChange)):
-				unit = gc.getPlayer(self.m_iCurrentPlayer).initUnit(self.iSelection, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
+				unit = gc.getPlayer(iPlayer).initUnit(self.iSelection, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
 				if self.iSelection in lGreatPeopleUnits or self.iSelection in [iGreatGeneral, iGreatSpy]:
-					gp.onGreatPersonBorn(unit, self.m_iCurrentPlayer, -1, False)
-		elif self.iPlayerAddMode == "Buildings":
-			if self.m_pCurrentPlot.isCity():
-				pCity = self.m_pCurrentPlot.getPlotCity()
-				bEffects = False
-				if bPython and pCity.getNumRealBuilding(self.iSelection) == 0:
-					bEffects = True
+					gp.onGreatPersonBorn(unit, iPlayer, -1, False)
+					
+		elif self.iPlayerAddMode == iModeBuildings:
+			if pPlot.isCity():
+				pCity = pPlot.getPlotCity()
+				bEffects = (bPython and pCity.getNumRealBuilding(self.iSelection) == 0)
 				pCity.setNumRealBuilding(self.iSelection, 1)
 				if bEffects:
 					CvEventManager.CvEventManager().onBuildingBuilt([pCity, self.iSelection])
 				
 				if self.iSelection == iPalace:
 					dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "City":
+		elif self.iPlayerAddMode == iModeCity:
 			if self.m_pCurrentPlot.isCity(): return
-			x = self.m_pCurrentPlot.getX()
-			y = self.m_pCurrentPlot.getY()
-			pCity = gc.getPlayer(self.m_iCurrentPlayer).initCity(x, y)
-			sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+			pCity = gc.getPlayer(iPlayer).initCity(x, y)
+			sName = cnm.getFoundName(iPlayer, (x, y))
 			if sName:
 				pCity.setName(sName, True)
 			if bPython:
 				CvEventManager.CvEventManager().onCityBuilt([pCity])
-			dc.checkName(self.m_iCurrentPlayer)
+			dc.checkName(iPlayer)
+			
 	## Python Effects ##
-		elif self.iPlayerAddMode == "Improvements":
-			self.m_pCurrentPlot.setImprovementType(self.iSelection)
-		elif self.iPlayerAddMode == "Bonus":
-			self.m_pCurrentPlot.setBonusType(self.iSelection)
-		elif self.iPlayerAddMode == "Routes":
-			self.m_pCurrentPlot.setRouteType(self.iSelection)
-		elif self.iPlayerAddMode == "Terrain":
-			self.m_pCurrentPlot.setTerrainType(self.iSelection, True, True)
-		elif self.iPlayerAddMode == "PlotType":
+		elif self.iPlayerAddMode == iModeImprovements:
+			pPlot.setImprovementType(self.iSelection)
+			
+		elif self.iPlayerAddMode == iModeBonus:
+			pPlot.setBonusType(self.iSelection)
+			
+		elif self.iPlayerAddMode == iModeRoutes:
+			pPlot.setRouteType(self.iSelection)
+			
+		elif self.iPlayerAddMode == iModeTerrain:
+			pPlot.setTerrainType(self.iSelection, True, True)
+			
+		elif self.iPlayerAddMode == iModePlotType:
 			if self.iSelection == gc.getInfoTypeForString("TERRAIN_PEAK"):
-				self.m_pCurrentPlot.setPlotType(PlotTypes.PLOT_PEAK, True, True)
+				pPlot.setPlotType(PlotTypes.PLOT_PEAK, True, True)
 			elif self.iSelection == gc.getInfoTypeForString("TERRAIN_HILL"):
-				self.m_pCurrentPlot.setPlotType(PlotTypes.PLOT_HILLS, True, True)
+				pPlot.setPlotType(PlotTypes.PLOT_HILLS, True, True)
 			elif self.iSelection == gc.getInfoTypeForString("TERRAIN_GRASS"):
-				self.m_pCurrentPlot.setPlotType(PlotTypes.PLOT_LAND, True, True)
+				pPlot.setPlotType(PlotTypes.PLOT_LAND, True, True)
 			elif self.iSelection == gc.getInfoTypeForString("TERRAIN_OCEAN"):
-				self.m_pCurrentPlot.setPlotType(PlotTypes.PLOT_OCEAN, True, True)
-		elif self.iPlayerAddMode == "Features":
-			self.m_pCurrentPlot.setFeatureType(self.iSelection, self.iSelectClass)
-		elif self.iPlayerAddMode == "River":
-			if self.m_pRiverStartPlot == self.m_pCurrentPlot:
+				pPlot.setPlotType(PlotTypes.PLOT_OCEAN, True, True)
+				
+		elif self.iPlayerAddMode == iModeFeatures:
+			pPlot.setFeatureType(self.iSelection, self.iSelectClass)
+			
+		elif self.iPlayerAddMode == iModeRiver:
+			if self.m_pRiverStartPlot == pPlot:
 				self.m_pRiverStartPlot = -1
 				CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
 			elif self.m_pRiverStartPlot != -1:
-				iXDiff = abs(self.m_pCurrentPlot.getX() - self.m_pRiverStartPlot.getX())
-				iYDiff = abs(self.m_pCurrentPlot.getY() - self.m_pRiverStartPlot.getY())
+				xRiver, yRiver = location(self.m_pRiverStartPlot)
+				iXDiff = abs(x - xRiver)
+				iYDiff = abs(y - yRiver)
+				
+				xStartRiverGreater = (xRiver > x)
+				yStartRiverGreater = (yRiver > y)
+				xStartRiverSmaller = (xRiver < x)
+				yStartRiverSmaller = (yRiver < y)
 
-				if ((iXDiff == iYDiff) and (iXDiff == 1) and (self.m_pRiverStartPlot.getX() > self.m_pCurrentPlot.getX()) and (self.m_pRiverStartPlot.getY() < self.m_pCurrentPlot.getY())):
-					self.placeRiverNW(True)
-					self.m_pRiverStartPlot = CyMap().plot(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY()+1)
-				elif ((iXDiff == 0) and (iYDiff == 1) and (self.m_pRiverStartPlot.getY() < self.m_pCurrentPlot.getY())):
-					self.placeRiverN(True)
+				if (iXDiff == iYDiff == 1) and xStartRiverGreater and yStartRiverSmaller:
+					self.placeRiverNW()
+					self.m_pRiverStartPlot = plot_(xRiver-1, yRiver+1)
+				elif iXDiff == 0 and iYDiff == 1 and yStartRiverSmaller:
+					self.placeRiverN()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == iYDiff) and (iXDiff == 1) and (self.m_pRiverStartPlot.getX() < self.m_pCurrentPlot.getX()) and (self.m_pRiverStartPlot.getY() < self.m_pCurrentPlot.getY())):
-					self.placeRiverNE(True)
+				elif (iXDiff == iYDiff == 1) and xStartRiverSmaller and yStartRiverSmaller:
+					self.placeRiverNE()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == 1) and (iYDiff == 0) and (self.m_pRiverStartPlot.getX() > self.m_pCurrentPlot.getX())):
-					self.placeRiverW(True)
+				elif iXDiff == 1 and iYDiff == 0 and xStartRiverGreater:
+					self.placeRiverW()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == 1) and (iYDiff == 0) and (self.m_pRiverStartPlot.getX() < self.m_pCurrentPlot.getX())):
-					self.placeRiverE(True)
+				elif iXDiff == 1 and iYDiff == 0 and xStartRiverSmaller:
+					self.placeRiverE()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == iYDiff) and (iXDiff == 1) and (self.m_pRiverStartPlot.getX() > self.m_pCurrentPlot.getX()) and (self.m_pRiverStartPlot.getY() > self.m_pCurrentPlot.getY())):
-					self.placeRiverSW(True)
+				elif iXDiff == iYDiff == 1 and xStartRiverGreater and yStartRiverGreater:
+					self.placeRiverSW()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == 0) and (iYDiff == 1) and (self.m_pRiverStartPlot.getY() > self.m_pCurrentPlot.getY())):
-					self.placeRiverS(True)
+				elif iXDiff == 0 and iYDiff == 1 and yStartRiverGreater:
+					self.placeRiverS()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
-				elif ((iXDiff == iYDiff) and (iXDiff == 1) and (self.m_pRiverStartPlot.getX() < self.m_pCurrentPlot.getX()) and (self.m_pRiverStartPlot.getY() > self.m_pCurrentPlot.getY())):
-					self.placeRiverSE(True)
+				elif iXDiff == iYDiff == 1 and xStartRiverSmaller and yStartRiverGreater:
+					self.placeRiverSE()
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
 				else:
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
 			else:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
-		elif self.iPlayerAddMode == "Flip":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-				if self.bFlipAI:
-					if tPlot not in lAIPlotList:
-						lAIPlotList.append(tPlot)
-				else:
-					if tPlot not in lHumanPlotList:
-						lHumanPlotList.append(tPlot)
-					if tPlot in lAIPlotList:
-						lAIPlotList.remove(tPlot)
-				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
-				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
-				if not bMulti:
-					self.showFlipZone()
-		elif self.iPlayerAddMode == "Core":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
-				if not bMulti:
-					self.showStabilityOverlay()
-					dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "SettlerValue":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
-				if not bMulti:
-					self.showStabilityOverlay()
-		elif self.iPlayerAddMode == "WarMap":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeWarValue(self.m_iCurrentPlayer, tPlot, iWarValue)
-				if not bMulti:
-					self.showWarOverlay()
-		elif self.iPlayerAddMode == "ReligionMap":
-			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, self.m_iReligionMapValue)
-			if not bMulti:
-				self.showReligionOverlay()
-		elif self.iPlayerAddMode == "RegionMap":
-			met.changeRegionID(self.m_pCurrentPlot, self.m_iRegionMapID)
-			if not bMulti:
-				self.showRegionOverlay()
-		elif self.iPlayerAddMode == "AreaExporter1":
-			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+		elif self.iPlayerAddMode == iModeFlip:
+			if not is_minor(iPlayer):
+				self.changeFlipZone(self.m_pCurrentPlot, True)
+		elif self.iPlayerAddMode == iModeCore:
+			if not is_minor(iPlayer):
+				self.m_pCurrentPlot.setCore(iPlayer, True)
+		elif self.iPlayerAddMode == iModeSettlerValue:
+			if not is_minor(iPlayer):
+				self.m_pCurrentPlot.setSettlerValue(iPlayer, iSetValue)
+		elif self.iPlayerAddMode == iModeWarMap:
+			if not is_minor(iPlayer):
+				self.m_pCurrentPlot.setWarValue(iPlayer, iWarValue)
+		elif self.iPlayerAddMode == iModeReligionMap:
+			if not self.m_pCurrentPlot.isWater():
+				self.m_pCurrentPlot.setSpreadFactor(self.m_iCurrentReligion, self.m_iReligionMapValue)
+		elif self.iPlayerAddMode == iModeRegionMap:
+			pPlot.setRegionID(self.m_iRegionMapID)
+		elif self.iPlayerAddMode == iModeAreaExporter1:
+			tPlot = (x, y)
 			if tPlot not in self.TempInfo:
 				self.TempInfo.append(tPlot)
-				if not bMulti:
-					self.showAreaExportOverlay()
 		return 1
 
-	def removeObject( self, bMulti=False ):
-		if self.m_iCurrentX == -1 or self.m_iCurrentY == -1: return
+	def removeObject( self ):
+		x, y = location(self.m_pCurrentPlot)
+		pPlot = self.m_pCurrentPlot
+		iPlayer = self.m_iCurrentPlayer
+		pPlayer = player(iPlayer)
+		
+		if x == -1 or y == -1: return
+		
 		# Advanced Start
 		if CyInterface().isInAdvancedStart():
-			pPlayer = gc.getPlayer(self.m_iCurrentPlayer)
-			pPlot = CyMap().plot(self.m_iCurrentX, self.m_iCurrentY)
 			iActiveTeam = CyGame().getActiveTeam()
-			if self.m_pCurrentPlot.isRevealed(iActiveTeam, False):
+			if pPlot.isRevealed(iActiveTeam, False):
 				# City Tab
-				if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
+				if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID:
 					# City List
-					if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID):
+					if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 						iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 						# City Population
-						if (iOptionID == 1):
-							if (pPlot.isCity()):
-								if (pPlot.getPlotCity().getOwner() == self.m_iCurrentPlayer):
-									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, -1, False)	#Action, Player, X, Y, Data, bAdd
+						if iOptionID == 1:
+							if pPlot.isCity():
+								if pPlot.getPlotCity().getOwner() == iPlayer:
+									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, iPlayer, x, y, -1, False)	#Action, Player, X, Y, Data, bAdd
 
 					# Buildings List
-					elif (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASBuildingsListID):
-						if (pPlot.isCity()):
-							if (pPlot.getPlotCity().getOwner() == self.m_iCurrentPlayer):
+					elif self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASBuildingsListID:
+						if pPlot.isCity():
+							if pPlot.getPlotCity().getOwner() == iPlayer:
 								iBuildingType = getASBuilding(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
 								if -1 != iBuildingType:
-									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_BUILDING, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iBuildingType, False)	#Action, Player, X, Y, Data, bAdd
+									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_BUILDING, iPlayer, x, y, iBuildingType, False)	#Action, Player, X, Y, Data, bAdd
 
 				# Unit Tab
-				elif (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASUnitTabID):
+				elif self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASUnitTabID:
 					iUnitType = getASUnit(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
-					if -1 != iUnitType:
-						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_UNIT, self.m_iCurrentPlayer, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), iUnitType, False)	#Action, Player, X, Y, Data, bAdd
+					if iUnitType != -1:
+						CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_UNIT, iPlayer, x, y, iUnitType, False)	#Action, Player, X, Y, Data, bAdd
 
 				# Improvements Tab
-				elif (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID):
+				elif self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASImprovementsTabID:
 					# Routes List
-					if (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASRoutesListID):
+					if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASRoutesListID:
 						iRouteType = getASRoute(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
-						if -1 != iRouteType:
-							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_ROUTE, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iRouteType, False)	#Action, Player, X, Y, Data, bAdd
+						if iRouteType != -1:
+							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_ROUTE, iPlayer, x, y, iRouteType, False)	#Action, Player, X, Y, Data, bAdd
 
 					# Improvements List
-					elif (self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASImprovementsListID):
+					elif self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASImprovementsListID:
 						iImprovementType = getASImprovement(self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()])
-						if -1 != iImprovementType:
-							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_IMPROVEMENT, self.m_iCurrentPlayer, self.m_iCurrentX, self.m_iCurrentY, iImprovementType, False)	#Action, Player, X, Y, Data, bAdd
+						if iImprovementType != -1:
+							CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_IMPROVEMENT, iPlayer, x, y, iImprovementType, False)	#Action, Player, X, Y, Data, bAdd
 
 			# Adjacent nonrevealed
 			else:
 				# Visibility Tab
-				if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASVisibilityTabID):
+				if self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASVisibilityTabID:
 					return 1
 			self.m_bSideMenuDirty = True
 			self.m_bASItemCostDirty = True
 			return 1
 
-		if self.iPlayerAddMode == "EraseAll":
-			self.m_pCurrentPlot.erase()
-			CyEngine().removeLandmark(self.m_pCurrentPlot)
-			for iPlayerX in xrange(gc.getMAX_PLAYERS()):
-				CyEngine().removeSign(self.m_pCurrentPlot, iPlayerX)
-		elif self.iPlayerAddMode == "Ownership":
-			self.m_pCurrentPlot.setOwner(-1)
-		elif self.iPlayerAddMode == "Units":
-			for i in xrange (self.m_pCurrentPlot.getNumUnits()):
-				pUnit = self.m_pCurrentPlot.getUnit(i)
+		if self.iPlayerAddMode == iModeEraseAll:
+			pPlot.erase()
+			CyEngine().removeLandmark(pPlot)
+			for iLoopPlayer in players.all():
+				CyEngine().removeSign(pPlot, iLoopPlayer)
+				
+		elif self.iPlayerAddMode == iModeOwnership:
+			pPlot.setOwner(-1)
+			
+		elif self.iPlayerAddMode == iModeUnits:
+			for i in xrange(pPlot.getNumUnits()):
+				pUnit = pPlot.getUnit(i)
 				if pUnit.getUnitType() == self.iSelection:
 					pUnit.kill(False, PlayerTypes.NO_PLAYER)
 					return 1
-			if self.m_pCurrentPlot.getNumUnits() > 0:
-				pUnit = self.m_pCurrentPlot.getUnit(0)
+			if pPlot.getNumUnits() > 0:
+				pUnit = pPlot.getUnit(0)
 				pUnit.kill(False, PlayerTypes.NO_PLAYER)
 				return 1
-		elif self.iPlayerAddMode == "Buildings":
-			if self.m_pCurrentPlot.isCity():
-				self.m_pCurrentPlot.getPlotCity().setNumRealBuilding(self.iSelection, 0)
-		elif self.iPlayerAddMode == "City":
-			if self.m_pCurrentPlot.isCity():
-				pCity = self.m_pCurrentPlot.getPlotCity()
+				
+		elif self.iPlayerAddMode == iModeBuildings:
+			if pPlot.isCity():
+				pPlot.getPlotCity().setNumRealBuilding(self.iSelection, 0)
+				
+		elif self.iPlayerAddMode == iModeCity:
+			if pPlot.isCity():
+				pCity = pPlot.getPlotCity()
 				pCity.kill()
-		elif self.iPlayerAddMode == "Improvements":
-			self.m_pCurrentPlot.setImprovementType(-1)
+				
+		elif self.iPlayerAddMode == iModeImprovements:
+			pPlot.setImprovementType(-1)
 			return 1
-		elif self.iPlayerAddMode == "Bonus":
-			self.m_pCurrentPlot.setBonusType(-1)
+			
+		elif self.iPlayerAddMode == iModeBonus:
+			pPlot.setBonusType(-1)
 			return 1
-		elif self.iPlayerAddMode == "Features":
-			self.m_pCurrentPlot.setFeatureType(FeatureTypes.NO_FEATURE, -1)
-		elif self.iPlayerAddMode == "Routes":
-			self.m_pCurrentPlot.setRouteType(-1)
-		elif self.iPlayerAddMode == "River":
+			
+		elif self.iPlayerAddMode == iModeFeatures:
+			pPlot.setFeatureType(FeatureTypes.NO_FEATURE, -1)
+			
+		elif self.iPlayerAddMode == iModeRoutes:
+			pPlot.setRouteType(-1)
+			
+		elif self.iPlayerAddMode == iModeRiver:
 			if self.m_pRiverStartPlot != -1:
 				self.m_pRiverStartPlot = -1
 				CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
 			else:
-				self.m_pCurrentPlot.setNOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
-				self.m_pCurrentPlot.setWOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
-		elif self.iPlayerAddMode == "AddLandMark":
-			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "Flip":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-				if tPlot in lAIPlotList:
-					lAIPlotList.remove(tPlot)
-				if tPlot in lHumanPlotList:
-					lHumanPlotList.remove(tPlot)
-				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
-				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
-				if not bMulti:
-					self.showFlipZone()
-		elif self.iPlayerAddMode == "Core":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
-				if not bMulti:
-					self.showStabilityOverlay()
-					dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "SettlerValue":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
-				if not bMulti:
-					self.showStabilityOverlay()
-		elif self.iPlayerAddMode == "WarMap":
-			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeWarValue(self.m_iCurrentPlayer, tPlot, 0)
-				if not bMulti:
-					self.showStabilityOverlay()
-		elif self.iPlayerAddMode == "ReligionMap":
-			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, 0)
-			if not bMulti:
-				self.showReligionOverlay()
-		elif self.iPlayerAddMode == "RegionMap":
-			self.m_pCurrentPlot.setRegionID(-1)
-			if not bMulti:
-				self.showRegionOverlay()
-		elif self.iPlayerAddMode == "AreaExporter1":
-			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				pPlot.setNOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
+				pPlot.setWOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
+				
+		elif self.iPlayerAddMode == iModeAddLandMark:
+			CyEngine().removeSign(pPlot, iPlayer)
+			
+		elif self.iPlayerAddMode == iModeFlip:
+			if not is_minor(iPlayer):
+				self.changeFlipZone(pPlot, False)
+					
+		elif self.iPlayerAddMode == iModeCore:
+			if not is_minor(iPlayer):
+				pPlot.setCore(iPlayer, False)
+					
+		elif self.iPlayerAddMode == iModeSettlerValue:
+			if not is_minor(iPlayer):
+				pPlot.setSettlerValue(iPlayer, 20)
+					
+		elif self.iPlayerAddMode == iModeWarMap:
+			if not is_minor(iPlayer):
+				pPlot.setWarValue(iPlayer, 0)
+					
+		elif self.iPlayerAddMode == iModeReligionMap:
+			if not pPlot.isWater():
+				pPlot.setSpreadFactor(self.m_iCurrentReligion, 0)
+				
+		elif self.iPlayerAddMode == iModeRegionMap:
+			pPlot.setRegionID(-1)
+				
+		elif self.iPlayerAddMode == iModeAreaExporter1:
+			tPlot = (x, y)
 			if tPlot in self.TempInfo:
 				self.TempInfo.remove(tPlot)
-				if not bMulti:
-					self.showAreaExportOverlay()
 		return 1
 
-	def placeRiverNW ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
+	def placeRiverNW ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY())
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY())
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY()+1)
-		if (not pRiverStepPlot.isNone()):
-			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
-		return
-
-	def placeRiverN ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
-
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY()+1)
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY()+1)
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
 		return
 
-	def placeRiverNE ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
+	def placeRiverN ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY()+1)
+		if not pRiverStepPlot.isNone():
+			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
+		return
+
+	def placeRiverNE ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
+
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY()+1)
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY()+1)
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_NORTH)
 		return
 
-	def placeRiverW ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
+	def placeRiverW ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY())
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY())
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
 		return
 
-	def placeRiverE ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
+	def placeRiverE ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
 		return
 
-	def placeRiverSW ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
+	def placeRiverSW ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_WEST)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY()-1)
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()-1, self.m_pRiverStartPlot.getY()-1)
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_SOUTH)
 		return
 
-	def placeRiverS ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_SOUTH)
+	def placeRiverS ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_SOUTH)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY()-1)
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY()-1)
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_SOUTH)
 		return
 
-	def placeRiverSE ( self, bUseCurrent ):
-		if (bUseCurrent):
-			pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY())
-			if (not pRiverStepPlot.isNone()):
-				pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
+	def placeRiverSE ( self, bUseCurrent = True ):
+		if bUseCurrent:
+			if not self.m_pRiverStartPlot.isNone():
+				self.m_pRiverStartPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
 
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY())
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setNOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_EAST)
-		pRiverStepPlot = CyMap().plot(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY()-1)
-		if (not pRiverStepPlot.isNone()):
+		pRiverStepPlot = plot_(self.m_pRiverStartPlot.getX()+1, self.m_pRiverStartPlot.getY()-1)
+		if not pRiverStepPlot.isNone():
 			pRiverStepPlot.setWOfRiver(True, CardinalDirectionTypes.CARDINALDIRECTION_SOUTH)
 		return
 
 	def toggleUnitEditCB(self):
-		self.iPlayerAddMode = "EditUnit"
+		self.iPlayerAddMode = iModeEditUnit
 		self.refreshSideMenu()
 		return
 
 	def normalPlayerTabModeCB(self):
 		self.m_iCurrentTeam = gc.getPlayer(self.m_iCurrentPlayer).getTeam()
-		self.iPlayerAddMode = "Units"
+		self.iPlayerAddMode = iModeUnits
 		self.iSelectClass = -2
 		self.iSelection = -1
 		self.refreshSideMenu()
@@ -873,30 +858,30 @@ class CvWorldBuilderScreen:
 		return
 
 	def normalMapTabModeCB(self):
-		self.iPlayerAddMode = "PlotData"
+		self.iPlayerAddMode = iModePlotData
 		self.refreshSideMenu()
 		return
 
 	def revealTabModeCB(self):
-		self.iPlayerAddMode = "RevealPlot"
+		self.iPlayerAddMode = iModeRevealPlot
 		self.refreshSideMenu()
 		self.refreshReveal()
 		return
 
 	def toggleCityEditCB(self):
-		self.iPlayerAddMode = "CityDataI"
+		self.iPlayerAddMode = iModeCityDataI
 		self.refreshSideMenu()
 		return
 
 	def landmarkModeCB(self):
-		self.iPlayerAddMode = "AddLandMark"
+		self.iPlayerAddMode = iModeAddLandMark
 		self.m_iCurrentPlayer = gc.getBARBARIAN_PLAYER()
 		self.refreshSideMenu()
 		return
 
 	def eraseCB(self):
 		self.m_pRiverStartPlot = -1
-		self.iPlayerAddMode = "EraseAll"
+		self.iPlayerAddMode = iModeEraseAll
 		self.refreshSideMenu()
 		return
 
@@ -955,17 +940,17 @@ class CvWorldBuilderScreen:
 			self.m_pCurrentPlot = pPlot
 			if self.m_pCurrentPlot.isNone(): continue
 			if self.bSensibility and len(lPlots) > 1:
-				if self.iPlayerAddMode == "Improvements":
+				if self.iPlayerAddMode == iModeImprovements:
 					if self.m_pCurrentPlot.canHaveImprovement(self.iSelection, -1, True):
 						self.placeObject()
-				elif self.iPlayerAddMode == "Bonus":
+				elif self.iPlayerAddMode == iModeBonus:
 					iOldBonus = self.m_pCurrentPlot.getBonusType(-1)
 					self.m_pCurrentPlot.setBonusType(-1)
 					if self.m_pCurrentPlot.canHaveBonus(self.iSelection, False):
 						self.placeObject()
 					else:
 						self.m_pCurrentPlot.setBonusType(iOldBonus)
-				elif self.iPlayerAddMode == "Features":
+				elif self.iPlayerAddMode == iModeFeatures:
 					iOldFeature = self.m_pCurrentPlot.getFeatureType()
 					iOldVariety = self.m_pCurrentPlot.getFeatureVariety()
 					self.m_pCurrentPlot.setFeatureType(-1, 0)
@@ -973,28 +958,17 @@ class CvWorldBuilderScreen:
 						self.placeObject()
 					else:
 						self.m_pCurrentPlot.setFeatureType(iOldFeature, iOldVariety)
-				elif self.iPlayerAddMode == "Routes":
+				elif self.iPlayerAddMode == iModeRoutes:
 					if not (self.m_pCurrentPlot.isImpassable() or self.m_pCurrentPlot.isWater()):
 						self.placeObject()
-				elif self.iPlayerAddMode == "Terrain":
+				elif self.iPlayerAddMode == iModeTerrain:
 					if self.m_pCurrentPlot.isWater() == gc.getTerrainInfo(self.iSelection).isWater():
 						self.placeObject()
 				else:
-					self.placeObject(True)
+					self.placeObject()
 			else:
 				self.placeObject()
-		if self.iPlayerAddMode == "Flip":
-			self.showFlipZone()
-		elif self.iPlayerAddMode in ["Core", "SettlerValue"]:
-			self.showStabilityOverlay()
-			dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "WarMap":
-			self.showWarOverlay()
-		elif self.iPlayerAddMode == "ReligionMap":
-			self.showReligionOverlay()
-		elif self.iPlayerAddMode == "RegionMap":
-			self.showRegionOverlay()
-		elif self.iPlayerAddMode == "AreaExporter1":
+		if self.iPlayerAddMode == iModeAreaExporter1:
 			self.showAreaExportOverlay()
 		self.m_pCurrentPlot = permCurrentPlot
 		return
@@ -1005,53 +979,35 @@ class CvWorldBuilderScreen:
 		for pPlot in lPlots:
 			self.m_pCurrentPlot = pPlot
 			if self.m_pCurrentPlot.isNone(): continue
-			self.removeObject(True)
-		if self.iPlayerAddMode == "Flip":
-			self.showFlipZone()
-		elif self.iPlayerAddMode in ["Core", "SettlerValue"]:
-			self.showStabilityOverlay()
-		elif self.iPlayerAddMode == "WarMap":
-			self.showWarOverlay()
-		elif self.iPlayerAddMode == "ReligionMap":
-			self.showReligionOverlay()
-		elif self.iPlayerAddMode == "RegionMap":
-			self.showRegionOverlay()
-		elif self.iPlayerAddMode == "AreaExporter1":
+			self.removeObject()
+		if self.iPlayerAddMode == iModeAreaExporter1:
 			self.showAreaExportOverlay()
 		self.m_pCurrentPlot = permCurrentPlot
 		return
 
 	def getMultiplePlotData(self):
-		lPlots = []
 		if self.bRegion:
 			iRegion = self.m_pCurrentPlot.getRegionID()
 			if iRegion == -1: return [self.m_pCurrentPlot]
 			return plots.region(iRegion)
 			
-		if self.iPlayerAddMode == "AreaExporter3":
-			(iX, iY) = self.TempInfo[-1]
-			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
-			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
-			return plots.start(tTR).end(tBL)
+		if self.iPlayerAddMode == iModeAreaExporter3:
+			return plots.start(self.TempInfo[-1]).end(self.m_pCurrentPlot)
+			
+		if self.iBrushWidth == -1 and self.iBrushHeight == -1:
+			return plots.all()
 
 		iMinX = self.m_pCurrentPlot.getX()
-		iMaxX = self.m_pCurrentPlot.getX() + self.iBrushWidth
+		iMaxX = self.m_pCurrentPlot.getX() + self.iBrushWidth - 1
 		iMinY = self.m_pCurrentPlot.getY() - self.iBrushHeight + 1
-		iMaxY = self.m_pCurrentPlot.getY() + 1
+		iMaxY = self.m_pCurrentPlot.getY()
 		if self.iBrushWidth == -1:
 			iMinX = 0
 			iMaxX = CyMap().getGridWidth()
 		if self.iBrushHeight == -1:
 			iMinY = 0
 			iMaxY = CyMap().getGridHeight()
-		if not CyMap().isWrapX():
-			iMaxX = min(iMaxX, CyMap().getGridWidth())
-		if not CyMap().isWrapY():
-			iMinY = max(iMinY, 0)
-		for x in range(iMinX, iMaxX):
-			for y in range(iMinY, iMaxY):
-				lPlots.append(gc.getMap().plot(x, y))
-		return lPlots
+		return plots.start((iMinX, iMinY)).end((iMaxX, iMaxY))
 
 	def setMultipleReveal(self, bReveal):
 		lPlots = self.getMultiplePlotData()
@@ -1062,27 +1018,27 @@ class CvWorldBuilderScreen:
 		return
 
 	def useLargeBrush(self):
-		if self.iPlayerAddMode in self.RevealMode:
+		if self.iPlayerAddMode in lRevealModes:
 			return True
-		if self.iPlayerAddMode == "EraseAll":
+		if self.iPlayerAddMode == iModeEraseAll:
 			return True
-		if self.iPlayerAddMode == "Improvements":
+		if self.iPlayerAddMode == iModeImprovements:
 			return True
-		if self.iPlayerAddMode == "Bonus":
+		if self.iPlayerAddMode == iModeBonus:
 			return True
-		if self.iPlayerAddMode == "PlotType":
+		if self.iPlayerAddMode == iModePlotType:
 			return True
-		if self.iPlayerAddMode == "Terrain":
+		if self.iPlayerAddMode == iModeTerrain:
 			return True
-		if self.iPlayerAddMode == "Routes":
+		if self.iPlayerAddMode == iModeRoutes:
 			return True
-		if self.iPlayerAddMode == "Features":
+		if self.iPlayerAddMode == iModeFeatures:
 			return True
-		if self.iPlayerAddMode in self.DoCMapMode:
+		if self.iPlayerAddMode in lDoCMapModes:
 			return True
-		if self.iPlayerAddMode in self.MoveMap:
+		if self.iPlayerAddMode in lMoveMapModes:
 			return True
-		if self.iPlayerAddMode in ["AreaExporter1", "AreaExporter3"]:
+		if self.iPlayerAddMode in [iModeAreaExporter1, iModeAreaExporter3]:
 			return True
 		return False
 
@@ -1290,33 +1246,32 @@ class CvWorldBuilderScreen:
 
 ## Panel Screen ##
 			nRows = 1
-			if self.iPlayerAddMode in self.PlayerMode + self.RevealMode + self.MapMode:
+			if self.iPlayerAddMode in lPlayerModes + lRevealModes + lMapModes:
 				nRows = 3
-			elif self.iPlayerAddMode in ["VictoryMap"] + self.AreaExport:
+			elif self.iPlayerAddMode in [iModeVictoryMap] + lAreaExportModes:
 				nRows = 3
-			elif self.iPlayerAddMode in self.DoCMapMode:
+			elif self.iPlayerAddMode in lDoCMapModes:
 				nRows = 5
-			elif self.iPlayerAddMode in self.MoveMap:
+			elif self.iPlayerAddMode in lMoveMapModes:
 				nRows = 2
 
 			iHeight = 16 + iAdjust * nRows
 			iXStart = screen.getXResolution() - iScreenWidth
 			screen.addPanel("WorldBuilderBackgroundBottomPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN )
 			iY = iScreenHeight
-			if self.iPlayerAddMode in self.PlayerMode:
+			if self.iPlayerAddMode in lPlayerModes:
 				iX = iXStart + 8
 				screen.addCheckBoxGFC("AddOwnershipButton", gc.getCivilizationInfo(gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType()).getButton(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 28, ButtonStyles.BUTTON_STYLE_LABEL)
 				iX += iAdjust
 				screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				for iPlayer in xrange(gc.getMAX_PLAYERS()):
-					if gc.getPlayer(iPlayer).isEverAlive():
-						sName = gc.getPlayer(iPlayer).getName()
-						if not gc.getPlayer(iPlayer).isAlive():
-							sName = "*" + sName
-						if gc.getPlayer(iPlayer).isTurnActive():
-							sName = "[" + sName + "]"
-						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
+				for iPlayer in players.all().where(lambda p: player(p).isEverAlive()):
+					sName = name(iPlayer)
+					if not player(iPlayer).isAlive():
+						sName = "*" + sName
+					if player(iPlayer).isTurnActive():
+						sName = "[" + sName + "]"
+					screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
 				iX = screen.getXResolution() - iScreenWidth + 8
 				iY += iAdjust
 				screen.setImageButton("EditPlayerData", gc.getLeaderHeadInfo(gc.getPlayer(self.m_iCurrentPlayer).getLeaderType()).getButton(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 1)
@@ -1353,7 +1308,7 @@ class CvWorldBuilderScreen:
 						i *= 2
 				sText = "<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
 
-			elif self.iPlayerAddMode in self.MapMode:
+			elif self.iPlayerAddMode in lMapModes:
 				iX = iXStart + 8
 				screen.addCheckBoxGFC("EditPlotData", ",-,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,4,16", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1027, -1, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -1366,15 +1321,13 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 				screen.addPullDownString("WorldBuilderPlayerChoice", CyTranslator().getText("TXT_KEY_WB_LANDMARKS", ()), gc.getBARBARIAN_PLAYER(), gc.getBARBARIAN_PLAYER(), self.m_iCurrentPlayer == gc.getBARBARIAN_PLAYER())
-				for iPlayer in xrange(gc.getMAX_PLAYERS()):
-					if iPlayer == gc.getBARBARIAN_PLAYER(): continue
-					if gc.getPlayer(iPlayer).isEverAlive():
-						sName = gc.getPlayer(iPlayer).getName()
-						if not gc.getPlayer(iPlayer).isAlive():
-							sName = "*" + sName
-						if gc.getPlayer(iPlayer).isTurnActive():
-							sName = "[" + sName + "]"
-						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
+				for iPlayer in players.all().without(players.barbarian()).where(lambda p: player(p).isEverAlive()):
+					sName = name(iPlayer)
+					if not player(iPlayer).isAlive():
+						sName = "*" + sName
+					if player(iPlayer).isTurnActive():
+						sName = "[" + sName + "]"
+					screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
 
 				iX = iXStart + 8
 				iY += iAdjust
@@ -1415,7 +1368,7 @@ class CvWorldBuilderScreen:
 					screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
 				screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
 
-			elif self.iPlayerAddMode in self.DoCMapMode:
+			elif self.iPlayerAddMode in lDoCMapModes:
 				iX = iXStart + 8
 				screen.addCheckBoxGFC("FlipButton", ",-,Art/Interface/Buttons/GodsOfOld_Atlas.dds,1,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
 					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 35, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -1443,57 +1396,55 @@ class CvWorldBuilderScreen:
 				iY += iAdjust
 				screen.setImageButton("ToolHelp", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 51)
 				iX += iAdjust
-				if self.iPlayerAddMode == "Flip":
+				if self.iPlayerAddMode == iModeFlip:
 					screen.addCheckBoxGFC("FlipAIButton", "Art/Interface/Buttons/TechTree/Artificial_Intelligence.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 45, ButtonStyles.BUTTON_STYLE_LABEL)
 					iX += iAdjust
-				elif self.iPlayerAddMode == "VictoryMap":
+				elif self.iPlayerAddMode == iModeVictoryMap:
 					screen.addCheckBoxGFC("VictoryRectangleButton", "Art/Interface/Buttons/TechTree/Engineering.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 47, ButtonStyles.BUTTON_STYLE_LABEL)
 					iX += iAdjust
-				elif self.iPlayerAddMode == "RegionMap":
+				elif self.iPlayerAddMode == iModeRegionMap:
 					screen.addCheckBoxGFC("AllRegionsButton", ",-,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,4,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 52, ButtonStyles.BUTTON_STYLE_LABEL)
 					iX += iAdjust
 					screen.addCheckBoxGFC("CheckRegionsButton", ",-,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,3,13", "",
 						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 53, ButtonStyles.BUTTON_STYLE_LABEL)
 					iX += iAdjust
-				elif self.iPlayerAddMode != "Core":
+				elif self.iPlayerAddMode != iModeCore:
 					screen.addDropDownBoxGFC("PresetValue", iX, iY, iAdjust * 2 - 3, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					if self.iPlayerAddMode == "ReligionMap":
-						for i in range(5):
+					if self.iPlayerAddMode == iModeReligionMap:
+						for i in range(RegionMap.iNumReligionMapTypes):
 							sText = CyTranslator().getText(str(lReligionMapTexts[i]), ())
 							screen.addPullDownString("PresetValue", sText, i, i, i == self.m_iReligionMapValue)
-					elif self.iPlayerAddMode == "WarMap":
+					elif self.iPlayerAddMode == iModeWarMap:
 						for i in range(0, iMaxWarValue+1, 2):
 							screen.addPullDownString("PresetValue", str(i), i, i, i == iWarValue)
-					if self.iPlayerAddMode == "SettlerValue":
+					if self.iPlayerAddMode == iModeSettlerValue:
 						for i in range(len(lPresetValues)):
 							screen.addPullDownString("PresetValue", str(lPresetValues[i]), i, lPresetValues[i], lPresetValues[i] == iSetValue)
 					iX += 2*iAdjust
 
 				screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				if self.iPlayerAddMode == "ReligionMap":
+				if self.iPlayerAddMode == iModeReligionMap:
 					for iReligion in range(iNumReligions):
 						sName = gc.getReligionInfo(iReligion).getDescription()
 						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iReligion, iReligion, self.m_iCurrentReligion == iReligion)
-				elif self.iPlayerAddMode == "RegionMap":
+				elif self.iPlayerAddMode == iModeRegionMap:
 					for iRegion in range(iNumRegions):
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sName = CyTranslator().getText(str(TextKey), ())
 						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iRegion, iRegion, self.m_iRegionMapID == iRegion)
 				else:
-					for iPlayer in xrange(gc.getMAX_PLAYERS()):
-						if iPlayer == gc.getBARBARIAN_PLAYER(): continue
-						if gc.getPlayer(iPlayer).isEverAlive():
-							sName = gc.getPlayer(iPlayer).getName()
-							if not gc.getPlayer(iPlayer).isAlive():
-								sName = "*" + sName
-							if gc.getPlayer(iPlayer).isTurnActive():
-								sName = "[" + sName + "]"
-							screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
+					for iPlayer in players.major().where(lambda p: player(p).isEverAlive()):
+						sName = name(iPlayer)
+						if not player(iPlayer).isAlive():
+							sName = "*" + sName
+						if player(iPlayer).isTurnActive():
+							sName = "[" + sName + "]"
+						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
 
-				if self.iPlayerAddMode != "VictoryMap":
+				if self.iPlayerAddMode != iModeVictoryMap:
 					iX = iXStart + 8
 					iY += iAdjust
 					screen.addCheckBoxGFC("RegionButton", ",-,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,1,6", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
@@ -1512,10 +1463,10 @@ class CvWorldBuilderScreen:
 
 					iX = iXStart + 8
 					iY += iAdjust
-					if self.iPlayerAddMode  == "ReligionMap":
+					if self.iPlayerAddMode  == iModeReligionMap:
 						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, screen.getXResolution() - 8 - iX, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 					else:
-						if self.iPlayerAddMode == "RegionMap":
+						if self.iPlayerAddMode == iModeRegionMap:
 							iSpan = 3
 						else:
 							iSpan = 2
@@ -1524,20 +1475,20 @@ class CvWorldBuilderScreen:
 						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 						iX += iSpan*iAdjust
 
-			elif self.iPlayerAddMode in self.MoveMap:
-				if self.iPlayerAddMode == "MoveMap":
+			elif self.iPlayerAddMode in lMoveMapModes:
+				if self.iPlayerAddMode == iModeMoveMap:
 					iX = iXStart + 8
 					iWidth = (screen.getXResolution() - 8 - iX - 3)/2
 					screen.addDropDownBoxGFC("BrushWidth", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					for i in range(1, 125):
+					for i in range(1, iWorldX+1):
 						screen.addPullDownString("BrushWidth", "W: " + str(i), i, i, self.iBrushWidth == i)
 					screen.addPullDownString("BrushWidth", "W: " + "--", -1, -1, self.iBrushWidth == -1)
 					iX += iWidth
 					screen.addDropDownBoxGFC("BrushHeight", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					for i in range(1, 69):
+					for i in range(1, iWorldY+1):
 						screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
 					screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
-				elif self.iPlayerAddMode == "MoveMap2":
+				elif self.iPlayerAddMode == iModeMoveMap2:
 					iX = iXStart + 8
 					iWidth = (screen.getXResolution() - 8 - iX - 3)
 					screen.setButtonGFC("CancelMoveMap", CyTranslator().getText("TXT_KEY_SCREEN_CANCEL", ()), "", iX, iY, iWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
@@ -1552,7 +1503,7 @@ class CvWorldBuilderScreen:
 					szText = "TXT_KEY_WB_MOVEMAP_RESET%d" % i
 					screen.addPullDownString("MoveMapReset", CyTranslator().getText(szText, ()), i, i, self.iMoveMapReset == i)
 
-			elif self.iPlayerAddMode in self.AreaExport:
+			elif self.iPlayerAddMode in lAreaExportModes:
 				iX = iXStart + 8
 				screen.addCheckBoxGFC("AreaExportWater", gc.getTerrainInfo(iOcean).getButton(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
 					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 49, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -1562,8 +1513,8 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				
 				screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				screen.addPullDownString("WorldBuilderPlayerChoice", CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_CLICK", ()), 0, 0, self.iPlayerAddMode == "AreaExporter1")
-				screen.addPullDownString("WorldBuilderPlayerChoice", CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_TLBR", ()), 1, 1, self.iPlayerAddMode == "AreaExporter2")
+				screen.addPullDownString("WorldBuilderPlayerChoice", CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_CLICK", ()), 0, 0, self.iPlayerAddMode == iModeAreaExporter1)
+				screen.addPullDownString("WorldBuilderPlayerChoice", CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_TLBR", ()), 1, 1, self.iPlayerAddMode == iModeAreaExporter2)
 				
 				iX = iXStart + 8
 				iY += iAdjust
@@ -1587,31 +1538,31 @@ class CvWorldBuilderScreen:
 				iY += iAdjust
 				screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, 3*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 				iX += 3*iAdjust
-				if self.iPlayerAddMode == "AreaExporter3":
+				if self.iPlayerAddMode == iModeAreaExporter3:
 					screen.setButtonGFC("CancelMoveMap", CyTranslator().getText("TXT_KEY_SCREEN_CANCEL", ()), "", iX, iY, 3*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 				else:
 					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, 3*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
-			elif self.iPlayerAddMode in self.RevealMode:
+			elif self.iPlayerAddMode in lRevealModes:
 				iX = iXStart + 8
 				screen.addDropDownBoxGFC("RevealMode", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_PLOT",()), 0, 0, self.iPlayerAddMode == self.RevealMode[0])
-				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_SUBMARINE",()), 1, 1, self.iPlayerAddMode == self.RevealMode[1])
-				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_STEALTH",()), 2, 2, self.iPlayerAddMode == self.RevealMode[2])
-				screen.addPullDownString("RevealMode", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_PLUNDER")).getDescription(), 3, 3, self.iPlayerAddMode == self.RevealMode[3])
+				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_PLOT",()), 0, 0, self.iPlayerAddMode == lRevealModes[0])
+				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_SUBMARINE",()), 1, 1, self.iPlayerAddMode == lRevealModes[1])
+				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_STEALTH",()), 2, 2, self.iPlayerAddMode == lRevealModes[2])
+				screen.addPullDownString("RevealMode", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_PLUNDER")).getDescription(), 3, 3, self.iPlayerAddMode == lRevealModes[3])
+				screen.addPullDownString("RevealMode", CyTranslator().getText("TXT_KEY_REVEAL_SATELLITE",()), 4, 4, self.iPlayerAddMode == lRevealModes[4])
 
 				iY += iAdjust
 				screen.setImageButton("WorldBuilderRevealAll", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_REVEAL_ALL_TILES").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_REVEAL_ALL_BUTTON, -1, -1)
 				iX += iAdjust
 				screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				for iPlayer in xrange(gc.getMAX_PLAYERS()):
-					if gc.getPlayer(iPlayer).isEverAlive():
-						sName = gc.getPlayer(iPlayer).getName()
-						if not gc.getPlayer(iPlayer).isAlive():
-							sName = "*" + sName
-						if gc.getPlayer(iPlayer).isTurnActive():
-							sName = "[" + sName + "]"
-						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
+				for iPlayer in players.all().where(lambda p: player(p).isEverAlive()):
+					sName = name(iPlayer)
+					if not player(iPlayer).isAlive():
+						sName = "*" + sName
+					if player(iPlayer).isTurnActive():
+						sName = "[" + sName + "]"
+					screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
 				iX = iXStart + 8
 				iY += iAdjust
 				screen.setImageButton("WorldBuilderUnrevealAll", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_UNREVEAL_ALL_TILES").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_UNREVEAL_ALL_BUTTON, -1, -1)
@@ -1627,7 +1578,7 @@ class CvWorldBuilderScreen:
 					screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
 				screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
 
-			elif self.iPlayerAddMode == "EraseAll":
+			elif self.iPlayerAddMode == iModeEraseAll:
 				iX = iXStart + 8
 				screen.setImageButton( "WorldBuilderEraseAll", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_UNREVEAL_ALL_TILES").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 29)
 				iX += iAdjust
@@ -1648,46 +1599,46 @@ class CvWorldBuilderScreen:
 
 	def setCurrentModeCheckbox(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
-		screen.setState("EditUnitData", self.iPlayerAddMode == "EditUnit")
-		screen.setState("EditPromotions", self.iPlayerAddMode == "Promotions")
-		screen.setState("WorldBuilderNormalPlayerModeButton", self.iPlayerAddMode in self.PlayerMode)
-		screen.setState("WorldBuilderNormalMapModeButton", self.iPlayerAddMode in self.MapMode)
-		screen.setState("WorldBuilderRevealTileModeButton", self.iPlayerAddMode in self.RevealMode)
-		screen.setState("WorldBuilderLandmarkButton", self.iPlayerAddMode == "AddLandMark")
-		screen.setState("WorldBuilderEraseButton", self.iPlayerAddMode == "EraseAll")
-		screen.setState("AddOwnershipButton", self.iPlayerAddMode == "Ownership")
-		screen.setState("AddUnitsButton", self.iPlayerAddMode == "Units")
-		screen.setState("AddBuildingsButton", self.iPlayerAddMode == "Buildings")
-		screen.setState("AddCityButton", self.iPlayerAddMode == "City")
-		screen.setState("EditStartingPlot", self.iPlayerAddMode == "StartingPlot")
-		screen.setState("EditPlotData", self.iPlayerAddMode == "PlotData")
-		screen.setState("EditEvents", self.iPlayerAddMode == "Events")
-		screen.setState("AddRiverButton", self.iPlayerAddMode == "River")
-		screen.setState("AddImprovementButton", self.iPlayerAddMode == "Improvements")
-		screen.setState("AddBonusButton", self.iPlayerAddMode == "Bonus")
-		screen.setState("AddPlotTypeButton", self.iPlayerAddMode == "PlotType")
-		screen.setState("AddTerrainButton", self.iPlayerAddMode == "Terrain")
-		screen.setState("AddRouteButton", self.iPlayerAddMode == "Routes")
-		screen.setState("AddFeatureButton", self.iPlayerAddMode == "Features")
-		screen.setState("EditCityDataI", self.iPlayerAddMode == "CityDataI")
-		screen.setState("EditCityDataII", self.iPlayerAddMode == "CityDataII")
-		screen.setState("EditCityBuildings", self.iPlayerAddMode == "CityBuildings")
+		screen.setState("EditUnitData", self.iPlayerAddMode == iModeEditUnit)
+		screen.setState("EditPromotions", self.iPlayerAddMode == iModePromotions)
+		screen.setState("WorldBuilderNormalPlayerModeButton", self.iPlayerAddMode in lPlayerModes)
+		screen.setState("WorldBuilderNormalMapModeButton", self.iPlayerAddMode in lMapModes)
+		screen.setState("WorldBuilderRevealTileModeButton", self.iPlayerAddMode in lRevealModes)
+		screen.setState("WorldBuilderLandmarkButton", self.iPlayerAddMode == iModeAddLandMark)
+		screen.setState("WorldBuilderEraseButton", self.iPlayerAddMode == iModeEraseAll)
+		screen.setState("AddOwnershipButton", self.iPlayerAddMode == iModeOwnership)
+		screen.setState("AddUnitsButton", self.iPlayerAddMode == iModeUnits)
+		screen.setState("AddBuildingsButton", self.iPlayerAddMode == iModeBuildings)
+		screen.setState("AddCityButton", self.iPlayerAddMode == iModeCity)
+		screen.setState("EditStartingPlot", self.iPlayerAddMode == iModeStartingPlot)
+		screen.setState("EditPlotData", self.iPlayerAddMode == iModePlotData)
+		screen.setState("EditEvents", self.iPlayerAddMode == iModeEvents)
+		screen.setState("AddRiverButton", self.iPlayerAddMode == iModeRiver)
+		screen.setState("AddImprovementButton", self.iPlayerAddMode == iModeImprovements)
+		screen.setState("AddBonusButton", self.iPlayerAddMode == iModeBonus)
+		screen.setState("AddPlotTypeButton", self.iPlayerAddMode == iModePlotType)
+		screen.setState("AddTerrainButton", self.iPlayerAddMode == iModeTerrain)
+		screen.setState("AddRouteButton", self.iPlayerAddMode == iModeRoutes)
+		screen.setState("AddFeatureButton", self.iPlayerAddMode == iModeFeatures)
+		screen.setState("EditCityDataI", self.iPlayerAddMode == iModeCityDataI)
+		screen.setState("EditCityDataII", self.iPlayerAddMode == iModeCityDataII)
+		screen.setState("EditCityBuildings", self.iPlayerAddMode == iModeCityBuildings)
 		screen.setState("PythonEffectButton", bPython)
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
 		screen.setState("RegionButton", self.bRegion)
-		screen.setState("DoCMapsScreen", self.iPlayerAddMode in self.DoCMapMode)
-		screen.setState("FlipButton", self.iPlayerAddMode == "Flip")
-		screen.setState("CoreButton", self.iPlayerAddMode == "Core")
-		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
-		screen.setState("WarMapButton", self.iPlayerAddMode == "WarMap")
-		screen.setState("ReligionMapButton", self.iPlayerAddMode == "ReligionMap")
-		screen.setState("RegionMapButton", self.iPlayerAddMode == "RegionMap")
-		screen.setState("VictoryMapButton", self.iPlayerAddMode == "VictoryMap")
-		screen.setState("MoveMapScreen", self.iPlayerAddMode in self.MoveMap)
+		screen.setState("DoCMapsScreen", self.iPlayerAddMode in lDoCMapModes)
+		screen.setState("FlipButton", self.iPlayerAddMode == iModeFlip)
+		screen.setState("CoreButton", self.iPlayerAddMode == iModeCore)
+		screen.setState("SettlerValueButton", self.iPlayerAddMode == iModeSettlerValue)
+		screen.setState("WarMapButton", self.iPlayerAddMode == iModeWarMap)
+		screen.setState("ReligionMapButton", self.iPlayerAddMode == iModeReligionMap)
+		screen.setState("RegionMapButton", self.iPlayerAddMode == iModeRegionMap)
+		screen.setState("VictoryMapButton", self.iPlayerAddMode == iModeVictoryMap)
+		screen.setState("MoveMapScreen", self.iPlayerAddMode in lMoveMapModes)
 		screen.setState("FlipAIButton", self.bFlipAI)
 		screen.setState("VictoryRectangleButton", self.bVictoryRectangle)
-		screen.setState("AreaExporterScreen", self.iPlayerAddMode in self.AreaExport)
+		screen.setState("AreaExporterScreen", self.iPlayerAddMode in lAreaExportModes)
 		screen.setState("AreaExportWater", self.bWaterException)
 		screen.setState("AreaExportPeak", self.bPeaksException)
 		screen.setState("AllRegionsButton", self.bAllRegions)
@@ -1696,7 +1647,7 @@ class CvWorldBuilderScreen:
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
 		iWidth = 200
 		iCivilization = gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType()
-		if self.iPlayerAddMode == "Units":
+		if self.iPlayerAddMode == iModeUnits:
 			iY = 25
 			screen.addDropDownBoxGFC("WBSelectClass", 0, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_CITY_ALL",()), -2, -2, -2 == self.iSelectClass)
@@ -1728,7 +1679,7 @@ class CvWorldBuilderScreen:
 				if len(lItems) > 0:
 					self.iSelection = lItems[0][1]
 
-		elif self.iPlayerAddMode == "Buildings":
+		elif self.iPlayerAddMode == iModeBuildings:
 			iY = 25
 			sWonder = CyTranslator().getText("TXT_KEY_CONCEPT_WONDERS", ())
 			screen.addDropDownBoxGFC("WBSelectClass", 0, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -1769,12 +1720,9 @@ class CvWorldBuilderScreen:
 				if len(lItems) > 0:
 					self.iSelection = lItems[0][1]
 
-		elif self.iPlayerAddMode == "Features":
+		elif self.iPlayerAddMode == iModeFeatures:
 			iY = 55
-			lItems = []
-			for i in xrange(gc.getNumFeatureInfos()):
-				ItemInfo = gc.getFeatureInfo(i)
-				lItems.append([ItemInfo.getDescription(), i])
+			lItems = [[gc.getFeatureInfo(i).getDescription(), i] for i in xrange(gc.getNumFeatureInfos())]
 			lItems.sort()
 
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
@@ -1786,13 +1734,9 @@ class CvWorldBuilderScreen:
 					self.iSelection = item[1]
 				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getFeatureInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 7874, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 
-		elif self.iPlayerAddMode == "Improvements":
+		elif self.iPlayerAddMode == iModeImprovements:
 			iY = 25
-			lItems = []
-			for i in xrange(gc.getNumImprovementInfos()):
-				ItemInfo = gc.getImprovementInfo(i)
-				if ItemInfo.isGraphicalOnly(): continue
-				lItems.append([ItemInfo.getDescription(), i])
+			lItems = [[gc.getImprovementInfo(i).getDescription(), i] for i in xrange(gc.getNumImprovementInfos()) if not gc.getImprovementInfo(i).isGraphicalOnly()]
 			lItems.sort()
 
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
@@ -1804,7 +1748,7 @@ class CvWorldBuilderScreen:
 					self.iSelection = item[1]
 				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getImprovementInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 7877, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 
-		elif self.iPlayerAddMode == "Bonus":
+		elif self.iPlayerAddMode == iModeBonus:
 			iY = 25
 			screen.addDropDownBoxGFC("WBSelectClass", 0, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_CITY_ALL",()), -1, -1, -1 == self.iSelectClass)
@@ -1818,11 +1762,7 @@ class CvWorldBuilderScreen:
 				screen.addPullDownString("WBSelectClass", sText, iBonusClass, iBonusClass, iBonusClass == self.iSelectClass)
 				iBonusClass += 1
 
-			lItems = []
-			for i in xrange(gc.getNumBonusInfos()):
-				ItemInfo = gc.getBonusInfo(i)
-				if ItemInfo.getBonusClassType() != self.iSelectClass and self.iSelectClass > -1: continue
-				lItems.append([ItemInfo.getDescription(), i])
+			lItems = [[gc.getBonusInfo(i).getDescription(), i] for i in xrange(gc.getNumBonusInfos()) if not (gc.getBonusInfo(i).getBonusClassType() != self.iSelectClass and self.iSelectClass > -1)]
 			lItems.sort()
 
 			iY += 30
@@ -1835,12 +1775,9 @@ class CvWorldBuilderScreen:
 					self.iSelection = item[1]
 				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getBonusInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 7878, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 
-		elif self.iPlayerAddMode == "Routes":
+		elif self.iPlayerAddMode == iModeRoutes:
 			iY = 25
-			lItems = []
-			for i in xrange(gc.getNumRouteInfos()):
-				ItemInfo = gc.getRouteInfo(i)
-				lItems.append([ItemInfo.getDescription(), i])
+			lItems = [[gc.getRouteInfo(i).getDescription(), i] for i in xrange(gc.getNumRouteInfos())]
 			lItems.sort()
 
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
@@ -1852,13 +1789,9 @@ class CvWorldBuilderScreen:
 					self.iSelection = item[1]
 				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getRouteInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 6788, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 
-		elif self.iPlayerAddMode == "Terrain":
+		elif self.iPlayerAddMode == iModeTerrain:
 			iY = 25
-			lItems = []
-			for i in xrange(gc.getNumTerrainInfos()):
-				ItemInfo = gc.getTerrainInfo(i)
-				if ItemInfo.isGraphicalOnly(): continue
-				lItems.append([ItemInfo.getDescription(), i])
+			lItems = [[gc.getTerrainInfo(i).getDescription(), i] for i in xrange(gc.getNumTerrainInfos()) if not gc.getTerrainInfo(i).isGraphicalOnly()]
 			lItems.sort()
 
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
@@ -1870,7 +1803,7 @@ class CvWorldBuilderScreen:
 					self.iSelection = item[1]
 				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getTerrainInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 7875, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 
-		elif self.iPlayerAddMode == "PlotType":
+		elif self.iPlayerAddMode == iModePlotType:
 			iY = 25
 			iHeight = 4 * 24 + 2
 			screen.addTableControlGFC("WBSelectItem", 1, 0, 25, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
@@ -1896,15 +1829,15 @@ class CvWorldBuilderScreen:
 		screen.addTableControlGFC("WBCurrentItem", 1, 0, 0, iWidth, 25, False, True, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
 		screen.setTableColumnHeader("WBCurrentItem", 0, "", iWidth)
 		screen.appendTableRow("WBCurrentItem")
-		if self.iPlayerAddMode == "Units":
+		if self.iPlayerAddMode == iModeUnits:
 			ItemInfo = gc.getUnitInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 8202, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
-		elif self.iPlayerAddMode == "Buildings":
+		elif self.iPlayerAddMode == iModeBuildings:
 			ItemInfo = gc.getBuildingInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_HELP_BUILDING, self.iSelection, 1, CvUtil.FONT_LEFT_JUSTIFY)
-		elif self.iPlayerAddMode == "Features":
+		elif self.iPlayerAddMode == iModeFeatures:
 			ItemInfo = gc.getFeatureInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1915,19 +1848,19 @@ class CvWorldBuilderScreen:
 			else:
 				self.iSelectClass = 0
 				screen.hide("WBSelectClass")
-		elif self.iPlayerAddMode == "Improvements":
+		elif self.iPlayerAddMode == iModeImprovements:
 			ItemInfo = gc.getImprovementInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7877, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
-		elif self.iPlayerAddMode == "Bonus":
+		elif self.iPlayerAddMode == iModeBonus:
 			ItemInfo = gc.getBonusInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7878, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
-		elif self.iPlayerAddMode == "Routes":
+		elif self.iPlayerAddMode == iModeRoutes:
 			ItemInfo = gc.getRouteInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 6788, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
-		elif self.iPlayerAddMode == "Terrain" or self.iPlayerAddMode == "PlotType":
+		elif self.iPlayerAddMode in [iModeTerrain, iModePlotType]:
 			ItemInfo = gc.getTerrainInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7875, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1944,8 +1877,14 @@ class CvWorldBuilderScreen:
 		return
 
 	def RevealCurrentPlot(self, bReveal, pPlot):
-		if self.iPlayerAddMode == "Blockade": return
-		iType = gc.getInfoTypeForString(self.iPlayerAddMode)
+		if self.iPlayerAddMode == iModeBlockade: return
+		
+		dRevealTypes = {iModeRevealPlot : "RevealPlot",
+						iModeInvisibleSubmarine :  "INVISIBLE_SUBMARINE",
+						iModeInvisibleStealth : "INVISIBLE_STEALTH",
+						iModeInvisibleSatellite : "INVISIBLE_SATELLITE"}
+		
+		iType = gc.getInfoTypeForString(dRevealTypes[self.iPlayerAddMode])
 		if iType == -1:
 			if bReveal or (not pPlot.isVisible(self.m_iCurrentTeam, False)):
 				pPlot.setRevealed(self.m_iCurrentTeam, bReveal, False, -1);
@@ -1957,16 +1896,19 @@ class CvWorldBuilderScreen:
 		return
 
 	def showRevealed(self, pPlot):
-		if self.iPlayerAddMode == "RevealPlot":
+		if self.iPlayerAddMode == iModeRevealPlot:
 			if not pPlot.isRevealed(self.m_iCurrentTeam, False):
 				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, "COLOR_BLACK", 1.0)
-		elif self.iPlayerAddMode == "INVISIBLE_SUBMARINE":
-			if pPlot.getInvisibleVisibilityCount(self.m_iCurrentTeam, gc.getInfoTypeForString(self.iPlayerAddMode)) == 0:
+		elif self.iPlayerAddMode == iModeInvisibleSubmarine:
+			if pPlot.getInvisibleVisibilityCount(self.m_iCurrentTeam, gc.getInfoTypeForString("INVISIBLE_SUBMARINE")) == 0:
 				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, "COLOR_RED", 1.0)
-		elif self.iPlayerAddMode == "INVISIBLE_STEALTH":
-			if pPlot.getInvisibleVisibilityCount(self.m_iCurrentTeam, gc.getInfoTypeForString(self.iPlayerAddMode)) == 0:
+		elif self.iPlayerAddMode == iModeInvisibleStealth:
+			if pPlot.getInvisibleVisibilityCount(self.m_iCurrentTeam, gc.getInfoTypeForString("INVISIBLE_STEALTH")) == 0:
 				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, "COLOR_BLUE", 1.0)
-		elif self.iPlayerAddMode == "Blockade":
+		elif self.iPlayerAddMode == iModeInvisibleSatellite:
+			if pPlot.getInvisibleVisibilityCount(self.m_iCurrentTeam, gc.getInfoTypeForString("INVISIBLE_SATELLITE")) == 0:
+				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, "COLOR_PLAYER_DARK_GREEN", 1.0)
+		elif self.iPlayerAddMode == iModeBlockade:
 			if pPlot.isTradeNetwork(self.m_iCurrentTeam): return
 			if gc.getTeam(self.m_iCurrentTeam).isAtWar(pPlot.getTeam()): return
 			if pPlot.isTradeNetworkImpassable(self.m_iCurrentTeam): return
@@ -1976,44 +1918,83 @@ class CvWorldBuilderScreen:
 		return
 ## Platy Reveal Mode End ##
 
+	def updateOverlay(self):
+		if self.iPlayerAddMode == iModeFlip:
+			self.showFlipZone()
+		elif self.iPlayerAddMode in [iModeCore, iModeSettlerValue]:
+			self.showStabilityOverlay()
+			dc.checkName(self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == iModeWarMap:
+			self.showWarOverlay()
+		elif self.iPlayerAddMode == iModeReligionMap:
+			self.showReligionOverlay()
+		elif self.iPlayerAddMode == iModeRegionMap:
+			self.showRegionOverlay()
+
 	def showFlipZone(self):
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
-			self.setCurrentFlip()
-
+		
 			tSpawn = location(plots.capital(self.m_iCurrentPlayer))
 			x, y = tSpawn
 			CyEngine().fillAreaBorderPlotAlt(x, y, 1002, "COLOR_CYAN", 0.7)
 
-			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-			for x, y in lHumanPlotList:
-				if (x, y) in lAIPlotList: continue
+			lHumanPlotList, lAIPlotList = self.getFlipZone(self.m_iCurrentPlayer)
+
+			for plot in lHumanPlotList:
+				x, y = location(plot)
 				if (x, y) == tSpawn: continue
-				else:
-					CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_MAGENTA", 0.7)
+				CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_MAGENTA", 0.7)
+					
+			for plot in lAIPlotList:
+				x, y = location(plot)
+				CyEngine().fillAreaBorderPlotAlt(x, y, 1001, "COLOR_RED", 0.7)
 
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
 				x, y = location(city)
-				if (x, y) not in lHumanPlotList:
+				if (x, y) not in lHumanPlotList and (x, y) not in lAIPlotList:
 					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
-			for tPlot in lAIPlotList:
-				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
 
-	def setCurrentFlip(self):
-		if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
-			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
-		else:
-			# Human flipzone
-			humanBirthArea = plots.birth(self.m_iCurrentPlayer)
-
-			if self.m_iCurrentPlayer in dExtendedBirthArea:
-				aiBirthArea = plots.birth(self.m_iCurrentPlayer, True).without(dBirthAreaExceptions[self.m_iCurrentPlayer]).without(humanBirthArea)
+	def changeFlipZone(self, plot, bAdd):
+		lHumanPlotList, lAIPlotList	= self.getFlipZone(self.m_iCurrentPlayer)
+		
+		tPlot = location(plot)
+		if bAdd:
+			if self.bFlipAI:
+				if tPlot in lHumanPlotList:
+					lHumanPlotList = lHumanPlotList.including(tPlot)
+				if tPlot not in lAIPlotList:
+					lAIPlotList = lAIPlotList.including(tPlot)
 			else:
-				lAIPlotList = []
-			self.lCurrentFlipZone = [humanBirthArea, aiBirthArea]
+				if tPlot not in lHumanPlotList:
+					lHumanPlotList = lHumanPlotList.including(tPlot)
+				if tPlot in lAIPlotList:
+					lAIPlotList = lAIPlotList.including(tPlot)
+		else:
+			if tPlot in lHumanPlotList:
+				lHumanPlotList = lHumanPlotList.without(tPlot)
+			if tPlot in lAIPlotList:
+				lAIPlotList = lAIPlotList.without(tPlot)
+			
+		self.dFlipZoneEdits[self.m_iCurrentPlayer] = (lHumanPlotList, lAIPlotList)
+
+
+	def getFlipZone(self, iPlayer):
+		if iPlayer in self.dFlipZoneEdits.keys():
+			return self.dFlipZoneEdits[iPlayer]
+
+		# Human flipzone
+		humanBirthArea = plots.birth(self.m_iCurrentPlayer)
+		
+		if self.m_iCurrentPlayer in dExtendedBirthArea:
+			aiBirthArea = plots.birth(self.m_iCurrentPlayer, True).without(dBirthAreaExceptions[self.m_iCurrentPlayer]).without(humanBirthArea)
+		else:
+			aiBirthArea = Plots([])
+			
+		return (humanBirthArea, aiBirthArea)
 
 	def showStabilityOverlay(self):
 		removeStabilityOverlay()
@@ -2023,7 +2004,7 @@ class CvWorldBuilderScreen:
 	def showWarOverlay(self):
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
-			for plot in plots.all():
+			for plot in plots.all().land():
 				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
 				if iPlotType > 0:
 					szColor = lWarMapColors[iPlotType-1]
@@ -2031,8 +2012,7 @@ class CvWorldBuilderScreen:
 
 	def showReligionOverlay(self):
 		removeStabilityOverlay()
-		for i in range(CyMap().numPlots()):
-			plot = CyMap().plotByIndex(i)
+		for plot in plots.all().land():
 			iValue = plot.getSpreadFactor(self.m_iCurrentReligion)
 			if iValue > 0:
 				szColor = lReligionMapColors[iValue-1]
@@ -2040,9 +2020,8 @@ class CvWorldBuilderScreen:
 
 	def showRegionOverlay(self):
 		removeStabilityOverlay()
-		for plot in plots.all():
+		for plot in plots.all().land().where(lambda p: p.getRegionID() != -1):
 			iRegion = plot.getRegionID()
-			if iRegion == -1: continue
 			if iRegion == self.m_iRegionMapID:
 				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
 			elif self.bAllRegions:
@@ -2054,17 +2033,15 @@ class CvWorldBuilderScreen:
 		dNeighbourRegions = dict([(i, []) for i in range(iNumRegions)])
 		dRegionColors = dict([(i, "") for i in range(iNumRegions)])
 		
-		for plot in plots.all():
+		for plot in plots.all().land().where(lambda p: p.getRegionID() != -1):
 			iRegion = plot.getRegionID()
-			if iRegion == -1: continue
-			for surroundingPlot in plots.surrounding(plot):
+			for surroundingPlot in plots.surrounding(plot).where(lambda p: p.getRegionID() not in [-1, iRegion]):
 				iNeighbourRegion = surroundingPlot.getRegionID()
-				if iNeighbourRegion != iRegion and iNeighbourRegion != -1 and iNeighbourRegion not in dNeighbourRegions[iRegion]:
+				if iNeighbourRegion not in dNeighbourRegions[iRegion]:
 					dNeighbourRegions[iRegion].append(iNeighbourRegion)
 
 		for iRegion in range(iNumRegions):
 			for color in lColors:
-				bColorUsed = False
 				for iNeighbourRegion in dNeighbourRegions[iRegion]:
 					if dRegionColors[iNeighbourRegion] == color:
 						break
@@ -2077,7 +2054,7 @@ class CvWorldBuilderScreen:
 		removeStabilityOverlay()
 		lRegions = []
 		for plot in plots.all():
-			iVictoryRegion = CvScreensInterface.getUHVTileInfo((plot.getX(), plot.getY(), self.m_iCurrentPlayer))
+			iVictoryRegion = CvScreensInterface.getUHVTileInfo((plot.getX(), plot.getY(), self.m_iCurrentPlayer)) # TODO: change player to civ
 			if iVictoryRegion != -1:
 				if iVictoryRegion not in lRegions:
 					lRegions.append(iVictoryRegion)
@@ -2090,7 +2067,7 @@ class CvWorldBuilderScreen:
 		removeStabilityOverlay()
 		for (x, y) in self.TempInfo:
 			plot = gc.getMap().plot(x, y)
-			if self.iPlayerAddMode == "AreaExporter3" and (x, y) == self.TempInfo[-1]:
+			if self.iPlayerAddMode == iModeAreaExporter3 and (x, y) == self.TempInfo[-1]:
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1002, "COLOR_RED", 0.7)
 			elif plot.isPeak() and self.bPeaksException:
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1001, "COLOR_LIGHT_GREY", 0.7)
@@ -2100,23 +2077,23 @@ class CvWorldBuilderScreen:
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_MAGENTA", 0.7)
 
 	def showToolHelp(self):
-		if self.iPlayerAddMode == "Flip":
+		if self.iPlayerAddMode == iModeFlip:
 			sText = CyTranslator().getText("TXT_KEY_WB_FLIPMAP_HELP", ())
-		elif self.iPlayerAddMode == "Core":
+		elif self.iPlayerAddMode == iModeCore:
 			sText = CyTranslator().getText("TXT_KEY_WB_COREMAP_HELP", ())
-		elif self.iPlayerAddMode == "SettlerValue":
+		elif self.iPlayerAddMode == iModeSettlerValue:
 			sText = CyTranslator().getText("TXT_KEY_WB_SETTLERMAP_HELP", ())
-		elif self.iPlayerAddMode == "WarMap":
+		elif self.iPlayerAddMode == iModeWarMap:
 			sText = CyTranslator().getText("TXT_KEY_WB_WARMAP_HELP", ())
-		elif self.iPlayerAddMode == "ReligionMap":
+		elif self.iPlayerAddMode == iModeReligionMap:
 			sText = CyTranslator().getText("TXT_KEY_WB_RELIGIONMAP_HELP", ())
-		elif self.iPlayerAddMode == "RegionMap":
+		elif self.iPlayerAddMode == iModeRegionMap:
 			sText = CyTranslator().getText("TXT_KEY_WB_REGIONMAP_HELP", ())
-		elif self.iPlayerAddMode == "VictoryMap":
+		elif self.iPlayerAddMode == iModeVictoryMap:
 			sText = CyTranslator().getText("TXT_KEY_WB_VICTORYMAP_HELP", ())
-		elif self.iPlayerAddMode in self.MoveMap:
+		elif self.iPlayerAddMode in lMoveMapModes:
 			sText = CyTranslator().getText("TXT_KEY_WB_MOVEMAP_HELP", ())
-		elif self.iPlayerAddMode in self.AreaExport:
+		elif self.iPlayerAddMode in lAreaExportModes:
 			sText = CyTranslator().getText("TXT_KEY_WB_AREAEXPORT_HELP", ())
 		else:
 			return
@@ -2242,10 +2219,8 @@ class CvWorldBuilderScreen:
 		CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
 		CyEngine().addColoredPlotAlt(self.m_pRiverStartPlot.getX(), self.m_pRiverStartPlot.getY(), PlotStyles.PLOT_STYLE_RIVER_SOUTH, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS, "COLOR_GREEN", 1)
 
-		for x in xrange(self.m_pRiverStartPlot.getX() - 1, self.m_pRiverStartPlot.getX() + 2):
-			for y in xrange(self.m_pRiverStartPlot.getY() - 1, self.m_pRiverStartPlot.getY() + 2):
-				if x == self.m_pRiverStartPlot.getX() and y == self.m_pRiverStartPlot.getY(): continue
-				CyEngine().addColoredPlotAlt(x, y, PlotStyles.PLOT_STYLE_BOX_FILL, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS, "COLOR_WHITE", .2)
+		for plot in plots.surrounding(self.m_pRiverStartPlot).without(self.m_pRiverStartPlot):
+			CyEngine().addColoredPlotAlt(plot.getX(), plot.getY(), PlotStyles.PLOT_STYLE_BOX_FILL, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS, "COLOR_WHITE", .2)
 		return
 
 	def leftMouseDown (self, argsList):
@@ -2253,42 +2228,40 @@ class CvWorldBuilderScreen:
 		pPlayer = gc.getPlayer(self.m_iCurrentPlayer)
 		if CyInterface().isInAdvancedStart():
 			self.placeObject()
-		elif bAlt or self.iPlayerAddMode == "EditUnit":
+		elif bAlt or self.iPlayerAddMode == iModeEditUnit:
 			if self.m_pCurrentPlot.getNumUnits():
 				WBUnitScreen.WBUnitScreen(self).interfaceScreen(self.m_pCurrentPlot.getUnit(0))
-		elif self.iPlayerAddMode == "Promotions":
+		elif self.iPlayerAddMode == iModePromotions:
 			if self.m_pCurrentPlot.getNumUnits():
 				WBPromotionScreen.WBPromotionScreen().interfaceScreen(self.m_pCurrentPlot.getUnit(0))
-		elif bCtrl or self.iPlayerAddMode == "CityDataI":
+		elif bCtrl or self.iPlayerAddMode == iModeCityDataI:
 			if self.m_pCurrentPlot.isCity():
 				WBCityEditScreen.WBCityEditScreen(self).interfaceScreen(self.m_pCurrentPlot.getPlotCity())
-		elif self.iPlayerAddMode == "CityDataII":
+		elif self.iPlayerAddMode == iModeCityDataII:
 			if self.m_pCurrentPlot.isCity():
 				WBCityDataScreen.WBCityDataScreen().interfaceScreen(self.m_pCurrentPlot.getPlotCity())
-		elif self.iPlayerAddMode == "CityBuildings":
+		elif self.iPlayerAddMode == iModeCityBuildings:
 			if self.m_pCurrentPlot.isCity():
 				WBBuildingScreen.WBBuildingScreen().interfaceScreen(self.m_pCurrentPlot.getPlotCity())
-		elif self.iPlayerAddMode in self.RevealMode:
+		elif self.iPlayerAddMode in lRevealModes:
 			if not self.m_pCurrentPlot.isNone():
 				self.setMultipleReveal(True)
-		elif self.iPlayerAddMode == "PlotData":
+		elif self.iPlayerAddMode == iModePlotData:
 			WBPlotScreen.WBPlotScreen().interfaceScreen(self.m_pCurrentPlot)
-		elif self.iPlayerAddMode == "Events":
+		elif self.iPlayerAddMode == iModeEvents:
 			WBEventScreen.WBEventScreen().interfaceScreen(self.m_pCurrentPlot)
-		elif self.iPlayerAddMode == "StartingPlot":
+		elif self.iPlayerAddMode == iModeStartingPlot:
 			pPlayer.setStartingPlot(self.m_pCurrentPlot, True)
 			self.refreshStartingPlots()
-		elif self.iPlayerAddMode == "TargetPlot":
-			self.iTargetPlotX = self.m_pCurrentPlot.getX()
-			self.iTargetPlotY = self.m_pCurrentPlot.getY()
-			self.iPlayerAddMode = "EditUnit"
+		elif self.iPlayerAddMode == iModeTargetPlot:
+			self.iPlayerAddMode = iModeEditUnit
 			if len(self.TempInfo) >= 2:
 				pPlayerX = gc.getPlayer(self.TempInfo[0])
 				if pPlayerX:
 					pUnitX = pPlayerX.getUnit(self.TempInfo[1])
 					if pUnitX:
 						WBUnitScreen.WBUnitScreen(self).interfaceScreen(pUnitX)
-		elif self.iPlayerAddMode == "MoveUnits":
+		elif self.iPlayerAddMode == iModeMoveUnits:
 			if len(self.lMoveUnit) > 0:
 				for item in self.lMoveUnit:
 					loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
@@ -2296,14 +2269,13 @@ class CvWorldBuilderScreen:
 					move(loopUnit, self.m_pCurrentPlot)
 				pUnitX = gc.getPlayer(self.lMoveUnit[0][0]).getUnit(self.lMoveUnit[0][1])
 				self.lMoveUnit = []
-				self.iPlayerAddMode = "EditUnit"
+				self.iPlayerAddMode = iModeEditUnit
 				WBUnitScreen.WBUnitScreen(self).interfaceScreen(pUnitX)
-		elif self.iPlayerAddMode == "MoveCity" or self.iPlayerAddMode == "MoveCityPlus":
+		elif self.iPlayerAddMode in [iModeMoveCity, iModeMoveCityPlus]:
 			if self.m_pCurrentPlot.isCity(): return
 			pOldCity = pPlayer.getCity(self.iMoveCity)
 			if pOldCity:
-				x = self.m_pCurrentPlot.getX()
-				y = self.m_pCurrentPlot.getY()
+				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
 				sName = cnm.getFoundName(self.m_iCurrentPlayer, location(self.m_pCurrentPlot))
 				if not sName:
@@ -2314,27 +2286,26 @@ class CvWorldBuilderScreen:
 				pOldPlot = pOldCity.plot()
 				pOldCity.kill()
 				pOldPlot.setImprovementType(-1)
-				if self.iPlayerAddMode == "MoveCityPlus":
+				if self.iPlayerAddMode == iModeMoveCityPlus:
 					for item in self.lMoveUnit:
 						loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 						if loopUnit.isNone(): continue
 						move(loopUnit, self.m_pCurrentPlot)
 					self.lMoveUnit = []
-			self.iPlayerAddMode = "CityDataI"
+			self.iPlayerAddMode = iModeCityDataI
 			self.iMoveCity = -1
 			dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "DuplicateCity" or self.iPlayerAddMode == "DuplicateCityPlus":
+		elif self.iPlayerAddMode in [iModeDuplicateCity, iModeDuplicateCityPlus]:
 			if self.m_pCurrentPlot.isCity(): return
 			pOldCity = pPlayer.getCity(self.iMoveCity)
 			if pOldCity:
-				x = self.m_pCurrentPlot.getX()
-				y = self.m_pCurrentPlot.getY()
+				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
 				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
 				if sName:
 					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)
-				if self.iPlayerAddMode == "DuplicateCityPlus":
+				if self.iPlayerAddMode == iModeDuplicateCityPlus:
 					for item in self.lMoveUnit:
 						loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 						if loopUnit.isNone(): continue
@@ -2352,9 +2323,8 @@ class CvWorldBuilderScreen:
 						pNewUnit.setImmobileTimer(loopUnit.getImmobileTimer())
 						pNewUnit.setScriptData(loopUnit.getScriptData())
 			dc.checkName(self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "MoveMap":
-			x = self.m_pCurrentPlot.getX()
-			y = self.m_pCurrentPlot.getY()
+		elif self.iPlayerAddMode == iModeMoveMap:
+			x, y = location(self.m_pCurrentPlot)
 			lList = []
 			for j in range(self.iBrushHeight):
 				if y-j < 0:
@@ -2365,31 +2335,25 @@ class CvWorldBuilderScreen:
 					CyEngine().fillAreaBorderPlotAlt(x+i, y-j, 1000, "COLOR_RED", 0.7)
 				lList.append(lList2)
 			self.TempInfo = lList
-			self.iPlayerAddMode = "MoveMap2"
+			self.iPlayerAddMode = iModeMoveMap2
 			self.refreshSideMenu()
-		elif self.iPlayerAddMode == "MoveMap2":
+		elif self.iPlayerAddMode == iModeMoveMap2:
 			removeStabilityOverlay()
-			x = self.m_pCurrentPlot.getX()
-			y = self.m_pCurrentPlot.getY()
-			self.moveMapReset()
-			self.placePlotItems((x, y))
-			self.iPlayerAddMode = "MoveMap"
+			lMoveMapModesReset()
+			self.placePlotItems(location(self.m_pCurrentPlot))
+			self.iPlayerAddMode = iModeMoveMap
 			self.refreshSideMenu()
 			self.TempInfo = []
-		elif self.iPlayerAddMode == "AreaExporter2":
-			x = self.m_pCurrentPlot.getX()
-			y = self.m_pCurrentPlot.getY()
+		elif self.iPlayerAddMode == iModeAreaExporter2:
+			x, y = location(self.m_pCurrentPlot)
 			CyEngine().fillAreaBorderPlotAlt(x, y, 1002, "COLOR_RED", 0.7)
 			self.TempInfo.append((x, y))
-			self.iPlayerAddMode = "AreaExporter3"
+			self.iPlayerAddMode = iModeAreaExporter3
 			self.refreshSideMenu()
-		elif self.iPlayerAddMode == "AreaExporter3":
-			self.iPlayerAddMode = "AreaExporter2"
-			(iX, iY) = self.TempInfo[-1]
-			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
-			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
-			del self.TempInfo[-1]
-			for plot in plots.start(tTR).end(tBL):
+		elif self.iPlayerAddMode == iModeAreaExporter3:
+			self.iPlayerAddMode = iModeAreaExporter2
+			tPlot = self.TempInfo.pop()
+			for plot in plots.start(tPlot).end(self.m_pCurrentPlot):
 				if location(plot) not in self.TempInfo:
 					self.TempInfo.append(location(plot))
 			self.showAreaExportOverlay()
@@ -2398,6 +2362,7 @@ class CvWorldBuilderScreen:
 			self.placeMultipleObjects()
 		else:
 			self.placeObject()
+		self.updateOverlay()
 		return 1
 
 	def copyCityStats(self, pOldCity, pNewCity, bMove):
@@ -2476,16 +2441,13 @@ class CvWorldBuilderScreen:
 	def rightMouseDown (self, argsList):
 		if CyInterface().isInAdvancedStart():
 			self.removeObject()
-		elif self.iPlayerAddMode in self.RevealMode:
+		elif self.iPlayerAddMode in lRevealModes:
 			if not self.m_pCurrentPlot.isNone():
 				self.setMultipleReveal(False)
-		elif self.iPlayerAddMode == "AreaExporter3":
-			self.iPlayerAddMode = "AreaExporter2"
-			(iX, iY) = self.TempInfo[-1]
-			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
-			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
-			del self.TempInfo[-1]
-			for plot in plots.start(tTR).end(tBL):
+		elif self.iPlayerAddMode == iModeAreaExporter3:
+			self.iPlayerAddMode = iModeAreaExporter2
+			tPlot = self.TempInfo.pop()
+			for plot in plots.start(tPlot).end(self.m_pCurrentPlot):
 				if location(plot) in self.TempInfo:
 					self.TempInfo.remove(location(plot))
 			self.showAreaExportOverlay()
@@ -2494,6 +2456,7 @@ class CvWorldBuilderScreen:
 			self.removeMultipleObjects()
 		else:
 			self.removeObject()
+		self.updateOverlay()
 		return 1
 
 ## Add "," ##
@@ -2565,35 +2528,29 @@ class CvWorldBuilderScreen:
 
 		elif inputClass.getFunctionName() == "WorldBuilderPlayerChoice":
 			bDeleteOverlay = False
-			if self.iPlayerAddMode == "ReligionMap":
+			if self.iPlayerAddMode == iModeReligionMap:
 				self.m_iCurrentReligion = screen.getPullDownData("WorldBuilderPlayerChoice", screen.getSelectedPullDownID("WorldBuilderPlayerChoice"))
 				self.showReligionOverlay()
-			elif self.iPlayerAddMode == "RegionMap":
+			elif self.iPlayerAddMode == iModeRegionMap:
 				self.m_iRegionMapID = screen.getPullDownData("WorldBuilderPlayerChoice", screen.getSelectedPullDownID("WorldBuilderPlayerChoice"))
 				self.showRegionOverlay()
-			elif self.iPlayerAddMode in self.AreaExport:
+			elif self.iPlayerAddMode in lAreaExportModes:
 				iID = screen.getPullDownData("WorldBuilderPlayerChoice", screen.getSelectedPullDownID("WorldBuilderPlayerChoice"))
 				if iID == 0:
-					self.iPlayerAddMode = "AreaExporter1"
+					self.iPlayerAddMode = iModeAreaExporter1
 				else:
-					self.iPlayerAddMode = "AreaExporter2"
+					self.iPlayerAddMode = iModeAreaExporter2
 				self.refreshSideMenu()
 			else:
 				self.m_iCurrentPlayer = screen.getPullDownData("WorldBuilderPlayerChoice", screen.getSelectedPullDownID("WorldBuilderPlayerChoice"))
 				self.m_iCurrentTeam = gc.getPlayer(self.m_iCurrentPlayer).getTeam()
 				self.refreshSideMenu()
-				if self.iPlayerAddMode in self.RevealMode:
+				if self.iPlayerAddMode in lRevealModes:
 					self.refreshReveal()
-				elif self.iPlayerAddMode == "StartingPlot":
+				elif self.iPlayerAddMode == iModeStartingPlot:
 					self.refreshStartingPlots()
-				elif self.iPlayerAddMode == "Flip":
-					self.showFlipZone()
-				elif self.iPlayerAddMode in ["Core", "SettlerValue"]:
-					self.showStabilityOverlay()
-				elif self.iPlayerAddMode == "WarMap":
-					self.showWarOverlay()
-				elif self.iPlayerAddMode == "VictoryMap":
-					self.showVictoryOverlay()
+				elif self.iPlayerAddMode in lDoCMapModes:
+					self.updateOverlay()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
 			if bRemove:
@@ -2602,237 +2559,216 @@ class CvWorldBuilderScreen:
 				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif inputClass.getFunctionName() == "AddOwnershipButton":
-			self.iPlayerAddMode = "Ownership"
+			self.iPlayerAddMode = iModeOwnership
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddUnitsButton":
-			self.iPlayerAddMode = "Units"
+			self.iPlayerAddMode = iModeUnits
 			self.iSelectClass = -2
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddBuildingsButton":
-			self.iPlayerAddMode = "Buildings"
+			self.iPlayerAddMode = iModeBuildings
 			self.iSelectClass = 0
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditStartingPlot":
-			self.iPlayerAddMode = "StartingPlot"
+			self.iPlayerAddMode = iModeStartingPlot
 			self.refreshSideMenu()
 			self.refreshStartingPlots()
 
 		elif inputClass.getFunctionName() == "EditPromotions":
-			self.iPlayerAddMode = "Promotions"
+			self.iPlayerAddMode = iModePromotions
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddCityButton":
-			self.iPlayerAddMode = "City"
+			self.iPlayerAddMode = iModeCity
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditCityDataII":
-			self.iPlayerAddMode = "CityDataII"
+			self.iPlayerAddMode = iModeCityDataII
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditCityBuildings":
-			self.iPlayerAddMode = "CityBuildings"
+			self.iPlayerAddMode = iModeCityBuildings
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditPlotData":
-			self.iPlayerAddMode = "PlotData"
+			self.iPlayerAddMode = iModePlotData
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditEvents":
-			self.iPlayerAddMode = "Events"
+			self.iPlayerAddMode = iModeEvents
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddImprovementButton":
-			self.iPlayerAddMode = "Improvements"
+			self.iPlayerAddMode = iModeImprovements
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddBonusButton":
-			self.iPlayerAddMode = "Bonus"
+			self.iPlayerAddMode = iModeBonus
 			self.iSelectClass = -1
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddPlotTypeButton":
-			self.iPlayerAddMode = "PlotType"
+			self.iPlayerAddMode = iModePlotType
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddTerrainButton":
-			self.iPlayerAddMode = "Terrain"
+			self.iPlayerAddMode = iModeTerrain
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddRouteButton":
-			self.iPlayerAddMode = "Routes"
+			self.iPlayerAddMode = iModeRoutes
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddFeatureButton":
-			self.iPlayerAddMode = "Features"
+			self.iPlayerAddMode = iModeFeatures
 			self.iSelectClass = 0
 			self.iSelection = -1
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AddRiverButton":
-			self.iPlayerAddMode = "River"
+			self.iPlayerAddMode = iModeRiver
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "DoCMapsScreen":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "Flip"
+			self.iPlayerAddMode = iModeFlip
 			self.refreshSideMenu()
 			self.showFlipZone()
 
 		elif inputClass.getFunctionName() == "FlipButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "Flip"
+			self.iPlayerAddMode = iModeFlip
 			self.refreshSideMenu()
 			self.showFlipZone()
 
 		elif inputClass.getFunctionName() == "CoreButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "Core"
+			self.iPlayerAddMode = iModeCore
 			self.refreshSideMenu()
 			self.showStabilityOverlay()
 
 		elif inputClass.getFunctionName() == "SettlerValueButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "SettlerValue"
+			self.iPlayerAddMode = iModeSettlerValue
 			self.refreshSideMenu()
 			self.showStabilityOverlay()
 
 		elif inputClass.getFunctionName() == "WarMapButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "WarMap"
+			self.iPlayerAddMode = iModeWarMap
 			self.refreshSideMenu()
 			self.showWarOverlay()
 
 		elif inputClass.getFunctionName() == "ReligionMapButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "ReligionMap"
+			self.iPlayerAddMode = iModeReligionMap
 			self.refreshSideMenu()
 			self.showReligionOverlay()
 
 		elif inputClass.getFunctionName() == "RegionMapButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "RegionMap"
+			self.iPlayerAddMode = iModeRegionMap
 			self.refreshSideMenu()
 			self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "VictoryMapButton":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "VictoryMap"
+			self.iPlayerAddMode = iModeVictoryMap
 			self.refreshSideMenu()
 			self.showVictoryOverlay()
 
 		elif inputClass.getFunctionName() == "MoveMapScreen":
-			self.iPlayerAddMode = "MoveMap"
+			self.iPlayerAddMode = iModeMoveMap
 			self.bRegion = False
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "AreaExporterScreen":
 			bDeleteOverlay = False
-			self.iPlayerAddMode = "AreaExporter1"
+			self.iPlayerAddMode = iModeAreaExporter1
 			self.refreshSideMenu()
 			self.showAreaExportOverlay()
 
 		elif inputClass.getFunctionName() == "ClearChanges":
 			bDeleteOverlay = False
-			if self.iPlayerAddMode == "Flip":
+			if self.iPlayerAddMode == iModeFlip:
 				if CvEventInterface.getEventManager().bAlt:
 					self.dFlipZoneEdits = {}
 				elif self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
 					del self.dFlipZoneEdits[self.m_iCurrentPlayer]
-				self.showFlipZone()
-			elif self.iPlayerAddMode == "Core":
+			elif self.iPlayerAddMode == iModeCore:
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetCore(iPlayer)
+						Areas.updateCore(iPlayer)
 				else:
-					met.resetCore(self.m_iCurrentPlayer)
-				self.showStabilityOverlay()
-			elif self.iPlayerAddMode == "SettlerValue":
+					Areas.updateCore(self.m_iCurrentPlayer)
+			elif self.iPlayerAddMode == iModeSettlerValue:
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetSettler(iPlayer)
+						SettlerMaps.updateMap(iPlayer)
 				else:
-					met.resetSettler(self.m_iCurrentPlayer)
-				self.showStabilityOverlay()
-			elif self.iPlayerAddMode == "WarMap":
+					SettlerMaps.updateMap(self.m_iCurrentPlayer)
+			elif self.iPlayerAddMode == iModeWarMap:
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetWarMap(iPlayer)
+						WarMaps.updateMap(iPlayer)
 				else:
-					met.resetWarMap(self.m_iCurrentPlayer)
-				self.showWarOverlay()
-			elif self.iPlayerAddMode == "ReligionMap":
+					WarMaps.updateMap(self.m_iCurrentPlayer)
+			elif self.iPlayerAddMode == iModeReligionMap:
 				if CvEventInterface.getEventManager().bAlt:
 					for iReligion in range(iNumReligions):
-						met.resetReligionMap(iReligion)
+						RegionMap.updateReligionSpread(iReligion)
 				else:
-					met.resetReligionMap(self.m_iCurrentReligion)
-				self.showReligionOverlay()
-			elif self.iPlayerAddMode == "RegionMap":
-				met.resetRegionMap()
-				self.showRegionOverlay()
-			elif self.iPlayerAddMode in self.AreaExport:
+					RegionMap.updateReligionSpread(self.m_iCurrentReligion)
+			elif self.iPlayerAddMode == iModeRegionMap:
+				RegionMap.updateRegionMap()
+			elif self.iPlayerAddMode in lAreaExportModes:
 				self.TempInfo = []
-				if self.iPlayerAddMode == "AreaExporter3":
-					self.iPlayerAddMode = "AreaExporter2"
+				if self.iPlayerAddMode == iModeAreaExporter3:
+					self.iPlayerAddMode = iModeAreaExporter2
 				self.showAreaExportOverlay()
+			self.updateOverlay()
 
 		elif inputClass.getFunctionName() == "Export":
 			bDeleteOverlay = False
-			if self.iPlayerAddMode == "Flip":
-				if CvEventInterface.getEventManager().bAlt:
-					met.exportAllFlip(self.dFlipZoneEdits)
-				else:
-					met.exportFlip(self.m_iCurrentPlayer, self.dFlipZoneEdits)
-			elif self.iPlayerAddMode == "Core":
-				if CvEventInterface.getEventManager().bAlt:
-					met.exportAllCores()
-				else:
-					met.exportCore(self.m_iCurrentPlayer, CyInterface().shiftKey())
+			if self.iPlayerAddMode == iModeFlip:
+				met.exportFlip(self.m_iCurrentPlayer, self.getFlipZone(self.m_iCurrentPlayer))
+			elif self.iPlayerAddMode == iModeCore:
+				met.exportCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
-			elif self.iPlayerAddMode == "SettlerValue":
-				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in players.major():
-						met.exportSettlerMap(iPlayer, True)
-					show("Settlermaps of all Civs exported")
-				else:
-					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+			elif self.iPlayerAddMode == iModeSettlerValue:
+				met.exportSettlerMap(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
-			elif self.iPlayerAddMode == "WarMap":
-				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in players.major():
-						met.exportWarMap(iPlayer, True)
-					show("Warmaps of all Civs exported")
-				else:
-					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+			elif self.iPlayerAddMode == iModeWarMap:
+				met.exportWarMap(self.m_iCurrentPlayer)
 				self.showWarOverlay()
-			elif self.iPlayerAddMode == "RegionMap":
-				met.exportRegionMap(CyInterface().shiftKey())
+			elif self.iPlayerAddMode == iModeRegionMap:
+				met.exportRegionMap()
 				self.showRegionOverlay()
-			elif self.iPlayerAddMode in self.AreaExport:
+			elif self.iPlayerAddMode in lAreaExportModes:
 				met.exportAreaExport(self.TempInfo, self.bWaterException, self.bPeaksException)
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			bDeleteOverlay = False
-			if self.iPlayerAddMode == "ReligionMap":
+			if self.iPlayerAddMode == iModeReligionMap:
 				self.m_iReligionMapValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
-			elif self.iPlayerAddMode == "WarMap":
+			elif self.iPlayerAddMode == iModeWarMap:
 				iWarValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
 			else:
 				iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
 
 		elif inputClass.getFunctionName() == "WBSelectClass":
 			self.iSelectClass = screen.getPullDownData("WBSelectClass", screen.getSelectedPullDownID("WBSelectClass"))
-			if self.iPlayerAddMode != "Features":
+			if self.iPlayerAddMode != iModeFeatures:
 				self.iSelection = -1
 				self.refreshSideMenu()
 
@@ -2841,7 +2777,7 @@ class CvWorldBuilderScreen:
 			self.refreshSelection()
 
 		elif inputClass.getFunctionName() == "RevealMode":
-			self.iPlayerAddMode = self.RevealMode[screen.getPullDownData("RevealMode", screen.getSelectedPullDownID("RevealMode"))]
+			self.iPlayerAddMode = lRevealModes[screen.getPullDownData("RevealMode", screen.getSelectedPullDownID("RevealMode"))]
 			self.refreshReveal()
 
 		elif inputClass.getFunctionName() == "BrushWidth":
@@ -2871,10 +2807,10 @@ class CvWorldBuilderScreen:
 			self.setCurrentModeCheckbox()
 
 		elif inputClass.getFunctionName() == "CancelMoveMap":
-			if self.iPlayerAddMode == "MoveMap2":
-				self.iPlayerAddMode = "MoveMap"
-			elif self.iPlayerAddMode == "AreaExporter3":
-				self.iPlayerAddMode = "AreaExporter2"
+			if self.iPlayerAddMode == iModeMoveMap2:
+				self.iPlayerAddMode = iModeMoveMap
+			elif self.iPlayerAddMode == iModeAreaExporter3:
+				self.iPlayerAddMode = iModeAreaExporter2
 				del self.TempInfo[-1]
 				bDeleteOverlay = False
 				self.showAreaExportOverlay()

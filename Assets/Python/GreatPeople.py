@@ -3831,6 +3831,7 @@ iNetherlands : {
 		"Adolphe Sax", # 19th
 		"Cornelis Lely", # 19th
 		"Hendrik Petrus Berlage", # 19th
+		"Anthony Fokker", # 19th
 		iGlobal,
 		"Anton Philips", # 20th
 		"Gerrit Rietveld", # 20th

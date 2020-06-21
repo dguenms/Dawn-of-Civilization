@@ -9,9 +9,8 @@ import WBPlayerUnits
 import WBInfoScreen
 import DynamicCivs as dc
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-iChange = 1
-bRemove = False
 iSelectedYield = 0
 
 class WBTeamScreen:

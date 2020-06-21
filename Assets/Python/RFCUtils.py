@@ -961,13 +961,13 @@ def evacuate(iPlayer, tPlot):
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
 def toggleStabilityOverlay(iPlayer = -1):
+	global bStabilityOverlay
 	bReturn = bStabilityOverlay
 	removeStabilityOverlay()
 
 	if bReturn:
 		return
 
-	bWB = (iPlayer != -1)
 	if iPlayer == -1:
 		iPlayer = active()
 
@@ -978,22 +978,25 @@ def toggleStabilityOverlay(iPlayer = -1):
 
 	engine = CyEngine()
 
+	bDebug = game.isDebugMode()
+
+	otherplayers = players.major().alive().without(iPlayer).where(lambda p: canEverRespawn(p))
+
 	# apply the highlight
-	for plot in plots.all():
-		if game.isDebugMode() or plot.isRevealed(iTeam, False):
-			if plot.isWater(): continue
+	for plot in plots.all().land():
+		if bDebug or plot.isRevealed(iTeam, False):
 			if plot.isCore(iPlayer):
 				iPlotType = iCore
 			else:
 				iSettlerValue = plot.getSettlerValue(iPlayer)
-				if bWB and iSettlerValue == 3:
+				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
-					if isPossibleForeignCore(iPlayer, plot):
+					if otherplayers.any(lambda p: plot.isCore(p)):
 						iPlotType = iContest
 					else:
 						iPlotType = iHistorical
-				elif isPossibleForeignCore(iPlayer, plot):
+				elif otherplayers.any(lambda p: plot.isCore(p)):
 					iPlotType = iForeignCore
 				else:
 					iPlotType = -1
@@ -1003,6 +1006,7 @@ def toggleStabilityOverlay(iPlayer = -1):
 				
 # used: CvScreensInterface, RFCUtils, CvPlatyBuilderScreen
 def removeStabilityOverlay():
+	global bStabilityOverlay
 	engine = CyEngine()
 	# clear the highlight
 	for i in range(50):
@@ -1226,11 +1230,6 @@ def getDefaultGreatPerson(iGreatPersonType):
 	if iGreatPersonType in dFemaleGreatPeople.values():
 		return dict((v, k) for k, v in dFemaleGreatPeople.items())[iGreatPersonType]
 	return iGreatPersonType
-
-# used: RFCUtils
-def isPossibleForeignCore(iPlayer, tPlot):
-	plot = plot(tPlot)
-	return players.major().alive().without(iPlayer).any(lambda p: canEverRespawn(p) and plot.isCore(p))
 	
 # used: RiseAndFall
 def canSwitch(iPlayer, iBirthTurn):
