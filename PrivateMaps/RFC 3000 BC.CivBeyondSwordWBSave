@@ -7976,6 +7976,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_COCHINEAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -11100,6 +11101,7 @@ EndPlot
 BeginPlot
 	x=23,y=43
 	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_COCHINEAL
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
