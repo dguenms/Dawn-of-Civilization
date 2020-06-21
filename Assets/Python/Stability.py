@@ -3,11 +3,13 @@
 from CvPythonExtensions import *
 from StoredData import data # edead
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 import DynamicCivs as dc
 from operator import itemgetter
 import math
-import Areas
+import Victory as vic
+import Periods as periods
+from Events import handler, events
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -15,10 +17,10 @@ PyPlayer = PyHelpers.PyPlayer
 import BugPath
 from datetime import date
 
+from Core import *
+
 # globals
 gc = CyGlobalContext()
-
-localText = CyTranslator()
 
 tCrisisLevels = (
 "TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL",
@@ -46,52 +48,70 @@ tEraCorePopulationModifiers = (
 	400, # future
 )
 
-def checkTurn(iGameTurn):
-	for iPlayer in range(iNumPlayers):
+
+@handler("BeginGameTurn")
+def checkScheduledCollapse():
+	for iPlayer in players.major():
 		if data.players[iPlayer].iTurnsToCollapse == 0:
 			data.players[iPlayer].iTurnsToCollapse = -1
 			completeCollapse(iPlayer)
 		elif data.players[iPlayer].iTurnsToCollapse > 0:
 			data.players[iPlayer].iTurnsToCollapse -= 1
-	
+
+
+@handler("BeginGameTurn")
+def crisisCountdown():
+	for iPlayer in players.major():
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
-			
+
+
+@handler("BeginGameTurn")
+def updateTrendScores():
 	# calculate economic and happiness stability
-	if iGameTurn % utils.getTurns(3) == 0:
-		for iPlayer in range(iNumPlayers):
+	if every(3):
+		for iPlayer in players.major():
 			updateEconomyTrend(iPlayer)
 			updateHappinessTrend(iPlayer)
 			
 		# calculate war stability
-		for iPlayer in range(iNumPlayers):
-			for iEnemy in range(iNumPlayers):
-				if gc.getTeam(iPlayer).isAtWar(iEnemy):
-					updateWarTrend(iPlayer, iEnemy)
-				
-		for iPlayer in range(iNumPlayers):
-			for iEnemy in range(iNumPlayers):
-				if gc.getTeam(iPlayer).isAtWar(iEnemy):
-					data.players[iPlayer].lLastWarSuccess[iEnemy] = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
+		for iPlayer, iEnemy in players.major().permutations():
+			if team(iPlayer).isAtWar(iEnemy):
+				updateWarTrend(iPlayer, iEnemy)
+		
+		for iPlayer, iEnemy in players.major().permutations():
+				if team(iPlayer).isAtWar(iEnemy):
+					data.players[iPlayer].lLastWarSuccess[iEnemy] = team(iPlayer).AI_getWarSuccess(iEnemy)
 				else:
 					data.players[iPlayer].lLastWarSuccess[iEnemy] = 0
-			
+
+
+@handler("BeginGameTurn")
+def decayPenalties():
 	# decay penalties from razing cities and losing to barbarians
-	if iGameTurn % utils.getTurns(5) == 0:
+	if every(5):
 		if data.iHumanRazePenalty < 0:
 			data.iHumanRazePenalty += 2
-		for iPlayer in range(iNumPlayers):
+		for iPlayer in players.major():
 			if data.players[iPlayer].iBarbarianLosses > 0:
 				data.players[iPlayer].iBarbarianLosses -= 1
-			
-	if iGameTurn % utils.getTurns(12) == 0:
-		for iPlayer in range(iNumPlayers):
+
+
+@handler("BeginGameTurn")
+def checkLostCitiesCollapses():
+	if every(12):
+		for iPlayer in players.major():
 			checkLostCitiesCollapse(iPlayer)
-			
-	if iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
-		data.iHumanStability = calculateStability(utils.getHumanID())
-		
-def endTurn(iPlayer):
+	
+
+@handler("BeginGameTurn")
+def updateHumanStability(iGameTurn):
+	if iGameTurn >= year(dBirth[active()]):
+		data.iHumanStability = calculateStability(active())
+
+
+@handler("EndPlayerTurn")
+def checkSecedingCities(iGameTurn, iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
 	
 	if lSecedingCities:
@@ -100,9 +120,9 @@ def endTurn(iPlayer):
 		
 def triggerCollapse(iPlayer):
 	# help overexpanding AI: collapse to core, unless fall date
-	if utils.getHumanID() != iPlayer:
-		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
-			if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
+	if not player(iPlayer).isHuman():
+		if gc.getGame().getGameTurnYear() < dFall[iPlayer]:
+			if cities.core(iPlayer).owner(iPlayer) < cities.owner(iPlayer):
 				collapseToCore(iPlayer)
 				return
 
@@ -110,93 +130,110 @@ def triggerCollapse(iPlayer):
 
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
-	
-	epoch = "BC"
-	if gc.getGame().getGameTurnYear() > 0: epoch = "AD"
-	filePath = BugPath.join(BugPath.getRootDir(), 'Saves', 'single', 'collapses', '%s Collapse %d %s (turn %d) %s.CivBeyondSwordSave' % (gc.getPlayer(iPlayer).getCivilizationAdjective(0), abs(gc.getGame().getGameTurnYear()), epoch, gc.getGame().getGameTurn(), date.today()))
-	gc.getGame().saveGame(filePath.encode('ascii', 'xmlcharrefreplace'))
 
-def onCityAcquired(city, iOwner, iPlayer):
+@handler("cityAcquired")
+def onCityAcquired(iOwner, iPlayer, city, bConquest):
+	if not bConquest:
+		return
+
 	checkStability(iOwner)
 	checkLostCoreCollapse(iOwner)
 	
-	if iPlayer == iBarbarian:
+	if player(iPlayer).isBarbarian():
 		checkBarbarianCollapse(iOwner)
-		
-def onCityRazed(iPlayer, city):
+
+@handler("cityRazed")
+def onCityRazed(city, iPlayer):
 	iOwner = city.getPreviousOwner()
 	
-	if iOwner == iBarbarian: return
+	if player(iOwner).isBarbarian(): return
 
-	if utils.getHumanID() == iPlayer and iPlayer != iMongolia:
+	if player(iPlayer).isHuman() and civ(iPlayer) != iMongols:
 		iRazePenalty = -10
 		if city.getHighestPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getHighestPopulation()
 			
-		if iOwner >= iNumPlayers: iRazePenalty /= 2
+		if is_minor(iOwner): iRazePenalty /= 2
 			
 		data.iHumanRazePenalty += iRazePenalty
 		checkStability(iPlayer)
+
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
+	if year() == scenarioStartTurn():
+		return
 	
-def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
-	
-def onVassalState(iMaster, iVassal):
-	checkStability(iMaster, True)
-	
-	balanceStability(iVassal, iStabilityShaky)
-	
+
+@handler("vassalState")
+def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
+	if bVassal and bCapitulated:
+		checkStability(iMaster, True)	
+		balanceStability(iVassal, iStabilityShaky)
+
+@handler("changeWar")
 def onChangeWar(bWar, iTeam, iOtherTeam):
-	if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
+	if not is_minor(iTeam) and not is_minor(iOtherTeam):
 		checkStability(iTeam, not bWar)
 		checkStability(iOtherTeam, not bWar)
 		
 		if bWar:
 			startWar(iTeam, iOtherTeam)
 			startWar(iOtherTeam, iTeam)
-	
+
+@handler("revolution")
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
-	
+
+@handler("playerChangeStateReligion")
 def onPlayerChangeStateReligion(iPlayer):
 	checkStability(iPlayer)
-	
-def onPalaceMoved(iPlayer):
-	checkStability(iPlayer)
-	
-def onWonderBuilt(iPlayer, iBuildingType):
-	checkStability(iPlayer, True)
-	
+
+@handler("palaceMoved")
+def onPalaceMoved(city):
+	checkStability(city.getOwner())
+
+@handler("wonderBuilt")
+def onWonderBuilt(city, iWonder):
+	checkStability(city.getOwner(), True)
+
+@handler("goldenAge")	
 def onGoldenAge(iPlayer):
 	checkStability(iPlayer, True)
-	
-def onGreatPersonBorn(iPlayer):
+
+@handler("greatPersonBorn")
+def onGreatPersonBorn(unit, iPlayer):
 	checkStability(iPlayer, True)
+
+@handler("combatResult")
+def onCombatResult(winningUnit, losingUnit):
+	if player(winningUnit).isBarbarian() and not is_minor(losingUnit):
+		data.players[losingUnit.getOwner()].iBarbarianLosses += 1
+
+@handler("releasedPlayer")
+def onReleasedPlayer(iPlayer, iReleasedPlayer):
+	releasedCities = cities.owner(iPlayer).core(iReleasedPlayer).where(lambda city: not city.plot().isCore(iPlayer) and not city.isCapital())
+
+	doResurrection(iReleasedPlayer, releasedCities, False)
 	
-def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
-	if iWinningPlayer == iBarbarian and iLosingPlayer < iNumPlayers:
-		data.players[iLosingPlayer].iBarbarianLosses += 1
+	player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
 	
 def onCivSpawn(iPlayer):
-	for iOlderNeighbor in lOlderNeighbours[iPlayer]:
-		if gc.getPlayer(iOlderNeighbor).isAlive() and getStabilityLevel(iOlderNeighbor) > iStabilityShaky:
+	for iOlderNeighbor in players.civs(dNeighbours[iPlayer]):
+		if player(iOlderNeighbor).isAlive() and stability(iOlderNeighbor) > iStabilityShaky:
 			decrementStability(iOlderNeighbor)
-			#utils.debugTextPopup('Lost stability to neighbor spawn: ' + gc.getPlayer(iOlderNeighbor).getCivilizationShortDescription(0))
-
-def getStabilityLevel(iPlayer):
-	return data.getStabilityLevel(iPlayer)
 	
 def setStabilityLevel(iPlayer, iStabilityLevel):
 	data.setStabilityLevel(iPlayer, iStabilityLevel)
 	
 	if iStabilityLevel == iStabilityCollapsing:
-		CyInterface().addMessage(iPlayer, False, iDuration, localText.getText("TXT_KEY_STABILITY_COLLAPSING_WARNING", ()), "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSING_WARNING', color=iRed)
 	
 def incrementStability(iPlayer):
-	data.setStabilityLevel(iPlayer, min(iStabilitySolid, data.getStabilityLevel(iPlayer) + 1))
+	data.setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
 	
 def decrementStability(iPlayer):
-	data.setStabilityLevel(iPlayer, max(iStabilityCollapsing, data.getStabilityLevel(iPlayer) - 1))
+	data.setStabilityLevel(iPlayer, max(iStabilityCollapsing, stability(iPlayer) - 1))
 	
 def getCrisisCountdown(iPlayer):
 	return data.players[iPlayer].iCrisisCountdown
@@ -205,57 +242,50 @@ def changeCrisisCountdown(iPlayer, iChange):
 	data.players[iPlayer].iCrisisCountdown += iChange
 	
 def isImmune(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = player(iPlayer)
 	
 	# must not be dead
 	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
 		return True
 		
 	# only for major civs
-	if iPlayer >= iNumPlayers:
+	if is_minor(iPlayer):
 		return True
 		
 	# immune right after scenario start
-	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
+	if turn() < scenarioStartTurn() + turns(20):
 		return True
 		
 	# immune right after birth
-	if iGameTurn - getTurnForYear(tBirth[iPlayer]) < utils.getTurns(20):
+	if turn() < pPlayer.getInitialBirthTurn() + turn(20):
 		return True
 		
 	# immune right after resurrection
-	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+	if turn() < pPlayer.getLastBirthTurn() + turns(10):
 		return True
 		
 	return False
 	
 def checkBarbarianCollapse(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = player(iPlayer)
 		
 	if isImmune(iPlayer): return
 		
 	iNumCities = pPlayer.getNumCities()
-	iLostCities = 0
-	
-	for city in utils.getCityList(iBarbarian):
-		if city.getOriginalOwner() == iPlayer:
-			iLostCities += 1
+	iLostCities = cities.owner(iBarbarian).where(lambda city: city.getOriginalOwner() == iPlayer).count()
 			
 	# lost more than half of your cities to barbarians: collapse
 	if iLostCities > iNumCities:
-		utils.debugTextPopup('Collapse by barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		debug('Collapse by barbarians: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 		
 	# lost at least two cities to barbarians: lose stability
 	elif iLostCities >= 2:
-		utils.debugTextPopup('Lost stability to barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		debug('Lost stability to barbarians: ' + pPlayer.getCivilizationShortDescription(0))
 		decrementStability(iPlayer)
 		
 def checkLostCitiesCollapse(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = player(iPlayer)
 	
 	if isImmune(iPlayer): return
 		
@@ -265,31 +295,29 @@ def checkLostCitiesCollapse(iPlayer):
 	# half or less cities than 12 turns ago: collapse (exceptions for civs with very little cities to begin with -> use lost core collapse)
 	if iNumPreviousCities > 2 and 2 * iNumCurrentCities <= iNumPreviousCities:
 	
-		if getStabilityLevel(iPlayer) == iStabilityCollapsing:
-			utils.debugTextPopup('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
+		if stability(iPlayer) == iStabilityCollapsing:
+			debug('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
 			scheduleCollapse(iPlayer)
 		else:
-			utils.debugTextPopup('Collapse to core by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
+			debug('Collapse to core by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
 			setStabilityLevel(iPlayer, iStabilityCollapsing)
 			collapseToCore(iPlayer)
 		
 	data.players[iPlayer].iNumPreviousCities = iNumCurrentCities
 	
 def checkLostCoreCollapse(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = player(iPlayer)
 	
 	if isImmune(iPlayer): return
 	
-	lCities = utils.getAreaCitiesCiv(iPlayer, Areas.getCoreArea(iPlayer))
+	lCities = cities.core(iPlayer).owner(iPlayer)
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
-		if iPlayer in [iPhoenicia, iKhmer] and not utils.isReborn(iPlayer):
-			pPlayer.setReborn(True)
+		if periods.evacuate(iPlayer):
 			return
 	
-		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
+		debug('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		scheduleCollapse(iPlayer)
 	
 def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
@@ -304,8 +332,7 @@ def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
 	return iCurrentLevel
 
 def checkStability(iPlayer, bPositive = False, iMaster = -1):
-	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = player(iPlayer)
 	
 	bVassal = (iMaster != -1)
 	
@@ -313,7 +340,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	if data.players[iPlayer].iTurnsToCollapse >= 0: return
 	
 	# vassal checks are made for triggers of their master civ
-	if gc.getTeam(pPlayer.getTeam()).isAVassal() and not bVassal: return
+	if team(iPlayer).isAVassal() and not bVassal: return
 	
 	if isImmune(iPlayer): return
 		
@@ -324,13 +351,13 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	if pPlayer.isAnarchy(): return
 	
 	# no repeated stability checks
-	if data.players[iPlayer].iLastStabilityTurn == iGameTurn: return
+	if data.players[iPlayer].iLastStabilityTurn == turn(): return
 	
-	data.players[iPlayer].iLastStabilityTurn = iGameTurn
+	data.players[iPlayer].iLastStabilityTurn = turn()
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
-	iStabilityLevel = getStabilityLevel(iPlayer)
-	bHuman = (utils.getHumanID() == iPlayer)
+	iStabilityLevel = stability(iPlayer)
+	bHuman = player(iPlayer).isHuman()
 	bFall = isDecline(iPlayer)
 	
 	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
@@ -356,30 +383,33 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		pPlayer.setStabilityParameter(i, lParameters[i])
 	
 	# check vassals
-	for iLoopPlayer in range(iNumPlayers):
-		if gc.getTeam(iLoopPlayer).isVassal(iPlayer):
+	for iLoopPlayer in players.major():
+		if team(iLoopPlayer).isVassal(iPlayer):
 			checkStability(iLoopPlayer, bPositive, iPlayer)
 		
 def getPossibleMinors(iPlayer):
+	lPossibleMinors = [iIndependent, iIndependent2]
 
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and iPlayer in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
-		return [iNative]
+	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
+		lPossibleMinors = [iNative]
 		
 	if gc.getGame().getCurrentEra() <= iMedieval:
-		return [iBarbarian, iIndependent, iIndependent2]
+		lPossibleMinors = [iBarbarian, iIndependent, iIndependent2]
 		
-	return [iIndependent, iIndependent2]
+	return players.civs(*lPossibleMinors)
 	
 def secession(iPlayer, lCities):
 	data.setSecedingCities(iPlayer, lCities)
 	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
+	iCiv = civ(iPlayer)
+
 	lPossibleMinors = getPossibleMinors(iPlayer)
-	dPossibleResurrections = {}
+	dPossibleResurrections = appenddict()
 	
-	bComplete = len(lCities) == gc.getPlayer(iPlayer).getNumCities()
+	bComplete = len(lCities) == player(iPlayer).getNumCities()
 	
-	utils.clearPlague(iPlayer)
+	clearPlague(iPlayer)
 	
 	# if smaller cities are supposed to be destroyed, do that first
 	lCededCities = []
@@ -395,19 +425,19 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			bNotJerusalem = (not (city.getX() == 73 and city.getY() == 38))
 			
 			if bMaxPopulation and bMaxCulture and bNoHolyCities and bNoCapitals and bNotJerusalem:
-				closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
+				closest = closestCity(city, iPlayer, same_continent=True)
 				
-				if closestCity:
-					if plotDistance(city.getX(), city.getY(), closestCity.getX(), closestCity.getY()) <= 2:
-						bCulture = (city.getCultureLevel() <= closestCity.getCultureLevel())
-						bPopulation = (city.getPopulation() < closestCity.getPopulation())
+				if closest:
+					if distance(city, closest) <= 2:
+						bCulture = (city.getCultureLevel() <= closest.getCultureLevel())
+						bPopulation = (city.getPopulation() < closest.getPopulation())
 						
 						if bCulture and bPopulation:
 							lRemovedCities.append(city)
 							continue
 							
 			# always raze Harappan cities
-			if iPlayer == iHarappa and utils.getHumanID() != iPlayer and bNoHolyCities:
+			if iCiv == iHarappa and not player(iPlayer).isHuman() and bNoHolyCities:
 				lRemovedCities.append(city)
 				continue
 						
@@ -415,113 +445,104 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			
 	for city in lRemovedCities:
 		plot = city.plot()
-		gc.getPlayer(iBarbarian).disband(city)
+		player(iBarbarian).disband(city)
 		plot.setCulture(iPlayer, 0, True)
 	
 	for city in lCededCities:
-		tCityPlot = (city.getX(), city.getY())
-		cityPlot = gc.getMap().plot(city.getX(), city.getY())
-		iGameTurnYear = gc.getGame().getGameTurnYear()
+		cityPlot = plot_(city)
 	
 		# three possible behaviors: if living civ has a claim, assign it to them
 		# claim based on core territory
 		iClaim = -1
-		for iLoopPlayer in range(iNumPlayers):
+		for iLoopPlayer in players.major():
 			if iLoopPlayer == iPlayer: continue
-			if utils.getHumanID() == iLoopPlayer: continue
-			if iGameTurnYear < tBirth[iLoopPlayer]: continue
-			if iGameTurnYear > tFall[iLoopPlayer]: continue
-			if cityPlot.isCore(iLoopPlayer) and gc.getPlayer(iLoopPlayer).isAlive():
+			if player(iLoopPlayer).isHuman(): continue
+			if not year().between(year(dBirth[iLoopPlayer]), year(dFall[iLoopPlayer])): continue
+			if cityPlot.isCore(iLoopPlayer) and player(iLoopPlayer).isAlive():
 				iClaim = iLoopPlayer
-				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: core territory.')
+				debug('Secede ' + adjective(iPlayer) + ' ' + city.getName() + ' to ' + name(iClaim) + '.\nReason: core territory.')
 				break
 		
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in Areas.getBirthArea(iPlayer) and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner:
-				if iOriginalOwner < iNumPlayers and iGameTurnYear < tFall[iOriginalOwner]:
+			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in plots.birth(iCiv) and player(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and active() != iOriginalOwner:
+				if not is_minor(iOriginalOwner) and year() < year(dFall[iOriginalOwner]):
 					# cities lost too long ago don't return
-					if city.getGameTurnPlayerLost(iOriginalOwner) >= gc.getGame().getGameTurn() - utils.getTurns(25):
+					if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(25):
 						iClaim = iOriginalOwner
-						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
+						debug('Secede ' + adjective(iPlayer) + ' ' + city.getName() + ' to ' + name(iClaim) + '.\nReason: original owner.')
 				
 		# claim based on culture
 		if iClaim == -1:
-			for iLoopPlayer in range(iNumPlayers):
+			for iLoopPlayer in players.major():
 				if iLoopPlayer == iPlayer: continue
-				if utils.getHumanID() == iLoopPlayer: continue
-				if iGameTurnYear < tBirth[iLoopPlayer]: continue
-				if iGameTurnYear > tFall[iLoopPlayer]: continue
-				if gc.getPlayer(iLoopPlayer).isAlive():
+				if player(iLoopPlayer).isHuman(): continue
+				if not year().between(year(dBirth[iLoopPlayer]), year(dFall[iLoopPlayer])): continue
+				if player(iLoopPlayer).isAlive():
 					iTotalCulture = cityPlot.countTotalCulture()
 					if iTotalCulture > 0:
 						iCulturePercent = 100 * cityPlot.getCulture(iLoopPlayer) / cityPlot.countTotalCulture()
 						if iCulturePercent >= 75:
 							iClaim = iLoopPlayer
-							utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: culture.')
+							debug('Secede ' + adjective(iPlayer) + ' ' + city.getName() + ' to ' + name(iClaim) + '.\nReason: culture.')
 							break
 						
 		# claim based on war target (needs to be winning the war based on war success)
 		if iClaim == -1:
-			tPlayer = gc.getTeam(iPlayer)
-			for iLoopPlayer in range(iNumPlayers):
-				pLoopPlayer = gc.getPlayer(iLoopPlayer)
-				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer and iGameTurnYear < tFall[iLoopPlayer]:
-					if pLoopPlayer.getWarValue(city.getX(), city.getY()) >= 8 and gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer) > tPlayer.AI_getWarSuccess(iLoopPlayer):
+			tPlayer = team(iPlayer)
+			for iLoopPlayer in players.major().alive().alive():
+				pLoopPlayer = player(iLoopPlayer)
+				if tPlayer.isAtWar(iLoopPlayer) and year() < year(dFall[iLoopPlayer]):
+					if pLoopPlayer.getWarValue(city.getX(), city.getY()) >= 8 and team(iLoopPlayer).AI_getWarSuccess(iPlayer) > tPlayer.AI_getWarSuccess(iLoopPlayer):
 						# another enemy with closer city: don't claim the city
-						closestCity = gc.getMap().findCity(city.getX(), city.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, city)
-						if closestCity.getOwner() != iLoopPlayer and tPlayer.isAtWar(closestCity.getOwner()): continue
+						closest = closestCity(city, same_continent=True)
+						if not closest or closest.getOwner() != iLoopPlayer and tPlayer.isAtWar(closest.getOwner()): continue
 						iClaim = iLoopPlayer
-						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: war target.')
+						debug('Secede ' + adjective(iPlayer) + ' ' + city.getName() + ' to ' + name(iClaim) + '.\nReason: war target.')
 						break
 						
 		if iClaim != -1:
-			secedeCity(city, iClaim, iPlayer < iNumPlayers and not bComplete)
+			secedeCity(city, iClaim, not is_minor(iPlayer) and not bComplete)
 			continue
 
 		# if part of the core / resurrection area of a dead civ -> possible resurrection
 		bResurrectionFound = False
-		for iLoopPlayer in range(iNumPlayers):
+		for iLoopPlayer in players.major():
 			if iLoopPlayer == iPlayer: continue
-			if gc.getPlayer(iLoopPlayer).isAlive(): continue
+			if player(iLoopPlayer).isAlive(): continue
 			if not data.players[iLoopPlayer].bSpawned: continue
-			if gc.getGame().getGameTurn() - data.players[iLoopPlayer].iLastTurnAlive < utils.getTurns(20): continue
+			if turn() - data.players[iLoopPlayer].iLastTurnAlive < turns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
-			if iPlayer == iArabia and iLoopPlayer == iEgypt: continue
+			if iCiv == iArabia and civ(iLoopPlayer) == iEgypt: continue
 
-			if tCityPlot in Areas.getRespawnArea(iLoopPlayer):
+			if city in cities.respawn(iLoopPlayer):
 				bPossible = False
 				
-				for tInterval in tResurrectionIntervals[iLoopPlayer]:
-					iStart, iEnd = tInterval
-					if iStart <= gc.getGame().getGameTurnYear() <= iEnd:
-						bPossible = True
-						break
+				if any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iLoopPlayer]):
+					bPossible = True
 						
 				# make respawns on collapse more likely
-				if tBirth[iLoopPlayer] <= gc.getGame().getGameTurnYear() <= tFall[iLoopPlayer]:
+				if dBirth[iLoopPlayer] <= gc.getGame().getGameTurnYear() <= dFall[iLoopPlayer]:
 					bPossible = True
 				
 				if bPossible:
-					if iLoopPlayer in dPossibleResurrections:
-						dPossibleResurrections[iLoopPlayer].append(city)
-					else:
-						dPossibleResurrections[iLoopPlayer] = [city]
+					dPossibleResurrections[iLoopPlayer].append(city)
 					bResurrectionFound = True
-					utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' is part of the ' + gc.getPlayer(iLoopPlayer).getCivilizationAdjective(0) + ' resurrection.')
+					debug(adjective(iPlayer) + ' ' + city.getName() + ' is part of the ' + adjective(iLoopPlayer) + ' resurrection.')
 					break
 				
 		if bResurrectionFound: continue
 
 		# assign randomly to possible minors
-		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)], iPlayer < iNumPlayers and not bComplete)
+		print "Possible minors: %s" % [name(iMinor) for iMinor in lPossibleMinors]
+		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)], not is_minor(iPlayer) and not bComplete)
 		
 	# notify for partial secessions
 	if not bComplete:
-		if gc.getPlayer(utils.getHumanID()).canContact(iPlayer):
-			CyInterface().addMessage(utils.getHumanID(), False, iDuration, localText.getText("TXT_KEY_STABILITY_CITIES_SECEDED", (gc.getPlayer(iPlayer).getCivilizationDescription(0), len(lCededCities))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+		if player().canContact(iPlayer):
+			message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(lCededCities))
 		
 	# collect additional cities that can be part of the resurrection
 	lCededTiles = [(city.getX(), city.getY()) for city in lCededCities]
@@ -532,7 +553,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 
 	# execute possible resurrections
 	for iResurrectionPlayer in dPossibleResurrections:
-		utils.debugTextPopup('Resurrection: ' + gc.getPlayer(iResurrectionPlayer).getCivilizationShortDescription(0))
+		debug('Resurrection: ' + name(iResurrectionPlayer))
 		resurrectionFromCollapse(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
 		
 	if len(lCities) > 1:
@@ -540,118 +561,93 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		
 def secedeCity(city, iNewOwner, bRelocate):
 	if not city: return
-
-	sName = city.getName()
 	
-	iNumDefenders = max(2, gc.getPlayer(iNewOwner).getCurrentEra()-1)
-	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+	if player(iNewOwner).isMinorCiv():
+		for iPlayer in players.at_war(city):
+			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
+				team(iPlayer).declareWar(player(iNewOwner).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
+	
+	iNumDefenders = max(2, player(iNewOwner).getCurrentEra()-1)
+	lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
 	
 	if bRelocate:
-		utils.relocateUnitsToCore(city.getOwner(), lRelocatedUnits)
+		relocateUnitsToCore(city.getOwner(), lRelocatedUnits)
 	else:
-		utils.killUnits(lRelocatedUnits)
+		killUnits(lRelocatedUnits)
 	
-	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
-	utils.flipOrCreateDefenders(iNewOwner, lFlippedUnits, (city.getX(), city.getY()), iNumDefenders)
+	completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
+	flipOrCreateDefenders(iNewOwner, lFlippedUnits, city, iNumDefenders)
 	
-	if city.getOwner() == utils.getHumanID():
-		if iNewOwner in [iIndependent, iIndependent2, iNative, iBarbarian]:
-			sText = localText.getText("TXT_KEY_STABILITY_CITY_INDEPENDENCE", (sName,))
-			CyInterface().addMessage(city.getOwner(), False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
-		else:
-			sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER", (sName, gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
-			utils.debugTextPopup(sText)
-			CyInterface().addMessage(city.getOwner(), False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+	if is_minor(iNewOwner):
+		message(city.getOwner(), 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', city.getName(), color=iRed)
+	else:
+		message(city.getOwner(), 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER', city.getName(), adjective(iNewOwner), color=iRed)
 		
-	if utils.getHumanID() == iNewOwner:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
-		CyInterface().addMessage(iNewOwner, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+	message(iNewOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US', city.getName(), color=iRed)
 	
 def completeCollapse(iPlayer):
-	lCities = utils.getCityList(iPlayer)
-	
 	# before cities are seceded, downgrade their cottages
 	downgradeCottages(iPlayer)
 	
 	# secede all cities, destroy close and less important ones
-	bRazeMinorCities = (gc.getPlayer(iPlayer).getCurrentEra() <= iMedieval)
-	secedeCities(iPlayer, lCities, bRazeMinorCities)
+	bRazeMinorCities = (player(iPlayer).getCurrentEra() <= iMedieval)
+	secedeCities(iPlayer, cities.owner(iPlayer), bRazeMinorCities)
 		
 	# take care of the remnants of the civ
-	gc.getPlayer(iPlayer).killUnits()
-	utils.resetUHV(iPlayer)
-	data.players[iPlayer].iLastTurnAlive = gc.getGame().getGameTurn()
+	player(iPlayer).killUnits()
+	vic.resetAll(iPlayer)
+	data.players[iPlayer].iLastTurnAlive = turn()
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
-	if iPlayer == iByzantium:
-		utils.removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
-		
-	# Chinese collapse: Mongolia's core moves south
-	if iPlayer == iChina:
-		utils.setReborn(iMongolia, True)
-		
-	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
+	if civ(iPlayer) == iByzantium:
+		removeReligionByArea(plots.core(iOttomans), iOrthodoxy)
 	
-	sText = localText.getText("TXT_KEY_STABILITY_COMPLETE_COLLAPSE", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),))
-	CyInterface().addMessage(utils.getHumanID(), False, iDuration, sText, "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
+	
+	events.fireEvent("collapse", iPlayer)
 		
 def collapseToCore(iPlayer):
-	lAhistoricalCities = []
-	lNonCoreCities = []
-	
-	for city in utils.getCityList(iPlayer):
-		plot = gc.getMap().plot(city.getX(), city.getY())
-		if not plot.isCore(iPlayer):
-			lNonCoreCities.append(city)
-			if plot.getSettlerValue(iPlayer) < 90:
-				lAhistoricalCities.append(city)
+	nonCoreCities = cities.owner(iPlayer).where(lambda city: not plot(city).isCore(iPlayer))
+	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getSettlerValue(iPlayer) < 90)
 				
 	# more than half ahistorical, only secede ahistorical cities
-	if 2 * len(lAhistoricalCities) > len(lNonCoreCities):
+	if 2 * ahistoricalCities.count() > nonCoreCities.count():
 	
 		# notify owner
-		if utils.getHumanID() == iPlayer:
-			sText = localText.getText("TXT_KEY_STABILITY_FOREIGN_SECESSION", ())
-			CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+		message(iPlayer, 'TXT_KEY_STABILITY_FOREIGN_SECESSION', color=iRed)
 				
 		# secede all foreign cities
-		secession(iPlayer, lAhistoricalCities)
+		secession(iPlayer, ahistoricalCities)
 		
 	# otherwise, secede all cities outside of core
-	elif lNonCoreCities:
+	elif nonCoreCities:
 	
 		# notify owner
-		if utils.getHumanID() == iPlayer:
-			sText = localText.getText("TXT_KEY_STABILITY_COLLAPSE_TO_CORE", ())
-			CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSE_TO_CORE', color=iRed)
 			
 		# secede all non-core cities
-		secession(iPlayer, lNonCoreCities)
+		secession(iPlayer, nonCoreCities)
 		
 def downgradeCottages(iPlayer):
-	for (x, y) in utils.getWorldPlotsList():
-		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer:
-			iImprovement = plot.getImprovementType()
-			
-			if iImprovement == iTown: plot.setImprovementType(iHamlet)
-			elif iImprovement == iVillage: plot.setImprovementType(iCottage)
-			elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
-			elif iImprovement == iCottage: plot.setImprovementType(-1)
-			
-			# Destroy all Harappan improvements
-			if iPlayer == iHarappa and utils.getHumanID() != iPlayer:
-				if iImprovement >= 0:
-					plot.setImprovementType(-1)
+	for plot in plots.all().owner(iPlayer):
+		iImprovement = plot.getImprovementType()
+		
+		if iImprovement == iTown: plot.setImprovementType(iHamlet)
+		elif iImprovement == iVillage: plot.setImprovementType(iCottage)
+		elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
+		elif iImprovement == iCottage: plot.setImprovementType(-1)
+		
+		# Destroy all Harappan improvements
+		if civ(iPlayer) == iHarappa and not player(iPlayer).isHuman():
+			if iImprovement >= 0:
+				plot.setImprovementType(-1)
 				
-	if utils.getHumanID() == iPlayer:
-		sText = localText.getText("TXT_KEY_STABILITY_DOWNGRADE_COTTAGES", ())
-		CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+	message(iPlayer, 'TXT_KEY_STABILITY_DOWNGRADE_COTTAGES', color=iRed)
 		
 def calculateStability(iPlayer):
-	iGameTurn = gc.getGame().getGameTurn()
-	pPlayer = gc.getPlayer(iPlayer)
-	tPlayer = gc.getTeam(pPlayer.getTeam())
+	pPlayer = player(iPlayer)
+	tPlayer = team(iPlayer)
+	iCiv = civ(iPlayer)
 
 	iExpansionStability = 0
 	iEconomyStability = 0
@@ -662,11 +658,10 @@ def calculateStability(iPlayer):
 	lParameters = [0 for i in range(iNumStabilityParameters)]
 	
 	# Collect required data
-	iReborn = utils.getReborn(iPlayer)
 	iStateReligion = pPlayer.getStateReligion()
 	iCurrentEra = pPlayer.getCurrentEra()
 	iTotalPopulation = pPlayer.getTotalPopulation()
-	iPlayerScore = pPlayer.getScoreHistory(iGameTurn)
+	iPlayerScore = pPlayer.getScoreHistory(turn())
 	
 	iCivicGovernment = pPlayer.getCivics(0)
 	iCivicLegitimacy = pPlayer.getCivics(1)
@@ -700,16 +695,14 @@ def calculateStability(iPlayer):
 	bNationhood = iCivicTerritory == iNationhood
 	bMultilateralism = iCivicTerritory == iMultilateralism
 	
-	bSingleCoreCity = (len(utils.getOwnedCoreCities(iPlayer)) == 1)
+	bSingleCoreCity = cities.core(iPlayer).owner(iPlayer).count() == 1
 	
 	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
-	for city in utils.getCityList(iPlayer):
+	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
 		iModifier = 0
-		x = city.getX()
-		y = city.getY()
-		plot = gc.getMap().plot(x,y)
+		plot = plot_(city)
 		
 		bHistorical = (plot.getSettlerValue(iPlayer) >= 90)
 		
@@ -725,7 +718,7 @@ def calculateStability(iPlayer):
 		else:
 			iOwnCulture = plot.getCulture(iPlayer)
 			
-			for iLoopPlayer in range(iNumPlayers):
+			for iLoopPlayer in players.major():
 				iTempCulture = plot.getCulture(iLoopPlayer)
 				if plot.isCore(iLoopPlayer):
 					iTempCulture *= 2
@@ -736,7 +729,7 @@ def calculateStability(iPlayer):
 			else:
 				iCulturePercent = 100
 					
-			bExpansionExceptions = ((bHistorical and iPlayer == iMongolia) or bTotalitarianism)
+			bExpansionExceptions = ((bHistorical and iCiv == iMongols) or bTotalitarianism)
 		
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -746,22 +739,22 @@ def calculateStability(iPlayer):
 			
 			# not original owner
 			if not bExpansionExceptions:
-				if city.getOriginalOwner() != iPlayer and iGameTurn - city.getGameTurnAcquired() < utils.getTurns(25): iModifier += 1
+				if city.getOriginalOwner() != iPlayer and turn() - city.getGameTurnAcquired() < turns(25): iModifier += 1
 			
 			# not majority culture (includes foreign core and Persian UP)
-			if iPlayer != iPersia or pPersia.isReborn():
+			if iCiv != iPersia:
 				if iCulturePercent < 50: iModifier += 1
 				if iCulturePercent < 20: iModifier += 1
 			
 			# Courthouse
-			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, iCourthouse)): iModifier -= 1
+			if city.hasBuilding(unique_building(iPlayer, iCourthouse)): iModifier -= 1
 			
 			# Jail
-			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, iJail)): iModifier -= 1
+			if city.hasBuilding(unique_building(iPlayer, iJail)): iModifier -= 1
 			
 			# Portuguese UP: reduced instability from overseas colonies
 			if city.isColony():
-				if iPlayer == iPortugal: iModifier -= 2
+				if iCiv == iPortugal: iModifier -= 2
 				if bColonialism and bHistorical: iModifier -= 1
 					
 			# cap
@@ -773,7 +766,7 @@ def calculateStability(iPlayer):
 			city.setStabilityPopulation(-iStabilityPopulation)
 			
 		# Recent conquests
-		if bHistorical and iGameTurn - city.getGameTurnAcquired() <= utils.getTurns(20):
+		if bHistorical and turn() - city.getGameTurnAcquired() <= turns(20):
 			if city.getPreviousOwner() < 0:
 				iRecentlyFounded += 1
 			else:
@@ -799,8 +792,7 @@ def calculateStability(iPlayer):
 				else: iDifferentReligionPopulation += iPopulation
 		
 	iPopulationImprovements = 0
-	for (x, y) in Areas.getCoreArea(iPlayer):
-		plot = gc.getMap().plot(x, y)
+	for plot in plots.core(iCiv):
 		if plot.getOwner() == iPlayer and plot.getWorkingCity():
 			if plot.getImprovementType() in [iVillage, iTown]:
 				iPopulationImprovements += 1
@@ -808,7 +800,7 @@ def calculateStability(iPlayer):
 	iCorePopulation += iCorePopulationModifier * iPopulationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
-	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
+	iPreviousPower = pPlayer.getPowerHistory(turn() - turns(10))
 	
 	# EXPANSION
 	iExpansionStability = 0
@@ -830,7 +822,7 @@ def calculateStability(iPlayer):
 
 		data.players[iPlayer].iLastExpansionStability = iCorePeripheryStability
 		
-		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
+		debug('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
 	lParameters[iParameterCorePeriphery] = iCorePeripheryStability
 	lParameters[iParameterCoreScore] = iCorePopulation
@@ -841,7 +833,7 @@ def calculateStability(iPlayer):
 	# recent expansion stability
 	iConquestModifier = 1
 	if bConquest: iConquestModifier += 1
-	if iPlayer == iPersia and not pPersia.isReborn(): iConquestModifier += 1 # Persian UP
+	if iCiv == iPersia: iConquestModifier += 1 # Persian UP
 	
 	iRecentExpansionStability += iRecentlyFounded
 	iRecentExpansionStability += iConquestModifier * iRecentlyConquered
@@ -904,7 +896,7 @@ def calculateStability(iPlayer):
 	civics = (iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory)
 	iCivicCombinationStability = getCivicStability(iPlayer, civics)
 		
-	if utils.getHumanID() != iPlayer and iCivicCombinationStability < 0: iCivicCombinationStability /= 2
+	if not player(iPlayer).isHuman() and iCivicCombinationStability < 0: iCivicCombinationStability /= 2
 	
 	lParameters[iParameterCivicCombinations] = iCivicCombinationStability
 	
@@ -959,7 +951,7 @@ def calculateStability(iPlayer):
 	elif iStateReligion == iConfucianism:
 		if iCivicTerritory == iIsolationism: iCivicEraTechStability += 3
 		
-	if utils.getHumanID() != iPlayer and iCivicEraTechStability < 0: iCivicEraTechStability /= 2
+	if not player(iPlayer).isHuman() and iCivicEraTechStability < 0: iCivicEraTechStability /= 2
 	
 	lParameters[iParameterCivicsEraTech] = iCivicEraTechStability
 	
@@ -1015,24 +1007,24 @@ def calculateStability(iPlayer):
 	
 	lContacts = []
 	
-	for iLoopPlayer in range(iNumPlayers):
-		pLoopPlayer = gc.getPlayer(iLoopPlayer)
-		tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
-		iLoopScore = pLoopPlayer.getScoreHistory(iGameTurn)
+	for iLoopPlayer in players.major():
+		pLoopPlayer = player(iLoopPlayer)
+		tLoopPlayer = team(iLoopPlayer)
+		iLoopScore = pLoopPlayer.getScoreHistory(turn())
 		
 		if iLoopPlayer == iPlayer: continue
 		if not pLoopPlayer.isAlive(): continue
 				
 		# master stability
 		if tPlayer.isVassal(iLoopPlayer):
-			if getStabilityLevel(iPlayer) > getStabilityLevel(iLoopPlayer):
-				iVassalStability += 4 * (getStabilityLevel(iPlayer) - getStabilityLevel(iLoopPlayer))
+			if stability(iPlayer) > stability(iLoopPlayer):
+				iVassalStability += 4 * (stability(iPlayer) - stability(iLoopPlayer))
 				
 		# vassal stability
 		if tLoopPlayer.isVassal(iPlayer):
-			if getStabilityLevel(iLoopPlayer) == iStabilityCollapsing: iVassalStability -= 3
-			elif getStabilityLevel(iLoopPlayer) == iStabilityUnstable: iVassalStability -= 1
-			elif getStabilityLevel(iLoopPlayer) == iStabilitySolid: iVassalStability += 2
+			if stability(iLoopPlayer) == iStabilityCollapsing: iVassalStability -= 3
+			elif stability(iLoopPlayer) == iStabilityUnstable: iVassalStability -= 1
+			elif stability(iLoopPlayer) == iStabilitySolid: iVassalStability += 2
 			
 			if bTributaries: iVassalStability += 2
 			
@@ -1053,7 +1045,7 @@ def calculateStability(iPlayer):
 		if tPlayer.isAtWar(iLoopPlayer):
 			if bMultilateralism: iMultilateralismStability -= 2
 			
-			if utils.isNeighbor(iPlayer, iLoopPlayer):
+			if isNeighbor(iPlayer, iLoopPlayer):
 				if bNationhood: iNationhoodStability += 2
 				
 				if bTheocracy:
@@ -1108,13 +1100,13 @@ def calculateStability(iPlayer):
 	iBarbarianLossesStability = 0 # like previously
 	
 	# iterate ongoing wars
-	for iEnemy in range(iNumPlayers):
-		pEnemy = gc.getPlayer(iEnemy)
-		if pEnemy.isAlive() and tPlayer.isAtWar(iEnemy):
+	for iEnemy in players.major().alive():
+		pEnemy = player(iEnemy)
+		if tPlayer.isAtWar(iEnemy):
 			iTempWarSuccessStability = calculateTrendScore(data.players[iPlayer].lWarTrend[iEnemy])
 			
 			iOurSuccess = tPlayer.AI_getWarSuccess(iEnemy)
-			iTheirSuccess = gc.getTeam(iEnemy).AI_getWarSuccess(iPlayer)
+			iTheirSuccess = team(iEnemy).AI_getWarSuccess(iPlayer)
 			
 			if iTempWarSuccessStability > 0 and iTheirSuccess > iOurSuccess: iTempWarSuccessStability /= 2
 			elif iTempWarSuccessStability < 0 and iOurSuccess > iTheirSuccess: iTempWarSuccessStability /= 2
@@ -1124,20 +1116,20 @@ def calculateStability(iPlayer):
 			iWarSuccessStability += iTempWarSuccessStability
 			
 			iOurWarWeariness = tPlayer.getWarWeariness(iEnemy)
-			iTheirWarWeariness = gc.getTeam(iEnemy).getWarWeariness(iPlayer)
+			iTheirWarWeariness = team(iEnemy).getWarWeariness(iPlayer)
 			
-			iWarTurns = iGameTurn - data.players[iPlayer].lWarStartTurn[iEnemy]
+			iWarTurns = turn() - data.players[iPlayer].lWarStartTurn[iEnemy]
 			iDurationModifier = 0
 			
-			if iWarTurns > utils.getTurns(20):
-				iDurationModifier = min(9, (iWarTurns - utils.getTurns(20)) / utils.getTurns(10))
+			if iWarTurns > turns(20):
+				iDurationModifier = min(9, (iWarTurns - turns(20)) / turns(10))
 				
 			iTempWarWearinessStability = (iTheirWarWeariness - iOurWarWeariness) / (4000 * (iDurationModifier + 1))
 			if iTempWarWearinessStability > 0: iTempWarWearinessStability = 0
 			
 			iWarWearinessStability += iTempWarWearinessStability
 			
-			utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nWar Success Stability: ' + str(iTempWarSuccessStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
+			debug(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nWar Success Stability: ' + str(iTempWarSuccessStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
 	
 	lParameters[iParameterWarSuccess] = iWarSuccessStability
 	lParameters[iParameterWarWeariness] = iWarWearinessStability
@@ -1158,7 +1150,7 @@ def calculateStability(iPlayer):
 def getCivicStability(iPlayer, lCivics):
 	civics = Civics(lCivics)
 
-	iCurrentEra = gc.getPlayer(iPlayer).getCurrentEra()
+	iCurrentEra = player(iPlayer).getCurrentEra()
 	iStability = 0
 	
 	if iTotalitarianism in civics:
@@ -1299,7 +1291,7 @@ def calculateSumScore(lScores, iThreshold = 1):
 	return iSum
 	
 def updateEconomyTrend(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	
 	if not pPlayer.isAlive(): return
 	
@@ -1329,7 +1321,7 @@ def updateEconomyTrend(iPlayer):
 	data.players[iPlayer].iPreviousCommerce = iCurrentCommerce
 	
 def updateHappinessTrend(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	
 	if not pPlayer.isAlive(): return
 	
@@ -1342,7 +1334,7 @@ def updateHappinessTrend(iPlayer):
 	
 	iAveragePopulation = pPlayer.getAveragePopulation()
 	
-	for city in utils.getCityList(iPlayer):
+	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
 		iHappiness = city.happyLevel()
 		iUnhappiness = city.unhappyLevel(0)
@@ -1361,8 +1353,8 @@ def updateHappinessTrend(iPlayer):
 	data.players[iPlayer].pushHappinessTrend(iCurrentTrend)
 	
 def updateWarTrend(iPlayer, iEnemy):
-	iOurCurrentSuccess = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
-	iTheirCurrentSuccess = gc.getTeam(iEnemy).AI_getWarSuccess(iPlayer)
+	iOurCurrentSuccess = team(iPlayer).AI_getWarSuccess(iEnemy)
+	iTheirCurrentSuccess = team(iEnemy).AI_getWarSuccess(iPlayer)
 	
 	iOurLastSuccess = data.players[iPlayer].lLastWarSuccess[iEnemy]
 	iTheirLastSuccess = data.players[iEnemy].lLastWarSuccess[iPlayer]
@@ -1385,80 +1377,18 @@ def startWar(iPlayer, iEnemy):
 	data.players[iPlayer].lWarTrend[iEnemy] = []
 	data.players[iEnemy].lWarTrend[iPlayer] = []
 	
-	iGameTurn = gc.getGame().getGameTurn()
-	data.players[iPlayer].lWarStartTurn[iEnemy] = iGameTurn
-	data.players[iEnemy].lWarStartTurn[iPlayer] = iGameTurn
-	
-def calculateEconomicGrowth(iPlayer, iNumTurns):
-	lHistory = []
-	pPlayer = gc.getPlayer(iPlayer)
-	iCurrentTurn = gc.getGame().getGameTurn()
-	
-	for iTurn in range(iCurrentTurn - iNumTurns, iCurrentTurn):
-		iHistory = pPlayer.getEconomyHistory(iTurn)
-		if iHistory > 1:
-			lHistory.append((iTurn - iCurrentTurn + iNumTurns, iHistory))
-	
-	lHistory.append((iNumTurns, pPlayer.calculateTotalCommerce()))
-			
-	a, b = utils.linreg(lHistory)
-	
-	iNormalizedStartTurn = b
-	iNormalizedCurrentTurn = a * iNumTurns + b
-	
-	if iNormalizedStartTurn == 0.0: return 0
-	
-	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
-	
-	return iGrowth
-	
-def calculateEconomicGrowthNeighbors(iPlayer, iNumTurns):
-	lHistory = []
-	lContacts = []
-	pPlayer = gc.getPlayer(iPlayer)
-	iCurrentTurn = gc.getGame().getGameTurn()
-	
-	for iLoopPlayer in range(iNumPlayers):
-		if pPlayer.canContact(iLoopPlayer):
-			lContacts.append(iLoopPlayer)
-			
-	for iTurn in range(iCurrentTurn - iNumTurns, iCurrentTurn):
-		iHistory = pPlayer.getEconomyHistory(iTurn)
-		for iLoopPlayer in lContacts:
-			iHistory += gc.getPlayer(iLoopPlayer).getEconomyHistory(iTurn)
-		if iHistory > 1:
-			lHistory.append((iTurn - iCurrentTurn + iNumTurns, iHistory))
-			
-	iHistory = pPlayer.calculateTotalCommerce()
-	for iLoopPlayer in lContacts:
-		iHistory += gc.getPlayer(iLoopPlayer).calculateTotalCommerce()
-		
-	lHistory.append((iCurrentTurn, iHistory))
-	
-	a, b = utils.linreg(lHistory)
-	
-	iNormalizedStartTurn = b
-	iNormalizedCurrentTurn = a * iNumTurns + b
-	
-	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
-	
-	return iGrowth
-
-def determineCrisisType(lStabilityTypes):
-	iLowestEntry = utils.getHighestEntry(lStabilityTypes, lambda x: -x)
-	return lStabilityTypes.index(iLowestEntry)
+	data.players[iPlayer].lWarStartTurn[iEnemy] = turn()
+	data.players[iEnemy].lWarStartTurn[iPlayer] = turn()
 	
 def calculateCommerceRank(iPlayer, iTurn):
-	lCommerceValues = utils.getSortedList([i for i in range(iNumPlayers)], lambda x : gc.getPlayer(x).getEconomyHistory(iTurn), True)
-	return lCommerceValues.index(iPlayer)
+	return players.major().rank(iPlayer, lambda p: player(p).getEconomyHistory(iTurn))
 	
 def calculatePowerRank(iPlayer, iTurn):
-	lPowerValues = utils.getSortedList([i for i in range(iNumPlayers)], lambda x : gc.getPlayer(x).getPowerHistory(iTurn), True)
-	return lPowerValues.index(iPlayer)
+	return players.major().rank(iPlayer, lambda p: player(p).getPowerHistory(iTurn))
 	
 def calculateRankedAttitudes(iPlayer, lContacts):
 	lContacts.append(iPlayer)
-	lContacts = utils.getSortedList(lContacts, lambda iPlayer: gc.getGame().getPlayerScore(iPlayer), True)
+	lContacts = sort(lContacts, lambda p: gc.getGame().getPlayerScore(iPlayer), True)
 	iPlayerIndex = lContacts.index(iPlayer)
 	
 	iRangeSize = 4
@@ -1476,7 +1406,7 @@ def calculateRankedAttitudes(iPlayer, lContacts):
 	return lStronger, lEqual, lWeaker
 	
 def calculateAttitude(iFromPlayer, iToPlayer):
-	pPlayer = gc.getPlayer(iFromPlayer)
+	pPlayer = player(iFromPlayer)
 
 	iAttitude = pPlayer.AI_getAttitudeVal(iToPlayer)
 	iAttitude -= pPlayer.AI_getSameReligionAttitude(iToPlayer)
@@ -1486,7 +1416,7 @@ def calculateAttitude(iFromPlayer, iToPlayer):
 	return iAttitude
 	
 def isTolerated(iPlayer, iReligion):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	iStateReligion = pPlayer.getStateReligion()
 	
 	# should not be asked, but still check
@@ -1503,91 +1433,76 @@ def isTolerated(iPlayer, iReligion):
 	
 	# Poland
 	lChristianity = [iOrthodoxy, iCatholicism, iProtestantism]
-	if iPlayer == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
+	if civ(iPlayer) == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
 	
 	return False
 
-def checkResurrection(iGameTurn):
-
-	#print '\nCheck resurrection'
-
-	iNationalismModifier = min(20, 4 * data.iCivsWithNationalism)
-	
-	lPossibleResurrections = []
-	bDeadCivFound = False
-	
-	# iterate all civs starting with a random civ
-	for iLoopCiv in range(iNumPlayers):
-		if utils.canRespawn(iLoopCiv):
-			lPossibleResurrections.append(iLoopCiv)
-			
-	# higher respawn chance for civs whose entire core is controlled by minor civs
-	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
-		if gc.getGame().getGameTurn() - data.players[iLoopCiv].iLastTurnAlive < utils.getTurns(15):
-			continue
-	
-		for city in utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)):
-			if city.getOwner() not in [iIndependent, iIndependent2, iNative, iBarbarian]:
-				break
-		else:
-			lCityList = getResurrectionCities(iLoopCiv)
-			if lCityList:
-				doResurrection(iLoopCiv, lCityList)
-				return
-				
-	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
-		iMinNumCities = 2
+@handler("BeginGameTurn")
+def checkResurrection():
+	if every(10):
+		iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
+		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
 		
-		# special case Netherlands: need only one city to respawn (Amsterdam)
-		if iLoopCiv == iNetherlands:
-			iMinNumCities = 1
+		# civs entirely controlled by minors will always respawn
+		for iPlayer in possibleResurrections:
+			if turn() < data.players[iPlayer].iLastTurnAlive + turns(15):
+				continue
+			
+			if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
+				resurrectionCities = getResurrectionCities(iPlayer)
+				if resurrectionCities:
+					doResurrection(iPlayer, resurrectionCities)
+					return
 					
-		iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
-		if iRespawnRoll - iNationalismModifier + 10 < tResurrectionProb[iLoopCiv]:
-			#print 'Passed respawn roll'
-			lCityList = getResurrectionCities(iLoopCiv)
-			if len(lCityList) >= iMinNumCities:
-				#print 'Enough cities -> doResurrection()'
-				doResurrection(iLoopCiv, lCityList)
-				return
+		# otherwise minimum amount of cities and random chance are required
+		for iPlayer in possibleResurrections:
+			if turn() < data.players[iPlayer].iLastTurnAlive + turns(15):
+				continue
+			
+			iMinNumCities = 2
+				
+			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
+				resurrectionCities = getResurrectionCities(iPlayer)
+				if len(resurrectionCities) >= iMinNumCities or len(resurrectionCities) >= len(cities.respawn(iPlayer)):
+					doResurrection(iPlayer, resurrectionCities)
+					return
 						
 def getResurrectionCities(iPlayer, bFromCollapse = False):
-	pPlayer = gc.getPlayer(iPlayer)
-	teamPlayer = gc.getTeam(iPlayer)
+	pPlayer = player(iPlayer)
+	teamPlayer = team(iPlayer)
+	iCiv = civ(iPlayer)
+	
 	lPotentialCities = []
 	lFlippingCities = []
 	
-	tCapital = Areas.getRespawnCapital(iPlayer)
-		
-	for (x, y) in Areas.getRespawnArea(iPlayer):
-		plot = gc.getMap().plot(x, y)
-		if plot.isCity():
-			city = plot.getPlotCity()
-			# for humans: exclude recently conquered cities to avoid annoying reflips
-			if city.getOwner() != utils.getHumanID() or city.getGameTurnAcquired() < gc.getGame().getGameTurn() - utils.getTurns(5):
-				lPotentialCities.append(city)
+	tCapital = plots.respawnCapital(iCiv)
+	
+	for city in cities.respawn(iCiv):
+		# for humans: exclude recently conquered cities to avoid annoying reflips
+		if city.getOwner() != active() or city.getGameTurnAcquired() < turn() - turns(5):
+			lPotentialCities.append(city)
 					
 	for city in lPotentialCities:
 		iOwner = city.getOwner()
 		iMinNumCitiesOwner = 3
 		
 		# barbarian and minor cities always flip
-		if iOwner >= iNumPlayers:
+		if is_minor(iOwner):
 			lFlippingCities.append(city)
 			continue
 			
-		iOwnerStability = utils.getStabilityLevel(iOwner)
-		bCapital = ((city.getX(), city.getY()) == tCapital)
+		iOwnerStability = stability(iOwner)
+		bCapital = (location(city) == tCapital)
 		
 		# flips are less likely before Nationalism
-		if data.iCivsWithNationalism == 0:
+		if data.iPlayersWithNationalism == 0:
 			iOwnerStability += 1
 			
-		if utils.getHumanID() != iOwner:
+		if not player(iOwner).isHuman():
 			iMinNumCitiesOwner = 2
 			iOwnerStability -= 1
 			
-		if gc.getPlayer(iOwner).getNumCities() >= iMinNumCitiesOwner:
+		if player(iOwner).getNumCities() >= iMinNumCitiesOwner:
 		
 			# special case for civs returning from collapse: be more strict
 			if bFromCollapse:
@@ -1601,8 +1516,8 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 				
 			# owner stability below stable: city flips if far away from their capital, or is capital spot of the dead civ
 			elif iOwnerStability < iStabilityStable:
-				ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
-				iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
+				ownerCapital = player(iOwner).getCapitalCity()
+				iDistance = distance(city, ownerCapital)
 				if bCapital or iDistance >= 8:
 					lFlippingCities.append(city)
 				
@@ -1612,9 +1527,8 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 					lFlippingCities.append(city)
 					
 	# if capital exists and does not flip, the respawn fails
-	capitalX, capitalY = tCapital
-	if gc.getMap().plot(capitalX, capitalY).isCity():
-		if tCapital not in [(city.getX(), city.getY()) for city in lFlippingCities]:
+	if city_(tCapital):
+		if tCapital not in [location(city) for city in lFlippingCities]:
 			return []
 					
 	# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
@@ -1631,32 +1545,29 @@ def resurrectionFromCollapse(iPlayer, lCityList):
 		doResurrection(iPlayer, lCityList)
 	
 def doResurrection(iPlayer, lCityList, bAskFlip = True):
-	pPlayer = gc.getPlayer(iPlayer)
-	teamPlayer = gc.getTeam(iPlayer)
+	pPlayer = player(iPlayer)
+	teamPlayer = team(iPlayer)
+	iCiv = civ(iPlayer)
 	
 	pPlayer.setAlive(True)
 
 	data.iRebelCiv = iPlayer
 	
-	for iOtherCiv in range(iNumPlayers):
-		if iPlayer == iOtherCiv: continue
-
-		teamPlayer.makePeace(iOtherCiv)
+	for iOtherPlayer in players.major().without(iPlayer):
+		teamPlayer.makePeace(iOtherPlayer)
 		
-		if teamPlayer.isVassal(iOtherCiv):
-			gc.getTeam(iOtherCiv).freeVassal(iPlayer)
+		if teamPlayer.isVassal(iOtherPlayer):
+			team(iOtherPlayer).freeVassal(iPlayer)
 			
-		if gc.getTeam(iOtherCiv).isVassal(iPlayer):
-			teamPlayer.freeVassal(iOtherCiv)
+		if team(iOtherPlayer).isVassal(iPlayer):
+			teamPlayer.freeVassal(iOtherPlayer)
 		
 	data.players[iPlayer].iNumPreviousCities = 0
 	
 	pPlayer.AI_reset()
 	
-	iHuman = utils.getHumanID()
-	
 	# reset player espionage weight
-	gc.getPlayer(gc.getGame().getActivePlayer()).setEspionageSpendingWeightAgainstTeam(pPlayer.getTeam(), 0)
+	player().setEspionageSpendingWeightAgainstTeam(pPlayer.getTeam(), 0)
 			
 	# assign technologies
 	lTechs = getResurrectionTechs(iPlayer)
@@ -1668,33 +1579,28 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	iGarrison = 2
 	iArmySize = pPlayer.getCurrentEra()
 	
-	pPlayer.setLatestRebellionTurn(gc.getGame().getGameTurn())
+	pPlayer.setLastBirthTurn(turn())
 		
 	# add former colonies that are still free
-	for iMinor in range(iNumPlayers, iNumTotalPlayersB): # including barbarians
-		if gc.getPlayer(iMinor).isAlive():
-			for city in utils.getCityList(iMinor):
-				if city.getOriginalOwner() == iPlayer:
-					x = city.getX()
-					y = city.getY()
-					if pPlayer.getSettlerValue(x, y) >= 90:
-						if city not in lCityList:
-							lCityList.append(city)
+	for city in players.minor().alive().cities().where(lambda city: city.getOriginalOwner() == iPlayer):
+		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
+			if city not in lCityList:
+				lCityList.append(city)
 
 	lOwners = []
 	dRelocatedUnits = {}
 	
 	for city in lCityList:
 		iOwner = city.getOwner()
-		pOwner = gc.getPlayer(iOwner)
+		pOwner = player(iOwner)
 		
 		x = city.getX()
 		y = city.getY()
 		
 		bCapital = city.isCapital()
 		
-		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
-		lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
+		lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
 		
 		if iOwner in dRelocatedUnits:
 			dRelocatedUnits[iOwner].extend(lRelocatedUnits)
@@ -1702,97 +1608,77 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			dRelocatedUnits[iOwner] = lRelocatedUnits
 		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
-			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
+			completeCityFlip(city, iPlayer, iOwner, 100, False, True, True, True)
 		else:
-			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
+			completeCityFlip(city, iPlayer, iOwner, 75, False, True, True)
 			
-		utils.flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
+		flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
 			
-		newCity = gc.getMap().plot(x, y).getPlotCity()
+		newCity = city_(x, y)
 		
 		# Leoreth: rebuild some city infrastructure
 		for iBuilding in range(iNumBuildings):
-			if pPlayer.canConstruct(iBuilding, True, False, False) and newCity.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
+			if pPlayer.canConstruct(iBuilding, True, False, False) and newCity.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not isGreatBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
 				newCity.setHasRealBuilding(iBuilding, True)
 			
-		if bCapital and iOwner < iNumPlayers:
-			relocateCapital(iOwner)
+		if bCapital and not is_minor(iOwner):
+			relocateCapital(iOwner, cities.capital(iOwner))
 			
 		if iOwner not in lOwners:
 			lOwners.append(iOwner)
 			
 	for iOwner in dRelocatedUnits:
-		if iOwner < iNumPlayers:
-			utils.relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
+		if not is_minor(iOwner):
+			relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
 		else:
-			utils.killUnits(dRelocatedUnits[iOwner])
+			killUnits(dRelocatedUnits[iOwner])
 			
 	for iOwner in lOwners:
-		teamOwner = gc.getTeam(iOwner)
-		bOwnerHumanVassal = teamOwner.isVassal(iHuman)
+		teamOwner = team(iOwner)
+		bOwnerHumanVassal = teamOwner.isVassal(active())
 	
-		if iOwner != iHuman and iOwner != iPlayer and iOwner != iBarbarian:
-			iRand = gc.getGame().getSorenRandNum(100, 'Stop birth')
-			
-			if iRand >= tAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
+		if not player(iOwner).isHuman() and iOwner != iPlayer and not player(iOwner).isBarbarian():
+			if rand(100) >= dAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
 				teamOwner.declareWar(iPlayer, False, -1)
 			else:
 				teamOwner.makePeace(iPlayer)
-				
-	if len(utils.getCityList(iPlayer)) == 0:
-		utils.debugTextPopup('Civ resurrected without any cities')
 			
-	relocateCapital(iPlayer, True)
+	relocateCapital(iPlayer, cities.respawnCapital(iPlayer))
 	
 	# give the new civ a starting army
 	capital = pPlayer.getCapitalCity()
-	x = capital.getX()
-	y = capital.getY()
 	
-	utils.makeUnit(utils.getBestInfantry(iPlayer), iPlayer, (x, y), 2 * iArmySize + iNumCities)
-	utils.makeUnit(utils.getBestCavalry(iPlayer), iPlayer, (x, y), iArmySize)
-	utils.makeUnit(utils.getBestCounter(iPlayer), iPlayer, (x, y), iArmySize)
-	utils.makeUnit(utils.getBestSiege(iPlayer), iPlayer, (x, y), iArmySize + iNumCities)
+	makeUnits(iPlayer, getBestInfantry(iPlayer), capital, 2 * iArmySize + iNumCities)
+	makeUnits(iPlayer, getBestCavalry(iPlayer), capital, iArmySize)
+	makeUnits(iPlayer, getBestCounter(iPlayer), capital, iArmySize)
+	makeUnits(iPlayer, getBestSiege(iPlayer), capital, iArmySize + iNumCities)
 	
 	# set state religion based on religions in the area
-	setStateReligion(iPlayer)
+	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
+	
+	if iNewStateReligion >= 0:
+		pPlayer.setLastStateReligion(iNewStateReligion)
 	
 	switchCivics(iPlayer)
 		
-	CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pPlayer.getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
+	message(active(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen, force=True)
 	
-	if bAskFlip and iHuman in lOwners:
+	if bAskFlip and active() in lOwners:
 		rebellionPopup(iPlayer)
 		
 	data.setStabilityLevel(iPlayer, iStabilityStable)
 	
 	data.players[iPlayer].iPlagueCountdown = -10
-	utils.clearPlague(iPlayer)
+	clearPlague(iPlayer)
 	convertBackCulture(iPlayer)
 	
 	# change the cores of some civs on respawn
-	if iPlayer == iGreece:
-		utils.setReborn(iGreece, True)
-		
-	elif iPlayer == iChina:
-		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iMongolia]):
-			utils.setReborn(iChina, True)
-			
-	elif iPlayer == iIndia:
-		utils.setReborn(iIndia, gc.getGame().getGameTurn() < getTurnForYear(1900))
-		
-	elif iPlayer == iArabia:
-		utils.setReborn(iArabia, True)
-	
-		
-	# others revert to their old cores instead
-	if iPlayer in [iArabia, iMongolia]:
-		utils.setReborn(iPlayer, False)
+	periods.onResurrection(iPlayer)
 	
 	# resurrection leaders
-	if iPlayer in resurrectionLeaders:
-		if pPlayer.getLeader() != resurrectionLeaders[iPlayer]:
-			pPlayer.setLeader(resurrectionLeaders[iPlayer])
+	if iCiv in dResurrectionLeaders:
+		if pPlayer.getLeader() != dResurrectionLeaders[iCiv]:
+			pPlayer.setLeader(dResurrectionLeaders[iCiv])
 			
 	# Leoreth: report to dynamic civs
 	dc.onCivRespawn(iPlayer, lOwners)
@@ -1800,94 +1686,58 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	return
 	
 def getResurrectionTechs(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	lTechList = []
-	lSourceCivs = []
+	lSourcePlayers = []
 	
 	# same tech group
-	for lRegionList in lTechGroups:
+	for lRegionList in dTechGroups.values():
 		if iPlayer in lRegionList:
 			for iPeer in lRegionList:
-				if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
-					lSourceCivs.append(iPeer)
+				if iPeer != iPlayer and player(iPeer).isAlive():
+					lSourcePlayers.append(iPeer)
 			
 	# direct neighbors (India can benefit from England etc)
-	for iPeer in range(iNumPlayers):
-		if iPeer != iPlayer and iPeer not in lSourceCivs and gc.getPlayer(iPeer).isAlive():
-			if utils.isNeighbor(iPlayer, iPeer):
-				lSourceCivs.append(iPeer)
+	for iPeer in players.major().alive().without(iPlayer).without(lSourcePlayers):
+		if isNeighbor(iPlayer, iPeer):
+			lSourcePlayers.append(iPeer)
 				
 	# use independents as source civs in case no other can be found
-	if len(lSourceCivs) == 0:
-		lSourceCivs.append(iIndependent)
-		lSourceCivs.append(iIndependent2)
+	if not lSourcePlayers:
+		lSourcePlayers += players.independent().entities()
 		
 	for iTech in range(iNumTechs):
 			
 		# at least half of the source civs know this technology
 		iCount = 0
-		for iOtherCiv in lSourceCivs:
-			if gc.getTeam(iOtherCiv).isHasTech(iTech):
+		for iOtherPlayer in lSourcePlayers:
+			if team(iOtherPlayer).isHasTech(iTech):
 				iCount += 1
 				
-		if 2 * iCount >= len(lSourceCivs):
+		if 2 * iCount >= len(lSourcePlayers):
 			lTechList.append(iTech)
 			
 	return lTechList
-	
-def relocateCapital(iPlayer, bResurrection = False):
-	if iPlayer < iNumPlayers: return
-	if gc.getPlayer(iPlayer).getNumCities() == 0: return
 
-	tCapital = Areas.getCapital(iPlayer)
-	oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
-	
-	if bResurrection: tCapital = Areas.getRespawnCapital(iPlayer)
-		
-	x, y = tCapital
-	plot = gc.getMap().plot(x, y)
-	if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
-		newCapital = gc.getMap().plot(x, y).getPlotCity()	
-	else:
-		newCapital = utils.getHighestEntry(utils.getCityList(iPlayer), lambda x: max(0, utils.getTurns(500)-x.getGameTurnFounded()) + x.getPopulation()*5)
-		
-	oldCapital.setHasRealBuilding(iPalace, False)
-	newCapital.setHasRealBuilding(iPalace, True)
-
-def convertBackCulture(iCiv):
-	for (x, y) in Areas.getRespawnArea(iCiv):
-		plot = gc.getMap().plot(x, y)
-		if plot.isCity():
-			city = plot.getPlotCity()
-			if city.getOwner() == iCiv:
+def convertBackCulture(iPlayer):
+	for plot in plots.respawn(iPlayer):
+		city = city_(plot)
+		if city:
+			if city.getOwner() == iPlayer:
 				iCulture = 0
-				for iMinor in range(iNumPlayers, iNumTotalPlayersB):
+				for iMinor in players.minor():
 					iCulture += city.getCulture(iMinor)
 					city.setCulture(iMinor, 0, True)
-				city.changeCulture(iCiv, iCulture, True)
-		elif plot.isCityRadius() and plot.getOwner() == iCiv:
+				city.changeCulture(iPlayer, iCulture, True)
+		elif plot.isCityRadius() and plot.getOwner() == iPlayer:
 			iCulture = 0
-			for iMinor in range(iNumPlayers, iNumTotalPlayersB):
+			for iMinor in players.minor():
 				iCulture += plot.getCulture(iMinor)
 				plot.setCulture(iMinor, 0, True)
-			plot.changeCulture(iCiv, iCulture, True)
-		
-def setStateReligion(iCiv):
-	lCities = utils.getAreaCities(Areas.getCoreArea(iCiv))
-	lReligions = [0 for i in range(iNumReligions)]
-	
-	for city in lCities:
-		for iReligion in range(iNumReligions):
-			if gc.getReligionInfo(iReligion).isLocal() and city.plot().getSpreadFactor(iReligion) != RegionSpreadTypes.REGION_SPREAD_CORE: continue
-			if city.isHasReligion(iReligion): lReligions[iReligion] += 1
-			
-	iHighestEntry = utils.getHighestEntry(lReligions)
-	
-	if iHighestEntry > 0:
-		gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
+			plot.changeCulture(iPlayer, iCulture, True)
 		
 def switchCivics(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 
 	for iCategory in range(iNumCivicCategories):
 		iBestCivic = pPlayer.AI_bestCivic(iCategory)
@@ -1898,10 +1748,7 @@ def switchCivics(iPlayer):
 	pPlayer.setRevolutionTimer(gc.getDefineINT("MIN_REVOLUTION_TURNS"))
 
 def rebellionPopup(iRebelCiv):
-	utils.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \
-		       CyTranslator().getText("TXT_KEY_REBELLION_TEXT", (gc.getPlayer(iRebelCiv).getCivilizationAdjectiveKey(),)), \
-		       (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), \
-			CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
+	eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
 			
 def sign(x):
 	if x > 0: return 1
@@ -1912,18 +1759,18 @@ def getCorePopulationModifier(iEra):
 	return tEraCorePopulationModifiers[iEra]
 	
 def balanceStability(iPlayer, iNewStabilityLevel):
-	utils.debugTextPopup("Balance stability: %s" % gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
+	debug("Balance stability: %s" % name(iPlayer))
 
 	playerData = data.players[iPlayer]
 	
 	# set stability to at least the specified level
-	setStabilityLevel(iPlayer, max(iNewStabilityLevel, getStabilityLevel(iPlayer)))
+	data.setStabilityLevel(iPlayer, max(iNewStabilityLevel, stability(iPlayer)))
 
 	# prevent collapse if they were going to
 	playerData.iTurnsToCollapse = -1
 	
 	# update number of cities so vassals survive losing cities
-	playerData.iNumPreviousCities = gc.getPlayer(iPlayer).getNumCities()
+	playerData.iNumPreviousCities = player(iPlayer).getNumCities()
 	
 	# reset previous commerce
 	playerData.iPreviousCommerce = 0
@@ -1934,7 +1781,7 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetWarTrends()
 	
 def isDecline(iPlayer):
-	return utils.getHumanID() != iPlayer and not utils.isReborn(iPlayer) and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
+	return not player(iPlayer).isHuman() and year() >= year(dFall[iPlayer])
 	
 class Civics:
 
