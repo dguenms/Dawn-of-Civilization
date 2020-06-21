@@ -13,7 +13,7 @@ import string
 import math
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from PyHelpers import PyPlayer
 from operator import itemgetter
 
@@ -879,7 +879,7 @@ class CvInfoScreen:
 				self.scoreCache[scoreType].append(None)
 			else:
 				self.scoreCache[scoreType].append([])
-				firstTurn	= utils.getScenarioStartTurn()#CyGame().getStartTurn()
+				firstTurn	= scenarioStartTurn()#CyGame().getStartTurn()
 				thisTurn	= CyGame().getGameTurn()
 				turn	= firstTurn
 				while (turn <= thisTurn):
@@ -1085,7 +1085,7 @@ class CvInfoScreen:
 		# Compute max score
 		max = 0
 		thisTurn = CyGame().getGameTurn()
-		startTurn = utils.getScenarioStartTurn()#CyGame().getStartTurn()
+		startTurn = scenarioStartTurn()#CyGame().getStartTurn()
 
 		if (self.graphZoom == 0 or self.graphEnd == 0):
 			firstTurn = startTurn
@@ -1766,17 +1766,11 @@ class CvInfoScreen:
 					GenericButtonSizes.BUTTON_SIZE_46, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuildingID, -1, False )
 
 	def calculateTopCities(self):
-		lCities = []
-		for iLoopPlayer in range(iNumPlayers):
-			for city in utils.getCityList(iLoopPlayer):
-				iValue = ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
-					+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
-				lCities.append((city, iValue))
-		lCities.sort(key=itemgetter(1), reverse=True)
-		lCities = lCities[:5]
-		for i, city in enumerate(lCities):
-			self.pCityPointers[i] = city[0]
-			self.iCityValues[i] = city[1]
+		value = lambda city: (city.getCulture(city.getOwner()) / 5 + city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) + city.getYieldRate(YieldTypes.YIELD_COMMERCE)) * city.getPopulation()
+	
+		for i, city in enumerate(cities.all().highest(5, value)):
+			self.pCityPointers[i] = city
+			self.iCityValues[i] = value(city)
 
 	def determineCityData(self):
 
@@ -2119,7 +2113,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < tBirth[iActivePlayer]):
+					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < dBirth[iActivePlayer]):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2907,33 +2901,24 @@ class CvInfoScreen:
 		return math.log10(max(1,x))
 
 	def getTurnDate(self,turn):
-
-		year = CyGame().getTurnYear(turn)
-
-		year = CyGame().getTurnYear(turn)
-
-		#Rhye - start
-##		if (year < 0):
-##		    return localText.getText("TXT_KEY_TIME_BC", (-year,))
-##		else:
-##		    return localText.getText("TXT_KEY_TIME_AD", (year,))
+		iYear = gc.getGame().getGameTurnYear()
 		    
 		iPlayer = CyGame().getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
-		if (tPlayer.isHasTech(iCalendar) or year < tBirth[iPlayer]):  
-			if (year < 0):
+		if tPlayer.isHasTech(iCalendar) or iYear < dBirth[iPlayer]:  
+			if iYear < 0:
 			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
 			else:
 			    return localText.getText("TXT_KEY_TIME_AD", (year,))	 
-		elif (year >= 1500):
+		elif iYear >= 1500:
 			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
-		elif (year >= 450):
+		elif iYear >= 450:
 			return localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
-		elif (year >= -800):
+		elif iYear >= -800:
 			return localText.getText("TXT_KEY_AGE_IRON", ())    
-		elif (year >= -2000):
+		elif iYear >= -2000:
 			return localText.getText("TXT_KEY_AGE_BRONZE", ())    
 		else:
 			return localText.getText("TXT_KEY_AGE_STONE", ())    

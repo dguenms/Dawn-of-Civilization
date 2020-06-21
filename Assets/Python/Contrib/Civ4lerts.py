@@ -76,7 +76,8 @@ import DiplomacyUtil
 import PlayerUtil
 import TradeUtil
 
-from RFCUtils import utils
+from RFCUtils import *
+from Core import *
 
 # BUG - Mac Support - start
 BugUtil.fixSets(globals())
@@ -261,7 +262,7 @@ class BeginActivePlayerTurnCityAlertManager(AbstractCityAlertManager):
 	
 	def onBeginActivePlayerTurn(self, argsList):
 		"Loops over active player's cities, telling each to perform its check."
-		if gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
+		if gc.getGame().getGameTurn() > scenarioStartTurn():
 			self.checkAllActivePlayerCities()
 
 class EndTurnReadyCityAlertManager(AbstractCityAlertManager):
@@ -275,7 +276,7 @@ class EndTurnReadyCityAlertManager(AbstractCityAlertManager):
 	
 	def onEndTurnReady(self, argsList):
 		"Loops over active player's cities, telling each to perform its check."
-		if gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
+		if gc.getGame().getGameTurn() > scenarioStartTurn():
 			self.checkAllActivePlayerCities()
 
 

@@ -60,7 +60,7 @@ class CvPediaCultureLevel:
 		if self.top.iActivePlayer == -1:
 			iCulture = CultureLevelInfo.getSpeedThreshold(2)
 		else:
-			iCulture = CultureLevelInfo.getSpeedThreshold(gc.getGame().getGameSpeedType())
+			iCulture = CultureLevelInfo.getSpeedThreshold(game.getGameSpeedType())
 			
 		szCulture = u"%d%c" % (iCulture, gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar())
 		screen.appendListBoxString(panel, u"<font=3>" + szCulture + u"<font=3>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)

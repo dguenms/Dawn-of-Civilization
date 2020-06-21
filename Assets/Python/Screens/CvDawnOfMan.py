@@ -5,7 +5,8 @@ import math #Rhye
 from Consts import *
 import CvUtil
 from CvPythonExtensions import *
-from RFCUtils import utils
+from RFCUtils import *
+from Core import *
 
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
@@ -139,20 +140,9 @@ class CvDawnOfMan:
 ##Rhye - begin	
 		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
 		iActivePlayer = CyGame().getActivePlayer()
-			
-		if getTurnForYear(tBirth[iActivePlayer]) <= utils.getScenarioStartTurn():
-			iYear = utils.getScenarioStartYear()
-		else:
-			iYear = tBirth[iActivePlayer]
-			
-		year = str(abs(iYear)) + ' '
-		if iYear >= 0: year += CyTranslator().getText("TXT_KEY_AD", ())
-		else: year += CyTranslator().getText("TXT_KEY_BC", ())
 		
 		#Leoreth: imported individual texts from Sword of Islam (edead)
-		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
-		
-		bodyString = utils.getDawnOfManText(iActivePlayer)
+		bodyString = getDawnOfManText(iActivePlayer)
 
 		screen.addStackedBarGFC("ProgressBar", 300, 400, 435, 40, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		screen.setStackedBarColors("ProgressBar", InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_PLAYER_GREEN"))
@@ -177,7 +167,7 @@ class CvDawnOfMan:
 	def update(self, fDelta):
 ##Rhye - begin
 		iActivePlayer = CyGame().getActivePlayer()
-		if tBirth[iActivePlayer] <= utils.getScenarioStartYear():
+		if year(dBirth[iActivePlayer]) <= scenarioStartTurn():
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -185,15 +175,15 @@ class CvDawnOfMan:
 		else:
 			iGameTurn = CyGame().getGameTurn()
 
-			iNumAutoPlayTurns = getTurnForYear(tBirth[CyGame().getActiveTeam()])
+			iNumAutoPlayTurns = year(dBirth[iActivePlayer])
 			iNumTurnsRemaining = iNumAutoPlayTurns - iGameTurn
 			
 			#if (iNumTurnsRemaining != self.iTurnsRemaining):
 			#	self.iTurnsRemaining = iNumTurnsRemaining
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 
-			exponent = 1 + iNumAutoPlayTurns/utils.getTurns(190)
-			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-utils.getScenarioStartTurn(), exponent)) / float(math.pow(iNumAutoPlayTurns-utils.getScenarioStartTurn(), exponent)))
+			exponent = 1 + iNumAutoPlayTurns/turns(190)
+			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-scenarioStartTurn(), exponent)) / float(math.pow(iNumAutoPlayTurns-scenarioStartTurn(), exponent)))
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (max(0,iNumTurnsRemaining),)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			if (iNumTurnsRemaining <= 0):  #Rhye
 				screen.show( "Exit" )  #Rhye

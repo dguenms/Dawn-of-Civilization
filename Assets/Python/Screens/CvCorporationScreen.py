@@ -6,9 +6,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
-from Consts import iEconomics as iEconomicsTech
-from Consts import iBrazil
-from Consts import iSugar
+from Core import *
 import companies
 
 PyPlayer = PyHelpers.PyPlayer
@@ -203,7 +201,7 @@ class CvCorporationScreen:
 						szList = u""
 						
 			iActivePlayer = CyGame().getActivePlayer()
-			if iActivePlayer == iBrazil and i == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and i == companies.iOilIndustry:
 				eBonus = iSugar
 				szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
@@ -369,7 +367,7 @@ class CvCorporationScreen:
 					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
-			if iActivePlayer == iBrazil and iLinkCorporation == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
 				eBonus = iSugar
 				szList = u""
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )

@@ -1,15 +1,8 @@
-# Rhye's and Fall of Civilization - Stored Data
-
 from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-import Popup
-import cPickle as pickle
 from Consts import *
 
-# globals
 gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
+
 
 class PlayerData:
 
@@ -20,6 +13,7 @@ class PlayerData:
 		
 	def update(self, data):
 		self.__dict__.update(data)
+
 
 	def setup(self):
 	
@@ -82,9 +76,9 @@ class PlayerData:
 		self.lEconomyTrend = []
 		self.lHappinessTrend = []
 		
-		self.lWarTrend = [[] for _ in range(iNumTotalPlayersB)]		
-		self.lWarStartTurn = [0] * iNumTotalPlayersB
-		self.lLastWarSuccess = [0] * iNumTotalPlayersB
+		self.lWarTrend = [[]] * gc.getMAX_PLAYERS()		
+		self.lWarStartTurn = [0] * gc.getMAX_PLAYERS()
+		self.lLastWarSuccess = [0] * gc.getMAX_PLAYERS()
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
 		
@@ -98,7 +92,7 @@ class PlayerData:
 		self.lWarTrend[iEnemy] = []
 	
 	def resetWarTrends(self):
-		for iEnemy in range(iNumPlayers):
+		for iEnemy, _ in enumerate(self.lWarTrend):
 			self.resetWarTrend(iEnemy)
 	
 	def pushEconomyTrend(self, iValue):
@@ -146,28 +140,33 @@ class GameData:
 			player.update(data)
 
 	def setup(self):
-		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]
+		self.players = [PlayerData(i) for i in range(gc.getMAX_PLAYERS())]
+		
+		# Slots
+		
+		# set the default values for now, once slots become untied this should be set and kept updated on spawn
+		# already make it dynamic because rebirths will change things
+		self.dSlots = dict((iCiv, iSlot) for iSlot, iCiv in enumerate(lSlotOrder))
 		
 		# Rise and Fall
 
 		self.lTempEvents = []
-		self.lNewCivs = []
 		self.lTempPlots = []
 		self.lTimedConquests = []
 		
 		self.lPlayerEnabled = [True] * len(lSecondaryCivs)
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
-		self.lDeleteMode = [-1] * 3
-		self.lFirstContactConquerors = [False] * 3
-		self.lFirstContactMongols = [True] * 5
-		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
+		self.iPrepareCapitalPlayer = -1
+		self.dFirstContactConquerors = dict((iCiv, False) for iCiv in lBioNewWorld)
+		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
+		self.lTradingCompanyConquerorsTargets = appenddict()
 		
 		self.lCheatersCheck = [0, -1]
 		
 		self.iRespawnCiv = -1
-		self.iNewCivFlip = -1
-		self.iOldCivFlip = -1
+		self.iFlipNewPlayer = -1
+		self.iFlipNewPlayer = -1
 		self.iOttomanSpawnTurn = -1
 		
 		self.iSpawnWar = 0
@@ -182,7 +181,7 @@ class GameData:
 		
 		# Religions
 		
-		self.iSeed = gc.getGame().getSorenRandNum(100, "Random delay")
+		self.iSeed = gc.getGame().getSorenRandNum(100, 'random seed')
 		
 		# Unique Powers
 		
@@ -198,15 +197,17 @@ class GameData:
 		
 		self.lConquest = [False] * iNumConquests
 		
+		# Dynamic Civs
+		
+		self.dCapitalLocations = {}
+		
 		# Congresses
 		
 		self.iGlobalWarAttacker = -1
 		self.iGlobalWarDefender = -1
 		
 		self.iCongressTurns = 8
-		self.iCivsWithNationalism = 0
-		
-		self.currentCongress = None
+		self.iPlayersWithNationalism = 0
 		
 		self.bNoCongressOption = False
 		
@@ -270,16 +271,16 @@ class GameData:
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		
-	def setPlayerEnabled(self, iPlayer, bNewValue):
-		self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)] = bNewValue
+	def setCivEnabled(self, iCiv, bNewValue):
+		self.lPlayerEnabled[lSecondaryCivs.index(iCiv)] = bNewValue
 		
-	def isPlayerEnabled(self, iPlayer):
-		return self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)]
+	def isCivEnabled(self, iCiv):
+		return self.lPlayerEnabled[lSecondaryCivs.index(iCiv)]
 		
 	def resetStability(self, iPlayer):
-		players[iPlayer].resetStability()
+		self.players[iPlayer].resetStability()
 		
-		for i, player in enumerate(players):
+		for i, player in enumerate(self.players):
 			if iPlayer != i:
 				player.resetWarTrend(iPlayer)
 				
@@ -295,17 +296,11 @@ class GameData:
 	def setSecedingCities(self, iPlayer, lCities):
 		self.dSecedingCities[iPlayer] = [city.getID() for city in lCities]
 		
-	def getNewCiv(self):
-		return self.lNewCivs.pop()
-	
-	def addNewCiv(self, iCiv):
-		self.lNewCivs.append(iCiv)
+	def isFirstContactMongols(self, iCiv):
+		return self.dFirstContactMongols[iCiv]
 		
-	def isFirstContactMongols(self, iPlayer):
-		return self.lFirstContactMongols[lMongolCivs.index(iPlayer)]
-		
-	def setFirstContactMongols(self, iPlayer, bValue):
-		self.lFirstContactMongols[lMongolCivs.index(iPlayer)] = bValue
+	def setFirstContactMongols(self, iCiv, bValue):
+		self.dFirstContactMongols[iCiv] = bValue
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.players[iPlayer].iStabilityLevel

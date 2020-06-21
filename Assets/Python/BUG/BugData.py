@@ -93,7 +93,6 @@ def onGameStart(argsList):
 	initGameData()
 
 def onGameLoad(argsList):
-	print 'ON GAME LOAD'
 	initGameData().load()
 	
 	data.update(getTable(STORED_DATA).data)

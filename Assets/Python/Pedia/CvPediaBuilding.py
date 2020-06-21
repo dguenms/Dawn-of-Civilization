@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 import CvUtil
-from RFCUtils import utils
+from RFCUtils import *
 from Consts import *
 
 gc = CyGlobalContext()
@@ -100,7 +100,7 @@ class CvPediaBuilding:
 		else:
 			szClass = "Building"
 
-		szCategory = utils.getAdvisorString(self.iBuilding) + " " + szClass
+		szCategory = getAdvisorString(self.iBuilding) + " " + szClass
 		screen.appendListBoxString(panel, u"<font=3>" + szCategory + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
 		# Yield

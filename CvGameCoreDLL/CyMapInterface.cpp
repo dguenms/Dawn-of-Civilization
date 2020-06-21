@@ -86,5 +86,8 @@ void CyMapPythonInterface()
 		.def("getPrimeMeridian", &CyMap::getPrimeMeridian, "int ()")
 		.def("getEquator", &CyMap::getEquator, "int ()")
 		.def("updateCulture", &CyMap::updateCulture, "void ()")
+
+		.def("maxStepDistance", &CyMap::maxStepDistance, "int ()")
+		.def("maxPlotDistance", &CyMap::maxPlotDistance, "int ()")
 		;
 }

@@ -247,7 +247,7 @@ void CvGameTextMgr::setDateStr(CvWString& szString, int iGameTurn, bool bSave, C
 //Rhye - start
 void CvGameTextMgr::setDateStrPlayer(CvWString& szString, int iGameTurn, bool bSave, CalendarTypes eCalendar, int iStartYear, GameSpeedTypes eSpeed, PlayerTypes ePlayer)
 {
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < GET_PLAYER(ePlayer).getBirthTurn())
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < GET_PLAYER(ePlayer).getInitialBirthTurn())
 		setDateStr(szString, iGameTurn, bSave, eCalendar, iStartYear, eSpeed);
 	else if (GET_PLAYER(ePlayer).getCurrentEra() >= 3)
 		szString = gDLL->getText("TXT_KEY_AGE_RENAISSANCE");
@@ -7705,7 +7705,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	}
 
 	// Leoreth: American UP
-	if (GC.getGame().getActivePlayer() == AMERICA)
+	if (GC.getGame().getActiveCivilizationType() == AMERICA)
 	{
 		if (eCivic == CIVIC_DEMOCRACY || eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_FREE_ENTERPRISE)
 		{
@@ -9595,6 +9595,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 
 	CvWString szTempBuffer;
 	PlayerTypes ePlayer;
+	CivilizationTypes eCivilization;
 	bool bFirst;
 	int iProduction;
 	int iI;
@@ -9612,6 +9613,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	{
 		ePlayer = GC.getGameINLINE().getActivePlayer();
 	}
+
+	eCivilization = (ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getCivilizationType() : NO_CIVILIZATION;
 
 	if (!bCivilopediaText)
 	{
@@ -9675,7 +9678,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	{
 		bool bTibetanMissionary = false;
 
-		if (ePlayer == TIBET)
+		if (eCivilization == TIBET)
 		{
 			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 			{
@@ -12717,19 +12720,8 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		//Leoreth: Indian UP
-		/*if (city.getOwner() == INDIA)
-		{
-			iHealth = city.getSpecialistPopulation();
-			if (iHealth > 0)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS", iHealth));
-				szBuffer.append(NEWLINE);
-			}
-		}*/
-
 		// Leoreth: Indian UP
-		if (city.getOwner() == INDIA)
+		if (city.getCivilizationType() == INDIA)
 		{
 			iHealth = (city.happyLevel() - city.unhappyLevel()) / 3;
 			if (iHealth > 0)
@@ -14017,7 +14009,7 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		}
 
 		// Leoreth: display the Dutch UP
-		if (GC.getGameINLINE().getActivePlayer() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		if (GC.getGameINLINE().getActiveCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
 		{
 			iYieldProduced *= 2;
 		}
@@ -14063,7 +14055,7 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		}
 
 		// Leoreth: display the Dutch UP
-		if (GC.getGameINLINE().getActivePlayer() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		if (GC.getGameINLINE().getActiveCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
 		{
 			iCommerceProduced *= 2;
 		}
@@ -14190,7 +14182,7 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 	}
 
 	// Leoreth: display sugar consumption in the tooltip
-	if (GC.getGame().getActivePlayer() == BRAZIL && eCorporation == (CorporationTypes)6)
+	if (GC.getGame().getActiveCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
 	{
 		szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo(BONUS_SUGAR).getChar()));
 	}
@@ -14323,7 +14315,7 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		}
 	}
 	// Merijn: Brazil UP display
-	if (pCity->getOwnerINLINE() == BRAZIL && eCorporation == (CorporationTypes)6)
+	if (pCity->getCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
 	{
 		if (pCity->getNumBonuses(BONUS_SUGAR) > 0)
 		{
@@ -14446,7 +14438,7 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		}
 		
 		// Brazil UP display
-		if (pCity->getOwnerINLINE() == BRAZIL && eCorporation == (CorporationTypes)6)
+		if (pCity->getCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
 		{
 			if (!bFirst)
 			{
@@ -16832,7 +16824,7 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 	// Harappan UP: Sanitation (positive health contributes to city growth)
 	int iHealthFood = 0;
-	if (city.getOwnerINLINE() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
+	if (city.getCivilizationType() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
 	{
 		if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * city.getBaseYieldRateModifier(YIELD_FOOD) - city.foodConsumption() * 100 > 1 && city.goodHealth() > city.badHealth())
 		{
@@ -17286,7 +17278,7 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		// Leoreth: display Roman UP
-		if (city.getOwnerINLINE() == ROME)
+		if (city.getCivilizationType() == ROME)
 		{
 			if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
 			{
@@ -17297,7 +17289,7 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		// Leoreth: display Holy Roman UP
-		if (city.getOwnerINLINE() == HOLY_ROME)
+		if (city.getCivilizationType() == HOLY_ROME)
 		{
 			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
 			{
@@ -18052,7 +18044,7 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 	if (eYieldType == YIELD_FOOD)
 	{
 		// Harappan UP: Sanitation (positive health contributes to city growth)
-		if (city.getOwnerINLINE() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
+		if (city.getCivilizationType() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
 		{
 			if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * city.getBaseYieldRateModifier(YIELD_FOOD) - city.foodConsumption() * 100 > 1 && city.goodHealth() > city.badHealth())
 			{
@@ -18499,7 +18491,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 	}
 
 	// Leoreth: Greek UP
-	if (city.getOwnerINLINE() == GREECE && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() <= ERA_CLASSICAL)
+	if (city.getCivilizationType() == GREECE && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() <= ERA_CLASSICAL)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_GREATPEOPLE_UNIQUE_POWER", 150));
 		szBuffer.append(NEWLINE);

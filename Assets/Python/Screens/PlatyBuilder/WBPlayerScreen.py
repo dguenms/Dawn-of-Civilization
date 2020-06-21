@@ -17,7 +17,7 @@ iChange = 1
 bRemove = False
 
 from StoredData import data
-from Consts import *
+from Core import *
 import Modifiers
 localText = CyTranslator()
 
@@ -175,8 +175,8 @@ class WBPlayerScreen:
 
 		#Merijn: Place Civenabled buttons
 		iY += 30
-		if iPlayer in lSecondaryCivs:
-			if data.isPlayerEnabled(iPlayer):
+		if civ(iPlayer) in lSecondaryCivs:
+			if data.isCivEnabled(civ(iPlayer)):
 				screen.setButtonGFC("CivEnabledButton", "", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_FOUND")).getButton(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
 			else:
 				screen.setButtonGFC("CivEnabledButton", "", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
@@ -496,7 +496,7 @@ class WBPlayerScreen:
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "CivEnabledButton":
-			data.setPlayerEnabled(iPlayer, not data.isPlayerEnabled(iPlayer))
+			data.setCivEnabled(civ(iPlayer), not data.isCivEnabled(iPlayer))
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":

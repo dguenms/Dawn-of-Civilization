@@ -465,6 +465,8 @@ void CvDllPythonEvents::reportCityRazed( CvCity *pCity, PlayerTypes ePlayer )
 {
 	if (preEvent())
 	{
+		FAssert(ePlayer != NO_PLAYER);
+
 		CyArgsList eventData;
 		eventData.add("cityRazed");						// add key to lookup python handler fxn
 

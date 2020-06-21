@@ -2,38 +2,68 @@
 
 from CvPythonExtensions import *
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
-gc = CyGlobalContext()
-localText = CyTranslator()
+from Events import handler
+from Core import *
+
 
 lTypes = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
-lGreatPeople = [[[] for j in lTypes] for i in range(iNumCivilizations)]
-lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCivilizations)]
+lGreatPeople = [[[] for j in lTypes] for i in range(iNumCivs)]
+lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCivs)]
 
-def testunit(iPlayer, iUnit):
-	unit = gc.getPlayer(iPlayer).initUnit(utils.getUniqueUnit(iPlayer, iUnit), 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-	print getName(unit)
-	
+
+@handler("greatPersonBorn")
+def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
+	sName = getName(unit)
+	if sName:
+		game.addGreatPersonBornName(sName)
+		
+		# Leoreth: replace graphics for female GP names
+		if sName[0] == "f":
+			sName = sName[1:]
+			unit = replace(unit, dFemaleGreatPeople[base_unit(unit)])
+		
+		unit.setName(sName)
+		
+	# Leoreth: display notification
+	if bAnnounceBirth:
+		if not player(iPlayer).isMinorCiv() and not player(iPlayer).isBarbarian():
+			pDisplayCity = city
+			if not pDisplayCity:
+				pDisplayCity = closestCity(unit)
+				
+			sCity = "%s (%s)" % (pDisplayCity.getName(), name(pDisplayCity))
+			sMessage = text("TXT_KEY_MISC_GP_BORN", unit.getName(), sCity)
+			sUnrevealedMessage = text("TXT_KEY_MISC_GP_BORN_SOMEWHERE", unit.getName())
+			
+			if city.isNone(): sMessage = text("TXT_KEY_MISC_GP_BORN_OUTSIDE", unit.getName(), sCity)
+		
+			for iLoopPlayer in players.major().alive():
+				if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
+					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN', unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
+				else:
+					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
+
 def create(iPlayer, iUnit, (x, y)):
-	gc.getPlayer(iPlayer).createGreatPeople(utils.getUniqueUnit(iPlayer, iUnit), True, True, x, y)
+	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
 def getAlias(iCiv, iType, iEra):
-	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
-	elif iCiv == iCivIran: return iCivPersia
+	if iCiv in [iHarappa, iTamils]: return iIndia
+	elif iCiv == iIran: return iPersia
 	
 	return iCiv
 	
 def getType(iUnit):
-	iUnitType = utils.getBaseUnit(iUnit)
+	iUnitType = base_unit(iUnit)
 	if iUnitType in lTypes: return lTypes.index(iUnitType)
 	return -1
 
 def getAvailableNames(iPlayer, iType):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	iEra = pPlayer.getCurrentEra()
-	iCiv = getAlias(pPlayer.getCivilizationType(), iType, iEra)
+	iCiv = getAlias(civ(iPlayer), iType, iEra)
 	
 	return getEraNames(iCiv, iType, iEra)
 
@@ -46,8 +76,8 @@ def getEraNames(iCiv, iType, iEra):
 	
 	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
 	
-	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
-	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
+	lBefore = [sName for sName in lNames[:iOffset] if not game.isGreatPersonBorn(sName)]
+	lAfter = [sName for sName in lNames[iOffset:] if not game.isGreatPersonBorn(sName)]
 	
 	if len(lAfter) >= iSpread:
 		return lAfter[:iSpread]
@@ -60,40 +90,8 @@ def getName(unit):
 	if iType < 0: return None
 	
 	lAvailableNames = getAvailableNames(unit.getOwner(), iType)
-	if not lAvailableNames: return None
 	
-	return utils.getRandomEntry(lAvailableNames)
-	
-def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
-	sName = getName(unit)
-	if sName:
-		gc.getGame().addGreatPersonBornName(sName)
-		
-		# Leoreth: replace graphics for female GP names
-		if sName[0] == "f":
-			sName = sName[1:]
-			unit = utils.replace(unit, dFemaleGreatPeople[utils.getBaseUnit(unit.getUnitType())])
-			
-		unit.setName(sName)
-		
-	# Leoreth: display notification
-	if bAnnounceBirth:
-		if iPlayer not in [iIndependent, iIndependent2, iBarbarian]:
-			pDisplayCity = city
-			if pDisplayCity.isNone(): pDisplayCity = gc.getMap().findCity(unit.getX(), unit.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-				
-			sCity = "%s (%s)" % (pDisplayCity.getName(), gc.getPlayer(pDisplayCity.getOwner()).getCivilizationShortDescription(0))
-			sMessage = localText.getText("TXT_KEY_MISC_GP_BORN", (unit.getName(), sCity))
-			sUnrevealedMessage = localText.getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", (unit.getName(),))
-			
-			if city.isNone(): sMessage = localText.getText("TXT_KEY_MISC_GP_BORN_OUTSIDE", (unit.getName(), sCity))
-		
-			for iLoopPlayer in range(iNumPlayers):
-				if gc.getPlayer(iLoopPlayer).isAlive():
-					if unit.plot().isRevealed(gc.getPlayer(iLoopPlayer).getTeam(), False):
-						CyInterface().addMessage(iLoopPlayer, False, iDuration, sMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, unit.getButton(), ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), unit.getX(), unit.getY(), True, True)
-					else:
-						CyInterface().addMessage(iLoopPlayer, False, iDuration, sUnrevealedMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, "", ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), -1, -1, False, False)
+	return random_entry(lAvailableNames)
 
 def setup():
 	for iCiv in dGreatPeople.keys():
@@ -117,7 +115,7 @@ def setup():
 
 		
 dGreatPeople = {
-iCivEgypt : {
+iEgypt : {
 	iGreatProphet : [
 		"Ptah-Hotep", # 25th BC
 		"Meryre", # 15th BC
@@ -181,7 +179,7 @@ iCivEgypt : {
 		"Sethi", # 13th BC
 	],
 },
-iCivBabylonia : {
+iBabylonia : {
 	iGreatProphet : [
 		"Utnapishtim", # legendary
 		"Gilgamesh", # legendary
@@ -235,7 +233,7 @@ iCivBabylonia : {
 		"Shalmaneser", # 7th BC
 	],
 },
-iCivChina : {
+iChina : {
 	iGreatProphet : [
 		"Lao Tzu", # 6th BC
 		"Kong Fuzi", # 5th BC
@@ -394,7 +392,7 @@ iCivChina : {
 		"Li Bai", # 20th
 	],
 },
-iCivGreece : {
+iGreece : {
 	iGreatProphet : [
 		"fEritha", # 12th BC
 		iClassical,
@@ -519,7 +517,7 @@ iCivGreece : {
 		"Alexandros Papagos", # 20th
 	],
 },
-iCivIndia : {
+iIndia : {
 	iGreatProphet : [
 		"Mahavira", # 6th BC
 		"Siddharta Gautama", # 6th BC
@@ -670,7 +668,7 @@ iCivIndia : {
 		"Ravindra Kaushik", # 20th
 	],
 },
-iCivCarthage : {
+iCarthage : {
 	iGreatProphet : [
 		"Sakun-yaton", # unknown date
 		"fJezebel", # 9th BC
@@ -727,7 +725,7 @@ iCivCarthage : {
 		"Maharbal", # 2nd BC
 	],
 },
-iCivPolynesia : {
+iPolynesia : {
 	iGreatProphet : [
 		"Maui", # legendary
 		"Kuamo'o Mo'okini", # 12th
@@ -783,7 +781,7 @@ iCivPolynesia : {
 		"Seru Epenisa Cakobau", # 19th
 	],
 },
-iCivPersia : {
+iPersia : {
 	iGreatProphet : [
 		"Mahabad", # legendary
 		"Zarathustra", # 18-10th BC
@@ -934,7 +932,7 @@ iCivPersia : {
 		"Mohammad Ali Jafari", # 20th
 	],
 },
-iCivRome : {
+iRome : {
 	iGreatProphet : [
 		"fClaudia Quinta", # 3rd BC
 		"Petrus", # 1st
@@ -997,7 +995,7 @@ iCivRome : {
 		"fAlbia Dominica", # 4th AD
 	],
 },
-iCivMaya : {
+iMaya : {
 	iGreatProphet : [
 		"Junajpu", # mythological
 		"Xb'alanke", # mythological
@@ -1049,7 +1047,7 @@ iCivMaya : {
 		"Tecun Uman", # 16th
 	],
 },
-iCivEthiopia : {
+iEthiopia : {
 	iGreatProphet : [
 		"Gabra Manfas Qeddus", # legendary
 		"Fremnatos", # 4th
@@ -1146,7 +1144,7 @@ iCivEthiopia : {
 		"Aman Andom", # 20th
 	],
 },
-iCivKorea : {
+iKorea : {
 	iGreatProphet : [
 		"Marananta", # 4th
 		iMedieval,
@@ -1300,7 +1298,7 @@ iCivKorea : {
 		"Kim Jae-gyu", # 20th
 	],
 },
-iCivByzantium : {
+iByzantium : {
 	iGreatProphet : [
 		"Nestorios", # 5th
 		"fTheodora", # 6th
@@ -1374,7 +1372,7 @@ iCivByzantium : {
 		"Alexios Strategopoulos", # 13th
 	],
 },
-iCivJapan : {
+iJapan : {
 	iGreatProphet : [
 		"En no Ozunu", # 7th
 		"Kuukaii", # 8th
@@ -1544,7 +1542,7 @@ iCivJapan : {
 		"Keiji Suzuki", # 20th
 	],
 },
-iCivVikings : {
+iVikings : {
 	iGreatProphet : [
 		"Ansgar", # 9th swedish
 		u"Haraldr Blátonn", # 10th danish
@@ -1681,7 +1679,7 @@ iCivVikings : {
 		"Stig Bergling", # 20th swedish
 	],
 },
-iCivTurks : {
+iTurks : {
 	iGreatProphet : [
 		"Tatpar Qaghan", # 6th
 		"Bulan", # 9th
@@ -1775,7 +1773,7 @@ iCivTurks : {
 		"Sobir Rakhimov", # 20th
 	],
 },
-iCivArabia : {
+iArabia : {
 	iGreatProphet : [
 		"Ali ibn Abi Talib", # 7th
 		"Hasan ibn Ali", # 7th
@@ -1874,7 +1872,7 @@ iCivArabia : {
 		"Ali Hassan al-Majid", # 20th
 	],
 },
-iCivTibet : {
+iTibet : {
 	iGreatProphet : [
 		"Gendun Drup", # 15th
 		"Gendun Gyatso", # 15-16th
@@ -1929,7 +1927,7 @@ iCivTibet : {
 		"Ngawang Namgyal", # 17th
 	],
 },
-iCivIndonesia : {
+iIndonesia : {
 	iGreatProphet : [
 		"Maha Rsi Agastya", # 5th
 		"Buddha Pahyien", # 4th
@@ -2002,7 +2000,7 @@ iCivIndonesia : {
 		"Sudirman", # 20th
 	],
 },
-iCivMoors : {
+iMoors : {
 	iGreatProphet : [
 		"Ibn Masarra", # 10th
 		"Ibn Hazm", # 11th
@@ -2086,7 +2084,7 @@ iCivMoors : {
 		"Mohamed Meziane", # 20th
 	],
 },
-iCivSpain : {
+iSpain : {
 	iGreatProphet : [
 		"Juan de Ortega", # 11th
 		u"Domingo de Guzmán", # 12th
@@ -2206,7 +2204,7 @@ iCivSpain : {
 		u"Ramón Mercader", # 20th
 	],
 },
-iCivFrance : {
+iFrance : {
 	iGreatProphet : [
 		u"Pierre Abélard", # 12th
 		"Louis IX", # 13th
@@ -2372,7 +2370,7 @@ iCivFrance : {
 		"Gilbert Renault", # 20th
 	],
 },
-iCivKhmer : {
+iKhmer : {
 	iGreatProphet : [
 		"Sanghapala", # 6th
 		"Kirtipandita", # 10th
@@ -2444,7 +2442,7 @@ iCivKhmer : {
 		"fYun Yat", # 20th
 	]
 },
-iCivEngland : {
+iEngland : {
 	iGreatProphet : [
 		"Bede the Venerable", # 8th
 		"Anselm of Canterbury", # 11th
@@ -2603,7 +2601,7 @@ iCivEngland : {
 		"Kim Philby", # 20th
 	],
 },
-iCivHolyRome : {
+iHolyRome : {
 	iGreatProphet : [
 		"fHildegard von Bingen", # 12th
 		"Albertus Magnus", # 13th
@@ -2747,7 +2745,7 @@ iCivHolyRome : {
 		"Wilhelm Franz von Habsburg-Lothringen", # 20th
 	],
 },
-iCivRussia : {
+iRussia : {
 	iGreatProphet : [
 		"fOlga", # 10th
 		"Sergey Radonezhsky", # 14th
@@ -2879,7 +2877,7 @@ iCivRussia : {
 		"Oleg Gordievsky", # 20th
 	],
 },
-iCivMali : {
+iMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th
 		"Sidi Yahya", # 15th
@@ -2940,7 +2938,7 @@ iCivMali : {
 		"fSeh-Dong-Hong-Beh", # 19th
 	],
 },
-iCivPoland : {
+iPoland : {
 	iGreatProphet : [
 		"Wojciech", # 10th
 		"Stanislaw Szczepanowski", # 11th
@@ -3062,7 +3060,7 @@ iCivPoland : {
 		u"Ryszard Kuklinski", # 20th
 	],
 },
-iCivPortugal : {
+iPortugal : {
 	iGreatProphet : [
 		u"António de Lisboa", # 13th
 		u"fIsabel de Aragão", # 14th
@@ -3162,7 +3160,7 @@ iCivPortugal : {
 		u"Agostinho Lourenço", # 20th
 	],
 },
-iCivInca : {
+iInca : {
 	iGreatProphet : [
 		"Yahuar Huacac", # 14th
 		"fAsarpay", # 16th
@@ -3209,7 +3207,7 @@ iCivInca : {
 		"fJuana Azurduy de Padilla", # 19th
 	],
 },
-iCivItaly : {
+iItaly : {
 	iGreatProphet : [
 		"Tommaso d'Aquino", # 13th
 		"Francesco d'Assisi", # 13th
@@ -3341,7 +3339,7 @@ iCivItaly : {
 		"Rodolfo Siviero", # 20th
 	],
 },
-iCivMongols : {
+iMongols : {
 	iGreatProphet : [
 		"Abaqa", # 13th
 		"Arghun", # 13th
@@ -3417,7 +3415,7 @@ iCivMongols : {
 		"Khorloogiin Choibalsan", # 20th
 	],
 },
-iCivAztecs : {
+iAztecs : {
 	iGreatProphet : [
 		"Tenoch", # 14th
 		"Tlacateotl", # 15th
@@ -3462,7 +3460,7 @@ iCivAztecs : {
 		"Chimalpopoca", # 15th
 	],
 },
-iCivMughals : {
+iMughals : {
 	iGreatProphet : [
 		"Guru Ram Das", # 16th
 		"Guru Arjan", # 16th
@@ -3538,7 +3536,7 @@ iCivMughals : {
 		"Hamid Gul", # 20th
 	],
 },
-iCivOttomans : {
+iOttomans : {
 	iGreatProphet : [
 		"Sheikh Bedreddin", # 14th
 		"Akshamsaddin", # 15th
@@ -3652,7 +3650,7 @@ iCivOttomans : {
 		"fDespina Storch", # 20th
 	],
 },
-iCivThailand : {
+iThailand : {
 	iGreatProphet : [
 		"Lithai", # 14th (Mahathammaracha I)
 		"Luang Pu Thuat", # 17th
@@ -3734,7 +3732,7 @@ iCivThailand : {
 		"fThao Suranari", # 19th
 	]
 },
-iCivCongo : {
+iCongo : {
 	iGreatProphet : [
 		"Nzinga a Nkuwu", # 15th
 		"Kinu a Mvemba", # 16th
@@ -3765,7 +3763,7 @@ iCivCongo : {
 		"Mwenda Msiri Ngelengwa Shitambi", # 19th
 	],
 },
-iCivNetherlands : {
+iNetherlands : {
 	iGreatProphet : [
 		"Geert Grote", # 14th
 		iRenaissance,
@@ -3871,7 +3869,7 @@ iCivNetherlands : {
 		u"François van 't Sant", # 20th
 	],
 },
-iCivGermany : {
+iGermany : {
 	iGreatProphet : [
 		"Moses Mendelssohn", # 18th
 		"Friedrich Schleiermacher", # 18th
@@ -3989,7 +3987,7 @@ iCivGermany : {
 		"Markus Wolf", # 20th
 	],
 },
-iCivAmerica : {
+iAmerica : {
 	iGreatProphet : [
 		"Joseph Smith", # 19th
 		"fMary Baker Eddy", # 19th
@@ -4100,7 +4098,7 @@ iCivAmerica : {
 		"fElizabeth Friedman", # 20th
 	],
 },
-iCivMexico : {
+iMexico : {
 	iGreatProphet : [
 		"Juan Diego", # 16th
 		"Francisco Javier Clavijero", # 18th
@@ -4172,7 +4170,7 @@ iCivMexico : {
 		"fMargarita Ortega", # 19th
 	],
 },
-iCivArgentina : {
+iArgentina : {
 	iGreatProphet : [
 		"Gauchito Gil", # 19th
 		iGlobal,
@@ -4249,7 +4247,7 @@ iCivArgentina : {
 		"Guillermo Gaede", # 20th
 	],
 },
-iCivColombia : {
+iColombia : {
 	iGreatProphet : [
 		"fLaura Montoya", # 20th
 		u"Félix Restrepo Mejía", # 20th
@@ -4308,7 +4306,7 @@ iCivColombia : {
 		u"fManuela Sáenz", # 19th
 	]
 },
-iCivBrazil : {
+iBrazil : {
 	iGreatProphet : [
 		u"António Conselheiro", # 19th
 		iGlobal,
@@ -4368,7 +4366,7 @@ iCivBrazil : {
 		"Artur da Costa e Silva", # 20th
 	],
 },
-iCivCanada : {
+iCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th
 		u"André Bessette", # 20th

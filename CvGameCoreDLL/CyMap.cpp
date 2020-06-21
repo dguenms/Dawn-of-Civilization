@@ -339,3 +339,13 @@ void CyMap::updateCulture()
 		m_pMap->updateCulture();
 	}
 }
+
+int CyMap::maxStepDistance()
+{
+	return m_pMap ? m_pMap->maxStepDistance() : -1;
+}
+
+int CyMap::maxPlotDistance()
+{
+	return m_pMap ? m_pMap->maxPlotDistance() : -1;
+}

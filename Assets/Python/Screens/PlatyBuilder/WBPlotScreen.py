@@ -14,9 +14,8 @@ import Popup
 gc = CyGlobalContext()
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 import MapEditorTools as met
-import Areas
 
 bSensibility = True
 iEditType = 0

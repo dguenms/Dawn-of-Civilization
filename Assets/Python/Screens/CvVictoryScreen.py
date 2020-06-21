@@ -6,7 +6,7 @@ import ScreenInput
 import PyHelpers
 import time
 from Consts import * #Rhye
-from RFCUtils import utils
+from RFCUtils import *
 import Victory as vic
 from StoredData import data
 
@@ -1562,12 +1562,12 @@ class CvVictoryScreen:
 				if (iLoopVC == 7):
 					for i in range(3):
 						iRow = screen.appendTableRow(szTable)
-						sGoalTitle = utils.getGoalText(self.iActivePlayer, i, True)
-						sGoalText = utils.getGoalText(self.iActivePlayer, i)
+						sGoalTitle = getHistoricalGoalText(self.iActivePlayer, i, True)
+						sGoalText = getHistoricalGoalText(self.iActivePlayer, i)
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(iCalendar) or AdvisorOpt.isUHVFinishDateTurn():
-							iVictoryYear = dVictoryYears[gc.getPlayer(self.iActivePlayer).getCivilizationType()][i]
-							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
+							iVictoryYear = dVictoryYears[self.iActivePlayer][i]
+							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (year(iVictoryYear) - scenarioStartTurn(),))
 						sGoalDisplay = sGoalText + sGoalTurn
 						if self.X_EXTRA < 100:
 							screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1594,17 +1594,17 @@ class CvVictoryScreen:
 				
 				# Leoreth: Religious Victory
 				if iLoopVC == 8:
-					iVictoryType = utils.getReligiousVictoryType(self.iActivePlayer)
+					iVictoryType = getReligiousVictoryType(self.iActivePlayer)
 					if iVictoryType == -1:
 						iRow = screen.appendTableRow(szTable)
 						screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_NO_RELIGIOUS_GOALS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 					else:
 						for i in range(3):
 							iRow = screen.appendTableRow(szTable)
-							sGoalText = utils.getReligiousGoalText(iVictoryType, i)
+							sGoalText = getReligiousGoalText(iVictoryType, i)
 							if iVictoryType == iVictoryPaganism and i == 1: 
 								sGoalText += "_" + str(gc.getCivilizationInfo(gc.getPlayer(self.iActivePlayer).getCivilizationType()).getPaganReligionName(0).upper())
-								if self.iActivePlayer == iMaya and not gc.getPlayer(self.iActivePlayer).isReborn(): sGoalText += "_MAYA"
+								if civ(self.iActivePlayer) == iMaya: sGoalText += "_MAYA"
 							screen.setTableText(szTable, 0, iRow, localText.getText(str(sGoalText), ()), '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							if vic.checkReligiousGoal(self.iActivePlayer, i) == 1: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_YES'

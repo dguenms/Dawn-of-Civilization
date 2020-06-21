@@ -1616,11 +1616,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLAGUE_SPREAD_CITY</Tag>
-		<English>Plague has spread in</English>
-		<French>La peste se r&#233;pand dans la ville : </French>
-		<German>Die Pest breitet sich aus, diesmal in</German>
-		<Italian>La peste si &#232; diffusa a</Italian>
-		<Spanish>La peste se ha extendido por</Spanish>
+		<English>Plague has spread in %s1!</English>
+		<French>La peste se r&#233;pand dans la ville : %s1!</French>
+		<German>Die Pest breitet sich in %s1 aus!</German>
+		<Italian>La peste si &#232; diffusa a %s1!</Italian>
+		<Spanish>La peste se ha extendido por %s1!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_COLLECT_TITHE</Tag>

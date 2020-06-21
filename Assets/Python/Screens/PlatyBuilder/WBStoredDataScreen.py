@@ -27,7 +27,7 @@ iWarList = 0
 
 from StoredData import data
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
 class WBStoredDataScreen:
 
@@ -74,7 +74,7 @@ class WBStoredDataScreen:
 		# Civ selection
 		screen.addDropDownBoxGFC("SelectCiv", 20, 50 + 6*35 + 100, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("SelectCiv", CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()), -1, -1, iSelectedCiv == -1)
-		for i in range(iNumPlayers):
+		for i in players.major():
 			screen.addPullDownString("SelectCiv", CyTranslator().getText(str(gc.getPlayer(i).getCivilizationShortDescriptionKey()), ()), i, i, iSelectedCiv == i)
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -163,7 +163,7 @@ class WBStoredDataScreen:
 				if item == "iStabilityLevel":
 					sText += u" (%s)" % CyTranslator().getText(StabilityLevelTexts[scriptDict[item]], ())
 				elif item in ["iNextTurnAIWar"]:
-					sText += u" (Turn %s)" % getTurnForYear(scriptDict[item])
+					sText += u" (Turn %s)" % year(scriptDict[item])
 				elif item == "iFirstNewWorldColony":
 					sText = self.getCivName(scriptDict[item])
 				screen.setTableText("WBDataTable", 2*iColumn+3, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 22008, i, CvUtil.FONT_LEFT_JUSTIFY)
@@ -219,9 +219,9 @@ class WBStoredDataScreen:
 			elif item == "lPlayerEnabled": # Secondary civs
 				sText = CyTranslator().getText(str(gc.getPlayer(lSecondaryCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lSecondaryCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			elif item == "lFirstContactConquerors": # New world civs conquerors
-				sText = CyTranslator().getText(str(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationShortDescriptionKey()), ())
-				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			elif item == "dFirstContactConquerors": # New world civs conquerors
+				sText = CyTranslator().getText(str(gc.getCivilizationInfo(lBioNewWorld[i]).getText()), ())
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(lBioNewWorld[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lFirstContactMongols": # Mongol conquerors
 				sText = CyTranslator().getText(str(gc.getPlayer(lMongolCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lMongolCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -258,7 +258,7 @@ class WBStoredDataScreen:
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lGoals":
 				sText = u"UHV%d: " % (i+1)
-				sText += utils.getGoalText(iSelectedCiv, i, True)
+				sText += getHistoricalGoalText(iSelectedCiv, i, True)
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)
@@ -383,8 +383,7 @@ class WBStoredDataScreen:
 				else:
 					data.players[iSelectedCiv].__dict__[item] = iValue
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)
@@ -431,8 +430,7 @@ class WBStoredDataScreen:
 						popup.launch()
 						return 1
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)

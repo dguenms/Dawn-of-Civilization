@@ -29,25 +29,22 @@ import CityNameManager as cnm
 import WBStoredDataScreen
 import GreatPeople as gp
 
+from CvPlatyBuilderSettings import *
+
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 import MapEditorTools as met
-import Areas
 import SettlerMaps
 import WarMaps
 import RiseAndFall
 import DynamicCivs as dc
+
+from Core import *
+
 rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
-iChange = 1
-bRemove = False
-bPython = True
-bHideInactive = True
-Activities = ["AWAKE", "HOLD", "SLEEP", "HEAL", "SENTRY", "INTERCEPT", "MISSION", "PATROL", "PLUNDER"]
-iSetValue = 3
-iWarValue = 0
 
 class CvWorldBuilderScreen:
 
@@ -119,7 +116,7 @@ class CvWorldBuilderScreen:
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		self.__init__()
-		self.m_iCurrentPlayer = utils.getHumanID()
+		self.m_iCurrentPlayer = active()
 		self.m_iCurrentTeam = gc.getPlayer(self.m_iCurrentPlayer).getTeam()
 		screen.setCloseOnEscape(False)
 		screen.setAlwaysShown(True)
@@ -566,8 +563,8 @@ class CvWorldBuilderScreen:
 			else:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
 		elif self.iPlayerAddMode == "Flip":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
 				if self.bFlipAI:
 					if tPlot not in lAIPlotList:
@@ -582,21 +579,21 @@ class CvWorldBuilderScreen:
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
 				if not bMulti:
 					self.showStabilityOverlay()
 					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
-			if self.m_iCurrentPlayer < iNumPlayers:
+			if not is_minor(self.m_iCurrentPlayer):
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				met.changeWarValue(self.m_iCurrentPlayer, tPlot, iWarValue)
 				if not bMulti:
 					self.showWarOverlay()
@@ -716,8 +713,8 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "AddLandMark":
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "Flip":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
 				if tPlot in lAIPlotList:
 					lAIPlotList.remove(tPlot)
@@ -728,21 +725,21 @@ class CvWorldBuilderScreen:
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				if not bMulti:
 					self.showStabilityOverlay()
 					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
-			if self.m_iCurrentPlayer < iNumPlayers:
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			if not is_minor(self.m_iCurrentPlayer):
+				tPlot = location(self.m_pCurrentPlot)
 				met.changeWarValue(self.m_iCurrentPlayer, tPlot, 0)
 				if not bMulti:
 					self.showStabilityOverlay()
@@ -1029,14 +1026,13 @@ class CvWorldBuilderScreen:
 		if self.bRegion:
 			iRegion = self.m_pCurrentPlot.getRegionID()
 			if iRegion == -1: return [self.m_pCurrentPlot]
-			lPlots = [gc.getMap().plot(x, y) for (x, y) in utils.getRegionPlots(iRegion)]
-			return lPlots
+			return plots.region(iRegion)
 			
 		if self.iPlayerAddMode == "AreaExporter3":
 			(iX, iY) = self.TempInfo[-1]
 			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
 			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
-			return [gc.getMap().plot(x, y) for (x, y) in utils.getPlotList(tTR, tBL)]
+			return plots.start(tTR).end(tBL)
 
 		iMinX = self.m_pCurrentPlot.getX()
 		iMaxX = self.m_pCurrentPlot.getX() + self.iBrushWidth
@@ -1282,7 +1278,6 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("UtilButtonPanel")
 			screen.deleteWidget("ClearChanges")
 			screen.deleteWidget("Export")
-			screen.deleteWidget("SwitchReborn")
 			screen.deleteWidget("FlipAIButton")
 			screen.deleteWidget("MoveMapReset")
 			screen.deleteWidget("VictoryRectangleButton")
@@ -1528,15 +1523,6 @@ class CvWorldBuilderScreen:
 						iX += iSpan*iAdjust
 						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 						iX += iSpan*iAdjust
-						if self.iPlayerAddMode != "RegionMap":
-							if self.iPlayerAddMode == "Flip":
-								bExtended = (self.m_iCurrentPlayer in Areas.dRebirthArea)
-							else:
-								bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
-							if bExtended:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-							else:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in self.MoveMap:
 				if self.iPlayerAddMode == "MoveMap":
@@ -1991,25 +1977,25 @@ class CvWorldBuilderScreen:
 ## Platy Reveal Mode End ##
 
 	def showFlipZone(self):
-		utils.removeStabilityOverlay()
-		if self.m_iCurrentPlayer < iNumPlayers:
+		removeStabilityOverlay()
+		if not is_minor(self.m_iCurrentPlayer):
 			self.setCurrentFlip()
 
-			tSpawn = Areas.getCapital(self.m_iCurrentPlayer)
-			CyEngine().fillAreaBorderPlotAlt(tSpawn[0], tSpawn[1], 1002, "COLOR_CYAN", 0.7)
+			tSpawn = location(plots.capital(self.m_iCurrentPlayer))
+			x, y = tSpawn
+			CyEngine().fillAreaBorderPlotAlt(x, y, 1002, "COLOR_CYAN", 0.7)
 
 			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-			for tPlot in lHumanPlotList:
-				if tPlot in lAIPlotList: continue
-				if tPlot == tSpawn: continue
+			for x, y in lHumanPlotList:
+				if (x, y) in lAIPlotList: continue
+				if (x, y) == tSpawn: continue
 				else:
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, "COLOR_MAGENTA", 0.7)
+					CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_MAGENTA", 0.7)
 
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
-				x = city.getX()
-				y = city.getY()
+				x, y = location(city)
 				if (x, y) not in lHumanPlotList:
 					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
@@ -2021,35 +2007,30 @@ class CvWorldBuilderScreen:
 			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
 		else:
 			# Human flipzone
-			if utils.isReborn(self.m_iCurrentPlayer):
-				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
-			else:
-				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			humanBirthArea = plots.birth(self.m_iCurrentPlayer)
 
-			if self.m_iCurrentPlayer in Areas.dChangedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
-				lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
+			if self.m_iCurrentPlayer in dExtendedBirthArea:
+				aiBirthArea = plots.birth(self.m_iCurrentPlayer, True).without(dBirthAreaExceptions[self.m_iCurrentPlayer]).without(humanBirthArea)
 			else:
 				lAIPlotList = []
-			self.lCurrentFlipZone = [lHumanPlotList, lAIPlotList]
+			self.lCurrentFlipZone = [humanBirthArea, aiBirthArea]
 
 	def showStabilityOverlay(self):
-		utils.removeStabilityOverlay()
-		if self.m_iCurrentPlayer < iNumPlayers:
-			utils.toggleStabilityOverlay(self.m_iCurrentPlayer)
+		removeStabilityOverlay()
+		if not is_minor(self.m_iCurrentPlayer):
+			toggleStabilityOverlay(self.m_iCurrentPlayer)
 
 	def showWarOverlay(self):
-		utils.removeStabilityOverlay()
-		if self.m_iCurrentPlayer < iNumPlayers:
-			for i in range(CyMap().numPlots()):
-				plot = CyMap().plotByIndex(i)
+		removeStabilityOverlay()
+		if not is_minor(self.m_iCurrentPlayer):
+			for plot in plots.all():
 				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
 				if iPlotType > 0:
 					szColor = lWarMapColors[iPlotType-1]
 					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)
 
 	def showReligionOverlay(self):
-		utils.removeStabilityOverlay()
+		removeStabilityOverlay()
 		for i in range(CyMap().numPlots()):
 			plot = CyMap().plotByIndex(i)
 			iValue = plot.getSpreadFactor(self.m_iCurrentReligion)
@@ -2058,15 +2039,14 @@ class CvWorldBuilderScreen:
 				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iValue-1, szColor, 0.7)
 
 	def showRegionOverlay(self):
-		utils.removeStabilityOverlay()
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
+		removeStabilityOverlay()
+		for plot in plots.all():
 			iRegion = plot.getRegionID()
 			if iRegion == -1: continue
 			if iRegion == self.m_iRegionMapID:
-				CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_BLUE", 0.7)
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
 			elif self.bAllRegions:
-				CyEngine().fillAreaBorderPlotAlt(x, y, 1000+iRegion, self.dRegionColors[iRegion], 0.7)
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iRegion, self.dRegionColors[iRegion], 0.7)
 			
 	def determineRegionColors(self):
 		lColors = ["COLOR_PLAYER_LIGHT_PURPLE", "COLOR_PLAYER_LIGHT_YELLOW", "COLOR_PLAYER_LIGHT_ORANGE", "COLOR_SILVER"]
@@ -2074,12 +2054,10 @@ class CvWorldBuilderScreen:
 		dNeighbourRegions = dict([(i, []) for i in range(iNumRegions)])
 		dRegionColors = dict([(i, "") for i in range(iNumRegions)])
 		
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
+		for plot in plots.all():
 			iRegion = plot.getRegionID()
 			if iRegion == -1: continue
-			for (i, j) in utils.surroundingPlots((x, y)):
-				surroundingPlot = gc.getMap().plot(i, j)
+			for surroundingPlot in plots.surrounding(plot):
 				iNeighbourRegion = surroundingPlot.getRegionID()
 				if iNeighbourRegion != iRegion and iNeighbourRegion != -1 and iNeighbourRegion not in dNeighbourRegions[iRegion]:
 					dNeighbourRegions[iRegion].append(iNeighbourRegion)
@@ -2096,21 +2074,20 @@ class CvWorldBuilderScreen:
 		self.dRegionColors = dRegionColors
 
 	def showVictoryOverlay(self):
-		utils.removeStabilityOverlay()
+		removeStabilityOverlay()
 		lRegions = []
-		for (x, y) in utils.getWorldPlotsList():
-			iVictoryRegion = CvScreensInterface.getUHVTileInfo((x, y, self.m_iCurrentPlayer))
+		for plot in plots.all():
+			iVictoryRegion = CvScreensInterface.getUHVTileInfo((plot.getX(), plot.getY(), self.m_iCurrentPlayer))
 			if iVictoryRegion != -1:
 				if iVictoryRegion not in lRegions:
 					lRegions.append(iVictoryRegion)
-				plot = gc.getMap().plot(x, y)
 				if not plot.isWater():
-					CyEngine().fillAreaBorderPlotAlt(x, y, 1000 + 2*lRegions.index(iVictoryRegion), "COLOR_MAGENTA", 0.7)
+					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000 + 2*lRegions.index(iVictoryRegion), "COLOR_MAGENTA", 0.7)
 				elif self.bVictoryRectangle:
-					CyEngine().fillAreaBorderPlotAlt(x, y, 1001 + 2*lRegions.index(iVictoryRegion), "COLOR_LIGHT_GREY", 0.7)
+					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1001 + 2*lRegions.index(iVictoryRegion), "COLOR_LIGHT_GREY", 0.7)
 
 	def showAreaExportOverlay(self):
-		utils.removeStabilityOverlay()
+		removeStabilityOverlay()
 		for (x, y) in self.TempInfo:
 			plot = gc.getMap().plot(x, y)
 			if self.iPlayerAddMode == "AreaExporter3" and (x, y) == self.TempInfo[-1]:
@@ -2143,21 +2120,15 @@ class CvWorldBuilderScreen:
 			sText = CyTranslator().getText("TXT_KEY_WB_AREAEXPORT_HELP", ())
 		else:
 			return
-		utils.show(sText)
+		show(sText)
 
 	def checkRegionTiles(self):
-		lPlots = []
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.isWater(): continue
-			iRegion = plot.getRegionID()
-			if iRegion == -1:
-				lPlots.append((x, y))
-		if lPlots:
-			sText = "Land tiles without a defined region:\n" + str(lPlots)
+		tiles = plots.all().land().where(lambda p: p.getRegionID() == -1)
+		if tiles:
+			sText = "Land tiles without a defined region:\n" + str(tiles)
 		else:
 			sText = "All land tiles have a defined region"
-		utils.show(sText)
+		show(sText)
 
 	def getPlotItems(self, tPlot):
 		x, y = tPlot
@@ -2322,7 +2293,7 @@ class CvWorldBuilderScreen:
 				for item in self.lMoveUnit:
 					loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 					if loopUnit.isNone(): continue
-					loopUnit.setXY(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), True, True, False)
+					move(loopUnit, self.m_pCurrentPlot)
 				pUnitX = gc.getPlayer(self.lMoveUnit[0][0]).getUnit(self.lMoveUnit[0][1])
 				self.lMoveUnit = []
 				self.iPlayerAddMode = "EditUnit"
@@ -2334,7 +2305,7 @@ class CvWorldBuilderScreen:
 				x = self.m_pCurrentPlot.getX()
 				y = self.m_pCurrentPlot.getY()
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				sName = cnm.getFoundName(self.m_iCurrentPlayer, location(self.m_pCurrentPlot))
 				if not sName:
 					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
@@ -2347,7 +2318,7 @@ class CvWorldBuilderScreen:
 					for item in self.lMoveUnit:
 						loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 						if loopUnit.isNone(): continue
-						loopUnit.setXY(x, y, True, True, False)
+						move(loopUnit, self.m_pCurrentPlot)
 					self.lMoveUnit = []
 			self.iPlayerAddMode = "CityDataI"
 			self.iMoveCity = -1
@@ -2397,7 +2368,7 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "MoveMap2"
 			self.refreshSideMenu()
 		elif self.iPlayerAddMode == "MoveMap2":
-			utils.removeStabilityOverlay()
+			removeStabilityOverlay()
 			x = self.m_pCurrentPlot.getX()
 			y = self.m_pCurrentPlot.getY()
 			self.moveMapReset()
@@ -2418,10 +2389,9 @@ class CvWorldBuilderScreen:
 			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
 			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
 			del self.TempInfo[-1]
-			lAddPlots = utils.getPlotList(tTR, tBL)
-			for tPlot in lAddPlots:
-				if tPlot not in self.TempInfo:
-					self.TempInfo.append(tPlot)
+			for plot in plots.start(tTR).end(tBL):
+				if location(plot) not in self.TempInfo:
+					self.TempInfo.append(location(plot))
 			self.showAreaExportOverlay()
 			self.refreshSideMenu()
 		elif self.useLargeBrush():
@@ -2515,10 +2485,9 @@ class CvWorldBuilderScreen:
 			tTR = (min(iX, self.m_pCurrentPlot.getX()), min(iY, self.m_pCurrentPlot.getY()))
 			tBL = (max(iX, self.m_pCurrentPlot.getX()), max(iY, self.m_pCurrentPlot.getY()))
 			del self.TempInfo[-1]
-			lAddPlots = utils.getPlotList(tTR, tBL)
-			for tPlot in lAddPlots:
-				if tPlot in self.TempInfo:
-					self.TempInfo.remove(tPlot)
+			for plot in plots.start(tTR).end(tBL):
+				if location(plot) in self.TempInfo:
+					self.TempInfo.remove(location(plot))
 			self.showAreaExportOverlay()
 			self.refreshSideMenu()
 		elif self.useLargeBrush():
@@ -2782,21 +2751,21 @@ class CvWorldBuilderScreen:
 				self.showFlipZone()
 			elif self.iPlayerAddMode == "Core":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(iNumPlayers):
+					for iPlayer in players.major():
 						met.resetCore(iPlayer)
 				else:
 					met.resetCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(iNumPlayers):
+					for iPlayer in players.major():
 						met.resetSettler(iPlayer)
 				else:
 					met.resetSettler(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "WarMap":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(iNumPlayers):
+					for iPlayer in players.major():
 						met.resetWarMap(iPlayer)
 				else:
 					met.resetWarMap(self.m_iCurrentPlayer)
@@ -2832,15 +2801,17 @@ class CvWorldBuilderScreen:
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(iNumPlayers):
-						met.exportSettlerMap(iPlayer, True, True)
+					for iPlayer in players.major():
+						met.exportSettlerMap(iPlayer, True)
+					show("Settlermaps of all Civs exported")
 				else:
 					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "WarMap":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(iNumPlayers):
-						met.exportWarMap(iPlayer, True, True)
+					for iPlayer in players.major():
+						met.exportWarMap(iPlayer, True)
+					show("Warmaps of all Civs exported")
 				else:
 					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showWarOverlay()
@@ -2849,18 +2820,6 @@ class CvWorldBuilderScreen:
 				self.showRegionOverlay()
 			elif self.iPlayerAddMode in self.AreaExport:
 				met.exportAreaExport(self.TempInfo, self.bWaterException, self.bPeaksException)
-
-		elif inputClass.getFunctionName() == "SwitchReborn":
-			bDeleteOverlay = False
-			if inputClass.getData1() == 0:
-				utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
-				if self.iPlayerAddMode == "Flip":
-					self.showFlipZone()
-				elif self.iPlayerAddMode == "WarMap":
-					self.showWarOverlay()
-				else:
-					self.showStabilityOverlay()
-				dc.checkName(self.m_iCurrentPlayer)
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			bDeleteOverlay = False
@@ -2964,6 +2923,6 @@ class CvWorldBuilderScreen:
 			self.iMoveMapReset = screen.getPullDownData("MoveMapReset", screen.getSelectedPullDownID("MoveMapReset"))
 
 		if bDeleteOverlay and inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
-			utils.removeStabilityOverlay()
+			removeStabilityOverlay()
 
 		return 1

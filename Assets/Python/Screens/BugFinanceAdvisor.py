@@ -12,7 +12,7 @@ import TradeUtil
 import FontUtil
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from StoredData import data
 from Stability import determineStabilityLevel
 
@@ -114,7 +114,7 @@ class BugFinanceAdvisor:
 
 		ePlayer = self.iActiveLeader #Rhye
 		
-		iStabilityLevel = utils.getStabilityLevel(ePlayer)
+		iStabilityLevel = stability(ePlayer)
 		
 		if iStabilityLevel == iStabilityCollapsing: szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
 		elif iStabilityLevel == iStabilityUnstable: szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
@@ -277,7 +277,7 @@ class BugFinanceAdvisor:
 		
 		# buildings
 		iBuildings = 0
-		for city in utils.getCityList(ePlayer):
+		for city in cities.owner(ePlayer):
 			for iBuilding in range(gc.getNumBuildingInfos()):
 				if city.isHasRealBuilding(iBuilding):
 					iBuildings += gc.getBuildingInfo(iBuilding).getYieldChange(YieldTypes.YIELD_COMMERCE) + city.getBuildingYieldChange(iBuilding, YieldTypes.YIELD_COMMERCE)

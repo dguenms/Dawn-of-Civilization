@@ -275,7 +275,7 @@ class WBGameDataScreen:
 
 		iRow = iNumRows + 3
 		for iCiv in lSecondaryCivs:
-			bEnabled = data.isPlayerEnabled(iCiv)
+			bEnabled = data.isCivEnabled(iCiv)
 			bDefault = True
 			if iCiv in [iHarappa, iPolynesia]:
 				bDefault = False
@@ -436,7 +436,7 @@ class WBGameDataScreen:
 				# Enabling/disabling secondary civs
 				if iGameOption < 2000:
 					iItem = iGameOption - 1000
-					data.setPlayerEnabled(iItem, not data.isPlayerEnabled(iItem))
+					data.setCivEnabled(civ(iItem), not data.isCivEnabled(civ(iItem)))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
 					data.bIgnoreAI = not data.bIgnoreAI

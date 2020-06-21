@@ -76,7 +76,10 @@ public:
 	bool hasCivic(CivicTypes eCivic) const;
 	DllExport bool isHuman() const;																																							// Exposed to Python
 	DllExport void updateHuman();
-	DllExport bool isBarbarian() const;																																					// Exposed to Python
+	DllExport bool isBarbarian() const;		// Exposed to Python
+
+	bool isIndependent() const;
+	bool isNative() const;
 
 	DllExport const wchar* getName(uint uiForm = 0) const;																											// Exposed to Python
 	//Rhye (jdog) -  start ---------------------
@@ -1250,11 +1253,7 @@ public:
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
 	DenialTypes AI_slaveTrade(PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
-	//DllExport int getCivicPreference(int column); // Leoreth
-	bool isReborn(); // Leoreth
-    int getReborn(); // Leoreth
-    void setReborn(bool bNewValue = true); // Leoreth
-    bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
+	bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
 	int getSettlerValue(int x, int y); // Leoreth
 	int getWarValue(int x, int y); //Leoreth
@@ -1274,16 +1273,15 @@ public:
 	int getBuildingPreference(BuildingTypes eBuilding) const;
 	void setBuildingPreference(BuildingTypes eBuilding, int iNewValue);
 
-	int getBirthYear() const;
-	int getBirthTurn() const;
-	void setBirthYear(int iNewValue);
-
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
 	bool isNeighbor(PlayerTypes ePlayer);
 
-	int getLatestRebellionTurn();
-	void setLatestRebellionTurn(int iNewValue);
+	int getInitialBirthTurn() const;
+	void setInitialBirthTurn(int iNewValue);
+
+	int getLastBirthTurn() const;
+	void setLastBirthTurn(int iNewValue);
 
 	EraTypes getSoundtrackEra();
 
@@ -1361,6 +1359,9 @@ public:
 
 	// Leoreth
 	void verifyCommerceRates(CommerceTypes eCommerce) const;
+
+	void setPeriod(PeriodTypes ePeriod);
+	PeriodTypes getPeriod() const;
 
 	bool m_bTurnPlayed;
 
@@ -1518,8 +1519,8 @@ protected:
 	//Rhye (jdog) -  end -----------------------
 
 	// Leoreth
-	bool m_bReborn;
-	int m_iLatestRebellionTurn;
+	int m_iInitialBirthTurn;
+	int m_iLastBirthTurn;
 	int m_iPersecutionCountdown;
 	int m_iNoAnarchyTurns;
 	int m_iBirthYear;
@@ -1536,6 +1537,8 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
+
+	PeriodTypes m_ePeriod; // Leoreth
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

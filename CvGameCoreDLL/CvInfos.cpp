@@ -11443,11 +11443,11 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes ePlayer) const
 	iUnitCost /= 100;
 
 	// bonus for Netherlands and Germany in the beginning
-	if (ePlayer == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
 	{
 	    iUnitCost /= 2;
 	}
-	else if (ePlayer == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	else if (GET_PLAYER(ePlayer).getCivilizationType() == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
 	{
 	    iUnitCost /= 2;
 	}
@@ -11511,7 +11511,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	// reduce tech costs before the human players enter the game
 	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
-	if (GET_PLAYER(eHuman).getBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn < GET_PLAYER(eHuman).getBirthTurn())
+	if (GET_PLAYER(eHuman).getInitialBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn < GET_PLAYER(eHuman).getInitialBirthTurn())
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
@@ -11621,10 +11621,15 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes ePlayer) const
 	iHealthBonus += GET_PLAYER(ePlayer).getModifier(MODIFIER_HEALTH);
 
 	// help early civs in late scenarios
-	if (getScenario() >= SCENARIO_600AD)
+	for (int iScenario = 0; iScenario < NUM_SCENARIO_TYPES; iScenario++)
 	{
-		if (ePlayer < VIKINGS && iHealthBonus < 5) iHealthBonus += 1;
-		if (ePlayer < BABYLONIA && iHealthBonus < 5) iHealthBonus += 1;
+		if (iScenario < getScenario())
+		{
+			if (GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear() <= getScenarioStartYear((ScenarioTypes)iScenario))
+			{
+				iHealthBonus += 1;
+			}
+		}
 	}
 
 	return iHealthBonus;
@@ -11636,12 +11641,14 @@ int CvHandicapInfo::getHappyBonus() const
 	return m_iHappyBonus;
 }
 
-int CvHandicapInfo::getHappyBonusByID(PlayerTypes pl) const
+int CvHandicapInfo::getHappyBonusByID(PlayerTypes ePlayer) const
 {
-    if (pl == NETHERLANDS)
-        return m_iHappyBonus+3;
-    else
-        return m_iHappyBonus;
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS)
+	{
+		return m_iHappyBonus + 3;
+	}
+
+	return m_iHappyBonus;
 }
 
 int CvHandicapInfo::getAttitudeChange() const
