@@ -487,6 +487,15 @@
 			<FontButtonIndex>51</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_DYE_COCHINEAL</Type>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
+			<NIF>Art/Terrain/resources/Cochineal/Cochineal.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Resources/Cochineal.dds</Button>
+			<FontButtonIndex>20</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_DYE_MUREX</Type>
 			<fScale>1.2</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
