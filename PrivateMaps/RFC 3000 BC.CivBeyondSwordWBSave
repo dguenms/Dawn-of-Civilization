@@ -38104,7 +38104,7 @@ BeginPlot
 	x=83,y=43
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -38566,7 +38566,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=43
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -39042,12 +39042,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=46
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=85,y=47
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -39510,18 +39510,19 @@ EndPlot
 BeginPlot
 	x=86,y=47
 	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=86,y=48
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=86,y=49
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39976,12 +39977,11 @@ BeginPlot
 	x=87,y=49
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=50
-	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -41392,6 +41392,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=50
+	BonusType=BONUS_OPIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
