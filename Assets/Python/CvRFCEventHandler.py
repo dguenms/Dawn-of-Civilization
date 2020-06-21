@@ -9,7 +9,7 @@ import Barbs
 from Religions import rel
 import Resources
 import CityNameManager as cnm
-import UniquePowers     
+import UniquePowers
 import AIWars
 import Congresses as cong
 from Consts import *
@@ -478,11 +478,12 @@ class CvRFCEventHandler:
 		
 		if iPlayer < iNumPlayers:
 			dc.onRevolution(iPlayer)
+			cnm.onRevolution(iPlayer)	#Knoedel
 			
 		utils.checkSlaves(iPlayer)
 			
-		if iPlayer in [iEgypt]:
-			cnm.onRevolution(iPlayer)
+		#if iPlayer in [iEgypt]:	#Knoedel: What made Egypt so special anyway?#
+		#	cnm.onRevolution(iPlayer)
 			
 	def onCityGrowth(self, argsList):
 		'City Population Growth'

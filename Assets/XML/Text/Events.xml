@@ -2116,7 +2116,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INFO_FUGITIVE_4</Tag>
-		<English>Our gesture of goodwill toward the %s1_civ_adjective Empire has angered %s6_player.</English>
+		<English>Our gesture of goodwill toward the %s3_civ_adjective Empire has angered %s6_player.</English>
 		<French>Notre geste de bonne volont&#233; envers l'empire %s1:1_civ_adjective a provoqu&#233; la col&#232;re de %s6_player.</French>
 		<German>Unsere Geste des guten Willens gegen&#252;ber dem %s1:2_civ_adjective Reich hat %s6_player ver&#228;rgert.</German>
 		<Italian>Il nostro gesto di benevolenza verso l'impero %s1:1_civ_adjective ha irritato %s6_player.</Italian>

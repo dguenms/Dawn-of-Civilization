@@ -1570,7 +1570,7 @@ def vassalTitle(iPlayer, iMaster):
 		sMasterTitle = getOrElse(dMasterTitles, iMaster)
 		if sMasterTitle: return sMasterTitle
 		
-	if iPlayer in lColonies:
+	if iMaster not in lColonies and iMaster != iArgentina and iMaster != iBrazil and iPlayer in lColonies:
 		return "TXT_KEY_COLONY_OF"
 	
 	return "TXT_KEY_PROTECTORATE_OF"

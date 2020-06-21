@@ -814,6 +814,11 @@ class RiseAndFall:
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWarElephant, iCarthage, (58, 39), 2)
+			#1SDAN: give Phoenicia a Mine and Road on their Copper
+			if gc.getMap().plot(73, 40).isCity():
+				if gc.getMap().plot(73, 40).getPlotCity().getOwner() == iCarthage:
+					gc.getMap().plot(71, 40).setRouteType(gc.getInfoTypeForString("ROUTE_ROAD"))
+					gc.getMap().plot(71, 40).setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_MINE"))
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
