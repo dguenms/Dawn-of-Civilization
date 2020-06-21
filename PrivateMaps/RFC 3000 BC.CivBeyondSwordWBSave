@@ -12354,6 +12354,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=31
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -46739,6 +46741,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
+	BonusType=BONUS_SHEEP
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
