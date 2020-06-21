@@ -27083,6 +27083,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=51
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27535,7 +27536,6 @@ BeginPlot
 	x=60,y=52
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
