@@ -61870,8 +61870,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=53
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=135,y=54
@@ -62299,6 +62300,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=52
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62310,7 +62312,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=54
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62725,6 +62726,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=52
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
