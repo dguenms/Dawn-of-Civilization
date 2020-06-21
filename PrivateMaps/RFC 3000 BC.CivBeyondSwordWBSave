@@ -10132,7 +10132,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=32
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -10586,7 +10586,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=32
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11957,6 +11957,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=39
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -13719,7 +13721,7 @@ BeginPlot
 	x=29,y=35
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	BonusType=BONUS_SALT
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
