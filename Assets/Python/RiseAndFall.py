@@ -546,8 +546,6 @@ class RiseAndFall:
 					self.initBetrayal()
 						
 		data.lTempEvents.remove((iFlipNewPlayer, lPlots))
-		
-		game.autosave()
 				
 	def rebellionPopup(self, iRebelCiv):
 		eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
