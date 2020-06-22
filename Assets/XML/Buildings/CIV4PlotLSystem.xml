@@ -2037,7 +2037,7 @@
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
-			<Scale>0.6</Scale>
+			<Scale>1.0</Scale>
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<ArtRef Name="art:cochineal_crop">
@@ -2051,7 +2051,7 @@
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
-			<Scale>0.6</Scale>
+			<Scale>1.0</Scale>
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<ArtRef Name="art:cochineal_crop">
@@ -2064,7 +2064,7 @@
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
-			<Scale>0.6</Scale>
+			<Scale>0.8</Scale>
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<!-- COCHINEAL improvement crap -->
@@ -2074,7 +2074,7 @@
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
-			<Scale>0.8</Scale>
+			<Scale>1.1</Scale>
 		</ArtRef>
 		<ArtRef Name="art:COCHINEAL_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Dye_LSystem.nif::1x3_01_Rack_Worked</Attribute>
@@ -2082,7 +2082,7 @@
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
-			<Scale>0.8</Scale>
+			<Scale>1.1</Scale>
 		</ArtRef>
 		<ArtRef Name="art:COCHINEAL_PLANTATION_POOL">
 			<!-- worked pool -->
