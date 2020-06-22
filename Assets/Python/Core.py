@@ -69,12 +69,13 @@ def spread_grouped(iterable, size, offset=0):
 
 
 def every(interval):
-	return turn() % interval == 0
+	return turn() % turns(interval) == 0
 
 
 def periodic_from(entities, interval=None):
 	if interval is None:
 		interval = len(entities)
+	interval = turns(interval)
 	offset = hash(tuple(entities)) + data.iSeed
 	entities = spread(entities, interval)
 	return entities[(turn() + offset) % interval]
@@ -86,10 +87,10 @@ def get_calling_module():
 
 
 def periodic(interval):
+	interval = turns(interval)
 	index = period_offsets(interval)
 	offset = (index / 2 + ((index + interval) % 2) * interval / 2 ) % interval
-	result = turn() % interval == offset
-	return result 
+	return turn() % interval == offset
 
 
 def matching(condition, *elements):
