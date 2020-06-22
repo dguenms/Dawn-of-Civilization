@@ -819,8 +819,6 @@ def calculateStability(iPlayer):
 		
 	if iPeripheryExcess > 0:
 		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
-
-		data.players[iPlayer].iLastExpansionStability = iCorePeripheryStability
 		
 		debug('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		

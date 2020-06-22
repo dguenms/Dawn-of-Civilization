@@ -71,7 +71,6 @@ class PlayerData:
 		self.iNumPreviousCities = 0
 		self.iBarbarianLosses = 0
 		self.iPreviousCommerce = 0
-		self.iLastExpansionStability = 0
 		
 		self.lEconomyTrend = []
 		self.lHappinessTrend = []
