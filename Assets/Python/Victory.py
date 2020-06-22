@@ -2317,7 +2317,7 @@ def cityHappiness(city):
 	return iHappiness
 	
 def getBestPlayer(iPlayer, function):
-	return players.major().alive().max(lambda p: (function(p), int(p == iPlayer)))
+	return players.major().alive().maximum(lambda p: (function(p), int(p == iPlayer)))
 	
 def isBestPlayer(iPlayer, function):
 	return getBestPlayer(iPlayer, function) == iPlayer
@@ -3421,10 +3421,10 @@ def getUHVHelp(iPlayer, iGoal):
 					iCultureLevel += 1
 					capitalPlot = plot(tCapital)
 					if capitalPlot.isCity():
-						name = capitalPlot.getPlotCity().getName()
-						ownName = cnm.getRenameName(iPlayer, name)
-						if ownName: name = ownName
-						aHelp.append(getIcon(True) + name)
+						displayName = capitalPlot.getPlotCity().getName()
+						ownName = cnm.getRenameName(iPlayer, displayName)
+						if ownName: displayName = ownName
+						aHelp.append(getIcon(True) + displayName)
 			
 			if pPlayer.getNumCities() > 0:
 				capital = pPlayer.getCapitalCity()
