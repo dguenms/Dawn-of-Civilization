@@ -2475,11 +2475,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] par &#233;lectricit&#233; consomm&#233;e dans toutes les villes</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Spanish>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</French> <!-- needs translation -->
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_STRATEGY</Tag>
