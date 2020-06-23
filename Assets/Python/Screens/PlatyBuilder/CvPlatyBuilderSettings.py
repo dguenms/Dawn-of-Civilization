@@ -11,3 +11,4 @@ iOwnerType = 0
 bApplyAll = False
 iSelectedPlayer = 0
 iSelectedCiv = -1
+iSelectedClass = -1
