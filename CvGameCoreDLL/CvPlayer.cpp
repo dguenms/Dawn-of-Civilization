@@ -13865,9 +13865,16 @@ int CvPlayer::getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex
 	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
 	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
 
-	// Leoreth: food extra yield is limited to +1
+	// Leoreth: limit additional food from various sources
 	if (eIndex2 == YIELD_FOOD)
 	{
+		// satellites and slaves cannot benefit from bonus food effects
+		if (GC.getSpecialistInfo(eIndex1).isNoGlobalEffects())
+		{
+			return 0;
+		}
+
+		// for all other specialists extra food is limited to +1
 		return std::min(1, m_ppaaiSpecialistExtraYield[eIndex1][eIndex2]);
 	}
 
