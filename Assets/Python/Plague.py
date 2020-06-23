@@ -196,8 +196,8 @@ def calculateTotalPlagueHealth(iPlayer, iPlague):
 
 def startPlague(iPlague):
 	iPlayer = players.major().alive().where(isVulnerable).minimum(lambda iPlayer: calculateTotalPlagueHealth(iPlayer, iPlague))
-			
-	if calculateTotalPlagueHealth(iPlayer, iPlague) <= 200:
+	
+	if iPlayer and calculateTotalPlagueHealth(iPlayer, iPlague) <= 200:
 		city = cities.owner(iPlayer).random()
 		if city:
 			spreadPlague(iPlayer)
