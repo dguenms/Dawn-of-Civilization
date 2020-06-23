@@ -450,16 +450,6 @@ lSlotOrder = [iCiv for iCiv in lCivOrder if iCiv not in dRebirthCiv.values()]
 # Leoreth: determine neighbour lists from pairwise neighbours for easier lookup
 dNeighbours = CivDict(dict((iCiv, list(set([iLeft for iLeft, iRight in lNeighbours if iRight == iCiv] + [iRight for iLeft, iRight in lNeighbours if iLeft == iCiv]))) for iCiv in dSpawn), [])
 
-print "TEST NEIGHBOURS"
-
-for iCiv, neighbours in dNeighbours.items():
-	print "%s: %s" % (iCiv, neighbours)
-
-for iCiv in dSpawn:
-	if iCiv == iPolynesia:
-		continue
-	if not dNeighbours[iCiv]:
-		raise Exception("%s does not have neighbours!" % iCiv)
 
 dResurrections = CivDict({
 iEgypt : [(900, 1300), (1800, 2020)],
