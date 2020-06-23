@@ -1199,11 +1199,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_STOCK_EXCHANGE</Type>
-			<LSystem>LSYSTEM_2x1</LSystem>
+			<LSystem>LSYSTEM_STOCK_EXCHANGE</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.33</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WallStreet/WallStreet.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/StockExchangeRenaissance/ministry.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/WallStreet.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,11</Button>
 		</BuildingArtInfo>

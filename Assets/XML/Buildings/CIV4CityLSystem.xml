@@ -1219,6 +1219,19 @@
 	<LNode Name="Leaf_3x2">
 		<Width>3</Width>
 		<Height>2</Height>
+		
+		<!-- STOCK EXCHANGE -->
+		<ArtRef Name="building:LSYSTEM_STOCK_EXCHANGE">
+			<Attribute Class="Scalar">szNIF:Art/Structures/Buildings/StockExchangeRenaissance/ministry.nif</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE,ERA_INDUSTRIAL</Attribute>
+			<Scale>0.45</Scale>
+		</ArtRef>
+		<ArtRef Name="building:LSYSTEM_STOCK_EXCHANGE">
+			<Attribute Class="Scalar">szNIF:Art/Structures/Buildings/WallStreet/WallStreet.nif</Attribute>
+			<Attribute Class="Era">ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Scale>1.5</Scale>
+		</ArtRef>
+		
 		<!-- LEAF 3x2 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_3x2">
 			<Attribute Class="Rotation">0,180</Attribute>
