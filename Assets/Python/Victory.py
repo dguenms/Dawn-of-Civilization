@@ -1920,9 +1920,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 	
 		# first Jewish goal: have a total of 15 Great Prophets, Scientists and Statesmen in Jewish cities
 		if iGoal == 0:
-			iProphets = countSpecialists(iJudaism, iSpecialistGreatProphet)
-			iScientists = countSpecialists(iJudaism, iSpecialistGreatScientist)
-			iStatesmen = countSpecialists(iJudaism, iSpecialistGreatStatesman)
+			iProphets = countReligionSpecialists(iJudaism, iSpecialistGreatProphet)
+			iScientists = countReligionSpecialists(iJudaism, iSpecialistGreatScientist)
+			iStatesmen = countReligionSpecialists(iJudaism, iSpecialistGreatStatesman)
 			if iProphets + iScientists + iStatesmen >= 15: return 1
 		
 		# second Jewish goal: have legendary culture in the Jewish holy city
@@ -2876,9 +2876,9 @@ def getURVHelp(iPlayer, iGoal):
 	
 	if iVictoryType == iJudaism:
 		if iGoal == 0:
-			iProphets = countSpecialists(iPlayer, iSpecialistGreatProphet)
-			iScientists = countSpecialists(iPlayer, iSpecialistGreatScientist)
-			iStatesmen = countSpecialists(iPlayer, iSpecialistGreatStatesman)
+			iProphets = countReligionSpecialists(iJudaism, iSpecialistGreatProphet)
+			iScientists = countReligionSpecialists(iJudaism, iSpecialistGreatScientist)
+			iStatesmen = countReligionSpecialists(iJudaism, iSpecialistGreatStatesman)
 			aHelp.append(getIcon(iProphets + iScientists + iStatesmen) + text("TXT_KEY_VICTORY_JEWISH_SPECIALISTS", iProphets + iScientists + iStatesmen, 15))
 		elif iGoal == 1:
 			holyCity = game.getHolyCity(iJudaism)
