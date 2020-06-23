@@ -1373,7 +1373,7 @@ def checkHistoricalVictory(iPlayer):
 			
 			if pPlayer.isHuman():
 				for iLoopPlayer in players.major().alive().without(iPlayer):
-					pLoopPlayer.AI_changeAttitudeExtra(iPlayer, -2)
+					player(iLoopPlayer).AI_changeAttitudeExtra(iPlayer, -2)
 			
 	if game.getWinner() == -1:
 		if countAchievedGoals(iPlayer) == 3:
