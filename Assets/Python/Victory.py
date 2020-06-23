@@ -2275,20 +2275,11 @@ def getFirstBorn(iGreatPerson):
 	return data.lFirstGreatPeople[lGreatPeopleUnits.index(iGreatPerson)]
 
 def getBestCity(iPlayer, tPlot, function):
-	bestCity = cities.all().maximum(function)
-	city = city(tPlot)
-	
-	if city and function(city) == function(bestCity):
-		return city
-	
-	return bestCity
+	return cities.all().maximum(lambda city: (function(city), int(at(city, tPlot))))
 	
 def isBestCity(iPlayer, tPlot, function):
-	x, y = tPlot
 	city = getBestCity(iPlayer, tPlot, function)
-	if not city: return False
-	
-	return (city.getOwner() == iPlayer and city.getX() == x and city.getY() == y)
+	return city and city.getOwner() == iPlayer and at(city, tPlot)
 	
 def cityPopulation(city):
 	if not city: return 0
