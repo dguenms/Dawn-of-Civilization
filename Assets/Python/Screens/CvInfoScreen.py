@@ -2909,9 +2909,9 @@ class CvInfoScreen:
 		
 		if tPlayer.isHasTech(iCalendar) or iYear < dBirth[iPlayer]:  
 			if iYear < 0:
-			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
+			    return localText.getText("TXT_KEY_TIME_BC", (-iYear,))
 			else:
-			    return localText.getText("TXT_KEY_TIME_AD", (year,))	 
+			    return localText.getText("TXT_KEY_TIME_AD", (iYear,))	 
 		elif iYear >= 1500:
 			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
 		elif iYear >= 450:
