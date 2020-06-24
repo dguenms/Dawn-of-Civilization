@@ -964,12 +964,12 @@ class Locations(EntityCollection):
 	def __init__(self, locations):
 		super(Locations, self).__init__(locations)
 		
-	def without(self, exceptions):
-		if not exceptions:
+	def without(self, *exceptions):
+		if not exceptions or not any(exceptions):
 			return self
-
-		if not isinstance(exceptions, (list, set, Plots, Cities)):
-			exceptions = [exceptions]
+			
+		if len(exceptions) == 1 and isinstance(exceptions[0], (list, set, Locations)):
+			exceptions = exceptions[0] 
 	
 		return self.where(lambda loc: location(loc) not in [location(e) for e in exceptions])
 		

@@ -1097,11 +1097,28 @@ class TestPlots(TestCase):
 		self.assertEqual(len(plots), 8)
 		self.assert_((1, 1) not in plots)
 		
+	def test_without_tiles(self):
+		plots = self.plots.without((1, 0), (1, 1), (1, 2))
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 6)
+		self.assert_((1, 1) not in plots)
+		self.assert_((1, 2) not in plots)
+		self.assert_((1, 3) not in plots)
+		
 	def test_without_plot(self):
 		plots = self.plots.without(gc.getMap().plot(1, 1))
 		
 		assertType(self, plots, Plots)
 		self.assertEqual(len(plots), 8)
+		self.assert_((1, 1) not in plots)
+	
+	def test_without_plots(self):
+		plots = self.plots.without(gc.getMap().plot(1, 0), gc.getMap().plot(1, 1))
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 7)
+		self.assert_((1, 0) not in plots)
 		self.assert_((1, 1) not in plots)
 		
 	def test_without_city(self):

@@ -2351,7 +2351,7 @@ def getReligionLandPercent(iReligion):
 	return fPercent
 	
 def isBuildingInCity(tPlot, iBuilding):
-	plot = plot(tPlot)
+	plot = plot_(tPlot)
 	
 	if not plot.isCity(): return False
 	
