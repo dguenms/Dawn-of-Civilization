@@ -8,6 +8,23 @@ dEvacuatePeriods = {
 	iKhmer : iPeriodVietnam,
 }
 
+dPeriods600AD = {
+	iPhoenicia : iPeriodCarthage,
+}
+
+dPeriods1700AD = {
+	iChina : iPeriodMing,
+	iIndia : iPeriodMaratha,
+	iTamils : iPeriodVijayanagara,
+	iVikings : iPeriodSweden,
+	iKhmer : iPeriodVietnam,
+	iMoors : iPeriodMorocco,
+	iSpain : iPeriodSpain,
+	iHolyRome : iPeriodAustria,
+	iInca : iPeriodPeru,
+	iOttomans : iPeriodOttomanConstantinople,
+}
+
 
 def setPeriod(iCiv, iPeriod):
 	if not player(iCiv).isAlive():
@@ -38,13 +55,13 @@ def evacuate(iPlayer):
 def setup():
 	iScenario = scenario()
 	
+	if iScenario >= i600AD:
+		for iCiv, iPeriod in dPeriods600AD.items():
+			setPeriod(iCiv, iPeriod)
+	
 	if iScenario == i1700AD:
-		setPeriod(iIndia, iPeriodMaratha)
-		setPeriod(iKhmer, iPeriodVietnam)
-		setPeriod(iMoors, iPeriodMorocco)
-		setPeriod(iSpain, iPeriodSpain)
-		setPeriod(iHolyRome, iPeriodAustria)
-		setPeriod(iOttomans, iPeriodOttomanConstantinople)
+		for iCiv, iPeriod in dPeriods1700AD.items():
+			setPeriod(iCiv, iPeriod)
 
 
 def onBirth(iPlayer):
@@ -153,6 +170,10 @@ def onCapitalMoved(city):
 def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
 	iEra = infos.tech(iTech).getEra()
+	
+	if iCiv == iTamils:
+		if iEra == iMedieval:
+			setPeriod(iTamils, iPeriodVijayanagara)
 	
 	if iCiv == iVikings:
 		if iEra == iRenaissance:
