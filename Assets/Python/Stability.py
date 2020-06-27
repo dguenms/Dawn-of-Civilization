@@ -257,7 +257,7 @@ def isImmune(iPlayer):
 		return True
 		
 	# immune right after birth
-	if turn() < pPlayer.getInitialBirthTurn() + turn(20):
+	if turn() < pPlayer.getInitialBirthTurn() + turns(20):
 		return True
 		
 	# immune right after resurrection
