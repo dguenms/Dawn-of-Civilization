@@ -18,7 +18,7 @@ import Modifiers
 import CvEspionageAdvisor
 import BugCore
 import Periods as periods
-from Events import events, handler
+from Events import events, handler, popup_handler
 
 from Locations import *
 from Popups import popup
@@ -487,6 +487,104 @@ def flipPopup(iNewPlayer, lPlots):
 	data.iFlipNewPlayer = iNewPlayer
 	data.iFlipOldPlayer = active()
 	data.lTempPlots = lPlots
+	
+
+### Old popup handlers - transition to using Popups module ###
+
+@popup_handler(7615)
+def applyFlip(playerID, netUserData, popupReturn):
+	lPlots = data.lTempPlots
+	iFlipNewPlayer = data.iFlipNewPlayer
+	
+	iNumCities = player(iFlipNewPlayer).getNumCities()
+
+	lHumanCityList = [city for city in getConvertedCities(iFlipNewPlayer, lPlots) if city.isHuman()]
+	
+	if popupReturn.getButtonClicked() == 0:
+		message(active(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
+					
+		if lHumanCityList:
+			for city in lHumanCityList:
+				tCity = (city.getX(), city.getY())
+				print ("flipping ", city.getName())
+				cultureManager(tCity, 100, iFlipNewPlayer, iHuman, False, False, False)
+				flipUnitsInCityBefore(tCity, iFlipNewPlayer, iHuman)
+				flipCity(tCity, 0, 0, iFlipNewPlayer, [iHuman])
+				flipUnitsInCityAfter(tCity, iFlipNewPlayer)
+
+		#same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
+		for (x, y) in lPlots:
+			betrayalPlot = plot(x,y)
+			if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iFlipNewPlayer): 
+				continue
+			
+			for unit in units.at(x, y).owner(iHuman).domain(DOMAIN_LAND):
+				if rand(100) >= iBetrayalThreshold:
+					iUnitType = unit.getUnitType()
+					unit.kill(False, iFlipNewPlayer)
+					makeUnit(iFlipNewPlayer, iUnitType, (x, y))
+
+		if data.lCheatersCheck[0] == 0:
+			data.lCheatersCheck[0] = iCheatersPeriod
+			data.lCheatersCheck[1] = data.iFlipNewPlayer
+			
+	elif popupReturn.getButtonClicked() == 1:
+		message(iHuman, 'TXT_KEY_FLIP_REFUSED', color=iGreen)
+
+		for city in lHumanCityList:
+			pPlot = plot(city)
+			oldCulture = pPlot.getCulture(iHuman)
+			pPlot.setCulture(iFlipNewPlayer, oldCulture/2, True)
+			pPlot.setCulture(iHuman, oldCulture/2, True)
+			data.iSpawnWar += 1
+			if data.iSpawnWar == 1:
+				team(iFlipNewPlayer).declareWar(iHuman, False, -1) ##True??
+				data.iBetrayalTurns = iBetrayalPeriod
+				rnf.initBetrayal()
+					
+	data.lTempEvents.remove((iFlipNewPlayer, lPlots))
+	
+	
+@popup_handler(7622)
+def applyRebellion(playerID, netUserData, popupReturn):
+	iRebelCiv = data.iRebelCiv
+	if popupReturn.getButtonClicked() == 0: # 1st button
+		team().makePeace(iRebelCiv)
+	elif popupReturn.getButtonClicked() == 1: # 2nd button
+		team().declareWar(iRebelCiv, False, -1)
+
+
+@popup_handler(7625)
+def applyColonialAcquisition(playerID, netUserData, popupReturn):
+	iPlayer, targets = data.lTempEventList
+	if popupReturn.getButtonClicked() == 0:
+		for city in targets:
+			if city.isHuman():
+				colonialAcquisition(iPlayer, city)
+				player().changeGold(200)
+	elif popupReturn.getButtonClicked() == 1:
+		for city in targets:
+			if city.isHuman():
+				colonialConquest(iPlayer, city)
+
+
+@popup_handler(7629)
+def applyByzantineBribe(playerID, netUserData, popupReturn):
+	targetList = data.lByzantineBribes
+	iButton = popupReturn.getButtonClicked()
+	
+	if iButton >= len(targetList): return
+	
+	iByzantiumPlayer = slot(iByzantium)
+	unit, iCost = targetList[iButton]
+	closest = closestCity(unit, iByzantiumPlayer)
+	
+	newUnit = makeUnit(iByzantiumPlayer, unit.getUnitType(), closest).first()
+	player(iByzantiumPlayer).changeGold(-iCost)
+	unit.kill(False, iByzantiumPlayer)
+	
+	if newUnit:
+		interface.selectUnit(newUnit, True, True, False)
 			
 
 class RiseAndFall:
@@ -494,97 +592,12 @@ class RiseAndFall:
 ###############
 ### Popups ###
 #############
-
-	def eventApply7615(self, popupReturn):
-		lPlots = data.lTempPlots
-		iFlipNewPlayer = data.iFlipNewPlayer
-		
-		iNumCities = player(iFlipNewPlayer).getNumCities()
-
-		lHumanCityList = [city for city in getConvertedCities(iFlipNewPlayer, lPlots) if city.isHuman()]
-		
-		if popupReturn.getButtonClicked() == 0:
-			message(active(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
-						
-			if lHumanCityList:
-				for city in lHumanCityList:
-					tCity = (city.getX(), city.getY())
-					print ("flipping ", city.getName())
-					cultureManager(tCity, 100, iFlipNewPlayer, iHuman, False, False, False)
-					flipUnitsInCityBefore(tCity, iFlipNewPlayer, iHuman)
-					flipCity(tCity, 0, 0, iFlipNewPlayer, [iHuman])
-					flipUnitsInCityAfter(tCity, iFlipNewPlayer)
-
-			#same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
-			for (x, y) in lPlots:
-				betrayalPlot = plot(x,y)
-				if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iFlipNewPlayer): 
-					continue
-				
-				for unit in units.at(x, y).owner(iHuman).domain(DOMAIN_LAND):
-					if rand(100) >= iBetrayalThreshold:
-						iUnitType = unit.getUnitType()
-						unit.kill(False, iFlipNewPlayer)
-						makeUnit(iFlipNewPlayer, iUnitType, (x, y))
-
-			if data.lCheatersCheck[0] == 0:
-				data.lCheatersCheck[0] = iCheatersPeriod
-				data.lCheatersCheck[1] = data.iFlipNewPlayer
-				
-		elif popupReturn.getButtonClicked() == 1:
-			message(iHuman, 'TXT_KEY_FLIP_REFUSED', color=iGreen)
-
-			for city in lHumanCityList:
-				pPlot = plot(city)
-				oldCulture = pPlot.getCulture(iHuman)
-				pPlot.setCulture(iFlipNewPlayer, oldCulture/2, True)
-				pPlot.setCulture(iHuman, oldCulture/2, True)
-				data.iSpawnWar += 1
-				if data.iSpawnWar == 1:
-					team(iFlipNewPlayer).declareWar(iHuman, False, -1) ##True??
-					data.iBetrayalTurns = iBetrayalPeriod
-					self.initBetrayal()
-						
-		data.lTempEvents.remove((iFlipNewPlayer, lPlots))
 				
 	def rebellionPopup(self, iRebelCiv):
 		eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
 
-	def eventApply7622(self, popupReturn):
-		iRebelCiv = data.iRebelCiv
-		if popupReturn.getButtonClicked() == 0: # 1st button
-			team().makePeace(iRebelCiv)
-		elif popupReturn.getButtonClicked() == 1: # 2nd button
-			team().declareWar(iRebelCiv, False, -1)
 
-	def eventApply7625(self, popupReturn):
-		iPlayer, targetList = data.lTempEventList
-		if popupReturn.getButtonClicked() == 0:
-			for x, y in targetList:
-				if city(x, y).isHuman():
-					colonialAcquisition(iPlayer, tPlot)
-					player().changeGold(200)
-		elif popupReturn.getButtonClicked() == 1:
-			for x, y in targetList:
-				if city(x, y).getOwner() == human():
-					colonialConquest(iPlayer, tPlot)
 		
-	def eventApply7629(self, netUserData, popupReturn):
-		targetList = data.lByzantineBribes
-		iButton = popupReturn.getButtonClicked()
-		
-		if iButton >= len(targetList): return
-		
-		iByzantiumPlayer = slot(iByzantium)
-		unit, iCost = targetList[iButton]
-		closest = closestCity(unit, iByzantiumPlayer)
-		
-		newUnit = makeUnit(iByzantiumPlayer, unit.getUnitType(), closest).first()
-		player(iByzantiumPlayer).changeGold(-iCost)
-		unit.kill(False, iByzantiumPlayer)
-		
-		if newUnit:
-			interface.selectUnit(newUnit, True, True, False)
 
 #######################################
 ### Main methods (Event-Triggered) ###

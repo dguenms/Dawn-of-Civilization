@@ -13,7 +13,7 @@ import CvUtil
 from CvPythonExtensions import *
 
 from Consts import * #Rhye
-import Religions #Leoreth
+from Religions import embraceReformation, tolerateReformation, counterReformation
 import PyHelpers #Leoreth
 import CityNameManager as cnm
 from StoredData import data
@@ -23,7 +23,6 @@ from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
-rel = Religions.Religions()
 localText = CyTranslator()
 
 
@@ -4491,7 +4490,7 @@ def doReformation1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.embraceReformation(iPlayer)
+	embraceReformation(iPlayer)
 	
 	pHolyCity = gc.getGame().getHolyCity(iProtestantism)
 	if pHolyCity.getOwner() == iPlayer:
@@ -4517,7 +4516,7 @@ def doReformation2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.tolerateReformation(iPlayer)
+	tolerateReformation(iPlayer)
 	
 def canChooseReformation3(argsList):
 	kTriggeredData = argsList[1]
@@ -4535,7 +4534,7 @@ def doReformation3(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.counterReformation(iPlayer)
+	counterReformation(iPlayer)
 	
 	for iTargetCiv in players.major():
 		if data.players[iTargetCiv].iReformationDecision == 0:

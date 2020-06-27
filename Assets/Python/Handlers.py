@@ -9,6 +9,7 @@ import Communications
 import Companies
 import Congresses
 import DynamicCivs
+import EventSigns
 import GreatPeople
 import History
 import Modifiers

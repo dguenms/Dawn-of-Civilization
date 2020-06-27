@@ -771,7 +771,7 @@ class EntityCollection(object):
 		return self.__class__(random.sample(self._keys, iSampleSize))
 		
 	def buckets(self, *conditions):
-		rest = lambda e: not any([condition(e) for condition in conditions])
+		rest = lambda e: not any(condition(e) for condition in conditions)
 		buckets = [self.where(condition) for condition in conditions]
 		buckets.append(self.where(rest))
 		return tuple(buckets)

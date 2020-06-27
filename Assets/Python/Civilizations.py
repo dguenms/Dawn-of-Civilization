@@ -1,8 +1,5 @@
-from Consts import *
 from RFCUtils import *
 from StoredData import data
-import Victory as vic
-from Religions import rel
 from Core import *
 from Events import events, handler
 

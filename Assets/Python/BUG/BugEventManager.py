@@ -201,29 +201,7 @@ class BugEventManager(CvEventManager.CvEventManager):
 		self.addEvent("combatLogFlanking")
 		self.addEvent("playerRevolution")
 
-		#self.CustomEvents = {
-		#    7614 : ('RiseAndFallPopupEvent', self.rnfEventApply7614, self.rnfEventBegin7614),
-		#    7615 : ('FlipPopupEvent', self.rnfEventApply7615, self.rnfEventBegin7615),
-		#    7616 : ('VotePopupEvent', self.congEventApply7616, self.congEventBegin7616),
-		#    7617 : ('AskCityPopupEvent', self.congEventApply7617, self.congEventBegin7617),
-		#    7618 : ('DecisionPopupEvent', self.congEventApply7618, self.congEventBegin7618),
-		#    7619 : ('InvitationPopupEvent', self.congEventApply7619, self.congEventBegin7619),
-		#    7620 : ('BribePopupEvent', self.congEventApply7620, self.congEventBegin7620),
-		#    7621 : ('GoldPopupEvent', self.congEventApply7621, self.congEventBegin7621),
-		#    7622 : ('ResurrectionEvent', self.rnfEventApply7622, self.rnfEventBegin7622),
-		#    7623 : ('AskNoCityPopupEvent', self.congEventApply7623, self.congEventBegin7623),
-		#    #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
-		#    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
-		#    #7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
-		#    #7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
-		#    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
-		#    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
-		#}
-
-		# --> INSERT EVENT HANDLER INITIALIZATION HERE <--
-		#CvRFCEventHandler.CvRFCEventHandler(self)
-		#self.rnf = RiseAndFall.RiseAndFall()
-		#self.rel = Religions.Religions()
+		self.CustomEvents = {}
 	
 	def setLogging(self, logging):
 		if logging is not None:
@@ -367,7 +345,10 @@ class BugEventManager(CvEventManager.CvEventManager):
 			else:
 				BugUtil.debug("BugEventManager - setting shortcut handler for %s", key)
 				self.shortcuts[key] = handler
-	
+				
+	def addCustomEvent(self, iCustomEventID, eventName, applyFunction, beginFunction):
+		self.CustomEvents[iCustomEventID] = (eventName, applyFunction, beginFunction)
+
 	
 	def fireEvent(self, eventType, *args):
 		"""Fires the given event passing in all args as a list."""

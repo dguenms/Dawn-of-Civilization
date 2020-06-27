@@ -10,7 +10,7 @@ import CvTranslator
 from RFCUtils import *
 from StoredData import data #edead
 
-from Events import handler
+from Events import handler, popup_handler
 from Locations import *
 from Core import *
 
@@ -355,37 +355,16 @@ def foundReligionInCore(iReligion):
 	city = cities.all().where(lambda c: c.plot().getSpreadFactor(iReligion) == RegionSpreadTypes.REGION_SPREAD_CORE).random()
 	if city:
 		foundReligion(location(city), iReligion)
-	
 
 
-class Religions:
+### popup handlers - transition to using Popups module ###
 
-#######################################
-### Main methods (Event-Triggered) ###
-#####################################
-					
-## JUDAISM
-				
-## ISLAM
-		
-## BUDDHISM
-		
-## ORTHODOXY
-			
-		
-##BUDDHISM
-		
-		
-## CATHOLICISM
 
-#REFORMATION
-
-	def eventApply7624(self, popupReturn):
-		if popupReturn.getButtonClicked() == 0:
-			self.embraceReformation(active())
-		elif popupReturn.getButtonClicked() == 1:
-			self.tolerateReformation(active())
-		elif popupReturn.getButtonClicked() == 2:
-			self.counterReformation(active())
-					
-rel = Religions()
+@popup_handler(7624)
+def applyReformationDecision(playerID, netUserData, popupReturn):
+	if popupReturn.getButtonClicked() == 0:
+		embraceReformation(active())
+	elif popupReturn.getButtonClicked() == 1:
+		tolerateReformation(active())
+	elif popupReturn.getButtonClicked() == 2:
+		counterReformation(active())

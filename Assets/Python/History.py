@@ -5,7 +5,6 @@ from Core import *
 from Locations import *
 
 
-
 dRelocatedCapitals = CivDict({
 	iPhoenicia : tCarthage,
 	iMongols : tBeijing,
@@ -589,17 +588,17 @@ def handleColonialAcquisition(iPlayer):
 	iGold = targets.count() * 200
 	
 	targetPlayers = targets.cities().owners()
-	freePlots = targets.where(lambda plot: not city(plot))
+	freePlots, cityPlots = targets.split(lambda plot: not city(plot))
 	
 	for plot in freePlots:
 		colonialAcquisition(iPlayer, plot)
 
 	for iTarget in targetPlayers:
 		if player(iTarget).isHuman():
-			askedCities = [(x, y) for x, y in targets if city_(x, y).getOwner() == iTarget]
-			message = format_separators(askedCities, ',', text("TXT_KEY_AND"), lambda tile: city_(tile).getName())
+			askedCities = cityPlots.cities().owner(iTarget)
+			message = format_separators(askedCities, ',', text("TXT_KEY_AND"), lambda city: city.getName())
 					
-			iAskGold = len(askedCities) * 200
+			iAskGold = askedCities.count() * 200
 					
 			popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
 			popup.setHeaderString(text("TXT_KEY_ASKCOLONIALCITY_TITLE", adjective(iPlayer)))
