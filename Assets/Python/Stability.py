@@ -189,8 +189,8 @@ def onRevolution(iPlayer):
 def onPlayerChangeStateReligion(iPlayer):
 	checkStability(iPlayer)
 
-@handler("palaceMoved")
-def onPalaceMoved(city):
+@handler("capitalMoved")
+def onCapitalMoved(city):
 	checkStability(city.getOwner())
 
 @handler("wonderBuilt")
