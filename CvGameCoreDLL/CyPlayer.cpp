@@ -2665,14 +2665,14 @@ void CyPlayer::setTechPreference(int eTech, int iNewValue)
 	if (m_pPlayer) m_pPlayer->setTechPreference((TechTypes)eTech, iNewValue);
 }
 
-void CyPlayer::setBuildingPreference(int iBuilding, int iNewValue)
+void CyPlayer::setBuildingClassPreference(int iBuildingClass, int iNewValue)
 {
-	if (m_pPlayer) m_pPlayer->setBuildingPreference((BuildingTypes)iBuilding, iNewValue);
+	if (m_pPlayer) m_pPlayer->setBuildingClassPreference((BuildingClassTypes)iBuildingClass, iNewValue);
 }
 
-int CyPlayer::getBuildingPreference(int iBuilding)
+int CyPlayer::getBuildingClassPreference(int iBuildingClass)
 {
-	return m_pPlayer ? m_pPlayer->getBuildingPreference((BuildingTypes)iBuilding) : -1;
+	return m_pPlayer ? m_pPlayer->getBuildingClassPreference((BuildingClassTypes)iBuildingClass) : -1;
 }
 
 void CyPlayer::changeGreatPeopleCreated(int iChange)

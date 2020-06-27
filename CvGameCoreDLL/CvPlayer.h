@@ -1270,8 +1270,8 @@ public:
 	void setTechPreference(TechTypes eTech, int iNewValue);
 
 	// Leoreth
-	int getBuildingPreference(BuildingTypes eBuilding) const;
-	void setBuildingPreference(BuildingTypes eBuilding, int iNewValue);
+	int getBuildingClassPreference(BuildingClassTypes eBuildingClass) const;
+	void setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue);
 
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
@@ -1617,7 +1617,7 @@ protected:
 	std::vector<EventTriggerTypes> m_triggersFired;
 
 	// Leoreth
-	std::map<BuildingTypes, int> m_buildingPreference;
+	std::map<BuildingClassTypes, int> m_buildingClassPreference;
 
 	CivicTypes* m_paeCivics;
 

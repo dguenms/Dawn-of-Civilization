@@ -3054,18 +3054,23 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										// Leoreth: building preferences from Python
 										iTempValue = 10;
 
-										int iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingPreference((BuildingTypes)iI);
-
+										int iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference((BuildingClassTypes)iI);
+										
 										if (iBuildingPreference > -MAX_INT)
 										{
 											if (iBuildingPreference > 0)
 											{
 												iTempValue *= iBuildingPreference;
 												iTempValue /= 10;
-											} else if (iBuildingPreference < 0) {
+											} 
+											else if (iBuildingPreference < 0) 
+											{
 												iTempValue *= 10;
 												iTempValue /= iBuildingPreference;
-											} else {
+											} 
+											else 
+											{
+												iTempValue = 0;
 												iValue = 0;
 											}
 										}
@@ -10291,7 +10296,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 	CvPlayer& kPlayer = GET_PLAYER(getOwnerINLINE());
 
 	int iWeight = kBuilding.getAIWeight();
-	int iPreference = kPlayer.getBuildingPreference(eBuilding);
+	int iPreference = kPlayer.getBuildingClassPreference((BuildingClassTypes)kBuilding.getBuildingClassType());
 
 	if (eBuilding == HANGING_GARDENS)
 	{
@@ -10431,7 +10436,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 	{
 		if (iPreference <= 0)
 		{
-			return 0;
+			iWeight = 0;
 		}		
 		else
 		{

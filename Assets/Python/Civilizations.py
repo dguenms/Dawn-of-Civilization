@@ -97,13 +97,13 @@ def initBuildingPreferences(iPlayer):
 	iCiv = civ(iPlayer)
 	if iCiv in dBuildingPreferences:
 		for iBuilding, iValue in dBuildingPreferences[iCiv].iteritems():
-			pPlayer.setBuildingPreference(iBuilding, iValue)
+			pPlayer.setBuildingClassPreference(infos.building(iBuilding).getBuildingClassType(), iValue)
 			
 	if iCiv in dDefaultWonderPreferences:
 		iDefaultPreference = dDefaultWonderPreferences[iCiv]
 		for iWonder in range(iFirstWonder, iNumBuildings):
 			if iCiv not in dBuildingPreferences or iWonder not in dBuildingPreferences[iCiv]:
-				pPlayer.setBuildingPreference(iWonder, iDefaultPreference)
+				pPlayer.setBuildingClassPreference(infos.building(iWonder).getBuildingClassType(), iDefaultPreference)
 	
 ### General functions ###
 		
@@ -661,7 +661,7 @@ dBuildingPreferences = {
 		iGreatLighthouse: 15,
 		
 		iPyramids: -100,
-		iGreatCothon: -80,
+		iGreatCothon: 0,
 	},
 	iIndia : {
 		iKhajuraho: 30,

@@ -587,8 +587,8 @@ public:
 	void restoreGeneralThreshold();
 	void resetGreatPeopleCreated();
 	void changeYieldRateModifier(int iYieldType, int iChange);
-	void setBuildingPreference(int iBuilding, int iNewValue);
-	int getBuildingPreference(int iBuilding);
+	void setBuildingClassPreference(int iBuildingClass, int iNewValue);
+	int getBuildingClassPreference(int iBuildingClass);
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);
 	void launch(int iVictory);

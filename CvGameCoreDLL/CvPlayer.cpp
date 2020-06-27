@@ -387,7 +387,7 @@ void CvPlayer::uninit()
 
 	m_triggersFired.clear();
 
-	m_buildingPreference.clear(); // Leoreth
+	m_buildingClassPreference.clear(); // Leoreth
 
 	if (m_ppaaiSpecialistExtraYield != NULL)
 	{
@@ -882,7 +882,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aVote.clear();
 		m_aUnitExtraCosts.clear();
 		m_triggersFired.clear();
-		m_buildingPreference.clear();
+		m_buildingClassPreference.clear();
 	}
 
 	m_plotGroups.removeAll();
@@ -25501,15 +25501,15 @@ void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
 	}
 }
 
-void CvPlayer::setBuildingPreference(BuildingTypes eBuilding, int iNewValue)
+void CvPlayer::setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue)
 {
-	m_buildingPreference[eBuilding] = iNewValue;
+	m_buildingClassPreference[eBuildingClass] = iNewValue;
 }
 
-int CvPlayer::getBuildingPreference(BuildingTypes eBuilding) const
+int CvPlayer::getBuildingClassPreference(BuildingClassTypes eBuildingClass) const
 {
-	std::map<BuildingTypes, int>::const_iterator it = m_buildingPreference.find(eBuilding);
-	if (it != m_buildingPreference.end())
+	std::map<BuildingClassTypes, int>::const_iterator it = m_buildingClassPreference.find(eBuildingClass);
+	if (it != m_buildingClassPreference.end())
 	{
 		return it->second;
 	}
