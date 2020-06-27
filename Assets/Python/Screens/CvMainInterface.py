@@ -4504,9 +4504,9 @@ class CvMainInterface:
 						lBars.append((iPlayer, fPercentage))
 						
 				if iRemainder > 0:
-					index = find_max(lBar, lambda (iPlayer, fPercent): fPercent).index
-					iPlayer, fPercent = lBars[index]
-					lBars[index] = (iPlayer, fPercent + float(iRemainder))
+					found = find_max(lBars, lambda (iPlayer, fPercent): fPercent)
+					iPlayer, fPercent = found.result
+					lBars[found.index] = (iPlayer, fPercent + float(iRemainder))
 						
 				for i in range(len(lBars)):
 					iPlayer, fPercentage = lBars[i]
