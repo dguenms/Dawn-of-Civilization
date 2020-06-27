@@ -454,6 +454,9 @@ def russianSiberianSettlement(iTech, iTeam, iPlayer):
 
 @handler("techAcquired")
 def earlyTradingCompany(iTech, iTeam, iPlayer):
+	if turn() == scenarioStartTurn():
+		return
+
 	lCivs = [iSpain, iPortugal]
 	lTechs = [iExploration, iFirearms]
 	
@@ -465,6 +468,9 @@ def earlyTradingCompany(iTech, iTeam, iPlayer):
 
 @handler("techAcquired")
 def lateTradingCompany(iTech, iTeam, iPlayer):
+	if turn() == scenarioStartTurn():
+		return
+
 	lCivs = [iFrance, iEngland, iNetherlands]
 	lTechs = [iEconomics, iReplaceableParts]
 	
