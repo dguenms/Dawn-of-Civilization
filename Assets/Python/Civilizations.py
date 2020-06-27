@@ -48,13 +48,8 @@ def initTech(iPlayer, iTech):
 
 ### Tech preference functions ###
 
-def getDictValue(dDict, key):
-	if key not in dDict: return 0
-	
-	return dDict[key]
-
 def getTechPreferences(iPlayer):
-	dPreferences = {}
+	dPreferences = defaultdict({}, 0)
 	iCivilization = civ(iPlayer)
 	
 	if iCivilization not in dTechPreferences:
@@ -78,7 +73,7 @@ def getTechPreferences(iPlayer):
 def updatePrereqPreference(dPreferences, iPrereqTech, iValue):
 	if iPrereqTech < 0: return
 	
-	iPrereqValue = getDictValue(dPreferences, iPrereqTech)
+	iPrereqValue = dPreferences[iPrereqTech]
 	
 	if iValue > 0 and iPrereqValue >= 0:
 		iPrereqValue = min(max(iPrereqValue, iValue), iPrereqValue + iValue / 2)
