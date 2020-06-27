@@ -1,6 +1,7 @@
 from Core import *
 from Events import handler
 	
+
 def updateCore(iPlayer):
 	coreArea = plots.core(iPlayer)
 	for plot in plots.all():
@@ -15,3 +16,7 @@ def init():
 @handler("GameStart")
 def resetStoredData():
 	data.setup()
+
+@handler("periodChange")
+def updateCoreOnPeriodChange(iPlayer):
+	updateCore(iPlayer)

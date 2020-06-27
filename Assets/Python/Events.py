@@ -25,6 +25,7 @@ events.addEvent("capitalMoved")
 events.addEvent("wonderBuilt")
 events.addEvent("immigration")
 events.addEvent("collapse")
+events.addEvent("periodChange")
 
 
 @handler("buildingBuilt")

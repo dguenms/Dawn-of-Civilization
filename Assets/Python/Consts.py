@@ -1013,11 +1013,12 @@ dRebirthLeaders = CivDict({
 	iMexico : iJuarez,
 })
 
-iNumPeriods = 19
+iNumPeriods = 22
 (iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodVijayanagara,
-iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodSaudi, iPeriodVietnam,
-iPeriodMorocco, iPeriodSpain, iPeriodAustria, iPeriodYuan, iPeriodPeru,
-iPeriodModernItaly, iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
+iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodDenmark, iPeriodNorway, 
+iPeriodSweden, iPeriodSaudi, iPeriodVietnam, iPeriodMorocco, iPeriodSpain, 
+iPeriodAustria, iPeriodYuan, iPeriodPeru, iPeriodModernItaly, iPeriodPakistan, 
+iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
 
 dTradingCompanyPlots = CivDict({
 iVikings : [],

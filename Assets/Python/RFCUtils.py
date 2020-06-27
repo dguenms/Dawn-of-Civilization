@@ -1283,3 +1283,10 @@ def getPrevalentReligion(area, iStateReligionPlayer=None):
 	lReligions = [iReligion for iReligion in range(iNumReligions) if not infos.religion(iReligion).isLocal()]
 	
 	return find_max(lReligions, lambda iReligion: cities.religion(iReligion).count() + cities.where(lambda city: iStateReligionPlayer is not None and getOwnerStateReligion(city, iStateReligionPlayer) == iReligion).count()).result
+
+
+def isCurrentCapital(iPlayer, *names):
+	capital = player(iPlayer).getCapitalCity()
+	if not capital: return False
+	
+	return any(location(capital) in data.dCapitalLocations for name in names)

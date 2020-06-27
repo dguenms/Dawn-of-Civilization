@@ -2407,8 +2407,8 @@ class RiseAndFall:
 	
 		if stability(iPlayer) < iStabilityShaky: data.setStabilityLevel(iPlayer, iStabilityShaky)
 			
-		dc.nameChange(iPlayer)
-		dc.adjectiveChange(iPlayer)
+		dc.checkNameChange(iPlayer)
+		dc.checkAdjectiveChange(iPlayer)
 
 	def determineEnabledPlayers(self):
 		iRand = infos.constant('PLAYER_OCCURRENCE_POLYNESIA')

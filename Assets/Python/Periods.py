@@ -1,10 +1,6 @@
 from Core import *
 from RFCUtils import *
-from Events import handler
-
-import Setup as init
-import SettlerMaps as settler
-import WarMaps as war
+from Events import events, handler
 
 
 dEvacuatePeriods = {
@@ -16,13 +12,14 @@ dEvacuatePeriods = {
 def setPeriod(iCiv, iPeriod):
 	if not player(iCiv).isAlive():
 		return
+		
+	if player(iCiv).getPeriod() == iPeriod:
+		return
 
 	player(iCiv).setPeriod(iPeriod)
 	
 	iPlayer = slot(iCiv)
-	init.updateCore(iPlayer)
-	settler.updateMap(iPlayer)
-	war.updateMap(iPlayer)
+	events.fireEvent("periodChange", iPlayer, iPeriod)
 
 
 def evacuate(iPlayer):
@@ -107,14 +104,15 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
+
 	
-@handler("cityBuilt")
+@handler("firstCity")
 def onCityBuilt(city):
 	iOwner = city.getOwner()
 	iOwnerCiv = civ(iOwner)
 
 	if iOwnerCiv == iPhoenicia:
-		if city.at(58, 39) and cities.core(iOwner).owner(iOwner) > 0:
+		if city.getRegionID in lEurope + lAfrica:
 			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
@@ -131,20 +129,39 @@ def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 			setPeriod(iMongols, iPeriodYuan)
 			
 
-@handler("palaceMoved")
-def onPalaceMoved(city, iBuilding):
+@handler("capitalMoved")
+def onCapitalMoved(city):
 	iOwner = city.getOwner()
 	iOwnerCiv = civ(iOwner)
 	
 	if iOwnerCiv == iPhoenicia:
-		if city.at(58, 39):
+		if city.getRegionID() in lEurope + lAfrica:
 			setPeriod(iPhoenicia, iPeriodCarthage)
+		else:
+			setPeriod(iPhoenicia, -1)
+	
+	if iOwnerCiv == iVikings:
+		if player(iOwner).getCurrentEra() >= iRenaissance and player(iOwner).getPeriod() == -1:
+			setPeriod(iVikings, getVikingPeriod(iOwner))
+	
+	if iOwnerCiv == iMoors:
+		if player(iOwner).getCurrentEra() >= iIndustrial and city.getRegionID() != iIberia:
+			setPeriod(iMoors, iPeriodMorocco)
 
 
 @handler("techAcquired")
 def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
 	iEra = infos.tech(iTech).getEra()
+	
+	if iCiv == iVikings:
+		if iEra == iRenaissance:
+			setPeriod(iVikings, getVikingPeriod(iPlayer))
+	
+	if iCiv == iMoors:
+		if iEra == iIndustrial:
+			if player(iPlayer).getCapitalCity().getRegionID() != rIberia:
+				setPeriod(iMoors, iPeriodMorocco)
 
 	if iCiv == iSpain:
 		if iEra == iRenaissance and player(iCiv).getPeriod() == -1:
@@ -163,3 +180,17 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	if iPlayer == iGermany:
 		if iEra == iDigital:
 			setPeriod(iGermany, iPeriodModernGermany)
+			
+			
+def getVikingPeriod(iPlayer):
+	capital = player(iPlayer).getCapitalCity()
+	
+	if capital:
+		if isCurrentCapital(iPlayer, "Stockholm", "Kalmar"):
+			return iPeriodSweden
+		elif isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
+			return iPeriodNorway
+		elif isCurrentCapital(iPlayer, "Roskilde"):
+			return iPeriodDenmark
+	
+	return -1

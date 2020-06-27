@@ -31,9 +31,14 @@ def updateMap(iPlayer):
 	applyMap(iPlayer)
 
 @handler("GameStart")
-def initsettlermaps():
+def init():
 	for iPlayer in players.major():
 		updateMap(iPlayer)
+
+@handler("periodChange")
+def updateMapOnPeriodChange(iPlayer):
+	updateMap(iPlayer)
+
 
 dSettlerMaps = {
 iEgypt : 

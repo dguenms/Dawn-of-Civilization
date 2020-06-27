@@ -135,7 +135,7 @@ def scheduleCollapse(iPlayer):
 def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if not bConquest:
 		return
-
+	
 	checkStability(iOwner)
 	checkLostCoreCollapse(iOwner)
 	
