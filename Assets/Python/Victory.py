@@ -338,7 +338,7 @@ def checkTurn(iGameTurn, iPlayer):
 			bSpain = cities.normal(iSpain).owner(iPlayer) >= 2
 			bFrance = cities.rectangle(tFranceTL, dNormalArea[iFrance][1]).owner(iPlayer) >= 2
 			bEngland = cities.core(iEngland).owner(iPlayer) >= 1
-			bCarthage = cities.rectangle(tCarthage).owner(iPlayer) >= 2
+			bCarthage = cities.rectangle(tAfrica).owner(iPlayer) >= 2
 			bByzantium = cities.core(iByzantium).owner(iPlayer) >= 4
 			bEgypt = cities.core(iEgypt).owner(iPlayer) >= 2
 			if bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt:
@@ -579,7 +579,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# second goal: control or vassalize Spain, the Maghreb, Egypt, Mesopotamia and Persia in 1300 AD
 		if iGameTurn == year(1300):
 			bEgypt = isControlledOrVassalized(iPlayer, plots.core(iEgypt))
-			bMaghreb = isControlledOrVassalized(iPlayer, plots.rectangle(tCarthage))
+			bMaghreb = isControlledOrVassalized(iPlayer, plots.rectangle(tAfrica))
 			bMesopotamia = isControlledOrVassalized(iPlayer, plots.core(iBabylonia))
 			bPersia = isControlledOrVassalized(iPlayer, plots.core(iPersia))
 			bSpain = isControlledOrVassalized(iPlayer, plots.normal(iSpain))
@@ -3301,7 +3301,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCitiesSpain = cities.normal(iSpain).owner(iPlayer).count()
 			iCitiesFrance = cities.rectangle(tGaul).owner(iPlayer).count()
 			iCitiesEngland = cities.core(iEngland).owner(iPlayer).count()
-			iCitiesCarthage = cities.rectangle(tCarthage).owner(iPlayer).count()
+			iCitiesCarthage = cities.rectangle(tAfrica).owner(iPlayer).count()
 			iCitiesByzantium = cities.core(iByzantium).owner(iPlayer).count()
 			iCitiesEgypt = cities.core(iEgypt).owner(iPlayer).count()
 			aHelp.append(getIcon(iCitiesSpain >= 2) + text("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", iCitiesSpain, 2) + ' ' + getIcon(iCitiesFrance >= 3) + text("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", iCitiesFrance, 3) + ' ' + getIcon(iCitiesEngland >= 1) + text("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", iCitiesEngland, 1))
@@ -3438,7 +3438,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iMostAdvancedCiv == iPlayer) + text("TXT_KEY_VICTORY_MOST_ADVANCED_CIV", name(iMostAdvancedCiv)))
 		elif iGoal == 1:
 			bEgypt = isControlledOrVassalized(iPlayer, plots.core(iEgypt))
-			bMaghreb = isControlledOrVassalized(iPlayer, plots.start(tCarthageTL).end(tCarthageBR))
+			bMaghreb = isControlledOrVassalized(iPlayer, plots.rectangle(tAfrica))
 			bMesopotamia = isControlledOrVassalized(iPlayer, plots.core(iBabylonia))
 			bPersia = isControlledOrVassalized(iPlayer, plots.core(iPersia))
 			bSpain = isControlledOrVassalized(iPlayer, plots.normal(iSpain))

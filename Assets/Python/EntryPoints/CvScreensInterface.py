@@ -943,7 +943,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in plots.core(iEngland):
 			return 10
 		
-		if plot in plots.rectangle(tCarthage):
+		if plot in plots.rectangle(tAfrica):
 			return 11
 		
 		if (x, y) in plots.core(iByzantium):
@@ -989,7 +989,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in plots.core(iEgypt):
 			return 24
 		
-		if plot in plots.rectangle(tCarthage):
+		if plot in plots.rectangle(tAfrica):
 			return 25
 		
 		if (x, y) in plots.core(iBabylonia):
