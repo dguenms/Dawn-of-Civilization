@@ -84,6 +84,35 @@ dPeriodLanguages = {
 (iInca, iPeriodPeru) : [iLangSpanish],
 }
 
+dCapitals = {
+	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
+	iBabylonia : ["Ninua", "Kalhu"],
+	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
+	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
+	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
+	iHolyRome : ["Buda"],
+	iRussia : ["Moskva", "Kiev"],
+	iItaly : ["Fiorenza", "Roma"],
+	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
+	iArabia : ["Dimashq"],
+	iSpain : ["La Paz", "Barcelona", "Valencia"],
+	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
+	iNetherlands : ["Brussels", "Antwerpen"], # TODO: no matches for Brussels
+}
+
+
+@handler("GameStart")
+def setup():
+	print "GameStart: CityNameManager"
+	
+	dLocations = {}
+	
+	for iCiv in dCapitals:
+		for sCapital in dCapitals[iCiv]:
+			dLocations[sCapital] = findLocations(slot(iCiv), sCapital)
+			
+	data.dCapitalLocations = dLocations
+
 # methods
 
 def isResurrected(iPlayer):

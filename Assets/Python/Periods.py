@@ -52,6 +52,7 @@ def evacuate(iPlayer):
 	return False
 
 
+@handler("GameStart")
 def setup():
 	iScenario = scenario()
 	
@@ -64,6 +65,7 @@ def setup():
 			setPeriod(iCiv, iPeriod)
 
 
+@handler("birth")
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
 
@@ -74,11 +76,13 @@ def onBirth(iPlayer):
 		setPeriod(iHolyRome, iPeriodAustria)
 
 
+@handler("collapse")
 def onCollapse(iPlayer):
 	if civ(iPlayer) == iChina:
 		setPeriod(iMongols, iPeriodYuan)
 
 
+@handler("resurrection")
 def onResurrection(iPlayer):
 	iCiv = civ(iPlayer)
 

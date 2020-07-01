@@ -284,7 +284,7 @@ def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
 					if pPlot.getNumUnits() <= iPreserveDefenders:
 						iMaxDamage = 50
 						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarianPlayer)
+						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), barbarian())
 					continue
 
 		elif iPreserveDefenders > 0:
@@ -293,7 +293,7 @@ def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
 				if pPlot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(active()):
 					iMaxDamage = 50
 					if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-					unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarianPlayer)
+					unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), barbarian())
 				continue
 
 		if isMortalUnit(unit):
@@ -311,7 +311,7 @@ def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
 			if rand(100) > iThreshold:
 				iMaxDamage = 50
 				if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-				unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarianPlayer)
+				unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), barbarian())
 				break
 
 

@@ -1670,18 +1670,12 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	clearPlague(iPlayer)
 	convertBackCulture(iPlayer)
 	
-	# change the cores of some civs on respawn
-	periods.onResurrection(iPlayer)
-	
 	# resurrection leaders
 	if iCiv in dResurrectionLeaders:
 		if pPlayer.getLeader() != dResurrectionLeaders[iCiv]:
 			pPlayer.setLeader(dResurrectionLeaders[iCiv])
-			
-	# Leoreth: report to dynamic civs
-	dc.onCivRespawn(iPlayer, lOwners)
 	
-	return
+	events.fireEvent("resurrection", iPlayer)
 	
 def getResurrectionTechs(iPlayer):
 	pPlayer = player(iPlayer)

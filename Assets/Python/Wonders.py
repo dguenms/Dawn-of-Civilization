@@ -71,7 +71,7 @@ def gurEAmirEffect(city, iPlayer, iGold):
 @handler("unitBuilt")
 def spaceElevatorEffect(city, unit):
 	if unit.getUnitType() == iSatellite:
-		city = getBuildingEffectCity(iSpaceElevator)
+		city = getBuildingCity(iSpaceElevator)
 		if city:
 			city.changeBuildingYieldChange(infos.building(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
 
@@ -80,7 +80,7 @@ def spaceElevatorEffect(city, unit):
 @handler("projectBuilt")
 def spaceElevatorProjectEffect(city, iProject):
 	if infos.project(iProject).isSpaceship():
-		city = getBuildingEffectCity(iSpaceElevator)
+		city = getBuildingCity(iSpaceElevator)
 		if city:
 			city.changeBuildingYieldChange(infos.building(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 5)
 
@@ -135,7 +135,7 @@ def silverFountainEffect(unit, iPlayer):
 # Nobel Prize effect: additional great people points whenever a Great Person is born in a civ with pleasant relations
 @handler("greatPersonBorn")
 def nobelPrizeEffect(unit, iPlayer):
-	city = getBuildingEffectCity(iNobelPrize)
+	city = getBuildingCity(iNobelPrize)
 	if city:
 		if infos.unit(unit).getLeaderExperience() == 0 and infos.unit(unit).getEspionagePoints() == 0:
 			if unit.getOwner() == city.getOwner() or player(unit).AI_getAttitude(city.getOwner()) >= AttitudeTypes.ATTITUDE_PLEASED:

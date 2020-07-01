@@ -731,7 +731,7 @@ EndPlayer
 BeginPlayer
 	Team=48
 	LeaderType=LEADER_JUSTINIAN
-	CivType=CIVILIZATION_BYZANTIUM
+	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
 	MinorNationStatus=1
 	Handicap=HANDICAP_REGENT

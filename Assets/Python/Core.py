@@ -29,6 +29,14 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+def barbarian():
+	return gc.getBARBARIAN_PLAYER()
+
+
+def stacktrace():
+	print '\n'.join('File "%s", line %d, in %s' % (line[0], line[1], line[2]) for line in extract_stack())
+
+
 def itemize(iterable, format_func = lambda x: x, item_char = bullet):
 	return item_char + (newline + item_char).join(format_func(i) for i in iterable)
 
@@ -296,7 +304,7 @@ def has_civic(identifier, iCivic):
 
 
 def scenarioStartTurn():
-	return getTurnForYear(scenarioStartYear())
+	return game.getStartTurn()
 
 
 def scenarioStartYear():
@@ -305,9 +313,13 @@ def scenarioStartYear():
 
 
 def scenario():
-	if player(iEgypt).isPlayable(): return i3000BC
-	if player(iByzantium).isPlayable(): return i600AD
-	return i1700AD
+	dScenarioStartTurns = {
+		0 : i3000BC,
+		181 : i600AD,
+		321 : i1700AD,
+	}
+	
+	return dScenarioStartTurns[scenarioStartTurn()]
 
 
 def unittype(identifier):
@@ -1661,9 +1673,6 @@ class TechCollection(object):
 	
 	def __iter__(self):
 		return iter(self.techs())
-
-
-iBarbarianPlayer = slot(iBarbarian)
 		
 		
 plots = PlotFactory()

@@ -4,7 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
 from Consts import *
-import Victory as vic
+from Civics import *
 from StoredData import data
 from RFCUtils import *
 from Areas import *
@@ -20,16 +20,6 @@ from Core import adjective as civAdjective
 ### Constants ###
 
 encoding = "utf-8"
-
-### Setup methods ###
-
-def findCapitalLocations(dCapitals):
-	dLocations = {}
-	
-	for iCiv in dCapitals:
-		for sCapital in dCapitals[iCiv]:
-			dLocations[sCapital] = cnm.findLocations(slot(iCiv), sCapital)
-	return dLocations
 
 ### Dictionaries with text keys
 
@@ -433,8 +423,6 @@ lPeoplesRepublicAdj = [iTamils, iByzantium, iMongols]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 
-lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
-
 dEmpireThreshold = {
 	iCarthage : 4,
 	iIndonesia : 4,
@@ -481,22 +469,6 @@ dAdjectiveChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
 	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
-}
-
-dCapitals = {
-	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
-	iBabylonia : ["Ninua", "Kalhu"],
-	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
-	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
-	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
-	iHolyRome : ["Buda"],
-	iRussia : ["Moskva", "Kiev"],
-	iItaly : ["Fiorenza", "Roma"],
-	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
-	iArabia : ["Dimashq"],
-	iSpain : ["La Paz", "Barcelona", "Valencia"],
-	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
-	iNetherlands : ["Brussels", "Antwerpen"], # TODO: no matches for Brussels
 }
 
 dStartingLeaders = [
@@ -582,7 +554,7 @@ dStartingLeaders = [
 
 @handler("GameStart")
 def setup():
-	data.dCapitalLocations = findCapitalLocations(dCapitals)
+	print "GameStart: DynamicCivs"
 	
 	iScenario = scenario()
 	
@@ -604,8 +576,16 @@ def setup():
 		
 		if (year(dBirth[iPlayer]) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
 			setLeader(iPlayer, startingLeader(iPlayer))
-		
-def onCivRespawn(iPlayer, tOriginalOwners):
+
+@handler("rebirth")
+def onRebirth(iPlayer):
+	onRespawn(iPlayer)
+
+@handler("resurrection")
+def onResurrection(iPlayer):
+	onRespawn(iPlayer)
+
+def onRespawn(iPlayer):
 	data.players[iPlayer].iResurrections += 1
 	
 	if civ(iPlayer) in lRespawnNameChanges:
@@ -715,6 +695,13 @@ def checkTurn(iGameTurn):
 		for iPlayer in players.major():
 			checkName(iPlayer)
 			checkLeader(iPlayer)
+
+@handler("birth")
+def onSpawn(iPlayer):
+	if iPlayer == iGermany:
+		checkNameChange(slot(iHolyRome))
+		checkAdjectiveChange(slot(iHolyRome))
+
 		
 def checkName(iPlayer):
 	if not player(iPlayer).isAlive(): return
@@ -800,46 +787,6 @@ def getColumn(iPlayer):
 	return max(lTechs)
 	
 ### Utility methods for civilization status ###
-
-def isCommunist(iPlayer):
-	civic = civics(iPlayer)
-	
-	if civic.iLegitimacy == iVassalage: return False
-	
-	if civic.iEconomy == iCentralPlanning: return True
-	
-	if civic.iGovernment == iStateParty and civic.iSociety != iTotalitarianism and civic.iEconomy not in [iMerchantTrade, iFreeEnterprise]: return True
-		
-	return False
-	
-def isFascist(iPlayer):
-	civic = civics(iPlayer)
-	
-	if civic.iSociety == iTotalitarianism: return True
-	
-	if civic.iGovernment == iStateParty: return True
-		
-	return False
-	
-def isRepublic(iPlayer):
-	civic = civics(iPlayer)
-	
-	if civic.iGovernment == iDemocracy: return True
-	
-	if civic.iGovernment in [iDespotism, iRepublic, iElective] and civic.iLegitimacy == iConstitution: return True
-	
-	return False
-	
-def isCityStates(iPlayer):
-	civic = civics(iPlayer)
-	
-	if civic.iLegitimacy not in [iAuthority, iCitizenship, iCentralism]: return False
-	
-	if civic.iGovernment in [iRepublic, iElective, iDemocracy]: return True
-	
-	if civic.iGovernment == iChiefdom and civ(iPlayer) in lCityStatesStart: return True
-	
-	return False
 	
 def isCapitulated(iPlayer):
 	return team(iPlayer).isAVassal() and team(iPlayer).isCapitulated()
@@ -1902,6 +1849,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 	elif iCiv == iPoland:
 		if iEra >= iRenaissance and bEmpire:
+			return "TXT_KEY_CIV_POLAND_COMMONWEALTH"
+			
+		if scenario() == i1700AD and turn() < year(1790):
 			return "TXT_KEY_CIV_POLAND_COMMONWEALTH"
 			
 		if isCurrentCapital(iPlayer, "Kowno", "Medvegalis", "Wilno", "Ryga"):

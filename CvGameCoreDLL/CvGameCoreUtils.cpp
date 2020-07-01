@@ -2391,22 +2391,18 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 ScenarioTypes getScenario()
 {
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	int iStartTurn = getScenarioStartTurn();
+
+	if (iStartTurn == 321)
 	{
-		CivilizationTypes eCiv = GET_PLAYER((PlayerTypes)iI).getCivilizationType();
-		bool bPlayable = GET_PLAYER((PlayerTypes)iI).isPlayable();
-
-		if (eCiv == EGYPT && bPlayable) return SCENARIO_3000BC;
-
-		if (eCiv == BYZANTIUM)
-		{
-			if (bPlayable) return SCENARIO_600AD;
-
-			return SCENARIO_1700AD;
-		}
+		return SCENARIO_1700AD;
+	}
+	else if (iStartTurn == 181)
+	{
+		return SCENARIO_600AD;
 	}
 
-	return SCENARIO_1700AD;
+	return SCENARIO_3000BC;
 }
 
 int getScenarioStartYear(ScenarioTypes eScenario)
@@ -2423,7 +2419,7 @@ int getScenarioStartYear(ScenarioTypes eScenario)
 
 int getScenarioStartTurn()
 {
-	return getTurnForYear(getScenarioStartYear());
+	return GC.getGameINLINE().getStartTurn();
 }
 
 // these string functions should only be used under chipotle cheat code (not internationalized)

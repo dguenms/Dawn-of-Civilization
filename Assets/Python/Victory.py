@@ -6,7 +6,7 @@ from Consts import *
 from RFCUtils import *
 import heapq
 import CityNameManager as cnm
-import DynamicCivs as dc
+from Civics import *
 import BugCore
 from Events import handler
 
@@ -96,6 +96,11 @@ def setup():
 	if bIgnoreAI:
 		for iPlayer in players.major().ai():
 			loseAll(iPlayer)
+
+@handler("switch")
+def onCivSwitch(iPreviousPlayer):
+	if infos.constant('NO_AI_UHV_CHECKS') == 1:
+		loseAll(iPreviousPlayer)
 
 @handler("BeginGameTurn")
 def aztecUHVHelp():
@@ -836,7 +841,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: have friendly relations with five communist civilizations by 1950 AD
 		if isPossible(iPlayer, 2):
-			if dc.isCommunist(iPlayer) and countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, dc.isCommunist) >= 5:
+			if isCommunist(iPlayer) and countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, isCommunist) >= 5:
 				win(iPlayer, 2)
 				
 		if iGameTurn == year(1950):
@@ -3576,8 +3581,8 @@ def getUHVHelp(iPlayer, iGoal):
 			bApolloProgram = team(iPlayer).getProjectCount(iLunarLanding) > 0
 			aHelp.append(getIcon(bManhattanProject) + text("TXT_KEY_PROJECT_MANHATTAN_PROJECT") + ' ' + getIcon(bApolloProgram) + text("TXT_KEY_PROJECT_LUNAR_LANDING"))
 		elif iGoal == 2:
-			bCommunism = dc.isCommunist(iPlayer)
-			iCount = countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, dc.isCommunist)
+			bCommunism = isCommunist(iPlayer)
+			iCount = countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, isCommunist)
 			aHelp.append(getIcon(bCommunism) + text("TXT_KEY_VICTORY_COMMUNISM") + ' ' + getIcon(iCount >= 5) + text("TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM", iCount, 5))
 
 	elif iCiv == iMali:

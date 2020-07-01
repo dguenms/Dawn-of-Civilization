@@ -14,7 +14,6 @@ class PlayerData:
 	def update(self, data):
 		self.__dict__.update(data)
 
-
 	def setup(self):
 	
 		# Rise and Fall

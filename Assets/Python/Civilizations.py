@@ -14,7 +14,9 @@ def getScenarioTechs(iScenario, iPlayer):
 def getStartingTechs(iPlayer):
 	return getScenarioTechs(scenario(), iPlayer)
 	
-def initScenarioTechs(iScenario):
+def initScenarioTechs():
+	iScenario = scenario()
+
 	for iPlayer in players.major():
 		iCiv = civ(iPlayer)
 		if dBirth[iCiv] > scenarioStartYear(): continue

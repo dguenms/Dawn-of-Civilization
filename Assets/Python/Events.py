@@ -1,6 +1,7 @@
-from Core import *
 from BugEventManager import g_eventManager as events
 import inspect
+
+from Core import *
 
 
 def handler(event):
@@ -38,6 +39,10 @@ events.addEvent("wonderBuilt")
 events.addEvent("immigration")
 events.addEvent("collapse")
 events.addEvent("periodChange")
+events.addEvent("birth")
+events.addEvent("rebirth")
+events.addEvent("resurrection")
+events.addEvent("switch")
 
 
 @handler("buildingBuilt")

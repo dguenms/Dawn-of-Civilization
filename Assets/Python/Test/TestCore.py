@@ -2201,7 +2201,7 @@ class TestMinor(TestCase):
 		self.assert_(is_minor(slot(iIndependent)))
 		
 	def test_is_minor_barbarian(self):
-		self.assert_(is_minor(iBarbarianPlayer))
+		self.assert_(is_minor(slot(iBarbarian)))
 		
 	def test_is_minor_player(self):
 		self.assert_(is_minor(gc.getPlayer(slot(iIndependent))))
