@@ -132,7 +132,6 @@ def onModNetMessage(iData1, iData2, iData3, iData4, iData5):
 @handler("Update")
 def onUpdate(fDeltaTime):
 	'Called every frame'
-	fDeltaTime = argsList[0]
 	
 	# allow camera to be updated
 	CvCameraControls.g_CameraControls.onUpdate( fDeltaTime )
@@ -522,7 +521,6 @@ def onReligionSpread(iReligion, iOwner, pSpreadCity):
 	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
 ## Platy Builder ##
 	'Religion Has Spread to a City'
-	iReligion, iOwner, pSpreadCity = argsList
 	player = PyPlayer(iOwner)
 	if (not events._LOG_RELIGIONSPREAD):
 		return
@@ -608,14 +606,11 @@ def onEndGoldenAge(iPlayer):
 	CvUtil.pyPrint('Player %d Civilization %s golden age has ended'
 		%(iPlayer, player.getCivilizationName()))
 
-	def onChangeWar(self, argsList):
+	def onChangeWar(bIsWar, iTeam, iRivalTeam):
 	## Platy Builder ##
 		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
 	## Platy Builder ##
 		'War Status Changes'
-		bIsWar = argsList[0]
-		iTeam = argsList[1]
-		iRivalTeam = argsList[2]
 		if (not events._LOG_WARPEACE):
 			return
 		if (bIsWar):
