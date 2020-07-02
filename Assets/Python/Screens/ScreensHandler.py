@@ -1,6 +1,8 @@
 from Events import events, handler
 from CvPythonExtensions import *
 
+import PyHelpers
+
 import CvScreensInterface
 import CvWBPopups
 import Popup as PyPopup
@@ -10,19 +12,25 @@ import CvUtil
 import CvEspionageAdvisor
 import CvDebugTools
 import CvCameraControls
+import CvAdvisorUtils
+import CvTopCivs
 
 ## Ultrapack ##
+import CvPlatyBuilderScreen
+import CvPlatyBuilderSettings
 import WBCityEditScreen
 import WBUnitScreen
 import WBPlayerScreen
 import WBGameDataScreen
 import WBPlotScreen
-import CvPlatyBuilderScreen
 import WBStoredDataScreen
 ## Ultrapack ##
 
 
 gc = CyGlobalContext()
+localText = CyTranslator()
+PyPlayer = PyHelpers.PyPlayer
+PyInfo = PyHelpers.PyInfo
 
 
 @handler("kbdEvent")
@@ -119,7 +127,607 @@ def onModNetMessage(iData1, iData2, iData3, iData4, iData5):
 			screen = CvEspionageAdvisor.CvEspionageAdvisor().getScreen()
 			if screen.isActive():
 				CvEspionageAdvisor.CvEspionageAdvisor().updateEspionageWeights()
+
+
+@handler("Update")
+def onUpdate(fDeltaTime):
+	'Called every frame'
+	fDeltaTime = argsList[0]
+	
+	# allow camera to be updated
+	CvCameraControls.g_CameraControls.onUpdate( fDeltaTime )
+
+
+@handler("OnLoad")
+def onLoadGame():
+	CvAdvisorUtils.resetNoLiberateCities()
+	return 0
+
+
+@handler("GameStart")
+def onGameStart():
+	'Called at the start of the game'
+	#Rhye - dawn of map must appear in late starts too
+	#if (gc.getGame().getGameTurnYear() == gc.getDefineINT("START_YEAR") and not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
+	if (gc.getGame().getStartEra() == gc.getDefineINT("STANDARD_ERA") or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
+		for iPlayer in range(gc.getMAX_PLAYERS()):
+			player = gc.getPlayer(iPlayer)
+			if (player.isAlive() and player.isHuman()):
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+				popupInfo.setText(u"showDawnOfMan")
+				popupInfo.addPopup(iPlayer)
+	else:
+		CyInterface().setSoundSelectionReady(true)
+
+		if gc.getGame().isPbem():
+			for iPlayer in range(gc.getMAX_PLAYERS()):
+				player = gc.getPlayer(iPlayer)
+				if (player.isAlive() and player.isHuman()):
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_DETAILS)
+					popupInfo.setOption1(true)
+					popupInfo.addPopup(iPlayer)
+
+		CvAdvisorUtils.resetNoLiberateCities()
+
+
+@handler("BeginGameTurn")
+def onBeginGameTurn(iGameTurn):
+	'Called at the beginning of the end of each turn'
+	CvTopCivs.CvTopCivs().turnChecker(iGameTurn)
+
+
+@handler("EndPlayerTurn")
+def onEndPlayerTurn(iGameTurn, iPlayer):
+	'Called at the end of a players turn'
+	if (gc.getGame().getElapsedGameTurns() == 1):
+		if (gc.getPlayer(iPlayer).isHuman()):
+			if (gc.getPlayer(iPlayer).canRevolution(0)):
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_CHANGECIVIC)
+				popupInfo.addPopup(iPlayer)
+	
+	CvAdvisorUtils.resetAdvisorNags()
+	CvAdvisorUtils.endTurnFeats(iPlayer)
+
+
+@handler("firstContact")
+def onFirstContact(iTeamX, iHasMetTeamY):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Contact'
+	if (not events._LOG_CONTACT):
+		return
+	CvUtil.pyPrint('Team %d has met Team %d' %(iTeamX, iHasMetTeamY))
+
+
+@handler("combatResult")
+def onCombatResult(pWinner, pLoser):
+	'Combat Result'
+	playerX = PyPlayer(pWinner.getOwner())
+	unitX = PyInfo.UnitInfo(pWinner.getUnitType())
+	playerY = PyPlayer(pLoser.getOwner())
+	unitY = PyInfo.UnitInfo(pLoser.getUnitType())
+	if (not events._LOG_COMBAT):
+		return
+	if playerX and playerX and unitX and playerY:
+		CvUtil.pyPrint('Player %d Civilization %s Unit %s has defeated Player %d Civilization %s Unit %s' 
+			%(playerX.getID(), playerX.getCivilizationName(), unitX.getDescription(), 
+			playerY.getID(), playerY.getCivilizationName(), unitY.getDescription()))
+
+
+@handler("combatLogCalc")
+def onCombatLogCalc(argsList):
+	'Combat Result'	
+	genericArgs = argsList[0]
+	cdAttacker = genericArgs[0]
+	cdDefender = genericArgs[1]
+	iCombatOdds = genericArgs[2]
+	CvUtil.combatMessageBuilder(cdAttacker, cdDefender, iCombatOdds)
+
+
+@handler("combatLogHit")
+def onCombatLogHit(argsList):
+	'Combat Message'
+	global gCombatMessages, gCombatLog
+	genericArgs = argsList[0]
+	cdAttacker = genericArgs[0]
+	cdDefender = genericArgs[1]
+	iIsAttacker = genericArgs[2]
+	iDamage = genericArgs[3]
+	
+	if cdDefender.eOwner == cdDefender.eVisualOwner:
+		szDefenderName = gc.getPlayer(cdDefender.eOwner).getNameKey()
+	else:
+		szDefenderName = localText.getText("TXT_KEY_TRAIT_PLAYER_UNKNOWN", ())
+	if cdAttacker.eOwner == cdAttacker.eVisualOwner:
+		szAttackerName = gc.getPlayer(cdAttacker.eOwner).getNameKey()
+	else:
+		szAttackerName = localText.getText("TXT_KEY_TRAIT_PLAYER_UNKNOWN", ())
+
+	if (iIsAttacker == 0):				
+		combatMessage = localText.getText("TXT_KEY_COMBAT_MESSAGE_HIT", (szDefenderName, cdDefender.sUnitName, iDamage, cdDefender.iCurrHitPoints, cdDefender.iMaxHitPoints))
+		CyInterface().addCombatMessage(cdAttacker.eOwner,combatMessage)
+		CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)
+		if (cdDefender.iCurrHitPoints <= 0):
+			combatMessage = localText.getText("TXT_KEY_COMBAT_MESSAGE_DEFEATED", (szAttackerName, cdAttacker.sUnitName, szDefenderName, cdDefender.sUnitName))
+			CyInterface().addCombatMessage(cdAttacker.eOwner,combatMessage)
+			CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)
+	elif (iIsAttacker == 1):
+		combatMessage = localText.getText("TXT_KEY_COMBAT_MESSAGE_HIT", (szAttackerName, cdAttacker.sUnitName, iDamage, cdAttacker.iCurrHitPoints, cdAttacker.iMaxHitPoints))
+		CyInterface().addCombatMessage(cdAttacker.eOwner,combatMessage)
+		CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)
+		if (cdAttacker.iCurrHitPoints <= 0):
+			combatMessage = localText.getText("TXT_KEY_COMBAT_MESSAGE_DEFEATED", (szDefenderName, cdDefender.sUnitName, szAttackerName, cdAttacker.sUnitName))
+			CyInterface().addCombatMessage(cdAttacker.eOwner,combatMessage)
+			CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)
+
+
+@handler("improvementBuilt")
+def onImprovementBuilt(iImprovement, iX, iY):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Improvement Built'
+	if (not events._LOG_IMPROVEMENT):
+		return
+	CvUtil.pyPrint('Improvement %s was built at %d, %d'
+		%(PyInfo.ImprovementInfo(iImprovement).getDescription(), iX, iY))
+
+
+@handler("improvementDestroyed")
+def onImprovementDestroyed(iImprovement, iOwner, iX, iY):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Improvement Destroyed'
+	if (not events._LOG_IMPROVEMENT):
+		return
+	CvUtil.pyPrint('Improvement %s was Destroyed at %d, %d'
+		%(PyInfo.ImprovementInfo(iImprovement).getDescription(), iX, iY))
+
+
+@handler("routeBuilt")
+def onRouteBuilt(iRoute, iX, iY):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Route Built'
+	if (not events._LOG_IMPROVEMENT):
+		return
+	CvUtil.pyPrint('Route %s was built at %d, %d'
+		%(gc.getRouteInfo(iRoute).getDescription(), iX, iY))
+
+
+@handler("buildingBuilt")
+def onBuildingBuilt(pCity, iBuildingType):
+	'Building Completed'
+	game = gc.getGame()
+	if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer()) and (gc.getPlayer(pCity.getOwner()).countNumBuildings(iBuildingType) <= 1)):
+		# If this is a wonder...
+		if not CyGame().GetWorldBuilderMode():	## Platy Builder ##
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+			popupInfo.setData1(iBuildingType)
+			popupInfo.setData2(pCity.getID())
+			popupInfo.setData3(0)
+			popupInfo.setText(u"showWonderMovie")
+			popupInfo.addPopup(pCity.getOwner())
+
+	CvAdvisorUtils.buildingBuiltFeats(pCity, iBuildingType)
+
+	if (not events._LOG_BUILDING):
+		return
+	CvUtil.pyPrint('%s was finished by Player %d Civilization %s' 
+		%(PyInfo.BuildingInfo(iBuildingType).getDescription(), pCity.getOwner(), gc.getPlayer(pCity.getOwner()).getCivilizationDescription(0)))
+
+
+@handler("projectBuilt")
+def onProjectBuilt(pCity, iProjectType):
+	'Project Completed'
+	game = gc.getGame()
+	if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer())):
+		if not CyGame().GetWorldBuilderMode():	#Platy Builder
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+			popupInfo.setData1(iProjectType)
+			popupInfo.setData2(pCity.getID())
+			popupInfo.setData3(2)
+			popupInfo.setText(u"showWonderMovie")
+			popupInfo.addPopup(pCity.getOwner())
+
+
+@handler("selectionGroupPushMission")
+def onSelectionGroupPushMission(eOwner, eMission):
+	'selection group mission'
+	if (not events._LOG_PUSH_MISSION):
+		return
+	if pHeadUnit:
+		CvUtil.pyPrint("Selection Group pushed mission %d" %(eMission))
+	
+	
+@handler("unitMove")
+def onUnitMove(pPlot, pUnit, pOldPlot):
+	'unit move'
+	player = PyPlayer(pUnit.getOwner())
+	unitInfo = PyInfo.UnitInfo(pUnit.getUnitType())
+	if (not events._LOG_MOVEMENT):
+		return
+	if player and unitInfo:
+		CvUtil.pyPrint('Player %d Civilization %s unit %s is moving to %d, %d' 
+			%(player.getID(), player.getCivilizationName(), unitInfo.getDescription(), 
+			pUnit.getX(), pUnit.getY()))
+
+
+@handler("unitBuilt")
+def onUnitBuilt(city, unit):
+	'Unit Completed'
+	player = PyPlayer(city.getOwner())
+
+	CvAdvisorUtils.unitBuiltFeats(city, unit)
+	
+	if (not events._LOG_UNITBUILD):
+		return
+	CvUtil.pyPrint('%s was finished by Player %d Civilization %s' 
+		%(PyInfo.UnitInfo(unit.getUnitType()).getDescription(), player.getID(), player.getCivilizationName()))
+
+
+@handler("unitKilled")
+def onUnitKilled(unit, iAttacker):
+	'Unit Killed'
+	player = PyPlayer(unit.getOwner())
+	attacker = PyPlayer(iAttacker)
+	if (not events._LOG_UNITKILLED):
+		return
+	CvUtil.pyPrint('Player %d Civilization %s Unit %s was killed by Player %d' 
+		%(player.getID(), player.getCivilizationName(), PyInfo.UnitInfo(unit.getUnitType()).getDescription(), attacker.getID()))
+
+
+@handler("unitLost")
+def onUnitLost(unit):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Unit Lost'
+	player = PyPlayer(unit.getOwner())
+	if (not events._LOG_UNITLOST):
+		return
+	CvUtil.pyPrint('%s was lost by Player %d Civilization %s' 
+		%(PyInfo.UnitInfo(unit.getUnitType()).getDescription(), player.getID(), player.getCivilizationName()))
+
+
+@handler("unitPromoted")
+def onUnitPromoted(pUnit, iPromotion):
+	'Unit Promoted'
+	player = PyPlayer(pUnit.getOwner())
+	if (not events._LOG_UNITPROMOTED):
+		return
+	CvUtil.pyPrint('Unit Promotion Event: %s - %s' %(player.getCivilizationName(), pUnit.getName(),))
+
+
+@handler("unitSelected")
+def onUnitSelected(unit):
+	'Unit Selected'
+	player = PyPlayer(unit.getOwner())
+	if (not events._LOG_UNITSELECTED):
+		return
+	CvUtil.pyPrint('%s was selected by Player %d Civilization %s' 
+		%(PyInfo.UnitInfo(unit.getUnitType()).getDescription(), player.getID(), player.getCivilizationName()))
+
+
+@handler("UnitRename")
+def onUnitRename(pUnit):
+	'Unit is renamed'
+	if (pUnit.getOwner() == gc.getGame().getActivePlayer()):
+		__eventEditUnitNameBegin(pUnit)
+
+
+@handler("unitPillage")
+def onUnitPillage(pUnit, iImprovement, iRoute, iOwner, iGold):
+	'Unit pillages a plot'
+	iPlotX = pUnit.getX()
+	iPlotY = pUnit.getY()
+	pPlot = CyMap().plot(iPlotX, iPlotY)
+	
+	if (not events._LOG_UNITPILLAGE):
+		return
+	CvUtil.pyPrint("Player %d's %s pillaged improvement %d and route %d at plot at (%d, %d)" 
+		%(iOwner, PyInfo.UnitInfo(pUnit.getUnitType()).getDescription(), iImprovement, iRoute, iPlotX, iPlotY))
+
+
+@handler("goodyReceived")
+def onGoodyReceived(iPlayer):
+	'Goody received'
+	if (not events._LOG_GOODYRECEIVED):
+		return
+	CvUtil.pyPrint('%s received a goody' %(gc.getPlayer(iPlayer).getCivilizationDescription(0)),)
+
+
+@handler("greatPersonBorn")
+def onGreatPersonBorn(pUnit, iPlayer, pCity):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Unit Promoted'
+	player = PyPlayer(iPlayer)
+	if pUnit.isNone() or pCity.isNone():
+		return
+	if (not events._LOG_GREATPERSON):
+		return
+	CvUtil.pyPrint('A %s was born for %s in %s' %(pUnit.getName(), player.getCivilizationName(), pCity.getName()))
+
+
+@handler("techAcquired")
+def onTechAcquired(iTechType, iTeam, iPlayer, bAnnounce):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Tech Acquired'
+	# Note that iPlayer may be NULL (-1) and not a refer to a player object
+	
+	# Show tech splash when applicable
+	if (iPlayer > -1 and bAnnounce and not CyInterface().noTechSplash()):
+		if (gc.getGame().isFinalInitialized() and not gc.getGame().GetWorldBuilderMode()):
+			if ((not gc.getGame().isNetworkMultiPlayer()) and (iPlayer == gc.getGame().getActivePlayer())):
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+				popupInfo.setData1(iTechType)
+				popupInfo.setText(u"showTechSplash")
+				popupInfo.addPopup(iPlayer)
+			
+	if (not events._LOG_TECH):
+		return
+	CvUtil.pyPrint('%s was finished by Team %d' 
+		%(PyInfo.TechnologyInfo(iTechType).getDescription(), iTeam))
+
+
+@handler("techSelected")
+def onTechSelected(iTechType, iPlayer):
+	'Tech Selected'
+	if (not events._LOG_TECH):
+		return
+	CvUtil.pyPrint('%s was selected by Player %d' %(PyInfo.TechnologyInfo(iTechType).getDescription(), iPlayer))
+
+
+@handler("religionFounded")
+def onReligionFounded(iReligion, iFounder):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Religion Founded'
+	player = PyPlayer(iFounder)
+	
+	iCityId = gc.getGame().getHolyCity(iReligion).getID()
+	if (gc.getGame().isFinalInitialized() and not gc.getGame().GetWorldBuilderMode()):
+		if ((not gc.getGame().isNetworkMultiPlayer()) and (iFounder == gc.getGame().getActivePlayer())):
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+			popupInfo.setData1(iReligion)
+			popupInfo.setData2(iCityId)
+			popupInfo.setData3(1)
+			popupInfo.setText(u"showWonderMovie")
+			popupInfo.addPopup(iFounder)
+	
+	if (not events._LOG_RELIGION):
+		return
+	CvUtil.pyPrint('Player %d Civilization %s has founded %s'
+		%(iFounder, player.getCivilizationName(), gc.getReligionInfo(iReligion).getDescription()))
+
+
+@handler("religionSpread")
+def onReligionSpread(iReligion, iOwner, pSpreadCity):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Religion Has Spread to a City'
+	iReligion, iOwner, pSpreadCity = argsList
+	player = PyPlayer(iOwner)
+	if (not events._LOG_RELIGIONSPREAD):
+		return
+	CvUtil.pyPrint('%s has spread to Player %d Civilization %s city of %s'
+		%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
 		
+
+@handler("religionRemove")
+def onReligionRemove(iReligion, iOwner, pRemoveCity):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Religion Has been removed from a City'
+	player = PyPlayer(iOwner)
+	if (not events._LOG_RELIGIONSPREAD):
+		return
+	CvUtil.pyPrint('%s has been removed from Player %d Civilization %s city of %s'
+		%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
+
+
+@handler("corporationFounded")
+def onCorporationFounded(iCorporation, iFounder):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Corporation Founded'
+	player = PyPlayer(iFounder)
+	
+	if (not events._LOG_RELIGION):
+		return
+	CvUtil.pyPrint('Player %d Civilization %s has founded %s'
+		%(iFounder, player.getCivilizationName(), gc.getCorporationInfo(iCorporation).getDescription()))
+
+
+@handler("corporationSpread")
+def onCorporationSpread(iCorporation, iOwner, pSpreadCity):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Corporation Has Spread to a City'
+	player = PyPlayer(iOwner)
+	if (not events._LOG_RELIGIONSPREAD):
+		return
+	CvUtil.pyPrint('%s has spread to Player %d Civilization %s city of %s'
+		%(gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
+
+
+@handler("corporationRemove")
+def onCorporationRemove(iCorporation, iOwner, pRemoveCity):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Corporation Has been removed from a City'
+	player = PyPlayer(iOwner)
+	if (not events._LOG_RELIGIONSPREAD):
+		return
+	CvUtil.pyPrint('%s has been removed from Player %d Civilization %s city of %s'
+		%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
+
+
+@handler("goldenAge")	
+def onGoldenAge(iPlayer):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'Golden Age'
+	player = PyPlayer(iPlayer)
+	if (not events._LOG_GOLDENAGE):
+		return
+	CvUtil.pyPrint('Player %d Civilization %s has begun a golden age'
+		%(iPlayer, player.getCivilizationName()))
+
+
+@handler("endGoldenAge")
+def onEndGoldenAge(iPlayer):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'End Golden Age'
+	player = PyPlayer(iPlayer)
+	if (not events._LOG_ENDGOLDENAGE):
+		return
+	CvUtil.pyPrint('Player %d Civilization %s golden age has ended'
+		%(iPlayer, player.getCivilizationName()))
+
+	def onChangeWar(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+	## Platy Builder ##
+		'War Status Changes'
+		bIsWar = argsList[0]
+		iTeam = argsList[1]
+		iRivalTeam = argsList[2]
+		if (not events._LOG_WARPEACE):
+			return
+		if (bIsWar):
+			strStatus = "declared war"
+		else:
+			strStatus = "declared peace"
+		CvUtil.pyPrint('Team %d has %s on Team %d'
+			%(iTeam, strStatus, iRivalTeam))
+
+
+@handler("changeWar")
+def onChangeWar(bIsWar, iTeam, iRivalTeam):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'War Status Changes'
+	if (not events._LOG_WARPEACE):
+		return
+	if (bIsWar):
+		strStatus = "declared war"
+	else:
+		strStatus = "declared peace"
+	CvUtil.pyPrint('Team %d has %s on Team %d'
+		%(iTeam, strStatus, iRivalTeam))
+
+
+@handler("cityRazed")
+def onCityRazed(city, iPlayer):
+	'City Razed'
+	iOwner = city.findHighestCulture()
+	
+	#Rhye - start bugfix
+	#owner = PyPlayer(city.getOwner())
+	owner = PyPlayer(city.getPreviousOwner())
+	#Rhye - end bugfix
+	
+	razor = PyPlayer(iPlayer)
+	CvUtil.pyPrint('Player %d Civilization %s City %s was razed by Player %d' 
+		%(owner.getID(), owner.getCivilizationName(), city.getName(), razor.getID()))
+	
+	# Partisans!
+	if city.getPopulation > 1 and iOwner != -1 and iPlayer != -1:
+		owner = gc.getPlayer(iOwner)
+		if not owner.isBarbarian() and owner.getNumCities() > 0:
+			if gc.getTeam(owner.getTeam()).isAtWar(gc.getPlayer(iPlayer).getTeam()):
+				if gc.getNumEventTriggerInfos() > 0: # prevents mods that don't have events from getting an error
+					iEvent = CvUtil.findInfoTypeNum(gc.getEventTriggerInfo, gc.getNumEventTriggerInfos(),'EVENTTRIGGER_PARTISANS')
+					if iEvent != -1 and gc.getGame().isEventActive(iEvent) and owner.getEventTriggerWeight(iEvent) < 0:
+						triggerData = owner.initTriggeredData(iEvent, true, -1, city.getX(), city.getY(), iPlayer, city.getID(), -1, -1, -1, -1)
+		
+	CvUtil.pyPrint("City Razed Event: %s" %(city.getName(),))
+
+
+@handler("cityAcquired")
+def onCityAcquired(iPreviousOwner, iNewOwner, pCity, bConquest, bTrade):
+## Platy Builder ##
+	if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderSettings.bPython: return
+## Platy Builder ##
+	'City Acquired'
+	CvUtil.pyPrint('City Acquired Event: %s' %(pCity.getName()))
+
+
+@handler("cityLost")
+def onCityLost(city):
+	'City Lost'
+	player = PyPlayer(city.getOwner())
+	if (not events._LOG_CITYLOST):
+		return
+	CvUtil.pyPrint('City %s was lost by Player %d Civilization %s' 
+		%(city.getName(), player.getID(), player.getCivilizationName()))
+
+
+@handler("cityDoTurn")
+def onCityDoTurn(pCity, iPlayer):
+	'City Production'
+	CvAdvisorUtils.cityAdvise(pCity, iPlayer)
+
+
+@handler("cityBuildingUnit")
+def onCityBuildingUnit(pCity, iUnitType):
+	'City begins building a unit'
+	if (not events._LOG_CITYBUILDING):
+		return
+	CvUtil.pyPrint("%s has begun building a %s" %(pCity.getName(),gc.getUnitInfo(iUnitType).getDescription()))
+
+
+@handler("cityBuildingBuilding")
+def onCityBuildingBuilding(pCity, iBuildingType):
+	'City begins building a Building'
+	if (not events._LOG_CITYBUILDING):
+		return
+	CvUtil.pyPrint("%s has begun building a %s" %(pCity.getName(),gc.getBuildingInfo(iBuildingType).getDescription()))
+
+
+@handler("cityRename")
+def onCityRename(pCity):
+	'City is renamed'
+	if (pCity.getOwner() == gc.getGame().getActivePlayer()):
+		print "before edit city name"
+		print "pCity is: %s" % (pCity,)
+		__eventEditCityNameBegin(pCity, True)
+		print "after edit city name"
+
+
+@handler("victory")
+def onVictory(iTeam, iVictory):
+	'Victory'
+	if (iVictory >= 0 and iVictory < gc.getNumVictoryInfos()):
+		victoryInfo = gc.getVictoryInfo(int(iVictory))
+		CvUtil.pyPrint("Victory!  Team %d achieves a %s victory"
+			%(iTeam, victoryInfo.getDescription()))
+	
 
 #################### TRIGGERED EVENTS ##################
 				
@@ -283,18 +891,22 @@ def __eventWBLandmarkPopupApply(playerID, userData, popupReturn):
 ### REGISTER POPUP HANDLERS ###
 
 
-events.setPopupHandlers(CvUtil.EventEditCityName, 'EditCityName', __eventEditCityNameApply, __eventEditCityNameBegin)
-events.setPopupHandlers(CvUtil.EventPlaceObject, 'PlaceObject', __eventPlaceObjectApply, __eventPlaceObjectBegin)
-events.setPopupHandlers(CvUtil.EventAwardTechsAndGold, 'AwardTechsAndGold', __eventAwardTechsAndGoldApply, __eventAwardTechsAndGoldBegin)
-events.setPopupHandlers(CvUtil.EventEditUnitName, 'EditUnitName', __eventEditUnitNameApply, __eventEditUnitNameBegin)
+def dummy(*args, **kwargs):
+	print "called dummy"
+
+
+events.setPopupHandlers(CvUtil.EventEditCityName, 'EditCityName', __eventEditCityNameBegin, __eventEditCityNameApply)
+events.setPopupHandlers(CvUtil.EventPlaceObject, 'PlaceObject', __eventPlaceObjectBegin, __eventPlaceObjectApply)
+events.setPopupHandlers(CvUtil.EventAwardTechsAndGold, 'AwardTechsAndGold', __eventAwardTechsAndGoldBegin, __eventAwardTechsAndGoldApply)
+events.setPopupHandlers(CvUtil.EventEditUnitName, 'EditUnitName', __eventEditUnitNameBegin, __eventEditUnitNameApply)
 
 ## Platy Builder ##
-events.setPopupHandlers(CvUtil.EventWBLandmarkPopup, 'WBLandmarkPopup', __eventWBLandmarkPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(CvUtil.EventShowWonder, 'ShowWonder', __eventShowWonderApply, __eventShowWonderBegin)
-events.setPopupHandlers(1111, 'WBPlayerScript', __eventWBPlayerScriptPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(2222, 'WBCityScript', __eventWBCityScriptPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(3333, 'WBUnitScript', __eventWBUnitScriptPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(4444, 'WBGameScript', __eventWBGameScriptPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(5555, 'WBPlotScript', __eventWBPlotScriptPopupApply, __eventWBScriptPopupBegin)
-events.setPopupHandlers(7777, 'WBStoredDataValue', __eventWBStoredDataValuePopupApply, __eventWBScriptPopupBegin),
+events.setPopupHandlers(CvUtil.EventWBLandmarkPopup, 'WBLandmarkPopup', __eventWBScriptPopupBegin, __eventWBLandmarkPopupApply)
+events.setPopupHandlers(CvUtil.EventShowWonder, 'ShowWonder', __eventShowWonderBegin, __eventShowWonderApply)
+events.setPopupHandlers(1111, 'WBPlayerScript', __eventWBScriptPopupBegin, __eventWBPlayerScriptPopupApply)
+events.setPopupHandlers(2222, 'WBCityScript', __eventWBScriptPopupBegin, __eventWBCityScriptPopupApply)
+events.setPopupHandlers(3333, 'WBUnitScript', __eventWBScriptPopupBegin, __eventWBUnitScriptPopupApply)
+events.setPopupHandlers(4444, 'WBGameScript', __eventWBScriptPopupBegin, __eventWBGameScriptPopupApply)
+events.setPopupHandlers(5555, 'WBPlotScript', __eventWBScriptPopupBegin, __eventWBPlotScriptPopupApply)
+events.setPopupHandlers(7777, 'WBStoredDataValue', __eventWBScriptPopupBegin, __eventWBStoredDataValuePopupApply),
 ## Platy Builder ##
