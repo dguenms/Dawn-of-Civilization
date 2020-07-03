@@ -1069,7 +1069,7 @@ def getBuildingCategory(iBuilding):
 				
 # used: CvPediaLeader, CvPediaMain
 def getLeaderCiv(iLeader):
-	return next([iCiv for iCiv in range(iNumCivilizations) if infos.civ(iCiv).isLeaders(iLeader)], None)
+	return next([iCiv for iCiv in range(iNumCivs) if infos.civ(iCiv).isLeaders(iLeader)], None)
 	
 # used: Religions, RiseAndFall
 def setStateReligionBeforeBirth(lCivs, iReligion):
