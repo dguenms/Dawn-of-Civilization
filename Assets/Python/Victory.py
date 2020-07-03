@@ -3625,8 +3625,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCount >= 12) + text("TXT_KEY_VICTORY_COLONIAL_RESOURCES", iCount, 12))
 		elif iGoal == 2:
 			iColonies = getNumCitiesInArea(iPlayer, plots.rectangle(tBrazil))
-			iColonies += getNumCitiesInRegions(iPlayer, plots.of(lAfrica))
-			iColonies += getNumCitiesInRegions(iPlayer, plots.of(lAsia))
+			iColonies += getNumCitiesInRegions(iPlayer, lAfrica)
+			iColonies += getNumCitiesInRegions(iPlayer, lAsia)
 			aHelp.append(getIcon(iColonies >= 15) + text("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", iColonies, 15))
 
 	elif iCiv == iInca:
