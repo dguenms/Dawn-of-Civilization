@@ -162,7 +162,7 @@ def onCapitalMoved(city):
 			setPeriod(iPhoenicia, -1)
 	
 	if iOwnerCiv == iVikings:
-		if player(iOwner).getCurrentEra() >= iRenaissance and player(iOwner).getPeriod() == -1:
+		if player(iOwner).getCurrentEra() >= iRenaissance:
 			setPeriod(iVikings, getVikingPeriod(iOwner))
 	
 	if iOwnerCiv == iMoors:

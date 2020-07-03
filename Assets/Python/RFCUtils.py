@@ -11,6 +11,7 @@ import SettlerMaps
 import WarMaps
 import CvScreenEnums
 
+from Events import events
 from Core import *
 import Core as core
 
@@ -807,6 +808,8 @@ def relocateCapital(iPlayer, tile):
 	
 	oldCapital.setHasRealBuilding(iPalace, False)
 	newCapital.setHasRealBuilding(iPalace, True)
+	
+	events.fireEvent("capitalMoved", newCapital)
 	
 # used: RiseAndFall
 def createSettlers(iPlayer, iTargetCities):

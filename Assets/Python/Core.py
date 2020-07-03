@@ -29,6 +29,18 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+def capital(identifier):
+	if player(identifier).getNumCities() == 0 or is_minor(identifier):
+		return None
+		
+	city = player(identifier).getCapitalCity()
+	
+	if not city or city.isNone():
+		return None
+	
+	return city
+
+
 def barbarian():
 	return gc.getBARBARIAN_PLAYER()
 

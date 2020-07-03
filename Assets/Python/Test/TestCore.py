@@ -3335,6 +3335,29 @@ class TestCivs(TestCase):
 		
 		assertType(self, lCivs[0], Civ)
 		self.assertEqual(lCivs[0], iEgypt)
+
+
+class TestCapital(TestCase):
+
+	def test_capital(self):
+		city = gc.getPlayer(0).initCity(0, 0)
+		
+		capital_city = capital(0)
+		
+		self.assert_(capital_city is not None)
+		self.assertEqual(city.getID(), capital_city.getID())
+		
+		city.kill()
+	
+	def test_not_alive(self):
+		capital_city = capital(1)
+		
+		self.assert_(capital_city is None)
+	
+	def test_minor(self):
+		capital_city = capital(barbarian())
+		
+		self.assert_(capital_city is None)
 		
 
 test_cases = [
@@ -3391,6 +3414,7 @@ test_cases = [
 	TestDirection,
 	TestAt,
 	TestCivs,
+	TestCapital,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

@@ -51,6 +51,18 @@ def capitalMovedOnPalaceBuilt(city, iBuilding):
 		events.fireEvent("capitalMoved", city)
 
 
+@handler("firstCity")
+def capitalMovedOnFirstCity(city):
+	events.fireEvent("capitalMoved", city)
+
+
+@handler("cityAcquired")
+def capitalMovedOnCityAcquired(iOwner, iNewOwner, city):
+	capital_city = capital(iOwner)
+	if capital_city and location(capital_city) != location(city):
+		events.fireEvent("capitalMoved", capital_city)
+
+
 @handler("cityAcquiredAndKept")
 def firstCityOnCityAcquiredAndKept(iPlayer, city):
 	if city.isCapital():
