@@ -840,6 +840,12 @@ def featAccomplishedOnFocusCallback(argsList):
 		CyInterface().lookAtCityOffset(iData2)
 		
 	return 0
+	
+# Leoreth
+def getStabilityLevel(argsList):
+	iPlayer = argsList[0]
+	return stability(iPlayer)
+
 
 # Leoreth
 def isCorePlot(argsList):
