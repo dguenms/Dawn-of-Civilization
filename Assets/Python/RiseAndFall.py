@@ -57,9 +57,12 @@ def restoreDefeatedUnitDuringSpawn(winningUnit, losingUnit):
 				if rand(100) >= 50:
 					makeUnit(iLosingPlayer, losingUnit.getUnitType(), losingUnit)
 
-# TODO: this is bad and need to be rewritten
 @handler("BeginGameTurn")
-def initBetrayal(iGameTurn):
+def checkInitBetrayal():
+	initBetrayal()
+
+# TODO: this is bad and need to be rewritten
+def initBetrayal():
 	if data.iBetrayalTurns > 0:
 		iFlipPlayer = data.iFlipNewPlayer
 		if not player(iFlipPlayer).isAlive() or not team(iFlipPlayer).isAtWar(active()):
@@ -277,6 +280,9 @@ def checkMinorTechs():
 		updateMinorTechs(iMinor, barbarian())
 
 @handler("EndPlayerTurn")
+def checkFlipPopupOnPlayerTurn(iGameTurn, iPlayer):
+	checkFlipPopup(iGameTurn, iPlayer)
+
 def checkFlipPopup(iGameTurn, iPlayer):
 	if player(iPlayer).isHuman():
 		for tEvent in data.lTempEvents:
@@ -287,33 +293,35 @@ def scheduleFlipPopup(iNewPlayer, lPlots):
 	data.lTempEvents.append((iNewPlayer, lPlots))
 	checkFlipPopup(game.getGameTurn(), active())
 	
-def flipPopup(iNewPlayer, lPlots):
+def flipPopup(iNewPlayer, area):
 	flipText = text("TXT_KEY_FLIPMESSAGE1")
 	
-	for city in getConvertedCities(iNewPlayer, lPlots):
+	for city in getConvertedCities(iNewPlayer, area):
 		flipText += city.getName() + "\n"
 		
 	flipText += text("TXT_KEY_FLIPMESSAGE2")
-						
-	eventpopup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
+	
 	data.iFlipNewPlayer = iNewPlayer
 	data.iFlipOldPlayer = active()
-	data.lTempPlots = lPlots
+	data.tempArea = area
+						
+	eventpopup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
 	
 
 ### Old popup handlers - transition to using Popups module ###
 
 @popup_handler(7615)
 def applyFlip(playerID, netUserData, popupReturn):
-	lPlots = data.lTempPlots
+	iHuman = active()
+	area = data.tempArea
 	iFlipNewPlayer = data.iFlipNewPlayer
 	
 	iNumCities = player(iFlipNewPlayer).getNumCities()
 
-	lHumanCityList = [city for city in getConvertedCities(iFlipNewPlayer, lPlots) if city.isHuman()]
+	lHumanCityList = [city for city in getConvertedCities(iFlipNewPlayer, area) if city.isHuman()]
 	
 	if popupReturn.getButtonClicked() == 0:
-		message(active(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
+		message(iHuman, 'TXT_KEY_FLIP_AGREED', color=iGreen)
 					
 		if lHumanCityList:
 			for city in lHumanCityList:
@@ -325,12 +333,11 @@ def applyFlip(playerID, netUserData, popupReturn):
 				flipUnitsInCityAfter(tCity, iFlipNewPlayer)
 
 		#same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
-		for (x, y) in lPlots:
-			betrayalPlot = plot(x,y)
+		for betrayalPlot in area:
 			if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iFlipNewPlayer): 
 				continue
 			
-			for unit in units.at(x, y).owner(iHuman).domain(DOMAIN_LAND):
+			for unit in units.at(betrayalPlot).owner(iHuman).domain(DomainTypes.DOMAIN_LAND):
 				if rand(100) >= iBetrayalThreshold:
 					iUnitType = unit.getUnitType()
 					unit.kill(False, iFlipNewPlayer)
@@ -352,9 +359,9 @@ def applyFlip(playerID, netUserData, popupReturn):
 			if data.iSpawnWar == 1:
 				team(iFlipNewPlayer).declareWar(iHuman, False, -1) ##True??
 				data.iBetrayalTurns = iBetrayalPeriod
-				rnf.initBetrayal()
+				initBetrayal()
 					
-	data.lTempEvents.remove((iFlipNewPlayer, lPlots))
+	data.lTempEvents.remove((iFlipNewPlayer, area))
 	
 	
 @popup_handler(7622)
@@ -574,7 +581,7 @@ class RiseAndFall:
 		
 		# ask human player for flips
 		if iHumanCities > 0 and not player(iPlayer).isHuman():
-			self.scheduleFlipPopup(iPlayer, rebirthArea)
+			scheduleFlipPopup(iPlayer, rebirthArea)
 
 	def fragmentBarbarians(self, iGameTurn):
 		for iDeadPlayer in players.major().shuffle():
@@ -872,7 +879,7 @@ class RiseAndFall:
 			clearCatapult(iPlayer)
 
 			if iNumHumanCitiesToConvert > 0 and not player(iPlayer).isHuman(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
-				self.scheduleFlipPopup(iPlayer, lPlots)
+				scheduleFlipPopup(iPlayer, area)
 
 	def birthInForeignBorders(self, iPlayer, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
 		iCiv = civ(iPlayer)
@@ -910,7 +917,7 @@ class RiseAndFall:
 					clearPlague(iPlayer)
 			
 			for iMinor in players.independent().barbarian():
-				flipUnitsInArea(lPlots, iPlayer, iMinor, False, player(iMinor).isBarbarian())
+				flipUnitsInArea(area, iPlayer, iMinor, False, player(iMinor).isBarbarian())
 			
 			if iCiv == iOttomans:
 				data.iOttomanSpawnTurn = turn()
@@ -935,10 +942,10 @@ class RiseAndFall:
 					clearPlague(iPlayer)
 			
 			for iMinor in players.independent().barbarian():
-				flipUnitsInArea(lPlots, iPlayer, iMinor, True, player(iPlayer).isBarbarian())
+				flipUnitsInArea(area, iPlayer, iMinor, True, player(iPlayer).isBarbarian())
 
 		if iNumHumanCitiesToConvert > 0:
-			self.scheduleFlipPopup(iPlayer, lPlots)
+			scheduleFlipPopup(iPlayer, area)
 			
 		events.fireEvent("birth", iPlayer)
 
@@ -1002,7 +1009,7 @@ class RiseAndFall:
 				
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
-				self.scheduleFlipPopup(iPlayer, area)
+				scheduleFlipPopup(iPlayer, area)
 				
 			convertPlotCulture(plot(x, y), iPlayer, 100, True)
 

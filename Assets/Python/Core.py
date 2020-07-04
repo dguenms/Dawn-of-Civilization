@@ -304,7 +304,7 @@ def eventpopup(id, title, message, labels=[]):
 	popup.setBodyString(message)
 	for label in labels:
 		popup.addButton(label)
-	popup.launch(labels)
+	popup.launch(not labels)
 
 
 def stability(iPlayer):
