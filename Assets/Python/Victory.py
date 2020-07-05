@@ -2060,7 +2060,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 			
 		# third Confucian goal: control an army of 200 non-obsolete melee or gunpowder units
 		elif iGoal == 2:
-			iUnitCombatMelee = info.type('UNITCOMBAT_MELEE')
+			iUnitCombatMelee = infos.type('UNITCOMBAT_MELEE')
 			iUnitCombatGunpowder = infos.type('UNITCOMBAT_GUN')
 			if countUnitsOfType(iPlayer, [iUnitCombatMelee, iUnitCombatGunpowder]) >= 200: return 1
 			
