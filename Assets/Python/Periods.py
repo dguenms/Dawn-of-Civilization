@@ -48,7 +48,7 @@ def evacuate(iPlayer):
 			if cities.core(iPlayer).owner(iPlayer) > 0:
 				return True
 			else:
-				setPeriod(iPlayer, -1)
+				setPeriod(iCiv, -1)
 	return False
 
 
