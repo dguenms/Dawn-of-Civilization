@@ -316,7 +316,7 @@ def has_civic(identifier, iCivic):
 
 
 def scenarioStartTurn():
-	return game.getStartTurn()
+	return getTurnForYear(scenarioStartYear())
 
 
 def scenarioStartYear():
@@ -325,13 +325,9 @@ def scenarioStartYear():
 
 
 def scenario():
-	dScenarioStartTurns = {
-		0 : i3000BC,
-		181 : i600AD,
-		321 : i1700AD,
-	}
-	
-	return dScenarioStartTurns[scenarioStartTurn()]
+	if player(iEgypt).isPlayable(): return i3000BC
+	if player(iArabia).isPlayable(): return i600AD
+	return i1700AD
 
 
 def unittype(identifier):
