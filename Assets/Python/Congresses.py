@@ -177,6 +177,11 @@ class Congress:
 		self.bribe_own_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
 		
 		self.bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK", '').build()
+		
+		demand = popup.option(self.acceptDemand, "TXT_KEY_CONGRESS_ACCEPT").option(self.refuseDemand, "TXT_KEY_CONGRESS_REFUSE")
+		
+		self.demand_city = demand.text("TXT_KEY_CONGRESS_DEMAND_CITY")
+		self.demand_plot = demand.text("TXT_KEY_CONGRESS_DEMAND_PLOT")
 			
 		self.results = popup.cancel("TXT_KEY_CONGRESS_OK", "").build()
 	
@@ -400,11 +405,6 @@ class Congress:
 			player(iBribedPlayer).AI_changeAttitudeExtra(active(), -2)
 		
 		self.startBriberyResult(iBribedPlayer, iClaimant, bHumanClaim, bSuccess)
-		
-		self.bribery_result_human_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS").build()
-		self.bribery_result_human_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE").build()
-		self.bribery_result_other_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS").build()
-		self.bribery_result_other_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE").build()
 				
 	def startBriberyResult(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):
 		if bSuccess:
@@ -427,11 +427,6 @@ class Congress:
 		else:
 			# otherwise continue with applying the votes
 			self.applyVotes()
-		
-		demand = popup.option(self.acceptDemand, "TXT_KEY_CONGRESS_ACCEPT").option(self.refuseDemand, "TXT_KEY_CONGRESS_REFUSE")
-		
-		self.demand_city = refusal.text("TXT_KEY_CONGRESS_DEMAND_CITY")
-		self.demand_plot = refusal.text("TXT_KEY_CONGRESS_DEMAND_PLOT")
 			
 	def startDemand(self, iClaimant, (x, y)):
 		plot = plot_(x, y)
@@ -944,7 +939,7 @@ class Congress:
 				if (player(iClaimant).isHuman() or (bOwner and player(iOwner).isHuman())) and iClaimValidity < 50 and iFavorOwner - iFavorClaimant > 0:
 					# return the relevant data to be added to the list of possible bribes in the calling method
 					debug('NO VOTE: open for bribes')
-					return (iVoter, iClaimant, tPlot, iFavorOwner - iFavorClaimant, iClaimValidity)
+					return (iVoter, iClaimant, (x, y), iFavorOwner - iFavorClaimant, iClaimValidity)
 				else:
 					iRand = rand(50)
 					if iRand < iClaimValidity:
