@@ -1540,7 +1540,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	
 def resurrectionFromCollapse(iPlayer, lCityList):
 	if lCityList:
-		doResurrection(iPlayer, lCityList)
+		doResurrection(iPlayer, lCityList, False)
 	
 def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer = player(iPlayer)
@@ -1740,7 +1740,7 @@ def switchCivics(iPlayer):
 	pPlayer.setRevolutionTimer(gc.getDefineINT("MIN_REVOLUTION_TURNS"))
 
 def rebellionPopup(iRebelCiv):
-	eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO"))
+	eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
 			
 def sign(x):
 	if x > 0: return 1
