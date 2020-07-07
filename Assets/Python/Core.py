@@ -325,8 +325,12 @@ def scenarioStartYear():
 
 
 def scenario():
-	if player(iEgypt).isPlayable(): return i3000BC
-	if player(iArabia).isPlayable(): return i600AD
+	"""Cannot use civ constants because slots maybe not be set up yet."""
+
+	if player(0).isPlayable(): # Egypt
+		return i3000BC
+	if player(18).isPlayable(): # Arabia
+		return i600AD
 	return i1700AD
 
 
