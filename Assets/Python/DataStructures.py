@@ -57,3 +57,41 @@ class CivDict(dict):
 		if not isinstance(key, Civ):
 			raise TypeError("CivDict can only have keys of type Civ, received: %s with value %s" % (key, value))
 		dict.__setitem__(self, key, value)
+
+
+class TileDict:
+
+	def __init__(self, elements, transform = lambda x: x):
+		self.entries = appenddict()
+		self.transform = transform
+	
+		for tile, values in elements.items():
+			self[tile] = values
+			
+	def __contains__(self, key):
+		return key in self.entries
+		
+	def __getitem__(self, key):
+		return self.entries[key]
+		
+	def __setitem__(self, tile, values):
+		if isinstance(values, (set, list, tuple)):
+			key = self.transform(values[0])
+			remaining_values = values[1:]
+			new_values = [tile]
+			new_values += remaining_values
+			self.entries[key].append(tuple(new_values))
+		else:
+			self.entries[values].append(tile)
+	
+	def __iter__(self):
+		return iter(self.entries)
+	
+	def __str__(self):
+		return str(self.entries)
+	
+	def keys(self):
+		return self.entries.keys()
+	
+	def values(self):
+		return self.entries.values()

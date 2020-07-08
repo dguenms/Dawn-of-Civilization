@@ -2,11 +2,50 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers  
-#import Popup
-from Consts import *
+import PyHelpers
+from Core import *
 from RFCUtils import * # edead
 from StoredData import data
+
+from Events import handler
+
+
+@handler("GameStart")
+def setupOnGameStart():
+	setup()
+	
+@handler("OnLoad")
+def setupOnLoad():
+	setup()
+
+def setup():
+	print "setup resources"
+	global dResources
+	if isinstance(dResources, TileDict):
+		return
+	
+	dResources = TileDict(dResources, year)
+	
+	global dSpawnResources
+	dSpawnResources = TileDict(dSpawnResources)
+	
+	global dRemovedResources
+	dRemovedResources = TileDict(dRemovedResources, year)
+	
+	global dPlotTypes
+	dPlotTypes = TileDict(dPlotTypes, year)
+	
+	global dFeatures
+	dFeatures = TileDict(dFeatures, year)
+	
+	for tile in lNewfoundlandCapes:
+		dFeatures[tile] = (700, iCape)
+	
+	global dRemovedFeatures
+	dRemovedFeatures = TileDict(dRemovedFeatures, year)
+	
+	for tile in lNewfoundlandCapes:
+		dRemovedFeatures[tile] = 1500
 
 
 ### Constants ###
@@ -15,14 +54,6 @@ from StoredData import data
 
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
-
-def invert_and_aggregate(input, key_as_turn=True):
-	output = appenddict()
-	for old_key, (new_key, value) in input.items():
-		if key_as_turn:
-			new_key = year(new_key)
-		output[new_key].append((old_key, value))
-	return output
 
 dResources = {
 	(88, 37)  : (-1000, iHorse),   # Gujarat
@@ -112,8 +143,6 @@ dResources = {
 	(108, 18) : (1850,  iCamel),   # Australia
 }
 
-dResources = invert_and_aggregate(dResources)
-
 # TODO: should be handled by Rise and Fall
 # TODO: Rise and Fall needs generic function canSpawn for normal civs and rebirths
 dSpawnResources = {
@@ -134,20 +163,16 @@ dSpawnResources = {
 	(42, 18) : (iBrazil,    iFish),
 }
 
-dSpawnResources = invert_and_aggregate(dSpawnResources, False)
-
 dRemovedResources = {
 	(51, 36) : 550, # Ivory in Morocco
 	(58, 37) : 550, # Ivory in Tunisia
 }
 
-dRemovedResources = invert_and_aggregate(dRemovedResources)
 
-
-dRoutes = {
+dRoutes = appenddict({
 	-200 : lSilkRoute,
 	-100 : [(88, 47)],
-}
+})
 
 dSpawnRoutes = {
 	iMongols : [(101, 48), (100, 49), (100, 50), (99, 50)],
@@ -158,8 +183,6 @@ dPlotTypes = {
 	(88, 47) : (-100, PlotTypes.PLOT_HILLS),
 }
 
-dPlotTypes = invert_and_aggregate(dPlotTypes)
-
 
 dFeatures = {
 	(35, 54) : (700,  iMud),         # Newfoundland obstacles
@@ -168,9 +191,6 @@ dFeatures = {
 	(11, 47) : (1850, iFloodPlains), # California
 	(11, 48) : (1850, iFloodPlains), # California
 }
-
-dFeatures = invert_and_aggregate(dFeatures)
-dFeatures[turn(700)] += [(tile, iCape) for tile in lNewfoundlandCapes]
 
 dRemovedFeatures = {
 	(67, 30)  : 550,  # Sudan
@@ -183,9 +203,6 @@ dRemovedFeatures = {
 	(83, 46)  : 1600, # Transoxiana
 	(85, 49)  : 1600, # Transoxiana
 }
-
-dRemovedFeatures = invert_and_aggregate(dRemovedFeatures)
-dRemovedFeatures[year(1500)] += lNewfoundlandCapes
 
 
 @handler("BeginGameTurn")
@@ -235,7 +252,7 @@ def createFeatures():
 
 
 @handler("BeginGameTurn")
-def removeFeatures():
+def removeFeatures(iGameTurn):
 	for tile in dRemovedFeatures[game.getGameTurn()]:
 		plot(tile).setFeatureType(-1, 0)
 		

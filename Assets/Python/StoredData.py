@@ -152,7 +152,7 @@ class GameData:
 		self.lTempPlots = []
 		self.lTimedConquests = []
 		
-		self.lPlayerEnabled = [True] * len(lSecondaryCivs)
+		self.dCivEnabled = defaultdict({}, True)
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.iPrepareCapitalPlayer = -1
@@ -270,10 +270,10 @@ class GameData:
 		self.lTimedConquests.append((iPlayer, tPlot))
 		
 	def setCivEnabled(self, iCiv, bNewValue):
-		self.lPlayerEnabled[lSecondaryCivs.index(iCiv)] = bNewValue
+		self.dCivEnabled[iCiv] = bNewValue
 		
 	def isCivEnabled(self, iCiv):
-		return self.lPlayerEnabled[lSecondaryCivs.index(iCiv)]
+		return self.dCivEnabled[iCiv]
 		
 	def resetStability(self, iPlayer):
 		self.players[iPlayer].resetStability()

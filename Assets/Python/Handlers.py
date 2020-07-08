@@ -24,6 +24,7 @@ import History
 import Periods
 import Plague
 import Religions
+import Resources
 import RiseAndFall
 import Rules
 import ScreensHandler
