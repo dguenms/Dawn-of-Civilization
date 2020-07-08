@@ -339,12 +339,12 @@ class DotMapLayer(StrategyLayer):
 	
 	def edit(self):
 		if super(DotMapLayer, self).edit():
-			CvOverlayScreenshowOverlayScreen()
+			CvOverlayScreenUtils.showOverlayScreen()
 	
 	def freeze(self):
 		if super(DotMapLayer, self).freeze():
 			self.unhighlightCity()
-			CvOverlayScreenhideOverlayScreen()
+			CvOverlayScreenUtils.hideOverlayScreen()
 	
 	def onBeginActivePlayerTurn(self, ePlayer):
 		if StratLayerOpt.isShowDotMap():

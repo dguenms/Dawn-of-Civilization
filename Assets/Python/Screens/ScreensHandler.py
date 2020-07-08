@@ -1,3 +1,4 @@
+from Consts import *
 from Events import events, handler
 from CvPythonExtensions import *
 
