@@ -19,30 +19,26 @@ def setupOnLoad():
 	setup()
 
 def setup():
-	print "setup resources"
 	global dResources
-	if isinstance(dResources, TileDict):
-		return
-	
-	dResources = TileDict(dResources, year)
+	dResources = TileDict(dResourcesDict, year)
 	
 	global dSpawnResources
-	dSpawnResources = TileDict(dSpawnResources)
+	dSpawnResources = TileDict(dSpawnResourcesDict)
 	
 	global dRemovedResources
-	dRemovedResources = TileDict(dRemovedResources, year)
+	dRemovedResources = TileDict(dRemovedResourcesDict, year)
 	
 	global dPlotTypes
-	dPlotTypes = TileDict(dPlotTypes, year)
+	dPlotTypes = TileDict(dPlotTypesDict, year)
 	
 	global dFeatures
-	dFeatures = TileDict(dFeatures, year)
+	dFeatures = TileDict(dFeaturesDict, year)
 	
 	for tile in lNewfoundlandCapes:
 		dFeatures[tile] = (700, iCape)
 	
 	global dRemovedFeatures
-	dRemovedFeatures = TileDict(dRemovedFeatures, year)
+	dRemovedFeatures = TileDict(dRemovedFeaturesDict, year)
 	
 	for tile in lNewfoundlandCapes:
 		dRemovedFeatures[tile] = 1500
@@ -55,7 +51,7 @@ def setup():
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 
-dResources = {
+dResourcesDict = {
 	(88, 37)  : (-1000, iHorse),   # Gujarat
 	(78, 42)  : (-800,  iCopper),  # Assyria
 	(88, 47)  : (-100,  iSilk),    # Silk Route
@@ -145,7 +141,7 @@ dResources = {
 
 # TODO: should be handled by Rise and Fall
 # TODO: Rise and Fall needs generic function canSpawn for normal civs and rebirths
-dSpawnResources = {
+dSpawnResourcesDict = {
 	(90, 28) : (iTamils,    iFish),
 	(95, 43) : (iTibet,     iWheat),
 	(97, 44) : (iTibet,     iHorse),
@@ -163,7 +159,7 @@ dSpawnResources = {
 	(42, 18) : (iBrazil,    iFish),
 }
 
-dRemovedResources = {
+dRemovedResourcesDict = {
 	(51, 36) : 550, # Ivory in Morocco
 	(58, 37) : 550, # Ivory in Tunisia
 }
@@ -179,12 +175,12 @@ dSpawnRoutes = {
 }
 
 # there must be stuff like this elsewhere, maybe barbs?
-dPlotTypes = {
+dPlotTypesDict = {
 	(88, 47) : (-100, PlotTypes.PLOT_HILLS),
 }
 
 
-dFeatures = {
+dFeaturesDict = {
 	(35, 54) : (700,  iMud),         # Newfoundland obstacles
 	(92, 35) : (1600, iRainforest),  # Deccan
 	(11, 46) : (1850, iFloodPlains), # California
@@ -192,7 +188,7 @@ dFeatures = {
 	(11, 48) : (1850, iFloodPlains), # California
 }
 
-dRemovedFeatures = {
+dRemovedFeaturesDict = {
 	(67, 30)  : 550,  # Sudan
 	(67, 31)  : 550,  # Sudan
 	(113, 25) : 1000, # allow settling New Guinea
