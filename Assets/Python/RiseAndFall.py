@@ -116,9 +116,12 @@ def checkRebirths():
 	
 		if year() == year(iYear) and not player(iCiv).isAlive():
 			rnf.rebirthFirstTurn(iPlayer)
-
-		if year() == year(iYear)+1 and player(iCiv).isAlive() and player(iCiv).getLastBirthTurn() == year()-1:
-			rnf.rebirthSecondTurn(iPlayer)
+			
+		iRebirthCiv = dRebirthCiv[iCiv]
+		iRebirthPlayer = slot(iRebirthCiv)
+		
+		if year() == year(iYear)+1 and player(iRebirthCiv).isAlive() and player(iRebirthCiv).getLastBirthTurn() == year()-1:
+			rnf.rebirthSecondTurn(iRebirthPlayer)
 
 @handler("BeginGameTurn")
 def fragmentIndependents():
