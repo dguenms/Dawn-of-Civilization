@@ -28,7 +28,7 @@ iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese,
 iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
 iLangHarappan) = range(iNumLanguages)
 
-dLanguages = {
+dLanguages = defaultdict({
 iEgypt : [iLangEgyptian],
 iBabylonia : [iLangBabylonian],
 iHarappa : [iLangHarappan, iLangIndian],
@@ -78,7 +78,7 @@ iColombia : [iLangSpanish],
 iBrazil : [iLangPortuguese, iLangSpanish],
 iCanada : [iLangAmerican, iLangEnglish],
 iCelts : [iLangCeltic],
-}
+}, [])
 
 dPeriodLanguages = {
 (iInca, iPeriodPeru) : [iLangSpanish],
@@ -126,7 +126,7 @@ def getLanguages(iCiv):
 	if (iCiv, iPeriod) in dPeriodLanguages:
 		return dPeriodLanguages[(iCiv, iPeriod)]
 		
-	return dLanguages.get(iCiv)
+	return dLanguages[iCiv]
 	
 def getLocalLanguages(tPlot):
 	corePlayers = players.major().where(plot(tPlot).isCore)
