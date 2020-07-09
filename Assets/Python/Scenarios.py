@@ -54,6 +54,14 @@ def updateGreatWall():
 		return
 
 	elif scenario() == i600AD:
+		lAddWall = [(100, 46), (99, 46), (98, 45), (98, 43), (99, 42), (100, 41), (100, 40)]
+		
+		beijing = city(tBeijing)
+		for x, y in lAddWall:
+			plot_(x, y).setOwner(beijing.getOwner())
+		
+		beijing.updateGreatWall()
+	
 		tTL = (98, 39)
 		tBR = (107, 48)
 		lExceptions = [(105, 48), (106, 48), (107, 48), (106, 47), (98, 46), (98, 47), (99, 47), (98, 48), (99, 48), (98, 39), (99, 39), (100, 39), (98, 40), (99, 40), (98, 41), (99, 41), (98, 42), (100, 40)]

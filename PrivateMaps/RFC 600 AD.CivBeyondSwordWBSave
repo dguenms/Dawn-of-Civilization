@@ -39220,45 +39220,11 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
-(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SPEARMAN, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
-(	EndUnit)
 	BeginCity
 		CityOwner=46, (China)
-		CityName=Chang'an, (Xi'an)
-		CityPopulation=1, (4)
-(		BuildingType=BUILDING_PALACE)
-(		BuildingType=BUILDING_BARRACKS)
-(		BuildingType=BUILDING_FORGE)
-(		BuildingType=BUILDING_CHINESE_TAIXUE)
-(		BuildingType=BUILDING_CONFUCIAN_TEMPLE)
-(		ReligionType=RELIGION_CONFUCIANISM)
-(		ReligionType=RELIGION_TAOISM)
-		Player46Culture=3000, (100)
+		CityName=Chang'an,
+		CityPopulation=1,
+		Player46Culture=100,
 	EndCity
 EndPlot
 BeginPlot
@@ -40031,7 +39997,7 @@ BeginPlot
 		CityOwner=46
 		CityName=Guiyang
 		CityPopulation=1
-		Player46Culture=250
+		Player46Culture=50
 	EndCity
 	PlotType=1
 EndPlot
@@ -40102,7 +40068,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player46Culture=100, (20)
+		Player46Culture=50,
 	EndCity
 EndPlot
 BeginPlot
