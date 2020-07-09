@@ -162,8 +162,9 @@ dSpawnResourcesDict = {
 dRemovedResourcesDict = {
 	(51, 36) : 550, # Ivory in Morocco
 	(58, 37) : 550, # Ivory in Tunisia
+	(87, 49) : 1100, # Sheep near Orduqent
+	(89, 51) : 1100, # Camel near Orduqent
 }
-
 
 dRoutes = appenddict({
 	-200 : lSilkRoute,

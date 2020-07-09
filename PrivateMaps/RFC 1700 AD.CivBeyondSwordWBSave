@@ -40673,7 +40673,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=49
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=45,
@@ -41634,7 +41633,6 @@ BeginPlot
 	x=89,y=51
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=45,
