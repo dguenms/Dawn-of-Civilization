@@ -1,7 +1,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
-from Consts import *
+from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
