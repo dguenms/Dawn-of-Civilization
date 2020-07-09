@@ -471,19 +471,13 @@ class RiseAndFall:
 				pPlayer.setLeader(dRebirthLeaders[iCiv])
 
 		message(active(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen)
-		
-		# Determine whether capital location is free
-		bFree = isFree(iPlayer, (x, y), True) and not plot.isUnit()
 
-		# if city present, flip it. If plot is free, found it. Else give settler.
+		# assign starting techs
+		self.assignTechs(iPlayer)
+
+		# if city present, flip it. Otherwise wait until later
 		if city:
 			city = completeCityFlip((x, y), iPlayer, city.getOwner(), 100)
-		else:
-			convertPlotCulture(plot, iPlayer, 100, True)
-			if bFree:
-				pPlayer.found(x, y)
-			else:
-				makeUnit(iPlayer, iSettler, (x, y))
 				
 		# make sure there is a palace in the city
 		if city and not city.hasBuilding(iPalace):
@@ -497,8 +491,7 @@ class RiseAndFall:
 			
 			if iNewStateReligion >= 0:
 				player(iPlayer).setLastStateReligion(iNewStateReligion)
-
-		self.assignTechs(iPlayer)
+		
 		if year() >= year(dBirth[active()]):
 			startNewCivSwitchEvent(iPlayer)
 
@@ -572,6 +565,20 @@ class RiseAndFall:
 				
 		# convert plot culture
 		convertSurroundingPlotCulture(iPlayer, rebirthArea)
+		
+		# now found capital unless it was already flipped
+		x, y = dCapitals[iCiv]
+		city = city_(x, y)
+		
+		if not city:
+			if isFree(iPlayer, (x, y), True):
+				player(iPlayer).found(x, y)
+			else:
+				makeUnit(iPlayer, iPlayer, (x, y))
+		
+		city = city_(x, y)
+		if city:
+			relocateCapital(iPlayer, (x, y))
 		
 		# reset plague
 		data.players[iPlayer].iPlagueCountdown = -10

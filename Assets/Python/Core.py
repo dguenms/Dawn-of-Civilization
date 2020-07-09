@@ -53,7 +53,6 @@ def itemize(iterable, format_func = lambda x: x, item_char = bullet):
 	return item_char + (newline + item_char).join(format_func(i) for i in iterable)
 
 
-
 def autoplay():
 	return year() < year(dSpawn[active()])
 
