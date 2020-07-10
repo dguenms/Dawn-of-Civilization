@@ -983,7 +983,7 @@ def toggleStabilityOverlay(iPlayer = -1):
 
 	bDebug = game.isDebugMode()
 
-	otherplayers = players.major().alive().without(iPlayer).where(lambda p: canEverRespawn(p))
+	otherplayers = players.major().without(iPlayer).where(lambda p: player(p).isAlive() or canEverRespawn(p))
 
 	# apply the highlight
 	for plot in plots.all().land():
