@@ -2830,14 +2830,14 @@ def calculateAlliedPercent(iPlayer, function):
 	iTotalValue = 0
 	
 	for iLoopPlayer in players.major().alive():
-		pLoopPlayer = player(iLoopPlayer)
-		pLoopTeam = team(iLoopPlayer)
-		
 		iValue = function(iLoopPlayer)
-		
 		iTotalValue += iValue
 		
-		if iLoopPlayer == iPlayer or pLoopTeam.isVassal(player(iPlayer).getTeam()) or pTeam.isDefensivePact(pLoopPlayer.getTeam()):
+		iMaster = master(iLoopPlayer)
+		
+		if iLoopPlayer == iPlayer or pTeam.isDefensivePact(player(iLoopPlayer).getTeam()):
+			iAlliedValue += iValue
+		elif iMaster and (iMaster == iPlayer or pTeam.isDefensivePact(player(iMaster).getTeam())):
 			iAlliedValue += iValue
 			
 	if iTotalValue == 0: return 0
