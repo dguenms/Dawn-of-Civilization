@@ -15430,7 +15430,7 @@ int CvCity::getReligionPopulation(ReligionTypes eReligion) const
 	ReligionTypes eStateReligion = GET_PLAYER(getOwner()).getStateReligion();
 
 	// if there is no state religion (pagan or secular), we assign an equal part to either pagan or nonreligious
-	if (eStateReligion == eReligion)
+	if (eStateReligion == NO_RELIGION)
 	{
 		return getPopulation() / (getReligionCount() + 1);
 	}
