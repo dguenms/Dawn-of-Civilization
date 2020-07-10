@@ -1975,9 +1975,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 		
 		# first Protestant goal: be first to discover Civil Liberties, Constitution and Economics
 		if iGoal == 0:
-			lProtestantTechs = [iCivilLiberties, iSocialContract, iLogistics]
+			lProtestantTechs = [iCivilLiberties, iSocialContract, iEconomics]
 			if checkTechGoal(iPlayer, lProtestantTechs): return 1
-			elif data.lFirstDiscovered[iCivilLiberties] not in [iPlayer, -1] or data.lFirstDiscovered[iSocialContract] not in [iPlayer, -1] or data.lFirstDiscovered[iLogistics] not in [iPlayer, -1]: return 0
+			elif data.lFirstDiscovered[iCivilLiberties] not in [iPlayer, -1] or data.lFirstDiscovered[iSocialContract] not in [iPlayer, -1] or data.lFirstDiscovered[iEconomics] not in [iPlayer, -1]: return 0
 			
 		# second Protestant goal: make sure five great merchants and great engineers are settled in Protestant civilizations
 		elif iGoal == 1:
