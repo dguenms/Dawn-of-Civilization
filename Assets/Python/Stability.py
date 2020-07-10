@@ -596,7 +596,6 @@ def completeCollapse(iPlayer):
 	# take care of the remnants of the civ
 	player(iPlayer).killUnits()
 	vic.resetAll(iPlayer)
-	data.players[iPlayer].iLastTurnAlive = turn()
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if civ(iPlayer) == iByzantium:

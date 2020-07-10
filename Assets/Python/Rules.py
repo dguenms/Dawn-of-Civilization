@@ -298,6 +298,15 @@ def createStartingWorkers(city):
 		makeUnits(iPlayer, getBestWorker(iPlayer), city, dStartingWorkers[iPlayer])
 
 
+### BEGIN PLAYER TURN ###
+
+
+@handler("BeginPlayerTurn")
+def updateLastTurnAlive(iGameTurn, iPlayer):
+	if player(iPlayer).isAlive():
+		data.players[iPlayer].iLastTurnAlive = iGameTurn
+
+
 ### IMPLEMENTATIONS ###
 		
 		
