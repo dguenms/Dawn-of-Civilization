@@ -1376,7 +1376,7 @@ def warOnSpawn(iPlayer, lEnemies):
 
 	if iCiv == iCanada: 
 		return
-		
+	
 	elif iCiv == iGermany and not player(iPlayer).isHuman():
 		return
 	
@@ -1526,3 +1526,9 @@ def convertSurroundingPlotCulture(iPlayer, plots):
 		if plot.isOwned() and plot.isCore(plot.getOwner()) and not plot.isCore(iPlayer): continue
 		if not plot.isCity():
 			convertPlotCulture(plot, iPlayer, 100, False)
+
+
+def paintPlots(plots):
+	engine.clearAreaBorderPlots(1000)
+	for plot in plots:
+		engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_CYAN", 0.7)

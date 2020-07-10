@@ -547,7 +547,7 @@ class RiseAndFall:
 
 		# exclude American territory for Mexico
 		if iCiv == iMexico:
-			rebirthArea = rebirthArea.where(lambda p: owner(p) != iAmerica or p in plots.core(iCiv))
+			rebirthArea = rebirthArea.where(lambda p: not owner(p, iAmerica) or p in plots.core(iCiv))
 
 		rebirthCities = rebirthArea.cities()
 			

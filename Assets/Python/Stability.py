@@ -543,7 +543,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	if not bComplete:
 		if player().canContact(iPlayer):
 			message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(lCededCities))
-		
+	
 	# collect additional cities that can be part of the resurrection
 	lCededTiles = [(city.getX(), city.getY()) for city in lCededCities]
 	for iResurrectionPlayer in dPossibleResurrections:
