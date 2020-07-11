@@ -834,7 +834,7 @@ def name(iPlayer, bIgnoreVassal = False):
 	iCiv = civ(iPlayer)
 
 	if isCapitulated(iPlayer) and not bIgnoreVassal:
-		sVassalName = vassalName(iPlayer, getMaster(iPlayer))
+		sVassalName = vassalName(iPlayer, master(iPlayer))
 		if sVassalName: return sVassalName
 		
 	if isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer):
@@ -1097,7 +1097,7 @@ def adjective(iPlayer, bIgnoreVassal = False):
 	iCiv = civ(iPlayer)
 
 	if isCapitulated(iPlayer):
-		iMaster = getMaster(iPlayer)
+		iMaster = master(iPlayer)
 	
 		sForeignAdjective = dForeignAdjectives[civ(iMaster)].get(iPlayer)
 		if sForeignAdjective: return sForeignAdjective
@@ -1336,7 +1336,7 @@ def specificAdjective(iPlayer):
 		bSpain = not player(iMoors).isAlive() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isAlive() or getMaster(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
+			if not player(iPortugal).isAlive() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
@@ -1363,7 +1363,7 @@ def specificAdjective(iPlayer):
 		iVassals = 0
 		for iLoopCiv in dCivGroups[iCivGroupEurope]:
 			iLoopPlayer = slot(iLoopCiv)
-			if iLoopPlayer >= 0 and getMaster(iLoopPlayer) == iPlayer:
+			if iLoopPlayer >= 0 and master(iLoopPlayer) == iPlayer:
 				iVassals += 1
 				
 		if iVassals >= 2:
@@ -1411,7 +1411,7 @@ def specificAdjective(iPlayer):
 
 def title(iPlayer):
 	if isCapitulated(iPlayer):
-		sVassalTitle = vassalTitle(iPlayer, getMaster(iPlayer))
+		sVassalTitle = vassalTitle(iPlayer, master(iPlayer))
 		if sVassalTitle: return sVassalTitle
 		
 	if isCommunist(iPlayer):
@@ -1799,7 +1799,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if capital not in cities.core(iEngland):
 			return "TXT_KEY_CIV_ENGLAND_EXILE"
 			
-		if iEra == iMedieval and player(iFrance).isAlive() and team(iFrance).isAVassal() and civ(getMaster(iFrance)) == iEngland:
+		if iEra == iMedieval and player(iFrance).isAlive() and team(iFrance).isAVassal() and civ(master(iFrance)) == iEngland:
 			return "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE"
 			
 		if getColumn(iPlayer) >= 11:
@@ -1942,7 +1942,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iCiv == iGermany:
 		if iEra >= iIndustrial and bEmpire:
-			if player(iHolyRome).isAlive() and team(iHolyRome).isAVassal() and civ(getMaster(iHolyRome)) == iGermany:
+			if player(iHolyRome).isAlive() and team(iHolyRome).isAVassal() and civ(master(iHolyRome)) == iGermany:
 				return "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE"
 				
 			return "TXT_KEY_EMPIRE_ADJECTIVE"

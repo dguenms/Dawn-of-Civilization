@@ -304,15 +304,6 @@ def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 		if bOwner:
 			plot.setOwner(iPlayer)
 
-# used: DynamicCivs
-def getMaster(identifier):
-	masters = players.all().where(lambda p: team(identifier).isVassal(p))	
-	if masters:
-		return masters.first()
-		
-	return -1
-
-
 # used: RFCUtils
 # relocates units in a city plot to a free surrounding tile
 def pushOutGarrisons(tCityPlot, iOldOwner):
