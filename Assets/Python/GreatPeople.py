@@ -1549,6 +1549,7 @@ iCivJapan : {
 		"Tougou Heihachirou", # 19th
 		"Yoshifuru Akiyama", # 19th
 		"Gonnohyoue Yamamoto", # 19th
+		"Heihachirou Tougou", # 19th
 		iGlobal,
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
@@ -2370,9 +2371,11 @@ iCivFrance : {
 		iRenaissance,
 		u"Louis de Bourbon-Condé", # 17th
 		"Henri de la Tour d'Auvergne", # 17th
+		"Maurice de Saxe", # 18th
 		"Louis-Joseph de Montcalm", # 18th
 		u"Louis-René de Latouche-Tréville", # 18th
 		iIndustrial,
+		u"André Masséna", # 18th
 		"Louis-Nicolas Davout", # 18th
 		"Joachim Murat", # 18th
 		"Louis-Alexandre Berthier", # 19th
@@ -2531,9 +2534,11 @@ iCivEngland : {
 		"William Herschel", # 18th
 		iIndustrial,
 		"John Dalton", # 19th
+		"fMary Somerville", # 19th
 		"Michael Faraday", # 19th
 		"fMary Anning", # 19th
 		"Charles Darwin", # 19th
+		"fAda Lovelace", # 19th
 		"James Clerk Maxwell", # 19th
 		iGlobal,
 		"Ernest Rutherford", # 20th
@@ -2571,10 +2576,10 @@ iCivEngland : {
 		iIndustrial,
 		"James Watt", # 18th
 		"George Stephenson", # 19th
+		"Charles Babbage", # 19th
 		"Isambard Kingdom Brunel", # 19th
 		"Henry Bessemer", # 19th
-		"Charles Babbage", # 19th
-		"fAda Lovelace", # 19th
+		"William Thomson Kelvin", # 19th
 		iGlobal,
 		"John Logie Baird", # 20th
 		"fVictoria Drummond", # 20th
@@ -2591,6 +2596,8 @@ iCivEngland : {
 		"William Pitt", # 18th
 		"fMary Wollstonecraft", # 18th
 		iIndustrial,
+		"Jeremy Bentham", # 18th
+		"John Stuart Mill", # 19th
 		"William Gladstone", # 19th
 		"Benjamin Disraeli", # 19th
 		"Robert Gascoyne-Cecil Salisbury", # 19th
@@ -2608,13 +2615,17 @@ iCivEngland : {
 		iRenaissance,
 		"Oliver Cromwell", # 17th
 		"John Churchill Marlborough", # 17th
+		"Jeffery Amherst", # 18th
 		"Horatio Nelson", # 18th
 		iIndustrial,
+		"John Jervis", # 18th
 		"Arthur Wellesley Wellington", # 19th
 		"Edmund Lyons", # 19th
 		iGlobal,
+		"Edmund Allenby", # 19th
 		"Hugh Dowding", # 20th
 		"Bernard Law Montgomery", # 20th
+		"William Slim", # 20th
 		"Harold Alexander", # 20th
 	],
 	iGreatSpy : [
@@ -2889,6 +2900,7 @@ iCivRussia : {
 		"Mikhail Romanov", # 17th
 		"Alexander Suvorov", # 18th
 		"Grigory Potemkin", # 18th
+		"Mikhail Kutuzov", # 18th
 		iIndustrial,
 		"Pavel Nakhimov", # 19th
 		"Mikhail Skobelev", # 19th
@@ -2897,6 +2909,7 @@ iCivRussia : {
 		iGlobal,
 		"Mikhail Tukhachevsky", # 20th
 		"Georgy Zhukov", # 20th
+		"Konstantin Rokossovsky", # 20th
 		"Vasily Chuikov", # 20th
 	],
 	iGreatSpy : [
@@ -2907,6 +2920,7 @@ iCivRussia : {
 		iGlobal,
 		"Ilie Catarau", # 20th
 		"Felix Dzerzhinsky", # 20th
+		"Richard Sorge", # 20th
 		"Ivan Serov", # 20th
 		u"Sándor Goldberger", # 20th
 		"Lavrentiy Beria", # 20th
@@ -4008,6 +4022,7 @@ iCivGermany : {
 		"Helmuth von Moltke", # 19th
 		"Paul von Hindenburg", # 19th
 		iGlobal,
+		"Erich Ludendorff", # 20th
 		"Erich von Manstein", # 20th
 		"Erwin Rommel", # 20th
 		"Heinz Guderian", # 20th
