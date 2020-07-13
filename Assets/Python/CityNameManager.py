@@ -101,10 +101,15 @@ dCapitals = {
 }
 
 
+@handler("PythonReloaded")
+def reload():
+	determineCapitalLocations()
+
 @handler("GameStart")
 def setup():
-	print "GameStart: CityNameManager"
-	
+	determineCapitalLocations()
+
+def determineCapitalLocations():
 	dLocations = {}
 	
 	for iCiv in dCapitals:
