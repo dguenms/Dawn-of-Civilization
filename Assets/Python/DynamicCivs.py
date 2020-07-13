@@ -1348,6 +1348,10 @@ def specificAdjective(iPlayer):
 	elif iCiv == iFrance:
 		if iEra == iMedieval and not player(iHolyRome).isAlive():
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
+	
+	elif iCiv == iKhmer:
+		if bMonarchy:
+			return infos.civ(iKhmer).getAdjective(0)
 			
 	elif iCiv == iEngland:
 		if getColumn(iPlayer) >= 11 and cities.rectangle(tBritain).owner(iPlayer) >= 3:
