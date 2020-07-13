@@ -1065,7 +1065,7 @@ def getLeaderCiv(iLeader):
 # used: Religions, RiseAndFall
 def setStateReligionBeforeBirth(lCivs, iReligion):
 	for iCiv in lCivs:
-		if year() < dBirth[iCiv] and player(iCiv).getStateReligion() != iReligion:
+		if year() < year(dBirth[iCiv]) and player(iCiv).getStateReligion() != iReligion:
 			player(iCiv).setLastStateReligion(iReligion)
 	
 # used: CvRFCEventHandler
