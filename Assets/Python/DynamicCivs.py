@@ -432,7 +432,7 @@ dEmpireThreshold = {
 	iGermany : 4,
 	iItaly : 4,
 	iInca : 3,
-	iMongols : 6,
+	iMongols : 8,
 	iPoland : 3,
 	iMoors : 3,
 	iTibet : 2,
