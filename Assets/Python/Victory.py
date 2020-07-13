@@ -3526,7 +3526,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumBuddhism >= 4) + text("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", iNumBuddhism, 4) + ' ' + getIcon(iNumHinduism >= 4) + text("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", iNumHinduism, 4) + ' ' + getIcon(bWatPreahPisnulok) + text("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK"))
 		elif iGoal == 1:
 			fPopPerCity = getAverageCitySize(iPlayer)
-			aHelp.append(getIcon(fPopPerCity >= 12.0) + text("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", "%.2f" % fPopPerCity, 12))
+			aHelp.append(getIcon(fPopPerCity >= 12.0) + text("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", "%.2f" % fPopPerCity, "%d" % 12))
 		elif iGoal == 2:
 			iCulture = pPlayer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= turns(8000)) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iCulture, turns(8000)))
