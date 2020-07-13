@@ -222,8 +222,6 @@ g_pSelectedUnit = 0
 
 # BUG - start
 g_mainInterface = None
-def onSwitchHotSeatPlayer(argsList):
-	g_mainInterface.resetEndTurnObjects()
 # BUG - end
 
 tStabilitySymbols = (

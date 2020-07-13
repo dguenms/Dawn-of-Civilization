@@ -96,7 +96,7 @@
 	
 	<event type="gameUpdate" module="BugUtil" function="doDeferredCalls"/>
 	<event type="BeginPlayerTurn" module="BugUtil" function="doHotSeatCheck"/>
-	<event type="SwitchHotSeatPlayer" module="CvMainInterface" function="onSwitchHotSeatPlayer"/>
+	<!--event type="SwitchHotSeatPlayer" module="CvMainInterface" function="onSwitchHotSeatPlayer"/-->
 	
 	<!-- Game ScriptData -->
 	<event type="GameStart" module="BugData" function="onGameStart"/>

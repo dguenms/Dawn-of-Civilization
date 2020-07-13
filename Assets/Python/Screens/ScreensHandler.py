@@ -27,6 +27,8 @@ import WBPlotScreen
 import WBStoredDataScreen
 ## Ultrapack ##
 
+from CvMainInterface import g_mainInterface as mainInterface
+
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -723,6 +725,11 @@ def onVictory(iTeam, iVictory):
 		victoryInfo = gc.getVictoryInfo(int(iVictory))
 		CvUtil.pyPrint("Victory!  Team %d achieves a %s victory"
 			%(iTeam, victoryInfo.getDescription()))
+
+
+@handler("SwitchHotSeatPlayer")
+def resetEndTurnObjects():
+	mainInterface.resetEndTurnObjects()
 	
 
 #################### TRIGGERED EVENTS ##################
@@ -885,10 +892,6 @@ def __eventWBLandmarkPopupApply(playerID, userData, popupReturn):
 
 
 ### REGISTER POPUP HANDLERS ###
-
-
-def dummy(*args, **kwargs):
-	print "called dummy"
 
 
 events.setPopupHandlers(CvUtil.EventEditCityName, 'EditCityName', __eventEditCityNameBegin, __eventEditCityNameApply)
