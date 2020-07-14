@@ -1690,7 +1690,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_OF"
 			
-		if location(capital) != location(plots.capital(iCiv)):
+		if not bEmpire and location(capital) != location(plots.capital(iCiv)):
 			if capital.getRegionID() == rAnatolia:
 				return "TXT_KEY_EMPIRE_OF"
 				
