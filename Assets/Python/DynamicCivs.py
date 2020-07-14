@@ -1388,14 +1388,14 @@ def specificAdjective(iPlayer):
 				
 	elif iCiv == iMongols:
 		if not bEmpire and iEra <= iRenaissance:
-			if capital.getRegionID() == rChina:
-				return "TXT_KEY_CIV_MONGOLIA_YUAN"
-				
 			if capital.getRegionID() == rPersia:
 				return "TXT_KEY_CIV_MONGOLIA_HULAGU"
 				
-			if capital.getRegionID() == rCentralAsia:
+			if location(capital) != location(plots.capital(iMongols)) and capital.getRegionID() == rCentralAsia:
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
+				
+			if cities.region(rChina).owner(iPlayer):
+				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
 		if bMonarchy:
 			return "TXT_KEY_CIV_MONGOLIA_MONGOL"
