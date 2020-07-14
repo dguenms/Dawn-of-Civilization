@@ -962,7 +962,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.rectangle(tKorea):
 			return 14
 		
-		if plot in plots.rectangle(tManchura):
+		if plot in plots.rectangle(tManchuria):
 			return 15
 		
 		if plot in plots.rectangle(tChina):
