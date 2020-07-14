@@ -2521,7 +2521,7 @@ def isStateReligionInArea(iReligion, tRectangle):
 	
 def getCityCulture(iPlayer, tPlot):
 	city = city_(tPlot)
-	if not city or city.getOnwer() != iPlayer: return 0
+	if not city or city.getOwner() != iPlayer: return 0
 	
 	return city.getCulture(iPlayer)
 	
@@ -2545,9 +2545,9 @@ def isConnected(tStart, lTargets, plotFunction):
 		
 		for plot in plots.surrounding(tNode):
 			if plotFunction(location(plot)):
-				if tPlot in lTargets: return True
+				if plot in targets: return True
 				
-				tTuple = (targets.closest_distance(tPlot), tPlot)
+				tTuple = (targets.closest_distance(plot), location(plot))
 				if not tTuple in lVisitedNodes and not tTuple in lNodes:
 					heapq.heappush(lNodes, tTuple)
 							
