@@ -279,7 +279,7 @@ def message(iPlayer, key, *format, **settings):
 	if tile:
 		iX, iY = location(tile)
 	
-	interface.addMessage(iPlayer, force, iDuration, text(key, *format), sound, iEvent, iButton, ColorTypes(iColor), iX, iY, True, True)
+	interface.addMessage(iPlayer, force, iDuration, translator.getText(key, format), sound, iEvent, iButton, ColorTypes(iColor), iX, iY, True, True)
 
 
 def flatten(iterables):

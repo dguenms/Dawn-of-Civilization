@@ -31,7 +31,9 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 	if bAnnounceBirth:
 		if not player(iPlayer).isMinorCiv() and not player(iPlayer).isBarbarian():
 			pDisplayCity = city
+			text_key = 'TXT_KEY_MISC_GP_BORN'
 			if not pDisplayCity:
+				text_key = 'TXT_KEY_MISC_GP_BORN_OUTSIDE'
 				pDisplayCity = closestCity(unit)
 				
 			sCity = "%s (%s)" % (pDisplayCity.getName(), name(pDisplayCity))
@@ -42,7 +44,7 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 		
 			for iLoopPlayer in players.major().alive():
 				if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
-					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN', unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
+					message(iLoopPlayer, text_key, unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
 				else:
 					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
 
