@@ -536,8 +536,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		if bResurrectionFound: continue
 
 		# assign randomly to possible minors
-		print "Possible minors: %s" % [name(iMinor) for iMinor in lPossibleMinors]
-		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)], not is_minor(iPlayer) and not bComplete)
+		secedeCity(city, random_entry(lPossibleMinors), not is_minor(iPlayer) and not bComplete)
 		
 	# notify for partial secessions
 	if not bComplete:
