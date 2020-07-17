@@ -218,7 +218,7 @@ def foundReligion(location, iReligion):
 
 def selectHolyCity(area, tPreferredCity = None, bAIOnly = True):
 	preferredCity = city(tPreferredCity)
-	if preferredCity and (not bAIOnly or preferredCity.isHuman()):
+	if preferredCity and not (bAIOnly and preferredCity.isHuman()):
 		return preferredCity
 				
 	holyCity = area.cities().where(lambda city: not bAIOnly or not city.isHuman()).random()

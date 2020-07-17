@@ -22,6 +22,7 @@ MainOpt = BugCore.game.MainInterface
 
 interface = CyInterface()
 translator = CyTranslator()
+engine = CyEngine()
 game = gc.getGame()
 map = gc.getMap()
 
