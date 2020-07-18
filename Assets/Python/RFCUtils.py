@@ -904,40 +904,43 @@ def canRespawn(iPlayer):
 	iCiv = civ(iPlayer)
 
 	# no respawn before spawn
-	if year() < dBirth[iCiv] + 10: return False
+	if year() < dSpawn[iCiv] + 10:
+		return False
 	
 	# only dead civ need to check for resurrection
-	if player(iPlayer).isAlive(): return False
+	if player(iPlayer).isAlive():
+		return False
 		
 	# check if only recently died
-	if turn() - data.players[iPlayer].iLastTurnAlive < turns(10): return False
+	if turn() - data.players[iPlayer].iLastTurnAlive < turns(20):
+		return False
 	
 	# check if the civ can be reborn at this date
 	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if exclusive(iPlayer, iKhmer, iThailand): return False
+	if exclusive(iPlayer, iKhmer, iThailand):
+		return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if exclusive(iPlayer, iRome, iItaly): return False
+	if exclusive(iPlayer, iRome, iItaly):
+		return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if exclusive(iPlayer, iGreece, iByzantium): return False
+	if exclusive(iPlayer, iGreece, iByzantium):
+		return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-	if iCiv == iIndia and player(iMughals).isAlive(): return False
+	if iCiv == iIndia and player(iMughals).isAlive():
+		return False
 	
 	# Exception during Japanese UHV
 	if player(iJapan).isHuman() and year().between(1920, 1945):
 		if iCiv in [iChina, iKorea, iIndonesia, iThailand]:
 			return False
-	
-	if not player(iPlayer).isAlive() and turn() > data.players[iPlayer].iLastTurnAlive + turns(20):
-		if iCiv not in dRebirth or year() > year(dRebirth[iCiv]) + turns(10):
-			return True
 			
-	return False
+	return True
 	
 # used: CvScreensInterface, MapDrawer, RFCUtils
 def canEverRespawn(iPlayer, iGameTurn = None):

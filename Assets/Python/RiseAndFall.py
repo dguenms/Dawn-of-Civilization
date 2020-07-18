@@ -804,7 +804,6 @@ class RiseAndFall:
 					clearCatapult(iPlayer)
 						
 			else:
-				print ( "setBirthType again: flips" )
 				self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				
 		# Leoreth: reveal all normal plots on spawn

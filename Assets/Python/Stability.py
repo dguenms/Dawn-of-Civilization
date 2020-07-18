@@ -214,7 +214,7 @@ def onCombatResult(winningUnit, losingUnit):
 def onReleasedPlayer(iPlayer, iReleasedPlayer):
 	releasedCities = cities.owner(iPlayer).core(iReleasedPlayer).where(lambda city: not city.plot().isCore(iPlayer) and not city.isCapital())
 
-	doResurrection(iReleasedPlayer, releasedCities, False)
+	doResurrection(iReleasedPlayer, releasedCities, bAskFlip=False, bDisplay=True)
 	
 	player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
 	
@@ -1538,9 +1538,9 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	
 def resurrectionFromCollapse(iPlayer, lCityList):
 	if lCityList:
-		doResurrection(iPlayer, lCityList, False)
+		doResurrection(iPlayer, lCityList, bAskFlip=False)
 	
-def doResurrection(iPlayer, lCityList, bAskFlip = True):
+def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	pPlayer = player(iPlayer)
 	teamPlayer = team(iPlayer)
 	iCiv = civ(iPlayer)
@@ -1672,6 +1672,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	if iCiv in dResurrectionLeaders:
 		if pPlayer.getLeader() != dResurrectionLeaders[iCiv]:
 			pPlayer.setLeader(dResurrectionLeaders[iCiv])
+	
+	if bDisplay:
+		plot(capital).cameraLookAt()
 	
 	events.fireEvent("resurrection", iPlayer)
 	

@@ -55,6 +55,7 @@ from StoredData import data
 from Consts import *
 from Areas import *
 from RFCUtils import *
+from RFCUtils import canRespawn as canRespawnUtils
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 import CityNameManager as cnm
@@ -1189,7 +1190,7 @@ def getCityName(argsList):
 def canRespawn(argsList):
 	iPlayer = argsList[0]
 	
-	if canRespawn(iPlayer): return 1
+	if canRespawnUtils(iPlayer): return 1
 	
 	return 0
 	
