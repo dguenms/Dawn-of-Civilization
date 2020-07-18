@@ -183,18 +183,16 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 		return
 		
 	iPreferredTarget = slot(iPreferredTargetCiv)
-	if iPreferredTarget < 0:
-		return
 
 	if player(iPlayer).isHuman(): return
 	if not player(iPlayer).isAlive() and iCiv != iTurks: return
 	if data.lConquest[iID]: return
 	if iPreferredTarget >= 0 and player(iPreferredTarget).isAlive() and team(iPreferredTarget).isVassal(iPlayer): return
 	
-	iStartTurn = year(iYear).deviate(5)
+	iStartTurn = year(iYear) + turns(data.iSeed % 10 - 5)
 	
 	if turn() < player(iCiv).getLastBirthTurn() + turns(3): return
-	if not turn().between(iStartTurn, iStartTurn + iIntervalTurns): return
+	if not (iStartTurn <= turn() <= iStartTurn + iIntervalTurns): return
 	if tPrereqConquest and not isConquered(tPrereqConquest): return
 	
 	spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
