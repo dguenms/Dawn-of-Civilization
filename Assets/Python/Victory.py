@@ -2517,7 +2517,7 @@ def countResources(iPlayer, iBonus):
 	return iNumBonus
 	
 def isStateReligionInArea(iReligion, tRectangle):
-	return cities.rectangle(rectangle).any(lambda city: player(city).getStateReligion() == iReligion)
+	return cities.rectangle(tRectangle).any(lambda city: player(city).getStateReligion() == iReligion)
 	
 def getCityCulture(iPlayer, tPlot):
 	city = city_(tPlot)
@@ -3496,7 +3496,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			fReligionPercent = game.calculateReligionPercent(iCatholicism)
 			bNoProtestants = not isStateReligionInArea(iProtestantism, tEurope) and not isStateReligionInArea(iProtestantism, tEasternEurope)
-			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iCatholicism).getTextKey(), "%.2f%%" % fReligionPercent, 30)) + ' ' + getIcon(bNoProtestants) + text("TXT_KEY_VICTORY_NO_PROTESTANTS")
+			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iCatholicism).getTextKey(), "%.2f%%" % fReligionPercent, 30) + ' ' + getIcon(bNoProtestants) + text("TXT_KEY_VICTORY_NO_PROTESTANTS"))
 
 	elif iCiv == iFrance:
 		if iGoal == 0:
