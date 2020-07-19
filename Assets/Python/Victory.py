@@ -2216,7 +2216,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 			
 		# third Secular goal: make sure the five most advanced civilizations are secular
 		elif iGoal == 2:
-			advancedPlayers = players.major().alive().novassals().highest(5, lambda p: team(p).getTotalTechValue())
+			advancedPlayers = players.major().alive().novassal().highest(5, lambda p: team(p).getTotalTechValue())
 			iCount = advancedPlayers.where(lambda p: has_civic(p, iSecularism))
 			if iCount >= 5: return 1
 			
@@ -3041,7 +3041,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iUniversities >= 25) + text("TXT_KEY_VICTORY_SECULAR_UNIVERSITIES", iUniversities, 25))
 			aHelp.append(getIcon(iScientists >= 10) + text("TXT_KEY_VICTORY_SECULAR_SCIENTISTS", iScientists, 10) + ' ' + getIcon(iStatesmen >= 10) + text("TXT_KEY_VICTORY_SECULAR_STATESMEN", iStatesmen, 10))
 		elif iGoal == 2:
-			advancedPlayers = players.major().alive().novassals().highest(5, lambda p: team(p).getTotalTechValue())
+			advancedPlayers = players.major().alive().novassal().highest(5, lambda p: team(p).getTotalTechValue())
 			aHelp.append(' '.join(getIcon(has_civic(p, iSecularism)) + name(p) for p in advancedPlayers))
 				
 	return aHelp
