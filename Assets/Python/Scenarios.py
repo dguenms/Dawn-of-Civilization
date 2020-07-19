@@ -454,7 +454,7 @@ def adjustCulture():
 	if iScenario == i1700AD:
 		for plot in plots.all():
 			if plot.getOwner() != -1:
-				plot.changeCulture(plot.getOwner(), 100, True)
+				plot.changeCulture(plot.getOwner(), 100, False)
 				convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
