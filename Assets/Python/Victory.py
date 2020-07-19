@@ -84,7 +84,7 @@ def setup():
 		data.setWonderBuilder(iLouvre, slot(iFrance))
 		
 		# help Congo
-		data.iCongoSlaveCounter += 500
+		data.iCongoSlaveCounter += turns(500)
 		
 		# help Netherlands
 		data.iDutchColonies += 2
