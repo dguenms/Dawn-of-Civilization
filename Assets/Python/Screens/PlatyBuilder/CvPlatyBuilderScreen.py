@@ -1951,7 +1951,7 @@ class CvWorldBuilderScreen:
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1001, "COLOR_RED", 0.7)
 
 			# Additional cities outside flipzone (Canada)
-			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
+			lExtraCities = getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
 				x, y = location(city)
 				if (x, y) not in lHumanPlotList and (x, y) not in lAIPlotList:
