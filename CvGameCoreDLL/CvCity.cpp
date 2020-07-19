@@ -18193,6 +18193,10 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 		if (pPlot->getTerrainType() == TERRAIN_PLAINS) iCost -= 5;
 	}
 
+	// Leoreth: respect game speed
+	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+	iCost /= 100;
+
 	return bOrdering ? iCost : std::max(0, iCost);
 }
 
