@@ -447,14 +447,11 @@ def encode(text):
 
 
 def text(key, *format):
-	if isinstance(key, unicode) and len(format) == 0:
-		return key
-		
-	return translator.getText(str(key), tuple(encode(f) for f in format))
+	return translator.getText(str(key), tuple(format))
 	
 	
 def text_if_exists(key, *format, **kwargs):
-	otherwise = retrieve(kwargs, 'otherwise')
+	otherwise = kwargs.get('otherwise')
 	key_text = text(key, *format)
 	if key_text != key:
 		return key_text

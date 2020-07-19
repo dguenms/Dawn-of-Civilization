@@ -1168,7 +1168,6 @@ def getGoalText(baseKey, bTitle = False):
 # used: CvVictoryScreen, WBStoredDataScreen
 def getHistoricalGoalText(iPlayer, iGoal, bTitle = False):
 	iCiv = player(iPlayer).getCivilizationType()
-	iGameSpeed = game.getGameSpeedType()
 	
 	baseKey = "TXT_KEY_UHV_%s%d" % (infos.civ(iCiv).getIdentifier(), iGoal + 1)
 	
