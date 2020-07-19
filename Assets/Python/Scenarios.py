@@ -469,7 +469,7 @@ def adjustCulture():
 		for x, y in [(58, 52), (58, 53)]:
 			convertPlotCulture(plot_(x, y), slot(iNetherlands), 100, True)
 			
-		for x, y in [(64, 53), (66, 55)]:
+		for x, y in [(64, 53), (66, 55), (68, 54), (68, 56)]:
 			convertPlotCulture(plot_(x, y), slot(iPoland), 100, True)
 			
 		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
