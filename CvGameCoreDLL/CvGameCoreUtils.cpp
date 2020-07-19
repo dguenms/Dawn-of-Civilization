@@ -2406,7 +2406,7 @@ ScenarioTypes getScenario()
 		}
 	}
 
-	return SCENARIO_1700AD;
+	return SCENARIO_3000BC;
 }
 
 int getScenarioStartYear(ScenarioTypes eScenario)

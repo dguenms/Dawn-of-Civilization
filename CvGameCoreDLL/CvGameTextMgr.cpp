@@ -6204,7 +6204,12 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szBuffer);
 
-		int iStartingYear = std::max(GC.getCivilizationInfo(eCivilization).getStartingYear(), getScenarioStartYear());
+		int iStartingYear = GC.getCivilizationInfo(eCivilization).getStartingYear();
+		if (bDawnOfMan && !GC.getGameINLINE().isFinalInitialized())
+		{
+			iStartingYear = std::max(iStartingYear, getScenarioStartYear());
+		}
+
 		szText = gDLL->getText(iStartingYear >= 0 ? "TXT_KEY_YEAR_AD" : "TXT_KEY_YEAR_BC", std::abs(iStartingYear));
 
 		szText += NEWLINE;
