@@ -1394,7 +1394,7 @@ def specificAdjective(iPlayer):
 			if location(capital) != location(plots.capital(iMongols)) and capital.getRegionID() == rCentralAsia:
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
 				
-			if cities.region(rChina).owner(iPlayer):
+			if 2 * cities.region(rChina).owner(iPlayer).count() >= cities.region(rChina).count():
 				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
 		if bMonarchy:
@@ -1714,7 +1714,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
 	elif iCiv == iTurks:
-		if bCityStates or civic.iGovernment == iElective:
+		if bCityStates:
 			return "TXT_KEY_CIV_TURKS_KURULTAI"
 			
 		if iReligion >= 0:
