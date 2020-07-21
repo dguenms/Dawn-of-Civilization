@@ -881,8 +881,6 @@ class RiseAndFall:
 			convertSurroundingPlotCulture(iPlayer, area)
 			for iMinor in players.independent().barbarian():
 				flipUnitsInArea(area, iPlayer, iMinor, False, player(iMinor).isBarbarian())
-			
-			events.fireEvent("birth", iPlayer)
    
 			#cover plots revealed by the lion
 			clearCatapult(iPlayer)
@@ -955,8 +953,6 @@ class RiseAndFall:
 
 		if iNumHumanCitiesToConvert > 0:
 			scheduleFlipPopup(iPlayer, area)
-			
-		events.fireEvent("birth", iPlayer)
 
 	#Leoreth - adapted from SoI's birthConditional method by embryodead
 	def birthInCapital(self, iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight):
@@ -1515,6 +1511,8 @@ class RiseAndFall:
 				makeUnits(iPlayer, iSteamship, tSeaPlot, 2)
 				makeUnit(iPlayer, iIronclad, tSeaPlot)
 				makeUnit(iPlayer, iTorpedoBoat, tSeaPlot)
+		
+		events.fireEvent("birth", iPlayer)		
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iPlayer)

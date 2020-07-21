@@ -236,6 +236,13 @@ def createRoutesBeforeSpawn(iGameTurn):
 				plot(tile).setRouteType(iRouteRoad)
 
 
+@handler("birth")
+def updateVisibilityOfEntitiesCreatedBeforeSpawn(iPlayer):
+	if civ(iPlayer) in dSpawnResources or civ(iPlayer) in dSpawnRoutes:
+		for plot in plots.all().where(lambda p: p.isRevealed(player(iPlayer).getTeam(), False)):
+			plot.setRevealed(player(iPlayer).getTeam(), True, False, -1)
+
+
 @handler("BeginGameTurn")
 def changePlotType():
 	for tile, type in dPlotTypes[game.getGameTurn()]:
