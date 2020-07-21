@@ -859,7 +859,7 @@ class RiseAndFall:
 						if city.getPopulation() < 5: city.setPopulation(5)
 						city.setHasRealBuilding(iGranary, True)
 						city.setHasRealBuilding(iLibrary, True)
-						city.setHasRealBuilding(iCourthouse, True)
+						city.setHasRealBuilding(iJail, True)
 						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 				
 				lPlots = plots.surrounding(tCapital, radius=3)
@@ -903,7 +903,7 @@ class RiseAndFall:
 				if city.getPopulation() < 5: city.setPopulation(5)
 				city.setHasRealBuilding(iGranary, True)
 				city.setHasRealBuilding(iLibrary, True)
-				city.setHasRealBuilding(iCourthouse, True)
+				city.setHasRealBuilding(iJail, True)
 				if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 				
 		iNumCities = player(iPlayer).getNumCities()

@@ -15,7 +15,7 @@ dCapitalInfrastructure = CivDict({
 	iPhoenicia : (3, [], []),
 	iByzantium : (5, [iBarracks, iWalls, iLibrary, iMarket, iGranary, iHarbor, iForge], [temple]),
 	iPortugal : (5, [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls], [temple]),
-	iItaly : (7, [iLibrary, iPharmacy, iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls], [temple]),
+	iItaly : (7, [iLibrary, iPharmacy, iMarket, iArtStudio, iAqueduct, iJail, iWalls], [temple]),
 	iNetherlands : (9, [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre], [temple]),
 })
 
