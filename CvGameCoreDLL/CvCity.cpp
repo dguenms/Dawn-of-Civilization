@@ -226,6 +226,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 	setEverOwned(getOwnerINLINE(), true);
 
+	pPlot->setOwner(getOwnerINLINE(), bBumpUnits, false);
+	pPlot->setPlotCity(this);
+
 	updateCultureLevel(false);
 	updateCoveredPlots(false);
 
@@ -233,8 +236,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	{
 		pPlot->setCulture(getOwnerINLINE(), GC.getDefineINT("FREE_CITY_CULTURE"), bBumpUnits, false);
 	}
-	pPlot->setOwner(getOwnerINLINE(), bBumpUnits, false);
-	pPlot->setPlotCity(this);
 
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 	{
