@@ -231,16 +231,9 @@ def createRoutes():
 @handler("BeginGameTurn")
 def createRoutesBeforeSpawn(iGameTurn):
 	for iCiv in dSpawnRoutes:
-		if iGameTurn == year(dBirth[iCiv]) - 1 and data.isCivEnabled(iCiv):
+		if iGameTurn == year(dBirth[iCiv]) - 2 and data.isCivEnabled(iCiv):
 			for tile in dSpawnRoutes[iCiv]:
 				plot(tile).setRouteType(iRouteRoad)
-
-
-@handler("birth")
-def updateVisibilityOfEntitiesCreatedBeforeSpawn(iPlayer):
-	if civ(iPlayer) in dSpawnResources or civ(iPlayer) in dSpawnRoutes:
-		for plot in plots.all().where(lambda p: p.isRevealed(player(iPlayer).getTeam(), False)):
-			plot.setRevealed(player(iPlayer).getTeam(), True, False, -1)
 
 
 @handler("BeginGameTurn")
