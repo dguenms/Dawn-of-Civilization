@@ -463,7 +463,7 @@ class RiseAndFall:
 		
 		# reset map visibility
 		for plot in plots.all():
-			plot.setRevealed(iPlayer, False, True, -1)
+			plot.setRevealed(team(iPlayer).getID(), False, False, -1)
 		
 		# assign new leader
 		if iCiv in dRebirthLeaders:
@@ -808,7 +808,7 @@ class RiseAndFall:
 				
 		# Leoreth: reveal all normal plots on spawn
 		for plot in plots.normal(iCiv):
-			plot.setRevealed(iPlayer, True, True, 0)
+			plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 				
 		# Leoreth: conditional state religion for colonial civs and Byzantium
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
@@ -977,7 +977,7 @@ class RiseAndFall:
 				
 				#cover plots revealed
 				for plot in plots.surrounding((0, 0), radius=2):
-					plot.setRevealed(iPlayer, False, True, -1)
+					plot.setRevealed(team(iPlayer).getID(), False, False, -1)
 
 				self.createStartingUnits(iPlayer, tCapital)
 

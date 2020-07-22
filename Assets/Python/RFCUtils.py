@@ -483,7 +483,7 @@ def clearCatapult(iPlayer):
 		catapult.kill(False, -1)
 		
 	for plot in plots.surrounding((0, 0), radius=2):
-		plot.setRevealed(iPlayer, False, True, -1)
+		plot.setRevealed(team(iPlayer).getID(), False, False, -1)
 
 # used: Stability
 def removeReligionByArea(lPlotList, iReligion):
@@ -744,7 +744,7 @@ def getBestWorker(iPlayer):
 def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
 	plot = plot_(tPlot)
 	
-	plot.setRevealed(iPlayer, False, True, -1)
+	#plot.setRevealed(team(iPlayer).getID(), False, False, -1)
 
 	if bPermanentCultureChange:
 		cultureManager(plot, iCultureChange, iPlayer, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
@@ -762,7 +762,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	else:
 		createGarrisons(tPlot, iPlayer, 2)
 	
-	plot.setRevealed(iPlayer, True, True, -1)
+	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 	
 	return city(tPlot)
 	
@@ -773,7 +773,7 @@ def isNeighbor(iPlayer1, iPlayer2):
 # used: Stability
 def isGreatBuilding(iBuilding):
 	if isWorldWonderClass(infos.building(iBuilding).getBuildingClassType()):
-		return True			
+		return True
 
 	if isTeamWonderClass(infos.building(iBuilding).getBuildingClassType()):
 		return True
