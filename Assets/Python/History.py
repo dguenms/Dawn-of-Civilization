@@ -78,14 +78,6 @@ def createCarthaginianDefenses(city):
 			makeUnits(iPhoenicia, iArcher, tCarthage, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
 			makeUnits(iPhoenicia, iNumidianCavalry, tCarthage, 3)
 			makeUnits(iPhoenicia, iWarElephant, tCarthage, 2, UnitAITypes.UNITAI_CITY_COUNTER)
-
-
-@handler("firstCity")
-def clearDanishCulture(city):
-	if civ(city) == iHolyRome:
-		copenhagen = city_(tCopenhagen)
-		if copenhagen and civ(copenhagen) == iVikings:
-			city.setCulture(city.getOwner(), 5, True)
 			
 			
 ### UNIT BUILT ###

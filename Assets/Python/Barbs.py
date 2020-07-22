@@ -334,6 +334,7 @@ def foundMinorCities(iGameTurn):
 		if iCiv == iCelts and scenario() != i3000BC: iCiv = civ(players.independent().random())
 		if sName == 'Buda': bForceSpawn = True
 		if sName == 'Muqdisho': lReligions = [iIslam]
+		if sName in ['Hamburg', 'L&#252;beck']: bForceSpawn = True
 		
 		if not isFree(iCiv, tPlot, bNoCity=True, bNoCulture=not bForceSpawn): continue
 		
