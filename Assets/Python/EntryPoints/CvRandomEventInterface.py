@@ -4348,12 +4348,12 @@ def getTradingCompanyConquerors1HelpText(argsList):
 			if city.getOwner() not in targetPlayers:
 				targetPlayers.append(city.getOwner())
 				
-			lTargetNames.append(city.getName())
+			targetNames.append(city.getName())
 		else:
-			lTargetNames.append(cnm.getFoundName(iPlayer, location(plot)))
+			targetNames.append(cnm.getFoundName(iPlayer, location(plot)))
 	
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
-	sTargetNames = ', '.join(lTargetNames)
+	sTargetNames = ', '.join(targetNames)
 	
 	if targetPlayers:
 		helpText = text("TXT_KEY_EVENT_TCC_ACQUIRE", len(targets) * 200, sTargetPlayers, sTargetNames)
@@ -4432,7 +4432,7 @@ def getTradingCompanyConquerors2HelpText(argsList):
 				targetPlayers.append(city.getOwner())
 			targetNames.append(city.getName())
 
-	if not lTargetPlayers:
+	if not targetPlayers:
 		return text("TXT_KEY_EVENT_TCC_NO_CITIES")
 		
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
