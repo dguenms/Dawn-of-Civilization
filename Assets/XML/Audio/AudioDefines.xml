@@ -11348,14 +11348,14 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_SAN_MARTIN_INTRO</SoundID>
-			<Filename>Sounds/Diplomacy/Peron_Intro</Filename>
+			<Filename>Sounds/Diplomacy/SanMartin_Intro</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_SAN_MARTIN</SoundID>
-			<Filename>Sounds/Diplomacy/Peron</Filename>
+			<Filename>Sounds/Diplomacy/SanMartin</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
