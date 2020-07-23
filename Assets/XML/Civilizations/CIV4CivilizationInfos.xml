@@ -1262,7 +1262,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_CHINESE_LEADER</LeaderName>
+					<LeaderName>LEADER_MAO_ZEDONG</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -2933,11 +2933,11 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_TOKUGAWA</LeaderName>
+					<LeaderName>LEADER_ODA_NOBUNAGA</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_JIMMU</LeaderName>
+					<LeaderName>LEADER_KAMMU</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>

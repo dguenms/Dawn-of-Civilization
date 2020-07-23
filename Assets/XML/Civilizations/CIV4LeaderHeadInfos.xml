@@ -17355,10 +17355,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_CHINESE_LEADER</Type>
-			<Description>TXT_KEY_LEADER_CHINESE_LEADER</Description>
-			<Civilopedia>TXT_KEY_LEADER_CHINESE_LEADER_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_CHINESE_LEADER</ArtDefineTag>
+			<Type>LEADER_MAO_ZEDONG</Type>
+			<Description>TXT_KEY_LEADER_MAO_ZEDONG</Description>
+			<Civilopedia>TXT_KEY_LEADER_MAO_ZEDONG_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_MAO_ZEDONG</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>1</iBasePeaceWeight>
@@ -26286,10 +26286,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_TOKUGAWA</Type>
-			<Description>TXT_KEY_LEADER_TOKUGAWA</Description>
-			<Civilopedia>TXT_KEY_LEADER_TOKUGAWA_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_TOKUGAWA</ArtDefineTag>
+			<Type>LEADER_ODA_NOBUNAGA</Type>
+			<Description>TXT_KEY_LEADER_ODA_NOBUNAGA</Description>
+			<Civilopedia>TXT_KEY_LEADER_ODA_NOBUNAGA_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_ODA_NOBUNAGA</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
@@ -29715,10 +29715,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_JIMMU</Type> <!-- Personality: Pericles -->
-			<Description>TXT_KEY_LEADER_JIMMU</Description>
-			<Civilopedia>TXT_KEY_LEADER_JIMMU_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_JIMMU</ArtDefineTag>
+			<Type>LEADER_KAMMU</Type> <!-- Personality: Pericles -->
+			<Description>TXT_KEY_LEADER_KAMMU</Description>
+			<Civilopedia>TXT_KEY_LEADER_KAMMU_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_KAMMU</ArtDefineTag>
 			<iWonderConstructRand>40</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>6</iBasePeaceWeight>

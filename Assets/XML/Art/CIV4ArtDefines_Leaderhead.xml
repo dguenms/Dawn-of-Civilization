@@ -151,7 +151,7 @@
 			<BackgroundKFM>art/LeaderHeads/Mansa_Musa/Mansa_Musa_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_CHINESE_LEADER</Type>
+			<Type>ART_DEF_LEADER_MAO_ZEDONG</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_China_MaoZedong.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,11</Button>
 			<NIF>art/LeaderHeads/Mao/Mao_tse_tung.nif</NIF>
 			<KFM>art/LeaderHeads/Mao/Mao_tse_tung.kfm</KFM>
@@ -199,7 +199,7 @@
 			<BackgroundKFM>art/LeaderHeads/Saladin/saladin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_TOKUGAWA</Type>
+			<Type>ART_DEF_LEADER_ODA_NOBUNAGA</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_Japan_Tokugawa.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,12</Button>
 			<NIF>art/LeaderHeads/Tokugawa/tokugawa.nif</NIF>
 			<KFM>art/LeaderHeads/Tokugawa/tokugawa.kfm</KFM>
@@ -431,7 +431,7 @@
 			<BackgroundKFM>Art/Leaderheads/Zara_Yaqob/charlemagne_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_JIMMU</Type>
+			<Type>ART_DEF_LEADER_KAMMU</Type>
 			<Button>Art/leaderheads/Jimmu/Jimmu.dds</Button>
 			<NIF>Art/leaderheads/Jimmu/jimmu.nif</NIF>
 			<KFM>Art/leaderheads/Jimmu/brennus.kfm</KFM>
