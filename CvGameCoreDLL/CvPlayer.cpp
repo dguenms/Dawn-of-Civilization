@@ -4471,6 +4471,12 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 
 	case TRADE_VASSAL:
 	case TRADE_SURRENDER:
+		// Leoreth: recently spawned civs cannot become vassals
+		if (GC.getGameINLINE().getGameTurn() - getLastBirthTurn() < getTurns(10))
+		{
+			return false;
+		}
+
 		if (getNumCities() == 0 || GET_PLAYER(eWhoTo).getNumCities() == 0)
 		{
 			return false;
