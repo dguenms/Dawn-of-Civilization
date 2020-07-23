@@ -287,7 +287,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=15
-	LeaderType=LEADER_TOKUGAWA
+	LeaderType=LEADER_ODA_NOBUNAGA
 	CivType=CIVILIZATION_JAPAN
 	PlayableCiv=1
 	StartingGold=300
