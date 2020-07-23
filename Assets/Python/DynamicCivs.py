@@ -1102,7 +1102,7 @@ def adjective(iPlayer, bIgnoreVassal = False):
 		sForeignAdjective = dForeignAdjectives[civ(iMaster)].get(iPlayer)
 		if sForeignAdjective: return sForeignAdjective
 		
-		if not bIgnoreVassal: return player(iMaster).getCivilizationAdjective(0)
+		if not bIgnoreVassal: return adjective(iMaster)
 		
 	if isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer):
 		sRepublicAdjective = republicAdjective(iPlayer)
