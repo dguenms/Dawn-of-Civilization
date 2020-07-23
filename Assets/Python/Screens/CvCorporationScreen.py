@@ -394,10 +394,10 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomicsTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iEconomicsTech, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomics).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iEconomics, -1)
 				
 				szList = u""
-				if teamCiv.isHasTech(iEconomicsTech):
+				if teamCiv.isHasTech(iEconomics):
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
