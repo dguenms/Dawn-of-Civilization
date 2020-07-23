@@ -11,7 +11,7 @@ dCompanyTechs = {
 	iCerealIndustry   : [iEconomics, iBiology],
 	iFishingIndustry  : [iEconomics, iRefrigeration],
 	iTextileIndustry  : [iEconomics, iThermodynamics],
-	iSteelIndustry    : [iEconomics, iSteel],
+	iSteelIndustry    : [iEconomics, iMetallurgy],
 	iOilIndustry      : [iEconomics, iRefining],
 	iLuxuryIndustry   : [iEconomics, iConsumerism],
 	iComputerIndustry : [iEconomics, iComputers],
