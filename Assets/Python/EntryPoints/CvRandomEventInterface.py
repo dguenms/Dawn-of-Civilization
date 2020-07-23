@@ -4483,7 +4483,7 @@ def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	iNumCatholicCities = cities.owner(iPlayer).where(lambda city: city.isHasReligion(iCatholicism))
+	iNumCatholicCities = cities.owner(iPlayer).where(lambda city: city.isHasReligion(iCatholicism)).count()
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
 	
 def doReformation1(argsList):
