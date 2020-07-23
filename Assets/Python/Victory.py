@@ -2915,7 +2915,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bShrine) + text("TXT_KEY_BUILDING_CATHOLIC_SHRINE") + ' ' + getIcon(iSaints >= 12) + text("TXT_KEY_VICTORY_CATHOLIC_SAINTS", iSaints, 12))
 		elif iGoal == 2:
 			fLandPercent = getReligiousLand(iCatholicism)
-			aHelp.append(getIcon(fLandPercent >= 50.0) + text("TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY", "%.2f%%" % fLandPercent, 50))
+			aHelp.append(getIcon(fLandPercent >= 50.0) + text("TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY", "%.2f%%" % fLandPercent, '50'))
 
 	elif iVictoryType == iProtestantism:
 		if iGoal == 0:
@@ -2936,7 +2936,7 @@ def getURVHelp(iPlayer, iGoal):
 	elif iVictoryType == iIslam:
 		if iGoal == 0:
 			fReligionPercent = game.calculateReligionPercent(iIslam)
-			aHelp.append(getIcon(fReligionPercent >= 40.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, 40))
+			aHelp.append(getIcon(fReligionPercent >= 40.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, '40'))
 		elif iGoal == 1:
 			iCount = 0
 			pHolyCity = game.getHolyCity(iIslam)
@@ -3012,7 +3012,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumIncense >= 6) + text("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", iNumIncense, 6))
 		elif iGoal == 1:
 			fReligionPercent = game.calculateReligionPercent(iZoroastrianism)
-			aHelp.append(getIcon(fReligionPercent >= 10.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iZoroastrianism).getTextKey(), "%.2f%%" % fReligionPercent, 10))
+			aHelp.append(getIcon(fReligionPercent >= 10.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iZoroastrianism).getTextKey(), "%.2f%%" % fReligionPercent, '10'))
 		elif iGoal == 2:
 			holyCity = game.getHolyCity(iZoroastrianism)
 			aHelp.append(getIcon(holyCity.getOwner() == iPlayer) + text("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", holyCity.getName()) + ' ' + getIcon(holyCity.getCultureLevel() >= 6) + text("TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY", holyCity.getName()))
@@ -3110,7 +3110,7 @@ def getPaganGoalHelp(iPlayer):
 	
 	elif paganReligion == "Shendao":
 		fPopulationPercent = getPopulationPercent(iPlayer)
-		return getIcon(fPopulationPercent >= 25.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % fPopulationPercent, 25)
+		return getIcon(fPopulationPercent >= 25.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % fPopulationPercent, '25')
 	
 	elif paganReligion == "Shinto":
 		capital = pPlayer.getCapitalCity()
@@ -3256,7 +3256,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCounter >= 20) + text("TXT_KEY_VICTORY_TEMPLES_BUILT", iCounter, 20))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iPlayer)
-			aHelp.append(getIcon(popPercent >= 20.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 20))
+			aHelp.append(getIcon(popPercent >= 20.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, '20'))
 
 	elif iCiv == iCarthage:
 		if iGoal == 0:
@@ -3282,7 +3282,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iCiv == iPersia:
 		if iGoal == 0:
 			landPercent = getLandPercent(iPlayer)
-			aHelp.append(getIcon(landPercent >= 6.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, 7))
+			aHelp.append(getIcon(landPercent >= 6.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, '7'))
 		elif iGoal == 1:
 			iCounter = countWonders(iPlayer)
 			aHelp.append(getIcon(iCounter >= 7) + text("TXT_KEY_VICTORY_NUM_WONDERS", iCounter, 7))
@@ -3403,7 +3403,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			fLandPercent = getLandPercent(iPlayer)
 			iPillagedImprovements = data.iTurkicPillages
-			aHelp.append(getIcon(fLandPercent >= 5.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % fLandPercent, 6))
+			aHelp.append(getIcon(fLandPercent >= 5.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % fLandPercent, '6'))
 			aHelp.append(getIcon(iPillagedImprovements >= 20) + text("TXT_KEY_VICTORY_PILLAGED_IMPROVEMENTS", iPillagedImprovements, 20))
 		elif iGoal == 1:
 			bConnected = isConnectedByTradeRoute(iPlayer, plots.rectangle(tChina), lMediterraneanPorts)
@@ -3446,7 +3446,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMesopotamia) + text("TXT_KEY_VICTORY_MESOPOTAMIA") + ' ' + getIcon(bPersia) + text("TXT_KEY_CIV_PERSIA_SHORT_DESC"))
 		elif iGoal == 2:
 			fReligionPercent = game.calculateReligionPercent(iIslam)
-			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, 30))
+			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, '30'))
 
 	elif iCiv == iTibet:
 		if iGoal == 0:
@@ -3454,7 +3454,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumCities >= 5) + text("TXT_KEY_VICTORY_CITIES_ACQUIRED", iNumCities, 5))
 		elif iGoal == 1:
 			fReligionPercent = game.calculateReligionPercent(iBuddhism)
-			aHelp.append(getIcon(fReligionPercent >= 25.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iBuddhism).getTextKey(), "%.2f%%" % fReligionPercent, 25))
+			aHelp.append(getIcon(fReligionPercent >= 25.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iBuddhism).getTextKey(), "%.2f%%" % fReligionPercent, '25'))
 		elif iGoal == 2:
 			iCounter = countCitySpecialists(iPlayer, plots.capital(iTibet), iSpecialistGreatProphet)
 			aHelp.append(getIcon(iCounter >= 5) + text("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", "Lhasa", iCounter, 5))
@@ -3469,7 +3469,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCounter >= 10) + text("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", iCounter, 10))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iPlayer)
-			aHelp.append(getIcon(popPercent >= 9.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 9))
+			aHelp.append(getIcon(popPercent >= 9.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, '9'))
 
 	elif iCiv == iMoors:
 		if iGoal == 0:
@@ -3496,7 +3496,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			fReligionPercent = game.calculateReligionPercent(iCatholicism)
 			bNoProtestants = not isStateReligionInArea(iProtestantism, tEurope) and not isStateReligionInArea(iProtestantism, tEasternEurope)
-			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iCatholicism).getTextKey(), "%.2f%%" % fReligionPercent, 30) + ' ' + getIcon(bNoProtestants) + text("TXT_KEY_VICTORY_NO_PROTESTANTS"))
+			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iCatholicism).getTextKey(), "%.2f%%" % fReligionPercent, '30') + ' ' + getIcon(bNoProtestants) + text("TXT_KEY_VICTORY_NO_PROTESTANTS"))
 
 	elif iCiv == iFrance:
 		if iGoal == 0:
@@ -3508,7 +3508,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNorthAmerica, iTotalNorthAmerica = countControlledTiles(iPlayer, plots.rectangle(tNorthAmerica), True)
 			fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 			fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
-			aHelp.append(getIcon(fEurope >= 40.0) + text("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", "%.2f%%" % fEurope, 40) + ' ' + getIcon(fNorthAmerica >= 40.0) + text("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", "%.2f%%" % fNorthAmerica, 40))
+			aHelp.append(getIcon(fEurope >= 40.0) + text("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", "%.2f%%" % fEurope, '40') + ' ' + getIcon(fNorthAmerica >= 40.0) + text("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", "%.2f%%" % fNorthAmerica, '40'))
 		elif iGoal == 2:
 			bNotreDame = data.getWonderBuilder(iNotreDame) == iPlayer
 			bVersailles = data.getWonderBuilder(iVersailles) == iPlayer
@@ -3653,7 +3653,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iMediterranean, iTotalMediterranean = countControlledTiles(iPlayer, plots.rectangle(tMediterranean).without(lMediterraneanExceptions), False, True)
 			fMediterranean = iMediterranean * 100.0 / iTotalMediterranean
-			aHelp.append(getIcon(fMediterranean >= 65.0) + text("TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY", "%.2f%%" % fMediterranean, 65))
+			aHelp.append(getIcon(fMediterranean >= 65.0) + text("TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY", "%.2f%%" % fMediterranean, '65'))
 
 	elif iCiv == iMongols:
 		if iGoal == 1:
@@ -3661,7 +3661,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iRazedCities >= 7) + text("TXT_KEY_VICTORY_NUM_CITIES_RAZED", iRazedCities, 7))
 		elif iGoal == 2:
 			landPercent = getLandPercent(iPlayer)
-			aHelp.append(getIcon(landPercent >= 11.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, 12))
+			aHelp.append(getIcon(landPercent >= 11.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, '12'))
 
 	elif iCiv == iMughals:
 		if iGoal == 0:
@@ -3726,7 +3726,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iCiv == iCongo:
 		if iGoal == 0:
 			fPercent = getApostolicVotePercent(iPlayer)
-			aHelp.append(getIcon(fPercent >= 15.0) + text("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", "%.2f%%" % fPercent, 15))
+			aHelp.append(getIcon(fPercent >= 15.0) + text("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", "%.2f%%" % fPercent, '15'))
 		elif iGoal == 1:
 			iSlaves = data.iCongoSlaveCounter
 			aHelp.append(getIcon(iSlaves >= turns(1000)) + text("TXT_KEY_VICTORY_SLAVES_TRADED", iSlaves, turns(1000)))
@@ -3792,8 +3792,8 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			fAlliedCommercePercent = calculateAlliedCommercePercent(iPlayer)
 			fAlliedPowerPercent = calculateAlliedPowerPercent(iPlayer)
-			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", "%.2f%%" % fAlliedCommercePercent, 75))
-			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", "%.2f%%" % fAlliedPowerPercent, 75))
+			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", "%.2f%%" % fAlliedCommercePercent, '75'))
+			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", "%.2f%%" % fAlliedPowerPercent, '75'))
 
 	elif iCiv == iArgentina:
 		if iGoal == 0:
