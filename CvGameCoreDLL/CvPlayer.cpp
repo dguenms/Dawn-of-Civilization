@@ -12203,6 +12203,12 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
 		}
 
+		//Merijn: Moorish UP: update the yield when UP ends
+		if (getCivilizationType() == MOORS && eNewValue >= ERA_RENAISSANCE)
+		{
+			updateYield();
+		}
+
 		int iGameTurn = GC.getGame().getGameTurn();
 		if (isHuman() && (iGameTurn > getInitialBirthTurn()) && (iGameTurn > getScenarioStartTurn()) && !GC.getGameINLINE().isNetworkMultiPlayer())
 		{
