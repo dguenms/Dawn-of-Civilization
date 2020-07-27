@@ -30,6 +30,13 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+# TODO: test
+def sign(x):
+	if x > 0: return 1
+	elif x < 0: return -1
+	else: return 0
+
+
 def capital(identifier):
 	if player(identifier).getNumCities() == 0 or is_minor(identifier):
 		return None
@@ -251,6 +258,11 @@ def all(iterable):
 		if not element:
 			return False
 	return True
+
+
+# TODO: test
+def none(iterable):
+	return not any(iterable)
 	
 	
 def next(iterator, default = None):
@@ -460,14 +472,14 @@ def text_if_exists(key, *format, **kwargs):
 	return ''
 
 
-def debug(message):
+def debug(message, *format):
 	if MainOpt.isShowDebugPopups():
-		show(message)
+		show(message, *format)
 
 
-def show(message):
+def show(message, *format):
 	popup = Popup.PyPopup()
-	popup.setBodyString(message)
+	popup.setBodyString(message % tuple(format))
 	popup.launch()
 
 
@@ -869,6 +881,10 @@ class EntityCollection(object):
 	
 	def index(self, key):
 		return self.entities().index(key)
+	
+	# TODO: test
+	def unique(self):
+		return self.__class__([k for k in set(self._keys)])
 
 class PlotsCorner:
 
@@ -1117,6 +1133,9 @@ class CityFactory:
 		
 	def of(self, list):
 		return self.plots.of(list).cities()
+	
+	def ids(self, identifier, ids):
+		return Cities([player(identifier).getCity(id) for id in ids])
 		
 	def surrounding(self, *args, **kwargs):
 		return self.plots.surrounding(*args, **kwargs).cities()
@@ -1357,6 +1376,9 @@ class Players(EntityCollection):
 		
 	def before_birth(self):
 		return self.where(lambda p: year() < year(dBirth[p]))
+	
+	def before_fall(self):
+		return self.where(lambda p: year() < year(dFall[p]))
 
 	def civs(self, *civs):
 		return self.where(lambda p: civ(p) in civs)
