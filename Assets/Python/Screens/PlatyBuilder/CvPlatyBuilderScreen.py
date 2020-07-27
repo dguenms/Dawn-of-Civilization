@@ -27,7 +27,6 @@ import CvEventManager
 import Popup
 import CityNameManager as cnm
 import WBStoredDataScreen
-import GreatPeople as gp
 
 from CvPlatyBuilderSettings import *
 
@@ -39,6 +38,7 @@ import WarMaps
 import RiseAndFall
 import RegionMap
 import DynamicCivs as dc
+import GreatPeople as gp
 
 from Core import *
 
@@ -496,7 +496,7 @@ class CvWorldBuilderScreen:
 			for i in xrange(abs(iChange)):
 				unit = gc.getPlayer(iPlayer).initUnit(self.iSelection, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
 				if self.iSelection in lGreatPeopleUnits or self.iSelection in [iGreatGeneral, iGreatSpy]:
-					gp.onGreatPersonBorn(unit, iPlayer, -1, False)
+					gp.assignGreatPersonName(unit, iPlayer, -1, False)
 					
 		elif self.iPlayerAddMode == iModeBuildings:
 			if pPlot.isCity():

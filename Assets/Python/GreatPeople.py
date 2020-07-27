@@ -15,7 +15,10 @@ lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCi
 
 
 @handler("greatPersonBorn")
-def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
+def onGreatPersonBorn(unit, iPlayer, city):
+	assignGreatPersonName(unit, iPlayer, city)
+
+def assignGreatPersonName(unit, iPlayer, city, bAnnounceBirth = True):
 	sName = getName(unit)
 	if sName:
 		game.addGreatPersonBornName(sName)
