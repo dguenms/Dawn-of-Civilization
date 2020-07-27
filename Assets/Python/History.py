@@ -67,7 +67,7 @@ def buildFoundedCapitalInfrastructure(city):
 	
 @handler("cityBuilt")
 def createCarthaginianDefenses(city):
-	if at(city, tCarthage) and not player(city).isHuman():					
+	if at(city, tCarthage) and civ(city) == iPhoenicia and not player(city).isHuman():					
 		makeUnit(iPhoenicia, iWorkboat, tCarthage, UnitAITypes.UNITAI_WORKER_SEA)
 		makeUnit(iPhoenicia, iGalley, direction(tCarthage, DirectionTypes.DIRECTION_NORTHWEST), UnitAITypes.UNITAI_SETTLER_SEA)
 		makeUnit(iPhoenicia, iSettler, direction(tCarthage, DirectionTypes.DIRECTION_NORTHWEST), UnitAITypes.UNITAI_SETTLE)
