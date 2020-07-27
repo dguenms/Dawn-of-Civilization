@@ -486,8 +486,8 @@ def clearCatapult(iPlayer):
 		plot.setRevealed(team(iPlayer).getID(), False, False, -1)
 
 # used: Stability
-def removeReligionByArea(lPlotList, iReligion):
-	for city in cities.of(lPlotList):
+def removeReligionByArea(area, iReligion):
+	for city in cities.of(area):
 		removeReligion(city, iReligion)
 			
 # used: RFCUtils

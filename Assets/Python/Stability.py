@@ -596,10 +596,6 @@ def completeCollapse(iPlayer):
 	player(iPlayer).killUnits()
 	vic.resetAll(iPlayer)
 		
-	# special case: Byzantine collapse: remove Christians in the Turkish core
-	if civ(iPlayer) == iByzantium:
-		removeReligionByArea(plots.core(iOttomans), iOrthodoxy)
-	
 	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
 	
 	events.fireEvent("collapse", iPlayer)

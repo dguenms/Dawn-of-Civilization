@@ -472,6 +472,15 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 				handleColonialConquest(iPlayer)
 
 
+### COLLAPSE ###
+
+
+@handler("collapse")
+def removeOrthodoxyFromAnatolia(iPlayer):
+	if civ(iPlayer) == iByzantium:
+		removeReligionByArea(plots.region(rAnatolia), iOrthodoxy)
+
+
 ### IMPLEMENTATION ###
 
 
