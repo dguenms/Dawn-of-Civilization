@@ -934,7 +934,7 @@ def specificName(iPlayer):
 		if iEra >= iRenaissance:
 			return "TXT_KEY_CIV_TAMILS_MYSORE"
 			
-		if iEra >= iMedieval:
+		if getColumn(iPlayer) >= 9:
 			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
 			
 	elif iCiv == iEthiopia:
@@ -1655,7 +1655,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	
-		if iEra >= iMedieval:
+		if getColumn(iPlayer) >= 9:
 			return "TXT_KEY_KINGDOM_OF"
 		
 		if bEmpire:
