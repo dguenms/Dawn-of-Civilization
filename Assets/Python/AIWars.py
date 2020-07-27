@@ -224,9 +224,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if city.getOwner() != iPlayer and not team(city).isVassal(iPlayer):
 			lCities.append(city)
 			
-	capital = player(iPlayer).getCapitalCity()
-	
-	targetCities = cities.start(tTL).end(tBR).notowner(iPlayer).where(lambda city: not team(city).isVassal(iPlayer)).lowest(iNumTargets, lambda city: (int(city.getOwner() == iPreferredTarget), distance(city, capital)))
+	targetCities = cities.start(tTL).end(tBR).notowner(iPlayer).where(lambda city: not team(city).isVassal(iPlayer)).lowest(iNumTargets, lambda city: (city.getOwner() == iPreferredTarget, distance(city, capital(iPlayer))))
 	owners = set(city.getOwner() for city in targetCities)
 			
 	if iPreferredTarget >= 0 and iPreferredTarget not in owners and player(iPreferredTarget).isAlive():
