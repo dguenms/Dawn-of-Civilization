@@ -2936,7 +2936,7 @@ def getURVHelp(iPlayer, iGoal):
 	elif iVictoryType == iIslam:
 		if iGoal == 0:
 			fReligionPercent = game.calculateReligionPercent(iIslam)
-			aHelp.append(getIcon(fReligionPercent >= 40.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, '40'))
+			aHelp.append(getIcon(fReligionPercent >= 40.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, 40))
 		elif iGoal == 1:
 			iCount = 0
 			pHolyCity = game.getHolyCity(iIslam)
