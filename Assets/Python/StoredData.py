@@ -264,7 +264,7 @@ class GameData:
 		
 		self.bCrisisImminent = False
 		
-		self.dSecedingCities = {}
+		self.dSecedingCities = appenddict()
 		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
@@ -288,11 +288,13 @@ class GameData:
 		self.iHumanRazePenalty = 0
 		
 	def getSecedingCities(self, iPlayer):
-		if iPlayer not in self.dSecedingCities: return []
-		return [city for city in [gc.getPlayer(iPlayer).getCity(i) for i in self.dSecedingCities[iPlayer]] if (city.getX(), city.getY()) != (-1, -1)]
+		return self.dSecedingCities[iPlayer]
 	
-	def setSecedingCities(self, iPlayer, lCities):
-		self.dSecedingCities[iPlayer] = [city.getID() for city in lCities]
+	def setSecedingCities(self, iPlayer, secedingCities):
+		self.dSecedingCities[iPlayer] = secedingCities
+	
+	def removeSecedingCities(self, iPlayer):
+		del self.dSecedingCities[iPlayer]
 		
 	def isFirstContactMongols(self, iCiv):
 		return self.dFirstContactMongols[iCiv]

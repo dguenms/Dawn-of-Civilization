@@ -903,8 +903,8 @@ def exclusive(iPlayer, *civs):
 def canRespawn(iPlayer):
 	iCiv = civ(iPlayer)
 
-	# no respawn before spawn
-	if year() < dSpawn[iCiv] + 10:
+	# no respawn if never spawned
+	if not data.players[iPlayer].bSpawned:
 		return False
 	
 	# only dead civ need to check for resurrection
@@ -912,11 +912,11 @@ def canRespawn(iPlayer):
 		return False
 		
 	# check if only recently died
-	if turn() - data.players[iPlayer].iLastTurnAlive < turns(20):
+	if data.players[iPlayer].iLastTurnAlive > turn() - turns(20):
 		return False
 	
 	# check if the civ can be reborn at this date
-	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
+	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
