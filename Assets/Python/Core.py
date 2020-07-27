@@ -30,7 +30,6 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
-# TODO: test
 def sign(x):
 	if x > 0: return 1
 	elif x < 0: return -1
@@ -260,7 +259,6 @@ def all(iterable):
 	return True
 
 
-# TODO: test
 def none(iterable):
 	return not any(iterable)
 	
@@ -882,7 +880,6 @@ class EntityCollection(object):
 	def index(self, key):
 		return self.entities().index(key)
 	
-	# TODO: test
 	def unique(self):
 		return self.__class__([k for k in set(self._keys)])
 

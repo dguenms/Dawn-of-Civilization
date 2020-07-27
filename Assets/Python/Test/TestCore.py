@@ -1572,6 +1572,15 @@ class TestPlots(TestCase):
 		actual_tiles = [(plot.getX(), plot.getY()) for plot in actual_plots]
 		
 		self.assertEqual(set(actual_tiles), set(expected_tiles))
+	
+	def test_unique(self):
+		tiles = [(0, 0), (0, 0), (1, 1), (1, 1), (1, 1), (2, 2)]
+		plots = Plots(tiles)
+		
+		self.assertEqual(len(plots.unique()), 3)
+		self.assert_((0, 0) in plots)
+		self.assert_((1, 1) in plots)
+		self.assert_((2, 2) in plots)
 		
 		
 class TestPlotFactory(TestCase):
@@ -2687,6 +2696,15 @@ class TestIterableHelpers(TestCase):
 		
 	def test_all_with_none(self):
 		self.assert_(not all([x < 0 for x in self.iterable]))
+	
+	def test_none_with_one(self):
+		self.assert_(not none([x >= 5 for x in self.iterable]))
+		
+	def test_none_with_all(self):
+		self.assert_(not none([x >= 1 for x in self.iterable]))
+	
+	def test_none_with_none(self):
+		self.assert_(none([x < 0 for x in self.iterable]))
 		
 	def test_next_once(self):
 		first = next(self.iterable)
@@ -3358,6 +3376,18 @@ class TestCapital(TestCase):
 		capital_city = capital(barbarian())
 		
 		self.assert_(capital_city is None)
+
+
+class TestSign(TestCase):
+
+	def test_positive(self):
+		self.assertEqual(sign(100), 1)
+		
+	def test_negative(self):
+		self.assertEqual(sign(-100), -1)
+	
+	def test_zero(self):
+		self.assertEqual(sign(0), 0)
 		
 
 test_cases = [
@@ -3415,6 +3445,7 @@ test_cases = [
 	TestAt,
 	TestCivs,
 	TestCapital,
+	TestSign,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
