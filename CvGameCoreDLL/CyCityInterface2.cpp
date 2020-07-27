@@ -145,5 +145,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getModifiedCultureRate", &CyCity::getModifiedCultureRate, "int ()")
 		.def("getModifiedCultureRateTimes100", &CyCity::getModifiedCultureRateTimes100, "int ()")
 		.def("getNumActiveWorldWonders", &CyCity::getNumActiveWorldWonders, "int ()")
+		.def("isCore", &CyCity::isCore, "bool (int iPlayer)")
 		;
 }

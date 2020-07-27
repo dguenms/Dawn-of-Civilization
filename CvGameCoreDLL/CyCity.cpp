@@ -2778,3 +2778,8 @@ int CyCity::getNumActiveWorldWonders()
 {
 	return m_pCity ? m_pCity->getNumActiveWorldWonders() : -1;
 }
+
+bool CyCity::isCore(int iPlayer)
+{
+	return m_pCity ? m_pCity->isCore((PlayerTypes)iPlayer) : false;
+}

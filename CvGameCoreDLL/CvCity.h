@@ -1160,6 +1160,7 @@ public:
 	void completeRaze();
 
 	bool canLiberate() const;
+	bool isCore(PlayerTypes ePlayer) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

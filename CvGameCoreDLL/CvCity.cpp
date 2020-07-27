@@ -19354,3 +19354,8 @@ int CvCity::calculateBaseGreatPeopleRate() const
 
 	return iRate;
 }
+
+bool CvCity::isCore(PlayerTypes ePlayer) const
+{
+	return plot()->isCore(ePlayer);
+}
