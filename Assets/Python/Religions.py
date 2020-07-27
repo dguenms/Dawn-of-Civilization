@@ -257,12 +257,12 @@ def schism(orthodoxCapital, catholicCapital, replace, distance):
 
 
 def reformation():				
-	for iPlayer in players.major():
+	for iPlayer in players.major().alive():
 		reformationChoice(iPlayer)
 			
-	for iPlayer in players.major():
+	for iPlayer in players.major().alive():
 		if data.players[iPlayer].iReformationDecision == 2:
-			for iTargetPlayer in players.major():
+			for iTargetPlayer in players.major().alive():
 				if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and civ(iTargetPlayer) != iNetherlands and not team(iTargetPlayer).isAVassal():
 					team(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 					
