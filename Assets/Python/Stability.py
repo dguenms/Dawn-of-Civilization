@@ -532,7 +532,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		
 	# notify for partial secessions
 	if not bComplete and player().canContact(iPlayer):
-		message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(lCededCities))
+		message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(secedingCities))
 	
 	# prevent collapsing downward spiral
 	balanceStability(iPlayer, iStabilityUnstable)
