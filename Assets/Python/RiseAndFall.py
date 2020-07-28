@@ -676,9 +676,7 @@ class RiseAndFall:
 					return
 					
 			elif iCiv == iOttomans:
-				tMiddleEastTL = (69, 38)
-				tMiddleEastBR = (78, 45)
-				if cities.start(tMiddleEastTL).end(tMiddleEastBR).any(lambda city: slot(iTurks) in [city.getOwner(), city.getPreviousOwner()]):
+				if cities.rectangle(*tNearEast).none(lambda city: slot(iTurks) in [city.getOwner(), city.getPreviousOwner()]):
 					return
 
 			elif iCiv == iThailand:
