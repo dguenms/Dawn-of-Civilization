@@ -960,7 +960,30 @@ class TestUnits(TestCase):
 		
 		# cleanup
 		worker.kill(False, 3)
+	
+	def test_types(self):
+		self.assertEqual(self.units.types(), [4, 4, 4, 4])
+	
+	def test_domain(self):
+		unit = gc.getPlayer(3).initUnit(iGalley, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		waterUnits = units.owner(3).domain(DomainTypes.DOMAIN_SEA)
 		
+		self.assertEqual(len(waterUnits), 1)
+		
+		waterUnit = waterUnits[0]
+		assertType(self, waterUnit, CyUnit)
+		self.assertEqual(waterUnit.getX(), 0)
+		self.assertEqual(waterUnit.getY(), 1)
+		
+		unit.kill(False, 3)
+	
+	def test_land(self):
+		landUnits = units.owner(3).land()
+		
+		self.assertEqual(len(landUnits), 4)
+		for unit in landUnits:
+			self.assertEqual(unit.getUnitType(), 4)
+
 		
 class TestUnitFactory(TestCase):
 

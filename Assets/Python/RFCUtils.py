@@ -151,33 +151,26 @@ def flipUnitsInArea(lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
 		if bSkipPlotCity and plot(tPlot).isCity():
 			continue
 			
-		removedUnits = units.at(tPlot).owner(iOldOwner)
+		currentUnits = units.at(tPlot).owner(iOldOwner)
 			
-		lFlippingUnits = []
+		# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
+		if civ(iNewOwner) == iItaly and not is_minor(iOldOwner):
+			oldCapital = capital(iOldOwner)
+			if oldCapital:
+				for unit in currentUnits:
+					move(unit, oldCapital)
+			continue
+		
+		removedUnits = currentUnits.where(lambda unit: not unit.isCargo())
+		flippingUnits = currentUnits.land().where(lambda unit: not (unit.workRate(True) > 0 and unit.baseCombatStr() == 0)) \
+										   .where(lambda unit: bKillSettlers or not unit.isFound()) \
+										   .where(lambda unit: not unit.isAnimal()) \
+										   .types()
+										  
 		for unit in removedUnits:
-			# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-			if civ(iNewOwner) == iItaly and not is_minor(iOldOwner):
-				oldCapital = player(iOldOwner).getCapitalCity()
-				move(unit, oldCapital)
-				continue
-				
 			unit.kill(False, -1)
-				
-			if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
-				continue
-				
-			if unit.workRate(True) > 0 and unit.baseCombatStr() > 0:
-				continue
-				
-			if unit.isFound() and bKillSettlers:
-				continue
-				
-			if unit.isAnimal():
-				continue
-				
-			lFlippingUnits.append(unit.getUnitType())
 			
-		for iUnitType in lFlippingUnits:
+		for iUnitType in flippingUnits:
 			makeUnit(iNewOwner, iUnitType, tPlot)
 
 # used: RFCUtils, RiseAndFall, UniquePowers

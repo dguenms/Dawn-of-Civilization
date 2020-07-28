@@ -1268,13 +1268,19 @@ class Units(EntityCollection):
 		return self.where(lambda u: u.getUnitType() == iUnitType)
 		
 	def by_type(self):
-		return dict([(iType, self.type(iType)) for iType in set([unit.getUnitType() for unit in self])])
+		return dict([(iType, self.type(iType)) for iType in set(self.types())])
 		
 	def atwar(self, iPlayer):
 		return self.where(lambda u: team(iPlayer).isAtWar(u.getTeam()))
 		
 	def domain(self, iDomain):
 		return self.where(lambda u: u.getDomainType() == iDomain)
+	
+	def land(self):
+		return self.domain(DomainTypes.DOMAIN_LAND)
+	
+	def types(self):
+		return [unit.getUnitType() for unit in self]
 	
 
 class PlayerFactory:
