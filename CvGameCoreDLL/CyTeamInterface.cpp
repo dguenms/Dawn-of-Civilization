@@ -212,6 +212,7 @@ void CyTeamPythonInterface()
 		.def("AI_shareWar", &CyTeam::AI_shareWar, "bool (TeamTypes)")
 		.def("AI_setWarPlan", &CyTeam::AI_setWarPlan, "void (int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewValue)")
 		.def("AI_getAtWarCounter", &CyTeam::AI_getAtWarCounter, "int (TeamTypes)")
+		.def("AI_setAtWarCounter", &CyTeam::AI_setAtWarCounter, "void (int eTeam, int iNewValue)")
 		.def("AI_getAtPeaceCounter", &CyTeam::AI_getAtPeaceCounter, "int (TeamTypes)")
 		.def("AI_getWarSuccess", &CyTeam::AI_getWarSuccess, "int (TeamTypes)")
 

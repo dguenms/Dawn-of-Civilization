@@ -211,6 +211,19 @@ def isConquered(tConquest):
 	
 	return True
 
+
+def conquerorWar(iPlayer, iTarget, iWarPlan):
+	# reset at war counters because this is essentially a renewed war, will avoid cheap peace out of the conquerors
+	if team(iPlayer).isAtWar(team(iTarget).getID()):
+		team(iPlayer).AI_setAtWarCounter(team(iTarget).getID(), 0)
+		team(iTarget).AI_setAtWarCounter(team(iPlayer).getID(), 0)
+		
+		team(iPlayer).AI_setWarPlan(team(iTarget).getID(), iWarPlan)
+		
+	# otherwise declare war
+	else:
+		declareWar(iPlayer, iTarget, iWarPlan)
+
 	
 def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 	iCiv = civ(iPlayer)
@@ -228,10 +241,10 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 	owners = set(city.getOwner() for city in targetCities)
 			
 	if iPreferredTarget >= 0 and iPreferredTarget not in owners and player(iPreferredTarget).isAlive():
-		declareWar(iPlayer, iPreferredTarget, iWarPlan)
+		conquerorWar(iPlayer, iPreferredTarget, iWarPlan)
 			
 	for iOwner in owners:
-		declareWar(iPlayer, iOwner, iWarPlan)
+		conquerorWar(iPlayer, iOwner, iWarPlan)
 		message(iOwner, 'TXT_KEY_UP_CONQUESTS_TARGET', name(iPlayer))
 		
 	for city in targetCities:

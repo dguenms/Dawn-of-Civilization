@@ -977,6 +977,14 @@ int CyTeam::AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const
 	return m_pTeam ? m_pTeam->AI_getAtWarCounter((TeamTypes)eTeam) : -1;
 }
 
+void CyTeam::AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue)
+{
+	if (m_pTeam)
+	{
+		m_pTeam->AI_setAtWarCounter((TeamTypes)eTeam, iNewValue);
+	}
+}
+
 int CyTeam::AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const
 {
 	return m_pTeam ? m_pTeam->AI_getAtPeaceCounter((TeamTypes)eTeam) : -1;
