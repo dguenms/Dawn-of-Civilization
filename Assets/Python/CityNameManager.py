@@ -6,6 +6,7 @@ import PyHelpers
 import Popup
 from Consts import *
 from RFCUtils import *
+from Civics import *
 from StoredData import data
 from Events import handler
 
@@ -371,7 +372,7 @@ def onReligionSpread(iReligion, iPlayer, city):
 
 @handler("revolution")
 def onRevolution(iPlayer):
-	if has_civic(iPlayer, iCentralPlanning):
+	if isCommunist(iPlayer):
 		applyCommunistNames(iPlayer)
 	else:
 		revertCommunistNames(iPlayer)
