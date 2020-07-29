@@ -3792,8 +3792,8 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			fAlliedCommercePercent = calculateAlliedCommercePercent(iPlayer)
 			fAlliedPowerPercent = calculateAlliedPowerPercent(iPlayer)
-			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", "%.2f%%" % fAlliedCommercePercent, '75'))
-			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", "%.2f%%" % fAlliedPowerPercent, '75'))
+			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", "%.2f%%" % fAlliedCommercePercent, 75))
+			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", "%.2f%%" % fAlliedPowerPercent, 75))
 
 	elif iCiv == iArgentina:
 		if iGoal == 0:
