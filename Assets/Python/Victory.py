@@ -1453,7 +1453,7 @@ def onCityBuilt(city):
 				win(iPlayer, 0)
 
 @handler("cityAcquired")	
-def onCityAcquired(iPlayer, iOwner, city, bConquest):
+def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
 
