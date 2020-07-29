@@ -202,7 +202,7 @@ lStartingTechs = [
 	iMughals :		techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
 	iThailand :		techs.column(10).without(iExploration, iOptics),
 	iCongo :		techs.column(8).including(iCartography, iJudiciary),
-	iNetherlands:	techs.column(11).without(iHorticulture, iScientificMethod, iUrbanPlanning),
+	iNetherlands:	techs.column(11).without(iHorticulture, iScientificMethod),
 	iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
 }]
 
