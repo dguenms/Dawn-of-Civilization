@@ -3737,7 +3737,7 @@
 			<Strategy>TXT_KEY_BUILDING_DUTCH_DIKE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DUTCH_DIKE</ArtDefineTag>
-			<PrereqTech>TECH_HYDRAULICS</PrereqTech>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
 			<bWater>1</bWater>
 			<bRiver>1</bRiver>
 			<iCost>200</iCost>

@@ -515,7 +515,7 @@ CIVILISATIONS
     * Spawn: 1580 AD
     * Leaders: Willem van Oranje, William III
     * Unique Power: Double yield and commerce from Trading Company
-    * Unique Building: Dike (Levee): requires coast or river, +1 production on water tiles
+    * Unique Building: Dike (Levee): requires Urban Planning, requires coast or river, +1 production on water tiles
     * Unique Historical Victory:
         * Settle three Great Merchants in Amsterdam by 1745 AD
         * Conquer four European colonies by 1745 AD
