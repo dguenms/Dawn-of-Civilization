@@ -1278,6 +1278,9 @@ class Units(EntityCollection):
 	
 	def land(self):
 		return self.domain(DomainTypes.DOMAIN_LAND)
+		
+	def water(self):
+		return self.domain(DomainTypes.DOMAIN_SEA)
 	
 	def types(self):
 		return [unit.getUnitType() for unit in self]

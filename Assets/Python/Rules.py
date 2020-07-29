@@ -170,6 +170,9 @@ def americanPioneerAbility(city):
 			
 @handler("combatResult")
 def captureSlaves(winningUnit, losingUnit):
+	if plot(winningUnit).isWater() and freeCargo(winningUnit, winningUnit) <= 0:
+		return
+
 	if civ(winningUnit) == iAztecs:
 		captureUnit(losingUnit, winningUnit, iAztecSlave, 35)
 		

@@ -1063,6 +1063,14 @@ def setStateReligionBeforeBirth(lCivs, iReligion):
 	for iCiv in lCivs:
 		if year() < year(dBirth[iCiv]) and player(iCiv).getStateReligion() != iReligion:
 			player(iCiv).setLastStateReligion(iReligion)
+			
+def freeCargo(identifier, tile):
+	transportUnits, cargoUnits = units.at(tile).owner(identifier).split(lambda unit: unit.cargoSpace() > 0 and unit.specialCargo() == -1)
+	
+	iTotalSpace = transportUnits.sum(lambda unit: unit.cargoSpace())
+	iTotalCargo = cargoUnits.land().count()
+	
+	return iTotalSpace - iTotalCargo
 	
 # used: CvRFCEventHandler
 def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
