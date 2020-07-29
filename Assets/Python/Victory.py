@@ -1392,12 +1392,10 @@ def onCityBuilt(city):
 
 	if not game.isVictoryValid(7): return
 	
-	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
-	
 	if is_minor(iPlayer): return
 	
 	# record first colony in the Americas for various UHVs
-	if not data.isFirstWorldColonized():
+	if not data.isNewWorldColonized():
 		if city.getRegionID() in lNorthAmerica + lSouthAmerica:
 			if civ(iPlayer) not in dCivGroups[iCivGroupAmerica]:
 				data.iFirstNewWorldColony = iPlayer

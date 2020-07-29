@@ -318,7 +318,7 @@ class GameData:
 			iWonder -= iBeginWonders
 			self.lWonderBuilder[iWonder] = iPlayer
 		
-	def isFirstWorldColonized(self):
+	def isNewWorldColonized(self):
 		return self.iFirstNewWorldColony != -1
 		
 data = GameData()
