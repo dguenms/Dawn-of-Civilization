@@ -541,6 +541,10 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 def secedeCity(city, iNewOwner, bRelocate):
 	if not city: return
 	
+	name = city.getName()
+	iOldOwner = city.getOwner()
+	tile = location(city)
+	
 	if player(iNewOwner).isMinorCiv():
 		for iPlayer in players.at_war(city):
 			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
@@ -555,14 +559,14 @@ def secedeCity(city, iNewOwner, bRelocate):
 		killUnits(lRelocatedUnits)
 	
 	completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
-	flipOrCreateDefenders(iNewOwner, lFlippedUnits, city, iNumDefenders)
+	flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
 	
 	if is_minor(iNewOwner):
-		message(city.getOwner(), 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', city.getName(), color=iRed)
+		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', name, color=iRed)
 	else:
-		message(city.getOwner(), 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER', city.getName(), adjective(iNewOwner), color=iRed)
+		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER', name, adjective(iNewOwner), color=iRed)
 		
-	message(iNewOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US', city.getName(), color=iRed)
+	message(iNewOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US', name, color=iRed)
 	
 def completeCollapse(iPlayer):
 	# before cities are seceded, downgrade their cottages
