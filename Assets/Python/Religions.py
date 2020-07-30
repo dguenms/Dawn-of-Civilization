@@ -208,6 +208,9 @@ def lateReligionFounding(iTech):
 
 
 def foundReligion(location, iReligion):
+	if not location:
+		return False
+
 	city = city_(location)
 	if city:
 		game.setHolyCity(iReligion, city, True)
