@@ -15481,7 +15481,7 @@ void CvCity::doReligion()
 		
 		if (iRand == 0)
 		{
-			removeReligion(eReligion);
+			removeReligion(eDisappearingReligion);
 		}
 	}
 }
@@ -18537,11 +18537,41 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 	}
 }
 
+struct disappearingReligionCompare
+{
+	const CvCity* city;
+
+	bool operator() (ReligionTypes eLeftReligion, ReligionTypes eRightReligion)
+	{
+		int iLeftValue = 0;
+		int iRightValue = 0;
+
+		if (city != NULL)
+		{
+			iLeftValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eLeftReligion) * 3;
+			iRightValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eRightReligion) * 3;
+
+			iLeftValue += city->getReligionInfluence(eLeftReligion);
+			iRightValue += city->getReligionInfluence(eRightReligion);
+		}
+		else 
+		{
+			iLeftValue += (int)eLeftReligion;
+			iRightValue += (int)eRightReligion;
+		}
+
+		return (iLeftValue < iRightValue);
+	}
+};
+
 ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bConquest) const
 {
 	int iI;
 	ReligionTypes eReligion;
 	std::vector<ReligionTypes> religions;
+
+	disappearingReligionCompare cmp;
+	cmp.city = this;
 
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
 	{
@@ -18557,7 +18587,7 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 
 	if (religions.size() > 0)
 	{
-		return religions[GC.getGame().getSorenRandNum(religions.size(), "Disappearing religion")];
+		return *min_element(religions.begin(), religions.end(), cmp);
 	}
 
 	if (eNewReligion == NO_RELIGION && !bConquest)
@@ -18569,7 +18599,6 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 
 	ReligionSpreadTypes eCurrentSpread;
 	ReligionSpreadTypes eNewReligionSpread = eNewReligion != NO_RELIGION ? GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eNewReligion) : RELIGION_SPREAD_MINORITY;
-	ReligionSpreadTypes eWorstSpread = RELIGION_SPREAD_FAST;
 	religions.clear();
 
 	if (bConquest || getReligionCount() > iMaxReligions)
@@ -18582,23 +18611,14 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 				eCurrentSpread = GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion);
 				if (eCurrentSpread <= eNewReligionSpread)
 				{
-					if (eCurrentSpread < eWorstSpread)
-					{
-						eWorstSpread = eCurrentSpread;
-						religions.clear();
-						religions.push_back(eReligion);
-					} 
-					else if (eCurrentSpread == eWorstSpread)
-					{
-						religions.push_back(eReligion);
-					}
+					religions.push_back(eReligion);
 				}
 			}
 		}
 
 		if (religions.size() > 0)
 		{
-			return religions[GC.getGame().getSorenRandNum(religions.size(), "Disappearing religion")];
+			return *min_element(religions.begin(), religions.end(), cmp);
 		}
 	}
 
