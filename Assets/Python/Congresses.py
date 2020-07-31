@@ -936,7 +936,7 @@ class Congress:
 			# less liked, but justified by claim
 			elif iFavorClaimant + iClaimValidity >= iFavorOwner:
 				# human can bribe on a close call if own claim or own city
-				if (player(iClaimant).isHuman() or (bOwner and player(iOwner).isHuman())) and iClaimValidity < 50 and iFavorOwner - iFavorClaimant > 0:
+				if ((not bOwner and player(iClaimant).isHuman()) or (bOwner and player(iOwner).isHuman())) and iClaimValidity < 50 and iFavorOwner - iFavorClaimant > 0:
 					# return the relevant data to be added to the list of possible bribes in the calling method
 					debug('NO VOTE: open for bribes')
 					return (iVoter, iClaimant, (x, y), iFavorOwner - iFavorClaimant, iClaimValidity)
