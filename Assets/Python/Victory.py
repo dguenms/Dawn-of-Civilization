@@ -3254,7 +3254,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCounter >= 20) + text("TXT_KEY_VICTORY_TEMPLES_BUILT", iCounter, 20))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iPlayer)
-			aHelp.append(getIcon(popPercent >= 20.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, '20'))
+			aHelp.append(getIcon(popPercent >= 20.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 20))
 
 	elif iCiv == iCarthage:
 		if iGoal == 0:
