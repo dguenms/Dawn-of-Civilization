@@ -25092,7 +25092,8 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 
 ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant) const
 {
-	bool bStateReligion = getStateReligion() == eReligion || isTolerating(eReligion);
+	bool bStateReligion = getStateReligion() == eReligion;
+	bool bPromoted = bStateReligion || isTolerating(eReligion);
 	int iSpreadFactor = pPlot->getSpreadFactor(eReligion);
 
 	if (!bStateReligion && isNoNonStateReligionSpread()) return RELIGION_SPREAD_NONE;
@@ -25107,14 +25108,14 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 	if (iCurrentTurn - iFoundingTurn <= getTurns(GC.getDefineINT("RELIGION_FOUNDING_SPREAD_TURNS")))
 	{
 		if (iSpreadFactor == REGION_SPREAD_CORE) return RELIGION_SPREAD_FAST;
-		if (iSpreadFactor == REGION_SPREAD_HISTORICAL && GC.getReligionInfo(eReligion).isProselytizing() && (bStateReligion || getStateReligion() == NO_RELIGION)) return RELIGION_SPREAD_FAST;
+		if (iSpreadFactor == REGION_SPREAD_HISTORICAL && GC.getReligionInfo(eReligion).isProselytizing() && (bPromoted || getStateReligion() == NO_RELIGION)) return RELIGION_SPREAD_FAST;
 	}
 
 	switch (iSpreadFactor)
 	{
 		case REGION_SPREAD_CORE: return RELIGION_SPREAD_NORMAL;
-		case REGION_SPREAD_HISTORICAL: return bStateReligion ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_MINORITY;
-		case REGION_SPREAD_PERIPHERY: return bStateReligion ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_NONE;
+		case REGION_SPREAD_HISTORICAL: return bPromoted ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_MINORITY;
+		case REGION_SPREAD_PERIPHERY: return bPromoted ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_NONE;
 		case REGION_SPREAD_MINORITY: return RELIGION_SPREAD_MINORITY;
 		case REGION_SPREAD_NONE: return bStateReligion ? RELIGION_SPREAD_MINORITY : RELIGION_SPREAD_NONE;
 		default: return RELIGION_SPREAD_NONE;
