@@ -440,7 +440,7 @@ def goodPlots(tCoords, argsList):
 	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 	Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh or jungle; it isn't occupied by a unit or city and if it isn't a civ's territory.
 	Unit check extended to adjacent plots"""
-	plot = plot(tCoords)
+	plot = plot_(tCoords)
 	
 	if plot.isWater():
 		return False
