@@ -243,11 +243,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_31</Tag>
-		<English>The game is won when a Spaceship arrives on Alpha Centauri, not when it is launched. The more Engines and Thrusters you build, the faster the Spaceship will arrive.</English>
-		<French>Pour gagner la partie, il faut que votre vaisseau spatial soit le premier &#224; atteindre Alpha du Centaure. Il ne vous suffit pas de le faire d&#233;coller en premier. Plus vous construirez de moteurs et de propulseurs, plus votre vaisseau arrivera vite.</French>
-		<German>Dieses Spiel gilt mit der Ankunft eines Raumschiffs auf Alpha Centauri als gewonnen und nicht mit dem Start des Raumschiffs. Je mehr Motoren und Triebwerke Sie bauen, desto schneller wird das Raumschiff ankommen.</German>
-		<Italian>Si vince una partita quando l'astronave raggiunge Alpha Centauri e non quando viene lanciata. Pi&#249; motori e propulsori costruisci, pi&#249; rapidamente l'astronave arriver&#224; a destinazione.</Italian>
-		<Spanish>La partida se gana cuando una nave espacial llega a Alpha Centauri, no cuando &#233;sta se lanza. Cuantos m&#225;s motores y propulsores construyas, m&#225;s r&#225;pido llegar&#225; la nave espacial.</Spanish>
+		<English>The game is won when a Mars Colony becomes self-sufficient, not when it is completed. The more Hydroponics and Power Source modules you build, the faster the Colony will become self-sufficient.</English>
+		<French>Pour gagner la partie, il faut que votre vaisseau spatial soit le premier &#224; atteindre Alpha du Centaure. Il ne vous suffit pas de le faire d&#233;coller en premier. Plus vous construirez de moteurs et de propulseurs, plus votre vaisseau arrivera vite.</French> <!-- correct/translate -->
+		<German>Dieses Spiel gilt mit der Selbstversorgungsf&#228;higkeit der Marskolonie als gewonnen und nicht mit dem Vervollst&#228;ndigung der Kolonie. Je mehr Hydroponik- und Energiequellenmodule Sie bauen, desto schneller wird die Kolonie selbstversorgend.</German>
+		<Italian>Si vince una partita quando l'astronave raggiunge Alpha Centauri e non quando viene lanciata. Pi&#249; motori e propulsori costruisci, pi&#249; rapidamente l'astronave arriver&#224; a destinazione.</Italian> <!-- correct/translate -->
+		<Spanish>La partida se gana cuando una nave espacial llega a Alpha Centauri, no cuando &#233;sta se lanza. Cuantos m&#225;s motores y propulsores construyas, m&#225;s r&#225;pido llegar&#225; la nave espacial.</Spanish> <!-- correct/translate -->
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_32</Tag>
