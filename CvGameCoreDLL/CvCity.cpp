@@ -14001,8 +14001,13 @@ bool CvCity::canHaveTradeRouteWith(const CvCity* pCity) const
 				return true;
 			}
 		}
-	}
 
+		if (!GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith(pCity->getOwnerINLINE()))
+		{
+			return false;
+		}
+	}
+	
 	return pCity->plotGroup(getOwnerINLINE()) == plotGroup(getOwnerINLINE());
 }
 
@@ -14035,7 +14040,7 @@ void CvCity::updateTradeRoutes()
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith((PlayerTypes)iI))
+			if (GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith((PlayerTypes)iI, getCivilizationType() == ETHIOPIA)) // Leoreth: includes Ethiopian UP
 			{
 				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 				{

@@ -23027,7 +23027,7 @@ PlayerTypes CvPlayer::pickConqueredCityOwner(const CvCity& kCity) const
 	return getID();
 }
 
-bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
+bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer, bool bIgnoreAgreements) const
 {
 	CvPlayer& kOtherPlayer = GET_PLAYER(ePlayer);
 
@@ -23041,20 +23041,7 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 		return true;
 	}
 
-	// Ethiopian UP: trade connection to all cities with state religion
-	if (getCivilizationType() == ETHIOPIA)
-	{
-		ReligionTypes eStateReligion = getStateReligion();
-		if (eStateReligion != NO_RELIGION)
-		{
-			if (kOtherPlayer.getHasReligionCount(eStateReligion) > 0)
-			{
-				return true;
-			}
-		}
-	}
-
-	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))
+	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()) || (bIgnoreAgreements && !atWar(getTeam(), kOtherPlayer.getTeam())))
 	{
 		if (GET_TEAM(getTeam()).isVassal(kOtherPlayer.getTeam()))
 		{

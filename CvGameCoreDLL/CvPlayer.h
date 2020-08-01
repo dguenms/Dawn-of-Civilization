@@ -1141,7 +1141,7 @@ public:
 	void invalidateCommerceRankCache(CommerceTypes eCommerce = NO_COMMERCE);
 
 	PlayerTypes pickConqueredCityOwner(const CvCity& kCity) const;
-	bool canHaveTradeRoutesWith(PlayerTypes ePlayer) const;
+	bool canHaveTradeRoutesWith(PlayerTypes ePlayer, bool bIgnoreAgreements = false) const;
 
 	void forcePeace(PlayerTypes ePlayer);    // exposed to Python
 
