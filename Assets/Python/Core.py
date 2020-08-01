@@ -1412,6 +1412,9 @@ class Players(EntityCollection):
 	
 	def at_war(self, iPlayer):
 		return self.where(lambda p: team(iPlayer).isAtWar(player(p).getTeam()))
+	
+	def religion(self, iReligion):
+		return self.where(lambda p: player(p).getStateReligion() == iReligion)
 		
 		
 class CreatedUnits(object):

@@ -791,6 +791,16 @@ class TestPlayers(TestCase):
 		self.assert_(0 in players1)
 		
 		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
+	
+	def test_religion(self):
+		gc.getPlayer(0).setLastStateReligion(0)
+		
+		players = self.players.religion(0)
+		
+		self.assertEqual(len(players), 1)
+		self.assertEqual(players[0], 0)
+		
+		gc.getPlayer(0).setLastStateReligion(-1)
 
 			
 class TestPlayerFactory(TestCase):

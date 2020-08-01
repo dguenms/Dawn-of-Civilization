@@ -130,7 +130,7 @@ def checkSchism(iGameTurn):
 	if game.countReligionLevels(iOrthodoxy) < 10: return
 	
 	religionCities = cities.all().religion(iOrthodoxy)
-	majorCities, minorCities = religionCities.split(is_minor)
+	minorCities, majorCities = religionCities.split(is_minor)
 	
 	stateReligionCities, noStateReligionCities, differentStateReligionCities = majorCities.buckets(lambda city: player(city).getStateReligion() == iOrthodoxy, lambda city: player(city).getStateReligion() == -1)
 	
@@ -139,7 +139,7 @@ def checkSchism(iGameTurn):
 	
 	if stateReligionCities >= noStateReligionCities + minorCities: return
 	
-	orthodoxCapital = stateReligionCities.where(lambda city: city.isCapital())
+	orthodoxCapital = stateReligionCities.where(lambda city: city.isCapital()).maximum(lambda city: player(city).getScoreHistory(iGameTurn))
 	if not orthodoxCapital:
 		orthodoxCapital = game.getHolyCity(iOrthodoxy)
 		
@@ -151,7 +151,6 @@ def checkSchism(iGameTurn):
 	foundReligion(catholicCapital, iCatholicism)
 	
 	independentCities = differentStateReligionCities + minorCities
-			
 	schism(orthodoxCapital, catholicCapital, noStateReligionCities, independentCities)
 
 
@@ -246,16 +245,16 @@ def spreadReligionToRegion(iReligion, lRegions, iStartDate, iInterval):
 			spreadCity.spreadReligion(iReligion)
 
 
-def schism(orthodoxCapital, catholicCapital, replace, distance):
-	replace += distance.where(lambda city: distance(city, catholicCapital) <= distance(city, orthodoxCapital))
+def schism(orthodoxCapital, catholicCapital, replace, distant):
+	replace += distant.where(lambda city: distance(city, catholicCapital) <= distance(city, orthodoxCapital))
 	for city in replace:
 		city.replaceReligion(iOrthodoxy, iCatholicism)
 			
-	if player().getStateReligion() == iOrthodoxy and year() >= year(dBirth[active()]):
+	if player().getStateReligion() == iOrthodoxy and not autoplay():
 		eventpopup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
 		
-	for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
-		if 2 * replace.owner(iPlayer) >= player(iPlayer).getNumCities():
+	for iPlayer in players.major().alive().ai().religion(iOrthodoxy):
+		if 2 * replace.owner(iPlayer).count() >= player(iPlayer).getNumCities():
 			player(iPlayer).setLastStateReligion(iCatholicism)
 
 
