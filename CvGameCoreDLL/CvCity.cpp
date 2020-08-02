@@ -19018,12 +19018,27 @@ void CvCity::changeBuildingDamageChange(int iChange)
 
 struct buildingDamageCompare
 {
-	bool operator() (int iBuilding1, int iBuilding2)
-	{
-		CvBuildingInfo& kBuilding1 = GC.getBuildingInfo((BuildingTypes)iBuilding1);
-		CvBuildingInfo& kBuilding2 = GC.getBuildingInfo((BuildingTypes)iBuilding2);
+	CvCity* city;
 
-		return kBuilding1.getConquestProbability() < kBuilding2.getConquestProbability() || (kBuilding1.getConquestProbability() == kBuilding2.getConquestProbability() && kBuilding1.getProductionCost() < kBuilding2.getProductionCost());
+	bool operator() (int iLeftBuilding, int iRightBuilding)
+	{
+		CvBuildingInfo& kLeftBuilding = GC.getBuildingInfo((BuildingTypes)iLeftBuilding);
+		CvBuildingInfo& kRightBuilding = GC.getBuildingInfo((BuildingTypes)iRightBuilding);
+
+		int iLeftProbability = kLeftBuilding.getConquestProbability();
+		int iRightProbability = kRightBuilding.getConquestProbability();
+
+		if (kLeftBuilding.getPrereqReligion() != NO_RELIGION && GET_PLAYER(city->getOwnerINLINE()).getStateReligion() != kLeftBuilding.getPrereqReligion())
+		{
+			iLeftProbability /= 2;
+		}
+
+		if (kRightBuilding.getPrereqReligion() != NO_RELIGION && GET_PLAYER(city->getOwnerINLINE()).getStateReligion() != kRightBuilding.getPrereqReligion())
+		{
+			iRightProbability /= 2;
+		}
+
+		return iLeftProbability < iRightProbability || (iLeftProbability == iRightProbability && kLeftBuilding.getProductionCost() < kRightBuilding.getProductionCost());
 	}
 };
 
@@ -19067,6 +19082,7 @@ void CvCity::applyBuildingDamage(int iDamage)
 	}
 
 	buildingDamageCompare cmp;
+	cmp.city = this;
 	std::sort(buildings.begin(), buildings.end(), cmp);
 
 	BuildingTypes eBuilding;
