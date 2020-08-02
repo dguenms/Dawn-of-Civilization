@@ -5345,9 +5345,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_JUDAISM</ReligionType>
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5394,7 +5393,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_JUDAISM</ReligionType>
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5456,7 +5454,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_JUDAISM</ReligionType>
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5560,9 +5557,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5609,7 +5605,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5671,7 +5666,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5769,9 +5763,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5818,7 +5811,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5880,7 +5872,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -5980,9 +5971,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6029,7 +6019,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6091,7 +6080,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6189,9 +6177,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6238,7 +6225,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6300,7 +6286,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6398,9 +6383,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HINDU_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6447,7 +6431,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HINDU_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6509,7 +6492,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HINDU_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6607,9 +6589,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6656,7 +6637,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6718,7 +6698,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6816,9 +6795,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6865,7 +6843,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6927,7 +6904,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -7025,9 +7001,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -7074,7 +7049,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -7136,7 +7110,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -7234,9 +7207,8 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_TEMPLE</ArtDefineTag>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
-			<iConquestProb>100</iConquestProb>
+			<iConquestProb>80</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -7283,7 +7255,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_CATHEDRAL</ArtDefineTag>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -7345,7 +7316,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_MONASTERY</ArtDefineTag>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
-			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
