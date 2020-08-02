@@ -11526,6 +11526,19 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			}
 		}
 
+		// Roman UP
+		if (pCity != NULL && !bCivilopediaText && GC.getGameINLINE().getActiveCivilizationType() == ROME && GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getNumCities() > 0)
+		{
+			CvCity* pCapital = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCapitalCity();
+			if (!isNationalWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && !isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && kBuilding.getProductionCost() > 0)
+			{
+				szBuffer.append(gDLL->getText(pCapital->isHasRealBuilding(eBuilding) ? "TXT_KEY_COLOR_POSITIVE" : "TXT_KEY_COLOR_NEGATIVE"));
+				szBuffer.append(L" (");
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BUILDS_FASTER_WITH_ROMAN_UP", 30, kBuilding.getText(), pCapital->getName().c_str()));
+				szBuffer.append(L")");
+				szBuffer.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+			}
+		}
 
 		if (kBuilding.getObsoleteTech() != NO_TECH)
 		{

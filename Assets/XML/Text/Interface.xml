@@ -3185,6 +3185,14 @@
 		<Spanish>[SPACE]con energ&#237;a ([ICON_CLEAN_POWER])</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUILDS_FASTER_WITH_ROMAN_UP</Tag>
+		<English>Builds %d1_Mod%% Faster with [LINK=literal]%s2_BldgName[\LINK] in %s3_CityName</English>
+		<French>Construit %d1_Mod%% plus vite avec : [LINK=literal]%s2_BldgName[\LINK] &#224; %s3_CityName</French>
+		<German>Baut %d1_Mod%% schneller mit Geb&#228;ude [LINK=literal]%s2_BldgName[\LINK in %s3_CityName</German>
+		<Italian>Realizza %d1_Mod%% pi&#249; velocemente con [LINK=literal]%s2_BldgName[\LINK] a %s3_CityName</Italian>
+		<Spanish>Construye un %d1_Mod%% m&#225;s r&#225;pido con [LINK=literal]%s2_BldgName[\LINK] en %s3_CityName</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
