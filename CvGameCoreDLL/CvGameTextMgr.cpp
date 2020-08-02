@@ -11340,7 +11340,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	buildBuildingRequiresString(szBuffer, eBuilding, bCivilopediaText, bTechChooserText, pCity);
 
-	if (pCity != NULL)
+	if (pCity != NULL && !pCity->isHasRealBuilding(eBuilding))
 	{
 		if (!(GC.getBuildingClassInfo((BuildingClassTypes)(kBuilding.getBuildingClassType())).isNoLimit()))
 		{
@@ -11349,6 +11349,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				if (pCity->isWorldWondersMaxed())
 				{
 					int iWonderLimit = GC.getCultureLevelInfo(pCity->getCultureLevel()).getWonderLimit();
+
+					if (pCity->isCapital())
+					{
+						iWonderLimit++;
+					}
+
 					szBuffer.append(NEWLINE);
 					//szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_WORLD_WONDERS_PER_CITY", GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY")));
 					if (iWonderLimit > 0)
