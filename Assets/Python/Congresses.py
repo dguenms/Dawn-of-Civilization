@@ -171,10 +171,10 @@ class Congress:
 							.selection(self.bribeGold, "TXT_KEY_CONGRESS_BRIBE_GOLD", infos.commerce(CommerceTypes.COMMERCE_GOLD).getButton()) \
 							.selection(self.bribeManipulate, "TXT_KEY_CONGRESS_MANIPULATION", 'Art/Interface/Buttons/Espionage.dds')
 		
-		self.bribe_other_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").build()
-		self.bribe_other_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").build()
-		self.bribe_own_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CITY").build()
-		self.bribe_own_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
+		self.bribe_other_city = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").build()
+		self.bribe_other_plot = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").build()
+		self.bribe_own_city = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CITY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CITY").build()
+		self.bribe_own_plot = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
 		
 		self.bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK", '').build()
 		
@@ -409,21 +409,23 @@ class Congress:
 	def startBriberyResult(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):
 		if bSuccess:
 			if bHumanClaim:
-				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS", name(iBribedPlayer)).launch()
+				event = self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS", name(iBribedPlayer))
 			else:
-				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE", name(iBribedPlayer)).launch()
+				event = self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE", name(iBribedPlayer))
 		else:
 			if bHumanClaim:
-				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS", name(iBribedPlayer)).launch()
+				event = self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS", name(iBribedPlayer))
 			else:
-				self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", name(iBribedPlayer)).launch()
+				event = self.bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", name(iBribedPlayer))
+		
+		event.applyBriberyResult().launch()
 		
 	def applyBriberyResult(self):
 		# just continue to the next bribe if there is one
 		self.iNumBribes += 1
 		if self.iNumBribes < len(self.lPossibleBribes):
 			iVoter, iClaimant, tPlot, iDifference, iClaimValidity = self.lPossibleBribes[self.iNumBribes]
-			self.startBriberyEvent(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
+			self.startBribery(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
 		else:
 			# otherwise continue with applying the votes
 			self.applyVotes()
@@ -717,7 +719,7 @@ class Congress:
 		# if bribes are possible, handle them now, votes are applied after the last bribe event
 		if len(self.lPossibleBribes) > 0:
 			iVoter, iClaimant, tPlot, iDifference, iClaimValidity = self.lPossibleBribes[0]
-			self.startBriberyEvent(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
+			self.startBribery(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
 		else:
 		# continue with applying the votes right now in case there are no bribes
 			self.applyVotes()
