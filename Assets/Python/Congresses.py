@@ -658,7 +658,7 @@ class Congress:
 		if plot.isOwned(): convertPlotCulture(plot, iPlayer, 100, True)
 		
 		if player(iPlayer).isHuman():
-			makeUnit(iPlayer, iSettler, tPlot)
+			makeUnit(iPlayer, iSettler, plot)
 		else:
 			player(iPlayer).found(x, y)
 			
