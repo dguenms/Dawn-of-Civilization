@@ -513,6 +513,7 @@ class Congress:
 				results = itemize(content, lambda row: text(row[0], *row[1:]))
 			else:
 				text_key = "TXT_KEY_CONGRESS_NO_RESULTS"
+				results = tuple()
 				
 			self.results.text(text_key, self.sHostCityName, results).cancel().launch()
 			
