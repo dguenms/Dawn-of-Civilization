@@ -7442,6 +7442,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ACADEMY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ACADEMY</MovieDefineTag>
 			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7484,6 +7485,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_POLITICS</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -7534,6 +7536,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MANUFACTORY</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7581,6 +7584,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ARMOURY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ARMOURY</MovieDefineTag>
 			<PrereqTech>TECH_COMMUNE</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7611,6 +7615,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MUSEUM</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MUSEUM</MovieDefineTag>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7671,6 +7676,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_STOCK_EXCHANGE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STOCK_EXCHANGE</MovieDefineTag>
 			<PrereqTech>TECH_ECONOMICS</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8077,6 +8083,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SECRET_SERVICE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SECRET_SERVICE</MovieDefineTag>
 			<PrereqTech>TECH_SOCIAL_CONTRACT</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
