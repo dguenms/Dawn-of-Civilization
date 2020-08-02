@@ -2395,7 +2395,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POST_OFFICE</ArtDefineTag>
 			<PrereqTech>TECH_PAPER</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -2437,7 +2436,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -2480,7 +2478,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</ArtDefineTag>
 			<PrereqTech>TECH_PAPER</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3331,7 +3328,6 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SEWER</ArtDefineTag>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4040,7 +4036,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DISTILLERY</ArtDefineTag>
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
