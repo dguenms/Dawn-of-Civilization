@@ -10679,7 +10679,7 @@ int CvPlayer::getNoForeignTradeCount() const
 
 bool CvPlayer::isNoForeignTrade() const
 {
-	return (getNoForeignTradeCount() > 0 && isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER));
+	return (getNoForeignTradeCount() > 0 && !isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER));
 }
 
 
