@@ -2635,7 +2635,7 @@ def countImprovements(iPlayer, iImprovement):
 	return player(iPlayer).getImprovementCount(iImprovement)
 	
 def controlsAllCities(iPlayer, area):
-	return area.cities().owner(iPlayer).any()
+	return area.cities().all(lambda city: city.getOwner() == iPlayer)
 	
 def isAtPeace(iPlayer):
 	return players.major().alive().none(lambda p: team(iPlayer).isAtWar(p))
