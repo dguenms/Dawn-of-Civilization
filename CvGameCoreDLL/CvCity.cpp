@@ -19028,12 +19028,12 @@ struct buildingDamageCompare
 		int iLeftProbability = kLeftBuilding.getConquestProbability();
 		int iRightProbability = kRightBuilding.getConquestProbability();
 
-		if (kLeftBuilding.getPrereqReligion() != NO_RELIGION && GET_PLAYER(city->getOwnerINLINE()).getStateReligion() != kLeftBuilding.getPrereqReligion())
+		if (kLeftBuilding.getPrereqReligion() != NO_RELIGION && !GET_PLAYER(city->getOwnerINLINE()).isTolerating((ReligionTypes)kLeftBuilding.getPrereqReligion()))
 		{
 			iLeftProbability /= 2;
 		}
 
-		if (kRightBuilding.getPrereqReligion() != NO_RELIGION && GET_PLAYER(city->getOwnerINLINE()).getStateReligion() != kRightBuilding.getPrereqReligion())
+		if (kRightBuilding.getPrereqReligion() != NO_RELIGION && !GET_PLAYER(city->getOwnerINLINE()).isTolerating((ReligionTypes)kRightBuilding.getPrereqReligion()))
 		{
 			iRightProbability /= 2;
 		}
