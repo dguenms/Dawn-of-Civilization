@@ -2086,6 +2086,8 @@ def leader(iPlayer):
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
+		
+		if year() >= year(1700): return iTamerlane
 	
 		if year() >= year(1000) or pPlayer.getPeriod() == iPeriodSeljuks: return iAlpArslan
 		
