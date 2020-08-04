@@ -1168,11 +1168,6 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 			return false;
 		}
 
-		if (iGameTurn < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
-		{
-			return false;
-		}
-
 		if (iGameTurn < GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(10))
 		{
 			return false;
