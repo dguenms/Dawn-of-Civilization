@@ -4436,7 +4436,7 @@ def getTradingCompanyConquerors2HelpText(argsList):
 		return text("TXT_KEY_EVENT_TCC_NO_CITIES")
 		
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
-	sTargetNames = ', '.join(lTargetNames)
+	sTargetNames = ', '.join(targetNames)
 	
 	return text("TXT_KEY_EVENT_TCC_CONQUEST", sTargetPlayers, sTargetNames)
 
