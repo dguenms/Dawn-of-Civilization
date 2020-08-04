@@ -1321,8 +1321,10 @@ def convertSurroundingCities(iPlayer, lPlots):
 			
 		if iCultureChange > 0:
 			completeCityFlip((x, y), iPlayer, iOwner, iCultureChange, True, False, False, True)
-			ensureDefenders(iPlayer, (x, y), 2)
 			iConvertedCitiesCount += 1
+			
+			if turn() > scenarioStartTurn():
+				ensureDefenders(iPlayer, (x, y), 2)
 			
 	warOnSpawn(iPlayer, lEnemies)
 			
