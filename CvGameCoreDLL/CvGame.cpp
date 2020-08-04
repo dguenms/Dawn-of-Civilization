@@ -4441,7 +4441,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			++iNumVoters;
 		}
 	}
-	if (iNumVoters  < GC.getVoteInfo(kData.eVote).getMinVoters())
+	if (iNumVoters < GC.getVoteInfo(kData.eVote).getMinVoters())
 	{
 		return false;
 	}
@@ -4669,10 +4669,10 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 	else if (GC.getVoteInfo(kData.eVote).isAssignCity())
 	{
 		CvPlayer& kPlayer = GET_PLAYER(kData.ePlayer);
-		/*if (kPlayer.isFullMember(eVoteSource) || !kPlayer.isVotingMember(eVoteSource))
+		if (kPlayer.isFullMember(eVoteSource) || !kPlayer.isVotingMember(eVoteSource))
 		{
 			return false;
-		}*/
+		}
 
 		CvCity* pCity = kPlayer.getCity(kData.iCityId);
 		FAssert(NULL != pCity);
@@ -10051,7 +10051,7 @@ void CvGame::doVoteResults()
 			{
 				PlayerTypes ePlayer = (PlayerTypes) iJ;
 
-				// Leoreth: player triggering the election and his capitulated vassals can't vote
+				// Leoreth: player triggering the election and their capitulated vassals can't vote
 				if (GC.getVoteInfo(eVote).isVictory())
 				{
 					if (pVoteTriggered->kVoteOption.ePlayer == ePlayer || (GET_TEAM((TeamTypes)ePlayer).isVassal((TeamTypes)pVoteTriggered->kVoteOption.ePlayer) && GET_TEAM((TeamTypes)ePlayer).isCapitulated()))
@@ -10145,7 +10145,9 @@ void CvGame::doVoteResults()
 						{
 							// Leoreth: AP resolutions still pass if defied - espionage is the only exception
 							if (getVoteSourceReligion(eVoteSource) == NO_RELIGION || GC.getVoteInfo(eVote).getEspionage() > 0)
+							{
 								bPassed = false;
+							}
 
 							GET_PLAYER((PlayerTypes)iJ).setDefiedResolution(eVoteSource, pVoteTriggered->kVoteOption);
 						}
