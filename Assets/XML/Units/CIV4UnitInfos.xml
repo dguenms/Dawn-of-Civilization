@@ -11525,6 +11525,9 @@
 				</UnitAI>
 			</NotUnitAIs>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_MACHINERY</PrereqTech>
+			</TechTypes>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
