@@ -5586,6 +5586,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			</TechTypes>
 			<iCost>140</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
