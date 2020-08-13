@@ -186,6 +186,7 @@ iCivEgypt : {
 		"Menes", # 30th BC
 		"Khufu", # 26th BC
 		"Mentuhotep", # 21st BC
+		"fAhhotep", # 16th BC
 		"Thutmosis", # 15th BC
 		"Sethi", # 13th BC
 		iClassical,
@@ -385,6 +386,7 @@ iCivChina : {
 		"Yue Fei", # 12th
 		iRenaissance,
 		"Qi Jiguang", # 16th
+		"fQin Liangyu", # 17th
 		"Shi Lang", # 17th
 		iIndustrial,
 		"fChing Shih", # 19th
@@ -1536,6 +1538,7 @@ iCivJapan : {
 		"Sakanoue no Tamuramaro", # 8th
 		"Taira no Masakado", # 10th
 		"Minamoto no Yoritomo", # 12th
+		"fTomoe Gozen", # 12th
 		"Kusunoki Masashige", # 13th
 		"Ashikaga Takauji", # 14th
 		iRenaissance,
@@ -3462,6 +3465,8 @@ iCivMongols : {
 		"Chagatai", # 13th
 		u"Möngke", # 13th
 		"fKhutulun", # 13th
+		iRenaissance,
+		"fAnu Qatun", # 17th
 		iGlobal, 
 		"Khorloogiin Choibalsan", # 20th
 	],
