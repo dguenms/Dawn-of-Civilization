@@ -2501,7 +2501,7 @@ iCivEngland : {
 		"John Stott", # 20th
 	],
 	iGreatArtist : [
-		u"Ælfric of Eynsham", # 10th
+		u"Aelfric of Eynsham", # 10th
 		"Geoffrey Chaucer", # 14th
 		"Thomas Malory", # 15th
 		iRenaissance,
