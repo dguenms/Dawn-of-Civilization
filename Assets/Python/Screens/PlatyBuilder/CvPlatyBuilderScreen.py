@@ -1930,6 +1930,8 @@ class CvWorldBuilderScreen:
 			self.showReligionOverlay()
 		elif self.iPlayerAddMode == iModeRegionMap:
 			self.showRegionOverlay()
+		elif self.iPlayerAddMode == iModeVictoryMap:
+			self.showVictoryOverlay()
 
 	def showFlipZone(self):
 		removeStabilityOverlay()
