@@ -1556,6 +1556,7 @@ iCivJapan : {
 		iGlobal,
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
+		"Tadamichi Kuribayashi", # 20th
 	],
 	iGreatSpy : [
 		"Kagetoki Kajiwara", # 12th
@@ -2373,7 +2374,7 @@ iCivFrance : {
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
 		u"Louis de Bourbon-Condé", # 17th
-		"Henri de la Tour d'Auvergne", # 17th
+		"Turenne", # 17th
 		"Maurice de Saxe", # 18th
 		"Louis-Joseph de Montcalm", # 18th
 		u"Louis-René de Latouche-Tréville", # 18th
