@@ -570,8 +570,8 @@ class Congress:
 		# unless the player isn't involved, in that case resolve from here
 		if active() not in self.invites:
 			# since Congresses now can occur during autoplay, don't display these congresses to the player
-			if year() >= year(dBirth[active()]):
-				self.startIntroductionEvent(False, bHumanInGlobalWar)
+			if not autoplay():
+				self.startIntroduction(False, bHumanInGlobalWar)
 			else:
 				# select claims first, then move on to voting directly since the player isn't involved
 				for iLoopPlayer in self.invites:
