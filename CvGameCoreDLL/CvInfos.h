@@ -261,9 +261,9 @@ public:
 	int getCommerceChange(int i) const;		// Exposed to Python
 	int getFlavorValue(int i) const;		// Exposed to Python
 
-	int getCultureLevelYieldChange(int eCultureLevel, int eYield) const;
-	int getCultureLevelCommerceChange(int eCultureLevel, int eCommerce) const;
-	int getCultureLevelGreatPeopleRateChange(int eCultureLevel) const;
+	int getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const;
+	int getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const;
+	int getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const;
 
 	const TCHAR* getTexture() const;				// Exposed to Python
 	void setTexture(const TCHAR* szVal);

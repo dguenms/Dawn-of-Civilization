@@ -7527,7 +7527,7 @@ bool CvCityAI::AI_foodAvailable(int iExtra)
 
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
-		iFoodCount += ((GC.getSpecialistInfo((SpecialistTypes)iI).getYieldChange(YIELD_FOOD) + GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelYieldChange(getCultureLevel(), YIELD_FOOD)) * getFreeSpecialistCount((SpecialistTypes)iI));
+		iFoodCount += ((GC.getSpecialistInfo((SpecialistTypes)iI).getYieldChange(YIELD_FOOD) /*+ GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelYieldChange(getCultureLevel(), YIELD_FOOD)*/) * getFreeSpecialistCount((SpecialistTypes)iI));
 	}
 
 	if (iFoodCount < foodConsumption(false, iExtra))

@@ -275,5 +275,6 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("setCultureConversion", &CyPlot::setCultureConversion, "void (int ePlayer, int iRate)")
 		.def("resetCultureConversion", &CyPlot::resetCultureConversion, "void ()")
 		.def("getCultureConversionPlayer", &CyPlot::getCultureConversionPlayer, "int ()")
+		.def("getActualCulture", &CyPlot::getActualCulture, "int (int ePlayer)")
 	;
 }

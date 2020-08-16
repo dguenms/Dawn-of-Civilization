@@ -1,6 +1,5 @@
 # Rhye's and Fall of Civilization - Barbarian units and cities
 
-from CvPythonExtensions import *
 import CvUtil
 import PyHelpers	# LOQ
 #import Popup

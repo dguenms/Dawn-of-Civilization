@@ -546,7 +546,7 @@ def secedeCity(city, iNewOwner, bRelocate):
 	tile = location(city)
 	
 	if player(iNewOwner).isMinorCiv():
-		for iPlayer in players.at_war(city):
+		for iPlayer in players.major().at_war(city):
 			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
 				team(iPlayer).declareWar(player(iNewOwner).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 	

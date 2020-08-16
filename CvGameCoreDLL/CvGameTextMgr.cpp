@@ -6496,7 +6496,7 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			else
 			{
 				aiYields[iI] = GET_PLAYER((pCity != NULL) ? pCity->getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).specialistYield(eSpecialist, ((YieldTypes)iI));
-				aiYields[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelYieldChange(pCity->getCultureLevel(), (YieldTypes)iI) : 0;
+				//aiYields[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelYieldChange(pCity->getCultureLevel(), (YieldTypes)iI) : 0;
 			}
 		}
 
@@ -6511,7 +6511,7 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			else
 			{
 				aiCommerces[iI] = GET_PLAYER((pCity != NULL) ? pCity->getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).specialistCommerce(((SpecialistTypes)eSpecialist), ((CommerceTypes)iI));
-				aiCommerces[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelCommerceChange(pCity->getCultureLevel(), (CommerceTypes)iI) : 0;
+				//aiCommerces[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelCommerceChange(pCity->getCultureLevel(), (CommerceTypes)iI) : 0;
 			}
 		}
 
@@ -18526,7 +18526,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		}
 	}
 
-	int iModGreatPeople = (iModifier * (city.getBaseGreatPeopleRate() + city.calculateCultureSpecialistGreatPeopleRate())) / 100;
+	int iModGreatPeople = (iModifier * (city.getBaseGreatPeopleRate() /*+ city.calculateCultureSpecialistGreatPeopleRate()*/)) / 100;
 
 	FAssertMsg(iModGreatPeople == city.getGreatPeopleRate(), "Great person rate does not match actual value");
 

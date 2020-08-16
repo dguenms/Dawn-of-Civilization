@@ -27,6 +27,12 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+def log_with_trace(context):
+	print "%s called near:" % context
+	stacktrace()
+	
+
+
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 

@@ -211,7 +211,7 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 	city = city_(tCityPlot)
 	
 	if city:
-		iCulture = city.getCulture(iOldOwner)
+		iCulture = city.getActualCulture(iOldOwner)
 		iConvertedCulture = iCulture * iCulturePercent / 100
 		
 		city.changeCulture(iOldOwner, -iConvertedCulture, False)
@@ -235,7 +235,7 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 							plot.changeCulture(iNewOwner, iMinorCulture, True)
 							
 	for plot in plots.surrounding(tCityPlot):
-		iCulture = plot.getCulture(iOldOwner)
+		iCulture = plot.getActualCulture(iOldOwner)
 		iConvertedCulture = iCulture * iCulturePercent / 100
 		
 		if plot.isCity():
@@ -271,18 +271,19 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	if city:
 		iTotalConvertedCulture = 0
 		for iLoopPlayer in players.all().without(iPlayer):
-			iConvertedCulture = city.getCulture(iLoopPlayer) * iPercent / 100
+			iConvertedCulture = city.getActualCulture(iLoopPlayer) * iPercent / 100
 			city.changeCulture(iLoopPlayer, -iConvertedCulture, True)
 			iTotalConvertedCulture += iConvertedCulture
-			
+		
 		city.changeCulture(iPlayer, iTotalConvertedCulture, True)
 		
 	iTotalConvertedCulture = 0
 	for iLoopPlayer in players.all().without(iPlayer):
-		iConvertedCulture = plot.getCulture(iLoopPlayer) * iPercent / 100
+		iCulture = plot.getActualCulture(iLoopPlayer)
+		iConvertedCulture = iCulture * iPercent / 100
 		plot.changeCulture(iLoopPlayer, -iConvertedCulture, True)
 		iTotalConvertedCulture += iConvertedCulture
-		
+	
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
 	if bOwner:

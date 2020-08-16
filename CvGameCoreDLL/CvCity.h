@@ -32,6 +32,8 @@ public:
 	void setupGraphical();
 
 	void kill(bool bUpdatePlotGroups);																								// Exposed to Python
+	void logSpecialistInfo(); // Leoreth // temp
+	void logGPInfo(); // Leoreth // temp
 
 	void doTurn();
 

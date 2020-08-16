@@ -2783,3 +2783,8 @@ bool CyCity::isCore(int iPlayer)
 {
 	return m_pCity ? m_pCity->isCore((PlayerTypes)iPlayer) : false;
 }
+
+int CyCity::getActualCulture(int iPlayer)
+{
+	return m_pCity ? m_pCity->getActualCulture((PlayerTypes)iPlayer) : -1;
+}

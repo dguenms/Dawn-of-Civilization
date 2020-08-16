@@ -287,6 +287,8 @@ public:
 	void resetCultureConversion();
 	int getCultureConversionPlayer();
 
+	int getActualCulture(int ePlayer);
+
 private:
 	CvPlot* m_pPlot;
 };

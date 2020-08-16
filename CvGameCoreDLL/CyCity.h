@@ -590,6 +590,7 @@ public:
 	int getModifiedCultureRate();
 	int getNumActiveWorldWonders();
 	bool isCore(int iPlayer);
+	int getActualCulture(int iPlayer);
 
 private:
 	CvCity* m_pCity;

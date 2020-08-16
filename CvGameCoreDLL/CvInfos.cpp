@@ -944,7 +944,7 @@ int CvSpecialistInfo::getFlavorValue(int i) const
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelYieldChange(int eCultureLevel, int eYield) const
+int CvSpecialistInfo::getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{
@@ -955,7 +955,7 @@ int CvSpecialistInfo::getCultureLevelYieldChange(int eCultureLevel, int eYield) 
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelCommerceChange(int eCultureLevel, int eCommerce) const
+int CvSpecialistInfo::getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{
@@ -966,7 +966,7 @@ int CvSpecialistInfo::getCultureLevelCommerceChange(int eCultureLevel, int eComm
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(int eCultureLevel) const
+int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{

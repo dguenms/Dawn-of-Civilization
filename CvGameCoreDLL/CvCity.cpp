@@ -878,6 +878,112 @@ void CvCity::setupGraphical()
 	setLayoutDirty(true);
 }
 
+void CvCity::logSpecialistInfo()
+{
+	int iI;
+	int iCommerceValue;
+	int iCultureValue;
+	int iGreatPeopleValue;
+	int iCultureGPPValue;
+	log(CvWString::format(L"\nCvCity %s at (%d, %d) specialist info", getName().c_str(), getX(), getY()));
+	for (iI = 0; iI < NUM_SPECIALIST_TYPES; iI++)
+	{
+		log(CvWString::format(L"* %s count: %d", GC.getSpecialistInfo((SpecialistTypes)iI).getText(), getSpecialistCount((SpecialistTypes)iI)));
+		for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+		{
+			iCommerceValue = GC.getSpecialistInfo((SpecialistTypes)iI).getCommerceChange((CommerceTypes)iJ);
+			iCultureValue = GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelCommerceChange(getCultureLevel(), (CommerceTypes)iJ);
+
+			FAssert(iCultureValue >= 0);
+
+			if (iCommerceValue + iCultureValue != 0)
+			{
+				log(CvWString::format(L"  * %d %s (+%d with culture)", iCommerceValue, GC.getCommerceInfo((CommerceTypes)iJ).getText(), iCultureValue));
+			}
+		}
+		iGreatPeopleValue = GC.getSpecialistInfo((SpecialistTypes)iI).getGreatPeopleRateChange();
+		iCultureGPPValue = GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+		if (iGreatPeopleValue + iCultureGPPValue != 0)
+		{
+			log(CvWString::format(L"  * %d GPP (+%d with culture)", iGreatPeopleValue, iCultureGPPValue));
+		}
+	}
+	log(" === ");
+	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+	{
+		log(CvWString::format(L"* specialist %s: %d (+%d from culture)", GC.getCommerceInfo((CommerceTypes)iI).getText(), getSpecialistCommerce((CommerceTypes)iI), calculateCultureSpecialistCommerce((CommerceTypes)iI)));
+	}
+	log(" === ");
+	log(CvWString::format(L"* total great people rate: %d (includes from culture)", getGreatPeopleRate()));
+	log("\n");
+}
+
+void CvCity::logGPInfo()
+{
+	int iCityTotal = getBaseGreatPeopleRate();
+	int iCityAccumulated = 0;
+
+	log(CvWString::format(L"GP INFO FOR %s", getName().c_str()));
+	log(CvWString::format(L"Total for the city: %d", iCityTotal));
+
+	int iBuildingGP;
+	log("From buildings:");
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (getNumActiveBuilding((BuildingTypes)iI) > 0)
+		{
+			iBuildingGP = GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
+			if (iBuildingGP != 0)
+			{
+				iCityAccumulated += iBuildingGP;
+				log(CvWString::format(L" * %s: %d", GC.getBuildingInfo((BuildingTypes)iI).getText(), iBuildingGP));
+			}
+		}
+	}
+
+	int iSpecialistGP;
+	log("From specialists:");
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		iSpecialistGP = getSpecialistGreatPeopleRateChange((SpecialistTypes)iI) * (getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI));
+		if (iSpecialistGP != 0)
+		{
+			iCityAccumulated += iSpecialistGP;
+			log(CvWString::format(L" * %s: %d", GC.getSpecialistInfo((SpecialistTypes)iI).getText(), iSpecialistGP));
+		}
+	}
+
+	log("From extra building GPP:");
+	for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
+	{
+		BuildingClassTypes eBuildingClass = (*it).first;
+		int iBuildingExtraGP = (*it).second; 
+		
+		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+		if (NO_BUILDING != eBuilding)
+		{
+			if (getNumBuilding(eBuilding) > 0)
+			{
+				if (iBuildingExtraGP != 0)
+				{
+					iCityAccumulated += iBuildingExtraGP;
+					log(CvWString::format(L" * %s: %d", GC.getBuildingInfo(eBuilding).getText(), iBuildingExtraGP));
+				}
+			}
+		}
+	}
+
+	if (iCityTotal != iCityAccumulated)
+	{
+		log(CvWString::format(L"WARNING: city attribute %d does not match tally of %d", iCityTotal, iCityAccumulated));
+	}
+
+	log("SUMMARY");
+	log(CvWString::format(L"as stored in city: %d", iCityTotal));
+	log(CvWString::format(L"as calculated: %d", iCityAccumulated));
+	log("\n");
+}
+
 void CvCity::kill(bool bUpdatePlotGroups)
 {
 	CvPlot* pPlot;
@@ -4713,14 +4819,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
-		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
-		{
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
-			{
-				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
-			}
-		}
-
 		// Louvre
 		if (eBuilding == LOUVRE)
 		{
@@ -4737,21 +4835,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 
 			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_CULTURE, iChange * iWonderCulture);
-		}
-
-		if (::isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
-		{
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOUVRE) && eBuilding != LOUVRE)
-			{
-				for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
-				{
-					if (pLoopCity->isHasRealBuilding((BuildingTypes)LOUVRE))
-					{
-						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)LOUVRE).getBuildingClassType(), COMMERCE_CULTURE, 2 * iChange);
-						break;
-					}
-				}
-			}
 		}
 
 		// Temple of Kukulkan
@@ -4944,6 +5027,34 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 		{
 			changeCommerceRateModifier(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
+		}
+
+		// Leoreth: Mount Athos effect
+		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
+		{
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
+			{
+				log(CvWString::format(L"changeBuildingGreatPeopleRateChange in %s from building %s while having Mount Athos", getName().c_str(), GC.getBuildingInfo(eBuilding).getText()));
+				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
+			}
+		}
+
+		// Leoreth: Louvre effect
+		CvCity* pLoopCity;
+		int iLoop;
+		if (::isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+		{
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOUVRE) && eBuilding != LOUVRE)
+			{
+				for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+				{
+					if (pLoopCity->isHasRealBuilding((BuildingTypes)LOUVRE))
+					{
+						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)LOUVRE).getBuildingClassType(), COMMERCE_CULTURE, 2 * iChange);
+						break;
+					}
+				}
+			}
 		}
 
 		changeBaseGreatPeopleRate(GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() * iChange);
@@ -10729,7 +10840,7 @@ void CvCity::updateCommerce(CommerceTypes eIndex)
 	{
 		iNewCommerce = (getBaseCommerceRateTimes100(eIndex) * getTotalCommerceRateModifier(eIndex)) / 100;
 		iNewCommerce += getBaseYieldRate(YIELD_PRODUCTION) * getProductionToCommerceModifier(eIndex); // Leoreth: no production modifiers for processes anymore
-		iNewCommerce += calculateCultureSpecialistCommerce(eIndex); // Leoreth
+		//iNewCommerce += calculateCultureSpecialistCommerce(eIndex); // Leoreth
 	}
 
 	if (iOldCommerce != iNewCommerce)
@@ -11148,7 +11259,7 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
 	int iCommerceRate = kSpecialist.getCommerceChange(eIndex);
-	iCommerceRate += kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex);
+	//iCommerceRate += kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex);
 
 	if (!kSpecialist.isNoGlobalEffects())
 	{
@@ -18965,10 +19076,12 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
 	int iGreatPeopleRate = kSpecialist.getGreatPeopleRateChange();
 
-	if (!kSpecialist.isNoGlobalEffects())
+	/*if (!kSpecialist.isNoGlobalEffects())
 	{
-		iGreatPeopleRate += kSpecialist.getCultureLevelGreatPeopleRateChange(getCultureLevel());
-	}
+		int iCultureLevelRate = kSpecialist.getCultureLevelGreatPeopleRateChange(getCultureLevel());
+		FAssert(iCultureLevelRate == 0);
+		iGreatPeopleRate += iCultureLevelRate;
+	}*/
 
 	if (kSpecialist.isSatellite())
 	{
