@@ -2504,7 +2504,7 @@ iEngland : {
 		"John Stott", # 20th
 	],
 	iGreatArtist : [
-		u"Aelfric of Eynsham", # 10th
+		u"Ælfric of Eynsham", # 10th
 		"Geoffrey Chaucer", # 14th
 		"Thomas Malory", # 15th
 		iRenaissance,
