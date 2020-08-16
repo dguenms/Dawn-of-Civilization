@@ -3776,7 +3776,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iCiv == iAmerica:
 		if iGoal == 0:
 			bAmericas = isAreaFreeOfCivs(plots.rectangle(tNorthCentralAmerica), dCivGroups[iCivGroupEurope])
-			bMexico = isControlledOrVassalized(iPlayer, plots.core(iPersia))
+			bMexico = isControlledOrVassalized(iPlayer, plots.core(iMexico))
 			aHelp.append(getIcon(bAmericas) + text("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES") + ' ' + getIcon(bMexico) + text("TXT_KEY_CIV_MEXICO_SHORT_DESC"))
 		elif iGoal == 1:
 			bUnitedNations = data.getWonderBuilder(iUnitedNations) == iPlayer
