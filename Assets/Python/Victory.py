@@ -3108,7 +3108,7 @@ def getPaganGoalHelp(iPlayer):
 	
 	elif paganReligion == "Shendao":
 		fPopulationPercent = getPopulationPercent(iPlayer)
-		return getIcon(fPopulationPercent >= 25.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % fPopulationPercent, '25')
+		return getIcon(fPopulationPercent >= 25.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % fPopulationPercent, 25)
 	
 	elif paganReligion == "Shinto":
 		capital = pPlayer.getCapitalCity()
@@ -3467,7 +3467,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCounter >= 10) + text("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", iCounter, 10))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iPlayer)
-			aHelp.append(getIcon(popPercent >= 9.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, '9'))
+			aHelp.append(getIcon(popPercent >= 9.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 9))
 
 	elif iCiv == iMoors:
 		if iGoal == 0:
