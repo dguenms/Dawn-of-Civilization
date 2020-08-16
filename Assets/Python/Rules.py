@@ -349,7 +349,7 @@ def immigration():
 	
 	iNumMigrations = min(sourcePlayers.count() / 4, targetPlayers.count())
 	
-	sourceCities = sourcePlayers.cities().highest(iNumMigrations, getEmigrationValue)
+	sourceCities = sourcePlayers.cities().where(lambda city: city.getPopulation() > 1).highest(iNumMigrations, getEmigrationValue)
 	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)
 	
 	for sourceCity, targetCity in zip(sourceCities, targetCities):
