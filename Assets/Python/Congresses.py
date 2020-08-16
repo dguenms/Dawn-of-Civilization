@@ -180,8 +180,8 @@ class Congress:
 		
 		demand = popup.option(self.acceptDemand, "TXT_KEY_CONGRESS_ACCEPT").option(self.refuseDemand, "TXT_KEY_CONGRESS_REFUSE")
 		
-		self.demand_city = demand.text("TXT_KEY_CONGRESS_DEMAND_CITY")
-		self.demand_plot = demand.text("TXT_KEY_CONGRESS_DEMAND_PLOT")
+		self.demand_city = demand.text("TXT_KEY_CONGRESS_DEMAND_CITY").build()
+		self.demand_plot = demand.text("TXT_KEY_CONGRESS_DEMAND_PLOT").build()
 			
 		self.results = popup.cancel("TXT_KEY_CONGRESS_OK", "").build()
 	
@@ -436,13 +436,13 @@ class Congress:
 		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
 			
-		voted_yes = [text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer)) for iPlayer in self.dVotedFor[iClaimant] if not player(iPlayer).isHuman() and iPlayer != iClaimant]
+		voted_yes = [iPlayer for iPlayer in self.dVotedFor[iClaimant] if not player(iPlayer).isHuman() and iPlayer != iClaimant]
 			
 		city = city_(plot)
 		if city:
-			event = self.demand_city.text(name(iClaimant), city.getName(), voted_yes)
+			event = self.demand_city.text(name(iClaimant), city.getName(), itemize(voted_yes, fullname))
 		else:
-			event = self.demand_plot.text(name(iClaimant), closestCity(plot, active(), same_continent=True).getName(), voted_yes)
+			event = self.demand_plot.text(name(iClaimant), closestCity(plot, active(), same_continent=True).getName(), itemize(voted_yes, fullname))
 		
 		event.acceptDemand().refuseDemand().launch(iClaimant, x, y)
 		
