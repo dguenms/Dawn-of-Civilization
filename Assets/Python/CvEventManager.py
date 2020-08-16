@@ -193,6 +193,9 @@ class CvEventManager(object):
 		'Apply the effects of an event '
 		context, playerID, netUserData, popupReturn = argsList
 		
+		if context < 0:
+			return False
+		
 		if context == CvUtil.PopupTypeEffectViewer:
 			return CvDebugTools.g_CvDebugTools.applyEffectViewer( playerID, netUserData, popupReturn )
 		
