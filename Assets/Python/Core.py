@@ -1136,6 +1136,9 @@ class CityFactory:
 		
 	def of(self, list):
 		return self.plots.of(list).cities()
+		
+	def none(self):
+		return self.of([])
 	
 	def ids(self, identifier, ids):
 		return Cities([player(identifier).getCity(id) for id in ids])

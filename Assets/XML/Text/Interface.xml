@@ -1767,6 +1767,14 @@
 		<Spanish>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SCHISM_MESSAGE_CATHEDRAL</Tag>
+		<English>With the holy sites in their hands, foreign powers have long been in control of Christian Orthodoxy. Having established his own authority by building our first Cathedral, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now all of our cities follow this new sect.</English>
+		<French>With the holy sites in their hands, foreign powers have long been in control of Christian Orthodoxy. Having established his own authority by building our first Cathedral, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now all of our cities follow this new sect.</French>
+		<German>With the holy sites in their hands, foreign powers have long been in control of Christian Orthodoxy. Having established his own authority by building our first Cathedral, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now all of our cities follow this new sect.</German>
+		<Italian>With the holy sites in their hands, foreign powers have long been in control of Christian Orthodoxy. Having established his own authority by building our first Cathedral, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now all of our cities follow this new sect.</Italian>
+		<Spanish>With the holy sites in their hands, foreign powers have long been in control of Christian Orthodoxy. Having established his own authority by building our first Cathedral, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now all of our cities follow this new sect.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SCHISM_TITLE</Tag>
 		<English>The Great Schism</English>
 		<French>Le Grand Schisme</French>

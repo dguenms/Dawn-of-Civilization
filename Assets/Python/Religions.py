@@ -69,13 +69,15 @@ def onBuildingBuilt(city, iBuilding):
 	if iBuilding == iOrthodoxCathedral:
 		if game.isReligionFounded(iCatholicism): return
 	
-		pOrthodoxHolyCity = game.getHolyCity(iOrthodoxy)
+		orthodoxHolyCity = game.getHolyCity(iOrthodoxy)
 	
-		if pOrthodoxHolyCity.getOwner() != iPlayer:
-			rel.foundReligion(location(city), iCatholicism)
-			pCatholicHolyCity = game.getHolyCity(iCatholicism)
-			rel.schism(pOrthodoxHolyCity, pCatholicHolyCity, cities.none(), cities.all().notowner(pOrthodoxHolyCity.getOwner()).religion(iOrthodoxy))
+		if orthodoxHolyCity.getOwner() != iPlayer:
+			foundReligion(location(city), iCatholicism)
+			catholicHolyCity = game.getHolyCity(iCatholicism)
+			schism(orthodoxHolyCity, catholicHolyCity, cities.none(), cities.all().notowner(orthodoxHolyCity.getOwner()).religion(iOrthodoxy), message="TXT_KEY_SCHISM_MESSAGE_CATHEDRAL")
 
+			if cities.owner(iPlayer).none(lambda city: city.isHasReligion(iOrthodoxy)):
+				player(city).setLastStateReligion(iCatholicism)
 
 @handler("BeginGameTurn")
 def foundHinduism(iGameTurn):
@@ -151,7 +153,7 @@ def checkSchism(iGameTurn):
 	foundReligion(catholicCapital, iCatholicism)
 	
 	independentCities = differentStateReligionCities + minorCities
-	schism(orthodoxCapital, catholicCapital, noStateReligionCities, independentCities)
+	schism(orthodoxCapital, catholicCapital, noStateReligionCities, independentCities, message="TXT_KEY_SCHISM_MESSAGE")
 
 
 @handler("BeginGameTurn")
@@ -245,13 +247,13 @@ def spreadReligionToRegion(iReligion, lRegions, iStartDate, iInterval):
 			spreadCity.spreadReligion(iReligion)
 
 
-def schism(orthodoxCapital, catholicCapital, replace, distant):
+def schism(orthodoxCapital, catholicCapital, replace, distant, message):
 	replace += distant.where(lambda city: distance(city, catholicCapital) <= distance(city, orthodoxCapital))
 	for city in replace:
 		city.replaceReligion(iOrthodoxy, iCatholicism)
 			
 	if player().getStateReligion() == iOrthodoxy and not autoplay():
-		eventpopup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
+		eventpopup(-1, text("TXT_KEY_SCHISM_TITLE"), text(message, catholicCapital.getName()), ())
 		
 	for iPlayer in players.major().alive().ai().religion(iOrthodoxy):
 		if 2 * replace.owner(iPlayer).count() >= player(iPlayer).getNumCities():
