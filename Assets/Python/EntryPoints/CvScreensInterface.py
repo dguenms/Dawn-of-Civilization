@@ -933,7 +933,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.normal(iItaly).without([(62, 47), (63, 47), (63, 46)]):
 			return 37
 		
-		if (x, y) in plots.normal(iSpain):
+		if (x, y) in plots.rectangle(tIberia):
 			return 8
 			
 	elif iCiv == iItaly:

@@ -275,7 +275,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# second goal: control Italy and Iberia in 100 BC
 		if iGameTurn == year(-100):
 			bItaly = isControlled(iPlayer, plots.rectangle(*dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)))
-			bIberia = isControlled(iPlayer, plots.normal(iSpain))
+			bIberia = isControlled(iPlayer, plots.rectangle(tIberia))
 			if bItaly and bIberia:
 				win(iPlayer, 1)
 			else:
@@ -3263,7 +3263,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bPalace) + text("TXT_KEY_BUILDING_PALACE") + ' ' + getIcon(bGreatCothon) + text("TXT_KEY_BUILDING_GREAT_COTHON"))
 		elif iGoal == 1:
 			bItaly = isControlled(iPlayer, plots.rectangle(dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)))
-			bIberia = isControlled(iPlayer, plots.normal(iSpain))
+			bIberia = isControlled(iPlayer, plots.rectangle(tIberia))
 			aHelp.append(getIcon(bItaly) + text("TXT_KEY_VICTORY_ITALY") + ' ' + getIcon(bIberia) + text("TXT_KEY_VICTORY_IBERIA_CARTHAGE"))
 		elif iGoal == 2:
 			iTreasury = pPlayer.getGold()
