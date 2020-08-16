@@ -1022,7 +1022,7 @@ def getUHVTileInfo(argsList):
 		elif plot in plots.rectangle(tEasternEurope):
 			return 29
 		
-		if plot in plots.rectangle(tNorthAfrica):
+		if plot in plots.rectangle(tNorthAmerica):
 			return 30
 			
 	elif iCiv == iEngland:
