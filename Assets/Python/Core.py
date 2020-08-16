@@ -831,7 +831,7 @@ class EntityCollection(object):
 				keys = keys[0]._keys
 			elif isinstance(keys[0], list):
 				keys = keys[0]
-		combined = list(keys) + list(self._keys)
+		combined = list(self._keys) + list(keys)
 		return self.__class__(sorted(set(combined), key=combined.index))
 		
 	def limit(self, iLimit):
@@ -1331,6 +1331,11 @@ class PlayerFactory:
 class Players(EntityCollection):
 
 	def __init__(self, players):
+		if all(isinstance(x, Civ) for x in players):
+			players = [slot(x) for x in players]
+		elif not all(isinstance(x, int) for x in players):
+			raise Exception("All entries in Players need to be either int or Civ")
+	
 		super(Players, self).__init__(players)
 
 	def __contains__(self, item):
@@ -1408,7 +1413,7 @@ class Players(EntityCollection):
 		return self.including(players.native())
 	
 	def permutations(self, identical=False):
-		return Players([(x, y) for x, y in permutations(self._keys, self._keys) if (identical and x == y) or x < y])
+		return [(x, y) for x, y in permutations(self._keys, self._keys) if (identical and x == y) or x < y]
 		
 	def asCivs(self):
 		return [civ(p) for p in self.entities()]

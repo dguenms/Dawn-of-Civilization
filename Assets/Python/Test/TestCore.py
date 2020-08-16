@@ -801,6 +801,15 @@ class TestPlayers(TestCase):
 		self.assertEqual(players[0], 0)
 		
 		gc.getPlayer(0).setLastStateReligion(-1)
+		
+	def test_can_only_contain_int_and_civ(self):
+		self.assertRaises(Exception, Players, ["Egypt"])
+		
+	def test_can_be_built_from_civs(self):
+		players = Players([iEgypt, iBabylonia])
+		
+		self.assert_(0 in players)
+		self.assert_(1 in players)
 
 			
 class TestPlayerFactory(TestCase):
@@ -1459,6 +1468,12 @@ class TestPlots(TestCase):
 		self.assertEqual(len(plots), 12)
 		for tile in [(3, 3), (4, 4), (5, 5)]:
 			self.assert_(tile in plots)
+	
+	def test_including_inserts_at_end(self):
+		plots = self.plots.including((10, 10))
+		
+		last_plot = plots[9]
+		self.assertEqual((last_plot.getX(), last_plot.getY()), (10, 10))
 			
 	def test_limit(self):
 		plots = self.plots.limit(3)
