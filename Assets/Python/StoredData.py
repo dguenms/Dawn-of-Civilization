@@ -255,6 +255,7 @@ class GameData:
 		self.iTaoistHealthTurns = 0
 		self.iVedicHappiness = 0
 		self.iTeotlSacrifices = 0
+		self.iTeotlFood = 0
 		self.bPolytheismNeverReligion = True
 		
 		# Stability
