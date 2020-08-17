@@ -91,6 +91,7 @@ def foundChineseCity(city, unit):
 		plot = plots.of(lChineseCities).where(lambda plot: isFree(unit.getOwner(), plot, True, True, True)).random()
 	
 		if plot:
+			plot.setOwner(unit.getOwner())
 			player(unit).found(plot.getX(), plot.getY())
 			unit.kill(False, -1)
 
