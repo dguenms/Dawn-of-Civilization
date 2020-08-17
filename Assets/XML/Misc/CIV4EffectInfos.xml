@@ -172,6 +172,16 @@
 			<fArcValue>0.0</fArcValue>
 		</EffectInfo>
 		<EffectInfo>
+			<Type>EFFECT_BALLISTAARROW</Type>
+			<Description>Ballista Arrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Ballista/Ballista_Arrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
 			<Type>EFFECT_CROSSBOWBOLT</Type>
 			<Description>Crossbow bolt</Description>
 			<fScale>1.0</fScale>
@@ -290,6 +300,16 @@
 			<bIsProjectile>1</bIsProjectile>
 			<fSpeed>350.0</fSpeed>
 			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MYSORE_ROCKET</Type>
+			<Description>Mysore Rocket fire</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Rocketeer/Hwacha_Rocket.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>350.0</fSpeed>
+			<fArcValue>1.0</fArcValue>
 		</EffectInfo>
 		<EffectInfo>
 			<Type>EFFECT_SAM_ANTI_AIR_MISSLE</Type>
@@ -2579,6 +2599,22 @@
 			<bIsProjectile>1</bIsProjectile>
 			<fSpeed>500.0</fSpeed>
 			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BLOOD_THRUST</Type>
+			<Description>Blood splatter effect</Description>
+			<fScale>4.0</fScale>
+			<fUpdateRate>0.2</fUpdateRate>
+			<Path>Art/Effects/fx_sword_hit_thrust.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BLOOD_SLASH</Type>
+			<Description>Blood spray effect</Description>
+			<fScale>3.5</fScale>
+			<fUpdateRate>0.2</fUpdateRate>
+			<Path>Art/Effects/fx_sword_hit_slash.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
 		</EffectInfo>
 		<EffectInfo>
 			<Type>EFFECT_RIFLEBLAST_FLAMES</Type>
