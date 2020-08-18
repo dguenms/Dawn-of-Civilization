@@ -2854,8 +2854,8 @@ def countRegionReligion(iReligion, lRegions):
 def findBestCityWith(iPlayer, filter, metric):
 	return cities.owner(iPlayer).where(filter).maximum(metric)
 	
-def countVassals(iPlayer, lPlayers=None, iReligion=-1):
-	return players.vassals(iPlayer).where(lambda p: not lPlayers or civ(iVassal) in lPlayers).where(lambda p: iReligion < 0 and player(p).getStateReligion == iReligion).count()
+def countVassals(iPlayer, lCivs=None, iReligion=-1):
+	return players.vassals(iPlayer).where(lambda p: not lCivs or civ(p) in lCivs).where(lambda p: iReligion < 0 or player(p).getStateReligion() == iReligion).count()
 	
 ### UHV HELP SCREEN ###
 
