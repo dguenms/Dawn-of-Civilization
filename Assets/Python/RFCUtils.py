@@ -600,8 +600,7 @@ def getBorderPlots(iPlayer, tTL, tBR, iDirection = DirectionTypes.NO_DIRECTION, 
 	
 # used: RFCUtils
 def getPlotNearCityInDirection(city, iDirection):
-	firstRing = plots.surrounding(city)
-	secondRing = plots.surrounding(city, radius=2).without(firstRing).where(lambda p: not p.isCity() and not p.isWater())
+	secondRing = plots.ring(city, radius=2).where(lambda p: not p.isCity() and not p.isWater() and not p.isUnit() and not p.isPeak())
 	
 	return secondRing.where(lambda p: estimate_direction(city, p) == iDirection).random()
 	
