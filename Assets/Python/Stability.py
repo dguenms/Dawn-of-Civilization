@@ -118,7 +118,8 @@ def checkSecedingCities(iGameTurn, iPlayer):
 	if lSecedingCities:
 		secedeCities(iPlayer, lSecedingCities)
 		data.setSecedingCities(iPlayer, cities.of([]))
-		
+
+
 def triggerCollapse(iPlayer):
 	# help overexpanding AI: collapse to core, unless fall date
 	if not player(iPlayer).isHuman():
@@ -367,13 +368,13 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		data.setStabilityLevel(iPlayer, iNewStabilityLevel)
 		
 	elif not bPositive:
-		# if remain on collapsing and stability does not improve, collapse ensues
-		if iNewStabilityLevel == iStabilityCollapsing:
-			if iStability <= data.players[iPlayer].iLastStability:
-				triggerCollapse(iPlayer)
-		
 		if iNewStabilityLevel < iStabilityLevel:
 			data.setStabilityLevel(iPlayer, iNewStabilityLevel)
+	
+		# if remain on collapsing and stability does not improve, collapse ensues
+		elif iNewStabilityLevel == iStabilityCollapsing:
+			if iStability <= data.players[iPlayer].iLastStability:
+				triggerCollapse(iPlayer)
 		
 	# update stability information
 	data.players[iPlayer].iLastStability = iStability
