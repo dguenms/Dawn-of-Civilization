@@ -2537,7 +2537,12 @@ class TestCity(TestLocation):
 		self.base_test(CyCity, (0, 0), city, gc.getMap().plot(0, 0))
 	
 	def test_city(self):
-		self.base_test(CyCity, (0, 0), city, self.city)
+		expected_city = self.city
+		
+		actual_city = city(self.city)
+		
+		assertType(self, actual_city, CyCity)
+		self.assertEqual(actual_city, expected_city)
 		
 	def test_invalid(self):
 		self.assertRaises(TypeError, city, 0, 0, 0)

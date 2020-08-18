@@ -578,6 +578,9 @@ def plot(*args):
 	
 	
 def city(*args):
+	if len(args) == 1 and isinstance(args[0], CyCity):
+		return args[0]
+
 	p = plot(*args)
 	if not p.isCity():
 		return None
@@ -1107,7 +1110,7 @@ class CityFactory:
 
 	def owner(self, identifier):
 		owner = player(identifier)
-		cities = _iterate(owner.firstCity, owner.nextCity, location)
+		cities = _iterate(owner.firstCity, owner.nextCity)
 		return Cities(cities)
 		
 	def all(self):
