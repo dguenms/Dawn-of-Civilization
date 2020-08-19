@@ -444,7 +444,7 @@ def makeUnit(iPlayer, iUnit, plot, iUnitAI = UnitAITypes.NO_UNITAI):
 
 def makeUnits(iPlayer, iUnit, plot, iNumUnits = 1, iUnitAI = UnitAITypes.NO_UNITAI):
 	if iNumUnits <= 0:
-		return
+		return CreatedUnits([])
 
 	x, y = location(plot)
 	
