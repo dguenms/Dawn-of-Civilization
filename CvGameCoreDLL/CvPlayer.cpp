@@ -2277,7 +2277,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 			{
 				if (pLoopUnit->getUnitInfo().getProductionCost() > 0)
 				{
-					if (!(pLoopUnit->isMilitaryHappiness()) || !(pLoopUnit->plot()->isCity()) || (pLoopUnit->plot()->plotCount(PUF_isMilitaryHappiness, -1, -1, getID()) > 1))
+					if (!(pLoopUnit->isMilitaryHappiness()) || !(pLoopUnit->plot()->isCity()) || (pLoopUnit->plot()->plotCount(PUF_isMilitaryHappiness, getID(), -1, getID()) > 1))
 					{
 						iValue = (10000 + GC.getGameINLINE().getSorenRandNum(1000, "Disband Unit"));
 

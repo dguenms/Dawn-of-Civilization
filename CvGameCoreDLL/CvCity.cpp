@@ -287,7 +287,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
-	changeMilitaryHappinessUnits(pPlot->plotCount(PUF_isMilitaryHappiness, (int)getOwnerINLINE())); // Leoreth: no military happiness for other players
+	changeMilitaryHappinessUnits(pPlot->plotCount(PUF_isMilitaryHappiness, getOwnerINLINE())); // Leoreth: no military happiness for other players
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
