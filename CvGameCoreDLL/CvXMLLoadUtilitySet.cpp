@@ -2582,6 +2582,10 @@ DllExport bool CvXMLLoadUtility::LoadPlayerOptions()
 	if (!CreateFXml())
 		return false;
 
+	// Leoreth: force logging and Python exceptions
+	gDLL->ChangeINIKeyValue("CONFIG", "HidePythonExceptions", "0");
+	gDLL->ChangeINIKeyValue("CONFIG", "LoggingEnabled", "1");
+
 	LoadGlobalClassInfo(GC.getPlayerOptionInfo(), "CIV4PlayerOptionInfos", "GameInfo", "Civ4PlayerOptionInfos/PlayerOptionInfos/PlayerOptionInfo", false);
 	FAssert(GC.getNumPlayerOptionInfos() == NUM_PLAYEROPTION_TYPES);
 
