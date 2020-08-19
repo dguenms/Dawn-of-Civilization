@@ -8834,16 +8834,16 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BYZANTINE_DROMON</Type>
-			<Button>Art/Units/Dromon/Dromon_Button.dds</Button>
-			<fScale>0.14</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<Button>Art/Units/Dromon/dromon_but.dds</Button>
+			<fScale>.14</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Dromon/wargalley.nif</NIF>
-			<KFM>Art/Units/Dromon/galley.kfm</KFM>
-			<SHADERNIF>Art/Units/Dromon/wargalley.nif</SHADERNIF>
+			<NIF>Art/Units/Dromon/dromon_Civ5.nif</NIF>
+			<KFM>Art/Units/Dromon/dromon_Civ5.kfm</KFM>
+			<SHADERNIF>Art/Units/Dromon/dromon_Civ5.nif</SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>1.0</fShadowScale>
 			</ShadowDef>
@@ -8856,13 +8856,12 @@
 				<fFadeStartTime>.2</fFadeStartTime>
 				<fFadeFalloff>0.35</fFadeFalloff>
 			</TrailDefinition>
-			<fBattleDistance>0.35</fBattleDistance>
+			<fBattleDistance>1.20</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
-			<fBankRate>.3</fBankRate>
-			<fExchangeAngle>25.0</fExchangeAngle>
-			<bActAsRanged>0</bActAsRanged>
+			<fBankRate>.2</fBankRate>
+			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>

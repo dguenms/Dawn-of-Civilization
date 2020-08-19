@@ -2624,5 +2624,15 @@
 			<Path>Art/Units/Dromon/Effect/firespray_sfx.nif</Path>
 			<bIsProjectile>0</bIsProjectile>
 		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FIRE_BOLT</Type>
+			<Description>Greek Fire for Dromon</Description>
+			<fScale>1.5</fScale>
+			<fUpdateRate>1</fUpdateRate>
+			<Path>Art/Units/Dromon/Fire_Bolt.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>275.0</fSpeed>
+			<fArcValue>0.75</fArcValue>
+		</EffectInfo>
 	</EffectInfos>
 </Civ4EffectInfos>
