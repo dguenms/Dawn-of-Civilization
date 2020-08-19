@@ -226,16 +226,19 @@ def onCivSpawn(iPlayer):
 			decrementStability(iOlderNeighbor)
 	
 def setStabilityLevel(iPlayer, iStabilityLevel):
+	if stability(iPlayer) == iStabilityLevel:
+		return
+
 	data.setStabilityLevel(iPlayer, iStabilityLevel)
 	
 	if iStabilityLevel == iStabilityCollapsing:
 		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSING_WARNING', color=iRed)
 	
 def incrementStability(iPlayer):
-	data.setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
+	setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
 	
 def decrementStability(iPlayer):
-	data.setStabilityLevel(iPlayer, max(iStabilityCollapsing, stability(iPlayer) - 1))
+	setStabilityLevel(iPlayer, max(iStabilityCollapsing, stability(iPlayer) - 1))
 	
 def getCrisisCountdown(iPlayer):
 	return data.players[iPlayer].iCrisisCountdown
@@ -365,11 +368,11 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
 	
 	if iNewStabilityLevel > iStabilityLevel:
-		data.setStabilityLevel(iPlayer, iNewStabilityLevel)
+		setStabilityLevel(iPlayer, iNewStabilityLevel)
 		
 	elif not bPositive:
 		if iNewStabilityLevel < iStabilityLevel:
-			data.setStabilityLevel(iPlayer, iNewStabilityLevel)
+			setStabilityLevel(iPlayer, iNewStabilityLevel)
 	
 		# if remain on collapsing and stability does not improve, collapse ensues
 		elif iNewStabilityLevel == iStabilityCollapsing:
@@ -1630,7 +1633,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	if bAskFlip and active() in lOwners:
 		rebellionPopup(iPlayer)
 		
-	data.setStabilityLevel(iPlayer, iStabilityStable)
+	setStabilityLevel(iPlayer, iStabilityStable)
 	
 	data.players[iPlayer].iPlagueCountdown = -10
 	clearPlague(iPlayer)
@@ -1720,7 +1723,7 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData = data.players[iPlayer]
 	
 	# set stability to at least the specified level
-	data.setStabilityLevel(iPlayer, max(iNewStabilityLevel, stability(iPlayer)))
+	setStabilityLevel(iPlayer, max(iNewStabilityLevel, stability(iPlayer)))
 
 	# prevent collapse if they were going to
 	playerData.iTurnsToCollapse = -1
