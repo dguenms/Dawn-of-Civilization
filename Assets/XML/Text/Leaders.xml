@@ -710,16 +710,16 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_ALEXANDER_II</Tag>
-		<English>Alexander II</English>
+		<Tag>TXT_KEY_LEADER_ALEXANDER_I</Tag>
+		<English>Alexander I</English>
 		<French>
-			<Text>Alexandre II</Text>
+			<Text>Alexandre I</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Alexander II.</German>
-		<Italian>Alexander II</Italian>
-		<Spanish>Alexander II</Spanish>
+		<German>Alexander I.</German>
+		<Italian>Alexander I</Italian>
+		<Spanish>Alexander I</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_PERON</Tag>

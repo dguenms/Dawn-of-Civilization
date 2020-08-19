@@ -39026,10 +39026,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_ALEXANDER_II</Type>
-			<Description>TXT_KEY_LEADER_ALEXANDER_II</Description>
-			<Civilopedia>TXT_KEY_LEADER_ALEXANDER_II_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_ALEXANDER_II</ArtDefineTag>
+			<Type>LEADER_ALEXANDER_I</Type>
+			<Description>TXT_KEY_LEADER_ALEXANDER_I</Description>
+			<Civilopedia>TXT_KEY_LEADER_ALEXANDER_I_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_ALEXANDER_I</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>3</iBasePeaceWeight>
@@ -39101,7 +39101,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_INDIVIDUALISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MANORIALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>

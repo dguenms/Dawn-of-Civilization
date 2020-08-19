@@ -567,12 +567,12 @@
 			<BackgroundKFM>Art/leaderheads/Franco/josef_stalin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_ALEXANDER_II</Type>
-			<Button>Art/Leaderheads/Alexander_II/nicholas_ii.dds</Button>
-			<NIF>Art/Leaderheads/Alexander_II/frederick_the_great.nif</NIF>
-			<KFM>Art/LeaderHeads/frederick_the_great/frederick_the_great.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Alexander_II/frederick_the_great_noshader.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/Alexander_II/frederick_the_great_bg.kfm</BackgroundKFM>
+			<Type>ART_DEF_LEADER_ALEXANDER_I</Type>
+			<Button>Art/Leaderheads/Alexander_I/alexander.dds</Button>
+			<NIF>Art/Leaderheads/Alexander_I/Jose_SanMartin.nif</NIF>
+			<KFM>Art/LeaderHeads/Alexander_I/Jose_SanMartin.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Alexander_I/Jose_SanMartin.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Alexander_I/Jose_SanMartin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CAVOUR</Type>

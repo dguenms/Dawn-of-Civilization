@@ -154,7 +154,7 @@
 		<Spanish>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_II_1</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_I_1</Tag>
 		<English>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</English>
 		<French>Bonjour. Je suis [OUR_NAME], empereur de [OUR_CIV_SHORT]. Et d&#233;diant tous mes efforts au bien-&#234;tre de mon peuple, je d&#233;fendrai l'id&#233;e de l'autocratie comme l'ont fait tous mes anc&#234;tres.</French>
 		<German>Gr&#252;&#223;e. Ich bin [OUR_NAME], Kaiser von [OUR_CIV_SHORT]. W&#228;hrend ich all meine Anstrengungen dem Wohlergehen meines Volkes widme, werde ich das Konzept der Autokratie besch&#252;tzen wie alle meine Vorv&#228;ter.</German>
@@ -266,7 +266,7 @@
 		<Spanish>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_II_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_I_1</Tag>
 		<English>Treachery, cowardice and lies are everywhere - and your nation is no exception.</English>
 		<French>La tra&#238;trise, la l&#226;chet&#233; et les mensonges sont partout - et votre nation ne fait pas exception.</French>
 		<German>Verrat, Feigheit und L&#252;gen sind &#252;berall - und Eure Nation ist keine Ausnahme.</German>

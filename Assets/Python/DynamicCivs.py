@@ -2136,7 +2136,7 @@ def leader(iPlayer):
 		if iEra >= iIndustrial:
 			if not bMonarchy: return iStalin
 			
-			return iAlexanderII
+			return iAlexanderI
 			
 		if iEra >= iRenaissance:
 			if year() >= year(1750): return iCatherine
