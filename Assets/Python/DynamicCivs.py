@@ -674,6 +674,11 @@ def onPeriodChange(iPlayer, iPeriod):
 		if iPeriod == iPeriodMorocco:
 			checkNameChange(iPlayer)
 			checkAdjectiveChange(iPlayer)
+			
+	if iCiv == iHolyRome:
+		if iPeriod == iPeriodAustria:
+			checkNameChange(iPlayer)
+			checkAdjectiveChange(iPlayer)
 	
 	if iPeriod == -1:
 		revertNameChange(iPlayer)
@@ -695,12 +700,6 @@ def checkTurn(iGameTurn):
 		for iPlayer in players.major():
 			checkName(iPlayer)
 			checkLeader(iPlayer)
-
-@handler("birth")
-def onSpawn(iPlayer):
-	if iPlayer == iGermany:
-		checkNameChange(slot(iHolyRome))
-		checkAdjectiveChange(slot(iHolyRome))
 
 		
 def checkName(iPlayer):
