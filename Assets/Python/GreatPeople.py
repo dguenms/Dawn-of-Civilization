@@ -1221,6 +1221,8 @@ iKorea : {
 		"fNa Hye-sok", # 20th
 		"Im Kwon-taek", # 20th
 		"Seo Taeji", # 20th
+		iDigital,
+		"Bong Joon-ho", # 21st
 	],
 	iGreatScientist : [
 		"Wonhyo", # 7th
@@ -3389,6 +3391,7 @@ iItaly : {
 	iGreatSpy : [
 		"Andrea Gritti", # 15th
 		"Petros Lantzas", # 16th
+		"fGiulia Tofana", # 17th
 		"Gaspar Graziani", # 17th
 		"Giacomo Casanova", # 18th
 		iGlobal,
