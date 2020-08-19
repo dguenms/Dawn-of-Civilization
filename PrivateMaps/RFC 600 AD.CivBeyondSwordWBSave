@@ -36369,6 +36369,21 @@ BeginPlot
 	x=93,y=27
 	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_GRASS
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=46, (Independent)
+		CityName=Anuradhapura
+		CityPopulation=2
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_JETAVANARAMAYA
+		ReligionType=RELIGION_BUDDHISM
+		Player46Culture=10, (Independent)
+	EndCity
 	PlotType=1
 EndPlot
 BeginPlot
