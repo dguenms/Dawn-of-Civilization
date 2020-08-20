@@ -1558,6 +1558,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	lOwners = []
 	dRelocatedUnits = {}
 	
+	# determine prevalent religion in the resurrection area
+	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
+	
 	for city in lCityList:
 		iOwner = city.getOwner()
 		pOwner = player(iOwner)
@@ -1622,7 +1625,6 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	makeUnits(iPlayer, getBestSiege(iPlayer), capital, iArmySize + iNumCities)
 	
 	# set state religion based on religions in the area
-	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
 	if iNewStateReligion >= 0:
 		pPlayer.setLastStateReligion(iNewStateReligion)
 	
