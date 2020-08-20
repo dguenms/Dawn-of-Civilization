@@ -490,6 +490,10 @@
 		<iDefineIntVal>30</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>GREAT_SPIES_THRESHOLD</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>BASE_SPY_SABOTAGE_COST</DefineName>
 		<iDefineIntVal>200</iDefineIntVal>
 	</Define>

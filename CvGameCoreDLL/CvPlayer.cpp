@@ -8972,7 +8972,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 // Leoreth
 int CvPlayer::greatSpyThreshold() const
 {
-	int iThreshold = ((GC.getDefineINT("GREAT_GENERALS_THRESHOLD") * std::max(0, (getGreatSpiesThresholdModifier() + 100))) / 100);
+	int iThreshold = ((GC.getDefineINT("GREAT_SPIES_THRESHOLD") * std::max(0, (getGreatSpiesThresholdModifier() + 100))) / 100);
 
 	iThreshold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGreatPeoplePercent();
 	iThreshold /= std::max(1, GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent());
