@@ -10665,6 +10665,20 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1);
 	}
 
+	// Leoreth: unhappiness decay modifier
+	if (kCivic.getUnhappinessDecayModifier() != 0)
+	{
+		for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
+		{
+			if (GC.getHurryInfo((HurryTypes)iI).isAnger() && canHurry((HurryTypes)iI))
+			{
+				iValue += AI_getHappinessWeight(3, 1) * getNumCities() * kCivic.getUnhappinessDecayModifier() / 100;
+			}
+		}
+
+		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1) * kCivic.getUnhappinessDecayModifier() / 100;
+	}
+
 	// Leoreth: enabled wonders with civic prereq
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
