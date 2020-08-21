@@ -2504,7 +2504,7 @@ iEngland : {
 		"John Stott", # 20th
 	],
 	iGreatArtist : [
-		u"Aelfric of Eynsham", # 10th
+		u"Ælfric of Eynsham", # 10th
 		"Geoffrey Chaucer", # 14th
 		"Thomas Malory", # 15th
 		iRenaissance,
@@ -4347,6 +4347,7 @@ iColombia : {
 		"Julio Mario Santo Domingo", # 20th
 		u"Carlos Ardila Lülle", # 20th
 		"Luis Carlos Sarmiento Angulo", # 20th
+		"Pablo Escobar", # 20th
 	],
 	iGreatEngineer : [
 		u"Carlos Albán", # 19th
