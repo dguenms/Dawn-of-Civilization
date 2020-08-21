@@ -166,7 +166,7 @@ def onCapitalMoved(city):
 			setPeriod(iVikings, getVikingPeriod(iOwner))
 	
 	if iOwnerCiv == iMoors:
-		if player(iOwner).getCurrentEra() >= iIndustrial and city.getRegionID() != iIberia:
+		if player(iOwner).getCurrentEra() >= iIndustrial and city.getRegionID() != rIberia:
 			setPeriod(iMoors, iPeriodMorocco)
 
 
