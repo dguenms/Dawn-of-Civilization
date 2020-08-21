@@ -39034,9 +39034,9 @@
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>3</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
-			<iWarmongerRespect>2</iWarmongerRespect>
+			<iWarmongerRespect>3</iWarmongerRespect>
 			<iEspionageWeight>110</iEspionageWeight>
-			<iRefuseToTalkWarThreshold>9</iRefuseToTalkWarThreshold>
+			<iRefuseToTalkWarThreshold>10</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
 			<iTechTradeKnownPercent>50</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
@@ -39048,12 +39048,12 @@
 			<iLimitedWarRand>90</iLimitedWarRand>
 			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
 			<iDogpileWarRand>50</iDogpileWarRand>
-			<iMakePeaceRand>40</iMakePeaceRand>
+			<iMakePeaceRand>20</iMakePeaceRand>
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>50</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>5</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>20</iBuildUnitProb>
+			<iBuildUnitProb>25</iBuildUnitProb>
 			<iBaseAttackOddsChange>1</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
@@ -39077,7 +39077,7 @@
 			<iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
 			<iDefensivePactAttitudeChangeLimit>2</iDefensivePactAttitudeChangeLimit>
 			<iShareWarAttitudeChange>1</iShareWarAttitudeChange>
-			<iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
+			<iShareWarAttitudeDivisor>6</iShareWarAttitudeDivisor>
 			<iShareWarAttitudeChangeLimit>3</iShareWarAttitudeChangeLimit>
 			<iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
 			<iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
@@ -39101,16 +39101,16 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_MANORIALISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DESPOTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -39460,7 +39460,7 @@
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
+					<iWeightModifier>30</iWeightModifier>
 				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
