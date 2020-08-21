@@ -6774,15 +6774,15 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission)
 {
 	int iExperience = GC.getEspionageMissionInfo(eMission).getBaseExperience();
-	int iSuccessChance = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
+	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
 
-	if (iSuccessChance >= 90)
+	if (iDifficulty <= 10)
 	{
 		iExperience /= 2;
 	}
-	else if (iSuccessChance < 80)
+	else if (iDifficulty > 20)
 	{
-		int iModifier = (80 - iSuccessChance) / 10; // +1 at <70, +3 at <50, +7 at <10
+		int iModifier = (iDifficulty - 20) / 10; // +1 at >20, +4 at >50, +8 at >90
 		iExperience *= (100 + iModifier * 50);
 	}
 
@@ -6793,7 +6793,7 @@ bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMi
 
 	iExperience /= 100;
 
-	log(CvWString::format(L"Spy experience for mission %s: success chance was %d, experience is %d", GC.getEspionageMissionInfo(eMission).getText(), iSuccessChance, iExperience));
+	log(CvWString::format(L"Spy experience for mission %s: difficulty was %d, experience is %d", GC.getEspionageMissionInfo(eMission).getText(), iDifficulty, iExperience));
 
 	changeExperience(iExperience);
 	testPromotionReady();
