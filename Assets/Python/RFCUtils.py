@@ -862,7 +862,8 @@ def getLifeExpectancyRating(iPlayer):
 # used: RFCUtils
 def getByzantineBriberyUnits(spy):
 	iTreasury = player(spy).getGold()
-	return units.at(spy).owner(iBarbarian).where(lambda unit: infos.unit(unit).getProductionCost() * 2 <= iTreasury)
+	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(spy).owner(iBarbarian)]
+	return [(unit, iCost) for unit, iCost in targets if iCost <= iTreasury]
 	
 # used: CvMainInterface
 def canDoByzantineBribery(spy):

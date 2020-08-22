@@ -401,7 +401,7 @@ def applyByzantineBribe(playerID, netUserData, popupReturn):
 	unit, iCost = targetList[iButton]
 	closest = closestCity(unit, iByzantiumPlayer)
 	
-	newUnit = makeUnit(iByzantiumPlayer, unit.getUnitType(), closest).first()
+	newUnit = makeUnit(iByzantiumPlayer, unit.getUnitType(), closest)
 	player(iByzantiumPlayer).changeGold(-iCost)
 	unit.kill(False, iByzantiumPlayer)
 	
