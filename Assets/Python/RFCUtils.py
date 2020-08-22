@@ -1277,13 +1277,26 @@ def getOwnerStateReligion(city, iPlayer):
 		return player(iOwner).getStateReligion()
 		
 	return -1
+	
+	
+def calculateReligionWeight(iReligion, area, iStateReligionPlayer):
+	cities = area.cities()
+	iWeight = religionCities = cities.religion(iReligion).count()
+	
+	if iStateReligionPlayer is not None:
+		iWeight += cities.where(lambda city: getOwnerStateReligion(city, iStateReligionPlayer) == iReligion).count()
+		
+	return iWeight
 
 
 def getPrevalentReligion(area, iStateReligionPlayer=None):
-	cities = area.cities()
 	lReligions = [iReligion for iReligion in range(iNumReligions) if not infos.religion(iReligion).isLocal()]
+	found = find_max(lReligions, lambda iReligion: calculateReligionWeight(iReligion, area, iStateReligionPlayer))
 	
-	return find_max(lReligions, lambda iReligion: cities.religion(iReligion).count() + cities.where(lambda city: iStateReligionPlayer is not None and getOwnerStateReligion(city, iStateReligionPlayer) == iReligion).count()).result
+	if found.value > 0:
+		return found.result
+		
+	return -1
 
 
 def isCurrentCapital(iPlayer, *names):
