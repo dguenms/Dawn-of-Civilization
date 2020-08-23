@@ -2128,6 +2128,11 @@ def checkReligiousGoal(iPlayer, iGoal):
 				
 				if capital and isBestCity(iPlayer, (capital.getX(), capital.getY()), cityTradeIncome):
 					return 1
+			
+			# Bon: control 50 peaks
+			elif paganReligion == "Bon":
+				if countControlledPeaks(iPlayer) >= 50:
+					return 1
 					
 			# Druidism: control 20 unimproved Forest or Marsh tiles
 			elif paganReligion == "Druidism":
@@ -2807,6 +2812,9 @@ def countControlledTerrain(iPlayer, iTerrain):
 def countControlledFeatures(iPlayer, iFeature, iImprovement):
 	return plots.all().owner(iPlayer).where(lambda p: p.getFeatureType() == iFeature and p.getImprovementType() == iImprovement).count()
 	
+def countControlledPeaks(iPlayer):
+	return plots.all().owner(iPlayer).where(lambda p: p.isPeak()).count()
+	
 def getGlobalTreasury():
 	iTreasury = 0
 
@@ -3080,6 +3088,10 @@ def getPaganGoalHelp(iPlayer):
 		pBestCity = getBestCity(iPlayer, (x, y), cityTradeIncome)
 		bBestCity = isBestCity(iPlayer, (x, y), cityTradeIncome)
 		return getIcon(bBestCity) + text("TXT_KEY_VICTORY_HIGHEST_TRADE_CITY", pBestCity.getName())
+		
+	elif paganReligion == "Bon":
+		iNumPeaks = countControlledPeaks(iPlayer)
+		return getIcon(iNumPeaks >= 50) + text("TXT_KEY_VICTORY_CONTROLLED_PEAKS", iNumPeaks, 50)
 		
 	elif paganReligion == "Druidism":
 		iCount = countControlledFeatures(iPlayer, iForest, -1) + countControlledFeatures(iPlayer, iMud, -1)

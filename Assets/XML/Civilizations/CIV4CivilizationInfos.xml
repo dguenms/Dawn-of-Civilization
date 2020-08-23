@@ -5413,8 +5413,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
+			<PaganReligionName>TXT_KEY_RELIGION_BON</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Bon.dds</PaganReligionButton>
 			<Identifier>TIB</Identifier>
 			<StartingYear>630</StartingYear>
 			<LoadingTimes>

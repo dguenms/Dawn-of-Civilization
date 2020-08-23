@@ -589,4 +589,16 @@
 		<Italian>Tengri</Italian>
 		<Spanish>Tengri</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_BON</Tag>
+		<English>Bon</English>
+		<French>
+			<Text>Bon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Bon</German>
+		<Italian>Bon</Italian>
+		<Spanish>Bon</Spanish>
+	</TEXT>
 </Civ4GameText>

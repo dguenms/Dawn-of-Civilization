@@ -3290,6 +3290,14 @@
 		<Spanish>Acquire eight ivory resources and six gem resources</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_BON</Tag>
+		<English>Control 50 peak tiles</English>
+		<French>Control 50 peak tiles</French>
+		<German>Kontrollieren Sie 50 Gipfelfelder</German>
+		<Italian>Control 50 peak tiles</Italian>
+		<Spanish>Control 50 peak tiles</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
 		<English>Don't allow more than half of your cities to have a religion</English>
 		<French>Ne pas permettre &#224; plus de la moiti&#233; de vos villes d'avoir une religion</French>
@@ -5297,5 +5305,13 @@
 		<German>Communism</German>
 		<Italian>Communism</Italian>
 		<Spanish>Communism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROLLED_PEAKS</Tag>
+		<English>Controlled Peaks: %d1 / %d2</English>
+		<French>Controlled Peaks: %d1 / %d2 </French>
+		<German>Kontrollierte Gipfel: %d1 / %d2</German>
+		<Italian>Controlled Peaks: %d1 / %d2</Italian>
+		<Spanish>Controlled Peaks: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>
