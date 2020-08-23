@@ -6213,6 +6213,17 @@ void CvCityAI::AI_doHurry(bool bForce)
 			iHurryAngerLength = hurryAngerLength((HurryTypes)iI);
 			iHurryPopulation = hurryPopulation((HurryTypes)iI);
 
+			// Leoreth: consider temp unhappiness decay modifier
+			if (GET_PLAYER(getOwnerINLINE()).getUnhappinessDecayModifier() <= -100)
+			{
+				break;
+			}
+			else
+			{
+				iHurryAngerLength *= 100;
+				iHurryAngerLength /= (100 + GET_PLAYER(getOwnerINLINE()).getUnhappinessDecayModifier());
+			}
+
 			iMinTurns = MAX_INT;
 			bEssential = false;
 			bGrowth = false;
