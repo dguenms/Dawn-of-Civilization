@@ -933,7 +933,6 @@ iPersia : {
 		"Tiribazus", # 4th BC
 		"Bagoi", # 4th BC
 		"Tiridat", # 1st
-		"Apursam", # 3rd
 		"Bozorgmehr", # 6th
 		"fPurandokht", # 7th
 		iMedieval,
