@@ -413,6 +413,7 @@ iChina : {
 		"Kang Sheng", # 20th
 		"fXu Lai", # 20th
 		"Li Bai", # 20th
+		"fZheng Pingru", # 20th
 	],
 },
 iGreece : {
@@ -2427,6 +2428,7 @@ iFrance : {
 	],
 	iGreatSpy : [
 		u"Bertrandon de la Broquière", # 15th
+		"fAntoinette de Maignelais", # 15th
 		iRenaissance,
 		"fCharlotte de Sauve", # 16th
 		u"fMarie Anne de La Trémoille", # 17th
@@ -3739,6 +3741,8 @@ iOttomans : {
 		"Petar Ovcarevic", # 16th
 		iGlobal,
 		u"Süleyman Askerî", # 20th
+		u"Mustafa Mümin Aksoy", # 20th
+		"Ahmet Esat Tomruk", # 20th
 		"fDespina Storch", # 20th
 	],
 },
@@ -3952,6 +3956,7 @@ iNetherlands : {
 		"Henri Winkelman", # 20th
 	],
 	iGreatSpy : [
+		"fSophie Harmansdochter", # 16th
 		"fEtta Palm d'Aelders", # 18th
 		iIndustrial,
 		"fJohanna Brandt", # 19th
@@ -4400,6 +4405,7 @@ iColombia : {
 		"Francisco de Paula Santander", # 19th
 	],
 	iGreatSpy :  [
+		"fPolicarpa Salavarrieta", # 19th
 		u"fManuela Sáenz", # 19th
 	]
 },
