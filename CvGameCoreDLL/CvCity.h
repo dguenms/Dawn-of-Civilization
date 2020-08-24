@@ -1073,6 +1073,7 @@ public:
 	int getDistanceTradeModifier(CvCity* pOtherCity) const;
 	int getCapitalTradeModifier(CvCity* pOtherCity) const;
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
+	int getVassalTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
 
 	bool canSpread(ReligionTypes eReligion, bool bMissionary = false) const;

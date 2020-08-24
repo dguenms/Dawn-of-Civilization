@@ -146,6 +146,14 @@
 		<Spanish>%D1_Mod%%: for trading with Defensive Pact partner</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_VASSAL</Tag>
+		<English>%D1_Mod%%: for trading with Vassal</English>
+		<French>%D1_Mod%%: commerce avec un Vassal</French>
+		<German>%D1_Mod%%: durch Handel mit einem Vasallen</German>
+		<Italian>%D1_Mod%%: for trading with Vassal</Italian>
+		<Spanish>%D1_Mod%%: for trading with Vassal</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DISTANCE</Tag>
 		<English>%D1%%: from City Distance</English>
 		<French>%D1%% : distance de la ville</French>
@@ -408,6 +416,14 @@
 		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsb&#252;ndnispartnern</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSAL_TRADE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Vassals</English>
+		<French>[ICON_BULLET]%D1_Mod%% de revenu pour les [ICON_TRADE] avec les vassaux</French>
+		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Vasallen</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Vassals</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Vassals</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>

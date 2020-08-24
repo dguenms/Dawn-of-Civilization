@@ -702,6 +702,7 @@
 	<ElementType name="iCoreFreeSpecialist" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iCapitalTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iDefensivePactTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iVassalTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bNoForeignTrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoForeignTradeModifier" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoCorporations" content="textOnly" dt:type="boolean"/>
@@ -919,6 +920,7 @@
 		<element type="iTradeRoutes" minOccurs="0"/>
 		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iVassalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iVassalCityCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iColonyCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCaptureGoldModifier" minOccurs="0"/> <!-- Leoreth -->

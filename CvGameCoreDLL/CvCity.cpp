@@ -10319,6 +10319,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 
+			// Leoreth: new modifier for trade routes with defensive pact partners
+			iModifier += getDefensivePactTradeModifier(pOtherCity);
+
+			// Leoreth: new modifier for trade routes with vassals
+			iModifier += getVassalTradeModifier(pOtherCity);
+
 			// Leoreth: Channel Tunnel effect
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
 			{
@@ -10334,9 +10340,6 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 		// Leoreth: new modifier for trade routes with capital
 		iModifier += getCapitalTradeModifier(pOtherCity);
-
-		// Leoreth: new modifier for trade routes with defensive pact partners
-		iModifier += getDefensivePactTradeModifier(pOtherCity);
 
 		// Leoreth: new culture level based modifier
 		iModifier += getCultureTradeRouteModifier() * getCultureLevel();
@@ -10362,6 +10365,16 @@ int CvCity::getDefensivePactTradeModifier(CvCity* pOtherCity) const
 	if (GET_TEAM(getTeam()).isDefensivePact(pOtherCity->getTeam()))
 	{
 		return GET_PLAYER(getOwner()).getDefensivePactTradeModifier();
+	}
+
+	return 0;
+}
+
+int CvCity::getVassalTradeModifier(CvCity* pOtherCity) const
+{
+	if (GET_TEAM(pOtherCity->getTeam()).isVassal(getTeam()))
+	{
+		return GET_PLAYER(getOwner()).getVassalTradeModifier();
 	}
 
 	return 0;

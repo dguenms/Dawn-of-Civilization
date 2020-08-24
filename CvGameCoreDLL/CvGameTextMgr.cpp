@@ -7521,6 +7521,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER", GC.getCivicInfo(eCivic).getDefensivePactTradeModifier()));
 	}
 
+	// Leoreth: vassal trade modifier
+	if (GC.getCivicInfo(eCivic).getVassalTradeModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_TRADE_MODIFIER", GC.getCivicInfo(eCivic).getVassalTradeModifier()));
+	}
+
 	//	No Corporations
 	if (GC.getCivicInfo(eCivic).isNoCorporations())
 	{
@@ -19855,6 +19862,14 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				{
 					szBuffer.append(NEWLINE);
 					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_DEFENSIVE_PACT", iNewMod));
+					iModifier += iNewMod;
+				}
+
+				iNewMod = pCity->getVassalTradeModifier(pOtherCity);
+				if (0 != iNewMod)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_VASSAL", iNewMod));
 					iModifier += iNewMod;
 				}
 			}

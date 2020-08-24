@@ -528,6 +528,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iTradeRoutes = 0;
 	m_iCapitalTradeModifier= 0; // Leoreth
 	m_iDefensivePactTradeModifier = 0; // Leoreth
+	m_iVassalTradeModifier = 0; // Leoreth
 	m_iCapitalCommerce = 0; // Leoreth
 	m_iVassalCityCommerce = 0; // Leoreth
 	m_iColonyCommerce = 0; // Leoreth
@@ -10845,6 +10846,25 @@ void CvPlayer::changeDefensivePactTradeModifier(int iChange)
 
 
 // Leoreth
+int CvPlayer::getVassalTradeModifier() const
+{
+	return m_iVassalTradeModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeVassalTradeModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iVassalTradeModifier += iChange;
+
+		updateTradeRoutes();
+	}
+}
+
+
+// Leoreth
 int CvPlayer::getVassalCityCommerce() const
 {
 	return m_iVassalCityCommerce;
@@ -18095,6 +18115,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
+	changeVassalTradeModifier(GC.getCivicInfo(eCivic).getVassalTradeModifier() * iChange); // Leoreth
 	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
 	changeColonyCommerce(GC.getCivicInfo(eCivic).getColonyCommerce() * iChange); // Leoreth
 	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
@@ -18411,7 +18432,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 8
+	// Leoreth: using flag = 9
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18502,6 +18523,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTradeRoutes);
 	pStream->Read(&m_iCapitalTradeModifier); // Leoreth
 	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
+	if (uiFlag >= 9) pStream->Read(&m_iVassalTradeModifier); // Leoreth
 	pStream->Read(&m_iCapitalCommerce); // Leoreth
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
 	pStream->Read(&m_iColonyCommerce); // Leoreth
@@ -18958,7 +18980,11 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 8; // Leoreth: 5 for no resistance and no temporary unhappiness, 6 for unhappiness decay modifier, 7 for periods, 8 for initial and last birth turn
+	uint uiFlag = 9; // Leoreth: 5 for no resistance and no temporary unhappiness, 
+					 // 6 for unhappiness decay modifier, 
+					 // 7 for periods, 
+					 // 8 for initial and last birth turn
+					 // 9 for vassal trade modifier
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19047,6 +19073,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTradeRoutes);
 	pStream->Write(m_iCapitalTradeModifier); // Leoreth
 	pStream->Write(m_iDefensivePactTradeModifier); // Leoreth
+	pStream->Write(m_iVassalTradeModifier); // Leoreth
 	pStream->Write(m_iCapitalCommerce); // Leoreth
 	pStream->Write(m_iVassalCityCommerce); // Leoreth
 	pStream->Write(m_iColonyCommerce); // Leoreth

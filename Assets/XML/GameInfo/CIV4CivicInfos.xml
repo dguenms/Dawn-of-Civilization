@@ -1007,12 +1007,8 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bMilitaryFoodProduction>1</bMilitaryFoodProduction>
+			<iVassalTradeModifier>50</iVassalTradeModifier>
 			<iVassalCityCommerce>1</iVassalCityCommerce>
-			<TradeYieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>25</iYield>
-			</TradeYieldModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>

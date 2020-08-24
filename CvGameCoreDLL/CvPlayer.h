@@ -635,6 +635,10 @@ public:
 	void changeDefensivePactTradeModifier(int iChange);
 
 	// Leoreth
+	int getVassalTradeModifier() const;
+	void changeVassalTradeModifier(int iChange);
+
+	// Leoreth
 	int getVassalCityCommerce() const;
 	void changeVassalCityCommerce(int iChange);
 
@@ -1453,6 +1457,7 @@ protected:
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
