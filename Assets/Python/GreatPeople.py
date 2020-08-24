@@ -753,6 +753,9 @@ iCarthage : {
 		"Carthalo", # 3rd BC
 		"Maharbal", # 2nd BC
 	],
+	iGreatSpy : [
+		"Aristo", # 3rd BC
+	],
 },
 iPolynesia : {
 	iGreatProphet : [
@@ -838,6 +841,7 @@ iPersia : {
 		"Muhammad-Taqi Mesbah-Yazdi", # 20th
 	],
 	iGreatArtist : [
+		"Sarkash", # 7th
 		"Pahlbod", # 7th
 		"fNagisa", # 7th
 		"Bamshad", # 7th
@@ -904,6 +908,7 @@ iPersia : {
 	iGreatEngineer : [
 		"Artakhshathra", # 4th BC
 		"Bahram", # 3rd
+		"Mihr Narseh", # 5th
 		"Sanimar", # 6th
 		iMedieval,
 		"Naubakht", # 8th or 9th
@@ -927,6 +932,7 @@ iPersia : {
 		"Tiribazus", # 4th BC
 		"Bagoi", # 4th BC
 		"Tiridat", # 1st
+		"Apursam", # 3rd
 		"Bozorgmehr", # 6th
 		"fPurandokht", # 7th
 		iMedieval,
@@ -961,6 +967,17 @@ iPersia : {
 		"Muhammad-Husayn Ayrom", # 20th
 		"Ali-Reza Asgari", # 20th
 		"Mohammad Ali Jafari", # 20th
+	],
+	iGreatSpy : [
+		"Mihr Narseh", # 5th
+		"Yazdgushnasp", # 6th
+		"Fariburz", # 6th
+		iMedieval,
+		"Hassan-i Sabbah", # 11th
+		iGlobal,
+		"Teymur Bakhtiar", # 20th
+		"Mansur Rafizadeh", # 20th
+		"Qasem Soleimani", # 20th
 	],
 },
 iRome : {
@@ -1026,6 +1043,12 @@ iRome : {
 		"fAgrippina", # 1st AD
 		"Hadrianus", # 2nd
 		"fAlbia Dominica", # 4th AD
+	],
+	iGreatSpy : [
+		"Gaius Flavius Fimbria", # 1st BC
+		"fLocusta", # 1st AD
+		"Lucius Blassius Nigellio", # 3rd
+		"Paulus Catena", # 4th
 	],
 },
 iMaya : {
@@ -1271,7 +1294,6 @@ iKorea : {
 		"Kim Swoo-geun", # 20th
 	],
 	iGreatStatesman : [
-		iMedieval,
 		"fSeondeok", # 7th
 		"Choe Chiwon", # 9th
 		"Seo Hui", # 10th
@@ -1403,6 +1425,13 @@ iByzantium : {
 		"Nikephoros Bryennios", # 12th
 		"Andronikos Kontostephanos", # 12th
 		"Alexios Strategopoulos", # 13th
+	],
+	iGreatSpy : [
+		"Palladius", # 5th
+		"fTheodora", # 6th
+		"Staurakios", # 8th
+		"Samonas", # 9th
+		"Nikolaos", # 10th
 	],
 },
 iJapan : {
@@ -1782,7 +1811,7 @@ iTurks : {
 		u"Istämi", # 6th
 		"Ishbara Qaghan", # 6th
 		"Ashina Simo", # 7th
-		"Nizam al-Mulk", # 11th
+		"Nizam al-Mulk", # 11th (also Persian)
 		"fTerken Khatun", # 11th
 		"Aq Sunqur al-Hajib", # 11th
 		"Abd-al-Razzaq Samarqandi", # 15th
@@ -1902,7 +1931,8 @@ iArabia : {
 		"Abd al-Karim Qasim", # 20th
 	],
 	iGreatSpy : [
-		"Hassan-i Sabbah", # 11th
+		"fSitt al-Mulk", # 11th
+		"Hassan-i Sabbah", # 11th (also Persian)
 		"Rashid ad-Din Sinan", # 12th
 		iGlobal, 
 		"Ali Hassan al-Majid", # 20th
@@ -2243,6 +2273,7 @@ iSpain : {
 iFrance : {
 	iGreatProphet : [
 		u"Pierre Abélard", # 12th
+		u"Pierre Vaudès", # 12th
 		"Louis IX", # 13th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
