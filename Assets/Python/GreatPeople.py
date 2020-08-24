@@ -1428,7 +1428,7 @@ iByzantium : {
 		"Alexios Strategopoulos", # 13th
 	],
 	iGreatSpy : [
-		"Palladius", # 5th
+		"Palladios", # 5th
 		"fTheodora", # 6th
 		"Staurakios", # 8th
 		"Samonas", # 9th
