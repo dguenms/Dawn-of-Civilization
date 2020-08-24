@@ -406,6 +406,7 @@ iChina : {
 		"Kang Sheng", # 20th
 		"fXu Lai", # 20th
 		"Li Bai", # 20th
+		"fZheng Pingru", # 20th
 	],
 },
 iGreece : {
@@ -746,6 +747,9 @@ iCarthage : {
 		"Carthalo", # 3rd BC
 		"Maharbal", # 2nd BC
 	],
+	iGreatSpy : [
+		"Aristo", # 3rd BC
+	],
 },
 iPolynesia : {
 	iGreatProphet : [
@@ -831,6 +835,7 @@ iPersia : {
 		"Muhammad-Taqi Mesbah-Yazdi", # 20th
 	],
 	iGreatArtist : [
+		"Sarkash", # 7th
 		"Pahlbod", # 7th
 		"fNagisa", # 7th
 		"Bamshad", # 7th
@@ -897,6 +902,7 @@ iPersia : {
 	iGreatEngineer : [
 		"Artakhshathra", # 4th BC
 		"Bahram", # 3rd
+		"Mihr Narseh", # 5th
 		"Sanimar", # 6th
 		iMedieval,
 		"Naubakht", # 8th or 9th
@@ -954,6 +960,17 @@ iPersia : {
 		"Muhammad-Husayn Ayrom", # 20th
 		"Ali-Reza Asgari", # 20th
 		"Mohammad Ali Jafari", # 20th
+	],
+	iGreatSpy : [
+		"Mihr Narseh", # 5th
+		"Yazdgushnasp", # 6th
+		"Fariburz", # 6th
+		iMedieval,
+		"Hassan-i Sabbah", # 11th (also Arabian)
+		iGlobal,
+		"Teymur Bakhtiar", # 20th
+		"Mansur Rafizadeh", # 20th
+		"Qasem Soleimani", # 20th
 	],
 },
 iRome : {
@@ -1019,6 +1036,12 @@ iRome : {
 		"fAgrippina", # 1st AD
 		"Hadrianus", # 2nd
 		"fAlbia Dominica", # 4th AD
+	],
+	iGreatSpy : [
+		"Gaius Flavius Fimbria", # 1st BC
+		"fLocusta", # 1st AD
+		"Lucius Blassius Nigellio", # 3rd
+		"Paulus Catena", # 4th
 	],
 },
 iMaya : {
@@ -1266,7 +1289,6 @@ iKorea : {
 		"Kim Swoo-geun", # 20th
 	],
 	iGreatStatesman : [
-		iMedieval,
 		"fSeondeok", # 7th
 		"Choe Chiwon", # 9th
 		"Seo Hui", # 10th
@@ -1398,6 +1420,13 @@ iByzantium : {
 		"Nikephoros Bryennios", # 12th
 		"Andronikos Kontostephanos", # 12th
 		"Alexios Strategopoulos", # 13th
+	],
+	iGreatSpy : [
+		"Palladios", # 5th
+		"fTheodora", # 6th
+		"Staurakios", # 8th
+		"Samonas", # 9th
+		"Nikolaos", # 10th
 	],
 },
 iJapan : {
@@ -1777,7 +1806,7 @@ iTurks : {
 		u"Istämi", # 6th
 		"Ishbara Qaghan", # 6th
 		"Ashina Simo", # 7th
-		"Nizam al-Mulk", # 11th
+		"Nizam al-Mulk", # 11th (also Persian)
 		"fTerken Khatun", # 11th
 		"Aq Sunqur al-Hajib", # 11th
 		"Abd-al-Razzaq Samarqandi", # 15th
@@ -1897,7 +1926,8 @@ iArabia : {
 		"Abd al-Karim Qasim", # 20th
 	],
 	iGreatSpy : [
-		"Hassan-i Sabbah", # 11th
+		"fSitt al-Mulk", # 11th
+		"Hassan-i Sabbah", # 11th (also Persian)
 		"Rashid ad-Din Sinan", # 12th
 		iGlobal, 
 		"Ali Hassan al-Majid", # 20th
@@ -2238,6 +2268,7 @@ iSpain : {
 iFrance : {
 	iGreatProphet : [
 		u"Pierre Abélard", # 12th
+		u"Pierre Vaudès", # 12th
 		"Louis IX", # 13th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
@@ -2391,6 +2422,7 @@ iFrance : {
 	],
 	iGreatSpy : [
 		u"Bertrandon de la Broquière", # 15th
+		"fAntoinette de Maignelais", # 15th
 		iRenaissance,
 		"fCharlotte de Sauve", # 16th
 		u"fMarie Anne de La Trémoille", # 17th
@@ -3704,6 +3736,8 @@ iOttomans : {
 		"Petar Ovcarevic", # 16th
 		iGlobal,
 		u"Süleyman Askerî", # 20th
+		u"Mustafa Mümin Aksoy", # 20th
+		"Ahmet Esat Tomruk", # 20th
 		"fDespina Storch", # 20th
 	],
 },
@@ -3917,6 +3951,7 @@ iNetherlands : {
 		"Henri Winkelman", # 20th
 	],
 	iGreatSpy : [
+		"fSophie Harmansdochter", # 16th
 		"fEtta Palm d'Aelders", # 18th
 		iIndustrial,
 		"fJohanna Brandt", # 19th
@@ -4343,6 +4378,7 @@ iColombia : {
 		"Julio Mario Santo Domingo", # 20th
 		u"Carlos Ardila Lülle", # 20th
 		"Luis Carlos Sarmiento Angulo", # 20th
+		"Pablo Escobar", # 20th
 	],
 	iGreatEngineer : [
 		u"Carlos Albán", # 19th
@@ -4364,6 +4400,7 @@ iColombia : {
 		"Francisco de Paula Santander", # 19th
 	],
 	iGreatSpy :  [
+		"fPolicarpa Salavarrieta", # 19th
 		u"fManuela Sáenz", # 19th
 	]
 },
