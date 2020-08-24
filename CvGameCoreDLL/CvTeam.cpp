@@ -4069,7 +4069,7 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 	}
 
 	// Porcelain Tower effect: no open borders required for trade
-	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
+	if (!GET_TEAM(eIndex).isMinorCiv() && GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
 	{
 		return true;
 	}
