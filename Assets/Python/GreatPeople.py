@@ -974,7 +974,7 @@ iPersia : {
 		"Yazdgushnasp", # 6th
 		"Fariburz", # 6th
 		iMedieval,
-		"Hassan-i Sabbah", # 11th
+		"Hassan-i Sabbah", # 11th (also Arabian)
 		iGlobal,
 		"Teymur Bakhtiar", # 20th
 		"Mansur Rafizadeh", # 20th
