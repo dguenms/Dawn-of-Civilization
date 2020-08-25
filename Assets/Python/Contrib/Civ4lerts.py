@@ -109,6 +109,7 @@ class Civ4lerts:
 		cityEvent.add(CityGrowth(eventManager))
 		cityEvent.add(CityHealthiness(eventManager))
 		cityEvent.add(CityHappiness(eventManager))
+		cityEvent.add(TemporaryUnhappinessDecay(eventManager))
 		cityEvent.add(CanHurryPopulation(eventManager))
 		cityEvent.add(CanHurryGoldUnits(eventManager))
 		cityEvent.add(CanHurryGoldBuildings(eventManager))
@@ -587,6 +588,60 @@ class CityHealthiness(AbstractCityTestAlert):
 		else:
 			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HEALTHY", (city.getName(), )),
 					HEALTHY_ICON)
+
+# Leoreth
+class TemporaryUnhappinessDecay(AbstractCityTestAlert):
+	"""
+	Displays an event when a city goes from happy to angry or vice versa.
+	
+	Test: True if the city is unhappy.
+	"""
+	def __init__(self, eventManager):
+		AbstractCityTestAlert.__init__(self, eventManager)
+	
+	def init(self):
+		AbstractCityAlert.init(self)
+		self.kiTempHappy = gc.getDefineINT("TEMP_HAPPY")
+	
+	def _passesTest(self, city):
+		if city.getHurryAngerTimer() > 0:
+			return False
+		if city.getConscriptAngerTimer() > 0:
+			return False
+		if city.getDefyResolutionAngerTimer() > 0:
+			return False
+		return True
+
+	def _willPassTest(self, city):
+		if city.getHurryAngerTimer() > 0 and city.getHurryAngerTimer() % city.flatHurryAngerLength() != 1:
+			return False
+		if city.getConscriptAngerTimer() > 0 and city.getConscriptAngerTimer() % city.flatConscriptAngerLength() != 1:
+			return False
+		if city.getDefyResolutionAngerTimer() > 0 and city.getDefyResolutionAngerTimer() % city.flatDefyResolutionAngerLength() != 1:
+			return False
+		return True
+	
+	def _isShowAlert(self, passes):
+		return Civ4lertsOpt.isShowCityHappinessAlert()
+	
+	def _getAlertMessageIcon(self, city, passes):
+		if (passes):
+			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPINESS_DECAYED", (city.getName(), )),
+					UNHAPPY_ICON)
+		else:
+			BugUtil.debug("%s did not pass unhappiness decay test, ignoring", city.getName())
+			return (None, None)
+	
+	def _isShowPendingAlert(self, passes):
+		return Civ4lertsOpt.isShowCityPendingHappinessAlert()
+
+	def _getPendingAlertMessageIcon(self, city, passes):
+		if (passes):
+			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPINESS_DECAY", (city.getName(), )),
+					UNHAPPY_ICON)
+		else:
+			BugUtil.debug("%s did not pass occupation test, ignoring", city.getName())
+			return (None, None)
 
 # Occupation
 

@@ -480,6 +480,22 @@
 		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto feliz.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPINESS_DECAYED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die tempor&#228;re Unzufriedenheit in %s1 ist abgelaufen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPINESS_DECAY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die tempor&#228;re Unzufriedenheit in %s1 wird n&#228;chste Runde verschwinden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_GROWTH</Tag>
 		<English>[COLOR_YIELD_FOOD]%s1 has grown to size %d2.[COLOR_REVERT]</English>
 		<French>[COLOR_YIELD_FOOD]%s1 a grandi jusqu'&#224; la taille %d2.[COLOR_REVERT]</French>
