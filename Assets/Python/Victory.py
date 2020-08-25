@@ -336,7 +336,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# second goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
 		if iGameTurn == year(320):
 			bSpain = cities.normal(iSpain).owner(iPlayer) >= 2
-			bFrance = cities.rectangle(tFranceTL, dNormalArea[iFrance][1]).owner(iPlayer) >= 2
+			bFrance = cities.rectangle(tGaul).owner(iPlayer) >= 2
 			bEngland = cities.core(iEngland).owner(iPlayer) >= 1
 			bCarthage = cities.rectangle(tAfrica).owner(iPlayer) >= 2
 			bByzantium = cities.core(iByzantium).owner(iPlayer) >= 4
