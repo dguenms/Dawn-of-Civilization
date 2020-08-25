@@ -16,7 +16,7 @@ bRepeat = False
 iSelectedLeader = -1
 
 from StoredData import data
-from Consts import *
+from Core import *
 import Congresses as cong
 
 class WBGameDataScreen:
@@ -275,11 +275,9 @@ class WBGameDataScreen:
 		iRow = iNumRows + 3
 		for iCiv in lSecondaryCivs:
 			bEnabled = data.isCivEnabled(iCiv)
-			bDefault = True
-			if iCiv in [iHarappa, iPolynesia]:
-				bDefault = False
+			bDefault = iCiv not in [iHarappa, iPolynesia]
 
-			sText = self.colorText(gc.getPlayer(iCiv).getCivilizationShortDescription(0), bEnabled)
+			sText = self.colorText(infos.civ(iCiv).getText(), bEnabled)
 			screen.setTableText("WBGameOptions", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, 1000+iCiv, CvUtil.FONT_LEFT_JUSTIFY)
 			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
 			screen.setTableText("WBGameOptions", 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
@@ -435,7 +433,7 @@ class WBGameDataScreen:
 				# Enabling/disabling secondary civs
 				if iGameOption < 2000:
 					iItem = iGameOption - 1000
-					data.setCivEnabled(civ(iItem), not data.isCivEnabled(civ(iItem)))
+					data.setCivEnabled(iItem, not data.isCivEnabled(iItem))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
 					data.bIgnoreAI = not data.bIgnoreAI
