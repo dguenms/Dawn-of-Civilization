@@ -221,4 +221,12 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_CAMBODIA</Tag>
+		<English>Cambodia</English>
+		<French>Cambodia</French>
+		<German>Cambodia</German>
+		<Italian>Cambodia</Italian>
+		<Spanish>Cambodia</Spanish>
+	</TEXT>
 </Civ4GameText>

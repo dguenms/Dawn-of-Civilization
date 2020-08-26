@@ -1001,6 +1001,9 @@ def specificName(iPlayer):
 			
 		if isCurrentCapital(iPlayer, "Dali"):
 			return "TXT_KEY_CIV_KHMER_NANZHAO"
+		
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_KHMER_CAMBODIA"
 			
 	elif iCiv == iIndonesia:
 		if iReligion == iIslam:
@@ -1760,6 +1763,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iCiv == iKhmer:
 		if iEra <= iRenaissance and isCurrentCapital(iPlayer, "Angkor"):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if iEra >= iIndustrial:
+			return "TXT_KEY_KINGDOM_OF"
 			
 		if isCurrentCapital(iPlayer, "Hanoi"):
 			return "TXT_KEY_CIV_KHMER_DAI_VIET"
