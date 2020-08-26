@@ -1212,6 +1212,9 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
 			
 	elif iCiv == iGreece:
+		if iEra == iAncient:
+			return "TXT_KEY_CIV_GREECE_MYCENAEAN"
+	
 		if not bCityStates and bEmpire and iEra <= iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIAN"
 			
