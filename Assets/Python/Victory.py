@@ -2315,6 +2315,10 @@ def cityHappiness(city):
 	
 	return iHappiness
 	
+def citySettledGreatPeople(city):
+	if not city: return 0
+	return sum(city.getFreeSpecialistCount(iGreatPerson) for iGreatPerson in lGreatPeople)
+	
 def getBestPlayer(iPlayer, function):
 	return players.major().alive().maximum(lambda p: (function(p), int(p == iPlayer)))
 	
@@ -3105,6 +3109,20 @@ def getPaganGoalHelp(iPlayer):
 	elif paganReligion == "Mazdaism":
 		iCount = pPlayer.getNumAvailableBonuses(iIncense)
 		return getIcon(iCount >= 6) + text("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", infos.bonus(iIncense).getText().lower(), iCount, 6)
+	
+	elif paganReligion == "Mugyo":
+		x, y = 0, 0
+		capital = pPlayer.getCapitalCity()
+		
+		if capital:
+			x, y = capital.getX(), capital.getY()
+		pBestCity = getBestCity(iPlayer, (x, y), citySettledGreatPeople)
+		bBestCity = isBestCity(iPlayer, (x, y), citySettledGreatPeople)
+		sBestCity = "(none)"
+		if pBestCity:
+			sBestCity = pBestCity.getName()
+			
+		return getIcon(bBestCity) + text("TXT_KEY_VICTORY_CITY_WITH_MOST_GREAT_PEOPLE", sBestCity)
 	
 	elif paganReligion == "Olympianism":
 		iCount = countReligionWonders(iPlayer, -1)

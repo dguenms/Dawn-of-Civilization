@@ -3171,8 +3171,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KOREA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
+			<PaganReligionName>TXT_KEY_RELIGION_MUGYO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Mugyo.dds</PaganReligionButton>
 			<Identifier>KOR</Identifier>
 			<StartingYear>-50</StartingYear>
 			<LoadingTimes>
@@ -3218,7 +3218,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+					<BuildingType>BUILDING_MUGYO_SADANG</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

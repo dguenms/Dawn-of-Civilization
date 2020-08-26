@@ -59,6 +59,7 @@
 	<symbol id="inti"/>
 	<symbol id="tengri"/>
 	<symbol id="bon"/>
+	<symbol id="mugyo"/>
 	<symbol id="citizen" from="POWER" offset="1"/>
 	<symbol id="greatgeneral" name="GREAT_GENERAL"/>
 	

@@ -3210,6 +3210,14 @@
 		<Spanish>Acquire six incense resources</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_MUGYO</Tag>
+		<English>Have more settled great people in your capital than any other city in the world</English>
+		<French>Have more settled great people in your capital than any other city in the world</French>
+		<German>Have more settled great people in your capital than any other city in the world</German>
+		<Italian>Have more settled great people in your capital than any other city in the world</Italian>
+		<Spanish>Have more settled great people in your capital than any other city in the world</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_OLYMPIANISM</Tag>
 		<English>Control ten wonders that require no state religion</English>
 		<French>Contr&#244;ler dix merveilles qui requi&#232;rent de ne pas avoir de religion d'&#201;tat</French>
@@ -3680,6 +3688,14 @@
 		<German>City with the most wonders: %s1_city</German>
 		<Italian>City with the most wonders: %s1_city</Italian>
 		<Spanish>City with the most wonders: %s1_city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_WITH_MOST_GREAT_PEOPLE</Tag>
+		<English>City with the most settled great people: %s1_city</English>
+		<French>City with the most settled great people: %s1_city</French>
+		<German>City with the most settled great people: %s1_city</German>
+		<Italian>City with the most settled great people: %s1_city</Italian>
+		<Spanish>City with the most settled great people: %s1_city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_COLONIAL_RESOURCES</Tag>

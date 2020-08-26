@@ -601,4 +601,16 @@
 		<Italian>Bon</Italian>
 		<Spanish>Bon</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_MUGYO</Tag>
+		<English>Mugyo</English>
+		<French>
+			<Text>Mugyo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Mugyo</German>
+		<Italian>Mugyo</Italian>
+		<Spanish>Mugyo</Spanish>
+	</TEXT>
 </Civ4GameText>

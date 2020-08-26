@@ -2814,6 +2814,22 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of Ethiopia.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUGYO_SADANG</Tag>
+		<English>Sadang</English>
+		<French>Sadang</French>
+		<German>Sadang</German>
+		<Italian>Sadang</Italian>
+		<Spanish>Sadang</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT] national wonder.</English>
 		<French>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT] national wonder.</French>
