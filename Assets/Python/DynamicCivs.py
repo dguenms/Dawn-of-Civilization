@@ -1207,6 +1207,9 @@ def specificAdjective(iPlayer):
 			
 		if isCurrentCapital(iPlayer, "Ninua", "Kalhu"):
 			return "TXT_KEY_CIV_BABYLONIA_ASSYRIAN"
+		
+		if getColumn(iPlayer) == 1:
+			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
 			
 	elif iCiv == iGreece:
 		if not bCityStates and bEmpire and iEra <= iClassical:
