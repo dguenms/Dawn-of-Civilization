@@ -1323,8 +1323,15 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ARABIA_ABBASID"
 			
 	elif iCiv == iMoors:
-		if bEmpire and iEra <= iRenaissance:
-			return "TXT_KEY_CIV_MOORS_ALMOHAD"
+		if bEmpire:
+			if iEra == iMedieval:
+				if bTheocracy:
+					return "TXT_KEY_CIV_MOORS_ALMORAVID"
+					
+				return "TXT_KEY_CIV_MOORS_ALMOHAD"
+				
+			elif iEra == iRenaissance:
+				return "TXT_KEY_CIV_MOORS_SAADI"
 			
 		if not capital in plots.rectangle(tIberia):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"

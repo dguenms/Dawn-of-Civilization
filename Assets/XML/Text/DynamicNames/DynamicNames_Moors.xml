@@ -154,6 +154,22 @@
 		<Spanish>Almohad</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ALMORAVID</Tag>
+		<English>Almoravid</English>
+		<French>Almoravid</French>
+		<German>Almoravid</German>
+		<Italian>Almoravid</Italian>
+		<Spanish>Almoravid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SAADI</Tag>
+		<English>Saadi</English>
+		<French>Saadi</French>
+		<German>Saadi</German>
+		<Italian>Saadi</Italian>
+		<Spanish>Saadi</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_MOROCCO</Tag>
 		<English>Morocco</English>
 		<French>
