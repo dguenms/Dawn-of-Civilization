@@ -58,19 +58,6 @@ def mongolUP(iOwner, iPlayer, city, bConquest):
 	if city.getPopulation() >= 4:
 		message(slot(iMongols), 'TXT_KEY_UP_MONGOL_HORDE')
 
-@handler("cityBuilt")
-def ottomanUP(city):
-	iOwner = city.getOwner()
-	for plot in plots.surrounding(city, radius=2):
-		if at(plot, city):
-			convertPlotCulture(plot, iOwner, 51, False)
-		elif plot.isCity():
-			continue
-		elif distance(plot, city) == 1:
-			convertPlotCulture(plot, iOwner, 80, True)
-		else:
-			if plot.getOwner() == city.getPreviousOwner():
-				convertPlotCulture(plot, iOwner, 20, False)
 
 @handler("combatResult")
 def vikingUP(winningUnit, losingUnit):
