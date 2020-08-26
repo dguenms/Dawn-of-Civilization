@@ -93,6 +93,7 @@ dCapitals = {
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
+	iMali : ["Gao"],
 	iItaly : ["Fiorenza", "Roma"],
 	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
 	iArabia : ["Dimashq"],

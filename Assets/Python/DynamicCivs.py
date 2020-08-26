@@ -554,8 +554,6 @@ dStartingLeaders = [
 
 @handler("GameStart")
 def setup():
-	print "GameStart: DynamicCivs"
-	
 	iScenario = scenario()
 	
 	if iScenario == i600AD:
@@ -1374,6 +1372,10 @@ def specificAdjective(iPlayer):
 			
 		if not bEmpire and year() < year(dBirth[iGermany]):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
+			
+	elif iCiv == iMali:
+		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gao"):
+			return "TXT_KEY_CIV_MALI_SONGHAI"
 			
 	elif iCiv == iInca:
 		if bResurrected:
