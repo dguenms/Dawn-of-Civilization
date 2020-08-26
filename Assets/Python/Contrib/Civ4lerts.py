@@ -605,43 +605,43 @@ class TemporaryUnhappinessDecay(AbstractCityTestAlert):
 	
 	def _passesTest(self, city):
 		if city.getHurryAngerTimer() > 0:
-			return False
+			return True
 		if city.getConscriptAngerTimer() > 0:
-			return False
+			return True
 		if city.getDefyResolutionAngerTimer() > 0:
-			return False
-		return True
+			return True
+		return False
 
 	def _willPassTest(self, city):
 		if city.getHurryAngerTimer() > 0 and city.getHurryAngerTimer() % city.flatHurryAngerLength() != 1:
-			return False
+			return True
 		if city.getConscriptAngerTimer() > 0 and city.getConscriptAngerTimer() % city.flatConscriptAngerLength() != 1:
-			return False
+			return True
 		if city.getDefyResolutionAngerTimer() > 0 and city.getDefyResolutionAngerTimer() % city.flatDefyResolutionAngerLength() != 1:
-			return False
-		return True
+			return True
+		return False
 	
 	def _isShowAlert(self, passes):
 		return Civ4lertsOpt.isShowCityHappinessAlert()
 	
 	def _getAlertMessageIcon(self, city, passes):
 		if (passes):
+			BugUtil.debug("%s passed unhappiness decay test, ignoring", city.getName())
+			return (None, None)
+		else:
 			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPINESS_DECAYED", (city.getName(), )),
 					UNHAPPY_ICON)
-		else:
-			BugUtil.debug("%s did not pass unhappiness decay test, ignoring", city.getName())
-			return (None, None)
 	
 	def _isShowPendingAlert(self, passes):
 		return Civ4lertsOpt.isShowCityPendingHappinessAlert()
 
 	def _getPendingAlertMessageIcon(self, city, passes):
 		if (passes):
+			BugUtil.debug("%s passed occupation test, ignoring", city.getName())
+			return (None, None)
+		else:
 			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPINESS_DECAY", (city.getName(), )),
 					UNHAPPY_ICON)
-		else:
-			BugUtil.debug("%s did not pass occupation test, ignoring", city.getName())
-			return (None, None)
 
 # Occupation
 
