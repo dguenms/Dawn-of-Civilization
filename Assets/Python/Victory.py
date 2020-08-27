@@ -3756,7 +3756,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iCiv == iCongo:
 		if iGoal == 0:
 			fPercent = getApostolicVotePercent(iPlayer)
-			aHelp.append(getIcon(fPercent >= 15.0) + text("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", "%.2f%%" % fPercent, '15'))
+			aHelp.append(getIcon(fPercent >= 15.0) + text("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", "%.2f%%" % fPercent, 15))
 		elif iGoal == 1:
 			iSlaves = data.iCongoSlaveCounter
 			aHelp.append(getIcon(iSlaves >= turns(1000)) + text("TXT_KEY_VICTORY_SLAVES_TRADED", iSlaves, turns(1000)))
