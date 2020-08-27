@@ -11,15 +11,6 @@ from Events import handler
 from Locations import *
 from Core import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
-
-### Constants ###
-
-iMongolianRadius = 4
-iMongolianTimer = 1
-
 
 @handler("GameStart")
 def setup():
@@ -35,9 +26,9 @@ def arabianUP(iOwner, iPlayer, city):
 
 	if iStateReligion >= 0:
 		if not city.isHasReligion(iStateReligion):
-			city.setHasReligion(iStateReligion, True, True, False)
-		if not city.hasBuilding(iTemple + iStateReligion*4):
-			city.setHasRealBuilding((iTemple + iStateReligion*4), True)
+			city.spreadReligion(iStateReligion)
+		if not city.hasBuilding(temple(iStateReligion)):
+			city.setHasRealBuilding(temple(iStateReligion), True)
 
 @handler("cityAcquired")
 def mongolUP(iOwner, iPlayer, city, bConquest):
