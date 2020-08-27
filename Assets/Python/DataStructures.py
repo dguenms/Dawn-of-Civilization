@@ -82,7 +82,7 @@ class TileDict:
 			new_values += remaining_values
 			self.entries[key].append(tuple(new_values))
 		else:
-			self.entries[values].append(tile)
+			self.entries[self.transform(values)].append(tile)
 	
 	def __iter__(self):
 		return iter(self.entries)

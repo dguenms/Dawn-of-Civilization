@@ -42,6 +42,9 @@ def setup():
 	
 	for tile in lNewfoundlandCapes:
 		dRemovedFeatures[tile] = 1500
+		
+	global dRoutes
+	dRoutes = appenddict(dict((year(iYear), tiles) for iYear, tiles in dRoutesDict.items()))
 
 
 ### Constants ###
@@ -166,10 +169,10 @@ dRemovedResourcesDict = {
 	(89, 51) : 1100, # Camel near Orduqent
 }
 
-dRoutes = appenddict({
+dRoutesDict = {
 	-200 : lSilkRoute,
 	-100 : [(88, 47)],
-})
+}
 
 dSpawnRoutes = {
 	iMongols : [(101, 48), (100, 49), (100, 50), (99, 50)],
