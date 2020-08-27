@@ -1192,7 +1192,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 }
 
 
-void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
+void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts)
 {
 	PROFILE_FUNC();
 
@@ -1490,7 +1490,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				}
 			}
 		}*/
-		if (!(GET_TEAM(eTeam).isMinorCiv()))
+		if (!GET_TEAM(eTeam).isMinorCiv() && !bIgnoreDefensivePacts)
 		{
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -1542,7 +1542,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
-			if (GET_TEAM((TeamTypes)iI).isAlive() && !isMinorCiv() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !isMinorCiv() && !bIgnoreDefensivePacts && !GET_TEAM((TeamTypes)iI).isMinorCiv())
 			{
 				if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam))
 				{
@@ -4389,7 +4389,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 
 						if (GET_TEAM(eIndex).isAtWar((TeamTypes)iI))
 						{
-							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE);
+							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE, true);
 						}
 						else if (isAtWar((TeamTypes)iI))
 						{
