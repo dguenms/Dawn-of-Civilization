@@ -3421,7 +3421,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				{
 					if (isDirtyPower() && !(kBuilding.isDirtyPower()))
 					{
-						iValue += (std::min(-(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE")), iBadHealth) * 8);
+						iValue += (std::min(-(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE")), iBadHealth) * 16);
 					}
 				}
 
@@ -3857,6 +3857,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 						if (kOwner.AI_totalAreaUnitAIs(area(), ((UnitAITypes)(GC.getUnitInfo((UnitTypes)iI).getDefaultUnitAIType()))) == 0)
 						{
 							iValue += iNumCitiesInArea;
+
+							// Leoreth: really make sure that we can build nukes
+							if (GC.getUnitInfo((UnitTypes)iI).getNukeRange() > 0)
+							{
+								iValue *= 5;
+							}
 						}
 
 						iValue++;
