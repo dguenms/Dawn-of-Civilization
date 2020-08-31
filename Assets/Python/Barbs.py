@@ -24,7 +24,7 @@ tMinorCities = (
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
-(-760, (59, 47), iCelts, 'Melpum', 2, iArcher, 2),			# Milan
+(-770, (59, 47), iCelts, 'Melpum', 2, iArcher, 2),			# Milan
 (-350, (56, 47), iCelts, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang

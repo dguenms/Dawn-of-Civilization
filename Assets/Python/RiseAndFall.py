@@ -1121,7 +1121,7 @@ class RiseAndFall:
 			makeUnit(iPlayer, iSettler, tSeaPlot)
 			makeUnit(iPlayer, iWorkboat, tSeaPlot)
 		elif iCiv == iRome:
-			createSettlers(iPlayer, 3)
+			createSettlers(iPlayer, 4)
 			makeUnits(iPlayer, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
 			makeUnits(iPlayer, iLegion, tPlot, 4)
 			
