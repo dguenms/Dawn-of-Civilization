@@ -834,10 +834,7 @@ class EntityCollection(object):
 		return self.__class__(sorted(set(combined), key=combined.index))
 		
 	def limit(self, iLimit):
-		try:
-			return self.__class__(self._keys[:iLimit])
-		except TypeError, e:
-			raise TypeError("%s, was: %s" % (e, iLimit))
+		return self.__class__(self._keys[:iLimit])
 	
 	def count(self, condition = lambda x: True):
 		return count(self, condition)
