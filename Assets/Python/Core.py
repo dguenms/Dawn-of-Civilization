@@ -603,10 +603,6 @@ def location(entity):
 
 	return _parse_tile(entity)
 	
-	
-def unit_key(unit):
-	return UnitKey(unit)
-	
 
 def team(identifier = None):
 	if identifier is None:
@@ -834,7 +830,7 @@ class EntityCollection(object):
 				keys = keys[0]._keys
 			elif isinstance(keys[0], list):
 				keys = keys[0]
-		combined = list(self._keys) + list(keys)
+		combined = [self._keyify(key) for key in list(self._keys) + list(keys)]
 		return self.__class__(sorted(set(combined), key=combined.index))
 		
 	def limit(self, iLimit):
@@ -1053,7 +1049,16 @@ class Locations(EntityCollection):
 class Plots(Locations):
 
 	def __init__(self, plots):
-		super(Plots, self).__init__(plots)
+		super(Plots, self).__init__([self._keyify(p) for p in plots])
+		
+	def _keyify(self, item):
+		if isinstance(item, tuple) and len(item) == 2:
+			return item
+			
+		if isinstance(item, (CyPlot, CyCity, CyUnit)):
+			return location(item)
+			
+		raise Exception("Not a valid plot key: %s" % type(item))
 		
 	def _factory(self, key):
 		return plot(key)
@@ -1071,7 +1076,7 @@ class Plots(Locations):
 		return str(self._keys)
 		
 	def cities(self):
-		return self.transform(Cities, condition = lambda p: p.isCity())
+		return self.transform(Cities, map = lambda key: city(key), condition = lambda p: p.isCity())
 	
 	def land(self):
 		return self.where(lambda p: not p.isWater())
@@ -1172,22 +1177,55 @@ class CityFactory:
 		
 	def newCapital(self, identifier):
 		return city(self.plots.newCapital(identifier))
+		
+		
+class CityKey(object):
+
+	def __init__(self, city):
+		self.owner = city.getOwner()
+		self.id = city.getID()
+		
+	def __eq__(self, other):
+		return isinstance(other, CityKey) and (self.owner, self.id) == (other.owner, other.id)
+		
+	def __str__(self):
+		return str((self.owner, self.id))
+		
+	@classmethod
+	def of(cls, city):
+		if isinstance(city, cls):
+			return city
+		return cls(city)
 
 
 class Cities(Locations):
 
-	def __init__(self, plots):
-		super(Cities, self).__init__(plots)
+	def __init__(self, cities):
+		super(Cities, self).__init__([self._keyify(city) for city in cities])
+		
+	def _keyify(self, item):
+		return CityKey.of(item)
 		
 	def _factory(self, key):
-		return city(key)
+		if isinstance(key, CityKey):
+			return player(key.owner).getCity(key.id)
+		
+		raise TypeError("Can only use keys of type CityKey in Cities, got: %s" % type(key))
 		
 	def __contains__(self, item):
-		if isinstance(item, (CyPlot, CyCity, CyUnit)):
-			return (item.getX(), item.getY()) in self._keys
+		if isinstance(item, (CyCity, CityKey)):
+			return CityKey.of(item) in self._keys
+		
+		elif isinstance(item, CyPlot):
+			if not item.isCity():
+				return False
+			return self.__contains__(item.getPlotCity())
+		
+		elif isinstance(item, CyUnit):
+			return self.__contains__(item.plot())
 			
-		if isinstance(item, tuple) and len(item) == 2:
-			return item in self._keys
+		elif isinstance(item, tuple) and len(item) == 2:
+			return self.__contains__(plot(item))
 			
 		raise TypeError("Tried to check if Cities contains '%s', can only contain plots, cities, units or coordinate tuples" % type(item))
 		
@@ -1219,17 +1257,17 @@ class UnitFactory:
 		return Units([UnitKey.of(unit) for unit in units])
 
 	def owner(self, identifier):
-		units = _iterate(player(identifier).firstUnit, player(identifier).nextUnit, unit_key)
+		units = _iterate(player(identifier).firstUnit, player(identifier).nextUnit, UnitKey.of)
 		return Units(units)
 		
 	def at(self, *args):
 		if args is None:
 			return Units([])
 			
-		return Units([unit_key(plot(*args).getUnit(i)) for i in range(plot(*args).getNumUnits())])
+		return Units([UnitKey.of(plot(*args).getUnit(i)) for i in range(plot(*args).getNumUnits())])
 		
 		
-class UnitKey:
+class UnitKey(object):
 
 	def __init__(self, unit):
 		self.owner = unit.getOwner()
@@ -1256,7 +1294,10 @@ class UnitKey:
 class Units(EntityCollection):
 
 	def __init__(self, units):
-		super(Units, self).__init__([UnitKey.of(u) for u in units])
+		super(Units, self).__init__([self._keyify(u) for u in units])
+	
+	def _keyify(self, item):
+		return UnitKey.of(item)
 		
 	def _factory(self, key):
 		return unit(key)
@@ -1343,6 +1384,12 @@ class Players(EntityCollection):
 			raise Exception("All entries in Players need to be either int or Civ")
 	
 		super(Players, self).__init__(players)
+		
+	def _keyify(self, item):
+		if isinstance(item, Civ):
+			return slot(item)
+			
+		return item
 
 	def __contains__(self, item):
 		if isinstance(item, CyPlayer):

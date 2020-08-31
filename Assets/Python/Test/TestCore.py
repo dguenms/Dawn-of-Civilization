@@ -1067,6 +1067,14 @@ class TestPlots(TestCase):
 	def setUp(self):
 		self.tiles = [(x, y) for x in range(3) for y in range(3)]
 		self.plots = Plots(self.tiles)
+		
+		city1 = gc.getPlayer(0).initCity(0, 3)
+		city2 = gc.getPlayer(0).initCity(3, 3)
+		self.cities = [city1, city2]
+		
+	def tearDown(self):
+		for city in self.cities:
+			city.kill()
 
 	def test_basic(self):
 		assertType(self, self.plots, Plots)
@@ -1537,8 +1545,7 @@ class TestPlots(TestCase):
 			self.assert_(tile in plots)
 			
 	def test_add_other_class(self):
-		added = Cities([(0, 3), (1, 3), (2, 3)])
-		
+		added = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__add__, added)
 		
 	def test_string(self):
@@ -1558,7 +1565,7 @@ class TestPlots(TestCase):
 		self.assert_(self.plots != plots)
 		
 	def test_equal_other_class(self):
-		cities = Cities(self.tiles)
+		cities = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__eq__, cities)
 		
 	def test_greater_than_plots(self):
@@ -1569,7 +1576,7 @@ class TestPlots(TestCase):
 		self.assert_(self.plots > 8)
 		
 	def test_greater_than_other_class(self):
-		cities = Cities(self.tiles)
+		cities = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__gt__, cities)
 		
 	def test_greater_equal_plots(self):
@@ -1581,7 +1588,7 @@ class TestPlots(TestCase):
 		self.assert_(self.plots >= 8)
 		
 	def test_greater_equal_other_class(self):
-		cities = Cities(self.tiles)
+		cities = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__ge__, cities)
 		
 	def test_less_than_plots(self):
@@ -1592,7 +1599,7 @@ class TestPlots(TestCase):
 		self.assert_(self.plots < 10)
 		
 	def test_less_than_other_class(self):
-		cities = Cities(self.tiles)
+		cities = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__lt__, cities)
 		
 	def test_less_equal_plots(self):
@@ -1604,7 +1611,7 @@ class TestPlots(TestCase):
 		self.assert_(self.plots <= 10)
 		
 	def test_less_equal_other_class(self):
-		cities = Cities(self.tiles)
+		cities = Cities(self.cities)
 		self.assertRaises(TypeError, self.plots.__le__, cities)
 		
 	def test_iterate_all_does_not_contain_invalid(self):
@@ -1809,11 +1816,11 @@ class TestPlotFactory(TestCase):
 class TestCities(TestCase):
 
 	def setUp(self):
-		gc.getPlayer(3).initCity(0, 0)
-		gc.getPlayer(3).initCity(0, 2)
-		gc.getPlayer(4).initCity(2, 0)
+		city1 = gc.getPlayer(3).initCity(0, 0)
+		city2 = gc.getPlayer(3).initCity(0, 2)
+		city3 = gc.getPlayer(4).initCity(2, 0)
 		
-		self.cities = Cities([(0, 0), (0, 2), (2, 0)])
+		self.cities = Cities([city1, city2, city3])
 		
 	def tearDown(self):
 		for city in self.cities:
@@ -1877,7 +1884,10 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_without_cities(self):
-		subtracted = Cities([(0, 2), (2, 0)])
+		city1 = self.cities[1]
+		city2 = self.cities[2]
+	
+		subtracted = Cities([city1, city2])
 		cities = self.cities.without(subtracted)
 		expected_tiles = [(0, 0)]
 		
@@ -1999,7 +2009,7 @@ class TestCities(TestCase):
 			city = gc.getPlayer(0).initCity(x, y)
 			created_cities.append(city)
 		
-		cities = Cities(tiles)
+		cities = Cities(created_cities)
 		
 		expected_tiles = [(23, 37), (26, 38)]
 		actual_cities = cities.regions(rCaribbean, rMesoamerica)
@@ -2561,12 +2571,12 @@ class TestUnit(TestCase):
 			self.unit.kill(False, 0)
 			
 	def test_create_unit_key(self):
-		key = unit_key(self.unit)
+		key = UnitKey.of(self.unit)
 		self.assertEqual(key.owner, self.unit.getOwner())
 		self.assertEqual(key.id, self.unit.getID())
 		
 	def test_unit(self):
-		u = unit(unit_key(self.unit))
+		u = unit(UnitKey.of(self.unit))
 		self.assertEqual(u.getOwner(), self.unit.getOwner())
 		self.assertEqual(u.getID(), self.unit.getID())
 		
