@@ -1258,7 +1258,7 @@ def specificAdjective(iPlayer):
 		return "TXT_KEY_CIV_POLYNESIA_TUI_TONGA"
 		
 	elif iCiv == iRome:
-		if player(iByzantium).isAlive():
+		if player(iByzantium).isAlive() and not team(iByzantium).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 			
 	elif iCiv == iTamils:
@@ -1283,7 +1283,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
 			
 	elif iCiv == iByzantium:
-		if player(iRome).isAlive() and player(iRome).getNumCities() > 0:
+		if player(iRome).isAlive() and player(iRome).getNumCities() > 0 and not team(iRome).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
 		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
