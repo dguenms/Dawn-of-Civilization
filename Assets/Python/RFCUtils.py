@@ -630,10 +630,6 @@ def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, b
 			return False
 		
 	return True
-	
-# used: RiseAndFall
-def isIsland(plot, iIslandLimit = 3):
-	return map.getArea(plot_(plot).getArea()).getNumTiles <= iIslandLimit
 			
 # used: RiseAndFall
 def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=None):
