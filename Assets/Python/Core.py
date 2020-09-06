@@ -814,6 +814,10 @@ class EntityCollection(object):
 		
 	def split(self, condition):
 		return self.buckets(condition)
+	
+	def percentage_split(self, iPercent):
+		iSplit = self.count() * iPercent / 100
+		return self.__class__(self._keys[:iSplit]), self.__class__(self._keys[iSplit:])
 		
 	def sort(self, metric, reverse=False):
 		return self.__class__(sort(self._keys, key=lambda k: metric(self._factory(k)), reverse=reverse))
@@ -857,6 +861,9 @@ class EntityCollection(object):
 	def fraction(self, iDenominator):
 		return self.limit(self.count() / iDenominator)
 		
+	def percentage(self, iPercent):
+		return self.limit(self.count() * iPercent / 100)
+		
 	def sum(self, value):
 		return sum(value(e) for e in self.entities())
 		
@@ -876,8 +883,8 @@ class EntityCollection(object):
 			return (element,)
 
 	def divide(self, keys):
-		shuffled_entities = self.shuffle().entities()
-		return [(key, [entity for j, entity in enumerate(shuffled_entities) if j % len(keys) == i]) for i, key in enumerate(keys)]
+		shuffled_keys = self.shuffle()._keys[:]
+		return [(key, self.__class__([key for j, key in enumerate(shuffled_keys) if j % len(keys) == i])) for i, key in enumerate(keys)]
 	
 	def index(self, key):
 		return self.entities().index(key)

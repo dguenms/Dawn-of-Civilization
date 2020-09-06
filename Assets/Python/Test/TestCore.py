@@ -1425,6 +1425,17 @@ class TestPlots(TestCase):
 		
 		self.assert_(even.all(lambda p: (p.getX() + p.getY()) % 2 == 0))
 		self.assert_(odd.all(lambda p: (p.getX() + p.getY()) % 2 == 1))
+	
+	def test_percentage_split(self):
+		left, right = self.plots.limit(8).percentage_split(25)
+		
+		assertType(self, left, Plots)
+		assertType(self, right, Plots)
+		
+		self.assertEqual(len(left), 2)
+		self.assertEqual(len(right), 6)
+		
+		self.assertEqual(left, self.plots.limit(2))
 		
 	def test_sort(self):
 		expected_tiles = [(0, 0), (0, 1), (1, 0), (0, 2), (1, 1), (2, 0), (1, 2), (2, 1), (2, 2)]
@@ -1518,6 +1529,13 @@ class TestPlots(TestCase):
 		
 	def test_fraction(self):
 		plots = self.plots.fraction(3)
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 3)
+		self.assertEqual(plots, self.plots.limit(3))
+		
+	def test_percentage(self):
+		plots = self.plots.limit(5).percentage(60)
 		
 		assertType(self, plots, Plots)
 		self.assertEqual(len(plots), 3)
@@ -3038,7 +3056,7 @@ class TestDivide(TestCase):
 		total_values = []
 		for key, values in actual_divided:
 			self.assert_(key in [100, 200, 300])
-			self.assert_(isinstance(values, list))
+			self.assert_(isinstance(values, Players))
 			self.assertEqual(len(values), 1)
 			total_values += values
 		
@@ -3054,7 +3072,7 @@ class TestDivide(TestCase):
 		total_values = []
 		for key, values in actual_divided:
 			self.assert_(key in [100, 200, 300])
-			self.assert_(isinstance(values, list))
+			self.assert_(isinstance(values, Players))
 			self.assertEqual(len(values), 2)
 			total_values += values
 		

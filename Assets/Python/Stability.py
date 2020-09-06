@@ -498,6 +498,7 @@ def canResurrectFromCities(iPlayer, resurrectionCities):
 def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	iCiv = civ(iPlayer)
 	bComplete = len(secedingCities) == player(iPlayer).getNumCities()
+	iArmyPercent = 100 - 100 * len(secedingCities) / player(iPlayer).getNumCities()
 	
 	if not secedingCities:
 		return
@@ -524,7 +525,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		# assign cities to living civs
 		if player(iClaimant).isAlive():
 			for city in claimedCities:
-				secedeCity(city, iClaimant, not is_minor(iClaimant) and not bComplete)
+				secedeCity(city, iClaimant, not bComplete, iArmyPercent)
 		
 		# if sufficient for resurrection, resurrect civs
 		elif canResurrectFromCities(iClaimant, claimedCities):
@@ -539,7 +540,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	for iMinor, minorCities in cities.of(lMinorCities).divide(lPossibleMinors):
 		for city in minorCities:
-			secedeCity(city, iMinor, False)
+			secedeCity(city, iMinor, not bComplete, iArmyPercent)
 		
 	# notify for partial secessions
 	if not bComplete and player().canContact(iPlayer):
@@ -548,7 +549,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	# prevent collapsing downward spiral
 	balanceStability(iPlayer, iStabilityUnstable)
 		
-def secedeCity(city, iNewOwner, bRelocate):
+def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 	if not city: return
 	
 	name = city.getName()
@@ -564,7 +565,7 @@ def secedeCity(city, iNewOwner, bRelocate):
 	lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
 	
 	if bRelocate:
-		relocateUnitsToCore(city.getOwner(), lRelocatedUnits)
+		relocateUnitsToCore(city.getOwner(), lRelocatedUnits, iArmyPercent)
 	else:
 		killUnits(lRelocatedUnits)
 	

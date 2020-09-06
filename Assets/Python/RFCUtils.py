@@ -1117,20 +1117,20 @@ def flipUnit(unit, iNewOwner, plot):
 		makeUnit(iNewOwner, iUnitType, plot)
 	
 # used: Congresses, Stability
-def relocateUnitsToCore(iPlayer, lUnits):
+def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
 	coreCities = cities.core(iPlayer).owner(iPlayer)
 	if not coreCities:
 		killUnits(lUnits)
 		return
 	
-	dUnits = units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().getOwner() not in [iPlayer, -1]).by_type()
-	
-	for iUnitType in dUnits:
-		for i, unit in enumerate(dUnits[iUnitType]):
-			index = i % (coreCities.count() * 2)
-			if index < coreCities.count():
-				city = coreCities[index]
+	for typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().values():
+		movedUnits, removedUnits = typeUnits.percentage_split(iArmyPercent)
+		for city, movedUnits in movedUnits.divide(coreCities):
+			for unit in movedUnits:
 				move(unit, city)
+			
+		for unit in removedUnits:
+			unit.kill(-1, False)
 				
 # used: Congresses, Stability
 def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
