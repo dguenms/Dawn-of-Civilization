@@ -282,11 +282,13 @@ def checkBarbarianCollapse(iPlayer):
 	# lost more than half of your cities to barbarians: collapse
 	if iLostCities > iNumCities:
 		debug('Collapse by barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		message(iPlayer, 'TXT_KEY_STABILITY_MAJOR_BARBARIAN_LOSSES', color=iRed)
 		completeCollapse(iPlayer)
 		
 	# lost at least two cities to barbarians: lose stability
 	elif iLostCities >= 2:
 		debug('Lost stability to barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		message(iPlayer, 'TXT_KEY_STABILITY_MINOR_BARBARIAN_LOSSES', color=iRed)
 		decrementStability(iPlayer)
 		
 def checkLostCitiesCollapse(iPlayer):
@@ -299,6 +301,8 @@ def checkLostCitiesCollapse(iPlayer):
 	
 	# half or less cities than 12 turns ago: collapse (exceptions for civs with very little cities to begin with -> use lost core collapse)
 	if iNumPreviousCities > 2 and 2 * iNumCurrentCities <= iNumPreviousCities:
+	
+		message(iPlayer, 'TXT_KEY_STABILITY_LOST_CITIES_COLLAPSE', color=iRed)
 	
 		if stability(iPlayer) == iStabilityCollapsing:
 			debug('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
@@ -321,6 +325,8 @@ def checkLostCoreCollapse(iPlayer):
 	if len(lCities) == 0:
 		if periods.evacuate(iPlayer):
 			return
+			
+		message(iPlayer, 'TXT_KEY_STABILITY_LOST_CORE_COLLAPSE', color=iRed)
 	
 		debug('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		scheduleCollapse(iPlayer)

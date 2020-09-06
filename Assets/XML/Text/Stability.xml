@@ -586,6 +586,38 @@
 		<Spanish>We are losing control over our entire empire!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_MAJOR_BARBARIAN_LOSSES</Tag>
+		<English>Barbarian invasions have overwhelmed our empire!</English>
+		<French>Barbarian invasions have overwhelmed our empire!</French>
+		<German>Barbarian invasions have overwhelmed our empire!</German>
+		<Italian>Barbarian invasions have overwhelmed our empire!</Italian>
+		<Spanish>Barbarian invasions have overwhelmed our empire!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_MINOR_BARBARIAN_LOSSES</Tag>
+		<English>The pressure from barbarian invasions is destabilizing our empire!</English>
+		<French>The pressure from barbarian invasions is destabilizing our empire!</French>
+		<German>The pressure from barbarian invasions is destabilizing our empire!</German>
+		<Italian>The pressure from barbarian invasions is destabilizing our empire!</Italian>
+		<Spanish>The pressure from barbarian invasions is destabilizing our empire!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOST_CITIES_COLLAPSE</Tag>
+		<English>Our territorial losses have destabilized our empire to the point of collapse!</English>
+		<French>Our territorial losses have destabilized our empire to the point of collapse!</French>
+		<German>Our territorial losses have destabilized our empire to the point of collapse!</German>
+		<Italian>Our territorial losses have destabilized our empire to the point of collapse!</Italian>
+		<Spanish>Our territorial losses have destabilized our empire to the point of collapse!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOST_CORE_COLLAPSE</Tag>
+		<English>We have lost control of the core of our civilization and our empire is disintegrating!</English>
+		<French>We have lost control of the core of our civilization and our empire is disintegrating!</French>
+		<German>We have lost control of the core of our civilization and our empire is disintegrating!</German>
+		<Italian>We have lost control of the core of our civilization and our empire is disintegrating!</Italian>
+		<Spanish>We have lost control of the core of our civilization and our empire is disintegrating!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_COLLAPSING</Tag>
 		<English>Collapsing</English>
 		<French>En chute</French>
