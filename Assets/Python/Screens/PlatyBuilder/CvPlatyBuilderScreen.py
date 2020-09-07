@@ -2054,16 +2054,15 @@ class CvWorldBuilderScreen:
 
 	def showVictoryOverlay(self):
 		removeStabilityOverlay()
-		lRegions = []
-		for plot in plots.all():
-			iVictoryRegion = CvScreensInterface.getUHVTileInfo((plot.getX(), plot.getY(), self.m_iCurrentPlayer)) # TODO: change player to civ
-			if iVictoryRegion != -1:
-				if iVictoryRegion not in lRegions:
-					lRegions.append(iVictoryRegion)
-				if not plot.isWater():
-					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000 + 2*lRegions.index(iVictoryRegion), "COLOR_MAGENTA", 0.7)
-				elif self.bVictoryRectangle:
-					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1001 + 2*lRegions.index(iVictoryRegion), "COLOR_LIGHT_GREY", 0.7)
+		lUHVareas = CvScreensInterface.getUHVAreas(civ(self.m_iCurrentPlayer))
+		if lUHVareas:
+			for plot in plots.all():
+				for i, (plotlist, _) in enumerate(lUHVareas):
+					if plot in plotlist:
+						if not plot.isWater():
+							CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000 + 2*i, "COLOR_MAGENTA", 0.7)
+						elif self.bVictoryRectangle:
+							CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1001 + 2*i, "COLOR_LIGHT_GREY", 0.7)
 
 	def showAreaExportOverlay(self):
 		removeStabilityOverlay()

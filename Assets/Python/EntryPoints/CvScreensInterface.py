@@ -906,276 +906,152 @@ def getUHVTileInfo(argsList):
 	
 	plot = gc.getMap().plot(x, y)
 	
+	lUHVAreas = getUHVAreas(iCiv)
+	
+	if lUHVAreas:
+		for plotlist, iArea in lUHVAreas:
+			if plot in plotlist:
+				return iArea
+			
+	return -1
+	
+def getUHVAreas(iCiv):
 	if iCiv == iGreece:
-		if (x, y) in plots.normal(iEgypt):
-			return 0
-			
-		if (x, y) in plots.normal(iCarthage):
-			return 1
-			
-		if (x, y) in plots.normal(iBabylonia):
-			return 2
-			
-		if (x, y) in plots.normal(iPersia):
-			return 3
+		return [(plots.normal(iEgypt), 0),\
+				(plots.normal(iCarthage), 1),\
+				(plots.normal(iBabylonia), 2),\
+				(plots.normal(iPersia), 3)]
 			
 	elif iCiv == iIran:
-		if plot in plots.rectangle(tSafavidMesopotamia):
-			return 4
-		
-		if plot in plots.rectangle(tTransoxiana):
-			return 5
-		
-		if plot in plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions):
-			return 6
+		return [(plots.rectangle(tSafavidMesopotamia), 4),\
+				(plots.rectangle(tTransoxiana), 5),\
+				(plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions), 6)]
 			
 	elif iCiv == iPhoenicia:
-		if plot in plots.normal(iItaly).without([(62, 47), (63, 47), (63, 46)]):
-			return 37
-		
-		if (x, y) in plots.rectangle(tIberia):
-			return 8
+		return [(plots.normal(iItaly).without([(62, 47), (63, 47), (63, 46)]), 37),\
+				(plots.rectangle(tIberia), 8)]
 			
 	elif iCiv == iItaly:
-		if plot in plots.rectangle(tMediterranean).without(lMediterraneanExceptions) and plot.isCoastalLand():
-			return 7
+		return [(plots.rectangle(tMediterranean).without(lMediterraneanExceptions).where(lambda p: p.isCoastalLand()), 7)]
 			
 	elif iCiv == iRome:
-		if (x, y) in plots.normal(iSpain):
-			return 8
-				
-		if plot in plots.rectangle(tGaul):
-			return 9
-		
-		if (x, y) in plots.core(iEngland):
-			return 10
-		
-		if plot in plots.rectangle(tAfrica):
-			return 11
-		
-		if (x, y) in plots.core(iByzantium):
-			return 12
-			
-		if (x, y) in plots.core(iEgypt):
-			return 13
+		return [(plots.normal(iSpain), 8),\
+				(plots.rectangle(tGaul), 9),\
+				(plots.core(iEngland), 10),\
+				(plots.rectangle(tAfrica), 11),\
+				(plots.core(iByzantium), 12),\
+				(plots.core(iEgypt), 13)]
 
 	elif iCiv == iJapan:
-		if plot in plots.rectangle(tKorea):
-			return 14
-		
-		if plot in plots.rectangle(tManchuria):
-			return 15
-		
-		if plot in plots.rectangle(tChina):
-			return 16
-		
-		if plot in plots.rectangle(tIndochina).without(lIndochinaExceptions):
-			return 17
-		
-		if plot in plots.rectangle(tIndonesia):
-			return 18
-		
-		if plot in plots.rectangle(tPhilippines):
-			return 19
+		return [(plots.rectangle(tKorea), 14),\
+				(plots.rectangle(tManchuria), 15),\
+				(plots.rectangle(tChina), 16),\
+				(plots.rectangle(tIndochina).without(lIndochinaExceptions), 17),\
+				(plots.rectangle(tIndonesia), 18),\
+				(plots.rectangle(tPhilippines), 19)]
 			
 	elif iCiv == iEthiopia:
-		if plot.getRegionID() in lAfrica:
-			return 33
+		return [(plots.regions(*(lAfrica)), 33)]
 		
 	elif iCiv == iByzantium:
-		if plot in plots.rectangle(tBalkans):
-			return 21
-		
-		if plot in plots.rectangle(tNorthAfrica):
-			return 22
-		
-		if plot in plots.rectangle(tNearEast):
-			return 23
+		return [(plots.rectangle(tBalkans), 21),\
+				(plots.rectangle(tNorthAfrica), 22),\
+				(plots.rectangle(tNearEast), 23)]
 			
 	elif iCiv == iArabia:
-		if (x, y) in plots.core(iEgypt):
-			return 24
-		
-		if plot in plots.rectangle(tAfrica):
-			return 25
-		
-		if (x, y) in plots.core(iBabylonia):
-			return 26
-				
-		if (x, y) in plots.core(iPersia):
-			return 27
-		
-		if (x, y) in plots.normal(iSpain):
-			return 28
+		return [(plots.core(iEgypt), 24),\
+				(plots.rectangle(tAfrica), 25),\
+				(plots.core(iBabylonia), 26),\
+				(plots.core(iPersia), 27),\
+				(plots.normal(iSpain), 28)]
 			
 	elif iCiv == iSpain:
-		if plot in plots.rectangle(tEurope):
-			return 29
-		
-		elif plot in plots.rectangle(tEasternEurope):
-			return 29
+		return [(plots.rectangle(tEurope), 29),\
+				(plots.rectangle(tEasternEurope), 29)]
 			
 	elif iCiv == iFrance:
-		if plot in plots.rectangle(tEurope):
-			return 29
-			
-		elif plot in plots.rectangle(tEasternEurope):
-			return 29
-		
-		if plot in plots.rectangle(tNorthAmerica):
-			return 30
+		return [(plots.rectangle(tEurope), 29),\
+				(plots.rectangle(tEasternEurope), 29),\
+				(plots.rectangle(tNorthAmerica), 30)]
 			
 	elif iCiv == iEngland:
-		if plot.getRegionID() in lNorthAmerica:
-			return 31
-				
-		if plot.getRegionID() in lSouthAmerica:
-			return 32
-				
-		if plot.getRegionID() in lAfrica:
-			return 33
-				
-		if plot.getRegionID() in lAsia:
-			return 34
-			
-		if plot.getRegionID() in lOceania:
-			return 35
+		return [(plots.regions(*(lNorthAmerica)), 31),\
+				(plots.regions(*(lSouthAmerica)), 32),\
+				(plots.regions(*(lAfrica)), 33),\
+				(plots.regions(*(lAsia)), 34),\
+				(plots.regions(*(lSouthAmerica)), 35)]
 			
 	elif iCiv == iGermany:
-		if (x, y) in plots.normal(iFrance):
-			return 36
-		
-		if (x, y) in plots.normal(iItaly):
-			return 37
-		
-		if (x, y) in plots.normal(iRussia):
-			return 38
-		
-		if (x, y) in plots.normal(iEngland):
-			return 39
-		
-		if (x, y) in plots.normal(iVikings):
-			return 40
+		return [(plots.normal(iFrance), 36),\
+				(plots.normal(iItaly), 37),\
+				(plots.normal(iRussia), 38),\
+				(plots.normal(iEngland), 39),\
+				(plots.normal(iVikings), 40)]
 			
 	elif iCiv == iRussia:
-		if plot in plots.rectangle(tSiberia):
-			return 41
+		return [(plots.rectangle(tSiberia), 41)]
 			
-	elif iCiv == iInca:
-		if (x, y) in lAndeanCoast:
-			return 42
-		
-		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
-			return 43
+	elif iCiv == iInca: # test
+		return [(Plots(lAndeanCoast), 42),\
+				(plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions), 43)]
 			
 	elif iCiv == iOttomans:
-		if (x,y) in lEasternMediterranean:
-			return 47
-			
-		if (x,y) in lBlackSea:
-			return 48
-		
-		if plot in plots.surrounding(tCairo):
-			return 49
-		
-		if plot in plots.surrounding(tMecca):
-			return 50
-		
-		if plot in plots.surrounding(tBaghdad):
-			return 51
-		
-		if plot in plots.surrounding(tVienna):
-			return 52
+		return [(lEasternMediterranean, 47),\
+				(Plots(lBlackSea), 48),\
+				(plots.surrounding(tCairo), 49),\
+				(plots.surrounding(tMecca), 50),\
+				(plots.surrounding(tBaghdad), 51),\
+				(plots.surrounding(tVienna), 52)]
 			
 	elif iCiv == iThailand:
-		if plot in plots.rectangle(tSouthAsia):
-			return 53
+		return [(plots.rectangle(tSouthAsia), 53)]
 			
 	elif iCiv == iAmerica:
-		if plot in plots.rectangle(tNorthCentralAmerica):
-			return 54
+		return [(plots.rectangle(tNorthCentralAmerica), 54)]
 			
 	elif iCiv == iTamils:
-		if plot in plots.rectangle(tDeccan):
-			return 55
-		
-		if plot in plots.rectangle(tSrivijaya):
-			return 56
+		return [(plots.rectangle(tDeccan), 55),\
+				(plots.rectangle(tSrivijaya), 56)]
 			
 	elif iCiv == iMoors:
-		if plot in plots.rectangle(tIberia):
-			return 57
-		
-		if plot in plots.rectangle(tMaghreb):
-			return 58
-		
-		if plot in plots.rectangle(tWestAfrica):
-			return 59
+		return [(plots.rectangle(tIberia), 57),\
+				(plots.rectangle(tMaghreb), 58),\
+				(plots.rectangle(tWestAfrica), 59)]
 			
 	elif iCiv == iPortugal:
-		if plot.getRegionID() in lAfrica:
-			return 33
-					
-		if plot.getRegionID() in lAsia:
-			return 34
-		
-		if plot in plots.rectangle(tBrazil):
-			return 60
+		return [(plots.regions(*(lAfrica)), 33),\
+				(plots.regions(*(lAsia)), 34),\
+				(plots.rectangle(tBrazil), 60)]
 			
 	elif iCiv == iColombia:
-		if plot in plots.rectangle(tPeru):
-			return 43
-		
-		if plot in plots.rectangle(tGranColombia):
-			return 44
-		
-		if plot in plots.rectangle(tGuayanas):
-			return 45
-		
-		if plot in plots.rectangle(tCaribbean):
-			return 46
-		
-		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
-			return 61
+		return [(plots.rectangle(tPeru), 43),\
+				(plots.rectangle(tGranColombia), 44),\
+				(plots.rectangle(tGuayanas), 45),\
+				(plots.rectangle(tCaribbean), 46),\
+				(plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions), 61)]
 				
 	elif iCiv == iCanada:
-		if (x, y) in lAtlanticCoast:
-			return 63
-			
-		if (x, y) in lPacificCoast:
-			return 64
-		
-		if plot in plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) or plot in plots.rectangle(tCanadaEast).without(lCanadaEastExceptions):
-			return 62
+		return [(Plots(lAtlanticCoast), 63),\
+				(Plots(lPacificCoast), 64),\
+				(plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) + plots.rectangle(tCanadaEast).without(lCanadaEastExceptions), 62)]
 			
 	elif iCiv == iPolynesia:
-		if plot in plots.rectangle(tHawaii):
-			return 65
-		
-		if plot in plots.rectangle(tNewZealand):
-			return 66
-		
-		if plot in plots.rectangle(tMarquesas):
-			return 67
-		
-		if plot in plots.rectangle(tEasterIsland):
-			return 68
+		return [(plots.rectangle(tHawaii), 65),\
+				(plots.rectangle(tNewZealand), 66),\
+				(plots.rectangle(tMarquesas), 67),\
+				(plots.rectangle(tEasterIsland), 68)]
 			
 	elif iCiv == iMongols:
-		if (x, y) in plots.normal(iChina):
-			return 69
+		return [(plots.normal(iChina), 69)]
 			
 	elif iCiv == iTurks:
-		if (x, y) in lMediterraneanPorts:
-			return 70
-			
-		if plot in plots.rectangle(tChina):
-			return 71
+		return [(Plots(lMediterraneanPorts), 70),\
+				(plots.rectangle(tChina), 71)]
 				
 		# free IDs: 20
 		# continue with ID 72
 			
-	return -1
+	return None
 		
 def getCityName(argsList):
 	iPlayer, x, y = argsList
