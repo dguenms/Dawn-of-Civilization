@@ -8,7 +8,7 @@ import heapq
 import CityNameManager as cnm
 from Civics import *
 import BugCore
-from Events import handler
+from Events import handler, events
 
 from Locations import *
 from Core import *
@@ -16,9 +16,6 @@ from Core import *
 AdvisorOpt = BugCore.game.Advisors
 AlertsOpt = BugCore.game.MoreCiv4lerts
 
-### GLOBALS ###
-
-gc = CyGlobalContext()
 
 ### CONSTANTS ###
 
@@ -31,6 +28,2085 @@ lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
+
+
+### GOALS ###
+
+POSSIBLE, SUCCESS, FAILURE = range(3)
+
+	
+def cityAverage(function):
+	def average_func(player):
+		if player.getNumCities() == 0:
+			return 0
+		return function(player) / player.getNumCities()
+	return average_func
+	
+def cityValue(tile, function):
+	def value_func(player):
+		_city = city(tile)
+		if not _city: return 0
+		
+		return function(city)
+	return value_func
+
+
+class GenericGoal(object):
+
+	def __init__(self):
+		self.state = POSSIBLE
+		
+		self.description = "NO DESCRIPTION"
+		
+		self.progress = None
+		self.notifier = None
+		
+		self.handlers = []
+	
+	def setup(self, iPlayer, notifier):
+		self.iPlayer = iPlayer
+		self.iCiv = civ(iPlayer)
+		self.player = player(iPlayer)
+		
+		self.notifier = notifier
+		
+		for event, handler in self.handlers:
+			events.addEventHandler(event, handler)
+	
+	def addEventHandler(self, event, handler):
+		self.handlers.append((event, handler))
+		
+	def possible(self):
+		return self.state == POSSIBLE
+		
+	def win(self):
+		self.setState(SUCCESS)
+		
+	def lose(self):
+		self.setState(FAILURE)
+		
+	def expire(self):
+		if self.possible():
+			self.lose()
+		
+	def progress(self):
+		pass
+		
+	def check(self):
+		if self.possible():
+			self.progress()
+			
+			if self.condition():
+				self.win()
+			
+	def finalCheck(self):
+		self.check()
+		self.expire()
+		
+	def condition(self):
+		raise NotImplementedError()
+		
+	def notify(self, state):
+		if self.notifier:
+			self.notifier(state)
+		
+	def checkFor(self, event):
+		def check_handler(*args, **kwargs):
+			self.check()
+			
+		self.addEventHandler(event, check_handler)
+		return self
+			
+	def turnly(self):
+		return self.checkFor("BeginGameTurn")
+		
+	def by(self, iYear):
+		def expire_handler(iGameTurn):
+			if iGameTurn == year(iYear):
+				self.expire()
+				
+		self.addEventHandler("BeginGameTurn", expire_handler)
+		return self
+		
+	def at(self, iYear):
+		def check_handler(iGameTurn):
+			if iGameTurn == year(iGameTurn):
+				self.finalCheck()
+		
+		self.addEventHandler("BeginGameTurn", check_handler)
+		return self
+		
+	def forBuilding(self, iBuilding):
+		def check_handler(city, iBuiltBuilding):
+			if iBuiltBuilding == iBuilding:
+				if isWonder(iBuilding):
+					self.finalCheck()
+				else:
+					self.check()
+		
+		self.addEventHandler("buildingBuilt", check_handler)
+		return self
+		
+	def acquiredCity(self):
+		return self.checkFor("cityAcquired")
+		
+	def builtCity(self):
+		return self.checkFor("cityBuilt")
+		
+	def city(self):
+		return self.acquiredCity().builtCity()
+	
+	def getStateChar(self):
+		symbol = FontSymbols.FAILURE_CHAR
+		if self.condition():
+			symbol = FontSymbols.SUCCESS_CHAR
+		
+		return u"%c" % game.getSymbolID(symbol)
+		
+	def getDescription(self):
+		return self.description
+		
+	def getProgress(self):
+		return self.getStateChar() + self.progress
+		
+	def setNotifier(self, notifier):
+		self.notifier = notifier
+		
+	def setState(self, state):
+		if self.state != state:
+			self.state = state
+			self.notify(state)
+		
+
+class CombinedGoal(GenericGoal):
+
+	def __init__(self, *subgoals):
+		super(CombinedGoal, self).__init__()
+		
+		self.subgoals = subgoals
+		
+	def setup(self, iPlayer, notifier):
+		for goal in self.subgoals:
+			goal.setup(iPlayer, self.handle)
+			
+		self.notifier = notifier
+			
+	def handle(self, state):
+		if state != POSSIBLE:
+			return
+	
+		if state == FAILURE:
+			self.lose()
+		elif state == SUCCESS and self.condition():
+			self.win()
+			
+	def check(self):
+		for goal in self.subgoals:
+			goal.check()
+			
+	def finalCheck(self):
+		for goal in self.subgoals:
+			goal.finalCheck()
+			
+	def expire(self):
+		for goal in self.subgoals:
+			goal.expire()
+			
+	def condition(self):
+		return all(goal.state == SUCCESS for goal in self.subgoals)
+			
+	def getProgress(self):
+		'\n'.join(goal.getProgress() for goal in self.subgoals)
+		
+		
+class PartialGoal(CombinedGoal):
+
+	def __init__(self, iNumRequired, *subgoals):
+		super(PartialGoal, self).__init__(*subgoals)
+		
+		self.iNumRequired = iNumRequired
+		
+	def condition(self):
+		return count(self.subgoals, lambda subgoal: subgoal.state == SUCCESS) >= self.iNumRequired
+		
+		
+class AnyGoal(CombinedGoal):
+
+	def __init__(self, *subgoals):
+		super(AnyGoal, self).__init__(*subgoals)
+		
+	def condition(self):
+		return any(subgoal for subgoal in self.subgoals if subgoal.state == SUCCESS)
+
+
+class DifferentCities(CombinedGoal):
+
+	def __init__(self, *subgoals):
+		super(DifferentCities, self).__init__(*subgoals)
+	
+	def handle(self, state):
+		super(DifferentCities, self).handle(state)
+		
+		if self.state != POSSIBLE:
+			return
+		
+		excluded = [subgoal.location for subgoal in self.subgoals if subgoal.state == SUCCESS]
+		
+		for subgoal in self.subgoals:
+			if subgoal.state == POSSIBLE:
+				subgoal.excluded = excluded[:]
+
+
+class RequiredCountGoal(GenericGoal):
+
+	def __init__(self, value_function, iRequiredValue):
+		super(RequiredCountGoal, self).__init__()
+		
+		self.value_function = value_function
+		self.iRequiredValue = iRequiredValue
+		
+		self.turnly()
+		
+	def value(self):
+		return self.value_function(self.player)
+			
+	def required(self):
+		return self.iRequiredValue
+		
+	def condition(self):
+		return self.value() >= self.required()
+
+
+def BuildingCount(iBuilding, iRequiredBuildings):
+	return RequiredCountGoal(lambda player: player.countNumBuildings(iBuilding), iRequiredBuildings).forBuilding(iBuilding)
+	
+def BuildingCounts(*buildings):
+	return CombinedGoal(BuildingCount(iBuilding, iNumBuildings) for iBuilding, iNumBuildings in buildings)
+	
+def BuildingCountSum(iRequiredBuildings, buildings):
+	return RequiredCountGoal(lambda player: sum(player.countNumBuildings(iBuilding) for iBuilding in buildings), iRequiredBuildings)
+	
+def ReligiousBuildingCount(iReligiousBuilding, iRequiredBuildings):
+	return BuildingCountSum(iRequiredBuildings, [iReligiousBuilding + 4*iReligion for iReligion in range(iNumReligions)])
+
+def WonderCount(iRequiredWonders):
+	return BuildingCountSum(iRequiredWonders, [iBuilding for iBuilding in range(iNumBuildings) if iBuilding >= iFirstWonder])
+
+def TotalPopulation(iRequiredPopulation):
+	return RequiredCountGoal(CyPlayer.getTotalPopulation, iRequiredPopulation)
+	
+def AcquiredResourceCount(iResource, iRequiredResources):
+	return RequiredCountGoal(lambda p: p.getNumAvailableBonuses(iResource), iRequiredResources)
+
+def AcquiredResourcesCount(lResources, iRequiredResources):
+	return RequiredCountGoal(lambda p: sum(p.getNumAvailableBonuses(iResource) for iResource in lResources), iRequiredResources)
+
+def ControlledResourcesCount(lResources, iRequiredResources):
+	def playerResourceCount(iPlayer, iResource):
+		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource)
+	
+	def playerResourcesCount(iPlayer):
+		return sum(playerResourceCount(iPlayer, iResource) for iResource in lResources)
+	
+	def playerVassalResourcesCount(iPlayer):
+		return players.major().alive().where(lambda p: p == iPlayer or team(p).isVassal(team(iPlayer).getID())).sum(playerResourcesCount)
+	
+	return RequiredCountGoal(playerVassalResourcesCount, iRequiredResources)
+	
+def ControlledResourceCount(iResource, iRequiredResources):
+	return ControlledResourcesCount([iResource], iRequiredResources)
+
+def SpecialistCount(iSpecialist, iRequiredSpecialists):
+	return RequiredCountGoal(lambda player: cities.owner(player).sum(lambda city: city.getFreeSpecialistCount(iSpecialist)), iRequiredSpecialists)
+
+def WonderSpecialistCount(iWonder, iSpecialist, iRequiredSpecialists):
+	def wonder_specialist_count(player):
+		wonderCity = getBuildingCity(iWonder, False)
+		if not wonderCity or wonderCity.getOwner() != player.getID():
+			return 0
+		return wonderCity.getFreeSpecialistCount(iSpecialist)
+	
+	return RequiredCountGoal(wonder_specialist_count, iRequiredSpecialists)
+
+def HappinessResourceCount(iRequiredResources):
+	return RequiredCountGoal(lambda player: infos.bonuses().where(lambda iBonus: info.bonus(iBonus).getHappiness() > 0 and player.getNumAvailableBonuses(iBonus) > 0).count(), iRequiredResources)
+	
+def AverageCityPopulation(iRequiredPopulation):
+	return RequiredCountGoal(cityAverage(CyPlayer.getTotalPopulation), iRequiredPopulation)
+
+def UnitsCount(lUnits, iRequiredUnits):
+	return RequiredCountGoal(lambda player: sum(player.getUnitClassCount(infos.unit(iUnit).getUnitClassType()) for iUnit in lUnits), iRequiredUnits)
+
+def UnitCount(iUnit, iRequiredUnits):
+	return UnitsCount([iUnit], iRequiredUnits)
+	
+def CorporationCount(iCorporation, iRequiredCorporations):
+	return RequiredCountGoal(lambda player: player.countCorporations(iCorporation), iRequiredCorporations)
+
+def OpenBordersCount(iRequiredOpenBorders, lCivs = []):
+	def open_borders_count(player):
+		contacts = players.major().alive()
+		if lCivs:
+			contacts = contacts.civs(*lCivs)
+			
+		return contacts.where(lambda p: team(player).isOpenBorders(p)).count()
+	
+	return RequiredCountGoal(open_borders_count, iRequiredOpenBorders)
+
+def CapitalWonderCount(iRequiredWonders):
+	def capital_wonder_count(player):
+		if not capital(player):
+			return 0
+		return len([iWonder for iWonder in lWonders if capital(iPlayer).isHasBuildingEffect(iWonder)])
+	
+	return RequiredCountGoal(capital_wonder_count, iRequiredWonders)
+
+def ImprovementCount(iImprovement, iRequiredImprovements):
+	return RequiredCountGoal(lambda p: p.getImprovementCount(iImprovement), iRequiredImprovements)
+
+def ImprovementCounts(*improvements):
+	return CombinedGoal(ImprovementCount(iImprovement, iRequiredImprovements) for iImprovement, iRequiredImprovements in improvements)
+
+
+class SunkShips(RequiredCountGoal):
+
+	def __init__(self, iRequiredShips):
+
+		super(SunkShips, self).__init__(lambda p: self.getSunkShips(), iRequiredShips)
+		
+		self.iSunkShips = 0
+		
+		self.onCombatResult()
+		
+	def getSunkShips(self):
+		return self.iSunkShips
+	
+	def onCombatResult(self):
+		def check_handler(pWinningUnit, pLosingUnit):
+			if pWinningUnit.getOwner() == self.iPlayer and pLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
+				self.iSunkShips += 1
+				
+				self.check()
+
+
+class AcquiredCities(RequiredCountGoal):
+
+	def __init__(self, iRequiredCities):
+		super(AcquiredCities, self).__init__(lambda p: self.getAcquiredCities(), iRequiredCities)
+	
+		self.iAcquiredCities = 0
+		
+	def getAcquiredCities(self):
+		return self.iAcquiredCities
+		
+	def onCityAcquired(self):
+		def check_handler(iOwner, iPlayer, city, bConquest):
+			if self.iPlayer == iPlayer:
+				self.iAcquiredCities += 1
+		
+		self.addEventHandler("cityAcquired", check_handler)
+		return self
+	
+	def onCityBuilt(self):
+		def check_handler(city):
+			if city.getOwner() == self.iPlayer:
+				self.iAcquiredCities += 1
+				
+		self.addEventHandler("cityBuilt", check_handler)
+		return self
+		
+		
+class Vassals(RequiredCountGoal):
+
+	def __init__(self, iRequiredVassals):
+		super(Vassals, self).__init__(lambda p: self.countVassals(), iRequiredVassals)
+	
+		self.lCivs = []
+		self.iStateReligion = None
+		
+	def countVassals(self):
+		vassals = player.vassals(self.iPlayer)
+		
+		if self.lCivs:
+			vassals = vassals.where(lambda p: civ(p) in self.lCivs)
+			
+		if self.iStateReligion is not None:
+			vassals = vassals.where(lambda p: p.getStateReligion() == self.iStateReligion)
+			
+		return vassals.count()
+		
+	def civs(self, lCivs):
+		self.lCivs = lCivs
+		return self
+		
+	def stateReligion(self, iStateReligion):
+		self.iStateReligion = iStateReligion
+		return self
+		
+		
+class AttitudeCount(RequiredCountGoal):
+
+	def __init__(self, iAttitude, iRequiredRelations):
+		super(AttitudeCount, self).__init__(lambda p: self.countRelations(), iRequiredRelations)
+		
+		self.lCivs = []
+		self.bCommunist = False
+	
+	def countRelations(self):
+		relations = players.major().where(lambda p: self.player.canContact(p) and player(p).AI_getAttitude(self.iPlayer) >= self.iAttitude and not team(p).isAVassal())
+		
+		if self.lCivs:
+			relations = relations.where(lambda p: civ(p) in self.lCivs)
+		
+		if self.bCommunist:
+			relations = relations.where(lambda p: isCommunist(p))
+		
+		return relations.count()
+		
+	def civs(self, lCivs):
+		self.lCivs = lCivs
+		return civs
+	
+	def communist(self):
+		self.bCommunist = True
+		return self
+
+
+class PillageCount(RequiredCountGoal):
+
+	def __init__(self, iRequiredPillages):
+		super(PillageCount, self).__init__(lambda p: self.getPillageCount(), iRequiredPillages)
+		
+		self.iPillageCount = 0
+		
+		self.onUnitPillage()
+	
+	def getPillageCount(self):
+		return self.iPillageCount
+		
+	def onUnitPillage(self):
+		def check_handler(unit, iImprovement, iRoute, iPlayer, iGold):
+			if self.iPlayer == iPlayer:
+				self.iPillageCount += 1
+				self.check()
+		
+		self.addEventHandler("unitPillage", check_handler)
+		return self
+		
+
+class RazeCount(RequiredCountGoal):
+
+	def __init__(self, iRequiredRazes):
+		super(RazeCount, self).__init__(lambda p: self.getRazeCount(), iRequiredRazes)
+		
+		self.iRazeCount = 0
+		
+		self.onCityRazed()
+	
+	def getRazeCount(self):
+		return self.iRazeCount
+	
+	def onCityRazed(self):
+		def check_handler(city, iPlayer):
+			if self.iPlayer == iPlayer:
+				self.iRazeCount += 1
+				self.check()
+		
+		self.addEventHandler("cityRazed", check_handler)
+		return self
+
+
+class EnslaveCount(RequiredCountGoal):
+
+	def __init__(self, iRequiredEnslaves):
+		super(EnslaveCount, self).__init__(lambda p: self.getEnslaveCount(), iRequiredEnslaves)
+		
+		self.iEnslaveCount = 0
+		
+		self.lExceptions = []
+		
+		self.onEnslave()
+		
+	def exceptions(self, lExceptions):
+		self.lExceptions = lExceptions
+		return self
+	
+	def getEnslaveCount(self):
+		return self.iEnslaveCount
+	
+	def onEnslave(self):
+		def check_handler(iPlayer, unit):
+			if self.iPlayer == iPlayer and not is_minor(unit):
+				if not self.lExceptions or civ(unit) not in self.lExceptions:
+					self.iEnslaveCount += 1
+					self.check()
+		
+		self.addEventHandler("enslave", check_handler)
+		return self
+
+
+class MoreCultureThan(RequiredCountGoal):
+
+	def __init__(self, lCivs):
+		super(MoreCultureThan, self).__init__(CyPlayer.countTotalCulture, None)
+	
+		self.lCivs = lCivs
+	
+	def required(self):
+		return players.civs(self.lCivs).alive().sum(CyPlayer.countTotalCulture)
+
+
+class ConquerFrom(RequiredCountGoal):
+
+	def __init__(self, lCivs, iRequiredCities):
+		super(ConquerFrom, self).__init__(lambda p: self.getConquerCount(), iRequiredCities)
+		
+		self.lCivs = lCivs
+		self.lExcludedRegions = []
+		
+		self.iConquerCount = 0
+		
+		self.onCityAcquired()
+	
+	def getConquerCount(self):
+		return self.iConquerCount
+		
+	def notin(self, lRegions):
+		self.lExcludedRegions = lRegions
+		return self
+		
+	def onCityAcquired(self):
+		def check_handler(iOwner, iPlayer, city, bConquest):
+			if bConquest and self.iPlayer == iPlayer and civ(iOwner) in self.lCivs and city.getRegionID() not in self.lExcludedRegions:
+				self.iConquerCount += 1
+				self.check()
+		
+		self.addEventHandler("cityAcquired", check_handler)
+		return self
+
+
+class StateReligionBuildingCount(RequiredCountGoal):
+
+	def __init__(self, building, iRequiredBuildings):
+		super(StateReligionBuildingCount, self).__init__(lambda p: self.getStateReligionBuildingCount(), iRequiredBuildings)
+		
+		self.building = building
+	
+	def getStateReligionBuildingCount(self):
+		if self.player.getStateReligion() < 0:
+			return 0
+		return self.player.countNumBuildings(self.building(self.player.getStateReligion()))
+
+
+class GreatGenerals(RequiredCountGoal):
+
+	def __init__(self, iRequiredGenerals):
+		super(GreatGenerals, self).__init__(lambda p: self.getGreatGeneralCount(), iRequiredGenerals)
+		
+		self.iGreatGeneralCount = 0
+		
+		self.onGreatPersonBorn()
+		
+	def getGreatGeneralCount(self):
+		return self.iGreatGeneralCount
+	
+	def onGreatPersonBorn(self):
+		def check_handler(unit, iPlayer):
+			if self.iPlayer == iPlayer and infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
+				self.iGreatGeneralCount += 0
+				self.check()
+		
+		self.addEventHandler("greatPersonBorn", check_handler)
+		return self
+
+
+class BrokeredPeaceCount(RequiredCountGoal):
+
+	def __init__(self, iRequiredPeaceAgreements):
+		super(BrokeredPeaceCount, self).__init__(lambda p: self.getBrokeredPeaceCount(), iRequiredPeaceAgreements)
+		
+		self.iBrokeredPeaceCount = 0
+		
+		self.onPeaceBrokered()
+		
+	def getBrokeredPeaceCount(self):
+		return self.iBrokeredPeaceCount
+	
+	def onPeaceBrokered(self):
+		def check_handler(iBroker, iPlayer1, iPlayer2):
+			if self.iPlayer == iBroker:
+				self.iBrokeredPeaceCount += 1
+				self.check()
+		
+		self.addEventHandler("peaceBrokered", check_handler)
+		return self
+
+
+class RequiredValueGoal(RequiredCountGoal):
+
+	def __init__(self, value_function, iRequiredValue):
+		super(RequiredValueGoal, self).__init__(value_function, iRequiredValue)
+		
+	def required(self):
+		return scale(self.iRequiredValue)
+
+
+def PlayerCulture(iRequiredCulture):
+	return RequiredValueGoal(CyPlayer.countTotalCulture, iRequiredCulture)
+
+def PlayerGold(iRequiredGold):
+	return RequiredValueGoal(CyPlayer.getGold, iRequiredGold)
+
+def AverageCityCulture(iRequiredCulture):
+	return RequiredValueGoal(cityAverage(CyPlayer.countTotalCulture), iRequiredCulture)
+	
+def CityCulture(tile, iRequiredCulture):
+	def cityCulture(player):
+		if not city(tile):
+			return 0
+		return city(tile).getCulture(player.getID())
+	
+	return RequiredValueGoal(cityCulture, iRequiredCulture)
+	
+
+class TradeGold(RequiredValueGoal):
+
+	def __init__(self, iRequiredGold):
+		super(TradeGold, self).__init__(lambda p: self.getTradeGold(), iRequiredGold)
+		
+		self.iTradeGold = 0
+		
+		self.onPlayerGoldTrade()
+		
+	def getTradeGold(self):
+		return self.iTradeGold / 100
+		
+	def onPlayerGoldTrade(self):
+		def check_handler(iFrom, iTo, iGold):
+			if self.iPlayer == iTo:
+				self.iTradeGold += iGold * 100
+				
+		self.addEventHandler("playerGoldTrade", check_handler)
+		return self
+		
+	def progress(self):
+		# gold from city trade routes
+		iTradeCommerce = 0
+		for city in cities.owner(self.iPlayer):
+			iTradeCommerce += city.getTradeYield(YieldTypes.YIELD_COMMERCE)
+		self.iTradeGold += iTradeCommerce * self.player.getCommercePercent(CommerceTypes.COMMERCE_GOLD)
+		
+		# gold from per turn gold trade
+		for iPlayer in players.major():
+			self.iTradeGold += self.player.getGoldPerTurnByPlayer(iPlayer) * 100
+
+
+class RaidGold(RequiredValueGoal):
+
+	def __init__(self, iRequiredGold):
+		super(RaidGold, self).__init__(lambda p: self.getRaidGold(), iRequiredGold)
+		
+		self.iRaidGold = 0
+		
+		self.onUnitPillage()
+		self.onCityCaptureGold()
+		
+	def getRaidGold(self):
+		return self.iRaidGold
+		
+	def onUnitPillage(self):
+		def check_handler(unit, iImprovement, iRoute, iPlayer, iGold):
+			if self.iPlayer == iPlayer:
+				self.iRaidGold += iGold
+				self.check()
+				
+		self.addEventHandler("unitPillage", check_handler)
+		return self
+				
+	def onCityCaptureGold(self):
+		def check_handler(city, iPlayer, iGold):
+			if self.iPlayer == iPlayer:
+				self.iRaidGold += iGold
+				self.check()
+		
+		self.addEventHandler("cityCaptureGold", check_handler)
+		return self
+
+
+class PiracyGold(RequiredValueGoal):
+
+	def __init__(self, iRequiredGold):
+		super(PiracyGold, self).__init__(lambda p: self.getPiracyGold(), iRequiredGold)
+		
+		self.iPiracyGold = 0
+		
+		self.onUnitPillage()
+		self.onBlockade()
+	
+	def getPiracyGold(self):
+		return self.iPiracyGold
+	
+	def onUnitPillage(self):
+		def check_handler(unit, iImprovement, iRoute, iPlayer, iGold):
+			if self.iPlayer == iPlayer and infos.unit(unit).isHiddenNationality():
+				self.iPiracyGold += iGold
+				self.check()
+		
+		self.addEventHandler("unitPillage", check_handler)
+		return self
+	
+	def onBlockade(self):
+		def check_handler(iPlayer, iGold):
+			if self.iPlayer == iPlayer:
+				self.iPiracyGold += iGold
+				self.check()
+		
+		self.addEventHandler("blockade", check_handler)
+		return self
+
+
+class SlaveTradeGold(RequiredValueGoal):
+
+	def __init__(self, iRequiredGold):
+		super(SlaveTradeGold, self).__init__(lambda p: self.getSlaveTradeGold(), iRequiredGold)
+		
+		self.iSlaveTradeGold = 0
+		
+		self.onPlayerSlaveTrade()
+		
+	def getSlaveTradeGold(self):
+		return self.iSlaveTradeGold
+		
+	def onPlayerSlaveTrade(self):
+		def check_handler(iPlayer, iGold):
+			if self.iPlayer == iPlayer:
+				self.iSlaveTradeGold += iGold
+				self.check()
+		
+		self.addEventHandler("playerSlaveTrade", check_handler)
+		return self
+
+
+class ResourceTradeGold(RequiredValueGoal):
+
+	def __init__(self, iRequiredGold):
+		super(ResourceTradeGold, self).__init__(lambda p: self.getResourceTradeGold(), iRequiredGold)
+		
+		self.iResourceTradeGold = 0
+		
+		self.onTurn()
+		
+	def getResourceTradeGold(self):
+		return self.iResourceTradeGold
+	
+	def onTurn(self):
+		def check_handler(iGameTurn, iPlayer):
+			if self.iPlayer == iPlayer:
+				self.iResourceTradeGold += players.major().alive().sum(self.player.getGoldPerTurnByPlayer)
+				self.check()
+		
+		self.addEventHandler("BeginPlayerTurn", check_handler)
+		return self
+
+
+class CityCultureLevel(RequiredValueGoal):
+
+	def __init__(self, tile, iCultureLevel):
+		super(CityCultureLevel, self).__init__(lambda p: self.cityCulture(), None)
+	
+		self.tile = tile
+		self.iCultureLevel = iCultureLevel
+	
+	def cityCulture(self):
+		if not city(self.tile):
+			return 0
+		return city(self.tile).getCulture(self.iPlayer)
+	
+	def required(self):
+		return infos.culture(self.iCultureLevel).getSpeedThreshold(game.getGameSpeedType())
+
+
+class CapitalCultureLevel(RequiredValueGoal):
+
+	def __init__(self, iCultureLevel):
+		super(CapitalCultureLevel, self).__init__(lambda p: self.capitalCulture(), None)
+	
+		self.excluded = []
+	
+		self.iCultureLevel = iCultureLevel
+		self.location = None
+		
+	def capitalCulture(self):
+		if not capital(self.iPlayer):
+			return 0
+		return capital(self.iPlayer).getCulture(self.iPlayer)
+	
+	def required(self):
+		return infos.culture(self.iCultureLevel).getSpeedThreshold()
+	
+	def condition(self):
+		return location(capital(self.iPlayer)) not in self.excluded and super(CapitalCultureLevel, self).condition()
+	
+	def setState(self, state):
+		super(CapitalCultureLevel, self).setState(state)
+		
+		if state == SUCCESS:
+			self.location = location(capital(self.iPlayer)) 
+	
+	def exclude(self, city):
+		self.excluded.append(location(city))
+
+
+class PercentGoal(GenericGoal):
+
+	def __init__(self, value_function, iRequiredPercent):
+		super(PercentGoal, self).__init__()
+		
+		self.value_function = value_function
+		self.iRequiredPercent = 1.0 * iRequiredPercent
+		
+	def value(self):
+		return 1.0 * self.value_function()
+	
+	def required(self):
+		return self.iRequiredPercent
+	
+	def condition(self):
+		return self.value() >= self.required()
+		
+		
+def ReligionSpreadPercent(iReligion, iRequiredPercent):
+	return PercentGoal(lambda: game.calculateReligionPercent(iReligion), iRequiredPercent)
+
+
+class PercentOfTotalGoal(PercentGoal):
+
+	def __init__(self, value_function, iRequiredPercent, total_function=None):
+		super(PercentOfTotalGoal, self).__init__(value_function, iRequiredPercent)
+		
+		self.total_function = total_function
+			
+	def total(self):
+		if self.total_function:
+			return self.total_function()
+		return players.alive().sum(lambda p: self.value_function(player(p)))
+			
+	def value(self):
+		iTotal = self.total()
+		if iTotal <= 0: 
+			return 0.0
+		
+		return 100.0 * self.value_function(self.player) / iTotal
+		
+		
+def PopulationPercent(iRequiredPercent):
+	return PercentOfTotalGoal(CyPlayer.getTotalPopulation, iRequiredPercent, game.getTotalPopulation)
+	
+def LandPercent(iRequiredPercent):
+	return PercentOfTotalGoal(CyPlayer.getTotalLand, iRequiredPercent, map.getLandPlots)
+	
+def ReligiousVotePercent(iRequiredPercent):
+	return PercentOfTotalGoal(lambda p: p.getVotes(16, 1), iRequiredPercent)
+
+
+class AlliedPercentOfTotal(PercentOfTotalGoal):
+
+	def __init__(self, value_function, iRequiredPercent, total_function=None):
+		return super(AlliedPercentOfTotal, self).__init__(value_function, iRequiredPercent, total_function)
+	
+	def allies(self):
+		allies = players.of(self.iPlayer) + players.vassals(self.iPlayer) + players.defensivePacts(self.iPlayer) + players.vassals(self.iPlayer).defensivePacts()
+		return allies.unique()
+	
+	def value(self):
+		iTotal = self.total()
+		if iTotal <= 0:
+			return 0.0
+		
+		return 100.0 * self.allies().sum(self.value_function) / 100
+
+
+def AlliedCommercePercent(iRequiredPercent):
+	return AlliedPercentOfTotal(CyPlayer.calculateTotalCommerce, iRequiredPercent)
+
+def AlliedPowerPercent(iRequiredPercent):
+	return AlliedPercentOfTotal(CyPlayer.getPower, iRequiredPercent)
+
+
+class ControlPercentInArea(PercentOfTotalGoal):
+
+	def __init__(self, iRequiredPercent, plots):
+		super(ControlPercentInArea, self).__init__(self.controlledArea, iRequiredPercent, self.totalArea)
+		
+		self.plots = plots
+		self.bVassals = False
+		self.bCoastalOnly = False
+		
+	def withVassals(self):
+		self.bVassals = True
+		return self
+		
+	def validPlayers(self):
+		if self.bVassals:
+			return players.vassals(self.iPlayer).including(self.iPlayer)
+		return players.of(self.iPlayer)
+		
+	def controlledArea(self, player):
+		return self.plots.where(lambda p: p.getOwner() in self.validPlayers()).count()
+	
+	def totalArea(self):
+		return self.plots.count()
+
+
+def ControlPercentInAreas(iRequiredPercent, *ps):
+	return ControlPercentInArea(iRequiredPercent, sum(ps, plots.none()))
+
+
+class Wonder(GenericGoal):
+
+	def __init__(self, iWonder):
+		super(Wonder, self).__init__()
+		
+		self.iWonder = iWonder
+		
+		self.wonderLocation = None
+		self.iWonderBuilder = None
+		
+		def check_handler(city, iBuilding):
+			if iBuilding == self.iWonder:
+				self.wonderLocation = location(city)
+				self.iWonderBuilder = city.getOwner()
+				
+				self.finalCheck()
+			
+		self.addEventHandler("buildingBuilt", check_handler)
+			
+	def condition(self):
+		return city(self.wonderLocation).getOwner() == self.iPlayer and self.iWonderBuilder == self.iPlayer
+		
+		
+def Wonders(*wonders):
+	return CombinedGoal(Wonder(wonder) for wonder in wonders)
+
+
+class Project(GenericGoal):
+
+	def __init__(self, iProject):
+		super(Project, self).__init__()
+		
+		self.iProject = iProject
+		
+		self.iProjectBuilder = None
+		
+		self.onProjectBuilt()
+		
+	def onProjectBuilt(self):
+		def check_handler(iPlayer, iProject):
+			if self.iProject == iProject:
+				self.iProjectBuilder = iPlayer
+				
+				self.finalCheck()
+		
+		self.addEventHandler("projectBuilt", check_handler)
+	
+	def condition(self):
+		return self.iProjectBuilder == self.iPlayer
+
+
+def Projects(*projects):
+	return CombinedGoal(Project(iProject) for iProject in projects)
+
+
+class Discover(GenericGoal):
+
+	def __init__(self, iTech):
+		super(Discover, self).__init__()
+		
+		self.iTech = iTech
+		
+		self.iDiscoverer = None
+		
+		def check_handler(iTech, iTeam, iPlayer):
+			if iTech == self.iTech:
+				self.iDiscoverer = iPlayer
+				
+				self.discoverCheck()
+		
+		events.addEventHandler("techAcquired", check_handler)
+		
+	def discoverCheck(self):
+		self.check()
+	
+	def condition(self):
+		return self.iDiscoverer == self.iPlayer
+
+
+class DiscoverFirst(Discover):
+
+	def __init__(self, iTech):
+		super(DiscoverFirst, self).__init__(iTech)
+	
+	def discoverCheck(self):
+		self.finalCheck()
+
+
+def DiscoverFirsts(*techs):
+	return CombinedGoal(DiscoverFirst(tech) for tech in techs)
+
+
+class EnterEra(GenericGoal):
+
+	def __init__(self, iEra):
+		super(EnterEra, self).__init__()
+		
+		self.iEra = iEra
+		
+		self.turnly()
+		
+	def condition(self):
+		return self.player.getCurrentEra() >= self.iEra
+	
+	def before(self, iEra):
+		def expire_handler(iTech, iTeam, iPlayer):
+			if self.iPlayer != iPlayer and player(iPlayer).getCurrentEra() >= iEra:
+				self.expire()
+				
+		self.addEventHandler("techAcquired", expire_handler)
+		return self
+	
+	
+class RequiredCityCount(GenericGoal):
+
+	def __init__(self, tile, iRequiredCount, function):
+		super(RequiredCityCount, self).__init__()
+		
+		self.tile = tile
+		self.iRequiredCount = iRequiredCount
+		self.function = function
+		
+	def value(self):
+		if not city(self.tile):
+			return 0
+	
+		return self.function(city(self.tile))
+		
+	def required(self):
+		return self.iRequiredCount
+		
+	def condition(self):
+		return city(self.tile) and city(self.tile).getOwner() == self.iPlayer and self.value() >= self.required()
+		
+
+def CitySpecialistCount(tile, iSpecialist, iRequiredSpecialists):
+	return RequiredCityCount(tile, iRequiredSpecialists, lambda city: city.getFreeSpecialistCount(iSpecialist))
+
+def CitySpecialistCounts(tile, lSpecialists, iRequiredSpecialists):
+	return RequiredCityCount(tile, iRequiredSpecialists, lambda city: sum(city.getFreeSpecialistCount(iSpecialist) for iSpecialist in lSpecialists))
+
+
+class BestCity(GenericGoal):
+
+	def __init__(self, tile, metric):
+		super(BestCity, self).__init__()
+		
+		self.tile = tile
+		self.metric = metric
+		
+		self.turnly()
+			
+	def best(self):
+		return cities.all().maximum(lambda city: (self.metric(city), at(city, self.tile)))
+			
+	def condition(self):
+		return at(self.best(), self.tile) and self.best().getOwner() == self.iPlayer
+		
+		
+def MostCultureCity(tile):
+	return BestCity(tile, lambda city: city.getCulture(city.getOwner()))
+
+def MostPopulationCity(tile):
+	return BestCity(tile, CyCity.getPopulation)
+
+
+class TradeConnection(GenericGoal):
+
+	def __init__(self):
+		super(TradeConnection, self).__init__()
+		
+		self.turnly()
+	
+	def condition():
+		return players.major().without(self.iPlayer).any(lambda p: self.player.canContact(p) and self.player.canTradeNetworkWith(p))
+
+
+class GoldenAges(GenericGoal):
+
+	def __init__(self, iNumGoldenAges):
+		super(GoldenAges, self).__init__()
+		
+		self.iNumGoldenAges = iNumGoldenAges
+		
+		self.iGoldenAgeTurns = 0
+		
+		self.turnly()
+		
+	def progress():
+		if self.player.isGoldenAge() and not self.player.isAnarchy():
+			self.iGoldenAgeTurns += 1
+	
+	def condition(self):
+		return self.iGoldenAgeTurns >= turns(8 * self.iNumGoldenAges)
+
+
+class Control(GenericGoal):
+
+	def __init__(self, plots):
+		super(Control, self).__init__()
+		
+		self.plots = plots
+		
+		self.city()
+		
+	def isControlled(self, city):
+		return city.getOwner() == self.iPlayer
+	
+	def condition(self):
+		return self.plots.cities().all(self.isControlled)
+
+
+def Controls(*plotsList):
+	return CombinedGoal(Control(p) for p in plotsList)
+
+def ControlCivs(*civs):
+	return CombinedGoal(Control(plots.normal(iCiv)) for iCiv in civs)
+	
+	
+class Settle(GenericGoal):
+
+	def __init__(self, plots):
+		super(Settle, self).__init__()
+		
+		self.plots = plots
+		
+	def onCityBuilt(self):
+		def check_handler(city):
+			if city.getOwner() == self.iPlayer:
+				self.win()
+			else:
+				self.lose()
+		
+	def check(self):
+		self.finalCheck()
+
+	
+def SettledAll(*plotsList):
+	return CombinedGoal(Settle(p) for p in plotsList)
+
+def SettledSome(iNumRequired, *plotsList):
+	return PartialGoal(iNumRequired, *tuple(Settle(p) for p in plotsList))
+	
+	
+class ControlOrVassalize(Control):
+
+	def __init__(self, plots):
+		super(ControlOrVassalize, self).__init__(plots)
+		
+	def isControlled(self, city):
+		return super(ControlOrVassalize, self).isControlled(city) or team(city.getTeam()).isVassal(team(self.iPlayer).getID())
+		
+
+def ControlOrVassalizes(*plotsList):
+	return CombinedGoal(ControlOrVassalize(p) for p in plotsList)
+
+
+class CitiesInArea(GenericGoal):
+
+	def __init__(self, plots, iRequiredCities):
+		super(CitiesInArea, self).__init__()
+		
+		self.plots = plots
+		self.iRequiredCities = iRequiredCities
+		
+		self.city()
+		
+	def value(self):
+		return self.plots.cities().owner(self.iPlayer).count()
+		
+	def required(self):
+		return self.iRequiredCities
+		
+	def condition(self):
+		return self.value() >= self.required()
+		
+
+def CitiesInAreas(*areasWithCities):
+	return CombinedGoal(CitiesInArea(plots, iRequiredCities) for plots, iRequiredCities in areasWithCities)
+	
+def CitiesInAreasSum(iRequiredCities, *areas):
+	return CitiesInArea(sum(areas, plots.none()), iRequiredCities)
+
+
+class ConqueredCitiesInArea(CitiesInArea):
+
+	def __init__(self, plots, iRequiredCities):
+		super(ConqueredCitiesInArea, self).__init__(plots, iRequiredCities)
+		
+	def value(self):
+		return self.plots.cities().owner(self.iPlayer).where(lambda city: city.getOriginalOwner() != self.iPlayer).count()
+		
+		
+class SettledCitiesInArea(CitiesInArea):
+
+	def __init__(self, plots, iRequiredCities):
+		super(SettledCitiesInArea, self).__init__(plots, iRequiredCities)
+	
+	def value(self):
+		return self.plots.cities().owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer).count()
+
+
+class CityBuilding(GenericGoal):
+
+	def __init__(self, tile, iBuilding):
+		super(CityBuilding, self).__init__()
+		
+		self.tile = tile
+		self.iBuilding = iBuilding
+		
+		self.forBuilding(iBuilding)
+	
+	def condition(self):
+		return city(self.tile) and city(self.tile).isHasRealBuilding(iBuilding)
+
+
+def CityBuildings(tile, lBuildings):
+	return CombinedGoal(CityBuilding(tile, iBuilding) for iBuilding in lBuildings)
+
+
+class FirstContact(GenericGoal):
+
+	def __init__(self, contactCivs, *ps):
+		super(FirstContact, self).__init__()
+		
+		self.contactCivs = contactCivs
+		self.plots = sum(ps, plots.none()).land()
+		
+		self.onFirstContact()
+		
+	def onFirstContact(self):
+		def check_handler(iPlayer, iHasMetPlayer):
+			if iPlayer == self.iPlayer and civ(iHasMetPlayer) in self.contactCivs:
+				self.finalCheck()
+		
+		self.addEventHandler("firstContact", check_handler)
+		return self
+	
+	def condition(self):
+		contacts = players.civs(*self.contactCivs).where(lambda p: team(self.iPlayer).canContact(p))
+		return contacts.none(lambda p: self.plots.where_surrounding(lambda plot: plot.isRevealed(p, False), radius=2).any())
+		
+		
+def NewWorldFirstContact():
+	return FirstContact(dCivGroups[iCivGroupEurope], plots.rectangle(tSouthAmerica), plots.rectangle(tNorthAfrica))
+
+
+class ConvertAfterFounding(GenericGoal):
+
+	def __init__(self, iReligion, iNumTurns):
+		super(ConvertAfterFounding, self).__init__()
+		
+		self.iReligion = iReligion
+		self.iNumTurns = iNumTurns
+		
+		self.turnly()
+		
+	def check(self):
+		super(ConvertAfterFounding, self).check()
+		
+		if game.isReligionFounded(self.iReligion) and turn() > game.getReligionGameTurnFounded(self.iReligion) + turns(self.iNumTurns):
+			self.expire()
+			
+	def condition(self):
+		return self.player.getStateReligion() == self.iReligion
+		
+		
+class MoreReligionInArea(GenericGoal):
+
+	def __init__(self, iOurReligion, iOtherReligion, *ps):
+		super(MoreReligionInArea, self).__init__()
+		
+		self.iOurReligion = iOurReligion
+		self.iOtherReligion = iOtherReligion
+		self.plots = sum(ps, plots.none())
+		
+		self.turnly()
+		
+	def value(self):
+		return self.plots.cities().religion(self.iOurReligion).count()
+		
+	def required(self):
+		return self.plots.cities().religion(self.iOtherReligion).count()
+		
+	def condition(self):
+		return self.value() > self.required()
+		
+
+class NoCitiesLost(GenericGoal):
+
+	def __init__(self):
+		super(NoCitiesLost, self).__init__()
+		
+		self.onCityAcquired()
+		
+		self.win()
+		
+	def onCityAcquired(self):
+		def check_handler(iOwner, iPlayer, city, bConquest):
+			if self.iPlayer == iOwner:
+				self.lose()
+		
+		self.addEventHandler("cityAcquired", check_handler)
+		return self
+
+
+class EraDiscoverFirst(GenericGoal):
+
+	def __init__(self, iEra, iRequiredDiscoveries):
+		super(EraDiscoverFirst, self).__init__()
+		
+		self.iNumEraTechs = 21
+		
+		self.iEra = iEra
+		self.iRequiredDiscoveries = iRequiredDiscoveries
+		
+		self.iOurDiscoveries = 0
+		self.iOtherDiscoveries = 0
+		
+		self.onTechAcquired()
+		
+	def onTechAcquired(self):
+		def check_handler(iTech, iTeam, iPlayer):
+			if infos.tech(iTech).getEra() == self.iEra:
+				if self.iPlayer == iPlayer:
+					self.iOurDiscoveries = 0
+				else:
+					self.iOtherDiscoveries = 0
+					
+			if self.iOtherDiscoveries > self.iNumEraTechs - self.iRequiredDiscoveries:
+				self.expire()
+				
+			self.check()
+			
+		self.addEventHandler("techAcquired", check_handler)
+		return self
+			
+	def condition(self):
+		return self.iOurDiscoveries >= self.iRequiredDiscoveries
+
+
+def EraDiscoverFirsts(*eraDiscoverFirsts):
+	return CombinedGoal(EraDiscoverFirst(iEra, iRequiredDiscoveries) for iEra, iRequiredDiscoveries in eraDiscoverFirsts)
+
+
+class FirstCity(GenericGoal):
+
+	def __init__(self, plots, exceptCivs):
+		super(FirstCity, self).__init__()
+		
+		self.plots = plots
+		self.exceptCivs = exceptCivs
+		
+		self.onCityBuilt()
+		
+	def onCityBuilt(self):
+		def check_handler(city):
+			if city in self.plots:
+				if city.getOwner() == self.iPlayer:
+					self.win()
+				elif civ(city) not in self.exceptCivs:
+					self.lose()
+		
+		self.addEventHandler("cityBuilt", check_handler)
+		return self
+
+
+def FirstNewWorld():
+	return FirstCity(plots.regions(*lAmerica), dCivGroups[iCivGroupAmerica])
+
+
+class BestPlayer(GenericGoal):
+
+	def __init__(self, metric):
+		super(BestPlayer, self).__init__()
+		
+		self.metric = metric
+		
+	def getBestPlayer(self):
+		return players.major().alive().maximum(lambda p: (self.metric(p), int(p == self.iPlayer)))
+		
+	def condition(self):
+		return self.getBestPlayer() == self.iPlayer
+
+
+def MostAdvanced():
+	return BestPlayer(lambda p: infos.techs().where(lambda iTech: team(p).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost()))
+
+def LargestPopulation():
+	return BestPlayer(lambda p: player(p).getRealPopulation())
+
+
+class NoStateReligionInArea(GenericGoal):
+
+	def __init__(self, iStateReligion, plots):
+		super(NoStateReligionInArea, self).__init__()
+		
+		self.iStateReligion = iStateReligion
+		self.plots = plots
+	
+	def condition(self):
+		return self.plots.cities().none(lambda city: player(city).getStateReligion() == self.iStateReligion)
+		
+		
+def NoStateReligionInAreas(iStateReligion, *ps):
+	return NoStateReligionInArea(iStateReligion, sum(ps, plots.none()))
+
+
+class RouteConnection(GenericGoal):
+
+	def __init__(self, starts, targets, lRoutes):
+		super(RouteConnection, self).__init__()
+		
+		if isinstance(starts, CyPlot):
+			starts = plots.of([starts])
+		
+		self.starts = starts
+		self.targets = targets
+		self.lRoutes = lRoutes
+		
+		self.validOwners = set()
+		
+		self.turnly()
+		
+	def setup(self, iPlayer, notifier):
+		super(RouteConnection, self).__init__(iPlayer, notifier)
+		
+		self.validOwners.add(iPlayer)
+		
+	def routeTech(self, iRoute):
+		iBuild = infos.builds().where(lambda iBuild: info.build(iBuild).getRoute() == iRoute).first()
+		return infos.build(iBuild).getTechPrereq()
+		
+	def connecting(self, plot):
+		return plot.getOwner() in self.validOwners and (plot.isCity() or plot.getRouteType() in self.lRoutes)
+		
+	def connected(self, start):
+		if not self.connecting(start):
+			return False
+			
+		if start in self.targets:
+			return True
+			
+		targets = targets.where(self.connecting)
+		
+		if not targets:
+			return False
+			
+		nodes = [(targets.closest_distance(start), start)]
+		heapq.heapify(nodes)
+		
+		visited = set()
+		
+		while nodes:
+			heuristic, node = heapq.heappop(nodes)
+			visited.add((heuristic, node))
+			
+			for plot in plots.surrounding(node).where(self.connecting):
+				if plot in targets:
+					return True
+				
+				tuple = (targets.closest_distance(plot), plot)
+				if not tuple in visited and not tuple in nodes:
+					heapq.heappush(nodes, tuple)
+		
+		return False
+	
+	def condition(self):
+		if none(team(self.iPlayer).isHasTech(self.routeTech(iRoute)) for iRoute in self.lRoutes):
+			return False
+			
+		for start in self.starts.cities():
+			if self.connected(start):
+				return True
+		
+		return False
+		
+	def withStartOwners(self):
+		self.validOwners.update(self.starts.cities().owners().entities())
+		return self
+			
+
+class Communist(GenericGoal):
+
+	def __init__(self):
+		super(Communist, self).__init__()
+	
+	def condition(self):
+		return isCommunist(self.iPlayer)
+
+
+class HolyCityTradeMission(GenericGoal):
+
+	def __init__(self):
+		super(HolyCityTradeMission, self).__init__()
+	
+	def onTradeMission(self):
+		def check_handler(iUnit, iPlayer, iX, iY, iGold):
+			if self.iPlayer == iPlayer:
+				iStateReligion = self.player.getStateReligion()
+				if iStateReligion != -1:
+					if at(game.getHolyCity(iStateReligion), (iX, iY)):
+						self.win()
+		
+		self.addEventHandler("tradeMission", check_handler)
+		return self
+		
+		
+class MatchingCities(GenericGoal):
+
+	def __init__(self, value_func, iRequiredValue, iRequiredCities, sort_func=None):
+		super(MatchingCities, self).__init__()
+		
+		self.value_func = value_func
+		self.iRequiredValue = iRequiredValue
+		self.iRequiredCities = iRequiredCities
+		
+		if sort_func:
+			self.sort_func = sort_func
+		else:
+			self.sort_func = value_func
+		
+	def required(self):
+		return self.iRequiredValue
+	
+	def condition(self):
+		return cities.owner(self.iPlayer).sort(sort_func).limit(self.iRequiredCities).all(lambda city: value_func(city) >= self.required())
+
+
+def PopulationCities(iRequiredPopulation, iNumCities):
+	return MatchingCities(CyCity.getPopulation, iRequiredPopulation, iNumCities)
+	
+def CultureCities(iRequiredCulture, iNumCities):
+	return MatchingCities(lambda city: city.getCulture(city.getOwner()), iRequiredCulture, iNumCities)
+	
+def CultureCity(iRequiredCulture):
+	return CultureCities(iRequiredCulture, 1)
+	
+def CultureLevelCities(iRequiredCultureLevel, iNumCities):
+	return MatchingCities(CyCity.getCultureLevel, iRequiredCultureLevel, iNumCities, lambda city: city.getCulture(city.getOwner()))
+
+
+class Route(GenericGoal):
+
+	def __init__(self, plots, lRoutes):
+		super(Route, self).__init__()
+		
+		self.plots = plots
+		self.lRoutes = lRoutes
+	
+	def condition(self):
+		return self.plots.all(lambda plot: plot.getOwner() == self.iPlayer and (plot.isCity() or plot.getRouteType() in self.lRoutes))
+		
+
+class NoForeignCities(GenericGoal):
+
+	def __init__(self, plots):
+		super(NoForeignCities, self).__init__()
+		
+		self.plots = plots
+		self.exceptions = []
+		self.forbidden = []
+		
+	def of(self, civs):
+		if self.exceptions:
+			raise Exception("cannot set specific civs if exceptions are already set")
+		self.forbidden = civs
+		return self
+		
+	def only(self, civs):
+		if self.forbidden:
+			raise Exception("cannot set exceptions if specific civs are already set")
+		self.exceptions = civs
+		return self
+		
+	def condition(self):
+		return self.plots.cities().all(lambda city: city.getOwner() not in self.forbidden or is_minor(city) or city.getOwner() == self.iPlayer or civ(city) in self.exceptions)
+
+
+class MultipleNoForeignCities(CombinedGoal):
+
+	def __init__(self, *areas):
+		super(MultipleNoForeignCities, self).__init__(*(NoForeignCities(area) for area in areas))
+	
+	def of(self, civs):
+		for subgoal in self.subgoals:
+			subgoal.of(civs)
+		return self
+	
+	def only(self, civs):
+		for subgoal in self.subgoals:
+			subgoal.only(civs)
+		return self
+
+
+class CultureCovered(GenericGoal):
+
+	def __init__(self, plots):
+		super(CultureCovered, self).__init__()
+		
+		self.plots = plots
+	
+	def condition(self):
+		return self.plots.all(lambda p: p.getOwner() == self.iPlayer)
+
+
+def CultureCovereds(*areas):
+	return CombinedGoal(CultureCovered(area) for area in areas)
+
+
+class CapitalBuilding(GenericGoal):
+
+	def __init__(self, iBuilding):
+		super(CapitalBuilding, self).__init__()
+		
+		self.iBuilding = iBuilding
+		
+	def condition(self):
+		return capital(self.iPlayer).isHasRealBuilding(self.iBuilding)
+
+
+class NeverConquer(GenericGoal):
+
+	def __init__(self):
+		super(NeverConquer, self).__init__()
+		
+		self.win()
+		
+		self.onCityAcquired()
+	
+	def onCityAcquired(self):
+		def check_handler(iOwner, iPlayer, city, bConquest):
+			if self.iPlayer == iPlayer and bConquest:
+				self.lose()
+		
+		self.addEventHandler("cityAcquired", check_handler)
+		return self
+
+
+### CIV GOALS ###
+
+dGoals = {
+	iEgypt : (
+		PlayerCulture(500).by(-850), 
+		Wonders(iPyramids, iGreatLibrary, iGreatLighthouse).by(-100), 
+		PlayerCulture(5000).by(170),
+	),
+	iBabylonia : (
+		DiscoverFirsts(iConstruction, iArithmetics, iWriting, iCalendar, iContract),
+		MostPopulationCity(tBabylon).at(-850),
+		MostCultureCity(tBabylon).at(-700),
+	),
+	iHarappa : (
+		TradeConnection().by(-1600),
+		BuildingCounts((iReservoir, 3), (iGranary, 2), (iSmokehouse, 2)).by(-1500),
+		TotalPopulation(30).by(-800),
+	),
+	iChina : (
+		BuildingCounts((iConfucianCathedral, 2), (iTaoistCathedral, 2)).by(1000),
+		DiscoverFirsts(iCompass, iPaper, iGunpowder, iPrinting),
+		GoldenAges(4).by(1800),
+	),
+	iGreece : (
+		DiscoverFirsts(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
+		ControlCivs(iEgypt, iPhoenicia, iBabylonia, iPersia).at(-330),
+		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis).by(-250),
+	),
+	iIndia : (
+		BuildingCounts((iHinduShrine, 1), (iBuddhistShrine, 1)).at(-100),
+		ReligiousBuildingCount(iTemple, 20).by(700),
+		PopulationPercent(20).at(1200),
+	),
+	iPhoenicia : (
+		CityBuildings(tCarthage, [iPalace, iGreatCothon]).by(-300),
+		Controls(
+			plots.rectangle(dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)),
+			plots.rectangle(tIberia),
+		).at(-100),
+		PlayerGold(5000),
+	),
+	iPolynesia : (
+		SettledSome(2,
+			plots.rectangle(tHawaii),
+			plots.rectangle(tNewZealand),
+			plots.rectangle(tMarquesas),
+			plots.rectangle(tEasterIsland),
+		).by(800),
+		SettledAll(
+			plots.rectangle(tHawaii),
+			plots.rectangle(tNewZealand),
+			plots.rectangle(tMarquesas),
+			plots.rectangle(tEasterIsland),
+		).by(1000),
+		Wonder(iMoaiStatues).by(1200),
+	),
+	iPersia : (
+		LandPercent(7).by(140),
+		WonderCount(7).by(350),
+		ReligiousBuildingCount(iShrine, 2).at(350),
+	),
+	iRome : (
+		BuildingCounts((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3)).by(100),
+		CitiesInAreas(
+			(plots.normal(iSpain), 2),
+			(plots.rectangle(tGaul), 2),
+			(plots.core(iEngland), 1),
+			(plots.rectangle(tAfrica), 2),
+			(plots.core(iByzantium), 4),
+			(plots.core(iEgypt), 2),
+		).at(320),
+		DiscoverFirsts(iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService),
+	),
+	iMaya : (
+		Discover(iCalendar).by(200),
+		Wonder(iTempleOfKukulkan).by(900),
+		NewWorldFirstContact(),
+	),
+	iTamils : (
+		CombinedGoal(
+			PlayerGold(3000),
+			PlayerCulture(2000),
+		).at(800),
+		ControlOrVassalizes(
+			plots.rectangle(tDeccan), 
+			plots.rectangle(tSrivijaya),
+		).at(1000),
+		TradeGold(4000).by(1200),
+	),
+	iEthiopia : (
+		AcquiredResourceCount(iIncense, 3).by(400),
+		CombinedGoal(
+			ConvertAfterFounding(iOrthodoxy, 5),
+			SpecialistCount(iSpecialistGreatProphet, 3),
+			BuildingCount(iOrthodoxCathedral, 1),
+		).by(1200),
+		MoreReligionInArea(iOrthodoxy, iIslam, plots.regions(*lAfrica)).at(1500),
+	),
+	iKorea : (
+		BuildingCounts((iBuddhistCathedral, 1), (iConfucianCathedral, 1)).by(1200),
+		DiscoverFirst(iPrinting),
+		SunkShips(20),
+	),
+	iByzantium : (
+		PlayerGold(5000).at(1000),
+		CombinedGoal(
+			MostPopulationCity(tConstantinople),
+			MostCultureCity(tConstantinople),
+		).at(1200),
+		CitiesInAreas(
+			(plots.rectangle(tBalkans), 3),
+			(plots.rectangle(tNorthAfrica), 3),
+			(plots.rectangle(tNearEast), 3),
+		).at(1450),
+	),
+	iJapan : (
+		CombinedGoal(
+			AverageCityCulture(6000),
+			NoCitiesLost()
+		).by(1600),
+		ControlOrVassalizes(
+			plots.rectangle(tKorea),
+			plots.rectangle(tManchuria),
+			plots.rectangle(tChina),
+			plots.rectangle(tIndochina).without(lIndochinaExceptions),
+			plots.rectangle(tIndonesia),
+			plots.rectangle(tPhilippines),
+		).at(1940),
+		EraDiscoverFirsts((iGlobal, 8), (iDigital, 8)),
+	),
+	iVikings : (
+		AnyGoal(Control(plots.core(iCiv)) for iCiv in dCivGroups[iCivGroupEurope] if dSpawn[iCiv] > 1050).at(1050),
+		FirstNewWorld().by(1100),
+		RaidGold(3000).by(1500),
+	),
+	iTurks : (
+		CombinedGoal(
+			LandPercent(6),
+			PillageCount(20),
+		).by(900),
+		CombinedGoal(
+			RouteConnection(plots.rectangle(tChina), lMediterraneanPorts, [iRouteRoad, iRouteRomanRoad, iRouteRailroad, iRouteHighway]),
+			CorporationCount(iSilkRoute, 10),
+		).by(1100),
+		DifferentCities(
+			CapitalCultureLevel(iCultureLevelDeveloping).by(900),
+			CapitalCultureLevel(iCultureLevelRefined).by(1100),
+			CapitalCultureLevel(iCultureLevelInfluential).by(1400),
+		),
+	),
+	iArabia : (
+		MostAdvanced().at(1300),
+		ControlOrVassalizes(
+			plots.core(iEgypt),
+			plots.rectangle(tAfrica),
+			plots.core(iBabylonia),
+			plots.core(iPersia),
+			plots.normal(iSpain),
+		).at(1300),
+		ReligionSpreadPercent(iIslam, 30),
+	),
+	iTibet : (
+		AcquiredCities(5).by(1000),
+		ReligionSpreadPercent(iBuddhism, 25).by(1400),
+		CitySpecialistCount(plots.capital(iTibet), iSpecialistGreatProphet, 5).by(1700),
+	),
+	iIndonesia : (
+		LargestPopulation().at(1300),
+		HappinessResourceCount(10).by(1500),
+		PopulationPercent(9).at(1940),
+	),
+	iMoors : (
+		CombinedGoal(
+			CitiesInArea(plots.rectangle(tMaghreb), 3),
+			ConqueredCitiesInArea(plots.rectangle(tIberia), 2),
+			ConqueredCitiesInArea(plots.rectangle(tWestAfrica), 2),
+		).at(1200),
+		CombinedGoal(
+			Wonder(iMezquita),
+			CitySpecialistCounts(tCordoba, [iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer], 4),
+		).by(1300),
+		PiracyGold(3000).by(1650),
+	),
+	iSpain : (
+		FirstNewWorld(),
+		ControlledResourcesCount([iSilver, iGold], 10).by(1650),
+		CombinedGoal(
+			ReligionSpreadPercent(iCatholicism, 30),
+			NoStateReligionInAreas(iProtestantism,
+				plots.rectangle(tEurope),
+				plots.rectangle(tEasternEurope),
+			),
+		).at(1650),
+	),
+	iFrance : (
+		CityCultureLevel(tParis, iCultureLevelLegendary).at(1700),
+		CombinedGoal(
+			ControlPercentInAreas(40,
+				plots.rectangle(tEurope),
+				plots.rectangle(tEasternEurope),
+			).withVassals(),
+			ControlPercentInArea(40, plots.rectangle(tNorthAmerica)).withVassals(),
+		).at(1800),
+		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain).by(1900),
+	),
+	iKhmer : (
+		CombinedGoal(
+			BuildingCounts((iBuddhistMonastery, 4), (iHinduMonastery, 4)),
+			Wonder(iWatPreahPisnulok),
+		).at(1200),
+		AverageCityPopulation(12).at(1450),
+		PlayerCulture(8000).by(1450),
+	),
+	iEngland : (
+		CitiesInAreas(
+			(plots.regions(*lNorthAmerica), 5),
+			(plots.regions(*lSouthAmerica), 3),
+			(plots.regions(*lAfrica), 4),
+			(plots.regions(*lAsia), 5),
+			(plots.regions(*lOceania), 3),
+		).by(1730),
+		CombinedGoal(
+			UnitsCount([iFrigate, iShipOfTheLine], 25),
+			SunkShips(50),
+		).by(1800),
+		EraDiscoverFirsts((iRenaissance, 8), (iIndustrial, 8)),
+	),
+	iHolyRome : (
+		CombinedGoal(
+			BuildingCount(iCatholicShrine, 1).at(1000),
+			BuildingCount(iOrthodoxShrine, 1).at(1200),
+			BuildingCount(iProtestantShrine, 1).at(1550),
+		),
+		Vassals(3).civs(dCivGroups[iCivGroupEurope]).stateReligion(iCatholicism).by(1650),
+		CombinedGoal(
+			CitySpecialistCounts(tVienna, [iSpecialistGreatArtist, iSpecialistGreatStatesman], 10),
+			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]),
+		).at(1850),
+	),
+	iRussia : (
+		CombinedGoal(
+			SettledCitiesInArea(plots.rectangle(tSiberia), 7).by(1700),
+			RouteConnection(plots.capital(iRussia), plots.of(lSiberianCoast), [iRailroad]).by(1920),
+		),
+		Projects(iManhattanProject, iLunarLanding),
+		CombinedGoal(
+			Communist(),
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5).communist()
+		).by(1950),
+	),
+	iMali : (
+		HolyCityTradeMission().by(1350),
+		CombinedGoal(
+			Wonder(iUniversityOfSankore),
+			WonderSpecialistCount(iUniversityOfSankore, iSpecialistGreatProphet, 1)
+		).by(1500),
+		CombinedGoal(
+			PlayerGold(5000).at(1500),
+			PlayerGold(15000).at(1700),
+		),
+	),
+	iPoland : (
+		PopulationCities(12, 3).by(1400),
+		DiscoverFirst(iCivilLiberties),
+		BuildingCountSum(3, [iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral]).by(1600),
+	),
+	iPortugal : (
+		OpenBordersCount(14).by(1550),
+		AcquiredResourcesCount(lColonialResources, 12).by(1650),
+		CitiesInAreasSum(15,
+			plots.rectangle(tBrazil),
+			plots.regions(*lAfrica),
+			plots.regions(*lAsia),
+		).at(1700),
+	),
+	iInca : (
+		CombinedGoal(
+			BuildingCount(iTambo, 5),
+			Route(plots.of(lAndeanCoast), [iRouteRoad]),
+		).by(1550),
+		PlayerGold(2500).at(1550),
+		NoForeignCities(plots.rectangle(tSouthAmerica)).at(1700),
+	),
+	iItaly : (
+		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore).by(1500),
+		CultureLevelCities(iCultureLevelInfluential, 3).by(1600),
+		ControlPercentInArea(65, plots.rectangle(tMediterranean).without(lMediterraneanExceptions).coastal()).by(1930),
+	),
+	iMongols : (
+		Control(plots.normal(iChina)).at(1300),
+		RazeCount(7),
+		LandPercent(12).by(1500),
+	),
+	iAztecs : (
+		MostPopulationCity(tTenochtitlan).at(1520),
+		BuildingCounts((iPaganTemple, 6), (iSacrificialAltar, 6)).by(1650),
+		EnslaveCount(20).exceptions(dCivGroups[iCivGroupAmerica])
+	),
+	iMughals : (
+		BuildingCount(iIslamicCathedral, 3).by(1500),
+		Wonders(iRedFort, iShalimarGardens, iTajMahal).by(1660),
+		PlayerCulture(50000).at(1750),
+	),
+	iOttomans : (
+		CapitalWonderCount(4).at(1550),
+		CombinedGoal(
+			CultureCovereds(
+				plots.of(lEasternMediterranean),
+				plots.of(lBlackSea),
+			),
+			Controls(
+				plots.surrounding(tCairo),
+				plots.surrounding(tMecca),
+				plots.surrounding(tBaghdad),
+				plots.surrounding(tVienna),
+			),
+		).by(1700),
+		MoreCultureThan(dCivGroups[iCivGroupEurope]).at(1800),
+	),
+	iThailand : (
+		OpenBordersCount(10).at(1650),
+		MostPopulationCity(tAyutthaya).at(1700),
+		NoForeignCities(plots.rectangle(tSouthAmerica)).only(lSouthAsianCivs).at(1900),
+	),
+	iCongo : (
+		ReligiousVotePercent(15).by(1650),
+		SlaveTradeGold(1000).by(1800),
+		EnterEra(iIndustrial).before(iGlobal),
+	),
+	iIran : (
+		OpenBordersCount(6, dCivGroups[iCivGroupEurope]).at(1650),
+		Controls(
+			plots.rectangle(tSafavidMesopotamia),
+			plots.rectangle(tTransoxiana),
+			plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions),
+		).at(1750),
+		CultureCity(20000).at(1800),
+	),
+	iNetherlands : (
+		CitySpecialistCount(plots.capital(iNetherlands), iSpecialistGreatMerchant, 3).by(1745),
+		ConquerFrom(dCivGroups[iCivGroupEurope], 4).notin(lEurope).by(1745),
+		AcquiredResourceCount(iSpices, 7).by(1775),
+	),
+	iGermany : (
+		CitySpecialistCounts(plots.capital(iGermany), lGreatPeople, 7).at(1900),
+		ControlCivs(
+			iItaly,
+			iFrance,
+			iEngland,
+			iVikings,
+			iRussia,
+		).at(1940),
+		EraDiscoverFirsts((iIndustrial, 8), (iGlobal, 8)),
+	),
+	iAmerica : (
+		CombinedGoal(
+			NoForeignCities(plots.rectangle(tNorthCentralAmerica)).of(dCivGroups[iCivGroupEurope]),
+			ControlOrVassalize(plots.core(iMexico)),
+		).at(1900),
+		Wonders(iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations).by(1950),
+		CombinedGoal(
+			AlliedCommercePercent(75),
+			AlliedPowerPercent(75),
+		).by(1990),
+	),
+	iArgentina : (
+		GoldenAges(2).by(1930),
+		CityCultureLevel(plots.capital(iArgentina), iCultureLevelLegendary).by(1960),
+		GoldenAges(6).by(2000),
+	),
+	iMexico : (
+		StateReligionBuildingCount(cathedral, 3).by(1880),
+		GreatGenerals(3).by(1940),
+		MostPopulationCity(tMexico).at(1960),
+	),
+	iColombia : (
+		MultipleNoForeignCities(
+			plots.rectangle(tPeru),
+			plots.rectangle(tGranColombia),
+			plots.rectangle(tGuayanas),
+			plots.rectangle(tCaribbean),
+		).of(dCivGroups[iCivGroupEurope]).at(1870),
+		Control(plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions)).at(1920),
+		ResourceTradeGold(3000).by(1950),
+	),
+	iBrazil : (
+		ImprovementCounts((iSlavePlantation, 8), (iPasture, 4)).at(1880),
+		Wonders(iWembley, iCristoRedentor, iItaipuDam),
+		CombinedGoal(
+			ImprovementCount(iForestPreserve, 20),
+			CapitalBuilding(iNationalPark),
+		).by(1950),
+	),
+	iCanada : (
+		CombinedGoal(
+			RouteConnection(plots.lazy().capital(iCanada), plots.of(lAtlanticCoast), [iRailroad]),
+			RouteConnection(plots.lazy().capital(iCanada), plots.of(lPacificCoast), [iRailroad]),
+		).by(1920),
+		CombinedGoal(
+			Control(plots.regions(rCanada)),
+			ControlPercentInArea(90, plots.regions(rCanada)),
+			NeverConquer(),
+		).by(1950),
+		BrokeredPeaceCount(12).by(2000),
+	),
+}
 
 ### GOAL CONSTANTS ###
 

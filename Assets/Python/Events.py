@@ -43,6 +43,7 @@ events.addEvent("birth")
 events.addEvent("rebirth")
 events.addEvent("resurrection")
 events.addEvent("switch")
+events.addEvent("enslave")
 
 
 @handler("buildingBuilt")

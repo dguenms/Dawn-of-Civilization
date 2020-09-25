@@ -42,6 +42,10 @@ def getPlayerExperience(unit):
 	return iExperience
 
 
+def isWonder(iBuilding):
+	return isWorldWonderClass(infos.building(iBuilding).getBuildingClassType())
+
+
 def log_with_trace(context):
 	print "%s called near:" % context
 	stacktrace()
@@ -715,7 +719,8 @@ class EntityCollection(object):
 		
 	def __getitem__(self, index):
 		return self.entities()[index]
-		
+	
+	# TODO: should this be set of the sum?
 	def __add__(self, other):
 		if other is None: return self
 		if not isinstance(other, type(self)):
@@ -842,7 +847,7 @@ class EntityCollection(object):
 				keys = keys[0]
 		combined = [self._keyify(key) for key in list(self._keys) + list(keys)]
 		return self.__class__(sorted(set(combined), key=combined.index))
-		
+	
 	def limit(self, iLimit):
 		return self.__class__(self._keys[:iLimit])
 	
@@ -916,6 +921,9 @@ class PlotFactory:
 
 	def of(self, list):
 		return Plots(list)
+	
+	def lazy(self):
+		return LazyPlotFactory()
 
 	def start(self, *args):
 		x, y = _parse_tile(*args)
@@ -931,6 +939,9 @@ class PlotFactory:
 		
 	def all(self):
 		return self.start(0, 0).end(iWorldX, iWorldY)
+		
+	def none(self):
+		return self.of([])
 		
 	def regions(self, *regions):
 		return self.all().where(lambda p: p.getRegionID() in regions)
@@ -1008,6 +1019,13 @@ class PlotFactory:
 		if identifier in dNewCapitals:
 			return plot(dNewCapitals[identifier])
 		return self.respawnCapital(identifier)
+
+
+# TODO: test
+class LazyPlotFactory:
+
+	def capital(self, iPlayer):
+		return LazyPlots.capital(iPlayer)
 
 
 class Locations(EntityCollection):
@@ -1097,6 +1115,9 @@ class Plots(Locations):
 	def water(self):
 		return self.where(lambda p: p.isWater())
 		
+	def coastal(self):
+		return self.where(lambda p: p.isCoastalLand())
+		
 	def core(self, iPlayer):
 		return self.where(lambda p: p.isCore(iPlayer))
 		
@@ -1111,6 +1132,20 @@ class Plots(Locations):
 	
 	def no_enemies(self, iPlayer):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
+
+
+# TODO: test
+class LazyPlots(object):
+
+	def __init__(self, getter):
+		self.getter = getter
+	
+	def __getattr__(self, name):
+		return getattr(self.getter(), name)
+		
+	@staticmethod
+	def capital(iPlayer):
+		return LazyPlots(lambda: plots.all().where(lambda p: at(p, capital(iPlayer))))
 
 		
 class CitiesCorner:
@@ -1383,6 +1418,10 @@ class PlayerFactory:
 		
 	def vassals(self, iPlayer):
 		return self.all().where(lambda p: team(p).isVassal(player(iPlayer).getTeam()))
+	
+	# TODO: test
+	def defensivePacts(self, iPlayer):
+		return self.all().where(lambda p: team(p).isDefensivePact(player(iPlayer).getTeam()))
 		
 	def none(self):
 		return Players([])
@@ -1498,6 +1537,10 @@ class Players(EntityCollection):
 	
 	def religion(self, iReligion):
 		return self.where(lambda p: player(p).getStateReligion() == iReligion)
+	
+	# TODO: test
+	def defensivePacts(self):
+		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p1).getTeam())))
 		
 		
 class CreatedUnits(object):
@@ -1639,6 +1682,9 @@ class Infos:
 			return gc.getBonusInfo(identifier)
 			
 		raise TypeError("Expected identifier to be CyPlot or bonus type ID, got '%s'" % type(identifier))
+	
+	def bonuses(self):
+		return InfoCollection.type(gc.getBonusInfo, iNumBonuses)
 		
 	def handicap(self):
 		return gc.getHandicapInfo(game.getHandicapType())
@@ -1693,6 +1739,12 @@ class Infos:
 	
 	def civics(self):
 		return InfoCollection.type(gc.getCivicInfo, gc.getNumCivicInfos())
+		
+	def build(self, identifier):
+		return gc.getBuildInfo(identifier)
+	
+	def builds(self):
+		return InfoCollection.type(gc.getBuildInfo, gc.getNumBuildInfos())
 
 
 class Map(object):
