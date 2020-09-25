@@ -936,6 +936,7 @@ lOceania = [rAustralia, rOceania]
 
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
+lAmerica = lSouthAmerica + lNorthAmerica
 
 #Projects
 
@@ -949,6 +950,11 @@ lMarsBaseComponents = [iMarsFraming, iMarsPowerSource, iMarsExtractor, iMarsHabi
 
 iNumEras = 7
 (iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iGlobal, iDigital) = range (iNumEras)
+
+# Culture
+
+iNumCultureLevels = 7
+(iCultureLevelNone, iCultureLevelPoor, iCultureLevelFledgling, iCultureLevelDeveloping, iCultureLevelRefined, iCultureLevelInfluential, iCultureLevelLegendary) = range(iNumCultureLevels)
 
 
 #Improvements
