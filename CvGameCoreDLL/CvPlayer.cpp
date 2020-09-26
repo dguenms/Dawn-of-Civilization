@@ -3756,7 +3756,7 @@ int CvPlayer::countTotalCulture() const
 	int iCount;
 	int iLoop;
 
-	iCount = 0;
+	iCount = 0;  
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
@@ -4407,6 +4407,11 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_CITIES:
 		{
 			CvCity* pCityTraded = getCity(item.m_iData);
+
+			if (pCityTraded == NULL)
+			{
+				return false;
+			}
 
 			if (pCityTraded->isOccupation())
 			{
