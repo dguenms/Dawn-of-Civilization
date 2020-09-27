@@ -158,7 +158,7 @@ class CvPediaCultureLevel:
 			szSpecialistEffects = ""
 			
 			for iYield in range(YieldTypes.NUM_YIELD_TYPES):
-				iYieldChange = SpecialistInfo.getCultureLevelYieldChange(self.iCultureLevel, iYield)
+				iYieldChange = SpecialistInfo.getCultureLevelYieldChange(CultureLevelTypes(self.iCultureLevel), YieldTypes(iYield))
 				
 				if iYieldChange > 0:
 					if szSpecialistEffects:
@@ -167,7 +167,7 @@ class CvPediaCultureLevel:
 					szSpecialistEffects += u"+%d%c" % (iYieldChange, gc.getYieldInfo(iYield).getChar())
 					
 			for iCommerce in range(CommerceTypes.NUM_COMMERCE_TYPES):
-				iCommerceChange = SpecialistInfo.getCultureLevelCommerceChange(self.iCultureLevel, iCommerce)
+				iCommerceChange = SpecialistInfo.getCultureLevelCommerceChange(CultureLevelTypes(self.iCultureLevel), CommerceTypes(iCommerce))
 				
 				if iCommerceChange > 0:
 					if szSpecialistEffects:
@@ -175,7 +175,7 @@ class CvPediaCultureLevel:
 						
 					szSpecialistEffects += u"+%d%c" % (iCommerceChange, gc.getCommerceInfo(iCommerce).getChar())
 					
-			iGreatPeopleRateChange = SpecialistInfo.getCultureLevelGreatPeopleRateChange(self.iCultureLevel)
+			iGreatPeopleRateChange = SpecialistInfo.getCultureLevelGreatPeopleRateChange(CultureLevelTypes(self.iCultureLevel))
 			
 			if iGreatPeopleRateChange > 0:
 				if szSpecialistEffects:
