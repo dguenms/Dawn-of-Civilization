@@ -62,18 +62,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_COMMUNIST</Tag>
-		<English>Socialist Republic of %s1</English>
-		<French>
-			<Text>R&#233;publique socialiste de %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Socialist Republic of %s1</German>
-		<Italian>Socialist Republic of %s1</Italian>
-		<Spanish>Socialist Republic of %s1</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_FASCIST</Tag>
 		<English>Falangist %s1</English>
 		<French>

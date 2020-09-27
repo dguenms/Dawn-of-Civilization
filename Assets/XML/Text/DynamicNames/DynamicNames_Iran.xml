@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Persia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_DEFAULT</Tag>
+		<English>%s2 Shahdom</English>
+		<French>
+			<Text>Royaume %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Schahtum %s2:Schahtum %s2:Schahtum %s2</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Scialato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino del Sah de %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_FASCIST</Tag>
+		<English>National-Socialist Workers' %s1</English>
+		<French>
+			<Text>%s1 des travailleurs nationaux-socialistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>National-Socialist Workers' %s1</German>
+		<Italian>National-Socialist Workers' %s1</Italian>
+		<Spanish>National-Socialist Workers' %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_COMMUNIST</Tag>
+		<English>National-Socialist Workers' %s1</English>
+		<French>
+			<Text>%s1 des travailleurs nationaux-socialistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>National-Socialist Workers' %s1</German>
+		<Italian>National-Socialist Workers' %s1</Italian>
+		<Spanish>National-Socialist Workers' %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_ADJECTIVE</Tag>
+		<English>Iranian</English>
+		<French>
+			<Text>iranien:iranienne:iraniens:iraniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Iranian</German>
+		<Italian>Iranian</Italian>
+		<Spanish>Iranian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_DESC</Tag>
+		<English>The Iranians</English>
+		<French>
+			<Text>Les Iraniens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Perser:Die Perser:den Persern</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Persiani</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Persas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_SHORT_DESC</Tag>
+		<English>Iran</English>
+		<French>
+			<Text>Iran</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Iran</German>
+		<Italian>Iran</Italian>
+		<Spanish>Iran</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -415,13 +415,13 @@ dForeignNames = deepdict({
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
-lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina]
+lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iColombia]
+lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongols]
 
-lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
+lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 
 dEmpireThreshold = {
 	iCarthage : 4,
