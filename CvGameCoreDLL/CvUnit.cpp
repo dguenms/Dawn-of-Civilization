@@ -6784,6 +6784,7 @@ bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMi
 	{
 		int iModifier = (iDifficulty - 20) / 10; // +1 at >20, +4 at >50, +8 at >90
 		iExperience *= (100 + iModifier * 50);
+		iExperience /= 100;
 	}
 
 	if (iExperience < 100)
