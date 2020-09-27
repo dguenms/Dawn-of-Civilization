@@ -855,7 +855,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: build the University of Sankore and settle a great prophet in its city by 1500 AD
 		if isPossible(iPlayer, 1):
-			if cities.owner(iPlayer).any(lambda city: city.isHasRealBuilding(iUniversityOfSankore)) and city.getFreeSpecialistCount(iSpecialistGreatProphet) >= 1:
+			if cities.owner(iPlayer).any(lambda city: city.isHasRealBuilding(iUniversityOfSankore) and city.getFreeSpecialistCount(iSpecialistGreatProphet)) >= 1:
 				win(iPlayer, 1)
 		
 		if iGameTurn == year(1500):
