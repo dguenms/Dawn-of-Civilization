@@ -1071,11 +1071,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MACHINE_GUN_STRATEGY</Tag>
