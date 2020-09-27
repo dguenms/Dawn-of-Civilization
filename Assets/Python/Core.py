@@ -1235,7 +1235,10 @@ class Cities(Locations):
 		
 	def __str__(self):
 		return str(["%s (%s) at %s" % (city.getName(), adjective(city.getOwner()), (city.getX(), city.getY())) for city in self.entities()])
-		
+	
+	def existing(self):
+		return self.where(lambda city: city.getX() >= 0)
+	
 	def religion(self, iReligion):
 		return self.where(lambda city: city.isHasReligion(iReligion))
 	

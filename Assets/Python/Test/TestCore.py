@@ -2054,6 +2054,19 @@ class TestCities(TestCase):
 		
 		self.assertEqual(actual_tiles, expected_tiles)
 		
+	def test_existing(self):
+		city = gc.getPlayer(0).initCity(4, 4)
+		
+		cities = CityFactory().of([(4, 4)])
+		
+		self.assertEqual(len(cities), 1)
+		self.assertEqual(len(cities.existing()), 1)
+		
+		city.kill()
+		
+		self.assertEqual(len(cities), 1)
+		self.assertEqual(len(cities.existing()), 0)
+		
 		
 class TestCityFactory(TestCase):
 

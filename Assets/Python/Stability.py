@@ -113,10 +113,10 @@ def updateHumanStability(iGameTurn):
 
 @handler("EndPlayerTurn")
 def checkSecedingCities(iGameTurn, iPlayer):
-	lSecedingCities = data.getSecedingCities(iPlayer)
+	secedingCities = data.getSecedingCities(iPlayer)
 	
-	if lSecedingCities:
-		secedeCities(iPlayer, lSecedingCities)
+	if secedingCities:
+		secedeCities(iPlayer, secedingCities.existing())
 		data.setSecedingCities(iPlayer, cities.of([]))
 
 
