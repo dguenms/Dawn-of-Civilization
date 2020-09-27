@@ -54,8 +54,8 @@ tEraCorePopulationModifiers = (
 def checkScheduledCollapse():
 	for iPlayer in players.major():
 		if data.players[iPlayer].iTurnsToCollapse == 0:
-			data.players[iPlayer].iTurnsToCollapse = -1
 			completeCollapse(iPlayer)
+			data.players[iPlayer].iTurnsToCollapse = -1
 		elif data.players[iPlayer].iTurnsToCollapse > 0:
 			data.players[iPlayer].iTurnsToCollapse -= 1
 
