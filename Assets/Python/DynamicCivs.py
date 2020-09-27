@@ -2204,7 +2204,7 @@ def leader(iPlayer):
 	elif iCiv == iMughals:
 		if iEra >= iGlobal: return iBhutto
 	
-		if getColumn(iPlayer) >= 9: return iAkbar
+		if getColumn(iPlayer) >= 10: return iAkbar
 		
 	elif iCiv == iOttomans:
 		if not bMonarchy and iEra >= iIndustrial: return iAtaturk
