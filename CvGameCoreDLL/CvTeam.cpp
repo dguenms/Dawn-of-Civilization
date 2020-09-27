@@ -1163,7 +1163,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		int iGameTurn = GC.getGameINLINE().getGameTurn();
 
-		if (iGameTurn < getScenarioStartTurn() + getTurns(10))
+		if (iGameTurn < getScenarioStartTurn() + getTurns(5))
 		{
 			return false;
 		}
