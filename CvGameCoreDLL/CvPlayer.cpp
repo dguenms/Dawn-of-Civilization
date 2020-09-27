@@ -15041,7 +15041,7 @@ void CvPlayer::doGold()
 	{
 		setGold(0);
 
-		if (!isBarbarian() && (getNumCities() > 0))
+		if (!isBarbarian() && !isMinorCiv() && (getNumCities() > 0))
 		{
 			bStrike = true;
 		}
