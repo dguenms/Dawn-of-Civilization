@@ -156,6 +156,22 @@
 		<Spanish>Enter the user defined naming convention for combat units 'GUN'.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_HEAVY_CAVALRY_TEXT</Tag>
+		<English>Naming Convention: Combat[HEAVY CAVALRY]</English>
+		<French>Convention des Noms: Combat[HEAVY CAVALRY]</French>
+		<German>Benennungsregel: Kampf[HUBSCHRAUBER]</German>
+		<Italian>- per le Unit&#224; di Combattimento con Elicotteri</Italian>
+		<Spanish>Naming Convention: Combat[HEAVY CAVALRY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_HEAVY_CAVALRY_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'HEAVY CAVALRY'.</English>
+		<French>Entrez la convention des noms pour les unit&#233;s 'HEAVY CAVALRY'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel f&#252;r Hubschrauber</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unit&#224; di Combattimento con Elicotteri ('Combat[HEAVY CAVALRY]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'HEAVY CAVALRY'.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_HELICOPTER_TEXT</Tag>
 		<English>Naming Convention: Combat[HELICOPTER]</English>
 		<French>Convention des Noms: Combat[HELICOPTER]</French>
@@ -172,6 +188,22 @@
 		<Spanish>Enter the user defined naming convention for combat units 'HELICOPTER'.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_LIGHT_CAVALRY_TEXT</Tag>
+		<English>Naming Convention: Combat[LIGHT CAVALRY]</English>
+		<French>Convention des Noms: Combat[LIGHT CAVALRY]</French>
+		<German>Benennungsregel: Kampf[BERITTEN]</German>
+		<Italian>- per le Unit&#224; di Combattimento a Cavallo</Italian>
+		<Spanish>Naming Convention: Combat[LIGHT CAVALRY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_LIGHT_CAVALRY_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'LIGHT CAVALRY'.</English>
+		<French>Entrez la convention des noms pour les unit&#233;s 'LIGHT CAVALRY'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel f&#252;r Berittene Einheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unit&#224; di Combattimento a Cavallo ('Combat[LIGHT CAVALRY]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'LIGHT CAVALRY'.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MELEE_TEXT</Tag>
 		<English>Naming Convention: Combat[MELEE]</English>
 		<French>Convention des Noms: Combat[MELEE]</French>
@@ -186,22 +218,6 @@
 		<German>Eingabe der benutzerdefinierten Benennungsregel f&#252;r Nahkampfeinheiten</German>
 		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unit&#224; di Combattimento Ravvicinato ('Combat[MELEE]').</Italian>
 		<Spanish>Enter the user defined naming convention for combat units 'MELEE'.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MOUNTED_TEXT</Tag>
-		<English>Naming Convention: Combat[MOUNTED]</English>
-		<French>Convention des Noms: Combat[MOUNTED]</French>
-		<German>Benennungsregel: Kampf[BERITTEN]</German>
-		<Italian>- per le Unit&#224; di Combattimento a Cavallo</Italian>
-		<Spanish>Naming Convention: Combat[MOUNTED]</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MOUNTED_HOVER</Tag>
-		<English>Enter the user defined naming convention for combat units 'MOUNTED'.</English>
-		<French>Entrez la convention des noms pour les unit&#233;s 'MOUNTED'.</French>
-		<German>Eingabe der benutzerdefinierten Benennungsregel f&#252;r Berittene Einheiten</German>
-		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unit&#224; di Combattimento a Cavallo ('Combat[MOUNTED]').</Italian>
-		<Spanish>Enter the user defined naming convention for combat units 'MOUNTED'.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_NAVAL_TEXT</Tag>
