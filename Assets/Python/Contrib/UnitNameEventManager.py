@@ -78,7 +78,7 @@ import RandomNameUtils
 import random
 import Popup as PyPopup
 import BugData
-
+from Consts import *
 
 SD_MOD_ID = "UnitCnt"
 RENAME_EVENT_ID = CvUtil.getNewEventID("UnitNaming.Rename")
@@ -458,7 +458,8 @@ class UnitReName(object):
 
 # Return immediately if the unit passed in is invalid
 		if (pUnit == None
-		or pUnit.isNone()):
+		or pUnit.isNone() 
+		or pUnit.getUnitType() == iPioneer):
 			return "UNITCOMBAT_None"
 
 		iUnitCombat = pUnit.getUnitCombatType()
