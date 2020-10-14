@@ -187,12 +187,39 @@ class BuildUnitName(AbstractBuildUnitName):
 		super(BuildUnitName, self).__init__(eventManager, *args, **kwargs)
 
 		eventManager.addEventHandler("kbdEvent", self.onKbdEvent)
+		eventManager.addEventHandler("unitSpawned", self.onUnitSpawn)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("cityBuilt", self.onCityBuilt)
 		eventManager.addEventHandler("goodyReceived", self.onGoodyReceived)
 
 		self.eventMgr = eventManager
 		self.config = None
+
+	def onUnitSpawn(self, argsList):
+		pUnit = argsList[0]
+		iPlayer = pUnit.getOwner()
+
+		if iPlayer == PlayerUtil.getActivePlayerID() and UnitNamingOpt.isEnabled():
+			pPlayer = gc.getPlayer(iPlayer)
+			pCity = pPlayer.getCapitalCity()
+			if pCity is None or pCity.isNone():
+				class EmpireAsCity:
+					def __init__(self, name):
+						self.name = name
+					def getName(self):
+						return self.name
+				pCity = EmpireAsCity(pPlayer.getCivilizationAdjective(0))
+			lUnitReName = UnitReName()
+			zsEra = gc.getEraInfo(pPlayer.getCurrentEra()).getType()
+
+			if pUnit and not pUnit.isNone() and pUnit.getOwner() == iPlayer:
+				if pUnit.getNameNoDesc() == "":
+					zsUnitCombat = lUnitReName.getUnitCombat(pUnit)
+					zsUnitClass = gc.getUnitClassInfo(pUnit.getUnitClassType()).getType()
+					zsUnitNameConv = lUnitReName.getUnitNameConvFromIniFile(zsEra, zsUnitClass, zsUnitCombat)
+					zsUnitName = lUnitReName.getUnitName(zsUnitNameConv, pUnit, pCity, True)
+					if zsUnitName:
+						pUnit.setName(zsUnitName)
 
 	def onKbdEvent(self, argsList):
 		eventType,key,mx,my,px,py = argsList
