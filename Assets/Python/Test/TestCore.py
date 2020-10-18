@@ -651,7 +651,9 @@ class TestPlayers(TestCase):
 		self.assert_(gc.getPlayer(3) not in players)
 		
 	def test_ai(self):
+		print "before: %s" % self.players
 		players = self.players.ai()
+		print "after: %s" % players
 		assertType(self, players, Players)
 		self.assertEqual(len(players), 2)
 		self.assert_(gc.getPlayer(0) not in players)

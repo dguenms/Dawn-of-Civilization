@@ -1703,6 +1703,7 @@ class NeverConquer(GenericGoal):
 
 ### CIV GOALS ###
 
+"""
 dGoals = {
 	iEgypt : (
 		PlayerCulture(500).by(-850), 
@@ -2107,6 +2108,7 @@ dGoals = {
 		BrokeredPeaceCount(12).by(2000),
 	),
 }
+"""
 
 ### GOAL CONSTANTS ###
 

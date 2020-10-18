@@ -27,6 +27,13 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+# TODO: test
+def unwrap(iterable):
+	if hasattr(iterable, (list, set, tuple)) and len(iterable) == 1:
+		return iterable[0]
+	return iterable
+
+
 def isWonder(iBuilding):
 	return isWorldWonderClass(infos.building(iBuilding).getBuildingClassType())
 
@@ -34,7 +41,6 @@ def isWonder(iBuilding):
 def log_with_trace(context):
 	print "%s called near:" % context
 	stacktrace()
-	
 
 
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
