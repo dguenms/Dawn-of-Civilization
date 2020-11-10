@@ -42,6 +42,30 @@ def getPlayerExperience(unit):
 	return iExperience
 
 
+# TODO: test
+def equals(func):
+	def equals_func(*args):
+		remaining, objective = args[:-1], args[-1]
+		return func(*remaining) == objective
+	return equals_func
+
+
+# TODO: test
+def positive(func):
+	def positive_func(*args):
+		return func(*args) > 0
+	return positive_func
+
+
+# TODO: test
+def average(value, count):
+	def average_function(arg):
+		if count(arg) == 0:
+			return 0.0
+		return 1.0 * value(arg) / count(arg)
+	return average_function
+
+
 def isWonder(iBuilding):
 	return isWorldWonderClass(infos.building(iBuilding).getBuildingClassType())
 
@@ -49,7 +73,6 @@ def isWonder(iBuilding):
 def log_with_trace(context):
 	print "%s called near:" % context
 	stacktrace()
-	
 
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
@@ -737,9 +760,11 @@ class EntityCollection(object):
 		return str(self.entities())
 		
 	def __eq__(self, other):
-		if isinstance(other, type(self)):
-			return self._keys == other._keys
-		raise TypeError("Cannot compare '%s' and '%s'" % (type(self), type(other)))
+		if other is None:
+			return False
+		if not isinstance(other, type(self)):
+			return False
+		return self._keys == other._keys
 			
 	def __ne__(self, other):
 		return not self.__eq__(other)
@@ -792,6 +817,10 @@ class EntityCollection(object):
 		
 	def none(self, condition = None):
 		return not self.any(condition)
+	
+	# TODO: test
+	def all_if_any(self, condition):
+		return self.any() and self.all(condition)
 		
 	def random(self):
 		return random_entry(self.entities())
@@ -877,6 +906,12 @@ class EntityCollection(object):
 		
 	def sum(self, value):
 		return sum(value(e) for e in self.entities())
+	
+	# TODO: test
+	def average(self, value):
+		if not self:
+			return 0.0
+		return 1.0 * self.sum(value) / self.count()
 		
 	def transform(self, cls, map = lambda x: x, condition = lambda x: x):
 		return cls([map(k) for k in self._keys if condition(self._factory(k))])
@@ -1026,6 +1061,9 @@ class LazyPlotFactory:
 
 	def capital(self, iPlayer):
 		return LazyPlots.capital(iPlayer)
+	
+	def normal(self, iPlayer):
+		return LazyPlots.normal(iPlayer)
 
 
 class Locations(EntityCollection):
@@ -1146,6 +1184,10 @@ class LazyPlots(object):
 	@staticmethod
 	def capital(iPlayer):
 		return LazyPlots(lambda: plots.all().where(lambda p: at(p, capital(iPlayer))))
+	
+	@staticmethod
+	def normal(iPlayer):
+		return LazyPlots(lambda: plots.normal(iPlayer))
 
 		
 class CitiesCorner:
@@ -1558,7 +1600,7 @@ class CreatedUnits(object):
 		if not adjective:
 			return self
 	
-		for unit in self._units:
+		for unit in self:
 			unit.setName('%s %s' % (text(adjective), unit.getName()))
 			
 		return self
@@ -1567,13 +1609,13 @@ class CreatedUnits(object):
 		if iExperience <= 0:
 			return self
 	
-		for unit in self._units:
+		for unit in self:
 			unit.changeExperience(iExperience, 100, False, False, False)
 			
 		return self
 		
 	def one(self):
-		if len(self._units) == 1:
+		if len(self) == 1:
 			return self._units[0]
 		raise Exception('Can only return one unit if it is a single created unit')
 
@@ -1745,6 +1787,9 @@ class Infos:
 	
 	def builds(self):
 		return InfoCollection.type(gc.getBuildInfo, gc.getNumBuildInfos())
+	
+	def cultureLevel(self, identifier):
+		return gc.getCultureLevelInfo(identifier)
 
 
 class Map(object):

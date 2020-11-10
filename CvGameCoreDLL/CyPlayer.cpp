@@ -2488,6 +2488,11 @@ bool CyPlayer::isSlaveTrade(int ePlayer)
 	return m_pPlayer ? m_pPlayer->AI_slaveTrade((PlayerTypes)ePlayer) == NO_DENIAL : false;
 }
 
+bool CyPlayer::isHasBuilding(int eBuildingType)
+{
+	return m_pPlayer ? m_pPlayer->isHasBuilding((BuildingTypes)eBuildingType) : false;
+}
+
 bool CyPlayer::isHasBuildingEffect(int eBuildingType)
 {
 	return m_pPlayer ? m_pPlayer->isHasBuildingEffect((BuildingTypes)eBuildingType) : false;

@@ -568,6 +568,8 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	UnitTypes eCaptureUnitType;
 	CivilizationTypes eCapturingCivilization;
 
+	log(CvWString::format(L"kill %s at (%d, %d)", getName().c_str(), getX(), getY()));
+
 	pPlot = plot();
 	FAssertMsg(pPlot != NULL, "Plot is not assigned a valid value");
 

@@ -555,6 +555,7 @@ public:
 	int getLastBirthTurn();
 	void setLastBirthTurn(int iNewValue);
 	bool isSlaveTrade(int ePlayer);
+	bool isHasBuilding(int eBuildingType);
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
 	int countRequiredSlaves();

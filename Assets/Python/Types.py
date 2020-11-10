@@ -1,6 +1,34 @@
 from CvPythonExtensions import *
 
 
+def null(cls, name, *args, **kwargs):
+	def __init__(self, *args, **kwargs):
+		cls.__init__(self, *args, **kwargs)
+	
+	def __call__(self, *args, **kwargs):
+		iValue = 0
+		print "call with result: %d" % iValue
+		return iValue
+	
+	def __getattribute__(self, name):
+		return self
+		
+	def __setattr__(self, name, value):
+		return self
+		
+	def __delattr__(self, name):
+		return self
+	
+	def __nonzero__(self):
+		return False
+		
+	funcs = (__init__, __call__, __getattribute__, __setattr__, __delattr__, __nonzero__)
+	return type(name, (cls,), dict((func.__name__, func) for func in funcs))
+
+
+NullCity = null(CyCity, "NullCity")
+
+
 class NullPlayer(CyPlayer):
 
 	def __init__(self, *args, **kwargs):

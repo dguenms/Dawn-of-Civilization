@@ -5012,8 +5012,9 @@ void CvPlayer::findNewCapital()
 
 	eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(GC.getDefineINT("CAPITAL_BUILDINGCLASS"))));
 
-	if (eCapitalBuilding == NO_BUILDING)
+	if (getNumCities() == 0 || eCapitalBuilding == NO_BUILDING)
 	{
+		setCapitalCity(NULL);
 		return;
 	}
 
