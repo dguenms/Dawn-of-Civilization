@@ -87,9 +87,9 @@ class EventHandlers(object):
 	
 	def cityAcquired(self, func):
 		def cityAcquired(other, args):
-			iOwner, iPlayer, city, bConquest = args
+			iOwner, iPlayer, city, bConquest, bTrade = args
 			if other.iPlayer == iPlayer:
-				func(other, city, bConquest)
+				func(other, iOwner, bConquest)
 		
 		return cityAcquired
 	
@@ -127,7 +127,7 @@ class EventHandlers(object):
 	
 	def greatPersonBorn(self, func):
 		def greatPersonBorn(other, args):
-			unit, iPlayer = args
+			unit, iPlayer, city = args
 			if other.iPlayer == iPlayer:
 				func(other, unit)
 		
@@ -145,7 +145,7 @@ class EventHandlers(object):
 		def enslave(other, args):
 			iPlayer, losingUnit = args
 			if other.iPlayer == iPlayer:
-				func()
+				func(other)
 		
 		return enslave
 				
@@ -329,7 +329,7 @@ class ArgumentProcessor(object):
 		index = 0
 		for i, (type, default_value) in enumerate(values):
 			if index < len(objective) and self.valid_type(type, objective[index]):
-				values[i] = (type, objective[index])
+				values[i] = (type, self.transform(type, objective[index]))
 				index += 1
 			elif default_value is None:
 				raise ValueError("Supplied objectives %s do not match required types %s" % (objective, [type.__name__ for type in self.objective_types]))
@@ -347,9 +347,16 @@ class ArgumentProcessor(object):
 	def valid_type(self, type, value):
 		if issubclass(type, CvInfoBase):
 			return isinstance(value, (int, Aggregate))
+		elif issubclass(type, Plots):
+			return isinstance(value, (Plots, Aggregate))
 		elif issubclass(type, CyCity):
 			return isinstance(value, Deferred)
 		return isinstance(value, type)
+	
+	def transform(self, type, value):
+		if issubclass(type, list):
+			return tuple(value)
+		return value
 
 
 class GoalBuilder(object):
@@ -372,7 +379,7 @@ class GoalBuilder(object):
 		
 	def handler(self, event, handler):
 		self.handlers.append((event, handler.__name__))
-		self.of(handler)
+		self.func(handler)
 	
 	def objectives(self, types):
 		self.types.withObjectiveTypes(*types)
@@ -474,6 +481,10 @@ class BaseGoal(object):
 		
 		for event, handler in self.__class__.handlers:
 			events.addEventHandler(event, getattr(self, handler))
+	
+	def deactivate(self):
+		for event, handler in self.__class__.handlers:
+			events.removeEventHandler(event, getattr(self, handler))
 	
 	def setState(self, state):
 		if self.state != state:
@@ -657,9 +668,7 @@ class Count(BaseGoal):
 	def citiesWith(cls, func):
 		def value_function(self, objective):
 			def function(city):
-				value = func(city)
-				print "function value is: %d" % value
-				return value >= objective
+				return func(city) >= objective
 		
 			return cities.owner(self.iPlayer).count(function)
 		
@@ -775,33 +784,41 @@ class Count(BaseGoal):
 		return cls.type(CyCity).types(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
 	
 	@classproperty
-	def cityBuilding(cls):
-		return cls.type(CyCity).types(CvBuildingInfo).city(CyCity.getNumRealBuilding).subclass("CityBuildingCount")
-	
-	@classproperty
 	def cultureLevel(cls):
-		def display(self, objective):
-			city = self.subject()
-			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(objective[1]))
+		def display(self, city, iCultureLevel):
+			city = city()
+			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
-		return cls.types(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
+		return cls.type(CyCity).types().city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
+
+
+def segment(tuple, cutoff=None):
+	if cutoff:
+		tuple = tuple[:cutoff]
+	if len(tuple) == 1:
+		return tuple[0]
+	return tuple
 
 
 class Track(Count):
 
-	def __init__(self, *objectives):
-		super(Track, self).__init__(*objectives)
+	def __init__(self, *arguments):
+		super(Track, self).__init__(*arguments)
 		
-		self.dCount = dict((objective, 0) for objective, _ in self.objectives())
+		self.dCount = dict((objective[:-1], 0) for objective in self.arguments.objectives)
 	
-	def value_function(self, objective=None):
-		return self.dCount[objective]
+	def value_function(self, *objectives):
+		return self.dCount[objectives]
 	
-	def increment(self, objective=None):
-		self.accumulate(1, objective)
+	@property
+	def values(self):
+		return [segment(objective) for objective in self.dCount.keys()]
 	
-	def accumulate(self, iChange, objective=None):
-		self.dCount[objective] += iChange
+	def increment(self, *objectives):
+		self.accumulate(1, *objectives)
+	
+	def accumulate(self, iChange, *objectives):
+		self.dCount[objectives] += iChange
 		
 	@classmethod
 	def subclass(cls, name):
@@ -827,20 +844,20 @@ class Track(Count):
 	
 	@classproperty
 	def goldenAges(cls):
-		def required_function(self, objective):
+		def required(self, objective):
 			return scale(8 * objective)
 	
 		def incrementGoldenAges(self):
 			if self._player.isGoldenAge() and not self._player.isAnarchy():
 				self.increment()
 		
-		return cls.handle("BeginPlayerTurn", incrementGoldenAges).func(required_function).subclass("GoldenAges")
+		return cls.types().handle("BeginPlayerTurn", incrementGoldenAges).func(required).subclass("GoldenAges")
 	
 	@classproperty
 	def eraFirsts(cls):
 		def incrementFirstDiscovered(self, iTech):
 			iEra = infos.tech(iTech).getEra()
-			if iEra in self.objective_values():
+			if iEra in self.values:
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
@@ -849,48 +866,49 @@ class Track(Count):
 	@classproperty
 	def sunkShips(cls):
 		def incrementShipsSunk(self, losingUnit):
-			if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_WATER:
+			if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
 				self.increment()
 		
-		return cls.handle("combatResult", incrementShipsSunk).subclass("SunkShips")
+		return cls.types().handle("combatResult", incrementShipsSunk).subclass("SunkShips")
 	
 	@classproperty
 	def tradeGold(cls):
-		def value_function(self, objective=None):
+		def value_function(self, *objective):
 			return self.dCount[objective] / 100
 		
 		def accumulateTradeGold(self, iGold):
 			self.accumulate(iGold * 100)
 		
 		def trackTradeGold(self):
-			self.iCount += cities.owner(self.iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE)) * self._player.getCommercePercent(CommerceTypes.COMMERCE_GOLD)
-			self.iCount += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
+			iGold = cities.owner(self.iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE)) * self._player.getCommercePercent(CommerceTypes.COMMERCE_GOLD)
+			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
+			self.accumulate(iGold)
 		
-		return cls.handle("playerGoldTrade", accumulateTradeGold).handle("beginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
+		return cls.types().handle("playerGoldTrade", accumulateTradeGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
 	
 	@classproperty
 	def raidGold(cls):
-		return cls.accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
+		return cls.types().accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
 	
 	@classproperty
 	def pillage(cls):
-		return cls.incremented("unitPillage").subclass("PillageCount")
+		return cls.types().incremented("unitPillage").subclass("PillageCount")
 	
 	@classproperty
 	def acquiredCities(cls):
-		return cls.incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
+		return cls.types().incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
 	
 	@classproperty
 	def piracyGold(cls):
-		return cls.accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
+		return cls.types().accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
 	
 	@classproperty
 	def razes(cls):
-		return cls.incremented("cityRazed").subclass("RazeCount")
+		return cls.types().incremented("cityRazed").subclass("RazeCount")
 	
 	@classproperty
 	def slaveTradeGold(cls):
-		return cls.accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
+		return cls.types().accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
 	
 	@classproperty
 	def greatGenerals(cls):
@@ -898,29 +916,29 @@ class Track(Count):
 			if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
 				self.increment()
 		
-		return cls.handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
+		return cls.types().handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
 	
 	@classproperty
 	def resourceTradeGold(cls):
 		def accumulateTradeGold(self):
-			self.iCount += players.major().alive().sum(self._player.getGoldPerTurnByPlayer)
+			iGold = players.major().alive().sum(self._player.getGoldPerTurnByPlayer)
+			self.accumulate(iGold)
 	
-		return cls.handle("beginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
+		return cls.types().handle("BeginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
 	
 	@classproperty
 	def brokeredPeace(cls):
-		return cls.incremented("peaceBrokered").subclass("BrokeredPeace")
+		return cls.types().incremented("peaceBrokered").subclass("BrokeredPeace")
 	
 	@classproperty
 	def enslaves(cls):
-		return cls.incremented("enslave").subclass("Enslave")
+		return cls.types().incremented("enslave").subclass("Enslave")
 	
 	@classproperty
 	def conquerFrom(cls):
-		def incrementConquests(self, city, bConquest):
-			for objective in self.objective_values():
-				if city.getOwner() in objective and bConquest:
+		def incrementConquests(self, iOwner, bConquest):
+			for objective in self.values:
+				if bConquest and civ(iOwner) in objective:
 					self.increment(objective)
-					break
 		
-		return cls.handle("cityAcquired", incrementConquests).subclass("ConquerFrom")
+		return cls.types(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")

@@ -600,6 +600,7 @@ public:
 	void setPeriod(int iPeriod);
 	int getPeriod();
 	int getDomainFreeExperience(int iDomainType);
+	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
 
 private:
 	CvPlayer* m_pPlayer;

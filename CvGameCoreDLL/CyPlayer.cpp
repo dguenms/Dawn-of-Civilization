@@ -2732,3 +2732,8 @@ int CyPlayer::getDomainFreeExperience(int iDomainType)
 {
 	return m_pPlayer ? m_pPlayer->getDomainFreeExperience((DomainTypes)iDomainType) : -1;
 }
+	
+void CyPlayer::changeGoldPerTurnByPlayer(int iPlayer, int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGoldPerTurnByPlayer((PlayerTypes)iPlayer, iChange);
+}

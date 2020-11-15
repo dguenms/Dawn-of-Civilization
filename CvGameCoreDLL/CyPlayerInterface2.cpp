@@ -139,5 +139,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getPeriod", &CyPlayer::getPeriod, "int ()")
 		.def("setPeriod", &CyPlayer::setPeriod, "void (int iPeriod)")
 		.def("getDomainFreeExperience", &CyPlayer::getDomainFreeExperience, "int (int iDomainType)")
+		.def("changeGoldPerTurnByPlayer", &CyPlayer::changeGoldPerTurnByPlayer, "void (int iPlayer, int iChange)")
 		;
 }
