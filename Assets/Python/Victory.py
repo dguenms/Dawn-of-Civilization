@@ -392,8 +392,8 @@ def checkTurn(iGameTurn, iPlayer):
 			iTradeGold += iTradeCommerce * pPlayer.getCommercePercent(0)
 			
 			# gold from per turn gold trade
-			for iPlayer in players.major():
-				iTradeGold += pPlayer.getGoldPerTurnByPlayer(iPlayer) * 100
+			for iLoopPlayer in players.major():
+				iTradeGold += pPlayer.getGoldPerTurnByPlayer(iLoopPlayer) * 100
 			
 			data.iTamilTradeGold += iTradeGold
 			
