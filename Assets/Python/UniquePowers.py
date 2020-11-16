@@ -77,7 +77,7 @@ def mughalUP(city, iBuilding):
 def russianUP(self):
 	if player(iRussia).isAlive():
 		for unit in plots.rectangle(tRussia).owner(iRussia).units():
-			if team(iRussia).isAtWar(unit.getOwner()):
+			if team(iRussia).isAtWar(unit.getOwner()) or (infos.unit(unit).isHiddenNationality() and not team(unit.getTeam()).isOpenBorders(team(iRussia).getID())):
 				unit.changeDamage(8, slot(iRussia))
 			
 # Indonesian UP: additional gold for foreign ships in your core
