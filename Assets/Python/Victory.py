@@ -2925,7 +2925,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bShrine) + text("TXT_KEY_BUILDING_CATHOLIC_SHRINE") + ' ' + getIcon(iSaints >= 12) + text("TXT_KEY_VICTORY_CATHOLIC_SAINTS", iSaints, 12))
 		elif iGoal == 2:
 			fLandPercent = getReligiousLand(iCatholicism)
-			aHelp.append(getIcon(fLandPercent >= 50.0) + text("TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY", "%.2f%%" % fLandPercent, '50'))
+			aHelp.append(getIcon(fLandPercent >= 50.0) + text("TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY", "%.2f%%" % fLandPercent, 50))
 
 	elif iVictoryType == iProtestantism:
 		if iGoal == 0:
