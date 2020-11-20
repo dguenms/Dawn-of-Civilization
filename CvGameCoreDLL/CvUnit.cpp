@@ -9583,19 +9583,7 @@ bool CvUnit::isNukeImmune() const
 
 int CvUnit::maxInterceptionProbability() const
 {
-	int iInterceptProbability = m_pUnitInfo->getInterceptionProbability() + getExtraIntercept();
-
-	// Leoreth: Iron Dome effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)IRON_DOME))
-	{
-		if (plot()->getOwner() == getOwnerINLINE())
-		{
-			iInterceptProbability *= 3;
-			iInterceptProbability /= 2;
-		}
-	}
-
-	return std::max(0, iInterceptProbability);
+	return std::max(0, m_pUnitInfo->getInterceptionProbability() + getExtraIntercept());
 }
 
 
@@ -9607,7 +9595,22 @@ int CvUnit::currInterceptionProbability() const
 	}
 	else
 	{
-		return ((maxInterceptionProbability() * currHitPoints()) / maxHitPoints());
+		int iInterceptProbability = maxInterceptionProbability();
+
+		// Leoreth: Iron Dome effect
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)IRON_DOME))
+		{
+			if (plot()->getOwner() == getOwnerINLINE())
+			{
+				iInterceptProbability *= 3;
+				iInterceptProbability /= 2;
+			}
+		}
+
+		iInterceptProbability *= currHitPoints();
+		iInterceptProbability /= maxHitPoints();
+
+		return iInterceptProbability;
 	}
 }
 
