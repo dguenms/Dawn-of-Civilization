@@ -1740,17 +1740,18 @@ def checkReligionGoal(iPlayer, lReligions):
 	return all(data.lReligionFounder[iReligion] == iPlayer for iReligion in lReligion)
 
 @handler("projectBuilt")
-def onProjectBuilt(iPlayer, iProject):
+def onProjectBuilt(city, iProject):
 	if not game.isVictoryValid(7): return
+	iPlayer = city.getOwner()
 	
 	# second Russian goal: be the first civilization to complete the Manhattan Project and the Apollo Program
 	iRussiaPlayer = slot(iRussia)
 	if isPossible(iRussiaPlayer, 1):
 		if iProject in [iLunarLanding, iManhattanProject]:
 			if iPlayer == iRussiaPlayer:
-				bApolloProgram = iProject == iLunarLanding or team(iRussiaPlayer).getProjectCount(iLunarLanding) > 0
+				bLunarLanding = iProject == iLunarLanding or team(iRussiaPlayer).getProjectCount(iLunarLanding) > 0
 				bManhattanProject = iProject == iManhattanProject or team(iRussiaPlayer).getProjectCount(iManhattanProject) > 0
-				if bApolloProgram and bManhattanProject:
+				if bLunarLanding and bManhattanProject:
 					win(iRussiaPlayer, 1)
 			else:
 				lose(iRussiaPlayer, 1)
