@@ -68,11 +68,12 @@ def checkCompany(iCompany, iGameTurn):
 		return
 	
 	# select all cities for players that can have the company
-	positiveCities, negativeCities = players.major().where(lambda p: canHaveCompany(iCompany, p)).cities().split(lambda city: getCityValue(city, iCompany) > 0)
+	positiveCities, negativeCities = players.major().where(lambda p: canHaveCompany(iCompany, p)).cities().split(lambda city: getCityValue(city, iCompany) > player(city).countCorporations(iCompany) * 2)
 	
 	# remove from cities with negative value
-	for city in negativeCities.corporation(iCompany):
-		city.setHasCorporation(iCompany, False, True, True)
+	for city in negativeCities.corporation(iCompany).sort(lambda city: getCityValue(city, iCompany), True):
+		if getCityValue(city, iCompany) <= player(city).countCorporations(iCompany) * 2:
+			city.setHasCorporation(iCompany, False, True, True)
 	
 	companyCities, availableCities = positiveCities.split(lambda city: city.isHasCorporation(iCompany))
 	
@@ -234,7 +235,9 @@ def getCityValue(city, iCompany):
 			bFound = True
 			iTempValue += city.getNumBonuses(iSugar) * 3
 				
-	if not bFound: return -1
+	if not bFound: 
+		return -1
+	
 	iValue += iTempValue
 	
 	# competition
@@ -246,9 +249,7 @@ def getCityValue(city, iCompany):
 	elif iCompany == iComputerIndustry and city.isHasCorporation(iOilIndustry): iValue /= 2
 	
 	# threshold
-	if iValue < 4: return -1
-	
-	# spread it out
-	iValue -= owner.countCorporations(iCompany)*2
+	if iValue < 4:
+		return -1
 	
 	return iValue
