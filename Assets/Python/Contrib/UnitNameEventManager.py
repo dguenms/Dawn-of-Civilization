@@ -78,7 +78,7 @@ import RandomNameUtils
 import random
 import Popup as PyPopup
 import BugData
-from Consts import *
+from Core import *
 
 SD_MOD_ID = "UnitCnt"
 RENAME_EVENT_ID = CvUtil.getNewEventID("UnitNaming.Rename")
@@ -173,7 +173,13 @@ class UnitNameEventManager:
 		return
 
 
+class CityNameWrapper(object):
 
+	def __init__(self, name):
+		self.name = name
+	
+	def getName(self):
+		return self.name
 
 
 class AbstractBuildUnitName(object):
@@ -181,13 +187,14 @@ class AbstractBuildUnitName(object):
 	def __init__(self, eventManager, *args, **kwargs):
 		super(AbstractBuildUnitName, self).__init__(*args, **kwargs)
 
+
 class BuildUnitName(AbstractBuildUnitName):
 
 	def __init__(self, eventManager, *args, **kwargs):
 		super(BuildUnitName, self).__init__(eventManager, *args, **kwargs)
 
 		eventManager.addEventHandler("kbdEvent", self.onKbdEvent)
-		eventManager.addEventHandler("unitSpawned", self.onUnitSpawn)
+		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("cityBuilt", self.onCityBuilt)
 		eventManager.addEventHandler("goodyReceived", self.onGoodyReceived)
@@ -195,7 +202,7 @@ class BuildUnitName(AbstractBuildUnitName):
 		self.eventMgr = eventManager
 		self.config = None
 
-	def onUnitSpawn(self, argsList):
+	def onUnitCreated(self, argsList):
 		pUnit = argsList[0]
 		iPlayer = pUnit.getOwner()
 
@@ -203,12 +210,7 @@ class BuildUnitName(AbstractBuildUnitName):
 			pPlayer = gc.getPlayer(iPlayer)
 			pCity = pPlayer.getCapitalCity()
 			if pCity is None or pCity.isNone():
-				class EmpireAsCity:
-					def __init__(self, name):
-						self.name = name
-					def getName(self):
-						return self.name
-				pCity = EmpireAsCity(pPlayer.getCivilizationAdjective(0))
+				pCity = CityNameWrapper(adjective(iPlayer))
 			lUnitReName = UnitReName()
 			zsEra = gc.getEraInfo(pPlayer.getCurrentEra()).getType()
 

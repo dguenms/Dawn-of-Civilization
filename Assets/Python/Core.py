@@ -453,7 +453,7 @@ def makeUnits(iPlayer, iUnit, plot, iNumUnits = 1, iUnitAI = UnitAITypes.NO_UNIT
 	for _ in range(iNumUnits):
 		unit = player(iPlayer).initUnit(iUnit, x, y, iUnitAI, DirectionTypes.DIRECTION_SOUTH)
 		units.append(unit)
-		events.fireEvent("unitSpawned", unit)
+		events.fireEvent("unitCreated", unit)
 
 	return CreatedUnits(units)
 
