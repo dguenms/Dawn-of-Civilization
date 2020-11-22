@@ -16,6 +16,8 @@ import random
 from traceback import extract_stack
 from sets import Set
 
+from BugEventManager import g_eventManager as events
+
 
 gc = CyGlobalContext()
 MainOpt = BugCore.game.MainInterface
@@ -451,7 +453,8 @@ def makeUnits(iPlayer, iUnit, plot, iNumUnits = 1, iUnitAI = UnitAITypes.NO_UNIT
 	for _ in range(iNumUnits):
 		unit = player(iPlayer).initUnit(iUnit, x, y, iUnitAI, DirectionTypes.DIRECTION_SOUTH)
 		units.append(unit)
-		
+		events.fireEvent("unitSpawned", unit)
+
 	return CreatedUnits(units)
 
 
