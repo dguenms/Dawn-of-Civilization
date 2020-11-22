@@ -17,6 +17,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_INCENSE</BonusType>
@@ -49,6 +50,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_BANANA</BonusType>
 				<BonusType>BONUS_COFFEE</BonusType>
@@ -83,6 +85,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-2</iHappiness>
 			<iHealth>0</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_CORN</BonusType>
 				<BonusType>BONUS_RICE</BonusType>
@@ -116,6 +119,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-2</iHappiness>
 			<iHealth>0</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_CLAM</BonusType>
 				<BonusType>BONUS_CRAB</BonusType>
@@ -153,6 +157,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-1</iHappiness>
 			<iHealth>-1</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_SHEEP</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
@@ -191,6 +196,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-2</iHappiness>
 			<iHealth>-2</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_COAL</BonusType>
@@ -228,6 +234,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-5</iHappiness>
 			<iHealth>-5</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
@@ -260,6 +267,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-3</iHappiness>
 			<iHealth>-2</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_MARBLE</BonusType>
 				<BonusType>BONUS_GOLD</BonusType>
@@ -297,6 +305,7 @@
 			<iMaintenance>0</iMaintenance>
 			<iHappiness>-3</iHappiness>
 			<iHealth>-2</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>

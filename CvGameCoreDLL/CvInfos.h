@@ -4366,6 +4366,7 @@ public:
 	int getMaintenance() const;				// Exposed to Python
 	int getHappiness() const;
 	int getHealth() const;
+	int getMaxConsumableBonuses() const;		// merijn, exposed to python
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
@@ -4402,6 +4403,7 @@ protected:
 	int m_iMaintenance;
 	int m_iHappiness;
 	int m_iHealth;
+	int m_iMaxConsumableBonuses;	// merijn
 	int m_iMissionType;
 	int m_iBonusProduced;
 

@@ -3217,6 +3217,30 @@
 		<Spanish>Construye un %d1_Mod%% m&#225;s r&#225;pido con [LINK=literal]%s2_BldgName[\LINK] en %s3_CityName</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES</Tag>
+		<English> (max %d1_max)</English>
+		<French> (max %d1_max)</French>
+		<German> (max %d1_max)</German>
+		<Italian> (max %d1_max)</Italian>
+		<Spanish> (max %d1_max)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_TOTAL_RESOURCES</Tag>
+		<English>Total: %d1_total</English>
+		<French>Total: %d1_total</French>
+		<German>Total: %d1_total</German>
+		<Italian>Total: %d1_total</Italian>
+		<Spanish>Total: %d1_total</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES_ADVISOR</Tag>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

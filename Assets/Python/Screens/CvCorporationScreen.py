@@ -358,6 +358,7 @@ class CvCorporationScreen:
 		if (iLinkCorporation != -1):
 			#Resource counter
 			szListLabels = []
+			iTotalResources = 0
 			for iRequired in range(gc.getDefineINT("NUM_CORPORATION_PREREQ_BONUSES")):
 				eBonus = gc.getCorporationInfo(iLinkCorporation).getPrereqBonus(iRequired)
 				if -1 != eBonus:
@@ -365,6 +366,7 @@ class CvCorporationScreen:
 					szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 					szList += u" : "
 					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+					iTotalResources += iAvailableBonus
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
 			if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
@@ -373,12 +375,15 @@ class CvCorporationScreen:
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 				szList += u" : "
 				iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+				iTotalResources += iAvailableBonus
 				szList += u"%d" % iAvailableBonus
 				szListLabels.append(szList)
+			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_TOTAL_RESOURCES", (iTotalResources,)))
+			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES_ADVISOR", (gc.getCorporationInfo(iLinkCorporation).getMaxConsumableBonuses(),)))
 			
 			iRow = 0
 			for szList in szListLabels:
-				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_CENTER_JUSTIFY, self.X_REQUIREMENTS_AREA + 30, self.Y_REQUIREMENTS_AREA + 60 + iRow, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_LEFT_JUSTIFY, self.X_REQUIREMENTS_AREA + 20, self.Y_REQUIREMENTS_AREA + 60 + iRow, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				iRow += 16
 			
 			szButtonName = self.TECH_REQUIRED_BUTTON
