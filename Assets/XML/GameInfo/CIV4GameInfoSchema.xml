@@ -187,6 +187,7 @@
 	<ElementType name="iSpreadCost" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaintenance" content="textOnly" dt:type="int"/>
 	<ElementType name="iHealth" content="textOnly" dt:type="int"/>
+	<ElementType name="iMaxConsumableBonuses" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalReligionCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="GlobalReligionCommerces" content="eltOnly">
 		<element type="iGlobalReligionCommerce" maxOccurs="*"/>
@@ -255,6 +256,7 @@
 		<element type="iMaintenance"/>
 		<element type="iHappiness"/>
 		<element type="iHealth"/>
+		<element type="iMaxConsumableBonuses"/>
 		<element type="PrereqBonuses"/>
 		<element type="HeadquarterCommerces"/>
 		<element type="BonusProduced"/>

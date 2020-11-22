@@ -14211,6 +14211,13 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 			szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo((BonusTypes)kCorporation.getPrereqBonus(i)).getChar()));
 		}
 	}
+	
+	// merijn: display max consumable resources
+	if (!bFirst)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES", kCorporation.getMaxConsumableBonuses()));
+	}
+	
 
 	// Leoreth: display sugar consumption in the tooltip
 	if (GC.getGame().getActiveCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)

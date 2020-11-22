@@ -17638,6 +17638,7 @@ m_iSpreadCost(0),
 m_iMaintenance(0),
 m_iHappiness(0),
 m_iHealth(0),
+m_iMaxConsumableBonuses(0), // merijn
 m_iMissionType(NO_MISSION),
 m_iBonusProduced(NO_BONUS),
 m_paiPrereqBonuses(NULL),
@@ -17716,6 +17717,12 @@ int CvCorporationInfo::getHappiness() const
 int CvCorporationInfo::getHealth() const
 {
 	return m_iHealth;
+}
+
+// merijn
+int CvCorporationInfo::getMaxConsumableBonuses() const
+{
+	return m_iMaxConsumableBonuses;
 }
 
 int CvCorporationInfo::getMissionType() const
@@ -17833,6 +17840,7 @@ bool CvCorporationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
+	pXML->GetChildXmlValByName(&m_iMaxConsumableBonuses, "iMaxConsumableBonuses"); // merijn
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"HeadquarterCommerces"))
 	{
