@@ -175,6 +175,9 @@ def captureSlaves(winningUnit, losingUnit):
 
 	if civ(winningUnit) == iAztecs:
 		captureUnit(losingUnit, winningUnit, iAztecSlave, 35)
+	
+	if players.major().none(lambda p: player(p).canDoCivics(iColonialism)):
+		return
 		
 	elif civ(losingUnit) == iNative:
 		if civ(winningUnit) not in lBioNewWorld or any(data.dFirstContactConquerors.values()):
