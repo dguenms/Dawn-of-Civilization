@@ -342,6 +342,7 @@ iChina : {
 		iMedieval,
 		"Yi Xing", # 8th
 		"Yu Hao", # 10th
+		"Zhang Sixun", # 10th
 		"Bi Sheng", # 11th
 		"Su Song", # 11th
 		"Wang Zhen", # 14th
