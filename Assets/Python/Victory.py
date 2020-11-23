@@ -1693,7 +1693,7 @@ def onBuildingBuilt(city, iBuilding):
 	# first Mexican goal: build three cathedrals of your state religion by 1880 AD	
 	elif iCiv == iMexico:				
 		if isPossible(iPlayer, 0):
-			iStateReligion = pPlayer.getStateReligion()
+			iStateReligion = player(iPlayer).getStateReligion()
 			if iStateReligion >= 0:
 				iStateReligionCathedral = iCathedral + 4 * iStateReligion
 				if iBuilding == iStateReligionCathedral:
