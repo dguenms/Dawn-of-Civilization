@@ -106,6 +106,7 @@ dResourcesDict = {
 	(26, 45)  : (1700,  iHorse),   # Washington area
 	(21, 48)  : (1700,  iHorse),   # Midwest
 	(19, 45)  : (1700,  iHorse),   # Texas
+	(17, 42)  : (1700,  iHorse),   # Mexico
 	(40, 25)  : (1700,  iHorse),   # Brazil
 	(33, 10)  : (1700,  iHorse),   # Buenos Aires area
 	(32, 8)   : (1700,  iHorse),   # Pampas
