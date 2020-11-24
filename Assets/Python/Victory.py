@@ -1168,7 +1168,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if bItaly and bFrance and bEngland and bScandinavia and bRussia:
 				win(iPlayer, 1)
 			else:
-				lose(iPlayer, 0)
+				lose(iPlayer, 1)
 				
 		# third goal: be the first to complete the tech tree
 		
