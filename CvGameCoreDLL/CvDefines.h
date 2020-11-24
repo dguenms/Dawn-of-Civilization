@@ -35,6 +35,8 @@
 #define BARBARIAN_PLAYER			((PlayerTypes)MAX_CIV_PLAYERS)
 #define BARBARIAN_TEAM				((TeamTypes)MAX_CIV_TEAMS)
 
+#define _MOD_FRACTRADE
+
 // Char Count limit for edit boxes
 #define PREFERRED_EDIT_CHAR_COUNT		(15)
 #define MAX_GAMENAME_CHAR_COUNT			(32)
