@@ -2719,8 +2719,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			}
 		}
 
-		// Leoreth: make sure that hidden nationality units that entered cities through open borders cannot attack from there
-		if (bAttack && m_pUnitInfo->isHiddenNationality() && plot()->isCity() && plot()->getPlotCity()->getOwner() != getOwner())
+		if (!bAttack && pPlot->isCity() && isAlwaysHostile(pPlot) && !pPlot->isFriendlyCity(*this, false))
 		{
 			return false;
 		}
@@ -3850,12 +3849,6 @@ bool CvUnit::canHeal(const CvPlot* pPlot) const
 	}
 
 	if (healRate(pPlot) <= 0)
-	{
-		return false;
-	}
-
-	// Leoreth: hidden nationality units can enter cities with open borders but don't let them heal there because it's an easy area to retreat to
-	if (m_pUnitInfo->isHiddenNationality() && pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() != getOwnerINLINE())
 	{
 		return false;
 	}
@@ -11893,9 +11886,19 @@ PlayerTypes CvUnit::getVisualOwner(TeamTypes eForTeam) const
 	{
 		if (m_pUnitInfo->isHiddenNationality())
 		{
-			if (!plot()->isCity(true, getTeam()))
+			if (getDomainType() == DOMAIN_LAND)
 			{
-				return BARBARIAN_PLAYER;
+				if (!plot()->isOwned() || !(plot()->getOwnerINLINE() == getOwnerINLINE() || GET_TEAM(plot()->getTeam()).isOpenBorders(getTeam())))
+				{
+					return BARBARIAN_PLAYER;
+				}
+			}
+			else
+			{
+				if (!plot()->isCity(true, getTeam()))
+				{
+					return BARBARIAN_PLAYER;
+				}
 			}
 		}
 	}
@@ -14024,15 +14027,25 @@ bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 		return false;
 	}
 
-	if (NULL != pPlot && pPlot->isCity(true, getTeam()))
+	if (NULL != pPlot)
 	{
-		return false;
-	}
+		if (pPlot->isOwned())
+		{
+			if (getOwnerINLINE() == pPlot->getOwnerINLINE())
+			{
+				return false;
+			}
 
-	// Leoreth: land units are safe in own territory
-	if (NULL != pPlot && !pPlot->isWater() && pPlot->getOwnerINLINE() == getOwnerINLINE())
-	{
-		return false;
+			if (GET_TEAM(getTeam()).isOpenBorders(pPlot->getTeam()))
+			{
+				return false;
+			}
+		}
+
+		if (getDomainType() != DOMAIN_LAND && pPlot->isCity(true, getTeam()))
+		{
+			return false;
+		}
 	}
 
 	return true;
