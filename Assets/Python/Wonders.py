@@ -54,7 +54,7 @@ def orientalPearlTowerWhenBuilt(city, iBuilding):
 	
 	
 def orientalPearlTowerEffect(city):
-	city.setBuildingCommerceChange(infos.building(iOrientalPearlTower).getBuildingClassType(), CommerceTypes.COMMERCE_SCIENCE, 2 * city.getPopulation())
+	city.setBuildingCommerceChange(infos.building(iOrientalPearlTower).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, 2 * city.getPopulation())
 
 
 @handler("cityCaptureGold")
