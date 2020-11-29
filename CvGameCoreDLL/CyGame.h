@@ -320,6 +320,10 @@ public:
 	void setCityScreenOwner(int iPlayer);
 	void resetCityScreenOwner();
 
+	void setGreatPeopleNotifications(int iNotificationLevel);
+	void setReligionSpreadNotifications(int iNotificationLevel);
+	void setEventEffectNotifications(int iNotificationLevel);
+
 protected:
 	CvGame* m_pGame;
 };

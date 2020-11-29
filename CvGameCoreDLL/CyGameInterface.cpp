@@ -308,6 +308,10 @@ void CyGamePythonInterface()
 
 		.def("setCityScreenOwner", &CyGame::setCityScreenOwner, "void (int iPlayer)")
 		.def("resetCityScreenOwner", &CyGame::resetCityScreenOwner, "void ()")
+
+		.def("setGreatPeopleNotifications", &CyGame::setGreatPeopleNotifications, "void (int iNotificationLevel)")
+		.def("setReligionSpreadNotifications", &CyGame::setReligionSpreadNotifications, "void (int iNotificationLevel)")
+		.def("setEventEffectNotifications", &CyGame::setEventEffectNotifications, "void (int iNotificationLevel)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

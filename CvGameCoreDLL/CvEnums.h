@@ -3436,4 +3436,14 @@ enum PeriodTypes
 	NO_PERIOD = -1,
 };
 
+// Leoreth
+enum NotificationLevels
+{
+	NOTIFICATIONS_ALL,
+	NOTIFICATIONS_KNOWN,
+	NOTIFICATIONS_NEARBY,
+	NOTIFICATIONS_OURS,
+	NUM_NOTIFICATION_LEVELS,
+};
+
 #endif	// CVENUMS_h

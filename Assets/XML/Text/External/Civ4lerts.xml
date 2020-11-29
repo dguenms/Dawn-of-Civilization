@@ -993,4 +993,76 @@
 		<Italian>[COLOR_TECH_TEXT]Firmer&#224; un Trattato di Pace: %s1[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_TECH_TEXT]Will Sign Peace Treaty: %s1[COLOR_REVERT]</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_TEXT</Tag>
+		<English>Great People</English>
+		<French>Great People</French>
+		<German>Great People</German>
+		<Italian>Great People</Italian>
+		<Spanish>Great People</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_HOVER</Tag>
+		<English>Which great people births and deaths to display notification messages for.</English>
+		<French>Which great people births and deaths to display notification messages for.</French>
+		<German>Which great people births and deaths to display notification messages for.</German>
+		<Italian>Which great people births and deaths to display notification messages for.</Italian>
+		<Spanish>Which great people births and deaths to display notification messages for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_TEXT</Tag>
+		<English>Religion Spread</English>
+		<French>Religion Spread</French>
+		<German>Religion Spread</German>
+		<Italian>Religion Spread</Italian>
+		<Spanish>Religion Spread</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_HOVER</Tag>
+		<English>Which cities to display notification messages about religion spread and disappearance for.</English>
+		<French>Which cities to display notification messages about religion spread and disappearance for.</French>
+		<German>Which cities to display notification messages about religion spread and disappearance for.</German>
+		<Italian>Which cities to display notification messages about religion spread and disappearance for.</Italian>
+		<Spanish>Which cities to display notification messages about religion spread and disappearance for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_TEXT</Tag>
+		<English>Event Effects</English>
+		<French>Event Effects</French>
+		<German>Event Effects</German>
+		<Italian>Event Effects</Italian>
+		<Spanish>Event Effects</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_HOVER</Tag>
+		<English>Which civilizations to display notification messages about event outcomes for.</English>
+		<French>Which civilizations to display notification messages about event outcomes for.</French>
+		<German>Which civilizations to display notification messages about event outcomes for.</German>
+		<Italian>Which civilizations to display notification messages about event outcomes for.</Italian>
+		<Spanish>Which civilizations to display notification messages about event outcomes for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -617,8 +617,11 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_GENERAL_KILLED", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getEraInfo(GC.getGameINLINE().getCurrentEra()).getAudioUnitDefeatScript(), MESSAGE_TYPE_MAJOR_EVENT);
+					if (GC.getGameINLINE().isGreatPeopleNotification((PlayerTypes)iI, getOwnerINLINE()) || GC.getGameINLINE().isGreatPeopleNotification((PlayerTypes)iI, ePlayer))
+					{
+						szBuffer = gDLL->getText("TXT_KEY_MISC_GENERAL_KILLED", getNameKey());
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getEraInfo(GC.getGameINLINE().getCurrentEra()).getAudioUnitDefeatScript(), MESSAGE_TYPE_MAJOR_EVENT);
+					}
 				}
 			}
 		}

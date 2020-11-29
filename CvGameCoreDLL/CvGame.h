@@ -580,6 +580,18 @@ public:
 	void resetCityScreenOwner();
 	PlayerTypes getCityScreenOwner() const;
 
+	bool isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const;
+
+	NotificationLevels getGreatPeopleNotifications() const;
+	void setGreatPeopleNotifications(NotificationLevels eNotificationLevel);
+	bool isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getReligionSpreadNotifications() const;
+	void setReligionSpreadNotifications(NotificationLevels eNotificationLevel);
+	bool isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getEventEffectNotifications() const;
+	void setEventEffectNotifications(NotificationLevels eNotificationLevel);
+	bool isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+
 	// Leoreth: graphics paging
 	int getXResolution() const;
 	void setXResolution(int iNewValue);
@@ -634,6 +646,11 @@ protected:
 	GameStateTypes m_eGameState;
 	PlayerTypes m_eEventPlayer;
 	PlayerTypes m_eCityScreenOwner;
+
+	// Leoreth
+	NotificationLevels m_eGreatPeopleNotifications;
+	NotificationLevels m_eReligionSpreadNotifications;
+	NotificationLevels m_eEventEffectNotifications;
 
 	CvString m_szScriptData;
 

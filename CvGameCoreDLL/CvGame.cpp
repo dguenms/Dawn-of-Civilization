@@ -531,6 +531,11 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_eGameState = GAMESTATE_ON;
 	m_eCityScreenOwner = NO_PLAYER;
 
+	// Leoreth
+	m_eGreatPeopleNotifications = NOTIFICATIONS_ALL;
+	m_eReligionSpreadNotifications = NOTIFICATIONS_ALL;
+	m_eGreatPeopleNotifications = NOTIFICATIONS_ALL;
+
 	m_szScriptData = "";
 
 	// Leoreth: graphics paging
@@ -8707,7 +8712,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	reset(NO_HANDICAP);
 
-	uint uiFlag=0; // Leoreth: 2 for city screen owner
+	uint uiFlag=0; // Leoreth: 2 for city screen owner, 3 for notification levels
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	if (uiFlag < 1)
@@ -8757,6 +8762,12 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eVictory);
 	pStream->Read((int*)&m_eGameState);
 	if (uiFlag >= 2) pStream->Read((int*)&m_eCityScreenOwner); // Leoreth
+	if (uiFlag >= 3)
+	{
+		pStream->Read((int*)&m_eGreatPeopleNotifications);
+		pStream->Read((int*)&m_eReligionSpreadNotifications);
+		pStream->Read((int*)&m_eEventEffectNotifications);
+	}
 
 	//Rhye - start bugfix (thanks Gyathaar)
 	//pStream->ReadString(m_szScriptData);
@@ -8948,7 +8959,7 @@ void CvGame::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=2; // Leoreth: 2 for city screen owner
+	uint uiFlag=3; // Leoreth: 2 for city screen owner, 3 for notification levels
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iElapsedGameTurns);
@@ -8993,6 +9004,12 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_eVictory);
 	pStream->Write(m_eGameState);
 	if (uiFlag >= 2) pStream->Write(m_eCityScreenOwner); // Leoreth
+	if (uiFlag >= 3)
+	{
+		pStream->Write(m_eGreatPeopleNotifications);
+		pStream->Write(m_eReligionSpreadNotifications);
+		pStream->Write(m_eEventEffectNotifications);
+	}
 
 	pStream->WriteString(m_szScriptData);
 
@@ -10563,4 +10580,66 @@ void CvGame::resetCityScreenOwner()
 PlayerTypes CvGame::getCityScreenOwner() const
 {
 	return m_eCityScreenOwner;
+}
+
+bool CvGame::isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const
+{
+	switch (eNotificationLevel)
+	{
+	case NOTIFICATIONS_ALL:
+		return true;
+	case NOTIFICATIONS_KNOWN:
+		return eNotifiedPlayer == eCausingPlayer || GET_PLAYER(eNotifiedPlayer).canContact(eCausingPlayer);
+	case NOTIFICATIONS_NEARBY:
+		return isNeighbors(eNotifiedPlayer, eCausingPlayer);
+	case NOTIFICATIONS_OURS:
+		return eNotifiedPlayer == eCausingPlayer;
+	}
+
+	return true;
+}
+
+NotificationLevels CvGame::getGreatPeopleNotifications() const
+{
+	return m_eGreatPeopleNotifications;
+}
+
+void CvGame::setGreatPeopleNotifications(NotificationLevels eNotificationLevel)
+{
+	m_eGreatPeopleNotifications = eNotificationLevel;
+}
+
+bool CvGame::isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const
+{
+	return isNotification(eNotifiedPlayer, eCausingPlayer, getGreatPeopleNotifications());
+}
+
+NotificationLevels CvGame::getReligionSpreadNotifications() const
+{
+	return m_eReligionSpreadNotifications;
+}
+
+void CvGame::setReligionSpreadNotifications(NotificationLevels eNotificationLevel)
+{
+	m_eReligionSpreadNotifications = eNotificationLevel;
+}
+
+bool CvGame::isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const
+{
+	return isNotification(eNotifiedPlayer, eCausingPlayer, getReligionSpreadNotifications());
+}
+
+NotificationLevels CvGame::getEventEffectNotifications() const
+{
+	return m_eEventEffectNotifications;
+}
+
+void CvGame::setEventEffectNotifications(NotificationLevels eNotificationLevel)
+{
+	m_eEventEffectNotifications = eNotificationLevel;
+}
+
+bool CvGame::isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const
+{
+	return isNotification(eNotifiedPlayer, eCausingPlayer, getEventEffectNotifications());
 }

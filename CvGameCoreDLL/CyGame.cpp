@@ -1325,3 +1325,18 @@ void CyGame::resetCityScreenOwner()
 {
 	if (m_pGame) m_pGame->resetCityScreenOwner();
 }
+
+void CyGame::setGreatPeopleNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setGreatPeopleNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setReligionSpreadNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setEventEffectNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
+}

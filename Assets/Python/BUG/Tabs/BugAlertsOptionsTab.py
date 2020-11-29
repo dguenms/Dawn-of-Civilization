@@ -72,7 +72,13 @@ class BugAlertsOptionsTab(BugOptionsTab.BugOptionsTab):
 		screen.attachHSeparator(column, column + "Sep")
 		
 		# Reminders
-		left, right = self.addTwoColumnLayout(screen, column, "Main")
+		left, right = self.addTwoColumnLayout(screen, column, "Main", True)
 		self.addCheckbox(screen, left, "Reminder__Enabled")
 		self.addCheckbox(screen, left, "Reminder__Autolog")
 		self.addTextDropdown(screen, left, left, "Reminder__DisplayMethod")
+		
+		self.addLabel(screen, right, "Alerts_Notifications", "Notifications:")
+		rightL, rightR = self.addTwoColumnLayout(screen, right, "Notifications")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__GreatPeople")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__ReligionSpread")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__EventEffects")

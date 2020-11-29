@@ -7,6 +7,10 @@ from RFCUtils import *
 from Events import handler
 from Core import *
 
+import BugCore
+
+AlertOpt = BugCore.game.MoreCiv4lerts
+
 
 lTypes = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
@@ -39,12 +43,22 @@ def assignGreatPersonName(unit, iPlayer, city, bAnnounceBirth = True):
 				city = closestCity(unit)
 		
 			for iLoopPlayer in players.major().alive():
+				if AlertOpt.isGreatPeopleOurs() and iPlayer != iLoopPlayer:
+					continue
+			
+				if AlertOpt.isGreatPeopleKnown() and iPlayer != iLoopPlayer and not player(iLoopPlayer).canContact(iPlayer):
+					continue
+				
+				if AlertOpt.isGreatPeopleNearby() and not game.isNeighbors(iPlayer, iLoopPlayer):
+					continue
+			
 				if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
 					message(iLoopPlayer, text_key, unit.getName(), '%s (%s)' % (city.getName(), name(city)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
 				else:
 					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
 
-def create(iPlayer, iUnit, (x, y)):
+def create(iPlayer, iUnit, tile):
+	x, y = location(tile)
 	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
 def getAlias(iCiv, iType, iEra):

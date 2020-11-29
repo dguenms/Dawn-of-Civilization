@@ -561,3 +561,15 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 		names = [getNameFunc(getItemFunc(eItem)) for eItem in items]
 		names.sort()
 		return u", ".join(names)
+
+
+# Leoreth
+
+def updateGreatPeopleNotifications(_, iNotificationLevel):
+	game.setGreatPeopleNotifications(iNotificationLevel)
+
+def updateReligionSpreadNotifications(_, iNotificationLevel):
+	game.setReligionSpreadNotifications(iNotificationLevel)
+
+def updateEventEffectNotifications(_, iNotificationLevel):
+	game.setEventEffectNotifications(iNotificationLevel)
