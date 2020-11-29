@@ -61,6 +61,9 @@ UNITS
 WONDERS
 * merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
 
+WONDER MOVIES:
+* A New Dawn / Chronicles of Mankind (Zeta Nexus): Apadana Palace, Cheomseongdae, Crystal Palace, Flavian Amphitheatre, Forbidden Palace, Gardens by the Bay, Hubble Space Telescope, Neuschwanstein Castle, Al-Khazneh, San Marco Basilica
+
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
 * Smokehouse building: History Rewritten by Xyth

@@ -14039,7 +14039,7 @@ bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 				return false;
 			}
 
-			if (GET_TEAM(getTeam()).isOpenBorders(pPlot->getTeam()))
+			if (getDomainType() == DOMAIN_LAND && GET_TEAM(getTeam()).isOpenBorders(pPlot->getTeam()))
 			{
 				return false;
 			}

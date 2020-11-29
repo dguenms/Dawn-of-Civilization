@@ -8838,6 +8838,7 @@
 			<Strategy>TXT_KEY_BUILDING_APADANA_PALACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APADANA_PALACE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_APADANA_PALACE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<StateReligion>RELIGION_ZOROASTRIANISM</StateReligion>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
@@ -9387,6 +9388,7 @@
 			<Help>TXT_KEY_BUILDING_AL_KHAZNEH_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AL_KHAZNEH</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_AL_KHAZNEH</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
 			<PrereqTech>TECH_CURRENCY</PrereqTech>
@@ -10348,6 +10350,7 @@
 			<Strategy>TXT_KEY_BUILDING_CHEOMSEONGDAE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CHEOMSEONGDAE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CHEOMSEONGDAE</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
@@ -13459,6 +13462,7 @@
 			<Strategy>TXT_KEY_BUILDING_CRYSTAL_PALACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CRYSTAL_PALACE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CRYSTAL_PALACE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_ENGINE</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
@@ -13859,6 +13863,7 @@
 			<Help>TXT_KEY_BUILDING_NEUSCHWANSTEIN_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NEUSCHWANSTEIN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_NEUSCHWANSTEIN</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_JOURNALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
@@ -14399,7 +14404,6 @@
 			<Strategy>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</MovieDefineTag>
 			<PrereqTech>TECH_FISSION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_LABORATORY</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -15069,6 +15073,7 @@
 			<Help>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GARDENS_BY_THE_BAY</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GARDENS_BY_THE_BAY</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_ECOLOGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
@@ -15166,6 +15171,7 @@
 			<Help>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HUBBLE_SPACE_TELESCOPE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_HUBBLE_SPACE_TELESCOPE</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_SATELLITES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -15462,6 +15468,7 @@
 			<Strategy>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LARGE_HADRON_COLLIDER</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LARGE_HADRON_COLLIDER</MovieDefineTag>
 			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
