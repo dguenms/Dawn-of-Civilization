@@ -1291,7 +1291,7 @@ public:
 
 	// Leoreth
 	int getDomainProductionModifier(DomainTypes eDomainType) const;
-	int getDomainExperienceModifier(DomainTypes eDomainType) const;
+	int getDomainFreeExperience(DomainTypes eDomainType) const;
 
 	void changeDomainProductionModifier(DomainTypes eDomainType, int iChange);
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);

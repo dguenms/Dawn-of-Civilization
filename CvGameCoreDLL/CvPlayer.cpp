@@ -7149,6 +7149,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		updateCommerce(COMMERCE_RESEARCH);
 		AI_makeAssignWorkDirty();
 	}
+
+	// Harmandir Sahib
+	else if (eBuilding == HARMANDIR_SAHIB)
+	{
+		changeStateReligionFreeExperience(2 * iChange);
+	}
 }
 
 
@@ -24679,7 +24685,7 @@ void CvPlayer::changeDomainProductionModifier(DomainTypes eDomainType, int iChan
 }
 
 // Leoreth
-int CvPlayer::getDomainExperienceModifier(DomainTypes eDomainType) const
+int CvPlayer::getDomainFreeExperience(DomainTypes eDomainType) const
 {
 	return m_aiDomainExperienceModifiers[(int)eDomainType];
 }

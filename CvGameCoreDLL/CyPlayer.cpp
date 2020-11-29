@@ -2712,3 +2712,8 @@ int CyPlayer::getPeriod()
 {
 	return m_pPlayer ? m_pPlayer->getPeriod() : -1;
 }
+
+int CyPlayer::getDomainFreeExperience(int iDomainType)
+{
+	return m_pPlayer ? m_pPlayer->getDomainFreeExperience((DomainTypes)iDomainType) : -1;
+}

@@ -596,6 +596,7 @@ public:
 	void setAlive(bool bNewValue);
 	void setPeriod(int iPeriod);
 	int getPeriod();
+	int getDomainFreeExperience(int iDomainType);
 
 private:
 	CvPlayer* m_pPlayer;

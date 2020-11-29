@@ -29,6 +29,15 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+def getPlayerExperience(unit):
+	iExperience = player(unit).getFreeExperience() + player(unit).getDomainFreeExperience(unit.getDomainType())
+	
+	if player(unit).isStateReligion():
+		iExperience += player(unit).getStateReligionFreeExperience()
+	
+	return iExperience
+
+
 def log_with_trace(context):
 	print "%s called near:" % context
 	stacktrace()
@@ -452,6 +461,7 @@ def makeUnits(iPlayer, iUnit, plot, iNumUnits = 1, iUnitAI = UnitAITypes.NO_UNIT
 	units = []
 	for _ in range(iNumUnits):
 		unit = player(iPlayer).initUnit(iUnit, x, y, iUnitAI, DirectionTypes.DIRECTION_SOUTH)
+		unit.changeExperience(getPlayerExperience(unit), -1, False, False, False)
 		units.append(unit)
 		events.fireEvent("unitCreated", unit)
 

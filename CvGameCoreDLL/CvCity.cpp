@@ -3016,7 +3016,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		// Leoreth: domain specific experience from civics
 		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
 		{
-			iExperience += GET_PLAYER(getOwnerINLINE()).getDomainExperienceModifier((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
+			iExperience += GET_PLAYER(getOwnerINLINE()).getDomainFreeExperience((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
 		}
 	}
 
@@ -3025,12 +3025,6 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
 		{
 			iExperience += GET_PLAYER(getOwnerINLINE()).getStateReligionFreeExperience();
-
-			//Leoreth: Harmandir Sahib effect
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
-			{
-				iExperience += 2;
-			}
 		}
 	}
 	
