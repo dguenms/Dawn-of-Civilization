@@ -1447,7 +1447,7 @@ def checkResurrection():
 					doResurrection(iPlayer, resurrectionCities)
 					return
 					
-def isPartOfResurrection(iPlayer, city):
+def isPartOfResurrection(iPlayer, city, bOnlyOne):
 	iOwner = city.getOwner()
 	
 	# for humans: not for recently conquered cities to avoid annoying reflips
@@ -1484,14 +1484,14 @@ def isPartOfResurrection(iPlayer, city):
 	
 	# if stable, only the prospective capital flips
 	if iOwnerStability <= iStabilityStable:
-		if bCapital:
+		if bCapital and not bOnlyOne:
 			return True
 			
 	return False
 						
 def getResurrectionCities(iPlayer, bFromCollapse = False):
 	potentialCities = cities.respawn(iPlayer)
-	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iPlayer, city))
+	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iPlayer, city, len(potentialCities) == 1))
 
 	# if capital exists and not part of the resurrection, it fails, unless from collapse
 	capital = cities.respawnCapital(iPlayer)
