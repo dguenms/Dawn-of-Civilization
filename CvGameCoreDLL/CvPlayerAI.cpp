@@ -16653,7 +16653,7 @@ int CvPlayerAI::AI_goldTradeValuePercent(PlayerTypes eOtherPlayer) const
 	}
 
 	// Leoreth: Byzantine UP: double value of Byzantine gold
-	if (GET_PLAYER(eOtherPlayer).getCivilizationType() == BYZANTIUM)
+	if (eOtherPlayer != NO_PLAYER && GET_PLAYER(eOtherPlayer).getCivilizationType() == BYZANTIUM)
 	{
 		iValue *= 2;
 	}
@@ -19437,6 +19437,7 @@ int CvPlayerAI::AI_getUnitEnabledValue(UnitTypes eUnit,
 
 		case UNITAI_SATELLITE:
 			iValue += 400;
+			break;
 
 		default:
 			FAssert(false);
