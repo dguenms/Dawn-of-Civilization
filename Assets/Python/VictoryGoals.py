@@ -255,7 +255,7 @@ class ArgumentProcessorBuilder(object):
 		return self
 		
 	def initialized(self):
-		return bool(self.objective_types or self.subject_type or self.objective_split)
+		return bool(self.objective_types)
 	
 	def build(self):
 		return ArgumentProcessor(self.objective_types, self.subject_type, self.objective_split)
@@ -397,7 +397,7 @@ class GoalBuilder(object):
 		members = dict((func.__name__, func) for func in self.funcs)
 		members.update(self.attributes)
 		members["handlers"] = self.handlers[:]
-		members["_types"] = self.types.build()
+		members["types"] = self.types.build()
 		
 		return members
 
@@ -411,7 +411,7 @@ class BaseGoal(object):
 
 	builder = GoalBuilder()
 	handlers = []
-	_types = None
+	types = None
 		
 	@classmethod
 	def func(cls, *funcs):
@@ -428,12 +428,12 @@ class BaseGoal(object):
 		return cls.builder.create(cls, name)
 		
 	@classmethod
-	def types(cls, *types):
+	def objectives(cls, *types):
 		cls.builder.objectives(list(types))
 		return cls
 	
 	@classmethod
-	def type(cls, type):
+	def subject(cls, type):
 		cls.builder.subject(type)
 		return cls
 	
@@ -444,7 +444,7 @@ class BaseGoal(object):
 	
 	@classmethod
 	def process_arguments(cls, *arguments):
-		return cls._types.process(*arguments)
+		return cls.types.process(*arguments)
 
 	def __init__(self, *arguments):
 		self.reset()
@@ -456,14 +456,6 @@ class BaseGoal(object):
 	
 	def __str__(self):
 		return '\n'.join([self.display(*args) for args in self.arguments])
-	
-	@property
-	def objectives(self):
-		return self.arguments.objectives
-	
-	@property
-	def subject(self):
-		return self.arguments.subject
 		
 	def reset(self):
 		self.state = POSSIBLE
@@ -548,7 +540,7 @@ class Condition(BaseGoal):
 		def condition(self, plots):
 			return plots.cities().all_if_any(lambda city: func(city, self.iPlayer))
 		
-		return cls.types(Plots).func(condition)
+		return cls.objectives(Plots).func(condition)
 	
 	@classmethod
 	def city(cls, func):
@@ -559,7 +551,7 @@ class Condition(BaseGoal):
 
 	@classproperty
 	def wonder(cls):
-		return cls.types(CvBuildingInfo).player(CyPlayer.isHasBuilding).subclass("Wonder")
+		return cls.objectives(CvBuildingInfo).player(CyPlayer.isHasBuilding).subclass("Wonder")
 	
 	@classproperty
 	def control(cls):
@@ -584,22 +576,22 @@ class Condition(BaseGoal):
 	
 	@classproperty
 	def cityBuilding(cls):
-		return cls.type(CyCity).types(CvBuildingInfo).city(CyCity.isHasRealBuilding).subclass("CityBuilding")
+		return cls.subject(CyCity).objectives(CvBuildingInfo).city(CyCity.isHasRealBuilding).subclass("CityBuilding")
 	
 	@classproperty
 	def project(cls):
-		return cls.types(CvProjectInfo).team(positive(CyTeam.getProjectCount)).subclass("ProjectCount")
+		return cls.objectives(CvProjectInfo).team(positive(CyTeam.getProjectCount)).subclass("ProjectCount")
 	
 	@classproperty
 	def route(cls):
-		return cls.type(Plots).types(CvRouteInfo).plots(equals(CyPlot.getRouteType)).subclass("Route")
+		return cls.subject(Plots).objectives(CvRouteInfo).plots(equals(CyPlot.getRouteType)).subclass("Route")
 	
 
 
 class Count(BaseGoal):
 
 	@classmethod
-	def types(cls, *types):
+	def objectives(cls, *types):
 		types = list(types) + [int]
 		cls.builder.objectives(types)
 		return cls
@@ -607,7 +599,7 @@ class Count(BaseGoal):
 	@classmethod
 	def subclass(cls, name):
 		if not cls.builder.types.initialized():
-			cls.types()
+			cls.objectives()
 		return cls.builder.create(cls, name)
 
 	def condition(self, *arguments):
@@ -648,14 +640,14 @@ class Count(BaseGoal):
 		def value_function(self, plots):
 			return func(self, plots.cities()).count()
 		
-		return cls.types(Plots).func(value_function)
+		return cls.objectives(Plots).func(value_function)
 	
 	@classmethod
 	def players(cls, func):
 		def value_function(self, players):
 			return players.where(lambda p: func(self, p)).count()
 		
-		return cls.types(Players).func(value_function)
+		return cls.objectives(Players).func(value_function)
 		
 	@classmethod
 	def citiesSum(cls, func):
@@ -694,7 +686,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def building(cls):
-		return cls.types(CvBuildingInfo).player(CyPlayer.countNumBuildings).subclass("BuildingCount")
+		return cls.objectives(CvBuildingInfo).player(CyPlayer.countNumBuildings).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
@@ -706,18 +698,18 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def resource(cls):
-		return cls.types(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).subclass("ResourceCount")
+		return cls.objectives(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).subclass("ResourceCount")
 	
 	@classproperty
 	def controlledResource(cls):
 		def resources(player, objective):
 			return player.getNumAvailableBonuses(objective) - player.getBonusImport(objective)
 	
-		return cls.types(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
+		return cls.objectives(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
 		
 	@classproperty
 	def improvement(cls):
-		return cls.types(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
+		return cls.objectives(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
 	
 	@classproperty
 	def population(cls):
@@ -725,14 +717,14 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def corporation(cls):
-		return cls.types(CvCorporationInfo).player(CyPlayer.countCorporations).subclass("CorporationCount")
+		return cls.objectives(CvCorporationInfo).player(CyPlayer.countCorporations).subclass("CorporationCount")
 	
 	@classproperty
 	def unit(cls):
 		def value_function(self, objective):
 			return self._player.getUnitClassCount(infos.unit(objective).getUnitClassType())
 		
-		return cls.types(CvUnitInfo).func(value_function).subclass("UnitCount")
+		return cls.objectives(CvUnitInfo).func(value_function).subclass("UnitCount")
 		
 	@classproperty
 	def numCities(cls):
@@ -757,7 +749,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def specialist(cls):
-		return cls.types(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.objectives(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
 	
 	@classproperty
 	def averageCulture(cls):
@@ -769,19 +761,19 @@ class Count(BaseGoal):
 		
 	@classproperty
 	def populationCities(cls):
-		return cls.types(int).citiesWith(CyCity.getPopulation).subclass("PopulationCities")
+		return cls.objectives(int).citiesWith(CyCity.getPopulation).subclass("PopulationCities")
 	
 	@classproperty
 	def cultureCities(cls):
-		return cls.types(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
+		return cls.objectives(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
 	
 	@classproperty
 	def cultureLevelCities(cls):
-		return cls.types(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
+		return cls.objectives(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
 	
 	@classproperty
 	def citySpecialist(cls):
-		return cls.type(CyCity).types(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.subject(CyCity).objectives(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
 	
 	@classproperty
 	def cultureLevel(cls):
@@ -789,7 +781,7 @@ class Count(BaseGoal):
 			city = city()
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
-		return cls.type(CyCity).types().city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
+		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
 
 
 def segment(tuple, cutoff=None):
@@ -819,10 +811,6 @@ class Track(Count):
 	
 	def accumulate(self, iChange, *objectives):
 		self.dCount[objectives] += iChange
-		
-	@classmethod
-	def subclass(cls, name):
-		return cls.builder.create(cls, name)
 	
 	@classmethod
 	def handle(cls, event, func):
@@ -851,7 +839,7 @@ class Track(Count):
 			if self._player.isGoldenAge() and not self._player.isAnarchy():
 				self.increment()
 		
-		return cls.types().handle("BeginPlayerTurn", incrementGoldenAges).func(required).subclass("GoldenAges")
+		return cls.handle("BeginPlayerTurn", incrementGoldenAges).func(required).subclass("GoldenAges")
 	
 	@classproperty
 	def eraFirsts(cls):
@@ -861,7 +849,7 @@ class Track(Count):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
-		return cls.types(CvTechInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscover")
+		return cls.objectives(CvTechInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscover")
 	
 	@classproperty
 	def sunkShips(cls):
@@ -869,7 +857,7 @@ class Track(Count):
 			if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
 				self.increment()
 		
-		return cls.types().handle("combatResult", incrementShipsSunk).subclass("SunkShips")
+		return cls.handle("combatResult", incrementShipsSunk).subclass("SunkShips")
 	
 	@classproperty
 	def tradeGold(cls):
@@ -884,31 +872,31 @@ class Track(Count):
 			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
 			self.accumulate(iGold)
 		
-		return cls.types().handle("playerGoldTrade", accumulateTradeGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
+		return cls.handle("playerGoldTrade", accumulateTradeGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
 	
 	@classproperty
 	def raidGold(cls):
-		return cls.types().accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
+		return cls.accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
 	
 	@classproperty
 	def pillage(cls):
-		return cls.types().incremented("unitPillage").subclass("PillageCount")
+		return cls.incremented("unitPillage").subclass("PillageCount")
 	
 	@classproperty
 	def acquiredCities(cls):
-		return cls.types().incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
+		return cls.incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
 	
 	@classproperty
 	def piracyGold(cls):
-		return cls.types().accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
+		return cls.accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
 	
 	@classproperty
 	def razes(cls):
-		return cls.types().incremented("cityRazed").subclass("RazeCount")
+		return cls.incremented("cityRazed").subclass("RazeCount")
 	
 	@classproperty
 	def slaveTradeGold(cls):
-		return cls.types().accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
+		return cls.accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
 	
 	@classproperty
 	def greatGenerals(cls):
@@ -916,7 +904,7 @@ class Track(Count):
 			if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
 				self.increment()
 		
-		return cls.types().handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
+		return cls.handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
 	
 	@classproperty
 	def resourceTradeGold(cls):
@@ -924,15 +912,15 @@ class Track(Count):
 			iGold = players.major().alive().sum(self._player.getGoldPerTurnByPlayer)
 			self.accumulate(iGold)
 	
-		return cls.types().handle("BeginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
+		return cls.handle("BeginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
 	
 	@classproperty
 	def brokeredPeace(cls):
-		return cls.types().incremented("peaceBrokered").subclass("BrokeredPeace")
+		return cls.incremented("peaceBrokered").subclass("BrokeredPeace")
 	
 	@classproperty
 	def enslaves(cls):
-		return cls.types().incremented("enslave").subclass("Enslave")
+		return cls.incremented("enslave").subclass("Enslave")
 	
 	@classproperty
 	def conquerFrom(cls):
@@ -941,4 +929,4 @@ class Track(Count):
 				if bConquest and civ(iOwner) in objective:
 					self.increment(objective)
 		
-		return cls.types(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")
+		return cls.objectives(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")

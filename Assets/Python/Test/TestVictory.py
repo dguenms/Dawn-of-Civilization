@@ -589,7 +589,7 @@ class TestBaseGoal(ExtendedTestCase):
 		def display(self):
 			return str(self.condition())
 		
-		BaseGoal._types = DummyProcessor()
+		BaseGoal.types = DummyProcessor()
 		BaseGoal.condition = condition
 		BaseGoal.display = display
 		
@@ -598,8 +598,6 @@ class TestBaseGoal(ExtendedTestCase):
 	
 	def testInitialState(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
-		self.assertEqual(self.goal.objectives, [])
-		self.assertEqual(self.goal.subject, None)
 		self.assertEqual(self.goal.iPlayer, None)
 		self.assertEqual(self.goal._player, None)
 		self.assertEqual(self.goal._team, None)
