@@ -1204,6 +1204,34 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		for plot in area:
 			plot.setRouteType(-1)
+			
+	def testNoStateReligionSome(self):
+		goal = Condition.noStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city2 = player(1).initCity(63, 31)
+		
+		player(0).setLastStateReligion(iCatholicism)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city1.kill()
+		city2.kill()
+		
+		player(0).setLastStateReligion(-1)
+	
+	def testNoStateReligionAll(self):
+		goal = Condition.noStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city2 = player(1).initCity(63, 31)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city1.kill()
+		city2.kill()
 	
 
 class TestCountGoals(ExtendedTestCase):

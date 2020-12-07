@@ -433,6 +433,10 @@ class BaseGoal(object):
 		return cls
 	
 	@classmethod
+	def objective(cls, type):
+		return cls.objectives(type)
+	
+	@classmethod
 	def subject(cls, type):
 		cls.builder.subject(type)
 		return cls
@@ -537,10 +541,10 @@ class Condition(BaseGoal):
 	
 	@classmethod
 	def cities(cls, func):
-		def condition(self, plots):
-			return plots.cities().all_if_any(lambda city: func(city, self.iPlayer))
+		def condition(self, plots, *objectives):
+			return plots.cities().all_if_any(lambda city: func(city, self.iPlayer, *objectives))
 		
-		return cls.objectives(Plots).func(condition)
+		return cls.func(condition)
 	
 	@classmethod
 	def city(cls, func):
@@ -551,40 +555,47 @@ class Condition(BaseGoal):
 
 	@classproperty
 	def wonder(cls):
-		return cls.objectives(CvBuildingInfo).player(CyPlayer.isHasBuilding).subclass("Wonder")
+		return cls.objective(CvBuildingInfo).player(CyPlayer.isHasBuilding).subclass("Wonder")
 	
 	@classproperty
 	def control(cls):
 		def owned(city, iPlayer):
 			return city.getOwner() == iPlayer
 	
-		return cls.cities(owned).subclass("Control")
+		return cls.objective(Plots).cities(owned).subclass("Control")
 	
 	@classproperty
 	def controlOrVassalize(cls):
 		def owned(city, iPlayer):
 			return city.getOwner() in players.vassals(iPlayer).including(iPlayer)
 		
-		return cls.cities(owned).subclass("ControlOrVassalize")
+		return cls.objective(Plots).cities(owned).subclass("ControlOrVassalize")
 	
 	@classproperty
 	def settle(cls):
 		def settled(city, iPlayer):
 			return city.getOwner() == iPlayer and city.getOriginalOwner() == iPlayer
 		
-		return cls.cities(settled).subclass("Settled")
+		return cls.objective(Plots).cities(settled).subclass("Settled")
 	
 	@classproperty
 	def cityBuilding(cls):
-		return cls.subject(CyCity).objectives(CvBuildingInfo).city(CyCity.isHasRealBuilding).subclass("CityBuilding")
+		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.isHasRealBuilding).subclass("CityBuilding")
 	
 	@classproperty
 	def project(cls):
-		return cls.objectives(CvProjectInfo).team(positive(CyTeam.getProjectCount)).subclass("ProjectCount")
+		return cls.objective(CvProjectInfo).team(positive(CyTeam.getProjectCount)).subclass("ProjectCount")
 	
 	@classproperty
 	def route(cls):
-		return cls.subject(Plots).objectives(CvRouteInfo).plots(equals(CyPlot.getRouteType)).subclass("Route")
+		return cls.subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).subclass("Route")
+		
+	@classproperty
+	def noStateReligion(cls):
+		def without_religion(city, iPlayer, iReligion):
+			return player(city).getStateReligion() != iReligion
+	
+		return cls.subject(Plots).objective(CvReligionInfo).cities(without_religion).subclass("NoStateReligion")
 	
 
 
@@ -640,14 +651,14 @@ class Count(BaseGoal):
 		def value_function(self, plots):
 			return func(self, plots.cities()).count()
 		
-		return cls.objectives(Plots).func(value_function)
+		return cls.objective(Plots).func(value_function)
 	
 	@classmethod
 	def players(cls, func):
 		def value_function(self, players):
 			return players.where(lambda p: func(self, p)).count()
 		
-		return cls.objectives(Players).func(value_function)
+		return cls.objective(Players).func(value_function)
 		
 	@classmethod
 	def citiesSum(cls, func):
@@ -686,7 +697,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def building(cls):
-		return cls.objectives(CvBuildingInfo).player(CyPlayer.countNumBuildings).subclass("BuildingCount")
+		return cls.objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
@@ -698,18 +709,18 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def resource(cls):
-		return cls.objectives(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).subclass("ResourceCount")
+		return cls.objective(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).subclass("ResourceCount")
 	
 	@classproperty
 	def controlledResource(cls):
 		def resources(player, objective):
 			return player.getNumAvailableBonuses(objective) - player.getBonusImport(objective)
 	
-		return cls.objectives(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
+		return cls.objective(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
 		
 	@classproperty
 	def improvement(cls):
-		return cls.objectives(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
+		return cls.objective(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
 	
 	@classproperty
 	def population(cls):
@@ -717,14 +728,14 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def corporation(cls):
-		return cls.objectives(CvCorporationInfo).player(CyPlayer.countCorporations).subclass("CorporationCount")
+		return cls.objective(CvCorporationInfo).player(CyPlayer.countCorporations).subclass("CorporationCount")
 	
 	@classproperty
 	def unit(cls):
 		def value_function(self, objective):
 			return self._player.getUnitClassCount(infos.unit(objective).getUnitClassType())
 		
-		return cls.objectives(CvUnitInfo).func(value_function).subclass("UnitCount")
+		return cls.objective(CvUnitInfo).func(value_function).subclass("UnitCount")
 		
 	@classproperty
 	def numCities(cls):
@@ -749,7 +760,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def specialist(cls):
-		return cls.objectives(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
 	
 	@classproperty
 	def averageCulture(cls):
@@ -761,19 +772,19 @@ class Count(BaseGoal):
 		
 	@classproperty
 	def populationCities(cls):
-		return cls.objectives(int).citiesWith(CyCity.getPopulation).subclass("PopulationCities")
+		return cls.objective(int).citiesWith(CyCity.getPopulation).subclass("PopulationCities")
 	
 	@classproperty
 	def cultureCities(cls):
-		return cls.objectives(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
+		return cls.objective(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
 	
 	@classproperty
 	def cultureLevelCities(cls):
-		return cls.objectives(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
+		return cls.objective(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
 	
 	@classproperty
 	def citySpecialist(cls):
-		return cls.subject(CyCity).objectives(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
 	
 	@classproperty
 	def cultureLevel(cls):
@@ -849,7 +860,7 @@ class Track(Count):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
-		return cls.objectives(CvTechInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscover")
+		return cls.objective(CvTechInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscover")
 	
 	@classproperty
 	def sunkShips(cls):
@@ -929,4 +940,4 @@ class Track(Count):
 				if bConquest and civ(iOwner) in objective:
 					self.increment(objective)
 		
-		return cls.objectives(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")
+		return cls.objective(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")
