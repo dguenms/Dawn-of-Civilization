@@ -665,22 +665,20 @@ class TestBaseGoal(ExtendedTestCase):
 		TestGoal = Count.objective(int).include_owner.func(condition_value).subclass("TestGoal")
 		iPlayer = 21
 		
-		print "testIncludeOwner: %s" % (TestGoal.owner_included,)
+		goal = TestGoal(0, 1, 2)
+		goal.activate(iPlayer)
 		
-		args = TestGoal.process_arguments(iPlayer, 0, 1, 2)
-		
-		self.assertEqual(TestGoal.owner_included, True)
-		self.assertEqual(args.iPlayer, iPlayer)
+		self.assertEqual(goal.owner_included, True)
+		self.assertEqual(goal.arguments.iPlayer, iPlayer)
 	
 	def testNotIncludeOwner(self):
 		iPlayer = 20
 		
-		print "testNotIncludeOwner: %s" % (BaseGoal.owner_included,)
+		goal = BaseGoal(0, 1, 2)
+		goal.activate(iPlayer)
 		
-		args = BaseGoal.process_arguments(iPlayer, 0, 1, 2)
-		
-		self.assertEqual(BaseGoal.owner_included, False)
-		self.assertEqual(args.iPlayer, None)
+		self.assertEqual(goal.owner_included, False)
+		self.assertEqual(goal.arguments.iPlayer, None)
 	
 	def testInitialState(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
