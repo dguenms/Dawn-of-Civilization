@@ -221,18 +221,29 @@ class Arguments(object):
 		self.subject = subject
 		self.objectives = objectives
 		
+		self.iPlayer = None
+	
+	def setPlayer(self, iPlayer):
+		self.iPlayer = iPlayer
+		
+	def produce(self, objective=[]):
+		result = []
+		
+		if self.subject:
+			result += [self.subject]
+		if objective:
+			result += list(objective)
+		if self.iPlayer is not None:
+			result += [self.iPlayer]
+		
+		return result
+		
 	def __iter__(self):
 		if self.objectives:
 			for objective in self.objectives:
-				if self.subject:
-					yield [self.subject] + list(objective)
-				else:
-					yield list(objective)
+				yield self.produce(objective)
 		else:
-			if self.subject:
-				yield [self.subject]
-			else:
-				yield []
+			yield self.produce()
 
 
 class ArgumentProcessorBuilder(object):
@@ -274,7 +285,7 @@ class ArgumentProcessor(object):
 		if default:
 			return default()
 
-	def __init__(self, objective_types=[], subject_type=None, objective_split=0):
+	def __init__(self, objective_types=[], subject_type=None, objective_split=0, include_owner=False):
 		if not objective_types and not subject_type:
 			raise ValueError("Needs at least one objective type or subject type")
 		
@@ -368,6 +379,7 @@ class GoalBuilder(object):
 		self.attributes = {}
 		self.funcs = []
 		self.handlers = []
+		self.owner_included = False
 		
 		self.types = ArgumentProcessorBuilder()
 	
@@ -392,12 +404,17 @@ class GoalBuilder(object):
 	def split(self, split):
 		self.types.withObjectiveSplit(split)
 		return self
+	
+	def include_owner(self):
+		self.owner_included = True
+		return self
 		
 	def members(self):
 		members = dict((func.__name__, func) for func in self.funcs)
 		members.update(self.attributes)
 		members["handlers"] = self.handlers[:]
 		members["types"] = self.types.build()
+		members["owner_included"] = self.owner_included
 		
 		return members
 
@@ -412,6 +429,7 @@ class BaseGoal(object):
 	builder = GoalBuilder()
 	handlers = []
 	types = None
+	owner_included = False
 		
 	@classmethod
 	def func(cls, *funcs):
@@ -446,6 +464,11 @@ class BaseGoal(object):
 		cls.builder.split(split)
 		return cls
 	
+	@classproperty
+	def include_owner(cls):
+		cls.builder.include_owner()
+		return cls
+	
 	@classmethod
 	def process_arguments(cls, *arguments):
 		return cls.types.process(*arguments)
@@ -474,6 +497,9 @@ class BaseGoal(object):
 		self._player = player(iPlayer)
 		self._team = team(iPlayer)
 		self.callback = callback
+		
+		if self.owner_included:
+			self.arguments.iPlayer = iPlayer
 		
 		for event, handler in self.__class__.handlers:
 			events.addEventHandler(event, getattr(self, handler))
@@ -534,15 +560,15 @@ class Condition(BaseGoal):
 	
 	@classmethod
 	def plots(cls, func):
-		def condition(self, plots, objective):
-			return plots.all(lambda plot: func(plot, objective))
+		def condition(self, plots, *objectives):
+			return plots.all(lambda plot: func(plot, *objectives))
 		
 		return cls.func(condition)
 	
 	@classmethod
 	def cities(cls, func):
 		def condition(self, plots, *objectives):
-			return plots.cities().all_if_any(lambda city: func(city, self.iPlayer, *objectives))
+			return plots.cities().all_if_any(lambda city: func(city, *objectives))
 		
 		return cls.func(condition)
 	
@@ -562,21 +588,21 @@ class Condition(BaseGoal):
 		def owned(city, iPlayer):
 			return city.getOwner() == iPlayer
 	
-		return cls.objective(Plots).cities(owned).subclass("Control")
+		return cls.objective(Plots).include_owner.cities(owned).subclass("Control")
 	
 	@classproperty
 	def controlOrVassalize(cls):
 		def owned(city, iPlayer):
 			return city.getOwner() in players.vassals(iPlayer).including(iPlayer)
 		
-		return cls.objective(Plots).cities(owned).subclass("ControlOrVassalize")
+		return cls.objective(Plots).include_owner.cities(owned).subclass("ControlOrVassalize")
 	
 	@classproperty
 	def settle(cls):
 		def settled(city, iPlayer):
 			return city.getOwner() == iPlayer and city.getOriginalOwner() == iPlayer
 		
-		return cls.objective(Plots).cities(settled).subclass("Settled")
+		return cls.objective(Plots).include_owner.cities(settled).subclass("Settled")
 	
 	@classproperty
 	def cityBuilding(cls):
@@ -592,10 +618,17 @@ class Condition(BaseGoal):
 		
 	@classproperty
 	def noStateReligion(cls):
-		def without_religion(city, iPlayer, iReligion):
+		def without_religion(city, iReligion, iPlayer):
 			return player(city).getStateReligion() != iReligion
 	
-		return cls.subject(Plots).objective(CvReligionInfo).cities(without_religion).subclass("NoStateReligion")
+		return cls.subject(Plots).objective(CvReligionInfo).include_owner.cities(without_religion).subclass("NoStateReligion")
+	
+	@classproperty
+	def cultureCovered(cls):
+		def covered(plot, iPlayer):
+			return plot.getOwner() == iPlayer
+		
+		return cls.objective(Plots).include_owner.plots(covered).subclass("CultureCovered")
 	
 
 

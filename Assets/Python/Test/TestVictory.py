@@ -342,6 +342,69 @@ class TestAggregate(ExtendedTestCase):
 		self.assertEqual(agg._items, [0, 1, 2])
 
 
+class TestArguments(ExtendedTestCase):
+
+	def testObjective(self):
+		arguments = Arguments(objectives=[(1,)])
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [[1]])
+	
+	def testObjectives(self):
+		arguments = Arguments(objectives=[(1,), (2,), (3,)])
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [[1], [2], [3]])
+	
+	def testSubject(self):
+		arguments = Arguments(objectives=[], subject="subject")
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [["subject"]])
+	
+	def testPlayer(self):
+		arguments = Arguments([])
+		arguments.setPlayer(0)
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [[0]])
+	
+	def testSubjectAndObjectives(self):
+		arguments = Arguments(subject="subject", objectives=[(1,), (2,), (3,)])
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [["subject", 1], ["subject", 2], ["subject", 3]])
+	
+	def testSubjectAndPlayer(self):
+		arguments = Arguments(objectives=[], subject="subject")
+		arguments.setPlayer(0)
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [["subject", 0]])
+	
+	def testObjectivesAndPlayer(self):
+		arguments = Arguments(objectives=[(1,), (2,), (3,)])
+		arguments.setPlayer(0)
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [[1, 0], [2, 0], [3, 0]])
+	
+	def testSubjectAndObjectivesAndPlayer(self):
+		arguments = Arguments(subject="subject", objectives=[(1,), (2,), (3,)])
+		arguments.setPlayer(0)
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [["subject", 1, 0], ["subject", 2, 0], ["subject", 3, 0]])
+
+
 class TestArgumentProcessor(ExtendedTestCase):
 
 	def testReturnsArguments(self):
@@ -595,6 +658,29 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		self.goal = BaseGoal()
 		self.goal.condition_value = True
+	
+	def testIncludeOwner(self):
+		def condition_value():
+			return True
+		TestGoal = Count.objective(int).include_owner.func(condition_value).subclass("TestGoal")
+		iPlayer = 21
+		
+		print "testIncludeOwner: %s" % (TestGoal.owner_included,)
+		
+		args = TestGoal.process_arguments(iPlayer, 0, 1, 2)
+		
+		self.assertEqual(TestGoal.owner_included, True)
+		self.assertEqual(args.iPlayer, iPlayer)
+	
+	def testNotIncludeOwner(self):
+		iPlayer = 20
+		
+		print "testNotIncludeOwner: %s" % (BaseGoal.owner_included,)
+		
+		args = BaseGoal.process_arguments(iPlayer, 0, 1, 2)
+		
+		self.assertEqual(BaseGoal.owner_included, False)
+		self.assertEqual(args.iPlayer, None)
 	
 	def testInitialState(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
@@ -1232,6 +1318,48 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		city1.kill()
 		city2.kill()
+	
+	def testCultureCoveredNone(self):
+		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)]))
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), False)
+	
+	def testCultureCoveredSome(self):
+		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)]))
+		goal.activate(0)
+		
+		plot(60, 30).setOwner(0)
+		
+		self.assertEqual(bool(goal), False)
+		
+		plot(60, 30).setOwner(-1)
+	
+	def testCultureCoveredAll(self):
+		area = plots.of([(60, 30), (61, 30), (62, 30)])
+		goal = Condition.cultureCovered(area)
+		goal.activate(0)
+		
+		for plot in area:
+			plot.setOwner(0)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for plot in area:
+			plot.setOwner(-1)
+	
+	def testCultureCoveredOther(self):
+		area = plots.of([(60, 30), (61, 30), (62, 30)])
+		goal = Condition.cultureCovered(area)
+		goal.activate(0)
+		
+		for plot in area:
+			plot.setOwner(1)
+		
+		self.assertEqual(bool(goal), False)
+		
+		for plot in area:
+			plot.setOwner(-1)
 	
 
 class TestCountGoals(ExtendedTestCase):
@@ -2762,6 +2890,7 @@ test_cases = [
 	TestEventHandlers,
 	TestDeferred,
 	TestAggregate,
+	TestArguments,
 	TestArgumentProcessor,
 	TestArgumentProcessorBuilder,
 	TestBaseGoal,
