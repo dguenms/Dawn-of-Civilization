@@ -291,6 +291,7 @@ def checkFlipPopup(iGameTurn, iPlayer):
 		for tEvent in data.lTempEvents:
 			iNewPlayer, lPlots = tEvent
 			flipPopup(iNewPlayer, lPlots)
+		data.lTempEvents = []
 
 def scheduleFlipPopup(iNewPlayer, lPlots):
 	data.lTempEvents.append((iNewPlayer, lPlots))
@@ -363,8 +364,6 @@ def applyFlip(playerID, netUserData, popupReturn):
 				team(iFlipNewPlayer).declareWar(iHuman, False, -1) ##True??
 				data.iBetrayalTurns = iBetrayalPeriod
 				initBetrayal()
-					
-	data.lTempEvents.remove((iFlipNewPlayer, area))
 	
 	
 @popup_handler(7622)
