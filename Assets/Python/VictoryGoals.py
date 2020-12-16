@@ -38,12 +38,12 @@ class EventHandlers(object):
 		raise Exception("No handler available for event '%s'" % event)
 	
 	def BeginPlayerTurn(self, func):
-		def beginPlayerTurn(other, args):
+		def BeginPlayerTurn(other, args):
 			iGameTurn, iPlayer = args
 			if other.iPlayer == iPlayer:
 				func(other)
 		
-		return beginPlayerTurn
+		return BeginPlayerTurn
 	
 	def techAcquired(self, func):
 		def techAcquired(other, args):
@@ -93,11 +93,19 @@ class EventHandlers(object):
 		
 		return cityAcquired
 	
+	def cityLost(self, func):
+		def cityAcquired(other, args):
+			iOwner, iPlayer, city, bConquest, bTrade = args
+			if other.iPlayer == iOwner:
+				func(other, iPlayer, bConquest)
+		
+		return cityAcquired
+	
 	def cityBuilt(self, func):
 		def cityBuilt(other, args):
 			city = args[0]
 			if other.iPlayer == city.getOwner():
-				func(other)
+				func(other, city)
 		
 		return cityBuilt
 	
@@ -148,6 +156,22 @@ class EventHandlers(object):
 				func(other)
 		
 		return enslave
+	
+	def firstContact(self, func):
+		def firstContact(other, args):
+			iTeamX, iHasMetTeamY = args
+			if other._team.getID() == iTeamX:
+				func(other, team(iHasMetTeamY).getLeaderID())
+		
+		return firstContact
+	
+	def tradeMission(self, func):
+		def tradeMission(other, args):
+			iUnit, iPlayer, iX, iY, iGold = args
+			if other.iPlayer == iPlayer:
+				func(other, (iX, iY), iGold)
+		
+		return tradeMission
 				
 	
 handlers = EventHandlers()
@@ -170,11 +194,21 @@ class Deferred(object):
 	def __call__(self, iPlayer=None):
 		return self.provider(iPlayer)
 
+
 def capital():
 	return Deferred(lambda p: capital_(p))
 
 def city(*location):
 	return Deferred(lambda p: city_(*location))
+	
+def holyCity():
+	def getHolyCity(iPlayer):
+		iStateReligion = player(iPlayer).getStateReligion()
+		if iStateReligion < 0:
+			return None
+		return game.getHolyCity(iStateReligion)
+		
+	return Deferred(lambda p: getHolyCity(p))
 
 def wonder(iWonder):
 	return Deferred(lambda p: getBuildingCity(iWonder))
@@ -236,7 +270,7 @@ class Arguments(object):
 		if self.iPlayer is not None:
 			result += [self.iPlayer]
 		
-		return result
+		return tuple(result)
 		
 	def __iter__(self):
 		if self.objectives:
@@ -286,9 +320,6 @@ class ArgumentProcessor(object):
 			return default()
 
 	def __init__(self, objective_types=[], subject_type=None, objective_split=0, include_owner=False):
-		if not objective_types and not subject_type:
-			raise ValueError("Needs at least one objective type or subject type")
-		
 		if not isinstance(objective_types, list):
 			raise ValueError("Objective types need to be a list")
 			
@@ -300,6 +331,9 @@ class ArgumentProcessor(object):
 		self.objective_split = objective_split
 	
 	def process(self, *arguments):
+		if arguments and not self.objective_types and not self.subject_type:
+			raise ValueError("Needs at least one objective type or subject_type")
+	
 		if self.subject_type:
 			subject = self.default(self.subject_type)
 
@@ -324,7 +358,7 @@ class ArgumentProcessor(object):
 	
 		if isinstance(objectives, list) and len(objectives) == len(self.objective_types) and none(isinstance(elem, tuple) for elem in objectives):
 			return self.process_objectives([tuple(objectives)])
-			
+		
 		processed = list(self.process_objective(objective) for objective in objectives)
 		return [objective for objective in processed if objective != tuple()]
 			
@@ -467,6 +501,12 @@ class BaseGoal(object):
 	@classproperty
 	def include_owner(cls):
 		cls.builder.include_owner()
+		return cls
+	
+	@classmethod
+	def handle(cls, event, func):
+		handler = handlers.get(event, func)
+		cls.builder.handler(handler.__name__, handler)
 		return cls
 	
 	@classmethod
@@ -828,13 +868,102 @@ class Count(BaseGoal):
 		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
 
 
-def segment(tuple, cutoff=None):
-	if cutoff:
-		tuple = tuple[:cutoff]
+def segment(tuple):
 	if len(tuple) == 1:
 		return tuple[0]
 	return tuple
+	
+	
+class Trigger(Condition):
 
+	def __init__(self, *arguments):
+		super(Trigger, self).__init__(*arguments)
+		
+		self.dCondition = dict((self.process_objectives(args), False) for args in self.arguments)
+	
+	def condition(self, *arguments):
+		return self.dCondition[self.process_objectives(arguments)]
+		
+	def complete(self, *objectives):
+		self.dCondition[self.arguments.produce(objectives)] = True
+	
+	def process_objectives(self, arguments):
+		if isinstance(segment(arguments), Deferred):
+			return tuple()
+		return arguments
+	
+	@property
+	def values(self):
+		return [segment(objective) for objective in self.arguments.objectives]
+	
+	@classproperty
+	def failable(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.complete()
+		return cls.func(__init__)
+	
+	@classproperty
+	def firstDiscover(cls):
+		def checkFirstDiscovered(self, iTech):
+			if iTech in self.values:
+				if game.countKnownTechNumTeams(iTech) == 1:
+					self.complete(iTech)
+		
+		return cls.objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).subclass("FirstDiscovered")
+	
+	@classproperty
+	def firstNewWorld(cls):
+		def checkFirstNewWorld(self, city):
+			if city in plots.regions(*lAmerica) and cities.regions(*lAmerica).without(city).none(lambda city: civ(city.getOriginalOwner()) not in dCivGroups[iCivGroupAmerica]):
+				self.complete()
+	
+		return cls.handle("cityBuilt", checkFirstNewWorld).subclass("FirstNewWorld")
+	
+	@classproperty
+	def discover(cls):
+		def checkDiscovered(self, iTech):
+			if iTech in self.values:
+				self.complete(iTech)
+		
+		return cls.objective(CvTechInfo).handle("techAcquired", checkDiscovered).subclass("Discovered")
+	
+	@classproperty
+	def firstContact(cls):
+		def checkFirstContact(self, iOtherPlayer):
+			if civ(iOtherPlayer) in self.values:
+				if self.arguments.subject.land().none(lambda plot: plot.isRevealed(iOtherPlayer, False)):
+					self.complete(civ(iOtherPlayer))
+				else:
+					self.fail()
+		
+		return cls.subject(Plots).objective(Civ).handle("firstContact", checkFirstContact).subclass("FirstContact")
+	
+	@classproperty
+	def noCityLost(cls):
+		def checkCityLost(self, iOtherPlayer, bConquest):
+			self.fail()
+		
+		return cls.failable.handle("cityLost", checkCityLost).subclass("NoCityLost")
+	
+	@classproperty
+	def tradeMission(cls):
+		def checkTradeMission(self, tile, iGold):
+			if tile in cities.of([city(self.iPlayer) for city in self.values]):
+				self.complete()
+		
+		return cls.objective(CyCity).handle("tradeMission", checkTradeMission).subclass("TradeMission")
+	
+	@classproperty
+	def neverConquer(cls):
+		def checkCityAcquired(self, iOwner, bConquest):
+			if bConquest:
+				self.fail()
+		
+		return cls.failable.handle("cityAcquired", checkCityAcquired).subclass("NeverConquer")
+		
+		
 
 class Track(Count):
 
@@ -855,12 +984,6 @@ class Track(Count):
 	
 	def accumulate(self, iChange, *objectives):
 		self.dCount[objectives] += iChange
-	
-	@classmethod
-	def handle(cls, event, func):
-		handler = handlers.get(event, func)
-		cls.builder.handler(event, handler)
-		return cls
 	
 	@classmethod
 	def incremented(cls, event):
@@ -910,13 +1033,16 @@ class Track(Count):
 		
 		def accumulateTradeGold(self, iGold):
 			self.accumulate(iGold * 100)
+			
+		def accumulateTradeMissionGold(self, tile, iGold):
+			self.accumulate(iGold * 100)
 		
 		def trackTradeGold(self):
 			iGold = cities.owner(self.iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE)) * self._player.getCommercePercent(CommerceTypes.COMMERCE_GOLD)
 			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
 			self.accumulate(iGold)
 		
-		return cls.handle("playerGoldTrade", accumulateTradeGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
+		return cls.handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
 	
 	@classproperty
 	def raidGold(cls):

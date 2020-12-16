@@ -75,7 +75,6 @@ class Civ(int):
 
 	def __new__(cls, value, *args, **kwargs):
 		return super(cls, cls).__new__(cls, value)
-		
-		
+
 
 NoCiv = Civ(-1)

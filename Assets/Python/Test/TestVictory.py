@@ -349,21 +349,21 @@ class TestArguments(ExtendedTestCase):
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [[1]])
+		self.assertEqual(iterated, [(1,)])
 	
 	def testObjectives(self):
 		arguments = Arguments(objectives=[(1,), (2,), (3,)])
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [[1], [2], [3]])
+		self.assertEqual(iterated, [(1,), (2,), (3,)])
 	
 	def testSubject(self):
 		arguments = Arguments(objectives=[], subject="subject")
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [["subject"]])
+		self.assertEqual(iterated, [("subject",)])
 	
 	def testPlayer(self):
 		arguments = Arguments([])
@@ -371,14 +371,14 @@ class TestArguments(ExtendedTestCase):
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [[0]])
+		self.assertEqual(iterated, [(0,)])
 	
 	def testSubjectAndObjectives(self):
 		arguments = Arguments(subject="subject", objectives=[(1,), (2,), (3,)])
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [["subject", 1], ["subject", 2], ["subject", 3]])
+		self.assertEqual(iterated, [("subject", 1), ("subject", 2), ("subject", 3)])
 	
 	def testSubjectAndPlayer(self):
 		arguments = Arguments(objectives=[], subject="subject")
@@ -386,7 +386,7 @@ class TestArguments(ExtendedTestCase):
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [["subject", 0]])
+		self.assertEqual(iterated, [("subject", 0)])
 	
 	def testObjectivesAndPlayer(self):
 		arguments = Arguments(objectives=[(1,), (2,), (3,)])
@@ -394,7 +394,7 @@ class TestArguments(ExtendedTestCase):
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [[1, 0], [2, 0], [3, 0]])
+		self.assertEqual(iterated, [(1, 0), (2, 0), (3, 0)])
 	
 	def testSubjectAndObjectivesAndPlayer(self):
 		arguments = Arguments(subject="subject", objectives=[(1,), (2,), (3,)])
@@ -402,7 +402,7 @@ class TestArguments(ExtendedTestCase):
 		
 		iterated = [x for x in arguments]
 		
-		self.assertEqual(iterated, [["subject", 1, 0], ["subject", 2, 0], ["subject", 3, 0]])
+		self.assertEqual(iterated, [("subject", 1, 0), ("subject", 2, 0), ("subject", 3, 0)])
 
 
 class TestArgumentProcessor(ExtendedTestCase):
@@ -608,9 +608,6 @@ class TestArgumentProcessorBuilder(ExtendedTestCase):
 
 	def setUp(self):
 		self.builder = ArgumentProcessorBuilder()
-
-	def testRequiresSetup(self):
-		self.assertRaises(ValueError, self.builder.build)
 		
 	def testUninitialized(self):
 		self.assertEqual(self.builder.initialized(), False)
@@ -2290,6 +2287,450 @@ class TestCountGoals(ExtendedTestCase):
 		_city.kill()
 
 
+class TestTriggerGoals(ExtendedTestCase):
+
+	def testFirstDiscover(self):
+		goal = Trigger.firstDiscover(iLaw)
+		goal.activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testFirstDiscoverOther(self):
+		goal = Trigger.firstDiscover(iLaw)
+		goal.activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		team(1).setHasTech(iLaw, False, 1, True, False)
+		
+		goal.deactivate()
+	
+	def testFirstDiscoverAfterOther(self):
+		goal = Trigger.firstDiscover(iLaw)
+		goal.activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		team(1).setHasTech(iLaw, False, 1, True, False)
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testFirstDiscoverNone(self):
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), False)
+		
+		goal.deactivate()
+	
+	def testFirstDiscoverSome(self):
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
+		goal.activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		team(0).setHasTech(iCurrency, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		team(0).setHasTech(iCurrency, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testFirstDiscoverAll(self):
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
+		goal.activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		team(0).setHasTech(iCurrency, True, 0, True, False)
+		team(0).setHasTech(iPhilosophy, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		team(0).setHasTech(iCurrency, False, 0, True, False)
+		team(0).setHasTech(iPhilosophy, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testFirstNewWorld(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(0).found(19, 47)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city_(19, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldOther(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(1).found(19, 47)
+		
+		success = bool(goal)
+		
+		self.assertEqual(success, False)
+		
+		city_(19, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldAfterOther(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(1).found(19, 47)
+		player(0).found(21, 47)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_(19, 47).kill()
+		city_(21, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldAfterNative(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(iMaya).found(19, 47)
+		player(0).found(21, 47)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city_(19, 47).kill()
+		city_(21, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldConquest(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(iMaya).found(19, 47)
+		player(0).acquireCity(city_(19, 47), True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_(19, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldAfterConquest(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(iMaya).found(19, 47)
+		player(1).acquireCity(city_(19, 47), True, False)
+		player(0).found(21, 47)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city_(19, 47).kill()
+		city_(21, 47).kill()
+		
+		goal.deactivate()
+	
+	def testFirstNewWorldOutsideAmerica(self):
+		goal = Trigger.firstNewWorld()
+		goal.activate(0)
+		
+		player(0).found(61, 37)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_(61, 37).kill()
+		
+		goal.deactivate()
+	
+	def testDiscover(self):
+		goal = Trigger.discover(iLaw)
+		goal.activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testDiscoverOther(self):
+		goal = Trigger.discover(iLaw)
+		goal.activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		team(1).setHasTech(iLaw, False, 1, True, False)
+		
+		goal.deactivate()
+	
+	def testDiscoverAfterOther(self):
+		goal = Trigger.discover(iLaw)
+		goal.activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		team(1).setHasTech(iLaw, False, 1, True, False)
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testDiscoverSome(self):
+		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy)
+		goal.activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		team(0).setHasTech(iCurrency, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		team(0).setHasTech(iLaw, False, 0, True, False)
+		team(0).setHasTech(iCurrency, False, 0, True, False)
+		
+		goal.deactivate()
+	
+	def testDiscoverAll(self):
+		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy)
+		goal.activate(0)
+		
+		for iTech in [iLaw, iCurrency, iPhilosophy]:
+			team(0).setHasTech(iTech, True, 0, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for iTech in [iLaw, iCurrency, iPhilosophy]:
+			team(0).setHasTech(iTech, False, 0, True, False)
+		
+		goal.deactivate()
+		
+	def testFirstContact(self):
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
+		goal.activate(0)
+		
+		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+	
+	def testFirstContactWithOther(self):
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
+		goal.activate(0)
+		
+		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		goal.deactivate()
+	
+	def testFirstContactAfterRevealed(self):
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
+		goal.activate(0)
+		
+		plot(25, 25).setRevealed(team(iChina).getID(), True, False, team(iChina).getID())
+		
+		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(goal.state, FAILURE)
+		
+		plot(25, 25).setRevealed(team(iChina).getID(), False, False, team(iChina).getID())
+		
+		goal.deactivate()
+	
+	def testFirstContactSome(self):
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia)
+		goal.activate(0)
+		
+		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
+		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
+		
+		self.assertEqual(bool(goal), False)
+		
+		goal.deactivate()
+	
+	def testFirstContactAll(self):
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia)
+		goal.activate(0)
+		
+		for iCiv in [iChina, iGreece, iIndia]:
+			events.fireEvent("firstContact", team(iEgypt).getID(), team(iCiv).getID())
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+	
+	def testNoCityLost(self):
+		goal = Trigger.noCityLost()
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+	
+	def testNoCityLostAfterLosing(self):
+		goal = Trigger.noCityLost()
+		goal.activate(0)
+		
+		city = player(1).initCity(25, 25)
+		events.fireEvent("cityAcquired", 0, 1, city, True, False)
+		
+		self.assertEqual(goal.state, FAILURE)
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testTradeMission(self):
+		print "testTradeMission"
+		goal = Trigger.tradeMission(city(25, 25))
+		goal.activate(0)
+		
+		city_ = player(1).initCity(25, 25)
+		events.fireEvent("tradeMission", iGreatMerchant, 0, 25, 25, 1000)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city_.kill()
+		
+		goal.deactivate()
+		
+	def testTradeMissionOther(self):
+		goal = Trigger.tradeMission(city(25, 25))
+		goal.activate(0)
+		
+		city_ = player(1).initCity(25, 25)
+		events.fireEvent("tradeMission", iGreatMerchant, 2, 25, 25, 1000)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_.kill()
+		
+		goal.deactivate()
+	
+	def testTradeMissionElsewhere(self):
+		goal = Trigger.tradeMission(city(25, 25))
+		goal.activate(0)
+		
+		city_ = player(1).initCity(30, 25)
+		events.fireEvent("tradeMission", iGreatMerchant, 0, 30, 25, 1000)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_.kill()
+		
+		goal.deactivate()
+	
+	def testTradeMissionHolyCityWithout(self):
+		goal = Trigger.tradeMission(holyCity())
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		
+		city = player(1).initCity(30, 25)
+		events.fireEvent("tradeMission", iGreatMerchant, 0, 30, 25, 1000)
+		self.assertEqual(bool(goal), False)
+		
+		player(0).setLastStateReligion(-1)
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testTradeMissionHolyCity(self):
+		goal = Trigger.tradeMission(holyCity())
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		
+		city = player(1).initCity(30, 25)
+		game.setHolyCity(iOrthodoxy, city, False)
+		events.fireEvent("tradeMission", iGreatMerchant, 0, 30, 25, 1000)
+		
+		self.assertEqual(bool(goal), True)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testTradeMissionHolyCityNoStateReligion(self):
+		goal = Trigger.tradeMission(holyCity())
+		goal.activate(0)
+		
+		city = player(1).initCity(30, 25)
+		game.setHolyCity(iOrthodoxy, city, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testNeverConquer(self):
+		goal = Trigger.neverConquer()
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+	
+	def testNeverConquerConquered(self):
+		goal = Trigger.neverConquer()
+		goal.activate(0)
+		
+		city = player(1).initCity(30, 25)
+		player(0).acquireCity(city, True, False)
+		
+		self.assertEqual(goal.state, FAILURE)
+		
+		goal.deactivate()
+	
+	def testNeverConquerTraded(self):
+		goal = Trigger.neverConquer()
+		goal.activate(0)
+		
+		city = player(1).initCity(30, 25)
+		player(0).acquireCity(city, False, True)
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+	
+	def testNeverConquerConqueredOther(self):
+		goal = Trigger.neverConquer()
+		goal.activate(0)
+		
+		city = player(1).initCity(30, 25)
+		player(2).acquireCity(city, True, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		goal.deactivate()
+
+
 class TestTrackGoals(ExtendedTestCase):
 
 	def testGoldenAgesOutside(self):
@@ -2548,6 +2989,36 @@ class TestTrackGoals(ExtendedTestCase):
 		self.assertEqual(str(goal), "0 / 100")
 		
 		player(1).changeGoldPerTurnByPlayer(0, -100)
+		
+		goal.deactivate()
+	
+	def testTradeGoldFromTradeMission(self):
+		goal = Track.tradeGold(1000)
+		goal.activate(0)
+		
+		city = player(1).initCity(30, 25)
+		
+		events.fireEvent("tradeMission", iGreatMerchant, 0, 30, 25, 1000)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "1000 / 1000")
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testTradeGoldFromTradeMissionOther(self):
+		goal = Track.tradeGold(1000)
+		goal.activate(0)
+		
+		city = player(2).initCity(30, 25)
+		
+		events.fireEvent("tradeMission", iGreatMerchant, 1, 30, 25, 1000)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1000")
+		
+		city.kill()
 		
 		goal.deactivate()
 	
@@ -2894,6 +3365,7 @@ test_cases = [
 	TestBaseGoal,
 	TestConditionGoals,
 	TestCountGoals,
+	TestTriggerGoals,
 	TestTrackGoals,
 ]
 

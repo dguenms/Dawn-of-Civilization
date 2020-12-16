@@ -1111,8 +1111,6 @@ class Locations(EntityCollection):
 	
 	def owners(self):
 		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
-	
-	
 
 
 class Plots(Locations):
