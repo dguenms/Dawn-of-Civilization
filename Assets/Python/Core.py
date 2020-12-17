@@ -173,7 +173,7 @@ def birthRectangle(identifier, extended = None):
 
 def log(func):
 	def logged_func(*args, **kwargs):
-		print "Begin %s" % func.__name__
+		print "Begin %s(%s, %s)" % (func.__name__, args, ["%s=%s" % (key, value) for key, value in kwargs.items()])
 		result = func(*args, **kwargs)
 		print "Complete %s" % func.__name__
 		return result
@@ -1111,6 +1111,10 @@ class Plots(Locations):
 	
 	def sea(self):
 		return self.water().where(lambda p: not p.isLake())
+	
+	# TODO: test
+	def no_enemies(self, iPlayer):
+		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
 
 		
 class CitiesCorner:

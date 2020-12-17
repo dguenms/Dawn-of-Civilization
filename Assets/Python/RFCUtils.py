@@ -301,7 +301,7 @@ def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 # used: RFCUtils
 # relocates units in a city plot to a free surrounding tile
 def pushOutGarrisons(tCityPlot, iOldOwner):
-	destination = plots.surrounding(tCityPlot, radius=2).owner(iOldOwner).without(tCityPlot).land().passable().first()
+	destination = plots.surrounding(tCityPlot, radius=2).owner(iOldOwner).without(tCityPlot).land().passable().no_enemies(iOldOwner).first()
 	
 	if destination:
 		for unit in units.at(tCityPlot).owner(iOldOwner):
