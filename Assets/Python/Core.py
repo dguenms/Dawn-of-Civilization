@@ -1112,7 +1112,6 @@ class Plots(Locations):
 	def sea(self):
 		return self.water().where(lambda p: not p.isLake())
 	
-	# TODO: test
 	def no_enemies(self, iPlayer):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
 

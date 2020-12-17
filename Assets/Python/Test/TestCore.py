@@ -1654,6 +1654,26 @@ class TestPlots(TestCase):
 		self.assert_((0, 0) in plots)
 		self.assert_((1, 1) in plots)
 		self.assert_((2, 2) in plots)
+	
+	def test_no_enemies(self):
+		unit0 = gc.getPlayer(0).initUnit(iArcher, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit1 = gc.getPlayer(1).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit2 = gc.getPlayer(2).initUnit(iArcher, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+		gc.getTeam(0).setAtWar(1, True)
+		
+		plots = self.plots.no_enemies(0)
+		
+		self.assertEqual(len(plots), 8)
+		self.assert_((0, 0) in plots)
+		self.assert_((0, 1) not in plots)
+		self.assert_((0, 2) in plots)
+		
+		unit0.kill(False, -1)
+		unit1.kill(False, -1)
+		unit2.kill(False, -1)
+		
+		gc.getTeam(0).setAtWar(1, False)
 		
 		
 class TestPlotFactory(TestCase):
