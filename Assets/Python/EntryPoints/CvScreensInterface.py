@@ -1066,7 +1066,7 @@ def getUHVTileInfo(argsList):
 			return 42
 		
 		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
-			return 43
+			return 61
 			
 	elif iCiv == iOttomans:
 		if (x,y) in lEasternMediterranean:
