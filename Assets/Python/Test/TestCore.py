@@ -651,9 +651,7 @@ class TestPlayers(TestCase):
 		self.assert_(gc.getPlayer(3) not in players)
 		
 	def test_ai(self):
-		print "before: %s" % self.players
 		players = self.players.ai()
-		print "after: %s" % players
 		assertType(self, players, Players)
 		self.assertEqual(len(players), 2)
 		self.assert_(gc.getPlayer(0) not in players)
@@ -1334,8 +1332,6 @@ class TestPlots(TestCase):
 		plots = self.plots.where_surrounding(lambda p: p.getNumUnits() == 0)
 		
 		# then
-		print "units: %s" % Plots([(x, y) for x in range(5) for y in range(5)]).units()
-		print "test_where_surrounding: %s" % plots 
 		assertType(self, plots, Plots)
 		self.assertEqual(len(plots), 8)
 		self.assert_((2, 2) not in plots)

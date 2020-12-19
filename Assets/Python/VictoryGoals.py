@@ -868,6 +868,104 @@ class Count(BaseGoal):
 		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
 
 
+class Percentage(Count):
+
+	def condition(self, *arguments):
+		remainder, iRequired = arguments[:-1], arguments[-1]
+		return self.value(*remainder) >= self.required(iRequired) * 1.0 - 0.005
+		
+	def display(self, *arguments):
+		remainder, iRequired = arguments[:-1], arguments[-1]
+		return "%.2f%% / %d%%" % (self.value(*remainder), self.required(iRequired))
+	
+	def value(self, *objectives):
+		iTotal = self.total(*objectives)
+		if iTotal <= 0:
+			return 0.0
+		return 100.0 * self.player_value(*objectives) / iTotal
+		
+	def player_value(self, *objectives):
+		return self.value_function(self.iPlayer, *objectives)
+	
+	def total(self, *objectives):
+		return players.major().alive().sum(lambda p: self.value_function(p, *objectives))
+	
+	@classproperty
+	def allied(cls):
+		def player_value(self, *objectives):
+			iPlayerValue = 0
+			for iPlayer in players.major().alive():
+				iValue = self.value_function(iPlayer, *objectives)
+				iMaster = master(iPlayer)
+				
+				if self.iPlayer == iPlayer or self._team.isDefensivePact(player(iPlayer).getTeam()):
+					iPlayerValue += iValue
+				elif iMaster is not None and (iMaster == self.iPlayer or self._team.isDefensivePact(player(iMaster).getTeam())):
+					iPlayerValue += iValue
+			
+			return iPlayerValue
+		
+		return cls.func(player_value)
+		
+	@classproperty
+	def areaControl(cls):
+		def value_function(self, iPlayer, area):
+			return area.land().owner(iPlayer).count()
+		
+		def total(self, area):
+			return area.land().count()
+		
+		return cls.objective(Plots).func(value_function, total).subclass("AreaPercent")
+	
+	@classproperty
+	def worldControl(cls):
+		def value_function(self, iPlayer):
+			return player(iPlayer).getTotalLand()
+		
+		def total(self):
+			return map.getLandPlots()
+		
+		return cls.func(value_function, total).subclass("WorldPercent")
+	
+	@classproperty
+	def religionSpread(cls):
+		def value(self, iReligion):
+			return game.calculateReligionPercent(iReligion)
+		
+		return cls.objective(CvReligionInfo).func(value).subclass("ReligionSpreadPercent")
+	
+	@classproperty
+	def population(cls):
+		def value_function(self, iPlayer):
+			return team(iPlayer).getTotalPopulation()
+		
+		def total(self):
+			return game.getTotalPopulation()
+		
+		return cls.func(value_function, total).subclass("PopulationPercent")
+	
+	@classproperty
+	def religiousVote(cls):
+		def value_function(self, iPlayer):
+			return player(iPlayer).getVotes(16, 1)
+		
+		return cls.func(value_function).subclass("ReligiousVotePercent")
+	
+	@classproperty
+	def alliedCommerce(cls):
+		def value_function(self, iPlayer):
+			return player(iPlayer).calculateTotalCommerce()
+		
+		return cls.allied.func(value_function).subclass("AlliedCommercePercent")
+	
+	@classproperty
+	def alliedPower(cls):
+		def value_function(self, iPlayer):
+			return player(iPlayer).getPower()
+		
+		return cls.allied.func(value_function).subclass("AlliedPowerPercent")
+
+
 def segment(tuple):
 	if len(tuple) == 1:
 		return tuple[0]

@@ -128,7 +128,7 @@ class TestEventHandlers(ExtendedTestCase):
 		onUnitPillage(PlayerContainer(1), (unit, 0, -1, 0, 100))
 		self.assertEqual(self.iIncrement, 100)
 		
-		unit.kill(-1, False)
+		unit.kill(False, -1)
 	
 	def testCityCaptureGold(self):
 		onCityCaptureGold = self.handlers.get("cityCaptureGold", self.increment)
@@ -1189,6 +1189,7 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		_city.kill()
 	
+	
 	def testCityMultipleBuildingsDifferentCities(self):
 		goal = Condition.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
 		goal.activate(0)
@@ -1665,7 +1666,7 @@ class TestCountGoals(ExtendedTestCase):
 		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "1 / 1")
 		
-		team(1).setVassal(team(0).getID(), False, False)
+		team(2).setVassal(team(0).getID(), False, False)
 		city.kill()
 	
 	def testImprovementLess(self):
@@ -2287,6 +2288,364 @@ class TestCountGoals(ExtendedTestCase):
 		_city.kill()
 
 
+class TestPercentageGoals(ExtendedTestCase):
+
+	def testAreaControl(self):
+		area = plots.rectangle((50, 30), (69, 31))
+		goal = Percentage.areaControl(area, 30)
+		goal.activate(0)
+		
+		controlled = plots.rectangle((50, 30), (69, 30))
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "50.00% / 30%")
+		
+		for plot in controlled:
+			plot.setOwner(-1)
+		
+		goal.deactivate()
+	
+	def testAreaControlInsufficient(self):
+		area = plots.rectangle((50, 30), (69, 31))
+		goal = Percentage.areaControl(area, 30)
+		goal.activate(0)
+		
+		controlled = plots.rectangle((50, 30), (50, 30))
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "2.50% / 30%")
+		
+		for plot in controlled:
+			plot.setOwner(-1)
+		
+		goal.deactivate()
+			
+	def testWorldControl(self):
+		goal = Percentage.worldControl(10)
+		goal.activate(0)
+		
+		controlled = plots.all().land().limit(11 * 32)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "10.89% / 10%")
+		
+		for plot in controlled:
+			plot.setOwner(-1)
+		
+		goal.deactivate()
+	
+	def testWorldControlInsufficient(self):
+		goal = Percentage.worldControl(10)
+		goal.activate(0)
+		
+		controlled = plots.all().land().limit(32)
+		for plot in controlled:
+			plot.setOwner(0)
+	
+		self.assertEqual(map.getLandPlots(), 3232)
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0.99% / 10%")
+		
+		for plot in controlled:
+			plot.setOwner(-1)
+		
+		goal.deactivate()
+	
+	def testReligionSpread(self):
+		goal = Percentage.religionSpread(iOrthodoxy, 30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		self.assertEqual(str(goal), "50.00% / 30%")
+		self.assertEqual(bool(goal), True)
+		
+		city1.kill()
+		city2.kill()
+		
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		goal.deactivate()
+	
+	def testReligionSpreadNoState(self):
+		goal = Percentage.religionSpread(iOrthodoxy, 30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "25.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		goal.deactivate()
+	
+	def testReligionSpreadMultipleReligions(self):
+		goal = Percentage.religionSpread(iOrthodoxy, 30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city1.setHasReligion(iCatholicism, True, False, False)
+		
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "35.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		player(1).setLastStateReligion(-1)
+		
+		goal.deactivate()
+	
+	def testReligionSpreadNotOwned(self):
+		goal = Percentage.religionSpread(iOrthodoxy, 30)
+		goal.activate(1)
+		
+		city1 = player(2).initCity(30, 30)
+		city2 = player(3).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		player(2).setLastStateReligion(iOrthodoxy)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "50.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		player(2).setLastStateReligion(-1)
+		
+		goal.deactivate()
+	
+	def testPopulation(self):
+		goal = Percentage.population(30)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(30, 30)
+		city2 = player(1).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "50.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		goal.deactivate()
+	
+	def testPopulationInsufficient(self):
+		goal = Percentage.population(30)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(30, 30)
+		city2 = player(1).initCity(32, 30)
+		
+		city1.setPopulation(5)
+		city2.setPopulation(20)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "20.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		goal.deactivate()
+	
+	def testReligiousVote(self):
+		goal = Percentage.religiousVote(30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasRealBuilding(iCatholicShrine, True)
+		
+		city1.setHasReligion(iCatholicism, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		player(1).setLastStateReligion(iCatholicism)
+		player(2).setLastStateReligion(iCatholicism)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "50.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		player(1).setLastStateReligion(-1)
+		player(2).setLastStateReligion(-1)
+		
+		goal.deactivate()
+	
+	def testReligiousVoteNotStateReligion(self):
+		goal = Percentage.religiousVote(30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasRealBuilding(iCatholicShrine, True)
+		
+		city1.setHasReligion(iCatholicism, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		player(2).setLastStateReligion(iCatholicism)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		player(2).setLastStateReligion(-1)
+		
+		goal.deactivate()
+		
+	def testReligiousVoteNoReligion(self):
+		goal = Percentage.religiousVote(30)
+		goal.activate(1)
+		
+		city1 = player(1).initCity(30, 30)
+		city2 = player(2).initCity(32, 30)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasRealBuilding(iCatholicShrine, True)
+		
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		player(1).setLastStateReligion(iCatholicism)
+		player(2).setLastStateReligion(iCatholicism)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0.00% / 30%")
+		
+		city1.kill()
+		city2.kill()
+		
+		player(0).setLastStateReligion(-1)
+		player(1).setLastStateReligion(-1)
+		
+		goal.deactivate()
+	
+	def testAlliedPower(self):
+		goal = Percentage.alliedPower(30)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iMilitia, (0, 0))
+		
+		self.assertEqual(str(goal), "50.00% / 30%")
+		self.assertEqual(bool(goal), True)
+		
+		unit.kill(False, -1)
+		
+		goal.deactivate()
+	
+	def testAlliedPowerWithVassal(self):
+		goal = Percentage.alliedPower(30)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iMilitia, (0, 0))
+		
+		team(1).setVassal(team(0).getID(), True, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "75.00% / 30%")
+		
+		unit.kill(False, -1)
+		
+		team(1).setVassal(team(0).getID(), False, False)
+		
+		goal.deactivate()
+	
+	def testAlliedPowerWithDefensivePact(self):
+		goal = Percentage.alliedPower(30)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iMilitia, (0, 0))
+		
+		team(0).setDefensivePact(team(1).getID(), True)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "75.00% / 30%")
+		
+		unit.kill(False, -1)
+		
+		team(0).setDefensivePact(team(1).getID(), False)
+		
+		goal.deactivate()
+	
+	def testAlliedPowerWithDefensivePactVassal(self):
+		goal = Percentage.alliedPower(30)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iMilitia, (0, 0))
+		
+		team(2).setVassal(team(1).getID(), True, False)
+		team(0).setDefensivePact(team(1).getID(), True)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "100.00% / 30%")
+		
+		unit.kill(False, -1)
+		
+		team(2).setVassal(team(1).getID(), False, False)
+		team(0).setDefensivePact(team(1).getID(), False)
+		
+		goal.deactivate()
+	
+	def testAlliedCommerce(self):
+		goal = Percentage.alliedCommerce(30)
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "33.33% / 30%")
+		
+		goal.deactivate()
+
+
 class TestTriggerGoals(ExtendedTestCase):
 
 	def testFirstDiscover(self):
@@ -2605,7 +2964,6 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal.deactivate()
 	
 	def testTradeMission(self):
-		print "testTradeMission"
 		goal = Trigger.tradeMission(city(25, 25))
 		goal.activate(0)
 		
@@ -3365,6 +3723,7 @@ test_cases = [
 	TestBaseGoal,
 	TestConditionGoals,
 	TestCountGoals,
+	TestPercentageGoals,
 	TestTriggerGoals,
 	TestTrackGoals,
 ]
