@@ -1357,6 +1357,22 @@ class TestConditionGoals(ExtendedTestCase):
 		for plot in area:
 			plot.setOwner(-1)
 	
+	def testNotCommunist(self):
+		goal = Condition.communist()
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), False)
+	
+	def testCommunist(self):
+		goal = Condition.communist()
+		goal.activate(0)
+		
+		player(0).setCivics(iCivicsEconomy, iCentralPlanning)
+		
+		self.assertEqual(bool(goal), True)
+		
+		player(0).setCivics(iCivicsEconomy, iRedistribution)
+	
 
 class TestCountGoals(ExtendedTestCase):
 
@@ -1957,6 +1973,51 @@ class TestCountGoals(ExtendedTestCase):
 		
 		city1.kill()
 		city2.kill()
+	
+	def testConqueredCitiesAll(self):
+		goal = Count.conqueredCities(plots.rectangle((60, 30), (65, 35)), 2)
+		goal.activate(0)
+		
+		city1 = player(1).initCity(61, 31)
+		city2 = player(1).initCity(63, 31)
+		
+		player(0).acquireCity(city1, True, False)
+		player(0).acquireCity(city2, True, False)
+		
+		self.assertEqual(player(0).getNumCities(), 2)
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "2 / 2")
+		
+		city_(61, 31).kill()
+		city_(63, 31).kill()
+		
+	def testConqueredCitiesSome(self):
+		goal = Count.conqueredCities(plots.rectangle((60, 30), (65, 35)), 2)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city2 = player(1).initCity(63, 31)
+		
+		player(0).acquireCity(city2, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 2")
+		
+		city1.kill()
+		city_(63, 31).kill()
+		
+	def testConqueredCitiesTraded(self):
+		goal = Count.conqueredCities(plots.rectangle((60, 30), (65, 35)), 1)
+		goal.activate(0)
+		
+		city = player(1).initCity(61, 31)
+		
+		player(0).acquireCity(city, False, True)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1")
+		
+		city.kill()
 	
 	def testOpenBordersLess(self):
 		goal = Count.openBorders(players.of(1, 2, 3), 2)

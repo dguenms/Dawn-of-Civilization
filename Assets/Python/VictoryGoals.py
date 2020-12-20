@@ -3,6 +3,7 @@ import re
 
 from Core import *
 from RFCUtils import *
+from Civics import isCommunist
 from Events import events
 
 
@@ -89,7 +90,7 @@ class EventHandlers(object):
 		def cityAcquired(other, args):
 			iOwner, iPlayer, city, bConquest, bTrade = args
 			if other.iPlayer == iPlayer:
-				func(other, iOwner, bConquest)
+				func(other, iOwner, city, bConquest)
 		
 		return cityAcquired
 	
@@ -670,6 +671,12 @@ class Condition(BaseGoal):
 		
 		return cls.objective(Plots).include_owner.plots(covered).subclass("CultureCovered")
 	
+	@classproperty
+	def communist(cls):
+		def condition(self, *objectives):
+			return isCommunist(self.iPlayer)
+		
+		return cls.func(condition).subclass("Communist")
 
 
 class Count(BaseGoal):
@@ -823,6 +830,22 @@ class Count(BaseGoal):
 			return cities.owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer)
 		
 		return cls.cities(settled).subclass("SettledCityCount")
+	
+	@classproperty
+	def conqueredCities(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.conquered = plots.none()
+		
+		def onCityAcquired(self, iOwner, city, bConquest):
+			if bConquest:
+				self.conquered = self.conquered.including(city)
+		
+		def conquered(self, cities):
+			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered)
+		
+		return cls.func(__init__).handle("cityAcquired", onCityAcquired).cities(conquered).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
@@ -1048,14 +1071,14 @@ class Trigger(Condition):
 	@classproperty
 	def tradeMission(cls):
 		def checkTradeMission(self, tile, iGold):
-			if tile in cities.of([city(self.iPlayer) for city in self.values]):
+			if tile in cities.of([city(self.iPlayer) for city in self.values if city(self.iPlayer) is not None]):
 				self.complete()
 		
 		return cls.objective(CyCity).handle("tradeMission", checkTradeMission).subclass("TradeMission")
 	
 	@classproperty
 	def neverConquer(cls):
-		def checkCityAcquired(self, iOwner, bConquest):
+		def checkCityAcquired(self, iOwner, city, bConquest):
 			if bConquest:
 				self.fail()
 		
@@ -1192,7 +1215,7 @@ class Track(Count):
 	
 	@classproperty
 	def conquerFrom(cls):
-		def incrementConquests(self, iOwner, bConquest):
+		def incrementConquests(self, iOwner, city, bConquest):
 			for objective in self.values:
 				if bConquest and civ(iOwner) in objective:
 					self.increment(objective)
