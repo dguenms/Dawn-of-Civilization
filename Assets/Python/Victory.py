@@ -2583,7 +2583,7 @@ def isConnectedByRailroad(iPlayer, tStart, lTargets):
 	return isConnected(tStart, lTargets, plotFunction)
 
 def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
-	return players.major().without(iPlayer).where(lambda p: player(iPlayer).canContact(p) and player(p).AI_getAttitude(iPlayer) >= eAttitude and function(p))
+	return players.major().without(iPlayer).where(lambda p: player(iPlayer).canContact(p) and player(p).AI_getAttitude(iPlayer) >= eAttitude and function(p)).count()
 	
 def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 	return countPlayersWithAttitudeAndCriteria(iPlayer, iAttitude, lambda p: cities.owner(p).religion(iReligion).any())
