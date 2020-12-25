@@ -314,7 +314,6 @@ def updateLastTurnAlive(iPlayer, bAlive):
 		return
 
 	if not bAlive and not (player(iPlayer).isHuman() and autoplay()):
-		print "lastturnalive: %s at turn %d" % (name(iPlayer), game.getGameTurn())
 		data.players[iPlayer].iLastTurnAlive = game.getGameTurn()
 
 

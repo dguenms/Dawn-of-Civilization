@@ -33,7 +33,7 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 	buildCapitalInfrastructure(iPlayer, city)
 
 
-### CITY ACQUIRED AND KEPT ###
+### FIRST CITY ###
 
 
 @handler("firstCity")
@@ -480,6 +480,16 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 def removeOrthodoxyFromAnatolia(iPlayer):
 	if civ(iPlayer) == iByzantium:
 		removeReligionByArea(plots.region(rAnatolia), iOrthodoxy)
+
+
+### BIRTH ###
+
+
+@handler("birth")
+def clearDanishCulture(iPlayer):
+	if civ(iPlayer) == iHolyRome and player(iVikings).isAlive():
+		for plot in plots.owner(iVikings).land().where(lambda p: map.getArea(p.getArea()).getCitiesPerPlayer(p.getOwner()) == 0):
+			plot.setCultureConversion(slot(iHolyRome), 100)
 
 
 ### IMPLEMENTATION ###
