@@ -6,15 +6,15 @@ from copy import copy
 gc = CyGlobalContext()
 
 
-def deepdict(dictionary = {}):
+def deepdict(dictionary={}):
 	return defaultdict(dictionary, {})
 
 
-def appenddict(dictionary = {}):
+def appenddict(dictionary={}):
 	return defaultdict(dictionary, [])
 
 
-def defaultdict(dictionary, default):
+def defaultdict(dictionary={}, default=None):
 	return DefaultDict(dictionary, default)
 
 		

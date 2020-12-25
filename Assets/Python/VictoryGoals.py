@@ -154,7 +154,7 @@ class EventHandlers(object):
 		def enslave(other, args):
 			iPlayer, losingUnit = args
 			if other.iPlayer == iPlayer:
-				func(other)
+				func(other, losingUnit)
 		
 		return enslave
 	
@@ -173,6 +173,21 @@ class EventHandlers(object):
 				func(other, (iX, iY), iGold)
 		
 		return tradeMission
+	
+	def religionFounded(self, func):
+		def religionFounded(other, args):
+			iReligion, iFounder = args
+			func(other, iReligion)
+		
+		return religionFounded
+	
+	def playerChangeStateReligion(self, func):
+		def playerChangeStateReligion(other, args):
+			iPlayer, iNewReligion, iOldReligion = args
+			if other.iPlayer == iPlayer:
+				func(other, iNewReligion)
+		
+		return playerChangeStateReligion
 				
 	
 handlers = EventHandlers()
@@ -311,7 +326,7 @@ class ArgumentProcessor(object):
 
 	defaults = {
 		int : lambda: 1,
-		Players : lambda: players.major().alive()
+		Players : lambda: players.major().alive(),
 	}
 	
 	@classmethod
@@ -336,12 +351,9 @@ class ArgumentProcessor(object):
 			raise ValueError("Needs at least one objective type or subject_type")
 	
 		if self.subject_type:
-			subject = self.default(self.subject_type)
-
-			if not subject:
-				if len(arguments) == 0:
-					raise ValueError("Need to supply at least one subject type: %s" % self.subject_type.__name__)
-				subject = arguments[0]
+			if len(arguments) == 0:
+				raise ValueError("Need to supply at least one subject type: %s" % self.subject_type.__name__)
+			subject = arguments[0]
 	
 			return Arguments(self.process_objectives(list(arguments[1:])), self.process_subject(subject))
 	
@@ -609,7 +621,7 @@ class Condition(BaseGoal):
 	@classmethod
 	def cities(cls, func):
 		def condition(self, plots, *objectives):
-			return plots.cities().all_if_any(lambda city: func(city, *objectives))
+			return plots.cities().all_if_any(lambda city: func(self, city, *objectives))
 		
 		return cls.func(condition)
 	
@@ -626,24 +638,24 @@ class Condition(BaseGoal):
 	
 	@classproperty
 	def control(cls):
-		def owned(city, iPlayer):
-			return city.getOwner() == iPlayer
+		def controlled(self, city):
+			return city.getOwner() == self.iPlayer
 	
-		return cls.objective(Plots).include_owner.cities(owned).subclass("Control")
+		return cls.objective(Plots).cities(controlled).subclass("Control")
 	
 	@classproperty
 	def controlOrVassalize(cls):
-		def owned(city, iPlayer):
-			return city.getOwner() in players.vassals(iPlayer).including(iPlayer)
+		def controlled_or_vassalized(self, city):
+			return city.getOwner() in players.vassals(self.iPlayer).including(self.iPlayer)
 		
-		return cls.objective(Plots).include_owner.cities(owned).subclass("ControlOrVassalize")
+		return cls.objective(Plots).cities(controlled_or_vassalized).subclass("ControlOrVassalize")
 	
 	@classproperty
 	def settle(cls):
-		def settled(city, iPlayer):
-			return city.getOwner() == iPlayer and city.getOriginalOwner() == iPlayer
+		def settled(self, city):
+			return city.getOwner() == self.iPlayer and city.getOriginalOwner() == self.iPlayer
 		
-		return cls.objective(Plots).include_owner.cities(settled).subclass("Settled")
+		return cls.objective(Plots).cities(settled).subclass("Settled")
 	
 	@classproperty
 	def cityBuilding(cls):
@@ -659,10 +671,10 @@ class Condition(BaseGoal):
 		
 	@classproperty
 	def noStateReligion(cls):
-		def without_religion(city, iReligion, iPlayer):
+		def no_state_religion(self, city, iReligion):
 			return player(city).getStateReligion() != iReligion
 	
-		return cls.subject(Plots).objective(CvReligionInfo).include_owner.cities(without_religion).subclass("NoStateReligion")
+		return cls.subject(Plots).objective(CvReligionInfo).cities(no_state_religion).subclass("NoStateReligion")
 	
 	@classproperty
 	def cultureCovered(cls):
@@ -677,7 +689,43 @@ class Condition(BaseGoal):
 			return isCommunist(self.iPlayer)
 		
 		return cls.func(condition).subclass("Communist")
-
+	
+	@classproperty
+	def noForeignCities(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lOf = []
+			self.lExcluded = []
+		
+		def of(self, lCivs):
+			self.lOf = lCivs
+			return self
+		
+		def excluding(self, lCivs):
+			self.lExcluded = lCivs
+			return self
+		
+		def valid(self, city):
+			if city.getOwner() == self.iPlayer:
+				return True
+			if self.lOf and civ(city) not in self.lOf:
+				return True
+			if self.lExcluded and civ(city) in self.lExcluded:
+				return True
+			if is_minor(city):
+				return True
+			return False
+		
+		return cls.objective(Plots).func(__init__, of, excluding).cities(valid).subclass("NoForeignCities")
+	
+	@classproperty
+	def tradeConnection(cls):
+		def condition(self):
+			return players.major().alive().without(self.iPlayer).any(lambda p: self._player.canContact(p) and self._player.canTradeNetworkWith(p))
+		
+		return cls.func(condition).subclass("TradeConnection")
+	
 
 class Count(BaseGoal):
 
@@ -735,10 +783,10 @@ class Count(BaseGoal):
 	
 	@classmethod
 	def players(cls, func):
-		def value_function(self, players):
-			return players.where(lambda p: func(self, p)).count()
+		def value_function(self, *arguments):
+			return players.major().alive().where(lambda p: func(self, p, *arguments)).count()
 		
-		return cls.objective(Players).func(value_function)
+		return cls.func(value_function)
 		
 	@classmethod
 	def citiesSum(cls, func):
@@ -837,22 +885,44 @@ class Count(BaseGoal):
 		def __init__(self, *arguments):
 			oldinit(self, *arguments)
 			self.conquered = plots.none()
+			self.lCivs = []
+			self.plots = plots.none()
+		
+		def civs(self, lCivs):
+			self.lCivs = lCivs
+			return self
+		
+		def area(self, plots):
+			self.plots = plots
+			return self
 		
 		def onCityAcquired(self, iOwner, city, bConquest):
-			if bConquest:
+			if bConquest and (not self.lCivs or civ(iOwner) in self.lCivs) and (not self.plots or city in self.plots):
 				self.conquered = self.conquered.including(city)
 		
-		def conquered(self, cities):
-			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered)
+		def value_function(self):
+			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
 		
-		return cls.func(__init__).handle("cityAcquired", onCityAcquired).cities(conquered).subclass("ConqueredCityCount")
+		return cls.func(__init__, civs, area, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
-		def withOpenBorders(self, iPlayer):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lCivs = []
+			
+		def civs(self, lCivs):
+			self.lCivs = lCivs
+			return self
+	
+		def valid(self, iPlayer):
+			if self.lCivs and civ(iPlayer) not in self.lCivs:
+				return False
+		
 			return self._team.isOpenBorders(player(iPlayer).getTeam())
 		
-		return cls.players(withOpenBorders).subclass("OpenBorderCount")
+		return cls.func(__init__, civs).players(valid).subclass("OpenBorderCount")
 	
 	@classproperty
 	def specialist(cls):
@@ -880,7 +950,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def citySpecialist(cls):
-		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("CitySpecialistCount")
 	
 	@classproperty
 	def cultureLevel(cls):
@@ -889,6 +959,69 @@ class Count(BaseGoal):
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
 		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
+	
+	@classproperty
+	def attitude(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lCivs = []
+			self.iStateReligion = -1
+			self.bCommunist = False
+		
+		def civs(self, lCivs):
+			self.lCivs = lCivs
+			return self
+		
+		def religion(self, iStateReligion):
+			self.iStateReligion = iStateReligion
+			return self
+		
+		def communist(self):
+			self.bCommunist = True
+			return self
+		
+		def valid(self, iPlayer, iAttitude):
+			if not self._player.canContact(iPlayer):
+				return False
+			if team(iPlayer).isAVassal():
+				return False
+			if self.lCivs and civ(iPlayer) not in self.lCivs:
+				return False
+			if self.iStateReligion >= 0 and player(iPlayer).getStateReligion() != self.iStateReligion:
+				return False
+			if self.bCommunist and not isCommunist(iPlayer):
+				return False
+			
+			return player(iPlayer).AI_getAttitude(self.iPlayer) >= iAttitude
+		
+		return cls.subject(AttitudeTypes).func(__init__, civs, religion, communist).players(valid).subclass("AttitudeCount")
+	
+	@classproperty
+	def vassals(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lCivs = []
+			self.iStateReligion = -1
+		
+		def civs(self, lCivs):
+			self.lCivs = lCivs
+			return self
+		
+		def religion(self, iStateReligion):
+			self.iStateReligion = iStateReligion
+			return self
+		
+		def valid(self, iPlayer):
+			if self.lCivs and civ(iPlayer) not in self.lCivs:
+				return False
+			if self.iStateReligion and player(iPlayer).getStateReligion() != self.iStateReligion:
+				return False
+			
+			return team(iPlayer).isVassal(self._team.getID())
+		
+		return cls.func(__init__, civs, religion).players(valid).subclass("VassalCount")
 
 
 class Percentage(Count):
@@ -1083,6 +1216,26 @@ class Trigger(Condition):
 				self.fail()
 		
 		return cls.failable.handle("cityAcquired", checkCityAcquired).subclass("NeverConquer")
+	
+	@classproperty
+	def convertAfterFounding(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.dFoundingTurn = defaultdict()
+		
+		def recordFounding(self, iReligion):
+			if iReligion in self.values:
+				self.dFoundingTurn[iReligion] = turn()
+		
+		def checkConversion(self, iReligion):
+			if iReligion in self.values:
+				if turn() - self.dFoundingTurn[iReligion] <= scale(self.arguments.subject):
+					self.complete(iReligion)
+				else:
+					self.fail()
+		
+		return cls.subject(int).objective(CvReligionInfo).func(__init__).handle("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
 		
 		
 
@@ -1211,13 +1364,111 @@ class Track(Count):
 	
 	@classproperty
 	def enslaves(cls):
-		return cls.incremented("enslave").subclass("Enslave")
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lExcluded = []
+		
+		def excluding(self, lCivs):
+			self.lExcluded = lCivs
+			return self
+		
+		def incrementEnslaves(self, losingUnit):
+			if civ(losingUnit) not in self.lExcluded:
+				self.increment()
+	
+		return cls.func(__init__, excluding).handle("enslave", incrementEnslaves).subclass("Enslave")
+
+
+class Best(BaseGoal):
+
+	def __init__(self, *arguments):
+		super(Best, self).__init__(*arguments)
+		
+	def metric_wrapper(self, item):
+		if item is None:
+			return 0
+		return self.metric(item)
+		
+	def sorted(self, *arguments):
+		return self.entities().sort(lambda item: (self.metric_wrapper(item), int(self.valid(item, *arguments))), True)
+		
+	def condition(self, *arguments):
+		first = self.sorted(*arguments).first()
+		return self.valid(first, *arguments)
+	
+	def display(self, *arguments):
+		if self.condition(*arguments):
+			first, second = self.sorted(*arguments).take(2)
+		else:
+			sorted = self.sorted(*arguments)
+			first = sorted.first()
+			second = sorted.where(lambda item: self.valid(item, *arguments)).first()
+		
+		return "%s (%d)\n%s (%d)" % (self.entity_name(first), self.metric_wrapper(first), self.entity_name(second), self.metric_wrapper(second))
+	
+	
+class BestCity(Best):
+
+	def __init__(self, *arguments):
+		return super(BestCity, self).__init__(*arguments)
+		
+	def entities(self):
+		return cities.all()
+	
+	def entity_name(self, city):
+		if city is None:
+			return "(No City)"
+		return city.getName()
+	
+	def valid(self, city, requiredCity):
+		if city is None:
+			return False
+		if requiredCity() is None:
+			return False
+		return city.getOwner() == self.iPlayer and at(city, requiredCity())
 	
 	@classproperty
-	def conquerFrom(cls):
-		def incrementConquests(self, iOwner, city, bConquest):
-			for objective in self.values:
-				if bConquest and civ(iOwner) in objective:
-					self.increment(objective)
+	def population(cls):
+		def metric(self, city):
+			return city.getPopulation()
 		
-		return cls.objective(list).handle("cityAcquired", incrementConquests).subclass("ConquerFrom")
+		return cls.subject(CyCity).func(metric).subclass("BestPopulationCity")
+	
+	@classproperty
+	def culture(cls):
+		def metric(self, city):
+			return city.getCulture(city.getOwner())
+		
+		return cls.subject(CyCity).func(metric).subclass("BestCultureCity")
+	
+
+class BestPlayer(Best):
+
+	def __init__(self, *arguments):
+		super(BestPlayer, self).__init__(*arguments)
+	
+	def entities(self):
+		return players.major().alive()
+	
+	def entity_name(self, iPlayer):
+		return name(iPlayer)
+	
+	def valid(self, iPlayer):
+		return self.iPlayer == iPlayer
+	
+	@classproperty
+	def tech(cls):
+		def metric(self, iPlayer):
+			return infos.techs().where(lambda iTech: team(iPlayer).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost())
+		
+		return cls.func(metric).subclass("BestTechPlayer")
+	
+	@classproperty
+	def population(cls):
+		def metric(self, iPlayer):
+			return player(iPlayer).getRealPopulation()
+		
+		return cls.func(metric).subclass("BestPopulationPlayer")
+	
+	

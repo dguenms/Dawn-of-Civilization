@@ -941,6 +941,11 @@ class EntityCollection(object):
 	def valued(self, func):
 		return ((entity, func(entity)) for entity in self)
 
+	# TODO: test
+	def take(self, iNum):
+		return self.limit(iNum).entities() + [None] * max(0, iNum-self.count())
+
+
 class PlotsCorner:
 
 	def __init__(self, x, y):
@@ -1650,7 +1655,7 @@ class InfoCollection(EntityCollection):
 		self.info_class = infoClass
 		
 	def where(self, condition):
-		return self.__class__([k for k in self._keys if condition(self._factory(k))], self.info_class)
+		return self.__class__([k for k in self._keys if condition(k)], self.info_class)
 	
 	def __contains__(self, item):
 		return item in self._keys
@@ -1889,7 +1894,7 @@ class TechCollection(object):
 		return self
 		
 	def techs(self):
-		techs = [i for i in infos.techs().where(lambda tech: tech.getEra() <= self.iEra or tech.getGridX() <= self.iColumn)]
+		techs = [i for i in infos.techs().where(lambda iTech: infos.tech(iTech).getEra() <= self.iEra or infos.tech(iTech).getGridX() <= self.iColumn)]
 		techs += [i for i in self.included if i not in techs]
 		techs = [i for i in techs if i not in self.excluded]
 		
