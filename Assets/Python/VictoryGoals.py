@@ -726,6 +726,44 @@ class Condition(BaseGoal):
 		
 		return cls.func(condition).subclass("TradeConnection")
 	
+	@classproperty
+	def moreReligion(cls):
+		def religionCities(self, plots, iReligion):
+			return plots.cities().religion(iReligion).count()
+		
+		def condition(self, plots, iOurReligion, iOtherReligion):
+			return self.religionCities(plots, iOurReligion) > self.religionCities(plots, iOtherReligion)
+		
+		def display(self, plots, iOurReligion, iOtherReligion):
+			return "%d / %d" % (self.religionCities(plots, iOurReligion), self.religionCities(plots, iOtherReligion))
+		
+		return cls.subject(Plots).objectives(CvReligionInfo, CvReligionInfo).func(religionCities, condition, display).subclass("MoreReligion")
+	
+	@classproperty
+	def moreCulture(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lCivs = range(iNumCivs)
+			
+		def than(self, lCivs):
+			self.lCivs = lCivs
+			return self
+			
+		def condition(self):
+			return self.value() >= self.required()
+		
+		def display(self):
+			return "%d / %d" % (self.value(), self.required())
+	
+		def value(self):
+			return self._player.countTotalCulture()
+		
+		def required(self):
+			return players.major().alive().without(self.iPlayer).civs(*self.lCivs).sum(lambda p: player(p).countTotalCulture())
+		
+		return cls.func(__init__, than, condition, display, value, required).subclass("MoreCulture")
+	
 
 class Count(BaseGoal):
 

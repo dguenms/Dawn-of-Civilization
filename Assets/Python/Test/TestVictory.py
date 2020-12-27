@@ -1189,7 +1189,6 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		_city.kill()
 	
-	
 	def testCityMultipleBuildingsDifferentCities(self):
 		goal = Condition.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
 		goal.activate(0)
@@ -1488,6 +1487,119 @@ class TestConditionGoals(ExtendedTestCase):
 		for p in plots.rectangle((61, 31), (63, 31)):
 			p.setRouteType(-1)
 	
+	def testMoreReligion(self):
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		city2 = player(2).initCity(65, 31)
+		
+		city0.setHasReligion(iOrthodoxy, True, False, False)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "2 / 1")
+		
+		for city in [city0, city1, city2]:
+			city.kill()
+	
+	def testMoreReligionEqual(self):
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		
+		city0.setHasReligion(iOrthodoxy, True, False, False)
+		city1.setHasReligion(iCatholicism, True, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 1")
+		
+		city0.kill()
+		city1.kill()
+	
+	def testMoreReligionLess(self):
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		
+		city0.setHasReligion(iCatholicism, True, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1")
+		
+		city0.kill()
+	
+	def testMoreReligionOutside(self):
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
+		goal.activate(0)
+		
+		city0 = player(0).initCity(25, 25)
+		city0.setHasReligion(iOrthodoxy, True, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 0")
+		
+		city0.kill()
+	
+	def testMoreCulture(self):
+		goal = Condition.moreCulture()
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		city2 = player(2).initCity(65, 31)
+		
+		city0.setCulture(0, 1000, False)
+		city1.setCulture(1, 500, False)
+		city2.setCulture(2, 100, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "1000 / 600")
+		
+		for city in [city0, city1, city2]:
+			city.kill()
+	
+	def testMoreCultureLess(self):
+		goal = Condition.moreCulture()
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		city2 = player(2).initCity(65, 31)
+		
+		city0.setCulture(0, 1000, False)
+		city1.setCulture(1, 600, False)
+		city2.setCulture(2, 600, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1000 / 1200")
+		
+		for city in [city0, city1, city2]:
+			city.kill()
+	
+	def testMoreCultureThan(self):
+		goal = Condition.moreCulture().than([iBabylonia])
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		city2 = player(2).initCity(65, 31)
+		
+		city0.setCulture(0, 1000, False)
+		city1.setCulture(1, 600, False)
+		city2.setCulture(2, 600, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "1000 / 600")
+		
+		for city in [city0, city1, city2]:
+			city.kill()
+
 
 class TestCountGoals(ExtendedTestCase):
 
