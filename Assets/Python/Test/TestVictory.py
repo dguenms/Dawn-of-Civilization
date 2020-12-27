@@ -4571,7 +4571,497 @@ class TestBestPlayerGoals(ExtendedTestCase):
 		
 		team(0).setHasTech(iLaw, False, 0, False, False)
 		team(1).setHasTech(iGenetics, False, 1, False, False)
+
+
+class TestRouteConnection(ExtendedTestCase):
+
+	def testDirectConnection(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+			
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
 	
+	def testNoRoute(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testNoCulture(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testDifferentRouteType(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRailroad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 41)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		for iTech in [iLeverage, iRailroad]:
+			team(0).setHasTech(iTech, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		for iTech in [iLeverage, iRailroad]:
+			team(0).setHasTech(iTech, False, 0, False, False)
+	
+	def testNoRouteTech(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+	
+	def testNoStartCity(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		target = player(0).initCity(64, 41)
+		
+		for plot in plots.rectangle((61, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		target.kill()
+		
+		for plot in plots.rectangle((61, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testDifferentStartCityOwner(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(1).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testNoTargetCity(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		
+		for plot in plots.rectangle((62, 31), (64, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		
+		for plot in plots.rectangle((62, 31), (64, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+	def testTargetCityDifferentOwner(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(1).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testIndirectConnection(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		area = plots.of([(60, 32), (61, 33), (62, 33), (63, 33), (64, 33), (65, 32)])
+		for plot in area:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in area:
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+	
+	def testConnectionThroughCity(self):
+		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		middle = player(0).initCity(63, 31)
+		target = player(0).initCity(65, 31)
+		
+		area = plots.of([(62, 31), (64, 31)])
+		for plot in area:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for city in [start, middle, target]:
+			city.kill()
+		
+		for plot in area:
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testConnectionThroughCityDifferentOwner(self):
+		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		middle = player(1).initCity(63, 31)
+		target = player(0).initCity(65, 31)
+		
+		area = plots.of([(62, 31), (64, 31)])
+		for plot in area:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		for city in [start, middle, target]:
+			city.kill()
+		
+		for plot in area:
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testMultipleStarts(self):
+		starts = plots.rectangle((61, 31), (61, 33))
+		targets = plots.of([(64, 31)])
+		goal = RouteConnection(starts, targets, [iRouteRoad])
+		goal.activate(0)
+		
+		start1 = player(0).initCity(61, 33)
+		start2 = player(1).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		area = plots.rectangle((62, 32), (63, 32))
+		for plot in area:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for city in [start1, start2, target]:
+			city.kill()
+		
+		for plot in area:
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testMultipleTargets(self):
+		starts = plots.of([(61, 31)])
+		targets = plots.rectangle((64, 31), (64, 33))
+		goal = RouteConnection(starts, targets, [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target1 = player(1).initCity(64, 31)
+		target2 = player(0).initCity(64, 33)
+		
+		area = plots.rectangle((62, 32), (63, 32))
+		for plot in area:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for city in [start, target1, target2]:
+			city.kill()
+		
+		for plot in area:
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testWithStartOwners(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
+		goal.activate(0)
+		
+		start = player(1).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(1)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testWithStartOwnersIncludingTarget(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
+		goal.activate(0)
+		
+		start = player(1).initCity(61, 31)
+		target = player(1).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(1)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testWithLazyCapital(self):
+		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		start.setHasRealBuilding(iPalace, True)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testWithLazyCapitalElsewhere(self):
+		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		capital = player(0).initCity(35, 35)
+		capital.setHasRealBuilding(iPalace, True)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		for city in [capital, start, target]:
+			city.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testMultipleTargetsAll(self):
+		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(63, 31)
+		target1 = player(0).initCity(61, 31)
+		target2 = player(0).initCity(65, 31)
+		
+		for plot in plots.of([(62, 31), (64, 31)]):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		
+		for city in [start, target1, target2]:
+			city.kill()
+		
+		for plot in plots.of([(62, 31), (64, 31)]):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+	
+	def testMultipleTargetsSome(self):
+		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(63, 31)
+		target1 = player(0).initCity(61, 31)
+		target2 = player(0).initCity(65, 31)
+		
+		for plot in plots.of([(62, 31)]):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), False)
+		
+		for city in [start, target1, target2]:
+			city.kill()
+		
+		for plot in plots.of([(62, 31)]):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
 
 
 test_cases = [
@@ -4590,6 +5080,7 @@ test_cases = [
 	TestTrackGoals,
 	TestBestCityGoals,
 	TestBestPlayerGoals,
+	TestRouteConnection,
 ]
 
 

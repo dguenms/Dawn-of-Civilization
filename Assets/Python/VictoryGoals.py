@@ -1,5 +1,5 @@
 from inspect import ismethod, isfunction, getargspec
-import re
+import re, heapq
 
 from Core import *
 from RFCUtils import *
@@ -524,6 +524,8 @@ class BaseGoal(object):
 	
 	@classmethod
 	def process_arguments(cls, *arguments):
+		if not cls.types:
+			return ((),)
 		return cls.types.process(*arguments)
 
 	def __init__(self, *arguments):
@@ -1509,4 +1511,82 @@ class BestPlayer(Best):
 		
 		return cls.func(metric).subclass("BestPopulationPlayer")
 	
+
+class RouteConnection(BaseGoal):
+
+	def __init__(self, starts, targets, lRoutes):
+		super(RouteConnection, self).__init__()
+		
+		if isinstance(targets, CyPlot):
+			targets = plots.of([targets])
+		
+		if isinstance(targets, Plots):
+			targets = (targets,)
+		
+		self.starts = starts
+		self.targets = targets
+		self.lRoutes = lRoutes
+		
+		self.bStartOwners = False
 	
+	def __nonzero__(self):
+		return all(self.condition(targets) for targets in self.targets)
+		
+	def withStartOwners(self):
+		self.bStartOwners = True
+		return self
+	
+	def routeTech(self, iRoute):
+		iBuild = infos.builds().where(lambda iBuild: infos.build(iBuild).getRoute() == iRoute).first()
+		return infos.build(iBuild).getTechPrereq()
+		
+	def valid_owner(self, plot):
+		if plot.getOwner() == self.iPlayer:
+			return True
+		
+		if self.bStartOwners and plot.getOwner() in self.starts.cities().owners():
+			return True
+		
+		return False
+	
+	def valid(self, plot):
+		return self.valid_owner(plot) and (plot.isCity() or plot.getRouteType() in self.lRoutes)
+	
+	def connected(self, start, targets):
+		if not self.valid(start):
+			return False
+		
+		if start in self.targets:
+			return True
+		
+		targets = targets.where(self.valid)
+		
+		if not targets:
+			return False
+		
+		nodes = [(targets.closest_distance(start), location(start))]
+		heapq.heapify(nodes)
+		
+		visited = set()
+		
+		while nodes:
+			heuristic, node = heapq.heappop(nodes)
+			visited.add((heuristic, node))
+			
+			for plot in plots.surrounding(node).where(self.valid):
+				if plot.isCity() and plot.getOwner() == self.iPlayer and plot in targets:
+					return True
+				
+				tuple = (targets.closest_distance(plot), location(plot))
+				if tuple not in visited and tuple not in nodes:
+					heapq.heappush(nodes, tuple)
+		
+		return False
+	
+	def condition(self, targets):
+		if none(self._team.isHasTech(self.routeTech(iRoute)) for iRoute in self.lRoutes):
+			return False
+		
+		return any(self.connected(start.plot(), targets) for start in self.starts.cities())
+		
+		
