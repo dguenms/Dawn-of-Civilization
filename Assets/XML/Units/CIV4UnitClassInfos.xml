@@ -179,7 +179,7 @@
 			<Description>TXT_KEY_UNIT_WARRIOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>0</iMaxPlayerInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_WARRIOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -203,7 +203,7 @@
 			<Description>TXT_KEY_UNIT_AXEMAN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>0</iMaxPlayerInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_AXEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>

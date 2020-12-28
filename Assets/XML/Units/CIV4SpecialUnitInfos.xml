@@ -35,10 +35,6 @@
 					<UnitAIType>UNITAI_MISSIONARY_SEA</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</CarrierUnitAI>
-				<CarrierUnitAI>
-					<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</CarrierUnitAI>
 			</CarrierUnitAIs>
 			<ProductionTraits/>
 		</SpecialUnitInfo>
@@ -77,6 +73,20 @@
 			<bPlayerValid>0</bPlayerValid>
 			<bCityLoad>1</bCityLoad>
 			<CarrierUnitAIs/>
+			<ProductionTraits/>
+		</SpecialUnitInfo>
+		<SpecialUnitInfo>
+			<Type>SPECIALUNIT_SEARAIDER</Type>
+			<Description>TXT_KEY_SPECIALUNIT_SEARAIDER</Description>
+			<bValid>1</bValid>
+			<bPlayerValid>1</bPlayerValid>
+			<bCityLoad>0</bCityLoad>
+			<CarrierUnitAIs>
+				<CarrierUnitAI>
+					<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</CarrierUnitAI>
+			</CarrierUnitAIs>
 			<ProductionTraits/>
 		</SpecialUnitInfo>
 	</SpecialUnitInfos>
