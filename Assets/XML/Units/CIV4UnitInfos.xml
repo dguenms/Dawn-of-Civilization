@@ -5631,10 +5631,6 @@
 					<UnitClassType>UNITCLASS_MARINE</UnitClassType>
 					<iUnitClassMod>20</iUnitClassMod>
 				</UnitClassDefenseMod>
-				<UnitClassDefenseMod>
-					<UnitClassType>UNITCLASS_PARATROOPER</UnitClassType>
-					<iUnitClassMod>20</iUnitClassMod>
-				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
 			<iCombat>20</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -5667,6 +5663,7 @@
 			<Civilopedia>TXT_KEY_UNIT_SAM_INFANTRY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SAM_INFANTRY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bNoCapture>1</bNoCapture>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -6714,10 +6711,6 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
-					<bUnitClassUpgrade>1</bUnitClassUpgrade>
-				</UnitClassUpgrade>
-				<UnitClassUpgrade>
 					<UnitClassUpgradeType>UNITCLASS_GRENADIER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
@@ -6812,10 +6805,6 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
-				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
-					<bUnitClassUpgrade>1</bUnitClassUpgrade>
-				</UnitClassUpgrade>
 				<UnitClassUpgrade>
 					<UnitClassUpgradeType>UNITCLASS_GRENADIER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
@@ -10620,7 +10609,11 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+			<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_NATIONALISM</PrereqTech>
+				<PrereqTech>TECH_BIOLOGY</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -10738,7 +10731,11 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+			<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_NATIONALISM</PrereqTech>
+				<PrereqTech>TECH_BIOLOGY</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>130</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -10992,6 +10989,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_OIL</BonusType>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -12049,7 +12049,6 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_BALLISTICS</PrereqTech>
-			<BonusType>BONUS_IRON</BonusType>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -14628,6 +14627,7 @@
 			<PrereqTech>TECH_ENGINE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_REFINING</PrereqTech>
+				<PrereqTech>TECH_BALLISTICS</PrereqTech>
 			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_COAL</BonusType>
@@ -14980,6 +14980,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
