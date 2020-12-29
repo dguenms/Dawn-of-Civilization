@@ -3557,4 +3557,21 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALUNIT_SEARAIDER</Tag>
+		<English>Swordmen</English>
+		<French>Swordmen</French>
+		<German>Swordmen</German>
+		<Italian>Swordmen</Italian>
+		<Spanish>Swordmen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AT_INFANTRY</Tag>
+		<English>Sapper</English>
+		<French>Sapper</French>
+		<German>Sapper</German>
+		<Italian>Sapper</Italian>
+		<Spanish>Sapper</Spanish>
+	</TEXT>
 </Civ4GameText>
