@@ -130,7 +130,7 @@ class GenericGoal(object):
 		
 	def at(self, iYear):
 		def check_handler(iGameTurn):
-			if iGameTurn == year(iGameTurn):
+			if iGameTurn == year(iYear):
 				self.finalCheck()
 		
 		self.addEventHandler("BeginGameTurn", check_handler)
@@ -1306,7 +1306,7 @@ class FirstContact(GenericGoal):
 		
 		
 def NewWorldFirstContact():
-	return FirstContact(dCivGroups[iCivGroupEurope], plots.rectangle(tSouthAmerica), plots.rectangle(tNorthAfrica))
+	return FirstContact(dCivGroups[iCivGroupEurope], plots.rectangle(tSouthAmerica), plots.rectangle(tNorthAmerica))
 
 
 class ConvertAfterFounding(GenericGoal):

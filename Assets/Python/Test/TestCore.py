@@ -2943,6 +2943,11 @@ class TestSpecialbuilding(TestCase):
 		building = cathedral(iBuddhism)
 		
 		self.assertEqual(building, iBuddhistCathedral)
+	
+	def test_shrine(self):
+		building = shrine(iHinduism)
+		
+		self.assertEqual(building, iHinduShrine)
 
 
 class TestMap(TestCase):

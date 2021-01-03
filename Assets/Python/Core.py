@@ -208,7 +208,8 @@ def owner(entity, identifier):
 	return entity.getOwner() == identifier
 
 
-def count(iterable, condition):
+# TODO: test default condition
+def count(iterable, condition = bool):
 	return len([x for x in iterable if condition(x)])
 
 
@@ -259,11 +260,9 @@ def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coast
 		return None
 	return city
 
+
 def specialbuilding(iType, iReligion):
-	lBuildings = [iBuilding for iBuilding in range(iNumBuildings) if infos.building(iBuilding).getSpecialBuildingType() == iType and infos.building(iBuilding).getReligionType() == iReligion]
-	if lBuildings:
-		return lBuildings[0]
-	return None
+	return next(iBuilding for iBuilding in range(iNumBuildings) if infos.building(iBuilding).getSpecialBuildingType() == iType and infos.building(iBuilding).getReligionType() == iReligion)
 	
 	
 def temple(iReligion):
@@ -276,6 +275,10 @@ def monastery(iReligion):
 	
 def cathedral(iReligion):
 	return specialbuilding(infos.type('SPECIALBUILDING_CATHEDRAL'), iReligion)
+
+
+def shrine(iReligion):
+	return next(iBuilding for iBuilding in range(iNumBuildings) if infos.building(iBuilding).getGlobalReligionCommerce() == iReligion)
 
 
 def permutations(first, second):
@@ -629,7 +632,7 @@ def unit(key):
 	
 def location(entity):
 	if not entity:
-		raise ValueError("Location is None")
+		return None
 
 	if isinstance(entity, (CyPlot, CyCity, CyUnit)):
 		return entity.getX(), entity.getY()
@@ -1793,6 +1796,9 @@ class Infos:
 	
 	def cultureLevel(self, identifier):
 		return gc.getCultureLevelInfo(identifier)
+	
+	def routes(self):
+		return InfoCollection.type(gc.getRouteInfo, gc.getNumRouteInfos())
 
 
 class Map(object):

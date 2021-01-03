@@ -29,6 +29,27 @@ def getnumargs(func):
 
 
 class EventHandlers(object):
+
+	@classmethod
+	def ours(cls):
+		def applicable(other, iPlayer):
+			return other.iPlayer == iPlayer
+		return cls(applicable)
+	
+	@classmethod
+	def others(cls):
+		def applicable(other, iPlayer):
+			return other.iPlayer != iPlayer
+		return cls(applicable)
+	
+	@classmethod
+	def any(cls):
+		def applicable(other, iPlayer):
+			return True
+		return cls(applicable)
+
+	def __init__(self, applicable):
+		self.applicable = applicable
 		
 	def get(self, event, func):
 		if hasattr(self, event):
@@ -41,15 +62,15 @@ class EventHandlers(object):
 	def BeginPlayerTurn(self, func):
 		def BeginPlayerTurn(other, args):
 			iGameTurn, iPlayer = args
-			if other.iPlayer == iPlayer:
-				func(other)
+			if self.applicable(other, iPlayer):
+				func(other, iGameTurn)
 		
 		return BeginPlayerTurn
 	
 	def techAcquired(self, func):
 		def techAcquired(other, args):
 			iTech, iTeam, iPlayer, bAnnounce = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iTech)
 	
 		return techAcquired
@@ -57,7 +78,7 @@ class EventHandlers(object):
 	def combatResult(self, func):
 		def combatResult(other, args):
 			winningUnit, losingUnit = args
-			if other.iPlayer == winningUnit.getOwner():
+			if self.applicable(other, winningUnit.getOwner()):
 				func(other, losingUnit)
 		
 		return combatResult
@@ -65,7 +86,7 @@ class EventHandlers(object):
 	def playerGoldTrade(self, func):
 		def playerGoldTrade(other, args):
 			iFrom, iTo, iGold = args
-			if other.iPlayer == iTo:
+			if self.applicable(other, iTo):
 				func(other, iGold)
 		
 		return playerGoldTrade
@@ -73,7 +94,7 @@ class EventHandlers(object):
 	def unitPillage(self, func):
 		def unitPillage(other, args):
 			unit, iImprovement, iRoute, iPlayer, iGold = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iGold)
 		
 		return unitPillage
@@ -81,7 +102,7 @@ class EventHandlers(object):
 	def cityCaptureGold(self, func):
 		def cityCaptureGold(other, args):
 			city, iPlayer, iGold = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iGold)
 		
 		return cityCaptureGold
@@ -89,7 +110,7 @@ class EventHandlers(object):
 	def cityAcquired(self, func):
 		def cityAcquired(other, args):
 			iOwner, iPlayer, city, bConquest, bTrade = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iOwner, city, bConquest)
 		
 		return cityAcquired
@@ -97,7 +118,7 @@ class EventHandlers(object):
 	def cityLost(self, func):
 		def cityAcquired(other, args):
 			iOwner, iPlayer, city, bConquest, bTrade = args
-			if other.iPlayer == iOwner:
+			if self.applicable(other, iOwner):
 				func(other, iPlayer, bConquest)
 		
 		return cityAcquired
@@ -105,7 +126,7 @@ class EventHandlers(object):
 	def cityBuilt(self, func):
 		def cityBuilt(other, args):
 			city = args[0]
-			if other.iPlayer == city.getOwner():
+			if self.applicable(other, city.getOwner()):
 				func(other, city)
 		
 		return cityBuilt
@@ -113,7 +134,7 @@ class EventHandlers(object):
 	def blockade(self, func):
 		def blockade(other, args):
 			iPlayer, iGold = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iGold)
 		
 		return blockade
@@ -121,7 +142,7 @@ class EventHandlers(object):
 	def cityRazed(self, func):
 		def cityRazed(other, args):
 			city, iPlayer = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other)
 		
 		return cityRazed
@@ -129,7 +150,7 @@ class EventHandlers(object):
 	def playerSlaveTrade(self, func):
 		def playerSlaveTrade(other, args):
 			iPlayer, iGold = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iGold)
 		
 		return playerSlaveTrade
@@ -137,7 +158,7 @@ class EventHandlers(object):
 	def greatPersonBorn(self, func):
 		def greatPersonBorn(other, args):
 			unit, iPlayer, city = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, unit)
 		
 		return greatPersonBorn
@@ -145,7 +166,7 @@ class EventHandlers(object):
 	def peaceBrokered(self, func):
 		def peaceBrokered(other, args):
 			iBroker, iPlayer1, iPlayer2 = args
-			if other.iPlayer == iBroker:
+			if self.applicable(other, iBroker):
 				func(other)
 		
 		return peaceBrokered
@@ -153,7 +174,7 @@ class EventHandlers(object):
 	def enslave(self, func):
 		def enslave(other, args):
 			iPlayer, losingUnit = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, losingUnit)
 		
 		return enslave
@@ -161,7 +182,7 @@ class EventHandlers(object):
 	def firstContact(self, func):
 		def firstContact(other, args):
 			iTeamX, iHasMetTeamY = args
-			if other._team.getID() == iTeamX:
+			if self.applicable(other, team(iTeamX).getLeaderID()):
 				func(other, team(iHasMetTeamY).getLeaderID())
 		
 		return firstContact
@@ -169,7 +190,7 @@ class EventHandlers(object):
 	def tradeMission(self, func):
 		def tradeMission(other, args):
 			iUnit, iPlayer, iX, iY, iGold = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, (iX, iY), iGold)
 		
 		return tradeMission
@@ -177,20 +198,53 @@ class EventHandlers(object):
 	def religionFounded(self, func):
 		def religionFounded(other, args):
 			iReligion, iFounder = args
-			func(other, iReligion)
+			if True or self.applicable(other, iFounder):
+				func(other, iReligion)
 		
 		return religionFounded
 	
 	def playerChangeStateReligion(self, func):
 		def playerChangeStateReligion(other, args):
 			iPlayer, iNewReligion, iOldReligion = args
-			if other.iPlayer == iPlayer:
+			if self.applicable(other, iPlayer):
 				func(other, iNewReligion)
 		
 		return playerChangeStateReligion
+	
+	def buildingBuilt(self, func):
+		def buildingBuilt(other, args):
+			city, iBuilding = args
+			if self.applicable(other, city.getOwner()):
+				func(other, city, iBuilding)
+		
+		return buildingBuilt
+	
+	def projectBuilt(self, func):
+		def projectBuilt(other, args):
+			city, iProject = args
+			if self.applicable(other, city.getOwner()):
+				func(other, iProject)
+		
+		return projectBuilt
+	
+	def corporationSpread(self, func):
+		def corporationSpread(other, args):
+			iCorporation, iPlayer, city = args
+			if self.applicable(other, iPlayer):
+				func(other, iCorporation)
+		
+		return corporationSpread
+	
+	def corporationRemove(self, func):
+		def corporationRemove(other, args):
+			iCorporation, iPlayer, city = args
+			if self.applicable(other, iPlayer):
+				func(other, iCorporation)
+		
+		return corporationRemove
 				
 	
-handlers = EventHandlers()
+handlers = EventHandlers.ours()
 
 
 class classproperty(property):
@@ -517,10 +571,27 @@ class BaseGoal(object):
 		return cls
 	
 	@classmethod
-	def handle(cls, event, func):
-		handler = handlers.get(event, func)
-		cls.builder.handler(handler.__name__, handler)
+	def build_handler(cls, handler, func):
+		event = handler.__name__
+		handler.__name__ = "%s_%s" % (handler.__name__, func.__name__)
+		cls.builder.handler(event, handler)
 		return cls
+	
+	@classproperty
+	def turnly(cls):
+		def checkGoal(self, *args):
+			self.check()
+		return cls.handle("BeginPlayerTurn", checkGoal)
+	
+	@classmethod
+	def handle(cls, event, func):
+		handler = handlers.ours().get(event, func)
+		return cls.build_handler(handler, func)
+	
+	@classmethod
+	def expired(cls, event, func):
+		handler = handlers.others().get(event, func)
+		return cls.build_handler(handler, func)
 	
 	@classmethod
 	def process_arguments(cls, *arguments):
@@ -532,12 +603,17 @@ class BaseGoal(object):
 		self.reset()
 		
 		self.arguments = self.process_arguments(*arguments)
+		self.handlers = self.__class__.handlers[:]
 		
 	def __nonzero__(self):
 		return all(self.condition(*args) for args in self.arguments)
 	
 	def __str__(self):
 		return '\n'.join([self.display(*args) for args in self.arguments])
+	
+	@property
+	def values(self):
+		return [segment(objective) for objective in self.arguments.objectives]
 		
 	def reset(self):
 		self.state = POSSIBLE
@@ -556,23 +632,27 @@ class BaseGoal(object):
 		if self.owner_included:
 			self.arguments.iPlayer = iPlayer
 		
-		for event, handler in self.__class__.handlers:
+		for event, handler in self.handlers:
 			events.addEventHandler(event, getattr(self, handler))
 	
 	def deactivate(self):
-		for event, handler in self.__class__.handlers:
+		for event, handler in self.handlers:
 			events.removeEventHandler(event, getattr(self, handler))
 	
 	def setState(self, state):
 		if self.state != state:
 			self.state = state
+			
 			if self.callback:
 				self.callback(self)
+			
+			#if state == FAILURE:
+			#	self.deactivate()
 	
 	def possible(self):
 		return self.state == POSSIBLE
 	
-	def win(self):
+	def succeed(self):
 		self.setState(SUCCESS)
 	
 	def fail(self):
@@ -584,7 +664,7 @@ class BaseGoal(object):
 	
 	def check(self):
 		if self.possible() and self:
-			self.win()
+			self.succeed()
 	
 	def finalCheck(self):
 		self.check()
@@ -595,7 +675,28 @@ class BaseGoal(object):
 	
 	def display(self):
 		raise NotImplementedError()
-
+		
+	def register(self, event, handler):
+		setattr(self, handler.__name__, handler)
+		self.handlers.append((event, handler.__name__))
+	
+	def at(self, iYear):
+		def checkTurn(args):
+			iGameTurn, iPlayer = args
+			if self.iPlayer == iPlayer and iGameTurn == year(iYear):
+				self.finalCheck()
+		
+		self.register("BeginPlayerTurn", checkTurn)
+		return self
+	
+	def by(self, iYear):
+		def checkExpire(args):
+			iGameTurn, iPlayer = args
+			if self.iPlayer == iPlayer and iGameTurn == year(iYear):
+				self.expire()
+		
+		self.register("BeginPlayerTurn", checkExpire)
+		return self
 
 class Condition(BaseGoal):
 
@@ -636,7 +737,15 @@ class Condition(BaseGoal):
 
 	@classproperty
 	def wonder(cls):
-		return cls.objective(CvBuildingInfo).player(CyPlayer.isHasBuilding).subclass("Wonder")
+		def checkExpiration(self, city, iWonder):
+			if iWonder in self.values:
+				self.expire()
+		
+		def checkWonderBuilt(self, city, iWonder):
+			if iWonder in self.values:
+				self.check()
+	
+		return cls.objective(CvBuildingInfo).player(CyPlayer.isHasBuilding).expired("buildingBuilt", checkExpiration).handle("buildingBuilt", checkWonderBuilt).subclass("Wonder")
 	
 	@classproperty
 	def control(cls):
@@ -657,15 +766,31 @@ class Condition(BaseGoal):
 		def settled(self, city):
 			return city.getOwner() == self.iPlayer and city.getOriginalOwner() == self.iPlayer
 		
-		return cls.objective(Plots).cities(settled).subclass("Settled")
+		def checkCityBuilt(self, city):
+			if any(city in area for area in self.values):
+				self.check()
+		
+		return cls.objective(Plots).cities(settled).handle("cityBuilt", checkCityBuilt).subclass("Settled")
 	
 	@classproperty
 	def cityBuilding(cls):
-		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.isHasRealBuilding).subclass("CityBuilding")
+		def checkBuildingBuilt(self, city, iBuilding):
+			if at(city, self.arguments.subject()) and iBuilding in self.values:
+				self.check()
+	
+		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.isHasRealBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
 	
 	@classproperty
 	def project(cls):
-		return cls.objective(CvProjectInfo).team(positive(CyTeam.getProjectCount)).subclass("ProjectCount")
+		def checkProjectBuilt(self, iProject):
+			if iProject in self.values:
+				self.check()
+		
+		def expireProjectBuilt(self, iProject):
+			if iProject in self.values:
+				self.expire()
+	
+		return cls.objective(CvProjectInfo).team(positive(CyTeam.getProjectCount)).handle("projectBuilt", checkProjectBuilt).expired("projectBuilt", expireProjectBuilt).subclass("ProjectCount")
 	
 	@classproperty
 	def route(cls):
@@ -726,7 +851,7 @@ class Condition(BaseGoal):
 		def condition(self):
 			return players.major().alive().without(self.iPlayer).any(lambda p: self._player.canContact(p) and self._player.canTradeNetworkWith(p))
 		
-		return cls.func(condition).subclass("TradeConnection")
+		return cls.func(condition).turnly.subclass("TradeConnection")
 	
 	@classproperty
 	def moreReligion(cls):
@@ -800,6 +925,10 @@ class Count(BaseGoal):
 		remainder, iRequired = arguments[:-1], arguments[-1]
 		return "%d / %d" % (self.value(*remainder), self.required(iRequired))
 	
+	@property
+	def values(self):
+		return [segment(objective[:-1]) for objective in self.arguments.objectives]
+	
 	@classmethod
 	def player(cls, func):
 		def value_function(self, *objectives):
@@ -863,13 +992,21 @@ class Count(BaseGoal):
 			
 		return cls.func(required_function)
 	
+	# TODO: account for unique buildings?
 	@classproperty
 	def building(cls):
-		return cls.objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).subclass("BuildingCount")
+		def checkBuildingBuilt(self, city, iBuilding):
+			if iBuilding in self.values:
+				self.check()
+		
+		def checkCityAcquired(self, *args):
+			self.check()
+	
+		return cls.objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
-		return cls.player(CyPlayer.countTotalCulture).scaled.subclass("PlayerCulture")
+		return cls.player(CyPlayer.countTotalCulture).scaled.turnly.subclass("PlayerCulture")
 	
 	@classproperty
 	def gold(cls):
@@ -877,7 +1014,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def resource(cls):
-		return cls.objective(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).subclass("ResourceCount")
+		return cls.objective(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).turnly.subclass("ResourceCount")
 	
 	@classproperty
 	def controlledResource(cls):
@@ -892,11 +1029,15 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def population(cls):
-		return cls.player(CyPlayer.getTotalPopulation).subclass("PlayerPopulation")
+		return cls.player(CyPlayer.getTotalPopulation).turnly.subclass("PlayerPopulation")
 	
 	@classproperty
 	def corporation(cls):
-		return cls.objective(CvCorporationInfo).player(CyPlayer.countCorporations).subclass("CorporationCount")
+		def checkCorporationSpread(self, iCorporation):
+			if iCorporation in self.values:
+				self.check()
+	
+		return cls.objective(CvCorporationInfo).player(CyPlayer.countCorporations).handle("corporationSpread", checkCorporationSpread).subclass("CorporationCount")
 	
 	@classproperty
 	def unit(cls):
@@ -966,11 +1107,11 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def specialist(cls):
-		return cls.objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).subclass("SpecialistCount")
+		return cls.objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).turnly.subclass("SpecialistCount")
 	
 	@classproperty
 	def averageCulture(cls):
-		return cls.player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).subclass("AverageCulture")
+		return cls.player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).turnly.subclass("AverageCulture")
 	
 	@classproperty
 	def averagePopulation(cls):
@@ -998,7 +1139,7 @@ class Count(BaseGoal):
 			city = city()
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
-		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).subclass("CultureLevel")
+		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).turnly.subclass("CultureLevel")
 	
 	@classproperty
 	def attitude(cls):
@@ -1121,7 +1262,7 @@ class Percentage(Count):
 		def total(self):
 			return map.getLandPlots()
 		
-		return cls.func(value_function, total).subclass("WorldPercent")
+		return cls.func(value_function, total).turnly.subclass("WorldPercent")
 	
 	@classproperty
 	def religionSpread(cls):
@@ -1180,15 +1321,12 @@ class Trigger(Condition):
 		
 	def complete(self, *objectives):
 		self.dCondition[self.arguments.produce(objectives)] = True
+		self.check()
 	
 	def process_objectives(self, arguments):
 		if isinstance(segment(arguments), Deferred):
 			return tuple()
 		return arguments
-	
-	@property
-	def values(self):
-		return [segment(objective) for objective in self.arguments.objectives]
 	
 	@classproperty
 	def failable(cls):
@@ -1205,7 +1343,11 @@ class Trigger(Condition):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.complete(iTech)
 		
-		return cls.objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).subclass("FirstDiscovered")
+		def expireFirstDiscovered(self, iTech):
+			if iTech in self.values:
+				self.expire()
+		
+		return cls.objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).expired("techAcquired", expireFirstDiscovered).subclass("FirstDiscovered")
 	
 	@classproperty
 	def firstNewWorld(cls):
@@ -1269,13 +1411,36 @@ class Trigger(Condition):
 				self.dFoundingTurn[iReligion] = turn()
 		
 		def checkConversion(self, iReligion):
-			if iReligion in self.values:
+			if iReligion in self.values and iReligion in self.dFoundingTurn:
 				if turn() - self.dFoundingTurn[iReligion] <= scale(self.arguments.subject):
 					self.complete(iReligion)
 				else:
 					self.fail()
 		
 		return cls.subject(int).objective(CvReligionInfo).func(__init__).handle("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
+	
+	@classproperty
+	def enterEra(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.iExpireEra = None
+	
+		def checkEnterEra(self, iTech):
+			iEra = infos.tech(iTech).getEra()
+			if iEra in self.values:
+				self.complete(iEra)
+		
+		def checkExpire(self, iTech):
+			iEra = infos.tech(iTech).getEra()
+			if iEra == self.iExpireEra:
+				self.expire()
+		
+		def before(self, iEra):
+			self.iExpireEra = iEra
+			return self
+		
+		return cls.objective(CvEraInfo).func(__init__, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).subclass("EnterEra")
 		
 		
 
@@ -1298,6 +1463,7 @@ class Track(Count):
 	
 	def accumulate(self, iChange, *objectives):
 		self.dCount[objectives] += iChange
+		self.check()
 	
 	@classmethod
 	def incremented(cls, event):
@@ -1316,7 +1482,7 @@ class Track(Count):
 		def required(self, objective):
 			return scale(8 * objective)
 	
-		def incrementGoldenAges(self):
+		def incrementGoldenAges(self, *args):
 			if self._player.isGoldenAge() and not self._player.isAnarchy():
 				self.increment()
 		
@@ -1351,7 +1517,7 @@ class Track(Count):
 		def accumulateTradeMissionGold(self, tile, iGold):
 			self.accumulate(iGold * 100)
 		
-		def trackTradeGold(self):
+		def trackTradeGold(self, *args):
 			iGold = cities.owner(self.iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE)) * self._player.getCommercePercent(CommerceTypes.COMMERCE_GOLD)
 			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
 			self.accumulate(iGold)
@@ -1392,7 +1558,7 @@ class Track(Count):
 	
 	@classproperty
 	def resourceTradeGold(cls):
-		def accumulateTradeGold(self):
+		def accumulateTradeGold(self, *args):
 			iGold = players.major().alive().sum(self._player.getGoldPerTurnByPlayer)
 			self.accumulate(iGold)
 	
@@ -1512,6 +1678,7 @@ class BestPlayer(Best):
 		return cls.func(metric).subclass("BestPopulationPlayer")
 	
 
+# TODO: should be turnly
 class RouteConnection(BaseGoal):
 
 	def __init__(self, starts, targets, lRoutes):
@@ -1588,5 +1755,220 @@ class RouteConnection(BaseGoal):
 			return False
 		
 		return any(self.connected(start.plot(), targets) for start in self.starts.cities())
+
+
+# TODO: we need to forward .register to subgoals
+class All(BaseGoal):
+
+	def __init__(self, *goals):
+		super(All, self).__init__()
+	
+		self.goals = goals
 		
+	def subgoal_callback(self, goal):
+		if goal.state == SUCCESS:
+			self.check()
+		elif goal.state == FAILURE:
+			self.fail()
+	
+	def activate(self, iPlayer, callback=None):
+		super(All, self).activate(iPlayer, callback)
 		
+		for goal in self.goals:
+			goal.activate(iPlayer, self.subgoal_callback)
+	
+	def deactivate(self):
+		super(All, self).deactivate()
+		
+		for goal in self.goals:
+			goal.deactivate()
+	
+	#def check(self):
+	#	for goal in self.goals:
+	#		goal.check()
+	
+	def finalCheck(self):
+		for goal in self.goals:
+			goal.finalCheck()
+	
+	def setState(self, state):
+		super(All, self).setState(state)
+		
+		if state == FAILURE:
+			for goal in self.goals:
+				goal.fail()
+	
+	def __nonzero__(self):
+		return all(goal.state == SUCCESS for goal in self.goals)
+	
+	def __str__(self):
+		return "\n".join([str(goal) for goal in self.goals])
+
+
+class Some(BaseGoal):
+
+	def __init__(self, goal, iRequired):
+		super(Some, self).__init__()
+	
+		self.goal = goal
+		self.iRequired = iRequired
+		
+		self.goal.check = self.check
+	
+	def subgoal_callback(self, goal):
+		if goal.state == SUCCESS:
+			self.check()
+		elif goal.state == FAILURE:
+			self.fail()
+	
+	def activate(self, iPlayer, callback=None):
+		super(Some, self).activate(iPlayer, callback)
+		
+		self.goal.activate(iPlayer, self.subgoal_callback)
+	
+	def deactivate(self):
+		super(Some, self).deactivate()
+		self.goal.deactivate()
+	
+	def setState(self, state):
+		super(Some, self).setState(state)
+	
+		if state == FAILURE:
+			self.goal.fail()
+	
+	def __nonzero__(self):
+		return count(self.goal.condition(*args) for args in self.goal.arguments) >= self.iRequired
+	
+	def __str__(self):
+		return str(self.goal)
+
+
+class Any(Some):
+
+	def __init__(self, goal):
+		super(Any, self).__init__(goal, 1)
+
+
+class Different(BaseGoal):
+
+	def __init__(self, *goals):
+		super(Different, self).__init__()
+		
+		self.dGoals = dict((goal, None) for goal in goals)
+	
+	@property
+	def goals(self):
+		return self.dGoals.keys()
+		
+	def record_value(self, goal):
+		raise NotImplementedError()
+		
+	def record(self, goal):
+		self.dGoals[goal] = self.record_value(goal)
+		
+		if not self.unique_records():
+			self.fail()
+	
+	def recorded(self, goal):
+		return self.dGoals[goal]
+	
+	def display_record(self, record):
+		raise NotImplementedError()
+	
+	def display_subgoal(self, goal):
+		text = str(goal)
+		record = self.recorded(goal)
+		
+		if record is None:
+			record = self.record_value(goal)
+			
+		if record is not None:
+			text = "%s: %s" % (self.display_record(record), text)
+		return text
+		
+	def subgoal_callback(self, goal):
+		if goal.state == SUCCESS:
+			self.record(goal)
+			self.check()
+		elif goal.state == FAILURE:
+			self.fail()
+	
+	def activate(self, iPlayer, callback=None):
+		super(Different, self).activate(iPlayer, callback)
+		
+		for goal in self.goals:
+			goal.activate(iPlayer, self.subgoal_callback)
+	
+	def deactivate(self):
+		super(Different, self).deactivate()
+		
+		for goal in self.goals:
+			goal.deactivate()
+	
+	def setState(self, state):
+		super(Different, self).setState(state)
+		
+		if state == FAILURE:
+			for goal in self.goals:
+				goal.fail()
+	
+	def unique_records(self):
+		records = [self.recorded(goal) for goal in self.goals]
+		return len(records) == len(set(records))
+	
+	def __nonzero__(self):
+		return all(goal.state == SUCCESS or goal for goal in self.goals) and self.unique_records()
+	
+	def __str__(self):
+		return "\n".join([self.display_subgoal(goal) for goal in self.goals])
+
+
+class DifferentCities(Different):
+
+	def record_value(self, goal):
+		return location(goal.arguments.subject())
+	
+	def display_record(self, record):
+		if city_(record):
+			return city_(record).getName()
+	
+
+
+PlayerCulture = Count.culture
+BuildingCount = Count.building
+PlayerPopulation = Count.population
+PlayerGold = Count.gold
+CityCount = Count.numCities
+ResourceCount = Count.resource
+SpecialistCount = Count.specialist
+AverageCulture = Count.averageCulture
+CorporationCount = Count.corporation
+CultureLevel = Count.cultureLevel
+
+Wonders = Wonder = Condition.wonder
+TradeConnection = Condition.tradeConnection
+Control = Condition.control
+CityBuilding = CityBuildings = Condition.cityBuilding
+Settle = Condition.settle
+ControlOrVassalize = Condition.controlOrVassalize
+MoreReligion = Condition.moreReligion
+
+FirstDiscovered = Trigger.firstDiscover
+Discovered = Trigger.discover
+FirstContact = Trigger.firstContact
+ConvertAfterFounding = Trigger.convertAfterFounding
+NoCityLost = Trigger.noCityLost
+FirstNewWorld = Trigger.firstNewWorld
+
+GoldenAges = Track.goldenAges
+TradeGold = Track.tradeGold
+SunkShips = Track.sunkShips
+EraFirstDiscovered = Track.eraFirsts
+RaidGold = Track.raidGold
+PillageCount = Track.pillage
+
+BestPopulationCity = BestCity.population
+BestCultureCity = BestCity.culture
+
+PopulationPercent = Percentage.population
+WorldPercent = Percentage.worldControl
