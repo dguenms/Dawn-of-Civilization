@@ -1808,7 +1808,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	}
 
 	// Leoreth: last resort
-	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() == 1)
+	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() <= 1)
 	{
 		if (GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_NUKED_US) == 0 &&
 			GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_RAZED_CITY) == 0)
