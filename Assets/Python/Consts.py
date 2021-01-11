@@ -938,7 +938,6 @@ lOceania = [rAustralia, rOceania]
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
 lAmerica = lSouthAmerica + lCentralAmerica + lNorthAmerica
->>>>>>> Encapsulate victory goals into classes
 
 #Projects
 

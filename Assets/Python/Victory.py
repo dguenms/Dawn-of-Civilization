@@ -2024,7 +2024,7 @@ dGoals = {
 	iThailand : (
 		OpenBordersCount(10).at(1650),
 		MostPopulationCity(tAyutthaya).at(1700),
-		NoForeignCities(plots.rectangle(tSouthAmerica)).only(lSouthAsianCivs).at(1900),
+		NoForeignCities(plots.rectangle(tSouthAsia)).only(lSouthAsianCivs).at(1900),
 	),
 	iCongo : (
 		ReligiousVotePercent(15).by(1650),

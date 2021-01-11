@@ -43,6 +43,20 @@ def getPlayerExperience(unit):
 
 
 # TODO: test
+def listify(item):
+	if isinstance(item, list):
+		return item
+	if isinstance(item, (tuple, set)):
+		return list(item)
+	return [item]
+
+
+# TODO: test
+def concat(left, right):
+	return tuple(listify(left) + listify(right))
+
+
+# TODO: test
 def equals(func):
 	def equals_func(*args):
 		remaining, objective = args[:-1], args[-1]
@@ -947,6 +961,14 @@ class EntityCollection(object):
 	# TODO: test
 	def take(self, iNum):
 		return self.limit(iNum).entities() + [None] * max(0, iNum-self.count())
+	
+	def enrich(self, func):
+		enrich = self.__class__([])
+		for key in self._keys:
+			enrich += func(key)
+		enriched = self + enrich
+		return enriched.unique()
+		
 
 
 class PlotsCorner:
@@ -1479,6 +1501,9 @@ class PlayerFactory:
 	
 	def at_war(self, iPlayer):
 		return self.all().at_war(iPlayer)
+	
+	def allies(self, iPlayer):
+		return self.of(iPlayer).enrich(self.defensivePacts).enrich(self.vassals)
 
 		
 class Players(EntityCollection):
@@ -1745,6 +1770,9 @@ class Infos:
 		
 	def building(self, identifier):
 		return gc.getBuildingInfo(identifier)
+	
+	def buildings(self):
+		return InfoCollection.type(gc.getBuildingInfo, gc.getNumBuildingInfos())
 		
 	def art(self, string):
 		return gc.getInterfaceArtInfo(self.type(string)).getPath()

@@ -816,7 +816,7 @@ class TestPlayerFactory(TestCase):
 
 	def setUp(self):
 		self.factory = PlayerFactory()
-		
+
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
@@ -883,8 +883,51 @@ class TestPlayerFactory(TestCase):
 		self.assert_(0 in players1)
 		
 		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
+	
+	def test_allies_with_vassal(self):
+		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(gc.getPlayer(0).getTeam(), True, False)
 		
+		allies = self.factory.allies(0)
 		
+		self.assertEqual(len(allies), 2)
+		self.assert_(0 in allies)
+		self.assert_(1 in allies)
+		
+		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(gc.getPlayer(0).getTeam(), False, False)
+	
+	def test_allies_with_defensive_pact(self):
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		
+		self.assertEqual(gc.getTeam(gc.getPlayer(0).getTeam()).isDefensivePact(gc.getPlayer(1).getTeam()), True)
+		self.assertEqual(gc.getTeam(gc.getPlayer(1).getTeam()).isDefensivePact(gc.getPlayer(0).getTeam()), True)
+		
+		allies = self.factory.allies(0)
+		
+		self.assertEqual(len(allies), 2)
+		self.assert_(0 in allies)
+		self.assert_(1 in allies)
+		
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+	
+	def test_allies_with_defensive_pact_vassal(self):
+		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(gc.getPlayer(1).getTeam(), True, False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		
+		allies = self.factory.allies(0)
+		
+		self.assertEqual(len(allies), 3)
+		self.assert_(0 in allies)
+		self.assert_(1 in allies)
+		self.assert_(2 in allies)
+		
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(gc.getPlayer(1).getTeam(), False, False)
+
+
 class TestUnits(TestCase):
 
 	def setUp(self):
@@ -1675,8 +1718,31 @@ class TestPlots(TestCase):
 		unit2.kill(False, -1)
 		
 		gc.getTeam(0).setAtWar(1, False)
+
+	def test_enrich(self):
+		tiles = [(0, 0), (0, 1), (0, 2)]
+		testPlots = Plots(tiles)
 		
+		enriched = testPlots.enrich(lambda (x, y): plots.of([(x+1, y)]))
 		
+		self.assertEqual(len(enriched), 6)
+		self.assert_((1, 0) in enriched)
+		self.assert_((1, 1) in enriched)
+		self.assert_((1, 2) in enriched)
+	
+	def test_enrich_unique(self):
+		tiles = [(0, 0)]
+		testPlots = Plots(tiles)
+		
+		func = lambda (x, y): plots.of([(x+1, y)])
+		enriched = testPlots.enrich(func).enrich(func)
+		
+		self.assertEqual(len(enriched), 3)
+		self.assert_((0, 0) in enriched)
+		self.assert_((1, 0) in enriched)
+		self.assert_((2, 0) in enriched)
+
+
 class TestPlotFactory(TestCase):
 
 	def setUp(self):

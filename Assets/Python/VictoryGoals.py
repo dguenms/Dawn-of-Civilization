@@ -242,6 +242,14 @@ class EventHandlers(object):
 				func(other, iCorporation)
 		
 		return corporationRemove
+	
+	def vassalState(self, func):
+		def vassalState(other, args):
+			iMaster, iVassal, bVassal, bCapitulated = args
+			if self.applicable(other, iMaster):
+				func(other)
+		
+		return vassalState
 				
 	
 handlers = EventHandlers.ours()
@@ -258,7 +266,8 @@ class classproperty(property):
 
 class Deferred(object):
 	
-	def __init__(self, provider):
+	def __init__(self, type, provider):
+		self.type = type
 		self.provider = provider
 	
 	def __call__(self, iPlayer=None):
@@ -266,10 +275,10 @@ class Deferred(object):
 
 
 def capital():
-	return Deferred(lambda p: capital_(p))
+	return Deferred(CyCity, lambda p: capital_(p))
 
 def city(*location):
-	return Deferred(lambda p: city_(*location))
+	return Deferred(CyCity, lambda p: city_(*location))
 	
 def holyCity():
 	def getHolyCity(iPlayer):
@@ -278,14 +287,24 @@ def holyCity():
 			return None
 		return game.getHolyCity(iStateReligion)
 		
-	return Deferred(lambda p: getHolyCity(p))
+	return Deferred(CyCity, getHolyCity)
 
 def wonder(iWonder):
-	return Deferred(lambda p: getBuildingCity(iWonder))
+	return Deferred(CyCity, lambda p: getBuildingCity(iWonder))
+
+def stateReligionBuilding(func):
+	def getStateReligionBuilding(iPlayer):
+		iStateReligion = player(iPlayer).getStateReligion()
+		if iStateReligion < 0:
+			return None
+		return func(iStateReligion)
+
+	return Deferred(CvBuildingInfo, getStateReligionBuilding)
 
 
 class Aggregate(object):
 
+	# TODO: 'generator' should accept a generator, list, or varargs
 	def __init__(self, aggregate, generator):
 		self.aggregate = aggregate
 		self.generator = generator
@@ -298,14 +317,17 @@ class Aggregate(object):
 	def __contains__(self, item):
 		return item in self.items
 	
+	def __eq__(self, item):
+		return item in self.items
+	
 	@property
 	def items(self):
 		if self._items is None:
 			self._items = list(self.generator)
 		return self._items
 	
-	def eval(self, func):
-		return self.aggregate([func(item) for item in self.items])
+	def eval(self, func, *args):
+		return self.aggregate([func(*concat(args, item)) for item in self.items])
 
 def avg_(iterable):
 	if len(iterable) == 0:
@@ -329,14 +351,20 @@ class Arguments(object):
 	
 	def setPlayer(self, iPlayer):
 		self.iPlayer = iPlayer
+	
+	# TODO: test that we already resolve deferred values
+	def value(self, item):
+		if isinstance(item, Deferred):
+			return item()
+		return item
 		
 	def produce(self, objective=[]):
 		result = []
 		
 		if self.subject:
-			result += [self.subject]
+			result += [self.value(self.subject)]
 		if objective:
-			result += list(objective)
+			result += list(self.value(obj) for obj in objective)
 		if self.iPlayer is not None:
 			result += [self.iPlayer]
 		
@@ -457,12 +485,13 @@ class ArgumentProcessor(object):
 		return values
 	
 	def valid_type(self, type, value):
+		if isinstance(value, Deferred):
+			return issubclass(type, value.type)
+	
 		if issubclass(type, CvInfoBase):
 			return isinstance(value, (int, Aggregate))
 		elif issubclass(type, Plots):
 			return isinstance(value, (Plots, Aggregate))
-		elif issubclass(type, CyCity):
-			return isinstance(value, Deferred)
 		return isinstance(value, type)
 	
 	def transform(self, type, value):
@@ -591,6 +620,12 @@ class BaseGoal(object):
 	@classmethod
 	def expired(cls, event, func):
 		handler = handlers.others().get(event, func)
+		return cls.build_handler(handler, func)
+	
+	# TODO: test
+	@classmethod
+	def any(cls, event, func):
+		handler = handlers.any().get(event, func)
 		return cls.build_handler(handler, func)
 	
 	@classmethod
@@ -731,7 +766,7 @@ class Condition(BaseGoal):
 	@classmethod
 	def city(cls, func):
 		def condition(self, city, objective):
-			return city() and func(city(), objective) or False
+			return city and func(city, objective) or False
 		
 		return cls.func(condition)
 
@@ -773,14 +808,6 @@ class Condition(BaseGoal):
 		return cls.objective(Plots).cities(settled).handle("cityBuilt", checkCityBuilt).subclass("Settled")
 	
 	@classproperty
-	def cityBuilding(cls):
-		def checkBuildingBuilt(self, city, iBuilding):
-			if at(city, self.arguments.subject()) and iBuilding in self.values:
-				self.check()
-	
-		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.isHasRealBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
-	
-	@classproperty
 	def project(cls):
 		def checkProjectBuilt(self, iProject):
 			if iProject in self.values:
@@ -794,7 +821,7 @@ class Condition(BaseGoal):
 	
 	@classproperty
 	def route(cls):
-		return cls.subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).subclass("Route")
+		return cls.subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).turnly.subclass("Route")
 		
 	@classproperty
 	def noStateReligion(cls):
@@ -808,7 +835,7 @@ class Condition(BaseGoal):
 		def covered(plot, iPlayer):
 			return plot.getOwner() == iPlayer
 		
-		return cls.objective(Plots).include_owner.plots(covered).subclass("CultureCovered")
+		return cls.objective(Plots).include_owner.plots(covered).turnly.subclass("CultureCovered")
 	
 	@classproperty
 	def communist(cls):
@@ -822,11 +849,11 @@ class Condition(BaseGoal):
 		oldinit = cls.__init__
 		def __init__(self, *arguments):
 			oldinit(self, *arguments)
-			self.lOf = []
+			self.lOnly = []
 			self.lExcluded = []
 		
-		def of(self, lCivs):
-			self.lOf = lCivs
+		def only(self, lCivs):
+			self.lOnly = lCivs
 			return self
 		
 		def excluding(self, lCivs):
@@ -836,7 +863,7 @@ class Condition(BaseGoal):
 		def valid(self, city):
 			if city.getOwner() == self.iPlayer:
 				return True
-			if self.lOf and civ(city) not in self.lOf:
+			if self.lOnly and civ(city) not in self.lOnly:
 				return True
 			if self.lExcluded and civ(city) in self.lExcluded:
 				return True
@@ -844,7 +871,7 @@ class Condition(BaseGoal):
 				return True
 			return False
 		
-		return cls.objective(Plots).func(__init__, of, excluding).cities(valid).subclass("NoForeignCities")
+		return cls.objective(Plots).func(__init__, only, excluding).cities(valid).subclass("NoForeignCities")
 	
 	@classproperty
 	def tradeConnection(cls):
@@ -913,10 +940,25 @@ class Count(BaseGoal):
 	def required(self, iRequired):
 		return iRequired
 	
-	def value(self, *objectives):
-		if objectives and isinstance(objectives[0], Aggregate):
-			return objectives[0].eval(self.value_function)
-		return self.value_function(*objectives)
+	def value(self, *arguments):
+		if any(argument is None for argument in arguments):
+			return 0
+			
+		aggregate, remainder = self.aggregate(*arguments)
+		if aggregate:
+			return aggregate.eval(self.value_function, *remainder)
+		
+		return self.value_function(*arguments)
+		
+	def aggregate(self, *arguments):
+		arglist = list(arguments)
+		aggregate = next(item for item in arglist if isinstance(item, Aggregate))
+		
+		if aggregate is None:
+			return None, None
+			
+		arglist.remove(aggregate)
+		return aggregate, arglist
 		
 	def value_function(self, objective):
 		raise NotImplementedError()
@@ -977,7 +1019,6 @@ class Count(BaseGoal):
 	@classmethod
 	def city(cls, func):
 		def value_function(self, city, *objectives):
-			city = city()
 			if not city or city.getOwner() != self.iPlayer:
 				return 0
 			
@@ -1044,7 +1085,7 @@ class Count(BaseGoal):
 		def value_function(self, objective):
 			return self._player.getUnitClassCount(infos.unit(objective).getUnitClassType())
 		
-		return cls.objective(CvUnitInfo).func(value_function).subclass("UnitCount")
+		return cls.objective(CvUnitInfo).func(value_function).turnly.subclass("UnitCount")
 		
 	@classproperty
 	def numCities(cls):
@@ -1067,24 +1108,29 @@ class Count(BaseGoal):
 			oldinit(self, *arguments)
 			self.conquered = plots.none()
 			self.lCivs = []
-			self.plots = plots.none()
+			self.inside_plots = plots.none()
+			self.outside_plots = plots.none()
 		
 		def civs(self, lCivs):
 			self.lCivs = lCivs
 			return self
 		
-		def area(self, plots):
-			self.plots = plots
+		def inside(self, plots):
+			self.inside_plots = plots
+			return self
+		
+		def outside(self, plots):
+			self.outside_plots = plots
 			return self
 		
 		def onCityAcquired(self, iOwner, city, bConquest):
-			if bConquest and (not self.lCivs or civ(iOwner) in self.lCivs) and (not self.plots or city in self.plots):
+			if bConquest and (not self.lCivs or civ(iOwner) in self.lCivs) and (not self.inside_plots or city in self.inside_plots) and (not self.outside_plots or city not in self.outside_plots):
 				self.conquered = self.conquered.including(city)
 		
 		def value_function(self):
 			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
 		
-		return cls.func(__init__, civs, area, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
+		return cls.func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
@@ -1119,7 +1165,7 @@ class Count(BaseGoal):
 		
 	@classproperty
 	def populationCities(cls):
-		return cls.objective(int).citiesWith(CyCity.getPopulation).subclass("PopulationCities")
+		return cls.objective(int).citiesWith(CyCity.getPopulation).turnly.subclass("PopulationCities")
 	
 	@classproperty
 	def cultureCities(cls):
@@ -1131,12 +1177,11 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def citySpecialist(cls):
-		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).subclass("CitySpecialistCount")
+		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).turnly.subclass("CitySpecialistCount")
 	
 	@classproperty
 	def cultureLevel(cls):
 		def display(self, city, iCultureLevel):
-			city = city()
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
 		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).turnly.subclass("CultureLevel")
@@ -1176,7 +1221,7 @@ class Count(BaseGoal):
 			
 			return player(iPlayer).AI_getAttitude(self.iPlayer) >= iAttitude
 		
-		return cls.subject(AttitudeTypes).func(__init__, civs, religion, communist).players(valid).subclass("AttitudeCount")
+		return cls.subject(AttitudeTypes).func(__init__, civs, religion, communist).players(valid).turnly.subclass("AttitudeCount")
 	
 	@classproperty
 	def vassals(cls):
@@ -1202,10 +1247,30 @@ class Count(BaseGoal):
 			
 			return team(iPlayer).isVassal(self._team.getID())
 		
-		return cls.func(__init__, civs, religion).players(valid).subclass("VassalCount")
+		def onVassalState(self):
+			self.check()
+		
+		return cls.func(__init__, civs, religion).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
+	
+	@classproperty
+	def cityBuilding(cls):
+		def checkBuildingBuilt(self, city, iBuilding):
+			if at(city, self.arguments.subject()) and iBuilding in self.values:
+				self.check()
+	
+		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
 
 
 class Percentage(Count):
+
+	SELF, VASSALS, ALLIES = range(3)
+	
+	default_included = SELF
+
+	def __init__(self, *arguments):
+		super(Percentage, self).__init__(*arguments)
+		
+		self.included = self.default_included
 
 	def condition(self, *arguments):
 		remainder, iRequired = arguments[:-1], arguments[-1]
@@ -1220,29 +1285,32 @@ class Percentage(Count):
 		if iTotal <= 0:
 			return 0.0
 		return 100.0 * self.player_value(*objectives) / iTotal
+	
+	@property
+	def valid_players(self):
+		if self.included == self.SELF:
+			return players.of(self.iPlayer)
+		elif self.included == self.VASSALS:
+			return players.vassals(self.iPlayer).including(self.iPlayer)
+		elif self.included == self.ALLIES:
+			return players.allies(self.iPlayer)
+		
+		raise Exception("self.included set to invalid value")
 		
 	def player_value(self, *objectives):
-		return self.value_function(self.iPlayer, *objectives)
+		return self.valid_players.sum(lambda p: self.value_function(p, *objectives))
 	
 	def total(self, *objectives):
 		return players.major().alive().sum(lambda p: self.value_function(p, *objectives))
 	
+	def includeVassals(self):
+		self.included = self.VASSALS
+		return self
+	
 	@classproperty
 	def allied(cls):
-		def player_value(self, *objectives):
-			iPlayerValue = 0
-			for iPlayer in players.major().alive():
-				iValue = self.value_function(iPlayer, *objectives)
-				iMaster = master(iPlayer)
-				
-				if self.iPlayer == iPlayer or self._team.isDefensivePact(player(iPlayer).getTeam()):
-					iPlayerValue += iValue
-				elif iMaster is not None and (iMaster == self.iPlayer or self._team.isDefensivePact(player(iMaster).getTeam())):
-					iPlayerValue += iValue
-			
-			return iPlayerValue
-		
-		return cls.func(player_value)
+		cls.default_included = cls.ALLIES
+		return cls
 		
 	@classproperty
 	def areaControl(cls):
@@ -1269,12 +1337,12 @@ class Percentage(Count):
 		def value(self, iReligion):
 			return game.calculateReligionPercent(iReligion)
 		
-		return cls.objective(CvReligionInfo).func(value).subclass("ReligionSpreadPercent")
+		return cls.objective(CvReligionInfo).func(value).turnly.subclass("ReligionSpreadPercent")
 	
 	@classproperty
 	def population(cls):
 		def value_function(self, iPlayer):
-			return team(iPlayer).getTotalPopulation()
+			return cities.owner(iPlayer).sum(CyCity.getPopulation)
 		
 		def total(self):
 			return game.getTotalPopulation()
@@ -1286,7 +1354,7 @@ class Percentage(Count):
 		def value_function(self, iPlayer):
 			return player(iPlayer).getVotes(16, 1)
 		
-		return cls.func(value_function).subclass("ReligiousVotePercent")
+		return cls.func(value_function).turnly.subclass("ReligiousVotePercent")
 	
 	@classproperty
 	def alliedCommerce(cls):
@@ -1314,19 +1382,23 @@ class Trigger(Condition):
 	def __init__(self, *arguments):
 		super(Trigger, self).__init__(*arguments)
 		
-		self.dCondition = dict((self.process_objectives(args), False) for args in self.arguments)
+		self.dCondition = dict((self.process_objectives(arguments), False) for arguments in self.arguments)
 	
 	def condition(self, *arguments):
 		return self.dCondition[self.process_objectives(arguments)]
 		
-	def complete(self, *objectives):
-		self.dCondition[self.arguments.produce(objectives)] = True
+	def complete(self, *arguments):
+		arguments = concat(self.arguments.subject, arguments)
+		self.dCondition[self.process_objectives(arguments)] = True
 		self.check()
 	
+	def hashable(self, item):
+		if isinstance(item, CyCity):
+			return False
+		return item is not None
+	
 	def process_objectives(self, arguments):
-		if isinstance(segment(arguments), Deferred):
-			return tuple()
-		return arguments
+		return tuple(argument for argument in arguments if self.hashable(argument))
 	
 	@classproperty
 	def failable(cls):
@@ -1349,6 +1421,7 @@ class Trigger(Condition):
 		
 		return cls.objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).expired("techAcquired", expireFirstDiscovered).subclass("FirstDiscovered")
 	
+	# TODO: should be dynamic
 	@classproperty
 	def firstNewWorld(cls):
 		def checkFirstNewWorld(self, city):
@@ -1630,9 +1703,9 @@ class BestCity(Best):
 	def valid(self, city, requiredCity):
 		if city is None:
 			return False
-		if requiredCity() is None:
+		if requiredCity is None:
 			return False
-		return city.getOwner() == self.iPlayer and at(city, requiredCity())
+		return city.getOwner() == self.iPlayer and at(city, requiredCity)
 	
 	@classproperty
 	def population(cls):
@@ -1931,44 +2004,82 @@ class DifferentCities(Different):
 	def display_record(self, record):
 		if city_(record):
 			return city_(record).getName()
-	
 
 
-PlayerCulture = Count.culture
+AttitudeCount = Count.attitude
+AverageCulture = Count.averageCulture
+AveragePopulation = Count.averagePopulation
 BuildingCount = Count.building
+CityBuilding = CityBuildings = Count.cityBuilding
+CityCount = Count.numCities
+CitySpecialistCount = Count.citySpecialist
+ConqueredCityCount = Count.conqueredCities
+ControlledResourceCount = Count.controlledResource
+CorporationCount = Count.corporation
+CultureCity = CultureCities = Count.cultureCities
+CultureLevel = Count.cultureLevel
+CultureLevelCities = Count.cultureLevelCities
+ImprovementCount = Count.improvement
+OpenBorderCount = Count.openBorders
+PlayerCulture = Count.culture
 PlayerPopulation = Count.population
 PlayerGold = Count.gold
-CityCount = Count.numCities
+PopulationCities = Count.populationCities
 ResourceCount = Count.resource
+SettledCityCount = Count.settledCities
 SpecialistCount = Count.specialist
-AverageCulture = Count.averageCulture
-CorporationCount = Count.corporation
-CultureLevel = Count.cultureLevel
+UnitCount = Count.unit
+VassalCount = Count.vassals
 
-Wonders = Wonder = Condition.wonder
-TradeConnection = Condition.tradeConnection
+Communist = Condition.communist
 Control = Condition.control
-CityBuilding = CityBuildings = Condition.cityBuilding
-Settle = Condition.settle
 ControlOrVassalize = Condition.controlOrVassalize
+CultureCovered = Condition.cultureCovered
+MoreCulture = Condition.moreCulture
 MoreReligion = Condition.moreReligion
+NoForeignCities = Condition.noForeignCities
+NoStateReligion = Condition.noStateReligion
+Project = Projects = Condition.project
+Route = Condition.route
+Settle = Condition.settle
+TradeConnection = Condition.tradeConnection
+Wonders = Wonder = Condition.wonder
 
-FirstDiscovered = Trigger.firstDiscover
-Discovered = Trigger.discover
-FirstContact = Trigger.firstContact
 ConvertAfterFounding = Trigger.convertAfterFounding
-NoCityLost = Trigger.noCityLost
+Discovered = Trigger.discover
+EnterEra = Trigger.enterEra
+FirstContact = Trigger.firstContact
+FirstDiscovered = Trigger.firstDiscover
 FirstNewWorld = Trigger.firstNewWorld
+NeverConquer = Trigger.neverConquer
+NoCityLost = Trigger.noCityLost
+TradeMission = Trigger.tradeMission
 
-GoldenAges = Track.goldenAges
-TradeGold = Track.tradeGold
-SunkShips = Track.sunkShips
+AcquiredCities = Track.acquiredCities
+BrokeredPeaceCount = Track.brokeredPeace
+EnslaveCount = Track.enslaves
 EraFirstDiscovered = Track.eraFirsts
-RaidGold = Track.raidGold
+GoldenAges = Track.goldenAges
+GreatGenerals = Track.greatGenerals
 PillageCount = Track.pillage
+PiracyGold = Track.piracyGold
+RaidGold = Track.raidGold
+RazeCount = Track.razes
+ResourceTradeGold = Track.resourceTradeGold
+SlaveTradeGold = Track.slaveTradeGold
+SunkShips = Track.sunkShips
+TradeGold = Track.tradeGold
 
-BestPopulationCity = BestCity.population
 BestCultureCity = BestCity.culture
+BestPopulationCity = BestCity.population
 
+BestPopulation = BestPlayer.population
+BestTech = BestPlayer.tech
+
+AlliedCommercePercent = Percentage.alliedCommerce
+AlliedPowerPercent = Percentage.alliedPower
+AreaPercent = Percentage.areaControl
 PopulationPercent = Percentage.population
+ReligionSpreadPercent = Percentage.religionSpread
+ReligiousVotePercent = Percentage.religiousVote
 WorldPercent = Percentage.worldControl

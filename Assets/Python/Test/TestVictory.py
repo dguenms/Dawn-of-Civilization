@@ -1261,114 +1261,6 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
-	def testCityBuildingNoCity(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
-		
-		self.assertEqual(bool(goal), False)
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		goal.deactivate()
-	
-	def testCityBuildingNoBuilding(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
-		
-		_city = player(0).initCity(61, 31)
-		
-		self.assertEqual(bool(goal), False)
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		_city.kill()
-		
-		goal.deactivate()
-	
-	def testCityBuildingWithBuilding(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
-		
-		_city = player(0).initCity(61, 31)
-		_city.setHasRealBuilding(iGranary, True)
-		
-		events.fireEvent("buildingBuilt", _city, iGranary)
-		
-		self.assertEqual(bool(goal), True)
-		self.assertEqual(goal.state, SUCCESS)
-		
-		_city.kill()
-		
-		goal.deactivate()
-		
-	def testCityBuildingDifferentCity(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
-		
-		_city = player(0).initCity(63, 31)
-		_city.setHasRealBuilding(iGranary, True)
-		
-		events.fireEvent("buildingBuilt", _city, iGranary)
-		
-		self.assertEqual(bool(goal), False)
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		_city.kill()
-		
-		goal.deactivate()
-	
-	def testCityMultipleBuildingsSome(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
-		
-		_city = player(0).initCity(61, 31)
-		for iBuilding in [iGranary, iBarracks]:
-			_city.setHasRealBuilding(iBuilding, True)
-			events.fireEvent("buildingBuilt", _city, iBuilding)
-		
-		self.assertEqual(bool(goal), False)
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		_city.kill()
-		
-		goal.deactivate()
-	
-	def testCityMultipleBuildingsAll(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
-		
-		_city = player(0).initCity(61, 31)
-		for iBuilding in [iGranary, iBarracks, iLibrary]:
-			_city.setHasRealBuilding(iBuilding, True)
-			events.fireEvent("buildingBuilt", _city, iBuilding)
-		
-		self.assertEqual(bool(goal), True)
-		self.assertEqual(goal.state, SUCCESS)
-		
-		_city.kill()
-		
-		goal.deactivate()
-	
-	def testCityMultipleBuildingsDifferentCities(self):
-		goal = Condition.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
-		
-		city1 = player(0).initCity(61, 31)
-		city2 = player(0).initCity(63, 31)
-		city1.setHasRealBuilding(iGranary, True)
-		city1.setHasRealBuilding(iBarracks, True)
-		city2.setHasRealBuilding(iLibrary, True)
-		
-		events.fireEvent("buildingBuilt", city1, iGranary)
-		events.fireEvent("buildingBuilt", city1, iBarracks)
-		events.fireEvent("buildingBuilt", city2, iLibrary)
-		
-		self.assertEqual(bool(goal), False)
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		city1.kill()
-		city2.kill()
-		
-		goal.deactivate()
-	
 	def testProjectNonExistent(self):
 		goal = Condition.project(iTheInternet)
 		goal.activate(0)
@@ -1603,8 +1495,8 @@ class TestConditionGoals(ExtendedTestCase):
 		city0.kill()
 		city1.kill()
 	
-	def testNoForeignCitiesOf(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).of([iBabylonia])
+	def testNoForeignCitiesOnly(self):
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia])
 		goal.activate(0)
 		
 		city0 = player(0).initCity(61, 31)
@@ -1615,8 +1507,8 @@ class TestConditionGoals(ExtendedTestCase):
 		city0.kill()
 		city1.kill()
 	
-	def testNoForeignCitiesOfOther(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).of([iBabylonia])
+	def testNoForeignCitiesOnlyOther(self):
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia])
 		goal.activate(0)
 		
 		city0 = player(0).initCity(61, 31)
@@ -1970,6 +1862,26 @@ class TestCountGoals(ExtendedTestCase):
 		self.assertEqual(goal.state, SUCCESS)
 		
 		city_(61, 31).kill()
+		
+		goal.deactivate()
+	
+	def testBuildingDeferred(self):
+		goal = Count.building(stateReligionBuilding(temple), 1)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasRealBuilding(iOrthodoxTemple, True)
+		
+		self.assertEqual(str(goal), "0 / 1")
+		self.assertEqual(bool(goal), False)
+		
+		player(0).setLastStateReligion(iCatholicism)
+		self.assertEqual(bool(goal), False)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		self.assertEqual(bool(goal), True)
+		
+		city.kill()
 		
 		goal.deactivate()
 	
@@ -2489,7 +2401,7 @@ class TestCountGoals(ExtendedTestCase):
 		city2.kill()
 	
 	def testConqueredCitiesAll(self):
-		goal = Count.conqueredCities(2).area(plots.rectangle((60, 30), (65, 35)))
+		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35)))
 		goal.activate(0)
 		
 		city1 = player(1).initCity(61, 31)
@@ -2508,7 +2420,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.deactivate()
 	
 	def testConqueredCitiesSome(self):
-		goal = Count.conqueredCities(2).area(plots.rectangle((60, 30), (65, 35)))
+		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35)))
 		goal.activate(0)
 		
 		city1 = player(0).initCity(61, 31)
@@ -2525,7 +2437,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.deactivate()
 	
 	def testConqueredCitiesTraded(self):
-		goal = Count.conqueredCities(1).area(plots.rectangle((60, 30), (65, 35)))
+		goal = Count.conqueredCities(1).inside(plots.rectangle((60, 30), (65, 35)))
 		goal.activate(0)
 		
 		city = player(1).initCity(61, 31)
@@ -2591,6 +2503,26 @@ class TestCountGoals(ExtendedTestCase):
 		city1.kill()
 		city2.kill()
 		city3.kill()
+		
+		goal.deactivate()
+	
+	def testConqueredCitiesOutside(self):
+		goal = Count.conqueredCities(2).outside(plots.rectangle((60, 30), (62, 32)))
+		goal.activate(0)
+		
+		city1 = player(1).initCity(61, 31)
+		player(0).acquireCity(city1, True, False)
+		city1 = city_(61, 31)
+		
+		city2 = player(1).initCity(63, 31)
+		player(0).acquireCity(city2, True, False)
+		city2 = city_(63, 31)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 2")
+		
+		city1.kill()
+		city2.kill()
 		
 		goal.deactivate()
 	
@@ -3048,6 +2980,7 @@ class TestCountGoals(ExtendedTestCase):
 		
 		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "2 / 2")
+		self.assertEqual(goal.state, SUCCESS)
 		
 		for i in [1, 2]:
 			team(i).setVassal(0, False, False)
@@ -3061,6 +2994,7 @@ class TestCountGoals(ExtendedTestCase):
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "1 / 2")
+		self.assertEqual(goal.state, POSSIBLE)
 		
 		for i in [iBabylonia, iHarappa]:
 			team(i).setVassal(0, False, False)
@@ -3076,11 +3010,147 @@ class TestCountGoals(ExtendedTestCase):
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "1 / 2")
+		self.assertEqual(goal.state, POSSIBLE)
 		
 		for i in [1, 2]:
 			team(i).setVassal(0, False, False)
 		
 		player(1).setLastStateReligion(-1)
+	
+	def testCityBuildingNoCity(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1")
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		goal.deactivate()
+	
+	def testCityBuildingNoBuilding(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1")
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		_city.kill()
+		
+		goal.deactivate()
+	
+	def testCityBuildingWithBuilding(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		_city.setHasRealBuilding(iGranary, True)
+		
+		events.fireEvent("buildingBuilt", _city, iGranary)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "1 / 1")
+		self.assertEqual(goal.state, SUCCESS)
+		
+		_city.kill()
+		
+		goal.deactivate()
+		
+	def testCityBuildingDifferentCity(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(63, 31)
+		_city.setHasRealBuilding(iGranary, True)
+		
+		events.fireEvent("buildingBuilt", _city, iGranary)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 1")
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		_city.kill()
+		
+		goal.deactivate()
+	
+	def testCityMultipleBuildingsSome(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		for iBuilding in [iGranary, iBarracks]:
+			_city.setHasRealBuilding(iBuilding, True)
+			events.fireEvent("buildingBuilt", _city, iBuilding)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 1\n1 / 1\n0 / 1")
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		_city.kill()
+		
+		goal.deactivate()
+	
+	def testCityMultipleBuildingsAll(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		for iBuilding in [iGranary, iBarracks, iLibrary]:
+			_city.setHasRealBuilding(iBuilding, True)
+			events.fireEvent("buildingBuilt", _city, iBuilding)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "1 / 1\n1 / 1\n1 / 1")
+		self.assertEqual(goal.state, SUCCESS)
+		
+		_city.kill()
+		
+		goal.deactivate()
+	
+	def testCityMultipleBuildingsDifferentCities(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city2 = player(0).initCity(63, 31)
+		city1.setHasRealBuilding(iGranary, True)
+		city1.setHasRealBuilding(iBarracks, True)
+		city2.setHasRealBuilding(iLibrary, True)
+		
+		events.fireEvent("buildingBuilt", city1, iGranary)
+		events.fireEvent("buildingBuilt", city1, iBarracks)
+		events.fireEvent("buildingBuilt", city2, iLibrary)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 1\n1 / 1\n0 / 1")
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		city1.kill()
+		city2.kill()
+		
+		goal.deactivate()
+	
+	def testCityBuildingSum(self):
+		goal = Count.cityBuilding(city(61, 31), sum([iGranary, iBarracks, iLibrary]), 2)
+		goal.activate(0)
+		
+		city_ = player(0).initCity(61, 31)
+		
+		city_.setHasRealBuilding(iGranary, True)
+		city_.setHasRealBuilding(iLibrary, True)
+		
+		events.fireEvent("buildingBuilt", city_, iGranary)
+		events.fireEvent("buildingBuilt", city_, iLibrary)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "2 / 2")
+		self.assertEqual(goal.state, SUCCESS)
+		
+		city_.kill()
+		
+		goal.deactivate()
 
 
 class TestPercentageGoals(ExtendedTestCase):
@@ -3281,6 +3351,31 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
+	def testPopulationIncludeVassals(self):
+		goal = Percentage.population(50).includeVassals()
+		goal.activate(0)
+		
+		city1 = player(0).initCity(30, 30)
+		city2 = player(1).initCity(32, 30)
+		city3 = player(2).initCity(34, 30)
+		
+		city1.setPopulation(5)
+		city2.setPopulation(5)
+		city3.setPopulation(10)
+		
+		team(1).setVassal(team(0).getID(), True, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "50.00% / 50%")
+		
+		city1.kill()
+		city2.kill()
+		city3.kill()
+		
+		team(1).setVassal(team(0).getID(), False, False)
+		
+		goal.deactivate()
+	
 	def testReligiousVote(self):
 		goal = Percentage.religiousVote(30)
 		goal.activate(1)
@@ -3402,12 +3497,14 @@ class TestPercentageGoals(ExtendedTestCase):
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
 		team(0).setDefensivePact(team(1).getID(), True)
+		team(1).setDefensivePact(team(0).getID(), True)
 		
 		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "75.00% / 30%")
 		
 		unit.kill(False, -1)
 		
+		team(1).setDefensivePact(team(0).getID(), False)
 		team(0).setDefensivePact(team(1).getID(), False)
 		
 		goal.deactivate()
@@ -3420,6 +3517,7 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 		team(2).setVassal(team(1).getID(), True, False)
 		team(0).setDefensivePact(team(1).getID(), True)
+		team(1).setDefensivePact(team(0).getID(), True)
 		
 		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "100.00% / 30%")
@@ -3428,6 +3526,7 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 		team(2).setVassal(team(1).getID(), False, False)
 		team(0).setDefensivePact(team(1).getID(), False)
+		team(1).setDefensivePact(team(0).getID(), False)
 		
 		goal.deactivate()
 	
@@ -5746,7 +5845,6 @@ class TestDifferentCities(ExtendedTestCase):
 		
 		city1.kill()
 		city2.kill()
-		
 	
 
 test_cases = [
