@@ -24,8 +24,8 @@ dGoals = {
 	),
 	iBabylonia: (
 		FirstDiscovered(iConstruction, iArithmetics, iWriting, iCalendar, iContract),
-		BestPopulationCity(city(tBabylon)).at(-850),
-		BestCultureCity(city(tBabylon)).at(-700),
+		BestPopulationCity(city(tBabylon).named("BABYLON")).at(-850),
+		BestCultureCity(city(tBabylon).named("BABYLON")).at(-700),
 	),
 	iHarappa: (
 		TradeConnection().by(-1600),

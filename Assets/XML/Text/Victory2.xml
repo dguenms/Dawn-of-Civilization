@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Victory -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_UHV__TITLE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- BASIC TEXT KEYS USED BY FUNDAMENTAL GOAL CODE -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BY</Tag>
+		<English>by %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN</Tag>
+		<English>in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TOTAL_OF</Tag>
+		<English>a total of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- NUMBERS TO BE SPELLED OUT -->
+
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_1</Tag>
+		<English>one</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_2</Tag>
+		<English>two</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_3</Tag>
+		<English>three</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_4</Tag>
+		<English>four</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_5</Tag>
+		<English>five</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_6</Tag>
+		<English>six</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_7</Tag>
+		<English>seven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_8</Tag>
+		<English>eight</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_9</Tag>
+		<English>nine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_10</Tag>
+		<English>ten</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_11</Tag>
+		<English>eleven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUMBER_12</Tag>
+		<English>twelve</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- NAMES FOR CITIES AND AREAS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_BABYLON</Tag>
+		<English>Babylon</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- GOAL DESCRIPTIONS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUILDING_COUNT</Tag>
+		<English>Build %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLAYER_CULTURE</Tag>
+		<English>Have more than %s1 Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WONDER</Tag>
+		<English>Build %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FIRST_DISCOVERED</Tag>
+		<English>Be the first to discover %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_POPULATION_CITY</Tag>
+		<English>Make %s2 the most populous city in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_CULTURE_CITY</Tag>
+		<English>Make %s2 the most culturally advanced city in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TRADE_CONNECTION</Tag>
+		<English>Establish a trade connection with another civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLAYER_POPULATION</Tag>
+		<English>Have a total population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

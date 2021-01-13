@@ -266,16 +266,24 @@ class classproperty(property):
 
 class Deferred(object):
 	
-	def __init__(self, type, provider):
+	def __init__(self, type, provider, name=""):
 		self.type = type
 		self.provider = provider
+		self.named(name)
 	
 	def __call__(self, iPlayer=None):
 		return self.provider(iPlayer)
+	
+	def __str__(self):
+		return text(self.name)
+	
+	def named(self, name):
+		self.name = "TXT_KEY_UHV_NAME_" + name
+		return self
 
 
 def capital():
-	return Deferred(CyCity, lambda p: capital_(p))
+	return Deferred(CyCity, lambda p: capital_(p), "CAPITAL")
 
 def city(*location):
 	return Deferred(CyCity, lambda p: city_(*location))
@@ -287,7 +295,7 @@ def holyCity():
 			return None
 		return game.getHolyCity(iStateReligion)
 		
-	return Deferred(CyCity, getHolyCity)
+	return Deferred(CyCity, getHolyCity, "HOLY_CITY")
 
 def wonder(iWonder):
 	return Deferred(CyCity, lambda p: getBuildingCity(iWonder))
@@ -328,6 +336,10 @@ class Aggregate(object):
 	
 	def eval(self, func, *args):
 		return self.aggregate([func(*concat(args, item)) for item in self.items])
+	
+	def format(self, formatter):
+		return text("TXT_KEY_UHV_TOTAL_OF", format_separators(self.items, ",", text("TXT_KEY_AND"), formatter))
+
 
 def avg_(iterable):
 	if len(iterable) == 0:
@@ -409,6 +421,13 @@ class ArgumentProcessor(object):
 	defaults = {
 		int : lambda: 1,
 		Players : lambda: players.major().alive(),
+	}
+
+	types = {
+		CvBuildingInfo: infos.building,
+		CvReligionInfo: infos.religion,
+		CvTechInfo: infos.tech,
+		CvUnitInfo: infos.unit,	
 	}
 	
 	@classmethod
@@ -498,6 +517,49 @@ class ArgumentProcessor(object):
 		if issubclass(type, list):
 			return tuple(value)
 		return value
+	
+	def clean(self, value):
+		#value = str(value)	
+		if isinstance(value, str) and value.startswith('The'):
+			value = value.replace('The', 'the')
+		return value
+		
+	def type_formatter(self, type):
+		if issubclass(type, CyCity):
+			return CyCity.getName
+		if issubclass(type, CvInfoBase):
+			return lambda info: self.types[type](info).getText()
+		return lambda item: item
+	
+	def format_value(self, type, value):
+		formatter = self.type_formatter(type)
+		
+		# TODO: this needs to be better
+		if isinstance(value, Deferred):
+			return str(value)
+		if isinstance(value, Aggregate):
+			return value.format(formatter)
+		return formatter(value)
+	
+	def format_objectives(self, objectives):
+		return format_separators(objectives, ",", text("TXT_KEY_AND"), self.format_objective)
+	
+	def format_objective(self, objective):
+		if len(objective) == 2 and self.objective_types[1] == int:
+			return format_counted(*self.apply_formatters(objective))
+	
+		return " ".join([str(item) for item in list(self.apply_formatters(objective))])
+		
+	def apply_formatters(self, objective):
+		return (self.clean(self.format_value(type, value)) for type, value in zip(self.objective_types, objective))
+	
+	def format_subject(self, subject):
+		if not self.subject_type:
+			return ""
+		return self.format_value(self.subject_type, subject)
+	
+	def format(self, key, arguments):
+		return text(key, self.format_objectives(arguments.objectives), self.format_subject(arguments.subject))
 
 
 class GoalBuilder(object):
@@ -629,6 +691,10 @@ class BaseGoal(object):
 		return cls.build_handler(handler, func)
 	
 	@classmethod
+	def desc(cls, text):
+		return cls.attribute("_desc", "TXT_KEY_UHV_" + text)
+	
+	@classmethod
 	def process_arguments(cls, *arguments):
 		if not cls.types:
 			return ((),)
@@ -638,6 +704,12 @@ class BaseGoal(object):
 		self.reset()
 		
 		self.arguments = self.process_arguments(*arguments)
+		
+		if hasattr(self, '_desc'):
+			self._description = self.types.format(self._desc, self.arguments)
+		else:
+			self._description = ""
+		
 		self.handlers = self.__class__.handlers[:]
 		
 	def __nonzero__(self):
@@ -708,6 +780,9 @@ class BaseGoal(object):
 	def condition(self, objective=None):
 		raise NotImplementedError()
 	
+	def description(self):
+		return self._description
+	
 	def display(self):
 		raise NotImplementedError()
 		
@@ -722,6 +797,7 @@ class BaseGoal(object):
 				self.finalCheck()
 		
 		self.register("BeginPlayerTurn", checkTurn)
+		self._description += " " + text("TXT_KEY_UHV_IN", format_date(iYear))
 		return self
 	
 	def by(self, iYear):
@@ -731,6 +807,7 @@ class BaseGoal(object):
 				self.expire()
 		
 		self.register("BeginPlayerTurn", checkExpire)
+		self._description += " " + text("TXT_KEY_UHV_BY", format_date(iYear))
 		return self
 
 class Condition(BaseGoal):
@@ -780,7 +857,7 @@ class Condition(BaseGoal):
 			if iWonder in self.values:
 				self.check()
 	
-		return cls.objective(CvBuildingInfo).player(CyPlayer.isHasBuilding).expired("buildingBuilt", checkExpiration).handle("buildingBuilt", checkWonderBuilt).subclass("Wonder")
+		return cls.desc("WONDER").objective(CvBuildingInfo).player(CyPlayer.isHasBuilding).expired("buildingBuilt", checkExpiration).handle("buildingBuilt", checkWonderBuilt).subclass("Wonder")
 	
 	@classproperty
 	def control(cls):
@@ -878,7 +955,7 @@ class Condition(BaseGoal):
 		def condition(self):
 			return players.major().alive().without(self.iPlayer).any(lambda p: self._player.canContact(p) and self._player.canTradeNetworkWith(p))
 		
-		return cls.func(condition).turnly.subclass("TradeConnection")
+		return cls.desc("TRADE_CONNECTION").func(condition).turnly.subclass("TradeConnection")
 	
 	@classproperty
 	def moreReligion(cls):
@@ -1043,11 +1120,11 @@ class Count(BaseGoal):
 		def checkCityAcquired(self, *args):
 			self.check()
 	
-		return cls.objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
+		return cls.desc("BUILDING_COUNT").objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
-		return cls.player(CyPlayer.countTotalCulture).scaled.turnly.subclass("PlayerCulture")
+		return cls.desc("PLAYER_CULTURE").player(CyPlayer.countTotalCulture).scaled.turnly.subclass("PlayerCulture")
 	
 	@classproperty
 	def gold(cls):
@@ -1070,7 +1147,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def population(cls):
-		return cls.player(CyPlayer.getTotalPopulation).turnly.subclass("PlayerPopulation")
+		return cls.desc("PLAYER_POPULATION").player(CyPlayer.getTotalPopulation).turnly.subclass("PlayerPopulation")
 	
 	@classproperty
 	def corporation(cls):
@@ -1419,7 +1496,7 @@ class Trigger(Condition):
 			if iTech in self.values:
 				self.expire()
 		
-		return cls.objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).expired("techAcquired", expireFirstDiscovered).subclass("FirstDiscovered")
+		return cls.desc("FIRST_DISCOVERED").objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).expired("techAcquired", expireFirstDiscovered).subclass("FirstDiscovered")
 	
 	# TODO: should be dynamic
 	@classproperty
@@ -1712,14 +1789,14 @@ class BestCity(Best):
 		def metric(self, city):
 			return city.getPopulation()
 		
-		return cls.subject(CyCity).func(metric).subclass("BestPopulationCity")
+		return cls.desc("BEST_POPULATION_CITY").subject(CyCity).func(metric).subclass("BestPopulationCity")
 	
 	@classproperty
 	def culture(cls):
 		def metric(self, city):
 			return city.getCulture(city.getOwner())
 		
-		return cls.subject(CyCity).func(metric).subclass("BestCultureCity")
+		return cls.desc("BEST_CULTURE_CITY").subject(CyCity).func(metric).subclass("BestCultureCity")
 	
 
 class BestPlayer(Best):

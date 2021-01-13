@@ -12,6 +12,7 @@ import Popup
 import BugCore
 
 import random
+import re
 
 from traceback import extract_stack
 from sets import Set
@@ -28,6 +29,8 @@ engine = CyEngine()
 game = gc.getGame()
 map = gc.getMap()
 
+irregular_plurals = {}
+
 
 def since(iTurn):
 	return turn() - iTurn
@@ -40,6 +43,36 @@ def getPlayerExperience(unit):
 		iExperience += player(unit).getStateReligionFreeExperience()
 	
 	return iExperience
+
+
+# TODO: test
+def plural(word):
+	if word in irregular_plurals:
+		return irregular_plurals[word]
+
+	if word.endswith('s'):
+		return word
+	
+	if word.endswith('y'):
+		return re.sub('y$', 'ies', word)
+	
+	return word + 's'
+
+
+# TODO: test
+def format_counted(item, count):
+	if count > 1:
+		item = plural(item)
+	
+	count = text_if_exists("TXT_KEY_UHV_NUMBER_%d" % count, otherwise=count)
+	return "%s %s" % (count, item)
+
+
+# TODO: test
+def format_date(year):
+	if year >= 0:
+		return text("TXT_KEY_YEAR_AD", year)
+	return text("TXT_KEY_YEAR_BC", -year)
 
 
 # TODO: test
