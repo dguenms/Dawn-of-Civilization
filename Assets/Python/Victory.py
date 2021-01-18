@@ -823,7 +823,7 @@ class CityCultureLevel(RequiredValueGoal):
 		return city(self.tile).getCulture(self.iPlayer)
 	
 	def required(self):
-		return infos.culture(self.iCultureLevel).getSpeedThreshold(game.getGameSpeedType())
+		return infos.cultureLevel(self.iCultureLevel).getSpeedThreshold(game.getGameSpeedType())
 
 
 class CapitalCultureLevel(RequiredValueGoal):
@@ -842,7 +842,7 @@ class CapitalCultureLevel(RequiredValueGoal):
 		return capital(self.iPlayer).getCulture(self.iPlayer)
 	
 	def required(self):
-		return infos.culture(self.iCultureLevel).getSpeedThreshold()
+		return infos.cultureLevel(self.iCultureLevel).getSpeedThreshold()
 	
 	def condition(self):
 		return location(capital(self.iPlayer)) not in self.excluded and super(CapitalCultureLevel, self).condition()
@@ -2623,15 +2623,15 @@ def checkTurn(iGameTurn, iPlayer):
 			tCapital = (capital.getX(), capital.getY())
 			
 			if iGameTurn <= year(900):
-				if not data.tFirstTurkicCapital and capital.getCulture(iPlayer) >= infos.culture(3).getSpeedThreshold(game.getGameSpeedType()):
+				if not data.tFirstTurkicCapital and capital.getCulture(iPlayer) >= infos.cultureLevel(3).getSpeedThreshold(game.getGameSpeedType()):
 					data.tFirstTurkicCapital = tCapital
 			
 			if iGameTurn <= year(1100):
-				if data.tFirstTurkicCapital and not data.tSecondTurkicCapital and tCapital != data.tFirstTurkicCapital and capital.getCulture(iPlayer) >= infos.culture(4).getSpeedThreshold(game.getGameSpeedType()):
+				if data.tFirstTurkicCapital and not data.tSecondTurkicCapital and tCapital != data.tFirstTurkicCapital and capital.getCulture(iPlayer) >= infos.cultureLevel(4).getSpeedThreshold(game.getGameSpeedType()):
 					data.tSecondTurkicCapital = tCapital
 					
 			if iGameTurn <= year(1400):
-				if tCapital != data.tFirstTurkicCapital and tCapital != data.tSecondTurkicCapital and data.tFirstTurkicCapital and data.tSecondTurkicCapital and capital.getCulture(iPlayer) >= infos.culture(5).getSpeedThreshold(game.getGameSpeedType()):
+				if tCapital != data.tFirstTurkicCapital and tCapital != data.tSecondTurkicCapital and data.tFirstTurkicCapital and data.tSecondTurkicCapital and capital.getCulture(iPlayer) >= infos.cultureLevel(5).getSpeedThreshold(game.getGameSpeedType()):
 					win(iPlayer, 2)
 					
 		if iGameTurn == year(900):
@@ -5543,7 +5543,7 @@ def getUHVHelp(iPlayer, iGoal):
 			if pPlayer.getNumCities() > 0:
 				capital = pPlayer.getCapitalCity()
 				iCulture = capital.getCulture(iPlayer)
-				iRequiredCulture = infos.culture(iCultureLevel).getSpeedThreshold(game.getGameSpeedType())
+				iRequiredCulture = infos.cultureLevel(iCultureLevel).getSpeedThreshold(game.getGameSpeedType())
 			
 				if location(capital) in [data.tFirstTurkicCapital, data.tSecondTurkicCapital]:
 					aHelp.append(getIcon(False) + text("TXT_KEY_VICTORY_NO_NEW_CAPITAL"))

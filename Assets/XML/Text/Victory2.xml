@@ -44,12 +44,92 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MORE_THAN</Tag>
+		<English>more %s1 than %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEMPLES</Tag>
+		<English>temples</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SHRINES</Tag>
+		<English>shrines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WONDERS</Tag>
+		<English>wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_DIFFERENT_HAPPINESS_RESOURCES</Tag>
+		<English>different happiness</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SOME</Tag>
+		<English>%s1 %s2 out of</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENTITY_IN</Tag>
+		<English>%s1 %s2 in %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TO_YOUR_ENTITY</Tag>
+		<English>%s3 to %s1 of your %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TO_PERCENT</Tag>
+		<English>%s2 to %s1%%</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CITY</Tag>
+		<English>city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- NUMBERS TO BE SPELLED OUT -->
 
 	<TEXT>
 		<Tag>TXT_KEY_UHV_NUMBER_1</Tag>
-		<English>one</English>
+		<English>a</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -154,12 +234,246 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_CARTHAGE</Tag>
+		<English>Carthage</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_CONSTANTINOPLE</Tag>
+		<English>Constantinople</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_LHASA</Tag>
+		<English>Lhasa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_CAPITAL</Tag>
+		<English>your capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_DIFFERENT_CAPITAL</Tag>
+		<English>a different capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_ANOTHER_CAPITAL</Tag>
+		<English>another capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_ITALY</Tag>
+		<English>Italy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_IBERIA</Tag>
+		<English>Iberia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_HAWAII</Tag>
+		<English>Hawaii</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_NEW_ZEALAND</Tag>
+		<English>New Zealand</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MARQUESAS</Tag>
+		<English>Marquesas</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_EASTER_ISLAND</Tag>
+		<English>Easter Island</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_GAUL</Tag>
+		<English>Gaul</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_BRITAIN</Tag>
+		<English>Britain</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_AFRICA</Tag>
+		<English>Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_ANATOLIA</Tag>
+		<English>Anatolia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_DECCAN</Tag>
+		<English>the Deccan</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_SRIVIJAYA</Tag>
+		<English>Srivijaya</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_BALKANS</Tag>
+		<English>the Balkans</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_NEAR_EAST</Tag>
+		<English>the Near East</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_NORTH_AFRICA</Tag>
+		<English>North Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_KOREA</Tag>
+		<English>Korea</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MANCHURIA</Tag>
+		<English>Manchuria</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_CHINA</Tag>
+		<English>China</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_INDOCHINA</Tag>
+		<English>Indochina</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_INDONESIA</Tag>
+		<English>Indonesia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_PHILIPPINES</Tag>
+		<English>the Philippines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MAGHREB</Tag>
+		<English>the Maghreb</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MESOPOTAMIA</Tag>
+		<English>Mesopotamia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- GOAL DESCRIPTIONS -->
 	
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BUILDING_COUNT</Tag>
-		<English>Build %s1</English>
+		<English>control %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -167,7 +481,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLAYER_CULTURE</Tag>
-		<English>Have more than %s1 Culture</English>
+		<English>have more than %s1 culture</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -175,7 +489,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_WONDER</Tag>
-		<English>Build %s1</English>
+		<English>build %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -183,7 +497,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FIRST_DISCOVERED</Tag>
-		<English>Be the first to discover %s1</English>
+		<English>be the first to discover %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -191,7 +505,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BEST_POPULATION_CITY</Tag>
-		<English>Make %s2 the most populous city in the world</English>
+		<English>make %s2 the most populous city in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -199,7 +513,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BEST_CULTURE_CITY</Tag>
-		<English>Make %s2 the most culturally advanced city in the world</English>
+		<English>make %s2 the most culturally advanced city in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -207,7 +521,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TRADE_CONNECTION</Tag>
-		<English>Establish a trade connection with another civilization</English>
+		<English>establish a trade connection with another civilization</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -215,7 +529,263 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLAYER_POPULATION</Tag>
-		<English>Have a total population of %s1</English>
+		<English>have a total population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GOLDEN_AGES</Tag>
+		<English>experience %s1 Golden Ages</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CONTROL</Tag>
+		<English>control %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POPULATION_PERCENT</Tag>
+		<English>control %s1%% of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CITY_BUILDING</Tag>
+		<English>build %s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLAYER_GOLD</Tag>
+		<English>have %s1 gold</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SETTLE</Tag>
+		<English>settle %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WORLD_PERCENT</Tag>
+		<English>control %s1%% of the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CITY_COUNT</Tag>
+		<English>have %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FIRST_CONTACT_NEW_WORLD</Tag>
+		<English>Make contact with a European civilization before any European civilization discovers America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_DISCOVERED</Tag>
+		<English>discover %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CONTROL_OR_VASSALIZE</Tag>
+		<English>control or vassalise %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TRADE_GOLD</Tag>
+		<English>acquire %s1 gold by trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RESOURCE_COUNT</Tag>
+		<English>acquire %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT</Tag>
+		<English>settle %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CONVERT_AFTER_FOUNDING</Tag>
+		<English>convert to %s1 %s2 turns after its foundation</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MORE_RELIGION</Tag>
+		<English>ensure there are %s1 cities in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SUNK_SHIPS</Tag>
+		<English>sink %s1 enemy ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AVERAGE_CULTURE</Tag>
+		<English>have an average city culture of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NO_CITY_LOST</Tag>
+		<English>never lose a city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ERA_FIRST_DISCOVERED</Tag>
+		<English>be the first to discover %s1 era technologies</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ANY_EUROPEAN_CORE</Tag>
+		<English>control the core of another European civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FIRST_NEW_WORLD</Tag>
+		<English>be the first to found a city in America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RAID_GOLD</Tag>
+		<English>acquire %s1 gold by pillaging, conquering cities and sinking ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PILLAGE_COUNT</Tag>
+		<English>pillage %s1 improvements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SILK_ROUTE</Tag>
+		<English>create an overland trade route from any city in China to one of your Mediterranean ports</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CORPORATION_COUNT</Tag>
+		<English>spread %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CULTURE_LEVEL</Tag>
+		<English>have %s1 culture in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_TECH_PLAYER</Tag>
+		<English>be the most advanced civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RELIGION_SPREAD_PERCENT</Tag>
+		<English>spread %s1 of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ACQUIRED_CITIES</Tag>
+		<English>acquire %s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CITY_SPECIALIST_COUNT</Tag>
+		<English>settle %s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_POPULATION_PLAYER</Tag>
+		<English>have the largest population in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

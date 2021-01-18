@@ -266,10 +266,10 @@ class classproperty(property):
 
 class Deferred(object):
 	
-	def __init__(self, type, provider, name=""):
+	def __init__(self, type, provider):
 		self.type = type
 		self.provider = provider
-		self.named(name)
+		self.name = ""
 	
 	def __call__(self, iPlayer=None):
 		return self.provider(iPlayer)
@@ -283,7 +283,7 @@ class Deferred(object):
 
 
 def capital():
-	return Deferred(CyCity, lambda p: capital_(p), "CAPITAL")
+	return Deferred(CyCity, lambda p: capital_(p)).named("CAPITAL")
 
 def city(*location):
 	return Deferred(CyCity, lambda p: city_(*location))
@@ -295,7 +295,7 @@ def holyCity():
 			return None
 		return game.getHolyCity(iStateReligion)
 		
-	return Deferred(CyCity, getHolyCity, "HOLY_CITY")
+	return Deferred(CyCity, getHolyCity).named("HOLY_CITY")
 
 def wonder(iWonder):
 	return Deferred(CyCity, lambda p: getBuildingCity(iWonder))
@@ -318,6 +318,7 @@ class Aggregate(object):
 		self.generator = generator
 		
 		self._items = None
+		self.name = None
 	
 	def __iter__(self):
 		return iter(self.items)
@@ -338,7 +339,13 @@ class Aggregate(object):
 		return self.aggregate([func(*concat(args, item)) for item in self.items])
 	
 	def format(self, formatter):
-		return text("TXT_KEY_UHV_TOTAL_OF", format_separators(self.items, ",", text("TXT_KEY_AND"), formatter))
+		if self.name:
+			return self.name
+		return format_separators(self.items, ",", text("TXT_KEY_AND"), formatter)
+	
+	def named(self, key):
+		self.name = text("TXT_KEY_UHV_%s" % key)
+		return self
 
 
 def avg_(iterable):
@@ -351,6 +358,20 @@ def sum(generator):
 
 def avg(generator):
 	return Aggregate(avg_, generator)
+
+# TODO: test
+def different(generator):
+	return Aggregate(count, generator)
+
+
+def religious_buildings(func):
+	return sum(func(iReligion) for iReligion in infos.religions())
+
+def wonders():
+	return sum(iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding)).named("WONDERS")
+
+def happiness_resources():
+	return (iBonus for iBonus in infos.bonuses() if infos.bonus(iBonus).getHappiness() > 0)
 
 
 class Arguments(object):
@@ -396,6 +417,8 @@ class ArgumentProcessorBuilder(object):
 		self.objective_types = []
 		self.subject_type = None
 		self.objective_split = 0
+		
+		self.options = FormatOptions()
 	
 	def withObjectiveTypes(self, *objective_types):
 		self.objective_types = list(objective_types)
@@ -409,11 +432,86 @@ class ArgumentProcessorBuilder(object):
 		self.objective_split = objective_split
 		return self
 		
+	def withOptions(self, options):
+		self.options = options
+		return self
+		
 	def initialized(self):
 		return bool(self.objective_types)
 	
 	def build(self):
-		return ArgumentProcessor(self.objective_types, self.subject_type, self.objective_split)
+		return ArgumentProcessor(self.objective_types, self.subject_type, self.objective_split, self.options)
+
+
+class FormatOptionsBuilder(object):
+
+	def objective(self, key):
+		return FormatOptions().objective(key)
+	
+	def entity(self, key):
+		return FormatOptions().entity(key)
+	
+	def city(self):
+		return FormatOptions().city()
+	
+	def singular(self):
+		return FormatOptions().singular()
+	
+	def number_word(self):
+		return FormatOptions().number_word()
+	
+	def noSingularCount(self, func):
+		return FormatOptions().noSingularCount(func)
+	
+	def type(self, type, formatter):
+		return FormatOptions().type(type, formatter)
+
+
+options = FormatOptionsBuilder()
+
+		
+class FormatOptions(object):
+
+	def __init__(self):
+		self.objective_key = None
+		self.entity_key = None
+		
+		self.bPlural = True
+		self.bNumberWord = False
+		
+		self.no_singular_count = None
+		
+		self.type_formatters = {}
+	
+	def objective(self, key):
+		self.objective_key = "TXT_KEY_UHV_%s" % key
+		return self
+	
+	def entity(self, key):
+		self.entity_key = "TXT_KEY_UHV_%s" % key
+		return self
+	
+	def city(self):
+		return self.entity("CITY")
+	
+	def singular(self):
+		self.bPlural = False
+		return self
+	
+	def number_word(self):
+		self.bNumberWord = True
+		return self
+	
+	def noSingularCount(self, func):
+		self.no_singular_count = func
+		return self
+	
+	def type(self, type, formatter):
+		self.type_formatters[type] = formatter
+		return self
+	
+	def type_formatter(self, type):
+		return self.type_formatters.get(type)
 
 
 class ArgumentProcessor(object):
@@ -422,13 +520,6 @@ class ArgumentProcessor(object):
 		int : lambda: 1,
 		Players : lambda: players.major().alive(),
 	}
-
-	types = {
-		CvBuildingInfo: infos.building,
-		CvReligionInfo: infos.religion,
-		CvTechInfo: infos.tech,
-		CvUnitInfo: infos.unit,	
-	}
 	
 	@classmethod
 	def default(cls, type):
@@ -436,7 +527,7 @@ class ArgumentProcessor(object):
 		if default:
 			return default()
 
-	def __init__(self, objective_types=[], subject_type=None, objective_split=0, include_owner=False):
+	def __init__(self, objective_types=[], subject_type=None, objective_split=0, format_options=FormatOptions()):
 		if not isinstance(objective_types, list):
 			raise ValueError("Objective types need to be a list")
 			
@@ -446,6 +537,8 @@ class ArgumentProcessor(object):
 		self.objective_types = objective_types
 		self.subject_type = subject_type
 		self.objective_split = objective_split
+		
+		self.options = format_options
 	
 	def process(self, *arguments):
 		if arguments and not self.objective_types and not self.subject_type:
@@ -517,18 +610,121 @@ class ArgumentProcessor(object):
 		if issubclass(type, list):
 			return tuple(value)
 		return value
+		
+	# default: (value1, value2, value3...) + (type1, type2, type3...), we use type+value -> format, then: "fmt(v1) fmt(v2) fmt(v3)"
+	# there should be a default fmt function for each type
+	# 
+	# optional: define TXT_KEY -> text("TXT_KEY", fmt(v1), fmt(v2), fmt(v3)...)
 	
-	def clean(self, value):
-		#value = str(value)	
-		if isinstance(value, str) and value.startswith('The'):
-			value = value.replace('The', 'the')
+	def format_basic(self, values):
+		formatted_values = [self.format_value(type, value) for type, value in zip(self.objective_types, values)]
+		
+		if self.objective_text:
+			return text(self.objective_text, *formatted_values)
+		
+		return " ".join(formatted_values)
+	
+	# for count we need to be able to handle plurals etc.
+	# but also: we need to turn off plurals if needed
+	# but also: do not display count if 1
+	# but also: inject other word to be pluralised if desired (e.g. "city")
+	
+	def is_count(self):
+		return len(self.objective_types) == 2 and self.objective_types[1] == int
+	
+	def format_objective(self, values):
+		formatted_values = [str(self.format_value(type, value)) for type, value in zip(self.objective_types, values)]
+		
+		if self.is_count():
+			count = values[-1]
+		
+			if self.options.entity_key:
+				formatted_values = concat(text(self.options.entity_key), formatted_values)
+		
+			if self.options.bPlural and count > 1:
+				formatted_values[0] = plural(formatted_values[0])
+			
+			formatted_values = concat(number_word(formatted_values[-1]), formatted_values[:-1])
+		
+			if self.options.no_singular_count and not isinstance(values[0], (Deferred, Aggregate)) and count == 1:
+				if self.options.no_singular_count(values[0]):
+					formatted_values = formatted_values[1:]
+		
+		if self.options.objective_key:
+			return text(self.options.objective_key, *formatted_values)
+		
+		return " ".join(formatted_values)
+	
+	def format_counted(self, item, count):
+		type = self.objective_types[0]
+		item_text = self.format_value(type, item)
+		
+		# Options().city().objective("ENTITY_IN")
+		if issubclass(type, Plots):
+			city = text("TXT_KEY_UHV_CITY")
+			if count > 1:
+				city = plural(city)
+			
+			item_text = text("TXT_KEY_UHV_ENTITY_IN", city, item_text)
+		
+		# Options().city().objective("TO_YOUR_ENTITY")
+		elif issubclass(type, CvCorporationInfo):
+			city = text("TXT_KEY_UHV_CITY")
+			if count > 1:
+				city = plural(city)
+			
+			return text("TXT_KEY_UHV_TO_YOUR_ENTITY", item_text, number_word(count), city)
+		
+		# Options().singular()
+		elif count > 1 and not issubclass(type, (CvBonusInfo, CvEraInfo)):
+			item_text = plural(item_text)
+		
+		# this can be part of the building formatter (or all formatters?)
+		if item_text.startswith('The'):
+			item_text = item_text.replace('The', 'the')
+		
+		# do we really need "a total of"? -> we don't
+		if isinstance(item, Aggregate):
+			return text("TXT_KEY_UHV_TOTAL_OF", "%s %s" % (number_word(count), item_text))
+		
+		# Options().noSingularCount(isWonder)
+		if issubclass(type, CvBuildingInfo) and isinstance(item, int) and isWonder(item) and count == 1:
+			return item_text
+		
+		return "%s %s" % (number_word(count), item_text)
+	
+	def format_building(self, identifier):
+		text = infos.building(identifier).getText()
+		
+		if text.startswith('The'):
+			text = text.replace('The', 'the')
+		
+		return text
+	
+	def format_int(self, value):
+		value = str(value)
+		if self.options.bNumberWord:
+			value = number_word(value)
+		
 		return value
 		
 	def type_formatter(self, type):
+		specific_formatter = self.options.type_formatter(type)
+		if specific_formatter:
+			return specific_formatter
+	
 		if issubclass(type, CyCity):
 			return CyCity.getName
+		if issubclass(type, CvCultureLevelInfo):
+			return lambda info: infos.cultureLevel(info).getText().lower()
+		if issubclass(type, CvBuildingInfo):
+			return self.format_building
 		if issubclass(type, CvInfoBase):
-			return lambda info: self.types[type](info).getText()
+			return lambda info: infos.text(type, info)
+		if issubclass(type, Plots):
+			return Plots.name
+		if issubclass(type, int):
+			return self.format_int
 		return lambda item: item
 	
 	def format_value(self, type, value):
@@ -539,23 +735,34 @@ class ArgumentProcessor(object):
 			return str(value)
 		if isinstance(value, Aggregate):
 			return value.format(formatter)
+		
 		return formatter(value)
 	
 	def format_objectives(self, objectives):
 		return format_separators(objectives, ",", text("TXT_KEY_AND"), self.format_objective)
 	
+	"""
 	def format_objective(self, objective):
-		if len(objective) == 2 and self.objective_types[1] == int:
-			return format_counted(*self.apply_formatters(objective))
+		if self.objective_formatter:
+			return self.objective_formatter(*self.apply_formatters(objective))
+		
+		
 	
-		return " ".join([str(item) for item in list(self.apply_formatters(objective))])
+		#if len(objective) == 2 and self.objective_types[1] == int:
+		#	return self.format_counted(*objective)
+		
+		#if self.objective_types == [CvReligionInfo, CvReligionInfo]:
+		#	return text("TXT_KEY_UHV_MORE_THAN", *list(text(infos.religion(item).getAdjectiveKey()) for item in objective))
+	
+		return " ".join([self.final(item) for item in list(self.apply_formatters(objective))])
 		
 	def apply_formatters(self, objective):
-		return (self.clean(self.format_value(type, value)) for type, value in zip(self.objective_types, objective))
+		return (self.format_value(type, value) for type, value in zip(self.objective_types, objective))
+	"""
 	
 	def format_subject(self, subject):
 		if not self.subject_type:
-			return ""
+			return "<no subject type>"
 		return self.format_value(self.subject_type, subject)
 	
 	def format(self, key, arguments):
@@ -599,6 +806,10 @@ class GoalBuilder(object):
 	
 	def include_owner(self):
 		self.owner_included = True
+		return self
+	
+	def format_options(self, options):
+		self.types.withOptions(options)
 		return self
 		
 	def members(self):
@@ -662,6 +873,11 @@ class BaseGoal(object):
 		return cls
 	
 	@classmethod
+	def format(cls, options):
+		cls.builder.format_options(options)
+		return cls
+	
+	@classmethod
 	def build_handler(cls, handler, func):
 		event = handler.__name__
 		handler.__name__ = "%s_%s" % (handler.__name__, func.__name__)
@@ -692,7 +908,7 @@ class BaseGoal(object):
 	
 	@classmethod
 	def desc(cls, text):
-		return cls.attribute("_desc", "TXT_KEY_UHV_" + text)
+		return cls.attribute("_desc", "TXT_KEY_UHV_%s" % text)
 	
 	@classmethod
 	def process_arguments(cls, *arguments):
@@ -780,8 +996,12 @@ class BaseGoal(object):
 	def condition(self, objective=None):
 		raise NotImplementedError()
 	
+	def named(self, key):
+		self._description = text("TXT_KEY_UHV_%s" % key)
+		return self
+	
 	def description(self):
-		return self._description
+		return capitalize(self._description)
 	
 	def display(self):
 		raise NotImplementedError()
@@ -864,14 +1084,14 @@ class Condition(BaseGoal):
 		def controlled(self, city):
 			return city.getOwner() == self.iPlayer
 	
-		return cls.objective(Plots).cities(controlled).subclass("Control")
+		return cls.desc("CONTROL").objective(Plots).cities(controlled).subclass("Control")
 	
 	@classproperty
 	def controlOrVassalize(cls):
 		def controlled_or_vassalized(self, city):
 			return city.getOwner() in players.vassals(self.iPlayer).including(self.iPlayer)
 		
-		return cls.objective(Plots).cities(controlled_or_vassalized).subclass("ControlOrVassalize")
+		return cls.desc("CONTROL_OR_VASSALIZE").objective(Plots).cities(controlled_or_vassalized).subclass("ControlOrVassalize")
 	
 	@classproperty
 	def settle(cls):
@@ -882,7 +1102,7 @@ class Condition(BaseGoal):
 			if any(city in area for area in self.values):
 				self.check()
 		
-		return cls.objective(Plots).cities(settled).handle("cityBuilt", checkCityBuilt).subclass("Settled")
+		return cls.desc("SETTLE").objective(Plots).cities(settled).handle("cityBuilt", checkCityBuilt).subclass("Settle")
 	
 	@classproperty
 	def project(cls):
@@ -968,7 +1188,10 @@ class Condition(BaseGoal):
 		def display(self, plots, iOurReligion, iOtherReligion):
 			return "%d / %d" % (self.religionCities(plots, iOurReligion), self.religionCities(plots, iOtherReligion))
 		
-		return cls.subject(Plots).objectives(CvReligionInfo, CvReligionInfo).func(religionCities, condition, display).subclass("MoreReligion")
+		def format_religion(identifier):
+			return text(infos.religion(identifier).getAdjectiveKey())
+		
+		return cls.desc("MORE_RELIGION").format(options.objective("MORE_THAN").type(CvReligionInfo, format_religion)).subject(Plots).objectives(CvReligionInfo, CvReligionInfo).func(religionCities, condition, display).subclass("MoreReligion")
 	
 	@classproperty
 	def moreCulture(cls):
@@ -1001,6 +1224,10 @@ class Count(BaseGoal):
 	@classmethod
 	def objectives(cls, *types):
 		types = list(types) + [int]
+		return cls.plain_objectives(*types)
+	
+	@classmethod
+	def plain_objectives(cls, *types):
 		cls.builder.objectives(types)
 		return cls
 	
@@ -1120,7 +1347,7 @@ class Count(BaseGoal):
 		def checkCityAcquired(self, *args):
 			self.check()
 	
-		return cls.desc("BUILDING_COUNT").objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
+		return cls.desc("BUILDING_COUNT").format(options.noSingularCount(isWonder)).objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
@@ -1128,11 +1355,11 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def gold(cls):
-		return cls.player(CyPlayer.getGold).scaled.subclass("PlayerGold")
+		return cls.desc("PLAYER_GOLD").player(CyPlayer.getGold).scaled.subclass("PlayerGold")
 	
 	@classproperty
 	def resource(cls):
-		return cls.objective(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).turnly.subclass("ResourceCount")
+		return cls.desc("RESOURCE_COUNT").format(options.singular()).objective(CvBonusInfo).player(CyPlayer.getNumAvailableBonuses).turnly.subclass("ResourceCount")
 	
 	@classproperty
 	def controlledResource(cls):
@@ -1155,7 +1382,7 @@ class Count(BaseGoal):
 			if iCorporation in self.values:
 				self.check()
 	
-		return cls.objective(CvCorporationInfo).player(CyPlayer.countCorporations).handle("corporationSpread", checkCorporationSpread).subclass("CorporationCount")
+		return cls.desc("CORPORATION_COUNT").format(options.objective("TO_YOUR_ENTITY").city()).objective(CvCorporationInfo).player(CyPlayer.countCorporations).handle("corporationSpread", checkCorporationSpread).subclass("CorporationCount")
 	
 	@classproperty
 	def unit(cls):
@@ -1169,7 +1396,7 @@ class Count(BaseGoal):
 		def owned(self, cities):
 			return cities.owner(self.iPlayer)
 	
-		return cls.cities(owned).subclass("CityCount")
+		return cls.desc("CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(owned).subclass("CityCount")
 	
 	@classproperty
 	def settledCities(cls):
@@ -1230,11 +1457,11 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def specialist(cls):
-		return cls.objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).turnly.subclass("SpecialistCount")
+		return cls.desc("SPECIALIST_COUNT").objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).turnly.subclass("SpecialistCount")
 	
 	@classproperty
 	def averageCulture(cls):
-		return cls.player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).turnly.subclass("AverageCulture")
+		return cls.desc("AVERAGE_CULTURE").player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).turnly.subclass("AverageCulture")
 	
 	@classproperty
 	def averagePopulation(cls):
@@ -1254,14 +1481,14 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def citySpecialist(cls):
-		return cls.subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).turnly.subclass("CitySpecialistCount")
+		return cls.desc("CITY_SPECIALIST_COUNT").subject(CyCity).objective(CvSpecialistInfo).city(CyCity.getFreeSpecialistCount).turnly.subclass("CitySpecialistCount")
 	
 	@classproperty
 	def cultureLevel(cls):
 		def display(self, city, iCultureLevel):
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
-		return cls.subject(CyCity).city(CyCity.getCultureLevel).func(display).turnly.subclass("CultureLevel")
+		return cls.desc("CULTURE_LEVEL").plain_objectives(CvCultureLevelInfo).subject(CyCity).city(CyCity.getCultureLevel).func(display).turnly.subclass("CultureLevel")
 	
 	@classproperty
 	def attitude(cls):
@@ -1335,7 +1562,7 @@ class Count(BaseGoal):
 			if at(city, self.arguments.subject()) and iBuilding in self.values:
 				self.check()
 	
-		return cls.subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
+		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
 
 
 class Percentage(Count):
@@ -1407,14 +1634,14 @@ class Percentage(Count):
 		def total(self):
 			return map.getLandPlots()
 		
-		return cls.func(value_function, total).turnly.subclass("WorldPercent")
+		return cls.desc("WORLD_PERCENT").func(value_function, total).turnly.subclass("WorldPercent")
 	
 	@classproperty
 	def religionSpread(cls):
 		def value(self, iReligion):
 			return game.calculateReligionPercent(iReligion)
 		
-		return cls.objective(CvReligionInfo).func(value).turnly.subclass("ReligionSpreadPercent")
+		return cls.desc("RELIGION_SPREAD_PERCENT").format(options.objective("TO_PERCENT").singular()).objective(CvReligionInfo).func(value).turnly.subclass("ReligionSpreadPercent")
 	
 	@classproperty
 	def population(cls):
@@ -1424,7 +1651,7 @@ class Percentage(Count):
 		def total(self):
 			return game.getTotalPopulation()
 		
-		return cls.func(value_function, total).subclass("PopulationPercent")
+		return cls.desc("POPULATION_PERCENT").func(value_function, total).subclass("PopulationPercent")
 	
 	@classproperty
 	def religiousVote(cls):
@@ -1505,7 +1732,7 @@ class Trigger(Condition):
 			if city in plots.regions(*lAmerica) and cities.regions(*lAmerica).without(city).none(lambda city: civ(city.getOriginalOwner()) not in dCivGroups[iCivGroupAmerica]):
 				self.complete()
 	
-		return cls.handle("cityBuilt", checkFirstNewWorld).subclass("FirstNewWorld")
+		return cls.desc("FIRST_NEW_WORLD").handle("cityBuilt", checkFirstNewWorld).subclass("FirstNewWorld")
 	
 	@classproperty
 	def discover(cls):
@@ -1513,7 +1740,7 @@ class Trigger(Condition):
 			if iTech in self.values:
 				self.complete(iTech)
 		
-		return cls.objective(CvTechInfo).handle("techAcquired", checkDiscovered).subclass("Discovered")
+		return cls.desc("DISCOVERED").objective(CvTechInfo).handle("techAcquired", checkDiscovered).subclass("Discovered")
 	
 	@classproperty
 	def firstContact(cls):
@@ -1531,7 +1758,7 @@ class Trigger(Condition):
 		def checkCityLost(self, iOtherPlayer, bConquest):
 			self.fail()
 		
-		return cls.failable.handle("cityLost", checkCityLost).subclass("NoCityLost")
+		return cls.desc("NO_CITY_LOST").failable.handle("cityLost", checkCityLost).subclass("NoCityLost")
 	
 	@classproperty
 	def tradeMission(cls):
@@ -1567,7 +1794,7 @@ class Trigger(Condition):
 				else:
 					self.fail()
 		
-		return cls.subject(int).objective(CvReligionInfo).func(__init__).handle("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
+		return cls.desc("CONVERT_AFTER_FOUNDING").format(options.number_word()).subject(int).objective(CvReligionInfo).func(__init__).handle("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
 	
 	@classproperty
 	def enterEra(cls):
@@ -1636,7 +1863,7 @@ class Track(Count):
 			if self._player.isGoldenAge() and not self._player.isAnarchy():
 				self.increment()
 		
-		return cls.handle("BeginPlayerTurn", incrementGoldenAges).func(required).subclass("GoldenAges")
+		return cls.desc("GOLDEN_AGES").format(options.number_word()).handle("BeginPlayerTurn", incrementGoldenAges).func(required).subclass("GoldenAges")
 	
 	@classproperty
 	def eraFirsts(cls):
@@ -1646,7 +1873,7 @@ class Track(Count):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
-		return cls.objective(CvTechInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscover")
+		return cls.desc("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscovered")
 	
 	@classproperty
 	def sunkShips(cls):
@@ -1654,7 +1881,7 @@ class Track(Count):
 			if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
 				self.increment()
 		
-		return cls.handle("combatResult", incrementShipsSunk).subclass("SunkShips")
+		return cls.desc("SUNK_SHIPS").handle("combatResult", incrementShipsSunk).subclass("SunkShips")
 	
 	@classproperty
 	def tradeGold(cls):
@@ -1672,19 +1899,20 @@ class Track(Count):
 			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
 			self.accumulate(iGold)
 		
-		return cls.handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
+		return cls.desc("TRADE_GOLD").handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
 	
 	@classproperty
+	# TODO: should include gold from sinking ships
 	def raidGold(cls):
-		return cls.accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
+		return cls.desc("RAID_GOLD").accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
 	
 	@classproperty
 	def pillage(cls):
-		return cls.incremented("unitPillage").subclass("PillageCount")
+		return cls.desc("PILLAGE_COUNT").incremented("unitPillage").subclass("PillageCount")
 	
 	@classproperty
 	def acquiredCities(cls):
-		return cls.incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
+		return cls.desc("ACQUIRED_CITIES").incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
 	
 	@classproperty
 	def piracyGold(cls):
@@ -1818,14 +2046,14 @@ class BestPlayer(Best):
 		def metric(self, iPlayer):
 			return infos.techs().where(lambda iTech: team(iPlayer).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost())
 		
-		return cls.func(metric).subclass("BestTechPlayer")
+		return cls.desc("BEST_TECH_PLAYER").func(metric).subclass("BestTechPlayer")
 	
 	@classproperty
 	def population(cls):
 		def metric(self, iPlayer):
 			return player(iPlayer).getRealPopulation()
 		
-		return cls.func(metric).subclass("BestPopulationPlayer")
+		return cls.desc("BEST_POPULATION_PLAYER").func(metric).subclass("BestPopulationPlayer")
 	
 
 # TODO: should be turnly
@@ -1915,6 +2143,18 @@ class All(BaseGoal):
 	
 		self.goals = goals
 		
+		self.init_description()
+	
+	# this needs to be a little better: not split by char but by words
+	def init_description(self):
+		descriptions = [goal._description for goal in self.goals]
+		descriptions = replace_shared_words(descriptions)
+		
+		reverse_descriptions = [description[::-1] for description in descriptions[::-1]]
+		descriptions = [description[::-1].strip() for description in replace_shared_words(reverse_descriptions)][::-1]
+		
+		self._description = format_separators(descriptions, ",", text("TXT_KEY_AND"))
+		
 	def subgoal_callback(self, goal):
 		if goal.state == SUCCESS:
 			self.check()
@@ -1964,6 +2204,12 @@ class Some(BaseGoal):
 		self.iRequired = iRequired
 		
 		self.goal.check = self.check
+		
+		self.init_description()
+	
+	def init_description(self):
+		first = self.goal.description().split(" ", -1)[0]
+		self._description = self.goal.description().replace(first, text("TXT_KEY_UHV_SOME", first, number_word(self.iRequired)))
 	
 	def subgoal_callback(self, goal):
 		if goal.state == SUCCESS:
@@ -1985,6 +2231,9 @@ class Some(BaseGoal):
 	
 		if state == FAILURE:
 			self.goal.fail()
+	
+	def description(self):
+		return capitalize(self._description)
 	
 	def __nonzero__(self):
 		return count(self.goal.condition(*args) for args in self.goal.arguments) >= self.iRequired
@@ -2065,6 +2314,9 @@ class Different(BaseGoal):
 	def unique_records(self):
 		records = [self.recorded(goal) for goal in self.goals]
 		return len(records) == len(set(records))
+	
+	def description(self):
+		return capitalize(format_separators([goal._description for goal in self.goals], ",", text("TXT_KEY_AND")))
 	
 	def __nonzero__(self):
 		return all(goal.state == SUCCESS or goal for goal in self.goals) and self.unique_records()

@@ -1,6 +1,14 @@
 from VictoryGoals import *
 from Locations import *
 
+
+### UTILS ###
+
+def description(iCiv):
+	for goal in dGoals[iCiv]:
+		print goal.description()
+
+
 ### CONSTANTS ###
 
 # general constants
@@ -49,45 +57,45 @@ dGoals = {
 	),
 	iIndia: (
 		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1)).at(-100),
-		BuildingCount(sum(temple(iReligion) for iReligion in range(iNumReligions)), 20).by(700),
+		BuildingCount(religious_buildings(temple).named("TEMPLES"), 20).by(700),
 		PopulationPercent(20).at(1200),
 	),
 	iPhoenicia: (
-		CityBuildings(city(tCarthage), iPalace, iGreatCothon).by(-300),
+		CityBuildings(city(tCarthage).named("CARTHAGE"), (iPalace, 1), (iGreatCothon, 1)).by(-300),
 		Control(
-			plots.rectangle(dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)),
-			plots.rectangle(tIberia),
+			plots.rectangle(dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named("ITALY"),
+			plots.rectangle(tIberia).named("IBERIA"),
 		).at(-100),
 		PlayerGold(5000).at(200),
 	),
 	iPolynesia: (
 		Some(Settle(
-			plots.rectangle(tHawaii),
-			plots.rectangle(tNewZealand),
-			plots.rectangle(tMarquesas),
-			plots.rectangle(tEasterIsland),
+			plots.rectangle(tHawaii).named("HAWAII"),
+			plots.rectangle(tNewZealand).named("NEW_ZEALAND"),
+			plots.rectangle(tMarquesas).named("MARQUESAS"),
+			plots.rectangle(tEasterIsland).named("EASTER_ISLAND"),
 		), 2).by(800),
 		Settle(
-			plots.rectangle(tHawaii),
-			plots.rectangle(tNewZealand),
-			plots.rectangle(tMarquesas),
-			plots.rectangle(tEasterIsland),
+			plots.rectangle(tHawaii).named("HAWAII"),
+			plots.rectangle(tNewZealand).named("NEW_ZEALAND"),
+			plots.rectangle(tMarquesas).named("MARQUESAS"),
+			plots.rectangle(tEasterIsland).named("EASTER_ISLAND"),
 		).by(1000),
 		Wonder(iMoaiStatues).by(1200),
 	),
 	iPersia: (
 		WorldPercent(7).by(140),
-		BuildingCount(sum(iBuilding for iBuilding in range(iNumBuildings) if isWonder(iBuilding)), 7).by(350),
-		BuildingCount(sum(shrine(iReligion) for iReligion in range(iNumReligions)), 2).at(350),
+		BuildingCount(wonders(), 7).by(350),
+		BuildingCount(religious_buildings(shrine).named("SHRINES"), 2).at(350),
 	),
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3)).by(100),
 		CityCount(
-			(plots.normal(iSpain), 2),
-			(plots.rectangle(tGaul), 2),
-			(plots.core(iEngland), 1),
-			(plots.rectangle(tAfrica), 2),
-			(plots.core(iByzantium), 4),
+			(plots.normal(iSpain).named("IBERIA"), 2),
+			(plots.rectangle(tGaul).named("GAUL"), 2),
+			(plots.core(iEngland).named("BRITAIN"), 1),
+			(plots.rectangle(tAfrica).named("AFRICA"), 2),
+			(plots.core(iByzantium).named("ANATOLIA"), 4),
 			(plots.core(iEgypt), 2),
 		).at(320),
 		FirstDiscovered(iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService),
@@ -95,7 +103,7 @@ dGoals = {
 	iMaya: (
 		Discovered(iCalendar).by(200),
 		Wonder(iTempleOfKukulkan).by(900),
-		FirstContact(plots.rectangle(tSouthAmerica) + plots.rectangle(tNorthAmerica), *dCivGroups[iCivGroupEurope]),
+		FirstContact(plots.rectangle(tSouthAmerica) + plots.rectangle(tNorthAmerica), *dCivGroups[iCivGroupEurope]).named("FIRST_CONTACT_NEW_WORLD"),
 	),
 	iTamils: (
 		All(
@@ -103,8 +111,8 @@ dGoals = {
 			PlayerCulture(2000),
 		).at(800),
 		ControlOrVassalize(
-			plots.rectangle(tDeccan),
-			plots.rectangle(tSrivijaya),
+			plots.rectangle(tDeccan).named("DECCAN"),
+			plots.rectangle(tSrivijaya).named("SRIVIJAYA"),
 		).at(1000),
 		TradeGold(4000).by(1200),
 	),
@@ -113,9 +121,10 @@ dGoals = {
 		All(
 			ConvertAfterFounding(5, iOrthodoxy),
 			SpecialistCount(iSpecialistGreatProphet, 3),
+			# TODO: 'a Orthodox Cathedral'
 			BuildingCount(iOrthodoxCathedral, 1),
 		).by(1200),
-		MoreReligion(plots.regions(*lAfrica), iOrthodoxy, iIslam).at(1500),
+		MoreReligion(plots.regions(*lAfrica).named("AFRICA"), iOrthodoxy, iIslam).at(1500),
 	),
 	iKorea: (
 		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1)).by(1200),
@@ -125,13 +134,13 @@ dGoals = {
 	iByzantium: (
 		PlayerGold(5000).at(1000),
 		All(
-			BestPopulationCity(city(tConstantinople)),
-			BestCultureCity(city(tConstantinople)),
+			BestPopulationCity(city(tConstantinople).named("CONSTANTINOPLE")),
+			BestCultureCity(city(tConstantinople).named("CONSTANTINOPLE")),
 		).at(1200),
 		CityCount(
-			(plots.rectangle(tBalkans), 3),
-			(plots.rectangle(tNorthAfrica), 3),
-			(plots.rectangle(tNearEast), 3),
+			(plots.rectangle(tBalkans).named("BALKANS"), 3),
+			(plots.rectangle(tNorthAfrica).named("NORTH_AFRICA"), 3),
+			(plots.rectangle(tNearEast).named("NEAR_EAST"), 3),
 		).at(1450),
 	),
 	iJapan: (
@@ -140,17 +149,17 @@ dGoals = {
 			NoCityLost(),
 		).by(1600),
 		ControlOrVassalize(
-			plots.rectangle(tKorea),
-			plots.rectangle(tManchuria),
-			plots.rectangle(tChina),
-			plots.rectangle(tIndochina).without(lIndochinaExceptions),
-			plots.rectangle(tIndonesia),
-			plots.rectangle(tPhilippines),
+			plots.rectangle(tKorea).named("KOREA"),
+			plots.rectangle(tManchuria).named("MANCHURIA"),
+			plots.rectangle(tChina).named("CHINA"),
+			plots.rectangle(tIndochina).without(lIndochinaExceptions).named("INDOCHINA"),
+			plots.rectangle(tIndonesia).named("INDONESIA"),
+			plots.rectangle(tPhilippines).named("PHILIPPINES"),
 		).at(1940),
 		EraFirstDiscovered((iGlobal, 8), (iDigital, 8)),
 	),
 	iVikings: (
-		Any(Control(*list(plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if dSpawn[iCiv] <= 1050))).at(1050),
+		Any(Control(*list(plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if dSpawn[iCiv] <= 1050))).named("ANY_EUROPEAN_CORE").at(1050),
 		FirstNewWorld().by(1100),
 		RaidGold(3000).by(1500),
 	),
@@ -160,34 +169,34 @@ dGoals = {
 			PillageCount(20),
 		).by(900),
 		All(
-			RouteConnection(plots.rectangle(tChina), plots.of(lMediterraneanPorts), infos.routes()),
+			RouteConnection(plots.rectangle(tChina), plots.of(lMediterraneanPorts), infos.routes()).named("SILK_ROUTE"),
 			CorporationCount(iSilkRoute, 10)
 		).by(1100),
 		DifferentCities(
 			CultureLevel(capital(), iCultureLevelDeveloping).by(900),
-			CultureLevel(capital(), iCultureLevelRefined).by(1100),
-			CultureLevel(capital(), iCultureLevelInfluential).by(1400),
+			CultureLevel(capital().named("DIFFERENT_CAPITAL"), iCultureLevelRefined).by(1100),
+			CultureLevel(capital().named("ANOTHER_CAPITAL"), iCultureLevelInfluential).by(1400),
 		),
 	),
 	iArabia: (
 		BestTech().at(1300),
 		ControlOrVassalize(
 			plots.core(iEgypt),
-			plots.rectangle(tAfrica),
-			plots.core(iBabylonia),
-			plots.core(iPersia),
+			plots.rectangle(tAfrica).named("MAGHREB"),
 			plots.normal(iSpain),
+			plots.core(iBabylonia).named("MESOPOTAMIA"),
+			plots.core(iPersia),
 		).at(1300),
 		ReligionSpreadPercent(iIslam, 30),
 	),
 	iTibet: (
 		AcquiredCities(5).by(1000),
 		ReligionSpreadPercent(iBuddhism, 25).by(1400),
-		CitySpecialistCount(city(plots.capital(iTibet)), iSpecialistGreatProphet, 5).by(1700),
+		CitySpecialistCount(city(plots.capital(iTibet)).named("LHASA"), iSpecialistGreatProphet, 5).by(1700),
 	),
 	iIndonesia: (
 		BestPopulation().at(1300),
-		ResourceCount(sum(iResource for iResource in infos.bonuses() if infos.bonus(iResource).getHappiness() > 0), 10).by(1500),
+		ResourceCount(different(happiness_resources()).named("DIFFERENT_HAPPINESS_RESOURCES"), 10).by(1500),
 		PopulationPercent(9).at(1940),
 	),
 	iMoors: (

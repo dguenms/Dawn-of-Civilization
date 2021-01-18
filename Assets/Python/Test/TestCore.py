@@ -447,13 +447,13 @@ class TestInfos(TestCase):
 		self.assert_(isinstance(actual_buildingclassinfo, CvBuildingClassInfo))
 		self.assertEqual(actual_buildingclassinfo.getText(), expected_buildingclassinfo.getText())
 	
-	def test_culture(self):
+	def test_cultureLevel(self):
 		# given
 		iCultureLevel = 0
 		expected_culturelevelinfo = gc.getCultureLevelInfo(0)
 		
 		# when
-		actual_culturelevelinfo = self.infos.culture(iCultureLevel)
+		actual_culturelevelinfo = self.infos.cultureLevel(iCultureLevel)
 		
 		# then
 		self.assert_(isinstance(actual_culturelevelinfo, CvCultureLevelInfo))
@@ -1741,6 +1741,21 @@ class TestPlots(TestCase):
 		self.assert_((0, 0) in enriched)
 		self.assert_((1, 0) in enriched)
 		self.assert_((2, 0) in enriched)
+	
+	def test_no_name(self):
+		self.assertEqual(self.plots.name(), "")
+	
+	def test_named(self):
+		plots = self.plots.named("someName")
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(plots.name(), "someName")
+	
+	def test_name_preserved_by_transformation(self):
+		plots = self.plots.named("someName")
+		plots = self.plots.where(lambda p: p.getX() == 1)
+		
+		self.assertEqual(plots.name(), "someName")
 
 
 class TestPlotFactory(TestCase):
