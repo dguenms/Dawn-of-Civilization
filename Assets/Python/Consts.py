@@ -84,9 +84,9 @@ iNumCivGroups = 6
 (iCivGroupEurope, iCivGroupAsia, iCivGroupMiddleEast, iCivGroupMediterranean, iCivGroupAfrica, iCivGroupAmerica) = range(iNumCivGroups)
 
 dCivGroups = {
-iCivGroupEurope : [iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],
+iCivGroupEurope : [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],
 iCivGroupAsia : [iIndia, iChina, iHarappa, iPolynesia, iPersia, iJapan, iTamils, iKorea, iByzantium, iTibet, iKhmer, iIndonesia, iRussia, iMongols, iMughals, iThailand, iTurks],
-iCivGroupMiddleEast : [iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iOttomans, iCarthage, iTurks, iIran],
+iCivGroupMiddleEast : [iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iMoors, iOttomans, iCarthage, iTurks, iIran],
 iCivGroupAfrica : [iEgypt, iCarthage, iEthiopia, iMali, iCongo],
 iCivGroupAmerica : [iMaya, iInca, iAztecs, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
 }
