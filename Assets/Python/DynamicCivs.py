@@ -1597,6 +1597,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CONFEDERACY_ADJECTIVE"
 			
 		if bCityStates:
+			return "TXT_KEY_CIV_INDIA_GANA_SANGHAS"
+		
+		if iEra <= iClassical:
 			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
 			
 	elif iCiv == iChina:

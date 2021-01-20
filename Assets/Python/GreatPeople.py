@@ -810,6 +810,8 @@ iPolynesia : {
 		"Haalilio", # 19th
 		"fMeri Te Tai Mangakahia", # 19th
 		"Apirana Ngata", # 19th
+		"Wiremu Toetoe", # 19th
+		"Hemara Rerehau Paraone", # 19th
 	],
 	iGreatGeneral : [
 		"fNafanua", # legendary
