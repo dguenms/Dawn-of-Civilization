@@ -1372,7 +1372,7 @@
 			<bWater>1</bWater>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iTradeRoutes>1</iTradeRoutes>
 			<iAsset>4</iAsset>
@@ -1399,7 +1399,7 @@
 			<bWater>1</bWater>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iTradeRoutes>1</iTradeRoutes>
 			<iAsset>4</iAsset>
@@ -2542,7 +2542,7 @@
 			<bWater>1</bWater>
 			<iCost>140</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iTradeRouteModifier>50</iTradeRouteModifier>
@@ -2903,7 +2903,7 @@
 			<bWater>1</bWater>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
 			<iAsset>4</iAsset>
@@ -2934,7 +2934,7 @@
 			<bWater>1</bWater>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
 			<iAsset>4</iAsset>
@@ -3671,7 +3671,7 @@
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>20</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iHealth>-1</iHealth>
 			<iAsset>1</iAsset>
 			<iPower>2</iPower>
@@ -4995,7 +4995,7 @@
 			<bWater>1</bWater>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
 			<iAsset>4</iAsset>
