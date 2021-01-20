@@ -29,7 +29,15 @@ engine = CyEngine()
 game = gc.getGame()
 map = gc.getMap()
 
-irregular_plurals = {}
+irregular_plurals = {
+	"Ship of the Line": "Ships of the Line",
+	"Statesman": "Statesmen",
+}
+
+
+def replace_first(string, replace_key, *replace_args):
+	first = string.split(" ", -1)[0]
+	return string.replace(first, text(replace_key, *concat(first, replace_args)))
 
 
 def replace_shared_words(strings):
@@ -293,6 +301,16 @@ def owner(entity, identifier):
 # TODO: test default condition
 def count(iterable, condition = bool):
 	return len([x for x in iterable if condition(x)])
+
+
+def format_separators_shared(list, separator, last_separator, format=lambda x: x):
+	list = [format(item) for item in list]
+	list = replace_shared_words(list)
+	
+	reverse_list = [element[::-1] for element in list[::-1]]
+	list = [element[::-1].strip() for element in replace_shared_words(reverse_list)][::-1]
+	
+	return format_separators(list, separator, last_separator)
 
 
 def format_separators(list, separator, last_separator, format=lambda x: x):
@@ -1809,6 +1827,12 @@ class Infos:
 		
 	def art(self, string):
 		return gc.getInterfaceArtInfo(self.type(string)).getPath()
+	
+	def attitude(self, identifier):
+		return gc.getAttitudeInfo(identifier)
+	
+	def attitudes(self):
+		return InfoCollection.type(gc.getAttitudeInfo, AttitudeTypes.NUM_ATTITUDE_TYPES)
 		
 	def bonus(self, identifier):
 		if isinstance(identifier, CyPlot):
@@ -1820,7 +1844,7 @@ class Infos:
 		raise TypeError("Expected identifier to be CyPlot or bonus type ID, got '%s'" % type(identifier))
 	
 	def bonuses(self):
-		return InfoCollection.type(gc.getBonusInfo, iNumBonuses)
+		return InfoCollection.type(gc.getBonusInfo, gc.getNumBonusInfos())
 		
 	def build(self, identifier):
 		return gc.getBuildInfo(identifier)
@@ -1848,6 +1872,12 @@ class Infos:
 	
 	def civs(self):
 		return InfoCollection.type(gc.getCivilizationInfo, gc.getNumCivilizationInfos())
+	
+	def civic(self, identifier):
+		return gc.getCivicInfo(identifier)
+	
+	def civics(self):
+		return InfoCollection.type(gc.getCivicInfo, gc.getNumCivicInfos())
 		
 	def commerce(self, identifier):
 		return gc.getCommerceInfo(identifier)
@@ -1927,20 +1957,9 @@ class Infos:
 		
 	def project(self, identifier):
 		return gc.getProjectInfo(identifier)
-	
-<<<<<<< HEAD
-	def era(self, identifier):
-		return gc.getEraInfo(identifier)
-	
-	def civic(self, identifier):
-		return gc.getCivicInfo(identifier)
-	
-	def civics(self):
-		return InfoCollection.type(gc.getCivicInfo, gc.getNumCivicInfos())
-=======
+
 	def projects(self):
 		return InfoCollection.type(gc.getProjectInfo, gc.getNumProjectInfos())
->>>>>>> Options for custom formatting plus additional goals
 		
 	def religion(self, iReligion):
 		return gc.getReligionInfo(iReligion)
@@ -1980,6 +1999,7 @@ class Infos:
 
 
 info_types = {
+	AttitudeTypes: (Infos.attitude, Infos.attitudes),
 	CvBonusInfo: (Infos.bonus, Infos.bonuses),
 	CvBuildInfo: (Infos.build, Infos.builds),
 	CvBuildingInfo: (Infos.building, Infos.buildings),

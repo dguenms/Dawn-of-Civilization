@@ -341,11 +341,20 @@ class Aggregate(object):
 	def format(self, formatter):
 		if self.name:
 			return self.name
-		return format_separators(self.items, ",", text("TXT_KEY_AND"), formatter)
+			
+		def final_formatter(item):
+			if not isinstance(item, Plots):
+				return plural(formatter(item))
+			return formatter(item)
+			
+		return format_separators_shared(self.items, ",", text("TXT_KEY_AND"), final_formatter)
 	
 	def named(self, key):
 		self.name = text("TXT_KEY_UHV_%s" % key)
 		return self
+	
+	def plural(self):
+		return not self.name and len(self.items) > 1
 
 
 def avg_(iterable):
@@ -372,6 +381,9 @@ def wonders():
 
 def happiness_resources():
 	return (iBonus for iBonus in infos.bonuses() if infos.bonus(iBonus).getHappiness() > 0)
+
+def great_people():
+	return sum([iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]).named("GREAT_PEOPLE")
 
 
 class Arguments(object):
@@ -478,6 +490,7 @@ class FormatOptions(object):
 		
 		self.bPlural = True
 		self.bNumberWord = False
+		self.bCount = False
 		
 		self.no_singular_count = None
 		
@@ -489,6 +502,7 @@ class FormatOptions(object):
 	
 	def entity(self, key):
 		self.entity_key = "TXT_KEY_UHV_%s" % key
+		self.count()
 		return self
 	
 	def city(self):
@@ -500,6 +514,10 @@ class FormatOptions(object):
 	
 	def number_word(self):
 		self.bNumberWord = True
+		return self
+	
+	def count(self):
+		self.bCount = True
 		return self
 	
 	def noSingularCount(self, func):
@@ -610,27 +628,9 @@ class ArgumentProcessor(object):
 		if issubclass(type, list):
 			return tuple(value)
 		return value
-		
-	# default: (value1, value2, value3...) + (type1, type2, type3...), we use type+value -> format, then: "fmt(v1) fmt(v2) fmt(v3)"
-	# there should be a default fmt function for each type
-	# 
-	# optional: define TXT_KEY -> text("TXT_KEY", fmt(v1), fmt(v2), fmt(v3)...)
-	
-	def format_basic(self, values):
-		formatted_values = [self.format_value(type, value) for type, value in zip(self.objective_types, values)]
-		
-		if self.objective_text:
-			return text(self.objective_text, *formatted_values)
-		
-		return " ".join(formatted_values)
-	
-	# for count we need to be able to handle plurals etc.
-	# but also: we need to turn off plurals if needed
-	# but also: do not display count if 1
-	# but also: inject other word to be pluralised if desired (e.g. "city")
 	
 	def is_count(self):
-		return len(self.objective_types) == 2 and self.objective_types[1] == int
+		return self.options.bCount or (len(self.objective_types) == 2 and self.objective_types[1] == int)
 	
 	def format_objective(self, values):
 		formatted_values = [str(self.format_value(type, value)) for type, value in zip(self.objective_types, values)]
@@ -649,49 +649,26 @@ class ArgumentProcessor(object):
 			if self.options.no_singular_count and not isinstance(values[0], (Deferred, Aggregate)) and count == 1:
 				if self.options.no_singular_count(values[0]):
 					formatted_values = formatted_values[1:]
+			
+			if isinstance(values[0], Aggregate) and values[0].plural():
+				if self.options.objective_key:
+					return text("TXT_KEY_UHV_TOTAL_OF", text(self.options.objective_key, *formatted_values))
+			
+				formatted_values = concat(text("TXT_KEY_UHV_TOTAL_OF", *formatted_values[:2]), formatted_values[2:])
 		
-		if self.options.objective_key:
+		if not isinstance(values[0], Aggregate) and self.options.objective_key:
+			#print "%s = text(%s, %s)" % (text(self.options.objective_key, *formatted_values), self.options.objective_key, formatted_values)
 			return text(self.options.objective_key, *formatted_values)
 		
 		return " ".join(formatted_values)
 	
-	def format_counted(self, item, count):
-		type = self.objective_types[0]
-		item_text = self.format_value(type, item)
+	def format_resource(self, identifier):
+		text = infos.bonus(identifier).getText()
 		
-		# Options().city().objective("ENTITY_IN")
-		if issubclass(type, Plots):
-			city = text("TXT_KEY_UHV_CITY")
-			if count > 1:
-				city = plural(city)
-			
-			item_text = text("TXT_KEY_UHV_ENTITY_IN", city, item_text)
+		if text.endswith('s'):
+			text = text[:-1]
 		
-		# Options().city().objective("TO_YOUR_ENTITY")
-		elif issubclass(type, CvCorporationInfo):
-			city = text("TXT_KEY_UHV_CITY")
-			if count > 1:
-				city = plural(city)
-			
-			return text("TXT_KEY_UHV_TO_YOUR_ENTITY", item_text, number_word(count), city)
-		
-		# Options().singular()
-		elif count > 1 and not issubclass(type, (CvBonusInfo, CvEraInfo)):
-			item_text = plural(item_text)
-		
-		# this can be part of the building formatter (or all formatters?)
-		if item_text.startswith('The'):
-			item_text = item_text.replace('The', 'the')
-		
-		# do we really need "a total of"? -> we don't
-		if isinstance(item, Aggregate):
-			return text("TXT_KEY_UHV_TOTAL_OF", "%s %s" % (number_word(count), item_text))
-		
-		# Options().noSingularCount(isWonder)
-		if issubclass(type, CvBuildingInfo) and isinstance(item, int) and isWonder(item) and count == 1:
-			return item_text
-		
-		return "%s %s" % (number_word(count), item_text)
+		return text
 	
 	def format_building(self, identifier):
 		text = infos.building(identifier).getText()
@@ -715,10 +692,14 @@ class ArgumentProcessor(object):
 	
 		if issubclass(type, CyCity):
 			return CyCity.getName
+		if issubclass(type, AttitudeTypes):
+			return lambda info: infos.attitude(info).getDescription().lower()
 		if issubclass(type, CvCultureLevelInfo):
 			return lambda info: infos.cultureLevel(info).getText().lower()
 		if issubclass(type, CvBuildingInfo):
 			return self.format_building
+		if issubclass(type, CvBonusInfo):
+			return self.format_resource
 		if issubclass(type, CvInfoBase):
 			return lambda info: infos.text(type, info)
 		if issubclass(type, Plots):
@@ -740,25 +721,6 @@ class ArgumentProcessor(object):
 	
 	def format_objectives(self, objectives):
 		return format_separators(objectives, ",", text("TXT_KEY_AND"), self.format_objective)
-	
-	"""
-	def format_objective(self, objective):
-		if self.objective_formatter:
-			return self.objective_formatter(*self.apply_formatters(objective))
-		
-		
-	
-		#if len(objective) == 2 and self.objective_types[1] == int:
-		#	return self.format_counted(*objective)
-		
-		#if self.objective_types == [CvReligionInfo, CvReligionInfo]:
-		#	return text("TXT_KEY_UHV_MORE_THAN", *list(text(infos.religion(item).getAdjectiveKey()) for item in objective))
-	
-		return " ".join([self.final(item) for item in list(self.apply_formatters(objective))])
-		
-	def apply_formatters(self, objective):
-		return (self.format_value(type, value) for type, value in zip(self.objective_types, objective))
-	"""
 	
 	def format_subject(self, subject):
 		if not self.subject_type:
@@ -997,7 +959,10 @@ class BaseGoal(object):
 		raise NotImplementedError()
 	
 	def named(self, key):
-		self._description = text("TXT_KEY_UHV_%s" % key)
+		if self.types:
+			self._description = self.types.format("TXT_KEY_UHV_%s" % key, self.arguments)
+		else:
+			self._description = text("TXT_KEY_UHV_%s" % key)
 		return self
 	
 	def description(self):
@@ -1018,6 +983,11 @@ class BaseGoal(object):
 		
 		self.register("BeginPlayerTurn", checkTurn)
 		self._description += " " + text("TXT_KEY_UHV_IN", format_date(iYear))
+		
+		# TODO: needs to be txt_key
+		if self._description.lower().startswith('build'):
+			self._description = replace_first(self._description, "TXT_KEY_UHV_HAVE")
+		
 		return self
 	
 	def by(self, iYear):
@@ -1114,32 +1084,35 @@ class Condition(BaseGoal):
 			if iProject in self.values:
 				self.expire()
 	
-		return cls.objective(CvProjectInfo).team(positive(CyTeam.getProjectCount)).handle("projectBuilt", checkProjectBuilt).expired("projectBuilt", expireProjectBuilt).subclass("ProjectCount")
+		return cls.desc("PROJECT_COUNT").objective(CvProjectInfo).team(positive(CyTeam.getProjectCount)).handle("projectBuilt", checkProjectBuilt).expired("projectBuilt", expireProjectBuilt).subclass("ProjectCount")
 	
 	@classproperty
 	def route(cls):
-		return cls.subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).turnly.subclass("Route")
+		return cls.desc("ROUTE").subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).turnly.subclass("Route")
 		
 	@classproperty
 	def noStateReligion(cls):
 		def no_state_religion(self, city, iReligion):
 			return player(city).getStateReligion() != iReligion
+		
+		def format_religion(identifier):
+			return text(infos.religion(identifier).getAdjectiveKey())
 	
-		return cls.subject(Plots).objective(CvReligionInfo).cities(no_state_religion).subclass("NoStateReligion")
+		return cls.desc("NO_STATE_RELIGION").format(options.type(CvReligionInfo, format_religion)).subject(Plots).objective(CvReligionInfo).cities(no_state_religion).subclass("NoStateReligion")
 	
 	@classproperty
 	def cultureCovered(cls):
 		def covered(plot, iPlayer):
 			return plot.getOwner() == iPlayer
 		
-		return cls.objective(Plots).include_owner.plots(covered).turnly.subclass("CultureCovered")
+		return cls.desc("CULTURE_COVERED").objective(Plots).include_owner.plots(covered).turnly.subclass("CultureCovered")
 	
 	@classproperty
 	def communist(cls):
 		def condition(self, *objectives):
 			return isCommunist(self.iPlayer)
 		
-		return cls.func(condition).subclass("Communist")
+		return cls.desc("COMMUNIST").func(condition).subclass("Communist")
 	
 	@classproperty
 	def noForeignCities(cls):
@@ -1168,7 +1141,7 @@ class Condition(BaseGoal):
 				return True
 			return False
 		
-		return cls.objective(Plots).func(__init__, only, excluding).cities(valid).subclass("NoForeignCities")
+		return cls.desc("NO_FOREIGN_CITIES").objective(Plots).func(__init__, only, excluding).cities(valid).subclass("NoForeignCities")
 	
 	@classproperty
 	def tradeConnection(cls):
@@ -1365,12 +1338,15 @@ class Count(BaseGoal):
 	def controlledResource(cls):
 		def resources(player, objective):
 			return player.getNumAvailableBonuses(objective) - player.getBonusImport(objective)
+		
+		def format_bonus(identifier):
+			return text("TXT_KEY_UHV_RESOURCE", infos.bonus(identifier).getText())
 	
-		return cls.objective(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
+		return cls.desc("CONTROLLED_RESOURCE_COUNT").format(options.type(CvBonusInfo, format_bonus)).objective(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
 		
 	@classproperty
 	def improvement(cls):
-		return cls.objective(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
+		return cls.desc("IMPROVEMENT_COUNT").objective(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
 	
 	@classproperty
 	def population(cls):
@@ -1389,7 +1365,7 @@ class Count(BaseGoal):
 		def value_function(self, objective):
 			return self._player.getUnitClassCount(infos.unit(objective).getUnitClassType())
 		
-		return cls.objective(CvUnitInfo).func(value_function).turnly.subclass("UnitCount")
+		return cls.desc("UNIT_COUNT").objective(CvUnitInfo).func(value_function).turnly.subclass("UnitCount")
 		
 	@classproperty
 	def numCities(cls):
@@ -1403,7 +1379,7 @@ class Count(BaseGoal):
 		def settled(self, cities):
 			return cities.owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer)
 		
-		return cls.cities(settled).subclass("SettledCityCount")
+		return cls.desc("SETTLED_CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(settled).subclass("SettledCityCount")
 	
 	@classproperty
 	def conqueredCities(cls):
@@ -1421,6 +1397,7 @@ class Count(BaseGoal):
 		
 		def inside(self, plots):
 			self.inside_plots = plots
+			self._description += " " + text("TXT_KEY_UHV_IN", self.inside_plots.name())
 			return self
 		
 		def outside(self, plots):
@@ -1434,7 +1411,7 @@ class Count(BaseGoal):
 		def value_function(self):
 			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
 		
-		return cls.func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
+		return cls.desc("CONQUERED_CITY_COUNT").format(options.city().count()).func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
@@ -1453,7 +1430,7 @@ class Count(BaseGoal):
 		
 			return self._team.isOpenBorders(player(iPlayer).getTeam())
 		
-		return cls.func(__init__, civs).players(valid).subclass("OpenBorderCount")
+		return cls.desc("OPEN_BORDER_COUNT").format(options.number_word()).func(__init__, civs).players(valid).subclass("OpenBorderCount")
 	
 	@classproperty
 	def specialist(cls):
@@ -1465,19 +1442,19 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def averagePopulation(cls):
-		return cls.player(average(CyPlayer.getTotalPopulation, CyPlayer.getNumCities)).subclass("AveragePopulation")
+		return cls.desc("AVERAGE_POPULATION").player(average(CyPlayer.getTotalPopulation, CyPlayer.getNumCities)).subclass("AveragePopulation")
 		
 	@classproperty
 	def populationCities(cls):
-		return cls.objective(int).citiesWith(CyCity.getPopulation).turnly.subclass("PopulationCities")
+		return cls.desc("POPULATION_CITIES").format(options.objective("ENTITY_OF_SIZE").city().number_word()).objective(int).citiesWith(CyCity.getPopulation).turnly.subclass("PopulationCities")
 	
 	@classproperty
 	def cultureCities(cls):
-		return cls.objective(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
+		return cls.desc("CULTURE_CITIES").format(options.objective("ENTITY_WITH").city()).objective(int).citiesWith(lambda city: city.getCulture(city.getOwner())).subclass("CultureCities")
 	
 	@classproperty
 	def cultureLevelCities(cls):
-		return cls.objective(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
+		return cls.desc("CULTURE_LEVEL_CITIES").format(options.objective("ENTITY_WITH").city()).objective(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).subclass("CultureLevelCities")
 	
 	@classproperty
 	def citySpecialist(cls):
@@ -1514,6 +1491,7 @@ class Count(BaseGoal):
 		def valid(self, iPlayer, iAttitude):
 			if not self._player.canContact(iPlayer):
 				return False
+			# TODO: vassals are always included but should be allowed for Russian goal and explicitly disabled for Austrian goal
 			if team(iPlayer).isAVassal():
 				return False
 			if self.lCivs and civ(iPlayer) not in self.lCivs:
@@ -1525,7 +1503,7 @@ class Count(BaseGoal):
 			
 			return player(iPlayer).AI_getAttitude(self.iPlayer) >= iAttitude
 		
-		return cls.subject(AttitudeTypes).func(__init__, civs, religion, communist).players(valid).turnly.subclass("AttitudeCount")
+		return cls.subject(AttitudeTypes).format(options.singular().number_word()).func(__init__, civs, religion, communist).players(valid).turnly.subclass("AttitudeCount")
 	
 	@classproperty
 	def vassals(cls):
@@ -1554,7 +1532,7 @@ class Count(BaseGoal):
 		def onVassalState(self):
 			self.check()
 		
-		return cls.func(__init__, civs, religion).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
+		return cls.format(options.number_word()).func(__init__, civs, religion).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
 	
 	@classproperty
 	def cityBuilding(cls):
@@ -1608,6 +1586,7 @@ class Percentage(Count):
 		return players.major().alive().sum(lambda p: self.value_function(p, *objectives))
 	
 	def includeVassals(self):
+		self._description = replace_first(self._description, "TXT_KEY_UHV_OR_VASSALISE")
 		self.included = self.VASSALS
 		return self
 	
@@ -1624,7 +1603,7 @@ class Percentage(Count):
 		def total(self, area):
 			return area.land().count()
 		
-		return cls.objective(Plots).func(value_function, total).subclass("AreaPercent")
+		return cls.desc("AREA_PERCENT").format(options.objective("PERCENT_OF").singular()).objective(Plots).func(value_function, total).subclass("AreaPercent")
 	
 	@classproperty
 	def worldControl(cls):
@@ -1658,21 +1637,21 @@ class Percentage(Count):
 		def value_function(self, iPlayer):
 			return player(iPlayer).getVotes(16, 1)
 		
-		return cls.func(value_function).turnly.subclass("ReligiousVotePercent")
+		return cls.desc("RELIGIOUS_VOTE_PERCENT").func(value_function).turnly.subclass("ReligiousVotePercent")
 	
 	@classproperty
 	def alliedCommerce(cls):
 		def value_function(self, iPlayer):
 			return player(iPlayer).calculateTotalCommerce()
 		
-		return cls.allied.func(value_function).subclass("AlliedCommercePercent")
+		return cls.desc("ALLIED_COMMERCE_PERCENT").allied.func(value_function).subclass("AlliedCommercePercent")
 	
 	@classproperty
 	def alliedPower(cls):
 		def value_function(self, iPlayer):
 			return player(iPlayer).getPower()
 		
-		return cls.allied.func(value_function).subclass("AlliedPowerPercent")
+		return cls.desc("ALLIED_POWER_PERCENT").allied.func(value_function).subclass("AlliedPowerPercent")
 
 
 def segment(tuple):
@@ -1766,7 +1745,7 @@ class Trigger(Condition):
 			if tile in cities.of([city(self.iPlayer) for city in self.values if city(self.iPlayer) is not None]):
 				self.complete()
 		
-		return cls.objective(CyCity).handle("tradeMission", checkTradeMission).subclass("TradeMission")
+		return cls.desc("TRADE_MISSION").objective(CyCity).handle("tradeMission", checkTradeMission).subclass("TradeMission")
 	
 	@classproperty
 	def neverConquer(cls):
@@ -1774,7 +1753,7 @@ class Trigger(Condition):
 			if bConquest:
 				self.fail()
 		
-		return cls.failable.handle("cityAcquired", checkCityAcquired).subclass("NeverConquer")
+		return cls.desc("NEVER_CONQUER").failable.handle("cityAcquired", checkCityAcquired).subclass("NeverConquer")
 	
 	@classproperty
 	def convertAfterFounding(cls):
@@ -1814,10 +1793,11 @@ class Trigger(Condition):
 				self.expire()
 		
 		def before(self, iEra):
+			self._description += " " + text("TXT_KEY_UHV_BEFORE_ENTER_ERA", infos.era(iEra).getText())
 			self.iExpireEra = iEra
 			return self
 		
-		return cls.objective(CvEraInfo).func(__init__, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).subclass("EnterEra")
+		return cls.desc("ENTER_ERA").objective(CvEraInfo).func(__init__, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).subclass("EnterEra")
 		
 		
 
@@ -1916,15 +1896,15 @@ class Track(Count):
 	
 	@classproperty
 	def piracyGold(cls):
-		return cls.accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
+		return cls.desc("PIRACY_GOLD").accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
 	
 	@classproperty
 	def razes(cls):
-		return cls.incremented("cityRazed").subclass("RazeCount")
+		return cls.desc("RAZE_COUNT").format(options.city()).incremented("cityRazed").subclass("RazeCount")
 	
 	@classproperty
 	def slaveTradeGold(cls):
-		return cls.accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
+		return cls.desc("SLAVE_TRADE_GOLD").accumulated("playerSlaveTrade").subclass("SlaveTradeGold")
 	
 	@classproperty
 	def greatGenerals(cls):
@@ -1932,7 +1912,7 @@ class Track(Count):
 			if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
 				self.increment()
 		
-		return cls.handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
+		return cls.desc("GREAT_GENERALS").format(options.number_word()).handle("greatPersonBorn", incrementGreatGenerals).subclass("GreatGenerals")
 	
 	@classproperty
 	def resourceTradeGold(cls):
@@ -1940,11 +1920,11 @@ class Track(Count):
 			iGold = players.major().alive().sum(self._player.getGoldPerTurnByPlayer)
 			self.accumulate(iGold)
 	
-		return cls.handle("BeginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
+		return cls.desc("RESOURCE_TRADE_GOLD").handle("BeginPlayerTurn", accumulateTradeGold).scaled.subclass("ResourceTradeGold")
 	
 	@classproperty
 	def brokeredPeace(cls):
-		return cls.incremented("peaceBrokered").subclass("BrokeredPeace")
+		return cls.desc("BROKERED_PEACE").format(options.number_word()).incremented("peaceBrokered").subclass("BrokeredPeace")
 	
 	@classproperty
 	def enslaves(cls):
@@ -2145,15 +2125,8 @@ class All(BaseGoal):
 		
 		self.init_description()
 	
-	# this needs to be a little better: not split by char but by words
 	def init_description(self):
-		descriptions = [goal._description for goal in self.goals]
-		descriptions = replace_shared_words(descriptions)
-		
-		reverse_descriptions = [description[::-1] for description in descriptions[::-1]]
-		descriptions = [description[::-1].strip() for description in replace_shared_words(reverse_descriptions)][::-1]
-		
-		self._description = format_separators(descriptions, ",", text("TXT_KEY_AND"))
+		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: goal._description)
 		
 	def subgoal_callback(self, goal):
 		if goal.state == SUCCESS:
@@ -2208,8 +2181,7 @@ class Some(BaseGoal):
 		self.init_description()
 	
 	def init_description(self):
-		first = self.goal.description().split(" ", -1)[0]
-		self._description = self.goal.description().replace(first, text("TXT_KEY_UHV_SOME", first, number_word(self.iRequired)))
+		self._description = replace_first(self.goal.description(), "TXT_KEY_UHV_SOME", number_word(self.iRequired))
 	
 	def subgoal_callback(self, goal):
 		if goal.state == SUCCESS:

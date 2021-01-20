@@ -201,13 +201,13 @@ dGoals = {
 	),
 	iMoors: (
 		All(
-			CityCount(plots.rectangle(tMaghreb), 3),
-			ConqueredCityCount(plots.rectangle(tIberia), 2),
-			ConqueredCityCount(plots.rectangle(tWestAfrica), 2),
+			CityCount(plots.rectangle(tMaghreb).named("MAGHREB"), 3),
+			ConqueredCityCount(2).inside(plots.rectangle(tIberia).named("IBERIA")),
+			ConqueredCityCount(2).inside(plots.rectangle(tWestAfrica).named("WEST_AFRICA")),
 		).at(1200),
 		All(
 			Wonder(iMezquita),
-			CitySpecialistCount(city(plots.capital(iMoors)), sum([iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer]), 4),
+			CitySpecialistCount(city(plots.capital(iMoors)).named("CORDOBA"), sum([iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer]), 4),
 		).by(1300),
 		PiracyGold(3000).by(1650),
 	),
@@ -216,14 +216,14 @@ dGoals = {
 		ControlledResourceCount(sum([iSilver, iGold]), 10).by(1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),
-			NoStateReligion(plots.rectangle(tEurope) + plots.rectangle(tEasternEurope), iProtestantism),
+			NoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), iProtestantism),
 		).at(1650),
 	),
 	iFrance: (
-		CultureLevel(city(plots.capital(iFrance)), iCultureLevelLegendary).at(1700),
+		CultureLevel(city(plots.capital(iFrance)).named("PARIS"), iCultureLevelLegendary).at(1700),
 		All(
-			AreaPercent(plots.rectangle(tEurope) + plots.rectangle(tEasternEurope), 40).includeVassals(),
-			AreaPercent(plots.rectangle(tNorthAmerica), 40).includeVassals(),
+			AreaPercent((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), 40).includeVassals(),
+			AreaPercent(plots.rectangle(tNorthAmerica).named("NORTH_AMERICA"), 40).includeVassals(),
 		).at(1800),
 		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain).by(1900),
 	),
@@ -237,47 +237,52 @@ dGoals = {
 	),
 	iEngland: (
 		CityCount(
-			(plots.regions(*lNorthAmerica), 5),
-			(plots.regions(*lSouthAmerica), 3),
-			(plots.regions(*lAfrica), 4),
-			(plots.regions(*lAsia), 5),
-			(plots.regions(*lOceania), 3),
+			(plots.regions(*lNorthAmerica).named("NORTH_AMERICA"), 5),
+			(plots.regions(*lSouthAmerica).named("SOUTH_AMERICA"), 3),
+			(plots.regions(*lAfrica).named("AFRICA"), 4),
+			(plots.regions(*lAsia).named("ASIA"), 5),
+			(plots.regions(*lOceania).named("OCEANIA"), 3),
 		).by(1730),
 		All(
+			# TODO: 'Ships of the Lines'
 			UnitCount(sum([iFrigate, iShipOfTheLine]), 25),
 			SunkShips(50),
 		).by(1800),
 		EraFirstDiscovered((iRenaissance, 8), (iIndustrial, 8)),
 	),
 	iHolyRome: (
+		# TODO: 'AD' cut off by format_shared_separators
 		All(
 			BuildingCount(iCatholicShrine, 1).at(1000),
 			BuildingCount(iOrthodoxShrine, 1).at(1200),
 			BuildingCount(iProtestantShrine, 1).at(1550),
 		),
-		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).by(1650),
+		# TODO: 'Statesmans'
+		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
 		All(
-			CitySpecialistCount(city(tVienna), sum([iSpecialistGreatArtist, iSpecialistGreatStatesman]), 10),
-			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]),
+			CitySpecialistCount(city(tVienna).named("VIENNA"), sum([iSpecialistGreatArtist, iSpecialistGreatStatesman]), 10),
+			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]).named("ATTITUDES_IN_EUROPE"),
 		).by(1850),
 	),
 	iRussia: (
+		# TODO: 'AD' cut off by format_shared_separators
 		All(
-			SettledCityCount(plots.rectangle(tSiberia), 7).by(1700),
-			RouteConnection(plots.capital(iRussia), plots.of(lSiberianCoast), [iRailroad]).by(1920),
+			SettledCityCount(plots.rectangle(tSiberia).named("SIBERIA"), 7).by(1700),
+			RouteConnection(plots.capital(iRussia), plots.of(lSiberianCoast), [iRailroad]).named("CONNECT_MOSCOW_TO_SIBERIA").by(1920),
 		),
 		Projects(iManhattanProject, iLunarLanding),
 		All(
 			Communist(),
-			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5).communist(),
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5).communist().named("COMMUNIST_ATTITUDES"),
 		).by(1950),
 	),
 	iMali: (
 		TradeMission(holyCity()).by(1350),
 		All(
 			Wonder(iUniversityOfSankore),
-			CitySpecialistCount(wonder(iUniversityOfSankore), iSpecialistGreatProphet, 1),
+			CitySpecialistCount(wonder(iUniversityOfSankore).named("ITS_CITY"), iSpecialistGreatProphet, 1),
 		).by(1500),
+		# TODO: 'AD' cut off by format_shared_separators
 		All(
 			PlayerGold(5000).by(1500),
 			PlayerGold(15000).by(1700),
@@ -286,29 +291,29 @@ dGoals = {
 	iPoland: (
 		PopulationCities(12, 3).by(1400),
 		FirstDiscovered(iCivilLiberties),
-		BuildingCount(sum([iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral]), 3).by(1600),
+		BuildingCount(sum([iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral]).named("CHRISTIAN_CATHEDRALS"), 3).by(1600),
 	),
 	iPortugal: (
 		OpenBorderCount(14).by(1550),
-		ResourceCount(sum(lColonialResources), 12).by(1650),
+		ResourceCount(sum(lColonialResources).named("TRADING_COMPANY_RESOURCES"), 12).by(1650),
 		CityCount(sum([
-			plots.rectangle(tBrazil),
-			plots.regions(*lAfrica),
-			plots.regions(*lAsia),
+			plots.rectangle(tBrazil).named("BRAZIL"),
+			plots.regions(*lAfrica).named("AFRICA"),
+			plots.regions(*lAsia).named("ASIA"),
 		]), 15).by(1700),
 	),
 	iInca: (
 		All(
 			BuildingCount(iTambo, 5),
-			Route(plots.of(lAndeanCoast), iRouteRoad),
+			Route(plots.of(lAndeanCoast).named("ANDEAN_COAST"), iRouteRoad),
 		).by(1550),
 		PlayerGold(2500).at(1550),
-		NoForeignCities(plots.rectangle(tSouthAmerica)).at(1700),
+		NoForeignCities(plots.rectangle(tSouthAmerica).named("SOUTH_AMERICA")).at(1700),
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore).by(1500),
 		CultureLevelCities(iCultureLevelInfluential, 3).by(1600),
-		AreaPercent(plots.rectangle(tMediterranean).without(lMediterraneanExceptions).coastal(), 65).by(1930),
+		AreaPercent(plots.rectangle(tMediterranean).without(lMediterraneanExceptions).coastal().named("MEDITERRANEAN"), 65).by(1930),
 	),
 	iMongols: (
 		Control(plots.normal(iChina)).at(1300),
@@ -316,9 +321,9 @@ dGoals = {
 		WorldPercent(12).by(1500),
 	),
 	iAztecs: (
-		BestPopulationCity(city(plots.capital(iAztecs))).at(1520),
+		BestPopulationCity(city(plots.capital(iAztecs)).named("TENOCHTITLAN")).at(1520),
 		BuildingCount((iPaganTemple, 6), (iSacrificialAltar, 6)).by(1650),
-		EnslaveCount(20).excluding(dCivGroups[iCivGroupAmerica]),
+		EnslaveCount(20).excluding(dCivGroups[iCivGroupAmerica]).named("ENSLAVE_OLD_WORLD"),
 	),
 	iMughals: (
 		BuildingCount(iIslamicCathedral, 3).by(1500),
@@ -326,25 +331,25 @@ dGoals = {
 		PlayerCulture(50000).at(1750),
 	),
 	iOttomans: (
-		CityBuildings(capital(), sum(iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding)), 4).at(1550),
+		CityBuildings(capital(), wonders(), 4).at(1550),
 		All(
 			CultureCovered(
-				plots.of(lEasternMediterranean),
-				plots.of(lBlackSea),
+				plots.of(lEasternMediterranean).named("EASTERN_MEDITERRANEAN"),
+				plots.of(lBlackSea).named("BLACK_SEA"),
 			),
 			Control(
-				plots.surrounding(tCairo),
-				plots.surrounding(tMecca),
-				plots.surrounding(tBaghdad),
-				plots.surrounding(tVienna),
+				plots.surrounding(tCairo).named("CAIRO"),
+				plots.surrounding(tMecca).named("MECCA"),
+				plots.surrounding(tBaghdad).named("BAGHDAD"),
+				plots.surrounding(tVienna).named("VIENNA"),
 			),
 		).by(1700),
-		MoreCulture().than(dCivGroups[iCivGroupEurope]).at(1800),
+		MoreCulture().than(dCivGroups[iCivGroupEurope]).named("MORE_CULTURE_THAN_EUROPE").at(1800),
 	),
 	iThailand: (
 		OpenBorderCount(10).at(1650),
-		BestPopulationCity(city(plots.capital(iThailand))).at(1700),
-		NoForeignCities(plots.rectangle(tSouthAsia)).excluding(lSouthAsianCivs).at(1900),
+		BestPopulationCity(city(plots.capital(iThailand)).named("AYUTTHAYA")).at(1700),
+		NoForeignCities(plots.rectangle(tSouthAsia).named("SOUTH_ASIA")).excluding(lSouthAsianCivs).at(1900),
 	),
 	iCongo: (
 		ReligiousVotePercent(15).by(1650),
@@ -352,21 +357,22 @@ dGoals = {
 		EnterEra(iIndustrial).before(iGlobal),
 	),
 	iIran: (
-		OpenBorderCount(6).civs(dCivGroups[iCivGroupEurope]).by(1650),
+		OpenBorderCount(6).civs(dCivGroups[iCivGroupEurope]).named("EUROPEAN_OPEN_BORDERS").by(1650),
 		Control(
-			plots.rectangle(tSafavidMesopotamia),
-			plots.rectangle(tTransoxiana),
-			plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions),
+			plots.rectangle(tSafavidMesopotamia).named("MESOPOTAMIA"),
+			plots.rectangle(tTransoxiana).named("TRANSOXIANA"),
+			plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions).named("NORTHWEST_INDIA"),
 		).at(1750),
 		CultureCity(20000).at(1800),
 	),
 	iNetherlands: (
-		CitySpecialistCount(city(plots.capital(iNetherlands)), iSpecialistGreatMerchant, 3).at(1745),
-		ConqueredCityCount(4).civs(dCivGroups[iCivGroupEurope]).outside(plots.regions(*lEurope)).by(1745),
+		CitySpecialistCount(city(plots.capital(iNetherlands)).named("AMSTERDAM"), iSpecialistGreatMerchant, 3).at(1745),
+		ConqueredCityCount(4).civs(dCivGroups[iCivGroupEurope]).outside(plots.regions(*lEurope)).named("CONQUER_FOUR_EUROPEAN_COLONIES").by(1745),
 		ResourceCount(iSpices, 7).by(1775),
 	),
 	iGermany: (
-		CitySpecialistCount(city(plots.capital(iGermany)), sum(lGreatPeople), 7).at(1900),
+		# TODO: 'great peoples'
+		CitySpecialistCount(city(plots.capital(iGermany)).named("BERLIN"), great_people(), 7).at(1900),
 		Control(
 			plots.normal(iItaly),
 			plots.normal(iFrance),
@@ -378,7 +384,7 @@ dGoals = {
 	),
 	iAmerica: (
 		All(
-			NoForeignCities(plots.rectangle(tNorthCentralAmerica)).only(dCivGroups[iCivGroupEurope]),
+			NoForeignCities(plots.rectangle(tNorthCentralAmerica).named("NORTH_CENTRAL_AMERICA")).only(dCivGroups[iCivGroupEurope]).named("NO_EUROPEAN_COLONIES"),
 			ControlOrVassalize(plots.core(iMexico)),
 		).at(1900),
 		Wonders(iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations).by(1950),
@@ -389,22 +395,23 @@ dGoals = {
 	),
 	iArgentina: (
 		GoldenAges(2).by(1930),
-		CultureLevel(city(plots.capital(iArgentina)), iCultureLevelLegendary).by(1960),
+		CultureLevel(city(plots.capital(iArgentina)).named("BUENOS_AIRES"), iCultureLevelLegendary).by(1960),
 		GoldenAges(6).by(2000),
 	),
 	iMexico: (
-		BuildingCount(stateReligionBuilding(cathedral), 3).by(1880),
+		# TODO: 'cathedrals of your state religions'
+		BuildingCount(stateReligionBuilding(cathedral).named("STATE_RELIGION_CATHEDRAL"), 3).by(1880),
 		GreatGenerals(3).by(1940),
-		BestPopulationCity(city(plots.capital(iMexico))).at(1960),
+		BestPopulationCity(city(plots.capital(iMexico)).named("MEXICO_CITY")).at(1960),
 	),
 	iColombia: (
 		NoForeignCities(
-			plots.rectangle(tPeru),
-			plots.rectangle(tGranColombia),
-			plots.rectangle(tGuayanas),
-			plots.rectangle(tCaribbean),
-		).only(dCivGroups[iCivGroupEurope]).at(1870),
-		Control(plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions)).at(1920),
+			plots.rectangle(tPeru).named("PERU"),
+			plots.rectangle(tGranColombia).named("GRAN_COLOMBIA"),
+			plots.rectangle(tGuayanas).named("GUAYANAS"),
+			plots.rectangle(tCaribbean).named("CARIBBEAN"),
+		).only(dCivGroups[iCivGroupEurope]).named("NO_EUROPEAN_COLONIES").at(1870),
+		Control(plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions).named("SOUTH_AMERICA")).at(1920),
 		ResourceTradeGold(3000).by(1950),
 	),
 	iBrazil: (
@@ -417,14 +424,14 @@ dGoals = {
 	),
 	iCanada: (
 		All(
-			RouteConnection(plots.lazy().capital(iCanada), plots.of(lAtlanticCoast), [iRailroad]),
-			RouteConnection(plots.lazy().capital(iCanada), plots.of(lPacificCoast), [iRailroad]),
+			RouteConnection(plots.lazy().capital(iCanada), plots.of(lAtlanticCoast), [iRailroad]).named("CAPITAL_ATLANTIC_RAILWAY"),
+			RouteConnection(plots.lazy().capital(iCanada), plots.of(lPacificCoast), [iRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
 		).by(1920),
 		All(
-			Control(plots.regions(rCanada)),
-			AreaPercent(plots.regions(rCanada), 90),
+			Control(plots.regions(rCanada).named("CANADA")),
+			AreaPercent(plots.regions(rCanada).named("CANADA"), 90),
 			NeverConquer(),
-		).by(1950),
+		).named("CONTROL_CANADA_WITHOUT_EVER_CONQUERING").by(1950),
 		BrokeredPeaceCount(12).by(2000),
 	),
 }
