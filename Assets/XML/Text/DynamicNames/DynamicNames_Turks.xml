@@ -74,6 +74,18 @@
 		<Spanish>Uzbek</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKISTAN_DEFAULT</Tag>
+		<English>Khanate of %s1</English>
+		<French>
+			<Text>Khanat von %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKESTAN_PEOPLES</Tag>
 		<English>Turkic Peoples</English>
 		<French>
