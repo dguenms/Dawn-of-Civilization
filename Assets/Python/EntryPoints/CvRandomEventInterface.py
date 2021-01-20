@@ -4453,7 +4453,7 @@ def doTradingCompanyConquerors2(argsList):
 	seaPlot = plots.surrounding(targets[0]).water().random()
 	
 	if seaPlot:
-		makeUnit(iPlayer, unique_unit(iGalleon), seaPlot)
+		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 	
 ######## Reformation (Leoreth) ########
 
