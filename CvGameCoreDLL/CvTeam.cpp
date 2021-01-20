@@ -1192,7 +1192,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 }
 
 
-void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts)
+void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts, bool bFromDefensivePact)
 {
 	PROFILE_FUNC();
 
@@ -1321,29 +1321,33 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 			}
 		}
 
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		// Leoreth: wars triggered by defensive pacts cause no diplo penalties
+		if (!bFromDefensivePact)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 					{
-						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
 						{
-							if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
+							if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 							{
-								GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
-							}
-							else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
-							{
-								if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
+								if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
 								{
-									// Leoreth: not for minor civs
-									//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
-									if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+									GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
+								}
+								else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
+								{
+									if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
 									{
-										GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										// Leoreth: not for minor civs
+										//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										{
+											GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										}
 									}
 								}
 							}
@@ -1550,7 +1554,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 					//GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
 					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI)) 
 					{
-						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
+						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE, false, true);
 					}
 					//Rhye - end
 				}
