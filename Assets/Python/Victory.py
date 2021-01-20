@@ -1461,7 +1461,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
 	if iOwnerCiv == iJapan:
-		expire(iPlayer, 0)
+		expire(iOwner, 0)
 	
 	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
 				
