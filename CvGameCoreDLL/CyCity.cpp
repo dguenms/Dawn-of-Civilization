@@ -2788,3 +2788,8 @@ int CyCity::getActualCulture(int iPlayer)
 {
 	return m_pCity ? m_pCity->getActualCulture((PlayerTypes)iPlayer) : -1;
 }
+
+int CyCity::getPopulationLoss()
+{
+	return m_pCity ? m_pCity->getPopulationLoss() : -1;
+}

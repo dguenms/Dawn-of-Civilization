@@ -591,6 +591,7 @@ public:
 	int getNumActiveWorldWonders();
 	bool isCore(int iPlayer);
 	int getActualCulture(int iPlayer);
+	int getPopulationLoss();
 
 private:
 	CvCity* m_pCity;

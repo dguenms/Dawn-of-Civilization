@@ -691,6 +691,10 @@ def calculateStability(iPlayer):
 	
 	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
+		
+		if city.isOccupation():
+			iPopulation -= city.getPopulationLoss() * city.getOccupationTimer()
+		
 		iModifier = 0
 		plot = plot_(city)
 		
