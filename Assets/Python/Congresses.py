@@ -741,6 +741,8 @@ class Congress:
 		bOwner = (iOwner >= 0)
 		bOwnClaim = (iClaimant == iVoter)
 		
+		bRecolonise = plot.getRegionID() in lAmerica and civ(iClaimant) in dCivGroups[iCivGroupEurope] and civ(iOwner) in dCivGroups[iCivGroupAmerica] and civ(iOwner) in dTechGroups[iTechGroupWestern]
+		
 		if bCity: city = plot.getPlotCity()
 		if bOwner: 
 			bMinor = is_minor(iOwner)
@@ -798,44 +800,43 @@ class Congress:
 			
 		# French UP
 		if civ(iClaimant) == iFrance: iClaimValidity += 5
-			
-		# plot factors
-		# plot culture
-		if bOwner:
-			iClaimValidity += (100 * plot.getCulture(iClaimant) / plot.countTotalCulture()) / 20
-			
-			# after wars: claiming from a non-participant has less legitimacy unless its your own claim
-			if self.bPostWar and not bOwnClaim and iOwner not in self.losers:
-				iClaimValidity -= 10
-			
-		# generic settler map bonus
-		iClaimantValue = plot.getSettlerValue(iClaimant)
-		if iClaimantValue >= 90:
-			iClaimValidity += max(1, iClaimantValue / 100)
-
-		# Europeans support colonialism unless they want the plot for themselves
-		if civ(iVoter) in dCivGroups[iCivGroupEurope]:
-			if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
-				if not bOwner or civ(iOwner) not in dCivGroups[iCivGroupEurope]:
-					if plot.getSettlerValue(iVoter) < 90:
-						iClaimValidity += 10
-						
-		# vote to support settler maps for civs from your own group
-		if bOwner:
-			bDifferentGroupClaimant = True
-			bDifferentGroupOwner = True
-			for lGroup in dCivGroups.values():
-				if civ(iVoter) in lGroup and civ(iClaimant) in lGroup: bDifferentGroupClaimant = False
-				if civ(iVoter) in lGroup and civ(iOwner) in lGroup: bDifferentGroupOwner = False
 		
+		if not bRecolonise:
+		
+			# plot factors
+			# plot culture
+			if bOwner:
+				iClaimValidity += (100 * plot.getCulture(iClaimant) / plot.countTotalCulture()) / 20
+				
+				# after wars: claiming from a non-participant has less legitimacy unless its your own claim
+				if self.bPostWar and not bOwnClaim and iOwner not in self.losers:
+					iClaimValidity -= 10
+				
+			# generic settler map bonus
 			iClaimantValue = plot.getSettlerValue(iClaimant)
-			iOwnerValue = plot.getSettlerValue(iOwner)
+			if iClaimantValue >= 90:
+				iClaimValidity += max(1, iClaimantValue / 100)
+
+			# Europeans support colonialism unless they want the plot for themselves
+			if civ(iVoter) in dCivGroups[iCivGroupEurope]:
+				if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
+					if not bOwner or civ(iOwner) not in dCivGroups[iCivGroupEurope]:
+						if plot.getSettlerValue(iVoter) < 90:
+							iClaimValidity += 10
+							
+			# vote to support settler maps for civs from your own group
+			if bOwner:
+				bDifferentGroupClaimant = none(civ(iVoter) in lGroup and civ(iClaimant) in lGroup for lGroup in dCivGroups.values())
+				bDifferentGroupOwner = none(civ(iVoter) in lGroup and civ(iOwner) in lGroup for lGroup in dCivGroups.values())
 			
-			if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
-			if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
-			
-			iClaimValidity += max(1, iClaimantValue / 100)
-			iClaimValidity -= max(1, iOwnerValue / 100)
+				iClaimantValue = plot.getSettlerValue(iClaimant)
+				iOwnerValue = plot.getSettlerValue(iOwner)
+				
+				if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
+				if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
+				
+				iClaimValidity += max(1, iClaimantValue / 100)
+				iClaimValidity -= max(1, iOwnerValue / 100)
 			
 		# own expansion targets
 		if not bOwnClaim:
@@ -860,12 +861,13 @@ class Congress:
 		
 		# city factors
 		if bCity:
-			# previous ownership
-			if city.isEverOwned(iClaimant): iClaimValidity += 5
-			if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
+			if not bRecolonise:
+				# previous ownership
+				if city.isEverOwned(iClaimant): iClaimValidity += 5
+				if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
 			
-			# city culture, see plot culture
-			if city.getCulture(iClaimant) == 0: iClaimValidity -= 10
+				# city culture, see plot culture
+				if city.getCulture(iClaimant) == 0: iClaimValidity -= 10
 			
 			# close borders
 			for i in range(21):
@@ -1024,23 +1026,27 @@ class Congress:
 				iSettlerMapValue = plot.getSettlerValue(iPlayer)
 				iValue = 0
 				
+				bRecolonise = not self.bPostWar and city.getRegionID() in lAmerica and civ(iPlayer) in dCivGroups[iCivGroupEurope] and civ(city) in dCivGroups[iCivGroupAmerica] and civ(city) in dTechGroups[iTechGroupWestern]
+				
 				if not plot.isRevealed(iPlayer, False): continue
 				if city.isCapital(): continue
 				
 				# after a war: losers can only claim previously owned cities
 				if self.bPostWar and iPlayer in self.losers:
 					if city.getGameTurnPlayerLost(iPlayer) < turn() - turns(25): continue
+					
+				iCultureDivisor = bRecolonise and 50 or 20
 				
 				# city culture
 				iTotalCulture = city.countTotalCultureTimes100()
 				if iTotalCulture > 0:
 					iCultureRatio = city.getCultureTimes100(iPlayer) * 100 / iTotalCulture
-					if iCultureRatio > 20:
-						if civ(iLoopPlayer) != iAmerica:
-							iValue += iCultureRatio / 20
+					if iCultureRatio > iCultureDivisor:
+						if civ(city) != iAmerica:
+							iValue += iCultureRatio / iCultureDivisor
 							
 				# ever owned
-				if city.isEverOwned(iPlayer):
+				if not bRecolonise and city.isEverOwned(iPlayer):
 					iValue += 3
 						
 				# own core
@@ -1048,11 +1054,12 @@ class Congress:
 					iValue += 5
 							
 				# colonies
-				if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
-					if is_minor(iLoopPlayer) or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) < iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
-						if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
-							if iSettlerMapValue > 90:
-								iValue += max(1, iSettlerMapValue / 100)
+				if not bRecolonise:
+					if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
+						if is_minor(iLoopPlayer) or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) < iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
+							if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
+								if iSettlerMapValue > 90:
+									iValue += max(1, iSettlerMapValue / 100)
 									
 				# weaker and collapsing empires
 				if not is_minor(iLoopPlayer):

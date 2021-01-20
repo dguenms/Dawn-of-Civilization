@@ -936,6 +936,7 @@ lOceania = [rAustralia, rOceania]
 
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
+lAmerica = lSouthAmerica + lNorthAmerica
 
 #Projects
 
