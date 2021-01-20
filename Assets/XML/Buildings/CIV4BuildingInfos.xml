@@ -7794,7 +7794,7 @@
 			<Strategy>TXT_KEY_BUILDING_NATIONAL_MONUMENT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_MONUMENT</ArtDefineTag>
-			<PrereqTech>TECH_HERITAGE</PrereqTech>
+			<PrereqTech>TECH_NATIONALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>400</iCost>
