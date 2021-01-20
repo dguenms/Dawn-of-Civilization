@@ -410,7 +410,7 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 			team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
 		
 		for city in enemyCities:
-			plot = plots.surrounding(city).random()
+			plot = plots.surrounding(city).without(city).land().passable().no_enemies(iPlayer).random()
 			makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
 			makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 				
