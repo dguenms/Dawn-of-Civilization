@@ -332,13 +332,16 @@ def checkLostCoreCollapse(iPlayer):
 		debug('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		scheduleCollapse(iPlayer)
 	
-def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
+def determineStabilityLevel(iPlayer, iCurrentLevel, iStability):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if bFall: iThreshold += 10
+	if team(iPlayer).isHasTech(iStatecraft): iThreshold -= 5
+	if team(iPlayer).isHasTech(iNationalism): iThreshold -= 5
+	
+	if isDecline(iPlayer): iThreshold += 10
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
-	elif bFall: return max(iStabilityCollapsing, iCurrentLevel - (iThreshold - iStability) / 10)
+	elif isDecline(iPlayer): return max(iStabilityCollapsing, iCurrentLevel - (iThreshold - iStability) / 10)
 	elif iStability < iThreshold - 10: return max(iStabilityCollapsing, iCurrentLevel - 1)
 	
 	return iCurrentLevel
@@ -372,7 +375,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	bHuman = player(iPlayer).isHuman()
 	bFall = isDecline(iPlayer)
 	
-	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
+	iNewStabilityLevel = determineStabilityLevel(iPlayer, iStabilityLevel, iStability)
 	
 	if iNewStabilityLevel > iStabilityLevel:
 		setStabilityLevel(iPlayer, iNewStabilityLevel)
