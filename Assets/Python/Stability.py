@@ -868,8 +868,6 @@ def calculateStability(iPlayer):
 	
 	lParameters[iParameterTrade] = iTradeStability
 	iEconomyStability += iTradeStability
-	
-	iTotalCommerce = pPlayer.calculateTotalCommerce()
 					
 	# DOMESTIC
 	iDomesticStability = 0
@@ -879,6 +877,10 @@ def calculateStability(iPlayer):
 	
 	if iHappinessStability > 5: iHappinessStability = 5
 	if iHappinessStability < -5: iHappinessStability = -5
+	
+	if not player(iPlayer).isHuman() and iHappinessStability < 0:
+		iHappinessStability *= 2
+		iHappinessStability /= 3
 	
 	lParameters[iParameterHappiness] = iHappinessStability
 	
@@ -923,7 +925,7 @@ def calculateStability(iPlayer):
 	if tPlayer.isHasTech(iNationalism):
 		if iCivicTerritory in [iConquest, iTributaries]: iCivicEraTechStability -= 5
 		
-	if tPlayer.isHasTech(iTheology):
+	if tPlayer.isHasTech(iDoctrine):
 		if iCivicReligion in [iAnimism, iDeification]: iCivicEraTechStability -= 5
 	
 	if iStateReligion == iHinduism:
@@ -955,8 +957,12 @@ def calculateStability(iPlayer):
 	
 	if iTotalPopulation > 0:
 		iHeathenRatio = 100 * iDifferentReligionPopulation / iTotalPopulation
-		iHeathenThreshold = 30
-		iBelieverThreshold = 75
+		iHeathenThreshold = 40
+		iBelieverThreshold = 60
+		
+		if player(iPlayer).isHuman():
+			iHeathenThreshold = 30
+			iBelieverThreshold = 75
 		
 		if iHeathenRatio > iHeathenThreshold:
 			iReligionStability -= (iHeathenRatio - iHeathenThreshold) / 10
@@ -1070,6 +1076,10 @@ def calculateStability(iPlayer):
 	if bIsolationism:
 		if iRelationStability < 0: iRelationStability = 0
 		if iRelationStability > 0: iRelationStability /= 2
+	
+	if not player(iPlayer).isHuman():
+		if iRelationStability < 0:
+			iRelationStability /= 2
 	
 	lParameters[iParameterVassals] = iVassalStability
 	lParameters[iParameterDefensivePacts] = iDefensivePactStability
@@ -1299,6 +1309,10 @@ def updateEconomyTrend(iPlayer):
 		
 	iPositiveThreshold = 5
 	iNegativeThreshold = 0
+	
+	if not player(iPlayer).isHuman():
+		iPositiveThreshold -= 1
+		iNegativeThreshold -= 1
 	
 	if isDecline(iPlayer):
 		iNegativeThreshold = 2
