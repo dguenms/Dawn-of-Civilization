@@ -10108,6 +10108,76 @@ CivicTypes CvPlayerAI::AI_bestCivic(CivicOptionTypes eCivicOption) const
 }
 
 
+bool CvPlayerAI::isUnstableCivic(CivicTypes eCivic) const
+{
+	if (getCurrentEra() >= ERA_GLOBAL)
+	{
+		if (eCivic == CIVIC_ISOLATIONISM)
+		{
+			return true;
+		}
+	}
+
+	if (getCurrentEra() >= ERA_INDUSTRIAL)
+	{
+		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_VASSALAGE)
+		{
+			return true;
+		}
+	}
+
+	if (getCurrentEra() >= ERA_RENAISSANCE)
+	{
+		if (eCivic == CIVIC_DEIFICATION)
+		{
+			return true;
+		}
+	}
+
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)ECONOMICS))
+	{
+		if (eCivic == CIVIC_RECIPROCITY || eCivic == CIVIC_REDISTRIBUTION || eCivic == CIVIC_MERCHANT_TRADE)
+		{
+			return true;
+		}
+	}
+
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)CIVIL_RIGHTS))
+	{
+		if (eCivic == CIVIC_SLAVERY || eCivic == CIVIC_MANORIALISM || eCivic == CIVIC_CASTE_SYSTEM)
+		{
+			return true;
+		}
+	}
+
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)NATIONALISM))
+	{
+		if (eCivic == CIVIC_CONQUEST || eCivic == CIVIC_TRIBUTARIES)
+		{
+			return true;
+		}
+	}
+
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)DOCTRINE))
+	{
+		if (eCivic == CIVIC_ANIMISM || eCivic == CIVIC_DEIFICATION)
+		{
+			return true;
+		}
+	}
+
+	if (getStateReligion() == ZOROASTRIANISM || getStateReligion() == ORTHODOXY || getStateReligion() == CATHOLICISM || getStateReligion() == PROTESTANTISM)
+	{
+		if (eCivic == CIVIC_SLAVERY)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+
 int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
@@ -10826,6 +10896,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue /= 5;
 			break;
 		}
+	}
+
+	// Leoreth: further penalty if bad for stability
+	if (isUnstableCivic(eCivic))
+	{
+		iValue /= 2;
 	}
 
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))

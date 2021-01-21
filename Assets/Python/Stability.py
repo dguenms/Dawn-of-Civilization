@@ -895,6 +895,7 @@ def calculateStability(iPlayer):
 	iCivicEraTechStability = 0
 	
 	# Civics (eras and techs and religions)
+	# note: make sure to reflect this in CvPlayerAI::isUnstableCivic
 	if iCivicLegitimacy == iVassalage:
 		if iCurrentEra == iMedieval: iCivicEraTechStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
