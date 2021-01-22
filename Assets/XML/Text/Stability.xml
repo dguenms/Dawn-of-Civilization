@@ -858,14 +858,6 @@
 		<Spanish>FOREIGN</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_DOMESTIC_CRISIS</Tag>
-		<English>Our civilization is descending into a period of civil war!</English>
-		<French>Notre civilisation sombre dans une p&#233;riode de guerre civile !</French>
-		<German>Our civilization is descending into a period of civil war!</German>
-		<Italian>Our civilization is descending into a period of civil war!</Italian>
-		<Spanish>Our civilization is descending into a period of civil war!</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DOWNGRADE_COTTAGES</Tag>
 		<English>The economic crisis is impeding our cottage growth!</English>
 		<French>La crise &#233;conomique ralentit la croissance de nos cottages !</French>
@@ -1536,6 +1528,14 @@
 		<German>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</German>
 		<Italian>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Italian>
 		<Spanish>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DOMESTIC_CRISIS</Tag>
+		<English>Domestic instability has overwhelmed our civilization, and we have entered a period of %d1 turns of anarchy and unrest.</English>
+		<French>Domestic instability has overwhelmed our civilization, and we have entered a period of %d1 turns of anarchy and unrest.</French>
+		<German>Domestic instability has overwhelmed our civilization, and we have entered a period of %d1 turns of anarchy and unrest.</German>
+		<Italian>Domestic instability has overwhelmed our civilization, and we have entered a period of %d1 turns of anarchy and unrest.</Italian>
+		<Spanish>Domestic instability has overwhelmed our civilization, and we have entered a period of %d1 turns of anarchy and unrest.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_</Tag>

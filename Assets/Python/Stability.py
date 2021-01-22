@@ -109,7 +109,7 @@ def checkLostCitiesCollapses():
 @handler("BeginGameTurn")
 def updateHumanStability(iGameTurn):
 	if iGameTurn >= year(dBirth[active()]):
-		data.iHumanStability = calculateStability(active())
+		data.iHumanStability = calculateStability(active())[0]
 
 
 @handler("EndPlayerTurn")
@@ -121,8 +121,13 @@ def checkSecedingCities(iGameTurn, iPlayer):
 		data.setSecedingCities(iPlayer, cities.of([]))
 
 
-def triggerCollapse(iPlayer):
-	# help overexpanding AI: collapse to core, unless fall date
+def triggerCrisis(iPlayer):
+	# if no overexpansion, just have a domestic crisis
+	if data.players[iPlayer].lStabilityCategoryValues[0] >= 0:
+		domesticCrisis(iPlayer)
+		return
+
+	# if AI overexpands, collapse to core first, unless past fall date
 	if not player(iPlayer).isHuman():
 		if gc.getGame().getGameTurnYear() < dFall[iPlayer]:
 			if cities.core(iPlayer).owner(iPlayer) < cities.owner(iPlayer):
@@ -331,14 +336,19 @@ def checkLostCoreCollapse(iPlayer):
 	
 		debug('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		scheduleCollapse(iPlayer)
-	
-def determineStabilityLevel(iPlayer, iCurrentLevel, iStability):
+
+def determineStabilityThreshold(iPlayer, iCurrentLevel):
 	iThreshold = 10 * iCurrentLevel - 10
 	
 	if team(iPlayer).isHasTech(iStatecraft): iThreshold -= 5
 	if team(iPlayer).isHasTech(iNationalism): iThreshold -= 5
 	
 	if isDecline(iPlayer): iThreshold += 10
+	
+	return iThreshold
+	
+def determineStabilityLevel(iPlayer, iCurrentLevel, iStability):
+	iThreshold = determineStabilityThreshold(iPlayer, iCurrentLevel)
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
 	elif isDecline(iPlayer): return max(iStabilityCollapsing, iCurrentLevel - (iThreshold - iStability) / 10)
@@ -387,7 +397,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		# if remain on collapsing and stability does not improve, collapse ensues
 		elif iNewStabilityLevel == iStabilityCollapsing:
 			if iStability <= data.players[iPlayer].iLastStability:
-				triggerCollapse(iPlayer)
+				triggerCrisis(iPlayer)
 		
 	# update stability information
 	data.players[iPlayer].iLastStability = iStability
@@ -620,6 +630,21 @@ def collapseToCore(iPlayer):
 			
 		# secede all non-core cities
 		secession(iPlayer, nonCoreCities)
+
+def domesticCrisis(iPlayer):
+	iStability = data.players[iPlayer].iLastStability
+	iStabilityThreshold = determineStabilityThreshold(iPlayer, iStabilityCollapsing)
+	
+	iStabilityDifference = iStabilityThreshold - iStability
+	if iStabilityDifference >= 0:
+		iCrisisTurns = turns(1 + iStabilityDifference / 5)
+		
+		player(iPlayer).changeAnarchyTurns(iCrisisTurns)
+		
+		for city in cities.owner(iPlayer):
+			city.changeOccupationTimer(iCrisisTurns)
+			
+		message(iPlayer, 'TXT_KEY_STABILITY_DOMESTIC_CRISIS', iCrisisTurns, color=iRed)
 		
 def downgradeCottages(iPlayer):
 	for plot in plots.all().owner(iPlayer):
