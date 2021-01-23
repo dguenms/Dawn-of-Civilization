@@ -15481,6 +15481,10 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 			if (canForceCivics(eTargetPlayer, eCivic))
 			{
 				iMissionCost = iBaseMissionCost + (kMission.getSwitchCivicCostFactor() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getAnarchyPercent()) / 10000;
+
+				// Leoreth: weigh additional cost by number of cities
+				iMissionCost *= 100 + 10 * getNumCities();
+				iMissionCost /= 100;
 			}
 		}
 	}
@@ -15506,6 +15510,10 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 			if (canForceReligion(eTargetPlayer, eReligion))
 			{
 				iMissionCost = iBaseMissionCost + (kMission.getSwitchReligionCostFactor() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getAnarchyPercent()) / 10000;
+
+				// Leoreth: weigh additional cost by number of cities that do not have the state religion
+				iMissionCost *= 100 + 20 * (getNumCities() - countReligionCities(eReligion));
+				iMissionCost /= 100;
 			}
 		}
 	}
@@ -24965,6 +24973,22 @@ int CvPlayer::countCoreCities() const
 	}
 
 	return iNumCoreCities;
+}
+
+int CvPlayer::countReligionCities(ReligionTypes eReligion) const
+{
+	int iNumCities = 0;
+
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); NULL != pCity; pCity = nextCity(&iLoop))
+	{
+		if (pCity->isHasReligion(eReligion))
+		{
+			iNumCities++;
+		}
+	}
+
+	return iNumCities;
 }
 
 bool CvPlayer::canTradeBonus(BonusTypes eBonus) const

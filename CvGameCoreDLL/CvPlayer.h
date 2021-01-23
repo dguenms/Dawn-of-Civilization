@@ -1332,6 +1332,7 @@ public:
 	void changeNoAnarchyTurns(int iChange);
 
 	int countCoreCities() const;
+	int countReligionCities(ReligionTypes eReligion) const;
 
 	bool canTradeBonus(BonusTypes eBonus) const;
 
