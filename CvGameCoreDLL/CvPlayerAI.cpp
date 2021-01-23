@@ -12718,6 +12718,12 @@ void CvPlayerAI::AI_doDiplo()
 	FAssert(!isMinorCiv());
 	FAssert(!isBarbarian());
 
+	// Leoreth: never initiate diplo on the first turn of a scenario, because it can be disorienting
+	if (GC.getGame().getGameTurn() == getScenarioStartTurn())
+	{
+		return;
+	}
+
 	// allow python to handle it
 	//Rhye - start
 //Speed: Modified by Kael 04/19/2007
