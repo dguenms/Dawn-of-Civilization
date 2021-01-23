@@ -3315,11 +3315,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Tag>
-		<English>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</English>
-		<French>[ICON_BULLET]Capture d'[LINK=UNIT_SLAVE]esclaves[\LINK] garantie</French>
-		<German>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</German>
-		<Italian>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Italian>
-		<Spanish>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
+		<English>[ICON_BULLET]Can Capture [LINK=UNIT_SLAVE]Slaves[\LINK] Regardless of Civics[NEWLINE][ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</English>
+		<French>[ICON_BULLET]Can Capture [LINK=UNIT_SLAVE]Slaves[\LINK] Regardless of Civics[NEWLINE][ICON_BULLET]Capture d'[LINK=UNIT_SLAVE]esclaves[\LINK] garantie</French>
+		<German>[ICON_BULLET]Can Capture [LINK=UNIT_SLAVE]Slaves[\LINK] Regardless of Civics[NEWLINE][ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</German>
+		<Italian>[ICON_BULLET]Can Capture [LINK=UNIT_SLAVE]Slaves[\LINK] Regardless of Civics[NEWLINE][ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Can Capture [LINK=UNIT_SLAVE]Slaves[\LINK] Regardless of Civics[NEWLINE][ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_STRATEGY</Tag>

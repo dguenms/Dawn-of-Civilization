@@ -175,17 +175,19 @@ def captureSlaves(winningUnit, losingUnit):
 
 	if civ(winningUnit) == iAztecs:
 		captureUnit(losingUnit, winningUnit, iAztecSlave, 35)
+		return
+	
+	if civ(losingUnit) == iNative and winningUnit.getUnitType() == iBandeirante and player(winningUnit).canUseSlaves():
+		captureUnit(losingUnit, winningUnit, iSlave, 100)
+		return
 	
 	if players.major().none(lambda p: player(p).canDoCivics(iColonialism)):
 		return
 		
-	elif civ(losingUnit) == iNative:
+	if civ(losingUnit) == iNative:
 		if civ(winningUnit) not in lBioNewWorld or any(data.dFirstContactConquerors.values()):
 			if player(winningUnit).isSlavery() or player(winningUnit).isColonialSlavery():
-				if winningUnit.getUnitType() == iBandeirante:
-					captureUnit(losingUnit, winningUnit, iSlave, 100)
-				else:
-					captureUnit(losingUnit, winningUnit, iSlave, 35)
+				captureUnit(losingUnit, winningUnit, iSlave, 35)
 
 
 @handler("combatResult")
