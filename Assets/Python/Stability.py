@@ -122,6 +122,11 @@ def checkSecedingCities(iGameTurn, iPlayer):
 
 
 def triggerCrisis(iPlayer):
+	if getCrisisCountdown(iPlayer) > 0:
+		return
+	
+	changeCrisisCountdown(iPlayer, turns(10))
+
 	# if no overexpansion, just have a domestic crisis
 	if data.players[iPlayer].lStabilityCategoryValues[0] >= 0:
 		domesticCrisis(iPlayer)
@@ -135,6 +140,7 @@ def triggerCrisis(iPlayer):
 				return
 
 	scheduleCollapse(iPlayer)
+
 
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
