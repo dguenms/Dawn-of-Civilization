@@ -340,9 +340,6 @@ def checkLostCoreCollapse(iPlayer):
 def determineStabilityThreshold(iPlayer, iCurrentLevel):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if team(iPlayer).isHasTech(iStatecraft): iThreshold -= 5
-	if team(iPlayer).isHasTech(iNationalism): iThreshold -= 5
-	
 	if isDecline(iPlayer): iThreshold += 10
 	
 	return iThreshold
@@ -951,10 +948,14 @@ def calculateStability(iPlayer):
 		if iCivicEconomy in [iReciprocity, iRedistribution, iMerchantTrade]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iNationalism):
+		if iCivicTerritory in [iNationalism, iMultilateralism]: iCivicEraTechStability += 5
 		if iCivicTerritory in [iConquest, iTributaries]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iDoctrine):
 		if iCivicReligion in [iAnimism, iDeification]: iCivicEraTechStability -= 5
+	
+	if tPlayer.isHasTech(iStatecraft):
+		if iCivicLegitimacy not in [iAuthority, iCitizenship, iVassalage]: iCivicEraTechStability += 5
 	
 	if iStateReligion == iHinduism:
 		if iCivicSociety == iCasteSystem: iCivicEraTechStability += 3
@@ -985,12 +986,8 @@ def calculateStability(iPlayer):
 	
 	if iTotalPopulation > 0:
 		iHeathenRatio = 100 * iDifferentReligionPopulation / iTotalPopulation
-		iHeathenThreshold = 40
-		iBelieverThreshold = 60
-		
-		if player(iPlayer).isHuman():
-			iHeathenThreshold = 30
-			iBelieverThreshold = 75
+		iHeathenThreshold = 30
+		iBelieverThreshold = 75
 		
 		if iHeathenRatio > iHeathenThreshold:
 			iReligionStability -= (iHeathenRatio - iHeathenThreshold) / 10
@@ -1337,10 +1334,6 @@ def updateEconomyTrend(iPlayer):
 		
 	iPositiveThreshold = 5
 	iNegativeThreshold = 0
-	
-	if not player(iPlayer).isHuman():
-		iPositiveThreshold -= 1
-		iNegativeThreshold -= 1
 	
 	if isDecline(iPlayer):
 		iNegativeThreshold = 2
