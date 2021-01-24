@@ -8873,18 +8873,18 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ITALIAN_LANTERNAS</Type>
-			<Button>Art/Units/Lanternas/Lanternas.dds</Button>
-			<fScale>0.21</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Units/Lanternas.dds</Button>
+			<fScale>0.12</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Lanternas/EE2_Galleas.nif</NIF>
-			<KFM>Art/Units/Lanternas/EE2_Galleas.kfm</KFM>
-			<SHADERNIF>Art/Units/Lanternas/EE2_Galleas_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Lanternas/Great_Galleass_Civ5.nif</NIF>
+			<KFM>Art/Units/Lanternas/Great_Galleass_Civ5.kfm</KFM>
+			<SHADERNIF></SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/GalleyShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/IroncladShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
+				<fShadowScale>4.0</fShadowScale>
 			</ShadowDef>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
@@ -8893,12 +8893,13 @@
 				<fLength>180.0</fLength>
 				<fTaper>1</fTaper>
 				<fFadeStartTime>.2</fFadeStartTime>
-				<fFadeFalloff>0.35</fFadeFalloff>
+				<fFadeFalloff>0.4</fFadeFalloff>
 			</TrailDefinition>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.2</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
