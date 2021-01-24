@@ -137,7 +137,7 @@ lStartingTechs = [
 	iKorea :		techs.column(5).without(iGeneralship, iEngineering, iCurrency),
 	iByzantium :	techs.column(5).including(iArchitecture, iPolitics, iEthics),
 	iJapan :		techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics),
-	iVikings : 		techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds),
+	iVikings : 		techs.column(6).without(iScholarship, iEthics),
 	iTurks :		techs.column(5).including(iNobility, iSteel).column(5).without(iNavigation, iMedicine, iPhilosophy),
 	iArabia :		techs.column(6).including(iAlchemy, iTheology).without(iPolitics),
 	iTibet :		techs.column(5).including(iNobility, iScholarship, iEthics),
@@ -177,7 +177,7 @@ lStartingTechs = [
 	iKorea :		techs.column(6).including(iMachinery).without(iScholarship),
 	iByzantium :	techs.column(6).including(iFortification,iMachinery, iCivilService),
 	iJapan :		techs.column(6).without(iScholarship),
-	iVikings :		techs.column(6).including(iGuilds),
+	iVikings :		techs.column(6).without(iEthics),
 	iTurks :		techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy),
 },
 {
