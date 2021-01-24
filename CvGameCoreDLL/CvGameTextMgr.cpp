@@ -18266,28 +18266,76 @@ void CvGameTextMgr::setVassalRevoltHelp(CvWStringBuffer& szBuffer, TeamTypes eMa
 	CvTeam& kMaster = GET_TEAM(eMaster);
 	CvTeam& kVassal = GET_TEAM(eVassal);
 
+	TeamTypes eActiveTeam = GC.getGameINLINE().getActiveTeam();
+
+	CvWString szTemp;
+	CvWString szFormat;
+	szTemp.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+
 	int iMasterLand = kMaster.getTotalLand(false);
 	int iVassalLand = kVassal.getTotalLand(false);
-	if (iMasterLand > 0 && GC.getDefineINT("FREE_VASSAL_LAND_PERCENT") >= 0)
+	int iLandRatio = (iVassalLand * 100) / iMasterLand;
+	int iLandThreshold = GC.getDefineINT("FREE_VASSAL_LAND_PERCENT");
+	if (iMasterLand > 0 && iLandThreshold >= 0)
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_VASSAL_LAND_STATS", (iVassalLand * 100) / iMasterLand, GC.getDefineINT("FREE_VASSAL_LAND_PERCENT")));
+		szTemp = gDLL->getText("TXT_KEY_MISC_VASSAL_LAND_STATS", iLandRatio, iLandThreshold);
+
+		if (kMaster.getID() == eActiveTeam && iLandRatio >= iLandThreshold)
+		{
+			szFormat.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+			szTemp = szFormat + szTemp + ENDCOLR;
+		}
+
+		szBuffer.append(szTemp);
 	}
 
 	int iMasterPop = kMaster.getTotalPopulation(false);
 	int iVassalPop = kVassal.getTotalPopulation(false);
-	if (iMasterPop > 0 && GC.getDefineINT("FREE_VASSAL_POPULATION_PERCENT") >= 0)
+	int iPopRatio = (iVassalPop * 100) / iMasterPop;
+	int iPopThreshold = GC.getDefineINT("FREE_VASSAL_POPULATION_PERCENT");
+	if (iMasterPop > 0 && iPopThreshold >= 0)
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_VASSAL_POPULATION_STATS", (iVassalPop * 100) / iMasterPop, GC.getDefineINT("FREE_VASSAL_POPULATION_PERCENT")));
+		szTemp = gDLL->getText("TXT_KEY_MISC_VASSAL_POPULATION_STATS", iPopRatio, iPopThreshold);
+
+		if (kMaster.getID() == eActiveTeam && iPopRatio >= iPopThreshold)
+		{
+			szFormat.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+			szTemp = szFormat + szTemp + ENDCOLR;
+		}
+
+		szBuffer.append(szTemp);
 	}
 
-	if (GC.getDefineINT("VASSAL_REVOLT_OWN_LOSSES_FACTOR") > 0 && kVassal.getVassalPower() > 0)
+	int iVassalPower = kVassal.getVassalPower();
+	int iVassalPowerRatio = (iVassalLand * 100) / iVassalPower;
+	int iOwnLossesThreshold = GC.getDefineINT("VASSAL_REVOLT_OWN_LOSSES_FACTOR");
+	if (iOwnLossesThreshold > 0 && iVassalPower > 0)
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_VASSAL_AREA_LOSS", (iVassalLand * 100) / kVassal.getVassalPower(), GC.getDefineINT("VASSAL_REVOLT_OWN_LOSSES_FACTOR")));
+		szTemp = gDLL->getText("TXT_KEY_MISC_VASSAL_AREA_LOSS", iVassalPowerRatio, iOwnLossesThreshold);
+
+		if (kMaster.getID() == eActiveTeam && iVassalPowerRatio >= iOwnLossesThreshold)
+		{
+			szFormat.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+			szTemp = szFormat + szTemp + ENDCOLR;
+		}
+
+		szBuffer.append(szTemp);
 	}
 
-	if (GC.getDefineINT("VASSAL_REVOLT_MASTER_LOSSES_FACTOR") > 0 && kVassal.getMasterPower() > 0)
+	int iMasterPower = kVassal.getMasterPower();
+	int iMasterPowerRatio = (iMasterLand * 100) / iMasterPower;
+	int iMasterLossesThreshold = GC.getDefineINT("VASSAL_REVOLT_MASTER_LOSSES_FACTOR");
+	if (iMasterLossesThreshold > 0 && iMasterPower > 0)
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_MASTER_AREA_LOSS", (iMasterLand * 100) / kVassal.getMasterPower(), GC.getDefineINT("VASSAL_REVOLT_MASTER_LOSSES_FACTOR")));
+		szTemp = gDLL->getText("TXT_KEY_MISC_MASTER_AREA_LOSS", (iMasterLand * 100) / kVassal.getMasterPower(), GC.getDefineINT("VASSAL_REVOLT_MASTER_LOSSES_FACTOR"));
+
+		if (kMaster.getID() == eActiveTeam && iMasterPowerRatio >= iMasterLossesThreshold)
+		{
+			szFormat.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+			szTemp = szFormat + szTemp + ENDCOLR;
+		}
+
+		szBuffer.append(szTemp);
 	}
 }
 
