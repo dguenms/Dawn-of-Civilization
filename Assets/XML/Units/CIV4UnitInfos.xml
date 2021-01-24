@@ -2842,10 +2842,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
-			<TechTypes>
-				<PrereqTech>TECH_STEEL</PrereqTech>
-			</TechTypes>
+			<PrereqTech>TECH_STEEL</PrereqTech>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
