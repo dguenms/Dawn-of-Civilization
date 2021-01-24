@@ -5504,19 +5504,6 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 // BUG - Base Values - end
 	szString.append(CvWString::format(L" -%d.%02d %c", iMaintenance/100, iMaintenance%100, GC.getCommerceInfo(COMMERCE_GOLD).getChar()));
 
-	// Leoreth
-	int iStabilityPopulation = pCity->getStabilityPopulation();
-	if (iStabilityPopulation > 0)
-	{
-		szString.append(NEWLINE);
-		szString.append(gDLL->getText("TXT_KEY_INTERFACE_CITY_CORE_POPULATION", iStabilityPopulation));
-	}
-	else if (iStabilityPopulation < 0)
-	{
-		szString.append(NEWLINE);
-		szString.append(gDLL->getText("TXT_KEY_INTERFACE_CITY_PERIPHERY_POPULATION", abs(iStabilityPopulation)));
-	}
-
 // BUG - Building Icons - start
 	if (getBugOptionBOOL("CityBar__BuildingIcons", true, "BUG_CITYBAR_BUILDING_ICONS"))
 	{
@@ -16388,8 +16375,8 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	if (iStabilityCategory == 0)
 	{
 		int iParameterCorePeriphery = player.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
-		int iParameterCoreScore = player.getStabilityParameter(PARAMETER_CORE_SCORE);
-		int iParameterPeripheryScore = player.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
+		int iParameterAdministration = player.getStabilityParameter(PARAMETER_ADMINISTRATION);
+		int iParameterSeparatism = player.getStabilityParameter(PARAMETER_SEPARATISM);
 		int iParameterRecentExpansion = player.getStabilityParameter(PARAMETER_RECENT_EXPANSION);
 		int iParameterRazedCities = player.getStabilityParameter(PARAMETER_RAZED_CITIES);
 		int iParameterIsolationism = player.getStabilityParameter(PARAMETER_ISOLATIONISM);
@@ -16418,7 +16405,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterCorePeriphery >= 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%s: %d / %d", gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_INFO").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
+			szTemp.Format(L"%s: %d / %d", gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_INFO").GetCString(), iParameterSeparatism, iParameterAdministration);
 			//szTemp.Format(L"+%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
@@ -16429,7 +16416,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterCorePeriphery < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
+			szTemp.Format(L"%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString(), iParameterSeparatism, iParameterAdministration);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 

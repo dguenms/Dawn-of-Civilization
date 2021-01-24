@@ -7,6 +7,7 @@ import CvScreenEnums
 import CvEventInterface
 import time
 
+from Stability import *
 from RFCUtils import *
 from StoredData import data
 from Consts import *
@@ -3071,6 +3072,8 @@ class CvMainInterface:
 			screen.hide(szString)
 			szString = "RateText" + str(iI)
 			screen.hide(szString)
+		
+		screen.hide("ExpansionText")
 
 		if ( CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY  and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_ADVANCED_START):
 
@@ -3098,6 +3101,16 @@ class CvMainInterface:
 							screen.show( szString )
 
 						iCount = iCount + 1;
+				
+				if not CyInterface().isCityScreenUp():
+					iAdministration = cities.owner(ePlayer).sum(calculateAdministration)
+					iSeparatism = cities.owner(ePlayer).sum(calculateSeparatism)
+					expansion = "%s %s" % (localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR))), localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR))))
+					
+					if iAdministration < iSeparatism:
+						expansion = u"<color=255,0,0>%s</color>" % expansion
+					
+					screen.setLabel("ExpansionText", "Background", expansion, CvUtil.FONT_LEFT_JUSTIFY, 14, 50 + (iCount + 1) * 19, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 			self.updateTimeText()
 			screen.setLabel( "TimeText", "Background", g_szTimeText, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 56, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -3460,6 +3473,8 @@ class CvMainInterface:
 		screen.hide( "DefenseText" )
 		screen.hide( "NationalWonderLimitText" )
 		screen.hide( "WorldWonderLimitText" )
+		screen.hide( "AdministrationText" )
+		screen.hide( "SeparatismText" )
 		screen.hide( "CityScrollMinus" )
 		screen.hide( "CityScrollPlus" )
 		screen.hide( "CityNameText" )
@@ -4553,6 +4568,17 @@ class CvMainInterface:
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iNationalWonders, iNationalWondersLimit, CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)))
 				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 440, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
 				screen.show( "NationalWonderLimitText" )
+				
+				if pHeadSelectedCity.isCore(pHeadSelectedCity.getOwner()):
+					iAdministration = calculateAdministration(pHeadSelectedCity)
+					szBuffer = localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR)))
+					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 480, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.show("AdministrationText")
+				else:
+					iSeparatism = calculateSeparatism(pHeadSelectedCity)
+					szBuffer = localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)))
+					screen.setLabel("SeparatismText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 480, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.show("SeparatismText")
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
 					#bDisplayCoverage = False #(pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)

@@ -58,6 +58,7 @@ from RFCUtils import *
 from RFCUtils import canRespawn as canRespawnUtils
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
+from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
 import RiseAndFall as rnf
 import Victory as vic

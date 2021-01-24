@@ -3001,6 +3001,22 @@
 		<Spanish>%d1/%d2%F3</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>INTERFACE_ADMINISTRATION</Tag>
+		<English>%d1 %F2</English>
+		<French>%d1 %F2</French>
+		<German>%d1 %F2</German>
+		<Italian>%d1 %F2</Italian>
+		<Spanish>%d1 %F2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_SEPARATISM</Tag>
+		<English>%d1 %F2</English>
+		<French>%d1 %F2</French>
+		<German>%d1 %F2</German>
+		<Italian>%d1 %F2</Italian>
+		<Spanish>%d1 %F2</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP</Tag>
 		<English>%d1 out of %d2 National Wonders at %s3 culture</English>
 		<French>%d1 sur %d2 merveilles nationales avec une culture %s3</French>

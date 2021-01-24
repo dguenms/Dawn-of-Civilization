@@ -39,7 +39,7 @@ tCrisisTypes = (
 "TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY",
 )
 
-tEraCorePopulationModifiers = (
+tEraAdministrationModifier = (
 	100, # ancient
 	200, # classical
 	200, # medieval
@@ -664,7 +664,90 @@ def downgradeCottages(iPlayer):
 				plot.setImprovementType(-1)
 				
 	message(iPlayer, 'TXT_KEY_STABILITY_DOWNGRADE_COTTAGES', color=iRed)
+
+def calculateAdministration(city):
+	iPlayer = city.getOwner()
+
+	if not city.isCore(iPlayer):
+		return 0
+	
+	iPopulation = city.getPopulation()
+	iCurrentEra = player(iPlayer).getCurrentEra()
+	iAdministrationModifier = getAdministrationModifier(iCurrentEra)
+	
+	bSingleCoreCity = cities.core(iPlayer).owner(iPlayer).count() == 1
+
+	iAdministration = iAdministrationModifier * iPopulation / 100
+	if bSingleCoreCity and iCurrentEra > iAncient: 
+		iAdministration *= 2
+	
+	return iAdministration
+	
+def getSeparatismModifier(iPlayer, city):
+	iModifier = 0
+	
+	iCiv = civ(iPlayer)
+	
+	plot = city.plot()
+	civic = civics(iPlayer)
+	
+	bHistorical = plot.getSettlerValue(iPlayer) >= 90
+	bTotalitarianism = civic.iSociety == iTotalitarianism
+	bExpansionExceptions = (bHistorical and iCiv == iMongols) or bTotalitarianism
+	
+	iTotalCulture = players.major().sum(lambda p: plot.isCore(p) and 2 * plot.getCulture(p) or plot.getCulture(p))
+	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
+	
+	# ahistorical tiles
+	if not bHistorical:
+		iModifier += 2
+	
+	# colonies with Totalitarianism
+	if city.isColony() and bHistorical and civic.iGovernment == iTotalitarianism:
+		iModifier += 1
 		
+	# not original owner
+	if not bExpansionExceptions:
+		if city.getOriginalOwner() != iPlayer and since(city.getGameTurnAcquired()) < turns(25):
+			iModifier += 1
+	
+	# not majority culture
+	if iCiv != iPersia:
+		if iCulturePercent < 50: iModifier += 1
+		if iCulturePercent < 20: iModifier += 1
+	
+	# Courthouse
+	if city.hasBuilding(unique_building(iPlayer, iCourthouse)):
+		iModifier -= 1
+	
+	# Jail
+	if city.hasBuilding(unique_building(iPlayer, iJail)):
+		iModifier -= 1
+	
+	# overseas colonies with Portuguese UP and Colonialism
+	if city.isColony():
+		if iCiv == iPortugal: iModifier -= 2
+		if civic.iTerritory == iColonialism and bHistorical: iModifier -= 1
+	
+	# cap
+	if iModifier < -1: iModifier = -1
+	
+	return 100 + iModifier * 50
+
+def calculateSeparatism(city):
+	iPlayer = city.getOwner()
+
+	if city.isCore(iPlayer):
+		return 0
+	
+	iModifier = getSeparatismModifier(iPlayer, city)
+	iPopulation = city.getPopulation()
+	
+	if city.isOccupation():
+		iPopulation -= city.getPopulationLoss() * city.getOccupationTimer()
+	
+	return iModifier * iPopulation / 100
+
 def calculateStability(iPlayer):
 	pPlayer = player(iPlayer)
 	tPlayer = team(iPlayer)
@@ -691,8 +774,6 @@ def calculateStability(iPlayer):
 	iCivicReligion = pPlayer.getCivics(4)
 	iCivicTerritory = pPlayer.getCivics(5)
 	
-	iCorePopulation = 10
-	iPeripheryPopulation = 10
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
 	
@@ -716,82 +797,15 @@ def calculateStability(iPlayer):
 	bNationhood = iCivicTerritory == iNationhood
 	bMultilateralism = iCivicTerritory == iMultilateralism
 	
-	bSingleCoreCity = cities.core(iPlayer).owner(iPlayer).count() == 1
-	
-	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
+	iAdministration = cities.owner(iPlayer).sum(calculateAdministration) + 10
+	iSeparatism = cities.owner(iPlayer).sum(calculateSeparatism)
 	
 	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
+		bHistorical = city.plot().getSettlerValue(iPlayer) >= 90
 		
-		if city.isOccupation():
-			iPopulation -= city.getPopulationLoss() * city.getOccupationTimer()
-		
-		iModifier = 0
-		plot = plot_(city)
-		
-		bHistorical = (plot.getSettlerValue(iPlayer) >= 90)
-		
-		iTotalCulture = 0
-		
-		# Expansion
-		if plot.isCore(iPlayer):
-			iStabilityPopulation = iCorePopulationModifier * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iStabilityPopulation += iCorePopulationModifier * iPopulation / 100
-			
-			iCorePopulation += iStabilityPopulation
-			city.setStabilityPopulation(iStabilityPopulation)
-		else:
-			iOwnCulture = plot.getCulture(iPlayer)
-			
-			for iLoopPlayer in players.major():
-				iTempCulture = plot.getCulture(iLoopPlayer)
-				if plot.isCore(iLoopPlayer):
-					iTempCulture *= 2
-				iTotalCulture += iTempCulture
-				
-			if iTotalCulture != 0:
-				iCulturePercent = 100 * iOwnCulture / iTotalCulture
-			else:
-				iCulturePercent = 100
-					
-			bExpansionExceptions = ((bHistorical and iCiv == iMongols) or bTotalitarianism)
-		
-			# ahistorical tiles
-			if not bHistorical: iModifier += 2
-			
-			# colonies with Totalitarianism
-			if city.isColony() and bHistorical and bTotalitarianism: iModifier += 1
-			
-			# not original owner
-			if not bExpansionExceptions:
-				if city.getOriginalOwner() != iPlayer and turn() - city.getGameTurnAcquired() < turns(25): iModifier += 1
-			
-			# not majority culture (includes foreign core and Persian UP)
-			if iCiv != iPersia:
-				if iCulturePercent < 50: iModifier += 1
-				if iCulturePercent < 20: iModifier += 1
-			
-			# Courthouse
-			if city.hasBuilding(unique_building(iPlayer, iCourthouse)): iModifier -= 1
-			
-			# Jail
-			if city.hasBuilding(unique_building(iPlayer, iJail)): iModifier -= 1
-			
-			# Portuguese UP: reduced instability from overseas colonies
-			if city.isColony():
-				if iCiv == iPortugal: iModifier -= 2
-				if bColonialism and bHistorical: iModifier -= 1
-					
-			# cap
-			if iModifier < -1: iModifier = -1
-			
-			iStabilityPopulation = (100 + iModifier * 50) * iPopulation / 100
-			
-			iPeripheryPopulation += iStabilityPopulation
-			city.setStabilityPopulation(-iStabilityPopulation)
-			
 		# Recent conquests
-		if bHistorical and turn() - city.getGameTurnAcquired() <= turns(20):
+		if bHistorical and since(city.getGameTurnAcquired()) <= turns(20):
 			if city.getPreviousOwner() < 0:
 				iRecentlyFounded += 1
 			else:
@@ -815,17 +829,12 @@ def calculateStability(iPlayer):
 			if bNonStateReligion: 
 				if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iDifferentReligionPopulation += iPopulation / 2
 				else: iDifferentReligionPopulation += iPopulation
-		
-	iPopulationImprovements = 0
-	for plot in plots.core(iCiv):
-		if plot.getOwner() == iPlayer and plot.getWorkingCity():
-			if plot.getImprovementType() in [iVillage, iTown]:
-				iPopulationImprovements += 1
-			
-	iCorePopulation += iCorePopulationModifier * iPopulationImprovements / 100
+				
+	iAdministrationImprovements = plots.core(iPlayer).owner(iPlayer).where(lambda plot: plot.getWorkingCity() and plot.getImprovementType() in [iVillage, iTown]).count()
+	iAdministration += getAdministrationModifier(iCurrentEra) * iAdministrationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
-	iPreviousPower = pPlayer.getPowerHistory(turn() - turns(10))
+	iPreviousPower = pPlayer.getPowerHistory(since(turns(10)))
 	
 	# EXPANSION
 	iExpansionStability = 0
@@ -835,21 +844,16 @@ def calculateStability(iPlayer):
 	iRazeCityStability = 0
 	
 	# Core vs. Periphery Populations
-	if iCorePopulation == 0:
-		iPeripheryExcess = 200
-	else:
-		iPeripheryExcess = 100 * iPeripheryPopulation / iCorePopulation - 100
+	iSeparatismExcess = 100 * iSeparatism / iAdministration - 100
 	
-	if iPeripheryExcess > 200: iPeripheryExcess = 200
+	if iSeparatismExcess > 200: iSeparatismExcess = 200
 		
-	if iPeripheryExcess > 0:
-		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
-		
-		debug('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
+	if iSeparatismExcess > 0:
+		iSeparatismExcess -= int(25 * sigmoid(1.0 * iSeparatismExcess / 100))
 		
 	lParameters[iParameterCorePeriphery] = iCorePeripheryStability
-	lParameters[iParameterCoreScore] = iCorePopulation
-	lParameters[iParameterPeripheryScore] = iPeripheryPopulation
+	lParameters[iParameterAdministration] = iAdministration
+	lParameters[iParameterSeparatism] = iSeparatism
 		
 	iExpansionStability += iCorePeripheryStability
 	
@@ -1770,8 +1774,8 @@ def switchCivics(iPlayer):
 def rebellionPopup(iRebelCiv):
 	eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
 	
-def getCorePopulationModifier(iEra):
-	return tEraCorePopulationModifiers[iEra]
+def getAdministrationModifier(iEra):
+	return tEraAdministrationModifier[iEra]
 	
 def balanceStability(iPlayer, iNewStabilityLevel):
 	debug("Balance stability: %s", name(iPlayer))

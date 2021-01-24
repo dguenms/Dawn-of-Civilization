@@ -5,6 +5,8 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
+from Stability import calculateAdministration, calculateSeparatism
+
 #	IMPORTANT INFORMATION
 #	
 #	All widget names MUST be unique when creating screens.  If you create
@@ -137,12 +139,15 @@ class CvDomesticAdvisor:
 				
 		# Garrison Column
 		screen.setTableColumnHeader( "CityListBackground", 14, "<font=2>" + (u"%c" % CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR)) + "</font>", (35 * self.nTableWidth) / self.nNormalizedTableWidth )
-				
+		
+		# Expansion Column
+		screen.setTableColumnHeader( "CityListBackground", 15, "<font=2>" + (u"%c" % CyGame().getSymbolID(FontSymbols.SCALES_CHAR)) + "</font>", (35 * self.nTableWidth) / self.nNormalizedTableWidth )
+		
 		# Production Column
-		screen.setTableColumnHeader( "CityListBackground", 15, "<font=2>" + localText.getText("TXT_KEY_DOMESTIC_ADVISOR_PRODUCING", ()) + "</font>", (132 * self.nTableWidth) / self.nNormalizedTableWidth )	
+		screen.setTableColumnHeader( "CityListBackground", 16, "<font=2>" + localText.getText("TXT_KEY_DOMESTIC_ADVISOR_PRODUCING", ()) + "</font>", (132 * self.nTableWidth) / self.nNormalizedTableWidth )	
 
 		# Liberate Column
-		screen.setTableColumnHeader( "CityListBackground", 16, "", (25 * self.nTableWidth) / self.nNormalizedTableWidth )
+		screen.setTableColumnHeader( "CityListBackground", 17, "", (25 * self.nTableWidth) / self.nNormalizedTableWidth )
 
 	# Function to draw the contents of the cityList passed in
 	def drawContents (self):
@@ -283,12 +288,15 @@ class CvDomesticAdvisor:
 		# Garrison
 		screen.setTableInt( "CityListBackground", 14, i, unicode(pLoopCity.plot().getNumDefenders(pLoopCity.getOwner())), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 
+		# Expansion
+		screen.setTableInt( "CityListBackground", 15, i, unicode(pLoopCity.isCore(pLoopCity.getOwner()) and calculateAdministration(pLoopCity) or -calculateSeparatism(pLoopCity)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
+
 		# Producing	
-		screen.setTableText( "CityListBackground", 15, i, pLoopCity.getProductionName() + " (" + str(pLoopCity.getGeneralProductionTurnsLeft()) + ")", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
+		screen.setTableText( "CityListBackground", 16, i, pLoopCity.getProductionName() + " (" + str(pLoopCity.getGeneralProductionTurnsLeft()) + ")", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 
 		# Liberation
 		if pLoopCity.getLiberationPlayer(false) != -1:			
-			screen.setTableText( "CityListBackground", 16, i, "<font=2>" + (u"%c" % CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)) + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
+			screen.setTableText( "CityListBackground", 17, i, "<font=2>" + (u"%c" % CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)) + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 		
 		
 	# Draw the specialist and their increase and decrease buttons

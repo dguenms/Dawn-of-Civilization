@@ -29,6 +29,10 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+def since(iTurn):
+	return turn() - iTurn
+
+
 def getPlayerExperience(unit):
 	iExperience = player(unit).getFreeExperience() + player(unit).getDomainFreeExperience(unit.getDomainType())
 	

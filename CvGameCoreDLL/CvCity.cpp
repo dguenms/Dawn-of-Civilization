@@ -5302,7 +5302,7 @@ void CvCity::updateArtStyleType()
 			if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
 		}
 	}
-	else 
+	else
 	{
 		if (GET_PLAYER(eHighestCulture).isNative())
 		{
@@ -5400,7 +5400,6 @@ void CvCity::updateArtStyleType()
 		setLayoutDirty(true);
 	}
 }
-
 
 CitySizeTypes CvCity::getCitySizeType() const
 {
