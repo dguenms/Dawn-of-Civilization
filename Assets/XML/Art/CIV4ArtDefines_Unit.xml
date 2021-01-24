@@ -6974,13 +6974,13 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALLEASS</Type>
 			<Button>Art/Interface/Buttons/Units/Galleass.dds</Button>
-			<fScale>0.1</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<fScale>0.12</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Galleass/Galley.nif</NIF>
-			<KFM>Art/Units/Galleass/Galley.kfm</KFM>
-			<SHADERNIF>Art/Units/Galleass/Galley.nif</SHADERNIF>
+			<NIF>Art/Units/Galleass/Galleass_Civ5.nif</NIF>
+			<KFM>Art/Units/Galleass/Galleass_Civ5.kfm</KFM>
+			<SHADERNIF>Art/Units/Galleass/Galleass_Civ5.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/IroncladShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
