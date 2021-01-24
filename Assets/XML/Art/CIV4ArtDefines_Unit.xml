@@ -3570,9 +3570,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Hwacha_Korean/Hwacha.nif</NIF>
-			<KFM>Art/Units/Hwacha_Korean/Hwacha.kfm</KFM>
-			<SHADERNIF>Art/Units/Hwacha_Korean/Hwacha_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Hwacha/Hwacha_Civ5.nif</NIF>
+			<KFM>Art/Units/Hwacha/Hwacha_Civ5.kfm</KFM>
+			<SHADERNIF>Art/Units/Hwacha/Hwacha_Civ5.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/CatapultShadow.nif</ShadowNIF>
 				<ShadowAttachNode>Cart_Master_Dummy</ShadowAttachNode>
