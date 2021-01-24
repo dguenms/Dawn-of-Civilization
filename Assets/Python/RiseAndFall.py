@@ -696,9 +696,6 @@ class RiseAndFall:
 			elif iCiv == iItaly:
 				if player(iRome).isAlive():
 					return
-					
-				if not cities.core(iRome).where(lambda city: city.getOwner() not in players.major()):
-					return
 				
 		tCapital = location(plots.capital(iCiv))
 				
