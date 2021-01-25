@@ -879,7 +879,7 @@ def calculateStability(iPlayer):
 	# stability if not expanded beyond core with isolationism
 	iIsolationismStability = 0
 	
-	if bIsolationism and iPeripheryPopulation <= 10:
+	if bIsolationism and iSeparatism <= 10:
 		iIsolationismStability = 10
 		
 	lParameters[iParameterIsolationism] = iIsolationismStability
