@@ -126,18 +126,20 @@ def triggerCrisis(iPlayer):
 		return
 	
 	changeCrisisCountdown(iPlayer, turns(10))
-
-	# if no overexpansion, just have a domestic crisis
-	if data.players[iPlayer].lStabilityCategoryValues[0] >= 0:
-		domesticCrisis(iPlayer)
-		return
-
-	# if AI overexpands, collapse to core first, unless past fall date
-	if not player(iPlayer).isHuman():
-		if gc.getGame().getGameTurnYear() < dFall[iPlayer]:
-			if cities.core(iPlayer).owner(iPlayer) < cities.owner(iPlayer):
-				collapseToCore(iPlayer)
-				return
+	
+	bFall = since(year(dFall[iPlayer])) >= 0
+	
+	# help AI to not immediately collapse
+	if not player(iPlayer).isHuman() and not bFall:
+		# with no overexpansion at all, just have a domestic crisis (once until back at shaky again)
+		if not data.players[iPlayer].bDomesticCrisis and data.players[iPlayer].lStabilityCategoryValues[0] <= 0:
+			domesticCrisis(iPlayer)
+			return
+		
+		# collapse to core if controlling cities outside of core
+		if cities.core(iPlayer).owner(iPlayer) < cities.owner(iPlayer):
+			collapseToCore(iPlayer)
+			return
 
 	scheduleCollapse(iPlayer)
 
@@ -242,6 +244,9 @@ def setStabilityLevel(iPlayer, iStabilityLevel):
 		return
 
 	data.setStabilityLevel(iPlayer, iStabilityLevel)
+	
+	if iStabilityLevel >= iStabilityShaky:
+		data.players[iPlayer].bDomesticCrisis = False
 	
 	if iStabilityLevel == iStabilityCollapsing:
 		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSING_WARNING', color=iRed)
@@ -635,6 +640,8 @@ def collapseToCore(iPlayer):
 		secession(iPlayer, nonCoreCities)
 
 def domesticCrisis(iPlayer):
+	data.players[iPlayer].bDomesticCrisis = True
+
 	iStability = data.players[iPlayer].iLastStability
 	iStabilityThreshold = determineStabilityThreshold(iPlayer, iStabilityCollapsing)
 	

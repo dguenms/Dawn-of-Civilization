@@ -80,6 +80,8 @@ class PlayerData:
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
 		
+		self.bDomesticCrisis = False
+		
 	def resetEconomyTrend(self):
 		self.lEconomyTrend = []
 		
