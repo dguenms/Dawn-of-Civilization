@@ -354,6 +354,9 @@ dForeignNames = deepdict({
 		iOttomans : "TXT_KEY_CIV_ROMAN_NAME_OTTOMANS",
 		iThailand : "TXT_KEY_CIV_ROMAN_NAME_THAILAND",
 	},
+	iTurks : {
+		iByzantium : "TXT_KEY_CIV_TURKIC_NAME_BYZANTIUM",
+	},
 	iArabia : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
 		iBabylonia : "TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA",

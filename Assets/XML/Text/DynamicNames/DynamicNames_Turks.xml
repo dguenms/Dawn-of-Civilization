@@ -294,6 +294,18 @@
 		<Spanish>Atabeylik of %s3</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKIC_NAME_BYZANTIUM</Tag>
+		<English>R&#251;m</English>
+		<French>
+			<Text>Roum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>R&#251;m</German>
+		<Italian>R&#251;m</Italian>
+		<Spanish>R&#251;m</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_</Tag>
 		<English></English>
 		<French></French>
