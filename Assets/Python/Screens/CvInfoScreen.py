@@ -12,7 +12,7 @@ import string
 #import time
 import math
 
-from Consts import *
+from Core import *
 from RFCUtils import *
 from PyHelpers import PyPlayer
 from operator import itemgetter
@@ -2900,10 +2900,10 @@ class CvInfoScreen:
 	def getLog10(self, x):
 		return math.log10(max(1,x))
 
-	def getTurnDate(self,turn):
-		iYear = gc.getGame().getGameTurnYear()
+	def getTurnDate(self, turn):
+		iYear = game.getTurnYear(turn)
 		    
-		iPlayer = CyGame().getActivePlayer()
+		iPlayer = game.getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
