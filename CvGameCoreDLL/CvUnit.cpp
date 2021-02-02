@@ -7565,6 +7565,7 @@ int CvUnit::getStackExperienceToGive(int iNumUnits) const
 int CvUnit::upgradePrice(UnitTypes eUnit) const
 {
 	int iPrice;
+	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
 
 	//Rhye - start comment (Kael)
 	//CyArgsList argsList;
@@ -7587,6 +7588,18 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	iPrice = GC.getDefineINT("BASE_UNIT_UPGRADE_COST");
 
 	iPrice += (std::max(0, (GET_PLAYER(getOwnerINLINE()).getProductionNeeded(eUnit) - GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType()))) * GC.getDefineINT("UNIT_UPGRADE_COST_PER_PRODUCTION"));
+
+	if (!canFight() && kUnit.getWorkRate() > 0)
+	{
+		iPrice *= kUnit.getWorkRate() - m_pUnitInfo->getWorkRate();
+		iPrice /= 10;
+	}
+
+	if (kUnit.getCityAttackModifier() > 0 && m_pUnitInfo->getCityAttackModifier() > 0)
+	{
+		iPrice *= (100 + std::max(kUnit.getCityAttackModifier(), m_pUnitInfo->getCityAttackModifier()));
+		iPrice /= 100;
+	}
 
 	if (!isHuman() && !isBarbarian())
 	{
