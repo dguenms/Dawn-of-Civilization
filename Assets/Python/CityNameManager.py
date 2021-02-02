@@ -5407,6 +5407,7 @@ tRenames = (
 	"Artashat"		:	"Artaxata",
 	"Split"			:	"Aspalathos",
 	"Zawty"			:	"Asyut",
+	"Athinai"		:	"Athinai",
 	"Attaleia"		:	"Attaleia",
 	"Automala"		:	"Automala",
 	"Pi-Ramesses"	:	"Avaris",
