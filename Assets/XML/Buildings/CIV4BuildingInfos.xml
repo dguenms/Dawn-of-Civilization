@@ -8743,7 +8743,7 @@
 			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>5</iAsset>
 			<iPower>10</iPower>
@@ -8911,7 +8911,7 @@
 			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -9185,7 +9185,7 @@
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iTradeRoutes>2</iTradeRoutes>
 			<iAsset>10</iAsset>
@@ -9235,7 +9235,7 @@
 			<iCost>300</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>5</iAsset>
 			<iPower>10</iPower>
@@ -12140,7 +12140,7 @@
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
 			<iAsset>16</iAsset>
@@ -12459,7 +12459,7 @@
 			<iCost>600</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>14</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -12996,7 +12996,7 @@
 			<iCost>1500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iGlobalFreeSpecialist>1</iGlobalFreeSpecialist>
 			<iAsset>16</iAsset>
@@ -13152,7 +13152,7 @@
 			<iCoastalTradeRoutes>1</iCoastalTradeRoutes>
 			<iCost>1000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>14</iAsset>
@@ -13524,7 +13524,7 @@
 			<iCost>1000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>16</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -13574,7 +13574,7 @@
 			<iCost>1500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>16</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -14227,7 +14227,7 @@
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -14945,7 +14945,7 @@
 			<iCost>1800</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -15085,7 +15085,7 @@
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -15384,7 +15384,7 @@
 			<iCost>2500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
+			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
