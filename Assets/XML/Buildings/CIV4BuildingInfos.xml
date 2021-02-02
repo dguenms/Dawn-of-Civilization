@@ -3380,7 +3380,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ESTATE</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
-			<iCost>120</iCost>
+			<iCost>150</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3436,7 +3436,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MUGHAL_MAUSOLEUM</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
-			<iCost>120</iCost>
+			<iCost>150</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3498,7 +3498,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
-			<iCost>120</iCost>
+			<iCost>150</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3596,7 +3596,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
-			<iCost>120</iCost>
+			<iCost>150</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3669,7 +3669,7 @@
 			<PrereqTech>TECH_HYDRAULICS</PrereqTech>
 			<bWater>1</bWater>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>120</iCost>
+			<iCost>160</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iHealth>-1</iHealth>
@@ -3706,7 +3706,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_LEVEE</ArtDefineTag>
 			<PrereqTech>TECH_HYDRAULICS</PrereqTech>
 			<bRiver>1</bRiver>
-			<iCost>250</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -3768,7 +3768,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_OBSERVATORY</ArtDefineTag>
 			<PrereqTech>TECH_PHYSICS</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
@@ -4095,7 +4095,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
 			<PrereqTech>TECH_BIOLOGY</PrereqTech>
-			<iCost>200</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
@@ -4122,7 +4122,7 @@
 			<PrereqTech>TECH_ENGINE</PrereqTech>
 			<PowerBonus>BONUS_COAL</PowerBonus>
 			<bDirtyPower>1</bDirtyPower>
-			<iCost>150</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -4191,7 +4191,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LABORATORY</ArtDefineTag>
 			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<iCost>250</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
@@ -4231,7 +4231,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RUSSIAN_RESEARCH_INSTITUTE</ArtDefineTag>
 			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<iCost>250</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
@@ -4344,7 +4344,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INDUSTRIAL_PARK</ArtDefineTag>
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -4469,7 +4469,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOSPITAL</ArtDefineTag>
 			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-			<iCost>200</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>80</iConquestProb>
@@ -4494,7 +4494,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SUPERMARKET</ArtDefineTag>
 			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>80</iConquestProb>
@@ -4526,7 +4526,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>80</iConquestProb>
@@ -4584,7 +4584,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PUBLIC_TRANSPORTATION</ArtDefineTag>
 			<PrereqTech>TECH_INFRASTRUCTURE</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -4614,7 +4614,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DEPARTMENT_STORE</ArtDefineTag>
 			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
-			<iCost>200</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -4646,7 +4646,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AMERICAN_MALL</ArtDefineTag>
 			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
-			<iCost>200</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -4692,7 +4692,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BROADCAST_TOWER</ArtDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
-			<iCost>175</iCost>
+			<iCost>225</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -4738,7 +4738,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</ArtDefineTag>
 			<PrereqTech>TECH_PSYCHOLOGY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>180</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>5</iAsset>
@@ -4778,7 +4778,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ELECTRICAL_GRID</ArtDefineTag>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -4815,7 +4815,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_AIRPORT</ArtDefineTag>
 			<PrereqTech>TECH_AVIATION</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>250</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAirlift>1</iAirlift>
@@ -4849,7 +4849,7 @@
 			<PrereqTech>TECH_ROCKETRY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>100</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAirModifier>-50</iAirModifier>
@@ -4874,7 +4874,7 @@
 			<PrereqTech>TECH_FISSION</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>100</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iNukeModifier>-50</iNukeModifier>
@@ -4898,7 +4898,7 @@
 			<PrereqTech>TECH_ELECTRONICS</PrereqTech>
 			<bRiver>1</bRiver>
 			<bPower>1</bPower>
-			<iCost>200</iCost>
+			<iCost>500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -4928,7 +4928,7 @@
 			<PrereqTech>TECH_RADAR</PrereqTech>
 			<FreePromotion>PROMOTION_SECURITY1</FreePromotion>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>220</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iEspionageDefense>50</iEspionageDefense>
@@ -4957,7 +4957,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STADIUM</ArtDefineTag>
 			<PrereqTech>TECH_TELEVISION</PrereqTech>
-			<iCost>200</iCost>
+			<iCost>300</iCost>
 			<iHappiness>1</iHappiness>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4993,7 +4993,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CONTAINER_TERMINAL</ArtDefineTag>
 			<PrereqTech>TECH_RADAR</PrereqTech>
 			<bWater>1</bWater>
-			<iCost>300</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -5058,7 +5058,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SUPERCOMPUTER</ArtDefineTag>
 			<PrereqTech>TECH_COMPUTERS</PrereqTech>
-			<iCost>400</iCost>
+			<iCost>600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -5141,7 +5141,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RECYCLING_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_ECOLOGY</PrereqTech>
-			<iCost>300</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -5165,7 +5165,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LOGISTICS_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
-			<iCost>400</iCost>
+			<iCost>500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -5204,7 +5204,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SOLAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 			<bPower>1</bPower>
-			<iCost>200</iCost>
+			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -5234,7 +5234,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FIBER_NETWORK</ArtDefineTag>
 			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
-			<iCost>500</iCost>
+			<iCost>750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
@@ -5276,7 +5276,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AUTOMATED_FACTORY</ArtDefineTag>
 			<PrereqTech>TECH_AUTOMATION</PrereqTech>
-			<iCost>500</iCost>
+			<iCost>750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -5317,7 +5317,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_VERTICAL_FARM</ArtDefineTag>
 			<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
-			<iCost>500</iCost>
+			<iCost>800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
