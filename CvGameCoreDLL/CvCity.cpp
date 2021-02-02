@@ -5081,7 +5081,7 @@ void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
 		//Leoreth: process efficiency modifier inside (civic)
-		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100 + GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
+		changeProductionToCommerceModifier((CommerceTypes)iI, (GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) + GET_PLAYER(getOwnerINLINE()).getProcessModifier()) * iChange);
 	}
 }
 
