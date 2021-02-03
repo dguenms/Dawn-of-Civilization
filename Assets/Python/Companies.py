@@ -158,31 +158,39 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iMarket)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iStable)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iPostOffice)): iValue += 1
 
 	elif iCompany == iTradingCompany:
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCustomsHouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iWarehouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iTradingCompanyBuilding)): iValue += 2
 
 	elif iCompany == iCerealIndustry:
 		if city.hasBuilding(unique_building(iOwner, iGranary)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSewer)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iEstate)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iVerticalFarm)): iValue += 1
 
 	elif iCompany == iFishingIndustry:
 		if city.hasBuilding(unique_building(iOwner, iLighthouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iWharf)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
 		
 	elif iCompany == iTextileIndustry:
 		if city.hasBuilding(unique_building(iOwner, iMarket)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iWeaver)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iWarehouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iManufactory)): iValue += 2
 
 	elif iCompany == iSteelIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCoalPlant)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iRailwayStation)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIronworks)): iValue += 3
 
@@ -190,19 +198,26 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iDistillery)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iContainerTerminal)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iStockExchange)): iValue += 3
 
 	elif iCompany == iLuxuryIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
-		if city.hasBuilding(unique_building(iOwner, iWeaver)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iCoffeeHouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iDepartmentStore)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iHotel)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iNationalGallery)): iValue += 3
 
 	elif iCompany == iComputerIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iLaboratory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iUniversity)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iSupercomputer)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCERN)): iValue += 3
+	
+	# needs at least a few requirements
+	if iValue <= 0:
+		return -1
 
 	# trade routes
 	iValue += city.getTradeRoutes() - 1
@@ -249,5 +264,11 @@ def getCityValue(city, iCompany):
 	# threshold
 	if iValue < 4:
 		return -1
+		
+	iCompanyCount = player(iOwner).countCorporations(iCompany)
+	iCompanyLimit = getCompanyLimit(iCompany)
+	
+	if iCompanyCount > iCompanyLimit / 4: iValue -= 1
+	if iCompanyCount > iCompanyLimit / 2: iValue -= 1
 	
 	return iValue
