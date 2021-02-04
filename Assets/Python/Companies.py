@@ -40,12 +40,12 @@ def checkCompanies(iGameTurn):
 		checkCompany(iCompany, iGameTurn)
 
 
-def isCompanyValid(iCompany, iGameTurn):
-	return iGameTurn <= year(dCompanyExpiry[iCompany])
+def isCompanyValid(iCompany):
+	return turn() <= year(dCompanyExpiry[iCompany])
 
 
-def getCompanyLimit(iCompany, iGameTurn):
-	if not isCompanyValid(iCompany, iGameTurn):
+def getCompanyLimit(iCompany):
+	if not isCompanyValid(iCompany):
 		return 0
 	
 	return tCompaniesLimit[iCompany]
@@ -56,7 +56,7 @@ def canHaveCompany(iCompany, iPlayer):
 	
 
 def checkCompany(iCompany, iGameTurn):
-	iMaxCompanies = getCompanyLimit(iCompany, iGameTurn)
+	iMaxCompanies = getCompanyLimit(iCompany)
 		
 	# count the number of companies
 	iCompanyCount = players.major().alive().sum(lambda p: player(p).countCorporations(iCompany))
