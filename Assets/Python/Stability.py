@@ -699,8 +699,9 @@ def getSeparatismModifier(iPlayer, city):
 	civic = civics(iPlayer)
 	
 	bHistorical = plot.getSettlerValue(iPlayer) >= 90
+	bFall = since(year(dFall[iPlayer])) >= 0
 	bTotalitarianism = civic.iSociety == iTotalitarianism
-	bExpansionExceptions = (bHistorical and iCiv == iMongols) or bTotalitarianism
+	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
 	
 	iTotalCulture = players.major().sum(lambda p: plot.isCore(p) and 2 * plot.getCulture(p) or plot.getCulture(p))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
@@ -856,7 +857,7 @@ def calculateStability(iPlayer):
 	if iSeparatismExcess > 200: iSeparatismExcess = 200
 		
 	if iSeparatismExcess > 0:
-		iSeparatismExcess -= int(25 * sigmoid(1.0 * iSeparatismExcess / 100))
+		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iSeparatismExcess / 100))
 		
 	lParameters[iParameterCorePeriphery] = iCorePeripheryStability
 	lParameters[iParameterAdministration] = iAdministration
