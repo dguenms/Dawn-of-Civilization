@@ -324,7 +324,7 @@ def updateLastTurnAlive(iPlayer, bAlive):
 		
 def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
-	iHappinessDifference = city.happyLevel - city.unhappyLevel(0)
+	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 	
 	iValue = 0
 	
