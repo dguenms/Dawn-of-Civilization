@@ -49,7 +49,7 @@ dStartingWorkers = CivDict({
 	iBrazil : 3,
 	iArgentina : 2,
 	iCanada : 3,
-})
+}, 0)
 
 dRelocatedCapitals = {
 	(iVikings, iRenaissance): tStockholm,
@@ -303,8 +303,10 @@ def startTimedConquests():
 @handler("firstCity")
 def createStartingWorkers(city):
 	iPlayer = city.getOwner()
-	if city.isCapital() and iPlayer in dStartingWorkers:
-		makeUnits(iPlayer, getBestWorker(iPlayer), city, dStartingWorkers[iPlayer])
+	iNumStartingWorkers = dStartingWorkers[iPlayer]
+	
+	if city.isCapital() and iNumStartingWorkers > 0:
+		makeUnits(iPlayer, getBestWorker(iPlayer), city, iNumStartingWorkers)
 
 
 ### BEGIN PLAYER TURN ###
@@ -320,7 +322,7 @@ def updateLastTurnAlive(iPlayer, bAlive):
 
 
 ### IMPLEMENTATIONS ###
-		
+
 		
 def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)

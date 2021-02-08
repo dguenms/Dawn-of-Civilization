@@ -148,7 +148,7 @@ lStartingTechs = [
 	iKhmer :		techs.column(6).including(iNobility, iArchitecture, iArtisanry, iScholarship, iEthics),
 	iEngland :		techs.column(6).including(iFeudalism, iTheology),
 	iHolyRome :		techs.column(6).including(iFeudalism, iTheology),
-	iRussia :		techs.column(6).including(iFeudalism).without(iPolitics, iScholarship, iEthics),
+	iRussia :		techs.column(6).including(iFeudalism).without(iScholarship),
 	iMali : 		techs.column(6).including(iTheology),
 	iPoland : 		techs.column(6).including(iFeudalism, iFortification, iCivilService, iTheology),
 	iPortugal :		techs.column(7).including(iPatronage),
