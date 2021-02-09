@@ -1014,7 +1014,7 @@ class Congress:
 			# exclude master/vassal relationships
 			if team(iPlayer).isVassal(iLoopPlayer): continue
 			if team(iLoopPlayer).isVassal(iPlayer): continue
-			if pPlayer.isAVassal() and master(iPlayer) == master(iLoopPlayer): continue
+			if team(iPlayer).isAVassal() and master(iPlayer) == master(iLoopPlayer): continue
 			
 			# cannot demand cities while at war
 			if team(iPlayer).isAtWar(iLoopPlayer): continue
