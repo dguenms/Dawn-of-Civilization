@@ -518,9 +518,13 @@ def canResurrectFromCities(iPlayer, resurrectionCities):
 	return True
 
 def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
+	iNumCities = player(iPlayer).getNumCities()
+	if iNumCities <= 0:
+		return
+
 	iCiv = civ(iPlayer)
 	bComplete = len(secedingCities) == player(iPlayer).getNumCities()
-	iArmyPercent = 100 - 100 * len(secedingCities) / player(iPlayer).getNumCities()
+	iArmyPercent = 100 - 100 * len(secedingCities) / iNumCities
 	
 	if not secedingCities:
 		return
