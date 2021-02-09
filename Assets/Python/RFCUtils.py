@@ -189,7 +189,7 @@ def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
 		if not lOldOwners or iOldOwner in lOldOwners:
 			
 			if bKillUnits:
-				for unit in units.at(x, y):
+				for unit in units.at(x, y).where(lambda unit: not unit.isCargo()):
 					unit.kill(False, iNewOwner)
 					
 			pNewOwner.acquireCity(flipCity, bConquest, not bConquest)
