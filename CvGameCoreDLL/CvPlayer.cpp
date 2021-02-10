@@ -25016,6 +25016,14 @@ void CvPlayer::setTechPreference(TechTypes eTech, int iNewValue)
 	m_paiTechPreferences[eTech] = iNewValue;
 }
 
+void CvPlayer::resetTechPreferences()
+{
+	for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
+	{
+		setTechPreference((TechTypes)iI, 0);
+	}
+}
+
 EraTypes CvPlayer::getStartingEra() const
 {
 	return m_eStartingEra;
@@ -25569,6 +25577,14 @@ void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
 void CvPlayer::setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue)
 {
 	m_buildingClassPreference[eBuildingClass] = iNewValue;
+}
+
+void CvPlayer::resetBuildingClassPreferences()
+{
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		setBuildingClassPreference((BuildingClassTypes)iI, 0);
+	}
 }
 
 int CvPlayer::getBuildingClassPreference(BuildingClassTypes eBuildingClass) const

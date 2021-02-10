@@ -2665,9 +2665,19 @@ void CyPlayer::setTechPreference(int eTech, int iNewValue)
 	if (m_pPlayer) m_pPlayer->setTechPreference((TechTypes)eTech, iNewValue);
 }
 
+void CyPlayer::resetTechPreferences()
+{
+	if (m_pPlayer) m_pPlayer->resetTechPreferences();
+}
+
 void CyPlayer::setBuildingClassPreference(int iBuildingClass, int iNewValue)
 {
 	if (m_pPlayer) m_pPlayer->setBuildingClassPreference((BuildingClassTypes)iBuildingClass, iNewValue);
+}
+
+void CyPlayer::resetBuildingClassPreferences()
+{
+	if (m_pPlayer) m_pPlayer->resetBuildingClassPreferences();
 }
 
 int CyPlayer::getBuildingClassPreference(int iBuildingClass)

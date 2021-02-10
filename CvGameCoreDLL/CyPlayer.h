@@ -567,6 +567,7 @@ public:
 	void setModifier(int eModifierType, int iNewValue);
 	int getTechPreference(int eTech);
 	void setTechPreference(int eTech, int iNewValue);
+	void resetTechPreferences();
 	int getStartingEra();
 	void setStartingEra(int iNewValue);
 	void setTakenTilesThreshold(int iNewValue);
@@ -588,6 +589,7 @@ public:
 	void resetGreatPeopleCreated();
 	void changeYieldRateModifier(int iYieldType, int iChange);
 	void setBuildingClassPreference(int iBuildingClass, int iNewValue);
+	void resetBuildingClassPreferences();
 	int getBuildingClassPreference(int iBuildingClass);
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);

@@ -9,6 +9,10 @@ from StoredData import data
 import BugCore
 import SettlerMaps
 import WarMaps
+import AIParameters
+import Modifiers
+import Civilizations
+import Setup
 import CvScreenEnums
 
 from Events import events
@@ -1246,7 +1250,8 @@ def canSwitch(iPlayer, iBirthTurn):
 		return False
 		
 	return True
-	
+
+
 # used: RiseAndFall
 def setCivilization(iPlayer, iNewCivilization):
 	iOldCivilization = civ(iPlayer)
@@ -1256,6 +1261,19 @@ def setCivilization(iPlayer, iNewCivilization):
 	player(iPlayer).setCivilizationType(iNewCivilization)
 	del data.dSlots[iOldCivilization]
 	data.dSlots[iNewCivilization] = iPlayer
+	
+	updateCivilizationProperties(iPlayer)
+	
+
+# used: RFCUtils
+def updateCivilizationProperties(iPlayer):
+	AIParameters.updateParameters(iPlayer)
+	Modifiers.updateModifiers(iPlayer)
+	Civilizations.initPlayerTechPreferences(iPlayer)
+	Civilizations.initBuildingPreferences(iPlayer)
+	SettlerMaps.updateMap(iPlayer)
+	WarMaps.updateMap(iPlayer)
+	Setup.updateCore(iPlayer)
 	
 
 # used: RiseAndFall, History

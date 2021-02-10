@@ -86,6 +86,8 @@ def initPlayerTechPreferences(iPlayer):
 	initTechPreferences(iPlayer, getTechPreferences(iPlayer))
 	
 def initTechPreferences(iPlayer, dPreferences):
+	player(iPlayer).resetTechPreferences()
+
 	for iTech, iValue in dPreferences.items():
 		player(iPlayer).setTechPreference(iTech, iValue)
 
@@ -94,6 +96,9 @@ def initTechPreferences(iPlayer, dPreferences):
 def initBuildingPreferences(iPlayer):
 	pPlayer = player(iPlayer)
 	iCiv = civ(iPlayer)
+	
+	pPlayer.resetBuildingClassPreferences()
+	
 	if iCiv in dBuildingPreferences:
 		for iBuilding, iValue in dBuildingPreferences[iCiv].iteritems():
 			pPlayer.setBuildingClassPreference(infos.building(iBuilding).getBuildingClassType(), iValue)

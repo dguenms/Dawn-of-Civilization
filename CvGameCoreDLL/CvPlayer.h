@@ -1272,10 +1272,12 @@ public:
 	// Leoreth
 	int getTechPreference(TechTypes eTech) const;
 	void setTechPreference(TechTypes eTech, int iNewValue);
+	void resetTechPreferences();
 
 	// Leoreth
 	int getBuildingClassPreference(BuildingClassTypes eBuildingClass) const;
 	void setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue);
+	void resetBuildingClassPreferences();
 
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
