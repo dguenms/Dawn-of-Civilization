@@ -3501,25 +3501,7 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 					}
 				}
 
-				bool bCanCover = false;
-				if (isCity() && getPlotCity()->getOwner() == iI)
-				{
-					bCanCover = true;
-				}
-				else if (getBonusType() >= 0 && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(getBonusType()).getTechReveal()))
-				{
-					bCanCover = true;
-				}
-
-				CvPlot* pTempPlot;
-				for (int iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
-				{
-					if (bCanCover) break;
-					pTempPlot = plotCardinalDirection(getX(), getY(), (CardinalDirectionTypes)iJ);
-					if (pTempPlot != NULL && pTempPlot->isWithinCultureRange((PlayerTypes)iI)) bCanCover = true;
-				}
-
-				if (bCanCover && isWithinCultureRange((PlayerTypes)iI))
+				if (isWithinCultureRange((PlayerTypes)iI))
 				{
 					if ((iCulture > iBestCulture) || ((iCulture == iBestCulture) && (getOwnerINLINE() == iI)))
 					{
