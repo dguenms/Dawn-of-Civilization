@@ -198,7 +198,7 @@ class EventHandlers(object):
 	def religionFounded(self, func):
 		def religionFounded(other, args):
 			iReligion, iFounder = args
-			if True or self.applicable(other, iFounder):
+			if self.applicable(other, iFounder):
 				func(other, iReligion)
 		
 		return religionFounded
@@ -1773,7 +1773,7 @@ class Trigger(Condition):
 				else:
 					self.fail()
 		
-		return cls.desc("CONVERT_AFTER_FOUNDING").format(options.number_word()).subject(int).objective(CvReligionInfo).func(__init__).handle("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
+		return cls.desc("CONVERT_AFTER_FOUNDING").format(options.number_word()).subject(int).objective(CvReligionInfo).func(__init__).any("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
 	
 	@classproperty
 	def enterEra(cls):

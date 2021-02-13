@@ -59,15 +59,21 @@ class TestEventHandlers(ExtendedTestCase):
 
 	def setUp(self):
 		self.handlers = EventHandlers.ours()
+		self.others = EventHandlers.others()
+		self.any = EventHandlers.any()
 		
 		self.iCallCount = 0
 		self.iIncrement = 0
+		self.capturedArgument = None
 	
 	def trackCall(self, *args):
 		self.iCallCount += 1
 	
 	def increment(self, other, iChange):
 		self.iIncrement += iChange
+	
+	def captureArgument(self, other, *args):
+		self.capturedArgument = args
 	
 	def testGet(self):
 		handler_func = self.handlers.get("techAcquired", lambda *args: 0)
@@ -223,6 +229,124 @@ class TestEventHandlers(ExtendedTestCase):
 		
 		onEnslave(PlayerContainer(1), (0, None))
 		self.assertEqual(self.iCallCount, 1)
+	
+	def testFirstContact(self):
+		onFirstContact = self.handlers.get("enslave", self.trackCall)
+		
+		onFirstContact(PlayerContainer(0), (0, 1))
+		self.assertEqual(self.iCallCount, 1)
+		
+		onFirstContact(PlayerContainer(1), (0, 1))
+		self.assertEqual(self.iCallCount, 1)
+	
+	def testTradeMission(self):
+		def increment_at(other, (x, y), iChange):
+			if (x, y) == (0, 0):
+				self.iIncrement += iChange
+		
+		onTradeMission = self.handlers.get("tradeMission", increment_at)
+		
+		onTradeMission(PlayerContainer(0), (iWarrior, 0, 0, 0, 100))
+		self.assertEqual(self.iIncrement, 100)
+		
+		onTradeMission(PlayerContainer(1), (iWarrior, 0, 0, 0, 100))
+		self.assertEqual(self.iIncrement, 100)
+		
+		onTradeMission(PlayerContainer(0), (iWarrior, 0, 1, 1, 100))
+		self.assertEqual(self.iIncrement, 100)
+	
+	def testReligionFounded(self):
+		onReligionFounded = self.handlers.get("religionFounded", self.captureArgument)
+		
+		onReligionFounded(PlayerContainer(0), (iCatholicism, 0))
+		self.assertEqual(self.capturedArgument, (iCatholicism,))
+		
+		onReligionFounded(PlayerContainer(0), (iProtestantism, 1))
+		self.assertEqual(self.capturedArgument, (iCatholicism,))
+	
+	def testPlayerChangeStateReligion(self):
+		onPlayerChangeStateReligion = self.handlers.get("playerChangeStateReligion", self.captureArgument)
+		
+		onPlayerChangeStateReligion(PlayerContainer(0), (0, iProtestantism, iCatholicism))
+		self.assertEqual(self.capturedArgument, (iProtestantism,))
+		
+		onPlayerChangeStateReligion(PlayerContainer(0), (1, iBuddhism, iHinduism))
+		self.assertEqual(self.capturedArgument, (iProtestantism,))
+	
+	def testBuildingBuilt(self):
+		onBuildingBuilt = self.handlers.get("buildingBuilt", self.captureArgument)
+		city = player(0).initCity(0, 0)
+		
+		onBuildingBuilt(PlayerContainer(0), (city, iGranary))
+		self.assertEqual(self.capturedArgument, (city, iGranary,))
+		
+		onBuildingBuilt(PlayerContainer(1), (city, iLibrary))
+		self.assertEqual(self.capturedArgument, (city, iGranary,))
+		
+		city.kill()
+	
+	def testProjectBuilt(self):
+		onProjectBuilt = self.handlers.get("projectBuilt", self.captureArgument)
+		city = player(0).initCity(0, 0)
+		
+		onProjectBuilt(PlayerContainer(0), (city, iTheInternet))
+		self.assertEqual(self.capturedArgument, (iTheInternet,))
+		
+		onProjectBuilt(PlayerContainer(1), (city, iGoldenRecord))
+		self.assertEqual(self.capturedArgument, (iTheInternet,))
+		
+		city.kill()
+	
+	def testCorporationSpread(self):
+		onCorporationSpread = self.handlers.get("corporationSpread", self.captureArgument)
+		
+		onCorporationSpread(PlayerContainer(0), (iTextileIndustry, 0, None))
+		self.assertEqual(self.capturedArgument, (iTextileIndustry,))
+		
+		onCorporationSpread(PlayerContainer(0), (iSteelIndustry, 1, None))
+		self.assertEqual(self.capturedArgument, (iTextileIndustry,))
+	
+	def testCorporationRemove(self):
+		onCorporationRemove = self.handlers.get("corporationRemove", self.captureArgument)
+		
+		onCorporationRemove(PlayerContainer(0), (iTextileIndustry, 0, None))
+		self.assertEqual(self.capturedArgument, (iTextileIndustry,))
+		
+		onCorporationRemove(PlayerContainer(0), (iSteelIndustry, 1, None))
+		self.assertEqual(self.capturedArgument, (iTextileIndustry,))
+	
+	def testVassalState(self):
+		onVassalState = self.handlers.get("vassalState", self.trackCall)
+		
+		onVassalState(PlayerContainer(0), (0, 1, True, False))
+		self.assertEqual(self.iCallCount, 1)
+		
+		onVassalState(PlayerContainer(0), (1, 2, True, False))
+		self.assertEqual(self.iCallCount, 1)
+	
+	def testOthers(self):
+		onBeginPlayerTurn = self.others.get("BeginPlayerTurn", self.trackCall)
+		
+		onBeginPlayerTurn(PlayerContainer(0), (0, 0))
+		self.assertEqual(self.iCallCount, 0)
+		
+		onBeginPlayerTurn(PlayerContainer(1), (0, 0))
+		self.assertEqual(self.iCallCount, 1)
+		
+		onBeginPlayerTurn(PlayerContainer(2), (0, 0))
+		self.assertEqual(self.iCallCount, 2)
+	
+	def testAny(self):
+		onBeginPlayerTurn = self.any.get("BeginPlayerTurn", self.trackCall)
+		
+		onBeginPlayerTurn(PlayerContainer(0), (0, 0))
+		self.assertEqual(self.iCallCount, 1)
+		
+		onBeginPlayerTurn(PlayerContainer(1), (0, 0))
+		self.assertEqual(self.iCallCount, 2)
+		
+		onBeginPlayerTurn(PlayerContainer(2), (0, 0))
+		self.assertEqual(self.iCallCount, 3)
 
 
 class TestDeferred(ExtendedTestCase):
