@@ -540,6 +540,14 @@ class TestArguments(ExtendedTestCase):
 		iterated = [x for x in arguments]
 		
 		self.assertEqual(iterated, [("subject", 1, 0), ("subject", 2, 0), ("subject", 3, 0)])
+	
+	def testResolvesDeferred(self):
+		deferred = Deferred(int, lambda p: 42)
+		arguments = Arguments(objectives=[(1, deferred), (2, deferred)])
+		
+		iterated = [x for x in arguments]
+		
+		self.assertEqual(iterated, [(1, 42), (2, 42)])
 
 
 class TestArgumentProcessor(ExtendedTestCase):

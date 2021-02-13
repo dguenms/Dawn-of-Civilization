@@ -396,7 +396,6 @@ class Arguments(object):
 	def setPlayer(self, iPlayer):
 		self.iPlayer = iPlayer
 	
-	# TODO: test that we already resolve deferred values
 	def value(self, item):
 		if isinstance(item, Deferred):
 			return item()
