@@ -31,9 +31,9 @@ map = gc.getMap()
 
 irregular_plurals = {
 	"Ship of the Line": "Ships of the Line",
-	"Statesman": "Statesmen",
+	"Great Statesman": "Great Statesmen",
+	"cathedral of your state religion": "cathedrals of your state religion",
 }
-
 
 def replace_first(string, replace_key, *replace_args):
 	first = string.split(" ", -1)[0]
@@ -42,6 +42,10 @@ def replace_first(string, replace_key, *replace_args):
 
 def replace_shared_words(strings):
 	shared = shared_words(strings)
+	
+	if shared in ["DA", "CB"]:
+		shared = ""
+	
 	strings = [string.replace(shared, "") for string in strings]
 	strings[0] = shared + strings[0]
 	
@@ -163,6 +167,7 @@ def isWonder(iBuilding):
 def log_with_trace(context):
 	print "%s called near:" % context
 	stacktrace()
+
 
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 

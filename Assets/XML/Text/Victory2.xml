@@ -62,7 +62,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_NAME_STATE_RELIGION_CATHEDRAL</Tag>
-		<English>cathedrals of your state religion</English>
+		<English>cathedral of your state religion</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1490,6 +1490,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CONTROL_CANADA_WITHOUT_EVER_CONQUERING</Tag>
 		<English>control all cities and 90% of the territory in Canada without ever conquering a city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORTHODOX_CATHEDRAL</Tag>
+		<English>control an Orthodox Cathedral</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

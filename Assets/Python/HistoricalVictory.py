@@ -121,8 +121,7 @@ dGoals = {
 		All(
 			ConvertAfterFounding(5, iOrthodoxy),
 			SpecialistCount(iSpecialistGreatProphet, 3),
-			# TODO: 'a Orthodox Cathedral'
-			BuildingCount(iOrthodoxCathedral, 1),
+			BuildingCount(iOrthodoxCathedral, 1).named("ORTHODOX_CATHEDRAL"),
 		).by(1200),
 		MoreReligion(plots.regions(*lAfrica).named("AFRICA"), iOrthodoxy, iIslam).at(1500),
 	),
@@ -244,20 +243,17 @@ dGoals = {
 			(plots.regions(*lOceania).named("OCEANIA"), 3),
 		).by(1730),
 		All(
-			# TODO: 'Ships of the Lines'
 			UnitCount(sum([iFrigate, iShipOfTheLine]), 25),
 			SunkShips(50),
 		).by(1800),
 		EraFirstDiscovered((iRenaissance, 8), (iIndustrial, 8)),
 	),
 	iHolyRome: (
-		# TODO: 'AD' cut off by format_shared_separators
 		All(
 			BuildingCount(iCatholicShrine, 1).at(1000),
 			BuildingCount(iOrthodoxShrine, 1).at(1200),
 			BuildingCount(iProtestantShrine, 1).at(1550),
 		),
-		# TODO: 'Statesmans'
 		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
 		All(
 			CitySpecialistCount(city(tVienna).named("VIENNA"), sum([iSpecialistGreatArtist, iSpecialistGreatStatesman]), 10),
@@ -265,7 +261,6 @@ dGoals = {
 		).by(1850),
 	),
 	iRussia: (
-		# TODO: 'AD' cut off by format_shared_separators
 		All(
 			SettledCityCount(plots.rectangle(tSiberia).named("SIBERIA"), 7).by(1700),
 			RouteConnection(plots.capital(iRussia), plots.of(lSiberianCoast), [iRailroad]).named("CONNECT_MOSCOW_TO_SIBERIA").by(1920),
@@ -282,7 +277,6 @@ dGoals = {
 			Wonder(iUniversityOfSankore),
 			CitySpecialistCount(wonder(iUniversityOfSankore).named("ITS_CITY"), iSpecialistGreatProphet, 1),
 		).by(1500),
-		# TODO: 'AD' cut off by format_shared_separators
 		All(
 			PlayerGold(5000).by(1500),
 			PlayerGold(15000).by(1700),
@@ -371,7 +365,6 @@ dGoals = {
 		ResourceCount(iSpices, 7).by(1775),
 	),
 	iGermany: (
-		# TODO: 'great peoples'
 		CitySpecialistCount(city(plots.capital(iGermany)).named("BERLIN"), great_people(), 7).at(1900),
 		Control(
 			plots.normal(iItaly),
@@ -399,7 +392,6 @@ dGoals = {
 		GoldenAges(6).by(2000),
 	),
 	iMexico: (
-		# TODO: 'cathedrals of your state religions'
 		BuildingCount(stateReligionBuilding(cathedral).named("STATE_RELIGION_CATHEDRAL"), 3).by(1880),
 		GreatGenerals(3).by(1940),
 		BestPopulationCity(city(plots.capital(iMexico)).named("MEXICO_CITY")).at(1960),

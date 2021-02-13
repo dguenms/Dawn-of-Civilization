@@ -346,7 +346,7 @@ class Aggregate(object):
 			if not isinstance(item, Plots):
 				return plural(formatter(item))
 			return formatter(item)
-			
+		
 		return format_separators_shared(self.items, ",", text("TXT_KEY_AND"), final_formatter)
 	
 	def named(self, key):
@@ -637,11 +637,12 @@ class ArgumentProcessor(object):
 		
 		if self.is_count():
 			count = values[-1]
+			bAggregate = isinstance(values[0], Aggregate)
 		
 			if self.options.entity_key:
 				formatted_values = concat(text(self.options.entity_key), formatted_values)
 		
-			if self.options.bPlural and count > 1:
+			if not bAggregate and self.options.bPlural and count > 1:
 				formatted_values[0] = plural(formatted_values[0])
 			
 			formatted_values = concat(number_word(formatted_values[-1]), formatted_values[:-1])
@@ -650,14 +651,13 @@ class ArgumentProcessor(object):
 				if self.options.no_singular_count(values[0]):
 					formatted_values = formatted_values[1:]
 			
-			if isinstance(values[0], Aggregate) and values[0].plural():
+			if bAggregate and values[0].plural():
 				if self.options.objective_key:
 					return text("TXT_KEY_UHV_TOTAL_OF", text(self.options.objective_key, *formatted_values))
 			
-				formatted_values = concat(text("TXT_KEY_UHV_TOTAL_OF", *formatted_values[:2]), formatted_values[2:])
+				formatted_values = concat(text("TXT_KEY_UHV_TOTAL_OF", *formatted_values[:1]), formatted_values[1:])
 		
 		if not isinstance(values[0], Aggregate) and self.options.objective_key:
-			#print "%s = text(%s, %s)" % (text(self.options.objective_key, *formatted_values), self.options.objective_key, formatted_values)
 			return text(self.options.objective_key, *formatted_values)
 		
 		return " ".join(formatted_values)
