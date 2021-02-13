@@ -368,7 +368,6 @@ def sum(generator):
 def avg(generator):
 	return Aggregate(avg_, generator)
 
-# TODO: test
 def different(generator):
 	return Aggregate(count, generator)
 

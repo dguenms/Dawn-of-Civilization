@@ -444,6 +444,18 @@ class TestAggregate(ExtendedTestCase):
 		
 		self.assertEqual(result, 0.0)
 	
+	def testEvalDifferent(self):
+		agg = different(i for i in xrange(3))
+		result = agg.eval(lambda x: 1)
+		
+		self.assertEqual(result, 3)
+	
+	def testEvalDifferentRegardlessOfValue(self):
+		agg = different(i for i in xrange(3))
+		result = agg.eval(lambda x: 100)
+		
+		self.assertEqual(result, 3)
+	
 	def testLazyItemsOnEval(self):
 		agg = sum(i for i in xrange(3))
 		self.assertEqual(agg._items, None)
