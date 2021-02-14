@@ -709,7 +709,6 @@ class ArgumentProcessor(object):
 	def format_value(self, type, value):
 		formatter = self.type_formatter(type)
 		
-		# TODO: this needs to be better
 		if isinstance(value, Deferred):
 			return str(value)
 		if isinstance(value, Aggregate):
@@ -860,7 +859,6 @@ class BaseGoal(object):
 		handler = handlers.others().get(event, func)
 		return cls.build_handler(handler, func)
 	
-	# TODO: test
 	@classmethod
 	def any(cls, event, func):
 		handler = handlers.any().get(event, func)
@@ -982,8 +980,7 @@ class BaseGoal(object):
 		self.register("BeginPlayerTurn", checkTurn)
 		self._description += " " + text("TXT_KEY_UHV_IN", format_date(iYear))
 		
-		# TODO: needs to be txt_key
-		if self._description.lower().startswith('build'):
+		if self._description.lower().startswith(text("TXT_KEY_UHV_BUILD")):
 			self._description = replace_first(self._description, "TXT_KEY_UHV_HAVE")
 		
 		return self
@@ -1312,13 +1309,16 @@ class Count(BaseGoal):
 	@classproperty
 	def building(cls):
 		def checkBuildingBuilt(self, city, iBuilding):
-			if iBuilding in self.values:
+			if base_building(iBuilding) in [base_building(x) for x in self.values]:
 				self.check()
 		
 		def checkCityAcquired(self, *args):
 			self.check()
+		
+		def value_function(self, iBuilding):
+			return self._player.countNumBuildings(unique_building(self.iPlayer, iBuilding))
 	
-		return cls.desc("BUILDING_COUNT").format(options.noSingularCount(isWonder)).objective(CvBuildingInfo).player(CyPlayer.countNumBuildings).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
+		return cls.desc("BUILDING_COUNT").format(options.noSingularCount(isWonder)).objective(CvBuildingInfo).func(value_function).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):

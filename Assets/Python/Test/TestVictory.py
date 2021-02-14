@@ -2029,6 +2029,40 @@ class TestCountGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
+	def testBuildingUniqueInGoal(self):
+		goal = Count.building(iObelisk, 1)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasRealBuilding(iObelisk, True)
+		
+		events.fireEvent("buildingBuilt", city, iObelisk)
+		
+		self.assertEqual(str(goal), "1 / 1")
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.state, SUCCESS)
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testBuildingUnique(self):
+		goal = Count.building(iMonument, 1)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasRealBuilding(iObelisk, True)
+		
+		events.fireEvent("buildingBuilt", city, iObelisk)
+		
+		self.assertEqual(str(goal), "1 / 1")
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.state, SUCCESS)
+		
+		city.kill()
+		
+		goal.deactivate()
+	
 	def testCultureLess(self):
 		goal = Count.culture(500)
 		goal.activate(0)
