@@ -250,6 +250,14 @@ class EventHandlers(object):
 				func(other)
 		
 		return vassalState
+	
+	def combatGold(self, func):
+		def combatGold(other, args):
+			iPlayer, unit, iGold = args
+			if self.applicable(other, iPlayer):
+				func(other, iGold)
+		
+		return combatGold
 				
 	
 handlers = EventHandlers.ours()
@@ -1305,7 +1313,6 @@ class Count(BaseGoal):
 			
 		return cls.func(required_function)
 	
-	# TODO: account for unique buildings?
 	@classproperty
 	def building(cls):
 		def checkBuildingBuilt(self, city, iBuilding):
@@ -1893,9 +1900,8 @@ class Track(Count):
 		return cls.desc("TRADE_GOLD").handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
 	
 	@classproperty
-	# TODO: should include gold from sinking ships
 	def raidGold(cls):
-		return cls.desc("RAID_GOLD").accumulated("unitPillage").accumulated("cityCaptureGold").subclass("RaidGold")
+		return cls.desc("RAID_GOLD").accumulated("unitPillage").accumulated("cityCaptureGold").accumulated("combatGold").subclass("RaidGold")
 	
 	@classproperty
 	def pillage(cls):
@@ -1907,7 +1913,7 @@ class Track(Count):
 	
 	@classproperty
 	def piracyGold(cls):
-		return cls.desc("PIRACY_GOLD").accumulated("unitPillage").accumulated("blockade").subclass("PiracyGold")
+		return cls.desc("PIRACY_GOLD").accumulated("unitPillage").accumulated("blockade").accumulated("combatGold").subclass("PiracyGold")
 	
 	@classproperty
 	def razes(cls):

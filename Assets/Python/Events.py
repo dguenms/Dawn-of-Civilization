@@ -44,6 +44,7 @@ events.addEvent("rebirth")
 events.addEvent("resurrection")
 events.addEvent("switch")
 events.addEvent("enslave")
+events.addEvent("combatGold")
 
 
 @handler("buildingBuilt")

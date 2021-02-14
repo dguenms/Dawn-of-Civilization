@@ -324,6 +324,15 @@ class TestEventHandlers(ExtendedTestCase):
 		onVassalState(PlayerContainer(0), (1, 2, True, False))
 		self.assertEqual(self.iCallCount, 1)
 	
+	def testCombatGold(self):
+		onCombatGold = self.handlers.get("combatGold", self.increment)
+		
+		onCombatGold(PlayerContainer(0), (0, None, 100))
+		self.assertEqual(self.iIncrement, 100)
+		
+		onCombatGold(PlayerContainer(0), (1, None, 100))
+		self.assertEqual(self.iIncrement, 100)
+	
 	def testOthers(self):
 		onBeginPlayerTurn = self.others.get("BeginPlayerTurn", self.trackCall)
 		
@@ -4760,6 +4769,36 @@ class TestTrackGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
+	def testRaidGoldCombat(self):
+		goal = Track.raidGold(100)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iSwordsman, (61, 31))
+		
+		events.fireEvent("combatGold", 0, unit, 100)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "100 / 100")
+		
+		unit.kill(False, -1)
+		
+		goal.deactivate()
+	
+	def testRaidGoldCombatOther(self):
+		goal = Track.raidGold(100)
+		goal.activate(0)
+		
+		unit = makeUnit(1, iSwordsman, (61, 31))
+		
+		events.fireEvent("combatGold", 1, unit, 100)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 100")
+		
+		unit.kill(False, -1)
+		
+		goal.deactivate()
+	
 	def testPillage(self):
 		goal = Track.pillage(1)
 		goal.activate(0)
@@ -4843,6 +4882,36 @@ class TestTrackGoals(ExtendedTestCase):
 		
 		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "100 / 100")
+		
+		goal.deactivate()
+	
+	def testPiracyGoldCombat(self):
+		goal = Track.piracyGold(100)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iSwordsman, (61, 31))
+		
+		events.fireEvent("combatGold", 0, unit, 100)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "100 / 100")
+		
+		unit.kill(False, -1)
+		
+		goal.deactivate()
+	
+	def testPiracyGoldCombatOther(self):
+		goal = Track.piracyGold(100)
+		goal.activate(0)
+		
+		unit = makeUnit(1, iSwordsman, (61, 31))
+		
+		events.fireEvent("combatGold", 1, unit, 100)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 100")
+		
+		unit.kill(False, -1)
 		
 		goal.deactivate()
 	
