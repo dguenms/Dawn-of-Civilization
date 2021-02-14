@@ -631,8 +631,16 @@ class ArgumentProcessor(object):
 		return isinstance(value, type)
 	
 	def transform(self, type, value):
+		if isinstance(value, Aggregate):
+			return value.__class__(value.aggregate, (self.transform(type, item) for item in value))
+		
+		if isinstance(value, Deferred):
+			return value
+	
 		if issubclass(type, list):
 			return tuple(value)
+		if issubclass(type, CvBuildingInfo):
+			return base_building(value)
 		return value
 	
 	def is_count(self):
@@ -1316,7 +1324,7 @@ class Count(BaseGoal):
 	@classproperty
 	def building(cls):
 		def checkBuildingBuilt(self, city, iBuilding):
-			if base_building(iBuilding) in [base_building(x) for x in self.values]:
+			if base_building(iBuilding) in self.values:
 				self.check()
 		
 		def checkCityAcquired(self, *args):

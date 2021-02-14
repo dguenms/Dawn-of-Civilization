@@ -659,10 +659,16 @@ class TestArgumentProcessor(ExtendedTestCase):
 		self.assertRaises(ValueError, types.process, (1, 2, 3))
 		
 	def testIntValidTypeForInfoClass(self):
-		types = ArgumentProcessor([CvBuildingInfo])
+		types = ArgumentProcessor([CvUnitInfo])
 		
 		result = types.process(1, 2, 3)
 		self.assertEqual(result.objectives, [(1,), (2,), (3,)])
+	
+	def testUniqueBuildingTransformedToBaseBuilding(self):
+		types = ArgumentProcessor([CvBuildingInfo])
+		
+		result = types.process(iMonument, iObelisk, iStele)
+		self.assertEqual(result.objectives, [(iMonument,), (iMonument,), (iMonument,)])
 	
 	def testAggregateValidTypeForInfoClass(self):
 		types = ArgumentProcessor([CvBuildingInfo])
@@ -1950,7 +1956,6 @@ class TestCountGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
-	# TODO: we need a test with sum() and event handling
 	def testBuildingSum(self):
 		goal = Count.building(sum([iGranary, iBarracks, iLibrary]), 3)
 		goal.activate(0)
@@ -2012,6 +2017,25 @@ class TestCountGoals(ExtendedTestCase):
 		player(0).acquireCity(city, False, True)
 		
 		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.state, SUCCESS)
+		
+		city_(61, 31).kill()
+		
+		goal.deactivate()
+	
+	def testBuildingCheckSum(self):
+		goal = Count.building(sum([iGranary, iLibrary, iCastle]), 3)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		for iBuilding in [iGranary, iLibrary, iCastle]:
+			city.setHasRealBuilding(iBuilding, True)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		events.fireEvent("buildingBuilt", city, iCastle)
+		
 		self.assertEqual(goal.state, SUCCESS)
 		
 		city_(61, 31).kill()
