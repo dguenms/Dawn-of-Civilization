@@ -159,7 +159,7 @@ dGoals = {
 	),
 	iVikings: (
 		Any(Control(*list(plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if dSpawn[iCiv] <= 1050))).named("ANY_EUROPEAN_CORE").at(1050),
-		FirstNewWorld().by(1100),
+		FirstSettle(plots.regions(*lAmerica).named("AMERICA")).allowed(dCivGroups[iCivGroupAmerica]).by(1100),
 		RaidGold(3000).by(1500),
 	),
 	iTurks: (
@@ -211,7 +211,7 @@ dGoals = {
 		PiracyGold(3000).by(1650),
 	),
 	iSpain: (
-		FirstNewWorld(),
+		FirstSettle(plots.regions(*lAmerica).named("AMERICA")).allowed(dCivGroups[iCivGroupAmerica]),
 		ControlledResourceCount(sum([iSilver, iGold]), 10).by(1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),

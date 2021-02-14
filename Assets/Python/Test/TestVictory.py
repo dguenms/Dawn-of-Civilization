@@ -3827,7 +3827,7 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
-	def testFirstExpireAny(self):
+	def testFirstDiscoverExpireAny(self):
 		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
 		goal.activate(0)
 		
@@ -3840,97 +3840,117 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
-	def testFirstNewWorld(self):
-		goal = Trigger.firstNewWorld()
+	def testFirstSettle(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area)
 		goal.activate(0)
 		
-		player(0).found(19, 47)
+		player(0).found(51, 29)
 		
 		self.assertEqual(bool(goal), True)
 		
-		city_(19, 47).kill()
+		city_(51, 29).kill()
 		
 		goal.deactivate()
 	
-	def testFirstNewWorldOther(self):
-		goal = Trigger.firstNewWorld()
+	def testFirstSettleOther(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area)
 		goal.activate(0)
 		
-		player(1).found(19, 47)
-		
-		success = bool(goal)
-		
-		self.assertEqual(success, False)
-		
-		city_(19, 47).kill()
-		
-		goal.deactivate()
-	
-	def testFirstNewWorldAfterOther(self):
-		goal = Trigger.firstNewWorld()
-		goal.activate(0)
-		
-		player(1).found(19, 47)
-		player(0).found(21, 47)
+		player(1).found(51, 29)
 		
 		self.assertEqual(bool(goal), False)
 		
-		city_(19, 47).kill()
-		city_(21, 47).kill()
+		city_(51, 29).kill()
 		
 		goal.deactivate()
 	
-	def testFirstNewWorldAfterNative(self):
-		goal = Trigger.firstNewWorld()
+	def testFirstSettleAfterOther(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area)
 		goal.activate(0)
 		
-		player(iMaya).found(19, 47)
-		player(0).found(21, 47)
+		player(1).found(51, 29)
+		player(0).found(53, 29)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_(51, 29).kill()
+		city_(53, 29).kill()
+		
+		goal.deactivate()
+	
+	def testFirstSettleOutside(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area)
+		goal.activate(0)
+		
+		player(0).found(56, 29)
+		
+		self.assertEqual(bool(goal), False)
+		
+		city_(56, 29).kill()
+		
+		goal.deactivate()
+		
+	def testFirstSettleAfterOtherOutside(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area)
+		goal.activate(0)
+		
+		player(1).found(57, 29)
+		player(0).found(51, 29)
 		
 		self.assertEqual(bool(goal), True)
 		
-		city_(19, 47).kill()
-		city_(21, 47).kill()
+		city_(57, 29).kill()
+		city_(51, 29).kill()
 		
 		goal.deactivate()
 	
-	def testFirstNewWorldConquest(self):
-		goal = Trigger.firstNewWorld()
+	def testFirstSettleAfterAllowed(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area).allowed([iMaya])
 		goal.activate(0)
 		
-		player(iMaya).found(19, 47)
-		player(0).acquireCity(city_(19, 47), True, False)
-		
-		self.assertEqual(bool(goal), False)
-		
-		city_(19, 47).kill()
-		
-		goal.deactivate()
-	
-	def testFirstNewWorldAfterConquest(self):
-		goal = Trigger.firstNewWorld()
-		goal.activate(0)
-		
-		player(iMaya).found(19, 47)
-		player(1).acquireCity(city_(19, 47), True, False)
-		player(0).found(21, 47)
+		player(iMaya).found(51, 29)
+		player(0).found(53, 29)
 		
 		self.assertEqual(bool(goal), True)
 		
-		city_(19, 47).kill()
-		city_(21, 47).kill()
+		city_(51, 29).kill()
+		city_(53, 29).kill()
 		
 		goal.deactivate()
-	
-	def testFirstNewWorldOutsideAmerica(self):
-		goal = Trigger.firstNewWorld()
+		
+	def testFirstSettleConquest(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area).allowed([iMaya])
 		goal.activate(0)
 		
-		player(0).found(61, 37)
+		player(iMaya).found(51, 29)
+		player(0).acquireCity(city_(51, 29), True, False)
 		
 		self.assertEqual(bool(goal), False)
 		
-		city_(61, 37).kill()
+		city_(51, 29).kill()
+		
+		goal.deactivate()
+	
+	def testFirstSettleAfterConquest(self):
+		area = plots.rectangle((50, 28), (55, 30))
+		goal = Trigger.firstSettle(area).allowed([iMaya])
+		goal.activate(0)
+		
+		player(iMaya).found(51, 29)
+		player(1).acquireCity(city_(51, 29), True, False)
+		player(0).found(53, 29)
+		
+		self.assertEqual(bool(goal), True)
+		
+		city_(51, 29).kill()
+		city_(53, 29).kill()
 		
 		goal.deactivate()
 	

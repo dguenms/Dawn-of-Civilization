@@ -1706,14 +1706,23 @@ class Trigger(Condition):
 		
 		return cls.desc("FIRST_DISCOVERED").objective(CvTechInfo).handle("techAcquired", checkFirstDiscovered).expired("techAcquired", expireFirstDiscovered).subclass("FirstDiscovered")
 	
-	# TODO: should be dynamic
 	@classproperty
-	def firstNewWorld(cls):
-		def checkFirstNewWorld(self, city):
-			if city in plots.regions(*lAmerica) and cities.regions(*lAmerica).without(city).none(lambda city: civ(city.getOriginalOwner()) not in dCivGroups[iCivGroupAmerica]):
-				self.complete()
+	def firstSettle(cls):
+		oldinit = cls.__init__
+		def __init__(self, *arguments):
+			oldinit(self, *arguments)
+			self.lAllowedCivs = []
+			
+		def allowed(self, lCivs):
+			self.lAllowedCivs = lCivs
+			return self
 	
-		return cls.desc("FIRST_NEW_WORLD").handle("cityBuilt", checkFirstNewWorld).subclass("FirstNewWorld")
+		def checkFirstSettled(self, city):
+			if city in self.arguments.subject:
+				if self.arguments.subject.cities().without(city).none(lambda city: civ(city.getOriginalOwner()) not in self.lAllowedCivs):
+					self.complete()
+		
+		return cls.desc("FIRST_SETTLE").subject(Plots).func(__init__, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
 	
 	@classproperty
 	def discover(cls):
@@ -2353,7 +2362,7 @@ Discovered = Trigger.discover
 EnterEra = Trigger.enterEra
 FirstContact = Trigger.firstContact
 FirstDiscovered = Trigger.firstDiscover
-FirstNewWorld = Trigger.firstNewWorld
+FirstSettle = Trigger.firstSettle
 NeverConquer = Trigger.neverConquer
 NoCityLost = Trigger.noCityLost
 TradeMission = Trigger.tradeMission

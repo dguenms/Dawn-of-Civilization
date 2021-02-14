@@ -844,6 +844,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_AMERICA</Tag>
+		<English>America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- GOAL DESCRIPTIONS -->
 	
@@ -1080,8 +1088,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_FIRST_NEW_WORLD</Tag>
-		<English>be the first to found a city in America</English>
+		<Tag>TXT_KEY_UHV_FIRST_SETTLE</Tag>
+		<English>be the first to found a city in %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
