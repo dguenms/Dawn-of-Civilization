@@ -1473,6 +1473,7 @@ class Count(BaseGoal):
 			self.lCivs = []
 			self.iStateReligion = -1
 			self.bCommunist = False
+			self.bIndependent = False
 		
 		def civs(self, lCivs):
 			self.lCivs = lCivs
@@ -1486,11 +1487,14 @@ class Count(BaseGoal):
 			self.bCommunist = True
 			return self
 		
+		def independent(self):
+			self.bIndependent = True
+			return self
+		
 		def valid(self, iPlayer, iAttitude):
 			if not self._player.canContact(iPlayer):
 				return False
-			# TODO: vassals are always included but should be allowed for Russian goal and explicitly disabled for Austrian goal
-			if team(iPlayer).isAVassal():
+			if self.bIndependent and team(iPlayer).isAVassal():
 				return False
 			if self.lCivs and civ(iPlayer) not in self.lCivs:
 				return False
@@ -1501,7 +1505,7 @@ class Count(BaseGoal):
 			
 			return player(iPlayer).AI_getAttitude(self.iPlayer) >= iAttitude
 		
-		return cls.subject(AttitudeTypes).format(options.singular().number_word()).func(__init__, civs, religion, communist).players(valid).turnly.subclass("AttitudeCount")
+		return cls.subject(AttitudeTypes).format(options.singular().number_word()).func(__init__, civs, religion, communist, independent).players(valid).turnly.subclass("AttitudeCount")
 	
 	@classproperty
 	def vassals(cls):

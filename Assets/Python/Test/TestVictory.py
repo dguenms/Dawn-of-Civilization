@@ -3119,6 +3119,9 @@ class TestCountGoals(ExtendedTestCase):
 			team(i).meet(0, False)
 			player(i).AI_setAttitudeExtra(0, 100)
 		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 2")
+		
 		player(1).setCivics(iCivicsEconomy, iCentralPlanning)
 		
 		self.assertEqual(bool(goal), False)
@@ -3129,6 +3132,28 @@ class TestCountGoals(ExtendedTestCase):
 			player(i).AI_setAttitudeExtra(0, 0)
 		
 		player(1).setCivics(iCivicsEconomy, iReciprocity)
+	
+	def testAttitudeIndependent(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).independent()
+		goal.activate(0)
+		
+		for i in [1, 2]:
+			team(i).meet(0, False)
+			player(i).AI_setAttitudeExtra(0, 100)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(str(goal), "2 / 2")
+		
+		team(1).setVassal(0, True, False)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "1 / 2")
+		
+		for i in [1, 2]:
+			team(i).cutContact(0)
+			player(i).AI_setAttitudeExtra(0, 0)
+		
+		team(1).setVassal(0, False, False)
 	
 	def testAttitudeChainedFilters(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia]).religion(iOrthodoxy)

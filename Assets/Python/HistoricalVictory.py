@@ -257,7 +257,7 @@ dGoals = {
 		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
 		All(
 			CitySpecialistCount(city(tVienna).named("VIENNA"), sum([iSpecialistGreatArtist, iSpecialistGreatStatesman]), 10),
-			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]).named("ATTITUDES_IN_EUROPE"),
+			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]).independent().named("ATTITUDES_IN_EUROPE"),
 		).by(1850),
 	),
 	iRussia: (
