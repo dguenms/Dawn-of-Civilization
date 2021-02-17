@@ -54,7 +54,6 @@ class PlayerContainer(object):
 		self.iPlayer = iPlayer
 
 
-# TODO: some handlers are missing here
 class TestEventHandlers(ExtendedTestCase):
 
 	def setUp(self):

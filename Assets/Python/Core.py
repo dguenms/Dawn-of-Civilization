@@ -92,7 +92,6 @@ def getPlayerExperience(unit):
 	return iExperience
 
 
-# TODO: test
 def plural(word):
 	if word in irregular_plurals:
 		return irregular_plurals[word]
@@ -106,23 +105,12 @@ def plural(word):
 	return word + 's'
 
 
-# TODO: test
-def format_counted(item, count):
-	if count > 1:
-		item = plural(item)
-	
-	count = number_word(count)
-	return "%s %s" % (count, item)
-
-
-# TODO: test
 def format_date(year):
 	if year >= 0:
 		return text("TXT_KEY_YEAR_AD", year)
 	return text("TXT_KEY_YEAR_BC", -year)
 
 
-# TODO: test
 def listify(item):
 	if isinstance(item, list):
 		return item
@@ -131,12 +119,10 @@ def listify(item):
 	return [item]
 
 
-# TODO: test
 def concat(left, right):
 	return listify(left) + listify(right)
 
 
-# TODO: test
 def equals(func):
 	def equals_func(*args):
 		remaining, objective = args[:-1], args[-1]
@@ -144,14 +130,12 @@ def equals(func):
 	return equals_func
 
 
-# TODO: test
 def positive(func):
 	def positive_func(*args):
 		return func(*args) > 0
 	return positive_func
 
 
-# TODO: test
 def average(value, count):
 	def average_function(arg):
 		if count(arg) == 0:
@@ -303,7 +287,6 @@ def owner(entity, identifier):
 	return entity.getOwner() == identifier
 
 
-# TODO: test default condition
 def count(iterable, condition = bool):
 	return len([x for x in iterable if condition(x)])
 
@@ -853,7 +836,6 @@ class EntityCollection(object):
 	def __getitem__(self, index):
 		return self.entities()[index]
 	
-	# TODO: should this be set of the sum?
 	def __add__(self, other):
 		if other is None: return self
 		if not isinstance(other, type(self)):
@@ -908,7 +890,7 @@ class EntityCollection(object):
 		raise TypeError("Cannot compare '%s' and '%s'" % (type(self), type(other)))
 		
 	def copy(self, keys):
-		return self.__class__(list(keys)).named(self.name)
+		return self.__class__(list(keys)).clear_named(self.name())
 		
 	def same(self, other):
 		if isinstance(other, type(self)):
@@ -931,7 +913,6 @@ class EntityCollection(object):
 	def none(self, condition = None):
 		return not self.any(condition)
 	
-	# TODO: test
 	def all_if_any(self, condition):
 		return self.any() and self.all(condition)
 		
@@ -1020,14 +1001,13 @@ class EntityCollection(object):
 	def sum(self, value):
 		return sum(value(e) for e in self.entities())
 	
-	# TODO: test
 	def average(self, value):
 		if not self:
 			return 0.0
 		return 1.0 * self.sum(value) / self.count()
 		
 	def transform(self, cls, map = lambda x: x, condition = lambda x: x):
-		return cls([map(k) for k in self._keys if condition(self._factory(k))]).named(self.name)
+		return cls([map(k) for k in self._keys if condition(self._factory(k))]).clear_named(self.name())
 
 	def periodic(self, iInterval):
 		return periodic_from(self.entities(), iInterval)
@@ -1054,7 +1034,6 @@ class EntityCollection(object):
 	def valued(self, func):
 		return ((entity, func(entity)) for entity in self)
 
-	# TODO: test
 	def take(self, iNum):
 		return self.limit(iNum).entities() + [None] * max(0, iNum-self.count())
 	
@@ -1065,7 +1044,10 @@ class EntityCollection(object):
 		enriched = self + enrich
 		return enriched.unique()
 	
-	def named(self, name):
+	def named(self, key):
+		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
+	
+	def clear_named(self, name):
 		self._name = name
 		return self
 	
@@ -1189,7 +1171,6 @@ class PlotFactory:
 		return self.respawnCapital(identifier)
 
 
-# TODO: test
 class LazyPlotFactory:
 
 	def capital(self, iPlayer):
@@ -1274,12 +1255,6 @@ class Plots(Locations):
 		
 	def __str__(self):
 		return str(self._keys)
-	
-	def named(self, key):
-		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
-	
-	def clear_named(self, name):
-		return super(Plots, self).named(name)
 		
 	def cities(self):
 		return self.transform(Cities, map = lambda key: city(key), condition = lambda p: p.isCity())
@@ -1309,7 +1284,6 @@ class Plots(Locations):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
 
 
-# TODO: test
 class LazyPlots(object):
 
 	def __init__(self, getter):
@@ -1598,7 +1572,6 @@ class PlayerFactory:
 	def vassals(self, iPlayer):
 		return self.all().where(lambda p: team(p).isVassal(player(iPlayer).getTeam()))
 	
-	# TODO: test
 	def defensivePacts(self, iPlayer):
 		return self.all().where(lambda p: team(p).isDefensivePact(player(iPlayer).getTeam()))
 		
@@ -1720,9 +1693,8 @@ class Players(EntityCollection):
 	def religion(self, iReligion):
 		return self.where(lambda p: player(p).getStateReligion() == iReligion)
 	
-	# TODO: test
 	def defensivePacts(self):
-		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p1).getTeam())))
+		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p2).getTeam())))
 		
 		
 class CreatedUnits(object):

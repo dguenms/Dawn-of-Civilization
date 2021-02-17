@@ -810,6 +810,31 @@ class TestPlayers(TestCase):
 		
 		self.assert_(0 in players)
 		self.assert_(1 in players)
+	
+	def test_defensive_pacts(self):
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		players = self.players.defensivePacts()
+		
+		self.assertEqual(players.count(), 2)
+		self.assert_(3 in players)
+		self.assert_(4 in players)
+		
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), False)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
 
 			
 class TestPlayerFactory(TestCase):
@@ -926,6 +951,25 @@ class TestPlayerFactory(TestCase):
 		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
 		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
 		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(gc.getPlayer(1).getTeam(), False, False)
+	
+	def test_defensive_pacts(self):
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		players = self.factory.defensivePacts(0)
+		
+		self.assertEqual(len(players), 2)
+		self.assert_(3 in players)
+		self.assert_(4 in players)
+		
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), False)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
 
 
 class TestUnits(TestCase):
@@ -1587,6 +1631,19 @@ class TestPlots(TestCase):
 		
 		assertType(self, sum, int)
 		self.assertEqual(sum, 18)
+	
+	def test_average(self):
+		average = self.plots.average(lambda p: p.getX() + p.getY())
+		
+		assertType(self, average, float)
+		self.assertEqual(average, 2.0)
+	
+	def test_average_empty(self):
+		plots = Plots([])
+		average = plots.average(lambda p: p.getX() + p.getY())
+		
+		assertType(self, average, float)
+		self.assertEqual(average, 0.0)
 		
 	def test_accessor(self):
 		plot = self.plots[0]
@@ -1625,7 +1682,7 @@ class TestPlots(TestCase):
 		
 	def test_equal_other_class(self):
 		cities = Cities(self.cities)
-		self.assertRaises(TypeError, self.plots.__eq__, cities)
+		self.assert_(self.plots != cities)
 	
 	def test_unequal_none(self):
 		self.assert_(self.plots != None)
@@ -1746,16 +1803,45 @@ class TestPlots(TestCase):
 		self.assertEqual(self.plots.name(), "")
 	
 	def test_named(self):
-		plots = self.plots.named("someName")
+		plots = self.plots.named("EUROPE")
 		
 		assertType(self, plots, Plots)
-		self.assertEqual(plots.name(), "someName")
+		self.assertEqual(plots.name(), "Europe")
 	
 	def test_name_preserved_by_transformation(self):
-		plots = self.plots.named("someName")
-		plots = self.plots.where(lambda p: p.getX() == 1)
+		plots = self.plots.named("EUROPE")
+		self.assertEqual(plots.name(), "Europe")
 		
-		self.assertEqual(plots.name(), "someName")
+		plots = self.plots.where(lambda p: p.getX() == 1)
+		self.assertEqual(plots.name(), "Europe")
+	
+	def test_all_if_any_empty(self):
+		plots = Plots([])
+		self.assertEqual(plots.all_if_any(lambda plot: plot.getX() >= 0), False)
+	
+	def test_all_if_any_all(self):
+		self.assertEqual(self.plots.all_if_any(lambda plot: plot.getX() >= 0), True)
+	
+	def test_all_if_any_some(self):
+		self.assertEqual(self.plots.all_if_any(lambda plot: plot.getX() >= 2), False)
+	
+	def test_take_less(self):
+		first, second, third = self.plots.take(3)
+		
+		assertType(self, first, CyPlot)
+		self.assertEqual((first.getX(), first.getY()), (0, 0))
+		
+		assertType(self, second, CyPlot)
+		self.assertEqual((second.getX(), second.getY()), (0, 1))
+		
+		assertType(self, third, CyPlot)
+		self.assertEqual((third.getX(), third.getY()), (0, 2))
+	
+	def test_take_more(self):
+		taken = self.plots.take(10)
+		
+		self.assertEqual(taken[-1], None)
+		assertType(self, taken[-2], CyPlot)
 
 
 class TestPlotFactory(TestCase):
@@ -3589,6 +3675,285 @@ class TestSign(TestCase):
 	
 	def test_zero(self):
 		self.assertEqual(sign(0), 0)
+
+
+class TestTextProcessing(TestCase):
+
+	def test_replace_first(self):
+		text = "one two three four"
+		result = replace_first(text, "TXT_KEY_CIV_EGYPT_ADJECTIVE")
+		
+		self.assertEqual(result, "Egyptian two three four")
+	
+	def test_replace_first_format(self):
+		text = "one two three four"
+		result = replace_first(text, "TXT_KEY_UHV_MORE_THAN", "ten eleven twelve")
+		
+		self.assertEqual(result, "more one than ten eleven twelve two three four")
+	
+	def test_shared_words(self):
+		first_text = "one two three and some other text"
+		second_text = "one two three there is different text here"
+		
+		result = shared_words([first_text, second_text])
+		
+		self.assertEqual(result, "one two three")
+	
+	def test_shared_words_substring(self):
+		first_text = "one two three aaaaabc"
+		second_text = "one two three aaaaabb"
+		
+		result = shared_words([first_text, second_text])
+		
+		self.assertEqual(result, "one two three")
+	
+	def test_replace_shared_words(self):
+		first_text = "one two three and some other text"
+		second_text = "one two three there is a different text here"
+		
+		first_result, second_result = replace_shared_words([first_text, second_text])
+		
+		self.assertEqual(first_result, "one two three and some other text")
+		self.assertEqual(second_result, " there is a different text here")
+		
+	def test_replace_shared_words_three(self):
+		first_text = "one two three and some other text"
+		second_text = "one two three there is a different text here"
+		third_text = "one two three yet another text or whatever"
+		
+		first_result, second_result, third_result = replace_shared_words([first_text, second_text, third_text])
+		
+		self.assertEqual(first_result, "one two three and some other text")
+		self.assertEqual(second_result, " there is a different text here")
+		self.assertEqual(third_result, " yet another text or whatever")
+	
+	def test_replace_shared_words_minimal(self):
+		first_text = "one two three and some other text"
+		second_text = "one two three and different text"
+		third_text = "one two three this is different"
+		
+		first_result, second_result, third_result = replace_shared_words([first_text, second_text, third_text])
+		
+		self.assertEqual(first_result, "one two three and some other text")
+		self.assertEqual(second_result, " and different text")
+		self.assertEqual(third_result, " this is different")
+	
+	def test_capitalize(self):
+		text = "word"
+		result = capitalize(text)
+		
+		self.assertEqual(result, "Word")
+	
+	def test_capitalize_empty(self):
+		text = ""
+		result = capitalize(text)
+		
+		self.assertEqual(result, "")
+	
+	def test_capitalize_already_capital(self):
+		text = "Word"
+		result = capitalize(text)
+		
+		self.assertEqual(result, "Word")
+	
+	def test_capitalize_multiple_words(self):
+		text = "some word"
+		result = capitalize(text)
+		
+		self.assertEqual(result, "Some word")
+	
+	def test_number_word_a(self):
+		result = number_word(1)
+		
+		self.assertEqual(result, "a")
+	
+	def test_number_word_two(self):
+		result = number_word(2)
+		
+		self.assertEqual(result, "two")
+	
+	def test_number_word_ten(self):
+		result = number_word(10)
+		
+		self.assertEqual(result, "ten")
+	
+	def test_number_word_twenty(self):
+		result = number_word(20)
+		
+		self.assertEqual(result, "20")
+	
+	def test_plural(self):
+		result = plural("word")
+		
+		self.assertEqual(result, "words")
+	
+	def test_plural_ends_with_s(self):
+		result = plural("words")
+		
+		self.assertEqual(result, "words")
+	
+	def test_plural_ends_with_y(self):
+		result = plural("library")
+		
+		self.assertEqual(result, "libraries")
+	
+	def test_plural_irregular(self):
+		self.assertEqual(plural("Ship of the Line"), "Ships of the Line")
+		self.assertEqual(plural("Great Statesman"), "Great Statesmen")
+		self.assertEqual(plural("cathedral of your state religion"), "cathedrals of your state religion")
+	
+	def test_format_date_positive(self):
+		self.assertEqual(format_date(1000), "1000 AD")
+	
+	def test_format_date_negative(self):
+		self.assertEqual(format_date(-500), "500 BC")
+	
+
+class TestConcat(TestCase):
+
+	def test_listify_list(self):
+		self.assertEqual(listify([1, 2, 3]), [1, 2, 3])
+	
+	def test_listify_tuple(self):
+		self.assertEqual(listify((1, 2, 3)), [1, 2, 3])
+	
+	def test_listify_set(self):
+		self.assertEqual(listify(set([1, 2, 3])), [1, 2, 3])
+	
+	def test_listify_int(self):
+		self.assertEqual(listify(1), [1])
+	
+	def test_concat_lists(self):
+		self.assertEqual(concat([1, 2], [3, 4]), [1, 2, 3, 4])
+	
+	def test_concat_list_and_int(self):
+		self.assertEqual(concat([1, 2], 3), [1, 2, 3])
+	
+	def test_concat_int_and_list(self):
+		self.assertEqual(concat(1, [2, 3]), [1, 2, 3])
+	
+	def test_concat_int_and_int(self):
+		self.assertEqual(concat(1, 2), [1, 2])
+
+
+class TestFuncWrappers(TestCase):
+
+	def test_equals(self):
+		def func(x, y):
+			return x + y
+		
+		equals_func = equals(func)
+		
+		self.assertEqual(equals_func(1, 2, 3), True)
+		self.assertEqual(equals_func(1, 2, 4), False)
+	
+	def test_positive(self):
+		def func(x, y):
+			return x + y
+		
+		positive_func = positive(func)
+		
+		self.assertEqual(positive_func(1, 1), True)
+		self.assertEqual(positive_func(0, 0), False)
+		self.assertEqual(positive_func(1, -2), False)
+
+
+class TestAverage(TestCase):
+
+	def test_average(self):
+		def count(list):
+			return len(list)
+		
+		def value(list):
+			return sum(list)
+		
+		average_func = average(value, count)
+		
+		self.assertEqual(average_func([1, 2, 3]), 2.0)
+		self.assertEqual(average_func([]), 0.0)
+
+
+class TestCount(TestCase):
+
+	def test_count(self):
+		self.assertEqual(count([1, 2, 3, 4, 5]), 5)
+	
+	def test_count_condition(self):
+		self.assertEqual(count([1, 2, 3, 4, 5], lambda x: x >= 3), 3)
+
+
+class TestLazyPlots(TestCase):
+
+	def setUp(self):
+		self.factory = LazyPlotFactory()
+
+	def test_capital_none(self):
+		capital = self.factory.capital(0)
+		
+		assertType(self, capital, LazyPlots)
+		
+		self.assertEqual(capital.count(), 0)
+	
+	def test_capital_before(self):
+		city = gc.getPlayer(0).initCity(61, 31)
+		city.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(city.isCapital(), True)
+		
+		capital = self.factory.capital(0)
+		
+		assertType(self, capital, LazyPlots)
+		
+		self.assertEqual(capital.count(), 1)
+		self.assertEqual(capital.first().getX(), 61)
+		self.assertEqual(capital.first().getY(), 31)
+		
+		city.kill()
+	
+	def test_capital_after(self):
+		capital = self.factory.capital(0)
+		
+		assertType(self, capital, LazyPlots)
+		
+		city = gc.getPlayer(0).initCity(61, 31)
+		city.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(city.isCapital(), True)
+		
+		self.assertEqual(capital.count(), 1)
+		self.assertEqual(capital.first().getX(), 61)
+		self.assertEqual(capital.first().getY(), 31)
+		
+		city.kill()
+	
+	def test_capital_changed(self):
+		capital = self.factory.capital(0)
+		
+		city1 = gc.getPlayer(0).initCity(61, 31)
+		city1.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(city1.isCapital(), True)
+		
+		self.assertEqual(capital.count(), 1)
+		self.assertEqual(capital.first().getX(), 61)
+		self.assertEqual(capital.first().getY(), 31)
+		
+		city2 = gc.getPlayer(0).initCity(63, 31)
+		city2.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(city2.isCapital(), True)
+		
+		self.assertEqual(capital.count(), 1)
+		self.assertEqual(capital.first().getX(), 63)
+		self.assertEqual(capital.first().getY(), 31)
+		
+		city1.kill()
+		city2.kill()
+	
+	def test_normal(self):
+		normal = self.factory.normal(0)
+		
+		self.assertEqual(normal.unique(), plots.normal(0).unique())
 		
 
 test_cases = [
@@ -3647,6 +4012,12 @@ test_cases = [
 	TestCivs,
 	TestCapital,
 	TestSign,
+	TestTextProcessing,
+	TestConcat,
+	TestFuncWrappers,
+	TestAverage,
+	TestCount,
+	TestLazyPlots,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
