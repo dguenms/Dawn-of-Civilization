@@ -206,13 +206,13 @@ dGoals = {
 		).at(1200),
 		All(
 			Wonder(iMezquita),
-			CitySpecialistCount(city(plots.capital(iMoors)).named("CORDOBA"), sum([iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer]), 4),
+			CitySpecialistCount(city(plots.capital(iMoors)).named("CORDOBA"), sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer), 4),
 		).by(1300),
 		PiracyGold(3000).by(1650),
 	),
 	iSpain: (
 		FirstSettle(plots.regions(*lAmerica).named("AMERICA")).allowed(dCivGroups[iCivGroupAmerica]),
-		ControlledResourceCount(sum([iSilver, iGold]), 10).by(1650),
+		ControlledResourceCount(sum(iSilver, iGold), 10).by(1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),
 			NoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), iProtestantism),
@@ -243,7 +243,7 @@ dGoals = {
 			(plots.regions(*lOceania).named("OCEANIA"), 3),
 		).by(1730),
 		All(
-			UnitCount(sum([iFrigate, iShipOfTheLine]), 25),
+			UnitCount(sum(iFrigate, iShipOfTheLine), 25),
 			SunkShips(50),
 		).by(1800),
 		EraFirstDiscovered((iRenaissance, 8), (iIndustrial, 8)),
@@ -256,7 +256,7 @@ dGoals = {
 		),
 		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
 		All(
-			CitySpecialistCount(city(tVienna).named("VIENNA"), sum([iSpecialistGreatArtist, iSpecialistGreatStatesman]), 10),
+			CitySpecialistCount(city(tVienna).named("VIENNA"), sum(iSpecialistGreatArtist, iSpecialistGreatStatesman), 10),
 			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]).independent().named("ATTITUDES_IN_EUROPE"),
 		).by(1850),
 	),
@@ -285,16 +285,16 @@ dGoals = {
 	iPoland: (
 		PopulationCities(12, 3).by(1400),
 		FirstDiscovered(iCivilLiberties),
-		BuildingCount(sum([iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral]).named("CHRISTIAN_CATHEDRALS"), 3).by(1600),
+		BuildingCount(sum(iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral).named("CHRISTIAN_CATHEDRALS"), 3).by(1600),
 	),
 	iPortugal: (
 		OpenBorderCount(14).by(1550),
 		ResourceCount(sum(lColonialResources).named("TRADING_COMPANY_RESOURCES"), 12).by(1650),
-		CityCount(sum([
+		CityCount(sum(
 			plots.rectangle(tBrazil).named("BRAZIL"),
 			plots.regions(*lAfrica).named("AFRICA"),
 			plots.regions(*lAsia).named("ASIA"),
-		]), 15).by(1700),
+		), 15).by(1700),
 	),
 	iInca: (
 		All(

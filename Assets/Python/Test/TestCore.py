@@ -1,6 +1,8 @@
 from Core import *
 from unittest import *
 
+import types
+
 
 def assertType(test, obj, expected_type):
 	test.assertEqual(type(obj), expected_type)
@@ -3820,6 +3822,9 @@ class TestConcat(TestCase):
 	def test_listify_set(self):
 		self.assertEqual(listify(set([1, 2, 3])), [1, 2, 3])
 	
+	def test_listify_generator(self):
+		self.assertEqual(listify(i for i in xrange(3)), [0, 1, 2])
+	
 	def test_listify_int(self):
 		self.assertEqual(listify(1), [1])
 	
@@ -3834,6 +3839,9 @@ class TestConcat(TestCase):
 	
 	def test_concat_int_and_int(self):
 		self.assertEqual(concat(1, 2), [1, 2])
+	
+	def test_concat_generator_and_list(self):
+		self.assertEqual(concat((i for i in xrange(2)), 2), [0, 1, 2])
 
 
 class TestFuncWrappers(TestCase):
@@ -3954,6 +3962,33 @@ class TestLazyPlots(TestCase):
 		normal = self.factory.normal(0)
 		
 		self.assertEqual(normal.unique(), plots.normal(0).unique())
+
+
+class TestVariadic(TestCase):
+
+	def test_list(self):
+		self.assertEqual(variadic([1, 2, 3]), [1, 2, 3])
+	
+	def test_tuple(self):
+		self.assertEqual(variadic((1, 2, 3)), [1, 2, 3])
+	
+	def test_varargs(self):
+		self.assertEqual(variadic(1, 2, 3), [1, 2, 3])
+	
+	def test_set(self):
+		self.assertEqual(variadic(set([1, 2, 3])), [1, 2, 3])
+	
+	def test_item(self):
+		self.assertEqual(variadic(1), [1])
+	
+	def test_empty(self):
+		self.assertEqual(variadic(), [])
+	
+	def test_generator(self):
+		result = variadic(i for i in xrange(3))
+	
+		self.assertEqual(isinstance(result, types.GeneratorType), True)
+		self.assertEqual([x for x in result], [0, 1, 2])
 		
 
 test_cases = [
@@ -4018,6 +4053,7 @@ test_cases = [
 	TestAverage,
 	TestCount,
 	TestLazyPlots,
+	TestVariadic,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

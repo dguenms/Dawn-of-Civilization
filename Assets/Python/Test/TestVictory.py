@@ -485,6 +485,22 @@ class TestAggregate(ExtendedTestCase):
 		
 		contained = 0 in agg
 		self.assertEqual(agg._items, [0, 1, 2])
+	
+	def testGeneratorArgument(self):
+		agg = sum(i for i in xrange(3))
+		self.assertEqual(agg.items, [0, 1, 2])
+	
+	def testVarargsArgument(self):
+		agg = sum(0, 1, 2)
+		self.assertEqual(agg.items, [0, 1, 2])
+	
+	def testListArguments(self):
+		agg = sum([0, 1, 2])
+		self.assertEqual(agg.items, [0, 1, 2])
+	
+	def testTupleArguments(self):
+		agg = sum((0, 1, 2))
+		self.assertEqual(agg.items, [0, 1, 2])
 
 
 class TestArguments(ExtendedTestCase):
@@ -1043,6 +1059,8 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		self.assertEqual(self.goal.state, SUCCESS)
+		
+		self.goal.deactivate()
 	
 	def testAtFailure(self):
 		self.goal.at(-3000)
@@ -1053,6 +1071,8 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		self.assertEqual(self.goal.state, FAILURE)
+		
+		self.goal.deactivate()
 	
 	def testAtDifferentTurn(self):
 		self.goal.at(-3000)
@@ -1063,6 +1083,8 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 1, 0)
 		self.assertEqual(self.goal.state, POSSIBLE)
+		
+		self.goal.deactivate()
 	
 	def testBy(self):
 		self.goal.by(-3000)
@@ -1073,6 +1095,8 @@ class TestBaseGoal(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		self.assertEqual(self.goal.state, FAILURE)
 		
+		self.goal.deactivate()
+		
 	def testByAfterSuccess(self):
 		self.goal.by(-3000)
 		self.goal.state = SUCCESS
@@ -1082,6 +1106,8 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		self.assertEqual(self.goal.state, SUCCESS)
+		
+		self.goal.deactivate()
 	
 	def testByDifferentTurn(self):
 		self.goal.by(-3000)
@@ -1091,6 +1117,8 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 1, 0)
 		self.assertEqual(self.goal.state, POSSIBLE)
+		
+		self.goal.deactivate()
 	
 	def testTurnly(self):
 		goal = TestGoal.turnly.subclass("SubGoal")()
@@ -1101,6 +1129,37 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		self.assertEqual(goal.state, SUCCESS)
+		
+		goal.deactivate()
+	
+	def testDeactivateDisablesEventHandling(self):
+		self.goal.at(-3000)
+		self.goal.activate(0)
+		
+		self.goal.deactivate()
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(self.goal.state, POSSIBLE)
+	
+	def testDeactivateTwice(self):
+		self.goal.at(-3000)
+		self.goal.activate(0)
+		
+		self.goal.deactivate()
+		self.goal.deactivate()
+	
+	def testCheckEvery(self):
+		self.goal.every()
+		self.goal.activate(0)
+		
+		self.assertEqual(self.goal.state, POSSIBLE)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(self.goal.state, SUCCESS)
+		
+		self.goal.deactivate()
 
 
 class TestConditionGoals(ExtendedTestCase):
@@ -5380,6 +5439,39 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
+	
+	def testDirectConnectionTriggered(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
+		goal.activate(0)
+		
+		start = player(0).initCity(61, 31)
+		target = player(0).initCity(64, 31)
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iLeverage, True, 0, False, False)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(goal.state, SUCCESS)
+		
+		start.kill()
+		target.kill()
+		
+		for plot in plots.rectangle((62, 31), (63, 31)):
+			plot.setRouteType(-1)
+			plot.setOwner(-1)
+		
+		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testNoRoute(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5402,6 +5494,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testNoCulture(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5424,6 +5518,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setRouteType(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testDifferentRouteType(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRailroad])
@@ -5450,6 +5546,8 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		for iTech in [iLeverage, iRailroad]:
 			team(0).setHasTech(iTech, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testNoRouteTech(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5470,6 +5568,8 @@ class TestRouteConnection(ExtendedTestCase):
 		for plot in plots.rectangle((62, 31), (63, 31)):
 			plot.setRouteType(-1)
 			plot.setOwner(-1)
+		
+		goal.deactivate()
 	
 	def testNoStartCity(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5492,6 +5592,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testDifferentStartCityOwner(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5516,6 +5618,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testNoTargetCity(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5538,6 +5642,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 		
 	def testTargetCityDifferentOwner(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5562,6 +5668,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testIndirectConnection(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
@@ -5585,6 +5693,8 @@ class TestRouteConnection(ExtendedTestCase):
 		for plot in area:
 			plot.setRouteType(-1)
 			plot.setOwner(-1)
+		
+		goal.deactivate()
 	
 	def testConnectionThroughCity(self):
 		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
@@ -5611,6 +5721,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testConnectionThroughCityDifferentOwner(self):
 		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
@@ -5637,6 +5749,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testMultipleStarts(self):
 		starts = plots.rectangle((61, 31), (61, 33))
@@ -5665,6 +5779,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testMultipleTargets(self):
 		starts = plots.of([(61, 31)])
@@ -5693,6 +5809,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testWithStartOwners(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
@@ -5717,6 +5835,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testWithStartOwnersIncludingTarget(self):
 		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
@@ -5741,6 +5861,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testWithLazyCapital(self):
 		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
@@ -5767,6 +5889,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testWithLazyCapitalElsewhere(self):
 		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
@@ -5794,6 +5918,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testMultipleTargetsAll(self):
 		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
@@ -5819,6 +5945,8 @@ class TestRouteConnection(ExtendedTestCase):
 			plot.setOwner(-1)
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
+		
+		goal.deactivate()
 	
 	def testMultipleTargetsSome(self):
 		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
@@ -5845,6 +5973,8 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		team(0).setHasTech(iLeverage, False, 0, False, False)
 		
+		goal.deactivate()
+		
 		
 class SubGoal(BaseGoal):
 
@@ -5855,9 +5985,17 @@ class SubGoal(BaseGoal):
 		
 		self.string = ""
 		self.iMinArgument = 0
+		self.bDeactivated = False
 	
 	def condition(self, argument):
 		return argument >= self.iMinArgument
+	
+	def handler(self, *args):
+		self.check()
+	
+	def deactivate(self):
+		super(SubGoal, self).deactivate()
+		self.bDeactivated = True
 	
 	def __str__(self):
 		return self.string
@@ -5881,6 +6019,8 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(goal.callback, callback)
 		self.assertEqual(goal1.callback, goal.subgoal_callback)
 		self.assertEqual(goal2.callback, goal.subgoal_callback)
+		
+		goal.deactivate()
 	
 	def testOneSuccess(self):
 		goal1 = SubGoal()
@@ -5894,6 +6034,8 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(goal1.state, SUCCESS)
 		self.assertEqual(goal2.state, POSSIBLE)
 		self.assertEqual(goal.state, POSSIBLE)
+		
+		goal.deactivate()
 	
 	def testAllSuccess(self):
 		goal1 = SubGoal()
@@ -5908,6 +6050,8 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(goal1.state, SUCCESS)
 		self.assertEqual(goal2.state, SUCCESS)
 		self.assertEqual(goal.state, SUCCESS)
+		
+		goal.deactivate()
 	
 	def testOneFailure(self):
 		goal1 = SubGoal()
@@ -5922,6 +6066,8 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(goal2.state, FAILURE)
 		self.assertEqual(goal.state, FAILURE)
 		
+		goal.deactivate()
+		
 	def testString(self):
 		goal1 = SubGoal()
 		goal2 = SubGoal()
@@ -5935,6 +6081,58 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(str(goal1), "goal1")
 		self.assertEqual(str(goal2), "goal2")
 		self.assertEqual(str(goal), "goal1\ngoal2")
+		
+		goal.deactivate()
+	
+	def testAt(self):
+		goal1 = SubGoal(1)
+		goal2 = SubGoal(1)
+		
+		goal = All(goal1, goal2).at(-3000)
+		goal.activate(0)
+		
+		self.assertEqual(goal1.state, POSSIBLE)
+		self.assertEqual(goal2.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(goal1.state, SUCCESS)
+		self.assertEqual(goal2.state, SUCCESS)
+		self.assertEqual(goal.state, SUCCESS)
+		
+		goal.deactivate()
+	
+	def testBy(self):
+		goal1 = SubGoal(1)
+		goal2 = SubGoal(-1)
+		
+		goal = All(goal1, goal2).by(-3000)
+		goal.activate(0)
+		
+		self.assertEqual(goal1.state, POSSIBLE)
+		self.assertEqual(goal2.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(goal1.state, FAILURE)
+		self.assertEqual(goal2.state, FAILURE)
+		self.assertEqual(goal.state, FAILURE)
+		
+		goal.deactivate()
+	
+	def testDeactivate(self):
+		goal1 = SubGoal(1)
+		goal2 = SubGoal(1)
+		
+		goal = All(goal1, goal2)
+		goal.activate(0)
+		
+		goal.deactivate()
+		
+		self.assertEqual(goal1.bDeactivated, True)
+		self.assertEqual(goal2.bDeactivated, True)
 
 
 class TestSomeGoal(ExtendedTestCase):

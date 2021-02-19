@@ -13,6 +13,7 @@ import BugCore
 
 import random
 import re
+import types
 
 from traceback import extract_stack
 from sets import Set
@@ -111,11 +112,21 @@ def format_date(year):
 	return text("TXT_KEY_YEAR_BC", -year)
 
 
+def variadic(*items):
+	if len(items) == 1:
+		if isinstance(items[0], types.GeneratorType):
+			return items[0]
+		return listify(items[0])
+	return listify(items)
+
+
 def listify(item):
 	if isinstance(item, list):
 		return item
 	if isinstance(item, (tuple, set)):
 		return list(item)
+	if isinstance(item, types.GeneratorType):
+		return [x for x in item]
 	return [item]
 
 

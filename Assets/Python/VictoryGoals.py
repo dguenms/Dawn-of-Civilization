@@ -320,10 +320,9 @@ def stateReligionBuilding(func):
 
 class Aggregate(object):
 
-	# TODO: 'generator' should accept a generator, list, or varargs
-	def __init__(self, aggregate, generator):
+	def __init__(self, aggregate, *items):
 		self.aggregate = aggregate
-		self.generator = generator
+		self.generator = variadic(*items)
 		
 		self._items = None
 		self.name = None
@@ -370,14 +369,14 @@ def avg_(iterable):
 		return 0.0
 	return sum_(iterable) / len(iterable)
 	
-def sum(generator):
-	return Aggregate(sum_, generator)
+def sum(*items):
+	return Aggregate(sum_, *items)
 
-def avg(generator):
-	return Aggregate(avg_, generator)
+def avg(*items):
+	return Aggregate(avg_, *items)
 
-def different(generator):
-	return Aggregate(count, generator)
+def different(*items):
+	return Aggregate(count, *items)
 
 
 def religious_buildings(func):
@@ -390,7 +389,7 @@ def happiness_resources():
 	return (iBonus for iBonus in infos.bonuses() if infos.bonus(iBonus).getHappiness() > 0)
 
 def great_people():
-	return sum([iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]).named("GREAT_PEOPLE")
+	return sum(iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy).named("GREAT_PEOPLE")
 
 
 class Arguments(object):
@@ -934,7 +933,9 @@ class BaseGoal(object):
 	
 	def deactivate(self):
 		for event, handler in self.handlers:
-			events.removeEventHandler(event, getattr(self, handler))
+			handler_func = getattr(self, handler)
+			if events.hasEventHandler(event, handler_func):
+				events.removeEventHandler(event, handler_func)
 	
 	def setState(self, state):
 		if self.state != state:
@@ -943,8 +944,8 @@ class BaseGoal(object):
 			if self.callback:
 				self.callback(self)
 			
-			#if state == FAILURE:
-			#	self.deactivate()
+			if state == FAILURE:
+				self.deactivate()
 	
 	def possible(self):
 		return self.state == POSSIBLE
@@ -1010,6 +1011,16 @@ class BaseGoal(object):
 		self.register("BeginPlayerTurn", checkExpire)
 		self._description += " " + text("TXT_KEY_UHV_BY", format_date(iYear))
 		return self
+	
+	def every(self):
+		def checkTurn(args):
+			iGameTurn, iPlayer = args
+			if self.iPlayer == iPlayer:
+				self.check()
+		
+		self.register("BeginPlayerTurn", checkTurn)
+		return self
+
 
 class Condition(BaseGoal):
 
@@ -2061,7 +2072,6 @@ class BestPlayer(Best):
 		return cls.desc("BEST_POPULATION_PLAYER").func(metric).subclass("BestPopulationPlayer")
 	
 
-# TODO: should be turnly
 class RouteConnection(BaseGoal):
 
 	def __init__(self, starts, targets, lRoutes):
@@ -2078,6 +2088,8 @@ class RouteConnection(BaseGoal):
 		self.lRoutes = lRoutes
 		
 		self.bStartOwners = False
+		
+		self.every()
 	
 	def __nonzero__(self):
 		return all(self.condition(targets) for targets in self.targets)
@@ -2140,7 +2152,6 @@ class RouteConnection(BaseGoal):
 		return any(self.connected(start.plot(), targets) for start in self.starts.cities())
 
 
-# TODO: we need to forward .register to subgoals
 class All(BaseGoal):
 
 	def __init__(self, *goals):
@@ -2171,20 +2182,22 @@ class All(BaseGoal):
 		for goal in self.goals:
 			goal.deactivate()
 	
-	#def check(self):
-	#	for goal in self.goals:
-	#		goal.check()
-	
-	def finalCheck(self):
-		for goal in self.goals:
-			goal.finalCheck()
-	
 	def setState(self, state):
 		super(All, self).setState(state)
 		
 		if state == FAILURE:
 			for goal in self.goals:
 				goal.fail()
+	
+	def at(self, iYear):
+		for goal in self.goals:
+			goal.at(iYear)
+		return self
+	
+	def by(self, iYear):
+		for goal in self.goals:
+			goal.by(iYear)
+		return self
 	
 	def __nonzero__(self):
 		return all(goal.state == SUCCESS for goal in self.goals)
