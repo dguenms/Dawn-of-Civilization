@@ -901,6 +901,11 @@ class BaseGoal(object):
 		
 		self.handlers = self.__class__.handlers[:]
 		
+		self.init()
+		
+	def init(self):
+		pass
+		
 	def __nonzero__(self):
 		return all(self.condition(*args) for args in self.arguments)
 	
@@ -1138,9 +1143,7 @@ class Condition(BaseGoal):
 	
 	@classproperty
 	def noForeignCities(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lOnly = []
 			self.lExcluded = []
 		
@@ -1163,7 +1166,7 @@ class Condition(BaseGoal):
 				return True
 			return False
 		
-		return cls.desc("NO_FOREIGN_CITIES").objective(Plots).func(__init__, only, excluding).cities(valid).subclass("NoForeignCities")
+		return cls.desc("NO_FOREIGN_CITIES").objective(Plots).func(init, only, excluding).cities(valid).subclass("NoForeignCities")
 	
 	@classproperty
 	def tradeConnection(cls):
@@ -1190,9 +1193,7 @@ class Condition(BaseGoal):
 	
 	@classproperty
 	def moreCulture(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lCivs = range(iNumCivs)
 			
 		def than(self, lCivs):
@@ -1211,7 +1212,7 @@ class Condition(BaseGoal):
 		def required(self):
 			return players.major().alive().without(self.iPlayer).civs(*self.lCivs).sum(lambda p: player(p).countTotalCulture())
 		
-		return cls.func(__init__, than, condition, display, value, required).subclass("MoreCulture")
+		return cls.func(init, than, condition, display, value, required).subclass("MoreCulture")
 	
 
 class Count(BaseGoal):
@@ -1407,9 +1408,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def conqueredCities(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.conquered = plots.none()
 			self.lCivs = []
 			self.inside_plots = plots.none()
@@ -1435,13 +1434,11 @@ class Count(BaseGoal):
 		def value_function(self):
 			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
 		
-		return cls.desc("CONQUERED_CITY_COUNT").func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
+		return cls.desc("CONQUERED_CITY_COUNT").func(init, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lCivs = []
 			
 		def civs(self, lCivs):
@@ -1454,7 +1451,7 @@ class Count(BaseGoal):
 		
 			return self._team.isOpenBorders(player(iPlayer).getTeam())
 		
-		return cls.desc("OPEN_BORDER_COUNT").format(options.number_word()).func(__init__, civs).players(valid).subclass("OpenBorderCount")
+		return cls.desc("OPEN_BORDER_COUNT").format(options.number_word()).func(init, civs).players(valid).subclass("OpenBorderCount")
 	
 	@classproperty
 	def specialist(cls):
@@ -1493,9 +1490,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def attitude(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lCivs = []
 			self.iStateReligion = -1
 			self.bCommunist = False
@@ -1531,13 +1526,11 @@ class Count(BaseGoal):
 			
 			return player(iPlayer).AI_getAttitude(self.iPlayer) >= iAttitude
 		
-		return cls.subject(AttitudeTypes).format(options.singular().number_word()).func(__init__, civs, religion, communist, independent).players(valid).turnly.subclass("AttitudeCount")
+		return cls.subject(AttitudeTypes).format(options.singular().number_word()).func(init, civs, religion, communist, independent).players(valid).turnly.subclass("AttitudeCount")
 	
 	@classproperty
 	def vassals(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lCivs = []
 			self.iStateReligion = -1
 		
@@ -1560,7 +1553,7 @@ class Count(BaseGoal):
 		def onVassalState(self):
 			self.check()
 		
-		return cls.format(options.number_word()).func(__init__, civs, religion).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
+		return cls.format(options.number_word()).func(init, civs, religion).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
 	
 	@classproperty
 	def cityBuilding(cls):
@@ -1734,9 +1727,7 @@ class Trigger(Condition):
 	
 	@classproperty
 	def firstSettle(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lAllowedCivs = []
 			
 		def allowed(self, lCivs):
@@ -1748,7 +1739,7 @@ class Trigger(Condition):
 				if self.arguments.subject.cities().without(city).none(lambda city: civ(city.getOriginalOwner()) not in self.lAllowedCivs):
 					self.complete()
 		
-		return cls.desc("FIRST_SETTLE").subject(Plots).func(__init__, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
+		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
 	
 	@classproperty
 	def discover(cls):
@@ -1794,9 +1785,7 @@ class Trigger(Condition):
 	
 	@classproperty
 	def convertAfterFounding(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.dFoundingTurn = defaultdict()
 		
 		def recordFounding(self, iReligion):
@@ -1810,13 +1799,11 @@ class Trigger(Condition):
 				else:
 					self.fail()
 		
-		return cls.desc("CONVERT_AFTER_FOUNDING").format(options.number_word()).subject(int).objective(CvReligionInfo).func(__init__).any("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
+		return cls.desc("CONVERT_AFTER_FOUNDING").format(options.number_word()).subject(int).objective(CvReligionInfo).func(init).any("religionFounded", recordFounding).handle("playerChangeStateReligion", checkConversion).subclass("ConvertAfterFounding")
 	
 	@classproperty
 	def enterEra(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.iExpireEra = None
 	
 		def checkEnterEra(self, iTech):
@@ -1834,7 +1821,7 @@ class Trigger(Condition):
 			self.iExpireEra = iEra
 			return self
 		
-		return cls.desc("ENTER_ERA").objective(CvEraInfo).func(__init__, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).subclass("EnterEra")
+		return cls.desc("ENTER_ERA").objective(CvEraInfo).func(init, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).subclass("EnterEra")
 		
 		
 
@@ -1964,9 +1951,7 @@ class Track(Count):
 	
 	@classproperty
 	def enslaves(cls):
-		oldinit = cls.__init__
-		def __init__(self, *arguments):
-			oldinit(self, *arguments)
+		def init(self):
 			self.lExcluded = []
 		
 		def excluding(self, lCivs):
@@ -1977,7 +1962,7 @@ class Track(Count):
 			if civ(losingUnit) not in self.lExcluded:
 				self.increment()
 	
-		return cls.func(__init__, excluding).handle("enslave", incrementEnslaves).subclass("Enslave")
+		return cls.func(init, excluding).handle("enslave", incrementEnslaves).subclass("Enslave")
 
 
 class Best(BaseGoal):
