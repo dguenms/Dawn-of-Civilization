@@ -964,17 +964,14 @@ class TestArgumentProcessorBuilder(ExtendedTestCase):
 		types = self.builder.withObjectiveTypes(int, int).withObjectiveSplit(1).build()
 		
 		self.assertEqual(types.objective_split, 1)
-		
 
-class DummyProcessor(object):
-	def process(self, *args):
-		return Arguments([], None)
 
 class TestGoal(BaseGoal):
 
-	types = DummyProcessor()
+	types = ArgumentProcessor([])
 	
 	def __init__(self, *arguments):
+		self._desc = "TXT_KEY_UHV_CONTROL"
 		super(TestGoal, self).__init__(*arguments)
 		
 		self.condition_value = True
@@ -984,6 +981,15 @@ class TestGoal(BaseGoal):
 	
 	def display(self):
 		return str(self.condition())
+		
+		
+class DescriptionGoal(BaseGoal):
+	
+	types = ArgumentProcessor([CvBuildingInfo, int])
+	
+	def __init__(self, *arguments):
+		self._desc = "TXT_KEY_UHV_CONTROL"
+		super(DescriptionGoal, self).__init__(*arguments)
 
 
 class TestBaseGoal(ExtendedTestCase):
@@ -1006,7 +1012,7 @@ class TestBaseGoal(ExtendedTestCase):
 	def testNotIncludeOwner(self):
 		iPlayer = 20
 		
-		goal = TestGoal(0, 1, 2)
+		goal = TestGoal()
 		goal.activate(iPlayer)
 		
 		self.assertEqual(goal.owner_included, False)
@@ -1315,6 +1321,37 @@ class TestBaseGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.state, SUCCESS)
 		
 		self.goal.deactivate()
+	
+	def testDescription(self):
+		self.assertEqual(self.goal.description(), "Control ")
+	
+	def testDescriptionArguments(self):
+		goal = DescriptionGoal(iGranary, 3)
+		self.assertEqual(goal.description(), "Control three Granaries")
+	
+	def testDescriptionNamed(self):
+		goal = TestGoal().named("SETTLE")
+		self.assertEqual(goal.description(), "Settle ")
+	
+	def testDescriptionArgumentsNamed(self):
+		goal = DescriptionGoal(iGranary, 3).named("SETTLE")
+		self.assertEqual(goal.description(), "Settle three Granaries")
+	
+	def testDescriptionByAD(self):
+		goal = DescriptionGoal(iGranary, 3).by(1000)
+		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD")
+	
+	def testDescriptionByBC(self):
+		goal = DescriptionGoal(iGranary, 3).by(-1000)
+		self.assertEqual(goal.description(), "Control three Granaries by 1000 BC")
+	
+	def testDescriptionAtAD(self):
+		goal = DescriptionGoal(iGranary, 3).at(1000)
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
+	
+	def testDescriptionAtBC(self):
+		goal = DescriptionGoal(iGranary, 3).at(-1000)
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 BC")
 
 
 class TestConditionGoals(ExtendedTestCase):
@@ -6288,7 +6325,47 @@ class TestAllGoal(ExtendedTestCase):
 		
 		self.assertEqual(goal1.bDeactivated, True)
 		self.assertEqual(goal2.bDeactivated, True)
-
+	
+	def testDescription(self):
+		goal1 = DescriptionGoal(iGranary, 3)
+		goal2 = DescriptionGoal(iLibrary, 4)
+		goal3 = DescriptionGoal(iCastle, 5).named("SETTLE")
+		
+		goal = All(goal1, goal2, goal3)
+		
+		self.assertEqual(goal.description(), "Control three Granaries, control four Libraries and settle five Castles")
+	
+	def testDescriptionSharedBeginning(self):
+		goal1 = DescriptionGoal(iGranary, 3)
+		goal2 = DescriptionGoal(iLibrary, 4)
+		
+		goal = All(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Control three Granaries and four Libraries")
+	
+	def testDescriptionSharedEnding(self):
+		goal1 = DescriptionGoal(iGranary, 3).named("SETTLE")
+		goal2 = DescriptionGoal(iGranary, 3)
+		
+		goal = All(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Settle and control three Granaries")
+	
+	def testDescriptionSharedEndingDate(self):
+		goal1 = DescriptionGoal(iGranary, 3).by(1000).named("SETTLE")
+		goal2 = DescriptionGoal(iLibrary, 4).by(1000)
+		
+		goal = All(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Settle three Granaries and control four Libraries by 1000 AD")
+	
+	def testDescriptionDifferentEndingDate(self):
+		goal1 = DescriptionGoal(iGranary, 3).named("SETTLE").by(800)
+		goal2 = DescriptionGoal(iLibrary, 4).by(1000)
+		
+		goal = All(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Settle three Granaries by 800 AD and control four Libraries by 1000 AD")
 
 class TestSomeGoal(ExtendedTestCase):
 
@@ -6366,6 +6443,12 @@ class TestSomeGoal(ExtendedTestCase):
 		subgoal.check()
 		
 		self.assertEqual(goal.state, SUCCESS)
+	
+	def testDescription(self):
+		subgoal = DescriptionGoal(iGranary, 3)
+		goal = Some(subgoal, 2)
+		
+		self.assertEqual(goal.description(), "Control two out of three Granaries")
 
 
 class CityGoal(BaseGoal):
@@ -6377,12 +6460,15 @@ class CityGoal(BaseGoal):
 		
 		self.complete = False
 		self.string = ""
+		
+		self._description = "have %s" % self.types.format_subject(self.arguments.subject)
 	
 	def condition(self, *arguments):
 		return self.complete
 		
 	def __str__(self):
 		return self.string
+		
 		
 class TestDifferentCities(ExtendedTestCase):
 
@@ -6513,6 +6599,14 @@ class TestDifferentCities(ExtendedTestCase):
 		
 		city1.kill()
 		city2.kill()
+	
+	def testDescription(self):
+		goal1 = CityGoal(capital())
+		goal2 = CityGoal(capital().named("DIFFERENT_CAPITAL"))
+		
+		goal = DifferentCities(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Have your capital and have a different capital")
 	
 
 test_cases = [
