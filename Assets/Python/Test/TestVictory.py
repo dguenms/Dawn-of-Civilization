@@ -779,6 +779,161 @@ class TestArgumentProcessor(ExtendedTestCase):
 		self.assertType(result.objectives[0][0], Aggregate)
 
 
+class TestArgumentProcessorFormat(ExtendedTestCase):
+
+	EXAMPLE_KEY = "TXT_KEY_UHV_CITY_BUILDING"
+	
+	def setUp(self):
+		self.types = ArgumentProcessor([])
+	
+	def testFormatValueCity(self):
+		city = player(0).initCity(61, 31)
+		city.setName("CityName", False)
+		
+		self.assertEqual(self.types.format_value(CyCity, city), "CityName")
+		
+		city.kill()
+	
+	def testFormatValueAttitudeType(self):
+		self.assertEqual(self.types.format_value(AttitudeTypes, AttitudeTypes.ATTITUDE_PLEASED), "pleased")
+	
+	def testFormatValueCultureLevelInfo(self):
+		self.assertEqual(self.types.format_value(CvCultureLevelInfo, iCultureLevelInfluential), "influential")
+	
+	def testFormatValueBuildingInfo(self):
+		self.assertEqual(self.types.format_value(CvBuildingInfo, iGranary), "Granary")
+		self.assertEqual(self.types.format_value(CvBuildingInfo, iParthenon), "the Parthenon")
+	
+	def testFormatValueBonusInfo(self):
+		self.assertEqual(self.types.format_value(CvBonusInfo, iWheat), "Wheat")
+		self.assertEqual(self.types.format_value(CvBonusInfo, iSpices), "Spice")
+	
+	def testFormatValueBaseInfo(self):
+		self.assertEqual(self.types.format_value(CvTechInfo, iGeography), "Geography")
+		self.assertEqual(self.types.format_value(CvUnitInfo, iFrigate), "Frigate")
+		self.assertEqual(self.types.format_value(CvSpecialistInfo, iSpecialistGreatArtist), "Great Artist")
+	
+	def testFormatValuePlots(self):
+		self.assertEqual(self.types.format_value(Plots, plots.region(rBritain).clear_named("Britain")), "Britain")
+	
+	def testFormatValueInt(self):
+		text = self.types.format_value(int, 12)
+		
+		self.assertType(text, str)
+		self.assertEqual(text, "12")
+	
+	def testFormatValueNumberWord(self):
+		options = FormatOptions()
+		options.bNumberWord = True
+		
+		types = ArgumentProcessor([])
+		types.options = options
+		
+		self.assertEqual(types.format_value(int, 1), "a")
+		self.assertEqual(types.format_value(int, 2), "two")
+		self.assertEqual(types.format_value(int, 10), "ten")
+	
+	def testFormatValueDeferred(self):
+		self.assertEqual(self.types.format_value(CyCity, capital().named("BABYLON")), "Babylon")
+	
+	def testFormatValueAggregate(self):
+		self.assertEqual(self.types.format_value(CvBuildingInfo, sum(iGranary, iWalls, iMonument)), "Granaries, Walls and Monuments")
+	
+	def testFormatValueAggregateNamed(self):
+		self.assertEqual(self.types.format_value(CvBuildingInfo, sum(iOrthodoxTemple, iCatholicTemple, iProtestantTemple).named("TEMPLES")), "temples")
+	
+	def testFormatValueOther(self):
+		self.assertEqual(self.types.format_value(str, "hello hello"), "hello hello")
+
+	def testFormatObjectiveInfoCount(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		self.assertEqual(types.format_objective((iGranary, 1)), "a Granary")
+		self.assertEqual(types.format_objective((iGranary, 3)), "three Granaries")
+	
+	def testFormatObjectiveBasic(self):
+		types = ArgumentProcessor([CvTechInfo, CvUnitInfo, CvSpecialistInfo])
+		
+		self.assertEqual(types.format_objective((iGeography, iFrigate, iSpecialistGreatArtist)), "Geography Frigate Great Artist")
+	
+	def testFormatObjectiveCity(self):
+		types = ArgumentProcessor([int])
+		
+		options = FormatOptions().city()
+		types.options = options
+		
+		self.assertEqual(types.format_objective((1,)), "a city")
+		self.assertEqual(types.format_objective((5,)), "five cities")
+	
+	def testFormatObjectiveNoSingularCount(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		options = FormatOptions().noSingularCount(isWonder)
+		types.options = options
+		
+		self.assertEqual(types.format_objective((iGranary, 1)), "a Granary")
+		self.assertEqual(types.format_objective((iParthenon, 1)), "the Parthenon")
+		self.assertEqual(types.format_objective((iGranary, 2)), "two Granaries")
+		self.assertEqual(types.format_objective((iParthenon, 2)), "two the Parthenons")
+	
+	def testFormatObjectiveKey(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		options = FormatOptions().objective("SOME")
+		types.options = options
+		
+		self.assertEqual(types.format_objective((iGranary, 1)), "a Granary out of")
+		self.assertEqual(types.format_objective((iGranary, 5)), "five Granaries out of")
+	
+	def testFormatObjectiveSingular(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		options = FormatOptions().singular()
+		types.options = options
+		
+		self.assertEqual(types.format_objective((iGranary, 1)), "a Granary")
+		self.assertEqual(types.format_objective((iGranary, 5)), "five Granary")
+	
+	def testFormatObjectiveAggregate(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		self.assertEqual(types.format_objective((sum(iGranary), 5)), "five Granaries")
+		self.assertEqual(types.format_objective((sum(iGranary, iWalls, iMonument), 1)), "a total of a Granaries, Walls and Monuments")
+		self.assertEqual(types.format_objective((sum(iGranary, iWalls, iMonument), 5)), "a total of five Granaries, Walls and Monuments")
+	
+	def testFormatObjectiveAggregateNamed(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		self.assertEqual(types.format_objective((sum(iOrthodoxTemple, iCatholicTemple, iProtestantTemple).named("TEMPLES"), 1)), "a temples")
+		self.assertEqual(types.format_objective((sum(iOrthodoxTemple, iCatholicTemple, iProtestantTemple).named("TEMPLES"), 5)), "five temples")
+	
+	def testFormatObjectiveAggregateKey(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		options = FormatOptions().objective("SOME")
+		types.options = options
+		
+		self.assertEqual(types.format_objective((sum(iGranary), 5)), "five Granaries out of")
+		self.assertEqual(types.format_objective((sum(iGranary, iWalls, iMonument), 1)), "a total of a Granaries, Walls and Monuments out of")
+		self.assertEqual(types.format_objective((sum(iGranary, iWalls, iMonument), 5)), "a total of five Granaries, Walls and Monuments out of")
+
+	def testFormatObjectives(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		self.assertEqual(types.format_objectives([(iGranary, 2), (iWalls, 3), (iMonument, 4)]), "two Granaries, three Walls and four Monuments")
+	
+	def testFormatSubject(self):
+		types = ArgumentProcessor(subject_type=CvBuildingInfo)
+		
+		self.assertEqual(types.format_subject(iGranary), "Granary")
+	
+	def testFormatArguments(self):
+		types = ArgumentProcessor([CvBuildingInfo, int], subject_type=CvBuildingInfo)
+		
+		self.assertEqual(types.format("TXT_KEY_UHV_CITY_BUILDING", Arguments([(iGranary, 2)], iLibrary)), "build two Granaries in Library")
+		self.assertEqual(types.format("TXT_KEY_UHV_CITY_BUILDING", Arguments([(iGranary, 2), (iWalls, 3), (iMonument, 4)], iLibrary)), "build two Granaries, three Walls and four Monuments in Library")
+
+
 class TestArgumentProcessorBuilder(ExtendedTestCase):
 
 	def setUp(self):
@@ -6367,6 +6522,7 @@ test_cases = [
 	TestAggregate,
 	TestArguments,
 	TestArgumentProcessor,
+	TestArgumentProcessorFormat,
 	TestArgumentProcessorBuilder,
 	TestBaseGoal,
 	TestConditionGoals,

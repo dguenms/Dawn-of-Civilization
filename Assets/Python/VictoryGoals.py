@@ -360,7 +360,7 @@ class Aggregate(object):
 		self.name = text("TXT_KEY_UHV_%s" % key)
 		return self
 	
-	def plural(self):
+	def isTotal(self):
 		return not self.name and len(self.items) > 1
 
 
@@ -664,13 +664,13 @@ class ArgumentProcessor(object):
 				if self.options.no_singular_count(values[0]):
 					formatted_values = formatted_values[1:]
 			
-			if bAggregate and values[0].plural():
+			if bAggregate and values[0].isTotal():
 				if self.options.objective_key:
 					return text("TXT_KEY_UHV_TOTAL_OF", text(self.options.objective_key, *formatted_values))
 			
 				formatted_values = concat(text("TXT_KEY_UHV_TOTAL_OF", *formatted_values[:1]), formatted_values[1:])
 		
-		if not isinstance(values[0], Aggregate) and self.options.objective_key:
+		if (not isinstance(values[0], Aggregate) or not values[0].isTotal()) and self.options.objective_key:
 			return text(self.options.objective_key, *formatted_values)
 		
 		return " ".join(formatted_values)
@@ -1435,7 +1435,7 @@ class Count(BaseGoal):
 		def value_function(self):
 			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
 		
-		return cls.desc("CONQUERED_CITY_COUNT").format(options.city().count()).func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
+		return cls.desc("CONQUERED_CITY_COUNT").func(__init__, civs, inside, outside, value_function).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
