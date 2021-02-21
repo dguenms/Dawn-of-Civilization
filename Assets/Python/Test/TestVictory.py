@@ -1352,6 +1352,33 @@ class TestBaseGoal(ExtendedTestCase):
 	def testDescriptionAtBC(self):
 		goal = DescriptionGoal(iGranary, 3).at(-1000)
 		self.assertEqual(goal.description(), "Control three Granaries in 1000 BC")
+	
+	def testTitle(self):
+		goal = TestGoal()
+		goal.titled("VIK3")
+		
+		self.assertEqual(goal.title(), "Danegeld")
+	
+	def testTitleNonexistent(self):
+		goal = TestGoal()
+		goal.titled("XYZ4")
+		
+		self.assertEqual(goal.title(), "")
+		
+	def testTitleUntitled(self):
+		goal = TestGoal()
+		
+		self.assertEqual(goal.title(), "")
+	
+	def testFullDescriptionWithTitle(self):
+		goal = DescriptionGoal(iGranary, 3).titled("VIK3")
+		
+		self.assertEqual(goal.full_description(), "Danegeld: Control three Granaries")
+	
+	def testFullDescriptionWithoutTitle(self):
+		goal = DescriptionGoal(iGranary, 3)
+		
+		self.assertEqual(goal.full_description(), "Control three Granaries")
 
 
 class TestConditionGoals(ExtendedTestCase):

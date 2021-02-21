@@ -898,6 +898,8 @@ class BaseGoal(object):
 			self._description = self.types.format(self._desc, self.arguments)
 		else:
 			self._description = ""
+			
+		self._title = ""
 		
 		self.handlers = self.__class__.handlers[:]
 		
@@ -985,6 +987,20 @@ class BaseGoal(object):
 	
 	def description(self):
 		return capitalize(self._description)
+	
+	def titled(self, key):
+		title = text_if_exists("TXT_KEY_UHV_TITLE_%s" % key)
+		if title:
+			self._title = title
+		return self
+	
+	def title(self):
+		return self._title
+	
+	def full_description(self):
+		if self.title():
+			return "%s: %s" % (self.title(), self.description())
+		return self.description()
 	
 	def display(self):
 		raise NotImplementedError()

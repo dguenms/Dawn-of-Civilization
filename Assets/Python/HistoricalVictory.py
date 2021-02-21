@@ -6,7 +6,7 @@ from Locations import *
 
 def description(iCiv):
 	for goal in dGoals[iCiv]:
-		print goal.description()
+		print goal.full_description()
 
 
 ### CONSTANTS ###
@@ -427,3 +427,7 @@ dGoals = {
 		BrokeredPeaceCount(12).by(2000),
 	),
 }
+
+for iCiv, tGoals in dGoals.items():
+	for i, goal in enumerate(tGoals):
+		goal.titled("%s%s" % (infos.civ(iCiv).getIdentifier(), i+1))
