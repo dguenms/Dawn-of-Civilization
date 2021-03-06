@@ -312,6 +312,39 @@
 		<Spanish></Spanish>
 	</TEXT>
 	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_1</Tag>
+		<English>first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_2</Tag>
+		<English>second</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_3</Tag>
+		<English>third</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_DEFAULT</Tag>
+		<English>%dth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
 <!-- NAMES FOR CITIES AND AREAS -->
 	
 	<TEXT>
@@ -847,6 +880,569 @@
 	<TEXT>
 		<Tag>TXT_KEY_AREA_NAME_AMERICA</Tag>
 		<English>America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_CITY_IN_CHINA</Tag>
+		<English>city in China</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MEDITERRANEAN_PORT</Tag>
+		<English>a Mediterranean port</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_MOSCOW</Tag>
+		<English>Moscow</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_SIBERIAN_COAST</Tag>
+		<English>the Siberian coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_ATLANTIC_COAST</Tag>
+		<English>the Atlantic coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_PACIFIC_COAST</Tag>
+		<English>the Pacific coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_CAPITAL</Tag>
+		<English>your capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- GOAL PROGRESS -->
+
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_PLAYER_CULTURE</Tag>
+		<English>Total Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_GOAL_TEMPLATE</Tag>
+		<English>%s1 %s2: %s5[NEWLINE]Next %s3 %s4: %s6</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST</Tag>
+		<English>best</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_ENTITY_CITY</Tag>
+		<English>city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_ENTITY_PLAYER</Tag>
+		<English>civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_POPULATION</Tag>
+		<English>most populous</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_CULTURE</Tag>
+		<English>most cultured</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_TECHNOLOGY</Tag>
+		<English>most advanced</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_POPULATION</Tag>
+		<English>Total Population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_GOLDEN_AGES</Tag>
+		<English>Golden Ages</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_POPULATION_PERCENT</Tag>
+		<English>Percentage of world population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_GOLD</Tag>
+		<English>Gold in treasury</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_WORLD_PERCENT</Tag>
+		<English>Percentage of the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_TRADE_GOLD</Tag>
+		<English>Gold from trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RESOURCE_COUNT</Tag>
+		<English>Available %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CONVERT_AFTER_FOUNDING</Tag>
+		<English>Convert to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CITIES</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_SUNK_SHIPS</Tag>
+		<English>Enemy ships sunk</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_AVERAGE_CULTURE</Tag>
+		<English>Average Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ERA_FIRST_DISCOVERED</Tag>
+		<English>First to discover technologies in the %s1 era</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RAID_GOLD</Tag>
+		<English>Gold from raids</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION</Tag>
+		<English>%s1 from %s2 to %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CULTURE_IN</Tag>
+		<English>Culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_PILLAGED</Tag>
+		<English>Improvements pillaged</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NO_CITIES</Tag>
+		<English>No Cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_MISSING_CITY</Tag>
+		<English>No %s1 city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RELIGION_SPREAD_PERCENT</Tag>
+		<English>%s1 spread to</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ACQUIRED_CITIES</Tag>
+		<English>Cities acquired</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_IN_CITY</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CONQUERED_CITY_COUNT</Tag>
+		<English>Conquered cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_IN_AREA</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_PIRACY_GOLD</Tag>
+		<English>Gold from piracy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CITY_COUNT</Tag>
+		<English>Cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NO_STATE_RELIGION</Tag>
+		<English>No %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_AREA_PERCENT</Tag>
+		<English>Territory in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_AVERAGE_POPULATION</Tag>
+		<English>Average city population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_COUNT</Tag>
+		<English>vassals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_IN_AREA</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_WITH_RELIGION</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_COUNT</Tag>
+		<English>%s1 or better relations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_CIVS</Tag>
+		<English>civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_IN_AREA</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_COMMUNIST</Tag>
+		<English>communist %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_RELIGION</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_INDEPENDENT</Tag>
+		<English>independent %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH</Tag>
+		<English>%s1 with %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_SETTLED_CITY_COUNT</Tag>
+		<English>Cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_COMMUNIST</Tag>
+		<English>Communist</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_TRADE_MISSION</Tag>
+		<English>Trade Mission to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_OPEN_BORDER_COUNT</Tag>
+		<English>Open border agreements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ROUTE</Tag>
+		<English>%s2 along %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NO_FOREIGN_CITIES</Tag>
+		<English>No foreign cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RAZE_COUNT</Tag>
+		<English>Cities razed</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ENSLAVE_COUNT</Tag>
+		<English>Enslaved units</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_MORE_CULTURE</Tag>
+		<English>Total culture: %d1 / %d2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RELIGIOUS_VOTE_PERCENT</Tag>
+		<English>Votes in the Apostolic Palace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_SLAVE_TRADE_GOLD</Tag>
+		<English>Gold from slave trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ALLIED_COMMERCE_PERCENT</Tag>
+		<English>Global allied commerce</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ALLIED_POWER_PERCENT</Tag>
+		<English>Global allied power</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_GREAT_GENERALS</Tag>
+		<English>Great Generals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_RESOURCE_TRADE_GOLD</Tag>
+		<English>Gold from trading resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BROKERED_PEACE</Tag>
+		<English>Peace deals brokered</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

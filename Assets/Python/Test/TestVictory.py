@@ -501,6 +501,24 @@ class TestAggregate(ExtendedTestCase):
 	def testTupleArguments(self):
 		agg = sum((0, 1, 2))
 		self.assertEqual(agg.items, [0, 1, 2])
+	
+	def testString(self):
+		agg = sum(iWarrior, iArcher, iSwordsman)
+		formatter = lambda item: infos.unit(item).getText()
+		
+		self.assertEqual(agg.format(formatter), "Warriors, Archers and Swordsmen")
+	
+	def testStringPlots(self):
+		agg = sum(plots.region(rItaly).named("ITALY"), plots.region(rBritain).named("BRITAIN"))
+		formatter = lambda item: item.name()
+		
+		self.assertEqual(agg.format(formatter), "Italy and Britain")
+	
+	def testStringNamed(self):
+		agg = sum(iPyramids, iParthenon, iColossus).named("WONDERS")
+		formatter = lambda item: infos.building(item).getText()
+		
+		self.assertEqual(agg.format(formatter), "wonders")
 
 
 class TestArguments(ExtendedTestCase):
@@ -679,12 +697,6 @@ class TestArgumentProcessor(ExtendedTestCase):
 		result = types.process(1, 2, 3)
 		self.assertEqual(result.objectives, [(1,), (2,), (3,)])
 	
-	def testUniqueBuildingTransformedToBaseBuilding(self):
-		types = ArgumentProcessor([CvBuildingInfo])
-		
-		result = types.process(iMonument, iObelisk, iStele)
-		self.assertEqual(result.objectives, [(iMonument,), (iMonument,), (iMonument,)])
-	
 	def testAggregateValidTypeForInfoClass(self):
 		types = ArgumentProcessor([CvBuildingInfo])
 		
@@ -780,8 +792,6 @@ class TestArgumentProcessor(ExtendedTestCase):
 
 
 class TestArgumentProcessorFormat(ExtendedTestCase):
-
-	EXAMPLE_KEY = "TXT_KEY_UHV_CITY_BUILDING"
 	
 	def setUp(self):
 		self.types = ArgumentProcessor([])
@@ -933,6 +943,25 @@ class TestArgumentProcessorFormat(ExtendedTestCase):
 		self.assertEqual(types.format("TXT_KEY_UHV_CITY_BUILDING", Arguments([(iGranary, 2)], iLibrary)), "build two Granaries in Library")
 		self.assertEqual(types.format("TXT_KEY_UHV_CITY_BUILDING", Arguments([(iGranary, 2), (iWalls, 3), (iMonument, 4)], iLibrary)), "build two Granaries, three Walls and four Monuments in Library")
 
+	def testFormatProgress(self):
+		types = ArgumentProcessor([CvBuildingInfo, int])
+		
+		self.assertEqual(types.format_progress("", iGranary, 3), "Granary")
+	
+	def testFormatProgressNoArticle(self):
+		types = ArgumentProcessor([CvBuildingInfo])
+		
+		self.assertEqual(types.format_progress("", iPyramids), "Pyramids")
+	
+	def testFormatProgressSubject(self):
+		types = ArgumentProcessor([CvBuildingInfo, int], subject_type=CvUnitInfo)
+		
+		self.assertEqual(types.format_progress("", iSwordsman, iGranary, 3), "Granary")
+	
+	def testFormatProgressTextKey(self):
+		types = ArgumentProcessor([CvReligionInfo])
+		
+		self.assertEqual(types.format_progress("TXT_KEY_UHV_PROGRESS_CONVERT_AFTER_FOUNDING", iJudaism), "Convert to Judaism")
 
 class TestArgumentProcessorBuilder(ExtendedTestCase):
 
@@ -1379,6 +1408,84 @@ class TestBaseGoal(ExtendedTestCase):
 		goal = DescriptionGoal(iGranary, 3)
 		
 		self.assertEqual(goal.full_description(), "Control three Granaries")
+
+
+class TestProgress(ExtendedTestCase):
+
+	#SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
+	#FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
+	
+	SUCCESS_CHAR = "Y"
+	FAILURE_CHAR = "N"
+	
+	def testProgressText(self):
+		goal = Condition.wonder(iPyramids)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress_text(iPyramids), "Pyramids")
+	
+	def testProgressTextCount(self):
+		goal = Count.building(iGranary, 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress_text(iGranary, 3), "Granaries: 0 / 3")
+		
+		goal.deactivate()
+	
+	def testProgressIndicatorIncomplete(self):
+		goal = Count.building(iGranary, 3)
+		goal.activate(0)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(goal.progress_indicator(iGranary, 3), u"%c" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressIndicatorComplete(self):
+		goal = Count.building(iGranary, 1)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasRealBuilding(iGranary, True)
+		
+		self.assertEqual(bool(goal), True)
+		self.assertEqual(goal.progress_indicator(iGranary, 1), u"%c" % self.SUCCESS_CHAR)
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testObjectiveProgress(self):
+		goal = Condition.wonder(iPyramids)
+		goal.activate(0)
+		
+		self.assertEqual(goal.objective_progress(iPyramids), u"%c Pyramids" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testObjectiveProgressCount(self):
+		goal = Count.building(iGranary, 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.objective_progress(iGranary, 3), u"%c Granaries: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgress(self):
+		goal = Condition.wonder(iPyramids)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pyramids" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressCount(self):
+		goal = Count.building(iGranary, 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Granaries: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
 
 
 class TestConditionGoals(ExtendedTestCase):
@@ -3275,8 +3382,8 @@ class TestCountGoals(ExtendedTestCase):
 		city3.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
 		city4.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
 		
-		self.assertEqual(bool(goal), True)
 		self.assertEqual(str(goal), "4 / 3")
+		self.assertEqual(bool(goal), True)
 		
 		city1.kill()
 		city2.kill()
@@ -4544,15 +4651,18 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
 		goal.activate(0)
 		
-		events.fireEvent("religionFounded", iOrthodoxy, 1)
+		#events.fireEvent("religionFounded", iOrthodoxy, 1)
 		
-		self.assertEqual(goal.dFoundingTurn[iOrthodoxy], turn())
+		#self.assertEqual(goal.dFoundingTurn[iOrthodoxy], turn())
+		
+		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
 		self.assertEqual(bool(goal), True)
 		
 		player(0).setLastStateReligion(-1)
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
 		
 		goal.deactivate()
 	
@@ -4572,8 +4682,8 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
 		goal.activate(0)
 		
-		events.fireEvent("religionFounded", iOrthodoxy, 1)
-		events.fireEvent("religionFounded", iCatholicism, 2)
+		game.setReligionGameTurnFounded(iOrthodoxy, 1)
+		game.setReligionGameTurnFounded(iCatholicism, 2)
 		
 		player(0).setLastStateReligion(iCatholicism)
 		
@@ -4581,19 +4691,23 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 		player(0).setLastStateReligion(-1)
 		
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
+		game.setReligionGameTurnFounded(iCatholicism, -1)
+		
 		goal.deactivate()
 	
 	def testConvertAfterFoundingSoonEnough(self):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
 		goal.activate(0)
 		
-		goal.dFoundingTurn[iOrthodoxy] = turn() - 2
+		game.setReligionGameTurnFounded(iOrthodoxy, turn()-2)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
 		self.assertEqual(bool(goal), True)
 		
 		player(0).setLastStateReligion(-1)
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
 		
 		goal.deactivate()
 	
@@ -4601,13 +4715,14 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
 		goal.activate(0)
 		
-		goal.dFoundingTurn[iOrthodoxy] = turn() - 10
+		game.setReligionGameTurnFounded(iOrthodoxy, turn()-10)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
 		self.assertEqual(bool(goal), False)
 		
 		player(0).setLastStateReligion(-1)
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
 		
 		goal.deactivate()
 	
@@ -4615,11 +4730,8 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism)
 		goal.activate(0)
 		
-		events.fireEvent("religionFounded", iOrthodoxy, 1)
-		events.fireEvent("religionFounded", iCatholicism, 2)
-		
-		self.assertEqual(goal.dFoundingTurn[iOrthodoxy], turn())
-		self.assertEqual(goal.dFoundingTurn[iCatholicism], turn())
+		game.setReligionGameTurnFounded(iOrthodoxy, 1)
+		game.setReligionGameTurnFounded(iCatholicism, 2)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
@@ -4628,6 +4740,8 @@ class TestTriggerGoals(ExtendedTestCase):
 		self.assertEqual(goal.dCondition[(5, iCatholicism)], False)
 		
 		player(0).setLastStateReligion(-1)
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
+		game.setReligionGameTurnFounded(iCatholicism, -1)
 		
 		goal.deactivate()
 	
@@ -4635,8 +4749,8 @@ class TestTriggerGoals(ExtendedTestCase):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism)
 		goal.activate(0)
 		
-		events.fireEvent("religionFounded", iOrthodoxy, 1)
-		events.fireEvent("religionFounded", iCatholicism, 2)
+		game.setReligionGameTurnFounded(iOrthodoxy, 1)
+		game.setReligionGameTurnFounded(iCatholicism, 2)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		player(0).setLastStateReligion(iCatholicism)
@@ -4644,6 +4758,9 @@ class TestTriggerGoals(ExtendedTestCase):
 		self.assertEqual(bool(goal), True)
 		
 		player(0).setLastStateReligion(-1)
+		
+		game.setReligionGameTurnFounded(iOrthodoxy, -1)
+		game.setReligionGameTurnFounded(iCatholicism, -1)
 		
 		goal.deactivate()
 	
@@ -6646,6 +6763,7 @@ test_cases = [
 	TestArgumentProcessorFormat,
 	TestArgumentProcessorBuilder,
 	TestBaseGoal,
+	TestProgress,
 	TestConditionGoals,
 	TestCountGoals,
 	TestPercentageGoals,

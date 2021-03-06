@@ -3799,6 +3799,15 @@ class TestTextProcessing(TestCase):
 		
 		self.assertEqual(result, "libraries")
 	
+	def test_plural_ends_with_ch(self):
+		self.assertEqual(plural("church"), "churches")
+	
+	def test_plural_ends_with_sh(self):
+		self.assertEqual(plural("marsh"), "marshes")
+	
+	def test_plural_ends_with_man(self):
+		self.assertEqual(plural("swordsman"), "swordsmen")
+	
 	def test_plural_irregular(self):
 		self.assertEqual(plural("Ship of the Line"), "Ships of the Line")
 		self.assertEqual(plural("Great Statesman"), "Great Statesmen")

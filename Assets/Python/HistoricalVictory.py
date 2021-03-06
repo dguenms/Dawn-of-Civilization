@@ -2,13 +2,6 @@ from VictoryGoals import *
 from Locations import *
 
 
-### UTILS ###
-
-def description(iCiv):
-	for goal in dGoals[iCiv]:
-		print goal.full_description()
-
-
 ### CONSTANTS ###
 
 # general constants
@@ -168,7 +161,7 @@ dGoals = {
 			PillageCount(20),
 		).by(900),
 		All(
-			RouteConnection(plots.rectangle(tChina), plots.of(lMediterraneanPorts), infos.routes()).named("SILK_ROUTE"),
+			RouteConnection(plots.rectangle(tChina).named("CITY_IN_CHINA"), plots.of(lMediterraneanPorts).named("MEDITERRANEAN_PORT"), infos.routes()).named("SILK_ROUTE"),
 			CorporationCount(iSilkRoute, 10)
 		).by(1100),
 		DifferentCities(
@@ -254,16 +247,16 @@ dGoals = {
 			BuildingCount(iOrthodoxShrine, 1).at(1200),
 			BuildingCount(iProtestantShrine, 1).at(1550),
 		),
-		VassalCount(3).civs(dCivGroups[iCivGroupEurope]).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
+		VassalCount(3).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).religion(iCatholicism).named("CATHOLIC_VASSALS_IN_EUROPE").by(1650),
 		All(
 			CitySpecialistCount(city(tVienna).named("VIENNA"), sum(iSpecialistGreatArtist, iSpecialistGreatStatesman), 10),
-			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(dCivGroups[iCivGroupEurope]).independent().named("ATTITUDES_IN_EUROPE"),
+			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).independent().named("ATTITUDES_IN_EUROPE"),
 		).by(1850),
 	),
 	iRussia: (
 		All(
 			SettledCityCount(plots.rectangle(tSiberia).named("SIBERIA"), 7).by(1700),
-			RouteConnection(plots.capital(iRussia), plots.of(lSiberianCoast), [iRailroad]).named("CONNECT_MOSCOW_TO_SIBERIA").by(1920),
+			RouteConnection(plots.capitals(iRussia).named("MOSCOW"), plots.of(lSiberianCoast).named("SIBERIAN_COAST"), [iRouteRailroad]).named("CONNECT_MOSCOW_TO_SIBERIA").by(1920),
 		),
 		Projects(iManhattanProject, iLunarLanding),
 		All(
@@ -317,7 +310,7 @@ dGoals = {
 	iAztecs: (
 		BestPopulationCity(city(plots.capital(iAztecs)).named("TENOCHTITLAN")).at(1520),
 		BuildingCount((iPaganTemple, 6), (iSacrificialAltar, 6)).by(1650),
-		EnslaveCount(20).excluding(dCivGroups[iCivGroupAmerica]).named("ENSLAVE_OLD_WORLD"),
+		EnslaveCount(20).excluding(group(iCivGroupAmerica)).named("ENSLAVE_OLD_WORLD"),
 	),
 	iMughals: (
 		BuildingCount(iIslamicCathedral, 3).by(1500),
@@ -338,7 +331,7 @@ dGoals = {
 				plots.surrounding(tVienna).named("VIENNA"),
 			),
 		).by(1700),
-		MoreCulture().than(dCivGroups[iCivGroupEurope]).named("MORE_CULTURE_THAN_EUROPE").at(1800),
+		MoreCulture().than(group(iCivGroupEurope)).named("MORE_CULTURE_THAN_EUROPE").at(1800),
 	),
 	iThailand: (
 		OpenBorderCount(10).at(1650),
@@ -416,8 +409,8 @@ dGoals = {
 	),
 	iCanada: (
 		All(
-			RouteConnection(plots.lazy().capital(iCanada), plots.of(lAtlanticCoast), [iRailroad]).named("CAPITAL_ATLANTIC_RAILWAY"),
-			RouteConnection(plots.lazy().capital(iCanada), plots.of(lPacificCoast), [iRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
+			RouteConnection(plots.lazy().capital(iCanada).named("CAPITAL"), plots.of(lAtlanticCoast).named("ATLANTIC_COAST"), [iRouteRailroad]).named("CAPITAL_ATLANTIC_RAILWAY"),
+			RouteConnection(plots.lazy().capital(iCanada).named("CAPITAL"), plots.of(lPacificCoast).named("PACIFIC_COAST"), [iRouteRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
 		).by(1920),
 		All(
 			Control(plots.regions(rCanada).named("CANADA")),
