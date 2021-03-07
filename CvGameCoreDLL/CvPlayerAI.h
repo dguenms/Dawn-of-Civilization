@@ -152,6 +152,17 @@ public:
 	// Leoreth: determine value provided by additional resource instances
 	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
 
+	int AI_bonusHappinessChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusHealthChange(BonusTypes eBonus, int iChange) const;
+
+	int AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) const;
+
+	int AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) const;
+
+	int AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const;
+
 	int AI_cityTradeVal(CvCity* pCity) const;
 	DenialTypes AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const;
 

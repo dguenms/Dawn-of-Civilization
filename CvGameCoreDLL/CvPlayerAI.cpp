@@ -7135,68 +7135,193 @@ int CvPlayerAI::AI_bonusVal(BonusTypes eBonus, int iChange) const
 }
 
 // Leoreth
-// note: the returned value is always positive, even if iChange is negative
-// this is because negative value is being used when we calculate the value of our bonus we trade away
-int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) const
 {
-	int iI, iNumBuildings;
-	BuildingClassTypes eBuildingClass;
-	BuildingTypes eBuilding;
+	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
+	if (kBonus.getHappiness() == 0)
+	{
+		return 0;
+	}
 
+	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	int iNumCities = getNumCities();
+
+	int iCurrentAffectedCities = std::min(iNumBonuses * kBonus.getAffectedCities(), iNumCities);
+	int iChangedAffectedCities = range(0, iCurrentAffectedCities + iChange * kBonus.getAffectedCities(), iNumCities);
+
+	int iHappinessChange = 0;
+
+	CvCity* pCity;
+	int iLoop;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		if (iCurrentAffectedCities < iChangedAffectedCities && pCity->getCultureRank() >= iCurrentAffectedCities && pCity->getCultureRank() < iChangedAffectedCities)
+		{
+			if (pCity->happyLevel() - pCity->unhappyLevel() < 0)
+			{
+				iHappinessChange += 1;
+			}
+		} 
+		else if (iChangedAffectedCities < iCurrentAffectedCities && pCity->getCultureRank() >= iChangedAffectedCities && pCity->getCultureRank() < iCurrentAffectedCities)
+		{
+			if (pCity->happyLevel() - pCity->unhappyLevel() <= 0)
+			{
+				iHappinessChange -= 1;
+			}
+		}
+	}
+
+	return iHappinessChange;
+}
+
+// Leoreth
+int CvPlayerAI::AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const
+{
+	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
+	if (kBonus.getHappiness() == 0)
+	{
+		return 0;
+	}
+
+	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	int iNumCities = getNumCities();
+
+	int iCurrentAffectedCities = std::min(iNumBonuses * kBonus.getAffectedCities(), iNumCities);
+	int iChangedAffectedCities = range(0, iCurrentAffectedCities + iChange * kBonus.getAffectedCities(), iNumCities);
+
+	int iHealthChange = 0;
+
+	CvCity* pCity;
+	int iLoop;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		if (iCurrentAffectedCities < iChangedAffectedCities && pCity->getCultureRank() >= iCurrentAffectedCities && pCity->getCultureRank() < iChangedAffectedCities)
+		{
+			if (pCity->goodHealth() - pCity->badHealth() < 0)
+			{
+				iHealthChange += 1;
+			}
+		}
+		else if (iChangedAffectedCities < iCurrentAffectedCities && pCity->getCultureRank() >= iChangedAffectedCities && pCity->getCultureRank() < iCurrentAffectedCities)
+		{
+			if (pCity->goodHealth() - pCity->badHealth() <= 0)
+			{
+				iHealthChange -= 1;
+			}
+		}
+	}
+
+	return iHealthChange;
+}
+
+// Leoreth
+int CvPlayerAI::AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) const
+{
 	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
 
 	int iNumBonuses = getNumAvailableBonuses(eBonus);
 	int iNumCities = getNumCities();
 
-	int iCurrentAffectedCities = iNumBonuses * kBonus.getAffectedCities();
+	int iCurrentAffectedCities = std::min(iNumBonuses * kBonus.getAffectedCities(), iNumCities);
 	int iAffectedCitiesChange = iChange * kBonus.getAffectedCities();
 
 	int iNewAffectedCities = std::max(0, std::min(iCurrentAffectedCities + iAffectedCitiesChange, iNumCities));
-	int iDiffAffectedCities = abs(iNewAffectedCities - iCurrentAffectedCities);
+	int iDiffAffectedCities = iNewAffectedCities - iCurrentAffectedCities;
 
-	int iHappinessValue = kBonus.getHappiness() * iDiffAffectedCities * 100;
-	int iHealthValue = kBonus.getHealth() * iDiffAffectedCities * 100;
+	return iDiffAffectedCities;
+}
 
-	// Leoreth: getting first resource or losing last resource (building effects)
-	if ((iNumBonuses == 0 && iChange > 0) || (iNumBonuses > 0 && iNumBonuses + iChange <= 0))
+// Leoreth
+int CvPlayerAI::AI_bonusHappinessChange(BonusTypes eBonus, int iChange) const
+{
+	return GC.getBonusInfo(eBonus).getHappiness() * AI_bonusAffectedCitiesChange(eBonus, iChange);
+}
+
+// Leoreth
+int CvPlayerAI::AI_bonusHealthChange(BonusTypes eBonus, int iChange) const
+{
+	return GC.getBonusInfo(eBonus).getHealth() * AI_bonusAffectedCitiesChange(eBonus, iChange);
+}
+
+// Leoreth
+int CvPlayerAI::AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) const
+{
+	int iNumBonuses = getNumAvailableBonuses(eBonus);
+
+	if (iChange == 0 || (iChange > 0 && iNumBonuses > 0) || (iChange < 0 && iNumBonuses + iChange > 0))
 	{
-		for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+		return 0;
+	}
+
+	int iHappinessChange = 0;
+
+	BuildingClassTypes eBuildingClass;
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuildingClass = (BuildingClassTypes)iI;
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+
+		if (eBuilding == NO_BUILDING)
 		{
-			eBuildingClass = (BuildingClassTypes)iI;
-			eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+			continue;
+		}
 
-			if (eBuilding == NO_BUILDING)
-			{
-				continue;
-			}
-
-			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-
-			iNumBuildings = getBuildingClassCountPlusMaking(eBuildingClass);
-
-			if (kBuilding.getBonusHappinessChanges(eBonus) > 0)
-			{
-				iHappinessValue += iNumBuildings * kBuilding.getBonusHappinessChanges(eBonus) * 100;
-
-				if (canConstruct(eBuilding))
-				{
-					iHappinessValue += (iNumCities - iNumBuildings) * kBuilding.getBonusHappinessChanges(eBonus) * 25;
-				}
-			}
-
-			if (kBuilding.getBonusHealthChanges(eBonus) > 0)
-			{
-				iHealthValue += iNumBuildings * kBuilding.getBonusHealthChanges(eBonus) * 100;
-
-				if (canConstruct(eBuilding))
-				{
-					iHealthValue += (iNumCities - iNumBuildings) * kBuilding.getBonusHealthChanges(eBonus) * 25;
-				}
-			}
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+		if (kBuilding.getBonusHappinessChanges(eBonus) > 0)
+		{
+			iHappinessChange += iChange * getBuildingClassCountPlusMaking(eBuildingClass) * kBuilding.getBonusHappinessChanges(eBonus);
 		}
 	}
 
-	return iHappinessValue + iHealthValue;
+	return iHappinessChange;
+}
+
+// Leoreth
+int CvPlayerAI::AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) const
+{
+	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	if (iChange == 0 || (iChange > 0 && iNumBonuses > 0) || (iChange < 0 && iNumBonuses + iChange > 0))
+	{
+		return 0;
+	}
+
+	int iHealthChange = 0;
+
+	BuildingClassTypes eBuildingClass;
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuildingClass = (BuildingClassTypes)iI;
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+
+		if (eBuilding == NO_BUILDING)
+		{
+			continue;
+		}
+
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+		if (kBuilding.getBonusHealthChanges(eBonus) > 0)
+		{
+			iHealthChange += iChange * getBuildingClassCountPlusMaking(eBuildingClass) * kBuilding.getBonusHealthChanges(eBonus);
+		}
+	}
+
+	return iHealthChange;
+}
+
+// Leoreth
+// note: the returned value is always positive, even if iChange is negative
+// this is because negative value is being used when we calculate the value of our bonus we trade away
+int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
+{
+	int iHappinessValue = 100;
+	int iHealthValue = 100;
+
+	int iHappinessChange = AI_bonusHappinessChange(eBonus, iChange) + AI_bonusBuildingHappinessChange(eBonus, iChange);
+	int iHealthChange = AI_bonusHealthChange(eBonus, iChange) + AI_bonusBuildingHealthChange(eBonus, iChange);
+
+	return iHappinessValue * iHappinessChange + iHealthValue * iHealthChange;
 }
 
 //Value sans corporation
@@ -7236,7 +7361,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 				if (iCoastalCityCount > 0)
 				{
 					int iLoop;
-						for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+					for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 					{
 						if (pLoopCity->isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
 						{
@@ -7257,7 +7382,6 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 				{
 					pCoastalCity = pUnconnectedCoastalCity;
 				}
-
 
 				for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 				{
@@ -7586,8 +7710,9 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	iValue = AI_bonusVal(eBonus, iChange);
 
-	iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
-	iValue /= 100;
+	// Leoreth: bonuses mostly affect a set number of cities now, so no scaling by empire size required
+	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
+	//iValue /= 100;
 
 	iValue *= std::max(0, (GC.getBonusInfo(eBonus).getAITradeModifier() + 100));
 	iValue /= 100;
