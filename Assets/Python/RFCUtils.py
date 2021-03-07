@@ -753,11 +753,11 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	if bFlipUnits: 
 		flipUnitsInCityAfter(plot, iPlayer)
 	else:
-		createGarrisons(tPlot, iPlayer, 2)
+		createGarrisons(plot, iPlayer, 2)
 	
 	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 	
-	return city(tPlot)
+	return city(plot)
 	
 # used: Congresses, Stability
 def isNeighbor(iPlayer1, iPlayer2):
