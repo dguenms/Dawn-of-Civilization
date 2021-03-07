@@ -3688,44 +3688,48 @@ void CvTeamAI::AI_doCounter()
 		{
 			if (iI != getID())
 			{
-				AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
+				// Leoreth: only starts building after making contact, and stops building while contact is interrupted
+				if (canContact((TeamTypes)iI))
+				{
+					AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
 
-				if (isAtWar((TeamTypes)iI))
-				{
-					AI_changeAtWarCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
-				}
-
-				if (isHasMet((TeamTypes)iI))
-				{
-					AI_changeHasMetCounter(((TeamTypes)iI), 1);
-				}
-
-				if (isOpenBorders((TeamTypes)iI))
-				{
-					AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
-				}
-
-				if (isDefensivePact((TeamTypes)iI))
-				{
-					AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
+					if (isAtWar((TeamTypes)iI))
 					{
-						AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
+						AI_changeAtWarCounter(((TeamTypes)iI), 1);
 					}
-				}
-
-				if (isHasMet((TeamTypes)iI))
-				{
-					if (AI_shareWar((TeamTypes)iI))
+					else
 					{
-						AI_changeShareWarCounter(((TeamTypes)iI), 1);
+						AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isHasMet((TeamTypes)iI))
+					{
+						AI_changeHasMetCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isOpenBorders((TeamTypes)iI))
+					{
+						AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isDefensivePact((TeamTypes)iI))
+					{
+						AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
+					}
+					else
+					{
+						if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
+						{
+							AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
+						}
+					}
+
+					if (isHasMet((TeamTypes)iI))
+					{
+						if (AI_shareWar((TeamTypes)iI))
+						{
+							AI_changeShareWarCounter(((TeamTypes)iI), 1);
+						}
 					}
 				}
 			}
