@@ -122,6 +122,7 @@ class Civ4lerts:
 		SlaveTrade(eventManager)
 		RefusesToTalk(eventManager)
 		WorstEnemy(eventManager)
+		CancelableTribute(eventManager)
 
 
 ## Displaying Alert Messages
@@ -1130,3 +1131,32 @@ class WorstEnemy(AbstractStatefulAlert):
 		self.enemies = {}
 		for player in PlayerUtil.players():
 			self.enemies[player.getID()] = [-1] * gc.getMAX_TEAMS()
+
+
+class CancelableTribute(AbstractStatefulAlert):
+
+	def __init__(self, eventManager):
+		AbstractStatefulAlert.__init__(self, eventManager)
+		eventManager.addEventHandler("BeginActivePlayerTurn", self.onBeginActivePlayerTurn)
+	
+	def onBeginActivePlayerTurn(self, args):
+		self.check()
+	
+	def check(self):
+		if not Civ4lertsOpt.isShowCancelableTributeAlert():
+			return
+		
+		iActivePlayer = game.getActivePlayer()
+		cancelablePlayers = set()
+		
+		for iDeal in range(game.getIndexAfterLastDeal()):
+			deal = game.getDeal(iDeal)
+			
+			if deal.getFirstPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthFirstTrades() == 0:
+				cancelablePlayers.add(deal.getSecondPlayer())
+				
+			elif deal.getSecondPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthSecondTrades() == 0:
+				cancelablePlayers.add(deal.getFirstPlayer())
+		
+		if cancelablePlayers:
+			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join(list(cancelablePlayers))))

@@ -235,6 +235,22 @@
 		<Italian>When checked, displays an alert when a civilization's worst enemy changes.</Italian>
 		<Spanish>When checked, displays an alert when a civilization's worst enemy changes.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CANCELABLETRIBUTE_TEXT</Tag>
+		<English>Cancelable Tribute</English>
+		<French>Cancelable Tribute</French>
+		<German>K&#252;ndbarer Tribut</German>
+		<Italian>Cancelable Tribute</Italian>
+		<Spanish>Cancelable Tribute</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CANCELABLETRIBUTE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</English>
+		<French>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</French>
+		<German>L&#228;sst eine Warnung erscheinen, wenn eine Zivilisation ihren Tribut an eine andere Zivilisation k&#252;ndigen kann.</German>
+		<Italian>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</Italian>
+		<Spanish>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</Spanish>
+	</TEXT>
 <!-- Trade -->
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDTRADE_TEXT</Tag>
@@ -374,6 +390,14 @@
 		<German>[COLOR_POSITIVE_TEXT]Ihr seid nicht mehr der Erzfeind von %s1.[COLOR_REVERT]</German>
 		<Italian>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE</Tag>
+		<English>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Ihr k&#246;nnt Euren Tribut an %s1 k&#252;ndigen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_TRADE</Tag>
