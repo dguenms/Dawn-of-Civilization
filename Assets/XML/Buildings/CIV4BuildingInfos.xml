@@ -5208,7 +5208,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
-			<iMaxLatitude>45</iMaxLatitude>
+			<iMaxLatitude>40</iMaxLatitude>
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_PLANTNUCLEAR</ConstructSound>
