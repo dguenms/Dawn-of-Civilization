@@ -3257,6 +3257,22 @@
 		<Spanish>Max consumable: %d1_max</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITIES_GAIN</Tag>
+		<English>(for %D1_Change cities)</English>
+		<French>(for %D1_Change cities)</French>
+		<German>(for %D1_Change cities)</German>
+		<Italian>(for %D1_Change cities)</Italian>
+		<Spanish>(for %D1_Change cities)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITIES_LOSS</Tag>
+		<English>(currently in %D1_Change cities)</English>
+		<French>(currently in %D1_Change cities)</French>
+		<German>(currently in %D1_Change cities)</German>
+		<Italian>(currently in %D1_Change cities)</Italian>
+		<Spanish>(currently in %D1_Change cities)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

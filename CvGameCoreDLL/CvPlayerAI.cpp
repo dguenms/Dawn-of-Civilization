@@ -7178,7 +7178,7 @@ int CvPlayerAI::AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) co
 int CvPlayerAI::AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const
 {
 	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
-	if (kBonus.getHappiness() == 0)
+	if (kBonus.getHealth() == 0)
 	{
 		return 0;
 	}

@@ -13570,7 +13570,7 @@ void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, b
 	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER, pCity);
 }
 
-void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity)
+void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity, PlayerTypes eFromWho, PlayerTypes eToWho)
 {
 	if (NO_BONUS == eBonus)
 	{
@@ -13661,6 +13661,8 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 		}
 	}
 
+	PlayerTypes eActivePlayer = GC.getGameINLINE().getActivePlayer();
+
 	if (GC.getBonusInfo(eBonus).getHealth() != 0)
 	{
 		if (GC.getBonusInfo(eBonus).getHealth() > 0)
@@ -13674,7 +13676,18 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_UNHEALTHY", -GC.getBonusInfo(eBonus).getHealth()));
 		}
 
-		if (eImprovement != NO_IMPROVEMENT)
+		if (eActivePlayer != NO_PLAYER && (eActivePlayer == eToWho || eActivePlayer == eFromWho))
+		{
+			if (eActivePlayer == eToWho)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITIES_GAIN", GET_PLAYER(eActivePlayer).AI_bonusActualHealthChange(eBonus, 1)));
+			}
+			else if (eActivePlayer == eFromWho)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITIES_LOSS", -GET_PLAYER(eActivePlayer).AI_bonusActualHealthChange(eBonus, -1)));
+			}
+		}
+		else if (eImprovement != NO_IMPROVEMENT)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_WITH_IMPROVEMENT", GC.getImprovementInfo(eImprovement).getTextKeyWide()));
 		}
@@ -13693,7 +13706,18 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_UNHAPPY", -GC.getBonusInfo(eBonus).getHappiness()));
 		}
 
-		if (eImprovement != NO_IMPROVEMENT)
+		if (eActivePlayer != NO_PLAYER && (eActivePlayer == eToWho || eActivePlayer == eFromWho))
+		{
+			if (eActivePlayer == eToWho)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITIES_GAIN", GET_PLAYER(eActivePlayer).AI_bonusActualHappinessChange(eBonus, 1)));
+			}
+			else if (eActivePlayer == eFromWho)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITIES_LOSS", -GET_PLAYER(eActivePlayer).AI_bonusActualHappinessChange(eBonus, -1)));
+			}
+		}
+		else if (eImprovement != NO_IMPROVEMENT)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_WITH_IMPROVEMENT", GC.getImprovementInfo(eImprovement).getTextKeyWide()));
 		}

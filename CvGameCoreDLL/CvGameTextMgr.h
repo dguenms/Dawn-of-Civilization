@@ -127,7 +127,7 @@ public:
 // BUG - Resumable Value Change Help - end
 	DllExport void setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText = false, CvCity* pCity = NULL);
 // BUG - Trade Denial - start
-	DllExport void setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity = NULL);
+	DllExport void setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity = NULL, PlayerTypes eFromWho = NO_PLAYER, PlayerTypes eToWho = NO_PLAYER);
 // BUG - Trade Denial - end
 	DllExport void setReligionHelp(CvWStringBuffer &szBuffer, ReligionTypes eReligion, bool bCivilopedia = false, bool bStateReligion = false);
 	DllExport void setReligionHelpCity(CvWStringBuffer &szBuffer, ReligionTypes eReligion, CvCity *pCity, bool bCityScreen = false, bool bForceReligion = false, bool bForceState = false, bool bNoStateReligion = false);

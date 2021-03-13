@@ -4057,7 +4057,14 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct, CvWSt
 			eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
 			break;
 		case TRADE_RESOURCES:
-			GAMETEXT.setBonusHelp(szBuffer, ((BonusTypes)widgetDataStruct.m_iData2));
+			if (gDLL->isDiplomacy() || gDLL->isMPDiplomacy())
+			{
+				GAMETEXT.setBonusTradeHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData2, false, NO_PLAYER, NULL, eWhoFrom, eWhoTo);
+			}
+			else
+			{
+				GAMETEXT.setBonusHelp(szBuffer, ((BonusTypes)widgetDataStruct.m_iData2));
+			}
 			eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
 			break;
 		case TRADE_CITIES:
