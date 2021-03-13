@@ -213,6 +213,7 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iLaboratory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iUniversity)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupercomputer)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iFiberNetwork)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCERN)): iValue += 3
 	
 	# needs at least a few requirements
