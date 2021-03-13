@@ -2757,7 +2757,7 @@ int CvTeam::getCivilizationResearchModifier() const
 	// buff late game Japan
 	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == JAPAN)
 	{
-		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_INDUSTRIAL)
 		{
 			iCivModifier += isHuman() ? -20 : -40;
 		}
