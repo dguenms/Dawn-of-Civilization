@@ -4814,6 +4814,9 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AIRPORT</ArtDefineTag>
 			<PrereqTech>TECH_AVIATION</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_OIL</Bonus>
+			</PrereqBonuses>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
