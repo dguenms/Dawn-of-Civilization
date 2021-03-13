@@ -7315,8 +7315,8 @@ int CvPlayerAI::AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) con
 // this is because negative value is being used when we calculate the value of our bonus we trade away
 int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
 {
-	int iHappinessValue = 100;
-	int iHealthValue = 100;
+	int iHappinessValue = 50;
+	int iHealthValue = 30;
 
 	int iHappinessChange = AI_bonusHappinessChange(eBonus, iChange) + AI_bonusBuildingHappinessChange(eBonus, iChange);
 	int iHealthChange = AI_bonusHealthChange(eBonus, iChange) + AI_bonusBuildingHealthChange(eBonus, iChange);
