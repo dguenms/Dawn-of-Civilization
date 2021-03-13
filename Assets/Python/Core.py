@@ -907,6 +907,9 @@ class EntityCollection(object):
 	
 	def unique(self):
 		return self.__class__([k for k in set(self._keys)])
+	
+	def valued(self, func):
+		return ((entity, func(entity)) for entity in self)
 
 class PlotsCorner:
 

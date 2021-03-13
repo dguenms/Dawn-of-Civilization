@@ -666,21 +666,52 @@ class Congress:
 			player(iPlayer).found(x, y)
 			
 		createGarrisons(plot, iPlayer, 2)
+	
+	def getWarResponseValue(self, iBelligerent):
+		iValue = 5 * max(0, self.dPossibleBelligerents[iBelligerent] - getNumInvitations())
+		iValue += 5 * (2 - player.AI_getAttitude(active()))
+		iValue -= dPatienceThreshold[iBelligerent]
+		
+		if team(iBelligerent).isDefensivePact(team().getID()):
+			iValue -= 20
+		elif team(iBelligerent).isForcePeace(team().getID()):
+			iValue -= 10
+		
+		if team(iBelligerent).AI_getWarPlan(team().getID()) != -1:
+			iValue += 10
+		
+		return iValue
+	
+	def declareWar(self, iAttacker, iDefender):
+		team(iAttacker).setDefensivePact(iDefender, False)
+		team(iAttacker).declareWar(iDefender, False, WarPlanTypes.WARPLAN_DOGPILE)
 		
 	def finishCongress(self):
-		# declare war against human if he refused demands
+		# declare war against human if they refused demands
 		iGlobalWarModifier = 0
 		tHuman = team()
 		for iLoopPlayer in players.major():
 			if tHuman.isDefensivePact(iLoopPlayer):
 				iGlobalWarModifier += 10
 				
-		for iBelligerent in self.dPossibleBelligerents:
-			iRand = rand(100)
-			iThreshold = 10 + dPatienceThreshold[iBelligerent] - 5 * self.dPossibleBelligerents[iBelligerent] - iGlobalWarModifier
-			if iRand >= iThreshold:
-				team(iBelligerent).setDefensivePact(active(), False)
-				team(iBelligerent).declareWar(active(), False, WarPlanTypes.WARPLAN_DOGPILE)
+		belligerents = players.of(*self.dPossibleBelligerents.keys())
+		iBaseThreshold = iGlobalWarModifier + 10
+		
+		worstEnemies, belligerents = belligerents.split(lambda p: player(p).getWorstEnemy() == active())
+		for iBelligerent in worstEnemies:
+			self.declareWar(iBelligerent, active())
+			iBaseThreshold += 10
+		
+		defensivePacts, belligerents = belligerents.split(lambda p: team().isDefensivePact(player(p).getTeam()))
+		for iBelligerent, iValue in belligerents.sort(self.getWarResponseValue).valued(self.getWarResponseValue):
+			if rand(100) >= iBaseThreshold - iValue:
+				self.declareWar(iBelligerent, active())
+				iBaseThreshold += 10
+		
+		for iBelligerent, iValue in defensivePacts.sort(self.getWarResponseValue).valued(self.getWarResponseValue):
+			if rand(100) >= iBaseThreshold - iValue:
+				self.declareWar(iBelligerent, active())
+				iBaseThreshold += 10
 				
 		# display Congress results
 		self.startResults()
