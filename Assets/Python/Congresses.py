@@ -827,7 +827,7 @@ class Congress:
 			if player(iOwner).isHuman() and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
 			
 		# if we don't dislike them, agree with the value of their claim
-		if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
+		#if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
 			
 		# French UP
 		if civ(iClaimant) == iFrance: iClaimValidity += 5
@@ -895,7 +895,7 @@ class Congress:
 			if not bRecolonise:
 				# previous ownership
 				if city.isEverOwned(iClaimant): iClaimValidity += 5
-				if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
+				#if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
 			
 				# city culture, see plot culture
 				if city.getCulture(iClaimant) == 0: iClaimValidity -= 10
@@ -911,6 +911,13 @@ class Congress:
 			# core area
 			if plot.isCore(iClaimant): iClaimValidity += 10
 			if plot.isCore(iOwner): iClaimValidity -= 15
+			
+			# immediately reclaiming lost cities is only valid in post war congress
+			if not self.bPostWar:
+				iTurnLost = city.getGameTurnPlayerLost(iClaimant)
+				if iTurnLost >= 0:
+					if since(iTurnLost) > 0:
+						iClaimValidity -= (25 - min(25, since(iTurnLost)))
 			
 		sDebugText = 'FavorClaimant: ' + str(iFavorClaimant)
 		sDebugText += '\nFavorOwner: ' + str(iFavorOwner)
@@ -935,7 +942,7 @@ class Congress:
 				self.vote(iVoter, iClaimant, 1)
 				return
 				
-		# always vote against claims on own cities unless threatened by owner
+		# always vote against claims on own cities unless threatened by claimant
 		if bOwner and bOwnCity:
 			if not bThreatenedClaimant:
 				debug('Voted NO: claim on own city')
