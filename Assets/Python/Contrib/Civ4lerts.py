@@ -1159,4 +1159,4 @@ class CancelableTribute(AbstractStatefulAlert):
 				cancelablePlayers.add(deal.getFirstPlayer())
 		
 		if cancelablePlayers:
-			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join(list(cancelablePlayers))))
+			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join([name(iPlayer) for iPlayer in cancelablePlayers])))
