@@ -463,7 +463,6 @@ def canBeRazed(city):
 	
 def getCityClaim(city):
 	iOwner = city.getOwner()
-	
 	possibleClaims = players.major().alive().without(iOwner).before_fall()
 	
 	# claim based on core territory
@@ -488,7 +487,7 @@ def getCityClaim(city):
 	closest = closestCity(city, same_continent=True)
 	warClaims = possibleClaims.where(lambda p: team(p).isAtWar(team(iOwner).getID()) and player(p).getWarValue(*location(city)) >= 8 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
-	warClaims = warClaims.where(lambda p: not closestCity(city, owner=p, same_continent=True) or distance(city, closestCity(city, owner=p, same_continent=True)) >= 12)
+	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:
 		return warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
 	
