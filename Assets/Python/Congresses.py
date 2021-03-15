@@ -1041,10 +1041,12 @@ class Congress:
 				if iPlayer in self.losers and iLoopPlayer not in self.winners: continue
 				
 			# AI civs: cannot claim cities from friends
-			if not player(iPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
+			if not player(iPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: 
+				continue
 			
 			# recently spawned
-			if iGameTurn < player(iLoopPlayer).getLastBirthTurn(): continue
+			if since(player(iLoopPlayer).getLastBirthTurn()) <= turns(10):
+				continue
 			
 			# exclude master/vassal relationships
 			if team(iPlayer).isVassal(iLoopPlayer): continue
@@ -1052,10 +1054,12 @@ class Congress:
 			if team(iPlayer).isAVassal() and master(iPlayer) == master(iLoopPlayer): continue
 			
 			# cannot demand cities while at war
-			if team(iPlayer).isAtWar(iLoopPlayer): continue
+			if team(iPlayer).isAtWar(iLoopPlayer): 
+				continue
 			
 			# Palace of Nations effect
-			if player(iLoopPlayer).isHasBuildingEffect(iPalaceOfNations): continue
+			if player(iLoopPlayer).isHasBuildingEffect(iPalaceOfNations): 
+				continue
 			
 			for city in cities.owner(iLoopPlayer):
 				plot = plot_(city)
@@ -1069,7 +1073,8 @@ class Congress:
 				
 				# after a war: losers can only claim previously owned cities
 				if self.bPostWar and iPlayer in self.losers:
-					if city.getGameTurnPlayerLost(iPlayer) < turn() - turns(25): continue
+					if city.getGameTurnPlayerLost(iPlayer) < turn() - turns(25):
+						continue
 					
 				iCultureDivisor = bRecolonise and 50 or 20
 				
