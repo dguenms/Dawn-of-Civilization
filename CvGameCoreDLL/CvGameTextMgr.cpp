@@ -5557,8 +5557,12 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		int iCulture = pCity->getCultureTimes100(pCity->getOwnerINLINE());
 		int iCultureLeft = 100 * iThreshold - iCulture;
 		int iCultureTurns = (iCultureLeft + iCultureRate - 1) / iCultureRate;
-		szString.append(L" ");
-		szString.append(gDLL->getText("INTERFACE_CITY_TURNS", iCultureTurns));
+		// Leoreth: do not show if legendary has been reached
+		if (pCity->getCultureLevel() < GC.getNumCultureLevelInfos() - 1)
+		{
+			szString.append(L" ");
+			szString.append(gDLL->getText("INTERFACE_CITY_TURNS", iCultureTurns));
+		}
 	}
 	else
 	{
