@@ -1114,6 +1114,8 @@ class Congress:
 				# after war: war targets
 				if self.bPostWar:
 					iValue += plot.getWarValue(iPlayer) / 2
+				elif iValue == 0 and plot.getWarValue(iPlayer) > 0:
+					iValue += 1
 					
 				# AI America receives extra value for claims in the west
 				if civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
