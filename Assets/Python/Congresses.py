@@ -1144,8 +1144,14 @@ class Congress:
 				if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, plot):
 					iFoundValue = pPlayer.AI_foundValue(plot.getX(), plot.getY(), -1, False)
 					lPlots.append((plot.getX(), plot.getY(), max(1, min(5, iFoundValue / 2500 - 1))))
-				
-		return sort(lPlots, lambda p: p[2] + rand(3), True)[:10]
+		
+		# sort by value with some random variance
+		lPlots = sort(lPlots, lambda p: p[2] + rand(3), True)
+		
+		# remove settled plots with the same name
+		lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cnm.getFoundName(iPlayer, (x, y)) not in [cnm.getFoundName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
+		
+		return lPlots
 		
 	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
 		return players.of(lPlayers).highest(iNumPlayers, game.getPlayerRank)
