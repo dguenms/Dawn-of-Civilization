@@ -1084,6 +1084,7 @@ class Congress:
 				# ever owned
 				if not bRecolonise and city.isEverOwned(iPlayer):
 					iValue += 3
+					iValue -= min(3, since(city.getGameTurnPlayerLost(iPlayer)) / turns(100))
 						
 				# own core
 				if plot.isCore(iPlayer):
