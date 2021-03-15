@@ -23,8 +23,8 @@ from Core import *
 def setup():
 	data.iCongressTurns = getCongressInterval()
 
-@handler("BeginGameTurn")
-def checkTurn(iGameTurn):
+@handler("BeginActivePlayerTurn")
+def checkTurn(iPlayer, iGameTurn):
 	if isCongressEnabled():
 		if data.iCongressTurns > 0:
 			data.iCongressTurns -= 1
@@ -523,9 +523,6 @@ class Congress:
 		if isGlobalWar():
 			data.iGlobalWarAttacker = -1
 			data.iGlobalWarDefender = -1
-		
-		# don't waste memory
-		data.currentCongress = None
 
 	### Other Methods ###
 
