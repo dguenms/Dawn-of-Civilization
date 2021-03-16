@@ -7815,6 +7815,14 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		}
 	}
 
+	if (bStrategic)
+	{
+		if (AI_bonusVal(eBonus, -1) == 0)
+		{
+			return DENIAL_JOKING;
+		}
+	}
+
 	// XXX marble and stone???
 
 	eAttitude = AI_getAttitude(ePlayer);
