@@ -640,12 +640,11 @@ class Congress:
 	def assignCity(self, iPlayer, iOwner, (x, y)):
 		assignedCity = city(x, y)
 		
-		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
-		lFlippingUnits, lRelocatedUnits = flipOrRelocateGarrison(assignedCity, iNumDefenders)
-		
+		relocateUnitsToCore(iOwner, units.at(x, y).owner(iOwner))
 		completeCityFlip(assignedCity, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
-		flipOrCreateDefenders(iPlayer, lFlippingUnits, (x, y), iNumDefenders)
+		iNumDefenders = player(iPlayer).isHuman() and 2 or max(2, player(iPlayer).getCurrentEra()-1)
+		makeUnits(iNewOwner, getBestDefender(iNewOwner), tPlot, iNumDefenders)
 		
 		if iOwner in players.major():
 			relocateUnitsToCore(iOwner, lRelocatedUnits)
