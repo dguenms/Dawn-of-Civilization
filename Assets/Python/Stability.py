@@ -1436,21 +1436,20 @@ def calculatePowerRank(iPlayer, iTurn):
 	return players.major().rank(iPlayer, lambda p: player(p).getPowerHistory(iTurn))
 	
 def calculateRankedAttitudes(iPlayer, lContacts):
-	lContacts.append(iPlayer)
-	lContacts = sort(lContacts, lambda p: gc.getGame().getPlayerScore(iPlayer), True)
-	iPlayerIndex = lContacts.index(iPlayer)
+	contacts = players.of(*lContacts).including(iPlayer).sort(game.getPlayerScore, True)
+	iPlayerIndex = contacts.index(iPlayer)
 	
 	iRangeSize = 4
-	if iPlayerIndex <= len(lContacts) / 5:
+	if iPlayerIndex <= len(contacts) / 5:
 		iRangeSize = 3
 	
-	iRange = len(lContacts) / iRangeSize
+	iRange = len(contacts) / iRangeSize
 	iLeft = max(0, iPlayerIndex - iRange/2)
-	iRight = min(iLeft + iRange, len(lContacts)-1)
+	iRight = min(iLeft + iRange, len(contacts)-1)
 	
-	lStronger = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[:iLeft] if iLoopPlayer != iPlayer]
-	lEqual = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iLeft:iRight] if iLoopPlayer != iPlayer]
-	lWeaker = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iRight:] if iLoopPlayer != iPlayer]
+	lStronger = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in contacts[:iLeft] if iLoopPlayer != iPlayer]
+	lEqual = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in contacts[iLeft:iRight] if iLoopPlayer != iPlayer]
+	lWeaker = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in contacts[iRight:] if iLoopPlayer != iPlayer]
 	
 	return lStronger, lEqual, lWeaker
 	
@@ -1461,6 +1460,9 @@ def calculateAttitude(iFromPlayer, iToPlayer):
 	iAttitude -= pPlayer.AI_getSameReligionAttitude(iToPlayer)
 	iAttitude -= pPlayer.AI_getDifferentReligionAttitude(iToPlayer)
 	iAttitude -= pPlayer.AI_getFirstImpressionAttitude(iToPlayer)
+	
+	if team(iFromPlayer).isVassal(team(iToPlayer).getID()) and not team(iFromPlayer).isCapitulated():
+		iAttitude -= 100
 	
 	return iAttitude
 	
