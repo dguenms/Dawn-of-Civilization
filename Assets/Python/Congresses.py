@@ -665,7 +665,7 @@ class Congress:
 	
 	def getWarResponseValue(self, iBelligerent):
 		iValue = 5 * max(0, self.dPossibleBelligerents[iBelligerent] - getNumInvitations())
-		iValue += 5 * (2 - player.AI_getAttitude(active()))
+		iValue += 5 * (2 - player(iBelligerent).AI_getAttitude(active()))
 		iValue -= dPatienceThreshold[iBelligerent]
 		
 		if team(iBelligerent).isDefensivePact(team().getID()):
