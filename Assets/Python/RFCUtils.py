@@ -141,9 +141,7 @@ def flipUnitsInCityAfter(tCityPlot, iPlayer):
 # used: RiseAndFall
 def killUnitsInArea(iPlayer, area):
 	for plot in area:
-		killedUnits = units.at(plot).owner(iPlayer)
-		for unit in killedUnits:
-			unit.kill(False, -1)
+		killUnits(units.at(plot).owner(iPlayer))
 
 # used: RiseAndFall
 # TODO: accept a Plots instance instead of lPlots
@@ -1146,7 +1144,7 @@ def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
 		
 # used: Congresses, Stability
 def killUnits(lUnits):
-	for unit in lUnits:
+	for unit in units.of(lUnits).where(lambda unit: not unit.isCargo()):
 		if location(unit) >= (0, 0):
 			unit.kill(False, barbarian())
 			
