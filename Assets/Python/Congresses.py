@@ -640,16 +640,16 @@ class Congress:
 	def assignCity(self, iPlayer, iOwner, (x, y)):
 		assignedCity = city(x, y)
 		
-		relocateUnitsToCore(iOwner, units.at(x, y).owner(iOwner))
+		defenders = units.at(x, y).owner(iOwner)
+		if iOwner in players.major():
+			relocateUnitsToCore(iOwner, defenders)
+		else:
+			killUnits(defenders)
+		
 		completeCityFlip(assignedCity, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
 		iNumDefenders = player(iPlayer).isHuman() and 2 or max(2, player(iPlayer).getCurrentEra()-1)
-		makeUnits(iNewOwner, getBestDefender(iNewOwner), tPlot, iNumDefenders)
-		
-		if iOwner in players.major():
-			relocateUnitsToCore(iOwner, lRelocatedUnits)
-		else:
-			killUnits(lRelocatedUnits)
+		makeUnits(iPlayer, getBestDefender(iPlayer), (x, y), iNumDefenders)
 		
 	def foundColony(self, iPlayer, (x, y)):
 		plot = plot_(x, y)
