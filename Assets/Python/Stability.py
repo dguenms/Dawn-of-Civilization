@@ -1533,8 +1533,8 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 		iOwnerStability += 1
 	
 	# flips are more likely between AIs to make the world more dynamic
-	if not player(iOwner).isHuman() and not player(iPlayer).isHuman():
-		iOwnerStability -= 1
+	#if not player(iOwner).isHuman() and not player(iPlayer).isHuman():
+	#	iOwnerStability -= 1
 	
 	# if unstable or worse, all cities flip
 	if iOwnerStability <= iStabilityUnstable:
