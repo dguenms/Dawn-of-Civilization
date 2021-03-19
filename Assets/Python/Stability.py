@@ -1728,10 +1728,10 @@ def getResurrectionTechs(iPlayer):
 	lSourcePlayers = []
 	
 	# same tech group
-	for lRegionList in dTechGroups.values():
-		if iPlayer in lRegionList:
-			for iPeer in lRegionList:
-				if iPeer != iPlayer and player(iPeer).isAlive():
+	for lTechGroup in dTechGroups.values():
+		if civ(iPlayer) in lTechGroup:
+			for iPeer in lTechGroup:
+				if civ(iPlayer) != iPeer and player(iPeer).isAlive():
 					lSourcePlayers.append(iPeer)
 			
 	# direct neighbors (India can benefit from England etc)
