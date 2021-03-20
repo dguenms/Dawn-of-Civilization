@@ -544,9 +544,10 @@ class TestArguments(ExtendedTestCase):
 		
 		self.assertEqual(iterated, [("subject",)])
 	
-	def testPlayer(self):
+	def testOwnerInluded(self):
 		arguments = Arguments([])
-		arguments.setPlayer(0)
+		arguments.iPlayer = 0
+		arguments.owner_included = True
 		
 		iterated = [x for x in arguments]
 		
@@ -559,25 +560,28 @@ class TestArguments(ExtendedTestCase):
 		
 		self.assertEqual(iterated, [("subject", 1), ("subject", 2), ("subject", 3)])
 	
-	def testSubjectAndPlayer(self):
+	def testSubjectAndOwnerIncluded(self):
 		arguments = Arguments(objectives=[], subject="subject")
-		arguments.setPlayer(0)
+		arguments.iPlayer = 0
+		arguments.owner_included = True
 		
 		iterated = [x for x in arguments]
 		
 		self.assertEqual(iterated, [("subject", 0)])
 	
-	def testObjectivesAndPlayer(self):
+	def testObjectivesAndOwnerIncluded(self):
 		arguments = Arguments(objectives=[(1,), (2,), (3,)])
-		arguments.setPlayer(0)
+		arguments.iPlayer = 0
+		arguments.owner_included = True
 		
 		iterated = [x for x in arguments]
 		
 		self.assertEqual(iterated, [(1, 0), (2, 0), (3, 0)])
 	
-	def testSubjectAndObjectivesAndPlayer(self):
+	def testSubjectAndObjectivesAndOwnerIncluded(self):
 		arguments = Arguments(subject="subject", objectives=[(1,), (2,), (3,)])
-		arguments.setPlayer(0)
+		arguments.iPlayer = 0
+		arguments.owner_included = True
 		
 		iterated = [x for x in arguments]
 		
@@ -1037,6 +1041,7 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		self.assertEqual(goal.owner_included, True)
 		self.assertEqual(goal.arguments.iPlayer, iPlayer)
+		self.assertEqual(goal.arguments.owner_included, True)
 	
 	def testNotIncludeOwner(self):
 		iPlayer = 20
@@ -1045,7 +1050,7 @@ class TestBaseGoal(ExtendedTestCase):
 		goal.activate(iPlayer)
 		
 		self.assertEqual(goal.owner_included, False)
-		self.assertEqual(goal.arguments.iPlayer, None)
+		self.assertEqual(goal.arguments.owner_included, False)
 	
 	def testInitialState(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
@@ -1053,6 +1058,7 @@ class TestBaseGoal(ExtendedTestCase):
 		self.assertEqual(self.goal._player, None)
 		self.assertEqual(self.goal._team, None)
 		self.assertEqual(self.goal.callback, None)
+		self.assertEqual(self.goal.arguments.iPlayer, None)
 	
 	def testActivate(self):
 		self.goal.activate(0)
@@ -1061,6 +1067,7 @@ class TestBaseGoal(ExtendedTestCase):
 		self.assertEqual(self.goal._player.getID(), 0)
 		self.assertEqual(self.goal._team.getID(), 0)
 		self.assertEqual(self.goal.callback, None)
+		self.assertEqual(self.goal.arguments.iPlayer, 0)
 	
 	def testActivateWithCallback(self):
 		def callback():
@@ -2243,7 +2250,7 @@ class TestCountGoals(ExtendedTestCase):
 
 	def tearDown(self):
 		self.assertEqual(cities.all().count(), 0)
-
+	
 	def testBuildingNone(self):
 		goal = Count.building(iGranary, 3)
 		goal.activate(0)
@@ -3769,6 +3776,25 @@ class TestCountGoals(ExtendedTestCase):
 		self.assertEqual(goal.state, SUCCESS)
 		
 		city_.kill()
+		
+		goal.deactivate()
+	
+	def testCityBuildingCapital(self):
+		goal = Count.cityBuilding(capital(), iGranary)
+		goal.activate(1)
+		
+		city0 = player(0).initCity(61, 31)
+		city0.setHasRealBuilding(iPalace, True)
+		
+		city1 = player(1).initCity(63, 31)
+		city1.setHasRealBuilding(iPalace, True)
+		city1.setHasRealBuilding(iGranary, True)
+		
+		self.assertEqual(str(goal), "1 / 1")
+		self.assertEqual(bool(goal), True)
+		
+		city0.kill()
+		city1.kill()
 		
 		goal.deactivate()
 
@@ -6751,6 +6777,59 @@ class TestDifferentCities(ExtendedTestCase):
 		goal = DifferentCities(goal1, goal2)
 		
 		self.assertEqual(goal.description(), "Have your capital and have a different capital")
+
+
+class TestNamedList(ExtendedTestCase):
+
+	def testList(self):
+		list = NamedList([1, 2, 3])
+		self.assertEqual(str(list), "[1, 2, 3]")
+	
+	def testVarargs(self):
+		list = NamedList(1, 2, 3)
+		self.assertEqual(str(list), "[1, 2, 3]")
+	
+	def testNamed(self):
+		list = NamedList(1, 2, 3).named("UHV_CITY")
+		self.assertEqual(str(list), "city")
+	
+	def testLen(self):
+		list = NamedList(1, 2, 3)
+		self.assertEqual(len(list), 3)
+	
+	def testIter(self):
+		list = NamedList(1, 2, 3)
+		self.assertEqual([x for x in list], [1, 2, 3])
+	
+	def testNonzeroFalse(self):
+		list = NamedList()
+		self.assertEqual(bool(list), False)
+	
+	def testNonzeroTrue(self):
+		list = NamedList(1, 2, 3)
+		self.assertEqual(bool(list), True)
+	
+	def testEqualNamedList(self):
+		namedList1 = NamedList(1, 2, 3)
+		namedList2 = NamedList(1, 2, 3)
+		self.assertEqual(namedList1, namedList2)
+	
+	def testEqualList(self):
+		namedList = NamedList(1, 2, 3)
+		list = [1, 2, 3]
+		self.assertEqual(namedList, list)
+	
+	def testEqualOther(self):
+		namedList = NamedList(1, 2, 3)
+		self.assertEqual(namedList == "1, 2, 3", False)
+
+
+class TestGroup(ExtendedTestCase):
+
+	def testGroup(self):
+		firstGroup = group(0)
+		self.assertType(firstGroup, NamedList)
+		self.assertEqual(firstGroup, dCivGroups[0])
 	
 
 test_cases = [
@@ -6775,6 +6854,8 @@ test_cases = [
 	TestAllGoal,
 	TestSomeGoal,
 	TestDifferentCities,
+	TestNamedList,
+	TestGroup,
 ]
 
 

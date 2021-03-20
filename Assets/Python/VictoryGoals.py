@@ -393,7 +393,6 @@ def great_people():
 	return sum(iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy).named("GREAT_PEOPLE")
 
 
-# TODO: test
 class NamedList(object):
 
 	def __init__(self, *elements):
@@ -417,9 +416,15 @@ class NamedList(object):
 	
 	def __nonzero__(self):
 		return bool(self.elements)
+	
+	def __eq__(self, other):
+		if isinstance(other, NamedList):
+			return self.elements == other.elements
+		elif isinstance(other, list):
+			return self.elements == other
+		return False
 
 
-# TODO: test
 def group(iGroup):
 	return NamedList(dCivGroups[iGroup])
 
@@ -431,13 +436,11 @@ class Arguments(object):
 		self.objectives = objectives
 		
 		self.iPlayer = None
-	
-	def setPlayer(self, iPlayer):
-		self.iPlayer = iPlayer
+		self.owner_included = False
 	
 	def value(self, item):
 		if isinstance(item, Deferred):
-			return item()
+			return item(self.iPlayer)
 		return item
 		
 	def produce(self, objective=[]):
@@ -447,7 +450,7 @@ class Arguments(object):
 			result += [self.value(self.subject)]
 		if objective:
 			result += list(self.value(obj) for obj in objective)
-		if self.iPlayer is not None:
+		if self.owner_included:
 			result += [self.iPlayer]
 		
 		return tuple(result)
@@ -945,13 +948,14 @@ class BaseGoal(object):
 	@classmethod
 	def process_arguments(cls, *arguments):
 		if not cls.types:
-			return ((),)
+			return Arguments(((),))
 		return cls.types.process(*arguments)
 
 	def __init__(self, *arguments):
 		self.reset()
 		
 		self.arguments = self.process_arguments(*arguments)
+		self.arguments.owner_included = self.owner_included
 			
 		self._title = ""
 		self._description = hasattr(self, '_desc') and self.types.format(self._desc, self.arguments) or ""
@@ -991,8 +995,7 @@ class BaseGoal(object):
 		self._team = team(iPlayer)
 		self.callback = callback
 		
-		if self.owner_included:
-			self.arguments.iPlayer = iPlayer
+		self.arguments.iPlayer = iPlayer
 		
 		for event, handler in self.handlers:
 			events.addEventHandler(event, getattr(self, handler))
@@ -2274,7 +2277,7 @@ class BestCity(Best):
 	
 	def entity_name(self, city):
 		if city is None:
-			return "(No City)"
+			return text("TXT_KEY_UHV_NO_CITY")
 		return city.getName()
 	
 	def valid(self, city, requiredCity):
@@ -2311,8 +2314,7 @@ class BestPlayer(Best):
 	
 	def entity_name(self, iPlayer):
 		if iPlayer is None:
-			# TODO: text key
-			return "(No Player)"
+			return text("TXT_KEY_UHV_NO_PLAYER")
 		return name(iPlayer)
 	
 	def valid(self, iPlayer):
@@ -2648,7 +2650,7 @@ class Different(BaseGoal):
 class DifferentCities(Different):
 
 	def record_value(self, goal):
-		return location(goal.arguments.subject())
+		return location(goal.arguments.subject(self.iPlayer))
 	
 	def display_record(self, record):
 		if city_(record):

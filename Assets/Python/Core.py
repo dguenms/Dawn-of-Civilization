@@ -96,9 +96,8 @@ def getPlayerExperience(unit):
 	return iExperience
 
 
-# TODO: test
 def ordinal_word(number):
-	return text_if_exists("TXT_KEY_UHV_ORDINAL_%s" % number, number, otherwise="TXT_KEY_UHV_ORDINAL_DEFAULT")
+	return text_if_exists("TXT_KEY_UHV_ORDINAL_%s" % number, otherwise="%d%s" % (number, text("TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX")))
 
 
 def plural(word):
@@ -191,6 +190,9 @@ def sign(x):
 
 
 def capital(identifier):
+	if identifier is None:
+		raise ValueError("identifier cannot be None")
+
 	if player(identifier).getNumCities() == 0 or is_minor(identifier):
 		return None
 		
@@ -681,16 +683,21 @@ def random_entry(iterable):
 	return iterable[rand(len(iterable))]
 	
 
-# TODO: handle identifier=None
 def name(identifier):
+	if identifier is None:
+		raise ValueError("identifier cannot be None")
 	return player(identifier).getCivilizationShortDescription(0)
 	
 
 def fullname(identifier):
+	if identifier is None:
+		raise ValueError("identifier cannot be None")
 	return player(identifier).getCivilizationDescription(0)
 
 
 def adjective(identifier):
+	if identifier is None:
+		raise ValueError("identifier cannot be None")
 	return player(identifier).getCivilizationAdjective(0)
 
 

@@ -2679,18 +2679,27 @@ class TestNames(TestCase):
 		
 	def test_name_player(self):
 		self.assertEqual(name(gc.getPlayer(0)), "Egypt")
+	
+	def test_name_none(self):
+		self.assertRaises(ValueError, name, None)
 		
 	def test_adjective(self):
 		self.assertEqual(adjective(0), "Egyptian")
 		
 	def test_adjective_player(self):
 		self.assertEqual(adjective(gc.getPlayer(0)), "Egyptian")
+	
+	def test_adjective_none(self):
+		self.assertRaises(ValueError, adjective, None)
 		
 	def test_full_name(self):
 		self.assertEqual(fullname(slot(iEngland)), "Anglo-Saxon Peoples")
 		
 	def test_full_name_player(self):
 		self.assertEqual(fullname(player(iEngland)), "Anglo-Saxon Peoples")
+	
+	def test_full_name_none(self):
+		self.assertRaises(ValueError, fullname, None)
 		
 		
 class TestWrap(TestCase):
@@ -3783,6 +3792,12 @@ class TestTextProcessing(TestCase):
 		result = number_word(20)
 		
 		self.assertEqual(result, "20")
+	
+	def test_ordinal_word_first(self):
+		self.assertEqual(ordinal_word(1), "first")
+	
+	def test_ordinal_word_100th(self):
+		self.assertEqual(ordinal_word(100), "100th")
 	
 	def test_plural(self):
 		result = plural("word")

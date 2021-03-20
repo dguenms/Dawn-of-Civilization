@@ -212,6 +212,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NO_PLAYER</Tag>
+		<English>(No Player)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NO_CITY</Tag>
+		<English>(No City)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- NUMBERS TO BE SPELLED OUT -->
 
@@ -337,8 +353,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_DEFAULT</Tag>
-		<English>%dth</English>
+		<Tag>TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX</Tag>
+		<English>th</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
