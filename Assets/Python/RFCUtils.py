@@ -444,6 +444,7 @@ def goodPlots(tCoords, argsList):
 	Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh or jungle; it isn't occupied by a unit or city and if it isn't a civ's territory.
 	Unit check extended to adjacent plots"""
 	plot = plot_(tCoords)
+	iPlayer = argsList[0]
 	
 	if plot.isWater():
 		return False
@@ -457,7 +458,7 @@ def goodPlots(tCoords, argsList):
 	if plot.getTerrainType() in [iDesert, iTundra, iMarsh]:
 		return False
 		
-	if plot.getFeatureType() in [iJungle, iRainforest]:
+	if plot.getFeatureType() in [iJungle, iRainforest] and civ(iPlayer) != iCongo:
 		return False
 		
 	if plot.isOwned():

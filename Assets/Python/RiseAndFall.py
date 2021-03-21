@@ -924,7 +924,7 @@ class RiseAndFall:
 				data.iOttomanSpawnTurn = turn()
 
 		else:   #search another place
-			plotList = squareSearch(tTopLeft, tBottomRight, goodPlots, [])
+			plotList = squareSearch(tTopLeft, tBottomRight, goodPlots, [iPlayer])
 			if plotList:
 				tPlot = random_entry(plotList)
 				if tPlot:
@@ -933,7 +933,7 @@ class RiseAndFall:
 					data.players[iPlayer].iPlagueCountdown = -iImmunity
 					clearPlague(iPlayer)
 			else:
-				plotList = squareSearch(tBroaderTopLeft, tBroaderBottomRight, goodPlots, [])
+				plotList = squareSearch(tBroaderTopLeft, tBroaderBottomRight, goodPlots, [iPlayer])
 			if plotList:
 				tPlot = random_entry(plotList)
 				if tPlot:
