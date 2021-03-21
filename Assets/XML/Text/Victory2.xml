@@ -228,6 +228,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CITY_DIFFERENT_OWNER</Tag>
+		<English>%s1 (controlled by %s2)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- NUMBERS TO BE SPELLED OUT -->
 
@@ -1459,6 +1467,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PROGRESS_BROKERED_PEACE</Tag>
 		<English>Peace deals brokered</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CULTURE_LEVEL</Tag>
+		<English>Culture</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

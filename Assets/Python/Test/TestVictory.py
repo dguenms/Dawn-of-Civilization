@@ -6,6 +6,12 @@ from inspect import isfunction
 
 class ExtendedTestCase(TestCase):
 
+	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
+	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
+	
+	#SUCCESS_CHAR = "Y"
+	#FAILURE_CHAR = "N"
+
 	def assertType(self, object, expectedType):
 		self.assertEqual(type(object), expectedType)
 
@@ -808,6 +814,9 @@ class TestArgumentProcessorFormat(ExtendedTestCase):
 		
 		city.kill()
 	
+	def testFormatValueCityNoCity(self):
+		self.assertEqual(self.types.format_value(CyCity, None), "(No City)")
+	
 	def testFormatValueAttitudeType(self):
 		self.assertEqual(self.types.format_value(AttitudeTypes, AttitudeTypes.ATTITUDE_PLEASED), "pleased")
 	
@@ -1418,12 +1427,6 @@ class TestBaseGoal(ExtendedTestCase):
 
 
 class TestProgress(ExtendedTestCase):
-
-	#SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
-	#FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
-	
-	SUCCESS_CHAR = "Y"
-	FAILURE_CHAR = "N"
 	
 	def testProgressText(self):
 		goal = Condition.wonder(iPyramids)
@@ -1486,11 +1489,252 @@ class TestProgress(ExtendedTestCase):
 		
 		goal.deactivate()
 	
-	def testProgressCount(self):
+	def testProgressMultiple(self):
+		goal = Condition.wonder(iPyramids, iOracle, iParthenon)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pyramids\n%c Oracle\n%c Parthenon" % ((self.FAILURE_CHAR,) * 3))
+		
+		goal.deactivate()
+	
+	def testProgressBy(self):
+		goal = Condition.wonder(iPyramids).by(100)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), "")
+		
+		goal.deactivate()
+	
+	def testProgressByMultiple(self):
+		goal = Condition.wonder(iPyramids, iOracle, iParthenon).by(100)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pyramids\n%c Oracle\n%c Parthenon" % ((self.FAILURE_CHAR,) * 3))
+		
+		goal.deactivate()
+	
+	def testProgressByForceSingle(self):
+		goal = Condition.wonder(iPyramids).by(100)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(bForceSingle=True), u"%c Pyramids" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+		
+	def testProgressCountSingle(self):
+		goal = Count.building(iGranary, 1)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Granary" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressCountMultiple(self):
 		goal = Count.building(iGranary, 3)
 		goal.activate(0)
 		
 		self.assertEqual(goal.progress(), u"%c Granaries: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressCountTextKey(self):
+		goal = Count.building(iGranary, 3)
+		goal._progress = "TXT_KEY_UHV_PROGRESS_CONVERT_AFTER_FOUNDING"
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Convert to Granary: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressCountAggregate(self):
+		goal = Count.building(sum(iGranary, iBarracks), 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Granaries and Barracks: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressCountPlots(self):
+		goal = Count.numCities(plots.region(rBritain).named("BRITAIN"), 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Cities in Britain: 0 / 3" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testProgressWithCitiesNoCities(self):
+		goal = Count.populationCities(10, 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c No Cities" % self.FAILURE_CHAR)
+	
+		goal.deactivate()
+	
+	def testProgressWithCitiesNotEnoughCities(self):
+		goal = Count.populationCities(10, 3)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setPopulation(10)
+		city.setName("First", False)
+		
+		self.assertEqual(goal.progress(), u"%c First: 10 / 10\n%c No second city\n%c No third city" % (self.SUCCESS_CHAR, self.FAILURE_CHAR, self.FAILURE_CHAR))
+		
+		city.kill()
+		
+		goal.deactivate()
+	
+	def testProgressWithCities(self):
+		goal = Count.populationCities(10, 3)
+		goal.activate(0)
+		
+		city1, city2, city3 = (player(0).initCity(*tuple) for tuple in [(61, 31), (63, 31), (65, 31)])
+		
+		city1.setPopulation(10)
+		city1.setName("First", False)
+		
+		city2.setPopulation(3)
+		city2.setName("Second", False)
+		
+		city3.setPopulation(5)
+		city3.setName("Third", False)
+		
+		self.assertEqual(goal.progress(), u"%c First: 10 / 10\n%c Third: 5 / 10\n%c Second: 3 / 10" % (self.SUCCESS_CHAR, self.FAILURE_CHAR, self.FAILURE_CHAR))
+		
+		city1.kill()
+		city2.kill()
+		city3.kill()
+		
+		goal.deactivate()
+	
+	def testProgressPercentage(self):
+		goal = Percentage.religionSpread(iIslam, 20)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Islam spread to: 0.00%% / 20%%" % self.FAILURE_CHAR)
+	
+	def testProgressBestCity(self):
+		goal = BestCity.population(capital())
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(5)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(10)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Most populous city: Second (10)\nNext most populous city: First (5)" % self.FAILURE_CHAR)
+		finally:
+			city1.kill()
+			city2.kill()
+	
+	def testProgressBestPlayer(self):
+		goal = BestPlayer.population()
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setPopulation(5)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setPopulation(10)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Most populous civilization: Babylonia (1000000)\nNext most populous civilization: Egypt (125000)" % self.FAILURE_CHAR)
+		finally:
+			city1.kill()
+			city2.kill()
+	
+	def testProgressRouteConnection(self):
+		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRailroad])
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Railroad from your capital to Britain" % self.FAILURE_CHAR)
+	
+	def testProgressRouteConnectionMultipleRoutes(self):
+		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRoad, iRouteRailroad, iRouteHighway])
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Road, Railroad or Highway from your capital to Britain" % self.FAILURE_CHAR)
+	
+	def testProgressAll(self):
+		goal1 = Condition.wonder(iPyramids)
+		goal2 = Condition.wonder(iParthenon)
+		goal = All(goal1, goal2)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % ((self.FAILURE_CHAR,) * 2))
+		finally:
+			goal.deactivate()
+	
+	def testProgressAllFailable(self):
+		goal1 = Condition.wonder(iPyramids)
+		goal2 = Trigger.noCityLost()
+		goal = All(goal1, goal2)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Pyramids" % self.FAILURE_CHAR)
+		finally:
+			goal.deactivate()
+	
+	def testProgressAllIndicatorCurrent(self):
+		goal1 = Condition.wonder(iPyramids)
+		goal2 = Condition.wonder(iParthenon)
+		goal = All(goal1, goal2)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasRealBuilding(iPyramids, True)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testProgressAllIndicatorComplete(self):
+		goal1 = Condition.wonder(iPyramids)
+		goal2 = Condition.wonder(iParthenon)
+		goal = All(goal1, goal2)
+		goal.activate(0)
+		
+		goal1.succeed()
+		
+		try:
+			self.assertEqual(goal1.state, SUCCESS)
+			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			goal.deactivate()
+	
+	def testProgressAllFromDescription(self):
+		goal1 = Condition.tradeConnection().named("TRADE_CONNECTION")
+		goal = All(goal1)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Establish a trade connection with another civilization" % self.FAILURE_CHAR)
+		finally:
+			goal.deactivate()
+	
+	def testProgressSome(self):
+		subgoal = Condition.wonder(iPyramids, iParthenon, iOracle)
+		goal = Some(subgoal, 2)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon\n%c Oracle" % ((self.FAILURE_CHAR,) * 3))
+		finally:
+			goal.deactivate()
+	
+	def testFullDisplay(self):
+		goal = Condition.wonder(iPyramids)
+		goal.activate(0)
+		
+		self.assertEqual(goal.full_display(), u"Build the Pyramids\n%c Pyramids" % self.FAILURE_CHAR)
 		
 		goal.deactivate()
 
@@ -3128,6 +3372,22 @@ class TestCountGoals(ExtendedTestCase):
 		
 		goal.deactivate()
 	
+	def testConqueredCitiesProgress(self):
+		goal = Count.conqueredCities(2)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Conquered cities: 0 / 2" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testConqueredCitiesProgressInside(self):
+		goal = Count.conqueredCities(2).inside(plots.region(rBritain).named("BRITAIN"))
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Conquered cities in Britain: 0 / 2" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
 	def testOpenBordersLess(self):
 		goal = Count.openBorders(2)
 		goal.activate(0)
@@ -3428,6 +3688,38 @@ class TestCountGoals(ExtendedTestCase):
 		
 		_city.kill()
 	
+	def testCitySpecialistProgress(self):
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		_city.setName("First", False)
+		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Great Artists in First: 3 / 3" % self.SUCCESS_CHAR)
+		finally:
+			_city.kill()
+	
+	def testCitySpecialistProgressDifferentOwner(self):
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
+		goal.activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		_city.setName("First", False)
+		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Great Artists in First (controlled by Babylonia): 0 / 3" % self.FAILURE_CHAR)
+		finally:
+			_city.kill()
+	
+	def testCitySpecialistProgressNoCity(self):
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+	
 	def testCultureLevelNoCity(self):
 		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
 		goal.activate(0)
@@ -3458,6 +3750,40 @@ class TestCountGoals(ExtendedTestCase):
 		self.assertEqual(str(goal), "5000 / 1000")
 		
 		_city.kill()
+	
+	def testCultureLevelProgress(self):
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		_city.setName("First", False)
+		_city.setCulture(0, 5000, True)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Culture in First: 5000 / 1000" % self.SUCCESS_CHAR)
+		finally:
+			_city.kill()
+	
+	def testCultureLevelProgressNoCity(self):
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+		
+		goal.deactivate()
+	
+	def testCultureLevelProgressDifferentOwner(self):
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
+		goal.activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		_city.setName("First", False)
+		_city.setCulture(0, 5000, True)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Culture in First (controlled by Babylonia): 0 / 1000" % self.FAILURE_CHAR)
+		finally:
+			_city.kill()
 	
 	def testAttitude(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
@@ -3598,6 +3924,42 @@ class TestCountGoals(ExtendedTestCase):
 		
 		player(2).setLastStateReligion(-1)
 	
+	def testAttitudeProgress(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testAttitudeProgressCivs(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with civilizations in Europe: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testAttitudeProgressCommunist(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).communist()
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with communist civilizations: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testAttitudeProgressStateReligion(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).religion(iOrthodoxy)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with Orthodox civilizations: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testAttitudeProgressIndependent(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).independent()
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testAttitudeProgressChained(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).independent()
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent Orthodox communist civilizations in Europe: 0 / 2" % self.FAILURE_CHAR)
+	
 	def testVassals(self):
 		goal = Count.vassals(2)
 		goal.activate(0)
@@ -3643,6 +4005,30 @@ class TestCountGoals(ExtendedTestCase):
 			team(i).setVassal(0, False, False)
 		
 		player(1).setLastStateReligion(-1)
+	
+	def testVassalsProgress(self):
+		goal = Count.vassals(2)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Vassals: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testVassalsProgressCivs(self):
+		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Vassals in Europe: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testVassalsProgressStateReligion(self):
+		goal = Count.vassals(2).religion(iOrthodoxy)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Orthodox vassals: 0 / 2" % self.FAILURE_CHAR)
+	
+	def testVassalsProgressChained(self):
+		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).religion(iOrthodoxy)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Orthodox vassals in Europe: 0 / 2" % self.FAILURE_CHAR)
 	
 	def testCityBuildingNoCity(self):
 		goal = Count.cityBuilding(city(61, 31), iGranary)
@@ -3797,6 +4183,36 @@ class TestCountGoals(ExtendedTestCase):
 		city1.kill()
 		
 		goal.deactivate()
+	
+	def testCityBuildingProgress(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		_city = player(0).initCity(61, 31)
+		_city.setName("First", False)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Granary in First" % self.FAILURE_CHAR)
+		finally:
+			_city.kill()
+	
+	def testCityBuildingProgressDifferentOwner(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		_city.setName("First", False)
+		
+		try:
+			self.assertEqual(goal.progress(), u"%c Granary in First (controlled by Babylonia)" % self.FAILURE_CHAR)
+		finally:
+			_city.kill()
+	
+	def testCityBuildingProgressNoCity(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary)
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
 
 
 class TestPercentageGoals(ExtendedTestCase):
@@ -4676,10 +5092,6 @@ class TestTriggerGoals(ExtendedTestCase):
 	def testConvertAfterFounding(self):
 		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
 		goal.activate(0)
-		
-		#events.fireEvent("religionFounded", iOrthodoxy, 1)
-		
-		#self.assertEqual(goal.dFoundingTurn[iOrthodoxy], turn())
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		
@@ -6635,6 +7047,9 @@ class CityGoal(BaseGoal):
 	
 	def condition(self, *arguments):
 		return self.complete
+	
+	def progress(self):
+		return "%s Some city goal: %s" % (self.format_progress_indicator(self.complete), self.string)
 		
 	def __str__(self):
 		return self.string
@@ -6651,44 +7066,51 @@ class TestDifferentCities(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(str(goal), "one\ntwo")
-	
+		self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
 		city1.setName("CityOne", False)
-		
-		self.assertEqual(location(capital_(0)), (61, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		goal1.succeed()
-		self.assertEqual(goal1.state, SUCCESS)
-		self.assertEqual(goal.state, POSSIBLE)
-		self.assertEqual(bool(goal), False)
-		
-		self.assertEqual(goal.recorded(goal1), (61, 31))
-		self.assertEqual(goal.recorded(goal2), None)
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		city2 = player(0).initCity(63, 31)
-		city1.setHasRealBuilding(iPalace, False)
-		city2.setHasRealBuilding(iPalace, True)
-		city2.setName("CityTwo", False)
-		
-		self.assertEqual(location(capital_(0)), (63, 31))
-		
-		goal2.succeed()
-		
-		self.assertEqual(goal2.state, SUCCESS)
-		self.assertEqual(goal.state, SUCCESS)
-		
-		self.assertEqual(goal.recorded(goal1), (61, 31))
-		self.assertEqual(goal.recorded(goal2), (63, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityTwo: two")
-		
-		city1.kill()
-		city2.kill()
+			
+		try:
+			self.assertEqual(location(capital_(0)), (61, 31))
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+			
+			goal1.succeed()
+			self.assertEqual(goal1.state, SUCCESS)
+			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(bool(goal), False)
+			
+			self.assertEqual(goal.recorded(goal1), (61, 31))
+			self.assertEqual(goal.recorded(goal2), None)
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), u"%c CityOne\n%c Some city goal: two" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			
+			city2 = player(0).initCity(63, 31)
+			city1.setHasRealBuilding(iPalace, False)
+			city2.setHasRealBuilding(iPalace, True)
+			city2.setName("CityTwo", False)
+			
+			try:
+				self.assertEqual(location(capital_(0)), (63, 31))
+			
+				goal2.succeed()
+				
+				self.assertEqual(goal2.state, SUCCESS)
+				self.assertEqual(goal.state, SUCCESS)
+				
+				self.assertEqual(goal.recorded(goal1), (61, 31))
+				self.assertEqual(goal.recorded(goal2), (63, 31))
+				
+				self.assertEqual(str(goal), "CityOne: one\nCityTwo: two")
+				self.assertEqual(goal.progress(), u"%c CityOne\n%c CityTwo" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+			finally:
+				city2.kill()
+		finally:
+			city1.kill()
 	
 	def testCompleteWithIdenticalCity(self):
 		goal1 = CityGoal(capital())
@@ -6700,36 +7122,41 @@ class TestDifferentCities(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(str(goal), "one\ntwo")
-		
+		self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+			
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
 		city1.setName("CityOne", False)
 		
-		self.assertEqual(location(capital_(0)), (61, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		goal1.succeed()
-		self.assertEqual(goal1.state, SUCCESS)
-		self.assertEqual(goal.state, POSSIBLE)
-		self.assertEqual(bool(goal), False)
-		
-		self.assertEqual(goal.recorded(goal1), (61, 31))
-		self.assertEqual(goal.recorded(goal2), None)
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		goal2.succeed()
-		self.assertEqual(goal2.state, FAILURE)
-		self.assertEqual(goal.state, FAILURE)
-		self.assertEqual(bool(goal), False)
-		
-		self.assertEqual(goal.recorded(goal1), (61, 31))
-		self.assertEqual(goal.recorded(goal2), (61, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		city1.kill()
+		try:
+			self.assertEqual(location(capital_(0)), (61, 31))
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+			
+			goal1.succeed()
+			self.assertEqual(goal1.state, SUCCESS)
+			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(bool(goal), False)
+			
+			self.assertEqual(goal.recorded(goal1), (61, 31))
+			self.assertEqual(goal.recorded(goal2), None)
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), u"%c CityOne\n%c Some city goal: two" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			
+			goal2.succeed()
+			self.assertEqual(goal2.state, FAILURE)
+			self.assertEqual(goal.state, FAILURE)
+			self.assertEqual(bool(goal), False)
+			
+			self.assertEqual(goal.recorded(goal1), (61, 31))
+			self.assertEqual(goal.recorded(goal2), (61, 31))
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), "")
+		finally:
+			city1.kill()
 	
 	def testCityChangedAfterIncomplete(self):
 		goal1 = CityGoal(capital())
@@ -6744,31 +7171,37 @@ class TestDifferentCities(ExtendedTestCase):
 		city1.setHasRealBuilding(iPalace, True)
 		city1.setName("CityOne", False)
 		
-		self.assertEqual(location(capital_(0)), (61, 31))
+		try:
+			self.assertEqual(location(capital_(0)), (61, 31))
 		
-		goal1.succeed()
-		goal2.succeed()
-		
-		self.assertEqual(goal2.state, FAILURE)
-		self.assertEqual(goal.state, FAILURE)
-		self.assertEqual(bool(goal), False)
-		
-		self.assertEqual(goal.recorded(goal1), (61, 31))
-		self.assertEqual(goal.recorded(goal2), (61, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		city2 = player(0).initCity(63, 31)
-		city1.setHasRealBuilding(iPalace, False)
-		city2.setHasRealBuilding(iPalace, True)
-		city2.setName("CityTwo", False)
-		
-		self.assertEqual(location(capital_(0)), (63, 31))
-		
-		self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-		
-		city1.kill()
-		city2.kill()
+			goal1.succeed()
+			goal2.succeed()
+			
+			self.assertEqual(goal2.state, FAILURE)
+			self.assertEqual(goal.state, FAILURE)
+			self.assertEqual(bool(goal), False)
+			
+			self.assertEqual(goal.recorded(goal1), (61, 31))
+			self.assertEqual(goal.recorded(goal2), (61, 31))
+			
+			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+			self.assertEqual(goal.progress(), "")
+			
+			city2 = player(0).initCity(63, 31)
+			city1.setHasRealBuilding(iPalace, False)
+			city2.setHasRealBuilding(iPalace, True)
+			city2.setName("CityTwo", False)
+			
+			try:
+				self.assertEqual(location(capital_(0)), (63, 31))
+			
+				self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
+				self.assertEqual(goal.state, FAILURE)
+				self.assertEqual(goal.progress(), "")
+			finally:
+				city2.kill()
+		finally:
+			city1.kill()
 	
 	def testDescription(self):
 		goal1 = CityGoal(capital())

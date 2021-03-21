@@ -4,6 +4,7 @@ import re, heapq
 from Core import *
 from RFCUtils import *
 from Civics import isCommunist
+from CityNameManager import getRenameName
 from Events import events
 
 
@@ -272,7 +273,6 @@ class classproperty(property):
         super(classproperty, self).__delete__(type(obj))
 
 
-# TODO: initialised goal for Turks but returned Egyptian capital?
 class Deferred(object):
 	
 	def __init__(self, type, provider):
@@ -742,7 +742,7 @@ class ArgumentProcessor(object):
 			return specific_formatter
 	
 		if issubclass(type, CyCity):
-			return lambda city: city and city.getName() or "(No City)"
+			return lambda city: city and city.getName() or text("TXT_KEY_UHV_NO_CITY")
 		if issubclass(type, AttitudeTypes):
 			return lambda info: infos.attitude(info).getDescription().lower()
 		if issubclass(type, CvCultureLevelInfo):
@@ -858,8 +858,11 @@ class GoalBuilder(object):
 
 class BaseGoal(object):
 
-	SUCCESS_CHAR = "Y"
-	FAILURE_CHAR = "N"
+	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
+	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
+
+	#SUCCESS_CHAR = "Y"
+	#FAILURE_CHAR = "N"
 
 	builder = GoalBuilder()
 	handlers = []
@@ -1087,12 +1090,10 @@ class BaseGoal(object):
 		return self.condition(*arguments)
 	
 	def progress_indicator(self, *arguments):
-		#symbol = self.condition(*arguments) and FontSymbols.SUCCESS_CHAR or FontSymbols.FAILURE_CHAR
-		#return u"%c" % game.getSymbolID(symbol)
 		return self.format_progress_indicator(self.progress_indicator_value(*arguments))
 	
 	def format_progress_indicator(self, value):
-		return value and self.SUCCESS_CHAR or self.FAILURE_CHAR
+		return u"%c" % (value and self.SUCCESS_CHAR or self.FAILURE_CHAR,)
 	
 	def progress_text(self, *arguments):
 		return self.types.format_progress(self._progress, *arguments)
@@ -1480,7 +1481,7 @@ class Count(BaseGoal):
 			highest_cities = cities.owner(self.iPlayer).highest(iRequiredCities, func)
 			
 			if not highest_cities:
-				return "%s %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_PROGRESS_NO_CITIES"))
+				return u"%c %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_PROGRESS_NO_CITIES"))
 			
 			rows = []
 			for city in highest_cities:
@@ -1489,7 +1490,7 @@ class Count(BaseGoal):
 			for index in range(iRequiredCities):
 				if index < highest_cities.count():
 					continue
-				rows.append("%s %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_PROGRESS_MISSING_CITY", ordinal_word(index+1))))
+				rows.append(u"%c %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_PROGRESS_MISSING_CITY", ordinal_word(index+1))))
 			
 			return "\n".join(rows)
 		
@@ -1503,20 +1504,33 @@ class Count(BaseGoal):
 			
 			return func(city, *objectives)
 		
+		def display_required(self, iRequired):
+			return iRequired
+		
+		def display_city_value(self, city, *remainder):
+			return self.value(city, *remainder)
+		
 		def progress_text(self, city, *objectives):
+			if not city:
+				return text("TXT_KEY_UHV_NO_CITY")
+		
 			remainder, iRequired = objectives[:-1], objectives[-1]
 			progress_text = self.progress_text_format(concat(city, remainder), iRequired)
-			city_name = city and city.getName() or self.arguments.subject.name
+			
+			if city.getOwner() == self.iPlayer:
+				city_name = city.getName()
+			else:
+				city_name = text("TXT_KEY_UHV_CITY_DIFFERENT_OWNER", city.getName(), name(city.getOwner()))
 			
 			progress_text = text("TXT_KEY_UHV_PROGRESS_IN_CITY", progress_text, city_name)
-			progress_value = self.progress_value(self.value(city, *remainder), self.required(iRequired))
+			progress_value = self.progress_value(self.display_city_value(city, *remainder), self.display_required(self.required(iRequired)))
 			
 			if iRequired == 1:
 				return progress_text
 			
 			return "%s: %s" % (progress_text, progress_value)
 		
-		return cls.func(value_function, progress_text)
+		return cls.func(value_function, display_city_value, display_required, progress_text)
 		
 	@classproperty
 	def scaled(cls):
@@ -1696,12 +1710,13 @@ class Count(BaseGoal):
 		def display(self, city, iCultureLevel):
 			return "%d / %d" % (city and city.getCulture(city.getOwner()) or 0, game.getCultureThreshold(iCultureLevel))
 	
-		def progress_text(self, city, iCultureLevel):
-			if city:
-				return "%s: %d / %d" % (text("TXT_KEY_UHV_PROGRESS_CULTURE_IN", city.getName()), city.getCulture(city.getOwner()), game.getCultureThreshold(iCultureLevel))
-			return "(No City)"
+		def display_required(self, iRequired):
+			return game.getCultureThreshold(iRequired)
+		
+		def display_city_value(self, city):
+			return city.getCulture(city.getOwner())
 	
-		return cls.desc("CULTURE_LEVEL").plain_objectives(CvCultureLevelInfo).subject(CyCity).city(CyCity.getCultureLevel).func(display, progress_text).turnly.subclass("CultureLevel")
+		return cls.desc("CULTURE_LEVEL").progr("CULTURE_LEVEL").plain_objectives(CvCultureLevelInfo).subject(CyCity).city(CyCity.getCultureLevel).func(display, display_required, display_city_value).turnly.subclass("CultureLevel")
 	
 	@classproperty
 	def attitude(cls):
@@ -2428,7 +2443,7 @@ class RouteConnection(BaseGoal):
 	
 	def progress_text(self, targets):
 		routes = format_separators(self.lRoutes, ",", text("TXT_KEY_OR"), lambda iRoute: infos.route(iRoute).getText())
-		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts.name(), targets.name())
+		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts.name, targets.name())
 
 
 class All(BaseGoal):
@@ -2487,6 +2502,8 @@ class All(BaseGoal):
 	def subgoal_progress(self, goal):
 		text = goal.progress(True)
 		if text:
+			if goal.state == SUCCESS:
+				text = text.replace(u"%c" % self.FAILURE_CHAR, u"%c" % self.SUCCESS_CHAR)
 			return text
 		return "%s %s" % (self.progress_indicator(goal), capitalize(goal._description))
 	
@@ -2535,9 +2552,6 @@ class Some(BaseGoal):
 	
 		if state == FAILURE:
 			self.goal.fail()
-	
-	#def description(self):
-	#	return capitalize(self._description)
 	
 	def progress(self):
 		return self.goal.progress()
@@ -2643,8 +2657,8 @@ class Different(BaseGoal):
 		return "\n".join(progress_entries)
 	
 	def progress_completed(self, goal):
-		city_name = self.display_record(self.record_value(goal))
-		return "%s: %s" % (self.SUCCESS_CHAR, cnm.getRenameName(self.iPlayer, city_name) or city_name)
+		city_name = self.display_record(self.recorded(goal))
+		return u"%c %s" % (self.SUCCESS_CHAR, getRenameName(self.iPlayer, city_name) or city_name)
 
 
 class DifferentCities(Different):
