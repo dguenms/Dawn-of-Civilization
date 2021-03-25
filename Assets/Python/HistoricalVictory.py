@@ -354,7 +354,7 @@ dGoals = {
 	),
 	iNetherlands: (
 		CitySpecialistCount(city(plots.capital(iNetherlands)).named("AMSTERDAM"), iSpecialistGreatMerchant, 3).at(1745),
-		ConqueredCityCount(4).civs(dCivGroups[iCivGroupEurope]).outside(plots.regions(*lEurope)).named("CONQUER_FOUR_EUROPEAN_COLONIES").by(1745),
+		ConqueredCityCount(4).civs(dCivGroups[iCivGroupEurope]).outside(plots.regions(*lEurope).named("COLONIAL")).named("CONQUER_FOUR_EUROPEAN_COLONIES").by(1745),
 		ResourceCount(iSpices, 7).by(1775),
 	),
 	iGermany: (

@@ -1781,6 +1781,262 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 
 
+class TestAreas(ExtendedTestCase):
+
+	def testNone(self):
+		goal = Condition.wonder(iPyramids)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.areas, dict())
+			self.assertEqual(goal.area_name((1, 1)), "")
+		finally:
+			goal.deactivate()
+	
+	def testObjective(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		goal = Condition.control(britain)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": britain
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((1, 1)), "")
+			self.assertEqual(goal.area_name(britain.random()), "Britain")
+		finally:
+			goal.deactivate()
+	
+	def testObjectiveMultiple(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		iberia = plots.region(rEgypt).named("IBERIA")
+		italy = plots.region(rItaly).named("ITALY")
+		goal = Condition.control(britain, iberia, italy)
+		
+		expectedAreas = {
+			"Britain": britain,
+			"Iberia": iberia,
+			"Italy": italy
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((1, 1)), "")
+			self.assertEqual(goal.area_name(britain.random()), "Britain")
+			self.assertEqual(goal.area_name(iberia.random()), "Iberia")
+			self.assertEqual(goal.area_name(italy.random()), "Italy")
+		finally:
+			goal.deactivate()
+	
+	def testObjectiveAggregate(self):
+		britain = plots.region(rBritain)
+		italy = plots.region(rItaly)
+		goal = Count.numCities(sum(britain, italy).named("NAME_BABYLON"), 2)
+		
+		expectedAreas = {
+			"Babylon": britain + italy,
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((1, 1)), "")
+			self.assertEqual(goal.area_name(britain.random()), "Babylon")
+			self.assertEqual(goal.area_name(italy.random()), "Babylon")
+		finally:
+			goal.deactivate()
+	
+	def testSubject(self):
+		andeanCoast = plots.region(rPeru).named("ANDEAN_COAST")
+		goal = Condition.route(andeanCoast, iRouteRoad)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Andean Coast": andeanCoast
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((1, 1)), "")
+			self.assertEqual(goal.area_name(andeanCoast.random()), "Andean Coast")
+		finally:
+			goal.deactivate()
+	
+	def testOverlapping(self):
+		britain = plots.rectangle((0, 0), (4, 4)).named("BRITAIN")
+		italy = plots.rectangle((2, 2), (6, 6)).named("ITALY")
+		goal = Condition.control(britain, italy)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": britain,
+			"Italy": italy
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((50, 50)), "")
+			self.assertEqual(goal.area_name((3, 3)), "Britain\nItaly")
+			self.assertEqual(goal.area_name((0, 0)), "Britain")
+			self.assertEqual(goal.area_name((6, 6)), "Italy")
+		finally:
+			goal.deactivate()
+	
+	def testDeferredCity(self):
+		deferred = city(10, 10).named("BABYLON")
+		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Babylon": plots.of([(10, 10)])
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((10, 10)), "Babylon")
+		finally:
+			goal.deactivate()
+	
+	def testDeferredCapital(self):
+		deferred = capital()
+		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.areas, {})
+		finally:
+			goal.deactivate()
+	
+	def testRouteConnection(self):
+		start = plots.capitals(iRussia).named("MOSCOW")
+		target = plots.of([(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]).named("SIBERIAN_COAST")
+		goal = RouteConnection(start, target, [iRouteRoad])
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Moscow": start,
+			"Siberian coast": target,
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name(start.random()), "Moscow")
+			self.assertEqual(goal.area_name((0, 0)), "Siberian coast")
+		finally:
+			goal.deactivate()
+	
+	def testAll(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		iberia = plots.region(rIberia).named("IBERIA")
+		italy = plots.region(rItaly).named("ITALY")
+		goal = All(Condition.control(britain), Condition.control(iberia), Condition.control(italy))
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": britain,
+			"Iberia": iberia,
+			"Italy": italy,
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name(britain.random()), "Britain")
+			self.assertEqual(goal.area_name(iberia.random()), "Iberia")
+			self.assertEqual(goal.area_name(italy.random()), "Italy")
+		finally:
+			goal.deactivate()
+	
+	def testSome(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		iberia = plots.region(rIberia).named("IBERIA")
+		goal = Some(Condition.control(britain, iberia), 2)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": britain,
+			"Iberia": iberia
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name(britain.random()), "Britain")
+			self.assertEqual(goal.area_name(iberia.random()), "Iberia")
+		finally:
+			goal.deactivate()
+	
+	def testDifferent(self):
+		goal = Different(
+			Count.cultureLevel(city(10, 10).named("BABYLON"), iCultureLevelDeveloping), 
+			Count.cultureLevel(city(20, 20).named("CARTHAGE"), iCultureLevelInfluential)
+		)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Babylon": plots.of([(10, 10)]),
+			"Carthage": plots.of([(20, 20)]),
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name((10, 10)), "Babylon")
+			self.assertEqual(goal.area_name((20, 20)), "Carthage")
+		finally:
+			goal.deactivate()
+	
+	def testConqueredCitiesInside(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		goal = Count.conqueredCities().inside(britain)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": britain,
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name(britain.random()), "Britain")
+			self.assertEqual(goal.area_name(plots.region(rItaly).random()), "")
+		finally:
+			goal.deactivate()
+	
+	def testConqueredCitiesInsideUnnamed(self):
+		britain = plots.region(rBritain)
+		goal = Count.conqueredCities().inside(britain)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.areas, {})
+		finally:
+			goal.deactivate()
+	
+	def testConqueredCitiesOutside(self):
+		britain = plots.region(rBritain).named("BRITAIN")
+		goal = Count.conqueredCities().outside(britain)
+		goal.activate(0)
+		
+		expectedAreas = {
+			"Britain": plots.all().without(britain).land()
+		}
+		
+		try:
+			self.assertEqual(goal.areas, expectedAreas)
+			self.assertEqual(goal.area_name(britain.random()), "")
+			self.assertEqual(goal.area_name(plots.region(rItaly).random()), "Britain")
+		finally:
+			goal.deactivate()
+	
+	def testConqueredCitiesOutsideUnnamed(self):
+		britain = plots.region(rBritain)
+		goal = Count.conqueredCities().outside(britain)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(goal.areas, {})
+		finally:
+			goal.deactivate()
+	
+
 class TestConditionGoals(ExtendedTestCase):
 
 	def testControlAllCities(self):
@@ -4400,7 +4656,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
-
+	
 
 class TestPercentageGoals(ExtendedTestCase):
 
@@ -7611,6 +7867,7 @@ test_cases = [
 	TestArgumentProcessorBuilder,
 	TestBaseGoal,
 	TestProgress,
+	TestAreas,
 	TestConditionGoals,
 	TestCountGoals,
 	TestPercentageGoals,

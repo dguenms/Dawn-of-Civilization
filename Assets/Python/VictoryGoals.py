@@ -275,27 +275,37 @@ class classproperty(property):
 
 class Deferred(object):
 	
-	def __init__(self, type, provider):
+	def __init__(self, type, provider, tile=None):
 		self.type = type
 		self.provider = provider
-		self.name = ""
+		self.tile = tile
+		
+		self._name = ""
 	
 	def __call__(self, iPlayer=None):
 		return self.provider(iPlayer)
 	
 	def __str__(self):
-		return text(self.name)
+		return self.name()
 	
 	def named(self, name):
-		self.name = "TXT_KEY_UHV_NAME_" + name
+		self._name = "TXT_KEY_UHV_NAME_" + name
 		return self
+	
+	def name(self):
+		return text(self._name)
+	
+	def area(self):
+		if self.tile:
+			return plots.of([self.tile])
+		return None
 
 
 def capital():
 	return Deferred(CyCity, lambda p: capital_(p)).named("CAPITAL")
 
-def city(*location):
-	return Deferred(CyCity, lambda p: city_(*location))
+def city(*tile):
+	return Deferred(CyCity, lambda p: city_(*tile), tile)
 	
 def holyCity():
 	def getHolyCity(iPlayer):
@@ -317,6 +327,18 @@ def stateReligionBuilding(func):
 		return func(iStateReligion)
 
 	return Deferred(CvBuildingInfo, getStateReligionBuilding)
+
+def area(item):
+	if isinstance(item, Plots):
+		return item
+	elif isinstance(item, Deferred):
+		return item.area()
+	return plots.none()
+
+def simple_name(name):
+	if not name:
+		return name
+	return name.replace("the", "").lstrip()
 
 
 class Aggregate(object):
@@ -796,6 +818,22 @@ class ArgumentProcessor(object):
 	
 	def format(self, key, arguments):
 		return text(key, self.format_objectives(arguments.objectives), self.format_subject(arguments.subject))
+	
+	def type_values(self, arguments, type):
+		values = []
+		if self.subject_type and issubclass(self.subject_type, type):
+			values.append(arguments.subject)
+		
+		for objectives in arguments.objectives:
+			for objective, objective_type in zip(objectives, self.objective_types):
+				if issubclass(objective_type, type):
+					if isinstance(objective, Aggregate):
+						for item in objective:
+							values.append(item.clear_named(objective.name))
+					else:
+						values.append(objective)
+		
+		return values
 
 
 class GoalBuilder(object):
@@ -953,6 +991,20 @@ class BaseGoal(object):
 		if not cls.types:
 			return Arguments(((),))
 		return cls.types.process(*arguments)
+	
+	@classmethod
+	def process_areas(cls, arguments):
+		areas = defaultdict(default=plots.none())
+		if not cls.types:
+			return areas
+		
+		for item in cls.types.type_values(arguments, (Plots, CyCity)):
+			name = item.name()
+			area_plots = area(item)
+			if name and area_plots:
+				areas[simple_name(name)] += area_plots
+		
+		return areas
 
 	def __init__(self, *arguments):
 		self.reset()
@@ -968,6 +1020,8 @@ class BaseGoal(object):
 		
 		self.handlers = self.__class__.handlers[:]
 		self.extra_handlers = []
+		
+		self.areas = self.process_areas(self.arguments)
 		
 		self.init()
 		
@@ -1103,6 +1157,9 @@ class BaseGoal(object):
 	
 	def display(self):
 		raise NotImplementedError()
+	
+	def area_name(self, tile):
+		return "\n".join([name for name, area in self.areas.items() if tile in area])
 		
 	def register(self, event, handler):
 		setattr(self, handler.__name__, handler)
@@ -1630,13 +1687,21 @@ class Count(BaseGoal):
 			self.lCivs = lCivs
 			return self
 		
-		def inside(self, plots):
-			self.inside_plots = plots
+		def inside(self, area):
+			self.inside_plots = area
 			self._description_suffixes.append(text("TXT_KEY_UHV_IN", self.inside_plots.name()))
+			
+			if area.name():
+				self.areas[simple_name(area.name())] = area
+			
 			return self
 		
-		def outside(self, plots):
-			self.outside_plots = plots
+		def outside(self, area):
+			self.outside_plots = area
+			
+			if area.name():
+				self.areas[simple_name(area.name())] = plots.all().without(area).land()
+			
 			return self
 		
 		def onCityAcquired(self, iOwner, city, bConquest):
@@ -2370,10 +2435,19 @@ class RouteConnection(BaseGoal):
 		
 		self.bStartOwners = False
 		
+		self.update_areas()
+		
 		self.every()
 	
 	def __nonzero__(self):
 		return all(self.condition(targets) for targets in self.targets)
+	
+	def update_areas(self):
+		if self.starts.name():
+			self.areas[simple_name(self.starts.name())] = self.starts
+		for target in self.targets:
+			if target.name():
+				self.areas[simple_name(target.name())] = target
 		
 	def withStartOwners(self):
 		self.bStartOwners = True
@@ -2443,7 +2517,7 @@ class RouteConnection(BaseGoal):
 	
 	def progress_text(self, targets):
 		routes = format_separators(self.lRoutes, ",", text("TXT_KEY_OR"), lambda iRoute: infos.route(iRoute).getText())
-		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts.name, targets.name())
+		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts.name(), targets.name())
 
 
 class All(BaseGoal):
@@ -2454,6 +2528,12 @@ class All(BaseGoal):
 		self.goals = goals
 		
 		self.init_description()
+		self.update_areas()
+	
+	def update_areas(self):
+		for goal in self.goals:
+			for name, area in goal.areas.items():
+				self.areas[name] += area
 	
 	def init_description(self):
 		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes)))
@@ -2528,9 +2608,13 @@ class Some(BaseGoal):
 		self.goal.check = self.check
 		
 		self.init_description()
+		self.update_areas()
 	
 	def init_description(self):
 		self._description = replace_first(self.goal.description(), "TXT_KEY_UHV_SOME", number_word(self.iRequired))
+	
+	def update_areas(self):
+		self.areas = copy(self.goal.areas)
 	
 	def subgoal_callback(self, goal):
 		if goal.state == SUCCESS:
@@ -2575,10 +2659,17 @@ class Different(BaseGoal):
 		super(Different, self).__init__()
 		
 		self.dGoals = dict((goal, None) for goal in goals)
+		
+		self.update_areas()
 	
 	@property
 	def goals(self):
 		return self.dGoals.keys()
+	
+	def update_areas(self):
+		for goal in self.goals:
+			for name, area in goal.areas.items():
+				self.areas[name] += area
 		
 	def record_value(self, goal):
 		raise NotImplementedError()
