@@ -5729,7 +5729,9 @@ class CvMainInterface:
 			city.changeHappinessTimer(turns(5))
 			city.setWeLoveTheKingDay(True)
 			if self.pPushedButtonUnit.isHuman(): data.iTeotlSacrifices += 1
-			self.pPushedButtonUnit.kill(false, city.getOwner())
+			self.pPushedButtonUnit.kill(False, city.getOwner())
+			
+			events.fireEvent("sacrificeHappiness", city.getOwner(), city)
 		
 		# Leoreth: start Byzantine UP
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:

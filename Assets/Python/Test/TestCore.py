@@ -621,6 +621,23 @@ class TestCreatedUnits(TestCase):
 	def test_one_many_units(self):
 		# when
 		self.assertRaises(Exception, self.created_units.one)
+	
+	def test_add(self):
+		unit1 = gc.getPlayer(0).initUnit(0, 1, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit2 = gc.getPlayer(0).initUnit(0, 1, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+		units1 = CreatedUnits([unit1])
+		units2 = CreatedUnits([unit2])
+		
+		combined = units1 + units2
+		
+		try:
+			self.assertEqual(len(combined), 2)
+			for unit in combined:
+				self.assertEqual(unit in [unit1, unit2], True)
+		finally:
+			unit1.kill(False, -1)
+			unit2.kill(False, -1)
 		
 		
 class TestPlayers(TestCase):
@@ -1121,6 +1138,17 @@ class TestUnits(TestCase):
 		self.assertEqual(len(landUnits), 4)
 		for unit in landUnits:
 			self.assertEqual(unit.getUnitType(), 4)
+	
+	def test_combat(self):
+		swordsman = gc.getPlayer(3).initUnit(iSwordsman, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		archer = gc.getPlayer(3).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+		try:
+			archers = units.owner(3).combat(UnitCombatTypes.UNITCOMBAT_ARCHER)
+			self.assertEqual(len(archers), 1)
+		finally:
+			swordsman.kill(False, -1)
+			archer.kill(False, -1)
 
 		
 class TestUnitFactory(TestCase):
@@ -4121,6 +4149,51 @@ class TestVariadic(TestCase):
 	
 		self.assertEqual(isinstance(result, types.GeneratorType), True)
 		self.assertEqual([x for x in result], [0, 1, 2])
+
+
+class TestMetrics(TestCase):
+
+	def test_metrics(self):
+		metric1 = lambda x, y: x+y
+		metric2 = lambda x, y: x*y
+		metric3 = lambda x, y: x >= y and x or y
+		
+		combined = metrics(metric1, metric2, metric3)
+		
+		self.assertEqual(combined(1, 2), (3, 2, 2))
+		self.assertEqual(combined(3, 3), (6, 9, 3))
+		self.assertEqual(combined(10, 9), (19, 90, 10))
+	
+	def test_bool_metric(self):
+		metric = lambda x: x >= 10
+		result = bool_metric(metric)
+		
+		self.assertEqual(result(0), 0)
+		self.assertEqual(result(10), 1)
+		self.assertEqual(result(20), 1)
+	
+	def test_bool_metric_additional_arguments(self):
+		metric = lambda x, y: x >= y
+		result = bool_metric(metric, 10)
+		
+		self.assertEqual(result(0), 0)
+		self.assertEqual(result(10), 1)
+		self.assertEqual(result(20), 1)
+
+
+class TestDuplefy(TestCase):
+
+	def test_duple(self):
+		self.assertEqual(duplefy(1, 2), (1, 2))
+	
+	def test_single(self):
+		self.assertEqual(duplefy(1), 1)
+	
+	def test_none(self):
+		self.assertRaises(Exception, duplefy)
+	
+	def test_more(self):
+		self.assertRaises(Exception, duplefy, 1, 2, 3)
 		
 
 test_cases = [
@@ -4186,6 +4259,8 @@ test_cases = [
 	TestCount,
 	TestLazyPlots,
 	TestVariadic,
+	TestMetrics,
+	TestDuplefy,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

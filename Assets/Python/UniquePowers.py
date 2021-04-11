@@ -117,6 +117,7 @@ def mayanPower(iTech, iTeam, iPlayer):
 			iFood = 20 / iNumCities
 			for city in cities.owner(iPlayer):
 				city.changeFood(iFood)
+			
 			message(iPlayer, 'TXT_KEY_MAYA_UP_EFFECT', infos.tech(iTech).getText(), iFood)
 
 

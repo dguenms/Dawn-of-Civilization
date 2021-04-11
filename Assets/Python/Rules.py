@@ -200,7 +200,10 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 				iFood = scale(5)
 				city.changeFood(iFood)
 				data.iTeotlFood += iFood
+				
 				message(iWinner, 'TXT_KEY_MAYA_HOLKAN_EFFECT', adjective(losingUnit), losingUnit.getName(), iFood, city.getName())
+				
+				events.fireEvent("combatFood", iWinner, winningUnit, iFood)
 
 
 ### REVOLUTION ###

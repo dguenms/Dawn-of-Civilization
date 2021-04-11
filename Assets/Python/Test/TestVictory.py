@@ -346,6 +346,24 @@ class TestEventHandlers(ExtendedTestCase):
 		onCombatGold(PlayerContainer(0), (1, None, 100))
 		self.assertEqual(self.iIncrement, 100)
 	
+	def testCombatFood(self):
+		onCombatFood = self.handlers.get("combatFood", self.increment)
+		
+		onCombatFood(PlayerContainer(0), (0, None, 100))
+		self.assertEqual(self.iIncrement, 100)
+		
+		onCombatFood(PlayerContainer(0), (1, None, 100))
+		self.assertEqual(self.iIncrement, 100)
+	
+	def testSacrificeHappiness(self):
+		onSacrificeHappiness = self.handlers.get("sacrificeHappiness", self.trackCall)
+		
+		onSacrificeHappiness(PlayerContainer(0), (0, None))
+		self.assertEqual(self.iCallCount, 1)
+		
+		onSacrificeHappiness(PlayerContainer(0), (1, None))
+		self.assertEqual(self.iCallCount, 1)
+	
 	def testOthers(self):
 		onBeginPlayerTurn = self.others.get("BeginPlayerTurn", self.trackCall)
 		
@@ -525,7 +543,7 @@ class TestAggregate(ExtendedTestCase):
 	
 	def testString(self):
 		agg = sum(iWarrior, iArcher, iSwordsman)
-		formatter = lambda item: infos.unit(item).getText()
+		formatter = lambda item: plural(infos.unit(item).getText())
 		
 		self.assertEqual(agg.format(formatter), "Warriors, Archers and Swordsmen")
 	
@@ -1667,7 +1685,8 @@ class TestProgress(ExtendedTestCase):
 		city2.setPopulation(10)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Most populous city: Second (10)\nNext most populous city: First (5)" % self.FAILURE_CHAR)
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: Second (10)\nOur next most populous: First (5)" % self.FAILURE_CHAR)
 		finally:
 			city1.kill()
 			city2.kill()
@@ -1683,7 +1702,8 @@ class TestProgress(ExtendedTestCase):
 		city2.setPopulation(10)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Most populous civilization: Babylonia (1000000)\nNext most populous civilization: Egypt (125000)" % self.FAILURE_CHAR)
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: Babylonia (1000000)\nOur next most populous: Egypt (125000)" % self.FAILURE_CHAR)
 		finally:
 			city1.kill()
 			city2.kill()
@@ -2492,8 +2512,8 @@ class TestConditionGoals(ExtendedTestCase):
 			for plot in area:
 				plot.setRouteType(-1)
 			
-	def testNoStateReligionSome(self):
-		goal = Condition.noStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
+	def testAreaNoStateReligionSome(self):
+		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
 		goal.activate(0)
 		
 		city1 = player(0).initCity(61, 31)
@@ -2509,8 +2529,8 @@ class TestConditionGoals(ExtendedTestCase):
 		
 			player(0).setLastStateReligion(-1)
 	
-	def testNoStateReligionAll(self):
-		goal = Condition.noStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
+	def testAreaNoStateReligionAll(self):
+		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
 		goal.activate(0)
 		
 		city1 = player(0).initCity(61, 31)
@@ -2831,6 +2851,152 @@ class TestConditionGoals(ExtendedTestCase):
 		finally:
 			for city in [city0, city1, city2]:
 				city.kill()
+	
+	def testAllAttitude(self):
+		goal = Condition.allAttitude(AttitudeTypes.ATTITUDE_PLEASED)
+		goal.activate(0)
+		
+		self.assertEqual(players.major().alive().count(), 3)
+		self.assertEqual(player(1).AI_getAttitude(0), AttitudeTypes.ATTITUDE_CAUTIOUS)
+		self.assertEqual(player(2).AI_getAttitude(0), AttitudeTypes.ATTITUDE_CAUTIOUS)
+		
+		self.assertEqual(bool(goal), False)
+		self.assertEqual(str(goal), "0 / 2")
+		
+		player(1).AI_setAttitudeExtra(0, 100)
+		player(2).AI_setAttitudeExtra(0, 100)
+		
+		self.assertEqual(player(1).AI_getAttitude(0), AttitudeTypes.ATTITUDE_FRIENDLY)
+		self.assertEqual(player(2).AI_getAttitude(0), AttitudeTypes.ATTITUDE_FRIENDLY)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 2")
+		finally:
+			player(1).AI_setAttitudeExtra(0, 0)
+			player(2).AI_setAttitudeExtra(0, 0)
+			goal.deactivate()
+	
+	def testNoStateReligion(self):
+		goal = Condition.noStateReligion(iOrthodoxy)
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iCatholicism)
+		player(2).setLastStateReligion(iProtestantism)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "0")
+		finally:
+			for i in [0, 1, 2]:
+				player(i).setLastStateReligion(-1)
+	
+	def testNoStateReligionStillLeft(self):
+		goal = Condition.noStateReligion(iOrthodoxy)
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iOrthodoxy)
+		player(2).setLastStateReligion(iOrthodoxy)
+	
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "2")
+		finally:
+			for i in [0, 1, 2]:
+				player(i).setLastStateReligion(-1)
+	
+	def testStateReligionPercent(self):
+		goal = Condition.stateReligionPercent(iConfucianism, 50)
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iConfucianism)
+		player(1).setLastStateReligion(iConfucianism)
+		player(2).setLastStateReligion(iTaoism)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 1")
+		finally:
+			for i in [0, 1, 2]:
+				player(i).setLastStateReligion(-1)
+	
+	def testStateReligionPercentOrSecular(self):
+		goal = Condition.stateReligionPercent(iConfucianism, 50).orSecular()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iConfucianism)
+		player(1).setCivics(iCivicsReligion, iSecularism)
+		player(2).setLastStateReligion(iTaoism)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 1")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setCivics(iCivicsReligion, iAnimism)
+			player(2).setLastStateReligion(-1)
+	
+	def testNoReligionPercent(self):
+		goal = Condition.noReligionPercent(50)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setHasReligion(iBuddhism, True, False, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setHasReligion(iConfucianism, True, False, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city4 = player(0).initCity(67, 31)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 4")
+		finally:
+			for city in [city1, city2, city3, city4]:
+				city.kill()
+	
+	def testNoReligionPercentTooMany(self):
+		goal = Condition.noReligionPercent(50)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setHasReligion(iBuddhism, True, False, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setHasReligion(iConfucianism, True, False, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setHasReligion(iTaoism, True, False, False)
+		
+		city4 = player(0).initCity(67, 31)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "3 / 4")
+		finally:
+			for city in [city1, city2, city3, city4]:
+				city.kill()
+	
+	def testGoldPercent(self):
+		goal = Condition.goldPercent(50)
+		goal.activate(0)
+		
+		for iPlayer in players.major().alive():
+			player(iPlayer).setGold(0)
+		
+		player(0).setGold(50)
+		player(1).setGold(60)
+		player(2).setGold(40)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "50 / 100")
+		finally:
+			for i in [0, 1, 2]:
+				player(i).setGold(0)
 
 
 class TestCountGoals(ExtendedTestCase):
@@ -3088,6 +3254,27 @@ class TestCountGoals(ExtendedTestCase):
 		finally:
 			city.kill()
 		
+			goal.deactivate()
+	
+	def testBuildingWorld(self):
+		goal = Count.building(iMonument, 3).world()
+		goal.activate(0)
+		
+		city0 = player(iEgypt).initCity(61, 31)
+		city0.setHasRealBuilding(iObelisk, True)
+		
+		city1 = player(iBabylonia).initCity(63, 31)
+		city1.setHasRealBuilding(iMonument, True)
+		
+		city2 = player(iHarappa).initCity(65, 31)
+		city2.setHasRealBuilding(iMonument, True)
+		
+		try:
+			self.assertEqual(str(goal), "3 / 3")
+			self.assertEqual(bool(goal), True)
+		finally:
+			for city in [city0, city1, city2]:
+				city.kill()
 			goal.deactivate()
 	
 	def testCultureLess(self):
@@ -3563,6 +3750,65 @@ class TestCountGoals(ExtendedTestCase):
 			for unit in units:
 				unit.kill(False, -1)
 	
+	def testUnitCombat(self):
+		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 5)
+		goal.activate(0)
+		
+		team(0).setHasTech(iTanning, True, 0, True, False)
+		team(0).setHasTech(iContract, True, 0, True, False)
+		
+		archers = makeUnits(0, iArcher, (0, 0), 3)
+		crossbowmen = makeUnits(0, iSkirmisher, (0, 1), 3)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "6 / 5")
+		finally:
+			for unit in archers + crossbowmen:
+				unit.kill(False, -1)
+			
+			team(0).setHasTech(iTanning, False, 0, True, False)
+			team(0).setHasTech(iContract, False, 0, True, False)
+	
+	def testUnitCombatSum(self):
+		goal = Count.unitCombat(sum(UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN), 5)
+		goal.activate(0)
+		
+		team(0).setHasTech(iCommune, True, 0, True, False)
+		team(0).setHasTech(iFirearms, True, 0, True, False)
+		
+		archers = makeUnits(0, iLongbowman, (0, 0), 3)
+		musketeers = makeUnits(0, iArquebusier, (0, 1), 3)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "6 / 5")
+		finally:
+			for unit in archers + musketeers:
+				unit.kill(False, -1)
+			
+			team(0).setHasTech(iCommune, False, 0, True, False)
+			team(0).setHasTech(iFirearms, False, 0, True, False)
+	
+	def testUnitCombatIgnoresOutdated(self):
+		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 3)
+		goal.activate(0)
+		
+		team(0).setHasTech(iCommune, True, 0, True, False)
+		team(0).setHasTech(iMachinery, True, 0, True, False)
+		
+		archers = makeUnits(0, iArcher, (0, 0), 3)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 3")
+		finally:
+			for unit in archers:
+				unit.kill(False, -1)
+			
+			team(0).setHasTech(iCommune, False, 0, True, False)
+			team(0).setHasTech(iMachinery, False, 0, True, False)
+	
 	def testNumCitiesLess(self):
 		goal = Count.numCities(plots.rectangle((60, 30), (65, 35)), 2)
 		goal.activate(0)
@@ -3900,6 +4146,32 @@ class TestCountGoals(ExtendedTestCase):
 			self.assertEqual(str(goal), "4 / 4")
 		finally:
 			city.kill()
+	
+	def testSpecialistReligion(self):
+		goal = Count.specialist(iSpecialistGreatScientist, 4).religion()
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		city3 = player(2).initCity(65, 31)
+		city3.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		player(0).setLastStateReligion(iBuddhism)
+		player(1).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "4 / 4")
+		finally:
+			for city in [city1, city2, city3]:
+				city.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			goal.deactivate()
 	
 	def testAverageCulture(self):
 		goal = Count.averageCulture(500)
@@ -4335,6 +4607,35 @@ class TestCountGoals(ExtendedTestCase):
 		
 			team(1).setVassal(0, False, False)
 	
+	def testAttitudeMinority(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).minority(iCatholicism)
+		goal.activate(0)
+		
+		for i in [1, 2]:
+			team(i).meet(0, False)
+			player(i).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 2")
+			
+			city1 = player(1).initCity(61, 31)
+			city1.setHasReligion(iCatholicism, True, False, False)
+			
+			city2 = player(3).initCity(63, 31)
+			city2.setHasReligion(iCatholicism, True, False, False)
+			
+			try:
+				self.assertEqual(bool(goal), False)
+				self.assertEqual(str(goal), "1 / 2")
+			finally:
+				city1.kill()
+				city2.kill()
+		finally:
+			for i in [1, 2]:
+				team(i).cutContact(0)
+				player(i).AI_setAttitudeExtra(0, 0)
+	
 	def testAttitudeChainedFilters(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia]).religion(iOrthodoxy)
 		goal.activate(0)
@@ -4384,12 +4685,18 @@ class TestCountGoals(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR)
-	
-	def testAttitudeProgressChained(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).independent()
+
+	def testAttitudeProgressMinority(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).minority(iOrthodoxy)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent Orthodox communist civilizations in Europe: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with civilizations with a Orthodox minority: 0 / 2" % self.FAILURE_CHAR)
+
+	def testAttitudeProgressChained(self):
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).minority(iCatholicism).independent()
+		goal.activate(0)
+		
+		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent Orthodox communist civilizations with a Catholic minority in Europe: 0 / 2" % self.FAILURE_CHAR)
 	
 	def testVassals(self):
 		goal = Count.vassals(2)
@@ -4657,6 +4964,165 @@ class TestCountGoals(ExtendedTestCase):
 		
 		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
 	
+	def testDifferentSpecialist(self):
+		goal = Count.differentSpecialist(city(61, 31), 2)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatArtist, 1)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 2")
+			self.assertEqual(goal.progress(), u"%c Different specialists in First: 2 / 2" % self.SUCCESS_CHAR)
+		finally:
+			city1.kill()
+			goal.deactivate()
+	
+	def testDifferentSpecialistDifferentOwner(self):
+		goal = Count.differentSpecialist(city(61, 31), 2)
+		goal.activate(0)
+		
+		city1 = player(1).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatArtist, 1)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 2")
+			self.assertEqual(goal.progress(), u"%c Different specialists in First (controlled by Babylonia): 0 / 2" % self.FAILURE_CHAR)
+		finally:
+			city1.kill()
+			goal.deactivate()
+	
+	def testDifferentSpecialistNoCity(self):
+		goal = Count.differentSpecialist(city(61, 31), 2)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 2")
+			self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+		finally:
+			goal.deactivate()
+	
+	def testShrineIncome(self):
+		goal = Count.shrineIncome(iOrthodoxy, 2)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setHasReligion(iOrthodoxy, True, False, False)
+		
+		city1.setHasRealBuilding(iOrthodoxShrine, True)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "2 / 2")
+		finally:
+			city1.kill()
+			city2.kill()
+			goal.deactivate()
+	
+	def testShrineIncomeNoShrine(self):
+		goal = Count.shrineIncome(iOrthodoxy, 2)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.setHasReligion(iOrthodoxy, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 2")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testShrineIncomeOtherOwner(self):
+		goal = Count.shrineIncome(iOrthodoxy, 2)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setHasReligion(iOrthodoxy, True, False, False)
+		
+		city2.setHasRealBuilding(iOrthodoxShrine, True)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 2")
+		finally:
+			city1.kill()
+			city2.kill()
+			goal.deactivate()
+	
+	def testUnitLevelCount(self):
+		goal = Count.unitLevel(3, 2)
+		goal.activate(0)
+		
+		units = makeUnits(0, iSwordsman, (0, 0), 3)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def testTerrainCount(self):
+		goal = Count.terrain(iOcean, 50)
+		goal.activate(0)
+		
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "60 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def testPeakCount(self):
+		goal = Count.peaks(20)
+		goal.activate(0)
+		
+		controlled = plots.all().where(lambda plot: plot.isPeak()).limit(25) + plots.all().water().limit(25)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "25 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def testFeatureCount(self):
+		goal = Count.feature(iForest, 20)
+		goal.activate(0)
+		
+		controlled = plots.all().where(lambda plot: plot.getFeatureType() == iForest).limit(25) + plots.all().water().limit(25)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "25 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
 
 class TestPercentageGoals(ExtendedTestCase):
 
@@ -4729,6 +5195,32 @@ class TestPercentageGoals(ExtendedTestCase):
 			for plot in controlled:
 				plot.setOwner(-1)
 		
+			goal.deactivate()
+	
+	def testWorldControlReligion(self):
+		goal = Percentage.worldControl(10).religion()
+		goal.activate(0)
+		
+		controlled = plots.all().land().limit(11 * 32)
+		controlled0, controlled1 = controlled.percentage_split(50)
+		
+		for plot in controlled0:
+			plot.setOwner(0)
+		
+		for plot in controlled1:
+			plot.setOwner(1)
+			
+		player(0).setLastStateReligion(iBuddhism)
+		player(1).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(map.getLandPlots(), 3232)
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "10.89% / 10%")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+			
 			goal.deactivate()
 	
 	def testReligionSpread(self):
@@ -5680,8 +6172,8 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.dCondition[(5, iOrthodoxy)], True)
-			self.assertEqual(goal.dCondition[(5, iCatholicism)], False)
+			self.assertEqual(goal.completed(5, iOrthodoxy), True)
+			self.assertEqual(goal.completed(5, iCatholicism), False)
 		finally:
 			player(0).setLastStateReligion(-1)
 			game.setReligionGameTurnFounded(iOrthodoxy, -1)
@@ -5763,6 +6255,70 @@ class TestTriggerGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(goal.state, FAILURE)
 		finally:
+			goal.deactivate()
+	
+	def testFirstGreatPerson(self):
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist)
+		goal.activate(0)
+		
+		unit = makeUnit(0, iGreatArtist, (0, 0))
+		
+		events.fireEvent("greatPersonBorn", unit, 0, None)
+		
+		try:
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			unit.kill(False, -1)
+			goal.deactivate()
+	
+	def testFirstGreatPersonAll(self):
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist)
+		goal.activate(0)
+		
+		artist = makeUnit(0, iGreatArtist, (0, 0))
+		merchant = makeUnit(0, iGreatMerchant, (0, 0))
+		scientist = makeUnit(0, iGreatScientist, (0, 0))
+		
+		events.fireEvent("greatPersonBorn", artist, 0, None)
+		events.fireEvent("greatPersonBorn", merchant, 0, None)
+		events.fireEvent("greatPersonBorn", scientist, 0, None)
+		
+		try:
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			for unit in [artist, merchant, scientist]:
+				unit.kill(False, -1)
+			goal.deactivate()
+	
+	def testFirstGreatPersonSome(self):
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist), 2)
+		goal.activate(0)
+		
+		artist = makeUnit(0, iGreatArtist, (0, 0))
+		merchant = makeUnit(0, iGreatMerchant, (0, 0))
+		
+		events.fireEvent("greatPersonBorn", artist, 0, None)
+		events.fireEvent("greatPersonBorn", merchant, 0, None)
+		
+		try:
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			for unit in [artist, merchant]:
+				unit.kill(False, -1)
+			goal.deactivate()
+	
+	def testFirstGreatPersonOther(self):
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist)
+		goal.activate(0)
+		
+		artist = makeUnit(1, iGreatArtist, (0, 0))
+		
+		events.fireEvent("greatPersonBorn", artist, 1, None)
+		
+		try:
+			self.assertEqual(goal.state, FAILURE)
+		finally:
+			artist.kill(False, -1)
 			goal.deactivate()
 
 
@@ -6473,6 +7029,188 @@ class TestTrackGoals(ExtendedTestCase):
 			unit1.kill(False, -1)
 		
 			goal.deactivate()
+	
+	def testHealthiest(self):
+		goal = Track.healthiest(3)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.changeExtraHealth(100)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 1, 0)
+		events.fireEvent("BeginPlayerTurn", 2, 0)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 1)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 3")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testHealthiestOther(self):
+		goal = Track.healthiest(3)
+		goal.activate(0)
+		
+		city = player(1).initCity(61, 31)
+		city.changeExtraHealth(100)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 0, 1)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 3")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testHappiest(self):
+		goal = Track.happiest(3)
+		goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		city.changeExtraHappiness(100)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 1, 0)
+		events.fireEvent("BeginPlayerTurn", 2, 0)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 1)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 3")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testHappiestOther(self):
+		goal = Track.happiest(3)
+		goal.activate(0)
+		
+		city = player(1).initCity(61, 31)
+		city.changeExtraHappiness(100)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 0, 1)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 3")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
+	def testTrackPeace(self):
+		goal = Track.peace(3)
+		goal.activate(0)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 1, 0)
+		events.fireEvent("BeginPlayerTurn", 2, 0)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 3")
+		finally:
+			goal.deactivate()
+	
+	def testTrackPeaceAtWar(self):
+		goal = Track.peace(3)
+		goal.activate(0)
+		
+		team(0).setAtWar(1, True)
+		team(1).setAtWar(0, True)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		events.fireEvent("BeginPlayerTurn", 1, 0)
+		events.fireEvent("BeginPlayerTurn", 2, 0)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 3")
+		finally:
+			team(0).setAtWar(1, False)
+			team(1).setAtWar(0, False)
+			goal.deactivate()
+	
+	def testTrackPeaceAfterPeace(self):
+		goal = Track.peace(3)
+		goal.activate(0)
+		
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(str(goal), "1 / 3")
+			
+		team(0).setAtWar(1, True)
+		team(1).setAtWar(0, True)
+		
+		events.fireEvent("BeginPlayerTurn", 1, 0)
+		
+		try:
+			self.assertEqual(str(goal), "1 / 3")
+		finally:
+			team(0).setAtWar(1, False)
+			team(1).setAtWar(0, False)
+			
+		events.fireEvent("BeginPlayerTurn", 2, 0)
+			
+		self.assertEqual(str(goal), "2 / 3")
+		
+		goal.deactivate()
+	
+	def testTrackCombatFood(self):
+		goal = Track.combatFood(10)
+		goal.activate(0)
+		
+		events.fireEvent("combatFood", 0, None, 10)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "10 / 10")
+		finally:
+			goal.deactivate()
+	
+	def testTrackSacrificeHappiness(self):
+		goal = Track.sacrificeHappiness(3)
+		goal.activate(0)
+		
+		events.fireEvent("sacrificeHappiness", 0, None)
+		events.fireEvent("sacrificeHappiness", 0, None)
+		events.fireEvent("sacrificeHappiness", 0, None)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 3")
+		finally:
+			goal.deactivate()
+	
+	def testTrackCelebrate(self):
+		goal = Track.celebrate(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city2 = player(0).initCity(63, 31)
+		
+		city1.setWeLoveTheKingDay(True)
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "1 / 3")
+			
+			city2.setWeLoveTheKingDay(True)
+			events.fireEvent("BeginPlayerTurn", 1, 0)
+			
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "3 / 3")
+		finally:
+			city1.kill()
+			city2.kill()
+			goal.deactivate()
 
 
 class TestBestCityGoals(ExtendedTestCase):
@@ -6676,7 +7414,117 @@ class TestBestCityGoals(ExtendedTestCase):
 		finally:
 			city0.kill()
 			city1.kill()
-
+	
+	def testBestWondersCity(self):
+		goal = BestCity.wonders(city(61, 31))
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		
+		city0.setHasRealBuilding(iPyramids, True)
+		city0.setHasRealBuilding(iParthenon, True)
+		
+		city1.setHasRealBuilding(iColossus, True)
+		
+		city0.setName("Zero", False)
+		city1.setName("One", False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)\nNext most wonders: One (1)" % self.SUCCESS_CHAR)
+		finally:
+			city0.kill()
+			city1.kill()
+	
+	def testBestWondersOtherLocation(self):
+		goal = BestCity.wonders(city(59, 31))
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		
+		city0.setHasRealBuilding(iPyramids, True)
+		city0.setHasRealBuilding(iParthenon, True)
+		
+		city1.setHasRealBuilding(iColossus, True)
+		
+		city0.setName("Zero", False)
+		city1.setName("One", False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR)
+		finally:
+			city0.kill()
+			city1.kill()
+	
+	def testBestWondersOtherOwner(self):
+		goal = BestCity.wonders(city(61, 31))
+		goal.activate(0)
+		
+		city0 = player(1).initCity(61, 31)
+		city1 = player(0).initCity(63, 31)
+		
+		city0.setHasRealBuilding(iPyramids, True)
+		city0.setHasRealBuilding(iParthenon, True)
+		
+		city1.setHasRealBuilding(iColossus, True)
+		
+		city0.setName("Zero", False)
+		city1.setName("One", False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR)
+		finally:
+			city0.kill()
+			city1.kill()
+	
+	def testBestSpecialistCity(self):
+		goal = BestCity.specialist(city(61, 31), iSpecialistGreatScientist)
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		
+		city0.setFreeSpecialistCount(iSpecialistGreatScientist, 4)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		city0.setName("Zero", False)
+		city1.setName("One", False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most settled specialists: Zero (4)\nNext most settled specialists: One (2)" % self.SUCCESS_CHAR)
+		finally:
+			city0.kill()
+			city1.kill()
+	
+	def testBestSpecialistCityGreatPeople(self):
+		goal = BestCity.specialist(city(61, 31), great_people())
+		goal.activate(0)
+		
+		city0 = player(0).initCity(61, 31)
+		city1 = player(1).initCity(63, 31)
+		
+		city0.setFreeSpecialistCount(iSpecialistGreatArtist, 1)
+		city0.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
+		city0.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		city1.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
+		city1.setFreeSpecialistCount(iSpecialistGreatEngineer, 1)
+		
+		city0.setName("Zero", False)
+		city1.setName("One", False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most settled specialists: Zero (3)\nNext most settled specialists: One (2)" % self.SUCCESS_CHAR)
+		finally:
+			city0.kill()
+			city1.kill()
+		
 
 class TestBestPlayerGoals(ExtendedTestCase):
 	
@@ -6696,7 +7544,7 @@ class TestBestPlayerGoals(ExtendedTestCase):
 		finally:
 			city0.kill()
 			city1.kill()
-	
+
 	def testBestPopulationPlayerOther(self):
 		goal = BestPlayer.population()
 		goal.activate(0)
@@ -6749,6 +7597,709 @@ class TestBestPlayerGoals(ExtendedTestCase):
 		finally:
 			team(0).setHasTech(iLaw, False, 0, False, False)
 			team(1).setHasTech(iGenetics, False, 1, False, False)
+
+
+class TestBestPlayersGoals(ExtendedTestCase):
+	
+	def testBestTechPlayersReligion(self):
+		goal = BestPlayers.tech(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iProtestantism)
+		player(1).setLastStateReligion(iProtestantism)
+		player(2).setLastStateReligion(iCatholicism)
+		
+		for iTech in infos.techs():
+			for iPlayer in [0, 1, 2]:
+				team(iPlayer).setHasTech(iTech, False, iPlayer, False, False)
+		
+		team(0).setHasTech(iGenetics, True, 0, False, False)
+		team(1).setHasTech(iGeography, True, 1, False, False)
+		team(2).setHasTech(iLaw, True, 2, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most advanced: Egypt (9000)\n%c Second most advanced: Babylonia (1200)\n%c Third most advanced: Harappa (280)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			team(0).setHasTech(iGenetics, False, 0, False, False)
+			team(1).setHasTech(iGeography, False, 1, False, False)
+			team(2).setHasTech(iLaw, False, 2, False, False)
+	
+	def testBestTechPlayersSecular(self):
+		goal = BestPlayers.tech(3).secular()
+		goal.activate(0)
+		
+		player(0).setCivics(iCivicsReligion, iSecularism)
+		player(1).setCivics(iCivicsReligion, iSecularism)
+		player(2).setCivics(iCivicsReligion, iSecularism)
+		
+		for iTech in infos.techs():
+			for iPlayer in [0, 1, 2]:
+				team(iPlayer).setHasTech(iTech, False, iPlayer, False, False)
+		
+		team(0).setHasTech(iGenetics, True, 0, False, False)
+		team(1).setHasTech(iGeography, True, 1, False, False)
+		team(2).setHasTech(iLaw, True, 2, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most advanced: Egypt (9000)\n%c Second most advanced: Babylonia (1200)\n%c Third most advanced: Harappa (280)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			team(0).setHasTech(iGenetics, False, 0, False, False)
+			team(1).setHasTech(iGeography, False, 1, False, False)
+			team(2).setHasTech(iLaw, False, 2, False, False)
+		
+			for iPlayer in [0, 1, 2]:
+				player(iPlayer).setCivics(iCivicsReligion, iAnimism)
+
+
+class TestBestCitiesGoals(ExtendedTestCase):
+
+	def testBestPopulationPlayerAll(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		city4 = player(1).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setPopulation(7)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nNext most populous: Fourth (7)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			goal.deactivate()
+	
+	def testBestPopulationPlayerAllAlsoNext(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		city4 = player(0).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setPopulation(7)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nNext most populous: Fourth (7)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			goal.deactivate()
+	
+	def testBestPopulationPlayerSome(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		city4 = player(1).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setPopulation(7)
+		
+		city5 = player(0).initCity(69, 31)
+		city5.setName("Fifth", False)
+		city5.setPopulation(6)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nOur next most populous: Fifth (6)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			city5.kill()
+			goal.deactivate()
+	
+	def testBestPopulationMissingCities(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			goal.deactivate()
+	
+	def testBestPopulationNoCities(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: (No City) (0)" % self.FAILURE_CHAR)
+		finally:
+			goal.deactivate()
+	
+	def testBestPopulationMissingNextCity(self):
+		goal = BestCities.population(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			goal.deactivate()
+
+	def testBestPopulationCitiesReligionAll(self):
+		goal = BestCities.population(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		player(2).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(2).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		city3.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			player(2).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestPopulationCitiesReligionSome(self):
+		goal = BestCities.population(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(2).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		city4 = player(2).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setPopulation(7)
+		
+		city5 = player(1).initCity(69, 31)
+		city5.setName("Fifth", False)
+		city5.setPopulation(6)
+		city5.setHasReligion(iJudaism, True, False, False)
+		
+		city6 = player(0).initCity(71, 31)
+		city6.setName("Sixth", False)
+		city6.setPopulation(5)
+		city6.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nOur next most populous: Fifth (6)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			city5.kill()
+			city6.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestPopulationCitiesReligionLackingInCities(self):
+		goal = BestCities.population(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestPopulationCitiesReligionOnlyOthers(self):
+		goal = BestCities.population(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		
+		city1 = player(1).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		city3.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestPopulationCitiesReligionNoStateReligion(self):
+		goal = BestCities.population(3).religion()
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setPopulation(10)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setPopulation(9)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % ((self.FAILURE_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			goal.deactivate()
+	
+	# dskjfd
+
+	def testBestCulturePlayerAll(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(0, 80, False)
+		
+		city4 = player(1).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setCulture(1, 70, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nNext most cultured: Fourth (70)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			goal.deactivate()
+	
+	def testBestCulturePlayerAllAlsoNext(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(0, 80, False)
+		
+		city4 = player(0).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setCulture(0, 70, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nNext most cultured: Fourth (70)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			goal.deactivate()
+	
+	def testBestCulturePlayerSome(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(1, 80, False)
+		
+		city4 = player(1).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setCulture(1, 70, False)
+		
+		city5 = player(0).initCity(69, 31)
+		city5.setName("Fifth", False)
+		city5.setCulture(0, 60, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nOur next most cultured: Fifth (60)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			city5.kill()
+			goal.deactivate()
+	
+	def testBestCultureMissingCities(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			goal.deactivate()
+	
+	def testBestCultureNoCities(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: (No City) (0)" % self.FAILURE_CHAR)
+		finally:
+			goal.deactivate()
+	
+	def testBestCultureMissingNextCity(self):
+		goal = BestCities.culture(3)
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(1, 80, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			goal.deactivate()
+
+	def testBestCultureCitiesReligionAll(self):
+		goal = BestCities.culture(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		player(2).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, True)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(1, 90, True)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(2).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(2, 80, True)
+		city3.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			player(2).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestCultureCitiesReligionSome(self):
+		goal = BestCities.culture(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(1, 90, False)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(2).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(2, 80, False)
+		
+		city4 = player(2).initCity(67, 31)
+		city4.setName("Fourth", False)
+		city4.setCulture(2, 70, False)
+		
+		city5 = player(1).initCity(69, 31)
+		city5.setName("Fifth", False)
+		city5.setCulture(1, 60, False)
+		city5.setHasReligion(iJudaism, True, False, False)
+		
+		city6 = player(0).initCity(71, 31)
+		city6.setName("Sixth", False)
+		city6.setCulture(0, 50, False)
+		city6.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nOur next most cultured: Fifth (60)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			city4.kill()
+			city5.kill()
+			city6.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestCultureCitiesReligionLackingInCities(self):
+		goal = BestCities.culture(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(0, 80, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestCultureCitiesReligionOnlyOthers(self):
+		goal = BestCities.culture(3).religion()
+		goal.activate(0)
+		
+		player(0).setLastStateReligion(iJudaism)
+		player(1).setLastStateReligion(iJudaism)
+		
+		city1 = player(1).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(1, 100, False)
+		city1.setHasReligion(iJudaism, True, False, False)
+		
+		city2 = player(1).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(1, 90, False)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		city3 = player(1).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(1, 80, False)
+		city3.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % ((self.SUCCESS_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			goal.deactivate()
+	
+	def testBestCultureCitiesReligionNoStateReligion(self):
+		goal = BestCities.culture(3).religion()
+		goal.activate(0)
+		
+		city1 = player(0).initCity(61, 31)
+		city1.setName("First", False)
+		city1.setCulture(0, 100, False)
+		
+		city2 = player(0).initCity(63, 31)
+		city2.setName("Second", False)
+		city2.setCulture(0, 90, False)
+		
+		city3 = player(0).initCity(65, 31)
+		city3.setName("Third", False)
+		city3.setCulture(0, 80, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % ((self.FAILURE_CHAR,) * 3))
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
+			goal.deactivate()
 
 
 class TestRouteConnection(ExtendedTestCase):
@@ -7622,6 +9173,85 @@ class TestSomeGoal(ExtendedTestCase):
 		goal = Some(subgoal, 2)
 		
 		self.assertEqual(goal.description(), "Control two out of three Granaries")
+	
+	def testWithFirstGreatPerson(self):
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
+		goal.activate(0)
+		
+		artist = makeUnit(0, iGreatArtist, (0, 0))
+		events.fireEvent("greatPersonBorn", artist, 0, None)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "1 / 2")
+		
+			try:
+				engineer = makeUnit(0, iGreatEngineer, (0, 0))
+				events.fireEvent("greatPersonBorn", engineer, 0, None)
+		
+				self.assertEqual(bool(goal), True)
+				self.assertEqual(str(goal), "2 / 2")
+				self.assertEqual(goal.state, SUCCESS)
+			finally:
+				engineer.kill(False, -1)
+		finally:
+			artist.kill(False, -1)
+			goal.deactivate()
+	
+	def testWithFirstGreatPersonOneOther(self):
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
+		goal.activate(0)
+		
+		artist = makeUnit(0, iGreatMerchant, (0, 0))
+		events.fireEvent("greatPersonBorn", artist, 0, None)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "1 / 2")
+			
+			merchant = makeUnit(1, iGreatMerchant, (0, 0))
+			events.fireEvent("greatPersonBorn", merchant, 1, None)
+			
+			try:
+				self.assertEqual(bool(goal), False)
+				self.assertEqual(str(goal), "1 / 2")
+				self.assertEqual(goal.state, POSSIBLE)
+				
+				engineer = makeUnit(0, iGreatEngineer, (0, 0))
+				events.fireEvent("greatPersonBorn", engineer, 0, None)
+				
+				try:
+					self.assertEqual(bool(goal), True)
+					self.assertEqual(str(goal), "2 / 2")
+					self.assertEqual(goal.state, SUCCESS)
+				finally:
+					engineer.kill(False, -1)
+			finally:
+				merchant.kill(False, -1)
+		finally:
+			artist.kill(False, -1)
+			goal.deactivate()
+	
+	def testWithFirstGreatPersonTwoOther(self):
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
+		goal.activate(0)
+		
+		artist = makeUnit(1, iGreatArtist, (0, 0))
+		events.fireEvent("greatPersonBorn", artist, 1, None)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			engineer = makeUnit(1, iGreatEngineer, (0, 0))
+			events.fireEvent("greatPersonBorn", engineer, 1, None)
+			
+			try:
+				self.assertEqual(goal.state, FAILURE)
+			finally:
+				engineer.kill(False, -1)
+		finally:
+			artist.kill(False, -1)
+			goal.deactivate()
 
 
 class CityGoal(BaseGoal):
@@ -7874,7 +9504,8 @@ test_cases = [
 	TestTriggerGoals,
 	TestTrackGoals,
 	TestBestCityGoals,
-	TestBestPlayerGoals,
+	TestBestPlayersGoals,
+	TestBestCitiesGoals,
 	TestRouteConnection,
 	TestAllGoal,
 	TestSomeGoal,

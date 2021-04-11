@@ -77,6 +77,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_CATHEDRALS</Tag>
+		<English>cathedrals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CHRISTIAN_CATHEDRALS</Tag>
 		<English>Christian Cathedrals</English>
 		<French></French>
@@ -87,6 +95,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_WONDERS</Tag>
 		<English>wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PAGAN_WONDERS</Tag>
+		<English>pagan wonders</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -135,6 +151,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TO_YOUR_ENTITY</Tag>
 		<English>%s3 to %s1 of your %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GOLD_FROM</Tag>
+		<English>%s1 gold from %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -231,6 +255,54 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CITY_DIFFERENT_OWNER</Tag>
 		<English>%s1 (controlled by %s2)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAKE_SURE</Tag>
+		<English>make sure that</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARE_RELIGION</Tag>
+		<English>are %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARE_SECULAR</Tag>
+		<English>are secular</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RELIGION_SHRINE</Tag>
+		<English>the %s1 shrine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_UNITS_OF_LEVEL</Tag>
+		<English>%s1 units of level %s2 or higher</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TILES</Tag>
+		<English>%s1 %s2 tiles</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -355,6 +427,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ORDINAL_3</Tag>
 		<English>third</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_4</Tag>
+		<English>fourth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ORDINAL_5</Tag>
+		<English>fifth</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -511,6 +599,46 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_NAME_ITS_CITY</Tag>
 		<English>its city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_JEWISH_HOLY_CITY</Tag>
+		<English>the Jewish holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_ISLAMIC_HOLY_CITY</Tag>
+		<English>the Islamic holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_HINDU_HOLY_CITY</Tag>
+		<English>the Hindu holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_CONFUCIAN_HOLY_CITY</Tag>
+		<English>the Confucian holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_TAOIST_HOLY_CITY</Tag>
+		<English>the Taoist holy city</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -973,6 +1101,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NAME_RELIGION_HOLY_CITY</Tag>
+		<English>the %s1 holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- GOAL PROGRESS -->
 
@@ -995,6 +1131,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PROGRESS_BEST_GOAL_TEMPLATE</Tag>
 		<English>%s1 %s2: %s5[NEWLINE]Next %s3 %s4: %s6</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NEXT</Tag>
+		<English>Next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_OUR_NEXT</Tag>
+		<English>Our next %s1: %s2 (%d3)</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1043,6 +1195,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PROGRESS_BEST_TECHNOLOGY</Tag>
 		<English>most advanced</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_WONDERS</Tag>
+		<English>most wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_TRADE_INCOME</Tag>
+		<English>highest trade income</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_BEST_SPECIALIST</Tag>
+		<English>most settled specialists</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1249,7 +1425,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NO_STATE_RELIGION</Tag>
+		<Tag>TXT_KEY_UHV_PROGRESS_AREA_NO_STATE_RELIGION</Tag>
 		<English>No %s2 civilizations in %s1</English>
 		<French></French>
 		<German></German>
@@ -1331,6 +1507,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_RELIGION</Tag>
 		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_MINORITY</Tag>
+		<English>%s1 with a %s2 minority</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1488,12 +1672,180 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_DIFFERENT_SPECIALIST</Tag>
+		<English>Different specialists</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_HEALTHIEST_TURNS</Tag>
+		<English>Turns at highest life expectancy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_SHRINE_INCOME</Tag>
+		<English>Shrine income from %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_PEACE_TURNS</Tag>
+		<English>Turns at peace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_HAPPIEST_TURNS</Tag>
+		<English>Turns at highest approval rating</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_ALL_ATTITUDE</Tag>
+		<English>%s1 or better relations: %d2 / %d3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NO_STATE_RELIGION</Tag>
+		<English>%s1 civilizations: %d2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_POPE_TURNS</Tag>
+		<English>Turns as pope</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_STATE_RELIGION_PERCENT</Tag>
+		<English>%s1 civilizations: %d2 / %d3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_STATE_RELIGION_PERCENT_OR_SECULAR</Tag>
+		<English>%s1 or secular civilizations: %d2 / %d3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_NO_RELIGION_PERCENT</Tag>
+		<English>Cities with a religion: %d1 / %d2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_UNIT_LEVEL_COUNT</Tag>
+		<English>Units of level %s1 or higher</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_TERRAIN_COUNT</Tag>
+		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_PEAK_COUNT</Tag>
+		<English>Peaks</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_FEATURE_COUNT</Tag>
+		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_GOLD_PERCENT</Tag>
+		<English>Gold: %d1 / %d2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_COMBAT_FOOD</Tag>
+		<English>Food from combat</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_SACRIFICE_HAPPINESS</Tag>
+		<English>Sacrificed slaves</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_CELEBRATE_TURNS</Tag>
+		<English>Turns of celebration</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- GOAL DESCRIPTIONS -->
 	
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BUILDING_COUNT</Tag>
 		<English>control %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUILDING_COUNT_WORLD</Tag>
+		<English>make sure that there are %s1 in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUILDING_COUNT_SECULAR</Tag>
+		<English>make sure that there are %s1 in secular civilizations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1612,6 +1964,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_WORLD_PERCENT_RELIGION</Tag>
+		<English>make sure that %s1%% of the world is controlled by %s3 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CITY_COUNT</Tag>
 		<English>control %s1</English>
 		<French></French>
@@ -1661,7 +2021,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT</Tag>
-		<English>settle %s1</English>
+		<English>settle %s1 in your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT_RELIGION</Tag>
+		<English>make sure that %s1 are settled in %s3 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT_SECULAR</Tag>
+		<English>make sure that %s1 are settled in secular civilizations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1780,6 +2156,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_TECH_PLAYERS</Tag>
+		<English>make the %s1 most advanced civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_RELIGION_SPREAD_PERCENT</Tag>
 		<English>spread %s1 of the world's population</English>
 		<French></French>
@@ -1836,7 +2220,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_STATE_RELIGION</Tag>
+		<Tag>TXT_KEY_UHV_AREA_NO_STATE_RELIGION</Tag>
 		<English>allow no %s1 civilizations in %s2</English>
 		<French></French>
 		<German></German>
@@ -2155,8 +2539,232 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_DIFFERENT_SPECIALIST</Tag>
+		<English>settle %s1 great people in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JEWISH_MINORITY_ATTITUDES</Tag>
+		<English>have %s2 relations with %s1 civilizations with a Jewish minority</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_CULTURE_CITIES</Tag>
+		<English>control the %s1 most cultured cities in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NO_STATE_RELIGION</Tag>
+		<English>make sure there are no %s1 civilizations in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POPE_TURNS</Tag>
+		<English>be the Pope for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HALF_PROTESTANT_OR_SECULAR</Tag>
+		<English>make sure at least half of all civilizations are Protestant or Secular</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_POPULATION_CITIES</Tag>
+		<English>control the %s1 largest cities in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PEACE_TURNS</Tag>
+		<English>be at peace for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAPPIEST_TURNS</Tag>
+		<English>have the highest approval rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ALL_ATTITUDE</Tag>
+		<English>have %s1 or better relations with all civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRIENDLY_RELATIONS</Tag>
+		<English>have friendly relations with %s1 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_UNIT_COMBAT_COUNT</Tag>
+		<English>control an army of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HEALTHIEST_TURNS</Tag>
+		<English>have the highest life expectancy rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SHRINE_INCOME</Tag>
+		<English>have an income of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HALF_NO_RELIGION</Tag>
+		<English>never allow more than half of your cities to have a religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ALL_CATHEDRALS</Tag>
+		<English>control the cathedrals of all religions</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_WONDER_CITY</Tag>
+		<English>make %s2 the city with the most wonders in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_UNIT_LEVEL_COUNT</Tag>
+		<English>have %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TERRAIN_COUNT</Tag>
+		<English>control %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_TRADE_INCOME_CITY</Tag>
+		<English>make %s2 the city with the highest trade income in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PEAK_COUNT</Tag>
+		<English>control %s1 peaks</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FEATURE_COUNT</Tag>
+		<English>control %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HALF_WORLD_GOLD</Tag>
+		<English>control at least half as much gold as all other civilizations combined</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BEST_SPECIALIST_CITY</Tag>
+		<English>make %s2 the city with the most settled great people in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FIRST_GREAT_PEOPLE</Tag>
+		<English>be the first to create three different kinds of great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COMBAT_FOOD</Tag>
+		<English>gain %s1 food from combat</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SACRIFICE_HAPPINESS</Tag>
+		<English>sacrifice %s1 slaves</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CELEBRATE_TURNS</Tag>
+		<English>have your cities celebrate for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
-	<!-- GOAL TITLES -->
+	<!-- HISTORICAL GOAL TITLES -->
 	
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TITLE_AME1</Tag>
@@ -3356,6 +3964,183 @@
 		<German>Danegeld</German>
 		<Italian>Danegeld</Italian>
 		<Spanish>Danegeld</Spanish>
+	</TEXT>
+	
+	<!-- RELIGIOUS GOAL TITLES -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_JUD1</Tag>
+		<English>Chosen People</English>
+		<French>Peuple &#233;lu</French>
+		<German>Erw&#228;hltes Volk</German>
+		<Italian>Chosen People</Italian>
+		<Spanish>Chosen People</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_JUD2</Tag>
+		<English>Promised Land</English>
+		<French>Terre promise</French>
+		<German>Gelobtes Land</German>
+		<Italian>Promised Land</Italian>
+		<Spanish>Promised Land</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_JUD3</Tag>
+		<English>Diaspora</English>
+		<French>Diaspora</French>
+		<German>Diaspora</German>
+		<Italian>Diaspora</Italian>
+		<Spanish>Diaspora</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_BUD1</Tag>
+		<English>Sila</English>
+		<French>Sila</French>
+		<German>Sila</German>
+		<Italian>Sila</Italian>
+		<Spanish>Sila</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_BUD2</Tag>
+		<English>Nirvana</English>
+		<French>Nirvana</French>
+		<German>Nirwana</German>
+		<Italian>Nirvana</Italian>
+		<Spanish>Nirvana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_BUD3</Tag>
+		<English>Middle Way</English>
+		<French>Voie du milieu</French>
+		<German>Mittlerer Weg</German>
+		<Italian>Middle Way</Italian>
+		<Spanish>Middle Way</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CAT1</Tag>
+		<English>Holy See</English>
+		<French>Saint-Si&#232;ge</French>
+		<German>Heiliger Stuhl</German>
+		<Italian>Holy See</Italian>
+		<Spanish>Holy See</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CAT2</Tag>
+		<English>Holy Land</English>
+		<French>Terre sainte</French>
+		<German>Heiliges Land</German>
+		<Italian>Holy Land</Italian>
+		<Spanish>Holy Land</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CAT3</Tag>
+		<English>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</English>
+		<French>Sainte mission : Faire en sorte qu'au moins 50% du monde soit contr&#244;l&#233; par des civilisations catholiques</French>
+		<German>Heilige Mission: Stellen Sie sicher, dass mindestens 50% des Weltgebiets von katholischen Zivilisationen kontrolliert wird</German>
+		<Italian>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Italian>
+		<Spanish>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CON1</Tag>
+		<English>Harmony</English>
+		<French>Harmonie</French>
+		<German>Harmonie</German>
+		<Italian>Harmony</Italian>
+		<Spanish>Harmony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CON2</Tag>
+		<English>Ritual</English>
+		<French>Rituel</French>
+		<German>Ritual</German>
+		<Italian>Ritual</Italian>
+		<Spanish>Ritual</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_CON3</Tag>
+		<English>Loyalty</English>
+		<French>Loyaut&#233;</French>
+		<German>Loyalit&#228;t</German>
+		<Italian>Loyalty</Italian>
+		<Spanish>Loyalty</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_HIN1</Tag>
+		<English>Varna</English>
+		<French>Varna</French>
+		<German>Varna</German>
+		<Italian>Varna</Italian>
+		<Spanish>Varna</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_HIN2</Tag>
+		<English>Artha</English>
+		<French>Artha</French>
+		<German>Artha</German>
+		<Italian>Artha</Italian>
+		<Spanish>Artha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_HIN3</Tag>
+		<English>Kama</English>
+		<French>Kama</French>
+		<German>Kama</German>
+		<Italian>Kama</Italian>
+		<Spanish>Kama</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ISL1</Tag>
+		<English>Shahada</English>
+		<French>Chahada</French>
+		<German>Schahada</German>
+		<Italian>Shahada</Italian>
+		<Spanish>Shahada</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ISL2</Tag>
+		<English>Hajj</English>
+		<French>Hajj</French>
+		<German>Hadsch</German>
+		<Italian>Hajj</Italian>
+		<Spanish>Hajj</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ISL3</Tag>
+		<English>Jihad</English>
+		<French>Djihad</French>
+		<German>Dschihad</German>
+		<Italian>Jihad</Italian>
+		<Spanish>Jihad</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ORT1</Tag>
+		<English>Patriarchates</English>
+		<French>Les patriarcats</French>
+		<German>Patriarchate</German>
+		<Italian>Patriarchates</Italian>
+		<Spanish>Patriarchates</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ORT2</Tag>
+		<English>Iconography</English>
+		<French>Iconographie</French>
+		<German>Ikonographie</German>
+		<Italian>Iconography</Italian>
+		<Spanish>Iconography</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TITLE_ORT3</Tag>
+		<English>Communion</English>
+		<French>Communion</French>
+		<German>Kommunion</German>
+		<Italian>Communion</Italian>
+		<Spanish>Communion</Spanish>
 	</TEXT>
 	
 	

@@ -14,6 +14,8 @@ capital_ = capital
 
 POSSIBLE, SUCCESS, FAILURE = range(3)
 
+lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
+
 
 def getnumargs(func):
 	if ismethod(func):
@@ -259,6 +261,22 @@ class EventHandlers(object):
 				func(other, iGold)
 		
 		return combatGold
+	
+	def combatFood(self, func):
+		def combatFood(other, args):
+			iPlayer, unit, iFood = args
+			if self.applicable(other, iPlayer):
+				func(other, iFood)
+		
+		return combatFood
+	
+	def sacrificeHappiness(self, func):
+		def sacrificeHappiness(other, args):
+			iPlayer, city = args
+			if self.applicable(other, iPlayer):
+				func(other)
+		
+		return sacrificeHappiness
 				
 	
 handlers = EventHandlers.ours()
@@ -288,12 +306,12 @@ class Deferred(object):
 	def __str__(self):
 		return self.name()
 	
-	def named(self, name):
-		self._name = "TXT_KEY_UHV_NAME_" + name
+	def named(self, name, *args):
+		self._name = text("TXT_KEY_UHV_NAME_" + name, *args)
 		return self
 	
 	def name(self):
-		return text(self._name)
+		return self._name
 	
 	def area(self):
 		if self.tile:
@@ -305,16 +323,20 @@ def capital():
 	return Deferred(CyCity, lambda p: capital_(p)).named("CAPITAL")
 
 def city(*tile):
-	return Deferred(CyCity, lambda p: city_(*tile), tile)
+	tile = duplefy(*tile)
+	return Deferred(CyCity, lambda p: city_(tile), tile)
 	
-def holyCity():
+def holyCity(iReligion = None):
 	def getHolyCity(iPlayer):
 		iStateReligion = player(iPlayer).getStateReligion()
 		if iStateReligion < 0:
 			return None
 		return game.getHolyCity(iStateReligion)
-		
-	return Deferred(CyCity, getHolyCity).named("HOLY_CITY")
+	
+	if iReligion is None:
+		return Deferred(CyCity, getHolyCity).named("HOLY_CITY")
+	
+	return Deferred(CyCity, getHolyCity).named("RELIGION_HOLY_CITY", text(infos.religion(iReligion).getAdjectiveKey()))
 
 def wonder(iWonder):
 	return Deferred(CyCity, lambda p: getBuildingCity(iWonder))
@@ -348,7 +370,9 @@ class Aggregate(object):
 		self.generator = variadic(*items)
 		
 		self._items = None
-		self.name = None
+		self._name = None
+		
+		self._join = text("TXT_KEY_AND")
 	
 	def __iter__(self):
 		return iter(self.items)
@@ -360,6 +384,10 @@ class Aggregate(object):
 		return item in self.items
 	
 	@property
+	def name(self):
+		return self._name
+	
+	@property
 	def items(self):
 		if self._items is None:
 			self._items = list(self.generator)
@@ -369,22 +397,21 @@ class Aggregate(object):
 		return self.aggregate([func(*concat(args, item)) for item in self.items])
 	
 	def format(self, formatter):
-		if self.name:
-			return self.name
-			
-		def final_formatter(item):
-			if not isinstance(item, Plots):
-				return plural(formatter(item))
-			return formatter(item)
+		if self._name:
+			return self._name
 		
-		return format_separators_shared(self.items, ",", text("TXT_KEY_AND"), final_formatter)
+		return format_separators_shared(self.items, ",", self._join, formatter)
 	
 	def named(self, key):
-		self.name = text("TXT_KEY_UHV_%s" % key)
+		self._name = text("TXT_KEY_UHV_%s" % key)
+		return self
+	
+	def join(self, key):
+		self._join = text("TXT_KEY_%s" % key)
 		return self
 	
 	def isTotal(self):
-		return not self.name and len(self.items) > 1
+		return not self._name and len(self.items) > 1
 
 
 def avg_(iterable):
@@ -408,11 +435,14 @@ def religious_buildings(func):
 def wonders():
 	return sum(iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding)).named("WONDERS")
 
+def pagan_wonders():
+	return sum(iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding) and infos.building(iBuilding).isPagan()).named("PAGAN_WONDERS")
+
 def happiness_resources():
 	return (iBonus for iBonus in infos.bonuses() if infos.bonus(iBonus).getHappiness() > 0)
 
 def great_people():
-	return sum(iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy).named("GREAT_PEOPLE")
+	return sum(*lGreatPeople).named("GREAT_PEOPLE")
 
 
 class NamedList(object):
@@ -682,6 +712,8 @@ class ArgumentProcessor(object):
 	
 		if issubclass(type, CvInfoBase):
 			return isinstance(value, (int, Aggregate))
+		elif issubclass(type, UnitCombatTypes):
+			return isinstance(value, (UnitCombatTypes, Aggregate))
 		elif issubclass(type, Plots):
 			return isinstance(value, (Plots, Aggregate))
 		return isinstance(value, type)
@@ -767,6 +799,8 @@ class ArgumentProcessor(object):
 			return lambda city: city and city.getName() or text("TXT_KEY_UHV_NO_CITY")
 		if issubclass(type, AttitudeTypes):
 			return lambda info: infos.attitude(info).getDescription().lower()
+		if issubclass(type, UnitCombatTypes):
+			return lambda info: infos.unitCombat(info).getDescription().lower()
 		if issubclass(type, CvCultureLevelInfo):
 			return lambda info: infos.cultureLevel(info).getText().lower()
 		if issubclass(type, CvBuildingInfo):
@@ -787,7 +821,8 @@ class ArgumentProcessor(object):
 		if isinstance(value, Deferred):
 			return str(value)
 		if isinstance(value, Aggregate):
-			return value.format(formatter)
+			aggregate_formatter = issubclass(type, (Plots, CvFeatureInfo)) and formatter or (lambda item: plural(formatter(item)))
+			return value.format(aggregate_formatter)
 		
 		return formatter(value)
 	
@@ -816,8 +851,8 @@ class ArgumentProcessor(object):
 		
 		return capitalize(progress)
 	
-	def format(self, key, arguments):
-		return text(key, self.format_objectives(arguments.objectives), self.format_subject(arguments.subject))
+	def format(self, key, arguments, *additional_args):
+		return text(key, self.format_objectives(arguments.objectives), self.format_subject(arguments.subject), *additional_args)
 	
 	def type_values(self, arguments, type):
 		values = []
@@ -895,6 +930,8 @@ class GoalBuilder(object):
 
 
 class BaseGoal(object):
+
+	PLAYER, RELIGION, SECULAR, WORLD = range(4)
 
 	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
 	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
@@ -1023,6 +1060,8 @@ class BaseGoal(object):
 		
 		self.areas = self.process_areas(self.arguments)
 		
+		self.type = self.PLAYER
+		
 		self.init()
 		
 	def init(self):
@@ -1097,11 +1136,32 @@ class BaseGoal(object):
 	def condition(self, *objectives):
 		raise NotImplementedError()
 	
+	def valid_player(self, iPlayer):
+		if self.type == self.PLAYER:
+			return self.iPlayer == iPlayer
+		elif self.type == self.RELIGION:
+			return self._player.getStateReligion() >= 0 and self._player.getStateReligion() == player(iPlayer).getStateReligion()
+		elif self.type == self.SECULAR:
+			return not self._player.isStateReligion() and not player(iPlayer).isStateReligion()
+		elif self.type == self.WORLD:
+			return True
+		return False
+	
+	def religion(self):
+		self.type = self.RELIGION
+		return self
+	
+	def secular(self):
+		self.type = self.SECULAR
+		return self
+	
+	def world(self):
+		self.type = self.WORLD
+		return self
+	
 	def named(self, key):
-		if self.types:
-			self._description = self.types.format("TXT_KEY_UHV_%s" % key, self.arguments)
-		else:
-			self._description = text("TXT_KEY_UHV_%s" % key)
+		full_key = "TXT_KEY_UHV_%s" % key
+		self._description = self.types and self.types.format(full_key, self.arguments) or text(full_key)
 		return self
 	
 	def description(self):
@@ -1299,7 +1359,7 @@ class Condition(BaseGoal):
 		return cls.desc("ROUTE").progr("ROUTE").subject(Plots).objective(CvRouteInfo).plots(equals(CyPlot.getRouteType)).func(progress_text).turnly.subclass("Route")
 		
 	@classproperty
-	def noStateReligion(cls):
+	def areaNoStateReligion(cls):
 		def no_state_religion(self, city, iReligion):
 			return player(city).getStateReligion() != iReligion
 		
@@ -1307,9 +1367,9 @@ class Condition(BaseGoal):
 			return text(infos.religion(identifier).getAdjectiveKey())
 		
 		def progress_text(self, area, iReligion):
-			return text("TXT_KEY_UHV_PROGRESS_NO_STATE_RELIGION", area.name(), format_religion(iReligion))
+			return text("TXT_KEY_UHV_PROGRESS_AREA_NO_STATE_RELIGION", area.name(), format_religion(iReligion))
 	
-		return cls.desc("NO_STATE_RELIGION").format(options.type(CvReligionInfo, format_religion)).subject(Plots).objective(CvReligionInfo).cities(no_state_religion).func(progress_text).subclass("NoStateReligion")
+		return cls.desc("AREA_NO_STATE_RELIGION").format(options.type(CvReligionInfo, format_religion)).subject(Plots).objective(CvReligionInfo).cities(no_state_religion).func(progress_text).subclass("AreaNoStateReligion")
 	
 	@classproperty
 	def cultureCovered(cls):
@@ -1403,6 +1463,122 @@ class Condition(BaseGoal):
 			return text(self._progress, self.value(), self.required())
 		
 		return cls.progr("MORE_CULTURE").func(init, than, condition, display, value, required, progress).subclass("MoreCulture")
+	
+	@classproperty
+	def allAttitude(cls):
+		def condition(self, iAttitude):
+			return self.value(iAttitude) >= self.required()
+		
+		def display(self, iAttitude):
+			return "%d / %d" % (self.value(iAttitude), self.required())
+	
+		def value(self, iAttitude):
+			return players.major().alive().without(self.iPlayer).where(lambda p: player(p).AI_getAttitude(self.iPlayer) >= iAttitude).count()
+		
+		def required(self):
+			return players.major().alive().without(self.iPlayer).count()
+		
+		def progress_text(self, iAttitude):
+			return text(self._progress, infos.attitude(iAttitude).getText(), self.value(iAttitude), self.required())
+		
+		return cls.desc("ALL_ATTITUDE").progr("ALL_ATTITUDE").objective(AttitudeTypes).func(condition, display, value, required, progress_text).subclass("AllAttitude")
+	
+	@classproperty
+	def noStateReligion(cls):
+		def condition(self, iReligion):
+			return self.value(iReligion) == 0
+		
+		def display(self, iReligion):
+			return str(self.value(iReligion))
+		
+		def value(self, iReligion):
+			return players.major().alive().religion(iReligion).count()
+		
+		def progress_text(self, iReligion):
+			return text(self._progress, text(infos.religion(iReligion).getAdjectiveKey()), self.value(iReligion))
+		
+		def format_religion(identifier):
+			return text(infos.religion(identifier).getAdjectiveKey())
+		
+		return cls.desc("NO_STATE_RELIGION").progr("NO_STATE_RELIGION").format(options.type(CvReligionInfo, format_religion)).objective(CvReligionInfo).func(condition, display, value, progress_text).subclass("NoStateReligion")
+	
+	@classproperty
+	def stateReligionPercent(cls):
+		def init(self):
+			self.bSecular = False
+		
+		def orSecular(self):
+			self.bSecular = True
+			return self
+	
+		def condition(self, iReligion, iPercent):
+			return self.value(iReligion) >= self.required(iPercent)
+		
+		def display(self, iReligion, iPercent):
+			return "%d / %d" % (self.value(iReligion), self.required(iPercent))
+		
+		def value(self, iReligion):
+			iCount = players.major().alive().religion(iReligion).count()
+			
+			if self.bSecular:
+				iCount += players.major().alive().where(lambda p: not player(p).isStateReligion()).count()
+			
+			return iCount
+		
+		def required(self, iPercent):
+			return players.major().alive().count() * iPercent / 100
+		
+		def progress_text(self, iReligion, iPercent):
+			key = self._progress
+			if self.bSecular:
+				key += "_OR_SECULAR"
+			return text(key, text(infos.religion(iReligion).getAdjectiveKey()), self.value(iReligion), self.required(iPercent))
+		
+		return cls.desc("STATE_RELIGION_PERCENT").progr("STATE_RELIGION_PERCENT").objectives(CvReligionInfo, int).func(init, orSecular, condition, display, value, required, progress_text).subclass("StateReligionPercent")
+	
+	@classproperty
+	def noReligionPercent(cls):
+		def condition(self, iPercent):
+			return self.value() <= self.required(iPercent)
+			
+		def display(self, iPercent):
+			return "%d / %d" % (self.value(), self.count())
+		
+		def value(self):
+			return cities.owner(self.iPlayer).where(lambda city: city.getReligionCount() > 0).count()
+		
+		def required(self, iPercent):
+			return self.count() * iPercent / 100
+			
+		def count(self):
+			return cities.owner(self.iPlayer).count()
+		
+		def progress_text(self, iPercent):
+			return text(self._progress, self.value(), self.count())
+		
+		return cls.progr("NO_RELIGION_PERCENT").objectives(int).func(condition, display, value, required, count, progress_text).subclass("NoReligionPercent")
+	
+	@classproperty
+	def goldPercent(cls):
+		def condition(self, iPercent):
+			return self.value() >= self.required(iPercent)
+		
+		def display(self, iPercent):
+			return "%d / %d" % (self.value(), self.sum())
+		
+		def value(self):
+			return self._player.getGold()
+			
+		def sum(self):
+			return players.major().alive().without(self.iPlayer).sum(lambda p: player(p).getGold())
+		
+		def required(self, iPercent):
+			return self.sum() * iPercent / 100
+		
+		def progress_text(self, iPercent):
+			return text(self._progress, self.value(), self.sum())
+		
+		return cls.progr("GOLD_PERCENT").objectives(int).func(condition, display, value, sum, required, progress_text).subclass("GoldPercent")
 	
 
 class Count(BaseGoal):
@@ -1516,7 +1692,7 @@ class Count(BaseGoal):
 	@classmethod
 	def citiesSum(cls, func):
 		def value_function(self, *objectives):
-			return cities.owner(self.iPlayer).sum(lambda city: func(city, *objectives))
+			return cities.all().where(lambda city: self.valid_player(city.getOwner())).sum(lambda city: func(city, *objectives))
 		
 		return cls.func(value_function)
 	
@@ -1610,11 +1786,22 @@ class Count(BaseGoal):
 		
 		def checkCityAcquired(self, *args):
 			self.check()
+			
+		def player_buildings(self, iPlayer, iBuilding):
+			return player(iPlayer).countNumBuildings(unique_building(iPlayer, iBuilding))
 		
 		def value_function(self, iBuilding):
-			return self._player.countNumBuildings(unique_building(self.iPlayer, iBuilding))
+			return players.major().alive().where(self.valid_player).sum(lambda p: self.player_buildings(p, iBuilding))
+		
+		def world(self):
+			self._description = self.types.format("TXT_KEY_UHV_BUILDING_COUNT_WORLD", self.arguments)
+			return super(type(self), self).world()
+		
+		def secular(self):
+			self._description = self.types.format("TXT_KEY_UHV_BUILDING_COUNT_SECULAR", self.arguments)
+			return super(type(self), self).secular()
 	
-		return cls.desc("BUILDING_COUNT").format(options.noSingularCount(isWonder)).objective(CvBuildingInfo).func(value_function, base).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
+		return cls.desc("BUILDING_COUNT").format(options.noSingularCount(isWonder)).objective(CvBuildingInfo).func(value_function, base, player_buildings, world, secular).handle("buildingBuilt", checkBuildingBuilt).handle("cityAcquired", checkCityAcquired).subclass("BuildingCount")
 	
 	@classproperty
 	def culture(cls):
@@ -1656,11 +1843,25 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def unit(cls):
-		def value_function(self, objective):
-			return self._player.getUnitClassCount(infos.unit(objective).getUnitClassType())
+		def value_function(self, iUnit):
+			return self._player.getUnitClassCount(infos.unit(iUnit).getUnitClassType())
 		
 		return cls.desc("UNIT_COUNT").objective(CvUnitInfo).func(value_function).turnly.subclass("UnitCount")
+	
+	@classproperty
+	def unitCombat(cls):
+		def value_function(self, iUnitCombat):
+			return units.owner(self.iPlayer).combat(iUnitCombat).where(lambda unit: self._player.canTrain(unit.getUnitType(), False, False)).count()
 		
+		return cls.desc("UNIT_COMBAT_COUNT").objective(UnitCombatTypes).func(value_function).turnly.subclass("UnitCombatCount")
+	
+	@classproperty
+	def unitLevel(cls):
+		def value_function(self, iUnitLevel):
+			return units.owner(self.iPlayer).where(lambda unit: unit.getLevel() >= iUnitLevel).count()
+		
+		return cls.desc("UNIT_LEVEL_COUNT").format(options.objective("UNITS_OF_LEVEL").number_word().singular()).progr("UNIT_LEVEL_COUNT").objective(int).func(value_function).turnly.subclass("UnitLevelCount")
+	
 	@classproperty
 	def numCities(cls):
 		def owned(self, cities):
@@ -1738,7 +1939,16 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def specialist(cls):
-		return cls.desc("SPECIALIST_COUNT").objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).turnly.subclass("SpecialistCount")
+		def religion(self, iReligion=None):
+			if iReligion is not None:
+				self._description = self.types.format("TXT_KEY_UHV_SPECIALIST_COUNT_RELIGION", self.arguments, text(infos.religion(iReligion).getAdjectiveKey()))
+			return super(type(self), self).religion()
+		
+		def secular(self):
+			self._description = self.types.format("TXT_KEY_UHV_SPECIALIST_COUNT_SECULAR", self.arguments)
+			return super(type(self), self).secular()
+	
+		return cls.desc("SPECIALIST_COUNT").objective(CvSpecialistInfo).citiesSum(CyCity.getFreeSpecialistCount).func(religion, secular).turnly.subclass("SpecialistCount")
 	
 	@classproperty
 	def averageCulture(cls):
@@ -1788,6 +1998,7 @@ class Count(BaseGoal):
 		def init(self):
 			self.lCivs = []
 			self.iStateReligion = -1
+			self.iMinorityReligion = -1
 			self.bCommunist = False
 			self.bIndependent = False
 		
@@ -1797,6 +2008,10 @@ class Count(BaseGoal):
 		
 		def religion(self, iStateReligion):
 			self.iStateReligion = iStateReligion
+			return self
+		
+		def minority(self, iMinorityReligion):
+			self.iMinorityReligion = iMinorityReligion
 			return self
 		
 		def communist(self):
@@ -1816,6 +2031,8 @@ class Count(BaseGoal):
 				return False
 			if self.iStateReligion >= 0 and player(iPlayer).getStateReligion() != self.iStateReligion:
 				return False
+			if self.iMinorityReligion >= 0 and not cities.owner(iPlayer).religion(self.iMinorityReligion):
+				return False
 			if self.bCommunist and not isCommunist(iPlayer):
 				return False
 			
@@ -1825,6 +2042,8 @@ class Count(BaseGoal):
 			base_text = text(self._progress, infos.attitude(remainder[0]).getDescription())
 			civs_text = text("TXT_KEY_UHV_PROGRESS_ATTITUDE_CIVS")
 			
+			if self.iMinorityReligion >= 0:
+				civs_text = text("TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_MINORITY", civs_text, text(infos.religion(self.iMinorityReligion).getAdjectiveKey()))
 			if self.lCivs:
 				civs_text = text("TXT_KEY_UHV_PROGRESS_ATTITUDE_IN_AREA", civs_text, str(self.lCivs))
 			if self.bCommunist:
@@ -1838,7 +2057,7 @@ class Count(BaseGoal):
 				return text("TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH", base_text, civs_text)
 			return base_text
 		
-		return cls.progr("ATTITUDE_COUNT").subject(AttitudeTypes).format(options.singular().number_word()).func(init, civs, religion, communist, independent, progress_text_format).players(valid).turnly.subclass("AttitudeCount")
+		return cls.progr("ATTITUDE_COUNT").subject(AttitudeTypes).format(options.singular().number_word()).func(init, civs, religion, minority, communist, independent, progress_text_format).players(valid).turnly.subclass("AttitudeCount")
 	
 	@classproperty
 	def vassals(cls):
@@ -1886,10 +2105,48 @@ class Count(BaseGoal):
 	
 		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
 
+	@classproperty
+	def differentSpecialist(cls):
+		def different_specialist(city):
+			return count(1 for iSpecialist in lGreatPeople if city.getFreeSpecialistCount(iSpecialist) > 0)
+	
+		return cls.desc("DIFFERENT_SPECIALIST").format(options.number_word()).progr("DIFFERENT_SPECIALIST").subject(CyCity).city(different_specialist).subclass("DifferentSpecialist")
+
+	@classproperty
+	def shrineIncome(cls):
+		def value_function(self, iReligion):
+			return cities.owner(self.iPlayer).sum(lambda city: city.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_GOLD, shrine(iReligion)))
+		
+		def format_shrine(iReligion):
+			return text("TXT_KEY_UHV_RELIGION_SHRINE", text(infos.religion(iReligion).getAdjectiveKey()))
+		
+		return cls.desc("SHRINE_INCOME").format(options.type(CvReligionInfo, format_shrine).objective("GOLD_FROM")).progr("SHRINE_INCOME").objective(CvReligionInfo).func(value_function).subclass("ShrineIncome")
+	
+	@classproperty
+	def terrain(cls):
+		def value_function(self, iTerrain):
+			return plots.owner(self.iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
+		
+		return cls.desc("TERRAIN_COUNT").format(options.objective("TILES").singular()).progr("TERRAIN_COUNT").objective(CvTerrainInfo).func(value_function).subclass("TerrainCount")
+	
+	@classproperty
+	def peaks(cls):
+		def value_function(self):
+			return plots.owner(self.iPlayer).where(lambda plot: plot.isPeak()).count()
+		
+		return cls.desc("PEAK_COUNT").progr("PEAK_COUNT").func(value_function).subclass("PeakCount")
+	
+	@classproperty
+	def feature(cls):
+		def value_function(self, iFeature):
+			return plots.owner(self.iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
+		
+		return cls.desc("FEATURE_COUNT").format(options.objective("TILES").singular()).progr("FEATURE_COUNT").objective(CvFeatureInfo).func(value_function).subclass("FeatureCount")
+
 
 class Percentage(Count):
 
-	SELF, VASSALS, ALLIES = range(3)
+	SELF, VASSALS, ALLIES, RELIGION = range(4)
 	
 	default_included = SELF
 
@@ -1923,6 +2180,8 @@ class Percentage(Count):
 			return players.vassals(self.iPlayer).including(self.iPlayer)
 		elif self.included == self.ALLIES:
 			return players.allies(self.iPlayer)
+		elif self.included == self.RELIGION:
+			return players.all().religion(self._player.getStateReligion())
 		
 		raise Exception("self.included set to invalid value")
 		
@@ -1935,6 +2194,10 @@ class Percentage(Count):
 	def includeVassals(self):
 		self._description = replace_first(self._description, "TXT_KEY_UHV_OR_VASSALISE")
 		self.included = self.VASSALS
+		return self
+	
+	def religion(self):
+		self.included = self.RELIGION
 		return self
 	
 	@classproperty
@@ -1960,7 +2223,12 @@ class Percentage(Count):
 		def total(self):
 			return map.getLandPlots()
 		
-		return cls.desc("WORLD_PERCENT").progr("WORLD_PERCENT").func(value_function, total).turnly.subclass("WorldPercent")
+		def religion(self, iReligion=None):
+			if iReligion is not None:
+				self._description = self.types.format("TXT_KEY_UHV_WORLD_PERCENT_RELIGION", self.arguments, text(infos.religion(iReligion).getAdjectiveKey()))
+			return super(type(self), self).religion()
+		
+		return cls.desc("WORLD_PERCENT").progr("WORLD_PERCENT").func(value_function, total, religion).turnly.subclass("WorldPercent")
 	
 	@classproperty
 	def religionSpread(cls):
@@ -2012,15 +2280,29 @@ class Trigger(Condition):
 	def __init__(self, *arguments):
 		super(Trigger, self).__init__(*arguments)
 		
-		self.dCondition = dict((self.process_objectives(arguments), False) for arguments in self.arguments)
+		self.dCondition = dict((self.process_objectives(arguments), None) for arguments in self.arguments)
 	
 	def condition(self, *arguments):
-		return self.dCondition[self.process_objectives(arguments)]
+		return self.completed(*arguments)
+		
+	def key(self, *arguments):
+		return self.process_objectives(concat(self.arguments.subject, arguments))
+	
+	def completed(self, *arguments):
+		return bool(self.dCondition[self.process_objectives(arguments)])
+	
+	def completable(self, *arguments):
+		return self.dCondition[self.key(*arguments)] is None
 		
 	def complete(self, *arguments):
-		arguments = concat(self.arguments.subject, arguments)
-		self.dCondition[self.process_objectives(arguments)] = True
-		self.check()
+		if self.completable(*arguments):
+			self.dCondition[self.key(*arguments)] = True
+			self.check()
+	
+	def block(self, *arguments):
+		if self.completable(*arguments):
+			self.dCondition[self.key(*arguments)] = False
+			self.expire()
 	
 	def hashable(self, item):
 		if isinstance(item, CyCity):
@@ -2158,8 +2440,24 @@ class Trigger(Condition):
 			return False
 		
 		return cls.desc("ENTER_ERA").objective(CvEraInfo).func(init, before).handle("techAcquired", checkEnterEra).expired("techAcquired", checkExpire).func(single_objective_progress).subclass("EnterEra")
+	
+	@classproperty
+	def firstGreatPerson(cls):
+		def specialist(unit):
+			return next(iSpecialist for iSpecialist in infos.specialists() if infos.unit(unit).getGreatPeoples(iSpecialist))
+			
+		def checkGreatPersonBorn(self, unit):
+			iGreatSpecialist = specialist(unit)
+			if iGreatSpecialist in self.values:
+				self.complete(iGreatSpecialist)
 		
+		def checkExpire(self, unit):
+			iGreatSpecialist = specialist(unit)
+			if iGreatSpecialist in self.values:
+				self.block(iGreatSpecialist)
 		
+		return cls.objective(CvSpecialistInfo).handle("greatPersonBorn", checkGreatPersonBorn).expired("greatPersonBorn", checkExpire).subclass("FirstGreatPerson")
+	
 
 class Track(Count):
 
@@ -2302,56 +2600,216 @@ class Track(Count):
 				self.increment()
 	
 		return cls.progr("ENSLAVE_COUNT").func(init, excluding).handle("enslave", incrementEnslaves).subclass("EnslaveCount")
+	
+	@classproperty
+	def healthiest(cls):
+		def calculateHealthRating(iPlayer):
+			if not player(iPlayer).isAlive():
+				return 0
+			
+			iHealthy = player(iPlayer).calculateTotalCityHealthiness()
+			iUnhealthy = player(iPlayer).calculateTotalCityUnhealthiness()
+			
+			return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
+	
+		def incrementHealthiest(self, *args):
+			if players.major().alive().maximum(calculateHealthRating) == self.iPlayer:
+				self.increment()
+		
+		return cls.desc("HEALTHIEST_TURNS").progr("HEALTHIEST_TURNS").handle("BeginPlayerTurn", incrementHealthiest).scaled.subclass("HealthiestTurns")
+	
+	@classproperty
+	def happiest(cls):
+		def calculateHappinessRating(iPlayer):
+			if not player(iPlayer).isAlive():
+				return 0
+			
+			iHappy = player(iPlayer).calculateTotalCityHappiness()
+			iUnhappy = player(iPlayer).calculateTotalCityUnhappiness()
+			
+			return (iHappy * 100) / max(1, iHappy + iUnhappy)
+		
+		def incrementHappiest(self, *args):
+			if players.major().alive().maximum(calculateHappinessRating) == self.iPlayer:
+				self.increment()
+		
+		return cls.desc("HAPPIEST_TURNS").progr("HAPPIEST_TURNS").handle("BeginPlayerTurn", incrementHappiest).scaled.subclass("HappiestTurns")
+	
+	@classproperty
+	def peace(cls):
+		def incrementAtPeace(self, *args):
+			if players.major().alive().none(lambda p: team(self.iPlayer).isAtWar(team(p).getID())):
+				self.increment()
+		
+		return cls.desc("PEACE_TURNS").progr("PEACE_TURNS").handle("BeginPlayerTurn", incrementAtPeace).scaled.subclass("PeaceTurns")
+	
+	@classproperty
+	def pope(cls):
+		def incrementPope(self, *args):
+			if game.getSecretaryGeneral(1) == self.iPlayer:
+				self.increment()
+		
+		return cls.desc("POPE_TURNS").progr("POPE_TURNS").handle("BeginPlayerTurn", incrementPope).scaled.subclass("PopeTurns")
+	
+	@classproperty
+	def combatFood(cls):
+		return cls.desc("COMBAT_FOOD").progr("COMBAT_FOOD").accumulated("combatFood").subclass("CombatFood")
+	
+	@classproperty
+	def sacrificeHappiness(cls):
+		return cls.desc("SACRIFICE_HAPPINESS").progr("SACRIFICE_HAPPINESS").incremented("sacrificeHappiness").subclass("SacrificeHappiness")
+	
+	@classproperty
+	def celebrate(cls):
+		def incrementCelebrate(self, *args):
+			iCelebratingCount = cities.owner(self.iPlayer).count(lambda city: city.isWeLoveTheKingDay())
+			self.accumulate(iCelebratingCount)
+		
+		return cls.desc("CELEBRATE_TURNS").progr("CELEBRATE_TURNS").handle("BeginPlayerTurn", incrementCelebrate).scaled.subclass("CelebrateTurns")
 
 
-class Best(BaseGoal):
+class BestEntities(BaseGoal):
+
+	@classmethod
+	def objectives(cls, *types):
+		types = list(types) + [int]
+		return cls.plain_objectives(*types)
+	
+	@classmethod
+	def plain_objectives(cls, *types):
+		cls.builder.objectives(types)
+		return cls
+	
+	@classmethod
+	def subclass(cls, name):
+		if not cls.builder.types.initialized():
+			cls.objectives()
+		return cls.format(options.number_word()).builder.create(cls, name)
 
 	def __init__(self, *arguments):
-		super(Best, self).__init__(*arguments)
-		
+		super(BestEntities, self).__init__(*arguments)
 		self._progress = self._progress or "TXT_KEY_UHV_PROGRESS_BEST"
-		
-	def metric_wrapper(self, item):
+	
+	def religion(self, iReligion=None):
+		if iReligion is not None:
+			self._description = replace_first(self._description, "TXT_KEY_UHV_MAKE_SURE") + " " + text("TXT_KEY_UHV_ARE_RELIGION", text(infos.religion(iReligion).getAdjectiveKey()))
+		return super(BestEntities, self).religion()
+	
+	def secular(self):
+		self._description = replace_first(self._description, "TXT_KEY_UHV_MAKE_SURE") + " " + text("TXT_KEY_UHV_ARE_SECULAR")
+		return super(BestEntities, self).secular()
+	
+	def metric_func(self, *arguments):
+		return lambda item: self.metric_wrapper(item, *arguments)
+	
+	def metric_wrapper(self, item, *arguments):
 		if item is None:
 			return 0
-		return self.metric(item)
+		if self.types.subject_type:
+			arguments = arguments[1:]
 		
-	def sorted(self, *arguments):
-		return self.entities().sort(lambda item: (self.metric_wrapper(item), int(self.valid(item, *arguments))), True)
+		if arguments and isinstance(arguments[0], Aggregate):
+			return arguments[0].eval(self.metric, item, *arguments[1:])
 		
-	def condition(self, *arguments):
-		first = self.sorted(*arguments).first()
-		return self.valid(first, *arguments)
-		
-	def progress_text(self, *arguments):
-		word = text(self._progress)
-		entity = text(self._entity_name)
-		return text("TXT_KEY_UHV_PROGRESS_BEST_GOAL_TEMPLATE", capitalize(word), entity, word, entity, *self.progress_values(*arguments))
+		return self.metric(item, *arguments)
 	
-	def progress_values(self, *arguments):
-		if self.condition(*arguments):
-			first, second = self.sorted(*arguments).take(2)
-		else:
-			sorted = self.sorted(*arguments)
-			first = sorted.first()
-			second = sorted.where(lambda item: self.valid(item, *arguments)).first()
+	def condition(self, *arguments):
+		arguments, iNumEntities = arguments[:-1], arguments[-1]
+		entities = self.sorted(*arguments).limit(iNumEntities)
+		return count(self.valid(entity, *arguments) for entity in entities if entity is not None) >= iNumEntities
+	
+	def sorted(self, *arguments):
+		return self.entities().sort(metrics(self.metric_func(*arguments), bool_metric(self.valid, *arguments)), True)
+	
+	def objective_progress_entities(self, *arguments):
+		remainder, iNumEntities = arguments[:-1], arguments[-1]
+		entities = self.sorted(*remainder).take(iNumEntities)
 		
-		return (
-			"%s (%d)" % (self.entity_name(first), self.metric_wrapper(first)), 
-			"%s (%d)" % (self.entity_name(second), self.metric_wrapper(second))
-		)
+		if self.condition(*arguments):
+			next_entity = self.sorted(*remainder).without(entities).first()
+		else:
+			next_entity = self.sorted(*remainder).without(entities).where(lambda entity: self.valid(entity, *remainder)).first()
+		
+		entities.append(next_entity)
+		return entities
+	
+	def rank_word(self, rank):
+		if rank > 0:
+			return "%s %s" % (capitalize(ordinal_word(rank+1)), text(self._progress))
+		return capitalize(text(self._progress))
+	
+	def objective_progress(self, *arguments):
+		entities = self.objective_progress_entities(*arguments)
+		entities, next_entity = entities[:-1], entities[-1]
+		
+		ranks = [
+			"%s %s: %s (%d)" % 
+			(self.format_progress_indicator(self.valid(entity, *arguments[:-1])), 
+			 self.rank_word(rank), 
+			 self.entity_name(entity), 
+			 self.metric_wrapper(entity, *arguments[:-1])) 
+			for rank, entity in enumerate(entities) 
+			if rank == 0 or entity is not None
+		]
+		
+		if next_entity is not None:
+			next_entity_key = self.condition(*arguments) and "TXT_KEY_UHV_PROGRESS_NEXT" or "TXT_KEY_UHV_PROGRESS_OUR_NEXT"
+			ranks.append(text(next_entity_key, text(self._progress), self.entity_name(next_entity), self.metric_wrapper(next_entity, *arguments[:-1])))
+		
+		return "\n".join(ranks)
 	
 	def display(self, *arguments):
-		return "%s\n%s" % self.progress_values(*arguments)
-	
-	
-class BestCity(Best):
+		ranks = ["%s (%d)" % (self.entity_name(entity), self.metric_wrapper(entity, *arguments[:-1])) for entity in self.objective_progress_entities(*arguments)]
+		return "\n".join(ranks)
+
+
+class BestPlayers(BestEntities):
 
 	def __init__(self, *arguments):
-		super(BestCity, self).__init__(*arguments)
+		super(BestPlayers, self).__init__(*arguments)
+	
+	def entities(self):
+		return players.major().alive()
+	
+	def entity_name(self, iPlayer):
+		if iPlayer is None:
+			return text("TXT_KEY_UHV_NO_PLAYER")
+		return name(iPlayer)
+	
+	def valid(self, iPlayer, *arguments):
+		return self.valid_player(iPlayer)
+	
+	@classproperty
+	def tech(cls):
+		def metric(self, iPlayer):
+			return infos.techs().where(lambda iTech: team(iPlayer).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost())
 		
-		self._entity_name = "TXT_KEY_UHV_PROGRESS_BEST_ENTITY_CITY"
+		return cls.desc("BEST_TECH_PLAYERS").progr("BEST_TECHNOLOGY").func(metric).subclass("BestTechPlayers")
+
+
+class BestPlayer(BestPlayers):
+	
+	@classproperty
+	def tech(cls):
+		def metric(self, iPlayer):
+			return infos.techs().where(lambda iTech: team(iPlayer).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost())
 		
+		return cls.desc("BEST_TECH_PLAYER").progr("BEST_TECHNOLOGY").func(metric).subclass("BestTechPlayer")
+	
+	@classproperty
+	def population(cls):
+		def metric(self, iPlayer):
+			return player(iPlayer).getRealPopulation()
+		
+		return cls.desc("BEST_POPULATION_PLAYER").progr("BEST_POPULATION").func(metric).subclass("BestPopulationPlayer")
+
+
+
+class BestCities(BestEntities):
+
+	def __init__(self, *arguments):
+		super(BestCities, self).__init__(*arguments)
+	
 	def entities(self):
 		return cities.all()
 	
@@ -2360,12 +2818,42 @@ class BestCity(Best):
 			return text("TXT_KEY_UHV_NO_CITY")
 		return city.getName()
 	
-	def valid(self, city, requiredCity):
-		if city is None:
+	def valid(self, city, *arguments):
+		if not city:
 			return False
+	
+		if self.type == self.PLAYER:
+			return city.getOwner() == self.iPlayer
+		elif self.type == self.RELIGION:
+			return self._player.getStateReligion() >= 0 and city.isHasReligion(self._player.getStateReligion())
+		
+		return False
+	
+	@classproperty
+	def population(cls):
+		def metric(self, city):
+			return city.getPopulation()
+		
+		return cls.desc("BEST_POPULATION_CITIES").format(options.number_word()).progr("BEST_POPULATION").func(metric).subclass("BestPopulationCities")
+	
+	@classproperty
+	def culture(cls):
+		def metric(self, city):
+			return city.getCulture(city.getOwner())
+		
+		return cls.desc("BEST_CULTURE_CITIES").format(options.number_word()).progr("BEST_CULTURE").func(metric).subclass("BestCultureCities")
+	
+	
+class BestCity(BestCities):
+
+	def __init__(self, *arguments):
+		super(BestCity, self).__init__(*arguments)
+	
+	def valid(self, city, requiredCity, *arguments):
 		if requiredCity is None:
 			return False
-		return city.getOwner() == self.iPlayer and at(city, requiredCity)
+			
+		return super(BestCity, self).valid(city) and at(city, requiredCity)
 	
 	@classproperty
 	def population(cls):
@@ -2381,39 +2869,27 @@ class BestCity(Best):
 		
 		return cls.desc("BEST_CULTURE_CITY").progr("BEST_CULTURE").subject(CyCity).func(metric).subclass("BestCultureCity")
 	
-
-class BestPlayer(Best):
-
-	def __init__(self, *arguments):
-		super(BestPlayer, self).__init__(*arguments)
+	@classproperty
+	def wonders(cls):
+		def metric(self, city):
+			return infos.buildings().count(lambda iBuilding: city.isHasRealBuilding(iBuilding) and isWonder(iBuilding))
 		
-		self._entity_name = "TXT_KEY_UHV_PROGRESS_BEST_ENTITY_PLAYER"
-	
-	def entities(self):
-		return players.major().alive()
-	
-	def entity_name(self, iPlayer):
-		if iPlayer is None:
-			return text("TXT_KEY_UHV_NO_PLAYER")
-		return name(iPlayer)
-	
-	def valid(self, iPlayer):
-		return self.iPlayer == iPlayer
+		return cls.desc("BEST_WONDER_CITY").progr("BEST_WONDERS").subject(CyCity).func(metric).subclass("BestWonderCity")
 	
 	@classproperty
-	def tech(cls):
-		def metric(self, iPlayer):
-			return infos.techs().where(lambda iTech: team(iPlayer).isHasTech(iTech)).sum(lambda iTech: infos.tech(iTech).getResearchCost())
+	def tradeIncome(cls):
+		def metric(self, city):
+			return city.getTradeYield(YieldTypes.YIELD_COMMERCE)
 		
-		return cls.desc("BEST_TECH_PLAYER").progr("BEST_TECHNOLOGY").func(metric).subclass("BestTechPlayer")
+		return cls.desc("BEST_TRADE_INCOME_CITY").progr("BEST_TRADE_INCOME").subject(CyCity).func(metric).subclass("BestTradeIncomeCity")
 	
 	@classproperty
-	def population(cls):
-		def metric(self, iPlayer):
-			return player(iPlayer).getRealPopulation()
+	def specialist(cls):
+		def metric(self, city, iSpecialist):
+			return city.getFreeSpecialistCount(iSpecialist)
 		
-		return cls.desc("BEST_POPULATION_PLAYER").progr("BEST_POPULATION").func(metric).subclass("BestPopulationPlayer")
-	
+		return cls.desc("BEST_SPECIALIST_CITY").progr("BEST_SPECIALIST").subject(CyCity).objective(CvSpecialistInfo).func(metric).subclass("BestSpecialistCity")
+
 
 class RouteConnection(BaseGoal):
 
@@ -2563,6 +3039,18 @@ class All(BaseGoal):
 			for goal in self.goals:
 				goal.fail()
 	
+	def religion(self):
+		for goal in self.goals:
+			goal.religion()
+		self.init_description()
+		return self
+	
+	def secular(self):
+		for goal in self.goals:
+			goal.secular()
+		self.init_description()
+		return self
+	
 	def at(self, iYear):
 		for goal in self.goals:
 			goal.at(iYear)
@@ -2606,6 +3094,7 @@ class Some(BaseGoal):
 		self.iRequired = iRequired
 		
 		self.goal.check = self.check
+		self.goal.expire = self.subgoal_expire
 		
 		self.init_description()
 		self.update_areas()
@@ -2621,6 +3110,13 @@ class Some(BaseGoal):
 			self.check()
 		elif goal.state == FAILURE:
 			self.fail()
+	
+	def subgoal_expire(self):
+		if isinstance(self.goal, Trigger):
+			if count(self.goal.completed(*args) or self.goal.completable(*args) for args in self.goal.arguments) < self.iRequired:
+				self.expire()
+		else:
+			self.expire()
 	
 	def activate(self, iPlayer, callback=None):
 		super(Some, self).activate(iPlayer, callback)
@@ -2639,12 +3135,15 @@ class Some(BaseGoal):
 	
 	def progress(self):
 		return self.goal.progress()
+		
+	def count(self):
+		return count(self.goal.condition(*args) for args in self.goal.arguments)
 	
 	def __nonzero__(self):
-		return count(self.goal.condition(*args) for args in self.goal.arguments) >= self.iRequired
+		return self.count() >= self.iRequired
 	
 	def __str__(self):
-		return str(self.goal)
+		return "%d / %d" % (self.count(), self.iRequired)
 
 
 class Any(Some):
@@ -2775,29 +3274,41 @@ CorporationCount = Count.corporation
 CultureCity = CultureCities = Count.cultureCities
 CultureLevel = Count.cultureLevel
 CultureLevelCities = Count.cultureLevelCities
+DifferentSpecialists = Count.differentSpecialist
+FeatureCount = Count.feature
 ImprovementCount = Count.improvement
 OpenBorderCount = Count.openBorders
+PeakCount = Count.peaks
 PlayerCulture = Count.culture
 PlayerPopulation = Count.population
 PlayerGold = Count.gold
 PopulationCities = Count.populationCities
 ResourceCount = Count.resource
 SettledCityCount = Count.settledCities
+ShrineIncome = Count.shrineIncome
 SpecialistCount = Count.specialist
+TerrainCount = Count.terrain
+UnitCombatCount = Count.unitCombat
 UnitCount = Count.unit
+UnitLevelCount = Count.unitLevel
 VassalCount = Count.vassals
 
+AreaNoStateReligion = Condition.areaNoStateReligion
+AllAttitude = Condition.allAttitude
 Communist = Condition.communist
 Control = Condition.control
 ControlOrVassalize = Condition.controlOrVassalize
 CultureCovered = Condition.cultureCovered
+GoldPercent = Condition.goldPercent
 MoreCulture = Condition.moreCulture
 MoreReligion = Condition.moreReligion
 NoForeignCities = Condition.noForeignCities
+NoReligionPercent = Condition.noReligionPercent
 NoStateReligion = Condition.noStateReligion
 Project = Projects = Condition.project
 Route = Condition.route
 Settle = Condition.settle
+StateReligionPercent = Condition.stateReligionPercent
 TradeConnection = Condition.tradeConnection
 Wonders = Wonder = Condition.wonder
 
@@ -2806,6 +3317,7 @@ Discovered = Trigger.discover
 EnterEra = Trigger.enterEra
 FirstContact = Trigger.firstContact
 FirstDiscovered = Trigger.firstDiscover
+FirstGreatPerson = Trigger.firstGreatPerson
 FirstSettle = Trigger.firstSettle
 NeverConquer = Trigger.neverConquer
 NoCityLost = Trigger.noCityLost
@@ -2813,21 +3325,36 @@ TradeMission = Trigger.tradeMission
 
 AcquiredCities = Track.acquiredCities
 BrokeredPeaceCount = Track.brokeredPeace
+CelebrateTurns = Track.celebrate
+CombatFood = Track.combatFood
 EnslaveCount = Track.enslaves
 EraFirstDiscovered = Track.eraFirsts
 GoldenAges = Track.goldenAges
 GreatGenerals = Track.greatGenerals
+HappiestTurns = Track.happiest
+HealthiestTurns = Track.healthiest
+PeaceTurns = Track.peace
 PillageCount = Track.pillage
 PiracyGold = Track.piracyGold
+PopeTurns = Track.pope
 RaidGold = Track.raidGold
 RazeCount = Track.razes
 ResourceTradeGold = Track.resourceTradeGold
+SacrificeHappiness = Track.sacrificeHappiness
 SlaveTradeGold = Track.slaveTradeGold
 SunkShips = Track.sunkShips
 TradeGold = Track.tradeGold
 
+BestCultureCities = BestCities.culture
+BestPopulationCities = BestCities.population
+
 BestCultureCity = BestCity.culture
 BestPopulationCity = BestCity.population
+BestSpecialistCity = BestCity.specialist
+BestTradeIncomeCity = BestCity.tradeIncome
+BestWonderCity = BestCity.wonders
+
+BestTechPlayers = BestPlayers.tech
 
 BestPopulation = BestPlayer.population
 BestTech = BestPlayer.tech

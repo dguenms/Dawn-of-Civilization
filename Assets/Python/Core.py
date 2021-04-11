@@ -36,6 +36,14 @@ irregular_plurals = {
 	"cathedral of your state religion": "cathedrals of your state religion",
 }
 
+def bool_metric(func, *args):
+	return lambda value: int(func(value, *args))
+
+
+def metrics(*metrics):
+	return lambda *args: tuple(metric(*args) for metric in metrics)
+
+
 def replace_first(string, replace_key, *replace_args):
 	first = string.split(" ", -1)[0]
 	return string.replace(first, text(replace_key, *concat(first, replace_args)))
@@ -126,6 +134,14 @@ def format_date(year):
 	if year >= 0:
 		return text("TXT_KEY_YEAR_AD", year)
 	return text("TXT_KEY_YEAR_BC", -year)
+
+
+def duplefy(*items):
+	if len(items) == 2:
+		return (items[0], items[1])
+	elif len(items) == 1:
+		return items[0]
+	raise Exception("Excepted 2 or less values, got: %s" % (items,))
 
 
 def variadic(*items):
@@ -1584,6 +1600,9 @@ class Units(EntityCollection):
 	def types(self):
 		return [unit.getUnitType() for unit in self]
 	
+	def combat(self, iUnitCombatType):
+		return self.where(lambda u: u.getUnitCombatType() == iUnitCombatType)
+	
 
 class PlayerFactory:
 
@@ -1746,6 +1765,9 @@ class CreatedUnits(object):
 		
 	def __iter__(self):
 		return iter(self._units)
+	
+	def __add__(self, other):
+		return CreatedUnits(self._units + other._units)
 		
 	def adjective(self, adjective):
 		if not adjective:
@@ -2000,6 +2022,12 @@ class Infos:
 	
 	def techs(self):
 		return InfoCollection.type(gc.getTechInfo, iNumTechs)
+	
+	def terrain(self, iTerrain):
+		return gc.getTerrainInfo(iTerrain)
+	
+	def terrains(self):
+		return InfoCollection.type(gc.getTerrainInfo, gc.getNumTerrainInfos())
 		
 	def unit(self, identifier):
 		if isinstance(identifier, CyUnit):
@@ -2012,6 +2040,12 @@ class Infos:
 	
 	def units(self):
 		return InfoCollection.type(gc.getUnitInfo, gc.getNumUnitInfos())
+	
+	def unitCombat(self, iUnitCombat):
+		return gc.getUnitCombatInfo(iUnitCombat)
+	
+	def unitCombats(self):
+		return InfoCollection.type(gc.getUnitCombatInfo, gc.getNumUnitCombatInfos())
 
 
 info_types = {
@@ -2036,7 +2070,9 @@ info_types = {
 	CvRouteInfo: (Infos.route, Infos.routes),
 	CvSpecialistInfo: (Infos.specialist, Infos.specialists),
 	CvTechInfo: (Infos.tech, Infos.techs),
+	CvTerrainInfo: (Infos.terrain, Infos.terrains),
 	CvUnitInfo: (Infos.unit, Infos.units),
+	UnitCombatTypes: (Infos.unitCombat, Infos.unitCombats),
 }
 
 

@@ -4840,7 +4840,7 @@ def countUnitsOfType(iPlayer, lTypes, bIncludeObsolete=False):
 	return iCount
 	
 def calculateShrineIncome(iPlayer, iReligion):
-	if getNumBuildings(iPlayer, iShrine  + 4*iReligion) == 0: return 0
+	if getNumBuildings(iPlayer, iShrine + 4*iReligion) == 0: return 0
 	
 	iThreshold = 20
 	if getNumBuildings(iPlayer, iDomeOfTheRock) > 0 and not team(iPlayer).isHasTech(iLiberalism): iThreshold = 40

@@ -6,7 +6,6 @@ from Locations import *
 
 # general constants
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
-lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
@@ -208,7 +207,7 @@ dGoals = {
 		ControlledResourceCount(sum(iSilver, iGold), 10).by(1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),
-			NoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), iProtestantism),
+			AreaNoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), iProtestantism),
 		).at(1650),
 	),
 	iFrance: (
