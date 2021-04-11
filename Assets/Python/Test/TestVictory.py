@@ -1120,6 +1120,18 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		self.assertEqual(self.goal.callback, callback)
 	
+	def testPassivate(self):
+		def callback():
+			pass
+		
+		self.goal.passivate(0, callback)
+		
+		try:
+			self.assertEqual(self.goal.iPlayer, 0)
+			self.assertEqual(self.goal.callback, callback)
+		finally:
+			self.goal.deactivate()
+	
 	def testPossiblePossible(self):
 		self.assertEqual(self.goal.possible(), True)
 	
@@ -1407,6 +1419,18 @@ class TestBaseGoal(ExtendedTestCase):
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
 			self.goal.deactivate()
+	
+	def testPassiveCannotSucceed(self):
+		self.goal.mode = BaseGoal.PASSIVE
+		self.goal.succeed()
+		
+		self.assertEqual(self.goal.state, POSSIBLE)
+	
+	def testPassiveCanFail(self):
+		self.goal.mode = BaseGoal.PASSIVE
+		self.goal.fail()
+		
+		self.assertEqual(self.goal.state, FAILURE)
 	
 	def testDescription(self):
 		self.assertEqual(self.goal.description(), "Control ")

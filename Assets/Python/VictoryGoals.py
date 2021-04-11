@@ -932,6 +932,7 @@ class GoalBuilder(object):
 class BaseGoal(object):
 
 	PLAYER, RELIGION, SECULAR, WORLD = range(4)
+	ACTIVE, PASSIVE = range(2)
 
 	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
 	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
@@ -1061,6 +1062,7 @@ class BaseGoal(object):
 		self.areas = self.process_areas(self.arguments)
 		
 		self.type = self.PLAYER
+		self.mode = self.ACTIVE
 		
 		self.init()
 		
@@ -1102,8 +1104,12 @@ class BaseGoal(object):
 			if events.hasEventHandler(event, handler_func):
 				events.removeEventHandler(event, handler_func)
 	
+	def passivate(self, iPlayer, callback=None):
+		self.mode = self.PASSIVE
+		self.activate(iPlayer, callback)
+	
 	def setState(self, state):
-		if self.state != state:
+		if self.state != state and (self.mode == self.ACTIVE or state != SUCCESS):
 			self.state = state
 			
 			if self.callback:
