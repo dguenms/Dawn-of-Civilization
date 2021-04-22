@@ -111,5 +111,10 @@
 			<Description>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_PAGAN_RELIGIONS</Type>
+			<Description>TXT_KEY_CONCEPT_PAGAN_RELIGIONS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_PAGAN_RELIGIONS_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

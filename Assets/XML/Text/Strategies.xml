@@ -193,4 +193,12 @@
 		<Italian>Poteri Unici e Vittorie Storiche</Italian>
 		<Spanish>Poderes &#250;nicos y victorias hist&#243;ricas</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_PAGAN_RELIGIONS</Tag>
+		<English>Pagan Religions</English>
+		<French>Pagan Religions</French>
+		<German>Heidnische Religionen</German>
+		<Italian>Pagan Religions</Italian>
+		<Spanish>Pagan Religions</Spanish>
+	</TEXT>
 </Civ4GameText>
