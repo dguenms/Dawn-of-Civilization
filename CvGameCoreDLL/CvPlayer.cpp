@@ -8530,7 +8530,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			if (eReligion == (ReligionTypes)PROTESTANTISM)
 			{
 				int iRegion = pLoopCity->getRegionID();
-				if (iRegion != REGION_BRITAIN || iRegion != REGION_IBERIA || iRegion != REGION_ITALY || iRegion != REGION_BALKANS || iRegion != REGION_EUROPE || iRegion != REGION_SCANDINAVIA || iRegion != REGION_RUSSIA)
+				if (iRegion != REGION_BRITAIN && iRegion != REGION_IBERIA && iRegion != REGION_ITALY && iRegion != REGION_BALKANS && iRegion != REGION_EUROPE && iRegion != REGION_SCANDINAVIA && iRegion != REGION_RUSSIA)
 				{
 					iValue = 5;
 				}
