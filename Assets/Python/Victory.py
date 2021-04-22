@@ -2586,7 +2586,7 @@ def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
 	return players.major().without(iPlayer).where(lambda p: player(iPlayer).canContact(p) and player(p).AI_getAttitude(iPlayer) >= eAttitude and function(p)).count()
 	
 def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
-	return countPlayersWithAttitudeAndCriteria(iPlayer, iAttitude, lambda p: cities.owner(p).religion(iReligion).any())
+	return countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, lambda p: cities.owner(p).religion(iReligion).any())
 	
 def countPlayersWithAttitudeInGroup(iPlayer, eAttitude, lOtherCivs):
 	return countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, lambda p: civ(p) in lOtherCivs and not team(p).isAVassal())
