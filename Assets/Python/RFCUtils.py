@@ -736,8 +736,6 @@ def getBestWorker(iPlayer):
 def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
 	plot = plot_(tPlot)
 	
-	#plot.setRevealed(team(iPlayer).getID(), False, False, -1)
-
 	if bPermanentCultureChange:
 		cultureManager(plot, iCultureChange, iPlayer, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 	

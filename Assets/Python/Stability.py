@@ -1584,6 +1584,7 @@ def resurrectionFromCollapse(iPlayer, lCityList):
 		doResurrection(iPlayer, lCityList, bAskFlip=False)
 	
 def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
+	resurrectionCities = cities.of(lCityList)
 	pPlayer = player(iPlayer)
 	teamPlayer = team(iPlayer)
 	iCiv = civ(iPlayer)
@@ -1614,7 +1615,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 		teamPlayer.setHasTech(iTech, True, iPlayer, False, False)
 		
 	# determine army size
-	iNumCities = len(lCityList)
+	iNumCities = resurrectionCities.count()
 	iGarrison = 2
 	iArmySize = pPlayer.getCurrentEra()
 	
@@ -1623,16 +1624,16 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	# add former colonies that are still free
 	for city in players.minor().alive().cities().where(lambda city: city.getOriginalOwner() == iPlayer):
 		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
-			if city not in lCityList:
-				lCityList.append(city)
+			if city not in resurrectionCities:
+				resurrectionCities = resurrectionCities.including(city)
 
 	lOwners = []
 	dRelocatedUnits = appenddict()
 	
 	# determine prevalent religion in the resurrection area
-	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
+	iNewStateReligion = getPrevalentReligion(plots.of(resurrectionCities))
 	
-	for city in lCityList:
+	for city in resurrectionCities:
 		iOwner = city.getOwner()
 		pOwner = player(iOwner)
 		
@@ -1645,11 +1646,8 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 		lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
 		dRelocatedUnits[iOwner].extend(lRelocatedUnits)
 		
-		if pOwner.isBarbarian() or pOwner.isMinorCiv():
-			completeCityFlip(city, iPlayer, iOwner, 100, False, True, True, True)
-		else:
-			completeCityFlip(city, iPlayer, iOwner, 75, False, True, True)
-			
+		iCultureChange = is_minor(iOwner) and 100 or 75
+		completeCityFlip(city, iPlayer, iOwner, iCultureChange, False, True, True)
 		flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
 			
 		newCity = city_(x, y)
