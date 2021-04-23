@@ -1627,7 +1627,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 				lCityList.append(city)
 
 	lOwners = []
-	dRelocatedUnits = {}
+	dRelocatedUnits = appenddict()
 	
 	# determine prevalent religion in the resurrection area
 	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
@@ -1643,11 +1643,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 		
 		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
 		lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
-		
-		if iOwner in dRelocatedUnits:
-			dRelocatedUnits[iOwner].extend(lRelocatedUnits)
-		else:
-			dRelocatedUnits[iOwner] = lRelocatedUnits
+		dRelocatedUnits[iOwner].extend(lRelocatedUnits)
 		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			completeCityFlip(city, iPlayer, iOwner, 100, False, True, True, True)
