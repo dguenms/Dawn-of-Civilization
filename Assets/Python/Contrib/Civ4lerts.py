@@ -1152,10 +1152,10 @@ class CancelableTribute(AbstractStatefulAlert):
 		for iDeal in range(game.getIndexAfterLastDeal()):
 			deal = game.getDeal(iDeal)
 			
-			if deal.getFirstPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthFirstTrades() == 0:
+			if deal.getFirstPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthSecondTrades() == 0:
 				cancelablePlayers.add(deal.getSecondPlayer())
 				
-			elif deal.getSecondPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthSecondTrades() == 0:
+			elif deal.getSecondPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthFirstTrades() == 0:
 				cancelablePlayers.add(deal.getFirstPlayer())
 		
 		if cancelablePlayers:
