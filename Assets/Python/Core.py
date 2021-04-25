@@ -84,16 +84,6 @@ def autoplay():
 	return year() < year(dSpawn[active()])
 
 
-class Civics(object):
-
-	def __init__(self, identifier):
-		self.iGovernment, self.iLegitimacy, self.iSociety, self.iEconomy, self.iReligion, self.iTerritory = (player(identifier).getCivics(i) for i in range(6))
-
-
-def civics(identifier):
-	return Civics(identifier)
-
-
 def spread(iterable, size, offset=0):
 	if len(iterable) <= size:
 		return spread_padded(iterable, size, offset)
@@ -1697,6 +1687,9 @@ class Infos:
 	
 	def era(self, identifier):
 		return gc.getEraInfo(identifier)
+	
+	def civic(self, identifier):
+		return gc.getCivicInfo(identifier)
 
 
 class Map(object):

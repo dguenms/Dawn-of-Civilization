@@ -2180,7 +2180,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	}
 
 	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Exploration
-	if((int)eUnit == 4) // settler
+	if (GC.getUnitInfo(eUnit).isFound())
 	{
 		int iCapitalRegion = GET_PLAYER(getOwner()).getCapitalCity()->getRegionID();
 		int iRegion = getRegionID();

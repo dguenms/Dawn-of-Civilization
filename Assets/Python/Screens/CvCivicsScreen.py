@@ -4,6 +4,7 @@ import CvScreenEnums
 import CvScreensInterface
 from Consts import *
 import Stability
+from Civics import *
 
 # Globals
 gc = CyGlobalContext()
@@ -361,7 +362,7 @@ class CvCivicsScreen:
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
-			iCombovalue = Stability.getCivicStability(self.iActivePlayer, [iHoverCivic, iCivic])
+			iCombovalue = Stability.getCivicStability(self.iActivePlayer, Civics.of(iCivic, iHoverCivic))
 			bGood = iCombovalue > 0
 			bBad = iCombovalue < 0
 			
