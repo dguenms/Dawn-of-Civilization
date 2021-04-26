@@ -5,7 +5,7 @@ tSilkRoute = ((80, 46), (99, 52))
 tMiddleEast = ((68, 38), (85, 46))
 # see tCaribbean
 tSubSaharanAfrica = ((49, 10), (77, 29))
-# see tSouthAsia
+tIndianOcean = ((76, 24), (117, 39))
 
 lMiddleEastExceptions = [(68, 39), (69, 39), (71, 40)]
 
@@ -120,7 +120,7 @@ lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 
 lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-tSouthAsia = ((76, 24), (117, 39))
+tSouthAsia = ((88, 24), (110, 38))
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
 tSafavidMesopotamia = ((75, 39), (79, 43))
