@@ -124,6 +124,16 @@ class TestCivics(TestCase):
 		self.assertEqual(iSovereignty not in civics, True)
 		self.assertEqual(iMonarchy not in civics, True)
 		self.assertEqual(iDemocracy not in civics, False)
+	
+	def test_notcivics_single(self):
+		civics = notcivics(iDemocracy)
+		
+		self.assertEqual(civics, (iChiefdom, iDespotism, iMonarchy, iRepublic, iElective, iStateParty))
+	
+	def test_notcivics_multiple(self):
+		civics = notcivics(iDespotism, iMonarchy, iRepublic)
+		
+		self.assertEqual(civics, (iChiefdom, iElective, iStateParty, iDemocracy))
 		
 
 test_cases = [

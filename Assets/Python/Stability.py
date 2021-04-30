@@ -1204,7 +1204,7 @@ def getCivicStability(iPlayer, civics=None):
 	if iEgalitarianism in civics:
 		if iDemocracy in civics: iStability += 2
 		if iConstitution in civics: iStability += 2
-		if (iTolerance, iSecularism) not in civics: iStability -= 3
+		if notcivics(iTolerance, iSecularism) in civics: iStability -= 3
 		
 	if iIndividualism in civics:
 		if (iRepublic, iDemocracy) in civics: iStability += 2
@@ -1270,7 +1270,7 @@ def getCivicStability(iPlayer, civics=None):
 		if iDemocracy in civics: iStability += 2
 		
 	if iRevolutionism in civics:
-		if (iTolerance, iSecularism) not in civics: iStability -= 3
+		if notcivics(iTolerance, iSecularism) in civics: iStability -= 3
 		
 	if iRegulatedTrade in civics:
 		if iManorialism in civics: iStability += 2

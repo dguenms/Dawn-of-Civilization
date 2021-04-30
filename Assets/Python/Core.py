@@ -1690,6 +1690,9 @@ class Infos:
 	
 	def civic(self, identifier):
 		return gc.getCivicInfo(identifier)
+	
+	def civics(self):
+		return InfoCollection.type(gc.getCivicInfo, gc.getNumCivicInfos())
 
 
 class Map(object):

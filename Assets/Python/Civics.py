@@ -60,6 +60,10 @@ class Civics(object):
 
 def civics(identifier):
 	return Civics.player(identifier)
+	
+def notcivics(*civics):
+	iCategory = infos.civic(civics[0]).getCivicOptionType()
+	return tuple(iCivic for iCivic in infos.civics() if infos.civic(iCivic).getCivicOptionType() == iCategory and iCivic not in civics)
 
 def isCommunist(iPlayer):
 	civic = civics(iPlayer)
