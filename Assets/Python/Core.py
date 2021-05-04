@@ -159,11 +159,13 @@ def listify(item):
 		return list(item)
 	if isinstance(item, types.GeneratorType):
 		return [x for x in item]
+	if item is None:
+		return []
 	return [item]
 
 
-def concat(left, right):
-	return listify(left) + listify(right)
+def concat(*lists):
+	return sum((listify(list) for list in lists), [])
 
 
 def equals(func):

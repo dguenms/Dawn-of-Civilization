@@ -50,6 +50,9 @@ class PlayerData:
 		self.lGoalTurns = [-1, -1, -1]
 		self.bHistoricalGoldenAge = False
 		
+		self.historicalGoals = []
+		self.religiousGoals = []
+		
 		# Stability
 		
 		self.resetStability()

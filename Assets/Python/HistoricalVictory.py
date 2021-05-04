@@ -384,7 +384,7 @@ dGoals = {
 		GoldenAges(6).by(2000),
 	),
 	iMexico: (
-		BuildingCount(stateReligionBuilding(cathedral).named("STATE_RELIGION_CATHEDRAL"), 3).by(1880),
+		BuildingCount(stateReligionCathedral(), 3).by(1880),
 		GreatGenerals(3).by(1940),
 		BestPopulationCity(city(plots.capital(iMexico)).named("MEXICO_CITY")).at(1960),
 	),

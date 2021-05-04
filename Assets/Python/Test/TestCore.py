@@ -3983,6 +3983,9 @@ class TestConcat(TestCase):
 	def test_listify_int(self):
 		self.assertEqual(listify(1), [1])
 	
+	def test_listify_none(self):
+		self.assertEqual(listify(None), [])
+	
 	def test_concat_lists(self):
 		self.assertEqual(concat([1, 2], [3, 4]), [1, 2, 3, 4])
 	
@@ -3997,6 +4000,12 @@ class TestConcat(TestCase):
 	
 	def test_concat_generator_and_list(self):
 		self.assertEqual(concat((i for i in xrange(2)), 2), [0, 1, 2])
+	
+	def test_concat_more_than_two(self):
+		self.assertEqual(concat([1, 2], 3, (4, 5)), [1, 2, 3, 4, 5])
+	
+	def test_concat_with_none(self):
+		self.assertEqual(concat([1, 2], None), [1, 2])
 
 
 class TestFuncWrappers(TestCase):

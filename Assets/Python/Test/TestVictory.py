@@ -3,6 +3,8 @@ from unittest import *
 
 from inspect import isfunction
 
+import cPickle as pickle
+
 
 class ExtendedTestCase(TestCase):
 
@@ -503,28 +505,6 @@ class TestAggregate(ExtendedTestCase):
 		
 		self.assertEqual(result, 3)
 	
-	def testLazyItemsOnEval(self):
-		agg = sum(i for i in xrange(3))
-		self.assertEqual(agg._items, None)
-		
-		agg.eval(lambda x: x)
-		self.assertEqual(agg._items, [0, 1, 2])
-	
-	def testLazyItemsOnIter(self):
-		agg = sum(i for i in xrange(3))
-		self.assertEqual(agg._items, None)
-		
-		for i in agg:
-			continue
-		self.assertEqual(agg._items, [0, 1, 2])
-	
-	def testLazyItemsOnContains(self):
-		agg = sum(i for i in xrange(3))
-		self.assertEqual(agg._items, None)
-		
-		contained = 0 in agg
-		self.assertEqual(agg._items, [0, 1, 2])
-	
 	def testGeneratorArgument(self):
 		agg = sum(i for i in xrange(3))
 		self.assertEqual(agg.items, [0, 1, 2])
@@ -627,12 +607,17 @@ class TestArguments(ExtendedTestCase):
 		self.assertEqual(iterated, [("subject", 1, 0), ("subject", 2, 0), ("subject", 3, 0)])
 	
 	def testResolvesDeferred(self):
-		deferred = Deferred(int, lambda p: 42)
+		deferred = DeferredStateReligionBuilding(infos.type('SPECIALBUILDING_CATHEDRAL'))
 		arguments = Arguments(objectives=[(1, deferred), (2, deferred)])
 		
-		iterated = [x for x in arguments]
+		player(0).setLastStateReligion(iCatholicism)
 		
-		self.assertEqual(iterated, [(1, 42), (2, 42)])
+		try:
+			iterated = [x for x in arguments]
+		
+			self.assertEqual(iterated, [(1, iCatholicCathedral), (2, iCatholicCathedral)])
+		finally:
+			player(0).setLastStateReligion(-1)
 
 
 class TestArgumentProcessor(ExtendedTestCase):
@@ -751,7 +736,7 @@ class TestArgumentProcessor(ExtendedTestCase):
 		self.assertEqual(len(objectives), 1)
 		self.assertType(objectives[0], tuple)
 		self.assertEqual(len(objectives[0]), 1)
-		self.assertType(objectives[0][0], Aggregate)
+		self.assertType(objectives[0][0], SumAggregate)
 	
 	def testDefaultPlayerValue(self):
 		types = ArgumentProcessor([Players])
@@ -764,7 +749,7 @@ class TestArgumentProcessor(ExtendedTestCase):
 		
 		result = types.process(city((100, 100)))
 		self.assertType(result, Arguments)
-		self.assertType(result.subject, Deferred)
+		self.assertType(result.subject, DeferredCity)
 		
 		objectives = result.objectives
 		self.assertType(objectives, list)
@@ -785,7 +770,7 @@ class TestArgumentProcessor(ExtendedTestCase):
 		
 		result = types.process(city((100, 100)), ("1", 1), ("2", 2), ("3", 3))
 		self.assertType(result, Arguments)
-		self.assertType(result.subject, Deferred)
+		self.assertType(result.subject, DeferredCity)
 		
 		objectives = result.objectives
 		self.assertType(objectives, list)
@@ -824,6 +809,26 @@ class TestArgumentProcessor(ExtendedTestCase):
 		result = types.process([1, 2, 3])
 		self.assertEqual(result.objectives, [((1, 2, 3),)])
 	
+	def testAttitudeTypesTransform(self):
+		types = ArgumentProcessor([AttitudeTypes])
+		
+		result = types.process(AttitudeTypes.ATTITUDE_FURIOUS)
+		self.assertEqual(result.objectives, [(0,)])
+	
+	def testUnitCombatTypesTransform(self):
+		types = ArgumentProcessor([UnitCombatTypes])
+		
+		result = types.process(UnitCombatTypes.UNITCOMBAT_GUN)
+		self.assertEqual(result.objectives, [(6,)])
+	
+	def testUnitCombatTypesTransformAggregate(self):
+		types = ArgumentProcessor([UnitCombatTypes])
+		
+		result = types.process(sum(UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN))
+		self.assertEqual(result.objectives[0][0].items, [4, 6])
+		self.assertType(result.objectives[0][0].items[0], int)
+		self.assertType(result.objectives[0][0].items[1], int)
+	
 	def testAggregateIsValidForPlots(self):
 		types = ArgumentProcessor([Plots])
 		
@@ -831,7 +836,7 @@ class TestArgumentProcessor(ExtendedTestCase):
 		self.assertEqual(len(result.objectives), 1)
 		self.assertType(result.objectives[0], tuple)
 		self.assertEqual(len(result.objectives[0]), 1)
-		self.assertType(result.objectives[0][0], Aggregate)
+		self.assertType(result.objectives[0][0], SumAggregate)
 
 
 class TestArgumentProcessorFormat(ExtendedTestCase):
@@ -1098,8 +1103,6 @@ class TestBaseGoal(ExtendedTestCase):
 	def testInitialState(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
 		self.assertEqual(self.goal.iPlayer, None)
-		self.assertEqual(self.goal._player, None)
-		self.assertEqual(self.goal._team, None)
 		self.assertEqual(self.goal.callback, None)
 		self.assertEqual(self.goal.arguments.iPlayer, None)
 	
@@ -1171,12 +1174,12 @@ class TestBaseGoal(ExtendedTestCase):
 		class Callable(object):
 			def __init__(self):
 				self.called = None
-			def call(self, called):
-				self.called = called
+			def stateChange(self, goal):
+				self.called = goal
 				
 		callable = Callable()
 		
-		self.goal.activate(0, callable.call)
+		self.goal.activate(0, callable)
 		self.goal.setState(SUCCESS)
 		self.assertEqual(callable.called, self.goal)
 	
@@ -1449,19 +1452,38 @@ class TestBaseGoal(ExtendedTestCase):
 	
 	def testDescriptionByAD(self):
 		goal = DescriptionGoal(iGranary, 3).by(1000)
-		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD")
+		goal.activate(0)
+		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD (Turn 221)")
 	
 	def testDescriptionByBC(self):
 		goal = DescriptionGoal(iGranary, 3).by(-1000)
-		self.assertEqual(goal.description(), "Control three Granaries by 1000 BC")
+		goal.activate(0)
+		self.assertEqual(goal.description(), "Control three Granaries by 1000 BC (Turn 74)")
 	
 	def testDescriptionAtAD(self):
 		goal = DescriptionGoal(iGranary, 3).at(1000)
-		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
+		goal.activate(0)
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 221)")
 	
 	def testDescriptionAtBC(self):
 		goal = DescriptionGoal(iGranary, 3).at(-1000)
-		self.assertEqual(goal.description(), "Control three Granaries in 1000 BC")
+		goal.activate(0)
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 BC (Turn 74)")
+	
+	def testDescriptionUnactivated(self):
+		goal = DescriptionGoal(iGranary, 3).at(1000)
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 221)")
+	
+	def testDescriptionCalendar(self):
+		goal = DescriptionGoal(iGranary, 3).at(1000)
+		goal.activate(0)
+		
+		team(0).setHasTech(iCalendar, True, 0, True, False)
+		
+		try:
+			self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
+		finally:
+			team(0).setHasTech(iCalendar, False, 0, True, False)
 	
 	def testTitle(self):
 		goal = TestGoal()
@@ -1556,7 +1578,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Pyramids" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1565,7 +1587,11 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Oracle\n%c Parthenon" % ((self.FAILURE_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.FAILURE_CHAR, 
+				u"%c Oracle" % self.FAILURE_CHAR, 
+				u"%c Parthenon" % self.FAILURE_CHAR
+			])
 		finally:
 			goal.deactivate()
 	
@@ -1574,7 +1600,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), "")
+			self.assertEqual(goal.progress(), [])
 		finally:
 			goal.deactivate()
 	
@@ -1583,7 +1609,11 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Oracle\n%c Parthenon" % ((self.FAILURE_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.FAILURE_CHAR, 
+				u"%c Oracle" % self.FAILURE_CHAR, 
+				u"%c Parthenon" % self.FAILURE_CHAR
+			])
 		finally:
 			goal.deactivate()
 	
@@ -1592,7 +1622,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(bForceSingle=True), u"%c Pyramids" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(bForceSingle=True), [u"%c Pyramids" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 		
@@ -1601,7 +1631,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Granary" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Granary" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1610,7 +1640,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Granaries: 0 / 3" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Granaries: 0 / 3" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1620,7 +1650,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Convert to Granary: 0 / 3" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Convert to Granary: 0 / 3" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1629,7 +1659,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Granaries and Barracks: 0 / 3" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Granaries and Barracks: 0 / 3" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1638,7 +1668,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Cities in Britain: 0 / 3" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Cities in Britain: 0 / 3" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1647,7 +1677,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c No Cities" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c No Cities" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1660,7 +1690,11 @@ class TestProgress(ExtendedTestCase):
 		city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c First: 10 / 10\n%c No second city\n%c No third city" % (self.SUCCESS_CHAR, self.FAILURE_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c First: 10 / 10" % self.SUCCESS_CHAR, 
+				u"%c No second city" % self.FAILURE_CHAR, 
+				u"%c No third city" % self.FAILURE_CHAR
+			])
 		finally:
 			city.kill()
 		
@@ -1682,7 +1716,11 @@ class TestProgress(ExtendedTestCase):
 		city3.setName("Third", False)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c First: 10 / 10\n%c Third: 5 / 10\n%c Second: 3 / 10" % (self.SUCCESS_CHAR, self.FAILURE_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c First: 10 / 10" % self.SUCCESS_CHAR, 
+				u"%c Third: 5 / 10" % self.FAILURE_CHAR, 
+				u"%c Second: 3 / 10" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -1694,7 +1732,7 @@ class TestProgress(ExtendedTestCase):
 		goal = Percentage.religionSpread(iIslam, 20)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Islam spread to: 0.00%% / 20%%" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Islam spread to: 0.00%% / 20%%" % self.FAILURE_CHAR])
 	
 	def testProgressBestCity(self):
 		goal = BestCity.population(capital())
@@ -1710,7 +1748,10 @@ class TestProgress(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: Second (10)\nOur next most populous: First (5)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: Second (10)" % self.FAILURE_CHAR,
+				"Our next most populous: First (5)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -1727,7 +1768,10 @@ class TestProgress(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: Babylonia (1000000)\nOur next most populous: Egypt (125000)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: Babylonia (1000000)" % self.FAILURE_CHAR,
+				"Our next most populous: Egypt (125000)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -1736,13 +1780,13 @@ class TestProgress(ExtendedTestCase):
 		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRailroad])
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Railroad from your capital to Britain" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Railroad from your capital to Britain" % self.FAILURE_CHAR])
 	
 	def testProgressRouteConnectionMultipleRoutes(self):
 		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRoad, iRouteRailroad, iRouteHighway])
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Road, Railroad or Highway from your capital to Britain" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Road, Railroad or Highway from your capital to Britain" % self.FAILURE_CHAR])
 	
 	def testProgressAll(self):
 		goal1 = Condition.wonder(iPyramids)
@@ -1751,7 +1795,10 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % ((self.FAILURE_CHAR,) * 2))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.FAILURE_CHAR,
+				u"%c Parthenon" % self.FAILURE_CHAR
+			])
 		finally:
 			goal.deactivate()
 	
@@ -1762,7 +1809,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Pyramids" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1776,7 +1823,10 @@ class TestProgress(ExtendedTestCase):
 		city.setHasRealBuilding(iPyramids, True)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.SUCCESS_CHAR,
+				u"%c Parthenon" % self.FAILURE_CHAR
+			])
 		finally:
 			city.kill()
 			goal.deactivate()
@@ -1791,7 +1841,10 @@ class TestProgress(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal1.state, SUCCESS)
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.SUCCESS_CHAR,
+				u"%c Parthenon" % self.FAILURE_CHAR
+			])
 		finally:
 			goal.deactivate()
 	
@@ -1801,7 +1854,7 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Establish a trade connection with another civilization" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Establish a trade connection with another civilization" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -1811,7 +1864,11 @@ class TestProgress(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Pyramids\n%c Parthenon\n%c Oracle" % ((self.FAILURE_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Pyramids" % self.FAILURE_CHAR,
+				u"%c Parthenon" % self.FAILURE_CHAR, 
+				u"%c Oracle" % self.FAILURE_CHAR
+			])
 		finally:
 			goal.deactivate()
 	
@@ -3023,11 +3080,28 @@ class TestConditionGoals(ExtendedTestCase):
 				player(i).setGold(0)
 
 
+class TestCallback(object):
+	def __call__(self, goal):
+		print goal
+
+
 class TestCountGoals(ExtendedTestCase):
 
 	def setUp(self):
 		for plot in plots.all():
 			plot.resetCultureConversion()
+		
+	def testPickle(self):
+		goal = BuildingCount(iGranary, 3)
+		goal.activate(0)
+		
+		pickle.dumps(goal)
+	
+	def testPickleWithCallback(self):
+		goal = BuildingCount(iGranary, 3)
+		goal.activate(0, TestCallback())
+		
+		pickle.dumps(goal)
 	
 	def testBuildingNone(self):
 		goal = Count.building(iGranary, 3)
@@ -3223,11 +3297,11 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingDeferred(self):
-		goal = Count.building(stateReligionBuilding(temple), 1)
+		goal = Count.building(stateReligionCathedral(), 1)
 		goal.activate(0)
 		
 		city = player(0).initCity(61, 31)
-		city.setHasRealBuilding(iOrthodoxTemple, True)
+		city.setHasRealBuilding(iOrthodoxCathedral, True)
 		
 		try:
 			self.assertEqual(str(goal), "0 / 1")
@@ -4045,7 +4119,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Conquered cities: 0 / 2" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Conquered cities: 0 / 2" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -4054,7 +4128,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Conquered cities in Britain: 0 / 2" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Conquered cities in Britain: 0 / 2" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -4413,7 +4487,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Great Artists in First: 3 / 3" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Great Artists in First: 3 / 3" % self.SUCCESS_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4426,7 +4500,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Great Artists in First (controlled by Babylonia): 0 / 3" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Great Artists in First (controlled by Babylonia): 0 / 3" % self.FAILURE_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4434,7 +4508,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
 	
 	def testCultureLevelNoCity(self):
 		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
@@ -4478,7 +4552,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setCulture(0, 5000, True)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Culture in First: 5000 / 1000" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Culture in First: 5000 / 1000" % self.SUCCESS_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4487,7 +4561,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -4500,7 +4574,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setCulture(0, 5000, True)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Culture in First (controlled by Babylonia): 0 / 1000" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Culture in First (controlled by Babylonia): 0 / 1000" % self.FAILURE_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4684,43 +4758,43 @@ class TestCountGoals(ExtendedTestCase):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testAttitudeProgressCivs(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with civilizations in Europe: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with civilizations in Europe: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testAttitudeProgressCommunist(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).communist()
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with communist civilizations: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with communist civilizations: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testAttitudeProgressStateReligion(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).religion(iOrthodoxy)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with Orthodox civilizations: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with Orthodox civilizations: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testAttitudeProgressIndependent(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).independent()
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR])
 
 	def testAttitudeProgressMinority(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).minority(iOrthodoxy)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with civilizations with a Orthodox minority: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with civilizations with a Orthodox minority: 0 / 2" % self.FAILURE_CHAR])
 
 	def testAttitudeProgressChained(self):
 		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).minority(iCatholicism).independent()
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Pleased or better relations with independent Orthodox communist civilizations with a Catholic minority in Europe: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with independent Orthodox communist civilizations with a Catholic minority in Europe: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testVassals(self):
 		goal = Count.vassals(2)
@@ -4775,25 +4849,25 @@ class TestCountGoals(ExtendedTestCase):
 		goal = Count.vassals(2)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Vassals: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Vassals: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testVassalsProgressCivs(self):
 		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Vassals in Europe: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Vassals in Europe: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testVassalsProgressStateReligion(self):
 		goal = Count.vassals(2).religion(iOrthodoxy)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Orthodox vassals: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Orthodox vassals: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testVassalsProgressChained(self):
 		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).religion(iOrthodoxy)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c Orthodox vassals in Europe: 0 / 2" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Orthodox vassals in Europe: 0 / 2" % self.FAILURE_CHAR])
 	
 	def testCityBuildingNoCity(self):
 		goal = Count.cityBuilding(city(61, 31), iGranary)
@@ -4966,7 +5040,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Granary in First" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Granary in First" % self.FAILURE_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4978,7 +5052,7 @@ class TestCountGoals(ExtendedTestCase):
 		_city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), u"%c Granary in First (controlled by Babylonia)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Granary in First (controlled by Babylonia)" % self.FAILURE_CHAR])
 		finally:
 			_city.kill()
 	
@@ -4986,7 +5060,7 @@ class TestCountGoals(ExtendedTestCase):
 		goal = Count.cityBuilding(city(61, 31), iGranary)
 		goal.activate(0)
 		
-		self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
 	
 	def testDifferentSpecialist(self):
 		goal = Count.differentSpecialist(city(61, 31), 2)
@@ -5000,7 +5074,7 @@ class TestCountGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(str(goal), "2 / 2")
-			self.assertEqual(goal.progress(), u"%c Different specialists in First: 2 / 2" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Different specialists in First: 2 / 2" % self.SUCCESS_CHAR])
 		finally:
 			city1.kill()
 			goal.deactivate()
@@ -5016,7 +5090,7 @@ class TestCountGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(str(goal), "0 / 2")
-			self.assertEqual(goal.progress(), u"%c Different specialists in First (controlled by Babylonia): 0 / 2" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Different specialists in First (controlled by Babylonia): 0 / 2" % self.FAILURE_CHAR])
 		finally:
 			city1.kill()
 			goal.deactivate()
@@ -5028,7 +5102,7 @@ class TestCountGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(str(goal), "0 / 2")
-			self.assertEqual(goal.progress(), u"%c (No City)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -7456,7 +7530,10 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)\nNext most wonders: One (1)" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [
+				u"%c Most wonders: Zero (2)" % self.SUCCESS_CHAR,
+				"Next most wonders: One (1)"
+			])
 		finally:
 			city0.kill()
 			city1.kill()
@@ -7478,7 +7555,7 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR])
 		finally:
 			city0.kill()
 			city1.kill()
@@ -7500,7 +7577,7 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR])
 		finally:
 			city0.kill()
 			city1.kill()
@@ -7520,7 +7597,10 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most settled specialists: Zero (4)\nNext most settled specialists: One (2)" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [
+				u"%c Most settled specialists: Zero (4)" % self.SUCCESS_CHAR,
+				"Next most settled specialists: One (2)"
+			])
 		finally:
 			city0.kill()
 			city1.kill()
@@ -7544,7 +7624,10 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most settled specialists: Zero (3)\nNext most settled specialists: One (2)" % self.SUCCESS_CHAR)
+			self.assertEqual(goal.progress(), [
+				u"%c Most settled specialists: Zero (3)" % self.SUCCESS_CHAR,
+				"Next most settled specialists: One (2)"
+			])
 		finally:
 			city0.kill()
 			city1.kill()
@@ -7643,7 +7726,11 @@ class TestBestPlayersGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most advanced: Egypt (9000)\n%c Second most advanced: Babylonia (1200)\n%c Third most advanced: Harappa (280)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR,
+				u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR,
+				u"%c Third most advanced: Harappa (280)" % self.FAILURE_CHAR
+			])
 		finally:
 			team(0).setHasTech(iGenetics, False, 0, False, False)
 			team(1).setHasTech(iGeography, False, 1, False, False)
@@ -7667,7 +7754,11 @@ class TestBestPlayersGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most advanced: Egypt (9000)\n%c Second most advanced: Babylonia (1200)\n%c Third most advanced: Harappa (280)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR,
+				u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR,
+				u"%c Third most advanced: Harappa (280)" % self.SUCCESS_CHAR
+			])
 		finally:
 			team(0).setHasTech(iGenetics, False, 0, False, False)
 			team(1).setHasTech(iGeography, False, 1, False, False)
@@ -7701,7 +7792,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nNext most populous: Fourth (7)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR,
+				"Next most populous: Fourth (7)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7731,7 +7827,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nNext most populous: Fourth (7)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR,
+				"Next most populous: Fourth (7)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7765,7 +7866,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nOur next most populous: Fifth (6)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR,
+				"Our next most populous: Fifth (6)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7788,7 +7894,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7800,7 +7909,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: (No City) (0)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Most populous: (No City) (0)" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -7822,7 +7931,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7854,7 +7967,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7901,7 +8018,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)\nOur next most populous: Fifth (6)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR,
+				"Our next most populous: Fifth (6)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7935,7 +8057,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7967,7 +8093,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
+				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
+				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -7994,7 +8124,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most populous: First (10)\n%c Second most populous: Second (9)\n%c Third most populous: Third (8)" % ((self.FAILURE_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most populous: First (10)" % self.FAILURE_CHAR,
+				u"%c Second most populous: Second (9)" % self.FAILURE_CHAR,
+				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8025,7 +8159,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nNext most cultured: Fourth (70)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR,
+				"Next most cultured: Fourth (70)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8055,7 +8194,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nNext most cultured: Fourth (70)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR,
+				"Next most cultured: Fourth (70)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8089,7 +8233,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nOur next most cultured: Fifth (60)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR,
+				"Our next most cultured: Fifth (60)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8112,7 +8261,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8124,7 +8276,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: (No City) (0)" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Most cultured: (No City) (0)" % self.FAILURE_CHAR])
 		finally:
 			goal.deactivate()
 	
@@ -8146,7 +8298,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8178,7 +8334,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8225,7 +8385,12 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)\nOur next most cultured: Fifth (60)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR,
+				"Our next most cultured: Fifth (60)"
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8259,7 +8424,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8291,7 +8460,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % ((self.SUCCESS_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
+				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
+				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -8318,7 +8491,11 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), u"%c Most cultured: First (100)\n%c Second most cultured: Second (90)\n%c Third most cultured: Third (80)" % ((self.FAILURE_CHAR,) * 3))
+			self.assertEqual(goal.progress(), [
+				u"%c Most cultured: First (100)" % self.FAILURE_CHAR,
+				u"%c Second most cultured: Second (90)" % self.FAILURE_CHAR,
+				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+			])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -9129,7 +9306,7 @@ class TestSomeGoal(ExtendedTestCase):
 		self.assertEqual(subgoal.iPlayer, 0)
 		
 		self.assertEqual(goal.callback, callback)
-		self.assertEqual(subgoal.callback, goal.subgoal_callback)
+		self.assertType(subgoal.callback, CheckedSubgoalCallback)
 	
 	def testNoSubgoals(self):
 		subgoal = SubGoal(0, 1, 2)
@@ -9179,18 +9356,22 @@ class TestSomeGoal(ExtendedTestCase):
 		subgoal = SubGoal(0, 1, 2)
 		subgoal.iMinArgument = 1
 		goal = Some(subgoal, 2)
+		goal.activate(0)
 		
-		self.assertEqual(bool(subgoal), False)
-		self.assertEqual(bool(goal), True)
-		self.assertEqual(goal.state, POSSIBLE)
+		try:
+			self.assertEqual(bool(subgoal), False)
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, POSSIBLE)
 		
-		self.assertEqual(subgoal.condition(0), False)
-		self.assertEqual(subgoal.condition(1), True)
-		self.assertEqual(subgoal.condition(2), True)
+			self.assertEqual(subgoal.condition(0), False)
+			self.assertEqual(subgoal.condition(1), True)
+			self.assertEqual(subgoal.condition(2), True)
 		
-		subgoal.check()
+			subgoal.check()
 		
-		self.assertEqual(goal.state, SUCCESS)
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			goal.deactivate()
 	
 	def testDescription(self):
 		subgoal = DescriptionGoal(iGranary, 3)
@@ -9311,7 +9492,7 @@ class TestDifferentCities(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(str(goal), "one\ntwo")
-		self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
@@ -9321,7 +9502,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(location(capital_(0)), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
 			
 			goal1.succeed()
 			self.assertEqual(goal1.state, SUCCESS)
@@ -9332,7 +9513,10 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), None)
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), u"%c CityOne\n%c Some city goal: two" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c CityOne" % self.SUCCESS_CHAR,
+				u"%c Some city goal: two" % self.FAILURE_CHAR
+			])
 			
 			city2 = player(0).initCity(63, 31)
 			city1.setHasRealBuilding(iPalace, False)
@@ -9351,7 +9535,10 @@ class TestDifferentCities(ExtendedTestCase):
 				self.assertEqual(goal.recorded(goal2), (63, 31))
 				
 				self.assertEqual(str(goal), "CityOne: one\nCityTwo: two")
-				self.assertEqual(goal.progress(), u"%c CityOne\n%c CityTwo" % (self.SUCCESS_CHAR, self.SUCCESS_CHAR))
+				self.assertEqual(goal.progress(), [
+					u"%c CityOne" % self.SUCCESS_CHAR,
+					u"%c CityTwo" % self.SUCCESS_CHAR
+				])
 			finally:
 				city2.kill()
 		finally:
@@ -9367,7 +9554,7 @@ class TestDifferentCities(ExtendedTestCase):
 		goal.activate(0)
 		
 		self.assertEqual(str(goal), "one\ntwo")
-		self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+		self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
 			
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
@@ -9377,7 +9564,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(location(capital_(0)), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), u"%c Some city goal: one" % self.FAILURE_CHAR)
+			self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
 			
 			goal1.succeed()
 			self.assertEqual(goal1.state, SUCCESS)
@@ -9388,7 +9575,10 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), None)
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), u"%c CityOne\n%c Some city goal: two" % (self.SUCCESS_CHAR, self.FAILURE_CHAR))
+			self.assertEqual(goal.progress(), [
+				u"%c CityOne" % self.SUCCESS_CHAR,
+				u"%c Some city goal: two" % self.FAILURE_CHAR
+			])
 			
 			goal2.succeed()
 			self.assertEqual(goal2.state, FAILURE)
@@ -9399,7 +9589,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), "")
+			self.assertEqual(goal.progress(), [])
 		finally:
 			city1.kill()
 	
@@ -9430,7 +9620,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), "")
+			self.assertEqual(goal.progress(), [])
 			
 			city2 = player(0).initCity(63, 31)
 			city1.setHasRealBuilding(iPalace, False)
@@ -9442,7 +9632,7 @@ class TestDifferentCities(ExtendedTestCase):
 			
 				self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
 				self.assertEqual(goal.state, FAILURE)
-				self.assertEqual(goal.progress(), "")
+				self.assertEqual(goal.progress(), [])
 			finally:
 				city2.kill()
 		finally:
