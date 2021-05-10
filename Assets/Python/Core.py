@@ -36,6 +36,10 @@ irregular_plurals = {
 	"cathedral of your state religion": "cathedrals of your state religion",
 }
 
+def since(iTurn):
+	return turn() - iTurn
+
+
 def bool_metric(func, *args):
 	return lambda value: int(func(value, *args))
 
@@ -1988,6 +1992,16 @@ class Infos:
 	
 	def leaders(self):
 		return InfoCollection.of(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
+	
+	# TODO: test
+	def paganReligion(self, identifier):
+		if isinstance(identifier, Civ):
+			return self.paganReligion(self.civ(identifier).getPaganReligion())
+	
+		return gc.getPaganReligionInfo(identifier)
+	
+	def paganReligions(self):
+		return InfoCollection.type(gc.getPaganReligionInfo, gc.getNumPaganReligionInfos())
 		
 	def promotion(self, identifier):
 		return gc.getPromotionInfo(identifier)

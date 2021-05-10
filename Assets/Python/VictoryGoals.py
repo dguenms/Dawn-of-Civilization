@@ -9,6 +9,7 @@ from Events import events
 
 import BugCore
 AdvisorOpt = BugCore.game.Advisors
+AlertsOpt = BugCore.game.MoreCiv4lerts
 
 
 sum_ = sum
@@ -1250,6 +1251,7 @@ class BaseGoal(object):
 				self.callback.stateChange(self)
 			
 			if state == FAILURE:
+				self.announceFailure()
 				self.deactivate()
 	
 	def possible(self):
@@ -1286,6 +1288,10 @@ class BaseGoal(object):
 	def finalCheck(self):
 		self.check()
 		self.expire()
+	
+	def announceFailure(self):
+		if self._player.isHuman() and since(scenarioStartTurn()) > 0 and AlertsOpt.isShowUHVFailPopup():
+			show("TXT_KEY_UHV_ANNOUNCE_FAILURE", goal.description())
 		
 	def condition(self, *objectives):
 		raise NotImplementedError()

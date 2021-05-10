@@ -4,11 +4,8 @@ from Locations import *
 
 ### CONSTANTS ###
 
-iNumAdditionalVictories = 21
-iNumReligiousVictories = iNumReligions + iNumAdditionalVictories
-(iPaganism, iSecularism, iAnnunaki, iAsatru, iAtua, iBaalism, iBon, iDruidism, iInti, iMazdaism,
-iMugyo, iOlympianism, iPesedjet, iRodnovery, iShendao, iShinto, iTengri, iTeotlMaya, iTeotlAztec, iVedism,
-iYoruba) = range(iNumReligions, iNumReligiousVictories)
+iPaganism = iNumReligions
+iSecularism = iNumReligions + 1
 
 
 ### GOALS ###

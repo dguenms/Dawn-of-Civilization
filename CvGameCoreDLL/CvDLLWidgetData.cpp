@@ -5060,7 +5060,6 @@ void CvDLLWidgetData::parseRemoveHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 {
 	if (widgetDataStruct.m_iData1 != 0)
 	{
-		log("parse remove help");
 		GAMETEXT.setRemoveHelp(szBuffer, (TechTypes)widgetDataStruct.m_iData1);
 	}
 }

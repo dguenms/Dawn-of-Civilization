@@ -898,6 +898,17 @@ def isNeighbor(argsList):
 	if civ(iNeighbor) in dNeighbors[civ(iPlayer)]: return 1
 	else: return 0
 	
+# Leoreth
+def getVictoryTooltip(argsList):
+	iPlayer, x, y = argsList
+	
+	historicalVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].historicalGoals]
+	religiousVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].religiousGoals]
+	
+	tooltips = [tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip]
+	
+	return "\n".join(tooltips)
+	
 #Leoreth
 def getUHVTileInfo(argsList):
 	x = argsList[0]

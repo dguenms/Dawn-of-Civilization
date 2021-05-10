@@ -1548,7 +1548,7 @@ def convertSurroundingPlotCulture(iPlayer, plots):
 			convertPlotCulture(plot, iPlayer, 100, False)
 
 
-def paintPlots(plots):
+def paintPlots(plots, index=1000, color="COLOR_CYAN"):
 	engine.clearAreaBorderPlots(1000)
 	for plot in plots:
 		engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_CYAN", 0.7)
