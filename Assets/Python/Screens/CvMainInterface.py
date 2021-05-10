@@ -5801,8 +5801,8 @@ class CvMainInterface:
 # BUG - field of view slider - end
 
 	def getPaganReligionChar(self, iPlayer):
-		paganReligionName = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0)
-		
-		if not paganReligionName: return ""
+		paganReligionName = infos.paganReligion(civ(iPlayer)).getDescription()
+		if not paganReligionName: 
+			return ""
 	
 		return u"<font=2>%c</font>" % FontUtil.getChar(paganReligionName.lower())

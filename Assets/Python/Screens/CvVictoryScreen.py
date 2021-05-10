@@ -1585,7 +1585,7 @@ class CvVictoryScreen:
 							iRow = screen.appendTableRow(szTable)
 							sGoalText = getReligiousGoalText(iVictoryType, i)
 							if iVictoryType == iVictoryPaganism and i == 1: 
-								sGoalText += "_" + str(gc.getCivilizationInfo(gc.getPlayer(self.iActivePlayer).getCivilizationType()).getPaganReligionName(0).upper())
+								sGoalText += "_" + str(infos.paganReligion(civ(self.iActivePlayer)).getDescription().upper())
 								if civ(self.iActivePlayer) == iMaya: sGoalText += "_MAYA"
 							screen.setTableText(szTable, 0, iRow, localText.getText(str(sGoalText), ()), '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)

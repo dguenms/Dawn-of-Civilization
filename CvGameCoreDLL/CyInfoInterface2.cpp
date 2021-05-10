@@ -56,12 +56,10 @@ void CyInfoPythonInterface2()
 		.def("getArtDefineTag", &CvCivilizationInfo::getArtDefineTag, "string ()")
 		.def("getButton", &CvCivilizationInfo::getButton, "string ()")
 
-		.def("getPaganReligionName", &CvCivilizationInfo::pyGetPaganReligionName, "wstring ()")
-		.def("getPaganReligionButton", &CvCivilizationInfo::getPaganReligionButton, "string ()")
-
 		.def("getDerivativeCiv", &CvCivilizationInfo::getDerivativeCiv, "int ()")
 
 		.def("getIdentifier", &CvCivilizationInfo::getIdentifier, "string ()") // Leoreth
+		.def("getPaganReligion", &CvCivilizationInfo::getPaganReligion, "int ()") // Leoreth
 
 		// Arrays
 

@@ -83,7 +83,7 @@ dGoals = {
 }
 
 dAdditionalPaganGoal = {
-	iAnnunaki: BestWonderCity(capital()),
+	iAnunnaki: BestWonderCity(capital()),
 	iAsatru: UnitLevelCount(5, 5),
 	iAtua: All(
 		ResourceCount(iPearls, 4),

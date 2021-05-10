@@ -757,7 +757,7 @@ lProtestantStart = [iNetherlands, iGermany, iAmerica]
 
 # pagan religions
 iNumPaganReligions = 19
-(iAnnunaki, iAsatru, iAtua, iBaalism, iBon, iDruidism, iInti, iMazdaism, iMugyo, iOlympianism, 
+(iAnunnaki, iAsatru, iAtua, iBaalism, iBon, iDruidism, iInti, iMazdaism, iMugyo, iOlympianism, 
 iPesedjet, iRodnovery, iShendao, iShinto, iTengri, iTeotlMaya, iTeotlAztec, iVedism, iYoruba) = range(iNumPaganReligions)
 
 # corporations

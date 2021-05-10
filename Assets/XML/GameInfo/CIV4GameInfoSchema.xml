@@ -109,6 +109,12 @@
 		<element type="ProductionToCommerceModifiers"/>
 		<element type="Button"/>
 	</ElementType>
+	<ElementType name="PaganReligionInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Description"/>
+		<element type="Civilopedia"/>
+		<element type="Button"/>
+	</ElementType>
 	<ElementType name="iPopulationThreshold" content="textOnly" dt:type="int"/>
 	<ElementType name="iEspionage" content="textOnly" dt:type="int"/>
 	<ElementType name="iGoldPercent" content="textOnly" dt:type="int"/>
@@ -177,6 +183,9 @@
 	</ElementType>
 	<ElementType name="ProcessInfos" content="eltOnly">
 		<element type="ProcessInfo" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="PaganReligionInfos" content="eltOnly">
+		<element type="PaganReligionInfo" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="VoteInfos" content="eltOnly">
 		<element type="VoteInfo" maxOccurs="*"/>
@@ -1448,6 +1457,9 @@
 	</ElementType>
 	<ElementType name="Civ4ProcessInfo" content="eltOnly">
 		<element type="ProcessInfos"/>
+	</ElementType>
+	<ElementType name="Civ4PaganReligionInfo" content="eltOnly">
+		<element type="PaganReligionInfos"/>
 	</ElementType>
 	<ElementType name="Civ4VoteInfo" content="eltOnly">
 		<element type="VoteInfos"/>

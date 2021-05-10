@@ -2109,6 +2109,11 @@ enum ReligionTypes				// Exposed to Python
 	NUM_RELIGIONS,
 };
 
+enum PaganReligionTypes
+{
+	NO_PAGAN_RELIGION = -1,
+};
+
 enum CorporationTypes				// Exposed to Python
 {
 	NO_CORPORATION = -1,

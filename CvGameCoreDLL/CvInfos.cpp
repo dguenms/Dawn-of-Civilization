@@ -10450,6 +10450,7 @@ m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
 m_iDerivativeCiv(NO_CIVILIZATION),
 m_iStartingYear(0), // Leoreth
+m_iPaganReligion(0), // Leoreth
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
@@ -10491,7 +10492,6 @@ void CvCivilizationInfo::reset()
 	CvInfoBase::reset();
 	m_aszAdjective.clear();
 	m_aszShortDescription.clear();
-	m_aszPaganReligion.clear();
 }
 
 
@@ -10528,6 +10528,11 @@ int CvCivilizationInfo::getSelectionSoundScriptId() const
 int CvCivilizationInfo::getActionSoundScriptId() const
 {
 	return m_iActionSoundScriptId;
+}
+
+int CvCivilizationInfo::getPaganReligion() const
+{
+	return m_iPaganReligion;
 }
 
 bool CvCivilizationInfo::isAIPlayable() const
@@ -10570,23 +10575,6 @@ const wchar* CvCivilizationInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
-// Leoreth
-const wchar* CvCivilizationInfo::getPaganReligionName(uint uiForm)
-{
-	while (m_aszPaganReligion.size() <= uiForm)
-	{
-		m_aszPaganReligion.push_back(gDLL->getObjectText(m_szPaganReligionKey, m_aszPaganReligion.size()));
-	}
-
-	return m_aszPaganReligion[uiForm];
-}
-
-// Leoreth
-const wchar* CvCivilizationInfo::getPaganReligionKey() const
-{
-	return m_szPaganReligionKey;
-}
-
 const TCHAR* CvCivilizationInfo::getFlagTexture() const
 {
 	return ARTFILEMGR.getCivilizationArtInfo( getArtDefineTag() )->getPath();
@@ -10600,17 +10588,6 @@ const TCHAR* CvCivilizationInfo::getArtDefineTag() const
 void CvCivilizationInfo::setArtDefineTag(const TCHAR* szVal)
 {
 	m_szArtDefineTag = szVal;
-}
-
-// Leoreth
-const TCHAR* CvCivilizationInfo::getPaganReligionButton() const
-{
-	if (m_szPaganReligionButton.IsEmpty())
-	{
-		return NULL;
-	}
-
-	return m_szPaganReligionButton;
 }
 
 // Arrays
@@ -10723,7 +10700,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=1; // 1: pagan religion
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iDefaultPlayerColor);
@@ -10735,6 +10712,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
 	stream->Read(&m_iStartingYear); // Leoreth
+	stream->Read(&m_iPaganReligion); // Leoreth
 
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
@@ -10742,8 +10720,6 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
-	stream->ReadString(m_szPaganReligionKey); // Leoreth
-	stream->ReadString(m_szPaganReligionButton); // Leoreth
 	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10799,7 +10775,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=1; // 1: pagan religion
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iDefaultPlayerColor);
@@ -10811,6 +10787,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
 	stream->Write(m_iStartingYear); // Leoreth
+	stream->Write(m_iPaganReligion); // Leoreth
 
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
@@ -10818,8 +10795,6 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
-	stream->WriteString(m_szPaganReligionKey); // Leoreth
-	stream->WriteString(m_szPaganReligionButton); // Leoreth
 	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10855,9 +10830,6 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
 
-	pXML->GetChildXmlValByName(m_szPaganReligionKey, "PaganReligionName"); // Leoreth
-	pXML->GetChildXmlValByName(m_szPaganReligionButton, "PaganReligionButton"); // Leoreth
-
 	// Leoreth
 	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
 
@@ -10879,6 +10851,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	m_iActionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
 
 	pXML->GetChildXmlValByName(&m_iStartingYear, "StartingYear");
+
+	pXML->GetChildXmlValByName(szTextVal, "PaganReligion");
+	m_iPaganReligion = pXML->FindInInfoClass(szTextVal);
 
 	// set the current xml node to it's next sibling and then
 	pXML->GetChildXmlValByName(&m_bPlayable, "bPlayable");

@@ -225,7 +225,7 @@ class CvPediaBuilding:
 		# Leoreth: pagan religion prereqs
 		if gc.getBuildingInfo(self.iBuilding).isPagan():
 			if self.top.iActivePlayer != -1:
-				button = gc.getCivilizationInfo(gc.getPlayer(self.top.iActivePlayer).getCivilizationType()).getPaganReligionButton()
+				button = infos.paganReligion(civ(self.top.iActivePlayer)).getButton()
 				if button:
 					screen.attachImageButton(panel, "", button, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION, gc.getPlayer(self.top.iActivePlayer).getCivilizationType(), 1, False)
 

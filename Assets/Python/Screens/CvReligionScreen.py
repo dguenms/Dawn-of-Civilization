@@ -726,9 +726,9 @@ class CvReligionScreen:
 		if not gc.getPlayer(iPlayer).isStateReligion():
 			return localText.getText("TXT_KEY_RELIGION_SCREEN_NO_STATE", ())
 	
-		sName = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0)
-		
-		if sName: return sName
+		sName = infos.paganReligion(civ(iPlayer)).getDescription()
+		if sName: 
+			return sName
 	
 		return localText.getText("TXT_KEY_RELIGION_PAGANISM", ())
 		
@@ -736,8 +736,8 @@ class CvReligionScreen:
 		if not gc.getPlayer(iPlayer).isStateReligion():
 			return ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()
 	
-		sButton = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionButton()
-		
-		if sButton: return sButton
+		sButton = infos.paganReligion(civ(iPlayer)).getDescription()
+		if sButton: 
+			return sButton
 	
 		return ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()
