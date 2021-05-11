@@ -1057,8 +1057,13 @@ class BaseGoal(object):
 	PLAYER, RELIGION, SECULAR, WORLD = range(4)
 	ACTIVE, PASSIVE = range(2)
 
-	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
-	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
+	@classproperty
+	def SUCCESS_CHAR(cls):
+		return game.getSymbolID(FontSymbols.SUCCESS_CHAR)
+	
+	@classproperty
+	def FAILURE_CHAR(cls):
+		return game.getSymbolID(FontSymbols.FAILURE_CHAR)
 
 	#SUCCESS_CHAR = "Y"
 	#FAILURE_CHAR = "N"

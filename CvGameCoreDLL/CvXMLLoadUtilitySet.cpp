@@ -13,6 +13,7 @@
 #include "FProfiler.h"
 #include "FVariableSystem.h"
 #include "CvGameCoreUtils.h"
+#include "CvEventReporter.h"
 
 // Macro for Setting Global Art Defines
 #define INIT_XML_GLOBAL_LOAD(xmlInfoPath, infoArray, numInfos)  SetGlobalClassInfo(infoArray, xmlInfoPath, numInfos);
@@ -732,6 +733,8 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	UpdateProgressCB("GlobalOther");
 
 	DestroyFXml();
+
+	CvEventReporter::getInstance().xmlLoaded();
 
 	return true;
 }

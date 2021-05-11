@@ -1410,6 +1410,17 @@ void CvDllPythonEvents::reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePl
 	}
 }
 
+// Leoreth: XML loaded before menu
+void CvDllPythonEvents::reportXMLLoaded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("xmlLoaded");
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

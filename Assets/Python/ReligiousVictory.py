@@ -2,12 +2,6 @@ from VictoryGoals import *
 from Locations import *
 
 
-### CONSTANTS ###
-
-iPaganism = iNumReligions
-iSecularism = iNumReligions + 1
-
-
 ### GOALS ###
 
 dGoals = {
@@ -65,11 +59,11 @@ dGoals = {
 		SpecialistCount((iSpecialistGreatMerchant, 5), (iSpecialistGreatEngineer, 5)).religion(iProtestantism),
 		StateReligionPercent(iProtestantism, 50).orSecular().named("HALF_PROTESTANT_OR_SECULAR"),
 	),
-	iPaganism: (
+	iPaganVictory: (
 		BuildingCount(iPaganTemple, 15).world(),
 		NoReligionPercent(50).named("HALF_NO_RELIGION"),
 	),
-	iSecularism: (
+	iSecularVictory: (
 		BuildingCount(religious_buildings(cathedral).named("CATHEDRALS"), 7).named("ALL_CATHEDRALS"),
 		All(
 			BuildingCount(iUniversity, 25),

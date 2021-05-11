@@ -507,6 +507,12 @@ void CvEventReporter::peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, P
 	m_kPythonEventMgr.reportPeaceBrokered(eBroker, ePlayer1, ePlayer2);
 }
 
+// Leoreth: XML loaded before menu
+void CvEventReporter::xmlLoaded()
+{
+	m_kPythonEventMgr.reportXMLLoaded();
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
