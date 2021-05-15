@@ -226,7 +226,7 @@ def validateSlaves(iPlayer):
 @handler("unitBuilt")
 def moveSlavesToNewWorld(city, unit):
 	if base_unit(unit) == iSlave and city.getRegionID() in lEurope + [rMaghreb, rAnatolia] and not city.isHuman():	
-		colony = cities.owner(iPlayer).regions(*(lNorthAmerica + lSouthAmerica + lSubSaharanAfrica)).random()
+		colony = cities.owner(iPlayer).regions(*(lAmerica + lSubSaharanAfrica)).random()
 		if colony:
 			move(unit, colony)
 

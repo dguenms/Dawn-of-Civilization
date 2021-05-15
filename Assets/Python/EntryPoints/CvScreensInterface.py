@@ -1030,7 +1030,7 @@ def getUHVTileInfo(argsList):
 		if plot.getRegionID() in lNorthAmerica:
 			return 31
 				
-		if plot.getRegionID() in lSouthAmerica:
+		if plot.getRegionID() in lSouthAmerica + lCentralAmerica:
 			return 32
 				
 		if plot.getRegionID() in lAfrica:
@@ -1066,7 +1066,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in lAndeanCoast:
 			return 42
 		
-		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
+		if plot in plots.regions(*lSouthAmerica):
 			return 61
 			
 	elif iCiv == iOttomans:

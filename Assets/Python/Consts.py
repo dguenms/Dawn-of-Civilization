@@ -930,13 +930,14 @@ lIndia = [rIndia, rDeccan]
 lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
 lNorthAfrica = [rEgypt, rMaghreb]
 lSubSaharanAfrica = [rEthiopia, rSouthAfrica, rWestAfrica]
-lSouthAmerica = [rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
+lSouthAmerica = [rBrazil, rArgentina, rPeru, rColombia]
+lCentralAmerica = [rCaribbean, rMesoamerica]
 lNorthAmerica = [rCanada, rAlaska, rUnitedStates]
 lOceania = [rAustralia, rOceania]
 
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
-lAmerica = lSouthAmerica + lNorthAmerica
+lAmerica = lSouthAmerica + lCentralAmerica + lNorthAmerica
 
 #Projects
 

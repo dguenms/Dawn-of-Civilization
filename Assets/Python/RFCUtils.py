@@ -660,7 +660,7 @@ def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligio
 
 # used: CvRFCEventHandler
 def moveSlaveToNewWorld(iPlayer, unit):
-	colony = cities.owner(iPlayer).where(lambda c: c.getRegionID() in lNorthAmerica + lSouthAmerica + lSubSaharanAfrica).random()
+	colony = cities.owner(iPlayer).where(lambda c: c.getRegionID() in lAmerica + lSubSaharanAfrica).random()
 	move(unit, colony)
 	
 # used: CvRFCEventHandler

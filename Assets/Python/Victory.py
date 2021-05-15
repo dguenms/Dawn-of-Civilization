@@ -933,10 +933,10 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iPlayer, 1)
 			else:
 				lose(iPlayer, 1)
-			
-		# third goal: allow no other civilisations in South America in 1700 AD
-		if iGameTurn == year(1700):
-			if isAreaOnlyCivs(plots.rectangle(tSouthAmerica), [iCiv]):
+		
+		# third goal: control 90% of the South American population in 1775 AD
+		if iGameTurn == year(1775):
+			if getAreaPopulationPercent(iPlayer, plots.regions(*lSouthAmerica)) >= 90.0:
 				win(iPlayer, 2)
 			else:
 				lose(iPlayer, 2)
@@ -1396,7 +1396,7 @@ def onCityBuilt(city):
 	
 	# record first colony in the Americas for various UHVs
 	if not data.isNewWorldColonized():
-		if city.getRegionID() in lNorthAmerica + lSouthAmerica:
+		if city.getRegionID() in lAmerica:
 			if civ(iPlayer) not in dCivGroups[iCivGroupAmerica]:
 				data.iFirstNewWorldColony = iPlayer
 			
@@ -1443,7 +1443,7 @@ def onCityBuilt(city):
 	elif iCiv == iEngland:
 		if isPossible(iPlayer, 0):
 			bNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica) >= 5
-			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica) >= 3
+			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica + lCentralAmerica) >= 3
 			bAfrica = getNumCitiesInRegions(iPlayer, lAfrica) >= 4
 			bAsia = getNumCitiesInRegions(iPlayer, lAsia) >= 5
 			bOceania = getNumCitiesInRegions(iPlayer, lOceania) >= 3
@@ -1475,7 +1475,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	elif iCiv == iEngland:
 		if isPossible(iPlayer, 0):
 			bNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica) >= 5
-			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica) >= 3
+			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica + lCentralAmerica) >= 3
 			bAfrica = getNumCitiesInRegions(iPlayer, lAfrica) >= 4
 			bAsia = getNumCitiesInRegions(iPlayer, lAsia) >= 5
 			bOceania = getNumCitiesInRegions(iPlayer, lOceania) >= 3
@@ -2344,6 +2344,15 @@ def getPopulationPercent(iPlayer):
 	iOurPopulation = team(iPlayer).getTotalPopulation()
 	
 	if iTotalPopulation <= 0: return 0.0
+	
+	return iOurPopulation * 100.0 / iTotalPopulation
+
+def getAreaPopulationPercent(iPlayer, area):
+	iTotalPopulation = area.cities().sum(CyCity.getPopulation)
+	iOurPopulation = area.cities().owner(iPlayer).sum(CyCity.getPopulation)
+	
+	if iTotalPopulation <= 0:
+		return 0.0
 	
 	return iOurPopulation * 100.0 / iTotalPopulation
 	
@@ -3565,7 +3574,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iCiv == iEngland:
 		if iGoal == 0:
 			iNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica)
-			iSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica)
+			iSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica + lCentralAmerica)
 			iAfrica = getNumCitiesInRegions(iPlayer, lAfrica)
 			iAsia = getNumCitiesInRegions(iPlayer, lAsia)
 			iOceania = getNumCitiesInRegions(iPlayer, lOceania)
@@ -3669,8 +3678,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iTreasury = pPlayer.getGold()
 			aHelp.append(getIcon(iTreasury >= turns(2500)) + text("TXT_KEY_VICTORY_TOTAL_GOLD", iTreasury, turns(2500)))
 		elif iGoal == 2:
-			bSouthAmerica = isAreaOnlyCivs(plots.rectangle(tSouthAmerica), [iCiv])
-			aHelp.append(getIcon(bSouthAmerica) + text("TXT_KEY_VICTORY_NO_FOREIGN_CITIES_SOUTH_AMERICA"))
+			fPopulationPercent = getAreaPopulationPercent(iPlayer, plots.regions(*lSouthAmerica))
+			aHelp.append(getIcon(fPopulationPercent >= 90.0) + text("TXT_KEY_VICTORY_PERCENTAGE_AREA_POPULATION", text("TXT_KEY_VICTORY_SOUTH_AMERICA"), "%.2f%%" % fPopulationPercent, 90))
 
 	elif iCiv == iItaly:
 		if iGoal == 0:

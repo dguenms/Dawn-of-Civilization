@@ -488,7 +488,7 @@ CIVILISATIONS
     * Unique Historical Victory:
         * Build five Tambos and a road along the Andean coast by 1500 AD
         * Have 2500 gold in 1550 AD
-        * Allow no foreign cities in South America in 1700 AD
+        * Control 90% of the population in South America in 1775 AD
 * Mongolia
     * Unique Unit: Keshik (Lancer): Light Cavalry, three moves, +1 first strike, causes collateral damage, no city attack penalty
     * Unique Unit: Mangudai (Horse Archer): +2 strength, +1 move

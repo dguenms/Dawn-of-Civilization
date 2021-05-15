@@ -1283,19 +1283,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3_TITLE</Tag>
-		<English>Eight Incan Regions</English>
-		<French>Les huit r&#233;gions incas </French>
-		<German>Acht Regionen der Inka</German>
-		<Italian>Eight Incan Regions</Italian>
-		<Spanish>Eight Incan Regions</Spanish>
+		<English>Inkarri</English>
+		<French>Inkarri</French>
+		<German>Inkarri</German>
+		<Italian>Inkarri</Italian>
+		<Spanish>Inkarri</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3</Tag>
-		<English>Allow no foreign cities in South America in 1700 AD</English>
-		<French>Emp&#234;cher la pr&#233;sence de villes &#233;trang&#232;res en Am&#233;rique du Sud en 1700 ap. J.-C.</French>
-		<German>Erlauben Sie im Jahr 1700 n. Chr. keine St&#228;dte anderer Zivilisationen in S&#205;damerika</German>
-		<Italian>Allow no foreign cities in South America in 1700 AD</Italian>
-		<Spanish>Allow no foreign cities in South America in 1700 AD</Spanish>
+		<English>Control 90% of the population in South America in 1775 AD</English>
+		<French>Control 90% of the population in South America in 1775 AD</French>
+		<German>Kontrollieren Sie im Jahr 1775 n. Chr. 90% der Bev&#246;lkerung in S&#205;damerika</German>
+		<Italian>Control 90% of the population in South America in 1775 AD</Italian>
+		<Spanish>Control 90% of the population in South America in 1775 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1_TITLE</Tag>
@@ -4763,6 +4763,14 @@
 		<Spanish>Percentage of world population: %s1 / %d2%%</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_AREA_POPULATION</Tag>
+		<English>Percentage of population in %s1: %s2 / %d3%%</English>
+		<French>Percentage of population in %s1: %s2 / %d3%%</French>
+		<German>Percentage of population in %s1: %s2 / %d3%%</German>
+		<Italian>Percentage of population in %s1: %s2 / %d3%%</Italian>
+		<Spanish>Percentage of population in %s1: %s2 / %d3%%</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
 		<English>Percentage of the world: %s1 / %s2%%</English>
 		<French>Pourcentage du territoire mondial : %s1 / %s2%%</French>
@@ -5329,5 +5337,13 @@
 		<German>Kontrollierte Gipfel: %d1 / %d2</German>
 		<Italian>Controlled Peaks: %d1 / %d2</Italian>
 		<Spanish>Controlled Peaks: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SOUTH_AMERICA</Tag>
+		<English>South America</English>
+		<French>South America </French>
+		<German>South America</German>
+		<Italian>South America</Italian>
+		<Spanish>South America</Spanish>
 	</TEXT>
 </Civ4GameText>
