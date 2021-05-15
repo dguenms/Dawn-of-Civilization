@@ -2435,7 +2435,7 @@
 			<Strategy>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
-			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<PrereqTech>TECH_LAW</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

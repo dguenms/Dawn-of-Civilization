@@ -484,7 +484,7 @@ CIVILISATIONS
 * Inca
     * Leaders: Huayna Capac, Castilla (respawn)
     * Unique Unit: Aucac (Swordsman): +50% against Melee and Archery units, starts with Combat I
-    * Unique Building: Tambo (Post Office): requires Engineering, +25% trade route yield
+    * Unique Building: Tambo (Post Office): requires Law, +25% trade route yield
     * Unique Historical Victory:
         * Build five Tambos and a road along the Andean coast by 1500 AD
         * Have 2500 gold in 1550 AD
