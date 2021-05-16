@@ -198,6 +198,11 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 		if iEra == iIndustrial:
 			setPeriod(iJapan, iPeriodMeiji)
 	
+	if iCiv == iInca:
+		if player(iCiv).getPeriod() == -1:
+			if iEra == iRenaissance:
+				setPeriod(iInca, iPeriodLateInca)
+	
 	if iCiv == iItaly:
 		if iEra == iIndustrial:
 			setPeriod(iItaly, iPeriodModernItaly)
