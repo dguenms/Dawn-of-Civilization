@@ -1188,6 +1188,7 @@ class BaseGoal(object):
 		
 		self._description_suffixes = []
 		self._iYear = None
+		self._iSuccessTurn = None
 		
 		self.handlers = self.__class__.handlers[:]
 		self.extra_handlers = []
@@ -1259,16 +1260,34 @@ class BaseGoal(object):
 			return text("TXT_KEY_UHV_GOAL_SUCCESS")
 		return text("TXT_KEY_UHV_GOAL_POSSIBLE")
 	
+	# TODO: test
+	def accomplished_string(self):
+		string = text("TXT_KEY_UHV_GOAL_ACCOMPLISHED")
+		
+		if self._iSuccessTurn is not None:
+			if AdvisorOpt.isUHVFinishDateTurn():
+				string += " (%s - %s)" % (format_date(game.getTurnYear(self._iSuccessTurn)), text("TXT_KEY_UHV_TURN", self.iSuccessTurn))
+			else:
+				string += " (%s)" % format_date(game.getTurnYear(self._iSuccessTurn))
+		
+		return string
+	
+	# TODO: test record success turn
+	# TODO: should announce be part of the callback so only the top level callback announces? as opposed to subgoals of All() etc.
 	def setState(self, state):
 		if self.state != state and (self.mode == self.ACTIVE or state != SUCCESS):
 			self.state = state
 			
-			if self.callback and hasattr(self.callback, 'stateChange'):
-				self.callback.stateChange(self)
-			
 			if state == FAILURE:
 				self.announceFailure()
 				self.deactivate()
+			
+			if state == SUCCESS:
+				self.announceSuccess()
+				self.recordSuccessTurn()
+			
+			if self.callback and hasattr(self.callback, 'stateChange'):
+				self.callback.stateChange(self)
 	
 	def possible(self):
 		return self.state == POSSIBLE
@@ -1306,8 +1325,18 @@ class BaseGoal(object):
 		self.expire()
 	
 	def announceFailure(self):
-		if self._player.isHuman() and since(scenarioStartTurn()) > 0 and AlertsOpt.isShowUHVFailPopup():
-			show("TXT_KEY_UHV_ANNOUNCE_FAILURE", goal.description())
+		self.announce("TXT_KEY_UHV_ANNOUNCE_FAILURE", AlertsOpt.isShowUHVFailPopup())
+	
+	def announceSuccess(self):
+		self.announce("TXT_KEY_UHV_ANNOUNCE_SUCCESS", AlertsOpt.isShowUHVSuccessPopup())
+			
+	def announce(self, key, condition=True):
+		if self.iPlayer is not None and self._player.isHuman() and since(scenarioStartTurn()) > 0 and condition:
+			show(key, goal.description())
+	
+	# TODO: test
+	def recordSuccessTurn(self):
+		self._iSuccessTurn = turn()
 		
 	def condition(self, *objectives):
 		raise NotImplementedError()
@@ -1363,7 +1392,11 @@ class BaseGoal(object):
 			return "%s: %s" % (self.title(), self.description())
 		return self.description()
 		
+	# TODO: test accomplished string
 	def progress(self, bForceSingle = False):
+		if self.succeeded():
+			return [self.accomplished_string()]
+	
 		if len(self.arguments.objectives) == 1 and not bForceSingle and not self.single_objective_progress():
 			return []
 	

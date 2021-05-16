@@ -135,9 +135,7 @@ def plural(word):
 
 
 def format_date(year):
-	if year >= 0:
-		return text("TXT_KEY_YEAR_AD", year)
-	return text("TXT_KEY_YEAR_BC", -year)
+	return text(year >= 0 and "TXT_KEY_YEAR_AD" or "TXT_KEY_YEAR_BC", abs(year))
 
 
 def duplefy(*items):

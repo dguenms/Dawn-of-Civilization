@@ -349,8 +349,32 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_GOAL_ACCOMPLISHED</Tag>
+		<English>Goal accomplished!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TURN</Tag>
+		<English>Turn %d1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ANNOUNCE_FAILURE</Tag>
 		<English>You have failed to %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ANNOUNCE_SUCCESS</Tag>
+		<English>You have successfully managed to %s1.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

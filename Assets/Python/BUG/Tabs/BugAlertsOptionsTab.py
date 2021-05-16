@@ -69,6 +69,7 @@ class BugAlertsOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addCheckboxFloatDropdown(screen, rightL, rightR, "MoreCiv4lerts__DomPop", "MoreCiv4lerts__DomPopThresh", "LAYOUT_LEFT")
 		self.addCheckboxFloatDropdown(screen, rightL, rightR, "MoreCiv4lerts__DomLand", "MoreCiv4lerts__DomLandThresh", "LAYOUT_LEFT")
 		self.addCheckbox(screen, right, "MoreCiv4lerts__ShowUHVFailPopup")
+		self.addCheckbox(screen, right, "MoreCiv4lerts__ShowUHVSuccessPopup")
 		
 		screen.attachHSeparator(column, column + "Sep")
 		

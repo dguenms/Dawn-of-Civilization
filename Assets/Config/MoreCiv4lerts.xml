@@ -85,6 +85,9 @@
 			<option id="ShowUHVFailPopup" key="Show UHV Fail Popup" 
 					type="boolean" default="True"
 					get="isShowUHVFailPopup"/>
+			<option id="ShowUHVSuccessPopup" key="Show UHV Success Popup" 
+					type="boolean" default="True"
+					get="isShowUHVSuccessPopup"/>
 			
 			<!-- Notifications -->
 			<list   id="GreatPeople" key="Great People" 
