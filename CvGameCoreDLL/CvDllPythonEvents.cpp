@@ -1421,6 +1421,17 @@ void CvDllPythonEvents::reportXMLLoaded()
 	}
 }
 
+// Leoreth: Font files loaded and font IDs assigned
+void CvDllPythonEvents::reportFontsLoaded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("fontsLoaded");
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

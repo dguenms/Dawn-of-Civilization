@@ -10,8 +10,8 @@ dHistoricalGoals = None
 dReligiousGoals = None
 dPaganGoals = None
 
-@handler("xmlLoaded")
-def onXmlLoaded():
+@handler("fontsLoaded")
+def onFontsLoaded():
 	from HistoricalVictory import dGoals as dDefinedHistoricalGoals
 	global dHistoricalGoals
 	dHistoricalGoals = dDefinedHistoricalGoals
@@ -32,7 +32,7 @@ def getReligiousGoals(iPlayer):
 	if iStateReligion >= 0:
 		return list(dReligiousGoals[iStateReligion])
 	elif player(iPlayer).isStateReligion():
-		return concat(dReligiousGoals[iPaganVictory], dPaganGoals[player(iPlayer).getPaganReligion()])
+		return concat(dReligiousGoals[iPaganVictory], dPaganGoals[infos.civ(civ(iPlayer)).getPaganReligion()])
 	else:
 		return dReligiousGoals[iSecularVictory]
 

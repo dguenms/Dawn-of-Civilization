@@ -147,6 +147,7 @@ public:
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 	void xmlLoaded(); // Leoreth
+	void fontsLoaded(); // Leoreth
 
 	DllExport void preSave();
 

@@ -343,9 +343,13 @@ class DeferredCity(Deferred):
 class DeferredStateReligion(Deferred):
 
 	def __call__(self, iPlayer):
+		if iPlayer is None:
+			return None
+			
 		iStateReligion = player(iPlayer).getStateReligion()
 		if iStateReligion < 0:
 			return None
+			
 		return self.religionValue(iStateReligion)
 	
 	def religionValue(self, iReligion):
@@ -1241,11 +1245,18 @@ class BaseGoal(object):
 		self.mode = self.PASSIVE
 		self.activate(iPlayer, callback)
 	
+	# TODO: test
 	def state_string(self):
+		if self.state == FAILURE:
+			return text("TXT_KEY_UHV_GOAL_FAILURE")
+	
+		if self.mode == self.PASSIVE:
+			if self:
+				return text("TXT_KEY_UHV_GOAL_SUCCESS")
+			return text("TXT_KEY_UHV_GOAL_POSSIBLE")
+	
 		if self.state == SUCCESS:
 			return text("TXT_KEY_UHV_GOAL_SUCCESS")
-		elif self.state == FAILURE:
-			return text("TXT_KEY_UHV_GOAL_FAILURE")
 		return text("TXT_KEY_UHV_GOAL_POSSIBLE")
 	
 	def setState(self, state):
@@ -1331,8 +1342,8 @@ class BaseGoal(object):
 		
 	@property
 	def turn_suffix(self):
-		if not team(self.iPlayer).isHasTech(iCalendar) or AdvisorOpt.isUHVFinishDateTurn():
-			if self._iYear is not None:
+		if self.iPlayer is not None and self._iYear is not None:
+			if not team(self.iPlayer).isHasTech(iCalendar) or AdvisorOpt.isUHVFinishDateTurn():
 				return text("TXT_KEY_UHV_TURN_SUFFIX", year(self._iYear))
 	
 	def description(self):

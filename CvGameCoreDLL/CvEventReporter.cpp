@@ -513,6 +513,12 @@ void CvEventReporter::xmlLoaded()
 	m_kPythonEventMgr.reportXMLLoaded();
 }
 
+// Leoreth: fonts loaded and font IDs assigned
+void CvEventReporter::fontsLoaded()
+{
+	m_kPythonEventMgr.reportFontsLoaded();
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

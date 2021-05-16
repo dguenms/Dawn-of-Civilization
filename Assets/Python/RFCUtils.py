@@ -1151,39 +1151,6 @@ def ensureDefenders(iPlayer, tPlot, iNumDefenders):
 	presentUnits = units.at(tPlot).owner(iPlayer).where(lambda u: u.canFight())
 	if len(presentUnits) < iNumDefenders:
 		makeUnits(iPlayer, getBestDefender(iPlayer), tPlot, iNumDefenders - len(presentUnits))
-		
-def getGoalText(baseKey, bTitle = False):
-	fullKey = baseKey
-	iGameSpeed = game.getGameSpeedType()
-	
-	if bTitle:
-		fullKey += '_TITLE'
-	elif iGameSpeed < 2:
-		fullKey += '_' + infos.gameSpeed().getText().upper()
-		
-	return text_if_exists(fullKey, otherwise=baseKey)
-		
-# used: CvVictoryScreen, WBStoredDataScreen
-def getHistoricalGoalText(iPlayer, iGoal, bTitle = False):
-	iCiv = player(iPlayer).getCivilizationType()
-	
-	baseKey = "TXT_KEY_UHV_%s%d" % (infos.civ(iCiv).getIdentifier(), iGoal + 1)
-	
-	return getGoalText(baseKey, bTitle)
-	
-def getReligiousGoalText(iReligion, iGoal, bTitle = False):
-	iGameSpeed = game.getGameSpeedType()
-
-	if iReligion < iNumReligions:
-		religionKey = infos.religion(iReligion).getText()[:3].upper()
-	elif iReligion == iNumReligions:
-		religionKey = "POL"
-	elif iReligion == iNumReligions+1:
-		religionKey = "SEC"
-		
-	baseKey = "TXT_KEY_URV_%s%d" % (religionKey, iGoal + 1)
-	
-	return getGoalText(baseKey, bTitle)
 	
 # used: CvDawnOfMan
 def getDawnOfManText(iPlayer):

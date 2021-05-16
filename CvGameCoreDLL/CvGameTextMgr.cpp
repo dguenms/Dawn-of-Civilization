@@ -33,6 +33,7 @@
 #include "CyArgsList.h"
 #include "CvDLLPythonIFaceBase.h"
 #include "CvRhyes.h" //Rhye
+#include "CvEventReporter.h" // Leoreth
 
 // BUG - start
 #include "CvBugOptions.h"
@@ -6382,15 +6383,16 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		std::string szIdentifier = GC.getCivilizationInfo(eCivilization).getIdentifier();
+		// Leoreth: display UHV requirement info
+		CvWString historicalVictoryDescriptions;
+		CyArgsList historicalVictoryDescriptionsArgs;
 
-		szText = bDawnOfMan ? L"  " : L"";
-		szText += gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "1");
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "2");
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "3");
+		historicalVictoryDescriptionsArgs.add(eCivilization);
+
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "getHistoricalVictoryDescriptions", historicalVictoryDescriptionsArgs.makeFunctionArgs(), &historicalVictoryDescriptions);
+
+		szText = bDawnOfMan ? L" " : L"";
+		szText += historicalVictoryDescriptions;
 		szText += NEWLINE L"  ";
 
 		if (bDawnOfMan)
@@ -21087,6 +21089,8 @@ void CvGameTextMgr::assignFontIds(int iFirstSymbolCode, int iPadAmount)
 		gDLL->setSymbolID(i, iCurSymbolID);
 		++iCurSymbolID;
 	}
+
+	CvEventReporter::getInstance().fontsLoaded();
 }
 
 void CvGameTextMgr::getCityDataForAS(std::vector<CvWBData>& mapCityList, std::vector<CvWBData>& mapBuildingList, std::vector<CvWBData>& mapAutomateList)
