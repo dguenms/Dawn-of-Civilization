@@ -13,6 +13,9 @@ class PlayerData:
 		
 	def update(self, data):
 		self.__dict__.update(data)
+		
+		for goal in self.goals:
+			goal.registerHandlers()
 
 	def setup(self):
 	
@@ -121,6 +124,10 @@ class PlayerData:
 		for i in reversed(range(len(lTrend))):
 			if lTrend[i] != 0: return lTrend[i]
 		return 0
+	
+	@property
+	def goals(self):
+		return self.historicalGoals + self.religiousGoals
 		
 	def getGoal(self, iGoal):
 		return self.lGoals[iGoal]

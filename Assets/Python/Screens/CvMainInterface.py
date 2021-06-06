@@ -4654,8 +4654,6 @@ class CvMainInterface:
 					iCost = pHeadSelectedCity.getCultureCost(i)
 					if iCost >= iThreshold: break
 					lCultureCosts.append(iCost)
-					
-				print "Culture costs: " + str(lCultureCosts)
 				
 				if lCultureCosts:
 					self.pBarCultureBar.drawTickMarksList(screen, 0, iThreshold, 0, lCultureCosts, True)

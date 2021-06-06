@@ -659,6 +659,15 @@ void CyEnumsPythonInterface()
 
 	python::enum_<VictoryTypes>("VictoryTypes")
 		.value("NO_VICTORY", NO_VICTORY)
+		.value("VICTORY_SCORE", VICTORY_SCORE)
+		.value("VICTORY_TIME", VICTORY_TIME)
+		.value("VICTORY_CONQUEST", VICTORY_CONQUEST)
+		.value("VICTORY_DOMINATION", VICTORY_DOMINATION)
+		.value("VICTORY_CULTURAL", VICTORY_CULTURAL)
+		.value("VICTORY_SPACE_RACE", VICTORY_SPACE_RACE)
+		.value("VICTORY_DIPLOMATIC", VICTORY_DIPLOMATIC)
+		.value("VICTORY_HISTORICAL", VICTORY_HISTORICAL)
+		.value("VICTORY_RELIGIOUS", VICTORY_RELIGIOUS)
 		;
 
 	python::enum_<FeatureTypes>("FeatureTypes")

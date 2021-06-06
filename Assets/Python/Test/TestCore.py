@@ -4203,6 +4203,38 @@ class TestDuplefy(TestCase):
 	
 	def test_more(self):
 		self.assertRaises(Exception, duplefy, 1, 2, 3)
+
+
+class TestDeferredCollection(TestCase):
+
+	def test_deferred(self):
+		even = lambda p: (p.getX() + p.getY()) % 2 == 0
+	
+		deferred = DeferredCollectionFactory.plots()
+		deferred = deferred.rectangle((0, 0), (1, 1))
+		deferred = deferred.where(even)
+		
+		assertType(self, deferred, DeferredCollection)
+		self.assertEqual(deferred.calls, [('rectangle', ((0, 0), (1, 1))), ('where', (even,))])
+		
+		collection = deferred.create()
+		
+		assertType(self, collection, Plots)
+		self.assertEqual(len(collection), 2)
+		self.assertEqual((0, 0) in collection, True)
+		self.assertEqual((1, 1) in collection, True)
+	
+	def test_deferred_named(self):
+		deferred = DeferredCollectionFactory.plots()
+		deferred = deferred.all()
+		deferred = deferred.clear_named("abcd")
+		
+		self.assertEqual(deferred.name(), "abcd")
+		
+		collection = deferred.create()
+		
+		assertType(self, collection, Plots)
+		self.assertEqual(collection.name(), "abcd")
 		
 
 test_cases = [
@@ -4270,6 +4302,7 @@ test_cases = [
 	TestVariadic,
 	TestMetrics,
 	TestDuplefy,
+	TestDeferredCollection
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

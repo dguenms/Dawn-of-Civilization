@@ -906,7 +906,7 @@ def getVictoryTooltip(argsList):
 	historicalVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].historicalGoals]
 	religiousVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].religiousGoals]
 	
-	tooltips = [tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip]
+	tooltips = unique(tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip)
 	
 	return "\n".join(tooltips)
 

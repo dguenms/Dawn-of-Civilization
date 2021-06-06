@@ -183,7 +183,7 @@ dGoals = {
 	iTibet: (
 		AcquiredCities(5).by(1000),
 		ReligionSpreadPercent(iBuddhism, 25).by(1400),
-		CitySpecialistCount(city(plots.capital(iTibet)).named("LHASA"), iSpecialistGreatProphet, 5).by(1700),
+		CitySpecialistCount(start(iTibet).named("LHASA"), iSpecialistGreatProphet, 5).by(1700),
 	),
 	iIndonesia: (
 		BestPopulation().at(1300),
@@ -198,7 +198,7 @@ dGoals = {
 		).at(1200),
 		All(
 			Wonder(iMezquita),
-			CitySpecialistCount(city(plots.capital(iMoors)).named("CORDOBA"), sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer), 4),
+			CitySpecialistCount(start(iMoors).named("CORDOBA"), sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatEngineer), 4),
 		).by(1300),
 		PiracyGold(3000).by(1650),
 	),
@@ -211,7 +211,7 @@ dGoals = {
 		).at(1650),
 	),
 	iFrance: (
-		CultureLevel(city(plots.capital(iFrance)).named("PARIS"), iCultureLevelLegendary).at(1700),
+		CultureLevel(start(iFrance).named("PARIS"), iCultureLevelLegendary).at(1700),
 		All(
 			AreaPercent((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), 40).includeVassals(),
 			AreaPercent(plots.rectangle(tNorthAmerica).named("NORTH_AMERICA"), 40).includeVassals(),
@@ -307,7 +307,7 @@ dGoals = {
 		WorldPercent(12).by(1500),
 	),
 	iAztecs: (
-		BestPopulationCity(city(plots.capital(iAztecs)).named("TENOCHTITLAN")).at(1520),
+		BestPopulationCity(start(iAztecs).named("TENOCHTITLAN")).at(1520),
 		BuildingCount((iPaganTemple, 6), (iSacrificialAltar, 6)).by(1650),
 		EnslaveCount(20).excluding(group(iCivGroupAmerica)).named("ENSLAVE_OLD_WORLD"),
 	),
@@ -334,7 +334,7 @@ dGoals = {
 	),
 	iThailand: (
 		OpenBorderCount(10).at(1650),
-		BestPopulationCity(city(plots.capital(iThailand)).named("AYUTTHAYA")).at(1700),
+		BestPopulationCity(start(iThailand).named("AYUTTHAYA")).at(1700),
 		NoForeignCities(plots.rectangle(tSouthAsia).named("SOUTH_ASIA")).excluding(lSouthAsianCivs).at(1900),
 	),
 	iCongo: (
@@ -352,12 +352,12 @@ dGoals = {
 		CultureCity(20000).at(1800),
 	),
 	iNetherlands: (
-		CitySpecialistCount(city(plots.capital(iNetherlands)).named("AMSTERDAM"), iSpecialistGreatMerchant, 3).at(1745),
+		CitySpecialistCount(start(iNetherlands).named("AMSTERDAM"), iSpecialistGreatMerchant, 3).at(1745),
 		ConqueredCityCount(4).civs(dCivGroups[iCivGroupEurope]).outside(plots.regions(*lEurope).named("COLONIAL")).named("CONQUER_FOUR_EUROPEAN_COLONIES").by(1745),
 		ResourceCount(iSpices, 7).by(1775),
 	),
 	iGermany: (
-		CitySpecialistCount(city(plots.capital(iGermany)).named("BERLIN"), great_people(), 7).at(1900),
+		CitySpecialistCount(start(iGermany).named("BERLIN"), great_people(), 7).at(1900),
 		Control(
 			plots.normal(iItaly),
 			plots.normal(iFrance),
@@ -374,19 +374,20 @@ dGoals = {
 		).at(1900),
 		Wonders(iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations).by(1950),
 		All(
+			# negative value
 			AlliedCommercePercent(75),
 			AlliedPowerPercent(75),
 		).by(1990),
 	),
 	iArgentina: (
 		GoldenAges(2).by(1930),
-		CultureLevel(city(plots.capital(iArgentina)).named("BUENOS_AIRES"), iCultureLevelLegendary).by(1960),
+		CultureLevel(start(iArgentina).named("BUENOS_AIRES"), iCultureLevelLegendary).by(1960),
 		GoldenAges(6).by(2000),
 	),
 	iMexico: (
 		BuildingCount(stateReligionCathedral(), 3).by(1880),
 		GreatGenerals(3).by(1940),
-		BestPopulationCity(city(plots.capital(iMexico)).named("MEXICO_CITY")).at(1960),
+		BestPopulationCity(start(iMexico).named("MEXICO_CITY")).at(1960),
 	),
 	iColombia: (
 		NoForeignCities(
@@ -408,8 +409,8 @@ dGoals = {
 	),
 	iCanada: (
 		All(
-			RouteConnection(plots.lazy().capital(iCanada).named("CAPITAL"), plots.of(lAtlanticCoast).named("ATLANTIC_COAST"), [iRouteRailroad]).named("CAPITAL_ATLANTIC_RAILWAY"),
-			RouteConnection(plots.lazy().capital(iCanada).named("CAPITAL"), plots.of(lPacificCoast).named("PACIFIC_COAST"), [iRouteRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
+			RouteConnection(capital(), plots.of(lAtlanticCoast).named("ATLANTIC_COAST"), [iRouteRailroad]).named("CAPITAL_ATLANTIC_RAILWAY"),
+			RouteConnection(capital(), plots.of(lPacificCoast).named("PACIFIC_COAST"), [iRouteRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
 		).by(1920),
 		All(
 			Control(plots.regions(rCanada).named("CANADA")),

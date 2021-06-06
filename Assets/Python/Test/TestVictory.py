@@ -1,5 +1,6 @@
 from VictoryGoals import *
 from unittest import *
+from Victories import disable as disable_victories
 
 from inspect import isfunction
 
@@ -609,6 +610,7 @@ class TestArguments(ExtendedTestCase):
 	def testResolvesDeferred(self):
 		deferred = DeferredStateReligionBuilding(infos.type('SPECIALBUILDING_CATHEDRAL'))
 		arguments = Arguments(objectives=[(1, deferred), (2, deferred)])
+		arguments.iPlayer = 0
 		
 		player(0).setLastStateReligion(iCatholicism)
 		
@@ -1084,8 +1086,7 @@ class TestBaseGoal(ExtendedTestCase):
 		TestGoal = Count.objective(int).include_owner.func(condition_value).subclass("TestGoal")
 		iPlayer = 21
 		
-		goal = TestGoal(0, 1, 2)
-		goal.activate(iPlayer)
+		goal = TestGoal(0, 1, 2).activate(iPlayer)
 		
 		self.assertEqual(goal.owner_included, True)
 		self.assertEqual(goal.arguments.iPlayer, iPlayer)
@@ -1094,8 +1095,7 @@ class TestBaseGoal(ExtendedTestCase):
 	def testNotIncludeOwner(self):
 		iPlayer = 20
 		
-		goal = TestGoal()
-		goal.activate(iPlayer)
+		goal = TestGoal().activate(iPlayer)
 		
 		self.assertEqual(goal.owner_included, False)
 		self.assertEqual(goal.arguments.owner_included, False)
@@ -1107,33 +1107,33 @@ class TestBaseGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.arguments.iPlayer, None)
 	
 	def testActivate(self):
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
-		self.assertEqual(self.goal.iPlayer, 0)
-		self.assertEqual(self.goal._player.getID(), 0)
-		self.assertEqual(self.goal._team.getID(), 0)
-		self.assertEqual(self.goal.callback, None)
-		self.assertEqual(self.goal.arguments.iPlayer, 0)
+		self.assertEqual(goal.iPlayer, 0)
+		self.assertEqual(goal._player.getID(), 0)
+		self.assertEqual(goal._team.getID(), 0)
+		self.assertEqual(goal.callback, None)
+		self.assertEqual(goal.arguments.iPlayer, 0)
 	
 	def testActivateWithCallback(self):
 		def callback():
 			pass
 		
-		self.goal.activate(0, callback)
+		goal = self.goal.activate(0, callback)
 		
-		self.assertEqual(self.goal.callback, callback)
+		self.assertEqual(goal.callback, callback)
 	
 	def testPassivate(self):
 		def callback():
 			pass
 		
-		self.goal.passivate(0, callback)
+		goal = self.goal.passivate(0, callback)
 		
 		try:
-			self.assertEqual(self.goal.iPlayer, 0)
-			self.assertEqual(self.goal.callback, callback)
+			self.assertEqual(goal.iPlayer, 0)
+			self.assertEqual(goal.callback, callback)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testPossiblePossible(self):
 		self.assertEqual(self.goal.possible(), True)
@@ -1179,9 +1179,9 @@ class TestBaseGoal(ExtendedTestCase):
 				
 		callable = Callable()
 		
-		self.goal.activate(0, callable)
-		self.goal.setState(SUCCESS)
-		self.assertEqual(callable.called, self.goal)
+		goal = self.goal.activate(0, callable)
+		goal.setState(SUCCESS)
+		self.assertEqual(callable.called, goal)
 	
 	def testSetStateUnchangedCallback(self):
 		class Callable(object):
@@ -1192,8 +1192,8 @@ class TestBaseGoal(ExtendedTestCase):
 				
 		callable = Callable()
 		
-		self.goal.activate(0, callable.call)
-		self.goal.setState(POSSIBLE)
+		goal = self.goal.activate(0, callable.call)
+		goal.setState(POSSIBLE)
 		self.assertEqual(callable.called, None)
 
 	def testExpirePossible(self):
@@ -1308,82 +1308,82 @@ class TestBaseGoal(ExtendedTestCase):
 	def testAtSuccess(self):
 		self.goal.at(-3000)
 		self.goal.condition_value = True
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
-		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
-		self.assertEqual(self.goal.state, SUCCESS)
+		self.assertEqual(goal.state, SUCCESS)
 		
-		self.goal.deactivate()
+		goal.deactivate()
 	
 	def testAtFailure(self):
 		self.goal.at(-3000)
 		self.goal.condition_value = False
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		
 			events.fireEvent("BeginPlayerTurn", 0, 0)
-			self.assertEqual(self.goal.state, FAILURE)
+			self.assertEqual(goal.state, FAILURE)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testAtDifferentTurn(self):
 		self.goal.at(-3000)
 		self.goal.condition_value = True
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		
 			events.fireEvent("BeginPlayerTurn", 1, 0)
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testBy(self):
 		self.goal.by(-3000)
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		
 			events.fireEvent("BeginPlayerTurn", 0, 0)
-			self.assertEqual(self.goal.state, FAILURE)
+			self.assertEqual(goal.state, FAILURE)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 		
 	def testByAfterSuccess(self):
 		self.goal.by(-3000)
 		self.goal.state = SUCCESS
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, SUCCESS)
+			self.assertEqual(goal.state, SUCCESS)
 		
 			events.fireEvent("BeginPlayerTurn", 0, 0)
-			self.assertEqual(self.goal.state, SUCCESS)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testByDifferentTurn(self):
 		self.goal.by(-3000)
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		
 			events.fireEvent("BeginPlayerTurn", 1, 0)
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testTurnly(self):
 		goal = TestGoal.turnly.subclass("SubGoal")()
 		goal.condition_value = True
-		goal.activate(0)
+		goal = goal.activate(0)
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
@@ -1395,33 +1395,33 @@ class TestBaseGoal(ExtendedTestCase):
 	
 	def testDeactivateDisablesEventHandling(self):
 		self.goal.at(-3000)
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
-		self.goal.deactivate()
+		goal.deactivate()
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		
-		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 	
 	def testDeactivateTwice(self):
 		self.goal.at(-3000)
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
-		self.goal.deactivate()
-		self.goal.deactivate()
+		goal.deactivate()
+		goal.deactivate()
 	
 	def testCheckEvery(self):
 		self.goal.every()
-		self.goal.activate(0)
+		goal = self.goal.activate(0)
 		
 		try:
-			self.assertEqual(self.goal.state, POSSIBLE)
+			self.assertEqual(goal.state, POSSIBLE)
 		
 			events.fireEvent("BeginPlayerTurn", 0, 0)
 		
-			self.assertEqual(self.goal.state, SUCCESS)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
-			self.goal.deactivate()
+			goal.deactivate()
 	
 	def testPassiveCannotSucceed(self):
 		self.goal.mode = BaseGoal.PASSIVE
@@ -1451,32 +1451,27 @@ class TestBaseGoal(ExtendedTestCase):
 		self.assertEqual(goal.description(), "Settle three Granaries")
 	
 	def testDescriptionByAD(self):
-		goal = DescriptionGoal(iGranary, 3).by(1000)
-		goal.activate(0)
+		goal = DescriptionGoal(iGranary, 3).by(1000).activate(0)
 		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD (Turn 221)")
 	
 	def testDescriptionByBC(self):
-		goal = DescriptionGoal(iGranary, 3).by(-1000)
-		goal.activate(0)
+		goal = DescriptionGoal(iGranary, 3).by(-1000).activate(0)
 		self.assertEqual(goal.description(), "Control three Granaries by 1000 BC (Turn 74)")
 	
 	def testDescriptionAtAD(self):
-		goal = DescriptionGoal(iGranary, 3).at(1000)
-		goal.activate(0)
+		goal = DescriptionGoal(iGranary, 3).at(1000).activate(0)
 		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 221)")
 	
 	def testDescriptionAtBC(self):
-		goal = DescriptionGoal(iGranary, 3).at(-1000)
-		goal.activate(0)
+		goal = DescriptionGoal(iGranary, 3).at(-1000).activate(0)
 		self.assertEqual(goal.description(), "Control three Granaries in 1000 BC (Turn 74)")
 	
 	def testDescriptionUnactivated(self):
 		goal = DescriptionGoal(iGranary, 3).at(1000)
-		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 221)")
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
 	
 	def testDescriptionCalendar(self):
-		goal = DescriptionGoal(iGranary, 3).at(1000)
-		goal.activate(0)
+		goal = DescriptionGoal(iGranary, 3).at(1000).activate(0)
 		
 		team(0).setHasTech(iCalendar, True, 0, True, False)
 		
@@ -1516,14 +1511,12 @@ class TestBaseGoal(ExtendedTestCase):
 class TestProgress(ExtendedTestCase):
 	
 	def testProgressText(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		self.assertEqual(goal.progress_text(iPyramids), "Pyramids")
 	
 	def testProgressTextCount(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		try:
 			self.assertEqual(goal.progress_text(iGranary, 3), "Granaries: 0 / 3")
@@ -1531,8 +1524,7 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProgressIndicatorIncomplete(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -1541,8 +1533,7 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProgressIndicatorComplete(self):
-		goal = Count.building(iGranary, 1)
-		goal.activate(0)
+		goal = Count.building(iGranary, 1).activate(0)
 		
 		try:
 			city = player(0).initCity(61, 31)
@@ -1556,8 +1547,7 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testObjectiveProgress(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		try:
 			self.assertEqual(goal.objective_progress(iPyramids), u"%c Pyramids" % self.FAILURE_CHAR)
@@ -1565,8 +1555,7 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testObjectiveProgressCount(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		try:
 			self.assertEqual(goal.objective_progress(iGranary, 3), u"%c Granaries: 0 / 3" % self.FAILURE_CHAR)
@@ -1574,30 +1563,27 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProgress(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Pyramids" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Pyramids" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressMultiple(self):
-		goal = Condition.wonder(iPyramids, iOracle, iParthenon)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids, iOracle, iParthenon).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [
+			self.assertEqual(goal.progress(), [[
 				u"%c Pyramids" % self.FAILURE_CHAR, 
 				u"%c Oracle" % self.FAILURE_CHAR, 
 				u"%c Parthenon" % self.FAILURE_CHAR
-			])
+			]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressBy(self):
-		goal = Condition.wonder(iPyramids).by(100)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).by(100).activate(0)
 		
 		try:
 			self.assertEqual(goal.progress(), [])
@@ -1605,104 +1591,95 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProgressByMultiple(self):
-		goal = Condition.wonder(iPyramids, iOracle, iParthenon).by(100)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids, iOracle, iParthenon).by(100).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [
+			self.assertEqual(goal.progress(), [[
 				u"%c Pyramids" % self.FAILURE_CHAR, 
 				u"%c Oracle" % self.FAILURE_CHAR, 
 				u"%c Parthenon" % self.FAILURE_CHAR
-			])
+			]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressByForceSingle(self):
-		goal = Condition.wonder(iPyramids).by(100)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).by(100).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(bForceSingle=True), [u"%c Pyramids" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(bForceSingle=True), [[u"%c Pyramids" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 		
 	def testProgressCountSingle(self):
-		goal = Count.building(iGranary, 1)
-		goal.activate(0)
+		goal = Count.building(iGranary, 1).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Granary" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Granary" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressCountMultiple(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Granaries: 0 / 3" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Granaries: 0 / 3" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressCountTextKey(self):
 		goal = Count.building(iGranary, 3)
 		goal._progress = "TXT_KEY_UHV_PROGRESS_CONVERT_AFTER_FOUNDING"
-		goal.activate(0)
+		goal = goal.activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Convert to Granary: 0 / 3" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Convert to Granary: 0 / 3" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressCountAggregate(self):
-		goal = Count.building(sum(iGranary, iBarracks), 3)
-		goal.activate(0)
+		goal = Count.building(sum(iGranary, iBarracks), 3).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Granaries and Barracks: 0 / 3" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Granaries and Barracks: 0 / 3" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressCountPlots(self):
-		goal = Count.numCities(plots.region(rBritain).named("BRITAIN"), 3)
-		goal.activate(0)
+		goal = Count.numCities(plots.region(rBritain).named("BRITAIN"), 3).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Cities in Britain: 0 / 3" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Cities in Britain: 0 / 3" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressWithCitiesNoCities(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c No Cities" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c No Cities" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressWithCitiesNotEnoughCities(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setPopulation(10)
 		city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), [
+			self.assertEqual(goal.progress(), [[
 				u"%c First: 10 / 10" % self.SUCCESS_CHAR, 
 				u"%c No second city" % self.FAILURE_CHAR, 
 				u"%c No third city" % self.FAILURE_CHAR
-			])
+			]])
 		finally:
 			city.kill()
 		
 			goal.deactivate()
 	
 	def testProgressWithCities(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		city1, city2, city3 = (player(0).initCity(*tuple) for tuple in [(61, 31), (63, 31), (65, 31)])
 		
@@ -1716,11 +1693,11 @@ class TestProgress(ExtendedTestCase):
 		city3.setName("Third", False)
 		
 		try:
-			self.assertEqual(goal.progress(), [
+			self.assertEqual(goal.progress(), [[
 				u"%c First: 10 / 10" % self.SUCCESS_CHAR, 
 				u"%c Third: 5 / 10" % self.FAILURE_CHAR, 
 				u"%c Second: 3 / 10" % self.FAILURE_CHAR
-			])
+			]])
 		finally:
 			city1.kill()
 			city2.kill()
@@ -1729,14 +1706,12 @@ class TestProgress(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProgressPercentage(self):
-		goal = Percentage.religionSpread(iIslam, 20)
-		goal.activate(0)
+		goal = Percentage.religionSpread(iIslam, 20).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Islam spread to: 0.00%% / 20%%" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Islam spread to: 0.00%% / 20%%" % self.FAILURE_CHAR]])
 	
 	def testProgressBestCity(self):
-		goal = BestCity.population(capital())
-		goal.activate(0)
+		goal = BestCity.population(capital()).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -1749,16 +1724,15 @@ class TestProgress(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: Second (10)" % self.FAILURE_CHAR,
-				"Our next most populous: First (5)"
+				[u"%c Most populous: Second (10)" % self.FAILURE_CHAR],
+				["Our next most populous: First (5)"]
 			])
 		finally:
 			city1.kill()
 			city2.kill()
 	
 	def testProgressBestPlayer(self):
-		goal = BestPlayer.population()
-		goal.activate(0)
+		goal = BestPlayer.population().activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setPopulation(5)
@@ -1769,35 +1743,33 @@ class TestProgress(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: Babylonia (1000000)" % self.FAILURE_CHAR,
-				"Our next most populous: Egypt (125000)"
+				[u"%c Most populous: Babylonia (1000000)" % self.FAILURE_CHAR],
+				["Our next most populous: Egypt (125000)"]
 			])
 		finally:
 			city1.kill()
 			city2.kill()
 	
 	def testProgressRouteConnection(self):
-		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRailroad])
-		goal.activate(0)
+		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRailroad]).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Railroad from your capital to Britain" % self.FAILURE_CHAR])
+		self.assertEqual(goal.iPlayer, 0)
+		self.assertEqual(goal.progress(), [[u"%c Railroad from your capital to Britain" % self.FAILURE_CHAR]])
 	
 	def testProgressRouteConnectionMultipleRoutes(self):
-		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRoad, iRouteRailroad, iRouteHighway])
-		goal.activate(0)
+		goal = RouteConnection(capital(), plots.region(rBritain).named("BRITAIN"), [iRouteRoad, iRouteRailroad, iRouteHighway]).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Road, Railroad or Highway from your capital to Britain" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Road, Railroad or Highway from your capital to Britain" % self.FAILURE_CHAR]])
 	
 	def testProgressAll(self):
 		goal1 = Condition.wonder(iPyramids)
 		goal2 = Condition.wonder(iParthenon)
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(goal1, goal2).activate(0)
 		
 		try:
 			self.assertEqual(goal.progress(), [
-				u"%c Pyramids" % self.FAILURE_CHAR,
-				u"%c Parthenon" % self.FAILURE_CHAR
+				[u"%c Pyramids" % self.FAILURE_CHAR],
+				[u"%c Parthenon" % self.FAILURE_CHAR]
 			])
 		finally:
 			goal.deactivate()
@@ -1805,27 +1777,25 @@ class TestProgress(ExtendedTestCase):
 	def testProgressAllFailable(self):
 		goal1 = Condition.wonder(iPyramids)
 		goal2 = Trigger.noCityLost()
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(goal1, goal2).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Pyramids" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Pyramids" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressAllIndicatorCurrent(self):
 		goal1 = Condition.wonder(iPyramids)
 		goal2 = Condition.wonder(iParthenon)
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(goal1, goal2).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iPyramids, True)
 		
 		try:
 			self.assertEqual(goal.progress(), [
-				u"%c Pyramids" % self.SUCCESS_CHAR,
-				u"%c Parthenon" % self.FAILURE_CHAR
+				[u"%c Pyramids" % self.SUCCESS_CHAR],
+				[u"%c Parthenon" % self.FAILURE_CHAR]
 			])
 		finally:
 			city.kill()
@@ -1834,47 +1804,45 @@ class TestProgress(ExtendedTestCase):
 	def testProgressAllIndicatorComplete(self):
 		goal1 = Condition.wonder(iPyramids)
 		goal2 = Condition.wonder(iParthenon)
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(goal1, goal2).activate(0)
 		
+		goal1 = goal.goals[0]
 		goal1.succeed()
 		
 		try:
 			self.assertEqual(goal1.state, SUCCESS)
+			self.assertEqual(goal1.succeeded(), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Pyramids" % self.SUCCESS_CHAR,
-				u"%c Parthenon" % self.FAILURE_CHAR
+				[u"%c Goal accomplished! (3000 BC)" % self.SUCCESS_CHAR],
+				[u"%c Parthenon" % self.FAILURE_CHAR]
 			])
 		finally:
 			goal.deactivate()
-	
+
 	def testProgressAllFromDescription(self):
 		goal1 = Condition.tradeConnection().named("TRADE_CONNECTION")
-		goal = All(goal1)
-		goal.activate(0)
+		goal = All(goal1).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Establish a trade connection with another civilization" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Establish a trade connection with another civilization" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testProgressSome(self):
 		subgoal = Condition.wonder(iPyramids, iParthenon, iOracle)
-		goal = Some(subgoal, 2)
-		goal.activate(0)
+		goal = Some(subgoal, 2).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [
+			self.assertEqual(goal.progress(), [[
 				u"%c Pyramids" % self.FAILURE_CHAR,
 				u"%c Parthenon" % self.FAILURE_CHAR, 
 				u"%c Oracle" % self.FAILURE_CHAR
-			])
+			]])
 		finally:
 			goal.deactivate()
 	
 	def testFullDisplay(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		try:
 			self.assertEqual(goal.full_display(), u"Build the Pyramids\n%c Pyramids" % self.FAILURE_CHAR)
@@ -1885,8 +1853,7 @@ class TestProgress(ExtendedTestCase):
 class TestAreas(ExtendedTestCase):
 
 	def testNone(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		try:
 			self.assertEqual(goal.areas, dict())
@@ -1896,9 +1863,9 @@ class TestAreas(ExtendedTestCase):
 	
 	def testObjective(self):
 		britain = plots.region(rBritain).named("BRITAIN")
-		goal = Condition.control(britain)
-		goal.activate(0)
+		goal = Condition.control(britain).activate(0)
 		
+		britain = britain.create()
 		expectedAreas = {
 			"Britain": britain
 		}
@@ -1914,7 +1881,11 @@ class TestAreas(ExtendedTestCase):
 		britain = plots.region(rBritain).named("BRITAIN")
 		iberia = plots.region(rEgypt).named("IBERIA")
 		italy = plots.region(rItaly).named("ITALY")
-		goal = Condition.control(britain, iberia, italy)
+		goal = Condition.control(britain, iberia, italy).activate(0)
+		
+		britain = britain.create()
+		iberia = iberia.create()
+		italy = italy.create()
 		
 		expectedAreas = {
 			"Britain": britain,
@@ -1934,7 +1905,10 @@ class TestAreas(ExtendedTestCase):
 	def testObjectiveAggregate(self):
 		britain = plots.region(rBritain)
 		italy = plots.region(rItaly)
-		goal = Count.numCities(sum(britain, italy).named("NAME_BABYLON"), 2)
+		goal = Count.numCities(sum(britain, italy).named("NAME_BABYLON"), 2).activate(0)
+		
+		britain = britain.create()
+		italy = italy.create()
 		
 		expectedAreas = {
 			"Babylon": britain + italy,
@@ -1950,9 +1924,9 @@ class TestAreas(ExtendedTestCase):
 	
 	def testSubject(self):
 		andeanCoast = plots.region(rPeru).named("ANDEAN_COAST")
-		goal = Condition.route(andeanCoast, iRouteRoad)
-		goal.activate(0)
+		goal = Condition.route(andeanCoast, iRouteRoad).activate(0)
 		
+		andeanCoast = andeanCoast.create()
 		expectedAreas = {
 			"Andean Coast": andeanCoast
 		}
@@ -1967,9 +1941,10 @@ class TestAreas(ExtendedTestCase):
 	def testOverlapping(self):
 		britain = plots.rectangle((0, 0), (4, 4)).named("BRITAIN")
 		italy = plots.rectangle((2, 2), (6, 6)).named("ITALY")
-		goal = Condition.control(britain, italy)
-		goal.activate(0)
+		goal = Condition.control(britain, italy).activate(0)
 		
+		britain = britain.create()
+		italy = italy.create()
 		expectedAreas = {
 			"Britain": britain,
 			"Italy": italy
@@ -1986,11 +1961,10 @@ class TestAreas(ExtendedTestCase):
 	
 	def testDeferredCity(self):
 		deferred = city(10, 10).named("BABYLON")
-		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1)
-		goal.activate(0)
+		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1).activate(0)
 		
 		expectedAreas = {
-			"Babylon": plots.of([(10, 10)])
+			"Babylon": plots_.of([(10, 10)])
 		}
 		
 		try:
@@ -2001,8 +1975,7 @@ class TestAreas(ExtendedTestCase):
 	
 	def testDeferredCapital(self):
 		deferred = capital()
-		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1)
-		goal.activate(0)
+		goal = Count.citySpecialist(deferred, iSpecialistGreatArtist, 1).activate(0)
 		
 		try:
 			self.assertEqual(goal.areas, {})
@@ -2012,8 +1985,10 @@ class TestAreas(ExtendedTestCase):
 	def testRouteConnection(self):
 		start = plots.capitals(iRussia).named("MOSCOW")
 		target = plots.of([(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]).named("SIBERIAN_COAST")
-		goal = RouteConnection(start, target, [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(start, target, [iRouteRoad]).activate(0)
+		
+		start = start.create()
+		target = target.create()
 		
 		expectedAreas = {
 			"Moscow": start,
@@ -2031,8 +2006,11 @@ class TestAreas(ExtendedTestCase):
 		britain = plots.region(rBritain).named("BRITAIN")
 		iberia = plots.region(rIberia).named("IBERIA")
 		italy = plots.region(rItaly).named("ITALY")
-		goal = All(Condition.control(britain), Condition.control(iberia), Condition.control(italy))
-		goal.activate(0)
+		goal = All(Condition.control(britain), Condition.control(iberia), Condition.control(italy)).activate(0)
+		
+		britain = britain.create()
+		iberia = iberia.create()
+		italy = italy.create()
 		
 		expectedAreas = {
 			"Britain": britain,
@@ -2051,8 +2029,10 @@ class TestAreas(ExtendedTestCase):
 	def testSome(self):
 		britain = plots.region(rBritain).named("BRITAIN")
 		iberia = plots.region(rIberia).named("IBERIA")
-		goal = Some(Condition.control(britain, iberia), 2)
-		goal.activate(0)
+		goal = Some(Condition.control(britain, iberia), 2).activate(0)
+		
+		britain = britain.create()
+		iberia = iberia.create()
 		
 		expectedAreas = {
 			"Britain": britain,
@@ -2070,12 +2050,11 @@ class TestAreas(ExtendedTestCase):
 		goal = Different(
 			Count.cultureLevel(city(10, 10).named("BABYLON"), iCultureLevelDeveloping), 
 			Count.cultureLevel(city(20, 20).named("CARTHAGE"), iCultureLevelInfluential)
-		)
-		goal.activate(0)
+		).activate(0)
 		
 		expectedAreas = {
-			"Babylon": plots.of([(10, 10)]),
-			"Carthage": plots.of([(20, 20)]),
+			"Babylon": plots_.of([(10, 10)]),
+			"Carthage": plots_.of([(20, 20)]),
 		}
 		
 		try:
@@ -2087,9 +2066,9 @@ class TestAreas(ExtendedTestCase):
 	
 	def testConqueredCitiesInside(self):
 		britain = plots.region(rBritain).named("BRITAIN")
-		goal = Count.conqueredCities().inside(britain)
-		goal.activate(0)
+		goal = Count.conqueredCities().inside(britain).activate(0)
 		
+		britain = britain.create()
 		expectedAreas = {
 			"Britain": britain,
 		}
@@ -2097,14 +2076,13 @@ class TestAreas(ExtendedTestCase):
 		try:
 			self.assertEqual(goal.areas, expectedAreas)
 			self.assertEqual(goal.area_name(britain.random()), "Britain")
-			self.assertEqual(goal.area_name(plots.region(rItaly).random()), "")
+			self.assertEqual(goal.area_name(plots_.region(rItaly).random()), "")
 		finally:
 			goal.deactivate()
 	
 	def testConqueredCitiesInsideUnnamed(self):
 		britain = plots.region(rBritain)
-		goal = Count.conqueredCities().inside(britain)
-		goal.activate(0)
+		goal = Count.conqueredCities().inside(britain).activate(0)
 		
 		try:
 			self.assertEqual(goal.areas, {})
@@ -2113,24 +2091,23 @@ class TestAreas(ExtendedTestCase):
 	
 	def testConqueredCitiesOutside(self):
 		britain = plots.region(rBritain).named("BRITAIN")
-		goal = Count.conqueredCities().outside(britain)
-		goal.activate(0)
+		goal = Count.conqueredCities().outside(britain).activate(0)
 		
+		britain = britain.create()
 		expectedAreas = {
-			"Britain": plots.all().without(britain).land()
+			"Britain": plots_.all().without(britain).land()
 		}
 		
 		try:
 			self.assertEqual(goal.areas, expectedAreas)
 			self.assertEqual(goal.area_name(britain.random()), "")
-			self.assertEqual(goal.area_name(plots.region(rItaly).random()), "Britain")
+			self.assertEqual(goal.area_name(plots_.region(rItaly).random()), "Britain")
 		finally:
 			goal.deactivate()
 	
 	def testConqueredCitiesOutsideUnnamed(self):
 		britain = plots.region(rBritain)
-		goal = Count.conqueredCities().outside(britain)
-		goal.activate(0)
+		goal = Count.conqueredCities().outside(britain).activate(0)
 		
 		try:
 			self.assertEqual(goal.areas, {})
@@ -2141,8 +2118,7 @@ class TestAreas(ExtendedTestCase):
 class TestConditionGoals(ExtendedTestCase):
 
 	def testControlAllCities(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -2156,8 +2132,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlSomeCities(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -2171,8 +2146,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlNoCities(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -2186,14 +2160,12 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlEmpty(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testControlOutside(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(0).initCity(59, 31)
 		
@@ -2203,8 +2175,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testControlAllOfMultiple(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)), plots.rectangle((66, 30), (70, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35)), plots.rectangle((66, 30), (70, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(69, 31)
@@ -2216,8 +2187,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testControlSomeOfMultiple(self):
-		goal = Condition.control(plots.rectangle((60, 30), (65, 35)), plots.rectangle((66, 30), (70, 35)))
-		goal.activate(0)
+		goal = Condition.control(plots.rectangle((60, 30), (65, 35)), plots.rectangle((66, 30), (70, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(1).initCity(69, 31)
@@ -2229,8 +2199,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city2.kill()
 
 	def testControlOrVassalizeAllCities(self):
-		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -2244,8 +2213,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlOrVassalizeSomeCities(self):
-		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -2259,8 +2227,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlOrVassalizeNoCities(self):
-		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -2273,8 +2240,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testControlOrVassalizeAllVassal(self):
-		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -2292,8 +2258,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(1).setVassal(team(0).getID(), False, False)
 	
 	def testControlOrVassalizeOneVassal(self):
-		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.controlOrVassalize(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city2 = player(2).initCity(63, 31)
@@ -2311,8 +2276,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(1).setVassal(team(0).getID(), False, False)
 	
 	def testSettleWhenFounded(self):
-		goal = Condition.settle(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.settle(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		events.fireEvent("cityBuilt", city)
@@ -2326,8 +2290,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSettleWhenConquered(self):
-		goal = Condition.settle(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.settle(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		events.fireEvent("cityBuilt", city)
@@ -2345,8 +2308,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSettleWhenTraded(self):
-		goal = Condition.settle(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.settle(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		events.fireEvent("cityBuilt", city)
@@ -2364,8 +2326,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWonderOwned(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iPyramids, True)
@@ -2378,8 +2339,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWonderNonExistent(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -2387,8 +2347,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testWonderDifferentOwner(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		city.setHasRealBuilding(iPyramids, True)
@@ -2401,8 +2360,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMultipleWondersNone(self):
-		goal = Condition.wonder(iPyramids, iParthenon, iColossus)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids, iParthenon, iColossus).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -2410,8 +2368,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMultipleWondersSome(self):
-		goal = Condition.wonder(iPyramids, iParthenon, iColossus)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids, iParthenon, iColossus).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		for iWonder in [iPyramids, iParthenon]:
@@ -2425,8 +2382,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMultipleWondersAll(self):
-		goal = Condition.wonder(iPyramids, iParthenon, iColossus)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids, iParthenon, iColossus).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		for iWonder in [iPyramids, iParthenon, iColossus]:
@@ -2440,8 +2396,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWonderExpired(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		city.setHasRealBuilding(iPyramids, True)
@@ -2458,8 +2413,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWonderCheck(self):
-		goal = Condition.wonder(iPyramids)
-		goal.activate(0)
+		goal = Condition.wonder(iPyramids).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iPyramids, True)
@@ -2476,14 +2430,12 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testProjectNonExistent(self):
-		goal = Condition.project(iTheInternet)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testProjectCompleted(self):
-		goal = Condition.project(iTheInternet)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet).activate(0)
 		
 		team(0).changeProjectCount(iTheInternet, 1)
 		
@@ -2493,8 +2445,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(0).changeProjectCount(iTheInternet, -1)
 	
 	def testProjectCompletedOther(self):
-		goal = Condition.project(iTheInternet)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet).activate(0)
 		
 		team(1).changeProjectCount(iTheInternet, 1)
 		
@@ -2504,8 +2455,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(1).changeProjectCount(iTheInternet, -1)
 	
 	def testProjectCompletedMultipleSome(self):
-		goal = Condition.project(iTheInternet, iHumanGenome, iSDI)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet, iHumanGenome, iSDI).activate(0)
 		
 		team(0).changeProjectCount(iTheInternet, 1)
 		team(0).changeProjectCount(iHumanGenome, 1)
@@ -2517,8 +2467,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(0).changeProjectCount(iHumanGenome, -1)
 	
 	def testProjectCompletedMultipleAll(self):
-		goal = Condition.project(iTheInternet, iHumanGenome, iSDI)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet, iHumanGenome, iSDI).activate(0)
 		
 		for iProject in [iTheInternet, iHumanGenome, iSDI]:
 			team(0).changeProjectCount(iProject, 1)
@@ -2530,8 +2479,7 @@ class TestConditionGoals(ExtendedTestCase):
 				team(0).changeProjectCount(iProject, -1)
 	
 	def testProjectCheckedOnEvent(self):
-		goal = Condition.project(iTheInternet)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		team(0).changeProjectCount(iTheInternet, 1)
@@ -2545,8 +2493,7 @@ class TestConditionGoals(ExtendedTestCase):
 			team(0).changeProjectCount(iTheInternet, -1)
 	
 	def testProjectExpiredOnEvent(self):
-		goal = Condition.project(iTheInternet)
-		goal.activate(0)
+		goal = Condition.project(iTheInternet).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		team(1).changeProjectCount(iTheInternet, 1)
@@ -2560,15 +2507,13 @@ class TestConditionGoals(ExtendedTestCase):
 			team(1).changeProjectCount(iTheInternet, -1)
 	
 	def testRouteNone(self):
-		goal = Condition.route(plots.of([(60, 30), (61, 30), (62, 30)]), iRouteRoad)
-		goal.activate(0)
+		goal = Condition.route(plots.of([(60, 30), (61, 30), (62, 30)]), iRouteRoad).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testRouteSome(self):
 		area = plots.of([(60, 30), (61, 30), (62, 30)])
-		goal = Condition.route(area, iRouteRoad)
-		goal.activate(0)
+		goal = Condition.route(area, iRouteRoad).activate(0)
 		
 		for plot in area.without((60, 30)):
 			plot.setRouteType(iRouteRoad)
@@ -2581,8 +2526,7 @@ class TestConditionGoals(ExtendedTestCase):
 	
 	def testRouteAll(self):
 		area = plots.of([(60, 30), (61, 30), (62, 30)])
-		goal = Condition.route(area, iRouteRoad)
-		goal.activate(0)
+		goal = Condition.route(area, iRouteRoad).activate(0)
 		
 		for plot in area:
 			plot.setRouteType(iRouteRoad)
@@ -2594,8 +2538,7 @@ class TestConditionGoals(ExtendedTestCase):
 				plot.setRouteType(-1)
 			
 	def testAreaNoStateReligionSome(self):
-		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
-		goal.activate(0)
+		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -2611,8 +2554,7 @@ class TestConditionGoals(ExtendedTestCase):
 			player(0).setLastStateReligion(-1)
 	
 	def testAreaNoStateReligionAll(self):
-		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism)
-		goal.activate(0)
+		goal = Condition.areaNoStateReligion(plots.rectangle((60, 30), (65, 35)), iCatholicism).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -2624,14 +2566,12 @@ class TestConditionGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testCultureCoveredNone(self):
-		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)]))
-		goal.activate(0)
+		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)])).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testCultureCoveredSome(self):
-		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)]))
-		goal.activate(0)
+		goal = Condition.cultureCovered(plots.of([(60, 30), (61, 30), (62, 30)])).activate(0)
 		
 		plot(60, 30).setOwner(0)
 		
@@ -2642,8 +2582,7 @@ class TestConditionGoals(ExtendedTestCase):
 	
 	def testCultureCoveredAll(self):
 		area = plots.of([(60, 30), (61, 30), (62, 30)])
-		goal = Condition.cultureCovered(area)
-		goal.activate(0)
+		goal = Condition.cultureCovered(area).activate(0)
 		
 		for plot in area:
 			plot.setOwner(0)
@@ -2656,8 +2595,7 @@ class TestConditionGoals(ExtendedTestCase):
 	
 	def testCultureCoveredOther(self):
 		area = plots.of([(60, 30), (61, 30), (62, 30)])
-		goal = Condition.cultureCovered(area)
-		goal.activate(0)
+		goal = Condition.cultureCovered(area).activate(0)
 		
 		for plot in area:
 			plot.setOwner(1)
@@ -2669,14 +2607,12 @@ class TestConditionGoals(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def testNotCommunist(self):
-		goal = Condition.communist()
-		goal.activate(0)
+		goal = Condition.communist().activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testCommunist(self):
-		goal = Condition.communist()
-		goal.activate(0)
+		goal = Condition.communist().activate(0)
 		
 		player(0).setCivics(iCivicsEconomy, iCentralPlanning)
 		
@@ -2686,8 +2622,7 @@ class TestConditionGoals(ExtendedTestCase):
 			player(0).setCivics(iCivicsEconomy, iRedistribution)
 	
 	def testNoForeignCities(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		
@@ -2697,14 +2632,12 @@ class TestConditionGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testNoForeignCitiesNoCities(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 	
 	def testNoForeignCitiesMinor(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(iIndependent).initCity(61, 31)
 		
@@ -2714,8 +2647,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testNoForeignCitiesOther(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2727,8 +2659,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testNoForeignCitiesOnly(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia])
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia]).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(2).initCity(63, 31)
@@ -2740,8 +2671,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testNoForeignCitiesOnlyOther(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia])
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).only([iBabylonia]).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2753,8 +2683,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testNoForeignCitiesExcluding(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).excluding([iBabylonia])
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).excluding([iBabylonia]).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2766,8 +2695,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testNoForeignCitiesExcludingWith(self):
-		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).excluding([iBabylonia])
-		goal.activate(0)
+		goal = Condition.noForeignCities(plots.rectangle((60, 30), (65, 35))).excluding([iBabylonia]).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(2).initCity(63, 31)
@@ -2779,8 +2707,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testTradeConnectionFalse(self):
-		goal = Condition.tradeConnection()
-		goal.activate(0)
+		goal = Condition.tradeConnection().activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -2788,8 +2715,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeConnection(self):
-		goal = Condition.tradeConnection()
-		goal.activate(0)
+		goal = Condition.tradeConnection().activate(0)
 		
 		team(1).meet(0, False)
 		team(1).setOpenBorders(0, True)
@@ -2814,8 +2740,7 @@ class TestConditionGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMoreReligion(self):
-		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2833,8 +2758,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testMoreReligionEqual(self):
-		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2850,8 +2774,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testMoreReligionLess(self):
-		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		
@@ -2864,8 +2787,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city0.kill()
 	
 	def testMoreReligionOutside(self):
-		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Condition.moreReligion(plots.rectangle((60, 30), (65, 35)), iOrthodoxy, iCatholicism).activate(0)
 		
 		city0 = player(0).initCity(25, 25)
 		city0.setHasReligion(iOrthodoxy, True, False, False)
@@ -2877,8 +2799,7 @@ class TestConditionGoals(ExtendedTestCase):
 			city0.kill()
 	
 	def testMoreCulture(self):
-		goal = Condition.moreCulture()
-		goal.activate(0)
+		goal = Condition.moreCulture().activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2896,8 +2817,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testMoreCultureLess(self):
-		goal = Condition.moreCulture()
-		goal.activate(0)
+		goal = Condition.moreCulture().activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2915,8 +2835,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testMoreCultureThan(self):
-		goal = Condition.moreCulture().than([iBabylonia])
-		goal.activate(0)
+		goal = Condition.moreCulture().than([iBabylonia]).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -2934,8 +2853,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testAllAttitude(self):
-		goal = Condition.allAttitude(AttitudeTypes.ATTITUDE_PLEASED)
-		goal.activate(0)
+		goal = Condition.allAttitude(AttitudeTypes.ATTITUDE_PLEASED).activate(0)
 		
 		self.assertEqual(players.major().alive().count(), 3)
 		self.assertEqual(player(1).AI_getAttitude(0), AttitudeTypes.ATTITUDE_CAUTIOUS)
@@ -2943,6 +2861,12 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "0 / 2")
+		
+		team(0).meet(1, False)
+		team(0).meet(2, False)
+		
+		self.assertEqual(player(0).canContact(1), True)
+		self.assertEqual(player(0).canContact(2), True)
 		
 		player(1).AI_setAttitudeExtra(0, 100)
 		player(2).AI_setAttitudeExtra(0, 100)
@@ -2956,11 +2880,12 @@ class TestConditionGoals(ExtendedTestCase):
 		finally:
 			player(1).AI_setAttitudeExtra(0, 0)
 			player(2).AI_setAttitudeExtra(0, 0)
+			team(1).cutContact(0)
+			team(2).cutContact(0)
 			goal.deactivate()
 	
 	def testNoStateReligion(self):
-		goal = Condition.noStateReligion(iOrthodoxy)
-		goal.activate(0)
+		goal = Condition.noStateReligion(iOrthodoxy).activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iCatholicism)
@@ -2974,8 +2899,7 @@ class TestConditionGoals(ExtendedTestCase):
 				player(i).setLastStateReligion(-1)
 	
 	def testNoStateReligionStillLeft(self):
-		goal = Condition.noStateReligion(iOrthodoxy)
-		goal.activate(0)
+		goal = Condition.noStateReligion(iOrthodoxy).activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iOrthodoxy)
@@ -2989,8 +2913,7 @@ class TestConditionGoals(ExtendedTestCase):
 				player(i).setLastStateReligion(-1)
 	
 	def testStateReligionPercent(self):
-		goal = Condition.stateReligionPercent(iConfucianism, 50)
-		goal.activate(0)
+		goal = Condition.stateReligionPercent(iConfucianism, 50).activate(0)
 		
 		player(0).setLastStateReligion(iConfucianism)
 		player(1).setLastStateReligion(iConfucianism)
@@ -3004,8 +2927,7 @@ class TestConditionGoals(ExtendedTestCase):
 				player(i).setLastStateReligion(-1)
 	
 	def testStateReligionPercentOrSecular(self):
-		goal = Condition.stateReligionPercent(iConfucianism, 50).orSecular()
-		goal.activate(0)
+		goal = Condition.stateReligionPercent(iConfucianism, 50).orSecular().activate(0)
 		
 		player(0).setLastStateReligion(iConfucianism)
 		player(1).setCivics(iCivicsReligion, iSecularism)
@@ -3020,8 +2942,7 @@ class TestConditionGoals(ExtendedTestCase):
 			player(2).setLastStateReligion(-1)
 	
 	def testNoReligionPercent(self):
-		goal = Condition.noReligionPercent(50)
-		goal.activate(0)
+		goal = Condition.noReligionPercent(50).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasReligion(iBuddhism, True, False, False)
@@ -3040,8 +2961,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testNoReligionPercentTooMany(self):
-		goal = Condition.noReligionPercent(50)
-		goal.activate(0)
+		goal = Condition.noReligionPercent(50).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasReligion(iBuddhism, True, False, False)
@@ -3062,8 +2982,7 @@ class TestConditionGoals(ExtendedTestCase):
 				city.kill()
 	
 	def testGoldPercent(self):
-		goal = Condition.goldPercent(50)
-		goal.activate(0)
+		goal = Condition.goldPercent(50).activate(0)
 		
 		for iPlayer in players.major().alive():
 			player(iPlayer).setGold(0)
@@ -3092,20 +3011,17 @@ class TestCountGoals(ExtendedTestCase):
 			plot.resetCultureConversion()
 		
 	def testPickle(self):
-		goal = BuildingCount(iGranary, 3)
-		goal.activate(0)
+		goal = BuildingCount(iGranary, 3).activate(0)
 		
 		pickle.dumps(goal)
 	
 	def testPickleWithCallback(self):
-		goal = BuildingCount(iGranary, 3)
-		goal.activate(0, TestCallback())
+		goal = BuildingCount(iGranary, 3).activate(0, TestCallback())
 		
 		pickle.dumps(goal)
 	
 	def testBuildingNone(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -3114,8 +3030,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingSome(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31)]
 		for tile in tiles:
@@ -3132,8 +3047,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingAll(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		for tile in tiles:
@@ -3150,8 +3064,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 			
 	def testBuildingMore(self):
-		goal = Count.building(iGranary, 3)
-		goal.activate(0)
+		goal = Count.building(iGranary, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31), (67, 31)]
 		for tile in tiles:
@@ -3168,8 +3081,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingMultiplePartial(self):
-		goal = Count.building((iGranary, 3), (iBarracks, 2))
-		goal.activate(0)
+		goal = Count.building((iGranary, 3), (iBarracks, 2)).activate(0)
 		
 		tiles = [(61, 31), (63, 31)]
 		for tile in tiles:
@@ -3187,8 +3099,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingMultipleAll(self):
-		goal = Count.building((iGranary, 3), (iBarracks, 2))
-		goal.activate(0)
+		goal = Count.building((iGranary, 3), (iBarracks, 2)).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		for tile in tiles:
@@ -3206,8 +3117,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingSum(self):
-		goal = Count.building(sum([iGranary, iBarracks, iLibrary]), 3)
-		goal.activate(0)
+		goal = Count.building(sum([iGranary, iBarracks, iLibrary]), 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		for iBuilding in [iGranary, iBarracks, iLibrary]:
@@ -3222,8 +3132,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingCheck(self):
-		goal = Count.building(iGranary, 1)
-		goal.activate(0)
+		goal = Count.building(iGranary, 1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iGranary, True)
@@ -3241,8 +3150,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingCheckDifferentBuilding(self):
-		goal = Count.building(iGranary, 1)
-		goal.activate(0)
+		goal = Count.building(iGranary, 1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iGranary, True)
@@ -3260,8 +3168,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingCheckCityAcquired(self):
-		goal = Count.building(iGranary, 1)
-		goal.activate(0)
+		goal = Count.building(iGranary, 1).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		city.setHasRealBuilding(iGranary, True)
@@ -3277,8 +3184,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingCheckSum(self):
-		goal = Count.building(sum([iGranary, iLibrary, iCastle]), 3)
-		goal.activate(0)
+		goal = Count.building(sum([iGranary, iLibrary, iCastle]), 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		for iBuilding in [iGranary, iLibrary, iCastle]:
@@ -3297,8 +3203,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingDeferred(self):
-		goal = Count.building(stateReligionCathedral(), 1)
-		goal.activate(0)
+		goal = Count.building(stateReligionCathedral(), 1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iOrthodoxCathedral, True)
@@ -3319,8 +3224,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingUniqueInGoal(self):
-		goal = Count.building(iObelisk, 1)
-		goal.activate(0)
+		goal = Count.building(iObelisk, 1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iObelisk, True)
@@ -3337,8 +3241,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingUnique(self):
-		goal = Count.building(iMonument, 1)
-		goal.activate(0)
+		goal = Count.building(iMonument, 1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasRealBuilding(iObelisk, True)
@@ -3355,8 +3258,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBuildingWorld(self):
-		goal = Count.building(iMonument, 3).world()
-		goal.activate(0)
+		goal = Count.building(iMonument, 3).world().activate(0)
 		
 		city0 = player(iEgypt).initCity(61, 31)
 		city0.setHasRealBuilding(iObelisk, True)
@@ -3376,8 +3278,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCultureLess(self):
-		goal = Count.culture(500)
-		goal.activate(0)
+		goal = Count.culture(500).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -3386,8 +3287,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCultureMore(self):
-		goal = Count.culture(500)
-		goal.activate(0)
+		goal = Count.culture(500).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.changeCulture(0, 1000, True)
@@ -3401,8 +3301,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testGoldLess(self):
-		goal = Count.gold(500)
-		goal.activate(0)
+		goal = Count.gold(500).activate(0)
 		
 		player(0).changeGold(100)
 		
@@ -3413,8 +3312,7 @@ class TestCountGoals(ExtendedTestCase):
 			player(0).changeGold(-100)
 	
 	def testGoldMore(self):
-		goal = Count.gold(500)
-		goal.activate(0)
+		goal = Count.gold(500).activate(0)
 		
 		player(0).changeGold(1000)
 		
@@ -3425,15 +3323,13 @@ class TestCountGoals(ExtendedTestCase):
 			player(0).changeGold(-1000)
 	
 	def testResourceLess(self):
-		goal = Count.resource(iGold, 1)
-		goal.activate(0)
+		goal = Count.resource(iGold, 1).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "0 / 1")
 	
 	def testResourceEnough(self):
-		goal = Count.resource(iGold, 1)
-		goal.activate(0)
+		goal = Count.resource(iGold, 1).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city = player(0).initCity(61, 31)
@@ -3448,8 +3344,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testResourcesSome(self):
-		goal = Count.resource((iGold, 1), (iSilver, 1))
-		goal.activate(0)
+		goal = Count.resource((iGold, 1), (iSilver, 1)).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city = player(0).initCity(61, 31)
@@ -3465,8 +3360,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testResourcesAll(self):
-		goal = Count.resource((iGold, 1), (iSilver, 1))
-		goal.activate(0)
+		goal = Count.resource((iGold, 1), (iSilver, 1)).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city1 = player(0).initCity(61, 31)
@@ -3491,8 +3385,7 @@ class TestCountGoals(ExtendedTestCase):
 			plot(63, 31).setBonusType(-1)
 	
 	def testResourceSum(self):
-		goal = Count.resource(sum([iGold, iSilver]), 2)
-		goal.activate(0)
+		goal = Count.resource(sum([iGold, iSilver]), 2).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city1 = player(0).initCity(61, 31)
@@ -3517,15 +3410,13 @@ class TestCountGoals(ExtendedTestCase):
 			plot(63, 31).setBonusType(-1)
 	
 	def testControlledResourceLess(self):
-		goal = Count.controlledResource(iGold, 1)
-		goal.activate(0)
+		goal = Count.controlledResource(iGold, 1).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "0 / 1")
 	
 	def testControlledResourceEnough(self):
-		goal = Count.controlledResource(iGold, 1)
-		goal.activate(0)
+		goal = Count.controlledResource(iGold, 1).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city = player(0).initCity(61, 31)
@@ -3540,8 +3431,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testControlledResourcesSome(self):
-		goal = Count.controlledResource((iGold, 1), (iSilver, 1))
-		goal.activate(0)
+		goal = Count.controlledResource((iGold, 1), (iSilver, 1)).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city = player(0).initCity(61, 31)
@@ -3557,8 +3447,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testControlledResourcesAll(self):
-		goal = Count.controlledResource((iGold, 1), (iSilver, 1))
-		goal.activate(0)
+		goal = Count.controlledResource((iGold, 1), (iSilver, 1)).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city1 = player(0).initCity(61, 31)
@@ -3583,8 +3472,7 @@ class TestCountGoals(ExtendedTestCase):
 			plot(63, 31).setBonusType(-1)
 	
 	def testControlledResourceVassal(self):
-		goal = Count.controlledResource(iGold, 1)
-		goal.activate(0)
+		goal = Count.controlledResource(iGold, 1).activate(0)
 		
 		plot(61, 31).setBonusType(iGold)
 		city = player(2).initCity(61, 31)
@@ -3604,8 +3492,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testImprovementLess(self):
-		goal = Count.improvement(iCottage, 3)
-		goal.activate(0)
+		goal = Count.improvement(iCottage, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		tiles = [(60, 31), (62, 31)]
@@ -3623,8 +3510,7 @@ class TestCountGoals(ExtendedTestCase):
 				plot.setImprovementType(-1)
 	
 	def testImprovementMore(self):
-		goal = Count.improvement(iCottage, 3)
-		goal.activate(0)
+		goal = Count.improvement(iCottage, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		tiles = [(60, 31), (62, 31), (61, 30), (61, 32)]
@@ -3642,8 +3528,7 @@ class TestCountGoals(ExtendedTestCase):
 				plot.setImprovementType(-1)
 	
 	def testPopulationLess(self):
-		goal = Count.population(5)
-		goal.activate(0)
+		goal = Count.population(5).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setPopulation(3)
@@ -3658,8 +3543,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulationMore(self):
-		goal = Count.population(5)
-		goal.activate(0)
+		goal = Count.population(5).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setPopulation(10)
@@ -3674,8 +3558,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulationMultipleCities(self):
-		goal = Count.population(5)
-		goal.activate(0)
+		goal = Count.population(5).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -3694,8 +3577,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCorporationLess(self):
-		goal = Count.corporation(iSilkRoute, 2)
-		goal.activate(0)
+		goal = Count.corporation(iSilkRoute, 2).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasCorporation(iSilkRoute, True, False, False)
@@ -3708,8 +3590,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testCorporationMore(self):
-		goal = Count.corporation(iSilkRoute, 2)
-		goal.activate(0)
+		goal = Count.corporation(iSilkRoute, 2).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		for tile in tiles:
@@ -3725,8 +3606,7 @@ class TestCountGoals(ExtendedTestCase):
 				city_(tile).kill()
 	
 	def testCorporationsSome(self):
-		goal = Count.corporation((iSilkRoute, 2), (iTradingCompany, 2))
-		goal.activate(0)
+		goal = Count.corporation((iSilkRoute, 2), (iTradingCompany, 2)).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -3745,8 +3625,7 @@ class TestCountGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testCorporationsAll(self):
-		goal = Count.corporation((iSilkRoute, 2), (iTradingCompany, 2))
-		goal.activate(0)
+		goal = Count.corporation((iSilkRoute, 2), (iTradingCompany, 2)).activate(0)
 		
 		tiles = [(61, 31), (63, 31)]
 		for tile in tiles:
@@ -3763,8 +3642,7 @@ class TestCountGoals(ExtendedTestCase):
 				city_(tile).kill()
 	
 	def testUnitLess(self):
-		goal = Count.unit(iSwordsman, 3)
-		goal.activate(0)
+		goal = Count.unit(iSwordsman, 3).activate(0)
 		
 		units = makeUnits(0, iSwordsman, (0, 0), 2)
 		
@@ -3776,8 +3654,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitMore(self):
-		goal = Count.unit(iSwordsman, 3)
-		goal.activate(0)
+		goal = Count.unit(iSwordsman, 3).activate(0)
 		
 		units = makeUnits(0, iSwordsman, (0, 0), 4)
 		
@@ -3789,8 +3666,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitsSome(self):
-		goal = Count.unit((iSwordsman, 3), (iArcher, 3))
-		goal.activate(0)
+		goal = Count.unit((iSwordsman, 3), (iArcher, 3)).activate(0)
 		
 		swordsmen = makeUnits(0, iSwordsman, (0, 0), 3)
 		archers = makeUnits(0, iArcher, (0, 0), 2)
@@ -3806,8 +3682,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitsAll(self):
-		goal = Count.unit((iSwordsman, 3), (iArcher, 3))
-		goal.activate(0)
+		goal = Count.unit((iSwordsman, 3), (iArcher, 3)).activate(0)
 		
 		swordsmen = makeUnits(0, iSwordsman, (0, 0), 3)
 		archers = makeUnits(0, iArcher, (0, 0), 3)
@@ -3823,8 +3698,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitUnique(self):
-		goal = Count.unit(iSwordsman, 3)
-		goal.activate(0)
+		goal = Count.unit(iSwordsman, 3).activate(0)
 		
 		units = makeUnits(0, iLegion, (0, 0), 3)
 		
@@ -3836,8 +3710,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitUniqueRequirement(self):
-		goal = Count.unit(iLegion, 3)
-		goal.activate(0)
+		goal = Count.unit(iLegion, 3).activate(0)
 		
 		units = makeUnits(0, iSwordsman, (0, 0), 3)
 		
@@ -3849,8 +3722,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testUnitCombat(self):
-		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 5)
-		goal.activate(0)
+		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 5).activate(0)
 		
 		team(0).setHasTech(iTanning, True, 0, True, False)
 		team(0).setHasTech(iContract, True, 0, True, False)
@@ -3869,8 +3741,7 @@ class TestCountGoals(ExtendedTestCase):
 			team(0).setHasTech(iContract, False, 0, True, False)
 	
 	def testUnitCombatSum(self):
-		goal = Count.unitCombat(sum(UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN), 5)
-		goal.activate(0)
+		goal = Count.unitCombat(sum(UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN), 5).activate(0)
 		
 		team(0).setHasTech(iCommune, True, 0, True, False)
 		team(0).setHasTech(iFirearms, True, 0, True, False)
@@ -3889,8 +3760,7 @@ class TestCountGoals(ExtendedTestCase):
 			team(0).setHasTech(iFirearms, False, 0, True, False)
 	
 	def testUnitCombatIgnoresOutdated(self):
-		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 3)
-		goal.activate(0)
+		goal = Count.unitCombat(UnitCombatTypes.UNITCOMBAT_ARCHER, 3).activate(0)
 		
 		team(0).setHasTech(iCommune, True, 0, True, False)
 		team(0).setHasTech(iMachinery, True, 0, True, False)
@@ -3908,8 +3778,7 @@ class TestCountGoals(ExtendedTestCase):
 			team(0).setHasTech(iMachinery, False, 0, True, False)
 	
 	def testNumCitiesLess(self):
-		goal = Count.numCities(plots.rectangle((60, 30), (65, 35)), 2)
-		goal.activate(0)
+		goal = Count.numCities(plots.rectangle((60, 30), (65, 35)), 2).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		
@@ -3920,8 +3789,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testNumCitiesMore(self):
-		goal = Count.numCities(plots.rectangle((60, 30), (65, 35)), 2)
-		goal.activate(0)
+		goal = Count.numCities(plots.rectangle((60, 30), (65, 35)), 2).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		for tile in tiles:
@@ -3935,8 +3803,7 @@ class TestCountGoals(ExtendedTestCase):
 				city_(tile).kill()
 	
 	def testNumCitiesSum(self):
-		goal = Count.numCities(sum([plots.rectangle((60, 30), (62, 35)), plots.rectangle((63, 30), (65, 35))]), 2)
-		goal.activate(0)
+		goal = Count.numCities(sum([plots.rectangle((60, 30), (62, 35)), plots.rectangle((63, 30), (65, 35))]), 2).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(64, 31)
@@ -3949,8 +3816,7 @@ class TestCountGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testSettledCitiesAll(self):
-		goal = Count.settledCities(plots.rectangle((60, 30), (65, 35)), 2)
-		goal.activate(0)
+		goal = Count.settledCities(plots.rectangle((60, 30), (65, 35)), 2).activate(0)
 		
 		tiles = [(61, 31), (63, 31)]
 		for tile in tiles:
@@ -3964,8 +3830,7 @@ class TestCountGoals(ExtendedTestCase):
 				city_(tile).kill()
 	
 	def testSettledCitiesSome(self):
-		goal = Count.settledCities(plots.rectangle((60, 30), (65, 35)), 2)
-		goal.activate(0)
+		goal = Count.settledCities(plots.rectangle((60, 30), (65, 35)), 2).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		
@@ -3982,8 +3847,7 @@ class TestCountGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testConqueredCitiesAll(self):
-		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -4002,8 +3866,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesSome(self):
-		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Count.conqueredCities(2).inside(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
@@ -4020,8 +3883,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesTraded(self):
-		goal = Count.conqueredCities(1).inside(plots.rectangle((60, 30), (65, 35)))
-		goal.activate(0)
+		goal = Count.conqueredCities(1).inside(plots.rectangle((60, 30), (65, 35))).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		
@@ -4036,8 +3898,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesCivs(self):
-		goal = Count.conqueredCities(1).civs([iBabylonia])
-		goal.activate(0)
+		goal = Count.conqueredCities(1).civs([iBabylonia]).activate(0)
 		
 		city = player(iBabylonia).initCity(61, 31)
 		player(0).acquireCity(city, True, False)
@@ -4052,8 +3913,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesCivsTrade(self):
-		goal = Count.conqueredCities(1).civs([iBabylonia])
-		goal.activate(0)
+		goal = Count.conqueredCities(1).civs([iBabylonia]).activate(0)
 		
 		city = player(iBabylonia).initCity(61, 31)
 		player(0).acquireCity(city, False, True)
@@ -4068,8 +3928,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesMultipleCivs(self):
-		goal = Count.conqueredCities(3).civs([iBabylonia, iHarappa, iGreece])
-		goal.activate(0)
+		goal = Count.conqueredCities(3).civs([iBabylonia, iHarappa, iGreece]).activate(0)
 		
 		city1 = player(iBabylonia).initCity(61, 31)
 		player(0).acquireCity(city1, True, False)
@@ -4094,8 +3953,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesOutside(self):
-		goal = Count.conqueredCities(2).outside(plots.rectangle((60, 30), (62, 32)))
-		goal.activate(0)
+		goal = Count.conqueredCities(2).outside(plots.rectangle((60, 30), (62, 32))).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		player(0).acquireCity(city1, True, False)
@@ -4115,26 +3973,23 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesProgress(self):
-		goal = Count.conqueredCities(2)
-		goal.activate(0)
+		goal = Count.conqueredCities(2).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Conquered cities: 0 / 2" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Conquered cities: 0 / 2" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testConqueredCitiesProgressInside(self):
-		goal = Count.conqueredCities(2).inside(plots.region(rBritain).named("BRITAIN"))
-		goal.activate(0)
+		goal = Count.conqueredCities(2).inside(plots.region(rBritain).named("BRITAIN")).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Conquered cities in Britain: 0 / 2" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Conquered cities in Britain: 0 / 2" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testOpenBordersLess(self):
-		goal = Count.openBorders(2)
-		goal.activate(0)
+		goal = Count.openBorders(2).activate(0)
 		
 		team(0).setOpenBorders(team(1).getID(), True)
 		
@@ -4145,8 +4000,7 @@ class TestCountGoals(ExtendedTestCase):
 			team(0).setOpenBorders(team(1).getID(), False)
 	
 	def testOpenBordersMore(self):
-		goal = Count.openBorders(1)
-		goal.activate(0)
+		goal = Count.openBorders(1).activate(0)
 		
 		others = [1, 2]
 		for id in others:
@@ -4160,8 +4014,7 @@ class TestCountGoals(ExtendedTestCase):
 				team(0).setOpenBorders(team(id).getID(), False)
 	
 	def testOpenBordersCivs(self):
-		goal = Count.openBorders(2).civs([iBabylonia, iHarappa])
-		goal.activate(0)
+		goal = Count.openBorders(2).civs([iBabylonia, iHarappa]).activate(0)
 		
 		others = [iBabylonia, iGreece]
 		for iCiv in others:
@@ -4175,8 +4028,7 @@ class TestCountGoals(ExtendedTestCase):
 				team(0).setOpenBorders(team(iCiv).getID(), False)
 	
 	def testSpecialistLess(self):
-		goal = Count.specialist(iSpecialistGreatScientist, 3)
-		goal.activate(0)
+		goal = Count.specialist(iSpecialistGreatScientist, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
@@ -4188,8 +4040,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testSpecialistMore(self):
-		goal = Count.specialist(iSpecialistGreatScientist, 3)
-		goal.activate(0)
+		goal = Count.specialist(iSpecialistGreatScientist, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31)]
 		for tile in tiles:
@@ -4204,8 +4055,7 @@ class TestCountGoals(ExtendedTestCase):
 				city_(tile).kill()
 	
 	def testSpecialistsSome(self):
-		goal = Count.specialist((iSpecialistGreatScientist, 3), (iSpecialistGreatArtist, 3))
-		goal.activate(0)
+		goal = Count.specialist((iSpecialistGreatScientist, 3), (iSpecialistGreatArtist, 3)).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
@@ -4218,8 +4068,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testSpecialistsAll(self):
-		goal = Count.specialist((iSpecialistGreatScientist, 3), (iSpecialistGreatArtist, 3))
-		goal.activate(0)
+		goal = Count.specialist((iSpecialistGreatScientist, 3), (iSpecialistGreatArtist, 3)).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
@@ -4232,8 +4081,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testSpecialistSum(self):
-		goal = Count.specialist(sum([iSpecialistGreatScientist, iSpecialistGreatArtist]), 4)
-		goal.activate(0)
+		goal = Count.specialist(sum([iSpecialistGreatScientist, iSpecialistGreatArtist]), 4).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
@@ -4246,8 +4094,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testSpecialistReligion(self):
-		goal = Count.specialist(iSpecialistGreatScientist, 4).religion()
-		goal.activate(0)
+		goal = Count.specialist(iSpecialistGreatScientist, 4).religion().activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
@@ -4272,8 +4119,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAverageCulture(self):
-		goal = Count.averageCulture(500)
-		goal.activate(0)
+		goal = Count.averageCulture(500).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		city1, city2, city3 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4290,8 +4136,7 @@ class TestCountGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testPopulationCitiesNotEnough(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setPopulation(12)
@@ -4303,8 +4148,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testPopulationCitiesLess(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		city1, city2, city3 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4321,8 +4165,7 @@ class TestCountGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testPopulationCitiesMore(self):
-		goal = Count.populationCities(10, 3)
-		goal.activate(0)
+		goal = Count.populationCities(10, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31), (67, 31)]
 		city1, city2, city3, city4 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4341,8 +4184,7 @@ class TestCountGoals(ExtendedTestCase):
 			city4.kill()
 	
 	def testCultureCitiesNotEnough(self):
-		goal = Count.cultureCities(500, 3)
-		goal.activate(0)
+		goal = Count.cultureCities(500, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setCulture(0, 600, True)
@@ -4354,8 +4196,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testCultureCitiesLess(self):
-		goal = Count.cultureCities(500, 3)
-		goal.activate(0)
+		goal = Count.cultureCities(500, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		city1, city2, city3 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4372,8 +4213,7 @@ class TestCountGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testCultureCitiesMore(self):
-		goal = Count.cultureCities(500, 3)
-		goal.activate(0)
+		goal = Count.cultureCities(500, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31), (67, 31)]
 		city1, city2, city3, city4 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4392,8 +4232,7 @@ class TestCountGoals(ExtendedTestCase):
 			city4.kill()
 	
 	def testCultureLevelNotEnough(self):
-		goal = Count.cultureLevelCities(iCultureLevelRefined, 3)
-		goal.activate(0)
+		goal = Count.cultureLevelCities(iCultureLevelRefined, 3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		
@@ -4408,8 +4247,7 @@ class TestCountGoals(ExtendedTestCase):
 			city.kill()
 	
 	def testCultureLevelLess(self):
-		goal = Count.cultureLevelCities(iCultureLevelRefined, 3)
-		goal.activate(0)
+		goal = Count.cultureLevelCities(iCultureLevelRefined, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31)]
 		city1, city2, city3 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4426,8 +4264,7 @@ class TestCountGoals(ExtendedTestCase):
 			city3.kill()
 	
 	def testCultureLevelCitiesMore(self):
-		goal = Count.cultureLevelCities(iCultureLevelRefined, 3)
-		goal.activate(0)
+		goal = Count.cultureLevelCities(iCultureLevelRefined, 3).activate(0)
 		
 		tiles = [(61, 31), (63, 31), (65, 31), (67, 31)]
 		city1, city2, city3, city4 = (player(0).initCity(x, y) for x, y in tiles)
@@ -4446,15 +4283,13 @@ class TestCountGoals(ExtendedTestCase):
 			city4.kill()
 	
 	def testCitySpecialistWithoutCity(self):
-		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "0 / 3")
 		
 	def testCitySpecialistDifferentOwner(self):
-		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3).activate(0)
 		
 		_city = player(1).initCity(61, 31)
 		_city.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
@@ -4466,8 +4301,7 @@ class TestCountGoals(ExtendedTestCase):
 			_city.kill()
 	
 	def testCitySpecialistEnough(self):
-		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31), iSpecialistGreatScientist, 3).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
@@ -4479,47 +4313,42 @@ class TestCountGoals(ExtendedTestCase):
 			_city.kill()
 	
 	def testCitySpecialistProgress(self):
-		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setName("First", False)
 		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Great Artists in First: 3 / 3" % self.SUCCESS_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Great Artists in First: 3 / 3" % self.SUCCESS_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testCitySpecialistProgressDifferentOwner(self):
-		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3).activate(0)
 		
 		_city = player(1).initCity(61, 31)
 		_city.setName("First", False)
 		_city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Great Artists in First (controlled by Babylonia): 0 / 3" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Great Artists in First (controlled by Babylonia): 0 / 3" % self.FAILURE_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testCitySpecialistProgressNoCity(self):
-		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3)
-		goal.activate(0)
+		goal = Count.citySpecialist(city(61, 31).named("BERLIN"), iSpecialistGreatArtist, 3).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c (No City)" % self.FAILURE_CHAR]])
 	
 	def testCultureLevelNoCity(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "0 / 1000")
 	
 	def testCultureLevelDifferentOwner(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		_city = player(1).initCity(61, 31)
 		_city.setCulture(0, 5000, True)
@@ -4531,8 +4360,7 @@ class TestCountGoals(ExtendedTestCase):
 			_city.kill()
 	
 	def testCultureLevelEnough(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setCulture(0, 5000, True)
@@ -4544,43 +4372,39 @@ class TestCountGoals(ExtendedTestCase):
 			_city.kill()
 	
 	def testCultureLevelProgress(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setName("First", False)
 		_city.setCulture(0, 5000, True)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Culture in First: 5000 / 1000" % self.SUCCESS_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Culture in First: 5000 / 1000" % self.SUCCESS_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testCultureLevelProgressNoCity(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c (No City)" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testCultureLevelProgressDifferentOwner(self):
-		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined)
-		goal.activate(0)
+		goal = Count.cultureLevel(city(61, 31), iCultureLevelRefined).activate(0)
 		
 		_city = player(1).initCity(61, 31)
 		_city.setName("First", False)
 		_city.setCulture(0, 5000, True)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Culture in First (controlled by Babylonia): 0 / 1000" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Culture in First (controlled by Babylonia): 0 / 1000" % self.FAILURE_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testAttitude(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4595,8 +4419,7 @@ class TestCountGoals(ExtendedTestCase):
 				player(i).AI_setAttitudeExtra(0, 0)
 	
 	def testAttitudeInsufficient(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4609,8 +4432,7 @@ class TestCountGoals(ExtendedTestCase):
 				team(i).cutContact(0)
 	
 	def testAttitudeNoContact(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).activate(0)
 		
 		for i in [1, 2]:
 			team(i).cutContact(0)
@@ -4624,8 +4446,7 @@ class TestCountGoals(ExtendedTestCase):
 				player(i).AI_setAttitudeExtra(0, 0)
 	
 	def testAttitudeCivs(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia])
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia]).activate(0)
 		
 		for i in [iBabylonia, iHarappa]:
 			team(i).meet(0, False)
@@ -4640,8 +4461,7 @@ class TestCountGoals(ExtendedTestCase):
 				player(i).AI_setAttitudeExtra(0, 0)
 		
 	def testAttitudeReligion(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).religion(iOrthodoxy).activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4660,8 +4480,7 @@ class TestCountGoals(ExtendedTestCase):
 			player(1).setLastStateReligion(-1)
 	
 	def testAttitudeCommunist(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).communist()
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).communist().activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4683,8 +4502,7 @@ class TestCountGoals(ExtendedTestCase):
 			player(1).setCivics(iCivicsEconomy, iReciprocity)
 	
 	def testAttitudeIndependent(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).independent()
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).independent().activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4706,8 +4524,7 @@ class TestCountGoals(ExtendedTestCase):
 			team(1).setVassal(0, False, False)
 	
 	def testAttitudeMinority(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).minority(iCatholicism)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).minority(iCatholicism).activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4735,8 +4552,7 @@ class TestCountGoals(ExtendedTestCase):
 				player(i).AI_setAttitudeExtra(0, 0)
 	
 	def testAttitudeChainedFilters(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia]).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_FRIENDLY, 2).civs([iBabylonia]).religion(iOrthodoxy).activate(0)
 		
 		for i in [1, 2]:
 			team(i).meet(0, False)
@@ -4755,50 +4571,42 @@ class TestCountGoals(ExtendedTestCase):
 			player(2).setLastStateReligion(-1)
 	
 	def testAttitudeProgress(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testAttitudeProgressCivs(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with civilizations in Europe: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with civilizations in Europe: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testAttitudeProgressCommunist(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).communist()
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).communist().activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with communist civilizations: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with communist civilizations: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testAttitudeProgressStateReligion(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).religion(iOrthodoxy).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with Orthodox civilizations: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with Orthodox civilizations: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testAttitudeProgressIndependent(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).independent()
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).independent().activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with independent civilizations: 0 / 2" % self.FAILURE_CHAR]])
 
 	def testAttitudeProgressMinority(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).minority(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).minority(iOrthodoxy).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with civilizations with a Orthodox minority: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with civilizations with a Orthodox minority: 0 / 2" % self.FAILURE_CHAR]])
 
 	def testAttitudeProgressChained(self):
-		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).minority(iCatholicism).independent()
-		goal.activate(0)
+		goal = Count.attitude(AttitudeTypes.ATTITUDE_PLEASED, 2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).communist().religion(iOrthodoxy).minority(iCatholicism).independent().activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Pleased or better relations with independent Orthodox communist civilizations with a Catholic minority in Europe: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Pleased or better relations with independent Orthodox communist civilizations with a Catholic minority in Europe: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testVassals(self):
-		goal = Count.vassals(2)
-		goal.activate(0)
+		goal = Count.vassals(2).activate(0)
 		
 		for i in [1, 2]:
 			team(i).setVassal(0, True, False)
@@ -4812,8 +4620,7 @@ class TestCountGoals(ExtendedTestCase):
 				team(i).setVassal(0, False, False)
 	
 	def testVassalsCivs(self):
-		goal = Count.vassals(2).civs([iBabylonia])
-		goal.activate(0)
+		goal = Count.vassals(2).civs([iBabylonia]).activate(0)
 		
 		for i in [iBabylonia, iHarappa]:
 			team(i).setVassal(0, True, False)
@@ -4827,8 +4634,7 @@ class TestCountGoals(ExtendedTestCase):
 				team(i).setVassal(0, False, False)
 	
 	def testVassalsReligion(self):
-		goal = Count.vassals(2).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.vassals(2).religion(iOrthodoxy).activate(0)
 		
 		for i in [1, 2]:
 			team(i).setVassal(0, True, False)
@@ -4846,32 +4652,27 @@ class TestCountGoals(ExtendedTestCase):
 			player(1).setLastStateReligion(-1)
 	
 	def testVassalsProgress(self):
-		goal = Count.vassals(2)
-		goal.activate(0)
+		goal = Count.vassals(2).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Vassals: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Vassals: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testVassalsProgressCivs(self):
-		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE"))
-		goal.activate(0)
+		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Vassals in Europe: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Vassals in Europe: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testVassalsProgressStateReligion(self):
-		goal = Count.vassals(2).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.vassals(2).religion(iOrthodoxy).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Orthodox vassals: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Orthodox vassals: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testVassalsProgressChained(self):
-		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).religion(iOrthodoxy)
-		goal.activate(0)
+		goal = Count.vassals(2).civs(group(iCivGroupEurope).named("AREA_NAME_EUROPE")).religion(iOrthodoxy).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c Orthodox vassals in Europe: 0 / 2" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Orthodox vassals in Europe: 0 / 2" % self.FAILURE_CHAR]])
 	
 	def testCityBuildingNoCity(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -4881,8 +4682,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityBuildingNoBuilding(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		
@@ -4896,8 +4696,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityBuildingWithBuilding(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setHasRealBuilding(iGranary, True)
@@ -4914,8 +4713,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testCityBuildingDifferentCity(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		_city = player(0).initCity(63, 31)
 		_city.setHasRealBuilding(iGranary, True)
@@ -4932,8 +4730,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityMultipleBuildingsSome(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		for iBuilding in [iGranary, iBarracks]:
@@ -4950,8 +4747,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityMultipleBuildingsAll(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		for iBuilding in [iGranary, iBarracks, iLibrary]:
@@ -4968,8 +4764,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityMultipleBuildingsDifferentCities(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary, iBarracks, iLibrary).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -4992,8 +4787,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityBuildingSum(self):
-		goal = Count.cityBuilding(city(61, 31), sum([iGranary, iBarracks, iLibrary]), 2)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), sum([iGranary, iBarracks, iLibrary]), 2).activate(0)
 		
 		city_ = player(0).initCity(61, 31)
 		
@@ -5013,8 +4807,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityBuildingCapital(self):
-		goal = Count.cityBuilding(capital(), iGranary)
-		goal.activate(1)
+		goal = Count.cityBuilding(capital(), iGranary).activate(1)
 		
 		city0 = player(0).initCity(61, 31)
 		city0.setHasRealBuilding(iPalace, True)
@@ -5033,38 +4826,34 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testCityBuildingProgress(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		_city = player(0).initCity(61, 31)
 		_city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Granary in First" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Granary in First" % self.FAILURE_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testCityBuildingProgressDifferentOwner(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
 		_city = player(1).initCity(61, 31)
 		_city.setName("First", False)
 		
 		try:
-			self.assertEqual(goal.progress(), [u"%c Granary in First (controlled by Babylonia)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Granary in First (controlled by Babylonia)" % self.FAILURE_CHAR]])
 		finally:
 			_city.kill()
 	
 	def testCityBuildingProgressNoCity(self):
-		goal = Count.cityBuilding(city(61, 31), iGranary)
-		goal.activate(0)
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
 		
-		self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c (No City)" % self.FAILURE_CHAR]])
 	
 	def testDifferentSpecialist(self):
-		goal = Count.differentSpecialist(city(61, 31), 2)
-		goal.activate(0)
+		goal = Count.differentSpecialist(city(61, 31), 2).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -5074,14 +4863,13 @@ class TestCountGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(str(goal), "2 / 2")
-			self.assertEqual(goal.progress(), [u"%c Different specialists in First: 2 / 2" % self.SUCCESS_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Different specialists in First: 2 / 2" % self.SUCCESS_CHAR]])
 		finally:
 			city1.kill()
 			goal.deactivate()
 	
 	def testDifferentSpecialistDifferentOwner(self):
-		goal = Count.differentSpecialist(city(61, 31), 2)
-		goal.activate(0)
+		goal = Count.differentSpecialist(city(61, 31), 2).activate(0)
 		
 		city1 = player(1).initCity(61, 31)
 		city1.setName("First", False)
@@ -5090,25 +4878,23 @@ class TestCountGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(str(goal), "0 / 2")
-			self.assertEqual(goal.progress(), [u"%c Different specialists in First (controlled by Babylonia): 0 / 2" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Different specialists in First (controlled by Babylonia): 0 / 2" % self.FAILURE_CHAR]])
 		finally:
 			city1.kill()
 			goal.deactivate()
 	
 	def testDifferentSpecialistNoCity(self):
-		goal = Count.differentSpecialist(city(61, 31), 2)
-		goal.activate(0)
+		goal = Count.differentSpecialist(city(61, 31), 2).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(str(goal), "0 / 2")
-			self.assertEqual(goal.progress(), [u"%c (No City)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c (No City)" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testShrineIncome(self):
-		goal = Count.shrineIncome(iOrthodoxy, 2)
-		goal.activate(0)
+		goal = Count.shrineIncome(iOrthodoxy, 2).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasReligion(iOrthodoxy, True, False, False)
@@ -5127,8 +4913,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testShrineIncomeNoShrine(self):
-		goal = Count.shrineIncome(iOrthodoxy, 2)
-		goal.activate(0)
+		goal = Count.shrineIncome(iOrthodoxy, 2).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.setHasReligion(iOrthodoxy, True, False, False)
@@ -5141,8 +4926,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testShrineIncomeOtherOwner(self):
-		goal = Count.shrineIncome(iOrthodoxy, 2)
-		goal.activate(0)
+		goal = Count.shrineIncome(iOrthodoxy, 2).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasReligion(iOrthodoxy, True, False, False)
@@ -5161,8 +4945,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testUnitLevelCount(self):
-		goal = Count.unitLevel(3, 2)
-		goal.activate(0)
+		goal = Count.unitLevel(3, 2).activate(0)
 		
 		units = makeUnits(0, iSwordsman, (0, 0), 3)
 		
@@ -5177,8 +4960,7 @@ class TestCountGoals(ExtendedTestCase):
 				unit.kill(False, -1)
 	
 	def testTerrainCount(self):
-		goal = Count.terrain(iOcean, 50)
-		goal.activate(0)
+		goal = Count.terrain(iOcean, 50).activate(0)
 		
 		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
 		for plot in controlled:
@@ -5192,8 +4974,7 @@ class TestCountGoals(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def testPeakCount(self):
-		goal = Count.peaks(20)
-		goal.activate(0)
+		goal = Count.peaks(20).activate(0)
 		
 		controlled = plots.all().where(lambda plot: plot.isPeak()).limit(25) + plots.all().water().limit(25)
 		for plot in controlled:
@@ -5207,8 +4988,7 @@ class TestCountGoals(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def testFeatureCount(self):
-		goal = Count.feature(iForest, 20)
-		goal.activate(0)
+		goal = Count.feature(iForest, 20).activate(0)
 		
 		controlled = plots.all().where(lambda plot: plot.getFeatureType() == iForest).limit(25) + plots.all().water().limit(25)
 		for plot in controlled:
@@ -5226,8 +5006,7 @@ class TestPercentageGoals(ExtendedTestCase):
 
 	def testAreaControl(self):
 		area = plots.rectangle((50, 30), (69, 31))
-		goal = Percentage.areaControl(area, 30)
-		goal.activate(0)
+		goal = Percentage.areaControl(area, 30).activate(0)
 		
 		controlled = plots.rectangle((50, 30), (69, 30))
 		for plot in controlled:
@@ -5244,8 +5023,7 @@ class TestPercentageGoals(ExtendedTestCase):
 	
 	def testAreaControlInsufficient(self):
 		area = plots.rectangle((50, 30), (69, 31))
-		goal = Percentage.areaControl(area, 30)
-		goal.activate(0)
+		goal = Percentage.areaControl(area, 30).activate(0)
 		
 		controlled = plots.rectangle((50, 30), (50, 30))
 		for plot in controlled:
@@ -5261,8 +5039,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 			
 	def testWorldControl(self):
-		goal = Percentage.worldControl(10)
-		goal.activate(0)
+		goal = Percentage.worldControl(10).activate(0)
 		
 		controlled = plots.all().land().limit(11 * 32)
 		for plot in controlled:
@@ -5278,8 +5055,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWorldControlInsufficient(self):
-		goal = Percentage.worldControl(10)
-		goal.activate(0)
+		goal = Percentage.worldControl(10).activate(0)
 		
 		controlled = plots.all().land().limit(32)
 		for plot in controlled:
@@ -5296,8 +5072,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWorldControlReligion(self):
-		goal = Percentage.worldControl(10).religion()
-		goal.activate(0)
+		goal = Percentage.worldControl(10).religion().activate(0)
 		
 		controlled = plots.all().land().limit(11 * 32)
 		controlled0, controlled1 = controlled.percentage_split(50)
@@ -5316,14 +5091,15 @@ class TestPercentageGoals(ExtendedTestCase):
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(str(goal), "10.89% / 10%")
 		finally:
-			for plot in controlled:
+			for plot in controlled0:
+				plot.setOwner(-1)
+			for plot in controlled1:
 				plot.setOwner(-1)
 			
 			goal.deactivate()
 	
 	def testReligionSpread(self):
-		goal = Percentage.religionSpread(iOrthodoxy, 30)
-		goal.activate(1)
+		goal = Percentage.religionSpread(iOrthodoxy, 30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5347,8 +5123,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testReligionSpreadNoState(self):
-		goal = Percentage.religionSpread(iOrthodoxy, 30)
-		goal.activate(1)
+		goal = Percentage.religionSpread(iOrthodoxy, 30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5368,8 +5143,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testReligionSpreadMultipleReligions(self):
-		goal = Percentage.religionSpread(iOrthodoxy, 30)
-		goal.activate(1)
+		goal = Percentage.religionSpread(iOrthodoxy, 30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5394,8 +5168,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testReligionSpreadNotOwned(self):
-		goal = Percentage.religionSpread(iOrthodoxy, 30)
-		goal.activate(1)
+		goal = Percentage.religionSpread(iOrthodoxy, 30).activate(1)
 		
 		city1 = player(2).initCity(30, 30)
 		city2 = player(3).initCity(32, 30)
@@ -5419,8 +5192,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulation(self):
-		goal = Percentage.population(30)
-		goal.activate(0)
+		goal = Percentage.population(30).activate(0)
 		
 		city1 = player(0).initCity(30, 30)
 		city2 = player(1).initCity(32, 30)
@@ -5438,8 +5210,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulationInsufficient(self):
-		goal = Percentage.population(30)
-		goal.activate(0)
+		goal = Percentage.population(30).activate(0)
 		
 		city1 = player(0).initCity(30, 30)
 		city2 = player(1).initCity(32, 30)
@@ -5457,8 +5228,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulationIncludeVassals(self):
-		goal = Percentage.population(50).includeVassals()
-		goal.activate(0)
+		goal = Percentage.population(50).includeVassals().activate(0)
 		
 		city1 = player(0).initCity(30, 30)
 		city2 = player(1).initCity(32, 30)
@@ -5483,8 +5253,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testReligiousVote(self):
-		goal = Percentage.religiousVote(30)
-		goal.activate(1)
+		goal = Percentage.religiousVote(30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5513,8 +5282,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testReligiousVoteNotStateReligion(self):
-		goal = Percentage.religiousVote(30)
-		goal.activate(1)
+		goal = Percentage.religiousVote(30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5541,8 +5309,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testReligiousVoteNoReligion(self):
-		goal = Percentage.religiousVote(30)
-		goal.activate(1)
+		goal = Percentage.religiousVote(30).activate(1)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5570,8 +5337,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedPower(self):
-		goal = Percentage.alliedPower(30)
-		goal.activate(0)
+		goal = Percentage.alliedPower(30).activate(0)
 		
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
@@ -5584,8 +5350,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedPowerWithVassal(self):
-		goal = Percentage.alliedPower(30)
-		goal.activate(0)
+		goal = Percentage.alliedPower(30).activate(0)
 		
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
@@ -5602,8 +5367,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedPowerWithDefensivePact(self):
-		goal = Percentage.alliedPower(30)
-		goal.activate(0)
+		goal = Percentage.alliedPower(30).activate(0)
 		
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
@@ -5622,8 +5386,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedPowerWithDefensivePactVassal(self):
-		goal = Percentage.alliedPower(30)
-		goal.activate(0)
+		goal = Percentage.alliedPower(30).activate(0)
 		
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
@@ -5644,8 +5407,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedCommerce(self):
-		goal = Percentage.alliedCommerce(30)
-		goal.activate(0)
+		goal = Percentage.alliedCommerce(30).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), True)
@@ -5657,8 +5419,7 @@ class TestPercentageGoals(ExtendedTestCase):
 class TestTriggerGoals(ExtendedTestCase):
 
 	def testFirstDiscover(self):
-		goal = Trigger.firstDiscover(iLaw)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		
@@ -5671,8 +5432,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverOther(self):
-		goal = Trigger.firstDiscover(iLaw)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		
@@ -5685,8 +5445,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverAfterOther(self):
-		goal = Trigger.firstDiscover(iLaw)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		team(0).setHasTech(iLaw, True, 0, True, False)
@@ -5701,8 +5460,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverNone(self):
-		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -5711,8 +5469,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverSome(self):
-		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		team(0).setHasTech(iCurrency, True, 0, True, False)
@@ -5727,8 +5484,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverAll(self):
-		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		team(0).setHasTech(iCurrency, True, 0, True, False)
@@ -5745,8 +5501,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstDiscoverExpireAny(self):
-		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		
@@ -5760,8 +5515,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettle(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area)
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).activate(0)
 		
 		player(0).found(51, 29)
 		
@@ -5774,8 +5528,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleOther(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area)
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).activate(0)
 		
 		player(1).found(51, 29)
 		
@@ -5788,8 +5541,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleAfterOther(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area)
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).activate(0)
 		
 		player(1).found(51, 29)
 		player(0).found(53, 29)
@@ -5804,8 +5556,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleOutside(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area)
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).activate(0)
 		
 		player(0).found(56, 29)
 		
@@ -5818,8 +5569,7 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 	def testFirstSettleAfterOtherOutside(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area)
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).activate(0)
 		
 		player(1).found(57, 29)
 		player(0).found(51, 29)
@@ -5834,8 +5584,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleAfterAllowed(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya])
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
 		
 		player(iMaya).found(51, 29)
 		player(0).found(53, 29)
@@ -5850,8 +5599,7 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 	def testFirstSettleConquest(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya])
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
 		
 		player(iMaya).found(51, 29)
 		player(0).acquireCity(city_(51, 29), True, False)
@@ -5865,8 +5613,7 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleAfterConquest(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya])
-		goal.activate(0)
+		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
 		
 		player(iMaya).found(51, 29)
 		player(1).acquireCity(city_(51, 29), True, False)
@@ -5881,8 +5628,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDiscover(self):
-		goal = Trigger.discover(iLaw)
-		goal.activate(0)
+		goal = Trigger.discover(iLaw).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		
@@ -5894,8 +5640,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDiscoverOther(self):
-		goal = Trigger.discover(iLaw)
-		goal.activate(0)
+		goal = Trigger.discover(iLaw).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		
@@ -5907,8 +5652,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDiscoverAfterOther(self):
-		goal = Trigger.discover(iLaw)
-		goal.activate(0)
+		goal = Trigger.discover(iLaw).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		team(0).setHasTech(iLaw, True, 0, True, False)
@@ -5922,8 +5666,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDiscoverSome(self):
-		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		team(0).setHasTech(iCurrency, True, 0, True, False)
@@ -5937,8 +5680,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDiscoverAll(self):
-		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy)
-		goal.activate(0)
+		goal = Trigger.discover(iLaw, iCurrency, iPhilosophy).activate(0)
 		
 		for iTech in [iLaw, iCurrency, iPhilosophy]:
 			team(0).setHasTech(iTech, True, 0, True, False)
@@ -5952,8 +5694,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testFirstContact(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
-		goal.activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
 		
@@ -5963,8 +5704,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactWithOther(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
-		goal.activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
 		
@@ -5975,8 +5715,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactAfterRevealed(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina)
-		goal.activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
 		
 		plot(25, 25).setRevealed(team(iChina).getID(), True, False, team(iChina).getID())
 		
@@ -5991,8 +5730,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactSome(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia)
-		goal.activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
@@ -6003,8 +5741,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactAll(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia)
-		goal.activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia).activate(0)
 		
 		for iCiv in [iChina, iGreece, iIndia]:
 			events.fireEvent("firstContact", team(iEgypt).getID(), team(iCiv).getID())
@@ -6015,8 +5752,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoCityLost(self):
-		goal = Trigger.noCityLost()
-		goal.activate(0)
+		goal = Trigger.noCityLost().activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), True)
@@ -6024,8 +5760,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoCityLostAfterLosing(self):
-		goal = Trigger.noCityLost()
-		goal.activate(0)
+		goal = Trigger.noCityLost().activate(0)
 		
 		city = player(1).initCity(25, 25)
 		events.fireEvent("cityAcquired", 0, 1, city, True, False)
@@ -6038,8 +5773,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeMission(self):
-		goal = Trigger.tradeMission(city(25, 25))
-		goal.activate(0)
+		goal = Trigger.tradeMission(city(25, 25)).activate(0)
 		
 		city_ = player(1).initCity(25, 25)
 		events.fireEvent("tradeMission", iGreatMerchant, 0, 25, 25, 1000)
@@ -6052,8 +5786,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testTradeMissionOther(self):
-		goal = Trigger.tradeMission(city(25, 25))
-		goal.activate(0)
+		goal = Trigger.tradeMission(city(25, 25)).activate(0)
 		
 		city_ = player(1).initCity(25, 25)
 		events.fireEvent("tradeMission", iGreatMerchant, 2, 25, 25, 1000)
@@ -6066,8 +5799,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeMissionElsewhere(self):
-		goal = Trigger.tradeMission(city(25, 25))
-		goal.activate(0)
+		goal = Trigger.tradeMission(city(25, 25)).activate(0)
 		
 		city_ = player(1).initCity(30, 25)
 		events.fireEvent("tradeMission", iGreatMerchant, 0, 30, 25, 1000)
@@ -6080,8 +5812,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeMissionHolyCityWithout(self):
-		goal = Trigger.tradeMission(holyCity())
-		goal.activate(0)
+		goal = Trigger.tradeMission(holyCity()).activate(0)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
@@ -6097,8 +5828,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeMissionHolyCity(self):
-		goal = Trigger.tradeMission(holyCity())
-		goal.activate(0)
+		goal = Trigger.tradeMission(holyCity()).activate(0)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
@@ -6115,8 +5845,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeMissionHolyCityNoStateReligion(self):
-		goal = Trigger.tradeMission(holyCity())
-		goal.activate(0)
+		goal = Trigger.tradeMission(holyCity()).activate(0)
 		
 		city = player(1).initCity(30, 25)
 		game.setHolyCity(iOrthodoxy, city, False)
@@ -6129,8 +5858,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNeverConquer(self):
-		goal = Trigger.neverConquer()
-		goal.activate(0)
+		goal = Trigger.neverConquer().activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), True)
@@ -6138,8 +5866,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNeverConquerConquered(self):
-		goal = Trigger.neverConquer()
-		goal.activate(0)
+		goal = Trigger.neverConquer().activate(0)
 		
 		city = player(1).initCity(30, 25)
 		player(0).acquireCity(city, True, False)
@@ -6152,8 +5879,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNeverConquerTraded(self):
-		goal = Trigger.neverConquer()
-		goal.activate(0)
+		goal = Trigger.neverConquer().activate(0)
 		
 		city = player(1).initCity(30, 25)
 		player(0).acquireCity(city, False, True)
@@ -6166,8 +5892,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNeverConquerConqueredOther(self):
-		goal = Trigger.neverConquer()
-		goal.activate(0)
+		goal = Trigger.neverConquer().activate(0)
 		
 		city = player(1).initCity(30, 25)
 		player(2).acquireCity(city, True, False)
@@ -6180,8 +5905,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFounding(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		
@@ -6196,8 +5920,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingNotFounded(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy).activate(0)
 		
 		player(0).setLastStateReligion(iOrthodoxy)
 		
@@ -6209,8 +5932,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingOtherReligion(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		game.setReligionGameTurnFounded(iCatholicism, 2)
@@ -6228,8 +5950,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingSoonEnough(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, turn()-2)
 		
@@ -6244,8 +5965,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingTooLate(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, turn()-10)
 		
@@ -6260,8 +5980,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingSome(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		game.setReligionGameTurnFounded(iCatholicism, 2)
@@ -6280,8 +5999,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConvertAfterFoundingAll(self):
-		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism)
-		goal.activate(0)
+		goal = Trigger.convertAfterFounding(5, iOrthodoxy, iCatholicism).activate(0)
 		
 		game.setReligionGameTurnFounded(iOrthodoxy, 1)
 		game.setReligionGameTurnFounded(iCatholicism, 2)
@@ -6300,8 +6018,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnterEra(self):
-		goal = Trigger.enterEra(iClassical)
-		goal.activate(0)
+		goal = Trigger.enterEra(iClassical).activate(0)
 		
 		events.fireEvent("techAcquired", iLaw, 0, 0, False)
 		
@@ -6311,8 +6028,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnterEraOther(self):
-		goal = Trigger.enterEra(iClassical)
-		goal.activate(0)
+		goal = Trigger.enterEra(iClassical).activate(0)
 		
 		events.fireEvent("techAcquired", iLeverage, 0, 0, False)
 		
@@ -6322,8 +6038,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnterEraSome(self):
-		goal = Trigger.enterEra(iClassical, iMedieval)
-		goal.activate(0)
+		goal = Trigger.enterEra(iClassical, iMedieval).activate(0)
 		
 		events.fireEvent("techAcquired", iLaw, 0, 0, False)
 		
@@ -6333,8 +6048,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnterEraAll(self):
-		goal = Trigger.enterEra(iClassical, iMedieval)
-		goal.activate(0)
+		goal = Trigger.enterEra(iClassical, iMedieval).activate(0)
 		
 		events.fireEvent("techAcquired", iLaw, 0, 0, False)
 		events.fireEvent("techAcquired", iDoctrine, 0, 0, False)
@@ -6345,8 +6059,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnterEraExpire(self):
-		goal = Trigger.enterEra(iClassical).before(iMedieval)
-		goal.activate(0)
+		goal = Trigger.enterEra(iClassical).before(iMedieval).activate(0)
 		
 		events.fireEvent("techAcquired", iDoctrine, 1, 1, False)
 		
@@ -6356,8 +6069,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstGreatPerson(self):
-		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist)
-		goal.activate(0)
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist).activate(0)
 		
 		unit = makeUnit(0, iGreatArtist, (0, 0))
 		
@@ -6370,8 +6082,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstGreatPersonAll(self):
-		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist)
-		goal.activate(0)
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist).activate(0)
 		
 		artist = makeUnit(0, iGreatArtist, (0, 0))
 		merchant = makeUnit(0, iGreatMerchant, (0, 0))
@@ -6389,8 +6100,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstGreatPersonSome(self):
-		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist), 2)
-		goal.activate(0)
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatMerchant, iSpecialistGreatScientist), 2).activate(0)
 		
 		artist = makeUnit(0, iGreatArtist, (0, 0))
 		merchant = makeUnit(0, iGreatMerchant, (0, 0))
@@ -6406,8 +6116,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstGreatPersonOther(self):
-		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist)
-		goal.activate(0)
+		goal = Trigger.firstGreatPerson(iSpecialistGreatArtist).activate(0)
 		
 		artist = makeUnit(1, iGreatArtist, (0, 0))
 		
@@ -6423,8 +6132,7 @@ class TestTriggerGoals(ExtendedTestCase):
 class TestTrackGoals(ExtendedTestCase):
 
 	def testGoldenAgesOutside(self):
-		goal = Track.goldenAges(1)
-		goal.activate(0)
+		goal = Track.goldenAges(1).activate(0)
 		
 		events.fireEvent("BeginPlayerTurn", game.getGameTurn(), 0)
 		
@@ -6436,8 +6144,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testGoldenAgesDuring(self):
-		goal = Track.goldenAges(1)
-		goal.activate(0)
+		goal = Track.goldenAges(1).activate(0)
 		
 		player(0).changeGoldenAgeTurns(8)
 		
@@ -6453,8 +6160,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testGoldenAgesAnarchy(self):
-		goal = Track.goldenAges(1)
-		goal.activate(0)
+		goal = Track.goldenAges(1).activate(0)
 		
 		player(0).changeGoldenAgeTurns(8)
 		player(0).changeAnarchyTurns(8)
@@ -6472,8 +6178,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testGoldenAgesSuccess(self):
-		goal = Track.goldenAges(1)
-		goal.activate(0)
+		goal = Track.goldenAges(1).activate(0)
 		
 		player(0).changeGoldenAgeTurns(8)
 		
@@ -6490,8 +6195,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEraFirsts(self):
-		goal = Track.eraFirsts(iClassical, 5)
-		goal.activate(0)
+		goal = Track.eraFirsts(iClassical, 5).activate(0)
 		
 		team(0).setHasTech(iLaw, True, 0, True, False)
 		
@@ -6504,8 +6208,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEraFirstsDifferentEra(self):
-		goal = Track.eraFirsts(iClassical, 5)
-		goal.activate(0)
+		goal = Track.eraFirsts(iClassical, 5).activate(0)
 		
 		team(0).setHasTech(iFeudalism, True, 0, True, False)
 		
@@ -6518,8 +6221,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEraFirstsNotFirst(self):
-		goal = Track.eraFirsts(iClassical, 5)
-		goal.activate(0)
+		goal = Track.eraFirsts(iClassical, 5).activate(0)
 		
 		team(1).setHasTech(iLaw, True, 1, True, False)
 		team(0).setHasTech(iLaw, True, 0, False, False)
@@ -6534,8 +6236,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEraFirstsMultiple(self):
-		goal = Track.eraFirsts((iClassical, 1), (iMedieval, 1))
-		goal.activate(0)
+		goal = Track.eraFirsts((iClassical, 1), (iMedieval, 1)).activate(0)
 		
 		team(0).setHasTech(iFeudalism, True, 0, True, False)
 		
@@ -6548,8 +6249,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSunkShips(self):
-		goal = Track.sunkShips(1)
-		goal.activate(0)
+		goal = Track.sunkShips(1).activate(0)
 		
 		ourShip = makeUnit(0, iWarGalley, (3, 3))
 		theirShip = makeUnit(1, iGalley, (3, 4))
@@ -6566,8 +6266,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSunkShipWinnerNotUs(self):
-		goal = Track.sunkShips(1)
-		goal.activate(0)
+		goal = Track.sunkShips(1).activate(0)
 		
 		theirShip = makeUnit(2, iWarGalley, (3, 3))
 		thirdShip = makeUnit(1, iGalley, (3, 4))
@@ -6584,8 +6283,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSunkShipLandUnits(self):
-		goal = Track.sunkShips(1)
-		goal.activate(0)
+		goal = Track.sunkShips(1).activate(0)
 		
 		ourUnit = makeUnit(0, iSwordsman, (61, 31))
 		theirUnit = makeUnit(1, iArcher, (62, 31))
@@ -6602,8 +6300,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldPlayerGoldTrade(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		events.fireEvent("playerGoldTrade", 1, 0, 100)
 		
@@ -6614,8 +6311,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldPlayerGoldTradeDifferent(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		events.fireEvent("playerGoldTrade", 0, 1, 100)
 		
@@ -6626,8 +6322,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldFromCities(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		city1 = player(0).initCity(57, 50)
 		city2 = player(0).initCity(57, 52)
@@ -6659,8 +6354,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testTradeGoldFromCitiesForeign(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		city1 = player(1).initCity(57, 50)
 		city2 = player(1).initCity(57, 52)
@@ -6686,8 +6380,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldFromDeals(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		player(0).changeGoldPerTurnByPlayer(1, 100)
 		
@@ -6702,8 +6395,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldFromDealsForeign(self):
-		goal = Track.tradeGold(100)
-		goal.activate(0)
+		goal = Track.tradeGold(100).activate(0)
 		
 		player(1).changeGoldPerTurnByPlayer(0, 100)
 		
@@ -6719,8 +6411,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldFromTradeMission(self):
-		goal = Track.tradeGold(1000)
-		goal.activate(0)
+		goal = Track.tradeGold(1000).activate(0)
 		
 		city = player(1).initCity(30, 25)
 		
@@ -6735,8 +6426,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTradeGoldFromTradeMissionOther(self):
-		goal = Track.tradeGold(1000)
-		goal.activate(0)
+		goal = Track.tradeGold(1000).activate(0)
 		
 		city = player(2).initCity(30, 25)
 		
@@ -6751,8 +6441,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldPillage(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		unit = makeUnit(0, iSwordsman, (61, 31))
 		
@@ -6767,8 +6456,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldPillageDifferent(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		unit = makeUnit(1, iSwordsman, (61, 31))
 		
@@ -6783,8 +6471,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldConquest(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		
@@ -6799,8 +6486,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldConquestDifferent(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		
@@ -6815,8 +6501,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldCombat(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		unit = makeUnit(0, iSwordsman, (61, 31))
 		
@@ -6831,8 +6516,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRaidGoldCombatOther(self):
-		goal = Track.raidGold(100)
-		goal.activate(0)
+		goal = Track.raidGold(100).activate(0)
 		
 		unit = makeUnit(1, iSwordsman, (61, 31))
 		
@@ -6847,8 +6531,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPillage(self):
-		goal = Track.pillage(1)
-		goal.activate(0)
+		goal = Track.pillage(1).activate(0)
 		
 		unit = makeUnit(0, iSwordsman, (61, 31))
 		
@@ -6863,8 +6546,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPillageDifferent(self):
-		goal = Track.pillage(1)
-		goal.activate(0)
+		goal = Track.pillage(1).activate(0)
 		
 		unit = makeUnit(1, iSwordsman, (61, 31))
 		
@@ -6879,8 +6561,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAcquiredCitiesAcquired(self):
-		goal = Track.acquiredCities(1)
-		goal.activate(0)
+		goal = Track.acquiredCities(1).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		
@@ -6895,8 +6576,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAcquiredCitiesBuilt(self):
-		goal = Track.acquiredCities(1)
-		goal.activate(0)
+		goal = Track.acquiredCities(1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		
@@ -6911,8 +6591,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPiracyGoldPillage(self):
-		goal = Track.piracyGold(100)
-		goal.activate(0)
+		goal = Track.piracyGold(100).activate(0)
 		
 		unit = makeUnit(0, iSwordsman, (61, 31))
 		
@@ -6927,8 +6606,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPiracyGoldBlockade(self):
-		goal = Track.piracyGold(100)
-		goal.activate(0)
+		goal = Track.piracyGold(100).activate(0)
 		
 		events.fireEvent("blockade", 0, 100)
 		
@@ -6939,8 +6617,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPiracyGoldCombat(self):
-		goal = Track.piracyGold(100)
-		goal.activate(0)
+		goal = Track.piracyGold(100).activate(0)
 		
 		unit = makeUnit(0, iSwordsman, (61, 31))
 		
@@ -6955,8 +6632,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPiracyGoldCombatOther(self):
-		goal = Track.piracyGold(100)
-		goal.activate(0)
+		goal = Track.piracyGold(100).activate(0)
 		
 		unit = makeUnit(1, iSwordsman, (61, 31))
 		
@@ -6971,8 +6647,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testRazes(self):
-		goal = Track.razes(1)
-		goal.activate(0)
+		goal = Track.razes(1).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		player(0).acquireCity(city, True, False)
@@ -6989,8 +6664,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testSlaveTradeGold(self):
-		goal = Track.slaveTradeGold(100)
-		goal.activate(0)
+		goal = Track.slaveTradeGold(100).activate(0)
 		
 		events.fireEvent("playerSlaveTrade", 0, 100)
 		
@@ -7001,8 +6675,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testGreatGenerals(self):
-		goal = Track.greatGenerals(1)
-		goal.activate(0)
+		goal = Track.greatGenerals(1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		unit = makeUnit(0, iGreatGeneral, (61, 31))
@@ -7019,8 +6692,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testGreatGeneralsOther(self):
-		goal = Track.greatGenerals(1)
-		goal.activate(0)
+		goal = Track.greatGenerals(1).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		unit = makeUnit(0, iGreatScientist, (61, 31))
@@ -7037,8 +6709,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testResourceTradeGoldFromDeals(self):
-		goal = Track.resourceTradeGold(100)
-		goal.activate(0)
+		goal = Track.resourceTradeGold(100).activate(0)
 		
 		player(0).changeGoldPerTurnByPlayer(1, 100)
 		
@@ -7053,8 +6724,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testResourceTradeGoldFromDealsForeign(self):
-		goal = Track.resourceTradeGold(100)
-		goal.activate(0)
+		goal = Track.resourceTradeGold(100).activate(0)
 		
 		player(1).changeGoldPerTurnByPlayer(0, 100)
 		
@@ -7070,8 +6740,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBrokeredPeace(self):
-		goal = Track.brokeredPeace(1)
-		goal.activate(0)
+		goal = Track.brokeredPeace(1).activate(0)
 		
 		events.fireEvent("peaceBrokered", 0, 1, 2)
 		
@@ -7082,8 +6751,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBrokeredPeaceOther(self):
-		goal = Track.brokeredPeace(1)
-		goal.activate(0)
+		goal = Track.brokeredPeace(1).activate(0)
 		
 		events.fireEvent("peaceBrokered", 2, 1, 0)
 		
@@ -7094,8 +6762,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnslave(self):
-		goal = Track.enslaves(1)
-		goal.activate(0)
+		goal = Track.enslaves(1).activate(0)
 		
 		unit = makeUnit(1, iSwordsman, (61, 31))
 		
@@ -7110,8 +6777,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testEnslaveExcluding(self):
-		goal = Track.enslaves(2).excluding([iBabylonia])
-		goal.activate(0)
+		goal = Track.enslaves(2).excluding([iBabylonia]).activate(0)
 		
 		unit0 = makeUnit(iBabylonia, iSwordsman, (61, 31))
 		unit1 = makeUnit(iHarappa, iSwordsman, (62, 31))
@@ -7129,8 +6795,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testHealthiest(self):
-		goal = Track.healthiest(3)
-		goal.activate(0)
+		goal = Track.healthiest(3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.changeExtraHealth(100)
@@ -7149,8 +6814,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testHealthiestOther(self):
-		goal = Track.healthiest(3)
-		goal.activate(0)
+		goal = Track.healthiest(3).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		city.changeExtraHealth(100)
@@ -7166,8 +6830,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testHappiest(self):
-		goal = Track.happiest(3)
-		goal.activate(0)
+		goal = Track.happiest(3).activate(0)
 		
 		city = player(0).initCity(61, 31)
 		city.changeExtraHappiness(100)
@@ -7186,8 +6849,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testHappiestOther(self):
-		goal = Track.happiest(3)
-		goal.activate(0)
+		goal = Track.happiest(3).activate(0)
 		
 		city = player(1).initCity(61, 31)
 		city.changeExtraHappiness(100)
@@ -7203,8 +6865,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTrackPeace(self):
-		goal = Track.peace(3)
-		goal.activate(0)
+		goal = Track.peace(3).activate(0)
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		events.fireEvent("BeginPlayerTurn", 1, 0)
@@ -7217,8 +6878,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTrackPeaceAtWar(self):
-		goal = Track.peace(3)
-		goal.activate(0)
+		goal = Track.peace(3).activate(0)
 		
 		team(0).setAtWar(1, True)
 		team(1).setAtWar(0, True)
@@ -7236,8 +6896,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTrackPeaceAfterPeace(self):
-		goal = Track.peace(3)
-		goal.activate(0)
+		goal = Track.peace(3).activate(0)
 		
 		events.fireEvent("BeginPlayerTurn", 0, 0)
 		
@@ -7261,8 +6920,7 @@ class TestTrackGoals(ExtendedTestCase):
 		goal.deactivate()
 	
 	def testTrackCombatFood(self):
-		goal = Track.combatFood(10)
-		goal.activate(0)
+		goal = Track.combatFood(10).activate(0)
 		
 		events.fireEvent("combatFood", 0, None, 10)
 		
@@ -7273,8 +6931,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTrackSacrificeHappiness(self):
-		goal = Track.sacrificeHappiness(3)
-		goal.activate(0)
+		goal = Track.sacrificeHappiness(3).activate(0)
 		
 		events.fireEvent("sacrificeHappiness", 0, None)
 		events.fireEvent("sacrificeHappiness", 0, None)
@@ -7287,8 +6944,7 @@ class TestTrackGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testTrackCelebrate(self):
-		goal = Track.celebrate(3)
-		goal.activate(0)
+		goal = Track.celebrate(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city2 = player(0).initCity(63, 31)
@@ -7318,8 +6974,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			plot.resetCultureConversion()
 
 	def testBestPopulationCity(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		city_ = player(0).initCity(61, 31)
 		city_.setPopulation(10)
@@ -7332,8 +6987,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city_.kill()
 	
 	def testBestPopulationCityOtherLocation(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		city_ = player(0).initCity(63, 31)
 		city_.setPopulation(10)
@@ -7346,8 +7000,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city_.kill()
 	
 	def testBestPopulationCityOtherOwner(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		city_ = player(1).initCity(61, 31)
 		city_.setPopulation(10)
@@ -7360,8 +7013,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city_.kill()
 	
 	def testBestPopulationCityShowsSecondOnSuccess(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7384,8 +7036,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testBestPopulationCityShowsOwnSecondOnFailure(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7408,15 +7059,13 @@ class TestBestCityGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testBestPopulationCityNone(self):
-		goal = BestCity.population(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(61, 31)).activate(0)
 		
 		self.assertEqual(bool(goal), False)
 		self.assertEqual(str(goal), "(No City) (0)\n(No City) (0)")
 	
 	def testBestPopulationCityObjectiveBreaksTie(self):
-		goal = BestCity.population(city(63, 31))
-		goal.activate(0)
+		goal = BestCity.population(city(63, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(0).initCity(63, 31)
@@ -7439,8 +7088,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city2.kill()
 	
 	def testBestCultureCity(self):
-		goal = BestCity.culture(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.culture(city(61, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7465,8 +7113,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testBestCultureCityOtherLocation(self):
-		goal = BestCity.culture(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.culture(city(61, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(0).initCity(63, 31)
@@ -7491,8 +7138,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testBestCultureOtherOwner(self):
-		goal = BestCity.culture(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.culture(city(61, 31)).activate(0)
 		
 		city0 = player(1).initCity(61, 31)
 		city1 = player(0).initCity(63, 31)
@@ -7514,8 +7160,7 @@ class TestBestCityGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testBestWondersCity(self):
-		goal = BestCity.wonders(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.wonders(city(61, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7531,16 +7176,15 @@ class TestBestCityGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most wonders: Zero (2)" % self.SUCCESS_CHAR,
-				"Next most wonders: One (1)"
+				[u"%c Most wonders: Zero (2)" % self.SUCCESS_CHAR],
+				["Next most wonders: One (1)"]
 			])
 		finally:
 			city0.kill()
 			city1.kill()
 	
 	def testBestWondersOtherLocation(self):
-		goal = BestCity.wonders(city(59, 31))
-		goal.activate(0)
+		goal = BestCity.wonders(city(59, 31)).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7555,14 +7199,13 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), [u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR]])
 		finally:
 			city0.kill()
 			city1.kill()
 	
 	def testBestWondersOtherOwner(self):
-		goal = BestCity.wonders(city(61, 31))
-		goal.activate(0)
+		goal = BestCity.wonders(city(61, 31)).activate(0)
 		
 		city0 = player(1).initCity(61, 31)
 		city1 = player(0).initCity(63, 31)
@@ -7577,14 +7220,13 @@ class TestBestCityGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), [u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Most wonders: Zero (2)" % self.FAILURE_CHAR]])
 		finally:
 			city0.kill()
 			city1.kill()
 	
 	def testBestSpecialistCity(self):
-		goal = BestCity.specialist(city(61, 31), iSpecialistGreatScientist)
-		goal.activate(0)
+		goal = BestCity.specialist(city(61, 31), iSpecialistGreatScientist).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7598,16 +7240,15 @@ class TestBestCityGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most settled specialists: Zero (4)" % self.SUCCESS_CHAR,
-				"Next most settled specialists: One (2)"
+				[u"%c Most settled specialists: Zero (4)" % self.SUCCESS_CHAR],
+				["Next most settled specialists: One (2)"]
 			])
 		finally:
 			city0.kill()
 			city1.kill()
 	
 	def testBestSpecialistCityGreatPeople(self):
-		goal = BestCity.specialist(city(61, 31), great_people())
-		goal.activate(0)
+		goal = BestCity.specialist(city(61, 31), great_people()).activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7625,8 +7266,8 @@ class TestBestCityGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most settled specialists: Zero (3)" % self.SUCCESS_CHAR,
-				"Next most settled specialists: One (2)"
+				[u"%c Most settled specialists: Zero (3)" % self.SUCCESS_CHAR],
+				["Next most settled specialists: One (2)"]
 			])
 		finally:
 			city0.kill()
@@ -7636,8 +7277,7 @@ class TestBestCityGoals(ExtendedTestCase):
 class TestBestPlayerGoals(ExtendedTestCase):
 	
 	def testBestPopulationPlayer(self):
-		goal = BestPlayer.population()
-		goal.activate(0)
+		goal = BestPlayer.population().activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7653,8 +7293,7 @@ class TestBestPlayerGoals(ExtendedTestCase):
 			city1.kill()
 
 	def testBestPopulationPlayerOther(self):
-		goal = BestPlayer.population()
-		goal.activate(0)
+		goal = BestPlayer.population().activate(0)
 		
 		city0 = player(0).initCity(61, 31)
 		city1 = player(1).initCity(63, 31)
@@ -7670,8 +7309,7 @@ class TestBestPlayerGoals(ExtendedTestCase):
 			city1.kill()
 	
 	def testBestTechPlayer(self):
-		goal = BestPlayer.tech()
-		goal.activate(0)
+		goal = BestPlayer.tech().activate(0)
 		
 		for iTech in infos.techs():
 			team(0).setHasTech(iTech, False, 0, False, False)
@@ -7688,8 +7326,7 @@ class TestBestPlayerGoals(ExtendedTestCase):
 			team(1).setHasTech(iLaw, False, 1, False, False)
 		
 	def testBestTechPlayerOther(self):
-		goal = BestPlayer.tech()
-		goal.activate(0)
+		goal = BestPlayer.tech().activate(0)
 		
 		for iTech in infos.techs():
 			team(0).setHasTech(iTech, False, 0, False, False)
@@ -7709,8 +7346,7 @@ class TestBestPlayerGoals(ExtendedTestCase):
 class TestBestPlayersGoals(ExtendedTestCase):
 	
 	def testBestTechPlayersReligion(self):
-		goal = BestPlayers.tech(3).religion()
-		goal.activate(0)
+		goal = BestPlayers.tech(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iProtestantism)
 		player(1).setLastStateReligion(iProtestantism)
@@ -7727,9 +7363,9 @@ class TestBestPlayersGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR,
-				u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR,
-				u"%c Third most advanced: Harappa (280)" % self.FAILURE_CHAR
+				[u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR],
+				[u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR],
+				[u"%c Third most advanced: Harappa (280)" % self.FAILURE_CHAR]
 			])
 		finally:
 			team(0).setHasTech(iGenetics, False, 0, False, False)
@@ -7737,8 +7373,7 @@ class TestBestPlayersGoals(ExtendedTestCase):
 			team(2).setHasTech(iLaw, False, 2, False, False)
 	
 	def testBestTechPlayersSecular(self):
-		goal = BestPlayers.tech(3).secular()
-		goal.activate(0)
+		goal = BestPlayers.tech(3).secular().activate(0)
 		
 		player(0).setCivics(iCivicsReligion, iSecularism)
 		player(1).setCivics(iCivicsReligion, iSecularism)
@@ -7755,9 +7390,9 @@ class TestBestPlayersGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR,
-				u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR,
-				u"%c Third most advanced: Harappa (280)" % self.SUCCESS_CHAR
+				[u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR],
+				[u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR],
+				[u"%c Third most advanced: Harappa (280)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			team(0).setHasTech(iGenetics, False, 0, False, False)
@@ -7771,8 +7406,7 @@ class TestBestPlayersGoals(ExtendedTestCase):
 class TestBestCitiesGoals(ExtendedTestCase):
 
 	def testBestPopulationPlayerAll(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -7793,10 +7427,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR,
-				"Next most populous: Fourth (7)"
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR],
+				["Next most populous: Fourth (7)"]
 			])
 		finally:
 			city1.kill()
@@ -7806,8 +7440,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationPlayerAllAlsoNext(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -7828,10 +7461,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR,
-				"Next most populous: Fourth (7)"
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR],
+				["Next most populous: Fourth (7)"]
 			])
 		finally:
 			city1.kill()
@@ -7841,8 +7474,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationPlayerSome(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -7867,10 +7499,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR,
-				"Our next most populous: Fifth (6)"
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.FAILURE_CHAR],
+				["Our next most populous: Fifth (6)"]
 			])
 		finally:
 			city1.kill()
@@ -7881,8 +7513,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationMissingCities(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -7895,8 +7526,8 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -7904,18 +7535,16 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationNoCities(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), [u"%c Most populous: (No City) (0)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Most populous: (No City) (0)" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testBestPopulationMissingNextCity(self):
-		goal = BestCities.population(3)
-		goal.activate(0)
+		goal = BestCities.population(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -7932,9 +7561,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -7943,8 +7572,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 
 	def testBestPopulationCitiesReligionAll(self):
-		goal = BestCities.population(3).religion()
-		goal.activate(0)
+		goal = BestCities.population(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -7968,9 +7596,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -7982,8 +7610,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationCitiesReligionSome(self):
-		goal = BestCities.population(3).religion()
-		goal.activate(0)
+		goal = BestCities.population(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -8019,10 +7646,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR,
-				"Our next most populous: Fifth (6)"
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.FAILURE_CHAR],
+				["Our next most populous: Fifth (6)"]
 			])
 		finally:
 			city1.kill()
@@ -8036,8 +7663,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationCitiesReligionLackingInCities(self):
-		goal = BestCities.population(3).religion()
-		goal.activate(0)
+		goal = BestCities.population(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		
@@ -8058,9 +7684,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8070,8 +7696,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationCitiesReligionOnlyOthers(self):
-		goal = BestCities.population(3).religion()
-		goal.activate(0)
+		goal = BestCities.population(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -8094,9 +7719,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.SUCCESS_CHAR,
-				u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR,
-				u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR
+				[u"%c Most populous: First (10)" % self.SUCCESS_CHAR],
+				[u"%c Second most populous: Second (9)" % self.SUCCESS_CHAR],
+				[u"%c Third most populous: Third (8)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8107,8 +7732,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestPopulationCitiesReligionNoStateReligion(self):
-		goal = BestCities.population(3).religion()
-		goal.activate(0)
+		goal = BestCities.population(3).religion().activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8125,21 +7749,18 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most populous: First (10)" % self.FAILURE_CHAR,
-				u"%c Second most populous: Second (9)" % self.FAILURE_CHAR,
-				u"%c Third most populous: Third (8)" % self.FAILURE_CHAR
+				[u"%c Most populous: First (10)" % self.FAILURE_CHAR],
+				[u"%c Second most populous: Second (9)" % self.FAILURE_CHAR],
+				[u"%c Third most populous: Third (8)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
 			city2.kill()
 			city3.kill()
 			goal.deactivate()
-	
-	# dskjfd
 
 	def testBestCulturePlayerAll(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8160,10 +7781,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR,
-				"Next most cultured: Fourth (70)"
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR],
+				["Next most cultured: Fourth (70)"]
 			])
 		finally:
 			city1.kill()
@@ -8173,8 +7794,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCulturePlayerAllAlsoNext(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8195,10 +7815,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR,
-				"Next most cultured: Fourth (70)"
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR],
+				["Next most cultured: Fourth (70)"]
 			])
 		finally:
 			city1.kill()
@@ -8208,8 +7828,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCulturePlayerSome(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8234,10 +7853,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR,
-				"Our next most cultured: Fifth (60)"
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR],
+				["Our next most cultured: Fifth (60)"]
 			])
 		finally:
 			city1.kill()
@@ -8248,8 +7867,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureMissingCities(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8262,8 +7880,8 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8271,18 +7889,16 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureNoCities(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), False)
-			self.assertEqual(goal.progress(), [u"%c Most cultured: (No City) (0)" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Most cultured: (No City) (0)" % self.FAILURE_CHAR]])
 		finally:
 			goal.deactivate()
 	
 	def testBestCultureMissingNextCity(self):
-		goal = BestCities.culture(3)
-		goal.activate(0)
+		goal = BestCities.culture(3).activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8299,9 +7915,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8310,8 +7926,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 
 	def testBestCultureCitiesReligionAll(self):
-		goal = BestCities.culture(3).religion()
-		goal.activate(0)
+		goal = BestCities.culture(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -8335,9 +7950,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8349,8 +7964,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureCitiesReligionSome(self):
-		goal = BestCities.culture(3).religion()
-		goal.activate(0)
+		goal = BestCities.culture(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -8386,10 +8000,10 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR,
-				"Our next most cultured: Fifth (60)"
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR],
+				["Our next most cultured: Fifth (60)"]
 			])
 		finally:
 			city1.kill()
@@ -8403,8 +8017,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureCitiesReligionLackingInCities(self):
-		goal = BestCities.culture(3).religion()
-		goal.activate(0)
+		goal = BestCities.culture(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		
@@ -8425,9 +8038,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8437,8 +8050,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureCitiesReligionOnlyOthers(self):
-		goal = BestCities.culture(3).religion()
-		goal.activate(0)
+		goal = BestCities.culture(3).religion().activate(0)
 		
 		player(0).setLastStateReligion(iJudaism)
 		player(1).setLastStateReligion(iJudaism)
@@ -8461,9 +8073,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.SUCCESS_CHAR,
-				u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR,
-				u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR
+				[u"%c Most cultured: First (100)" % self.SUCCESS_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.SUCCESS_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.SUCCESS_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8474,8 +8086,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBestCultureCitiesReligionNoStateReligion(self):
-		goal = BestCities.culture(3).religion()
-		goal.activate(0)
+		goal = BestCities.culture(3).religion().activate(0)
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setName("First", False)
@@ -8492,9 +8103,9 @@ class TestBestCitiesGoals(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(goal.progress(), [
-				u"%c Most cultured: First (100)" % self.FAILURE_CHAR,
-				u"%c Second most cultured: Second (90)" % self.FAILURE_CHAR,
-				u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR
+				[u"%c Most cultured: First (100)" % self.FAILURE_CHAR],
+				[u"%c Second most cultured: Second (90)" % self.FAILURE_CHAR],
+				[u"%c Third most cultured: Third (80)" % self.FAILURE_CHAR]
 			])
 		finally:
 			city1.kill()
@@ -8506,8 +8117,7 @@ class TestBestCitiesGoals(ExtendedTestCase):
 class TestRouteConnection(ExtendedTestCase):
 
 	def testDirectConnection(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8533,8 +8143,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDirectConnectionTriggered(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8565,8 +8174,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoRoute(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8590,8 +8198,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoCulture(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8615,8 +8222,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDifferentRouteType(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRailroad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRailroad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 41)
@@ -8644,8 +8250,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoRouteTech(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8667,8 +8272,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoStartCity(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		target = player(0).initCity(64, 41)
 		
@@ -8692,8 +8296,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDifferentStartCityOwner(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(1).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8719,8 +8322,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testNoTargetCity(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		
@@ -8744,8 +8346,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testTargetCityDifferentOwner(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(1).initCity(64, 31)
@@ -8771,8 +8372,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testIndirectConnection(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8797,8 +8397,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConnectionThroughCity(self):
-		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		middle = player(0).initCity(63, 31)
@@ -8826,8 +8425,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConnectionThroughCityDifferentOwner(self):
-		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(63, 31)]), plots.of([(65, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		middle = player(1).initCity(63, 31)
@@ -8857,8 +8455,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def testMultipleStarts(self):
 		starts = plots.rectangle((61, 31), (61, 33))
 		targets = plots.of([(64, 31)])
-		goal = RouteConnection(starts, targets, [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(starts, targets, [iRouteRoad]).activate(0)
 		
 		start1 = player(0).initCity(61, 33)
 		start2 = player(1).initCity(61, 31)
@@ -8888,8 +8485,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def testMultipleTargets(self):
 		starts = plots.of([(61, 31)])
 		targets = plots.rectangle((64, 31), (64, 33))
-		goal = RouteConnection(starts, targets, [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(starts, targets, [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target1 = player(1).initCity(64, 31)
@@ -8917,8 +8513,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithStartOwners(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners().activate(0)
 		
 		start = player(1).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8944,8 +8539,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithStartOwnersIncludingTarget(self):
-		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners()
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(64, 31)]), [iRouteRoad]).withStartOwners().activate(0)
 		
 		start = player(1).initCity(61, 31)
 		target = player(1).initCity(64, 31)
@@ -8971,8 +8565,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithLazyCapital(self):
-		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -9000,8 +8593,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithLazyCapitalElsewhere(self):
-		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		capital = player(0).initCity(35, 35)
 		capital.setHasRealBuilding(iPalace, True)
@@ -9030,8 +8622,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMultipleTargetsAll(self):
-		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(63, 31)
 		target1 = player(0).initCity(61, 31)
@@ -9058,8 +8649,7 @@ class TestRouteConnection(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testMultipleTargetsSome(self):
-		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad])
-		goal.activate(0)
+		goal = RouteConnection(plots.of([(63, 31)]), (plots.of([(61, 31)]), plots.of([(65, 31)])), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(63, 31)
 		target1 = player(0).initCity(61, 31)
@@ -9114,13 +8704,11 @@ class SubGoal(BaseGoal):
 class TestAllGoal(ExtendedTestCase):
 
 	def testActivate(self):
-		goal1 = SubGoal()
-		goal2 = SubGoal()
-		goal = All(goal1, goal2)
-		
 		def callback():
 			pass
-		goal.activate(0, callback)
+		
+		goal = All(SubGoal(), SubGoal()).activate(0, callback)
+		goal1, goal2 = goal.goals
 		
 		try:
 			self.assertEqual(goal.iPlayer, 0)
@@ -9128,17 +8716,18 @@ class TestAllGoal(ExtendedTestCase):
 			self.assertEqual(goal2.iPlayer, 0)
 
 			self.assertEqual(goal.callback, callback)
-			self.assertEqual(goal1.callback, goal.subgoal_callback)
-			self.assertEqual(goal2.callback, goal.subgoal_callback)
+			
+			self.assertType(goal1.callback, SubgoalCallback)
+			self.assertEqual(goal1.callback.supergoal, goal)
+			
+			self.assertType(goal2.callback, SubgoalCallback)
+			self.assertEqual(goal2.callback.supergoal, goal)
 		finally:
 			goal.deactivate()
 	
 	def testOneSuccess(self):
-		goal1 = SubGoal()
-		goal2 = SubGoal()
-		goal = All(goal1, goal2)
-		
-		goal.activate(0)
+		goal = All(SubGoal(), SubGoal()).activate(0)
+		goal1, goal2 = goal.goals
 		
 		goal1.succeed()
 		
@@ -9150,11 +8739,8 @@ class TestAllGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAllSuccess(self):
-		goal1 = SubGoal()
-		goal2 = SubGoal()
-		goal = All(goal1, goal2)
-		
-		goal.activate(0)
+		goal = All(SubGoal(), SubGoal()).activate(0)
+		goal1, goal2 = goal.goals
 		
 		goal1.succeed()
 		goal2.succeed()
@@ -9167,11 +8753,8 @@ class TestAllGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testOneFailure(self):
-		goal1 = SubGoal()
-		goal2 = SubGoal()
-		goal = All(goal1, goal2)
-		
-		goal.activate(0)
+		goal = All(SubGoal(), SubGoal()).activate(0)
+		goal1, goal2 = goal.goals
 		
 		goal1.fail()
 		
@@ -9189,8 +8772,8 @@ class TestAllGoal(ExtendedTestCase):
 		goal1.string = "goal1"
 		goal2.string = "goal2"
 		
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(goal1, goal2).activate(0)
+		goal1, goal2 = goal.goals
 		
 		try:
 			self.assertEqual(str(goal1), "goal1")
@@ -9200,11 +8783,8 @@ class TestAllGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAt(self):
-		goal1 = SubGoal(1)
-		goal2 = SubGoal(1)
-		
-		goal = All(goal1, goal2).at(-3000)
-		goal.activate(0)
+		goal = All(SubGoal(1), SubGoal(1)).at(-3000).activate(0)
+		goal1, goal2 = goal.goals
 		
 		try:
 			self.assertEqual(goal1.state, POSSIBLE)
@@ -9220,11 +8800,8 @@ class TestAllGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testBy(self):
-		goal1 = SubGoal(1)
-		goal2 = SubGoal(-1)
-		
-		goal = All(goal1, goal2).by(-3000)
-		goal.activate(0)
+		goal = All(SubGoal(1), SubGoal(-1)).by(-3000).activate(0)
+		goal1, goal2 = goal.goals
 		
 		try:
 			self.assertEqual(goal1.state, POSSIBLE)
@@ -9240,11 +8817,8 @@ class TestAllGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testDeactivate(self):
-		goal1 = SubGoal(1)
-		goal2 = SubGoal(1)
-		
-		goal = All(goal1, goal2)
-		goal.activate(0)
+		goal = All(SubGoal(1), SubGoal(1)).activate(0)
+		goal1, goal2 = goal.goals
 		
 		goal.deactivate()
 		
@@ -9295,12 +8869,11 @@ class TestAllGoal(ExtendedTestCase):
 class TestSomeGoal(ExtendedTestCase):
 
 	def testActivate(self):
-		subgoal = SubGoal()
-		goal = Some(subgoal, 1)
-		
 		def callback():
 			pass
-		goal.activate(0, callback)
+		
+		goal = Some(SubGoal(), 1).activate(0, callback)
+		subgoal = goal.goal
 		
 		self.assertEqual(goal.iPlayer, 0)
 		self.assertEqual(subgoal.iPlayer, 0)
@@ -9355,8 +8928,8 @@ class TestSomeGoal(ExtendedTestCase):
 	def testCheckSubgoalChecksGoal(self):
 		subgoal = SubGoal(0, 1, 2)
 		subgoal.iMinArgument = 1
-		goal = Some(subgoal, 2)
-		goal.activate(0)
+		goal = Some(subgoal, 2).activate(0)
+		subgoal = goal.goal
 		
 		try:
 			self.assertEqual(bool(subgoal), False)
@@ -9380,8 +8953,7 @@ class TestSomeGoal(ExtendedTestCase):
 		self.assertEqual(goal.description(), "Control two out of three Granaries")
 	
 	def testWithFirstGreatPerson(self):
-		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
-		goal.activate(0)
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2).activate(0)
 		
 		artist = makeUnit(0, iGreatArtist, (0, 0))
 		events.fireEvent("greatPersonBorn", artist, 0, None)
@@ -9404,8 +8976,7 @@ class TestSomeGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithFirstGreatPersonOneOther(self):
-		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
-		goal.activate(0)
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2).activate(0)
 		
 		artist = makeUnit(0, iGreatMerchant, (0, 0))
 		events.fireEvent("greatPersonBorn", artist, 0, None)
@@ -9438,8 +9009,7 @@ class TestSomeGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testWithFirstGreatPersonTwoOther(self):
-		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2)
-		goal.activate(0)
+		goal = Some(Trigger.firstGreatPerson(iSpecialistGreatArtist, iSpecialistGreatEngineer, iSpecialistGreatMerchant), 2).activate(0)
 		
 		artist = makeUnit(1, iGreatArtist, (0, 0))
 		events.fireEvent("greatPersonBorn", artist, 1, None)
@@ -9474,8 +9044,8 @@ class CityGoal(BaseGoal):
 	def condition(self, *arguments):
 		return self.complete
 	
-	def progress(self):
-		return "%s Some city goal: %s" % (self.format_progress_indicator(self.complete), self.string)
+	def internal_progress(self, bForceSingle=False):
+		return ["%s Some city goal: %s" % (self.format_progress_indicator(self.complete), self.string)]
 		
 	def __str__(self):
 		return self.string
@@ -9488,11 +9058,11 @@ class TestDifferentCities(ExtendedTestCase):
 		goal2 = CityGoal(capital())
 		goal1.string = "one"
 		goal2.string = "two"
-		goal = DifferentCities(goal1, goal2)
-		goal.activate(0)
+		goal = DifferentCities(goal1, goal2).activate(0)
+		goal1, goal2 = goal.goals
 		
 		self.assertEqual(str(goal), "one\ntwo")
-		self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Some city goal: one" % self.FAILURE_CHAR]])
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
@@ -9502,7 +9072,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(location(capital_(0)), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Some city goal: one" % self.FAILURE_CHAR]])
 			
 			goal1.succeed()
 			self.assertEqual(goal1.state, SUCCESS)
@@ -9514,8 +9084,8 @@ class TestDifferentCities(ExtendedTestCase):
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
 			self.assertEqual(goal.progress(), [
-				u"%c CityOne" % self.SUCCESS_CHAR,
-				u"%c Some city goal: two" % self.FAILURE_CHAR
+				[u"%c CityOne" % self.SUCCESS_CHAR],
+				[u"%c Some city goal: two" % self.FAILURE_CHAR]
 			])
 			
 			city2 = player(0).initCity(63, 31)
@@ -9535,10 +9105,7 @@ class TestDifferentCities(ExtendedTestCase):
 				self.assertEqual(goal.recorded(goal2), (63, 31))
 				
 				self.assertEqual(str(goal), "CityOne: one\nCityTwo: two")
-				self.assertEqual(goal.progress(), [
-					u"%c CityOne" % self.SUCCESS_CHAR,
-					u"%c CityTwo" % self.SUCCESS_CHAR
-				])
+				self.assertEqual(goal.progress(), [[u"%c Goal accomplished! (3000 BC)" % self.SUCCESS_CHAR]])
 			finally:
 				city2.kill()
 		finally:
@@ -9550,11 +9117,11 @@ class TestDifferentCities(ExtendedTestCase):
 		goal1.string = "one"
 		goal2.string = "two"
 		
-		goal = DifferentCities(goal1, goal2)
-		goal.activate(0)
+		goal = DifferentCities(goal1, goal2).activate(0)
+		goal1, goal2 = goal.goals
 		
 		self.assertEqual(str(goal), "one\ntwo")
-		self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
+		self.assertEqual(goal.progress(), [[u"%c Some city goal: one" % self.FAILURE_CHAR]])
 			
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
@@ -9564,7 +9131,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(location(capital_(0)), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), [u"%c Some city goal: one" % self.FAILURE_CHAR])
+			self.assertEqual(goal.progress(), [[u"%c Some city goal: one" % self.FAILURE_CHAR]])
 			
 			goal1.succeed()
 			self.assertEqual(goal1.state, SUCCESS)
@@ -9576,8 +9143,8 @@ class TestDifferentCities(ExtendedTestCase):
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
 			self.assertEqual(goal.progress(), [
-				u"%c CityOne" % self.SUCCESS_CHAR,
-				u"%c Some city goal: two" % self.FAILURE_CHAR
+				[u"%c CityOne" % self.SUCCESS_CHAR],
+				[u"%c Some city goal: two" % self.FAILURE_CHAR]
 			])
 			
 			goal2.succeed()
@@ -9589,7 +9156,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), [])
+			self.assertEqual(goal.progress(), [[u"%c Goal failed!" % self.FAILURE_CHAR]])
 		finally:
 			city1.kill()
 	
@@ -9599,8 +9166,8 @@ class TestDifferentCities(ExtendedTestCase):
 		goal1.string = "one"
 		goal2.string = "two"
 		
-		goal = DifferentCities(goal1, goal2)
-		goal.activate(0)
+		goal = DifferentCities(goal1, goal2).activate(0)
+		goal1, goal2 = goal.goals
 		
 		city1 = player(0).initCity(61, 31)
 		city1.setHasRealBuilding(iPalace, True)
@@ -9620,7 +9187,7 @@ class TestDifferentCities(ExtendedTestCase):
 			self.assertEqual(goal.recorded(goal2), (61, 31))
 			
 			self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
-			self.assertEqual(goal.progress(), [])
+			self.assertEqual(goal.progress(), [[u"%c Goal failed!" % self.FAILURE_CHAR]])
 			
 			city2 = player(0).initCity(63, 31)
 			city1.setHasRealBuilding(iPalace, False)
@@ -9632,7 +9199,7 @@ class TestDifferentCities(ExtendedTestCase):
 			
 				self.assertEqual(str(goal), "CityOne: one\nCityOne: two")
 				self.assertEqual(goal.state, FAILURE)
-				self.assertEqual(goal.progress(), [])
+				self.assertEqual(goal.progress(), [[u"%c Goal failed!" % self.FAILURE_CHAR]])
 			finally:
 				city2.kill()
 		finally:
@@ -9728,6 +9295,8 @@ test_cases = [
 	TestGroup,
 ]
 
+
+disable_victories()
 
 suite = TestSuite([makeSuite(case) for case in test_cases])
 TextTestRunner(verbosity=2).run(suite)

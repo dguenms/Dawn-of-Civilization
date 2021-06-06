@@ -17,6 +17,7 @@ import types
 
 from traceback import extract_stack
 from sets import Set
+from itertools import groupby
 
 from BugEventManager import g_eventManager as events
 
@@ -35,6 +36,16 @@ irregular_plurals = {
 	"Great Statesman": "Great Statesmen",
 	"cathedral of your state religion": "cathedrals of your state religion",
 }
+
+# TODO: test
+def unique(iterable):
+	return [key for key, value in groupby(iterable)]
+
+
+# TODO: test
+def chunks(list, length):
+	return [list[i:i+length] for i in xrange(0, len(list), length)]
+
 
 def since(iTurn):
 	return turn() - iTurn
@@ -89,6 +100,17 @@ def capitalize(string):
 		capitalized += string[1:]
 
 	return capitalized
+
+
+def uncapitalize(string):
+	if not string:
+		return string
+	
+	uncapitalized = string[0].lower()
+	if len(string) > 1:
+		uncapitalized += string[1:]
+	
+	return uncapitalized
 
 
 def number_word(number):
@@ -449,21 +471,15 @@ def next(iterator, default = None):
 		return default
 
 
-def retrieve(dict, key, otherwise=None):
-	if key in dict:
-		return dict[key]
-	return otherwise
-
-
 def message(iPlayer, key, *format, **settings):
-	iColor = retrieve(settings, 'color', otherwise=iWhite)
-	iEvent = retrieve(settings, 'event', otherwise=0)
-	iButton = retrieve(settings, 'button', otherwise='')
+	iColor = settings.get('color', iWhite)
+	iEvent = settings.get('event', 0)
+	iButton = settings.get('button', '')
 	
-	sound = retrieve(settings, 'sound', otherwise='')
-	force = retrieve(settings, 'force', otherwise=False)
+	sound = settings.get('sound', '')
+	force = settings.get('force', False)
 	
-	tile = retrieve(settings, 'location')
+	tile = settings.get('location')
 	iX, iY = -1, -1
 	if tile:
 		iX, iY = location(tile)
@@ -1156,7 +1172,7 @@ class PlotFactory:
 		return self.regions(iRegion)
 		
 	def surrounding(self, *args, **kwargs):
-		radius = retrieve(kwargs, 'radius', 1)
+		radius = kwargs.get('radius', 1)
 		if radius < 0: raise ValueError("radius cannot be negative, received: '%d'" % radius)
 		x, y = _parse_tile(*args)
 		if not isinstance(x, int): raise Exception("x must be int, is %s" % type(x))
@@ -1164,7 +1180,7 @@ class PlotFactory:
 		return Plots(sort(list(set(wrap(x+i, y+j) for i in range(-radius, radius+1) for j in range(-radius, radius+1)))))
 		
 	def ring(self, *args, **kwargs):
-		radius = retrieve(kwargs, 'radius', 1)
+		radius = kwargs.get('radius', 1)
 		circle = self.surrounding(*args, **kwargs)
 		inside = self.surrounding(*args, **{'radius': radius-1})
 		return circle.without(inside)
@@ -1358,6 +1374,81 @@ class LazyPlots(object):
 	@staticmethod
 	def normal(iPlayer):
 		return LazyPlots(lambda: plots.normal(iPlayer))
+
+
+# TODO: test
+class DeferredCollectionFactory(object):
+
+	def __init__(self, factory):
+		self.factory = factory
+	
+	def __getattr__(self, name):
+		return getattr(DeferredCollection(self.factory), name)
+	
+	@staticmethod
+	def plots():
+		return DeferredCollectionFactory(PlotFactory())
+
+
+class DeferredCollection(object):
+
+	def __init__(self, factory):
+		self.factory = factory
+		self.calls = []
+		self._name = ""
+	
+	def __getattr__(self, name):
+		def call_adder(*args):
+			self.calls.append((name, args))
+			
+			if args and isinstance(args[0], Civ):
+				self.clear_named(infos.civ(args[0]).getShortDescription(0))
+			
+			return self
+		return call_adder
+	
+	def __iter__(self):
+		return iter(self.create())
+	
+	def initial(self):
+		return self.factory
+	
+	def create(self):
+		instance = self.initial()
+		for func_name, args in self.calls:
+			instance = getattr(instance, func_name)(*args)
+			
+		if isinstance(instance, Plots) and self._name:
+			instance.clear_named(self.name())
+		
+		return instance
+	
+	def named(self, key):
+		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
+	
+	def clear_named(self, name):
+		self._name = name
+		return self
+	
+	def name(self):
+		return self._name
+	
+	# TODO: test
+	def __add__(self, other):
+		if isinstance(other, DeferredCollection):
+			return CombinedDeferredCollection(self, other)
+		raise ValueError("Can only add DeferredCollections, found: '%s'" % type(other))
+
+
+class CombinedDeferredCollection(DeferredCollection):
+
+	def __init__(self, left, right):
+		super(CombinedDeferredCollection, self).__init__(None)
+		self.left = left
+		self.right = right
+	
+	def initial(self):
+		return self.left.create() + self.right.create()
 
 		
 class CitiesCorner:

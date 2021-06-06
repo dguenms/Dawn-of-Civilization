@@ -5,7 +5,7 @@ from Core import *
 from RFCUtils import *
 from Civics import isCommunist
 from CityNameManager import getRenameName
-from Events import events
+from Events import register_victory_handler
 
 import BugCore
 AdvisorOpt = BugCore.game.Advisors
@@ -14,6 +14,10 @@ AlertsOpt = BugCore.game.MoreCiv4lerts
 
 sum_ = sum
 capital_ = capital
+plots_ = plots
+
+
+plots = DeferredCollectionFactory.plots()
 
 
 POSSIBLE, SUCCESS, FAILURE = range(3)
@@ -337,7 +341,7 @@ class DeferredCity(Deferred):
 		return city_(self.tile)
 	
 	def area(self):
-		return plots.of([self.tile])
+		return plots_.of([self.tile])
 
 
 class DeferredStateReligion(Deferred):
@@ -400,6 +404,9 @@ def capital():
 def city(*tile):
 	tile = duplefy(*tile)
 	return DeferredCity(tile)
+
+def start(identifier):
+	return city(dCapitals[identifier])
 	
 def holyCity(iReligion = None):
 	deferred = DeferredHolyCity()
@@ -423,12 +430,14 @@ def area(item):
 		return item
 	elif isinstance(item, Deferred):
 		return item.area()
-	return plots.none()
+	
+	return plots_.none()
 
 def simple_name(name):
 	if not name:
 		return name
-	return name.replace("the", "").lstrip()
+	name = name.replace("the", "").lstrip()
+	return capitalize(name)
 
 
 class Aggregate(object):
@@ -466,6 +475,9 @@ class Aggregate(object):
 	
 	def named(self, key):
 		self._name = text("TXT_KEY_UHV_%s" % key)
+		for item in self.items:
+			if isinstance(item, (Plots, DeferredCollection)):
+				item.clear_named(self._name)
 		return self
 	
 	def join(self, key):
@@ -474,6 +486,10 @@ class Aggregate(object):
 	
 	def isTotal(self):
 		return not self._name and len(self.items) > 1
+	
+	def create(self):	
+		self.items = [isinstance(item, DeferredCollection) and item.create() or item for item in self.items]
+		return self
 
 
 class SumAggregate(Aggregate):
@@ -567,6 +583,13 @@ class Arguments(object):
 		self.iPlayer = None
 		self.owner_included = False
 	
+	# TODO: test
+	def create(self):
+		if isinstance(self.subject, (Aggregate, DeferredCollection)):
+			self.subject = self.subject.create()
+	
+		self.objectives = [tuple(isinstance(item, (Aggregate, DeferredCollection)) and item.create() or item for item in objective) for objective in self.objectives]
+	
 	def value(self, item):
 		if isinstance(item, Deferred):
 			return item(self.iPlayer)
@@ -581,7 +604,7 @@ class Arguments(object):
 			result += list(self.value(obj) for obj in objective)
 		if self.owner_included:
 			result += [self.iPlayer]
-		
+			
 		return tuple(result)
 		
 	def __iter__(self):
@@ -646,6 +669,9 @@ class FormatOptionsBuilder(object):
 	
 	def type(self, type, formatter):
 		return FormatOptions().type(type, formatter)
+	
+	def plain_number(self):
+		return FormatOptions().neverCount()
 
 
 options = FormatOptionsBuilder()
@@ -659,6 +685,7 @@ class FormatOptions(object):
 		
 		self.bPlural = True
 		self.bNumberWord = False
+		self.bPlainNumber = False
 		self.bCount = False
 		
 		self.no_singular_count = None
@@ -685,8 +712,16 @@ class FormatOptions(object):
 		self.bNumberWord = True
 		return self
 	
+	def plain_number(self):
+		self.bPlainNumber = True
+		return self
+	
 	def count(self):
 		self.bCount = True
+		return self
+	
+	def neverCount(self):
+		self.bNeverCount = True
 		return self
 	
 	def noSingularCount(self, func):
@@ -792,7 +827,7 @@ class ArgumentProcessor(object):
 		elif issubclass(type, UnitCombatTypes):
 			return isinstance(value, (UnitCombatTypes, Aggregate))
 		elif issubclass(type, Plots):
-			return isinstance(value, (Plots, Aggregate))
+			return isinstance(value, (Plots, DeferredCollection, Aggregate))
 		return isinstance(value, type)
 	
 	def transform(self, type, value):
@@ -830,7 +865,7 @@ class ArgumentProcessor(object):
 			if not bAggregate and self.options.bPlural and count > 1:
 				formatted_values[0] = plural(formatted_values[0])
 			
-			formatted_values = concat(number_word(formatted_values[-1]), formatted_values[:-1])
+			formatted_values = concat(self.options.bPlainNumber and formatted_values[-1] or number_word(formatted_values[-1]), formatted_values[:-1])
 		
 			if self.options.no_singular_count and not isinstance(values[0], (Deferred, Aggregate)) and count == 1:
 				if self.options.no_singular_count(values[0]):
@@ -890,7 +925,7 @@ class ArgumentProcessor(object):
 		if issubclass(type, CvInfoBase):
 			return lambda info: infos.text(type, info)
 		if issubclass(type, Plots):
-			return Plots.name
+			return lambda plots: plots.name()
 		if issubclass(type, int):
 			return self.format_int
 		return lambda item: item
@@ -901,7 +936,7 @@ class ArgumentProcessor(object):
 		if isinstance(value, Deferred):
 			return str(value)
 		if isinstance(value, Aggregate):
-			aggregate_formatter = issubclass(type, (Plots, CvFeatureInfo)) and formatter or (lambda item: plural(formatter(item)))
+			aggregate_formatter = issubclass(type, (Plots, DeferredCollection, CvFeatureInfo)) and formatter or (lambda item: plural(formatter(item)))
 			return value.format(aggregate_formatter)
 		
 		return formatter(value)
@@ -944,7 +979,7 @@ class ArgumentProcessor(object):
 				if issubclass(objective_type, type):
 					if isinstance(objective, Aggregate):
 						for item in objective:
-							values.append(item.clear_named(objective.name))
+							values.append(item)
 					else:
 						values.append(objective)
 		
@@ -1009,15 +1044,20 @@ class GoalBuilder(object):
 		return goal
 
 
-class CheckAt(object):
+class CheckHandler(object):
 
-	def __init__(self, goal, iYear):
+	def activate(self, goal):
 		self.goal = goal
-		self.iYear = iYear
 	
 	@property
 	def __name__(self):
 		return self.__class__.__name__
+
+
+class CheckAt(CheckHandler):
+
+	def __init__(self, iYear):
+		self.iYear = iYear
 	
 	def __call__(self, args):
 		iGameTurn, iPlayer = args
@@ -1025,35 +1065,23 @@ class CheckAt(object):
 			self.goal.finalCheck()
 
 
-class CheckBy(object):
+class CheckBy(CheckHandler):
 
-	def __init__(self, goal, iYear):
-		self.goal = goal
+	def __init__(self, iYear):
 		self.iYear = iYear
 	
 	def __call__(self, args):
 		iGameTurn, iPlayer = args
 		if self.goal.iPlayer == iPlayer and iGameTurn == year(self.iYear):
 			self.goal.expire()
-	
-	@property
-	def __name__(self):
-		return self.__class__.__name__
 
 
-class CheckEvery(object):
-
-	def __init__(self, goal):
-		self.goal = goal
+class CheckEvery(CheckHandler):
 	
 	def __call__(self, args):
 		iGameTurn, iPlayer = args
 		if self.goal.iPlayer == iPlayer:
 			self.goal.check()
-	
-	@property
-	def __name__(self):
-		return self.__class__.__name__
 
 
 class BaseGoal(object):
@@ -1159,7 +1187,7 @@ class BaseGoal(object):
 	
 	@classmethod
 	def process_areas(cls, arguments):
-		areas = defaultdict(default=plots.none())
+		areas = defaultdict(default=plots_.none())
 		if not cls.types:
 			return areas
 		
@@ -1185,10 +1213,10 @@ class BaseGoal(object):
 		self._iYear = None
 		self._iSuccessTurn = None
 		
-		self.handlers = self.__class__.handlers[:]
+		self.instance_handlers = self.__class__.handlers[:]
 		self.extra_handlers = []
 		
-		self.areas = self.process_areas(self.arguments)
+		self.areas = {}
 		
 		self.type = self.PLAYER
 		self.mode = self.ACTIVE
@@ -1222,24 +1250,43 @@ class BaseGoal(object):
 		self.iPlayer = None
 		self.callback = None
 	
+	def registerHandlers(self):
+		for event, handler in self.instance_handlers:
+			handler_func = getattr(self, handler)
+			if isinstance(handler_func, CheckHandler):
+				handler_func.activate(self)
+			
+			register_victory_handler(event, handler_func)
+	
+	def deregisterHandlers(self):
+		for event, handler in self.instance_handlers:
+			events.removeEventHandler(event, getattr(self, handler))
+	
+	# TODO: test returns copy
 	def activate(self, iPlayer, callback=None):
-		self.iPlayer = iPlayer
-		self.callback = callback
+		goal = copy(self)
+	
+		goal.iPlayer = iPlayer
+		goal.callback = callback
 		
-		self.arguments.iPlayer = iPlayer
+		goal.arguments.iPlayer = iPlayer
+		goal.arguments.create()
 		
-		for event, handler in self.handlers:
-			events.addEventHandler(event, getattr(self, handler))
+		goal.areas = goal.process_areas(self.arguments)
+		
+		goal.registerHandlers()
+		
+		return goal
 	
 	def deactivate(self):
-		for event, handler in self.handlers:
+		for event, handler in self.instance_handlers:
 			handler_func = getattr(self, handler)
 			if events.hasEventHandler(event, handler_func):
 				events.removeEventHandler(event, handler_func)
 	
 	def passivate(self, iPlayer, callback=None):
 		self.mode = self.PASSIVE
-		self.activate(iPlayer, callback)
+		return self.activate(iPlayer, callback)
 	
 	# TODO: test
 	def state_string(self):
@@ -1265,20 +1312,20 @@ class BaseGoal(object):
 			else:
 				string += " (%s)" % format_date(game.getTurnYear(self._iSuccessTurn))
 		
-		return string
+		return u"%c %s" % (self.SUCCESS_CHAR, string)
+	
+	def failure_string(self):
+		return u"%c %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_GOAL_FAILED"))
 	
 	# TODO: test record success turn
-	# TODO: should announce be part of the callback so only the top level callback announces? as opposed to subgoals of All() etc.
 	def setState(self, state):
 		if self.state != state and (self.mode == self.ACTIVE or state != SUCCESS):
 			self.state = state
 			
 			if state == FAILURE:
-				self.announceFailure()
 				self.deactivate()
 			
 			if state == SUCCESS:
-				self.announceSuccess()
 				self.recordSuccessTurn()
 			
 			if self.callback and hasattr(self.callback, 'stateChange'):
@@ -1307,13 +1354,13 @@ class BaseGoal(object):
 		if self.possible():
 			self.fail()
 	
+	# TODO: test with callback
 	def check(self):
-		if self.callback and hasattr(self.callback, 'check'):
-			self.callback.check(self)
-			return
-	
 		if self.possible() and self:
 			self.succeed()
+			
+		if self.callback and hasattr(self.callback, 'check'):
+			self.callback.check(self)
 	
 	def finalCheck(self):
 		self.check()
@@ -1327,7 +1374,7 @@ class BaseGoal(object):
 			
 	def announce(self, key, condition=True):
 		if self.iPlayer is not None and self._player.isHuman() and since(scenarioStartTurn()) > 0 and condition:
-			show(key, goal.description())
+			show(text(key, uncapitalize(self.description())))
 	
 	# TODO: test
 	def recordSuccessTurn(self):
@@ -1386,15 +1433,39 @@ class BaseGoal(object):
 		if self.title():
 			return "%s: %s" % (self.title(), self.description())
 		return self.description()
-		
-	# TODO: test accomplished string
-	def progress(self, bForceSingle = False):
-		if self.succeeded():
-			return [self.accomplished_string()]
 	
+	def chunks(self, list):
+		return chunks(list, 3)
+		
+	def progress_chunks(self, list):
+		num = len(list)
+		if num % 4 == 0:
+			return 4
+		elif num % 3 == 0:
+			return 3
+		elif num % 4 > num % 3:
+			return 4
+		else:
+			return 3
+		
+	# TODO: test accomplished/failed string
+	def progress(self, bForceSingle=False):
+		result = []
+		
+		if self.succeeded():
+			result.append(self.accomplished_string())
+		elif self.failed():
+			result.append(self.failure_string())
+		
+		if self.possible() or AdvisorOpt.UHVProgressAfterFinish():
+			result += self.internal_progress(bForceSingle)
+		
+		return chunks(result, self.progress_chunks(result))
+	
+	def internal_progress(self, bForceSingle=False):
 		if len(self.arguments.objectives) == 1 and not bForceSingle and not self.single_objective_progress():
 			return []
-	
+		
 		objective_progress = [self.objective_progress(*arguments) for arguments in self.arguments]
 		return [progress for progress in objective_progress if progress]
 	
@@ -1423,7 +1494,7 @@ class BaseGoal(object):
 		return self.types.format_progress(self._progress, *arguments)
 	
 	def full_display(self):
-		return "%s\n%s" % (self.full_description(), "\n".join(self.progress()))
+		return "%s\n%s" % (self.full_description(), "\n".join(flatten(self.progress())))
 	
 	def display(self):
 		raise NotImplementedError()
@@ -1433,12 +1504,12 @@ class BaseGoal(object):
 		
 	def register(self, event, handler):
 		setattr(self, handler.__name__, handler)
-		self.handlers.append((event, handler.__name__))
+		self.instance_handlers.append((event, handler.__name__))
 	
 	def at(self, iYear):
 		self.extra_handlers.append('at')
 		
-		self.register("BeginPlayerTurn", CheckAt(self, iYear))
+		self.register("BeginPlayerTurn", CheckAt(iYear))
 		self._description_suffixes.append(text("TXT_KEY_UHV_IN", format_date(iYear)))
 		self._iYear = iYear
 		
@@ -1450,7 +1521,7 @@ class BaseGoal(object):
 	def by(self, iYear):
 		self.extra_handlers.append('by')
 		
-		self.register("BeginPlayerTurn", CheckBy(self, iYear))
+		self.register("BeginPlayerTurn", CheckBy(iYear))
 		self._description_suffixes.append(text("TXT_KEY_UHV_BY", format_date(iYear)))
 		self._iYear = iYear
 		return self
@@ -1458,7 +1529,7 @@ class BaseGoal(object):
 	def every(self):
 		self.extra_handlers.append('every')
 		
-		self.register("BeginPlayerTurn", CheckEvery(self))
+		self.register("BeginPlayerTurn", CheckEvery())
 		return self
 
 
@@ -1656,10 +1727,10 @@ class Condition(BaseGoal):
 		def required(self):
 			return players.major().alive().without(self.iPlayer).civs(*self.lCivs).sum(lambda p: player(p).countTotalCulture())
 		
-		def progress(self):
+		def internal_progress(self, bForceSingle=False):
 			return [text(self._progress, self.value(), self.required())]
 		
-		return cls.progr("MORE_CULTURE").func(init, than, condition, display, value, required, progress).subclass("MoreCulture")
+		return cls.progr("MORE_CULTURE").func(init, than, condition, display, value, required, internal_progress).subclass("MoreCulture")
 	
 	@classproperty
 	def allAttitude(cls):
@@ -1668,9 +1739,9 @@ class Condition(BaseGoal):
 		
 		def display(self, iAttitude):
 			return "%d / %d" % (self.value(iAttitude), self.required())
-	
+
 		def value(self, iAttitude):
-			return players.major().alive().without(self.iPlayer).where(lambda p: player(p).AI_getAttitude(self.iPlayer) >= iAttitude).count()
+			return players.major().alive().without(self.iPlayer).where(lambda p: self._player.canContact(p) and player(p).AI_getAttitude(self.iPlayer) >= iAttitude).count()
 		
 		def required(self):
 			return players.major().alive().without(self.iPlayer).count()
@@ -1829,13 +1900,16 @@ class Count(BaseGoal):
 	def display(self, *arguments):
 		remainder, iRequired = arguments[:-1], arguments[-1]
 		return "%d / %d" % (self.value(*remainder), self.required(iRequired))
+		
+	def single_required(self):
+		return max(arg[-1] for arg in self.arguments) <= 1
 	
 	def progress_text(self, *arguments):
 		remainder, iRequired = arguments[:-1], arguments[-1]
 		progress_text = self.progress_text_format(remainder, iRequired)
 		progress_value = self.progress_value(self.value(*remainder), self.required(iRequired))
 		
-		if iRequired == 1:
+		if self.single_required():
 			return progress_text
 		
 		return "%s: %s" % (progress_text, progress_value)
@@ -1924,10 +1998,10 @@ class Count(BaseGoal):
 			
 			return rows
 		
-		def progress(self, bForceSingle=False):
-			return list(flatten(super(cls, self).progress(bForceSingle)))
+		def internal_progress(self, bForceSingle=False):
+			return list(flatten(super(cls, self).internal_progress(bForceSingle)))
 		
-		return cls.func(value_function, display_city_value, display_required, objective_progress, progress)
+		return cls.func(value_function, display_city_value, display_required, objective_progress, internal_progress)
 	
 	@classmethod
 	def city(cls, func):
@@ -1944,7 +2018,7 @@ class Count(BaseGoal):
 			return self.value(city, *remainder)
 		
 		def progress_text(self, city, *objectives):
-			if not city:
+			if not city or city.isNone():
 				return text("TXT_KEY_UHV_NO_CITY")
 		
 			remainder, iRequired = objectives[:-1], objectives[-1]
@@ -2079,10 +2153,23 @@ class Count(BaseGoal):
 	@classproperty
 	def conqueredCities(cls):
 		def init(self):
-			self.conquered = plots.none()
+			self.conquered = plots_.none()
 			self.lCivs = []
 			self.inside_plots = plots.none()
 			self.outside_plots = plots.none()
+		
+		def activate(self, iPlayer, callback=None):
+			goal = super(self.__class__, self).activate(iPlayer, callback)
+			goal.inside_plots = goal.inside_plots.create()
+			goal.outside_plots = goal.outside_plots.create()
+			
+			if goal.inside_plots.name():
+				goal.areas[simple_name(goal.inside_plots.name())] = goal.inside_plots
+			
+			if goal.outside_plots.name():
+				goal.areas[simple_name(goal.outside_plots.name())] = plots_.all().without(goal.outside_plots).land()
+			
+			return goal
 		
 		def civs(self, lCivs):
 			self.lCivs = lCivs
@@ -2091,18 +2178,10 @@ class Count(BaseGoal):
 		def inside(self, area):
 			self.inside_plots = area
 			self._description_suffixes.append(text("TXT_KEY_UHV_IN", self.inside_plots.name()))
-			
-			if area.name():
-				self.areas[simple_name(area.name())] = area
-			
 			return self
 		
 		def outside(self, area):
 			self.outside_plots = area
-			
-			if area.name():
-				self.areas[simple_name(area.name())] = plots.all().without(area).land()
-			
 			return self
 		
 		def onCityAcquired(self, iOwner, city, bConquest):
@@ -2118,7 +2197,7 @@ class Count(BaseGoal):
 				progress_text = text("TXT_KEY_UHV_PROGRESS_IN_AREA", progress_text, self.inside_plots.name())
 			return progress_text
 		
-		return cls.desc("CONQUERED_CITY_COUNT").progr("CONQUERED_CITY_COUNT").format(options.city()).func(init, civs, inside, outside, value_function, progress_text_format).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
+		return cls.desc("CONQUERED_CITY_COUNT").progr("CONQUERED_CITY_COUNT").format(options.city()).func(init, activate, civs, inside, outside, value_function, progress_text_format).handle("cityAcquired", onCityAcquired).subclass("ConqueredCityCount")
 	
 	@classproperty
 	def openBorders(cls):
@@ -2325,21 +2404,21 @@ class Count(BaseGoal):
 	@classproperty
 	def terrain(cls):
 		def value_function(self, iTerrain):
-			return plots.owner(self.iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
+			return plots_.owner(self.iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
 		
 		return cls.desc("TERRAIN_COUNT").format(options.objective("TILES").singular()).progr("TERRAIN_COUNT").objective(CvTerrainInfo).func(value_function).subclass("TerrainCount")
 	
 	@classproperty
 	def peaks(cls):
 		def value_function(self):
-			return plots.owner(self.iPlayer).where(lambda plot: plot.isPeak()).count()
+			return plots_.owner(self.iPlayer).where(lambda plot: plot.isPeak()).count()
 		
 		return cls.desc("PEAK_COUNT").progr("PEAK_COUNT").func(value_function).subclass("PeakCount")
 	
 	@classproperty
 	def feature(cls):
 		def value_function(self, iFeature):
-			return plots.owner(self.iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
+			return plots_.owner(self.iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
 		
 		return cls.desc("FEATURE_COUNT").format(options.objective("TILES").singular()).progr("FEATURE_COUNT").objective(CvFeatureInfo).func(value_function).subclass("FeatureCount")
 
@@ -2435,7 +2514,7 @@ class Percentage(Count):
 		def value(self, iReligion):
 			return game.calculateReligionPercent(iReligion)
 		
-		return cls.desc("RELIGION_SPREAD_PERCENT").progr("RELIGION_SPREAD_PERCENT").format(options.objective("TO_PERCENT").singular()).objective(CvReligionInfo).func(value).turnly.subclass("ReligionSpreadPercent")
+		return cls.desc("RELIGION_SPREAD_PERCENT").progr("RELIGION_SPREAD_PERCENT").format(options.objective("TO_PERCENT").singular().plain_number()).objective(CvReligionInfo).func(value).turnly.subclass("ReligionSpreadPercent")
 	
 	@classproperty
 	def population(cls):
@@ -2479,7 +2558,14 @@ class Trigger(Condition):
 
 	def __init__(self, *arguments):
 		super(Trigger, self).__init__(*arguments)
+		self.dCondition = {}
 		
+	def activate(self, iPlayer, callback=None):
+		goal = super(Trigger, self).activate(iPlayer, callback)
+		goal.init_conditions()
+		return goal
+		
+	def init_conditions(self):
 		self.dCondition = dict((self.process_objectives(arguments), None) for arguments in self.arguments)
 	
 	def condition(self, *arguments):
@@ -2518,12 +2604,15 @@ class Trigger(Condition):
 		def __init__(self, *arguments):
 			oldinit(self, *arguments)
 			self.extra_handlers.append('failable')
+		
+		def init_conditions(self):
+			self.dCondition = dict((self.process_objectives(arguments), None) for arguments in self.arguments)
 			self.complete()
 			
 		def single_objective_progress(self):
 			return False
 			
-		return cls.func(__init__, single_objective_progress)
+		return cls.func(__init__, init_conditions, single_objective_progress)
 	
 	@classproperty
 	def firstDiscover(cls):
@@ -2532,8 +2621,9 @@ class Trigger(Condition):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.complete(iTech)
 		
+		# TODO: test should not expire if we completed the tech already
 		def expireFirstDiscovered(self, iTech):
-			if iTech in self.values:
+			if iTech in self.values and not self.completed(iTech):
 				self.expire()
 		
 		def single_objective_progress(self):
@@ -2577,10 +2667,10 @@ class Trigger(Condition):
 				else:
 					self.fail()
 		
-		def progress(self):
+		def internal_progress(self, bForceSingle=False):
 			return []
 		
-		return cls.subject(Plots).objective(Civ).handle("firstContact", checkFirstContact).func(progress).subclass("FirstContact")
+		return cls.subject(Plots).objective(Civ).handle("firstContact", checkFirstContact).func(internal_progress).subclass("FirstContact")
 	
 	@classproperty
 	def noCityLost(cls):
@@ -2714,7 +2804,10 @@ class Track(Count):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
-		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).subclass("EraFirstDiscovered")
+		def progress_chunks(self, entries):
+			return 1
+		
+		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).func(progress_chunks).subclass("EraFirstDiscovered")
 	
 	@classproperty
 	def sunkShips(cls):
@@ -2890,6 +2983,9 @@ class BestEntities(BaseGoal):
 		super(BestEntities, self).__init__(*arguments)
 		self._progress = self._progress or "TXT_KEY_UHV_PROGRESS_BEST"
 	
+	def progress_chunks(self, list):
+		return 1
+	
 	def religion(self, iReligion=None):
 		if iReligion is not None:
 			self._description = replace_first(self._description, "TXT_KEY_UHV_MAKE_SURE") + " " + text("TXT_KEY_UHV_ARE_RELIGION", text(infos.religion(iReligion).getAdjectiveKey()))
@@ -2958,8 +3054,8 @@ class BestEntities(BaseGoal):
 		
 		return ranks
 	
-	def progress(self, bForceSingle=False):
-		return list(flatten(super(BestEntities, self).progress(bForceSingle)))
+	def internal_progress(self, bForceSingle=False):
+		return list(flatten(super(BestEntities, self).internal_progress(bForceSingle)))
 	
 	def display(self, *arguments):
 		ranks = ["%s (%d)" % (self.entity_name(entity), self.metric_wrapper(entity, *arguments[:-1])) for entity in self.objective_progress_entities(*arguments)]
@@ -3102,19 +3198,15 @@ class RouteConnection(BaseGoal):
 		if isinstance(targets, CyPlot):
 			targets = plots.of([targets])
 		
-		if isinstance(targets, Plots):
+		if isinstance(targets, DeferredCollection):
 			targets = (targets,)
 		
-		if isinstance(starts, CyPlot):
-			starts = plots.of([starts])
-		
+		# TODO: test: starts is a Deferred instance, e.g. DeferredCapital
 		self.starts = starts
 		self.targets = targets
 		self.lRoutes = list(routes)
 		
 		self.bStartOwners = False
-		
-		self.update_areas()
 		
 		self.every()
 	
@@ -3122,11 +3214,19 @@ class RouteConnection(BaseGoal):
 		return all(self.condition(targets) for targets in self.targets)
 	
 	def update_areas(self):
-		if self.starts.name():
+		if isinstance(self.starts, Plots) and self.starts.name():
 			self.areas[simple_name(self.starts.name())] = self.starts
 		for target in self.targets:
 			if target.name():
 				self.areas[simple_name(target.name())] = target
+	
+	def activate(self, iPlayer, callback=None):
+		goal = super(RouteConnection, self).activate(iPlayer, callback)
+		if isinstance(goal.starts, DeferredCollection):
+			goal.starts = goal.starts.create()
+		goal.targets = tuple(target.create() for target in goal.targets)
+		goal.update_areas()
+		return goal
 		
 	def withStartOwners(self):
 		self.bStartOwners = True
@@ -3140,7 +3240,7 @@ class RouteConnection(BaseGoal):
 		if plot.getOwner() == self.iPlayer:
 			return True
 		
-		if self.bStartOwners and plot.getOwner() in self.starts.cities().owners():
+		if self.bStartOwners and plot.getOwner() in self.current_starts().owners():
 			return True
 		
 		return False
@@ -3169,7 +3269,7 @@ class RouteConnection(BaseGoal):
 			heuristic, node = heapq.heappop(nodes)
 			visited.add((heuristic, node))
 			
-			for plot in plots.surrounding(node).where(self.valid):
+			for plot in plots_.surrounding(node).where(self.valid):
 				if plot.isCity() and plot.getOwner() == self.iPlayer and plot in targets:
 					return True
 				
@@ -3183,9 +3283,15 @@ class RouteConnection(BaseGoal):
 		if none(self._team.isHasTech(self.routeTech(iRoute)) for iRoute in self.lRoutes):
 			return False
 		
-		return any(self.connected(start.plot(), targets) for start in self.starts.cities())
+		return any(self.connected(start.plot(), targets) for start in self.current_starts())
 	
-	def progress(self, bForceSingle = False):
+	# TODO: test
+	def current_starts(self):
+		if isinstance(self.starts, Deferred):
+			return cities.of(listify(self.starts(self.iPlayer)))
+		return self.starts.cities()
+	
+	def internal_progress(self, bForceSingle=False):
 		return [self.objective_progress(targets) for targets in self.targets]
 	
 	def objective_progress(self, targets):
@@ -3194,9 +3300,16 @@ class RouteConnection(BaseGoal):
 	def progress_indicator_value(self, targets):
 		return self.condition(targets)
 	
+	def starts_name(self):
+		if isinstance(self.starts, Deferred):
+			city = self.starts(self.iPlayer)
+			if city and not city.isNone():
+				return city.getName()
+		return self.starts.name()
+	
 	def progress_text(self, targets):
 		routes = format_separators(self.lRoutes, ",", text("TXT_KEY_OR"), lambda iRoute: infos.route(iRoute).getText())
-		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts.name(), targets.name())
+		return text("TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION", routes, self.starts_name(), targets.name())
 
 
 class SubgoalCallback(object):
@@ -3232,9 +3345,6 @@ class All(BaseGoal):
 		self.goals = goals
 		
 		self.init_description()
-		self.update_areas()
-		
-		self.subgoal_callback = SubgoalCallback(self)
 	
 	def update_areas(self):
 		for goal in self.goals:
@@ -3243,12 +3353,13 @@ class All(BaseGoal):
 	
 	def init_description(self):
 		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes)))
-		
+	
+	# TODO test: returns copy
 	def activate(self, iPlayer, callback=None):
-		super(All, self).activate(iPlayer, callback)
-		
-		for goal in self.goals:
-			goal.activate(iPlayer, self.subgoal_callback)
+		all = super(All, self).activate(iPlayer, callback)
+		all.goals = tuple(goal.activate(iPlayer, SubgoalCallback(all)) for goal in all.goals)
+		all.update_areas()
+		return all
 	
 	def deactivate(self):
 		super(All, self).deactivate()
@@ -3297,10 +3408,10 @@ class All(BaseGoal):
 		progress_list = goal.progress(True)
 		
 		if progress_list:
-			if goal.state == SUCCESS:
-				return [text.replace(u"%c" % self.FAILURE_CHAR, u"%c" % self.SUCCESS_CHAR) for text in progress_list]
+			if goal.succeeded():
+				return [[text.replace(u"%c" % self.FAILURE_CHAR, u"%c" % self.SUCCESS_CHAR) for text in sublist] for sublist in progress_list]
 			return progress_list
-		return ["%s %s" % (self.progress_indicator(goal), capitalize(goal._description))]
+		return [["%s %s" % (self.progress_indicator(goal), capitalize(goal._description))]]
 	
 	def progress_indicator_value(self, goal):
 		return goal.state == SUCCESS or (goal.possible() and goal)
@@ -3321,7 +3432,6 @@ class Some(BaseGoal):
 		self.iRequired = iRequired
 		
 		self.init_description()
-		self.update_areas()
 	
 	def init_description(self):
 		self._description = replace_first(self.goal.description(), "TXT_KEY_UHV_SOME", number_word(self.iRequired))
@@ -3329,10 +3439,12 @@ class Some(BaseGoal):
 	def update_areas(self):
 		self.areas = copy(self.goal.areas)
 	
+	# TODO: test returns
 	def activate(self, iPlayer, callback=None):
-		super(Some, self).activate(iPlayer, callback)
-		
-		self.goal.activate(iPlayer, CheckedSubgoalCallback(self))
+		some = super(Some, self).activate(iPlayer, callback)
+		some.goal = some.goal.activate(iPlayer, CheckedSubgoalCallback(some))
+		some.update_areas()
+		return some
 	
 	def deactivate(self):
 		super(Some, self).deactivate()
@@ -3379,8 +3491,6 @@ class Different(BaseGoal):
 		super(Different, self).__init__()
 		
 		self.dGoals = dict((goal, None) for goal in goals)
-		
-		self.update_areas()
 	
 	@property
 	def goals(self):
@@ -3417,11 +3527,12 @@ class Different(BaseGoal):
 			text = "%s: %s" % (self.display_record(record), text)
 		return text
 	
+	# TODO: test returns
 	def activate(self, iPlayer, callback=None):
-		super(Different, self).activate(iPlayer, callback)
-		
-		for goal in self.goals:
-			goal.activate(iPlayer, DifferentCallback(self))
+		different = super(Different, self).activate(iPlayer, callback)
+		different.dGoals = dict((goal.activate(iPlayer, DifferentCallback(different)), None) for goal in different.goals)
+		different.update_areas()
+		return different
 	
 	def deactivate(self):
 		super(Different, self).deactivate()
@@ -3449,13 +3560,16 @@ class Different(BaseGoal):
 	def __str__(self):
 		return "\n".join([self.display_subgoal(goal) for goal in self.goals])
 	
-	def progress(self):
+	def progress_chunks(self, list):
+		return 1
+	
+	def internal_progress(self, bForceSingle=False):
 		progress_entries = []
 		for goal in self.goals:
 			if goal.state == SUCCESS:
 				progress_entries.append(self.progress_completed(goal))
 			elif goal.possible():
-				progress_entries.append(goal.progress())
+				progress_entries += goal.internal_progress(bForceSingle)
 				break
 		
 		return progress_entries

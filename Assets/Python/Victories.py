@@ -41,32 +41,88 @@ def getReligiousGoals(iPlayer):
 
 class HistoricalVictoryCallback(object):
 
-	def check(self, goal):
+	def stateChange(self, goal):
 		if goal.succeeded():
+			goal.announceSuccess()
+		
 			iCount = count(goal.succeeded() for goal in data.players[goal.iPlayer].historicalGoals)
-			show("historical victory checked: we have %d", iCount)
+			
+			if iCount == 2:
+				self.goldenAge(goal.iPlayer)
+			elif iCount == 3:
+				self.victory(goal.iPlayer)
+		
+		elif goal.failed():
+			goal.announceFailure()
+	
+	def goldenAge(self, iPlayer):
+		iGoldenAgeTurns = player(iPlayer).getGoldenAgeLength()
+		if player(iPlayer).isAnarchy():
+			iGoldenAgeTurns += 1
+		
+		player(iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
+		
+		message(iPlayer, "TXT_KEY_UHV_INTERMEDIATE", color=iPurple)
+		
+		if player(iPlayer).isHuman():
+			for iOtherPlayer in players.major().alive().without(iPlayer):
+				player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
+		
+	def victory(self, iPlayer):
+		if game.getWinner() == -1:
+			game.setWinner(iPlayer, VictoryTypes.VICTORY_HISTORICAL)
 
 class ReligiousVictoryCallback(object):
 
 	def check(self, goal):
 		if goal:
 			iCount = count(goal for goal in data.players[goal.iPlayer].religiousGoals)
-			show("religious victory checked: we have %d", iCount)
+			
+			if iCount == 3:
+				self.victory(goal.iPlayer)
+	
+	def victory(self, iPlayer):
+		if game.getWinner() == -1:
+			game.setWinner(iPlayer, VictoryTypes.VICTORY_RELIGIOUS)
 
 historicalVictoryCallback = HistoricalVictoryCallback()
 religiousVictoryCallback = ReligiousVictoryCallback()
 
 
+### SETUP ###
+
+def createHistoricalGoals(iPlayer):
+	return [goal.activate(iPlayer, historicalVictoryCallback) for goal in getHistoricalGoals(iPlayer)]
+
+def createReligiousGoals(iPlayer):
+	return [goal.passivate(iPlayer, religiousVictoryCallback) for goal in getReligiousGoals(iPlayer)]
+
+def disable(iPlayer=None):
+	if iPlayer is None:
+		iPlayer = active()
+		
+	for goal in data.players[iPlayer].historicalGoals + data.players[iPlayer].religiousGoals:
+		goal.deactivate()
+	
+	data.players[iPlayer].historicalGoals = []
+	data.players[iPlayer].religiousGoals = []
+
+
 @handler("GameStart")
 def setup():
-	historicalGoals = getHistoricalGoals(active())
-	religiousGoals = getReligiousGoals(active())
+	iPlayer = active()
 	
-	data.players[active()].historicalGoals = historicalGoals
-	data.players[active()].religiousGoals = religiousGoals
+	data.players[iPlayer].historicalGoals = createHistoricalGoals(iPlayer)
+	data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
+
+
+@handler("switch")
+def onSwitch(iPrevious, iCurrent):
+	for goal in data.players[iPrevious].historicalGoals + data.players[iPrevious].religiousGoals:
+		goal.deactivate()
+
+	data.players[iPrevious].historicalGoals = []
+	data.players[iPrevious].religiousGoals = []
 	
-	for goal in historicalGoals:
-		goal.activate(active(), historicalVictoryCallback)
-	
-	for goal in religiousGoals:
-		goal.passivate(active(), religiousVictoryCallback)
+	data.players[iCurrent].historicalGoals = createHistoricalGoals(iCurrent)
+	data.players[iCurrent].religiousGoals = createReligiousGoals(iCurrent)

@@ -357,6 +357,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_GOAL_FAILED</Tag>
+		<English>Goal failed!</English>
+		<French>Objectif &#233;chou&#233; !</French>
+		<German>Goal failed!</German>
+		<Italian>Goal failed!</Italian>
+		<Spanish>Goal failed!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_TURN</Tag>
 		<English>Turn %d1</English>
 		<French></French>
@@ -379,6 +387,14 @@
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INTERMEDIATE</Tag>
+		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
+		<French>Nous avons accompli notre deuxi&#232;me objectif historique. Un &#226;ge d'or d&#233;bute pour notre civilisation !</French>
+		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
+		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
+		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
 	</TEXT>
 	
 <!-- NUMBERS TO BE SPELLED OUT -->
@@ -4108,11 +4124,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TITLE_CAT3</Tag>
-		<English>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</English>
-		<French>Sainte mission : Faire en sorte qu'au moins 50% du monde soit contr&#244;l&#233; par des civilisations catholiques</French>
-		<German>Heilige Mission: Stellen Sie sicher, dass mindestens 50% des Weltgebiets von katholischen Zivilisationen kontrolliert wird</German>
-		<Italian>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Italian>
-		<Spanish>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Spanish>
+		<English>Holy Mission</English>
+		<French>Sainte mission</French>
+		<German>Heilige Mission</German>
+		<Italian>Holy Mission</Italian>
+		<Spanish>Holy Mission</Spanish>
 	</TEXT>
 	
 	<TEXT>

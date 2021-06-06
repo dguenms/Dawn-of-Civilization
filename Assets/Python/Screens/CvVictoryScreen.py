@@ -1593,7 +1593,7 @@ class CvVictoryScreen:
 			
 			for row in goal.progress():
 				iRow = screen.appendTableRow(szTable)
-				screen.setTableText(szTable, 0, iRow, '    ' + row, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				screen.setTableText(szTable, 0, iRow, '    ' + " ".join(row), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 # BUG Additions Start
 #	def getListCultureCities(self, iPlayer):
