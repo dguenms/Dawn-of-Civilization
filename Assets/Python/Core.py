@@ -37,12 +37,10 @@ irregular_plurals = {
 	"cathedral of your state religion": "cathedrals of your state religion",
 }
 
-# TODO: test
 def unique(iterable):
 	return [key for key, value in groupby(iterable)]
 
 
-# TODO: test
 def chunks(list, length):
 	return [list[i:i+length] for i in xrange(0, len(list), length)]
 
@@ -1376,7 +1374,6 @@ class LazyPlots(object):
 		return LazyPlots(lambda: plots.normal(iPlayer))
 
 
-# TODO: test
 class DeferredCollectionFactory(object):
 
 	def __init__(self, factory):
@@ -1433,7 +1430,6 @@ class DeferredCollection(object):
 	def name(self):
 		return self._name
 	
-	# TODO: test
 	def __add__(self, other):
 		if isinstance(other, DeferredCollection):
 			return CombinedDeferredCollection(self, other)
@@ -2082,7 +2078,6 @@ class Infos:
 	def leaders(self):
 		return InfoCollection.of(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
 	
-	# TODO: test
 	def paganReligion(self, identifier):
 		if isinstance(identifier, Civ):
 			return self.paganReligion(self.civ(identifier).getPaganReligion())

@@ -78,7 +78,8 @@
 					get="isUHVProgressAfterFinish"/>
 			<list   id="UHVFinishDate" key="UHV Finish Date" 
 					type="int" default="0" listType="string" 
-					get="getUHVFinishDate">
+					get="getUHVFinishDate"
+					set="setUHVFinishDate">
 				<choice id="None" get="isUHVFinishDateNone"/>
 				<choice id="Date" get="isUHVFinishDateDate"/>
 				<choice id="Date + Turn" get="isUHVFinishDateTurn"/>

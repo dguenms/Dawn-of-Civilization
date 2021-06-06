@@ -177,6 +177,31 @@ class TestInfos(TestCase):
 		# then
 		self.assert_(isinstance(actual_religioninfo, CvReligionInfo))
 		self.assertEqual(actual_religioninfo.getText(), expected_religioninfo.getText())
+	
+	def test_pagan_religion(self):
+		# given
+		iPaganReligion = 0
+		expected_paganreligioninfo = gc.getPaganReligionInfo(iPaganReligion)
+		
+		# when
+		actual_paganreligioninfo = self.infos.paganReligion(iPaganReligion)
+		
+		# then
+		self.assert_(isinstance(actual_paganreligioninfo, CvInfoBase))
+		self.assertEqual(actual_paganreligioninfo.getText(), expected_paganreligioninfo.getText())
+	
+	def test_pagan_religion_civ(self):
+		# given
+		iCiv = iBabylonia
+		iExpectedPaganReligion = gc.getCivilizationInfo(iCiv).getPaganReligion()
+		expected_paganreligioninfo = gc.getPaganReligionInfo(iExpectedPaganReligion)
+		
+		# when
+		actual_paganreligioninfo = self.infos.paganReligion(iCiv)
+		
+		# then
+		self.assert_(isinstance(actual_paganreligioninfo, CvInfoBase))
+		self.assertEqual(actual_paganreligioninfo.getText(), expected_paganreligioninfo.getText())
 		
 	def test_gameSpeed(self):
 		# given
@@ -4235,6 +4260,79 @@ class TestDeferredCollection(TestCase):
 		
 		assertType(self, collection, Plots)
 		self.assertEqual(collection.name(), "abcd")
+	
+	def test_deferred_named_from_civ(self):
+		deferred = DeferredCollectionFactory.plots()
+		deferred = deferred.normal(iRome)
+		
+		self.assertEqual(deferred.name(), "Rome")
+		
+		collection = deferred.create()
+		
+		self.assertEqual(collection.name(), "Rome")
+	
+	def test_deferred_multiple_creates(self):
+		deferred = DeferredCollectionFactory.plots()
+		deferred = deferred.rectangle((0, 0), (1, 1))
+		
+		col1 = deferred.create()
+		col2 = deferred.create()
+		
+		self.assertEqual(id(col1) != id(col2), True)
+	
+	def test_deferred_iter(self):
+		deferred = DeferredCollectionFactory.plots()
+		deferred = deferred.rectangle((0, 0), (1, 1))
+		
+		assertType(self, deferred, DeferredCollection)
+		
+		iterated = set([(plot.getX(), plot.getY()) for plot in deferred])
+		
+		assertType(self, deferred, DeferredCollection)
+		self.assertEqual(iterated, set([(0, 0), (0, 1), (1, 0), (1, 1)]))
+	
+	def test_deferred_add(self):
+		deferred1 = DeferredCollectionFactory.plots().rectangle((0, 0), (1, 1))
+		deferred2 = DeferredCollectionFactory.plots().rectangle((2, 0), (3, 1))
+		
+		assertType(self, deferred1, DeferredCollection)
+		assertType(self, deferred2, DeferredCollection)
+		
+		deferred = deferred1 + deferred2
+		
+		assertType(self, deferred, CombinedDeferredCollection)
+		
+		collection = deferred.create()
+		
+		assertType(self, collection, Plots)
+		self.assertEqual(len(collection), 8)
+
+
+class TestUnique(TestCase):
+
+	def test_unique_list(self):
+		self.assertEqual(unique([1, 1, 1, 2, 2, 3]), [1, 2, 3])
+	
+	def test_unique_generator(self):
+		self.assertEqual(unique(int(i/2) for i in range(6)), [0, 1, 2])
+	
+	def test_unique_tuple(self):
+		self.assertEqual(unique((1, 1, 1, 2, 2, 3)), [1, 2, 3])
+
+
+class TestChunks(TestCase):
+
+	def test_equal(self):
+		self.assertEqual(chunks([1, 2, 3], 3), [[1, 2, 3]])
+	
+	def test_one(self):
+		self.assertEqual(chunks([1, 2, 3], 1), [[1], [2], [3]])
+	
+	def test_multiple(self):
+		self.assertEqual(chunks([1, 2, 3, 4, 5, 6], 3), [[1, 2, 3], [4, 5, 6]])
+	
+	def test_remainder(self):
+		self.assertEqual(chunks([1, 2, 3, 4, 5], 3), [[1, 2, 3], [4, 5]])
 		
 
 test_cases = [
@@ -4302,7 +4400,9 @@ test_cases = [
 	TestVariadic,
 	TestMetrics,
 	TestDuplefy,
-	TestDeferredCollection
+	TestDeferredCollection,
+	TestUnique,
+	TestChunks,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

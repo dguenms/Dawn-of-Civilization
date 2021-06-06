@@ -620,6 +620,52 @@ class TestArguments(ExtendedTestCase):
 			self.assertEqual(iterated, [(1, iCatholicCathedral), (2, iCatholicCathedral)])
 		finally:
 			player(0).setLastStateReligion(-1)
+	
+	def testCreateSubjectDeferred(self):
+		arguments = Arguments(objectives=[], subject=plots.rectangle((0, 0), (1, 1)))
+		self.assertType(arguments.subject, DeferredCollection)
+		
+		arguments.create()
+		self.assertType(arguments.subject, Plots)
+	
+	def testCreateSubjectAggregate(self):
+		arguments = Arguments(objectives=[], subject=sum(plots.rectangle((0, 0), (1, 1))))
+		self.assertType(arguments.subject, SumAggregate)
+		self.assertType(arguments.subject.items[0], DeferredCollection)
+		
+		arguments.create()
+		self.assertType(arguments.subject, SumAggregate)
+		self.assertType(arguments.subject.items[0], Plots)
+	
+	def testCreateSubjectOther(self):
+		arguments = Arguments(objectives=[], subject=1)
+		self.assertType(arguments.subject, int)
+		
+		arguments.create()
+		self.assertType(arguments.subject, int)
+	
+	def testCreateObjectives(self):
+		arguments = Arguments(objectives=[(plots.region(0), sum(plots.region(0)), 0), (plots.region(1), sum(plots.region(1)), 1)])
+		self.assertEqual(len(arguments.objectives), 2)
+		self.assertType(arguments.objectives[0][0], DeferredCollection)
+		self.assertType(arguments.objectives[0][1], SumAggregate)
+		self.assertType(arguments.objectives[0][1].items[0], DeferredCollection)
+		self.assertType(arguments.objectives[0][2], int)
+		self.assertType(arguments.objectives[1][0], DeferredCollection)
+		self.assertType(arguments.objectives[1][1], SumAggregate)
+		self.assertType(arguments.objectives[1][1].items[0], DeferredCollection)
+		self.assertType(arguments.objectives[1][2], int)
+		
+		arguments.create()
+		self.assertEqual(len(arguments.objectives), 2)
+		self.assertType(arguments.objectives[0][0], Plots)
+		self.assertType(arguments.objectives[0][1], SumAggregate)
+		self.assertType(arguments.objectives[0][1].items[0], Plots)
+		self.assertType(arguments.objectives[0][2], int)
+		self.assertType(arguments.objectives[1][0], Plots)
+		self.assertType(arguments.objectives[1][1], SumAggregate)
+		self.assertType(arguments.objectives[1][1].items[0], Plots)
+		self.assertType(arguments.objectives[1][2], int)
 
 
 class TestArgumentProcessor(ExtendedTestCase):
@@ -1109,6 +1155,10 @@ class TestBaseGoal(ExtendedTestCase):
 	def testActivate(self):
 		goal = self.goal.activate(0)
 		
+		self.assertEqual(self.goal.iPlayer, None)
+		self.assertEqual(self.goal.callback, None)
+		self.assertEqual(self.goal.arguments.iPlayer, None)
+		
 		self.assertEqual(goal.iPlayer, 0)
 		self.assertEqual(goal._player.getID(), 0)
 		self.assertEqual(goal._team.getID(), 0)
@@ -1121,6 +1171,7 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		goal = self.goal.activate(0, callback)
 		
+		self.assertEqual(self.goal.callback, None)
 		self.assertEqual(goal.callback, callback)
 	
 	def testPassivate(self):
@@ -1130,45 +1181,55 @@ class TestBaseGoal(ExtendedTestCase):
 		goal = self.goal.passivate(0, callback)
 		
 		try:
+			self.assertEqual(self.goal.iPlayer, None)
+			self.assertEqual(self.goal.callback, None)
+		
 			self.assertEqual(goal.iPlayer, 0)
 			self.assertEqual(goal.callback, callback)
 		finally:
 			goal.deactivate()
 	
 	def testPossiblePossible(self):
-		self.assertEqual(self.goal.possible(), True)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.possible(), True)
 	
 	def testPossibleSucceeded(self):
-		self.goal.state = SUCCESS
-		self.assertEqual(self.goal.possible(), False)
+		goal = self.goal.activate(0)
+		goal.state = SUCCESS
+		self.assertEqual(goal.possible(), False)
 	
 	def testPossibleFailed(self):
-		self.goal.state = FAILURE
-		self.assertEqual(self.goal.possible(), False)
+		goal = self.goal.activate(0)
+		goal.state = FAILURE
+		self.assertEqual(goal.possible(), False)
 	
 	def testSucceed(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.succeed()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.succeed()
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testFail(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.fail()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.fail()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testSetStateUnchanged(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.setState(POSSIBLE)
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal.setState(POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 	
 	def testSetStateChanged(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.setState(SUCCESS)
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.setState(SUCCESS)
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testSetStateChangedCallback(self):
 		class Callable(object):
@@ -1195,115 +1256,168 @@ class TestBaseGoal(ExtendedTestCase):
 		goal = self.goal.activate(0, callable.call)
 		goal.setState(POSSIBLE)
 		self.assertEqual(callable.called, None)
+	
+	def testSetStateRecordSuccessTurn(self):
+		goal = self.goal.activate(0)
+		
+		self.assertEqual(goal._iSuccessTurn, None)
+		
+		goal.setState(SUCCESS)
+		
+		self.assertEqual(goal.state, SUCCESS)
+		self.assertEqual(goal._iSuccessTurn, 0)
+	
+	def testRecordSuccessTurn(self):
+		goal = self.goal.activate(0)
+		
+		self.assertEqual(goal._iSuccessTurn, None)
+		
+		goal.recordSuccessTurn()
+		
+		self.assertEqual(goal._iSuccessTurn, 0)
 
 	def testExpirePossible(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.expire()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.expire()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testExpireSuccess(self):
-		self.goal.state = SUCCESS
-		self.goal.expire()
+		goal = self.goal.activate(0)
+	
+		goal.state = SUCCESS
+		goal.expire()
 		
-		self.assertEqual(self.goal.state, SUCCESS)
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testExpireFailure(self):
-		self.goal.state = FAILURE
-		self.goal.expire()
+		goal = self.goal.activate(0)
+	
+		goal.state = FAILURE
+		goal.expire()
 		
-		self.assertEqual(self.goal.state, FAILURE)
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testNonzero(self):
-		self.assertEqual(bool(self.goal), True)
+		goal = self.goal.activate(0)
+		self.assertEqual(bool(goal), True)
 	
 	def testNonzeroWithFailedCondition(self):
-		self.goal.condition_value = False
+		goal = self.goal.activate(0)
+		goal.condition_value = False
 		
-		self.assertEqual(bool(self.goal), False)
+		self.assertEqual(bool(goal), False)
 	
 	def testToString(self):
-		self.assertEqual(str(self.goal), "True")
+		goal = self.goal.activate(0)
+		self.assertEqual(str(goal), "True")
 	
 	def testCheckPossible(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.check()
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testCheckFailure(self):
-		self.goal.state = FAILURE
+		goal = self.goal.activate(0)
+		goal.state = FAILURE
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.check()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testCheckSuccess(self):
-		self.goal.state = SUCCESS
+		goal = self.goal.activate(0)
+		goal.state = SUCCESS
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.check()
+		self.assertEqual(goal.state, SUCCESS)
 		
 	def testCheckFailingPossible(self):
-		self.goal.condition_value = False
+		goal = self.goal.activate(0)
+		goal.condition_value = False
 		
-		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal.check()
+		self.assertEqual(goal.state, POSSIBLE)
 	
 	def testCheckFailingFailure(self):
-		self.goal.condition_value = False
-		self.goal.state = FAILURE
+		goal = self.goal.activate(0)
+		goal.condition_value = False
+		goal.state = FAILURE
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.check()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testCheckFailingSuccess(self):
-		self.goal.condition_value = False
-		self.goal.state = SUCCESS
+		goal = self.goal.activate(0)
+		goal.condition_value = False
+		goal.state = SUCCESS
 		
-		self.goal.check()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.check()
+		self.assertEqual(goal.state, SUCCESS)
+	
+	def testCheckCallback(self):
+		class RecordingCallback(object):
+			def __init__(self):
+				self.recorded = None
+			def check(self, goal):
+				self.recorded = goal
+		
+		callback = RecordingCallback()
+		goal = self.goal.activate(0, callback)
+		self.assertEqual(callback.recorded, None)
+		
+		goal.check()
+		self.assertEqual(callback.recorded, goal)
 	
 	def testFinalCheckPossible(self):
-		self.assertEqual(self.goal.state, POSSIBLE)
+		goal = self.goal.activate(0)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.finalCheck()
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testFinalCheckFailure(self):
-		self.goal.state = FAILURE
+		goal = self.goal.activate(0)
+		goal.state = FAILURE
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.finalCheck()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testFinalCheckSuccess(self):
-		self.goal.state = SUCCESS
+		goal = self.goal.activate(0)
+		goal.state = SUCCESS
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.finalCheck()
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testFinalCheckFailingPossible(self):
-		self.goal.condition_value = False
+		goal = self.goal.activate(0)
+		goal.condition_value = False
 		
-		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.finalCheck()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testFinalCheckFailingFailure(self):
-		self.goal.condition_value = False
-		self.goal.state = FAILURE
+		goal = self.goal.activate(0)
+		goal.condition_value = False
+		goal.state = FAILURE
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, FAILURE)
+		goal.finalCheck()
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testFinalCheckFailingSuccess(self):
-		self.goal.condition_value = False
-		self.goal.state = SUCCESS
+		goal = self.goal.activate(0)
+		goal.condition_value = False
+		goal.state = SUCCESS
 		
-		self.goal.finalCheck()
-		self.assertEqual(self.goal.state, SUCCESS)
+		goal.finalCheck()
+		self.assertEqual(goal.state, SUCCESS)
 	
 	def testAtSuccess(self):
 		self.goal.at(-3000)
@@ -1424,16 +1538,16 @@ class TestBaseGoal(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPassiveCannotSucceed(self):
-		self.goal.mode = BaseGoal.PASSIVE
-		self.goal.succeed()
+		goal = self.goal.passivate(0)
+		goal.succeed()
 		
-		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(goal.state, POSSIBLE)
 	
 	def testPassiveCanFail(self):
-		self.goal.mode = BaseGoal.PASSIVE
-		self.goal.fail()
+		goal = self.goal.passivate(0)
+		goal.fail()
 		
-		self.assertEqual(self.goal.state, FAILURE)
+		self.assertEqual(goal.state, FAILURE)
 	
 	def testDescription(self):
 		self.assertEqual(self.goal.description(), "Control ")
@@ -1475,10 +1589,28 @@ class TestBaseGoal(ExtendedTestCase):
 		
 		team(0).setHasTech(iCalendar, True, 0, True, False)
 		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(0)
+		
 		try:
 			self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
 		finally:
 			team(0).setHasTech(iCalendar, False, 0, True, False)
+			AdvisorOpt.setUHVFinishDate(option_value)
+	
+	def testDescriptionCalendarEnabled(self):
+		goal = DescriptionGoal(iGranary, 3).at(1000).activate(0)
+		
+		team(0).setHasTech(iCalendar, True, 0, True, False)
+		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(1)
+		
+		try:
+			self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 221)")
+		finally:
+			team(0).setHasTech(iCalendar, False, 0, True, False)
+			AdvisorOpt.setUHVFinishDate(option_value)
 	
 	def testTitle(self):
 		goal = TestGoal()
@@ -1506,6 +1638,120 @@ class TestBaseGoal(ExtendedTestCase):
 		goal = DescriptionGoal(iGranary, 3)
 		
 		self.assertEqual(goal.full_description(), "Control three Granaries")
+	
+	def testStateStringFailure(self):
+		goal = self.goal.activate(0)
+		goal.setState(FAILURE)
+		
+		self.assertEqual(goal.state_string(), "NO")
+	
+	def testStateStringSuccess(self):
+		goal = self.goal.activate(0)
+		goal.setState(SUCCESS)
+		
+		self.assertEqual(goal.state_string(), "YES")
+	
+	def testStateStringPossible(self):
+		goal = self.goal.activate(0)
+		goal.setState(POSSIBLE)
+		
+		self.assertEqual(goal.state_string(), "Not yet")
+	
+	def testStateStringPassiveFailure(self):
+		goal = self.goal.passivate(0)
+		goal.setState(FAILURE)
+		
+		self.assertEqual(goal.state_string(), "NO")
+	
+	def testStateStringPassiveFulfilled(self):
+		goal = self.goal.passivate(0)
+		goal.condition_value = True
+		
+		self.assertEqual(goal.state_string(), "YES")
+	
+	def testStateStringPassiveUnfulfilled(self):
+		goal = self.goal.passivate(0)
+		goal.condition_value = False
+		
+		self.assertEqual(goal.state_string(), "Not yet")
+	
+	def testAccomplishedStringNoTurn(self):
+		goal = self.goal.activate(0)
+		
+		self.assertEqual(goal.accomplished_string(), u"%c Goal accomplished!" % self.SUCCESS_CHAR)
+	
+	def testAccomplishedStringNone(self):
+		goal = self.goal.activate(0)
+		goal._iSuccessTurn = 0
+		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(0)
+		
+		try:
+			self.assertEqual(goal.accomplished_string(), u"%c Goal accomplished!" % self.SUCCESS_CHAR)
+		finally:
+			AdvisorOpt.setUHVFinishDate(option_value)
+	
+	def testAccomplishedStringYear(self):
+		goal = self.goal.activate(0)
+		goal._iSuccessTurn = 0
+		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(1)
+		
+		try:
+			self.assertEqual(goal.accomplished_string(), u"%c Goal accomplished! (3000 BC)" % self.SUCCESS_CHAR)
+		finally:
+			AdvisorOpt.setUHVFinishDate(option_value)
+	
+	def testAccomplishedStringTurn(self):
+		goal = self.goal.activate(0)
+		goal._iSuccessTurn = 0
+		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(2)
+		
+		try:
+			self.assertEqual(goal.accomplished_string(), u"%c Goal accomplished! (3000 BC - Turn 0)" % self.SUCCESS_CHAR)
+		finally:
+			AdvisorOpt.setUHVFinishDate(option_value)
+	
+	def testProgressFailed(self):
+		goal = self.goal.activate(0)
+		goal.fail()
+		
+		self.assertEqual(goal.progress(), [[u"%c Goal failed!" % self.FAILURE_CHAR]])
+	
+	def testProgressSucceeded(self):
+		goal = self.goal.activate(0)
+		goal.succeed()
+		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(1)
+		
+		try:
+			self.assertEqual(goal.progress(), [[u"%c Goal accomplished! (3000 BC)" % self.SUCCESS_CHAR]])
+		finally:
+			AdvisorOpt.setUHVFinishDate(option_value)
+	
+	def testProgressChunks(self):
+		chunk_size_per_length = {
+			1: 3,
+			2: 3,
+			3: 3,
+			4: 4,
+			5: 3,
+			6: 3,
+			7: 4,
+			8: 4,
+			9: 3,
+			10: 4,
+			11: 4,
+			12: 4,
+		}
+		
+		for length, chunk_size in chunk_size_per_length.items():
+			self.assertEqual(self.goal.progress_chunks(list(range(length))), chunk_size)
 
 
 class TestProgress(ExtendedTestCase):
@@ -1809,6 +2055,9 @@ class TestProgress(ExtendedTestCase):
 		goal1 = goal.goals[0]
 		goal1.succeed()
 		
+		option_value = AdvisorOpt.getUHVFinishDate()
+		AdvisorOpt.setUHVFinishDate(1)
+		
 		try:
 			self.assertEqual(goal1.state, SUCCESS)
 			self.assertEqual(goal1.succeeded(), True)
@@ -1818,6 +2067,7 @@ class TestProgress(ExtendedTestCase):
 			])
 		finally:
 			goal.deactivate()
+			AdvisorOpt.setUHVFinishDate(option_value)
 
 	def testProgressAllFromDescription(self):
 		goal1 = Condition.tradeConnection().named("TRADE_CONNECTION")
@@ -5513,6 +5763,20 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 			goal.deactivate()
 	
+	def testFirstDiscoverNotExpireIfAlreadyDiscovered(self):
+		goal = Trigger.firstDiscover(iLaw, iCurrency, iPhilosophy).activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		team(1).setHasTech(iLaw, True, 0, True, False)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+		finally:
+			team(0).setHasTech(iLaw, False, 0, True, False)
+			team(1).setHasTech(iLaw, False, 1, True, False)
+			
+			goal.deactivate()
+	
 	def testFirstSettle(self):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
@@ -8564,13 +8828,15 @@ class TestRouteConnection(ExtendedTestCase):
 		
 			goal.deactivate()
 	
-	def testWithLazyCapital(self):
-		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
+	def testWithDeferredCapital(self):
+		goal = RouteConnection(capital(), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
 		
 		start.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(start.isCapital(), True)
 		
 		for plot in plots.rectangle((62, 31), (63, 31)):
 			plot.setRouteType(iRouteRoad)
@@ -8592,11 +8858,13 @@ class TestRouteConnection(ExtendedTestCase):
 		
 			goal.deactivate()
 	
-	def testWithLazyCapitalElsewhere(self):
-		goal = RouteConnection(plots.lazy().capital(0), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
+	def testWithDeferredCapitalElsewhere(self):
+		goal = RouteConnection(capital(), plots.of([(64, 31)]), [iRouteRoad]).activate(0)
 		
-		capital = player(0).initCity(35, 35)
-		capital.setHasRealBuilding(iPalace, True)
+		capital_city = player(0).initCity(35, 35)
+		capital_city.setHasRealBuilding(iPalace, True)
+		
+		self.assertEqual(capital_city.isCapital(), True)
 		
 		start = player(0).initCity(61, 31)
 		target = player(0).initCity(64, 31)
@@ -8610,7 +8878,7 @@ class TestRouteConnection(ExtendedTestCase):
 		try:
 			self.assertEqual(bool(goal), False)
 		finally:
-			for city in [capital, start, target]:
+			for city in [capital_city, start, target]:
 				city.kill()
 		
 			for plot in plots.rectangle((62, 31), (63, 31)):
@@ -8674,6 +8942,41 @@ class TestRouteConnection(ExtendedTestCase):
 			team(0).setHasTech(iLeverage, False, 0, False, False)
 		
 			goal.deactivate()
+	
+	def testCurrentStartsNone(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(63, 31)]), [iRouteRoad]).activate(0)
+		
+		self.assertEqual(goal.current_starts(), plots_.none().cities())
+	
+	def testCurrentStartsCities(self):
+		goal = RouteConnection(plots.of([(61, 31)]), plots.of([(63, 31)]), [iRouteRoad]).activate(0)
+		
+		start = player(0).initCity(61, 31)
+		
+		try:
+			self.assertEqual(len(goal.current_starts()), 1)
+			self.assertEqual(start in goal.current_starts(), True)
+		finally:
+			start.kill()
+	
+	def testCurrentStartsDeferred(self):
+		goal = RouteConnection(capital(), plots.of([(63, 31)]), [iRouteRoad]).activate(0)
+		
+		start = player(0).initCity(61, 31)
+		start.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.assertEqual(start.isCapital(), True)
+			self.assertType(goal.current_starts(), Cities)
+			self.assertEqual(len(goal.current_starts()), 1)
+			self.assertEqual(start in goal.current_starts(), True)
+		finally:
+			start.kill()
+	
+	def testCurrentStartsDeferredNoCity(self):
+		goal = RouteConnection(capital(), plots.of([(63, 31)]), [iRouteRoad]).activate(0)
+		
+		self.assertEqual(goal.current_starts(), plots_.none().cities())
 		
 		
 class SubGoal(BaseGoal):
@@ -9053,6 +9356,27 @@ class CityGoal(BaseGoal):
 		
 class TestDifferentCities(ExtendedTestCase):
 
+	def testActivate(self):
+		goal1 = CityGoal(capital())
+		goal2 = CityGoal(capital())
+		goal1.string = "one"
+		goal2.string = "two"
+		goal = DifferentCities(goal1, goal2).activate(0)
+		goal1, goal2 = goal.goals
+		
+		try:
+			self.assertEqual(goal.iPlayer, 0)
+			self.assertEqual(goal1.iPlayer, 0)
+			self.assertEqual(goal2.iPlayer, 0)
+		
+			self.assertType(goal1.callback, DifferentCallback)
+			self.assertType(goal2.callback, DifferentCallback)
+		
+			self.assertEqual(goal1.callback.supergoal, goal)
+			self.assertEqual(goal2.callback.supergoal, goal)
+		finally:
+			goal.deactivate()
+
 	def testCompleteWithDifferentCities(self):
 		goal1 = CityGoal(capital())
 		goal2 = CityGoal(capital())
@@ -9093,6 +9417,9 @@ class TestDifferentCities(ExtendedTestCase):
 			city2.setHasRealBuilding(iPalace, True)
 			city2.setName("CityTwo", False)
 			
+			option_value = AdvisorOpt.getUHVFinishDate()
+			AdvisorOpt.setUHVFinishDate(1)
+			
 			try:
 				self.assertEqual(location(capital_(0)), (63, 31))
 			
@@ -9108,6 +9435,7 @@ class TestDifferentCities(ExtendedTestCase):
 				self.assertEqual(goal.progress(), [[u"%c Goal accomplished! (3000 BC)" % self.SUCCESS_CHAR]])
 			finally:
 				city2.kill()
+				AdvisorOpt.setUHVFinishDate(option_value)
 		finally:
 			city1.kill()
 	

@@ -583,7 +583,6 @@ class Arguments(object):
 		self.iPlayer = None
 		self.owner_included = False
 	
-	# TODO: test
 	def create(self):
 		if isinstance(self.subject, (Aggregate, DeferredCollection)):
 			self.subject = self.subject.create()
@@ -1262,17 +1261,17 @@ class BaseGoal(object):
 		for event, handler in self.instance_handlers:
 			events.removeEventHandler(event, getattr(self, handler))
 	
-	# TODO: test returns copy
 	def activate(self, iPlayer, callback=None):
 		goal = copy(self)
 	
 		goal.iPlayer = iPlayer
 		goal.callback = callback
 		
+		goal.arguments = copy(self.arguments)
 		goal.arguments.iPlayer = iPlayer
 		goal.arguments.create()
 		
-		goal.areas = goal.process_areas(self.arguments)
+		goal.areas = goal.process_areas(goal.arguments)
 		
 		goal.registerHandlers()
 		
@@ -1288,7 +1287,6 @@ class BaseGoal(object):
 		self.mode = self.PASSIVE
 		return self.activate(iPlayer, callback)
 	
-	# TODO: test
 	def state_string(self):
 		if self.state == FAILURE:
 			return text("TXT_KEY_UHV_GOAL_FAILURE")
@@ -1302,14 +1300,13 @@ class BaseGoal(object):
 			return text("TXT_KEY_UHV_GOAL_SUCCESS")
 		return text("TXT_KEY_UHV_GOAL_POSSIBLE")
 	
-	# TODO: test
 	def accomplished_string(self):
 		string = text("TXT_KEY_UHV_GOAL_ACCOMPLISHED")
 		
 		if self._iSuccessTurn is not None:
 			if AdvisorOpt.isUHVFinishDateTurn():
-				string += " (%s - %s)" % (format_date(game.getTurnYear(self._iSuccessTurn)), text("TXT_KEY_UHV_TURN", self.iSuccessTurn))
-			else:
+				string += " (%s - %s)" % (format_date(game.getTurnYear(self._iSuccessTurn)), text("TXT_KEY_UHV_TURN", self._iSuccessTurn))
+			elif AdvisorOpt.isUHVFinishDateDate():
 				string += " (%s)" % format_date(game.getTurnYear(self._iSuccessTurn))
 		
 		return u"%c %s" % (self.SUCCESS_CHAR, string)
@@ -1317,7 +1314,6 @@ class BaseGoal(object):
 	def failure_string(self):
 		return u"%c %s" % (self.FAILURE_CHAR, text("TXT_KEY_UHV_GOAL_FAILED"))
 	
-	# TODO: test record success turn
 	def setState(self, state):
 		if self.state != state and (self.mode == self.ACTIVE or state != SUCCESS):
 			self.state = state
@@ -1354,7 +1350,6 @@ class BaseGoal(object):
 		if self.possible():
 			self.fail()
 	
-	# TODO: test with callback
 	def check(self):
 		if self.possible() and self:
 			self.succeed()
@@ -1376,7 +1371,6 @@ class BaseGoal(object):
 		if self.iPlayer is not None and self._player.isHuman() and since(scenarioStartTurn()) > 0 and condition:
 			show(text(key, uncapitalize(self.description())))
 	
-	# TODO: test
 	def recordSuccessTurn(self):
 		self._iSuccessTurn = turn()
 		
@@ -1414,7 +1408,7 @@ class BaseGoal(object):
 	@property
 	def turn_suffix(self):
 		if self.iPlayer is not None and self._iYear is not None:
-			if not team(self.iPlayer).isHasTech(iCalendar) or AdvisorOpt.isUHVFinishDateTurn():
+			if not team(self.iPlayer).isHasTech(iCalendar) or not AdvisorOpt.isUHVFinishDateNone():
 				return text("TXT_KEY_UHV_TURN_SUFFIX", year(self._iYear))
 	
 	def description(self):
@@ -1434,9 +1428,6 @@ class BaseGoal(object):
 			return "%s: %s" % (self.title(), self.description())
 		return self.description()
 	
-	def chunks(self, list):
-		return chunks(list, 3)
-		
 	def progress_chunks(self, list):
 		num = len(list)
 		if num % 4 == 0:
@@ -1448,7 +1439,6 @@ class BaseGoal(object):
 		else:
 			return 3
 		
-	# TODO: test accomplished/failed string
 	def progress(self, bForceSingle=False):
 		result = []
 		
@@ -2621,7 +2611,6 @@ class Trigger(Condition):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.complete(iTech)
 		
-		# TODO: test should not expire if we completed the tech already
 		def expireFirstDiscovered(self, iTech):
 			if iTech in self.values and not self.completed(iTech):
 				self.expire()
@@ -3201,7 +3190,6 @@ class RouteConnection(BaseGoal):
 		if isinstance(targets, DeferredCollection):
 			targets = (targets,)
 		
-		# TODO: test: starts is a Deferred instance, e.g. DeferredCapital
 		self.starts = starts
 		self.targets = targets
 		self.lRoutes = list(routes)
@@ -3285,7 +3273,6 @@ class RouteConnection(BaseGoal):
 		
 		return any(self.connected(start.plot(), targets) for start in self.current_starts())
 	
-	# TODO: test
 	def current_starts(self):
 		if isinstance(self.starts, Deferred):
 			return cities.of(listify(self.starts(self.iPlayer)))
@@ -3354,7 +3341,6 @@ class All(BaseGoal):
 	def init_description(self):
 		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes)))
 	
-	# TODO test: returns copy
 	def activate(self, iPlayer, callback=None):
 		all = super(All, self).activate(iPlayer, callback)
 		all.goals = tuple(goal.activate(iPlayer, SubgoalCallback(all)) for goal in all.goals)
@@ -3439,7 +3425,6 @@ class Some(BaseGoal):
 	def update_areas(self):
 		self.areas = copy(self.goal.areas)
 	
-	# TODO: test returns
 	def activate(self, iPlayer, callback=None):
 		some = super(Some, self).activate(iPlayer, callback)
 		some.goal = some.goal.activate(iPlayer, CheckedSubgoalCallback(some))
@@ -3527,7 +3512,6 @@ class Different(BaseGoal):
 			text = "%s: %s" % (self.display_record(record), text)
 		return text
 	
-	# TODO: test returns
 	def activate(self, iPlayer, callback=None):
 		different = super(Different, self).activate(iPlayer, callback)
 		different.dGoals = dict((goal.activate(iPlayer, DifferentCallback(different)), None) for goal in different.goals)
