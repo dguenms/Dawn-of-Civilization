@@ -2781,7 +2781,13 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 					if (pSelectedUnit->canGreatWork(pMissionPlot))
 					{
-						szTempBuffer.Format(L"%s+%d%c", NEWLINE, pSelectedUnit->getGreatWorkCulture(pMissionPlot), GC.getCommerceInfo(COMMERCE_CULTURE).getChar());
+						int iGreatWorkCulture = pSelectedUnit->getGreatWorkCulture(pMissionPlot);
+						if (pMissionPlot->getCultureConversionPlayer() != NO_PLAYER && pMissionPlot->getCultureConversionPlayer() != pSelectedUnit->getOwner())
+						{
+							iGreatWorkCulture = percent(iGreatWorkCulture, 100 - pMissionPlot->getCultureConversionRate());
+						}
+
+						szTempBuffer.Format(L"%s+%d%c", NEWLINE, iGreatWorkCulture, GC.getCommerceInfo(COMMERCE_CULTURE).getChar());
 						szBuffer.append(szTempBuffer);
 						break;
 					}
