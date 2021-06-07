@@ -123,9 +123,9 @@ def greatWallEffect(city, iBuilding):
 
 # Silver Tree Fountain effect: free Great Person whenever a Great General is born
 @handler("greatPersonBorn")
-def silverFountainEffect(unit, iPlayer):
+def silverTreeFountainEffect(unit, iPlayer):
 	if infos.unit(unit).getLeaderExperience() > 0 and player(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
-		city = cities.owner(iPlayer).where(lambda: city.getGreatPeopleProgress() > 0).maximum(lambda city: city.getGreatPeopleProgress())
+		city = cities.owner(iPlayer).where(lambda city: city.getGreatPeopleProgress() > 0).maximum(lambda city: city.getGreatPeopleProgress())
 		if city:
 			iGreatPerson = find_max(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit)).result
 			if iGreatPerson >= 0:
