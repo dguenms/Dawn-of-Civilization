@@ -18297,7 +18297,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
 	// Leoreth: Inca UP
-	if (getCivilizationType() == INCA && GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	if (getCivilizationType() == INCA && (GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD || GET_PLAYER(getOwnerINLINE()).getPeriod() == PERIOD_LATE_INCA) && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
 
 	// Leoreth: Polynesian UP
 	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
