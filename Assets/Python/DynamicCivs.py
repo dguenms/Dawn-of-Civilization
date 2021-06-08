@@ -1988,8 +1988,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if location(capital) != location(plots.capital(iCiv)):
+		if not at(capital, plots.capital(iCiv)):
 			return "TXT_KEY_CIV_ARGENTINA_CONFEDERATION"
+	
+	elif iCiv == iMexico:
+		if bEmpire or iDespotism in civic:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iBrazil:
 		if bEmpire:
