@@ -13740,11 +13740,6 @@ void CvCity::setNumFreeBuilding(BuildingTypes eIndex, int iNewValue)
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex expected to be < GC.getNumBuildingInfos()");
 
-	if (GC.getBuildingInfo(eIndex).isWater() && !isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
-	{
-		return;
-	}
-
 	if (getNumFreeBuilding(eIndex) != iNewValue)
 	{
 		iOldNumBuilding = getNumBuilding(eIndex);
