@@ -286,6 +286,7 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 		plot.changeCulture(iLoopPlayer, -iConvertedCulture, True)
 		iTotalConvertedCulture += iConvertedCulture
 	
+	plot.resetCultureConversion()
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
 	if bOwner:

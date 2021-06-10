@@ -118,7 +118,7 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 @handler("cityAcquiredAndKept")
 def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
-		if location(plot) == location(city):
+		if at(plot, city):
 			convertTemporaryCulture(plot, iPlayer, 25, False)
 		elif plot.getOwner() == city.getPreviousOwner():
 			convertTemporaryCulture(plot, iPlayer, 50, True)

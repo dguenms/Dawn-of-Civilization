@@ -344,7 +344,7 @@ void CvMap::doTurn()
 	CvPlot* pPlot;
 
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
-	int iInterval = getTurns(10);
+	int iInterval = getTurns(5);
 
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{

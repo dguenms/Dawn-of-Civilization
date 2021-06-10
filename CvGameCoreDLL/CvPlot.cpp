@@ -11451,7 +11451,7 @@ int CvPlot::getCultureConversionRate() const
 void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
 {
 	m_eCultureConversionPlayer = iRate <= 0 ? NO_PLAYER : ePlayer;
-	m_iCultureConversionRate = iRate > 0 ? std::max((int)m_iCultureConversionRate, iRate) : 0;
+	m_iCultureConversionRate = iRate > 0 ? iRate : 0;
 
 	updateCulture(true, true);
 

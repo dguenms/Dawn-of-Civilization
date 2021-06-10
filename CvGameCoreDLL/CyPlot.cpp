@@ -1149,6 +1149,11 @@ int CyPlot::getCultureConversionPlayer()
 	return m_pPlot ? m_pPlot->getCultureConversionPlayer() : -1;
 }
 
+int CyPlot::getCultureConversionRate()
+{
+	return m_pPlot ? m_pPlot->getCultureConversionRate() : -1;
+}
+
 int CyPlot::getActualCulture(int ePlayer)
 {
 	return m_pPlot ? m_pPlot->getActualCulture((PlayerTypes)ePlayer) : -1;
