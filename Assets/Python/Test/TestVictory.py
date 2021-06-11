@@ -5502,6 +5502,47 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 			goal.deactivate()
 	
+	def testAreaPopulation(self):
+		area = plots.rectangle((30, 30), (35, 35))
+		goal = Percentage.areaPopulation(area, 50).activate(0)
+		
+		city1 = player(0).initCity(30, 30)
+		city2 = player(1).initCity(32, 32)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "50.00% / 50%")
+		finally:
+			city1.kill()
+			city2.kill()
+			
+			goal.deactivate()
+	
+	def testAreaPopulationOutside(self):
+		area = plots.rectangle((30, 30), (32, 32))
+		goal = Percentage.areaPopulation(area, 50).activate(0)
+		
+		city1 = player(0).initCity(30, 30)
+		city2 = player(1).initCity(32, 32)
+		city3 = player(0).initCity(34, 30)
+		city4 = player(1).initCity(36, 32)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		city3.setPopulation(10)
+		city4.setPopulation(30)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "50.00% / 50%")
+		finally:
+			for city in [city1, city2, city3, city4]:
+				city.kill()
+			goal.deactivate()
+	
 	def testReligiousVote(self):
 		goal = Percentage.religiousVote(30).activate(1)
 		

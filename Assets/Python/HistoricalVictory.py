@@ -294,7 +294,7 @@ dGoals = {
 			Route(plots.of(lAndeanCoast).named("ANDEAN_COAST"), iRouteRoad),
 		).by(1550),
 		PlayerGold(2500).at(1550),
-		NoForeignCities(plots.rectangle(tSouthAmerica).named("SOUTH_AMERICA")).at(1700),
+		AreaPopulationPercent(plots.regions(*lSouthAmerica).named("SOUTH_AMERICA"), 90).at(1775)
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore).by(1500),

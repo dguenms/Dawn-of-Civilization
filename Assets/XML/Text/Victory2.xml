@@ -181,6 +181,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PERCENT_OF_POPULATION</Tag>
+		<English>%s1%% of the population in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CITY</Tag>
 		<English>city</English>
 		<French></French>
@@ -1337,6 +1345,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_AREA_POPULATION_PERCENT</Tag>
+		<English>Population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_PROGRESS_GOLD</Tag>
 		<English>Gold in treasury</English>
 		<French></French>
@@ -2014,6 +2030,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POPULATION_PERCENT</Tag>
 		<English>control %s1%% of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_POPULATION_PERCENT</Tag>
+		<English>control %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3372,11 +3396,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TITLE_INC3</Tag>
-		<English>Eight Incan Regions</English>
-		<French>Les huit r&#233;gions incas </French>
-		<German>Acht Regionen der Inka</German>
-		<Italian>Eight Incan Regions</Italian>
-		<Spanish>Eight Incan Regions</Spanish>
+		<English>Inkarri</English>
+		<French>Inkarri</French>
+		<German>Inkarri</German>
+		<Italian>Inkarri</Italian>
+		<Spanish>Inkarri</Spanish>
 	</TEXT>
 	
 	<TEXT>

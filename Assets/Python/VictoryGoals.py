@@ -16,7 +16,6 @@ sum_ = sum
 capital_ = capital
 plots_ = plots
 
-
 plots = DeferredCollectionFactory.plots()
 
 
@@ -2517,6 +2516,16 @@ class Percentage(Count):
 		return cls.desc("POPULATION_PERCENT").progr("POPULATION_PERCENT").func(value_function, total).subclass("PopulationPercent")
 	
 	@classproperty
+	def areaPopulation(cls):
+		def value_function(self, iPlayer, area):
+			return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
+		
+		def total(self, area):
+			return area.cities().sum(CyCity.getPopulation)
+		
+		return cls.desc("AREA_POPULATION_PERCENT").progr("AREA_POPULATION_PERCENT").format(options.objective("PERCENT_OF_POPULATION").singular()).objective(Plots).func(value_function, total).subclass("AreaPopulationPercent")
+	
+	@classproperty
 	def religiousVote(cls):
 		def value_function(self, iPlayer):
 			return player(iPlayer).getVotes(16, 1)
@@ -3675,6 +3684,7 @@ AlliedCommercePercent = Percentage.alliedCommerce
 AlliedPowerPercent = Percentage.alliedPower
 AreaPercent = Percentage.areaControl
 PopulationPercent = Percentage.population
+AreaPopulationPercent = Percentage.areaPopulation
 ReligionSpreadPercent = Percentage.religionSpread
 ReligiousVotePercent = Percentage.religiousVote
 WorldPercent = Percentage.worldControl
