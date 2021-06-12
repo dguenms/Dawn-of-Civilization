@@ -107,6 +107,12 @@ def disable(iPlayer=None):
 	data.players[iPlayer].historicalGoals = []
 	data.players[iPlayer].religiousGoals = []
 
+def switchReligiousGoals(iPlayer):
+	for goal in data.players[iPlayer].religiousGoals:
+		goal.deactivate()
+	
+	data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
+
 
 @handler("GameStart")
 def setup():
@@ -126,3 +132,14 @@ def onSwitch(iPrevious, iCurrent):
 	
 	data.players[iCurrent].historicalGoals = createHistoricalGoals(iCurrent)
 	data.players[iCurrent].religiousGoals = createReligiousGoals(iCurrent)
+
+
+@handler("civicChanged")
+def onCivicChanged(iPlayer, iOldCivic, iNewCivic):
+	if infos.civic(iOldCivic).isStateReligion() != infos.civic(iNewCivic).isStateReligion():
+		switchReligiousGoals(iPlayer)
+
+
+@handler("playerChangeStateReligion")
+def onStateReligionChanged(iPlayer):
+	switchReligiousGoals(iPlayer)

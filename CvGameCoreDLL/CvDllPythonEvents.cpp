@@ -1432,6 +1432,20 @@ void CvDllPythonEvents::reportFontsLoaded()
 	}
 }
 
+// Leoreth: civic changed
+void CvDllPythonEvents::reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("civicChanged");
+		eventData.add((int)ePlayer);
+		eventData.add((int)eOldCivic);
+		eventData.add((int)eNewCivic);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

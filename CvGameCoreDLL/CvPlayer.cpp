@@ -13881,6 +13881,7 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 			//processCivNames();
 			//Rhye - end
 		}
+
 		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
@@ -13898,6 +13899,11 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 			}
 		}
 		// Sanguo Mod Performance, end
+
+		if (eOldCivic != NO_CIVIC)
+		{
+			CvEventReporter::getInstance().civicChanged(getID(), eOldCivic, eNewValue);
+		}
 	}
 }
 

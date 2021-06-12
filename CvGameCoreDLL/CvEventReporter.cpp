@@ -519,6 +519,12 @@ void CvEventReporter::fontsLoaded()
 	m_kPythonEventMgr.reportFontsLoaded();
 }
 
+// Leoreth: civic changed
+void CvEventReporter::civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic)
+{
+	m_kPythonEventMgr.reportCivicChanged(ePlayer, eOldCivic, eNewCivic);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

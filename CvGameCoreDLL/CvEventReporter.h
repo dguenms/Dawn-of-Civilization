@@ -148,6 +148,7 @@ public:
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 	void xmlLoaded(); // Leoreth
 	void fontsLoaded(); // Leoreth
+	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
 
 	DllExport void preSave();
 
