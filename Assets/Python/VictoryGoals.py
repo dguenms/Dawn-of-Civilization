@@ -1084,7 +1084,7 @@ class CheckEvery(CheckHandler):
 
 class BaseGoal(object):
 
-	PLAYER, RELIGION, SECULAR, WORLD = range(4)
+	PLAYER, RELIGION, SECULAR, WORLD, VASSAL, ALLY = range(6)
 	ACTIVE, PASSIVE = range(2)
 
 	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
@@ -1385,6 +1385,12 @@ class BaseGoal(object):
 			return not self._player.isStateReligion() and not player(iPlayer).isStateReligion()
 		elif self.type == self.WORLD:
 			return True
+		elif self.type == self.VASSAL:
+			return self.iPlayer == iPlayer or team(iPlayer).isVassal(self._player.getTeam())
+		elif self.type == self.ALLY:
+			defensivePacts = players.defensivePacts(self.iPlayer)
+			iMaster = master(iPlayer)
+			return self.iPlayer == iPlayer or iPlayer in defensivePacts or iMaster == self.iPlayer or (iMaster is not None and iMaster in defensivePacts)
 		return False
 	
 	def religion(self):
@@ -1397,6 +1403,14 @@ class BaseGoal(object):
 	
 	def world(self):
 		self.type = self.WORLD
+		return self
+	
+	def vassal(self):
+		self.type = self.VASSAL
+		return self
+	
+	def ally(self):
+		self.type = self.ALLY
 		return self
 	
 	def named(self, key):
@@ -2414,14 +2428,12 @@ class Count(BaseGoal):
 
 class Percentage(Count):
 
-	SELF, VASSALS, ALLIES, RELIGION = range(4)
-	
-	default_included = SELF
+	default_type = BaseGoal.PLAYER
 
 	def __init__(self, *arguments):
 		super(Percentage, self).__init__(*arguments)
 		
-		self.included = self.default_included
+		self.type = self.default_type
 
 	def condition(self, *arguments):
 		remainder, iRequired = arguments[:-1], arguments[-1]
@@ -2442,16 +2454,7 @@ class Percentage(Count):
 	
 	@property
 	def valid_players(self):
-		if self.included == self.SELF:
-			return players.of(self.iPlayer)
-		elif self.included == self.VASSALS:
-			return players.vassals(self.iPlayer).including(self.iPlayer)
-		elif self.included == self.ALLIES:
-			return players.allies(self.iPlayer)
-		elif self.included == self.RELIGION:
-			return players.all().religion(self._player.getStateReligion())
-		
-		raise Exception("self.included set to invalid value")
+		return players.major().alive().where(self.valid_player)
 		
 	def player_value(self, *objectives):
 		return self.valid_players.sum(lambda p: self.value_function(p, *objectives))
@@ -2459,18 +2462,14 @@ class Percentage(Count):
 	def total(self, *objectives):
 		return players.major().alive().sum(lambda p: self.value_function(p, *objectives))
 	
-	def includeVassals(self):
+	def vassal(self):
+		super(Percentage, self).vassal()
 		self._description = replace_first(self._description, "TXT_KEY_UHV_OR_VASSALISE")
-		self.included = self.VASSALS
-		return self
-	
-	def religion(self):
-		self.included = self.RELIGION
 		return self
 	
 	@classproperty
 	def allied(cls):
-		cls.default_included = cls.ALLIES
+		cls.default_type = cls.ALLY
 		return cls
 		
 	@classproperty

@@ -5478,7 +5478,7 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testPopulationIncludeVassals(self):
-		goal = Percentage.population(50).includeVassals().activate(0)
+		goal = Percentage.population(50).vassal().activate(0)
 		
 		city1 = player(0).initCity(30, 30)
 		city2 = player(1).initCity(32, 30)

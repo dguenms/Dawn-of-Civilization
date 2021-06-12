@@ -213,8 +213,8 @@ dGoals = {
 	iFrance: (
 		CultureLevel(start(iFrance).named("PARIS"), iCultureLevelLegendary).at(1700),
 		All(
-			AreaPercent((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), 40).includeVassals(),
-			AreaPercent(plots.rectangle(tNorthAmerica).named("NORTH_AMERICA"), 40).includeVassals(),
+			AreaPercent((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named("EUROPE"), 40).vassal(),
+			AreaPercent(plots.rectangle(tNorthAmerica).named("NORTH_AMERICA"), 40).vassal(),
 		).at(1800),
 		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain).by(1900),
 	),
