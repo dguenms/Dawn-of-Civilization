@@ -736,7 +736,7 @@ class CvReligionScreen:
 		if not gc.getPlayer(iPlayer).isStateReligion():
 			return ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()
 	
-		sButton = infos.paganReligion(civ(iPlayer)).getDescription()
+		sButton = infos.paganReligion(civ(iPlayer)).getButton()
 		if sButton: 
 			return sButton
 	
