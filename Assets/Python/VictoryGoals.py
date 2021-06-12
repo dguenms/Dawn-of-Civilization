@@ -2534,7 +2534,7 @@ class Percentage(Count):
 	@classproperty
 	def alliedCommerce(cls):
 		def value_function(self, iPlayer):
-			return player(iPlayer).calculateTotalCommerce()
+			return max(0, player(iPlayer).calculateTotalCommerce())
 		
 		return cls.desc("ALLIED_COMMERCE_PERCENT").progr("ALLIED_COMMERCE_PERCENT").allied.func(value_function).subclass("AlliedCommercePercent")
 	
