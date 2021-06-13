@@ -670,8 +670,11 @@ def debug(message, *format):
 
 
 def show(message, *format):
+	if format:
+		message = message % tuple(format)
+
 	popup = Popup.PyPopup()
-	popup.setBodyString(message % tuple(format))
+	popup.setBodyString(message)
 	popup.launch()
 
 
