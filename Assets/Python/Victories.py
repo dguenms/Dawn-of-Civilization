@@ -136,10 +136,11 @@ def onSwitch(iPrevious, iCurrent):
 
 @handler("civicChanged")
 def onCivicChanged(iPlayer, iOldCivic, iNewCivic):
-	if infos.civic(iOldCivic).isStateReligion() != infos.civic(iNewCivic).isStateReligion():
+	if iPlayer == active() and infos.civic(iOldCivic).isStateReligion() != infos.civic(iNewCivic).isStateReligion():
 		switchReligiousGoals(iPlayer)
 
 
 @handler("playerChangeStateReligion")
 def onStateReligionChanged(iPlayer):
-	switchReligiousGoals(iPlayer)
+	if iPlayer == active():
+		switchReligiousGoals(iPlayer)
