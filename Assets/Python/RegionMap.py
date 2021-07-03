@@ -147,6 +147,7 @@ tSpreadFactors = (
 {
 	iCore : 	[rIndia, rTibet, rIndochina],
 	iHistorical : 	[rCentralAsia, rChina, rManchuria, rKorea, rJapan, rIndonesia],
+	iPeriphery : [rDeccan],
 	iMinority :	[rPersia],
 },
 # Confucianism
