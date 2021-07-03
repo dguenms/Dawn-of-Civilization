@@ -684,7 +684,6 @@ iIndia : {
 		"Rajaraja Chola", # 10th
 		iRenaissance,
 		"fRani Durgavati", # 16th
-		"Shivaji Bhosle", # 17th
 		"Kanhoji Angre", # 17th
 		"Marthanda Varma", # 18th
 		"Hyder Ali", # 18th
