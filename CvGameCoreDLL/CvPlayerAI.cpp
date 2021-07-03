@@ -19422,6 +19422,8 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	bool bOwnerCatholic = (GET_PLAYER(eOwner).getStateReligion() == CATHOLICISM && eOwner != GC.getGame().getActivePlayer());
 	bool bBuyerCatholic = GET_PLAYER(getID()).getStateReligion() == CATHOLICISM;
 
+	int iRequiredSlaves = countRequiredSlaves();
+
 	if (getCivilizationType() != GC.getGame().getActiveCivilizationType())
 	{
 		if (getCivilizationType() == MALI || getCivilizationType() == CONGO || getCivilizationType() == ETHIOPIA)
@@ -19429,7 +19431,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 			return 0;
 		}
 
-		if (countRequiredSlaves() <= 0)
+		if (iRequiredSlaves <= 0)
 		{
 			return 0;
 		}
@@ -19438,9 +19440,13 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	if (getID() == GC.getGame().getActivePlayer()) iModifier += 1;
 	if (bOwnerEuropean || bBuyerEuropean) iModifier += 1;
 	if (!bOwnerExploration && !bBuyerExploration) iModifier -= 1;
-	if (bOwnerCatholic || bBuyerCatholic) iModifier += 1;
 
-	return std::max(1, iModifier) * iValue;
+	iValue = std::max(1, iModifier) * iValue;
+
+	iValue *= 100 + range(0, iRequiredSlaves - 1, 5) * 20;
+	iValue /= 100;
+
+	return iValue;
 }
 // edead: end
 
