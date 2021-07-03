@@ -15486,6 +15486,16 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 		if (getReligionCount() == 0)
 		{
 			iIncrement -= 10;
+
+			if (bDistant) 
+			{
+				iIncrement -= 10;
+			}
+		}
+
+		if (GC.getMapINLINE().getArea(getArea())->countHasReligion(eReligion, getOwnerINLINE()) == 0)
+		{
+			iIncrement -= 10;
 		}
 	}
 
