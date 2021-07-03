@@ -1073,11 +1073,14 @@ def freeCargo(identifier, tile):
 	
 # used: CvRFCEventHandler
 def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
-	if pLosingUnit.isAnimal(): return
+	if pLosingUnit.isAnimal(): 
+		return
 	
-	if pLosingUnit.getDomainType() != DomainTypes.DOMAIN_LAND: return
+	if pLosingUnit.getDomainType() != DomainTypes.DOMAIN_LAND: 
+		return
 	
-	if infos.unit(pLosingUnit).getCombat() == 0: return
+	if infos.unit(pLosingUnit).getCombat() == 0: 
+		return
 	
 	iPlayer = pWinningUnit.getOwner()
 	

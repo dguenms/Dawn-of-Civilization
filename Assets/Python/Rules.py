@@ -181,7 +181,7 @@ def captureSlaves(winningUnit, losingUnit):
 		captureUnit(losingUnit, winningUnit, iSlave, 100)
 		return
 	
-	if players.major().none(lambda p: player(p).canDoCivics(iColonialism)):
+	if players.major().alive().none(lambda p: team(p).isHasTech(iCompass)):
 		return
 		
 	if civ(losingUnit) == iNative:
