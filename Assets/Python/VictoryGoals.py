@@ -3360,6 +3360,10 @@ class All(BaseGoal):
 		
 		for goal in self.goals:
 			goal.deactivate()
+
+	def registerHandlers(self):
+		for goal in self.goals:
+			goal.registerHandlers()
 	
 	def setState(self, state):
 		super(All, self).setState(state)
@@ -3442,6 +3446,9 @@ class Some(BaseGoal):
 	def deactivate(self):
 		super(Some, self).deactivate()
 		self.goal.deactivate()
+
+	def registerHandlers(self):
+		self.goal.registerHandlers()
 	
 	def setState(self, state):
 		super(Some, self).setState(state)
@@ -3531,6 +3538,10 @@ class Different(BaseGoal):
 		
 		for goal in self.goals:
 			goal.deactivate()
+
+	def registerHandlers(self):
+		for goal in self.goals:
+			goal.registerHandlers()
 	
 	def setState(self, state):
 		super(Different, self).setState(state)

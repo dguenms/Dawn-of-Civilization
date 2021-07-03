@@ -115,5 +115,5 @@ def resetVictoryHandlersOnPythonReloaded():
 
 
 @handler("OnLoad")
-def restVictoryHandlersOnLoad():
+def resetVictoryHandlersOnLoad():
 	reset_victory_handlers()
