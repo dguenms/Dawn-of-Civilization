@@ -2382,7 +2382,7 @@ class Count(BaseGoal):
 	@classproperty
 	def cityBuilding(cls):
 		def checkBuildingBuilt(self, city, iBuilding):
-			if at(city, self.arguments.subject()) and iBuilding in self.values:
+			if at(city, self.arguments.subject(self.iPlayer)) and iBuilding in self.values:
 				self.check()
 	
 		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
