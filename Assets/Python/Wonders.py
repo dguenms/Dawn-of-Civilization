@@ -15,7 +15,7 @@ def escorialFoundedCity(city):
 
 def escorialEffect(iPlayer, city):
 	if player(iPlayer).isHasBuildingEffect(iEscorial):
-		if city.isColony():
+		if city.isColony() and city.getGameTurnPlayerLost(iPlayer) == -1:
 			capital = player(iPlayer).getCapitalCity()
 			iGold = scale(10 + distance(capital, city))
 			message(iPlayer, 'TXT_KEY_BUILDING_ESCORIAL_EFFECT', iGold, city.getName(), location=city, button=infos.building(iEscorial).getButton())	
