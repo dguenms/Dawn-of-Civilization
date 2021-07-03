@@ -24834,6 +24834,11 @@ int CvPlayer::countRequiredSlaves() const
 		return 0;
 	}
 
+	if (!canUseSlaves())
+	{
+		return 0;
+	}
+
 	int iNumRequiredSlaves = 0;
 	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
 	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
@@ -24856,37 +24861,33 @@ int CvPlayer::countRequiredSlaves() const
 
 					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
 					{
-						if (pLoopPlot->canUseSlave(getID())) iNumRequiredSlaves++;
+						if (pLoopPlot->canUseSlave(getID()))
+						{
+							if (!pLoopPlot->isOwned() || pLoopPlot->getOwnerINLINE() == getID())
+							{
+								iNumRequiredSlaves++;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 
-	// cities with enough happiness to settle slaves
-	/*int iExcessHappiness, iSlaveSlots;
-	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
+	// cities that can settle slaves
+	int iSlaveJoinCities = 0;
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (pLoopCity->plot()->canUseSlave())
+		if (pLoopCity->canSlaveJoin() && pLoopCity->getFreeSpecialistCount(SPECIALIST_SLAVE) == 0)
 		{
-			iExcessHappiness = pLoopCity->happyLevel() - pLoopCity->unhappyLevel(0);
-			iSlaveSlots = pLoopCity->getPopulation() / 2 - pLoopCity->getSpecialistCount(eSlave);
-			if (iExcessHappiness > 0 && iSlaveSlots > 0)
+			if (pLoopCity->happyLevel() - pLoopCity->unhappyLevel(0) >= 2)
 			{
-				iNumRequiredSlaves += std::min(iExcessHappiness / 2, iSlaveSlots);
+				iSlaveJoinCities += 1;
 			}
 		}
-	}*/
+	}
 
-	/*SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		if (pLoopCity->plot()->canUseSlave(getID()) && pLoopCity->getSpecialistCount(eSlave) == 0)
-		{
-			iNumRequiredSlaves++;
-		}
-	}*/
+	iNumRequiredSlaves += std::max(iSlaveJoinCities, 3);
 
 	// subtract slaves they already have
 	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
