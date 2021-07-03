@@ -435,8 +435,11 @@ def getPossibleMinors(iPlayer):
 def secession(iPlayer, secedingCities):
 	data.setSecedingCities(iPlayer, secedingCities)
 
-def canBeRazed(city):
-	# always raze Harappan cities
+def canBeRazed(city):	
+	if city.isHolyCity():
+		return False
+
+	# always raze Harappan cities, except holy city
 	if civ(city) == iHarappa and not player(city).isHuman():
 		return True
 	
@@ -444,9 +447,6 @@ def canBeRazed(city):
 		return False
 	
 	if city.getCultureLevel() >= 3:
-		return False
-	
-	if city.isHolyCity():
 		return False
 		
 	if city.isCapital():
