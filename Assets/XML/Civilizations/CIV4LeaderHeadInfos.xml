@@ -344,7 +344,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -406,7 +406,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -887,7 +887,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -949,7 +949,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -1452,7 +1452,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -1997,7 +1997,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -2059,7 +2059,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -2557,7 +2557,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -2619,7 +2619,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -3102,7 +3102,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -3164,7 +3164,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -3656,7 +3656,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -3718,7 +3718,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -4210,7 +4210,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -4272,7 +4272,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -4768,7 +4768,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -4830,7 +4830,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -5313,7 +5313,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -5375,7 +5375,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -5862,7 +5862,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -5924,7 +5924,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -6420,7 +6420,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -6482,7 +6482,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -6981,7 +6981,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -7043,7 +7043,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -7538,7 +7538,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -7600,7 +7600,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -8092,7 +8092,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -8154,7 +8154,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -8650,7 +8650,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -8712,7 +8712,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -9206,7 +9206,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -9268,7 +9268,7 @@
 				</ContactDelay>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactDelays>
 			<MemoryDecays>
@@ -9726,7 +9726,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -9788,7 +9788,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -10280,7 +10280,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -10342,7 +10342,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -10833,7 +10833,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -10895,7 +10895,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -11395,7 +11395,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -11457,7 +11457,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -11955,7 +11955,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -12017,7 +12017,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -12506,7 +12506,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -12568,7 +12568,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -13058,7 +13058,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -13120,7 +13120,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -13623,7 +13623,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -13685,7 +13685,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -14185,7 +14185,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -14247,7 +14247,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -14734,7 +14734,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -14796,7 +14796,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -15283,7 +15283,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -15345,7 +15345,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -15841,7 +15841,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -15903,7 +15903,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -16399,7 +16399,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -16461,7 +16461,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -16944,7 +16944,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>1</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -17006,7 +17006,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>5</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -17502,7 +17502,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -17564,7 +17564,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -18056,7 +18056,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -18118,7 +18118,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -18620,7 +18620,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -18682,7 +18682,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -19172,7 +19172,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -19234,7 +19234,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -19730,7 +19730,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -19792,7 +19792,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -20292,7 +20292,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -20354,7 +20354,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -20850,7 +20850,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -20912,7 +20912,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -21415,7 +21415,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -21477,7 +21477,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -21960,7 +21960,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -22022,7 +22022,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -22521,7 +22521,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -22583,7 +22583,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -23073,7 +23073,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -23135,7 +23135,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -23622,7 +23622,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -23684,7 +23684,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -24178,7 +24178,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -24240,7 +24240,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -24727,7 +24727,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -24789,7 +24789,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -25292,7 +25292,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -25354,7 +25354,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -25868,7 +25868,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -25930,7 +25930,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -26421,7 +26421,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -26483,7 +26483,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -26972,7 +26972,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -27034,7 +27034,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -27522,7 +27522,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -27584,7 +27584,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -28078,7 +28078,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -28140,7 +28140,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -28643,7 +28643,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -28705,7 +28705,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -29201,7 +29201,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -29263,7 +29263,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -29750,7 +29750,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -29812,7 +29812,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -30310,7 +30310,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -30372,7 +30372,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -30866,7 +30866,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -30928,7 +30928,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -31415,7 +31415,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -31477,7 +31477,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -31973,7 +31973,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -32035,7 +32035,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -32522,7 +32522,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -32584,7 +32584,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -33071,7 +33071,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -33133,7 +33133,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -33620,7 +33620,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -33682,7 +33682,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -34181,7 +34181,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -34243,7 +34243,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -34730,7 +34730,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -34792,7 +34792,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -35279,7 +35279,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -35341,7 +35341,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -35837,7 +35837,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -35899,7 +35899,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -36389,7 +36389,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -36451,7 +36451,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -36951,7 +36951,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -37013,7 +37013,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -37511,7 +37511,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -37573,7 +37573,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -38065,7 +38065,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -38127,7 +38127,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -38617,7 +38617,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -38679,7 +38679,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -39173,7 +39173,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -39235,7 +39235,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -39725,7 +39725,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -39787,7 +39787,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -40279,7 +40279,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -40341,7 +40341,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -40803,7 +40803,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -40865,7 +40865,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -41348,7 +41348,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -41410,7 +41410,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -41897,7 +41897,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -41959,7 +41959,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -42442,7 +42442,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -42504,7 +42504,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -42992,7 +42992,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -43054,7 +43054,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -43550,7 +43550,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -43612,7 +43612,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -44104,7 +44104,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -44166,7 +44166,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -44655,7 +44655,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -44717,7 +44717,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -45756,7 +45756,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -45818,7 +45818,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -46329,7 +46329,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -46391,7 +46391,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -46873,7 +46873,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -46935,7 +46935,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -47423,7 +47423,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -47485,7 +47485,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -47977,7 +47977,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -48039,7 +48039,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -48528,7 +48528,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -48590,7 +48590,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -49077,7 +49077,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -49139,7 +49139,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -49626,7 +49626,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -49688,7 +49688,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -50175,7 +50175,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -50237,7 +50237,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -50725,7 +50725,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -50787,7 +50787,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -51251,7 +51251,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -51313,7 +51313,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -51809,7 +51809,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -51871,7 +51871,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -52361,7 +52361,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>1</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -52423,7 +52423,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>5</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -52910,7 +52910,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -52972,7 +52972,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -53466,7 +53466,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -53528,7 +53528,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -53979,7 +53979,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -54041,7 +54041,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -54535,7 +54535,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -54597,7 +54597,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -55702,7 +55702,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -56260,7 +56260,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -56818,7 +56818,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -57372,7 +57372,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -57859,7 +57859,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -57921,7 +57921,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -58473,7 +58473,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -58972,7 +58972,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -59034,7 +59034,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -60068,7 +60068,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -60130,7 +60130,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -60620,7 +60620,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -60682,7 +60682,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -61165,7 +61165,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -61227,7 +61227,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -62258,7 +62258,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -62320,7 +62320,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -62816,7 +62816,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -62878,7 +62878,7 @@
 				</ContactDelay>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactDelays>
 			<MemoryDecays>
@@ -63338,7 +63338,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -63400,7 +63400,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -63896,7 +63896,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -63958,7 +63958,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -64454,7 +64454,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -64516,7 +64516,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -65012,7 +65012,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -65074,7 +65074,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -65570,7 +65570,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -65632,7 +65632,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -66123,7 +66123,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -66185,7 +66185,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -66681,7 +66681,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -66743,7 +66743,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -67238,7 +67238,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -67300,7 +67300,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -67746,7 +67746,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -67808,7 +67808,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
@@ -68323,7 +68323,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactRand>10</iContactRand>
+					<iContactRand>5</iContactRand>
 				</ContactRand>
 			</ContactRands>
 			<ContactDelays>
@@ -68385,7 +68385,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
-					<iContactDelay>20</iContactDelay>
+					<iContactDelay>10</iContactDelay>
 				</ContactDelay>
 			</ContactDelays>
 			<MemoryDecays>
