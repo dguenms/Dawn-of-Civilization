@@ -278,6 +278,10 @@ class GameData:
 		self.bCrisisImminent = False
 		
 		self.dSecedingCities = appenddict()
+
+		# Barbarians
+
+		self.period_offsets = PeriodOffsets()
 		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))

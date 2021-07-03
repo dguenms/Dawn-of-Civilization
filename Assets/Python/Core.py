@@ -15,7 +15,6 @@ import random
 import re
 import types
 
-from traceback import extract_stack
 from sets import Set
 from itertools import groupby
 
@@ -293,14 +292,9 @@ def periodic_from(entities, interval=None):
 	return entities[(turn() + offset) % interval]
 
 
-def get_calling_module():
-	trace = [call[0] for call in extract_stack() if call[0] != 'Core']
-	return trace[-1]
-
-
 def periodic(interval):
 	interval = turns(interval)
-	index = period_offsets(interval)
+	index = data.period_offsets(interval)
 	offset = (index / 2 + ((index + interval) % 2) * interval / 2 ) % interval
 	return turn() % interval == offset
 
@@ -2219,28 +2213,6 @@ class Map(object):
 			self[originX + x, originY + y] = value
 
 
-class PeriodOffsets(object):
-
-	def __init__(self):
-		self.turn = 0
-		self.offsets = defaultdict({}, 0)
-		
-	def __call__(self, interval):
-		self._check_invalidate()
-		calling = get_calling_module()
-		offset = self.offsets[(calling, interval)]
-		self.offsets[(calling, interval)] += 1
-		return offset
-		
-	def _check_invalidate(self):
-		if turn() > self.turn:
-			self._invalidate()
-	
-	def _invalidate(self):
-		self.turn = turn()
-		self.offsets = defaultdict({}, 0)
-
-
 class TechFactory(object):
 
 	def of(self, *techs):
@@ -2294,7 +2266,6 @@ units = UnitFactory()
 players = PlayerFactory()
 techs = TechFactory()
 infos = Infos()
-period_offsets = PeriodOffsets()
 
 plot_ = plot
 city_ = city

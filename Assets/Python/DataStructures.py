@@ -1,6 +1,7 @@
 from Types import *
 from CvPythonExtensions import *
 from copy import copy
+from traceback import extract_stack
 
 
 gc = CyGlobalContext()
@@ -95,3 +96,30 @@ class TileDict:
 	
 	def values(self):
 		return self.entries.values()
+
+
+def get_calling_module():
+	trace = [call[0] for call in extract_stack() if call[0] != 'DataStructures']
+	return trace[-1]
+
+
+class PeriodOffsets(object):
+
+	def __init__(self):
+		self.turn = 0
+		self.offsets = defaultdict({}, 0)
+		
+	def __call__(self, interval):
+		self._check_invalidate()
+		calling = get_calling_module()
+		offset = self.offsets[(calling, interval)]
+		self.offsets[(calling, interval)] += 1
+		return offset
+		
+	def _check_invalidate(self):
+		if gc.getGame().getGameTurn() > self.turn:
+			self._invalidate()
+	
+	def _invalidate(self):
+		self.turn = gc.getGame().getGameTurn()
+		self.offsets = defaultdict({}, 0)
