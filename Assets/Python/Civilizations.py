@@ -163,7 +163,7 @@ lStartingTechs = [
 	iItaly : 		techs.column(7).including(iCommune, iPaper, iCompass, iDoctrine),
 	iMughals :		techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder),
 	iOttomans :		techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder),
-	iCongo : 		techs.column(6).including(iMachinery, iCivilService, iTheology),
+	iCongo : 		techs.column(6).including(iMachinery, iCivilService, iGuilds, iTheology),
 	iThailand : 	techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage),
 	iIran : 		techs.column(9).including(iHeritage, iFirearms),
 	iNetherlands:	techs.column(10),
