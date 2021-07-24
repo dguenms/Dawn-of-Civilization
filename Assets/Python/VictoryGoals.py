@@ -133,6 +133,14 @@ class EventHandlers(object):
 		
 		return cityAcquired
 	
+	def cityAcquiredAndKept(self, func):
+		def cityAcquiredAndKept(other, args):
+			iPlayer, city = args
+			if self.applicable(other, iPlayer):
+				func(other, city)
+		
+		return cityAcquiredAndKept
+	
 	def cityBuilt(self, func):
 		def cityBuilt(other, args):
 			city = args[0]
@@ -1148,11 +1156,15 @@ class BaseGoal(object):
 		cls.builder.handler(event, handler)
 		return cls
 	
-	@classproperty
-	def turnly(cls):
+	@classmethod
+	def checked(cls, event):
 		def checkGoal(self, *args):
 			self.check()
-		return cls.handle("BeginPlayerTurn", checkGoal)
+		return cls.handle(event, checkGoal)
+	
+	@classproperty
+	def turnly(cls):
+		return cls.checked("BeginPlayerTurn")
 	
 	@classmethod
 	def handle(cls, event, func):
@@ -2154,7 +2166,7 @@ class Count(BaseGoal):
 		def settled(self, cities):
 			return cities.owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer)
 		
-		return cls.desc("SETTLED_CITY_COUNT").progr("SETTLED_CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(settled).subclass("SettledCityCount")
+		return cls.desc("SETTLED_CITY_COUNT").progr("SETTLED_CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(settled).checked("cityBuilt").checked("cityAcquiredAndKept").subclass("SettledCityCount")
 	
 	@classproperty
 	def conqueredCities(cls):

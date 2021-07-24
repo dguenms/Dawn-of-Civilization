@@ -1509,6 +1509,23 @@ class TestBaseGoal(ExtendedTestCase):
 			self.assertEqual(goal.state, POSSIBLE)
 		finally:
 			goal.deactivate()
+		
+	def testChecked(self):
+		goal = TestGoal.checked("cityBuilt").subclass("SubGoal")()
+		goal.condition_value = True
+		goal = goal.activate(0)
+		
+		city = player(0).initCity(61, 31)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			events.fireEvent("cityBuilt", city)
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			city.kill()
+			
+			goal.deactivate()
 	
 	def testTurnly(self):
 		goal = TestGoal.turnly.subclass("SubGoal")()
