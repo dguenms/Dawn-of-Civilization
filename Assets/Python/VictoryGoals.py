@@ -2220,7 +2220,7 @@ class Count(BaseGoal):
 		
 			return self._team.isOpenBorders(player(iPlayer).getTeam())
 		
-		return cls.desc("OPEN_BORDER_COUNT").progr("OPEN_BORDER_COUNT").format(options.number_word()).func(init, civs).players(valid).subclass("OpenBorderCount")
+		return cls.desc("OPEN_BORDER_COUNT").progr("OPEN_BORDER_COUNT").format(options.number_word()).func(init, civs).players(valid).turnly.subclass("OpenBorderCount")
 	
 	@classproperty
 	def specialist(cls):
