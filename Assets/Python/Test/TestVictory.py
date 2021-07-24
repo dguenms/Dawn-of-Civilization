@@ -1373,6 +1373,22 @@ class TestBaseGoal(ExtendedTestCase):
 		goal.check()
 		self.assertEqual(callback.recorded, goal)
 	
+	def testCheckBeforeAt(self):
+		goal = self.goal.at(1000).activate(0)
+		goal.condition_value = True
+		goal.state = POSSIBLE
+		
+		goal.check()
+		self.assertEqual(goal.state, POSSIBLE)
+		
+	def testCheckDuringAt(self):
+		goal = self.goal.at(-3000).activate(0)
+		goal.condition_value = True
+		goal.state = POSSIBLE
+		
+		goal.check()
+		self.assertEqual(goal.state, SUCCESS)
+	
 	def testFinalCheckPossible(self):
 		goal = self.goal.activate(0)
 		self.assertEqual(goal.state, POSSIBLE)

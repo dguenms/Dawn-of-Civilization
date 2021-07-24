@@ -1350,6 +1350,9 @@ class BaseGoal(object):
 			self.fail()
 	
 	def check(self):
+		if 'at' in self.extra_handlers and turn() < turn(self._iYear):
+			return
+	
 		if self.possible() and self:
 			self.succeed()
 			
