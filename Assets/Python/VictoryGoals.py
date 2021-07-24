@@ -1316,7 +1316,7 @@ class BaseGoal(object):
 		
 		if self._iSuccessTurn is not None:
 			if AdvisorOpt.isUHVFinishDateTurn():
-				string += " (%s - %s)" % (format_date(game.getTurnYear(self._iSuccessTurn)), text("TXT_KEY_UHV_TURN", self._iSuccessTurn))
+				string += " (%s - %s)" % (format_date(game.getTurnYear(self._iSuccessTurn)), text("TXT_KEY_UHV_TURN", self._iSuccessTurn - scenarioStartTurn()))
 			elif AdvisorOpt.isUHVFinishDateDate():
 				string += " (%s)" % format_date(game.getTurnYear(self._iSuccessTurn))
 		
@@ -1437,7 +1437,7 @@ class BaseGoal(object):
 	def turn_suffix(self):
 		if self.iPlayer is not None and self._iYear is not None:
 			if not team(self.iPlayer).isHasTech(iCalendar) or not AdvisorOpt.isUHVFinishDateNone():
-				return text("TXT_KEY_UHV_TURN_SUFFIX", year(self._iYear))
+				return text("TXT_KEY_UHV_TURN_SUFFIX", year(self._iYear) - scenarioStartTurn())
 	
 	def description(self):
 		return capitalize(" ".join(concat(self._description, self._description_suffixes, self.turn_suffix)))
