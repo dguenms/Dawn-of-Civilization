@@ -4,6 +4,12 @@ from StoredData import data
 from Events import handler
 
 
+### SCENARIO SETUP ###
+
+lLostIn1700AD = [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]
+lWonIn1700AD = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)]
+
+
 ### DELAYED IMPORT ###
 
 dHistoricalGoals = None
@@ -92,7 +98,10 @@ religiousVictoryCallback = ReligiousVictoryCallback()
 ### SETUP ###
 
 def createHistoricalGoals(iPlayer):
-	return [goal.activate(iPlayer, historicalVictoryCallback) for goal in getHistoricalGoals(iPlayer)]
+	goals = [goal.activate(iPlayer, historicalVictoryCallback) for goal in getHistoricalGoals(iPlayer)]
+	goals = setupScenario(iPlayer, goals)
+	
+	return goals
 
 def createReligiousGoals(iPlayer):
 	return [goal.passivate(iPlayer, religiousVictoryCallback) for goal in getReligiousGoals(iPlayer)]
@@ -112,6 +121,23 @@ def switchReligiousGoals(iPlayer):
 		goal.deactivate()
 	
 	data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
+	
+def setupScenario(iPlayer, goals):
+	iCiv = civ(iPlayer)
+
+	if scenario() == i1700AD:
+		if iCiv in lLostIn1700AD:
+			for goal in goals:
+				goal.fail()
+		
+		for iGoal in [iGoal for iGoalCiv, iGoal in lWonIn1700AD if iGoalCiv == iCiv]:
+			goals[iGoal].succeed()
+		
+		# setup Congo slave trade goal
+		if iCiv == iCongo:
+			goals[1].accumulate(500)
+	
+	return goals
 
 
 @handler("GameStart")

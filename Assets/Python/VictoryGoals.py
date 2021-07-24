@@ -3383,9 +3383,8 @@ class All(BaseGoal):
 	def setState(self, state):
 		super(All, self).setState(state)
 		
-		if state == FAILURE:
-			for goal in self.goals:
-				goal.fail()
+		for goal in self.goals:
+			goal.setState(state)
 	
 	def religion(self):
 		for goal in self.goals:
@@ -3467,9 +3466,7 @@ class Some(BaseGoal):
 	
 	def setState(self, state):
 		super(Some, self).setState(state)
-	
-		if state == FAILURE:
-			self.goal.fail()
+		self.goal.setState(state)
 	
 	def progress(self):
 		return self.goal.progress()
