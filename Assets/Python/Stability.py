@@ -484,9 +484,9 @@ def getCityClaim(city):
 	if cultureClaims:
 		return cultureClaims.maximum(lambda p: plot(city).getCulture(p))
 	
-	# claim based on war targets: needs to be winning the war based on war success
+	# claim based on war targets: needs to be winning the war based on war success, not available to human player
 	closest = closestCity(city, same_continent=True)
-	warClaims = possibleClaims.where(lambda p: team(p).isAtWar(team(iOwner).getID()) and player(p).getWarValue(*location(city)) >= 8 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
+	warClaims = possibleClaims.without(active()).where(lambda p: team(p).isAtWar(team(iOwner).getID()) and player(p).getWarValue(*location(city)) >= 8 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
 	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:
