@@ -427,21 +427,21 @@ lPeoplesRepublicAdj = [iTamils, iByzantium, iMongols]
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 
 dEmpireThreshold = {
-	iCarthage : 4,
-	iIndonesia : 4,
-	iKorea : 4,
-	iRussia : 8,
-	iHolyRome : 3,
-	iGermany : 4,
-	iItaly : 4,
-	iInca : 3,
-	iMongols : 8,
-	iPoland : 3,
-	iMoors : 3,
-	iTibet : 2,
+	iPhoenicia : 4,
 	iPolynesia : 3,
 	iTamils : 3,
+	iKorea : 4,
+	iTibet : 2,
+	iIndonesia : 4,
+	iMoors : 3,
+	iHolyRome : 3,
+	iRussia : 8,
+	iPoland : 3,
+	iInca : 3,
+	iMongols : 8,
+	iItaly : 4,
 	iIran : 4,
+	iGermany : 4,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -799,10 +799,14 @@ def isEmpire(iPlayer):
 def getEmpireThreshold(iPlayer):
 	iCiv = civ(iPlayer)
 
-	if iCiv in dEmpireThreshold: return dEmpireThreshold[iCiv]
+	if iCiv in dEmpireThreshold: 
+		return dEmpireThreshold[iCiv]
 	
 	if iCiv == iEthiopia and not game.isReligionFounded(iIslam):
 		return 4
+	
+	if iCiv == iRome and not player(iByzantium).isAlive():
+		return 7
 		
 	return 5
 	
