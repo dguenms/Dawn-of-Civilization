@@ -2551,14 +2551,14 @@ class Percentage(Count):
 		def value_function(self, iPlayer):
 			return max(0, player(iPlayer).calculateTotalCommerce())
 		
-		return cls.desc("ALLIED_COMMERCE_PERCENT").progr("ALLIED_COMMERCE_PERCENT").allied.func(value_function).subclass("AlliedCommercePercent")
+		return cls.desc("ALLIED_COMMERCE_PERCENT").progr("ALLIED_COMMERCE_PERCENT").allied.func(value_function).turnly.subclass("AlliedCommercePercent")
 	
 	@classproperty
 	def alliedPower(cls):
 		def value_function(self, iPlayer):
 			return player(iPlayer).getPower()
 		
-		return cls.desc("ALLIED_POWER_PERCENT").progr("ALLIED_POWER_PERCENT").allied.func(value_function).subclass("AlliedPowerPercent")
+		return cls.desc("ALLIED_POWER_PERCENT").progr("ALLIED_POWER_PERCENT").allied.func(value_function).turnly.subclass("AlliedPowerPercent")
 
 
 def segment(tuple):
