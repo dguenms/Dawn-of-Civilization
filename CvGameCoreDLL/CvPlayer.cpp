@@ -5866,6 +5866,9 @@ void CvPlayer::found(int iX, int iY)
 		}
 	}
 
+	// Leoreth: in case free buildings gave food kept percent, start city with the corresponding amount of food
+	pCity->setFood(pCity->growthThreshold() * pCity->getMaxFoodKeptPercent() / 100);
+
 	if (getAdvancedStartPoints() >= 0)
 	{
 		// Free border expansion for Creative
