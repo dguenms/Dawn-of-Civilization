@@ -197,12 +197,10 @@ class PopupLauncher(object):
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 		
 		# dynamically register handler func
-		func_name = self.__class__.__name__
+		func_name = register(self.__class__.__name__, self.handle_choice)
 		
 		popup.setPythonModule("CvPopupInterface")
 		popup.setOnClickedPythonCallback(func_name)
-		
-		register(func_name, self.handle_choice)
 		
 		# pass arguments
 		setters = (popup.setData1, popup.setData2, popup.setData3)
