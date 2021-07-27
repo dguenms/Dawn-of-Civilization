@@ -1150,7 +1150,7 @@ class Congress:
 		# remove settled plots with the same name
 		lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cnm.getFoundName(iPlayer, (x, y)) not in [cnm.getFoundName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
 		
-		return lPlots
+		return lPlots[:10]
 		
 	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
 		return players.of(lPlayers).highest(iNumPlayers, game.getPlayerRank)
