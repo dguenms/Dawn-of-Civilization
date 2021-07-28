@@ -2722,7 +2722,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			}
 		}
 
-		if (!bAttack && pPlot->isCity() && isAlwaysHostile(pPlot) && !pPlot->isFriendlyCity(*this, false))
+		if (!bAttack && pPlot->isCity() && isAlwaysHostile(pPlot) && !atWar(getTeam(), pPlot->getTeam()))
 		{
 			return false;
 		}
@@ -12879,6 +12879,14 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 	if (isNoCapture())
 	{
 		if (pPlot->isEnemyCity(*this))
+		{
+			return false;
+		}
+	}
+
+	if (isAlwaysHostile(pPlot))
+	{
+		if (pPlot->isCity() && !atWar(getTeam(), pPlot->getTeam()))
 		{
 			return false;
 		}
