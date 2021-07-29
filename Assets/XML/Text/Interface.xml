@@ -1663,7 +1663,7 @@
 		<Spanish>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR</Tag>
+		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR_RELIGIOUS</Tag>
 		<English>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</English>
 		<French>Croisade contre : %s1_player (n&#233;cessite %d2_ReqNum votes sur %d3_TotNum)</French>
 		<German>Kreuzzug gegen %s1_player (Erfordert %d2_ReqNum on insgesamt %d3_TotNum Stimmen.)</German>
