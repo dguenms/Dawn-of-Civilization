@@ -811,12 +811,13 @@ class Congress:
 			if team(iClaimant).isVassal(iVoter): iFavorClaimant += 10
 			if team(iOwner).isVassal(iVoter): iFavorOwner += 10
 			
-			# French UP
-			if civ(iClaimant) == iFrance: iFavorClaimant += 10
-			if civ(iOwner) == iFrance: iFavorOwner += 10
+			if not plot.isCore(iOwner) or plot.isCore(iClaimant):
+				# French UP
+				if civ(iClaimant) == iFrance: iFavorClaimant += 10
+				if civ(iOwner) == iFrance: iFavorOwner += 10
 			
-			# Palace of Nations
-			if player(iClaimant).isHasBuildingEffect(iPalaceOfNations): iFavorClaimant += 10
+				# Palace of Nations
+				if player(iClaimant).isHasBuildingEffect(iPalaceOfNations): iFavorClaimant += 10
 			
 			# AI memory of human voting behavior
 			if player(iClaimant).isHuman() and iVoter in self.dVotingMemory: iFavorClaimant += 5 * self.dVotingMemory[iVoter]
