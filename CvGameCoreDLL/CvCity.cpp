@@ -19288,7 +19288,7 @@ int CvCity::getRebuildProduction() const
 	return iProduction;
 }
 
-void CvCity::completeAcquisition(int iCaptureGold)
+void CvCity::completeAcquisition(int iCaptureGold, bool bChooseProduction)
 {
 	int iOccupationTime = getOccupationTimer();
 	int iTotalBuildingDamage = getBuildingDamage();
@@ -19322,7 +19322,11 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		if (getPopulation() > getTotalPopulationLoss())
 		{
 			changePopulation(-getTotalPopulationLoss());
-			chooseProduction();
+
+			if (bChooseProduction)
+			{
+				chooseProduction();
+			}
 		}
 		else
 		{

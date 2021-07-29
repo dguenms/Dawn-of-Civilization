@@ -1152,7 +1152,7 @@ public:
 	int getPopulationLoss() const;
 	void setPopulationLoss(int iNewValue);
 
-	void completeAcquisition(int iCaptureGold);
+	void completeAcquisition(int iCaptureGold, bool bChooseProduction = true);
 
 	int getRebuildProduction() const;
 
