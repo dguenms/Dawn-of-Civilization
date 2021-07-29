@@ -824,7 +824,7 @@ class Congress:
 			if player(iOwner).isHuman() and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
 			
 		# if we don't dislike them, agree with the value of their claim
-		#if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
+		if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
 			
 		# French UP
 		if civ(iClaimant) == iFrance: iClaimValidity += 5
@@ -845,10 +845,10 @@ class Congress:
 			if iClaimantValue >= 90:
 				iClaimValidity += max(1, iClaimantValue / 100)
 
-			# Europeans support colonialism unless they want the plot for themselves
+			# Europeans support colonialism unless they want the plot for themselves (not against Western civs)
 			if civ(iVoter) in dCivGroups[iCivGroupEurope]:
 				if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
-					if not bOwner or civ(iOwner) not in dCivGroups[iCivGroupEurope]:
+					if not bOwner or civ(iOwner) not in dTechGroups[iTechGroupWestern]:
 						if plot.getSettlerValue(iVoter) < 90:
 							iClaimValidity += 10
 							
