@@ -7146,16 +7146,6 @@ void CvPlot::updateYield()
 				if (isBeingWorked())
 				{
 					pWorkingCity->changeBaseYieldRate(((YieldTypes)iI), (getYield((YieldTypes)iI) - iOldYield));
-					// Leoreth: catch the overflow bug
-					int iBaseYieldRate = pWorkingCity->getBaseYieldRate((YieldTypes)iI);
-					FAssert(iBaseYieldRate >= 0 && iBaseYieldRate <= 1000);
-					if (iBaseYieldRate < 0 || iBaseYieldRate > 1000) {
-						GC.getGame().logMsg("Overflow in (%d, %d) for CvPlot::updateYield()", pWorkingCity->getX(), pWorkingCity->getY());
-						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", pWorkingCity->getX(), pWorkingCity->getY(), L"CvPlot::updateYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-						GC.getGame().setAIAutoPlay(0);
-						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave();
-					}
 				}
 
 				pWorkingCity->AI_setAssignWorkDirty(true);
