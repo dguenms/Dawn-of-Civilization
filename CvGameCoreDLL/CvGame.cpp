@@ -2337,11 +2337,14 @@ void CvGame::update()
 		// Leoreth
 		if (getGameTurn() == getScenarioStartTurn() && GET_PLAYER(getActivePlayer()).getInitialBirthTurn() > getScenarioStartTurn())
 		{
-			setAIAutoPlay(1);
-		}
-		else if (getGameTurn() <= GET_PLAYER(getActivePlayer()).getInitialBirthTurn())
-		{
-			setAIAutoPlayCatapult(1);
+			int iInitialBirthTurn = GET_PLAYER(getActivePlayer()).getInitialBirthTurn();
+			int iScenarioStartTurn = getScenarioStartTurn();
+
+			int iTurnsUntilBirth = iInitialBirthTurn - iScenarioStartTurn;
+			if (iTurnsUntilBirth > 0)
+			{
+				setAIAutoPlay(iTurnsUntilBirth);
+			}
 		}
 	}
 }
@@ -3598,7 +3601,7 @@ void CvGame::reviveActivePlayer()
 		//Rhye - end
 
 		//GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)0), 0, 0); //Rhye
-		GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)GC.getInfoTypeForString("UNIT_CATAPULT")), 0, 0); //Rhye (catapult)
+		//GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)GC.getInfoTypeForString("UNIT_CATAPULT")), 0, 0); //Rhye (catapult)
 		//logMsg("init catapult in 00"); //Rhye
 	}
 }
@@ -4206,52 +4209,6 @@ void CvGame::setAIAutoPlay(int iNewValue)
 		}
 	}
 }
-
-//Rhye - start
-void CvGame::setAIAutoPlayCatapult(int iNewValue)
-{
-	int iOldValue;
-
-	iOldValue = getAIAutoPlay();
-
-	if (iOldValue != iNewValue)
-	{
-		m_iAIAutoPlay = std::max(0, iNewValue);
-
-		if ((iOldValue == 0) && (getAIAutoPlay() > 0))
-		{
-			CvPlot* pPlot = GC.getMapINLINE().plotINLINE(0, 0);
-			if (pPlot->isUnit()) {
-				GC.getMapINLINE().plotINLINE(0, 0)->getUnitByIndex(0)->kill(false);
-				for (int iI = 0; iI < MAX_PLAYERS; iI++)
-				{
-					if (GET_PLAYER((PlayerTypes)iI).isHuman())
-					{
-						GC.getMapINLINE().plotINLINE(0, 0)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(0, 1)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(1, 0)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(1, 1)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(123, 0)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(123, 1)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(2, 0)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(2, 1)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(2, 2)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(1, 2)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(0, 2)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(123, 2)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(122, 2)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(122, 1)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-						GC.getMapINLINE().plotINLINE(122, 0)->setRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false, false, NO_TEAM, true);
-					}
-				}
-			}
-			else {
-				logMsg("NO UNIT IN 0,0!!!"); //Rhye
-			}
-		}
-	}
-}
-//Rhye - end
 
 
 void CvGame::changeAIAutoPlay(int iChange)

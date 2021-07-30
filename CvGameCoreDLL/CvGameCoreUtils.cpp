@@ -2743,7 +2743,6 @@ void logMajorError(CvWString message, int iX, int iY)
 	log(message);
 	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), message, "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), iX, iY, true, true);
 	GC.getGameINLINE().setAIAutoPlay(0);
-	GC.getGameINLINE().setAIAutoPlayCatapult(0);
 }
 
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization)

@@ -11474,13 +11474,6 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 		iNewYield += std::min(25, getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
 	}
 
-	FAssert(iNewYield >= 0 && iNewYield <= 1000);
-	if (iNewYield > 1000 || iNewYield < -1000)
-	{
-		GC.getGameINLINE().logMsg("OVERFLOW: x=%d, y=%d", getX(), getY());
-		GC.getGameINLINE().setAIAutoPlayCatapult(0);
-	}
-
 	if (iOldYield != iNewYield)
 	{
 		m_aiCorporationYield[eIndex] = iNewYield;

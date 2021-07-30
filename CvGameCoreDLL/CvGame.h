@@ -251,7 +251,6 @@ public:
 
 	int getAIAutoPlay();																				// Exposed to Python
 	DllExport void setAIAutoPlay(int iNewValue);																// Exposed to Python
-	void setAIAutoPlayCatapult(int iNewValue); //Rhye
 	void changeAIAutoPlay(int iChange);
 
 	DllExport unsigned int getInitialTime();
