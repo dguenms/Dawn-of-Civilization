@@ -2333,19 +2333,6 @@ void CvGame::update()
 			gDLL->getInterfaceIFace()->setInAdvancedStart(true);
 			gDLL->getInterfaceIFace()->setWorldBuilder(true);
 		}
-		
-		// Leoreth
-		if (getGameTurn() == getScenarioStartTurn() && GET_PLAYER(getActivePlayer()).getInitialBirthTurn() > getScenarioStartTurn())
-		{
-			int iInitialBirthTurn = GET_PLAYER(getActivePlayer()).getInitialBirthTurn();
-			int iScenarioStartTurn = getScenarioStartTurn();
-
-			int iTurnsUntilBirth = iInitialBirthTurn - iScenarioStartTurn;
-			if (iTurnsUntilBirth > 0)
-			{
-				setAIAutoPlay(iTurnsUntilBirth);
-			}
-		}
 	}
 }
 

@@ -46,6 +46,15 @@ def setup():
 		if unit:
 			interface.selectUnit(unit, True, False, False)
 
+@handler("GameStart")
+def startAutoplay():
+	iBirthTurn = year(dSpawn[active()])
+	iScenarioStartTurn = scenarioStartTurn()
+	
+	iAutoplayTurns = iBirthTurn - iScenarioStartTurn
+	if iAutoplayTurns > 0:
+		game.setAIAutoPlay(iAutoplayTurns)
+
 @handler("combatResult")
 def restoreDefeatedUnitDuringSpawn(winningUnit, losingUnit):
 	iLosingPlayer = losingUnit.getOwner()
