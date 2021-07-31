@@ -303,6 +303,7 @@ void CyGamePythonInterface()
 		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
 
 		.def("autosave", &CyGame::autosave, "void ()")
+		.def("initialSave", &CyGame::initialSave, "void ()")
 
 		.def("incrementBuildingClassCreatedCount", &CyGame::incrementBuildingClassCreatedCount, "void (int iBuildingClass)")
 

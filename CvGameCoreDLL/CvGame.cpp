@@ -2288,7 +2288,7 @@ void CvGame::update()
 		if (getTurnSlice() == 0)
 		{
 			// edead: disable autosave during autoplay
-			if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < GET_PLAYER(getActivePlayer()).getInitialBirthTurn())))
+			if (GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0 || (getGameTurn() > 0 && getAIAutoPlay() == 0))
 			{
 				gDLL->getEngineIFace()->AutoSave(true);
 			}
@@ -10498,9 +10498,9 @@ void CvGame::changeYResolution(int iChange)
 	setYResolution(getYResolution() + iChange);
 }
 
-void CvGame::autosave()
+void CvGame::autosave(bool bInitial)
 {
-	gDLL->getEngineIFace()->AutoSave();
+	gDLL->getEngineIFace()->AutoSave(bInitial);
 }
 
 bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)

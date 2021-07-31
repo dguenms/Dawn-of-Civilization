@@ -314,6 +314,7 @@ public:
 	bool isGreatPersonBorn(std::wstring sName);
 
 	void autosave();
+	void initialSave();
 
 	void incrementBuildingClassCreatedCount(int iBuildingClass);
 

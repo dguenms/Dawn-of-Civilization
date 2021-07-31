@@ -190,6 +190,11 @@ def preparePlayerCapital(iGameTurn, iCurrentPlayer):
 	for plot in plots.surrounding(tCapital, radius=15).without(tCapital).land(): # must include the distance from Sogut to the Caspius
 		for unit in units.at(plot).owner(iPlayer):
 			move(unit, tCapital)
+
+@handler("birth")
+def initialSave(iPlayer):
+	if active() == iPlayer:
+		game.initialSave()
 			
 @handler("birth")
 def germanSpawn(iPlayer):
