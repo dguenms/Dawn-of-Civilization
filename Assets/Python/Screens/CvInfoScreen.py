@@ -2113,7 +2113,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < dBirth[iActivePlayer]):
+					if (tActivePlayer.isHasTech(iCalendar) or game.getAIAutoPlay() > 0):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
