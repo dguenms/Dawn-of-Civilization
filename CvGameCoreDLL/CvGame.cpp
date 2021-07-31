@@ -6232,7 +6232,7 @@ void CvGame::doTurn()
 	stopProfilingDLL();
 
 	// edead: disable autosave during autoplay
-	if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < GET_PLAYER(getActivePlayer()).getInitialBirthTurn())))
+	if (GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0 || (getGameTurn() > 0 && getAIAutoPlay() == 0))
 	{
 		gDLL->getEngineIFace()->AutoSave();
 	}
