@@ -3460,9 +3460,6 @@ class Some(BaseGoal):
 	def deactivate(self):
 		super(Some, self).deactivate()
 		self.goal.deactivate()
-
-	def registerHandlers(self):
-		self.goal.registerHandlers()
 	
 	def setState(self, state):
 		super(Some, self).setState(state)
