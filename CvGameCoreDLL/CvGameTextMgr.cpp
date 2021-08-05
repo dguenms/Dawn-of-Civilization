@@ -248,11 +248,11 @@ void CvGameTextMgr::setDateStr(CvWString& szString, int iGameTurn, bool bSave, C
 //Rhye - start
 void CvGameTextMgr::setDateStrPlayer(CvWString& szString, int iGameTurn, bool bSave, CalendarTypes eCalendar, int iStartYear, GameSpeedTypes eSpeed, PlayerTypes ePlayer)
 {
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < GET_PLAYER(ePlayer).getInitialBirthTurn())
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || GC.getGameINLINE().getAIAutoPlay() > 0)
 		setDateStr(szString, iGameTurn, bSave, eCalendar, iStartYear, eSpeed);
-	else if (GET_PLAYER(ePlayer).getCurrentEra() >= 3)
+	else if (GET_PLAYER(ePlayer).getCurrentEra() >= ERA_RENAISSANCE)
 		szString = gDLL->getText("TXT_KEY_AGE_RENAISSANCE");
-	else if (GET_PLAYER(ePlayer).getCurrentEra() == 2)
+	else if (GET_PLAYER(ePlayer).getCurrentEra() == ERA_MEDIEVAL)
 		szString = gDLL->getText("TXT_KEY_AGE_MEDIEVAL");
 	else if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)BLOOMERY))
 		szString = gDLL->getText("TXT_KEY_AGE_IRON");
