@@ -1,4 +1,5 @@
 from Consts import *
+from Core import *
 from Events import events, handler
 from CvPythonExtensions import *
 
@@ -152,13 +153,11 @@ def onGameStart():
 	#Rhye - dawn of map must appear in late starts too
 	#if (gc.getGame().getGameTurnYear() == gc.getDefineINT("START_YEAR") and not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
 	if (gc.getGame().getStartEra() == gc.getDefineINT("STANDARD_ERA") or gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
-		for iPlayer in range(gc.getMAX_PLAYERS()):
-			player = gc.getPlayer(iPlayer)
-			if (player.isAlive() and player.isHuman()):
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
-				popupInfo.setText(u"showDawnOfMan")
-				popupInfo.addPopup(iPlayer)
+		if year(dBirth[active()]) <= scenarioStartTurn():
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+			popupInfo.setText(u"showDawnOfMan")
+			popupInfo.addPopup(active())
 	else:
 		CyInterface().setSoundSelectionReady(true)
 

@@ -6,9 +6,7 @@ def null(cls, name, *args, **kwargs):
 		cls.__init__(self, *args, **kwargs)
 	
 	def __call__(self, *args, **kwargs):
-		iValue = 0
-		print "call with result: %d" % iValue
-		return iValue
+		return 0
 	
 	def __getattribute__(self, name):
 		return self

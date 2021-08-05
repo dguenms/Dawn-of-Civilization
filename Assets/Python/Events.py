@@ -46,7 +46,6 @@ def reset_victory_handlers():
 	for event, handlers in victory_handlers.items():
 		for handler in handlers:
 			if events.hasEventHandler(event, handler):
-				print "unregister (%s, %s)" % (event, handler)
 				events.removeEventHandler(event, handler)
 	
 	victory_handlers = appenddict()

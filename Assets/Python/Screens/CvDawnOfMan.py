@@ -24,6 +24,8 @@ class CvDawnOfMan:
 	def __init__(self, iScreenID):
 		self.iScreenID = iScreenID
 		
+		self.iLastTurn = -1
+		
 		self.X_SCREEN = 0
 		self.Y_SCREEN = 0
 		self.W_SCREEN = 1024
@@ -165,32 +167,32 @@ class CvDawnOfMan:
 		return 0
 	
 	def update(self, fDelta):
-##Rhye - begin
-		iActivePlayer = CyGame().getActivePlayer()
-		if year(dBirth[iActivePlayer]) <= scenarioStartTurn():
-			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
-			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
-			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-			screen.show( "Exit" )  #Rhye
-		else:
-			iGameTurn = CyGame().getGameTurn()
-
-			iNumAutoPlayTurns = year(dBirth[iActivePlayer])
-			iNumTurnsRemaining = iNumAutoPlayTurns - iGameTurn
-			
-			#if (iNumTurnsRemaining != self.iTurnsRemaining):
-			#	self.iTurnsRemaining = iNumTurnsRemaining
-			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
-
-			exponent = 1 + iNumAutoPlayTurns/turns(190)
-			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-scenarioStartTurn(), exponent)) / float(math.pow(iNumAutoPlayTurns-scenarioStartTurn(), exponent)))
-			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (max(0,iNumTurnsRemaining),)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-			if (iNumTurnsRemaining <= 0):  #Rhye
-				screen.show( "Exit" )  #Rhye
+		iActivePlayer = active()
+		iGameTurn = game.getGameTurn()
 		
-##Rhye - end
-		return
-	    
+		if iGameTurn <= self.iLastTurn:
+			return
+		
+		self.iLastTurn = iGameTurn
+		
+		iBirthTurn = year(dBirth[iActivePlayer])
+		iTotalAutoplay = iBirthTurn - scenarioStartTurn()
+		
+		iAutoplayRemaining = game.getAIAutoPlay()
+		iAutoplayElapsed = iTotalAutoplay - iAutoplayRemaining
+		
+		if iAutoplayRemaining > 0:
+			exponent = 1 + 1.0 * iTotalAutoplay / turns(190)
+			fBarPercentage = float(math.pow(iAutoplayElapsed, exponent)) / float(math.pow(iTotalAutoplay, exponent))
+		else:
+			fBarPercentage = 1.0
+		
+		screen = CyGInterfaceScreen("CvLoadingScreen", self.iScreenID)
+		screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, fBarPercentage)
+		screen.setLabel("Text", "", text("TXT_KEY_AUTOPLAY_TURNS_REMAINING", iAutoplayRemaining), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		
+		if iAutoplayRemaining <= 0:
+			screen.show("Exit")
 		
 	def onClose(self):
 		#CyInterface().DoSoundtrack("AS2D_R_F_C") #Rhye

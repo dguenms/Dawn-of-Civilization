@@ -16,6 +16,7 @@ import Modifiers
 import CvEspionageAdvisor
 import BugCore
 import Periods as periods
+import CvScreensInterface
 from Events import events, handler, popup_handler
 
 from Locations import *
@@ -45,15 +46,23 @@ def setup():
 		unit = units.at(plots.capital(iEgypt)).type(iSettler).one()
 		if unit:
 			interface.selectUnit(unit, True, False, False)
-
+			
 @handler("GameStart")
 def startAutoplay():
+	#CvScreensInterface.dawnOfMan.interfaceScreen()
+	#CvDawnOfMan.CvDawnOfMan(DAWN_OF_MAN).interfaceScreen()
+
 	iBirthTurn = year(dSpawn[active()])
 	iScenarioStartTurn = scenarioStartTurn()
-	
+
 	iAutoplayTurns = iBirthTurn - iScenarioStartTurn
 	if iAutoplayTurns > 0:
 		game.setAIAutoPlay(iAutoplayTurns)
+
+@handler("BeginGameTurn")
+def showDawnOfMan(iGameTurn):
+	if iGameTurn == scenarioStartTurn() and game.getAIAutoPlay() > 0 and data.iBeforeObserverSlot == -1:
+		CvScreensInterface.dawnOfMan.interfaceScreen()
 
 @handler("combatResult")
 def restoreDefeatedUnitDuringSpawn(winningUnit, losingUnit):
