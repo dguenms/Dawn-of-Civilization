@@ -580,5 +580,8 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_80</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_81</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

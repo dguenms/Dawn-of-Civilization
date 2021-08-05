@@ -70,7 +70,7 @@ def restoreDefeatedUnitDuringSpawn(winningUnit, losingUnit):
 def checkInitBetrayal():
 	initBetrayal()
 
-# TODO: this is bad and need to be rewritten
+# TODO: this is bad and needs to be rewritten
 def initBetrayal():
 	if data.iBetrayalTurns > 0:
 		iFlipPlayer = data.iFlipNewPlayer
@@ -285,7 +285,7 @@ new_civ_switch = popup.text("TXT_KEY_INTERFACE_NEW_CIV_SWITCH") \
 					  .build()
 
 def startNewCivSwitchEvent(iPlayer):
-	if MainOpt.isSwitchPopup():
+	if MainOpt.isSwitchPopup() and data.iBeforeObserverSlot == -1:
 		new_civ_switch.text(adjective(iPlayer)).cancel().handleNewCiv().launch(iPlayer)
 		
 ### Utility methods ###
@@ -675,6 +675,9 @@ class RiseAndFall:
 	def initBirth(self, iBirthYear, iPlayer): # iBirthYear is really year now, so no conversion prior to function call - edead
 		iBirthYear = year(iBirthYear) # converted to turns here - edead
 		iCiv = civ(iPlayer)
+		
+		if active() == iPlayer and data.iBeforeObserverSlot != -1:
+			return
 		
 		if iCiv in lSecondaryCivs:
 			if not player(iPlayer).isHuman() and not data.isCivEnabled(iCiv):

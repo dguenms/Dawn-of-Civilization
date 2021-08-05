@@ -3273,6 +3273,38 @@
 		<Spanish>(currently in %D1_Change cities)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_OBSERVER_MODE_HEADER</Tag>
+		<English>Start Observer Mode</English>
+		<French>Start Observer Mode</French>
+		<German>Start Observer Mode</German>
+		<Italian>Start Observer Mode</Italian>
+		<Spanish>Start Observer Mode</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_OBSERVER_MODE_BODY</Tag>
+		<English>Enter end date:</English>
+		<French>Enter end date:</French>
+		<German>Enter end date:</German>
+		<Italian>Enter end date:</Italian>
+		<Spanish>Enter end date:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CIV_SWITCH_HEADER</Tag>
+		<English>Switch Civilization</English>
+		<French>Switch Civilization</French>
+		<German>Switch Civilization</German>
+		<Italian>Switch Civilization</Italian>
+		<Spanish>Switch Civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CIV_SWITCH_BODY</Tag>
+		<English>Select Civilization to play:</English>
+		<French>Select Civilization to play:</French>
+		<German>Select Civilization to play:</German>
+		<Italian>Select Civilization to play:</Italian>
+		<Spanish>Select Civilization to play:</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

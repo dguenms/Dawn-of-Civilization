@@ -978,6 +978,14 @@
 		<Spanish>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_81</Tag>
+		<English>Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</English>
+		<French>Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</French>
+		<German>Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</German>
+		<Italian>Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</Italian>
+		<Spanish>Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_</Tag>
 		<English></English>
 		<French></French>

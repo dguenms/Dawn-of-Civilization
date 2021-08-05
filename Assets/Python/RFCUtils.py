@@ -1522,3 +1522,22 @@ def paintPlots(plots, index=1000, color="COLOR_CYAN"):
 	engine.clearAreaBorderPlots(1000)
 	for plot in plots:
 		engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_CYAN", 0.7)
+
+
+def startObserverMode(iTurns):
+	data.iBeforeObserverSlot = active()
+	iObserverSlot = player(iHarappa).isAlive() and slot(iPolynesia) or slot(iHarappa)
+	
+	makeUnit(iObserverSlot, iCatapult, (0, 0))
+	
+	game.setActivePlayer(iObserverSlot, False)
+	game.setAIAutoPlay(iTurns)
+	
+
+def endObserverMode():
+	if data.iBeforeObserverSlot != -1:
+		if player(data.iBeforeObserverSlot).isAlive():
+			game.setActivePlayer(data.iBeforeObserverSlot, False)
+			data.iBeforeObserverSlot = -1
+		else:
+			makeUnit(active(), iCatapult, (0, 0))

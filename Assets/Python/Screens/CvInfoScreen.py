@@ -2113,7 +2113,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or game.getAIAutoPlay() > 0):
+					if tActivePlayer.isHasTech(iCalendar):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2907,11 +2907,11 @@ class CvInfoScreen:
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
-		if tPlayer.isHasTech(iCalendar) or iYear < dBirth[iPlayer]:  
+		if tPlayer.isHasTech(iCalendar) or game.getAIAutoPlay() > 0:  
 			if iYear < 0:
-			    return localText.getText("TXT_KEY_TIME_BC", (-iYear,))
+				return localText.getText("TXT_KEY_TIME_BC", (-iYear,))
 			else:
-			    return localText.getText("TXT_KEY_TIME_AD", (iYear,))	 
+				return localText.getText("TXT_KEY_TIME_AD", (iYear,))	 
 		elif iYear >= 1500:
 			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
 		elif iYear >= 450:
@@ -2922,8 +2922,6 @@ class CvInfoScreen:
 			return localText.getText("TXT_KEY_AGE_BRONZE", ())    
 		else:
 			return localText.getText("TXT_KEY_AGE_STONE", ())    
-		#Rhye - end
-
 
 	def lineName(self,i):
 		return self.LINE_ID + str(i)

@@ -183,6 +183,8 @@ class GameData:
 		self.iBetrayalTurns = 0
 		self.iRebelCiv = 0
 		
+		self.iBeforeObserverSlot = -1
+		
 		self.lFlippingUnits = []
 		
 		self.bAlreadySwitched = False
