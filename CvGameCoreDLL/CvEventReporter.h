@@ -149,6 +149,7 @@ public:
 	void xmlLoaded(); // Leoreth
 	void fontsLoaded(); // Leoreth
 	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void autoplayEnded(); // Leoreth
 
 	DllExport void preSave();
 

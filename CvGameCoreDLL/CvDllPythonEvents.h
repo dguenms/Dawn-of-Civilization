@@ -119,6 +119,7 @@ public:
 	void reportXMLLoaded(); // Leoreth
 	void reportFontsLoaded(); // Leoreth
 	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void reportAutoplayEnded(); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

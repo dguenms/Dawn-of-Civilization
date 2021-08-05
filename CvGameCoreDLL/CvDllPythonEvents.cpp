@@ -1446,6 +1446,17 @@ void CvDllPythonEvents::reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldC
 	}
 }
 
+// Leoreth: autoplay ended
+void CvDllPythonEvents::reportAutoplayEnded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("autoplayEnded");
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

@@ -525,6 +525,12 @@ void CvEventReporter::civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, Ci
 	m_kPythonEventMgr.reportCivicChanged(ePlayer, eOldCivic, eNewCivic);
 }
 
+// Leoreth: autoplay ended
+void CvEventReporter::autoplayEnded()
+{
+	m_kPythonEventMgr.reportAutoplayEnded();
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

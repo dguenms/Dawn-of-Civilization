@@ -4194,6 +4194,11 @@ void CvGame::setAIAutoPlay(int iNewValue)
 			GET_PLAYER(getActivePlayer()).killUnits();
 			GET_PLAYER(getActivePlayer()).killCities();
 		}
+
+		if (getAIAutoPlay() == 0)
+		{
+			CvEventReporter::getInstance().autoplayEnded();
+		}
 	}
 }
 
