@@ -213,11 +213,6 @@ def createStartingUnits():
 	}
 	
 	scenarioStartingUnitFuncs[scenario()]()
-	
-	if dBirth[active()] > scenarioStartYear():
-		capital = plots.capital(active())
-		makeUnit(active(), iSettler, capital)
-		makeUnit(active(), iMilitia, capital)
 
 def create3000BCstartingUnits():
 	if data.isCivEnabled(iHarappa) or player(iHarappa).isHuman():
