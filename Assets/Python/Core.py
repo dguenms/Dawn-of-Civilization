@@ -17,6 +17,7 @@ import types
 
 from sets import Set
 from itertools import groupby
+from datetime import datetime
 
 from BugEventManager import g_eventManager as events
 
@@ -35,6 +36,11 @@ irregular_plurals = {
 	"Great Statesman": "Great Statesmen",
 	"cathedral of your state religion": "cathedrals of your state religion",
 }
+
+
+def current_time():
+	return datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+
 
 def unique(iterable):
 	return [key for key, value in groupby(iterable)]
