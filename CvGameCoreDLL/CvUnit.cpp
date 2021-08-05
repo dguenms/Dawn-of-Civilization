@@ -6790,8 +6790,6 @@ bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMi
 
 	iExperience /= 100;
 
-	log(CvWString::format(L"Spy experience for mission %s: difficulty was %d, experience is %d", GC.getEspionageMissionInfo(eMission).getText(), iDifficulty, iExperience));
-
 	changeExperience(iExperience);
 	testPromotionReady();
 

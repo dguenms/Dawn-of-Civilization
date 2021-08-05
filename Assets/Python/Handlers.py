@@ -1,6 +1,8 @@
 import StoredData
 import Setup
 
+import ScreensHandler
+
 import SettlerMaps
 import WarMaps
 import RegionMap
@@ -27,7 +29,6 @@ import Religions
 import Resources
 import RiseAndFall
 import Rules
-import ScreensHandler
 import Shortcuts
 import Stability
 import UniquePowers
