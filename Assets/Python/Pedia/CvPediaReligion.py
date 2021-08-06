@@ -2,6 +2,8 @@ from CvPythonExtensions import *
 import CvUtil
 import string
 
+import Victories
+
 from Consts import *
 from RFCUtils import *
 
