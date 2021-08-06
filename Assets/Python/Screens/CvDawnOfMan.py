@@ -24,8 +24,6 @@ class CvDawnOfMan:
 	def __init__(self, iScreenID):
 		self.iScreenID = iScreenID
 		
-		self.iLastTurn = -1
-		
 		self.X_SCREEN = 0
 		self.Y_SCREEN = 0
 		self.W_SCREEN = 1024
@@ -169,11 +167,6 @@ class CvDawnOfMan:
 	def update(self, fDelta):
 		iActivePlayer = active()
 		iGameTurn = game.getGameTurn()
-		
-		if iGameTurn <= self.iLastTurn:
-			return
-		
-		self.iLastTurn = iGameTurn
 		
 		iBirthTurn = year(dBirth[iActivePlayer])
 		iTotalAutoplay = iBirthTurn - scenarioStartTurn()
