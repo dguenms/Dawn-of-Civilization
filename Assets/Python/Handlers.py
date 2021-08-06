@@ -1,8 +1,6 @@
 import StoredData
 import Setup
 
-import ScreensHandler
-
 import SettlerMaps
 import WarMaps
 import RegionMap
@@ -12,6 +10,7 @@ import Modifiers
 import AIParameters
 
 import Scenarios
+import ScreensHandler
 
 import AIWars
 import Barbs

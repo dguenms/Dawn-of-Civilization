@@ -150,7 +150,7 @@ dGoals = {
 		EraFirstDiscovered((iGlobal, 8), (iDigital, 8)),
 	),
 	iVikings: (
-		Any(Control(*list(plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if dSpawn[iCiv] <= 1050))).named("ANY_EUROPEAN_CORE").at(1050),
+		Any(Control(*list(plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iVikings and dSpawn[iCiv] <= 1050))).named("ANY_EUROPEAN_CORE").at(1050),
 		FirstSettle(plots.regions(*lAmerica).named("AMERICA")).allowed(dCivGroups[iCivGroupAmerica]).by(1100),
 		RaidGold(3000).by(1500),
 	),

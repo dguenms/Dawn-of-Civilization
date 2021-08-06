@@ -2654,7 +2654,7 @@ class Trigger(Condition):
 	
 		def checkFirstSettled(self, city):
 			if city in self.arguments.subject:
-				if self.arguments.subject.cities().without(city).none(lambda city: civ(city.getOriginalOwner()) not in self.lAllowedCivs):
+				if self.arguments.subject.cities().without(city).none(lambda city: not is_minor(city) and civ(city.getOriginalOwner()) not in self.lAllowedCivs):
 					self.complete()
 		
 		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
