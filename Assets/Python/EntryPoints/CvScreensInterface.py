@@ -913,6 +913,9 @@ def getVictoryTooltip(argsList):
 # Leoreth
 def getHistoricalVictoryDescriptions(argsList):
 	iCiv = argsList[0]
+	if iCiv not in Victories.dHistoricalGoals:
+		return ""
+	
 	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dHistoricalGoals[iCiv])
 		
 def getCityName(argsList):
