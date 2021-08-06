@@ -1669,7 +1669,7 @@ class Condition(BaseGoal):
 		def condition(self, *objectives):
 			return isCommunist(self.iPlayer)
 		
-		return cls.desc("COMMUNIST").progr("COMMUNIST").func(condition).subclass("Communist")
+		return cls.desc("COMMUNIST").progr("COMMUNIST").func(condition).turnly.subclass("Communist")
 	
 	@classproperty
 	def noForeignCities(cls):
