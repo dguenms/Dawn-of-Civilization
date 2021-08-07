@@ -18,9 +18,9 @@ lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
 
 dGoals = {
 	iEgypt: (
-		PlayerCulture(500).by(-850),
+		PlayerCulture(500).at(-850),
 		Wonders(iPyramids, iGreatLibrary, iGreatLighthouse).by(-100),
-		PlayerCulture(5000).by(170),
+		PlayerCulture(5000).at(170),
 	),
 	iBabylonia: (
 		FirstDiscovered(iConstruction, iArithmetics, iWriting, iCalendar, iContract),
