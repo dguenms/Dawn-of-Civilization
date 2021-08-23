@@ -272,4 +272,11 @@
 		<InterfaceVisibilityType>INTERFACE_HIDE</InterfaceVisibilityType>
 		<InterfaceVisibilityType>INTERFACE_HIDE_ALL</InterfaceVisibilityType>
 	</InterfaceVisibilityTypes>
+	<ImpactTypes>
+		<ImpactType>IMPACT_MARGINAL</ImpactType>
+		<ImpactType>IMPACT_LIMITED</ImpactType>
+		<ImpactType>IMPACT_SIGNIFICANT</ImpactType>
+		<ImpactType>IMPACT_CRITICAL</ImpactType>
+		<ImpactType>IMPACT_PLAYER</ImpactType>
+	</ImpactTypes>
 </Civ4Types>

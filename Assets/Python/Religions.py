@@ -1,7 +1,8 @@
 from RFCUtils import *
-from Events import handler, popup_handler
 from Locations import *
 from Core import *
+
+from Events import handler, popup_handler
 
 
 # initialise coordinates

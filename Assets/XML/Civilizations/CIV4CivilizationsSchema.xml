@@ -428,6 +428,7 @@
 		<element type="Leader" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="Identifier" content="textOnly"/>
+	<ElementType name="Impact" content="textOnly"/>
 	<ElementType name="StartingYear" content="textOnly" dt:type="int"/>
 	<ElementType name="LoadingTime" content="textOnly" dt:type="int"/>
 	<ElementType name="LoadingTimes" content="eltOnly">
@@ -460,6 +461,7 @@
 		<element type="ArtStyleType"/>
 		<element type="UnitArtStyleType" minOccurs="0" maxOccurs="1"/>
 		<element type="PaganReligion" minOccurs="0"/>
+		<element type="Impact" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Identifier"/> <!-- Leoreth -->
 		<element type="StartingYear"/> <!-- Leoreth -->
 		<element type="LoadingTimes"/> <!-- Leoreth -->

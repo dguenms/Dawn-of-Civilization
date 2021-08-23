@@ -4582,7 +4582,7 @@ class CvMainInterface:
 					screen.show("SatelliteLimitText")
 				
 				iIndicatorOffset += 40
-				if pHeadSelectedCity.isCore(pHeadSelectedCity.getOwner()):
+				if pHeadSelectedCity.isOwnerCore():
 					iAdministration = calculateAdministration(pHeadSelectedCity)
 					szBuffer = localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR)))
 					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)

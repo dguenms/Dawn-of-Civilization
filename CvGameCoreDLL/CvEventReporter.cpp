@@ -490,9 +490,9 @@ void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
 }
 
 // Leoreth: release player
-void CvEventReporter::releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+void CvEventReporter::releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
-	m_kPythonEventMgr.reportReleasedPlayer(ePlayer, eReleasedPlayer);
+	m_kPythonEventMgr.reportReleasedCivilization(ePlayer, eReleasedCivilization);
 }
 
 // Leoreth: blockade a city
@@ -529,6 +529,18 @@ void CvEventReporter::civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, Ci
 void CvEventReporter::autoplayEnded()
 {
 	m_kPythonEventMgr.reportAutoplayEnded();
+}
+
+// Leoreth: player civilization assigned
+void CvEventReporter::playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
+{
+	m_kPythonEventMgr.reportPlayerCivAssigned(ePlayer, eNewCivilization);
+}
+
+// Leoreth: player destroyed
+void CvEventReporter::playerDestroyed(PlayerTypes ePlayer)
+{
+	m_kPythonEventMgr.reportPlayerDestroyed(ePlayer);
 }
 
 void CvEventReporter::preSave()

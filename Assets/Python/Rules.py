@@ -37,7 +37,7 @@ def restoreCapital(iOwner, iPlayer, city):
 	
 	capital = plots.capital(iPlayer)
 	
-	if data.players[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
+	if data.civs[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
 		capital = plots.respawnCapital(iPlayer)
 		
 	if at(city, capital):
@@ -73,7 +73,7 @@ def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
 		if at(plot, city):
 			convertTemporaryCulture(plot, iPlayer, 25, False)
-		elif plot.getOwner() == city.getPreviousOwner():
+		elif civ(plot) == city.getPreviousCiv():
 			convertTemporaryCulture(plot, iPlayer, 50, True)
 		else:
 			convertTemporaryCulture(plot, iPlayer, 25, True)
@@ -150,7 +150,6 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 			if city:
 				iFood = scale(5)
 				city.changeFood(iFood)
-				data.iTeotlFood += iFood
 				
 				message(iWinner, 'TXT_KEY_MAYA_HOLKAN_EFFECT', adjective(losingUnit), losingUnit.getName(), iFood, city.getName())
 				
@@ -253,7 +252,7 @@ def updateLastTurnAlive(iPlayer, bAlive):
 		return
 
 	if not bAlive and not (player(iPlayer).isHuman() and autoplay()):
-		data.players[iPlayer].iLastTurnAlive = game.getGameTurn()
+		data.civs[iPlayer].iLastTurnAlive = game.getGameTurn()
 
 
 ### IMPLEMENTATIONS ###

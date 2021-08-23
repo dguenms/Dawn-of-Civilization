@@ -27,16 +27,16 @@ dPeriods1700AD = {
 
 
 def setPeriod(iCiv, iPeriod):
-	if not player(iCiv).isAlive():
-		return
-		
-	if player(iCiv).getPeriod() == iPeriod:
+	if game.getPeriod(iCiv) == iPeriod:
 		return
 
-	player(iCiv).setPeriod(iPeriod)
+	game.setPeriod(iCiv, iPeriod)
+	
+	events.fireEvent("periodChange", iCiv, iPeriod)
 	
 	iPlayer = slot(iCiv)
-	events.fireEvent("periodChange", iPlayer, iPeriod)
+	if iPlayer >= 0:
+		events.fireEvent("playerPeriodChange", iPlayer, iPeriod)
 
 
 def evacuate(iPlayer):

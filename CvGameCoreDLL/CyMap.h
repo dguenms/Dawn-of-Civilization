@@ -96,6 +96,8 @@ public:
 	int maxStepDistance();
 	int maxPlotDistance();
 
+	int getScenario();
+
 protected:
 	CvMap* m_pMap;
 };

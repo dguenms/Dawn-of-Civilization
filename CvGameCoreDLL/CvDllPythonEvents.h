@@ -113,13 +113,15 @@ public:
 
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
-	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
+	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 	void reportXMLLoaded(); // Leoreth
 	void reportFontsLoaded(); // Leoreth
 	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
 	void reportAutoplayEnded(); // Leoreth
+	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void reportPlayerDestroyed(PlayerTypes ePlayer); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

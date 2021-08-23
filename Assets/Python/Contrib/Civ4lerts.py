@@ -972,7 +972,11 @@ class RefusesToTalk(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 		
 	def onDealCanceled(self, argsList):
 		eOfferPlayer, eTargetPlayer, pTrade = argsList
@@ -998,6 +1002,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowRefusesToTalkAlert()):
 			return
 		if len(self.refusals) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer, activePlayer = PlayerUtil.getActivePlayerAndID()
 		refusals = self.refusals[eActivePlayer]
@@ -1052,7 +1058,11 @@ class WorstEnemy(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 	
 	def onVassalState(self, argsList):
 		eMaster, eVassal, bVassal = argsList
@@ -1076,6 +1086,8 @@ class WorstEnemy(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowWorstEnemyAlert()):
 			return
 		if len(self.enemies) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer = PlayerUtil.getActivePlayerID()
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()

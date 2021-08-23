@@ -1634,7 +1634,7 @@ class Condition(BaseGoal):
 	@classproperty
 	def settle(cls):
 		def settled(self, city):
-			return city.getOwner() == self.iPlayer and city.getOriginalOwner() == self.iPlayer
+			return city.getOwner() == self.iPlayer and city.isOriginalOwner(self.iPlayer)
 		
 		def checkCityBuilt(self, city):
 			if any(city in area for area in self.values):
@@ -2187,7 +2187,7 @@ class Count(BaseGoal):
 	@classproperty
 	def settledCities(cls):
 		def settled(self, cities):
-			return cities.owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer)
+			return cities.owner(self.iPlayer).where(lambda city: city.isOriginalOwner(self.iPlayer))
 		
 		return cls.desc("SETTLED_CITY_COUNT").progr("SETTLED_CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(settled).checked("cityBuilt").checked("cityAcquiredAndKept").subclass("SettledCityCount")
 	
@@ -2644,7 +2644,7 @@ class Trigger(Condition):
 		return bool(self.dCondition[self.process_objectives(arguments)])
 	
 	def completable(self, *arguments):
-		return self.dCondition[self.key(*arguments)] is None
+		return not self.failed() and self.dCondition[self.key(*arguments)] is None
 		
 	def complete(self, *arguments):
 		if self.completable(*arguments):
@@ -2704,13 +2704,30 @@ class Trigger(Condition):
 		def allowed(self, lCivs):
 			self.lAllowedCivs = lCivs
 			return self
+		
+		def isAllowedCity(self, city):
+			if is_minor(city):
+				return True
+			
+			if civ(city) in self.lAllowedCivs:
+				return True
+			
+			return False
+		
+		def settleArea(self):
+			return self.arguments.subject
 	
 		def checkFirstSettled(self, city):
-			if city in self.arguments.subject:
-				if self.arguments.subject.cities().without(city).none(lambda city: not is_minor(city) and not is_minor(city.getOriginalOwner()) and civ(city.getOriginalOwner()) not in self.lAllowedCivs):
+			if self.isAllowedCity(city):
+				return
+				
+			if city in self.settleArea():
+				if city.getOwner() == self.iPlayer:
 					self.complete()
+				else:
+					self.fail()
 		
-		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
+		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed, isAllowedCity, settleArea).any("cityBuilt", checkFirstSettled).subclass("FirstSettle")
 	
 	@classproperty
 	def discover(cls):

@@ -1,6 +1,31 @@
+from Core import *
 from unittest import *
 
+from Slots import findSlot, addPlayer
+
 import cPickle as pickle
+
+
+bSetupComplete = False
+
+
+def setup():
+	global bSetupComplete
+	if bSetupComplete:
+		return
+		
+	addPlayer(7, iChina, bAlive=True)	
+	addPlayer(8, iIndia, bAlive=True)
+	
+	data.dSlots[iChina] = 7
+	data.dSlots[iIndia] = 8
+	
+	for i in [4, 5, 6]:
+		unit = makeUnit(i, iMilitia, (i, 0))
+		player(i).verifyAlive()
+		unit.kill(False, -1)
+	
+	bSetupComplete = True
 
 
 class PickleTestCase(TestCase):

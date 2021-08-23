@@ -7,6 +7,7 @@ import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
 from RFCUtils import *
+from Core import *
 
 # globals
 gc = CyGlobalContext()

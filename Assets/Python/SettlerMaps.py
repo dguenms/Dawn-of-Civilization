@@ -1,14 +1,11 @@
 from Core import *
 from Events import handler
 
-def getMap(iPlayer):
-	iCiv = civ(iPlayer)
-	iPeriod = player(iPlayer).getPeriod()
-	
+def getMap(iCivilization, iPeriod=-1):
 	map = emptymap()
 	
-	if iCiv in dSettlerMaps:
-		settlerMap = Map(dSettlerMaps[iCiv])
+	if iCivilization in dSettlerMaps:
+		settlerMap = Map(dSettlerMaps[iCivilization])
 		map.apply(settlerMap)
 		
 	if iPeriod in dPeriodSettlerMaps:
@@ -16,28 +13,30 @@ def getMap(iPlayer):
 			map.apply(Map(periodMap), origin)
 	
 	return map
+
+def applyMap(iCivilization, iPeriod=-1):
+	map = getMap(iCivilization, iPeriod)
 	
-def applyMap(iPlayer):
-	map = getMap(iPlayer)
-	
-	for (x, y), value in map:
+	for (x, y), iValue in map:
 		plot = plot_(x, y)
 		if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
-			plot.setSettlerValue(iPlayer, 20)
+			plot.setSettlerValue(iCivilization, 20)
 		else:
-			plot.setSettlerValue(iPlayer, value)
-			
-def updateMap(iPlayer):
-	applyMap(iPlayer)
+			plot.setSettlerValue(iCivilization, iValue)
 
-@handler("GameStart")
 def init():
-	for iPlayer in players.major():
-		updateMap(iPlayer)
+	for iCivilization in dSettlerMaps:
+		applyMap(iCivilization)
+
+# TODO: we updated this on civ change, is it really still necessary?
+@handler("playerCivAssigned")
+def activate(iPlayer, iCivilization):
+	if iCivilization in dSettlerMaps:
+		applyMap(iCivilization)
 
 @handler("periodChange")
-def updateMapOnPeriodChange(iPlayer):
-	updateMap(iPlayer)
+def updateMapOnPeriodChange(iCivilization, iPeriod):
+	applyMap(iCivilization, iPeriod)
 
 
 dSettlerMaps = {

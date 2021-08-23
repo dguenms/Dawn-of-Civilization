@@ -1236,7 +1236,7 @@ void CvPlayerAI::AI_makeProductionDirty()
 }
 
 
-void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold)
+void CvPlayerAI::AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 {
 	CvCity* pNearestCity;
 	bool bRaze = false;
@@ -1256,17 +1256,18 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 				//if (!(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder())) //Rhye
 				if ((!(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder())) || isBarbarian()) //Rhye
 				{
-					if (pCity->getPreviousOwner() != BARBARIAN_PLAYER)
+					if (!pCity->isPreviousOwner(BARBARIAN_PLAYER))
 					{
 						pNearestCity = GC.getMapINLINE().findCity(pCity->getX_INLINE(), pCity->getY_INLINE(), NO_PLAYER, getTeam(), true, false, NO_TEAM, NO_DIRECTION, pCity);
 
 						if (pNearestCity == NULL)
 						{
-							if (pCity->getPreviousOwner() != NO_PLAYER)
+							for (int iI = 0; iI < MAX_PLAYERS; iI++)
 							{
-								if (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
+								if (pCity->isPreviousOwner((PlayerTypes)iI) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
 								{
 									iRazeValue += 30;
+									break;
 								}
 							}
 						}
@@ -1317,7 +1318,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 					if (pCity->area()->getCitiesPerPlayer(getID()) > 0)
 					{
-						if (pCity->getPreviousOwner() != BARBARIAN_PLAYER)
+						if (!pCity->isPreviousOwner(BARBARIAN_PLAYER))
 						{
                             iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
 						}
@@ -1424,7 +1425,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (!bRaze && canSack(pCity))
 	{
-		if (ePreviousOwner != getID() && eHighestCulturePlayer != getID())
+		if (ePreviousCiv != getCivilizationType() && eHighestCulturePlayer != getID())
 		{
 			int iSackValue = GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();	
 
@@ -1452,7 +1453,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (!bRaze && !bSack && canSpare(pCity, eHighestCulturePlayer, iCaptureGold))
 	{
-		if (!AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
+		if (!AI_isFinancialTrouble() && (getWorstEnemy() == NO_TEAM || !pCity->isPreviousOwner(GET_TEAM(getWorstEnemy()).getLeaderID())))
 		{
 			int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
 			int iGold = getGold();
@@ -1870,8 +1871,13 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 	    if (iX >= 63 && iY >= 49)
 	    {
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
+				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					continue;
+				}
+
 				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == POLAND && GET_PLAYER((PlayerTypes)iI).isPlayable())
 				{
 					return 0;
@@ -3007,7 +3013,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
-	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
 		if (pCity->plot()->getWarValue(getID()) == 0)
 		{
@@ -3032,7 +3038,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 	}
 
-	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
 		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
 		if (isMinorCiv() || pCity->plot()->getSettlerValue(getID()) >= 90 || pCity->plot()->getWarValue(getID()) > 0)
@@ -3042,9 +3048,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 	//Rhye - end
 
-	if (getCivilizationType() == FRANCE && pCity->getX() == 69 && pCity->getY() == 52 && pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (getCivilizationType() == FRANCE && pCity->at(69, 52))
 	{
-		return 0;
+		if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
+		{
+			return 0;
+		}
 	}
 
 	// Leoreth: America shouldn't fight the English all the way to Canada
@@ -5450,7 +5459,7 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 			iAttitude /= 2;
 		}
 
-		if (hasHolyCity(getStateReligion()))
+		if (getStateReligion() != NO_RELIGION && hasHolyCity(getStateReligion()))
 		{
 			iAttitude--;
 		}
@@ -7880,11 +7889,13 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 
 	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500) 
+	{
+		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500)
 		{
 			iValue *= 2;
 			iValue /= 3;
 		}
+	}
 	//Rhye - end
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -7985,7 +7996,7 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 					return DENIAL_UNKNOWN;
 				}
 
-				if (pCity->getPreviousOwner() != getID())
+				if (!pCity->isPreviousOwner(getID()))
 				{
 					if (pCity->plot()->getSettlerValue(getID()) < 90 && pCity->plot()->getWarValue(getID()) == 0)
 					{
@@ -10361,7 +10372,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		CvCity* pLoopCity;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
-			if (pLoopCity->plot()->isCore(getID()))
+			if (pLoopCity->plot()->isCore())
 			{
 				iValue += kCivic.getCoreFreeSpecialist() * 12;
 			}
@@ -12560,11 +12571,15 @@ void CvPlayerAI::AI_doCommerce()
 	if (isCommerceFlexible(COMMERCE_ESPIONAGE) && !bFirstTech)
 	{
 		int iEspionageTargetRate = 0;
-		//Rhye
-		//for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
-		for (int iTeam = 0; iTeam < NUM_MAJOR_PLAYERS; ++iTeam)
+		for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
 		{
 			CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iTeam);
+
+			if (kLoopTeam.isMinorCiv())
+			{
+				continue;
+			}
+
 			if (kLoopTeam.isAlive() && iTeam != getTeam() && !kLoopTeam.isVassal(getTeam()) && !GET_TEAM(getTeam()).isVassal((TeamTypes)iTeam))
 			{
 				int iTarget = (kLoopTeam.getEspionagePointsAgainstTeam(getTeam()) - GET_TEAM(getTeam()).getEspionagePointsAgainstTeam((TeamTypes)iTeam)) / 8;
@@ -13108,7 +13123,7 @@ void CvPlayerAI::AI_doDiplo()
 									{
 										for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 										{
-											if (pLoopCity->getPreviousOwner() != ((PlayerTypes)iI))
+											if (!pLoopCity->isPreviousOwner((PlayerTypes)iI))
 											{
 												if (((pLoopCity->getGameTurnAcquired() + 4) % 20) == (GC.getGameINLINE().getGameTurn() % 20))
 												{
@@ -13332,10 +13347,9 @@ void CvPlayerAI::AI_doDiplo()
 													iBestValue = 0;
 													eBestTeam = NO_TEAM;
 
-													//for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++) //Rhye
-													for (iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++) //Rhye (fix for asking aid against INDEPENDENTS)
+													for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 													{
-														if (GET_TEAM((TeamTypes)iJ).isAlive())
+														if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isMinorCiv()) // Leoreth: not against minors
 														{
 															// Leoreth: only ask if they share a border with our enemy
 															//if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()))

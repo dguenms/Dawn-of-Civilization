@@ -1050,6 +1050,12 @@ void CvInitCore::setCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomM
 	if ( checkBounds(iOptionID, 0, m_iNumCustomMapOptions) )
 	{
 		m_aeCustomMapOptions[iOptionID] = eCustomMapOption;
+
+		CyArgsList argsList;
+		argsList.add(iOptionID);
+		argsList.add(eCustomMapOption);
+		long lResult = 0;
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "updateCustomMapOption", argsList.makeFunctionArgs(), &lResult);
 	}
 }
 
@@ -1555,6 +1561,12 @@ void CvInitCore::setLeader(PlayerTypes eID, LeaderHeadTypes eLeader)
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		m_aeLeader[eID] = eLeader;
+
+		// Leoreth: human uses leader name
+		if (getActivePlayer() == eID && eLeader != NO_LEADER)
+		{
+			setLeaderName(eID, GC.getLeaderHeadInfo(eLeader).getText());
+		}
 	}
 }
 

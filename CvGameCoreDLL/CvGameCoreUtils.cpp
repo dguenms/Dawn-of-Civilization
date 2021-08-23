@@ -2391,22 +2391,7 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 ScenarioTypes getScenario()
 {
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-	{
-		CivilizationTypes eCiv = GET_PLAYER((PlayerTypes)iI).getCivilizationType();
-		bool bPlayable = GET_PLAYER((PlayerTypes)iI).isPlayable();
-
-		if (eCiv == EGYPT && bPlayable) return SCENARIO_3000BC;
-
-		if (eCiv == ARABIA)
-		{
-			if (bPlayable) return SCENARIO_600AD;
-
-			return SCENARIO_1700AD;
-		}
-	}
-
-	return SCENARIO_3000BC;
+	return GC.getMapINLINE().getScenario();
 }
 
 int getScenarioStartYear(ScenarioTypes eScenario)
@@ -2753,4 +2738,40 @@ bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationType
 void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
 {
 	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
+}
+
+bool canRespawn(CivilizationTypes eCivilization)
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
+
+bool canEverRespawn(CivilizationTypes eCivilization)
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+	argsList.add(GC.getGame().getGameTurn());
+
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
+
+bool isCivAlive(CivilizationTypes eCivilization)
+{
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() == eCivilization)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

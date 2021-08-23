@@ -60,6 +60,13 @@ void CyInfoPythonInterface2()
 
 		.def("getIdentifier", &CvCivilizationInfo::getIdentifier, "string ()") // Leoreth
 		.def("getPaganReligion", &CvCivilizationInfo::getPaganReligion, "int ()") // Leoreth
+		.def("getImpact", &CvCivilizationInfo::getImpact, "int ()") // Leoreth
+		.def("getStartingYear", &CvCivilizationInfo::getStartingYear, "int ()") // Leoreth
+		.def("getDescriptionKeyPersistent", &CvCivilizationInfo::pyGetDescriptionKeyPersistent, "string ()") // Leoreth
+
+		.def("setPlayable", &CvCivilizationInfo::setPlayable, "void (bool bNewValue)") // Leoreth
+		.def("setLeader", &CvCivilizationInfo::setLeader, "void (int iLeader, bool bNewValue)") // Leoreth
+		.def("isOriginalLeader", &CvCivilizationInfo::isOriginalLeader, "bool (int iLeader)") // Leoreth
 
 		// Arrays
 

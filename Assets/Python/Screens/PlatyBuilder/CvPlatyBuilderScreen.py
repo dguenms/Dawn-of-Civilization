@@ -172,10 +172,10 @@ class CvWorldBuilderScreen:
 						sCityName = cnm.getFoundName(iPlayer, (x, y))
 						sDoCText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == iModeWarMap:
-						iPlotWarValue = self.m_pCurrentPlot.getWarValue(iPlayer)
+						iPlotWarValue = self.m_pCurrentPlot.getPlayerWarValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_WARVALUE", ()), iPlotWarValue)
 					else:
-						iPlotSettlerValue = self.m_pCurrentPlot.getSettlerValue(iPlayer)
+						iPlotSettlerValue = self.m_pCurrentPlot.getPlayerSettlerValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_SETTLERVALUE", ()), iPlotSettlerValue)
 				if sDoCText == "":
 					screen.deleteWidget("CNMName")
@@ -588,13 +588,13 @@ class CvWorldBuilderScreen:
 				self.changeFlipZone(self.m_pCurrentPlot, True)
 		elif self.iPlayerAddMode == iModeCore:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setCore(iPlayer, True)
+				self.m_pCurrentPlot.setCore(civ(iPlayer), True)
 		elif self.iPlayerAddMode == iModeSettlerValue:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setSettlerValue(iPlayer, iSetValue)
+				self.m_pCurrentPlot.setSettlerValue(civ(iPlayer), iSetValue)
 		elif self.iPlayerAddMode == iModeWarMap:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setWarValue(iPlayer, iWarValue)
+				self.m_pCurrentPlot.setWarValue(civ(iPlayer), iWarValue)
 		elif self.iPlayerAddMode == iModeReligionMap:
 			if not self.m_pCurrentPlot.isWater():
 				self.m_pCurrentPlot.setSpreadFactor(self.m_iCurrentReligion, self.m_iReligionMapValue)
@@ -726,15 +726,15 @@ class CvWorldBuilderScreen:
 					
 		elif self.iPlayerAddMode == iModeCore:
 			if not is_minor(iPlayer):
-				pPlot.setCore(iPlayer, False)
+				pPlot.setCore(civ(iPlayer), False)
 					
 		elif self.iPlayerAddMode == iModeSettlerValue:
 			if not is_minor(iPlayer):
-				pPlot.setSettlerValue(iPlayer, 20)
+				pPlot.setSettlerValue(civ(iPlayer), 20)
 					
 		elif self.iPlayerAddMode == iModeWarMap:
 			if not is_minor(iPlayer):
-				pPlot.setWarValue(iPlayer, 0)
+				pPlot.setWarValue(civ(iPlayer), 0)
 					
 		elif self.iPlayerAddMode == iModeReligionMap:
 			if not pPlot.isWater():
@@ -1997,7 +1997,7 @@ class CvWorldBuilderScreen:
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
 			for plot in plots.all().land():
-				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
+				iPlotType = plot.getPlayerWarValue(self.m_iCurrentPlayer) / 2
 				if iPlotType > 0:
 					szColor = lWarMapColors[iPlotType-1]
 					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)

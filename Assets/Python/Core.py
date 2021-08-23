@@ -365,11 +365,17 @@ def birthRectangle(identifier, extended = None):
 	if identifier in dExtendedBirthArea and extended:
 		return dExtendedBirthArea[identifier]
 	return dBirthArea[identifier]
+	
+	
+def signature(func, *args, **kwargs):
+	formatted_args = [str(arg) for arg in args]
+	formatted_kwargs = ["%s=%s" % (key, value) for key, value in kwargs.items()]
+	return "%s(%s)" % (func.__name__, ", ".join(formatted_args + formatted_kwargs))
 
 
 def log(func):
 	def logged_func(*args, **kwargs):
-		print "Begin %s(%s, %s)" % (func.__name__, args, ["%s=%s" % (key, value) for key, value in kwargs.items()])
+		print "Begin %s" % signature(func, *args, **kwargs)
 		result = func(*args, **kwargs)
 		print "Complete %s" % func.__name__
 		return result
@@ -400,8 +406,14 @@ def format_separators_shared(list, separator, last_separator, format=lambda x: x
 def format_separators(list, separator, last_separator, format=lambda x: x):
 	separator = separator.rstrip() + ' '
 	last_separator = last_separator.rstrip() + ' '
+	
+	def ascii_format(item):
+		formatted = format(item)
+		if isinstance(formatted, str):
+			return formatted.encode("ascii", "xmlcharrefreplace")
+		return str(formatted)
 
-	formatted_list = [str(format(x)) for x in list]
+	formatted_list = [ascii_format(item) for item in list]
 
 	if len(formatted_list) > 1:
 		return last_separator.join([separator.join(formatted_list[:-1]), formatted_list[-1]])
@@ -410,7 +422,7 @@ def format_separators(list, separator, last_separator, format=lambda x: x):
 
 def slot(iCiv):
 	if not isinstance(iCiv, Civ):
-		raise TypeError("Can only pass Civ to determine slot, got: %s" % type(iCiv))
+		raise TypeError("Can only pass Civ to determine slot, got: %s of %s" % (iCiv, type(iCiv)))
 
 	if iCiv in data.dSlots:
 		return data.dSlots[iCiv]
@@ -541,8 +553,8 @@ def eventpopup(id, title, message, labels=[]):
 	popup.launch(not labels)
 
 
-def stability(iPlayer):
-	return data.players[iPlayer].iStabilityLevel
+def stability(identifier):
+	return data.players[identifier].iStabilityLevel
 
 
 def has_civic(identifier, iCivic):
@@ -563,13 +575,7 @@ def scenarioStartYear():
 
 
 def scenario():
-	"""Cannot use civ constants because slots may not be set up yet."""
-
-	if player(0).isPlayable(): # Egypt
-		return i3000BC
-	if player(18).isPlayable(): # Arabia
-		return i600AD
-	return i1700AD
+	return map.getScenario()
 
 
 def unittype(identifier):
@@ -591,24 +597,24 @@ def base_building(iBuilding):
 
 def base_unit(iUnit):
 	return gc.getUnitClassInfo(gc.getUnitInfo(unittype(iUnit)).getUnitClassType()).getDefaultUnitIndex()
-	
-	
-def unique_building_from_class(iPlayer, iBuildingClass):
-	return gc.getCivilizationInfo(player(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
-	
-	
-def unique_building(iPlayer, iBuilding):
-	if not player(iPlayer): return base_building(iBuilding)
-	return unique_building_from_class(iPlayer, gc.getBuildingInfo(iBuilding).getBuildingClassType())
 
 
-def unique_unit_from_class(iPlayer, iUnitClass):
-	return gc.getCivilizationInfo(civ(iPlayer)).getCivilizationUnits(iUnitClass)
+def unique_building_from_class(identifier, iBuildingClass):
+	return gc.getCivilizationInfo(civ(identifier)).getCivilizationBuildings(iBuildingClass)
 
 
-def unique_unit(iPlayer, iUnit):
-	if not player(iPlayer): return base_unit(iUnit)
-	return unique_unit_from_class(iPlayer, gc.getUnitInfo(unittype(iUnit)).getUnitClassType())
+def unique_building(identifier, iBuilding):
+	if not player(identifier): return base_building(iBuilding)
+	return unique_building_from_class(identifier, gc.getBuildingInfo(iBuilding).getBuildingClassType())
+
+
+def unique_unit_from_class(identifier, iUnitClass):
+	return gc.getCivilizationInfo(civ(identifier)).getCivilizationUnits(iUnitClass)
+
+
+def unique_unit(identifier, iUnit):
+	if not player(identifier): return base_unit(iUnit)
+	return unique_unit_from_class(identifier, gc.getUnitInfo(unittype(iUnit)).getUnitClassType())
 
 
 def master(iPlayer):
@@ -756,6 +762,12 @@ def find(list, metric = lambda x: x, reverse = True):
 	if not list: return FindResult(None, None, None)
 	result = sort(list, metric, reverse)[0]
 	return FindResult(result = result, index = list.index(result), value = metric(result))
+
+
+def dict_max(dict):
+	if not dict:
+		return None
+	return sort(dict.items(), lambda item: item[1], True)[0][0]
 
 
 def rand(iLeft, iRight = None):
@@ -927,10 +939,6 @@ def civ(identifier = None):
 	return Civ(player(identifier).getCivilizationType())
 
 
-def civs(*iterable):
-	return [civ(element) for element in iterable]
-
-
 def period(iCiv):
 	iPlayer = slot(iCiv)
 	if iPlayer >= 0:
@@ -954,6 +962,9 @@ class EntityCollection(object):
 
 	def _factory(self, key):
 		return key
+	
+	def _keyify(self, item):
+		return item
 
 	def __init__(self, keys):
 		self._keys = list(keys)
@@ -1449,9 +1460,11 @@ class Plots(Locations):
 		
 	def coastal(self):
 		return self.where(lambda p: p.isCoastalLand())
-		
-	def core(self, iPlayer):
-		return self.where(lambda p: p.isCore(iPlayer))
+	
+	def core(self, identifier):
+		if isinstance(identifier, Civ):
+			return self.where(lambda p: p.isCore(identifier))
+		return self.where(lambda p: p.isPlayerCore(identifier))
 		
 	def passable(self):
 		return self.where(lambda p: not p.isImpassable())
@@ -1718,8 +1731,13 @@ class Cities(Locations):
 	def coastal(self):
 		return self.where(lambda city: city.isCoastal(10))
 
-	def core(self, iPlayer):
-		return self.where(lambda city: plot(city).isCore(iPlayer))
+	def core(self, identifier):
+		if isinstance(identifier, Civ):
+			return self.where(lambda city: city.isCore(identifier))
+		return self.where(lambda city: city.isPlayerCore(identifier))
+	
+	def plots(self):
+		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
 	
 	def plots(self):
 		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
@@ -1822,7 +1840,7 @@ class Units(EntityCollection):
 class PlayerFactory:
 
 	def all(self):
-		return Players(range(gc.getMAX_PLAYERS()))
+		return Players(range(gc.getMAX_PLAYERS())).alive()
 		
 	def major(self):
 		return self.all().where(lambda p: not is_minor(p))
@@ -1971,7 +1989,53 @@ class Players(EntityCollection):
 	
 	def defensivePacts(self):
 		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p2).getTeam())))
+
+
+class Civilizations(EntityCollection):
+
+	def __init__(self, civs):
+		if all(isinstance(x, int) for x in civs):
+			try:
+				civs = [civ(x) for x in civs]
+			except Exception, e:
+				raise Exception("error when processing civs: %s: %s" % (civs, e))
+		elif not all(isinstance(x, Civ) for x in civs):
+			raise Exception("All entries in Civilizations need to be either int or Civ")
+	
+		super(Civilizations, self).__init__(civs)
 		
+	def _keyify(self, item):
+		if isinstance(item, int):
+			return civ(item)
+			
+		return item
+
+	def __contains__(self, item):
+		return civ(item) in self._keys
+
+	def __str__(self):
+		return ",".join([infos.civ(item).getText() for item in self.entities()])
+		
+	def without(self, exceptions):
+		if not isinstance(exceptions, (list, set, Players)):
+			exceptions = [exceptions]
+		return self.where(lambda c: c not in [civ(e) for e in exceptions])
+	
+	def before_fall(self):
+		return self.where(lambda c: year() < year(dFall[c]))
+	
+
+class CivFactory(object):
+
+	def all(self):
+		return Civilizations([Civ(i) for i in range(iNumCivs)])
+	
+	def major(self):
+		return Civilizations(lBirthOrder)
+	
+	def of(self, *items):
+		return Civilizations([civ(element) for element in items])
+
 		
 class CreatedUnits(object):
 
@@ -2058,6 +2122,12 @@ class InfoCollection(EntityCollection):
 		
 	def where(self, condition):
 		return self.__class__([k for k in self._keys if condition(k)], self.info_class)
+	
+	def copy(self, keys):
+		return self.__class__(list(keys), self.info_class)
+		
+	def sort(self, metric, reverse=False):
+		return self.copy(sort(self._keys, key=metric, reverse=reverse))
 	
 	def __contains__(self, item):
 		return item in self._keys
@@ -2217,7 +2287,7 @@ class Infos:
 		raise TypeError("Expected identifier to be CyPlayer or leaderhead ID, got: '%s'" % type(identifier))
 	
 	def leaders(self):
-		return InfoCollection.of(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
+		return InfoCollection.type(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
 	
 	def paganReligion(self, identifier):
 		if isinstance(identifier, Civ):
@@ -2359,6 +2429,9 @@ class Map(object):
 
 class TechFactory(object):
 
+	def none(self):
+		return TechCollection()
+
 	def of(self, *techs):
 		return TechCollection().including(*techs)
 
@@ -2408,6 +2481,7 @@ plots = PlotFactory()
 cities = CityFactory()
 units = UnitFactory()
 players = PlayerFactory()
+civs = CivFactory()
 techs = TechFactory()
 infos = Infos()
 

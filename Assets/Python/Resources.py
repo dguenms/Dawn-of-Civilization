@@ -44,6 +44,12 @@ def setup():
 	global dRemovedFeatures
 	dRemovedFeatures = TileDict(dRemovedFeaturesDict, year)
 	
+	global dConquerorPlotTypes
+	dConquerorPlotTypes = TileDict(dConquerorPlotTypesDict)
+	
+	global dConquerorRemovedFeatures
+	dConquerorRemovedFeatures = TileDict(dConquerorRemovedFeaturesDict)
+	
 	for tile in lNewfoundlandCapes:
 		dRemovedFeatures[tile] = 1500
 		
@@ -149,6 +155,7 @@ dResourcesDict = {
 
 dSpawnResourcesDict = {
 	(90, 28) : (iTamils,    iFish),
+	(78, 40) : (iArabia,	iSheep),
 	(95, 43) : (iTibet,     iWheat),
 	(97, 44) : (iTibet,     iHorse),
 	(78, 51) : (iMongols,   iSilk),
@@ -170,6 +177,7 @@ dRemovedResourcesDict = {
 	(58, 37) : 550, # Ivory in Tunisia
 	(87, 49) : 1100, # Sheep near Orduqent
 	(89, 51) : 1100, # Camel near Orduqent
+	(67, 29) : 1200, # Cotton in Nubia
 }
 
 dRoutesDict = {
@@ -185,7 +193,6 @@ dSpawnRoutes = {
 dPlotTypesDict = {
 	(88, 47) : (-100, PlotTypes.PLOT_HILLS),
 }
-
 
 dFeaturesDict = {
 	(35, 54) : (700,  iMud),         # Newfoundland obstacles
@@ -205,6 +212,18 @@ dRemovedFeaturesDict = {
 	(82, 47)  : 1600, # Transoxiana
 	(83, 46)  : 1600, # Transoxiana
 	(85, 49)  : 1600, # Transoxiana
+}
+
+dConquerorPlotTypesDict = {
+	(29, 23) : (iInca, PlotTypes.PLOT_HILLS),
+	(31, 13) : (iInca, PlotTypes.PLOT_HILLS),
+	(32, 19) : (iInca, PlotTypes.PLOT_HILLS),
+	(27, 29) : (iInca, PlotTypes.PLOT_HILLS),
+}
+
+dConquerorRemovedFeaturesDict = {
+	(27, 30) : iInca,
+	(28, 31) : iInca,
 }
 
 
@@ -238,12 +257,10 @@ def createRoutes():
 		plot(tile).setRouteType(iRouteRoad)
 
 
-@handler("BeginGameTurn")
-def createRoutesBeforeSpawn(iGameTurn):
-	for iCiv in dSpawnRoutes:
-		if iGameTurn == year(dBirth[iCiv]) - 2 and data.isCivEnabled(iCiv):
-			for tile in dSpawnRoutes[iCiv]:
-				plot(tile).setRouteType(iRouteRoad)
+@handler("prepareBirth")
+def createRoutesBeforeSpawn(iCiv):
+	for tile in dSpawnRoutes.get(iCiv, []):
+		plot(tile).setRouteType(iRouteRoad)
 
 
 @handler("BeginGameTurn")
@@ -265,6 +282,73 @@ def removeFeatures(iGameTurn):
 		
 	if iGameTurn == year(700) and player(iVikings).isHuman():
 		plot(41, 58).setFeatureType(-1, 0)
+
+
+@handler("conquerors")
+def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
+	iTargetCiv = civ(iTargetPlayer)
+	for tile, type in dConquerorPlotTypes[iTargetCiv]:
+		plot(tile).setPlotType(type, True, True)
+
+
+@handler("conquerors")
+def removeConquerorFeatures(iConquerorPlayer, iTargetPlayer):
+	iTargetCiv = civ(iTargetPlayer)
+	for tile in dConquerorRemovedFeatures[iTargetCiv]:
+		plot(tile).setFeatureType(-1, 0)
+
+
+def setupScenarioResources():
+	setup()
+	iStartTurn = scenarioStartTurn()
+	
+	for iTurn, lResources in dResources:
+		if iTurn <= iStartTurn:
+			for (x, y), iResource in lResources:
+				createResource(x, y, iResource)
+	
+	for iCiv, lResources in dSpawnResources:
+		if year(dBirth[iCiv]) <= iStartTurn and any(iEnd >= iStartTurn for iStart, iEnd in dResurrections[iCiv]):
+			for (x, y), iResource in lResources:
+				createResource(x, y, iResource)
+	
+	for iTurn, lResources in dRemovedResources:
+		if iTurn <= iStartTurn:
+			for x, y in lResources:
+				removeResource(x, y)
+	
+	for iTurn, lRoutes in dRoutes.items():
+		if iTurn <= iStartTurn:
+			for x, y in lRoutes:
+				plot(x, y).setRouteType(iRouteRoad)
+	
+	for iTurn, lPlots in dPlotTypes:
+		if iTurn <= iStartTurn:
+			for (x, y), iPlotType in lPlots:
+				plot(x, y).setPlotType(iPlotType, True, True)
+	
+	for iTurn, lFeatures in dFeatures:
+		if iTurn <= iStartTurn:
+			for (x, y), iFeature in lFeatures:
+				plot(x, y).setFeatureType(iFeature, 0)
+	
+	for iTurn, lFeatures in dRemovedFeatures:
+		if iTurn <= iStartTurn:
+			for x, y in lFeatures:
+				plot(x, y).setFeatureType(-1, 0)
+	
+	if year(700) <= iStartTurn:
+		plot(41, 58).setFeatureType(-1, 0)
+				
+	for iCiv, lPlots in dConquerorPlotTypes:
+		if year(dFall[iCiv]) <= iStartTurn:
+			for (x, y), iPlotType in lPlots:
+				plot(x, y).setPlotType(iPlotType, True, True)
+	
+	for iCiv, lFeatures in dConquerorRemovedFeatures:
+		if year(dFall[iCiv]) <= iStartTurn:
+			for x, y in lFeatures:
+				plot(x, y).setFeatureType(-1, 0)
 		
 
 # Leoreth: bonus removal alerts by edead
@@ -299,6 +383,7 @@ def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RE
 
 def notifyResource(iPlayer, city, iX, iY, iBonus, textKey):
 	if not city: return
+	if scenarioStart(): return
 	
 	if infos.bonus(iBonus).getTechReveal() == -1 or team(iPlayer).isHasTech(infos.bonus(iBonus).getTechReveal()):
 		message(iPlayer, textKey, infos.bonus(iBonus).getText(), city.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.bonus(iBonus).getButton(), location=(iX, iY))

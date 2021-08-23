@@ -132,10 +132,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_POPUP</Tag>
 		<English>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</English>
-		<French>[H1]Soudoyer les barbares[\H1]Choisissez l'unit&#233; barbare &#224; soudoyer :</French>
-		<German>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</German>
-		<Italian>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</Italian>
-		<Spanish>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</Spanish>
+		<French>[H1]Soudoyer les barbares[\H1][NEWLINE]Choisissez l'unit&#233; barbare &#224; soudoyer :[NEWLINE]</French>
+		<German>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</German>
+		<Italian>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Italian>
+		<Spanish>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>

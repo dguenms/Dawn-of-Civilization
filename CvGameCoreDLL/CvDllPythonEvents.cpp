@@ -1366,15 +1366,15 @@ void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
 }
 
 // Leoreth: release dead civilizations
-void CvDllPythonEvents::reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+void CvDllPythonEvents::reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
 	if (preEvent())
 	{
 		CyArgsList eventData;
-		eventData.add("releasedPlayer");
+		eventData.add("releasedCivilization");
 
 		eventData.add((int)ePlayer);
-		eventData.add((int)eReleasedPlayer);
+		eventData.add((int)eReleasedCivilization);
 
 		postEvent(eventData);
 	}
@@ -1454,6 +1454,31 @@ void CvDllPythonEvents::reportAutoplayEnded()
 	{
 		CyArgsList eventData;
 		eventData.add("autoplayEnded");
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: player civilization assigned
+void CvDllPythonEvents::reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerCivAssigned");
+		eventData.add((int)ePlayer);
+		eventData.add((int)eNewCivilization);
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: player destroyed
+void CvDllPythonEvents::reportPlayerDestroyed(PlayerTypes ePlayer)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerDestroyed");
+		eventData.add((int)ePlayer);
 		postEvent(eventData);
 	}
 }

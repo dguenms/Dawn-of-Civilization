@@ -431,6 +431,11 @@ bool CvXMLLoadUtility::SetGlobalTypes()
 		SetGlobalStringArray(&GC.getDirectionTypes(), "Civ4Types/DirectionTypes/DirectionType", &iEnumVal, true);
 		SetGlobalStringArray(&GC.getFootstepAudioTypes(), "Civ4Types/FootstepAudioTypes/FootstepAudioType", &GC.getNumFootstepAudioTypes());
 
+		// Leoreth: we just want to read the XML tags and not store the values
+		CvString* impactTypes;
+		int iNumImpactTypes;
+		SetGlobalStringArray(&impactTypes, "Civ4Types/ImpactTypes/ImpactType", &iNumImpactTypes);
+
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
 		SetVariableListTagPair(&GC.getFootstepAudioTags(), "FootstepAudioTags", GC.getFootstepAudioTypes(), GC.getNumFootstepAudioTypes(), "");
