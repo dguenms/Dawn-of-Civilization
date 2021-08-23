@@ -45,6 +45,22 @@ def initTech(iPlayer, iTech):
 	
 	#events.fireEvent("techAcquired", iTech, player(iPlayer).getTeam(), iPlayer)
 
+### Unit spawn functions ###
+
+def getStartingSettlers(iPlayer):
+	return dStartingSettlers[iPlayer]
+
+def getStartingMissionaries(iPlayer):
+	return dStartingMissionaries[iPlayer]
+
+def getStartingUnits(iPlayer):
+	lStartingUnits = dStartingUnits[iPlayer].items()
+	
+	if not player(iPlayer).isHuman():
+		lStartingUnits += dExtraAIUnits[iPlayer].items()
+	
+	return lStartingUnits
+
 ### Tech preference functions ###
 
 def getTechPreferences(iPlayer):
@@ -210,6 +226,366 @@ lStartingTechs = [
 	iNetherlands:	techs.column(11).without(iHorticulture, iScientificMethod),
 	iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
 }]
+
+dStartingUnits = CivDict({
+	iChina: {
+		iBase: 1,
+		iDefend: 1,
+	},
+	iIndia: {
+		iDefend: 1,
+		iCounter: 1,
+		iAttack: 1,
+		iHarass: 1,
+	},
+	iGreece: {
+		iSettleSea: 1,
+		iBase: 2,
+		iAttack: 2,
+		iCityAttack: 1,
+		iWorkerSea: 1,
+	},
+	iPhoenicia: {
+		iDefend: 1,
+		iCounter: 1,
+		iSettleSea: 1,
+		iTransport: 1,
+		iEscort: 1,
+	},
+	iPolynesia: {
+		iSettleSea: 1,
+		iWorkerSea: 1,
+	},
+	iPersia: {
+		iDefend: 3,
+		iAttack: 4,
+		iCavalry: 2,
+		# +1 elephant but they cannot train them
+	},
+	iRome: {
+		iDefend: 3,
+		iAttack: 4,
+		iWorkerSea: 1,
+		iTransport: 2,
+	},
+	iMaya: {
+		iSkirmish: 2,
+	},
+	iTamils: {
+		iSettleSea: 1,
+		iDefend: 1,
+		iCavalry: 1,
+		iAttack: 2,
+		iWorkerSea: 1,
+		iEscort: 1,
+	},
+	iEthiopia: {
+		iDefend: 2,
+		iAttack: 1,
+		# +1 Shotelai but they cannot train them
+		iWorkerSea: 1,
+		iEscort: 1,
+	},
+	iKorea: {
+		iDefend: 3,
+		iAttack: 1,
+		iCavalry: 1,
+	},
+	iByzantium: {
+		iAttack: 4, # gets Legions
+		iCounter: 2,
+		iDefend: 2,
+		iTransport: 2,
+		iEscort: 2,
+	},
+	iJapan: {
+		iDefend: 2,
+		iAttack: 2,
+		iWorkerSea: 2,
+	},
+	iVikings: {
+		iSettleSea: 1,
+		iDefend: 4,
+		iExplore: 1,
+		iAttack: 3,
+		iWorkerSea: 1,
+		iExploreSea: 2,
+	},
+	iTurks: {
+		iDefend: 3,
+		iHarass: 6,
+		iExplore: 1,
+	},
+	iArabia: { # note that Arabia receives extra unit spawns
+		iDefend: 1,
+		iCavalry: 2,
+		iAttack: 2,
+		iWork: 1,
+		iWorkerSea: 1,
+	},
+	iTibet: {
+		iDefend: 2,
+		iHarass: 2,
+	},
+	iKhmer: {
+		iSettleSea: 1,
+		iDefend: 1,
+		iCavalryCity: 3,
+		iWorkerSea: 1,
+	},
+	iIndonesia: {
+		iSettleSea: 2,
+		iDefend: 1,
+		iEscort: 1,
+	},
+	iMoors: {
+		iDefend: 1, # +1 if player is Spain or Moors
+		iAttack: 2,
+		iCounter: 2,
+		iHarass: 2,
+		iWorkerSea: 1,
+		iTransport: 1,
+		iEscort: 1,
+	},
+	iSpain: {
+		iDefend: 2,
+		iAttack: 4,
+		# iCavalry: 2, # if AI and Moors enabled
+		# iWork: 1, # if 600 AD
+	},
+	iFrance: {
+		iDefend: 3,
+		iCounter: 2,
+		iAttack: 3,
+	},
+	iEngland: {
+		iSettleSea: 1,
+		iDefend: 3,
+		iWorkerSea: 2,
+		iTransport: 1,
+	},
+	iHolyRome: {
+		iDefend: 3,
+		iCityAttack: 3,
+		iCavalryCity: 3,
+		iCitySiege: 4,
+	},
+	iRussia: {
+		iDefend: 2,
+		iHarass: 4,
+	},
+	iMali: {
+		iSkirmish: 5,
+	},
+	iPoland: {
+		iDefend: 1,
+		iAttack: 2,
+		iCavalry: 2,
+	},
+	iPortugal: {
+		iSettleSea: 1,
+		iDefend: 4,
+		iCounter: 2,
+		iWorkerSea: 2,
+		iEscort: 2,
+	},
+	iInca: {
+		iAttack: 4,
+		iDefend: 2,
+	},
+	iItaly: {
+		iDefend: 3,
+		iCounter: 2,
+		iSiege: 3,
+		iWorkerSea: 2,
+		iTransport: 1,
+		iEscort: 1,
+	},
+	iMongols: {
+		iDefend: 3,
+		iAttack: 2,
+		iHarass: 2,
+		iCavalry: 6,
+		iSiege: 3,
+	},
+	iAztecs: {
+		iAttack: 4,
+		iDefend: 2,
+	},
+	iMughals: {
+		iSiege: 3,
+		iAttack: 4, # +2 experience
+		iHarass: 2,
+	},
+	iOttomans: { # gets Janissaries and Bombards despite lack of tech
+		iAttack: 4,
+		iDefend: 2,
+		iCavalry: 3,
+		iSiege: 4,
+	},
+	iThailand: {
+		iCounter: 3,
+		iCavalry: 2,
+	},
+	iCongo: {
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iNetherlands: {
+		iSettleSea: 2,
+		iAttack: 6,
+		iCounter: 2,
+		iSiege: 2,
+		iWorkerSea: 2,
+		iExploreSea: 2,
+	},
+	iGermany: {
+		iAttack: 3, # +2 experience
+		iDefend: 2, # +2 experience
+		iSiege: 3, # +2 experience
+	},
+	iAmerica: {
+		iSkirmish: 2,
+		iAttack: 4,
+		iSiege: 2,
+		iWorkerSea: 2,
+		iTransport: 2,
+		iEscort: 1,
+	},
+	iArgentina: {
+		iAttack: 1, # +2 experience
+		iDefend: 2, # +2 experience
+		iSiege: 2, # +2 experience
+		iTransport: 1,
+		iEscort: 2,
+	},
+	iBrazil: {
+		iSkirmish: 3,
+		iDefend: 3,
+		iSiege: 2,
+		iWorkerSea: 2,
+		iTransport: 2,
+		iEscort: 3,
+	},
+	iCanada: {
+		iCavalry: 3,
+		iDefend: 5,
+		iTransport: 2,
+		iEscort: 1,
+		iLightEscort: 1,
+	}
+}, {})
+
+dExtraAIUnits = CivDict({
+	iJapan: {
+		iDefend: 2,
+		iAttack: 3,
+	},
+	iTamils: { # where to give a hindu missionary
+		iCavalry: 1,
+	},
+	iKorea: {
+		iCounter: 2,
+		iDefend: 2,
+	},
+	iEngland: {
+		iAttack: 2,
+	},
+	iPoland: {
+		iCounter: 2,
+	},
+	iMongols: {
+		iDefend: 2,
+		iAttack: 2,
+		iCavalry: 10,
+		iSiege: 5,
+		iExplore: 2,
+	},
+	iGermany: {
+		iAttack: 10, # +2 experience
+		iSiege: 5, # +2 experience
+	},
+	iAmerica: {
+		iDefend: 1,
+	},
+	iArgentina: {
+		iDefend: 3, # +2 experience
+		iCavalry: 2, # +2 experience
+		iSiege: 2, # +2 experience
+	},
+	iBrazil: {
+		iDefend: 1,
+	}
+}, {})
+
+dStartingSettlers = CivDict({
+	iChina: 1,
+	iIndia: 1,
+	iGreece: 1,
+	iPersia: 3,
+	iPhoenicia: 1,
+	iPolynesia: 1,
+	iRome: 4,
+	iMaya: 1,
+	iJapan: 3,
+	iTamils: 1,
+	iEthiopia: 2,
+	iKorea: 1,
+	iByzantium: 4,
+	iVikings: 2,
+	iTurks: 6,
+	iArabia: 2, 
+	iTibet: 1,
+	iKhmer: 1,
+	iIndonesia: 1,
+	iMoors: 2,
+	iSpain: 2, # +1 if AI, +1 Moors not enabled
+	iFrance: 3,
+	iEngland: 3,
+	iHolyRome: 3,
+	iRussia: 4,
+	iMali: 3,
+	iPoland: 1, # +1 if human
+	iPortugal: 1,
+	iInca: 1, # +1 if AI
+	iItaly: 1,
+	iMongols: 3,
+	iAztecs: 2,
+	iMughals: 3,
+	iOttomans: 3,
+	iThailand: 1,
+	iCongo: 1,
+	iNetherlands: 2,
+	iGermany: 4,
+	iAmerica: 8,
+	iArgentina: 2,
+	iBrazil: 5,
+	iCanada: 5,
+}, 0)
+
+dStartingMissionaries = CivDict({
+	iJapan: 1,
+	iTamils: 1,
+	iKorea: 1,
+	iByzantium: 1,
+	iTibet: 1,
+	iKhmer: 1, # +1 buddhist
+	iIndonesia: 1,
+	iMoors: 2,
+	iSpain: 1,
+	iFrance: 1,
+	iEngland: 1,
+	iHolyRome: 1,
+	iMali: 2,
+	iPoland: 1,
+	iPortugal: 1,
+	iItaly: 1,
+	iMughals: 1, # +3 if human (does the AI still have a UP like effect?)
+	iThailand: 1,
+	iNetherlands: 1,
+	iGermany: 2,
+	iAmerica: 1, # of dominant religion in area
+}, 0)
 
 ### Tech Preferences ###
 

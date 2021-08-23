@@ -691,6 +691,93 @@ def replace(unit, iUnitType):
 	replaced.convert(unit)
 	return replaced
 	
+def getRoleDomain(iRole):
+	if iRole in [iWorkerSea, iSettleSea, iAttackSea, iTransport, iEscort, iExploreSea, iLightEscort]:
+		return DomainTypes.DOMAIN_SEA
+	return DomainTypes.DOMAIN_LAND
+
+def getRoleAI(iRole):
+	if iRole == iDefend:
+		return UnitAITypes.UNITAI_CITY_DEFENSE
+	elif iRole in [iAttack, iCavalry]:
+		return UnitAITypes.UNITAI_ATTACK
+	elif iRole in [iCityAttack, iCavalryCity, iCitySiege]:
+		return UnitAITypes.UNITAI_ATTACK_CITY
+	elif iRole == iCounter:
+		return UnitAITypes.UNITAI_COUNTER
+	elif iRole == iWorkerSea:
+		return UnitAITypes.UNITAI_WORKER_SEA
+	elif iRole == iSettle:
+		return UnitAITypes.UNITAI_SETTLE
+	elif iRole == iSettleSea:
+		return UnitAITypes.UNITAI_SETTLER_SEA
+	elif iRole == iAttackSea:
+		return UnitAITypes.UNITAI_ASSAULT_SEA
+	elif iRole == iEscort:
+		return UnitAITypes.UNITAI_ESCORT_SEA
+	elif iRole == iExploreSea:
+		return UnitAITypes.UNITAI_EXPLORE_SEA
+	elif iRole == iExplore:
+		return UnitAITypes.UNITAI_EXPLORE
+	elif iRole == iSkirmish:
+		return UnitAITypes.UNITAI_COLLATERAL
+	elif iWork:
+		return UnitAITypes.UNITAI_WORKER
+
+	return UnitAITypes.NO_UNITAI
+	
+def isUnitOfRole(iUnit, iRole):
+	unit = infos.unit(iUnit)
+	iCombatType = unit.getUnitCombatType()
+	iDomainType = unit.getDomainType()
+
+	if iRole == iBase:
+		return base_unit(iUnit) == iMilitia
+	elif iRole == iDefend:
+		return (iCombatType == UnitCombatTypes.UNITCOMBAT_ARCHER and unit.getCityDefenseModifier() > 0) or iCombatType == UnitCombatTypes.UNITCOMBAT_GUN
+	elif iRole in [iAttack, iCityAttack]:
+		return iCombatType in [UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN]
+	elif iRole == iCounter:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0
+	elif iRole in [iCavalry, iCavalryCity]:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY
+	elif iRole == iHarass:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_LIGHT_CAVALRY
+	elif iRole == iWorkerSea:
+		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getCombat() == 0
+	elif iRole == iSettle:
+		return unit.isFound()
+	elif iRole in [iSettleSea, iTransport]:
+		return unit.getCargoSpace() > 0
+	elif iRole in [iAttackSea, iEscort, iExploreSea]:
+		return iDomainType == DomainTypes.DOMAIN_SEA
+	elif iRole == iExplore:
+		return unit.isNoBadGoodies()
+	elif iRole in [iSiege, iCitySiege]:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_SIEGE
+	elif iRole == iSkirmish:
+		return iCombatType in [UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN] and unit.getCollateralDamage() > 0
+	elif iRole == iLightEscort:
+		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getWithdrawalProbability() > 0
+	elif iRole == iWork:
+		return unit.getWorkRate() > 0 and unit.getCombat() == 0
+	
+	raise Exception("Unexpected unit role: %d" % iRole)
+
+def getUnitForRole(iPlayer, iRole):
+	roleMetric = lambda unit: (infos.unit(unit).getCombat(), base_unit(unit) != unit)
+	iBestUnit = infos.units().where(lambda unit: player(iPlayer).canTrain(unit, False, False)).where(lambda unit: isUnitOfRole(unit, iRole)).maximum(roleMetric)
+	return (iBestUnit, getRoleAI(iRole))
+	
+def getUnitsForRole(iPlayer, iRole):
+	units = [getUnitForRole(iPlayer, iRole)]
+	
+	if iRole == iSettleSea:
+		units.append(getUnitForRole(iPlayer, iSettle))
+		units.append(getUnitForRole(iPlayer, iDefend))
+	
+	return units
+	
 # used: RFCUtils
 def getBestTrainable(iPlayer, lUnits, iDefault = iMilitia):
 	return next([unique_unit(iPlayer, iUnit) for iUnit in lUnits if player(iPlayer).canTrain(unique_unit(iPlayer, iUnit), False, False)], iDefault)
