@@ -121,7 +121,7 @@ def clearIncompatibleAIsDuringAutoplay(iGameTurn):
 		if year(dBirth[active()]) >= year(1700) and player(iAztecs).isAlive():
 			sta.completeCollapse(slot(iAztecs))
 
-@handler("BeginGameTurn")
+#@handler("BeginGameTurn")
 def checkBirths():
 	for iLoopPlayer in players.major().where(lambda p: dBirth[p] > scenarioStartYear()):
 		if year(dBirth[iLoopPlayer]) - turns(2) <= year() <= year(dBirth[iLoopPlayer]) + turns(6):

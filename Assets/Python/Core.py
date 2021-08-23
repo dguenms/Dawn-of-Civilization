@@ -48,6 +48,10 @@ def unique(iterable):
 
 def chunks(list, length):
 	return [list[i:i+length] for i in xrange(0, len(list), length)]
+	
+
+def until(iTurn):
+	return iTurn - turn()
 
 
 def since(iTurn):

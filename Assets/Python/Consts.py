@@ -834,6 +834,11 @@ iGreatGeneral : iFemaleGreatGeneral,
 iGreatSpy : iFemaleGreatSpy,
 }
 
+iNumUnitRoles = 21
+(iBase, iDefend, iAttack, iCounter, iCavalry, iHarass, iCityAttack, iWorkerSea, iSettle, iSettleSea, 
+iAttackSea, iTransport, iEscort, iExplore, iCavalryCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
+iWork) = range(iNumUnitRoles)
+
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 41
 (iAluminium, iCamel, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,

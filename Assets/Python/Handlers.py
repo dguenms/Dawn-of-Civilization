@@ -26,6 +26,7 @@ import Periods
 import Plague
 import Religions
 import Resources
+import Rise
 import RiseAndFall
 import Rules
 import Shortcuts
