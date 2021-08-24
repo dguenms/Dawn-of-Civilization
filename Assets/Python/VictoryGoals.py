@@ -2804,7 +2804,8 @@ class Track(Count):
 				self.increment()
 		
 		def progress_value(self, value, required):
-			return "%d / %d" % (value, required / infos.constant("GOLDEN_AGE_LENGTH"))
+			iGoldenAgeLength = scale(infos.constant("GOLDEN_AGE_LENGTH"))
+			return "%d / %d" % (value / iGoldenAgeLength, required / iGoldenAgeLength)
 		
 		return cls.desc("GOLDEN_AGES").progr("GOLDEN_AGES").format(options.number_word()).handle("BeginPlayerTurn", incrementGoldenAges).func(required, progress_value).subclass("GoldenAges")
 	
