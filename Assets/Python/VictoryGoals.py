@@ -1,4 +1,5 @@
 from inspect import ismethod, isfunction, getargspec
+from copy import deepcopy
 import re, heapq
 
 from Core import *
@@ -1273,12 +1274,11 @@ class BaseGoal(object):
 			events.removeEventHandler(event, getattr(self, handler))
 	
 	def activate(self, iPlayer, callback=None):
-		goal = copy(self)
+		goal = deepcopy(self)
 	
 		goal.iPlayer = iPlayer
 		goal.callback = callback
 		
-		goal.arguments = copy(self.arguments)
 		goal.arguments.iPlayer = iPlayer
 		goal.arguments.create()
 		
