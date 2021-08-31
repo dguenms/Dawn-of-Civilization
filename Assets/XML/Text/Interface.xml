@@ -3305,6 +3305,14 @@
 		<Spanish>Select Civilization to play:</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_GOALS</Tag>
+		<English>Historical Victory goals</English>
+		<French>Objectifs de victoire historique</French>
+		<German>Historische Siegbedingungen</German>
+		<Italian>Obiettivi per le vittorie storiche</Italian>
+		<Spanish>Objetivos de la victoria hist&#243;ria</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
