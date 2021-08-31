@@ -1,8 +1,10 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
+
 from Consts import *
 from RFCUtils import *
+import Victories
 
 gc = CyGlobalContext()
 
