@@ -2164,7 +2164,7 @@ class Count(BaseGoal):
 		def owned(self, cities):
 			return cities.owner(self.iPlayer)
 	
-		return cls.desc("CITY_COUNT").progr("CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(owned).subclass("CityCount")
+		return cls.desc("CITY_COUNT").progr("CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(owned).checked("cityBuilt").checked("cityAcquiredAndKept").subclass("CityCount")
 	
 	@classproperty
 	def settledCities(cls):
