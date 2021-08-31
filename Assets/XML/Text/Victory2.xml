@@ -4081,7 +4081,7 @@
 	<!-- RELIGIOUS GOAL TITLES -->
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUD1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_JUDA1</Tag>
 		<English>Chosen People</English>
 		<French>Peuple &#233;lu</French>
 		<German>Erw&#228;hltes Volk</German>
@@ -4089,7 +4089,7 @@
 		<Spanish>Chosen People</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUD2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_JUDA2</Tag>
 		<English>Promised Land</English>
 		<French>Terre promise</French>
 		<German>Gelobtes Land</German>
@@ -4097,7 +4097,7 @@
 		<Spanish>Promised Land</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUD3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_JUDA3</Tag>
 		<English>Diaspora</English>
 		<French>Diaspora</French>
 		<German>Diaspora</German>
@@ -4106,7 +4106,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUD1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_BUDD1</Tag>
 		<English>Sila</English>
 		<French>Sila</French>
 		<German>Sila</German>
@@ -4114,7 +4114,7 @@
 		<Spanish>Sila</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUD2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_BUDD2</Tag>
 		<English>Nirvana</English>
 		<French>Nirvana</French>
 		<German>Nirwana</German>
@@ -4122,7 +4122,7 @@
 		<Spanish>Nirvana</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUD3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_BUDD3</Tag>
 		<English>Middle Way</English>
 		<French>Voie du milieu</French>
 		<German>Mittlerer Weg</German>
@@ -4131,7 +4131,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAT1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CATH1</Tag>
 		<English>Holy See</English>
 		<French>Saint-Si&#232;ge</French>
 		<German>Heiliger Stuhl</German>
@@ -4139,7 +4139,7 @@
 		<Spanish>Holy See</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAT2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CATH2</Tag>
 		<English>Holy Land</English>
 		<French>Terre sainte</French>
 		<German>Heiliges Land</German>
@@ -4147,7 +4147,7 @@
 		<Spanish>Holy Land</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAT3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CATH3</Tag>
 		<English>Holy Mission</English>
 		<French>Sainte mission</French>
 		<German>Heilige Mission</German>
@@ -4156,7 +4156,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CONF1</Tag>
 		<English>Harmony</English>
 		<French>Harmonie</French>
 		<German>Harmonie</German>
@@ -4164,7 +4164,7 @@
 		<Spanish>Harmony</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CONF2</Tag>
 		<English>Ritual</English>
 		<French>Rituel</French>
 		<German>Ritual</German>
@@ -4172,7 +4172,7 @@
 		<Spanish>Ritual</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_CONF3</Tag>
 		<English>Loyalty</English>
 		<French>Loyaut&#233;</French>
 		<German>Loyalit&#228;t</German>
@@ -4181,7 +4181,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIN1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_HIND1</Tag>
 		<English>Varna</English>
 		<French>Varna</French>
 		<German>Varna</German>
@@ -4189,7 +4189,7 @@
 		<Spanish>Varna</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIN2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_HIND2</Tag>
 		<English>Artha</English>
 		<French>Artha</French>
 		<German>Artha</German>
@@ -4197,7 +4197,7 @@
 		<Spanish>Artha</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIN3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_HIND3</Tag>
 		<English>Kama</English>
 		<French>Kama</French>
 		<German>Kama</German>
@@ -4206,7 +4206,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISL1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ISLA1</Tag>
 		<English>Shahada</English>
 		<French>Chahada</French>
 		<German>Schahada</German>
@@ -4214,7 +4214,7 @@
 		<Spanish>Shahada</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISL2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ISLA2</Tag>
 		<English>Hajj</English>
 		<French>Hajj</French>
 		<German>Hadsch</German>
@@ -4222,7 +4222,7 @@
 		<Spanish>Hajj</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISL3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ISLA3</Tag>
 		<English>Jihad</English>
 		<French>Djihad</French>
 		<German>Dschihad</German>
@@ -4231,7 +4231,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORT1</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ORTH1</Tag>
 		<English>Patriarchates</English>
 		<French>Les patriarcats</French>
 		<German>Patriarchate</German>
@@ -4239,7 +4239,7 @@
 		<Spanish>Patriarchates</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORT2</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ORTH2</Tag>
 		<English>Iconography</English>
 		<French>Iconographie</French>
 		<German>Ikonographie</German>
@@ -4247,13 +4247,11 @@
 		<Spanish>Iconography</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORT3</Tag>
+		<Tag>TXT_KEY_UHV_TITLE_ORTH3</Tag>
 		<English>Communion</English>
 		<French>Communion</French>
 		<German>Kommunion</German>
 		<Italian>Communion</Italian>
 		<Spanish>Communion</Spanish>
 	</TEXT>
-	
-	
 </Civ4GameText>

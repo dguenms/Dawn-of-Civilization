@@ -103,4 +103,4 @@ dAdditionalPaganGoal = {
 
 for iReligion in range(iNumReligions):
 	for i, goal in enumerate(dGoals[iReligion]):
-		goal.titled("%s%s" % (infos.religion(iReligion).getText().upper()[:3], i+1))
+		goal.titled("%s%s" % (infos.religion(iReligion).getText().upper()[:4], i+1))
