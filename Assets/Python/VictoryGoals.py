@@ -1274,11 +1274,16 @@ class BaseGoal(object):
 			events.removeEventHandler(event, getattr(self, handler))
 	
 	def activate(self, iPlayer, callback=None):
+		arguments = self.arguments
+		self.arguments = None
+		
 		goal = deepcopy(self)
 	
 		goal.iPlayer = iPlayer
 		goal.callback = callback
 		
+		self.arguments = arguments
+		goal.arguments = arguments
 		goal.arguments.iPlayer = iPlayer
 		goal.arguments.create()
 		
