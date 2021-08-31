@@ -1176,7 +1176,7 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_EGYPT_AYYUBID"
 			
 	elif iCiv == iIndia:
-		if bMonarchy and not bCityStates:
+		if bMonarchy and not bCityStates and (iEra >= iMedieval or bEmpire):
 			if iEra >= iRenaissance:
 				return "TXT_KEY_CIV_INDIA_MARATHA"
 			
