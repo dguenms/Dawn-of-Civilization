@@ -6164,6 +6164,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 				pLoopPlot = plotCity3(getX(), getY(), iI);
 				if (pLoopPlot != NULL && pLoopPlot->isCity()) 
 				{
+					pLoopPlot->getPlotCity()->setNextCoveredPlot(0, false);
 					pLoopPlot->getPlotCity()->updateCultureCosts();
 					pLoopPlot->getPlotCity()->updateCoveredPlots(true);
 				}
