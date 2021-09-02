@@ -7,7 +7,6 @@ from RFCUtils import *
 import DynamicCivs as dc
 from operator import itemgetter
 import math
-import Victory as vic
 import Periods as periods
 from Events import handler, events
 
@@ -615,7 +614,6 @@ def completeCollapse(iPlayer):
 		
 	# take care of the remnants of the civ
 	player(iPlayer).killUnits()
-	vic.resetAll(iPlayer)
 		
 	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
 	

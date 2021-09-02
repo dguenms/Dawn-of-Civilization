@@ -32,5 +32,4 @@ import Shortcuts
 import Stability
 import UniquePowers
 import Victories
-import Victory
 import Wonders

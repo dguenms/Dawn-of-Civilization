@@ -61,7 +61,6 @@ from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
 import RiseAndFall as rnf
-import Victory as vic
 import Victories
 
 from Locations import *
@@ -70,7 +69,8 @@ from Core import *
 gc = CyGlobalContext()
 	
 def countAchievedGoals(argsList):
-	return vic.countAchievedGoals(argsList[0])
+	iPlayer = argsList[0]
+	return count(data.players[iPlayer].historicalGoals, lambda goal: goal.succeeded())
 	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen

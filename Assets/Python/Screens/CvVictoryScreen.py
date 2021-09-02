@@ -7,7 +7,6 @@ import PyHelpers
 import time
 from Consts import * #Rhye
 from RFCUtils import *
-import Victory as vic
 from StoredData import data
 
 # BUG - start
