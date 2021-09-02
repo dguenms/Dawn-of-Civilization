@@ -229,7 +229,7 @@ dGoals = {
 	iEngland: (
 		CityCount(
 			(plots.regions(*lNorthAmerica).named("NORTH_AMERICA"), 5),
-			(plots.regions(*lSouthAmerica).named("SOUTH_AMERICA"), 3),
+			(plots.regions(*(lSouthAmerica + lCentralAmerica)).named("SOUTH_CENTRAL_AMERICA"), 3),
 			(plots.regions(*lAfrica).named("AFRICA"), 4),
 			(plots.regions(*lAsia).named("ASIA"), 5),
 			(plots.regions(*lOceania).named("OCEANIA"), 3),
