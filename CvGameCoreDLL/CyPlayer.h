@@ -601,6 +601,7 @@ public:
 	int getPeriod();
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
+	int getUnhappinessDecayModifier();
 
 private:
 	CvPlayer* m_pPlayer;

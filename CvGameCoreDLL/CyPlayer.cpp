@@ -2737,3 +2737,8 @@ void CyPlayer::changeGoldPerTurnByPlayer(int iPlayer, int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeGoldPerTurnByPlayer((PlayerTypes)iPlayer, iChange);
 }
+
+int CyPlayer::getUnhappinessDecayModifier()
+{
+	return m_pPlayer ? m_pPlayer->getUnhappinessDecayModifier() : -1;
+}

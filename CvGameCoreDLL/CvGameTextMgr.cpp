@@ -5157,7 +5157,8 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		if (iRate > 0)
 		{
 			int iPop = ((iRate - 1) / pCity->flatHurryAngerLength() + 1) * GC.getDefineINT("HURRY_POP_ANGER");
-			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(ANGRY_POP_CHAR), iRate);
+			int iEffectiveRate = iRate * 100 / (100 + GET_PLAYER(pCity->getOwnerINLINE()).getUnhappinessDecayModifier());
+			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(ANGRY_POP_CHAR), iEffectiveRate);
 			szString.append(szTempBuffer);
 		}
 	}
@@ -5170,7 +5171,8 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		if (iRate > 0)
 		{
 			int iPop = ((iRate - 1) / pCity->flatConscriptAngerLength() + 1) * GC.getDefineINT("CONSCRIPT_POP_ANGER");
-			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(CITIZEN_CHAR), iRate);
+			int iEffectiveRate = iRate * 100 / (100 + GET_PLAYER(pCity->getOwnerINLINE()).getUnhappinessDecayModifier());
+			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(CITIZEN_CHAR), iEffectiveRate);
 			szString.append(szTempBuffer);
 		}
 	}
@@ -13245,7 +13247,8 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		{
 			iHappy = GC.getDefineINT("TEMP_HAPPY");
 			iTotalHappy += iHappy;
-			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_TEMP", iHappy, city.getHappinessTimer()));
+			int iEffectiveHappinessTimer = city.getHappinessTimer() * 100 / (100 + GET_PLAYER(city.getOwnerINLINE()).getUnhappinessDecayModifier());
+			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_TEMP", iHappy, iEffectiveHappinessTimer));
 			szBuffer.append(NEWLINE);
 		}
 
