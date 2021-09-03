@@ -2907,7 +2907,7 @@ class Track(Count):
 			return self
 		
 		def incrementEnslaves(self, losingUnit):
-			if civ(losingUnit) not in self.lExcluded:
+			if civ(losingUnit) not in self.lExcluded and not is_minor(losingUnit):
 				self.increment()
 	
 		return cls.progr("ENSLAVE_COUNT").func(init, excluding).handle("enslave", incrementEnslaves).subclass("EnslaveCount")
