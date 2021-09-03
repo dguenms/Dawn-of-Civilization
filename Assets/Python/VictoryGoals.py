@@ -1519,6 +1519,9 @@ class BaseGoal(object):
 	
 	def area_name(self, tile):
 		return "\n".join([name for name, area in self.areas.items() if tile in area])
+	
+	def past_end(self):
+		return self._iYear is not None and turn() > year(self._iYear)
 		
 	def register(self, event, handler):
 		setattr(self, handler.__name__, handler)
@@ -2687,7 +2690,8 @@ class Trigger(Condition):
 	@classproperty
 	def noCityLost(cls):
 		def checkCityLost(self, iOtherPlayer, bConquest):
-			self.fail()
+			if not self.past_end():
+				self.fail()
 		
 		return cls.desc("NO_CITY_LOST").failable.handle("cityLost", checkCityLost).subclass("NoCityLost")
 	
@@ -2702,7 +2706,7 @@ class Trigger(Condition):
 	@classproperty
 	def neverConquer(cls):
 		def checkCityAcquired(self, iOwner, city, bConquest):
-			if bConquest:
+			if bConquest and not self.past_end():
 				self.fail()
 		
 		return cls.desc("NEVER_CONQUER").failable.handle("cityAcquired", checkCityAcquired).subclass("NeverConquer")
