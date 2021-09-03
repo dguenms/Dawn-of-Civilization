@@ -302,7 +302,7 @@ dGoals = {
 		AreaPercent(plots.rectangle(tMediterranean).without(lMediterraneanExceptions).coastal().named("MEDITERRANEAN"), 65).by(1930),
 	),
 	iMongols: (
-		Control(plots.normal(iChina)).at(1300),
+		Control(plots.region(rChina).named("CHINA")).at(1300),
 		RazeCount(7),
 		WorldPercent(12).by(1500),
 	),
