@@ -1,5 +1,4 @@
 from inspect import ismethod, isfunction, getargspec
-from copy import deepcopy
 import re, heapq
 
 from Core import *
@@ -1274,16 +1273,12 @@ class BaseGoal(object):
 			events.removeEventHandler(event, getattr(self, handler))
 	
 	def activate(self, iPlayer, callback=None):
-		arguments = self.arguments
-		self.arguments = None
-		
-		goal = deepcopy(self)
+		goal = copy(self)
 	
 		goal.iPlayer = iPlayer
 		goal.callback = callback
 		
-		self.arguments = arguments
-		goal.arguments = arguments
+		goal.arguments = copy(self.arguments)
 		goal.arguments.iPlayer = iPlayer
 		goal.arguments.create()
 		
@@ -2772,6 +2767,11 @@ class Track(Count):
 		super(Track, self).__init__(*arguments)
 		
 		self.dCount = dict((objective[:-1], 0) for objective in self.arguments.objectives)
+	
+	def activate(self, iPlayer, callback=None):
+		goal = super(Track, self).activate(iPlayer, callback)
+		goal.dCount = copy(self.dCount)
+		return goal
 	
 	def value_function(self, *objectives):
 		return self.dCount[objectives]
