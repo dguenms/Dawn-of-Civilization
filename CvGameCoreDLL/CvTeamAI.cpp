@@ -2553,9 +2553,9 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	{
 		iModifier -= 60;
 
-		if (2 * GET_TEAM(eTeam).getNumCities() < iNumCities)
+		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
 		{
-			iNumCities = 2 * GET_TEAM(eTeam).getNumCities();
+			iNumCities = 2 * getNumCities();
 		}
 	}
 
