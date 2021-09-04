@@ -1582,7 +1582,7 @@ class Condition(BaseGoal):
 		def condition(self, plots, *objectives):
 			return plots.cities().all_if_any(lambda city: func(self, city, *objectives))
 		
-		return cls.func(condition)
+		return cls.func(condition).checked("cityBuilt").checked("cityAcquiredAndKept")
 	
 	@classmethod
 	def city(cls, func):
