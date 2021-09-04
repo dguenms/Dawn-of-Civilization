@@ -3313,6 +3313,22 @@
 		<Spanish>Objetivos de la victoria hist&#243;ria</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HISTORICAL</Tag>
+		<English>Historical</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGIOUS</Tag>
+		<English>Religious</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
