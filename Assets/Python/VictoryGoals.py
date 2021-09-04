@@ -3372,12 +3372,13 @@ class All(BaseGoal):
 				self.areas[name] += area
 	
 	def init_description(self):
-		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes)))
+		self._description = format_separators_shared(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes, goal.turn_suffix)))
 	
 	def activate(self, iPlayer, callback=None):
 		all = super(All, self).activate(iPlayer, callback)
 		all.goals = tuple(goal.activate(iPlayer, SubgoalCallback(all)) for goal in all.goals)
 		all.update_areas()
+		all.init_description()
 		return all
 	
 	def deactivate(self):
