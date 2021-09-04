@@ -1748,10 +1748,10 @@ class Condition(BaseGoal):
 		def required(self):
 			return players.major().alive().without(self.iPlayer).civs(*self.lCivs).sum(lambda p: player(p).countTotalCulture())
 		
-		def internal_progress(self, bForceSingle=False):
-			return [text(self._progress, self.value(), self.required())]
+		def progress_text(self):
+			return text(self._progress, self.value(), self.required())
 		
-		return cls.progr("MORE_CULTURE").func(init, than, condition, display, value, required, internal_progress).subclass("MoreCulture")
+		return cls.progr("MORE_CULTURE").func(init, than, condition, display, value, required, progress_text).subclass("MoreCulture")
 	
 	@classproperty
 	def allAttitude(cls):
