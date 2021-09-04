@@ -5284,6 +5284,51 @@ class TestCountGoals(ExtendedTestCase):
 			for plot in controlled:
 				plot.setOwner(-1)
 	
+	def testAcquiredCitiesAcquired(self):
+		goal = Count.acquiredCities(1).activate(0)
+		
+		city = player(1).initCity(61, 31)
+		
+		events.fireEvent("cityAcquired", 1, 0, city, True, False)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "1 / 1")
+		finally:
+			city.kill()
+		
+			goal.deactivate()
+	
+	def testAcquiredCitiesBuilt(self):
+		goal = Count.acquiredCities(1).activate(0)
+		
+		city = player(0).initCity(61, 31)
+		
+		events.fireEvent("cityBuilt", city)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(str(goal), "1 / 1")
+		finally:
+			city.kill()
+		
+			goal.deactivate()
+	
+	def testAcquiredCitiesTwice(self):
+		goal = Count.acquiredCities(2).activate(0)
+		
+		city = player(1).initCity(61, 31)
+		
+		events.fireEvent("cityAcquired", 1, 0, city, True, False)
+		events.fireEvent("cityAcquired", 1, 0, city, True, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "1 / 2")
+		finally:
+			city.kill()
+			goal.deactivate()
+	
 
 class TestPercentageGoals(ExtendedTestCase):
 
@@ -6895,36 +6940,6 @@ class TestTrackGoals(ExtendedTestCase):
 			self.assertEqual(str(goal), "0 / 1")
 		finally:
 			unit.kill(False, -1)
-		
-			goal.deactivate()
-	
-	def testAcquiredCitiesAcquired(self):
-		goal = Track.acquiredCities(1).activate(0)
-		
-		city = player(1).initCity(61, 31)
-		
-		events.fireEvent("cityAcquired", 1, 0, city, True, False)
-		
-		try:
-			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "1 / 1")
-		finally:
-			city.kill()
-		
-			goal.deactivate()
-	
-	def testAcquiredCitiesBuilt(self):
-		goal = Track.acquiredCities(1).activate(0)
-		
-		city = player(0).initCity(61, 31)
-		
-		events.fireEvent("cityBuilt", city)
-		
-		try:
-			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "1 / 1")
-		finally:
-			city.kill()
 		
 			goal.deactivate()
 	

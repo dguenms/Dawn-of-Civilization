@@ -2443,6 +2443,27 @@ class Count(BaseGoal):
 		
 		return cls.desc("FEATURE_COUNT").format(options.objective("TILES").singular()).progr("FEATURE_COUNT").objective(CvFeatureInfo).func(value_function).subclass("FeatureCount")
 
+	@classproperty
+	def acquiredCities(cls):
+		def init(self):
+			self.recorded = []
+		
+		def recordCity(self, city):
+			if location(city) not in self.recorded:
+				self.recorded.append(location(city))
+				self.check()
+		
+		def value_function(self):
+			return len(self.recorded)
+		
+		def checkCityAcquired(self, iPlayer, city, bConquest):
+			self.recordCity(city)
+		
+		def checkCityBuilt(self, city):
+			self.recordCity(city)
+	
+		return cls.desc("ACQUIRED_CITIES").progr("ACQUIRED_CITIES").format(options.number_word()).func(init, recordCity, value_function).handle("cityBuilt", checkCityBuilt).handle("cityAcquired", checkCityAcquired).subclass("AcquiredCities")
+
 
 class Percentage(Count):
 
@@ -2864,10 +2885,6 @@ class Track(Count):
 	@classproperty
 	def pillage(cls):
 		return cls.desc("PILLAGE_COUNT").progr("PILLAGED").incremented("unitPillage").subclass("PillageCount")
-	
-	@classproperty
-	def acquiredCities(cls):
-		return cls.desc("ACQUIRED_CITIES").progr("ACQUIRED_CITIES").incremented("cityAcquired").incremented("cityBuilt").subclass("AcquiredCities")
 	
 	@classproperty
 	def piracyGold(cls):
@@ -3612,6 +3629,7 @@ class DifferentCities(Different):
 			return city_(record).getName()
 
 
+AcquiredCities = Count.acquiredCities
 AttitudeCount = Count.attitude
 AverageCulture = Count.averageCulture
 AveragePopulation = Count.averagePopulation
@@ -3674,7 +3692,6 @@ NeverConquer = Trigger.neverConquer
 NoCityLost = Trigger.noCityLost
 TradeMission = Trigger.tradeMission
 
-AcquiredCities = Track.acquiredCities
 BrokeredPeaceCount = Track.brokeredPeace
 CelebrateTurns = Track.celebrate
 CombatFood = Track.combatFood
