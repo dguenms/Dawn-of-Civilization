@@ -1206,6 +1206,15 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_AREA_NAME_SCANDINAVIA</Tag>
+		<English>Scandinavia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_UHV_NAME_RELIGION_HOLY_CITY</Tag>
 		<English>the %s1 holy city</English>
 		<French></French>

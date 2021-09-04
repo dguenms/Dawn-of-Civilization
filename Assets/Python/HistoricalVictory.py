@@ -362,7 +362,7 @@ dGoals = {
 			plots.normal(iItaly),
 			plots.normal(iFrance),
 			plots.normal(iEngland),
-			plots.normal(iVikings),
+			plots.normal(iVikings).named("SCANDINAVIA"),
 			plots.normal(iRussia),
 		).at(1940),
 		EraFirstDiscovered((iIndustrial, 8), (iGlobal, 8)),
@@ -374,7 +374,6 @@ dGoals = {
 		).at(1900),
 		Wonders(iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations).by(1950),
 		All(
-			# negative value
 			AlliedCommercePercent(75),
 			AlliedPowerPercent(75),
 		).by(1990),
