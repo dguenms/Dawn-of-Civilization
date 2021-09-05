@@ -18186,64 +18186,110 @@ bool CvCity::canSlaveJoin() const
 // Leoreth
 int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 {
-	if (plot() == pPlot) return 0;
+	if (plot() == pPlot)
+	{
+		return 0;
+	}
 
 	// tiles with forts can be covered for free
-	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity())
+	{
+		return 0;
+	}
 
 	int iCost = pPlot->calculateCultureCost();
+	int iExtraCost = 0;
+
 	int iDistance = std::max(plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()), GC.getMap().calculatePathDistance(plot(), pPlot, MOVE_IGNORE_DANGER | MOVE_THROUGH_ENEMY));
 
 	if (bOrdering)
 	{
-		if (pPlot->getBonusType() < 0 && iCost >= 15) iCost += 100; 
-		iCost += 100 * iDistance;
+		if (pPlot->getBonusType() < 0 && iCost >= 15)
+		{
+			iExtraCost += 100;
+		}
+
+		iExtraCost += 100 * iDistance;
 
 		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() == -1 && iDistance > 1)
 		{
-			if (!isCoastal(20)) iCost += 1000;
-			else if (iDistance > 1) iCost += 5;
+			if (!isCoastal(20))
+			{
+				iExtraCost += 1000;
+			}
+			else if (iDistance > 1)
+			{
+				iExtraCost += 5;
+			}
 		}
 
 		// skip already owned tiles - no, only causes problems in case the controlling city is lost
 		//if (pPlot->getOwner() == getOwner()) iCost += 1000;
 
 		// even with Polynesian UP Oceans should still be covered last
-		if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+		if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+		{
+			iExtraCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+		}
 	}
 
-	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
+	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal()))
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_BONUS");
+	}
 	
-	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
-	else iCost += std::min(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	if (iDistance <= 1)
+	{
+		iExtraCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
+	}
+	else
+	{
+		iExtraCost += std::min(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	}
 
-	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	if (plot()->isRiver() && pPlot->isRiver())
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	}
 
 	// Leoreth: Inca UP
-	if (getCivilizationType() == INCA && (GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD || GET_PLAYER(getOwnerINLINE()).getPeriod() == PERIOD_LATE_INCA) && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	if (getCivilizationType() == INCA && (GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD || GET_PLAYER(getOwnerINLINE()).getPeriod() == PERIOD_LATE_INCA) && pPlot->isPeak())
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	}
 
 	// Leoreth: Polynesian UP
-	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+	{
+		iExtraCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+	}
 
 	// Leoreth: Congolese UP
 	if (getCivilizationType() == CONGO)
 	{
 		if (pPlot->getFeatureType() == FEATURE_MARSH || pPlot->getFeatureType() == FEATURE_JUNGLE || pPlot->getFeatureType() == FEATURE_RAINFOREST)
 		{
-			iCost -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
+			iExtraCost -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
 		}
 	}
 
 	// Leoreth: Steppe Empires (use this for Steppe and Semidesert terrain later)
 	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS)
 	{
-		if (pPlot->getTerrainType() == TERRAIN_DESERT) iCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
-		if (pPlot->getTerrainType() == TERRAIN_PLAINS) iCost -= 5;
+		if (pPlot->getTerrainType() == TERRAIN_DESERT)
+		{
+			iExtraCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
+		}
+
+		if (pPlot->getTerrainType() == TERRAIN_PLAINS)
+		{
+			iExtraCost -= 5;
+		}
 	}
 
 	// Leoreth: respect game speed
-	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-	iCost /= 100;
+	iExtraCost = getTurns(iExtraCost);
+	iCost += iExtraCost;
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }
