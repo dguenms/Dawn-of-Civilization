@@ -3550,6 +3550,13 @@ class Different(BaseGoal):
 	def recorded(self, goal):
 		return self.dGoals[goal]
 	
+	def records(self):
+		return [self.recorded(goal) for goal in self.goals if self.recorded(goal) is not None]
+	
+	def unique_records(self):
+		records = self.records()
+		return len(records) == len(set(records))
+	
 	def display_record(self, record):
 		raise NotImplementedError()
 	
@@ -3587,10 +3594,6 @@ class Different(BaseGoal):
 			for goal in self.goals:
 				goal.fail()
 	
-	def unique_records(self):
-		records = [self.recorded(goal) for goal in self.goals]
-		return len(records) == len(set(records))
-	
 	def description(self):
 		return capitalize(format_separators([goal._description for goal in self.goals], ",", text("TXT_KEY_AND")))
 	
@@ -3609,14 +3612,17 @@ class Different(BaseGoal):
 			if goal.state == SUCCESS:
 				progress_entries.append(self.progress_completed(goal))
 			elif goal.possible():
-				progress_entries += goal.internal_progress(bForceSingle)
+				entry = goal.internal_progress(bForceSingle)
+				if self.record_value(goal) in self.records():
+					entry = [item.replace(u"%c" % self.SUCCESS_CHAR, u"%c" % self.FAILURE_CHAR) for item in entry]
+				
+				progress_entries += entry
 				break
 		
 		return progress_entries
 	
 	def progress_completed(self, goal):
-		city_name = self.display_record(self.recorded(goal))
-		return u"%c %s" % (self.SUCCESS_CHAR, getRenameName(self.iPlayer, city_name) or city_name)
+		return u"%c %s" % (self.SUCCESS_CHAR, self.display_record(self.recorded(goal)))
 
 
 class DifferentCities(Different):
@@ -3627,6 +3633,10 @@ class DifferentCities(Different):
 	def display_record(self, record):
 		if city_(record):
 			return city_(record).getName()
+	
+	def progress_completed(self, goal):
+		city_name = self.display_record(self.recorded(goal))
+		return u"%c %s" % (self.SUCCESS_CHAR, getRenameName(self.iPlayer, city_name) or city_name)
 
 
 AcquiredCities = Count.acquiredCities
