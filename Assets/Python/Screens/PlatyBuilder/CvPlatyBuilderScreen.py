@@ -165,10 +165,9 @@ class CvWorldBuilderScreen:
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
 				elif self.iPlayerAddMode == iModeVictoryMap:
-					iVictoryRegion = CvScreensInterface.getUHVTileInfo((x, y, iPlayer)) # TODO: change player to civ
-					if iVictoryRegion != -1:
-						TextKey = "TXT_KEY_UHV_AREA_%d" % iVictoryRegion
-						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
+					sVictoryText = CvScreensInterface.getVictoryTooltip((iPlayer, x, y))
+					if sVictoryText:
+						sDoCText += "<font=3b>%s</font>" % sVictoryText
 				else:
 					# CNM and settlervalue
 					if x > -1 and y > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
