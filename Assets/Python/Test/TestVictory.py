@@ -6590,6 +6590,18 @@ class TestTrackGoals(ExtendedTestCase):
 		
 			goal.deactivate()
 	
+	def testEraFirstsOther(self):
+		goal = Track.eraFirsts(iClassical, 1).activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		try:
+			self.assertEqual(bool(goal), False)
+			self.assertEqual(str(goal), "0 / 1")
+		finally:
+			team(1).setHasTech(iLaw, False, 0, True, False)
+			goal.deactivate()
+	
 	def testEraFirstsDifferentEra(self):
 		goal = Track.eraFirsts(iClassical, 5).activate(0)
 		
@@ -6629,6 +6641,41 @@ class TestTrackGoals(ExtendedTestCase):
 		finally:
 			team(0).setHasTech(iFeudalism, False, 0, True, False)
 		
+			goal.deactivate()
+	
+	def testEraFirstsExpiresWhenNotEnoughTechs(self):
+		goal = Track.eraFirsts(iClassical, 20).activate(0)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			team(1).setHasTech(iCurrency, True, 1, True, False)			
+			self.assertEqual(goal.state, FAILURE)
+		finally:
+			for iTech in [iLaw, iCurrency]:
+				team(1).setHasTech(iTech, False, 1, True, False)
+			goal.deactivate()
+	
+	def testEraFirstExpiresWhenNotEnoughTechsWithOwn(self):
+		goal = Track.eraFirsts(iClassical, 20).activate(0)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(str(goal), "1 / 20")
+			
+			team(1).setHasTech(iCurrency, True, 1, True, False)
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			team(1).setHasTech(iGeneralship, True, 1, True, False)
+			self.assertEqual(goal.state, FAILURE)
+		finally:
+			team(0).setHasTech(iLaw, False, 0, True, False)
+			team(1).setHasTech(iCurrency, False, 1, True, False)
+			team(1).setHasTech(iGeneralship, False, 1, True, False)
 			goal.deactivate()
 	
 	def testSunkShips(self):

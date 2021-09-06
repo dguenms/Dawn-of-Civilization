@@ -2847,10 +2847,20 @@ class Track(Count):
 				if game.countKnownTechNumTeams(iTech) == 1:
 					self.increment(iEra)
 		
+		def checkSufficientTechsLeft(self, iDiscovered):
+			iEra = infos.tech(iDiscovered).getEra()
+			if iEra in self.values:
+				iAvailable = count(iTech for iTech in infos.techs() if infos.tech(iTech).getEra() == iEra and game.countKnownTechNumTeams(iTech) == 0)
+				iOurs = self.dCount[(iEra,)]
+				iRequired = max(arg[-1] for arg in self.arguments)
+				
+				if iOurs + iAvailable < iRequired:
+					self.expire()
+		
 		def progress_chunks(self, entries):
 			return 1
 		
-		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).func(progress_chunks).subclass("EraFirstDiscovered")
+		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).any("techAcquired", checkSufficientTechsLeft).func(progress_chunks).subclass("EraFirstDiscovered")
 	
 	@classproperty
 	def sunkShips(cls):
