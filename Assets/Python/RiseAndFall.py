@@ -1092,6 +1092,8 @@ class RiseAndFall:
 					makeUnit(iNewOwner, iUnitType, tPlot)
 
 	def createStartingUnits(self, iPlayer, tPlot):
+		events.fireEvent("birth", iPlayer)
+		
 		iCiv = civ(iPlayer)
 	
 		if iCiv == iChina:
@@ -1530,9 +1532,7 @@ class RiseAndFall:
 			if tSeaPlot:
 				makeUnits(iPlayer, iSteamship, tSeaPlot, 2)
 				makeUnit(iPlayer, iIronclad, tSeaPlot)
-				makeUnit(iPlayer, iTorpedoBoat, tSeaPlot)
-		
-		events.fireEvent("birth", iPlayer)		
+				makeUnit(iPlayer, iTorpedoBoat, tSeaPlot)	
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iPlayer)
