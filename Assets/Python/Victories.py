@@ -133,6 +133,10 @@ def setupScenario(iPlayer, goals):
 		for iGoal in [iGoal for iGoalCiv, iGoal in lWonIn1700AD if iGoalCiv == iCiv]:
 			goals[iGoal].succeed()
 		
+		# setup English tech goal
+		if iCiv == iEngland:
+			goals[2].accumulate(4, iRenaissance)
+		
 		# setup Congo slave trade goal
 		if iCiv == iCongo:
 			goals[1].accumulate(500)
