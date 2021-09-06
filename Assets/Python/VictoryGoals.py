@@ -2850,17 +2850,32 @@ class Track(Count):
 		def checkSufficientTechsLeft(self, iDiscovered):
 			iEra = infos.tech(iDiscovered).getEra()
 			if iEra in self.values:
-				iAvailable = count(iTech for iTech in infos.techs() if infos.tech(iTech).getEra() == iEra and game.countKnownTechNumTeams(iTech) == 0)
+				iAvailable = self.availableTechs(iEra)
 				iOurs = self.dCount[(iEra,)]
 				iRequired = max(arg[-1] for arg in self.arguments)
 				
 				if iOurs + iAvailable < iRequired:
 					self.expire()
 		
+		def availableTechs(self, iEra):
+			return count(iTech for iTech in infos.techs() if infos.tech(iTech).getEra() == iEra and game.countKnownTechNumTeams(iTech) == 0)
+	
+		def progress_text(self, *arguments):
+			remainder, iRequired = arguments[:-1], arguments[-1]
+			progress_text = self.progress_text_format(remainder, iRequired)
+			progress_value = self.progress_value(self.value(*remainder), self.required(iRequired))
+			
+			techs_remaining = text("TXT_KEY_UHV_PROGRESS_TECHS_REMAINING", self.availableTechs(arguments[0]))
+			
+			if self.single_required():
+				return progress_text
+			
+			return "%s: %s (%s)" % (progress_text, progress_value, techs_remaining)
+		
 		def progress_chunks(self, entries):
 			return 1
 		
-		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).any("techAcquired", checkSufficientTechsLeft).func(progress_chunks).subclass("EraFirstDiscovered")
+		return cls.desc("ERA_FIRST_DISCOVERED").progr("ERA_FIRST_DISCOVERED").format(options.singular()).objective(CvEraInfo).handle("techAcquired", incrementFirstDiscovered).any("techAcquired", checkSufficientTechsLeft).func(availableTechs, progress_text, progress_chunks).subclass("EraFirstDiscovered")
 	
 	@classproperty
 	def sunkShips(cls):

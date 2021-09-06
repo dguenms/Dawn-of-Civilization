@@ -1945,6 +1945,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PROGRESS_TECHS_REMAINING</Tag>
+		<English>%d1 remaining</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- GOAL DESCRIPTIONS -->
 	
