@@ -33,8 +33,6 @@ def initScenario():
 	for iPlayer in players.major().where(lambda p: dBirth[p] < scenarioStartYear()):
 		data.players[iPlayer].bSpawned = True
 	
-	invalidateUHVs()
-	
 	game.setVoteSourceReligion(1, iCatholicism, False)
 	
 	updateExtraOptions()
@@ -513,12 +511,6 @@ def adjustCulture():
 			
 		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
 			convertPlotCulture(plot_(x, y), slot(iRussia), 100, True)
-
-def invalidateUHVs():
-	for iPlayer in players.major():
-		if not player(iPlayer).isPlayable():
-			for i in range(3):
-				data.players[iPlayer].lGoals[i] = 0
 
 def updateExtraOptions():
 	# Human player can switch infinite times
