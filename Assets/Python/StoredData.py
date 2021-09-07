@@ -49,9 +49,7 @@ class PlayerData:
 		
 		# Victory
 		
-		self.lGoals = [-1, -1, -1]
-		self.lGoalTurns = [-1, -1, -1]
-		self.bHistoricalGoldenAge = False
+		self.bLaunchHistoricalGoldenAge = False
 		
 		self.historicalGoals = []
 		self.religiousGoals = []
@@ -129,13 +127,7 @@ class PlayerData:
 	def goals(self):
 		return self.historicalGoals + self.religiousGoals
 		
-	def getGoal(self, iGoal):
-		return self.lGoals[iGoal]
-		
-	def setGoal(self, iGoal, iNewValue):
-		if iNewValue == 1 and self.getGoal(iGoal) == 0: return
-		self.lGoals[iGoal] = iNewValue
-	
+
 class GameData:
 
 	def __init__(self):

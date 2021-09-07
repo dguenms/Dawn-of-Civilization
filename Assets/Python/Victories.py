@@ -62,17 +62,7 @@ class HistoricalVictoryCallback(object):
 			goal.announceFailure()
 	
 	def goldenAge(self, iPlayer):
-		iGoldenAgeTurns = player(iPlayer).getGoldenAgeLength()
-		if player(iPlayer).isAnarchy():
-			iGoldenAgeTurns += 1
-		
-		player(iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
-		
-		message(iPlayer, "TXT_KEY_UHV_INTERMEDIATE", color=iPurple)
-		
-		if player(iPlayer).isHuman():
-			for iOtherPlayer in players.major().alive().without(iPlayer):
-				player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
+		data.players[iPlayer].bLaunchHistoricalGoldenAge = True
 		
 	def victory(self, iPlayer):
 		if game.getWinner() == -1:
@@ -144,6 +134,19 @@ def setupScenario(iPlayer, goals):
 	return goals
 
 
+### GOLDEN AGE ###
+	
+def goldenAge(iPlayer):
+	iGoldenAgeTurns = player(iPlayer).getGoldenAgeLength()
+	player(iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
+	
+	message(iPlayer, "TXT_KEY_UHV_INTERMEDIATE", color=iPurple)
+	
+	if player(iPlayer).isHuman():
+		for iOtherPlayer in players.major().alive().without(iPlayer):
+			player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
+
+
 @handler("GameStart")
 def setup():
 	iPlayer = active()
@@ -174,3 +177,10 @@ def onCivicChanged(iPlayer, iOldCivic, iNewCivic):
 def onStateReligionChanged(iPlayer):
 	if iPlayer == active():
 		switchReligiousGoals(iPlayer)
+
+
+@handler("EndPlayerTurn")
+def checkHistoricalGoldenAge(iGameTurn, iPlayer):
+	if data.players[iPlayer].bLaunchHistoricalGoldenAge:
+		data.players[iPlayer].bLaunchHistoricalGoldenAge = False
+		goldenAge(iPlayer)
