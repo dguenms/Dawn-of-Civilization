@@ -3329,6 +3329,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
+		<English>Historical goals accomplished: %d1</English>
+		<French>Objectifs historiques accomplis : %d1</French>
+		<German>Erreichte historische Ziele: %d1</German>
+		<Italian>Obiettivi storici raggiunti: %d1</Italian>
+		<Spanish>Objetivos hist&#243;ricos conseguidos: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHECKF8</Tag>
+		<English>Check the Victory Conditions (F8) for details</English>
+		<French>Consulter les conditions de victoire (F8) pour de plus amples d&#233;tails</French>
+		<German>Einzelheiten in den Siegbedingungen (F8)</German>
+		<Italian>Per ulteriori dettagli consulta le Condizioni di vittoria (F8)</Italian>
+		<Spanish>Revisa las condiciones para la victoria [F8] para obtener m&#225;s detalles.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

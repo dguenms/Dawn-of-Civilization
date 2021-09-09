@@ -3849,18 +3849,7 @@ void CvDLLWidgetData::parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataS
 	CyArgsList argsList;
 	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "countAchievedGoals", argsList.makeFunctionArgs(), &result);
-	int iResult = (int)result;
-	szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED"));
-	szBuffer.append(gDLL->getText(" "));
-	if (iResult == 0) {		
-		szBuffer.append("0");
-	}
-	else if (iResult == 1) {		
-		szBuffer.append("1");
-	}
-	else if (iResult == 2) {
-		szBuffer.append("0");
-	}
+	szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED", (int)result));
 	szBuffer.append(NEWLINE);
 }
 //Rhye - end
