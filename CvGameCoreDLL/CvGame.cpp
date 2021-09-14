@@ -3590,6 +3590,9 @@ void CvGame::reviveActivePlayer()
 		//GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)0), 0, 0); //Rhye
 		//GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)GC.getInfoTypeForString("UNIT_CATAPULT")), 0, 0); //Rhye (catapult)
 		//logMsg("init catapult in 00"); //Rhye
+
+		// Leoreth
+		GET_PLAYER(getActivePlayer()).verifyAlive();
 	}
 }
 
