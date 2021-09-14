@@ -56,6 +56,10 @@ class Birth(object):
 	def assignTechs(self):
 		initPlayerTechs(self.iPlayer)
 	
+	def revealTerritory(self):
+		for plot in plots.core(self.iPlayer).land().expand(1):
+			plot.setRevealed(self.team.getID(), True, False, -1)
+	
 	def createUnits(self):
 		iNumSettlers = getStartingSettlers(self.iPlayer)
 		if iNumSettlers > 0:
@@ -77,8 +81,20 @@ class Birth(object):
 				except:
 					raise Exception("Cannot create iUnit=%s, iPlayer=%s, iRole=%s" % (iUnit, self.iPlayer, iRole))
 	
-	def flipCapital(self):
-		pass
+	def prepareCapital(self):
+		"""Maybe preserve wonders in erased cities?"""
+	
+		if plot_(self.location).isCity():
+			completeCityFlip(self.location, self.iPlayer, city(self.location).getOwner(), 100, bFlipUnits=True)
+		
+		for city in cities.surrounding(self.location):
+			if city.isHolyCity():
+				completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
+			else:
+				plot_(city).eraseAIDevelopment()
+		
+		for plot in plots.surrounding(self.location):
+			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
 	
 	def resetPlague(self):
 		data.players[self.iPlayer].iPlagueCountdown = -10
@@ -92,6 +108,8 @@ class Birth(object):
 		if iUntilBirth == 1:
 			print "birth"
 			self.birth()
+		elif iUntilBirth == 0:
+			self.flip()
 	
 	def birth(self):
 		# reset AI
@@ -103,12 +121,37 @@ class Birth(object):
 		# assign techs
 		self.assignTechs()
 		
+		# reveal territory
+		self.revealTerritory()
+		
 		# flip capital
-		self.flipCapital()
+		self.prepareCapital()
 		
 		# create starting units
 		self.createUnits()
 		
 		# reset plague
 		self.resetPlague()
+		
+	def warOnFlip(self, iEnemy):
+		# let's think about how this should work and keep it turned off for now
+		return
+	
+	def flip(self):
+		print "flip for %s" % name(self.iPlayer)
+		humanCities, aiCities = cities.birth(self.iPlayer).split(CyCity.isHuman)
+		
+		for city in aiCities:
+			completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
+			
+			if since(scenarioStartTurn()):
+				ensureDefenders(self.iPlayer, city, 2)
+		
+		for iEnemy in aiCities.owners().major():
+			self.warOnFlip(iEnemy)
+		
+		if aiCities:
+			message(self.iPlayer, 'TXT_KEY_MESSAGE_CITIES_FLIPPED', format_separators(aiCities, ",", text("TXT_KEY_AND"), CyCity.getName), color=iGreen)
+			
+		
 		
