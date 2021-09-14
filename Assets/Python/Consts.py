@@ -345,6 +345,8 @@ iBrazil : 1822,
 iCanada : 1867,
 }, -3000)
 
+lBirthCivs = dBirth.keys()
+
 dFall = CivDict({
 iEgypt : -343,
 iBabylonia : -539,

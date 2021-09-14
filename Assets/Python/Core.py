@@ -124,10 +124,6 @@ def number_word(number):
 	return text_if_exists("TXT_KEY_UHV_NUMBER_%s" % number, otherwise=number)
 
 
-def since(iTurn):
-	return turn() - iTurn
-
-
 def getPlayerExperience(unit):
 	iExperience = player(unit).getFreeExperience() + player(unit).getDomainFreeExperience(unit.getDomainType())
 	
@@ -531,7 +527,7 @@ def scenarioStartYear():
 
 
 def scenario():
-	"""Cannot use civ constants because slots maybe not be set up yet."""
+	"""Cannot use civ constants because slots may not be set up yet."""
 
 	if player(0).isPlayable(): # Egypt
 		return i3000BC
@@ -752,7 +748,7 @@ def _parse_tile(*args):
 		if isinstance(args[0], tuple) and len(args[0]) == 2:
 			return args[0]
 		elif isinstance(args[0], (CyPlot, CyCity, CyUnit)):
-			if args[0].getX() < 0 or args[0].getY() < 0:
+			if args[0].isNone() or args[0].getX() < 0 or args[0].getY() < 0:
 				return None
 			return args[0].getX(), args[0].getY()
 	
@@ -1365,6 +1361,9 @@ class Plots(Locations):
 	
 	def no_enemies(self, iPlayer):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
+	
+	def expand(self, iNumTiles):
+		return self.enrich(lambda p: plots.surrounding(p, radius=iNumTiles))
 
 
 class LazyPlots(object):
@@ -1801,6 +1800,9 @@ class Players(EntityCollection):
 
 	def human(self):
 		return self.where(lambda p: player(p).isHuman())
+	
+	def major(self):
+		return self.where(lambda p: not is_minor(p))
 		
 	def without(self, exceptions):
 		if not isinstance(exceptions, (list, set, Players)):

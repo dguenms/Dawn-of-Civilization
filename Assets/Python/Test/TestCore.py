@@ -1955,6 +1955,14 @@ class TestPlots(TestCase):
 		
 		self.assertEqual(taken[-1], None)
 		assertType(self, taken[-2], CyPlot)
+	
+	def test_expand(self):
+		area = PlotFactory().of([(1, 1), (2, 1)])
+		
+		expectedExpanded = PlotFactory().of([(x, y) for x in range(4) for y in range(3)])
+		actualExpanded = area.expand(1)
+		
+		self.assertEqual(actualExpanded.same(expectedExpanded), True)
 
 
 class TestPlotFactory(TestCase):

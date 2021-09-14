@@ -3345,6 +3345,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITIES_FLIPPED</Tag>
+		<English>%s1 have joined our rising empire!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
 		<English>Historical goals accomplished: %d1</English>
 		<French>Objectifs historiques accomplis : %d1</French>
