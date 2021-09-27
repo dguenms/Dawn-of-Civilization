@@ -290,6 +290,11 @@ public:
 
 	int getActualCulture(int ePlayer);
 
+	void setBirthProtected(int ePlayer);
+	void resetBirthProtected();
+	int getBirthProtected();
+	bool isBirthProtected();
+
 private:
 	CvPlot* m_pPlot;
 };

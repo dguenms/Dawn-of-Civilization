@@ -1158,3 +1158,23 @@ int CyPlot::getActualCulture(int ePlayer)
 {
 	return m_pPlot ? m_pPlot->getActualCulture((PlayerTypes)ePlayer) : -1;
 }
+
+void CyPlot::setBirthProtected(int ePlayer)
+{
+	if (m_pPlot) m_pPlot->setBirthProtected((PlayerTypes)ePlayer);
+}
+
+void CyPlot::resetBirthProtected()
+{
+	if (m_pPlot) m_pPlot->resetBirthProtected();
+}
+
+int CyPlot::getBirthProtected()
+{
+	return m_pPlot ? m_pPlot->getBirthProtected() : -1;
+}
+
+bool CyPlot::isBirthProtected()
+{
+	return m_pPlot ? m_pPlot->isBirthProtected() : -1;
+}

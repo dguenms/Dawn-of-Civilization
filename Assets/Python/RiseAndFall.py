@@ -49,9 +49,6 @@ def setup():
 			
 @handler("GameStart")
 def startAutoplay():
-	#CvScreensInterface.dawnOfMan.interfaceScreen()
-	#CvDawnOfMan.CvDawnOfMan(DAWN_OF_MAN).interfaceScreen()
-
 	iBirthTurn = year(dSpawn[active()])
 	iScenarioStartTurn = scenarioStartTurn()
 

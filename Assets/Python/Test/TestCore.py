@@ -2053,10 +2053,19 @@ class TestPlotFactory(TestCase):
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
 		self.assertEqual(set(actual_tiles), set(expected_tiles))
+		self.assertEqual((1, 1) in plots, False)
 		
 	def test_ring_large(self):
 		expected_tiles = [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (1, 4), (2, 4), (3, 4)]
 		plots = self.factory.ring(2, 2, radius=2)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in plots]
+		
+		self.assertEqual(set(actual_tiles), set(expected_tiles))
+	
+	def test_circle(self):
+		expected_tiles = [(0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3)]
+		plots = self.factory.circle(2, 2, radius=2)
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		

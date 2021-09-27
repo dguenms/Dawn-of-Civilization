@@ -277,5 +277,9 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getCultureConversionPlayer", &CyPlot::getCultureConversionPlayer, "int ()")
 		.def("getCultureConversionRate", &CyPlot::getCultureConversionRate, "int ()")
 		.def("getActualCulture", &CyPlot::getActualCulture, "int (int ePlayer)")
+		.def("setBirthProtected", &CyPlot::setBirthProtected, "void (int ePlayer)")
+		.def("resetBirthProtected", &CyPlot::resetBirthProtected, "void ()")
+		.def("getBirthProtected", &CyPlot::getBirthProtected, "int ()")
+		.def("isBirthProtected", &CyPlot::isBirthProtected, "bool ()")
 	;
 }

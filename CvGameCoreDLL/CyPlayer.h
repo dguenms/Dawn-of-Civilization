@@ -603,6 +603,8 @@ public:
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
 	int getUnhappinessDecayModifier();
 	bool isUnstableCivic(int iCivic);
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected();
 
 private:
 	CvPlayer* m_pPlayer;

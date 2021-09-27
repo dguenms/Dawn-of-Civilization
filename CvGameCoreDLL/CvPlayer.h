@@ -1371,6 +1371,8 @@ public:
 	PeriodTypes getPeriod() const;
 
 	bool isUnstableCivic(CivicTypes eCivic) const;
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected() const;
 
 	bool m_bTurnPlayed;
 
@@ -1507,6 +1509,7 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
+	bool m_bBirthProtected; // Leoreth
 
 
 /************************************************************************************************/

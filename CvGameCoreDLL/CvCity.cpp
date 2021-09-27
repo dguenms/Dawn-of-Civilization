@@ -15008,6 +15008,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 							{
 								// Leoreth: culture can only invade foreign core if city itself is in foreign core
 								bool bCanSpreadCore = true;
+								bool bBirthProtected = pLoopPlot->getBirthProtected() != NO_PLAYER && pLoopPlot->getBirthProtected() != ePlayer;
 
 								if (!pLoopPlot->isCore(ePlayer) && iCultureRange > 2)
 								{
@@ -15029,7 +15030,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 									}
 								}
 
-								if (bCanSpreadCore)
+								if (bCanSpreadCore && !bBirthProtected)
 								{
 									int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
 									if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == ITALY) iChange /= 2;
