@@ -427,7 +427,7 @@ dStartingUnits = CivDict({
 		iCounter: 3,
 		iCavalry: 2,
 	},
-	iCongo: {
+	iCongo: { # defend gives crossbows but should be archers
 		iDefend: 2,
 		iAttack: 2,
 	},

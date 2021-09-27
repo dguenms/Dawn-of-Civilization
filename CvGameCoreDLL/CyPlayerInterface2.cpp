@@ -141,5 +141,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getDomainFreeExperience", &CyPlayer::getDomainFreeExperience, "int (int iDomainType)")
 		.def("changeGoldPerTurnByPlayer", &CyPlayer::changeGoldPerTurnByPlayer, "void (int iPlayer, int iChange)")
 		.def("getUnhappinessDecayModifier", &CyPlayer::getUnhappinessDecayModifier, "int ()")
+		.def("setBirthProtected", &CyPlayer::setBirthProtected, "void (bool bNewValue)")
+		.def("isBirthProtected", &CyPlayer::isBirthProtected, "bool ()")
 		;
 }

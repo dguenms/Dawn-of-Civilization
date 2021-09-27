@@ -2742,3 +2742,13 @@ int CyPlayer::getUnhappinessDecayModifier()
 {
 	return m_pPlayer ? m_pPlayer->getUnhappinessDecayModifier() : -1;
 }
+
+void CyPlayer::setBirthProtected(bool bNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setBirthProtected(bNewValue);
+}
+
+bool CyPlayer::isBirthProtected()
+{
+	return m_pPlayer ? m_pPlayer->isBirthProtected() : false;
+}

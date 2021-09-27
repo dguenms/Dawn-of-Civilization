@@ -1370,6 +1370,9 @@ public:
 	void setPeriod(PeriodTypes ePeriod);
 	PeriodTypes getPeriod() const;
 
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected() const;
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1505,6 +1508,7 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
+	bool m_bBirthProtected; // Leoreth
 
 
 /************************************************************************************************/

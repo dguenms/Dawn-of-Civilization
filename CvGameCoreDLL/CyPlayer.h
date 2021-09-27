@@ -602,6 +602,8 @@ public:
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
 	int getUnhappinessDecayModifier();
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected();
 
 private:
 	CvPlayer* m_pPlayer;

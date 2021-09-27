@@ -3572,6 +3572,8 @@ void CvGame::reviveActivePlayer()
 
 		GC.getInitCore().setSlotStatus(getActivePlayer(), SS_TAKEN);
 
+		CvEventReporter::getInstance().autoplayEnded();
+
 		// Let Python handle it
 		//Rhye - start
 //Speed: Modified by Kael 04/19/2007
@@ -4196,11 +4198,6 @@ void CvGame::setAIAutoPlay(int iNewValue)
 		{
 			GET_PLAYER(getActivePlayer()).killUnits();
 			GET_PLAYER(getActivePlayer()).killCities();
-		}
-
-		if (getAIAutoPlay() == 0)
-		{
-			CvEventReporter::getInstance().autoplayEnded();
 		}
 	}
 }

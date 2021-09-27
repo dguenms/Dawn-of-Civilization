@@ -1186,6 +1186,12 @@ class PlotFactory:
 		inside = self.surrounding(*args, **{'radius': radius-1})
 		return circle.without(inside)
 	
+	def circle(self, *args, **kwargs):
+		radius = kwargs.get('radius', 1)
+		square = self.surrounding(*args, **kwargs)
+		x, y = _parse_tile(*args)
+		return square.where(lambda p: plotDistance(p.getX(), p.getY(), x, y) <= radius)
+	
 	def city_radius(self, city):
 		if not city or city.isNone():
 			raise TypeError("city object is None")
@@ -1360,7 +1366,11 @@ class Plots(Locations):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
 	
 	def expand(self, iNumTiles):
-		return self.enrich(lambda p: plots.surrounding(p, radius=iNumTiles))
+		return self.enrich(lambda p: plots.circle(p, radius=iNumTiles))
+	
+	# TODO: test
+	def edge(self):
+		return self.where(lambda p: plots.surrounding(p).any(lambda sp: p.getOwner() != sp.getOwner()))
 
 
 class LazyPlots(object):
@@ -1509,6 +1519,9 @@ class CityFactory:
 		
 	def surrounding(self, *args, **kwargs):
 		return self.plots.surrounding(*args, **kwargs).cities()
+	
+	def ring(self, *args, **kwargs):
+		return self.plots.ring(*args, **kwargs).cities()
 
 	def birth(self, identifier, extended = None):
 		return self.plots.birth(identifier, extended).cities()
@@ -1675,6 +1688,9 @@ class Units(EntityCollection):
 
 	def notowner(self, iPlayer):
 		return self.where(lambda u: not owner(u, iPlayer))
+	
+	def minor(self):
+		return self.where(lambda u: is_minor(u))
 		
 	def type(self, iUnitType):
 		return self.where(lambda u: u.getUnitType() == iUnitType)

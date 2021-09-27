@@ -575,6 +575,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
+	m_bBirthProtected = false; // Leoreth
 
 	m_bTurnPlayed = false;
 
@@ -18461,7 +18462,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 9
+	// Leoreth: using flag = 10
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18595,6 +18596,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
+	if (uiFlag >= 10) pStream->Read(&m_bBirthProtected); // Leoreth
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -19009,11 +19011,12 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 9; // Leoreth: 5 for no resistance and no temporary unhappiness, 
-					 // 6 for unhappiness decay modifier, 
-					 // 7 for periods, 
-					 // 8 for initial and last birth turn
-					 // 9 for vassal trade modifier
+	uint uiFlag = 10; // Leoreth: 5 for no resistance and no temporary unhappiness, 
+					  // 6 for unhappiness decay modifier, 
+					  // 7 for periods, 
+					  // 8 for initial and last birth turn
+					  // 9 for vassal trade modifier
+					  // 10 for birth protection
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19145,6 +19148,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
+	pStream->Write(m_bBirthProtected);
 
 
 	//Rhye (jdog) -  start ---------------------
@@ -25730,4 +25734,14 @@ void CvPlayer::setPeriod(PeriodTypes ePeriod)
 PeriodTypes CvPlayer::getPeriod() const
 {
 	return m_ePeriod;
+}
+
+void CvPlayer::setBirthProtected(bool bNewValue)
+{
+	m_bBirthProtected = bNewValue;
+}
+
+bool CvPlayer::isBirthProtected() const
+{
+	return m_bBirthProtected;
 }
