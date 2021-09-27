@@ -205,7 +205,7 @@ public:
 #ifdef _USRDLL
 	inline int getX_INLINE() const
 	{
-		return m_iX;
+ 		return m_iX;
 	}
 #endif
 	DllExport int getY() const;																																				// Exposed to Python
@@ -548,6 +548,11 @@ public:
 
 	bool isOverseas(const CvPlot* pPlot) const;
 
+	void setBirthProtected(PlayerTypes ePlayer);
+	void resetBirthProtected();
+	PlayerTypes getBirthProtected() const;
+	bool isBirthProtected() const;
+
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
 	void pageGraphicsOut();
@@ -592,6 +597,7 @@ protected:
 
 	char /*PlayerTypes*/ m_eOwner;
 	PlayerTypes m_eCultureConversionPlayer;
+	char /*PlayerTypes*/ m_eBirthProtected;
 	short /*PlotTypes*/ m_ePlotType;
 	short /*TerrainTypes*/ m_eTerrainType;
 	short /*FeatureTypes*/ m_eFeatureType;

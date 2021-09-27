@@ -2609,6 +2609,24 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 	}
 
+	// Leoreth: protect newborn civilizations from barbarians
+	if (isBarbarian() || GET_PLAYER(getOwnerINLINE()).isMinorCiv())
+	{
+		if (pPlot->isBirthProtected() && !pPlot->isCity())
+		{
+			return false;
+		}
+	}
+
+	// Leoreth: protect newborn civilizations from losing their capital
+	if (bAttack && pPlot->isCity() && GET_PLAYER(pPlot->getOwnerINLINE()).isBirthProtected())
+	{
+		if (pPlot->getNumDefenders(pPlot->getOwnerINLINE()) == 0)
+		{
+			return false;
+		}
+	}
+
 	CvArea *pPlotArea = pPlot->area();
 	TeamTypes ePlotTeam = pPlot->getTeam();
 	bool bCanEnterArea = canEnterArea(ePlotTeam, pPlotArea);

@@ -289,7 +289,7 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot.resetCultureConversion()
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
-	if bOwner:
+	if bOwner and plot.isOwned():
 		plot.setOwner(iPlayer)
 		
 # used: RFCUtils
@@ -740,9 +740,9 @@ def isUnitOfRole(iUnit, iRole):
 	elif iRole == iCounter:
 		return iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0
 	elif iRole in [iCavalry, iCavalryCity]:
-		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY or iUnit == iKeshik
 	elif iRole == iHarass:
-		return iCombatType == UnitCombatTypes.UNITCOMBAT_LIGHT_CAVALRY
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_LIGHT_CAVALRY and not iUnit == iKeshik
 	elif iRole == iWorkerSea:
 		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getCombat() == 0
 	elif iRole == iSettle:
@@ -770,11 +770,14 @@ def getUnitForRole(iPlayer, iRole):
 	return (iBestUnit, getRoleAI(iRole))
 	
 def getUnitsForRole(iPlayer, iRole):
-	units = [getUnitForRole(iPlayer, iRole)]
+	iUnit, iUnitAI = getUnitForRole(iPlayer, iRole)
+	units = [(iUnit, iUnitAI)]
 	
 	if iRole == iSettleSea:
 		units.append(getUnitForRole(iPlayer, iSettle))
-		units.append(getUnitForRole(iPlayer, iDefend))
+		
+		for _ in range(infos.unit(iUnit).getCargoSpace()-1):
+			units.append(getUnitForRole(iPlayer, iDefend))
 	
 	return units
 	

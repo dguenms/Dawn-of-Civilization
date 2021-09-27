@@ -151,6 +151,8 @@ class GameData:
 		self.dSlots = dict((gc.getPlayer(iSlot).getCivilizationType(), iSlot) for iSlot in range(gc.getMAX_PLAYERS()))
 		
 		# Rise and Fall
+		
+		self.births = []
 
 		self.lTempEvents = []
 		self.lTempPlots = []
