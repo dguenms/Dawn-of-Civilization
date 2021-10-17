@@ -60,6 +60,9 @@ def getStartingUnits(iPlayer):
 		lStartingUnits += dExtraAIUnits[iPlayer].items()
 	
 	return lStartingUnits
+	
+def getAdditionalUnits(iPlayer):
+	return dAdditionalUnits[iPlayer].items()
 
 ### Tech preference functions ###
 
@@ -431,6 +434,11 @@ dStartingUnits = CivDict({
 		iDefend: 2,
 		iAttack: 2,
 	},
+	iIran: {
+		iDefend: 3,
+		iAttack: 3,
+		iSiege: 3,
+	},
 	iNetherlands: {
 		iSettleSea: 2,
 		iAttack: 6,
@@ -458,6 +466,19 @@ dStartingUnits = CivDict({
 		iSiege: 2, # +2 experience
 		iTransport: 1,
 		iEscort: 2,
+	},
+	iMexico: {
+		iCavalry: 4, # +2 experience
+		iDefend: 3, # +2 experience
+		iAttack: 2, # +2 experience
+		iCounter: 2, # +2 experience
+	},
+	iColombia: {
+		iDefend: 2, # +2 experience
+		iAttack: 3, # +2 experience
+		iCounter: 5, # +2 experience
+		iTransport: 1,
+		iAttackSea: 1,
 	},
 	iBrazil: {
 		iSkirmish: 3,
@@ -501,6 +522,10 @@ dExtraAIUnits = CivDict({
 		iSiege: 5,
 		iExplore: 2,
 	},
+	iIran: {
+		iAttack: 6,
+		iSiege: 3,
+	},
 	iGermany: {
 		iAttack: 10, # +2 experience
 		iSiege: 5, # +2 experience
@@ -516,6 +541,166 @@ dExtraAIUnits = CivDict({
 	iBrazil: {
 		iDefend: 1,
 	}
+}, {})
+
+# TODO: rebirth units missing
+dAdditionalUnits = CivDict({
+	iIndia: {
+		iDefend: 2,
+		iAttack: 1,
+	},
+	iGreece: {
+		iAttack: 4,
+	},
+	iPersia: {
+		iAttack: 4,
+	},
+	iPhoenicia: {
+		iHarass: 1,
+		iCavalry: 1
+	},
+	iPolynesia: {
+		iBase: 2,
+	},
+	iRome: {
+		iAttack: 4,
+	},
+	iJapan: {
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iTamils: {
+		iAttack: 2,
+		iCavalry: 1,
+	},
+	iEthiopia: {
+		iDefend: 2,
+		iAttack: 2, # should be Shotelai but cannot build them
+	},
+	iKorea: {
+		iHarass: 2,
+		iDefend: 2, # crossbows but they cannot build them
+	},
+	iMaya: {
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iByzantium: {
+		iCavalry: 2,
+		iHarass: 2,
+	},
+	iVikings: {
+		iAttack: 3, # should be huscarls, can they build them?
+	},
+	iTurks: {
+		iHarass: 4,
+	},
+	iArabia: {
+		iAttack: 2,
+		iCavalry: 4,
+	},
+	iTibet: {
+		iHarass: 2,
+	},
+	iKhmer: {
+		iAttack: 3,
+		iCavalryCity: 2,
+	},
+	iMoors: {
+		iHarass: 2, # should be camel archer but will be horse archer probably
+	},
+	iSpain: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iFrance: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iEngland: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iHolyRome: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iRussia: {
+		iAttack: 2,
+		iDefend: 2,
+		iHarass: 2,
+	},
+	iMali: {
+		iSkirmish: 4,
+		iAttack: 3,
+	},
+	iPoland: {
+		iDefend: 2,
+		iCavalry: 2,
+	},
+	iPortugal: {
+		iDefend: 3,
+		iCounter: 3,
+	},
+	iInca: {
+		iAttack: 5,
+		iDefend: 3,
+	},
+	iItaly: {
+		iCavalry: 2,
+	},
+	iMongols: {
+		iDefend: 2,
+		iHarass: 2,
+		iCavalry: 4,
+	},
+	iAztecs: {
+		iAttack: 5,
+		iDefend: 3,
+	},
+	iMughals: {
+		iCavalryCity: 2,
+		iHarass: 4,
+	},
+	iOttomans: {
+		iDefend: 3,
+		iHarass: 3,
+	},
+	iThailand: {
+		iCounter: 2,
+		iCavalry: 2,
+	},
+	iCongo: {
+		iAttack: 3,
+	},
+	iNetherlands: {
+		iAttack: 3,
+		iCounter: 3,
+	},
+	iGermany: {
+		iAttack: 5,
+		iSiege: 3,
+	},
+	iAmerica: {
+		iAttack: 3,
+		iCounter: 3,
+		iSiege: 3,
+	},
+	iArgentina: {
+		iAttack: 2,
+		iCavalry: 4,
+	},
+	iBrazil: {
+		iAttack: 3,
+		iCounter: 2,
+		iSiege: 2,
+	},
+	iCanada: {
+		iAttack: 4,
+		iCavalry: 2,
+		iSiege: 2,
+	},
+	# TODO: reborn civs missing
 }, {})
 
 dStartingSettlers = CivDict({
@@ -555,10 +740,13 @@ dStartingSettlers = CivDict({
 	iOttomans: 3,
 	iThailand: 1,
 	iCongo: 1,
+	iIran: 1,
 	iNetherlands: 2,
 	iGermany: 4,
 	iAmerica: 8,
 	iArgentina: 2,
+	iMexico: 1,
+	iColombia: 1,
 	iBrazil: 5,
 	iCanada: 5,
 }, 0)

@@ -1238,6 +1238,8 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	getDefenderCombatValues(*pDefender, pPlot, iAttackerStrength, iAttackerFirepower, iDefenderOdds, iDefenderStrength, iAttackerDamage, iDefenderDamage, &cdDefenderDetails);
 	int iAttackerKillOdds = iDefenderOdds * (100 - withdrawalProbability()) / 100;
 
+	int iInitialDefenderDamage = iDefenderDamage;
+
 	if (isHuman() || pDefender->isHuman())
 	{
 		//Added ST
@@ -1336,6 +1338,17 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 								}
 							}
 						}
+					}
+				}
+
+				// Leoreth: defenders from recently born civilizations can retreat from combat after losing half their initial health
+				if (pPlot->isBirthProtected() && pPlot->getBirthProtected() == pDefender->getOwnerINLINE())
+				{
+					if (iInitialDefenderDamage < maxHitPoints() / 2 && pDefender->getDamage() + iDefenderDamage >= 2 * iInitialDefenderDamage)
+					{
+						changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWAL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+						CvEventReporter::getInstance().combatRetreat(this, pDefender);
+						break;
 					}
 				}
 
@@ -2612,14 +2625,14 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	// Leoreth: protect newborn civilizations from barbarians
 	if (isBarbarian() || GET_PLAYER(getOwnerINLINE()).isMinorCiv())
 	{
-		if (pPlot->isBirthProtected() && !pPlot->isCity())
+		if (pPlot->isBirthProtected() && !(pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() == getOwnerINLINE()))
 		{
 			return false;
 		}
 	}
 
-	// Leoreth: protect newborn civilizations from losing their capital
-	if (bAttack && pPlot->isCity() && GET_PLAYER(pPlot->getOwnerINLINE()).isBirthProtected())
+	// Leoreth: protect newborn civilizations from losing their only city
+	if (bAttack && pPlot->isCity() && GET_PLAYER(pPlot->getOwnerINLINE()).isBirthProtected() && GET_PLAYER(pPlot->getOwnerINLINE()).getNumCities() <= 1)
 	{
 		if (pPlot->getNumDefenders(pPlot->getOwnerINLINE()) == 0)
 		{
@@ -3938,6 +3951,12 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 		}
 	}
 
+	// Leoreth: additional healing for recently born players in their territory
+	if (plot()->getBirthProtected() == getOwnerINLINE())
+	{
+		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE");
+	}
+
 	// XXX optimize this (save it?)
 	iBestHeal = 0;
 
@@ -4921,6 +4940,12 @@ bool CvUnit::bombard()
 	}
 
 	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
+
+	// Leoreth: recently born civilizations have additional bombard damage on their territory
+	if (pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() == getOwnerINLINE())
+	{
+		iBombardModifier += 100;
+	}
 
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
@@ -8662,6 +8687,13 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		if (!noDefensiveBonus())
 		{
 			iExtraModifier = pPlot->defenseModifier(getTeam(), (pAttacker != NULL) ? pAttacker->ignoreBuildingDefense() : true);
+
+			// Leoreth: reduced terrain defense within the territory of a recently born civilization
+			if (pPlot->isBirthProtected() && pPlot->getBirthProtected() != getOwner())
+			{
+				iExtraModifier /= 2;
+			}
+
 			iModifier += iExtraModifier;
 			if (pCombatDetails != NULL)
 			{
@@ -9440,6 +9472,12 @@ int CvUnit::fortifyModifier() const
 		return 0;
 	}
 
+	// Leoreth: recently born civilizations fortify immediately in their territory
+	if (plot()->getBirthProtected() == getOwnerINLINE() && getFortifyTurns() > 0)
+	{
+		return GC.getDefineINT("MAX_FORTIFY_TURNS") * GC.getFORTIFY_MODIFIER_PER_TURN();
+	}
+
 	return (getFortifyTurns() * GC.getFORTIFY_MODIFIER_PER_TURN());
 }
 
@@ -9653,7 +9691,15 @@ int CvUnit::withdrawalProbability() const
 		return 0;
 	}
 
-	return std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
+	int iWithdrawalProbability = std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
+
+	// Leoreth: recently born civilizations have additional retreat chance on their territory
+	if (plot()->getBirthProtected() == getOwnerINLINE())
+	{
+		iWithdrawalProbability = std::min(100, iWithdrawalProbability + 50);
+	}
+
+	return iWithdrawalProbability;
 }
 
 
@@ -11203,7 +11249,8 @@ int CvUnit::getAlwaysHealCount() const
 
 bool CvUnit::isAlwaysHeal() const
 {
-	return (getAlwaysHealCount() > 0);
+	// Leoreth: recently spawned can always heal in their territory
+	return (getAlwaysHealCount() > 0 || plot()->getBirthProtected() == getOwnerINLINE());
 }
 
 void CvUnit::changeAlwaysHealCount(int iChange)
@@ -13024,6 +13071,12 @@ void CvUnit::collateralCombat(const CvPlot* pPlot, CvUnit* pSkipUnit)
 				{
 					int iCityDefenseLimit = std::max(0, 100 - pPlot->getPlotCity()->getDefenseModifier(false));
 					iMaxDamage = std::min(iMaxDamage, iCityDefenseLimit);
+				}
+
+				// Leoreth: recently born civilizations take at most 10% collateral damage in their territory
+				if (plot()->getBirthProtected() == getOwnerINLINE())
+				{
+					iMaxDamage = std::min(iMaxDamage, pBestUnit->getDamage() + 10);
 				}
 
 				iUnitDamage = std::max(pBestUnit->getDamage(), std::min(pBestUnit->getDamage() + iCollateralDamage, iMaxDamage));

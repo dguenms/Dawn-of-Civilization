@@ -592,6 +592,7 @@ public:
 	bool isCore(int iPlayer);
 	int getActualCulture(int iPlayer);
 	int getPopulationLoss();
+	int getArea();
 
 private:
 	CvCity* m_pCity;

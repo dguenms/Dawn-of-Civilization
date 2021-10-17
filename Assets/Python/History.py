@@ -515,7 +515,7 @@ def relocateCapitals(iPlayer, city):
 
 def buildCapitalInfrastructure(iPlayer, city):
 	if iPlayer in dCapitalInfrastructure:
-		if at(city, plots.capital(iPlayer)) and year() <= year(dSpawn[iPlayer]) + turns(5):
+		if at(city, plots.capital(iPlayer)) and year() <= year(dBirth[iPlayer]) + turns(5):
 			iPopulation, lBuildings, lReligiousBuildings = dCapitalInfrastructure[iPlayer]
 			
 			if city.getPopulation() < iPopulation:

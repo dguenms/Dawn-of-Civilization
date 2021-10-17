@@ -795,6 +795,8 @@ public:
 	DllExport int getPlayerTextColorB() const;																												// Exposed to Python
 	DllExport int getPlayerTextColorA() const;																												// Exposed to Python
 
+	CvWString formatColor(CvWString string) const;
+
 	int getSeaPlotYield(YieldTypes eIndex) const;																											// Exposed to Python
 	void changeSeaPlotYield(YieldTypes eIndex, int iChange);
 

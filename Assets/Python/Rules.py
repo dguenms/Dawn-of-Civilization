@@ -7,6 +7,7 @@ from Events import handler
 ### CONSTANTS ###
 
 
+# TODO: move this to Civilizations, move its code to Rise
 dStartingWorkers = CivDict({
 	iChina : 1,
 	iIndia : 2,
@@ -44,10 +45,13 @@ dStartingWorkers = CivDict({
 	iMughals : 3,
 	iThailand : 2,
 	iCongo : 2,
+	iIran: 3,
 	iGermany : 3,
 	iAmerica : 4,
 	iBrazil : 3,
 	iArgentina : 2,
+	iMexico: 2,
+	iColombia: 3,
 	iCanada : 3,
 }, 0)
 

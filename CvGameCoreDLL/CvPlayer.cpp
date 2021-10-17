@@ -7522,6 +7522,12 @@ int CvPlayer::calculateUnitCost() const
 		return 0;
 	}
 
+	// Leoreth: recently spawned civilizations do not have to pay unit costs
+	if (isBirthProtected())
+	{
+		return 0;
+	}
+
 	int iFreeUnits;
 	int iFreeMilitaryUnits;
 	int iPaidUnits;
@@ -12469,6 +12475,12 @@ int CvPlayer::getPlayerTextColorA() const
 }
 
 
+CvWString CvPlayer::formatColor(CvWString string) const
+{
+	return CvWString::format(SETCOLR L"%s" ENDCOLR, getPlayerTextColorR(), getPlayerTextColorG(), getPlayerTextColorB(), getPlayerTextColorA(), string.c_str());
+}
+
+
 int CvPlayer::getSeaPlotYield(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -17069,6 +17081,9 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 
 int CvPlayer::getAdvancedStartUnitCost(UnitTypes eUnit, bool bAdd, CvPlot* pPlot) const
 {
+	// Leoreth: not allowed
+	return -1;
+
 	int iLoop;
 	int iNumUnitType = 0;
 
@@ -17251,9 +17266,18 @@ int CvPlayer::getAdvancedStartCityCost(bool bAdd, CvPlot* pPlot) const
 		return -1;
 	}
 
+	// Leoreth: not possible for now
+	return -1;
+
 	// Valid plot?
 	if (pPlot != NULL)
 	{
+		// Leoreth: only in birth area of a new civ
+		if (pPlot->getBirthProtected() != getID())
+		{
+			return -1;
+		}
+
 		// Need valid plot to found on if adding
 		if (bAdd)
 		{
@@ -17279,7 +17303,7 @@ int CvPlayer::getAdvancedStartCityCost(bool bAdd, CvPlot* pPlot) const
 		}
 
 		// Is there a distance limit on how far a city can be placed from a player's start/another city?
-		if (GC.getDefineINT("ADVANCED_START_CITY_PLACEMENT_MAX_RANGE") > 0)
+		/*if (GC.getDefineINT("ADVANCED_START_CITY_PLACEMENT_MAX_RANGE") > 0)
 		{
 			PlayerTypes eClosestPlayer = NO_PLAYER;
 			int iClosestDistance = MAX_INT;
@@ -17311,13 +17335,14 @@ int CvPlayer::getAdvancedStartCityCost(bool bAdd, CvPlot* pPlot) const
 			{
 				return -1;
 			}
+
 			//Only allow founding a city at someone elses start point if
 			//We have no cities and they have no cities.
 			if ((getID() != eClosestPlayer) && ((getNumCities() > 0) || (GET_PLAYER(eClosestPlayer).getNumCities() > 0)))
 			{
 				return -1;
 			}
-		}
+		}*/
 	}
 
 	// Increase cost if the XML defines that additional units will cost more
@@ -17614,7 +17639,8 @@ int CvPlayer::getAdvancedStartRouteCost(RouteTypes eRoute, bool bAdd, CvPlot* pP
 		}
 
 		// Must be owned by me
-		if (pPlot->getOwnerINLINE() != getID())
+		// Leoreth: can be placed in spawn area of recently spawned civilization
+		if (pPlot->getOwnerINLINE() != getID() && pPlot->getBirthProtected() != getID())
 		{
 			return -1;
 		}
@@ -17626,6 +17652,22 @@ int CvPlayer::getAdvancedStartRouteCost(RouteTypes eRoute, bool bAdd, CvPlot* pP
 		if (GC.getBuildInfo((BuildTypes) iBuildLoop).getRoute() == eRoute)
 		{
 			if (!(GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes) iBuildLoop).getTechPrereq())))
+			{
+				return -1;
+			}
+
+			// Leoreth: we need to have a unit that can build this
+			bool bUnitFound = false;
+			for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+			{
+				if (GC.getUnitInfo((UnitTypes)iUnit).getBuilds(iBuildLoop) && canTrain((UnitTypes)iUnit))
+				{
+					bUnitFound = true;
+					break;
+				}
+			}
+
+			if (!bUnitFound)
 			{
 				return -1;
 			}
@@ -17682,7 +17724,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 	int iNumImprovements = 0;
 	int iCost = GC.getImprovementInfo(eImprovement).getAdvancedStartCost();
 
-		// This denotes cities may not be purchased through Advanced Start
+	// This denotes cities may not be purchased through Advanced Start
 	if (iCost < 0)
 	{
 		return -1;
@@ -17709,7 +17751,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 				CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iI);
 				ImprovementTypes eLoopImprovement = ((ImprovementTypes)(kBuild.getImprovement()));
 
-				if (eImprovement == eLoopImprovement && canBuild(pPlot, (BuildTypes)iI))
+				if (eImprovement == eLoopImprovement && canBuild(pPlot, (BuildTypes)iI, false, pPlot->getBirthProtected() == getID()))
 				{
 					bValid = true;
 
@@ -17744,10 +17786,11 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 		}
 
 		// Must be owned by me
-		if (pPlot->getOwnerINLINE() != getID())
+		// Leoreth: can be placed in spawn area of recently spawned civilization
+		/*if (pPlot->getOwnerINLINE() != getID() && pPlot->getBirthProtected() != getID())
 		{
 			return -1;
-		}
+		}*/
 	}
 
 	// Tech requirement
@@ -17799,6 +17842,9 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 
 int CvPlayer::getAdvancedStartTechCost(TechTypes eTech, bool bAdd) const
 {
+	// Leoreth: not allowed
+	return -1;
+
 	if (eTech == NO_TECH)
 	{
 		return -1;
@@ -17942,6 +17988,9 @@ int CvPlayer::getAdvancedStartTechCost(TechTypes eTech, bool bAdd) const
 
 int CvPlayer::getAdvancedStartVisibilityCost(bool bAdd, CvPlot* pPlot) const
 {
+	// Leoreth: not allowed
+	return -1;
+
 	if (0 == getNumCities())
 	{
 		return -1;

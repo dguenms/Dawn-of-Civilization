@@ -3353,6 +3353,14 @@
 		<Spanish>Revisa las condiciones para la victoria [F8] para obtener m&#225;s detalles.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_BIRTH_PROTECTED</Tag>
+		<English>Rise of %s1</English>
+		<French>Rise of %s1</French>
+		<German>Rise of %s1</German>
+		<Italian>Rise of %s1</Italian>
+		<Spanish>Rise of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

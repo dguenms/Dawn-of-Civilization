@@ -278,6 +278,10 @@ def isImmune(iPlayer):
 	if turn() < scenarioStartTurn() + turns(20):
 		return True
 		
+	# immune if birth protected
+	if pPlayer.isBirthProtected():
+		return True
+		
 	# immune right after birth
 	if turn() < pPlayer.getInitialBirthTurn() + turns(20):
 		return True
@@ -1647,7 +1651,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 		bOwnerHumanVassal = teamOwner.isVassal(active())
 	
 		if not player(iOwner).isHuman() and iOwner != iPlayer and not player(iOwner).isBarbarian():
-			if rand(100) >= dAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
+			if chance(dWarOnFlipProbability[iOwner]) and not bOwnerHumanVassal:
 				teamOwner.declareWar(iPlayer, False, -1)
 			else:
 				teamOwner.makePeace(iPlayer)

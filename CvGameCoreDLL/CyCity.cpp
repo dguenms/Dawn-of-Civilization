@@ -2793,3 +2793,8 @@ int CyCity::getPopulationLoss()
 {
 	return m_pCity ? m_pCity->getPopulationLoss() : -1;
 }
+
+int CyCity::getArea()
+{
+	return m_pCity ? m_pCity->getArea() : -1;
+}

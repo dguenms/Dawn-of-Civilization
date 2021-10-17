@@ -148,5 +148,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("isCore", &CyCity::isCore, "bool (int iPlayer)")
 		.def("getActualCulture", &CyCity::getActualCulture, "int (int iPlayer)")
 		.def("getPopulationLoss", &CyCity::getPopulationLoss, "int ()")
+		.def("getArea", &CyCity::getArea, "int ()")
 		;
 }
