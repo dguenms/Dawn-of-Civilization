@@ -77,18 +77,18 @@ class CvWorldBuilderScreen:
 		self.m_iReligionMapValue = 0
 		self.m_iRegionMapID = 0
 
-		self.m_iASUnitTabID = 1
+		self.m_iASUnitTabID = 2
 		self.m_iASUnitListID = 0
 		self.m_iASCityTabID = 0
 		self.m_iASCityListID = 0
 		self.m_iASBuildingsListID = 2
 		self.m_iASAutomateListID = 1
-		self.m_iASImprovementsTabID = 2
+		self.m_iASImprovementsTabID = 1
 		self.m_iASRoutesListID = 0
 		self.m_iASImprovementsListID = 1
-		self.m_iASVisibilityTabID = 3
+		self.m_iASVisibilityTabID = 4
 		self.m_iASVisibilityListID = 0
-		self.m_iASTechTabID = 4
+		self.m_iASTechTabID = 5
 		self.m_iASTechListID = 0
 
 		self.m_bSideMenuDirty = False
@@ -2178,11 +2178,11 @@ class CvWorldBuilderScreen:
 
 			self.m_iAdvancedStartCurrentList.append(self.m_iASCityListID)
 
-			self.m_advancedStartTabCtrl.setNumColumns((gc.getNumUnitInfos()/10)+2);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_UNITS",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns((gc.getNumUnitInfos()/10)+2);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_UNITS",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
 			self.m_advancedStartTabCtrl.setNumColumns((gc.getNumImprovementInfos()/10)+2);
 			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_IMPROVEMENTS",()));
@@ -2190,17 +2190,17 @@ class CvWorldBuilderScreen:
 
 			self.m_iAdvancedStartCurrentList.append(self.m_iASRoutesListID)
 
-			self.m_advancedStartTabCtrl.setNumColumns(1);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_VISIBILITY",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns(1);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_VISIBILITY",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
-			self.m_advancedStartTabCtrl.setNumColumns(1);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_TECH",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns(1);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_TECH",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
 			addWBAdvancedStartControlTabs()
 

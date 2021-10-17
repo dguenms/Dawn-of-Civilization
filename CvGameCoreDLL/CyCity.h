@@ -594,6 +594,7 @@ public:
 	int getPopulationLoss();
 	int countSatellites();
 	int getSatelliteSlots();
+	int getArea();
 
 private:
 	CvCity* m_pCity;

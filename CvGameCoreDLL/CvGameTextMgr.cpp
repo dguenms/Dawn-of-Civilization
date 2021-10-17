@@ -4708,6 +4708,13 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			}
 		}
 
+		// Leoreth: plot is subject to special rules after a civilization has been born
+		if (pPlot->isBirthProtected())
+		{
+			szString.append(GET_PLAYER(pPlot->getBirthProtected()).formatColor(gDLL->getText("TXT_KEY_INTERFACE_BIRTH_PROTECTED", GET_PLAYER(pPlot->getBirthProtected()).getCivilizationShortDescription())));
+			szString.append(NEWLINE);
+		}
+
 		iDefenseModifier = pPlot->defenseModifier((eRevealOwner != NO_PLAYER ? GET_PLAYER(eRevealOwner).getTeam() : NO_TEAM), true, true);
 
 		if (iDefenseModifier != 0)

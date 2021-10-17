@@ -282,13 +282,13 @@ def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RE
 	iOwner = plot.getOwner()
 	if iOwner >= 0: # only show alert to the tile owner
 		bWater = plot.isWater()
-		city = closestCity(plot, iOwner, same_continent=not bWater, coastal_only=bWater)
+		closest = closestCity(plot, iOwner, same_continent=not bWater, coastal_only=bWater)
 		
 		if iRemovedBonus >= 0:
-			notifyResource(iOwner, city, iX, iY, iRemovedBonus, removeTextKey)
+			notifyResource(iOwner, closest, iX, iY, iRemovedBonus, removeTextKey)
 		
 		if iBonus >= 0:
-			notifyResource(iOwner, city, iX, iY, iBonus, createTextKey)
+			notifyResource(iOwner, closest, iX, iY, iBonus, createTextKey)
 
 
 def notifyResource(iPlayer, city, iX, iY, iBonus, textKey):
