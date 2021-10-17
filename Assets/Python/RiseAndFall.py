@@ -47,9 +47,9 @@ def setup():
 		if unit:
 			interface.selectUnit(unit, True, False, False)
 			
-@handler("GameStart")
+#@handler("GameStart")
 def startAutoplay():
-	iBirthTurn = year(dSpawn[active()])
+	iBirthTurn = year(dBirth[active()])
 	iScenarioStartTurn = scenarioStartTurn()
 
 	iAutoplayTurns = iBirthTurn - iScenarioStartTurn
@@ -100,7 +100,7 @@ def initBetrayal():
 				self.unitsBetrayal(data.iFlipNewPlayer, data.iFlipOldPlayer, lTempPlots, tPlot)
 		data.iBetrayalTurns = turnsLeft - 1
 		
-@handler("BeginGameTurn")
+#@handler("BeginGameTurn")
 def clearIncompatibleAIsDuringAutoplay(iGameTurn):
 	if iGameTurn == year(476):
 		if player(iItaly).isHuman() and player(iRome).isAlive():
@@ -124,7 +124,7 @@ def checkBirths():
 		if year(dBirth[iLoopPlayer]) - turns(2) <= year() <= year(dBirth[iLoopPlayer]) + turns(6):
 			rnf.initBirth(dBirth[iLoopPlayer], iLoopPlayer)
 
-@handler("BeginGameTurn")
+#@handler("BeginGameTurn")
 def checkRebirths():
 	for iCiv, iYear in dRebirth.items():
 		iPlayer = slot(iCiv)
@@ -511,7 +511,7 @@ class RiseAndFall:
 		if year() >= year(dBirth[active()]):
 			startNewCivSwitchEvent(iPlayer)
 
-		player(iPlayer).setInitialBirthTurn(year(dSpawn[iCiv]))
+		player(iPlayer).setInitialBirthTurn(year(dBirth[iCiv]))
 
 		# adjust gold, civics, religion and other special settings
 		if iCiv == iIran:

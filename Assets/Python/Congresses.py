@@ -174,7 +174,7 @@ class Congress:
 		self.bribe_other_city = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").build()
 		self.bribe_other_plot = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").build()
 		self.bribe_own_city = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_CITY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CITY").build()
-		self.bribe_own_plot = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
+		self.bribe_own_territory = base_bribery.text("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
 		
 		self.bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK", '').build()
 		

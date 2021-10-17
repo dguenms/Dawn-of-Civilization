@@ -2803,3 +2803,8 @@ int CyCity::getSatelliteSlots()
 {
 	return m_pCity ? m_pCity->getSatelliteSlots() : -1;
 }
+	
+int CyCity::getArea()
+{
+	return m_pCity ? m_pCity->getArea() : -1;
+}

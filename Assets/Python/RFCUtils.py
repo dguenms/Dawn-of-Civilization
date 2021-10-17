@@ -1038,6 +1038,24 @@ def evacuate(iPlayer, tPlot):
 			target = plots.surrounding(plot, radius=2).without(tPlot).where(lambda p: isFree(unit.getOwner(), p, bNoEnemyUnit=True, bCanEnter=True)).random()
 			move(unit, target)
 
+# used: Rise
+def expelUnits(iPlayer, area):
+	for plot in area:
+		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(lambda unit: unit.getOwner()):
+			destination = cities.owner(iOwner).without(area.cities()).area(plot).closest(plot)
+			
+			for unit in ownerUnits:
+				if unit.isCargo():
+					continue
+			
+				if destination:
+					move(unit, destination)
+				else:
+					unit.kill(False, -1)
+			
+			if destination:
+				message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(ownerUnits), adjective(iPlayer), destination.getName())
+
 # used: CvScreensInterface, CvPlatyBuilderScreen
 def toggleStabilityOverlay(iPlayer = -1):
 	global bStabilityOverlay
@@ -1299,10 +1317,10 @@ def canSwitch(iPlayer, iBirthTurn):
 	if data.bAlreadySwitched and not data.bUnlimitedSwitching:
 		return False
 		
-	if dSpawn[iPlayer] <= dSpawn[active()]:
+	if dBirth[iPlayer] <= dBirth[active()]:
 		return False
 		
-	if civ() in dNeighbours[iPlayer] and year(dSpawn[iPlayer]) < year(dSpawn[active()]) + turns(25):
+	if civ() in dNeighbours[iPlayer] and year(dBirth[iPlayer]) < year(dBirth[active()]) + turns(25):
 		return False
 		
 	return True

@@ -38,6 +38,17 @@ irregular_plurals = {
 }
 
 
+# TODO: test
+def mission(unit, iMission, data=(-1, -1), iFlags=0, bAppend=False, bManual=False, iMissionAI=MissionAITypes.NO_MISSIONAI, missionAIPlot=None, missionAIUnit=None):
+	data = listify(data) + [-1] * 2
+	iData1, iData2 = tuple(data[:2])
+	
+	if missionAIPlot is not None:
+		missionAIPlot = plot(missionAIPlot)
+	
+	unit.getGroup().pushMission(iMission, iData1, iData2, iFlags, bAppend, bManual, iMissionAI, missionAIPlot, missionAIUnit)
+
+
 def current_time():
 	return datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
 
@@ -262,7 +273,7 @@ def itemize(iterable, format_func = lambda x: x, item_char = bullet):
 
 
 def autoplay():
-	return year() < year(dSpawn[active()])
+	return year() < year(dBirth[active()])
 
 
 def spread(iterable, size, offset=0):
@@ -408,6 +419,9 @@ def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coast
 	if skip_city is None:
 		if isinstance(entity, CyCity):
 			skip_city = entity
+		# TODO: test this case
+		elif isinstance(entity, CyPlot):
+			skip_city = entity.isCity() and city(entity) or CyCity()
 		else:
 			skip_city = CyCity()
 			
@@ -714,6 +728,10 @@ def rand(iLeft, iRight = None):
 		iLeft = 0
 		
 	return iLeft + gc.getGame().getSorenRandNum(iRight - iLeft, 'random number')
+
+
+def chance(iPercentage):
+	return rand(100) <= iPercentage
 	
 	
 def random_entry(iterable):
@@ -1028,6 +1046,10 @@ class EntityCollection(object):
 	def percentage_split(self, iPercent):
 		iSplit = self.count() * iPercent / 100
 		return self.copy(self._keys[:iSplit]), self.copy(self._keys[iSplit:])
+	
+	# TODO: test
+	def grouped(self, func):
+		return ((key, list(group)) for key, group in groupby(self.sort(func).entities(), func))
 		
 	def sort(self, metric, reverse=False):
 		return self.copy(sort(self._keys, key=lambda k: metric(self._factory(k)), reverse=reverse))
@@ -1082,7 +1104,7 @@ class EntityCollection(object):
 			return 0.0
 		return 1.0 * self.sum(value) / self.count()
 		
-	def transform(self, cls, map = lambda x: x, condition = lambda x: x):
+	def transform(self, cls, map = lambda x: x, condition = lambda x: True):
 		return cls([map(k) for k in self._keys if condition(self._factory(k))]).clear_named(self.name())
 
 	def periodic(self, iInterval):
@@ -1267,7 +1289,6 @@ class LazyPlotFactory:
 
 class Locations(EntityCollection):
 
-
 	def __init__(self, locations):
 		super(Locations, self).__init__(locations)
 		
@@ -1310,6 +1331,12 @@ class Locations(EntityCollection):
 	
 	def owners(self):
 		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
+	
+	# TODO: test
+	def area(self, area):
+		if isinstance(area, (CyPlot, CyCity)):
+			area = area.getArea()
+		return self.where(lambda loc: loc.getArea() == area)
 
 
 class Plots(Locations):
@@ -1624,6 +1651,9 @@ class Cities(Locations):
 
 	def core(self, iPlayer):
 		return self.where(lambda city: plot(city).isCore(iPlayer))
+	
+	def plots(self):
+		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
 	
 		
 class UnitFactory:
