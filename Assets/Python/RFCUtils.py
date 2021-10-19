@@ -1045,7 +1045,7 @@ def expelUnits(iPlayer, area):
 			destination = cities.owner(iOwner).without(area.cities()).area(plot).closest(plot)
 			
 			for unit in ownerUnits:
-				if unit.isCargo():
+				if unit.isNone() or unit.isCargo():
 					continue
 			
 				if destination:

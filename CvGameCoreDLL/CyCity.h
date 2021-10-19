@@ -593,6 +593,7 @@ public:
 	int getActualCulture(int iPlayer);
 	int getPopulationLoss();
 	int getArea();
+	bool rebuild();
 
 private:
 	CvCity* m_pCity;

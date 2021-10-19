@@ -14920,31 +14920,7 @@ bool CvUnit::rebuild()
 		return false;
 	}
 
-	bool bBuilt = false;
-	CvCity* pCity = plot()->getPlotCity();
-
-	BuildingTypes eBuilding;
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-	{
-		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
-
-		if (eBuilding != NO_BUILDING)
-		{
-			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-
-			if (kBuilding.getFreeStartEra() != NO_ERA)
-			{
-				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
-				{
-					if (pCity->canConstruct(eBuilding) || pCity->getFirstBuildingOrder(eBuilding) != -1)
-					{
-						pCity->setNumRealBuilding(eBuilding, 1);
-						bBuilt = true;
-					}
-				}
-			}
-		}
-	}
+	bool bBuilt = plot()->getPlotCity()->rebuild();
 
 	if (bBuilt)
 	{

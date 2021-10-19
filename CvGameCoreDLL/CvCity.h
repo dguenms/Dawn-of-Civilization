@@ -1165,6 +1165,8 @@ public:
 	bool canLiberate() const;
 	bool isCore(PlayerTypes ePlayer) const;
 
+	bool rebuild();
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
