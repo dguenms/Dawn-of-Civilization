@@ -524,7 +524,8 @@ class Birth(object):
 		expelUnits(self.iPlayer, flippedPlots)
 		
 		for city in flippedCities:
-			completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
+			city = completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
+			city.rebuild()
 			
 			if since(scenarioStartTurn()):
 				ensureDefenders(self.iPlayer, city, 2)
