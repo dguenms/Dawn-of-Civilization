@@ -2808,3 +2808,8 @@ int CyCity::getArea()
 {
 	return m_pCity ? m_pCity->getArea() : -1;
 }
+
+bool CyCity::rebuild()
+{
+	return m_pCity ? m_pCity->rebuild() : false;
+}

@@ -19373,7 +19373,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 
 	iValue = std::max(1, iModifier) * iValue;
 
-	iValue *= 100 + range(0, iRequiredSlaves - 1, 5) * 20;
+	iValue *= 100 + range(iRequiredSlaves - 1, 0, 5) * 20;
 	iValue /= 100;
 
 	return iValue;
