@@ -234,9 +234,31 @@ class Birth(object):
 		initPlayerTechs(self.iPlayer)
 	
 	def revealTerritory(self):
+		neighbours = self.area.expand(3).owners().major()
+		revealed = self.area.land()
+		
+		for iNeighbour in neighbours:
+			neighbourPlots = plots.owner(iNeighbour).area(self.location).land()
+			closest = neighbourPlots.closest(self.location)
+			furthest = find_max(neighbourPlots.entities(), lambda p: distance(self.location, p)).result
+			closePlots, farPlots = neighbourPlots.split(lambda p: distance(closest, p) <= distance(furthest, p))
+			revealed += closePlots
+			
+		iTechGroup = next(iGroup for iGroup in dTechGroups if self.iCiv in dTechGroups[iGroup])
+		peers = players.major().alive().where(lambda p: civ(p) in dTechGroups[iTechGroup])
+		print "peers are: %s" % (peers,)
+		
+		def isPeerRevealed(plot):
+			iRequiredPeers = plot.isWater() and peers.count() / 2 or peers.count()-1
+			return count(peer for peer in peers if plot.isRevealed(player(peer).getTeam(), False)) >= min(iRequiredPeers, peers.count()-1)
+		
+		if peers.count() > 2:
+			shared = plots.all().where(isPeerRevealed)
+			print "Peers are: %s, shared: %d" % (peers, shared.count())
+			revealed += shared
+	
 		iVisionRange = self.player.getCurrentEra() / 2 + 1
-		area = plots.core(self.iPlayer) + plots.birth(self.iPlayer)
-		for plot in area.unique().land().expand(iVisionRange):
+		for plot in revealed.expand(iVisionRange):
 			plot.setRevealed(self.team.getID(), True, False, -1)
 	
 	def createUnits(self):

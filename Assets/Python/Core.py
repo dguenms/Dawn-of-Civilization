@@ -1336,6 +1336,8 @@ class Locations(EntityCollection):
 	def area(self, area):
 		if isinstance(area, (CyPlot, CyCity)):
 			area = area.getArea()
+		elif isinstance(area, tuple) and len(area) == 2:
+			area = plot(area).getArea()
 		return self.where(lambda loc: loc.getArea() == area)
 
 
