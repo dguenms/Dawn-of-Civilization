@@ -295,6 +295,11 @@ public:
 	int getBirthProtected();
 	bool isBirthProtected();
 
+	void setExpansion(int ePlayer);
+	void resetExpansion();
+	int getExpansion();
+	bool isExpansion();
+
 private:
 	CvPlot* m_pPlot;
 };

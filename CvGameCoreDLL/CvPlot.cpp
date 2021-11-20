@@ -230,6 +230,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_eOwner = NO_PLAYER;
 	m_eCultureConversionPlayer = NO_PLAYER; // Leoreth
 	m_eBirthProtected = NO_PLAYER; // Leoreth
+	m_eExpansion = NO_PLAYER; // Leoreth
 	m_ePlotType = PLOT_OCEAN;
 	m_eTerrainType = NO_TERRAIN;
 	m_eFeatureType = NO_FEATURE;
@@ -9664,7 +9665,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// Init saved data
 	reset();
 
-	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection
+	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iX);
@@ -9706,6 +9707,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_eOwner);
 	if (uiFlag >= 1) pStream->Read((int*)&m_eCultureConversionPlayer); // Leoreth
 	if (uiFlag >= 3) pStream->Read(&m_eBirthProtected); // Leoreth
+	if (uiFlag >= 3) pStream->Read(&m_eExpansion); // Leoreth
 	pStream->Read(&m_ePlotType);
 	pStream->Read(&m_eTerrainType);
 	pStream->Read(&m_eFeatureType);
@@ -9932,7 +9934,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 {
 	uint iI;
 
-	uint uiFlag=3; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection
+	uint uiFlag=3; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iX);
@@ -9968,6 +9970,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_eOwner);
 	pStream->Write(m_eCultureConversionPlayer); // Leoreth
 	pStream->Write(m_eBirthProtected); // Leoreth
+	pStream->Write(m_eExpansion); // Leoreth
 	pStream->Write(m_ePlotType);
 	pStream->Write(m_eTerrainType);
 	pStream->Write(m_eFeatureType);
@@ -11498,4 +11501,24 @@ PlayerTypes CvPlot::getBirthProtected() const
 bool CvPlot::isBirthProtected() const
 {
 	return getBirthProtected() != NO_PLAYER;
+}
+
+void CvPlot::setExpansion(PlayerTypes ePlayer)
+{
+	m_eExpansion = ePlayer;
+}
+
+void CvPlot::resetExpansion()
+{
+	setExpansion(NO_PLAYER);
+}
+
+PlayerTypes CvPlot::getExpansion() const
+{
+	return (PlayerTypes)m_eExpansion;
+}
+
+bool CvPlot::isExpansion() const
+{
+	return getExpansion() != NO_PLAYER;
 }

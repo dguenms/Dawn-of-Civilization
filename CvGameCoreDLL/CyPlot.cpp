@@ -1178,3 +1178,23 @@ bool CyPlot::isBirthProtected()
 {
 	return m_pPlot ? m_pPlot->isBirthProtected() : -1;
 }
+
+void CyPlot::setExpansion(int ePlayer)
+{
+	if (m_pPlot) m_pPlot->setExpansion((PlayerTypes)ePlayer);
+}
+
+void CyPlot::resetExpansion()
+{
+	if (m_pPlot) m_pPlot->resetExpansion();
+}
+
+int CyPlot::getExpansion()
+{
+	return m_pPlot ? m_pPlot->getExpansion() : -1;
+}
+
+bool CyPlot::isExpansion()
+{
+	return m_pPlot ? m_pPlot->isExpansion() : -1;
+}

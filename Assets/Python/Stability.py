@@ -1075,7 +1075,7 @@ def calculateStability(iPlayer):
 		if tPlayer.isAtWar(iLoopPlayer):
 			if iMultilateralism in civics: iMultilateralismStability -= 2
 			
-			if isNeighbor(iPlayer, iLoopPlayer):
+			if game.isNeighbors(iPlayer, iLoopPlayer):
 				if iNationhood in civics: iNationhoodStability += 2
 				
 				if iTheocracy in civics:
@@ -1661,10 +1661,13 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	# give the new civ a starting army
 	capital = pPlayer.getCapitalCity()
 	
-	makeUnits(iPlayer, getBestInfantry(iPlayer), capital, 2 * iArmySize + iNumCities)
-	makeUnits(iPlayer, getBestCavalry(iPlayer), capital, iArmySize)
-	makeUnits(iPlayer, getBestCounter(iPlayer), capital, iArmySize)
-	makeUnits(iPlayer, getBestSiege(iPlayer), capital, iArmySize + iNumCities)
+	dStartingUnits = {
+		iAttack: 2 * iArmySize + iNumCities,
+		iShock: iArmySize,
+		iCounter: iArmySize,
+		iSiege: iArmySize + iNumCities,
+	}
+	createRoleUnits(iPlayer, capital, dStartingUnits.items())
 	
 	# set state religion based on religions in the area
 	if iNewStateReligion >= 0:
@@ -1707,7 +1710,7 @@ def getResurrectionTechs(iPlayer):
 			
 	# direct neighbors (India can benefit from England etc)
 	for iPeer in players.major().alive().without(iPlayer).without(lSourcePlayers):
-		if isNeighbor(iPlayer, iPeer):
+		if game.isNeighbors(iPlayer, iPeer):
 			lSourcePlayers.append(iPeer)
 				
 	# use independents as source civs in case no other can be found

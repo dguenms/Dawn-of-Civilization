@@ -2752,3 +2752,8 @@ bool CyPlayer::isBirthProtected()
 {
 	return m_pPlayer ? m_pPlayer->isBirthProtected() : false;
 }
+
+void CyPlayer::changeNoAnarchyTurns(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeNoAnarchyTurns(iChange);
+}

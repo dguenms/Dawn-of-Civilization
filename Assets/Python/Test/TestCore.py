@@ -1959,6 +1959,172 @@ class TestPlots(TestCase):
 		actualExpanded = area.expand(1)
 		
 		self.assertEqual(actualExpanded.same(expectedExpanded), True)
+	
+	def test_edge(self):
+		tiles = [(50+x, 50+y) for x in range(3) for y in range(3)]
+		area = PlotFactory().of(tiles)
+		
+		expectedTiles = [(50, 50), (50, 51), (50, 52), (51, 50), (51, 52), (52, 50), (52, 51), (52, 52)]
+		
+		edge = area.edge()
+		
+		self.assertEqual(edge.count(), len(expectedTiles))
+		for tile in expectedTiles:
+			self.assertEqual(tile in edge, True)
+	
+	def test_grouped(self):
+		grouped = list(self.plots.grouped(lambda plot: (plot.getX() + plot.getY()) % 2))
+		
+		expectedEven = [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)]
+		expectedOdd = [(0, 1), (1, 0), (1, 2), (2, 1)]
+		
+		self.assertEqual(len(grouped), 2)
+		evenGroup, oddGroup = grouped
+		
+		evenKey, evenValues = evenGroup
+		self.assertEqual(evenKey, 0)
+		assertType(self, evenValues, Plots)
+		self.assertEqual([(p.getX(), p.getY()) for p in evenValues], expectedEven)
+		
+		oddKey, oddValues = oddGroup
+		self.assertEqual(oddKey, 1)
+		assertType(self, oddValues, Plots)
+		self.assertEqual([(p.getX(), p.getY()) for p in oddValues], expectedOdd)
+	
+	def test_closest_all(self):
+		other_plots = PlotFactory().of([(4, 4), (4, 5), (5, 4), (5, 5)])
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual((closest_plot.getX(), closest_plot.getY()), (2, 2))
+		self.assertEqual((closest_other_plot.getX(), closest_other_plot.getY()), (4, 4))
+	
+	def test_closest_all_overlap(self):
+		other_plots = PlotFactory().of([(2, 2), (2, 3), (3, 2), (3, 3)])
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual((closest_plot.getX(), closest_plot.getY()), (2, 2))
+		self.assertEqual((closest_other_plot.getX(), closest_other_plot.getY()), (2, 2))
+	
+	def test_closest_all_empty(self):
+		other_plots = PlotFactory().none()
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual(closest_plot, None)
+		self.assertEqual(closest_other_plot, None)
+	
+	def test_closest_all_not_locations(self):
+		other_plots = [(2, 2), (2, 3)]
+		
+		self.assertRaises(Exception, self.plots.closest_all, other_plots)
+		
+	def test_closest_within_match(self):
+		closest_within = self.plots.closest_within((2, 2))
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 1)
+		self.assertEqual((closest_within[0].getX(), closest_within[0].getY()), (2, 2))
+	
+	def test_closest_within_outside(self):
+		closest_within = self.plots.closest_within((3, 1))
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_outside_radius(self):
+		closest_within = self.plots.closest_within((4, 1), radius=2)
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_outside_radius_closer(self):
+		closest_within = self.plots.closest_within((3, 1), radius=2)
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_empty(self):
+		closest_within = self.plots.closest_within((4, 1), radius=1)
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 0)
+		
+	def test_area(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaID = plot(africaTile).getArea()
+		africaPlots = plots.area(africaID)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_tile(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaPlots = plots.area(africaTile)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_plot(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaPlot = plot(africaTile)
+		africaPlots = plots.area(africaPlot)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_city(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaCity = gc.getPlayer(0).initCity(*africaTile)
+		africaPlots = plots.area(africaCity)
+		
+		try:
+			assertType(self, africaPlots, Plots)
+			self.assertEqual(africaPlots.count(), 1)
+			self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+		finally:
+			africaCity.kill()
 
 
 class TestPlotFactory(TestCase):
@@ -3274,7 +3440,22 @@ class TestClosestCity(TestCase):
 			unit.kill(False, -1)
 			closest_city.kill()
 			farther_city.kill()
-
+	
+	def test_skip_city_plot(self):
+		unit = gc.getPlayer(0).initUnit(4, 63, 10, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		closest_city = gc.getPlayer(0).initCity(62, 13)
+		farther_city = gc.getPlayer(0).initCity(61, 15)
+		
+		closest_city_plot = gc.getMap().plot(62, 13)
+		
+		closest = closestCity(unit, skip_city=closest_city_plot)
+		
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			unit.kill(False, -1)
+			closest_city.kill()
+			farther_city.kill()
 
 class TestSpecialbuilding(TestCase):
 
@@ -4350,6 +4531,43 @@ class TestChunks(TestCase):
 	
 	def test_remainder(self):
 		self.assertEqual(chunks([1, 2, 3, 4, 5], 3), [[1, 2, 3], [4, 5]])
+
+
+class TestMission(TestCase):
+
+	def setUp(self):
+		self.unit = gc.getPlayer(0).initUnit(0, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+	def tearDown(self):
+		self.unit.kill(False, -1)
+
+	def test_mission_only(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), -1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+	
+	def test_mission_with_data(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=(1, 2), bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), 1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), 2)
+	
+	def test_mission_with_data_none(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=None, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), -1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+	
+	def test_mission_with_data_one(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=1, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), 1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
 		
 
 test_cases = [
@@ -4420,7 +4638,10 @@ test_cases = [
 	TestDeferredCollection,
 	TestUnique,
 	TestChunks,
+	TestMission,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
 TextTestRunner(verbosity=2).run(suite)
+
+gc.getPlayer(0).initUnit(0, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)

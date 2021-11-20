@@ -649,7 +649,7 @@ class Congress:
 		completeCityFlip(assignedCity, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
 		iNumDefenders = player(iPlayer).isHuman() and 2 or max(2, player(iPlayer).getCurrentEra()-1)
-		makeUnits(iPlayer, getBestDefender(iPlayer), (x, y), iNumDefenders)
+		createRoleUnit(iPlayer, (x, y), iDefend, iNumDefenders)
 		
 	def foundColony(self, iPlayer, (x, y)):
 		plot = plot_(x, y)
@@ -801,8 +801,8 @@ class Congress:
 			if tVoter.isAtWar(iOwner): iFavorOwner -= 10
 			
 			# neighbors
-			if not isNeighbor(iVoter, iClaimant): iFavorClaimant += 5
-			if not isNeighbor(iVoter, iOwner): iFavorOwner += 10
+			if not game.isNeighbors(iVoter, iClaimant): iFavorClaimant += 5
+			if not game.isNeighbors(iVoter, iOwner): iFavorOwner += 10
 			
 			# vassalage
 			if tVoter.isVassal(iClaimant): iFavorClaimant += 20

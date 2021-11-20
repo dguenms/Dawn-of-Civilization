@@ -19,6 +19,10 @@ class PlayerData:
 
 	def setup(self):
 	
+		# Rise
+		
+		self.lPreservedWonders = []
+	
 		# Rise and Fall
 		
 		self.bSpawned = False
@@ -178,8 +182,6 @@ class GameData:
 		self.iRebelCiv = 0
 		
 		self.iBeforeObserverSlot = -1
-		
-		self.lFlippingUnits = []
 		
 		self.bAlreadySwitched = False
 		self.bUnlimitedSwitching = False

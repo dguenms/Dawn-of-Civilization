@@ -1,6 +1,7 @@
 from Civilizations import initScenarioTechs
 from RFCUtils import *
 from Core import *
+from Locations import *
 
 from Events import handler
 
@@ -162,8 +163,9 @@ def flipStartingTerritory():
 	if scenario() == i600AD:
 		
 		# China
-		if not player(iChina).isHuman(): tTL = (99, 39) # 4 tiles further south
-		startingFlip(slot(iChina), [dBirthArea[iChina]])
+		tChinaTL, tChinaBR = dBirthArea[iChina]
+		if not player(iChina).isHuman(): tChinaTL = (99, 39) # 4 tiles further south
+		startingFlip(slot(iChina), [(tChinaTL, tChinaBR)])
 		
 	if scenario() == i1700AD:
 	
@@ -178,13 +180,16 @@ def flipStartingTerritory():
 		convertPlotCulture(plot(68, 58), slot(iRussia), 100, True)
 		convertPlotCulture(plot(67, 57), slot(iRussia), 100, True)
 
-def startingFlip(iPlayer, lRegionList):
-	for tuple in lRegionList:
+def startingFlip(iPlayer, lAreaList):
+	for tuple in lAreaList:
 		tTL = tuple[0]
 		tBR = tuple[1]
 		tExceptions = []
 		if len(tuple) > 2: tExceptions = tuple[2]
-		convertSurroundingCities(iPlayer, plots.rectangle(tTL, tBR).without(tExceptions))
+		
+		for city in cities.rectangle(tTL, tBR).without(tExceptions):
+			completeCityFlip(city, iPlayer, city.getOwner(), 100, bFlipUnits=True)
+		
 		convertSurroundingPlotCulture(iPlayer, plots.rectangle(tTL, tBR).without(tExceptions))
 
 def adjustReligionFoundingDates():

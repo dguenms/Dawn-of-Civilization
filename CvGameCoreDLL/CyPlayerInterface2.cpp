@@ -143,5 +143,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getUnhappinessDecayModifier", &CyPlayer::getUnhappinessDecayModifier, "int ()")
 		.def("setBirthProtected", &CyPlayer::setBirthProtected, "void (bool bNewValue)")
 		.def("isBirthProtected", &CyPlayer::isBirthProtected, "bool ()")
+		.def("changeNoAnarchyTurns", &CyPlayer::changeNoAnarchyTurns, "void (int iChange)")
 		;
 }

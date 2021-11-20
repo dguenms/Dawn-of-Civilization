@@ -130,12 +130,12 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BYZANTINE_UP_BODY</Tag>
-		<English>Choose the barbarian unit you wish to bribe:</English>
-		<French>Choisissez l'unit&#233; barbare &#224; soudoyer :</French>
-		<German>Choose the barbarian unit you wish to bribe:</German>
-		<Italian>Choose the barbarian unit you wish to bribe:</Italian>
-		<Spanish>Choose the barbarian unit you wish to bribe:</Spanish>
+		<Tag>TXT_KEY_BYZANTINE_UP_POPUP</Tag>
+		<English>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</English>
+		<French>[H1]Soudoyer les barbares[\H1]Choisissez l'unit&#233; barbare &#224; soudoyer :</French>
+		<German>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</German>
+		<Italian>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</Italian>
+		<Spanish>[H1]Bribing Barbarians[\H1]Choose the barbarian unit you wish to bribe:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>
@@ -152,14 +152,6 @@
 		<German>None</German>
 		<Italian>None</Italian>
 		<Spanish>None</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BYZANTINE_UP_TITLE</Tag>
-		<English>Bribing Barbarians</English>
-		<French>Soudoyer les barbares</French>
-		<German>Bribing Barbarians</German>
-		<Italian>Bribing Barbarians</Italian>
-		<Spanish>Bribing Barbarians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>

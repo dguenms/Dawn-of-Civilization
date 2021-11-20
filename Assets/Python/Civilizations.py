@@ -47,14 +47,8 @@ def initTech(iPlayer, iTech):
 
 ### Unit spawn functions ###
 
-def getStartingSettlers(iPlayer):
-	return dStartingSettlers[iPlayer]
-
-def getStartingMissionaries(iPlayer):
-	return dStartingMissionaries[iPlayer]
-
 def getStartingUnits(iPlayer):
-	lStartingUnits = dStartingUnits[iPlayer].items()
+	lStartingUnits = [(iRole, iAmount) for iRole, iAmount in dStartingUnits[iPlayer].items() if iRole != iWork]
 	
 	if not player(iPlayer).isHuman():
 		lStartingUnits += dExtraAIUnits[iPlayer].items()
@@ -232,16 +226,22 @@ lStartingTechs = [
 
 dStartingUnits = CivDict({
 	iChina: {
+		iSettle: 1,
+		iWork: 1,
 		iBase: 1,
 		iDefend: 1,
 	},
 	iIndia: {
+		iSettle: 1,
+		iWork: 2,
 		iDefend: 1,
 		iCounter: 1,
 		iAttack: 1,
 		iHarass: 1,
 	},
 	iGreece: {
+		iSettle: 1,
+		iWork: 2,
 		iSettleSea: 1,
 		iBase: 2,
 		iAttack: 2,
@@ -249,6 +249,8 @@ dStartingUnits = CivDict({
 		iWorkerSea: 1,
 	},
 	iPhoenicia: {
+		iSettle: 1,
+		iWork: 2,
 		iDefend: 1,
 		iCounter: 1,
 		iSettleSea: 1,
@@ -256,57 +258,80 @@ dStartingUnits = CivDict({
 		iEscort: 1,
 	},
 	iPolynesia: {
+		iSettle: 1,
 		iSettleSea: 1,
 		iWorkerSea: 1,
 	},
 	iPersia: {
+		iSettle: 3,
+		iWork: 3,
 		iDefend: 3,
 		iAttack: 4,
-		iCavalry: 2,
-		# +1 elephant but they cannot train them
+		iShock: 2,
+		# 1 War Elephant
 	},
 	iRome: {
+		iSettle: 4,
+		iWork: 2,
 		iDefend: 3,
 		iAttack: 4,
 		iWorkerSea: 1,
 		iTransport: 2,
 	},
 	iMaya: {
+		iSettle: 1,
+		iWork: 1,
 		iSkirmish: 2,
 	},
 	iTamils: {
+		iSettle: 1,
 		iSettleSea: 1,
+		iWork: 2,
 		iDefend: 1,
-		iCavalry: 1,
+		iShock: 1,
 		iAttack: 2,
+		iMissionary: 1,
 		iWorkerSea: 1,
 		iEscort: 1,
 	},
 	iEthiopia: {
+		iSettle: 2,
+		iWork: 3,
 		iDefend: 2,
 		iAttack: 1,
-		# +1 Shotelai but they cannot train them
 		iWorkerSea: 1,
 		iEscort: 1,
+		# 1 Shotelai
 	},
 	iKorea: {
+		iSettle: 1,
+		iWork: 3,
 		iDefend: 3,
 		iAttack: 1,
-		iCavalry: 1,
+		iShock: 1,
+		iMissionary: 1,
 	},
 	iByzantium: {
-		iAttack: 4, # gets Legions
+		iSettle: 4,
+		iWork: 3,
+		iAttack: 4,
 		iCounter: 2,
 		iDefend: 2,
+		iMissionary: 1,
 		iTransport: 2,
 		iEscort: 2,
 	},
 	iJapan: {
+		iSettle: 3,
+		iWork: 2,
 		iDefend: 2,
 		iAttack: 2,
+		iMissionary: 1,
 		iWorkerSea: 2,
 	},
 	iVikings: {
+		iSettle: 2,
+		iWork: 3,
 		iSettleSea: 1,
 		iDefend: 4,
 		iExplore: 1,
@@ -315,144 +340,216 @@ dStartingUnits = CivDict({
 		iExploreSea: 2,
 	},
 	iTurks: {
+		iSettle: 6,
+		iWork: 3,
 		iDefend: 3,
 		iHarass: 6,
 		iExplore: 1,
 	},
-	iArabia: { # note that Arabia receives extra unit spawns
+	iArabia: {
+		iSettle: 2,
+		iWork: 3,
 		iDefend: 1,
-		iCavalry: 2,
+		iShock: 2,
 		iAttack: 2,
 		iWork: 1,
 		iWorkerSea: 1,
 	},
 	iTibet: {
+		iSettle: 1,
+		iWork: 2,
 		iDefend: 2,
 		iHarass: 2,
+		iMissionary: 1,
 	},
 	iKhmer: {
+		iSettle: 1,
 		iSettleSea: 1,
+		iWork: 3,
 		iDefend: 1,
-		iCavalryCity: 3,
+		iShockCity: 3,
+		iMissionary: 1,
 		iWorkerSea: 1,
+		# 1 Buddhist Missionary
 	},
 	iIndonesia: {
+		iSettle: 1,
 		iSettleSea: 2,
+		iWork: 3,
 		iDefend: 1,
+		iMissionary: 1,
 		iEscort: 1,
 	},
 	iMoors: {
-		iDefend: 1, # +1 if player is Spain or Moors
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 1,
 		iAttack: 2,
 		iCounter: 2,
 		iHarass: 2,
+		iMissionary: 2,
 		iWorkerSea: 1,
 		iTransport: 1,
 		iEscort: 1,
+		# if human Spain or Moors: 1 Crossbowman
 	},
 	iSpain: {
+		iSettle: 2,
+		iWork: 3,
 		iDefend: 2,
 		iAttack: 4,
-		# iCavalry: 2, # if AI and Moors enabled
-		# iWork: 1, # if 600 AD
+		iMissionary: 1,
 	},
 	iFrance: {
+		iSettle: 3,
+		iWork: 3,
 		iDefend: 3,
 		iCounter: 2,
 		iAttack: 3,
+		iMissionary: 1,
 	},
 	iEngland: {
+		iSettle: 2,
 		iSettleSea: 1,
+		iWork: 3,
 		iDefend: 3,
+		iMissionary: 1,
 		iWorkerSea: 2,
 		iTransport: 1,
 	},
 	iHolyRome: {
+		iSettle: 3,
+		iWork: 3,
 		iDefend: 3,
 		iCityAttack: 3,
-		iCavalryCity: 3,
+		iShockCity: 3,
 		iCitySiege: 4,
+		iMissionary: 1,
 	},
 	iRussia: {
+		iSettle: 4,
+		iWork: 3,
 		iDefend: 2,
 		iHarass: 4,
 	},
 	iMali: {
+		iSettle: 3,
+		iWork: 3,
 		iSkirmish: 5,
+		iMissionary: 2,
 	},
 	iPoland: {
+		iSettle: 1,
+		iWork: 3,
 		iDefend: 1,
 		iAttack: 2,
-		iCavalry: 2,
+		iShock: 2,
+		iMissionary: 1,
+		# if human: 1 Settler (to account for scripted AI spawn)
 	},
 	iPortugal: {
+		iSettle: 1,
 		iSettleSea: 1,
+		iWork: 3,
 		iDefend: 4,
 		iCounter: 2,
+		iMissionary: 1,
 		iWorkerSea: 2,
 		iEscort: 2,
 	},
 	iInca: {
+		iSettle: 1,
+		iWork: 4,
 		iAttack: 4,
 		iDefend: 2,
+		# if not human: 1 Settler
 	},
 	iItaly: {
+		iSettle: 1,
+		iWork: 3,
 		iDefend: 3,
 		iCounter: 2,
 		iSiege: 3,
+		iMissionary: 1,
 		iWorkerSea: 2,
 		iTransport: 1,
 		iEscort: 1,
 	},
 	iMongols: {
+		iSettle: 3,
+		iWork: 4,
 		iDefend: 3,
 		iAttack: 2,
 		iHarass: 2,
-		iCavalry: 6,
+		iShock: 6,
 		iSiege: 3,
 	},
 	iAztecs: {
+		iSettle: 2,
+		iWork: 3,
 		iAttack: 4,
 		iDefend: 2,
 	},
 	iMughals: {
+		iSettle: 3,
+		iWork: 3,
 		iSiege: 3,
-		iAttack: 4, # +2 experience
+		iAttack: 4,
 		iHarass: 2,
+		iMissionary: 4,
 	},
-	iOttomans: { # gets Janissaries and Bombards despite lack of tech
+	iOttomans: {
+		iSettle: 3,
+		iWork: 4,
 		iAttack: 4,
 		iDefend: 2,
-		iCavalry: 3,
+		iShock: 3,
 		iSiege: 4,
+		iMissionary: 2,
 	},
 	iThailand: {
+		iSettle: 1,
+		iWork: 2,
 		iCounter: 3,
-		iCavalry: 2,
+		iShock: 2,
+		iMissionary: 1,
 	},
-	iCongo: { # defend gives crossbows but should be archers
+	iCongo: {
+		iSettle: 1,
+		iWork: 2,
 		iDefend: 2,
 		iAttack: 2,
 	},
 	iIran: {
+		iSettle: 1,
+		iWork: 3,
 		iDefend: 3,
 		iAttack: 3,
 		iSiege: 3,
+		iMissionary: 3,
 	},
 	iNetherlands: {
+		iSettle: 2,
 		iSettleSea: 2,
+		iWork: 2,
 		iAttack: 6,
 		iCounter: 2,
 		iSiege: 2,
+		iMissionary: 1,
 		iWorkerSea: 2,
 		iExploreSea: 2,
 	},
 	iGermany: {
-		iAttack: 3, # +2 experience
-		iDefend: 2, # +2 experience
-		iSiege: 3, # +2 experience
+		iSettle: 4,
+		iWork: 3,
+		iAttack: 3,
+		iDefend: 2,
+		iSiege: 3,
+		iMissionary: 2,
 	},
 	iAmerica: {
+		iSettle: 8,
+		iWork: 5,
 		iSkirmish: 2,
 		iAttack: 4,
 		iSiege: 2,
@@ -461,36 +558,51 @@ dStartingUnits = CivDict({
 		iEscort: 1,
 	},
 	iArgentina: {
-		iAttack: 1, # +2 experience
-		iDefend: 2, # +2 experience
-		iSiege: 2, # +2 experience
+		iSettle: 2,
+		iWork: 2,
+		iAttack: 1,
+		iDefend: 2,
+		iSiege: 2,
+		iMissionary: 1,
 		iTransport: 1,
 		iEscort: 2,
 	},
 	iMexico: {
-		iCavalry: 4, # +2 experience
-		iDefend: 3, # +2 experience
-		iAttack: 2, # +2 experience
-		iCounter: 2, # +2 experience
+		iSettle: 1,
+		iWork: 2,
+		iShock: 4,
+		iDefend: 3,
+		iAttack: 2,
+		iCounter: 2,
+		iMissionary: 1,
 	},
 	iColombia: {
-		iDefend: 2, # +2 experience
-		iAttack: 3, # +2 experience
-		iCounter: 5, # +2 experience
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 2,
+		iAttack: 3,
+		iCounter: 5,
+		iMissionary: 1,
 		iTransport: 1,
 		iAttackSea: 1,
 	},
 	iBrazil: {
+		iSettle: 5,
+		iWork: 3,
 		iSkirmish: 3,
 		iDefend: 3,
 		iSiege: 2,
+		iMissionary: 1,
 		iWorkerSea: 2,
 		iTransport: 2,
 		iEscort: 3,
 	},
 	iCanada: {
-		iCavalry: 3,
+		iSettle: 5,
+		iWork: 3,
+		iShock: 3,
 		iDefend: 5,
+		iMissionary: 1,
 		iTransport: 2,
 		iEscort: 1,
 		iLightEscort: 1,
@@ -502,8 +614,9 @@ dExtraAIUnits = CivDict({
 		iDefend: 2,
 		iAttack: 3,
 	},
-	iTamils: { # where to give a hindu missionary
-		iCavalry: 1,
+	iTamils: {
+		iShock: 1,
+		iMissionary: 1,
 	},
 	iKorea: {
 		iCounter: 2,
@@ -518,7 +631,7 @@ dExtraAIUnits = CivDict({
 	iMongols: {
 		iDefend: 2,
 		iAttack: 2,
-		iCavalry: 10,
+		iShock: 10,
 		iSiege: 5,
 		iExplore: 2,
 	},
@@ -527,23 +640,22 @@ dExtraAIUnits = CivDict({
 		iSiege: 3,
 	},
 	iGermany: {
-		iAttack: 10, # +2 experience
-		iSiege: 5, # +2 experience
+		iAttack: 10,
+		iSiege: 5,
 	},
 	iAmerica: {
 		iDefend: 1,
 	},
 	iArgentina: {
-		iDefend: 3, # +2 experience
-		iCavalry: 2, # +2 experience
-		iSiege: 2, # +2 experience
+		iDefend: 3,
+		iShock: 2,
+		iSiege: 2,
 	},
 	iBrazil: {
 		iDefend: 1,
 	}
 }, {})
 
-# TODO: rebirth units missing
 dAdditionalUnits = CivDict({
 	iIndia: {
 		iDefend: 2,
@@ -557,7 +669,7 @@ dAdditionalUnits = CivDict({
 	},
 	iPhoenicia: {
 		iHarass: 1,
-		iCavalry: 1
+		iShock: 1
 	},
 	iPolynesia: {
 		iBase: 2,
@@ -571,43 +683,43 @@ dAdditionalUnits = CivDict({
 	},
 	iTamils: {
 		iAttack: 2,
-		iCavalry: 1,
+		iShock: 1,
 	},
 	iEthiopia: {
 		iDefend: 2,
-		iAttack: 2, # should be Shotelai but cannot build them
+		# 2 Shotelai
 	},
 	iKorea: {
 		iHarass: 2,
-		iDefend: 2, # crossbows but they cannot build them
+		# 2 Crossbowmen
 	},
 	iMaya: {
 		iDefend: 2,
 		iAttack: 2,
 	},
 	iByzantium: {
-		iCavalry: 2,
+		iShock: 2,
 		iHarass: 2,
 	},
 	iVikings: {
-		iAttack: 3, # should be huscarls, can they build them?
+		# 3 Huscarls
 	},
 	iTurks: {
 		iHarass: 4,
 	},
 	iArabia: {
 		iAttack: 2,
-		iCavalry: 4,
+		iShock: 4,
 	},
 	iTibet: {
 		iHarass: 2,
 	},
 	iKhmer: {
 		iAttack: 3,
-		iCavalryCity: 2,
+		iShockCity: 2,
 	},
 	iMoors: {
-		iHarass: 2, # should be camel archer but will be horse archer probably
+		# 2 Camel Archers
 	},
 	iSpain: {
 		iDefend: 3,
@@ -636,7 +748,7 @@ dAdditionalUnits = CivDict({
 	},
 	iPoland: {
 		iDefend: 2,
-		iCavalry: 2,
+		iShock: 2,
 	},
 	iPortugal: {
 		iDefend: 3,
@@ -647,19 +759,19 @@ dAdditionalUnits = CivDict({
 		iDefend: 3,
 	},
 	iItaly: {
-		iCavalry: 2,
+		iShock: 2,
 	},
 	iMongols: {
 		iDefend: 2,
 		iHarass: 2,
-		iCavalry: 4,
+		iShock: 4,
 	},
 	iAztecs: {
 		iAttack: 5,
 		iDefend: 3,
 	},
 	iMughals: {
-		iCavalryCity: 2,
+		iShockCity: 2,
 		iHarass: 4,
 	},
 	iOttomans: {
@@ -668,10 +780,15 @@ dAdditionalUnits = CivDict({
 	},
 	iThailand: {
 		iCounter: 2,
-		iCavalry: 2,
+		iShock: 2,
 	},
 	iCongo: {
 		iAttack: 3,
+	},
+	iIran: {
+		iAttack: 2,
+		iHarass: 1,
+		iSiege: 1,
 	},
 	iNetherlands: {
 		iAttack: 3,
@@ -683,97 +800,104 @@ dAdditionalUnits = CivDict({
 	},
 	iAmerica: {
 		iAttack: 3,
-		iCounter: 3,
+		iSkirmish: 3,
 		iSiege: 3,
 	},
 	iArgentina: {
 		iAttack: 2,
-		iCavalry: 4,
+		iShock: 4,
+	},
+	iMexico: {
+		iShock: 4,
+		iSiege: 2,
+	},
+	iColombia: {
+		iAttack: 4,
+		iSkirmish: 4,
+		iSiege: 2,
 	},
 	iBrazil: {
 		iAttack: 3,
-		iCounter: 2,
+		iSkirmish: 2,
 		iSiege: 2,
 	},
 	iCanada: {
 		iAttack: 4,
-		iCavalry: 2,
+		iShock: 2,
 		iSiege: 2,
 	},
-	# TODO: reborn civs missing
 }, {})
 
-dStartingSettlers = CivDict({
-	iChina: 1,
-	iIndia: 1,
-	iGreece: 1,
-	iPersia: 3,
-	iPhoenicia: 1,
-	iPolynesia: 1,
-	iRome: 4,
-	iMaya: 1,
-	iJapan: 3,
-	iTamils: 1,
-	iEthiopia: 2,
-	iKorea: 1,
-	iByzantium: 4,
-	iVikings: 2,
-	iTurks: 6,
-	iArabia: 2, 
-	iTibet: 1,
-	iKhmer: 1,
-	iIndonesia: 1,
-	iMoors: 2,
-	iSpain: 2, # +1 if AI, +1 Moors not enabled
-	iFrance: 3,
-	iEngland: 3,
-	iHolyRome: 3,
-	iRussia: 4,
-	iMali: 3,
-	iPoland: 1, # +1 if human
-	iPortugal: 1,
-	iInca: 1, # +1 if AI
-	iItaly: 1,
-	iMongols: 3,
-	iAztecs: 2,
-	iMughals: 3,
-	iOttomans: 3,
-	iThailand: 1,
-	iCongo: 1,
-	iIran: 1,
-	iNetherlands: 2,
-	iGermany: 4,
-	iAmerica: 8,
-	iArgentina: 2,
-	iMexico: 1,
-	iColombia: 1,
-	iBrazil: 5,
-	iCanada: 5,
-}, 0)
+dStartingExperience = CivDict({
+	iMughals: {
+		iAttack: 2,
+	},
+	iGermany: {
+		iAttack: 2,
+		iDefend: 2,
+		iSiege: 2,
+	},
+	iArgentina: {
+		iAttack: 2,
+		iShock: 2,
+		iDefend: 2,
+		iSiege: 2,
+	},
+	iMexico: {
+		iShock: 2,
+		iDefend: 2,
+		iAttack: 2,
+		iCounter: 2,
+	},
+}, {})
 
-dStartingMissionaries = CivDict({
-	iJapan: 1,
-	iTamils: 1,
-	iKorea: 1,
-	iByzantium: 1,
-	iTibet: 1,
-	iKhmer: 1, # +1 buddhist
-	iIndonesia: 1,
-	iMoors: 2,
-	iSpain: 1,
-	iFrance: 1,
-	iEngland: 1,
-	iHolyRome: 1,
-	iMali: 2,
-	iPoland: 1,
-	iPortugal: 1,
-	iItaly: 1,
-	iMughals: 1, # +3 if human (does the AI still have a UP like effect?)
-	iThailand: 1,
-	iNetherlands: 1,
-	iGermany: 2,
-	iAmerica: 1, # of dominant religion in area
-}, 0)
+dAlwaysTrain = CivDict({
+	iGreece: [iHoplite, iCatapult],
+	iByzantium: [iLegion],
+	iOttomans: [iJanissary, iGreatBombard],
+}, [])
+
+dNeverTrain = CivDict({
+	iCongo: [iCrossbowman],
+}, [])
+
+def createSpecificUnits(iPlayer, tile):
+	iCiv = civ(iPlayer)
+	bHuman = player(iPlayer).isHuman()
+	
+	if iCiv == iPersia:
+		makeUnit(iPlayer, iWarElephant, tile)
+	elif iCiv == iEthiopia:
+		makeUnit(iPlayer, iShotelai, tile)
+	elif iCiv == iKhmer:
+		makeUnit(iPlayer, iBuddhistMissionary, tile)
+	elif iCiv == iMoors:
+		if civ() in [iSpain, iMoors]:
+			makeUnit(iPlayer, iCrossbowman, tile)
+	elif iCiv == iSpain:
+		if not bHuman:
+			makeUnit(iPlayer, iSettler, tile)
+			makeUnits(iPlayer, iLancer, tile, 2)
+	elif iCiv == iPoland:
+		if bHuman:
+			# to account for scripted AI settler spawn
+			makeUnit(iPlayer, iSettle, tile)
+	elif iCiv == iInca:
+		if not bHuman:
+			makeUnit(iPlayer, iSettle, tile)
+
+def createSpecificAdditionalUnits(iPlayer, tile):
+	iCiv = civ(iPlayer)
+	
+	if iCiv == iEthiopia:
+		makeUnits(iPlayer, iShotelai, tile, 2)
+	elif iCiv == iKorea:
+		makeUnits(iPlayer, iCrossbow, tile, 2)
+	elif iCiv == iVikings:
+		makeUnits(iPlayer, iHuscarl, tile, 3)
+	elif iCiv == iMoors:
+		makeUnits(iPlayer, iCamelArcher, tile, 2)
+
 
 ### Tech Preferences ###
 

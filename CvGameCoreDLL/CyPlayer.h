@@ -604,6 +604,7 @@ public:
 	int getUnhappinessDecayModifier();
 	void setBirthProtected(bool bNewValue);
 	bool isBirthProtected();
+	void changeNoAnarchyTurns(int iChange);
 
 private:
 	CvPlayer* m_pPlayer;

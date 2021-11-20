@@ -1,22 +1,9 @@
-# Rhye's and Fall of Civilization - City naming and renaming management
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-import Popup
-from Consts import *
 from RFCUtils import *
 from Civics import *
-from StoredData import data
-from Events import handler
-
-from time import time
-
 from Core import *
+from Locations import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
+from Events import handler
 
 iNumLanguages = 41
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
@@ -119,6 +106,18 @@ def determineCapitalLocations():
 			dLocations[sCapital] = findLocations(slot(iCiv), sCapital)
 			
 	data.dCapitalLocations = dLocations
+
+@handler("rebirth")
+def updateMexicanCityNames(iPlayer):
+	if civ(iPlayer) == iMexico:
+		updateCityNamesFound(iPlayer)
+
+@handler("periodChange")
+def updateVietnameseNames(iPlayer, iPeriod):
+	if iPeriod == iPeriodVietnam:
+		saigon = city(*tSaigon)
+		if saigon:
+			saigon.setName("Saigon", False)
 
 # methods
 
