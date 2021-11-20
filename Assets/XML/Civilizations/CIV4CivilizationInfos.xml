@@ -4504,7 +4504,7 @@
 				<Start>2</Start>
 			</Rating>
 			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Havaiki</City>
 				<!-- Central Polynesia -->

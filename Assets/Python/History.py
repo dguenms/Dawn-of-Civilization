@@ -1,8 +1,8 @@
 from Events import handler
-from RiseAndFall import *
 from RFCUtils import *
 from Core import *
 from Locations import *
+from Popups import popup
 
 
 dRelocatedCapitals = CivDict({
@@ -22,7 +22,6 @@ dCapitalInfrastructure = CivDict({
 
 ### CITY ACQUIRED ###
 
-
 @handler("cityAcquired")
 def relocateAcquiredCapital(iOwner, iPlayer, city):
 	relocateCapitals(iPlayer, city)
@@ -34,7 +33,6 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 
 
 ### FIRST CITY ###
-
 
 @handler("firstCity")
 def createAdditionalPolishSettler(city):
@@ -52,8 +50,19 @@ def createAdditionalPolishSettler(city):
 		makeUnit(iPlayer, iCrossbowman, location)
 
 
-### CITY BUILT ###
+@handler("firstCity")
+def setupMexicoCity(city):
+	if civ(city) == iMexico:
+		if city.at(*tTenochtitlan):
+			if game.getBuildingClassCreatedCount(infos.building(iFloatingGardens).getBuildingClassType()) == 0:
+				city.setHasRealBuilding(iFloatingGardens, True)
+			
+			iStateReligion = player(city).getStateReligion()
+			if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
+				city.setHasRealBuilding(monastery(iStateReligion), True)
 
+
+### CITY BUILT ###
 
 @handler("cityBuilt")
 def relocateFoundedCapital(city):
@@ -82,7 +91,6 @@ def createCarthaginianDefenses(city):
 			
 ### UNIT BUILT ###
 
-
 lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou, tHaojing]
 
 @handler("unitBuilt")
@@ -97,7 +105,6 @@ def foundChineseCity(city, unit):
 
 
 ### BEGIN GAME TURN ###
-
 
 @handler("BeginGameTurn")
 def placeGoodyHuts(iGameTurn):
@@ -133,28 +140,6 @@ def placeGoodyHuts(iGameTurn):
 		placeHut((114, 10), (118, 17)) # Western Australia
 		placeHut((120, 5), (123, 11)) # New Zealand
 		placeHut((59, 25), (67, 28)) # Central Africa
-
-
-@handler("BeginGameTurn")
-def clearMassilianCulture(iGameTurn):		
-	if iGameTurn == year(dBirth[iSpain])-1:
-		if scenario() == i600AD:
-			pMassilia = city_(56, 46)
-			if pMassilia:
-				pMassilia.setCulture(pMassilia.getOwner(), 1, True)
-
-
-@handler("BeginGameTurn")
-def ottomansFlipIndependents(iGameTurn):
-	if iGameTurn == data.iOttomanSpawnTurn + 1:
-		for city in cities.birth(iOttomans):
-			iOwner = city.getOwner()
-			if is_minor(iOwner):
-				# TODO: this should be better but is not covered by completeCityFlip
-				flipCity(city, False, True, slot(iOttomans), ())
-				cultureManager(city, 100, slot(iOttomans), iOwner, True, False, False)
-				self.convertSurroundingPlotCulture(slot(iOttomans), plots.surrounding(city))
-				makeUnit(iOttomans, iCrossbowman, city)
 
 
 @handler("BeginGameTurn")
@@ -210,23 +195,7 @@ def moorishSpawnInMorocoo():
 			makeUnit(marrakesh.getOwner(), iWorker, marrakesh)
 
 
-@handler("BeginGameTurn")
-def flipChineseStartingCities():
-	if scenario() == i600AD and year() == scenarioStartTurn():
-		tTL, tBR = dBirthArea[iChina]
-		if not player(iChina).isHuman(): 
-			tTL = (99, 39) # 4 tiles further north
-		
-		china = plots.start(tTL).end(tBR)
-		iNumAICitiesConverted, iNumHumanCitiesToConvert = convertSurroundingCities(slot(iChina), china)
-		convertSurroundingPlotCulture(slot(iChina), china)
-		
-		for iMinor in players.independent().barbarian():
-			flipUnitsInArea(china, slot(iChina), iMinor, False, player(iMinor).isBarbarian())
-
-
 ### FIRST CONTACT ###
-
 
 @handler("firstContact")
 def conquistadors(iTeamX, iHasMetTeamY):
@@ -299,26 +268,17 @@ def conquistadors(iTeamX, iHasMetTeamY):
 							
 						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
 						
-						iInfantry = getBestInfantry(iOldWorldPlayer)
-						iCounter = getBestCounter(iOldWorldPlayer)
-						iCavalry = getBestCavalry(iOldWorldPlayer)
-						iSiege = getBestSiege(iOldWorldPlayer)
+						dConquerorUnits = {
+							iAttack: 1 + iModifier2,
+							iCounter: 2,
+							iSiege: 1 + iModifier1 + iModifier2,
+							iShockCity: 2 + iModifier1,
+						}
+						createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items())
 						
 						iStateReligion = player(iOldWorldPlayer).getStateReligion()
 						iMissionary = missionary(iStateReligion)
 						
-						if iInfantry:
-							makeUnits(iOldWorldPlayer, iInfantry, arrivalPlot, 1 + iModifier2, UnitAITypes.UNITAI_ATTACK_CITY)
-						
-						if iCounter:
-							makeUnits(iOldWorldPlayer, iCounter, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						if iSiege:
-							makeUnits(iOldWorldPlayer, iSiege, arrivalPlot, 1 + iModifier1 + iModifier2, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						if iCavalry:
-							makeUnits(iOldWorldPlayer, iCavalry, arrivalPlot, 2 + iModifier1, UnitAITypes.UNITAI_ATTACK_CITY)
-							
 						if iMissionary:
 							makeUnit(iOldWorldPlayer, iMissionary, arrivalPlot)
 							
@@ -385,7 +345,6 @@ def mongolConquerors(iTeamX, iHasMetTeamY):
 
 
 ### TECH ACQUIRED ###
-
 
 @handler("techAcquired")
 def recordExplorationTurn(iTech, iTeam, iPlayer):
@@ -475,7 +434,6 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 
 ### COLLAPSE ###
 
-
 @handler("collapse")
 def removeOrthodoxyFromAnatolia(iPlayer):
 	if civ(iPlayer) == iByzantium:
@@ -484,16 +442,58 @@ def removeOrthodoxyFromAnatolia(iPlayer):
 
 ### BIRTH ###
 
-
-@handler("birth")
+#@handler("birth")
 def clearDanishCulture(iPlayer):
 	if civ(iPlayer) == iHolyRome and player(iVikings).isAlive():
 		for plot in plots.owner(iVikings).land().where(lambda p: map.getArea(p.getArea()).getCitiesPerPlayer(p.getOwner()) == 0):
 			plot.setCultureConversion(slot(iHolyRome), 100)
+			
+@handler("birth")
+def stabilizeAustria(iPlayer):
+	if civ(iPlayer) == iGermany:
+		iHolyRomanPlayer = slot(iHolyRome)
+
+		if stability(iHolyRomanPlayer) < iStabilityShaky:
+			data.setStabilityLevel(iHolyRomanPlayer, iStabilityShaky)
+
+@handler("birth")
+def createArabArmies(iPlayer):
+	if civ(iPlayer) == iArabia:
+		bBaghdad = civ(plot(tBaghdad)) == iArabia
+		bCairo = civ(plot(tCairo)) == iArabia
+
+		lCities = []
+
+		if bBaghdad: lCities.append(tBaghdad)
+		if bCairo: lCities.append(tCairo)
+
+		tCapital = random_entry(lCities)
+
+		if tCapital:
+			if not player(iArabia).isHuman():
+				relocateCapital(iArabia, tCapital)
+				makeUnits(iArabia, iMobileGuard, tCapital, 3)
+				makeUnits(iArabia, iGhazi, tCapital, 2)
+			makeUnits(iArabia, iMobileGuard, tCapital, 2)
+			makeUnits(iArabia, iGhazi, tCapital, 2)
+
+		if bBaghdad:
+			makeUnit(iArabia, iSettler, tBaghdad)
+			makeUnit(iArabia, iWorker, tBaghdad)
+
+		if bCairo:
+			makeUnit(iArabia, iSettler, tCairo)
+			makeUnit(iArabia, iWorker, tCairo)
+			
+		if len(lCities) < 2:
+			makeUnits(iArabia, iSettler, tMecca, 2 - len(lCities))
+			makeUnits(iArabia, iWorker, tMecca, 2 - len(lCities))
+
+		if not player(iArabia).isHuman() and bBaghdad:
+			makeUnits(iArabia, iSpearman, tBaghdad, 2)
 
 
 ### IMPLEMENTATION ###
-
 
 def relocateCapitals(iPlayer, city):
 	if player(iPlayer).isHuman():
@@ -558,9 +558,7 @@ def giveColonists(iPlayer):
 			
 			# help England with settling Canada and Australia
 			if iCiv == iEngland:
-				colonialCities = cities.start(tCanadaTL).end(tCanadaBR).owner(iPlayer)
-				colonialCities += cities.start(tAustraliaTL).end(tAustraliaBR).owner(iPlayer)
-				
+				colonialCities = cities.regions(rCanada, rAustralia).owner(iPlayer)
 				if colonialCities:
 					sourceCities = colonialCities
 					
@@ -571,7 +569,7 @@ def giveColonists(iPlayer):
 				
 				makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
 				makeUnit(iPlayer, iSettler, tSeaPlot, UnitAITypes.UNITAI_SETTLE)
-				makeUnit(iPlayer, getBestDefender(iPlayer), tSeaPlot)
+				createRoleUnit(iPlayer, tSeaPlot, iDefend, 1)
 				makeUnit(iPlayer, iWorker, tSeaPlot)
 				
 				data.players[iPlayer].iColonistsAlreadyGiven += 1
@@ -594,6 +592,24 @@ def giveRaiders(iCiv):
 					makeUnit(iCiv, unique_unit(iCiv, iSwordsman), seaPlot, UnitAITypes.UNITAI_ATTACK)
 					makeUnit(iCiv, unique_unit(iCiv, iSwordsman), seaPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 
+def acceptColonialAcquisition(iPlayer):
+	targets = data.dColonialAcquisitionCities[iPlayer]
+	for city in targets:
+		if city.isHuman():
+			colonialAcquisition(iPlayer, city)
+			
+	player().changeGold(targets.count() * 200)
+
+def refuseColonialAcquisition(iPlayer):
+	targets = data.dColonialAcquisitionCities[iPlayer]
+	for city in targets:
+		if city.isHuman():
+			colonialConquest(iPlayer, city)
+
+colonialAcquisitionPopup = popup.text("TXT_KEY_ASKCOLONIALCITY_MESSAGE") \
+							.option(acceptColonialAcquisition, "TXT_KEY_POPUP_YES") \
+							.option(refuseColonialAcquisition, "TXT_KEY_POPUP_NO") \
+							.build()
 
 def handleColonialAcquisition(iPlayer):
 	pPlayer = player(iPlayer)
@@ -614,17 +630,15 @@ def handleColonialAcquisition(iPlayer):
 	for iTarget in targetPlayers:
 		if player(iTarget).isHuman():
 			askedCities = cityPlots.cities().owner(iTarget)
-			message = format_separators(askedCities, ',', text("TXT_KEY_AND"), lambda city: city.getName())
+			askedCityNames = askedCities.format(formatter=CyCity.getName)
 					
 			iAskGold = askedCities.count() * 200
-					
-			popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
-			popup.setHeaderString(text("TXT_KEY_ASKCOLONIALCITY_TITLE", adjective(iPlayer)))
-			popup.setBodyString(text("TXT_KEY_ASKCOLONIALCITY_MESSAGE", adjective(iPlayer), iAskGold, message))
-			popup.addButton(text("TXT_KEY_POPUP_YES"))
-			popup.addButton(text("TXT_KEY_POPUP_NO"))
-			data.lTempEventList = (iPlayer, askedCities)
-			popup.launch(False)
+			
+			data.dColonialAcquisitionCities[iPlayer] = askedCities
+			colonialAcquisitionPopup.text(adjective(iPlayer), iAskGold, askedCityNames) \
+				.acceptColonialAcquisition() \
+				.refuseColonialAcquisition() \
+				.launch(iPlayer)
 			
 		else:
 			bAccepted = is_minor(iTarget) or (rand(100) >= dPatienceThreshold[iTarget] and not team(iPlayer).isAtWar(iTarget))

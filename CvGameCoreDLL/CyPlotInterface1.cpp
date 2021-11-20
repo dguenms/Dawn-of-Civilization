@@ -281,5 +281,9 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("resetBirthProtected", &CyPlot::resetBirthProtected, "void ()")
 		.def("getBirthProtected", &CyPlot::getBirthProtected, "int ()")
 		.def("isBirthProtected", &CyPlot::isBirthProtected, "bool ()")
+		.def("setExpansion", &CyPlot::setExpansion, "void (int ePlayer)")
+		.def("resetExpansion", &CyPlot::resetExpansion, "void ()")
+		.def("getExpansion", &CyPlot::getExpansion, "int ()")
+		.def("isExpansion", &CyPlot::isExpansion, "bool ()")
 	;
 }

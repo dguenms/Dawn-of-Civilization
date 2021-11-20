@@ -65,6 +65,7 @@ events.addEvent("enslave")
 events.addEvent("combatGold")
 events.addEvent("combatFood")
 events.addEvent("sacrificeHappiness")
+events.addEvent("prepareBirth")
 
 
 @handler("buildingBuilt")

@@ -3,19 +3,11 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
-		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
-		<French>La compagnie commerciale %s1:2 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter son offre ?</French>
-		<German>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
-		<Italian>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
-		<Spanish>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>
-		<English>The %s1 Trading Company</English>
-		<French>La compagnie commerciale %s1:2</French>
-		<German>The %s1 Trading Company</German>
-		<Italian>The %s1 Trading Company</Italian>
-		<Spanish>The %s1 Trading Company</Spanish>
+		<English>[H1]The %s1 Trading Company[\H1]The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
+		<French>[H1]La compagnie commerciale %s1:2[\H1]La compagnie commerciale %s1:2 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter son offre ?</French>
+		<German>[H1]The %s1 Trading Company[\H1]The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
+		<Italian>[H1]The %s1 Trading Company[\H1]The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
+		<Spanish>[H1]The %s1 Trading Company[\H1]The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_AIRLINER_CRASH_1</Tag>

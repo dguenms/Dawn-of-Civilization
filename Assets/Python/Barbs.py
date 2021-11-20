@@ -1,19 +1,10 @@
-# Rhye's and Fall of Civilization - Barbarian units and cities
-
-import CvUtil
-import PyHelpers	# LOQ
-#import Popup
-#import cPickle as pickle
 from RFCUtils import *
 from Consts import *
 from StoredData import data
 
 from Events import handler
 from Core import *
-
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer	# LOQ
+from Locations import *
 
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn

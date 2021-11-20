@@ -3401,6 +3401,14 @@
 		<Spanish>Rise of %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_BIRTH_EXPANSION</Tag>
+		<English>%s1 Expansion</English>
+		<French>%s1 Expansion</French>
+		<German>%s1 Expansion</German>
+		<Italian>%s1 Expansion</Italian>
+		<Spanish>%s1 Expansion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
