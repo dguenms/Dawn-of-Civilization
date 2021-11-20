@@ -553,6 +553,11 @@ public:
 	PlayerTypes getBirthProtected() const;
 	bool isBirthProtected() const;
 
+	void setExpansion(PlayerTypes ePlayer);
+	void resetExpansion();
+	PlayerTypes getExpansion() const;
+	bool isExpansion() const;
+
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
 	void pageGraphicsOut();
@@ -598,6 +603,7 @@ protected:
 	char /*PlayerTypes*/ m_eOwner;
 	PlayerTypes m_eCultureConversionPlayer;
 	char /*PlayerTypes*/ m_eBirthProtected;
+	char /*PlayerTypes*/ m_eExpansion;
 	short /*PlotTypes*/ m_ePlotType;
 	short /*TerrainTypes*/ m_eTerrainType;
 	short /*FeatureTypes*/ m_eFeatureType;

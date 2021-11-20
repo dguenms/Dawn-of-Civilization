@@ -1458,6 +1458,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	bool bRecapture;
 	bool bDecide;
 	bool bGift;
+	bool bExpansion;
 	int iOldCultureLevel;
 	int iCaptureGold;
 	int iGameTurnFounded;
@@ -1722,6 +1723,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
 	bRecapture = ((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
+	bExpansion = pOldCity->plot()->getExpansion() == getID() || pOldCity->plot()->getBirthProtected() == getID();
 
 	// Leoreth: peaceful acquisition of minor cities makes original owner
 	if (!bConquest && (GET_PLAYER(pOldCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pOldCity->getOwnerINLINE()).isBarbarian()))
@@ -1758,7 +1760,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	//pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 	pNewCity->setPopulation(iPopulation);
 	
-	if (!bRecapture)
+	// Leoreth: no population loss in territories for recently spawned civilizations
+	if (!bRecapture && !bExpansion)
 	{
 		pNewCity->setTotalPopulationLoss(std::min(pNewCity->getPopulation() - 1, 1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5)));
 	}
@@ -1842,7 +1845,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 						{
 							pNewCity->setNumRealBuildingTimed(eBuilding, std::min(pNewCity->getNumRealBuilding(eBuilding) + paiNumRealBuilding[iI], GC.getCITY_MAX_NUM_BUILDINGS()), false, (PlayerTypes)paiBuildingOriginalOwner[iI], paiBuildingOriginalTime[iI]);
 
-							if (bConquest && !bRecapture)
+							// Leoreth: not if in territory associated with recently spawned civilization
+							if (bConquest && !bRecapture && !bExpansion)
 							{
 								iTotalBuildingDamage += kOldBuilding.getProductionCost() * (100 - kOldBuilding.getConquestProbability());
 							}
@@ -1960,7 +1964,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iTeamCulturePercent = pNewCity->calculateTeamCulturePercent(getTeam());
 		iOccupationTime = 0;
 
-		if (!isNoResistance() && iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
+		// Leoreth: not in territory associated with recently spawned civilizations
+		if (!isNoResistance() && !bExpansion && iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
 			iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
 		}
@@ -5655,6 +5660,12 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	}
 
 	if (pPlot->isImpassable())
+	{
+		return false;
+	}
+
+	// Leoreth: cannot found in territory of recently spawned civilization
+	if (pPlot->isBirthProtected() && pPlot->getBirthProtected() != getID())
 	{
 		return false;
 	}
@@ -17787,10 +17798,10 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 
 		// Must be owned by me
 		// Leoreth: can be placed in spawn area of recently spawned civilization
-		/*if (pPlot->getOwnerINLINE() != getID() && pPlot->getBirthProtected() != getID())
+		if (pPlot->getOwnerINLINE() != getID() && pPlot->getBirthProtected() != getID())
 		{
 			return -1;
-		}*/
+		}
 	}
 
 	// Tech requirement

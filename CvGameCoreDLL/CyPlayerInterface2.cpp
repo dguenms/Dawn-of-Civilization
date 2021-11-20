@@ -144,5 +144,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("isUnstableCivic", &CyPlayer::isUnstableCivic, "bool (int iCivic)")
 		.def("setBirthProtected", &CyPlayer::setBirthProtected, "void (bool bNewValue)")
 		.def("isBirthProtected", &CyPlayer::isBirthProtected, "bool ()")
+		.def("changeNoAnarchyTurns", &CyPlayer::changeNoAnarchyTurns, "void (int iChange)")
 		;
 }

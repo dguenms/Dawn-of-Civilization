@@ -6,55 +6,6 @@ from Events import handler
 
 ### CONSTANTS ###
 
-
-# TODO: move this to Civilizations, move its code to Rise
-dStartingWorkers = CivDict({
-	iChina : 1,
-	iIndia : 2,
-	iGreece : 2,
-	iPersia : 3,
-	iPhoenicia : 2,
-	iRome : 2,
-	iMaya : 1,
-	iJapan : 2,
-	iTamils : 2,
-	iEthiopia : 3,
-	iKorea : 3,
-	iByzantium : 3,
-	iVikings : 3,
-	iTurks : 3,
-	iArabia : 3,
-	iTibet : 2,
-	iKhmer : 3,
-	iIndonesia : 3,
-	iMoors : 2,
-	iSpain : 3,
-	iFrance : 3,
-	iEngland : 3,
-	iHolyRome : 3,
-	iRussia : 3,
-	iNetherlands : 3,
-	iMali : 3,
-	iPoland : 3,
-	iOttomans : 4,
-	iPortugal : 3,
-	iInca : 4,
-	iItaly : 3,
-	iMongols : 4,
-	iAztecs : 3,
-	iMughals : 3,
-	iThailand : 2,
-	iCongo : 2,
-	iIran: 3,
-	iGermany : 3,
-	iAmerica : 4,
-	iBrazil : 3,
-	iArgentina : 2,
-	iMexico: 2,
-	iColombia: 3,
-	iCanada : 3,
-}, 0)
-
 dRelocatedCapitals = {
 	(iVikings, iRenaissance): tStockholm,
 	(iHolyRome, iRenaissance): tVienna,
@@ -64,7 +15,6 @@ dRelocatedCapitals = {
 
 
 ### CITY ACQUIRED ###
-
 
 @handler("cityAcquired")
 def resetSlaves(iOwner, iPlayer, city):
@@ -118,7 +68,6 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 
 ### CITY ACQUIRED AND KEPT ###
 	
-
 @handler("cityAcquiredAndKept")
 def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
@@ -131,7 +80,6 @@ def spreadCultureOnConquest(iPlayer, city):
 
 
 ### CITY BUILT ###
-	
 
 @handler("cityBuilt")
 def clearMinorCulture(city):
@@ -157,7 +105,7 @@ def createColonialDefenders(city):
 	if not player(iPlayer).isHuman():
 		if civ(iPlayer) in dCivGroups[iCivGroupEurope] and city.getRegionID() not in lEurope:
 			createGarrisons(city, iPlayer, 1)
-			makeUnit(iPlayer, getBestWorker(iPlayer), city)
+			createRoleUnit(iPlayer, city, iWork, 1)
 
 
 @handler("cityBuilt")
@@ -166,12 +114,11 @@ def americanPioneerAbility(city):
 	if civ(iPlayer) == iAmerica:
 		if city.getRegionID() in lNorthAmerica:
 			createGarrisons(city, iPlayer, 1)
-			makeUnit(iPlayer, getBestWorker(iPlayer), city)
+			createRoleUnit(iPlayer, city, iWork, 1)
 
 
 ### COMBAT RESULT ###
-
-			
+		
 @handler("combatResult")
 def captureSlaves(winningUnit, losingUnit):
 	if plot(winningUnit).isWater() and freeCargo(winningUnit, winningUnit) <= 0:
@@ -212,7 +159,6 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 
 ### REVOLUTION ###
 
-
 @handler("revolution")
 def validateSlaves(iPlayer):
 	if not player(iPlayer).canUseSlaves():
@@ -229,7 +175,6 @@ def validateSlaves(iPlayer):
 
 ### UNIT BUILT ###
 
-
 @handler("unitBuilt")
 def moveSlavesToNewWorld(city, unit):
 	if base_unit(unit) == iSlave and city.getRegionID() in lEurope + [rMaghreb, rAnatolia] and not city.isHuman():	
@@ -239,7 +184,6 @@ def moveSlavesToNewWorld(city, unit):
 
 
 ### CAPITAL MOVED ###
-
 
 @handler("capitalMoved")
 def resetAdminCenterOnPalaceBuilt(city):
@@ -269,7 +213,6 @@ def brazilianMadeireiroAbility(plot, city, iFeature):
 
 ### BEGIN GAME TURN ###
 
-
 @handler("BeginGameTurn")
 def checkImmigration(iGameTurn):
 	if iGameTurn < year(dBirth[iAmerica]) + turns(5):
@@ -284,7 +227,6 @@ def checkImmigration(iGameTurn):
 
 ### TECH ACQUIRED ###
 
-
 @handler("techAcquired")
 def relocateCapitals(iTech, iTeam, iPlayer):
 	if not player(iPlayer).isHuman():
@@ -295,7 +237,6 @@ def relocateCapitals(iTech, iTeam, iPlayer):
 
 ### END GAME TURN ###
 
-
 @handler("EndGameTurn")
 def startTimedConquests():
 	for iConqueror, tPlot in data.lTimedConquests:
@@ -304,20 +245,7 @@ def startTimedConquests():
 	data.lTimedConquests = []
 
 
-### FIRST CITY ###
-
-
-@handler("firstCity")
-def createStartingWorkers(city):
-	iPlayer = city.getOwner()
-	iNumStartingWorkers = dStartingWorkers[iPlayer]
-	
-	if city.isCapital() and iNumStartingWorkers > 0:
-		makeUnits(iPlayer, getBestWorker(iPlayer), city, iNumStartingWorkers)
-
-
 ### BEGIN PLAYER TURN ###
-
 
 @handler("setPlayerAlive")
 def updateLastTurnAlive(iPlayer, bAlive):
@@ -330,7 +258,6 @@ def updateLastTurnAlive(iPlayer, bAlive):
 
 ### IMPLEMENTATIONS ###
 
-		
 def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
 	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)

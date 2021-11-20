@@ -38,7 +38,6 @@ irregular_plurals = {
 }
 
 
-# TODO: test
 def mission(unit, iMission, data=(-1, -1), iFlags=0, bAppend=False, bManual=False, iMissionAI=MissionAITypes.NO_MISSIONAI, missionAIPlot=None, missionAIUnit=None):
 	data = listify(data) + [-1] * 2
 	iData1, iData2 = tuple(data[:2])
@@ -419,11 +418,14 @@ def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coast
 	if skip_city is None:
 		if isinstance(entity, CyCity):
 			skip_city = entity
-		# TODO: test this case
-		elif isinstance(entity, CyPlot):
-			skip_city = entity.isCity() and city(entity) or CyCity()
 		else:
 			skip_city = CyCity()
+	
+	elif isinstance(skip_city, CyPlot):
+		skip_city = skip_city.isCity() and city_(skip_city) or CyCity()
+	
+	if isinstance(owner, Civ):
+		owner = slot(owner)
 			
 	x, y = _parse_tile(entity)
 	city = map.findCity(x, y, owner, TeamTypes.NO_TEAM, same_continent, coastal_only, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, skip_city)
@@ -529,6 +531,10 @@ def stability(iPlayer):
 
 def has_civic(identifier, iCivic):
 	return player(identifier).getCivics(gc.getCivicInfo(iCivic).getCivicOptionType()) == iCivic
+
+
+def scenarioStart():
+	return turn() == scenarioStartTurn()
 
 
 def scenarioStartTurn():
@@ -638,7 +644,7 @@ def turn(turn = None):
 
 def missionary(iReligion):
 	if iReligion < 0: return None
-	return iMissionary + iReligion
+	return infos.units().where(lambda iUnit: infos.unit(iUnit).getReligionSpreads(iReligion) > 0).first()
 
 
 def makeUnit(iPlayer, iUnit, plot, iUnitAI = UnitAITypes.NO_UNITAI):
@@ -920,11 +926,7 @@ class EntityCollection(object):
 		return key
 
 	def __init__(self, keys):
-		try:
-			self._keys = list(keys)
-		except Exception, e:
-			raise Exception("%s: %s" % (e, type(keys)))
-		
+		self._keys = list(keys)
 		self._name = ""
 		
 	def __getitem__(self, index):
@@ -1019,6 +1021,10 @@ class EntityCollection(object):
 	def first(self):
 		if not self: return None
 		return self.entities()[0]
+	
+	def last(self):
+		if not self: return None
+		return self.entities()[self.count()-1]
 		
 	def one(self):
 		if len(self) != 1:
@@ -1047,9 +1053,8 @@ class EntityCollection(object):
 		iSplit = self.count() * iPercent / 100
 		return self.copy(self._keys[:iSplit]), self.copy(self._keys[iSplit:])
 	
-	# TODO: test
 	def grouped(self, func):
-		return ((key, list(group)) for key, group in groupby(self.sort(func).entities(), func))
+		return ((key, self.copy(group)) for key, group in groupby(self.sort(func)._keys, lambda key: func(self._factory(key))))
 		
 	def sort(self, metric, reverse=False):
 		return self.copy(sort(self._keys, key=lambda k: metric(self._factory(k)), reverse=reverse))
@@ -1142,6 +1147,11 @@ class EntityCollection(object):
 		enriched = self + enrich
 		return enriched.unique()
 	
+	def format(self, separator=",", final_separator=None, formatter=lambda x: x):
+		if final_separator is None:
+			final_separator = text("TXT_KEY_AND")
+		return format_separators(self.entities(), separator, final_separator, formatter)
+	
 	def named(self, key):
 		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
 	
@@ -1222,7 +1232,7 @@ class PlotFactory:
 			raise TypeError("city object is None")
 	
 		return Plots([location(city.getCityIndexPlot(i)) for i in range(21)])
-
+	
 	def owner(self, iPlayer):
 		return self.all().owner(iPlayer)
 
@@ -1252,6 +1262,11 @@ class PlotFactory:
 		if iPeriod in dPeriodBroaderArea:
 			return self.rectangle(*dPeriodBroaderArea[identifier])
 		return self.rectangle(*dBroaderArea[identifier])
+	
+	def expansion(self, identifier):
+		if identifier not in dExpansionArea:
+			return self.none()
+		return self.area(dExpansionArea, dExpansionAreaExceptions, identifier)
 
 	def respawn(self, identifier):
 		if identifier in dRespawnArea:
@@ -1310,6 +1325,25 @@ class Locations(EntityCollection):
 		
 	def closest_distance(self, *args):
 		return self._closest(*args).value
+	
+	def closest_all(self, locations):
+		if not isinstance(locations, Locations):
+			raise Exception("Expected instance of Locations, received: %s" % locations)
+			
+		permutations = [(x, y) for x in self.shuffle().entities() for y in locations.shuffle().entities()]
+		closest = find_min(permutations, lambda (x, y): distance(x, y)).result
+		
+		if closest is None:
+			return None
+			
+		return closest[0]
+	
+	def closest_within(self, *args, **kwargs):
+		closest_distance = self.closest_distance(*args)
+		radius = kwargs.get('radius', 1)
+		if closest_distance is None or closest_distance > radius:
+			return self.empty()
+		return self.where(lambda loc: distance(location(*args), loc) == closest_distance)
 		
 	def units(self):
 		return sum([units.at(loc) for loc in self.entities()], Units([]))
@@ -1332,7 +1366,6 @@ class Locations(EntityCollection):
 	def owners(self):
 		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
 	
-	# TODO: test
 	def area(self, area):
 		if isinstance(area, (CyPlot, CyCity)):
 			area = area.getArea()
@@ -1400,9 +1433,8 @@ class Plots(Locations):
 	def expand(self, iNumTiles):
 		return self.enrich(lambda p: plots.circle(p, radius=iNumTiles))
 	
-	# TODO: test
 	def edge(self):
-		return self.where(lambda p: plots.surrounding(p).any(lambda sp: p.getOwner() != sp.getOwner()))
+		return self.where(lambda p: plots.surrounding(p).any(lambda sp: sp not in self))
 
 
 class LazyPlots(object):
@@ -1716,7 +1748,7 @@ class Units(EntityCollection):
 		raise TypeError("Tried to check if Units contains '%s', can only contain units" % type(item))
 		
 	def __str__(self):
-		return ", ".join(["%s (%s) at %s" % (unit.getName(), adjective(unit.getOwner()), (unit.getX(), unit.getY())) for unit in self.entities()])
+		return ", ".join(["%s (%s) at %s" % (infos.unit(unit.getUnitType()).getText(), adjective(unit.getOwner()), (unit.getX(), unit.getY())) for unit in self.entities()])
 
 	def owner(self, iPlayer):
 		return self.where(lambda u: owner(u, iPlayer))

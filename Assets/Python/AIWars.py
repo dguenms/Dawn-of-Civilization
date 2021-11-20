@@ -257,15 +257,11 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		
 		tPlot = findNearestLandPlot(city, iPlayer)
 		
-		iBestInfantry = getBestInfantry(iPlayer)
-		iBestSiege = getBestSiege(iPlayer)
-		
-		if iCiv == iGreece:
-			iBestInfantry = iHoplite
-			iBestSiege = iCatapult
-		
-		makeUnits(iPlayer, iBestInfantry, tPlot, 2 + iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
-		makeUnits(iPlayer, iBestSiege, tPlot, 1 + 2*iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
+		dConquestUnits = {
+			iAttack: 2 + iExtra,
+			iSiege: 1 + 2*iExtra,
+		}
+		createRoleUnits(iPlayer, tPlot, dConquestUnits.items())
 		
 		if iCiv == iGreece:
 			makeUnit(iPlayer, iCompanion, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
@@ -274,10 +270,10 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 			makeUnit(iPlayer, iWarElephant, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 			
 		if iCiv == iSpain:
-			makeUnits(iPlayer, getBestCavalry(iPlayer), tPlot, 2 * iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
+			createRoleUnit(iPlayer, tPlot, iShockCity, 2*iExtra)
 			
 		if iCiv == iTurks:
-			makeUnits(iPlayer, getBestCavalry(iPlayer), tPlot, 2 + iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
+			createRoleUnit(iPlayer, tPlot, iShockCity, 2+iExtra)
 
 
 def declareWar(iPlayer, iTarget, iWarPlan):

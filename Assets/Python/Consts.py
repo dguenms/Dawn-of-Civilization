@@ -105,34 +105,6 @@ iTechGroupNativeAmerica : [iPolynesia, iMaya, iInca, iAztecs],
 
 lBioNewWorld = [iMaya, iInca, iAztecs]
 
-
-#for Victory and the handler
-tAmericasTL = (3, 0)
-tAmericasBR = (43, 63)
-
-# Colombian UP
-tSouthCentralAmericaTL = (13, 3)
-tSouthCentralAmericaBR = (43, 39)
-
-# English colonists
-tCanadaTL = (10, 49)
-tCanadaBR = (37, 58)
-tAustraliaTL = (103, 5)
-tAustraliaBR = (123, 22)
-
-# new capital locations
-tVienna = (62, 49)
-tWarsaw = (65, 52)
-tStockholm = (63, 59)
-tIstanbul = (68, 45)
-tBeijing = (102, 47)
-tEsfahan = (81, 41)
-tHamburg = (59, 53)
-tMilan = (59, 47)
-tBaghdad = (77, 40)
-tMumbai = (88, 34)
-tMysore = (90, 31)
-
 #for messages
 iDuration = 14
 iWhite = 0
@@ -336,7 +308,7 @@ iAztecs : 1195,
 iMughals : 1206,
 iOttomans : 1280,
 iThailand : 1350,
-iCongo : 1490,
+iCongo : 1390,
 iIran : 1501,
 iNetherlands : 1580,
 iGermany : 1700,
@@ -821,8 +793,6 @@ iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant,
 iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, 
 iAztecSlave) = range(iNumUnits)
 
-iMissionary = iJewishMissionary # generic
-
 lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
 
 dFemaleGreatPeople = {
@@ -836,10 +806,10 @@ iGreatGeneral : iFemaleGreatGeneral,
 iGreatSpy : iFemaleGreatSpy,
 }
 
-iNumUnitRoles = 21
-(iBase, iDefend, iAttack, iCounter, iCavalry, iHarass, iCityAttack, iWorkerSea, iSettle, iSettleSea, 
-iAttackSea, iTransport, iEscort, iExplore, iCavalryCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
-iWork) = range(iNumUnitRoles)
+iNumUnitRoles = 22
+(iBase, iDefend, iAttack, iCounter, iShock, iHarass, iCityAttack, iWorkerSea, iSettle, iSettleSea, 
+iAttackSea, iTransport, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
+iWork, iMissionary) = range(iNumUnitRoles)
 
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 41
@@ -1028,12 +998,6 @@ dResurrectionLeaders = CivDict({
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iEgypt : iBaibars,
-})
-
-dRebirthLeaders = CivDict({
-	iColombia : iBolivar,
-	iIran : iAbbas,
-	iMexico : iJuarez,
 })
 
 iNumPeriods = 23

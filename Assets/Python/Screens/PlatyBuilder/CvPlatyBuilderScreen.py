@@ -35,14 +35,12 @@ from RFCUtils import *
 import MapEditorTools as met
 import SettlerMaps
 import WarMaps
-import RiseAndFall
 import RegionMap
 import DynamicCivs as dc
 import GreatPeople as gp
 
 from Core import *
 
-rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
@@ -1950,13 +1948,6 @@ class CvWorldBuilderScreen:
 			for plot in lAIPlotList:
 				x, y = location(plot)
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1001, "COLOR_RED", 0.7)
-
-			# Additional cities outside flipzone (Canada)
-			lExtraCities = getConvertedCities(self.m_iCurrentPlayer)
-			for city in lExtraCities:
-				x, y = location(city)
-				if (x, y) not in lHumanPlotList and (x, y) not in lAIPlotList:
-					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
 
 	def changeFlipZone(self, plot, bAdd):

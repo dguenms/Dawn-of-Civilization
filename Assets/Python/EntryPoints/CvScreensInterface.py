@@ -60,7 +60,6 @@ from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
-import RiseAndFall as rnf
 import Victories
 
 from Locations import *
@@ -945,29 +944,6 @@ def canEverRespawn(argsList):
 def toggleStabilityOverlay():
 	toggleStabilityOverlayUtils()
 		
-def applyClaimCityEvent(argsList):
-	data.currentCongress.applyClaimCityEvent(argsList[0])
-	
-def applyVoteCityEvent(argsList):
-	data.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
-	
-def applyIntroductionEvent(argsList):
-	data.currentCongress.applyIntroductionEvent()
-	
-def applyRefusalEvent(argsList):
-	data.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyEvent(argsList):
-	data.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyResultEvent(argsList):
-	data.currentCongress.applyBriberyResultEvent()
-	
-### Rise And Fall
-
-def applyNewCivSwitchEvent(argsList):
-	rnf.applyNewCivSwitchEvent(argsList)
-
 
 #######################################################################################
 ## Handle Close Map

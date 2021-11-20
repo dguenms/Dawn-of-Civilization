@@ -18,6 +18,10 @@ def setupOnGameStart():
 def setupOnLoad():
 	setup()
 
+@handler("PythonReloaded")
+def setupOnPythonReloaded():
+	setup()
+
 def setup():
 	global dResources
 	dResources = TileDict(dResourcesDict, year)
@@ -143,8 +147,6 @@ dResourcesDict = {
 	(108, 18) : (1850,  iCamel),   # Australia
 }
 
-# TODO: should be handled by Rise and Fall
-# TODO: Rise and Fall needs generic function canSpawn for normal civs and rebirths
 dSpawnResourcesDict = {
 	(90, 28) : (iTamils,    iFish),
 	(95, 43) : (iTibet,     iWheat),
@@ -212,12 +214,16 @@ def createResources():
 		createResource(x, y, iResource)
 
 
-@handler("BeginGameTurn")
-def createResourcesBeforeSpawn(iGameTurn):
-	for iCiv in dSpawnResources:
-		if iGameTurn == year(dBirth[iCiv]) - 1 and data.isCivEnabled(iCiv):
-			for (x, y), iResource in dSpawnResources[iCiv]:
-				createResource(x, y, iResource)
+@handler("prepareBirth")
+def createResourcesBeforeBirth(iCiv):
+	for (x, y), iResource in dSpawnResources[iCiv]:
+		createResource(x, y, iResource)
+
+
+@handler("rebirth")
+def removeColombianJungle(iPlayer):
+	if civ(iPlayer) == iColombia:
+		plot(28, 31).setFeatureType(-1, 0)
 
 
 @handler("BeginGameTurn")

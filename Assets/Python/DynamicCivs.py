@@ -530,7 +530,6 @@ dStartingLeaders = [
 {
 	iChina : iHongwu,
 	iIndia : iShahuji,
-	iIran : iAbbas,
 	iTamils : iKrishnaDevaRaya,
 	iKorea : iSejong,
 	iJapan : iOdaNobunaga,
@@ -546,7 +545,6 @@ dStartingLeaders = [
 	iPortugal : iJoao,
 	iMughals : iAkbar,
 	iOttomans : iSuleiman,
-	iGermany : iFrederick,
 }]
 
 ### Event handlers

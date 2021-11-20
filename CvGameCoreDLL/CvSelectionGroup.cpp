@@ -4846,7 +4846,7 @@ void CvSelectionGroup::insertAtEndMissionQueue(MissionData mission, bool bStart)
 	m_missionQueue.insertAtEnd(mission);
 
 	if ((getLengthMissionQueue() == 1) && bStart)
-	{
+	{	
 		activateHeadMission();
 	}
 
