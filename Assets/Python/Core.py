@@ -510,7 +510,7 @@ def flatten(iterables):
 def move(unit, destination):
 	if destination is None:
 		return
-	
+		
 	if location(unit) >= (0, 0) and location(unit) != location(destination):
 		x, y = _parse_tile(destination)
 		unit.setXY(x, y, False, True, False)

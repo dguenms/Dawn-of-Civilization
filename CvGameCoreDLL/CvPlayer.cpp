@@ -5665,7 +5665,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	}
 
 	// Leoreth: cannot found in territory of recently spawned civilization
-	if (pPlot->isBirthProtected() && pPlot->getBirthProtected() != getID())
+	if (!isMinorCiv() && !isBarbarian() && pPlot->isBirthProtected() && pPlot->getBirthProtected() != getID())
 	{
 		return false;
 	}

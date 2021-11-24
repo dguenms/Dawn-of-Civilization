@@ -154,8 +154,11 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 	if not player(iDefender).isBirthProtected():
 		return
 		
-	createRoleUnits(iDefender, capital(iDefender), getAdditionalUnits(iDefender))
-	createSpecificAdditionalUnits(iDefender, capital(iDefender))
+	city = capital(iDefender)
+	
+	if city:
+		createRoleUnits(iDefender, city, getAdditionalUnits(iDefender))
+		createSpecificAdditionalUnits(iDefender, city)
 
 
 @handler("changeWar")
@@ -168,6 +171,9 @@ def balanceMilitary(bWar, iAttacker, iDefender):
 	
 	iAttackerPower = player(iAttacker).getPower()
 	iDefenderPower = player(iDefender).getPower()
+	
+	if not iAttackerPower:
+		return
 	
 	iPowerRatioThreshold = player(iAttacker).isHuman() and 80 or 50
 	iPowerRatio = 100 * iDefenderPower / iAttackerPower
@@ -200,7 +206,10 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 		if attackers:
 			destination = cities.owner(iAttacker).closest(plot)
 			for unit in attackers:
-				move(unit, destination)
+				if destination:
+					move(unit, destination)
+				else:
+					unit.kill(-1, False)
 			
 			message(iAttacker, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", attackers.count(), adjective(iDefender), city(destination).getName(), button=attackers.first().getButton(), location=plot)
 
@@ -270,8 +279,11 @@ class Birth(object):
 		self.iTurn = year(iYear)
 		self.bRebirth = bRebirth
 		
-		self._iPlayer = None
-		self._area = None
+		self.iPlayer = None
+		self.area = None
+		
+		if not bRebirth:
+			self.iPlayer = slot(self.iCiv)
 		
 		self.location = location(plots.capital(self.iCiv))
 		
@@ -281,33 +293,26 @@ class Birth(object):
 		self.iExpansionDelay = 0
 		self.iExpansionTurns = 0
 		
-		if self.player.isHuman():
+		if self.isHuman():
 			self.startAutoplay()
 	
 	@property
-	def iPlayer(self):
-		if self._iPlayer is None:
-			self._iPlayer = self.determinePlayer()
-		return self._iPlayer
-	
-	@property
 	def player(self):
+		if self.iPlayer is None:
+			return None
 		return player(self.iPlayer)
 	
 	@property
 	def team(self):
+		if self.iPlayer is None:
+			return None
 		return team(self.player.getTeam())
 	
 	@property
 	def name(self):
+		if self.iPlayer is None:
+			return "Unassigned civ: %s" % infos.civ(self.iCiv).getText()
 		return name(self.iPlayer)
-	
-	@property
-	def area(self):
-		if self._area is None:
-			self._area = plots.core(self.iPlayer) + plots.birth(self.iPlayer)
-			self._area = self._area.unique()
-		return self._area
 		
 	@property
 	def flipPopup(self):
@@ -317,10 +322,10 @@ class Birth(object):
 	def switchPopup(self):
 		return popup.text("TXT_KEY_POPUP_SWITCH").cancel("TXT_KEY_POPUP_NO", event_bullet).option(self.switch, "TXT_KEY_POPUP_YES").build()
 	
-	def determinePlayer(self):
-		if not self.bRebirth:
-			return slot(self.iCiv)
-		return NoCiv
+	def isHuman(self):
+		if self.iPlayer is None:
+			return False
+		return self.player.isHuman()
 	
 	def startAutoplay(self):
 		iAutoplayTurns = self.iTurn - scenarioStartTurn()
@@ -374,33 +379,32 @@ class Birth(object):
 			
 			additionalPlots = closerCities.plots().expand(2).where(lambda p: none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
 			
-			self._area = self.area + additionalPlots
-			self._area = self._area.unique()
+			self.area += additionalPlots
+			self.area = self.area.unique()
 		
 		if self.iCiv == iChina and scenario() == i600AD:
-			self._area = self.area + plots.region(rChina)
-			self._area = self._area.unique()
+			self.area += plots.region(rChina)
+			self.area = self.area.unique()
 		
 		if self.iCiv == iMexico:
-			self._area = self._area.where(lambda p: p.isCore(self.iPlayer) or not owner(p, iAmerica))
+			self.area = self.area.where(lambda p: p.isCore(self.iPlayer) or not owner(p, iAmerica))
 		
 		if self.iCiv == iCanada:
-			self._area = self.area + cities.region(rCanada).where(lambda city: civ(city) in [iFrance, iEngland, iAmerica]).plots().expand(2)
-			self._area = self._area.unique()
+			self.area += cities.region(rCanada).where(lambda city: civ(city) in [iFrance, iEngland, iAmerica]).plots().expand(2)
+			self.area = self.area.unique()
 		
 		self.excludeForeignCapitals()
 			
 	def excludeForeignCapitals(self):
 		areaCapitals = self.area.cities().where(CyCity.isCapital).where(lambda city: city.atPlot(plots.capital(city.getOwner())))
 		excludedPlots = areaCapitals.plots().expand(1).where_surrounding(lambda p: p in areaCapitals or p not in self.area or not p.isCity())
-		
-		self._area = self.area.without(excludedPlots)
-		self._area = self.area.unique()
-		
+	
+		self.area = self.area.without(excludedPlots)
+	
 		for plot in plots.all():
 			if plot in self.area:
 				plot.setBirthProtected(self.iPlayer)
-			else:
+			elif plot.getBirthProtected() == self.iPlayer:
 				plot.resetBirthProtected()
 				
 	def updateParameters(self):
@@ -477,7 +481,7 @@ class Birth(object):
 		createSpecificUnits(self.iPlayer, self.location)
 		
 		# select a settler if available
-		if self.player.isHuman():
+		if self.isHuman():
 			settler = units.at(self.location).owner(self.iPlayer).where(lambda unit: unit.isFound()).last()
 			if settler:
 				interface.selectUnit(settler, True, False, False)
@@ -501,7 +505,9 @@ class Birth(object):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
 	
 	def advancedStart(self):
-		self.player.changeAdvancedStartPoints(dAdvancedStartPoints[self.iPlayer]+1)
+		iAdvancedStartPoints = dAdvancedStartPoints[self.iPlayer]
+		if iAdvancedStartPoints > 0:
+			self.player.changeAdvancedStartPoints(iAdvancedStartPoints+1)
 	
 	def resetPlague(self):
 		data.players[self.iPlayer].iPlagueCountdown = -10
@@ -559,7 +565,7 @@ class Birth(object):
 		self.checkIncompatibleCivs()
 		
 	def canSpawn(self):
-		if self.player.isHuman():
+		if self.isHuman():
 			return True
 		
 		if not infos.civ(self.iCiv).isAIPlayable():
@@ -596,9 +602,9 @@ class Birth(object):
 	
 		# independence civs require the player controlling the most cities in their area to be stable or worse
 		if self.iCiv in lIndependenceCivs:
-			numCities = lambda p: self.area.cities().owner(p).count()
-			iMostCitiesPlayer = players.major().without(self.iPlayer).where(lambda p: numCities(p) > 0).maximum(numCities)
-			if iMostCitiesPlayer is not None:
+			numCities = lambda p: plots.birth(self.iCiv).cities().owner(p).count()
+			iMostCitiesPlayer = players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: numCities(p) > 0).maximum(numCities)
+			if iMostCitiesPlayer is not None and civ(iMostCitiesPlayer) != self.iCiv:
 				if stability(iMostCitiesPlayer) >= iStabilitySolid:
 					return False
 		
@@ -618,17 +624,20 @@ class Birth(object):
 			self.iPlayer = slot(dRebirthCiv[self.iCiv])
 		
 		self.updateCivilization()
-	
+		
+		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
+		self.area = self.area.unique()
+
 	def prepare(self):
 		events.fireEvent("prepareBirth", self.iCiv)
 	
 	def protect(self):
 		self.protectionEnd = turn() + turns(10)
 		self.player.setBirthProtected(True)
-		
+	
 		for plot in self.area:
 			plot.setBirthProtected(self.iPlayer)
-		
+	
 		self.removeMinors()
 	
 	def resetProtection(self):
@@ -664,19 +673,19 @@ class Birth(object):
 		self.iExpansionDelay -= 1
 		self.iExpansionTurns -= 1
 		
-		if not self.player.isHuman() and expansionCities:
+		if not self.isHuman() and expansionCities:
 			targets = expansionCities.owners().without(self.iPlayer)
 			minors, majors = targets.split(is_minor)
 		
 			for iMinor in minors.where(lambda p: not self.team.isAtWar(p)):
 				self.team.declareWar(player(iMinor).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
-		
+	
 			if majors and majors.none(self.team.isAtWar):
 				target = expansionCities.where(lambda city: not is_minor(city)).closest_all(cities.owner(self.iPlayer))
 				self.team.declareWar(target.getTeam(), False, WarPlanTypes.WARPLAN_TOTAL)
 
 	def checkIncompatibleCivs(self):
-		if not self.player.isHuman():
+		if not self.isHuman():
 			return
 		
 		iClearedCiv = dClearedForBirth.get(self.iCiv)
@@ -766,7 +775,7 @@ class Birth(object):
 		self.resetPlague()
 		
 		# initial save
-		if self.player.isHuman():
+		if self.isHuman():
 			game.initialSave()
 		
 		# send event
@@ -812,7 +821,7 @@ class Birth(object):
 		flippedPlots = plots.birth(self.iPlayer)
 		flippedCities = flippedPlots.cities().notowner(self.iPlayer)
 		flippedCityPlots = flippedCities.plots()
-		
+	
 		flippedPlayerCities = dict((p, format_separators(flippedCities.owner(p), ",", text("TXT_KEY_AND"), CyCity.getName)) for p in flippedCities.owners().major())
 		
 		expelUnits(self.iPlayer, flippedPlots)
