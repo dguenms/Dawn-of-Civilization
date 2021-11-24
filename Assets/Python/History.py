@@ -370,8 +370,9 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 		
 		for city in enemyCities:
 			plot = plots.surrounding(city).without(city).land().passable().no_enemies(iPlayer).random()
-			makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			if plot:
+				makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 				
 		if enemyCities.count() < 2:
 			for plot in plots.of(lWestCoast).without(enemyCities).sample(2 - enemyCities.count()):

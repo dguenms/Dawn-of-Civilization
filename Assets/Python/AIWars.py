@@ -233,11 +233,13 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 			team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
 
 	lCities = []
-	for city in cities.start(tTL).end(tBR):
+	for city in cities.rectangle(tTL, tBR):
 		if city.getOwner() != iPlayer and not team(city).isVassal(iPlayer):
 			lCities.append(city)
 			
-	targetCities = cities.start(tTL).end(tBR).notowner(iPlayer).where(lambda city: not team(city).isVassal(iPlayer)).lowest(iNumTargets, lambda city: (city.getOwner() == iPreferredTarget, distance(city, capital(iPlayer))))
+	targetPlots = plots.rectangle(tTL, tBR)
+			
+	targetCities = cities.rectangle(tTL, tBR).notowner(iPlayer).where(lambda city: not team(city).isVassal(iPlayer)).lowest(iNumTargets, lambda city: (city.getOwner() == iPreferredTarget, distance(city, capital(iPlayer))))
 	owners = set(city.getOwner() for city in targetCities)
 			
 	if iPreferredTarget >= 0 and iPreferredTarget not in owners and player(iPreferredTarget).isAlive():
@@ -248,6 +250,13 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		message(iOwner, 'TXT_KEY_UP_CONQUESTS_TARGET', name(iPlayer))
 		
 	for city in targetCities:
+		if city is None or city.isNone():
+			for plot in plots.rectangle(tTL, tBR):
+				if plot.isCity():
+					print "plot %s is city and city(plot) is %s and plot.getPlotCity() is %s" % (location(plot), city_(plot), plot.getPlotCity())
+			print "targetCities: %s" % targetCities
+			raise Exception("target city %s is None" % (city,))
+	
 		iExtra = 0
 		if active() not in [iPlayer, city.getOwner()]: 
 			iExtra += 1

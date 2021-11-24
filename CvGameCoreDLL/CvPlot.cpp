@@ -3183,6 +3183,12 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 		iModifier += GC.getHILLS_EXTRA_DEFENSE();
 	}
 
+	// Leoreth: terrain modifier halved when in territory of a recently born civilization
+	if (isBirthProtected() && GET_PLAYER(getBirthProtected()).getTeam() != eDefender)
+	{
+		iModifier /= 2;
+	}
+
 	if (bHelp)
 	{
 		eImprovement = getRevealedImprovementType(GC.getGameINLINE().getActiveTeam(), false);
