@@ -632,7 +632,7 @@ class Birth(object):
 		events.fireEvent("prepareBirth", self.iCiv)
 	
 	def protect(self):
-		self.protectionEnd = turn() + turns(10)
+		self.protectionEnd = self.iTurn + turns(20)
 		self.player.setBirthProtected(True)
 	
 		for plot in self.area:
@@ -773,6 +773,9 @@ class Birth(object):
 		
 		# reset plague
 		self.resetPlague()
+		
+		# set as spawned
+		data.players[self.iPlayer].bSpawned = True
 		
 		# initial save
 		if self.isHuman():
