@@ -21,20 +21,17 @@ class PlayerData:
 	
 		# Rise
 		
-		self.lPreservedWonders = []
-	
-		# Rise and Fall
-		
 		self.bSpawned = False
+		self.lPreservedWonders = []
 		
-		self.iColonistsAlreadyGiven = 0
-		self.iSpawnDelay = 0
-		self.iFlipsDelay = 0
-		self.iBirthTurnModifier = 0
+		# DynamicCivs
+		
 		self.iAnarchyTurns = 0
 		self.iResurrections = 0
-		self.iLastTurnAlive = 0
 		
+		# History
+		
+		self.iColonistsAlreadyGiven = 0
 		self.iExplorationTurn = 1500
 		
 		# Religions
@@ -59,6 +56,8 @@ class PlayerData:
 		self.religiousGoals = []
 		
 		# Stability
+		
+		self.iLastTurnAlive = 0
 		
 		self.resetStability()
 		
