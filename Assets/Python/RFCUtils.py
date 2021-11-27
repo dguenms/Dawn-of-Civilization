@@ -819,9 +819,7 @@ def expelUnits(iPlayer, area):
 			else:
 				destination = possibleDestinations.closest(plot)
 				
-			expelledUnits = ownerUnits.where(lambda unit: not unit.isCargo())
-				
-			for i, unit in enumerate(expelledUnits):
+			for unit in ownerUnits.where(lambda unit: not unit.isCargo()):
 				if unit.isNone():
 					continue
 			
