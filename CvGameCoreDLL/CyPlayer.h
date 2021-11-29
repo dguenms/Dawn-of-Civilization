@@ -605,7 +605,8 @@ public:
 	bool isUnstableCivic(int iCivic);
 	void setBirthProtected(bool bNewValue);
 	bool isBirthProtected();
-	void changeNoAnarchyTurns(int iChange);
+	void changeNoAnarchyTurns(int iChange); 
+	void AI_doAdvancedStart();
 
 private:
 	CvPlayer* m_pPlayer;
