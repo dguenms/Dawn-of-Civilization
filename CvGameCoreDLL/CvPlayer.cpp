@@ -11753,7 +11753,7 @@ void CvPlayer::verifyAlive()
 		{
 			if (!isBarbarian() && !isNative() && getCivilizationType() != CELTS) // Leoreth: natives and celts should behave like barbarians
 			{
-				if (getNumCities() == 0 && getAdvancedStartPoints() < 0)
+				if (getNumCities() == 0 /*&& getAdvancedStartPoints() < 0*/)
 				{
 					if ((getNumUnits() == 0) || (!(GC.getGameINLINE().isOption(GAMEOPTION_COMPLETE_KILLS)) && isFoundedFirstCity()))
 					{
