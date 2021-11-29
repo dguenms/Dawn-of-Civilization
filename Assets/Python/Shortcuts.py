@@ -1,3 +1,5 @@
+import CvUtil
+
 from CvPythonExtensions import *
 from Locations import *
 from RFCUtils import *
