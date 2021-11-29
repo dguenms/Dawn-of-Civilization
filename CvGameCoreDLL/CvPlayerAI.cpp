@@ -17768,6 +17768,112 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 
 
 
+bool CvPlayerAI::AI_advancedStartImproveCity(CvCity* pCity)
+{
+	if (pCity == NULL)
+	{
+		return false;
+	}
+
+	if (pCity->getOwner() != getID())
+	{
+		return false;
+	}
+
+	if (pCity->getCultureLevel() <= 1)
+	{
+		doAdvancedStartAction(ADVANCEDSTARTACTION_CULTURE, pCity->getX(), pCity->getY(), -1, true);
+	}
+
+	//to account for culture expansion.
+	pCity->AI_updateBestBuild();
+
+	int iPlotsImproved = 0;
+	for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		if (iI != CITY_HOME_PLOT)
+		{
+			CvPlot* pLoopPlot = plotCity(pCity->getX_INLINE(), pCity->getY_INLINE(), iI);
+			if ((pLoopPlot != NULL) && (pLoopPlot->getWorkingCity() == pCity))
+			{
+				if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
+				{
+					iPlotsImproved++;
+				}
+			}
+		}
+	}
+
+	int iTargetPopulation = pCity->happyLevel() + (getCurrentEra() / 2);
+
+	while (iPlotsImproved < iTargetPopulation)
+	{
+		CvPlot* pBestPlot;
+		ImprovementTypes eBestImprovement = NO_IMPROVEMENT;
+		int iBestValue = 0;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			int iValue = pCity->AI_getBestBuildValue(iI);
+			if (iValue > iBestValue)
+			{
+				BuildTypes eBuild = pCity->AI_getBestBuild(iI);
+				if (eBuild != NO_BUILD)
+				{
+					ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement();
+					if (eImprovement != NO_IMPROVEMENT)
+					{
+						CvPlot* pLoopPlot = plotCity(pCity->getX_INLINE(), pCity->getY_INLINE(), iI);
+						if ((pLoopPlot != NULL) && (pLoopPlot->getImprovementType() != eImprovement))
+						{
+							eBestImprovement = eImprovement;
+							pBestPlot = pLoopPlot;
+							iBestValue = iValue;
+						}
+					}
+				}
+			}
+		}
+
+		if (iBestValue > 0)
+		{
+
+			FAssert(pBestPlot != NULL);
+			doAdvancedStartAction(ADVANCEDSTARTACTION_IMPROVEMENT, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), eBestImprovement, true);
+			iPlotsImproved++;
+			if (pCity->getPopulation() < iPlotsImproved)
+			{
+				doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), -1, true);
+			}
+		}
+		else
+		{
+			break;
+		}
+	}
+
+
+	while (iPlotsImproved > pCity->getPopulation())
+	{
+		int iPopCost = getAdvancedStartPopCost(true, pCity);
+		if (iPopCost <= 0 || iPopCost > getAdvancedStartPoints())
+		{
+			break;
+		}
+		if (pCity->healthRate() < 0)
+		{
+			break;
+		}
+		doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pCity->getX_INLINE(), pCity->getY_INLINE(), -1, true);
+	}
+
+	pCity->AI_updateAssignWork();
+
+	return true;
+}
+
+
+
+
 //Returns false if we have no more points.
 bool CvPlayerAI::AI_advancedStartDoRoute(CvPlot* pFromPlot, CvPlot* pToPlot)
 {
@@ -18026,7 +18132,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 	int iMilitaryPoints = (iStartingPoints * (isHuman() ? 17 : (10 + (GC.getLeaderHeadInfo(getPersonalityType()).getBuildUnitProb() / 3)))) / 100;
 	int iCityPoints = iStartingPoints - (iMilitaryPoints + iRevealPoints);
 
-	if (getCapitalCity() != NULL)
+	/*if (getCapitalCity() != NULL)
 	{
 		AI_advancedStartPlaceCity(getCapitalCity()->plot());
 	}
@@ -18074,13 +18180,13 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 			}
 			return;
 		}
-	}
+	}*/
 
 	iCityPoints -= (iStartingPoints - getAdvancedStartPoints());
 
 	int iLastPointsTotal = getAdvancedStartPoints();
 
-	for (int iPass = 0; iPass < 6; iPass++)
+	/*for (int iPass = 0; iPass < 6; iPass++)
 	{
 		for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
 		{
@@ -18118,14 +18224,16 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 				break;
 			}
 		}
-	}
+	}*/
 
 	iLastPointsTotal = getAdvancedStartPoints();
 	iCityPoints = std::min(iCityPoints, iLastPointsTotal);
 	int iArea = -1; //getStartingPlot()->getArea();
 
+
+
 	//Spend econ points on a tech?
-	int iTechRand = 90 + GC.getGame().getSorenRandNum(20, "AI AS Buy Tech 1");
+	/*int iTechRand = 90 + GC.getGame().getSorenRandNum(20, "AI AS Buy Tech 1");
 	int iTotalTechSpending = 0;
 
 	if (getCurrentEra() == 0)
@@ -18252,6 +18360,11 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 				}
 			}
 		}
+	}*/
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		AI_advancedStartImproveCity(pLoopCity);
 	}
 
 	AI_advancedStartRouteTerritory();
@@ -18286,7 +18399,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 
 
 	bool bDone = false;
-	for (int iPass = 0; iPass < 10; ++iPass)
+	/*for (int iPass = 0; iPass < 10; ++iPass)
 	{
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
@@ -18306,7 +18419,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 				}
 			}
 		}
-	}
+	}*/
 
 	if (isHuman())
 	{
@@ -18319,7 +18432,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 			}
 		}
 	}
-
+	
 	if (!bNoExit)
 	{
 		doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, -1, -1, -1, true);
