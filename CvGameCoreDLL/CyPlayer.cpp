@@ -2762,3 +2762,8 @@ void CyPlayer::changeNoAnarchyTurns(int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeNoAnarchyTurns(iChange);
 }
+
+void CyPlayer::AI_doAdvancedStart() 
+{
+	if (m_pPlayer) m_pPlayer->AI_doAdvancedStart();
+}
