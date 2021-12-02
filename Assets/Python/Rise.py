@@ -249,7 +249,8 @@ def createStartingWorkers(city):
 def restorePreservedWonders(city):
 	while data.players[city.getOwner()].lPreservedWonders:
 		iWonder = data.players[city.getOwner()].lPreservedWonders.pop(0)
-		city.setHasRealBuilding(iWonder, True)
+		if city.isValidBuildingLocation(iWonder):
+			city.setHasRealBuilding(iWonder, True)
 
 
 @handler("BeginGameTurn")

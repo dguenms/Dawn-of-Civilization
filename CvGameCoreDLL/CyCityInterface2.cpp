@@ -152,5 +152,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getSatelliteSlots", &CyCity::getSatelliteSlots, "int ()")
 		.def("getArea", &CyCity::getArea, "int ()")
 		.def("rebuild", &CyCity::rebuild, "bool ()")
+		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)")
 		;
 }
