@@ -758,6 +758,10 @@ class Birth(object):
 			self.player.setEspionageSpendingWeightAgainstTeam(player(iOtherPlayer).getTeam(), 0)
 	
 	def birth(self):
+		# initial save
+		if self.isHuman():
+			game.initialSave()
+			
 		# reset AI
 		self.reset()
 		
@@ -793,10 +797,6 @@ class Birth(object):
 		
 		# set as spawned
 		data.players[self.iPlayer].bSpawned = True
-		
-		# initial save
-		if self.isHuman():
-			game.initialSave()
 		
 		# send event
 		if self.bRebirth:
