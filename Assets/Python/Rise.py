@@ -438,39 +438,52 @@ class Birth(object):
 		
 		# allow free civic changes in the birth and spawn turn
 		self.player.changeNoAnarchyTurns(2)
+		
+	def closeNeighbourPlots(self, iNeighbour):
+		neighbourPlots = plots.owner(iNeighbour).areas(self.location, capital(iNeighbour)).land()
+		closest = neighbourPlots.without(self.area).closest(self.location)
+		furthest = find_max(neighbourPlots.entities(), lambda p: distance(self.location, p)).result
+		
+		if not closest:
+			return plots.none()
+		
+		closePlots, farPlots = neighbourPlots.split(lambda p: distance(closest, p) <= distance(furthest, p))
+		return closePlots
 	
 	def revealTerritory(self):
 		# reset visibility
 		for plot in plots.all():
 			plot.setRevealed(self.player.getID(), False, False, -1)
+
+		# reveal birth area
+		revealed = self.area.land()
 		
 		# revealed by enough neighbours
 		neighbours = self.area.expand(3).owners().major().without(self.iPlayer)
-		revealed = self.area.land()
-		
-		for iNeighbour in neighbours:
-			neighbourPlots = plots.owner(iNeighbour).area(self.location).land()
-			closest = neighbourPlots.closest(self.location)
-			furthest = find_max(neighbourPlots.entities(), lambda p: distance(self.location, p)).result
-			closePlots, farPlots = neighbourPlots.split(lambda p: distance(closest, p) <= distance(furthest, p))
-			revealed += closePlots
-			
-		iVisionRange = self.player.getCurrentEra() / 2 + 1
-		revealed = revealed.expand(iVisionRange)
+		neighbourRevealed = plots.sum(self.closeNeighbourPlots(iNeighbour) for iNeighbour in neighbours)
 		
 		# revealed by enough civilizations in your tech group
 		iTechGroup = next(iGroup for iGroup in dTechGroups if self.iCiv in dTechGroups[iGroup])
 		peers = players.major().alive().without(self.iPlayer).where(lambda p: civ(p) in dTechGroups[iTechGroup])
+		peerRevealed = plots.none()
 		
 		def isPeerRevealed(plot):
 			iRequiredPeers = plot.isWater() and peers.count() / 2 or peers.count() * 2 / 3
 			return count(peer for peer in peers if plot.isRevealed(player(peer).getTeam(), False)) >= min(iRequiredPeers, peers.count()-1)
 		
 		if peers.count() > 2:
-			revealed += plots.all().where(isPeerRevealed).expand(1)
+			peerRevealed += plots.all().where(isPeerRevealed).expand(1)
 		
-		if plots.all().where(lambda p: p.isRevealed(self.player.getTeam(), False)).none(lambda p: p in revealed):
-			revealed = self.area.land().expand(iVisionRange)
+		bCanNeighbourReveal = revealed.intersect(neighbourRevealed)
+		bCanPeerReveal = revealed.intersect(peerRevealed)
+		
+		if bCanNeighbourReveal:
+			revealed += neighbourRevealed
+			iVisionRange = self.player.getCurrentEra() / 2 + 1
+			revealed.expand(iVisionRange)
+		
+		if bCanPeerReveal:
+			revealed += peerRevealed
 		
 		# reveal tiles
 		for plot in revealed:

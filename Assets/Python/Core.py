@@ -38,6 +38,15 @@ irregular_plurals = {
 }
 
 
+# TODO: test
+def getArea(area):
+	if isinstance(area, (CyPlot, CyCity)):
+		return area.getArea()
+	elif isinstance(area, tuple) and len(area) == 2:
+		return plot(area).getArea()
+	return area
+
+
 def mission(unit, iMission, data=(-1, -1), iFlags=0, bAppend=False, bManual=False, iMissionAI=MissionAITypes.NO_MISSIONAI, missionAIPlot=None, missionAIUnit=None):
 	data = listify(data) + [-1] * 2
 	iData1, iData2 = tuple(data[:2])
@@ -1239,6 +1248,10 @@ class PlotFactory:
 	def area(self, dArea, dExceptions, identifier):
 		return self.rectangle(*dArea[identifier]).without(dExceptions[identifier]).clear_named(infos.civ(identifier).getShortDescription(0))
 
+	# TODO: test
+	def sum(self, areas):
+		return sum(areas, self.none())
+
 	def birth(self, identifier, extended=None):
 		if extended is None: extended = isExtendedBirth(identifier)
 		if identifier in dExtendedBirthArea and extended:
@@ -1366,12 +1379,16 @@ class Locations(EntityCollection):
 	def owners(self):
 		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
 	
+	# TODO: test
+	def areas(self, *areas):
+		return self.where(lambda loc: loc.getArea() in [getArea(area) for area in areas])
+	
 	def area(self, area):
-		if isinstance(area, (CyPlot, CyCity)):
-			area = area.getArea()
-		elif isinstance(area, tuple) and len(area) == 2:
-			area = plot(area).getArea()
-		return self.where(lambda loc: loc.getArea() == area)
+		return self.areas(area)
+	
+	# TODO: test
+	def intersect(self, locations):
+		return any(loc in locations for loc in self)
 
 
 class Plots(Locations):
