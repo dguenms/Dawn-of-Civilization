@@ -594,6 +594,7 @@ public:
 	int getPopulationLoss();
 	int getArea();
 	bool rebuild();
+	bool isValidBuildingLocation(int eBuilding);
 
 private:
 	CvCity* m_pCity;

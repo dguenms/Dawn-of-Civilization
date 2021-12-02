@@ -2803,3 +2803,8 @@ bool CyCity::rebuild()
 {
 	return m_pCity ? m_pCity->rebuild() : false;
 }
+
+bool CyCity::isValidBuildingLocation(int iBuilding)
+{
+	return m_pCity ? m_pCity->isValidBuildingLocation((BuildingTypes)iBuilding) : false;
+}
