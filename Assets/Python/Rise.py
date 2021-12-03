@@ -463,6 +463,11 @@ class Birth(object):
 		# reveal birth area
 		revealed = self.area.land()
 		
+		# if independence civ, revealed by civs controlling cities in birth area
+		independenceRevealed = plots.none()
+		if self.isIndependence():
+			independenceRevealed = plots.sum(plots.owner(iOwner) for iOwner in self.area.cities().owners().major())
+		
 		# revealed by enough neighbours
 		neighbours = self.area.expand(3).owners().major().without(self.iPlayer)
 		neighbourRevealed = plots.sum(self.closeNeighbourPlots(iNeighbour) for iNeighbour in neighbours)
@@ -481,6 +486,8 @@ class Birth(object):
 		
 		bCanNeighbourReveal = revealed.intersect(neighbourRevealed)
 		bCanPeerReveal = revealed.intersect(peerRevealed)
+		
+		revealed += independenceRevealed
 		
 		if bCanNeighbourReveal:
 			revealed += neighbourRevealed
