@@ -875,3 +875,5 @@ class Birth(object):
 			message(self.iPlayer, 'TXT_KEY_MESSAGE_CITIES_FLIPPED', flipped_names, color=iGreen)
 		
 		self.advancedStart()
+		
+		events.fireEvent("flip", self.iPlayer)

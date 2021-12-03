@@ -854,6 +854,7 @@ dStartingExperience = CivDict({
 dAlwaysTrain = CivDict({
 	iGreece: [iHoplite, iCatapult],
 	iByzantium: [iLegion],
+	iArabia: [iMobileGuard, iGhazi],
 	iOttomans: [iJanissary, iGreatBombard],
 }, [])
 
