@@ -328,6 +328,9 @@ class Birth(object):
 			return False
 		return self.player.isHuman()
 	
+	def isIndependence(self):
+		return self.iCiv in lIndependenceCivs
+	
 	def startAutoplay(self):
 		iAutoplayTurns = self.iTurn - scenarioStartTurn()
 		if iAutoplayTurns > 0:
@@ -373,12 +376,13 @@ class Birth(object):
 		self.updateParameters()
 	
 	def updateArea(self):
-		if self.iCiv in lIndependenceCivs:
-			owners = self.area.cities().owners()
-			ownerCities = self.area.cities().area(self.location).where(lambda city: city.getOwner() in owners)
-			closerCities = ownerCities.where(lambda city: distance(city, self.location) < distance(city, capital(city)))
+		if self.isIndependence():
+			baseCities = self.iCiv == iByzantium and cities.all() or self.area.cities()
+			owners = self.area.cities().owners().major()
+			ownerCities = baseCities.area(self.location).where(lambda city: city.getOwner() in owners)
+			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)) and real_distance(city, self.location) <= 12)
 			
-			additionalPlots = closerCities.plots().expand(2).where(lambda p: none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
+			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
 			
 			self.area += additionalPlots
 			self.area = self.area.unique()
@@ -428,7 +432,7 @@ class Birth(object):
 		if self.iCiv in dStartingReligion:
 			self.player.setLastStateReligion(dStartingReligion[self.iCiv])
 	
-		elif self.iCiv in lIndependenceCivs:
+		elif self.isIndependence():
 			iPrevalentReligion = getPrevalentReligion(self.area, self.iPlayer)
 			if iPrevalentReligion >= 0:
 				self.player.setLastStateReligion(iPrevalentReligion)
@@ -618,7 +622,7 @@ class Birth(object):
 				return False
 	
 		# independence civs require the player controlling the most cities in their area to be stable or worse
-		if self.iCiv in lIndependenceCivs:
+		if self.isIndependence():
 			numCities = lambda p: plots.birth(self.iCiv).cities().owner(p).count()
 			iMostCitiesPlayer = players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: numCities(p) > 0).maximum(numCities)
 			if iMostCitiesPlayer is not None and civ(iMostCitiesPlayer) != self.iCiv:
@@ -838,7 +842,7 @@ class Birth(object):
 		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 	
 	def flip(self):
-		flippedPlots = plots.birth(self.iPlayer)
+		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
 		flippedCities = flippedPlots.cities().notowner(self.iPlayer)
 		flippedCityPlots = flippedCities.plots()
 	
