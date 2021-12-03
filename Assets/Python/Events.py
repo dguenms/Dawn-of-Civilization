@@ -66,6 +66,7 @@ events.addEvent("combatGold")
 events.addEvent("combatFood")
 events.addEvent("sacrificeHappiness")
 events.addEvent("prepareBirth")
+events.addEvent("flip")
 
 
 @handler("buildingBuilt")

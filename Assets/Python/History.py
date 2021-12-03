@@ -443,12 +443,6 @@ def removeOrthodoxyFromAnatolia(iPlayer):
 
 ### BIRTH ###
 
-#@handler("birth")
-def clearDanishCulture(iPlayer):
-	if civ(iPlayer) == iHolyRome and player(iVikings).isAlive():
-		for plot in plots.owner(iVikings).land().where(lambda p: map.getArea(p.getArea()).getCitiesPerPlayer(p.getOwner()) == 0):
-			plot.setCultureConversion(slot(iHolyRome), 100)
-			
 @handler("birth")
 def stabilizeAustria(iPlayer):
 	if civ(iPlayer) == iGermany:
@@ -456,8 +450,11 @@ def stabilizeAustria(iPlayer):
 
 		if stability(iHolyRomanPlayer) < iStabilityShaky:
 			data.setStabilityLevel(iHolyRomanPlayer, iStabilityShaky)
+			
 
-@handler("birth")
+### FLIP ###
+
+@handler("flip")
 def createArabArmies(iPlayer):
 	if civ(iPlayer) == iArabia:
 		bBaghdad = civ(plot(tBaghdad)) == iArabia
