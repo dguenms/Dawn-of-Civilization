@@ -715,6 +715,16 @@ def distance(location1, location2):
 	x2, y2 = _parse_tile(location2)
 	return stepDistance(x1, y1, x2, y2)
 	
+
+# TOOD: test
+def real_distance(location1, location2):
+	if not location1 or not location2:
+		return map.maxPlotDistance()
+	
+	x1, y1 = _parse_tile(location1)
+	x2, y2 = _parse_tile(location2)
+	return plotDistance(x1, y1, x2, y2)
+	
 	
 def sort(iterable, key = lambda x: x, reverse = False):
 	return sorted(iterable, key=key, reverse=reverse)
