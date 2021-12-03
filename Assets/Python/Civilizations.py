@@ -882,10 +882,10 @@ def createSpecificUnits(iPlayer, tile):
 	elif iCiv == iPoland:
 		if bHuman:
 			# to account for scripted AI settler spawn
-			makeUnit(iPlayer, iSettle, tile)
+			makeUnit(iPlayer, iSettler, tile)
 	elif iCiv == iInca:
 		if not bHuman:
-			makeUnit(iPlayer, iSettle, tile)
+			makeUnit(iPlayer, iSettler, tile)
 
 def createSpecificAdditionalUnits(iPlayer, tile):
 	iCiv = civ(iPlayer)
