@@ -491,8 +491,9 @@ class Birth(object):
 		
 		if bCanNeighbourReveal:
 			revealed += neighbourRevealed
-			iVisionRange = self.player.getCurrentEra() / 2 + 1
-			revealed.expand(iVisionRange)
+			
+		iVisionRange = self.player.getCurrentEra() / 2 + 1
+		revealed = revealed.expand(iVisionRange)
 		
 		if bCanPeerReveal:
 			revealed += peerRevealed
