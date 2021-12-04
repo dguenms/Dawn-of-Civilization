@@ -279,9 +279,6 @@ def handleNewCiv(iPlayer):
 		city.setInfoDirty(True)
 		city.setLayoutDirty(True)
 					
-	for i in range(3):
-		data.players[iPlayer].lGoals[i] = -1
-		
 	events.fireEvent("switch", iPreviousPlayer, iPlayer)
 		
 	for iLoopPlayer in players.major():
