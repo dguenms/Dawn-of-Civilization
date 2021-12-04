@@ -1098,9 +1098,6 @@ class BaseGoal(object):
 	SUCCESS_CHAR = game.getSymbolID(FontSymbols.SUCCESS_CHAR)
 	FAILURE_CHAR = game.getSymbolID(FontSymbols.FAILURE_CHAR)
 
-	#SUCCESS_CHAR = "Y"
-	#FAILURE_CHAR = "N"
-
 	builder = GoalBuilder()
 	handlers = []
 	types = None
@@ -2384,6 +2381,10 @@ class Count(BaseGoal):
 		def onVassalState(self):
 			self.check()
 		
+		def onPlayerChangeStateReligion(self, iNewStateReligion):
+			if self.iStateReligion == iNewStateReligion:
+				self.check()
+		
 		def progress_text_format(self, remainder, iRequired):
 			progress_text = text(self._progress, *remainder)
 			
@@ -2395,7 +2396,7 @@ class Count(BaseGoal):
 			
 			return capitalize(progress_text)
 		
-		return cls.progr("VASSAL_COUNT").format(options.number_word()).func(init, civs, religion, progress_text_format).players(valid).handle("vassalState", onVassalState).subclass("VassalCount")
+		return cls.progr("VASSAL_COUNT").format(options.number_word()).func(init, civs, religion, progress_text_format).players(valid).any("vassalState", onVassalState).any("playerChangeStateReligion", onPlayerChangeStateReligion).subclass("VassalCount")
 	
 	@classproperty
 	def cityBuilding(cls):
