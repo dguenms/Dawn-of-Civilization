@@ -8189,6 +8189,12 @@ bool CvPlayer::canRevolution(CivicTypes* paeNewCivics) const
 		return false;
 	}
 
+	// Leoreth: to avoid exploits in advanced start mode
+	if (getAdvancedStartPoints() > 0)
+	{
+		return false;
+	}
+
 	if (paeNewCivics == NULL)
 	{
 		// XXX is this necessary?
