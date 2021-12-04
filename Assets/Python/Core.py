@@ -38,7 +38,6 @@ irregular_plurals = {
 }
 
 
-# TODO: test
 def getArea(area):
 	if isinstance(area, (CyPlot, CyCity)):
 		return area.getArea()
@@ -1255,7 +1254,6 @@ class PlotFactory:
 	def area(self, dArea, dExceptions, identifier):
 		return self.rectangle(*dArea[identifier]).without(dExceptions[identifier]).clear_named(infos.civ(identifier).getShortDescription(0))
 
-	# TODO: test
 	def sum(self, areas):
 		return sum(areas, self.none())
 
@@ -1386,14 +1384,12 @@ class Locations(EntityCollection):
 	def owners(self):
 		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
 	
-	# TODO: test
 	def areas(self, *areas):
 		return self.where(lambda loc: loc.getArea() in [getArea(area) for area in areas])
 	
 	def area(self, area):
 		return self.areas(area)
 	
-	# TODO: test
 	def intersect(self, locations):
 		return any(loc in locations for loc in self)
 
