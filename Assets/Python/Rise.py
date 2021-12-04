@@ -24,13 +24,16 @@ lIndependenceCivs = [
 	iCanada
 ]
 
-
 dClearedForBirth = {
-	iIndia: iHarappa, # Harappa should always collapse
+	iIndia: iHarappa,
 	iByzantium: iGreece,
 	iItaly: iRome,
 	iMexico: iAztecs,
 }
+
+lAlwaysClear = [
+	iHarappa,
+]
 
 dAdvancedStartPoints = CivDict({
 	iPhoenicia: 50,
@@ -714,13 +717,22 @@ class Birth(object):
 				self.team.declareWar(target.getTeam(), False, WarPlanTypes.WARPLAN_TOTAL)
 
 	def checkIncompatibleCivs(self):
-		if not self.isHuman():
+		if self.iCiv not in dClearedForBirth:
 			return
 		
-		iClearedCiv = dClearedForBirth.get(self.iCiv)
-		if iClearedCiv is not None and player(iClearedCiv).isAlive():
-			if turn() == year(dFall[iClearedCiv]).deviate(10, data.iSeed):
-				completeCollapse(slot(iClearedCiv))
+		iClearedCiv = dClearedForBirth[self.iCiv]
+		
+		if not self.isHuman() and iClearedCiv not in lAlwaysClear:
+			return
+			
+		if not player(iClearedCiv).isAlive():
+			return
+		
+		if player(iClearedCiv).isHuman():
+			return
+		
+		if turn() == year(dFall[iClearedCiv]).deviate(10, data.iSeed):
+			completeCollapse(slot(iClearedCiv))
 	
 	def checkSwitch(self):
 		if not self.canSwitch():
