@@ -3543,6 +3543,11 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
+		if (pLoopUnit == NULL)
+		{
+			continue;
+		}
+
 // BUG - Sentry Actions - start
 #ifdef _MOD_SENTRY
 		// don't move if bSentryAlert set to true above
