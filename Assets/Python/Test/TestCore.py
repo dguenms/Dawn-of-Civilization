@@ -1573,6 +1573,10 @@ class TestPlots(TestCase):
 		
 	def test_not_none(self):
 		self.assert_(not self.plots.none(lambda p: p.getX() > 1))
+	
+	def test_none_empty(self):
+		plots = PlotFactory().of([])
+		self.assertEqual(plots.none(lambda p: p.getX() > 2), True)
 		
 	def test_first(self):
 		plot = self.plots.first()
