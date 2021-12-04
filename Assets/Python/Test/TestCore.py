@@ -2129,6 +2129,97 @@ class TestPlots(TestCase):
 			self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
 		finally:
 			africaCity.kill()
+		
+	def test_areas(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaID = plot(africaTile).getArea()
+		americaID = plot(americaTile).getArea()
+		areaPlots = plots.areas(africaID, americaID)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_tiles(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		areaPlots = plots.areas(africaTile, americaTile)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_plots(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaPlot = plot(africaTile)
+		americaPlot = plot(americaTile)
+		areaPlots = plots.areas(africaPlot, americaPlot)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_cities(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaCity = gc.getPlayer(0).initCity(*africaTile)
+		americaCity = gc.getPlayer(0).initCity(*americaTile)
+		areaPlots = plots.areas(africaCity, americaCity)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		try:
+			assertType(self, areaPlots, Plots)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			africaCity.kill()
+			americaCity.kill()
+	
+	def test_intersect(self):
+		left = PlotFactory().of([(0, 0), (0, 1)])
+		right = PlotFactory().of([(0, 1), (0, 2)])
+		
+		self.assertEqual(left.intersect(right), True)
+		self.assertEqual(right.intersect(left), True)
+	
+	def test_not_intersect(self):
+		left = PlotFactory().of([(0, 0)])
+		right = PlotFactory().of([(0, 1)])
+		
+		self.assertEqual(left.intersect(right), False)
+		self.assertEqual(right.intersect(left), False)
+	
+	def test_intersect_equal(self):
+		left = PlotFactory().of([(0, 0)])
+		right = PlotFactory().of([(0, 0)])
+		
+		self.assertEqual(left.intersect(right), True)
+		self.assertEqual(right.intersect(left), True)
 
 
 class TestPlotFactory(TestCase):
@@ -2317,6 +2408,35 @@ class TestPlotFactory(TestCase):
 			self.assertEqual(sorted_actual_plots, expected_plots)
 		finally:
 			city.kill()
+	
+	def test_sum(self):
+		area1 = self.factory.of([(0, 0), (0, 1)])
+		area2 = self.factory.of([(0, 2), (0, 3)])
+		
+		combined = self.factory.sum([area1, area2])
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in combined]
+		expected_tiles = [(0, 0), (0, 1), (0, 2), (0, 3)]
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+		
+	def test_sum_empty(self):
+		combined = self.factory.sum([])
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(combined.count(), 0)
+	
+	def test_sum_one(self):
+		tiles = [(0, 0), (0, 1)]
+		area = self.factory.of(tiles)
+		
+		combined = self.factory.sum([area])
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in combined]
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(actual_tiles, tiles)
 
 class TestCities(TestCase):
 
@@ -2924,14 +3044,22 @@ class TestDistance(TestCase):
 
 	def test_distance(self):
 		self.assertEqual(distance((0, 0), (0, 2)), 2)
+		self.assertEqual(real_distance((0, 0), (0, 2)), 2)
 		
 	def test_distance_plots(self):
 		self.assertEqual(distance(gc.getMap().plot(0, 0), gc.getMap().plot(0, 2)), 2)
+		self.assertEqual(real_distance(gc.getMap().plot(0, 0), gc.getMap().plot(0, 2)), 2)
 		
 	def test_distance_cities(self):
 		city1 = gc.getPlayer(0).initCity(0, 0)
 		city2 = gc.getPlayer(0).initCity(0, 2)
-		self.assertEqual(distance(city1, city2), 2)
+		
+		try:
+			self.assertEqual(distance(city1, city2), 2)
+			self.assertEqual(real_distance(city1, city2), 2)
+		finally:
+			city1.kill()
+			city2.kill()
 		
 
 class TestFind(TestCase):
@@ -4575,7 +4703,40 @@ class TestMission(TestCase):
 		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
 		self.assertEqual(self.unit.getGroup().getMissionData1(0), 1)
 		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+
+
+class TestGetArea(TestCase):
+
+	def setUp(self):
+		self.africaTile = (48, 30)
+		self.americaTile = (37, 28)
 		
+		self.africaID = plot(self.africaTile).getArea()
+		self.americaID = plot(self.americaTile).getArea()
+		
+	def test_id(self):
+		self.assertEqual(getArea(self.africaID), self.africaID)
+		self.assertEqual(getArea(self.americaID), self.americaID)
+	
+	def test_tile(self):
+		self.assertEqual(getArea(self.africaTile), self.africaID)
+		self.assertEqual(getArea(self.americaTile), self.americaID)
+	
+	def test_plot(self):
+		self.assertEqual(getArea(plot(self.africaTile)), self.africaID)
+		self.assertEqual(getArea(plot(self.americaTile)), self.americaID)
+	
+	def test_city(self):
+		africaCity = gc.getPlayer(0).initCity(*self.africaTile)
+		americaCity = gc.getPlayer(0).initCity(*self.americaTile)
+		
+		try:
+			self.assertEqual(getArea(africaCity), self.africaID)
+			self.assertEqual(getArea(americaCity), self.americaID)
+		finally:
+			africaCity.kill()
+			americaCity.kill()
+
 
 test_cases = [
 	TestTurn, 
@@ -4646,6 +4807,7 @@ test_cases = [
 	TestUnique,
 	TestChunks,
 	TestMission,
+	TestGetArea,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
