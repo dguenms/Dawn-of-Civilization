@@ -1,22 +1,10 @@
-# Rhye's and Fall of Civilization - City naming and renaming management
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-import Popup
-from Consts import *
 from RFCUtils import *
 from Civics import *
-from StoredData import data
 from Events import handler
+from Core import *
 
 from time import time
 
-from Core import *
-
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
 
 iNumLanguages = 41
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
@@ -350,15 +338,20 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	for iEra in range(player(iPlayer).getCurrentEra()+1):
 		for city in ownerCities:
 			sIdentifier = getIdentifier(city.getName())
-			if not sIdentifier: continue
+			if not sIdentifier: 
+				sIdentifier = city.getName()
 			
 			if sIdentifier == 'York' and city.getRegionID() == rBritain: continue # do not rename English York
 		
-			sNewIdentifier = getEraRename(city.getName(), iEra)
-			if not sNewIdentifier: continue
+			sNewIdentifier = getEraRename(sIdentifier, iEra)
+			if not sNewIdentifier: 
+				continue
 			
 			sNewName = getRenameName(iPlayer, sNewIdentifier)
-			if sNewName: city.setName(sNewName, False)
+			if not sNewName:
+				sNewName = sNewIdentifier
+			
+			city.setName(sNewName, False)
 
 @handler("religionSpread")
 def onReligionSpread(iReligion, iPlayer, city):
