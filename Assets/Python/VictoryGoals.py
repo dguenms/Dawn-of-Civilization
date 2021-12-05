@@ -2273,7 +2273,7 @@ class Count(BaseGoal):
 		def display_city_value(self, city):
 			return city.getCulture(city.getOwner())
 	
-		return cls.desc("CULTURE_LEVEL_CITIES").format(options.objective("ENTITY_WITH").city()).objective(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).func(display_city_value, display_required).subclass("CultureLevelCities")
+		return cls.desc("CULTURE_LEVEL_CITIES").format(options.objective("ENTITY_WITH").city()).objective(CvCultureLevelInfo).citiesWith(CyCity.getCultureLevel).func(display_city_value, display_required).turnly.subclass("CultureLevelCities")
 	
 	@classproperty
 	def citySpecialist(cls):
