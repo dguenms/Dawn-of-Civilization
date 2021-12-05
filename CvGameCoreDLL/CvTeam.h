@@ -371,6 +371,8 @@ public:
 
 	std::set<TeamTypes> determineDefensivePactPartners(std::set<TeamTypes> visited) const;
 
+	bool isAllied(TeamTypes eTeam) const;
+
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;

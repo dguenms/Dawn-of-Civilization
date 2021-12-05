@@ -7203,3 +7203,51 @@ void CvTeam::changeSatelliteAttackCount(int iChange)
 {
 	m_iSatelliteAttackCount += iChange;
 }
+
+bool CvTeam::isAllied(TeamTypes eTeam) const
+{
+	if (getID() == eTeam)
+	{
+		return true;
+	}
+
+	if (isDefensivePact(eTeam))
+	{
+		return true;
+	}
+
+	if (GET_TEAM(eTeam).isVassal(getID()))
+	{
+		return true;
+	}
+
+	if (isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (isVassal((TeamTypes)iI))
+			{
+				if (GET_TEAM((TeamTypes)iI).isAllied(eTeam));
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	if (GET_TEAM(eTeam).isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM(eTeam).isVassal((TeamTypes)iI))
+			{
+				if (isAllied((TeamTypes)iI))
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
