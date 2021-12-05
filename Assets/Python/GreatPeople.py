@@ -2953,6 +2953,7 @@ iRussia : {
 		"Mikhail Skobelev", # 19th
 		"fVasilisa Kozhina", # 19th
 		"fNadezhda Durova", # 19th
+		"Aleksei Brusilov", # 20th
 		iGlobal,
 		"Mikhail Tukhachevsky", # 20th
 		"Georgy Zhukov", # 20th
