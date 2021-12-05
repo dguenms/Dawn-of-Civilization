@@ -1,9 +1,6 @@
 # coding: utf-8
 
-from CvPythonExtensions import *
-from Consts import *
 from RFCUtils import *
-
 from Events import handler
 from Core import *
 
@@ -4140,6 +4137,7 @@ iAmerica : {
 	],
 	iGreatMerchant : [
 		"Stephen Girard", # 18th
+		"Nathaniel Bowditch", # 18th
 		iIndustrial,
 		"Cornelius Vanderbilt", # 19th
 		"John D. Rockefeller", # 19th
