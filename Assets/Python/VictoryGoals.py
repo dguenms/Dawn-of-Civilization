@@ -2117,7 +2117,7 @@ class Count(BaseGoal):
 		def format_bonus(identifier):
 			return text("TXT_KEY_UHV_RESOURCE", infos.bonus(identifier).getText())
 	
-		return cls.desc("CONTROLLED_RESOURCE_COUNT").format(options.type(CvBonusInfo, format_bonus)).objective(CvBonusInfo).playervassals(resources).subclass("ControlledResourceCount")
+		return cls.desc("CONTROLLED_RESOURCE_COUNT").format(options.type(CvBonusInfo, format_bonus)).objective(CvBonusInfo).playervassals(resources).turnly.subclass("ControlledResourceCount")
 		
 	@classproperty
 	def improvement(cls):
