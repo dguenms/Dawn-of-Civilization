@@ -227,6 +227,7 @@ iBabylonia : {
 	],
 	iGreatMerchant : [
 		"fIltani", # 18th BC
+		"Ea-nasir", # 18th BC
 		"Burna-Buriash", # 14th BC
 		"Kadashman-Enlil", # 14th BC
 		iClassical,
