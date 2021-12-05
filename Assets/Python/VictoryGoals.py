@@ -2103,7 +2103,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def gold(cls):
-		return cls.desc("PLAYER_GOLD").progr("GOLD").player(CyPlayer.getGold).scaled.subclass("PlayerGold")
+		return cls.desc("PLAYER_GOLD").progr("GOLD").player(CyPlayer.getGold).scaled.turnly.subclass("PlayerGold")
 	
 	@classproperty
 	def resource(cls):
