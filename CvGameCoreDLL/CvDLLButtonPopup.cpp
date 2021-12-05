@@ -1114,7 +1114,7 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 	}
 	else
 	{
-		szBuffer = gDLL->getText("TXT_KEY_POPUP_WHAT_TO_BUILD", pCity->getNameKey());
+		szBuffer = gDLL->getText("TXT_KEY_POPUP_WHAT_TO_BUILD_CITY_NAME", pCity->getNameKey());
 		szArtFilename = ARTFILEMGR.getInterfaceArtInfo("INTERFACE_POPUPBUTTON_PRODUCTION")->getPath();
 	}
 

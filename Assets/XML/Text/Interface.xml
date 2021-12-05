@@ -3345,6 +3345,14 @@
 		<Spanish>Revisa las condiciones para la victoria [F8] para obtener m&#225;s detalles.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_WHAT_TO_BUILD_CITY_NAME</Tag>
+		<English>What would you like to build in %s1_CityName?</English>
+		<French>Que souhaitez-vous construire dans %s1_CityName ?</French>
+		<German>Was wollt Ihr in %s1_CityName errichten?</German>
+		<Italian>Cosa vuoi creare in %s1_CityName?</Italian>
+		<Spanish>&#191;Qu&#233; os gustar&#237;a construir en %s1_CityName?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
