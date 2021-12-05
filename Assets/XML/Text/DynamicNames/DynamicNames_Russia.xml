@@ -219,7 +219,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
-		<English>%s2 Soviet Republic</English>
+		<English>%s4 Soviet Republic</English>
 		<French>
 			<Text>R&#233;publique sovi&#233;tique %s2</Text>
 			<Gender>Female</Gender>
