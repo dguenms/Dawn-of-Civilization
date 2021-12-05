@@ -236,6 +236,7 @@ dSpecificVassalTitles = deepdict({
 })
 
 dMasterTitles = {
+	iEgypt : "TXT_KEY_CIV_EGYPTIAN_VASSAL",
 	iChina : "TXT_KEY_CIV_CHINESE_VASSAL",
 	iIndia : "TXT_KEY_CIV_INDIAN_VASSAL",
 	iPersia : "TXT_KEY_CIV_PERSIAN_VASSAL",
@@ -418,7 +419,7 @@ dForeignNames = deepdict({
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iColombia]
+lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iVikings, iColombia]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo]
@@ -1583,7 +1584,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
 			
 		if bCityStates:
-			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+			return "TXT_KEY_CIV_EGYPT_NOMES"
+		
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_OF"
+		
+		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
+			return "TXT_KEY_CIV_EGYPT_COPTIC"
 				
 		if iEra == iAncient:
 			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
