@@ -14522,9 +14522,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 		if (bFinish)
 		{
-			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
-			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
-
 			// Leoreth
 			if (GC.getGameINLINE().getProjectCreatedCount(eCreateProject) == 0)
 			{
@@ -14543,6 +14540,10 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			}
 
 			GET_TEAM(getTeam()).changeProjectCount(eCreateProject, 1);
+
+			// Leoreth: moved here to counteract the below comment, it messes with the victory code and projects do not award free techs anymore
+			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
+			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
 
 			if (GC.getProjectInfo(eCreateProject).isSpaceship())
 			{

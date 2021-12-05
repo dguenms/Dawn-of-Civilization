@@ -2789,6 +2789,23 @@ class TestConditionGoals(ExtendedTestCase):
 			city.kill()
 			team(1).changeProjectCount(iTheInternet, -1)
 	
+	def testProjectCheckedOnEventMultiple(self):
+		goal = Condition.project(iTheInternet, iHumanGenome).activate(0)
+		
+		city = player(0).initCity(61, 31)
+		team(0).changeProjectCount(iTheInternet, 1)
+		team(0).changeProjectCount(iHumanGenome, 1)
+		
+		events.fireEvent("projectBuilt", city, iTheInternet)
+		events.fireEvent("projectBuilt", city, iHumanGenome)
+		
+		try:
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			city.kill()
+			team(0).changeProjectCount(iTheInternet, -1)
+			team(0).changeProjectCount(iHumanGenome, -1)
+	
 	def testRouteNone(self):
 		goal = Condition.route(plots.of([(60, 30), (61, 30), (62, 30)]), iRouteRoad).activate(0)
 		
