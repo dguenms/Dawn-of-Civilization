@@ -1,22 +1,8 @@
-# Rhye's and Fall of Civilization - Religions management
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers       
-import Popup
-#import cPickle as pickle     	
-from Consts import *
-import CvTranslator
 from RFCUtils import *
-from StoredData import data #edead
-
 from Events import handler, popup_handler
 from Locations import *
 from Core import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
 
 # initialise coordinates
 
