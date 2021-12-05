@@ -8402,14 +8402,14 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 		bFirst = buildPromotionString(szBuffer, eTech, iI, bFirst, true, bPlayerContext);
 	}
 
-	if (bTreeInfo && NO_TECH == eFromTech)
-	{
-		buildSingleLineTechTreeString(szBuffer, eTech, bPlayerContext);
-	}
-
 	if (!CvWString(GC.getTechInfo(eTech).getHelp()).empty())
 	{
 		szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getTechInfo(eTech).getHelp()).c_str());
+	}
+
+	if (bTreeInfo && NO_TECH == eFromTech)
+	{
+		buildSingleLineTechTreeString(szBuffer, eTech, bPlayerContext);
 	}
 
 	if (!bCivilopediaText)
