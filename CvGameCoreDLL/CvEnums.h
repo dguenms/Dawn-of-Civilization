@@ -1721,6 +1721,11 @@ enum InvisibleTypes			// Exposed to Python
 enum VoteSourceTypes			// Exposed to Python
 {
 	NO_VOTESOURCE = -1,
+
+	VOTESOURCE_APOSTOLIC_PALACE,
+	VOTESOURCE_UNITED_NATIONS,
+
+	NUM_VOTESOURCE_TYPES
 };
 
 enum ProbabilityTypes		// Exposed to Python

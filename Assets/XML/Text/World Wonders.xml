@@ -3226,6 +3226,14 @@
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNITED_NATIONS_HELP</Tag>
+		<English>[ICON_BULLET]Disables cascading defensive pacts</English>
+		<French>[ICON_BULLET]Disables cascading defensive pacts</French>
+		<German>[ICON_BULLET]Disables cascading defensive pacts</German>
+		<Italian>[ICON_BULLET]Disables cascading defensive pacts</Italian>
+		<Spanish>[ICON_BULLET]Disables cascading defensive pacts</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

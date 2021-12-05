@@ -1542,7 +1542,13 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 
 		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
 
-		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled) 
+		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled)
+
+		// Leoreth: defensive pacts are not canceled until the UN is built
+		if (GC.getGameINLINE().isDiploVote(VOTESOURCE_UNITED_NATIONS))
+		{
+			cancelDefensivePacts();
+		}
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
