@@ -245,7 +245,7 @@ class TestEventHandlers(ExtendedTestCase):
 		self.assertEqual(self.iCallCount, 1)
 	
 	def testFirstContact(self):
-		onFirstContact = self.handlers.get("enslave", self.trackCall)
+		onFirstContact = self.handlers.get("firstContact", self.trackCall)
 		
 		onFirstContact(PlayerContainer(0), (0, 1))
 		self.assertEqual(self.iCallCount, 1)
@@ -6077,7 +6077,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 		
 	def testFirstContact(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), [iChina]).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
 		
@@ -6087,7 +6087,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactWithOther(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), [iChina]).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
 		
@@ -6098,7 +6098,7 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactAfterRevealed(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), [iChina]).activate(0)
 		
 		plot(25, 25).setRevealed(team(iChina).getID(), True, False, team(iChina).getID())
 		
@@ -6113,18 +6113,18 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactSome(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), [iChina, iGreece, iIndia]).activate(0)
 		
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iChina).getID())
 		events.fireEvent("firstContact", team(iEgypt).getID(), team(iGreece).getID())
 		
 		try:
-			self.assertEqual(bool(goal), False)
+			self.assertEqual(bool(goal), True)
 		finally:
 			goal.deactivate()
 	
 	def testFirstContactAll(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), [iChina, iGreece, iIndia]).activate(0)
 		
 		for iCiv in [iChina, iGreece, iIndia]:
 			events.fireEvent("firstContact", team(iEgypt).getID(), team(iCiv).getID())

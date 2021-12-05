@@ -932,6 +932,8 @@ class ArgumentProcessor(object):
 			return lambda info: infos.text(type, info)
 		if issubclass(type, Plots):
 			return lambda plots: plots.name()
+		if issubclass(type, list):
+			return lambda items: str(items)
 		if issubclass(type, int):
 			return self.format_int
 		return lambda item: item
@@ -2698,16 +2700,17 @@ class Trigger(Condition):
 	@classproperty
 	def firstContact(cls):
 		def checkFirstContact(self, iOtherPlayer):
-			if civ(iOtherPlayer) in self.values:
-				if self.arguments.subject.land().none(lambda plot: plot.isRevealed(iOtherPlayer, False)):
-					self.complete(civ(iOtherPlayer))
-				else:
-					self.fail()
+			for lContactCivs in self.values:
+				if civ(iOtherPlayer) in lContactCivs:
+					if self.arguments.subject.land().none(lambda plot: plot.isRevealed(iOtherPlayer, False)):
+						self.complete(lContactCivs)
+					else:
+						self.fail()
 		
 		def internal_progress(self, bForceSingle=False):
 			return []
 		
-		return cls.subject(Plots).objective(Civ).handle("firstContact", checkFirstContact).func(internal_progress).subclass("FirstContact")
+		return cls.subject(Plots).objective(list).handle("firstContact", checkFirstContact).func(internal_progress).subclass("FirstContact")
 	
 	@classproperty
 	def noCityLost(cls):
