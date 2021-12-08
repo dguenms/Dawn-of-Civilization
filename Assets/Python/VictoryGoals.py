@@ -2072,6 +2072,8 @@ class Count(BaseGoal):
 			if isinstance(building, Aggregate):
 				building.items = [base_building(item) for item in building]
 				return building
+			if isinstance(building, DeferredStateReligionBuilding):
+				building = building(self.iPlayer)
 			return base_building(building)
 	
 		def checkBuildingBuilt(self, city, iBuilding):

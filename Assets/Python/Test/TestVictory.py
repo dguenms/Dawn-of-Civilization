@@ -3502,6 +3502,27 @@ class TestCountGoals(ExtendedTestCase):
 		
 			goal.deactivate()
 	
+	def testBuildingCheckDeferredStateReligionBuilding(self):
+		goal = Count.building(stateReligionCathedral(), 1).activate(0)
+		
+		city = player(0).initCity(61, 31)
+		player(0).setLastStateReligion(iCatholicism)
+		
+		city.setHasRealBuilding(iCatholicCathedral, True)
+		
+		try:
+			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			events.fireEvent("buildingBuilt", city, iCatholicCathedral)
+			
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			city.kill()
+			player(0).setLastStateReligion(-1)
+			
+			goal.deactivate()
+	
 	def testBuildingDeferred(self):
 		goal = Count.building(stateReligionCathedral(), 1).activate(0)
 		
