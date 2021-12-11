@@ -2800,15 +2800,22 @@ void CvTeamAI::AI_updateWorstEnemy()
 {
 	PROFILE_FUNC();
 
+	if (isMinorCiv())
+	{
+		return;
+	}
+
 	TeamTypes eBestTeam = NO_TEAM;
 	int iBestValue = MAX_INT;
+	int iOurRank = GC.getGameINLINE().getTeamRank(getID());
+	int iRankDifference = std::max(GC.getGameINLINE().countCivPlayersAlive() / 2, MAX_TEAMS / 5);
 
 	for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
-		//if (kLoopTeam.isAlive()) //Rhye
-		if (kLoopTeam.isAlive() && iI < NUM_MAJOR_PLAYERS) //Rhye
+
+		if (kLoopTeam.isAlive() && !GET_TEAM(eLoopTeam).isMinorCiv())
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
 			{
@@ -2816,20 +2823,26 @@ void CvTeamAI::AI_updateWorstEnemy()
 				{
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
-						// Leoreth: far away civs shouldn't be enemies
-						int iModifier = 3;
-
-						if (getID() < NUM_MAJOR_PLAYERS)
+						// Leoreth: do not allow enemies with large power differentials
+						if (std::abs(GC.getGameINLINE().getTeamRank(eLoopTeam) - iOurRank) <= iRankDifference)
 						{
-							if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isNeighbor(getLeaderID())) iModifier = 1;
-							else if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isDistant(getLeaderID())) iModifier = 5;
-						}
+							// Leoreth: far away civs should not be enemies
+							int iModifier = 100;
+							if (GET_PLAYER(kLoopTeam.getLeaderID()).isNeighbor(getLeaderID()))
+							{
+								iModifier = 50;
+							}
+							else if (GET_PLAYER(kLoopTeam.getLeaderID()).isDistant(getLeaderID()))
+							{
+								iModifier = 250;
+							}
 
-						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / iModifier;
-						if (iValue < iBestValue)
-						{
-							iBestValue = iValue;
-							eBestTeam = eLoopTeam;
+							int iValue = AI_getAttitudeVal(eLoopTeam) * 100 * iModifier;
+							if (iValue < iBestValue)
+							{
+								iBestValue = iValue;
+								eBestTeam = eLoopTeam;
+							}
 						}
 					}
 				}
