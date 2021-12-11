@@ -155,12 +155,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 // BUG - Min/Max Commerce Rate - end
 
 	case WIDGET_CITY_TAB:
-		{
-			CvWString szTemp;
-            szTemp.Format(L"%s", GC.getCityTabInfo((CityTabTypes)widgetDataStruct.m_iData1).getDescription());
-			szBuffer.assign(szTemp);
-		}
-		break;
+	{
+		CvWString szTemp;
+		szTemp.Format(L"%s", GC.getCityTabInfo((CityTabTypes)widgetDataStruct.m_iData1).getDescription());
+		szBuffer.assign(szTemp);
+	}
+	break;
 
 	case WIDGET_CONTACT_CIV:
 		parseContactCivHelp(widgetDataStruct, szBuffer);
@@ -701,16 +701,20 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseCommerceModHelp(widgetDataStruct, szBuffer);
 		break;
 
-// BUG - Trade Hover - start
+		// BUG - Trade Hover - start
 	case WIDGET_TRADE_ROUTES:
 		parseTradeRoutes(widgetDataStruct, szBuffer);
 		break;
-// BUG - Trade Hover - end
+		// BUG - Trade Hover - end
 
 	// Merijn
 	case WIDGET_HELP_WONDER_LIMIT:
 		parseWonderLimitHelp(widgetDataStruct, szBuffer);
 		break;
+
+	// Leoreth
+	case WIDGET_HELP_SATELLITE_LIMIT:
+		parseSatelliteLimitHelp(widgetDataStruct, szBuffer);
 
 	}
 }
@@ -5455,5 +5459,14 @@ void CvDLLWidgetData::parseWonderLimitHelp(CvWidgetDataStruct& widgetDataStruct,
 	if (NULL != pHeadSelectedCity)
 	{
 		GAMETEXT.setWonderLimitHelp(szBuffer, *pHeadSelectedCity, widgetDataStruct.m_iData1);
+	}
+}
+
+void CvDLLWidgetData::parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setSatelliteLimitHelp(szBuffer, *pHeadSelectedCity);
 	}
 }

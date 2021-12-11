@@ -19031,22 +19031,26 @@ int CvCity::countSatellites() const
 	return iCount;
 }
 
-bool CvCity::canSatelliteJoin() const
+int CvCity::getSatelliteSlots() const
 {
+	if (!GET_TEAM(getTeam()).isHasTech((TechTypes)SATELLITES))
+	{
+		return 0;
+	}
+
 	int iSpecialistSlots = 0;
-	int iSatellites = 1;
 
 	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		iSpecialistSlots += getMaxSpecialistCount((SpecialistTypes)iI);
-
-		if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
-		{
-			iSatellites += getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI);
-		}
 	}
 
-	return 5 * iSatellites < iSpecialistSlots;
+	return iSpecialistSlots / 5;
+}
+
+bool CvCity::canSatelliteJoin() const
+{
+	return countSatellites() < getSatelliteSlots();
 }
 
 int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const

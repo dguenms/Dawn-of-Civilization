@@ -592,6 +592,8 @@ public:
 	bool isCore(int iPlayer);
 	int getActualCulture(int iPlayer);
 	int getPopulationLoss();
+	int countSatellites();
+	int getSatelliteSlots();
 
 private:
 	CvCity* m_pCity;

@@ -441,6 +441,7 @@ void CyEnumsPythonInterface()
 // BUG - Leaderhead Relations - end
 
 		.value("WIDGET_HELP_WONDER_LIMIT", WIDGET_HELP_WONDER_LIMIT)
+		.value("WIDGET_HELP_SATELLITE_LIMIT", WIDGET_HELP_SATELLITE_LIMIT)
 
 		.value("NUM_WIDGET_TYPES", NUM_WIDGET_TYPES)
 		;
@@ -742,6 +743,7 @@ void CyEnumsPythonInterface()
 		.value("SCALES_CHAR", SCALES_CHAR)
 		.value("AIRPORT_CHAR", AIRPORT_CHAR)
 		.value("CLEAN_POWER_CHAR", CLEAN_POWER_CHAR)
+		.value("SATELLITE_CHAR", SATELLITE_CHAR)
 		.value("MAX_NUM_SYMBOLS", MAX_NUM_SYMBOLS)
 		;
 

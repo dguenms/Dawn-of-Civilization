@@ -3001,6 +3001,14 @@
 		<Spanish>%d1/%d2%F3</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>INTERFACE_CITY_SATELLITE_LIMIT</Tag>
+		<English>%d1/%d2%F3</English>
+		<French>%d1/%d2%F3</French>
+		<German>%d1/%d2%F3</German>
+		<Italian>%d1/%d2%F3</Italian>
+		<Spanish>%d1/%d2%F3</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>INTERFACE_ADMINISTRATION</Tag>
 		<English>%d1 %F2</English>
 		<French>%d1 %F2</French>
@@ -3023,6 +3031,14 @@
 		<German>%d1 out of %d2 National Wonders at %s3 culture</German>
 		<Italian>%d1 out of %d2 National Wonders at %s3 culture</Italian>
 		<Spanish>%d1 out of %d2 National Wonders at %s3 culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_SATELLITE_LIMIT_HELP</Tag>
+		<English>%d1 out of %d2 possible satellites from %d3 possible specialists</English>
+		<French>%d1 out of %d2 possible satellites from %d3 possible specialists</French>
+		<German>%d1 out of %d2 possible satellites from %d3 possible specialists</German>
+		<Italian>%d1 out of %d2 possible satellites from %d3 possible specialists</Italian>
+		<Spanish>%d1 out of %d2 possible satellites from %d3 possible specialists</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP</Tag>

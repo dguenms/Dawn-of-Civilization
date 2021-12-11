@@ -21583,6 +21583,20 @@ void CvGameTextMgr::parseMinorReligionHelp(CvWStringBuffer &szBuffer, Civilizati
 	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName, gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
 }
 
+void CvGameTextMgr::setSatelliteLimitHelp(CvWStringBuffer& szBuffer, CvCity& city)
+{
+	int iSatellites = city.countSatellites();
+	int iSatelliteLimit = city.getSatelliteSlots();
+
+	int iSpecialistSlots = 0;
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		iSpecialistSlots += city.getMaxSpecialistCount((SpecialistTypes)iI);
+	}
+
+	szBuffer.append(gDLL->getText("INTERFACE_CITY_SATELLITE_LIMIT_HELP", iSatellites, iSatelliteLimit, iSpecialistSlots));
+}
+
 void CvGameTextMgr::setWonderLimitHelp(CvWStringBuffer &szBuffer, CvCity& city, int iWonderType)
 {
 	FAssertMsg(NO_PLAYER != city.getOwnerINLINE(), "City must have an owner");

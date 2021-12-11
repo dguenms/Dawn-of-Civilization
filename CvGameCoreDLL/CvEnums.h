@@ -594,6 +594,7 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_HELP_REMOVE, // Leoreth
 
 	WIDGET_HELP_WONDER_LIMIT, // Merijn
+	WIDGET_HELP_SATELLITE_LIMIT, // Leoreth
 
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
@@ -1082,6 +1083,7 @@ enum FontSymbols					// Exposed to Python
 	SCALES_CHAR,
 	AIRPORT_CHAR,
 	CLEAN_POWER_CHAR,
+	SATELLITE_CHAR,
 
 #ifdef _USRDLL
 	MAX_NUM_SYMBOLS

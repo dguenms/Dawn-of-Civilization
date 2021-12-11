@@ -3473,6 +3473,7 @@ class CvMainInterface:
 		screen.hide( "DefenseText" )
 		screen.hide( "NationalWonderLimitText" )
 		screen.hide( "WorldWonderLimitText" )
+		screen.hide( "SatelliteLimitText" )
 		screen.hide( "AdministrationText" )
 		screen.hide( "SeparatismText" )
 		screen.hide( "CityScrollMinus" )
@@ -4556,29 +4557,40 @@ class CvMainInterface:
 					screen.show( "DefenseText" )
 
 				# National and Worldwonder limit indicator
+				iIndicatorOffset = 400
 				iWorldWonders = pHeadSelectedCity.getNumActiveWorldWonders()
 				iWorldWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getWonderLimit()
 				if pHeadSelectedCity.isCapital():
 					iWorldWondersLimit += 1
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iWorldWonders, iWorldWondersLimit, CyGame().getSymbolID(FontSymbols.STAR_CHAR)))
-				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 400, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
+				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
 				screen.show( "WorldWonderLimitText" )
 
+				iIndicatorOffset += 40
 				iNationalWonders = pHeadSelectedCity.getNumNationalWonders()
 				iNationalWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getNationalWonderLimit()
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iNationalWonders, iNationalWondersLimit, CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)))
-				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 440, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
+				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
 				screen.show( "NationalWonderLimitText" )
 				
+				iSatellites = pHeadSelectedCity.countSatellites()
+				iSatelliteLimit = pHeadSelectedCity.getSatelliteSlots()
+				if iSatelliteLimit > 0:
+					iIndicatorOffset += 40
+					szBuffer = localText.getText("INTERFACE_CITY_SATELLITE_LIMIT", (iSatellites, iSatelliteLimit, CyGame().getSymbolID(FontSymbols.SATELLITE_CHAR)))
+					screen.setLabel("SatelliteLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_SATELLITE_LIMIT, -1, -1)
+					screen.show("SatelliteLimitText")
+				
+				iIndicatorOffset += 40
 				if pHeadSelectedCity.isCore(pHeadSelectedCity.getOwner()):
 					iAdministration = calculateAdministration(pHeadSelectedCity)
 					szBuffer = localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR)))
-					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 480, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 					screen.show("AdministrationText")
 				else:
 					iSeparatism = calculateSeparatism(pHeadSelectedCity)
 					szBuffer = localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)))
-					screen.setLabel("SeparatismText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 480, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.setLabel("SeparatismText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 					screen.show("SeparatismText")
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
