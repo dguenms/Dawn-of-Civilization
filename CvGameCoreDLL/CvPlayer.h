@@ -1370,6 +1370,8 @@ public:
 	void setPeriod(PeriodTypes ePeriod);
 	PeriodTypes getPeriod() const;
 
+	bool isUnstableCivic(CivicTypes eCivic) const;
+
 	bool m_bTurnPlayed;
 
 protected:

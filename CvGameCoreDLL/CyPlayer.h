@@ -602,6 +602,7 @@ public:
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
 	int getUnhappinessDecayModifier();
+	bool isUnstableCivic(int iCivic);
 
 private:
 	CvPlayer* m_pPlayer;

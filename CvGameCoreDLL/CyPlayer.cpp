@@ -2742,3 +2742,8 @@ int CyPlayer::getUnhappinessDecayModifier()
 {
 	return m_pPlayer ? m_pPlayer->getUnhappinessDecayModifier() : -1;
 }
+
+bool CyPlayer::isUnstableCivic(int iCivic)
+{
+	return m_pPlayer ? m_pPlayer->isUnstableCivic((CivicTypes)iCivic) : false;
+}

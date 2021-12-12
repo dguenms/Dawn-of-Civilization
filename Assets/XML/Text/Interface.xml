@@ -3369,6 +3369,14 @@
 		<Spanish>&#191;Qu&#233; os gustar&#237;a construir en %s1_CityName?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCREEN_UNSTABLE</Tag>
+		<English>%F1 Neg</English>
+		<French>%F1 Neg</French>
+		<German>%F1 Neg</German>
+		<Italian>%F1 Neg</Italian>
+		<Spanish>%F1 Neg</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
