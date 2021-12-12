@@ -10888,6 +10888,8 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_RIVER_PLOTS").c_str(), L": ", L"", kBuilding.getRiverPlotYieldChangeArray());
 
+	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_FLAT_RIVER_PLOTS").c_str(), L": ", L"", kBuilding.getFlatRiverPlotYieldChangeArray());
+
 	// Leoreth
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{

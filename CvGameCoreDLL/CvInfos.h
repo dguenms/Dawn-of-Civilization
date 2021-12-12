@@ -1820,6 +1820,8 @@ public:
 	int* getSeaPlotYieldChangeArray() const;
 	int getRiverPlotYieldChange(int i) const;				// Exposed to Python
 	int* getRiverPlotYieldChangeArray() const;
+	int getFlatRiverPlotYieldChange(int i) const; // Leoreth
+	int* getFlatRiverPlotYieldChangeArray() const; // Leoreth
 	int getGlobalSeaPlotYieldChange(int i) const;				// Exposed to Python
 	int* getGlobalSeaPlotYieldChangeArray() const;
 
@@ -2038,6 +2040,7 @@ protected:
 	int* m_piHappinessTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
+	int* m_piFlatRiverPlotYieldChange; // Leoreth
 	int* m_piGlobalSeaPlotYieldChange;
 	int* m_piYieldChange;
 	int* m_piYieldModifier;

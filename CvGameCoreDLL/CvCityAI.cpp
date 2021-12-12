@@ -3991,6 +3991,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 5 : 1) * (iI == 2 ? 2 : 1)); // Leoreth: emphasize river food / commerce yield more
 					}
+					if (kBuilding.getFlatRiverPlotYieldChange(iI) > 0)
+					{
+						iTempValue += kBuilding.getFlatRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == YIELD_FOOD ? 5 : 1) * (iI == YIELD_COMMERCE ? 2 : 1);
+					}
 					iTempValue += (kBuilding.getGlobalSeaPlotYieldChange(iI) * kOwner.countNumCoastalCities() * 8);
 					iTempValue += (kBuilding.getYieldChange(iI) * 6);
 					iTempValue += ((kBuilding.getYieldModifier(iI) * getBaseYieldRate((YieldTypes)iI)) / 10);
@@ -4073,6 +4077,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					{
 						iValue += (kBuilding.getRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 8); // Leoreth: emphasise river food
 					}
+
+					if (kBuilding.getFlatRiverPlotYieldChange(YIELD_FOOD) > 0)
+					{
+						iValue += (kBuilding.getFlatRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 8); 
+					}
 				}
 
 				if (iFocusFlags & BUILDINGFOCUS_PRODUCTION)
@@ -4090,6 +4099,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if (kBuilding.getRiverPlotYieldChange(YIELD_PRODUCTION) > 0)
 					{
 						iTempValue += (kBuilding.getRiverPlotYieldChange(YIELD_PRODUCTION) * countNumRiverPlots() * 4);
+					}
+					if (kBuilding.getFlatRiverPlotYieldChange(YIELD_PRODUCTION) > 0)
+					{
+						iTempValue += kBuilding.getFlatRiverPlotYieldChange(YIELD_PRODUCTION) * countNumRiverPlots() * 4;
 					}
 					if (bProvidesPower && !isPower())
 					{
@@ -6374,7 +6387,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 
 			if (eProductionBuilding != NO_BUILDING)
 			{
-				if (GC.getBuildingInfo(eProductionBuilding).getSeaPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getRiverPlotYieldChange(YIELD_FOOD) > 0)
+				if (GC.getBuildingInfo(eProductionBuilding).getSeaPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getRiverPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getFlatRiverPlotYieldChange(YIELD_FOOD) > 0)
 				{
 
 					iMinTurns = std::min(iMinTurns, 10);

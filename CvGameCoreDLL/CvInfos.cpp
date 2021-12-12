@@ -7393,6 +7393,7 @@ m_piProductionTraits(NULL),
 m_piHappinessTraits(NULL),
 m_piSeaPlotYieldChange(NULL),
 m_piRiverPlotYieldChange(NULL),
+m_piFlatRiverPlotYieldChange(NULL), // Leoreth
 m_piGlobalSeaPlotYieldChange(NULL),
 m_piYieldChange(NULL),
 m_piYieldModifier(NULL),
@@ -7450,6 +7451,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piHappinessTraits);
 	SAFE_DELETE_ARRAY(m_piSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piRiverPlotYieldChange);
+	SAFE_DELETE_ARRAY(m_piFlatRiverPlotYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piYieldChange);
 	SAFE_DELETE_ARRAY(m_piYieldModifier);
@@ -8268,6 +8270,16 @@ int* CvBuildingInfo::getRiverPlotYieldChangeArray() const
 	return m_piRiverPlotYieldChange;
 }
 
+int CvBuildingInfo::getFlatRiverPlotYieldChange(int i) const
+{
+	return m_piFlatRiverPlotYieldChange ? m_piFlatRiverPlotYieldChange[i] : -1;
+}
+
+int* CvBuildingInfo::getFlatRiverPlotYieldChangeArray() const
+{
+	return m_piFlatRiverPlotYieldChange;
+}
+
 int CvBuildingInfo::getGlobalSeaPlotYieldChange(int i) const
 {
 	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
@@ -8691,7 +8703,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for corporation happiness/health modifiers, 2 for no resistance
+	uint uiFlag=0; // Leoreth: 1 for corporation happiness/health modifiers, 2 for no resistance, 3 for flat river plot yield change
 	stream->Read(&uiFlag);	// flags for expansion
 
 	stream->Read(&m_iBuildingClassType);
@@ -8846,6 +8858,14 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piRiverPlotYieldChange);
 	m_piRiverPlotYieldChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piRiverPlotYieldChange);
+
+	// Leoreth
+	if (uiFlag >= 3)
+	{
+		SAFE_DELETE_ARRAY(m_piFlatRiverPlotYieldChange);
+		m_piFlatRiverPlotYieldChange = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_piFlatRiverPlotYieldChange);
+	}
 
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	m_piGlobalSeaPlotYieldChange = new int[NUM_YIELD_TYPES];
@@ -9068,7 +9088,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::write(stream);
 
-	uint uiFlag=2; // Leoreth: 1 for building/corporation health modifiers, 2 for no resistance
+	uint uiFlag=3; // Leoreth: 1 for building/corporation health modifiers, 2 for no resistance, 3 for flat river yield change
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iBuildingClassType);
@@ -9206,6 +9226,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumTraitInfos(), m_piHappinessTraits);
 	stream->Write(NUM_YIELD_TYPES, m_piSeaPlotYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piRiverPlotYieldChange);
+	stream->Write(NUM_YIELD_TYPES, m_piFlatRiverPlotYieldChange); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piGlobalSeaPlotYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldModifier);
@@ -9567,6 +9588,17 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piRiverPlotYieldChange, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FlatRiverPlotYieldChanges"))
+	{
+		pXML->SetYields(&m_piFlatRiverPlotYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piFlatRiverPlotYieldChange, NUM_YIELD_TYPES);
 	}
 
 	// if we can set the current xml node to it's next sibling

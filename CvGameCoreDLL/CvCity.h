@@ -651,6 +651,10 @@ public:
 	void changeRiverPlotYield(YieldTypes eIndex, int iChange);
 
 	// Leoreth
+	int getFlatRiverPlotYield(YieldTypes eYield) const;
+	void changeFlatRiverPlotYield(YieldTypes eYield, int iChange);
+
+	// Leoreth
 	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const;
 	void changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange);
 
@@ -1393,6 +1397,7 @@ protected:
 
 	int* m_aiSeaPlotYield;
 	int* m_aiRiverPlotYield;
+	int* m_aiFlatRiverPlotYield; // Leoreth
 	int* m_aiBaseYieldRate;
 	int* m_aiYieldRateModifier;
 	int* m_aiPowerYieldRateModifier;

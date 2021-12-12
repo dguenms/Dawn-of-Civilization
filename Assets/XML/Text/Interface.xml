@@ -3377,6 +3377,14 @@
 		<Spanish>%F1 Neg</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAT_RIVER_PLOTS</Tag>
+		<English>Flat River Tiles</English>
+		<French>Flat River Tiles</French>
+		<German>Flat River Tiles</German>
+		<Italian>Flat River Tiles</Italian>
+		<Spanish>Flat River Tiles</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

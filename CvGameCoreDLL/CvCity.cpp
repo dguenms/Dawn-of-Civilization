@@ -36,6 +36,7 @@ CvCity::CvCity()
 {
 	m_aiSeaPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiRiverPlotYield = new int[NUM_YIELD_TYPES];
+	m_aiFlatRiverPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiBaseYieldRate = new int[NUM_YIELD_TYPES];
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
 	m_aiPowerYieldRateModifier = new int[NUM_YIELD_TYPES];
@@ -135,6 +136,7 @@ CvCity::~CvCity()
 
 	SAFE_DELETE_ARRAY(m_aiSeaPlotYield);
 	SAFE_DELETE_ARRAY(m_aiRiverPlotYield);
+	SAFE_DELETE_ARRAY(m_aiFlatRiverPlotYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiBaseYieldRate);
 	SAFE_DELETE_ARRAY(m_aiYieldRateModifier);
 	SAFE_DELETE_ARRAY(m_aiPowerYieldRateModifier);
@@ -4688,6 +4690,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
 			changeRiverPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getRiverPlotYieldChange(iI) * iChange));
+			changeFlatRiverPlotYield((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getFlatRiverPlotYieldChange(iI) * iChange);
 			changeBaseYieldRate(((YieldTypes)iI), ((GC.getBuildingInfo(eBuilding).getYieldChange(iI) + getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), (YieldTypes)iI)) * iChange));
 			changeYieldRateModifier((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getYieldModifier(iI));
 			changePowerYieldRateModifier((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getPowerYieldModifier(iI));
@@ -9790,6 +9793,24 @@ void CvCity::changeRiverPlotYield(YieldTypes eIndex, int iChange)
 
 
 // Leoreth
+int CvCity::getFlatRiverPlotYield(YieldTypes eYield) const
+{
+	return m_aiFlatRiverPlotYield[eYield];
+}
+
+
+// Leoreth
+void CvCity::changeFlatRiverPlotYield(YieldTypes eYield, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_aiFlatRiverPlotYield[eYield] += iChange;
+		updateYield();
+	}
+}
+
+
+// Leoreth
 int CvCity::getBonusYield(BonusTypes eBonus, YieldTypes eYield) const
 {
 	return m_ppaiBonusYield[eBonus][eYield];
@@ -9857,6 +9878,17 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
 			{
 				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isRiver())
+				{
+					iExtraRate += iChange;
+				}
+			}
+		}
+		if (kBuilding.getFlatRiverPlotYieldChange(eIndex) != 0)
+		{
+			int iChange = kBuilding.getFlatRiverPlotYieldChange(eIndex);
+			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+			{
+				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isRiver() && getCityIndexPlot(iI)->isFlatlands())
 				{
 					iExtraRate += iChange;
 				}
@@ -15658,7 +15690,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: up to 3 (culture conversion)
+	uint uiFlag=0; // Leoreth: up to 3 (culture conversion), 4 for flat river yield
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iID);
@@ -15793,6 +15825,7 @@ void CvCity::read(FDataStreamBase* pStream)
 
 	pStream->Read(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	if (uiFlag >= 4) pStream->Read(NUM_YIELD_TYPES, m_aiFlatRiverPlotYield); // Leoreth
 	pStream->Read(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Read(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);
@@ -15952,7 +15985,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=3; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion
+	uint uiFlag=4; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion, 4 for flat river yield
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16095,6 +16128,7 @@ void CvCity::write(FDataStreamBase* pStream)
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	pStream->Write(NUM_YIELD_TYPES, m_aiFlatRiverPlotYield); // Leoreth
 	pStream->Write(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Write(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);

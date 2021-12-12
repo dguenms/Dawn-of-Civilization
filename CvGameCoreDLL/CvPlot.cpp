@@ -6931,6 +6931,11 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 					if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 					{
 						iYield += pWorkingCity->getRiverPlotYield(eYield);
+
+						if (isFlatlands())
+						{
+							iYield += pWorkingCity->getFlatRiverPlotYield(eYield);
+						}
 					}
 				}
 			}
@@ -10363,13 +10368,21 @@ int CvPlot::calculateMaxYield(YieldTypes eYield) const
 
 	if (isRiver())
 	{
-		int iBuildingYield = 0;
 		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
 		{
 			CvBuildingInfo& building = GC.getBuildingInfo((BuildingTypes)iBuilding);
-			iBuildingYield = std::max(building.getRiverPlotYieldChange(eYield), iBuildingYield);
+			if (!::isWorldWonderClass((BuildingClassTypes)building.getBuildingClassType()) && !::isNationalWonderClass((BuildingClassTypes)building.getBuildingClassType()))
+			{
+				if (building.getRiverPlotYieldChange(eYield) > 0)
+				{
+					iMaxYield += building.getRiverPlotYieldChange(eYield);
+				}
+				if (building.getFlatRiverPlotYieldChange(eYield) > 0)
+				{
+					iMaxYield += building.getFlatRiverPlotYieldChange(eYield);
+				}
+			}
 		}
-		iMaxYield += iBuildingYield;
 	}
 
 	int iExtraYieldThreshold = 0;

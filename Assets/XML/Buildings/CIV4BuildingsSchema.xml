@@ -198,6 +198,9 @@
 	<ElementType name="RiverPlotYieldChanges" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="FlatRiverPlotYieldChanges" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="GlobalSeaPlotYieldChanges" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
@@ -575,6 +578,7 @@
 		<element type="fVisibilityPriority" minOccurs="0"/>
 		<element type="SeaPlotYieldChanges" minOccurs="0"/>
 		<element type="RiverPlotYieldChanges" minOccurs="0"/>
+		<element type="FlatRiverPlotYieldChanges" minOccurs="0"/>
 		<element type="GlobalSeaPlotYieldChanges" minOccurs="0"/>
 		<element type="YieldChanges" minOccurs="0"/>
 		<element type="YieldModifiers" minOccurs="0"/>
