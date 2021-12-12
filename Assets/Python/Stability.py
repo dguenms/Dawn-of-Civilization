@@ -1,43 +1,13 @@
-# Rhye's and Fall of Civilization - Stability
-
-from CvPythonExtensions import *
-from StoredData import data # edead
-from Consts import *
+from Core import *
 from RFCUtils import *
-import DynamicCivs as dc
-from operator import itemgetter
-import math
-import Periods as periods
+from Locations import *
+from Civics import *
 from Events import handler, events
 
-import PyHelpers
-PyPlayer = PyHelpers.PyPlayer
+import DynamicCivs as dc
+import math
+import Periods as periods
 
-import BugPath
-from datetime import date
-
-from Locations import *
-from Core import *
-from Civics import *
-
-# globals
-gc = CyGlobalContext()
-
-tCrisisLevels = (
-"TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL",
-"TXT_KEY_STABILITY_CRISIS_LEVEL_SEVERE",
-"TXT_KEY_STABILITY_CRISIS_LEVEL_MODERATE",
-"TXT_KEY_STABILITY_CRISIS_LEVEL_MINOR",
-"TXT_KEY_STABILITY_CRISIS_LEVEL_MINOR",
-)
-
-tCrisisTypes = (
-"TXT_KEY_STABILITY_CRISIS_TYPE_EXPANSION",
-"TXT_KEY_STABILITY_CRISIS_TYPE_ECONOMY",
-"TXT_KEY_STABILITY_CRISIS_TYPE_DOMESTIC",
-"TXT_KEY_STABILITY_CRISIS_TYPE_FOREIGN",
-"TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY",
-)
 
 tEraAdministrationModifier = (
 	100, # ancient
