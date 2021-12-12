@@ -3,6 +3,7 @@ from RFCUtils import *
 from Locations import *
 from Civics import *
 from Events import handler, events
+from Popups import popup
 
 import DynamicCivs as dc
 import math
@@ -1728,8 +1729,17 @@ def switchCivics(iPlayer):
 			
 	pPlayer.setRevolutionTimer(gc.getDefineINT("MIN_REVOLUTION_TURNS"))
 
+
+def makePeace(iRebelCiv):
+	team().makePeace(iRebelCiv)
+	
+def declareWar(iRebelCiv):
+	team().declareWar(iRebelCiv, False, -1)
+
+rebellion_popup = popup.text("TXT_KEY_REBELLION_TEXT").option(makePeace, "TXT_KEY_POPUP_YES", button='Art/Interface/Buttons/Actions/Join.dds').option(declareWar, "TXT_KEY_POPUP_NO", button='Art/Interface/Buttons/Actions/Fortify.dds').build()
+
 def rebellionPopup(iRebelCiv):
-	eventpopup(7622, text("TXT_KEY_REBELLION_TITLE"), text("TXT_KEY_REBELLION_TEXT", adjective(iRebelCiv)), (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
+	rebellion_popup.text(adjective(iRebelCiv)).makePeace().declareWar().launch(iRebelCiv)
 	
 def getAdministrationModifier(iEra):
 	return tEraAdministrationModifier[iEra]

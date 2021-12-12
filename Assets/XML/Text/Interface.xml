@@ -1712,19 +1712,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
-		<English>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
-		<French>Les villes %s1:4 sont sur le point de d&#233;clarer leur ind&#233;pendance et de se s&#233;parer de notre civilisation. Doit-on les laisser partir pacifiquement ?</French>
-		<German>%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
-		<Italian>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
-		<Spanish>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_REBELLION_TITLE</Tag>
-		<English>Independence!</English>
-		<French>Ind&#233;pendance !</French>
-		<German>Unabh&#228;ngigkeit!</German>
-		<Italian>Indipendenza!</Italian>
-		<Spanish>&#161;Independencia!</Spanish>
+		<English>[H1]Independence![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
+		<French>[H1]Ind&#233;pendance ![\H1][NEWLINE]Les villes %s1:4 sont sur le point de d&#233;clarer leur ind&#233;pendance et de se s&#233;parer de notre civilisation. Doit-on les laisser partir pacifiquement ?</French>
+		<German>[H1]Unabh&#228;ngigkeit![\H1][NEWLINE]%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
+		<Italian>[H1]Indipendenza![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
+		<Spanish>[H1]&#161;Independencia![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
