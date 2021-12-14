@@ -125,6 +125,9 @@ def initBirths():
 	for iRebirthCiv, iSlotCiv in dRebirthCiv.items():
 		if iSlotCiv in data.dSlots:
 			data.births.append(rebirth(iRebirthCiv))
+	
+	for born in data.births:
+		born.check()
 
 
 @handler("BeginGameTurn")
@@ -643,6 +646,9 @@ class Birth(object):
 		return True
 	
 	def announce(self):
+		if scenarioStart():
+			return
+	
 		if game.getAIAutoPlay() > 0:
 			return
 	
