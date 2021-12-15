@@ -541,7 +541,7 @@ class Birth(object):
 	def advancedStart(self):
 		iAdvancedStartPoints = dAdvancedStartPoints[self.iPlayer]
 		if iAdvancedStartPoints > 0:
-			self.player.changeAdvancedStartPoints(iAdvancedStartPoints+1)
+			self.player.changeAdvancedStartPoints(scale(iAdvancedStartPoints)+1)
 			
 			if not self.isHuman():
 				self.player.AI_doAdvancedStart()
