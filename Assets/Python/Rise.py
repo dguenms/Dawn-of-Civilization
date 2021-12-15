@@ -146,8 +146,7 @@ def ensureAdditionalDefenders(bWar, iAttacker, iDefender):
 	
 	iNumDefenders = 1 + (player(iDefender).getCurrentEra() + 1) / 2
 	for city in cities.owner(iDefender).where(lambda city: plot(city).getBirthProtected() == iDefender):
-		iDefenseUnit, iDefenseAI = getUnitForRole(iDefender, iDefend)
-		defenders = makeUnits(iDefender, iDefenseUnit, city, iNumDefenders, iDefenseAI)
+		defenders = ensureDefenders(iDefender, city, iNumDefenders)
 		for defender in defenders:
 			mission(defender, MissionTypes.MISSION_FORTIFY)
 
@@ -158,6 +157,9 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 		return
 	
 	if not player(iDefender).isBirthProtected():
+		return
+		
+	if team(iAttacker).isAVassal():
 		return
 		
 	city = capital(iDefender)

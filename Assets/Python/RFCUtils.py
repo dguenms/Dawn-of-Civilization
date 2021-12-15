@@ -561,21 +561,25 @@ def getUnitsForRole(iPlayer, iRole):
 
 # used: AIWars, History, RFCUtils, Rise, Stability
 def createRoleUnits(iPlayer, location, units, iExperience=0):
+	created = CreatedUnits.none()
 	for iRole, iAmount in units:
-		createRoleUnit(iPlayer, location, iRole, iAmount, iExperience)
+		created += createRoleUnit(iPlayer, location, iRole, iAmount, iExperience)
+	return created
 
 # used: AIWars, Congresses, History, RFCUtils
 def createRoleUnit(iPlayer, location, iRole, iAmount, iExperience=0):
+	created = CreatedUnits.none()
 	location = getRoleLocation(iRole, location)
 	if iRole == iSettle:
-		createSettlers(iPlayer, iAmount)
+		created += createSettlers(iPlayer, iAmount)
 	elif iRole == iMissionary:
-		createMissionaries(iPlayer, iAmount)
+		created += createMissionaries(iPlayer, iAmount)
 	else:
 		for iUnit, iUnitAI in getUnitsForRole(iPlayer, iRole):
 			if iUnit is not None and location is not None:
 				iExperience += dStartingExperience[iPlayer].get(iRole, 0)
-				makeUnits(iPlayer, iUnit, location, iAmount, iUnitAI).experience(iExperience)
+				created += makeUnits(iPlayer, iUnit, location, iAmount, iUnitAI).experience(iExperience)
+	return created
 	
 # used: Congresses, History, RFCUtils, Rise, Stability
 def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
@@ -1028,9 +1032,9 @@ def killUnits(lUnits):
 			
 # used: RFCUtils, Rise
 def ensureDefenders(iPlayer, tPlot, iNumDefenders):
-	presentUnits = units.at(tPlot).owner(iPlayer).where(CyUnit.canFight)
-	if len(presentUnits) < iNumDefenders:
-		createRoleUnit(iPlayer, tPlot, iDefend, iNumDefenders - len(presentUnits))
+	defenders = units.at(tPlot).owner(iPlayer).where(lambda unit: isUnitOfRole(unit, iDefend))
+	iNumRequired = max(0, iNumDefenders - defenders.count())
+	return createRoleUnit(iPlayer, tPlot, iDefend, iNumRequired)
 	
 # used: CvDawnOfMan
 def getDawnOfManText(iPlayer):

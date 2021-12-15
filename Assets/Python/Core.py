@@ -1963,6 +1963,10 @@ class Players(EntityCollection):
 		
 class CreatedUnits(object):
 
+	@staticmethod
+	def none():
+		return CreatedUnits([])
+
 	def __init__(self, units):
 		self._units = units
 		
@@ -1997,6 +2001,9 @@ class CreatedUnits(object):
 		if len(self) == 1:
 			return self._units[0]
 		raise Exception('Can only return one unit if it is a single created unit')
+	
+	def count(self):
+		return len(self)
 
 		
 class Turn(int):
