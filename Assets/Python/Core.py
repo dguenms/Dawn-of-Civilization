@@ -547,6 +547,9 @@ def unittype(identifier):
 
 
 def base_building(iBuilding):
+	if iBuilding is None:
+		return iBuilding
+
 	return gc.getBuildingClassInfo(gc.getBuildingInfo(iBuilding).getBuildingClassType()).getDefaultBuildingIndex()
 
 

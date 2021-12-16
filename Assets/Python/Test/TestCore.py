@@ -2533,6 +2533,9 @@ class TestUniqueUnitsAndBuildings(TestCase):
 	def test_base_building_for_unique(self):
 		self.assertEqual(base_building(iObelisk), iMonument)
 		
+	def test_base_building_for_none(self):
+		self.assertEqual(base_building(None), None)
+		
 	def test_unique_building_for_base(self):
 		self.assertEqual(unique_building(0, iMonument), iObelisk)
 		
