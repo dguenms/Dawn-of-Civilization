@@ -34,6 +34,8 @@ class PlayerData:
 		self.iColonistsAlreadyGiven = 0
 		self.iExplorationTurn = 1500
 		
+		self.dColonialAcquisitionCities = {}
+		
 		# Religions
 		
 		self.iReformationDecision = -1
@@ -61,10 +63,6 @@ class PlayerData:
 		
 		self.resetStability()
 		
-		# Tech Log
-		
-		self.iTechColumn = 0
-	
 	def resetStability(self):
 		self.iStabilityLevel = iStabilityShaky
 		
