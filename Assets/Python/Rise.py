@@ -555,6 +555,10 @@ class Birth(object):
 		edge = self.area.expand(1).edge().where_surrounding(lambda p: not p.isCity()).passable()
 		
 		for unit in self.area.units().minor():
+			if unit.isAnimal():
+				unit.kill(False, -1)
+				continue
+		
 			if cities.owner(unit):
 				closest = cities.owner(unit).closest(unit)
 			elif unit.getDomainType() == DomainTypes.DOMAIN_SEA or unit.isCargo():
