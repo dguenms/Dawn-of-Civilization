@@ -6,9 +6,11 @@ from Locations import *
 from Events import handler
 
 
-@handler("GameStart")
+# TODO: disabled for now, most of this needs to be different
+#@handler("GameStart")
 def initScenario():
-	updateStartingPlots()
+	# TODO: I think this isn't needed anymore, check again
+	#updateStartingPlots()
 
 	adjustCityCulture()
 	

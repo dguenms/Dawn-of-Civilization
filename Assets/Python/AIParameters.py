@@ -29,13 +29,12 @@ def updateParameters(iPlayer):
 	pPlayer.setTargetDistanceValueModifier(getTargetDistanceValueModifier(iPlayer))
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
 
-@handler("GameStart")
+#@handler("GameStart")
 def init():
 	for iPlayer in players.all().barbarian():
 		updateParameters(iPlayer)
 
 @handler("techAcquired")
-		
 def onTechAcquired(iTech, iTeam, iPlayer):
 	if iTech == iExploration:
 		if iPlayer in dDistanceSubtrahendExploration: player(iPlayer).setDistanceSubtrahend(dDistanceSubtrahendExploration[iPlayer])

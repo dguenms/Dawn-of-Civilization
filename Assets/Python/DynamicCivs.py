@@ -567,14 +567,15 @@ def setup():
 			checkNameChange(slot(iCiv))
 			checkAdjectiveChange(slot(iCiv))
 	
-	for iPlayer in players.major():
-		setDesc(iPlayer, peoplesName(iPlayer))
-		
-		if player(iPlayer).getNumCities() > 0:
-			checkName(iPlayer)
-		
-		if (year(dBirth[iPlayer]) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
-			setLeader(iPlayer, startingLeader(iPlayer))
+	# TODO: instead do this when a player is assigned their civ
+	#for iPlayer in players.major():
+	#	setDesc(iPlayer, peoplesName(iPlayer))
+	#	
+	#	if player(iPlayer).getNumCities() > 0:
+	#		checkName(iPlayer)
+	#	
+	#	if (year(dBirth[iPlayer]) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
+	#		setLeader(iPlayer, startingLeader(iPlayer))
 
 @handler("rebirth")
 def onRebirth(iPlayer):

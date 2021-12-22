@@ -147,7 +147,8 @@ def goldenAge(iPlayer):
 			player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
 
 
-@handler("GameStart")
+# TODO: reenable
+#@handler("GameStart")
 def setup():
 	iPlayer = active()
 	

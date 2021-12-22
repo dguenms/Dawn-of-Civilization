@@ -21,8 +21,7 @@ iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = tup
 
 iPhoenicia = iCarthage
 
-# slot order
-lCivOrder = [
+lBirthOrder = [
 	iEgypt,
 	iBabylonia,
 	iHarappa,
@@ -70,7 +69,10 @@ lCivOrder = [
 	iMexico,
 	iColombia,
 	iBrazil,
-	iCanada,
+	iCanada
+]
+
+lCivOrder = lBirthOrder + [
 	iIndependent,
 	iIndependent2,
 	iNative,

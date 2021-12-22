@@ -8,7 +8,8 @@ def updateCore(iPlayer):
 		if plot.isWater() or (plot.isPeak() and location(plot) not in lPeakExceptions): continue
 		plot.setCore(iPlayer, location(plot) in coreArea)
 
-@handler("GameStart")
+#@handler("GameStart")
+# TODO: we should do this in scenario setup when a civ is added
 def init():
 	for iPlayer in players.major():
 		updateCore(iPlayer)

@@ -98,7 +98,10 @@ def reload():
 def setup():
 	determineCapitalLocations()
 
+# TODO: reenable and remove need for player ID and player to exist
+# this should all be civ based
 def determineCapitalLocations():
+	return
 	dLocations = {}
 	
 	for iCiv in dCapitals:

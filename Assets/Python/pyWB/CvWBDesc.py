@@ -1438,19 +1438,28 @@ class CvPlotDesc:
 		self.szScriptData = ""
 		self.abTeamPlotRevealed = []
 		self.lCulture = []
+	
+	@property
+	def plot(self):
+		return CyMap().plot(self.iX, self.iY)
 
 	def needToWritePlot(self, plot):
 		"returns true if this plot needs to be written out."
 		return True
+		
+	def applyPlotType(self):
+		if self.plotType != PlotTypes.NO_PLOT:
+			self.plot.setPlotType(self.plotType, False, False)
+	
+	def applyTerrainType(self):
+		if self.terrainType:
+			terrainTypeNum = CvUtil.findInfoTypeNum(gc.getTerrainInfo, gc.getNumTerrainInfos(), self.terrainType)
+			self.plot.setTerrainType(terrainTypeNum, False, False)
 
 	def preApply(self):
 		"apply plot and terrain type"
-		plot = CyMap().plot(self.iX, self.iY)
-		if (self.plotType != PlotTypes.NO_PLOT):
-			plot.setPlotType(self.plotType, False, False)
-		if (self.terrainType):
-			terrainTypeNum = CvUtil.findInfoTypeNum(gc.getTerrainInfo, gc.getNumTerrainInfos(), self.terrainType)
-			plot.setTerrainType(terrainTypeNum, False, False)
+		self.applyPlotType()
+		self.applyTerrainType()
 
 	def write(self, f, plot):
 		"save plot desc to a file"
@@ -1638,32 +1647,43 @@ class CvPlotDesc:
 						self.lCulture.append([iPlayerLoop, int(v)])
 					continue
 		return True
+		
+	def applyRivers(self):
+		self.plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
+		self.plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
+	
+	def applyBonus(self):
+		if self.bonusType:
+			bonusTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusType)
+			self.plot.setBonusType(bonusTypeNum)
+	
+	def applyFeature(self):
+		if self.featureType:
+			featureTypeNum = CvUtil.findInfoTypeNum(gc.getFeatureInfo, gc.getNumFeatureInfos(), self.featureType)
+			self.plot.setFeatureType(featureTypeNum, self.featureVariety)
 
 	def apply(self):
 		"after reading, this will actually apply the data"
 		#print("apply plot %d %d" %(self.iX, self.iY))
-		plot = CyMap().plot(self.iX, self.iY)
-		plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
-		plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
-		plot.setStartingPlot(self.isStartingPlot)
-		if (self.bonusType):
-			bonusTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusType)
-			plot.setBonusType(bonusTypeNum)
+		self.applyRivers()
+		self.plot.setStartingPlot(self.isStartingPlot)
+		self.applyBonus()
+		
 		if (self.improvementType):
 			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
-			plot.setImprovementType(improvementTypeNum)
-		if (self.featureType):
-			featureTypeNum = CvUtil.findInfoTypeNum(gc.getFeatureInfo, gc.getNumFeatureInfos(), self.featureType)
-			plot.setFeatureType(featureTypeNum, self.featureVariety)
+			self.plot.setImprovementType(improvementTypeNum)
+
+		self.applyFeature()
+
 		if (self.routeType):
 			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)
-			plot.setRouteType(routeTypeNum)
+			self.plot.setRouteType(routeTypeNum)
 
 		if (self.szLandmark != ""):
 			CyEngine().addLandmark(CyMap().plot(self.iX, self.iY), "%s" %(self.szLandmark))
 
 		if (self.szScriptData != ""):
-			plot.setScriptData(self.szScriptData)
+			self.plot.setScriptData(self.szScriptData)
 
 	def applyUnits(self):
 		#print "--apply units"

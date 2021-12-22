@@ -12,7 +12,8 @@ from Locations import *
 from Core import *
 
 
-@handler("GameStart")
+# TODO: do this when Babylonia is assigned
+#@handler("GameStart")
 def setup():
 	# Babylonian UP: receive a free tech after discovering the first five techs
 	player(iBabylonia).setFreeTechsOnDiscovery(5)

@@ -32,7 +32,7 @@ def applyMap(iPlayer):
 def updateMap(iPlayer):
 	applyMap(iPlayer)
 
-@handler("GameStart")
+#@handler("GameStart")
 def init():
 	for iPlayer in players.major():
 		updateMap(iPlayer)

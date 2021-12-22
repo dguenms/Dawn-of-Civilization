@@ -120,7 +120,7 @@ def showDawnOfMan(iGameTurn):
 
 @handler("GameStart")
 def initBirths():
-	data.births = [birth(civ(p)) for p in players.major()]
+	data.births = [birth(iCiv) for iCiv in lBirthOrder]
 	
 	for iRebirthCiv, iSlotCiv in dRebirthCiv.items():
 		if iSlotCiv in data.dSlots:
@@ -291,8 +291,8 @@ class Birth(object):
 		self.iPlayer = None
 		self.area = None
 		
-		if not bRebirth:
-			self.iPlayer = slot(self.iCiv)
+		#if not bRebirth:
+		#	self.iPlayer = slot(self.iCiv)
 		
 		self.location = location(plots.capital(self.iCiv))
 		
@@ -333,7 +333,7 @@ class Birth(object):
 	
 	def isHuman(self):
 		if self.iPlayer is None:
-			return False
+			return game.getActiveCivilizationType() == self.iCiv
 		return self.player.isHuman()
 	
 	def isIndependence(self):
@@ -380,6 +380,7 @@ class Birth(object):
 			del data.dSlots[iCurrentCivilization]
 		
 		data.dSlots[self.iCiv] = self.iPlayer
+		data.lCivs[self.iPlayer] = self.iCiv
 		
 		self.updateParameters()
 	
@@ -664,8 +665,13 @@ class Birth(object):
 			message(active(), str(text), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
 	
 	def activate(self):
-		if self.bRebirth:
-			self.iPlayer = slot(dRebirthCiv[self.iCiv])
+		if self.iPlayer is None:
+			if self.bRebirth:
+				self.iPlayer = slot(dRebirthCiv[self.iCiv])
+			elif self.iCiv in data.lCivs:
+				self.iPlayer = data.lCivs.index(self.iCiv)
+			else:
+				self.iPlayer = next(iSlot for iSlot, iCiv in enumerate(data.lCivs) if iCiv == -1)
 		
 		self.updateCivilization()
 		

@@ -149,7 +149,9 @@ class GameData:
 		
 		# set the default values for now, once slots become untied this should be set and kept updated on spawn
 		# already make it dynamic because rebirths will change things
-		self.dSlots = dict((gc.getPlayer(iSlot).getCivilizationType(), iSlot) for iSlot in range(gc.getMAX_PLAYERS()))
+		self.dSlots = {}
+		
+		self.lCivs = [gc.getPlayer(p).getCivilizationType() for p in range(gc.getMAX_PLAYERS())]
 		
 		# Rise and Fall
 		

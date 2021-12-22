@@ -100,7 +100,7 @@ tConquestMongolsPersia = (12, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersia
 
 lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
 
-	
+
 @handler("GameStart")
 def setup():
 	iTurn = year(-600)
