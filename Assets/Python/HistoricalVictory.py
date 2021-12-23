@@ -160,7 +160,7 @@ dGoals = {
 			PillageCount(20),
 		).by(900),
 		All(
-			RouteConnection(plots.rectangle(tChina).named("CITY_IN_CHINA"), plots.of(lMediterraneanPorts).named("MEDITERRANEAN_PORT"), infos.routes()).named("SILK_ROUTE"),
+			RouteConnection(plots.rectangle(tChina).named("CITY_IN_CHINA"), plots.of(lMediterraneanPorts).named("MEDITERRANEAN_PORT"), infos.routes()).withStartOwners().named("SILK_ROUTE"),
 			CorporationCount(iSilkRoute, 10)
 		).by(1100),
 		DifferentCities(
