@@ -875,6 +875,12 @@ class Birth(object):
 	
 	def flip(self):
 		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
+		
+		excludedPlots = flippedPlots.where(lambda p: p.isCity() and city_(p).isCapital() and p.isCore(p.getOwner()))
+		excludedPlots = excludedPlots.expand(1).where(lambda p: cities.surrounding(p).all(lambda city: city in excludedPlots))
+		
+		flippedPlots = flippedPlots.without(excludedPlots)
+		
 		flippedCities = flippedPlots.cities().notowner(self.iPlayer)
 		flippedCityPlots = flippedCities.plots()
 	
