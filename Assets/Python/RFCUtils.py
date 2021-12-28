@@ -593,7 +593,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		flippingUnits = plotUnits.where(lambda unit: not is_minor(unit) or (not unit.isAnimal() and not unit.isFound())).grouped(CyUnit.getUnitType)
 		removedUnits = plotUnits.where(lambda unit: not unit.isCargo())
 		
-		sFlippingUnitsBefore = str([iUnit for iUnit, _ in flippingUnits])
+		flippingUnitsText = str([(iUnit, str(typeUnits)) for iUnit, typeUnits in flippingUnits])
 		
 		for unit in removedUnits:
 			unit.kill(False, -1)
@@ -604,9 +604,11 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	flipCity(plot, False, False, iPlayer, [iOwner])
 	
 	if bFlipUnits:
-		sFlippingUnitsAfter = str([iUnit for iUnit, _ in flippingUnits])
 		for iUnit, typeUnits in flippingUnits:
-			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
+			try:
+				makeUnits(iPlayer, iUnit, plot, len(typeUnits))
+			except Exception, e:
+				raise Exception("%s: units are: %s" % (e, flippingUnitsText))
 	else:
 		createGarrisons(plot, iPlayer, 2)
 	
