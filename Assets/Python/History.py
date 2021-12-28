@@ -207,6 +207,9 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				iNewWorldPlayer = iTeamX
 				iOldWorldPlayer = iHasMetTeamY
 				
+				if civ(iOldWorldPlayer) == iPolynesia:
+					return
+				
 				iNewWorldCiv = civ(iNewWorldPlayer)
 				
 				bAlreadyContacted = data.dFirstContactConquerors[iNewWorldCiv]
