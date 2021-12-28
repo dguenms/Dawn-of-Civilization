@@ -37,14 +37,11 @@ def observerModeShortcut(eventType, key):
 
 @popup_handler(4568)
 def handleStartObserverMode(iPlayer, netUserData, popupReturn):
-	try:
-		iDestinationYear = int(popupReturn.getEditBoxString(0))
-		iAutoplayTurns = year(iDestinationYear) - turn()
-		
-		if iAutoplayTurns > 0:
-			startObserverMode(iAutoplayTurns)
-	except Exception, e:
-		print e
+	iDestinationYear = int(popupReturn.getEditBoxString(0))
+	iAutoplayTurns = year(iDestinationYear) - turn()
+	
+	if iAutoplayTurns > 0:
+		startObserverMode(iAutoplayTurns)
 
 
 @handler("autoplayEnded")

@@ -577,6 +577,9 @@ class Birth(object):
 	def check(self):
 		if self.canceled:
 			return
+		
+		if self.isHuman() and data.iBeforeObserverSlot != -1:
+			return
 	
 		iUntilBirth = until(self.iTurn)
 		
