@@ -208,7 +208,7 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 		return
 	
 	aroundCities = cities.owner(iDefender).plots().expand(2)
-	birthProtected = plots.all().where(lambda p: p.getBirthProtected() == iDefender and not p.isCore(iAttacker))
+	birthProtected = plots.all().where(lambda p: p.getBirthProtected() == iDefender and not p.isPlayerCore(iAttacker))
 	for plot in aroundCities.including(birthProtected):
 		attackers = units.at(plot).owner(iAttacker)
 		if attackers:
@@ -370,6 +370,10 @@ class Birth(object):
 			self.team.cutContact(player(iOtherPlayer).getTeam())
 	
 	def updateCivilization(self):
+		data.dSlots[self.iCiv] = self.iPlayer
+		
+		print "data.dSlots is now: %s" % (data.dSlots.items(),)
+		
 		iCurrentCivilization = self.player.getCivilizationType()
 		if self.iCiv == iCurrentCivilization:
 			return
@@ -378,9 +382,6 @@ class Birth(object):
 		
 		if iCurrentCivilization in data.dSlots:
 			del data.dSlots[iCurrentCivilization]
-		
-		data.dSlots[self.iCiv] = self.iPlayer
-		data.lCivs[self.iPlayer] = self.iCiv
 		
 		self.updateParameters()
 	
@@ -391,7 +392,7 @@ class Birth(object):
 			ownerCities = baseCities.area(self.location).where(lambda city: city.getOwner() in owners)
 			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)) and real_distance(city, self.location) <= 12)
 			
-			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
+			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
 			
 			self.area += additionalPlots
 			self.area = self.area.unique()
@@ -401,7 +402,7 @@ class Birth(object):
 			self.area = self.area.unique()
 		
 		if self.iCiv == iMexico:
-			self.area = self.area.where(lambda p: p.isCore(self.iPlayer) or not owner(p, iAmerica))
+			self.area = self.area.where(lambda p: p.isPlayerCore(self.iPlayer) or not owner(p, iAmerica))
 		
 		if self.iCiv == iCanada:
 			self.area += cities.region(rCanada).where(lambda city: civ(city) in [iFrance, iEngland, iAmerica]).plots().expand(2)
@@ -423,12 +424,14 @@ class Birth(object):
 				
 	def updateParameters(self):
 		AIParameters.updateParameters(self.iPlayer)
-		Modifiers.updateModifiers(self.iPlayer)
+		#Modifiers.updateModifiers(self.iPlayer)
 		Civilizations.initPlayerTechPreferences(self.iPlayer)
 		Civilizations.initBuildingPreferences(self.iPlayer)
-		SettlerMaps.updateMap(self.iPlayer)
-		WarMaps.updateMap(self.iPlayer)
+		#SettlerMaps.updateMap(self.iPlayer)
+		#WarMaps.updateMap(self.iPlayer)
 		Setup.updateCore(self.iPlayer)
+		
+		#self.player.updateMaintenance()
 	
 	def assignGold(self):
 		if self.iCiv in dStartingGold:
@@ -665,18 +668,23 @@ class Birth(object):
 			message(active(), str(text), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
 	
 	def activate(self):
+		if self.iPlayer is None and self.bRebirth:
+			self.iPlayer = slot(dRebirthCiv[self.iCiv])
+		
 		if self.iPlayer is None:
-			if self.bRebirth:
-				self.iPlayer = slot(dRebirthCiv[self.iCiv])
-			elif self.iCiv in data.lCivs:
-				self.iPlayer = data.lCivs.index(self.iCiv)
-			else:
-				self.iPlayer = next(iSlot for iSlot, iCiv in enumerate(data.lCivs) if iCiv == -1)
+			self.iPlayer = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == self.iCiv)
+		
+		if self.iPlayer is None:
+			self.iPlayer = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == -1)
+			
+		print "self.iPlayer=%d for civilization %s" % (self.iPlayer, infos.civ(self.iCiv).getText())
 		
 		self.updateCivilization()
 		
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()
+		
+		events.fireEvent("activate", self.iPlayer, self.iCiv)
 
 	def prepare(self):
 		events.fireEvent("prepareBirth", self.iCiv)
@@ -838,7 +846,7 @@ class Birth(object):
 		self.resetPlague()
 		
 		# set as spawned
-		data.players[self.iPlayer].bSpawned = True
+		data.civs[self.iCiv].bSpawned = True
 		
 		# send event
 		if self.bRebirth:

@@ -811,7 +811,7 @@ class Congress:
 			if team(iClaimant).isVassal(iVoter): iFavorClaimant += 10
 			if team(iOwner).isVassal(iVoter): iFavorOwner += 10
 			
-			if not plot.isCore(iOwner) or plot.isCore(iClaimant):
+			if not plot.isPlayerCore(iOwner) or plot.isPlayerCore(iClaimant):
 				# French UP
 				if civ(iClaimant) == iFrance: iFavorClaimant += 10
 				if civ(iOwner) == iFrance: iFavorOwner += 10
@@ -841,7 +841,7 @@ class Congress:
 					iClaimValidity -= 10
 				
 			# generic settler map bonus
-			iClaimantValue = plot.getSettlerValue(iClaimant)
+			iClaimantValue = plot.getPlayerSettlerValue(iClaimant)
 			if iClaimantValue >= 90:
 				iClaimValidity += max(1, iClaimantValue / 100)
 
@@ -849,7 +849,7 @@ class Congress:
 			if civ(iVoter) in dCivGroups[iCivGroupEurope]:
 				if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
 					if not bOwner or civ(iOwner) not in dTechGroups[iTechGroupWestern]:
-						if plot.getSettlerValue(iVoter) < 90:
+						if plot.getPlayerSettlerValue(iVoter) < 90:
 							iClaimValidity += 10
 							
 			# vote to support settler maps for civs from your own group
@@ -857,8 +857,8 @@ class Congress:
 				bDifferentGroupClaimant = none(civ(iVoter) in lGroup and civ(iClaimant) in lGroup for lGroup in dCivGroups.values())
 				bDifferentGroupOwner = none(civ(iVoter) in lGroup and civ(iOwner) in lGroup for lGroup in dCivGroups.values())
 			
-				iClaimantValue = plot.getSettlerValue(iClaimant)
-				iOwnerValue = plot.getSettlerValue(iOwner)
+				iClaimantValue = plot.getPlayerSettlerValue(iClaimant)
+				iOwnerValue = plot.getPlayerSettlerValue(iOwner)
 				
 				if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
 				if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
@@ -868,8 +868,8 @@ class Congress:
 			
 		# own expansion targets
 		if not bOwnClaim:
-			iOwnSettlerValue = plot.getSettlerValue(iVoter)
-			iOwnWarTargetValue = plot.getWarValue(iVoter)
+			iOwnSettlerValue = plot.getPlayerSettlerValue(iVoter)
+			iOwnWarTargetValue = plot.getPlayerWarValue(iVoter)
 			
 			# if vote between two civs, favor the weaker one if we want to expand there later on
 			if bOwner:
@@ -906,8 +906,8 @@ class Congress:
 			if city.isCapital(): iClaimValidity -= 10
 			
 			# core area
-			if plot.isCore(iClaimant): iClaimValidity += 10
-			if plot.isCore(iOwner): iClaimValidity -= 15
+			if plot.isPlayerCore(iClaimant): iClaimValidity += 10
+			if plot.isPlayerCore(iOwner): iClaimValidity -= 15
 			
 			# immediately reclaiming lost cities is only valid in post war congress
 			if not self.bPostWar:
@@ -1063,7 +1063,7 @@ class Congress:
 			
 			for city in cities.owner(iLoopPlayer):
 				plot = plot_(city)
-				iSettlerMapValue = plot.getSettlerValue(iPlayer)
+				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
 				iValue = 0
 				
 				bRecolonise = not self.bPostWar and city.getRegionID() in lAmerica and civ(iPlayer) in dCivGroups[iCivGroupEurope] and civ(city) in dCivGroups[iCivGroupAmerica] and civ(city) in dTechGroups[iTechGroupWestern]
@@ -1092,7 +1092,7 @@ class Congress:
 					iValue -= min(3, since(city.getGameTurnPlayerLost(iPlayer)) / turns(100))
 						
 				# own core
-				if plot.isCore(iPlayer):
+				if plot.isPlayerCore(iPlayer):
 					iValue += 5
 							
 				# colonies
@@ -1118,8 +1118,8 @@ class Congress:
 					
 				# after war: war targets
 				if self.bPostWar:
-					iValue += plot.getWarValue(iPlayer) / 2
-				elif iValue == 0 and plot.getWarValue(iPlayer) > 0:
+					iValue += plot.getPlayerWarValue(iPlayer) / 2
+				elif iValue == 0 and plot.getPlayerWarValue(iPlayer) > 0:
 					iValue += 1
 					
 				# AI America receives extra value for claims in the west
@@ -1140,7 +1140,7 @@ class Congress:
 		if civ(iPlayer) in dCivGroups[iCivGroupEurope] and not self.bPostWar:
 			for plot in plots.all().where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater() and pPlayer.canFound(p.getX(), p.getY())).regions(rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania):
 				if pPlayer.isHuman() and not plot.isRevealed(iPlayer, False): continue
-				iSettlerMapValue = plot.getSettlerValue(iPlayer)
+				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
 				if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, plot):
 					iFoundValue = pPlayer.AI_foundValue(plot.getX(), plot.getY(), -1, False)
 					lPlots.append((plot.getX(), plot.getY(), max(1, min(5, iFoundValue / 2500 - 1))))

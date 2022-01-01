@@ -1163,7 +1163,9 @@ public:
 	void completeRaze();
 
 	bool canLiberate() const;
+	bool isCore(CivilizationTypes eCivilization) const;
 	bool isCore(PlayerTypes ePlayer) const;
+	bool isCore() const;
 
 	bool rebuild();
 

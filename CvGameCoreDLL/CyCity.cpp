@@ -2779,9 +2779,19 @@ int CyCity::getNumActiveWorldWonders()
 	return m_pCity ? m_pCity->getNumActiveWorldWonders() : -1;
 }
 
-bool CyCity::isCore(int iPlayer)
+bool CyCity::isCore(int iCivilization)
+{
+	return m_pCity ? m_pCity->isCore((CivilizationTypes)iCivilization) : false;
+}
+
+bool CyCity::isPlayerCore(int iPlayer)
 {
 	return m_pCity ? m_pCity->isCore((PlayerTypes)iPlayer) : false;
+}
+
+bool CyCity::isOwnerCore()
+{
+	return m_pCity ? m_pCity->isCore() : false;
 }
 
 int CyCity::getActualCulture(int iPlayer)

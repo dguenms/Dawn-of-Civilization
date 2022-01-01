@@ -215,7 +215,7 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 # used: Rules
 def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot = plot_(tPlot)
-	if not plot.isOwned() or not plot.isCore(plot.getOwner()):
+	if not plot.isOwned() or not plot.isPlayerCore(plot.getOwner()):
 		plot.setCultureConversion(iPlayer, iPercent)
 	
 		if bOwner:
@@ -752,40 +752,37 @@ def doByzantineBribery(spy):
 	
 	bribePopup.cancel().launch(*location(spy))
 	
-def exclusive(iPlayer, *civs):
-	return civ(iPlayer) in civs and any(player(iCiv).isAlive() for iCiv in civs if civ(iPlayer) != iCiv)
+def exclusive(iCiv, *civs):
+	return iCiv in civs and any(player(iCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
-def canRespawn(iPlayer):
-	iCiv = civ(iPlayer)
-
-	# no respawn if never spawned
-	if not data.players[iPlayer].bSpawned:
+def canRespawn(iCiv):
+	if not data.civs[iCiv].bSpawned:
 		return False
 	
 	# only dead civ need to check for resurrection
-	if player(iPlayer).isAlive():
+	if player(iCiv).isAlive():
 		return False
 		
 	# check if only recently died
-	if data.players[iPlayer].iLastTurnAlive > turn() - turns(20):
+	if data.civs[iCiv].iLastTurnAlive > turn() - turns(20):
 		return False
 	
 	# check if the civ can be reborn at this date
-	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
+	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iCiv]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if exclusive(iPlayer, iKhmer, iThailand):
+	if exclusive(iCiv, iKhmer, iThailand):
 		return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if exclusive(iPlayer, iRome, iItaly):
+	if exclusive(iCiv, iRome, iItaly):
 		return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if exclusive(iPlayer, iGreece, iByzantium):
+	if exclusive(iCiv, iGreece, iByzantium):
 		return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
@@ -800,11 +797,11 @@ def canRespawn(iPlayer):
 	return True
 	
 # used: CvScreensInterface, MapDrawer, RFCUtils
-def canEverRespawn(iPlayer, iGameTurn = None):
+def canEverRespawn(iCiv, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iPlayer])
+	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iCiv])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
@@ -836,6 +833,7 @@ def expelUnits(iPlayer, area):
 				message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(ownerUnits), adjective(iPlayer), destination.getName())
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
+# TODO: should be civ based not player based
 def toggleStabilityOverlay(iPlayer = -1):
 	global bStabilityOverlay
 	bReturn = bStabilityOverlay
@@ -861,18 +859,18 @@ def toggleStabilityOverlay(iPlayer = -1):
 	# apply the highlight
 	for plot in plots.all().land():
 		if bDebug or plot.isRevealed(iTeam, False):
-			if plot.isCore(iPlayer):
+			if plot.isPlayerCore(iPlayer):
 				iPlotType = iCore
 			else:
-				iSettlerValue = plot.getSettlerValue(iPlayer)
+				iSettlerValue = plot.getPlayerSettlerValue(iPlayer)
 				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
-					if otherplayers.any(lambda p: plot.isCore(p)):
+					if otherplayers.any(CyPlot.isPlayerCore):
 						iPlotType = iContest
 					else:
 						iPlotType = iHistorical
-				elif otherplayers.any(lambda p: plot.isCore(p)):
+				elif otherplayers.any(CyPlot.isPlayerCore):
 					iPlotType = iForeignCore
 				else:
 					iPlotType = -1
@@ -1103,7 +1101,7 @@ def isCurrentCapital(iPlayer, *names):
 # used: Rise, Scenarios
 def convertSurroundingPlotCulture(iPlayer, plots):
 	for plot in plots:
-		if plot.isOwned() and plot.isCore(plot.getOwner()) and not plot.isCore(iPlayer): continue
+		if plot.isOwned() and plot.isPlayerCore(plot.getOwner()) and not plot.isPlayerCore(iPlayer): continue
 		if not plot.isCity():
 			convertPlotCulture(plot, iPlayer, 100, False)
 
@@ -1131,3 +1129,15 @@ def endObserverMode():
 			data.iBeforeObserverSlot = -1
 		else:
 			makeUnit(active(), iCatapult, (0, 0))
+
+# used: Rise, Stability
+def findSlot(iCiv):
+	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == iCiv)
+	if iSlot is not None:
+		return iSlot
+	
+	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == -1)
+	if iSlot is not None:
+		return iSlot
+	
+	return -1

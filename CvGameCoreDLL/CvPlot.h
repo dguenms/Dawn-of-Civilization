@@ -518,21 +518,25 @@ public:
 	void write(FDataStreamBase* pStream);
 
 	// Leoreth
-	int getRegionID() const;
-	void setRegionID(int iNewValue);
+	short getRegionID() const;
+	void setRegionID(short iNewValue);
 	CvWString getRegionName() const;
 
+	bool isCore(CivilizationTypes eCivilization) const;
 	bool isCore(PlayerTypes ePlayer) const;
-	void setCore(PlayerTypes ePlayer, bool bNewValue);
+	bool isCore() const;
+	void setCore(CivilizationTypes eCivilization, bool bNewValue);
 
-	int getSettlerValue(PlayerTypes ePlayer) const;
-	void setSettlerValue(PlayerTypes ePlayer, int iNewValue);
+	short getSettlerValue(CivilizationTypes eCivilization) const;
+	short getSettlerValue(PlayerTypes ePlayer) const;
+	void setSettlerValue(CivilizationTypes eCivilization, short iNewValue);
 
-	int getWarValue(PlayerTypes ePlayer) const;
-	void setWarValue(PlayerTypes ePlayer, int iNewValue);
+	short getWarValue(CivilizationTypes eCivilization) const;
+	short getWarValue(PlayerTypes ePlayer) const;
+	void setWarValue(CivilizationTypes eCivilization, short iNewValue);
 
-	int getSpreadFactor(ReligionTypes eReligion) const;
-	void setSpreadFactor(ReligionTypes eReligion, int iNewValue);
+	short getSpreadFactor(ReligionTypes eReligion) const;
+	void setSpreadFactor(ReligionTypes eReligion, short iNewValue);
 
 	bool isWithinGreatWall() const;
 	void setWithinGreatWall(bool bNewValue);
@@ -632,10 +636,10 @@ protected:
 
 	// Leoreth: initialized by Python at the beginning of the game
 	bool* m_abCore;
-	int* m_aiSettlerValue;
-	int* m_aiWarValue;
-	int* m_aiReligionSpreadFactor;
-	int m_iRegionID;
+	short* m_aiSettlerValue;
+	short* m_aiWarValue;
+	short* m_aiReligionSpreadFactor;
+	short m_iRegionID;
 
 	// Leoreth
 	bool m_bWithinGreatWall;

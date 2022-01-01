@@ -16,7 +16,7 @@ def getStartingTechs(iPlayer):
 	
 def initScenarioTechs():
 	iScenario = scenario()
-
+	
 	for iPlayer in players.major():
 		iCiv = civ(iPlayer)
 		if dBirth[iCiv] > scenarioStartYear(): continue
@@ -42,8 +42,6 @@ def initTechs(iPlayer, lTechs):
 	
 def initTech(iPlayer, iTech):
 	team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
-	
-	#events.fireEvent("techAcquired", iTech, player(iPlayer).getTeam(), iPlayer)
 
 ### Unit spawn functions ###
 

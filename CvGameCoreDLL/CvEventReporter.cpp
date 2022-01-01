@@ -490,9 +490,9 @@ void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
 }
 
 // Leoreth: release player
-void CvEventReporter::releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+void CvEventReporter::releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
-	m_kPythonEventMgr.reportReleasedPlayer(ePlayer, eReleasedPlayer);
+	m_kPythonEventMgr.reportReleasedCivilization(ePlayer, eReleasedCivilization);
 }
 
 // Leoreth: blockade a city

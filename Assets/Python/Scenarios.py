@@ -9,9 +9,6 @@ from Events import handler
 # TODO: disabled for now, most of this needs to be different
 #@handler("GameStart")
 def initScenario():
-	# TODO: I think this isn't needed anymore, check again
-	#updateStartingPlots()
-
 	adjustCityCulture()
 	
 	updateGreatWall()
@@ -33,16 +30,13 @@ def initScenario():
 	initDiplomacy()
 	prepareColonists()
 	
-	for iPlayer in players.major().where(lambda p: dBirth[p] < scenarioStartYear()):
-		data.players[iPlayer].bSpawned = True
+	# TODO: enable for initial civs
+	#for iPlayer in players.major().where(lambda p: dBirth[p] < scenarioStartYear()):
+	#	data.players[iPlayer].bSpawned = True
 	
 	game.setVoteSourceReligion(1, iCatholicism, False)
 	
 	updateExtraOptions()
-
-def updateStartingPlots():
-	for iPlayer in players.major():
-		player(iPlayer).setStartingPlot(plots.capital(iPlayer), False)
 
 def adjustCityCulture():
 	if turns(10) == 10: return

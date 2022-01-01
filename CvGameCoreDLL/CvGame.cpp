@@ -51,6 +51,7 @@ CvGame::CvGame()
 
 	// Leoreth
 	m_aiTechRankTeam = new int[MAX_TEAMS];
+	m_aiCivPeriod = new char[NUM_CIVS];
 
 	m_paiUnitCreatedCount = NULL;
 	m_paiUnitClassCreatedCount = NULL;
@@ -93,6 +94,7 @@ CvGame::~CvGame()
 
 	// Leoreth
 	SAFE_DELETE_ARRAY(m_aiTechRankTeam);
+	SAFE_DELETE_ARRAY(m_aiCivPeriod);
 }
 
 
@@ -313,7 +315,7 @@ void CvGame::setInitialItems()
 {
 	PROFILE_FUNC();
 
-	initFreeState();
+	//initFreeState();
 	assignStartingPlots();
 	normalizeStartingPlots();
 	initFreeUnits();
@@ -557,6 +559,12 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		m_aiTeamScore[iI] = 0;
 
 		m_aiTechRankTeam[iI] = 0; // Leoreth
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_CIVS; iI++)
+	{
+		m_aiCivPeriod[iI] = NO_PERIOD;
 	}
 
 	if (!bConstructorCall)
@@ -8661,7 +8669,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	reset(NO_HANDICAP);
 
-	uint uiFlag=0; // Leoreth: 2 for city screen owner, 3 for notification levels
+	uint uiFlag=0; // Leoreth: 2 for city screen owner, 3 for notification levels, 4 for civ periods
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	if (uiFlag < 1)
@@ -8742,6 +8750,10 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_TEAMS, m_aiRankTeam);
 	pStream->Read(MAX_TEAMS, m_aiTeamRank);
 	pStream->Read(MAX_TEAMS, m_aiTeamScore);
+	if (uiFlag >= 4)
+	{
+		pStream->Read(NUM_CIVS, m_aiCivPeriod);
+	}
 
 	// Leoreth
 	pStream->Read(MAX_TEAMS, m_aiTechRankTeam);
@@ -8908,7 +8920,7 @@ void CvGame::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=3; // Leoreth: 2 for city screen owner, 3 for notification levels
+	uint uiFlag=4; // Leoreth: 2 for city screen owner, 3 for notification levels, 4 for civ periods
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iElapsedGameTurns);
@@ -8968,6 +8980,7 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_TEAMS, m_aiRankTeam);
 	pStream->Write(MAX_TEAMS, m_aiTeamRank);
 	pStream->Write(MAX_TEAMS, m_aiTeamScore);
+	pStream->Write(NUM_CIVS, m_aiCivPeriod);
 
 	// Leoreth
 	pStream->Write(MAX_TEAMS, m_aiTechRankTeam);
@@ -9865,7 +9878,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 					else if (GC.getVoteInfo(kData.eVote).isReleaseCivilization())
 					{
 						PlayerTypes ePlayer;
-						PlayerTypes eOtherPlayer;
+						CivilizationTypes eReleasableCivilization;
 
 						for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 						{
@@ -9874,19 +9887,19 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							if (GET_PLAYER(ePlayer).getTeam() == getSecretaryGeneral(eVoteSource)) continue;
 							if (!GET_PLAYER(ePlayer).isAlive()) continue;
 
-							for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+							for (int iJ = 0; iJ < NUM_CIVS; iJ++)
 							{
-								eOtherPlayer = (PlayerTypes)iJ;
+								eReleasableCivilization = (CivilizationTypes)iJ;
 
-								if (GET_PLAYER(eOtherPlayer).isAlive()) continue;
-								if (!GET_PLAYER(eOtherPlayer).canRespawn()) continue;
+								if (isCivAlive(eReleasableCivilization)) continue;
+								if (!canRespawn(eReleasableCivilization)) continue;
 
 								int iCityLoop;
 								int iNumCities = 0;
 
 								for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
 								{
-									if (pLoopCity->plot()->isCore(eOtherPlayer) && !pLoopCity->plot()->isCore(ePlayer) && !pLoopCity->isCapital())
+									if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
 									{
 										++iNumCities;
 									}
@@ -9895,8 +9908,8 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 								if (iNumCities > 1)
 								{
 									kData.ePlayer = ePlayer;
-									kData.eOtherPlayer = eOtherPlayer;
-									kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_RELEASE", GET_PLAYER(eOtherPlayer).getCivilizationShortDescription(), GET_PLAYER(ePlayer).getCivilizationAdjective(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+									kData.eOtherPlayer = (PlayerTypes)eReleasableCivilization;
+									kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_RELEASE", GC.getCivilizationInfo(eReleasableCivilization), GET_PLAYER(ePlayer).getCivilizationAdjective(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
 									pData->aVoteOptions.push_back(kData);
 								}
 							}
@@ -10593,4 +10606,19 @@ void CvGame::setEventEffectNotifications(NotificationLevels eNotificationLevel)
 bool CvGame::isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const
 {
 	return isNotification(eNotifiedPlayer, eCausingPlayer, getEventEffectNotifications());
+}
+
+PeriodTypes CvGame::getPeriod(CivilizationTypes eCivilization) const
+{
+	if (eCivilization < NUM_CIVS)
+	{
+		return (PeriodTypes)m_aiCivPeriod[eCivilization];
+	}
+
+	return NO_PERIOD;
+}
+
+void CvGame::setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod)
+{
+	m_aiCivPeriod[eCivilization] = ePeriod;
 }

@@ -147,8 +147,7 @@ def onLoadGame():
 	return 0
 
 
-# TODO: reenable
-#@handler("GameStart")
+@handler("GameStart")
 def onGameStart():
 	'Called at the start of the game'
 	#Rhye - dawn of map must appear in late starts too

@@ -650,7 +650,7 @@ def onCityRazed(city):
 def onCityBuilt(city):
 	checkName(city.getOwner())
 	
-@handler("periodChange")
+@handler("playerPeriodChange")
 def onPeriodChange(iPlayer, iPeriod):
 	iCiv = civ(iPlayer)
 	

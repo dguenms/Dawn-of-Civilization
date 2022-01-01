@@ -28,11 +28,10 @@ def updateParameters(iPlayer):
 	pPlayer.setCompactnessModifier(getCompactnessModifier(iPlayer))
 	pPlayer.setTargetDistanceValueModifier(getTargetDistanceValueModifier(iPlayer))
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
-
-#@handler("GameStart")
-def init():
-	for iPlayer in players.all().barbarian():
-		updateParameters(iPlayer)
+		
+@handler("activate")
+def onActivate(iPlayer):
+	updateParameters(iPlayer)
 
 @handler("techAcquired")
 def onTechAcquired(iTech, iTeam, iPlayer):

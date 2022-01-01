@@ -406,6 +406,10 @@ char* chars(CvWString string);
 
 void warn(CvWString message);
 
+bool canRespawn(CivilizationTypes eCivilization);
+bool canEverRespawn(CivilizationTypes eCivilization);
+bool isCivAlive(CivilizationTypes eCivilization);
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);

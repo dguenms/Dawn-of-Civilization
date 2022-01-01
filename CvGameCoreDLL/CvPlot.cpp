@@ -39,10 +39,10 @@ CvPlot::CvPlot()
 {
 	m_aiYield = new short[NUM_YIELD_TYPES];
 
-	m_abCore = new bool[NUM_MAJOR_PLAYERS];
-	m_aiSettlerValue = new int[NUM_MAJOR_PLAYERS];
-	m_aiWarValue = new int[NUM_MAJOR_PLAYERS];
-	m_aiReligionSpreadFactor = new int[NUM_RELIGIONS];
+	m_abCore = new bool[NUM_CIVS];
+	m_aiSettlerValue = new short[NUM_CIVS];
+	m_aiWarValue = new short[NUM_CIVS];
+	m_aiReligionSpreadFactor = new short[NUM_RELIGIONS];
 
 	m_aiReligionInfluence = new int[NUM_RELIGIONS];
 
@@ -249,7 +249,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 		m_aiYield[iI] = 0;
 	}
 
-	for (iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
+	for (iI = 0; iI < NUM_CIVS; ++iI)
 	{
 		m_abCore[iI] = false;
 		m_aiSettlerValue[iI] = 0;
@@ -7185,6 +7185,7 @@ int CvPlot::getActualCulture(PlayerTypes eIndex) const
 }
 
 
+// TODO: make plot culture civilization based
 // Leoreth
 int CvPlot::getCulture(PlayerTypes ePlayer) const
 {
@@ -9671,7 +9672,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// Init saved data
 	reset();
 
-	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion
+	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion, 4 for core, settler, war maps changed to civ and short
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iX);
@@ -9893,9 +9894,18 @@ void CvPlot::read(FDataStreamBase* pStream)
 	}
 
 	// Leoreth
-	pStream->Read(NUM_MAJOR_PLAYERS, m_abCore);
-	pStream->Read(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
-	pStream->Read(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	if (uiFlag >= 4)
+	{
+		pStream->Read(NUM_CIVS, m_abCore);
+		pStream->Read(NUM_CIVS, m_aiSettlerValue);
+		pStream->Read(NUM_CIVS, m_aiWarValue);
+	}
+	else 
+	{
+		pStream->Read(NUM_MAJOR_PLAYERS, m_abCore);
+		pStream->Read(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
+		pStream->Read(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	}
 	pStream->Read(NUM_RELIGIONS, m_aiReligionSpreadFactor);
 	pStream->Read(NUM_RELIGIONS, m_aiReligionInfluence);
 	pStream->Read(&m_iRegionID);
@@ -9940,7 +9950,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 {
 	uint iI;
 
-	uint uiFlag=3; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion
+	uint uiFlag=4; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion, 4 for core, settler, war maps with civ and short
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iX);
@@ -10170,9 +10180,9 @@ void CvPlot::write(FDataStreamBase* pStream)
 	}
 
 	// Leoreth
-	pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
-	pStream->Write(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
-	pStream->Write(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	pStream->Write(NUM_CIVS, m_abCore);
+	pStream->Write(NUM_CIVS, m_aiSettlerValue);
+	pStream->Write(NUM_CIVS, m_aiWarValue);
 	pStream->Write(NUM_RELIGIONS, m_aiReligionSpreadFactor);
 	pStream->Write(NUM_RELIGIONS, m_aiReligionInfluence);
 	pStream->Write(m_iRegionID);
@@ -11237,12 +11247,12 @@ void CvPlot::invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange)
 }
 // Sanguo Mod Performance, end
 
-int CvPlot::getRegionID() const
+short CvPlot::getRegionID() const
 {
 	return m_iRegionID;
 }
 
-void CvPlot::setRegionID(int iNewValue)
+void CvPlot::setRegionID(short iNewValue)
 {
 	m_iRegionID = iNewValue;
 }
@@ -11257,50 +11267,111 @@ CvWString CvPlot::getRegionName() const
 }
 
 
+bool CvPlot::isCore(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_CIVS, "eCivilization is expected to be a playable civilization");
+
+	return m_abCore[eCivilization];
+}
+
+
 bool CvPlot::isCore(PlayerTypes ePlayer) const
 {
-	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
-	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
 
-	if (ePlayer >= NUM_MAJOR_PLAYERS) return false;
-	return m_abCore[ePlayer];
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	{
+		return isCore(eCivilization);
+	}
+
+	return false;
 }
 
 
-void CvPlot::setCore(PlayerTypes ePlayer, bool bNewValue)
+bool CvPlot::isCore() const
 {
-	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
-	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
+	if (isOwned())
+	{
+		return isCore(getOwnerINLINE());
+	}
 
-	m_abCore[ePlayer] = bNewValue;
+	return false;
 }
 
-// Leoreth
-int CvPlot::getSettlerValue(PlayerTypes ePlayer) const
+
+void CvPlot::setCore(CivilizationTypes eCivilization, bool bNewValue)
 {
-	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
-	return m_aiSettlerValue[ePlayer];
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_CIVS, "eCivilization is expected to be a playable civilization");
+
+	m_abCore[eCivilization] = bNewValue;
 }
 
-void CvPlot::setSettlerValue(PlayerTypes ePlayer, int iNewValue)
+
+short CvPlot::getSettlerValue(CivilizationTypes eCivilization) const
 {
-	m_aiSettlerValue[ePlayer] = iNewValue;
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_CIVS, "eCivilization is expected to be a playable civilization");
+
+	return m_aiSettlerValue[eCivilization];
 }
 
 
-int CvPlot::getWarValue(PlayerTypes ePlayer) const
+short CvPlot::getSettlerValue(PlayerTypes ePlayer) const
 {
-	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
-	return m_aiWarValue[ePlayer];
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds");
+
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	{
+		return getSettlerValue(eCivilization);
+	}
+
+	return 0;
 }
 
-void CvPlot::setWarValue(PlayerTypes ePlayer, int iNewValue)
+
+void CvPlot::setSettlerValue(CivilizationTypes eCivilization, short iNewValue)
 {
-	m_aiWarValue[ePlayer] = iNewValue;
+	m_aiSettlerValue[eCivilization] = iNewValue;
 }
 
 
-int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
+short CvPlot::getWarValue(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_CIVS, "eCivilization is expected to be a playable civilization");
+
+	return m_aiWarValue[eCivilization];
+}
+
+
+short CvPlot::getWarValue(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
+	FAssertMsg(ePlayer < NUM_CIVS, "ePlayer is expected to be within maximum bounds");
+
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	{
+		return getWarValue(eCivilization);
+	}
+
+	return 0;
+}
+
+
+void CvPlot::setWarValue(CivilizationTypes eCivilization, short iNewValue)
+{
+	m_aiWarValue[eCivilization] = iNewValue;
+}
+
+
+short CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 {
 	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
 
@@ -11345,7 +11416,7 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 	return iSpreadFactor;
 }
 
-void CvPlot::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
+void CvPlot::setSpreadFactor(ReligionTypes eReligion, short iNewValue)
 {
 	m_aiReligionSpreadFactor[eReligion] = iNewValue;
 }

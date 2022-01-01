@@ -9071,7 +9071,7 @@ int CvCity::getFreeSpecialist() const
     }
 
 	//Leoreth: handle free specialists for core here for simplicity
-	if (plot()->isCore(getOwnerINLINE()))
+	if (plot()->isCore())
 	{
 		iCoreSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
 	}
@@ -14986,7 +14986,10 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 											continue;
 										}
 
-										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI)) bCanSpreadCore = false;
+										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI))
+										{
+											bCanSpreadCore = false;
+										}
 
 										if (pLoopPlot->isCore((PlayerTypes)iI) && plot()->isCore((PlayerTypes)iI))
 										{
@@ -14999,7 +15002,12 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 								if (bCanSpreadCore && !bBirthProtected)
 								{
 									int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
-									if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == ITALY) iChange /= 2;
+
+									if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == ITALY)
+									{
+										iChange /= 2;
+									}
+
 									pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
 								}
 							}
@@ -17811,10 +17819,14 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					int iValue = std::max(100, iCultureTimes100) / std::max(1, iCapitalDistance);
 
 					// Leoreth: better value for core and historical tiles
-					if (plot()->isCore(getOwner()))
+					if (plot()->isCore())
+					{
 						iValue *= 3;
+					}
 					else if (plot()->getSettlerValue(getOwner()) > 90)
+					{
 						iValue *= 2;
+					}
 
 					if (iValue > iBestValue)
 					{
@@ -19491,9 +19503,19 @@ int CvCity::calculateBaseGreatPeopleRate() const
 	return iRate;
 }
 
+bool CvCity::isCore(CivilizationTypes eCivilization) const
+{
+	return plot()->isCore(eCivilization);
+}
+
 bool CvCity::isCore(PlayerTypes ePlayer) const
 {
 	return plot()->isCore(ePlayer);
+}
+
+bool CvCity::isCore() const
+{
+	return plot()->isCore();
 }
 
 bool CvCity::rebuild()

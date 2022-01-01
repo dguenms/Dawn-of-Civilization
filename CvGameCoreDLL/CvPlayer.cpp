@@ -598,8 +598,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iFreeTechsOnDiscovery = 0;
 	m_eFreeTechChosen = NO_TECH;
 
-	m_ePeriod = NO_PERIOD;
-
 	m_eID = eID;
 	updateTeamType();
 	updateHuman();
@@ -18694,7 +18692,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eLastStateReligion);
 	pStream->Read((int*)&m_eParent);
 	pStream->Read((int*)&m_eFreeTechChosen); // Leoreth
-	if (uiFlag >= 7) pStream->Read((int*)&m_ePeriod); // Leoreth
 	updateTeamType(); //m_eTeamType not saved
 	updateHuman();
 
@@ -19247,7 +19244,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_eLastStateReligion);
 	pStream->Write(m_eParent);
 	pStream->Write(m_eFreeTechChosen); // Leoreth
-	pStream->Write(m_ePeriod); // Leoreth
 	//m_eTeamType not saved
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
@@ -22357,19 +22353,19 @@ bool CvPlayer::getSplitEmpireLeaders(CivLeaderArray& aLeaders) const
 	return true;
 }
 
-bool CvPlayer::splitEmpire(int iPlayerID)
+bool CvPlayer::splitEmpire(int iCivilization)
 {
 	PROFILE_FUNC();
 
-	PlayerTypes eNewPlayer = (PlayerTypes)iPlayerID;
+	CivilizationTypes eNewCivilization = (CivilizationTypes)iCivilization;
 
-	if (eNewPlayer == NO_PLAYER || eNewPlayer == getID())
+	if (eNewCivilization == NO_CIVILIZATION || eNewCivilization == getCivilizationType())
 	{
 		return false;
 	}
 
 	// Leoreth: report to Python and let it handle it
-	CvEventReporter::getInstance().releasedPlayer(getID(), eNewPlayer);
+	CvEventReporter::getInstance().releasedCivilization(getID(), eNewCivilization);
 
 	return true;
 }
@@ -24878,25 +24874,12 @@ void CvPlayer::setStabilityParameter(ParameterTypes eParameter, int iNewValue)
 
 bool CvPlayer::canRespawn() const
 {
-	long lResult = -1;
-	CyArgsList argsList;
-	argsList.add(getID());
-
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
-
-	return (lResult == 1);
+	return ::canRespawn(getCivilizationType());
 }
 
 bool CvPlayer::canEverRespawn() const
 {
-	long lResult = -1;
-	CyArgsList argsList;
-	argsList.add(getID());
-	argsList.add(GC.getGame().getGameTurn());
-
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
-
-	return (lResult == 1);
+	return ::canEverRespawn(getCivilizationType());
 }
 
 // Leoreth
@@ -25792,14 +25775,9 @@ int CvPlayer::getUnhappinessDecayModifier() const
 	return m_iUnhappinessDecayModifier;
 }
 
-void CvPlayer::setPeriod(PeriodTypes ePeriod)
-{
-	m_ePeriod = ePeriod;
-}
-
 PeriodTypes CvPlayer::getPeriod() const
 {
-	return m_ePeriod;
+	return GC.getGameINLINE().getPeriod(getCivilizationType());
 }
 
 void CvPlayer::setBirthProtected(bool bNewValue)

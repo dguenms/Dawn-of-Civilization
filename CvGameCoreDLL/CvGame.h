@@ -600,6 +600,9 @@ public:
 	void setYResolution(int iNewValue);
 	void changeYResolution(int iChange);
 
+	PeriodTypes getPeriod(CivilizationTypes eCivilization) const;
+	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -662,6 +665,7 @@ protected:
 
 	// Leoreth
 	int* m_aiTechRankTeam;
+	char* m_aiCivPeriod;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;

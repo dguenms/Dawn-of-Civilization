@@ -1345,3 +1345,13 @@ void CyGame::setEventEffectNotifications(int iNotificationLevel)
 {
 	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
 }
+
+int CyGame::getPeriod(int iCivilization)
+{
+	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
+}
+
+void CyGame::setPeriod(int iCivilization, int iPeriod)
+{
+	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
+}

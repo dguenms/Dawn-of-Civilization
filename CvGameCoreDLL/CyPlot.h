@@ -266,14 +266,18 @@ public:
 	int getRegionID();
 	void setRegionID(int iNewValue);
 
-	bool isCore(int ePlayer);
-	void setCore(int ePlayer, bool bNewValue);
+	bool isCore(int iCivilization);
+	bool isPlayerCore(int iPlayer);
+	bool isOwnerCore();
+	void setCore(int iCivilization, bool bNewValue);
 
-	int getSettlerValue(int ePlayer);
-	void setSettlerValue(int ePlayer, int iNewValue);
+	int getSettlerValue(int iCivilization);
+	int getPlayerSettlerValue(int iPlayer);
+	void setSettlerValue(int iCivilization, int iNewValue);
 
-	int getWarValue(int ePlayer);
-	void setWarValue(int ePlayer, int iNewValue);
+	int getWarValue(int iCivilization);
+	int getPlayerWarValue(int iPlayer);
+	void setWarValue(int iCivilization, int iNewValue);
 
 	int getSpreadFactor(int eReligion);
 	void setSpreadFactor(int eReligion, int iNewValue);

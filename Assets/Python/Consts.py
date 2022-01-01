@@ -10,6 +10,8 @@ gc = CyGlobalContext()
 iWorldX = 124
 iWorldY = 68
 
+iNumPlayers = gc.getMAX_PLAYERS()
+
 # civilizations, not players
 iNumCivs = 57
 (iAmerica, iArabia, iArgentina, iAztecs, iBabylonia, iBrazil, iByzantium, iCanada, iCarthage, iCelts, 

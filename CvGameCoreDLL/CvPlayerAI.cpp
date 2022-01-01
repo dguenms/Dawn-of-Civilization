@@ -7874,11 +7874,13 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 
 	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500) 
+	{
+		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500)
 		{
 			iValue *= 2;
 			iValue /= 3;
 		}
+	}
 	//Rhye - end
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -10425,7 +10427,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		CvCity* pLoopCity;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
-			if (pLoopCity->plot()->isCore(getID()))
+			if (pLoopCity->plot()->isCore())
 			{
 				iValue += kCivic.getCoreFreeSpecialist() * 12;
 			}

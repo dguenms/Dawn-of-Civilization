@@ -3729,15 +3729,15 @@ class TestNullTeam(TestCase):
 class TestPeriod(TestCase):
 
 	def test_period(self):
-		gc.getPlayer(0).setPeriod(123)	
+		game.setPeriod(iEgypt, 123)
 		iPeriod = period(iEgypt)
 		
 		try:
 			self.assertEqual(iPeriod, 123)
 		finally:
-			gc.getPlayer(0).setPeriod(-1)
+			game.setPeriod(iEgypt, -1)
 	
-	def test_period_no_player(self):
+	def test_period_not_set(self):
 		iPeriod = period(iIran)
 		self.assertEqual(iPeriod, -1)
 

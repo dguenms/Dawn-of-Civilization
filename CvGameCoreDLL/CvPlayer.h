@@ -1124,7 +1124,7 @@ public:
 	int getUnitExtraCost(UnitClassTypes eUnitClass) const;
 	void setUnitExtraCost(UnitClassTypes eUnitClass, int iCost);
 
-	DllExport bool splitEmpire(int iPlayerID);
+	DllExport bool splitEmpire(int iCivilization);
 	bool canSplitEmpire() const;
 	bool canSplitArea(int iAreaId) const;
 	PlayerTypes getSplitEmpirePlayer(int iAreaId) const;
@@ -1369,7 +1369,6 @@ public:
 	// Leoreth
 	void verifyCommerceRates(CommerceTypes eCommerce) const;
 
-	void setPeriod(PeriodTypes ePeriod);
 	PeriodTypes getPeriod() const;
 
 	void setBirthProtected(bool bNewValue);
@@ -1551,8 +1550,6 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
-
-	PeriodTypes m_ePeriod; // Leoreth
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

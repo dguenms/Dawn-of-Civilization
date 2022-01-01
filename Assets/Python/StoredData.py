@@ -1,7 +1,37 @@
 from CvPythonExtensions import *
 from Consts import *
+from Types import *
 
 gc = CyGlobalContext()
+
+
+class CivList(list):
+
+	def __getitem__(self, index):
+		if not isinstance(index, Civ):
+			index = Civ(gc.getPlayer(index).getCivilizationType())
+		return list.__getitem__(self, index)
+
+
+class PlayerList(list):
+
+	def __getitem__(self, index):
+		if isinstance(index, Civ):
+			index = data.dSlots.get(index)
+		return list.__getitem__(self, index)
+
+
+class CivData:
+
+	def __init__(self, iCiv):
+		self.iCiv = iCiv
+		
+		self.setup()
+		
+	def setup(self):
+	
+		self.bSpawned = False
+		self.iLastTurnAlive = 0
 
 
 class PlayerData:
@@ -21,7 +51,6 @@ class PlayerData:
 	
 		# Rise
 		
-		self.bSpawned = False
 		self.lPreservedWonders = []
 		
 		# DynamicCivs
@@ -58,8 +87,6 @@ class PlayerData:
 		self.religiousGoals = []
 		
 		# Stability
-		
-		self.iLastTurnAlive = 0
 		
 		self.resetStability()
 		
@@ -143,15 +170,14 @@ class GameData:
 			player.update(data)
 
 	def setup(self):
-		self.players = [PlayerData(i) for i in range(gc.getMAX_PLAYERS())]
+		self.civs = CivList(CivData(i) for i in range(iNumCivs))
+		self.players = PlayerList(PlayerData(i) for i in range(gc.getMAX_PLAYERS()))
 		
 		# Slots
 		
 		# set the default values for now, once slots become untied this should be set and kept updated on spawn
 		# already make it dynamic because rebirths will change things
 		self.dSlots = {}
-		
-		self.lCivs = [gc.getPlayer(p).getCivilizationType() for p in range(gc.getMAX_PLAYERS())]
 		
 		# Rise and Fall
 		

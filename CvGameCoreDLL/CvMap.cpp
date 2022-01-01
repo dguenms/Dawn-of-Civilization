@@ -1115,6 +1115,12 @@ CustomMapOptionTypes CvMap::getCustomMapOption(int iOption)
 }
 
 
+ScenarioTypes CvMap::getScenario()
+{
+	return (ScenarioTypes)getCustomMapOption(0);
+}
+
+
 int CvMap::getNumBonuses(BonusTypes eIndex)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -1370,7 +1376,12 @@ void CvMap::rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, in
 	GC.getInitCore().setWorldSize(eWorldSize);
 	GC.getInitCore().setClimate(eClimate);
 	GC.getInitCore().setSeaLevel(eSeaLevel);
-	GC.getInitCore().setCustomMapOptions(iNumCustomMapOptions, aeCustomMapOptions);
+
+	// Leoreth: don't unnecessarily override map options
+	if (aeCustomMapOptions != NULL)
+	{
+		GC.getInitCore().setCustomMapOptions(iNumCustomMapOptions, aeCustomMapOptions);
+	}
 
 	// Init map
 	init(&initData);

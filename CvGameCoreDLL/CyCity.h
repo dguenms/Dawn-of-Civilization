@@ -589,7 +589,9 @@ public:
 	int getModifiedCultureRateTimes100();
 	int getModifiedCultureRate();
 	int getNumActiveWorldWonders();
-	bool isCore(int iPlayer);
+	bool isCore(int iCivilization);
+	bool isPlayerCore(int iPlayer);
+	bool isOwnerCore();
 	int getActualCulture(int iPlayer);
 	int getPopulationLoss();
 	int getArea();

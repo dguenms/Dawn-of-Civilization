@@ -2509,16 +2509,6 @@ int CyPlayer::countRequiredSlaves()
 	return m_pPlayer ? m_pPlayer->countRequiredSlaves() : -1;
 }
 
-bool CyPlayer::canRespawn()
-{
-	return m_pPlayer ? m_pPlayer->canRespawn() : false;
-}
-
-bool CyPlayer::canEverRespawn()
-{
-	return m_pPlayer ? m_pPlayer->canEverRespawn() : false;
-}
-
 void CyPlayer::setEspionageExperience(int iNewValue)
 {
 	if (m_pPlayer)
@@ -2716,11 +2706,6 @@ void CyPlayer::setAlive(bool bNewValue)
 	{
 		m_pPlayer->setAlive(bNewValue);
 	}
-}
-
-void CyPlayer::setPeriod(int iPeriod)
-{
-	if (m_pPlayer) m_pPlayer->setPeriod((PeriodTypes)iPeriod);
 }
 
 int CyPlayer::getPeriod()

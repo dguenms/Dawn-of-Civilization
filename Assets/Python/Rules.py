@@ -253,7 +253,7 @@ def updateLastTurnAlive(iPlayer, bAlive):
 		return
 
 	if not bAlive and not (player(iPlayer).isHuman() and autoplay()):
-		data.players[iPlayer].iLastTurnAlive = game.getGameTurn()
+		data.civs[iPlayer].iLastTurnAlive = game.getGameTurn()
 
 
 ### IMPLEMENTATIONS ###

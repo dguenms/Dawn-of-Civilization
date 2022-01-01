@@ -325,6 +325,9 @@ public:
 	void setReligionSpreadNotifications(int iNotificationLevel);
 	void setEventEffectNotifications(int iNotificationLevel);
 
+	int getPeriod(int iCivilization);
+	void setPeriod(int iCivilization, int iPeriod);
+
 protected:
 	CvGame* m_pGame;
 };

@@ -102,9 +102,9 @@ def getForeignCorePlots(iPlayer, iReborn):
 	iSpawnDate = dBirth[iPlayer]
 	if iReborn == 1: iSpawnDate = dRebirth[iPlayer]
 	
-	for iLoopPlayer in players.major().without(iPlayer):
-		if canEverRespawn(iLoopPlayer, year(iSpawnDate)) or dBirth[iLoopPlayer] > iSpawnDate:
-			for plot in plots.core(iLoopPlayer):
+	for iLoopCiv in civs.major().without(iPlayer):
+		if canEverRespawn(iLoopCiv, year(iSpawnDate)) or dBirth[iLoopCiv] > iSpawnDate:
+			for plot in plots.core(iLoopCiv):
 				if not location(plot) in lForeignCorePlots:
 					lForeignCorePlots.append(location(plot))
 						

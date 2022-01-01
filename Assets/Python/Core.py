@@ -555,13 +555,7 @@ def scenarioStartYear():
 
 
 def scenario():
-	"""Cannot use civ constants because slots may not be set up yet."""
-
-	if player(0).isPlayable(): # Egypt
-		return i3000BC
-	if player(18).isPlayable(): # Arabia
-		return i600AD
-	return i1700AD
+	return map.getScenario()
 
 
 def unittype(identifier):
@@ -581,23 +575,33 @@ def base_building(iBuilding):
 def base_unit(iUnit):
 	return gc.getUnitClassInfo(gc.getUnitInfo(unittype(iUnit)).getUnitClassType()).getDefaultUnitIndex()
 	
+
+# TODO: test identifier as player and civ
+def unique_building_from_class(identifier, iBuildingClass):
+	if not isinstance(identifier, Civ):
+		identifier = civ(identifier)
+	return gc.getCivilizationInfo(identifier).getCivilizationBuildings(iBuildingClass)
 	
-def unique_building_from_class(iPlayer, iBuildingClass):
-	return gc.getCivilizationInfo(player(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
-	
-	
-def unique_building(iPlayer, iBuilding):
-	if not player(iPlayer): return base_building(iBuilding)
-	return unique_building_from_class(iPlayer, gc.getBuildingInfo(iBuilding).getBuildingClassType())
+
+# TODO: test identifier as player and civ
+def unique_building(identifier, iBuilding):
+	if not isinstance(identifier, Civ) and not player(iPlayer): 
+		return base_building(iBuilding)
+	return unique_building_from_class(identifier, gc.getBuildingInfo(iBuilding).getBuildingClassType())
 
 
-def unique_unit_from_class(iPlayer, iUnitClass):
-	return gc.getCivilizationInfo(civ(iPlayer)).getCivilizationUnits(iUnitClass)
+# TODO: test identifier as player and civ
+def unique_unit_from_class(identifier, iUnitClass):
+	if not isinstance(identifier, Civ):
+		identifier = civ(identifier)
+	return gc.getCivilizationInfo(identifier).getCivilizationUnits(iUnitClass)
 
 
-def unique_unit(iPlayer, iUnit):
-	if not player(iPlayer): return base_unit(iUnit)
-	return unique_unit_from_class(iPlayer, gc.getUnitInfo(unittype(iUnit)).getUnitClassType())
+# TODO: test identifier as player and civ
+def unique_unit(identifier, iUnit):
+	if not isinstance(identifier, Civ) and not player(iPlayer): 
+		return base_unit(iUnit)
+	return unique_unit_from_class(identifier, gc.getUnitInfo(unittype(iUnit)).getUnitClassType())
 
 
 def master(iPlayer):
@@ -1434,9 +1438,12 @@ class Plots(Locations):
 		
 	def coastal(self):
 		return self.where(lambda p: p.isCoastalLand())
-		
-	def core(self, iPlayer):
-		return self.where(lambda p: p.isCore(iPlayer))
+	
+	# TODO: test distinction between player and civ
+	def core(self, identifier):
+		if isinstance(identifier, Civ):
+			return self.where(lambda p: p.isCore(identifier))
+		return self.where(lambda p: p.isPlayerCore(identifier))
 		
 	def passable(self):
 		return self.where(lambda p: not p.isImpassable())
@@ -1703,8 +1710,11 @@ class Cities(Locations):
 	def coastal(self):
 		return self.where(lambda city: city.isCoastal(10))
 
-	def core(self, iPlayer):
-		return self.where(lambda city: plot(city).isCore(iPlayer))
+	# TODO: test distinction player and civ
+	def core(self, identifier):
+		if isinstance(identifier, Civ):
+			return self.where(lambda city: city.isCore(identifier))
+		return self.where(lambda city: city.isPlayerCore(identifier))
 	
 	def plots(self):
 		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
@@ -1807,7 +1817,7 @@ class Units(EntityCollection):
 class PlayerFactory:
 
 	def all(self):
-		return Players(range(gc.getMAX_PLAYERS()))
+		return Players(range(gc.getMAX_PLAYERS())).alive()
 		
 	def major(self):
 		return self.all().where(lambda p: not is_minor(p))
@@ -1956,7 +1966,26 @@ class Players(EntityCollection):
 	
 	def defensivePacts(self):
 		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p2).getTeam())))
-		
+
+
+# TODO: test
+class Civilizations(EntityCollection):
+	
+	def without(self, identifier):
+		if not isinstance(identifier, Civ):
+			identifier = civ(identifier)
+		return super(Civilizations, self).without(identifier)
+
+
+# TODO: test
+class CivFactory(object):
+
+	def all(self):
+		return Civilizations(range(iNumCivilizations))
+	
+	def major(self):
+		return Civilizations(lBirthOrder)
+
 		
 class CreatedUnits(object):
 
@@ -2386,6 +2415,7 @@ plots = PlotFactory()
 cities = CityFactory()
 units = UnitFactory()
 players = PlayerFactory()
+civs = CivFactory()
 techs = TechFactory()
 infos = Infos()
 

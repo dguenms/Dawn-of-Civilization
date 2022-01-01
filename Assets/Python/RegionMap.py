@@ -27,7 +27,7 @@ def updateReligionSpread(iReligion):
 	for plot in plots.all():
 		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, location(plot)))
 
-#@handler("GameStart")
+@handler("GameStart")
 def init():
 	updateRegionMap()
 	for iReligion in range(iNumReligions):

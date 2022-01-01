@@ -4547,13 +4547,13 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
         bool bCore = pPlot->isCore(GC.getGameINLINE().getActivePlayer());
 		bool bForeignCore = false;
 
-		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (iI = 0; iI < NUM_CIVS; iI++)
 		{
-			if (iI != GC.getGameINLINE().getActivePlayer())
+			if (iI != GC.getGameINLINE().getActiveCivilizationType())
 			{
-				if (pPlot->isCore((PlayerTypes)iI))
+				if (pPlot->isCore((CivilizationTypes)iI))
 				{
-					if (GET_PLAYER((PlayerTypes)iI).isAlive() || GET_PLAYER((PlayerTypes)iI).canEverRespawn())
+					if (isCivAlive((CivilizationTypes)iI) || canEverRespawn((CivilizationTypes)iI))
 					{
 						bForeignCore = true;
 						break;

@@ -227,9 +227,13 @@ def onCombatResult(winningUnit, losingUnit):
 	if player(winningUnit).isBarbarian() and not is_minor(losingUnit):
 		data.players[losingUnit.getOwner()].iBarbarianLosses += 1
 
-@handler("releasedPlayer")
-def onReleasedPlayer(iPlayer, iReleasedPlayer):
-	releasedCities = cities.owner(iPlayer).core(iReleasedPlayer).where(lambda city: not city.plot().isCore(iPlayer) and not city.isCapital())
+@handler("releasedCivilization")
+def onReleasedPlayer(iPlayer, iReleasedCivilization):
+	iReleasedPlayer = findSlot(iReleasedCivilization)
+	if iReleasedPlayer == -1:
+		return
+	
+	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
 
 	doResurrection(iReleasedPlayer, releasedCities, bAskFlip=False, bDisplay=True)
 	
@@ -465,20 +469,21 @@ def canBeRazed(city):
 			return True
 	
 	return False
-	
+
+# TODO: should be civ based
 def getCityClaim(city):
 	iOwner = city.getOwner()
 	possibleClaims = players.major().alive().without(iOwner).before_fall()
 	
 	# claim based on core territory
-	coreClaims = possibleClaims.where(lambda p: city.isCore(p))
+	coreClaims = possibleClaims.where(CyCity.isPlayerCore)
 	if coreClaims:
-		return coreClaims.maximum(lambda p: plot(city).getSettlerValue(p))
+		return coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p))
 	
 	# claim based on original owner, unless lost a long time ago
 	iOriginalOwner = city.getOriginalOwner()
 	if iOriginalOwner in possibleClaims.ai():
-		if plot(city).getSettlerValue(iOriginalOwner) >= 90:
+		if plot(city).getPlayerSettlerValue(iOriginalOwner) >= 90:
 			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
 				return iOriginalOwner
 	
@@ -499,7 +504,7 @@ def getCityClaim(city):
 	# claim for dead civilisation that can be resurrected
 	resurrections = players.major().before_fall().without(iOwner).where(canRespawn).where(lambda p: city in cities.respawn(p))
 	if resurrections:
-		return resurrections.maximum(lambda p: (city.isCore(p), plot(city).getSettlerValue(p)))
+		return resurrections.maximum(lambda p: (city.isPlayerCore(p), plot(city).getPlayerSettlerValue(p)))
 	
 	return -1
 
@@ -516,7 +521,7 @@ def canResurrectFromCities(iPlayer, resurrectionCities):
 		return False
 
 	# at least one city needs to be in core for the resurrecting civ
-	if none(city.isCore(iPlayer) for city in resurrectionCities):
+	if none(city.isPlayerCore(iPlayer) for city in resurrectionCities):
 		return False
 	
 	return True
@@ -625,8 +630,8 @@ def completeCollapse(iPlayer):
 	events.fireEvent("collapse", iPlayer)
 		
 def collapseToCore(iPlayer):
-	nonCoreCities = cities.owner(iPlayer).where(lambda city: not plot(city).isCore(iPlayer))
-	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getSettlerValue(iPlayer) < 90)
+	nonCoreCities = cities.owner(iPlayer).where(lambda city: not city.isPlayerCore(iPlayer))
+	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) < 90)
 				
 	# more than half ahistorical, only secede ahistorical cities
 	if 2 * ahistoricalCities.count() > nonCoreCities.count():
@@ -682,7 +687,7 @@ def downgradeCottages(iPlayer):
 def calculateAdministration(city):
 	iPlayer = city.getOwner()
 
-	if not city.isCore(iPlayer):
+	if not city.isPlayerCore(iPlayer):
 		return 0
 	
 	iPopulation = city.getPopulation()
@@ -705,12 +710,13 @@ def getSeparatismModifier(iPlayer, city):
 	plot = city.plot()
 	civic = civics(iPlayer)
 	
-	bHistorical = plot.getSettlerValue(iPlayer) >= 90
+	bHistorical = plot.getPlayerSettlerValue(iPlayer) >= 90
 	bFall = since(year(dFall[iPlayer])) >= 0
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
 	
-	iTotalCulture = players.major().sum(lambda p: plot.isCore(p) and 2 * plot.getCulture(p) or plot.getCulture(p))
+	# TODO: culture needs to be across all civs not just players
+	iTotalCulture = players.major().sum(lambda p: plot.isPlayerCore(p) and 2 * plot.getCulture(p) or plot.getCulture(p))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
 	
 	# ahistorical tiles
@@ -752,7 +758,7 @@ def getSeparatismModifier(iPlayer, city):
 def calculateSeparatism(city):
 	iPlayer = city.getOwner()
 
-	if city.isCore(iPlayer):
+	if city.isPlayerCore(iPlayer):
 		return 0
 	
 	iModifier = getSeparatismModifier(iPlayer, city)
@@ -800,7 +806,7 @@ def calculateStability(iPlayer):
 	
 	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
-		bHistorical = city.plot().getSettlerValue(iPlayer) >= 90
+		bHistorical = city.plot().getPlayerSettlerValue(iPlayer) >= 90
 		
 		# Recent conquests
 		if bHistorical and since(city.getGameTurnAcquired()) <= turns(20):
@@ -1470,7 +1476,8 @@ def isTolerated(iPlayer, iReligion):
 def checkResurrection():
 	if every(10):
 		iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
-		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
+		# TODO: should be civ based
+		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.civs[p].iLastTurnAlive)
 		
 		# civs entirely controlled by minors will always respawn
 		for iPlayer in possibleResurrections:
@@ -1500,7 +1507,7 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 		return True
 		
 	# not if their core but not our core
-	if city.isCore(iOwner) and not city.isCore(iPlayer):
+	if city.isPlayerCore(iOwner) and not city.isPlayerCore(iPlayer):
 		return False
 		
 	iOwnerStability = stability(iOwner)
@@ -1520,7 +1527,7 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 	
 	# if shaky, only the prospective capital, colonies or core cities that are not our core flip
 	if iOwnerStability <= iStabilityShaky:
-		if bCapital or (city.isCore(iPlayer) and not city.isCore(iOwner)) or city.isColony():
+		if bCapital or (city.isPlayerCore(iPlayer) and not city.isPlayerCore(iOwner)) or city.isColony():
 			return True
 	
 	# if stable, only the prospective capital flips
@@ -1542,7 +1549,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	# if existing cities sufficient for resurrection and close to including all potential cities, include the rest as well, unless from collapse
 	if not bFromCollapse and canResurrectFromCities(iPlayer, resurrectionCities):
 		if resurrectionCities.count() + 2 >= potentialCities.count() and resurrectionCities.count() * 2 >= potentialCities.count():
-			resurrectionCities += potentialCities.where(lambda city: not city.isCore(city.getOwner()))
+			resurrectionCities += potentialCities.where(lambda city: not city.isOwnerCore())
 			resurrectionCities = resurrectionCities.unique()
 		
 	# let civs keep at least two cities
@@ -1550,7 +1557,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 		iNumCities = cities.owner(iOwner).count()
 		iNumFlippedCities = resurrectionCities.owner(iOwner).count()
 		if iNumCities - iNumFlippedCities < 2:
-			retainedCities = resurrectionCities.owner(iOwner).highest(2 - (iNumCities - iNumFlippedCities), lambda city: (city.isCapital(), city.plot().getSettlerValue(iOwner)))
+			retainedCities = resurrectionCities.owner(iOwner).highest(2 - (iNumCities - iNumFlippedCities), lambda city: (city.isCapital(), city.plot().getPlayerSettlerValue(iOwner)))
 			resurrectionCities = resurrectionCities.without(retainedCities)
 	
 	return resurrectionCities.entities()

@@ -313,6 +313,9 @@ void CyGamePythonInterface()
 		.def("setGreatPeopleNotifications", &CyGame::setGreatPeopleNotifications, "void (int iNotificationLevel)")
 		.def("setReligionSpreadNotifications", &CyGame::setReligionSpreadNotifications, "void (int iNotificationLevel)")
 		.def("setEventEffectNotifications", &CyGame::setEventEffectNotifications, "void (int iNotificationLevel)")
+
+		.def("getPeriod", &CyGame::getPeriod, "int getPeriod(int iCivilization)")
+		.def("setPeriod", &CyGame::setPeriod, "int setPeriod(int iCivilization, int iPeriod)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

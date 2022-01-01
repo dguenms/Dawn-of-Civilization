@@ -116,7 +116,7 @@ def updateMexicanCityNames(iPlayer):
 		updateCityNamesFound(iPlayer)
 
 @handler("periodChange")
-def updateVietnameseNames(iPlayer, iPeriod):
+def updateVietnameseNames(iCiv, iPeriod):
 	if iPeriod == iPeriodVietnam:
 		saigon = city(*tSaigon)
 		if saigon:
@@ -138,12 +138,9 @@ def getLanguages(iCiv):
 	return dLanguages[iCiv]
 	
 def getLocalLanguages(tPlot):
-	corePlayers = players.major().where(plot(tPlot).isCore)
-	if not corePlayers:
-		corePlayers = players.major()
-		
-	iLocalPlayer = corePlayers.maximum(plot(tPlot).getSettlerValue)
-	return getLanguages(civ(iLocalPlayer))
+	localCivs = civs.major().where(plot(tPlot).isCore) or civs.major()
+	iLocalCiv = localCivs.maximum(plot(tPlot).getSettlerValue)
+	return getLanguages(iLocalCiv)
 
 def getFoundName(iPlayer, plot):
 	return next([getMapName(iLanguage, location(plot)) for iLanguage in getLanguages(civ(iPlayer))], None)

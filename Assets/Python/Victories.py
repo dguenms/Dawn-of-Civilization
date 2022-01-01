@@ -147,13 +147,11 @@ def goldenAge(iPlayer):
 			player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
 
 
-# TODO: reenable
-#@handler("GameStart")
-def setup():
-	iPlayer = active()
-	
-	data.players[iPlayer].historicalGoals = createHistoricalGoals(iPlayer)
-	data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
+@handler("activate")
+def assignGoals(iPlayer):
+	if player(iPlayer).isHuman():
+		data.players[iPlayer].historicalGoals = createHistoricalGoals(iPlayer)
+		data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
 
 
 @handler("switch")

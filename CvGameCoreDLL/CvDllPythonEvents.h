@@ -113,7 +113,7 @@ public:
 
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
-	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
+	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 	void reportXMLLoaded(); // Leoreth

@@ -1365,15 +1365,15 @@ void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
 }
 
 // Leoreth: release dead civilizations
-void CvDllPythonEvents::reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+void CvDllPythonEvents::reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
 	if (preEvent())
 	{
 		CyArgsList eventData;
-		eventData.add("releasedPlayer");
+		eventData.add("releasedCivilization");
 
 		eventData.add((int)ePlayer);
-		eventData.add((int)eReleasedPlayer);
+		eventData.add((int)eReleasedCivilization);
 
 		postEvent(eventData);
 	}

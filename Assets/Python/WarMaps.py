@@ -1,14 +1,11 @@
 from Core import *
 from Events import handler
 
-def getMap(iPlayer):
-	iCiv = civ(iPlayer)
-	iPeriod = player(iPlayer).getPeriod()
-	
+def getMap(iCivilization, iPeriod=-1):
 	map = emptymap()
 	
-	if iCiv in dWarMaps:
-		warMap = Map(dWarMaps[iCiv])
+	if iCivilization in dWarMaps:
+		warMap = Map(dWarMaps[iCivilization])
 		map.apply(warMap)
 	
 	if iPeriod in dPeriodWarMaps:
@@ -16,30 +13,32 @@ def getMap(iPlayer):
 			map.apply(Map(periodMap), origin)
 	
 	return map
-	
-def applyMap(iPlayer):
-	map = getMap(iPlayer)
+
+def applyMap(iCivilization, iPeriod=-1):
+	map = getMap(iCivilization, iPeriod)
 	
 	for (x, y), value in map:
 		plot = plot_(x, y)
 		if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
-			plot.setWarValue(iPlayer, 0)
-		elif plot.isCore(iPlayer):
-			plot.setWarValue(iPlayer, max(8, value))
+			plot.setWarValue(iCivilization, 0)
+		elif plot.isCore(iCivilization):
+			plot.setWarValue(iCivilization, max(8, value))
 		else:
-			plot.setWarValue(iPlayer, value)
+			plot.setWarValue(iCivilization, value)
 			
-def updateMap(iPlayer):
-	applyMap(iPlayer)
-
-#@handler("GameStart")
+@handler("GameStart")
 def init():
-	for iPlayer in players.major():
-		updateMap(iPlayer)
+	for iCivilization in dWarMaps:
+		applyMap(iCivilization)
+
+# TODO: we did this on civ change, should no longer be necessary?
+@handler("activate")
+def activate(iPlayer, iCivilization):
+	applyMap(iCivilization)
 
 @handler("periodChange")
-def updateMapOnPeriodChange(iPlayer):
-	updateMap(iPlayer)
+def updateMapOnPeriodChange(iCivilization, iPeriod):
+	applyMap(iCivilization, iPeriod)
 
 
 dWarMaps = {

@@ -559,8 +559,6 @@ public:
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
 	int countRequiredSlaves();
-	bool canRespawn();
-	bool canEverRespawn();
 	void setEspionageExperience(int iNewValue);
 	int getSettlerValue(int x, int y);
 	int getWarValue(int x, int y);
@@ -597,7 +595,6 @@ public:
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
 	void setAlive(bool bNewValue);
-	void setPeriod(int iPeriod);
 	int getPeriod();
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);

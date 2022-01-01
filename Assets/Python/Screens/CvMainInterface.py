@@ -4570,7 +4570,7 @@ class CvMainInterface:
 				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 440, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
 				screen.show( "NationalWonderLimitText" )
 				
-				if pHeadSelectedCity.isCore(pHeadSelectedCity.getOwner()):
+				if pHeadSelectedCity.isOwnerCore():
 					iAdministration = calculateAdministration(pHeadSelectedCity)
 					szBuffer = localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR)))
 					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 480, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
