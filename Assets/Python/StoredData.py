@@ -179,32 +179,13 @@ class GameData:
 		# already make it dynamic because rebirths will change things
 		self.dSlots = {}
 		
-		# Rise and Fall
+		# Rise
 		
 		self.births = []
-
-		self.lTempEvents = []
-		self.lTempPlots = []
-		self.lTimedConquests = []
 		
-		self.dCivEnabled = defaultdict({}, True)
-		self.lMinorCityFounded = [False] * iNumMinorCities
-		
-		self.iPrepareCapitalPlayer = -1
 		self.dFirstContactConquerors = dict((iCiv, False) for iCiv in lBioNewWorld)
 		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
 		self.lTradingCompanyConquerorsTargets = appenddict()
-		
-		self.lCheatersCheck = [0, -1]
-		
-		self.iRespawnCiv = -1
-		self.iFlipNewPlayer = -1
-		self.iFlipNewPlayer = -1
-		self.iOttomanSpawnTurn = -1
-		
-		self.iSpawnWar = 0
-		self.iBetrayalTurns = 0
-		self.iRebelCiv = 0
 		
 		self.iBeforeObserverSlot = -1
 		
@@ -219,10 +200,6 @@ class GameData:
 		# Unique Powers
 		
 		self.iImmigrationTimer = 0
-		
-		self.lByzantineBribes = []
-		
-		self.lLatestRazeData = [-1] * 5
 		
 		# AI Wars
 		
@@ -240,7 +217,6 @@ class GameData:
 		self.iGlobalWarDefender = -1
 		
 		self.iCongressTurns = 8
-		self.iPlayersWithNationalism = 0
 		
 		self.bNoCongressOption = False
 		
@@ -250,70 +226,22 @@ class GameData:
 		
 		self.bNoPlagues = False
 		
-		# Victories
-		
-		self.bIgnoreAI = True
-		
-		self.bEthiopiaConverted = False
-		
-		self.lWonderBuilder = [-1] * (iNumBuildings - iBeginWonders)
-		self.lReligionFounder = [-1] * iNumReligions
-		self.lFirstDiscovered = [-1] * iNumTechs
-		self.lFirstEntered = [-1] * iNumEras
-		self.lFirstGreatPeople = [-1] * len(lGreatPeopleUnits)
-		self.iFirstNewWorldColony = -1
-		
-		self.iChineseGoldenAgeTurns = 0
-		self.iKoreanSinks = 0
-		self.iTamilTradeGold = 0
-		self.iColombianTradeGold = 0
-		self.iVikingGold = 0
-		self.iTurkicPillages = 0
-		self.iMoorishGold = 0
-		self.lHolyRomanShrines = [False] * 3
-		self.iEnglishSinks = 0
-		self.iMongolRazes = 0
-		self.iAztecSlaves = 0
-		self.iCongoSlaveCounter = 0
-		self.iDutchColonies = 0
-		self.iMexicanGreatGenerals = 0
-		self.iArgentineGoldenAgeTurns = 0
-		self.iCanadianPeaceDeals = 0
-		
-		self.tFirstTurkicCapital = None
-		self.tSecondTurkicCapital = None
-		
-		self.iPopeTurns = 0
-		self.iHinduGoldenAgeTurns = 0
-		self.iBuddhistPeaceTurns = 0
-		self.iBuddhistHappinessTurns = 0
-		self.iTaoistHealthTurns = 0
-		self.iVedicHappiness = 0
-		self.iTeotlSacrifices = 0
-		self.iTeotlFood = 0
-		self.bPolytheismNeverReligion = True
-		
 		# Stability
 		
 		self.iHumanStability = 0
 		self.iHumanRazePenalty = 0
 		
-		self.bCrisisImminent = False
-		
 		self.dSecedingCities = appenddict()
 
 		# Barbarians
 
+		self.lTimedConquests = []
+		self.lMinorCityFounded = [False] * iNumMinorCities
+		
 		self.period_offsets = PeriodOffsets()
 		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
-		
-	def setCivEnabled(self, iCiv, bNewValue):
-		self.dCivEnabled[iCiv] = bNewValue
-		
-	def isCivEnabled(self, iCiv):
-		return self.dCivEnabled[iCiv]
 		
 	def resetStability(self, iPlayer):
 		self.players[iPlayer].resetStability()
@@ -323,7 +251,6 @@ class GameData:
 				player.resetWarTrend(iPlayer)
 				
 	def resetHumanStability(self):
-		self.bCrisisImminent = False
 		self.iHumanStability = 0
 		self.iHumanRazePenalty = 0
 		
@@ -347,18 +274,5 @@ class GameData:
 		
 	def setStabilityLevel(self, iPlayer, iValue):
 		self.players[iPlayer].iStabilityLevel = iValue
-		
-	def getWonderBuilder(self, iWonder):
-		if iWonder < iBeginWonders: return -1
-		else: iWonder -= iBeginWonders
-		return self.lWonderBuilder[iWonder]
-		
-	def setWonderBuilder(self, iWonder, iPlayer):
-		if iWonder >= iBeginWonders:
-			iWonder -= iBeginWonders
-			self.lWonderBuilder[iWonder] = iPlayer
-		
-	def isNewWorldColonized(self):
-		return self.iFirstNewWorldColony != -1
 		
 data = GameData()

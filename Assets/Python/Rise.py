@@ -383,8 +383,6 @@ class Birth(object):
 		if iCurrentCivilization in data.dSlots:
 			del data.dSlots[iCurrentCivilization]
 		
-		self.updateParameters()
-	
 	def updateArea(self):
 		if self.isIndependence():
 			baseCities = self.iCiv == iByzantium and cities.all() or self.area.cities()
@@ -422,17 +420,6 @@ class Birth(object):
 			elif plot.getBirthProtected() == self.iPlayer:
 				plot.resetBirthProtected()
 				
-	def updateParameters(self):
-		AIParameters.updateParameters(self.iPlayer)
-		#Modifiers.updateModifiers(self.iPlayer)
-		Civilizations.initPlayerTechPreferences(self.iPlayer)
-		Civilizations.initBuildingPreferences(self.iPlayer)
-		#SettlerMaps.updateMap(self.iPlayer)
-		#WarMaps.updateMap(self.iPlayer)
-		Setup.updateCore(self.iPlayer)
-		
-		#self.player.updateMaintenance()
-	
 	def assignGold(self):
 		if self.iCiv in dStartingGold:
 			self.player.setGold(dStartingGold[self.iCiv])

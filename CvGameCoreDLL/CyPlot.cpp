@@ -886,6 +886,11 @@ int CyPlot::getCulture(int /*PlayerTypes*/ eIndex)
 	return m_pPlot ? m_pPlot->getCulture((PlayerTypes)eIndex) : -1;
 }
 
+int CyPlot::getCivCulture(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getActualCulture((CivilizationTypes)iCivilization) : -1;
+}
+
 int CyPlot::countTotalCulture()
 {
 	return m_pPlot ? m_pPlot->countTotalCulture() : -1;

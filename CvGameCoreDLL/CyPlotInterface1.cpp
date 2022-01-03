@@ -210,6 +210,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("hasYield", &CyPlot::hasYield, "bool ()")
 
 		.def("getCulture", &CyPlot::getCulture, "int (int /*PlayerTypes*/ eIndex)")
+		.def("getCivCulture", &CyPlot::getCivCulture, "int (int iCivilization)")
 		.def("countTotalCulture", &CyPlot::countTotalCulture, "int ()")
 		.def("findHighestCultureTeam", &CyPlot::findHighestCultureTeam, "int /*TeamTypes*/ ()")
 

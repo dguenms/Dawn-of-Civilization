@@ -215,6 +215,7 @@ public:
 	bool hasYield();
 
 	int getCulture(int /*PlayerTypes*/ eIndex);
+	int getCivCulture(int iCivilization); // Leoreth
 	int countTotalCulture();																							
 	int /*TeamTypes*/ findHighestCultureTeam();
 

@@ -638,6 +638,14 @@ public:
 	PlayerTypes getOriginalOwner() const;																	// Exposed to Python
 	void setOriginalOwner(PlayerTypes eNewValue);
 
+	// Leoreth
+	CivilizationTypes getPreviousCiv() const;
+	void setPreviousCiv(CivilizationTypes eNewValue);
+
+	// Leoreth
+	CivilizationTypes getOriginalCiv() const;
+	void setOriginalCiv(CivilizationTypes eNewValue);
+
 	CultureLevelTypes getCultureLevel() const;														// Exposed to Python
 	int getCultureThreshold() const;																	// Exposed to Python
 	static int getCultureThreshold(CultureLevelTypes eLevel);
@@ -804,11 +812,13 @@ public:
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;										// Exposed to Python
 	void setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
+	void setCultureTimes100(CivilizationTypes eCivilization, int iNewValue);
 	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 
 	// Leoreth
+	int getActualCultureTimes100(CivilizationTypes eCivilization) const;
 	int getActualCultureTimes100(PlayerTypes ePlayer) const;
 	int getActualCulture(PlayerTypes ePlayer) const;
 
@@ -1054,6 +1064,8 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
+	int getGameTurnCivLost(CivilizationTypes eCivilization);
+	void setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue);
 	int getGameTurnPlayerLost(PlayerTypes ePlayer);
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
 	bool isColony() const;
@@ -1174,6 +1186,9 @@ public:
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
 
 	DllExport void getBuildQueue(std::vector<std::string>& astrQueue) const;
+
+	// Leoreth: exposed for CvPlayer::acquireCity
+	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
@@ -1391,6 +1406,8 @@ protected:
 	PlayerTypes m_eOwner;
 	PlayerTypes m_ePreviousOwner;
 	PlayerTypes m_eOriginalOwner;
+	CivilizationTypes m_ePreviousCiv;
+	CivilizationTypes m_eOriginalCiv;
 	CultureLevelTypes m_eCultureLevel;
 	ArtStyleTypes m_eArtStyle; // Leoreth
 
@@ -1421,7 +1438,7 @@ protected:
 	int* m_aiNumRevolts;
 
 	// Leoreth
-	int* m_aiGameTurnPlayerLost;
+	int* m_aiGameTurnCivLost;
 	int* m_aiCulturePlots;
 	int* m_aiCultureCosts;
 
@@ -1493,7 +1510,6 @@ protected:
 
 	void doGrowth();
 	void doCulture();
-	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 	void doProduction(bool bAllowNoProduction);
 	void doDecay();
 	void doReligion();

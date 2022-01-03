@@ -58,9 +58,9 @@ CvCity::CvCity()
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
 	m_aiDomainProductionModifier = new int[NUM_DOMAIN_TYPES];
 
-	m_aiCulture = new int[MAX_PLAYERS];
+	m_aiCulture = new int[NUM_TOTAL_CIVILIZATIONS];
 	m_aiNumRevolts = new int[MAX_PLAYERS];
-	m_aiGameTurnPlayerLost = new int[MAX_PLAYERS]; // Leoreth
+	m_aiGameTurnCivLost = new int[NUM_TOTAL_CIVILIZATIONS]; // Leoreth
 
 	m_abEverOwned = new bool[MAX_PLAYERS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
@@ -158,7 +158,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifier);
 	SAFE_DELETE_ARRAY(m_aiCulture);
 	SAFE_DELETE_ARRAY(m_aiNumRevolts);
-	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiGameTurnCivLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
@@ -632,6 +632,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_eOwner = eOwner;
 	m_ePreviousOwner = NO_PLAYER;
 	m_eOriginalOwner = eOwner;
+	m_ePreviousCiv = NO_CIVILIZATION;
+	m_eOriginalCiv = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getCivilizationType() : NO_CIVILIZATION;
 	m_eCultureLevel = NO_CULTURELEVEL;
 	m_eArtStyle = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getArtStyleType() : NO_ARTSTYLE;
 
@@ -670,11 +672,15 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiDomainProductionModifier[iI] = 0;
 	}
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
 		m_aiCulture[iI] = 0;
+		m_aiGameTurnCivLost[iI] = -1; // Leoreth
+	}
+
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
 		m_aiNumRevolts[iI] = 0;
-		m_aiGameTurnPlayerLost[iI] = -1; // Leoreth
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -9597,6 +9603,30 @@ void CvCity::setOriginalOwner(PlayerTypes eNewValue)
 }
 
 
+CivilizationTypes CvCity::getPreviousCiv() const
+{
+	return m_ePreviousCiv;
+}
+
+
+void CvCity::setPreviousCiv(CivilizationTypes eNewValue)
+{
+	m_ePreviousCiv = eNewValue;
+}
+
+
+CivilizationTypes CvCity::getOriginalCiv() const
+{
+	return m_eOriginalCiv;
+}
+
+
+void CvCity::setOriginalCiv(CivilizationTypes eNewValue)
+{
+	m_eOriginalCiv = eNewValue;
+}
+
+
 TeamTypes CvCity::getTeam() const
 {
 	return GET_PLAYER(getOwnerINLINE()).getTeam();
@@ -11841,12 +11871,20 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	return getCultureTimes100(eIndex) / 100;
 }
 
+int CvCity::getActualCultureTimes100(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+
+	return m_aiCulture[eCivilization];
+}
+
 int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	return m_aiCulture[eIndex];
+	return getActualCultureTimes100(GET_PLAYER(eIndex).getCivilizationType());
 }
 
 // Leoreth
@@ -11982,6 +12020,22 @@ void CvCity::setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUp
 	setCultureTimes100(eIndex, 100 * iNewValue, bPlots, bUpdatePlotGroups);
 }
 
+void CvCity::setCultureTimes100(CivilizationTypes eCivilization, int iNewValue)
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+
+	int iOldValue = getActualCultureTimes100(eCivilization);
+
+	if (iOldValue != iNewValue)
+	{
+		m_aiCulture[eCivilization] = iNewValue;
+		FAssert(getActualCultureTimes100(eCivilization) >= 0);
+
+		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
+	}
+}
+
 void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
@@ -11992,25 +12046,16 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 
 	if (iOldValue != iNewValue)
 	{
-		m_aiCulture[eIndex] = iNewValue;
+		setCultureTimes100(GET_PLAYER(eIndex).getCivilizationType(), iNewValue);
 		FAssert(getCultureTimes100(eIndex) >= 0);
 		FAssert(getActualCultureTimes100(eIndex) >= 0);
 
 		updateCultureLevel(bUpdatePlotGroups);
 		updateCoveredPlots(bUpdatePlotGroups); // Leoreth
 
-		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
-
 		if (bPlots)
 		{
 			doPlotCulture(true, eIndex, 0);
-			
-			// tried K-Mod code
-			//doPlotCulture(true, eIndex, (iNewValue-iOldValue)/100);
-			//doPlotCultureTimes100(true, eIndex, (iNewValue-iOldValue), false);
-			// note: this function no longer applies free city culture.
-			// also, note that if a city's culture is decreased to zero, there will probably still be some residual plot culture around the city
-			// this is because the culture level on the way up will be higher than it is on the way down.
 		}
 	}
 }
@@ -15666,7 +15711,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: up to 3 (culture conversion)
+	uint uiFlag=0; // Leoreth: up to 4 (civ based culture etc)
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iID);
@@ -15796,6 +15841,11 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_ePreviousOwner);
 	pStream->Read((int*)&m_eOriginalOwner);
+	if (uiFlag >= 4)
+	{
+		pStream->Read((int*)&m_ePreviousCiv);
+		pStream->Read((int*)&m_eOriginalCiv);
+	}
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
 
@@ -15822,9 +15872,16 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
-	pStream->Read(MAX_PLAYERS, m_aiCulture);
+	if (uiFlag >= 4)
+	{
+		pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
+	}
+	else
+	{
+		pStream->Read(MAX_PLAYERS, m_aiCulture);
+	}
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
-	pStream->Read(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
 	pStream->Read(MAX_PLAYERS, m_abEverOwned);
 	pStream->Read(MAX_PLAYERS, m_abTradeRoute);
@@ -15960,7 +16017,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=3; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion
+	uint uiFlag=4; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion, 4 for civ based culture
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16098,6 +16155,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePreviousOwner);
 	pStream->Write(m_eOriginalOwner);
+	pStream->Write(m_ePreviousCiv); // Leoreth
+	pStream->Write(m_eOriginalCiv); // Leoreth
 	pStream->Write(m_eCultureLevel);
 	pStream->Write(m_eArtStyle); // Leoreth
 
@@ -16124,9 +16183,9 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
-	pStream->Write(MAX_PLAYERS, m_aiCulture);
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
 	pStream->Write(MAX_PLAYERS, m_aiNumRevolts);
-	pStream->Write(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
 	pStream->Write(MAX_PLAYERS, m_abEverOwned);
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);
@@ -18165,14 +18224,35 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 }
 
 // Leoreth
+int CvCity::getGameTurnCivLost(CivilizationTypes eCivilization)
+{
+	return m_aiGameTurnCivLost[eCivilization];
+}
+
+void CvCity::setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue)
+{
+	m_aiGameTurnCivLost[eCivilization] = iNewValue;
+}
+
+// Leoreth
 int CvCity::getGameTurnPlayerLost(PlayerTypes ePlayer)
 {
-	return m_aiGameTurnPlayerLost[ePlayer];
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return -1;
+	}
+
+	return getGameTurnCivLost(eCivilization);
 }
 
 void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 {
-	m_aiGameTurnPlayerLost[ePlayer] = iNewValue;
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION)
+	{
+		setGameTurnCivLost(eCivilization, iNewValue);
+	}
 }
 
 // Leoreth

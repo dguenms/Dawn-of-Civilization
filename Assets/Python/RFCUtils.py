@@ -1140,4 +1140,8 @@ def findSlot(iCiv):
 	if iSlot is not None:
 		return iSlot
 	
+	iSlot = next(iSlot for iSlot in range(iNumPlayers) if not player(iSlot).isAlive())
+	if iSlot is not None:
+		return iSlot
+	
 	return -1

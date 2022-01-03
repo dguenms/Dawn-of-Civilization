@@ -470,7 +470,6 @@ def canBeRazed(city):
 	
 	return False
 
-# TODO: should be civ based
 def getCityClaim(city):
 	iOwner = city.getOwner()
 	possibleClaims = players.major().alive().without(iOwner).before_fall()
@@ -485,13 +484,14 @@ def getCityClaim(city):
 	if iOriginalOwner in possibleClaims.ai():
 		if plot(city).getPlayerSettlerValue(iOriginalOwner) >= 90:
 			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
-				return iOriginalOwner
+				return civ(iOriginalOwner)
 	
 	# claim based on culture
 	iTotalCulture = plot(city).countTotalCulture()
 	cultureClaims = possibleClaims.ai().where(lambda p: iTotalCulture > 0 and 100 * plot(city).getCulture(p) / iTotalCulture >= 75)
 	if cultureClaims:
-		return cultureClaims.maximum(lambda p: plot(city).getCulture(p))
+		iCultureClaim = cultureClaims.maximum(lambda p: plot(city).getCulture(p))
+		return civ(iCultureClaim)
 	
 	# claim based on war targets: needs to be winning the war based on war success, not available to human player
 	closest = closestCity(city, same_continent=True)
@@ -499,29 +499,30 @@ def getCityClaim(city):
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
 	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:
-		return warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
+		iWarClaim = warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
+		return civ(iWarClaim)
 	
 	# claim for dead civilisation that can be resurrected
-	resurrections = players.major().before_fall().without(iOwner).where(canRespawn).where(lambda p: city in cities.respawn(p))
+	resurrections = civs.major().before_fall().without(iOwner).where(canRespawn).where(lambda c: city in cities.respawn(c))
 	if resurrections:
-		return resurrections.maximum(lambda p: (city.isPlayerCore(p), plot(city).getPlayerSettlerValue(p)))
+		return resurrections.maximum(lambda c: (city.isCore(c), plot(city).getSettlerValue(c)))
 	
 	return -1
 
 def getAdditionalResurrectionCities(iPlayer, secedingCities):
-	return [city for city in getResurrectionCities(iPlayer, True) if city not in secedingCities]
+	return [city for city in getResurrectionCities(iCiv, True) if city not in secedingCities]
 
-def canResurrectFromCities(iPlayer, resurrectionCities):
+def canResurrectFromCities(iCiv, resurrectionCities):
 	# cannot resurrect without cities
 	if not resurrectionCities:
 		return False
 
 	# only one city is not sufficient for resurrection, unless there is only one city available
-	if len(resurrectionCities) <= 1 and len(resurrectionCities) < cities.respawn(iPlayer).count():
+	if len(resurrectionCities) <= 1 and len(resurrectionCities) < cities.respawn(iCiv).count():
 		return False
 
 	# at least one city needs to be in core for the resurrecting civ
-	if none(city.isPlayerCore(iPlayer) for city in resurrectionCities):
+	if none(city.isCore(iCiv) for city in resurrectionCities):
 		return False
 	
 	return True
@@ -565,7 +566,9 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		# if sufficient for resurrection, resurrect civs
 		elif canResurrectFromCities(iClaimant, claimedCities):
 			additionalCities = getAdditionalResurrectionCities(iClaimant, secedingCities)
-			resurrectionFromCollapse(iClaimant, claimedCities + additionalCities)
+			
+			iResurrectionPlayer = findSlot(iClaimant)
+			resurrectionFromCollapse(iResurrectionPlayer, claimedCities + additionalCities)
 		
 		# else cities go to minors
 		else:
@@ -1475,27 +1478,28 @@ def isTolerated(iPlayer, iReligion):
 @handler("BeginGameTurn")
 def checkResurrection():
 	if every(10):
-		iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
-		# TODO: should be civ based
-		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.civs[p].iLastTurnAlive)
+		iNationalismModifier = min(20, 4 * game.countKnownTechNumTeams(iNationalism))
+		possibleResurrections = civs.major().where(canRespawn).sort(lambda c: data.civs[c].iLastTurnAlive)
 		
 		# civs entirely controlled by minors will always respawn
-		for iPlayer in possibleResurrections:
-			if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
-				resurrectionCities = getResurrectionCities(iPlayer)
-				if canResurrectFromCities(iPlayer, resurrectionCities):
-					doResurrection(iPlayer, resurrectionCities)
+		for iCiv in possibleResurrections:
+			if cities.respawn(iCiv).all(lambda city: is_minor(city)):
+				resurrectionCities = getResurrectionCities(iCiv)
+				if canResurrectFromCities(iCiv, resurrectionCities):
+					iResurrectionPlayer = findSlot(iCiv)
+					doResurrection(iResurrectionPlayer, resurrectionCities)
 					return
 					
 		# otherwise minimum amount of cities and random chance are required
-		for iPlayer in possibleResurrections:
-			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
-				resurrectionCities = getResurrectionCities(iPlayer)
-				if canResurrectFromCities(iPlayer, resurrectionCities):
-					doResurrection(iPlayer, resurrectionCities)
+		for iCiv in possibleResurrections:
+			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iCiv]:
+				resurrectionCities = getResurrectionCities(iCiv)
+				if canResurrectFromCities(iCiv, resurrectionCities):
+					iResurrectionPlayer = findSlot(iCiv)
+					doResurrection(iResurrectionPlayer, resurrectionCities)
 					return
 					
-def isPartOfResurrection(iPlayer, city, bOnlyOne):
+def isPartOfResurrection(iCiv, city, bOnlyOne):
 	iOwner = city.getOwner()
 	
 	# for humans: not for recently conquered cities to avoid annoying reflips
@@ -1507,17 +1511,18 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 		return True
 		
 	# not if their core but not our core
-	if city.isPlayerCore(iOwner) and not city.isPlayerCore(iPlayer):
+	if city.isPlayerCore(iOwner) and not city.isCore(iCiv):
 		return False
 		
 	iOwnerStability = stability(iOwner)
-	bCapital = city.atPlot(plots.respawnCapital(iPlayer))
+	bCapital = city.atPlot(plots.respawnCapital(iCiv))
 	
 	# flips are less likely before Nationalism
-	if data.iPlayersWithNationalism == 0:
+	if game.countKnownTechNumTeams(iNationalism) == 0:
 		iOwnerStability += 1
 	
-	# flips are more likely between AIs to make the world more dynamic
+	# flips are more likely between AIs to make the world more dynami
+	# TODO: maybe restore this during autoplay?
 	#if not player(iOwner).isHuman() and not player(iPlayer).isHuman():
 	#	iOwnerStability -= 1
 	
@@ -1527,7 +1532,7 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 	
 	# if shaky, only the prospective capital, colonies or core cities that are not our core flip
 	if iOwnerStability <= iStabilityShaky:
-		if bCapital or (city.isPlayerCore(iPlayer) and not city.isPlayerCore(iOwner)) or city.isColony():
+		if bCapital or (city.isCore(iCiv) and not city.isPlayerCore(iOwner)) or city.isColony():
 			return True
 	
 	# if stable, only the prospective capital flips
@@ -1537,17 +1542,17 @@ def isPartOfResurrection(iPlayer, city, bOnlyOne):
 			
 	return False
 						
-def getResurrectionCities(iPlayer, bFromCollapse = False):
-	potentialCities = cities.respawn(iPlayer)
-	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iPlayer, city, len(potentialCities) == 1))
+def getResurrectionCities(iCiv, bFromCollapse=False):
+	potentialCities = cities.respawn(iCiv)
+	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iCiv, city, len(potentialCities) == 1))
 
 	# if capital exists and not part of the resurrection, it fails, unless from collapse
-	capital = cities.respawnCapital(iPlayer)
+	capital = cities.respawnCapital(iCiv)
 	if not bFromCollapse and capital and capital not in resurrectionCities:
 		return []
-	
+		
 	# if existing cities sufficient for resurrection and close to including all potential cities, include the rest as well, unless from collapse
-	if not bFromCollapse and canResurrectFromCities(iPlayer, resurrectionCities):
+	if not bFromCollapse and canResurrectFromCities(iCiv, resurrectionCities):
 		if resurrectionCities.count() + 2 >= potentialCities.count() and resurrectionCities.count() * 2 >= potentialCities.count():
 			resurrectionCities += potentialCities.where(lambda city: not city.isOwnerCore())
 			resurrectionCities = resurrectionCities.unique()
@@ -1576,8 +1581,6 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	
 	pPlayer.setAlive(True)
 
-	data.iRebelCiv = iPlayer
-	
 	for iOtherPlayer in players.major().without(iPlayer):
 		teamPlayer.makePeace(iOtherPlayer)
 		

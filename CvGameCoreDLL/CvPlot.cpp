@@ -7171,17 +7171,26 @@ void CvPlot::updateYield()
 }
 
 
-int CvPlot::getActualCulture(PlayerTypes eIndex) const
+int CvPlot::getActualCulture(CivilizationTypes eCivilization) const
 {
-	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
-	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is expected to be within maximum bounds");
 
 	if (NULL == m_aiCulture)
 	{
 		return 0;
 	}
 
-	return m_aiCulture[eIndex];
+	return m_aiCulture[eCivilization];
+}
+
+
+int CvPlot::getActualCulture(PlayerTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
+
+	return getActualCulture(GET_PLAYER(eIndex).getCivilizationType());
 }
 
 
@@ -7311,33 +7320,32 @@ int CvPlot::calculateTeamCulturePercent(TeamTypes eIndex) const
 }
 
 
-void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bUpdatePlotGroups)
+void CvPlot::setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUpdate, bool bUpdatePlotGroups)
 {
 	PROFILE_FUNC();
 
 	CvCity* pCity;
 
-	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
-	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is expected to be within maximum bounds");
 
-	int iOldValue = getActualCulture(eIndex);
+	int iOldValue = getActualCulture(eCivilization);
 
 	if (iOldValue != iNewValue)
 	{
-		if(NULL == m_aiCulture)
+		if (NULL == m_aiCulture)
 		{
-			m_aiCulture = new int[MAX_PLAYERS];
-			for (int iI = 0; iI < MAX_PLAYERS; ++iI)
+			m_aiCulture = new int[NUM_TOTAL_CIVILIZATIONS];
+			for (int iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; ++iI)
 			{
 				m_aiCulture[iI] = 0;
 			}
 		}
 
-		m_aiCulture[eIndex] = iNewValue;
+		m_aiCulture[eCivilization] = iNewValue;
 		m_iTotalCulture += (iNewValue - iOldValue);
-		FAssertMsg(getActualCulture(eIndex) >= 0, "expected actual culture to be positive");
-		FAssertMsg(getCulture(eIndex) >= 0, "expected culture to be positive");
-		FAssertMsg(getActualTotalCulture() >= 0, "expected actual total culture to be positive");
+
+		FAssert(getActualCulture(eCivilization) >= "expected actual culture to be positive");
 
 		if (bUpdate)
 		{
@@ -7350,6 +7358,24 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 		{
 			pCity->AI_setAssignWorkDirty(true);
 		}
+	}
+}
+
+
+void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bUpdatePlotGroups)
+{
+	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
+
+	int iOldValue = getActualCulture(eIndex);
+
+	if (iOldValue != iNewValue)
+	{
+		setCulture(GET_PLAYER(eIndex).getCivilizationType(), iNewValue, bUpdate, bUpdatePlotGroups);
+
+		FAssertMsg(getActualCulture(eIndex) >= 0, "expected actual culture to be positive");
+		FAssertMsg(getCulture(eIndex) >= 0, "expected culture to be positive");
+		FAssertMsg(getActualTotalCulture() >= 0, "expected actual total culture to be positive");
 	}
 }
 
@@ -10011,8 +10037,8 @@ void CvPlot::write(FDataStreamBase* pStream)
 	}
 	else
 	{
-		pStream->Write((char)MAX_PLAYERS);
-		pStream->Write(MAX_PLAYERS, m_aiCulture);
+		pStream->Write((char)NUM_TOTAL_CIVILIZATIONS);
+		pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
 	}
 
 	if (NULL == m_aiFoundValue)

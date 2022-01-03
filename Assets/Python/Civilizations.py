@@ -131,6 +131,11 @@ def init():
 		initBirthYear(iPlayer)
 		initPlayerTechPreferences(iPlayer)
 		initBuildingPreferences(iPlayer)
+		
+@handler("activate")
+def onActivate(iPlayer):
+	initPlayerTechPreferences(iPlayer)
+	initBuildingPreferences(iPlayer)
 
 ### Starting technologies ###
 

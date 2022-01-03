@@ -360,6 +360,8 @@ public:
 	int /*TeamTypes*/getTeam();
 	int /*PlayerTypes*/getPreviousOwner();
 	int /*PlayerTypes*/getOriginalOwner();
+	int getPreviousCiv();
+	int getOriginalCiv();
 	int /*CultureLevelTypes*/ getCultureLevel();
 	int getCultureThreshold();
 	int getSeaPlotYield(int /*YieldTypes*/ eIndex);
@@ -422,6 +424,7 @@ public:
 	int getCommerceHappiness();
 	int getDomainFreeExperience(int /*DomainTypes*/ eIndex);
 	int getDomainProductionModifier(int /*DomainTypes*/ eIndex);
+	int getCivCulture(int iCivilization); // Leoreth
 	int getCulture(int /*PlayerTypes*/ eIndex);
 	int getCultureTimes100(int /*PlayerTypes*/ eIndex);
 	int countTotalCultureTimes100();
@@ -565,6 +568,7 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	int getGameTurnPlayerLost(int ePlayer);
+	int getGameTurnCivLost(int iCivilization);
 	int getNextCoveredPlot() const;
 	int getEffectiveNextCoveredPlot() const;
 	bool isCoveredBeforeExpansion(int i) const;

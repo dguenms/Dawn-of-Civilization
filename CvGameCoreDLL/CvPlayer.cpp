@@ -1446,11 +1446,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	CvWString szBuffer;
 	CvWString szName;
 	bool abEverOwned[MAX_PLAYERS];
-	int aiCulture[MAX_PLAYERS];
-	int aiGameTurnPlayerLost[MAX_PLAYERS];
+	int aiCulture[NUM_TOTAL_CIVILIZATIONS];
+	int aiGameTurnCivLost[NUM_TOTAL_CIVILIZATIONS];
 	PlayerTypes eOldOwner;
 	PlayerTypes eOriginalOwner;
 	PlayerTypes eOldPreviousOwner;
+	CivilizationTypes eOldCiv;
+	CivilizationTypes eOriginalCiv;
 	PlayerTypes eHighestCulturePlayer;
 	BuildingTypes eBuilding;
 	bool bRecapture;
@@ -1621,8 +1623,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
 	eOldOwner = pOldCity->getOwnerINLINE();
+	eOldCiv = pOldCity->getCivilizationType();
 	eOriginalOwner = pOldCity->getOriginalOwner();
 	eOldPreviousOwner = pOldCity->getPreviousOwner();
+	eOriginalCiv = pOldCity->getOriginalCiv();
 	eHighestCulturePlayer = pOldCity->findHighestCulture();
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
 	iGameTurnAcquired = pOldCity->getGameTurnAcquired();
@@ -1643,11 +1647,16 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		aeFreeSpecialists.push_back(pOldCity->getAddedFreeSpecialistCount((SpecialistTypes)iI));
 	}
 
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
+	{
+		aiCulture[iI] = pOldCity->getActualCultureTimes100((CivilizationTypes)iI);
+		aiGameTurnCivLost[iI] = pOldCity->getGameTurnCivLost((CivilizationTypes)iI);
+
+	}
+
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		abEverOwned[iI] = pOldCity->isEverOwned((PlayerTypes)iI);
-		aiCulture[iI] = pOldCity->getCultureTimes100((PlayerTypes)iI);
-		aiGameTurnPlayerLost[iI] = pOldCity->getGameTurnPlayerLost((PlayerTypes)iI);
 	}
 
 	abEverOwned[getID()] = true;
@@ -1753,6 +1762,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	pNewCity->setPreviousOwner(eOldOwner);
 	pNewCity->setOriginalOwner(eOriginalOwner);
+	pNewCity->setPreviousCiv(eOldCiv);
+	pNewCity->setOriginalCiv(eOriginalCiv);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
 	//pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
@@ -1769,11 +1780,18 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setNeverLost(false);
 	pNewCity->changeDefenseDamage(iDamage);
 
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
+	{
+		pNewCity->setCultureTimes100(((CivilizationTypes)iI), aiCulture[iI]);
+		pNewCity->setGameTurnCivLost((CivilizationTypes)iI, aiGameTurnCivLost[iI]);
+	}
+
+	// Leoreth: manually update culture for owner
+	pNewCity->doPlotCulture(true, getID(), 0);
+
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		pNewCity->setEverOwned(((PlayerTypes)iI), abEverOwned[iI]);
-		pNewCity->setCultureTimes100(((PlayerTypes)iI), aiCulture[iI], (getID() == iI), false);
-		pNewCity->setGameTurnPlayerLost((PlayerTypes)iI, aiGameTurnPlayerLost[iI]);
 	}
 
 	// Leoreth: log game turn of losing this city for previous owner

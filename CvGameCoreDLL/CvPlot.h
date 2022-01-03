@@ -363,6 +363,7 @@ public:
 	int getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUpgrade) const;
 
 	int getCulture(PlayerTypes eIndex) const;																									// Exposed to Python
+	int getActualCulture(CivilizationTypes eCivilization) const; // Leoreth
 	int getActualCulture(PlayerTypes ePlayer) const; // Leoreth
 	int getActualTotalCulture() const; // Leoreth
 	int countTotalCulture(bool bIncludeDeadPlayers = false) const;																														// Exposed to Python
@@ -371,7 +372,8 @@ public:
 	PlayerTypes findHighestCulturePlayer() const;
 	int calculateCulturePercent(PlayerTypes eIndex) const;																		// Exposed to Python
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const;
-	int calculateTeamCulturePercent(TeamTypes eIndex) const;																						// Exposed to Python
+	int calculateTeamCulturePercent(TeamTypes eIndex) const; // Exposed to Python
+	void setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUpdate, bool bUpdatePlotGroup); // Leoreth
 	void setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bUpdatePlotGroups);																		// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bUpdate);																	// Exposed to Python
 

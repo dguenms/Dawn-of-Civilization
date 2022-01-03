@@ -1682,6 +1682,16 @@ int /*PlayerTypes*/ CyCity::getOriginalOwner()
 	return m_pCity ? m_pCity->getOriginalOwner() : NO_PLAYER;
 }
 
+int CyCity::getPreviousCiv()
+{
+	return m_pCity ? m_pCity->getPreviousCiv() : NO_CIVILIZATION;
+}
+
+int CyCity::getOriginalCiv()
+{
+	return m_pCity ? m_pCity->getOriginalCiv() : NO_CIVILIZATION;
+}
+
 int /*CultureLevelTypes*/ CyCity::getCultureLevel()
 {
 	return m_pCity ? m_pCity->getCultureLevel() : NO_CULTURELEVEL;
@@ -1926,6 +1936,11 @@ int CyCity::getDomainFreeExperience(int /*DomainTypes*/ eIndex)
 int CyCity::getDomainProductionModifier(int /*DomainTypes*/ eIndex)
 {
 	return m_pCity ? m_pCity->getDomainProductionModifier((DomainTypes)eIndex) : -1;
+}
+
+int CyCity::getCivCulture(int iCivilization)
+{
+	return m_pCity ? m_pCity->getActualCultureTimes100((CivilizationTypes)iCivilization) / 100 : -1;
 }
 
 int CyCity::getCulture(int /*PlayerTypes*/ eIndex)
@@ -2652,6 +2667,11 @@ void CyCity::setMongolUP(bool bNewValue)
 int CyCity::getGameTurnPlayerLost(int ePlayer)
 {
 	return m_pCity ? m_pCity->getGameTurnPlayerLost((PlayerTypes)ePlayer) : -1;
+}
+
+int CyCity::getGameTurnCivLost(int iCivilization)
+{
+	return m_pCity ? m_pCity->getGameTurnCivLost((CivilizationTypes)iCivilization) : -1;
 }
 
 int CyCity::calculateOverallCulturePercent(int ePlayer)

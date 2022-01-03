@@ -1975,7 +1975,10 @@ class Civilizations(EntityCollection):
 		if not isinstance(identifier, Civ):
 			identifier = civ(identifier)
 		return super(Civilizations, self).without(identifier)
-
+	
+	def before_fall(self):
+		return self.where(lambda c: year() < year(dFall[c]))
+	
 
 # TODO: test
 class CivFactory(object):

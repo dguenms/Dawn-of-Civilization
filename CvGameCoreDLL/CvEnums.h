@@ -1173,7 +1173,9 @@ enum CivilizationTypes		// Exposed to Python
 	INDEPENDENT2,
 	NATIVE,
 	MINOR_CIV,
-	BARBARIAN_CIV
+	BARBARIAN_CIV,
+
+	NUM_TOTAL_CIVILIZATIONS,
 };
 
 enum LeaderHeadTypes			// Exposed to Python
