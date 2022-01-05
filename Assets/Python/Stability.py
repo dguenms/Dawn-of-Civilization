@@ -718,8 +718,7 @@ def getSeparatismModifier(iPlayer, city):
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
 	
-	# TODO: culture needs to be across all civs not just players
-	iTotalCulture = players.major().sum(lambda p: plot.isPlayerCore(p) and 2 * plot.getCulture(p) or plot.getCulture(p))
+	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCulture(p) or plot.getCulture(p))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
 	
 	# ahistorical tiles

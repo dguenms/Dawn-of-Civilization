@@ -2747,3 +2747,8 @@ void CyPlayer::AI_doAdvancedStart()
 {
 	if (m_pPlayer) m_pPlayer->AI_doAdvancedStart();
 }
+
+void CyPlayer::setMinorCiv(bool bNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setMinorCiv(bNewValue);
+}

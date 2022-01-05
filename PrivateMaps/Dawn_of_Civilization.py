@@ -1,5 +1,8 @@
 from Core import *
+from RFCUtils import *
 from MapParser import MapParser
+from DynamicCivs import startingLeader
+
 
 dScenarioModules = {
 	i3000BC: "Scenario3000BC",
@@ -8,6 +11,8 @@ dScenarioModules = {
 lCustomMapOptions = [
 	("Starting Date", ["3000 BC", "600 AD", "1700 AD"], "3000 BC"),
 ]
+
+lMinorCivs = [iNative, iIndependent, iIndependent2]
 
 
 def getDescription():
@@ -71,15 +76,12 @@ def generateRandomMap():
 	PARSER.applyTerrainTypes()
 
 def addFeatures():
-	NiTextOut("Adding terrain features...")
 	PARSER.applyFeatures()
 
 def addBonuses():
-	NiTextOut("Distributing resources...")
 	PARSER.applyBonuses()
 
 def addRivers():
-	NiTextOut("Adding rivers...")
 	PARSER.applyRivers()
 
 def addGoodies():
@@ -98,16 +100,24 @@ def loadScenario():
 		globals()[attribute] = getattr(scenarioModule, attribute)
 
 def initSlots():
-	iAdditionalPlayer = 0
 	for iCiv in lInitialCivs:
 		if iCiv == game.getActiveCivilizationType():
 			continue
-		iAdditionalPlayer += 1
-		game.addPlayer(iAdditionalPlayer, iRamesses, iCiv)
+		
+		addPlayer(iCiv)
+	
+	for iCiv in lMinorCivs:
+		addPlayer(iCiv, bMinor=True)
+		
+def addPlayer(iCiv, bMinor=False):
+	iPlayer = findSlot(iCiv)
+	iLeader = startingLeader(iCiv)
+	game.addPlayer(iPlayer, iLeader, iCiv)
+	player(iPlayer).setMinorCiv(bMinor)
 
 def findStartingPlot(args):
 	iPlayer = args[0]
-	startingPlot = plots.capital(iPlayer)
+	startingPlot = is_minor(iPlayer) and plot(0, 0) or plots.capital(civ(iPlayer))
 	
 	return map.plotNum(startingPlot.getX(), startingPlot.getY())
 

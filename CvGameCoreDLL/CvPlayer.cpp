@@ -11668,6 +11668,12 @@ bool CvPlayer::isMinorCiv() const
 }
 
 
+void CvPlayer::setMinorCiv(bool bNewValue)
+{
+	GC.getInitCore().setMinorNationCiv(getID(), bNewValue);
+}
+
+
 bool CvPlayer::isAlive() const
 {
 	return m_bAlive;

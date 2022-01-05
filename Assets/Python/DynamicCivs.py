@@ -477,6 +477,10 @@ dAdjectiveChanges = {
 dStartingLeaders = [
 # 3000 BC
 {
+	iIndependent : iIndependentLeader,
+	iIndependent2 : iIndependentLeader,
+	iNative : iNativeLeader,
+	iCelts : iBrennus,
 	iEgypt : iRamesses,
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
@@ -2006,12 +2010,11 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 ### Leader methods ###
 
-def startingLeader(iPlayer):
-	iCiv = civ(iPlayer)
-
-	if iCiv in dStartingLeaders[scenario()]: return dStartingLeaders[scenario()][iCiv]
-	
-	return dStartingLeaders[i3000BC][iCiv]
+def startingLeader(identifier):
+	if not isinstance(identifier, Civ):
+		identifier = civ(identifier)
+		
+	return dStartingLeaders[scenario()].get(identifier, dStartingLeaders[i3000BC][identifier])
 	
 def leader(iPlayer):
 	iCiv = civ(iPlayer)

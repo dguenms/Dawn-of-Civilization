@@ -603,6 +603,7 @@ public:
 	bool isBirthProtected();
 	void changeNoAnarchyTurns(int iChange); 
 	void AI_doAdvancedStart();
+	void setMinorCiv(bool bNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

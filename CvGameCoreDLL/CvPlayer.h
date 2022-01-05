@@ -1374,6 +1374,8 @@ public:
 	void setBirthProtected(bool bNewValue);
 	bool isBirthProtected() const;
 
+	void setMinorCiv(bool bNewValue);
+
 	bool m_bTurnPlayed;
 
 protected:
