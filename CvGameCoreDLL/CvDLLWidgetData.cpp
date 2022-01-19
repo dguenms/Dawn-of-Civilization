@@ -2786,7 +2786,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					if (pSelectedUnit->canGreatWork(pMissionPlot))
 					{
 						int iGreatWorkCulture = pSelectedUnit->getGreatWorkCulture(pMissionPlot);
-						if (pMissionPlot->getCultureConversionPlayer() != NO_PLAYER && pMissionPlot->getCultureConversionPlayer() != pSelectedUnit->getOwner())
+						if (pMissionPlot->isDifferentCultureConversionPlayer(pSelectedUnit->getOwner()))
 						{
 							iGreatWorkCulture = percent(iGreatWorkCulture, 100 - pMissionPlot->getCultureConversionRate());
 						}

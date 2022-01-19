@@ -290,7 +290,7 @@ public:
 
 	void setCultureConversion(int ePlayer, int iRate);
 	void resetCultureConversion();
-	int getCultureConversionPlayer();
+	int getCultureConversionCivilization();
 	int getCultureConversionRate();
 
 	int getActualCulture(int ePlayer);

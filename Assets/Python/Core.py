@@ -574,33 +574,23 @@ def base_building(iBuilding):
 
 def base_unit(iUnit):
 	return gc.getUnitClassInfo(gc.getUnitInfo(unittype(iUnit)).getUnitClassType()).getDefaultUnitIndex()
-	
 
-# TODO: test identifier as player and civ
+
 def unique_building_from_class(identifier, iBuildingClass):
-	if not isinstance(identifier, Civ):
-		identifier = civ(identifier)
-	return gc.getCivilizationInfo(identifier).getCivilizationBuildings(iBuildingClass)
-	
+	return gc.getCivilizationInfo(civ(identifier)).getCivilizationBuildings(iBuildingClass)
 
-# TODO: test identifier as player and civ
+
 def unique_building(identifier, iBuilding):
-	if not isinstance(identifier, Civ) and not player(iPlayer): 
-		return base_building(iBuilding)
+	if not player(identifier): return base_building(iBuilding)
 	return unique_building_from_class(identifier, gc.getBuildingInfo(iBuilding).getBuildingClassType())
 
 
-# TODO: test identifier as player and civ
 def unique_unit_from_class(identifier, iUnitClass):
-	if not isinstance(identifier, Civ):
-		identifier = civ(identifier)
-	return gc.getCivilizationInfo(identifier).getCivilizationUnits(iUnitClass)
+	return gc.getCivilizationInfo(civ(identifier)).getCivilizationUnits(iUnitClass)
 
 
-# TODO: test identifier as player and civ
 def unique_unit(identifier, iUnit):
-	if not isinstance(identifier, Civ) and not player(iPlayer): 
-		return base_unit(iUnit)
+	if not player(identifier): return base_unit(iUnit)
 	return unique_unit_from_class(identifier, gc.getUnitInfo(unittype(iUnit)).getUnitClassType())
 
 
@@ -745,6 +735,12 @@ def find(list, metric = lambda x: x, reverse = True):
 	if not list: return FindResult(None, None, None)
 	result = sort(list, metric, reverse)[0]
 	return FindResult(result = result, index = list.index(result), value = metric(result))
+
+
+def dict_max(dict):
+	if not dict:
+		return None
+	return sort(dict.items(), lambda item: item[1], True)[0][0]
 
 
 def rand(iLeft, iRight = None):
@@ -914,10 +910,6 @@ def civ(identifier = None):
 		return civ(identifier.getOwner())
 
 	return Civ(player(identifier).getCivilizationType())
-
-
-def civs(*iterable):
-	return [civ(element) for element in iterable]
 
 
 def period(iCiv):
@@ -1439,7 +1431,6 @@ class Plots(Locations):
 	def coastal(self):
 		return self.where(lambda p: p.isCoastalLand())
 	
-	# TODO: test distinction between player and civ
 	def core(self, identifier):
 		if isinstance(identifier, Civ):
 			return self.where(lambda p: p.isCore(identifier))
@@ -1710,7 +1701,6 @@ class Cities(Locations):
 	def coastal(self):
 		return self.where(lambda city: city.isCoastal(10))
 
-	# TODO: test distinction player and civ
 	def core(self, identifier):
 		if isinstance(identifier, Civ):
 			return self.where(lambda city: city.isCore(identifier))
@@ -1968,26 +1958,50 @@ class Players(EntityCollection):
 		return players.all().where(lambda p1: self.any(lambda p2: team(p1).isDefensivePact(player(p2).getTeam())))
 
 
-# TODO: test
 class Civilizations(EntityCollection):
+
+	def __init__(self, civs):
+		if all(isinstance(x, int) for x in civs):
+			try:
+				civs = [civ(x) for x in civs]
+			except Exception, e:
+				raise Exception("error when processing civs: %s: %s" % (civs, e))
+		elif not all(isinstance(x, Civ) for x in civs):
+			raise Exception("All entries in Civilizations need to be either int or Civ")
 	
-	def without(self, identifier):
-		if not isinstance(identifier, Civ):
-			identifier = civ(identifier)
-		return super(Civilizations, self).without(identifier)
+		super(Civilizations, self).__init__(civs)
+		
+	def _keyify(self, item):
+		if isinstance(item, int):
+			return civ(item)
+			
+		return item
+
+	def __contains__(self, item):
+		return civ(item) in self._keys
+
+	def __str__(self):
+		return ",".join([infos.civ(item).getText() for item in self.entities()])
+		
+	def without(self, exceptions):
+		if not isinstance(exceptions, (list, set, Players)):
+			exceptions = [exceptions]
+		return self.where(lambda c: c not in [civ(e) for e in exceptions])
 	
 	def before_fall(self):
 		return self.where(lambda c: year() < year(dFall[c]))
 	
 
-# TODO: test
 class CivFactory(object):
 
 	def all(self):
-		return Civilizations(range(iNumCivilizations))
+		return Civilizations([Civ(i) for i in range(iNumCivs)])
 	
 	def major(self):
 		return Civilizations(lBirthOrder)
+	
+	def of(self, *items):
+		return Civilizations([civ(element) for element in items])
 
 		
 class CreatedUnits(object):

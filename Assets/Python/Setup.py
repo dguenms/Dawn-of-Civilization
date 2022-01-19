@@ -13,10 +13,6 @@ def init():
 	for iCivilization in civs.major():
 		updateCore(iCivilization)
 		
-@handler("GameStart")
-def resetStoredData():
-	data.setup()
-
 @handler("periodChange")
 def updateCoreOnPeriodChange(iCivilization):
 	updateCore(iCivilization)

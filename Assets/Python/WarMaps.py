@@ -32,9 +32,10 @@ def init():
 		applyMap(iCivilization)
 
 # TODO: we did this on civ change, should no longer be necessary?
-@handler("activate")
+@handler("playerCivAssigned")
 def activate(iPlayer, iCivilization):
-	applyMap(iCivilization)
+	if iCivilization in dWarMaps:
+		applyMap(iCivilization)
 
 @handler("periodChange")
 def updateMapOnPeriodChange(iCivilization, iPeriod):

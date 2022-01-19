@@ -802,24 +802,32 @@ public:
 	int getDomainProductionModifier(DomainTypes eIndex) const;									// Exposed to Python
 	void changeDomainProductionModifier(DomainTypes eIndex, int iChange);
 
-	int getCulture(PlayerTypes eIndex) const;													// Exposed to Python
-	int getCultureTimes100(PlayerTypes eIndex) const;													// Exposed to Python
+	int getCulture(CivilizationTypes eCivilization) const;
+	int getCulture(PlayerTypes ePlayer) const;													// Exposed to Python
+	int getCultureTimes100(CivilizationTypes eCivilization) const;
+	int getCultureTimes100(PlayerTypes ePlayer) const;													// Exposed to Python
 	//int countTotalCultureTimes100() const;			//Rhye																				// Exposed to Python
 	int countTotalCultureTimes100() const;		//Rhye																					// Exposed to Python
 	int getActualTotalCultureTimes100() const; // Leoreth
 	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																			// Exposed to Python
-	int calculateCulturePercent(PlayerTypes eIndex) const;											// Exposed to Python
+	int calculateCulturePercent(CivilizationTypes eCivilization) const;
+	int calculateCulturePercent(PlayerTypes ePlayer) const;											// Exposed to Python
+	int calculateOverallCulturePercent(CivilizationTypes eCivilization) const;
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;										// Exposed to Python
-	void setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
+	void setCulture(CivilizationTypes eCivilization, int iNewValue);
+	void setCulture(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
 	void setCultureTimes100(CivilizationTypes eCivilization, int iNewValue);
-	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
-	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
-	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+	void setCultureTimes100(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
+	void changeCulture(CivilizationTypes eCivilization, int iChange);
+	void changeCulture(PlayerTypes ePlayer, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+	void changeCultureTimes100(CivilizationTypes eCivilization, int iChange);
+	void changeCultureTimes100(PlayerTypes ePlayer, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 
 	// Leoreth
 	int getActualCultureTimes100(CivilizationTypes eCivilization) const;
 	int getActualCultureTimes100(PlayerTypes ePlayer) const;
+	int getActualCulture(CivilizationTypes eCivilization) const;
 	int getActualCulture(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;

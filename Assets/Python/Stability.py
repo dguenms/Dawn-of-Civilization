@@ -475,7 +475,7 @@ def getCityClaim(city):
 	possibleClaims = players.major().alive().without(iOwner).before_fall()
 	
 	# claim based on core territory
-	coreClaims = possibleClaims.where(CyCity.isPlayerCore)
+	coreClaims = possibleClaims.where(lambda p: city.isPlayerCore(p))
 	if coreClaims:
 		return coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p))
 	
@@ -499,17 +499,19 @@ def getCityClaim(city):
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
 	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:
+		print "war claim"
 		iWarClaim = warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
 		return civ(iWarClaim)
 	
 	# claim for dead civilisation that can be resurrected
 	resurrections = civs.major().before_fall().without(iOwner).where(canRespawn).where(lambda c: city in cities.respawn(c))
 	if resurrections:
+		print "resurrection"
 		return resurrections.maximum(lambda c: (city.isCore(c), plot(city).getSettlerValue(c)))
 	
 	return -1
 
-def getAdditionalResurrectionCities(iPlayer, secedingCities):
+def getAdditionalResurrectionCities(iCiv, secedingCities):
 	return [city for city in getResurrectionCities(iCiv, True) if city not in secedingCities]
 
 def canResurrectFromCities(iCiv, resurrectionCities):
@@ -718,7 +720,7 @@ def getSeparatismModifier(iPlayer, city):
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
 	
-	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCulture(p) or plot.getCulture(p))
+	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
 	
 	# ahistorical tiles

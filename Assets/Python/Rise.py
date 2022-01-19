@@ -4,10 +4,10 @@ from Events import events, handler
 from Civilizations import *
 from RFCUtils import *
 from Locations import *
+from Scenarios import *
 from Stability import completeCollapse
 from Popups import popup
 
-import AIParameters, Modifiers, Civilizations, SettlerMaps, WarMaps, Setup
 import BugCore
 import CvScreensInterface
 
@@ -219,7 +219,8 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 				else:
 					unit.kill(-1, False)
 			
-			message(iAttacker, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", attackers.count(), adjective(iDefender), city(destination).getName(), button=attackers.first().getButton(), location=plot)
+			if destination:
+				message(iAttacker, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", attackers.count(), adjective(iDefender), city(destination).getName(), button=attackers.first().getButton(), location=plot)
 
 
 @handler("changeWar")
@@ -372,16 +373,21 @@ class Birth(object):
 	def updateCivilization(self):
 		data.dSlots[self.iCiv] = self.iPlayer
 		
-		print "data.dSlots is now: %s" % (data.dSlots.items(),)
-		
 		iCurrentCivilization = self.player.getCivilizationType()
 		if self.iCiv == iCurrentCivilization:
 			return
 		
-		self.player.setCivilizationType(self.iCiv)
+		if iCurrentCivilization == -1:
+			addPlayer(self.iCiv)
+		else:
+			self.player.setCivilizationType(self.iCiv)
 		
 		if iCurrentCivilization in data.dSlots:
 			del data.dSlots[iCurrentCivilization]
+	
+	def updateStartingLocation(self):
+		startingPlot = plots.capital(self.iCiv)
+		self.player.setStartingPlot(startingPlot, False)
 		
 	def updateArea(self):
 		if self.isIndependence():
@@ -659,14 +665,12 @@ class Birth(object):
 			self.iPlayer = slot(dRebirthCiv[self.iCiv])
 		
 		if self.iPlayer is None:
-			self.iPlayer = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == self.iCiv)
-		
-		if self.iPlayer is None:
-			self.iPlayer = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == -1)
+			self.iPlayer = findSlot(self.iCiv)
 			
 		print "self.iPlayer=%d for civilization %s" % (self.iPlayer, infos.civ(self.iCiv).getText())
 		
 		self.updateCivilization()
+		self.updateStartingLocation()
 		
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()

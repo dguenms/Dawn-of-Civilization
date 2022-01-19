@@ -1130,7 +1130,7 @@ def endObserverMode():
 		else:
 			makeUnit(active(), iCatapult, (0, 0))
 
-# used: Rise, Stability
+# used: Rise, Stability, Dawn_of_Civilization
 def findSlot(iCiv):
 	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == iCiv)
 	if iSlot is not None:

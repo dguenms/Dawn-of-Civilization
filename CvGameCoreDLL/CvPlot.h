@@ -362,24 +362,30 @@ public:
 	int calculateMaxYield(YieldTypes eYield) const;
 	int getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUpgrade) const;
 
-	int getCulture(PlayerTypes eIndex) const;																									// Exposed to Python
+	int getCulture(CivilizationTypes eCivilization) const; // Leoreth
+	int getCulture(PlayerTypes ePlayer) const;																									// Exposed to Python
 	int getActualCulture(CivilizationTypes eCivilization) const; // Leoreth
 	int getActualCulture(PlayerTypes ePlayer) const; // Leoreth
 	int getActualTotalCulture() const; // Leoreth
-	int countTotalCulture(bool bIncludeDeadPlayers = false) const;																														// Exposed to Python
+	int countTotalCulture(bool bIncludeDeadCivilizations = false) const;																														// Exposed to Python
 	int countFriendlyCulture(TeamTypes eTeam) const;
 	TeamTypes findHighestCultureTeam() const;																														// Exposed to Python
 	PlayerTypes findHighestCulturePlayer() const;
-	int calculateCulturePercent(PlayerTypes eIndex) const;																		// Exposed to Python
-	int calculateOverallCulturePercent(PlayerTypes eIndex) const;
+	int calculateCulturePercent(CivilizationTypes eCivilization) const; // Leoreth
+	int calculateCulturePercent(PlayerTypes ePlayer) const;																		// Exposed to Python
+	int calculateOverallCulturePercent(CivilizationTypes eCivilization) const; // Leoreth
+	int calculateOverallCulturePercent(PlayerTypes ePlayer) const;
 	int calculateTeamCulturePercent(TeamTypes eIndex) const; // Exposed to Python
 	void setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUpdate, bool bUpdatePlotGroup); // Leoreth
 	void setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bUpdatePlotGroups);																		// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bUpdate);																	// Exposed to Python
 
-	PlayerTypes getCultureConversionPlayer() const;
+	CivilizationTypes getCultureConversionCivilization() const;
+	bool isCultureConversionPlayer(PlayerTypes ePlayer) const;
+	bool isDifferentCultureConversionPlayer(PlayerTypes ePlayer) const;
 	int getCultureConversionRate() const;
 	void changeCultureConversionRate(int iChange);
+	void setCultureConversion(CivilizationTypes eCivilization, int iRate);
 	void setCultureConversion(PlayerTypes ePlayer, int iRate);
 	void resetCultureConversion();
 
@@ -607,7 +613,7 @@ protected:
 	bool m_bLayoutStateWorked:1;
 
 	char /*PlayerTypes*/ m_eOwner;
-	PlayerTypes m_eCultureConversionPlayer;
+	CivilizationTypes m_eCultureConversionCivilization;
 	char /*PlayerTypes*/ m_eBirthProtected;
 	char /*PlayerTypes*/ m_eExpansion;
 	short /*PlotTypes*/ m_ePlotType;

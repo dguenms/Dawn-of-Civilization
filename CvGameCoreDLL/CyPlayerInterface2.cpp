@@ -143,5 +143,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("changeNoAnarchyTurns", &CyPlayer::changeNoAnarchyTurns, "void (int iChange)")
 		.def("AI_doAdvancedStart", &CyPlayer::AI_doAdvancedStart, "void ()")
 		.def("setMinorCiv", &CyPlayer::setMinorCiv, "void (bool bNewValue)")
+		.def("verifyAlive", &CyPlayer::verifyAlive, "void ()")
+		.def("getReligionPopulation", &CyPlayer::getReligionPopulation, "int (int iReligion)")
 		;
 }

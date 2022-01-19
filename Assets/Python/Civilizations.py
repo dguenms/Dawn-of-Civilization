@@ -132,7 +132,7 @@ def init():
 		initPlayerTechPreferences(iPlayer)
 		initBuildingPreferences(iPlayer)
 		
-@handler("activate")
+@handler("playerCivAssigned")
 def onActivate(iPlayer):
 	initPlayerTechPreferences(iPlayer)
 	initBuildingPreferences(iPlayer)

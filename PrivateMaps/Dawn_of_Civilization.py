@@ -1,7 +1,7 @@
 from Core import *
 from RFCUtils import *
 from MapParser import MapParser
-from DynamicCivs import startingLeader
+from Scenarios import *
 
 
 dScenarioModules = {
@@ -12,7 +12,7 @@ lCustomMapOptions = [
 	("Starting Date", ["3000 BC", "600 AD", "1700 AD"], "3000 BC"),
 ]
 
-lMinorCivs = [iNative, iIndependent, iIndependent2]
+lMinorCivs = [iCelts, iNative, iIndependent, iIndependent2]
 
 
 def getDescription():
@@ -69,6 +69,7 @@ def getGridSize(args):
 	return PARSER.mapDesc.iGridW/4, PARSER.mapDesc.iGridH/4
 
 def beforeGeneration():
+	data.setup()
 	PARSER.prepare()
 
 def generateRandomMap():
@@ -108,12 +109,11 @@ def initSlots():
 	
 	for iCiv in lMinorCivs:
 		addPlayer(iCiv, bMinor=True)
-		
-def addPlayer(iCiv, bMinor=False):
-	iPlayer = findSlot(iCiv)
-	iLeader = startingLeader(iCiv)
-	game.addPlayer(iPlayer, iLeader, iCiv)
-	player(iPlayer).setMinorCiv(bMinor)
+	
+	events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
+	events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)
+	
+	data.dSlots[iBarbarian] = gc.getBARBARIAN_PLAYER()
 
 def findStartingPlot(args):
 	iPlayer = args[0]
@@ -132,11 +132,20 @@ def normalizeRemoveBadFeatures():
 
 def normalizeRemoveBadTerrain():
 	return 0
+	
+def normalizeAddFoodBonuses():
+	return 0
 
 def normalizeAddGoodTerrain():
 	return 0
 
 def startHumansOnSameTile():
+	return 0
+	
+def normalizeStartingPlotLocations():
+	return 0
+
+def normalizeAddRiver():
 	return 0
 
 def normalizeAddLakes():

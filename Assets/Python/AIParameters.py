@@ -29,7 +29,7 @@ def updateParameters(iPlayer):
 	pPlayer.setTargetDistanceValueModifier(getTargetDistanceValueModifier(iPlayer))
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
 		
-@handler("activate")
+@handler("playerCivAssigned")
 def onActivate(iPlayer):
 	updateParameters(iPlayer)
 

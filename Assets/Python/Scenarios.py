@@ -2,8 +2,20 @@ from Civilizations import initScenarioTechs
 from RFCUtils import *
 from Core import *
 from Locations import *
+from DynamicCivs import *
 
 from Events import handler
+
+
+# used: Rise, Dawn_of_Civilization
+def addPlayer(iCiv, bMinor=False):
+	iPlayer = findSlot(iCiv)
+	iLeader = startingLeader(iCiv)
+	game.addPlayer(iPlayer, iLeader, iCiv)
+	
+	if bMinor:
+		player(iPlayer).setMinorCiv(True)
+		data.dSlots[iCiv] = iPlayer
 
 
 # TODO: disabled for now, most of this needs to be different

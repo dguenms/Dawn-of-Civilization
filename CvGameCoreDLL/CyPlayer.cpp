@@ -2752,3 +2752,13 @@ void CyPlayer::setMinorCiv(bool bNewValue)
 {
 	if (m_pPlayer) m_pPlayer->setMinorCiv(bNewValue);
 }
+
+void CyPlayer::verifyAlive()
+{
+	if (m_pPlayer) m_pPlayer->verifyAlive();
+}
+
+int CyPlayer::getReligionPopulation(int iReligion)
+{
+	return m_pPlayer ? m_pPlayer->getReligionPopulation((ReligionTypes)iReligion) : -1;
+}

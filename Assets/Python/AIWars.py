@@ -12,9 +12,6 @@ from Events import handler
 
 from Core import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer	# LOQ
 
 ### Constants ###
 
@@ -334,7 +331,7 @@ def determineTargetPlayer(iPlayer):
 	iCiv = civ(iPlayer)
 	
 	lPotentialTargets = []
-	lTargetValues = [0 for _ in players.major()]
+	dTargetValues = defaultdict({}, 0)
 
 	# determine potential targets
 	for iLoopPlayer in possibleTargets(iPlayer):
@@ -356,96 +353,95 @@ def determineTargetPlayer(iPlayer):
 		
 		lPotentialTargets.append(iLoopPlayer)
 		
-	if not lPotentialTargets: return -1
+	if not lPotentialTargets: 
+		return -1
 		
 	# iterate the map for all potential targets
 	for plot in plots.all():
 		iOwner = plot.getOwner()
 		if iOwner in lPotentialTargets:
-			lTargetValues[iOwner] += pPlayer.getWarValue(plot.getX(), plot.getY())
+			dTargetValues[iOwner] += pPlayer.getWarValue(plot.getX(), plot.getY())
 				
 	# hard to attack with lost contact
 	for iLoopPlayer in lPotentialTargets:
-		lTargetValues[iLoopPlayer] /= 8
+		if not pPlayer.canContact(iLoopPlayer):
+			dTargetValues[iLoopPlayer] /= 8
 		
 	# normalization
-	iMaxValue = max(lTargetValues)
-	if iMaxValue == 0: return -1
+	iMaxValue = max(dTargetValues.values())
+	if iMaxValue == 0: 
+		return -1
 	
 	for iLoopPlayer in lPotentialTargets:
-		lTargetValues[iLoopPlayer] *= 500
-		lTargetValues[iLoopPlayer] /= iMaxValue
+		dTargetValues[iLoopPlayer] *= 500
+		dTargetValues[iLoopPlayer] /= iMaxValue
 		
 	for iLoopPlayer in lPotentialTargets:
 		iLoopCiv = civ(iLoopPlayer)
 	
 		# randomization
-		if lTargetValues[iLoopPlayer] <= iThreshold:
-			lTargetValues[iLoopPlayer] += rand(100)
+		if dTargetValues[iLoopPlayer] <= iThreshold:
+			dTargetValues[iLoopPlayer] += rand(100)
 		else:
-			lTargetValues[iLoopPlayer] += rand(300)
+			dTargetValues[iLoopPlayer] += rand(300)
 		
 		# balanced by attitude
 		iAttitude = pPlayer.AI_getAttitude(iLoopPlayer) - 2
 		if iAttitude > 0:
-			lTargetValues[iLoopPlayer] /= 2 * iAttitude
+			dTargetValues[iLoopPlayer] /= 2 * iAttitude
 			
 		# exploit plague
 		if data.players[iLoopPlayer].iPlagueCountdown > 0 or data.players[iLoopPlayer].iPlagueCountdown < -10:
 			if turn() > player(iLoopPlayer).getLastBirthTurn() + turns(20):
-				lTargetValues[iLoopPlayer] *= 3
-				lTargetValues[iLoopPlayer] /= 2
+				dTargetValues[iLoopPlayer] *= 3
+				dTargetValues[iLoopPlayer] /= 2
 	
 		# determine master
-		iMaster = -1
-		for iLoopMaster in players.major():
-			if tLoopPlayer.isVassal(iLoopMaster):
-				iMaster = iLoopMaster
-				break
+		iMaster = master(iLoopPlayer)
 				
 		# master attitudes
 		if iMaster >= 0:
 			iAttitude = player(iMaster).AI_getAttitude(iLoopPlayer)
 			if iAttitude > 0:
-				lTargetValues[iLoopPlayer] /= 2 * iAttitude
+				dTargetValues[iLoopPlayer] /= 2 * iAttitude
 		
 		# peace counter
 		if not tPlayer.isAtWar(iLoopPlayer):
 			iCounter = min(7, max(1, tPlayer.AI_getAtPeaceCounter(iLoopPlayer)))
 			if iCounter <= 7:
-				lTargetValues[iLoopPlayer] *= 20 + 10 * iCounter
-				lTargetValues[iLoopPlayer] /= 100
+				dTargetValues[iLoopPlayer] *= 20 + 10 * iCounter
+				dTargetValues[iLoopPlayer] /= 100
 				
 		# defensive pact
 		if tPlayer.isDefensivePact(iLoopPlayer):
-			lTargetValues[iLoopPlayer] /= 4
+			dTargetValues[iLoopPlayer] /= 4
 			
 		# consider power
 		iOurPower = tPlayer.getPower(True)
 		iTheirPower = team(iLoopPlayer).getPower(True)
 		if iOurPower > 2 * iTheirPower:
-			lTargetValues[iLoopPlayer] *= 2
+			dTargetValues[iLoopPlayer] *= 2
 		elif 2 * iOurPower < iTheirPower:
-			lTargetValues[iLoopPlayer] /= 2
+			dTargetValues[iLoopPlayer] /= 2
 			
 		# spare smallish civs
 		if iLoopCiv in [iNetherlands, iPortugal, iItaly]:
-			lTargetValues[iLoopPlayer] *= 4
-			lTargetValues[iLoopPlayer] /= 5
+			dTargetValues[iLoopPlayer] *= 4
+			dTargetValues[iLoopPlayer] /= 5
 			
 		# no suicide
 		if iCiv == iNetherlands:
 			if iLoopCiv in [iFrance, iHolyRome, iGermany]:
-				lTargetValues[iLoopPlayer] /= 2
+				dTargetValues[iLoopPlayer] /= 2
 		elif iCiv == iPortugal:
 			if iLoopCiv == iSpain:
-				lTargetValues[iLoopPlayer] /= 2
+				dTargetValues[iLoopPlayer] /= 2
 		elif iCiv == iItaly:
 			if iLoopCiv in [iFrance, iHolyRome, iGermany]:
-				lTargetValues[iLoopPlayer] /= 2
+				dTargetValues[iLoopPlayer] /= 2
 				
-	return find_max(lTargetValues).index
-
+	return dict_max(dTargetValues)
+				
 
 def getNextInterval(iGameTurn):
 	if iGameTurn > year(1600):

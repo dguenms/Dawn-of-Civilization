@@ -150,6 +150,7 @@ public:
 	void fontsLoaded(); // Leoreth
 	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
 	void autoplayEnded(); // Leoreth
+	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
 
 	DllExport void preSave();
 

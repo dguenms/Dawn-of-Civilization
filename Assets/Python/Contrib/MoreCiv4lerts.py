@@ -15,6 +15,8 @@ import BugUtil
 BugUtil.fixSets(globals())
 # BUG - Mac Support - end
 
+from Core import *
+
 gc = CyGlobalContext()
 localText = CyTranslator()
 PyGame = PyHelpers.PyGame()

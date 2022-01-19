@@ -1165,9 +1165,9 @@ void CyPlot::resetCultureConversion()
 	if (m_pPlot) m_pPlot->resetCultureConversion();
 }
 
-int CyPlot::getCultureConversionPlayer()
+int CyPlot::getCultureConversionCivilization()
 {
-	return m_pPlot ? m_pPlot->getCultureConversionPlayer() : -1;
+	return m_pPlot ? m_pPlot->getCultureConversionCivilization() : -1;
 }
 
 int CyPlot::getCultureConversionRate()

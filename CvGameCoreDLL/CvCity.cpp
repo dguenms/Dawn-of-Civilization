@@ -5567,7 +5567,7 @@ int CvCity::getCulturePercentAnger() const
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		// Leoreth: worry about culture even if they're dead
-		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv() && !GET_PLAYER((PlayerTypes)iI).isIndependent())
+		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv() && !GET_PLAYER((PlayerTypes)iI).isIndependent() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() != NO_CIVILIZATION)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
@@ -11863,12 +11863,21 @@ void CvCity::changeDomainProductionModifier(DomainTypes eIndex, int iChange)
 }
 
 
-int CvCity::getCulture(PlayerTypes eIndex) const
+int CvCity::getCulture(CivilizationTypes eCivilization) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
 
-	return getCultureTimes100(eIndex) / 100;
+	return getCultureTimes100(eCivilization) / 100;
+}
+
+
+int CvCity::getCulture(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be >= 0");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be < MAX_PLAYERS");
+
+	return getCulture(GET_PLAYER(ePlayer).getCivilizationType());
 }
 
 int CvCity::getActualCultureTimes100(CivilizationTypes eCivilization) const
@@ -11893,15 +11902,26 @@ int CvCity::getActualCulture(PlayerTypes ePlayer) const
 	return getActualCultureTimes100(ePlayer) / 100;
 }
 
+int CvCity::getCultureTimes100(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
+
+	if (plot()->getCultureConversionCivilization() == eCivilization)
+	{
+		return percent(getActualTotalCultureTimes100() - getActualCultureTimes100(eCivilization), plot()->getCultureConversionRate()) + getActualCultureTimes100(eCivilization);
+	}
+
+	return percent(getActualCultureTimes100(eCivilization), 100 - plot()->getCultureConversionRate());
+}
+
 // Leoreth
 int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
 {
-	if (plot()->getCultureConversionPlayer() == ePlayer)
-	{
-		return percent(getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer), plot()->getCultureConversionRate()) + getActualCultureTimes100(ePlayer);
-	}
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be within maximum bounds");
 
-	return percent(getActualCultureTimes100(ePlayer), 100 - plot()->getCultureConversionRate());
+	return getCultureTimes100(GET_PLAYER(ePlayer).getCivilizationType());
 }
 
 
@@ -11912,11 +11932,11 @@ int CvCity::countTotalCultureTimes100() const
 
 	iTotalCulture = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
 		//if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			iTotalCulture += getCultureTimes100((PlayerTypes)iI);
+			iTotalCulture += getActualCultureTimes100((CivilizationTypes)iI);
 		}
 	}
 
@@ -11954,15 +11974,46 @@ PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
 }
 
 
-int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
+int CvCity::calculateCulturePercent(CivilizationTypes eCivilization) const
 {
-	int iTotalCulture;
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
 
-	iTotalCulture = countTotalCultureTimes100();
+	int iTotalCulture = countTotalCultureTimes100();
 
 	if (iTotalCulture > 0)
 	{
-		return ((getCultureTimes100(eIndex) * 100) / iTotalCulture);
+		return (getCultureTimes100(eCivilization) * 100) / iTotalCulture;
+	}
+
+	return 0;
+}
+
+
+int CvCity::calculateCulturePercent(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < NUM_TOTAL_CIVILIZATIONS, "ePlayer expected to be within maximum bounds");
+
+	return calculateCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
+}
+
+
+int CvCity::calculateOverallCulturePercent(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
+
+	int iTotalCulture = 0;
+
+	for (int iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
+	{
+		iTotalCulture += getCultureTimes100((CivilizationTypes)iI);
+	}
+
+	if (iTotalCulture > 0)
+	{
+		return percent(getCultureTimes100(eCivilization), 100, iTotalCulture);
 	}
 
 	return 0;
@@ -11970,21 +12021,14 @@ int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
 
 
 // Leoreth
-int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
+int CvCity::calculateOverallCulturePercent(PlayerTypes ePlayer) const
 {
-	int iTotalCulture = 0;
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be within maximum bounds");
 
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
-	}
+	int iTotalCulture = calculateOverallCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
 
-	if (iTotalCulture > 0)
-	{
-		return percent(getCultureTimes100(eIndex), 100, iTotalCulture);
-	}
-
-	if (eIndex == getOwner())
+	if (iTotalCulture == 0 && getOwner() == ePlayer)
 	{
 		return 100;
 	}
@@ -12015,9 +12059,15 @@ int CvCity::calculateTeamCulturePercent(TeamTypes eIndex) const
 }
 
 
-void CvCity::setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
+void CvCity::setCulture(CivilizationTypes eCivilization, int iNewValue)
 {
-	setCultureTimes100(eIndex, 100 * iNewValue, bPlots, bUpdatePlotGroups);
+	setCultureTimes100(eCivilization, 100 * iNewValue);
+}
+
+
+void CvCity::setCulture(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
+{
+	setCultureTimes100(ePlayer, 100 * iNewValue, bPlots, bUpdatePlotGroups);
 }
 
 void CvCity::setCultureTimes100(CivilizationTypes eCivilization, int iNewValue)
@@ -12060,10 +12110,19 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 	}
 }
 
+void CvCity::changeCulture(CivilizationTypes eCivilization, int iChange)
+{
+	setCultureTimes100(eCivilization, getActualCultureTimes100(eCivilization) + 100 * iChange);
+}
 
 void CvCity::changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
 {
 	setCultureTimes100(eIndex, (getActualCultureTimes100(eIndex) + 100  * iChange), bPlots, bUpdatePlotGroups);
+}
+
+void CvCity::changeCultureTimes100(CivilizationTypes eCivilization, int iChange)
+{
+	setCultureTimes100(eCivilization, getActualCultureTimes100(eCivilization) + iChange);
 }
 
 void CvCity::changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
@@ -14938,21 +14997,29 @@ void CvCity::doCulture()
 	// Leoreth: let culture of dead civilizations decay
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
-	PlayerTypes ePlayer;
+	CivilizationTypes eCivilization;
 	int iChange;
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	bool bChanged = false;
+	for (int iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
-		ePlayer = (PlayerTypes)iI;
-		if (!GET_PLAYER(ePlayer).isAlive())
+		eCivilization = (CivilizationTypes)iI;
+		if (!isCivAlive(eCivilization))
 		{
-			iChange = std::min(getActualCultureTimes100(ePlayer), iTotalCultureTimes100 / 100);
+			iChange = std::min(getActualCultureTimes100(eCivilization), iTotalCultureTimes100 / 100);
 
 			if (iChange > 0)
 			{
 				// culture of dead civilizations decreases by 1% of total city culture per turn
-				changeCultureTimes100(ePlayer, -iChange, false, true);
+				changeCultureTimes100(eCivilization, -iChange);
+				bChanged = true;
 			}
 		}
+	}
+
+	if (bChanged)
+	{
+		updateCultureLevel(true);
+		updateCoveredPlots(true);
 	}
 }
 

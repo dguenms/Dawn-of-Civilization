@@ -37,7 +37,7 @@ def updateModifiers(iPlayer, iCivilization):
 		updateModifier(iPlayer, iCivilization, iModifier)
 
 
-@handler("activate")
+@handler("playerCivAssigned")
 def init(iPlayer, iCivilization):
 	updateModifiers(iPlayer, iCivilization)
 	

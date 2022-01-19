@@ -17,12 +17,12 @@ def getMap(iCivilization, iPeriod=-1):
 def applyMap(iCivilization, iPeriod=-1):
 	map = getMap(iCivilization, iPeriod)
 	
-	for (x, y), value in map:
+	for (x, y), iValue in map:
 		plot = plot_(x, y)
 		if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
 			plot.setSettlerValue(iCivilization, 20)
 		else:
-			plot.setSettlerValue(iCivilization, value)
+			plot.setSettlerValue(iCivilization, iValue)
 
 @handler("GameStart")
 def init():
@@ -30,9 +30,10 @@ def init():
 		applyMap(iCivilization)
 
 # TODO: we updated this on civ change, is it really still necessary?
-@handler("activate")
+@handler("playerCivAssigned")
 def activate(iPlayer, iCivilization):
-	applyMap(iCivilization)
+	if iCivilization in dSettlerMaps:
+		applyMap(iCivilization)
 
 @handler("periodChange")
 def updateMapOnPeriodChange(iCivilization, iPeriod):

@@ -238,12 +238,10 @@ def createRoutes():
 		plot(tile).setRouteType(iRouteRoad)
 
 
-@handler("BeginGameTurn")
-def createRoutesBeforeSpawn(iGameTurn):
-	for iCiv in dSpawnRoutes:
-		if iGameTurn == year(dBirth[iCiv]) - 2 and data.isCivEnabled(iCiv):
-			for tile in dSpawnRoutes[iCiv]:
-				plot(tile).setRouteType(iRouteRoad)
+@handler("prepareBirth")
+def createRoutesBeforeSpawn(iCiv):
+	for tile in dSpawnRoutes.get(iCiv, []):
+		plot(tile).setRouteType(iRouteRoad)
 
 
 @handler("BeginGameTurn")

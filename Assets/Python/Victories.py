@@ -147,7 +147,7 @@ def goldenAge(iPlayer):
 			player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
 
 
-@handler("activate")
+@handler("playerCivAssigned")
 def assignGoals(iPlayer):
 	if player(iPlayer).isHuman():
 		data.players[iPlayer].historicalGoals = createHistoricalGoals(iPlayer)

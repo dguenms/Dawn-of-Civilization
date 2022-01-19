@@ -1519,9 +1519,11 @@ class CvPlotDesc:
 			f.write("\n")	# terminate reveal line
 	## Platy Builder ##
 		for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
-			iPlayerCulture = plot.getCulture(iPlayerLoop)
-			if iPlayerCulture > 0:
-				f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
+			iCivilization = gc.getPlayer(iPlayerLoop).getCivilizationType()
+			if iCivilization >= 0:
+				iPlayerCulture = plot.getCivCulture(iCivilization)
+				if iPlayerCulture > 0:
+					f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
 
 		f.write("EndPlot\n")
 

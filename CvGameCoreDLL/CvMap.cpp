@@ -354,7 +354,7 @@ void CvMap::doTurn()
 
 		if (iGameTurn % iInterval == 0)
 		{
-			if (pPlot->getCultureConversionPlayer() != NO_PLAYER)
+			if (pPlot->getCultureConversionCivilization() != NO_CIVILIZATION)
 			{
 				pPlot->changeCultureConversionRate(-5);
 			}

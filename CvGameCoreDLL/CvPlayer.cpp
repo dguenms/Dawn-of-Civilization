@@ -12175,21 +12175,32 @@ CivilizationTypes CvPlayer::getCivilizationType() const
 // edead: start
 void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 {
+	if (getCivilizationType() == iNewValue)
+	{
+		return;
+	}
+
 	GC.getInitCore().setCiv(getID(), iNewValue);
+	
 	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
+	
 	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	
 	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	
 	GC.getInitCore().setFlagDecal(getID(), (CvWString)GC.getCivilizationInfo(iNewValue).getFlagTexture());
 	GC.getInitCore().setColor(getID(), (PlayerColorTypes)GC.getCivilizationInfo(iNewValue).getDefaultPlayerColor());
 	GC.getInitCore().setArtStyle(getID(), (ArtStyleTypes)GC.getCivilizationInfo(iNewValue).getArtStyleType());
+	
 	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+
 	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -12202,6 +12213,8 @@ void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
+
+	CvEventReporter::getInstance().playerCivAssigned(getID(), iNewValue);
 }
 // edead: end
 
@@ -16274,7 +16287,7 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 					pCity->changeCulture(getID(), iCultureAmount % iNumTurnsApplied, false, true);
 				}
 
-				if (pCity->plot()->getCultureConversionPlayer() != getID())
+				if (pCity->plot()->getCultureConversionCivilization() != getCivilizationType())
 				{
 					pCity->plot()->changeCultureConversionRate(-kMission.getCityInsertCultureAmountFactor());
 				}

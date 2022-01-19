@@ -604,6 +604,8 @@ public:
 	void changeNoAnarchyTurns(int iChange); 
 	void AI_doAdvancedStart();
 	void setMinorCiv(bool bNewValue);
+	void verifyAlive();
+	int getReligionPopulation(int iReligion);
 
 private:
 	CvPlayer* m_pPlayer;

@@ -120,6 +120,7 @@ public:
 	void reportFontsLoaded(); // Leoreth
 	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
 	void reportAutoplayEnded(); // Leoreth
+	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

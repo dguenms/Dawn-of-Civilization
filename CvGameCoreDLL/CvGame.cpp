@@ -9246,7 +9246,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 		if (eColor == NO_PLAYERCOLOR || GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor)
 */
 		// Don't invalidate color choice if it's taken by this player
-		if (eColor == NO_PLAYERCOLOR || (GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor && (PlayerTypes)iI != eNewPlayer) )
+		if (eColor == NO_PLAYERCOLOR || (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor && (PlayerTypes)iI != eNewPlayer) )
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -9284,6 +9284,11 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 	GC.getInitCore().setColor(eNewPlayer, eColor);
 	GET_TEAM(eTeam).init(eTeam);
 	GET_PLAYER(eNewPlayer).init(eNewPlayer);
+
+	if (eCiv != NO_CIVILIZATION)
+	{
+		CvEventReporter::getInstance().playerCivAssigned(eNewPlayer, eCiv);
+	}
 }
 
 bool CvGame::isCompetingCorporation(CorporationTypes eCorporation1, CorporationTypes eCorporation2) const

@@ -1,6 +1,8 @@
 from Core import *
 from unittest import *
 
+from TestUtils import setup
+
 import types
 
 
@@ -695,12 +697,12 @@ class TestPlayers(TestCase):
 		self.assertEqual(actual_ids, expected_ids)
 		
 	def test_alive(self):
-		players = Players([0, 1, 2, 3])
-		self.assert_(gc.getPlayer(3) in players)
+		players = Players([0, 1, 2, 9])
+		self.assert_(gc.getPlayer(9) in players)
 		
 		players = players.alive()
 		assertType(self, players, Players)
-		self.assert_(gc.getPlayer(3) not in players)
+		self.assert_(gc.getPlayer(9) not in players)
 		
 	def test_ai(self):
 		players = self.players.ai()
@@ -776,13 +778,13 @@ class TestPlayers(TestCase):
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 		
 	def test_independent(self):
-		expected_players = [0, 1, 2, 45, 46]
+		expected_players = [0, 1, 2, 5, 6]
 		actual_players = self.players.independent()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_native(self):
-		expected_players = [0, 1, 2, 47]
+		expected_players = [0, 1, 2, 4]
 		actual_players = self.players.native()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
@@ -903,12 +905,12 @@ class TestPlayerFactory(TestCase):
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), gc.getMAX_PLAYERS())
+		self.assertEqual(len(players), 10)
 		
 	def test_major(self):
 		players = self.factory.major()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 45)
+		self.assertEqual(len(players), 5)
 		
 	def test_minor(self):
 		players = self.factory.minor()
@@ -1042,7 +1044,7 @@ class TestUnits(TestCase):
 	def setUp(self):
 		units = []
 		for x, y in [(0, 0), (0, 1), (0, 2), (0, 3)]:
-			unit = gc.getPlayer(3).initUnit(4, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(7).initUnit(4, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			units.append(unit)
 		self.units = Units(units)
 		self.unit = units[0]
@@ -1067,11 +1069,11 @@ class TestUnits(TestCase):
 		
 	def test_owner(self):
 		# given
-		indian_unit = gc.getPlayer(5).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		indian_unit = gc.getPlayer(8).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([indian_unit])
 		
 		# when
-		indian_units = units.owner(5)
+		indian_units = units.owner(8)
 		
 		# then
 		try:
@@ -1085,7 +1087,7 @@ class TestUnits(TestCase):
 		
 	def test_owner_civ(self):
 		# given
-		indian_unit = gc.getPlayer(5).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		indian_unit = gc.getPlayer(8).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([indian_unit])
 		
 		# when
@@ -1103,7 +1105,7 @@ class TestUnits(TestCase):
 		
 	def test_type(self):
 		# given
-		worker = gc.getPlayer(3).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		worker = gc.getPlayer(7).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([worker])
 		
 		# when
@@ -1117,11 +1119,11 @@ class TestUnits(TestCase):
 
 		# cleanup
 		finally:
-			worker.kill(False, 3)
+			worker.kill(False, 7)
 		
 	def test_by_type(self):
 		# given
-		worker = gc.getPlayer(3).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		worker = gc.getPlayer(7).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([worker])
 		
 		# when
@@ -1138,14 +1140,14 @@ class TestUnits(TestCase):
 		
 		# cleanup
 		finally:
-			worker.kill(False, 3)
+			worker.kill(False, 7)
 	
 	def test_types(self):
 		self.assertEqual(self.units.types(), [4, 4, 4, 4])
 	
 	def test_domain(self):
-		unit = gc.getPlayer(3).initUnit(iGalley, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		waterUnits = units.owner(3).domain(DomainTypes.DOMAIN_SEA)
+		unit = gc.getPlayer(7).initUnit(iGalley, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		waterUnits = units.owner(7).domain(DomainTypes.DOMAIN_SEA)
 		
 		self.assertEqual(len(waterUnits), 1)
 		
@@ -1155,21 +1157,21 @@ class TestUnits(TestCase):
 			self.assertEqual(waterUnit.getX(), 0)
 			self.assertEqual(waterUnit.getY(), 1)
 		finally:
-			unit.kill(False, 3)
+			unit.kill(False, 7)
 	
 	def test_land(self):
-		landUnits = units.owner(3).land()
+		landUnits = units.owner(7).land()
 		
 		self.assertEqual(len(landUnits), 4)
 		for unit in landUnits:
 			self.assertEqual(unit.getUnitType(), 4)
 	
 	def test_combat(self):
-		swordsman = gc.getPlayer(3).initUnit(iSwordsman, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		archer = gc.getPlayer(3).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		swordsman = gc.getPlayer(7).initUnit(iSwordsman, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		archer = gc.getPlayer(7).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
 		try:
-			archers = units.owner(3).combat(UnitCombatTypes.UNITCOMBAT_ARCHER)
+			archers = units.owner(7).combat(UnitCombatTypes.UNITCOMBAT_ARCHER)
 			self.assertEqual(len(archers), 1)
 		finally:
 			swordsman.kill(False, -1)
@@ -1182,11 +1184,11 @@ class TestUnitFactory(TestCase):
 		self.factory = UnitFactory()
 		self.units = []
 		for _ in range(4):
-			unit = gc.getPlayer(3).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(7).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			self.units.append(unit)
 			
 		for _ in range(3):
-			unit = gc.getPlayer(4).initUnit(4, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(8).initUnit(4, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			self.units.append(unit)
 
 	def tearDown(self):
@@ -1195,7 +1197,7 @@ class TestUnitFactory(TestCase):
 
 	def test_owner_id(self):
 		# when
-		chinese_units = self.factory.owner(3)
+		chinese_units = self.factory.owner(7)
 		
 		# then
 		assertType(self, chinese_units, Units)
@@ -1211,7 +1213,7 @@ class TestUnitFactory(TestCase):
 		
 	def test_owner_player(self):
 		# when
-		chinese_units = self.factory.owner(gc.getPlayer(3))
+		chinese_units = self.factory.owner(gc.getPlayer(7))
 		
 		# then
 		assertType(self, chinese_units, Units)
@@ -1549,12 +1551,19 @@ class TestPlots(TestCase):
 		plots = Plots([(64+x, 10+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.water()), 0)
 		
-	def test_core(self):
+	def test_core_player(self):
 		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.core(0)), 9)
 		
-	def test_no_core(self):
+	def test_no_core_player(self):
 		self.assertEqual(len(self.plots.core(0)), 0)
+	
+	def test_core_civ(self):
+		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
+		self.assertEqual(len(plots.core(iEgypt)), 9)
+	
+	def test_no_core_civ(self):
+		self.assertEqual(len(self.plots.core(iEgypt)), 0)
 		
 	def test_any(self):
 		self.assert_(self.plots.any(lambda p: p.getX() == 0))
@@ -2437,9 +2446,9 @@ class TestPlotFactory(TestCase):
 class TestCities(TestCase):
 
 	def setUp(self):
-		city1 = gc.getPlayer(3).initCity(0, 0)
-		city2 = gc.getPlayer(3).initCity(0, 2)
-		city3 = gc.getPlayer(4).initCity(2, 0)
+		city1 = gc.getPlayer(7).initCity(0, 0)
+		city2 = gc.getPlayer(7).initCity(0, 2)
+		city3 = gc.getPlayer(8).initCity(2, 0)
 		
 		self.cities = Cities([city1, city2, city3])
 		
@@ -2541,7 +2550,7 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_owner(self):
-		cities = self.cities.owner(3)
+		cities = self.cities.owner(7)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -2601,10 +2610,11 @@ class TestCities(TestCase):
 		assertType(self, cities, Cities)
 		self.assertEqual(actual_tiles, expected_tiles)
 		
-	def test_core(self):
+	def test_core_player(self):
 		city = gc.getPlayer(0).initCity(69, 33)
 		cities = self.cities.including(city)
 		self.assertEqual(len(cities), 4)
+		
 		actual_cities = cities.core(0)
 		expected_tiles = [(69, 33)]
 		
@@ -2615,7 +2625,23 @@ class TestCities(TestCase):
 			self.assertEqual(actual_tiles, expected_tiles)
 		finally:
 			city.kill()
+	
+	def test_core_civ(self):
+		city = gc.getPlayer(0).initCity(69, 33)
+		cities = self.cities.including(city)
+		self.assertEqual(len(cities), 4)
 		
+		actual_cities = cities.core(iEgypt)
+		expected_tiles = [(69, 33)]
+		
+		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
+		
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			city.kill()
+			
 	def test_coastal(self):
 		city = gc.getPlayer(0).initCity(63, 10)
 		cities = self.cities.including(city)
@@ -2652,7 +2678,7 @@ class TestCities(TestCase):
 	def test_notowner(self):
 		expected_tiles = [(2, 0)]
 		
-		cities = self.cities.notowner(3)
+		cities = self.cities.notowner(7)
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
 		
 		self.assertEqual(actual_tiles, expected_tiles)
@@ -2682,9 +2708,9 @@ class TestCities(TestCase):
 class TestCityFactory(TestCase):
 
 	def setUp(self):
-		gc.getPlayer(3).initCity(0, 0)
-		gc.getPlayer(3).initCity(0, 2)
-		gc.getPlayer(4).initCity(2, 0)
+		gc.getPlayer(7).initCity(0, 0)
+		gc.getPlayer(7).initCity(0, 2)
+		gc.getPlayer(8).initCity(2, 0)
 		
 		self.factory = CityFactory()
 		
@@ -2693,7 +2719,7 @@ class TestCityFactory(TestCase):
 			gc.getMap().plot(x, y).getPlotCity().kill()
 			
 	def test_owner(self):
-		cities = self.factory.owner(3)
+		cities = self.factory.owner(7)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -2730,7 +2756,7 @@ class TestCityFactory(TestCase):
 		
 	def test_region(self):
 		caribbean = plots.region(rCaribbean).random()
-		city = gc.getPlayer(3).initCity(caribbean.getX(), caribbean.getY())
+		city = gc.getPlayer(7).initCity(caribbean.getX(), caribbean.getY())
 		
 		cities = self.factory.region(rCaribbean)
 		
@@ -3129,10 +3155,10 @@ class TestNames(TestCase):
 		self.assertRaises(ValueError, adjective, None)
 		
 	def test_full_name(self):
-		self.assertEqual(fullname(slot(iEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(slot(iChina)), "The Chinese")
 		
 	def test_full_name_player(self):
-		self.assertEqual(fullname(player(iEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(player(iChina)), "The Chinese")
 	
 	def test_full_name_none(self):
 		self.assertRaises(ValueError, fullname, None)
@@ -4097,43 +4123,6 @@ class TestAt(TestCase):
 		self.assertEqual(result, False)
 
 
-class TestCivs(TestCase):
-
-	def test_one(self):
-		lCivs = civs(iEgypt)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 1)
-		
-		assertType(self, lCivs[0], Civ)
-		self.assertEqual(lCivs[0], iEgypt)
-	
-	def test_more(self):
-		lCivs = civs(iEgypt, iBabylonia, iHarappa)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 3)
-		
-		for i, iCiv in enumerate([iEgypt, iBabylonia, iHarappa]):
-			assertType(self, lCivs[i], Civ)
-			self.assertEqual(lCivs[i], iCiv)
-	
-	def test_none(self):
-		lCivs = civs()
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(lCivs, [])
-	
-	def test_int(self):
-		lCivs = civs(0)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 1)
-		
-		assertType(self, lCivs[0], Civ)
-		self.assertEqual(lCivs[0], iEgypt)
-
-
 class TestCapital(TestCase):
 
 	def test_capital(self):
@@ -4731,6 +4720,160 @@ class TestGetArea(TestCase):
 			americaCity.kill()
 
 
+class TestCivFactory(TestCase):
+
+	def setUp(self):
+		self.factory = CivFactory()
+
+	def test_of_one(self):
+		civs = self.factory.of(iEgypt)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		
+		assertType(self, civs[0], Civ)
+		self.assertEqual(civs[0], iEgypt)
+	
+	def test_of_more(self):
+		civs = self.factory.of(iEgypt, iBabylonia, iHarappa)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 3)
+		
+		for i, iCiv in enumerate([iEgypt, iBabylonia, iHarappa]):
+			assertType(self, civs[i], Civ)
+			self.assertEqual(civs[i], iCiv)
+	
+	def test_of_none(self):
+		civs = self.factory.of()
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 0)
+	
+	def test_of_int(self):
+		civs = self.factory.of(0)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		
+		assertType(self, civs[0], Civ)
+		self.assertEqual(civs[0], iEgypt)
+
+
+class TestDictMax(TestCase):
+
+	def test_dict_max(self):
+		dict = {
+			1: 100,
+			2: 200,
+			3: 300,
+		}
+		
+		self.assertEqual(dict_max(dict), 3)
+	
+	def test_dict_max_tie(self):
+		dict = {
+			1: 100,
+			2: 200,
+			3: 200,
+		}
+		
+		self.assertEqual(dict_max(dict), 2)
+	
+	def test_dict_max_empty(self):
+		self.assertEqual(dict_max({}), None)
+
+
+class TestCivFactory(TestCase):
+
+	def setUp(self):
+		self.factory = CivFactory()
+
+	def test_all(self):
+		civs = self.factory.all()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), iNumCivs)
+		
+	def test_major(self):
+		civs = self.factory.major()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), len(lBirthOrder))
+		
+	def test_of_civs(self):
+		expected_civs = [iEgypt, iBabylonia, iHarappa]
+		actual_civs = self.factory.of(iEgypt, iBabylonia, iHarappa)
+		
+		assertType(self, actual_civs, Civilizations)
+		self.assertEqual(len(actual_civs), 3)
+		
+		for iCiv in expected_civs:
+			self.assertEqual(iCiv in actual_civs, True)
+	
+	def test_of_players(self):
+		expected_civs = [iEgypt, iBabylonia, iHarappa]
+		actual_civs = self.factory.of(0, 1, 2)
+		
+		assertType(self, actual_civs, Civilizations)
+		self.assertEqual(len(actual_civs), 3)
+		
+		for iCiv in expected_civs:
+			self.assertEqual(iCiv in actual_civs, True)
+
+
+class TestCivilizations(TestCase):
+
+	def setUp(self):
+		self.civs = Civilizations([iEgypt, iBabylonia, iHarappa])
+
+	def test_contains_player(self):
+		self.assertEqual(gc.getPlayer(0) in self.civs, True)
+	
+	def test_contains_player_id(self):
+		self.assertEqual(0 in self.civs, True)
+		
+	def test_contains_civ_id(self):
+		self.assertEqual(iEgypt in self.civs, True)
+		
+	def test_iterate(self):
+		for item in self.civs:
+			self.assertEqual(isinstance(item, Civ), True)
+			
+	def test_string(self):
+		expected_names = "The Egyptians,The Babylonians,The Harappans"
+		actual_names = str(self.civs)
+		self.assertEqual(actual_names, expected_names)
+	
+	def test_without_civ_id(self):
+		civs = self.civs.without(iEgypt)
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 2)
+		self.assertEqual(iEgypt not in civs, True)
+		
+	def test_without_player_id(self):
+		civs = self.civs.without(0)
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 2)
+		self.assertEqual(iEgypt not in civs, True)
+		
+	def test_without_list(self):
+		civs = self.civs.without([iEgypt, iBabylonia])
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		self.assertEqual(iHarappa in civs, True)
+		
+	def test_without_set(self):
+		civs = self.civs.without(set([iEgypt, iBabylonia]))
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		self.assertEqual(iHarappa in civs, True)
+		
+	def test_can_be_built_from_players(self):
+		civs = Civilizations([0, 1])
+		
+		self.assertEqual(iEgypt in civs, True)
+		self.assertEqual(iBabylonia in civs, True)
+	
+
 test_cases = [
 	TestTurn, 
 	TestInfos, 
@@ -4784,7 +4927,6 @@ test_cases = [
 	TestMatching,
 	TestDirection,
 	TestAt,
-	TestCivs,
 	TestCapital,
 	TestSign,
 	TestTextProcessing,
@@ -4801,7 +4943,14 @@ test_cases = [
 	TestChunks,
 	TestMission,
 	TestGetArea,
+	TestCivFactory,
+	TestDictMax,
+	TestCivFactory,
+	TestCivilizations,
 ]
+
+
+setup()
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
 TextTestRunner(verbosity=2).run(suite)

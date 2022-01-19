@@ -531,6 +531,12 @@ void CvEventReporter::autoplayEnded()
 	m_kPythonEventMgr.reportAutoplayEnded();
 }
 
+// Leoreth: player civilization assigned
+void CvEventReporter::playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
+{
+	m_kPythonEventMgr.reportPlayerCivAssigned(ePlayer, eNewCivilization);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

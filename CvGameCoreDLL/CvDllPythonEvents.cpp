@@ -1457,6 +1457,19 @@ void CvDllPythonEvents::reportAutoplayEnded()
 	}
 }
 
+// Leoreth: player civilization assigned
+void CvDllPythonEvents::reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerCivAssigned");
+		eventData.add((int)ePlayer);
+		eventData.add((int)eNewCivilization);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

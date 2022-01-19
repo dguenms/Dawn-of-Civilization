@@ -228,7 +228,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bWithinGreatWall = false;
 
 	m_eOwner = NO_PLAYER;
-	m_eCultureConversionPlayer = NO_PLAYER; // Leoreth
+	m_eCultureConversionCivilization = NO_CIVILIZATION; // Leoreth
 	m_eBirthProtected = NO_PLAYER; // Leoreth
 	m_eExpansion = NO_PLAYER; // Leoreth
 	m_ePlotType = PLOT_OCEAN;
@@ -7181,6 +7181,11 @@ int CvPlot::getActualCulture(CivilizationTypes eCivilization) const
 		return 0;
 	}
 
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
 	return m_aiCulture[eCivilization];
 }
 
@@ -7194,16 +7199,28 @@ int CvPlot::getActualCulture(PlayerTypes eIndex) const
 }
 
 
-// TODO: make plot culture civilization based
+// Leoreth
+int CvPlot::getCulture(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= -1, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is expected to be within maximum bounds");
+
+	if (getCultureConversionCivilization() == eCivilization)
+	{
+		return (getActualTotalCulture() - getActualCulture(eCivilization)) * getCultureConversionRate() / 100 + getActualCulture(eCivilization);
+	}
+
+	return getActualCulture(eCivilization) * (100 - getCultureConversionRate()) / 100;
+}
+
+
 // Leoreth
 int CvPlot::getCulture(PlayerTypes ePlayer) const
 {
-	if (getCultureConversionPlayer() == ePlayer)
-	{
-		return (getActualTotalCulture() - getActualCulture(ePlayer)) * getCultureConversionRate() / 100 + getActualCulture(ePlayer);
-	}
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds");
 
-	return getActualCulture(ePlayer) * (100 - getCultureConversionRate()) / 100;
+	return getCulture(GET_PLAYER(ePlayer).getCivilizationType());
 }
 
 
@@ -7214,19 +7231,18 @@ int CvPlot::getActualTotalCulture() const
 }
 
 
-int CvPlot::countTotalCulture(bool bIncludeDeadPlayers) const
+int CvPlot::countTotalCulture(bool bIncludeDeadCivilizations) const
 {
 	int iTotalCulture;
 	int iI;
 
 	iTotalCulture = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; ++iI)
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; ++iI)
 	{
-		// Leoreth: consider the culture of dead civilizations
-		if (bIncludeDeadPlayers || GET_PLAYER((PlayerTypes)iI).isAlive())
+		if (bIncludeDeadCivilizations || isCivAlive((CivilizationTypes)iI))
 		{
-			iTotalCulture += getCulture((PlayerTypes)iI);
+			iTotalCulture += getCulture((CivilizationTypes)iI);
 		}
 	}
 
@@ -7270,33 +7286,55 @@ PlayerTypes CvPlot::findHighestCulturePlayer() const
 }
 
 
-int CvPlot::calculateCulturePercent(PlayerTypes eIndex) const
+int CvPlot::calculateCulturePercent(CivilizationTypes eCivilization) const
 {
-	int iTotalCulture;
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is expected to be within maximum bounds");
 
-	iTotalCulture = countTotalCulture();
+	int iTotalCulture = countTotalCulture();
 
 	if (iTotalCulture > 0)
 	{
-		return ((getCulture(eIndex) * 100) / iTotalCulture);
+		return (getCulture(eCivilization) * 100) / iTotalCulture;
 	}
 
 	return 0;
 }
 
-int CvPlot::calculateOverallCulturePercent(PlayerTypes eIndex) const
-{
-	int iTotalCulture;
 
-	iTotalCulture = countTotalCulture(true);
+int CvPlot::calculateCulturePercent(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds");
+
+	return calculateCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
+}
+
+
+int CvPlot::calculateOverallCulturePercent(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is expected to be within maximum bounds");
+
+	int iTotalCulture = countTotalCulture(true);
 
 	if (iTotalCulture > 0)
 	{
-		return ((getCulture(eIndex) * 100) / iTotalCulture);
+		return (getCulture(eCivilization) * 100) / iTotalCulture;
 	}
 
 	return 0;
 }
+
+
+int CvPlot::calculateOverallCulturePercent(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds");
+
+	return calculateOverallCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
+}
+
 
 int CvPlot::calculateTeamCulturePercent(TeamTypes eIndex) const
 {
@@ -7345,7 +7383,7 @@ void CvPlot::setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUp
 		m_aiCulture[eCivilization] = iNewValue;
 		m_iTotalCulture += (iNewValue - iOldValue);
 
-		FAssert(getActualCulture(eCivilization) >= "expected actual culture to be positive");
+		FAssert(getActualCulture(eCivilization) >= 0, "expected actual culture to be positive");
 
 		if (bUpdate)
 		{
@@ -9738,7 +9776,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bWithinGreatWall); // Leoreth
 
 	pStream->Read(&m_eOwner);
-	if (uiFlag >= 1) pStream->Read((int*)&m_eCultureConversionPlayer); // Leoreth
+	if (uiFlag >= 1) pStream->Read((int*)&m_eCultureConversionCivilization); // Leoreth
 	if (uiFlag >= 3) pStream->Read(&m_eBirthProtected); // Leoreth
 	if (uiFlag >= 3) pStream->Read(&m_eExpansion); // Leoreth
 	pStream->Read(&m_ePlotType);
@@ -10010,7 +10048,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_bWithinGreatWall);
 
 	pStream->Write(m_eOwner);
-	pStream->Write(m_eCultureConversionPlayer); // Leoreth
+	pStream->Write(m_eCultureConversionCivilization); // Leoreth
 	pStream->Write(m_eBirthProtected); // Leoreth
 	pStream->Write(m_eExpansion); // Leoreth
 	pStream->Write(m_ePlotType);
@@ -11363,6 +11401,9 @@ short CvPlot::getSettlerValue(PlayerTypes ePlayer) const
 
 void CvPlot::setSettlerValue(CivilizationTypes eCivilization, short iNewValue)
 {
+	FAssertMsg(eCivilization >= 0, "eCivilization is expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_CIVS, "eCivilization is expected to be a playable civilization");
+
 	m_aiSettlerValue[eCivilization] = iNewValue;
 }
 
@@ -11538,9 +11579,39 @@ bool CvPlot::isPlains() const
 	return isFlatlands() && (getFeatureType() == NO_FEATURE || GC.getFeatureInfo(getFeatureType()).getDefenseModifier() <= 0) && !isCity(true);
 }
 
-PlayerTypes CvPlot::getCultureConversionPlayer() const
+CivilizationTypes CvPlot::getCultureConversionCivilization() const
 {
-	return m_eCultureConversionPlayer;
+	return m_eCultureConversionCivilization;
+}
+
+bool CvPlot::isCultureConversionPlayer(PlayerTypes ePlayer) const
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	if (getCultureConversionCivilization() == NO_CIVILIZATION)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() == getCultureConversionCivilization();
+}
+
+bool CvPlot::isDifferentCultureConversionPlayer(PlayerTypes ePlayer) const
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	if (getCultureConversionCivilization() == NO_CIVILIZATION)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() != getCultureConversionCivilization();
 }
 
 int CvPlot::getCultureConversionRate() const
@@ -11548,9 +11619,11 @@ int CvPlot::getCultureConversionRate() const
 	return m_iCultureConversionRate;
 }
 
-void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
+void CvPlot::setCultureConversion(CivilizationTypes eCivilization, int iRate)
 {
-	m_eCultureConversionPlayer = iRate <= 0 ? NO_PLAYER : ePlayer;
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization is supposed to be within maximum bounds");
+
+	m_eCultureConversionCivilization = iRate <= 0 ? NO_CIVILIZATION : eCivilization;
 	m_iCultureConversionRate = iRate > 0 ? iRate : 0;
 
 	updateCulture(true, true);
@@ -11561,14 +11634,22 @@ void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
 	}
 }
 
+void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be within maximum bounds");
+
+	setCultureConversion(GET_PLAYER(ePlayer).getCivilizationType(), iRate);
+}
+
 void CvPlot::resetCultureConversion()
 {
-	setCultureConversion(NO_PLAYER, 0);
+	setCultureConversion(NO_CIVILIZATION, 0);
 }
 
 void CvPlot::changeCultureConversionRate(int iChange)
 {
-	setCultureConversion(getCultureConversionPlayer(), getCultureConversionRate() + iChange);
+	setCultureConversion(getCultureConversionCivilization(), getCultureConversionRate() + iChange);
 }
 
 int CvPlot::getContinentArea() const

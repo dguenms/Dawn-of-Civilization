@@ -1,5 +1,8 @@
+from Scenarios import *
 from VictoryGoals import *
 from unittest import *
+
+from TestUtils import setup
 from Victories import disable as disable_victories
 
 from inspect import isfunction
@@ -3138,33 +3141,30 @@ class TestConditionGoals(ExtendedTestCase):
 	def testAllAttitude(self):
 		goal = Condition.allAttitude(AttitudeTypes.ATTITUDE_PLEASED).activate(0)
 		
-		self.assertEqual(players.major().alive().count(), 3)
+		self.assertEqual(players.major().alive().count(), 5)
 		self.assertEqual(player(1).AI_getAttitude(0), AttitudeTypes.ATTITUDE_CAUTIOUS)
 		self.assertEqual(player(2).AI_getAttitude(0), AttitudeTypes.ATTITUDE_CAUTIOUS)
 		
 		self.assertEqual(bool(goal), False)
-		self.assertEqual(str(goal), "0 / 2")
+		self.assertEqual(str(goal), "0 / 4")
 		
-		team(0).meet(1, False)
-		team(0).meet(2, False)
+		others = [1, 2, 7, 8]
 		
-		self.assertEqual(player(0).canContact(1), True)
-		self.assertEqual(player(0).canContact(2), True)
+		for i in others:
+			team(0).meet(i, False)
+			self.assertEqual(player(0).canContact(i), True)
 		
-		player(1).AI_setAttitudeExtra(0, 100)
-		player(2).AI_setAttitudeExtra(0, 100)
-		
-		self.assertEqual(player(1).AI_getAttitude(0), AttitudeTypes.ATTITUDE_FRIENDLY)
-		self.assertEqual(player(2).AI_getAttitude(0), AttitudeTypes.ATTITUDE_FRIENDLY)
+			player(i).AI_setAttitudeExtra(0, 100)
+			self.assertEqual(player(i).AI_getAttitude(0), AttitudeTypes.ATTITUDE_FRIENDLY)
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "2 / 2")
+			self.assertEqual(str(goal), "4 / 4")
 		finally:
-			player(1).AI_setAttitudeExtra(0, 0)
-			player(2).AI_setAttitudeExtra(0, 0)
-			team(1).cutContact(0)
-			team(2).cutContact(0)
+			for i in others:
+				player(i).AI_setAttitudeExtra(0, 0)
+				team(i).cutContact(0)
+
 			goal.deactivate()
 	
 	def testNoStateReligion(self):
@@ -3204,7 +3204,7 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "2 / 1")
+			self.assertEqual(str(goal), "2 / 2")
 		finally:
 			for i in [0, 1, 2]:
 				player(i).setLastStateReligion(-1)
@@ -3218,7 +3218,7 @@ class TestConditionGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "2 / 1")
+			self.assertEqual(str(goal), "2 / 2")
 		finally:
 			player(0).setLastStateReligion(-1)
 			player(1).setCivics(iCivicsReligion, iAnimism)
@@ -4211,7 +4211,7 @@ class TestCountGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testConqueredCitiesMultipleCivs(self):
-		goal = Count.conqueredCities(3).civs([iBabylonia, iHarappa, iGreece]).activate(0)
+		goal = Count.conqueredCities(3).civs([iBabylonia, iHarappa, iChina]).activate(0)
 		
 		city1 = player(iBabylonia).initCity(61, 31)
 		player(0).acquireCity(city1, True, False)
@@ -4221,7 +4221,7 @@ class TestCountGoals(ExtendedTestCase):
 		player(0).acquireCity(city2, True, False)
 		city2 = city_(63, 31)
 		
-		city3 = player(iGreece).initCity(65, 31)
+		city3 = player(iChina).initCity(65, 31)
 		player(0).acquireCity(city3, True, False)
 		city3 = city_(65, 31)
 		
@@ -4299,7 +4299,7 @@ class TestCountGoals(ExtendedTestCase):
 	def testOpenBordersCivs(self):
 		goal = Count.openBorders(2).civs([iBabylonia, iHarappa]).activate(0)
 		
-		others = [iBabylonia, iGreece]
+		others = [iBabylonia, iChina]
 		for iCiv in others:
 			team(0).setOpenBorders(team(iCiv).getID(), True)
 		
@@ -5653,18 +5653,18 @@ class TestPercentageGoals(ExtendedTestCase):
 	def testReligiousVoteNotStateReligion(self):
 		goal = Percentage.religiousVote(30).activate(1)
 		
+		player(2).setLastStateReligion(iCatholicism)
+		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
 		
 		city1.setPopulation(10)
 		city2.setPopulation(10)
 		
-		city1.setHasRealBuilding(iCatholicShrine, True)
+		city2.setHasRealBuilding(iCatholicShrine, True)
 		
 		city1.setHasReligion(iCatholicism, True, False, False)
 		city2.setHasReligion(iCatholicism, True, False, False)
-		
-		player(2).setLastStateReligion(iCatholicism)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -5677,8 +5677,11 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 			goal.deactivate()
 		
-	def testReligiousVoteNoReligion(self):
+	def testReligiousVoteNotCityReligion(self):
 		goal = Percentage.religiousVote(30).activate(1)
+		
+		player(1).setLastStateReligion(iCatholicism)
+		player(2).setLastStateReligion(iCatholicism)
 		
 		city1 = player(1).initCity(30, 30)
 		city2 = player(2).initCity(32, 30)
@@ -5689,9 +5692,6 @@ class TestPercentageGoals(ExtendedTestCase):
 		city1.setHasRealBuilding(iCatholicShrine, True)
 		
 		city2.setHasReligion(iCatholicism, True, False, False)
-		
-		player(1).setLastStateReligion(iCatholicism)
-		player(2).setLastStateReligion(iCatholicism)
 		
 		try:
 			self.assertEqual(bool(goal), False)
@@ -5706,12 +5706,12 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedPower(self):
-		goal = Percentage.alliedPower(30).activate(0)
+		goal = Percentage.alliedPower(25).activate(0)
 		
 		unit = makeUnit(0, iMilitia, (0, 0))
 		
 		try:
-			self.assertEqual(str(goal), "50.00% / 30%")
+			self.assertEqual(str(goal), "33.33% / 25%")
 			self.assertEqual(bool(goal), True)
 		finally:
 			unit.kill(False, -1)
@@ -5727,7 +5727,7 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "75.00% / 30%")
+			self.assertEqual(str(goal), "83.33% / 30%")
 		finally:
 			unit.kill(False, -1)
 		
@@ -5745,7 +5745,7 @@ class TestPercentageGoals(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "75.00% / 30%")
+			self.assertEqual(str(goal), "83.33% / 30%")
 		finally:
 			unit.kill(False, -1)
 		
@@ -5776,11 +5776,11 @@ class TestPercentageGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testAlliedCommerce(self):
-		goal = Percentage.alliedCommerce(30).activate(0)
+		goal = Percentage.alliedCommerce(15).activate(0)
 		
 		try:
 			self.assertEqual(bool(goal), True)
-			self.assertEqual(str(goal), "33.33% / 30%")
+			self.assertEqual(str(goal), "20.00% / 15%")
 		finally:
 			goal.deactivate()
 
@@ -5967,9 +5967,9 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleAfterAllowed(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
+		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
-		player(iMaya).found(51, 29)
+		player(iChina).found(51, 29)
 		player(0).found(53, 29)
 		
 		try:
@@ -5982,9 +5982,9 @@ class TestTriggerGoals(ExtendedTestCase):
 		
 	def testFirstSettleConquest(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
+		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
-		player(iMaya).found(51, 29)
+		player(iChina).found(51, 29)
 		player(0).acquireCity(city_(51, 29), True, False)
 		
 		try:
@@ -5996,9 +5996,9 @@ class TestTriggerGoals(ExtendedTestCase):
 	
 	def testFirstSettleAfterConquest(self):
 		area = plots.rectangle((50, 28), (55, 30))
-		goal = Trigger.firstSettle(area).allowed([iMaya]).activate(0)
+		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
-		player(iMaya).found(51, 29)
+		player(iChina).found(51, 29)
 		player(1).acquireCity(city_(51, 29), True, False)
 		player(0).found(53, 29)
 		
@@ -6124,9 +6124,9 @@ class TestTriggerGoals(ExtendedTestCase):
 			goal.deactivate()
 	
 	def testFirstContactAll(self):
-		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iGreece, iIndia).activate(0)
+		goal = Trigger.firstContact(plots.rectangle((20, 20), (30, 30)), iChina, iIndia).activate(0)
 		
-		for iCiv in [iChina, iGreece, iIndia]:
+		for iCiv in [iChina, iIndia]:
 			events.fireEvent("firstContact", team(iEgypt).getID(), team(iCiv).getID())
 		
 		try:
@@ -7792,7 +7792,8 @@ class TestBestPlayersGoals(ExtendedTestCase):
 			self.assertEqual(goal.progress(), [
 				[u"%c Most advanced: Egypt (9000)" % self.SUCCESS_CHAR],
 				[u"%c Second most advanced: Babylonia (1200)" % self.SUCCESS_CHAR],
-				[u"%c Third most advanced: Harappa (280)" % self.SUCCESS_CHAR]
+				[u"%c Third most advanced: Harappa (280)" % self.SUCCESS_CHAR],
+				["Next most advanced: China (0)"]
 			])
 		finally:
 			team(0).setHasTech(iGenetics, False, 0, False, False)
@@ -9760,6 +9761,7 @@ test_cases = [
 ]
 
 
+setup()
 disable_victories()
 
 suite = TestSuite([makeSuite(case) for case in test_cases])
