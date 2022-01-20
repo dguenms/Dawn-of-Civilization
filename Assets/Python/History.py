@@ -268,6 +268,12 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						if year() < year(dBirth[active()]):
 							iModifier1 += 1
 							iModifier2 += 1
+						
+						# disable birth protection if still active
+						player(iOldWorldPlayer).setBirthProtected(False)
+						for plot in plots.all():
+							if plot.getBirthProtected() == iOldWorldPlayer:
+								plot.resetBirthProtected()
 							
 						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
 						
@@ -277,7 +283,8 @@ def conquistadors(iTeamX, iHasMetTeamY):
 							iSiege: 1 + iModifier1 + iModifier2,
 							iShockCity: 2 + iModifier1,
 						}
-						createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items())
+						units = createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items())
+						units.promotion(infos.type("PROMOTION_MERCENARY"))
 						
 						iStateReligion = player(iOldWorldPlayer).getStateReligion()
 						iMissionary = missionary(iStateReligion)

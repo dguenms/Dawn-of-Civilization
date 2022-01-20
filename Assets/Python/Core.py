@@ -1999,6 +1999,13 @@ class CreatedUnits(object):
 			unit.changeExperience(iExperience, 100, False, False, False)
 			
 		return self
+	
+	def promotion(self, *promotions):
+		for iPromotion in promotions:
+			for unit in self:
+				unit.setHasPromotion(iPromotion, True)
+		
+		return self
 		
 	def one(self):
 		if len(self) == 1:

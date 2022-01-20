@@ -663,6 +663,24 @@ class TestCreatedUnits(TestCase):
 		finally:
 			unit1.kill(False, -1)
 			unit2.kill(False, -1)
+	
+	def test_one_promotion(self):
+		iPromotionCombat1 = infos.type("PROMOTION_COMBAT1")
+		created_units = self.created_units.promotion(iPromotionCombat1)
+		
+		for unit in created_units:
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat1), True)
+	
+	def test_multiple_promotions(self):
+		iPromotionCombat1 = infos.type("PROMOTION_COMBAT1")
+		iPromotionCombat2 = infos.type("PROMOTION_COMBAT2")
+		iPromotionCombat3 = infos.type("PROMOTION_COMBAT3")
+		created_units = self.created_units.promotion(iPromotionCombat1, iPromotionCombat2, iPromotionCombat3)
+		
+		for unit in created_units:
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat1), True)
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat2), True)
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat3), True)
 		
 		
 class TestPlayers(TestCase):
