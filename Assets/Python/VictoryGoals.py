@@ -3626,7 +3626,7 @@ class Different(BaseGoal):
 				goal.fail()
 	
 	def description(self):
-		return capitalize(format_separators([goal._description for goal in self.goals], ",", text("TXT_KEY_AND")))
+		return capitalize(format_separators(self.goals, ",", text("TXT_KEY_AND"), lambda goal: " ".join(concat(goal._description, goal._description_suffixes, goal.turn_suffix))))
 	
 	def __nonzero__(self):
 		return all(goal.state == SUCCESS or goal for goal in self.goals) and self.unique_records()

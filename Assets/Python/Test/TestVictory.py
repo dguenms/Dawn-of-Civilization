@@ -9714,6 +9714,14 @@ class TestDifferentCities(ExtendedTestCase):
 		goal = DifferentCities(goal1, goal2)
 		
 		self.assertEqual(goal.description(), "Have your capital and have a different capital")
+	
+	def testDescriptionWithEndDates(self):
+		goal1 = CityGoal(capital()).by(100)
+		goal2 = CityGoal(capital()).by(1000)
+		
+		goal = DifferentCities(goal1, goal2)
+		
+		self.assertEqual(goal.description(), "Have your capital by 100 AD and have your capital by 1000 AD")
 
 
 class TestNamedList(ExtendedTestCase):
