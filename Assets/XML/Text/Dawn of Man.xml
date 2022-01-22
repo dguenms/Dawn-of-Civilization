@@ -395,11 +395,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_IRAN</Tag>
-		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
-		<French>Nous sommes en l'an 1700 ap. J.-C. La dynastie s&#233;f&#233;vide, qui dirige la Perse depuis l'an 1500, est en perte d'autorit&#233;. Le fruit est m&#251;r pour qu'un seigneur de guerre prenne le contr&#244;le du pays et humilie ses voisins turcs, ouzbeks et moghols.</French>
-		<German>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</German>
-		<Italian>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Italian>
-		<Spanish>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Spanish>
+		<English>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</English>
+		<French>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</French>
+		<German>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</German>
+		<Italian>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</Italian>
+		<Spanish>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_IRAN_1700AD</Tag>
+		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
+		<French>Nous sommes en l'an 1700 ap. J.-C. La dynastie s&#233;f&#233;vide, qui dirige la Perse depuis l'an 1501, est en perte d'autorit&#233;. Le fruit est m&#251;r pour qu'un seigneur de guerre prenne le contr&#244;le du pays et humilie ses voisins turcs, ouzbeks et moghols.</French>
+		<German>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</German>
+		<Italian>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Italian>
+		<Spanish>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PHOENICIA</Tag>
