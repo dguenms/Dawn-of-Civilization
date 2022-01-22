@@ -929,7 +929,7 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_POLYNESIA_TONGA"
 		
 	elif iCiv == iTamils:
-		if iEra >= iRenaissance:
+		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_TAMILS_MYSORE"
 			
 		if getColumn(iPlayer) >= 9:
