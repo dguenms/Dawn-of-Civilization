@@ -229,6 +229,9 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 	
 	if player(iAttacker).isHuman():
 		return
+		
+	if player(iDefender).isBirthProtected():
+		return
 	
 	expansionCities = cities.owner(iDefender).where(lambda city: plot(city).getExpansion() == iAttacker)
 	ourCities = cities.owner(iAttacker)
