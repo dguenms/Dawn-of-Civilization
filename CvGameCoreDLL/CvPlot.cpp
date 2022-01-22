@@ -2681,21 +2681,21 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		}
 	}
 
-	/*for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
+	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
 		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI) && !bMexico) // Mexican UP
 		{
 			return false;
 		}
-	}*/
+	}
 
-	/*if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
+	if ((getTeam() == NO_TEAM) || !(GET_TEAM(getTeam()).isIgnoreIrrigation()))
 	{
 		if (!bPotential && GC.getImprovementInfo(eImprovement).isRequiresIrrigation() && !isIrrigationAvailable())
 		{
 			return false;
 		}
-	}*/
+	}
 
 	return true;
 }
