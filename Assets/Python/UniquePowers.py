@@ -17,6 +17,7 @@ def setup():
 	# Babylonian UP: receive a free tech after discovering the first five techs
 	player(iBabylonia).setFreeTechsOnDiscovery(5)
 
+
 @handler("cityAcquired")
 def arabianUP(iOwner, iPlayer, city):
 	if civ(iPlayer) != iArabia:
@@ -29,6 +30,7 @@ def arabianUP(iOwner, iPlayer, city):
 			city.spreadReligion(iStateReligion)
 		if not city.hasBuilding(temple(iStateReligion)):
 			city.setHasRealBuilding(temple(iStateReligion), True)
+
 
 @handler("cityAcquired")
 def mongolUP(iOwner, iPlayer, city, bConquest):
@@ -74,14 +76,16 @@ def mughalUP(city, iBuilding):
 		iCost = player(city).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(city.getOwner(), iCost / 2, True)
 
+
 # Russian UP: enemy units are damaged every turn while being in the Russia region
 @handler("BeginGameTurn")
 def russianUP(self):
 	if player(iRussia).isAlive():
 		for unit in plots.rectangle(tRussia).owner(iRussia).units():
-			if team(iRussia).isAtWar(unit.getOwner()) or (infos.unit(unit).isHiddenNationality() and not team(unit.getTeam()).isOpenBorders(team(iRussia).getID())):
+			if team(iRussia).isAtWar(unit.getOwner()) or (infos.unit(unit).isHiddenNationality() and unit.getCivilizationType() != iRussia and not team(unit.getTeam()).isOpenBorders(team(iRussia).getID())):
 				unit.changeDamage(8, slot(iRussia))
-			
+
+
 # Indonesian UP: additional gold for foreign ships in your core
 @handler("BeginGameTurn")
 def indonesianUP():
@@ -95,7 +99,8 @@ def indonesianUP():
 		iGold = 5 * iNumUnits
 		player(iIndonesia).changeGold(iGold)
 		message(slot(iIndonesia), 'TXT_KEY_INDONESIAN_UP', iGold)
-		
+
+
 @handler("BeginGameTurn")
 def resetBabylonianPower():
 	data.bBabyloniaTechReceived = False
