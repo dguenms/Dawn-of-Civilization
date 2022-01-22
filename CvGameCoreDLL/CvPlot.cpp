@@ -11527,3 +11527,8 @@ bool CvPlot::isExpansion() const
 {
 	return getExpansion() != NO_PLAYER;
 }
+
+bool CvPlot::isExpansionEffect(PlayerTypes ePlayer) const
+{
+	return getExpansion() == ePlayer && (getBirthProtected() == ePlayer || getBirthProtected() == NO_PLAYER);
+}

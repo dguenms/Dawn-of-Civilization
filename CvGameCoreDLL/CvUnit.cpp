@@ -4945,7 +4945,7 @@ bool CvUnit::bombard()
 	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
 
 	// Leoreth: recently born civilizations have additional bombard damage on their territory, or if expansion target
-	if ((pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() == getOwnerINLINE()) || (pTargetPlot->isExpansion() && pTargetPlot->getExpansion() == getOwnerINLINE()))
+	if ((pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() == getOwnerINLINE()) || (pTargetPlot->isExpansion() && pTargetPlot->isExpansionEffect(getOwnerINLINE())))
 	{
 		iBombardModifier += 100;
 	}
@@ -9697,7 +9697,7 @@ int CvUnit::withdrawalProbability() const
 	int iWithdrawalProbability = std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
 
 	// Leoreth: recently born civilizations have additional retreat chance on their territory, or in expansion territory
-	if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->getExpansion() == getOwnerINLINE())
+	if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
 	{
 		iWithdrawalProbability = std::min(100, iWithdrawalProbability + 50);
 	}
@@ -11253,7 +11253,7 @@ int CvUnit::getAlwaysHealCount() const
 bool CvUnit::isAlwaysHeal() const
 {
 	// Leoreth: recently spawned can always heal in their territory, or in expansion territory
-	return (getAlwaysHealCount() > 0 || plot()->getBirthProtected() == getOwnerINLINE() || plot()->getExpansion() == getOwnerINLINE());
+	return (getAlwaysHealCount() > 0 || plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()));
 }
 
 void CvUnit::changeAlwaysHealCount(int iChange)

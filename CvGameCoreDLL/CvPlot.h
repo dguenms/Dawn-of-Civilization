@@ -557,6 +557,7 @@ public:
 	void resetExpansion();
 	PlayerTypes getExpansion() const;
 	bool isExpansion() const;
+	bool isExpansionEffect(PlayerTypes ePlayer) const;
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();

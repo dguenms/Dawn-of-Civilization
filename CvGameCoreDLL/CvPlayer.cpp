@@ -1723,7 +1723,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
 	bRecapture = ((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
-	bExpansion = pOldCity->plot()->getExpansion() == getID() || pOldCity->plot()->getBirthProtected() == getID();
+	bExpansion = pOldCity->plot()->isExpansionEffect(getID()) || pOldCity->plot()->getBirthProtected() == getID();
 
 	// Leoreth: peaceful acquisition of minor cities makes original owner
 	if (!bConquest && (GET_PLAYER(pOldCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pOldCity->getOwnerINLINE()).isBarbarian()))
