@@ -652,11 +652,9 @@ class Birth(object):
 	
 		# independence civs require the player controlling the most cities in their area to be stable or worse
 		if self.isIndependence():
-			numCities = lambda p: plots.birth(self.iCiv).cities().owner(p).count()
-			iMostCitiesPlayer = players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: numCities(p) > 0).maximum(numCities)
-			if iMostCitiesPlayer is not None and civ(iMostCitiesPlayer) != self.iCiv:
-				if stability(iMostCitiesPlayer) >= iStabilitySolid:
-					return False
+			birthCities = plots.birth(self.iCiv).cities()
+			if players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: birthCities.owner(p).any()).all(lambda p: stability(p) >= iStabilitySolid):
+				return False
 		
 		return True
 	
