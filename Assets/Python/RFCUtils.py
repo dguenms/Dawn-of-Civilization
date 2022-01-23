@@ -588,20 +588,20 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		pushOutGarrisons(plot, iOwner)
 		relocateSeaGarrisons(plot, iOwner)
 	
-	flipCity(plot, False, False, iPlayer, [iOwner])
+	flippedCity = flipCity(plot, False, False, iPlayer, [iOwner])
+	
+	if flippedCity:
+		flippedCity.setOccupationTimer(0)
 	
 	if bFlipUnits:
 		for iUnit, typeUnits in flippingUnits:
-			try:
-				makeUnits(iPlayer, iUnit, plot, len(typeUnits))
-			except Exception, e:
-				raise Exception("%s: units are: %s" % (e, flippingUnitsText))
+			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
 	else:
 		createGarrisons(plot, iPlayer, 2)
 	
 	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 	
-	return city(plot)
+	return flippedCity
 		
 # used: Stability
 def isGreatBuilding(iBuilding):
