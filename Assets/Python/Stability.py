@@ -561,16 +561,12 @@ def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
 				team(iPlayer).declareWar(player(iNewOwner).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 	
-	iNumDefenders = max(2, player(iNewOwner).getCurrentEra()-1)
-	lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
-	
-	if bRelocate:
-		relocateUnitsToCore(city.getOwner(), lRelocatedUnits, iArmyPercent)
-	else:
-		killUnits(lRelocatedUnits)
+	relocateGarrisonToCore(city)
 	
 	completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
-	flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
+	
+	iNumDefenders = max(2, player(iNewOwner).getCurrentEra()-1)
+	ensureDefenders(iNewOwner, tile, iNumDefenders)
 	
 	if is_minor(iNewOwner):
 		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', name, color=iRed)
@@ -1583,22 +1579,16 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	
 	for city in resurrectionCities:
 		iOwner = city.getOwner()
-		pOwner = player(iOwner)
-		
-		x = city.getX()
-		y = city.getY()
-		
 		bCapital = city.isCapital()
 		
-		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
-		lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
-		dRelocatedUnits[iOwner].extend(lRelocatedUnits)
+		relocatedUnits = getLocalGarrison(city)
+		dRelocatedUnits[iOwner].extend(relocatedUnits)
 		
 		iCultureChange = is_minor(iOwner) and 100 or 75
-		completeCityFlip(city, iPlayer, iOwner, iCultureChange, False, True, True)
-		flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
-			
-		newCity = city_(x, y)
+		newCity = completeCityFlip(city, iPlayer, iOwner, iCultureChange, False, True, True)
+		
+		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
+		ensureDefenders(iPlayer, newCity, iNumDefenders)
 		
 		# Leoreth: rebuild some city infrastructure
 		for iBuilding in range(iNumBuildings):

@@ -232,19 +232,6 @@ def pushOutGarrisons(tCityPlot, iOldOwner):
 				move(unit, destination)
 
 # used: RFCUtils
-# relocates units in a city plot to the nearest city
-def relocateGarrisons(tCityPlot, iOldOwner):
-	if not is_minor(iOldOwner):
-		city = cities.owner(iOldOwner).without(tCityPlot).closest(tCityPlot)
-		if city:
-			for unit in units.at(tCityPlot).owner(iOldOwner):
-				if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
-					move(unit, city)
-	
-	for unit in units.at(tCityPlot).owner(iOldOwner):
-		unit.kill(False, iOldOwner)
-			
-# used: RFCUtils
 def relocateSeaGarrisons(tCityPlot, iOldOwner):
 	destination = cities.owner(iOldOwner).without(tCityPlot).coastal().first()
 			
@@ -980,21 +967,15 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
 		events.fireEvent("enslave", iPlayer, pLosingUnit)
-
-# used: Stability
-def flipOrRelocateGarrison(city, iNumDefenders):
-	lRelocatedUnits = []
-	lFlippedUnits = []
-	
-	for plot in plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or location(p) == location(city)):
-		for unit in units.at(plot).owner(city.getOwner()).domain(DomainTypes.DOMAIN_LAND):
-			if unit.canFight() and len(lFlippedUnits) < iNumDefenders:
-				lFlippedUnits.append(unit)
-			else:
-				lRelocatedUnits.append(unit)
-					
-	return lFlippedUnits, lRelocatedUnits
 		
+# used: Stability
+def relocateGarrisonToCore(city):
+	relocateUnitsToCore(city.getOwner(), plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or at(p, city)).units().owner(city.getOwner()))
+	
+# used: RFCUtils, Stability
+def getLocalGarrison(city):
+	return plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or at(p, city)).units().owner(city.getOwner()).domain(DomainTypes.DOMAIN_LAND)
+	
 # used: RFCUtils
 def flipUnit(unit, iNewOwner, plot):
 	if location(unit) >= (0, 0):
@@ -1018,14 +999,6 @@ def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
 		for unit in removedUnits:
 			unit.kill(-1, False)
 				
-# used: Stability
-def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
-	for unit in units:
-		flipUnit(unit, iNewOwner, tPlot)
-
-	if len(units) < iNumDefenders and active() != iNewOwner:
-		createRoleUnit(iNewOwner, tPlot, iDefend, iNumDefenders - len(units))
-		
 # used: Congresses, Stability
 def killUnits(lUnits):
 	for unit in units.of(lUnits).where(lambda unit: not unit.isCargo()):
