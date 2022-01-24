@@ -354,6 +354,9 @@ def determineTargetPlayer(iPlayer):
 		# not already at war
 		if tPlayer.isAtWar(iLoopPlayer): continue
 		
+		# birth protected
+		if pLoopPlayer.isBirthProtected(): continue
+		
 		lPotentialTargets.append(iLoopPlayer)
 		
 	if not lPotentialTargets: return -1

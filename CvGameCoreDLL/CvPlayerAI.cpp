@@ -3001,14 +3001,17 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 1; // Leoreth: lowered because of war maps influence
 
 	//Leoreth: take war maps into account here as well
-	iValue += pCity->plot()->getWarValue(getID()) / 2;
+	if (pCity->plot()->getBirthProtected() != pCity->getOwner())
+	{
+		iValue += pCity->plot()->getWarValue(getID()) / 2;
+	}
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 	{
 		if (pCity->plot()->getWarValue(getID()) == 0)
 		{
-			iValue /= 2;
+			iValue /= 5;
 		}
 	}
 
@@ -3103,7 +3106,10 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		}
 	}
 
-
+	if (pCity->plot()->getBirthProtected() == pCity->getOwner())
+	{
+		iValue /= 5;
+	}
 
 	if (bRandomize)
 	{

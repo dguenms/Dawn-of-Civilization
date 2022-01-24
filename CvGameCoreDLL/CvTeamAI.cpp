@@ -1127,6 +1127,12 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 	// Sanguo Mod Performance, end
 	iValue /= iMaxCultureVictoryAdjustment;
 
+	// Leoreth: avoid birth protected
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isBirthProtected())
+	{
+		iValue /= 4;
+	}
+
 	return iValue;
 }
 
@@ -3893,7 +3899,7 @@ void CvTeamAI::AI_doWar()
 		// }
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-		{
+	{
 		GET_PLAYER(*iter).AI_doPeace();
 	}
 	// Sanguo Mod Performance, end
