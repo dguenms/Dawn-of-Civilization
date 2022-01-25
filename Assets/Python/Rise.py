@@ -173,6 +173,12 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 def balanceMilitary(bWar, iAttacker, iDefender):
 	if not bWar:
 		return
+	
+	if not player(iAttacker).isHuman():
+		return
+	
+	if player(iDefender).isHuman():
+		return
 
 	if not player(iDefender).isBirthProtected():
 		return
