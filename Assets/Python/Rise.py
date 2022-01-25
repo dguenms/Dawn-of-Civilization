@@ -657,7 +657,7 @@ class Birth(object):
 				return False
 	
 		# independence civs require the player controlling the most cities in their area to be stable or worse
-		if self.isIndependence():
+		if self.isIndependence() and self.iCiv != iAmerica:
 			birthCities = plots.birth(self.iCiv).cities()
 			if players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: birthCities.owner(p).any()).all(lambda p: stability(p) >= iStabilitySolid):
 				return False
