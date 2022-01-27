@@ -14,7 +14,20 @@ import CvScreensInterface
 MainOpt = BugCore.game.MainInterface
 
 
+lExpandedFlipCivs = [
+	iByzantium
+]
+
 lIndependenceCivs = [
+	iByzantium,
+	iArgentina,
+	iMexico,
+	iColombia,
+	iBrazil,
+	iCanada
+]
+
+lDynamicReligionCivs = [
 	iByzantium,
 	iAmerica,
 	iArgentina,
@@ -396,10 +409,9 @@ class Birth(object):
 		self.updateParameters()
 	
 	def updateArea(self):
-		if self.isIndependence():
-			baseCities = self.iCiv == iByzantium and cities.all() or self.area.cities()
+		if self.iCiv in lExpandedFlipCivs:
 			owners = self.area.cities().owners().major()
-			ownerCities = baseCities.area(self.location).where(lambda city: city.getOwner() in owners)
+			ownerCities = cities.all().area(self.location).where(lambda city: city.getOwner() in owners).where(lambda city: not plot(city).isCore(city.getOwner()))
 			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)) and real_distance(city, self.location) <= 12)
 			
 			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
@@ -415,7 +427,7 @@ class Birth(object):
 			self.area = self.area.where(lambda p: p.isCore(self.iPlayer) or not owner(p, iAmerica))
 		
 		if self.iCiv == iCanada:
-			self.area += cities.region(rCanada).where(lambda city: civ(city) in [iFrance, iEngland, iAmerica]).plots().expand(2)
+			self.area += cities.region(rCanada).where(lambda city: city.getX() < plots.capital(iCanada).getX()).where(lambda city: civ(city) in [iFrance, iEngland, iAmerica]).plots().expand(2).where(lambda p: not p.isCore(p.getOwner()))
 			self.area = self.area.unique()
 		
 		self.excludeForeignCapitals()
@@ -452,7 +464,7 @@ class Birth(object):
 		if self.iCiv in dStartingReligion:
 			self.player.setLastStateReligion(dStartingReligion[self.iCiv])
 	
-		elif self.isIndependence():
+		elif self.iCiv in lDynamicReligionCivs:
 			iPrevalentReligion = getPrevalentReligion(self.area, self.iPlayer)
 			if iPrevalentReligion >= 0:
 				self.player.setLastStateReligion(iPrevalentReligion)
@@ -656,8 +668,8 @@ class Birth(object):
 			if stability(slot(iKhmer)) >= iRequiredStability:
 				return False
 	
-		# independence civs require the player controlling the most cities in their area to be stable or worse
-		if self.isIndependence() and self.iCiv != iAmerica:
+		# independence civs require all players controlling cities in their area to be stable or worse
+		if self.isIndependence():
 			birthCities = plots.birth(self.iCiv).cities()
 			if players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: birthCities.owner(p).any()).all(lambda p: stability(p) >= iStabilitySolid):
 				return False
