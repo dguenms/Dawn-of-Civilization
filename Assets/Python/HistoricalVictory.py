@@ -412,8 +412,8 @@ dGoals = {
 			RouteConnection(capital(), plots.of(lPacificCoast).named("PACIFIC_COAST"), [iRouteRailroad]).named("CAPITAL_PACIFIC_RAILWAY"),
 		).by(1920),
 		All(
-			Control(plots.regions(rCanada).named("CANADA")),
-			AreaPercent(plots.regions(rCanada).named("CANADA"), 90),
+			Control((plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) + plots.rectangle(tCanadaEast).without(lCanadaEastExceptions)).named("CANADA")),
+			AreaPercent((plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) + plots.rectangle(tCanadaEast).without(lCanadaEastExceptions)).named("CANADA"), 90),
 			NeverConquer(),
 		).named("CONTROL_CANADA_WITHOUT_EVER_CONQUERING").by(1950),
 		BrokeredPeaceCount(12).by(2000),
