@@ -81,11 +81,7 @@ tEasternEurope = ((69, 48), (73, 64))
 
 # second French goal: control 40% of Europe and North America in 1800 AD
 # first English goal: colonize every continent by 1730 AD
-# third Maya goal: make contact with a European civilization before they have discovered America
 tNorthAmerica = ((10, 40), (37, 58))
-
-# third Maya goal: make contact with a European civilization before they have discovered America
-tSouthCentralAmerica = ((13, 3), (41, 39))
 
 # first Russian goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
 tSiberia = ((82, 50), (112, 64))

@@ -95,7 +95,7 @@ dGoals = {
 	iMaya: (
 		Discovered(iCalendar).by(200),
 		Wonder(iTempleOfKukulkan).by(900),
-		FirstContact(plots.rectangle(tSouthAmerica) + plots.rectangle(tNorthAmerica), dCivGroups[iCivGroupEurope]).named("FIRST_CONTACT_NEW_WORLD"),
+		FirstContact(plots.regions(*lAmerica).named("AMERICA"), dCivGroups[iCivGroupEurope]).named("FIRST_CONTACT_NEW_WORLD"),
 	),
 	iTamils: (
 		All(
