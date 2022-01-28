@@ -2907,7 +2907,7 @@ class Track(Count):
 			iGold += players.major().alive().sum(self._player.getGoldPerTurnByPlayer) * 100
 			self.accumulate(iGold)
 		
-		return cls.desc("TRADE_GOLD").progr("TRADE_GOLD").handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).subclass("TradeGold")
+		return cls.desc("TRADE_GOLD").progr("TRADE_GOLD").handle("playerGoldTrade", accumulateTradeGold).handle("tradeMission", accumulateTradeMissionGold).handle("BeginPlayerTurn", trackTradeGold).func(value_function).turnly.subclass("TradeGold")
 	
 	@classproperty
 	def raidGold(cls):
