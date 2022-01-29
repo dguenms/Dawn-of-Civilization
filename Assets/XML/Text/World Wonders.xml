@@ -2571,19 +2571,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_MOVES] for civilian units</English>
-		<French>[ICON_BULLET]+1 [ICON_MOVES] pour les unit&#233;s civiles</French>
-		<German>[ICON_BULLET]+1[ICON_MOVES] for civilian units</German>
-		<Italian>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Spanish>
+		<English>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH</Tag>
