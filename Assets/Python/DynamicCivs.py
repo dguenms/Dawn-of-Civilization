@@ -537,7 +537,7 @@ dStartingLeaders = [
 # 1700 AD
 {
 	iChina : iHongwu,
-	iIndia : iShahuji,
+	iIndia : iShivaji,
 	iTamils : iKrishnaDevaRaya,
 	iKorea : iSejong,
 	iJapan : iOdaNobunaga,
@@ -2050,7 +2050,7 @@ def leader(iPlayer):
 	elif iCiv == iIndia:
 		if not bMonarchy and iEra >= iGlobal: return iGandhi
 		
-		if iEra >= iRenaissance: return iShahuji
+		if iEra >= iRenaissance: return iShivaji
 		
 		if getColumn(iPlayer) >= 5: return iChandragupta
 		
