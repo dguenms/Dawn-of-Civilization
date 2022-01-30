@@ -117,6 +117,13 @@ const wchar* CvInfoBase::getDescription(uint uiForm) const
 	return m_aCachedDescriptions[uiForm];
 }
 
+// Leoreth
+void CvInfoBase::setDescription(std::wstring szDescription)
+{
+	m_aCachedDescriptions.clear();
+	m_szTextKey = szDescription;
+}
+
 const wchar* CvInfoBase::getText() const
 {
 	// used instead of getDescription for Info entries that are not objects
@@ -10560,6 +10567,11 @@ const wchar* CvCivilizationInfo::getShortDescriptionKey() const
 	return m_szShortDescriptionKey;
 }
 
+const wchar* CvCivilizationInfo::getDescriptionKeyPersistent() const
+{
+	return m_szDescriptionPersistent;
+}
+
 const wchar* CvCivilizationInfo::getAdjective(uint uiForm)
 {
 	while(m_aszAdjective.size() <= uiForm)
@@ -10854,6 +10866,8 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(szTextVal, "PaganReligion");
 	m_iPaganReligion = pXML->FindInInfoClass(szTextVal);
+
+	pXML->GetChildXmlValByName(m_szDescriptionPersistent, "Description");
 
 	// set the current xml node to it's next sibling and then
 	pXML->GetChildXmlValByName(&m_bPlayable, "bPlayable");

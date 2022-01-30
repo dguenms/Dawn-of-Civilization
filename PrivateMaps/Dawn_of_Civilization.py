@@ -16,7 +16,12 @@ lMinorCivs = [iCelts, iNative, iIndependent, iIndependent2]
 
 
 def getDescription():
+	setup()
 	return "Dawn of Civilization"
+
+def setup():
+	for i, iCiv in enumerate(lBirthOrder):
+		infos.civ(iCiv).setDescription("%02d" % i)
 
 def getNumCustomMapOptions():
 	return len(lCustomMapOptions)

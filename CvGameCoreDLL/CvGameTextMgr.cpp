@@ -6142,6 +6142,18 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		{
 			// Civ Name
 			szText = GC.getCivilizationInfo(eCivilization).getDescription();
+
+			// Leoreth: if we set temporary values for sorting in the exe, restore the original values
+			if (szText == CvWString(L"00"))
+			{
+				for (int iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+				{
+					GC.getCivilizationInfo((CivilizationTypes)iI).setDescription(GC.getCivilizationInfo((CivilizationTypes)iI).getDescriptionKeyPersistent());
+				}
+
+				szText = GC.getCivilizationInfo(eCivilization).getDescription();
+			}
+
 			swprintf(szBuffer,  SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
 			szInfoText.append(szBuffer);
 		}
