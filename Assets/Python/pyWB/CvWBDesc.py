@@ -107,6 +107,7 @@ class CvGameDesc:
 	def apply(self):
 		"after reading, apply the game data"
 		gc.getGame().setStartYear(self.iStartYear)
+		gc.getGame().setGameTurn(self.gameTurn)
 
 	def write(self, f):
 		"write out game data"
@@ -1743,7 +1744,7 @@ class CvMapDesc:
 
 	def read(self, f):
 		"read map data"
-		self.__init__()
+		#self.__init__()
 		parser = CvWBParser()
 		if parser.findNextToken(f, "BeginMap")==false:
 			print "can't find map"

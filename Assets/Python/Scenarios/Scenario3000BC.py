@@ -2,12 +2,16 @@ from Civilizations import initScenarioTechs
 from Core import *
 
 
-lInitialCivs = [iEgypt, iBabylonia, iHarappa]
-
-
-def initScenario():
-	initScenarioTechs()
-	createStartingUnits()
+class Scenario(object):
+	
+	iStartYear = -3000
+	lInitialCivs = [iEgypt, iBabylonia, iHarappa]
+	fileName = "RFC_3000BC"
+	
+	@staticmethod
+	def initScenario():
+		initScenarioTechs()
+		createStartingUnits()
 	
 
 def createStartingUnits():

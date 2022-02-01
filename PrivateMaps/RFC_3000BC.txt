@@ -1,0 +1,11 @@
+Platy Builder
+Version=11
+BeginGame
+	Calendar=CALENDAR_DEFAULT
+	Option=GAMEOPTION_AGGRESSIVE_AI
+	Option=GAMEOPTION_NO_TECH_BROKERING
+	GameTurn=0
+	StartYear=-3000
+	Description=TXT_KEY_RHYES_WB_DESC
+	ModPath=Mods\RFC Dawn of Civilization
+EndGame

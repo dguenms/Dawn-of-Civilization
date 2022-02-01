@@ -4,6 +4,8 @@ from MapParser import MapParser
 from Scenarios import *
 
 
+PATH_TEMPLATE = "Mods\RFC Dawn of Civilization\PrivateMaps\%s.txt"
+
 dScenarioModules = {
 	i3000BC: "Scenario3000BC",
 }
@@ -16,12 +18,7 @@ lMinorCivs = [iCelts, iNative, iIndependent, iIndependent2]
 
 
 def getDescription():
-	setup()
 	return "Dawn of Civilization"
-
-def setup():
-	for i, iCiv in enumerate(lBirthOrder):
-		infos.civ(iCiv).setDescription("%02d" % i)
 
 def getNumCustomMapOptions():
 	return len(lCustomMapOptions)
@@ -60,10 +57,19 @@ def isAdvancedMap():
 
 def prepareMap():
 	global PARSER
+	
+	loadScenario()
 
-	mapName = "Mods\RFC Dawn of Civilization\PrivateMaps\RFC_Earth.txt"
+	mapName = "RFC_Earth"
 	PARSER = MapParser()
-	PARSER.read(mapName)
+	PARSER.read(PATH_TEMPLATE % mapName)
+	
+	scenarioName = scenario.fileName
+	PARSER.read(PATH_TEMPLATE % scenarioName)
+
+def loadScenario():
+	global scenario
+	scenario = getScenario()
 
 def getGridSize(args):
 	if args[0] == -1:
@@ -94,19 +100,11 @@ def addGoodies():
 	return
 	
 def afterGeneration():
-	loadScenario()
-	
 	initSlots()
-	initScenario()
-
-def loadScenario():
-	scenarioModule = __import__(dScenarioModules[scenario()])
-	
-	for attribute in ["initScenario", "lInitialCivs"]:
-		globals()[attribute] = getattr(scenarioModule, attribute)
+	scenario.initScenario()
 
 def initSlots():
-	for iCiv in lInitialCivs:
+	for iCiv in scenario.lInitialCivs:
 		if iCiv == game.getActiveCivilizationType():
 			continue
 		

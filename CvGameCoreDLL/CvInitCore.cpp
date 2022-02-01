@@ -1050,6 +1050,12 @@ void CvInitCore::setCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomM
 	if ( checkBounds(iOptionID, 0, m_iNumCustomMapOptions) )
 	{
 		m_aeCustomMapOptions[iOptionID] = eCustomMapOption;
+
+		CyArgsList argsList;
+		argsList.add(iOptionID);
+		argsList.add(eCustomMapOption);
+		long lResult = 0;
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "updateCustomMapOption", argsList.makeFunctionArgs(), &lResult);
 	}
 }
 

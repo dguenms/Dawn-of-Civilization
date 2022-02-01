@@ -62,6 +62,7 @@ from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
 import Victories
 
+from Scenarios import getScenario
 from Locations import *
 from Core import *
 
@@ -944,6 +945,18 @@ def canEverRespawn(argsList):
 
 def toggleStabilityOverlay():
 	toggleStabilityOverlayUtils()
+
+def updateCustomMapOption(argsList):
+	iOptionID, iOption = argsList
+	if iOptionID == 0:
+		scenario = getScenario(iOption)
+		
+		for i, iCiv in enumerate(lBirthOrder):
+			infos.civ(iCiv).setDescription("%02d" % i)
+		
+		for iCiv in range(iNumCivs):
+			iCivStartYear = infos.civ(iCiv).getStartingYear()
+			infos.civ(iCiv).setPlayable(iCivStartYear != -1 and (iCivStartYear >= scenario.iStartYear or iCiv in scenario.lInitialCivs))
 		
 
 #######################################################################################

@@ -6,6 +6,23 @@ from DynamicCivs import *
 
 from Events import handler
 
+from Scenario3000BC import Scenario as Scenario3000BC
+from Scenario600AD import Scenario as Scenario600AD
+from Scenario1700AD import Scenario as Scenario1700AD
+
+
+def getScenario(iScenario=None):
+	if iScenario is None:
+		iScenario = scenario()
+	
+	dScenarios = {
+		i3000BC: Scenario3000BC,
+		i600AD: Scenario600AD,
+		i1700AD: Scenario1700AD,
+	}
+	
+	return dScenarios[iScenario]
+
 
 # used: Rise, Dawn_of_Civilization
 def addPlayer(iCiv, bMinor=False):

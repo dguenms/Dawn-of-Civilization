@@ -6144,7 +6144,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			szText = GC.getCivilizationInfo(eCivilization).getDescription();
 
 			// Leoreth: if we set temporary values for sorting in the exe, restore the original values
-			if (szText == CvWString(L"00"))
+			if (szText.size() == 2)
 			{
 				for (int iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
 				{

@@ -41,7 +41,7 @@ def updateModifiers(iPlayer, iCivilization):
 def init(iPlayer, iCivilization):
 	updateModifiers(iPlayer, iCivilization)
 	
-	if scenario() > i3000BC and bBirth[iCivilization] < dBirth[iVikings]:
+	if scenario() > i3000BC and dBirth[iPlayer] < dBirth[iVikings]:
 		adjustModifiers(iPlayer)
 	
 	player(iPlayer).updateMaintenance()

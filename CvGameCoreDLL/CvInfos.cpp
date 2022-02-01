@@ -10552,6 +10552,12 @@ bool CvCivilizationInfo::isPlayable() const
 	return m_bPlayable;
 }
 
+// Leoreth
+void CvCivilizationInfo::setPlayable(bool bNewValue)
+{
+	m_bPlayable = bNewValue;
+}
+
 const wchar* CvCivilizationInfo::getShortDescription(uint uiForm)
 {
 	while(m_aszShortDescription.size() <= uiForm)
