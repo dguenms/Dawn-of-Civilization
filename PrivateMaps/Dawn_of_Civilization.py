@@ -6,10 +6,6 @@ from Scenarios import *
 
 PATH_TEMPLATE = "Mods\RFC Dawn of Civilization\PrivateMaps\%s.txt"
 
-dScenarioModules = {
-	i3000BC: "Scenario3000BC",
-}
-
 lCustomMapOptions = [
 	("Starting Date", ["3000 BC", "600 AD", "1700 AD"], "3000 BC"),
 ]
@@ -108,6 +104,7 @@ def initSlots():
 		if iCiv == game.getActiveCivilizationType():
 			continue
 		
+		print "addPlayer(%d): %s" % (iCiv, infos.civ(iCiv).getText())
 		addPlayer(iCiv)
 	
 	for iCiv in lMinorCivs:

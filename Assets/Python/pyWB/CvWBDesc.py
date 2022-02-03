@@ -6,6 +6,8 @@ import sys
 import CvUtil
 from array import *
 
+from Core import *
+
 # globals
 gc = CyGlobalContext()
 version = 11
@@ -107,7 +109,12 @@ class CvGameDesc:
 	def apply(self):
 		"after reading, apply the game data"
 		gc.getGame().setStartYear(self.iStartYear)
-		gc.getGame().setGameTurn(self.gameTurn)
+		gc.getGame().setGameTurn(turns(self.gameTurn))
+		
+		if self.maxTurns > 0:
+			gc.getGame().setMaxTurns(turns(self.maxTurns))
+		else:
+			gc.getGame().changeMaxTurns(-turns(self.gameTurn))
 
 	def write(self, f):
 		"write out game data"
