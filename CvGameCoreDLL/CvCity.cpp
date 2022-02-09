@@ -12033,7 +12033,7 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes ePlayer) const
 		return 100;
 	}
 
-	return 0;
+	return iTotalCulture;
 }
 
 

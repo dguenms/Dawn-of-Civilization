@@ -567,7 +567,7 @@ def createRoleUnits(iPlayer, location, units, iExperience=0):
 	return created
 
 # used: AIWars, Congresses, History, RFCUtils
-def createRoleUnit(iPlayer, location, iRole, iAmount, iExperience=0):
+def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
 	created = CreatedUnits.none()
 	location = getRoleLocation(iRole, location)
 	if iRole == iSettle:

@@ -86,7 +86,7 @@ class TileDict:
 			self.entries[self.transform(values)].append(tile)
 	
 	def __iter__(self):
-		return iter(self.entries)
+		return iter(self.entries.items())
 	
 	def __str__(self):
 		return str(self.entries)

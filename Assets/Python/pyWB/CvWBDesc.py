@@ -890,7 +890,8 @@ class CvUnitDesc:
 		"save unit desc to a file"
 		Info = gc.getUnitInfo(unit.getUnitType())
 		f.write("\tBeginUnit\n")
-		f.write("\t\tUnitType=%s, UnitOwner=%d, (%s)\n" %(Info.getType(), unit.getOwner(), gc.getPlayer(unit.getOwner()).getName().encode(fileencoding)))
+		f.write("\t\tUnitType=%s\n" %(Info.getType(),))
+		f.write("\t\tUnitOwner=%s\n" %(gc.getCivilizationInfo(unit.getCivilizationType()).getType(),))
 		if (len(unit.getNameNoDesc()) > 0):
 			f.write("\t\tUnitName=%s\n" %(unit.getNameNoDesc().encode(fileencoding),))
 		if unit.getLeaderUnitType() != -1:
@@ -940,10 +941,13 @@ class CvUnitDesc:
 				break
 
 			v = parser.findTokenValue(toks, "UnitType")
-			vOwner = parser.findTokenValue(toks, "UnitOwner")
-			if (v!=-1 and vOwner != -1):
+			if v != -1:
 				self.unitType = v
-				self.owner = int(vOwner)
+				continue
+			
+			v = parser.findTokenValue(toks, "UnitOwner")
+			if v != -1:
+				self.owner = v
 				continue
 
 			v = parser.findTokenValue(toks, "UnitName")
@@ -1023,8 +1027,15 @@ class CvUnitDesc:
 
 	def apply(self):
 		"after reading, this will actually apply the data"
-		player = getPlayer(self.owner)
-		if (player):
+		if self.owner:
+			try:
+				iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
+			except Exception, e:
+				print "exception for owner %s at (%d, %d)" % (self.owner, self.plotX, self.plotY)
+				raise e
+			if iCiv < 0:
+				return
+		
 			# print ("unit apply %d %d" %(self.plotX, self.plotY))
 			CvUtil.pyAssert(self.plotX>=0 and self.plotY>=0, "invalid plot coords")
 			unitTypeNum = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), self.unitType)
@@ -1036,7 +1047,7 @@ class CvUnitDesc:
 				else:
 					eUnitAI = UnitAITypes.NO_UNITAI
 
-				unit = player.initUnit(unitTypeNum, self.plotX, self.plotY, UnitAITypes(eUnitAI), self.facingDirection)
+				unit = player(iCiv).initUnit(unitTypeNum, self.plotX, self.plotY, UnitAITypes(eUnitAI), self.facingDirection)
 			if unit:
 				if (self.szName != None):
 					unit.setName(self.szName)
@@ -1096,7 +1107,7 @@ class CvCityDesc:
 		self.plotY=-1
 	## Platy Builder ##
 		self.szScriptData = ""
-		self.lCulture = []
+		self.dCulture = {}
 		self.iDamage = 0
 		self.iOccupation = 0
 		self.iExtraHappiness = 0
@@ -1114,7 +1125,7 @@ class CvCityDesc:
 		city = plot.getPlotCity()
 		CvUtil.pyAssert(city.isNone()==0, "null city?")
 		f.write("\tBeginCity\n")
-		f.write("\t\tCityOwner=%d, (%s)\n" %(city.getOwner(), gc.getPlayer(city.getOwner()).getName().encode(fileencoding)))
+		f.write("\t\tCityOwner=%s\n" %(gc.getCivilizationInfo(city.getCivilizationType()).getType(),))
 		f.write("\t\tCityName=%s\n" %(city.getNameKey().encode(fileencoding),))
 		f.write("\t\tCityPopulation=%d\n" %(city.getPopulation(),))
 		if (city.isProductionUnit()):
@@ -1150,10 +1161,17 @@ class CvCityDesc:
 			f.write("\t\tScriptData=%s\n" %city.getScriptData())
 
 		# Player culture
+		bAnyCulture = False
 		for iPlayerLoop in range(gc.getMAX_PLAYERS()):
 			iPlayerCulture = city.getCulture(iPlayerLoop)
 			if (iPlayerCulture > 0):
-				f.write("\t\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
+				if not bAnyCulture:
+					f.write("\t\tBeginCulture\n")
+					bAnyCulture = True
+				f.write("\t\t\tCivilization=%s, Culture=%d\n" %(gc.getCivilizationInfo(gc.getPlayer(iPlayerLoop).getCivilizationType()).getType(), iPlayerCulture))
+		if bAnyCulture:
+			f.write("\t\tEndCulture\n")
+			
 		if city.getDefenseDamage() > 0:
 			f.write("\t\tDamage=%d\n" %(city.getDefenseDamage(),))
 		if city.getOccupationTimer() > 0:
@@ -1197,7 +1215,7 @@ class CvCityDesc:
 			# City - Owner
 			vOwner=parser.findTokenValue(toks, "CityOwner")
 			if (vOwner != -1):
-				self.owner = int(vOwner)
+				self.owner = vOwner
 				continue
 
 			# City - Name
@@ -1277,15 +1295,26 @@ class CvCityDesc:
 			if v!=-1:
 				self.szScriptData = v
 				continue
+				
+			if parser.findTokenValue(toks, "BeginCulture") != -1:
+				print "toks: %s" % toks
+				while (True):
+					nextLine = parser.getNextLine(f)
+					toks = parser.getTokens(nextLine)
+					
+					print "iterate, toks: %s" % toks
+					vCiv = parser.findTokenValue(toks, "Civilization")
+					vCulture = parser.findTokenValue(toks, "Culture")
+					print "vCiv=%s, vCulture=%s" % (vCiv, vCulture)
+					if vCiv != -1 and vCulture != -1:
+						self.dCulture[vCiv] = int(vCulture)
+						continue
+					
+					v = parser.findTokenValue(toks, "EndCulture") 
+					if v != -1:
+						break
 
 		## Platy Builder ##
-			for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
-				szCityTag = ("Player%dCulture" %(iPlayerLoop))
-				v = parser.findTokenValue(toks, szCityTag)
-				if v!=-1:
-					if int(v) > 0:
-						self.lCulture.append([iPlayerLoop, int(v)])
-					continue
 			v=parser.findTokenValue(toks, "Damage")
 			if v!=-1:
 				self.iDamage = int(v)
@@ -1345,9 +1374,11 @@ class CvCityDesc:
 
 	def apply(self, bSpecial):
 		"after reading, this will actually apply the data"
-		player = getPlayer(self.owner)
-		if (player):
-			self.city = player.initCity(self.plotX, self.plotY)
+		iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
+		if iCiv < 0:
+			return
+		
+		self.city = player(iCiv).initCity(self.plotX, self.plotY)
 
 		if (self.name != None):
 			self.city.setName(self.name, False)
@@ -1355,8 +1386,12 @@ class CvCityDesc:
 		if self.population > -1:
 			self.city.setPopulation(self.population)
 
-		for item in self.lCulture:
-			self.city.setCulture(item[0], item[1], true)
+		for civType, iCulture in self.dCulture.items():
+			iCultureCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), civType))
+			if iCiv < 0:
+				continue
+			
+			self.city.setCulture(slot(iCultureCiv), scale(iCulture), True)
 
 		for bldg in (self.bldgType):
 			bldgTypeNum = CvUtil.findInfoTypeNum(gc.getBuildingInfo, gc.getNumBuildingInfos(), bldg)
@@ -1428,9 +1463,9 @@ class CvPlotDesc:
 		self.iX = -1
 		self.iY = -1
 		self.riverNSDirection = CardinalDirectionTypes.NO_CARDINALDIRECTION
-		self.isNOfRiver = 0
+		self.isNOfRiver = None
 		self.riverWEDirection = CardinalDirectionTypes.NO_CARDINALDIRECTION
-		self.isWOfRiver = 0
+		self.isWOfRiver = None
 		self.isStartingPlot = 0
 		self.bonusType = None
 		self.improvementType = None
@@ -1659,8 +1694,11 @@ class CvPlotDesc:
 		return True
 		
 	def applyRivers(self):
-		self.plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
-		self.plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
+		if self.isNOfRiver is not None:
+			self.plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
+		
+		if self.isWOfRiver is not None:
+			self.plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
 	
 	def applyBonus(self):
 		if self.bonusType:
@@ -1694,6 +1732,25 @@ class CvPlotDesc:
 
 		if (self.szScriptData != ""):
 			self.plot.setScriptData(self.szScriptData)
+	
+	def applyDevelopment(self):
+		self.applyUnits()
+		self.applyCity(True)
+	
+		if (self.improvementType):
+			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
+			self.plot.setImprovementType(improvementTypeNum)
+
+		if (self.routeType):
+			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)
+			self.plot.setRouteType(routeTypeNum)
+
+		if (self.szLandmark != ""):
+			CyEngine().addLandmark(CyMap().plot(self.iX, self.iY), "%s" %(self.szLandmark))
+
+		if (self.szScriptData != ""):
+			self.plot.setScriptData(self.szScriptData)
+		
 
 	def applyUnits(self):
 		#print "--apply units"

@@ -149,6 +149,7 @@ dResourcesDict = {
 
 dSpawnResourcesDict = {
 	(90, 28) : (iTamils,    iFish),
+	(78, 40) : (iArabia,	iSheep),
 	(95, 43) : (iTibet,     iWheat),
 	(97, 44) : (iTibet,     iHorse),
 	(78, 51) : (iMongols,   iSilk),
@@ -263,6 +264,46 @@ def removeFeatures(iGameTurn):
 		
 	if iGameTurn == year(700) and player(iVikings).isHuman():
 		plot(41, 58).setFeatureType(-1, 0)
+
+
+def setupScenarioResources():
+	setup()
+	iStartTurn = scenarioStartTurn()
+	
+	for iTurn, lResources in dResources:
+		if iTurn <= iStartTurn:
+			for (x, y), iResource in lResources:
+				createResource(x, y, iResource)
+	
+	for iCiv, lResources in dSpawnResources:
+		if year(dBirth[iCiv]) <= iStartTurn:
+			for (x, y), iResource in lResources:
+				createResource(x, y, iResource)
+	
+	for iTurn, lResources in dRemovedResources:
+		if iTurn <= iStartTurn:
+			for x, y in lResources:
+				removeResource(x, y)
+	
+	for iTurn, lRoutes in dRoutes.items():
+		if iTurn <= iStartTurn:
+			for x, y in lRoutes:
+				plot(x, y).setRouteType(iRouteRoad)
+	
+	for iTurn, lPlots in dPlotTypes:
+		if iTurn <= iStartTurn:
+			for (x, y), iPlotType in lPlots:
+				plot(x, y).setPlotType(iPlotType, True, True)
+	
+	for iTurn, lFeatures in dFeatures:
+		if iTurn <= iStartTurn:
+			for (x, y), iFeature in lFeatures:
+				plot(x, y).setFeatureType(iFeature, 0)
+	
+	for iTurn, lFeatures in dRemovedFeatures:
+		if iTurn <= iStartTurn:
+			for x, y in lFeatures:
+				plot(x, y).setFeatureType(-1, 0)
 		
 
 # Leoreth: bonus removal alerts by edead

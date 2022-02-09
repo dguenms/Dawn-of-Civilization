@@ -10,6 +10,82 @@ from Scenario3000BC import Scenario as Scenario3000BC
 from Scenario600AD import Scenario as Scenario600AD
 from Scenario1700AD import Scenario as Scenario1700AD
 
+	
+dWonderOriginalOwners = {
+	iGreatLighthouse : iEgypt,
+	iGreatLibrary : iEgypt,
+	iPyramids : iEgypt,
+	iGreatSphinx : iEgypt,
+	iSalsalBuddha : iIndependent,
+	iJewishShrine : iIndependent,
+	iShwedagonPaya : iIndependent,
+	iCatholicShrine : iIndependent,
+	iTaoistShrine : iChina,
+	iGreatWall : iChina,
+	iConfucianShrine : iChina,
+	iDujiangyan : iChina,
+	iTerracottaArmy : iChina,
+	iForbiddenPalace : iChina,
+	iGrandCanal : iChina,
+	iPorcelainTower : iChina,
+	iParthenon : iGreece,
+	iHinduShrine : iIndia,
+	iBuddhistShrine : iIndia,
+	iIronPillar : iIndia,
+	iNalanda : iIndia,
+	iVijayaStambha : iIndia,
+	iKhajuraho : iIndia,
+	iZoroastrianShrine : iPersia,
+	iGondeshapur : iPersia,
+	iFlavianAmphitheatre : iRome,
+	iTempleOfKukulkan : iMaya,
+	iMonolithicChurch : iEthiopia,
+	iJetavanaramaya : iTamils,
+	iCheomseongdae : iKorea,
+	iOrthodoxShrine : iByzantium,
+	iTheodosianWalls : iByzantium,
+	iHagiaSophia : iByzantium,
+	iMountAthos : iByzantium,
+	iItsukushimaShrine : iJapan,
+	iHimejiCastle : iJapan,
+	iGurEAmir : iTurks,
+	iDomeOfTheRock : iArabia,
+	iSpiralMinaret : iArabia,
+	iIslamicShrine : iArabia,
+	iHouseOfWisdom : iArabia,
+	iPotalaPalace : iTibet,
+	iBorobudur : iIndonesia,
+	iPrambanan : iIndonesia,
+	iEscorial : iSpain,
+	iMezquita : iMoors,
+	iNotreDame : iFrance,
+	iVersailles : iFrance,
+	iLouvre : iFrance,
+	iKrakDesChevaliers : iFrance,
+	iWatPreahPisnulok : iKhmer,
+	iOxfordUniversity : iEngland,
+	iProtestantShrine : iHolyRome,
+	iSaintThomasChurch : iHolyRome,
+	iSaintSophia : iRussia,
+	iKremlin : iRussia,
+	iSaintBasilsCathedral : iRussia,
+	iUniversityOfSankore : iMali,
+	iOldSynagogue : iPoland,
+	iTorreDeBelem : iPortugal,
+	iSantaMariaDelFiore : iItaly,
+	iSanMarcoBasilica : iItaly,
+	iSistineChapel : iItaly,
+	iFloatingGardens : iAztecs,
+	iShalimarGardens : iMughals,
+	iHarmandirSahib : iMughals,
+	iTajMahal : iMughals,
+	iRedFort : iMughals,
+	iTopkapiPalace : iOttomans,
+	iBlueMosque : iOttomans,
+	iImageOfTheWorldSquare : iIran,
+	iBourse : iNetherlands,
+}
+
 
 def getScenario(iScenario=None):
 	if iScenario is None:
@@ -30,23 +106,24 @@ def addPlayer(iCiv, bMinor=False):
 	iLeader = startingLeader(iCiv)
 	game.addPlayer(iPlayer, iLeader, iCiv)
 	
+	data.dSlots[iCiv] = iPlayer
+	
 	if bMinor:
 		player(iPlayer).setMinorCiv(True)
-		data.dSlots[iCiv] = iPlayer
 
 
 # TODO: disabled for now, most of this needs to be different
 #@handler("GameStart")
 def initScenario():
-	adjustCityCulture()
+	#adjustCityCulture()
 	
-	updateGreatWall()
+	#updateGreatWall()
 		
-	foundCapitals()
-	flipStartingTerritory()
+	#foundCapitals()
+	#flipStartingTerritory()
 	
 	adjustReligionFoundingDates()
-	initStartingReligions()
+	#initStartingReligions()
 	
 	initScenarioTechs()
 	
@@ -334,80 +411,7 @@ def adjustWonders():
 	for iWonder in dExpiredWonders[iScenario]:
 		game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
 	
-	dWonderOriginalOwners = {
-		iGreatLighthouse : iEgypt,
-		iGreatLibrary : iEgypt,
-		iPyramids : iEgypt,
-		iGreatSphinx : iEgypt,
-		iSalsalBuddha : iIndependent,
-		iJewishShrine : iIndependent,
-		iShwedagonPaya : iIndependent,
-		iCatholicShrine : iIndependent,
-		iTaoistShrine : iChina,
-		iGreatWall : iChina,
-		iConfucianShrine : iChina,
-		iDujiangyan : iChina,
-		iTerracottaArmy : iChina,
-		iForbiddenPalace : iChina,
-		iGrandCanal : iChina,
-		iPorcelainTower : iChina,
-		iParthenon : iGreece,
-		iHinduShrine : iIndia,
-		iBuddhistShrine : iIndia,
-		iIronPillar : iIndia,
-		iNalanda : iIndia,
-		iVijayaStambha : iIndia,
-		iKhajuraho : iIndia,
-		iZoroastrianShrine : iPersia,
-		iGondeshapur : iPersia,
-		iFlavianAmphitheatre : iRome,
-		iTempleOfKukulkan : iMaya,
-		iMonolithicChurch : iEthiopia,
-		iJetavanaramaya : iTamils,
-		iCheomseongdae : iKorea,
-		iOrthodoxShrine : iByzantium,
-		iTheodosianWalls : iByzantium,
-		iHagiaSophia : iByzantium,
-		iMountAthos : iByzantium,
-		iItsukushimaShrine : iJapan,
-		iHimejiCastle : iJapan,
-		iGurEAmir : iTurks,
-		iDomeOfTheRock : iArabia,
-		iSpiralMinaret : iArabia,
-		iIslamicShrine : iArabia,
-		iHouseOfWisdom : iArabia,
-		iPotalaPalace : iTibet,
-		iBorobudur : iIndonesia,
-		iPrambanan : iIndonesia,
-		iEscorial : iSpain,
-		iMezquita : iMoors,
-		iNotreDame : iFrance,
-		iVersailles : iFrance,
-		iLouvre : iFrance,
-		iKrakDesChevaliers : iFrance,
-		iWatPreahPisnulok : iKhmer,
-		iOxfordUniversity : iEngland,
-		iProtestantShrine : iHolyRome,
-		iSaintThomasChurch : iHolyRome,
-		iSaintSophia : iRussia,
-		iKremlin : iRussia,
-		iSaintBasilsCathedral : iRussia,
-		iUniversityOfSankore : iMali,
-		iOldSynagogue : iPoland,
-		iTorreDeBelem : iPortugal,
-		iSantaMariaDelFiore : iItaly,
-		iSanMarcoBasilica : iItaly,
-		iSistineChapel : iItaly,
-		iFloatingGardens : iAztecs,
-		iShalimarGardens : iMughals,
-		iHarmandirSahib : iMughals,
-		iTajMahal : iMughals,
-		iRedFort : iMughals,
-		iTopkapiPalace : iOttomans,
-		iBlueMosque : iOttomans,
-		iImageOfTheWorldSquare : iIran,
-		iBourse : iNetherlands,
-	}
+	
 	
 	for iWonder, iCiv in dWonderOriginalOwners.items():
 		city = getBuildingCity(iWonder, False)
