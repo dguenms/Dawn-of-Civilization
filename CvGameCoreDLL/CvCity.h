@@ -889,7 +889,7 @@ public:
 	int getBuildingOriginalOwner(BuildingTypes eIndex) const;											// Exposed to Python
 	int getBuildingOriginalTime(BuildingTypes eIndex) const;											// Exposed to Python
 
-	void setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer); // Leoreth
+	void setBuildingOriginalOwner(BuildingTypes eBuilding, CivilizationTypes eCivilization); // Leoreth
 
 	int getUnitProduction(UnitTypes eIndex) const;											// Exposed to Python
 	void setUnitProduction(UnitTypes eIndex, int iNewValue);								// Exposed to Python
@@ -970,7 +970,7 @@ public:
 	void setHasRealBuilding(BuildingTypes eIndex, bool bNewValue);	//Rhye	// Exposed to Python
 	int getNumRealBuilding(BuildingTypes eIndex) const;														// Exposed to Python
 	void setNumRealBuilding(BuildingTypes eIndex, int iNewValue);		// Exposed to Python
-	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime);
+	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, CivilizationTypes eOriginalOwner, int iOriginalTime);
 
 	bool isHasBuildingEffect(BuildingTypes eBuilding) const; // Leoreth
 

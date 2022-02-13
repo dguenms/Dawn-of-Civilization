@@ -10920,7 +10920,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 	if (getNumBuilding(eBuilding) > 0)
 	{
 		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-		if (!(kBuilding.isCommerceChangeOriginalOwner(eIndex)) || (getBuildingOriginalOwner(eBuilding) == getOwnerINLINE()))
+		if (!(kBuilding.isCommerceChangeOriginalOwner(eIndex)) || (getBuildingOriginalOwner(eBuilding) == getCivilizationType()))
 		{
 			iCommerce += kBuilding.getObsoleteSafeCommerceChange(eIndex) * getNumBuilding(eBuilding);
 
@@ -13545,11 +13545,11 @@ int CvCity::getNumRealBuilding(BuildingTypes eIndex) const
 
 void CvCity::setNumRealBuilding(BuildingTypes eIndex, int iNewValue)
 {
-	setNumRealBuildingTimed(eIndex, iNewValue, true, getOwnerINLINE(), GC.getGameINLINE().getGameTurnYear());
+	setNumRealBuildingTimed(eIndex, iNewValue, true, getCivilizationType(), GC.getGameINLINE().getGameTurnYear());
 }
 
 
-void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime)
+void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, CivilizationTypes eOriginalOwner, int iOriginalTime)
 {
 	CvCity* pLoopCity;
 	CvWString szBuffer;
@@ -19079,9 +19079,9 @@ int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuil
 	return std::min(kBuilding.getUnignorableBombardDefenseModifier() + iBaseDefense, 100) - iBaseDefense;
 }
 
-void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer)
+void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, CivilizationTypes eCivilization)
 {
-	m_paiBuildingOriginalOwner[eBuilding] = ePlayer;
+	m_paiBuildingOriginalOwner[eBuilding] = eCivilization;
 }
 
 int CvCity::calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const

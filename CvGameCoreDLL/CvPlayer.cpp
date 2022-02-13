@@ -1859,7 +1859,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					{
 						if (pNewCity->isValidBuildingLocation(eBuilding))
 						{
-							pNewCity->setNumRealBuildingTimed(eBuilding, std::min(pNewCity->getNumRealBuilding(eBuilding) + paiNumRealBuilding[iI], GC.getCITY_MAX_NUM_BUILDINGS()), false, (PlayerTypes)paiBuildingOriginalOwner[iI], paiBuildingOriginalTime[iI]);
+							pNewCity->setNumRealBuildingTimed(eBuilding, std::min(pNewCity->getNumRealBuilding(eBuilding) + paiNumRealBuilding[iI], GC.getCITY_MAX_NUM_BUILDINGS()), false, (CivilizationTypes)paiBuildingOriginalOwner[iI], paiBuildingOriginalTime[iI]);
 
 							// Leoreth: not if in territory associated with recently spawned civilization
 							if (bConquest && !bRecapture && !bExpansion)

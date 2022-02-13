@@ -233,10 +233,9 @@ def adjustWonders():
 	}
 	
 	for iWonder, iCiv in dWonderOriginalOwners.items():
-		iPlayer = slot(iCiv)
 		city = getBuildingCity(iWonder, False)
-		if city and iPlayer >= 0:
-			city.setBuildingOriginalOwner(iWonder, iPlayer)
+		if city:
+			city.setBuildingOriginalOwner(iWonder, iCiv)
 
 def adjustGreatPeople():
 	dGreatPeopleCreated = {
