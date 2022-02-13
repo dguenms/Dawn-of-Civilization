@@ -582,6 +582,7 @@ public:
 	void removeReligion(int eReligion);
 	void spreadReligion(int eReligion);
 	void setBuildingOriginalOwner(int eBuilding, int eCivilization);
+	void setBuildingOriginalTime(int eBuilding, int iYear);
 	int getHappinessYield(int eYield);
 	void triggerMeltdown(int eBuilding);
 	bool isColony();

@@ -19084,6 +19084,11 @@ void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, CivilizationTypes
 	m_paiBuildingOriginalOwner[eBuilding] = eCivilization;
 }
 
+void CvCity::setBuildingOriginalTime(BuildingTypes eBuilding, int iYear)
+{
+	m_paiBuildingOriginalTime[eBuilding] = iYear;
+}
+
 int CvCity::calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const
 {
 	int iCommerce = 0;

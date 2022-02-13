@@ -2744,6 +2744,11 @@ void CyCity::setBuildingOriginalOwner(int eBuilding, int eCivilization)
 	if (m_pCity) m_pCity->setBuildingOriginalOwner((BuildingTypes)eBuilding, (CivilizationTypes)eCivilization);
 }
 
+void CyCity::setBuildingOriginalTime(int eBuilding, int iYear)
+{
+	if (m_pCity) m_pCity->setBuildingOriginalTime((BuildingTypes)eBuilding, iYear);
+}
+
 int CyCity::getHappinessYield(int eYield)
 {
 	return m_pCity ? m_pCity->getHappinessYield((YieldTypes)eYield) : 0;
