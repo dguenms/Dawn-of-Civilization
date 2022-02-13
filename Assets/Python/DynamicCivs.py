@@ -567,7 +567,7 @@ def setup():
 	elif iScenario == i1700AD:
 		data.players[slot(iEgypt)].iResurrections += 1
 		
-		for iCiv in [iVikings, iMoors]:
+		for iCiv in [iVikings]:
 			checkNameChange(slot(iCiv))
 			checkAdjectiveChange(slot(iCiv))
 	

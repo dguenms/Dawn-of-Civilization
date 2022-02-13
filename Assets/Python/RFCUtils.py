@@ -1145,3 +1145,14 @@ def findSlot(iCiv):
 		return iSlot
 	
 	return -1
+
+
+def getImprovementBuild(iImprovement):
+	if iImprovement < 0:
+		return None
+		
+	iPredecessor = next(i for i in infos.improvements() if infos.improvement(i).getImprovementUpgrade() == iImprovement)
+	if iPredecessor is not None:
+		return getImprovementBuild(iPredecessor)
+	
+	return next(iBuild for iBuild in infos.builds() if infos.build(iBuild).getImprovement() == iImprovement)

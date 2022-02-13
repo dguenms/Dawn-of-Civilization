@@ -91,7 +91,6 @@ class MapParser:
 	
 	def applyDevelopment(self):
 		for plotDesc in self.lPlotDescs:
-			print "apply development for (%d, %d)" % (plotDesc.iX, plotDesc.iY)
 			plotDesc.applyDevelopment()
 	
 	def applyMap(self):

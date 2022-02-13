@@ -90,14 +90,6 @@ dCapitals = {
 }
 
 
-@handler("PythonReloaded")
-def reload():
-	determineCapitalLocations()
-
-@handler("GameStart")
-def setup():
-	determineCapitalLocations()
-
 def determineCapitalLocations():
 	dLocations = {}
 	

@@ -361,7 +361,9 @@ def birthRectangle(identifier, extended = None):
 
 def log(func):
 	def logged_func(*args, **kwargs):
-		print "Begin %s(%s, %s)" % (func.__name__, args, ["%s=%s" % (key, value) for key, value in kwargs.items()])
+		combined = [str(arg) for arg in args]
+		combined += ["%s=%s" % (key, value) for key, value in kwargs.items()]
+		print "Begin %s(%s)" % (func.__name__, ", ".join(combined))
 		result = func(*args, **kwargs)
 		print "Complete %s" % func.__name__
 		return result

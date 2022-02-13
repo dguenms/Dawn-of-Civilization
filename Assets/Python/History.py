@@ -20,6 +20,12 @@ dCapitalInfrastructure = CivDict({
 })
 
 
+@handler("GameStart")
+def updateCulture():
+	for plot in plots.all():
+		plot.updateCulture()
+
+
 ### CITY ACQUIRED ###
 
 @handler("cityAcquired")
@@ -173,8 +179,9 @@ def checkLateColonists():
 		for iCiv in dTradingCompanyPlots:
 			if player(iCiv).isAlive():
 				iPlayer = slot(iCiv)
-				if turn() == data.players[iPlayer].iExplorationTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
-					giveColonists(iPlayer)
+				if data.players[iPlayer].iExplorationTurn >= 0:
+					if turn() == data.players[iPlayer].iExplorationTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
+						giveColonists(iPlayer)
 
 
 @handler("BeginGameTurn")
@@ -231,18 +238,8 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
-					# change some terrain to end isolation
-					if iNewWorldCiv == iInca:
-						plot(27, 30).setFeatureType(-1, 0)
-						plot(28, 31).setFeatureType(-1, 0)
-						plot(29, 23).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
-						plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
-						
-					elif iNewWorldCiv == iAztecs:
-						plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						
+					events.fireEvent("conquerors", iOldWorldPlayer, iNewWorldPlayer)
+					
 					newWorldPlots = plots.start(tContactZoneTL).end(tContactZoneBR).without(lArrivalExceptions)
 					contactPlots = newWorldPlots.where(lambda p: p.isVisible(iNewWorldPlayer, False) and p.isVisible(iOldWorldPlayer, False))
 					arrivalPlots = newWorldPlots.owner(iNewWorldPlayer).where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and map.getArea(p.getArea()).getCitiesPerPlayer(iNewWorldPlayer) > 0)

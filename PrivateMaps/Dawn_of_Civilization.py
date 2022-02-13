@@ -2,6 +2,7 @@ from Core import *
 from RFCUtils import *
 from MapParser import MapParser
 from Scenarios import *
+from CityNameManager import determineCapitalLocations
 
 
 PATH_TEMPLATE = "Mods\RFC Dawn of Civilization\PrivateMaps\%s.txt"
@@ -77,6 +78,7 @@ def getGridSize(args):
 
 def beforeGeneration():
 	data.setup()
+	determineCapitalLocations()
 	PARSER.prepare()
 
 def generateRandomMap():

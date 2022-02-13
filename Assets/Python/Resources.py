@@ -44,6 +44,12 @@ def setup():
 	global dRemovedFeatures
 	dRemovedFeatures = TileDict(dRemovedFeaturesDict, year)
 	
+	global dConquerorPlotTypes
+	dConquerorPlotTypes = TileDict(dConquerorPlotTypesDict)
+	
+	global dConquerorRemovedFeatures
+	dConquerorRemovedFeatures = TileDict(dConquerorRemovedFeaturesDict)
+	
 	for tile in lNewfoundlandCapes:
 		dRemovedFeatures[tile] = 1500
 		
@@ -171,6 +177,7 @@ dRemovedResourcesDict = {
 	(58, 37) : 550, # Ivory in Tunisia
 	(87, 49) : 1100, # Sheep near Orduqent
 	(89, 51) : 1100, # Camel near Orduqent
+	(67, 29) : 1200, # Cotton in Nubia
 }
 
 dRoutesDict = {
@@ -186,7 +193,6 @@ dSpawnRoutes = {
 dPlotTypesDict = {
 	(88, 47) : (-100, PlotTypes.PLOT_HILLS),
 }
-
 
 dFeaturesDict = {
 	(35, 54) : (700,  iMud),         # Newfoundland obstacles
@@ -206,6 +212,18 @@ dRemovedFeaturesDict = {
 	(82, 47)  : 1600, # Transoxiana
 	(83, 46)  : 1600, # Transoxiana
 	(85, 49)  : 1600, # Transoxiana
+}
+
+dConquerorPlotTypesDict = {
+	(29, 23) : (iInca, PlotTypes.PLOT_HILLS),
+	(31, 13) : (iInca, PlotTypes.PLOT_HILLS),
+	(32, 19) : (iInca, PlotTypes.PLOT_HILLS),
+	(27, 29) : (iInca, PlotTypes.PLOT_HILLS),
+}
+
+dConquerorRemovedFeaturesDict = {
+	(27, 30) : iInca,
+	(28, 31) : iInca,
 }
 
 
@@ -266,6 +284,20 @@ def removeFeatures(iGameTurn):
 		plot(41, 58).setFeatureType(-1, 0)
 
 
+@handler("conquerors")
+def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
+	iTargetCiv = civ(iTargetPlayer)
+	for tile, type in dConquerorPlotTypes[iTargetCiv]:
+		plot(tile).setPlotType(type, True, True)
+
+
+@handler("conquerors")
+def removeConquerorFeatures(iConquerorPlayer, iTargetPlayer):
+	iTargetCiv = civ(iTargetPlayer)
+	for tile in dConquerorRemovedFeatures[iTargetCiv]:
+		plot(tile).setFeatureType(-1, 0)
+
+
 def setupScenarioResources():
 	setup()
 	iStartTurn = scenarioStartTurn()
@@ -276,7 +308,7 @@ def setupScenarioResources():
 				createResource(x, y, iResource)
 	
 	for iCiv, lResources in dSpawnResources:
-		if year(dBirth[iCiv]) <= iStartTurn:
+		if year(dBirth[iCiv]) <= iStartTurn and any(iEnd >= iStartTurn for iStart, iEnd in dResurrections[iCiv]):
 			for (x, y), iResource in lResources:
 				createResource(x, y, iResource)
 	
@@ -302,6 +334,19 @@ def setupScenarioResources():
 	
 	for iTurn, lFeatures in dRemovedFeatures:
 		if iTurn <= iStartTurn:
+			for x, y in lFeatures:
+				plot(x, y).setFeatureType(-1, 0)
+	
+	if year(700) <= iStartTurn:
+		plot(41, 58).setFeatureType(-1, 0)
+				
+	for iCiv, lPlots in dConquerorPlotTypes:
+		if year(dFall[iCiv]) <= iStartTurn:
+			for (x, y), iPlotType in lPlots:
+				plot(x, y).setPlotType(iPlotType, True, True)
+	
+	for iCiv, lFeatures in dConquerorRemovedFeatures:
+		if year(dFall[iCiv]) <= iStartTurn:
 			for x, y in lFeatures:
 				plot(x, y).setFeatureType(-1, 0)
 		

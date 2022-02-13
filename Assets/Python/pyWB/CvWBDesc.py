@@ -7,6 +7,7 @@ import CvUtil
 from array import *
 
 from Core import *
+from RFCUtils import *
 
 # globals
 gc = CyGlobalContext()
@@ -1028,11 +1029,7 @@ class CvUnitDesc:
 	def apply(self):
 		"after reading, this will actually apply the data"
 		if self.owner:
-			try:
-				iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
-			except Exception, e:
-				print "exception for owner %s at (%d, %d)" % (self.owner, self.plotX, self.plotY)
-				raise e
+			iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
 			if iCiv < 0:
 				return
 		
@@ -1297,15 +1294,12 @@ class CvCityDesc:
 				continue
 				
 			if parser.findTokenValue(toks, "BeginCulture") != -1:
-				print "toks: %s" % toks
 				while (True):
 					nextLine = parser.getNextLine(f)
 					toks = parser.getTokens(nextLine)
 					
-					print "iterate, toks: %s" % toks
 					vCiv = parser.findTokenValue(toks, "Civilization")
 					vCulture = parser.findTokenValue(toks, "Culture")
-					print "vCiv=%s, vCulture=%s" % (vCiv, vCulture)
 					if vCiv != -1 and vCulture != -1:
 						self.dCulture[vCiv] = int(vCulture)
 						continue
@@ -1720,7 +1714,7 @@ class CvPlotDesc:
 		if (self.improvementType):
 			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
 			self.plot.setImprovementType(improvementTypeNum)
-
+			
 		self.applyFeature()
 
 		if (self.routeType):
@@ -1740,6 +1734,11 @@ class CvPlotDesc:
 		if (self.improvementType):
 			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
 			self.plot.setImprovementType(improvementTypeNum)
+			
+			iBuild = getImprovementBuild(improvementTypeNum)
+			if iBuild is not None:
+				if infos.build(iBuild).isFeatureRemove(self.plot.getFeatureType()):
+					self.plot.setFeatureType(-1, 0)
 
 		if (self.routeType):
 			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)
