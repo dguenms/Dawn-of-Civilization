@@ -98,25 +98,9 @@ def addGoodies():
 	return
 	
 def afterGeneration():
-	initSlots()
+	scenario.init()
 	PARSER.applyDevelopment()
-	scenario.initScenario()
-
-def initSlots():
-	for iCiv in scenario.lInitialCivs:
-		if iCiv == game.getActiveCivilizationType():
-			continue
-		
-		addPlayer(iCiv)
-	
-	for iCiv in lMinorCivs:
-		addPlayer(iCiv, bMinor=True)
-	
-	events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
-	events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)
-	
-	data.dSlots[game.getActiveCivilizationType()] = game.getActivePlayer()
-	data.dSlots[iBarbarian] = gc.getBARBARIAN_PLAYER()
+	scenario.apply()
 	
 def findStartingPlot(args):
 	iPlayer = args[0]

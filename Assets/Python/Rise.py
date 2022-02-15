@@ -4,7 +4,7 @@ from Events import events, handler
 from Civilizations import *
 from RFCUtils import *
 from Locations import *
-from Scenarios import *
+from Scenario import addPlayer
 from Stability import completeCollapse
 from Popups import popup
 

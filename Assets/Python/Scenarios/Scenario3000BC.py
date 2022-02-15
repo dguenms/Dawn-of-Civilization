@@ -1,13 +1,10 @@
-from Civilizations import initScenarioTechs
+from Scenario import Scenario
+
 from Core import *
 
 
-class Scenario(object):
-	
-	iStartYear = -3000
-	lInitialCivs = [iEgypt, iBabylonia, iHarappa]
-	fileName = "RFC_3000BC"
-	
-	@staticmethod
-	def initScenario():
-		initScenarioTechs()
+scenario3000BC = Scenario(
+	iStartYear = -3000,
+	lInitialCivs = [iEgypt, iBabylonia, iHarappa],
+	fileName = "RFC_3000BC",
+)

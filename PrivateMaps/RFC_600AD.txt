@@ -1566,7 +1566,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_CHINA, Culture=250
 		EndCulture
 	EndCity
 EndPlot
