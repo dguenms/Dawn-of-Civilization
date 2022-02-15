@@ -9,3 +9,40 @@ BeginGame
 	Description=TXT_KEY_RHYES_WB_DESC
 	ModPath=Mods\RFC Dawn of Civilization
 EndGame
+
+BeginMap
+EndMap
+
+BeginPlot
+	x=69,y=33
+	BeginUnit
+		UnitType=UNIT_MILITIA
+		UnitOwner=CIVILIZATION_EGYPT
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER
+		UnitOwner=CIVILIZATION_EGYPT
+	EndUnit
+EndPlot
+BeginPlot
+	x=76,y=40
+	BeginUnit
+		UnitType=UNIT_MILITIA
+		UnitOwner=CIVILIZATION_BABYLONIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER
+		UnitOwner=CIVILIZATION_BABYLONIA
+	EndUnit
+EndPlot
+BeginPlot
+	x=87,y=40
+	BeginUnit
+		UnitType=UNIT_MILITIA
+		UnitOwner=CIVILIZATION_HARAPPANS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HARAPPAN_CITY_BUILDER
+		UnitOwner=CIVILIZATION_HARAPPANS
+	EndUnit
+EndPlot

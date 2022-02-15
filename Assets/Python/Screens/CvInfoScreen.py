@@ -857,6 +857,7 @@ class CvInfoScreen:
 		self.updateGraphButtons()
 
 	def buildScoreCache(self, scoreType):
+		print "build score cache"
 
 		# Check if the scores have already been computed
 		if (self.scoreCache[scoreType]):
