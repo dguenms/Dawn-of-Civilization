@@ -110,6 +110,7 @@ class CvGameDesc:
 	def apply(self):
 		"after reading, apply the game data"
 		gc.getGame().setStartYear(self.iStartYear)
+		gc.getGame().setStartTurn(turns(self.gameTurn))
 		gc.getGame().setGameTurn(turns(self.gameTurn))
 		
 		if self.maxTurns > 0:

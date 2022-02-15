@@ -101,6 +101,7 @@ public:
 	int getNumAdvancedStartPoints() const;
 	void setNumAdvancedStartPoints(int iNewValue);
 	int getStartTurn() const;
+	void setStartTurn(int iNewValue); // Leoreth
 	int getStartYear() const;
 	void setStartYear(int iNewValue);
 	int getEstimateEndTurn() const;

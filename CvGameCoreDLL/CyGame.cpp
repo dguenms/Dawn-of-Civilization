@@ -365,6 +365,11 @@ int CyGame::getStartTurn() const
 	return (NULL != m_pGame ? m_pGame->getStartTurn() : -1);
 }
 
+void CyGame::setStartTurn(int iNewValue)
+{
+	if (m_pGame) m_pGame->setStartTurn(iNewValue);
+}
+
 int CyGame::getStartYear() const
 {
 	return (NULL != m_pGame ? m_pGame->getStartYear() : -1);
