@@ -1,7 +1,7 @@
 from Core import *
 from unittest import *
 
-from Scenarios import addPlayer
+from Scenario import addPlayer
 
 import cPickle as pickle
 
