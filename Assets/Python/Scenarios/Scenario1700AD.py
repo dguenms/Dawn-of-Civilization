@@ -171,6 +171,18 @@ lCivilizations = [
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iCentralism, iManorialism, iRegulatedTrade, iClergy, iConquest]
 	),
+	Civilization(
+		iIndependent,
+		iGold=500
+	),
+	Civilization(
+		iIndependent2,
+		iGold=500
+	),
+	Civilization(
+		iNative,
+		iGold=300
+	),
 ]
 	
 
@@ -183,7 +195,6 @@ def createStartingUnits():
 
 scenario1700AD = Scenario(
 	iStartYear = 1700,
-	lInitialCivs = [iChina, iIndia, iTamils, iKorea, iJapan, iVikings, iTurks, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iOttomans, iThailand, iCongo, iIran, iNetherlands, iGermany],
 	fileName = "RFC_1700AD",
 	
 	lCivilizations = lCivilizations,

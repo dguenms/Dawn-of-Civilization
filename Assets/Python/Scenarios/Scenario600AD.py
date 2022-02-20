@@ -92,7 +92,6 @@ def createStartingUnits():
 
 scenario600AD = Scenario(
 	iStartYear = 600,
-	lInitialCivs = [iChina, iKorea, iByzantium, iJapan, iTurks, iVikings],
 	fileName = "RFC_600AD",
 	
 	lCivilizations = lCivilizations,

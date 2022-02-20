@@ -126,6 +126,13 @@ class Civilization(object):
 	def player(self):
 		return player(self.iCiv)
 	
+	@property
+	def info(self):
+		return infos.civ(self.iCiv)
+	
+	def isPlayable(self):
+		return self.info.getStartingYear() != 0
+	
 	def apply(self):
 		if self.iLeader is not None:
 			self.player.setLeader(self.iLeader)
@@ -185,8 +192,6 @@ class Scenario(object):
 
 	def __init__(self, *args, **kwargs):
 		self.iStartYear = kwargs.get("iStartYear")
-		self.lInitialCivs = kwargs.get("lInitialCivs", [])
-		self.lMinorCivs = kwargs.get("lMinorCivs", [iNative, iIndependent, iIndependent2])
 		self.fileName = kwargs.get("fileName")
 		
 		self.lCivilizations = kwargs.get("lCivilizations", [])
@@ -206,16 +211,26 @@ class Scenario(object):
 		self.createStartingUnits = kwargs.get("createStartingUnits", lambda: None)
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
+		
+	def setupCivilizations(self):
+		for i, iCiv in enumerate(lBirthOrder):
+			infos.civ(iCiv).setDescription("%02d" % i)
+			
+		for iCiv in range(iNumCivs):
+			iCivStartYear = infos.civ(iCiv).getStartingYear()
+			infos.civ(iCiv).setPlayable(iCivStartYear != 0 and iCivStartYear >= self.iStartYear)
+		
+		for civ in self.lCivilizations:
+			civ.info.setPlayable(civ.isPlayable())
 	
 	def init(self):
-		for iCiv in self.lInitialCivs:
+		for civ in self.lCivilizations:
+			iCiv = civ.iCiv
+			
 			if game.getActiveCivilizationType() == iCiv:
 				continue
 			
-			addPlayer(iCiv)
-		
-		for iCiv in self.lMinorCivs:
-			addPlayer(iCiv, bMinor=True)
+			addPlayer(iCiv, bMinor=not civ.isPlayable())
 	
 		events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
 		events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)

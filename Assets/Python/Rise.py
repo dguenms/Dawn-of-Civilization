@@ -127,7 +127,6 @@ def initBirths():
 			data.births.append(rebirth(iRebirthCiv))
 	
 	for born in data.births:
-		print "check birth: %s" % born.name
 		born.check()
 
 
@@ -574,12 +573,9 @@ class Birth(object):
 	
 	def check(self):
 		if self.canceled:
-			print "is canceled: %s" % self.name
 			return
 	
 		iUntilBirth = until(self.iTurn)
-		
-		print "check for civ %s: iUntilBirth=%d, scenarioStart()=%s, scenarioStartTurn=%d" % (self.name, iUntilBirth, scenarioStart(), scenarioStartTurn())
 		
 		if iUntilBirth == turns(5) or (scenarioStart() and self.iTurn - turns(5) < scenarioStartTurn()):
 			if not self.canSpawn():
