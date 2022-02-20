@@ -439,6 +439,7 @@ public:
 
 	bool isTradeRoute(int /*PlayerTypes*/ eIndex);
 	bool isEverOwned(int /*PlayerTypes*/ eIndex);
+	bool isEverOwnedCiv(int iCivilization);
 
 	bool isRevealed(int /*TeamTypes*/ eIndex, bool bDebug);	
 	void setRevealed(int /*TeamTypes*/ eIndex, bool bNewValue);	
@@ -602,6 +603,11 @@ public:
 	int getArea();
 	bool rebuild();
 	bool isValidBuildingLocation(int eBuilding);
+	void setOriginalCiv(int iCivilization);
+	void setOriginalOwner(int iPlayer);
+	void setEverOwned(int iCivilization, bool bNewValue);
+	void setGameTurnFounded(int iNewValue);
+	void setGameTurnAcquired(int iNewValue);
 
 private:
 	CvCity* m_pCity;

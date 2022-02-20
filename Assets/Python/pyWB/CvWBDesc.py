@@ -1117,6 +1117,12 @@ class CvCityDesc:
 		self.lBuildingHealth = []
 		self.lFreeBonus = []
 		self.lNoBonus = []
+		
+		# Leoreth
+		self.iYearFounded = None
+		self.iYearAcquired = None
+		self.originalOwner = None
+		self.lPreviousOwners = []
 
 	def write(self, f, plot):
 		"write out city data"
@@ -1196,6 +1202,15 @@ class CvCityDesc:
 				f.write("\t\tFreeBonus=%s, Amount=%s\n" %(gc.getBonusInfo(item).getType(), city.getFreeBonus(item)))
 			if city.isNoBonus(item):
 				f.write("\t\tNoBonus=%s\n" % gc.getBonusInfo(item).getType())
+		
+		# Leoreth:
+		f.write("\t\tYearFounded=%s\n" % gc.getGame().getTurnYear(city.getGameTurnFounded()))
+		f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
+		f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+		for iCiv in range(gc.getNumCivilizationInfos()):
+			if city.isEverOwnedCiv(iCiv) and city.getOriginalCiv() != iCiv:
+				f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+		
 		f.write("\tEndCity\n")
 
 	def read(self, f, iX, iY):
@@ -1363,6 +1378,24 @@ class CvCityDesc:
 			if v != -1:
 				self.lNoBonus.append(gc.getInfoTypeForString(v))
 				continue
+				
+			# Leoreth
+			v = parser.findTokenValue(toks, "YearFounded")
+			if v != -1:
+				self.iYearFounded = int(v)
+				continue
+			
+			v = parser.findTokenValue(toks, "YearAcquired")
+			if v != -1:
+				self.iYearAcquired = int(v)
+				continue
+			
+			v = parser.findTokenValue(toks, "PreviousOwner")
+			if v != -1:
+				if self.originalOwner is None:
+					self.originalOwner = v
+				self.lPreviousOwners.append(v)
+				continue
 
 			if parser.findTokenValue(toks, "EndCity")!=-1:
 				break
@@ -1383,10 +1416,8 @@ class CvCityDesc:
 
 		for civType, iCulture in self.dCulture.items():
 			iCultureCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), civType))
-			if iCiv < 0:
-				continue
-			
-			self.city.setCulture(slot(iCultureCiv), scale(iCulture), True)
+			if iCiv >= 0:
+				self.city.setCulture(slot(iCultureCiv), scale(iCulture), True)
 
 		for bldg in (self.bldgType):
 			bldgTypeNum = CvUtil.findInfoTypeNum(gc.getBuildingInfo, gc.getNumBuildingInfos(), bldg)
@@ -1450,6 +1481,22 @@ class CvCityDesc:
 			for item in self.lNoBonus:
 				if self.city.isNoBonus(item): continue
 				self.city.changeNoBonusCount(item, 1)
+				
+		# Leoreth
+		if self.iYearFounded:
+			self.city.setGameTurnFounded(year(self.iYearFounded))
+		if self.iYearAcquired:
+			self.city.setGameTurnAcquired(year(self.iYearAcquired))
+		if self.originalOwner:
+			iOriginalOwnerCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.originalOwner))
+			if iOriginalOwnerCiv >= 0:
+				self.city.setOriginalOwner(slot(iOriginalOwnerCiv))
+				self.city.setOriginalCiv(iOriginalOwnerCiv)
+				self.city.setEverOwned(iOriginalOwnerCiv, True)
+		for previousOwner in self.lPreviousOwners:
+			iPreviousOwnerCiv = CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivicOptionInfos(), previousOwner)
+			if iPreviousOwnerCiv >= 0:
+				self.city.setEverOwned(iPreviousOwnerCiv, True)
 
 ###########
 class CvPlotDesc:

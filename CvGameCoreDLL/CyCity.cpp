@@ -2007,6 +2007,11 @@ bool CyCity::isEverOwned(int /*PlayerTypes*/ eIndex)
 	return m_pCity ? m_pCity->isEverOwned((PlayerTypes)eIndex) : false;
 }
 
+bool CyCity::isEverOwnedCiv(int iCivilization)
+{
+	return m_pCity ? m_pCity->isEverOwned((CivilizationTypes)iCivilization) : false;
+}
+
 bool CyCity::isRevealed(int /*TeamTypes */eIndex, bool bDebug)
 {
 	return m_pCity ? m_pCity->isRevealed((TeamTypes)eIndex, bDebug) : false;
@@ -2842,4 +2847,29 @@ bool CyCity::rebuild()
 bool CyCity::isValidBuildingLocation(int iBuilding)
 {
 	return m_pCity ? m_pCity->isValidBuildingLocation((BuildingTypes)iBuilding) : false;
+}
+
+void CyCity::setOriginalCiv(int iCivilization)
+{
+	if (m_pCity) m_pCity->setOriginalCiv((CivilizationTypes)iCivilization);
+}
+
+void CyCity::setOriginalOwner(int iPlayer)
+{
+	if (m_pCity) m_pCity->setOriginalOwner((PlayerTypes)iPlayer);
+}
+
+void CyCity::setEverOwned(int iCivilization, bool bNewValue)
+{
+	if (m_pCity) m_pCity->setEverOwned((CivilizationTypes)iCivilization, bNewValue);
+}
+
+void CyCity::setGameTurnFounded(int iNewValue)
+{
+	if (m_pCity) m_pCity->setGameTurnFounded(iNewValue);
+}
+
+void CyCity::setGameTurnAcquired(int iNewValue)
+{
+	if (m_pCity) m_pCity->setGameTurnAcquired(iNewValue);
 }

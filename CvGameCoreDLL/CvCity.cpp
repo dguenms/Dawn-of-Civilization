@@ -62,7 +62,7 @@ CvCity::CvCity()
 	m_aiNumRevolts = new int[MAX_PLAYERS];
 	m_aiGameTurnCivLost = new int[NUM_TOTAL_CIVILIZATIONS]; // Leoreth
 
-	m_abEverOwned = new bool[MAX_PLAYERS];
+	m_abEverOwned = new bool[NUM_TOTAL_CIVILIZATIONS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
 	m_abRevealed = new bool[MAX_TEAMS];
 	m_abEspionageVisibility = new bool[MAX_TEAMS];
@@ -676,6 +676,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	{
 		m_aiCulture[iI] = 0;
 		m_aiGameTurnCivLost[iI] = -1; // Leoreth
+		m_abEverOwned[iI] = false;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -685,7 +686,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		m_abEverOwned[iI] = false;
 		m_abTradeRoute[iI] = false;
 	}
 
@@ -12167,19 +12167,41 @@ int CvCity::getRevoltTestProbability() const
 	return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
 }
 
-bool CvCity::isEverOwned(PlayerTypes eIndex) const
+bool CvCity::isEverOwned(CivilizationTypes eCivilization) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
-	return m_abEverOwned[eIndex];
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+	return m_abEverOwned[eCivilization];
 }
 
 
-void CvCity::setEverOwned(PlayerTypes eIndex, bool bNewValue)
+bool CvCity::isEverOwned(PlayerTypes ePlayer) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
-	m_abEverOwned[eIndex] = bNewValue;
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return false;
+	}
+
+	return isEverOwned(eCivilization);
+}
+
+
+void CvCity::setEverOwned(CivilizationTypes eCivilization, bool bNewValue)
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+	m_abEverOwned[eCivilization] = bNewValue;
+}
+
+
+void CvCity::setEverOwned(PlayerTypes ePlayer, bool bNewValue)
+{
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION)
+	{
+		setEverOwned(eCivilization, bNewValue);
+	}
 }
 
 
@@ -15950,7 +15972,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
 	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
-	pStream->Read(MAX_PLAYERS, m_abEverOwned);
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_abEverOwned);
 	pStream->Read(MAX_PLAYERS, m_abTradeRoute);
 	pStream->Read(MAX_TEAMS, m_abRevealed);
 	pStream->Read(MAX_TEAMS, m_abEspionageVisibility);
@@ -16254,7 +16276,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_PLAYERS, m_aiNumRevolts);
 	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
-	pStream->Write(MAX_PLAYERS, m_abEverOwned);
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_abEverOwned);
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);
 	pStream->Write(MAX_TEAMS, m_abRevealed);
 	pStream->Write(MAX_TEAMS, m_abEspionageVisibility);

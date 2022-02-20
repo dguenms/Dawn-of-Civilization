@@ -837,8 +837,10 @@ public:
 	bool isTradeRoute(PlayerTypes eIndex) const;																	// Exposed to Python
 	void setTradeRoute(PlayerTypes eIndex, bool bNewValue);
 
-	bool isEverOwned(PlayerTypes eIndex) const;																		// Exposed to Python
-	void setEverOwned(PlayerTypes eIndex, bool bNewValue);
+	bool isEverOwned(CivilizationTypes eCivilization) const;
+	bool isEverOwned(PlayerTypes ePlayer) const;																		// Exposed to Python
+	void setEverOwned(CivilizationTypes eCivilization, bool bNewValue);
+	void setEverOwned(PlayerTypes ePlayer, bool bNewValue);
 
 	DllExport bool isRevealed(TeamTypes eIndex, bool bDebug) const;								// Exposed to Python
 	void setRevealed(TeamTypes eIndex, bool bNewValue);											// Exposed to Python

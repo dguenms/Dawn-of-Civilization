@@ -157,5 +157,11 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)")
 		.def("getPreviousCiv", &CyCity::getPreviousCiv, "int ()")
 		.def("getOriginalCiv", &CyCity::getOriginalCiv, "int ()")
+		.def("setOriginalCiv", &CyCity::setOriginalCiv, "void (int iCivilization)")
+		.def("setOriginalOwner", &CyCity::setOriginalOwner, "void (int iPlayer)")
+		.def("setEverOwned", &CyCity::setEverOwned, "void (int iCivilization, bool bNewValue)")
+		.def("setGameTurnFounded", &CyCity::setGameTurnFounded, "void (int iNewValue)")
+		.def("setGameTurnAcquired", &CyCity::setGameTurnAcquired, "void (int iNewValue)")
+		.def("isEverOwnedCiv", &CyCity::isEverOwnedCiv, "bool (int iCivilization)")
 		;
 }

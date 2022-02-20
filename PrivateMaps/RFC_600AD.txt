@@ -24,6 +24,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_NATIVE
 		CityName=Yax Mutal
 		CityPopulation=2
+		YearFounded=-400
+		PreviousOwner=CIVILIZATION_MAYA
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_MAYAN_BALL_COURT
 	EndCity
@@ -42,6 +44,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_NATIVE
 		CityName=Chich'en Itzá
 		CityPopulation=2
+		PreviousOwner=CIVILIZATION_MAYA
 		BuildingType=BUILDING_MAYAN_BALL_COURT
 		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
 		BeginCulture
@@ -82,6 +85,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Burdigala
 		CityPopulation=3
+		YearFounded=-300
+		YearAcquired=400
+		PreviousOwner=CIVILIZATION_CELT
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
@@ -111,6 +119,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Barcelona
 		CityPopulation=2
+		YearFounded=-300
+		YearAcquired=400
+		PreviousOwner=CIVILIZATION_PHOENICIA
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_JUDAISM
@@ -135,6 +148,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Massilia
 		CityPopulation=3
+		YearFounded=-600
+		YearAcquired=400
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_JUDAISM
@@ -199,6 +217,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Tripolis
 		CityPopulation=2
+		YearFounded=-700
+		PreviousOwner=CIVILIZATION_PHOENICIA
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BYZANTIUM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=10
 		EndCulture
@@ -246,6 +269,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Roma
 		CityPopulation=4
+		YearFounded=-753
+		YearAcquired=476
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_ROMAN_FORUM
@@ -345,6 +372,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Venetia
 		CityPopulation=2
+		YearFounded=421
+		YearAcquired=476
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BYZANTIUM
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -366,6 +397,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Neapolis
 		CityPopulation=3
+		YearFounded=-600
+		YearAcquired=536
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -385,6 +421,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Vindobona
 		CityPopulation=1
+		YearFounded=-450
+		YearAcquired=430
+		PreviousOwner=CIVILIZATION_CELT
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_GRANARY
 	EndCity
 EndPlot
@@ -406,6 +447,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Hesperides
 		CityPopulation=2
+		YearFounded=-525
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BYZANTIUM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=10
 		EndCulture
@@ -429,6 +474,12 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Singidunon
 		CityPopulation=2
+		YearFounded=-279
+		YearAcquired=582
+		PreviousOwner=CIVILIZATION_CELT
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_BARBARIAN
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -464,6 +515,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Alexandreia
 		CityPopulation=3
+		YearFounded=-331
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
@@ -493,6 +549,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Athinai
 		CityPopulation=3
+		YearFounded=-1100
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
@@ -563,6 +623,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Konstantinoupolis
 		CityPopulation=4
+		YearFounded=-700
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_CASTLE
@@ -603,6 +667,12 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Memphis
 		CityPopulation=2
+		YearFounded=-3000
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_PYRAMIDS
 		BuildingType=BUILDING_GREAT_SPHINX
 		ReligionType=RELIGION_JUDAISM
@@ -670,6 +740,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Aksum
 		CityPopulation=2
+		YearFounded=-400
+		PreviousOwner=CIVILIZATION_ETHIOPIA
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -691,6 +763,12 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Ikonion
 		CityPopulation=2
+		YearFounded=-1500
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_BARBARIAN
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -708,6 +786,14 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Hierousalem
 		CityPopulation=3
+		YearFounded=-3000
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_BABYLONIA
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_SHRINE
@@ -748,6 +834,13 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Damaskos
 		CityPopulation=3
+		YearFounded=-3000
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_BABYLONIA
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
@@ -781,6 +874,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_BYZANTIUM
 		CityName=Trapezounta
 		CityPopulation=3
+		YearFounded=-756
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -799,6 +897,7 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Sana'a
+		YearFounded=-500
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
 	EndCity
@@ -825,6 +924,9 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Tisfun
 		CityPopulation=4
+		YearFounded=-120
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_ROME
 		BuildingType=BUILDING_GRANARY
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=10
@@ -869,6 +971,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Sirajis
 		CityPopulation=4
+		YearFounded=-2000
+		YearAcquired=-550
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_PERSIA
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
@@ -905,6 +1011,11 @@ BeginPlot
 		CityOwner=CIVILIZATION_TURKS
 		CityName=Merv
 		CityPopulation=2
+		YearFounded=-600
+		YearAcquired=552
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
 		BuildingType=BUILDING_STABLE
 		BeginCulture
 			Civilization=CIVILIZATION_TURKS, Culture=10
@@ -930,6 +1041,9 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Herat
 		CityPopulation=4
+		YearFounded=-550
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
@@ -959,6 +1073,11 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_TURKS
 		CityName=Samarqand
+		YearFounded=-800
+		YearAcquired=552
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_GREECE
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BeginCulture
@@ -988,6 +1107,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Lavapuri
 		CityPopulation=2
+		YearFounded=200
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
@@ -1018,6 +1139,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Mumbai
 		CityPopulation=3
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -1099,6 +1221,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_TURKS
 		CityName=Orduqent
 		CityPopulation=2
+		YearFounded=552
+		YearAcquired=552
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BeginCulture
@@ -1120,6 +1244,9 @@ BeginPlot
 		CityOwner=CIVILIZATION_TURKS
 		CityName=Kashgar
 		CityPopulation=2
+		YearFounded=-100
+		YearAcquired=552
+		PreviousOwner=CIVILIZATION_INDEPENDENT
 		BuildingType=BUILDING_GRANARY
 		BeginCulture
 			Civilization=CIVILIZATION_TURKS, Culture=40
@@ -1148,6 +1275,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Vijayanagara
 		CityPopulation=2
+		PreviousOwner=CIVILIZATION_TAMILS
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1180,6 +1309,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Bhopal
 		CityPopulation=2
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_AQUEDUCT
@@ -1208,6 +1338,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Delhi
 		CityPopulation=8
+		YearFounded=-400
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1250,6 +1382,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Madurai
 		CityPopulation=2
+		YearFounded=-300
+		PreviousOwner=CIVILIZATION_TAMILS
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -1282,6 +1416,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Golkonda
 		CityPopulation=2
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -1321,6 +1456,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Kanchipuram
 		CityPopulation=2
+		YearFounded=-300
+		PreviousOwner=CIVILIZATION_TAMILS
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1346,6 +1483,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Anuradhapura
 		CityPopulation=2
+		YearFounded=-500
+		PreviousOwner=CIVILIZATION_TAMILS
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -1380,6 +1519,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Pataliputra
 		CityPopulation=8
+		YearFounded=-490
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1429,6 +1570,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Kolkata
 		CityPopulation=2
+		PreviousOwner=CIVILIZATION_INDIA
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1450,6 +1592,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_TURKS
 		CityName=Dukhan
 		CityPopulation=2
+		YearFounded=-300
+		YearAcquired=552
+		PreviousOwner=CIVILIZATION_BARBARIAN
+		PreviousOwner=CIVILIZATION_CHINA
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
@@ -1483,6 +1629,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Pagan
 		CityPopulation=4
+		YearFounded=200
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
@@ -1505,6 +1652,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Chengdu
 		CityPopulation=2
+		YearFounded=-400
+		YearAcquired=-400
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_DUJIANGYAN
 		ReligionType=RELIGION_CONFUCIANISM
@@ -1557,6 +1706,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Xi'an
 		CityPopulation=4
+		YearFounded=-1100
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -1609,6 +1759,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Beijing
 		CityPopulation=3
+		YearFounded=-1045
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -1641,6 +1792,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Kaifeng
 		CityPopulation=2
+		YearFounded=-364
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_MARKET
@@ -1681,6 +1833,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Guangzhou
 		CityPopulation=3
+		YearFounded=-214
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
@@ -1702,6 +1855,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Nanjing
 		CityPopulation=2
+		YearFounded=-541
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -1729,6 +1883,10 @@ BeginPlot
 		CityOwner=CIVILIZATION_BARBARIAN
 		CityName=Simiyan hoton
 		CityPopulation=2
+		YearFounded=-300
+		YearAcquired=404
+		PreviousOwner=CIVILIZATION_CHINA
+		PreviousOwner=CIVILIZATION_KOREA
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -1749,6 +1907,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_CHINA
 		CityName=Hangzhou
 		CityPopulation=3
+		YearFounded=-589
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
@@ -1787,6 +1946,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_KOREA
 		CityName=Pyongyang
 		CityPopulation=1
+		YearFounded=-1122
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
@@ -1829,6 +1989,7 @@ BeginPlot
 		CityOwner=CIVILIZATION_KOREA
 		CityName=Hanseong
 		CityPopulation=4
+		YearFounded=-18
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -1889,6 +2050,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_JAPAN
 		CityName=Kyouto
 		CityPopulation=3
+		YearFounded=525
+		YearAcquired=525
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -1918,6 +2081,8 @@ BeginPlot
 		CityOwner=CIVILIZATION_JAPAN
 		CityName=Edo
 		CityPopulation=2
+		YearFounded=525
+		YearAcquired=525
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_BUDDHISM
