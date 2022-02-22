@@ -5,19 +5,23 @@ from Core import *
 lCivilizations = [
 	Civilization(
 		iEgypt,
-		lCivics = [iMonarchy, iRedistribution, iDeification]
+		lCivics=[iMonarchy, iRedistribution, iDeification],
+		techs=techs.of(iMining, iPottery, iAgriculture)
 	),
 	Civilization(
-		iBabylonia
+		iBabylonia,
+		techs=techs.of(iPottery, iPastoralism, iAgriculture)
 	),
 	Civilization(
-		iHarappa
+		iHarappa,
+		techs=techs.of(iMining, iPottery, iAgriculture)
 	),
 	Civilization(
 		iCelts
 	),
 	Civilization(
-		iNative
+		iNative,
+		techs=techs.of(iTanning, iMythology)
 	),
 	Civilization(
 		iIndependent

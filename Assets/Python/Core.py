@@ -2385,6 +2385,9 @@ class Map(object):
 
 class TechFactory(object):
 
+	def none(self):
+		return TechCollection()
+
 	def of(self, *techs):
 		return TechCollection().including(*techs)
 

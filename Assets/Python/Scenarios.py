@@ -1,4 +1,3 @@
-from Civilizations import initScenarioTechs
 from RFCUtils import *
 from Core import *
 from Locations import *

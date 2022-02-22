@@ -1,4 +1,3 @@
-from Civilizations import initScenarioTechs
 from Resources import setupScenarioResources
 
 from Scenario import *
@@ -12,47 +11,56 @@ lCivilizations = [
 		iLeader=iTaizong, 
 		iGold=300,
 		iStateReligion=iConfucianism,
-		lCivics = [iDespotism, iCitizenship, iManorialism, iMerchantTrade, iMonasticism]
+		lCivics=[iDespotism, iCitizenship, iManorialism, iMerchantTrade, iMonasticism],
+		techs=techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility)
 	),
 	Civilization(
 		iKorea,
 		iGold=200,
 		iStateReligion=iBuddhism,
-		lCivics = [iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism]
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism],
+		techs=techs.column(6).including(iMachinery).without(iScholarship),
 	),
 	Civilization(
 		iByzantium,
 		iGold=400,
 		iStateReligion=iOrthodoxy,
-		lCivics = [iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy]
+		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(6).including(iFortification,iMachinery, iCivilService)
 	),
 	Civilization(
 		iJapan,
 		iGold=300,
 		iStateReligion=iBuddhism,
-		lCivics = [iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification]
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
+		techs=techs.column(6).without(iScholarship)
 	),
 	Civilization(
 		iVikings,
 		iGold=150,
-		lCivics = [iElective, iVassalage, iSlavery, iMerchantTrade, iConquest]
+		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		techs=techs.column(6).without(iEthics)
 	),
 	Civilization(
 		iTurks,
 		iGold=100,
-		lCivics = [iDespotism, iVassalage, iSlavery, iMerchantTrade, iConquest]
+		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),
 	Civilization(
 		iIndependent,
 		iGold=100,
+		techs=techs.column(5)
 	),
 	Civilization(
 		iIndependent2,
 		iGold=100,
+		techs=techs.column(5)
 	),
 	Civilization(
 		iNative,
 		iGold=300,
+		techs=techs.column(4)
 	)
 ]
 

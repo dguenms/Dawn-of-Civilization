@@ -1,4 +1,4 @@
-from Civilizations import initScenarioTechs
+from Civilizations import Civilizations
 from Resources import setupScenarioResources
 from DynamicCivs import startingLeader
 
@@ -107,52 +107,6 @@ def addPlayer(iCiv, bMinor=False):
 		player(iPlayer).setMinorCiv(True)
 
 
-class Civilization(object):
-
-	def __init__(self, iCiv, **kwargs):
-		self.iCiv = iCiv
-	
-		self.iLeader = kwargs.get("iLeader")
-		self.iGold = kwargs.get("iGold")
-		self.iStateReligion = kwargs.get("iStateReligion")
-		
-		self.lCivics = kwargs.get("lCivics", [])
-		
-		self.dAttitudes = kwargs.get("dAttitudes", {})
-		
-		self.sLeaderName = kwargs.get("sLeaderName")
-	
-	@property
-	def player(self):
-		return player(self.iCiv)
-	
-	@property
-	def info(self):
-		return infos.civ(self.iCiv)
-	
-	def isPlayable(self):
-		return self.info.getStartingYear() != 0
-	
-	def apply(self):
-		if self.iLeader is not None:
-			self.player.setLeader(self.iLeader)
-		
-		if self.sLeaderName is not None:
-			self.player.setLeaderName(text(self.sLeaderName))
-		
-		if self.iGold is not None:
-			self.player.setGold(self.iGold)
-		
-		if self.iStateReligion is not None:
-			self.player.setLastStateReligion(self.iStateReligion)
-		
-		for iCivic in self.lCivics:
-			self.player.setCivics(infos.civic(iCivic).getCivicOptionType(), iCivic)
-		
-		for iCiv, iAttitude in self.dAttitudes.items():
-			self.player.AI_changeAttitudeExtra(slot(iCiv), iAttitude)
-
-
 class GreatWall(object):
 
 	def __init__(self, *args, **kwargs):
@@ -239,7 +193,9 @@ class Scenario(object):
 		data.dSlots[iBarbarian] = gc.getBARBARIAN_PLAYER()
 		
 	def apply(self):
-		initScenarioTechs()
+		for civilization in self.lCivilizations:
+			civilization.apply()
+		
 		setupScenarioResources()
 		
 		self.createStartingUnits()
@@ -253,9 +209,6 @@ class Scenario(object):
 		self.adjustColonists()
 		
 		self.initDiplomacy()
-		
-		for civilization in self.lCivilizations:
-			civilization.apply()
 	
 	def adjustTerritories(self):
 		for plot in plots.all():

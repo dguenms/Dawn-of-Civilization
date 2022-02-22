@@ -292,6 +292,8 @@ class Birth(object):
 		self.iPlayer = None
 		self.area = None
 		
+		self.civ = next((civ for civ in lCivilizations if civ.iCiv == self.iCiv), Civilization(self.iCiv))
+		
 		#if not bRebirth:
 		#	self.iPlayer = slot(self.iCiv)
 		
@@ -426,27 +428,25 @@ class Birth(object):
 			elif plot.getBirthProtected() == self.iPlayer:
 				plot.resetBirthProtected()
 				
-	def assignGold(self):
-		if self.iCiv in dStartingGold:
-			self.player.setGold(dStartingGold[self.iCiv])
+	def assignAdditionalTechs(self):
+		if self.iCiv == iChina and scenario() == i3000BC and not self.isHuman():
+			for iTech in [iProperty, iAlloys]:
+				self.team.setHasTech(iTech, True, self.iPlayer, False, False)
 	
-	def assignTechs(self):
-		initPlayerTechs(self.iPlayer)
-	
-	def assignStateReligion(self):
-		if self.iCiv in dStartingReligion:
-			self.player.setLastStateReligion(dStartingReligion[self.iCiv])
-	
-		elif self.isIndependence():
+	def assignAttributes(self):
+		# civilization attributes
+		self.civ.apply()
+		
+		# additional starting techs
+		self.assignAdditionalTechs()
+		
+		# dynamic starting religion
+		if self.isIndependence():
 			iPrevalentReligion = getPrevalentReligion(self.area, self.iPlayer)
 			if iPrevalentReligion >= 0:
 				self.player.setLastStateReligion(iPrevalentReligion)
-	
-	def assignCivics(self):
-		for iCivic in dStartingCivics.get(self.iCiv, []):
-			self.player.setCivics(infos.civic(iCivic).getCivicOptionType(), iCivic)
 		
-		# allow free civic changes in the birth and spawn turn
+		# allow free civic changes in the birth and flip turn
 		self.player.changeNoAnarchyTurns(2)
 		
 	def closeNeighbourPlots(self, iNeighbour):
@@ -534,14 +534,6 @@ class Birth(object):
 		
 		for plot in plots.surrounding(self.location):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
-	
-	def advancedStart(self):
-		iAdvancedStartPoints = dAdvancedStartPoints[self.iPlayer]
-		if iAdvancedStartPoints > 0:
-			self.player.changeAdvancedStartPoints(scale(iAdvancedStartPoints)+1)
-			
-			if not self.isHuman():
-				self.player.AI_doAdvancedStart()
 	
 	def resetPlague(self):
 		data.players[self.iPlayer].iPlagueCountdown = -10
@@ -812,17 +804,8 @@ class Birth(object):
 		# update area
 		self.updateArea()
 		
-		# assign gold
-		self.assignGold()
-	
-		# assign techs
-		self.assignTechs()
-		
-		# set state religion
-		self.assignStateReligion()
-		
-		# free civic switch
-		self.assignCivics()
+		# assign civilization attributes
+		self.assignAttributes()
 		
 		# reveal territory
 		self.revealTerritory()
@@ -903,6 +886,6 @@ class Birth(object):
 		if flippedCities:
 			message(self.iPlayer, 'TXT_KEY_MESSAGE_CITIES_FLIPPED', flipped_names, color=iGreen)
 		
-		self.advancedStart()
+		self.civ.advancedStart()
 		
 		events.fireEvent("flip", self.iPlayer)
