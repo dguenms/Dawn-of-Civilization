@@ -6676,9 +6676,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TIN</Tag>
-		<English>The %s1_civ_adjective Empire has become the world's leading producer of tin.</English>
+		<English>The %s1_civ_adjective people have become the world's leading producer of tin.</English>
 		<French>L'empire %s1:1_civ_adjective est devenu le premier producteur mondial d'&#233;tain.</French>
-		<German>Das %s1:3_civ_adjective Reich hat sich zu einem der weltweit f&#252;hrenden Zinnproduzenten gemausert.</German>
+		<German>Das %s1:3_civ_adjective Volk ist zu einem der weltweit f&#252;hrenden Zinnproduzenten geworden.</German>
 		<Italian>L'impero %s1:1_civ_adjective &#232; diventato il maggior produttore mondiale di stagno.</Italian>
 		<Spanish>El imperio %s1:1_civ_adjective se ha convertido en el primer productor mundial de esta&#241;o.</Spanish>
 	</TEXT>
