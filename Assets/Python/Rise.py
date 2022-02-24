@@ -712,8 +712,11 @@ class Birth(object):
 	def birthProtectionTurns(self):
 		iTurns = 20
 		
+		if self.player.isHuman():
+			iTurns = 10
+		
 		# Mali receives a shorter protection window if the player is Moors, to help with their UHV
-		if self.iCiv == iMali and civ() == iMoors:
+		elif self.iCiv == iMali and civ() == iMoors:
 			iTurns = 10
 		
 		return turns(iTurns)
