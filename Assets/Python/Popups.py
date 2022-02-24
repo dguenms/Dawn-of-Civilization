@@ -105,8 +105,8 @@ class PopupLauncherBuilder(object):
 
 class PopupLauncher(object):
 
-	def __init__(self, input_text, option_types, selection_types, cancel_type):
-		self._text = text(input_text)
+	def __init__(self, text, option_types, selection_types, cancel_type):
+		self._text = text
 		self._option_types = option_types
 		self._selection_types = selection_types
 		self._cancel_type = cancel_type

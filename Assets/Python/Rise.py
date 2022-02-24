@@ -795,7 +795,7 @@ class Birth(object):
 	def checkSwitch(self):
 		if not self.canSwitch():
 			return
-		
+			
 		self.switchPopup.text(adjective(self.iPlayer)).cancel().switch().launch()
 	
 	def canSwitch(self):

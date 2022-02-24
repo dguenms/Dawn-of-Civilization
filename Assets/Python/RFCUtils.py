@@ -741,7 +741,7 @@ def doByzantineBribery(spy):
 	bribePopup = byzantineBribePopup.launcher()
 	
 	for unit, iCost in getByzantineBriberyUnits(spy.getOwner(), location(spy)):
-		bribePopup.applyByzantineBribery(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
+		bribePopup.text().applyByzantineBribery(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
 	
 	x, y = location(spy)
 	bribePopup.cancel().launch(spy.getOwner(), x, y)
