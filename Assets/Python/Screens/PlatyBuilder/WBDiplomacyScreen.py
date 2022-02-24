@@ -460,7 +460,7 @@ class WBDiplomacyScreen:
 					for j in xrange(pDeal.getLengthFirstTrades()):
 						if pDeal.getFirstTrade(j).ItemType == TradeableItems.TRADE_DEFENSIVE_PACT:	
 							pDeal.kill()
-							self.interfaceScreen(iSelectedPlayer)
+							self.interfaceScreen(iSelectedPlayer, bDiplomacyPage)
 							return
 		else:
 			pSelectedTeam.signDefensivePact(iTeam)
