@@ -698,25 +698,29 @@ def getLifeExpectancyRating(iPlayer):
 	
 # used: RFCUtils
 # TODO: this should not be here
-def getByzantineBriberyUnits(spy):
-	iTreasury = player(spy).getGold()
-	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(spy).owner(iBarbarian)]
+def getByzantineBriberyUnits(iPlayer, location):
+	iTreasury = player(iPlayer).getGold()
+	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(location).owner(iBarbarian)]
 	return [(unit, iCost) for unit, iCost in targets if iCost <= iTreasury]
 	
 # used: CvMainInterface
 # TODO: this should not be here
 def canDoByzantineBribery(spy):
-	if spy.getMoves() >= spy.maxMoves(): return False
-	if not getByzantineBriberyUnits(spy): return False
+	if spy.getMoves() >= spy.maxMoves(): 
+		return False
+		
+	if not getByzantineBriberyUnits(spy.getOwner(), location(spy)):
+		return False
+	
 	return True
 
 # used: RFCUtils
-def applyByzantineBribery(iChoice, x, y):
-	targets = getByzantineBriberyUnits((x, y))
+def applyByzantineBribery(iChoice, iPlayer, x, y):
+	targets = getByzantineBriberyUnits(iPlayer, (x, y))
 	unit, iCost = targets[iChoice]
 	
-	newUnit = makeUnit(iByzantium, unit.getUnitType(), closestCity(iByzantium, unit))
-	player(iByzantium).changeGold(-iCost)
+	newUnit = makeUnit(iPlayer, unit.getUnitType(), closestCity(unit, owner=iPlayer))
+	player(iPlayer).changeGold(-iCost)
 	unit.kill(False, -1)
 	
 	if newUnit:
@@ -736,10 +740,11 @@ def doByzantineBribery(spy):
 	# launch popup
 	bribePopup = byzantineBribePopup.launcher()
 	
-	for unit, iCost in getByzantineBriberyUnits(spy):
-		bribePopup.applyByzantineBribery(unit.getName(), iCost, button=unit.getButton())
+	for unit, iCost in getByzantineBriberyUnits(spy.getOwner(), location(spy)):
+		bribePopup.applyByzantineBribery(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
 	
-	bribePopup.cancel().launch(*location(spy))
+	x, y = location(spy)
+	bribePopup.cancel().launch(spy.getOwner(), x, y)
 	
 def exclusive(iPlayer, *civs):
 	return civ(iPlayer) in civs and any(player(iCiv).isAlive() for iCiv in civs if civ(iPlayer) != iCiv)
