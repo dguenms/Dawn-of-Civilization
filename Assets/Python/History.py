@@ -270,9 +270,9 @@ def conquistadors(iTeamX, iHasMetTeamY):
 							iModifier2 += 1
 						
 						# disable birth protection if still active
-						player(iOldWorldPlayer).setBirthProtected(False)
+						player(iNewWorldPlayer).setBirthProtected(False)
 						for p in plots.all():
-							if p.getBirthProtected() == iOldWorldPlayer:
+							if p.getBirthProtected() == iNewWorldPlayer:
 								p.resetBirthProtected()
 							
 						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
