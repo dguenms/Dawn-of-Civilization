@@ -4219,6 +4219,11 @@ bool CvPlot::isTradeNetwork(TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 
+	if (getTeam() != eTeam && (isBarbarian() || GET_TEAM(eTeam).isBarbarian()))
+	{
+		return false;
+	}
+
 	if (atWar(eTeam, getTeam()) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
 	{
 		return false;
