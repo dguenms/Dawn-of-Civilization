@@ -1540,7 +1540,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 		}
 		//Rhye - end
 
-		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bFromDefensivePact);
 
 		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled)
 
@@ -1764,7 +1764,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 
 		} //Rhye
 
-		CvEventReporter::getInstance().changeWar(false, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{

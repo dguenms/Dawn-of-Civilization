@@ -150,8 +150,11 @@ def checkBirths():
 
 
 @handler("changeWar")
-def ensureAdditionalDefenders(bWar, iAttacker, iDefender):
+def ensureAdditionalDefenders(bWar, iAttacker, iDefender, bFromDefensivePact):
 	if not bWar:
+		return
+	
+	if bFromDefensivePact:
 		return
 	
 	if not player(iDefender).isBirthProtected():
@@ -165,8 +168,11 @@ def ensureAdditionalDefenders(bWar, iAttacker, iDefender):
 
 
 @handler("changeWar")
-def spawnWarUnits(bWar, iAttacker, iDefender):
+def spawnWarUnits(bWar, iAttacker, iDefender, bFromDefensivePact):
 	if not bWar:
+		return
+	
+	if bFromDefensivePact:
 		return
 	
 	if not player(iDefender).isBirthProtected():
@@ -183,8 +189,11 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 
 
 @handler("changeWar")
-def balanceMilitary(bWar, iAttacker, iDefender):
+def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 	if not bWar:
+		return
+	
+	if bFromDefensivePact:
 		return
 	
 	if not player(iAttacker).isHuman():

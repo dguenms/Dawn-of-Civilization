@@ -422,9 +422,9 @@ void CvEventReporter::endGoldenAge(PlayerTypes ePlayer)
 	m_kPythonEventMgr.reportEndGoldenAge(ePlayer);
 }
 
-void CvEventReporter::changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam)
+void CvEventReporter::changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact)
 {
-	m_kPythonEventMgr.reportChangeWar(bWar, eTeam, eOtherTeam);
+	m_kPythonEventMgr.reportChangeWar(bWar, eTeam, eOtherTeam, bFromDefensivePact);
 }
 
 void CvEventReporter::setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue )

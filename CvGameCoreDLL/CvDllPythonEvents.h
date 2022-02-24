@@ -104,7 +104,7 @@ public:
 
 	void reportGoldenAge(PlayerTypes ePlayer);
 	void reportEndGoldenAge(PlayerTypes ePlayer);
-	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
+	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
 	void reportChat(CvWString szString);				
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 

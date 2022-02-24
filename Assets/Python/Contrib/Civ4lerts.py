@@ -967,7 +967,7 @@ class RefusesToTalk(AbstractStatefulAlert):
 		self.check()
 
 	def onChangeWar(self, argsList):
-		bIsWar, eTeam, eRivalTeam = argsList
+		bIsWar, eTeam, eRivalTeam, bFromDefensivePact = argsList
 		self.checkIfIsAnyOrHasMetAllTeams(eTeam, eRivalTeam)
 		
 	def onCityRazed(self, argsList):
