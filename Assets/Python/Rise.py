@@ -709,8 +709,17 @@ class Birth(object):
 	def prepare(self):
 		events.fireEvent("prepareBirth", self.iCiv)
 	
+	def birthProtectionTurns(self):
+		iTurns = 20
+		
+		# Mali receives a shorter protection window if the player is Moors, to help with their UHV
+		if self.iCiv == iMali and civ() == iMoors:
+			iTurns = 10
+		
+		return turns(iTurns)
+	
 	def protect(self):
-		self.protectionEnd = self.iTurn + turns(20)
+		self.protectionEnd = self.iTurn + self.birthProtectionTurns()
 		self.player.setBirthProtected(True)
 	
 		for plot in self.area:
