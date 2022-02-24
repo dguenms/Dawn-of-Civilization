@@ -4173,6 +4173,8 @@ class TestCountGoals(ExtendedTestCase):
 		city1 = player(1).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(0).acquireCity(city1, True, False)
 		player(0).acquireCity(city2, True, False)
 		
@@ -4180,6 +4182,7 @@ class TestCountGoals(ExtendedTestCase):
 			self.assertEqual(player(0).getNumCities(), 2)
 			self.assertEqual(bool(goal), True)
 			self.assertEqual(str(goal), "2 / 2")
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city_(61, 31).kill()
 			city_(63, 31).kill()
@@ -4192,11 +4195,14 @@ class TestCountGoals(ExtendedTestCase):
 		city1 = player(0).initCity(61, 31)
 		city2 = player(1).initCity(63, 31)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(0).acquireCity(city2, True, False)
 		
 		try:
 			self.assertEqual(bool(goal), False)
 			self.assertEqual(str(goal), "1 / 2")
+			self.assertEqual(goal.state, POSSIBLE)
 		finally:
 			city1.kill()
 			city_(63, 31).kill()

@@ -2209,6 +2209,7 @@ class Count(BaseGoal):
 		def onCityAcquired(self, iOwner, city, bConquest):
 			if bConquest and (not self.lCivs or civ(iOwner) in self.lCivs) and (not self.inside_plots or city in self.inside_plots) and (not self.outside_plots or city not in self.outside_plots):
 				self.conquered = self.conquered.including(city)
+				self.check()
 		
 		def value_function(self):
 			return cities.owner(self.iPlayer).where(lambda city: city in self.conquered).count()
