@@ -573,7 +573,7 @@ dStartingUnits = CivDict({
 		iShock: 4,
 		iDefend: 3,
 		iAttack: 2,
-		iCounter: 2,
+		iSkirmish: 2,
 		iMissionary: 1,
 	},
 	iColombia: {
@@ -581,7 +581,6 @@ dStartingUnits = CivDict({
 		iWork: 3,
 		iDefend: 2,
 		iAttack: 3,
-		iCounter: 5,
 		iMissionary: 1,
 		iTransport: 1,
 		iAttackSea: 1,
@@ -856,6 +855,7 @@ dAlwaysTrain = CivDict({
 	iByzantium: [iLegion],
 	iArabia: [iMobileGuard, iGhazi],
 	iOttomans: [iJanissary, iGreatBombard],
+	iMexico: [iGrenadier],
 }, [])
 
 dNeverTrain = CivDict({
@@ -886,6 +886,8 @@ def createSpecificUnits(iPlayer, tile):
 	elif iCiv == iInca:
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
+	elif iCiv == iColombia:
+		makeUnits(iPlayer, iAlbionLegion, tile, 5)
 
 def createSpecificAdditionalUnits(iPlayer, tile):
 	iCiv = civ(iPlayer)
