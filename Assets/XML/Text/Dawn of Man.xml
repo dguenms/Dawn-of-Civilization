@@ -106,6 +106,14 @@
 		<Spanish>It is the year 1700 AD. After the Ming Dynasty has collapsed under peasant revolts, the Jurchens of Manchuria have conquered China and established the Qing Dynasty. With Manchuria and Tibet under imperial control, China has reached the greatest extent in history, and the rule of the Kangxi Emperor promises another golden era.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_COLOMBIA</Tag>
+		<English>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</English>
+		<French>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</French>
+		<German>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</German>
+		<Italian>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Italian>
+		<Spanish>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO</Tag>
 		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
 		<French>Nous sommes en l'an 1390 ap. J.-C. Le royaume du Kongo na&#238;t de l'unification de tribus &#233;tablies dans le delta du fleuve Congo. Au m&#234;me moment, les Europ&#233;ens commencent &#224; s'int&#233;resser &#224; l'Afrique. Le Kongo devra user de strat&#233;gies religieuses et &#233;conomiques afin de conserver son ind&#233;pendance.</French>
@@ -320,6 +328,14 @@
 		<German>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</German>
 		<Italian>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</Italian>
 		<Spanish>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MEXICO</Tag>
+		<English>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</English>
+		<French>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</French>
+		<German>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</German>
+		<Italian>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Italian>
+		<Spanish>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MONGOLIA</Tag>
