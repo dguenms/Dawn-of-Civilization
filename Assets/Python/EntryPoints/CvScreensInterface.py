@@ -913,7 +913,6 @@ def getVictoryTooltip(argsList):
 # Leoreth
 def getHistoricalVictoryDescriptions(argsList):
 	iCiv = argsList[0]
-	return ""
 	if iCiv not in Victories.dHistoricalGoals:
 		return ""
 	
