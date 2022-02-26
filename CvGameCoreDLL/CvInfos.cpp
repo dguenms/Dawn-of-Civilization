@@ -10466,6 +10466,7 @@ m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
 m_piLoadingTime(NULL), // Leoreth
 m_pbLeaders(NULL),
+m_pbOriginalLeaders(NULL), // Leoreth
 m_pbCivilizationFreeBuildingClass(NULL),
 m_pbCivilizationFreeTechs(NULL),
 m_pbCivilizationDisableTechs(NULL),
@@ -10488,6 +10489,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
 	SAFE_DELETE_ARRAY(m_piLoadingTime); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbLeaders);
+	SAFE_DELETE_ARRAY(m_pbOriginalLeaders); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeBuildingClass);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeTechs);
 	SAFE_DELETE_ARRAY(m_pbCivilizationDisableTechs);
@@ -10643,6 +10645,22 @@ bool CvCivilizationInfo::isLeaders(int i) const
 	FAssertMsg(i < GC.getNumLeaderHeadInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_pbLeaders ? m_pbLeaders[i] : false;
+}
+
+void CvCivilizationInfo::setLeader(int iLeader, bool bNewValue)
+{
+	if (m_pbLeaders)
+	{
+		m_pbLeaders[iLeader] = bNewValue;
+	}
+}
+
+// Leoreth
+bool CvCivilizationInfo::isOriginalLeader(int iLeader) const
+{
+	FAssertMsg(iLeader < GC.getNumLeaderHeadInfos(), "Index out of bounds");
+	FAssertMsg(iLeader > -1, "Index out of bounds");
+	return m_pbOriginalLeaders ? m_pbOriginalLeaders[iLeader] : false;
 }
 
 bool CvCivilizationInfo::isCivilizationFreeBuildingClass(int i) const
@@ -11088,6 +11106,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->SetVariableListTagPair(&m_pbLeaders, "Leaders", sizeof(GC.getLeaderHeadInfo((LeaderHeadTypes)0)), GC.getNumLeaderHeadInfos());
+
+	// Leoreth: cache xml leaders to allow modifying them at runtime
+	pXML->SetVariableListTagPair(&m_pbOriginalLeaders, "Leaders", sizeof(GC.getLeaderHeadInfo((LeaderHeadTypes)0)), GC.getNumLeaderHeadInfos());
 
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationSelectionSound");
 

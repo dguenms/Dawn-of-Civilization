@@ -64,6 +64,8 @@ void CyInfoPythonInterface2()
 		.def("getDescriptionKeyPersistent", &CvCivilizationInfo::pyGetDescriptionKeyPersistent, "string ()") // Leoreth
 
 		.def("setPlayable", &CvCivilizationInfo::setPlayable, "void (bool bNewValue)") // Leoreth
+		.def("setLeader", &CvCivilizationInfo::setLeader, "void (int iLeader, bool bNewValue)") // Leoreth
+		.def("isOriginalLeader", &CvCivilizationInfo::isOriginalLeader, "bool (int iLeader)") // Leoreth
 
 		// Arrays
 

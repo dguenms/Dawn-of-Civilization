@@ -4,7 +4,120 @@ from DynamicCivs import startingLeader
 
 from Core import *
 from RFCUtils import *
+from Parsers import *
 
+
+LEADER_DATES = {
+	iRamesses: -1300,
+	iCleopatra: -50,
+	iBaibars: 1260,
+	iSargon: -2400,
+	iHammurabi: -1800,
+	iVatavelli: -2000,
+	iQinShiHuang: -220,
+	iTaizong: 630,
+	iHongwu: 1370,
+	iPericles: -450,
+	iAlexanderTheGreat: -330,
+	iAsoka: -260,
+	iChandragupta: 320,
+	iShivaji: 1680,
+	iGandhi: 1930,
+	iHiram: -980,
+	iHannibal: -210,
+	iAhoeitu: 900,
+	iCyrus: -550,
+	iDarius: -520,
+	iKhosrow: 540,
+	iJuliusCaesar: -50,
+	iAugustus: -20,
+	iPacal: 620,
+	iRajendra: 1020,
+	iKrishnaDevaRaya: 1510,
+	iEzana: 320,
+	iZaraYaqob: 1440,
+	iMenelik: 1890,
+	iWangKon: 920,
+	iSejong: 1420,
+	iJustinian: 530,
+	iBasil: 980,
+	iKammu: 790,
+	iOdaNobunaga: 1580,
+	iMeiji: 1870,
+	iRagnar: 800,
+	iGustav: 1620,
+	iGerhardsen: 1950,
+	iBumin: 550,
+	iAlpArslan: 1070,
+	iTamerlane: 1370,
+	iHarun: 790,
+	iSaladin: 1180,
+	iSongtsen: 620,
+	iLobsangGyatso: 1650,
+	iDharmasetu: 780,
+	iHayamWuruk: 1350,
+	iSuharto: 1950,
+	iRahman: 920,
+	iYaqub: 1190,
+	iIsabella: 1480,
+	iPhilip: 1560,
+	iCharlemagne: 770,
+	iLouis: 1650,
+	iNapoleon: 1800,
+	iDeGaulle: 1950,
+	iSuryavarman: 1120,
+	iAlfred: 880,
+	iElizabeth: 1560,
+	iVictoria: 1840,
+	iChurchill: 1940,
+	iBarbarossa: 1160,
+	iCharles: 1550,
+	iFrancis: 1800,
+	iIvan: 1540,
+	iPeter: 1690,
+	iCatherine: 1770,
+	iAlexanderI: 1810,
+	iMansaMusa: 1320,
+	iCasimir: 1340,
+	iSobieski: 1680,
+	iPilsudski: 1930,
+	iWalesa: 1990,
+	iAfonso: 1140,
+	iJoao: 1490,
+	iMaria: 1830,
+	iHuaynaCapac: 1500,
+	iLorenzo: 1470,
+	iCavour: 1860,
+	iGenghisKhan: 1210,
+	iKublaiKhan: 1260,
+	iMontezuma: 1440,
+	iTughluq: 1330,
+	iAkbar: 1560,
+	iMehmed: 1450,
+	iSuleiman: 1520,
+	iAtaturk: 1930,
+	iNaresuan: 1590,
+	iMongkut: 1860,
+	iMbemba: 1510,
+	iAbbas: 1590,
+	iWillemVanOranje: 1570,
+	iWilliam: 1650,
+	iFrederick: 1740,
+	iBismarck: 1880,
+	iWashington: 1790,
+	iLincoln: 1860,
+	iRoosevelt: 1940,
+	iSanMartin: 1820,
+	iPeron: 1950,
+	iJuarez: 1860,
+	iSantaAnna: 1850,
+	iCardenas: 1940,
+	iBolivar: 1820,
+	iPedro: 1840,
+	iVargas: 1930,
+	iMacDonald: 1870,
+	iTrudeau: 1970,
+}
 
 RELIGION_FOUNDING_DATES = {
 	iJudaism: -2000,
@@ -146,6 +259,7 @@ class Scenario(object):
 
 	def __init__(self, *args, **kwargs):
 		self.iStartYear = kwargs.get("iStartYear")
+		self.iStartTurn = kwargs.get("iStartTurn")
 		self.fileName = kwargs.get("fileName")
 		
 		self.lCivilizations = kwargs.get("lCivilizations", [])
@@ -176,6 +290,23 @@ class Scenario(object):
 		
 		for civ in self.lCivilizations:
 			civ.info.setPlayable(civ.isPlayable())
+	
+	def setupLeaders(self):
+		game.setStartYear(-3000)
+		game.setStartTurn(turns(self.iStartTurn))
+		game.setGameTurn(turns(self.iStartTurn))
+	
+		for iCiv in range(iNumCivs):
+			leaders = infos.leaders().where(lambda iLeader: infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in LEADER_DATES).sort(lambda iLeader: LEADER_DATES.get(iLeader, 2020))
+			if not leaders:
+				continue
+			
+			before, after = leaders.split(lambda iLeader: LEADER_DATES.get(iLeader, 2020) < self.iStartYear)
+			if not after or (before and since(year(LEADER_DATES.get(before.last(), 2020))) < until(year(LEADER_DATES.get(after.first(), 2020)))):
+				after = after.including(before.last())
+				
+			for iLeader in range(iNumLeaders):
+				infos.civ(iCiv).setLeader(iLeader, infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in after)
 	
 	def init(self):
 		for civ in self.lCivilizations:
@@ -209,6 +340,9 @@ class Scenario(object):
 		self.adjustColonists()
 		
 		self.initDiplomacy()
+		
+		self.restoreCivs()
+		self.restoreLeaders()
 	
 	def adjustTerritories(self):
 		for plot in plots.all():
@@ -255,3 +389,12 @@ class Scenario(object):
 	def initDiplomacy(self):
 		for iAttacker, iDefender, iWarPlan in self.lInitialWars:
 			team(iAttacker).declareWar(player(iDefender).getTeam(), False, iWarPlan)
+	
+	def restoreCivs(self):
+		for iCiv in range(iNumCivs):
+			infos.civ(iCiv).setPlayable(infos.civ(iCiv).getStartingYear() != 0)
+	
+	def restoreLeaders(self):
+		for iCiv in range(iNumCivs):
+			for iLeader in range(iNumLeaders):
+				infos.civ(iCiv).setLeader(iLeader, infos.civ(iCiv).isOriginalLeader(iLeader))

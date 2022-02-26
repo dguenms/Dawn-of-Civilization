@@ -1,11 +1,11 @@
 from Core import *
 from RFCUtils import *
-from MapParser import MapParser
+from Parsers import *
 from Scenarios import *
 from CityNameManager import determineCapitalLocations
 
 
-PATH_TEMPLATE = "Mods\RFC Dawn of Civilization\PrivateMaps\%s.txt"
+
 
 lCustomMapOptions = [
 	("Starting Date", ["3000 BC", "600 AD", "1700 AD"], "3000 BC"),
@@ -56,13 +56,7 @@ def prepareMap():
 	global PARSER
 	
 	loadScenario()
-
-	mapName = "RFC_Earth"
-	PARSER = MapParser()
-	PARSER.read(PATH_TEMPLATE % mapName)
-	
-	scenarioName = scenario.fileName
-	PARSER.read(PATH_TEMPLATE % scenarioName)
+	PARSER = parseScenarioMap(scenario)
 
 def loadScenario():
 	global scenario

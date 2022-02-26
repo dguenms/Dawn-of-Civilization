@@ -937,6 +937,9 @@ class EntityCollection(object):
 
 	def _factory(self, key):
 		return key
+	
+	def _keyify(self, item):
+		return item
 
 	def __init__(self, keys):
 		self._keys = list(keys)
@@ -2085,6 +2088,12 @@ class InfoCollection(EntityCollection):
 	def where(self, condition):
 		return self.__class__([k for k in self._keys if condition(k)], self.info_class)
 	
+	def copy(self, keys):
+		return self.__class__(list(keys), self.info_class)
+		
+	def sort(self, metric, reverse=False):
+		return self.copy(sort(self._keys, key=metric, reverse=reverse))
+	
 	def __contains__(self, item):
 		return item in self._keys
 	
@@ -2243,7 +2252,7 @@ class Infos:
 		raise TypeError("Expected identifier to be CyPlayer or leaderhead ID, got: '%s'" % type(identifier))
 	
 	def leaders(self):
-		return InfoCollection.of(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
+		return InfoCollection.type(gc.getLeaderHeadInfo, gc.getNumLeaderHeadInfos())
 	
 	def paganReligion(self, identifier):
 		if isinstance(identifier, Civ):

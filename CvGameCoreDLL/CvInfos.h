@@ -2355,6 +2355,8 @@ public:
 	const wchar* getDescriptionKeyPersistent() const;
 	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
 	void setPlayable(bool bNewValue);
+	void setLeader(int iLeader, bool bNewValue);
+	bool isOriginalLeader(int iLeader) const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2410,6 +2412,7 @@ protected:
 	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
+	bool* m_pbOriginalLeaders; // Leoreth
 	bool* m_pbCivilizationFreeBuildingClass;
 	bool* m_pbCivilizationFreeTechs;
 	bool* m_pbCivilizationDisableTechs;

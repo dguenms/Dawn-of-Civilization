@@ -951,6 +951,7 @@ def updateCustomMapOption(argsList):
 	if iOptionID == 0:
 		scenario = getScenario(iOption)
 		scenario.setupCivilizations()
+		scenario.setupLeaders()
 		
 
 #######################################################################################
