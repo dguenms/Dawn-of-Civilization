@@ -161,9 +161,12 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 
 @handler("cityRazed")
 def onCityRazed(city, iPlayer):
-	iOwner = city.getPreviousOwner()
+	iOwner = slot(Civ(city.getPreviousCiv()))
+	if iOwner < 0:
+		return 
 	
-	if player(iOwner).isBarbarian(): return
+	if player(iOwner).isBarbarian():
+		return
 
 	if player(iPlayer).isHuman() and civ(iPlayer) != iMongols:
 		iRazePenalty = -10
@@ -303,7 +306,7 @@ def checkBarbarianCollapse(iPlayer):
 	if isImmune(iPlayer): return
 		
 	iNumCities = pPlayer.getNumCities()
-	iLostCities = cities.owner(iBarbarian).where(lambda city: city.getOriginalOwner() == iPlayer).count()
+	iLostCities = cities.owner(iBarbarian).where(lambda city: city.isOriginalOwner(iPlayer)).count()
 			
 	# lost more than half of your cities to barbarians: collapse
 	if iLostCities > iNumCities:
@@ -480,8 +483,8 @@ def getCityClaim(city):
 		return coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p))
 	
 	# claim based on original owner, unless lost a long time ago
-	iOriginalOwner = city.getOriginalOwner()
-	if iOriginalOwner in possibleClaims.ai():
+	iOriginalOwner = possibleClaims.ai().where(city.isOriginalOwner).first()
+	if iOriginalOwner is not None:
 		if plot(city).getPlayerSettlerValue(iOriginalOwner) >= 90:
 			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
 				return civ(iOriginalOwner)
@@ -733,7 +736,7 @@ def getSeparatismModifier(iPlayer, city):
 		
 	# not original owner
 	if not bExpansionExceptions:
-		if city.getOriginalOwner() != iPlayer and since(city.getGameTurnAcquired()) < turns(25):
+		if not city.isOriginalOwner(iPlayer) and since(city.getGameTurnAcquired()) < turns(25):
 			iModifier += 1
 	
 	# not majority culture
@@ -814,7 +817,7 @@ def calculateStability(iPlayer):
 		
 		# Recent conquests
 		if bHistorical and since(city.getGameTurnAcquired()) <= turns(20):
-			if city.getPreviousOwner() < 0:
+			if city.getPreviousCiv() < 0:
 				iRecentlyFounded += 1
 			else:
 				iRecentlyConquered += 1
@@ -1611,7 +1614,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
 	pPlayer.setLastBirthTurn(turn())
 		
 	# add former colonies that are still free
-	for city in players.minor().alive().cities().where(lambda city: city.getOriginalOwner() == iPlayer):
+	for city in players.minor().alive().cities().where(lambda city: city.isOriginalOwner(iPlayer)):
 		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
 			if city not in resurrectionCities:
 				resurrectionCities = resurrectionCities.including(city)

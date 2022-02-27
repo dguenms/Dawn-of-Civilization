@@ -1449,7 +1449,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int aiCulture[NUM_TOTAL_CIVILIZATIONS];
 	int aiGameTurnCivLost[NUM_TOTAL_CIVILIZATIONS];
 	PlayerTypes eOldOwner;
-	PlayerTypes eOriginalOwner;
 	PlayerTypes eOldPreviousOwner;
 	CivilizationTypes eOldCiv;
 	CivilizationTypes eOriginalCiv;
@@ -1547,13 +1546,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
-	if (pOldCity->getOriginalOwner() == pOldCity->getOwnerINLINE())
+	if (pOldCity->isOriginalOwner(pOldCity->getOwnerINLINE()))
 	{
-		GET_PLAYER(pOldCity->getOriginalOwner()).changeCitiesLost(1);
+		GET_PLAYER(pOldCity->getOwnerINLINE()).changeCitiesLost(1);
 	}
-	else if (pOldCity->getOriginalOwner() == getID())
+	else if (pOldCity->isOriginalOwner(getID()))
 	{
-		GET_PLAYER(pOldCity->getOriginalOwner()).changeCitiesLost(-1);
+		GET_PLAYER(getID()).changeCitiesLost(-1);
 	}
 
 	if (bConquest)
@@ -1624,8 +1623,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	eOldOwner = pOldCity->getOwnerINLINE();
 	eOldCiv = pOldCity->getCivilizationType();
-	eOriginalOwner = pOldCity->getOriginalOwner();
-	eOldPreviousOwner = pOldCity->getPreviousOwner();
 	eOriginalCiv = pOldCity->getOriginalCiv();
 	eHighestCulturePlayer = pOldCity->findHighestCulture();
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
@@ -1735,7 +1732,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Leoreth: peaceful acquisition of minor cities makes original owner
 	if (!bConquest && (GET_PLAYER(pOldCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pOldCity->getOwnerINLINE()).isBarbarian()))
 	{
-		eOriginalOwner = getID();
+		eOriginalCiv = getCivilizationType();
 	}
 
 	pOldCity->kill(false);
@@ -1760,8 +1757,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	FAssertMsg(pNewCity != NULL, "NewCity is not assigned a valid value");
 
-	pNewCity->setPreviousOwner(eOldOwner);
-	pNewCity->setOriginalOwner(eOriginalOwner);
 	pNewCity->setPreviousCiv(eOldCiv);
 	pNewCity->setOriginalCiv(eOriginalCiv);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
@@ -18563,8 +18558,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 10
-
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
@@ -18654,7 +18647,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTradeRoutes);
 	pStream->Read(&m_iCapitalTradeModifier); // Leoreth
 	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
-	if (uiFlag >= 9) pStream->Read(&m_iVassalTradeModifier); // Leoreth
+	pStream->Read(&m_iVassalTradeModifier); // Leoreth
 	pStream->Read(&m_iCapitalCommerce); // Leoreth
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
 	pStream->Read(&m_iColonyCommerce); // Leoreth
@@ -18662,9 +18655,9 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iSlaveryCount); // Leoreth
 	pStream->Read(&m_iNoSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
-	if (uiFlag >= 5) pStream->Read(&m_iNoResistanceCount); // Leoreth
-	if (uiFlag >= 5) pStream->Read(&m_iNoTemporaryUnhappinessCount); // Leoreth
-	if (uiFlag >= 6) pStream->Read(&m_iUnhappinessDecayModifier); // Leoreth
+	pStream->Read(&m_iNoResistanceCount); // Leoreth
+	pStream->Read(&m_iNoTemporaryUnhappinessCount); // Leoreth
+	pStream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18697,7 +18690,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
-	if (uiFlag >= 10) pStream->Read(&m_bBirthProtected); // Leoreth
+	pStream->Read(&m_bBirthProtected); // Leoreth
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -18708,8 +18701,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	//Rhye (jdog) -  end -----------------------
 
 	//Leoreth
-	if (uiFlag >= 8) pStream->Read(&m_iInitialBirthTurn);
-	if (uiFlag >= 8) pStream->Read(&m_iLastBirthTurn);
+	pStream->Read(&m_iInitialBirthTurn);
+	pStream->Read(&m_iLastBirthTurn);
 	pStream->Read(&m_iNoAnarchyTurns);
 	pStream->Read(&m_iBirthYear);
 
@@ -18784,16 +18777,16 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumCorporationInfos(), m_paiHasCorporationCount);
 	pStream->Read(GC.getNumUpkeepInfos(), m_paiUpkeepCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistValidCount);
-	if (uiFlag >= 4) pStream->Read(GC.getNumSpecialistInfos(), m_paiPotentialSpecialistCount);
-	if (uiFlag >= 4) pStream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCount);
-	if (uiFlag >= 2) pStream->Read(GC.getNumTechInfos(), m_paiTechPreferences);
+	pStream->Read(GC.getNumSpecialistInfos(), m_paiPotentialSpecialistCount);
+	pStream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCount);
+	pStream->Read(GC.getNumTechInfos(), m_paiTechPreferences);
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::read");
 	pStream->Read(GC.getNumTechInfos(), m_pabResearchingTech);
 
 	pStream->Read(GC.getNumVoteSourceInfos(), m_pabLoyalMember);
 
-	if (uiFlag >= 3) pStream->Read(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
+	pStream->Read(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
 
 	for (iI=0;iI<GC.getNumCivicOptionInfos();iI++)
 	{
@@ -19111,12 +19104,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 10; // Leoreth: 5 for no resistance and no temporary unhappiness, 
-					  // 6 for unhappiness decay modifier, 
-					  // 7 for periods, 
-					  // 8 for initial and last birth turn
-					  // 9 for vassal trade modifier
-					  // 10 for birth protection
+	uint uiFlag = 1;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);

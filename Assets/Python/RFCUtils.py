@@ -1082,7 +1082,7 @@ def getPrevalentReligion(area, iStateReligionPlayer=None):
 	
 	religionCount = lambda iReligion: area.cities().religion(iReligion).count()
 	stateReligionCount = lambda iReligion: area.cities().notowner(iStateReligionPlayer).where(lambda city: player(city).getStateReligion() == iReligion).count()
-	previousStateReligionCount = lambda iReligion: area.cities().owner(iStateReligionPlayer).where(lambda city: city.getPreviousOwner() >= 0 and player(city.getPreviousOwner()).getStateReligion == iReligion).count()
+	previousStateReligionCount = lambda iReligion: area.cities().owner(iStateReligionPlayer).where(lambda city: slot(Civ(city.getPreviousCiv())) >= 0 and player(Civ(city.getPreviousCiv())).getStateReligion() == iReligion).count()
 	
 	found = find_max(religions, lambda iReligion: religionCount(iReligion) + stateReligionCount(iReligion) + previousStateReligionCount(iReligion))
 	

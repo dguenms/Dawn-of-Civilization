@@ -632,19 +632,15 @@ public:
 #endif
 	DllExport TeamTypes getTeam() const;																	// Exposed to Python
 
-	PlayerTypes getPreviousOwner() const;																	// Exposed to Python
-	void setPreviousOwner(PlayerTypes eNewValue);
-
-	PlayerTypes getOriginalOwner() const;																	// Exposed to Python
-	void setOriginalOwner(PlayerTypes eNewValue);
-
 	// Leoreth
 	CivilizationTypes getPreviousCiv() const;
 	void setPreviousCiv(CivilizationTypes eNewValue);
+	bool isPreviousOwner(PlayerTypes ePlayer) const;
 
 	// Leoreth
 	CivilizationTypes getOriginalCiv() const;
 	void setOriginalCiv(CivilizationTypes eNewValue);
+	bool isOriginalOwner(PlayerTypes ePlayer) const;
 
 	CultureLevelTypes getCultureLevel() const;														// Exposed to Python
 	int getCultureThreshold() const;																	// Exposed to Python
@@ -1415,8 +1411,6 @@ protected:
 /************************************************************************************************/
 
 	PlayerTypes m_eOwner;
-	PlayerTypes m_ePreviousOwner;
-	PlayerTypes m_eOriginalOwner;
 	CivilizationTypes m_ePreviousCiv;
 	CivilizationTypes m_eOriginalCiv;
 	CultureLevelTypes m_eCultureLevel;

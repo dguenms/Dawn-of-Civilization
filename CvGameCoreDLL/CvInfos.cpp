@@ -6434,10 +6434,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 
-				   // 2 for no resistance and no temporary unhappiness, 
-				   // 3 for unhappiness decay modifier
-				   // 4 for vassal trade modifier	
+	uint uiFlag=0;
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6489,9 +6486,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
-	if (uiFlag >= 1) stream->Read(&m_iLevelExperienceModifier); // Leoreth
-	if (uiFlag >= 3) stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
-	if (uiFlag >= 4) stream->Read(&m_iVassalTradeModifier); // Leoreth
+	stream->Read(&m_iLevelExperienceModifier); // Leoreth
+	stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
+	stream->Read(&m_iVassalTradeModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6505,8 +6502,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
-	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
-	if (uiFlag >= 2) stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
+	stream->Read(&m_bNoResistance); // Leoreth
+	stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 
 	// Arrays
 
@@ -6582,12 +6579,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers);
 
 	// Leoreth
-	if (uiFlag >= 1)
-	{
-		SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
-		m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
-		stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
-	}
+	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
+	m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
 
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
@@ -6624,10 +6618,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=4; // Leoreth: 1 for level experience modifier and minimal specialist count, 
-				   // 2 for no resistance, 
-	               // 3 for unhappiness decay modifier,
-				   // 4 for vassal trade modifier
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -8698,7 +8689,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for corporation happiness/health modifiers, 2 for no resistance
+	uint uiFlag=0;
 	stream->Read(&uiFlag);	// flags for expansion
 
 	stream->Read(&m_iBuildingClassType);
@@ -8788,8 +8779,8 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iAreaHealth);
 	stream->Read(&m_iGlobalHealth);
-	if (uiFlag >= 1) stream->Read(&m_iBuildingUnhealthModifier);
-	if (uiFlag >= 1) stream->Read(&m_iCorporationUnhealthModifier);
+	stream->Read(&m_iBuildingUnhealthModifier);
+	stream->Read(&m_iCorporationUnhealthModifier);
 	stream->Read(&m_iGlobalPopulationChange);
 	stream->Read(&m_iFreeTechs);
 	stream->Read(&m_iDefenseModifier);
@@ -8824,7 +8815,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
-	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
+	stream->Read(&m_bNoResistance); // Leoreth
 
 	stream->ReadString(m_szConstructSound);
 	stream->ReadString(m_szArtDefineTag);
@@ -9075,7 +9066,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::write(stream);
 
-	uint uiFlag=2; // Leoreth: 1 for building/corporation health modifiers, 2 for no resistance
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iBuildingClassType);
@@ -10736,7 +10727,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=1; // 1: pagan religion
+	uint uiFlag=0;
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iDefaultPlayerColor);
@@ -10811,7 +10802,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1; // 1: pagan religion
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iDefaultPlayerColor);
@@ -13455,7 +13446,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1
+	uint uiFlag=0;
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iAdvancedStartCost);
@@ -13516,7 +13507,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 
 	SAFE_DELETE_ARRAY(m_piCoastalYieldChange);
 	m_piCoastalYieldChange = new int[NUM_YIELD_TYPES];
-	if (uiFlag >= 1) stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
+	stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
 
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	m_pbTerrainMakesValid = new bool[GC.getNumTerrainInfos()];
@@ -13571,7 +13562,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1;
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iAdvancedStartCost);

@@ -892,7 +892,6 @@ class Congress:
 			if not bRecolonise:
 				# previous ownership
 				if city.isEverOwned(iClaimant): iClaimValidity += 5
-				#if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
 			
 				# city culture, see plot culture
 				if city.getCulture(iClaimant) == 0: iClaimValidity -= 10

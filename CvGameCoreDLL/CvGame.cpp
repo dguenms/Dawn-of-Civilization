@@ -8669,7 +8669,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	reset(NO_HANDICAP);
 
-	uint uiFlag=0; // Leoreth: 2 for city screen owner, 3 for notification levels, 4 for civ periods
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	if (uiFlag < 1)
@@ -8718,13 +8718,10 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eWinner);
 	pStream->Read((int*)&m_eVictory);
 	pStream->Read((int*)&m_eGameState);
-	if (uiFlag >= 2) pStream->Read((int*)&m_eCityScreenOwner); // Leoreth
-	if (uiFlag >= 3)
-	{
-		pStream->Read((int*)&m_eGreatPeopleNotifications);
-		pStream->Read((int*)&m_eReligionSpreadNotifications);
-		pStream->Read((int*)&m_eEventEffectNotifications);
-	}
+	pStream->Read((int*)&m_eCityScreenOwner); // Leoreth
+	pStream->Read((int*)&m_eGreatPeopleNotifications);
+	pStream->Read((int*)&m_eReligionSpreadNotifications);
+	pStream->Read((int*)&m_eEventEffectNotifications);
 
 	//Rhye - start bugfix (thanks Gyathaar)
 	//pStream->ReadString(m_szScriptData);
@@ -8750,10 +8747,7 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_TEAMS, m_aiRankTeam);
 	pStream->Read(MAX_TEAMS, m_aiTeamRank);
 	pStream->Read(MAX_TEAMS, m_aiTeamScore);
-	if (uiFlag >= 4)
-	{
-		pStream->Read(NUM_CIVS, m_aiCivPeriod);
-	}
+	pStream->Read(NUM_CIVS, m_aiCivPeriod);
 
 	// Leoreth
 	pStream->Read(MAX_TEAMS, m_aiTechRankTeam);
@@ -8920,7 +8914,7 @@ void CvGame::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=4; // Leoreth: 2 for city screen owner, 3 for notification levels, 4 for civ periods
+	uint uiFlag=1;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iElapsedGameTurns);
@@ -8964,13 +8958,10 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_eWinner);
 	pStream->Write(m_eVictory);
 	pStream->Write(m_eGameState);
-	if (uiFlag >= 2) pStream->Write(m_eCityScreenOwner); // Leoreth
-	if (uiFlag >= 3)
-	{
-		pStream->Write(m_eGreatPeopleNotifications);
-		pStream->Write(m_eReligionSpreadNotifications);
-		pStream->Write(m_eEventEffectNotifications);
-	}
+	pStream->Write(m_eCityScreenOwner); // Leoreth
+	pStream->Write(m_eGreatPeopleNotifications);
+	pStream->Write(m_eReligionSpreadNotifications);
+	pStream->Write(m_eEventEffectNotifications);
 
 	pStream->WriteString(m_szScriptData);
 

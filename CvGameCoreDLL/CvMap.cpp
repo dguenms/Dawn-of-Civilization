@@ -1291,7 +1291,7 @@ void CvMap::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset(&defaultMapData);
 
-	uint uiFlag=0; // 1
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iGridWidth);
@@ -1302,8 +1302,8 @@ void CvMap::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBottomLatitude);
 	pStream->Read(&m_iNextRiverID);
 
-	if (uiFlag >= 1) pStream->Read(&m_iPrimeMeridian);
-	if (uiFlag >= 1) pStream->Read(&m_iEquator);
+	pStream->Read(&m_iPrimeMeridian);
+	pStream->Read(&m_iEquator);
 
 	pStream->Read(&m_bWrapX);
 	pStream->Read(&m_bWrapY);
@@ -1333,7 +1333,7 @@ void CvMap::read(FDataStreamBase* pStream)
 //
 void CvMap::write(FDataStreamBase* pStream)
 {
-	uint uiFlag=1; // Leoreth
+	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iGridWidth);

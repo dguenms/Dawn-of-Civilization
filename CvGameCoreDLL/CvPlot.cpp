@@ -9736,7 +9736,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// Init saved data
 	reset();
 
-	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion, 4 for core, settler, war maps changed to civ and short
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iX);
@@ -9753,9 +9753,9 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMinOriginalStartDist);
 	pStream->Read(&m_iReconCount);
 	pStream->Read(&m_iRiverCrossingCount);
-	if (uiFlag >= 1) pStream->Read(&m_iCultureConversionRate);
-	if (uiFlag >= 1) pStream->Read(&m_iTotalCulture);
-	if (uiFlag >= 2) pStream->Read(&m_iContinentArea);
+	pStream->Read(&m_iCultureConversionRate);
+	pStream->Read(&m_iTotalCulture);
+	pStream->Read(&m_iContinentArea);
 
 	pStream->Read(&bVal);
 	m_bStartingPlot = bVal;
@@ -9776,9 +9776,9 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bWithinGreatWall); // Leoreth
 
 	pStream->Read(&m_eOwner);
-	if (uiFlag >= 1) pStream->Read((int*)&m_eCultureConversionCivilization); // Leoreth
-	if (uiFlag >= 3) pStream->Read(&m_eBirthProtected); // Leoreth
-	if (uiFlag >= 3) pStream->Read(&m_eExpansion); // Leoreth
+	pStream->Read((int*)&m_eCultureConversionCivilization); // Leoreth
+	pStream->Read(&m_eBirthProtected); // Leoreth
+	pStream->Read(&m_eExpansion); // Leoreth
 	pStream->Read(&m_ePlotType);
 	pStream->Read(&m_eTerrainType);
 	pStream->Read(&m_eFeatureType);
@@ -9958,18 +9958,9 @@ void CvPlot::read(FDataStreamBase* pStream)
 	}
 
 	// Leoreth
-	if (uiFlag >= 4)
-	{
-		pStream->Read(NUM_CIVS, m_abCore);
-		pStream->Read(NUM_CIVS, m_aiSettlerValue);
-		pStream->Read(NUM_CIVS, m_aiWarValue);
-	}
-	else 
-	{
-		pStream->Read(NUM_MAJOR_PLAYERS, m_abCore);
-		pStream->Read(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
-		pStream->Read(NUM_MAJOR_PLAYERS, m_aiWarValue);
-	}
+	pStream->Read(NUM_CIVS, m_abCore);
+	pStream->Read(NUM_CIVS, m_aiSettlerValue);
+	pStream->Read(NUM_CIVS, m_aiWarValue);
 	pStream->Read(NUM_RELIGIONS, m_aiReligionSpreadFactor);
 	pStream->Read(NUM_RELIGIONS, m_aiReligionInfluence);
 	pStream->Read(&m_iRegionID);
@@ -10014,7 +10005,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 {
 	uint iI;
 
-	uint uiFlag=4; // Leoreth: 1 for culture conversion, 2 for continent area, 3 for birth protection and expansion, 4 for core, settler, war maps with civ and short
+	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iX);

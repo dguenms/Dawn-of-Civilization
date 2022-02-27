@@ -1620,7 +1620,7 @@ class Condition(BaseGoal):
 	@classproperty
 	def settle(cls):
 		def settled(self, city):
-			return city.getOwner() == self.iPlayer and city.getOriginalOwner() == self.iPlayer
+			return city.getOwner() == self.iPlayer and city.isOriginalOwner(self.iPlayer)
 		
 		def checkCityBuilt(self, city):
 			if any(city in area for area in self.values):
@@ -2167,7 +2167,7 @@ class Count(BaseGoal):
 	@classproperty
 	def settledCities(cls):
 		def settled(self, cities):
-			return cities.owner(self.iPlayer).where(lambda city: city.getOriginalOwner() == self.iPlayer)
+			return cities.owner(self.iPlayer).where(lambda city: city.isOriginalOwner(self.iPlayer))
 		
 		return cls.desc("SETTLED_CITY_COUNT").progr("SETTLED_CITY_COUNT").format(options.city().objective("ENTITY_IN")).cities(settled).checked("cityBuilt").checked("cityAcquiredAndKept").subclass("SettledCityCount")
 	
@@ -2678,7 +2678,7 @@ class Trigger(Condition):
 	
 		def checkFirstSettled(self, city):
 			if city in self.arguments.subject:
-				if self.arguments.subject.cities().without(city).none(lambda city: not is_minor(city) and civ(city.getOriginalOwner()) not in self.lAllowedCivs):
+				if self.arguments.subject.cities().without(city).none(lambda city: not is_minor(city) and city.getOriginalCiv() not in self.lAllowedCivs):
 					self.complete()
 		
 		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")

@@ -1256,17 +1256,18 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 				//if (!(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder())) //Rhye
 				if ((!(pCity->isHolyCity()) && !(pCity->hasActiveWorldWonder())) || isBarbarian()) //Rhye
 				{
-					if (pCity->getPreviousOwner() != BARBARIAN_PLAYER)
+					if (!pCity->isPreviousOwner(BARBARIAN_PLAYER))
 					{
 						pNearestCity = GC.getMapINLINE().findCity(pCity->getX_INLINE(), pCity->getY_INLINE(), NO_PLAYER, getTeam(), true, false, NO_TEAM, NO_DIRECTION, pCity);
 
 						if (pNearestCity == NULL)
 						{
-							if (pCity->getPreviousOwner() != NO_PLAYER)
+							for (int iI = 0; iI < MAX_PLAYERS; iI++)
 							{
-								if (GET_TEAM(GET_PLAYER(pCity->getPreviousOwner()).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
+								if (pCity->isPreviousOwner((PlayerTypes)iI) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).countNumCitiesByArea(pCity->area()) > 3)
 								{
 									iRazeValue += 30;
+									break;
 								}
 							}
 						}
@@ -1317,7 +1318,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 					if (pCity->area()->getCitiesPerPlayer(getID()) > 0)
 					{
-						if (pCity->getPreviousOwner() != BARBARIAN_PLAYER)
+						if (!pCity->isPreviousOwner(BARBARIAN_PLAYER))
 						{
                             iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
 						}
@@ -1452,7 +1453,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (!bRaze && !bSack && canSpare(pCity, eHighestCulturePlayer, iCaptureGold))
 	{
-		if (!AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
+		if (!AI_isFinancialTrouble() && !pCity->isPreviousOwner(GET_TEAM(getWorstEnemy()).getLeaderID()))
 		{
 			int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
 			int iGold = getGold();
@@ -7981,7 +7982,7 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 					return DENIAL_UNKNOWN;
 				}
 
-				if (pCity->getPreviousOwner() != getID())
+				if (!pCity->isPreviousOwner(getID()))
 				{
 					if (pCity->plot()->getSettlerValue(getID()) < 90 && pCity->plot()->getWarValue(getID()) == 0)
 					{
@@ -13174,7 +13175,7 @@ void CvPlayerAI::AI_doDiplo()
 									{
 										for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 										{
-											if (pLoopCity->getPreviousOwner() != ((PlayerTypes)iI))
+											if (!pLoopCity->isPreviousOwner((PlayerTypes)iI))
 											{
 												if (((pLoopCity->getGameTurnAcquired() + 4) % 20) == (GC.getGameINLINE().getGameTurn() % 20))
 												{

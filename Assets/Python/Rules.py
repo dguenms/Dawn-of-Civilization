@@ -73,7 +73,7 @@ def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
 		if at(plot, city):
 			convertTemporaryCulture(plot, iPlayer, 25, False)
-		elif plot.getOwner() == city.getPreviousOwner():
+		elif civ(plot) == city.getPreviousCiv():
 			convertTemporaryCulture(plot, iPlayer, 50, True)
 		else:
 			convertTemporaryCulture(plot, iPlayer, 25, True)

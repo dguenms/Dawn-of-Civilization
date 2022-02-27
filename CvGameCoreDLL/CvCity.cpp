@@ -311,8 +311,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	setGameTurnFounded(GC.getGameINLINE().getGameTurn());
 	setGameTurnAcquired(GC.getGameINLINE().getGameTurn()); //Rhye - infinite loop????
 
-	
-
 	// Leoreth: apply state religion building yield change
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -630,8 +628,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 /************************************************************************************************/
 
 	m_eOwner = eOwner;
-	m_ePreviousOwner = NO_PLAYER;
-	m_eOriginalOwner = eOwner;
 	m_ePreviousCiv = NO_CIVILIZATION;
 	m_eOriginalCiv = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getCivilizationType() : NO_CIVILIZATION;
 	m_eCultureLevel = NO_CULTURELEVEL;
@@ -5195,7 +5191,7 @@ void CvCity::updateArtStyleType()
 				break;
 			}
 		}
-		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian() || (eHighestCultureCiv == MONGOLS && getOriginalOwner() != eHighestCulture))
+		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian() || (eHighestCultureCiv == MONGOLS && !isOriginalOwner(eHighestCulture)))
 		{
 			switch (id)
 			{
@@ -9579,30 +9575,6 @@ PlayerTypes CvCity::getOwner() const
 }
 
 
-PlayerTypes CvCity::getPreviousOwner() const
-{
-	return m_ePreviousOwner;
-}
-
-
-void CvCity::setPreviousOwner(PlayerTypes eNewValue)
-{
-	m_ePreviousOwner = eNewValue;
-}
-
-
-PlayerTypes CvCity::getOriginalOwner() const
-{
-	return m_eOriginalOwner;
-}
-
-
-void CvCity::setOriginalOwner(PlayerTypes eNewValue)
-{
-	m_eOriginalOwner = eNewValue;
-}
-
-
 CivilizationTypes CvCity::getPreviousCiv() const
 {
 	return m_ePreviousCiv;
@@ -9615,6 +9587,17 @@ void CvCity::setPreviousCiv(CivilizationTypes eNewValue)
 }
 
 
+bool CvCity::isPreviousOwner(PlayerTypes ePlayer) const
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() == getPreviousCiv();
+}
+
+
 CivilizationTypes CvCity::getOriginalCiv() const
 {
 	return m_eOriginalCiv;
@@ -9624,6 +9607,17 @@ CivilizationTypes CvCity::getOriginalCiv() const
 void CvCity::setOriginalCiv(CivilizationTypes eNewValue)
 {
 	m_eOriginalCiv = eNewValue;
+}
+
+
+bool CvCity::isOriginalOwner(PlayerTypes ePlayer) const
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() == getOriginalCiv();
 }
 
 
@@ -15800,7 +15794,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: up to 4 (civ based culture etc)
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iID);
@@ -15907,12 +15901,12 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
-	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
-	if (uiFlag >= 3) pStream->Read(&m_iTotalCultureTimes100);
-	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamage);
-	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamageChange);
-	if (uiFlag >= 3) pStream->Read(&m_iTotalPopulationLoss);
-	if (uiFlag >= 3) pStream->Read(&m_iPopulationLoss);
+	pStream->Read(&m_iStabilityPopulation);
+	pStream->Read(&m_iTotalCultureTimes100);
+	pStream->Read(&m_iBuildingDamage);
+	pStream->Read(&m_iBuildingDamageChange);
+	pStream->Read(&m_iTotalPopulationLoss);
+	pStream->Read(&m_iPopulationLoss);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15928,13 +15922,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bMongolUP); // Leoreth
 
 	pStream->Read((int*)&m_eOwner);
-	pStream->Read((int*)&m_ePreviousOwner);
-	pStream->Read((int*)&m_eOriginalOwner);
-	if (uiFlag >= 4)
-	{
-		pStream->Read((int*)&m_ePreviousCiv);
-		pStream->Read((int*)&m_eOriginalCiv);
-	}
+	pStream->Read((int*)&m_ePreviousCiv);
+	pStream->Read((int*)&m_eOriginalCiv);
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
 
@@ -15961,14 +15950,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
-	if (uiFlag >= 4)
-	{
-		pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
-	}
-	else
-	{
-		pStream->Read(MAX_PLAYERS, m_aiCulture);
-	}
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
 	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
@@ -16087,18 +16069,15 @@ void CvCity::read(FDataStreamBase* pStream)
 		m_aBuildingHealthChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
 	}
 
-	if (uiFlag >= 1)
+	pStream->Read(&iNumElts);
+	m_aBuildingGreatPeopleRateChange.clear();
+	for (int i = 0; i < iNumElts; ++i)
 	{
-		pStream->Read(&iNumElts);
-		m_aBuildingGreatPeopleRateChange.clear();
-		for (int i = 0; i < iNumElts; ++i)
-		{
-			int iBuildingClass;
-			pStream->Read(&iBuildingClass);
-			int iChange;
-			pStream->Read(&iChange);
-			m_aBuildingGreatPeopleRateChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
-		}
+		int iBuildingClass;
+		pStream->Read(&iBuildingClass);
+		int iChange;
+		pStream->Read(&iChange);
+		m_aBuildingGreatPeopleRateChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
 	}
 }
 
@@ -16106,7 +16085,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=4; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion, 4 for civ based culture
+	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16242,8 +16221,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_bMongolUP); // Leoreth
 
 	pStream->Write(m_eOwner);
-	pStream->Write(m_ePreviousOwner);
-	pStream->Write(m_eOriginalOwner);
 	pStream->Write(m_ePreviousCiv); // Leoreth
 	pStream->Write(m_eOriginalCiv); // Leoreth
 	pStream->Write(m_eCultureLevel);
@@ -16374,14 +16351,11 @@ void CvCity::write(FDataStreamBase* pStream)
 		pStream->Write((*it).second);
 	}
 
-	if (uiFlag >= 1)
+	pStream->Write(m_aBuildingGreatPeopleRateChange.size());
+	for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
 	{
-		pStream->Write(m_aBuildingGreatPeopleRateChange.size());
-		for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
-		{
-			pStream->Write((*it).first);
-			pStream->Write((*it).second);
-		}
+		pStream->Write((*it).first);
+		pStream->Write((*it).second);
 	}
 }
 
@@ -17949,7 +17923,7 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 
 					if (bConquest)
 					{
-						if (iPlayer == getOriginalOwner())
+						if (isOriginalOwner((PlayerTypes)iPlayer))
 						{
 							iCultureTimes100 *= 3;
 							iCultureTimes100 /= 2;
@@ -19589,7 +19563,7 @@ bool CvCity::canLiberate() const
 		return false;
 	}
 
-	if (getOwner() == getOriginalOwner())
+	if (isOriginalOwner(getOwner()))
 	{
 		return false;
 	}

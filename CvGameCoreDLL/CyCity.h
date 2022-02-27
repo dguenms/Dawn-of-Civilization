@@ -358,8 +358,6 @@ public:
 	void setPlundered(bool bNewValue);
 	int /*PlayerTypes*/getOwner();
 	int /*TeamTypes*/getTeam();
-	int /*PlayerTypes*/getPreviousOwner();
-	int /*PlayerTypes*/getOriginalOwner();
 	int getPreviousCiv();
 	int getOriginalCiv();
 	int /*CultureLevelTypes*/ getCultureLevel();
@@ -604,11 +602,11 @@ public:
 	bool rebuild();
 	bool isValidBuildingLocation(int eBuilding);
 	void setOriginalCiv(int iCivilization);
-	void setOriginalOwner(int iPlayer);
 	void setEverOwned(int iCivilization, bool bNewValue);
 	void setGameTurnFounded(int iNewValue);
 	void setGameTurnAcquired(int iNewValue);
 	void setCivCulture(int iCiv, int iNewValue);
+	bool isOriginalOwner(int iPlayer);
 
 private:
 	CvCity* m_pCity;

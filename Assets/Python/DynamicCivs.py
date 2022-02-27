@@ -648,7 +648,9 @@ def onCityAcquired(iPreviousOwner, iNewOwner):
 
 @handler("cityRazed")
 def onCityRazed(city):
-	checkName(city.getPreviousOwner())
+	iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+	if iPreviousOwner >= 0:
+		checkName(iPreviousOwner)
 
 @handler("cityBuilt")	
 def onCityBuilt(city):

@@ -1672,16 +1672,6 @@ int /*TeamTypes*/ CyCity::getTeam()
 	return m_pCity ? m_pCity->getTeam() : NO_TEAM;
 }
 
-int /*PlayerTypes*/ CyCity::getPreviousOwner()
-{
-	return m_pCity ? m_pCity->getPreviousOwner() : NO_PLAYER;
-}
-
-int /*PlayerTypes*/ CyCity::getOriginalOwner()
-{
-	return m_pCity ? m_pCity->getOriginalOwner() : NO_PLAYER;
-}
-
 int CyCity::getPreviousCiv()
 {
 	return m_pCity ? m_pCity->getPreviousCiv() : NO_CIVILIZATION;
@@ -2854,11 +2844,6 @@ void CyCity::setOriginalCiv(int iCivilization)
 	if (m_pCity) m_pCity->setOriginalCiv((CivilizationTypes)iCivilization);
 }
 
-void CyCity::setOriginalOwner(int iPlayer)
-{
-	if (m_pCity) m_pCity->setOriginalOwner((PlayerTypes)iPlayer);
-}
-
 void CyCity::setEverOwned(int iCivilization, bool bNewValue)
 {
 	if (m_pCity) m_pCity->setEverOwned((CivilizationTypes)iCivilization, bNewValue);
@@ -2877,4 +2862,9 @@ void CyCity::setGameTurnAcquired(int iNewValue)
 void CyCity::setCivCulture(int iCivilization, int iNewValue)
 {
 	if (m_pCity) m_pCity->setCulture((CivilizationTypes)iCivilization, iNewValue);
+}
+
+bool CyCity::isOriginalOwner(int iPlayer)
+{
+	return m_pCity ? m_pCity->isOriginalOwner((PlayerTypes)iPlayer) : false;
 }

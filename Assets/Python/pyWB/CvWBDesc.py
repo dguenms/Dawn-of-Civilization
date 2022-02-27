@@ -1494,7 +1494,6 @@ class CvCityDesc:
 		if self.originalOwner:
 			iOriginalOwnerCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.originalOwner))
 			if iOriginalOwnerCiv >= 0:
-				self.city.setOriginalOwner(slot(iOriginalOwnerCiv))
 				self.city.setOriginalCiv(iOriginalOwnerCiv)
 				self.city.setEverOwned(iOriginalOwnerCiv, True)
 		for previousOwner in self.lPreviousOwners:

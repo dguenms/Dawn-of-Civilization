@@ -621,7 +621,7 @@ class Birth(object):
 		
 		# Ottomans require that the Turks managed to conquer at least one city in the Near East
 		if self.iCiv == iOttomans:
-			if cities.rectangle(*tNearEast).none(lambda city: slot(iTurks) in [city.getOwner(), city.getPreviousOwner()]):
+			if cities.rectangle(*tNearEast).none(lambda city: iTurks in [city.getCivilizationType(), city.getPreviousCiv()]):
 				return False
 		
 		# Thailand requires Khmer to be shaky or worse (unstable if Khmer is human)
