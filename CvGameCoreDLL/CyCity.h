@@ -608,6 +608,7 @@ public:
 	void setEverOwned(int iCivilization, bool bNewValue);
 	void setGameTurnFounded(int iNewValue);
 	void setGameTurnAcquired(int iNewValue);
+	void setCivCulture(int iCiv, int iNewValue);
 
 private:
 	CvCity* m_pCity;

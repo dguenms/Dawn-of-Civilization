@@ -2873,3 +2873,8 @@ void CyCity::setGameTurnAcquired(int iNewValue)
 {
 	if (m_pCity) m_pCity->setGameTurnAcquired(iNewValue);
 }
+
+void CyCity::setCivCulture(int iCivilization, int iNewValue)
+{
+	if (m_pCity) m_pCity->setCulture((CivilizationTypes)iCivilization, iNewValue);
+}

@@ -163,5 +163,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("setGameTurnFounded", &CyCity::setGameTurnFounded, "void (int iNewValue)")
 		.def("setGameTurnAcquired", &CyCity::setGameTurnAcquired, "void (int iNewValue)")
 		.def("isEverOwnedCiv", &CyCity::isEverOwnedCiv, "bool (int iCivilization)")
+		.def("setCivCulture", &CyCity::setCivCulture, "void (int iCivilization, int iNewValue)")
 		;
 }
