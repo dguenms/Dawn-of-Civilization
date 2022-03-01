@@ -404,7 +404,7 @@ def format_separators(list, separator, last_separator, format=lambda x: x):
 
 def slot(iCiv):
 	if not isinstance(iCiv, Civ):
-		raise TypeError("Can only pass Civ to determine slot, got: %s" % type(iCiv))
+		raise TypeError("Can only pass Civ to determine slot, got: %s of %s" % (iCiv, type(iCiv)))
 
 	if iCiv in data.dSlots:
 		return data.dSlots[iCiv]

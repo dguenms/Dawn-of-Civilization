@@ -1,7 +1,8 @@
 from RFCUtils import *
-from StoredData import data
 from Core import *
+
 from Events import events, handler
+
 
 ### Unit spawn functions ###
 

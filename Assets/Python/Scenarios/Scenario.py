@@ -1,6 +1,5 @@
-from Civilizations import Civilizations
 from Resources import setupScenarioResources
-from DynamicCivs import startingLeader
+from DynamicCivs import startingLeader, checkName
 
 from Core import *
 from RFCUtils import *
@@ -343,6 +342,8 @@ class Scenario(object):
 		
 		self.restoreCivs()
 		self.restoreLeaders()
+		
+		self.updateNames()
 	
 	def adjustTerritories(self):
 		for plot in plots.all():
@@ -398,3 +399,7 @@ class Scenario(object):
 		for iCiv in range(iNumCivs):
 			for iLeader in range(iNumLeaders):
 				infos.civ(iCiv).setLeader(iLeader, infos.civ(iCiv).isOriginalLeader(iLeader))
+	
+	def updateNames(self):
+		for iPlayer in players.major():
+			checkName(iPlayer)

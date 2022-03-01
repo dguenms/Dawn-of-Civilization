@@ -7220,7 +7220,14 @@ int CvPlot::getCulture(PlayerTypes ePlayer) const
 	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds");
 
-	return getCulture(GET_PLAYER(ePlayer).getCivilizationType());
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
+	return getCulture(eCivilization);
 }
 
 

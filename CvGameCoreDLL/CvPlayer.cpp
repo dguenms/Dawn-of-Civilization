@@ -1449,7 +1449,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int aiCulture[NUM_TOTAL_CIVILIZATIONS];
 	int aiGameTurnCivLost[NUM_TOTAL_CIVILIZATIONS];
 	PlayerTypes eOldOwner;
-	PlayerTypes eOldPreviousOwner;
+	CivilizationTypes eOldPreviousCiv;
 	CivilizationTypes eOldCiv;
 	CivilizationTypes eOriginalCiv;
 	PlayerTypes eHighestCulturePlayer;
@@ -1624,6 +1624,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	eOldOwner = pOldCity->getOwnerINLINE();
 	eOldCiv = pOldCity->getCivilizationType();
 	eOriginalCiv = pOldCity->getOriginalCiv();
+	eOldPreviousCiv = pOldCity->getPreviousCiv();
 	eHighestCulturePlayer = pOldCity->findHighestCulture();
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
 	iGameTurnAcquired = pOldCity->getGameTurnAcquired();
@@ -2058,7 +2059,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			}
 			else if (!isHuman())
 			{
-				AI_conquerCity(pNewCity, eOldPreviousOwner, eHighestCulturePlayer, iCaptureGold); // could delete the pointer...
+				AI_conquerCity(pNewCity, eOldPreviousCiv, eHighestCulturePlayer, iCaptureGold); // could delete the pointer...
 			}
 			else
 			{

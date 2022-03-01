@@ -480,7 +480,7 @@ def getCityClaim(city):
 	# claim based on core territory
 	coreClaims = possibleClaims.where(lambda p: city.isPlayerCore(p))
 	if coreClaims:
-		return coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p))
+		return civ(coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p)))
 	
 	# claim based on original owner, unless lost a long time ago
 	iOriginalOwner = possibleClaims.ai().where(city.isOriginalOwner).first()
@@ -502,14 +502,12 @@ def getCityClaim(city):
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
 	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:
-		print "war claim"
 		iWarClaim = warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
 		return civ(iWarClaim)
 	
 	# claim for dead civilisation that can be resurrected
 	resurrections = civs.major().before_fall().without(iOwner).where(canRespawn).where(lambda c: city in cities.respawn(c))
 	if resurrections:
-		print "resurrection"
 		return resurrections.maximum(lambda c: (city.isCore(c), plot(city).getSettlerValue(c)))
 	
 	return -1
@@ -566,7 +564,8 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		# assign cities to living civs
 		if player(iClaimant).isAlive():
 			for city in claimedCities:
-				secedeCity(city, iClaimant, not bComplete, iArmyPercent)
+				iClaimantPlayer = slot(iClaimant)
+				secedeCity(city, iClaimantPlayer, not bComplete, iArmyPercent)
 		
 		# if sufficient for resurrection, resurrect civs
 		elif canResurrectFromCities(iClaimant, claimedCities):

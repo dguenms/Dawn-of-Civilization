@@ -1236,7 +1236,7 @@ void CvPlayerAI::AI_makeProductionDirty()
 }
 
 
-void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold)
+void CvPlayerAI::AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 {
 	CvCity* pNearestCity;
 	bool bRaze = false;
@@ -1425,7 +1425,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (!bRaze && canSack(pCity))
 	{
-		if (ePreviousOwner != getID() && eHighestCulturePlayer != getID())
+		if (ePreviousCiv != getCivilizationType() && eHighestCulturePlayer != getID())
 		{
 			int iSackValue = GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();	
 
@@ -1453,7 +1453,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (!bRaze && !bSack && canSpare(pCity, eHighestCulturePlayer, iCaptureGold))
 	{
-		if (!AI_isFinancialTrouble() && !pCity->isPreviousOwner(GET_TEAM(getWorstEnemy()).getLeaderID()))
+		if (!AI_isFinancialTrouble() && (getWorstEnemy() == NO_TEAM || !pCity->isPreviousOwner(GET_TEAM(getWorstEnemy()).getLeaderID())))
 		{
 			int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
 			int iGold = getGold();
@@ -5445,7 +5445,7 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 			iAttitude /= 2;
 		}
 
-		if (hasHolyCity(getStateReligion()))
+		if (getStateReligion() != NO_RELIGION && hasHolyCity(getStateReligion()))
 		{
 			iAttitude--;
 		}

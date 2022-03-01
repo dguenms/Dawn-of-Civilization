@@ -11887,7 +11887,13 @@ int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	return getActualCultureTimes100(GET_PLAYER(eIndex).getCivilizationType());
+	CivilizationTypes eCivilization = GET_PLAYER(eIndex).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
+	return getActualCultureTimes100(eCivilization);
 }
 
 // Leoreth
