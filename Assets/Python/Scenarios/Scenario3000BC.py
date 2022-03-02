@@ -34,7 +34,6 @@ lCivilizations = [
 
 scenario3000BC = Scenario(
 	iStartYear = -3000,
-	iStartTurn = 0,
 	fileName = "RFC_3000BC",
 	
 	lCivilizations = lCivilizations,

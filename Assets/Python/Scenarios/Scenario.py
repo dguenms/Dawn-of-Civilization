@@ -5,6 +5,7 @@ from Core import *
 from RFCUtils import *
 from Parsers import *
 
+START_HISTORY = -3000
 
 LEADER_DATES = {
 	iRamesses: -1300,
@@ -258,7 +259,6 @@ class Scenario(object):
 
 	def __init__(self, *args, **kwargs):
 		self.iStartYear = kwargs.get("iStartYear")
-		self.iStartTurn = kwargs.get("iStartTurn")
 		self.fileName = kwargs.get("fileName")
 		
 		self.lCivilizations = kwargs.get("lCivilizations", [])
@@ -278,6 +278,13 @@ class Scenario(object):
 		self.createStartingUnits = kwargs.get("createStartingUnits", lambda: None)
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
+	
+	def adjustTurns(self):
+		iStartTurn = getGameTurnForYear(self.iStartYear, START_HISTORY, game.getCalendar(), game.getGameSpeedType())
+		
+		game.setStartYear(START_HISTORY)
+		game.setStartTurn(iStartTurn)
+		game.setGameTurn(iStartTurn)
 		
 	def setupCivilizations(self):
 		for i, iCiv in enumerate(lBirthOrder):
@@ -291,9 +298,7 @@ class Scenario(object):
 			civ.info.setPlayable(civ.isPlayable())
 	
 	def setupLeaders(self):
-		game.setStartYear(-3000)
-		game.setStartTurn(turns(self.iStartTurn))
-		game.setGameTurn(turns(self.iStartTurn))
+		self.adjustTurns()
 	
 		for iCiv in range(iNumCivs):
 			leaders = infos.leaders().where(lambda iLeader: infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in LEADER_DATES).sort(lambda iLeader: LEADER_DATES.get(iLeader, 2020))
@@ -323,6 +328,8 @@ class Scenario(object):
 		data.dSlots[iBarbarian] = gc.getBARBARIAN_PLAYER()
 		
 	def apply(self):
+		self.adjustTurns()
+	
 		for civilization in self.lCivilizations:
 			civilization.apply()
 		
