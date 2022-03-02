@@ -1,7 +1,7 @@
 from MapParser import *
 
 
-PATH_TEMPLATE = "Mods\RFC Dawn of Civilization\PrivateMaps\%s.txt"
+PATH_TEMPLATE = "Mods/RFC Dawn of Civilization/PrivateMaps/%s.txt"
 
 
 def parseBaseMap():
