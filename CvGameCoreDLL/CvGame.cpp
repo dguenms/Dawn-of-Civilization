@@ -213,7 +213,7 @@ void CvGame::init(HandicapTypes eHandicap)
 	}
 
 	//edead: start hack to allow late start with different game speeds
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	/*if (getScenario() == SCENARIO_600AD) //late start condition
 	{
 		if (getGameTurn() == 181)
 		{
@@ -227,7 +227,7 @@ void CvGame::init(HandicapTypes eHandicap)
 		{
 			setGameTurn(getGameTurnForYear(1700, -3000, GC.getInitCore().getCalendar(), GC.getInitCore().getGameSpeed()));
 		}
-	}
+	}*/
 	//edead: end
 
 	if (getGameTurn() == 0)

@@ -279,12 +279,15 @@ class Scenario(object):
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
 	
-	def adjustTurns(self):
+	def adjustTurns(self, bFinal=True):
 		iStartTurn = getGameTurnForYear(self.iStartYear, START_HISTORY, game.getCalendar(), game.getGameSpeedType())
 		
 		game.setStartYear(START_HISTORY)
 		game.setStartTurn(iStartTurn)
 		game.setGameTurn(iStartTurn)
+		
+		if bFinal:
+			game.setMaxTurns(game.getEstimateEndTurn() - iStartTurn)
 		
 	def setupCivilizations(self):
 		for i, iCiv in enumerate(lBirthOrder):
@@ -298,7 +301,7 @@ class Scenario(object):
 			civ.info.setPlayable(civ.isPlayable())
 	
 	def setupLeaders(self):
-		self.adjustTurns()
+		self.adjustTurns(False)
 	
 		for iCiv in range(iNumCivs):
 			leaders = infos.leaders().where(lambda iLeader: infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in LEADER_DATES).sort(lambda iLeader: LEADER_DATES.get(iLeader, 2020))
