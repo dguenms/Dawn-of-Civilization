@@ -209,10 +209,10 @@ WONDER_ORIGINAL_BUILDERS = {
 
 
 # used: Rise, Scenario
-def addPlayer(iCiv, bMinor=False):
+def addPlayer(iCiv, bAlive=False, bMinor=False):
 	iPlayer = findSlot(iCiv)
 	iLeader = startingLeader(iCiv)
-	game.addPlayer(iPlayer, iLeader, iCiv)
+	game.addPlayer(iPlayer, iLeader, iCiv, bAlive)
 	
 	data.dSlots[iCiv] = iPlayer
 	
@@ -322,7 +322,7 @@ class Scenario(object):
 			if game.getActiveCivilizationType() == iCiv:
 				continue
 			
-			addPlayer(iCiv, bMinor=not civ.isPlayable())
+			addPlayer(iCiv, bAlive=True, bMinor=not civ.isPlayable())
 	
 		events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
 		events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)

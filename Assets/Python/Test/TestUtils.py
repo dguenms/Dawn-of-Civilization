@@ -14,8 +14,8 @@ def setup():
 	if bSetupComplete:
 		return
 
-	addPlayer(iChina)
-	addPlayer(iIndia)
+	addPlayer(iChina, bAlive=True)
+	addPlayer(iIndia, bAlive=True)
 	
 	data.dSlots[iChina] = 7
 	data.dSlots[iIndia] = 8

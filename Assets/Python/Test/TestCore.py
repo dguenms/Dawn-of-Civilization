@@ -3155,10 +3155,10 @@ class TestNames(TestCase):
 		self.assertRaises(ValueError, adjective, None)
 		
 	def test_full_name(self):
-		self.assertEqual(fullname(slot(iChina)), "The Chinese")
+		self.assertEqual(fullname(slot(iChina)), "Han Peoples")
 		
 	def test_full_name_player(self):
-		self.assertEqual(fullname(player(iChina)), "The Chinese")
+		self.assertEqual(fullname(player(iChina)), "Han Peoples")
 	
 	def test_full_name_none(self):
 		self.assertRaises(ValueError, fullname, None)

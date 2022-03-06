@@ -659,8 +659,6 @@ class Birth(object):
 		if self.iPlayer is None:
 			self.iPlayer = findSlot(self.iCiv)
 			
-		print "self.iPlayer=%d for civilization %s" % (self.iPlayer, infos.civ(self.iCiv).getText())
-		
 		self.updateCivilization()
 		self.updateStartingLocation()
 		
