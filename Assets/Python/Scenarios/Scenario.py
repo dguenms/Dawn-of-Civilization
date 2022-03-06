@@ -214,6 +214,8 @@ def addPlayer(iCiv, bAlive=False, bMinor=False):
 	iLeader = startingLeader(iCiv)
 	game.addPlayer(iPlayer, iLeader, iCiv, bAlive)
 	
+	team(player(gc.getBARBARIAN_PLAYER()).getTeam()).declareWar(player(iPlayer).getTeam(), False, WarPlanTypes.NO_WARPLAN)
+	
 	data.dSlots[iCiv] = iPlayer
 	
 	if bMinor:
