@@ -87,7 +87,7 @@ def minorWars(iMinorCiv):
 		for iPlayer in players.major().alive().ai():
 			if player(iPlayer).getSettlerValue(x, y) >= 90 or player(iPlayer).getWarValue(x, y) >= 6:
 				if not teamMinor.isAtWar(iPlayer):
-					teamMinor.declareWar(iPlayer, False, WarPlanTypes.WARPLAN_LIMITED)
+					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
 
 # used: Rise
 def updateMinorTechs(iMinorCiv, iMajorCiv):

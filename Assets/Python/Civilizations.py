@@ -17,6 +17,9 @@ def getStartingUnits(iPlayer):
 def getAdditionalUnits(iPlayer):
 	return dAdditionalUnits[iPlayer].items()
 
+def getSpecificAdditionalUnits(iPlayer):
+	return dSpecificAdditionalUnits[iPlayer].items()
+
 ### Tech preference functions ###
 
 def getTechPreferences(iPlayer):
@@ -1170,17 +1173,20 @@ def createSpecificUnits(iPlayer, tile):
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
 
-def createSpecificAdditionalUnits(iPlayer, tile):
-	iCiv = civ(iPlayer)
-	
-	if iCiv == iEthiopia:
-		makeUnits(iPlayer, iShotelai, tile, 2)
-	elif iCiv == iKorea:
-		makeUnits(iPlayer, iCrossbow, tile, 2)
-	elif iCiv == iVikings:
-		makeUnits(iPlayer, iHuscarl, tile, 3)
-	elif iCiv == iMoors:
-		makeUnits(iPlayer, iCamelArcher, tile, 2)
+dSpecificAdditionalUnits = CivDict({
+	iEthiopia: {
+		iShotelai: 2,
+	},
+	iKorea: {
+		iCrossbowman: 2,
+	},
+	iVikings: {
+		iHuscarl: 3,
+	},
+	iMoors: {
+		iCamelArcher: 2,
+	},
+}, {})
 
 
 ### Tech Preferences ###

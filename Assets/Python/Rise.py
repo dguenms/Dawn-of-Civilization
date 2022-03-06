@@ -166,7 +166,8 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 	
 	if city:
 		createRoleUnits(iDefender, city, getAdditionalUnits(iDefender))
-		createSpecificAdditionalUnits(iDefender, city)
+		for iUnit, iAmount in getSpecificAdditionalUnits(iDefender):
+			makeUnits(iDefender, iUnit, city, iAmount)
 
 
 @handler("changeWar")
@@ -192,11 +193,16 @@ def balanceMilitary(bWar, iAttacker, iDefender):
 		
 		additionalUnits = getAdditionalUnits(iDefender)
 		iUnitsPower = sum(infos.unit(iUnit).getPowerValue() * iAmount for iRole, iAmount in additionalUnits for iUnit, _ in getUnitsForRole(iDefender, iRole))
-		iAdditionalUnitsRequired = iPowerRequired / iUnitsPower
+		
+		specificAdditionalUnits = getSpecificAdditionalUnits(iDefender)
+		iUnitsPower += sum(infos.unit(iUnit).getPowerValue() * iAmount for iUnit, iAmount in specificAdditionalUnits)
+		
+		iAdditionalUnitsRequired = iUnitsPower > 0 and iPowerRequired / iUnitsPower or 1
 		
 		for _ in range(iAdditionalUnitsRequired):
 			createRoleUnits(iDefender, capital(iDefender), additionalUnits)
-			createSpecificAdditionalUnits(iDefender, capital(iDefender))
+			for iUnit, iAmount in specificAdditionalUnits:
+				makeUnits(iDefender, iUnit, capital(iDefender), iAmount)
 
 
 @handler("changeWar")
