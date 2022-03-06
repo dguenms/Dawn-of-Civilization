@@ -478,6 +478,8 @@ def getRoleAI(iRole):
 	elif iRole == iSettleSea:
 		return UnitAITypes.UNITAI_SETTLER_SEA
 	elif iRole == iAttackSea:
+		return UnitAITypes.UNITAI_ATTACK_SEA
+	elif iRole == iTransport:
 		return UnitAITypes.UNITAI_ASSAULT_SEA
 	elif iRole == iEscort:
 		return UnitAITypes.UNITAI_ESCORT_SEA
