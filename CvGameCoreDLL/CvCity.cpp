@@ -11871,7 +11871,13 @@ int CvCity::getCulture(PlayerTypes ePlayer) const
 	FAssertMsg(ePlayer >= 0, "ePlayer expected to be >= 0");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be < MAX_PLAYERS");
 
-	return getCulture(GET_PLAYER(ePlayer).getCivilizationType());
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
+	return getCulture(eCivilization);
 }
 
 int CvCity::getActualCultureTimes100(CivilizationTypes eCivilization) const
