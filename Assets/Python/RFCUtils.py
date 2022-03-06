@@ -866,11 +866,11 @@ def toggleStabilityOverlay(iPlayer = -1):
 				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
-					if otherplayers.any(CyPlot.isPlayerCore):
+					if otherplayers.any(plot.isPlayerCore):
 						iPlotType = iContest
 					else:
 						iPlotType = iHistorical
-				elif otherplayers.any(CyPlot.isPlayerCore):
+				elif otherplayers.any(plot.isPlayerCore):
 					iPlotType = iForeignCore
 				else:
 					iPlotType = -1
