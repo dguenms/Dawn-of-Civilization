@@ -39,12 +39,14 @@ lCivilizations = [
 		iVikings,
 		iGold=150,
 		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(6).without(iEthics)
 	),
 	Civilization(
 		iTurks,
 		iGold=100,
 		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),
 	Civilization(

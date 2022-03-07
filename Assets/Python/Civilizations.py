@@ -115,6 +115,7 @@ class Civilization(object):
 		self.iAdvancedStartPoints = kwargs.get("iAdvancedStartPoints")
 		
 		self.lCivics = kwargs.get("lCivics", [])
+		self.lEnemies = kwargs.get("lEnemies", []) + [iNative, iBarbarian]
 		
 		self.dAttitudes = kwargs.get("dAttitudes", {})
 		
@@ -152,6 +153,11 @@ class Civilization(object):
 		
 		for iCivic in self.lCivics:
 			self.player.setCivics(infos.civic(iCivic).getCivicOptionType(), iCivic)
+			
+		for iEnemy in self.lEnemies:
+			iEnemyPlayer = slot(iEnemy)
+			if iEnemyPlayer >= 0:
+				team(iEnemyPlayer).declareWar(self.player.getTeam(), False, WarPlanTypes.NO_WARPLAN)
 		
 		if self.techs:
 			for iTech in self.techs:
@@ -224,6 +230,7 @@ lCivilizations = [
 		iGold=100,
 		iAdvancedStartPoints=150,
 		lCivics=[iRepublic, iSlavery, iRedistribution],
+		lEnemies=[iCelts],
 		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding)
 	),
 	Civilization(
@@ -272,6 +279,7 @@ lCivilizations = [
 		iVikings,
 		iGold=150,
 		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		lEnemies=[iCelts],
 		techs=techs.column(6).without(iScholarship, iEthics)
 	),
 	Civilization(
@@ -285,6 +293,7 @@ lCivilizations = [
 		iGold=300,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iCitizenship, iSlavery, iMerchantTrade, iClergy, iConquest],
+		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(6).including(iAlchemy, iTheology).without(iPolitics)
 	),
 	Civilization(
@@ -340,6 +349,7 @@ lCivilizations = [
 		iAdvancedStartPoints=50,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lEnemies=[iCelts],
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
@@ -348,6 +358,7 @@ lCivilizations = [
 		iAdvancedStartPoints=50,
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
+		lEnemies=[iCelts],
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(

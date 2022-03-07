@@ -671,8 +671,6 @@ class Birth(object):
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()
 		
-		events.fireEvent("activate", self.iPlayer, self.iCiv)
-
 	def prepare(self):
 		events.fireEvent("prepareBirth", self.iCiv)
 	
