@@ -12,11 +12,12 @@ from Locations import *
 from Core import *
 
 
-@handler("playerCivAssigned")
-def initBabylonianUP(iPlayer, iCivilization):
+@handler("firstCity")
+def initBabylonianUP(city):
 	# Babylonian UP: receive a free tech after discovering the first five techs
+	iCivilization = civ(city)
 	if iCivilization == iBabylonia:
-		player(iPlayer).setFreeTechsOnDiscovery(5)
+		player(city).setFreeTechsOnDiscovery(5)
 
 @handler("cityAcquired")
 def arabianUP(iOwner, iPlayer, city):

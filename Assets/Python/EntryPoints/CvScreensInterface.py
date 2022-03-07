@@ -929,16 +929,16 @@ def getCityName(argsList):
 		return result
 		
 def canRespawn(argsList):
-	iPlayer = argsList[0]
+	iCiv = argsList[0]
 	
-	if canRespawnUtils(iPlayer): return 1
+	if canRespawnUtils(Civ(iCiv)): return 1
 	
 	return 0
 	
 def canEverRespawn(argsList):
-	iPlayer, iGameTurn = argsList
+	iCiv, iGameTurn = argsList
 	
-	if canEverRespawnUtils(iPlayer, iGameTurn): return 1
+	if canEverRespawnUtils(Civ(iCiv), iGameTurn): return 1
 	
 	return 0
 
