@@ -1584,7 +1584,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	//Rhye - start
 	else {
 		szName.Format(L"%s (%s)", pOldCity->getName().GetCString(), GET_PLAYER(pOldCity->getOwnerINLINE()).getCivilizationAdjective(0));
-		szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_WAS_TRADED_TO", szName.GetCString(), getCivilizationDescriptionKey());
+		szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_WAS_CEDED_TO", szName.GetCString(), getCivilizationDescriptionKey());
 		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szBuffer, pOldCity->getX_INLINE(), pOldCity->getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 	}
 	//Rhye - end

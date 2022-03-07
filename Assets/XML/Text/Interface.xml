@@ -1199,8 +1199,8 @@
 		<Spanish>[ICON_BULLET]Allows Trade of[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MISC_CITY_WAS_TRADED_TO</Tag>
-		<English>%s1_CityName was traded to the %s2_CivName!!!</English>
+		<Tag>TXT_KEY_MISC_CITY_WAS_CEDED_TO</Tag>
+		<English>%s1_CityName was ceded to the %s2_CivName!!!</English>
 		<French>%s1_CityName a &#233;t&#233; &#233;chang&#233; &#224; %s2_CivName !!!</French>
 		<German>Die Stadt %s1_CityName wurde an das %s2:2_CivName &#252;bereignet!!!</German>
 		<Italian>%s1_CityName &#232; stata ceduta a %s2_CivName!!!</Italian>
