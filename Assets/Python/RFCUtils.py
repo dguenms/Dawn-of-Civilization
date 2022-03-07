@@ -489,7 +489,7 @@ def getRoleAI(iRole):
 		return UnitAITypes.UNITAI_EXPLORE
 	elif iRole == iSkirmish:
 		return UnitAITypes.UNITAI_COLLATERAL
-	elif iWork:
+	elif iRole == iWork:
 		return UnitAITypes.UNITAI_WORKER
 
 	return UnitAITypes.NO_UNITAI

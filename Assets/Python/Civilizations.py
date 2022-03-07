@@ -151,6 +151,12 @@ class Civilization(object):
 		if self.iStateReligion is not None:
 			self.player.setLastStateReligion(self.iStateReligion)
 		
+		if self.techs:
+			for iTech in self.techs:
+				self.team.setHasTech(iTech, True, self.player.getID(), False, False)
+			
+			self.player.setStartingEra(self.player.getCurrentEra())
+		
 		for iCivic in self.lCivics:
 			self.player.setCivics(infos.civic(iCivic).getCivicOptionType(), iCivic)
 			
@@ -158,12 +164,6 @@ class Civilization(object):
 			iEnemyPlayer = slot(iEnemy)
 			if iEnemyPlayer >= 0:
 				team(iEnemyPlayer).declareWar(self.player.getTeam(), False, WarPlanTypes.NO_WARPLAN)
-		
-		if self.techs:
-			for iTech in self.techs:
-				self.team.setHasTech(iTech, True, self.player.getID(), False, False)
-			
-			self.player.setStartingEra(self.player.getCurrentEra())
 		
 		for iCiv, iAttitude in self.dAttitudes.items():
 			self.player.AI_changeAttitudeExtra(slot(iCiv), iAttitude)
@@ -1150,6 +1150,7 @@ dStartingExperience = CivDict({
 
 dAlwaysTrain = CivDict({
 	iGreece: [iHoplite, iCatapult],
+	iPhoenicia: [iNumidianCavalry],
 	iByzantium: [iLegion],
 	iArabia: [iMobileGuard, iGhazi],
 	iOttomans: [iJanissary, iGreatBombard],

@@ -174,6 +174,9 @@ def spawnWarUnits(bWar, iAttacker, iDefender):
 def balanceMilitary(bWar, iAttacker, iDefender):
 	if not bWar:
 		return
+	
+	if is_minor(iAttacker):
+		return
 
 	if not player(iDefender).isBirthProtected():
 		return
