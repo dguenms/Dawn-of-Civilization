@@ -212,14 +212,11 @@ WONDER_ORIGINAL_BUILDERS = {
 def addPlayer(iCiv, bAlive=False, bMinor=False):
 	iPlayer = findSlot(iCiv)
 	iLeader = startingLeader(iCiv)
-	game.addPlayer(iPlayer, iLeader, iCiv, bAlive)
+	game.addPlayer(iPlayer, iLeader, iCiv, bAlive, bMinor)
 	
 	team(player(gc.getBARBARIAN_PLAYER()).getTeam()).declareWar(player(iPlayer).getTeam(), False, WarPlanTypes.NO_WARPLAN)
 	
 	data.dSlots[iCiv] = iPlayer
-	
-	if bMinor:
-		player(iPlayer).setMinorCiv(True)
 
 
 class GreatWall(object):

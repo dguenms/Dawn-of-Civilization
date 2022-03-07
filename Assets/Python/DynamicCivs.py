@@ -573,8 +573,9 @@ def setup():
 	
 @handler("playerCivAssigned")
 def initName(iPlayer):
-	setDesc(iPlayer, peoplesName(iPlayer))
-	checkName(iPlayer)
+	if not is_minor(iPlayer):
+		setDesc(iPlayer, peoplesName(iPlayer))
+		checkName(iPlayer)
 
 @handler("rebirth")
 def onRebirth(iPlayer):
