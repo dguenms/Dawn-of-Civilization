@@ -7390,7 +7390,7 @@ void CvPlot::setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUp
 		m_aiCulture[eCivilization] = iNewValue;
 		m_iTotalCulture += (iNewValue - iOldValue);
 
-		FAssert(getActualCulture(eCivilization) >= 0, "expected actual culture to be positive");
+		FAssertMsg(getActualCulture(eCivilization) >= 0, "expected actual culture to be positive");
 
 		if (bUpdate)
 		{

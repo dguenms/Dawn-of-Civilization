@@ -292,19 +292,27 @@ class CvHallOfFameScreen:
 					iValue = replayInfo.getFinalTurn()
 				elif self.iSortBy == SORT_BY_GAME_SCORE:
 					iValue = -replayInfo.getFinalScore()
-
+					
+				iDifficulty = replayInfo.getDifficulty()
+				iWorldSize = replayInfo.getWorldSize()
+				iEra = replayInfo.getEra()
+				iGameSpeed = replayInfo.getGameSpeed()
+				
+				if iWorldSize >= WorldSizeTypes.NUM_WORLDSIZE_TYPES:
+					iWorldSize = 0
+					
 				self.infoList[iItem] = (iValue,
 						localText.getText("TXT_KEY_LEADER_CIV_DESCRIPTION", (replayInfo.getLeaderName(), replayInfo.getShortCivDescription())),
 						replayInfo.getNormalizedScore(),
 						replayInfo.getFinalDate(),
 						replayInfo.getFinalScore(), 
 						szVictory,
-						gc.getHandicapInfo(replayInfo.getDifficulty()).getDescription(),
-						gc.getWorldInfo(replayInfo.getWorldSize()).getDescription(),
+						gc.getHandicapInfo(iDifficulty).getDescription(),
+						gc.getWorldInfo(iWorldSize).getDescription(),
 #						gc.getClimateInfo(replayInfo.getClimate()).getDescription(),
 #						gc.getSeaLevelInfo(replayInfo.getSeaLevel()).getDescription(),
-						gc.getEraInfo(replayInfo.getEra()).getDescription(),
-						gc.getGameSpeedInfo(replayInfo.getGameSpeed()).getDescription(),
+						gc.getEraInfo(iEra).getDescription(),
+						gc.getGameSpeedInfo(iGameSpeed).getDescription(),
 						i)
 				iItem += 1
 		self.infoList.sort()
