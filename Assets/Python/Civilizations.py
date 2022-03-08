@@ -266,7 +266,6 @@ dStartingUnits = CivDict({
 		iSettle: 3,
 		iWork: 3,
 		iDefend: 3,
-		iAttack: 4,
 		iShock: 2,
 		# 1 War Elephant
 	},
@@ -867,6 +866,7 @@ def createSpecificUnits(iPlayer, tile):
 	bHuman = player(iPlayer).isHuman()
 	
 	if iCiv == iPersia:
+		makeUnits(iPlayer, iImmortal, tile, 4, UnitAITypes.UNITAI_ATTACK)
 		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
