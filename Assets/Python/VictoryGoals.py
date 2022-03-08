@@ -2525,7 +2525,7 @@ class Percentage(Count):
 		def total(self, area):
 			return area.land().count()
 		
-		return cls.desc("AREA_PERCENT").progr("AREA_PERCENT").format(options.objective("PERCENT_OF").singular()).objective(Plots).func(value_function, total).subclass("AreaPercent")
+		return cls.desc("AREA_PERCENT").progr("AREA_PERCENT").format(options.objective("PERCENT_OF").singular()).objective(Plots).func(value_function, total).turnly.subclass("AreaPercent")
 	
 	@classproperty
 	def worldControl(cls):
