@@ -525,6 +525,9 @@ def canCreateUnit(iPlayer, iUnit):
 	if iUnit in dAlwaysTrain[iPlayer]:
 		return True
 	
+	if not player(iPlayer).isHuman() and iUnit in dAIAlwaysTrain[iPlayer]:
+		return True
+	
 	return player(iPlayer).canTrain(iUnit, False, False)
 
 # used: RFCUtils, Rise

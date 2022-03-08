@@ -857,6 +857,16 @@ dAlwaysTrain = CivDict({
 	iMexico: [iGrenadier],
 }, [])
 
+dAIAlwaysTrain = CivDict({
+	iVikings: [iCrossbowman],
+	iMoors: [iCrossbowman],
+	iSpain: [iCrossbowman],
+	iFrance: [iCrossbowman],
+	iEngland: [iCrossbowman],
+	iHolyRome: [iCrossbowman],
+	iRussia: [iCrossbowman],
+}, [])
+
 dNeverTrain = CivDict({
 	iCongo: [iCrossbowman],
 }, [])
