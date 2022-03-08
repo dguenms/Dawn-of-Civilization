@@ -236,7 +236,10 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 def createExpansionUnits(bWar, iAttacker, iDefender):
 	if not bWar:
 		return
-	
+		
+	if is_minor(iDefender):
+		return
+		
 	expansionCities = cities.owner(iDefender).where(lambda city: plot(city).getExpansion() == iAttacker)
 	ourCities = cities.owner(iAttacker)
 	if expansionCities and ourCities:
