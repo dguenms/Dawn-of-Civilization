@@ -443,6 +443,7 @@ dStartingUnits = CivDict({
 		iDefend: 1,
 		iAttack: 2,
 		iShock: 2,
+		iSiege: 1,
 		iMissionary: 1,
 		# if human: 1 Settler (to account for scripted AI spawn)
 	},
@@ -865,6 +866,7 @@ dAIAlwaysTrain = CivDict({
 	iEngland: [iCrossbowman],
 	iHolyRome: [iCrossbowman],
 	iRussia: [iCrossbowman],
+	iPoland: [iCrossbowman],
 }, [])
 
 dNeverTrain = CivDict({
