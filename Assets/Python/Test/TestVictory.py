@@ -9348,6 +9348,14 @@ class TestAllGoal(ExtendedTestCase):
 		goal = All(goal1, goal2)
 		
 		self.assertEqual(goal.description(), "Settle three Granaries by 800 AD and control four Libraries by 1000 AD")
+		
+	def testDescriptionSharedEndingDateAll(self):
+		goal1 = DescriptionGoal(iGranary, 3)
+		goal2 = DescriptionGoal(iLibrary, 4)
+		
+		goal = All(goal1, goal2).by(1000)
+		
+		self.assertEqual(goal.description(), "Control three Granaries and four Libraries by 1000 AD")
 
 class TestSomeGoal(ExtendedTestCase):
 

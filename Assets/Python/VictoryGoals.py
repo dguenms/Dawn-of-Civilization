@@ -3461,6 +3461,7 @@ class All(BaseGoal):
 	def at(self, iYear):
 		for goal in self.goals:
 			goal.at(iYear)
+			goal._description_suffixes = []
 		self._description_suffixes.append(text("TXT_KEY_UHV_IN", format_date(iYear)))
 		self._iYear = iYear
 		return self
@@ -3468,6 +3469,7 @@ class All(BaseGoal):
 	def by(self, iYear):
 		for goal in self.goals:
 			goal.by(iYear)
+			goal._description_suffixes = []
 		self._description_suffixes.append(text("TXT_KEY_UHV_BY", format_date(iYear)))
 		self._iYear = iYear
 		return self
