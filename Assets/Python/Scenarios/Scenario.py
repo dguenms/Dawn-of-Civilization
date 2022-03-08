@@ -215,6 +215,8 @@ def addPlayer(iCiv, bAlive=False, bMinor=False):
 	game.addPlayer(iPlayer, iLeader, iCiv, bAlive, bMinor)
 	
 	data.dSlots[iCiv] = iPlayer
+	
+	return iPlayer
 
 
 class GreatWall(object):

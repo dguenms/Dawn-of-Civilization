@@ -607,7 +607,7 @@ class Birth(object):
 		self.checkIncompatibleCivs()
 		
 	def canSpawn(self):
-		if self.isHuman():
+		if self.isHuman() and not data.iBeforeObserverSlot != -1:
 			return True
 		
 		if not infos.civ(self.iCiv).isAIPlayable():

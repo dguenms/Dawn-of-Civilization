@@ -3,9 +3,14 @@ import CvUtil
 from CvPythonExtensions import *
 from Locations import *
 from RFCUtils import *
+
+from Scenario import addPlayer
 from Events import events, handler, popup_handler
 
 from CvScreenEnums import *
+
+
+### HANDLERS ###
 
 
 @handler("kbdEvent")
@@ -34,6 +39,7 @@ def observerModeShortcut(eventType, key):
 		popup.createEditBox(str(game.getGameTurnYear()), 0)
 		
 		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
 
 @popup_handler(4568)
 def handleStartObserverMode(iPlayer, netUserData, popupReturn):
@@ -67,7 +73,36 @@ def civSwitchShortcut(eventType, key):
 		
 		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
+
 @popup_handler(4569)
 def handleCivSwitch(iPlayer, netUserData, popupReturn):
 	iNewPlayer = popupReturn.getSelectedPullDownValue(0)
 	game.setActivePlayer(iNewPlayer, False)
+
+
+### FUNCTIONS ###
+
+
+def startObserverMode(iTurns):
+	data.iBeforeObserverSlot = active()
+	iObserverCiv = player(iHarappa).isAlive() and iPolynesia or iHarappa
+	iObserverSlot = slot(iObserverCiv)
+	
+	if iObserverSlot < 0:
+		print "add new player for observer mode"
+		iObserverSlot = addPlayer(iObserverCiv)
+	
+	print "start observer mode in slot %d" % iObserverSlot
+	
+	makeUnit(iObserverSlot, iCatapult, (0, 0))
+	
+	game.setActivePlayer(iObserverSlot, False)
+	game.setAIAutoPlay(iTurns)
+	
+def endObserverMode():
+	if data.iBeforeObserverSlot != -1:
+		if player(data.iBeforeObserverSlot).isAlive():
+			game.setActivePlayer(data.iBeforeObserverSlot, False)
+			data.iBeforeObserverSlot = -1
+		else:
+			makeUnit(active(), iCatapult, (0, 0))

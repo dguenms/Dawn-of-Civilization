@@ -1003,6 +1003,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 			return
 		if len(self.refusals) == 0:
 			return
+		if data.iBeforeObserverSlot != -1:
+			return
 		eActivePlayer, activePlayer = PlayerUtil.getActivePlayerAndID()
 		refusals = self.refusals[eActivePlayer]
 		newRefusals = set()
@@ -1084,6 +1086,8 @@ class WorstEnemy(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowWorstEnemyAlert()):
 			return
 		if len(self.enemies) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer = PlayerUtil.getActivePlayerID()
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()
