@@ -601,6 +601,9 @@ class Arguments(object):
 			return item(self.iPlayer)
 		return item
 		
+	def scaled(self, func):
+		return Arguments(tuple(tuple(concat(objective[:-1], func(objective[-1]))) for objective in self.objectives), self.subject)
+		
 	def produce(self, objective=[]):
 		result = []
 		
@@ -619,7 +622,7 @@ class Arguments(object):
 				yield self.produce(objective)
 		else:
 			yield self.produce()
-
+	
 
 class ArgumentProcessorBuilder(object):
 
@@ -1215,7 +1218,6 @@ class BaseGoal(object):
 		self.arguments.owner_included = self.owner_included
 			
 		self._title = ""
-		self._description = hasattr(self, '_desc') and self.types.format(self._desc, self.arguments) or ""
 		self._progress = hasattr(self, '_progr') and self._progr or ""
 		
 		self._description_suffixes = []
@@ -1231,9 +1233,13 @@ class BaseGoal(object):
 		self.mode = self.ACTIVE
 		
 		self.init()
+		self.update_description(self.arguments)
 		
 	def init(self):
 		pass
+	
+	def update_description(self, arguments):
+		self._description = hasattr(self, '_desc') and self.types.format(self._desc, arguments) or ""
 		
 	def __nonzero__(self):
 		return all(self.condition(*args) for args in self.arguments)
@@ -1244,6 +1250,10 @@ class BaseGoal(object):
 	@property
 	def values(self):
 		return [segment(objective) for objective in self.arguments.objectives]
+	
+	@property
+	def description_arguments(self):
+		return self.arguments
 	
 	@property
 	def _player(self):
@@ -1282,6 +1292,8 @@ class BaseGoal(object):
 		goal.arguments.create()
 		
 		goal.areas = goal.process_areas(goal.arguments)
+		
+		goal.update_description(self.description_arguments)
 		
 		goal.registerHandlers()
 		
@@ -1952,6 +1964,10 @@ class Count(BaseGoal):
 	def values(self):
 		return [segment(objective[:-1]) for objective in self.arguments.objectives]
 	
+	@property
+	def description_arguments(self):
+		return self.arguments.scaled(self.required)
+	
 	@classmethod
 	def player(cls, func):
 		def value_function(self, *objectives):
@@ -2061,10 +2077,10 @@ class Count(BaseGoal):
 		
 	@classproperty
 	def scaled(cls):
-		def required_function(self, objective):
+		def required(self, objective):
 			return scale(objective)
 			
-		return cls.func(required_function)
+		return cls.func(required)
 	
 	@classproperty
 	def building(cls):
@@ -2254,7 +2270,7 @@ class Count(BaseGoal):
 	
 	@classproperty
 	def averageCulture(cls):
-		return cls.desc("AVERAGE_CULTURE").progr("AVERAGE_CULTURE").player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).turnly.subclass("AverageCulture")
+		return cls.desc("AVERAGE_CULTURE").progr("AVERAGE_CULTURE").player(average(CyPlayer.countTotalCulture, CyPlayer.getNumCities)).scaled.turnly.subclass("AverageCulture")
 	
 	@classproperty
 	def averagePopulation(cls):
