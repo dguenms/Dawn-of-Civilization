@@ -6,6 +6,7 @@ from RFCUtils import *
 from Locations import *
 from Stability import completeCollapse
 from Popups import popup
+from DynamicCivs import setLeader, startingLeader
 
 import AIParameters, Modifiers, Civilizations, SettlerMaps, WarMaps, Setup
 import BugCore
@@ -414,6 +415,8 @@ class Birth(object):
 			del data.dSlots[iCurrentCivilization]
 		
 		data.dSlots[self.iCiv] = self.iPlayer
+		
+		setLeader(self.iPlayer, startingLeader(self.iPlayer))
 		
 		self.updateParameters()
 	
