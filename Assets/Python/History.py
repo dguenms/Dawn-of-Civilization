@@ -601,16 +601,14 @@ def giveRaiders(iCiv):
 					makeUnit(iCiv, unique_unit(iCiv, iSwordsman), seaPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 
 def acceptColonialAcquisition(iPlayer):
-	targets = data.dColonialAcquisitionCities[iPlayer]
-	for city in targets:
+	for city in data.players[iPlayer].colonialAcquisitionCities:
 		if city.isHuman():
 			colonialAcquisition(iPlayer, city)
 			
 	player().changeGold(targets.count() * 200)
 
 def refuseColonialAcquisition(iPlayer):
-	targets = data.dColonialAcquisitionCities[iPlayer]
-	for city in targets:
+	for city in data.players[iPlayer].colonialAcquisitionCities:
 		if city.isHuman():
 			colonialConquest(iPlayer, city)
 
@@ -642,8 +640,8 @@ def handleColonialAcquisition(iPlayer):
 					
 			iAskGold = askedCities.count() * 200
 			
-			data.dColonialAcquisitionCities[iPlayer] = askedCities
-			colonialAcquisitionPopup.text(adjective(iPlayer), iAskGold, askedCityNames) \
+			data.players[iPlayer].colonialAcquisitionCities = askedCities
+			colonialAcquisitionPopup.text(adjective(iPlayer), adjective(iPlayer), iAskGold, askedCityNames) \
 				.acceptColonialAcquisition() \
 				.refuseColonialAcquisition() \
 				.launch(iPlayer)

@@ -34,7 +34,7 @@ class PlayerData:
 		self.iColonistsAlreadyGiven = 0
 		self.iExplorationTurn = 1500
 		
-		self.dColonialAcquisitionCities = {}
+		self.colonialAcquisitionCities = []
 		
 		# Religions
 		
