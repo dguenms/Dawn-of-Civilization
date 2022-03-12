@@ -758,7 +758,8 @@ dAdditionalUnits = CivDict({
 		iDefend: 3,
 	},
 	iItaly: {
-		iShock: 2,
+		iDefend: 2,
+		iCounter: 2,
 	},
 	iMongols: {
 		iDefend: 2,
