@@ -143,6 +143,9 @@ def number_word(number):
 
 
 def getPlayerExperience(unit):
+	if not unit.canFight():
+		return 0
+
 	iExperience = player(unit).getFreeExperience() + player(unit).getDomainFreeExperience(unit.getDomainType())
 	
 	if player(unit).isStateReligion():
@@ -672,6 +675,7 @@ def makeUnits(iPlayer, iUnit, plot, iNumUnits = 1, iUnitAI = UnitAITypes.NO_UNIT
 	for _ in range(iNumUnits):
 		unit = player(iPlayer).initUnit(iUnit, x, y, iUnitAI, DirectionTypes.DIRECTION_SOUTH)
 		unit.changeExperience(getPlayerExperience(unit), -1, False, False, False)
+		unit.testPromotionReady()
 		units.append(unit)
 		events.fireEvent("unitCreated", unit)
 
