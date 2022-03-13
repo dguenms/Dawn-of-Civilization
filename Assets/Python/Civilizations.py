@@ -708,7 +708,7 @@ dAdditionalUnits = CivDict({
 	},
 	iArabia: {
 		iAttack: 2,
-		iShock: 4,
+		iShock: 1,
 	},
 	iTibet: {
 		iHarass: 2,

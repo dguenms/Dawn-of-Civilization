@@ -262,16 +262,27 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 	if player(iDefender).isBirthProtected():
 		return
 	
+	if is_minor(iDefender):
+		return
+	
 	expansionCities = cities.owner(iDefender).where(lambda city: plot(city).getExpansion() == iAttacker)
 	ourCities = cities.owner(iAttacker)
+	bLessPowerful = player(iAttacker).getPower() < player(iDefender).getPower()
+	
 	if expansionCities and ourCities:
 		target = expansionCities.closest_all(ourCities)
 		
 		iDistance = player(iDefender).isHuman() and 3 or 2
 		spawn = plots.ring(target, radius=iDistance).land().passable().closest_all(ourCities)
 		
-		iExtraAI = not player(iDefender).isHuman() and 1 or 0
-		iExtraTargets = not player(iDefender).isHuman() and expansionCities.count()-1 or 0
+		iExtraAI = 0
+		iExtraTargets = 0
+		if bLessPowerful and not player(iDefender).isHuman():
+			iExtraTargets = expansionCities.count()-1
+			
+			if not player(iAttacker).isHuman():
+				iExtraAI = 1
+		
 		dExpansionUnits = {
 			iAttack: 2 + iExtraAI + iExtraTargets,
 			iSiege: 1 + 2*iExtraAI + iExtraTargets,
