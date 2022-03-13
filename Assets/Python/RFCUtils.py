@@ -1002,9 +1002,11 @@ def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
 		killUnits(lUnits)
 		return
 	
-	for typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().values():
+	for iType, typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().items():
 		movedUnits, removedUnits = typeUnits.percentage_split(iArmyPercent)
-		for city, movedUnits in movedUnits.divide(coreCities):
+		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coreCities.coastal() or coreCities
+		
+		for city, movedUnits in movedUnits.divide(destinations):
 			for unit in movedUnits:
 				move(unit, city)
 			
