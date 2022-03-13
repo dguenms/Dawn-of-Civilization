@@ -392,7 +392,7 @@ class Birth(object):
 			return
 		
 		if iCurrentCivilization == -1:
-			addPlayer(self.iCiv)
+			addPlayer(self.iCiv, bAlive=True)
 		else:
 			self.player.setCivilizationType(self.iCiv)
 		
@@ -673,6 +673,8 @@ class Birth(object):
 			
 		self.updateCivilization()
 		self.updateStartingLocation()
+		
+		self.player.setInitialBirthTurn(self.iTurn)
 		
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()

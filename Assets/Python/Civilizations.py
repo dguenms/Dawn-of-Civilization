@@ -83,21 +83,12 @@ def initBuildingPreferences(iPlayer):
 		for iWonder in range(iFirstWonder, iNumBuildings):
 			if iCiv not in dBuildingPreferences or iWonder not in dBuildingPreferences[iCiv]:
 				pPlayer.setBuildingClassPreference(infos.building(iWonder).getBuildingClassType(), iDefaultPreference)
-	
+
+
 ### General functions ###
 		
-def initBirthYear(iPlayer):
-	player(iPlayer).setInitialBirthTurn(year(dBirth[iPlayer]))
-
-@handler("GameStart")
-def init():
-	for iPlayer in players.major():
-		initBirthYear(iPlayer)
-		initPlayerTechPreferences(iPlayer)
-		initBuildingPreferences(iPlayer)
-		
 @handler("playerCivAssigned")
-def onActivate(iPlayer):
+def onPlayerCivAssigned(iPlayer):
 	initPlayerTechPreferences(iPlayer)
 	initBuildingPreferences(iPlayer)
 	

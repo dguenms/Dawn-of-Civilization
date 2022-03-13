@@ -11771,6 +11771,11 @@ void CvPlayer::verifyAlive()
 
 	if (isAlive())
 	{
+		if (GC.getGameINLINE().getGameTurn() < getInitialBirthTurn())
+		{
+			return;
+		}
+
 		bKill = false;
 
 		if (!bKill)
