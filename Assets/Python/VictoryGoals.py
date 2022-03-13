@@ -1218,6 +1218,7 @@ class BaseGoal(object):
 		self.arguments.owner_included = self.owner_included
 			
 		self._title = ""
+		self._description = ""
 		self._progress = hasattr(self, '_progr') and self._progr or ""
 		
 		self._description_suffixes = []
@@ -1239,7 +1240,8 @@ class BaseGoal(object):
 		pass
 	
 	def update_description(self, arguments):
-		self._description = hasattr(self, '_desc') and self.types.format(self._desc, arguments) or ""
+		if hasattr(self, '_desc') and self._desc:
+			self._description = self.types.format(self._desc, arguments)
 		
 	def __nonzero__(self):
 		return all(self.condition(*args) for args in self.arguments)
@@ -1442,6 +1444,7 @@ class BaseGoal(object):
 	def named(self, key):
 		full_key = "TXT_KEY_UHV_%s" % key
 		self._description = self.types and self.types.format(full_key, self.arguments) or text(full_key)
+		self._desc = None
 		return self
 		
 	@property
