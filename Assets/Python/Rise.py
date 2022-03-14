@@ -546,6 +546,9 @@ class Birth(object):
 		
 		for plot in plots.surrounding(self.location):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
+		
+		for city in cities.surrounding(self.location):
+			city.rebuild()
 	
 	def resetPlague(self):
 		data.players[self.iPlayer].iPlagueCountdown = -10
