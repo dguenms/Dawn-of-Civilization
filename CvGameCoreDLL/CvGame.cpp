@@ -4965,6 +4965,8 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 
 			updateUnitEnemyGlow();
 
+			gDLL->getInterfaceIFace()->setInAdvancedStart(false); // Leoreth
+			gDLL->getInterfaceIFace()->setWorldBuilder(false); // Leoreth
 			gDLL->getInterfaceIFace()->setEndTurnMessage(false);
 
 			gDLL->getInterfaceIFace()->clearSelectedCities();

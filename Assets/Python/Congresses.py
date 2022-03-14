@@ -1167,16 +1167,22 @@ class Congress:
 		self.invites = self.invites.including(players.major().without(self.invites).sort(rank))
 		self.invites = self.invites.limit(getNumInvitations())
 		
+		print "self.invites = %s" % self.invites
+		
 		# if not a war congress, exclude civs in global wars
 		if isGlobalWar() and not self.bPostWar:
 			lAttackers, lDefenders = determineAlliances(data.iGlobalWarAttacker, data.iGlobalWarDefender)
 			self.invites = self.invites.without(lAttackers)
 			self.invites = self.invites.without(lDefenders)
 			
+		print "self.invites without global war: %s" % self.invites
+			
 		self.invites = self.invites.alive()
 		
+		print "self.invites alive: %s" % self.invites
+		
 		# America receives an invite if there are still claims in the west
-		if player(iAmerica).isAlive() and slot(iAmerica) not in self.invites and not self.bPostWar:
+		if player(iAmerica).isAlive() and iAmerica not in self.invites and not self.bPostWar:
 			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)

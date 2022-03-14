@@ -795,6 +795,9 @@ class Birth(object):
 			city.setInfoDirty(True)
 			city.setLayoutDirty(True)
 		
+		if player(iPreviousPlayer).getAdvancedStartPoints() > 0:
+			player(iPreviousPlayer).AI_doAdvancedStart()
+		
 		events.fireEvent("switch", iPreviousPlayer, self.iPlayer)
 		
 		for iOtherPlayer in players.major():
