@@ -246,9 +246,9 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 		target = expansionCities.closest_all(ourCities)
 		
 		iDistance = player(iDefender).isHuman() and 3 or 2
-		spawn = plots.ring(target, radius=iDistance).land().passable().closest_all(ourCities)
+		spawn = plots.ring(target, radius=iDistance).land().passable().where(lambda p: not p.isCity()).closest_all(ourCities)
 		
-		iExtra = active() in [iAttacker, iDefender] and 1 or 0
+		iExtra = active() == iDefender and 1 or 0
 		dExpansionUnits = {
 			iAttack: 2 + iExtra,
 			iSiege: 1 + 2*iExtra,
