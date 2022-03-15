@@ -24,7 +24,6 @@ def applyMap(iCivilization, iPeriod=-1):
 		else:
 			plot.setSettlerValue(iCivilization, iValue)
 
-@handler("GameStart")
 def init():
 	for iCivilization in dSettlerMaps:
 		applyMap(iCivilization)

@@ -4,7 +4,7 @@ from Parsers import *
 from Scenarios import *
 from CityNameManager import determineCapitalLocations
 
-
+import SettlerMaps, WarMaps, RegionMap
 
 
 lCustomMapOptions = [
@@ -90,8 +90,14 @@ def addRivers():
 
 def addGoodies():
 	return
+
+def initRiseAndFall():
+	SettlerMaps.init()
+	WarMaps.init()
+	RegionMap.init()
 	
 def afterGeneration():
+	initRiseAndFall()
 	scenario.init()
 	PARSER.applyDevelopment()
 	scenario.apply()

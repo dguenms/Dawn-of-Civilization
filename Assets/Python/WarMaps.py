@@ -26,7 +26,6 @@ def applyMap(iCivilization, iPeriod=-1):
 		else:
 			plot.setWarValue(iCivilization, value)
 			
-@handler("GameStart")
 def init():
 	for iCivilization in dWarMaps:
 		applyMap(iCivilization)
