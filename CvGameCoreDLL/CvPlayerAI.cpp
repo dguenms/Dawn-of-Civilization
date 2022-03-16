@@ -13399,10 +13399,9 @@ void CvPlayerAI::AI_doDiplo()
 													iBestValue = 0;
 													eBestTeam = NO_TEAM;
 
-													//for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++) //Rhye
-													for (iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++) //Rhye (fix for asking aid against INDEPENDENTS)
+													for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 													{
-														if (GET_TEAM((TeamTypes)iJ).isAlive())
+														if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isMinorCiv()) // Leoreth: not against minors
 														{
 															// Leoreth: only ask if they share a border with our enemy
 															//if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()))
