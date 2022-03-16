@@ -2615,7 +2615,7 @@ class Trigger(Condition):
 		return bool(self.dCondition[self.process_objectives(arguments)])
 	
 	def completable(self, *arguments):
-		return self.dCondition[self.key(*arguments)] is None
+		return not self.failed() and self.dCondition[self.key(*arguments)] is None
 		
 	def complete(self, *arguments):
 		if self.completable(*arguments):
@@ -2677,11 +2677,19 @@ class Trigger(Condition):
 			return self
 	
 		def checkFirstSettled(self, city):
+			if is_minor(city):
+				return
+			
+			if civ(city) in self.lAllowedCivs:
+				return
+			
 			if city in self.arguments.subject:
-				if self.arguments.subject.cities().without(city).none(lambda city: not is_minor(city) and city.getOriginalCiv() not in self.lAllowedCivs):
+				if city.getOwner() == self.iPlayer:
 					self.complete()
+				else:
+					self.fail()
 		
-		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).handle("cityBuilt", checkFirstSettled).subclass("FirstSettle")
+		return cls.desc("FIRST_SETTLE").subject(Plots).func(init, allowed).any("cityBuilt", checkFirstSettled).subclass("FirstSettle")
 	
 	@classproperty
 	def discover(cls):

@@ -5900,10 +5900,13 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(0).found(51, 29)
 		
 		try:
 			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city_(51, 29).kill()
 		
@@ -5913,10 +5916,13 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(1).found(51, 29)
 		
 		try:
 			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.state, FAILURE)
 		finally:
 			city_(51, 29).kill()
 		
@@ -5926,11 +5932,14 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(1).found(51, 29)
 		player(0).found(53, 29)
-		
+
 		try:
 			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.state, FAILURE)
 		finally:
 			city_(51, 29).kill()
 			city_(53, 29).kill()
@@ -5941,10 +5950,13 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(0).found(56, 29)
 		
 		try:
 			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.state, POSSIBLE)
 		finally:
 			city_(56, 29).kill()
 		
@@ -5954,11 +5966,14 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(1).found(57, 29)
 		player(0).found(51, 29)
 		
 		try:
 			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city_(57, 29).kill()
 			city_(51, 29).kill()
@@ -5969,11 +5984,14 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(iChina).found(51, 29)
 		player(0).found(53, 29)
 		
 		try:
 			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city_(51, 29).kill()
 			city_(53, 29).kill()
@@ -5984,11 +6002,14 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(iChina).found(51, 29)
 		player(0).acquireCity(city_(51, 29), True, False)
 		
 		try:
 			self.assertEqual(bool(goal), False)
+			self.assertEqual(goal.state, POSSIBLE)
 		finally:
 			city_(51, 29).kill()
 		
@@ -5998,12 +6019,15 @@ class TestTriggerGoals(ExtendedTestCase):
 		area = plots.rectangle((50, 28), (55, 30))
 		goal = Trigger.firstSettle(area).allowed([iChina]).activate(0)
 		
+		self.assertEqual(goal.state, POSSIBLE)
+		
 		player(iChina).found(51, 29)
 		player(1).acquireCity(city_(51, 29), True, False)
 		player(0).found(53, 29)
 		
 		try:
 			self.assertEqual(bool(goal), True)
+			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city_(51, 29).kill()
 			city_(53, 29).kill()
