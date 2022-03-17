@@ -2,12 +2,7 @@ from Core import *
 
 from StoredData import data
 from Events import handler
-
-
-### SCENARIO SETUP ###
-
-lLostIn1700AD = [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]
-lWonIn1700AD = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)]
+from Scenarios import getScenario
 
 
 ### DELAYED IMPORT ###
@@ -89,7 +84,7 @@ religiousVictoryCallback = ReligiousVictoryCallback()
 
 def createHistoricalGoals(iPlayer):
 	goals = [goal.activate(iPlayer, historicalVictoryCallback) for goal in getHistoricalGoals(iPlayer)]
-	goals = setupScenario(iPlayer, goals)
+	getScenario().initGoals(iPlayer, goals)
 	
 	return goals
 
@@ -112,27 +107,6 @@ def switchReligiousGoals(iPlayer):
 	
 	data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
 	
-def setupScenario(iPlayer, goals):
-	iCiv = civ(iPlayer)
-
-	if scenario() == i1700AD:
-		if iCiv in lLostIn1700AD:
-			for goal in goals:
-				goal.fail()
-		
-		for iGoal in [iGoal for iGoalCiv, iGoal in lWonIn1700AD if iGoalCiv == iCiv]:
-			goals[iGoal].succeed()
-		
-		# setup English tech goal
-		if iCiv == iEngland:
-			goals[2].accumulate(4, iRenaissance)
-		
-		# setup Congo slave trade goal
-		if iCiv == iCongo:
-			goals[1].accumulate(500)
-	
-	return goals
-
 
 ### GOLDEN AGE ###
 	
@@ -156,7 +130,7 @@ def assignGoals(iPlayer):
 
 @handler("switch")
 def onSwitch(iPrevious, iCurrent):
-	for goal in data.players[iPrevious].historicalGoals + data.players[iPrevious].religiousGoals:
+	for goal in data.players[iPrevious].goals:
 		goal.deactivate()
 
 	data.players[iPrevious].historicalGoals = []

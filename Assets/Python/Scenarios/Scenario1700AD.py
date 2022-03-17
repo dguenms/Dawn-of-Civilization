@@ -216,6 +216,16 @@ def createStartingUnits():
 		createRoleUnit(iJapan, capital, iSettle)
 
 
+def setupGoals(iCiv, goals):
+	# English tech goal
+	if iCiv == iEngland:
+		goals[2].accumulate(4, iRenaissance)
+	
+	# Congolese slave trade goal
+	if iCiv == iCongo:
+		goals[1].accumulate(500)
+
+
 scenario1700AD = Scenario(
 	iStartYear = 1700,
 	fileName = "RFC_1700AD",
@@ -288,6 +298,10 @@ scenario1700AD = Scenario(
 		(iEngland, iMughals, WarPlanTypes.WARPLAN_LIMITED),
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
+	
+	lAllGoalsFailed = [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
+	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
+	setupGoals = setupGoals,
 	
 	greatWall = GreatWall(
 		tGraphicsTL = (99, 46),

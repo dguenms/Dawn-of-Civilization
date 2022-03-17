@@ -274,7 +274,11 @@ class Scenario(object):
 		
 		self.lInitialWars = kwargs.get("lInitialWars", [])
 		
-		self.createStartingUnits = kwargs.get("createStartingUnits", lambda: None)
+		self.lAllGoalsFailed = kwargs.get("lAllGoalsFailed", [])
+		self.lGoalsSucceeded = kwargs.get("lGoalsSucceeded", [])
+		self.setupGoals = kwargs.get("setupGoals", lambda: None)
+		
+		self.createStartingUnits = kwargs.get("createStartingUnits", lambda *args: None)
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
 	
@@ -328,6 +332,19 @@ class Scenario(object):
 
 		data.dSlots[game.getActiveCivilizationType()] = game.getActivePlayer()
 		data.dSlots[iBarbarian] = gc.getBARBARIAN_PLAYER()
+	
+	def initGoals(self, iPlayer, goals):
+		iCiv = civ(iPlayer)
+		
+		if iCiv in self.lAllGoalsFailed:
+			for goal in goals:
+				goal.fail()
+				
+		for iGoalCiv, iGoalIndex in self.lGoalsSucceeded:
+			if iCiv == iGoalCiv:
+				goal[iGoalIndex].succeed()
+		
+		self.setupGoals(iCiv, goals)
 		
 	def apply(self):
 		self.adjustTurns()
