@@ -276,9 +276,9 @@ class Scenario(object):
 		
 		self.lAllGoalsFailed = kwargs.get("lAllGoalsFailed", [])
 		self.lGoalsSucceeded = kwargs.get("lGoalsSucceeded", [])
-		self.setupGoals = kwargs.get("setupGoals", lambda: None)
+		self.setupGoals = kwargs.get("setupGoals", lambda *args: None)
 		
-		self.createStartingUnits = kwargs.get("createStartingUnits", lambda *args: None)
+		self.createStartingUnits = kwargs.get("createStartingUnits", lambda: None)
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
 	
