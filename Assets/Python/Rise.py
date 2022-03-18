@@ -754,14 +754,11 @@ class Birth(object):
 		for plot in plots.expansion(self.iPlayer).without(self.area).land().where(lambda p: not p.isPeak()):
 			plot.setExpansion(self.iPlayer)
 		
-		self.iExpansionDelay = turns(rand(10))
-		self.iExpansionTurns = turns(30) + self.iExpansionDelay
+		self.iExpansionDelay = rand(turns(5)) + 1
+		self.iExpansionTurns = turns(30)
 	
 	def checkExpansion(self):
 		if self.iExpansionTurns < 0:
-			return
-		
-		if self.iExpansionDelay > 0:
 			return
 	
 		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer)
@@ -776,6 +773,9 @@ class Birth(object):
 		
 		self.iExpansionDelay -= 1
 		self.iExpansionTurns -= 1
+		
+		if self.iExpansionDelay >= 0:
+			return
 		
 		if not self.isHuman() and expansionCities:
 			targets = expansionCities.owners().without(self.iPlayer)
