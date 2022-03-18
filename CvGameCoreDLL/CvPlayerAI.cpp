@@ -1871,8 +1871,13 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 	    if (iX >= 63 && iY >= 49)
 	    {
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
+				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					continue;
+				}
+
 				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == POLAND && GET_PLAYER((PlayerTypes)iI).isPlayable())
 				{
 					return 0;
@@ -3005,7 +3010,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	iValue += pCity->plot()->getWarValue(getID()) / 2;
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
-	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
 		if (pCity->plot()->getWarValue(getID()) == 0)
 		{
@@ -3030,7 +3035,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 	}
 
-	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
 		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
 		if (isMinorCiv() || pCity->plot()->getSettlerValue(getID()) >= 90 || pCity->plot()->getWarValue(getID()) > 0)
@@ -3040,9 +3045,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 	//Rhye - end
 
-	if (getCivilizationType() == FRANCE && pCity->getX() == 69 && pCity->getY() == 52 && pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	if (getCivilizationType() == FRANCE && pCity->at(69, 52))
 	{
-		return 0;
+		if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
+		{
+			return 0;
+		}
 	}
 
 	// Leoreth: America shouldn't fight the English all the way to Canada
@@ -12627,11 +12635,15 @@ void CvPlayerAI::AI_doCommerce()
 	if (isCommerceFlexible(COMMERCE_ESPIONAGE) && !bFirstTech)
 	{
 		int iEspionageTargetRate = 0;
-		//Rhye
-		//for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
-		for (int iTeam = 0; iTeam < NUM_MAJOR_PLAYERS; ++iTeam)
+		for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
 		{
 			CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iTeam);
+
+			if (kLoopTeam.isMinorCiv())
+			{
+				continue;
+			}
+
 			if (kLoopTeam.isAlive() && iTeam != getTeam() && !kLoopTeam.isVassal(getTeam()) && !GET_TEAM(getTeam()).isVassal((TeamTypes)iTeam))
 			{
 				int iTarget = (kLoopTeam.getEspionagePointsAgainstTeam(getTeam()) - GET_TEAM(getTeam()).getEspionagePointsAgainstTeam((TeamTypes)iTeam)) / 8;

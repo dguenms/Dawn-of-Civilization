@@ -5037,18 +5037,6 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}
-
-	/*for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-	{
-		for (int iJ = 0; iJ < 5; iJ++)
-		{
-			if (pPlot->getCultureRangeCities((PlayerTypes)iI, iJ) != 0)
-			{
-				szString.append(NEWLINE);
-				szString.append(gDLL->getText("Player %d1 cities in range %d2: %d3", iI, iJ, pPlot->getCultureRangeCities((PlayerTypes)iI, iJ)));
-			}
-		}
-	}*/
 }
 
 

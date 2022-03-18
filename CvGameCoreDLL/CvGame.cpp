@@ -2903,9 +2903,13 @@ bool CvGame::isTeamVoteEligible(TeamTypes eTeam, VoteSourceTypes eVoteSource) co
 int CvGame::countVote(const VoteTriggeredData& kData, PlayerVoteTypes eChoice) const
 {
 	int iCount = 0;
-	//for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++) //Rhye
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++) //Rhye
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			if (getPlayerVote(((PlayerTypes)iI), kData.getID()) == eChoice)
@@ -2926,9 +2930,13 @@ int CvGame::countPossibleVote(VoteTypes eVote, VoteSourceTypes eVoteSource) cons
 
 	iCount = 0;
 
-	//for (iI = 0; iI < MAX_CIV_PLAYERS; iI++) //Rhye
-	for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++) //Rhye
+	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		iCount += GET_PLAYER((PlayerTypes)iI).getVotes(eVote, eVoteSource);
 	}
 
@@ -2944,9 +2952,13 @@ TeamTypes CvGame::findHighestVoteTeam(const VoteTriggeredData& kData) const
 
 	if (isTeamVote(kData.kVoteOption.eVote))
 	{
-		//for (int iI = 0; iI < MAX_CIV_TEAMS; ++iI) //Rhye
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI) //Rhye
+		for (int iI = 0; iI < MAX_CIV_TEAMS; ++iI)
 		{
+			if (GET_TEAM((TeamTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (GET_TEAM((TeamTypes)iI).isAlive())
 			{
 				int iCount = countVote(kData, (PlayerVoteTypes)iI);
@@ -2980,10 +2992,15 @@ TeamTypes CvGame::getSecretaryGeneral(VoteSourceTypes eVoteSource) const
 		{
 			if (GC.getBuildingInfo((BuildingTypes)iBuilding).getVoteSourceType() == eVoteSource)
 			{
-				//for (iI = 0; iI < MAX_CIV_PLAYERS; iI++) //Rhye
-				for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++) //Rhye
+				for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 				{
 					CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
+
+					if (kLoopPlayer.isMinorCiv())
+					{
+						continue;
+					}
+
 					if (kLoopPlayer.isAlive())
 					{
 						if (kLoopPlayer.getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iBuilding).getBuildingClassType()) > 0)
@@ -3090,8 +3107,13 @@ int CvGame::countMajorPlayersAlive() const
 {
 	int iCount = 0;
 
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			iCount++;
@@ -4491,8 +4513,13 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 				bOffensiveCrusade = true;
 			}
 
-			for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+			for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
 			{
+				if (GET_PLAYER((PlayerTypes)iPlayer).isMinorCiv())
+				{
+					continue;
+				}
+
 				if (GET_PLAYER((PlayerTypes)iPlayer).isFullMember(eVoteSource))
 				{
 					if (GET_TEAM(GET_PLAYER((PlayerTypes)iPlayer).getTeam()).isAtWar(kPlayer.getTeam()))
@@ -4694,9 +4721,17 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 
 		// only civs at peace can be forced to decolonize
 		CvTeam& kTeam = GET_TEAM(GET_PLAYER(kData.ePlayer).getTeam());
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 		{
-			if (kTeam.isAtWar((TeamTypes)iI)) return false;
+			if (GET_TEAM((TeamTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
+			if (kTeam.isAtWar((TeamTypes)iI))
+			{
+				return false;
+			}
 		}
 	}
 	else if (GC.getVoteInfo(kData.eVote).isReleaseCivilization())
@@ -7381,8 +7416,13 @@ bool CvGame::testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScor
 			{
 				bool bFound = false;
 
-				for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) //Rhye independents fix //MAX_CIV_TEAMS
+				for (int iK = 0; iK < MAX_CIV_TEAMS; iK++)
 				{
+					if (GET_TEAM((TeamTypes)iK).isMinorCiv())
+					{
+						continue;
+					}
+
 					if (GET_TEAM((TeamTypes)iK).isAlive())
 					{
 						if (iK != eTeam)
@@ -7921,8 +7961,13 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 				// Leoreth: city assignment can be defied, but leads to war with the civs that voted yes
 				if (getPlayerVote(pCity->getOwnerINLINE(), kData.getID()) == PLAYER_VOTE_NEVER)
 				{
-					for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+					for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 					{
+						if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+						{
+							continue;
+						}
+
 						if (getPlayerVote((PlayerTypes)iI, kData.getID()) == PLAYER_VOTE_YES)
 						{
 							GET_TEAM((TeamTypes)iI).declareWar((TeamTypes)pCity->getOwnerINLINE(), true, WARPLAN_LIMITED);
@@ -7951,8 +7996,13 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			int iGold;
 			int iTotalGold = 0;
 
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
+				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					continue;
+				}
+
 				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
 
 				// Leoreth: unaffected by defied, but passed resolution
@@ -7994,13 +8044,20 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 		if (kVote.getHappiness() < 0)
 		{
 			int iLoop;
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
 				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
 
+				if (kLoopPlayer.isMinorCiv())
+				{
+					continue;
+				}
+
 				// Leoreth: unaffected by defied, but passed resolution
 				if (getPlayerVote((PlayerTypes)iI, kData.getID()) == PLAYER_VOTE_NEVER)
+				{
 					continue;
+				}
 
 				if (kLoopPlayer.isFullMember(kData.eVoteSource))
 				{
@@ -9672,8 +9729,13 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							int iLoop;
 							for (CvCity* pLoopCity = kPlayer1.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer1.nextCity(&iLoop))
 							{
-								for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+								for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 								{
+									if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+									{
+										continue;
+									}
+
 									if (pLoopCity->plot()->isCore((PlayerTypes)iI))
 									{
 										kData.ePlayer = (PlayerTypes)iPlayer1;
@@ -9739,9 +9801,15 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 					{
 						kData.ePlayer = GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
 
-						for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+						for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 						{
 							CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
+
+							if (kLoopPlayer.isMinorCiv())
+							{
+								continue;
+							}
+
 							bool bValid = false;
 							for (int iJ =  0; iJ < NUM_RELIGIONS; iJ++)
 							{
@@ -9766,14 +9834,30 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 					}
 					else if (GC.getVoteInfo(kData.eVote).isDecolonize())
 					{
-						for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+						for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 						{
 							PlayerTypes ePlayer = (PlayerTypes)iI;
 							CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
-							if (kPlayer.getTeam() == getSecretaryGeneral(eVoteSource)) continue;
-							if (!kPlayer.isAlive()) continue;
-							if (kPlayer.countColonies() == 0) continue;
+							if (kPlayer.isMinorCiv())
+							{
+								continue;
+							}
+
+							if (kPlayer.getTeam() == getSecretaryGeneral(eVoteSource))
+							{
+								continue;
+							}
+
+							if (!kPlayer.isAlive())
+							{
+								continue;
+							}
+
+							if (kPlayer.countColonies() == 0)
+							{
+								continue;
+							}
 
 							int iBestID = -1;
 							int iBestValue = MAX_INT;
@@ -9810,12 +9894,24 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 						PlayerTypes ePlayer;
 						CivilizationTypes eReleasableCivilization;
 
-						for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+						for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 						{
 							ePlayer = (PlayerTypes)iI;
 
-							if (GET_PLAYER(ePlayer).getTeam() == getSecretaryGeneral(eVoteSource)) continue;
-							if (!GET_PLAYER(ePlayer).isAlive()) continue;
+							if (GET_PLAYER(ePlayer).isMinorCiv())
+							{
+								continue;
+							}
+
+							if (GET_PLAYER(ePlayer).getTeam() == getSecretaryGeneral(eVoteSource))
+							{
+								continue;
+							}
+
+							if (!GET_PLAYER(ePlayer).isAlive())
+							{
+								continue;
+							}
 
 							for (int iJ = 0; iJ < NUM_CIVS; iJ++)
 							{

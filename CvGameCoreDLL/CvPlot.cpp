@@ -3488,7 +3488,7 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 			if (iCulture > 0)
 			{
 				// All major civilizations have easier control over their own core (80% rule)
-				if (iI < NUM_MAJOR_PLAYERS) 
+				if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv() && !GET_PLAYER((PlayerTypes)iI).isBarbarian()) 
 				{
 					if (isCore((PlayerTypes)iI)) 
 					{
@@ -3499,8 +3499,13 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 				// Independents get the same advantage over a civ's core if that civ is dead
 				if (GET_PLAYER((PlayerTypes)iI).isIndependent())
 				{
-					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+					for (int iJ = 0; iJ < MAX_CIV_PLAYERS; iJ++)
 					{
+						if (GET_PLAYER((PlayerTypes)iJ).isMinorCiv())
+						{
+							continue;
+						}
+
 						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurn() > GET_PLAYER((PlayerTypes)iJ).getInitialBirthTurn() && !GET_PLAYER((PlayerTypes)iI).isAlive())
 						{
 							iCulture *= 4;

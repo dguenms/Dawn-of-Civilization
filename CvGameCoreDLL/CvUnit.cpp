@@ -14363,7 +14363,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_INDIA)
 	{
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MUGHALS)
 			{
@@ -14415,7 +14415,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 // edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
 bool CvUnit::canTradeUnit(PlayerTypes eReceivingPlayer)
 {
-	if (eReceivingPlayer == NO_PLAYER || eReceivingPlayer >= NUM_MAJOR_PLAYERS || getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
+	if (eReceivingPlayer == NO_PLAYER || GET_PLAYER(eReceivingPlayer).isMinorCiv() || GET_PLAYER(eReceivingPlayer).isBarbarian() || GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian())
 	{
 		return false;
 	}
@@ -14671,8 +14671,13 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 			iLoot += GC.getGame().getSorenRandNum(iLoot, "Random loot");
 			GET_PLAYER(getOwner()).changeGold(iLoot);
 
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
+				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					continue;
+				}
+
 				if (iI != getOwner() && GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
 					if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)

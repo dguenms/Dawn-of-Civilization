@@ -663,7 +663,7 @@ int CvArea::getPower(PlayerTypes eIndex) const
 	{
 		return m_aiPower[eIndex] /= 8;
 	}
-	else if (eIndex >= NUM_MAJOR_PLAYERS)
+	else if (GET_PLAYER(eIndex).isMinorCiv())
 	{
 		return m_aiPower[eIndex] /= 4;
 	}

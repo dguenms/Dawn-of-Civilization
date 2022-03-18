@@ -15118,8 +15118,13 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 
 								if (!pLoopPlot->isCore(ePlayer) && iCultureRange > 2)
 								{
-									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+									for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 									{
+										if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+										{
+											continue;
+										}
+
 										// Leoreth: only for civs that have already spawned yet
 										if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)iI).getInitialBirthTurn())
 										{
@@ -17873,50 +17878,19 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 		return NO_PLAYER;
 	}
 
-	//Rhye - start comment
-	/*
-	//for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer) //Rhye
-	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; ++iPlayer) //Rhye
-	{
-		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-		if (kLoopPlayer.isAlive() && kLoopPlayer.getParent() == getOwnerINLINE())
-		{
-			CvCity* pLoopCapital = kLoopPlayer.getCapitalCity();
-			if (NULL != pLoopCapital)
-			{
-				if (pLoopCapital->area() == area())
-				{
-					return (PlayerTypes)iPlayer;
-				}
-			}
-		}
-	}
-
-	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
-	if (kOwner.canSplitEmpire() && kOwner.canSplitArea(area()->getID()))
-	{
-		PlayerTypes ePlayer = GET_PLAYER(getOwnerINLINE()).getSplitEmpirePlayer(area()->getID());
-
-		if (NO_PLAYER != ePlayer)
-		{
-			if (GET_PLAYER(ePlayer).isAlive())
-			{
-				return ePlayer;
-			}
-		}
-	}*/
-	//Rhye - end comment
-
 	PlayerTypes eBestPlayer = NO_PLAYER;
-	//int iBestValue = 0;
 	int iBestValue = 25; // Leoreth: some minimum amount of culture required
 
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
-	//for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer) //Rhye
-	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; ++iPlayer) //Rhye
+	for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer)
 	{
 		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+
+		if (kLoopPlayer.isMinorCiv())
+		{
+			continue;
+		}
 
 		if (kLoopPlayer.isAlive())
 		{

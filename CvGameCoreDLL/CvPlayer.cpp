@@ -15226,9 +15226,13 @@ void CvPlayer::doEspionagePoints()
 		int iSpending = 0;
 
 		// Divide up Espionage between Teams
-		//for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++) //Rhye
-		for (int iLoop = 0; iLoop < NUM_MAJOR_PLAYERS; iLoop++) //Rhye
+		for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++)
 		{
+			if (GET_TEAM((TeamTypes)iLoop).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (getTeam() != iLoop)
 			{
 				if (GET_TEAM((TeamTypes)iLoop).isAlive())
@@ -15263,9 +15267,13 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 	//int iLoop;
 
 	// Get sum of all weights to be used later on
-	//for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++) //Rhye
-	for (int iLoop = 0; iLoop < NUM_MAJOR_PLAYERS; iLoop++) //Rhye
+	for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++)
 	{
+		if (GET_TEAM((TeamTypes)iLoop).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (getTeam() != iLoop)
 		{
 			if (GET_TEAM((TeamTypes)iLoop).isAlive())
@@ -15299,9 +15307,13 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 	// Split up Espionage Point budget based on weights (if any weights have been assigned)
 	if (iTotalWeight > 0)
 	{
-		//for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++) //Rhye
-		for (int iLoop = 0; iLoop < NUM_MAJOR_PLAYERS; iLoop++) //Rhye
+		for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++)
 		{
+			if (GET_TEAM((TeamTypes)iLoop).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (getTeam() != iLoop)
 			{
 				if (GET_TEAM((TeamTypes)iLoop).isAlive())
@@ -15324,9 +15336,13 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 	// Divide remainder evenly among top Teams
 	while (iAvailablePoints > 0)
 	{
-		//for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++) //Rhye
-		for (int iLoop = 0; iLoop < NUM_MAJOR_PLAYERS; iLoop++) //Rhye
+		for (int iLoop = 0; iLoop < MAX_CIV_TEAMS; iLoop++)
 		{
+			if (GET_TEAM((TeamTypes)iLoop).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (getTeam() != iLoop)
 			{
 				if (GET_TEAM((TeamTypes)iLoop).isAlive())
@@ -22998,8 +23014,13 @@ bool CvPlayer::canDefyResolution(VoteSourceTypes eVoteSource, const VoteSelectio
 	else
 	{
 		int iPowerRank = 1;
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (GET_PLAYER((PlayerTypes)iI).getPower() > getPower())
 			{
 				iPowerRank++;
@@ -25291,8 +25312,13 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 	{
 		if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) > 0) return false;
 
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (getID() != iI && GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
@@ -25479,8 +25505,13 @@ void CvPlayer::updateCapitalCommerce()
 
 	if (getVassalCityCommerce() != 0)
 	{
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isVassal(getTeam()))
 			{
 				iNewCapitalCommerce += GET_PLAYER((PlayerTypes)iI).getNumCities() * getVassalCityCommerce();
