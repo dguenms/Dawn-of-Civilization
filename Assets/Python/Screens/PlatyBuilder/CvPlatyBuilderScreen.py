@@ -402,19 +402,19 @@ class CvWorldBuilderScreen:
 					if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 						iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 						# Place City
-						if iOptionID == 0:
-							if pPlayer.getAdvancedStartCityCost(True, pPlot) > -1:
-								CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
+						#if iOptionID == 0:
+						#	if pPlayer.getAdvancedStartCityCost(True, pPlot) > -1:
+						#		CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Population
-						elif iOptionID == 1:
+						if iOptionID == 0:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartPopCost(True, pCity) > -1:
 									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Culture
-						elif iOptionID == 2:
+						elif iOptionID == 1:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartCultureCost(True, pCity) > -1:
