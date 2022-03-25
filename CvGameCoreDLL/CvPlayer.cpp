@@ -12176,12 +12176,16 @@ CivilizationTypes CvPlayer::getCivilizationType() const
 // edead: start
 void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 {
-	if (getCivilizationType() == iNewValue)
+	if (getCivilizationType() == iNewValue || iNewValue == NO_CIVILIZATION)
 	{
 		return;
 	}
 
 	GC.getInitCore().setCiv(getID(), iNewValue);
+
+	setCivDescription(L"");
+	setCivShortDescription(L"");
+	setCivAdjective(L"");
 	
 	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
 	

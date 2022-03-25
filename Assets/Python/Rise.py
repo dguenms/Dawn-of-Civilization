@@ -4,9 +4,11 @@ from Events import events, handler
 from Civilizations import *
 from RFCUtils import *
 from Locations import *
-from Scenario import addPlayer
+from Slots import *
 from Stability import completeCollapse
 from Popups import popup
+
+import Logging as log
 
 import BugCore
 import CvScreensInterface
@@ -362,13 +364,13 @@ class Birth(object):
 	def reset(self):
 		# reset AI
 		self.player.AI_reset()
-		
+	
 		# reset diplomatic relations
 		self.resetDiplomacy()
-		
+	
 		# reset player espionage spending
 		player().setEspionageSpendingWeightAgainstTeam(self.player.getTeam(), 0)
-		
+	
 		# reset great people
 		self.player.resetGreatPeopleCreated()
 	
@@ -385,20 +387,8 @@ class Birth(object):
 			self.team.cutContact(player(iOtherPlayer).getTeam())
 	
 	def updateCivilization(self):
-		data.dSlots[self.iCiv] = self.iPlayer
-		
-		iCurrentCivilization = self.player.getCivilizationType()
-		if self.iCiv == iCurrentCivilization:
-			return
-		
-		if iCurrentCivilization == -1:
-			addPlayer(self.iCiv, bAlive=True)
-		else:
-			self.player.setCivilizationType(self.iCiv)
-		
-		if iCurrentCivilization in data.dSlots:
-			del data.dSlots[iCurrentCivilization]
-	
+		updateCivilization(self.iPlayer, self.iCiv)
+
 	def updateStartingLocation(self):
 		startingPlot = plots.capital(self.iCiv)
 		self.player.setStartingPlot(startingPlot, False)
@@ -668,16 +658,21 @@ class Birth(object):
 			message(active(), str(text), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
 	
 	def activate(self):
-		if self.iPlayer is None and self.bRebirth:
-			self.iPlayer = slot(dRebirthCiv[self.iCiv])
-		
 		if self.iPlayer is None:
 			self.iPlayer = findSlot(self.iCiv)
+			
+		if self.iPlayer < 0:
+			self.canceled = True
+			log.rise("BIRTH CANCELED: no free slot found for %s", infos.civ(self.iCiv).getText())
+			return
 			
 		self.updateCivilization()
 		self.updateStartingLocation()
 		
 		self.player.setInitialBirthTurn(self.iTurn)
+		
+		if not self.isHuman():
+			self.player.setAlive(True)
 		
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()
@@ -881,7 +876,7 @@ class Birth(object):
 		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
 		flippedCities = flippedPlots.cities().notowner(self.iPlayer)
 		flippedCityPlots = flippedCities.plots()
-	
+
 		flippedPlayerCities = dict((p, format_separators(flippedCities.owner(p), ",", text("TXT_KEY_AND"), CyCity.getName)) for p in flippedCities.owners().major())
 		
 		expelUnits(self.iPlayer, flippedPlots)

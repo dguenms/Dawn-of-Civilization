@@ -20,6 +20,7 @@ from Locations import *
 from Core import *
 from Civics import *
 from Popups import popup
+from Slots import findSlot, updateCivilization
 
 # globals
 gc = CyGlobalContext()
@@ -238,7 +239,7 @@ def onReleasedPlayer(iPlayer, iReleasedCivilization):
 	
 	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
 
-	doResurrection(iReleasedPlayer, releasedCities, bAskFlip=False, bDisplay=True)
+	doResurrection(iReleasedPlayer, iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
 	
 	player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
 	
@@ -572,7 +573,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 			additionalCities = getAdditionalResurrectionCities(iClaimant, secedingCities)
 			
 			iResurrectionPlayer = findSlot(iClaimant)
-			resurrectionFromCollapse(iResurrectionPlayer, claimedCities + additionalCities)
+			resurrectionFromCollapse(iResurrectionPlayer, iClaimant, claimedCities + additionalCities)
 		
 		# else cities go to minors
 		else:
@@ -1490,7 +1491,7 @@ def checkResurrection():
 				resurrectionCities = getResurrectionCities(iCiv)
 				if canResurrectFromCities(iCiv, resurrectionCities):
 					iResurrectionPlayer = findSlot(iCiv)
-					doResurrection(iResurrectionPlayer, resurrectionCities)
+					doResurrection(iResurrectionPlayer, iCiv, resurrectionCities)
 					return
 					
 		# otherwise minimum amount of cities and random chance are required
@@ -1499,7 +1500,7 @@ def checkResurrection():
 				resurrectionCities = getResurrectionCities(iCiv)
 				if canResurrectFromCities(iCiv, resurrectionCities):
 					iResurrectionPlayer = findSlot(iCiv)
-					doResurrection(iResurrectionPlayer, resurrectionCities)
+					doResurrection(iResurrectionPlayer, iCiv, resurrectionCities)
 					return
 					
 def isPartOfResurrection(iCiv, city, bOnlyOne):
@@ -1570,13 +1571,15 @@ def getResurrectionCities(iCiv, bFromCollapse=False):
 	
 	return resurrectionCities.entities()
 	
-def resurrectionFromCollapse(iPlayer, lCityList):
+def resurrectionFromCollapse(iPlayer, iCiv, lCityList):
 	debug('Resurrection: %s', name(iPlayer))
 			
 	if lCityList:
-		doResurrection(iPlayer, lCityList, bAskFlip=False)
+		doResurrection(iPlayer, iCiv, lCityList, bAskFlip=False)
 	
-def doResurrection(iPlayer, lCityList, bAskFlip=True, bDisplay=False):
+def doResurrection(iPlayer, iCiv, lCityList, bAskFlip=True, bDisplay=False):
+	updateCivilization(iPlayer, iCiv)
+
 	resurrectionCities = cities.of(lCityList)
 	pPlayer = player(iPlayer)
 	teamPlayer = team(iPlayer)

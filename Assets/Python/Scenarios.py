@@ -1,6 +1,4 @@
-from RFCUtils import *
 from Core import *
-from Locations import *
 from DynamicCivs import *
 
 from Events import handler

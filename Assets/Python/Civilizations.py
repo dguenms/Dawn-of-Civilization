@@ -153,7 +153,7 @@ class Civilization(object):
 			
 		for iEnemy in self.lEnemies:
 			iEnemyPlayer = slot(iEnemy)
-			if iEnemyPlayer >= 0:
+			if iEnemyPlayer >= 0 and self.iCiv != iEnemy:
 				team(iEnemyPlayer).declareWar(self.player.getTeam(), False, WarPlanTypes.NO_WARPLAN)
 		
 		for iCiv, iAttitude in self.dAttitudes.items():

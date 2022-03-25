@@ -1,7 +1,10 @@
 from Events import events
 from Popups import popup
+
 from Civilizations import *
 from Core import *
+
+import Logging as log
 
 import BugCore
 import CvScreenEnums
@@ -1112,23 +1115,6 @@ def paintPlots(plots, index=1000, color="COLOR_CYAN"):
 	engine.clearAreaBorderPlots(1000)
 	for plot in plots:
 		engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_CYAN", 0.7)
-
-# used: Rise, Stability, Dawn_of_Civilization
-def findSlot(iCiv):
-	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == iCiv)
-	if iSlot is not None:
-		return iSlot
-	
-	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == -1)
-	if iSlot is not None:
-		return iSlot
-	
-	iSlot = next(iSlot for iSlot in range(iNumPlayers) if not player(iSlot).isAlive())
-	if iSlot is not None:
-		return iSlot
-	
-	return -1
-
 
 def getImprovementBuild(iImprovement):
 	if iImprovement < 0:

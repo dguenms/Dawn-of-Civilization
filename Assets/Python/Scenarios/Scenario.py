@@ -1,5 +1,6 @@
 from Resources import setupScenarioResources
 from DynamicCivs import startingLeader, checkName
+from Slots import addPlayer
 
 from Core import *
 from RFCUtils import *
@@ -206,17 +207,6 @@ WONDER_ORIGINAL_BUILDERS = {
 	iImageOfTheWorldSquare : (iIran, 1629),
 	iBourse : (iNetherlands, 1602),
 }
-
-
-# used: Rise, Scenario
-def addPlayer(iCiv, bAlive=False, bMinor=False):
-	iPlayer = findSlot(iCiv)
-	iLeader = startingLeader(iCiv)
-	game.addPlayer(iPlayer, iLeader, iCiv, bAlive, bMinor)
-	
-	data.dSlots[iCiv] = iPlayer
-	
-	return iPlayer
 
 
 class GreatWall(object):
