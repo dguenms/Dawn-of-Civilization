@@ -22,6 +22,7 @@ import DynamicCivs
 import EventSigns
 import GreatPeople
 import History
+import Logging
 import Periods
 import Plague
 import Religions

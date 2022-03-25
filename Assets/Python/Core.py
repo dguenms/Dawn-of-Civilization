@@ -395,7 +395,7 @@ def format_separators(list, separator, last_separator, format=lambda x: x):
 	separator = separator.rstrip() + ' '
 	last_separator = last_separator.rstrip() + ' '
 
-	formatted_list = [str(format(x)) for x in list]
+	formatted_list = [format(x).encode("ascii", "xmlcharrefreplace") for x in list]
 
 	if len(formatted_list) > 1:
 		return last_separator.join([separator.join(formatted_list[:-1]), formatted_list[-1]])
