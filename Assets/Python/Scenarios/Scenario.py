@@ -1,10 +1,11 @@
 from Resources import setupScenarioResources
-from DynamicCivs import startingLeader, checkName
+from DynamicCivs import checkName
 from Slots import addPlayer
 
 from Core import *
 from RFCUtils import *
 from Parsers import *
+
 
 START_HISTORY = -3000
 

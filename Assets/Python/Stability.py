@@ -1,26 +1,21 @@
-# Rhye's and Fall of Civilization - Stability
-
-from CvPythonExtensions import *
-from StoredData import data # edead
-from Consts import *
-from RFCUtils import *
-import DynamicCivs as dc
-from operator import itemgetter
-import math
-import Periods as periods
-from Events import handler, events
-
-import PyHelpers
-PyPlayer = PyHelpers.PyPlayer
-
-import BugPath
-from datetime import date
-
-from Locations import *
 from Core import *
+from RFCUtils import *
+from Locations import *
 from Civics import *
+
 from Popups import popup
 from Slots import findSlot, updateCivilization
+from Events import handler, events
+
+from operator import itemgetter
+from datetime import date
+
+import DynamicCivs as dc
+import Periods as periods
+import BugPath
+
+import math
+
 
 # globals
 gc = CyGlobalContext()

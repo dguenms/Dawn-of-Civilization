@@ -2,6 +2,7 @@ from Core import *
 from RFCUtils import *
 from Parsers import *
 from Scenarios import *
+
 from CityNameManager import determineCapitalLocations
 
 import SettlerMaps, WarMaps, RegionMap

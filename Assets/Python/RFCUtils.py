@@ -1,13 +1,14 @@
-from Events import events
-from Popups import popup
-
 from Civilizations import *
 from Core import *
 
-import Logging as log
+from Events import events
+from Popups import popup
 
 import BugCore
 import CvScreenEnums
+
+import Logging as log
+
 
 MainOpt = BugCore.game.MainInterface
 

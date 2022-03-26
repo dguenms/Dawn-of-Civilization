@@ -1,20 +1,16 @@
 # coding: utf-8
 
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-from Consts import *
 from Civics import *
-from StoredData import data
 from RFCUtils import *
 from Areas import *
-import CityNameManager as cnm
-from Events import handler
-
 from Locations import *
 from Core import *
+
+from Events import handler
 from Core import name as short
 from Core import adjective as civAdjective
+
+import CityNameManager as cnm
 
 
 ### Constants ###

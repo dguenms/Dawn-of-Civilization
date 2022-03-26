@@ -1,10 +1,10 @@
 from Core import *
-from Events import events, handler
-
 from Civilizations import *
 from RFCUtils import *
 from Locations import *
 from Slots import *
+
+from Events import events, handler
 from Stability import completeCollapse
 from Popups import popup
 
@@ -12,6 +12,7 @@ import Logging as log
 
 import BugCore
 import CvScreensInterface
+
 
 MainOpt = BugCore.game.MainInterface
 
