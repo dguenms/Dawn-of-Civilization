@@ -20,9 +20,9 @@
 			<Identifier>AME</Identifier>
 			<StartingYear>1775</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>60</LoadingTime>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>5</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>4</Trade>
@@ -123,8 +123,8 @@
 			<Identifier>ARA</Identifier>
 			<StartingYear>620</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -218,9 +218,9 @@
 			<Identifier>ARG</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
 				<LoadingTime>45</LoadingTime>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -315,8 +315,8 @@
 			<Identifier>AZT</Identifier>
 			<StartingYear>1200</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -533,9 +533,9 @@
 			<Identifier>BRA</Identifier>
 			<StartingYear>1822</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
-				<LoadingTime>45</LoadingTime>
-				<LoadingTime>25</LoadingTime>
+				<LoadingTime>50</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>12</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -626,7 +626,7 @@
 			<Identifier>BYZ</Identifier>
 			<StartingYear>330</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -732,8 +732,8 @@
 			<Identifier>CAN</Identifier>
 			<StartingYear>1867</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
-				<LoadingTime>45</LoadingTime>
+				<LoadingTime>60</LoadingTime>
+				<LoadingTime>50</LoadingTime>
 				<LoadingTime>20</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -841,7 +841,7 @@
 			<Identifier>CAR</Identifier>
 			<StartingYear>-1200</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1153,7 +1153,7 @@
 			<Identifier>CHI</Identifier>
 			<StartingYear>-2070</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1274,9 +1274,9 @@
 			<Identifier>COL</Identifier>
 			<StartingYear>1814</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>55</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -1490,8 +1490,8 @@
 			<Identifier>ENG</Identifier>
 			<StartingYear>820</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1603,7 +1603,7 @@
 			<Identifier>ETH</Identifier>
 			<StartingYear>-295</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1724,8 +1724,8 @@
 			<Identifier>FRA</Identifier>
 			<StartingYear>750</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>25</LoadingTime>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1834,8 +1834,8 @@
 			<Identifier>GER</Identifier>
 			<StartingYear>1700</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>50</LoadingTime>
-				<LoadingTime>25</LoadingTime>
+				<LoadingTime>30</LoadingTime>
+				<LoadingTime>20</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1961,7 +1961,7 @@
 			<Identifier>GRE</Identifier>
 			<StartingYear>-1600</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2196,8 +2196,8 @@
 			<Identifier>HRE</Identifier>
 			<StartingYear>840</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2305,8 +2305,8 @@
 			<Identifier>INC</Identifier>
 			<StartingYear>1150</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2397,7 +2397,7 @@
 			<Identifier>IND</Identifier>
 			<StartingYear>-1500</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2515,8 +2515,8 @@
 			<Identifier>INO</Identifier>
 			<StartingYear>650</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2616,8 +2616,8 @@
 			<Identifier>IRA</Identifier>
 			<StartingYear>1501</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2720,8 +2720,8 @@
 			<Identifier>ITA</Identifier>
 			<StartingYear>1167</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2826,7 +2826,7 @@
 			<Identifier>JAP</Identifier>
 			<StartingYear>525</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3045,8 +3045,8 @@
 			<Identifier>CON</Identifier>
 			<StartingYear>1390</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
 				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3148,7 +3148,7 @@
 			<Identifier>KOR</Identifier>
 			<StartingYear>-50</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3253,8 +3253,8 @@
 			<Identifier>MAL</Identifier>
 			<StartingYear>989</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3366,7 +3366,7 @@
 			<Identifier>MAY</Identifier>
 			<StartingYear>-400</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3481,9 +3481,9 @@
 			<Identifier>MEX</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>50</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>2</Trade>
@@ -3577,8 +3577,8 @@
 			<Identifier>MON</Identifier>
 			<StartingYear>1190</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3679,8 +3679,8 @@
 			<Identifier>MOO</Identifier>
 			<StartingYear>711</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3795,8 +3795,8 @@
 			<Identifier>MUG</Identifier>
 			<StartingYear>1206</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4017,8 +4017,8 @@
 			<Identifier>HOL</Identifier>
 			<StartingYear>1580</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>40</LoadingTime>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>12</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4135,8 +4135,8 @@
 			<Identifier>OTT</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4241,7 +4241,7 @@
 			<Identifier>PER</Identifier>
 			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4367,8 +4367,8 @@
 			<Identifier>POL</Identifier>
 			<StartingYear>1025</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4492,7 +4492,7 @@
 			<Identifier>PLY</Identifier>
 			<StartingYear>-1000</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4606,8 +4606,8 @@
 			<Identifier>POR</Identifier>
 			<StartingYear>1130</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4730,7 +4730,7 @@
 			<Identifier>ROM</Identifier>
 			<StartingYear>-760</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4851,8 +4851,8 @@
 			<Identifier>RUS</Identifier>
 			<StartingYear>860</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4953,8 +4953,8 @@
 			<Identifier>SPA</Identifier>
 			<StartingYear>722</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>25</LoadingTime>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5148,7 +5148,7 @@
 			<Identifier>TAM</Identifier>
 			<StartingYear>-300</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5261,8 +5261,8 @@
 			<Identifier>THA</Identifier>
 			<StartingYear>1350</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
 				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5372,8 +5372,8 @@
 			<Identifier>TIB</Identifier>
 			<StartingYear>630</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>4</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5503,7 +5503,7 @@
 			<Identifier>TUR</Identifier>
 			<StartingYear>552</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5600,7 +5600,7 @@
 			<Identifier>VIK</Identifier>
 			<StartingYear>545</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
