@@ -5,7 +5,7 @@ from Locations import *
 from Slots import *
 
 from Events import events, handler
-from Stability import completeCollapse
+from Collapse import completeCollapse
 from Popups import popup
 
 import Logging as log
@@ -581,6 +581,10 @@ class Birth(object):
 				return
 			
 			self.activate()
+			
+			if self.canceled:
+				return
+			
 			self.prepare()
 			self.protect()
 			self.expansion()
@@ -711,7 +715,7 @@ class Birth(object):
 			return
 	
 		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer)
-		expansionCities = expansionPlots.cities()
+		expansionCities = expansionPlots.cities().notowner(self.iPlayer)
 		
 		if expansionCities.owner(self.iPlayer).any(lambda city: since(city.getGameTurnAcquired()) <= 1):
 			self.iExpansionTurns = max(self.iExpansionTurns, turns(10))

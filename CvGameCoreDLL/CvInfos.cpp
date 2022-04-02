@@ -10449,6 +10449,7 @@ m_iActionSoundScriptId(0),
 m_iDerivativeCiv(NO_CIVILIZATION),
 m_iStartingYear(0), // Leoreth
 m_iPaganReligion(0), // Leoreth
+m_iImpact(0), // Leoreth
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
@@ -10533,6 +10534,11 @@ int CvCivilizationInfo::getActionSoundScriptId() const
 int CvCivilizationInfo::getPaganReligion() const
 {
 	return m_iPaganReligion;
+}
+
+int CvCivilizationInfo::getImpact() const
+{
+	return m_iImpact;
 }
 
 bool CvCivilizationInfo::isAIPlayable() const
@@ -10740,6 +10746,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iDerivativeCiv);
 	stream->Read(&m_iStartingYear); // Leoreth
 	stream->Read(&m_iPaganReligion); // Leoreth
+	stream->Read(&m_iImpact); // Leoreth
 
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
@@ -10881,6 +10888,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(szTextVal, "PaganReligion");
 	m_iPaganReligion = pXML->FindInInfoClass(szTextVal);
+
+	pXML->GetChildXmlValByName(szTextVal, "Impact");
+	m_iImpact = GC.getTypesEnum(szTextVal);
 
 	pXML->GetChildXmlValByName(m_szDescriptionPersistent, "Description");
 

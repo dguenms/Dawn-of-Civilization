@@ -2357,6 +2357,7 @@ public:
 	void setPlayable(bool bNewValue);
 	void setLeader(int iLeader, bool bNewValue);
 	bool isOriginalLeader(int iLeader) const;
+	int getImpact() const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2391,6 +2392,7 @@ protected:
 
 	int m_iStartingYear; // Leoreth
 	int m_iPaganReligion; // Leoreth
+	int m_iImpact; // Leoreth
 
 	bool m_bAIPlayable;
 	bool m_bPlayable;

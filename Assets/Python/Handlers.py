@@ -15,6 +15,7 @@ import ScreensHandler
 import AIWars
 import Barbs
 import Civics
+import Collapse
 import Communications
 import Companies
 import Congresses
@@ -27,6 +28,7 @@ import Periods
 import Plague
 import Religions
 import Resources
+import Resurrection
 import Rise
 import Rules
 import Shortcuts

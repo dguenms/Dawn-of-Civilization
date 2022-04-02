@@ -1,0 +1,86 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Bart Muzzin (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- GlobalTypes Schema -->
+<Schema xmlns="urn:schemas-microsoft-com:xml-data" xmlns:dt="urn:schemas-microsoft-com:datatypes">
+	<ElementType name="ImprovementType" content="textOnly"/>
+	<ElementType name="ImprovementTypes" content="eltOnly">
+		<element type="ImprovementType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="BuildType" content="textOnly"/>
+	<ElementType name="BuildTypes" content="eltOnly">
+		<element type="BuildType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="AnimationOperatorType" content="textOnly"/>
+	<ElementType name="AnimationOperatorTypes" content="eltOnly">
+		<element type="AnimationOperatorType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FunctionType" content="textOnly"/>
+	<ElementType name="FunctionTypes" content="eltOnly">
+		<element type="FunctionType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FlavorType" content="textOnly"/>
+	<ElementType name="FlavorTypes" content="eltOnly">
+		<element type="FlavorType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ArtStyleType" content="textOnly"/>
+	<ElementType name="ArtStyleTypes" content="eltOnly">
+		<element type="ArtStyleType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="CitySizeType" content="textOnly"/>
+	<ElementType name="CitySizeTypes" content="eltOnly">
+		<element type="CitySizeType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ContactType" content="textOnly"/>
+	<ElementType name="ContactTypes" content="eltOnly">
+		<element type="ContactType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="DiplomacyPowerType" content="textOnly"/>
+	<ElementType name="DiplomacyPowerTypes" content="eltOnly">
+		<element type="DiplomacyPowerType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="AutomateType" content="textOnly"/>
+	<ElementType name="AutomateTypes" content="eltOnly">
+		<element type="AutomateType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="DirectionType" content="textOnly"/>
+	<ElementType name="DirectionTypes" content="eltOnly">
+		<element type="DirectionType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FootstepAudioType" content="textOnly"/>
+	<ElementType name="FootstepAudioTypes" content="eltOnly">
+		<element type="FootstepAudioType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FootstepAudioTagString" content="textOnly"/>
+	<ElementType name="FootstepAudioTag" content="eltOnly">
+		<element type="FootstepAudioType" minOccurs="1"/>
+		<element type="FootstepAudioTagString" minOccurs="1"/>
+	</ElementType>
+	<ElementType name="FootstepAudioTags" content="eltOnly">
+		<element type="FootstepAudioTag" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="InterfaceVisibilityType" content="textOnly"/>
+	<ElementType name="InterfaceVisibilityTypes" content="eltOnly">
+		<element type="InterfaceVisibilityType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImpactType" content="textOnly"/>
+	<ElementType name="ImpactTypes" content="eltOnly">
+		<element type="ImpactType" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="Civ4Types" content="eltOnly">
+		<element type="AnimationOperatorTypes"/>
+		<element type="FunctionTypes"/>
+		<element type="FlavorTypes"/>
+		<element type="ArtStyleTypes"/>
+		<element type="CitySizeTypes"/>
+		<element type="ContactTypes"/>
+		<element type="DiplomacyPowerTypes"/>
+		<element type="AutomateTypes"/>
+		<element type="DirectionTypes"/>
+		<element type="FootstepAudioTypes"/>
+		<element type="FootstepAudioTags"/>
+		<element type="InterfaceVisibilityTypes"/>
+		<element type="ImpactTypes"/>
+	</ElementType>
+</Schema>

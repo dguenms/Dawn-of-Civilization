@@ -1,7 +1,7 @@
 from Core import *
 from unittest import *
 
-from Slots import addPlayer
+from Slots import findSlot, addPlayer
 
 import cPickle as pickle
 
@@ -13,9 +13,9 @@ def setup():
 	global bSetupComplete
 	if bSetupComplete:
 		return
-
-	addPlayer(iChina, bAlive=True)
-	addPlayer(iIndia, bAlive=True)
+		
+	addPlayer(7, iChina, bAlive=True)	
+	addPlayer(8, iIndia, bAlive=True)
 	
 	data.dSlots[iChina] = 7
 	data.dSlots[iIndia] = 8

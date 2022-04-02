@@ -1,6 +1,6 @@
 from Resources import setupScenarioResources
 from DynamicCivs import checkName
-from Slots import addPlayer
+from Slots import findSlot, addPlayer
 
 from Core import *
 from RFCUtils import *
@@ -316,7 +316,8 @@ class Scenario(object):
 			if game.getActiveCivilizationType() == iCiv:
 				continue
 			
-			addPlayer(iCiv, bAlive=True, bMinor=not civ.isPlayable())
+			iPlayer = findSlot(iCiv)
+			addPlayer(iPlayer, iCiv, bAlive=True, bMinor=not civ.isPlayable())
 	
 		events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
 		events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)

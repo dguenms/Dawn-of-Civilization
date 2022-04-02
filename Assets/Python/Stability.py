@@ -1,24 +1,23 @@
 from Core import *
 from RFCUtils import *
-from Locations import *
 from Civics import *
+from Resurrection import *
+from Secession import *
+from Collapse import *
 
-from Popups import popup
-from Slots import findSlot, updateCivilization
+from Slots import findSlot
 from Events import handler, events
 
 from operator import itemgetter
 from datetime import date
 
-import DynamicCivs as dc
 import Periods as periods
+import Logging as log
+
 import BugPath
 
 import math
 
-
-# globals
-gc = CyGlobalContext()
 
 tCrisisLevels = (
 "TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL",
@@ -45,17 +44,6 @@ tEraAdministrationModifier = (
 	350, # modern
 	400, # future
 )
-
-
-@handler("BeginGameTurn")
-def checkScheduledCollapse():
-	for iPlayer in players.major():
-		if data.players[iPlayer].iTurnsToCollapse == 0:
-			if player(iPlayer).isAlive():
-				completeCollapse(iPlayer)
-			data.players[iPlayer].iTurnsToCollapse = -1
-		elif data.players[iPlayer].iTurnsToCollapse > 0:
-			data.players[iPlayer].iTurnsToCollapse -= 1
 
 
 @handler("BeginGameTurn")
@@ -139,10 +127,6 @@ def triggerCrisis(iPlayer):
 			return
 
 	scheduleCollapse(iPlayer)
-
-
-def scheduleCollapse(iPlayer):
-	data.players[iPlayer].iTurnsToCollapse = 1
 
 @handler("cityAcquired")
 def onCityAcquired(iOwner, iPlayer, city, bConquest):
@@ -228,32 +212,18 @@ def onCombatResult(winningUnit, losingUnit):
 
 @handler("releasedCivilization")
 def onReleasedPlayer(iPlayer, iReleasedCivilization):
-	iReleasedPlayer = findSlot(iReleasedCivilization)
-	if iReleasedPlayer == -1:
-		return
-	
+	# TODO: core(iCiv) does this work if the civ has no player yet?
 	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
 
-	doResurrection(iReleasedPlayer, iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
+	doResurrection(iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
 	
-	player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
+	if slot(iReleasedCivilization) >= 0:
+		player(iReleasedCivilization).AI_changeAttitudeExtra(iPlayer, 2)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in players.civs(dNeighbours[iPlayer]):
 		if player(iOlderNeighbor).isAlive() and stability(iOlderNeighbor) > iStabilityShaky:
 			decrementStability(iOlderNeighbor)
-	
-def setStabilityLevel(iPlayer, iStabilityLevel):
-	if stability(iPlayer) == iStabilityLevel:
-		return
-
-	data.setStabilityLevel(iPlayer, iStabilityLevel)
-	
-	if iStabilityLevel >= iStabilityShaky:
-		data.players[iPlayer].bDomesticCrisis = False
-	
-	if iStabilityLevel == iStabilityCollapsing:
-		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSING_WARNING', color=iRed)
 	
 def incrementStability(iPlayer):
 	setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
@@ -427,232 +397,6 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	for iLoopPlayer in players.major():
 		if team(iLoopPlayer).isVassal(iPlayer):
 			checkStability(iLoopPlayer, bPositive, iPlayer)
-		
-def getPossibleMinors(iPlayer):
-	lPossibleMinors = [iIndependent, iIndependent2]
-
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
-		lPossibleMinors = [iNative]
-		
-	if gc.getGame().getCurrentEra() <= iMedieval:
-		lPossibleMinors = [iBarbarian, iIndependent, iIndependent2]
-		
-	return players.civs(*lPossibleMinors)
-	
-def secession(iPlayer, secedingCities):
-	data.setSecedingCities(iPlayer, secedingCities)
-
-def canBeRazed(city):	
-	if city.isHolyCity():
-		return False
-
-	# always raze Harappan cities, except holy city
-	if civ(city) == iHarappa and not player(city).isHuman():
-		return True
-	
-	if city.getPopulation() >= 10:
-		return False
-	
-	if city.getCultureLevel() >= 3:
-		return False
-		
-	if city.isCapital():
-		return False
-	
-	if city.at(*tJerusalem):
-		return False
-	
-	closest = closestCity(city, city.getOwner(), same_continent=True)
-	if closest and distance(city, closest) <= 2:
-		if city.getCultureLevel() <= closest.getCultureLevel() and city.getPopulation() < closest.getPopulation():
-			return True
-	
-	return False
-
-def getCityClaim(city):
-	iOwner = city.getOwner()
-	possibleClaims = players.major().alive().without(iOwner).before_fall()
-	
-	# claim based on core territory
-	coreClaims = possibleClaims.where(lambda p: city.isPlayerCore(p))
-	if coreClaims:
-		return civ(coreClaims.maximum(lambda p: plot(city).getPlayerSettlerValue(p)))
-	
-	# claim based on original owner, unless lost a long time ago
-	iOriginalOwner = possibleClaims.ai().where(city.isOriginalOwner).first()
-	if iOriginalOwner is not None:
-		if plot(city).getPlayerSettlerValue(iOriginalOwner) >= 90:
-			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
-				return civ(iOriginalOwner)
-	
-	# claim based on culture
-	iTotalCulture = plot(city).countTotalCulture()
-	cultureClaims = possibleClaims.ai().where(lambda p: iTotalCulture > 0 and 100 * plot(city).getCulture(p) / iTotalCulture >= 75)
-	if cultureClaims:
-		iCultureClaim = cultureClaims.maximum(lambda p: plot(city).getCulture(p))
-		return civ(iCultureClaim)
-	
-	# claim based on war targets: needs to be winning the war based on war success, not available to human player
-	closest = closestCity(city, same_continent=True)
-	warClaims = possibleClaims.without(active()).where(lambda p: team(p).isAtWar(team(iOwner).getID()) and player(p).getWarValue(*location(city)) >= 8 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
-	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
-	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
-	if warClaims:
-		iWarClaim = warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
-		return civ(iWarClaim)
-	
-	# claim for dead civilisation that can be resurrected
-	resurrections = civs.major().before_fall().without(iOwner).where(canRespawn).where(lambda c: city in cities.respawn(c))
-	if resurrections:
-		return resurrections.maximum(lambda c: (city.isCore(c), plot(city).getSettlerValue(c)))
-	
-	return -1
-
-def getAdditionalResurrectionCities(iCiv, secedingCities):
-	return [city for city in getResurrectionCities(iCiv, True) if city not in secedingCities]
-
-def canResurrectFromCities(iCiv, resurrectionCities):
-	# cannot resurrect without cities
-	if not resurrectionCities:
-		return False
-
-	# only one city is not sufficient for resurrection, unless there is only one city available
-	if len(resurrectionCities) <= 1 and len(resurrectionCities) < cities.respawn(iCiv).count():
-		return False
-
-	# at least one city needs to be in core for the resurrecting civ
-	if none(city.isCore(iCiv) for city in resurrectionCities):
-		return False
-	
-	return True
-
-def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
-	iNumCities = player(iPlayer).getNumCities()
-	if iNumCities <= 0:
-		return
-
-	iCiv = civ(iPlayer)
-	bComplete = len(secedingCities) == player(iPlayer).getNumCities()
-	iArmyPercent = 100 - 100 * len(secedingCities) / iNumCities
-	
-	if not secedingCities:
-		return
-	
-	if bComplete:
-		clearPlague(iPlayer)
-	
-	# if smaller cities are supposed to be destroyed, do that first
-	destroyedCities, cededCities = secedingCities.split(lambda city: bRazeMinorCities and canBeRazed(city))
-	
-	for city in destroyedCities:
-		player(iBarbarian).disband(city)
-		plot(city).setCulture(iPlayer, 0, True)
-	
-	# determine who has the best claim on each city
-	dClaimedCities = appenddict()
-	for city in cededCities:
-		iClaim = getCityClaim(city)
-		dClaimedCities[iClaim].append(city)
-		
-	lMinorCities = dClaimedCities.pop(-1, [])
-		
-	for iClaimant, claimedCities in dClaimedCities.items():
-		# assign cities to living civs
-		if player(iClaimant).isAlive():
-			for city in claimedCities:
-				iClaimantPlayer = slot(iClaimant)
-				secedeCity(city, iClaimantPlayer, not bComplete, iArmyPercent)
-		
-		# if sufficient for resurrection, resurrect civs
-		elif canResurrectFromCities(iClaimant, claimedCities):
-			additionalCities = getAdditionalResurrectionCities(iClaimant, secedingCities)
-			
-			iResurrectionPlayer = findSlot(iClaimant)
-			resurrectionFromCollapse(iResurrectionPlayer, iClaimant, claimedCities + additionalCities)
-		
-		# else cities go to minors
-		else:
-			lMinorCities.extend(claimedCities)
-	
-	# secede remaining cities to minors
-	lPossibleMinors = getPossibleMinors(iPlayer)
-	for iMinor, minorCities in cities.of(lMinorCities).divide(lPossibleMinors):
-		for city in minorCities:
-			secedeCity(city, iMinor, not bComplete, iArmyPercent)
-		
-	# notify for partial secessions
-	if not bComplete and player().canContact(iPlayer):
-		message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(secedingCities))
-	
-	# prevent collapsing downward spiral
-	balanceStability(iPlayer, iStabilityUnstable)
-		
-def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
-	if not city: return
-	
-	name = city.getName()
-	iOldOwner = city.getOwner()
-	tile = location(city)
-	
-	if player(iNewOwner).isMinorCiv():
-		for iPlayer in players.major().at_war(city):
-			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
-				team(iPlayer).declareWar(player(iNewOwner).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
-	
-	iNumDefenders = max(2, player(iNewOwner).getCurrentEra()-1)
-	lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
-	
-	if bRelocate:
-		relocateUnitsToCore(city.getOwner(), lRelocatedUnits, iArmyPercent)
-	else:
-		killUnits(lRelocatedUnits)
-	
-	completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
-	flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
-	
-	if is_minor(iNewOwner):
-		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', name, color=iRed)
-	else:
-		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER', name, adjective(iNewOwner), color=iRed)
-		
-	message(iNewOwner, 'TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US', name, color=iRed)
-	
-def completeCollapse(iPlayer):
-	# before cities are seceded, downgrade their cottages
-	downgradeCottages(iPlayer)
-	
-	# secede all cities, destroy close and less important ones
-	bRazeMinorCities = (player(iPlayer).getCurrentEra() <= iMedieval)
-	secedeCities(iPlayer, cities.owner(iPlayer), bRazeMinorCities)
-		
-	# take care of the remnants of the civ
-	player(iPlayer).killUnits()
-		
-	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
-	
-	events.fireEvent("collapse", iPlayer)
-		
-def collapseToCore(iPlayer):
-	nonCoreCities = cities.owner(iPlayer).where(lambda city: not city.isPlayerCore(iPlayer))
-	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) < 90)
-				
-	# more than half ahistorical, only secede ahistorical cities
-	if 2 * ahistoricalCities.count() > nonCoreCities.count():
-	
-		# notify owner
-		message(iPlayer, 'TXT_KEY_STABILITY_FOREIGN_SECESSION', color=iRed)
-				
-		# secede all foreign cities
-		secession(iPlayer, ahistoricalCities)
-		
-	# otherwise, secede all cities outside of core
-	elif nonCoreCities:
-	
-		# notify owner
-		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSE_TO_CORE', color=iRed)
-			
-		# secede all non-core cities
-		secession(iPlayer, nonCoreCities)
 
 def domesticCrisis(iPlayer):
 	data.players[iPlayer].bDomesticCrisis = True
@@ -670,22 +414,6 @@ def domesticCrisis(iPlayer):
 			city.changeOccupationTimer(iCrisisTurns)
 			
 		message(iPlayer, 'TXT_KEY_STABILITY_DOMESTIC_CRISIS', iCrisisTurns, color=iRed)
-		
-def downgradeCottages(iPlayer):
-	for plot in plots.all().owner(iPlayer):
-		iImprovement = plot.getImprovementType()
-		
-		if iImprovement == iTown: plot.setImprovementType(iHamlet)
-		elif iImprovement == iVillage: plot.setImprovementType(iCottage)
-		elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
-		elif iImprovement == iCottage: plot.setImprovementType(-1)
-		
-		# Destroy all Harappan improvements
-		if civ(iPlayer) == iHarappa and not player(iPlayer).isHuman():
-			if iImprovement >= 0:
-				plot.setImprovementType(-1)
-				
-	message(iPlayer, 'TXT_KEY_STABILITY_DOWNGRADE_COTTAGES', color=iRed)
 
 def calculateAdministration(city):
 	iPlayer = city.getOwner()
@@ -1473,339 +1201,9 @@ def isTolerated(iPlayer, iReligion):
 	if civ(iPlayer) == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
 	
 	return False
-
-@handler("BeginGameTurn")
-def checkResurrection():
-	if every(10):
-		iNationalismModifier = min(20, 4 * game.countKnownTechNumTeams(iNationalism))
-		possibleResurrections = civs.major().where(canRespawn).sort(lambda c: data.civs[c].iLastTurnAlive)
-		
-		# civs entirely controlled by minors will always respawn
-		for iCiv in possibleResurrections:
-			if cities.respawn(iCiv).all(lambda city: is_minor(city)):
-				resurrectionCities = getResurrectionCities(iCiv)
-				if canResurrectFromCities(iCiv, resurrectionCities):
-					iResurrectionPlayer = findSlot(iCiv)
-					doResurrection(iResurrectionPlayer, iCiv, resurrectionCities)
-					return
-					
-		# otherwise minimum amount of cities and random chance are required
-		for iCiv in possibleResurrections:
-			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iCiv]:
-				resurrectionCities = getResurrectionCities(iCiv)
-				if canResurrectFromCities(iCiv, resurrectionCities):
-					iResurrectionPlayer = findSlot(iCiv)
-					doResurrection(iResurrectionPlayer, iCiv, resurrectionCities)
-					return
-					
-def isPartOfResurrection(iCiv, city, bOnlyOne):
-	iOwner = city.getOwner()
-	
-	# for humans: not for recently conquered cities to avoid annoying reflips
-	if iOwner == active() and city.getGameTurnAcquired() > turn() - turns(5):
-		return False
-		
-	# barbarian and minor cities always flip
-	if is_minor(iOwner):
-		return True
-		
-	# not if their core but not our core
-	if city.isPlayerCore(iOwner) and not city.isCore(iCiv):
-		return False
-		
-	iOwnerStability = stability(iOwner)
-	bCapital = city.atPlot(plots.respawnCapital(iCiv))
-	
-	# flips are less likely before Nationalism
-	if game.countKnownTechNumTeams(iNationalism) == 0:
-		iOwnerStability += 1
-	
-	# flips are more likely between AIs to make the world more dynami
-	# TODO: maybe restore this during autoplay?
-	#if not player(iOwner).isHuman() and not player(iPlayer).isHuman():
-	#	iOwnerStability -= 1
-	
-	# if unstable or worse, all cities flip
-	if iOwnerStability <= iStabilityUnstable:
-		return True
-	
-	# if shaky, only the prospective capital, colonies or core cities that are not our core flip
-	if iOwnerStability <= iStabilityShaky:
-		if bCapital or (city.isCore(iCiv) and not city.isPlayerCore(iOwner)) or city.isColony():
-			return True
-	
-	# if stable, only the prospective capital flips
-	if iOwnerStability <= iStabilityStable:
-		if bCapital and not bOnlyOne:
-			return True
-			
-	return False
-						
-def getResurrectionCities(iCiv, bFromCollapse=False):
-	potentialCities = cities.respawn(iCiv)
-	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iCiv, city, len(potentialCities) == 1))
-
-	# if capital exists and not part of the resurrection, it fails, unless from collapse
-	capital = cities.respawnCapital(iCiv)
-	if not bFromCollapse and capital and capital not in resurrectionCities:
-		return []
-		
-	# if existing cities sufficient for resurrection and close to including all potential cities, include the rest as well, unless from collapse
-	if not bFromCollapse and canResurrectFromCities(iCiv, resurrectionCities):
-		if resurrectionCities.count() + 2 >= potentialCities.count() and resurrectionCities.count() * 2 >= potentialCities.count():
-			resurrectionCities += potentialCities.where(lambda city: not city.isOwnerCore())
-			resurrectionCities = resurrectionCities.unique()
-		
-	# let civs keep at least two cities
-	for iOwner in resurrectionCities.owners():
-		iNumCities = cities.owner(iOwner).count()
-		iNumFlippedCities = resurrectionCities.owner(iOwner).count()
-		if iNumCities - iNumFlippedCities < 2:
-			retainedCities = resurrectionCities.owner(iOwner).highest(2 - (iNumCities - iNumFlippedCities), lambda city: (city.isCapital(), city.plot().getPlayerSettlerValue(iOwner)))
-			resurrectionCities = resurrectionCities.without(retainedCities)
-	
-	return resurrectionCities.entities()
-	
-def resurrectionFromCollapse(iPlayer, iCiv, lCityList):
-	debug('Resurrection: %s', name(iPlayer))
-			
-	if lCityList:
-		doResurrection(iPlayer, iCiv, lCityList, bAskFlip=False)
-	
-def doResurrection(iPlayer, iCiv, lCityList, bAskFlip=True, bDisplay=False):
-	updateCivilization(iPlayer, iCiv)
-
-	resurrectionCities = cities.of(lCityList)
-	pPlayer = player(iPlayer)
-	teamPlayer = team(iPlayer)
-	iCiv = civ(iPlayer)
-	
-	pPlayer.setAlive(True)
-
-	for iOtherPlayer in players.major().without(iPlayer):
-		teamPlayer.makePeace(iOtherPlayer)
-		
-		if teamPlayer.isVassal(iOtherPlayer):
-			team(iOtherPlayer).freeVassal(iPlayer)
-			
-		if team(iOtherPlayer).isVassal(iPlayer):
-			teamPlayer.freeVassal(iOtherPlayer)
-		
-	data.players[iPlayer].iNumPreviousCities = 0
-	
-	pPlayer.AI_reset()
-	
-	# reset player espionage weight
-	player().setEspionageSpendingWeightAgainstTeam(pPlayer.getTeam(), 0)
-			
-	# assign technologies
-	lTechs = getResurrectionTechs(iPlayer)
-	for iTech in lTechs:
-		teamPlayer.setHasTech(iTech, True, iPlayer, False, False)
-		
-	# determine army size
-	iNumCities = resurrectionCities.count()
-	iGarrison = 2
-	iArmySize = pPlayer.getCurrentEra()
-	
-	pPlayer.setLastBirthTurn(turn())
-		
-	# add former colonies that are still free
-	for city in players.minor().alive().cities().where(lambda city: city.isOriginalOwner(iPlayer)):
-		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
-			if city not in resurrectionCities:
-				resurrectionCities = resurrectionCities.including(city)
-
-	lOwners = []
-	dRelocatedUnits = appenddict()
-	
-	# determine prevalent religion in the resurrection area
-	iNewStateReligion = getPrevalentReligion(plots.of(resurrectionCities))
-	
-	for city in resurrectionCities:
-		iOwner = city.getOwner()
-		pOwner = player(iOwner)
-		
-		x = city.getX()
-		y = city.getY()
-		
-		bCapital = city.isCapital()
-		
-		iNumDefenders = max(2, player(iPlayer).getCurrentEra()-1)
-		lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
-		dRelocatedUnits[iOwner].extend(lRelocatedUnits)
-		
-		iCultureChange = is_minor(iOwner) and 100 or 75
-		completeCityFlip(city, iPlayer, iOwner, iCultureChange, False, True, True)
-		flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
-			
-		newCity = city_(x, y)
-		
-		# Leoreth: rebuild some city infrastructure
-		for iBuilding in range(iNumBuildings):
-			if pPlayer.canConstruct(iBuilding, True, False, False) and newCity.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not isGreatBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
-				newCity.setHasRealBuilding(iBuilding, True)
-			
-		if bCapital and not is_minor(iOwner):
-			relocateCapital(iOwner, cities.capital(iOwner))
-			
-		if iOwner not in lOwners:
-			lOwners.append(iOwner)
-			
-	for iOwner in dRelocatedUnits:
-		if not is_minor(iOwner):
-			relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
-		else:
-			killUnits(dRelocatedUnits[iOwner])
-			
-	for iOwner in lOwners:
-		teamOwner = team(iOwner)
-		bOwnerHumanVassal = teamOwner.isVassal(active())
-	
-		if not player(iOwner).isHuman() and iOwner != iPlayer and not player(iOwner).isBarbarian():
-			if chance(dWarOnFlipProbability[iOwner]) and not bOwnerHumanVassal:
-				teamOwner.declareWar(iPlayer, False, -1)
-			else:
-				teamOwner.makePeace(iPlayer)
-			
-	relocateCapital(iPlayer, cities.respawnCapital(iPlayer))
-	
-	# give the new civ a starting army
-	capital = pPlayer.getCapitalCity()
-	
-	dStartingUnits = {
-		iAttack: 2 * iArmySize + iNumCities,
-		iShock: iArmySize,
-		iCounter: iArmySize,
-		iSiege: iArmySize + iNumCities,
-	}
-	createRoleUnits(iPlayer, capital, dStartingUnits.items())
-	
-	# set state religion based on religions in the area
-	if iNewStateReligion >= 0:
-		pPlayer.setLastStateReligion(iNewStateReligion)
-	
-	switchCivics(iPlayer)
-		
-	message(active(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen, force=True)
-	
-	if bAskFlip and active() in lOwners:
-		rebellionPopup(iPlayer)
-		
-	setStabilityLevel(iPlayer, iStabilityStable)
-	
-	data.players[iPlayer].iPlagueCountdown = -10
-	clearPlague(iPlayer)
-	convertBackCulture(iPlayer)
-	
-	# resurrection leaders
-	if iCiv in dResurrectionLeaders:
-		if pPlayer.getLeader() != dResurrectionLeaders[iCiv]:
-			pPlayer.setLeader(dResurrectionLeaders[iCiv])
-	
-	if bDisplay:
-		plot(capital).cameraLookAt()
-	
-	events.fireEvent("resurrection", iPlayer)
-	
-def getResurrectionTechs(iPlayer):
-	pPlayer = player(iPlayer)
-	lTechList = []
-	lSourcePlayers = []
-	
-	# same tech group
-	for lTechGroup in dTechGroups.values():
-		if civ(iPlayer) in lTechGroup:
-			for iPeer in lTechGroup:
-				if civ(iPlayer) != iPeer and player(iPeer).isAlive():
-					lSourcePlayers.append(iPeer)
-			
-	# direct neighbors (India can benefit from England etc)
-	for iPeer in players.major().alive().without(iPlayer).without(lSourcePlayers):
-		if game.isNeighbors(iPlayer, iPeer):
-			lSourcePlayers.append(iPeer)
-				
-	# use independents as source civs in case no other can be found
-	if not lSourcePlayers:
-		lSourcePlayers += players.independent().entities()
-		
-	for iTech in range(iNumTechs):
-			
-		# at least half of the source civs know this technology
-		iCount = 0
-		for iOtherPlayer in lSourcePlayers:
-			if team(iOtherPlayer).isHasTech(iTech):
-				iCount += 1
-				
-		if 2 * iCount >= len(lSourcePlayers):
-			lTechList.append(iTech)
-			
-	return lTechList
-
-def convertBackCulture(iPlayer):
-	for plot in plots.respawn(iPlayer):
-		city = city_(plot)
-		if city:
-			if city.getOwner() == iPlayer:
-				iCulture = 0
-				for iMinor in players.minor():
-					iCulture += city.getCulture(iMinor)
-					city.setCulture(iMinor, 0, True)
-				city.changeCulture(iPlayer, iCulture, True)
-		elif plot.isCityRadius() and plot.getOwner() == iPlayer:
-			iCulture = 0
-			for iMinor in players.minor():
-				iCulture += plot.getCulture(iMinor)
-				plot.setCulture(iMinor, 0, True)
-			plot.changeCulture(iPlayer, iCulture, True)
-		
-def switchCivics(iPlayer):
-	pPlayer = player(iPlayer)
-
-	for iCategory in range(iNumCivicCategories):
-		iBestCivic = pPlayer.AI_bestCivic(iCategory)
-		
-		if iBestCivic >= 0:
-			pPlayer.setCivics(iCategory, iBestCivic)
-			
-	pPlayer.setRevolutionTimer(gc.getDefineINT("MIN_REVOLUTION_TURNS"))
-
-
-def makePeace(iRebelCiv):
-	team().makePeace(iRebelCiv)
-	
-def declareWar(iRebelCiv):
-	team().declareWar(iRebelCiv, False, -1)
-
-rebellion_popup = popup.text("TXT_KEY_REBELLION_TEXT").option(makePeace, "TXT_KEY_POPUP_YES", button='Art/Interface/Buttons/Actions/Join.dds').option(declareWar, "TXT_KEY_POPUP_NO", button='Art/Interface/Buttons/Actions/Fortify.dds').build()
-
-def rebellionPopup(iRebelCiv):
-	rebellion_popup.text(adjective(iRebelCiv)).makePeace().declareWar().launch(iRebelCiv)
 	
 def getAdministrationModifier(iEra):
 	return tEraAdministrationModifier[iEra]
-	
-def balanceStability(iPlayer, iNewStabilityLevel):
-	debug("Balance stability: %s", name(iPlayer))
-
-	playerData = data.players[iPlayer]
-	
-	# set stability to at least the specified level
-	setStabilityLevel(iPlayer, max(iNewStabilityLevel, stability(iPlayer)))
-
-	# prevent collapse if they were going to
-	playerData.iTurnsToCollapse = -1
-	
-	# update number of cities so vassals survive losing cities
-	playerData.iNumPreviousCities = player(iPlayer).getNumCities()
-	
-	# reset previous commerce
-	playerData.iPreviousCommerce = 0
-	
-	# reset war, economy and happiness trends to give them a breather
-	playerData.resetEconomyTrend()
-	playerData.resetHappinessTrend()
-	playerData.resetWarTrends()
 	
 def isDecline(iPlayer):
 	return not player(iPlayer).isHuman() and year() >= year(dFall[iPlayer])

@@ -572,6 +572,7 @@ def initName(iPlayer):
 	if not is_minor(iPlayer):
 		setDesc(iPlayer, peoplesName(iPlayer))
 		checkName(iPlayer)
+		checkLeader(iPlayer)
 
 @handler("rebirth")
 def onRebirth(iPlayer):

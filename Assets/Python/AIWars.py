@@ -1,20 +1,11 @@
-# Rhye's and Fall of Civilization - AI Wars
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers	# LOQ
-import Popup
-from Consts import *
-from RFCUtils import *
-from StoredData import data # edead
-import Stability as sta
-from Events import handler
-
 from Core import *
+from RFCUtils import *
+
+from Events import handler
+from Resurrection import getResurrectionTechs
 
 
 ### Constants ###
-
 
 iMinIntervalEarly = 10
 iMaxIntervalEarly = 20
@@ -226,7 +217,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 	iCiv = civ(iPlayer)
 	
 	if not player(iPlayer).isAlive():
-		for iTech in sta.getResurrectionTechs(iPlayer):
+		for iTech in getResurrectionTechs(iPlayer):
 			team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
 
 	targetPlots = plots.rectangle(tTL, tBR)

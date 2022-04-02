@@ -4,8 +4,8 @@ from CvPythonExtensions import *
 from Locations import *
 from RFCUtils import *
 
-from Scenario import addPlayer
 from Events import events, handler, popup_handler
+from Slots import addPlayer
 
 from CvScreenEnums import *
 
@@ -89,10 +89,8 @@ def startObserverMode(iTurns):
 	iObserverSlot = slot(iObserverCiv)
 	
 	if iObserverSlot < 0:
-		print "add new player for observer mode"
-		iObserverSlot = addPlayer(iObserverCiv)
-	
-	print "start observer mode in slot %d" % iObserverSlot
+		iObserverSlot = findSlot(iObserverCiv)
+		addPlayer(iObserverSlot, iObserverCiv)
 	
 	makeUnit(iObserverSlot, iCatapult, (0, 0))
 	

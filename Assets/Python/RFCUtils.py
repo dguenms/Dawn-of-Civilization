@@ -764,6 +764,7 @@ def exclusive(iCiv, *civs):
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
 def canRespawn(iCiv):
+	# only civs that have ever spawned can respawn
 	if not data.civs[iCiv].bSpawned:
 		return False
 	
@@ -1126,3 +1127,19 @@ def getImprovementBuild(iImprovement):
 		return getImprovementBuild(iPredecessor)
 	
 	return next(iBuild for iBuild in infos.builds() if infos.build(iBuild).getImprovement() == iImprovement)
+
+def getImpact(iCiv):
+	if civ() == iCiv:
+		return iImpactHuman
+	
+	return infos.civ(iCiv).getImpact()
+
+def getNextBirth():
+	lUpcomingCivs = [iCiv for iCiv, iYear in dBirth.items() if turn() < year(iYear) - turns(5)]
+	return find_min(lUpcomingCivs, dBirth.__getitem__).result
+
+def getActiveSlots():
+	return count(1 for iSlot in range(iNumPlayers) if player(iSlot).isAlive() or player(iSlot).isHuman())
+
+def allSlotsTaken():
+	return getActiveSlots() >= iNumPlayers-1
