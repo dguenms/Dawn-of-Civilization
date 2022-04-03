@@ -521,8 +521,6 @@ class Birth(object):
 				interface.selectUnit(settler, True, False, False)
 	
 	def prepareCapital(self):
-		"""Maybe preserve wonders in erased cities?"""
-		
 		if plot_(self.location).isCity():
 			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100, bFlipUnits=True)
 		
@@ -621,7 +619,7 @@ class Birth(object):
 				return False
 			elif player(iGreece).isAlive():
 				return False
-			elif player(iRome).isHuman() and stability(slot(iRome)) == iStabilitySolid:
+			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
 		# Italy requires Rome to be dead
@@ -637,8 +635,12 @@ class Birth(object):
 		# Thailand requires Khmer to be shaky or worse (unstable if Khmer is human)
 		if self.iCiv == iThailand:
 			iRequiredStability = player(iKhmer).isHuman() and iStabilityShaky or iStabilityStable
-			if stability(slot(iKhmer)) >= iRequiredStability:
+			if stability(iKhmer) >= iRequiredStability:
 				return False
+				
+		# further checks skipped if impact is critical or better
+		if getImpact(self.iCiv) >= iImpactCritical:
+			return True
 	
 		# independence civs require the player controlling the most cities in their area to be stable or worse
 		if self.isIndependence():

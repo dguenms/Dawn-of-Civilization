@@ -540,8 +540,9 @@ def eventpopup(id, title, message, labels=[]):
 	popup.launch(not labels)
 
 
-def stability(iPlayer):
-	return data.players[iPlayer].iStabilityLevel
+# TODO: test civ
+def stability(identifier):
+	return data.players[identifier].iStabilityLevel
 
 
 def has_civic(identifier, iCivic):
