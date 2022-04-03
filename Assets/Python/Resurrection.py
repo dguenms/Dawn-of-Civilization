@@ -1,8 +1,8 @@
 from Core import *
 from RFCUtils import *
+from Slots import *
 
 from Popups import popup
-from Slots import findSlot, updateCivilization, getActiveSlots
 from Events import events, handler
 
 
