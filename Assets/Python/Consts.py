@@ -1055,7 +1055,7 @@ iPeriodAustria, iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly,
 iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
 
 iNumImpacts = 5
-(iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactHuman) = range(iNumImpacts)
+(iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
 
 dTradingCompanyPlots = CivDict({
 iVikings : [],

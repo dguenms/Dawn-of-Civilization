@@ -277,6 +277,6 @@
 		<ImpactType>IMPACT_LIMITED</ImpactType>
 		<ImpactType>IMPACT_SIGNIFICANT</ImpactType>
 		<ImpactType>IMPACT_CRITICAL</ImpactType>
-		<ImpactType>IMPACT_HUMAN</ImpactType>
+		<ImpactType>IMPACT_PLAYER</ImpactType>
 	</ImpactTypes>
 </Civ4Types>

@@ -58,18 +58,17 @@ def updateCivilization(iPlayer, iCiv):
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
 
-def getImpact(iCiv, iHumanCiv=None):
-	if iHumanCiv is None:
-		iHumanCiv = civ()
+def getImpact(iCiv):
+	iActiveCiv = civ()
 
-	if iHumanCiv == iCiv:
-		return iImpactHuman
+	if iActiveCiv == iCiv:
+		return iImpactPlayer
 	
-	if iCiv in dNeighbours[iHumanCiv]:
-		return iImpactHuman
+	if iCiv in dNeighbours[iActiveCiv]:
+		return iImpactPlayer
 	
-	if iCiv in dInfluences[iHumanCiv]:
-		return iImpactHuman
+	if iCiv in dInfluences[iActiveCiv]:
+		return iImpactPlayer
 	
 	return infos.civ(iCiv).getImpact()
 
