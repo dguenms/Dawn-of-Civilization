@@ -772,7 +772,7 @@ class TestPlayers(TestCase):
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_barbarian(self):
-		expected_players = [0, 1, 2, 49]
+		expected_players = [0, 1, 2, 32]
 		actual_players = self.players.barbarian()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
@@ -4872,6 +4872,51 @@ class TestCivilizations(TestCase):
 		
 		self.assertEqual(iEgypt in civs, True)
 		self.assertEqual(iBabylonia in civs, True)
+
+
+class TestSignature(TestCase):
+
+	def test_without_args(self):
+		def some_function():
+			pass
+		
+		self.assertEqual(signature(some_function), "some_function()")
+	
+	def test_with_args(self):
+		def some_function(arg1, arg2, arg3):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None), "some_function(1, 2, None)")
+	
+	def test_with_kwargs(self):
+		def some_function(arg1, arg2, arg3):
+			pass
+		
+		self.assertEqual(signature(some_function, arg1=1, arg2="2", arg3=None), "some_function(arg1=1, arg2=2, arg3=None)")
+	
+	def test_with_default_kwargs(self):
+		def some_function(arg1=1, arg2="2", arg3=None):
+			pass
+		
+		self.assertEqual(signature(some_function), "some_function()")
+	
+	def test_with_generic_args(self):
+		def some_function(*args):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None), "some_function(1, 2, None)")
+	
+	def test_with_generic_kwargs(self):
+		def some_function(**kwargs):
+			pass
+		
+		self.assertEqual(signature(some_function, arg1=1, arg2="2", arg3=None), "some_function(arg1=1, arg2=2, arg3=None)")
+	
+	def test_combined(self):
+		def some_function(*args, **kwargs):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None, arg4=4, arg5="5", arg6=None), "some_function(1, 2, None, arg4=4, arg5=5, arg6=None)")
 	
 
 test_cases = [
@@ -4947,6 +4992,7 @@ test_cases = [
 	TestDictMax,
 	TestCivFactory,
 	TestCivilizations,
+	TestSignature
 ]
 
 

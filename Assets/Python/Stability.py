@@ -212,8 +212,7 @@ def onCombatResult(winningUnit, losingUnit):
 
 @handler("releasedCivilization")
 def onReleasedPlayer(iPlayer, iReleasedCivilization):
-	# TODO: core(iCiv) does this work if the civ has no player yet?
-	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
+	releasedCities = cities.owner(iPlayer).core(Civ(iReleasedCivilization)).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
 
 	doResurrection(iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
 	

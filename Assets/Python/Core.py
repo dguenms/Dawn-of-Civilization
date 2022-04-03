@@ -359,7 +359,6 @@ def birthRectangle(identifier, extended = None):
 	return dBirthArea[identifier]
 	
 	
-# TODO: test
 def signature(func, *args, **kwargs):
 	formatted_args = [str(arg) for arg in args]
 	formatted_kwargs = ["%s=%s" % (key, value) for key, value in kwargs.items()]
@@ -399,8 +398,14 @@ def format_separators_shared(list, separator, last_separator, format=lambda x: x
 def format_separators(list, separator, last_separator, format=lambda x: x):
 	separator = separator.rstrip() + ' '
 	last_separator = last_separator.rstrip() + ' '
+	
+	def ascii_format(item):
+		formatted = format(item)
+		if isinstance(formatted, str):
+			return formatted.encode("ascii", "xmlcharrefreplace")
+		return str(formatted)
 
-	formatted_list = [format(x).encode("ascii", "xmlcharrefreplace") for x in list]
+	formatted_list = [ascii_format(item) for item in list]
 
 	if len(formatted_list) > 1:
 		return last_separator.join([separator.join(formatted_list[:-1]), formatted_list[-1]])
@@ -540,7 +545,6 @@ def eventpopup(id, title, message, labels=[]):
 	popup.launch(not labels)
 
 
-# TODO: test civ
 def stability(identifier):
 	return data.players[identifier].iStabilityLevel
 
