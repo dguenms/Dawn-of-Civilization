@@ -220,11 +220,6 @@ def onReleasedPlayer(iPlayer, iReleasedCivilization):
 	if slot(iReleasedCivilization) >= 0:
 		player(iReleasedCivilization).AI_changeAttitudeExtra(iPlayer, 2)
 	
-def onCivSpawn(iPlayer):
-	for iOlderNeighbor in players.civs(dNeighbours[iPlayer]):
-		if player(iOlderNeighbor).isAlive() and stability(iOlderNeighbor) > iStabilityShaky:
-			decrementStability(iOlderNeighbor)
-	
 def incrementStability(iPlayer):
 	setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
 	

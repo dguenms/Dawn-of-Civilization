@@ -273,6 +273,47 @@ lNeighbours = [
 	(iMexico, iColombia),
 ]
 
+lInfluences = [
+	(iEgypt, iEngland),
+	(iBabylonia, iRome),
+	(iBabylonia, iArabia),
+	(iIndia, iEngland),
+	(iPhoenicia, iByzantium),
+	(iPhoenicia, iTurks),
+	(iPhoenicia, iIran),
+	(iPersia, iArabia),
+	(iRome, iOttomans),
+	(iMaya, iSpain),
+	(iTamils, iEngland),
+	(iTamils, iNetherlands),
+	(iArabia, iBabylonia),
+	(iArabia, iGreece),
+	(iArabia, iPersia),
+	(iIndonesia, iJapan),
+	(iSpain, iArabia),
+	(iSpain, iOttomans),
+	(iKhmer, iJapan),
+	(iHolyRome, iOttomans),
+	(iInca, iSpain),
+	(iItaly, iOttomans),
+	(iAztecs, iSpain),
+	(iMughals, iEngland),
+	(iOttomans, iRome),
+	(iThailand, iJapan),
+	(iCongo, iPortugal),
+	(iNetherlands, iSpain),
+	(iAmerica, iEngland),
+	(iAmerica, iFrance),
+	(iAmerica, iNetherlands),
+	(iArgentina, iSpain),
+	(iMexico, iSpain),
+	(iMexico, iFrance),
+	(iColombia, iSpain),
+	(iBrazil, iPortugal),
+	(iCanada, iFrance),
+	(iCanada, iEngland),
+]
+
 dBirth = CivDict({
 iEgypt : -3000,
 iBabylonia : -3000,
@@ -426,8 +467,10 @@ iMexico : iAztecs,
 lSlotOrder = [iCiv for iCiv in lCivOrder if iCiv not in dRebirthCiv]
 
 # Leoreth: determine neighbour lists from pairwise neighbours for easier lookup
-dNeighbours = CivDict(dict((iCiv, list(set([iLeft for iLeft, iRight in lNeighbours if iRight == iCiv] + [iRight for iLeft, iRight in lNeighbours if iLeft == iCiv]))) for iCiv in dBirth), [])
+dNeighbours = dictFromEdges(lBirthCivs, lNeighbours)
 
+# Leoreth: determine influence lists from pairwise influences for easier lookup
+dInfluences = dictFromEdges(lBirthCivs, lInfluences)
 
 dResurrections = CivDict({
 iEgypt : [(900, 1300), (1800, 2020)],

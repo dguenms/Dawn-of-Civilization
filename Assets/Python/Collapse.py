@@ -2,6 +2,7 @@ from Core import *
 from RFCUtils import *
 from Secession import *
 
+from Slots import getImpact, getNextBirth, allSlotsTaken
 from Events import events, handler
 
 

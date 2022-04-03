@@ -17,6 +17,15 @@ class Timer(object):
 	
 	def elapsed(self):
 		return datetime.now() - self.start
+		
+
+def time(func):
+	def timed_func(*args, **kwargs):
+		timer = Timer()
+		func(*args)
+		print "Time to run %s: %s" % (signature(func, *args, **kwargs), timer.elapsed())
+	
+	return timed_func
 
 
 @handler("GameStart")

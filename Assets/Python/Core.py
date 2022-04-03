@@ -357,13 +357,18 @@ def birthRectangle(identifier, extended = None):
 	if identifier in dExtendedBirthArea and extended:
 		return dExtendedBirthArea[identifier]
 	return dBirthArea[identifier]
+	
+	
+# TODO: test
+def signature(func, *args, **kwargs):
+	formatted_args = [str(arg) for arg in args]
+	formatted_kwargs = ["%s=%s" % (key, value) for key, value in kwargs.items()]
+	return "%s(%s)" % (func.__name__, ", ".join(formatted_args + formatted_kwargs))
 
 
 def log(func):
 	def logged_func(*args, **kwargs):
-		combined = [str(arg) for arg in args]
-		combined += ["%s=%s" % (key, value) for key, value in kwargs.items()]
-		print "Begin %s(%s)" % (func.__name__, ", ".join(combined))
+		print "Begin %s" % signature(func, *args, **kwargs)
 		result = func(*args, **kwargs)
 		print "Complete %s" % func.__name__
 		return result

@@ -1,5 +1,28 @@
 from Core import *
 
+from SettlerMaps import getMap as getSettlerMap
+from WarMaps import getMap as getWarMap
+from Logging import time
+
+
+@time
+def determineTargets():
+	dTargets = CivDict({}, [])
+
+	dSettlerMaps = dict((iCiv, getSettlerMap(iCiv)) for iCiv in dBirth)
+	dWarMaps = dict((iCiv, getWarMap(iCiv)) for iCiv in dBirth)
+	
+	def isTarget(iCiv, plot):
+		return dSettlerMaps[iCiv][location(plot)] >= 90 or dWarMaps[iCiv][location(plot)] >= 6
+	
+	for iHumanCiv in dBirth:
+		corePlots = plots.core(iHumanCiv)
+		for iCiv in dBirth:
+			if iHumanCiv != iCiv and iCiv not in dNeighbours[iHumanCiv] and corePlots.where(lambda p: isTarget(iCiv, p)).count() * 2 >= corePlots.count():
+				dTargets[iHumanCiv].append(iCiv)
+	
+	for iHumanCiv in lBirthOrder:
+		print "%s is targeted by %s" % (infos.civ(iHumanCiv).getShortDescription(0), ", ".join(infos.civ(iCiv).getShortDescription(0) for iCiv in dTargets[iHumanCiv]))
 
 def findSlot(iCiv):
 	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == iCiv)
@@ -34,3 +57,28 @@ def updateCivilization(iPlayer, iCiv):
 	
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
+
+def getImpact(iCiv, iHumanCiv=None):
+	if iHumanCiv is None:
+		iHumanCiv = civ()
+
+	if iHumanCiv == iCiv:
+		return iImpactHuman
+	
+	if iCiv in dNeighbours[iHumanCiv]:
+		return iImpactHuman
+	
+	if iCiv in dInfluences[iHumanCiv]:
+		return iImpactHuman
+	
+	return infos.civ(iCiv).getImpact()
+
+def getNextBirth():
+	lUpcomingCivs = [iCiv for iCiv, iYear in dBirth.items() if turn() < year(iYear) - turns(5)]
+	return find_min(lUpcomingCivs, dBirth.__getitem__).result
+
+def getActiveSlots():
+	return count(1 for iSlot in range(iNumPlayers) if player(iSlot).isAlive() or player(iSlot).isHuman())
+
+def allSlotsTaken():
+	return getActiveSlots() >= iNumPlayers-1
