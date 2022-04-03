@@ -27,7 +27,7 @@ def checkResurrection():
 			return
 	
 		iNationalismModifier = min(20, 4 * game.countKnownTechNumTeams(iNationalism))
-		possibleResurrections = civs.major().where(canRespawn).sort(lambda c: data.civs[c].iLastTurnAlive)
+		possibleResurrections = civs.major().where(canRespawn).sort(lambda c: (-getImpact(c), data.civs[c].iLastTurnAlive))
 		
 		# civs entirely controlled by minors will always respawn
 		for iCiv in possibleResurrections:
