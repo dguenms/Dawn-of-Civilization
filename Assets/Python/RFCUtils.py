@@ -1120,3 +1120,7 @@ def endObserverMode():
 			data.iBeforeObserverSlot = -1
 		else:
 			makeUnit(active(), iCatapult, (0, 0))
+
+# used: Congresses
+def isIsland(tile):
+	return plot(tile).area().getNumTiles() == 1

@@ -648,7 +648,8 @@ class Congress:
 		
 		completeCityFlip(assignedCity, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
-		iNumDefenders = player(iPlayer).isHuman() and 2 or max(2, player(iPlayer).getCurrentEra()-1)
+		bLimitedDefenders = player(iPlayer).isHuman() or isIsland(assignedCity)
+		iNumDefenders = bLimitedDefenders and 2 or max(2, player(iPlayer).getCurrentEra()-1)
 		createRoleUnit(iPlayer, (x, y), iDefend, iNumDefenders)
 		
 	def foundColony(self, iPlayer, (x, y)):
