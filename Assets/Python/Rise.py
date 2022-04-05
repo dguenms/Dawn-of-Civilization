@@ -729,6 +729,9 @@ class Birth(object):
 		if self.player.isHuman():
 			iTurns = 10
 		
+		if game.getCurrentEra() >= iRenaissance:
+			iTurns = 10
+		
 		# Mali receives a shorter protection window if the player is Moors, to help with their UHV
 		elif self.iCiv == iMali and civ() == iMoors:
 			iTurns = 10
