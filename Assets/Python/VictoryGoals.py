@@ -2427,8 +2427,12 @@ class Count(BaseGoal):
 		def checkBuildingBuilt(self, city, iBuilding):
 			if at(city, self.arguments.subject(self.iPlayer)) and iBuilding in self.values:
 				self.check()
+		
+		def checkExpiration(self, city, iBuilding):
+			if isWonder(iBuilding) and iBuilding in self.values:
+				self.expire()
 	
-		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).subclass("CityBuilding")
+		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).expired("buildingBuilt", checkExpiration).subclass("CityBuilding")
 
 	@classproperty
 	def differentSpecialist(cls):

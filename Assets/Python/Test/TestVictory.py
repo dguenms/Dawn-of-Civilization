@@ -5179,6 +5179,54 @@ class TestCountGoals(ExtendedTestCase):
 		
 		self.assertEqual(goal.progress(), [[u"%c (No City)" % self.FAILURE_CHAR]])
 	
+	def testCityBuildingExpiredWonder(self):
+		goal = Count.cityBuilding(city(61, 31), iPyramids).activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		_city.setHasRealBuilding(iPyramids, True)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			events.fireEvent("buildingBuilt", _city, iPyramids)
+			
+			self.assertEqual(goal.state, FAILURE)
+		finally:
+			_city.kill()
+	
+	def testCityBuildingNotExpiredBuilding(self):
+		goal = Count.cityBuilding(city(61, 31), iGranary).activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		_city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			events.fireEvent("buildingBuilt", _city, iGranary)
+			
+			self.assertEqual(goal.state, POSSIBLE)
+		finally:
+			_city.kill()
+	
+	def testCityBuildingExpiredMultiple(self):
+		goal = Count.cityBuilding(city(61, 31), iPyramids, iGranary).activate(0)
+		
+		_city = player(1).initCity(61, 31)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			_city.setHasRealBuilding(iGranary, True)
+			events.fireEvent("buildingBuilt", _city, iGranary)
+			self.assertEqual(goal.state, POSSIBLE)
+			
+			_city.setHasRealBuilding(iPyramids, True)
+			events.fireEvent("buildingBuilt", _city, iPyramids)
+			self.assertEqual(goal.state, FAILURE)
+		finally:
+			_city.kill()
+	
 	def testDifferentSpecialist(self):
 		goal = Count.differentSpecialist(city(61, 31), 2).activate(0)
 		
