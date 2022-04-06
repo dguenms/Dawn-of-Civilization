@@ -335,11 +335,11 @@ class CvHallOfFameScreen:
 	def isReplayWinner(self, replay):
 		szWinText = localText.getText("TXT_KEY_GAME_WON", ("(.*)", "(.*)"))
 		reWinText = re.compile(szWinText)
-		leaderGroup = 1
+		civGroup = 1
 		typeGroup = 2
-		leader = replay.getLeaderName()
+		civ = replay.getShortCivDescription()
 		msgNum = replay.getNumReplayMessages() - 1
-		BugUtil.debug("scanning replay for %s with %d msgs", leader, msgNum + 1)
+		BugUtil.debug("scanning replay for %s with %d msgs", civ, msgNum + 1)
 		count = 0
 		while msgNum >= 0:
 			msg = replay.getReplayMessageText(msgNum)
@@ -349,10 +349,10 @@ class CvHallOfFameScreen:
 			matches = reWinText.match(msg)
 			if matches:
 				type = matches.group(typeGroup)
-				if leader in matches.group(leaderGroup).split('/'):
-					BugUtil.info("replay: %s win for %s", type, leader)
+				if civ in matches.group(civGroup).split('/'):
+					BugUtil.info("replay: %s win for %s", type, civ)
 					return True, type
-				BugUtil.info("replay: %s loss for %s", type, leader)
+				BugUtil.info("replay: %s loss for %s", type, civ)
 				return False, type
 			msgNum -= 1
 		return False, localText.getText("TXT_KEY_NONE", ())
