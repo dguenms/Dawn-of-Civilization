@@ -761,9 +761,15 @@ class Birth(object):
 		self.iExpansionTurns = turns(30)
 	
 	def checkExpansion(self):
+		if not self.player.isAlive():
+			return
+		
+		if self.player.getNumCities() == 0:
+			return
+		
 		if self.iExpansionTurns < 0:
 			return
-	
+			
 		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer)
 		expansionCities = expansionPlots.cities()
 		
