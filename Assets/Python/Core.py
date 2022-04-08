@@ -272,6 +272,11 @@ def capital(identifier):
 
 def barbarian():
 	return gc.getBARBARIAN_PLAYER()
+	
+	
+def called_from():
+	previous_line = extract_stack()[-3]
+	return 'File "%s", line %d, in %s' % (previous_line[0], previous_line[1], previous_line[2])
 
 
 def stacktrace():
