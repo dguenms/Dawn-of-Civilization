@@ -2790,7 +2790,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HALF_NO_RELIGION</Tag>
-		<English>never allow more than half of your cities to have a religion</English>
+		<English>allow no more than half of your cities to have a religion</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
