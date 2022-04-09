@@ -1577,11 +1577,11 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 				{
 					if (GET_TEAM((TeamTypes)iI).isVassal(eTeam) || GET_TEAM(eTeam).isVassal((TeamTypes)iI))
 					{
-						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam));
+						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam), bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 					else if (GET_TEAM((TeamTypes)iI).isVassal(getID()) || isVassal((TeamTypes)iI))
 					{
-						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE);
+						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE, bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 				}
 			}
