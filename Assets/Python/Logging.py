@@ -28,26 +28,26 @@ def time(func):
 	return timed_func
 
 
-@handler("GameStart")
+#@handler("GameStart")
 def startTimer():
 	global TIMER
 	TIMER = Timer()
 
 
-@handler("OnLoad")
+#@handler("OnLoad")
 def restartTimer():
 	global TIMER
 	TIMER = Timer()
 	
 
-@handler("birth")
+#@handler("birth")
 def stopTimer(iPlayer):
 	message = """AUTOPLAY TIME UNTIL %s: %s
 	"""
 	rise(message, name(iPlayer).upper(), TIMER.elapsed())
 
 
-@handler("BeginGameTurn")
+#@handler("BeginGameTurn")
 def logSlotInfo():
 	current = players.all().alive()
 	past_fall = current.where(lambda p: turn() >= year(dFall[p]))
