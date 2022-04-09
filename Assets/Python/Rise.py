@@ -694,7 +694,7 @@ class Birth(object):
 		# independence civs require all players controlling cities in their area to be stable or worse
 		if self.isIndependence():
 			birthCities = plots.birth(self.iCiv).cities()
-			if players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: birthCities.owner(p).any()).all(lambda p: stability(p) >= iStabilitySolid):
+			if players.major().where(lambda p: civ(p) != self.iCiv).where(lambda p: birthCities.owner(p).any()).all_if_any(lambda p: stability(p) >= iStabilitySolid):
 				return False
 		
 		return True
