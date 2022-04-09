@@ -445,12 +445,13 @@ def getCityClaim(city):
 	if coreClaims:
 		return coreClaims.maximum(lambda p: plot(city).getSettlerValue(p))
 	
-	# claim based on original owner, unless lost a long time ago
+	# claim based on original owner, unless lost a long time ago or past fall date
 	iOriginalOwner = city.getOriginalOwner()
 	if iOriginalOwner in possibleClaims.ai():
 		if plot(city).getSettlerValue(iOriginalOwner) >= 90:
-			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
-				return iOriginalOwner
+			if since(dFall[iOriginalOwner]) < 0:
+				if since(city.getGameTurnPlayerLost(iOriginalOwner)) < turns(50):
+					return iOriginalOwner
 	
 	# claim based on culture
 	iTotalCulture = plot(city).countTotalCulture()
