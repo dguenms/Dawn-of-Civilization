@@ -250,13 +250,6 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		message(iOwner, 'TXT_KEY_UP_CONQUESTS_TARGET', name(iPlayer))
 		
 	for city in targetCities:
-		if city is None or city.isNone():
-			for plot in plots.rectangle(tTL, tBR):
-				if plot.isCity():
-					print "plot %s is city and city(plot) is %s and plot.getPlotCity() is %s" % (location(plot), city_(plot), plot.getPlotCity())
-			print "targetCities: %s" % targetCities
-			raise Exception("target city %s is None" % (city,))
-	
 		iExtra = 0
 		if active() not in [iPlayer, city.getOwner()]: 
 			iExtra += 1
