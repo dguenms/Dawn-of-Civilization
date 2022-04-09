@@ -2142,7 +2142,7 @@ class Count(BaseGoal):
 		
 	@classproperty
 	def improvement(cls):
-		return cls.desc("IMPROVEMENT_COUNT").objective(CvImprovementInfo).player(CyPlayer.getImprovementCount).subclass("ImprovementCount")
+		return cls.desc("IMPROVEMENT_COUNT").objective(CvImprovementInfo).player(CyPlayer.getImprovementCount).turnly.subclass("ImprovementCount")
 	
 	@classproperty
 	def population(cls):
