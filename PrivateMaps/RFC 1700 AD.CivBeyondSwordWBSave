@@ -44872,9 +44872,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=45, (China)
-	EndUnit
 	BeginCity
 		CityOwner=45, (China)
 		CityName=Lasa
@@ -50178,9 +50175,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=45, (China)
-	EndUnit
 	BeginCity
 		CityOwner=45, (China)
 		CityName=Qiqihar

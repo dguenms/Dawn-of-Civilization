@@ -13,14 +13,14 @@ def initScenario():
 	adjustCityCulture()
 	
 	updateGreatWall()
+	
+	initScenarioTechs()
 		
 	foundCapitals()
 	flipStartingTerritory()
 	
 	adjustReligionFoundingDates()
 	initStartingReligions()
-	
-	initScenarioTechs()
 	
 	createStartingUnits()
 	
@@ -175,6 +175,9 @@ def flipStartingTerritory():
 		tManchuriaTL = (105, 51)
 		tManchuriaBR = (109, 55)
 		startingFlip(slot(iChina), [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
+		
+		ensureDefenders(slot(iChina), tLhasa, 1)
+		ensureDefenders(slot(iChina), tQiqihar, 1)
 		
 		# Russia (Sankt Peterburg)
 		convertPlotCulture(plot(68, 58), slot(iRussia), 100, True)
