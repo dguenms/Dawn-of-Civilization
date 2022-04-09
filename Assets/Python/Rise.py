@@ -770,7 +770,7 @@ class Birth(object):
 		if self.iExpansionTurns < 0:
 			return
 			
-		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer)
+		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer and p.isRevealed(self.player.getTeam()))
 		expansionCities = expansionPlots.cities()
 		
 		if expansionCities.owner(self.iPlayer).any(lambda city: since(city.getGameTurnAcquired()) <= 1):
@@ -787,7 +787,7 @@ class Birth(object):
 			return
 		
 		if not self.isHuman() and expansionCities:
-			targets = expansionCities.owners().without(self.iPlayer)
+			targets = expansionCities.owners().without(self.iPlayer).where(self.player.canContact)
 			minors, majors = targets.split(is_minor)
 		
 			for iMinor in minors.where(lambda p: not self.team.isAtWar(p)):
