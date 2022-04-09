@@ -32,6 +32,12 @@ def time(func):
 def startTimer():
 	global TIMER
 	TIMER = Timer()
+
+
+@handler("OnLoad")
+def restartTimer():
+	global TIMER
+	TIMER = Timer()
 	
 
 @handler("birth")
