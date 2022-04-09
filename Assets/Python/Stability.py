@@ -67,7 +67,7 @@ def decayPenalties():
 			data.iHumanRazePenalty += 2
 		for iPlayer in players.major():
 			if data.players[iPlayer].iBarbarianLosses > 0:
-				data.players[iPlayer].iBarbarianLosses -= 1
+				data.players[iPlayer].iBarbarianLosses -= 1 + data.players[iPlayer].iBarbarianLosses / 5
 
 
 @handler("BeginGameTurn")
@@ -1138,7 +1138,7 @@ def calculateStability(iPlayer):
 	iMilitaryStability = iWarSuccessStability + iWarWearinessStability
 	
 	# apply barbarian losses
-	iBarbarianLossesStability = -data.players[iPlayer].iBarbarianLosses
+	iBarbarianLossesStability = -min(10, data.players[iPlayer].iBarbarianLosses)
 	
 	lParameters[iParameterBarbarianLosses] = iBarbarianLossesStability
 	
