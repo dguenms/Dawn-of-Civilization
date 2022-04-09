@@ -835,7 +835,8 @@ def calculateStability(iPlayer):
 	iExpansionStability += iRecentExpansionStability
 	
 	# apply raze city penalty
-	iRazeCityStability = data.iHumanRazePenalty
+	if pPlayer.isHuman():
+		iRazeCityStability = data.iHumanRazePenalty
 	
 	lParameters[iParameterRazedCities] = iRazeCityStability
 		
