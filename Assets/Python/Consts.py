@@ -310,6 +310,7 @@ lInfluences = [
 	(iMexico, iFrance),
 	(iColombia, iSpain),
 	(iBrazil, iPortugal),
+	(iBrazil, iCongo),
 	(iCanada, iFrance),
 	(iCanada, iEngland),
 ]
