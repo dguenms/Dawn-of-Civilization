@@ -1,6 +1,7 @@
 from Resources import setupScenarioResources
 from DynamicCivs import checkName
 from Slots import findSlot, addPlayer
+from Events import reset_victory_handlers
 
 from Core import *
 from RFCUtils import *
@@ -310,6 +311,8 @@ class Scenario(object):
 				infos.civ(iCiv).setLeader(iLeader, infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in after)
 	
 	def init(self):
+		reset_victory_handlers()
+	
 		for civ in self.lCivilizations:
 			iCiv = civ.iCiv
 			

@@ -107,11 +107,6 @@ def wonderBuiltOnBuildingBuilt(city, iBuilding):
 		events.fireEvent("wonderBuilt", city, iBuilding)
 
 
-@handler("GameStart")
-def resetVictoryHandlersOnGameStart():
-	reset_victory_handlers()
-
-
 @handler("PythonReloaded")
 def resetVictoryHandlersOnPythonReloaded():
 	reset_victory_handlers()
