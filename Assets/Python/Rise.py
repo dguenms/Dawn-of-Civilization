@@ -770,7 +770,7 @@ class Birth(object):
 		if self.iExpansionTurns < 0:
 			return
 			
-		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer and p.isRevealed(self.player.getTeam()))
+		expansionPlots = plots.all().where(lambda p: p.getExpansion() == self.iPlayer and p.isRevealed(self.player.getTeam(), False))
 		expansionCities = expansionPlots.cities()
 		
 		if expansionCities.owner(self.iPlayer).any(lambda city: since(city.getGameTurnAcquired()) <= 1):
