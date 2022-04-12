@@ -42,15 +42,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("AI_isWillingToTalk", &CyPlayer::AI_isWillingToTalk, "bool (int /*PlayerTypes*/)")
 // BUG - Refuses to Talk - end
 
-		.def("getScoreHistory", &CyPlayer::getScoreHistory, "int (int iTurn)")
-		.def("getEconomyHistory", &CyPlayer::getEconomyHistory, "int (int iTurn)")
-		.def("getIndustryHistory", &CyPlayer::getIndustryHistory, "int (int iTurn)")
-		.def("getAgricultureHistory", &CyPlayer::getAgricultureHistory, "int (int iTurn)")
-		.def("getPowerHistory", &CyPlayer::getPowerHistory, "int (int iTurn)")
-		.def("getCultureHistory", &CyPlayer::getCultureHistory, "int (int iTurn)")
-		.def("getEspionageHistory", &CyPlayer::getEspionageHistory, "int (int iTurn)")
-		.def("getTechHistory", &CyPlayer::getTechHistory, "int (int iTurn)") // Leoreth
-
 		.def("getScriptData", &CyPlayer::getScriptData, "str () - Get stored custom data (via pickle)")
 		.def("setScriptData", &CyPlayer::setScriptData, "void (str) - Set stored custom data (via pickle)")
 
@@ -145,5 +136,16 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setMinorCiv", &CyPlayer::setMinorCiv, "void (bool bNewValue)")
 		.def("verifyAlive", &CyPlayer::verifyAlive, "void ()")
 		.def("getReligionPopulation", &CyPlayer::getReligionPopulation, "int (int iReligion)")
+
+		.def("getScoreHistory", &CyPlayer::getScoreHistory, "int (int iTurn)")
+		.def("getEconomyHistory", &CyPlayer::getEconomyHistory, "int (int iTurn)")
+		.def("getIndustryHistory", &CyPlayer::getIndustryHistory, "int (int iTurn)")
+		.def("getAgricultureHistory", &CyPlayer::getAgricultureHistory, "int (int iTurn)")
+		.def("getPowerHistory", &CyPlayer::getPowerHistory, "int (int iTurn)")
+		.def("getCultureHistory", &CyPlayer::getCultureHistory, "int (int iTurn)")
+		.def("getEspionageHistory", &CyPlayer::getEspionageHistory, "int (int iTurn)")
+		.def("getTechnologyHistory", &CyPlayer::getTechnologyHistory, "int (int iTurn)")
+		.def("getPopulationHistory", &CyPlayer::getPopulationHistory, "int (int iTurn)")
+		.def("getLandHistory", &CyPlayer::getLandHistory, "int (int iTurn)")
 		;
 }

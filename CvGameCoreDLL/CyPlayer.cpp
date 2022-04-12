@@ -2272,48 +2272,6 @@ bool CyPlayer::AI_isWillingToTalk(int /*PlayerTypes*/ ePlayer)
 }
 // BUG - Refuses to Talk - end
 
-
-int CyPlayer::getScoreHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getScoreHistory(iTurn) : 0);
-}
-
-int CyPlayer::getEconomyHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getEconomyHistory(iTurn) : 0);
-}
-
-int CyPlayer::getIndustryHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getIndustryHistory(iTurn) : 0);
-}
-
-int CyPlayer::getAgricultureHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getAgricultureHistory(iTurn) : 0);
-}
-
-int CyPlayer::getPowerHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getPowerHistory(iTurn) : 0);
-}
-
-int CyPlayer::getCultureHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getCultureHistory(iTurn) : 0);
-}
-
-int CyPlayer::getEspionageHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getEspionageHistory(iTurn) : 0);
-}
-
-// Leoreth
-int CyPlayer::getTechHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getTechHistory(iTurn) : 0);
-}
-
 std::string CyPlayer::getScriptData() const
 {
 	return m_pPlayer ? m_pPlayer->getScriptData() : "";
@@ -2761,4 +2719,54 @@ void CyPlayer::verifyAlive()
 int CyPlayer::getReligionPopulation(int iReligion)
 {
 	return m_pPlayer ? m_pPlayer->getReligionPopulation((ReligionTypes)iReligion) : -1;
+}
+
+int CyPlayer::getScoreHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getScoreHistory(iTurn) : -1;
+}
+
+int CyPlayer::getEconomyHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getEconomyHistory(iTurn) : -1;
+}
+
+int CyPlayer::getIndustryHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getIndustryHistory(iTurn) : -1;
+}
+
+int CyPlayer::getAgricultureHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getAgricultureHistory(iTurn) : -1;
+}
+
+int CyPlayer::getPowerHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getPowerHistory(iTurn) : -1;
+}
+
+int CyPlayer::getCultureHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getCultureHistory(iTurn) : -1;
+}
+
+int CyPlayer::getEspionageHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getEspionageHistory(iTurn) : -1;
+}
+
+int CyPlayer::getTechnologyHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getTechnologyHistory(iTurn) : -1;
+}
+
+int CyPlayer::getPopulationHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getPopulationHistory(iTurn) : -1;
+}
+
+int CyPlayer::getLandHistory(int iTurn)
+{
+	return m_pPlayer ? m_pPlayer->getLandHistory(iTurn) : -1;
 }

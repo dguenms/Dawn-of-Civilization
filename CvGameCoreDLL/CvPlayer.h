@@ -1068,24 +1068,7 @@ public:
 	DllExport void showSpaceShip();
 	DllExport void clearSpaceShipPopups();
 
-	int getScoreHistory(int iTurn) const;																								// Exposed to Python
-	void updateScoreHistory(int iTurn, int iBestScore);
-
-	int getEconomyHistory(int iTurn) const;																							// Exposed to Python
-	void updateEconomyHistory(int iTurn, int iBestEconomy);
-	int getIndustryHistory(int iTurn) const;																						// Exposed to Python
-	void updateIndustryHistory(int iTurn, int iBestIndustry);
-	int getAgricultureHistory(int iTurn) const;																					// Exposed to Python
-	void updateAgricultureHistory(int iTurn, int iBestAgriculture);
-	int getPowerHistory(int iTurn) const;																								// Exposed to Python
-	void updatePowerHistory(int iTurn, int iBestPower);
-	int getCultureHistory(int iTurn) const;																							// Exposed to Python
-	void updateCultureHistory(int iTurn, int iBestCulture);
-	int getEspionageHistory(int iTurn) const;																							// Exposed to Python
-	void updateEspionageHistory(int iTurn, int iBestEspionage);
-
-	int getTechHistory(int iTurn) const;
-	void updateTechHistory(int iTurn, int iBestTech);
+	void updateHistory();
 
 	// Script data needs to be a narrow string for pickling in Python
 	std::string getScriptData() const;																									// Exposed to Python
@@ -1376,6 +1359,17 @@ public:
 
 	void setMinorCiv(bool bNewValue);
 
+	int getScoreHistory(int iTurn) const;
+	int getEconomyHistory(int iTurn) const;
+	int getIndustryHistory(int iTurn) const;
+	int getAgricultureHistory(int iTurn) const;
+	int getPowerHistory(int iTurn) const;
+	int getCultureHistory(int iTurn) const;
+	int getEspionageHistory(int iTurn) const;
+	int getTechnologyHistory(int iTurn) const;
+	int getPopulationHistory(int iTurn) const;
+	int getLandHistory(int iTurn) const;
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1664,21 +1658,13 @@ protected:
 	CvPopupQueue m_listPopups;
 	CvDiploQueue m_listDiplomacy;
 
-	CvTurnScoreMap m_mapScoreHistory;
-	CvTurnScoreMap m_mapEconomyHistory;
-	CvTurnScoreMap m_mapIndustryHistory;
-	CvTurnScoreMap m_mapAgricultureHistory;
-	CvTurnScoreMap m_mapPowerHistory;
-	CvTurnScoreMap m_mapCultureHistory;
-	CvTurnScoreMap m_mapEspionageHistory;
-
-	CvTurnScoreMap m_mapTechHistory;
-
 	void doGold();
 	void doResearch();
 	void doEspionagePoints();
 	void doWarnings();
 	void doEvents();
+
+	int getHistory(HistoryTypes eHistory, int iTurn) const;
 
 	bool checkExpireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData) const;
 	void expireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bFail);

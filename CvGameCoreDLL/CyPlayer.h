@@ -510,16 +510,6 @@ public:
 	bool AI_isWillingToTalk(int /*PlayerTypes*/ ePlayer);
 // BUG - Refuses to Talk - end
 
-	int getScoreHistory(int iTurn) const;
-	int getEconomyHistory(int iTurn) const;
-	int getIndustryHistory(int iTurn) const;
-	int getAgricultureHistory(int iTurn) const;
-	int getPowerHistory(int iTurn) const;
-	int getCultureHistory(int iTurn) const;
-	int getEspionageHistory(int iTurn) const;
-
-	int getTechHistory(int iTurn) const; // Leoreth
-
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
@@ -606,6 +596,17 @@ public:
 	void setMinorCiv(bool bNewValue);
 	void verifyAlive();
 	int getReligionPopulation(int iReligion);
+
+	int getScoreHistory(int iTurn);
+	int getEconomyHistory(int iTurn);
+	int getIndustryHistory(int iTurn);
+	int getAgricultureHistory(int iTurn);
+	int getPowerHistory(int iTurn);
+	int getCultureHistory(int iTurn);
+	int getEspionageHistory(int iTurn);
+	int getTechnologyHistory(int iTurn);
+	int getPopulationHistory(int iTurn);
+	int getLandHistory(int iTurn);
 
 private:
 	CvPlayer* m_pPlayer;

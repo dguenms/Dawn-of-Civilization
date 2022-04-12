@@ -329,6 +329,8 @@ public:
 	int getPeriod(int iCivilization);
 	void setPeriod(int iCivilization, int iPeriod);
 
+	int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn);
+
 protected:
 	CvGame* m_pGame;
 };

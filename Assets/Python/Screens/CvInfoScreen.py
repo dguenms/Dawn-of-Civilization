@@ -99,16 +99,21 @@ class CvInfoScreen:
 		self.iGraph_Smoothing_7in1 = -1
 		self.iGraph_Smoothing_3in1 = -1
 
-		self.TOTAL_SCORE	= 0
-		self.ECONOMY_SCORE	= 1
-		self.INDUSTRY_SCORE	= 2
-		self.AGRICULTURE_SCORE	= 3
-		self.POWER_SCORE	= 4
-		self.CULTURE_SCORE	= 5
-		self.ESPIONAGE_SCORE	= 6
-		self.TECH_SCORE		= 7
-		self.NUM_SCORES		= 8
+		self.NUM_SCORES		= 10
 		self.RANGE_SCORES	= range(self.NUM_SCORES)
+		
+		(
+			self.TOTAL_SCORE, 
+			self.ECONOMY_SCORE, 
+			self.INDUSTRY_SCORE, 
+			self.AGRICULTURE_SCORE, 
+			self.POWER_SCORE, 
+			self.CULTURE_SCORE, 
+			self.ESPIONAGE_SCORE, 
+			self.TECH_SCORE,
+			self.POPULATION_SCORE,
+			self.LAND_SCORE
+		) = self.RANGE_SCORES
 
 		self.scoreCache	= []
 		for t in self.RANGE_SCORES:
@@ -470,6 +475,8 @@ class CvInfoScreen:
 		sTemp1[5] = localText.getObjectText("TXT_KEY_COMMERCE_CULTURE", 0)
 		sTemp1[6] = localText.getObjectText("TXT_KEY_ESPIONAGE_CULTURE", 0)
 		sTemp1[7] = localText.getText("TXT_KEY_CONCEPT_TECHNOLOGY", ())
+		sTemp1[8] = localText.getText("TXT_KEY_DEMO_SCREEN_POPULATION_TEXT", ())
+		sTemp1[9] = localText.getText("TXT_KEY_DEMO_SCREEN_LAND_AREA_TEXT", ())
 
 		for i in range(self.NUM_SCORES):
 			sTemp2[i] = BugUtil.colorText(sTemp1[i], "COLOR_YELLOW")
@@ -758,6 +765,8 @@ class CvInfoScreen:
 #BUG - 3.17 No Espionage - end
 
 		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_TECH, 7, 7, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_POPULATION, 8, 8, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_LAND_AREA, 9, 9, False)
 
 #BUG: Change Graphs - start
 		if AdvisorOpt.isGraphs():
@@ -911,7 +920,11 @@ class CvInfoScreen:
 		elif (scoreType == self.ESPIONAGE_SCORE):
 			return gc.getPlayer(iPlayer).getEspionageHistory(iTurn)
 		elif (scoreType == self.TECH_SCORE):
-			return gc.getPlayer(iPlayer).getTechHistory(iTurn)
+			return gc.getPlayer(iPlayer).getTechnologyHistory(iTurn)
+		elif (scoreType == self.POPULATION_SCORE):
+			return gc.getPlayer(iPlayer).getPopulationHistory(iTurn)
+		elif (scoreType == self.LAND_SCORE):
+			return gc.getPlayer(iPlayer).getLandHistory(iTurn)
 
 	# Requires the cache to be built
 	def getHistory(self, scoreType, iPlayer, iRelTurn):
@@ -3073,6 +3086,12 @@ class CvInfoScreen:
 						
 					elif (iSelected == 7):
 						self.iGraphTabID = self.TECH_SCORE
+					
+					elif (iSelected == 8):
+						self.iGraphTabID = self.POPULATION_SCORE
+					
+					elif (iSelected == 9):
+						self.iGraphTabID = self.LAND_SCORE
 
 					self.drawGraphs()
 

@@ -3080,13 +3080,7 @@ void CvPlayer::doTurn()
 
 	doEvents();
 
-	updateEconomyHistory(GC.getGameINLINE().getGameTurn(), calculateTotalCommerce());
-	updateIndustryHistory(GC.getGameINLINE().getGameTurn(), calculateTotalYield(YIELD_PRODUCTION));
-	updateAgricultureHistory(GC.getGameINLINE().getGameTurn(), calculateTotalYield(YIELD_FOOD));
-	updatePowerHistory(GC.getGameINLINE().getGameTurn(), getPower());
-	updateCultureHistory(GC.getGameINLINE().getGameTurn(), countTotalCulture());
-	updateEspionageHistory(GC.getGameINLINE().getGameTurn(), GET_TEAM(getTeam()).getEspionagePointsEver());
-	updateTechHistory(GC.getGameINLINE().getGameTurn(), GET_TEAM(getTeam()).getTotalTechValue()); // Leoreth
+	updateHistory();
 	expireMessages();  // turn log
 
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -14939,124 +14933,19 @@ void CvPlayer::clearSpaceShipPopups()
 	}
 }
 
-int CvPlayer::getScoreHistory(int iTurn) const
+void CvPlayer::updateHistory()
 {
-	CvTurnScoreMap::const_iterator it = m_mapScoreHistory.find(iTurn);
-	if (it != m_mapScoreHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
+	int iTurn = GC.getGameINLINE().getGameTurn();
 
-void CvPlayer::updateScoreHistory(int iTurn, int iBestScore)
-{
-	m_mapScoreHistory[iTurn] = iBestScore;
-}
-
-int CvPlayer::getEconomyHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapEconomyHistory.find(iTurn);
-	if (it != m_mapEconomyHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateEconomyHistory(int iTurn, int iBestEconomy)
-{
-	m_mapEconomyHistory[iTurn] = iBestEconomy;
-}
-
-int CvPlayer::getIndustryHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapIndustryHistory.find(iTurn);
-	if (it != m_mapIndustryHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateIndustryHistory(int iTurn, int iBestIndustry)
-{
-	m_mapIndustryHistory[iTurn] = iBestIndustry;
-}
-
-int CvPlayer::getAgricultureHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapAgricultureHistory.find(iTurn);
-	if (it != m_mapAgricultureHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateAgricultureHistory(int iTurn, int iBestAgriculture)
-{
-	m_mapAgricultureHistory[iTurn] = iBestAgriculture;
-}
-
-int CvPlayer::getPowerHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapPowerHistory.find(iTurn);
-	if (it != m_mapPowerHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updatePowerHistory(int iTurn, int iBestPower)
-{
-	m_mapPowerHistory[iTurn] = iBestPower;
-}
-
-int CvPlayer::getCultureHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapCultureHistory.find(iTurn);
-	if (it != m_mapCultureHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateCultureHistory(int iTurn, int iBestCulture)
-{
-	m_mapCultureHistory[iTurn] = iBestCulture;
-}
-
-int CvPlayer::getEspionageHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapEspionageHistory.find(iTurn);
-	if (it != m_mapEspionageHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateEspionageHistory(int iTurn, int iBestEspionage)
-{
-	m_mapEspionageHistory[iTurn] = iBestEspionage;
-}
-
-int CvPlayer::getTechHistory(int iTurn) const
-{
-	CvTurnScoreMap::const_iterator it = m_mapTechHistory.find(iTurn);
-	if (it != m_mapTechHistory.end())
-	{
-		return it->second;
-	}
-	return 0;
-}
-
-void CvPlayer::updateTechHistory(int iTurn, int iBestTech)
-{
-	m_mapTechHistory[iTurn] = iBestTech;
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_ECONOMY, getCivilizationType(), iTurn, calculateTotalCommerce());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_INDUSTRY, getCivilizationType(), iTurn, calculateTotalYield(YIELD_PRODUCTION));
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_AGRICULTURE, getCivilizationType(), iTurn, calculateTotalYield(YIELD_FOOD));
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_POWER, getCivilizationType(), iTurn, getPower());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_CULTURE, getCivilizationType(), iTurn, countTotalCulture());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_ESPIONAGE, getCivilizationType(), iTurn, GET_TEAM(getTeam()).getEspionagePointsEver());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_TECHNOLOGY, getCivilizationType(), iTurn, GET_TEAM(getTeam()).getTotalTechValue());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_POPULATION, getCivilizationType(), iTurn, getTotalPopulation());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_LAND, getCivilizationType(), iTurn, getTotalLand());
 }
 
 std::string CvPlayer::getScriptData() const
@@ -18892,117 +18781,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	}
 
 	{
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapScoreHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapEconomyHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapEconomyHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapIndustryHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapIndustryHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapAgricultureHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapAgricultureHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapPowerHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapPowerHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapCultureHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapCultureHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapEspionageHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapEspionageHistory[iTurn] = iScore;
-		}
-	}
-
-	{
-		m_mapTechHistory.clear();
-		uint iSize;
-		pStream->Read(&iSize);
-		for (uint i = 0; i < iSize; i++)
-		{
-			int iTurn;
-			int iScore;
-			pStream->Read(&iTurn);
-			pStream->Read(&iScore);
-			m_mapTechHistory[iTurn] = iScore;
-		}
-	}
-
-	{
 		m_mapEventsOccured.clear();
 		uint iSize;
 		pStream->Read(&iSize);
@@ -19451,105 +19229,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 			{
 				pDiplo->write(*pStream);
 			}
-		}
-	}
-
-	/*{
-		StabilityList::_Alloc::size_type iSize = m_stabilityList.size();
-		pStream->Write(iSize);
-		StabilityList::iterator it;
-		for (it = m_stabilityList.begin(); it != m_stabilityList.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}*/
-
-	{
-		uint iSize = m_mapScoreHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapScoreHistory.begin(); it != m_mapScoreHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapEconomyHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapEconomyHistory.begin(); it != m_mapEconomyHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapIndustryHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapIndustryHistory.begin(); it != m_mapIndustryHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapAgricultureHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapAgricultureHistory.begin(); it != m_mapAgricultureHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapPowerHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapPowerHistory.begin(); it != m_mapPowerHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapCultureHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapCultureHistory.begin(); it != m_mapCultureHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapEspionageHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapEspionageHistory.begin(); it != m_mapEspionageHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
-		}
-	}
-
-	{
-		uint iSize = m_mapTechHistory.size();
-		pStream->Write(iSize);
-		CvTurnScoreMap::iterator it;
-		for (it = m_mapTechHistory.begin(); it != m_mapTechHistory.end(); ++it)
-		{
-			pStream->Write(it->first);
-			pStream->Write(it->second);
 		}
 	}
 
@@ -25854,4 +25533,62 @@ void CvPlayer::setBirthProtected(bool bNewValue)
 bool CvPlayer::isBirthProtected() const
 {
 	return m_bBirthProtected;
+}
+
+int CvPlayer::getHistory(HistoryTypes eHistory, int iTurn) const
+{
+	return GC.getGameINLINE().getCivilizationHistory(eHistory, getCivilizationType(), iTurn);
+}
+
+int CvPlayer::getScoreHistory(int iTurn) const
+{
+	int iValue = getHistory(HISTORY_SCORE, iTurn);
+	return iValue;
+}
+
+int CvPlayer::getEconomyHistory(int iTurn) const
+{
+	return getHistory(HISTORY_ECONOMY, iTurn);
+}
+
+int CvPlayer::getIndustryHistory(int iTurn) const
+{
+	return getHistory(HISTORY_INDUSTRY, iTurn);
+}
+
+int CvPlayer::getAgricultureHistory(int iTurn) const
+{
+	return getHistory(HISTORY_AGRICULTURE, iTurn);
+}
+
+int CvPlayer::getPowerHistory(int iTurn) const
+{
+	return getHistory(HISTORY_POWER, iTurn);
+}
+
+int CvPlayer::getCultureHistory(int iTurn) const
+{
+	int iValue = getHistory(HISTORY_CULTURE, iTurn);
+	return iValue;
+}
+
+int CvPlayer::getEspionageHistory(int iTurn) const
+{
+	return getHistory(HISTORY_ESPIONAGE, iTurn);
+}
+
+int CvPlayer::getTechnologyHistory(int iTurn) const
+{
+	return getHistory(HISTORY_TECHNOLOGY, iTurn);
+}
+
+int CvPlayer::getPopulationHistory(int iTurn) const
+{
+	return getHistory(HISTORY_POPULATION, iTurn);
+}
+
+int CvPlayer::getLandHistory(int iTurn) const
+{
+	int iValue = getHistory(HISTORY_LAND, iTurn);
+	return iValue;
 }

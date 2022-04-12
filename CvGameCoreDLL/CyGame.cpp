@@ -1360,3 +1360,8 @@ void CyGame::setPeriod(int iCivilization, int iPeriod)
 {
 	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
 }
+
+int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
+{
+	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
+}

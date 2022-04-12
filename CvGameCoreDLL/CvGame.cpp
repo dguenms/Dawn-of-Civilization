@@ -37,6 +37,7 @@
 
 #include "CvRhyes.h" //Rhye
 #include <algorithm>
+#include <cstdio>
 
 // Public Functions...
 
@@ -52,6 +53,7 @@ CvGame::CvGame()
 	// Leoreth
 	m_aiTechRankTeam = new int[MAX_TEAMS];
 	m_aiCivPeriod = new char[NUM_CIVS];
+	m_aiCivilizationHistory = new std::hash_map<int, std::hash_map<int, int> >[NUM_HISTORY_TYPES];
 
 	m_paiUnitCreatedCount = NULL;
 	m_paiUnitClassCreatedCount = NULL;
@@ -565,6 +567,11 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	for (iI = 0; iI < NUM_CIVS; iI++)
 	{
 		m_aiCivPeriod[iI] = NO_PERIOD;
+	}
+
+	for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
+	{
+		m_aiCivilizationHistory[iI].clear();
 	}
 
 	if (!bConstructorCall)
@@ -2357,7 +2364,7 @@ void CvGame::updateScore(bool bForce)
 		setRankPlayer(iI, eBestPlayer);
 		setPlayerRank(eBestPlayer, iI);
 		setPlayerScore(eBestPlayer, iBestScore);
-		GET_PLAYER(eBestPlayer).updateScoreHistory(getGameTurn(), iBestScore);
+		setCivilizationHistory(HISTORY_SCORE, GET_PLAYER(eBestPlayer).getCivilizationType(), getGameTurn(), iBestScore);
 	}
 
 	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
@@ -8896,6 +8903,34 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumBuildingInfos(), m_aiShrineReligion);
 	pStream->Read(&m_iNumCultureVictoryCities);
 	pStream->Read(&m_eCultureVictoryCultureLevel);
+
+	// Leoreth: read civ history entries
+	for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
+	{
+		m_aiCivilizationHistory[iI].clear();
+
+		int iNumHistoryEntries;
+		pStream->Read(&iNumHistoryEntries);
+
+		for (int iJ = 0; iJ < iNumHistoryEntries; iJ++)
+		{
+			int iCivilization;
+			pStream->Read(&iCivilization);
+
+			int iNumCivilizationEntries;
+			pStream->Read(&iNumCivilizationEntries);
+
+			for (int iK = 0; iK < iNumCivilizationEntries; iK++)
+			{
+				int iTurn;
+				int iValue;
+				pStream->Read(&iTurn);
+				pStream->Read(&iValue);
+
+				setCivilizationHistory((HistoryTypes)iI, (CivilizationTypes)iCivilization, iTurn, iValue);
+			}
+		}
+	}
 }
 
 
@@ -9061,6 +9096,32 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBuildingInfos(), m_aiShrineReligion);
 	pStream->Write(m_iNumCultureVictoryCities);
 	pStream->Write(m_eCultureVictoryCultureLevel);
+
+	// Leoreth: civ history graph
+	for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
+	{
+		hash_map<int, hash_map<int, int> > history = m_aiCivilizationHistory[iI];
+		
+		int iNumHistoryEntries = history.size();
+		pStream->Write(iNumHistoryEntries);
+
+		hash_map<int, hash_map<int, int> >::iterator historyIt;
+		for (historyIt = history.begin(); historyIt != history.end(); historyIt++)
+		{
+			hash_map<int, int> entries = historyIt->second;
+
+			int iNumCivilizationEntries = entries.size();
+			pStream->Write(historyIt->first);
+			pStream->Write(iNumCivilizationEntries);
+
+			hash_map<int, int>::iterator entriesIt;
+			for (entriesIt = entries.begin(); entriesIt != entries.end(); entriesIt++)
+			{
+				pStream->Write(entriesIt->first);
+				pStream->Write(entriesIt->second);
+			}
+		}
+	}
 }
 
 void CvGame::writeReplay(FDataStreamBase& stream, PlayerTypes ePlayer)
@@ -10647,4 +10708,40 @@ PeriodTypes CvGame::getPeriod(CivilizationTypes eCivilization) const
 void CvGame::setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod)
 {
 	m_aiCivPeriod[eCivilization] = ePeriod;
+}
+
+void CvGame::setCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn, int iValue)
+{
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return;
+	}
+
+	hash_map<int, hash_map<int, int> >::iterator it = m_aiCivilizationHistory[eHistory].find(eCivilization);
+	if (it == m_aiCivilizationHistory[eHistory].end())
+	{
+		hash_map<int, int> civilizationHistory;
+		civilizationHistory.insert(pair<int, int>(iTurn, iValue));
+		m_aiCivilizationHistory[eHistory].insert(std::pair<int, hash_map<int, int> >(eCivilization, civilizationHistory));
+	} 
+	else
+	{
+		it->second.insert(pair<int, int>(iTurn, iValue));
+	}
+}
+
+int CvGame::getCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn) const
+{
+	hash_map<int, hash_map<int, int> >::iterator it = m_aiCivilizationHistory[eHistory].find(eCivilization);
+	if (it != m_aiCivilizationHistory[eHistory].end())
+	{
+		hash_map<int, int>::iterator entryIt = it->second.find(iTurn);
+
+		if (entryIt != it->second.end())
+		{
+			return entryIt->second;
+		}
+	}
+
+	return 0;
 }

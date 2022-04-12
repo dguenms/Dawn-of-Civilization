@@ -16,6 +16,12 @@ class CvReplayInfo;
 
 typedef std::vector<const CvReplayMessage*> ReplayMessageList;
 
+struct HistoryEntry
+{
+	int iTurn;
+	int iValue;
+};
+
 class CvGame
 {
 
@@ -603,6 +609,9 @@ public:
 	PeriodTypes getPeriod(CivilizationTypes eCivilization) const;
 	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod);
 
+	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const;
+	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -687,6 +696,9 @@ protected:
 	IDInfo* m_paHeadquarters;
 
 	int** m_apaiPlayerVote;
+
+	// Leoreth
+	std::hash_map<int, std::hash_map<int, int> >* m_aiCivilizationHistory;
 
 	std::vector<CvWString> m_aszDestroyedCities;
 	std::vector<CvWString> m_aszGreatPeopleBorn;
