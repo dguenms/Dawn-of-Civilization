@@ -359,6 +359,7 @@ public:
 
 	int getNumUnitGoldenAges() const;																																			// Exposed to Python
 	void changeNumUnitGoldenAges(int iChange);																											// Exposed to Python
+	void setNumUnitGoldenAges(int iNewValue);
 
 	int getAnarchyTurns() const;																																					// Exposed to Python
 	DllExport bool isAnarchy() const;																																			// Exposed to Python
@@ -392,6 +393,7 @@ public:
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated(bool bUpdate = true);
+	void changeGreatSpiesCreated(int iChange, bool bUpdate = true);
 
 	void resetGreatPeopleCreated();
 

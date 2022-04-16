@@ -1470,6 +1470,18 @@ void CvDllPythonEvents::reportPlayerCivAssigned(PlayerTypes ePlayer, Civilizatio
 	}
 }
 
+// Leoreth: player destroyed
+void CvDllPythonEvents::reportPlayerDestroyed(PlayerTypes ePlayer)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerDestroyed");
+		eventData.add((int)ePlayer);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

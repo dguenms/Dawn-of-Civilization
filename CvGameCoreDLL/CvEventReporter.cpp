@@ -537,6 +537,12 @@ void CvEventReporter::playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes e
 	m_kPythonEventMgr.reportPlayerCivAssigned(ePlayer, eNewCivilization);
 }
 
+// Leoreth: player destroyed
+void CvEventReporter::playerDestroyed(PlayerTypes ePlayer)
+{
+	m_kPythonEventMgr.reportPlayerDestroyed(ePlayer);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

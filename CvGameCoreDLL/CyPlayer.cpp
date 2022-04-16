@@ -950,6 +950,11 @@ void CyPlayer::changeNumUnitGoldenAges(int iChange)
 		m_pPlayer->changeNumUnitGoldenAges(iChange);
 }
 
+void CyPlayer::setNumUnitGoldenAges(int iNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setNumUnitGoldenAges(iNewValue);
+}
+
 int CyPlayer::getAnarchyTurns()
 {
 	return m_pPlayer ? m_pPlayer->getAnarchyTurns() : -1;
@@ -1018,6 +1023,11 @@ int CyPlayer::getGreatPeopleCreated()
 int CyPlayer::getGreatGeneralsCreated()
 {
 	return m_pPlayer ? m_pPlayer->getGreatGeneralsCreated() : -1;
+}
+
+int CyPlayer::getGreatSpiesCreated()
+{
+	return m_pPlayer ? m_pPlayer->getGreatSpiesCreated() : -1;
 }
 
 int CyPlayer::getGreatPeopleThresholdModifier()
@@ -2646,6 +2656,11 @@ void CyPlayer::changeGreatPeopleCreated(int iChange)
 void CyPlayer::changeGreatGeneralsCreated(int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeGreatGeneralsCreated(iChange);
+}
+
+void CyPlayer::changeGreatSpiesCreated(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGreatSpiesCreated(iChange);
 }
 
 void CyPlayer::launch(int iVictory)

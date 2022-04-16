@@ -232,6 +232,7 @@ public:
 	void changeGoldenAgeTurns(int iChange);
 	int getNumUnitGoldenAges();
 	void changeNumUnitGoldenAges(int iChange);
+	void setNumUnitGoldenAges(int iNewValue);
 	int getAnarchyTurns();
 	bool isAnarchy();
 	void changeAnarchyTurns(int iChange);
@@ -244,6 +245,7 @@ public:
 	void createGreatPeople(int eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
 	int getGreatPeopleCreated();
 	int getGreatGeneralsCreated();
+	int getGreatSpiesCreated();
 	int getGreatPeopleThresholdModifier();
 	int getGreatGeneralsThresholdModifier();
 	int getGreatPeopleRateModifier();
@@ -582,6 +584,7 @@ public:
 	int getBuildingClassPreference(int iBuildingClass);
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);
+	void changeGreatSpiesCreated(int iChange);
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
 	void setAlive(bool bNewValue);

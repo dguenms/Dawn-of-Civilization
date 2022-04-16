@@ -32,6 +32,18 @@ class CivData:
 	
 		self.bSpawned = False
 		self.iLastTurnAlive = 0
+		
+		# DynamicCivs
+		
+		self.iAnarchyTurns = 0
+		self.iResurrections = 0
+		
+		# Rise
+		
+		self.iGreatGeneralsCreated = 0
+		self.iGreatPeopleCreated = 0
+		self.iGreatSpiesCreated = 0
+		self.iNumUnitGoldenAges = 0
 
 
 class PlayerData:
@@ -52,11 +64,6 @@ class PlayerData:
 		# Rise
 		
 		self.lPreservedWonders = []
-		
-		# DynamicCivs
-		
-		self.iAnarchyTurns = 0
-		self.iResurrections = 0
 		
 		# History
 		

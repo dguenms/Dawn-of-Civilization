@@ -51,7 +51,7 @@ def stopTimer(iPlayer):
 def logSlotInfo():
 	current = players.all().alive()
 	past_fall = current.where(lambda p: turn() >= year(dFall[p]))
-	resurrected = current.where(lambda p: data.players[p].iResurrections > 0)
+	resurrected = current.where(lambda p: data.civs[p].iResurrections > 0)
 	
 	message = """### SLOT INFO ###
 turn: %d, year: %d

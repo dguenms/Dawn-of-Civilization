@@ -37,7 +37,7 @@ def restoreCapital(iOwner, iPlayer, city):
 	
 	capital = plots.capital(iPlayer)
 	
-	if data.players[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
+	if data.civs[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
 		capital = plots.respawnCapital(iPlayer)
 		
 	if at(city, capital):

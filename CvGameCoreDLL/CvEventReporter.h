@@ -151,6 +151,7 @@ public:
 	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
 	void autoplayEnded(); // Leoreth
 	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
 
 	DllExport void preSave();
 

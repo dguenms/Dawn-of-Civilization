@@ -558,10 +558,10 @@ def setup():
 	iScenario = scenario()
 	
 	if iScenario == i600AD:
-		data.players[slot(iChina)].iAnarchyTurns += 3
+		data.civs[iChina].iAnarchyTurns += 3
 		
 	elif iScenario == i1700AD:
-		data.players[slot(iEgypt)].iResurrections += 1
+		data.players[iCiv].iResurrections += 1
 		
 		for iCiv in [iVikings]:
 			checkNameChange(slot(iCiv))
@@ -583,7 +583,7 @@ def onResurrection(iPlayer):
 	onRespawn(iPlayer)
 
 def onRespawn(iPlayer):
-	data.players[iPlayer].iResurrections += 1
+	data.civs[iPlayer].iResurrections += 1
 	
 	if civ(iPlayer) in lRespawnNameChanges:
 		checkNameChange(iPlayer)
@@ -601,7 +601,7 @@ def onVassalState(iMaster, iVassal):
 	if iVassalCiv in lVassalNameChanges:
 		if iVassalCiv == iMughals and iMasterCiv not in dCivGroups[iCivGroupEurope]: return
 	
-		data.players[iVassal].iResurrections += 1
+		data.civs[iVassal].iResurrections += 1
 		checkNameChange(iVassal)
 		checkAdjectiveChange(iVassal)
 		
@@ -613,7 +613,7 @@ def onPlayerChangeStateReligion(iPlayer, iReligion):
 		return
 
 	if civ(iPlayer) in lChristianityNameChanges and iReligion in lChristianity:
-		data.players[iPlayer].iResurrections += 1
+		data.civs[iPlayer].iResurrections += 1
 		checkNameChange(iPlayer)
 		checkAdjectiveChange(iPlayer)
 		
@@ -624,7 +624,7 @@ def onRevolution(iPlayer):
 	if is_minor(iPlayer):
 		return
 
-	data.players[iPlayer].iAnarchyTurns += 1
+	data.civs[iPlayer].iAnarchyTurns += 1
 	
 	if civ(iPlayer) == iMughals and isRepublic(iPlayer):
 		checkNameChange(iPlayer)
@@ -870,7 +870,7 @@ def republicName(iPlayer):
 
 	if iCiv in [iMoors, iEngland]: return None
 	
-	if iCiv == iInca and data.players[iPlayer].iResurrections > 0: return None
+	if iCiv == iInca and data.civs[iPlayer].iResurrections > 0: return None
 	
 	if iCiv == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
 	
@@ -897,9 +897,9 @@ def specificName(iPlayer):
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
 	bTheocracy = (civic.iReligion == iTheocracy)
-	bResurrected = data.players[iPlayer].iResurrections > 0
+	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
-	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
+	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
@@ -1132,7 +1132,7 @@ def republicAdjective(iPlayer):
 		
 	if iCiv in [iMoors, iEngland]: return None
 	
-	if iCiv == iInca and data.players[iPlayer].iResurrections > 0: return None
+	if iCiv == iInca and data.civs[iPlayer].iResurrections > 0: return None
 		
 	return player(iPlayer).getCivilizationAdjective(0)
 	
@@ -1153,9 +1153,9 @@ def specificAdjective(iPlayer):
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
 	bTheocracy = (civic.iReligion == iTheocracy)
-	bResurrected = data.players[iPlayer].iResurrections > 0
+	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
-	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
+	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
@@ -1563,9 +1563,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
 	bTheocracy = (civic.iReligion == iTheocracy)
-	bResurrected = data.players[iPlayer].iResurrections > 0
+	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
-	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
+	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
@@ -1585,7 +1585,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if iEra == iAncient:
 			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
-			if iAnarchyTurns == turns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
+			if iAnarchyTurns <= turns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
 			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 		
 		if iEra == iClassical:
@@ -2029,9 +2029,9 @@ def leader(iPlayer):
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
 	bTheocracy = (civic.iReligion == iTheocracy)
-	bResurrected = data.players[iPlayer].iResurrections > 0
+	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
-	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
+	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	

@@ -8810,7 +8810,15 @@ int CvPlayer::getReligionAnarchyLength() const
 
 int CvPlayer::unitsRequiredForGoldenAge() const
 {
-	return (GC.getDefineINT("BASE_GOLDEN_AGE_UNITS") + (getNumUnitGoldenAges() * GC.getDefineINT("GOLDEN_AGE_UNITS_MULTIPLIER")));
+	int iNumUnitGoldenAges = getNumUnitGoldenAges();
+
+	// Leoreth: Eiffel Tower effect: golden age cost capped at 3 GPs
+	if (isHasBuildingEffect((BuildingTypes)EIFFEL_TOWER))
+	{
+		iNumUnitGoldenAges = std::min(iNumUnitGoldenAges, 1);
+	}
+
+	return (GC.getDefineINT("BASE_GOLDEN_AGE_UNITS") + (iNumUnitGoldenAges * GC.getDefineINT("GOLDEN_AGE_UNITS_MULTIPLIER")));
 }
 
 
@@ -9360,12 +9368,6 @@ int CvPlayer::getGoldenAgeLength() const
 
 int CvPlayer::getNumUnitGoldenAges() const
 {
-	// Leoreth: Eiffel Tower effect: golden age cost capped at 3 GPs
-	if (isHasBuildingEffect((BuildingTypes)EIFFEL_TOWER))
-	{
-		return std::min(m_iNumUnitGoldenAges, 1);
-	}
-
 	return m_iNumUnitGoldenAges;
 }
 
@@ -9374,6 +9376,12 @@ void CvPlayer::changeNumUnitGoldenAges(int iChange)
 {
 	m_iNumUnitGoldenAges = (m_iNumUnitGoldenAges + iChange);
 	FAssert(getNumUnitGoldenAges() >= 0);
+}
+
+
+void CvPlayer::setNumUnitGoldenAges(int iNewValue)
+{
+	m_iNumUnitGoldenAges = iNewValue;
 }
 
 
@@ -9616,6 +9624,14 @@ void CvPlayer::incrementGreatSpiesCreated(bool bUpdate)
 				GET_PLAYER((PlayerTypes)iI).changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatSpiesCreated() / 10) + 1));
 			}
 		}
+	}
+}
+
+void CvPlayer::changeGreatSpiesCreated(int iChange, bool bUpdate)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatSpiesCreated(bUpdate);
 	}
 }
 
@@ -11752,6 +11768,8 @@ void CvPlayer::setAlive(bool bNewValue)
 					//GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT")); //Rhye
 				}
 			}
+
+			CvEventReporter::getInstance().playerDestroyed(getID());
 		}
 
 		GC.getGameINLINE().setScoreDirty(true);

@@ -275,7 +275,15 @@ def restorePreservedWonders(city):
 		iWonder = data.players[city.getOwner()].lPreservedWonders.pop(0)
 		if city.isValidBuildingLocation(iWonder):
 			city.setHasRealBuilding(iWonder, True)
+			
 
+@handler("playerDestroyed")
+def preserveCivilizationAttributes(iPlayer):
+	data.civs[iPlayer].iGreatGeneralsCreated = player(iPlayer).getGreatGeneralsCreated()
+	data.civs[iPlayer].iGreatPeopleCreated = player(iPlayer).getGreatPeopleCreated()
+	data.civs[iPlayer].iGreatSpiesCreated = player(iPlayer).getGreatSpiesCreated()
+	data.civs[iPlayer].iNumUnitGoldenAges = player(iPlayer).getNumUnitGoldenAges()
+	
 
 @handler("BeginGameTurn")
 def fragmentIndependents():
@@ -373,7 +381,7 @@ class Birth(object):
 		player().setEspionageSpendingWeightAgainstTeam(self.player.getTeam(), 0)
 	
 		# reset great people
-		self.player.resetGreatPeopleCreated()
+		self.resetGreatPeople()
 	
 	def resetDiplomacy(self):
 		for iOtherPlayer in players.major().without(self.iPlayer):
@@ -387,6 +395,15 @@ class Birth(object):
 				
 			self.team.cutContact(player(iOtherPlayer).getTeam())
 	
+	def resetGreatPeople(self):
+		self.player.resetGreatPeopleCreated()
+		
+		self.player.changeGreatPeopleCreated(data.civs[self.iCiv].iGreatPeopleCreated)
+		self.player.changeGreatGeneralsCreated(data.civs[self.iCiv].iGreatGeneralsCreated)
+		self.player.changeGreatSpiesCreated(data.civs[self.iCiv].iGreatSpiesCreated)
+		
+		self.player.setNumUnitGoldenAges(data.civs[self.iCiv].iNumUnitGoldenAges)
+		
 	def updateCivilization(self):
 		updateCivilization(self.iPlayer, self.iCiv)
 
