@@ -3537,9 +3537,16 @@ class Some(BaseGoal):
 		self.areas = copy(self.goal.areas)
 	
 	def activate(self, iPlayer, callback=None):
-		some = super(Some, self).activate(iPlayer, callback)
+		some = copy(self)
+	
+		some.iPlayer = iPlayer
+		some.callback = callback
+		
+		some.update_description(self.description_arguments)
+		
 		some.goal = some.goal.activate(iPlayer, CheckedSubgoalCallback(some))
 		some.update_areas()
+		
 		return some
 	
 	def deactivate(self):
@@ -3547,7 +3554,7 @@ class Some(BaseGoal):
 		self.goal.deactivate()
 		
 	def registerHandlers(self):
-		pass
+		self.goal.registerHandlers()
 	
 	def setState(self, state):
 		super(Some, self).setState(state)
