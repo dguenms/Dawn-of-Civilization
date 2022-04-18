@@ -30,7 +30,7 @@
 			<iGoldenAgePercent>300</iGoldenAgePercent> <!-- Default: 200 -->
 			<iHurryPercent>33</iHurryPercent>
 			<iHurryConscriptAngerPercent>300</iHurryConscriptAngerPercent>
-			<iInflationPercent>12</iInflationPercent>
+			<iInflationPercent>18</iInflationPercent>
 			<iInflationOffset>-360</iInflationOffset>
 			<iVictoryDelayPercent>300</iVictoryDelayPercent>
 			<GameTurnInfos>
