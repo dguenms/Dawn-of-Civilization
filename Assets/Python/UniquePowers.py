@@ -115,11 +115,11 @@ def colombianPower(iOwner, iPlayer, city, bConquest):
 
 @handler("techAcquired")
 def mayanPower(iTech, iTeam, iPlayer):
-	iEra = infos.tech(iTech).getEra()
+	iEra = player(iPlayer).getCurrentEra()
 	if civ(iPlayer) == iMaya and iEra < iMedieval:
 		iNumCities = player(iPlayer).getNumCities()
 		if iNumCities > 0:
-			iFood = 20 / iNumCities
+			iFood = scale(20) / iNumCities
 			for city in cities.owner(iPlayer):
 				city.changeFood(iFood)
 			
