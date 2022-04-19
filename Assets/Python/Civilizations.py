@@ -555,7 +555,7 @@ dStartingUnits = CivDict({
 		iDefend: 1,
 		iCounter: 1,
 		iSettleSea: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 	},
 	iPolynesia: {
@@ -577,7 +577,7 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iAttack: 4,
 		iWorkerSea: 1,
-		iTransport: 2,
+		iFerry: 2,
 	},
 	iMaya: {
 		iSettle: 1,
@@ -619,7 +619,7 @@ dStartingUnits = CivDict({
 		iCounter: 2,
 		iDefend: 2,
 		iMissionary: 1,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 2,
 	},
 	iJapan: {
@@ -690,7 +690,7 @@ dStartingUnits = CivDict({
 		iHarass: 2,
 		iMissionary: 2,
 		iWorkerSea: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 		# if human Spain or Moors: 1 Crossbowman
 	},
@@ -716,7 +716,7 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 1,
+		iFerry: 1,
 	},
 	iHolyRome: {
 		iSettle: 3,
@@ -773,7 +773,7 @@ dStartingUnits = CivDict({
 		iSiege: 3,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 	},
 	iMongols: {
@@ -855,7 +855,7 @@ dStartingUnits = CivDict({
 		iAttack: 4,
 		iSiege: 2,
 		iWorkerSea: 2,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 1,
 	},
 	iArgentina: {
@@ -865,7 +865,7 @@ dStartingUnits = CivDict({
 		iDefend: 2,
 		iSiege: 2,
 		iMissionary: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 2,
 	},
 	iMexico: {
@@ -884,7 +884,7 @@ dStartingUnits = CivDict({
 		iAttack: 3,
 		iCounter: 5,
 		iMissionary: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iAttackSea: 1,
 	},
 	iBrazil: {
@@ -895,7 +895,7 @@ dStartingUnits = CivDict({
 		iSiege: 2,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 3,
 	},
 	iCanada: {
@@ -904,7 +904,7 @@ dStartingUnits = CivDict({
 		iShock: 3,
 		iDefend: 5,
 		iMissionary: 1,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 1,
 		iLightEscort: 1,
 	}
@@ -1235,7 +1235,7 @@ dStartingUnits = CivDict({
 		iDefend: 1,
 		iCounter: 1,
 		iSettleSea: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 	},
 	iPolynesia: {
@@ -1256,7 +1256,7 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iAttack: 4,
 		iWorkerSea: 1,
-		iTransport: 2,
+		iFerry: 2,
 	},
 	iMaya: {
 		iSettle: 1,
@@ -1298,7 +1298,7 @@ dStartingUnits = CivDict({
 		iCounter: 2,
 		iDefend: 2,
 		iMissionary: 1,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 2,
 	},
 	iJapan: {
@@ -1369,7 +1369,7 @@ dStartingUnits = CivDict({
 		iHarass: 2,
 		iMissionary: 2,
 		iWorkerSea: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 		# if human Spain or Moors: 1 Crossbowman
 	},
@@ -1395,7 +1395,7 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 1,
+		iFerry: 1,
 	},
 	iHolyRome: {
 		iSettle: 3,
@@ -1453,7 +1453,7 @@ dStartingUnits = CivDict({
 		iSiege: 3,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 1,
 	},
 	iMongols: {
@@ -1535,7 +1535,7 @@ dStartingUnits = CivDict({
 		iAttack: 4,
 		iSiege: 2,
 		iWorkerSea: 2,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 1,
 	},
 	iArgentina: {
@@ -1545,7 +1545,7 @@ dStartingUnits = CivDict({
 		iDefend: 2,
 		iSiege: 2,
 		iMissionary: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iEscort: 2,
 	},
 	iMexico: {
@@ -1563,7 +1563,7 @@ dStartingUnits = CivDict({
 		iDefend: 2,
 		iAttack: 3,
 		iMissionary: 1,
-		iTransport: 1,
+		iFerry: 1,
 		iAttackSea: 1,
 	},
 	iBrazil: {
@@ -1574,7 +1574,7 @@ dStartingUnits = CivDict({
 		iSiege: 2,
 		iMissionary: 1,
 		iWorkerSea: 2,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 3,
 	},
 	iCanada: {
@@ -1583,7 +1583,7 @@ dStartingUnits = CivDict({
 		iShock: 3,
 		iDefend: 5,
 		iMissionary: 1,
-		iTransport: 2,
+		iFerry: 2,
 		iEscort: 1,
 		iLightEscort: 1,
 	}

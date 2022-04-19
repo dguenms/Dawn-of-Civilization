@@ -76,7 +76,7 @@ def createStartingUnits():
 	
 	# Byzantium
 	capital = plots.capital(iByzantium)
-	createRoleUnit(iByzantium, capital, iTransport, 2)
+	createRoleUnit(iByzantium, capital, iFerry, 2)
 	createRoleUnit(iByzantium, capital, iAttackSea, 2)
 	
 	# Vikings

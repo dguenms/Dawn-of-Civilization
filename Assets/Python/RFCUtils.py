@@ -442,7 +442,7 @@ def replace(unit, iUnitType):
 
 # used: RFCUtils
 def getRoleDomain(iRole):
-	if iRole in [iWorkerSea, iSettleSea, iAttackSea, iTransport, iEscort, iExploreSea, iLightEscort]:
+	if iRole in [iWorkerSea, iSettleSea, iAttackSea, iFerry, iEscort, iExploreSea, iLightEscort]:
 		return DomainTypes.DOMAIN_SEA
 	return DomainTypes.DOMAIN_LAND
 
@@ -471,7 +471,7 @@ def getRoleAI(iRole):
 		return UnitAITypes.UNITAI_SETTLER_SEA
 	elif iRole == iAttackSea:
 		return UnitAITypes.UNITAI_ATTACK_SEA
-	elif iRole == iTransport:
+	elif iRole == iFerry:
 		return UnitAITypes.UNITAI_ASSAULT_SEA
 	elif iRole == iEscort:
 		return UnitAITypes.UNITAI_ESCORT_SEA
@@ -508,7 +508,7 @@ def isUnitOfRole(iUnit, iRole):
 		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getCombat() == 0
 	elif iRole == iSettle:
 		return unit.isFound()
-	elif iRole in [iSettleSea, iTransport]:
+	elif iRole in [iSettleSea, iFerry]:
 		return unit.getCargoSpace() > 0
 	elif iRole in [iAttackSea, iEscort, iExploreSea]:
 		return iDomainType == DomainTypes.DOMAIN_SEA

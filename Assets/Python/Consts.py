@@ -856,7 +856,7 @@ iGreatSpy : iFemaleGreatSpy,
 
 iNumUnitRoles = 22
 (iBase, iDefend, iAttack, iCounter, iShock, iHarass, iCityAttack, iWorkerSea, iSettle, iSettleSea, 
-iAttackSea, iTransport, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
+iAttackSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
 iWork, iMissionary) = range(iNumUnitRoles)
 
 # initialise bonuses variables to bonuses IDs from WBS
