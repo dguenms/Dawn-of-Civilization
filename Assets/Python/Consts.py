@@ -451,22 +451,6 @@ iBrazil : (1880, -1, 1950),
 iCanada : (1920, 1950, 2000),
 })
 
-# Leoreth: date-triggered respawn for certain civs
-dRebirth = CivDict({
-iPersia : 1501,		# Iran
-iMaya : 1814,		# Colombia
-iAztecs : 1810,		# Mexico
-})
-
-dRebirthCiv = CivDict({
-iIran : iPersia,
-iColombia : iMaya,
-iMexico : iAztecs,
-})
-
-# Leoreth: this excludes rebirth civs to only contain civs that actually hold a slot at the start of the game
-lSlotOrder = [iCiv for iCiv in lCivOrder if iCiv not in dRebirthCiv]
-
 # Leoreth: determine neighbour lists from pairwise neighbours for easier lookup
 dNeighbours = dictFromEdges(lBirthCivs, lNeighbours)
 

@@ -184,8 +184,6 @@ class GameData:
 		
 		# Slots
 		
-		# set the default values for now, once slots become untied this should be set and kept updated on spawn
-		# already make it dynamic because rebirths will change things
 		self.dSlots = {}
 		
 		# Rise

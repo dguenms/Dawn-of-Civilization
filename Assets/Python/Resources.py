@@ -239,7 +239,7 @@ def createResourcesBeforeBirth(iCiv):
 		createResource(x, y, iResource)
 
 
-@handler("rebirth")
+@handler("birth")
 def removeColombianJungle(iPlayer):
 	if civ(iPlayer) == iColombia:
 		plot(28, 31).setFeatureType(-1, 0)

@@ -575,10 +575,6 @@ def initName(iPlayer):
 		checkName(iPlayer)
 		checkLeader(iPlayer)
 
-@handler("rebirth")
-def onRebirth(iPlayer):
-	onRespawn(iPlayer)
-
 @handler("resurrection")
 def onResurrection(iPlayer):
 	onRespawn(iPlayer)

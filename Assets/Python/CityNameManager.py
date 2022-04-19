@@ -100,7 +100,7 @@ def determineCapitalLocations():
 			
 	data.dCapitalLocations = dLocations
 
-@handler("rebirth")
+@handler("birth")
 def updateMexicanCityNames(iPlayer):
 	if civ(iPlayer) == iMexico:
 		updateCityNamesFound(iPlayer)

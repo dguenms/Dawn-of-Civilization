@@ -18,14 +18,11 @@ gc = CyGlobalContext()
 def createMaps():
 	for iPlayer in players.major():
 		createMap(iPlayer, 0)
-		if civ(iPlayer) in dRebirth:
-			createMap(iPlayer, 1)
-			
+
 	print 'Maps Created'
 			
 def createMap(iPlayer, iReborn):
 	iCivilization = civ(iPlayer)
-	if iReborn == 1: iCivilization = dRebirthCiv[iCivilization]
 	sName = infos.civ(iCivilization).getShortDescription(0)
 	
 	file = open(IMAGE_LOCATION + "\Stability\\" + sName, 'wt')
@@ -79,8 +76,6 @@ def createMap(iPlayer, iReborn):
 	"""
 	lExtendedCorePlots = []
 	
-	if iReborn == 0 and civ(iPlayer) in dRebirth:
-		lExtendedCorePlots = plots.core(iPlayer)
 		
 	try:
 		writer = csv.writer(file)
@@ -100,7 +95,6 @@ def createMap(iPlayer, iReborn):
 def getForeignCorePlots(iPlayer, iReborn):
 	lForeignCorePlots = []
 	iSpawnDate = dBirth[iPlayer]
-	if iReborn == 1: iSpawnDate = dRebirth[iPlayer]
 	
 	for iLoopCiv in civs.major().without(iPlayer):
 		if canEverRespawn(iLoopCiv, year(iSpawnDate)) or dBirth[iLoopCiv] > iSpawnDate:

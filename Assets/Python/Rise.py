@@ -52,15 +52,6 @@ lAlwaysClear = [
 ]
 
 
-
-def birth(iCiv, iYear=None):
-	return Birth(iCiv, iYear=iYear)
-
-
-def rebirth(iCiv, iYear=None):
-	return Birth(iCiv, iYear=iYear, bRebirth=True)
-
-
 ### Event Handlers ###
 
 
@@ -72,14 +63,10 @@ def showDawnOfMan(iGameTurn):
 
 @handler("GameStart")
 def initBirths():
-	data.births = [birth(iCiv) for iCiv in lBirthOrder]
+	data.births = [Birth(iCiv) for iCiv in lBirthOrder]
 	
-	for iRebirthCiv, iSlotCiv in dRebirthCiv.items():
-		if iSlotCiv in data.dSlots:
-			data.births.append(rebirth(iRebirthCiv))
-	
-	for born in data.births:
-		born.check()
+	for birth in data.births:
+		birth.check()
 
 
 @handler("BeginGameTurn")
@@ -278,13 +265,9 @@ def checkMinorTechs():
 
 class Birth(object):
 
-	def __init__(self, iCiv, iYear=None, bRebirth=False):
-		if iYear is None:
-			iYear = dBirth[iCiv]
-	
+	def __init__(self, iCiv):
 		self.iCiv = iCiv
-		self.iTurn = year(iYear)
-		self.bRebirth = bRebirth
+		self.iTurn = year(dBirth[iCiv])
 		
 		self.iPlayer = None
 		self.area = None
@@ -592,10 +575,6 @@ class Birth(object):
 		if not infos.civ(self.iCiv).isAIPlayable():
 			return False
 		
-		# Rebirth requires rebirth civ to be dead
-		if self.bRebirth and player(dRebirthCiv[self.iCiv]).isAlive():
-			return False
-	
 		# Byzantium requires Rome to be alive and Greece to be dead (human Rome can avoid Byzantine spawn by being solid)
 		if self.iCiv == iByzantium:
 			if not player(iRome).isAlive():
@@ -619,6 +598,16 @@ class Birth(object):
 		if self.iCiv == iThailand:
 			iRequiredStability = player(iKhmer).isHuman() and iStabilityShaky or iStabilityStable
 			if stability(iKhmer) >= iRequiredStability:
+				return False
+		
+		# Iran requires Persia to be dead
+		if self.iCiv == iIran:
+			if player(iPersia).isAlive():
+				return False
+		
+		# Mexico requires Aztecs to be dead
+		if self.iCiv == iMexico:
+			if player(iAztecs).isAlive():
 				return False
 				
 		# further checks skipped if impact is critical or better
@@ -843,10 +832,7 @@ class Birth(object):
 		data.civs[self.iCiv].bSpawned = True
 		
 		# send event
-		if self.bRebirth:
-			events.fireEvent("rebirth", self.iPlayer)
-		else:
-			events.fireEvent("birth", self.iPlayer)
+		events.fireEvent("birth", self.iPlayer)
 		
 	def warOnFlip(self, iOwner, cityNames):
 		if player(iOwner).isHuman():
