@@ -1777,12 +1777,15 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 	CvTeam& kMasterTeam = GET_TEAM(eTeam);
 
-	//Rhye - start
-	//for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
-	for (int iLoopTeam = 0; iLoopTeam < NUM_MAJOR_PLAYERS; iLoopTeam++)
-	//Rhye - end
+	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
+
+		if (kLoopTeam.isMinorCiv())
+		{
+			continue;
+		}
+
 		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID())
 		{
 			if (kLoopTeam.isAtWar(kMasterTeam.getID()) && !kLoopTeam.isAtWar(getID()))
@@ -2093,29 +2096,6 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			return DENIAL_JOKING;
 		}
 	}
-
-	// Leoreth: with vassal power and population instead
-	//Rhye - start (5 vassals cap if already the strongest; 6 vas+all cap)
-	/*int mastersVassals = 0;
-	int mastersAllies = 0;
-	int mastersPower = kMasterTeam.getPower(true);
-	bool bStrongest = true;
-	for (int iLoopTeam = 0; iLoopTeam < NUM_MAJOR_PLAYERS; iLoopTeam++)
-	{
-		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
-		if (kLoopTeam.isAlive() && kLoopTeam.isVassal(eTeam) && iLoopTeam != getID())
-			mastersVassals++;
-		if (kLoopTeam.isAlive() && kLoopTeam.isDefensivePact((TeamTypes)eTeam) && iLoopTeam != getID())
-			mastersAllies++;
-		if (kLoopTeam.getPower(true) > mastersPower)
-			bStrongest = false;
-	}
-
-	if (mastersVassals >= 5 && bStrongest)
-		return DENIAL_POWER_YOU;
-	if (mastersVassals + mastersAllies >= 6)
-		return DENIAL_POWER_YOU;*/
-	//Rhye - end
 
 	return NO_DENIAL;
 }
@@ -2541,8 +2521,13 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	}
 
 	//discount if in a chain of alliances but not directly allied yet
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
@@ -2586,8 +2571,13 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
 
 	// Rhye: no deal if at war with a friend (moved from CvPlayer::canTradeItem)
-	for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			if ((isAtWar((TeamTypes)iI) && GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI)) || (GET_TEAM((TeamTypes)eTeam).isAtWar((TeamTypes)iI) && isDefensivePact((TeamTypes)iI)))
@@ -2820,8 +2810,7 @@ void CvTeamAI::AI_updateWorstEnemy()
 	{
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
-
-		if (kLoopTeam.isAlive() && !GET_TEAM(eLoopTeam).isMinorCiv())
+		if (kLoopTeam.isAlive() && !kLoopTeam.isMinorCiv() && !kLoopTeam.isBarbarian())
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
 			{

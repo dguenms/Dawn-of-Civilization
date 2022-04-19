@@ -18,6 +18,10 @@ def appenddict(dictionary={}):
 def defaultdict(dictionary={}, default=None):
 	return DefaultDict(dictionary, default)
 
+
+def dictFromEdges(lNodes, lEdges):
+	return CivDict(dict((iNode, list(set([iLeft for iLeft, iRight in lEdges if iRight == iNode] + [iRight for iLeft, iRight in lEdges if iLeft == iNode]))) for iNode in lNodes), [])
+
 		
 class DefaultDict(dict):
 
@@ -86,7 +90,7 @@ class TileDict:
 			self.entries[self.transform(values)].append(tile)
 	
 	def __iter__(self):
-		return iter(self.entries)
+		return iter(self.entries.items())
 	
 	def __str__(self):
 		return str(self.entries)

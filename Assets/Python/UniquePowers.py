@@ -12,10 +12,12 @@ from Locations import *
 from Core import *
 
 
-@handler("GameStart")
-def setup():
+@handler("firstCity")
+def initBabylonianUP(city):
 	# Babylonian UP: receive a free tech after discovering the first five techs
-	player(iBabylonia).setFreeTechsOnDiscovery(5)
+	iCivilization = civ(city)
+	if iCivilization == iBabylonia:
+		player(city).setFreeTechsOnDiscovery(5)
 
 
 @handler("cityAcquired")
@@ -62,11 +64,6 @@ def vikingUP(winningUnit, losingUnit):
 			message(iWinner, 'TXT_KEY_VIKING_NAVAL_UP', iGold, adjective(losingUnit), losingUnit.getName())
 			
 			events.fireEvent("combatGold", iWinner, winningUnit, iGold)
-			
-			if civ(iWinner) == iVikings:
-				data.iVikingGold += iGold
-			elif civ(iWinner) == iMoors:
-				data.iMoorishGold += iGold
 
 
 # Mughal UP: receives 50% of building cost as culture when building is completed
@@ -128,7 +125,7 @@ def mayanPower(iTech, iTeam, iPlayer):
 
 @handler("changeWar")
 def resetMongolPower(bWar, iTeam, iOtherTeam):
-	if not bWar and iMongols in civs(iTeam, iOtherTeam):
+	if not bWar and iMongols in civs.of(iTeam, iOtherTeam):
 		for city in cities.owner(iMongols):
 			city.setMongolUP(False)
 

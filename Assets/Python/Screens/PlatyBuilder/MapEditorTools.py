@@ -57,7 +57,7 @@ def exportCore(iPlayer):
 	BL, TR = getTLBR(lCorePlots)
 
 	tExceptions = None
-	lExceptions = plots.rectangle(BL, TR).land().where(lambda p: not (p.isPeak() and location(p) not in lPeakExceptions) and not p.isCore(iPlayer))
+	lExceptions = plots.rectangle(BL, TR).land().where(lambda p: not (p.isPeak() and location(p) not in lPeakExceptions) and not p.isPlayerCore(iPlayer))
 	if lExceptions:
 		tExceptions = ("dCoreAreaExceptions", lExceptions)
 	

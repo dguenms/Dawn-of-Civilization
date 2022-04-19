@@ -56,6 +56,9 @@ public:
 	DllExport const wchar* getHelp() const;
 	const wchar* getStrategy() const;
 
+	// Leoreth
+	void setDescription(std::wstring szDescription);
+
 	bool isMatchForLink(std::wstring szLink, bool bKeysOnly) const;
 
 	virtual void read(FDataStreamBase* pStream);
@@ -2352,6 +2355,12 @@ public:
 	int getStartingYear() const;
 	const std::string getIdentifier() const;
 	int getPaganReligion() const;
+	const wchar* getDescriptionKeyPersistent() const;
+	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
+	void setPlayable(bool bNewValue);
+	void setLeader(int iLeader, bool bNewValue);
+	bool isOriginalLeader(int iLeader) const;
+	int getImpact() const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2386,6 +2395,7 @@ protected:
 
 	int m_iStartingYear; // Leoreth
 	int m_iPaganReligion; // Leoreth
+	int m_iImpact; // Leoreth
 
 	bool m_bAIPlayable;
 	bool m_bPlayable;
@@ -2394,6 +2404,8 @@ protected:
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
 	std::string m_szIdentifier; // Leoreth
+	CvWString m_szDescriptionPersistent; // Leoreth
+
 	// Arrays
 
 	int* m_piCivilizationBuildings;
@@ -2405,6 +2417,7 @@ protected:
 	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
+	bool* m_pbOriginalLeaders; // Leoreth
 	bool* m_pbCivilizationFreeBuildingClass;
 	bool* m_pbCivilizationFreeTechs;
 	bool* m_pbCivilizationDisableTechs;

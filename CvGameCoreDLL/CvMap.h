@@ -279,6 +279,9 @@ public:
 
 	void rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * eCustomMapOptions);		// Exposed to Python
 
+	// Leoreth
+	ScenarioTypes getScenario();
+
 protected:
 
 	int m_iGridWidth;

@@ -289,7 +289,7 @@ class CvDomesticAdvisor:
 		screen.setTableInt( "CityListBackground", 14, i, unicode(pLoopCity.plot().getNumDefenders(pLoopCity.getOwner())), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 
 		# Expansion
-		screen.setTableInt( "CityListBackground", 15, i, unicode(pLoopCity.isCore(pLoopCity.getOwner()) and calculateAdministration(pLoopCity) or -calculateSeparatism(pLoopCity)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
+		screen.setTableInt( "CityListBackground", 15, i, unicode(pLoopCity.isOwnerCore() and calculateAdministration(pLoopCity) or -calculateSeparatism(pLoopCity)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 
 		# Producing	
 		screen.setTableText( "CityListBackground", 16, i, pLoopCity.getProductionName() + " (" + str(pLoopCity.getGeneralProductionTurnsLeft()) + ")", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )

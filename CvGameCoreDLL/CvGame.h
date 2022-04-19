@@ -490,7 +490,7 @@ public:
 
 	bool hasSkippedSaveChecksum() const;
 
-	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv);   // Exposed to Python
+	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv, bool bAlive, bool bMinor);   // Exposed to Python
 
 	bool testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScore = NULL) const;
 
@@ -600,6 +600,12 @@ public:
 	void setYResolution(int iNewValue);
 	void changeYResolution(int iChange);
 
+	PeriodTypes getPeriod(CivilizationTypes eCivilization) const;
+	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod);
+
+	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const;
+	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -662,6 +668,7 @@ protected:
 
 	// Leoreth
 	int* m_aiTechRankTeam;
+	char* m_aiCivPeriod;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;
@@ -683,6 +690,9 @@ protected:
 	IDInfo* m_paHeadquarters;
 
 	int** m_apaiPlayerVote;
+
+	// Leoreth
+	std::hash_map<int, std::hash_map<int, int> >* m_aiCivilizationHistory;
 
 	std::vector<CvWString> m_aszDestroyedCities;
 	std::vector<CvWString> m_aszGreatPeopleBorn;

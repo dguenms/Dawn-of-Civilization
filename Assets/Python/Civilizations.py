@@ -1,49 +1,24 @@
 from RFCUtils import *
-from StoredData import data
 from Core import *
+
 from Events import events, handler
 
-### Starting tech methods ###
 
-def getScenarioTechs(iScenario, iPlayer):
-	iCivilization = civ(iPlayer)
-	for iScenarioType in reversed(range(iScenario+1)):
-		if iCivilization in lStartingTechs[iScenarioType]:
-			return lStartingTechs[iScenarioType][iCivilization]
-			
-def getStartingTechs(iPlayer):
-	return getScenarioTechs(scenario(), iPlayer)
-	
-def initScenarioTechs():
-	iScenario = scenario()
+### Unit spawn functions ###
 
-	for iPlayer in players.major():
-		iCiv = civ(iPlayer)
-		if dBirth[iCiv] > scenarioStartYear(): continue
+def getStartingUnits(iPlayer):
+	lStartingUnits = [(iRole, iAmount) for iRole, iAmount in dStartingUnits[iPlayer].items() if iRole != iWork]
 	
-		if iCiv in lStartingTechs[iScenario]:
-			initTechs(iPlayer, lStartingTechs[iScenario][iCiv])
-			
-def initPlayerTechs(iPlayer):
-	initTechs(iPlayer, getStartingTechs(iPlayer))
+	if not player(iPlayer).isHuman():
+		lStartingUnits += dExtraAIUnits[iPlayer].items()
 	
-	if civ(iPlayer) == iChina and scenario() == i3000BC and not player(iPlayer).isHuman():
-		initTech(iPlayer, iProperty)
-		initTech(iPlayer, iAlloys)
-				
-def initTechs(iPlayer, lTechs):
-	pPlayer = player(iPlayer)
+	return lStartingUnits
+	
+def getAdditionalUnits(iPlayer):
+	return dAdditionalUnits[iPlayer].items()
 
-	for iTech in lTechs:
-		initTech(iPlayer, iTech)
-	
-	iCurrentEra = pPlayer.getCurrentEra()
-	pPlayer.setStartingEra(iCurrentEra)
-	
-def initTech(iPlayer, iTech):
-	team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
-	
-	#events.fireEvent("techAcquired", iTech, player(iPlayer).getTeam(), iPlayer)
+def getSpecificAdditionalUnits(iPlayer):
+	return dSpecificAdditionalUnits[iPlayer].items()
 
 ### Unit spawn functions ###
 
@@ -121,108 +96,1114 @@ def initBuildingPreferences(iPlayer):
 		for iWonder in range(iFirstWonder, iNumBuildings):
 			if iCiv not in dBuildingPreferences or iWonder not in dBuildingPreferences[iCiv]:
 				pPlayer.setBuildingClassPreference(infos.building(iWonder).getBuildingClassType(), iDefaultPreference)
-	
+
+
 ### General functions ###
 		
-def initBirthYear(iPlayer):
-	player(iPlayer).setInitialBirthTurn(year(dBirth[iPlayer]))
+@handler("playerCivAssigned")
+def onPlayerCivAssigned(iPlayer):
+	initPlayerTechPreferences(iPlayer)
+	initBuildingPreferences(iPlayer)
+	
 
-@handler("GameStart")
-def init():
-	for iPlayer in players.major():
-		initBirthYear(iPlayer)
-		initPlayerTechPreferences(iPlayer)
-		initBuildingPreferences(iPlayer)
+### Civilization starting attributes ###
 
-### Starting technologies ###
+class Civilization(object):
 
-lStartingTechs = [
-{
-	iNative : 		techs.of(iTanning, iMythology),
-	iEgypt :		techs.of(iMining, iPottery, iAgriculture),
-	iBabylonia :	techs.of(iPottery, iPastoralism, iAgriculture),
-	iHarappa : 		techs.of(iMining, iPottery, iAgriculture),
-	iChina :		techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage),
-	iIndia :		techs.column(2).including(iAlloys, iWriting, iCalendar).without(iSeafaring),
-	iGreece :		techs.column(2).including(iAlloys, iArithmetics, iWriting),
-	iPersia :		techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding),
-	iCarthage :		techs.column(2).including(iAlloys, iWriting, iShipbuilding),
-	iPolynesia :	techs.of(iTanning, iMythology, iSailing, iSeafaring),
-	iRome : 		techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding),
-	iMaya :			techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing),
-	iTamils :		techs.column(3).including(iBloomery, iMathematics, iContract, iPriesthood),
-	iEthiopia :		techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood),
-	iKorea :		techs.column(5).without(iGeneralship, iEngineering, iCurrency),
-	iByzantium :	techs.column(5).including(iArchitecture, iPolitics, iEthics),
-	iJapan :		techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics),
-	iVikings : 		techs.column(6).without(iScholarship, iEthics),
-	iTurks :		techs.column(5).including(iNobility, iSteel).column(5).without(iNavigation, iMedicine, iPhilosophy),
-	iArabia :		techs.column(6).including(iAlchemy, iTheology).without(iPolitics),
-	iTibet :		techs.column(5).including(iNobility, iScholarship, iEthics),
-	iIndonesia :	techs.column(5).including(iEthics).without(iGeneralship),
-	iMoors :		techs.column(6).including(iMachinery, iAlchemy, iTheology).without(iPolitics),
-	iSpain : 		techs.column(6).including(iFeudalism, iAlchemy, iGuilds),
-	iFrance :		techs.column(6).including(iFeudalism, iTheology),
-	iKhmer :		techs.column(6).including(iNobility, iArchitecture, iArtisanry, iScholarship, iEthics),
-	iEngland :		techs.column(6).including(iFeudalism, iTheology),
-	iHolyRome :		techs.column(6).including(iFeudalism, iTheology),
-	iRussia :		techs.column(6).including(iFeudalism).without(iScholarship),
-	iMali : 		techs.column(6).including(iTheology),
-	iPoland : 		techs.column(6).including(iFeudalism, iFortification, iCivilService, iTheology),
-	iPortugal :		techs.column(7).including(iPatronage),
-	iInca : 		techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood).without(iSeafaring, iAlloys, iRiding, iShipbuilding),
-	iMongols :		techs.column(7).including(iPaper, iCompass).without(iTheology),
-	iAztecs :		techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iAlloys, iRiding, iShipbuilding),
-	iItaly : 		techs.column(7).including(iCommune, iPaper, iCompass, iDoctrine),
-	iMughals :		techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder),
-	iOttomans :		techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder),
-	iCongo : 		techs.column(6).including(iMachinery, iCivilService, iGuilds, iTheology),
-	iThailand : 	techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage),
-	iIran : 		techs.column(9).including(iHeritage, iFirearms),
-	iNetherlands:	techs.column(10),
-	iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
-	iAmerica :		techs.column(12).including(iRepresentation, iChemistry),
-	iArgentina :	techs.column(12).including(iRepresentation, iNationalism),
-	iMexico :		techs.column(12).including(iRepresentation, iNationalism),
-	iColombia :		techs.column(12).including(iRepresentation, iNationalism),
-	iBrazil :		techs.column(12).including(iRepresentation, iNationalism, iBiology),
-	iCanada :		techs.column(13).including(iBallistics, iEngine, iRailroad, iJournalism),
-},
-{
-	iIndependent:	techs.column(5),
-	iIndependent2:	techs.column(5),
-	iChina :		techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility),
-	iKorea :		techs.column(6).including(iMachinery).without(iScholarship),
-	iByzantium :	techs.column(6).including(iFortification,iMachinery, iCivilService),
-	iJapan :		techs.column(6).without(iScholarship),
-	iVikings :		techs.column(6).without(iEthics),
-	iTurks :		techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy),
-},
-{
-	iIndependent:	techs.column(10),
-	iIndependent2:	techs.column(10),
-	iChina :		techs.column(10).including(iHorticulture, iUrbanPlanning).without(iExploration, iOptics, iAcademia),
-	iIndia : 		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration),
-	iTamils :		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-	iIran :			techs.column(10).including(iCombinedArms, iGeography, iUrbanPlanning, iHorticulture),
-	iKorea :		techs.column(10).without(iExploration, iOptics, iAcademia),
-	iJapan :		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-	iVikings :		techs.column(11).without(iEconomics, iHorticulture),
-	iTurks :		techs.column(9).including(iFirearms, iLogistics, iHeritage),
-	iSpain :		techs.column(10).including(iCombinedArms, iGeography, iHorticulture),
-	iFrance :		techs.column(11).without(iUrbanPlanning, iEconomics),
-	iEngland :		techs.column(11).without(iUrbanPlanning, iHorticulture),
-	iHolyRome :		techs.column(10).including(iCombinedArms, iUrbanPlanning, iHorticulture).without(iExploration),
-	iRussia : 		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-	iPoland :		techs.column(11).without(iEconomics, iGeography, iHorticulture, iUrbanPlanning),
-	iPortugal :		techs.column(10).including(iGeography, iHorticulture),
-	iOttomans :		techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration),
-	iMughals :		techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
-	iThailand :		techs.column(10).without(iExploration, iOptics),
-	iCongo :		techs.column(8).including(iCartography, iJudiciary),
-	iNetherlands:	techs.column(11).without(iHorticulture, iScientificMethod),
-	iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
-}]
+	def __init__(self, iCiv, **kwargs):
+		self.iCiv = iCiv
+	
+		self.iLeader = kwargs.get("iLeader")
+		self.iGold = kwargs.get("iGold")
+		self.iStateReligion = kwargs.get("iStateReligion")
+		self.iAdvancedStartPoints = kwargs.get("iAdvancedStartPoints")
+		
+		self.lCivics = kwargs.get("lCivics", [])
+		self.lEnemies = kwargs.get("lEnemies", []) + [iNative, iBarbarian]
+		
+		self.dAttitudes = kwargs.get("dAttitudes", {})
+		
+		self.sLeaderName = kwargs.get("sLeaderName")
+		
+		self.techs = kwargs.get("techs", techs.none())
+	
+	@property
+	def player(self):
+		return player(self.iCiv)
+	
+	@property
+	def team(self):
+		return team(self.player.getTeam())
+	
+	@property
+	def info(self):
+		return infos.civ(self.iCiv)
+	
+	def isPlayable(self):
+		return self.info.getStartingYear() != 0
+	
+	def apply(self):
+		if self.iLeader is not None:
+			self.player.setLeader(self.iLeader)
+		
+		if self.sLeaderName is not None:
+			self.player.setLeaderName(text(self.sLeaderName))
+		
+		if self.iGold is not None:
+			self.player.changeGold(scale(self.iGold))
+		
+		if self.iStateReligion is not None:
+			self.player.setLastStateReligion(self.iStateReligion)
+		
+		if self.techs:
+			for iTech in self.techs:
+				self.team.setHasTech(iTech, True, self.player.getID(), False, False)
+			
+			self.player.setStartingEra(self.player.getCurrentEra())
+		
+		for iCivic in self.lCivics:
+			self.player.setCivics(infos.civic(iCivic).getCivicOptionType(), iCivic)
+			
+		for iEnemy in self.lEnemies:
+			iEnemyPlayer = slot(iEnemy)
+			if iEnemyPlayer >= 0 and self.iCiv != iEnemy:
+				team(iEnemyPlayer).declareWar(self.player.getTeam(), False, WarPlanTypes.NO_WARPLAN)
+		
+		for iCiv, iAttitude in self.dAttitudes.items():
+			self.player.AI_changeAttitudeExtra(slot(iCiv), iAttitude)
+	
+	def advancedStart(self):
+		if self.iAdvancedStartPoints is not None:
+			self.player.setAdvancedStartPoints(scale(self.iAdvancedStartPoints))
+			
+			if not self.player.isHuman():
+				self.player.AI_doAdvancedStart()
+
+lCivilizations = [
+	Civilization(
+		iEgypt,
+		lCivics=[iMonarchy, iRedistribution, iDeification],
+		techs=techs.of(iMining, iPottery, iAgriculture)
+	),
+	Civilization(
+		iBabylonia,
+		techs=techs.of(iPottery, iPastoralism, iAgriculture)
+	),
+	Civilization(
+		iHarappa,
+		techs=techs.of(iMining, iPottery, iAgriculture)
+	),
+	Civilization(
+		iChina,
+		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage)
+	),
+	Civilization(
+		iGreece,
+		iGold=100,
+		lCivics=[iRepublic, iSlavery, iDeification],
+		techs=techs.column(2).including(iAlloys, iArithmetics, iWriting)
+	),
+	Civilization(
+		iIndia,
+		iGold=80,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iDeification],
+		techs=techs.column(2).including(iAlloys, iWriting, iCalendar).without(iSeafaring)
+	),
+	Civilization(
+		iPhoenicia,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		lCivics=[iRepublic, iSlavery],
+		techs=techs.column(2).including(iAlloys, iWriting, iShipbuilding)
+	),
+	Civilization(
+		iPolynesia,
+		techs=techs.of(iTanning, iMythology, iSailing, iSeafaring)
+	),
+	Civilization(
+		iPersia,
+		iGold=200,
+		iAdvancedStartPoints=100,
+		iStateReligion=iZoroastrianism,
+		lCivics=[iMonarchy, iManorialism, iRedistribution, iClergy],
+		techs=techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding)
+	),
+	Civilization(
+		iRome,
+		iGold=100,
+		iAdvancedStartPoints=150,
+		lCivics=[iRepublic, iSlavery, iRedistribution],
+		lEnemies=[iCelts],
+		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding)
+	),
+	Civilization(
+		iMaya,
+		iGold=200,
+		lCivics=[iDespotism, iSlavery],
+		techs=techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing)
+	),
+	Civilization(
+		iTamils,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iClergy],
+		techs=techs.column(3).including(iBloomery, iMathematics, iContract, iPriesthood)
+	),
+	Civilization(
+		iEthiopia,
+		iGold=100,
+		lCivics=[iMonarchy, iSlavery, iClergy],
+		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
+	),
+	Civilization(
+		iKorea,
+		iGold=200,
+		iStateReligion=iBuddhism,
+		lCivics=[iDespotism, iCasteSystem, iRedistribution],
+		techs=techs.column(5).without(iGeneralship, iEngineering, iCurrency)
+	),
+	Civilization(
+		iByzantium,
+		iGold=400,
+		iAdvancedStartPoints=100,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iDespotism, iCitizenship, iSlavery, iMerchantTrade, iClergy],
+		techs=techs.column(5).including(iArchitecture, iPolitics, iEthics)
+	),
+	Civilization(
+		iJapan,
+		iGold=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
+		techs=techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics)
+	),
+	Civilization(
+		iVikings,
+		iGold=150,
+		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		lEnemies=[iCelts],
+		techs=techs.column(6).without(iScholarship, iEthics)
+	),
+	Civilization(
+		iTurks,
+		iGold=100,
+		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		techs=techs.column(5).including(iNobility, iSteel).column(5).without(iNavigation, iMedicine, iPhilosophy)
+	),
+	Civilization(
+		iArabia,
+		iGold=300,
+		iStateReligion=iIslam,
+		lCivics=[iDespotism, iCitizenship, iSlavery, iMerchantTrade, iClergy, iConquest],
+		lEnemies=[iIndependent, iIndependent2],
+		techs=techs.column(6).including(iAlchemy, iTheology).without(iPolitics)
+	),
+	Civilization(
+		iTibet,
+		iGold=50,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iVassalage, iMerchantTrade, iClergy, iConquest],
+		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
+	),
+	Civilization(
+		iIndonesia,
+		iGold=300,
+		iAdvancedStartPoints=50,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iCasteSystem, iMerchantTrade, iDeification],
+		techs=techs.column(5).including(iEthics).without(iGeneralship)
+	),
+	Civilization(
+		iMoors,
+		iGold=200,
+		iAdvancedStartPoints=100,
+		iStateReligion=iIslam,
+		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iClergy],
+		techs=techs.column(6).including(iMachinery, iAlchemy, iTheology).without(iPolitics)
+	),
+	Civilization(
+		iSpain,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(6).including(iFeudalism, iAlchemy, iGuilds)
+	),
+	Civilization(
+		iFrance,
+		iGold=150,
+		iAdvancedStartPoints=50,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
+		techs=techs.column(6).including(iFeudalism, iTheology)
+	),
+	Civilization(
+		iKhmer,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification],
+		techs=techs.column(6).including(iNobility, iArchitecture, iArtisanry, iScholarship, iEthics)
+	),
+	Civilization(
+		iEngland,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lEnemies=[iCelts],
+		techs=techs.column(6).including(iFeudalism, iTheology)
+	),
+	Civilization(
+		iHolyRome,
+		iGold=150,
+		iAdvancedStartPoints=50,
+		iStateReligion=iCatholicism,
+		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
+		lEnemies=[iCelts],
+		techs=techs.column(6).including(iFeudalism, iTheology)
+	),
+	Civilization(
+		iRussia,
+		iGold=200,
+		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade],
+		techs=techs.column(6).including(iFeudalism).without(iScholarship)
+	),
+	Civilization(
+		iMali,
+		iGold=600,
+		iAdvancedStartPoints=50,
+		iStateReligion=iIslam,
+		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iClergy],
+		techs=techs.column(6).including(iTheology)
+	),
+	Civilization(
+		iPoland,
+		iGold=100,
+		iStateReligion=iCatholicism,
+		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(6).including(iFeudalism, iFortification, iCivilService, iTheology)
+	),
+	Civilization(
+		iPortugal,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(7).including(iPatronage)
+	),
+	Civilization(
+		iInca,
+		iGold=700,
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iDeification],
+		techs=techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood).without(iSeafaring, iAlloys, iRiding, iShipbuilding)
+	),
+	Civilization(
+		iItaly,
+		iGold=350,
+		iAdvancedStartPoints=250,
+		iStateReligion=iCatholicism,
+		lCivics=[iRepublic, iCitizenship, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(7).including(iCommune, iPaper, iCompass, iDoctrine)
+	),
+	Civilization(
+		iMongols,
+		iGold=250,
+		iAdvancedStartPoints=50,
+		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
+		techs=techs.column(7).including(iPaper, iCompass).without(iTheology)
+	),
+	Civilization(
+		iAztecs,
+		iGold=600,
+		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iDeification],
+		techs=techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iAlloys, iRiding, iShipbuilding)
+	),
+	Civilization(
+		iMughals,
+		iGold=400,
+		iStateReligion=iIslam,
+		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iTheocracy, iConquest],
+		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder)
+	),
+	Civilization(
+		iOttomans,
+		iGold=300,
+		iAdvancedStartPoints=200,
+		iStateReligion=iIslam,
+		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iClergy, iConquest],
+		techs=techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder)
+	),
+	Civilization(
+		iThailand,
+		iGold=800,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism],
+		techs=techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage)
+	),
+	Civilization(
+		iCongo,
+		iGold=300,
+		lCivics=[iElective, iVassalage, iSlavery, iRedistribution],
+		techs=techs.column(6).including(iMachinery, iCivilService, iGuilds, iTheology)
+	),
+	Civilization(
+		iIran,
+		iGold=600,
+		iAdvancedStartPoints=250,
+		iStateReligion=iIslam,
+		lCivics=[iMonarchy, iVassalage, iSlavery, iMerchantTrade, iTheocracy],
+		techs=techs.column(9).including(iHeritage, iFirearms)
+	),
+	Civilization(
+		iNetherlands,
+		iGold=600,
+		iAdvancedStartPoints=300,
+		iStateReligion=iProtestantism,
+		lCivics=[iRepublic, iCentralism, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(10)
+	),
+	Civilization(
+		iGermany,
+		iGold=800,
+		iAdvancedStartPoints=250,
+		iStateReligion=iProtestantism,
+		lCivics=[iMonarchy, iCentralism, iManorialism, iRegulatedTrade, iClergy, iConquest],
+		techs=techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning)
+	),
+	Civilization(
+		iAmerica,
+		iGold=1500,
+		iAdvancedStartPoints=500,
+		iStateReligion=iProtestantism,
+		lCivics=[iDemocracy, iConstitution, iIndividualism, iFreeEnterprise, iTolerance, iIsolationism],
+		techs=techs.column(12).including(iRepresentation, iChemistry)
+	),
+	Civilization(
+		iArgentina,
+		iGold=1200,
+		iAdvancedStartPoints=100,
+		iStateReligion=iCatholicism,
+		lCivics=[iDemocracy, iConstitution, iIndividualism, iFreeEnterprise, iTolerance, iNationhood],
+		techs=techs.column(12).including(iRepresentation, iNationalism)
+	),
+	Civilization(
+		iMexico,
+		iGold=500,
+		iAdvancedStartPoints=100,
+		iStateReligion=iCatholicism,
+		lCivics=[iDespotism, iConstitution, iIndividualism, iRegulatedTrade, iClergy, iNationhood],
+		techs=techs.column(12).including(iRepresentation, iNationalism)
+	),
+	Civilization(
+		iColombia,
+		iGold=750,
+		iAdvancedStartPoints=150,
+		iStateReligion=iCatholicism,
+		lCivics=[iDespotism, iConstitution, iIndividualism, iRegulatedTrade, iClergy, iNationhood],
+		techs=techs.column(12).including(iRepresentation, iNationalism)
+	),
+	Civilization(
+		iBrazil,
+		iGold=1600,
+		iAdvancedStartPoints=200,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iConstitution, iSlavery, iFreeEnterprise, iClergy, iColonialism],
+		techs=techs.column(12).including(iRepresentation, iNationalism, iBiology)
+	),
+	Civilization(
+		iCanada,
+		iGold=1000,
+		iAdvancedStartPoints=250,
+		iStateReligion=iCatholicism,
+		lCivics=[iDemocracy, iConstitution, iIndividualism, iFreeEnterprise, iTolerance, iNationhood],
+		techs=techs.column(13).including(iBallistics, iEngine, iRailroad, iJournalism)
+	),
+]
+
+### Starting units ###
+
+dStartingUnits = CivDict({
+	iChina: {
+		iSettle: 1,
+		iWork: 1,
+		iBase: 1,
+		iDefend: 1,
+	},
+	iIndia: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 1,
+		iCounter: 1,
+		iAttack: 1,
+		iHarass: 1,
+	},
+	iGreece: {
+		iSettle: 1,
+		iWork: 2,
+		iSettleSea: 1,
+		iBase: 2,
+		iAttack: 2,
+		iCityAttack: 1,
+		iWorkerSea: 1,
+	},
+	iPhoenicia: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 1,
+		iCounter: 1,
+		iSettleSea: 1,
+		iTransport: 1,
+		iEscort: 1,
+	},
+	iPolynesia: {
+		iSettle: 1,
+		iSettleSea: 1,
+		iWorkerSea: 1,
+	},
+	iPersia: {
+		iSettle: 3,
+		iWork: 3,
+		iDefend: 3,
+		iAttack: 4,
+		iShock: 2,
+		# 1 War Elephant
+	},
+	iRome: {
+		iSettle: 4,
+		iWork: 2,
+		iDefend: 3,
+		iAttack: 4,
+		iWorkerSea: 1,
+		iTransport: 2,
+	},
+	iMaya: {
+		iSettle: 1,
+		iWork: 1,
+		iSkirmish: 2,
+	},
+	iTamils: {
+		iSettle: 1,
+		iSettleSea: 1,
+		iWork: 2,
+		iDefend: 1,
+		iShock: 1,
+		iAttack: 2,
+		iMissionary: 1,
+		iWorkerSea: 1,
+		iEscort: 1,
+	},
+	iEthiopia: {
+		iSettle: 2,
+		iWork: 3,
+		iDefend: 2,
+		iAttack: 1,
+		iWorkerSea: 1,
+		iEscort: 1,
+		# 1 Shotelai
+	},
+	iKorea: {
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 3,
+		iAttack: 1,
+		iShock: 1,
+		iMissionary: 1,
+	},
+	iByzantium: {
+		iSettle: 4,
+		iWork: 3,
+		iAttack: 4,
+		iCounter: 2,
+		iDefend: 2,
+		iMissionary: 1,
+		iTransport: 2,
+		iEscort: 2,
+	},
+	iJapan: {
+		iSettle: 3,
+		iWork: 2,
+		iDefend: 2,
+		iAttack: 2,
+		iMissionary: 1,
+		iWorkerSea: 2,
+	},
+	iVikings: {
+		iSettle: 2,
+		iWork: 3,
+		iSettleSea: 1,
+		iDefend: 4,
+		iExplore: 1,
+		iAttack: 3,
+		iWorkerSea: 1,
+		iExploreSea: 2,
+	},
+	iTurks: {
+		iSettle: 6,
+		iWork: 3,
+		iDefend: 3,
+		iHarass: 6,
+		iExplore: 1,
+	},
+	iArabia: {
+		iSettle: 2,
+		iWork: 3,
+		iDefend: 1,
+		iShock: 2,
+		iAttack: 2,
+		iWork: 1,
+		iWorkerSea: 1,
+	},
+	iTibet: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 2,
+		iHarass: 2,
+		iMissionary: 1,
+	},
+	iKhmer: {
+		iSettle: 1,
+		iSettleSea: 1,
+		iWork: 3,
+		iDefend: 1,
+		iShockCity: 3,
+		iMissionary: 1,
+		iWorkerSea: 1,
+		# 1 Buddhist Missionary
+	},
+	iIndonesia: {
+		iSettle: 1,
+		iSettleSea: 2,
+		iWork: 3,
+		iDefend: 1,
+		iMissionary: 1,
+		iEscort: 1,
+	},
+	iMoors: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 1,
+		iAttack: 2,
+		iCounter: 2,
+		iHarass: 2,
+		iMissionary: 2,
+		iWorkerSea: 1,
+		iTransport: 1,
+		iEscort: 1,
+		# if human Spain or Moors: 1 Crossbowman
+	},
+	iSpain: {
+		iSettle: 2,
+		iWork: 3,
+		iDefend: 2,
+		iAttack: 4,
+		iMissionary: 1,
+	},
+	iFrance: {
+		iSettle: 3,
+		iWork: 3,
+		iDefend: 3,
+		iCounter: 2,
+		iAttack: 3,
+		iMissionary: 1,
+	},
+	iEngland: {
+		iSettle: 2,
+		iSettleSea: 1,
+		iWork: 3,
+		iDefend: 3,
+		iMissionary: 1,
+		iWorkerSea: 2,
+		iTransport: 1,
+	},
+	iHolyRome: {
+		iSettle: 3,
+		iWork: 3,
+		iDefend: 3,
+		iCityAttack: 3,
+		iShockCity: 3,
+		iCitySiege: 4,
+		iMissionary: 1,
+	},
+	iRussia: {
+		iSettle: 4,
+		iWork: 3,
+		iDefend: 2,
+		iHarass: 4,
+	},
+	iMali: {
+		iSettle: 3,
+		iWork: 3,
+		iSkirmish: 5,
+		iMissionary: 2,
+	},
+	iPoland: {
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 1,
+		iAttack: 2,
+		iShock: 2,
+		iMissionary: 1,
+		# if human: 1 Settler (to account for scripted AI spawn)
+	},
+	iPortugal: {
+		iSettle: 1,
+		iSettleSea: 1,
+		iWork: 3,
+		iDefend: 4,
+		iCounter: 2,
+		iMissionary: 1,
+		iWorkerSea: 2,
+		iEscort: 2,
+	},
+	iInca: {
+		iSettle: 1,
+		iWork: 4,
+		iAttack: 4,
+		iDefend: 2,
+		# if not human: 1 Settler
+	},
+	iItaly: {
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 3,
+		iCounter: 2,
+		iSiege: 3,
+		iMissionary: 1,
+		iWorkerSea: 2,
+		iTransport: 1,
+		iEscort: 1,
+	},
+	iMongols: {
+		iSettle: 3,
+		iWork: 4,
+		iDefend: 3,
+		iAttack: 2,
+		iHarass: 2,
+		iShock: 6,
+		iSiege: 3,
+	},
+	iAztecs: {
+		iSettle: 2,
+		iWork: 3,
+		iAttack: 4,
+		iDefend: 2,
+	},
+	iMughals: {
+		iSettle: 3,
+		iWork: 3,
+		iSiege: 3,
+		iAttack: 4,
+		iHarass: 2,
+		iMissionary: 4,
+	},
+	iOttomans: {
+		iSettle: 3,
+		iWork: 4,
+		iAttack: 4,
+		iDefend: 2,
+		iShock: 3,
+		iSiege: 4,
+		iMissionary: 2,
+	},
+	iThailand: {
+		iSettle: 1,
+		iWork: 2,
+		iCounter: 3,
+		iShock: 2,
+		iMissionary: 1,
+	},
+	iCongo: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iIran: {
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 3,
+		iAttack: 3,
+		iSiege: 3,
+		iMissionary: 3,
+	},
+	iNetherlands: {
+		iSettle: 2,
+		iSettleSea: 2,
+		iWork: 2,
+		iAttack: 6,
+		iCounter: 2,
+		iSiege: 2,
+		iMissionary: 1,
+		iWorkerSea: 2,
+		iExploreSea: 2,
+	},
+	iGermany: {
+		iSettle: 4,
+		iWork: 3,
+		iAttack: 3,
+		iDefend: 2,
+		iSiege: 3,
+		iMissionary: 2,
+	},
+	iAmerica: {
+		iSettle: 8,
+		iWork: 5,
+		iSkirmish: 2,
+		iAttack: 4,
+		iSiege: 2,
+		iWorkerSea: 2,
+		iTransport: 2,
+		iEscort: 1,
+	},
+	iArgentina: {
+		iSettle: 2,
+		iWork: 2,
+		iAttack: 1,
+		iDefend: 2,
+		iSiege: 2,
+		iMissionary: 1,
+		iTransport: 1,
+		iEscort: 2,
+	},
+	iMexico: {
+		iSettle: 1,
+		iWork: 2,
+		iShock: 4,
+		iDefend: 3,
+		iAttack: 2,
+		iCounter: 2,
+		iMissionary: 1,
+	},
+	iColombia: {
+		iSettle: 1,
+		iWork: 3,
+		iDefend: 2,
+		iAttack: 3,
+		iCounter: 5,
+		iMissionary: 1,
+		iTransport: 1,
+		iAttackSea: 1,
+	},
+	iBrazil: {
+		iSettle: 5,
+		iWork: 3,
+		iSkirmish: 3,
+		iDefend: 3,
+		iSiege: 2,
+		iMissionary: 1,
+		iWorkerSea: 2,
+		iTransport: 2,
+		iEscort: 3,
+	},
+	iCanada: {
+		iSettle: 5,
+		iWork: 3,
+		iShock: 3,
+		iDefend: 5,
+		iMissionary: 1,
+		iTransport: 2,
+		iEscort: 1,
+		iLightEscort: 1,
+	}
+}, {})
+
+dExtraAIUnits = CivDict({
+	iJapan: {
+		iDefend: 2,
+		iAttack: 3,
+	},
+	iTamils: {
+		iShock: 1,
+		iMissionary: 1,
+	},
+	iKorea: {
+		iCounter: 2,
+		iDefend: 2,
+	},
+	iEngland: {
+		iAttack: 2,
+	},
+	iPoland: {
+		iCounter: 2,
+	},
+	iMongols: {
+		iDefend: 2,
+		iAttack: 2,
+		iShock: 10,
+		iSiege: 5,
+		iExplore: 2,
+	},
+	iIran: {
+		iAttack: 6,
+		iSiege: 3,
+	},
+	iGermany: {
+		iAttack: 10,
+		iSiege: 5,
+	},
+	iAmerica: {
+		iDefend: 1,
+	},
+	iArgentina: {
+		iDefend: 3,
+		iShock: 2,
+		iSiege: 2,
+	},
+	iBrazil: {
+		iDefend: 1,
+	}
+}, {})
+
+dAdditionalUnits = CivDict({
+	iIndia: {
+		iDefend: 2,
+		iAttack: 1,
+	},
+	iGreece: {
+		iAttack: 4,
+	},
+	iPersia: {
+		iAttack: 4,
+	},
+	iPhoenicia: {
+		iHarass: 1,
+		iShock: 1
+	},
+	iPolynesia: {
+		iBase: 2,
+	},
+	iRome: {
+		iAttack: 4,
+	},
+	iJapan: {
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iTamils: {
+		iAttack: 2,
+		iShock: 1,
+	},
+	iEthiopia: {
+		iDefend: 2,
+		# 2 Shotelai
+	},
+	iKorea: {
+		iHarass: 2,
+		# 2 Crossbowmen
+	},
+	iMaya: {
+		iDefend: 2,
+		iAttack: 2,
+	},
+	iByzantium: {
+		iShock: 2,
+		iHarass: 2,
+	},
+	iVikings: {
+		# 3 Huscarls
+	},
+	iTurks: {
+		iHarass: 4,
+	},
+	iArabia: {
+		iAttack: 2,
+		iShock: 4,
+	},
+	iTibet: {
+		iHarass: 2,
+	},
+	iKhmer: {
+		iAttack: 3,
+		iShockCity: 2,
+	},
+	iMoors: {
+		# 2 Camel Archers
+	},
+	iSpain: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iFrance: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iEngland: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iHolyRome: {
+		iDefend: 3,
+		iAttack: 3,
+	},
+	iRussia: {
+		iAttack: 2,
+		iDefend: 2,
+		iHarass: 2,
+	},
+	iMali: {
+		iSkirmish: 4,
+		iAttack: 3,
+	},
+	iPoland: {
+		iDefend: 2,
+		iShock: 2,
+	},
+	iPortugal: {
+		iDefend: 3,
+		iCounter: 3,
+	},
+	iInca: {
+		iAttack: 5,
+		iDefend: 3,
+	},
+	iItaly: {
+		iShock: 2,
+	},
+	iMongols: {
+		iDefend: 2,
+		iHarass: 2,
+		iShock: 4,
+	},
+	iAztecs: {
+		iAttack: 5,
+		iDefend: 3,
+	},
+	iMughals: {
+		iShockCity: 2,
+		iHarass: 4,
+	},
+	iOttomans: {
+		iDefend: 3,
+		iHarass: 3,
+	},
+	iThailand: {
+		iCounter: 2,
+		iShock: 2,
+	},
+	iCongo: {
+		iAttack: 3,
+	},
+	iIran: {
+		iAttack: 2,
+		iHarass: 1,
+		iSiege: 1,
+	},
+	iNetherlands: {
+		iAttack: 3,
+		iCounter: 3,
+	},
+	iGermany: {
+		iAttack: 5,
+		iSiege: 3,
+	},
+	iAmerica: {
+		iAttack: 3,
+		iSkirmish: 3,
+		iSiege: 3,
+	},
+	iArgentina: {
+		iAttack: 2,
+		iShock: 4,
+	},
+	iMexico: {
+		iShock: 4,
+		iSiege: 2,
+	},
+	iColombia: {
+		iAttack: 4,
+		iSkirmish: 4,
+		iSiege: 2,
+	},
+	iBrazil: {
+		iAttack: 3,
+		iSkirmish: 2,
+		iSiege: 2,
+	},
+	iCanada: {
+		iAttack: 4,
+		iShock: 2,
+		iSiege: 2,
+	},
+}, {})
+
+dStartingExperience = CivDict({
+	iMughals: {
+		iAttack: 2,
+	},
+	iGermany: {
+		iAttack: 2,
+		iDefend: 2,
+		iSiege: 2,
+	},
+	iArgentina: {
+		iAttack: 2,
+		iShock: 2,
+		iDefend: 2,
+		iSiege: 2,
+	},
+	iMexico: {
+		iShock: 2,
+		iDefend: 2,
+		iAttack: 2,
+		iCounter: 2,
+	},
+}, {})
+
+dAlwaysTrain = CivDict({
+	iGreece: [iHoplite, iCatapult],
+	iPhoenicia: [iNumidianCavalry],
+	iByzantium: [iLegion],
+	iArabia: [iMobileGuard, iGhazi],
+	iOttomans: [iJanissary, iGreatBombard],
+}, [])
+
+dNeverTrain = CivDict({
+	iCongo: [iCrossbowman],
+}, [])
+
+def createSpecificUnits(iPlayer, tile):
+	iCiv = civ(iPlayer)
+	bHuman = player(iPlayer).isHuman()
+	
+	if iCiv == iPersia:
+		makeUnit(iPlayer, iWarElephant, tile)
+	elif iCiv == iEthiopia:
+		makeUnit(iPlayer, iShotelai, tile)
+	elif iCiv == iKhmer:
+		makeUnit(iPlayer, iBuddhistMissionary, tile)
+	elif iCiv == iMoors:
+		if civ() in [iSpain, iMoors]:
+			makeUnit(iPlayer, iCrossbowman, tile)
+	elif iCiv == iSpain:
+		if not bHuman:
+			makeUnit(iPlayer, iSettler, tile)
+			makeUnits(iPlayer, iLancer, tile, 2)
+	elif iCiv == iPoland:
+		if bHuman:
+			# to account for scripted AI settler spawn
+			makeUnit(iPlayer, iSettler, tile)
+	elif iCiv == iInca:
+		if not bHuman:
+			makeUnit(iPlayer, iSettler, tile)
+
+dSpecificAdditionalUnits = CivDict({
+	iEthiopia: {
+		iShotelai: 2,
+	},
+	iKorea: {
+		iCrossbowman: 2,
+	},
+	iVikings: {
+		iHuscarl: 3,
+	},
+	iMoors: {
+		iCamelArcher: 2,
+	},
+}, {})
+
 
 dStartingUnits = CivDict({
 	iChina: {

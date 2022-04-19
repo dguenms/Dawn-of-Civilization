@@ -12940,7 +12940,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
+						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian() || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
 						{
 							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
 

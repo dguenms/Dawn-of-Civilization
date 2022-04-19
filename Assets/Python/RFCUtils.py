@@ -1,7 +1,8 @@
-from Events import events
-from Popups import popup
 from Civilizations import *
 from Core import *
+
+from Events import events
+from Popups import popup
 
 import BugCore
 import CvScreenEnums
@@ -87,7 +88,7 @@ def minorWars(iMinorCiv):
 		for iPlayer in players.major().alive().ai():
 			if player(iPlayer).getSettlerValue(x, y) >= 90 or player(iPlayer).getWarValue(x, y) >= 6:
 				if not teamMinor.isAtWar(iPlayer):
-					teamMinor.declareWar(iPlayer, False, WarPlanTypes.WARPLAN_LIMITED)
+					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
 
 # used: Rise
 def updateMinorTechs(iMinorCiv, iMajorCiv):
@@ -469,6 +470,8 @@ def getRoleAI(iRole):
 	elif iRole == iSettleSea:
 		return UnitAITypes.UNITAI_SETTLER_SEA
 	elif iRole == iAttackSea:
+		return UnitAITypes.UNITAI_ATTACK_SEA
+	elif iRole == iTransport:
 		return UnitAITypes.UNITAI_ASSAULT_SEA
 	elif iRole == iEscort:
 		return UnitAITypes.UNITAI_ESCORT_SEA
@@ -478,7 +481,7 @@ def getRoleAI(iRole):
 		return UnitAITypes.UNITAI_EXPLORE
 	elif iRole == iSkirmish:
 		return UnitAITypes.UNITAI_COLLATERAL
-	elif iWork:
+	elif iRole == iWork:
 		return UnitAITypes.UNITAI_WORKER
 
 	return UnitAITypes.NO_UNITAI
@@ -561,7 +564,7 @@ def createRoleUnits(iPlayer, location, units, iExperience=0):
 	return created
 
 # used: AIWars, Congresses, History, RFCUtils
-def createRoleUnit(iPlayer, location, iRole, iAmount, iExperience=0):
+def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
 	created = CreatedUnits.none()
 	location = getRoleLocation(iRole, location)
 	if iRole == iSettle:
@@ -587,8 +590,6 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		flippingUnits = plotUnits.where(lambda unit: not is_minor(unit) or (not unit.isAnimal() and not unit.isFound())).grouped(CyUnit.getUnitType)
 		removedUnits = plotUnits.where(lambda unit: not unit.isCargo())
 		
-		flippingUnitsText = str([(iUnit, str(typeUnits)) for iUnit, typeUnits in flippingUnits])
-		
 		for unit in removedUnits:
 			unit.kill(False, -1)
 	else:
@@ -601,6 +602,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		flippedCity.setOccupationTimer(0)
 	
 	if bFlipUnits:
+		sFlippingUnitsAfter = str([iUnit for iUnit, _ in flippingUnits])
 		for iUnit, typeUnits in flippingUnits:
 			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
 	else:
@@ -728,6 +730,7 @@ def applyByzantineBribery(iChoice, iPlayer, x, y):
 	
 	newUnit = makeUnit(iPlayer, unit.getUnitType(), closestCity(unit, owner=iPlayer))
 	player(iPlayer).changeGold(-iCost)
+
 	unit.kill(False, -1)
 	
 	if newUnit:
@@ -753,40 +756,38 @@ def doByzantineBribery(spy):
 	x, y = location(spy)
 	bribePopup.cancel().launch(spy.getOwner(), x, y)
 	
-def exclusive(iPlayer, *civs):
-	return civ(iPlayer) in civs and any(player(iCiv).isAlive() for iCiv in civs if civ(iPlayer) != iCiv)
+def exclusive(iCiv, *civs):
+	return iCiv in civs and any(player(iCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
-def canRespawn(iPlayer):
-	iCiv = civ(iPlayer)
-
-	# no respawn if never spawned
-	if not data.players[iPlayer].bSpawned:
+def canRespawn(iCiv):
+	# only civs that have ever spawned can respawn
+	if not data.civs[iCiv].bSpawned:
 		return False
 	
 	# only dead civ need to check for resurrection
-	if player(iPlayer).isAlive():
+	if player(iCiv).isAlive():
 		return False
 		
 	# check if only recently died
-	if data.players[iPlayer].iLastTurnAlive > turn() - turns(20):
+	if data.civs[iCiv].iLastTurnAlive > turn() - turns(20):
 		return False
 	
 	# check if the civ can be reborn at this date
-	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
+	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iCiv]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if exclusive(iPlayer, iKhmer, iThailand):
+	if exclusive(iCiv, iKhmer, iThailand):
 		return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if exclusive(iPlayer, iRome, iItaly):
+	if exclusive(iCiv, iRome, iItaly):
 		return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if exclusive(iPlayer, iGreece, iByzantium):
+	if exclusive(iCiv, iGreece, iByzantium):
 		return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
@@ -801,11 +802,11 @@ def canRespawn(iPlayer):
 	return True
 	
 # used: CvScreensInterface, MapDrawer, RFCUtils
-def canEverRespawn(iPlayer, iGameTurn = None):
+def canEverRespawn(iCiv, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iPlayer])
+	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iCiv])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
@@ -837,6 +838,7 @@ def expelUnits(iPlayer, area):
 				message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(ownerUnits), adjective(iPlayer), destination.getName())
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
+# TODO: should be civ based not player based
 def toggleStabilityOverlay(iPlayer = -1):
 	global bStabilityOverlay
 	bReturn = bStabilityOverlay
@@ -862,18 +864,18 @@ def toggleStabilityOverlay(iPlayer = -1):
 	# apply the highlight
 	for plot in plots.all().land():
 		if bDebug or plot.isRevealed(iTeam, False):
-			if plot.isCore(iPlayer):
+			if plot.isPlayerCore(iPlayer):
 				iPlotType = iCore
 			else:
-				iSettlerValue = plot.getSettlerValue(iPlayer)
+				iSettlerValue = plot.getPlayerSettlerValue(iPlayer)
 				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
-					if otherplayers.any(lambda p: plot.isCore(p)):
+					if otherplayers.any(plot.isPlayerCore):
 						iPlotType = iContest
 					else:
 						iPlotType = iHistorical
-				elif otherplayers.any(lambda p: plot.isCore(p)):
+				elif otherplayers.any(plot.isPlayerCore):
 					iPlotType = iForeignCore
 				else:
 					iPlotType = -1
@@ -979,6 +981,20 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
 		events.fireEvent("enslave", iPlayer, pLosingUnit)
+
+# used: Stability
+def flipOrRelocateGarrison(city, iNumDefenders):
+	lRelocatedUnits = []
+	lFlippedUnits = []
+	
+	for plot in plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or location(p) == location(city)):
+		for unit in units.at(plot).owner(city.getOwner()).domain(DomainTypes.DOMAIN_LAND):
+			if unit.canFight() and len(lFlippedUnits) < iNumDefenders:
+				lFlippedUnits.append(unit)
+			else:
+				lRelocatedUnits.append(unit)
+					
+	return lFlippedUnits, lRelocatedUnits
 		
 # used: Stability
 def relocateGarrisonToCore(city):
@@ -1013,6 +1029,14 @@ def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
 		for unit in removedUnits:
 			unit.kill(-1, False)
 				
+# used: Stability
+def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
+	for unit in units:
+		flipUnit(unit, iNewOwner, tPlot)
+
+	if len(units) < iNumDefenders and active() != iNewOwner:
+		createRoleUnit(iNewOwner, tPlot, iDefend, iNumDefenders - len(units))
+		
 # used: Congresses, Stability
 def killUnits(lUnits):
 	for unit in units.of(lUnits).where(lambda unit: not unit.isCargo()):
@@ -1073,7 +1097,7 @@ def getPrevalentReligion(area, iStateReligionPlayer=None):
 	
 	religionCount = lambda iReligion: area.cities().religion(iReligion).count()
 	stateReligionCount = lambda iReligion: area.cities().notowner(iStateReligionPlayer).where(lambda city: player(city).getStateReligion() == iReligion).count()
-	previousStateReligionCount = lambda iReligion: area.cities().owner(iStateReligionPlayer).where(lambda city: city.getPreviousOwner() >= 0 and player(city.getPreviousOwner()).getStateReligion == iReligion).count()
+	previousStateReligionCount = lambda iReligion: area.cities().owner(iStateReligionPlayer).where(lambda city: slot(Civ(city.getPreviousCiv())) >= 0 and player(Civ(city.getPreviousCiv())).getStateReligion() == iReligion).count()
 	
 	found = find_max(religions, lambda iReligion: religionCount(iReligion) + stateReligionCount(iReligion) + previousStateReligionCount(iReligion))
 	
@@ -1092,7 +1116,7 @@ def isCurrentCapital(iPlayer, *names):
 # used: Rise, Scenarios
 def convertSurroundingPlotCulture(iPlayer, plots):
 	for plot in plots:
-		if plot.isOwned() and plot.isCore(plot.getOwner()) and not plot.isCore(iPlayer): continue
+		if plot.isOwned() and plot.isPlayerCore(plot.getOwner()) and not plot.isPlayerCore(iPlayer): continue
 		if not plot.isCity():
 			convertPlotCulture(plot, iPlayer, 100, False)
 
@@ -1124,3 +1148,14 @@ def endObserverMode():
 # used: Congresses
 def isIsland(tile):
 	return plot(tile).area().getNumTiles() == 1
+
+
+def getImprovementBuild(iImprovement):
+	if iImprovement < 0:
+		return None
+		
+	iPredecessor = next(i for i in infos.improvements() if infos.improvement(i).getImprovementUpgrade() == iImprovement)
+	if iPredecessor is not None:
+		return getImprovementBuild(iPredecessor)
+	
+	return next(iBuild for iBuild in infos.builds() if infos.build(iBuild).getImprovement() == iImprovement)

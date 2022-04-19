@@ -2,8 +2,7 @@ from Consts import *
 from RFCUtils import *
 from Events import *
 
-def getModifier(iPlayer, iModifier):
-	iCivilization = player(iPlayer).getCivilizationType()
+def getModifier(iCivilization, iModifier):
 	if iCivilization in lCivOrder:
 		return tModifiers[iModifier][lCivOrder.index(iCivilization)]
 	return tDefaults[iModifier]
@@ -30,22 +29,22 @@ def adjustModifiers(iPlayer):
 def adjustInflationModifier(iPlayer):
 	adjustModifier(iPlayer, iModifierInflationRate, dLateScenarioModifiers[iModifierInflationRate])
 	
-def updateModifier(iPlayer, iModifier):
-	setModifier(iPlayer, iModifier, getModifier(iPlayer, iModifier))
+def updateModifier(iPlayer, iCivilization, iModifier):
+	setModifier(iPlayer, iModifier, getModifier(iCivilization, iModifier))
 	
-def updateModifiers(iPlayer):
+def updateModifiers(iPlayer, iCivilization):
 	for iModifier in range(iNumModifiers):
-		updateModifier(iPlayer, iModifier)
+		updateModifier(iPlayer, iCivilization, iModifier)
 
-@handler("GameStart")
-def init():
-	for iPlayer in players.all().barbarian():
-		updateModifiers(iPlayer)
-		
-		if scenario() > i3000BC and dBirth[iPlayer] < dBirth[iVikings]:
-			adjustModifiers(iPlayer)
-		
-		player(iPlayer).updateMaintenance()
+
+@handler("playerCivAssigned")
+def init(iPlayer, iCivilization):
+	updateModifiers(iPlayer, iCivilization)
+	
+	if scenario() > i3000BC and dBirth[iPlayer] < dBirth[iVikings]:
+		adjustModifiers(iPlayer)
+	
+	player(iPlayer).updateMaintenance()
 
 
 @handler("BeginGameTurn")

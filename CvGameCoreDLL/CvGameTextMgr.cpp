@@ -4547,13 +4547,13 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
         bool bCore = pPlot->isCore(GC.getGameINLINE().getActivePlayer());
 		bool bForeignCore = false;
 
-		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (iI = 0; iI < NUM_CIVS; iI++)
 		{
-			if (iI != GC.getGameINLINE().getActivePlayer())
+			if (iI != GC.getGameINLINE().getActiveCivilizationType())
 			{
-				if (pPlot->isCore((PlayerTypes)iI))
+				if (pPlot->isCore((CivilizationTypes)iI))
 				{
-					if (GET_PLAYER((PlayerTypes)iI).isAlive() || GET_PLAYER((PlayerTypes)iI).canEverRespawn())
+					if (isCivAlive((CivilizationTypes)iI) || canEverRespawn((CivilizationTypes)iI))
 					{
 						bForeignCore = true;
 						break;
@@ -5037,18 +5037,6 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}
-
-	/*for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-	{
-		for (int iJ = 0; iJ < 5; iJ++)
-		{
-			if (pPlot->getCultureRangeCities((PlayerTypes)iI, iJ) != 0)
-			{
-				szString.append(NEWLINE);
-				szString.append(gDLL->getText("Player %d1 cities in range %d2: %d3", iI, iJ, pPlot->getCultureRangeCities((PlayerTypes)iI, iJ)));
-			}
-		}
-	}*/
 }
 
 
@@ -6142,6 +6130,18 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		{
 			// Civ Name
 			szText = GC.getCivilizationInfo(eCivilization).getDescription();
+
+			// Leoreth: if we set temporary values for sorting in the exe, restore the original values
+			if (szText.size() == 2)
+			{
+				for (int iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+				{
+					GC.getCivilizationInfo((CivilizationTypes)iI).setDescription(GC.getCivilizationInfo((CivilizationTypes)iI).getDescriptionKeyPersistent());
+				}
+
+				szText = GC.getCivilizationInfo(eCivilization).getDescription();
+			}
+
 			swprintf(szBuffer,  SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
 			szInfoText.append(szBuffer);
 		}
@@ -6407,8 +6407,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 
 		gDLL->getPythonIFace()->callFunction(PYScreensModule, "getHistoricalVictoryDescriptions", historicalVictoryDescriptionsArgs.makeFunctionArgs(), &historicalVictoryDescriptions);
 
-		szText = bDawnOfMan ? L" " : L"";
-		szText += historicalVictoryDescriptions;
+		szText = historicalVictoryDescriptions;
 		szText += NEWLINE L"  ";
 
 		if (bDawnOfMan)

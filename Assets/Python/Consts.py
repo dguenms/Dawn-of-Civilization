@@ -10,6 +10,8 @@ gc = CyGlobalContext()
 iWorldX = 124
 iWorldY = 68
 
+iNumPlayers = gc.getMAX_PLAYERS()
+
 # civilizations, not players
 iNumCivs = 57
 (iAmerica, iArabia, iArgentina, iAztecs, iBabylonia, iBrazil, iByzantium, iCanada, iCarthage, iCelts, 
@@ -21,8 +23,7 @@ iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = tup
 
 iPhoenicia = iCarthage
 
-# slot order
-lCivOrder = [
+lBirthOrder = [
 	iEgypt,
 	iBabylonia,
 	iHarappa,
@@ -70,7 +71,10 @@ lCivOrder = [
 	iMexico,
 	iColombia,
 	iBrazil,
-	iCanada,
+	iCanada
+]
+
+lCivOrder = lBirthOrder + [
 	iIndependent,
 	iIndependent2,
 	iNative,
@@ -269,6 +273,48 @@ lNeighbours = [
 	(iMexico, iColombia),
 ]
 
+lInfluences = [
+	(iEgypt, iEngland),
+	(iBabylonia, iRome),
+	(iBabylonia, iArabia),
+	(iIndia, iEngland),
+	(iPhoenicia, iByzantium),
+	(iPhoenicia, iTurks),
+	(iPhoenicia, iIran),
+	(iPersia, iArabia),
+	(iRome, iOttomans),
+	(iMaya, iSpain),
+	(iTamils, iEngland),
+	(iTamils, iNetherlands),
+	(iArabia, iBabylonia),
+	(iArabia, iGreece),
+	(iArabia, iPersia),
+	(iIndonesia, iJapan),
+	(iSpain, iArabia),
+	(iSpain, iOttomans),
+	(iKhmer, iJapan),
+	(iHolyRome, iOttomans),
+	(iInca, iSpain),
+	(iItaly, iOttomans),
+	(iAztecs, iSpain),
+	(iMughals, iEngland),
+	(iOttomans, iRome),
+	(iThailand, iJapan),
+	(iCongo, iPortugal),
+	(iNetherlands, iSpain),
+	(iAmerica, iEngland),
+	(iAmerica, iFrance),
+	(iAmerica, iNetherlands),
+	(iArgentina, iSpain),
+	(iMexico, iSpain),
+	(iMexico, iFrance),
+	(iColombia, iSpain),
+	(iBrazil, iPortugal),
+	(iBrazil, iCongo),
+	(iCanada, iFrance),
+	(iCanada, iEngland),
+]
+
 dBirth = CivDict({
 iEgypt : -3000,
 iBabylonia : -3000,
@@ -422,8 +468,10 @@ iMexico : iAztecs,
 lSlotOrder = [iCiv for iCiv in lCivOrder if iCiv not in dRebirthCiv]
 
 # Leoreth: determine neighbour lists from pairwise neighbours for easier lookup
-dNeighbours = CivDict(dict((iCiv, list(set([iLeft for iLeft, iRight in lNeighbours if iRight == iCiv] + [iRight for iLeft, iRight in lNeighbours if iLeft == iCiv]))) for iCiv in dBirth), [])
+dNeighbours = dictFromEdges(lBirthCivs, lNeighbours)
 
+# Leoreth: determine influence lists from pairwise influences for easier lookup
+dInfluences = dictFromEdges(lBirthCivs, lInfluences)
 
 dResurrections = CivDict({
 iEgypt : [(900, 1300), (1800, 2020)],
@@ -980,23 +1028,23 @@ iVictorySecularism = 11
 
 #leaders
 iNumLeaders = 125
-(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
-iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
-iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
-iLouis, iMansaMusa, iMao, iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQinShiHuang, 
-iRamesses, iRagnar, iRoosevelt, iSaladin, iSittingBull, iStalin, iSuleiman, iSuryavarman, iOdaNobunaga, iVictoria, 
-iWangKon, iWashington, iWillemVanOranje, iZaraYaqob, iKammu, iMeiji, iAkbar, iHiram, iMenelik, iGustav, 
-iMongkut, iPhilip, iBarbarossa, iCharles, iFrancis, iIvan, iAfonso, iAtaturk, iMaria, iHitler,
-iFranco, iAlexanderI, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, 
-iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, 
-iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, 
-iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, 
-iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge, iKhosrow, iBumin, iTamerlane, iEzana) = range(iNumLeaders)
+(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iRamesses, iCleopatra, iBaibars, iNasser, iSargon, iHammurabi, iVatavelli,
+iQinShiHuang, iTaizong, iHongwu, iMao, iPericles, iAlexanderTheGreat, iGeorge, iAsoka, iChandragupta, iShivaji, 
+iGandhi, iHiram, iHannibal, iAhoeitu, iCyrus, iDarius, iKhosrow, iJuliusCaesar, iAugustus, iPacal,
+iRajendra, iKrishnaDevaRaya, iEzana, iZaraYaqob, iMenelik, iWangKon, iSejong, iJustinian, iBasil, iKammu,
+iOdaNobunaga, iMeiji, iRagnar, iGustav, iGerhardsen, iBumin, iAlpArslan, iTamerlane, iHarun, iSaladin,
+iSongtsen, iLobsangGyatso, iDharmasetu, iHayamWuruk, iSuharto, iRahman, iYaqub, iIsabella, iPhilip, iFranco,
+iCharlemagne, iLouis, iNapoleon, iDeGaulle, iSuryavarman, iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa,
+iCharles, iFrancis, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMansaMusa, iCasimir, iSobieski,
+iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, iCavour, iMussolini,
+iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iMehmed, iSuleiman, iAtaturk, iNaresuan,
+iMongkut, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iFrederick, iBismarck, iHitler, iWashington,
+iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, iBolivar, iPedro, iVargas,
+iMacDonald, iTrudeau, iBoudica, iBrennus, iSittingBull) = range(iNumLeaders)
 
 dResurrectionLeaders = CivDict({
 	iChina : iHongwu,
-	iIndia : iShahuji,
+	iIndia : iShivaji,
 	iEgypt : iBaibars,
 })
 
@@ -1006,6 +1054,9 @@ iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodDenmark, iP
 iPeriodSweden, iPeriodSaudi, iPeriodVietnam, iPeriodMorocco, iPeriodSpain, 
 iPeriodAustria, iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, 
 iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
+
+iNumImpacts = 5
+(iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
 
 dTradingCompanyPlots = CivDict({
 iVikings : [],

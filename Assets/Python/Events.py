@@ -57,6 +57,7 @@ events.addEvent("wonderBuilt")
 events.addEvent("immigration")
 events.addEvent("collapse")
 events.addEvent("periodChange")
+events.addEvent("playerPeriodChange")
 events.addEvent("birth")
 events.addEvent("rebirth")
 events.addEvent("resurrection")
@@ -67,21 +68,7 @@ events.addEvent("combatFood")
 events.addEvent("sacrificeHappiness")
 events.addEvent("prepareBirth")
 events.addEvent("flip")
-
-
-@handler("BeginGameTurn")
-def logPlayersAlive():
-	current = players.all().alive()
-	past_fall = current.where(lambda p: turn() >= year(dFall[p]))
-	resurrected = current.where(lambda p: data.players[p].iResurrections > 0)
-	message = """
-### PLAYERS ALIVE COUNT START ###
-turn: %d, year: %d
-players alive: %d (%s)
-players past fall date: %d (%s)
-players resurrected: %d (%s)
-### PLAYERS ALIVE COUNT END  ###"""
-	print message % (game.getGameTurn(), game.getGameTurnYear(), current.count(), current, past_fall.count(), past_fall, resurrected.count(), resurrected)
+events.addEvent("conquerors")
 
 
 @handler("buildingBuilt")
@@ -118,7 +105,7 @@ def firstCityOnCityBuilt(city):
 def wonderBuiltOnBuildingBuilt(city, iBuilding):
 	if isWorldWonderClass(infos.building(iBuilding).getBuildingClassType()):
 		events.fireEvent("wonderBuilt", city, iBuilding)
-
+		
 
 @handler("GameStart")
 def resetVictoryHandlersOnGameStart():

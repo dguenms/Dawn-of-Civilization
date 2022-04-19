@@ -89,5 +89,7 @@ void CyMapPythonInterface()
 
 		.def("maxStepDistance", &CyMap::maxStepDistance, "int ()")
 		.def("maxPlotDistance", &CyMap::maxPlotDistance, "int ()")
+
+		.def("getScenario", &CyMap::getScenario, "int ()")
 		;
 }

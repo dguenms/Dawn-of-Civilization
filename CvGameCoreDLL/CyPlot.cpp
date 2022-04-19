@@ -886,6 +886,11 @@ int CyPlot::getCulture(int /*PlayerTypes*/ eIndex)
 	return m_pPlot ? m_pPlot->getCulture((PlayerTypes)eIndex) : -1;
 }
 
+int CyPlot::getCivCulture(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getActualCulture((CivilizationTypes)iCivilization) : -1;
+}
+
 int CyPlot::countTotalCulture()
 {
 	return m_pPlot ? m_pPlot->countTotalCulture() : -1;
@@ -1052,7 +1057,6 @@ void CyPlot::setScriptData(std::string szNewValue)
 		m_pPlot->setScriptData(szNewValue.c_str());
 }
 
-//Leoreth
 int CyPlot::getRegionID()
 {
 	return m_pPlot ? m_pPlot->getRegionID() : -1;
@@ -1064,37 +1068,54 @@ void CyPlot::setRegionID(int iNewValue)
 		m_pPlot->setRegionID(iNewValue);
 }
 
-bool CyPlot::isCore(int ePlayer)
+bool CyPlot::isCore(int iCivilization)
 {
-	return m_pPlot ? m_pPlot->isCore((PlayerTypes)ePlayer) : -1;
+	return m_pPlot ? m_pPlot->isCore((CivilizationTypes)iCivilization) : false;
 }
 
-void CyPlot::setCore(int ePlayer, bool bNewValue)
+bool CyPlot::isPlayerCore(int iPlayer)
 {
-	if (m_pPlot)
-		m_pPlot->setCore((PlayerTypes)ePlayer, bNewValue);
+	return m_pPlot ? m_pPlot->isCore((PlayerTypes)iPlayer) : false;
 }
 
-int CyPlot::getSettlerValue(int ePlayer)
+bool CyPlot::isOwnerCore()
 {
-	return m_pPlot ? m_pPlot->getSettlerValue((PlayerTypes)ePlayer) : -1;
+	return m_pPlot ? m_pPlot->isCore() : false;
 }
 
-void CyPlot::setSettlerValue(int ePlayer, int iNewValue)
+void CyPlot::setCore(int iCivilization, bool bNewValue)
 {
-	if (m_pPlot)
-		m_pPlot->setSettlerValue((PlayerTypes)ePlayer, iNewValue);
+	if (m_pPlot) m_pPlot->setCore((CivilizationTypes)iCivilization, bNewValue);
 }
 
-int CyPlot::getWarValue(int ePlayer)
+int CyPlot::getSettlerValue(int iCivilization)
 {
-	return m_pPlot ? m_pPlot->getWarValue((PlayerTypes)ePlayer) : -1;
+	return m_pPlot ? m_pPlot->getSettlerValue((CivilizationTypes)iCivilization) : -1;
 }
 
-void CyPlot::setWarValue(int ePlayer, int iNewValue)
+int CyPlot::getPlayerSettlerValue(int iPlayer)
 {
-	if (m_pPlot)
-		m_pPlot->setWarValue((PlayerTypes)ePlayer, iNewValue);
+	return m_pPlot ? m_pPlot->getSettlerValue((PlayerTypes)iPlayer) : -1;
+}
+
+void CyPlot::setSettlerValue(int iCivilization, int iNewValue)
+{
+	if (m_pPlot) m_pPlot->setSettlerValue((CivilizationTypes)iCivilization, iNewValue);
+}
+
+int CyPlot::getWarValue(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getWarValue((CivilizationTypes)iCivilization) : -1;
+}
+
+int CyPlot::getPlayerWarValue(int iPlayer)
+{
+	return m_pPlot ? m_pPlot->getWarValue((PlayerTypes)iPlayer) : -1;
+}
+
+void CyPlot::setWarValue(int iCivilization, int iNewValue)
+{
+	if (m_pPlot) m_pPlot->setWarValue((CivilizationTypes)iCivilization, iNewValue);
 }
 
 int CyPlot::getSpreadFactor(int eReligion)
@@ -1144,9 +1165,9 @@ void CyPlot::resetCultureConversion()
 	if (m_pPlot) m_pPlot->resetCultureConversion();
 }
 
-int CyPlot::getCultureConversionPlayer()
+int CyPlot::getCultureConversionCivilization()
 {
-	return m_pPlot ? m_pPlot->getCultureConversionPlayer() : -1;
+	return m_pPlot ? m_pPlot->getCultureConversionCivilization() : -1;
 }
 
 int CyPlot::getCultureConversionRate()

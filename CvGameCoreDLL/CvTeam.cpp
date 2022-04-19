@@ -1159,7 +1159,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	}
 
 	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
-	if (eTeam < NUM_MAJOR_PLAYERS)
+	if (!GET_TEAM(eTeam).isMinorCiv() && !GET_TEAM(eTeam).isBarbarian())
 	{
 		int iGameTurn = GC.getGameINLINE().getGameTurn();
 
@@ -2790,7 +2790,7 @@ int CvTeam::getPopulationResearchModifier() const
 	int iMultiplier;
 	int iNumCities = getNumCities();
 
-	if (getID() < NUM_MAJOR_PLAYERS)
+	if (!isMinorCiv() && !isBarbarian())
 	{
 		// Rhye: discount for small empires
 		if (iNumCities < 5)
@@ -2810,7 +2810,7 @@ int CvTeam::getTurnResearchModifier() const
 	int iTurnModifier, iAmount;
 
 	// Rhye: discount for newborn civs
-	if (getID() < NUM_MAJOR_PLAYERS)
+	if (!isMinorCiv() && !isBarbarian())
 	{
 		iTurnModifier = 5 * GET_PLAYER(getLeaderID()).getCurrentEra();
 
@@ -2850,8 +2850,13 @@ int CvTeam::getTechLeaderModifier() const
 		int iDenominator = 0;
 		int iAverageValue = 0;
 
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
 			{
 				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
@@ -2889,8 +2894,13 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
 	int iSpreadModifier = 0;
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) 
 		{
 			iCivsWithTech++;
@@ -2935,9 +2945,15 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 
 	int iCount = 0;
 
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
 		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
+
+		if (GET_TEAM(eTeam).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_TEAM(eTeam).isHasTech(eTech) && (!isHuman() || canContact(eTeam)) && (GET_TEAM(eTeam).isHuman() || GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL))
 		{
 			if (!isAtWar(eTeam))
@@ -6727,7 +6743,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: uiFlag is 1
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iNumMembers);
@@ -6756,8 +6772,8 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iEspionagePointsEver);
 
 	pStream->Read(&m_iTotalTechValue); // Leoreth
-	if (uiFlag >= 1) pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
-	if (uiFlag >= 1) pStream->Read(&m_iSatelliteAttackCount); // Leoreth
+	pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
+	pStream->Read(&m_iSatelliteAttackCount); // Leoreth
 
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
@@ -6842,7 +6858,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 1;
+	uint uiFlag = 0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iNumMembers);

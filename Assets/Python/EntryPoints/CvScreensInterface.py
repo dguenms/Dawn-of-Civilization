@@ -62,6 +62,7 @@ from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
 import Victories
 
+from Scenarios import getScenario
 from Locations import *
 from Core import *
 
@@ -928,21 +929,28 @@ def getCityName(argsList):
 		return result
 		
 def canRespawn(argsList):
-	iPlayer = argsList[0]
+	iCiv = argsList[0]
 	
-	if canRespawnUtils(iPlayer): return 1
+	if canRespawnUtils(Civ(iCiv)): return 1
 	
 	return 0
 	
 def canEverRespawn(argsList):
-	iPlayer, iGameTurn = argsList
+	iCiv, iGameTurn = argsList
 	
-	if canEverRespawnUtils(iPlayer, iGameTurn): return 1
+	if canEverRespawnUtils(Civ(iCiv), iGameTurn): return 1
 	
 	return 0
 
 def toggleStabilityOverlay():
 	toggleStabilityOverlayUtils()
+
+def updateCustomMapOption(argsList):
+	iOptionID, iOption = argsList
+	if iOptionID == 0:
+		scenario = getScenario(iOption)
+		scenario.setupCivilizations()
+		scenario.setupLeaders()
 		
 
 #######################################################################################

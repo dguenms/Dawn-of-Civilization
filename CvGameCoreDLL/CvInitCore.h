@@ -166,7 +166,10 @@ public:
 	DllExport void setGameTurn(int iGameTurn)	{ m_iGameTurn = iGameTurn; }
 
 	DllExport int getMaxTurns() const	{ return m_iMaxTurns; }
-	DllExport void setMaxTurns(int iMaxTurns)	{ m_iMaxTurns = iMaxTurns; }
+	DllExport void setMaxTurns(int iMaxTurns)	
+	{ 
+		m_iMaxTurns = iMaxTurns; 
+	}
 
 	DllExport int getPitbossTurnTime() const	{ return m_iPitbossTurnTime; }
 	DllExport void setPitbossTurnTime(int iPitbossTurnTime)	{ m_iPitbossTurnTime = iPitbossTurnTime; }

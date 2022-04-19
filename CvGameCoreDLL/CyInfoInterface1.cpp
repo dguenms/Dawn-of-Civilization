@@ -26,6 +26,8 @@ void CyInfoPythonInterface1()
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
 
+		// Leoreth
+		.def("setDescription", &CvInfoBase::setDescription, "void (string)")
 		;
 
 	python::class_<CvScalableInfo>("CvScalableInfo")

@@ -646,7 +646,11 @@ def onCityRazed(city, iPlayer):
 	
 	#Rhye - start bugfix
 	#owner = PyPlayer(city.getOwner())
-	owner = PyPlayer(city.getPreviousOwner())
+	iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+	if iPreviousOwner < 0:
+		return
+	
+	owner = PyPlayer(iPreviousOwner)
 	#Rhye - end bugfix
 	
 	razor = PyPlayer(iPlayer)

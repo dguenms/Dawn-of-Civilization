@@ -8,6 +8,7 @@ import time
 from Consts import * #Rhye
 from RFCUtils import *
 from StoredData import data
+from Core import *
 
 # BUG - start
 import AttitudeUtil

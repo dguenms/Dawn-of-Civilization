@@ -91,20 +91,12 @@ dCapitals = {
 }
 
 
-@handler("PythonReloaded")
-def reload():
-	determineCapitalLocations()
-
-@handler("GameStart")
-def setup():
-	determineCapitalLocations()
-
 def determineCapitalLocations():
 	dLocations = {}
 	
 	for iCiv in dCapitals:
 		for sCapital in dCapitals[iCiv]:
-			dLocations[sCapital] = findLocations(slot(iCiv), sCapital)
+			dLocations[sCapital] = findLocations(iCiv, sCapital)
 			
 	data.dCapitalLocations = dLocations
 
@@ -114,7 +106,7 @@ def updateMexicanCityNames(iPlayer):
 		updateCityNamesFound(iPlayer)
 
 @handler("periodChange")
-def updateVietnameseNames(iPlayer, iPeriod):
+def updateVietnameseNames(iCiv, iPeriod):
 	if iPeriod == iPeriodVietnam:
 		saigon = city(*tSaigon)
 		if saigon:
@@ -123,7 +115,7 @@ def updateVietnameseNames(iPlayer, iPeriod):
 # methods
 
 def isResurrected(iPlayer):
-	return data.players[iPlayer].iResurrections > 0
+	return data.civs[iPlayer].iResurrections > 0
 
 def getLanguages(iCiv):
 	if iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam:
@@ -136,15 +128,14 @@ def getLanguages(iCiv):
 	return dLanguages[iCiv]
 	
 def getLocalLanguages(tPlot):
-	corePlayers = players.major().where(plot(tPlot).isCore)
-	if not corePlayers:
-		corePlayers = players.major()
-		
-	iLocalPlayer = corePlayers.maximum(plot(tPlot).getSettlerValue)
-	return getLanguages(civ(iLocalPlayer))
+	localCivs = civs.major().where(plot(tPlot).isCore) or civs.major()
+	iLocalCiv = localCivs.maximum(plot(tPlot).getSettlerValue)
+	return getLanguages(iLocalCiv)
 
-def getFoundName(iPlayer, plot):
-	return next([getMapName(iLanguage, location(plot)) for iLanguage in getLanguages(civ(iPlayer))], None)
+def getFoundName(identifier, plot):
+	if not isinstance(identifier, Civ):
+		identifier = civ(identifier)
+	return next([getMapName(iLanguage, location(plot)) for iLanguage in getLanguages(identifier)], None)
 	
 def getMapName(iLanguage, (x, y)):
 	if iLanguage in dFoundMaps:
@@ -207,8 +198,8 @@ def updateCityNamesFound(iPlayer):
 		if sNewName != "-1":
 			city.setName(sNewName, False)
 			
-def findLocations(iPlayer, sName):
-	return plots.all().where(lambda p: getFoundName(iPlayer, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
+def findLocations(iCiv, sName):
+	return plots.all().where(lambda p: getFoundName(iCiv, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
 
 @handler("cityBuilt")
 def onCityBuilt(city):

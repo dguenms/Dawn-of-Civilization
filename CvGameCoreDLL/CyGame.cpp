@@ -365,6 +365,11 @@ int CyGame::getStartTurn() const
 	return (NULL != m_pGame ? m_pGame->getStartTurn() : -1);
 }
 
+void CyGame::setStartTurn(int iNewValue)
+{
+	if (m_pGame) m_pGame->setStartTurn(iNewValue);
+}
+
 int CyGame::getStartYear() const
 {
 	return (NULL != m_pGame ? m_pGame->getStartYear() : -1);
@@ -1141,11 +1146,11 @@ void CyGame::saveReplay(int iPlayer)
 	}
 }
 
-void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv)
+void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv, bool bAlive, bool bMinor)
 {
 	if (m_pGame)
 	{
-		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv);
+		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv, bAlive, bMinor);
 	}
 }
 
@@ -1344,4 +1349,19 @@ void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
 void CyGame::setEventEffectNotifications(int iNotificationLevel)
 {
 	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
+}
+
+int CyGame::getPeriod(int iCivilization)
+{
+	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
+}
+
+void CyGame::setPeriod(int iCivilization, int iPeriod)
+{
+	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
+}
+
+int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
+{
+	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
 }
