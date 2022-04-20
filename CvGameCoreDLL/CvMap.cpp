@@ -344,7 +344,7 @@ void CvMap::doTurn()
 	CvPlot* pPlot;
 
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
-	int iInterval = getTurns(10);
+	int iInterval = getTurns(5);
 
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{
@@ -354,7 +354,7 @@ void CvMap::doTurn()
 
 		if (iGameTurn % iInterval == 0)
 		{
-			if (pPlot->getCultureConversionPlayer() != NO_PLAYER)
+			if (pPlot->getCultureConversionCivilization() != NO_CIVILIZATION)
 			{
 				pPlot->changeCultureConversionRate(-5);
 			}
@@ -1115,6 +1115,12 @@ CustomMapOptionTypes CvMap::getCustomMapOption(int iOption)
 }
 
 
+ScenarioTypes CvMap::getScenario()
+{
+	return (ScenarioTypes)getCustomMapOption(0);
+}
+
+
 int CvMap::getNumBonuses(BonusTypes eIndex)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -1285,7 +1291,7 @@ void CvMap::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset(&defaultMapData);
 
-	uint uiFlag=0; // 1
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iGridWidth);
@@ -1296,8 +1302,8 @@ void CvMap::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBottomLatitude);
 	pStream->Read(&m_iNextRiverID);
 
-	if (uiFlag >= 1) pStream->Read(&m_iPrimeMeridian);
-	if (uiFlag >= 1) pStream->Read(&m_iEquator);
+	pStream->Read(&m_iPrimeMeridian);
+	pStream->Read(&m_iEquator);
 
 	pStream->Read(&m_bWrapX);
 	pStream->Read(&m_bWrapY);
@@ -1327,7 +1333,7 @@ void CvMap::read(FDataStreamBase* pStream)
 //
 void CvMap::write(FDataStreamBase* pStream)
 {
-	uint uiFlag=1; // Leoreth
+	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iGridWidth);
@@ -1370,7 +1376,12 @@ void CvMap::rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, in
 	GC.getInitCore().setWorldSize(eWorldSize);
 	GC.getInitCore().setClimate(eClimate);
 	GC.getInitCore().setSeaLevel(eSeaLevel);
-	GC.getInitCore().setCustomMapOptions(iNumCustomMapOptions, aeCustomMapOptions);
+
+	// Leoreth: don't unnecessarily override map options
+	if (aeCustomMapOptions != NULL)
+	{
+		GC.getInitCore().setCustomMapOptions(iNumCustomMapOptions, aeCustomMapOptions);
+	}
 
 	// Init map
 	init(&initData);
@@ -1479,6 +1490,14 @@ void CvMap::calculateAreas()
 			}
 		}
 	}
+
+	// Leoreth: store closest area of size 30+
+	for (iI = 0; iI < numPlotsINLINE(); iI++)
+	{
+		pLoopPlot = plotByIndexINLINE(iI);
+
+		pLoopPlot->setContinentArea(getArea(pLoopPlot->getArea())->getClosestAreaSize(30));
+	}
 }
 
 int CvMap::plotIndex(int iX, int iY) const
@@ -1499,6 +1518,14 @@ int CvMap::getPrimeMeridian() const
 int CvMap::getEquator() const
 {
 	return m_iEquator;
+}
+
+void CvMap::updateCulture()
+{
+	for (int iI = 0; iI < numPlotsINLINE(); iI++)
+	{
+		plotByIndexINLINE(iI)->updateCulture(true, true);
+	}
 }
 
 // Private Functions...

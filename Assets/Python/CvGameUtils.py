@@ -6,7 +6,8 @@
 import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
-from RFCUtils import utils
+from RFCUtils import *
+from Core import *
 
 # globals
 gc = CyGlobalContext()
@@ -436,7 +437,7 @@ class CvGameUtils:
 	
 		# Leoreth: Aztec UP: sacrifice slaves
 		if iData1 == 10000:
-			return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (utils.getTurns(5), utils.getTurns(5)))
+			return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (turns(5), turns(5)))
 						
 		# Leoreth: Byzantine UP: bribe button
 		if iData1 == 10001:

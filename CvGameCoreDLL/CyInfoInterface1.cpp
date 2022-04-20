@@ -26,6 +26,8 @@ void CyInfoPythonInterface1()
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
 
+		// Leoreth
+		.def("setDescription", &CvInfoBase::setDescription, "void (string)")
 		;
 
 	python::class_<CvScalableInfo>("CvScalableInfo")
@@ -596,6 +598,7 @@ void CyInfoPythonInterface1()
 		.def("getYieldChange", &CvBuildingInfo::getYieldChange, "int (int i)")
 		.def("getYieldModifier", &CvBuildingInfo::getYieldModifier, "int (int i)")
 		.def("getPowerYieldModifier", &CvBuildingInfo::getPowerYieldModifier, "int (int i)")
+		.def("getPowerCommerceModifier", &CvBuildingInfo::getPowerCommerceModifier, "int (int i)")
 		.def("getGlobalYieldModifier", &CvBuildingInfo::getGlobalYieldModifier, "int (int i)")
 		.def("getSeaPlotYieldChange", &CvBuildingInfo::getSeaPlotYieldChange, "int (int i)")
 		.def("getRiverPlotYieldChange", &CvBuildingInfo::getRiverPlotYieldChange, "int (int i)")

@@ -91,6 +91,12 @@ public:
 	int plotIndex(int iX, int iY);
 	int getPrimeMeridian();
 	int getEquator();
+	void updateCulture();
+
+	int maxStepDistance();
+	int maxPlotDistance();
+
+	int getScenario();
 
 protected:
 	CvMap* m_pMap;

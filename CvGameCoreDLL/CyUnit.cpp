@@ -1717,3 +1717,8 @@ void CyUnit::changeImmobileTimer(int iChange)
 		m_pUnit->changeImmobileTimer(iChange);
 	}
 }
+
+void CyUnit::testPromotionReady()
+{
+	if (m_pUnit) m_pUnit->testPromotionReady();
+}

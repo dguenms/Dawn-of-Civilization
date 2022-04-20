@@ -53,21 +53,24 @@ g_bIsScreenActive = -1
 #Rhye - start
 from StoredData import data
 from Consts import *
-import Areas
-from RFCUtils import utils
-import Victory as vic
+from Areas import *
+from RFCUtils import *
+from RFCUtils import canRespawn as canRespawnUtils
+from RFCUtils import canEverRespawn as canEverRespawnUtils
+from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
+from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
-import Congresses as cong
-import RiseAndFall as rnf
+import Victories
+
+from Scenarios import getScenario
+from Locations import *
+from Core import *
 
 gc = CyGlobalContext()
-
-def getStabilityLevel(argsList):
-	iPlayer = argsList[0]
-	return data.players[iPlayer].iStabilityLevel
 	
 def countAchievedGoals(argsList):
-	return utils.countAchievedGoals(argsList[0])
+	iPlayer = argsList[0]
+	return count(data.players[iPlayer].historicalGoals, lambda goal: goal.succeeded())
 	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen
@@ -508,11 +511,11 @@ def getWorldBuilderScreen():
 	return worldBuilderScreen
 
 def showWorldBuilderScreen():
-	utils.removeStabilityOverlay()
+	removeStabilityOverlay()
 	worldBuilderScreen.interfaceScreen()
 
 def hideWorldBuilderScreen():
-	utils.removeStabilityOverlay()
+	removeStabilityOverlay()
 	worldBuilderScreen.killScreen()
 
 def WorldBuilderToggleUnitEditCB():
@@ -840,52 +843,50 @@ def featAccomplishedOnFocusCallback(argsList):
 		CyInterface().lookAtCityOffset(iData2)
 		
 	return 0
+	
+# Leoreth
+def getStabilityLevel(argsList):
+	iPlayer = argsList[0]
+	return stability(iPlayer)
+
 
 # Leoreth
 def isCorePlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	reborn = utils.getReborn(iCiv)
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getCoreArea(iCiv):
-			return 1
-	return 0
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+		
+	return (x, y) in plots.core(iPlayer)
 
 # Leoreth
 def isNormalPlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getNormalArea(iCiv):
-			return 1
-	return 0
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+		
+	return (x, y) in plots.normal(iPlayer)
 
 # Leoreth
 def isForeignCorePlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iResult = 0
-	for iCiv in range(iNumPlayers):
-		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(tBirth[iCiv]):
-			if (x, y) in Areas.getCoreArea(iCiv):
-				iResult = 1
-				break
-	return iResult
-
-#Leoreth
-def isBroaderPlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	reborn = utils.getReborn(iCiv)
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getBroaderArea(iCiv):
-			return 1
+	x, y = argsList
+	
+	if players.major().past_birth().any(lambda p: (x, y) in plots.core(p)):
+		return 1
+		
 	return 0
 
-#Leoreth
+# Leoreth
+def isBroaderPlot(argsList):
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+	
+	return (x, y) in plots.broader(iPlayer)
+
+# Leoreth
 def onTechStolen(argsList):
 	iPlayer = argsList[0]
 	iTech = argsList[1]
@@ -895,280 +896,27 @@ def onTechStolen(argsList):
 def isNeighbor(argsList):
 	iPlayer = argsList[0]
 	iNeighbor = argsList[1]
-	if iNeighbor in lNeighbours[iPlayer]: return 1
+	if civ(iNeighbor) in dNeighbors[civ(iPlayer)]: return 1
 	else: return 0
 	
-#Leoreth
-def getUHVTileInfo(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iPlayer = argsList[2]
+# Leoreth
+def getVictoryTooltip(argsList):
+	iPlayer, x, y = argsList
 	
-	if iPlayer == iGreece:
-		if (x, y) in Areas.getNormalArea(iEgypt, False):
-			return 0
-			
-		if (x, y) in Areas.getNormalArea(iCarthage, False):
-			return 1
-			
-		if (x, y) in Areas.getNormalArea(iBabylonia, False):
-			return 2
-			
-		if (x, y) in Areas.getNormalArea(iPersia, False):
-			return 3
-			
-	elif iPlayer == iPersia and CyGlobalContext().getPlayer(iPersia).isReborn():
-		if utils.isPlotInArea((x, y), vic.tSafavidMesopotamiaTL, vic.tSafavidMesopotamiaBR):
-			return 4
-			
-		if utils.isPlotInArea((x, y), vic.tTransoxaniaTL, vic.tTransoxaniaBR):
-			return 5
-			
-		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR, vic.tNWIndiaExceptions):
-			return 6
-			
-	elif iPlayer == iCarthage:
-		if utils.isPlotInArea((x, y), Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]):
-			return 37
-		
-		if (x, y) in Areas.getNormalArea(iSpain, False):
-			return 8
-			
-	elif iPlayer == iItaly:
-		if utils.isPlotInArea((x, y), vic.tMediterraneanTL, vic.tMediterraneanBR, vic.tMediterraneanExceptions) and CyGlobalContext().getMap().plot(x, y).isCoastalLand():
-			return 7
-			
-	elif iPlayer == iRome:
-		if (x, y) in Areas.getNormalArea(iSpain, False):
-			return 8
-				
-		if utils.isPlotInArea((x, y), vic.tFranceTL, Areas.tNormalArea[iFrance][1]):
-			return 9
-				
-		if (x, y) in Areas.getCoreArea(iEngland, False):
-			return 10
-				
-		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
-			return 11
-				
-		if (x, y) in Areas.getCoreArea(iByzantium, False):
-			return 12
-			
-		if (x, y) in Areas.getCoreArea(iEgypt, False):
-			return 13
+	historicalVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].historicalGoals]
+	religiousVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].religiousGoals]
+	
+	tooltips = unique(tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip)
+	
+	return "\n".join(tooltips)
 
-	elif iPlayer == iJapan:
-		if utils.isPlotInArea((x, y), vic.tKoreaTL, vic.tKoreaBR):
-			return 14
-				
-		if utils.isPlotInArea((x, y), vic.tManchuriaTL, vic.tManchuriaBR):
-			return 15
-				
-		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
-			return 16
-				
-		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR, vic.tIndochinaExceptions):
-			return 17
-				
-		if utils.isPlotInArea((x, y), vic.tIndonesiaTL, vic.tIndonesiaBR):
-			return 18
-				
-		if utils.isPlotInArea((x, y), vic.tPhilippinesTL, vic.tPhilippinesBR):
-			return 19
-			
-	elif iPlayer == iEthiopia:
-		if gc.getMap().plot(x, y).getRegionID() in lAfrica:
-			return 33
-		
-	elif iPlayer == iByzantium:
-		if utils.isPlotInArea((x, y), vic.tBalkansTL, vic.tBalkansBR):
-			return 21
-				
-		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
-			return 22
-				
-		if utils.isPlotInArea((x, y), vic.tNearEastTL, vic.tNearEastBR):
-			return 23
-			
-	elif iPlayer == iArabia:
-		if (x, y) in Areas.getCoreArea(iEgypt, False):
-			return 24
-				
-		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
-			return 25
-		
-		if (x, y) in Areas.getCoreArea(iBabylonia, False):
-			return 26
-				
-		if (x, y) in Areas.getCoreArea(iPersia, False):
-			return 27
-		
-		if (x, y) in Areas.getNormalArea(iSpain, False):
-			return 28
-			
-	elif iPlayer == iSpain:
-		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
-			
-	elif iPlayer == iFrance:
-		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
-				
-		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
-			return 30
-			
-	elif iPlayer == iEngland:
-		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
-			return 31
-				
-		if utils.isPlotInArea((x, y), vic.tSouthCentralAmericaTL, vic.tSouthCentralAmericaBR):
-			return 32
-				
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
-			return 33
-				
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
-			return 34
-			
-		if utils.isPlotInArea((x, y), vic.tOceaniaTL, vic.tOceaniaBR):
-			return 35
-			
-	elif iPlayer == iGermany:
-		if (x, y) in Areas.getNormalArea(iFrance, False):
-			return 36
-		
-		if (x, y) in Areas.getNormalArea(iItaly, False):
-			return 37
-		
-		if (x, y) in Areas.getNormalArea(iRussia, False):
-			return 38
-		
-		if (x, y) in Areas.getNormalArea(iEngland, False):
-			return 39
-		
-		if (x, y) in Areas.getNormalArea(iVikings, False):
-			return 40
-			
-	elif iPlayer == iRussia:
-		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):
-			return 41
-			
-	elif iPlayer == iInca:
-		if (x, y) in vic.lAndeanCoast:
-			return 42
-			
-		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
-			return 43
-			
-	elif iPlayer == iOttomans:
-		if (x,y) in vic.lEasternMediterranean:
-			return 47
-			
-		if (x,y) in vic.lBlackSea:
-			return 48
-			
-		if (x, y) in utils.surroundingPlots(vic.tCairo):
-			return 49
-				
-		if (x, y) in utils.surroundingPlots(vic.tMecca):
-			return 50
-				
-		if (x, y) in utils.surroundingPlots(vic.tBaghdad):
-			return 51
-				
-		if (x, y) in utils.surroundingPlots(vic.tVienna):
-			return 52
-			
-	elif iPlayer == iThailand:
-		if utils.isPlotInArea((x, y), vic.tSouthAsiaTL, vic.tSouthAsiaBR):
-			return 53
-			
-	elif iPlayer == iAmerica:
-		if utils.isPlotInArea((x, y), vic.tNCAmericaTL, vic.tNCAmericaBR):
-			return 54
-			
-	elif iPlayer == iTamils:
-		if utils.isPlotInArea((x, y), vic.tDeccanTL, vic.tDeccanBR):
-			return 55
-			
-		if utils.isPlotInArea((x, y), vic.tSrivijayaTL, vic.tSrivijayaBR):
-			return 56
-			
-	elif iPlayer == iMoors:
-		if utils.isPlotInArea((x, y), vic.tIberiaTL, vic.tIberiaBR):
-			return 57
-			
-		if utils.isPlotInArea((x, y), vic.tMaghrebTL, vic.tMaghrebBR):
-			return 58
-			
-		if utils.isPlotInArea((x, y), vic.tWestAfricaTL, vic.tWestAfricaBR):
-			return 59
-			
-	elif iPlayer == iPortugal:
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
-			return 33
-					
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
-			return 34
-					
-		if utils.isPlotInArea((x, y), vic.tBrazilTL, vic.tBrazilBR):
-			return 60
-			
-	elif iPlayer == iMaya:
-		if utils.isReborn(iPlayer):
-			if utils.isPlotInArea((x, y), vic.tPeruTL, vic.tPeruBR):
-				return 43
-				
-			if utils.isPlotInArea((x, y), vic.tGranColombiaTL, vic.tGranColombiaBR):
-				return 44
-				
-			if utils.isPlotInArea((x, y), vic.tGuayanasTL, vic.tGuayanasBR):
-				return 45
-				
-			if utils.isPlotInArea((x, y), vic.tCaribbeanTL, vic.tCaribbeanBR):
-				return 46
-				
-			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
-				return 61
-				
-	elif iPlayer == iCanada:
-		if (x, y) in vic.lAtlanticCoast:
-			return 63
-			
-		if (x, y) in vic.lPacificCoast:
-			return 64
-			
-		if utils.isPlotInArea((x, y), vic.tCanadaWestTL, vic.tCanadaWestBR, vic.tCanadaWestExceptions) or utils.isPlotInArea((x, y), vic.tCanadaEastTL, vic.tCanadaEastBR, vic.tCanadaEastExceptions):
-			return 62
-			
-	elif iPlayer == iPolynesia:
-		if utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
-			return 65
-			
-		if utils.isPlotInArea((x, y), vic.tNewZealandTL, vic.tNewZealandBR):
-			return 66
-			
-		if utils.isPlotInArea((x, y), vic.tMarquesasTL, vic.tMarquesasBR):
-			return 67
-			
-		if utils.isPlotInArea((x, y), vic.tEasterIslandTL, vic.tEasterIslandBR):
-			return 68
-			
-	elif iPlayer == iMongolia:
-		if (x, y) in Areas.getNormalArea(iChina, False):
-			return 69
-			
-	elif iPlayer == iTurks:
-		if (x, y) in vic.lMediterraneanPorts:
-			return 70
-			
-		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
-			return 71
-				
-		# free IDs: 20
-		# continue with ID 72
-			
-	return -1
+# Leoreth
+def getHistoricalVictoryDescriptions(argsList):
+	iCiv = argsList[0]
+	if iCiv not in Victories.dHistoricalGoals:
+		return ""
+	
+	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dHistoricalGoals[iCiv])
 		
 def getCityName(argsList):
 	iPlayer, x, y = argsList
@@ -1181,45 +929,29 @@ def getCityName(argsList):
 		return result
 		
 def canRespawn(argsList):
-	iPlayer = argsList[0]
+	iCiv = argsList[0]
 	
-	if utils.canRespawn(iPlayer): return 1
+	if canRespawnUtils(Civ(iCiv)): return 1
 	
 	return 0
 	
 def canEverRespawn(argsList):
-	iPlayer, iGameTurn = argsList
+	iCiv, iGameTurn = argsList
 	
-	if utils.canEverRespawn(iPlayer, iGameTurn): return 1
+	if canEverRespawnUtils(Civ(iCiv), iGameTurn): return 1
 	
 	return 0
 
 def toggleStabilityOverlay():
-	utils.toggleStabilityOverlay()
+	toggleStabilityOverlayUtils()
+
+def updateCustomMapOption(argsList):
+	iOptionID, iOption = argsList
+	if iOptionID == 0:
+		scenario = getScenario(iOption)
+		scenario.setupCivilizations()
+		scenario.setupLeaders()
 		
-def applyClaimCityEvent(argsList):
-	data.currentCongress.applyClaimCityEvent(argsList[0])
-	
-def applyVoteCityEvent(argsList):
-	data.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
-	
-def applyIntroductionEvent(argsList):
-	data.currentCongress.applyIntroductionEvent()
-	
-def applyRefusalEvent(argsList):
-	data.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyEvent(argsList):
-	data.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyResultEvent(argsList):
-	data.currentCongress.applyBriberyResultEvent()
-	
-### Rise And Fall
-
-def applyNewCivSwitchEvent(argsList):
-	rnf.applyNewCivSwitchEvent(argsList)
-
 
 #######################################################################################
 ## Handle Close Map

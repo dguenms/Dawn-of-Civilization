@@ -12,13 +12,11 @@ import CvPlatyBuilderScreen
 import WBInfoScreen
 import Popup
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-bRemove = False
-iChange = 1
+from Core import *
+
 iCopyType = 0
-iOwnerType = 0
-iPlotType = 0
-iChangeType = 0
 iCommandUnitType = 0
 iSelectedClass = -2
 iMissionType = 0
@@ -48,9 +46,7 @@ class WBUnitScreen:
 		pPlot = pUnit.plot()
 		iWidth = screen.getXResolution()/5 - 20
 
-		if self.top.iTargetPlotX == -1 or self.top.iTargetPlotY == -1:
-			self.top.iTargetPlotX = pPlot.getX()
-			self.top.iTargetPlotY = pPlot.getY()
+		self.top.m_pCurrentPlot = pPlot
 		
 		screen.setRenderInterfaceOnly(True)
 		screen.addPanel( "MainBG", u"", u"", True, False, -10, -10, screen.getXResolution() + 20, screen.getYResolution() + 20, PanelStyles.PANEL_STYLE_MAIN )
@@ -153,7 +149,7 @@ class WBUnitScreen:
 		global iMissionData1
 
 		screen.setText("PushMission", "Background", "<font=3b>" + CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + CyTranslator().getText("TXT_KEY_WB_PUSH_MISSION", ()) + "</color></font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() *7/10, iY - 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		sText = (CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3>" + CyTranslator().getText("TXT_KEY_WB_TARGET_PLOT", ()) + ": " + "(%d,%d)" + "</color></font>") % (self.top.iTargetPlotX, self.top.iTargetPlotY)
+		sText = (CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3>" + CyTranslator().getText("TXT_KEY_WB_TARGET_PLOT", ()) + ": " + str(location(self.top.m_pCurrentPlot)) + "</color></font>")
 		screen.setText("TargetPlot", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() *7/10, iY, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 		iY += 30
@@ -192,12 +188,9 @@ class WBUnitScreen:
 			elif sType == "MISSION_GOLDEN_AGE":
 				lData1 = [-1]
 			else:
-				lData1 = [self.top.iTargetPlotX]
-				iData2 = self.top.iTargetPlotY
-				pTargetPlot = CyMap().plot(lData1[0], iData2)
-				if pTargetPlot.isNone():
-					lData1 = [pPlot.getX()]
-					iData2 = pPlot.getY()
+				x, y = location(self.top.m_pCurrentPlot)
+				lData1 = [x]
+				iData2 = y
 			bCanDoMission = False
 			for iData1 in lData1:
 				if pUnit.getGroup().canStartMission(i, iData1, iData2, pPlot, True):
@@ -883,13 +876,9 @@ class WBUnitScreen:
 			self.doMission()
 
 		elif sName == "TargetPlot":
-			self.top.iPlayerAddMode = "TargetPlot"
+			self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeTargetPlot
 			self.top.TempInfo = [pUnit.getOwner(), pUnit.getID()]
 			screen.hideScreen()
-
-		elif sName == "UnitExit":
-			self.top.iTargetPlotX = -1
-			self.top.iTargetPlotY = -1
 
 		elif sName == "HideInactive":
 			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
@@ -900,10 +889,6 @@ class WBUnitScreen:
 				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution() * 4/5, self.iTable_Y - 85, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			self.placeUnitType()
-
-		if (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CHARACTER) and inputClass.getData() == int(InputTypes.KB_ESCAPE):
-			self.top.iTargetPlotX = -1
-			self.top.iTargetPlotY = -1
 		return 1
 
 	def doAllCommands(self, pUnitX, iIndex):
@@ -922,7 +907,7 @@ class WBUnitScreen:
 			pUnitX.setScriptData("")
 			return 2
 		elif iIndex == 2:
-			self.top.iPlayerAddMode = "MoveUnits"
+			self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeMoveUnits
 			self.top.lMoveUnit.append([pUnitX.getOwner(), pUnitX.getID()])
 			return 0
 		elif iIndex == 3:
@@ -953,10 +938,8 @@ class WBUnitScreen:
 		elif sType == "MISSION_GOLDEN_AGE":
 			iData1 = -1
 		else:
-			iData1 = self.top.iTargetPlotX
-			iData2 = self.top.iTargetPlotY
-		pTargetPlot = CyMap().plot(self.top.iTargetPlotX, self.top.iTargetPlotY)
-		pUnit.getGroup().pushMission(MissionTypes(iMissionType), iData1, iData2, 0, False, True, MissionAITypes.NO_MISSIONAI, pTargetPlot, pUnit)
+			iData1, iData2 = location(self.top.m_pCurrentPlot)
+		pUnit.getGroup().pushMission(MissionTypes(iMissionType), iData1, iData2, 0, False, True, MissionAITypes.NO_MISSIONAI, self.top.m_pCurrentPlot, pUnit)
 		self.interfaceScreen(pUnit)
 
 	def changeDirection(self, iNewDirection, pUnitX):

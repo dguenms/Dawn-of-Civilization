@@ -9,11 +9,10 @@ import WBTradeScreen
 import DynamicCivs as dc
 gc = CyGlobalContext()
 
-iChange = 1
-bRemove = False
+from CvPlatyBuilderSettings import *
+
 bTowardsPlayer = False
 iSelectedMemory = 0
-iSelectedPlayer = 0
 iSelectedTeam = 0
 lPlayers = []
 bHideDead = True
@@ -461,7 +460,7 @@ class WBDiplomacyScreen:
 					for j in xrange(pDeal.getLengthFirstTrades()):
 						if pDeal.getFirstTrade(j).ItemType == TradeableItems.TRADE_DEFENSIVE_PACT:	
 							pDeal.kill()
-							self.interfaceScreen(iSelectedPlayer)
+							self.interfaceScreen(iSelectedPlayer, bDiplomacyPage)
 							return
 		else:
 			pSelectedTeam.signDefensivePact(iTeam)

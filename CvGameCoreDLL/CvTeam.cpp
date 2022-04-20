@@ -698,7 +698,7 @@ void CvTeam::shareItems(TeamTypes eTeam)
 									{
 										if (GET_PLAYER((PlayerTypes)iK).getTeam() == getID())
 										{
-											GET_PLAYER((PlayerTypes)iK).processBuilding(((BuildingTypes)iJ), pLoopCity->getNumBuilding((BuildingTypes)iJ), pLoopCity->area());
+											GET_PLAYER((PlayerTypes)iK).processBuilding(((BuildingTypes)iJ), pLoopCity->getNumBuilding((BuildingTypes)iJ), pLoopCity->continentArea());
 										}
 									}
 								}
@@ -1159,13 +1159,16 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	}
 
 	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
-	if (eTeam < NUM_MAJOR_PLAYERS)
+	if (!GET_TEAM(eTeam).isMinorCiv() && !GET_TEAM(eTeam).isBarbarian())
 	{
 		int iGameTurn = GC.getGameINLINE().getGameTurn();
 
-		if (iGameTurn - getScenarioStartTurn() > getTurns(10) && // 10 turns after scenario start
-			iGameTurn - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(10) && // 10 turns after player spawn
-			(iGameTurn - GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn() < getTurns(10) || iGameTurn - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < getTurns(10))) // less than 10 turns after target spawn
+		if (iGameTurn < getScenarioStartTurn() + getTurns(5))
+		{
+			return false;
+		}
+
+		if (iGameTurn < GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(10))
 		{
 			return false;
 		}
@@ -1189,7 +1192,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 }
 
 
-void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
+void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts, bool bFromDefensivePact)
 {
 	PROFILE_FUNC();
 
@@ -1318,29 +1321,33 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 			}
 		}
 
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		// Leoreth: wars triggered by defensive pacts cause no diplo penalties
+		if (!bFromDefensivePact)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 					{
-						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
 						{
-							if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
+							if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 							{
-								GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
-							}
-							else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
-							{
-								if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
+								if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
 								{
-									// Leoreth: not for minor civs
-									//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
-									if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+									GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
+								}
+								else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
+								{
+									if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
 									{
-										GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										// Leoreth: not for minor civs
+										//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										{
+											GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										}
 									}
 								}
 							}
@@ -1487,7 +1494,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				}
 			}
 		}*/
-		if (!(GET_TEAM(eTeam).isMinorCiv()))
+		if (!GET_TEAM(eTeam).isMinorCiv() && !bIgnoreDefensivePacts)
 		{
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -1533,13 +1540,19 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 		}
 		//Rhye - end
 
-		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bFromDefensivePact);
 
-		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled) 
+		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled)
+
+		// Leoreth: defensive pacts are not canceled until the UN is built
+		if (GC.getGameINLINE().isDiploVote(VOTESOURCE_UNITED_NATIONS) && !bFromDefensivePact && !GET_TEAM(eTeam).isMinorCiv())
+		{
+			cancelDefensivePacts();
+		}
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
-			if (GET_TEAM((TeamTypes)iI).isAlive() && !isMinorCiv() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !isMinorCiv() && !bIgnoreDefensivePacts && !GET_TEAM((TeamTypes)iI).isMinorCiv())
 			{
 				if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam))
 				{
@@ -1547,7 +1560,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 					//GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
 					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI)) 
 					{
-						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
+						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE, false, true);
 					}
 					//Rhye - end
 				}
@@ -1564,11 +1577,11 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				{
 					if (GET_TEAM((TeamTypes)iI).isVassal(eTeam) || GET_TEAM(eTeam).isVassal((TeamTypes)iI))
 					{
-						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam));
+						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam), bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 					else if (GET_TEAM((TeamTypes)iI).isVassal(getID()) || isVassal((TeamTypes)iI))
 					{
-						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE);
+						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE, bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 				}
 			}
@@ -1638,7 +1651,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 	FAssertMsg(eTeam != getID(), "eTeam is not expected to be equal with getID()");
 
-	if (eTeam == BARBARIAN) return; //Rhye
+	if (GET_TEAM(eTeam).isBarbarian()) return;
 
 	if (isAtWar(eTeam))
 	{
@@ -1751,7 +1764,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 
 		} //Rhye
 
-		CvEventReporter::getInstance().changeWar(false, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
@@ -2741,10 +2754,19 @@ int CvTeam::getCivilizationResearchModifier() const
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
 	// nerf late game China
-	if (getLeaderID() == CHINA)
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() == CHINA)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 20;
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
+	}
+
+	// buff late game Japan
+	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == JAPAN)
+	{
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_INDUSTRIAL)
+		{
+			iCivModifier += isHuman() ? -20 : -40;
+		}
 	}
 
 	return iCivModifier;
@@ -2768,7 +2790,7 @@ int CvTeam::getPopulationResearchModifier() const
 	int iMultiplier;
 	int iNumCities = getNumCities();
 
-	if (getID() < NUM_MAJOR_PLAYERS)
+	if (!isMinorCiv() && !isBarbarian())
 	{
 		// Rhye: discount for small empires
 		if (iNumCities < 5)
@@ -2788,7 +2810,7 @@ int CvTeam::getTurnResearchModifier() const
 	int iTurnModifier, iAmount;
 
 	// Rhye: discount for newborn civs
-	if (getID() < NUM_MAJOR_PLAYERS)
+	if (!isMinorCiv() && !isBarbarian())
 	{
 		iTurnModifier = 5 * GET_PLAYER(getLeaderID()).getCurrentEra();
 
@@ -2796,9 +2818,9 @@ int CvTeam::getTurnResearchModifier() const
 		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
 		iTurnModifier /= 100;
 
-		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier)
+		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier)
 		{
-			iAmount = (GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
+			iAmount = (GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
 
 			// edead: this should make the length of the bonus longer but not the amount
 			iAmount *= 100;
@@ -2816,20 +2838,25 @@ int CvTeam::getTechLeaderModifier() const
 	int iModifier = 0;
 
 	// Leoreth: only during human autoplay
-	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getBirthTurn())
+	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getInitialBirthTurn())
 	{
 		return iModifier;
 	}
 
 	// Leoreth: penalty for the tech leader
-	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(30))
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() >= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(30))
 	{
 		int iBestValue = getTotalTechValue();
 		int iDenominator = 0;
 		int iAverageValue = 0;
 
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
 			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
 			{
 				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
@@ -2866,18 +2893,17 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
-	int iCivsWithTechChina = 0;
 	int iSpreadModifier = 0;
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) 
 		{
 			iCivsWithTech++;
-
-			if (GET_PLAYER(CHINA).canContact((PlayerTypes)iI))
-			{
-				iCivsWithTechChina++;
-			}
 		}
 	}
 
@@ -2905,7 +2931,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 
 int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 {
-	if (getLeaderID() != JAPAN) return 0;
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() != JAPAN) return 0;
 
 	bool bAllMedievalTechs = true;
 
@@ -2919,9 +2945,15 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 
 	int iCount = 0;
 
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
 		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
+
+		if (GET_TEAM(eTeam).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (GET_TEAM(eTeam).isHasTech(eTech) && (!isHuman() || canContact(eTeam)) && (GET_TEAM(eTeam).isHuman() || GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL))
 		{
 			if (!isAtWar(eTeam))
@@ -2942,12 +2974,13 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 
 	if (iCount >= 3)
 	{
-		return -50;
-	}
+		// account of the base modifier that Japan receives in the global era
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+		{
+			return isHuman() ? -30 : -10;
+		}
 
-	if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
-	{
-		return isHuman() ? -20 : -40;
+		return -50;
 	}
 
 	return 0;
@@ -3067,6 +3100,18 @@ bool CvTeam::isMinorCiv() const
 	}
 
 	return bValid;
+}
+
+
+bool CvTeam::isIndependent() const
+{
+	return GET_PLAYER(getLeaderID()).isIndependent();
+}
+
+
+bool CvTeam::isNative() const
+{
+	return GET_PLAYER(getLeaderID()).isNative();
 }
 
 
@@ -4050,7 +4095,7 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 	}
 
 	// Porcelain Tower effect: no open borders required for trade
-	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
+	if (!GET_TEAM(eIndex).isMinorCiv() && GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
 	{
 		return true;
 	}
@@ -4370,7 +4415,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 
 						if (GET_TEAM(eIndex).isAtWar((TeamTypes)iI))
 						{
-							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE);
+							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE, true);
 						}
 						else if (isAtWar((TeamTypes)iI))
 						{
@@ -4928,7 +4973,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							{
 								if (GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_COMMERCE) > 3)
 								{
-									GET_PLAYER((PlayerTypes)iJ).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_FOOD, iChange);
+									GET_PLAYER((PlayerTypes)iI).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_FOOD, iChange);
 								}
 							}
 						}
@@ -5253,7 +5298,7 @@ bool CvTeam::isTerrainTrade(TerrainTypes eIndex) const
 	// Leoreth: Portuguese UP: Ocean trade with Cartography
 	if (eIndex == TERRAIN_OCEAN)
 	{
-		if (getID() == PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
+		if (GET_PLAYER(getLeaderID()).getCivilizationType() == PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
 	}
 
 	return (getTerrainTradeCount(eIndex) > 0);
@@ -5671,141 +5716,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
-
-			// Leoreth: disabled both old religion and corporation founding rules
-			/*if (bFirst)
-			{
-				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
-				{
-					CyArgsList argsList;
-					argsList.add(getID());
-					argsList.add(ePlayer);
-					argsList.add(eIndex);
-					argsList.add(bFirst);
-					long lResult=0;
-					gDLL->getPythonIFace()->callFunction(PYGameModule, "doHolyCityTech", argsList.makeFunctionArgs(), &lResult);
-					if (lResult != 1 && getID() < NUM_MAJOR_PLAYERS) //Leoreth: independents don't found religions
-					{
-						for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
-						{
-							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex && eIndex != -1)
-							{
-
-								iBestValue = MAX_INT;
-								eBestPlayer = NO_PLAYER;
-
-								for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-								{
-									if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-										{
-												iValue = 10;
-													
-												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
-
-												for (iK = 0; iK < GC.getNumReligionInfos(); iK++)
-												{
-													iValue += (GET_PLAYER((PlayerTypes)iJ).getHasReligionCount((ReligionTypes)iK) * 10);
-												}
-
-												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-												{
-													iValue *= 10;
-												}
-
-												if (iValue < iBestValue)
-												{
-													iBestValue = iValue;
-													eBestPlayer = ((PlayerTypes)iJ);
-												}
-											
-										}
-									}
-								}
-
-								if (eBestPlayer != NO_PLAYER)
-								{
-									//Rhye - start comment (comment this to stop religion founding)
-									//GC.getGameINLINE().setReligionSlotTaken((ReligionTypes)iI, true);
-
-									if (GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION))
-									{
-										if (GET_PLAYER(eBestPlayer).isHuman())
-										{
-											CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_FOUND_RELIGION, iI);
-											if (NULL != pInfo)
-											{
-												gDLL->getInterfaceIFace()->addPopup(pInfo, eBestPlayer);
-											}
-										}
-										else
-										{
-											ReligionTypes eReligion = GET_PLAYER(eBestPlayer).AI_chooseReligion();
-											if (NO_RELIGION != eReligion)
-											{
-												GET_PLAYER(eBestPlayer).foundReligion(eReligion, (ReligionTypes)iI, true);
-											}
-										}
-									}
-									else
-									{
-										GET_PLAYER(eBestPlayer).foundReligion((ReligionTypes)iI, (ReligionTypes)iI, true);
-									}
-
-									bReligionFounded = true;
-									bFirstBonus = true;
-									//Rhye - end comment
-									eBestPlayer = NO_PLAYER;
-								}
-							}
-						}
-
-						// Leoreth: don't found corporations from techs
-						for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
-						{
-							if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eIndex)
-							{
-								if (!(GC.getGameINLINE().isCorporationFounded((CorporationTypes)iI)))
-								{
-									iBestValue = MAX_INT;
-									eBestPlayer = NO_PLAYER;
-
-									for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-										{
-											if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-											{
-												iValue = 10;
-
-												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Corporation (Player)");
-
-												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-												{
-													iValue *= 10;
-												}
-
-												if (iValue < iBestValue)
-												{
-													iBestValue = iValue;
-													eBestPlayer = ((PlayerTypes)iJ);
-												}
-											}
-										}
-									}
-
-									if (eBestPlayer != NO_PLAYER)
-									{
-										GET_PLAYER(eBestPlayer).foundCorporation((CorporationTypes)iI);
-										bFirstBonus = true;
-									}
-								}
-							}
-						}
-					}
-				}
-			}*/
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -6422,6 +6332,12 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 			for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 			{
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationBuildings(iJ);
+
+				if (eBuilding == NO_BUILDING)
+				{
+					continue;
+				}
+
 				if (GC.getBuildingInfo(eBuilding).getPrereqAndTech() == eTech && !isWorldWonderClass((BuildingClassTypes)iJ))
 				{
 					for (int iK = 0; iK < GC.getNumSpecialistInfos(); iK++)
@@ -6827,7 +6743,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: uiFlag is 1
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iNumMembers);
@@ -6856,8 +6772,8 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iEspionagePointsEver);
 
 	pStream->Read(&m_iTotalTechValue); // Leoreth
-	if (uiFlag >= 1) pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
-	if (uiFlag >= 1) pStream->Read(&m_iSatelliteAttackCount); // Leoreth
+	pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
+	pStream->Read(&m_iSatelliteAttackCount); // Leoreth
 
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
@@ -6942,7 +6858,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 1;
+	uint uiFlag = 0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iNumMembers);
@@ -7302,4 +7218,52 @@ bool CvTeam::canSatelliteAttack() const
 void CvTeam::changeSatelliteAttackCount(int iChange)
 {
 	m_iSatelliteAttackCount += iChange;
+}
+
+bool CvTeam::isAllied(TeamTypes eTeam) const
+{
+	if (getID() == eTeam)
+	{
+		return true;
+	}
+
+	if (isDefensivePact(eTeam))
+	{
+		return true;
+	}
+
+	if (GET_TEAM(eTeam).isVassal(getID()))
+	{
+		return true;
+	}
+
+	if (isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (isVassal((TeamTypes)iI))
+			{
+				if (GET_TEAM((TeamTypes)iI).isAllied(eTeam));
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	if (GET_TEAM(eTeam).isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM(eTeam).isVassal((TeamTypes)iI))
+			{
+				if (isAllied((TeamTypes)iI))
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
 }

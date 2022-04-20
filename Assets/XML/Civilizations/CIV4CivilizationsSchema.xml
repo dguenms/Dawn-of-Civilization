@@ -428,6 +428,7 @@
 		<element type="Leader" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="Identifier" content="textOnly"/>
+	<ElementType name="Impact" content="textOnly"/>
 	<ElementType name="StartingYear" content="textOnly" dt:type="int"/>
 	<ElementType name="LoadingTime" content="textOnly" dt:type="int"/>
 	<ElementType name="LoadingTimes" content="eltOnly">
@@ -445,8 +446,7 @@
 		<element type="Growth"/>
 		<element type="Start"/>
 	</ElementType>
-	<ElementType name="PaganReligionName" content="eltOnly"/> <!-- Leoreth -->
-	<ElementType name="PaganReligionButton" content="eltOnly"/> <!-- Leoreth -->
+	<ElementType name="PaganReligion" content="eltOnly"/> <!-- Leoreth -->
 	<ElementType name="CivilizationSelectionSound" content="textOnly"/>
 	<ElementType name="CivilizationActionSound" content="textOnly"/>
 	<ElementType name="UnitArtStyleType" content="textOnly"/>
@@ -460,8 +460,8 @@
 		<element type="ArtDefineTag"/>
 		<element type="ArtStyleType"/>
 		<element type="UnitArtStyleType" minOccurs="0" maxOccurs="1"/>
-		<element type="PaganReligionName" minOccurs="0"/> <!-- Leoreth -->
-		<element type="PaganReligionButton" minOccurs="0"/> <!-- Leoreth -->
+		<element type="PaganReligion" minOccurs="0"/>
+		<element type="Impact" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Identifier"/> <!-- Leoreth -->
 		<element type="StartingYear"/> <!-- Leoreth -->
 		<element type="LoadingTimes"/> <!-- Leoreth -->

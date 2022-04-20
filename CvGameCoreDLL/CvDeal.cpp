@@ -487,7 +487,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headFirstTradesNode(); (pNode != NULL); pNode = nextFirstTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getSecondPlayer())
 			{
@@ -498,7 +498,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{
@@ -521,7 +521,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headSecondTradesNode(); (pNode != NULL); pNode = nextSecondTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getFirstPlayer())
 			{
@@ -532,7 +532,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{

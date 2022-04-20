@@ -16,9 +16,7 @@ import CvPlatyBuilderScreen
 import Popup
 gc = CyGlobalContext()
 
-iChange = 1
-iOwnerType = 0
-iPlotType = 2
+from CvPlatyBuilderSettings import *
 
 class WBCityEditScreen:
 
@@ -559,18 +557,18 @@ class WBCityEditScreen:
 				self.top.iMoveCity = pCity.getID()
 				self.top.m_iCurrentPlayer = iPlayer
 				if iIndex == 1:
-					self.top.iPlayerAddMode = "MoveCity"
+					self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeMoveCity
 				elif iIndex == 2:
-					self.top.iPlayerAddMode = "DuplicateCity"
+					self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeDuplicateCity
 				elif iIndex == 3:
-					self.top.iPlayerAddMode = "MoveCityPlus"
+					self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeMoveCityPlus
 					self.top.lMoveUnit = []
 					for i in xrange(pPlot.getNumUnits()):
 						pUnitX = pPlot.getUnit(i)
 						if pUnitX.getOwner() == iPlayer:
 							self.top.lMoveUnit.append([iPlayer, pUnitX.getID()])
 				elif iIndex == 4:
-					self.top.iPlayerAddMode = "DuplicateCityPlus"
+					self.top.iPlayerAddMode = CvPlatyBuilderScreen.iModeDuplicateCityPlus
 					self.top.lMoveUnit = []
 					for i in xrange(pPlot.getNumUnits()):
 						pUnitX = pPlot.getUnit(i)

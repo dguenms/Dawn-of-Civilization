@@ -1175,7 +1175,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_SPHINX</Type>
-			<Description>TXT_KEY_BUILDING_SPHINX</Description>
+			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1491,7 +1491,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SALSAL_BUDDHA</Type>
-			<Description>TXT_KEY_SALSAL_BUDDHA</Description>
+			<Description>TXT_KEY_BUILDING_SALSAL_BUDDHA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1626,7 +1626,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SILVER_TREE_FOUNTAIN</Type>
-			<Description>TXT_KEY_SILVER_TREE_FOUNTAIN</Description>
+			<Description>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1635,7 +1635,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SANTA_MARIA_DEL_FIORE</Type>
-			<Description>TXT_KEY_SANTA_MARIA_DEL_FIORE</Description>
+			<Description>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1779,7 +1779,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TORRE_DE_BELEM</Type>
-			<Description>TXT_KEY_TORRE_DE_BELEM</Description>
+			<Description>TXT_KEY_BUILDING_TORRE_DE_BELEM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>

@@ -127,7 +127,7 @@ public:
 
 	void goldenAge(PlayerTypes ePlayer);
 	void endGoldenAge(PlayerTypes ePlayer);
-	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
+	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
 
 	void setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue );
 	void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
@@ -143,9 +143,15 @@ public:
 
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
-	void releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); // Leoreth
+	void releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); // Leoreth
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
+	void xmlLoaded(); // Leoreth
+	void fontsLoaded(); // Leoreth
+	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void autoplayEnded(); // Leoreth
+	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
 
 	DllExport void preSave();
 

@@ -187,7 +187,7 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_YIELD_STACK</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MOVE_DENOMINATOR</DefineName>
@@ -488,6 +488,10 @@
 	<Define>
 		<DefineName>GREAT_GENERALS_THRESHOLD</DefineName>
 		<iDefineIntVal>30</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>GREAT_SPIES_THRESHOLD</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BASE_SPY_SABOTAGE_COST</DefineName>
@@ -939,7 +943,7 @@
 	</Define>
 	<Define>
 		<DefineName>BARBARIAN_FREE_TECH_PERCENT</DefineName>
-		<iDefineIntVal>3</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>RAZING_CULTURAL_PERCENT_THRESHOLD</DefineName>
@@ -947,7 +951,7 @@
 	</Define>
 	<Define>
 		<DefineName>BASE_CAPTURE_GOLD</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_PER_POPULATION</DefineName>
@@ -955,7 +959,7 @@
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_PER_BUILDING_COST</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_RAND1</DefineName>
@@ -963,7 +967,7 @@
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_RAND2</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_MAX_TURNS</DefineName>
@@ -1644,7 +1648,7 @@
 	</Define>
 	<Define>
 		<DefineName>USE_MODDERS_PLAYEROPTION_1</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>USE_MODDERS_PLAYEROPTION_2</DefineName>

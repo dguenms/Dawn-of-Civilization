@@ -9,15 +9,14 @@ import WBInfoScreen
 import WBStoredDataScreen
 gc = CyGlobalContext()
 
-iChange = 1
+from CvPlatyBuilderSettings import *
+
 bHiddenOption = True
 bRepeat = False
-iSelectedCiv = -1
 iSelectedLeader = -1
-bRemove = False
 
 from StoredData import data
-from Consts import *
+from Core import *
 import Congresses as cong
 
 class WBGameDataScreen:
@@ -269,23 +268,10 @@ class WBGameDataScreen:
 			screen.setTableText("WBGameOptions", iColumn * 2 + 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
 		# Merijn: extra rows for secondary civs and RFC options
-		screen.setTableText("WBGameOptions", 0, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_SECONDARY_CIVS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.setTableText("WBGameOptions", 2, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_OPTIONS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.setTableText("WBGameOptions", 4, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_VARIABLES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		iRow = iNumRows + 3
-		for iCiv in lSecondaryCivs:
-			bEnabled = data.isPlayerEnabled(iCiv)
-			bDefault = True
-			if iCiv in [iHarappa, iPolynesia]:
-				bDefault = False
-
-			sText = self.colorText(gc.getPlayer(iCiv).getCivilizationShortDescription(0), bEnabled)
-			screen.setTableText("WBGameOptions", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, 1000+iCiv, CvUtil.FONT_LEFT_JUSTIFY)
-			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
-			screen.setTableText("WBGameOptions", 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-			iRow += 1
-
 		for i in xrange(len(lList2)):
 			item = lList2[i][1]
 			iRow = iNumRows + 3 + i
@@ -293,10 +279,7 @@ class WBGameDataScreen:
 			bEnabled = False
 			bDefault = False
 
-			if item == 2000:
-				bEnabled = data.bIgnoreAI
-				bDefault = True
-			elif item == 2001:
+			if item == 2001:
 				bEnabled = data.bUnlimitedSwitching
 			elif item == 2002:
 				bEnabled = data.bNoCongressOption
@@ -436,7 +419,7 @@ class WBGameDataScreen:
 				# Enabling/disabling secondary civs
 				if iGameOption < 2000:
 					iItem = iGameOption - 1000
-					data.setPlayerEnabled(iItem, not data.isPlayerEnabled(iItem))
+					data.setCivEnabled(iItem, not data.isCivEnabled(iItem))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
 					data.bIgnoreAI = not data.bIgnoreAI

@@ -266,8 +266,8 @@ class Dispatcher:
 		"""
 		Registers all of the handler and listener functions in <utils> that match existing callbacks.
 		"""
-		BugUtil.debug("BugGameUtils - registering %s", utils.__name__)
-		for name, func in utils.__dict__.iteritems():
+		BugUtil.debug("BugGameUtils - registering %s", __name__)
+		for name, func in __dict__.iteritems():
 			if not name.startswith("_") and isinstance(func, types.FunctionType):
 				if name.endswith(LISTENER_SUFFIX):
 					name = name[:-len(LISTENER_SUFFIX)]
@@ -281,7 +281,7 @@ class Dispatcher:
 		"""
 		Registers all of the handler and listener functions in <utils> that match existing callbacks.
 		"""
-		clazz = utils.__class__
+		clazz = __class__
 		BugUtil.debug("BugGameUtils - registering %s.%s", clazz.__module__, clazz.__name__)
 		for name, func in clazz.__dict__.iteritems():
 			if not name.startswith("_") and isinstance(func, types.FunctionType):

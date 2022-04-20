@@ -231,9 +231,25 @@
 		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__WORSTENEMY_HOVER</Tag>
 		<English>When checked, displays an alert when a civilization's worst enemy changes.</English>
 		<French>When checked, displays an alert when a civilization's worst enemy changes.</French>
-		<German>L&#228;sst eine Warnung erscheinen, wenn der Erzfeind einer Zivilisation wechselt</German>
+		<German>L&#228;sst eine Warnung erscheinen, wenn der Erzfeind einer Zivilisation wechselt.</German>
 		<Italian>When checked, displays an alert when a civilization's worst enemy changes.</Italian>
 		<Spanish>When checked, displays an alert when a civilization's worst enemy changes.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CANCELABLETRIBUTE_TEXT</Tag>
+		<English>Cancelable Tribute</English>
+		<French>Cancelable Tribute</French>
+		<German>K&#252;ndbarer Tribut</German>
+		<Italian>Cancelable Tribute</Italian>
+		<Spanish>Cancelable Tribute</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CANCELABLETRIBUTE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</English>
+		<French>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</French>
+		<German>L&#228;sst eine Warnung erscheinen, wenn eine Zivilisation ihren Tribut an eine andere Zivilisation k&#252;ndigen kann.</German>
+		<Italian>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</Italian>
+		<Spanish>When checked, displays an alert when a civilization can cancel tribute given to another civilization.</Spanish>
 	</TEXT>
 <!-- Trade -->
 	<TEXT>
@@ -376,6 +392,14 @@
 		<Spanish>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE</Tag>
+		<English>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Ihr k&#246;nnt Euren Tribut an %s1 k&#252;ndigen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_TRADE</Tag>
 		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold available for trade.[COLOR_REVERT]</English>
 		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pi&#232;ces d'or disponible pour le commerce.[COLOR_REVERT]</French>
@@ -478,6 +502,22 @@
 		<German>[COLOR_POSITIVE_TEXT]Die Bev&#246;lkerung von %s1 ist zufrieden![COLOR_REVERT]</German>
 		<Italian>[COLOR_POSITIVE_TEXT]%s1 &#232; diventata felice.[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto feliz.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPINESS_DECAYED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die tempor&#228;re Unzufriedenheit in %s1 ist abgelaufen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 has decayed.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPINESS_DECAY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die tempor&#228;re Unzufriedenheit in %s1 wird n&#228;chste Runde verschwinden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Temporary unhappiness in %s1 will disappear the next turn.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_GROWTH</Tag>
@@ -782,6 +822,22 @@
 		<Italian>Livello limite di popolazione per una Vittoria di Dominazione.</Italian>
 		<Spanish>Land threshold for Domination victory.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_TEXT</Tag>
+		<English>UHV Fail Popup</English>
+		<French>UHV Fail Popup</French>
+		<German>UHV Fail Popup</German>
+		<Italian>UHV Fail Popup</Italian>
+		<Spanish>UHV Fail Popup</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_HOVER</Tag>
+		<English>When checked, a popup shows when the UHV fails</English>
+		<French>When checked, a popup shows when the UHV fails</French>
+		<German>When checked, a popup shows when the UHV fails</German>
+		<Italian>When checked, a popup shows when the UHV fails</Italian>
+		<Spanish>When checked, a popup shows when the UHV fails</Spanish>
+	</TEXT>
 
 	<!-- MoreCiv4lerts_CIV4GameText -->
 
@@ -960,5 +1016,77 @@
 		<German>[COLOR_TECH_TEXT]Wird einem "Friedensvertrag" zustimmen: %s1[COLOR_REVERT]</German>
 		<Italian>[COLOR_TECH_TEXT]Firmer&#224; un Trattato di Pace: %s1[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_TECH_TEXT]Will Sign Peace Treaty: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_TEXT</Tag>
+		<English>Great People</English>
+		<French>Great People</French>
+		<German>Great People</German>
+		<Italian>Great People</Italian>
+		<Spanish>Great People</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_HOVER</Tag>
+		<English>Which great people births and deaths to display notification messages for.</English>
+		<French>Which great people births and deaths to display notification messages for.</French>
+		<German>Which great people births and deaths to display notification messages for.</German>
+		<Italian>Which great people births and deaths to display notification messages for.</Italian>
+		<Spanish>Which great people births and deaths to display notification messages for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__GREATPEOPLE_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_TEXT</Tag>
+		<English>Religion Spread</English>
+		<French>Religion Spread</French>
+		<German>Religion Spread</German>
+		<Italian>Religion Spread</Italian>
+		<Spanish>Religion Spread</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_HOVER</Tag>
+		<English>Which cities to display notification messages about religion spread and disappearance for.</English>
+		<French>Which cities to display notification messages about religion spread and disappearance for.</French>
+		<German>Which cities to display notification messages about religion spread and disappearance for.</German>
+		<Italian>Which cities to display notification messages about religion spread and disappearance for.</Italian>
+		<Spanish>Which cities to display notification messages about religion spread and disappearance for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__RELIGIONSPREAD_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_TEXT</Tag>
+		<English>Event Effects</English>
+		<French>Event Effects</French>
+		<German>Event Effects</German>
+		<Italian>Event Effects</Italian>
+		<Spanish>Event Effects</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_HOVER</Tag>
+		<English>Which civilizations to display notification messages about event outcomes for.</English>
+		<French>Which civilizations to display notification messages about event outcomes for.</French>
+		<German>Which civilizations to display notification messages about event outcomes for.</German>
+		<Italian>Which civilizations to display notification messages about event outcomes for.</Italian>
+		<Spanish>Which civilizations to display notification messages about event outcomes for.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__EVENTEFFECTS_LIST</Tag>
+		<English>All|Known|Nearby|Ours</English>
+		<French>All|Known|Nearby|Ours</French>
+		<German>All|Known|Nearby|Ours</German>
+		<Italian>All|Known|Nearby|Ours</Italian>
+		<Spanish>All|Known|Nearby|Ours</Spanish>
 	</TEXT>
 </Civ4GameText>

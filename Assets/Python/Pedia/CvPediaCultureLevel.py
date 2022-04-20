@@ -1,7 +1,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
-from Consts import *
+from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -60,7 +60,7 @@ class CvPediaCultureLevel:
 		if self.top.iActivePlayer == -1:
 			iCulture = CultureLevelInfo.getSpeedThreshold(2)
 		else:
-			iCulture = CultureLevelInfo.getSpeedThreshold(gc.getGame().getGameSpeedType())
+			iCulture = CultureLevelInfo.getSpeedThreshold(game.getGameSpeedType())
 			
 		szCulture = u"%d%c" % (iCulture, gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar())
 		screen.appendListBoxString(panel, u"<font=3>" + szCulture + u"<font=3>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
@@ -158,7 +158,7 @@ class CvPediaCultureLevel:
 			szSpecialistEffects = ""
 			
 			for iYield in range(YieldTypes.NUM_YIELD_TYPES):
-				iYieldChange = SpecialistInfo.getCultureLevelYieldChange(self.iCultureLevel, iYield)
+				iYieldChange = SpecialistInfo.getCultureLevelYieldChange(CultureLevelTypes(self.iCultureLevel), YieldTypes(iYield))
 				
 				if iYieldChange > 0:
 					if szSpecialistEffects:
@@ -167,7 +167,7 @@ class CvPediaCultureLevel:
 					szSpecialistEffects += u"+%d%c" % (iYieldChange, gc.getYieldInfo(iYield).getChar())
 					
 			for iCommerce in range(CommerceTypes.NUM_COMMERCE_TYPES):
-				iCommerceChange = SpecialistInfo.getCultureLevelCommerceChange(self.iCultureLevel, iCommerce)
+				iCommerceChange = SpecialistInfo.getCultureLevelCommerceChange(CultureLevelTypes(self.iCultureLevel), CommerceTypes(iCommerce))
 				
 				if iCommerceChange > 0:
 					if szSpecialistEffects:
@@ -175,7 +175,7 @@ class CvPediaCultureLevel:
 						
 					szSpecialistEffects += u"+%d%c" % (iCommerceChange, gc.getCommerceInfo(iCommerce).getChar())
 					
-			iGreatPeopleRateChange = SpecialistInfo.getCultureLevelGreatPeopleRateChange(self.iCultureLevel)
+			iGreatPeopleRateChange = SpecialistInfo.getCultureLevelGreatPeopleRateChange(CultureLevelTypes(self.iCultureLevel))
 			
 			if iGreatPeopleRateChange > 0:
 				if szSpecialistEffects:

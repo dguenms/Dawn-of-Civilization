@@ -340,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
 		<English>Flavian Amphitheatre</English>
-		<French>Flavian Amphitheatre</French>
+		<French>
+			<Text>Ampith&#233;&#226;tre Flavien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Flavian Amphitheatre</German>
 		<Italian>Flavian Amphitheatre</Italian>
 		<Spanish>Flavian Amphitheatre</Spanish>
@@ -1774,8 +1778,8 @@
 			<Plural>0</Plural>
 		</French>
 		<German>Itsukushima-Schrein</German>
-		<Italian>Itsukushima Shrine</Italian>
-		<Spanish>Itsukushima Shrine</Spanish>
+		<Italian>Santuario di Itsukushima</Italian>
+		<Spanish>Santuario Itsukushima</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_HELP</Tag>
@@ -1807,11 +1811,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
-		<English>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</English>
-		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French>
-		<German>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</German>
-		<Italian>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Italian>
-		<Spanish>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Spanish>
+		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
+		<French>[ICON_BULLET]+2 [ICON_CULTURE] par merveille du monde sous votre contr&#244;le</French>
+		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
+		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_STRATEGY</Tag>
@@ -2011,11 +2015,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Tag>
-		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]+25% de [ICON_PRODUCTION] convertie en [ICON_COMMERCE]</French>
-		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</German>
-		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Italian>
-		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Spanish>
+		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</English>
+		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</French>
+		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</German>
+		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</Italian>
+		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_STRATEGY</Tag>
@@ -2220,7 +2224,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Tag>
 		<English>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</English>
-		<French>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</French>
+		<French>[ICON_BULLET]+3[ICON_RESEARCH] par satellite</French>
 		<German>[ICON_BULLET]+3[ICON_RESEARCH] f&#252;r Satelliten</German>
 		<Italian>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Italian>
 		<Spanish>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Spanish>
@@ -2471,11 +2475,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] par &#233;lectricit&#233; consomm&#233;e dans toutes les villes</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Spanish>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</French> <!-- needs translation -->
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every 20 power consumed in the world</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_STRATEGY</Tag>
@@ -2567,19 +2571,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_MOVES] for civilian units</English>
-		<French>[ICON_BULLET]+1 [ICON_MOVES] pour les unit&#233;s civiles</French>
-		<German>[ICON_BULLET]+1[ICON_MOVES] for civilian units</German>
-		<Italian>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Spanish>
+		<English>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH</Tag>
@@ -2907,11 +2911,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
-		<English>[ICON_BULLET]Units are completely healed when promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French>
-		<German>[ICON_BULLET]Units are completely healed when promoted</German>
-		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
-		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
+		<English>[ICON_BULLET]+50% healing when units are promoted</English>
+		<French>[ICON_BULLET]Vos unit&#233;s sont soign&#233;es de 50% lorsqu'elles sont promues</French>
+		<German>[ICON_BULLET]+50% healing when units are promoted</German>
+		<Italian>[ICON_BULLET]+50% healing when units are promoted</Italian>
+		<Spanish>[ICON_BULLET]+50% healing when units are promoted</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>
@@ -2936,7 +2940,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] par +2[ICON_CULTURE] des b&#226;timents dans la ville</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] pro +2[ICON_CULTURE] von Geb&#228;uden in der Stadt</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Spanish>
@@ -3031,11 +3035,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT</Tag>
-		<English>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
+		<English>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
 		<French>Un prix Nobel a &#233;t&#233; d&#233;cern&#233; au personnage illustre %s1 %s2 de %s3, g&#233;n&#233;rant %d4 [ICON_GREATPEOPLE]</French>
-		<German>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
-		<Italian>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
-		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
+		<German>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
+		<Italian>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
+		<Spanish>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_STRATEGY</Tag>
@@ -3216,10 +3220,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] par [LINK=literal]satellite[\LINK] construit[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] par projet spatial compl&#233;t&#233;</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNITED_NATIONS_HELP</Tag>
+		<English>[ICON_BULLET]Disables cascading defensive pacts</English>
+		<French>[ICON_BULLET]Disables cascading defensive pacts</French>
+		<German>[ICON_BULLET]Disables cascading defensive pacts</German>
+		<Italian>[ICON_BULLET]Disables cascading defensive pacts</Italian>
+		<Spanish>[ICON_BULLET]Disables cascading defensive pacts</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

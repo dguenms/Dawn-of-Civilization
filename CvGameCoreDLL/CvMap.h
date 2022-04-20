@@ -110,6 +110,8 @@ public:
 	void updateMinOriginalStartDist(CvArea* pArea);										// Exposed to Python
 	void updateYield();
 
+	void updateCulture();
+
 	void verifyUnitValidPlot();
 
 	void combinePlotGroups(PlayerTypes ePlayer, CvPlotGroup* pPlotGroup1, CvPlotGroup* pPlotGroup2);	
@@ -276,6 +278,9 @@ public:
 	DllExport virtual void write(FDataStreamBase* pStream);
 
 	void rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * eCustomMapOptions);		// Exposed to Python
+
+	// Leoreth
+	ScenarioTypes getScenario();
 
 protected:
 

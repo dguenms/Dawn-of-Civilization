@@ -101,6 +101,7 @@ public:
 	int getNumAdvancedStartPoints() const;
 	void setNumAdvancedStartPoints(int iNewValue);
 	int getStartTurn() const;
+	void setStartTurn(int iNewValue); // Leoreth
 	int getStartYear() const;
 	void setStartYear(int iNewValue);
 	int getEstimateEndTurn() const;
@@ -265,7 +266,7 @@ public:
 
 	void saveReplay(int iPlayer);
 
-	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv);
+	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv, bool bAlive, bool bMinor);
 	int getCultureThreshold(int /*CultureLevelTypes*/ eLevel);
 	void setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield);
 	void changePlotExtraCost(int iX, int iY, int iExtraCost);
@@ -314,8 +315,21 @@ public:
 	bool isGreatPersonBorn(std::wstring sName);
 
 	void autosave();
+	void initialSave();
 
 	void incrementBuildingClassCreatedCount(int iBuildingClass);
+
+	void setCityScreenOwner(int iPlayer);
+	void resetCityScreenOwner();
+
+	void setGreatPeopleNotifications(int iNotificationLevel);
+	void setReligionSpreadNotifications(int iNotificationLevel);
+	void setEventEffectNotifications(int iNotificationLevel);
+
+	int getPeriod(int iCivilization);
+	void setPeriod(int iCivilization, int iPeriod);
+
+	int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn);
 
 protected:
 	CvGame* m_pGame;

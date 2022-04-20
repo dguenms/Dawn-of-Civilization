@@ -22,7 +22,6 @@ If you just want to play, you only need to clone this repo into your mod folder 
 Alternate ways to get the mod:
 * [Installer for DoC including Modules](https://sourceforge.net/projects/dawnofciv/files/Install%20Dawn%20of%20Civilization.exe/download)
 * [Installer for DoC without Modules](https://sourceforge.net/projects/dawnofciv/files/Install%20Dawn%20of%20Civilization%20Core.exe/download)
-* [DoC as a RAR archive](https://sourceforge.net/projects/dawnofciv/files/RFC%20Dawn%20of%20Civilization%20v1.13.rar/download)
 
 ## Main Features
 

@@ -113,6 +113,7 @@
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPagan" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -195,6 +196,9 @@
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="RiverPlotYieldChanges" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FlatRiverPlotYieldChanges" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="GlobalSeaPlotYieldChanges" content="eltOnly">
@@ -504,6 +508,7 @@
 		<element type="bPrereqReligion" minOccurs="0"/>
 		<element type="bPagan" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bCenterInCity" minOccurs="0"/>
+		<element type="bNoResistance" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iCost" minOccurs="0"/>
 		<element type="iHurryCostModifier" minOccurs="0"/>
@@ -573,6 +578,7 @@
 		<element type="fVisibilityPriority" minOccurs="0"/>
 		<element type="SeaPlotYieldChanges" minOccurs="0"/>
 		<element type="RiverPlotYieldChanges" minOccurs="0"/>
+		<element type="FlatRiverPlotYieldChanges" minOccurs="0"/>
 		<element type="GlobalSeaPlotYieldChanges" minOccurs="0"/>
 		<element type="YieldChanges" minOccurs="0"/>
 		<element type="YieldModifiers" minOccurs="0"/>

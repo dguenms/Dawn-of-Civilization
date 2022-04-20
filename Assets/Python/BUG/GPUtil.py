@@ -24,7 +24,7 @@ from CvPythonExtensions import *
 import BugUtil
 import FontUtil
 import PlayerUtil
-from RFCUtils import utils
+from RFCUtils import *
 
 gc = CyGlobalContext()
 
@@ -178,8 +178,7 @@ def calcPercentages(city):
 	# Calc total rate
 	iTotal = 0
 	for iUnit in g_gpUnitTypes:
-		iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnitType(city.getOwner(), gc.getUnitInfo(iUnit).getUnitClassType()))
-		if iProgress > 0: iTotal += iProgress
+		iTotal += city.getGreatPeopleUnitProgress(unique_unit(city.getOwner(), iUnit))
 	# Calc individual percentages based on rates and total
 	percents = []
 	if (iTotal > 0):

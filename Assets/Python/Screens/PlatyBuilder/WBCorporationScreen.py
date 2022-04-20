@@ -12,8 +12,9 @@ import CvPlatyBuilderScreen
 import WBStoredDataScreen
 gc = CyGlobalContext()
 
+from CvPlatyBuilderSettings import *
+
 bHeadquarter = False
-iOwnerType = 0
 lCities = []
 
 class WBCorporationScreen:

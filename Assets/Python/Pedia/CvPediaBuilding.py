@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 import CvUtil
-from RFCUtils import utils
+from RFCUtils import *
 from Consts import *
 
 gc = CyGlobalContext()
@@ -100,7 +100,7 @@ class CvPediaBuilding:
 		else:
 			szClass = "Building"
 
-		szCategory = utils.getAdvisorString(self.iBuilding) + " " + szClass
+		szCategory = getAdvisorString(self.iBuilding) + " " + szClass
 		screen.appendListBoxString(panel, u"<font=3>" + szCategory + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
 		# Yield
@@ -196,11 +196,11 @@ class CvPediaBuilding:
 			screen.attachLabel(panel, "", "(")
 		
 		if iPrereq >= 0:
-			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, self.isStateReligionRequirement(iPrereq, [iStatePrereq, iOrStatePrereq]), False )
+			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
 
 		if iOrPrereq >= 0:
 			screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
-			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, self.isStateReligionRequirement(iPrereq, [iStatePrereq, iOrStatePrereq]), False )
+			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
 			
 		if iOrPrereq >= 0 and iStatePrereq >= 0:
 			screen.attachLabel(panel, "", ")")
@@ -225,13 +225,13 @@ class CvPediaBuilding:
 		# Leoreth: pagan religion prereqs
 		if gc.getBuildingInfo(self.iBuilding).isPagan():
 			if self.top.iActivePlayer != -1:
-				button = gc.getCivilizationInfo(gc.getPlayer(self.top.iActivePlayer).getCivilizationType()).getPaganReligionButton()
+				button = infos.paganReligion(civ(self.top.iActivePlayer)).getButton()
 				if button:
 					screen.attachImageButton(panel, "", button, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION, gc.getPlayer(self.top.iActivePlayer).getCivilizationType(), 1, False)
 
 	
-	def isStateReligionRequirement(self, iPrereq, lStateReligions):
-		if iPrereq in lStateReligions: return 1
+	def isStateReligionRequirement(self, lReligions, lStateReligions):
+		if set(lReligions) == set(lStateReligions): return 1
 		
 		return -1
 

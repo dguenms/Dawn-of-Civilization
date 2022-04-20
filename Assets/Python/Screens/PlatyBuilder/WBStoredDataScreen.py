@@ -12,10 +12,8 @@ import AIWars
 import BugData
 import DynamicCivs as dc
 gc = CyGlobalContext()
+from CvPlatyBuilderSettings import *
 
-iChange = 1
-iSelectedCiv = -1
-bRemove = False
 iSelectedMode = 0
 
 scriptDict = {}
@@ -27,6 +25,7 @@ iWarList = 0
 
 from StoredData import data
 from Consts import *
+from RFCUtils import *
 
 class WBStoredDataScreen:
 
@@ -73,7 +72,7 @@ class WBStoredDataScreen:
 		# Civ selection
 		screen.addDropDownBoxGFC("SelectCiv", 20, 50 + 6*35 + 100, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("SelectCiv", CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()), -1, -1, iSelectedCiv == -1)
-		for i in range(iNumPlayers):
+		for i in players.major():
 			screen.addPullDownString("SelectCiv", CyTranslator().getText(str(gc.getPlayer(i).getCivilizationShortDescriptionKey()), ()), i, i, iSelectedCiv == i)
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -162,7 +161,7 @@ class WBStoredDataScreen:
 				if item == "iStabilityLevel":
 					sText += u" (%s)" % CyTranslator().getText(StabilityLevelTexts[scriptDict[item]], ())
 				elif item in ["iNextTurnAIWar"]:
-					sText += u" (Turn %s)" % getTurnForYear(scriptDict[item])
+					sText += u" (Turn %s)" % year(scriptDict[item])
 				elif item == "iFirstNewWorldColony":
 					sText = self.getCivName(scriptDict[item])
 				screen.setTableText("WBDataTable", 2*iColumn+3, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 22008, i, CvUtil.FONT_LEFT_JUSTIFY)
@@ -218,9 +217,9 @@ class WBStoredDataScreen:
 			elif item == "lPlayerEnabled": # Secondary civs
 				sText = CyTranslator().getText(str(gc.getPlayer(lSecondaryCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lSecondaryCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			elif item == "lFirstContactConquerors": # New world civs conquerors
-				sText = CyTranslator().getText(str(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationShortDescriptionKey()), ())
-				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			elif item == "dFirstContactConquerors": # New world civs conquerors
+				sText = CyTranslator().getText(str(gc.getCivilizationInfo(lBioNewWorld[i]).getText()), ())
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(lBioNewWorld[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lFirstContactMongols": # Mongol conquerors
 				sText = CyTranslator().getText(str(gc.getPlayer(lMongolCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lMongolCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -251,13 +250,14 @@ class WBStoredDataScreen:
 				sText = CyTranslator().getText(str(gc.getPlayer(i).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(i).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lConquest":
-				sAttacker = CyTranslator().getText(str(gc.getPlayer(AIWars.lConquests[i][1]).getCivilizationShortDescriptionKey()), ())
-				sDefender = CyTranslator().getText(str(gc.getPlayer(AIWars.lConquests[i][2]).getCivilizationShortDescriptionKey()), ())
-				sText = sAttacker + " - " + sDefender
+				iAttacker, iDefender = AIWars.lConquests[i][1:3]
+				sAttacker = infos.civ(iAttacker).getText()
+				sDefender = iDefender >= 0 and infos.civ(iDefender).getText() or "Any Civilization"
+				sText = "%s - %s" % (sAttacker, sDefender)
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lGoals":
 				sText = u"UHV%d: " % (i+1)
-				sText += utils.getGoalText(iSelectedCiv, i, True)
+				sText += Victories.dHistoricalGoals[iSelectedCiv][i].full_description()
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)
@@ -382,8 +382,7 @@ class WBStoredDataScreen:
 				else:
 					data.players[iSelectedCiv].__dict__[item] = iValue
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)
@@ -430,8 +429,7 @@ class WBStoredDataScreen:
 						popup.launch()
 						return 1
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)

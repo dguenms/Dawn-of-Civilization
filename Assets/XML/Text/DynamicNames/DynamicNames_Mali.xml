@@ -153,4 +153,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALI_SONGHAI</Tag>
+		<English>Songhai</English>
+		<French>Songhai</French>
+		<German>Songhai</German>
+		<Italian>Songhai</Italian>
+		<Spanish>Songhai</Spanish>
+	</TEXT>
 </Civ4GameText>

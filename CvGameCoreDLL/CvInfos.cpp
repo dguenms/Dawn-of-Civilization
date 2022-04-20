@@ -117,6 +117,13 @@ const wchar* CvInfoBase::getDescription(uint uiForm) const
 	return m_aCachedDescriptions[uiForm];
 }
 
+// Leoreth
+void CvInfoBase::setDescription(std::wstring szDescription)
+{
+	m_aCachedDescriptions.clear();
+	m_szTextKey = szDescription;
+}
+
 const wchar* CvInfoBase::getText() const
 {
 	// used instead of getDescription for Info entries that are not objects
@@ -944,7 +951,7 @@ int CvSpecialistInfo::getFlavorValue(int i) const
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelYieldChange(int eCultureLevel, int eYield) const
+int CvSpecialistInfo::getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{
@@ -955,7 +962,7 @@ int CvSpecialistInfo::getCultureLevelYieldChange(int eCultureLevel, int eYield) 
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelCommerceChange(int eCultureLevel, int eCommerce) const
+int CvSpecialistInfo::getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{
@@ -966,7 +973,7 @@ int CvSpecialistInfo::getCultureLevelCommerceChange(int eCultureLevel, int eComm
 }
 
 // Leoreth
-int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(int eCultureLevel) const
+int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const
 {
 	if (eCultureLevel == NO_CULTURELEVEL)
 	{
@@ -5769,6 +5776,8 @@ m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
 m_iLevelExperienceModifier(0), // Leoreth
+m_iUnhappinessDecayModifier(0), // Leoreth
+m_iVassalTradeModifier(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -5781,6 +5790,8 @@ m_bNoNonStateReligionSpread(false),
 m_bSlavery(false), // Leoreth
 m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
+m_bNoResistance(false), // Leoreth
+m_bNoTemporaryUnhappiness(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -5901,7 +5912,7 @@ int CvCivicInfo::getCorporationMaintenanceModifier() const
 	return m_iCorporationMaintenanceModifier;
 }
 
-//Leoreth
+// Leoreth
 int CvCivicInfo::getCorporationCommerceModifier() const
 {
 	return m_iCorporationCommerceModifier;
@@ -6399,11 +6410,31 @@ int CvCivicInfo::getMinimalSpecialistCount(int i) const
 	return m_paiMinimalSpecialistCounts ? m_paiMinimalSpecialistCounts[i] : -1;
 }
 
+bool CvCivicInfo::isNoResistance() const
+{
+	return m_bNoResistance;
+}
+
+bool CvCivicInfo::isNoTemporaryUnhappiness() const
+{
+	return m_bNoTemporaryUnhappiness;
+}
+
+int CvCivicInfo::getUnhappinessDecayModifier() const
+{
+	return m_iUnhappinessDecayModifier;
+}
+
+int CvCivicInfo::getVassalTradeModifier() const
+{
+	return m_iVassalTradeModifier;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts
+	uint uiFlag=0;
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6455,7 +6486,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
-	if (uiFlag >= 1) stream->Read(&m_iLevelExperienceModifier); // Leoreth
+	stream->Read(&m_iLevelExperienceModifier); // Leoreth
+	stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
+	stream->Read(&m_iVassalTradeModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6469,6 +6502,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
+	stream->Read(&m_bNoResistance); // Leoreth
+	stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 
 	// Arrays
 
@@ -6544,12 +6579,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers);
 
 	// Leoreth
-	if (uiFlag >= 1)
-	{
-		SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
-		m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
-		stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
-	}
+	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
+	m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
 
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
@@ -6586,7 +6618,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1; // Leoreth: 1 for level experience modifier and minimal specialist count
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6639,6 +6671,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
 	stream->Write(m_iLevelExperienceModifier); // Leoreth
+	stream->Write(m_iUnhappinessDecayModifier); // Leoreth
+	stream->Write(m_iVassalTradeModifier); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6652,6 +6686,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bSlavery); // Leoreth
 	stream->Write(m_bNoSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
+	stream->Write(m_bNoResistance); // Leoreth
+	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
 
 	// Arrays
 
@@ -6746,6 +6782,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iCapitalTradeModifier, "iCapitalTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iVassalTradeModifier, "iVassalTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iVassalCityCommerce, "iVassalCityCommerce"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iColonyCommerce, "iColonyCommerce"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier"); // Leoreth
@@ -6759,6 +6796,8 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoTemporaryUnhappiness, "bNoTemporaryUnhappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
@@ -6766,6 +6805,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iUnhappinessDecayModifier, "iUnhappinessDecayModifier"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{
@@ -7344,12 +7384,14 @@ m_bPagan(false), // Leoreth
 m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
+m_bNoResistance(false), // Leoreth
 m_piPrereqAndTechs(NULL),
 m_piPrereqOrBonuses(NULL),
 m_piProductionTraits(NULL),
 m_piHappinessTraits(NULL),
 m_piSeaPlotYieldChange(NULL),
 m_piRiverPlotYieldChange(NULL),
+m_piFlatRiverPlotYieldChange(NULL), // Leoreth
 m_piGlobalSeaPlotYieldChange(NULL),
 m_piYieldChange(NULL),
 m_piYieldModifier(NULL),
@@ -7407,6 +7449,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piHappinessTraits);
 	SAFE_DELETE_ARRAY(m_piSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piRiverPlotYieldChange);
+	SAFE_DELETE_ARRAY(m_piFlatRiverPlotYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piYieldChange);
 	SAFE_DELETE_ARRAY(m_piYieldModifier);
@@ -8225,6 +8268,16 @@ int* CvBuildingInfo::getRiverPlotYieldChangeArray() const
 	return m_piRiverPlotYieldChange;
 }
 
+int CvBuildingInfo::getFlatRiverPlotYieldChange(int i) const
+{
+	return m_piFlatRiverPlotYieldChange ? m_piFlatRiverPlotYieldChange[i] : -1;
+}
+
+int* CvBuildingInfo::getFlatRiverPlotYieldChangeArray() const
+{
+	return m_piFlatRiverPlotYieldChange;
+}
+
 int CvBuildingInfo::getGlobalSeaPlotYieldChange(int i) const
 {
 	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
@@ -8588,6 +8641,12 @@ int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
 	return m_piPrereqBuildingClassPercent[i];
 }
 
+// Leoreth
+bool CvBuildingInfo::isNoResistance() const
+{
+	return m_bNoResistance;
+}
+
 const TCHAR* CvBuildingInfo::getButton() const
 {
 	const CvArtInfoBuilding * pBuildingArtInfo;
@@ -8610,7 +8669,7 @@ const CvArtInfoBuilding* CvBuildingInfo::getArtInfo() const
 const CvArtInfoMovie* CvBuildingInfo::getMovieInfo() const
 {
 	const TCHAR* pcTag = getMovieDefineTag();
-	if (NULL != pcTag && 0 != _tcscmp(pcTag, "NONE"))
+	if (NULL != pcTag && 0 != _tcscmp(pcTag, ""))
 	{
 		return ARTFILEMGR.getMovieArtInfo(pcTag);
 	}
@@ -8732,8 +8791,8 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iAreaHealth);
 	stream->Read(&m_iGlobalHealth);
-	if (uiFlag >= 1) stream->Read(&m_iBuildingUnhealthModifier);
-	if (uiFlag >= 1) stream->Read(&m_iCorporationUnhealthModifier);
+	stream->Read(&m_iBuildingUnhealthModifier);
+	stream->Read(&m_iCorporationUnhealthModifier);
 	stream->Read(&m_iGlobalPopulationChange);
 	stream->Read(&m_iFreeTechs);
 	stream->Read(&m_iDefenseModifier);
@@ -8768,6 +8827,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
+	stream->Read(&m_bNoResistance); // Leoreth
 
 	stream->ReadString(m_szConstructSound);
 	stream->ReadString(m_szArtDefineTag);
@@ -8796,6 +8856,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piRiverPlotYieldChange);
 	m_piRiverPlotYieldChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piRiverPlotYieldChange);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piFlatRiverPlotYieldChange);
+	m_piFlatRiverPlotYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piFlatRiverPlotYieldChange);
 
 	SAFE_DELETE_ARRAY(m_piGlobalSeaPlotYieldChange);
 	m_piGlobalSeaPlotYieldChange = new int[NUM_YIELD_TYPES];
@@ -9018,7 +9083,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::write(stream);
 
-	uint uiFlag=1; // Leoreth: 1 for building/corporation health modifiers
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iBuildingClassType);
@@ -9144,6 +9209,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
+	stream->Write(m_bNoResistance); // Leoreth
 
 	stream->WriteString(m_szConstructSound);
 	stream->WriteString(m_szArtDefineTag);
@@ -9155,6 +9221,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumTraitInfos(), m_piHappinessTraits);
 	stream->Write(NUM_YIELD_TYPES, m_piSeaPlotYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piRiverPlotYieldChange);
+	stream->Write(NUM_YIELD_TYPES, m_piFlatRiverPlotYieldChange); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piGlobalSeaPlotYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piYieldModifier);
@@ -9424,6 +9491,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bPagan, "bPagan"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
+	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
 	pXML->GetChildXmlValByName(&m_iProductionCost, "iCost");
 	pXML->GetChildXmlValByName(&m_iHurryCostModifier, "iHurryCostModifier");
@@ -9515,6 +9583,17 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piRiverPlotYieldChange, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FlatRiverPlotYieldChanges"))
+	{
+		pXML->SetYields(&m_piFlatRiverPlotYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piFlatRiverPlotYieldChange, NUM_YIELD_TYPES);
 	}
 
 	// if we can set the current xml node to it's next sibling
@@ -10398,6 +10477,8 @@ m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
 m_iDerivativeCiv(NO_CIVILIZATION),
 m_iStartingYear(0), // Leoreth
+m_iPaganReligion(0), // Leoreth
+m_iImpact(0), // Leoreth
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
@@ -10406,6 +10487,7 @@ m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
 m_piLoadingTime(NULL), // Leoreth
 m_pbLeaders(NULL),
+m_pbOriginalLeaders(NULL), // Leoreth
 m_pbCivilizationFreeBuildingClass(NULL),
 m_pbCivilizationFreeTechs(NULL),
 m_pbCivilizationDisableTechs(NULL),
@@ -10428,6 +10510,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
 	SAFE_DELETE_ARRAY(m_piLoadingTime); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbLeaders);
+	SAFE_DELETE_ARRAY(m_pbOriginalLeaders); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeBuildingClass);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeTechs);
 	SAFE_DELETE_ARRAY(m_pbCivilizationDisableTechs);
@@ -10439,7 +10522,6 @@ void CvCivilizationInfo::reset()
 	CvInfoBase::reset();
 	m_aszAdjective.clear();
 	m_aszShortDescription.clear();
-	m_aszPaganReligion.clear();
 }
 
 
@@ -10478,6 +10560,16 @@ int CvCivilizationInfo::getActionSoundScriptId() const
 	return m_iActionSoundScriptId;
 }
 
+int CvCivilizationInfo::getPaganReligion() const
+{
+	return m_iPaganReligion;
+}
+
+int CvCivilizationInfo::getImpact() const
+{
+	return m_iImpact;
+}
+
 bool CvCivilizationInfo::isAIPlayable() const
 {
 	return m_bAIPlayable;
@@ -10486,6 +10578,12 @@ bool CvCivilizationInfo::isAIPlayable() const
 bool CvCivilizationInfo::isPlayable() const
 {
 	return m_bPlayable;
+}
+
+// Leoreth
+void CvCivilizationInfo::setPlayable(bool bNewValue)
+{
+	m_bPlayable = bNewValue;
 }
 
 const wchar* CvCivilizationInfo::getShortDescription(uint uiForm)
@@ -10503,6 +10601,11 @@ const wchar* CvCivilizationInfo::getShortDescriptionKey() const
 	return m_szShortDescriptionKey;
 }
 
+const wchar* CvCivilizationInfo::getDescriptionKeyPersistent() const
+{
+	return m_szDescriptionPersistent;
+}
+
 const wchar* CvCivilizationInfo::getAdjective(uint uiForm)
 {
 	while(m_aszAdjective.size() <= uiForm)
@@ -10518,23 +10621,6 @@ const wchar* CvCivilizationInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
-// Leoreth
-const wchar* CvCivilizationInfo::getPaganReligionName(uint uiForm)
-{
-	while (m_aszPaganReligion.size() <= uiForm)
-	{
-		m_aszPaganReligion.push_back(gDLL->getObjectText(m_szPaganReligionKey, m_aszPaganReligion.size()));
-	}
-
-	return m_aszPaganReligion[uiForm];
-}
-
-// Leoreth
-const wchar* CvCivilizationInfo::getPaganReligionKey() const
-{
-	return m_szPaganReligionKey;
-}
-
 const TCHAR* CvCivilizationInfo::getFlagTexture() const
 {
 	return ARTFILEMGR.getCivilizationArtInfo( getArtDefineTag() )->getPath();
@@ -10548,17 +10634,6 @@ const TCHAR* CvCivilizationInfo::getArtDefineTag() const
 void CvCivilizationInfo::setArtDefineTag(const TCHAR* szVal)
 {
 	m_szArtDefineTag = szVal;
-}
-
-// Leoreth
-const TCHAR* CvCivilizationInfo::getPaganReligionButton() const
-{
-	if (m_szPaganReligionButton.IsEmpty())
-	{
-		return NULL;
-	}
-
-	return m_szPaganReligionButton;
 }
 
 // Arrays
@@ -10596,6 +10671,22 @@ bool CvCivilizationInfo::isLeaders(int i) const
 	FAssertMsg(i < GC.getNumLeaderHeadInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_pbLeaders ? m_pbLeaders[i] : false;
+}
+
+void CvCivilizationInfo::setLeader(int iLeader, bool bNewValue)
+{
+	if (m_pbLeaders)
+	{
+		m_pbLeaders[iLeader] = bNewValue;
+	}
+}
+
+// Leoreth
+bool CvCivilizationInfo::isOriginalLeader(int iLeader) const
+{
+	FAssertMsg(iLeader < GC.getNumLeaderHeadInfos(), "Index out of bounds");
+	FAssertMsg(iLeader > -1, "Index out of bounds");
+	return m_pbOriginalLeaders ? m_pbOriginalLeaders[iLeader] : false;
 }
 
 bool CvCivilizationInfo::isCivilizationFreeBuildingClass(int i) const
@@ -10683,6 +10774,8 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
 	stream->Read(&m_iStartingYear); // Leoreth
+	stream->Read(&m_iPaganReligion); // Leoreth
+	stream->Read(&m_iImpact); // Leoreth
 
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
@@ -10690,8 +10783,6 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
-	stream->ReadString(m_szPaganReligionKey); // Leoreth
-	stream->ReadString(m_szPaganReligionButton); // Leoreth
 	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10759,6 +10850,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
 	stream->Write(m_iStartingYear); // Leoreth
+	stream->Write(m_iPaganReligion); // Leoreth
 
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
@@ -10766,8 +10858,6 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
-	stream->WriteString(m_szPaganReligionKey); // Leoreth
-	stream->WriteString(m_szPaganReligionButton); // Leoreth
 	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10803,9 +10893,6 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
 
-	pXML->GetChildXmlValByName(m_szPaganReligionKey, "PaganReligionName"); // Leoreth
-	pXML->GetChildXmlValByName(m_szPaganReligionButton, "PaganReligionButton"); // Leoreth
-
 	// Leoreth
 	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
 
@@ -10827,6 +10914,14 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	m_iActionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
 
 	pXML->GetChildXmlValByName(&m_iStartingYear, "StartingYear");
+
+	pXML->GetChildXmlValByName(szTextVal, "PaganReligion");
+	m_iPaganReligion = pXML->FindInInfoClass(szTextVal);
+
+	pXML->GetChildXmlValByName(szTextVal, "Impact");
+	m_iImpact = GC.getTypesEnum(szTextVal);
+
+	pXML->GetChildXmlValByName(m_szDescriptionPersistent, "Description");
 
 	// set the current xml node to it's next sibling and then
 	pXML->GetChildXmlValByName(&m_bPlayable, "bPlayable");
@@ -11041,6 +11136,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->SetVariableListTagPair(&m_pbLeaders, "Leaders", sizeof(GC.getLeaderHeadInfo((LeaderHeadTypes)0)), GC.getNumLeaderHeadInfos());
+
+	// Leoreth: cache xml leaders to allow modifying them at runtime
+	pXML->SetVariableListTagPair(&m_pbOriginalLeaders, "Leaders", sizeof(GC.getLeaderHeadInfo((LeaderHeadTypes)0)), GC.getNumLeaderHeadInfos());
 
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationSelectionSound");
 
@@ -11406,11 +11504,11 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes ePlayer) const
 	iUnitCost /= 100;
 
 	// bonus for Netherlands and Germany in the beginning
-	if (ePlayer == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
 	{
 	    iUnitCost /= 2;
 	}
-	else if (ePlayer == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	else if (GET_PLAYER(ePlayer).getCivilizationType() == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
 	{
 	    iUnitCost /= 2;
 	}
@@ -11474,7 +11572,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	// reduce tech costs before the human players enter the game
 	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
-	if (GET_PLAYER(eHuman).getBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn < GET_PLAYER(eHuman).getBirthTurn())
+	if (GET_PLAYER(eHuman).getInitialBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn < GET_PLAYER(eHuman).getInitialBirthTurn())
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
@@ -11584,10 +11682,15 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes ePlayer) const
 	iHealthBonus += GET_PLAYER(ePlayer).getModifier(MODIFIER_HEALTH);
 
 	// help early civs in late scenarios
-	if (getScenario() >= SCENARIO_600AD)
+	for (int iScenario = 0; iScenario < NUM_SCENARIO_TYPES; iScenario++)
 	{
-		if (ePlayer < VIKINGS && iHealthBonus < 5) iHealthBonus += 1;
-		if (ePlayer < BABYLONIA && iHealthBonus < 5) iHealthBonus += 1;
+		if (iScenario < getScenario())
+		{
+			if (GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear() <= getScenarioStartYear((ScenarioTypes)iScenario))
+			{
+				iHealthBonus += 1;
+			}
+		}
 	}
 
 	return iHealthBonus;
@@ -11599,12 +11702,14 @@ int CvHandicapInfo::getHappyBonus() const
 	return m_iHappyBonus;
 }
 
-int CvHandicapInfo::getHappyBonusByID(PlayerTypes pl) const
+int CvHandicapInfo::getHappyBonusByID(PlayerTypes ePlayer) const
 {
-    if (pl == NETHERLANDS)
-        return m_iHappyBonus+3;
-    else
-        return m_iHappyBonus;
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS)
+	{
+		return m_iHappyBonus + 3;
+	}
+
+	return m_iHappyBonus;
 }
 
 int CvHandicapInfo::getAttitudeChange() const
@@ -13380,7 +13485,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1
+	uint uiFlag=0;
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iAdvancedStartCost);
@@ -13441,7 +13546,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 
 	SAFE_DELETE_ARRAY(m_piCoastalYieldChange);
 	m_piCoastalYieldChange = new int[NUM_YIELD_TYPES];
-	if (uiFlag >= 1) stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
+	stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
 
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	m_pbTerrainMakesValid = new bool[GC.getNumTerrainInfos()];
@@ -13496,7 +13601,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1;
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iAdvancedStartCost);
@@ -17579,6 +17684,7 @@ m_iSpreadCost(0),
 m_iMaintenance(0),
 m_iHappiness(0),
 m_iHealth(0),
+m_iMaxConsumableBonuses(0), // merijn
 m_iMissionType(NO_MISSION),
 m_iBonusProduced(NO_BONUS),
 m_paiPrereqBonuses(NULL),
@@ -17657,6 +17763,12 @@ int CvCorporationInfo::getHappiness() const
 int CvCorporationInfo::getHealth() const
 {
 	return m_iHealth;
+}
+
+// merijn
+int CvCorporationInfo::getMaxConsumableBonuses() const
+{
+	return m_iMaxConsumableBonuses;
 }
 
 int CvCorporationInfo::getMissionType() const
@@ -17774,6 +17886,7 @@ bool CvCorporationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
+	pXML->GetChildXmlValByName(&m_iMaxConsumableBonuses, "iMaxConsumableBonuses"); // merijn
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"HeadquarterCommerces"))
 	{

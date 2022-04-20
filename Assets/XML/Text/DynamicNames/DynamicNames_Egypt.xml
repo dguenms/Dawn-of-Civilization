@@ -98,30 +98,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_COMMUNIST</Tag>
-		<English>Liberation Rally of %s1</English>
-		<French>
-			<Text>Rassemblement pour la Lib&#233;ration de l'%s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Bewegung f&#252;r die Befreiung %s1:Bewegung f&#252;r die Befreiung %s1:Bewegung f&#252;r die Befreiung %s1</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Raduno per la Liberazione dell'%s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Reuni&#243;n por la Liberaci&#243;n del %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_PTOLEMAIC</Tag>
 		<English>Ptolemaic Empire</English>
 		<French>
@@ -182,6 +158,30 @@
 		<Spanish>Coptic Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_NOMES</Tag>
+		<English>Nomes of %s1</English>
+		<French>
+			<Text>Nomes of %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Nomes of %s1</German>
+		<Italian>Nomes of %s1</Italian>
+		<Spanish>Nomes of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_VASSAL</Tag>
+		<English>Sepat of %s1</English>
+		<French>
+			<Text>Sepat of %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Sepat of %s1</German>
+		<Italian>Sepat of %s1</Italian>
+		<Spanish>Sepat of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK</Tag>
 		<English>Mamluk</English>
 		<French>
@@ -219,15 +219,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPTIAN_PHOENICIA</Tag>
-		<English>Province of Retjenu</English>
+		<English>Sepat of Retjenu</English>
 		<French>
 			<Text>Province du R&#233;tj&#233;nou</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Province of Retjenu</German>
-		<Italian>Province of Retjenu</Italian>
-		<Spanish>Province of Retjenu</Spanish>
+		<German>Sepat of Retjenu</German>
+		<Italian>Sepat of Retjenu</Italian>
+		<Spanish>Sepat of Retjenu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPTIAN_ETHIOPIA</Tag>

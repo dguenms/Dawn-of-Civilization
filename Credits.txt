@@ -57,6 +57,13 @@ UNITS
 * History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
 * Bakuel: Patiyodha (Gupta Longbowman)
 * RFC Classical World (srpt): Patiyodha name and button
+* MightyToad: Galleass, Hwacha, Kobukson, Lanternas (Civ5 imports)
+
+WONDERS
+* merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
+
+WONDER MOVIES:
+* A New Dawn / Chronicles of Mankind (Zeta Nexus): Apadana Palace, Cheomseongdae, Crystal Palace, Flavian Amphitheatre, Forbidden Palace, Gardens by the Bay, Hubble Space Telescope, Neuschwanstein Castle, Al-Khazneh, San Marco Basilica
 
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
@@ -64,6 +71,9 @@ OTHER GRAPHICS
 
 MODULES
 * Empire State Building: Voyhkah
+
+TRANSLATION
+* French: Steb
 
 GAME TEXT
 * Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
@@ -80,16 +90,24 @@ MISCELLANEOUS
 * Sgt. Bears: text and XML work
 * andrewv42: map changes in India and Indochina
 * Steb: city names in Canada and the Americas
+* devolution (AdvCiv mod): DLL compiler options (Final_Release target)
+
+PEDIA
+* Wikipedia
+
+HELP AND ADVICE
+* Walter Hawkwood: fixing issues with unit and building models
 
 GITHUB PROJECT CONTRIBUTORS
-Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon
+Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon, 1SDAN
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
 
 GREAT PEOPLE NAMES
 Too many people to list for their contributions of Great Statesmen, Female Great People and Canadian Great People names,
-in particular Hightower, DC123456789, borhap88, Panopticon and Chep
+in particular Hightower, DC123456789, borhap88, Panopticon and Chep,
+as well as significant overall contributions by Steb
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels they should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.

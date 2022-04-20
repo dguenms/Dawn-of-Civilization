@@ -143,7 +143,7 @@
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>50</iDifficultyMod>
-			<iSwitchCivicCostFactor>100000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
+			<iSwitchCivicCostFactor>200000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
 			<iBaseExperience>300</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
@@ -152,7 +152,7 @@
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>50</iDifficultyMod>
-			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
+			<iSwitchReligionCostFactor>250000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
 			<iBaseExperience>300</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>

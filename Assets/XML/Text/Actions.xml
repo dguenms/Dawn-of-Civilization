@@ -216,7 +216,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_SATELLITE_ATTACK</Tag>
 		<English>Destroy Satellite</English>
-		<French>Destroy Satellite</French>
+		<French>D&#233;truire un satellite</French>
 		<German>Satellit Zerst&#246;ren</German>
 		<Italian>Satellite Attack</Italian>
 		<Spanish>Satellite Attack</Spanish>
@@ -224,7 +224,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_SATELLITE_ATTACK</Tag>
 		<English>The Satellite will destroy an enemy Satellite on the same tile.</English>
-		<French>The Satellite will destroy an enemy Satellite on the same tile.</French>
+		<French>Le satellite d&#233;truira un satellite ennemi sur la m&#234;me case.</French>
 		<German>Der Satellit wird einen gegnerischen Satellit auf demselben Feld zerst&#246;ren.</German>
 		<Italian>The Satellite will destroy an enemy Satellite on the same tile.</Italian>
 		<Spanish>The Satellite will destroy an enemy Satellite on the same tile.</Spanish>
@@ -232,7 +232,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SOLAR_COLLECTOR</Tag>
 		<English>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</English>
-		<French>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</French>
+		<French>Cr&#233;er un [LINK=IMPROVEMENT_SOLAR_COLLECTOR]collecteur solaire[\LINK]</French>
 		<German>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</German>
 		<Italian>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Spanish>
@@ -240,7 +240,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_REBUILD</Tag>
 		<English>Rebuild</English>
-		<French>Rebuild</French>
+		<French>Reb&#226;tir</French>
 		<German>Wiederaufbauen</German>
 		<Italian>Rebuild</Italian>
 		<Spanish>Rebuild</Spanish>
@@ -248,7 +248,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_REBUILD</Tag>
 		<English>Free buildings will be constructed in the city:</English>
-		<French>Free buildings will be constructed in the city:</French>
+		<French>Des b&#226;timents gratuits seront construits dans la ville :</French>
 		<German>Frei verf&#252;gbare Geb&#228;ude werden in der Stadt errichtet:</German>
 		<Italian>Free buildings will be constructed in the city:</Italian>
 		<Spanish>Free buildings will be constructed in the city:</Spanish>
@@ -256,7 +256,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_REBUILD</Tag>
 		<English>[ICON_BULLET]Can rebuild free buildings in cities</English>
-		<French>[ICON_BULLET]Can rebuild free buildings in cities</French>
+		<French>[ICON_BULLET]Peut reconstruire des b&#226;timents gratuits dans les villes</French>
 		<German>[ICON_BULLET]Kann frei verf&#252;gbare Geb&#228;ude in St&#228;dten wiedererrichten</German>
 		<Italian>[ICON_BULLET]Can rebuild free buildings in cities</Italian>
 		<Spanish>[ICON_BULLET]Can rebuild free buildings in cities</Spanish>

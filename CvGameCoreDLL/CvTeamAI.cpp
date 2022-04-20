@@ -997,9 +997,9 @@ int CvTeamAI::AI_chooseElection(const VoteSelectionData& kVoteSelectionData) con
 				{
 					if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
 					{
-						PlayerVoteTypes eVote = GET_PLAYER((PlayerTypes)iJ).AI_diploVote(kVoteSelectionData.aVoteOptions[iI], eVoteSource, true);
+						PlayerVoteTypes ePlayerVote = GET_PLAYER((PlayerTypes)iJ).AI_diploVote(kVoteSelectionData.aVoteOptions[iI], eVoteSource, true);
 
-						if (eVote != PLAYER_VOTE_YES || eVote == GC.getGameINLINE().getVoteOutcome((VoteTypes)iI))
+						if (ePlayerVote != PLAYER_VOTE_YES || ePlayerVote == GC.getGameINLINE().getVoteOutcome(eVote))
 						{
 							bValid = false;
 							break;
@@ -1126,6 +1126,12 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 			}
 	// Sanguo Mod Performance, end
 	iValue /= iMaxCultureVictoryAdjustment;
+
+	// Leoreth: avoid birth protected
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isBirthProtected())
+	{
+		iValue /= 4;
+	}
 
 	return iValue;
 }
@@ -1390,7 +1396,6 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 	int iTechTradeKnownPercent;
 	int iKnownCount;
 	int iPossibleKnownCount;
-	int iChinaThreshold; //Leoreth: techs known regardless of contact to limit the Chinese
 	int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
@@ -1413,22 +1418,18 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 		}
 	}
 
-	//Rhye - start (no trading the first turns, for the exploit)
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+2)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+2) // edead
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
 	{
 		return DENIAL_TECH_MONOPOLY;
 	}
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[eTeam]+2)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn()+2) // edead
+
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
 	{
 		return DENIAL_TECH_WHORE;
 	}
-	//Rhye - end
 
 	iKnownCount = 0;
 	iPossibleKnownCount = 0;
-	iChinaThreshold = 0;
 
 	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
@@ -1445,23 +1446,9 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 					iPossibleKnownCount++;
 				}
-
-				if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
-				{
-					iChinaThreshold++;
-				}
 			}
 		}
 	}
-
-	// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
-	/*if (iChinaThreshold == 0)
-	{
-		if (getID() == CHINA && GET_PLAYER((PlayerTypes)CHINA).isHuman() && GET_PLAYER((PlayerTypes)CHINA).getCurrentEra() < ERA_RENAISSANCE)
-		{
-			return DENIAL_TECH_WHORE;
-		}
-	}*/
 
 	if (isHuman())
 	{
@@ -1719,7 +1706,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
 	//Leoreth: recently spawned or respawned civs won't vassalize
-	if (GC.getGame().getGameTurn() - GET_PLAYER((PlayerTypes)getID()).getLatestRebellionTurn() < 10)
+	if (GC.getGame().getGameTurn() < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -1790,12 +1777,15 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 	CvTeam& kMasterTeam = GET_TEAM(eTeam);
 
-	//Rhye - start
-	//for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
-	for (int iLoopTeam = 0; iLoopTeam < NUM_MAJOR_PLAYERS; iLoopTeam++)
-	//Rhye - end
+	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
+
+		if (kLoopTeam.isMinorCiv())
+		{
+			continue;
+		}
+
 		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID())
 		{
 			if (kLoopTeam.isAtWar(kMasterTeam.getID()) && !kLoopTeam.isAtWar(getID()))
@@ -1827,7 +1817,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	}
 
 	// Leoreth: last resort
-	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() == 1)
+	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() <= 1)
 	{
 		if (GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_NUKED_US) == 0 &&
 			GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_RAZED_CITY) == 0)
@@ -1850,24 +1840,12 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	{
 		int iPersonalityModifier = 0;
 		int iMembers = 0;
-		// Sanguo Mod Performance start, added by poyuzhe 07.29.09
-		// for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		// {
-			// if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			// {
-				// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-				// {
-					// iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getVassalPowerModifier();
-					// ++iMembers;
-				// }
-			// }
-		// }
+
 		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-			{
+		{
 			iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getVassalPowerModifier();
-					++iMembers;
-				}
-		// Sanguo Mod Performance, end
+			++iMembers;
+		}
 
 		int iTotalPower = GC.getGameINLINE().countTotalCivPower();
 		int iAveragePower = iTotalPower / std::max(1, GC.getGameINLINE().countCivTeamsAlive());
@@ -1934,23 +1912,15 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				iMasterPower /= 2;
 			}
 		}
-	//Rhye - start
-	//iMasterPower *= 3;
-	//iMasterPower /= 2;
-	//Rhye - end
 
-	//Rhye - start (lower the first turns)
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+5)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+5) // edead
-	{
-		iMasterPower /= 2;
-	}
-	//Rhye - end
-
+		if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(5)) // edead
+		{
+			iMasterPower /= 2;
+		}
 
 		for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 		{
-			if (iLoopTeam != getID() && iLoopTeam != INDEPENDENT && iLoopTeam != INDEPENDENT2)
+			if (iLoopTeam != getID() && !GET_TEAM((TeamTypes)iLoopTeam).isIndependent())
 			{
 				CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 
@@ -2126,29 +2096,6 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			return DENIAL_JOKING;
 		}
 	}
-
-	// Leoreth: with vassal power and population instead
-	//Rhye - start (5 vassals cap if already the strongest; 6 vas+all cap)
-	/*int mastersVassals = 0;
-	int mastersAllies = 0;
-	int mastersPower = kMasterTeam.getPower(true);
-	bool bStrongest = true;
-	for (int iLoopTeam = 0; iLoopTeam < NUM_MAJOR_PLAYERS; iLoopTeam++)
-	{
-		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
-		if (kLoopTeam.isAlive() && kLoopTeam.isVassal(eTeam) && iLoopTeam != getID())
-			mastersVassals++;
-		if (kLoopTeam.isAlive() && kLoopTeam.isDefensivePact((TeamTypes)eTeam) && iLoopTeam != getID())
-			mastersAllies++;
-		if (kLoopTeam.getPower(true) > mastersPower)
-			bStrongest = false;
-	}
-
-	if (mastersVassals >= 5 && bStrongest)
-		return DENIAL_POWER_YOU;
-	if (mastersVassals + mastersAllies >= 6)
-		return DENIAL_POWER_YOU;*/
-	//Rhye - end
 
 	return NO_DENIAL;
 }
@@ -2547,24 +2494,6 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	//Leoreth: Indonesian UP: AI more likely to open borders - disabled
-	//if ((int)eTeam == INDONESIA)
-	//	eAttitude = (AttitudeTypes)((int)eAttitude + 1);
-
-	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
-	// for (iI = 0; iI < MAX_PLAYERS; iI++)
-	// {
-		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		// {
-			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			// {
-				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
-				// {
-					// return DENIAL_ATTITUDE;
-				// }
-			// }
-		// }
-	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
 		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
@@ -2592,8 +2521,13 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	}
 
 	//discount if in a chain of alliances but not directly allied yet
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
@@ -2610,9 +2544,9 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	{
 		iModifier -= 60;
 
-		if (2 * GET_TEAM(eTeam).getNumCities() < iNumCities)
+		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
 		{
-			iNumCities = 2 * GET_TEAM(eTeam).getNumCities();
+			iNumCities = 2 * getNumCities();
 		}
 	}
 
@@ -2637,8 +2571,13 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
 
 	// Rhye: no deal if at war with a friend (moved from CvPlayer::canTradeItem)
-	for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
 		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			if ((isAtWar((TeamTypes)iI) && GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI)) || (GET_TEAM((TeamTypes)eTeam).isAtWar((TeamTypes)iI) && isDefensivePact((TeamTypes)iI)))
@@ -2857,15 +2796,21 @@ void CvTeamAI::AI_updateWorstEnemy()
 {
 	PROFILE_FUNC();
 
+	if (isMinorCiv())
+	{
+		return;
+	}
+
 	TeamTypes eBestTeam = NO_TEAM;
 	int iBestValue = MAX_INT;
+	int iOurRank = GC.getGameINLINE().getTeamRank(getID());
+	int iRankDifference = std::max(GC.getGameINLINE().countCivPlayersAlive() / 2, MAX_TEAMS / 5);
 
 	for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
-		//if (kLoopTeam.isAlive()) //Rhye
-		if (kLoopTeam.isAlive() && iI < NUM_MAJOR_PLAYERS) //Rhye
+		if (kLoopTeam.isAlive() && !kLoopTeam.isMinorCiv() && !kLoopTeam.isBarbarian())
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
 			{
@@ -2873,20 +2818,26 @@ void CvTeamAI::AI_updateWorstEnemy()
 				{
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
-						// Leoreth: far away civs shouldn't be enemies
-						int iModifier = 3;
-
-						if (getID() < NUM_MAJOR_PLAYERS)
+						// Leoreth: do not allow enemies with large power differentials
+						if (std::abs(GC.getGameINLINE().getTeamRank(eLoopTeam) - iOurRank) <= iRankDifference)
 						{
-							if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isNeighbor(getLeaderID())) iModifier = 1;
-							else if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isDistant(getLeaderID())) iModifier = 5;
-						}
+							// Leoreth: far away civs should not be enemies
+							int iModifier = 100;
+							if (GET_PLAYER(kLoopTeam.getLeaderID()).isNeighbor(getLeaderID()))
+							{
+								iModifier = 50;
+							}
+							else if (GET_PLAYER(kLoopTeam.getLeaderID()).isDistant(getLeaderID()))
+							{
+								iModifier = 250;
+							}
 
-						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / iModifier;
-						if (iValue < iBestValue)
-						{
-							iBestValue = iValue;
-							eBestTeam = eLoopTeam;
+							int iValue = AI_getAttitudeVal(eLoopTeam) * 100 * iModifier;
+							if (iValue < iBestValue)
+							{
+								iBestValue = iValue;
+								eBestTeam = eLoopTeam;
+							}
 						}
 					}
 				}
@@ -3745,37 +3696,16 @@ void CvTeamAI::AI_doCounter()
 		{
 			if (iI != getID())
 			{
-				AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
-
-				if (isAtWar((TeamTypes)iI))
-				{
-					AI_changeAtWarCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
-				}
-
 				if (isHasMet((TeamTypes)iI))
 				{
 					AI_changeHasMetCounter(((TeamTypes)iI), 1);
 				}
 
-				if (isOpenBorders((TeamTypes)iI))
-				{
-					AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
-				}
+				AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
 
-				if (isDefensivePact((TeamTypes)iI))
+				if (isAtWar((TeamTypes)iI))
 				{
-					AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
-					{
-						AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
-					}
+					AI_changeAtWarCounter(((TeamTypes)iI), 1);
 				}
 
 				if (isHasMet((TeamTypes)iI))
@@ -3783,6 +3713,32 @@ void CvTeamAI::AI_doCounter()
 					if (AI_shareWar((TeamTypes)iI))
 					{
 						AI_changeShareWarCounter(((TeamTypes)iI), 1);
+					}
+				}
+
+				// Leoreth: only starts building after making contact, and stops building while contact is interrupted
+				if (canContact((TeamTypes)iI))
+				{
+					if (!isAtWar((TeamTypes)iI))
+					{
+						AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isOpenBorders((TeamTypes)iI))
+					{
+						AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isDefensivePact((TeamTypes)iI))
+					{
+						AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
+					}
+					else
+					{
+						if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
+						{
+							AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
+						}
 					}
 				}
 			}
@@ -3932,7 +3888,7 @@ void CvTeamAI::AI_doWar()
 		// }
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-		{
+	{
 		GET_PLAYER(*iter).AI_doPeace();
 	}
 	// Sanguo Mod Performance, end
@@ -4197,8 +4153,7 @@ void CvTeamAI::AI_doWar()
 								{
 									if (canDeclareWar((TeamTypes)iI))
 									{
-										// Leoreth: Thai UP: AI doesn't declare war on pleased (removed)
-										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)) /*&& !(iI == THAILAND && AI_getAttitude((TeamTypes)iI) >= ATTITUDE_PLEASED)*/)
+										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)))
 										{
 											int iDefensivePower = (GET_TEAM((TeamTypes)iI).getDefensivePower() * 2) / 3;
 
@@ -4551,6 +4506,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 
 					case UNITAI_SATELLITE:
 						iValue += 50;
+						break;
 
 					default:
 						FAssert(false);

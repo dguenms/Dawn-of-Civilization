@@ -1199,11 +1199,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_STOCK_EXCHANGE</Type>
-			<LSystem>LSYSTEM_2x1</LSystem>
+			<LSystem>LSYSTEM_STOCK_EXCHANGE</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.33</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WallStreet/WallStreet.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/StockExchangeRenaissance/ministry.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/WallStreet.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,11</Button>
 		</BuildingArtInfo>
@@ -2646,6 +2646,16 @@
 			<NIF>Art/Structures/Buildings/Hubal_Temple/temple_khnum.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MUGYO_SADANG</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Family_Altar/Family_Altar.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/Lighthouse.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TURKIC_DIVAN</Type>

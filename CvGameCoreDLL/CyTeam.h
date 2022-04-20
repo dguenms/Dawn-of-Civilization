@@ -221,6 +221,7 @@ public:
 	bool AI_shareWar(int /*TeamTypes*/ eTeam);
 	void AI_setWarPlan(int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewValue);
 	int AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const;
+	void AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue);
 	int AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const;
 	int AI_getWarSuccess(int /*TeamTypes*/ eIndex) const;
 
@@ -230,6 +231,7 @@ public:
 	bool isCapitulated();
 	int getTotalTechValue();
 	void changeObsoleteBuildingCount(int eBuilding, int iChange);
+	int AI_getWarPlan(int eTeam);
 
 protected:
 

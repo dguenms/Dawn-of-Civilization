@@ -229,7 +229,7 @@ inline int percent(int iValue, int iFactor, int iDivisor = 100)
 	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
 }
 
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization);
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
 CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
@@ -387,7 +387,7 @@ int getTurns(int iTurns);
 // edead: end
 
 ScenarioTypes getScenario(); // Leoreth
-int getScenarioStartYear(); // Leoreth
+int getScenarioStartYear(ScenarioTypes eScenario = NO_SCENARIO); // Leoreth
 int getScenarioStartTurn(); // Leoreth
 
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
@@ -403,6 +403,12 @@ void log(CvString logfile, CvString message);
 void logMajorError(CvWString message, int iX = -1, int iY = -1);
 char* chars(const wchar_t* wchars);
 char* chars(CvWString string);
+
+void warn(CvWString message);
+
+bool canRespawn(CivilizationTypes eCivilization);
+bool canEverRespawn(CivilizationTypes eCivilization);
+bool isCivAlive(CivilizationTypes eCivilization);
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);

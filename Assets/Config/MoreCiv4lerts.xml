@@ -82,6 +82,41 @@
 					get="getDomLandThreshold" set="setDomLandThreshold" 
 					label="Land Threshold" 
 					help="Land threshold for Domination victory."/>
+			<option id="ShowUHVFailPopup" key="Show UHV Fail Popup" 
+					type="boolean" default="True"
+					get="isShowUHVFailPopup"/>
+			<option id="ShowUHVSuccessPopup" key="Show UHV Success Popup" 
+					type="boolean" default="True"
+					get="isShowUHVSuccessPopup"/>
+			
+			<!-- Notifications -->
+			<list   id="GreatPeople" key="Great People" 
+					type="int" default="0" listType="string" 
+					get="getGreatPeopleNotification" set="setGreatPeopleNotification">
+				<choice id="All" get="isGreatPeopleAll"/>
+				<choice id="Known" get="isGreatPeopleKnown"/>
+				<choice id="Nearby" get="isGreatPeopleNearby"/>
+				<choice id="Ours" get="isGreatPeopleOurs"/>
+				<change module="MoreCiv4lerts" function="updateGreatPeopleNotifications"/>
+			</list>
+			<list   id="ReligionSpread" key="Religion Spread" 
+					type="int" default="0" listType="string" 
+					get="getReligionSpreadNotification" set="setReligionSpreadNotification">
+				<choice id="All" get="isReligionSpreadAll"/>
+				<choice id="Known" get="isReligionSpreadKnown"/>
+				<choice id="Nearby" get="isReligionSpreadNearby"/>
+				<choice id="Ours" get="isReligionSpreadOurs"/>
+				<change module="MoreCiv4lerts" function="updateReligionSpreadNotifications"/>
+			</list>
+			<list   id="EventEffects" key="Event Effects" 
+					type="int" default="0" listType="string" 
+					get="getEventEffectsNotification" set="setEventEffectsNotification">
+				<choice id="All" get="isEventEffectsAll"/>
+				<choice id="Known" get="isEventEffectsKnown"/>
+				<choice id="Nearby" get="isEventEffectsNearby"/>
+				<choice id="Ours" get="isEventEffectsOurs"/>
+				<change module="MoreCiv4lerts" function="updateEventEffectNotifications"/>
+			</list>
 		</section>
 	</options>
 	

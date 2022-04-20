@@ -57,6 +57,8 @@ class BugAdvisorOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addLabel(screen, center, "Victory_Conditions", "Victory [F8]:")
 		self.addCheckbox(screen, center, "Advisors__BugVictoriesTab")
 		self.addCheckbox(screen, center, "Advisors__BugMembersTab")
+		self.addCheckbox(screen, center, "Advisors__UHVProgressAfterFinish")
+		self.addTextDropdown(screen, center, center, "Advisors__UHVFinishDate", True)
 
 		self.addLabel(screen, center, "Info_Screens", "Info [F9]:")
 		self.addCheckbox(screen, center, "Advisors__BugGraphsTab")

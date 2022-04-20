@@ -6,9 +6,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
-from Consts import iEconomics as iEconomicsTech
-from Consts import iBrazil
-from Consts import iSugar
+from Core import *
 import companies
 
 PyPlayer = PyHelpers.PyPlayer
@@ -203,7 +201,7 @@ class CvCorporationScreen:
 						szList = u""
 						
 			iActivePlayer = CyGame().getActivePlayer()
-			if iActivePlayer == iBrazil and i == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and i == companies.iOilIndustry:
 				eBonus = iSugar
 				szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
@@ -360,6 +358,7 @@ class CvCorporationScreen:
 		if (iLinkCorporation != -1):
 			#Resource counter
 			szListLabels = []
+			iTotalResources = 0
 			for iRequired in range(gc.getDefineINT("NUM_CORPORATION_PREREQ_BONUSES")):
 				eBonus = gc.getCorporationInfo(iLinkCorporation).getPrereqBonus(iRequired)
 				if -1 != eBonus:
@@ -367,20 +366,24 @@ class CvCorporationScreen:
 					szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 					szList += u" : "
 					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+					iTotalResources += iAvailableBonus
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
-			if iActivePlayer == iBrazil and iLinkCorporation == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
 				eBonus = iSugar
 				szList = u""
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 				szList += u" : "
 				iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+				iTotalResources += iAvailableBonus
 				szList += u"%d" % iAvailableBonus
 				szListLabels.append(szList)
+			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_TOTAL_RESOURCES", (iTotalResources,)))
+			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES_ADVISOR", (gc.getCorporationInfo(iLinkCorporation).getMaxConsumableBonuses(),)))
 			
 			iRow = 0
 			for szList in szListLabels:
-				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_CENTER_JUSTIFY, self.X_REQUIREMENTS_AREA + 30, self.Y_REQUIREMENTS_AREA + 60 + iRow, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_LEFT_JUSTIFY, self.X_REQUIREMENTS_AREA + 20, self.Y_REQUIREMENTS_AREA + 60 + iRow, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				iRow += 16
 			
 			szButtonName = self.TECH_REQUIRED_BUTTON
@@ -396,10 +399,10 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomicsTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iEconomicsTech, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomics).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iEconomics, -1)
 				
 				szList = u""
-				if teamCiv.isHasTech(iEconomicsTech):
+				if teamCiv.isHasTech(iEconomics):
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))

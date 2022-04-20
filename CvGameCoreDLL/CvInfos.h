@@ -56,6 +56,9 @@ public:
 	DllExport const wchar* getHelp() const;
 	const wchar* getStrategy() const;
 
+	// Leoreth
+	void setDescription(std::wstring szDescription);
+
 	bool isMatchForLink(std::wstring szLink, bool bKeysOnly) const;
 
 	virtual void read(FDataStreamBase* pStream);
@@ -261,9 +264,9 @@ public:
 	int getCommerceChange(int i) const;		// Exposed to Python
 	int getFlavorValue(int i) const;		// Exposed to Python
 
-	int getCultureLevelYieldChange(int eCultureLevel, int eYield) const;
-	int getCultureLevelCommerceChange(int eCultureLevel, int eCommerce) const;
-	int getCultureLevelGreatPeopleRateChange(int eCultureLevel) const;
+	int getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const;
+	int getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const;
+	int getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const;
 
 	const TCHAR* getTexture() const;				// Exposed to Python
 	void setTexture(const TCHAR* szVal);
@@ -1407,6 +1410,8 @@ public:
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 	int getLevelExperienceModifier() const; // Leoreth
+	int getUnhappinessDecayModifier() const; // Leoreth
+	int getVassalTradeModifier() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
@@ -1420,6 +1425,8 @@ public:
 	bool isSlavery() const; // Leoreth
 	bool isNoSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
+	bool isNoResistance() const; // Leoreth
+	bool isNoTemporaryUnhappiness() const; // Leoreth
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }			// Exposed to Python
 	const wchar* getWeLoveTheKing();
@@ -1522,6 +1529,8 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 	int m_iLevelExperienceModifier; // Leoreth
+	int m_iUnhappinessDecayModifier; // Leoreth
+	int m_iVassalTradeModifier; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;
@@ -1535,6 +1544,8 @@ protected:
 	bool m_bSlavery; // Leoreth
 	bool m_bNoSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
+	bool m_bNoResistance; // Leoreth
+	bool m_bNoTemporaryUnhappiness; // Leoreth
 
 	CvWString m_szWeLoveTheKingKey;
 
@@ -1787,6 +1798,7 @@ public:
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
+	bool isNoResistance() const; // Leoreth
 
 	const TCHAR* getConstructSound() const;				// Exposed to Python
 	void setConstructSound(const TCHAR* szVal);
@@ -1811,6 +1823,8 @@ public:
 	int* getSeaPlotYieldChangeArray() const;
 	int getRiverPlotYieldChange(int i) const;				// Exposed to Python
 	int* getRiverPlotYieldChangeArray() const;
+	int getFlatRiverPlotYieldChange(int i) const; // Leoreth
+	int* getFlatRiverPlotYieldChangeArray() const; // Leoreth
 	int getGlobalSeaPlotYieldChange(int i) const;				// Exposed to Python
 	int* getGlobalSeaPlotYieldChangeArray() const;
 
@@ -1821,7 +1835,7 @@ public:
 	int getCommerceChangeDoubleTime(int i) const;				// Exposed to Python
 	int getCommerceModifier(int i) const;				// Exposed to Python
 	int* getCommerceModifierArray() const;
-	int getPowerCommerceModifier(int i) const; // Leoreth
+	int getPowerCommerceModifier(int i) const; // Leoreth, Merijn: Exposed to Python
 	int* getPowerCommerceModifierArray() const; // Leoreth
 	int getCultureCommerceModifier(int i) const; // Leoreth
 	int* getCultureCommerceModifierArray() const; // Leoreth
@@ -2015,6 +2029,7 @@ protected:
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
+	bool m_bNoResistance; // Leoreth
 
 	CvString m_szConstructSound;
 	CvString m_szArtDefineTag;
@@ -2028,6 +2043,7 @@ protected:
 	int* m_piHappinessTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
+	int* m_piFlatRiverPlotYieldChange; // Leoreth
 	int* m_piGlobalSeaPlotYieldChange;
 	int* m_piYieldChange;
 	int* m_piYieldModifier;
@@ -2323,15 +2339,9 @@ public:
 	DllExport const wchar* getAdjectiveKey() const;				// Exposed to Python
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }				// Exposed to Python
 
-	std::wstring pyGetPaganReligionName(uint uiForm) { return getPaganReligionName(uiForm); }
-	const wchar* getPaganReligionName(uint uiForm = 0);
-	const wchar* getPaganReligionKey() const;
-	std::wstring pyGetPaganReligionKey() { return getPaganReligionKey(); }
-
 	DllExport const TCHAR* getFlagTexture() const;
 	DllExport const TCHAR* getArtDefineTag() const;
 	DllExport void setArtDefineTag(const TCHAR* szVal);
-	const TCHAR* getPaganReligionButton() const;
 	// Arrays
 
 	DllExport int getCivilizationBuildings(int i) const;				// Exposed to Python
@@ -2344,6 +2354,13 @@ public:
 	int getRating(RatingTypes eRating) const;
 	int getStartingYear() const;
 	const std::string getIdentifier() const;
+	int getPaganReligion() const;
+	const wchar* getDescriptionKeyPersistent() const;
+	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
+	void setPlayable(bool bNewValue);
+	void setLeader(int iLeader, bool bNewValue);
+	bool isOriginalLeader(int iLeader) const;
+	int getImpact() const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2377,6 +2394,8 @@ protected:
 	int m_iDerivativeCiv;
 
 	int m_iStartingYear; // Leoreth
+	int m_iPaganReligion; // Leoreth
+	int m_iImpact; // Leoreth
 
 	bool m_bAIPlayable;
 	bool m_bPlayable;
@@ -2384,9 +2403,9 @@ protected:
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
-	CvWString m_szPaganReligionKey; // Leoreth
-	CvString m_szPaganReligionButton; // Leoreth
 	std::string m_szIdentifier; // Leoreth
+	CvWString m_szDescriptionPersistent; // Leoreth
+
 	// Arrays
 
 	int* m_piCivilizationBuildings;
@@ -2398,6 +2417,7 @@ protected:
 	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
+	bool* m_pbOriginalLeaders; // Leoreth
 	bool* m_pbCivilizationFreeBuildingClass;
 	bool* m_pbCivilizationFreeTechs;
 	bool* m_pbCivilizationDisableTechs;
@@ -2406,7 +2426,6 @@ protected:
 
 	mutable std::vector<CvWString> m_aszShortDescription;
 	mutable std::vector<CvWString> m_aszAdjective;
-	mutable std::vector<CvWString> m_aszPaganReligion;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -4356,6 +4375,7 @@ public:
 	int getMaintenance() const;				// Exposed to Python
 	int getHappiness() const;
 	int getHealth() const;
+	int getMaxConsumableBonuses() const;		// merijn, exposed to python
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
@@ -4392,6 +4412,7 @@ protected:
 	int m_iMaintenance;
 	int m_iHappiness;
 	int m_iHealth;
+	int m_iMaxConsumableBonuses;	// merijn
 	int m_iMissionType;
 	int m_iBonusProduced;
 

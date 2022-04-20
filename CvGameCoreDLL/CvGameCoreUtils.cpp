@@ -1402,7 +1402,7 @@ bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
 bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
 {
 	// Leoreth: Turkic UP
-	if (pUnit->getOwnerINLINE() == BARBARIAN && iData1 == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
+	if (pUnit->isBarbarian() && GET_PLAYER((PlayerTypes)iData1).getCivilizationType() == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
 	{
 		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
 		{
@@ -2391,16 +2391,15 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 ScenarioTypes getScenario()
 {
-	if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) return SCENARIO_3000BC;
-
-	if (GET_PLAYER((PlayerTypes)BYZANTIUM).isPlayable()) return SCENARIO_600AD;
-
-	return SCENARIO_1700AD;
+	return GC.getMapINLINE().getScenario();
 }
 
-int getScenarioStartYear()
+int getScenarioStartYear(ScenarioTypes eScenario)
 {
-	ScenarioTypes eScenario = getScenario();
+	if (eScenario == NO_SCENARIO)
+	{
+		eScenario = getScenario();
+	}
 
 	if (eScenario == SCENARIO_3000BC) return -3000;
 	else if (eScenario == SCENARIO_600AD) return 600;
@@ -2637,12 +2636,6 @@ int calculateExperience(int iLevel, PlayerTypes ePlayer)
 	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
 	//FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
-	// Japanese UP: cheaper promotions
-	/*if (ePlayer == JAPAN)
-	{
-		iLevel = std::max(1, iLevel - 1);
-	}*/
-
 	int iExperienceNeeded = iLevel * iLevel + 1;
 
 	int iModifier = GET_PLAYER(ePlayer).getLevelExperienceModifier();
@@ -2723,20 +2716,62 @@ void log(CvString logfile, CvString message)
 	gDLL->logMsg(logfile, message);
 }
 
+void warn(CvWString message)
+{
+	CvWString fullMessage = CvWString::format(L"Detected a bug, please report latest autosave in the Dawn of Civilization forums: %s", message.c_str());
+	log(fullMessage);
+	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), fullMessage, "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), -1, -1, true, true);
+}
+
 void logMajorError(CvWString message, int iX, int iY)
 {
 	log(message);
 	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), message, "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), iX, iY, true, true);
 	GC.getGameINLINE().setAIAutoPlay(0);
-	GC.getGameINLINE().setAIAutoPlayCatapult(0);
 }
 
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer)
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization)
 {
-	return eBuilding == (BuildingTypes)eWonder && GET_PLAYER(ePlayer).isHuman() && GC.getGameINLINE().getGameTurn() < GET_PLAYER(ePlayer).getBirthTurn()+5;
+	return eBuilding == (BuildingTypes)eWonder && GC.getGame().getActiveCivilizationType() == eCivilization && GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(eCivilization).getStartingYear()) + 5;
 }
 
 void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
 {
 	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
+}
+
+bool canRespawn(CivilizationTypes eCivilization)
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
+
+bool canEverRespawn(CivilizationTypes eCivilization)
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+	argsList.add(GC.getGame().getGameTurn());
+
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
+
+bool isCivAlive(CivilizationTypes eCivilization)
+{
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() == eCivilization)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

@@ -76,7 +76,8 @@ import DiplomacyUtil
 import PlayerUtil
 import TradeUtil
 
-from RFCUtils import utils
+from RFCUtils import *
+from Core import *
 
 # BUG - Mac Support - start
 BugUtil.fixSets(globals())
@@ -108,6 +109,7 @@ class Civ4lerts:
 		cityEvent.add(CityGrowth(eventManager))
 		cityEvent.add(CityHealthiness(eventManager))
 		cityEvent.add(CityHappiness(eventManager))
+		cityEvent.add(TemporaryUnhappinessDecay(eventManager))
 		cityEvent.add(CanHurryPopulation(eventManager))
 		cityEvent.add(CanHurryGoldUnits(eventManager))
 		cityEvent.add(CanHurryGoldBuildings(eventManager))
@@ -120,6 +122,7 @@ class Civ4lerts:
 		SlaveTrade(eventManager)
 		RefusesToTalk(eventManager)
 		WorstEnemy(eventManager)
+		CancelableTribute(eventManager)
 
 
 ## Displaying Alert Messages
@@ -261,7 +264,7 @@ class BeginActivePlayerTurnCityAlertManager(AbstractCityAlertManager):
 	
 	def onBeginActivePlayerTurn(self, argsList):
 		"Loops over active player's cities, telling each to perform its check."
-		if gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
+		if gc.getGame().getGameTurn() > scenarioStartTurn():
 			self.checkAllActivePlayerCities()
 
 class EndTurnReadyCityAlertManager(AbstractCityAlertManager):
@@ -275,7 +278,7 @@ class EndTurnReadyCityAlertManager(AbstractCityAlertManager):
 	
 	def onEndTurnReady(self, argsList):
 		"Loops over active player's cities, telling each to perform its check."
-		if gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
+		if gc.getGame().getGameTurn() > scenarioStartTurn():
 			self.checkAllActivePlayerCities()
 
 
@@ -586,6 +589,60 @@ class CityHealthiness(AbstractCityTestAlert):
 		else:
 			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HEALTHY", (city.getName(), )),
 					HEALTHY_ICON)
+
+# Leoreth
+class TemporaryUnhappinessDecay(AbstractCityTestAlert):
+	"""
+	Displays an event when a city goes from happy to angry or vice versa.
+	
+	Test: True if the city is unhappy.
+	"""
+	def __init__(self, eventManager):
+		AbstractCityTestAlert.__init__(self, eventManager)
+	
+	def init(self):
+		AbstractCityAlert.init(self)
+		self.kiTempHappy = gc.getDefineINT("TEMP_HAPPY")
+	
+	def _passesTest(self, city):
+		if city.getHurryAngerTimer() > 0:
+			return True
+		if city.getConscriptAngerTimer() > 0:
+			return True
+		if city.getDefyResolutionAngerTimer() > 0:
+			return True
+		return False
+
+	def _willPassTest(self, city):
+		if city.getHurryAngerTimer() > 0 and city.getHurryAngerTimer() % city.flatHurryAngerLength() != 1:
+			return True
+		if city.getConscriptAngerTimer() > 0 and city.getConscriptAngerTimer() % city.flatConscriptAngerLength() != 1:
+			return True
+		if city.getDefyResolutionAngerTimer() > 0 and city.getDefyResolutionAngerTimer() % city.flatDefyResolutionAngerLength() != 1:
+			return True
+		return False
+	
+	def _isShowAlert(self, passes):
+		return Civ4lertsOpt.isShowCityHappinessAlert()
+	
+	def _getAlertMessageIcon(self, city, passes):
+		if (passes):
+			BugUtil.debug("%s passed unhappiness decay test, ignoring", city.getName())
+			return (None, None)
+		else:
+			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPINESS_DECAYED", (city.getName(), )),
+					UNHAPPY_ICON)
+	
+	def _isShowPendingAlert(self, passes):
+		return Civ4lertsOpt.isShowCityPendingHappinessAlert()
+
+	def _getPendingAlertMessageIcon(self, city, passes):
+		if (passes):
+			BugUtil.debug("%s passed occupation test, ignoring", city.getName())
+			return (None, None)
+		else:
+			return (localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPINESS_DECAY", (city.getName(), )),
+					UNHAPPY_ICON)
 
 # Occupation
 
@@ -910,12 +967,16 @@ class RefusesToTalk(AbstractStatefulAlert):
 		self.check()
 
 	def onChangeWar(self, argsList):
-		bIsWar, eTeam, eRivalTeam = argsList
+		bIsWar, eTeam, eRivalTeam, bFromDefensivePact = argsList
 		self.checkIfIsAnyOrHasMetAllTeams(eTeam, eRivalTeam)
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 		
 	def onDealCanceled(self, argsList):
 		eOfferPlayer, eTargetPlayer, pTrade = argsList
@@ -941,6 +1002,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowRefusesToTalkAlert()):
 			return
 		if len(self.refusals) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer, activePlayer = PlayerUtil.getActivePlayerAndID()
 		refusals = self.refusals[eActivePlayer]
@@ -995,7 +1058,11 @@ class WorstEnemy(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 	
 	def onVassalState(self, argsList):
 		eMaster, eVassal, bVassal = argsList
@@ -1019,6 +1086,8 @@ class WorstEnemy(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowWorstEnemyAlert()):
 			return
 		if len(self.enemies) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer = PlayerUtil.getActivePlayerID()
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()
@@ -1074,3 +1143,32 @@ class WorstEnemy(AbstractStatefulAlert):
 		self.enemies = {}
 		for player in PlayerUtil.players():
 			self.enemies[player.getID()] = [-1] * gc.getMAX_TEAMS()
+
+
+class CancelableTribute(AbstractStatefulAlert):
+
+	def __init__(self, eventManager):
+		AbstractStatefulAlert.__init__(self, eventManager)
+		eventManager.addEventHandler("BeginActivePlayerTurn", self.onBeginActivePlayerTurn)
+	
+	def onBeginActivePlayerTurn(self, args):
+		self.check()
+	
+	def check(self):
+		if not Civ4lertsOpt.isShowCancelableTributeAlert():
+			return
+		
+		iActivePlayer = game.getActivePlayer()
+		cancelablePlayers = set()
+		
+		for iDeal in range(game.getIndexAfterLastDeal()):
+			deal = game.getDeal(iDeal)
+			
+			if deal.getFirstPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthSecondTrades() == 0:
+				cancelablePlayers.add(deal.getSecondPlayer())
+				
+			elif deal.getSecondPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthFirstTrades() == 0:
+				cancelablePlayers.add(deal.getFirstPlayer())
+		
+		if cancelablePlayers:
+			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join([name(iPlayer) for iPlayer in cancelablePlayers])))

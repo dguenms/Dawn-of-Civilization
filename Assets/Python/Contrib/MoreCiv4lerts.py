@@ -8,12 +8,14 @@ import BugCore
 import PlayerUtil
 import TradeUtil
 
-from Consts import *
+from Core import *
 
 # BUG - Mac Support - start
 import BugUtil
 BugUtil.fixSets(globals())
 # BUG - Mac Support - end
+
+from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -156,7 +158,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 			if (iPlayer == iActivePlayer):
 				self.CheckForAlerts(iPlayer, PyPlayer(iPlayer).getTeam(), False)
 		if (self.getCheckForForeignCities()):
-			if (iPlayer != iActivePlayer and iPlayer < iNumPlayers):
+			if (iPlayer != iActivePlayer and not is_minor(iPlayer)):
 				bRevealed = city.isRevealed(gc.getActivePlayer().getTeam(), False)
 				if (bRevealed or PlayerUtil.canSeeCityList(iPlayer)):
 					player = gc.getPlayer(iPlayer)
@@ -561,3 +563,15 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 		names = [getNameFunc(getItemFunc(eItem)) for eItem in items]
 		names.sort()
 		return u", ".join(names)
+
+
+# Leoreth
+
+def updateGreatPeopleNotifications(_, iNotificationLevel):
+	game.setGreatPeopleNotifications(iNotificationLevel)
+
+def updateReligionSpreadNotifications(_, iNotificationLevel):
+	game.setReligionSpreadNotifications(iNotificationLevel)
+
+def updateEventEffectNotifications(_, iNotificationLevel):
+	game.setEventEffectNotifications(iNotificationLevel)

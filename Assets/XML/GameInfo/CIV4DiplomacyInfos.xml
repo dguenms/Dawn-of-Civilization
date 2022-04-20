@@ -175,14 +175,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_ALEXANDER_II</LeaderType>
+							<LeaderType>LEADER_ALEXANDER_I</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_II_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_I_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -291,7 +291,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -449,7 +449,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1195,7 +1195,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_JIMMU</LeaderType>
+							<LeaderType>LEADER_KAMMU</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1380,7 +1380,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1538,7 +1538,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2224,7 +2224,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2382,7 +2382,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3202,7 +3202,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3503,7 +3503,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4742,7 +4742,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4999,7 +4999,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5206,7 +5206,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_ALEXANDER_II</LeaderType>
+							<LeaderType>LEADER_ALEXANDER_I</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5222,7 +5222,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_II_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_I_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6819,7 +6819,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6990,7 +6990,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7850,7 +7850,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8044,7 +8044,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8886,7 +8886,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -9061,7 +9061,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>

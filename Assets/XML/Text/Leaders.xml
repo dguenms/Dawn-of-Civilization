@@ -365,7 +365,7 @@
 		<Tag>TXT_KEY_LEADER_MENELIK</Tag>
 		<English>Menelik</English>
 		<French>
-			<Text>Menelik</Text>
+			<Text>M&#233;n&#233;lik</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -518,7 +518,7 @@
 		<Spanish>Kangxi</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_JIMMU</Tag>
+		<Tag>TXT_KEY_LEADER_KAMMU</Tag>
 		<English>Kammu</English>
 		<French>
 			<Text>Kammu</Text>
@@ -594,7 +594,7 @@
 		<English>Maria II</English>
 		<French>
 			<Text>Marie II</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Maria II</German>
@@ -710,16 +710,16 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_ALEXANDER_II</Tag>
-		<English>Alexander II</English>
+		<Tag>TXT_KEY_LEADER_ALEXANDER_I</Tag>
+		<English>Alexander I</English>
 		<French>
-			<Text>Alexandre II</Text>
+			<Text>Alexandre I</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Alexander II.</German>
-		<Italian>Alexander II</Italian>
-		<Spanish>Alexander II</Spanish>
+		<German>Alexander I.</German>
+		<Italian>Alexander I</Italian>
+		<Spanish>Alexander I</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_PERON</Tag>
@@ -807,15 +807,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SHIVAJI</Tag>
-		<English>Shahuji</English>
+		<English>Shivaji</English>
 		<French>
-			<Text>Shahu</Text>
+			<Text>Shivaji</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Shahuji</German>
-		<Italian>Shahuji</Italian>
-		<Spanish>Shahuji</Spanish>
+		<German>Shivaji</German>
+		<Italian>Shivaji</Italian>
+		<Spanish>Shivaji</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SOBIESKI</Tag>
@@ -878,7 +878,7 @@
 		<Spanish>Tang Taizong</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_TOKUGAWA</Tag>
+		<Tag>TXT_KEY_LEADER_ODA_NOBUNAGA</Tag>
 		<English>Oda Nobunaga</English>
 		<French>
 			<Text>Oda Nobunaga</Text>
@@ -966,7 +966,7 @@
 		<English>Benazir Bhutto</English>
 		<French>
 			<Text>Benazir Bhutto</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Benazir Bhutto</German>
@@ -1128,5 +1128,29 @@
 		<German>Ezana</German>
 		<Italian>Ezana</Italian>
 		<Spanish>Ezana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MAO_ZEDONG</Tag>
+		<English>Mao Zedong</English>
+		<French>
+			<Text>Mao Ts&#233;-Tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Mao Tse-tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Mao Tse Tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mao Zedong</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 </Civ4GameText>

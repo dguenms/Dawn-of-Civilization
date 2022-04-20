@@ -288,7 +288,7 @@ void CvSelectionGroup::doTurn()
 
 		if (AI_isControlled())
 		{
-			if ((getActivityType() != ACTIVITY_MISSION) || (!canFight() && (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0)))
+			if ((getActivityType() != ACTIVITY_MISSION) || ((!canFight() || getMissionType(0) == MISSION_ROUTE_TO || getMissionType(0) == MISSION_BUILD) && (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0)))
 			{
 				setForceUpdate(true);
 			}
@@ -3543,6 +3543,11 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
+		if (pLoopUnit == NULL)
+		{
+			continue;
+		}
+
 // BUG - Sentry Actions - start
 #ifdef _MOD_SENTRY
 		// don't move if bSentryAlert set to true above
@@ -4841,7 +4846,7 @@ void CvSelectionGroup::insertAtEndMissionQueue(MissionData mission, bool bStart)
 	m_missionQueue.insertAtEnd(mission);
 
 	if ((getLengthMissionQueue() == 1) && bStart)
-	{
+	{	
 		activateHeadMission();
 	}
 

@@ -7,7 +7,7 @@ import PyHelpers
 import CvUtil
 import CvScreenEnums
 import random
-from Consts import * #Rhye
+from Consts import *
 from CvPythonExtensions import *
 
 PyPlayer = PyHelpers.PyPlayer
@@ -159,41 +159,41 @@ class CvTopCivs:
 		self.aiTopCivsValues = []
 		
 		# Loop through all players except the barbs
-		#for iPlayerLoop in range(gc.getMAX_PLAYERS()-1): #Rhye
-		for iPlayerLoop in range(iNumMajorPlayers): #Rhye
+		for iPlayerLoop in range(gc.getMAX_CIV_PLAYERS()):
+			pPlayer = gc.getPlayer(iPlayerLoop)
+			if not pPlayer.isAlive() or pPlayer.isMinorCiv() or pPlayer.isBarbarian():
+				continue
 				
-			if (gc.getPlayer(iPlayerLoop).isAlive()):
+			if (szType == localText.getText("TXT_KEY_TOPCIVS_WEALTH", ())):
+
+				self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getGold(), iPlayerLoop])
+				print("Player %d Num Gold: %d" %(iPlayerLoop, gc.getPlayer(iPlayerLoop).getGold()))
 				
-				if (szType == localText.getText("TXT_KEY_TOPCIVS_WEALTH", ())):
+			if (szType == localText.getText("TXT_KEY_TOPCIVS_POWER", ())):
 
-					self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getGold(), iPlayerLoop])
-					print("Player %d Num Gold: %d" %(iPlayerLoop, gc.getPlayer(iPlayerLoop).getGold()))
-					
-				if (szType == localText.getText("TXT_KEY_TOPCIVS_POWER", ())):
+				self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getPower(), iPlayerLoop])
 
-					self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getPower(), iPlayerLoop])
+			if (szType == localText.getText("TXT_KEY_TOPCIVS_TECH", ())):
 
-				if (szType == localText.getText("TXT_KEY_TOPCIVS_TECH", ())):
+				iPlayerNumTechs = 0
+				iNumTotalTechs = gc.getNumTechInfos()
 
-					iPlayerNumTechs = 0
-					iNumTotalTechs = gc.getNumTechInfos()
+				for iTechLoop in range(iNumTotalTechs):
 
-					for iTechLoop in range(iNumTotalTechs):
+					bPlayerHasTech = gc.getTeam(gc.getPlayer(iPlayerLoop).getTeam()).isHasTech(iTechLoop)
 
-						bPlayerHasTech = gc.getTeam(gc.getPlayer(iPlayerLoop).getTeam()).isHasTech(iTechLoop)
+					if (bPlayerHasTech):
+						iPlayerNumTechs = iPlayerNumTechs + 1
+						
+				self.aiTopCivsValues.append([iPlayerNumTechs, iPlayerLoop])
 
-						if (bPlayerHasTech):
-							iPlayerNumTechs = iPlayerNumTechs + 1
-							
-					self.aiTopCivsValues.append([iPlayerNumTechs, iPlayerLoop])
+			if (szType == localText.getText("TXT_KEY_TOPCIVS_CULTURE", ())):
 
-				if (szType == localText.getText("TXT_KEY_TOPCIVS_CULTURE", ())):
+				self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).countTotalCulture(), iPlayerLoop])
 
-					self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).countTotalCulture(), iPlayerLoop])
+			if (szType == localText.getText("TXT_KEY_TOPCIVS_SIZE", ())):
 
-				if (szType == localText.getText("TXT_KEY_TOPCIVS_SIZE", ())):
-
-					self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getTotalLand(), iPlayerLoop])
+				self.aiTopCivsValues.append([gc.getPlayer(iPlayerLoop).getTotalLand(), iPlayerLoop])
 
 		# Lowest to Highest
 		self.aiTopCivsValues.sort()

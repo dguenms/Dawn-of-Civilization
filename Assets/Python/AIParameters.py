@@ -1,222 +1,215 @@
-from Consts import *
-from RFCUtils import utils
+from Core import *
+from RFCUtils import *
+from Events import handler
 
 def getTakenTilesThreshold(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dTakenTilesThreshold, iCiv, 13)
+	return dTakenTilesThreshold[iPlayer]
 	
 def getDistanceSubtrahend(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dDistanceSubtrahend, iCiv, 4)
+	return dDistanceSubtrahend[iPlayer]
 	
 def getDistanceFactor(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dDistanceFactor, iCiv, 500)
+	return dDistanceFactor[iPlayer]
 	
 def getCompactnessModifier(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dCompactnessModifier, iCiv, 40)
+	return dCompactnessModifier[iPlayer]
 	
 def getTargetDistanceValueModifier(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dTargetDistanceValueModifier, iCiv, 10)
+	return dTargetDistanceValueModifier[iPlayer]
 
 def getReligiousTolerance(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dReligiousTolerance, iCiv, 3)
+	return dReligiousTolerance[iPlayer]
 	
 def updateParameters(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	pPlayer.setTakenTilesThreshold(getTakenTilesThreshold(iPlayer))
 	pPlayer.setDistanceSubtrahend(getDistanceSubtrahend(iPlayer))
 	pPlayer.setDistanceFactor(getDistanceFactor(iPlayer))
 	pPlayer.setCompactnessModifier(getCompactnessModifier(iPlayer))
 	pPlayer.setTargetDistanceValueModifier(getTargetDistanceValueModifier(iPlayer))
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
-	
-def init():
-	for iPlayer in range(iNumTotalPlayersB):
-		updateParameters(iPlayer)
 		
-def onTechAcquired(iPlayer, iTech):
+@handler("playerCivAssigned")
+def onActivate(iPlayer):
+	updateParameters(iPlayer)
+
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
 	if iTech == iExploration:
-		pPlayer = gc.getPlayer(iPlayer)
-		iCiv = pPlayer.getCivilizationType()
-		
-		if iCiv in dDistanceSubtrahendExploration: pPlayer.setDistanceSubtrahend(dDistanceSubtrahendExploration[iCiv])
-		if iCiv in dDistanceFactorExploration: pPlayer.setDistanceFactor(dDistanceFactorExploration[iCiv])
-		if iCiv in dCompactnessModifierExploration: pPlayer.setCompactnessModifier(dCompactnessModifierExploration[iCiv])
+		if iPlayer in dDistanceSubtrahendExploration: player(iPlayer).setDistanceSubtrahend(dDistanceSubtrahendExploration[iPlayer])
+		if iPlayer in dDistanceFactorExploration: player(iPlayer).setDistanceFactor(dDistanceFactorExploration[iPlayer])
+		if iPlayer in dCompactnessModifierExploration: player(iPlayer).setCompactnessModifier(dCompactnessModifierExploration[iPlayer])
 	
-dTakenTilesThreshold = {
-iCivBabylonia : 14,
-iCivCarthage : 12,
-iCivKorea : 20,
-iCivMaya : 12,
-iCivByzantium : 10,
-iCivVikings : 18,
-iCivTurks : 10,
-iCivArabia : 12,
-iCivHolyRome : 18,
-iCivRussia : 7,
-iCivMali : 10,
-iCivPoland : 18,
-iCivPortugal : 15,
-iCivInca : 10,
-iCivItaly : 18,
-iCivMongols : 10,
-iCivMughals : 15,
-iCivNetherlands : 15,
-iCivGermany : 12,
-}
+dTakenTilesThreshold = CivDict({
+iBabylonia : 14,
+iCarthage : 12,
+iKorea : 20,
+iMaya : 12,
+iByzantium : 10,
+iVikings : 18,
+iTurks : 10,
+iArabia : 12,
+iHolyRome : 18,
+iRussia : 7,
+iMali : 10,
+iPoland : 18,
+iPortugal : 15,
+iInca : 10,
+iItaly : 18,
+iMongols : 10,
+iMughals : 15,
+iNetherlands : 15,
+iGermany : 12,
+}, default=13)
 
-dDistanceSubtrahend = {
-iCivBabylonia : 3,
-iCivHarappa : 3,
-iCivGreece : 3,
-iCivIndia : 3,
-iCivRome : 3,
-iCivKorea : 6,
-iCivMaya : 3,
-iCivByzantium : 3,
-iCivJapan : 3,
-iCivVikings : 6,
-iCivTurks : 3,
-iCivMoors : 3,
-iCivSpain : 3,
-iCivFrance : 3,
-iCivEngland : 3,
-iCivHolyRome : 5,
-iCivRussia : 5,
-iCivMali : 3,
-iCivInca : 3,
-iCivItaly : 5,
-iCivOttomans : 3,
-iCivGermany : 3,
-}
+dDistanceSubtrahend = CivDict({
+iBabylonia : 3,
+iHarappa : 3,
+iGreece : 3,
+iIndia : 3,
+iRome : 3,
+iKorea : 6,
+iMaya : 3,
+iByzantium : 3,
+iJapan : 3,
+iVikings : 6,
+iTurks : 3,
+iMoors : 3,
+iSpain : 3,
+iFrance : 3,
+iEngland : 3,
+iHolyRome : 5,
+iRussia : 5,
+iMali : 3,
+iInca : 3,
+iItaly : 5,
+iOttomans : 3,
+iGermany : 3,
+}, default=4)
 
-dDistanceSubtrahendExploration = {
-iCivVikings : 4,
-iCivMoors : 4,
-iCivSpain : 4,
-iCivFrance : 4,
-iCivEngland : 4,
-iCivGermany : 4,
-}
+dDistanceSubtrahendExploration = CivDict({
+iVikings : 4,
+iMoors : 4,
+iSpain : 4,
+iFrance : 4,
+iEngland : 4,
+iGermany : 4,
+}, default=4)
 
-dDistanceFactor = {
-iCivChina : 350,
-iCivGreece : 300,
-iCivCarthage : 400,
-iCivPolynesia : 400,
-iCivPersia : 400,
-iCivRome : 350,
-iCivTamils : 400,
-iCivEthiopia : 400,
-iCivByzantium : 400,
-iCivTurks : 200,
-iCivArabia : 250,
-iCivTibet : 400,
-iCivIndonesia : 400,
-iCivHolyRome : 400,
-iCivRussia : 150,
-iCivPoland : 150,
-iCivPortugal : 150,
-iCivMongols : 200,
-iCivMughals : 400,
-iCivOttomans : 400,
-iCivThailand : 400,
-iCivCongo : 300,
-iCivNetherlands : 150,
-iCivGermany : 300,
-iCivAmerica : 200,
-iCivArgentina : 150,
-iCivBrazil : 150,
-iCivCanada : 150,
-}
+dDistanceFactor = CivDict({
+iChina : 350,
+iGreece : 300,
+iCarthage : 400,
+iPolynesia : 400,
+iPersia : 400,
+iRome : 350,
+iTamils : 400,
+iEthiopia : 400,
+iByzantium : 400,
+iTurks : 200,
+iArabia : 250,
+iTibet : 400,
+iIndonesia : 400,
+iHolyRome : 400,
+iRussia : 150,
+iPoland : 150,
+iPortugal : 150,
+iMongols : 200,
+iMughals : 400,
+iOttomans : 400,
+iThailand : 400,
+iCongo : 300,
+iNetherlands : 150,
+iGermany : 300,
+iAmerica : 200,
+iArgentina : 150,
+iBrazil : 150,
+iCanada : 150,
+}, default=500)
 
-dDistanceFactorExploration = {
-iCivMoors : 300,
-iCivSpain : 150,
-iCivFrance : 150,
-iCivEngland : 100,
-}
+dDistanceFactorExploration = CivDict({
+iMoors : 300,
+iSpain : 150,
+iFrance : 150,
+iEngland : 100,
+}, default=500)
 
-dCompactnessModifier = {
-iCivChina : 80,
-iCivGreece : 10,
-iCivIndia : 20,
-iCivCarthage : 5,
-iCivPolynesia : 10,
-iCivRome : 30,
-iCivTamils : 100,
-iCivEthiopia : 30,
-iCivKorea : 120,
-iCivByzantium : 30,
-iCivJapan : 20,
-iCivVikings : 5,
-iCivArabia : 10,
-iCivIndonesia : 35,
-iCivHolyRome : 100,
-iCivPoland : 30,
-iCivPortugal : 5,
-iCivItaly : 70,
-iCivNetherlands : 5,
-iCivAmerica : 20,
-}
+dCompactnessModifier = CivDict({
+iChina : 80,
+iGreece : 10,
+iIndia : 20,
+iCarthage : 5,
+iPolynesia : 10,
+iRome : 30,
+iTamils : 100,
+iEthiopia : 30,
+iKorea : 120,
+iByzantium : 30,
+iJapan : 20,
+iVikings : 5,
+iArabia : 10,
+iIndonesia : 35,
+iHolyRome : 100,
+iPoland : 30,
+iPortugal : 5,
+iItaly : 70,
+iNetherlands : 5,
+iAmerica : 20,
+}, default=40)
 
-dCompactnessModifierExploration = {
-iCivSpain : 10,
-iCivFrance : 5,
-iCivEngland : 5,
-}
+dCompactnessModifierExploration = CivDict({
+iSpain : 10,
+iFrance : 5,
+iEngland : 5,
+}, default=40)
 
-dTargetDistanceValueModifier = {
-iCivGreece : 5,
-iCivPersia : 3,
-iCivRome : 3,
-iCivTamils : 7,
-iCivJapan : 7,
-iCivVikings : 7,
-iCivTurks : 2,
-iCivArabia : 7,
-iCivSpain : 3,
-iCivFrance : 3,
-iCivEngland : 3,
-iCivHolyRome : 7,
-iCivRussia : 4,
-iCivMongols : 1,
-iCivPortugal : 3,
-iCivNetherlands : 3,
-iCivGermany : 3,
-iCivAmerica : 3,
-}
+dTargetDistanceValueModifier = CivDict({
+iGreece : 5,
+iPersia : 3,
+iRome : 3,
+iTamils : 7,
+iJapan : 7,
+iVikings : 7,
+iTurks : 2,
+iArabia : 7,
+iSpain : 3,
+iFrance : 3,
+iEngland : 3,
+iHolyRome : 7,
+iRussia : 4,
+iMongols : 1,
+iPortugal : 3,
+iNetherlands : 3,
+iGermany : 3,
+iAmerica : 3,
+}, default=10)
 
-dReligiousTolerance = {
-iCivEgypt : 4,
-iCivChina : 4,
-iCivHarappa : 4,
-iCivGreece : 2,
-iCivIndia : 4,
-iCivPolynesia : 4,
-iCivRome : 2,
-iCivTamils : 4,
-iCivKorea : 4,
-iCivByzantium : 2,
-iCivTibet : 2,
-iCivIndonesia : 4,
-iCivSpain : 1,
-iCivFrance : 2,
-iCivKhmer : 4,
-iCivEngland : 2,
-iCivHolyRome : 2,
-iCivRussia : 1,
-iCivMali : 2,
-iCivPortugal : 2,
-iCivItaly : 2,
-iCivMongols : 4,
-iCivMughals : 4,
-iCivThailand : 4,
-iCivNetherlands : 4,
-iCivAmerica : 4,
-iCivCanada : 4,
-}
+dReligiousTolerance = CivDict({
+iEgypt : 4,
+iChina : 4,
+iHarappa : 4,
+iGreece : 2,
+iIndia : 4,
+iPolynesia : 4,
+iRome : 2,
+iTamils : 4,
+iKorea : 4,
+iByzantium : 2,
+iTibet : 2,
+iIndonesia : 4,
+iSpain : 1,
+iFrance : 2,
+iKhmer : 4,
+iEngland : 2,
+iHolyRome : 2,
+iRussia : 1,
+iMali : 2,
+iPortugal : 2,
+iItaly : 2,
+iMongols : 4,
+iMughals : 4,
+iThailand : 4,
+iNetherlands : 4,
+iAmerica : 4,
+iCanada : 4,
+}, default=3)

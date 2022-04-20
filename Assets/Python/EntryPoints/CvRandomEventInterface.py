@@ -13,16 +13,16 @@ import CvUtil
 from CvPythonExtensions import *
 
 from Consts import * #Rhye
-import RFCUtils #Leoreth
-import Religions #Leoreth
+from Religions import embraceReformation, tolerateReformation, counterReformation
 import PyHelpers #Leoreth
 import CityNameManager as cnm
 from StoredData import data
-from RFCUtils import utils
+from RFCUtils import *
+
+from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
-rel = Religions.Religions()
 localText = CyTranslator()
 
 
@@ -455,8 +455,9 @@ def canTriggerBabyBoom(argsList):
 
 	for iLoopTeam in range(gc.getMAX_CIV_TEAMS()):
 		if iLoopTeam != player.getTeam():
-			if team.AI_getAtPeaceCounter(iLoopTeam) == 1:
-				return true
+			if not team.isMinorCiv():
+				if team.AI_getAtPeaceCounter(iLoopTeam) == 1:
+					return true
 
 	return false
 
@@ -1155,18 +1156,7 @@ def canTriggerSoloFlight(argsList):
 	kTriggeredData = argsList[0]
 
 	map = gc.getMap()	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iMinLandmass  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iMinLandmass  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iMinLandmass  = 6
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iMinLandmass  = 8
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iMinLandmass  = 10
-	else:
-		iMinLandmass  = 12
+	iMinLandmass  = 12
 	
 	if (map.getNumLandAreas() < iMinLandmass):
 		return false
@@ -1706,14 +1696,10 @@ def canTriggerGreatMediator(argsList):
 	#if gc.getTeam(player.getTeam()).AI_getAtWarCounter(destPlayer.getTeam()) < 10: #Rhye
 	if gc.getTeam(player.getTeam()).AI_getAtWarCounter(destPlayer.getTeam()) < 6: #Rhye
 		return false
-
-	#Rhye - start
-	if (player.getID() == iIndependent or player.getID() == iIndependent2):
+		
+	# Leoreth: not for minors
+	if player.isMinorCiv() or destPlayer.isMinorCiv():
 		return false
-
-	if (destPlayer.getID() == iIndependent or destPlayer.getID() == iIndependent2):
-		return false
-	#Rhye - end
 
 	return true
 
@@ -1924,19 +1910,7 @@ def applyTheHuns1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Hun event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_HORSE_ARCHER')
 
@@ -2035,19 +2009,7 @@ def applyTheVandals1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Vandal event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits  = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_SWORDSMAN')
 
@@ -2146,19 +2108,7 @@ def applyTheGoths1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Goth event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_AXEMAN')
 
@@ -2257,19 +2207,7 @@ def applyThePhilistines1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Philistine event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_SPEARMAN')
 
@@ -2370,19 +2308,7 @@ def applyTheVedicAryans1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Vedic Aryan event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_ARCHER')
 
@@ -2960,14 +2886,24 @@ def canTriggerCrusade(argsList):
 
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ONE_CITY_CHALLENGE) and gc.getPlayer(kTriggeredData.ePlayer).isHuman():
 		return false
-
-	if holyCity.getOwner() != kTriggeredData.eOtherPlayer:
-		return false
 		
-	kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
-	kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()	
+	if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
+		kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
+		kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
+		
+		return true
+		
+	if kTriggeredData.eReligion == iCatholicism:
+		holyCity = gc.getGame().getHolyCity(iOrthodoxy)
+		if not holyCity.isNone():
+			if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
+				kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
+				kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
+				kActualTriggeredDataObject.eReligion = ReligionTypes(iOrthodoxy)
+				
+				return true
 			
-	return true
+	return false
 
 def getHelpCrusade1(argsList):
 	iEvent = argsList[0]
@@ -3083,18 +3019,18 @@ def canApplyCrusadeDone2(argsList):
 	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
 
 	#Rhye - switch to Jerusalem
-	if utils.getScenario() >= i600AD: #late start condition
+	if scenario() >= i600AD: #late start condition
 		if (holyCity.getX() == 60 and holyCity.getY() == 44):
 			pJerusalem = gc.getMap().plot(73, 38)
 			if (not pJerusalem.getPlotCity().isNone()):
 				holyCity = pJerusalem.getPlotCity()
 			else:
- 				return false #we don't want a Crusade on Rome
+ 				return False #we don't want a Crusade on Rome
 	
 	if -1 == kTriggeredData.eBuilding or holyCity.isHasBuilding(kTriggeredData.eBuilding):
-		return false			
+		return False			
 	
-	return true
+	return True
 
 def applyCrusadeDone2(argsList):
 	iEvent = argsList[0]
@@ -3401,7 +3337,7 @@ def expireGreed1(argsList):
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 
-	if plot.getOwner() == kTriggeredData.ePlayer or plot.getOwner() == -1:
+	if plot.getOwner() == kTriggeredData.ePlayer or plot.getOwner() == -1 or gc.getPlayer(plot.getOwner()).isMinorCiv() or gc.getPlayer(plot.getOwner()).isBarbarian():
 		return false
 	
 	if gc.getGame().getGameTurn() >= kTriggeredData.iTurn + gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent():
@@ -4293,21 +4229,17 @@ def canTriggerImpeachmentCity(argsList):
 def canTriggerTradingCompanyConquerors(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 	
-	if utils.getScenario() == i1700AD: return False
+	if scenario() == i1700AD: return False
 
 	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	
-	if iPlayer not in lCivList or utils.getHumanID() != iPlayer:
+	if iCiv not in dTradingCompanyPlots or not dTradingCompanyPlots[iCiv] or not player(iPlayer).isHuman():
 		return False
 
-	id = lCivList.index(iPlayer)
-
 	# Leoreth: dirty solution: determine that turn's target cities during this check
-	utils.debugTextPopup('Determining colonial targets.')
-	targetList = utils.getColonialTargets(iPlayer, True)
-	
-	data.lTradingCompanyConquerorsTargets[id].extend(targetList)
+	data.lTradingCompanyConquerorsTargets[iCiv] = getColonialTargets(iPlayer, True)
 
 	return True	
 
@@ -4315,15 +4247,16 @@ def canChooseTradingCompanyConquerors1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	pPlayer = gc.getPlayer(iPlayer)
+	iCiv = civ(iPlayer)
 
 	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	id = lCivList.index(iCiv)
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	
-	if not targetList: return False
+	if not targets: return False
 
-	iGold = len(targetList) * 200
+	iGold = targets.count() * 200
 
 	if pPlayer.getGold() >= iGold:
 		return True
@@ -4332,176 +4265,124 @@ def canChooseTradingCompanyConquerors1(argsList):
 def getTradingCompanyConquerors1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-	
-	sTargetCivs = ''
-	sTargetCities = ''
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
+	targetPlayers = []
+	targetNames = []
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-
-	targetCivList = []
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-
-	if len(targetCivList) > 0:
-		for iCiv in targetCivList:
-			if targetCivList.index(iCiv) != 0:
-				sTargetCivs += ', '
-			sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if targetList.index(tPlot) != 0:
-			sTargetCities += ', '
-		if gc.getMap().plot(x, y).isCity():
-			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+	for plot in targets:
+		city = city_(plot)
+		if city:
+			if city.getOwner() not in targetPlayers:
+				targetPlayers.append(city.getOwner())
+				
+			targetNames.append(city.getName())
 		else:
-			sTargetCities += cnm.getFoundName(iPlayer, (x,y))
-
-	if len(targetCivList) > 0:
-		text = localText.getText("TXT_KEY_EVENT_TCC_ACQUIRE", (len(targetList) * 200, sTargetCivs, sTargetCities))
+			targetNames.append(cnm.getFoundName(iPlayer, location(plot)))
+	
+	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
+	sTargetNames = ', '.join(targetNames)
+	
+	if targetPlayers:
+		helpText = text("TXT_KEY_EVENT_TCC_ACQUIRE", len(targets) * 200, sTargetPlayers, sTargetNames)
 	else:
-		text = localText.getText("TXT_KEY_EVENT_TCC_COLONIZE", (len(targetList) * 200, sTargetCities))
+		helpText = text("TXT_KEY_EVENT_TCC_COLONIZE", len(targets) * 200, sTargetNames)
 
-	return text
+	return helpText
 
 def doTradingCompanyConquerors1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
+	targetPlayers = []
+	settledTiles = []
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-	targetCivList = []
-	settlerList = []
-
-	iGold = len(targetList) * 200
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-		else:
-			settlerList.append((x,y))
-
-	for tPlot in settlerList:
-		utils.colonialAcquisition(iPlayer, tPlot)
+	iGold = targets.count() * 200
 	
-	utils.debugTextPopup(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
-	for iTargetCiv in targetCivList:
-		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
-		if iTargetCiv >= iNumPlayers:
+	for plot in targets:
+		city = city_(plot)
+		if city:
+			if not city.getOwner() in targetPlayers:
+				targetPlayers.append(city.getOwner())
+		else:
+			settledTiles.append(plot)
+			
+	for plot in settledTiles:
+		colonialAcquisition(iPlayer, location(plot))
+		
+	for iTargetPlayer in targetPlayers:
+		if is_minor(iTargetPlayer):
 			bAccepted = True
-		elif iRand >= tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+		elif team(iPlayer).isAtWar(iTargetPlayer):
+			bAccepted = False
+		elif rand(100) >= dPatienceThreshold[iTargetPlayer]:
 			bAccepted = True
 		else:
 			bAccepted = False
-
-		for tPlot in targetList:
-			x, y = tPlot
-			if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+			
+		for plot in targets:
+			city = city_(plot)
+			if city.getOwner() == iTargetPlayer:
 				if bAccepted:
-					utils.colonialAcquisition(iPlayer, tPlot)
-					gc.getPlayer(iTargetCiv).changeGold(200)
+					colonialAcquisition(iPlayer, location(plot))
+					player(iTargetPlayer).changeGold(200)
 				else:
-					utils.colonialConquest(iPlayer, tPlot)
-				targetList.remove(tPlot)
+					colonialConquest(iPlayer, location(plot))
 
-	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
+	iNewGold = pPlayer.getGold() - iGold
+	pPlayer.setGold(max(0, iNewGold))
 
 def canChooseTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
-
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-
-	bResult = False
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			bResult = True
-			break
-
-	return bResult
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
+	
+	return cities.of(targets).any()
 
 def getTradingCompanyConquerors2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
+
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
+	targetPlayers = []
+	targetNames = []
 	
-	sTargetCivs = ''
-	sTargetCities = ''
+	for plot in targets:
+		city = city_(plot)
+		if city:
+			if city.getOwner() not in targetPlayers:
+				targetPlayers.append(city.getOwner())
+			targetNames.append(city.getName())
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
-
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-	targetCivList = []
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-
-	if len(targetCivList) == 0:
-		return localText.getText("TXT_KEY_EVENT_TCC_NO_CITIES", ())
-
-	for iCiv in targetCivList:
-		if targetCivList.index(iCiv) != 0:
-			sTargetCivs += ', '
-		sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			if targetList.index(tPlot) != 0:
-				sTargetCities += ', '
-			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
-
-	return localText.getText("TXT_KEY_EVENT_TCC_CONQUEST", (sTargetCivs, sTargetCities))
+	if not targetPlayers:
+		return text("TXT_KEY_EVENT_TCC_NO_CITIES")
+		
+	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
+	sTargetNames = ', '.join(targetNames)
+	
+	return text("TXT_KEY_EVENT_TCC_CONQUEST", sTargetPlayers, sTargetNames)
 
 def doTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
-
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			utils.colonialConquest(iPlayer, tPlot)
-
-	tSeaPlot = -1
-	x, y = targetList[0]
-	for i in range(x-1, x+2):
-		for j in range(y-1, y+2):
-			if gc.getMap().plot(i, j).isWater():
-				tSeaPlot = (i, j)
-				break
-
-	if tSeaPlot != -1:
-		if iPlayer == iNetherlands:
-			utils.makeUnit(iEastIndiaman, iPlayer, tSeaPlot, 1)
-		else:
-			utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
+			
+	for city in cities.of(targets):
+		colonialConquest(iPlayer, location(city))
+		
+	seaPlot = plots.surrounding(targets[0]).water().random()
+	
+	if seaPlot:
+		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 	
 ######## Reformation (Leoreth) ########
 
@@ -4509,20 +4390,14 @@ def canTriggerReformation(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
-	if utils.getScenario() == i1700AD: return False
+	if scenario() == i1700AD: return False
 	
-	if utils.getHumanID() != iPlayer: return False
+	if not player(iPlayer).isHuman(): return False
 	
-	bCatholicCity = False
-	for city in PyHelpers.PyPlayer(iPlayer).getCityList():
-		if city.GetCy().isHasReligion(iCatholicism):
-			bCatholicCity = True
-			break
-			
-	if not bCatholicCity: return False
+	if cities.owner(iPlayer).none(lambda city: city.isHasReligion(iCatholicism)): return False
 	
 	if gc.getGame().isReligionFounded(iProtestantism):
-		if gc.getGame().getReligionGameTurnFounded(iProtestantism)+2 < gc.getGame().getGameTurn():
+		if gc.getGame().getReligionGameTurnFounded(iProtestantism)+2 < turn():
 			return False
 
 	return gc.getGame().isReligionFounded(iProtestantism)
@@ -4537,28 +4412,22 @@ def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	iNumCatholicCities = 0
-	cityList = PyHelpers.PyPlayer(iPlayer).getCityList()
-	for city in cityList:
-		if city.GetCy().isHasReligion(iCatholicism):
-			iNumCatholicCities += 1
-
+	iNumCatholicCities = cities.owner(iPlayer).where(lambda city: city.isHasReligion(iCatholicism)).count()
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
 	
 def doReformation1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.embraceReformation(iPlayer)
+	embraceReformation(iPlayer)
 	
 	pHolyCity = gc.getGame().getHolyCity(iProtestantism)
 	if pHolyCity.getOwner() == iPlayer:
 		pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 	
-	if iPlayer != iNetherlands:
-		for iCiv in range(iNumPlayers):
-			if data.players[iCiv].iReformationDecision == 2:
-				gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
+	if civ(iPlayer) != iNetherlands:
+		for iLoopPlayer in players.major().where(lambda p: data.players[p].iReformationDecision == 2):
+			team(iLoopPlayer).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 	
 def canChooseReformation2(argsList):
 	return True
@@ -4576,7 +4445,7 @@ def doReformation2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.tolerateReformation(iPlayer)
+	tolerateReformation(iPlayer)
 	
 def canChooseReformation3(argsList):
 	kTriggeredData = argsList[1]
@@ -4594,9 +4463,9 @@ def doReformation3(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	rel.counterReformation(iPlayer)
+	counterReformation(iPlayer)
 	
-	for iTargetCiv in range(iNumPlayers):
+	for iTargetCiv in players.major():
 		if data.players[iTargetCiv].iReformationDecision == 0:
 			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
 			

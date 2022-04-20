@@ -1672,14 +1672,14 @@ int /*TeamTypes*/ CyCity::getTeam()
 	return m_pCity ? m_pCity->getTeam() : NO_TEAM;
 }
 
-int /*PlayerTypes*/ CyCity::getPreviousOwner()
+int CyCity::getPreviousCiv()
 {
-	return m_pCity ? m_pCity->getPreviousOwner() : NO_PLAYER;
+	return m_pCity ? m_pCity->getPreviousCiv() : NO_CIVILIZATION;
 }
 
-int /*PlayerTypes*/ CyCity::getOriginalOwner()
+int CyCity::getOriginalCiv()
 {
-	return m_pCity ? m_pCity->getOriginalOwner() : NO_PLAYER;
+	return m_pCity ? m_pCity->getOriginalCiv() : NO_CIVILIZATION;
 }
 
 int /*CultureLevelTypes*/ CyCity::getCultureLevel()
@@ -1928,6 +1928,11 @@ int CyCity::getDomainProductionModifier(int /*DomainTypes*/ eIndex)
 	return m_pCity ? m_pCity->getDomainProductionModifier((DomainTypes)eIndex) : -1;
 }
 
+int CyCity::getCivCulture(int iCivilization)
+{
+	return m_pCity ? m_pCity->getActualCultureTimes100((CivilizationTypes)iCivilization) / 100 : -1;
+}
+
 int CyCity::getCulture(int /*PlayerTypes*/ eIndex)
 {
 	return m_pCity ? m_pCity->getCulture((PlayerTypes)eIndex) : -1;
@@ -1990,6 +1995,11 @@ bool CyCity::isTradeRoute(int /*PlayerTypes*/ eIndex)
 bool CyCity::isEverOwned(int /*PlayerTypes*/ eIndex)
 {
 	return m_pCity ? m_pCity->isEverOwned((PlayerTypes)eIndex) : false;
+}
+
+bool CyCity::isEverOwnedCiv(int iCivilization)
+{
+	return m_pCity ? m_pCity->isEverOwned((CivilizationTypes)iCivilization) : false;
 }
 
 bool CyCity::isRevealed(int /*TeamTypes */eIndex, bool bDebug)
@@ -2654,6 +2664,11 @@ int CyCity::getGameTurnPlayerLost(int ePlayer)
 	return m_pCity ? m_pCity->getGameTurnPlayerLost((PlayerTypes)ePlayer) : -1;
 }
 
+int CyCity::getGameTurnCivLost(int iCivilization)
+{
+	return m_pCity ? m_pCity->getGameTurnCivLost((CivilizationTypes)iCivilization) : -1;
+}
+
 int CyCity::calculateOverallCulturePercent(int ePlayer)
 {
 	return m_pCity ? m_pCity->calculateOverallCulturePercent((PlayerTypes)ePlayer) : 0;
@@ -2719,9 +2734,14 @@ void CyCity::spreadReligion(int eReligion)
 	if (m_pCity) m_pCity->spreadReligion((ReligionTypes)eReligion, false);
 }
 
-void CyCity::setBuildingOriginalOwner(int eBuilding, int ePlayer)
+void CyCity::setBuildingOriginalOwner(int eBuilding, int eCivilization)
 {
-	if (m_pCity) m_pCity->setBuildingOriginalOwner((BuildingTypes)eBuilding, (PlayerTypes)ePlayer);
+	if (m_pCity) m_pCity->setBuildingOriginalOwner((BuildingTypes)eBuilding, (CivilizationTypes)eCivilization);
+}
+
+void CyCity::setBuildingOriginalTime(int eBuilding, int iYear)
+{
+	if (m_pCity) m_pCity->setBuildingOriginalTime((BuildingTypes)eBuilding, iYear);
 }
 
 int CyCity::getHappinessYield(int eYield)
@@ -2772,4 +2792,89 @@ int CyCity::getModifiedCultureRate()
 int CyCity::getModifiedCultureRateTimes100()
 {
 	return m_pCity ? m_pCity->getModifiedCultureRateTimes100() : -1;
+}
+
+int CyCity::getNumActiveWorldWonders()
+{
+	return m_pCity ? m_pCity->getNumActiveWorldWonders() : -1;
+}
+
+bool CyCity::isCore(int iCivilization)
+{
+	return m_pCity ? m_pCity->isCore((CivilizationTypes)iCivilization) : false;
+}
+
+bool CyCity::isPlayerCore(int iPlayer)
+{
+	return m_pCity ? m_pCity->isCore((PlayerTypes)iPlayer) : false;
+}
+
+bool CyCity::isOwnerCore()
+{
+	return m_pCity ? m_pCity->isCore() : false;
+}
+
+int CyCity::getActualCulture(int iPlayer)
+{
+	return m_pCity ? m_pCity->getActualCulture((PlayerTypes)iPlayer) : -1;
+}
+
+int CyCity::getPopulationLoss()
+{
+	return m_pCity ? m_pCity->getPopulationLoss() : -1;
+}
+
+int CyCity::countSatellites()
+{
+	return m_pCity ? m_pCity->countSatellites() : -1;
+}
+
+int CyCity::getSatelliteSlots()
+{
+	return m_pCity ? m_pCity->getSatelliteSlots() : -1;
+}
+	
+int CyCity::getArea()
+{
+	return m_pCity ? m_pCity->getArea() : -1;
+}
+
+bool CyCity::rebuild()
+{
+	return m_pCity ? m_pCity->rebuild() : false;
+}
+
+bool CyCity::isValidBuildingLocation(int iBuilding)
+{
+	return m_pCity ? m_pCity->isValidBuildingLocation((BuildingTypes)iBuilding) : false;
+}
+
+void CyCity::setOriginalCiv(int iCivilization)
+{
+	if (m_pCity) m_pCity->setOriginalCiv((CivilizationTypes)iCivilization);
+}
+
+void CyCity::setEverOwned(int iCivilization, bool bNewValue)
+{
+	if (m_pCity) m_pCity->setEverOwned((CivilizationTypes)iCivilization, bNewValue);
+}
+
+void CyCity::setGameTurnFounded(int iNewValue)
+{
+	if (m_pCity) m_pCity->setGameTurnFounded(iNewValue);
+}
+
+void CyCity::setGameTurnAcquired(int iNewValue)
+{
+	if (m_pCity) m_pCity->setGameTurnAcquired(iNewValue);
+}
+
+void CyCity::setCivCulture(int iCivilization, int iNewValue)
+{
+	if (m_pCity) m_pCity->setCulture((CivilizationTypes)iCivilization, iNewValue);
+}
+
+bool CyCity::isOriginalOwner(int iPlayer)
+{
+	return m_pCity ? m_pCity->isOriginalOwner((PlayerTypes)iPlayer) : false;
 }

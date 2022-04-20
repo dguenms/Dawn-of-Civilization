@@ -245,4 +245,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN</Tag>
+		<English>Akkadian</English>
+		<French>Akkadian</French>
+		<German>Akkadian</German>
+		<Italian>Akkadian</Italian>
+		<Spanish>Akkadian</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -654,14 +654,20 @@ int CvArea::getPower(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be < MAX_PLAYERS");
-	//Rhye - start
-	if (eIndex == BARBARIAN)
-			return m_aiPower[eIndex] /= 2;
-	if (eIndex == INDEPENDENT || eIndex == INDEPENDENT2)
-			return m_aiPower[eIndex] /= 8;
-	if (eIndex >= NUM_MAJOR_PLAYERS)
-			return m_aiPower[eIndex] /= 4;
-	//Rhye - end
+
+	if (GET_PLAYER(eIndex).isBarbarian())
+	{
+		return m_aiPower[eIndex] /= 2;
+	}
+	else if (GET_PLAYER(eIndex).isIndependent())
+	{
+		return m_aiPower[eIndex] /= 8;
+	}
+	else if (GET_PLAYER(eIndex).isMinorCiv())
+	{
+		return m_aiPower[eIndex] /= 4;
+	}
+
 	return m_aiPower[eIndex];
 }
 

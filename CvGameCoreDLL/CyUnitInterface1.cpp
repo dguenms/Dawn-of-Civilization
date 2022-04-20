@@ -403,5 +403,6 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 
 		// Leoreth
 		.def("changeImmobileTimer", &CyUnit::changeImmobileTimer, "void (int iChange)")
+		.def("testPromotionReady", &CyUnit::testPromotionReady, "void ()")
 		;
 }

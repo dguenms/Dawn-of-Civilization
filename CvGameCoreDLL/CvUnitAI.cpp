@@ -237,7 +237,7 @@ bool CvUnitAI::AI_update()
 
 		case UNITAI_ATTACK:
 			//if (isBarbarian()) //Rhye
-			if (isBarbarian() || (GET_PLAYER(getOwnerINLINE()).isMinorCiv() && getOwnerINLINE() != INDEPENDENT && getOwnerINLINE() != INDEPENDENT2))
+			if (isBarbarian() || (GET_PLAYER(getOwnerINLINE()).isMinorCiv() && !GET_PLAYER(getOwnerINLINE()).isIndependent()))
 			{
 				AI_barbAttackMove();
 			}
@@ -1952,6 +1952,23 @@ void CvUnitAI::AI_attackMove()
 		}
 	}
 
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
+	}
+
 	{
 		PROFILE("CvUnitAI::AI_attackMove() 2");
 
@@ -2006,36 +2023,20 @@ void CvUnitAI::AI_attackMove()
 					return;
 				}
 			}
-			//Rhye - start
-			if (area()->getCitiesPerPlayer((PlayerTypes)NATIVE) > 0)
+
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
-				if (AI_targetMinorCity(NATIVE))
+				if (GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS)
 				{
-					return;
+					if (area()->getCitiesPerPlayer((PlayerTypes)iI) > 0)
+					{
+						if (AI_targetMinorCity(iI))
+						{
+							return;
+						}
+					}
 				}
 			}
-			if (area()->getCitiesPerPlayer((PlayerTypes)CELTIA) > 0)
-			{
-				if (AI_targetMinorCity(CELTIA))
-				{
-					return;
-				}
-			}
-			if (area()->getCitiesPerPlayer((PlayerTypes)INDEPENDENT) > 0)
-			{
-				if (AI_targetMinorCity(INDEPENDENT))
-				{
-					return;
-				}
-			}
-			if (area()->getCitiesPerPlayer((PlayerTypes)INDEPENDENT2) > 0)
-			{
-				if (AI_targetMinorCity(INDEPENDENT2))
-				{
-					return;
-				}
-			}
-			//Rhye - end
 		}
 		else
 		{
@@ -2349,40 +2350,25 @@ void CvUnitAI::AI_attackCityMove()
 			bHuntBarbs = true;
 		}
 	}
-	//Rhye - start
-	bool bHuntNatives = false;
-	bool bHuntCelts = false;
-	bool bHuntIndependents = false;
-	bool bHuntIndependents2 = false;
-	if (area()->getCitiesPerPlayer((PlayerTypes)NATIVE) > 0)
+
+	// Leoreth: slightly more dynamic minor target selection
+	bool* bHuntPlayer = new bool[MAX_CIV_PLAYERS];
+
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
+		bHuntPlayer[iI] = false;
+
+		if (GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS)
 		{
-			bool bHuntNatives = true;
+			if (area()->getCitiesPerPlayer((PlayerTypes)iI) > 0)
+			{
+				if (area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE && area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE)
+				{
+					bHuntPlayer[iI] = true;
+				}
+			}
 		}
 	}
-	if (area()->getCitiesPerPlayer((PlayerTypes)CELTIA) > 0)
-	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
-		{
-			bool bHuntCelts = true;
-		}
-	}
-	if (area()->getCitiesPerPlayer((PlayerTypes)INDEPENDENT) > 0)
-	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
-		{
-			bool bHuntIndependents = true;
-		}
-	}
-	if (area()->getCitiesPerPlayer((PlayerTypes)INDEPENDENT2) > 0)
-	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
-		{
-			bool bHuntIndependents2 = true;
-		}
-	}
-	//Rhye - end
 
 	bool bReadyToAttack = ((getGroup()->getNumUnits() >= (bHuntBarbs ? 3 : AI_stackOfDoomExtra())));
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
@@ -2466,34 +2452,23 @@ void CvUnitAI::AI_attackCityMove()
 	}
 
 	//XXX more sophisticated logic for attacking is long overdue here
-//	if ((area()->getAreaAIType(getTeam()) == AREAAI_OFFENSIVE) ||
-//		  (atWar(getTeam(), plot()->getTeam())) ||
-//			((area()->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE) && (getGroup()->getNumUnits() >= AI_stackOfDoomExtra())))
 	if (bReadyToAttack)
 	{
 		if (bHuntBarbs && AI_targetBarbCity())
 		{
 			return;
 		}
-		//Rhye - start
-		else if (bHuntNatives && AI_targetMinorCity(NATIVE))
+
+		// Leoreth: target minors
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
-			return;
+			if (bHuntPlayer[iI] && AI_targetMinorCity(iI))
+			{
+				return;
+			}
 		}
-		else if (bHuntCelts && AI_targetMinorCity(CELTIA))
-		{
-			return;
-		}
-		else if (bHuntIndependents && AI_targetMinorCity(INDEPENDENT))
-		{
-			return;
-		}
-		else if (bHuntIndependents2 && AI_targetMinorCity(INDEPENDENT2))
-		{
-			return;
-		}
-		//Rhye - end
-		else if (bLandWar)
+
+		if (bLandWar)
 		{
 			if (AI_targetCity())
 			{
@@ -2540,6 +2515,23 @@ void CvUnitAI::AI_attackCityMove()
 	if (AI_offensiveAirlift())
 	{
 		return;
+	}
+
+	// Leoreth: Roman Legions
+	if (!bAtWar)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
 	}
 
 	if (AI_retreatToCity())
@@ -2901,6 +2893,23 @@ void CvUnitAI::AI_reserveMove()
 	if (AI_heal(30, 1))
 	{
 		return;
+	}
+
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
 	}
 
 	if (bDanger)
@@ -12931,7 +12940,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
+						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian() || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
 						{
 							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
 
@@ -17342,11 +17351,6 @@ int CvUnitAI::AI_pillageValue(CvPlot* pPlot, int iBonusValueThreshold)
 				}
 			}
 		}
-		//Rhye - start UP (used to be German UP)
-		/*if (getOwnerINLINE() == GERMANY)
-			iValue = 0; //Germany shouldn't pillage roads where could move faster
-		*/
-		//Rhye - end UP
 	}
 
 	if (pPlot->getImprovementDuration() > ((pPlot->isWater()) ? 20 : 5))
@@ -17366,11 +17370,6 @@ int CvUnitAI::AI_pillageValue(CvPlot* pPlot, int iBonusValueThreshold)
 			iValue += (pPlot->calculateImprovementYieldChange(eImprovement, YIELD_PRODUCTION, pPlot->getOwnerINLINE()) * 4);
 			iValue += (pPlot->calculateImprovementYieldChange(eImprovement, YIELD_COMMERCE, pPlot->getOwnerINLINE()) * 3);
 		}
-
-		//Rhye - start UP (used to be German UP)
-		//if (getOwnerINLINE() == GERMANY)
-		//	iValue *= 2;
-		//Rhye - end UP
 
 		if (getDomainType() != DOMAIN_AIR)
 		{

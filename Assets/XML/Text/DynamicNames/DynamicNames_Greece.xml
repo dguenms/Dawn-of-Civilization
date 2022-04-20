@@ -27,7 +27,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_PEOPLES</Tag>
-		<English>Mycenean Peoples</English>
+		<English>Mycenaean Peoples</English>
 		<French>
 			<Text>Peuplades myc&#233;niennes</Text>
 			<Gender>Female</Gender>
@@ -276,5 +276,13 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREECE_MYCENAEAN</Tag>
+		<English>Mycenaean</English>
+		<French>Mycenaean</French>
+		<German>Mycenaean</German>
+		<Italian>Mycenaean</Italian>
+		<Spanish>Mycenaean</Spanish>
 	</TEXT>
 </Civ4GameText>

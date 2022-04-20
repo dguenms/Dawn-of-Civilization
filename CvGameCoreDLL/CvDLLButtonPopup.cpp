@@ -307,22 +307,18 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 	case BUTTONPOPUP_RAZECITY:
 		if (pPopupReturn->getButtonClicked() == 1) // raze
 		{
-			log("selected raze");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				pCity->completeAcquisition(info.getData3());
+				pCity->raze(info.getData3());
 			}
-
-			CvMessageControl::getInstance().sendDoTask(info.getData1(), TASK_RAZE, -1, -1, false, false, false, false);
 		}
 		else if (pPopupReturn->getButtonClicked() == 2) // gift
 		{
-			log("selected gift");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				pCity->completeAcquisition(info.getData3());
+				pCity->completeAcquisition(info.getData3(), false);
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 
@@ -330,7 +326,6 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 3) // examine
 		{
-			log("selected examine");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -342,7 +337,6 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 0) // keep
 		{
-			log("select keep");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -353,17 +347,16 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 4) // sack
 		{
-			log("select sack");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				pCity->sack((PlayerTypes)info.getData2(), info.getData3());
+				PlayerTypes eHighestCulturePlayer = pCity->findHighestCulture(true);
+				pCity->sack(eHighestCulturePlayer, info.getData3());
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 		}
 		else if (pPopupReturn->getButtonClicked() == 5) // spare
 		{
-			log("select spare");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -1121,7 +1114,7 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 	}
 	else
 	{
-		szBuffer = gDLL->getText("TXT_KEY_POPUP_WHAT_TO_BUILD", pCity->getNameKey());
+		szBuffer = gDLL->getText("TXT_KEY_POPUP_WHAT_TO_BUILD_CITY_NAME", pCity->getNameKey());
 		szArtFilename = ARTFILEMGR.getInterfaceArtInfo("INTERFACE_POPUPBUTTON_PRODUCTION")->getPath();
 	}
 
@@ -1672,7 +1665,7 @@ bool CvDLLButtonPopup::launchChangeCivicsPopup(CvPopup* pPopup, CvPopupInfo &inf
 	bool bValid = false;
 
 	// Leoreth: suppress for Egypt due to their UP
-	if (eCivicType == NO_CIVIC && GC.getGameINLINE().getActivePlayer() == EGYPT)
+	if (eCivicType == NO_CIVIC && GC.getGameINLINE().getActiveCivilizationType() == EGYPT)
 	{
 		return false;
 	}
@@ -2603,19 +2596,19 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 		}
 	}*/
 
-	bool abPlayerFound[NUM_MAJOR_PLAYERS];
+	bool abCivFound[NUM_CIVS];
 
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < NUM_CIVS; iI++)
 	{
-		abPlayerFound[iI] = false;
+		abCivFound[iI] = false;
 	}
 
 	// Leoreth: allow to release dead players based on their cores
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < NUM_CIVS; iI++)
 	{
-		PlayerTypes eOtherPlayer = (PlayerTypes)iI;
+		CivilizationTypes eReleasableCivilization = (CivilizationTypes)iI;
 		int iYear = GC.getGame().getGameTurnYear();
-		if (eOtherPlayer != ePlayer && !GET_PLAYER(eOtherPlayer).isAlive() && GET_PLAYER(eOtherPlayer).canRespawn())
+		if (GET_PLAYER(ePlayer).getCivilizationType() != eReleasableCivilization && !isCivAlive(eReleasableCivilization) && canRespawn(eReleasableCivilization))
 		{
 			CvWString szCityList;
 			int iCityLoop;
@@ -2623,14 +2616,14 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 			for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
 			{
-				if (pLoopCity->plot()->isCore(eOtherPlayer) && !pLoopCity->plot()->isCore(ePlayer) && !pLoopCity->isCapital())
+				if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCapital())
 				{
 					if (!szCityList.empty())
 					{
 						szCityList += L", ";
 					}
 					++iNumCities;
-					abPlayerFound[iI] = true;
+					abCivFound[eReleasableCivilization] = true;
 
 					szCityList += pLoopCity->getName();
 				}
@@ -2638,8 +2631,8 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 			if (iNumCities > 0)
 			{
-				CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GET_PLAYER(eOtherPlayer).getCivilizationShortDescription());
-				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(GET_PLAYER(eOtherPlayer).getCivilizationType()).getButton(), eOtherPlayer+1, WIDGET_GENERAL);
+				CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GC.getCivilizationInfo(eReleasableCivilization).getShortDescription());
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(eReleasableCivilization).getButton(), eReleasableCivilization+1, WIDGET_GENERAL);
 			}
 		}
 	}
@@ -2662,9 +2655,9 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 		else if (pLoopCity->plot()->getSettlerValue(ePlayer) < 90)
 		{
 			bool bFound = false;
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < NUM_CIVS; iI++)
 			{
-				if (abPlayerFound[iI] && pLoopCity->plot()->isCore((PlayerTypes)iI))
+				if (abCivFound[iI] && pLoopCity->isCore((CivilizationTypes)iI))
 				{
 					bFound = true;
 					break;

@@ -264,6 +264,7 @@ void CyInfoPythonInterface3()
 		.def("getFreeUnitClass", &CvCorporationInfo::getFreeUnitClass, "int ()")
 		.def("getSpreadFactor", &CvCorporationInfo::getSpreadFactor, "int ()")
 		.def("getSpreadCost", &CvCorporationInfo::getSpreadCost, "int ()")
+		.def("getMaxConsumableBonuses", &CvCorporationInfo::getMaxConsumableBonuses, "int ()") // merijn
 		.def("getMaintenance", &CvCorporationInfo::getMaintenance, "int ()")
 		.def("getMissionType", &CvCorporationInfo::getMissionType, "int ()")
 

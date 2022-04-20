@@ -5301,9 +5301,11 @@ class CvMainInterface:
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()
 			city = gc.getMap().plot(iX, iY).getPlotCity()
-			city.changeHappinessTimer(5)
+			city.changeHappinessTimer(turns(5))
 			city.setWeLoveTheKingDay(True)
-			self.pPushedButtonUnit.kill(false, city.getOwner())
+			self.pPushedButtonUnit.kill(False, city.getOwner())
+			
+			events.fireEvent("sacrificeHappiness", city.getOwner(), city)
 
 		return 0
 	

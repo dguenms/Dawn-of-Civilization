@@ -38,8 +38,8 @@ public:
 	DllExport void setupGraphical();
 	DllExport void reset(PlayerTypes eID = NO_PLAYER, bool bConstructorCall = false);
 
-	CvPlayerAI* AI() { return (CvPlayerAI*)(this); }
-	const CvPlayerAI* AI() const { return (const CvPlayerAI*)(this); }
+	__forceinline CvPlayerAI* AI() { return (CvPlayerAI*)(this); }
+	__forceinline const CvPlayerAI* AI() const { return (const CvPlayerAI*)(this); }
 
 protected:
 
@@ -76,7 +76,10 @@ public:
 	bool hasCivic(CivicTypes eCivic) const;
 	DllExport bool isHuman() const;																																							// Exposed to Python
 	DllExport void updateHuman();
-	DllExport bool isBarbarian() const;																																					// Exposed to Python
+	DllExport bool isBarbarian() const;		// Exposed to Python
+
+	bool isIndependent() const;
+	bool isNative() const;
 
 	DllExport const wchar* getName(uint uiForm = 0) const;																											// Exposed to Python
 	//Rhye (jdog) -  start ---------------------
@@ -356,6 +359,7 @@ public:
 
 	int getNumUnitGoldenAges() const;																																			// Exposed to Python
 	void changeNumUnitGoldenAges(int iChange);																											// Exposed to Python
+	void setNumUnitGoldenAges(int iNewValue);
 
 	int getAnarchyTurns() const;																																					// Exposed to Python
 	DllExport bool isAnarchy() const;																																			// Exposed to Python
@@ -389,6 +393,7 @@ public:
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated(bool bUpdate = true);
+	void changeGreatSpiesCreated(int iChange, bool bUpdate = true);
 
 	void resetGreatPeopleCreated();
 
@@ -632,6 +637,10 @@ public:
 	void changeDefensivePactTradeModifier(int iChange);
 
 	// Leoreth
+	int getVassalTradeModifier() const;
+	void changeVassalTradeModifier(int iChange);
+
+	// Leoreth
 	int getVassalCityCommerce() const;
 	void changeVassalCityCommerce(int iChange);
 
@@ -787,6 +796,8 @@ public:
 	DllExport int getPlayerTextColorG() const;																												// Exposed to Python
 	DllExport int getPlayerTextColorB() const;																												// Exposed to Python
 	DllExport int getPlayerTextColorA() const;																												// Exposed to Python
+
+	CvWString formatColor(CvWString string) const;
 
 	int getSeaPlotYield(YieldTypes eIndex) const;																											// Exposed to Python
 	void changeSeaPlotYield(YieldTypes eIndex, int iChange);
@@ -955,6 +966,20 @@ public:
 	int getCaptureGoldModifier() const;
 	void changeCaptureGoldModifier(int iChange);
 
+	// Leoreth
+	bool isNoResistance() const;
+	int getNoResistanceCount() const;
+	void changeNoResistanceCount(int iChange);
+
+	// Leoreth
+	bool isNoTemporaryUnhappiness() const;
+	int getNoTemporaryUnhappinessCount() const;
+	void changeNoTemporaryUnhappinessCount(int iChange);
+
+	// Leoreth
+	int getUnhappinessDecayModifier() const;
+	void changeUnhappinessDecayModifier(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1045,24 +1070,7 @@ public:
 	DllExport void showSpaceShip();
 	DllExport void clearSpaceShipPopups();
 
-	int getScoreHistory(int iTurn) const;																								// Exposed to Python
-	void updateScoreHistory(int iTurn, int iBestScore);
-
-	int getEconomyHistory(int iTurn) const;																							// Exposed to Python
-	void updateEconomyHistory(int iTurn, int iBestEconomy);
-	int getIndustryHistory(int iTurn) const;																						// Exposed to Python
-	void updateIndustryHistory(int iTurn, int iBestIndustry);
-	int getAgricultureHistory(int iTurn) const;																					// Exposed to Python
-	void updateAgricultureHistory(int iTurn, int iBestAgriculture);
-	int getPowerHistory(int iTurn) const;																								// Exposed to Python
-	void updatePowerHistory(int iTurn, int iBestPower);
-	int getCultureHistory(int iTurn) const;																							// Exposed to Python
-	void updateCultureHistory(int iTurn, int iBestCulture);
-	int getEspionageHistory(int iTurn) const;																							// Exposed to Python
-	void updateEspionageHistory(int iTurn, int iBestEspionage);
-
-	int getTechHistory(int iTurn) const;
-	void updateTechHistory(int iTurn, int iBestTech);
+	void updateHistory();
 
 	// Script data needs to be a narrow string for pickling in Python
 	std::string getScriptData() const;																									// Exposed to Python
@@ -1101,7 +1109,7 @@ public:
 	int getUnitExtraCost(UnitClassTypes eUnitClass) const;
 	void setUnitExtraCost(UnitClassTypes eUnitClass, int iCost);
 
-	DllExport bool splitEmpire(int iPlayerID);
+	DllExport bool splitEmpire(int iCivilization);
 	bool canSplitEmpire() const;
 	bool canSplitArea(int iAreaId) const;
 	PlayerTypes getSplitEmpirePlayer(int iAreaId) const;
@@ -1124,7 +1132,7 @@ public:
 	void invalidateCommerceRankCache(CommerceTypes eCommerce = NO_COMMERCE);
 
 	PlayerTypes pickConqueredCityOwner(const CvCity& kCity) const;
-	bool canHaveTradeRoutesWith(PlayerTypes ePlayer) const;
+	bool canHaveTradeRoutesWith(PlayerTypes ePlayer, bool bIgnoreAgreements = false) const;
 
 	void forcePeace(PlayerTypes ePlayer);    // exposed to Python
 
@@ -1171,7 +1179,7 @@ public:
 	virtual void AI_assignWorkingPlots() = 0;
 	virtual void AI_updateAssignWork() = 0;
 	virtual void AI_makeProductionDirty() = 0;
-	virtual void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold) = 0;
+	virtual void AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, PlayerTypes eHighestCulturePlayer, int iCaptureGold) = 0;
 	virtual int AI_foundValue(int iX, int iY, int iMinUnitRange = -1, bool bStartingLoc = false) const = 0; // Exposed to Python
 	virtual bool AI_isCommercePlot(CvPlot* pPlot) const = 0;
 	virtual int AI_getPlotDanger(CvPlot* pPlot, int iRange = -1, bool bTestMoves = true) const = 0;
@@ -1236,11 +1244,7 @@ public:
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
 	DenialTypes AI_slaveTrade(PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
-	//DllExport int getCivicPreference(int column); // Leoreth
-	bool isReborn(); // Leoreth
-    int getReborn(); // Leoreth
-    void setReborn(bool bNewValue = true); // Leoreth
-    bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
+	bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
 	int getSettlerValue(int x, int y); // Leoreth
 	int getWarValue(int x, int y); //Leoreth
@@ -1255,27 +1259,28 @@ public:
 	// Leoreth
 	int getTechPreference(TechTypes eTech) const;
 	void setTechPreference(TechTypes eTech, int iNewValue);
+	void resetTechPreferences();
 
 	// Leoreth
-	int getBuildingPreference(BuildingTypes eBuilding) const;
-	void setBuildingPreference(BuildingTypes eBuilding, int iNewValue);
-
-	int getBirthYear() const;
-	int getBirthTurn() const;
-	void setBirthYear(int iNewValue);
+	int getBuildingClassPreference(BuildingClassTypes eBuildingClass) const;
+	void setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue);
+	void resetBuildingClassPreferences();
 
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
 	bool isNeighbor(PlayerTypes ePlayer);
 
-	int getLatestRebellionTurn();
-	void setLatestRebellionTurn(int iNewValue);
+	int getInitialBirthTurn() const;
+	void setInitialBirthTurn(int iNewValue);
+
+	int getLastBirthTurn() const;
+	void setLastBirthTurn(int iNewValue);
 
 	EraTypes getSoundtrackEra();
 
 	// Leoreth
 	int getDomainProductionModifier(DomainTypes eDomainType) const;
-	int getDomainExperienceModifier(DomainTypes eDomainType) const;
+	int getDomainFreeExperience(DomainTypes eDomainType) const;
 
 	void changeDomainProductionModifier(DomainTypes eDomainType, int iChange);
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
@@ -1316,6 +1321,7 @@ public:
 	void changeNoAnarchyTurns(int iChange);
 
 	int countCoreCities() const;
+	int countReligionCities(ReligionTypes eReligion) const;
 
 	bool canTradeBonus(BonusTypes eBonus) const;
 
@@ -1344,6 +1350,28 @@ public:
 	void makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit);
 
 	int getSatelliteExtraCommerce(CommerceTypes eCommerce) const;
+
+	// Leoreth
+	void verifyCommerceRates(CommerceTypes eCommerce) const;
+
+	PeriodTypes getPeriod() const;
+
+	bool isUnstableCivic(CivicTypes eCivic) const;
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected() const;
+
+	void setMinorCiv(bool bNewValue);
+
+	int getScoreHistory(int iTurn) const;
+	int getEconomyHistory(int iTurn) const;
+	int getIndustryHistory(int iTurn) const;
+	int getAgricultureHistory(int iTurn) const;
+	int getPowerHistory(int iTurn) const;
+	int getCultureHistory(int iTurn) const;
+	int getEspionageHistory(int iTurn) const;
+	int getTechnologyHistory(int iTurn) const;
+	int getPopulationHistory(int iTurn) const;
+	int getLandHistory(int iTurn) const;
 
 	bool m_bTurnPlayed;
 
@@ -1435,12 +1463,16 @@ protected:
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iSlaveryCount; // Leoreth
 	int m_iNoSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
+	int m_iNoResistanceCount; // Leoreth
+	int m_iNoTemporaryUnhappinessCount; // Leoreth
+	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;
@@ -1476,6 +1508,7 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
+	bool m_bBirthProtected; // Leoreth
 
 
 /************************************************************************************************/
@@ -1498,8 +1531,8 @@ protected:
 	//Rhye (jdog) -  end -----------------------
 
 	// Leoreth
-	bool m_bReborn;
-	int m_iLatestRebellionTurn;
+	int m_iInitialBirthTurn;
+	int m_iLastBirthTurn;
 	int m_iPersecutionCountdown;
 	int m_iNoAnarchyTurns;
 	int m_iBirthYear;
@@ -1594,7 +1627,7 @@ protected:
 	std::vector<EventTriggerTypes> m_triggersFired;
 
 	// Leoreth
-	std::map<BuildingTypes, int> m_buildingPreference;
+	std::map<BuildingClassTypes, int> m_buildingClassPreference;
 
 	CivicTypes* m_paeCivics;
 
@@ -1628,21 +1661,13 @@ protected:
 	CvPopupQueue m_listPopups;
 	CvDiploQueue m_listDiplomacy;
 
-	CvTurnScoreMap m_mapScoreHistory;
-	CvTurnScoreMap m_mapEconomyHistory;
-	CvTurnScoreMap m_mapIndustryHistory;
-	CvTurnScoreMap m_mapAgricultureHistory;
-	CvTurnScoreMap m_mapPowerHistory;
-	CvTurnScoreMap m_mapCultureHistory;
-	CvTurnScoreMap m_mapEspionageHistory;
-
-	CvTurnScoreMap m_mapTechHistory;
-
 	void doGold();
 	void doResearch();
 	void doEspionagePoints();
 	void doWarnings();
 	void doEvents();
+
+	int getHistory(HistoryTypes eHistory, int iTurn) const;
 
 	bool checkExpireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData) const;
 	void expireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bFail);

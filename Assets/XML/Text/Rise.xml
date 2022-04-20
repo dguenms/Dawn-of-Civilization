@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Actions -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP</Tag>
+		<English>The people of %s1 have joined the rising civilization of %s2. How should we respond?</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP_CANCEL</Tag>
+		<English>Accept their decision.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP_WAR</Tag>
+		<English>Declare war and reconquer them!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_ATTACKERS_EXPELLED</Tag>
+		<English>%d1 of our units have been expelled from %s2 territory and withdrawn to %s3.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_SWITCH</Tag>
+		<English>[H2]A new civilization is being born[\H2][NEWLINE]Do you wish to take permanent control of the %s1 civilization?</English>
+		<French>[H2]Naissance d'une nouvelle civilisation[\H2][NEWLINE]Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2 ?</French>
+		<German>[H2]Eine neue Zivilisation entsteht[\H2][NEWLINE]Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
+		<Italian>[H2]Nasce una nuova civilt&#224;[\H2][NEWLINE]Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
+		<Spanish>[H2]Ha nacido una nueva civilizaci&#243;n[\H2][NEWLINE]&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_GENERIC</Tag>
+		<English>We are receiving reports that the rise of the %s1 civilization is imminent.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

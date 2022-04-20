@@ -43,6 +43,9 @@ void CyGlobalContextPythonInterface4(python::class_<CyGlobalContext>& x)
 		.def("getNumReligionInfos", &CyGlobalContext::getNumReligionInfos, "() - Total Religion Infos XML\\GameInfo\\CIV4ReligionInfos.xml")
 		.def("getReligionInfo", &CyGlobalContext::getReligionInfo, python::return_value_policy<python::reference_existing_object>(), "(ReligionID) - CvInfo for ReligionID")
 
+		.def("getNumPaganReligionInfos", &CyGlobalContext::getNumPaganReligionInfos, "() - Total Pagan Religion Infos")
+		.def("getPaganReligionInfo", &CyGlobalContext::getPaganReligionInfo, python::return_value_policy<python::reference_existing_object>(), "(PaganReligionID) - CvInfo for PaganReligionID")
+
 		.def("getNumCorporationInfos", &CyGlobalContext::getNumCorporationInfos, "() - Total Religion Infos XML\\GameInfo\\CIV4CorporationInfos.xml")
 		.def("getCorporationInfo", &CyGlobalContext::getCorporationInfo, python::return_value_policy<python::reference_existing_object>(), "(CorporationID) - CvInfo for CorporationID")
 
