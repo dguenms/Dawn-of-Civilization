@@ -7,7 +7,7 @@ from Victories import disable as disable_victories
 
 from inspect import isfunction
 
-import cPickle as pickle
+from Pickle import pickle
 
 
 class ExtendedTestCase(TestCase):

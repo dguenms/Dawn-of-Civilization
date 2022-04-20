@@ -88,7 +88,7 @@ AdvisorOpt = BugCore.game.CustDomAdv
 MainOpt = BugCore.game.MainInterface
 
 # Needed to save changes
-import pickle
+from Pickle import pickle
 
 # Needed to check for non-numbers (specially search function)
 import re

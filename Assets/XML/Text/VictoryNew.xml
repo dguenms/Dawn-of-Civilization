@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Victory -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	
+<!-- GOAL AND GOAL DEFINITION TEXT -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BY</Tag>
+		<English>by %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IN</Tag>
+		<English>in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- GOAL DESCRIPTIONS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROL</Tag>
+		<English>Control %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE</Tag>
+		<English>Have %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_DISCOVER</Tag>
+		<English>Be the first to discover %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BROKERED_PEACE</Tag>
+		<English>End %s1 wars through diplomacy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- REQUIREMENT DESCRIPTIONS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SIMPLE</Tag>
+		<English>%s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_PERCENT</Tag>
+		<English>%s1 of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PLAYER_GOLD</Tag>
+		<English>%s1 gold</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER</Tag>
+		<English>the largest population in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITIES</Tag>
+		<English>the %s1 largest cities in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- REQUIREMENT PROGRESS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SIMPLE</Tag>
+		<English>%s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION_PERCENT</Tag>
+		<English>Percentage of world population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLD</Tag>
+		<English>Gold in treasury</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_POPULATION</Tag>
+		<English>most populous</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BROKERED_PEACE</Tag>
+		<English>Peace deals brokered</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
+		<English>Next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_OUR_NEXT</Tag>
+		<English>Our next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- NUMBERS TO BE SPELLED OUT -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_1</Tag>
+		<English>a</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_2</Tag>
+		<English>two</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_3</Tag>
+		<English>three</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_4</Tag>
+		<English>four</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_5</Tag>
+		<English>five</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_6</Tag>
+		<English>six</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_7</Tag>
+		<English>seven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_8</Tag>
+		<English>eight</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_9</Tag>
+		<English>nine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_10</Tag>
+		<English>ten</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_11</Tag>
+		<English>eleven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_12</Tag>
+		<English>twelve</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_1</Tag>
+		<English>first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_2</Tag>
+		<English>second</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_3</Tag>
+		<English>third</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_4</Tag>
+		<English>fourth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_5</Tag>
+		<English>fifth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_DEFAULT_SUFFIX</Tag>
+		<English>th</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+</Civ4GameText>

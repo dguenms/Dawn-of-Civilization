@@ -715,12 +715,12 @@ class TestPlayers(TestCase):
 		self.assertEqual(actual_ids, expected_ids)
 		
 	def test_alive(self):
-		players = Players([0, 1, 2, 9])
-		self.assert_(gc.getPlayer(9) in players)
+		players = Players([0, 1, 2, 13])
+		self.assert_(gc.getPlayer(13) in players)
 		
 		players = players.alive()
 		assertType(self, players, Players)
-		self.assert_(gc.getPlayer(9) not in players)
+		self.assert_(gc.getPlayer(13) not in players)
 		
 	def test_ai(self):
 		players = self.players.ai()
@@ -923,12 +923,12 @@ class TestPlayerFactory(TestCase):
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 10)
+		self.assertEqual(len(players), 14)
 		
 	def test_major(self):
 		players = self.factory.major()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 5)
+		self.assertEqual(len(players), 9)
 		
 	def test_minor(self):
 		players = self.factory.minor()

@@ -365,12 +365,16 @@ def birthRectangle(identifier, extended = None):
 	if identifier in dExtendedBirthArea and extended:
 		return dExtendedBirthArea[identifier]
 	return dBirthArea[identifier]
-	
-	
+
+
 def signature(func, *args, **kwargs):
+	return signature_name(func.__name__, *args, **kwargs)
+	
+	
+def signature_name(func_name, *args, **kwargs):
 	formatted_args = [str(arg) for arg in args]
 	formatted_kwargs = ["%s=%s" % (key, value) for key, value in kwargs.items()]
-	return "%s(%s)" % (func.__name__, ", ".join(formatted_args + formatted_kwargs))
+	return "%s(%s)" % (func_name, ", ".join(formatted_args + formatted_kwargs))
 
 
 def log(func):
@@ -1193,10 +1197,10 @@ class EntityCollection(object):
 			final_separator = text("TXT_KEY_AND")
 		return format_separators(self.entities(), separator, final_separator, formatter)
 	
-	def named(self, key):
-		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
-	
 	def clear_named(self, name):
+		return self.named(name)
+	
+	def named(self, name):
 		self._name = name
 		return self
 	
