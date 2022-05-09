@@ -1,7 +1,8 @@
 from Core import *
 from Civilizations import *
-from RFCUtils import *
+from DynamicCivs import *
 from Locations import *
+from RFCUtils import *
 from Slots import *
 
 from Events import events, handler
@@ -236,7 +237,7 @@ def restorePreservedWonders(city):
 		iWonder = data.players[city.getOwner()].lPreservedWonders.pop(0)
 		if city.isValidBuildingLocation(iWonder):
 			city.setHasRealBuilding(iWonder, True)
-			
+
 
 @handler("playerDestroyed")
 def preserveCivilizationAttributes(iPlayer):
@@ -298,6 +299,10 @@ class Birth(object):
 		return team(self.player.getTeam())
 	
 	@property
+	def data(self):
+		return data.players[self.iPlayer]
+	
+	@property
 	def name(self):
 		if self.iPlayer is None:
 			return "Unassigned civ: %s" % infos.civ(self.iCiv).getText()
@@ -327,12 +332,15 @@ class Birth(object):
 	def reset(self):
 		# reset AI
 		self.player.AI_reset()
+		
+		# reset stability
+		self.data.resetStability()
 	
 		# reset diplomatic relations
 		self.resetDiplomacy()
 	
-		# reset player espionage spending
-		player().setEspionageSpendingWeightAgainstTeam(self.player.getTeam(), 0)
+		# reset espionage against
+		self.resetEspionage()
 	
 		# reset great people
 		self.resetGreatPeople()
@@ -349,6 +357,12 @@ class Birth(object):
 				
 			self.team.cutContact(player(iOtherPlayer).getTeam())
 	
+	def resetEspionage(self):
+		player().setEspionageSpendingWeightAgainstTeam(self.player.getTeam(), 0)
+		
+		for iOtherPlayer in players.all():
+			team(player(iOtherPlayer).getTeam()).setEspionagePointsAgainstTeam(self.player.getTeam(), 0)
+	
 	def resetGreatPeople(self):
 		self.player.resetGreatPeopleCreated()
 		
@@ -364,6 +378,10 @@ class Birth(object):
 	def updateStartingLocation(self):
 		startingPlot = plots.capital(self.iCiv)
 		self.player.setStartingPlot(startingPlot, False)
+	
+	def updateNames(self):
+		setLeader(self.iPlayer, startingLeader(self.iPlayer))
+		setDesc(self.iPlayer, peoplesName(self.iPlayer))
 		
 	def updateArea(self):
 		if self.iCiv in lExpandedFlipCivs:
@@ -494,7 +512,7 @@ class Birth(object):
 			if city.isHolyCity():
 				completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
 			else:
-				data.players[self.iPlayer].lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
+				self.data.lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
 				
 				plot_(city).eraseAIDevelopment()
 				plot_(city).setImprovementType(iCityRuins)
@@ -503,7 +521,7 @@ class Birth(object):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
 			
 	def resetPlague(self):
-		data.players[self.iPlayer].iPlagueCountdown = -10
+		self.data.iPlagueCountdown = -10
 		clearPlague(self.iPlayer)
 	
 	def removeMinors(self):
@@ -642,9 +660,11 @@ class Birth(object):
 			self.canceled = True
 			log.rise("BIRTH CANCELED: no free slot found for %s", infos.civ(self.iCiv).getText())
 			return
-			
+		
+		self.data.setup()
 		self.updateCivilization()
 		self.updateStartingLocation()
+		self.updateNames()
 		
 		self.player.setInitialBirthTurn(self.iTurn)
 		

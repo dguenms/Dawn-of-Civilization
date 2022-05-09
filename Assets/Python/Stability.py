@@ -202,7 +202,7 @@ def onReleasedPlayer(iPlayer, iReleasedCivilization):
 	
 	if slot(iReleasedCivilization) >= 0:
 		player(iReleasedCivilization).AI_changeAttitudeExtra(iPlayer, 2)
-	
+
 def incrementStability(iPlayer):
 	setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
 	

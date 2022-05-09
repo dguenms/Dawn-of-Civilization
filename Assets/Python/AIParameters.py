@@ -30,7 +30,7 @@ def updateParameters(iPlayer):
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
 		
 @handler("playerCivAssigned")
-def onActivate(iPlayer):
+def onPlayerCivAssigned(iPlayer):
 	updateParameters(iPlayer)
 
 @handler("techAcquired")

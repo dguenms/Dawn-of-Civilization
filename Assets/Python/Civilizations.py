@@ -153,7 +153,10 @@ class Civilization(object):
 			self.player.changeGold(scale(self.iGold))
 		
 		if self.iStateReligion is not None:
+			iOldStateReligion = self.player.getStateReligion()
 			self.player.setLastStateReligion(self.iStateReligion)
+			
+			events.fireEvent("playerChangeStateReligion", self.player.getID(), self.iStateReligion, iOldStateReligion)
 		
 		if self.techs:
 			for iTech in self.techs:
