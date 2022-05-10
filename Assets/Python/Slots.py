@@ -38,7 +38,7 @@ def updateCivilization(iPlayer, iCiv):
 	
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
-		
+	
 	data.players[iPlayer].resetStability()
 
 def getImpact(iCiv):

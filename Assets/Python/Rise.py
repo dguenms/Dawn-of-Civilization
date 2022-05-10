@@ -661,7 +661,6 @@ class Birth(object):
 			log.rise("BIRTH CANCELED: no free slot found for %s", infos.civ(self.iCiv).getText())
 			return
 		
-		self.data.setup()
 		self.updateCivilization()
 		self.updateStartingLocation()
 		self.updateNames()
