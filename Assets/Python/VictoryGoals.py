@@ -2429,7 +2429,7 @@ class Count(BaseGoal):
 				self.check()
 		
 		def checkExpiration(self, city, iBuilding):
-			if isWonder(iBuilding) and iBuilding in self.values:
+			if isWonder(iBuilding) and any(iGoalBuilding == iBuilding and iRequired == 1 for iGoalBuilding, iRequired in self.arguments.objectives):
 				self.expire()
 	
 		return cls.desc("CITY_BUILDING").format(options.noSingularCount(isWonder)).subject(CyCity).objective(CvBuildingInfo).city(CyCity.getNumBuilding).handle("buildingBuilt", checkBuildingBuilt).expired("buildingBuilt", checkExpiration).subclass("CityBuilding")
