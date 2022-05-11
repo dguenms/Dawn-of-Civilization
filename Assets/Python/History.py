@@ -602,7 +602,7 @@ def acceptColonialAcquisition(iPlayer):
 		if city.isHuman():
 			colonialAcquisition(iPlayer, city)
 			
-	player().changeGold(targets.count() * 200)
+	player().changeGold(data.players[iPlayer].colonialAcquisitionCities.count() * 200)
 
 def refuseColonialAcquisition(iPlayer):
 	for city in data.players[iPlayer].colonialAcquisitionCities:
