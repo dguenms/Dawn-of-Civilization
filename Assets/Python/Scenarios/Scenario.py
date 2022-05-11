@@ -140,6 +140,9 @@ WONDER_ORIGINAL_BUILDERS = {
 	iGreatLibrary : (iEgypt, -285),
 	iPyramids : (iEgypt, -2600),
 	iGreatSphinx : (iEgypt, -2500),
+	iHangingGardens : (iBabylonia, -600),
+	iIshtarGate : (iBabylonia, -575),
+	iAlKhazneh : (iIndependent, 100),
 	iSalsalBuddha : (iIndependent, 570),
 	iJewishShrine : (iIndependent, -957),
 	iShwedagonPaya : (iIndependent, 1362),
@@ -152,15 +155,23 @@ WONDER_ORIGINAL_BUILDERS = {
 	iForbiddenPalace : (iChina, 1420),
 	iGrandCanal : (iChina, 618),
 	iPorcelainTower : (iChina, 1431),
+	iOracle : (iGreece, -800),
 	iParthenon : (iGreece, -438),
+	iTempleOfArtemis : (iGreece, -323),
+	iColossus : (iGreece, -280),
 	iHinduShrine : (iIndia, -322),
 	iBuddhistShrine : (iIndia, -260),
 	iIronPillar : (iIndia, 375),
 	iNalanda : (iIndia, 427),
 	iVijayaStambha : (iIndia, 1448),
 	iKhajuraho : (iIndia, 885),
+	iGreatCothon : (iPhoenicia, -600),
+	iMoaiStatues : (iPolynesia, 1250),
+	iApadanaPalace : (iPersia, -488),
 	iZoroastrianShrine : (iPersia, -400),
+	iGreatMausoleum : (iPersia, -350),
 	iGondeshapur : (iPersia, 256),
+	iAquaAppia : (iRome, -312),
 	iFlavianAmphitheatre : (iRome, 80),
 	iTempleOfKukulkan : (iMaya, 800),
 	iMonolithicChurch : (iEthiopia, 1181),
@@ -177,6 +188,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iSpiralMinaret : (iArabia, 851),
 	iIslamicShrine : (iArabia, 692),
 	iHouseOfWisdom : (iArabia, 754),
+	iAlamut : (iArabia, 1090),
 	iPotalaPalace : (iTibet, 1694),
 	iBorobudur : (iIndonesia, 825),
 	iPrambanan : (iIndonesia, 850),
@@ -199,6 +211,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iSantaMariaDelFiore : (iItaly, 1436),
 	iSanMarcoBasilica : (iItaly, 1063),
 	iSistineChapel : (iItaly, 1541),
+	iSilverTreeFountain : (iMongols, 1220),
 	iFloatingGardens : (iAztecs, 1350),
 	iShalimarGardens : (iMughals, 1642),
 	iHarmandirSahib : (iMughals, 1604),
@@ -256,8 +269,6 @@ class Scenario(object):
 		
 		self.dOwnedTiles = kwargs.get("dOwnedTiles", {})
 		self.iOwnerBaseCulture = kwargs.get("iOwnerBaseCulture", 0)
-		
-		self.lExpiredWonders = kwargs.get("lExpiredWonders", [])
 		
 		self.dGreatPeopleCreated = kwargs.get("dGreatPeopleCreated", {})
 		self.dGreatGeneralsCreated = kwargs.get("dGreatGeneralsCreated", {})
@@ -384,15 +395,14 @@ class Scenario(object):
 		game.setVoteSourceReligion(1, iCatholicism, False)
 	
 	def adjustWonders(self):
-		for iWonder in self.lExpiredWonders:
-			game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
-			
 		for iWonder, (iCiv, iYear) in WONDER_ORIGINAL_BUILDERS.items():
 			city = getBuildingCity(iWonder, False)
-			iYear = game.getTurnYear(year(min(iYear, self.iStartYear)))
+			iEarliestYear = game.getTurnYear(year(min(iYear, self.iStartYear)))
 			if city:
 				city.setBuildingOriginalOwner(iWonder, iCiv)
-				city.setBuildingOriginalTime(iWonder, iYear)
+				city.setBuildingOriginalTime(iWonder, iEarliestYear)
+			elif iYear < self.iStartYear:
+				game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
 	
 	def adjustGreatPeople(self):
 		for iCiv, iGreatPeople in self.dGreatPeopleCreated.items():
