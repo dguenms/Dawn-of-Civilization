@@ -117,6 +117,10 @@ class CvGameDesc:
 			gc.getGame().setMaxTurns(turns(self.maxTurns))
 		else:
 			gc.getGame().changeMaxTurns(-turns(self.gameTurn))
+			
+		for option in self.options:
+			optionType = gc.getInfoTypeForString(option)
+			gc.getGame().setOption(optionType, True)
 
 	def write(self, f):
 		"write out game data"
