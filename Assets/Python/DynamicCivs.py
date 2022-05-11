@@ -562,7 +562,7 @@ def setup():
 		data.civs[iChina].iAnarchyTurns += 3
 		
 	elif iScenario == i1700AD:
-		data.players[iCiv].iResurrections += 1
+		data.civs[iEgypt].iResurrections += 1
 		
 		for iCiv in [iVikings]:
 			checkNameChange(slot(iCiv))
