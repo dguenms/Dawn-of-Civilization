@@ -521,7 +521,7 @@ def isUnitOfRole(iUnit, iRole):
 	elif iRole == iLightEscort:
 		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getWithdrawalProbability() > 0
 	elif iRole == iWork:
-		return unit.getWorkRate() > 0 and unit.getCombat() == 0
+		return unit.getWorkRate() > 0 and unit.getCombat() == 0 and not unit.isSlave()
 	
 	raise Exception("Unexpected unit role: %d" % iRole)
 	

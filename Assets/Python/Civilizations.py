@@ -1155,18 +1155,6 @@ dStartingExperience = CivDict({
 	},
 }, {})
 
-dAlwaysTrain = CivDict({
-	iGreece: [iHoplite, iCatapult],
-	iPhoenicia: [iNumidianCavalry],
-	iByzantium: [iLegion],
-	iArabia: [iMobileGuard, iGhazi],
-	iOttomans: [iJanissary, iGreatBombard],
-}, [])
-
-dNeverTrain = CivDict({
-	iCongo: [iCrossbowman],
-}, [])
-
 def createSpecificUnits(iPlayer, tile):
 	iCiv = civ(iPlayer)
 	bHuman = player(iPlayer).isHuman()
@@ -1835,10 +1823,13 @@ dStartingExperience = CivDict({
 	},
 }, {})
 
+
 dAlwaysTrain = CivDict({
 	iGreece: [iHoplite, iCatapult],
+	iPhoenicia: [iNumidianCavalry],
 	iByzantium: [iLegion],
 	iArabia: [iMobileGuard, iGhazi],
+	iAztecs: [iJaguar],
 	iOttomans: [iJanissary, iGreatBombard],
 	iMexico: [iGrenadier],
 }, [])
