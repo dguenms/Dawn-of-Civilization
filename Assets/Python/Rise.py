@@ -908,7 +908,8 @@ class Birth(object):
 			if since(scenarioStartTurn()):
 				ensureDefenders(self.iPlayer, city, 2)
 		
-		convertSurroundingPlotCulture(self.iPlayer, flippedPlots)
+		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.land())
+		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.water().where(lambda p: p.getPlayerCityRadiusCount(self.iPlayer) > 0))
 		
 		for iOwner, cityNames in flippedPlayerCities.items():
 			self.warOnFlip(iOwner, cityNames)
