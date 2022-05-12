@@ -5,7 +5,7 @@ from Locations import *
 from RFCUtils import *
 
 from Events import events, handler, popup_handler
-from Slots import addPlayer
+from Slots import addPlayer, findSlot
 
 from CvScreenEnums import *
 
