@@ -6798,7 +6798,10 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	{
 		iYield += GET_PLAYER(ePlayer).getImprovementYieldChange(eImprovement, eYield);
 		iYield += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getImprovementYieldChange(eImprovement, eYield);
-		if (!isWater() && !isPeak()) iYield -= GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
+		if (!isWater() && !isPeak() && !isCity())
+		{
+			iYield -= GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
+		}
 	}
 
 	if (ePlayer != NO_PLAYER)
@@ -6981,7 +6984,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 		// Leoreth: unimproved land tiles by civic effect
 		// yield is subtracted again in calculateImprovementYieldChange()
-		if (!isWater() && !isImpassable())
+		if (!isWater() && !isImpassable() && !isCity())
 		{
 			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
 		}
