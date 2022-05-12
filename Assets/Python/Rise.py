@@ -751,7 +751,7 @@ class Birth(object):
 	
 			if majors and majors.none(self.team.isAtWar):
 				target = expansionCities.where(lambda city: not is_minor(city)).closest_all(cities.owner(self.iPlayer))
-				self.team.declareWar(target.getTeam(), False, WarPlanTypes.WARPLAN_TOTAL)
+				self.team.declareWar(target.getTeam(), True, WarPlanTypes.WARPLAN_TOTAL)
 
 	def checkIncompatibleCivs(self):
 		if self.iCiv not in dClearedForBirth:
