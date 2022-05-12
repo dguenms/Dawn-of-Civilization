@@ -720,6 +720,9 @@ class Birth(object):
 		if self.player.getNumCities() == 0:
 			return
 		
+		if self.team.isAVassal():
+			return
+		
 		if self.iExpansionTurns < 0:
 			return
 		
