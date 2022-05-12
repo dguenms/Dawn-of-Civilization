@@ -829,7 +829,7 @@ def expelUnits(iPlayer, area):
 				if unit.isNone():
 					continue
 			
-				if destination:
+				if not is_minor(iOwner) and destination:
 					move(unit, destination)
 				else:
 					unit.kill(False, -1)
