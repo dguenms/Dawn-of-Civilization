@@ -389,7 +389,7 @@ class Birth(object):
 			ownerCities = cities.all().area(self.location).where(lambda city: city.getOwner() in owners).where(lambda city: not plot(city).isCore(city.getOwner()))
 			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)) and real_distance(city, self.location) <= 12)
 			
-			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
+			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
 			
 			self.area += additionalPlots
 			self.area = self.area.unique()
