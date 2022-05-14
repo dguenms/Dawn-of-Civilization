@@ -112,7 +112,8 @@ def spawnWarUnits(bWar, iAttacker, iDefender, bFromDefensivePact):
 	
 	if city:
 		createRoleUnits(iDefender, city, getAdditionalUnits(iDefender))
-		createSpecificAdditionalUnits(iDefender, city)
+		for iUnit, iAmount in getSpecificAdditionalUnits(iDefender):
+			makeUnits(iDefender, iUnit, city, iAmount)
 
 
 @handler("changeWar")
@@ -156,7 +157,9 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 		for _ in range(iAdditionalUnitsRequired):
 			createRoleUnits(iDefender, capital(iDefender), additionalUnits)
 			for iUnit, iAmount in specificAdditionalUnits:
-				makeUnits(iDefender, iUnit, capital(iDefender), iAmount)
+				iExperience = max(iRoleExperience for iRole, iRoleExperience in dStartingExperience[iDefender].items() if isUnitOfRole(iUnit, iRole))
+				print "Specific additional unit %s with %d experience" % (infos.unit(iUnit).getText(), iExperience)
+				makeUnits(iDefender, iUnit, capital(iDefender), iAmount).experience(iExperience)
 
 
 @handler("changeWar")
