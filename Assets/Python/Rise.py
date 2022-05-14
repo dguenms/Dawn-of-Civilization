@@ -529,7 +529,7 @@ class Birth(object):
 	
 	def removeMinors(self):
 		cities = self.area.cities()
-		edge = self.area.expand(1).edge().where_surrounding(lambda p: not p.isCity()).passable()
+		edge = self.area.expand(1).edge().where_surrounding(lambda p: not p.isCity()).where(lambda p: not p.isOwned() or is_minor(p)).passable()
 		
 		for unit in self.area.units().minor():
 			if unit.isAnimal():
