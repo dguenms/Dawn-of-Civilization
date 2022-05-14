@@ -409,7 +409,7 @@ def format_separators(list, separator, last_separator, format=lambda x: x):
 	
 	def ascii_format(item):
 		formatted = format(item)
-		if isinstance(formatted, str):
+		if isinstance(formatted, (str, unicode)):
 			return formatted.encode("ascii", "xmlcharrefreplace")
 		return str(formatted)
 
