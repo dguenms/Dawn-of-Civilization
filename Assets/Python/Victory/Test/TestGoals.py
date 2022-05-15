@@ -319,6 +319,7 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_check_not_fulfilled(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.check()
 		self.assertEqual(self.goal.state, POSSIBLE)
@@ -331,6 +332,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+			
 			self.goal.check()
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
@@ -341,6 +344,7 @@ class TestGoal(ExtendedTestCase):
 		
 		self.goal.succeed()
 		self.assertEqual(self.goal.state, SUCCESS)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.check()
 		self.assertEqual(self.goal.state, SUCCESS)
@@ -356,6 +360,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, 3)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			self.goal.check()
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
@@ -366,6 +372,7 @@ class TestGoal(ExtendedTestCase):
 		
 		self.goal.fail()
 		self.assertEqual(self.goal.state, FAILURE)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.check()
 		self.assertEqual(self.goal.state, FAILURE)
@@ -381,6 +388,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			self.goal.check()
 			self.assertEqual(self.goal.state, FAILURE)
 		finally:
@@ -412,6 +421,7 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_final_check_not_fulfilled(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.final_check()
 		self.assertEqual(self.goal.state, FAILURE)
@@ -424,6 +434,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			self.goal.final_check()
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
@@ -434,6 +446,7 @@ class TestGoal(ExtendedTestCase):
 		
 		self.goal.succeed()
 		self.assertEqual(self.goal.state, SUCCESS)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.final_check()
 		self.assertEqual(self.goal.state, SUCCESS)
@@ -449,6 +462,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			self.goal.final_check()
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
@@ -459,6 +474,7 @@ class TestGoal(ExtendedTestCase):
 		
 		self.goal.fail()
 		self.assertEqual(self.goal.state, FAILURE)
+		self.assertEqual(self.goal.fulfilled(), False)
 		
 		self.goal.final_check()
 		self.assertEqual(self.goal.state, FAILURE)
@@ -474,6 +490,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			self.goal.final_check()
 			self.assertEqual(self.goal.state, FAILURE)
 		finally:
@@ -487,6 +505,8 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), True)
+		
 			events.fireEvent("cityAcquired", 1, self.iPlayer, cities[0], True, False)
 			
 			self.assertEqual(self.goal.state, SUCCESS)
@@ -499,6 +519,8 @@ class TestGoal(ExtendedTestCase):
 		city = TestCities.one()
 		
 		try:
+			self.assertEqual(self.goal.fulfilled(), False)
+		
 			events.fireEvent("cityAcquired", 1, self.iPlayer, city, True, False)
 			
 			self.assertEqual(self.goal.state, POSSIBLE)
@@ -517,8 +539,9 @@ class TestGoal(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
-			goal.check()
-			
+			self.assertEqual(goal.fulfilled(), True)
+		
+			goal.check()			
 			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			cities.kill()
@@ -651,6 +674,7 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.state, POSSIBLE)
 			
 			city.setHasRealBuilding(iGranary, True)
+			self.assertEqual(goal.fulfilled(), True)
 			
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, SUCCESS)
@@ -663,6 +687,7 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(goal.fulfilled(), False)
 			
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, FAILURE)
@@ -674,6 +699,7 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(goal.fulfilled(), False)
 			
 			events.fireEvent("BeginPlayerTurn", 1, self.iPlayer)
 			self.assertEqual(goal.state, POSSIBLE)
@@ -688,6 +714,7 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.state, POSSIBLE)
 			
 			city.setHasRealBuilding(iGranary, 1)
+			self.assertEqual(goal.fulfilled(), True)
 			
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, SUCCESS)
@@ -700,6 +727,7 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(goal.fulfilled(), False)
 			
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, POSSIBLE)
@@ -714,6 +742,7 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.state, POSSIBLE)
 			
 			city.setHasRealBuilding(iGranary, True)
+			self.assertEqual(goal.fulfilled(), True)
 			
 			events.fireEvent("BeginPlayerTurn", 1, self.iPlayer)
 			self.assertEqual(goal.state, SUCCESS)
@@ -731,6 +760,32 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.evaluator, WorldEvaluator(0))
 		finally:
 			goal.deregister_handlers()
+	
+	def test_required_fulfilled(self):
+		goal = Goal([BuildingCount(iGranary, 2), BuildingCount(iLibrary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=1)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.fulfilled(), True)
+			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2", self.FAILURE + "Libraries: 0 / 2"])
+		finally:
+			cities.kill()
+	
+	def test_required_not_fulfilled(self):
+		goal = Goal([BuildingCount(iGranary, 2), BuildingCount(iLibrary, 2), BuildingCount(iWalls, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=2)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.fulfilled(), False)
+			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2", self.FAILURE + "Libraries: 0 / 2", self.FAILURE + "Walls: 0 / 2"])
+		finally:
+			cities.kill()
 
 
 test_cases = [

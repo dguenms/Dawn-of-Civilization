@@ -129,10 +129,12 @@ class GoalDescription(object):
 
 class Goal(object):
 
-	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, by=None, at=None, every=None, **options):
+	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, required=None, by=None, at=None, every=None, **options):
 		self.requirements = requirements
 		self.desc_key = desc_key
 		self.iPlayer = iPlayer
+		
+		self.required = required
 		
 		self.state = POSSIBLE
 		self.title_key = ""
@@ -142,6 +144,9 @@ class Goal(object):
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
 		
 		self.handlers = Handlers()
+		
+		if self.required is None:
+			self.required = len(self.requirements)
 		
 		if by is not None:
 			self.by(by)
@@ -188,11 +193,14 @@ class Goal(object):
 	def fail(self):
 		self.state = FAILURE
 	
+	def fulfilled(self):
+		return count(requirement.fulfilled(self.evaluator) for requirement in self.requirements) >= self.required
+	
 	def check(self):
 		if not self.possible():
 			return
 		
-		if all(requirement.fulfilled(self.evaluator) for requirement in self.requirements):
+		if self.fulfilled():
 			self.succeed()
 	
 	def expire(self):
