@@ -54,6 +54,9 @@ class Requirement(object):
 	def description(self, **options):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
 	
+	def format_description(self, **options):
+		return self.description(**options)
+	
 	def progress(self, evaluator, **options):
 		return "%s %s" % (self.indicator(evaluator), text(self.PROGR_KEY, *self.format_parameters(**options)))
 

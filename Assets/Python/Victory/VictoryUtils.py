@@ -120,5 +120,12 @@ def indicator(value):
 	return u"%c" % game.getSymbolID(symbol)
 
 
+def capitalize(string):
+	if not string:
+		return string
+	
+	return string[0].upper() + string[1:]
+
+
 plots = AreaDefinitionFactory()
 

@@ -788,10 +788,178 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 
 
+class TestAll(ExtendedTestCase):
+
+	def setUp(self):
+		self.all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+	
+	def test_str(self):
+		self.assertEqual(str(self.all), "All(GoalDescription(BuildingCount(Granary, 3)), GoalDescription(BuildingCount(Library, 3)))")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.all), "All(GoalDescription(BuildingCount(Granary, 3)), GoalDescription(BuildingCount(Library, 3)))")
+	
+	def test_equal(self):
+		identical = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		different_description = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iWalls, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		different_num_descriptions = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		
+		self.assertEqual(self.all, identical)
+		self.assertNotEqual(self.all, different_description)
+		self.assertNotEqual(self.all, different_num_descriptions)
+	
+	def test_pickle(self):
+		self.assertPickleable(self.all)
+	
+	def test_description(self):
+		self.assertEqual(self.all.description(), "Control three Granaries and control three Libraries")
+	
+	def test_description_option(self):
+		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
+		
+		self.assertEqual(all.description(), "Control three Granaries and control three Libraries by 1000 AD")
+	
+	def test_description_subgoal_option(self):
+		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		
+		self.assertEqual(all.description(), "Control three Granaries by 1000 AD and control three Libraries")
+	
+	def test_create(self):
+		all_goal = self.all(0)
+		
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+	
+	def test_create_options(self):
+		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
+		all_goal = all(0)
+		
+		try:
+			self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+			self.assertEqual(all_goal.iYear, 1000)
+			self.assertEqual(all_goal.requirements[0].iYear, 1000)
+		finally:
+			all_goal.deregister_handlers()
+	
+	def test_create_subgoal_options(self):
+		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
+		all_goal = all(0)
+		
+		try:
+			self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+			self.assertEqual(all_goal.iYear, None)
+			self.assertEqual(all_goal.requirements[0].iYear, 1000)
+		finally:
+			all_goal.deregister_handlers()
+
+
+class TestAllGoal(ExtendedTestCase):
+
+	def setUp(self):
+		self.first_goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.second_goal = Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.all = AllGoal([self.first_goal, self.second_goal], 0)
+	
+	def tearDown(self):
+		self.all.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.all), "AllGoal(Goal([BuildingCount(Granary, 3)], 0), Goal([BuildingCount(Library, 3)], 0))")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.all), "AllGoal(Goal([BuildingCount(Granary, 3)], 0), Goal([BuildingCount(Library, 3)], 0))")
+	
+	def test_equal(self):
+		identical = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_goal = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iWalls, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_num_goals = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_player = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 1)
+		
+		self.assertEqual(self.all, identical)
+		self.assertNotEqual(self.all, different_goal)
+		self.assertNotEqual(self.all, different_num_goals)
+		self.assertNotEqual(self.all, different_player)
+	
+	def test_pickle(self):
+		self.assertPickleable(self.first_goal)
+		self.assertPickleable(self.second_goal)
+		self.assertPickleable(self.all)
+	
+	def test_fulfilled_no_success(self):
+		self.assertEqual(self.all.fulfilled(), False)
+	
+	def test_fulfilled_one_success(self):
+		self.first_goal.succeed()
+		
+		self.assertEqual(self.all.fulfilled(), False)
+	
+	def test_fulfilled_all_success(self):
+		self.first_goal.succeed()
+		self.second_goal.succeed()
+		
+		self.assertEqual(self.all.fulfilled(), True)
+	
+	def test_one_success(self):
+		self.first_goal.succeed()
+		
+		self.assertEqual(self.first_goal.state, SUCCESS)
+		self.assertEqual(self.second_goal.state, POSSIBLE)
+		self.assertEqual(self.all.state, POSSIBLE)
+	
+	def test_all_success(self):
+		self.first_goal.succeed()
+		self.second_goal.succeed()
+		
+		self.assertEqual(self.first_goal.state, SUCCESS)
+		self.assertEqual(self.second_goal.state, SUCCESS)
+		self.assertEqual(self.all.state, SUCCESS)
+	
+	def test_one_failure(self):
+		self.first_goal.fail()
+		
+		self.assertEqual(self.first_goal.state, FAILURE)
+		self.assertEqual(self.second_goal.state, POSSIBLE)
+		self.assertEqual(self.all.state, FAILURE)
+	
+	def test_all_failure(self):
+		self.first_goal.fail()
+		self.second_goal.fail()
+	
+		self.assertEqual(self.first_goal.state, FAILURE)
+		self.assertEqual(self.second_goal.state, FAILURE)
+		self.assertEqual(self.all.state, FAILURE)
+	
+	def test_description(self):
+		self.assertEqual(self.all.description(), "Control three Granaries and control three Libraries")
+	
+	def test_description_by(self):
+		all = AllGoal([self.first_goal, self.second_goal], 0, by=1000)
+		
+		self.assertEqual(all.description(), "Control three Granaries and control three Libraries by 1000 AD")
+	
+	def test_description_at(self):
+		all = AllGoal([self.first_goal, self.second_goal], 0, at=1000)
+		
+		self.assertEqual(all.description(), "Control three Granaries and control three Libraries in 1000 AD")
+	
+	def test_description_subgoal_by(self):
+		first_goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=1000)
+		all = AllGoal([first_goal, self.second_goal], 0)
+		
+		self.assertEqual(all.description(), "Control three Granaries by 1000 AD and control three Libraries")
+	
+	def test_description_subgoal_at(self):
+		first_goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
+		all = AllGoal([first_goal, self.second_goal], 0)
+		
+		self.assertEqual(all.description(), "Control three Granaries in 1000 AD and control three Libraries")
+
+
 test_cases = [
 	TestParameters,
 	TestParameterSet,
 	TestGoalDefinition,
 	TestGoalDescription,
 	TestGoal,
+	TestAll,
+	TestAllGoal,
 ]

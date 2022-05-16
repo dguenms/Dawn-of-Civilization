@@ -121,10 +121,13 @@ class GoalDescription(object):
 			
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
-	def description(self):
+	def format_description(self):
 		requirement_descriptions = format_separators(self.requirements, ",", text("TXT_KEY_AND"), lambda requirement: requirement.description())
 		description_descs = [(self.desc_key, requirement_descriptions)] + self.desc_suffixes
 		return " ".join(text(*desc_args) for desc_args in description_descs)
+	
+	def description(self):
+		return capitalize(self.format_description())
 		
 
 class Goal(object):
@@ -237,10 +240,13 @@ class Goal(object):
 	def every(self):
 		self.handlers.add("BeginPlayerTurn", self.handle_every)
 	
-	def description(self):
-		requirement_descriptions = format_separators(self.requirements, ",", text("TXT_KEY_AND"), lambda requirement: requirement.description())
+	def format_description(self):
+		requirement_descriptions = format_separators(self.requirements, ",", text("TXT_KEY_AND"), lambda requirement: requirement.format_description())
 		description_descs = [(self.desc_key, requirement_descriptions)] + self.desc_suffixes
 		return " ".join(text(*desc_args) for desc_args in description_descs)
+	
+	def description(self):
+		return capitalize(self.format_description())
 	
 	def title(self):
 		return text(self.title_key)
@@ -261,4 +267,79 @@ class Goal(object):
 	
 	def progress(self):
 		return [requirement.progress(self.evaluator) for requirement in self.requirements]
+
+
+class All(object):
+
+	def __init__(self, *descriptions, **options):
+		self.descriptions = descriptions
+		self.options = options
+		
+		for description in self.descriptions:
+			description.options.update(self.options)
+		
+		self.desc_suffixes = []
+		
+		if self.options.get("at") is not None:
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
+		
+		if self.options.get("by") is not None:
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
+	
+	def __call__(self, iPlayer):
+		return AllGoal([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
+	
+	def __repr__(self):
+		return "All(%s)" % ", ".join(str(description) for description in self.descriptions)
+	
+	def __eq__(self, other):
+		if not isinstance(other, All):
+			return False
+		
+		return self.descriptions == other.descriptions
+		
+	def format_description(self):
+		requirement_descriptions = format_separators(self.descriptions, ",", text("TXT_KEY_AND"), GoalDescription.format_description)
+		description_descs = [("TXT_KEY_VICTORY_DESC_SIMPLE", requirement_descriptions)] + self.desc_suffixes
+		return " ".join(text(*desc_args) for desc_args in description_descs)
+	
+	def description(self):
+		return capitalize(self.format_description())
+		
+		
+class AllGoal(Goal):
+
+	def __init__(self, goals, iPlayer, **options):
+		Goal.__init__(self, goals, "TXT_KEY_VICTORY_DESC_SIMPLE", iPlayer, **options)
+		
+		for goal in goals:
+			self.add_subgoal(goal)
+	
+	def __repr__(self):
+		return "AllGoal(%s)" % ", ".join(str(goal) for goal in self.requirements)
+
+	def __eq__(self, other):
+		if not isinstance(other, AllGoal):
+			return False
+		
+		return Goal.__eq__(self, other)
+	
+	def register_handlers(self):
+		pass
+	
+	def fulfilled(self):
+		return all(goal.succeeded() for goal in self.requirements)
+			
+	def add_subgoal(self, goal):
+		def fail(subgoal):
+			subgoal.state = FAILURE
+			self.fail()
+		
+		def succeed(subgoal):
+			subgoal.state = SUCCESS
+			self.check()
+		
+		goal.fail = fail.__get__(goal, Goal)
+		goal.succeed = succeed.__get__(goal, Goal)
+		
 		

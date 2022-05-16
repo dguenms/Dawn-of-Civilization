@@ -59,6 +59,21 @@ class TestTextProcessing(ExtendedTestCase):
 		self.assertEqual(plural("Ship of the Line"), "Ships of the Line")
 		self.assertEqual(plural("Great Statesman"), "Great Statesmen")
 		self.assertEqual(plural("cathedral of your state religion"), "cathedrals of your state religion")
+	
+	def test_capitalize(self):
+		self.assertEqual(capitalize("hello"), "Hello")
+	
+	def test_capitalize_multiple_words(self):
+		self.assertEqual(capitalize("hello world"), "Hello world")
+	
+	def test_capitalize_already_capital(self):
+		self.assertEqual(capitalize("Hello World"), "Hello World")
+	
+	def test_capitalize_single_character(self):
+		self.assertEqual(capitalize("a"), "A")
+	
+	def test_capitalize_empty(self):
+		self.assertEqual(capitalize(""), "")
 
 
 class TestAreaDefinition(ExtendedTestCase):

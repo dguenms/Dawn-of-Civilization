@@ -34,7 +34,7 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CONTROL</Tag>
-		<English>Control %s1</English>
+		<English>control %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -42,7 +42,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_HAVE</Tag>
-		<English>Have %s1</English>
+		<English>have %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -50,7 +50,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_FIRST_DISCOVER</Tag>
-		<English>Be the first to discover %s1</English>
+		<English>be the first to discover %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -58,7 +58,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_BROKERED_PEACE</Tag>
-		<English>End %s1 wars through diplomacy</English>
+		<English>end %s1 wars through diplomacy</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
