@@ -7,6 +7,12 @@ class TestBuildingCount(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = BuildingCount(iGranary, 3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 	
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "BuildingCount(Granary, 3)")
@@ -250,110 +256,96 @@ class TestBuildingCount(ExtendedTestCase):
 			city.kill()
 	
 	def test_check_city_acquired(self):
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			self.requirement.register_handlers(goal)
-
 			events.fireEvent("cityAcquired", 1, self.iPlayer, city, True, False)
 		
-			self.assertEqual(goal.checked, True)
+			self.assertEqual(self.goal.checked, True)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 			
 	def test_check_city_acquired_other(self):
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			self.requirement.register_handlers(goal)
-			
 			events.fireEvent("cityAcquired", 1, 2, city, True, False)
 			
-			self.assertEqual(goal.checked, False)
+			self.assertEqual(self.goal.checked, False)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 	
 	def test_check_building_built(self):
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			self.requirement.register_handlers(goal)
-			
 			events.fireEvent("buildingBuilt", city, iGranary)
 			
-			self.assertEqual(goal.checked, True)
+			self.assertEqual(self.goal.checked, True)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 	
 	def test_check_building_built_unique_building(self):
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			self.requirement.register_handlers(goal)
-			
 			events.fireEvent("buildingBuilt", city, iTerrace)
 			
-			self.assertEqual(goal.checked, True)
+			self.assertEqual(self.goal.checked, True)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 	
 	def test_check_building_built_other_owner(self):
-		goal = TestGoal()
 		city = TestCities.one(1)
 		
 		try:
-			self.requirement.register_handlers(goal)
-			
 			events.fireEvent("buildingBuilt", city, iGranary)
 			
-			self.assertEqual(goal.checked, False)
+			self.assertEqual(self.goal.checked, False)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 	
 	def test_check_building_built_other_building(self):
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			self.requirement.register_handlers(goal)
-			
 			events.fireEvent("buildingBuilt", city, iLibrary)
 			
-			self.assertEqual(goal.checked, False)
+			self.assertEqual(self.goal.checked, False)
 		finally:
 			city.kill()
-			self.requirement.deregister_handlers()
 	
 	def test_check_building_built_aggregate(self):
 		requirement = BuildingCount(SumAggregate(iGranary, iLibrary), 3)
 	
-		goal = TestGoal()
 		city = TestCities.one()
 		
 		try:
-			requirement.register_handlers(goal)
+			requirement.register_handlers(self.goal)
 			
 			events.fireEvent("buildingBuilt", city, iGranary)
 			
-			self.assertEqual(goal.checked, True)
+			self.assertEqual(self.goal.checked, True)
 		finally:
 			city.kill()
 			requirement.deregister_handlers()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
 
 
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = Control(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 	
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "Control(Test Area)")
@@ -413,12 +405,23 @@ class TestControl(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Test Area")
 		finally:
 			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestGoldAmount(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = GoldAmount(500)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 	
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "GoldAmount(500)")
@@ -468,6 +471,11 @@ class TestGoldAmount(ExtendedTestCase):
 		finally:
 			for iPlayer in [0, 1, 2]:
 				player(iPlayer).setGold(0)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestFirstDiscover(ExtendedTestCase):
@@ -548,6 +556,11 @@ class TestFirstDiscover(ExtendedTestCase):
 			team(1).setHasTech(iEngineering, False, 1, True, False)
 			team(1).setVassal(0, False, False)
 	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+	
 
 class TestBrokeredPeace(ExtendedTestCase):
 
@@ -607,11 +620,22 @@ class TestBrokeredPeace(ExtendedTestCase):
 		finally:
 			team(1).setVassal(0, False, False)
 	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+	
 	
 class TestPopulationPercent(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = PopulationPercent(30)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 		
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "PopulationPercent(30%)")
@@ -669,12 +693,23 @@ class TestPopulationPercent(ExtendedTestCase):
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestBestPopulationPlayer(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = BestPopulationPlayer()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 		
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "BestPopulationPlayer()")
@@ -762,12 +797,23 @@ class TestBestPopulationPlayer(ExtendedTestCase):
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestBestPopulationCities(ExtendedTestCase):
 
 	def setUp(self):
 		self.requirement = BestPopulationCities(3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
 	
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "BestPopulationCities(3)")
@@ -936,6 +982,11 @@ class TestBestPopulationCities(ExtendedTestCase):
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 test_cases = [
