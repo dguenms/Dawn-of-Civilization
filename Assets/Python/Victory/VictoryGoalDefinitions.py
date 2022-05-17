@@ -132,11 +132,12 @@ class GoalDescription(object):
 
 class Goal(object):
 
-	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, required=None, by=None, at=None, every=None, **options):
+	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, by=None, at=None, every=None, **options):
 		self.requirements = requirements
 		self.desc_key = desc_key
 		self.iPlayer = iPlayer
 		
+		self.mode = mode
 		self.required = required
 		
 		self.state = POSSIBLE
@@ -185,16 +186,21 @@ class Goal(object):
 		return self.state == POSSIBLE
 	
 	def succeeded(self):
-		return self.state == SUCCESS
+		return self.mode == STATEFUL and self.state == SUCCESS or self.fulfilled()
 	
 	def failed(self):
 		return self.state == FAILURE
 	
+	def set_state(self, state):
+		if self.state != state:
+			if self.mode == STATEFUL or state != SUCCESS:
+				self.state = state
+	
 	def succeed(self):
-		self.state = SUCCESS
+		self.set_state(SUCCESS)
 	
 	def fail(self):
-		self.state = FAILURE
+		self.set_state(FAILURE)
 	
 	def fulfilled(self):
 		return count(requirement.fulfilled(self.evaluator) for requirement in self.requirements) >= self.required
@@ -332,11 +338,11 @@ class AllGoal(Goal):
 			
 	def add_subgoal(self, goal):
 		def fail(subgoal):
-			subgoal.state = FAILURE
+			subgoal.set_state(FAILURE)
 			self.fail()
 		
 		def succeed(subgoal):
-			subgoal.state = SUCCESS
+			subgoal.set_state(SUCCESS)
 			self.check()
 		
 		goal.fail = fail.__get__(goal, Goal)

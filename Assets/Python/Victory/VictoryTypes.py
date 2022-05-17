@@ -187,6 +187,6 @@ TECH = InfoType("Tech", infos.tech)
 
 FAILURE, POSSIBLE, SUCCESS = Enum.of("State", ("Failure", "Possible", "Success"))
 
-
 SELF, VASSALS, ALLIES, RELIGION, SECULAR, WORLD = Enum.of("Subject", ("Self", "Vassals", "Allies", "Religion", "Secular", "World"))
 
+STATEFUL, STATELESS = Enum.of("Mode", ("Stateful", "Stateless"))

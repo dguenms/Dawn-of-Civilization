@@ -786,6 +786,34 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2", self.FAILURE + "Libraries: 0 / 2", self.FAILURE + "Walls: 0 / 2"])
 		finally:
 			cities.kill()
+	
+	def test_succeed_stateless(self):
+		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		
+		self.assertEqual(goal.state, POSSIBLE)
+		
+		goal.succeed()
+		self.assertEqual(goal.state, POSSIBLE)
+	
+	def test_succeeded_stateless_not_fulfilled(self):
+		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		
+		self.assertEqual(goal.state, POSSIBLE)
+		self.assertEqual(goal.succeeded(), False)
+	
+	def test_succeeded_stateless_fulfilled(self):
+		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.state, POSSIBLE)
+			self.assertEqual(goal.fulfilled(), True)
+			self.assertEqual(goal.succeeded(), True)
+		finally:
+			cities.kill()
 
 
 class TestAll(ExtendedTestCase):
