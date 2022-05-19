@@ -576,8 +576,8 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_progress_not_fulfilled(self):
 		self.assertEqual(self.goal.progress(), [self.FAILURE + "Granaries: 0 / 3"])
-		self.assertEqual(self.double_goal.progress(), [self.FAILURE + "Granaries: 0 / 3", self.FAILURE + "Libraries: 0 / 4"])
-		self.assertEqual(self.triple_goal.progress(), [self.FAILURE + "Granaries: 0 / 3", self.FAILURE + "Libraries: 0 / 4", self.FAILURE + "Walls: 0 / 5"])
+		self.assertEqual(self.double_goal.progress(), [self.FAILURE + "Granaries: 0 / 3 " + self.FAILURE + "Libraries: 0 / 4"])
+		self.assertEqual(self.triple_goal.progress(), [self.FAILURE + "Granaries: 0 / 3 " + self.FAILURE + "Libraries: 0 / 4 " + self.FAILURE + "Walls: 0 / 5"])
 	
 	def test_progress_fulfilled(self):
 		cities = TestCities.num(3)
@@ -587,8 +587,8 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(self.goal.progress(), [self.SUCCESS + "Granaries: 3 / 3"])
-			self.assertEqual(self.double_goal.progress(), [self.SUCCESS + "Granaries: 3 / 3", self.FAILURE + "Libraries: 3 / 4"])
-			self.assertEqual(self.triple_goal.progress(), [self.SUCCESS + "Granaries: 3 / 3", self.FAILURE + "Libraries: 3 / 4", self.FAILURE + "Walls: 3 / 5"])
+			self.assertEqual(self.double_goal.progress(), [self.SUCCESS + "Granaries: 3 / 3 " + self.FAILURE + "Libraries: 3 / 4"])
+			self.assertEqual(self.triple_goal.progress(), [self.SUCCESS + "Granaries: 3 / 3 " + self.FAILURE + "Libraries: 3 / 4 " + self.FAILURE + "Walls: 3 / 5"])
 		finally:
 			cities.kill()
 	
@@ -606,6 +606,27 @@ class TestGoal(ExtendedTestCase):
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
+			goal.deregister_handlers()
+	
+	def test_progress_multiline_requirement(self):
+		goal = Goal([BestPopulationCities(3)], BestPopulationCities.GOAL_DESC_KEY, self.iPlayer)
+		
+		city0, city1, city2 = cities = TestCities.owners(0, 1, 2)
+		
+		city0.setName("First", False)
+		city0.setPopulation(10)
+		
+		city1.setName("Second", False)
+		city1.setPopulation(8)
+		
+		city2.setName("Third", False)
+		city2.setPopulation(5)
+		
+		try:
+			self.assertEqual(goal.progress(), [self.SUCCESS + "Most populous: First (10)", self.FAILURE + "Second most populous: Second (8)", self.FAILURE + "Third most populous: Third (5)"])
+		finally:
+			cities.kill()
+			goal.deregister_handlers()
 	
 	def test_desc_suffixes(self):
 		self.goal.desc_suffixes.append(("and something else",))
@@ -770,7 +791,7 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal.fulfilled(), True)
-			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2", self.FAILURE + "Libraries: 0 / 2"])
+			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2 " + self.FAILURE + "Libraries: 0 / 2"])
 		finally:
 			cities.kill()
 	
@@ -783,7 +804,7 @@ class TestGoal(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(goal.fulfilled(), False)
-			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2", self.FAILURE + "Libraries: 0 / 2", self.FAILURE + "Walls: 0 / 2"])
+			self.assertEqual(goal.progress(), [self.SUCCESS + "Granaries: 2 / 2 " + self.FAILURE + "Libraries: 0 / 2 " + self.FAILURE + "Walls: 0 / 2"])
 		finally:
 			cities.kill()
 	
@@ -980,6 +1001,9 @@ class TestAllGoal(ExtendedTestCase):
 		all = AllGoal([first_goal, self.second_goal], 0)
 		
 		self.assertEqual(all.description(), "Control three Granaries in 1000 AD and control three Libraries")
+	
+	def test_progress(self):
+		self.assertEqual(self.all.progress(), [self.FAILURE + "Granaries: 0 / 3", self.FAILURE + "Libraries: 0 / 3"])
 
 
 test_cases = [

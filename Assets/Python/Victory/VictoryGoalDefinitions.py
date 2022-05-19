@@ -1,6 +1,7 @@
 from Core import *
 from VictoryEvaluators import *
 from VictoryHandlers import *
+from VictoryProgress import *
 from VictoryRequirements import *
 from VictoryTypes import *
 
@@ -272,7 +273,7 @@ class Goal(object):
 		return self
 	
 	def progress(self):
-		return [requirement.progress(self.evaluator) for requirement in self.requirements]
+		return PROGRESS.format(self.requirements, self.evaluator)
 
 
 class All(object):
@@ -335,6 +336,9 @@ class AllGoal(Goal):
 	
 	def fulfilled(self):
 		return all(goal.succeeded() for goal in self.requirements)
+	
+	def progress(self):
+		return sum((goal.progress() for goal in self.requirements), [])
 			
 	def add_subgoal(self, goal):
 		def fail(subgoal):
