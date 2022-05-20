@@ -188,9 +188,12 @@ void CvPlayer::init(PlayerTypes eID)
 
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
-		setAlive(true);
+		if (isHuman())
+		{
+			setAlive(true);
+		}
 
-		if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
+		/*if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
 		{
 			if (!isBarbarian() && !isMinorCiv())
 			{
@@ -227,7 +230,7 @@ void CvPlayer::init(PlayerTypes eID)
 					setPersonalityType(eBestPersonality);
 				}
 			}
-		}
+		}*/
 
 		changeBaseFreeUnits(GC.getDefineINT("INITIAL_BASE_FREE_UNITS"));
 		changeBaseFreeMilitaryUnits(GC.getDefineINT("INITIAL_BASE_FREE_MILITARY_UNITS"));
@@ -11750,7 +11753,10 @@ void CvPlayer::setAlive(bool bNewValue)
 
 			if (GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS) || (GC.getGameINLINE().getNumGameTurnActive() == 0) || (GC.getGameINLINE().isSimultaneousTeamTurns() && GET_TEAM(getTeam()).isTurnActive()))
 			{
-				setTurnActive(true);
+				if (GC.getGameINLINE().getGameTurn() >= getInitialBirthTurn())
+				{
+					setTurnActive(true);
+				}
 			}
 
 			gDLL->openSlot(getID());

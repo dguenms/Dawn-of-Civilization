@@ -9255,7 +9255,7 @@ bool CvGame::hasSkippedSaveChecksum() const
 	return gDLL->hasSkippedSaveChecksum();
 }
 
-void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv, bool bAlive, bool bMinor)
+void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv, int iBirthTurn, bool bAlive, bool bMinor)
 {
 	// UNOFFICIAL_PATCH Start
 	// * Fixed bug with colonies who occupy recycled player slots showing the old leader or civ names.
@@ -9325,6 +9325,12 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 	GC.getInitCore().setColor(eNewPlayer, eColor);
 	GET_TEAM(eTeam).init(eTeam);
 	GET_PLAYER(eNewPlayer).init(eNewPlayer);
+	
+	if (iBirthTurn >= 0)
+	{
+		GET_PLAYER(eNewPlayer).setInitialBirthTurn(iBirthTurn);
+	}
+
 	GET_PLAYER(eNewPlayer).setAlive(bAlive);
 	GET_PLAYER(eNewPlayer).setMinorCiv(bMinor);
 

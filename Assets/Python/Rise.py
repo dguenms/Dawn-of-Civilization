@@ -376,7 +376,7 @@ class Birth(object):
 		self.player.setNumUnitGoldenAges(data.civs[self.iCiv].iNumUnitGoldenAges)
 		
 	def updateCivilization(self):
-		updateCivilization(self.iPlayer, self.iCiv)
+		updateCivilization(self.iPlayer, self.iCiv, iBirthTurn=self.iTurn)
 
 	def updateStartingLocation(self):
 		startingPlot = plots.capital(self.iCiv)

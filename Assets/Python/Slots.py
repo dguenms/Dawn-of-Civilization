@@ -20,11 +20,11 @@ def findSlot(iCiv):
 
 	return -1
 	
-def addPlayer(iPlayer, iCiv, bAlive=False, bMinor=False):
-	game.addPlayer(iPlayer, 0, iCiv, bAlive, bMinor)
+def addPlayer(iPlayer, iCiv, iBirthTurn=-1, bAlive=False, bMinor=False):
+	game.addPlayer(iPlayer, 0, iCiv, iBirthTurn, bAlive, bMinor)
 	data.dSlots[iCiv] = iPlayer
 
-def updateCivilization(iPlayer, iCiv):
+def updateCivilization(iPlayer, iCiv, iBirthTurn=-1):
 	data.dSlots[iCiv] = iPlayer
 	
 	iCurrentCivilization = player(iPlayer).getCivilizationType()
@@ -32,7 +32,7 @@ def updateCivilization(iPlayer, iCiv):
 		return
 	
 	if iCurrentCivilization == -1:
-		addPlayer(iPlayer, iCiv, bAlive=True)
+		addPlayer(iPlayer, iCiv, iBirthTurn=iBirthTurn, bAlive=True)
 	else:
 		player(iPlayer).setCivilizationType(iCiv)
 	
