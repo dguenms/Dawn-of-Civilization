@@ -746,7 +746,7 @@ class Birth(object):
 			return
 		
 		if not self.isHuman() and expansionCities:
-			targets = expansionCities.owners().without(self.iPlayer).where(self.player.canContact).where(lambda p: not player(p).isBirthProtected())
+			targets = expansionCities.owners().without(self.iPlayer).where(self.team.canDeclareWar).where(self.player.canContact).where(lambda p: not player(p).isBirthProtected())
 			minors, majors = targets.split(is_minor)
 		
 			for iMinor in minors.where(lambda p: not self.team.isAtWar(p)):
