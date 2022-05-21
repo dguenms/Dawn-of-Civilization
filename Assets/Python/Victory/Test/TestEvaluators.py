@@ -34,6 +34,10 @@ class TestSelfEvaluator(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
+		
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 0), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), False)
 	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), 0)
@@ -78,6 +82,10 @@ class TestVassalsEvaluator(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
+	
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 3), False)
 	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), 3)
@@ -139,6 +147,10 @@ class TestAlliesEvaluator(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
 	
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 9), False)
+	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), 18)
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 23)
@@ -172,6 +184,10 @@ class TestReligionEvaluator(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
 	
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 2), False)
+	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), 1)
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 3)
@@ -200,6 +216,10 @@ class TestSecularEvaluator(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
 	
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 2), False)
+	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), 1)
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 3)
@@ -225,6 +245,10 @@ class TestWorldEvaluator(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
+	
+	def test_any(self):
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 2), False)
 	
 	def test_evaluate(self):
 		self.assertEqual(self.evaluator.evaluate(lambda x: x), players.major().alive().without(2).sum(lambda x: x))

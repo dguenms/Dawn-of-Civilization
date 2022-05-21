@@ -2,7 +2,7 @@ from Core import *
 from VictoryEvaluators import *
 from VictoryHandlers import *
 from VictoryProgress import *
-from VictoryRequirements import *
+from Requirements import *
 from VictoryTypes import *
 
 

@@ -1,5 +1,5 @@
 from VictoryHandlers import *
-from VictoryRequirements import *
+from Requirements import *
 
 from TestVictoryCommon import *
 

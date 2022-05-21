@@ -93,58 +93,6 @@ class ThresholdRequirement(Requirement):
 		return "%s: %s" % (Requirement.progress(self, evaluator), self.progress_value(evaluator))
 
 
-class BuildingCount(ThresholdRequirement):
-
-	TYPES = (BUILDING, COUNT)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
-	
-	def __init__(self, iBuilding, *args, **options):
-		ThresholdRequirement.__init__(self, iBuilding, *args, **options)
-		
-		self.iBuilding = iBuilding
-		
-		self.handle("cityAcquired", self.check_city_acquired)
-		self.handle("buildingBuilt", self.check_building_built)
-	
-	def check_city_acquired(self, goal, city, bConquest):
-		goal.check()
-	
-	def check_building_built(self, goal, city, iBuilding):
-		if base_building(iBuilding) == self.iBuilding:
-			goal.check()
-	
-	def value(self, iPlayer, iBuilding):
-		return player(iPlayer).countNumBuildings(unique_building(iPlayer, iBuilding))
-	
-	def is_plural(self):
-		return self.required() > 1
-		
-	def description(self):
-		return Requirement.description(self, bPlural=self.is_plural())
-		
-	def progress(self, evaluator):
-		if not self.is_plural():
-			return BUILDING.format(self.iBuilding)
-		
-		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, BUILDING.format(self.iBuilding, bPlural=True)), self.progress_value(evaluator))
-
-
-class GoldAmount(ThresholdRequirement):
-
-	TYPES = (AMOUNT,)
-	
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_PLAYER_GOLD"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_GOLD"
-	
-	def value(self, iPlayer):
-		return player(iPlayer).getGold()
-	
-	def required(self):
-		return scale(self.iRequired)
-
-
 class PercentRequirement(ThresholdRequirement):
 
 	def total(self):
@@ -163,36 +111,6 @@ class PercentRequirement(ThresholdRequirement):
 		return "%.2f%% / %d%%" % (self.percentage(evaluator), self.required())
 
 
-class PopulationPercent(PercentRequirement):
-
-	TYPES = (PERCENTAGE,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_PERCENT"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_PERCENT"
-	
-	def value(self, iPlayer):
-		return cities.owner(iPlayer).sum(CyCity.getPopulation)
-	
-	def total(self):
-		return game.getTotalPopulation()
-	
-
-class Control(Requirement):
-	
-	TYPES = (AREA,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
-	
-	def __init__(self, area, **options):
-		Requirement.__init__(self, area, **options)
-		
-		self.area = area
-	
-	def fulfilled(self, evaluator):
-		return self.area.cities().all_if_any(lambda city: city.getOwner() in evaluator)
-
-
 class StateRequirement(Requirement):
 
 	def __init__(self, *parameters, **options):
@@ -208,31 +126,6 @@ class StateRequirement(Requirement):
 	
 	def fulfilled(self, evaluator):
 		return self.state == SUCCESS
-	
-		
-class FirstDiscover(StateRequirement):
-
-	TYPES = (TECH,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_DISCOVER"
-	
-	def __init__(self, iTech, **options):
-		StateRequirement.__init__(self, iTech, **options)
-		
-		self.iTech = iTech
-		
-		self.handle("techAcquired", self.check_first_discovered)
-		self.expire("techAcquired", self.expire_first_discovered)
-	
-	def check_first_discovered(self, goal, iTech):
-		if self.iTech == iTech and game.countKnownTechNumTeams(iTech) == 1:
-			self.succeed()
-			goal.check()
-	
-	def expire_first_discovered(self, goal, iTech):
-		if self.iTech == iTech and self.state == POSSIBLE:
-			self.fail()
-			goal.expire()
 
 
 class TrackRequirement(ThresholdRequirement):
@@ -264,24 +157,6 @@ class TrackRequirement(ThresholdRequirement):
 	
 	def evaluate(self, evaluator):
 		return self.iValue
-		
-
-class BrokeredPeace(TrackRequirement):
-
-	TYPES = (COUNT,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BROKERED_PEACE"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BROKERED_PEACE"
-
-	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, iRequired, **options)
-		
-		self.iRequired = iRequired
-		
-		self.incremented("peaceBrokered")
-	
-	def required(self):
-		return self.iRequired
 
 
 class BestEntitiesRequirement(Requirement):
@@ -369,25 +244,5 @@ class BestCitiesRequirement(BestEntitiesRequirement):
 		if city is None:
 			return "No City"
 		return city.getName()
-	
-		
-class BestPopulationPlayer(BestPlayersRequirement):
-
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
-	
-	def metric(self, iPlayer):
-		return player(iPlayer).getRealPopulation()
-	
-
-class BestPopulationCities(BestCitiesRequirement):
-
-	TYPES = (COUNT,)
-
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITIES"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
-	
-	def metric(self, city):
-		return city.getPopulation()
 	
 

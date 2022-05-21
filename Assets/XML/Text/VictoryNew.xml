@@ -64,6 +64,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BUILD</Tag>
+		<English>build %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -92,7 +100,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_DESC_PLAYER_GOLD</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_GOLD_AMOUNT</Tag>
 		<English>%s1 gold</English>
 		<French></French>
 		<German></German>
@@ -110,6 +118,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITIES</Tag>
 		<English>the %s1 largest cities in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CULTURE_AMOUNT</Tag>
+		<English>more than %s1 culture</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -135,7 +151,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_PROGR_GOLD</Tag>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLD_AMOUNT</Tag>
 		<English>Gold in treasury</English>
 		<French></French>
 		<German></German>
@@ -153,6 +169,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_BROKERED_PEACE</Tag>
 		<English>Peace deals brokered</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_AMOUNT</Tag>
+		<English>Total Culture</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

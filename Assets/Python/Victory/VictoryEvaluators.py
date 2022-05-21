@@ -45,6 +45,9 @@ class Evaluator(object):
 	def players(self):
 		raise NotImplementedError()
 	
+	def any(self, condition):
+		return any(condition(iPlayer) for iPlayer in self)
+	
 	def evaluate(self, func, primary_arg=None, *args):
 		if isinstance(primary_arg, Aggregate):
 			return primary_arg.evaluate(self.evaluate_func(func), *args)
