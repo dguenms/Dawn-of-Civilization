@@ -173,6 +173,7 @@ class AbstractStatefulAlert:
 	def __init__(self, eventManager):
 		eventManager.addEventHandler("GameStart", self.onGameStart)
 		eventManager.addEventHandler("OnLoad", self.onLoadGame)
+		eventManager.addEventHandler("switch", self.onSwitch)
 
 	def onGameStart(self, argsList):
 		self._init()
@@ -182,6 +183,10 @@ class AbstractStatefulAlert:
 		self._init()
 		self._reset()
 		return 0
+	
+	def onSwitch(self, argsList):
+		self._init()
+		self._reset()
 
 	def _init(self):
 		"Initializes globals that could not be done in __init__."
