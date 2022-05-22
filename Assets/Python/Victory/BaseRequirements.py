@@ -64,8 +64,14 @@ class Requirement(object):
 	def format_description(self, **options):
 		return self.description(**options)
 	
+	def progress_text(self, **options):
+		if self.PROGR_KEY == "TXT_KEY_VICTORY_PROGR_SIMPLE" and not self.parameters:
+			return capitalize(text(self.DESC_KEY))
+		
+		return text(self.PROGR_KEY, *self.format_parameters(**options))
+	
 	def progress(self, evaluator, **options):
-		return "%s %s" % (self.indicator(evaluator), text(self.PROGR_KEY, *self.format_parameters(**options)))
+		return "%s %s" % (self.indicator(evaluator), self.progress_text())
 
 
 class ThresholdRequirement(Requirement):

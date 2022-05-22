@@ -18,6 +18,17 @@ class Control(Requirement):
 		return self.area.cities().all_if_any(lambda city: city.getOwner() in evaluator)
 
 
+# First Harappan UHV goal
+class TradeConnection(Requirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ESTABLISH"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_CONNECTION"
+	
+	def fulfilled(self, evaluator):
+		other_players = players.major().alive().without(evaluator.players())
+		return evaluator.any(lambda iPlayer: other_players.any(lambda iOtherPlayer: player(iPlayer).canContact(iOtherPlayer) and player(iPlayer).canTradeNetworkWith(iOtherPlayer)))
+
+
 # Second Egyptian UHV goal
 class Wonder(Requirement):
 

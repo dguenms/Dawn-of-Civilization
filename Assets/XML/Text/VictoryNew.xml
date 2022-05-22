@@ -80,6 +80,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ESTABLISH</Tag>
+		<English>establish a %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -155,6 +163,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_CONNECTION</Tag>
+		<English>trade connection with another civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION</Tag>
+		<English>a total population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -209,6 +233,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_AMOUNT</Tag>
 		<English>Total Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION</Tag>
+		<English>Total Population</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

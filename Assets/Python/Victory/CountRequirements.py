@@ -3,6 +3,7 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Second Harappan UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -39,3 +40,17 @@ class BuildingCount(ThresholdRequirement):
 			return BUILDING.format(self.iBuilding)
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, BUILDING.format(self.iBuilding, bPlural=True)), self.progress_value(evaluator))
+
+
+# Third Harappan UHV goal
+class PopulationCount(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION"
+	
+	def value(self, iPlayer):
+		return player(iPlayer).getTotalPopulation()
+	
+

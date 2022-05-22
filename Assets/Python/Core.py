@@ -1945,7 +1945,9 @@ class Players(EntityCollection):
 		return self.where(lambda p: not is_minor(p))
 		
 	def without(self, exceptions):
-		if not isinstance(exceptions, (list, set, Players)):
+		if isinstance(exceptions, types.GeneratorType):
+			exceptions = list(exceptions)
+		elif not isinstance(exceptions, (list, set, Players)):
 			exceptions = [exceptions]
 		return self.where(lambda p: p not in [player(e).getID() for e in exceptions])
 		
