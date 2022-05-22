@@ -40,6 +40,19 @@ def ordinal_word(number):
 	return text_if_exists("TXT_KEY_VICTORY_ORDINAL_%s" % number, otherwise="%d%s" % (number, text("TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX")))
 
 
+class NamedDefinition(object):
+
+	def __init__(self):
+		self.name_key = ""
+		
+	def named(self, key):
+		self.name_key = key
+		return self
+	
+	def name(self):
+		return text(self.name_key)
+
+
 class AreaDefinitionFactory(object):
 
 	def __getattr__(self, name):
@@ -47,7 +60,7 @@ class AreaDefinitionFactory(object):
 		return getattr(area_definition, name)
 
 
-class AreaDefinition(object):
+class AreaDefinition(NamedDefinition):
 
 	def __init__(self):
 		self.name_key = ""
@@ -113,6 +126,24 @@ class AreaDefinition(object):
 	
 	def cities(self):
 		return self.create().cities()
+
+
+class CityDefinition(NamedDefinition):
+
+	def __init__(self, *tile):
+		self.tile = duplefy(*tile)
+	
+	def __repr__(self):
+		return "CityDefinition%s" % (self.tile,)
+	
+	def __eq__(self, other):
+		if isinstance(other, CyCity):
+			return self.tile == location(other)
+		
+		if isinstance(other, CityDefinition):
+			return self.tile == other.tile
+		
+		return False
 
 
 def indicator(value):

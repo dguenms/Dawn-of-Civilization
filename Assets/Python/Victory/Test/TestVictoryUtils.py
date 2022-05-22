@@ -74,6 +74,30 @@ class TestTextProcessing(ExtendedTestCase):
 	
 	def test_capitalize_empty(self):
 		self.assertEqual(capitalize(""), "")
+		
+		
+class TestNamedDefinition(ExtendedTestCase):
+
+	def setUp(self):
+		self.definition = NamedDefinition()
+	
+	def test_unnamed(self):
+		self.assertEqual(self.definition.name(), "")
+	
+	def test_named(self):
+		definition = self.definition.named("Definition")
+		
+		self.assertType(definition, NamedDefinition)
+		
+		self.assertEqual(self.definition.name(), "Definition")
+		self.assertEqual(definition.name(), "Definition")
+	
+	def test_renamed(self):
+		self.definition.named("First")
+		self.assertEqual(self.definition.name(), "First")
+		
+		self.definition.named("Second")
+		self.assertEqual(self.definition.name(), "Second")
 
 
 class TestAreaDefinition(ExtendedTestCase):
@@ -110,6 +134,9 @@ class TestAreaDefinition(ExtendedTestCase):
 	def test_str(self):
 		self.assertEqual(str(plots.rectangle((0, 0), (1, 1)).region(2)), "AreaDefinition.rectangle((0, 0), (1, 1)).region(2)")
 	
+	def test_pickle(self):
+		self.assertPickleable(self.plots.rectangle((0, 0), (1, 1)).region(2))
+	
 	def test_without_create(self):
 		area = self.plots.rectangle((0, 0), (1, 1))
 		
@@ -129,7 +156,7 @@ class TestAreaDefinition(ExtendedTestCase):
 		self.assertType(area, Plots)
 		self.assertEqual(area.name(), "Area")
 	
-	def test_multiple_renames(self):
+	def test_multiple_creates(self):
 		area = self.plots.rectangle((0, 0), (1, 1))
 		
 		area1 = area.create()
@@ -138,7 +165,42 @@ class TestAreaDefinition(ExtendedTestCase):
 		self.assertNotEqual(id(area1), id(area2))
 		
 
+class TestCityDefinition(ExtendedTestCase):
+
+	def setUp(self):
+		self.location = TestCities.CITY_LOCATIONS[0]
+		self.definition = CityDefinition(self.location)
+		
+	def test_str(self):
+		self.assertEqual(str(self.definition), "CityDefinition(61, 31)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.definition), "CityDefinition(61, 31)")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.definition)
+	
+	def test_equal_definition(self):
+		identical = CityDefinition(self.location)
+		different = CityDefinition((62, 31))
+		
+		self.assertEqual(self.definition, identical)
+		self.assertNotEqual(self.definition, different)
+	
+	def test_equal_city(self):
+		city_matching, city_different = cities = TestCities.num(2)
+		
+		self.assertEqual(self.definition, city_matching)
+		self.assertNotEqual(self.definition, city_different)
+	
+	def test_from_varargs(self):
+		definition = CityDefinition(*self.location)
+		self.assertEqual(str(definition), "CityDefinition(61, 31)")
+		
+
 test_cases = [
 	TestTextProcessing,
+	TestNamedDefinition,
 	TestAreaDefinition,
+	TestCityDefinition,
 ]

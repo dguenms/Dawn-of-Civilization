@@ -72,6 +72,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE</Tag>
+		<English>make %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -131,6 +139,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITY</Tag>
+		<English>%s1 the most populous city in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY</Tag>
+		<English>%s1 the most culturally advanced city in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -161,6 +185,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_BEST_POPULATION</Tag>
 		<English>most populous</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_CULTURE</Tag>
+		<English>most cultured</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

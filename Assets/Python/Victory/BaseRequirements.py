@@ -6,6 +6,7 @@ from VictoryHandlers import Handlers, event_handler_registry
 
 class Requirement(object):
 
+	GLOBAL_TYPES = ()
 	TYPES = ()
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE"
@@ -24,7 +25,7 @@ class Requirement(object):
 		return self.parameters == other.parameters
 	
 	def __repr__(self):
-		formatted_parameters = [parameter_type.format_repr(parameter) for parameter_type, parameter in zip(self.TYPES, self.parameters)]
+		formatted_parameters = [parameter_type.format_repr(parameter) for parameter_type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)]
 		return "%s(%s)" % (type(self).__name__, ", ".join(formatted_parameters))
 	
 	def handle(self, event, func):
@@ -55,7 +56,7 @@ class Requirement(object):
 		raise NotImplementedError()
 	
 	def format_parameters(self, **options):
-		return [type.format(parameter, **options) for type, parameter in zip(self.TYPES, self.parameters)]
+		return [type.format(parameter, **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)]
 		
 	def description(self, **options):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
@@ -172,23 +173,24 @@ class BestEntitiesRequirement(Requirement):
 	def entities(self):
 		raise NotImplementedError()
 	
-	def player_entity(self, entity, evaluator):
+	def valid_entity(self, entity, evaluator):
 		raise NotImplementedError()
 	
 	def entity_name(self, entity):
 		raise NotImplementedError()
 	
 	def ranked(self, evaluator):
-		return self.entities().sort(lambda entity: (self.metric(entity), self.player_entity(entity, evaluator)), True)
+		return self.entities().sort(lambda entity: (self.metric(entity), self.valid_entity(entity, evaluator)), True)
 	
 	def required_ranks(self, evaluator):
+		print "required ranks [0 : %s]" % (self.iNumEntities,)
 		return self.ranked(evaluator)[0 : self.iNumEntities]
 	
 	def fulfilled(self, evaluator):
-		return count(self.player_entity(entity, evaluator) for entity in self.required_ranks(evaluator)) >= self.iNumEntities
+		return count(self.valid_entity(entity, evaluator) for entity in self.required_ranks(evaluator)) >= self.iNumEntities
 	
 	def next_rank(self, evaluator):
-		return self.fulfilled(evaluator) and self.ranked(evaluator)[self.iNumEntities] or next(entity for entity in self.ranked(evaluator)[self.iNumEntities:] if self.player_entity(entity, evaluator))
+		return self.fulfilled(evaluator) and self.ranked(evaluator)[self.iNumEntities] or next(entity for entity in self.ranked(evaluator)[self.iNumEntities:] if self.valid_entity(entity, evaluator))
 	
 	def rank_word(self, iRank):
 		word = text(self.PROGR_KEY)
@@ -197,10 +199,10 @@ class BestEntitiesRequirement(Requirement):
 		return word
 		
 	def entity_progress(self, evaluator, iRank, entity):
-		return "%s %s: %s (%d)" % (indicator(self.player_entity(entity, evaluator)), capitalize(self.rank_word(iRank)), self.entity_name(entity), entity is not None and self.metric(entity) or 0)
+		return "%s %s: %s (%d)" % (indicator(self.valid_entity(entity, evaluator)), capitalize(self.rank_word(iRank)), self.entity_name(entity), entity is not None and self.metric(entity) or 0)
 	
 	def next_entity_progress(self, evaluator, entity):
-		next_key = self.player_entity(entity, evaluator) and "TXT_KEY_VICTORY_PROGRESS_OUR_NEXT" or "TXT_KEY_VICTORY_PROGRESS_NEXT"
+		next_key = self.valid_entity(entity, evaluator) and "TXT_KEY_VICTORY_PROGRESS_OUR_NEXT" or "TXT_KEY_VICTORY_PROGRESS_NEXT"
 		return text(next_key, text(self.PROGR_KEY), self.entity_name(entity), self.metric(entity))
 	
 	def progress(self, evaluator):
@@ -223,7 +225,7 @@ class BestPlayersRequirement(BestEntitiesRequirement):
 	def entities(self):
 		return players.major().alive()
 	
-	def player_entity(self, iPlayer, evaluator):
+	def valid_entity(self, iPlayer, evaluator):
 		return iPlayer in evaluator
 	
 	def entity_name(self, iPlayer):
@@ -237,12 +239,25 @@ class BestCitiesRequirement(BestEntitiesRequirement):
 	def entities(self):
 		return cities.all()
 	
-	def player_entity(self, city, evaluator):
+	def valid_entity(self, city, evaluator):
 		return city.getOwner() in evaluator
 	
 	def entity_name(self, city):
 		if city is None:
 			return "No City"
 		return city.getName()
+
+
+class BestCityRequirement(BestCitiesRequirement):
+
+	GLOBAL_TYPES = (CITY,)
 	
+	def __init__(self, city, **options):
+		BestCitiesRequirement.__init__(self, **options)
+		Requirement.__init__(self, city, 1, **options)
+		
+		self.required_city = city
+
+	def valid_entity(self, city, evaluator):
+		return BestCitiesRequirement.valid_entity(self, city, evaluator) and self.required_city == city
 

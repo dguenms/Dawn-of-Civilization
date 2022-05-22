@@ -292,7 +292,281 @@ class TestBestPopulationCities(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestBestPopulationCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.requirement = BestPopulationCity(self.city)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestPopulationCity(Somecity)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestPopulationCity(Somecity)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Somecity the most populous city in the world")
+		
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [
+			self.FAILURE + "Most populous: No City (0)"
+		])
+	
+	def test_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setPopulation(10)
+		
+		their_city.setName("Second", False)
+		their_city.setPopulation(5)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most populous: First (10)",
+				"Next most populous: Second (5)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_city_tied(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setPopulation(10)
+		
+		their_city.setName("Second", False)
+		their_city.setPopulation(10)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most populous: First (10)",
+				"Next most populous: Second (10)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_not_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setPopulation(5)
+		
+		their_city.setName("Second", False)
+		their_city.setPopulation(10)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most populous: Second (10)",
+				"Our next most populous: First (5)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_different_location(self):
+		other_city, our_city, their_city = TestCities.owners(2, 0, 1)
+		
+		other_city.kill()
+		
+		our_city.setName("First", False)
+		our_city.setPopulation(10)
+		
+		their_city.setName("Second", False)
+		their_city.setPopulation(5)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most populous: First (10)",
+			])
+		finally:
+			our_city.kill()
+			their_city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		vassal_city, our_city, their_city = cities = TestCities.owners(1, 0, 2)
+		
+		team(1).setVassal(0, True, False)
+		
+		vassal_city.setName("First", False)
+		vassal_city.setPopulation(10)
+		
+		our_city.setName("Second", False)
+		our_city.setPopulation(5)
+		
+		their_city.setName("Third", False)
+		their_city.setPopulation(8)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), [
+				self.SUCCESS + "Most populous: First (10)",
+				"Next most populous: Third (8)",
+			])
+		finally:
+			team(1).setVassal(0, False, False)
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestBestCultureCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.requirement = BestCultureCity(self.city)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestCultureCity(Somecity)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestCultureCity(Somecity)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Somecity the most culturally advanced city in the world")
+		
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [
+			self.FAILURE + "Most cultured: No City (0)"
+		])
+	
+	def test_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setCulture(0, 100, False)
+		
+		their_city.setName("Second", False)
+		their_city.setCulture(1, 50, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most cultured: First (100)",
+				"Next most cultured: Second (50)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_city_tied(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setCulture(0, 100, False)
+		
+		their_city.setName("Second", False)
+		their_city.setCulture(1, 100, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most cultured: First (100)",
+				"Next most cultured: Second (100)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_not_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setCulture(0, 50, False)
+		
+		their_city.setName("Second", False)
+		their_city.setCulture(1, 100, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most cultured: Second (100)",
+				"Our next most cultured: First (50)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_different_location(self):
+		other_city, our_city, their_city = TestCities.owners(2, 0, 1)
+		
+		other_city.kill()
+		
+		our_city.setName("First", False)
+		our_city.setCulture(0, 100, False)
+		
+		their_city.setName("Second", False)
+		their_city.setCulture(1, 50, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most cultured: First (100)",
+			])
+		finally:
+			our_city.kill()
+			their_city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		vassal_city, our_city, their_city = cities = TestCities.owners(1, 0, 2)
+		
+		team(1).setVassal(0, True, False)
+		
+		vassal_city.setName("First", False)
+		vassal_city.setCulture(1, 100, False)
+		
+		our_city.setName("Second", False)
+		our_city.setCulture(0, 50, False)
+		
+		their_city.setName("Third", False)
+		their_city.setCulture(2, 80, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), [
+				self.SUCCESS + "Most cultured: First (100)",
+				"Next most cultured: Third (80)",
+			])
+		finally:
+			team(1).setVassal(0, False, False)
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 test_cases = [
 	TestBestPopulationCities,
 	TestBestPopulationPlayer,
+	TestBestPopulationCity,
+	TestBestCultureCity,
 ]

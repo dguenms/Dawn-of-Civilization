@@ -21,3 +21,25 @@ class BestPopulationCities(BestCitiesRequirement):
 	
 	def metric(self, city):
 		return city.getPopulation()
+
+
+# Second Babylonian UHV goal
+class BestPopulationCity(BestCityRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
+	
+	def metric(self, city):
+		return city.getPopulation()
+
+
+# Third Babylonian UHV goal
+class BestCultureCity(BestCityRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_CULTURE"
+	
+	def metric(self, city):
+		return city.getCulture(city.getOwner())

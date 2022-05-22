@@ -180,6 +180,29 @@ class TestBuilding(ExtendedTestCase):
 		self.assertEqual(BUILDING.format_repr(iGranary), "Granary")
 
 
+class TestCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = CityDefinition(61, 31).named("Test City")
+
+	def test_str(self):
+		self.assertEqual(str(CITY), "City")
+	
+	def test_repr(self):
+		self.assertEqual(repr(CITY), "City")
+	
+	def test_equal(self):
+		self.assertEqual(CITY, CityType("City"))
+	
+	def test_validate(self):
+		self.assertEqual(CITY.validate(self.city), True)
+		self.assertEqual(CITY.validate(1), False)
+	
+	def test_format(self):
+		self.assertEqual(CITY.format(self.city), "Test City")
+		self.assertEqual(CITY.format_repr(self.city), "Test City")
+
+
 class TestCount(ExtendedTestCase):
 
 	def test_str(self):
@@ -252,6 +275,7 @@ test_cases = [
 	TestAmount,
 	TestArea,
 	TestBuilding,
+	TestCity,
 	TestCount,
 	TestPercentage,
 	TestTech,

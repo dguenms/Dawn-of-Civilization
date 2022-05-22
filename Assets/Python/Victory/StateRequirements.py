@@ -2,7 +2,8 @@ from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
 	
-		
+
+# First Babylonian UHV goal
 class FirstDiscover(StateRequirement):
 
 	TYPES = (TECH,)
