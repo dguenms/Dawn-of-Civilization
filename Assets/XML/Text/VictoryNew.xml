@@ -88,6 +88,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_EXPERIENCE</Tag>
+		<English>experience %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -179,6 +187,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GOLDEN_AGES</Tag>
+		<English>%s1 Golden Ages</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -241,6 +257,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION</Tag>
 		<English>Total Population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLDEN_AGES</Tag>
+		<English>Golden Ages</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

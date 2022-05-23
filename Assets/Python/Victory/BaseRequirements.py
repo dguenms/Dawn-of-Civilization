@@ -135,7 +135,7 @@ class StateRequirement(Requirement):
 		return self.state == SUCCESS
 
 
-class TrackRequirement(ThresholdRequirement):
+class TrackRequirement(ThresholdRequirement): 
 
 	def __init__(self, *parameters, **options):
 		ThresholdRequirement.__init__(self, *parameters, **options)

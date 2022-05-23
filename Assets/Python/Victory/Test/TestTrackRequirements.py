@@ -67,6 +67,73 @@ class TestBrokeredPeace(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestGoldenAges(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = GoldenAges(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "GoldenAges(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "GoldenAges(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Golden Ages")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_golden_age(self):
+		for _ in range(8):
+			events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+	
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Golden Ages: 0 / 2")
+		
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_golden_age(self):
+		self.player.changeGoldenAgeTurns(1)
+		
+		try:
+			for _ in range(16):
+				events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 16)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Golden Ages: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			self.player.changeGoldenAgeTurns(-1)
+	
+	def test_golden_age_and_anarchy(self):
+		self.player.changeGoldenAgeTurns(1)
+		self.player.changeAnarchyTurns(1)
+		
+		try:
+			for _ in range(8):
+				events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Golden Ages: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			self.player.changeGoldenAgeTurns(-1)
+			self.player.changeAnarchyTurns(-1)
+
+
 test_cases = [
 	TestBrokeredPeace,
+	TestGoldenAges,
 ]

@@ -4,6 +4,7 @@ from BaseRequirements import *
 
 
 # Second Harappan UHV goal
+# First Chinese UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
