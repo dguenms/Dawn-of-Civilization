@@ -3,6 +3,7 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Third Indian UHV goal
 class PopulationPercent(PercentRequirement):
 
 	TYPES = (PERCENTAGE,)
