@@ -5,6 +5,7 @@ from BaseRequirements import *
 
 # First Babylonian UHV goal
 # Second Chinese UHV goal
+# First Greek UHV goal
 class FirstDiscover(StateRequirement):
 
 	TYPES = (TECH,)

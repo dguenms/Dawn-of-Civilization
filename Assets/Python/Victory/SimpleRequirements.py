@@ -3,6 +3,7 @@ from VictoryTypes import *
 from BaseRequirements import *
 	
 
+# Second Greek UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)
@@ -30,6 +31,7 @@ class TradeConnection(Requirement):
 
 
 # Second Egyptian UHV goal
+# Third Greek UHV goal
 class Wonder(Requirement):
 
 	TYPES = (BUILDING,)
