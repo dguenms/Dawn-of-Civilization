@@ -190,12 +190,60 @@ class TestCityDefinition(ExtendedTestCase):
 	def test_equal_city(self):
 		city_matching, city_different = cities = TestCities.num(2)
 		
-		self.assertEqual(self.definition, city_matching)
-		self.assertNotEqual(self.definition, city_different)
+		try:
+			self.assertEqual(self.definition, city_matching)
+			self.assertNotEqual(self.definition, city_different)
+		finally:
+			cities.kill()
+	
+	def test_nonzero(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(bool(self.definition), True)
+		finally:
+			city.kill()
+	
+	def test_nonzero_no_city(self):
+		self.assertEqual(bool(self.definition), False)
 	
 	def test_from_varargs(self):
 		definition = CityDefinition(*self.location)
 		self.assertEqual(str(definition), "CityDefinition(61, 31)")
+	
+	def test_city(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(location(self.definition.city), location(city))
+		finally:
+			city.kill()
+	
+	def test_city_no_city(self):
+		self.assertEqual(self.definition.city, None)
+	
+	def test_get_owner(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(self.definition.getOwner(), city.getOwner())
+		finally:
+			city.kill()
+	
+	def test_get_owner_no_city(self):
+		self.assertEqual(self.definition.getOwner(), None)
+	
+	def test_is_has_building(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(self.definition.isHasBuilding(iGranary), True)
+		finally:
+			city.kill()
+	
+	def test_is_has_building_no_city(self):
+		self.assertEqual(self.definition.isHasBuilding(iGranary), None)
 		
 
 test_cases = [

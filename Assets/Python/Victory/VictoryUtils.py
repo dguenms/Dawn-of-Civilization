@@ -10,6 +10,16 @@ IRREGULAR_PLURALS = {
 }
 
 
+def none_safe(func):
+	def none_safe_func(*args, **kwargs):
+		try:
+			return func(*args, **kwargs)
+		except AttributeError:
+			return None
+	
+	return none_safe_func
+
+
 def plural(word):
 	if not word:
 		return word
@@ -117,13 +127,6 @@ class AreaDefinition(NamedDefinition):
 	def where(self, *args, **kwargs):
 		return self.call("where", args, kwargs)
 	
-	def named(self, key):
-		self.name_key = key
-		return self
-	
-	def name(self):
-		return text(self.name_key)
-	
 	def cities(self):
 		return self.create().cities()
 
@@ -144,6 +147,22 @@ class CityDefinition(NamedDefinition):
 			return self.tile == other.tile
 		
 		return False
+	
+	def __nonzero__(self):
+		return bool(self.city)
+	
+	@property
+	def city(self):
+		return city(self.tile)
+	
+	@none_safe
+	def getOwner(self):
+		return self.city.getOwner()
+	
+	@none_safe
+	def isHasBuilding(self, iBuilding):
+		return self.city.isHasBuilding(iBuilding)
+			
 
 
 def indicator(value):

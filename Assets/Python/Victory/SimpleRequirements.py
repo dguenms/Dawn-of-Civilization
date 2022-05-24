@@ -1,9 +1,49 @@
 from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
+
+
+# First Phoenician UHV goal
+class CityBuilding(Requirement):
+
+	GLOBAL_TYPES = (CITY,)
+	TYPES = (BUILDING,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_BUILDING"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_BUILDING"
+	
+	def __init__(self, city, iBuilding, **options):
+		Requirement.__init__(self, city, iBuilding, **options)
+		
+		self.city = city
+		self.iBuilding = iBuilding
+		
+		self.handle("cityAcquired", self.check_city_acquired)
+		self.handle("buildingBuilt", self.check_building_built)
+		self.expire("buildingBuilt", self.expire_building_built)
+	
+	def check_city_acquired(self, goal, city, bConquest):
+		if self.city == city:
+			goal.check()
+	
+	def check_building_built(self, goal, city, iBuilding):
+		if self.city == city and self.iBuilding == base_building(iBuilding):
+			goal.check()
+	
+	def expire_building_built(self, goal, city, iBuilding):
+		if self.iBuilding == iBuilding and isWonder(iBuilding):
+			goal.expire()
+	
+	def fulfilled(self, evaluator):
+		if not self.city:
+			return False
+		
+		return self.city.getOwner() in evaluator and self.city.isHasBuilding(unique_building(self.city.getOwner(), self.iBuilding))
 	
 
 # Second Greek UHV goal
+# Second Phoenician UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)

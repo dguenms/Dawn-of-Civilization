@@ -3,6 +3,7 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Third Phoenician UHV goal
 class GoldAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)

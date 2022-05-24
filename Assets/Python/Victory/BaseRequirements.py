@@ -189,7 +189,6 @@ class BestEntitiesRequirement(Requirement):
 		return self.entities().sort(lambda entity: (self.metric(entity), self.valid_entity(entity, evaluator)), True)
 	
 	def required_ranks(self, evaluator):
-		print "required ranks [0 : %s]" % (self.iNumEntities,)
 		return self.ranked(evaluator)[0 : self.iNumEntities]
 	
 	def fulfilled(self, evaluator):
