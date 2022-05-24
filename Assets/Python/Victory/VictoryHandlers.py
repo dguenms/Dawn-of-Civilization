@@ -84,6 +84,13 @@ class EventHandlerRegistry(object):
 		
 		return cityAcquired
 	
+	def cityBuilt(self, goal, applicable, func):
+		def cityBuilt((city,)):
+			if applicable(goal, city.getOwner()):
+				func(goal, city)
+		
+		return cityBuilt
+	
 	def peaceBrokered(self, goal, applicable, func):
 		def peaceBrokered((iBroker, iPlayer1, iPlayer2)):
 			if applicable(goal, iBroker):

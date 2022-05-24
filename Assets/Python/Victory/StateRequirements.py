@@ -29,3 +29,30 @@ class FirstDiscover(StateRequirement):
 		if self.iTech == iTech and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
+
+
+# First Polynesian UHV goal
+# Second Polynesian UHV goal
+class Settle(StateRequirement):
+
+	TYPES = (AREA,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	
+	def __init__(self, area, **options):
+		StateRequirement.__init__(self, area, **options)
+		
+		self.area = area
+		
+		self.handle("cityBuilt", self.check_settled)
+		self.expire("cityBuilt", self.expire_settled)
+		
+	def check_settled(self, goal, city):
+		if city in self.area and self.state == POSSIBLE:
+			self.succeed()
+			goal.check()
+	
+	def expire_settled(self, goal, city):
+		if city in self.area and self.state == POSSIBLE:
+			self.fail()
+			goal.expire()

@@ -87,6 +87,69 @@ class TestFirstDiscover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestSettle(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Settle(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Settle(Test Area)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Settle(Test Area)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Test Area")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_settle_first(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+		finally:
+			city.kill()
+	
+	def test_settle_other(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+		finally:
+			city.kill()
+	
+	def test_settle_after(self):
+		their_city, our_city = cities = TestCities.owners(1, 0)
+		
+		try:
+			events.fireEvent("cityBuilt", their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+		finally:
+			cities.kill()
+	
+
 test_cases = [
 	TestFirstDiscover,
+	TestSettle,
 ]

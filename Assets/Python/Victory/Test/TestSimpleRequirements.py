@@ -71,14 +71,14 @@ class TestCityBuilding(ExtendedTestCase):
 			cities.kill()
 	
 	def test_city_unique_building(self):
-		requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]), iMonument)
+		requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iMonument)
 		
 		city = TestCities.one()
 		city.setHasRealBuilding(iObelisk, True)
 		
 		try:
 			self.assertEqual(requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Granary")
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Monument")
 		finally:
 			city.kill()
 	

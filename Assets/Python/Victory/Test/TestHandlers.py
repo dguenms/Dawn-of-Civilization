@@ -183,14 +183,14 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 	def test_building_built(self):
 		onBuildingBuilt = self.get("buildingBuilt", self.capture)
 		
-		ourCity, theirCity = cities = TestCities.owners(0, 1)
+		our_city, their_city = cities = TestCities.owners(0, 1)
 		
 		try:
-			onBuildingBuilt((theirCity, iGranary))
+			onBuildingBuilt((their_city, iGranary))
 			self.assertEqual(self.argument, None)
 			
-			onBuildingBuilt((ourCity, iGranary))
-			self.assertEqual(self.argument, (self.goal, ourCity, iGranary))
+			onBuildingBuilt((our_city, iGranary))
+			self.assertEqual(self.argument, (self.goal, our_city, iGranary))
 		finally:
 			cities.kill()
 	
@@ -207,6 +207,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			self.assertEqual(self.iCount, 1)
 		finally:
 			city.kill()
+	
+	def test_city_built(self):
+		onCityBuilt = self.get("cityBuilt", self.increment)
+		
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			onCityBuilt((our_city,))
+			self.assertEqual(self.iCount, 1)
+			
+			onCityBuilt((their_city,))
+			self.assertEqual(self.iCount, 1)
+		finally:
+			cities.kill()
 	
 	def test_peace_brokered(self):
 		onPeaceBrokered = self.get("peaceBrokered", self.increment)

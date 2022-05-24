@@ -73,7 +73,8 @@ class AreaDefinitionFactory(object):
 class AreaDefinition(NamedDefinition):
 
 	def __init__(self):
-		self.name_key = ""
+		NamedDefinition.__init__(self)
+		
 		self.calls = []
 	
 	def __contains__(self, item):
@@ -134,6 +135,8 @@ class AreaDefinition(NamedDefinition):
 class CityDefinition(NamedDefinition):
 
 	def __init__(self, *tile):
+		NamedDefinition.__init__(self)
+	
 		self.tile = duplefy(*tile)
 	
 	def __repr__(self):
