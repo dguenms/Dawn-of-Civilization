@@ -236,6 +236,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_first_contact(self):
+		onFirstContact = self.get("firstContact", self.increment)
+		
+		onFirstContact((0, 1))
+		self.assertEqual(self.iCount, 1)
+		
+		onFirstContact((1, 0))
+		self.assertEqual(self.iCount, 1)
+	
 	def test_peace_brokered(self):
 		onPeaceBrokered = self.get("peaceBrokered", self.increment)
 		

@@ -98,6 +98,13 @@ class EventHandlerRegistry(object):
 		
 		return cityBuilt
 	
+	def firstContact(self, goal, applicable, func):
+		def firstContact((iTeam, iHasMetTeam)):
+			if applicable(goal, team(iTeam).getLeaderID()):
+				func(goal, team(iHasMetTeam).getLeaderID())
+		
+		return firstContact
+	
 	def peaceBrokered(self, goal, applicable, func):
 		def peaceBrokered((iBroker, iPlayer1, iPlayer2)):
 			if applicable(goal, iBroker):

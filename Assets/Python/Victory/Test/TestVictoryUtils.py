@@ -163,7 +163,7 @@ class TestAreaDefinition(ExtendedTestCase):
 		area2 = area.create()
 		
 		self.assertNotEqual(id(area1), id(area2))
-		
+	
 
 class TestCityDefinition(ExtendedTestCase):
 
@@ -244,6 +244,58 @@ class TestCityDefinition(ExtendedTestCase):
 	
 	def test_is_has_building_no_city(self):
 		self.assertEqual(self.definition.isHasBuilding(iGranary), None)
+	
+
+class TestCivsDefinition(ExtendedTestCase):
+
+	def setUp(self):
+		self.definition = CivsDefinition(iEgypt, iBabylonia, iHarappa)
+	
+	def test_str(self):
+		self.assertEqual(str(self.definition), "CivsDefinition(Egypt, Babylonia, Harappa)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.definition), "CivsDefinition(Egypt, Babylonia, Harappa)")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.definition)
+	
+	def test_equal(self):
+		identical = CivsDefinition(iEgypt, iBabylonia, iHarappa)
+		different_order = CivsDefinition(iHarappa, iEgypt, iBabylonia)
+		different_civs = CivsDefinition(iChina, iIndia, iGreece)
+		
+		self.assertEqual(self.definition, identical)
+		self.assertEqual(self.definition, different_order)
+		self.assertNotEqual(self.definition, different_civs)
+	
+	def test_contains_civ(self):
+		self.assertEqual(iEgypt in self.definition, True)
+		self.assertEqual(iBabylonia in self.definition, True)
+		self.assertEqual(iHarappa in self.definition, True)
+		self.assertEqual(iChina in self.definition, False)
+	
+	def test_contains_player(self):
+		self.assertEqual(0 in self.definition, True)
+		self.assertEqual(1 in self.definition, True)
+		self.assertEqual(2 in self.definition, True)
+		self.assertEqual(3 in self.definition, False)
+	
+	def test_iter(self):
+		self.assertEqual(list(self.definition), [iEgypt, iBabylonia, iHarappa])
+	
+	def test_name(self):
+		self.assertEqual(self.definition.name(), "Egypt, Babylonia and Harappa")
+	
+	def test_named(self):
+		self.definition.named("Starting Civs")
+		
+		self.assertEqual(self.definition.name(), "Starting Civs")
+	
+	def test_group(self):
+		definition = CivsDefinition.group(iCivGroupAfrica)
+		
+		self.assertEqual(definition, CivsDefinition(iEgypt, iPhoenicia, iEthiopia, iMali, iCongo))
 		
 
 test_cases = [
@@ -251,4 +303,5 @@ test_cases = [
 	TestNamedDefinition,
 	TestAreaDefinition,
 	TestCityDefinition,
+	TestCivsDefinition,
 ]

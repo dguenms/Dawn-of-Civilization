@@ -1,6 +1,57 @@
 from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
+
+
+# Third Mayan UHV goal
+class ContactBeforeRevealed(StateRequirement):
+
+	TYPES = (CIVS, AREA)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTACT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTACT_BEFORE_REVEALED"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONTACT_BEFORE_REVEALED"
+	
+	def __init__(self, civs, area, **options):
+		StateRequirement.__init__(self, civs, area, **options)
+		
+		self.civs = civs
+		self.area = area
+		
+		self.handle("firstContact", self.check_contacted_before_revealed)
+	
+	def check_contacted_before_revealed(self, goal, iPlayer):
+		if iPlayer in self.civs:
+			try:
+				if self.area.land().none(lambda plot: plot.isRevealed(iPlayer, False)):
+					self.succeed()
+				else:
+					self.fail()
+				
+				goal.final_check()
+			except:
+				traceback.print_tb(*sys.exc_info())
+				raise
+
+
+# First Mayan UHV goal
+class Discover(StateRequirement):
+
+	TYPES = (TECH,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_DISCOVER"
+	
+	def __init__(self, iTech, **options):
+		StateRequirement.__init__(self, iTech, **options)
+		
+		self.iTech = iTech
+		
+		self.handle("techAcquired", self.check_discovered)
+		
+	def check_discovered(self, goal, iTech):
+		if self.iTech == iTech:
+			self.succeed()
+			goal.check()
 	
 
 # First Babylonian UHV goal

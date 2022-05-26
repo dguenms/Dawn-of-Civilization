@@ -186,10 +186,20 @@ class CityType(Type):
 		return argument.name()
 
 
+class CivsType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, CivsDefinition)
+	
+	def format_func(self, argument):
+		return argument.name()
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
 BUILDING = InfoType("Building", infos.building)
 CITY = CityType("City")
+CIVS = CivsType("Civs")
 COUNT = CountType("Count")
 PERCENTAGE = PercentageType("Percentage")
 TECH = InfoType("Tech", infos.tech)

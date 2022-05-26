@@ -194,6 +194,9 @@ class TestCity(ExtendedTestCase):
 	def test_equal(self):
 		self.assertEqual(CITY, CityType("City"))
 	
+	def test_pickle(self):
+		self.assertPickleable(CITY)
+	
 	def test_validate(self):
 		self.assertEqual(CITY.validate(self.city), True)
 		self.assertEqual(CITY.validate(1), False)
@@ -201,6 +204,32 @@ class TestCity(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(CITY.format(self.city), "Test City")
 		self.assertEqual(CITY.format_repr(self.city), "Test City")
+
+
+class TestCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.civs = CivsDefinition(iEgypt, iBabylonia, iHarappa)
+	
+	def test_str(self):
+		self.assertEqual(str(CIVS), "Civs")
+	
+	def test_repr(self):
+		self.assertEqual(repr(CIVS), "Civs")
+	
+	def test_equal(self):
+		self.assertEqual(CIVS, CivsType("Civs"))
+	
+	def test_pickle(self):
+		self.assertPickleable(CIVS)
+	
+	def test_validate(self):
+		self.assertEqual(CIVS.validate(self.civs), True)
+		self.assertEqual(CIVS.validate(1), False)
+	
+	def test_format(self):
+		self.assertEqual(CIVS.format(self.civs), "Egypt, Babylonia and Harappa")
+		self.assertEqual(CIVS.format_repr(self.civs), "Egypt, Babylonia and Harappa")
 
 
 class TestCount(ExtendedTestCase):
@@ -213,6 +242,9 @@ class TestCount(ExtendedTestCase):
 	
 	def test_equal(self):
 		self.assertEqual(COUNT, CountType("Count"))
+	
+	def test_pickle(self):
+		self.assertPickleable(COUNT)
 	
 	def test_validate(self):
 		self.assertEqual(COUNT.validate(1), True)
@@ -276,6 +308,7 @@ test_cases = [
 	TestArea,
 	TestBuilding,
 	TestCity,
+	TestCivs,
 	TestCount,
 	TestPercentage,
 	TestTech,

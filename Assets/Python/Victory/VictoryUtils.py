@@ -128,6 +128,12 @@ class AreaDefinition(NamedDefinition):
 	def where(self, *args, **kwargs):
 		return self.call("where", args, kwargs)
 	
+	def land(self, *args, **kwargs):
+		return self.call("land", args, kwargs)
+	
+	def none(self, *args, **kwargs):
+		return self.create().none(*args, **kwargs)
+	
 	def cities(self):
 		return self.create().cities()
 
@@ -165,7 +171,41 @@ class CityDefinition(NamedDefinition):
 	@none_safe
 	def isHasBuilding(self, iBuilding):
 		return self.city.isHasBuilding(iBuilding)
-			
+		
+		
+class CivsDefinition(NamedDefinition):
+
+	@staticmethod
+	def group(iGroup):
+		return CivsDefinition(*dCivGroups[iGroup])
+
+	def __init__(self, *civs):
+		NamedDefinition.__init__(self)
+	
+		self.civs = civs
+		
+	def __repr__(self):
+		return "CivsDefinition(%s)" % ", ".join(infos.civ(iCiv).getShortDescription(0) for iCiv in self.civs)
+		
+	def __contains__(self, identifier):
+		if not isinstance(identifier, Civ):
+			identifier = civ(identifier)
+		return identifier in self.civs
+	
+	def __eq__(self, other):
+		if not isinstance(other, CivsDefinition):
+			return False
+		
+		return set(self.civs) ==  set(other.civs)
+	
+	def __iter__(self):
+		return iter(self.civs)
+		
+	def name(self):
+		if not self.name_key:
+			return format_separators(self.civs, ",", text("TXT_KEY_AND"), lambda iCiv: infos.civ(iCiv).getShortDescription(0))
+		
+		return NamedDefinition.name(self)
 
 
 def indicator(value):
