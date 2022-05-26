@@ -83,6 +83,13 @@ class EventHandlerRegistry(object):
 				func(goal, city, bConquest)
 		
 		return cityAcquired
+		
+	def cityAcquiredAndKept(self, goal, applicable, func):
+		def cityAcquiredAndKept((iPlayer, city)):
+			if applicable(goal, iPlayer):
+				func(goal, city)
+		
+		return cityAcquiredAndKept
 	
 	def cityBuilt(self, goal, applicable, func):
 		def cityBuilt((city,)):

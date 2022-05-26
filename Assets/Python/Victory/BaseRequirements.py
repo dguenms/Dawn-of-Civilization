@@ -39,14 +39,14 @@ class Requirement(object):
 	
 	def register_handlers(self, goal):
 		if not self.handlers.handlers:
-			self.handle("BeginPlayerTurn", self.check_turnly)
+			self.handle("BeginPlayerTurn", self.check)
 	
 		event_handler_registry.register(self, goal)
 
 	def deregister_handlers(self):
 		event_handler_registry.deregister(self)
 		
-	def check_turnly(self, goal, iGameTurn):
+	def check(self, goal, *args):
 		goal.check()
 		
 	def indicator(self, evaluator):

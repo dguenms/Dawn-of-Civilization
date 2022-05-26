@@ -336,6 +336,103 @@ class TestBuildingCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCityCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CityCount(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"), 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityCount(Test Area, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityCount(Test Area, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities in Test Area")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cities in Test Area: 0 / 2")
+	
+	def test_less(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cities in Test Area: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		cities = TestCities.num(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Cities in Test Area: 3 / 2")
+		finally:
+			cities.kill()
+	
+	def test_other_owner(self):
+		cities = TestCities.owners(0, 1, 1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cities in Test Area: 1 / 2")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		cities = TestCities.owners(0, 1, 1)
+		team(1).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Cities in Test Area: 3 / 2")
+		finally:
+			cities.kill()
+	
+	def test_city_built(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_city_acquired_and_kept(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityAcquiredAndKept", self.iPlayer, city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestPopulationCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -425,5 +522,6 @@ class TestPopulationCount(ExtendedTestCase):
 
 test_cases = [
 	TestBuildingCount,
+	TestCityCount,
 	TestPopulationCount,
 ]

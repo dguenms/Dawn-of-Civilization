@@ -9,6 +9,7 @@ from BaseRequirements import *
 # Second Indian UHV goal
 # Second Persian UHV goal
 # Third Persian UHV goal
+# First Roman UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -21,11 +22,8 @@ class BuildingCount(ThresholdRequirement):
 		
 		self.iBuilding = iBuilding
 		
-		self.handle("cityAcquired", self.check_city_acquired)
+		self.handle("cityAcquired", self.check)
 		self.handle("buildingBuilt", self.check_building_built)
-	
-	def check_city_acquired(self, goal, city, bConquest):
-		goal.check()
 	
 	def check_building_built(self, goal, city, iBuilding):
 		if base_building(iBuilding) == self.iBuilding:
@@ -45,6 +43,27 @@ class BuildingCount(ThresholdRequirement):
 			return BUILDING.format(self.iBuilding)
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, BUILDING.format(self.iBuilding, bPlural=True)), self.progress_value(evaluator))
+
+
+# Second Roman UHV goal
+class CityCount(ThresholdRequirement):
+
+	TYPES = (AREA, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_COUNT"
+	
+	def __init__(self, area, *args, **options):
+		ThresholdRequirement.__init__(self, area, *args, **options)
+		
+		self.area = area
+		
+		self.handle("cityBuilt", self.check)
+		self.handle("cityAcquiredAndKept", self.check)
+		
+	def value(self, iPlayer, area):
+		return area.cities().owner(iPlayer).count()
 
 
 # Third Harappan UHV goal

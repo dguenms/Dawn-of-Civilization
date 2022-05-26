@@ -219,6 +219,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_COUNT</Tag>
+		<English>%s2 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -305,6 +313,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_LAND_PERCENT</Tag>
 		<English>World territory controlled</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_COUNT</Tag>
+		<English>Cities in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

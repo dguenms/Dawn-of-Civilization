@@ -208,6 +208,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			city.kill()
 	
+	def test_city_acquired_and_kept(self):
+		onCityAcquiredAndKept = self.get("cityAcquiredAndKept", self.increment)
+		
+		city = TestCities.one()
+		
+		try:
+			onCityAcquiredAndKept((self.iPlayer, city))
+			self.assertEqual(self.iCount, 1)
+			
+			onCityAcquiredAndKept((1, city))
+			self.assertEqual(self.iCount, 1)
+		finally:
+			city.kill()
+	
 	def test_city_built(self):
 		onCityBuilt = self.get("cityBuilt", self.increment)
 		
