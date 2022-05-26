@@ -7,6 +7,8 @@ from BaseRequirements import *
 # First Chinese UHV goal
 # First Indian UHV goal
 # Second Indian UHV goal
+# Second Persian UHV goal
+# Third Persian UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
