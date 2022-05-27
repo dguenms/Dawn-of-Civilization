@@ -221,15 +221,15 @@ class Goal(object):
 		self.check()
 		self.expire()
 	
-	def handle_at(self, goal, iGameTurn):
+	def handle_at(self, goal, iGameTurn, iPlayer):
 		if year(goal.iYear) == iGameTurn:
 			goal.final_check()
 	
-	def handle_by(self, goal, iGameTurn):
+	def handle_by(self, goal, iGameTurn, iPlayer):
 		if year(goal.iYear) == iGameTurn:
 			goal.expire()
 	
-	def handle_every(self, goal, iGameTurn):
+	def handle_every(self, goal, iGameTurn, iPlayer):
 		goal.check()
 	
 	def at(self, iYear):

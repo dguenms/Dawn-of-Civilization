@@ -165,7 +165,8 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 	def increment(self, *args):
 		self.iCount += 1
 	
-	def accumulate(self, goal, iChange):
+	def accumulate(self, goal, *args):
+		iChange = args[-1]
 		self.iCount += iChange
 	
 	def capture(self, *args):
@@ -178,7 +179,7 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		self.assertEqual(self.argument, None)
 		
 		onBeginPlayerTurn((10, 0))
-		self.assertEqual(self.argument, (self.goal, 10))
+		self.assertEqual(self.argument, (self.goal, 10, 0))
 		
 	def test_building_built(self):
 		onBuildingBuilt = self.get("buildingBuilt", self.capture)
@@ -254,6 +255,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onPeaceBrokered((self.iPlayer, 1, 2))
 		self.assertEqual(self.iCount, 1)
 	
+	def test_player_gold_trade(self):
+		onPlayerGoldTrade = self.get("playerGoldTrade", self.accumulate)
+		
+		onPlayerGoldTrade((0, 1, 100))
+		self.assertEqual(self.iCount, 0)
+		
+		onPlayerGoldTrade((1, 0, 100))
+		self.assertEqual(self.iCount, 100)
+	
 	def test_tech_acquired(self):
 		onTechAcquired = self.get("techAcquired", self.capture)
 		
@@ -262,6 +272,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		
 		onTechAcquired((iEngineering, self.iPlayer, self.iPlayer, False))
 		self.assertEqual(self.argument, (self.goal, iEngineering))
+	
+	def test_trade_mission(self):
+		onTradeMission = self.get("tradeMission", self.accumulate)
+		
+		onTradeMission((iGreatMerchant, 1, 20, 20, 100))
+		self.assertEqual(self.iCount, 0)
+		
+		onTradeMission((iGreatMerchant, 0, 20, 20, 100))
+		self.assertEqual(self.iCount, 100)
 		
 
 test_cases = [

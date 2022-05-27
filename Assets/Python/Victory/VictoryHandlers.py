@@ -66,7 +66,7 @@ class EventHandlerRegistry(object):
 	def BeginPlayerTurn(self, goal, applicable, func):
 		def BeginPlayerTurn((iGameTurn, iPlayer)):
 			if applicable(goal, iPlayer):
-				func(goal, iGameTurn)
+				func(goal, iGameTurn, iPlayer)
 		
 		return BeginPlayerTurn
 		
@@ -112,12 +112,26 @@ class EventHandlerRegistry(object):
 		
 		return peaceBrokered
 	
+	def playerGoldTrade(self, goal, applicable, func):
+		def playerGoldTrade((iFrom, iTo, iGold)):
+			if applicable(goal, iTo):
+				func(goal, iGold)
+		
+		return playerGoldTrade
+	
 	def techAcquired(self, goal, applicable, func):
 		def techAcquired((iTech, iTeam, iPlayer, bAnnounce)):
 			if applicable(goal, iPlayer):
 				func(goal, iTech)
 	
 		return techAcquired
+	
+	def tradeMission(self, goal, applicable, func):
+		def tradeMission((iUnit, iPlayer, iX, iY, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, (iX, iY), iGold)
+		
+		return tradeMission
 		
 		
 		
