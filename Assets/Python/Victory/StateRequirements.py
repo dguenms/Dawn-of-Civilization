@@ -22,16 +22,39 @@ class ContactBeforeRevealed(StateRequirement):
 	
 	def check_contacted_before_revealed(self, goal, iPlayer):
 		if iPlayer in self.civs:
-			try:
-				if self.area.land().none(lambda plot: plot.isRevealed(iPlayer, False)):
-					self.succeed()
-				else:
-					self.fail()
-				
-				goal.final_check()
-			except:
-				traceback.print_tb(*sys.exc_info())
-				raise
+			if self.area.land().none(lambda plot: plot.isRevealed(iPlayer, False)):
+				self.succeed()
+			else:
+				self.fail()
+			
+			goal.final_check()
+
+
+# Second Ethiopian UHV goal
+class ConvertAfterFounding(StateRequirement):
+
+	TYPES = (RELIGION, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONVERT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONVERT_AFTER_FOUNDING"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONVERT_AFTER_FOUNDING"
+	
+	def __init__(self, iReligion, iTurns, **options):
+		StateRequirement.__init__(self, iReligion, scale(iTurns), **options)
+		
+		self.iReligion = iReligion
+		self.iTurns = scale(iTurns)
+		
+		self.handle("playerChangeStateReligion", self.check_convert)
+		
+	def check_convert(self, goal, iReligion):
+		if self.iReligion == iReligion and game.isReligionFounded(iReligion):
+			if turn() <= game.getReligionGameTurnFounded(iReligion) + self.iTurns:
+				self.succeed()
+			else:
+				self.fail()
+			
+			goal.final_check()
 
 
 # First Mayan UHV goal

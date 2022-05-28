@@ -264,6 +264,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onPlayerGoldTrade((1, 0, 100))
 		self.assertEqual(self.iCount, 100)
 	
+	def test_player_change_state_religion(self):
+		onPlayerStateReligionChange = self.get("playerChangeStateReligion", self.capture)
+		
+		onPlayerStateReligionChange((1, iCatholicism, iOrthodoxy))
+		self.assertEqual(self.argument, None)
+		
+		onPlayerStateReligionChange((0, iCatholicism, iOrthodoxy))
+		self.assertEqual(self.argument, (self.goal, iCatholicism))
+	
 	def test_tech_acquired(self):
 		onTechAcquired = self.get("techAcquired", self.capture)
 		

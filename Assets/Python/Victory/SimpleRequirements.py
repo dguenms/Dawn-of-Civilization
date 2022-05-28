@@ -60,6 +60,35 @@ class Control(Requirement):
 		return self.area.cities().all_if_any(lambda city: city.getOwner() in evaluator)
 
 
+# Third Ethiopian UHV goal
+class MoreReligion(Requirement):
+
+	TYPES = (AREA, RELIGION_ADJECTIVE, RELIGION_ADJECTIVE)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ENSURE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_MORE_RELIGION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_MORE_RELIGION"
+	
+	def __init__(self, area, iOurReligion, iOtherReligion, **options):
+		Requirement.__init__(self, area, iOurReligion, iOtherReligion, **options)
+		
+		self.area = area
+		self.iOurReligion = iOurReligion
+		self.iOtherReligion = iOtherReligion
+		
+	def count_religion_cities(self, iReligion):
+		return self.area.cities().religion(iReligion).count()
+	
+	def fulfilled(self, evaluator):
+		return self.count_religion_cities(self.iOurReligion) > self.count_religion_cities(self.iOtherReligion)
+		
+	def progress_text_religion(self, iReligion):
+		return "%s: %d" % (text(self.PROGR_KEY, RELIGION_ADJECTIVE.format(iReligion)), self.count_religion_cities(iReligion))
+	
+	def progress_text(self, **options):
+		return "%s %s" % (self.progress_text_religion(self.iOurReligion), self.progress_text_religion(self.iOtherReligion))
+
+
 # First Harappan UHV goal
 class TradeConnection(Requirement):
 

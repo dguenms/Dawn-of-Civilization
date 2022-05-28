@@ -262,6 +262,100 @@ class TestControl(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestMoreReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = MoreReligion(plots.rectangle((60, 30), (65, 35)).named("Test Area"), iOrthodoxy, iCatholicism)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "MoreReligion(Test Area, Orthodoxy, Catholicism)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "MoreReligion(Test Area, Orthodoxy, Catholicism)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "more Orthodox than Catholic cities in Test Area")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Orthodox cities: 0 Catholic cities: 0")
+	
+	def test_more(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iOrthodoxy, True, False, False)
+		city3.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodox cities: 2 Catholic cities: 1")
+		finally:
+			cities.kill()
+	
+	def test_equal(self):
+		city1, city2 = cities = TestCities.num(2)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Orthodox cities: 1 Catholic cities: 1")
+		finally:
+			cities.kill()
+	
+	def test_fewer(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		city3.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Orthodox cities: 1 Catholic cities: 2")
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city1, city2, city3 = cities = TestCities.owners(1, 1, 1)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iOrthodoxy, True, False, False)
+		city3.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodox cities: 2 Catholic cities: 1")
+		finally:
+			cities.kill()
+	
+	def test_outside(self):
+		requirement = MoreReligion(plots.rectangle((10, 10), (20, 20)).named("Test Area"), iOrthodoxy, iCatholicism)
+		
+		city1, city2, city3 = cities = TestCities.num(3)
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iOrthodoxy, True, False, False)
+		city3.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Orthodox cities: 0 Catholic cities: 0")
+		finally:
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestTradeConnection(ExtendedTestCase):
 
 	def setUp(self):
@@ -435,6 +529,7 @@ class TestWonder(ExtendedTestCase):
 test_cases = [
 	TestCityBuilding,
 	TestControl,
+	TestMoreReligion,
 	TestTradeConnection,
 	TestWonder,
 ]

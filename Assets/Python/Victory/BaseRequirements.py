@@ -80,6 +80,7 @@ class ThresholdRequirement(Requirement):
 		Requirement.__init__(self, *args, **options)
 		
 		self.iRequired = args[-1]
+		self.bPlural = self.iRequired > 1
 
 	def value(self, iPlayer):
 		raise NotImplementedError()

@@ -195,6 +195,18 @@ class CivsType(Type):
 		return argument.name()
 
 
+class ReligionAdjectiveType(InfoType):
+
+	def __init__(self, name):
+		InfoType.__init__(self, name, infos.religion)
+	
+	def format_func(self, argument, bPlural=False, **options):
+		return text(infos.religion(argument).getAdjectiveKey())
+	
+	def format_repr_func(self, argument):
+		return infos.religion(argument).getText()
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
 BUILDING = InfoType("Building", infos.building)
@@ -202,11 +214,15 @@ CITY = CityType("City")
 CIVS = CivsType("Civs")
 COUNT = CountType("Count")
 PERCENTAGE = PercentageType("Percentage")
+RELIGION = InfoType("Religion", infos.religion)
+RELIGION_ADJECTIVE = ReligionAdjectiveType("ReligionAdjective")
+RESOURCE = InfoType("Resource", infos.bonus)
+SPECIALIST = InfoType("Specialist", infos.specialist)
 TECH = InfoType("Tech", infos.tech)
 
 
 FAILURE, POSSIBLE, SUCCESS = Enum.of("State", ("Failure", "Possible", "Success"))
 
-SELF, VASSALS, ALLIES, RELIGION, SECULAR, WORLD = Enum.of("Subject", ("Self", "Vassals", "Allies", "Religion", "Secular", "World"))
+SELF, VASSALS, ALLIES, STATE_RELIGION, SECULAR, WORLD = Enum.of("Subject", ("Self", "Vassals", "Allies", "StateReligion", "Secular", "World"))
 
 STATEFUL, STATELESS = Enum.of("Mode", ("Stateful", "Stateless"))

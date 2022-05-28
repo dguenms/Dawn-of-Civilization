@@ -9,7 +9,7 @@ class Evaluators(object):
 			SELF: SelfEvaluator,
 			VASSALS: VassalsEvaluator,
 			ALLIES: AlliesEvaluator,
-			RELIGION: ReligionEvaluator,
+			STATE_RELIGION: ReligionEvaluator,
 			SECULAR: SecularEvaluator,
 			WORLD: WorldEvaluator,
 		}

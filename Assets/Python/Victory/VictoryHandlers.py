@@ -112,6 +112,13 @@ class EventHandlerRegistry(object):
 		
 		return peaceBrokered
 	
+	def playerChangeStateReligion(self, goal, applicable, func):
+		def playerChangeStateReligion((iPlayer, iNewReligion, iOldReligion)):
+			if applicable(goal, iPlayer):
+				func(goal, iNewReligion)
+		
+		return playerChangeStateReligion
+	
 	def playerGoldTrade(self, goal, applicable, func):
 		def playerGoldTrade((iFrom, iTo, iGold)):
 			if applicable(goal, iTo):

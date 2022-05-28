@@ -276,6 +276,101 @@ class TestPercentage(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(PERCENTAGE.format(1), "1%")
 		self.assertEqual(PERCENTAGE.format_repr(1), "1%")
+		
+
+
+class TestReligion(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(RELIGION), "Religion")
+	
+	def test_repr(self):
+		self.assertEqual(repr(RELIGION), "Religion")
+	
+	def test_equal(self):
+		self.assertEqual(RELIGION, InfoType("Religion", infos.religion))
+	
+	def test_pickle(self):
+		self.assertPickleable(RELIGION)
+	
+	def test_validate(self):
+		self.assertEqual(RELIGION.validate(iOrthodoxy), True)
+		self.assertEqual(RELIGION.validate("Orthodoxy"), False)
+	
+	def test_format(self):
+		self.assertEqual(RELIGION.format(iOrthodoxy), "Orthodoxy")
+		self.assertEqual(RELIGION.format_repr(iOrthodoxy), "Orthodoxy")
+		
+		
+class TestReligionAdjective(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(RELIGION_ADJECTIVE), "ReligionAdjective")
+	
+	def test_repr(self):
+		self.assertEqual(repr(RELIGION_ADJECTIVE), "ReligionAdjective")
+	
+	def test_equal(self):
+		self.assertEqual(RELIGION_ADJECTIVE, ReligionAdjectiveType("ReligionAdjective"))
+	
+	def test_pickle(self):
+		self.assertPickleable(RELIGION_ADJECTIVE)
+	
+	def test_validate(self):
+		self.assertEqual(RELIGION_ADJECTIVE.validate(iOrthodoxy), True)
+		self.assertEqual(RELIGION_ADJECTIVE.validate("Orthodoxy"), False)
+	
+	def test_format(self):
+		self.assertEqual(RELIGION_ADJECTIVE.format(iOrthodoxy), "Orthodox")
+		self.assertEqual(RELIGION_ADJECTIVE.format_repr(iOrthodoxy), "Orthodoxy")
+
+
+class TestResource(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(RESOURCE), "Resource")
+	
+	def test_repr(self):
+		self.assertEqual(repr(RESOURCE), "Resource")
+	
+	def test_equal(self):
+		self.assertEqual(RESOURCE, InfoType("Resource", infos.bonus))
+	
+	def test_pickle(self):
+		self.assertPickleable(RESOURCE)
+	
+	def test_validate(self):
+		self.assertEqual(RESOURCE.validate(iCopper), True)
+		self.assertEqual(RESOURCE.validate("Copper"), False)
+	
+	def test_format(self):
+		self.assertEqual(RESOURCE.format(iCopper), "Copper")
+		self.assertEqual(RESOURCE.format_repr(iCopper), "Copper")
+
+
+class TestSpecialist(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(SPECIALIST), "Specialist")
+	
+	def test_repr(self):
+		self.assertEqual(repr(SPECIALIST), "Specialist")
+	
+	def test_equal(self):
+		self.assertEqual(SPECIALIST, InfoType("Specialist", infos.specialist))
+	
+	def test_pickle(self):
+		self.assertPickleable(SPECIALIST)
+	
+	def test_validate(self):
+		self.assertEqual(SPECIALIST.validate(iSpecialistGreatScientist), True)
+		self.assertEqual(SPECIALIST.validate("Great Scientist"), False)
+	
+	def test_format(self):
+		self.assertEqual(SPECIALIST.format(iSpecialistGreatScientist, bPlural=False), "Great Scientist")
+		self.assertEqual(SPECIALIST.format(iSpecialistGreatScientist, bPlural=True), "Great Scientists")
+		
+		self.assertEqual(SPECIALIST.format_repr(iSpecialistGreatScientist), "Great Scientist")
 
 
 class TestTech(ExtendedTestCase):
@@ -311,5 +406,9 @@ test_cases = [
 	TestCivs,
 	TestCount,
 	TestPercentage,
+	TestReligion,
+	TestReligionAdjective,
+	TestResource,
+	TestSpecialist,
 	TestTech,
 ]
