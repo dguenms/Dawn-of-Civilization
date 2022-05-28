@@ -98,6 +98,13 @@ class EventHandlerRegistry(object):
 		
 		return cityBuilt
 	
+	def combatResult(self, goal, applicable, func):
+		def combatResult((winningUnit, losingUnit)):
+			if applicable(goal, winningUnit.getOwner()):
+				func(goal, losingUnit)
+		
+		return combatResult
+	
 	def firstContact(self, goal, applicable, func):
 		def firstContact((iTeam, iHasMetTeam)):
 			if applicable(goal, team(iTeam).getLeaderID()):

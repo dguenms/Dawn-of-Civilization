@@ -139,6 +139,111 @@ class TestGoldenAges(ExtendedTestCase):
 			self.player.changeAnarchyTurns(-1)
 
 
+class TestSunkShips(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = SunkShips(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "SunkShips(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "SunkShips(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two enemy ships")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_sink_enemy_ship(self):
+		our_ship = makeUnit(0, iWarGalley, (3, 3))
+		their_ship = makeUnit(1, iGalley, (3, 4))
+		
+		try:
+			events.fireEvent("combatResult", our_ship, their_ship)
+			events.fireEvent("combatResult", our_ship, their_ship)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Enemy ships sunk: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			our_ship.kill(False, -1)
+			their_ship.kill(False, -1)
+	
+	def test_sink_ship_other_player(self):
+		their_ship = makeUnit(1, iWarGalley, (3, 3))
+		other_ship = makeUnit(2, iGalley, (3, 4))
+		
+		try:
+			events.fireEvent("combatResult", their_ship, other_ship)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Enemy ships sunk: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			their_ship.kill(False, -1)
+			other_ship.kill(False, -1)
+	
+	def test_defeat_land_unit(self):
+		our_unit = makeUnit(0, iSwordsman, (61, 31))
+		their_unit = makeUnit(1, iLightSwordsman, (62, 31))
+		
+		try:
+			events.fireEvent("combatResult", our_unit, their_unit)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Enemy ships sunk: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			our_unit.kill(False, -1)
+			their_unit.kill(False, -1)
+	
+	def test_sink_enemy_ship_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		vassal_ship = makeUnit(1, iWarGalley, (3, 3))
+		enemy_ship = makeUnit(2, iGalley, (3, 4))
+		
+		try:
+			events.fireEvent("combatResult", vassal_ship, enemy_ship)
+			events.fireEvent("combatResult", vassal_ship, enemy_ship)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Enemy ships sunk: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			vassal_ship.kill(False, -1)
+			enemy_ship.kill(False, -1)
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestTradeGold(ExtendedTestCase):
 
 	def setUp(self):
@@ -357,5 +462,6 @@ class TestTradeGold(ExtendedTestCase):
 test_cases = [
 	TestBrokeredPeace,
 	TestGoldenAges,
+	TestSunkShips,
 	TestTradeGold,
 ]

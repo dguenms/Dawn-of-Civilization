@@ -42,6 +42,26 @@ class GoldenAges(TrackRequirement):
 		return "%d / %d" % (self.evaluate(evaluator) / iGoldenAgeLength, self.required() / iGoldenAgeLength)
 
 
+# Third Korean UHV goal
+class SunkShips(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SINK"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SUNK_SHIPS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SUNK_SHIPS"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.handle("combatResult", self.increment_ships_sunk)
+		
+	def increment_ships_sunk(self, goal, unit):
+		if infos.unit(unit).getDomainType() == DomainTypes.DOMAIN_SEA:
+			self.increment()
+			goal.check()
+
+
 # Third Tamil UHV goal
 class TradeGold(TrackRequirement):
 

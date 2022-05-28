@@ -11,6 +11,7 @@ from BaseRequirements import *
 # Third Persian UHV goal
 # First Roman UHV goal
 # Second Ethiopian UHV goal
+# First Korean UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
