@@ -23,6 +23,9 @@ class TestGoldAmount(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "500 gold")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -88,6 +91,9 @@ class TestCultureAmount(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "more than 500 culture")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

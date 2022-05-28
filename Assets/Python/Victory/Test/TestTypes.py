@@ -126,6 +126,9 @@ class TestAmount(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(AMOUNT.format(3), "3")
 		self.assertEqual(AMOUNT.format_repr(3), "3")
+	
+	def test_area(self):
+		self.assertEqual(AMOUNT.area(3), None)
 
 
 class TestArea(ExtendedTestCase):
@@ -152,6 +155,9 @@ class TestArea(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(AREA.format(self.area), "Test Area")
 		self.assertEqual(AREA.format(self.area), "Test Area")
+	
+	def test_area(self):
+		self.assertEqual(AREA.area(self.area), plots_.of(TestCities.CITY_LOCATIONS))
 
 
 class TestBuilding(ExtendedTestCase):
@@ -178,6 +184,9 @@ class TestBuilding(ExtendedTestCase):
 		self.assertEqual(BUILDING.format(iGranary, bPlural=True), "Granaries")
 		
 		self.assertEqual(BUILDING.format_repr(iGranary), "Granary")
+	
+	def test_area(self):
+		self.assertEqual(BUILDING.area(iGranary), None)
 
 
 class TestCity(ExtendedTestCase):
@@ -204,6 +213,9 @@ class TestCity(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(CITY.format(self.city), "Test City")
 		self.assertEqual(CITY.format_repr(self.city), "Test City")
+	
+	def test_area(self):
+		self.assertEqual(CITY.area(self.city), plots_.of([(61, 31)]))
 
 
 class TestCivs(ExtendedTestCase):
@@ -230,6 +242,9 @@ class TestCivs(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(CIVS.format(self.civs), "Egypt, Babylonia and Harappa")
 		self.assertEqual(CIVS.format_repr(self.civs), "Egypt, Babylonia and Harappa")
+	
+	def test_area(self):
+		self.assertEqual(CIVS.area(self.civs), None)
 
 
 class TestCount(ExtendedTestCase):
@@ -253,6 +268,9 @@ class TestCount(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(COUNT.format(3), "three")
 		self.assertEqual(COUNT.format_repr(3), "3")
+	
+	def test_area(self):
+		self.assertEqual(COUNT.area(3), None)
 
 
 class TestPercentage(ExtendedTestCase):
@@ -276,7 +294,9 @@ class TestPercentage(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(PERCENTAGE.format(1), "1%")
 		self.assertEqual(PERCENTAGE.format_repr(1), "1%")
-		
+	
+	def test_area(self):
+		self.assertEqual(PERCENTAGE.area(1), None)
 
 
 class TestReligion(ExtendedTestCase):
@@ -300,6 +320,9 @@ class TestReligion(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(RELIGION.format(iOrthodoxy), "Orthodoxy")
 		self.assertEqual(RELIGION.format_repr(iOrthodoxy), "Orthodoxy")
+	
+	def test_area(self):
+		self.assertEqual(RELIGION.area(iOrthodoxy), None)
 		
 		
 class TestReligionAdjective(ExtendedTestCase):
@@ -323,6 +346,9 @@ class TestReligionAdjective(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(RELIGION_ADJECTIVE.format(iOrthodoxy), "Orthodox")
 		self.assertEqual(RELIGION_ADJECTIVE.format_repr(iOrthodoxy), "Orthodoxy")
+	
+	def test_area(self):
+		self.assertEqual(RELIGION_ADJECTIVE.area(iOrthodoxy), None)
 
 
 class TestResource(ExtendedTestCase):
@@ -346,6 +372,9 @@ class TestResource(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(RESOURCE.format(iCopper), "Copper")
 		self.assertEqual(RESOURCE.format_repr(iCopper), "Copper")
+	
+	def test_area(self):
+		self.assertEqual(RESOURCE.area(iCopper), None)
 
 
 class TestSpecialist(ExtendedTestCase):
@@ -371,6 +400,9 @@ class TestSpecialist(ExtendedTestCase):
 		self.assertEqual(SPECIALIST.format(iSpecialistGreatScientist, bPlural=True), "Great Scientists")
 		
 		self.assertEqual(SPECIALIST.format_repr(iSpecialistGreatScientist), "Great Scientist")
+	
+	def test_area(self):
+		self.assertEqual(SPECIALIST.area(iSpecialistGreatScientist), None)
 
 
 class TestTech(ExtendedTestCase):
@@ -394,6 +426,9 @@ class TestTech(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(TECH.format(iEngineering), "Engineering")
 		self.assertEqual(TECH.format_repr(iEngineering), "Engineering")
+	
+	def test_area(self):
+		self.assertEqual(TECH.area(iEngineering), None)
 
 
 test_cases = [

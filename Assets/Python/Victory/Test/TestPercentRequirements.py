@@ -23,6 +23,9 @@ class TestLandPercent(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "10% of the world")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -102,6 +105,9 @@ class TestPopulationPercent(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "30% of the world's population")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

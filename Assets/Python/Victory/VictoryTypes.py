@@ -94,6 +94,9 @@ class Type(object):
 		if isinstance(argument, Aggregate):
 			return argument.format(self.format_func, **options)
 		return self.format_func(argument, **options)
+		
+	def area(self, argument):
+		return None
 	
 	def format_repr(self, argument):
 		if isinstance(argument, Aggregate):
@@ -166,6 +169,9 @@ class AreaType(Type):
 	
 	def format_func(self, argument, **options):
 		return argument.name()
+		
+	def area(self, argument):
+		return argument.create()
 
 
 class PercentageType(Type):
@@ -184,6 +190,9 @@ class CityType(Type):
 	
 	def format_func(self, argument):
 		return argument.name()
+	
+	def area(self, argument):
+		return plots_.of([argument.tile])
 
 
 class CivsType(Type):

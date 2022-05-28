@@ -26,6 +26,13 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "China before any of them discovers Rectangle")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Rectangle": plots_.rectangle((20, 20), (30, 30))})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((25, 25)), "Rectangle")
+		self.assertEqual(self.requirement.area_name((35, 35)), "")
+	
 	def test_contact(self):
 		events.fireEvent("firstContact", self.iPlayer, team(iChina).getID())
 		
@@ -100,6 +107,9 @@ class TestConvertAfterFounding(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Orthodoxy five turns after its founding")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -227,6 +237,9 @@ class TestDiscover(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Engineering")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_discover(self):
 		team(self.iPlayer).setHasTech(iEngineering, True, self.iPlayer, True, False)
 		
@@ -308,6 +321,9 @@ class TestFirstDiscover(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Engineering")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -392,6 +408,13 @@ class TestSettle(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

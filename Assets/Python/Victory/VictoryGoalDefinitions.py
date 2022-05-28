@@ -272,6 +272,12 @@ class Goal(object):
 		self.desc_key = key
 		return self
 	
+	def areas(self):
+		return dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
+		
+	def area_name(self, tile):
+		return "\n".join(name for name, area in self.areas().items() if tile in area)
+	
 	def progress(self):
 		return PROGRESS.format(self.requirements, self.evaluator)
 

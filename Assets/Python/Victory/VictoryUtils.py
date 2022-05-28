@@ -3,6 +3,9 @@ from Core import *
 import re
 
 
+plots_ = PlotFactory()
+
+
 IRREGULAR_PLURALS = {
 	"Ship of the Line": "Ships of the Line",
 	"Great Statesman": "Great Statesmen",

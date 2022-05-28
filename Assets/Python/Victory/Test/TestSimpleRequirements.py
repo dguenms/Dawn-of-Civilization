@@ -23,6 +23,13 @@ class TestCityBuilding(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "a Granary in Test City")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -206,6 +213,13 @@ class TestControl(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Test Area")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -265,7 +279,7 @@ class TestControl(ExtendedTestCase):
 class TestMoreReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = MoreReligion(plots.rectangle((60, 30), (65, 35)).named("Test Area"), iOrthodoxy, iCatholicism)
+		self.requirement = MoreReligion(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"), iOrthodoxy, iCatholicism)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -281,6 +295,13 @@ class TestMoreReligion(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "more Orthodox than Catholic cities in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -376,6 +397,9 @@ class TestTradeConnection(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "trade connection with another civilization")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -448,6 +472,9 @@ class TestWonder(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "The Pyramids")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

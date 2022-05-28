@@ -23,6 +23,9 @@ class TestBrokeredPeace(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -86,6 +89,9 @@ class TestGoldenAges(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two Golden Ages")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -152,6 +158,9 @@ class TestTradeGold(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "100 gold by trade")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

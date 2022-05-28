@@ -34,6 +34,9 @@ class TestBuildingCount(ExtendedTestCase):
 
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "three Granaries")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 
 	def test_none(self):
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
@@ -356,6 +359,13 @@ class TestCityCount(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -453,6 +463,9 @@ class TestPopulationCount(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "a total population of five")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -540,6 +553,9 @@ class TestResourceCount(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two Gold resources")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -608,6 +624,9 @@ class TestSpecialistCount(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two Great Scientists in your cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

@@ -23,6 +23,9 @@ class TestBestPopulationPlayer(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "the largest population in the world")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
@@ -126,6 +129,9 @@ class TestBestPopulationCities(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "the three largest cities in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -312,6 +318,13 @@ class TestBestPopulationCity(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Somecity the most populous city in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Somecity": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Somecity")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -448,6 +461,13 @@ class TestBestCultureCity(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Somecity the most culturally advanced city in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Somecity": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Somecity")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

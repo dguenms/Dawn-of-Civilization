@@ -574,6 +574,20 @@ class TestGoal(ExtendedTestCase):
 	def test_full_description_no_title(self):
 		self.assertEqual(self.goal.full_description(), "Control three Granaries")
 	
+	def test_areas_empty(self):
+		self.assertEqual(self.goal.areas(), {})
+	
+	def test_area_name_empty(self):
+		self.assertEqual(self.goal.area_name((10, 10)), "")
+	
+	def test_areas(self):
+		goal = Goal([Control(plots.rectangle((20, 20), (30, 30)).named("First Area")), Control(plots.rectangle((20, 20), (40, 40)).named("Second Area"))], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer)
+		
+		self.assertEqual(goal.areas(), {"First Area": plots_.rectangle((20, 20), (30, 30)), "Second Area": plots_.rectangle((20, 20), (40, 40))})
+		self.assertEqual(goal.area_name((25, 25)), "Second Area\nFirst Area")
+		self.assertEqual(goal.area_name((35, 35)), "Second Area")
+		self.assertEqual(goal.area_name((45, 45)), "")
+	
 	def test_progress_not_fulfilled(self):
 		self.assertEqual(self.goal.progress(), [self.FAILURE + "Granaries: 0 / 3"])
 		self.assertEqual(self.double_goal.progress(), [self.FAILURE + "Granaries: 0 / 3 " + self.FAILURE + "Libraries: 0 / 4"])
