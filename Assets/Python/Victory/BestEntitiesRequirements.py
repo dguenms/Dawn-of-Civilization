@@ -24,6 +24,7 @@ class BestPopulationCities(BestCitiesRequirement):
 
 
 # Second Babylonian UHV goal
+# Second Byzantine UHV goal
 class BestPopulationCity(BestCityRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
@@ -35,6 +36,7 @@ class BestPopulationCity(BestCityRequirement):
 
 
 # Third Babylonian UHV goal
+# Second Byzantine UHV goal
 class BestCultureCity(BestCityRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"

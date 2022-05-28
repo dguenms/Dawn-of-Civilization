@@ -22,6 +22,7 @@ class CultureAmount(ThresholdRequirement):
 
 # Third Phoenician UHV goal
 # First Tamil UHV goal
+# First Byzantine UHV goal
 class GoldAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)

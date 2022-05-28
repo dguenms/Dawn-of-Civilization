@@ -45,6 +45,7 @@ class BuildingCount(ThresholdRequirement):
 
 
 # Second Roman UHV goal
+# Third Byzantine UHV goal
 class CityCount(ThresholdRequirement):
 
 	TYPES = (AREA, COUNT)
