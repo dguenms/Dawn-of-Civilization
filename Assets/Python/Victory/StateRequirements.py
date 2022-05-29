@@ -105,6 +105,27 @@ class FirstDiscover(StateRequirement):
 		if self.iTech == iTech and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
+			
+
+# First Japanese UHV goal
+class NoCityLost(StateRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SIMPLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_NO_CITY_LOST"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_NO_CITY_LOST"
+	
+	def __init__(self, **options):
+		StateRequirement.__init__(self, **options)
+		
+		self.handle("cityLost", self.fail_on_city_lost)
+		
+	def fail_on_city_lost(self, goal):
+		if self.state == POSSIBLE:
+			self.fail()
+			goal.expire()
+		
+	def fulfilled(self, evaluator):
+		return self.state != FAILURE
 
 
 # First Polynesian UHV goal

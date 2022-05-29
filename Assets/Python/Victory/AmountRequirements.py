@@ -3,6 +3,27 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# First Japanese UHV goal
+class AverageCultureAmount(ThresholdRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AVERAGE_CULTURE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AVERAGE_CULTURE"
+	
+	def __init__(self, iRequired, **options):
+		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		
+		self.iRequired = scale(iRequired)
+	
+	def value(self, iPlayer):
+		iNumCities = player(iPlayer).getNumCities()
+		if iNumCities == 0:
+			return 0
+		
+		return player(iPlayer).countTotalCulture() / iNumCities
+
+
 # First Egyption UHV goal
 # Third Egyptian UHV goal
 # First Tamil UHV goal

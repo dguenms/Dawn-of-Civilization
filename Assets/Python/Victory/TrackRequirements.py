@@ -16,6 +16,42 @@ class BrokeredPeace(TrackRequirement):
 		self.incremented("peaceBrokered")
 
 
+# Third Japanese UHV goal
+class EraFirstDiscover(TrackRequirement):
+
+	TYPES = (ERA, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_DISCOVER"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ERA_FIRST_DISCOVER"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ERA_FIRST_DISCOVER"
+	
+	def __init__(self, iEra, iRequired, **options):
+		TrackRequirement.__init__(self, iEra, iRequired, **options)
+		
+		self.iEra = iEra
+		self.iRequired = iRequired
+		
+		self.handle("techAcquired", self.increment_first_discovered)
+		self.expire("techAcquired", self.expire_insufficient_techs_left)
+		
+	def increment_first_discovered(self, goal, iTech):
+		if self.iEra == infos.tech(iTech).getEra():
+			if game.countKnownTechNumTeams(iTech) == 1:
+				self.increment()
+				goal.check()
+	
+	def expire_insufficient_techs_left(self, goal, iTech):
+		if self.iEra == infos.tech(iTech).getEra():
+			if self.iValue + self.remaining_techs() < self.iRequired:
+				goal.expire()
+	
+	def remaining_techs(self):
+		return count(infos.tech(iTech).getEra() == self.iEra and game.countKnownTechNumTeams(iTech) == 0 for iTech in infos.techs())
+		
+	def progress(self, evaluator):
+		return "%s (%s)" % (ThresholdRequirement.progress(self, evaluator), text("TXT_KEY_VICTORY_PROGRESS_REMAINING", self.remaining_techs()))
+
+
 # Third Chinese UHV goal
 class GoldenAges(TrackRequirement):
 

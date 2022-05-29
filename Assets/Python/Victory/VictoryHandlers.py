@@ -98,6 +98,13 @@ class EventHandlerRegistry(object):
 		
 		return cityBuilt
 	
+	def cityLost(self, goal, applicable, func):
+		def cityLost((city,)):
+			if applicable(goal, city.getOwner()):
+				func(goal)
+
+		return cityLost
+	
 	def combatResult(self, goal, applicable, func):
 		def combatResult((winningUnit, losingUnit)):
 			if applicable(goal, winningUnit.getOwner()):

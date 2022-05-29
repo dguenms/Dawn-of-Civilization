@@ -273,6 +273,32 @@ class TestCount(ExtendedTestCase):
 		self.assertEqual(COUNT.area(3), None)
 
 
+class TestEra(ExtendedTestCase):
+	
+	def test_str(self):
+		self.assertEqual(str(ERA), "Era")
+	
+	def test_repr(self):
+		self.assertEqual(repr(ERA), "Era")
+	
+	def test_equal(self):
+		self.assertEqual(ERA, InfoType("Era", infos.era))
+	
+	def test_pickle(self):
+		self.assertPickleable(ERA)
+	
+	def test_validate(self):
+		self.assertEqual(ERA.validate(iRenaissance), True)
+		self.assertEqual(ERA.validate("Renaissance"), False)
+	
+	def test_format(self):
+		self.assertEqual(ERA.format(iRenaissance), "Renaissance")
+		self.assertEqual(ERA.format_repr(iRenaissance), "Renaissance")
+	
+	def test_area(self):
+		self.assertEqual(ERA.area(iRenaissance), None)
+
+
 class TestPercentage(ExtendedTestCase):
 
 	def test_str(self):
@@ -440,6 +466,7 @@ test_cases = [
 	TestCity,
 	TestCivs,
 	TestCount,
+	TestEra,
 	TestPercentage,
 	TestReligion,
 	TestReligionAdjective,

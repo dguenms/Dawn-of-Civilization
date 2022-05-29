@@ -3,6 +3,134 @@ from AmountRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAverageCultureAmount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AverageCultureAmount(500)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AverageCultureAmount(500)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AverageCultureAmount(500)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "an average culture of 500")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city culture: 0 / 500")
+		
+	def test_less(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setCulture(0, 100, True)
+		city2.setCulture(0, 200, True)
+		city3.setCulture(0, 300, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 200)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city culture: 200 / 500")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setCulture(0, 500, True)
+		city2.setCulture(0, 1000, True)
+		city3.setCulture(0, 1500, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1000)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Average city culture: 1000 / 500")
+		finally:
+			cities.kill()
+	
+	def test_other(self):
+		city = TestCities.one(1)
+		
+		city.setCulture(1, 500, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city culture: 0 / 500")
+		finally:
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestCultureAmount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CultureAmount(500)
+		self.goal = TestGoal()
+	
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CultureAmount(500)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CultureAmount(500)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "more than 500 culture")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		city = TestCities.one()
+		city.setCulture(self.iPlayer, 100, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Total Culture: 100 / 500")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setCulture(self.iPlayer, 1000, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1000)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Total Culture: 1000 / 500")
+		finally:
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestGoldAmount(ExtendedTestCase):
 
 	def setUp(self):
@@ -72,61 +200,8 @@ class TestGoldAmount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
-class TestCultureAmount(ExtendedTestCase):
-
-	def setUp(self):
-		self.requirement = CultureAmount(500)
-		self.goal = TestGoal()
-	
-		self.requirement.register_handlers(self.goal)
-	
-	def tearDown(self):
-		self.requirement.deregister_handlers()
-	
-	def test_str(self):
-		self.assertEqual(str(self.requirement), "CultureAmount(500)")
-	
-	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "CultureAmount(500)")
-	
-	def test_description(self):
-		self.assertEqual(self.requirement.description(), "more than 500 culture")
-	
-	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {})
-	
-	def test_pickle(self):
-		self.assertPickleable(self.requirement)
-	
-	def test_less(self):
-		city = TestCities.one()
-		city.setCulture(self.iPlayer, 100, True)
-		
-		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Total Culture: 100 / 500")
-		finally:
-			city.kill()
-	
-	def test_more(self):
-		city = TestCities.one()
-		city.setCulture(self.iPlayer, 1000, True)
-		
-		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 1000)
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Total Culture: 1000 / 500")
-		finally:
-			city.kill()
-	
-	def test_check_turnly(self):
-		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
-		
-		self.assertEqual(self.goal.checked, True)
-
-
 test_cases = [
-	TestGoldAmount,
+	TestAverageCultureAmount,
 	TestCultureAmount,
+	TestGoldAmount,
 ]

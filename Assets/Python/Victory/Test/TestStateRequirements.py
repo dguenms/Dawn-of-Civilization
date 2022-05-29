@@ -389,6 +389,57 @@ class TestFirstDiscover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestNoCityLost(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = NoCityLost()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "NoCityLost()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "NoCityLost()")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "never lose a city")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_city_lost(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No city lost")
+		self.assertEqual(self.requirement.state, POSSIBLE)
+	
+	def test_city_lost(self):
+		city = TestCities.one()
+	
+		try:
+			events.fireEvent("cityLost", city)
+		
+			self.assertEqual(self.requirement.state, FAILURE)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city lost")
+			self.assertEqual(self.requirement.state, FAILURE)
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestSettle(ExtendedTestCase):
 
 	def setUp(self):
@@ -463,5 +514,6 @@ test_cases = [
 	TestConvertAfterFounding,
 	TestDiscover,
 	TestFirstDiscover,
+	TestNoCityLost,
 	TestSettle,
 ]

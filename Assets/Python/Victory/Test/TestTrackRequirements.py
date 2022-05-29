@@ -70,6 +70,165 @@ class TestBrokeredPeace(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestEraFirstDiscover(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = EraFirstDiscover(iClassical, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "EraFirstDiscover(Classical, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "EraFirstDiscover(Classical, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Classical era technologies")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 2 (21 remaining)")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_fewer(self):
+		team(0).setHasTech(iLaw, True, 0, True, False)
+	
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 1 / 2 (20 remaining)")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(0).setHasTech(iLaw, False, 0, True, False)
+	
+	def test_more(self):
+		lTechs = [iLaw, iCurrency, iPhilosophy]
+		for iTech in lTechs:
+			team(0).setHasTech(iTech, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Classical technologies discovered first: 3 / 2 (18 remaining)")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			for iTech in lTechs:
+				team(0).setHasTech(iTech, False, 0, True, False)
+	
+	def test_other(self):
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 2 (20 remaining)")
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			team(1).setHasTech(iLaw, False, 1, True, False)
+	
+	def test_after_other(self):
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 2 (20 remaining)")
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			team(1).setHasTech(iLaw, False, 1, True, False)
+			team(0).setHasTech(iLaw, False, 0, True, False)
+	
+	def test_different_era(self):
+		team(0).setHasTech(iFeudalism, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 2 (21 remaining)")
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			team(0).setHasTech(iFeudalism, False, 0, True, False)
+	
+	def test_not_enough_remaining(self):
+		requirement = EraFirstDiscover(iClassical, 20)
+		requirement.register_handlers(self.goal)
+		
+		team(1).setHasTech(iLaw, True, 1, True, False)
+		
+		try:
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 20 (20 remaining)")
+			self.assertEqual(self.goal.failed, False)
+			
+			team(1).setHasTech(iCurrency, True, 1, True, False)
+			
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 0 / 20 (19 remaining)")
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			for iTech in [iLaw, iCurrency]:
+				team(1).setHasTech(iTech, False, 1, True, False)
+	
+	def test_not_enough_remaining_with_discovered(self):
+		requirement = EraFirstDiscover(iClassical, 20)
+		requirement.register_handlers(self.goal)
+		
+		team(0).setHasTech(iLaw, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 1 / 20 (20 remaining)")
+			self.assertEqual(self.goal.failed, False)
+			
+			team(1).setHasTech(iCurrency, True, 1, True, False)
+			
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 1 / 20 (19 remaining)")
+			self.assertEqual(self.goal.failed, False)
+			
+			team(1).setHasTech(iPhilosophy, True, 1, True, False)
+			
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Classical technologies discovered first: 1 / 20 (18 remaining)")
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			team(0).setHasTech(iLaw, False, 0, True, False)
+			for iTech in [iCurrency, iPhilosophy]:
+				team(1).setHasTech(iTech, False, 1, True, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		lTechs = [iLaw, iCurrency]
+		for iTech in lTechs:
+			team(1).setHasTech(iTech, True, 1, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Classical technologies discovered first: 2 / 2 (19 remaining)")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			for iTech in lTechs:
+				team(1).setHasTech(iTech, False, 1, True, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestGoldenAges(ExtendedTestCase):
 
 	def setUp(self):
@@ -462,6 +621,7 @@ class TestTradeGold(ExtendedTestCase):
 test_cases = [
 	TestBrokeredPeace,
 	TestGoldenAges,
+	TestEraFirstDiscover,
 	TestSunkShips,
 	TestTradeGold,
 ]

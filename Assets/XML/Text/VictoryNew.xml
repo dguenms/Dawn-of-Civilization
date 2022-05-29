@@ -130,7 +130,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ENSURE</Tag>
-		<English>Ensure there are %s1</English>
+		<English>ensure there are %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -138,7 +138,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SINK</Tag>
-		<English></English>
+		<English>sink %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SIMPLE</Tag>
+		<English>%s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -323,6 +331,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AVERAGE_CULTURE</Tag>
+		<English>an average culture of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_CITY_LOST</Tag>
+		<English>never lose a city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ERA_FIRST_DISCOVER</Tag>
+		<English>%s2 %s1 era technologies</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -470,6 +502,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AVERAGE_CULTURE</Tag>
+		<English>Average city culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_CITY_LOST</Tag>
+		<English>No city lost</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ERA_FIRST_DISCOVER</Tag>
+		<English>%s1 technologies discovered first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -482,6 +538,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_OUR_NEXT</Tag>
 		<English>Our next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_REMAINING</Tag>
+		<English>%d1 remaining</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
