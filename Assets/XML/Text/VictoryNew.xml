@@ -152,6 +152,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_FOUND</Tag>
+		<English>Be the first to found</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -355,6 +363,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAID_GOLD</Tag>
+		<English>%s1 gold by pillaging, conquering cities and sinking ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_SETTLE</Tag>
+		<English>a city in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -521,6 +545,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_ERA_FIRST_DISCOVER</Tag>
 		<English>%s1 technologies discovered first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RAID_GOLD</Tag>
+		<English>Gold from raids</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

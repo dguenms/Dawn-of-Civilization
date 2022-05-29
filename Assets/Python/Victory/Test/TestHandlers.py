@@ -237,6 +237,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_city_capture_gold(self):
+		onCityCaptureGold = self.get("cityCaptureGold", self.accumulate)
+		
+		city = TestCities.one(2)
+		
+		try:
+			onCityCaptureGold((city, 1, 100))
+			self.assertEqual(self.iCount, 0)
+			
+			onCityCaptureGold((city, 0, 100))
+			self.assertEqual(self.iCount, 100)
+		finally:
+			city.kill()
+	
 	def test_city_lost(self):
 		onCityLost = self.get("cityLost", self.capture)
 		
@@ -250,6 +264,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			self.assertEqual(self.argument, (self.goal,))
 		finally:
 			cities.kill()
+	
+	def test_combat_gold(self):
+		onCombatGold = self.get("combatGold", self.accumulate)
+		
+		unit = makeUnit(2, iSwordsman, (20, 20))
+		
+		try:
+			onCombatGold((1, unit, 100))
+			self.assertEqual(self.iCount, 0)
+			
+			onCombatGold((0, unit, 100))
+			self.assertEqual(self.iCount, 100)
+		finally:
+			unit.kill(False, -1)
 	
 	def test_combat_result(self):
 		onCombatResult = self.get("combatResult", self.capture)
@@ -320,6 +348,22 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		
 		onTradeMission((iGreatMerchant, 0, 20, 20, 100))
 		self.assertEqual(self.iCount, 100)
+	
+	def test_unit_pillage(self):
+		onUnitPillage = self.get("unitPillage", self.accumulate)
+		
+		our_unit = makeUnit(0, iSwordsman, (20, 20))
+		their_unit = makeUnit(1, iSwordsman, (25, 25))
+		
+		try:
+			onUnitPillage((their_unit, iHamlet, -1, 1, 100))
+			self.assertEqual(self.iCount, 0)
+			
+			onUnitPillage((our_unit, iHamlet, -1, 0, 100))
+			self.assertEqual(self.iCount, 100)
+		finally:
+			our_unit.kill(False, -1)
+			their_unit.kill(False, -1)
 		
 
 test_cases = [

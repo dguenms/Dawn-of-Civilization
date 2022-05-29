@@ -1877,6 +1877,9 @@ class PlayerFactory:
 		return Players([])
 	
 	def of(self, *players):
+		if len(players) == 1 and isinstance(players[0], Players):
+			return players[0]
+	
 		return Players(players)
 	
 	def at_war(self, iPlayer):

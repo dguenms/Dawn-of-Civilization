@@ -78,6 +78,23 @@ class GoldenAges(TrackRequirement):
 		return "%d / %d" % (self.evaluate(evaluator) / iGoldenAgeLength, self.required() / iGoldenAgeLength)
 
 
+# Third Viking UHV goal
+class RaidGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RAID_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RAID_GOLD"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.accumulated("unitPillage")
+		self.accumulated("cityCaptureGold")
+		self.accumulated("combatGold")
+
+
 # Third Korean UHV goal
 class SunkShips(TrackRequirement):
 

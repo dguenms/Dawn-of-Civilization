@@ -389,6 +389,171 @@ class TestFirstDiscover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestFirstSettle(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.requirement = FirstSettle(self.area)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FirstSettle(Test Area)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FirstSettle(Test Area)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a city in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_settle_first(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			self.assertEqual(self.goal.checked, True)
+			
+			events.fireEvent("cityBuilt", their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.state, SUCCESS)
+		finally:
+			cities.kill()
+	
+	def test_settle_first_other(self):
+		their_city, our_city = cities = TestCities.owners(1, 0)
+		
+		try:
+			events.fireEvent("cityBuilt", their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.state, FAILURE)
+			self.assertEqual(self.goal.failed, True)
+			
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.state, FAILURE)
+		finally:
+			cities.kill()
+	
+	def test_settle_first_other_minor(self):
+		their_city, our_city = cities = TestCities.owners(iNative, self.iPlayer)
+		
+		try:
+			events.fireEvent("cityBuilt", their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			self.assertEqual(self.goal.failed, False)
+			
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_settle_first_other_allowed(self):
+		requirement = FirstSettle(self.area, allowed=[1])
+		goal = TestGoal()
+		
+		requirement.register_handlers(goal)
+		
+		their_city, our_city = cities = TestCities.owners(1, 0)
+		
+		try:
+			events.fireEvent("cityBuilt", their_city)
+			
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(requirement.state, POSSIBLE)
+			self.assertEqual(goal.failed, False)
+			
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(requirement.state, SUCCESS)
+			self.assertEqual(goal.checked, True)
+		finally:
+			cities.kill()
+			requirement.deregister_handlers()
+	
+	def test_conquest(self):
+		city = TestCities.one(iNative)
+		
+		self.player.acquireCity(city, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city_(61, 31).kill()
+	
+	def test_settle_after_conquest(self):
+		their_city, our_city = TestCities.owners(iNative, self.iPlayer)
+		
+		self.player.acquireCity(their_city, True, False)
+		
+		try:
+			events.fireEvent("cityBuilt", our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city(61, 31).kill()
+			our_city.kill()
+	
+	def test_settle_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestNoCityLost(ExtendedTestCase):
 
 	def setUp(self):
@@ -514,6 +679,7 @@ test_cases = [
 	TestConvertAfterFounding,
 	TestDiscover,
 	TestFirstDiscover,
+	TestFirstSettle,
 	TestNoCityLost,
 	TestSettle,
 ]

@@ -298,6 +298,105 @@ class TestGoldenAges(ExtendedTestCase):
 			self.player.changeAnarchyTurns(-1)
 
 
+class TestRaidGold(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = RaidGold(100)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.city = TestCities.one(1)
+		self.unit = makeUnit(0, iSwordsman, (25, 25))
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		self.city.kill()
+		self.unit.kill(False, -1)
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "RaidGold(100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "RaidGold(100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 gold by pillaging, conquering cities and sinking ships")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_unit_pillage(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, self.iPlayer, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from raids: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_unit_pillage_other(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from raids: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_city_capture_gold(self):
+		events.fireEvent("cityCaptureGold", self.city, self.iPlayer, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from raids: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_city_capture_gold_other(self):
+		events.fireEvent("cityCaptureGold", self.city, 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from raids: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_combat_gold(self):
+		events.fireEvent("combatGold", self.iPlayer, self.unit, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from raids: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_combat_gold_other(self):
+		events.fireEvent("combatGold", 1, self.unit, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from raids: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("combatGold", 1, self.unit, 100)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from raids: 100 / 100")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestSunkShips(ExtendedTestCase):
 
 	def setUp(self):
@@ -620,8 +719,9 @@ class TestTradeGold(ExtendedTestCase):
 
 test_cases = [
 	TestBrokeredPeace,
-	TestGoldenAges,
 	TestEraFirstDiscover,
+	TestGoldenAges,
+	TestRaidGold,
 	TestSunkShips,
 	TestTradeGold,
 ]

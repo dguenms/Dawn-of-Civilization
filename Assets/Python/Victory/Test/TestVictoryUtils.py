@@ -284,6 +284,12 @@ class TestCivsDefinition(ExtendedTestCase):
 	def test_iter(self):
 		self.assertEqual(list(self.definition), [iEgypt, iBabylonia, iHarappa])
 	
+	def test_without(self):
+		self.assertEqual(self.definition.without(iHarappa), CivsDefinition(iEgypt, iBabylonia))
+	
+	def test_where(self):
+		self.assertEqual(self.definition.where(lambda p: civ(p) == iEgypt), CivsDefinition(iEgypt))
+	
 	def test_name(self):
 		self.assertEqual(self.definition.name(), "Egypt, Babylonia and Harappa")
 	

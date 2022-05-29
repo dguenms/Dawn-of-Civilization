@@ -46,6 +46,7 @@ class CityBuilding(Requirement):
 # Second Phoenician UHV goal
 # Second Tamil UHV goal
 # Second Japanese UHV goal
+# First Viking UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)

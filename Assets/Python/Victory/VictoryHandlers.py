@@ -98,12 +98,26 @@ class EventHandlerRegistry(object):
 		
 		return cityBuilt
 	
+	def cityCaptureGold(self, goal, applicable, func):
+		def cityCaptureGold((city, iPlayer, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, iGold)
+		
+		return cityCaptureGold
+	
 	def cityLost(self, goal, applicable, func):
 		def cityLost((city,)):
 			if applicable(goal, city.getOwner()):
 				func(goal)
 
 		return cityLost
+	
+	def combatGold(self, goal, applicable, func):
+		def combatGold((iPlayer, unit, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, iGold)
+		
+		return combatGold
 	
 	def combatResult(self, goal, applicable, func):
 		def combatResult((winningUnit, losingUnit)):
@@ -153,6 +167,13 @@ class EventHandlerRegistry(object):
 				func(goal, (iX, iY), iGold)
 		
 		return tradeMission
+	
+	def unitPillage(self, goal, applicable, func):
+		def unitPillage((unit, iImprovement, iRoute, iPlayer, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, iGold)
+		
+		return unitPillage
 		
 		
 		

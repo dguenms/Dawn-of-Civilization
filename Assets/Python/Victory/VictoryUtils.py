@@ -178,35 +178,39 @@ class CityDefinition(NamedDefinition):
 		
 class CivsDefinition(NamedDefinition):
 
-	@staticmethod
-	def group(iGroup):
-		return CivsDefinition(*dCivGroups[iGroup])
+	@classmethod
+	def group(cls, iGroup):
+		return cls(*dCivGroups[iGroup])
 
-	def __init__(self, *civs):
+	def __init__(self, *identifiers):
 		NamedDefinition.__init__(self)
-	
-		self.civs = civs
+		
+		self.players = players.of(*identifiers)
 		
 	def __repr__(self):
-		return "CivsDefinition(%s)" % ", ".join(infos.civ(iCiv).getShortDescription(0) for iCiv in self.civs)
+		return "CivsDefinition(%s)" % ", ".join(infos.civ(iCiv).getShortDescription(0) for iCiv in self)
 		
 	def __contains__(self, identifier):
-		if not isinstance(identifier, Civ):
-			identifier = civ(identifier)
-		return identifier in self.civs
+		return identifier in self.players
 	
 	def __eq__(self, other):
 		if not isinstance(other, CivsDefinition):
 			return False
 		
-		return set(self.civs) ==  set(other.civs)
+		return self.players.same(other.players)
 	
 	def __iter__(self):
-		return iter(self.civs)
+		return iter(self.players.asCivs())
+	
+	def without(self, identifier):
+		return CivsDefinition(self.players.without(identifier))
+	
+	def where(self, condition):
+		return CivsDefinition(self.players.where(condition))
 		
 	def name(self):
 		if not self.name_key:
-			return format_separators(self.civs, ",", text("TXT_KEY_AND"), lambda iCiv: infos.civ(iCiv).getShortDescription(0))
+			return format_separators(self, ",", text("TXT_KEY_AND"), lambda iCiv: infos.civ(iCiv).getShortDescription(0))
 		
 		return NamedDefinition.name(self)
 

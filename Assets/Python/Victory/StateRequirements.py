@@ -105,7 +105,36 @@ class FirstDiscover(StateRequirement):
 		if self.iTech == iTech and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
-			
+
+
+# Second Viking UHV goal
+class FirstSettle(StateRequirement):
+
+	TYPES = (AREA,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_FOUND"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_SETTLE"
+	
+	def __init__(self, area, allowed=[], **options):
+		StateRequirement.__init__(self, area, **options)
+		
+		self.area = area
+		self.allowed = players.of(*allowed)
+		
+		self.handle("cityBuilt", self.check_first_settled)
+		self.expire("cityBuilt", self.expire_first_settled)
+		
+	def check_first_settled(self, goal, city):
+		if city in self.area and self.state == POSSIBLE:
+			self.succeed()
+			goal.check()
+	
+	def expire_first_settled(self, goal, city):
+		if city in self.area and self.state == POSSIBLE:
+			if not is_minor(city) and city.getOwner() not in self.allowed:
+				self.fail()
+				goal.expire()
+
 
 # First Japanese UHV goal
 class NoCityLost(StateRequirement):
