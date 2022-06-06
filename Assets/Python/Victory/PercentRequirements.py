@@ -4,6 +4,7 @@ from BaseRequirements import *
 
 
 # First Persian UHV goal
+# First Turkic UHV goal
 class LandPercent(PercentRequirement):
 
 	TYPES = (PERCENTAGE,)

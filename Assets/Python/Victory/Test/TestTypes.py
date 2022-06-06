@@ -192,7 +192,8 @@ class TestBuilding(ExtendedTestCase):
 class TestCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = CityDefinition(61, 31).named("Test City")
+		self.location_city = LocationCityDefinition(61, 31).named("Location City")
+		self.capital_city = CapitalCityDefinition().named("Capital City")
 
 	def test_str(self):
 		self.assertEqual(str(CITY), "City")
@@ -207,15 +208,20 @@ class TestCity(ExtendedTestCase):
 		self.assertPickleable(CITY)
 	
 	def test_validate(self):
-		self.assertEqual(CITY.validate(self.city), True)
+		self.assertEqual(CITY.validate(self.location_city), True)
+		self.assertEqual(CITY.validate(self.capital_city), True)
 		self.assertEqual(CITY.validate(1), False)
 	
 	def test_format(self):
-		self.assertEqual(CITY.format(self.city), "Test City")
-		self.assertEqual(CITY.format_repr(self.city), "Test City")
+		self.assertEqual(CITY.format(self.location_city), "Location City")
+		self.assertEqual(CITY.format_repr(self.location_city), "Location City")
+		
+		self.assertEqual(CITY.format(self.capital_city), "Capital City")
+		self.assertEqual(CITY.format_repr(self.capital_city), "Capital City")
 	
 	def test_area(self):
-		self.assertEqual(CITY.area(self.city), plots_.of([(61, 31)]))
+		self.assertEqual(CITY.area(self.location_city), plots_.of([(61, 31)]))
+		self.assertEqual(CITY.area(self.capital_city), None)
 
 
 class TestCivs(ExtendedTestCase):
@@ -247,6 +253,32 @@ class TestCivs(ExtendedTestCase):
 		self.assertEqual(CIVS.area(self.civs), None)
 
 
+class TestCorporation(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(CORPORATION), "Corporation")
+	
+	def test_repr(self):
+		self.assertEqual(repr(CORPORATION), "Corporation")
+	
+	def test_equal(self):
+		self.assertEqual(CORPORATION, InfoType("Corporation", infos.corporation))
+	
+	def test_pickle(self):
+		self.assertPickleable(CORPORATION)
+	
+	def test_validate(self):
+		self.assertEqual(CORPORATION.validate(iTradingCompany), True)
+		self.assertEqual(CORPORATION.validate("Trading Company"), False)
+	
+	def test_format(self):
+		self.assertEqual(CORPORATION.format(iTradingCompany), "Trading Company")
+		self.assertEqual(CORPORATION.format_repr(iTradingCompany), "Trading Company")
+	
+	def test_area(self):
+		self.assertEqual(CORPORATION.area(iTradingCompany), None)
+
+
 class TestCount(ExtendedTestCase):
 
 	def test_str(self):
@@ -271,6 +303,32 @@ class TestCount(ExtendedTestCase):
 	
 	def test_area(self):
 		self.assertEqual(COUNT.area(3), None)
+
+
+class TestCultureLevel(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(CULTURELEVEL), "CultureLevel")
+	
+	def test_repr(self):
+		self.assertEqual(repr(CULTURELEVEL), "CultureLevel")
+	
+	def test_equal(self):
+		self.assertEqual(CULTURELEVEL, CultureLevelType("CultureLevel"))
+	
+	def test_pickle(self):
+		self.assertPickleable(CULTURELEVEL)
+	
+	def test_validate(self):
+		self.assertEqual(CULTURELEVEL.validate(iCultureLevelInfluential), True)
+		self.assertEqual(CULTURELEVEL.validate("Influential"), False)
+	
+	def test_format(self):
+		self.assertEqual(CULTURELEVEL.format(iCultureLevelInfluential), "influential")
+		self.assertEqual(CULTURELEVEL.format_repr(iCultureLevelInfluential), "Influential")
+	
+	def test_area(self):
+		self.assertEqual(CULTURELEVEL.area(iCultureLevelInfluential), None)
 
 
 class TestEra(ExtendedTestCase):
@@ -403,6 +461,36 @@ class TestResource(ExtendedTestCase):
 		self.assertEqual(RESOURCE.area(iCopper), None)
 
 
+class TestRoutes(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(ROUTES), "Routes")
+	
+	def test_repr(self):
+		self.assertEqual(repr(ROUTES), "Routes")
+	
+	def test_equal(self):
+		self.assertEqual(ROUTES, InfosType("Routes", infos.routes))
+	
+	def test_pickle(self):
+		self.assertPickleable(ROUTES)
+	
+	def test_validate(self):
+		self.assertEqual(ROUTES.validate([iRouteRoad, iRouteRailroad]), True)
+		self.assertEqual(ROUTES.validate(iRouteRoad), False)
+		self.assertEqual(ROUTES.validate(["Road"]), False)
+	
+	def test_format(self):
+		self.assertEqual(ROUTES.format([iRouteRoad]), "Road")
+		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad]), "Road or Roman Road")
+		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
+		
+		self.assertEqual(ROUTES.format_repr([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
+	
+	def test_area(self):
+		self.assertEqual(ROUTES.area([iRouteRoad]), None)
+
+
 class TestSpecialist(ExtendedTestCase):
 
 	def test_str(self):
@@ -465,12 +553,15 @@ test_cases = [
 	TestBuilding,
 	TestCity,
 	TestCivs,
+	TestCorporation,
 	TestCount,
+	TestCultureLevel,
 	TestEra,
 	TestPercentage,
 	TestReligion,
 	TestReligionAdjective,
 	TestResource,
+	TestRoutes,
 	TestSpecialist,
 	TestTech,
 ]

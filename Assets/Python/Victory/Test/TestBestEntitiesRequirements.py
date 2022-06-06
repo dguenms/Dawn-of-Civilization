@@ -301,7 +301,7 @@ class TestBestPopulationCities(ExtendedTestCase):
 class TestBestPopulationCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
 		self.requirement = BestPopulationCity(self.city)
 		self.goal = TestGoal()
 		
@@ -444,7 +444,7 @@ class TestBestPopulationCity(ExtendedTestCase):
 class TestBestCultureCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
 		self.requirement = BestCultureCity(self.city)
 		self.goal = TestGoal()
 		

@@ -295,6 +295,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			our_unit.kill(False, -1)
 			their_unit.kill(False, -1)
 	
+	def test_corporation_spread(self):
+		onCorporationSpread = self.get("corporationSpread", self.capture)
+		
+		city = TestCities.one()
+		
+		try:
+			onCorporationSpread((iTradingCompany, 1, city))
+			self.assertEqual(self.argument, None)
+			
+			onCorporationSpread((iTradingCompany, 0, city))
+			self.assertEqual(self.argument, (self.goal, iTradingCompany,))
+		finally:
+			city.kill()
+	
 	def test_first_contact(self):
 		onFirstContact = self.get("firstContact", self.increment)
 		

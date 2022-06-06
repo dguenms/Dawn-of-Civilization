@@ -5,6 +5,8 @@ from VictoryProgress import *
 from Requirements import *
 from VictoryTypes import *
 
+from CityNameManager import getFoundName, getRenameName
+
 
 class Parameters(object):
 
@@ -187,7 +189,10 @@ class Goal(object):
 		return self.state == POSSIBLE
 	
 	def succeeded(self):
-		return self.mode == STATEFUL and self.state == SUCCESS or self.fulfilled()
+		if self.state == SUCCESS:
+			return True
+		
+		return self.mode == STATELESS and self.fulfilled()
 	
 	def failed(self):
 		return self.state == FAILURE
@@ -280,44 +285,6 @@ class Goal(object):
 	
 	def progress(self):
 		return PROGRESS.format(self.requirements, self.evaluator)
-
-
-class All(object):
-
-	def __init__(self, *descriptions, **options):
-		self.descriptions = descriptions
-		self.options = options
-		
-		for description in self.descriptions:
-			description.options.update(self.options)
-		
-		self.desc_suffixes = []
-		
-		if self.options.get("at") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
-		
-		if self.options.get("by") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
-	
-	def __call__(self, iPlayer):
-		return AllGoal([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
-	
-	def __repr__(self):
-		return "All(%s)" % ", ".join(str(description) for description in self.descriptions)
-	
-	def __eq__(self, other):
-		if not isinstance(other, All):
-			return False
-		
-		return self.descriptions == other.descriptions
-		
-	def format_description(self):
-		requirement_descriptions = format_separators(self.descriptions, ",", text("TXT_KEY_AND"), GoalDescription.format_description)
-		description_descs = [("TXT_KEY_VICTORY_DESC_SIMPLE", requirement_descriptions)] + self.desc_suffixes
-		return " ".join(text(*desc_args) for desc_args in description_descs)
-	
-	def description(self):
-		return capitalize(self.format_description())
 		
 		
 class AllGoal(Goal):
@@ -357,5 +324,130 @@ class AllGoal(Goal):
 		
 		goal.fail = fail.__get__(goal, Goal)
 		goal.succeed = succeed.__get__(goal, Goal)
+
+
+class DifferentCitiesGoal(Goal):
+
+	def __init__(self, goals, iPlayer, **options):
+		Goal.__init__(self, goals, goals[0].desc_key, iPlayer, **options)
 		
+		for goal in goals:
+			goal.desc_key = "TXT_KEY_VICTORY_DESC_SIMPLE"
+			self.add_subgoal(goal)
+			
+		self.recorded = {}
+	
+	def __repr__(self):
+		return "DifferentCitiesGoal(%s)" % ", ".join(str(goal) for goal in self.requirements)
+	
+	def __eq__(self, other):
+		if not isinstance(other, DifferentCitiesGoal):
+			return False
+		
+		return Goal.__eq__(self, other)
+	
+	def register_handlers(self):
+		pass
+		
+	def get_city_parameter(self):
+		return next(parameter.get(self.iPlayer) for goal in self.requirements for requirement in goal.requirements for type, parameter in zip(requirement.GLOBAL_TYPES + requirement.TYPES, requirement.parameters) if type == CITY)
+	
+	def record(self, subgoal):
+		city_parameter = self.get_city_parameter()
+		if city_parameter:
+			self.recorded[subgoal] = location(city_parameter)
+			if not self.unique_records():
+				self.fail()
+			
+	def unique_records(self):
+		records = [self.recorded.get(subgoal) for subgoal in self.requirements if subgoal in self.recorded]
+		return len(records) == len(set(records))
+	
+	def add_subgoal(self, goal):
+		def fail(subgoal):
+			subgoal.set_state(FAILURE)
+			self.fail()
+	
+		def succeed(subgoal):
+			subgoal.set_state(SUCCESS)
+			self.record(subgoal)
+			
+			if self.failed():
+				subgoal.set_state(FAILURE)
+			
+			self.check()
+		
+		goal.fail = fail.__get__(goal, Goal)
+		goal.succeed = succeed.__get__(goal, Goal)
+	
+	def fulfilled(self):
+		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
+		
+	def progress_entries(self):
+		for subgoal in self.requirements:
+			print "iterate %s" % subgoal
+			if subgoal.succeeded():
+				recorded_location = self.recorded.get(subgoal)
+				recorded_city = city(recorded_location)
+				city_name = recorded_city and recorded_city.getName() or getFoundName(self.iPlayer, recorded_location)
+				yield "%s %s" % (indicator(True), getRenameName(self.iPlayer, city_name) or city_name)
+			else:
+				current_city = self.get_city_parameter()
+				if current_city and location(current_city) in self.recorded.values():
+					yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_ALREADY_COMPLETED_FOR", current_city.getName()))
+				else:
+					for entry in subgoal.progress():
+						yield entry
+				break
+	
+	def progress(self):
+		return list(self.progress_entries())
+
+
+class Combined(object):
+
+	def __init__(self, *descriptions, **options):
+		self.descriptions = descriptions
+		self.options = options
+		
+		for description in self.descriptions:
+			description.options.update(self.options)
+		
+		self.desc_suffixes = []
+		
+		if self.options.get("at") is not None:
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
+		
+		if self.options.get("by") is not None:
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
+	
+	def __call__(self, iPlayer):
+		return self.CLASS([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
+	
+	def __repr__(self):
+		return "%s(%s)" % (type(self).__name__, ", ".join(str(description) for description in self.descriptions))
+	
+	def __eq__(self, other):
+		if not isinstance(other, type(self)):
+			return False
+		
+		return self.descriptions == other.descriptions
+		
+	def format_description(self):
+		requirement_descriptions = format_separators(self.descriptions, ",", text("TXT_KEY_AND"), GoalDescription.format_description)
+		description_descs = [("TXT_KEY_VICTORY_DESC_SIMPLE", requirement_descriptions)] + self.desc_suffixes
+		return " ".join(text(*desc_args) for desc_args in description_descs)
+	
+	def description(self):
+		return capitalize(self.format_description())
+
+
+class All(Combined):
+
+	CLASS = AllGoal
+		
+
+class Different(Combined):
+
+	CLASS = DifferentCitiesGoal
 		

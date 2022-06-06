@@ -148,6 +148,20 @@ class InfoType(Type):
 		if bPlural:
 			return plural(text)
 		return text
+
+
+class InfosType(Type):
+
+	def __init__(self, name, info):
+		Type.__init__(self, name)
+		
+		self.sub_type = InfoType(name, info)
+	
+	def validate_func(self, argument):
+		return isinstance(argument, list) and all(self.sub_type.validate(entry) for entry in argument)
+	
+	def format_func(self, argument):
+		return format_separators(argument, ",", text("TXT_KEY_OR"), self.sub_type.format)
 		
 		
 class CountType(Type):
@@ -192,7 +206,7 @@ class CityType(Type):
 		return argument.name()
 	
 	def area(self, argument):
-		return plots_.of([argument.tile])
+		return argument.area()
 
 
 class CivsType(Type):
@@ -216,17 +230,32 @@ class ReligionAdjectiveType(InfoType):
 		return infos.religion(argument).getText()
 
 
+class CultureLevelType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, int)
+	
+	def format_func(self, argument):
+		return infos.cultureLevel(argument).getText().lower()
+	
+	def format_repr_func(self, argument):
+		return infos.cultureLevel(argument).getText()
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
 BUILDING = InfoType("Building", infos.building)
 CITY = CityType("City")
 CIVS = CivsType("Civs")
+CORPORATION = InfoType("Corporation", infos.corporation)
 COUNT = CountType("Count")
+CULTURELEVEL = CultureLevelType("CultureLevel")
 ERA = InfoType("Era", infos.era)
 PERCENTAGE = PercentageType("Percentage")
 RELIGION = InfoType("Religion", infos.religion)
 RELIGION_ADJECTIVE = ReligionAdjectiveType("ReligionAdjective")
 RESOURCE = InfoType("Resource", infos.bonus)
+ROUTES = InfosType("Routes", infos.route)
 SPECIALIST = InfoType("Specialist", infos.specialist)
 TECH = InfoType("Tech", infos.tech)
 

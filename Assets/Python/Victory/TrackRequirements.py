@@ -78,6 +78,21 @@ class GoldenAges(TrackRequirement):
 		return "%d / %d" % (self.evaluate(evaluator) / iGoldenAgeLength, self.required() / iGoldenAgeLength)
 
 
+# First Turkic UHV goal
+class PillageCount(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_PILLAGE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_PILLAGE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PILLAGE_COUNT"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.incremented("unitPillage")
+
+
 # Third Viking UHV goal
 class RaidGold(TrackRequirement):
 

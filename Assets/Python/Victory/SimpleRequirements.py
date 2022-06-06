@@ -2,44 +2,7 @@ from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
 
-
-# First Phoenician UHV goal
-class CityBuilding(Requirement):
-
-	GLOBAL_TYPES = (CITY,)
-	TYPES = (BUILDING,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_BUILDING"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_BUILDING"
-	
-	def __init__(self, city, iBuilding, **options):
-		Requirement.__init__(self, city, iBuilding, **options)
-		
-		self.city = city
-		self.iBuilding = iBuilding
-		
-		self.handle("cityAcquired", self.check_city_acquired)
-		self.handle("buildingBuilt", self.check_building_built)
-		self.expire("buildingBuilt", self.expire_building_built)
-	
-	def check_city_acquired(self, goal, city, bConquest):
-		if self.city == city:
-			goal.check()
-	
-	def check_building_built(self, goal, city, iBuilding):
-		if self.city == city and self.iBuilding == base_building(iBuilding):
-			goal.check()
-	
-	def expire_building_built(self, goal, city, iBuilding):
-		if self.iBuilding == iBuilding and isWonder(iBuilding):
-			goal.expire()
-	
-	def fulfilled(self, evaluator):
-		if not self.city:
-			return False
-		
-		return self.city.getOwner() in evaluator and self.city.isHasBuilding(unique_building(self.city.getOwner(), self.iBuilding))
+import heapq
 	
 
 # Second Greek UHV goal
@@ -91,6 +54,78 @@ class MoreReligion(Requirement):
 		return "%s %s" % (self.progress_text_religion(self.iOurReligion), self.progress_text_religion(self.iOtherReligion))
 
 
+# Second Turkic UHV goal
+class RouteConnection(Requirement):
+
+	GLOBAL_TYPES = (ROUTES, AREA)
+	TYPES = (AREA,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CREATE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ROUTE_CONNECTION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION"
+	
+	def __init__(self, routes, starts, targets, start_owners=False, **options):
+		Requirement.__init__(self, routes, starts, targets, **options)
+		
+		self.routes = routes
+		self.starts = starts
+		self.targets = targets
+		
+		self.start_owners = start_owners
+	
+	def fulfilled(self, evaluator):
+		if not evaluator.any(lambda iPlayer: any(team(iPlayer).isHasTech(self.route_tech(iRoute)) for iRoute in self.routes)):
+			return False
+		
+		return any(self.connected(start.plot(), evaluator) for start in self.starts.cities())
+		
+	def route_tech(self, iRoute):
+		iBuild = infos.builds().where(lambda iBuild: infos.build(iBuild).getRoute() == iRoute).first()
+		return infos.build(iBuild).getTechPrereq()
+	
+	def connected(self, start, evaluator):
+		if not self.valid(start, evaluator):
+			return False
+		
+		if start in self.targets:
+			return True
+		
+		targets = self.targets.where(lambda plot: self.valid(plot, evaluator))
+		if not targets:
+			return False
+		
+		nodes = [(targets.closest_distance(start), location(start))]
+		heapq.heapify(nodes)
+		
+		visited = set()
+		
+		while nodes:
+			heuristic, node = heapq.heappop(nodes)
+			visited.add((heuristic, node))
+			
+			for plot in plots_.surrounding(node).where(lambda p: self.valid(p, evaluator)):
+				if plot.isCity() and plot.getOwner() in evaluator and plot in targets:
+					return True
+				
+				tuple = (targets.closest_distance(plot), location(plot))
+				if tuple not in visited and tuple not in nodes:
+					heapq.heappush(nodes, tuple)
+		
+		return False
+	
+	def valid_owner(self, plot, evaluator):
+		if plot.getOwner() in evaluator:
+			return True
+		
+		if self.start_owners and plot.getOwner() in self.starts.cities().owners():
+			return True
+		
+		return False
+		
+	def valid(self, plot, evaluator):
+		return self.valid_owner(plot, evaluator) and (plot.isCity() or plot.getRouteType() in self.routes)
+		
+		
 # First Harappan UHV goal
 class TradeConnection(Requirement):
 

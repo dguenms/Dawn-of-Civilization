@@ -139,41 +139,60 @@ class AreaDefinition(NamedDefinition):
 	
 	def cities(self):
 		return self.create().cities()
-
-
+		
+	def closest_distance(self, *args, **kwargs):
+		return self.create().closest_distance(*args, **kwargs)
+		
+		
 class CityDefinition(NamedDefinition):
 
+	def __eq__(self, other):
+		if isinstance(other, CyCity):
+			return at(self.get(other.getOwner()), other)
+		
+		return isinstance(other, type(self))
+
+	def get(self, iPlayer):
+		raise NotImplementedError()
+	
+	def area(self):
+		raise NotImplementedError()
+
+
+class LocationCityDefinition(CityDefinition):
+
 	def __init__(self, *tile):
-		NamedDefinition.__init__(self)
+		CityDefinition.__init__(self)
 	
 		self.tile = duplefy(*tile)
 	
 	def __repr__(self):
-		return "CityDefinition%s" % (self.tile,)
+		return "LocationCityDefinition%s" % (self.tile,)
 	
 	def __eq__(self, other):
-		if isinstance(other, CyCity):
-			return self.tile == location(other)
+		if not isinstance(other, LocationCityDefinition):
+			return CityDefinition.__eq__(self, other)
 		
-		if isinstance(other, CityDefinition):
-			return self.tile == other.tile
-		
-		return False
+		return self.tile == other.tile
 	
-	def __nonzero__(self):
-		return bool(self.city)
-	
-	@property
-	def city(self):
+	def get(self, iPlayer):
 		return city(self.tile)
 	
-	@none_safe
-	def getOwner(self):
-		return self.city.getOwner()
+	def area(self):
+		return plots_.of([self.tile])
+
+
+class CapitalCityDefinition(CityDefinition):
+
+	def __repr__(self):
+		return "CapitalCityDefinition()"
 	
-	@none_safe
-	def isHasBuilding(self, iBuilding):
-		return self.city.isHasBuilding(iBuilding)
+	def get(self, iPlayer):
+		return capital(iPlayer)
+	
+	def area(self):
+		return None
+
 		
 		
 class CivsDefinition(NamedDefinition):

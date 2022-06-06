@@ -1020,6 +1020,339 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(self.all.progress(), [self.FAILURE + "Granaries: 0 / 3", self.FAILURE + "Libraries: 0 / 3"])
 
 
+class TestDifferent(ExtendedTestCase):
+
+	def setUp(self):
+		self.different = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+	
+	def test_str(self):
+		self.assertEqual(str(self.different), "Different(GoalDescription(BuildingCount(Granary, 3)), GoalDescription(BuildingCount(Library, 3)))")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.different), "Different(GoalDescription(BuildingCount(Granary, 3)), GoalDescription(BuildingCount(Library, 3)))")
+	
+	def test_equal(self):
+		identical = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		different_description = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iWalls, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		different_num_descriptions = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		
+		self.assertEqual(self.different, identical)
+		self.assertNotEqual(self.different, different_description)
+		self.assertNotEqual(self.different, different_num_descriptions)
+	
+	def test_pickle(self):
+		self.assertPickleable(self.different)
+	
+	def test_description(self):
+		self.assertEqual(self.different.description(), "Control three Granaries and control three Libraries")
+	
+	def test_description_option(self):
+		different = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
+		
+		self.assertEqual(different.description(), "Control three Granaries and control three Libraries by 1000 AD")
+	
+	def test_description_subgoal_option(self):
+		different = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000), GoalDescription([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"))
+		
+		self.assertEqual(different.description(), "Control three Granaries by 1000 AD and control three Libraries")
+	
+	def test_create(self):
+		different_cities_goal = self.different(0)
+		
+		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+	
+	def test_create_options(self):
+		different = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
+		different_cities_goal = different(0)
+		
+		try:
+			self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+			self.assertEqual(different_cities_goal.iYear, 1000)
+			self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
+		finally:
+			different_cities_goal.deregister_handlers()
+	
+	def test_create_subgoal_options(self):
+		different = Different(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
+		different_cities_goal = different(0)
+		
+		try:
+			self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+			self.assertEqual(different_cities_goal.iYear, None)
+			self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
+		finally:
+			different_cities_goal.deregister_handlers()
+
+
+class TestDifferentCitiesGoal(ExtendedTestCase):
+
+	def setUp(self):
+		self.first_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		self.second_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		
+		self.different = DifferentCitiesGoal([self.first_goal, self.second_goal], 0)
+	
+	def tearDown(self):
+		self.different.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.different), "DifferentCitiesGoal(Goal([CityCultureLevel(First Capital, Developing)], 0), Goal([CityCultureLevel(Second Capital, Refined)], 0))")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.different), "DifferentCitiesGoal(Goal([CityCultureLevel(First Capital, Developing)], 0), Goal([CityCultureLevel(Second Capital, Refined)], 0))")
+	
+	def test_equal(self):
+		identical = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_goal = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelInfluential)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_num_goals = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_player = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 1)
+		
+		self.assertEqual(self.different, identical)
+		self.assertNotEqual(self.different, different_goal)
+		self.assertNotEqual(self.different, different_num_goals)
+		self.assertNotEqual(self.different, different_player)
+	
+	def test_pickle(self):
+		self.assertPickleable(self.first_goal)
+		self.assertPickleable(self.second_goal)
+		self.assertPickleable(self.different)
+	
+	def test_get_city_parameter(self):
+		capital = TestCities.one()
+		capital.setHasRealBuilding(iPalace, True)
+	
+		try:
+			city = self.different.get_city_parameter()
+		
+			self.assertType(city, CyCity)
+			self.assertEqual(location(city), (61, 31))
+		finally:
+			capital.kill()
+	
+	def test_get_city_parameter_no_city(self):
+		self.assertEqual(self.different.get_city_parameter(), None)
+	
+	def test_unique_records(self):
+		first_capital, second_capital = cities = TestCities.num(2)
+		first_capital.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.first_goal.succeed()
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), None)
+			
+			self.assertEqual(self.different.unique_records(), True)
+			
+			second_capital.setHasRealBuilding(iPalace, True)
+			self.second_goal.succeed()
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (63, 31))
+			
+			self.assertEqual(self.different.unique_records(), True)
+		finally:
+			cities.kill()
+	
+	def test_not_unique_records(self):
+		capital = TestCities.one()
+		
+		try:
+			self.first_goal.succeed()
+			self.second_goal.succeed()
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (61, 31))
+			
+			self.assertEqual(self.different.unique_records(), False)
+		finally:
+			capital.kill()
+	
+	def test_complete_different_cities(self):
+		first_capital, second_capital = cities = TestCities.num(2)
+		first_capital.setName("First", False)
+		second_capital.setName("Second", False)
+	
+		first_capital.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.assertEqualCity(CapitalCityDefinition().get(0), first_capital)
+			
+			self.assertEqual(self.first_goal.state, POSSIBLE)
+			self.assertEqual(self.second_goal.state, POSSIBLE)
+			self.assertEqual(self.different.state, POSSIBLE)
+			
+			self.assertEqual(self.different.progress(), [self.FAILURE + "Culture in First: 0 / 100"])
+			
+			self.first_goal.succeed()
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, POSSIBLE)
+			self.assertEqual(self.different.state, POSSIBLE)
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), None)
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Already completed for First"
+			])
+			
+			first_capital.setHasRealBuilding(iPalace, False)
+			second_capital.setHasRealBuilding(iPalace, True)
+			
+			self.assertEqualCity(CapitalCityDefinition().get(0), second_capital)
+			
+			self.second_goal.succeed()
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, SUCCESS)
+			self.assertEqual(self.different.state, SUCCESS)
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (63, 31))
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.SUCCESS + "Second",
+			])
+		finally:
+			cities.kill()
+	
+	def test_complete_same_city(self):
+		capital = TestCities.one()
+		capital.setName("First", False)
+		capital.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.assertEqualCity(CapitalCityDefinition().get(0), capital)
+			
+			self.assertEqual(self.first_goal.state, POSSIBLE)
+			self.assertEqual(self.second_goal.state, POSSIBLE)
+			self.assertEqual(self.different.state, POSSIBLE)
+			
+			self.assertEqual(self.different.progress(), [self.FAILURE + "Culture in First: 0 / 100"])
+			
+			self.first_goal.succeed()
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, POSSIBLE)
+			self.assertEqual(self.different.state, POSSIBLE)
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), None)
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Already completed for First",
+			])
+			
+			self.second_goal.succeed()
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, FAILURE)
+			self.assertEqual(self.different.state, FAILURE)
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (61, 31))
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Already completed for First",
+			])
+		finally:
+			capital.kill()
+	
+	def test_complete_same_city_changed_later(self):
+		first_capital, second_capital = cities = TestCities.num(2)
+		first_capital.setName("First", False)
+		second_capital.setName("Second", False)
+		
+		first_capital.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.first_goal.succeed()
+			self.second_goal.succeed()
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, FAILURE)
+			self.assertEqual(self.different.state, FAILURE)
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Already completed for First"
+			])
+			
+			first_capital.setHasRealBuilding(iPalace, False)
+			second_capital.setHasRealBuilding(iPalace, True)
+			
+			self.assertEqualCity(CapitalCityDefinition().get(0), second_capital)
+			
+			self.assertEqual(self.different.state, FAILURE)
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Culture in Second: 0 / 1000"
+			])
+		finally:
+			cities.kill()
+	
+	def test_second_goal_fulfilled_but_same_city(self):
+		capital = TestCities.one()
+		capital.setName("First", False)
+		capital.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.first_goal.succeed()
+			
+			capital.setCulture(0, 1000, False)
+			
+			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.second_goal), None)
+			
+			self.assertEqual(self.first_goal.state, SUCCESS)
+			self.assertEqual(self.second_goal.state, POSSIBLE)
+			self.assertEqual(self.different.state, POSSIBLE)
+			
+			self.assertEqual(self.different.progress(), [
+				self.SUCCESS + "First",
+				self.FAILURE + "Already completed for First",
+			])
+		finally:
+			capital.kill()
+	
+	def test_description(self):
+		self.assertEqual(self.different.description(), "Have developing culture in First Capital and refined culture in Second Capital")
+	
+	def test_description_at(self):
+		first_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		second_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		different = DifferentCitiesGoal([first_goal, second_goal], 0, at=1000)
+		
+		self.assertEqual(different.description(), "Have developing culture in First Capital and refined culture in Second Capital in 1000 AD")
+	
+	def test_description_by(self):
+		first_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		second_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		different = DifferentCitiesGoal([first_goal, second_goal], 0, by=1000)
+		
+		self.assertEqual(different.description(), "Have developing culture in First Capital and refined culture in Second Capital by 1000 AD")
+	
+	def test_description_subgoal_at(self):
+		first_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0, at=1000)
+		second_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		different = DifferentCitiesGoal([first_goal, second_goal], 0)
+		
+		self.assertEqual(different.description(), "Have developing culture in First Capital in 1000 AD and refined culture in Second Capital")
+	
+	def test_description_subgoal_by(self):
+		first_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0, by=1000)
+		second_goal = Goal([CityCultureLevel(CapitalCityDefinition().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		different = DifferentCitiesGoal([first_goal, second_goal], 0)
+		
+		self.assertEqual(different.description(), "Have developing culture in First Capital by 1000 AD and refined culture in Second Capital")
+
+
 test_cases = [
 	TestParameters,
 	TestParameterSet,
@@ -1028,4 +1361,6 @@ test_cases = [
 	TestGoal,
 	TestAll,
 	TestAllGoal,
+	TestDifferent,
+	TestDifferentCitiesGoal,
 ]

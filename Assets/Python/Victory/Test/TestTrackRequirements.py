@@ -298,6 +298,71 @@ class TestGoldenAges(ExtendedTestCase):
 			self.player.changeAnarchyTurns(-1)
 
 
+class TestPillageCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PillageCount(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.unit = makeUnit(self.iPlayer, iSwordsman, (25, 25))
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PillageCount(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PillageCount(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two improvements")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pillage(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, self.iPlayer, 100)
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, self.iPlayer, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Improvements pillaged: 2 / 2")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_pillage_other(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Improvements pillaged: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("unitPillage", self.unit, iHamlet, -1, 1, 100)
+			events.fireEvent("unitPillage", self.unit, iHamlet, -1, 1, 100)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Improvements pillaged: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestRaidGold(ExtendedTestCase):
 
 	def setUp(self):
@@ -721,6 +786,7 @@ test_cases = [
 	TestBrokeredPeace,
 	TestEraFirstDiscover,
 	TestGoldenAges,
+	TestPillageCount,
 	TestRaidGold,
 	TestSunkShips,
 	TestTradeGold,

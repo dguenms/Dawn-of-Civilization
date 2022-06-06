@@ -165,85 +165,92 @@ class TestAreaDefinition(ExtendedTestCase):
 		self.assertNotEqual(id(area1), id(area2))
 	
 
-class TestCityDefinition(ExtendedTestCase):
+class TestLocalCityDefinition(ExtendedTestCase):
 
 	def setUp(self):
 		self.location = TestCities.CITY_LOCATIONS[0]
-		self.definition = CityDefinition(self.location)
+		self.definition = LocationCityDefinition(self.location)
 		
 	def test_str(self):
-		self.assertEqual(str(self.definition), "CityDefinition(61, 31)")
+		self.assertEqual(str(self.definition), "LocationCityDefinition(61, 31)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.definition), "CityDefinition(61, 31)")
+		self.assertEqual(repr(self.definition), "LocationCityDefinition(61, 31)")
 	
 	def test_pickle(self):
 		self.assertPickleable(self.definition)
 	
 	def test_equal_definition(self):
-		identical = CityDefinition(self.location)
-		different = CityDefinition((62, 31))
+		identical = LocationCityDefinition(self.location)
+		different = LocationCityDefinition((62, 31))
 		
 		self.assertEqual(self.definition, identical)
 		self.assertNotEqual(self.definition, different)
 	
 	def test_equal_city(self):
-		city_matching, city_different = cities = TestCities.num(2)
+		same_location, different_location = cities = TestCities.num(2)
 		
 		try:
-			self.assertEqual(self.definition, city_matching)
-			self.assertNotEqual(self.definition, city_different)
+			self.assertEqual(self.definition, same_location)
+			self.assertNotEqual(self.definition, different_location)
 		finally:
 			cities.kill()
 	
-	def test_nonzero(self):
-		city = TestCities.one()
-		
-		try:
-			self.assertEqual(bool(self.definition), True)
-		finally:
-			city.kill()
-	
-	def test_nonzero_no_city(self):
-		self.assertEqual(bool(self.definition), False)
-	
 	def test_from_varargs(self):
-		definition = CityDefinition(*self.location)
-		self.assertEqual(str(definition), "CityDefinition(61, 31)")
+		definition = LocationCityDefinition(*self.location)
+		self.assertEqual(str(definition), "LocationCityDefinition(61, 31)")
 	
-	def test_city(self):
+	def test_get(self):
 		city = TestCities.one()
 		
 		try:
-			self.assertEqual(location(self.definition.city), location(city))
+			self.assertEqual(location(self.definition.get(0)), location(city))
 		finally:
 			city.kill()
 	
-	def test_city_no_city(self):
-		self.assertEqual(self.definition.city, None)
+	def test_get_no_city(self):
+		self.assertEqual(self.definition.get(0), None)
+
+
+class TestCapitalCityDefinition(ExtendedTestCase):
+
+	def setUp(self):
+		self.definition = CapitalCityDefinition()
 	
-	def test_get_owner(self):
-		city = TestCities.one()
+	def test_str(self):
+		self.assertEqual(str(self.definition), "CapitalCityDefinition()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.definition), "CapitalCityDefinition()")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.definition)
+	
+	def test_equal_definition(self):
+		self.assertEqual(self.definition, CapitalCityDefinition())
+		self.assertNotEqual(self.definition, LocationCityDefinition(61, 31))
+	
+	def test_equal_city(self):
+		capital, not_capital = cities = TestCities.num(2)
+		capital.setHasRealBuilding(iPalace, True)
 		
 		try:
-			self.assertEqual(self.definition.getOwner(), city.getOwner())
+			self.assertEqual(self.definition, capital)
+			self.assertNotEqual(self.definition, not_capital)
 		finally:
-			city.kill()
+			cities.kill()
 	
-	def test_get_owner_no_city(self):
-		self.assertEqual(self.definition.getOwner(), None)
-	
-	def test_is_has_building(self):
-		city = TestCities.one()
-		city.setHasRealBuilding(iGranary, True)
+	def test_get(self):
+		capital, not_capital = cities = TestCities.num(2)
+		capital.setHasRealBuilding(iPalace, True)
 		
 		try:
-			self.assertEqual(self.definition.isHasBuilding(iGranary), True)
+			self.assertEqual(location(self.definition.get(0)), location(capital))
 		finally:
-			city.kill()
+			cities.kill()
 	
-	def test_is_has_building_no_city(self):
-		self.assertEqual(self.definition.isHasBuilding(iGranary), None)
+	def test_get_no_city(self):
+		self.assertEqual(self.definition.get(0), None)
 	
 
 class TestCivsDefinition(ExtendedTestCase):
@@ -308,6 +315,7 @@ test_cases = [
 	TestTextProcessing,
 	TestNamedDefinition,
 	TestAreaDefinition,
-	TestCityDefinition,
+	TestLocalCityDefinition,
+	TestCapitalCityDefinition,
 	TestCivsDefinition,
 ]

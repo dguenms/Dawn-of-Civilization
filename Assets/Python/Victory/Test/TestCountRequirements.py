@@ -443,6 +443,112 @@ class TestCityCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCorporationCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CorporationCount(iTradingCompany, 3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CorporationCount(Trading Company, 3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CorporationCount(Trading Company, 3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Trading Company to three of your cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trading Company: 0 / 3")
+	
+	def test_fewer(self):
+		city = TestCities.one()
+		city.setHasCorporation(iTradingCompany, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trading Company: 1 / 3")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		cities = TestCities.num(4)
+		for city in cities:
+			city.setHasCorporation(iTradingCompany, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Trading Company: 4 / 3")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		cities = TestCities.owners(1, 1, 1)
+		for city in cities:
+			city.setHasCorporation(iTradingCompany, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Trading Company: 3 / 3")
+		finally:
+			cities.kill()
+	
+	def test_check_corporation_spread(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("corporationSpread", iTradingCompany, 0, city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_corporation_spread_different_corporation(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("corporationSpread", iSilkRoute, 0, city)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_check_corporation_spread_different_owner(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("corporationSpread", iTradingCompany, 1, city)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestPopulationCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -706,6 +812,7 @@ class TestSpecialistCount(ExtendedTestCase):
 test_cases = [
 	TestBuildingCount,
 	TestCityCount,
+	TestCorporationCount,
 	TestPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,

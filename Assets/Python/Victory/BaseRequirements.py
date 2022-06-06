@@ -125,6 +125,37 @@ class PercentRequirement(ThresholdRequirement):
 		return "%.2f%% / %d%%" % (self.percentage(evaluator), self.required())
 
 
+class CityRequirement(Requirement):
+
+	def __init__(self, city, *parameters, **options):
+		Requirement.__init__(self, city, *parameters, **options)
+		
+		self.city = city
+		
+	def fulfilled(self, evaluator):
+		return evaluator.any(lambda p: self.city.get(p) and self.city.get(p).getOwner() == p and self.fulfilled_city(self.city.get(p)))
+	
+	def progress(self, evaluator, **options):
+		city = self.city.get(evaluator.iPlayer)
+		
+		if not city or city.isNone():
+			return "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_NO_CITY"))
+		
+		progress_key = city.getOwner() in evaluator and "TXT_KEY_VICTORY_PROGRESS_IN_CITY" or "TXT_KEY_VICTORY_PROGRESS_IN_CITY_DIFFERENT_OWNER"
+		progress_city = self.progress_city(city)
+		
+		if progress_city:
+			return "%s %s: %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())), progress_city)
+		
+		return "%s %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())))
+		
+	def fulfilled_city(self, city):
+		raise NotImplementedError()
+	
+	def progress_city(self, city):
+		return ""
+
+
 class StateRequirement(Requirement):
 
 	def __init__(self, *parameters, **options):
@@ -242,7 +273,7 @@ class BestPlayersRequirement(BestEntitiesRequirement):
 	
 	def entity_name(self, iPlayer):
 		if iPlayer is None:
-			return "No Player"
+			return text("TXT_KEY_VICTORY_NO_PLAYER")
 		return name(iPlayer)
 
 
@@ -256,7 +287,7 @@ class BestCitiesRequirement(BestEntitiesRequirement):
 	
 	def entity_name(self, city):
 		if city is None:
-			return "No City"
+			return text("TXT_KEY_VICTORY_NO_CITY")
 		return city.getName()
 
 

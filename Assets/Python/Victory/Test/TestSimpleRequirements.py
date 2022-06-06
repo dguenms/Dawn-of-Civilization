@@ -3,196 +3,6 @@ from SimpleRequirements import *
 from TestVictoryCommon import *
 
 
-class TestCityBuilding(ExtendedTestCase):
-
-	def setUp(self):
-		self.requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iGranary)
-		self.goal = TestGoal()
-		
-		self.requirement.register_handlers(self.goal)
-	
-	def tearDown(self):
-		self.requirement.deregister_handlers()
-	
-	def test_str(self):
-		self.assertEqual(str(self.requirement), "CityBuilding(Test City, Granary)")
-	
-	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "CityBuilding(Test City, Granary)")
-	
-	def test_description(self):
-		self.assertEqual(self.requirement.description(), "a Granary in Test City")
-	
-	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
-	
-	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
-	
-	def test_pickle(self):
-		self.assertPickleable(self.requirement)
-	
-	def test_no_city(self):
-		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary")
-	
-	def test_city_no_building(self):
-		city = TestCities.one()
-		
-		try:
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary")
-		finally:
-			city.kill()
-	
-	def test_city_building(self):
-		city = TestCities.one()
-		city.setHasRealBuilding(iGranary, True)
-		
-		try:
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Granary")
-		finally:
-			city.kill()
-	
-	def test_city_building_different_owner(self):
-		city = TestCities.one(1)
-		city.setHasRealBuilding(iGranary, True)
-		
-		try:
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary")
-		finally:
-			city.kill()
-	
-	def test_city_building_different_location(self):
-		other_city, city = cities = TestCities.num(2)
-		
-		city.setHasRealBuilding(iGranary, True)
-		
-		try:
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary")
-		finally:
-			cities.kill()
-	
-	def test_city_unique_building(self):
-		requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iMonument)
-		
-		city = TestCities.one()
-		city.setHasRealBuilding(iObelisk, True)
-		
-		try:
-			self.assertEqual(requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Monument")
-		finally:
-			city.kill()
-	
-	def test_different_evaluator(self):
-		evaluator = VassalsEvaluator(self.iPlayer)
-		
-		team(1).setVassal(0, True, False)
-	
-		city = TestCities.one(1)
-		city.setHasRealBuilding(iGranary, True)
-		
-		try:
-			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Granary")
-		finally:
-			city.kill()
-	
-	def test_check_city_acquired(self):
-		city = TestCities.one()
-		
-		try:
-			events.fireEvent("cityAcquired", 1, self.iPlayer, city, True, False)
-			
-			self.assertEqual(self.goal.checked, True)
-		finally:
-			city.kill()
-	
-	def test_check_city_acquired_different_city(self):
-		city, other_city = cities = TestCities.num(2)
-		
-		try:
-			events.fireEvent("cityAcquired", 1, self.iPlayer, other_city, True, False)
-			
-			self.assertEqual(self.goal.checked, False)
-		finally:
-			cities.kill()
-	
-	def test_check_building_built(self):
-		city = TestCities.one()
-	
-		try:
-			events.fireEvent("buildingBuilt", city, iGranary)
-			
-			self.assertEqual(self.goal.checked, True)
-		finally:
-			city.kill()
-	
-	def test_check_building_built_different_city(self):
-		city, other_city = cities = TestCities.num(2)
-		
-		try:
-			events.fireEvent("buildingBuilt", other_city, iGranary)
-			
-			self.assertEqual(self.goal.checked, False)
-		finally:
-			cities.kill()
-	
-	def test_check_building_built_different_building(self):
-		city = TestCities.one()
-		
-		try:
-			events.fireEvent("buildingBuilt", city, iLibrary)
-			
-			self.assertEqual(self.goal.checked, False)
-		finally:
-			city.kill()
-	
-	def test_expire_building_built_wonder(self):
-		requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]), iPyramids)
-		goal = TestGoal()
-		
-		requirement.register_handlers(goal)
-	
-		city = TestCities.one(1)
-		
-		try:
-			self.assertEqual(city.getOwner(), 1)
-			events.fireEvent("buildingBuilt", city, iPyramids)
-			
-			self.assertEqual(goal.failed, True)
-		finally:
-			city.kill()
-			requirement.deregister_handlers()
-	
-	def test_expire_building_built_different_wonder(self):
-		requirement = CityBuilding(CityDefinition(TestCities.CITY_LOCATIONS[0]), iPyramids)
-		
-		city = TestCities.one(1)
-		
-		try:
-			events.fireEvent("buildingBuilt", city, iHangingGardens)
-			
-			self.assertEqual(self.goal.failed, False)
-		finally:
-			city.kill()
-	
-	def test_expire_building_built_not_wonder(self):
-		city = TestCities.one(1)
-		
-		try:
-			events.fireEvent("buildingBuilt", city, iGranary)
-			
-			self.assertEqual(self.goal.failed, False)
-		finally:
-			city.kill()
-
-
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
@@ -377,6 +187,419 @@ class TestMoreReligion(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestRouteConnection(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "RouteConnection(Railroad, Start Area, Target Area)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "RouteConnection(Railroad, Start Area, Target Area)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a route connection between Start Area and Target Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Start Area": plots_.of([(61, 31)]), "Target Area": plots_.of([(65, 31)])})
+	
+	def test_direct_connection(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_no_connection(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		culture_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in culture_plots:
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in culture_plots:
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_no_culture(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+			
+			cities.kill()
+	
+	def test_different_route_type(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRoad)
+			plot.setOwner(0)
+		
+		route_techs = [iLeverage, iRailroad]
+		for iTech in route_techs:
+			team(0).setHasTech(iTech, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			for iTech in route_techs:
+				team(0).setHasTech(iTech, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_no_route_tech(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_no_start_city(self):
+		target = TestCities.owners(-1, -1, 0)[0]
+		
+		route_plots = plots_.rectangle((61, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			target.kill()
+	
+	def test_different_start_city_owner(self):
+		start, target = cities = TestCities.owners(1, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_no_target_city(self):
+		start = TestCities.one()
+		
+		route_plots = plots_.rectangle((62, 31), (65, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			start.kill()
+	
+	def test_target_city_different_owner(self):
+		start, target = cities = TestCities.owners(0, -1, 1)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_indirect_connection(self):
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots_.of([(60, 32), (61, 33), (62, 33), (63, 33), (64, 33), (65, 33), (66, 32)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_connection_through_city(self):
+		cities = TestCities.num(3)
+		
+		route_plots = plots_.of([(62, 31), (64, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_connection_through_city_different_owner(self):
+		cities = TestCities.owners(0, 1, 0)
+		
+		route_plots = plots_.of([(62, 31), (64, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_multiple_start_cities(self):
+		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31), (63, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"))
+		
+		cities = TestCities.num(3)
+		
+		route_plots = plots_.of([(64, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_multiple_target_cities(self):
+		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(63, 31), (65, 31)]).named("Target Area"))
+		
+		cities = TestCities.num(3)
+		
+		route_plots = plots_.of([(62, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_with_start_owners(self):
+		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"), start_owners=True)
+		
+		cities = TestCities.owners(1, -1, 0)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_with_start_owners_including_target(self):
+		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"), start_owners=True)
+		
+		cities = TestCities.owners(1, -1, 1)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		cities = TestCities.owners(1, -1, 1)
+		
+		route_plots = plots_.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(1)
+		
+		team(1).setHasTech(iRailroad, True, 1, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Railroad from Start Area to Target Area")
+		finally:
+			team(1).setHasTech(iRailroad, False, 1, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+		
+
+
 class TestTradeConnection(ExtendedTestCase):
 
 	def setUp(self):
@@ -554,9 +777,9 @@ class TestWonder(ExtendedTestCase):
 
 
 test_cases = [
-	TestCityBuilding,
 	TestControl,
 	TestMoreReligion,
+	TestRouteConnection,
 	TestTradeConnection,
 	TestWonder,
 ]

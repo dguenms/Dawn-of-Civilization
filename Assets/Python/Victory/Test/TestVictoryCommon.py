@@ -25,6 +25,10 @@ class ExtendedTestCase(TestCase):
 		saved = pickle.dumps(object)
 		loaded = pickle.loads(saved)
 		self.assertEqual(loaded, object)
+	
+	def assertEqualCity(self, actual, expected):
+		self.assertType(actual, CyCity)
+		self.assertEqual(location(actual), location(expected))
 		
 	@property
 	def player(self):
@@ -51,7 +55,7 @@ class TestCities(object):
 		if len(lOwners) > len(self.CITY_LOCATIONS):
 			raise ValueError("Can at most create %d cities" % len(self.CITY_LOCATIONS))
 		
-		self.cities = [player(iOwner).initCity(*self.CITY_LOCATIONS[i]) for i, iOwner in enumerate(lOwners)]
+		self.cities = [player(iOwner).initCity(*self.CITY_LOCATIONS[i]) for i, iOwner in enumerate(lOwners) if iOwner >= 0]
 	
 	def __iter__(self):
 		return iter(self.cities)

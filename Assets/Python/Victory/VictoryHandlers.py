@@ -126,6 +126,13 @@ class EventHandlerRegistry(object):
 		
 		return combatResult
 	
+	def corporationSpread(self, goal, applicable, func):
+		def corporationSpread((iCorporation, iPlayer, city)):
+			if applicable(goal, iPlayer):
+				func(goal, iCorporation)
+		
+		return corporationSpread
+	
 	def firstContact(self, goal, applicable, func):
 		def firstContact((iTeam, iHasMetTeam)):
 			if applicable(goal, team(iTeam).getLeaderID()):

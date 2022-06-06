@@ -66,6 +66,29 @@ class CityCount(ThresholdRequirement):
 		return area.cities().owner(iPlayer).count()
 
 
+# Second Turkic UHV goal
+class CorporationCount(ThresholdRequirement):
+
+	TYPES = (CORPORATION, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SPREAD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CORPORATION_COUNT"
+	
+	def __init__(self, iCorporation, *args, **options):
+		ThresholdRequirement.__init__(self, iCorporation, *args, **options)
+		
+		self.iCorporation = iCorporation
+		
+		self.handle("corporationSpread", self.check_corporation_spread)
+	
+	def check_corporation_spread(self, goal, iCorporation):
+		if self.iCorporation == iCorporation:
+			goal.check()
+	
+	def value(self, iPlayer, iCorporation):
+		return player(iPlayer).countCorporations(iCorporation)
+
+
 # Third Harappan UHV goal
 class PopulationCount(ThresholdRequirement):
 

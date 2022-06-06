@@ -160,6 +160,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PILLAGE</Tag>
+		<English>pillage %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CREATE</Tag>
+		<English>create %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SPREAD</Tag>
+		<English>spread %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -379,6 +403,38 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PILLAGE_COUNT</Tag>
+		<English>%s1 improvements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ROUTE_CONNECTION</Tag>
+		<English>a route connection between %s2 and %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CORPORATION_COUNT</Tag>
+		<English>%s1 to %s2 of your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_CULTURE_LEVEL</Tag>
+		<English>%s2 culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -558,6 +614,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PILLAGE_COUNT</Tag>
+		<English>Improvements pillaged</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION</Tag>
+		<English>%s1 from %s2 to %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_CULTURE_LEVEL</Tag>
+		<English>Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -578,6 +658,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_REMAINING</Tag>
 		<English>%d1 remaining</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_IN_CITY</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_IN_CITY_DIFFERENT_OWNER</Tag>
+		<English>%s1 in %s2 (controlled by %s3)</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -726,6 +822,41 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORDINAL_DEFAULT_SUFFIX</Tag>
 		<English>th</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- Additional display text -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_PLAYER</Tag>
+		<English>No Player</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CITY</Tag>
+		<English>No City</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_OWNED_BY</Tag>
+		<English>%s1 owned by %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALREADY_COMPLETED_FOR</Tag>
+		<English>Already completed for %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
