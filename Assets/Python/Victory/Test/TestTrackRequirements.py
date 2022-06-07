@@ -1,6 +1,81 @@
 from TrackRequirements import *
 
 from TestVictoryCommon import *
+
+
+class TestAcquiredCities(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AcquiredCities(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AcquiredCities(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AcquiredCities(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_city_acquired(self):
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Acquired cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_city_built(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Acquired cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_same_city_twice(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Acquired cities: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
 	
 
 class TestBrokeredPeace(ExtendedTestCase):
@@ -783,6 +858,7 @@ class TestTradeGold(ExtendedTestCase):
 			
 
 test_cases = [
+	TestAcquiredCities,
 	TestBrokeredPeace,
 	TestEraFirstDiscover,
 	TestGoldenAges,

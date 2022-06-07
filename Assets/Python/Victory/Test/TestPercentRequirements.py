@@ -186,6 +186,9 @@ class TestReligionSpreadPercent(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Orthodoxy to 30% of the world's population")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	

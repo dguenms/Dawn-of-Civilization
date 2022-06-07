@@ -1,6 +1,31 @@
 from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
+
+
+# First Tibetan UHV goal
+class AcquiredCities(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRED_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ACQUIRED_CITIES"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.recorded = set()
+		
+		self.handle("cityAcquired", self.record_city)
+		self.handle("cityBuilt", self.record_city)
+	
+	def record_city(self, goal, city, *args):
+		self.recorded.add(location(city))
+		goal.check()
+	
+	def evaluate(self, evaluator):
+		return len(self.recorded)
 		
 
 class BrokeredPeace(TrackRequirement):
@@ -10,8 +35,8 @@ class BrokeredPeace(TrackRequirement):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BROKERED_PEACE"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BROKERED_PEACE"
 
-	def __init__(self, *args, **options):
-		TrackRequirement.__init__(self, *args, **options)
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
 		
 		self.incremented("peaceBrokered")
 

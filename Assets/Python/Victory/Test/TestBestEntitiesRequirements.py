@@ -139,6 +139,9 @@ class TestBestTechPlayer(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "the most advanced civilization")
 	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	

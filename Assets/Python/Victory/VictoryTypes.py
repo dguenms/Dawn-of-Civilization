@@ -202,7 +202,7 @@ class CityType(Type):
 	def validate_func(self, argument):
 		return isinstance(argument, CityDefinition)
 	
-	def format_func(self, argument):
+	def format_func(self, argument, **options):
 		return argument.name()
 	
 	def area(self, argument):
