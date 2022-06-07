@@ -10,6 +10,7 @@ import heapq
 # Second Tamil UHV goal
 # Second Japanese UHV goal
 # First Viking UHV goal
+# Second Arabian UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)

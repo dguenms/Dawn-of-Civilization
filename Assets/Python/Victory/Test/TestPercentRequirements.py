@@ -166,7 +166,107 @@ class TestPopulationPercent(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestReligionSpreadPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ReligionSpreadPercent(iOrthodoxy, 30)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ReligionSpreadPercent(Orthodoxy, 30%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ReligionSpreadPercent(Orthodoxy, 30%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Orthodoxy to 30% of the world's population")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_spread(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodoxy spread: 50.00% / 30%")
+		finally:
+			cities.kill()
+			player(0).setLastStateReligion(-1)
+	
+	def test_no_state_religion(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.percentage(self.evaluator), 25.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Orthodoxy spread: 25.00% / 30%")
+		finally:
+			cities.kill()
+	
+	def test_additional_religion_present(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		city2.setHasReligion(iCatholicism, True, False, False)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodoxy spread: 50.00% / 30%")
+		finally:
+			cities.kill()
+			player(0).setLastStateReligion(-1)
+	
+	def test_different_owner(self):
+		city1, city2 = cities = TestCities.owners(1, 0)
+		
+		city1.setPopulation(10)
+		city2.setPopulation(10)
+		
+		city1.setHasReligion(iOrthodoxy, True, False, False)
+		
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodoxy spread: 50.00% / 30%")
+		finally:
+			cities.kill()
+			player(1).setLastStateReligion(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 test_cases = [
 	TestLandPercent,
 	TestPopulationPercent,
+	TestReligionSpreadPercent,
 ]

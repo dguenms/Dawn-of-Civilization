@@ -37,9 +37,12 @@ class Requirement(object):
 	def handle_any(self, event, func):
 		self.handlers.add_any(event, func)
 	
+	def checked(self, event):
+		self.handle(event, self.check)
+	
 	def register_handlers(self, goal):
 		if not self.handlers.handlers:
-			self.handle("BeginPlayerTurn", self.check)
+			self.checked("BeginPlayerTurn")
 	
 		event_handler_registry.register(self, goal)
 

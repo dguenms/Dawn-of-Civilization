@@ -10,6 +10,21 @@ class BestPopulationPlayer(BestPlayersRequirement):
 	
 	def metric(self, iPlayer):
 		return player(iPlayer).getRealPopulation()
+
+
+# First Arabian UHV goal
+class BestTechPlayer(BestPlayersRequirement):
+
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYER"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
+	
+	def __init__(self, *parameters, **options):
+		BestPlayersRequirement.__init__(self, *parameters, **options)
+		
+		self.checked("techAcquired")
+	
+	def metric(self, iPlayer):
+		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
 	
 
 class BestPopulationCities(BestCitiesRequirement):

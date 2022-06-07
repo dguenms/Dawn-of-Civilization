@@ -110,6 +110,129 @@ class TestBestPopulationPlayer(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestBestTechPlayer(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = BestTechPlayer()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.removed_techs = dict((iPlayer, infos.techs().where(team(iPlayer).isHasTech)) for iPlayer in [0, 1, 2])
+		for iPlayer, techs in self.removed_techs.items():
+			for iTech in techs:
+				team(iPlayer).setHasTech(iTech, False, iPlayer, False, False)
+		
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		for iPlayer, techs in self.removed_techs.items():
+			for iTech in techs:
+				team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
+		
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestTechPlayer()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestTechPlayer()")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the most advanced civilization")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_best(self):
+		team(0).setHasTech(iGenetics, True, 0, False, False)
+		team(1).setHasTech(iLaw, True, 1, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.SUCCESS + "Most advanced: Egypt (9000)", "Next most advanced: Babylonia (280)"])
+		finally:
+			team(0).setHasTech(iGenetics, False, 0, False, False)
+			team(1).setHasTech(iLaw, False, 0, False, False)
+	
+	def test_second(self):
+		team(0).setHasTech(iLaw, True, 0, False, False)
+		team(1).setHasTech(iGenetics, True, 1, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "Most advanced: Babylonia (9000)", "Our next most advanced: Egypt (280)"])
+		finally:
+			team(0).setHasTech(iLaw, False, 0, False, False)
+			team(1).setHasTech(iGenetics, False, 0, False, False)
+	
+	def test_third(self):
+		team(0).setHasTech(iLaw, True, 0, False, False)
+		team(1).setHasTech(iGenetics, True, 1, False, False)
+		team(2).setHasTech(iEconomics, True, 2, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "Most advanced: Babylonia (9000)", "Our next most advanced: Egypt (280)"])
+		finally:
+			team(0).setHasTech(iLaw, False, 0, False, False)
+			team(1).setHasTech(iGenetics, False, 1, False, False)
+			team(2).setHasTech(iEconomics, False, 2, False, False)
+	
+	def test_multiple_players_fulfilled(self):
+		requirement = BestTechPlayer(2)
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		team(0).setHasTech(iGenetics, True, 0, False, False)
+		team(1).setHasTech(iEconomics, True, 1, False, False)
+		team(2).setHasTech(iLaw, True, 2, False, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(evaluator), True)
+			self.assertEqual(requirement.progress(evaluator), [self.SUCCESS + "Most advanced: Egypt (9000)", self.SUCCESS + "Second most advanced: Babylonia (1500)", "Next most advanced: Harappa (280)"])
+		finally:
+			team(1).setVassal(0, False, False)
+			
+			team(0).setHasTech(iGenetics, False, 0, False, False)
+			team(1).setHasTech(iEconomics, False, 1, False, False)
+			team(2).setHasTech(iLaw, False, 2, False, False)
+	
+	def test_multiple_players_not_fulfilled(self):
+		requirement = BestTechPlayer(2)
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		team(0).setHasTech(iLaw, True, 0, False, False)
+		team(1).setHasTech(iGenetics, True, 1, False, False)
+		team(2).setHasTech(iEconomics, True, 2, False, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(evaluator), False)
+			self.assertEqual(requirement.progress(evaluator), [self.SUCCESS + "Most advanced: Babylonia (9000)", self.FAILURE + "Second most advanced: Harappa (1500)", "Our next most advanced: Egypt (280)"])
+		finally:
+			team(1).setVassal(0, False, False)
+			
+			team(0).setHasTech(iLaw, False, 0, False, False)
+			team(1).setHasTech(iGenetics, False, 1, False, False)
+			team(2).setHasTech(iEconomics, False, 2, False, False)
+	
+	def test_check_tech_acquired(self):
+		events.fireEvent("techAcquired", iLaw, 0, 0, False)
+		
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_check_tech_acquired_other(self):
+		events.fireEvent("techAcquired", iLaw, 1, 1, False)
+		
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_not_checked_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestBestPopulationCities(ExtendedTestCase):
 
 	def setUp(self):
@@ -585,8 +708,9 @@ class TestBestCultureCity(ExtendedTestCase):
 
 
 test_cases = [
+	TestBestCultureCity,
 	TestBestPopulationCities,
 	TestBestPopulationPlayer,
 	TestBestPopulationCity,
-	TestBestCultureCity,
+	# TestBestTechPlayer,
 ]

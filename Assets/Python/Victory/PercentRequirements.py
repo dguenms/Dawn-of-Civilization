@@ -34,4 +34,22 @@ class PopulationPercent(PercentRequirement):
 	
 	def total(self):
 		return game.getTotalPopulation()
+
+
+# Third Arabian UHV goal
+class ReligionSpreadPercent(PercentRequirement):
+
+	TYPES = (RELIGION, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SPREAD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_PERCENT"
+	
+	def __init__(self, iReligion, *parameters, **options):
+		PercentRequirement.__init__(self, iReligion, *parameters, **options)
+		
+		self.iReligion = iReligion
+	
+	def percentage(self, evaluator):
+		return game.calculateReligionPercent(self.iReligion)
 		
