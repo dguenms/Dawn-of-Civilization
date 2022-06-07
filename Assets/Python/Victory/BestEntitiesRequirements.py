@@ -2,7 +2,8 @@ from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
 	
-		
+
+# First Indonesian UHV goal
 class BestPopulationPlayer(BestPlayersRequirement):
 
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"

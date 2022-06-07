@@ -21,6 +21,7 @@ class LandPercent(PercentRequirement):
 
 
 # Third Indian UHV goal
+# Third Indonesian UHV goal
 class PopulationPercent(PercentRequirement):
 
 	TYPES = (PERCENTAGE,)
