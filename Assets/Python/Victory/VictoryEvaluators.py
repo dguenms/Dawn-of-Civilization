@@ -47,6 +47,9 @@ class Evaluator(object):
 	
 	def any(self, condition):
 		return any(condition(iPlayer) for iPlayer in self)
+		
+	def sum(self, func):
+		return sum(func(iPlayer) for iPlayer in self)
 	
 	def evaluate(self, func, primary_arg=None, *args):
 		if isinstance(primary_arg, Aggregate):

@@ -180,6 +180,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		
 		onBeginPlayerTurn((10, 0))
 		self.assertEqual(self.argument, (self.goal, 10, 0))
+	
+	def test_blockade(self):
+		onBlockade = self.get("blockade", self.accumulate)
+		
+		onBlockade((1, 100))
+		self.assertEqual(self.iCount, 0)
+		
+		onBlockade((0, 100))
+		self.assertEqual(self.iCount, 100)
 		
 	def test_building_built(self):
 		onBuildingBuilt = self.get("buildingBuilt", self.capture)

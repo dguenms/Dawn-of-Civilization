@@ -385,7 +385,6 @@ class DifferentCitiesGoal(Goal):
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
-			print "iterate %s" % subgoal
 			if subgoal.succeeded():
 				recorded_location = self.recorded.get(subgoal)
 				recorded_city = city(recorded_location)

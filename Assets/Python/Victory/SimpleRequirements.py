@@ -142,6 +142,7 @@ class TradeConnection(Requirement):
 # Third Greek UHV goal
 # Third Polynesian UHV goal
 # Second Mayan UHV goal
+# Second Moorish UHV goal
 class Wonder(Requirement):
 
 	TYPES = (BUILDING,)

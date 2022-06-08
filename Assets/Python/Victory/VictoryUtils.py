@@ -51,6 +51,12 @@ def number_word(number):
 
 def ordinal_word(number):
 	return text_if_exists("TXT_KEY_VICTORY_ORDINAL_%s" % number, otherwise="%d%s" % (number, text("TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX")))
+	
+
+def in_area(string, area):
+	if area is not None:
+		return text("TXT_KEY_VICTORY_IN_AREA", string, area.name())
+	return string
 
 
 class NamedDefinition(object):

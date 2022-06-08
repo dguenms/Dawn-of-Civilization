@@ -41,6 +41,48 @@ class BrokeredPeace(TrackRequirement):
 		self.incremented("peaceBrokered")
 
 
+# First Moorish UHV goal
+class ConqueredCities(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONQUER"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONQUERED_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONQUERED_CITIES"
+	
+	def __init__(self, iRequired, area=None, **options):
+		TrackRequirement.__init__(self, iRequired, area=area, **options)
+		
+		self.recorded = set()
+		self.area = area
+		
+		self.handle("cityAcquired", self.record_conquered_city)
+		
+	def valid_city(self, city):
+		return self.area is None or city in self.area
+	
+	def record_conquered_city(self, goal, city, bConquest):
+		if bConquest and self.valid_city(city):
+			self.recorded.add(location(city))
+			goal.check()
+	
+	def evaluate(self, evaluator):
+		return evaluator.sum(lambda p: cities.owner(p).where(lambda city: location(city) in self.recorded).count())
+	
+	def description(self, **options):
+		description = TrackRequirement.description(self, **options)
+		return in_area(description, self.area)
+	
+	def areas(self):
+		if self.area is not None:
+			return {self.area.name(): self.area.create()}
+		return {}
+	
+	def progress_text(self, **options):
+		progress = TrackRequirement.progress_text(self, **options)
+		return in_area(progress, self.area)
+
+
 # Third Japanese UHV goal
 class EraFirstDiscover(TrackRequirement):
 
@@ -116,6 +158,23 @@ class PillageCount(TrackRequirement):
 		TrackRequirement.__init__(self, *parameters, **options)
 		
 		self.incremented("unitPillage")
+
+
+# Third Moorish UHV goal
+class PiracyGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_PIRACY_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PIRACY_GOLD"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.accumulated("unitPillage")
+		self.accumulated("blockade")
+		self.accumulated("combatGold")
 
 
 # Third Viking UHV goal

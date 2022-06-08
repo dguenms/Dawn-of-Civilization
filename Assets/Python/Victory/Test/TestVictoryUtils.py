@@ -74,6 +74,12 @@ class TestTextProcessing(ExtendedTestCase):
 	
 	def test_capitalize_empty(self):
 		self.assertEqual(capitalize(""), "")
+	
+	def test_in_area(self):
+		self.assertEqual(in_area("this is a sentence", plots.rectangle((10, 10), (20, 20)).named("Test Area")), "this is a sentence in Test Area")
+	
+	def test_in_area_none(self):
+		self.assertEqual(in_area("this is a sentence", None), "this is a sentence")
 		
 		
 class TestNamedDefinition(ExtendedTestCase):

@@ -145,6 +145,167 @@ class TestBrokeredPeace(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestConqueredCities(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ConqueredCities(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ConqueredCities(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ConqueredCities(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_record_conquered(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_peacefully_acquired(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, False, True)
+			events.fireEvent("cityAcquired", 1, 0, city2, False, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		try:
+			events.fireEvent("cityAcquired", 0, 1, city1, True, False)
+			events.fireEvent("cityAcquired", 0, 1, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_owner_changes_after_conquest(self):
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+			
+	def test_city_destroyed_after_conquest(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+			
+			city2.kill()
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities: 1 / 2")
+		finally:
+			city1.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
+class TestConqueredCitiesArea(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ConqueredCities(2, area=plots.of([(61, 31), (63, 31)]).named("Test Area"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((10, 10)), "")
+	
+	def test_conquer_in_area(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered cities in Test Area: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_conquer_not_in_area(self):
+		city1, city2, city3, city4 = cities = TestCities.num(4)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city3, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city4, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities in Test Area: 0 / 2")
+		finally:
+			cities.kill()
+
+
 class TestEraFirstDiscover(ExtendedTestCase):
 
 	def setUp(self):
@@ -428,6 +589,108 @@ class TestPillageCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.evaluate(evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Improvements pillaged: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
+class TestPiracyGold(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PiracyGold(100)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.city = TestCities.one(1)
+		self.unit = makeUnit(0, iSwordsman, (25, 25))
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+		self.city.kill()
+		self.unit.kill(False, -1)
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PiracyGold(100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PiracyGold(100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 gold through piracy")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_unit_pillage(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, self.iPlayer, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from piracy: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_unit_pillage_other(self):
+		events.fireEvent("unitPillage", self.unit, iHamlet, -1, 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from piracy: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_blockade(self):
+		events.fireEvent("blockade", 0, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from piracy: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_blockade_other(self):
+		events.fireEvent("blockade", 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from piracy: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_combat_gold(self):
+		events.fireEvent("combatGold", self.iPlayer, self.unit, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from piracy: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_combat_gold_other(self):
+		events.fireEvent("combatGold", 1, self.unit, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from piracy: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("combatGold", 1, self.unit, 100)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from piracy: 100 / 100")
 			self.assertEqual(self.goal.checked, True)
 		finally:
 			team(1).setVassal(0, False, False)
@@ -860,9 +1123,12 @@ class TestTradeGold(ExtendedTestCase):
 test_cases = [
 	TestAcquiredCities,
 	TestBrokeredPeace,
+	TestConqueredCities,
+	TestConqueredCitiesArea,
 	TestEraFirstDiscover,
 	TestGoldenAges,
 	TestPillageCount,
+	TestPiracyGold,
 	TestRaidGold,
 	TestSunkShips,
 	TestTradeGold,

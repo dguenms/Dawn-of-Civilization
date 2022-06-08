@@ -69,6 +69,13 @@ class EventHandlerRegistry(object):
 				func(goal, iGameTurn, iPlayer)
 		
 		return BeginPlayerTurn
+	
+	def blockade(self, goal, applicable, func):
+		def blockade((iPlayer, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, iGold)
+		
+		return blockade
 		
 	def buildingBuilt(self, goal, applicable, func):
 		def buildingBuilt((city, iBuilding)):
