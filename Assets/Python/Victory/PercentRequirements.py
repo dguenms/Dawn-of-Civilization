@@ -3,6 +3,27 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Second French UHV goal
+class AreaPercent(PercentRequirement):
+
+	TYPES = (AREA, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_PERCENT"
+	
+	def __init__(self, area, *parameters, **options):
+		PercentRequirement.__init__(self, area, *parameters, **options)
+		
+		self.area = area
+		
+	def value(self, iPlayer, area):
+		return area.create().land().owner(iPlayer).count()
+	
+	def total(self):
+		return self.area.create().land().count()
+
+
 # First Persian UHV goal
 # First Turkic UHV goal
 class LandPercent(PercentRequirement):

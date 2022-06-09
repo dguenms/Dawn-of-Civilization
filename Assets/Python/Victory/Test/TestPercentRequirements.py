@@ -3,6 +3,112 @@ from PercentRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAreaPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.rectangle((50, 30), (69, 31)).named("Test Area")
+		self.assertEqual(self.area.land().count(), 40)
+		
+		self.requirement = AreaPercent(self.area, 30)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AreaPercent(Test Area, 30%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AreaPercent(Test Area, 30%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "30% of Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.rectangle((50, 30), (69, 31))})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((50, 30)), "Test Area")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Territory in Test Area: 0.00% / 30%")
+	
+	def test_half(self):
+		controlled = plots_.rectangle((50, 30), (69, 30))
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 20)
+			self.assertEqual(self.requirement.total(), 40)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Territory in Test Area: 50.00% / 30%")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_all(self):
+		controlled = plots_.rectangle((50, 30), (69, 31))
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 40)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 100.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Territory in Test Area: 100.00% / 30%")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_outside(self):
+		controlled = plots_.rectangle((50, 29), (69, 29))
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Territory in Test Area: 0.00% / 30%")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		controlled = plots_.rectangle((50, 30), (69, 31))
+		for plot in controlled:
+			plot.setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 40)
+			self.assertEqual(self.requirement.percentage(evaluator), 100.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Territory in Test Area: 100.00% / 30%")
+		finally:
+			team(1).setVassal(0, False, False)
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestLandPercent(ExtendedTestCase):
 
 	def setUp(self):
@@ -269,6 +375,7 @@ class TestReligionSpreadPercent(ExtendedTestCase):
 
 
 test_cases = [
+	TestAreaPercent,
 	TestLandPercent,
 	TestPopulationPercent,
 	TestReligionSpreadPercent,

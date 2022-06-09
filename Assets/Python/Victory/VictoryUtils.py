@@ -140,11 +140,17 @@ class AreaDefinition(NamedDefinition):
 	def land(self, *args, **kwargs):
 		return self.call("land", args, kwargs)
 	
+	def owner(self, *args, **kwargs):
+		return self.call("owner", args, kwargs)
+	
 	def none(self, *args, **kwargs):
 		return self.create().none(*args, **kwargs)
 	
 	def cities(self):
 		return self.create().cities()
+	
+	def count(self):
+		return self.create().count()
 		
 	def closest_distance(self, *args, **kwargs):
 		return self.create().closest_distance(*args, **kwargs)
