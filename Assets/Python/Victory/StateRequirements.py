@@ -108,6 +108,7 @@ class FirstDiscover(StateRequirement):
 
 
 # Second Viking UHV goal
+# First Spanish UHV goal
 class FirstSettle(StateRequirement):
 
 	TYPES = (AREA,)

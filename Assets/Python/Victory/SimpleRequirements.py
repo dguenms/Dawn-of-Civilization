@@ -3,6 +3,25 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 import heapq
+
+
+# Third Spanish UHV goal
+class AreaNoStateReligion(Requirement):
+
+	TYPES = (AREA, RELIGION_ADJECTIVE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_NO_STATE_RELIGION"
+	
+	def __init__(self, area, iReligion, **options):
+		Requirement.__init__(self, area, iReligion, **options)
+		
+		self.area = area
+		self.iReligion = iReligion
+	
+	def fulfilled(self, evaluator):
+		return self.area.cities().none(lambda city: player(city).getStateReligion() == self.iReligion)
 	
 
 # Second Greek UHV goal

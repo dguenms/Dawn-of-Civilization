@@ -443,6 +443,93 @@ class TestCityCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestControlledResourceCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ControlledResourceCount(iGold, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ControlledResourceCount(Gold, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ControlledResourceCount(Gold, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Gold resources")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold: 0 / 2")
+	
+	def test_less(self):
+		city = TestCities.one()
+		
+		city.plot().setBonusType(iGold)
+		city.setHasRealBuilding(iPalace, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_sufficient(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		for city in cities:
+			city.plot().setBonusType(iGold)
+		
+		city1.setHasRealBuilding(iPalace, True)
+		plot(62, 31).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(2).setVassal(0, True, False)
+		
+		city1, city2 = cities = TestCities.owners(2, 2)
+		
+		for city in cities:
+			city.plot().setBonusType(iGold)
+		
+		city1.setHasRealBuilding(iPalace, True)
+		plot(62, 31).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold: 2 / 2")
+		finally:
+			cities.kill()
+			team(2).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestCorporationCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -813,6 +900,7 @@ test_cases = [
 	TestBuildingCount,
 	TestCityCount,
 	TestCorporationCount,
+	TestControlledResourceCount,
 	TestPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,

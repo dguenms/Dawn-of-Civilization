@@ -39,6 +39,7 @@ class PopulationPercent(PercentRequirement):
 
 # Third Arabian UHV goal
 # Second Tibetan UHV goal
+# Third Spanish UHV goal
 class ReligionSpreadPercent(PercentRequirement):
 
 	TYPES = (RELIGION, PERCENTAGE)

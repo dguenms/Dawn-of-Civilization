@@ -55,16 +55,26 @@ class CityCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_COUNT"
 	
-	def __init__(self, area, *args, **options):
-		ThresholdRequirement.__init__(self, area, *args, **options)
-		
-		self.area = area
+	def __init__(self, *parameters, **options):
+		ThresholdRequirement.__init__(self, *parameters, **options)
 		
 		self.handle("cityBuilt", self.check)
 		self.handle("cityAcquiredAndKept", self.check)
 		
 	def value(self, iPlayer, area):
 		return area.cities().owner(iPlayer).count()
+
+
+# Second Spanish UHV goal
+class ControlledResourceCount(ThresholdRequirement):
+
+	TYPES = (RESOURCE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT"
+	
+	def value(self, iPlayer, iResource):
+		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource)
 
 
 # Second Turkic UHV goal

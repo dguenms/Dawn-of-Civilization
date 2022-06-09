@@ -200,6 +200,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SECURE</Tag>
+		<English>secure %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALLOW</Tag>
+		<English>allow %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -499,6 +515,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT</Tag>
+		<English>%s2 %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION</Tag>
+		<English>no %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -745,6 +777,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_PIRACY_GOLD</Tag>
 		<English>Gold from piracy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_NO_STATE_RELIGION</Tag>
+		<English>No %s2 civilizations in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

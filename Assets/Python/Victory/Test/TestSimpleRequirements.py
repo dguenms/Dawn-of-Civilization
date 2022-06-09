@@ -3,6 +3,83 @@ from SimpleRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAreaNoStateReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = AreaNoStateReligion(self.area, iCatholicism)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AreaNoStateReligion(Test Area, Catholicism)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AreaNoStateReligion(Test Area, Catholicism)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "no Catholic civilizations in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Catholic civilizations in Test Area")
+	
+	def test_no_state_religion(self):
+		cities = TestCities.owners(1, 1)
+		
+		for city in cities:
+			city.setHasReligion(iCatholicism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Catholic civilizations in Test Area")
+		finally:
+			cities.kill()
+	
+	def test_no_city_religion(self):
+		cities = TestCities.owners(1, 1)
+		
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No Catholic civilizations in Test Area")
+		finally:
+			player(1).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_outside_of_area(self):
+		cities = TestCities.owners(1, 1, 2)
+		
+		player(2).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Catholic civilizations in Test Area")
+		finally:
+			player(2).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
@@ -777,6 +854,7 @@ class TestWonder(ExtendedTestCase):
 
 
 test_cases = [
+	TestAreaNoStateReligion,
 	TestControl,
 	TestMoreReligion,
 	TestRouteConnection,
