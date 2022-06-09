@@ -3,6 +3,22 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Second Khmer UHV goal
+class AveragePopulation(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AVERAGE_POPULATION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AVERAGE_POPULATION"
+	
+	def value(self, iPlayer):
+		iNumCities = player(iPlayer).getNumCities()
+		if iNumCities <= 0:
+			return 0
+		
+		return player(iPlayer).getTotalPopulation() / iNumCities
+
+
 # Second Harappan UHV goal
 # First Chinese UHV goal
 # First Indian UHV goal
@@ -12,6 +28,7 @@ from BaseRequirements import *
 # First Roman UHV goal
 # Second Ethiopian UHV goal
 # First Korean UHV goal
+# First Khmer UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)

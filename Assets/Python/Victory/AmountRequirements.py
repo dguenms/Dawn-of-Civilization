@@ -27,6 +27,7 @@ class AverageCultureAmount(ThresholdRequirement):
 # First Egyption UHV goal
 # Third Egyptian UHV goal
 # First Tamil UHV goal
+# Third Khmer UHV goal
 class CultureAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)

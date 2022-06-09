@@ -3,6 +3,99 @@ from CountRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAveragePopulation(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AveragePopulation(4)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AveragePopulation(4)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AveragePopulation(4)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "an average city population of four")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city population: 0 / 4")
+	
+	def test_less(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setPopulation(4)
+		city2.setPopulation(2)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city population: 3 / 4")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setPopulation(6)
+		city2.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Average city population: 5 / 4")
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		city1.setPopulation(6)
+		city2.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Average city population: 0 / 4")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		city1.setPopulation(6)
+		city2.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 5)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Average city population: 5 / 4")
+		finally:
+			team(1).setVassal(0, False, False)
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestBuildingCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -897,6 +990,7 @@ class TestSpecialistCount(ExtendedTestCase):
 
 
 test_cases = [
+	TestAveragePopulation,
 	TestBuildingCount,
 	TestCityCount,
 	TestCorporationCount,
