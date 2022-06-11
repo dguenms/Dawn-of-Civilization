@@ -800,6 +800,150 @@ class TestRaidGold(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestSettledCities(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = SettledCities(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "SettledCities(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "SettledCities(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_record_settled(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Settled cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city1, city2 = cities = TestCities.owners(1, 1)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_settled_then_lost(self):
+		city1, city2 = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+			
+			player(1).acquireCity(city1, True, False)
+			player(1).acquireCity(city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities: 0 / 2")
+		finally:
+			city(61, 31).kill()
+			city(63, 31).kill()
+	
+	def test_conquered(self):
+		city1, city2 = TestCities.owners(1, 1)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+			
+			player(0).acquireCity(city1, True, False)
+			player(0).acquireCity(city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities: 0 / 2")
+		finally:
+			city(61, 31).kill()
+			city(63, 31).kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
+class TestSettledCitiesArea(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = SettledCities(2, area=plots.of([(61, 31), (63, 31)]).named("Test Area"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((10, 10)), "")
+	
+	def test_settle_in_area(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityBuilt", city1)
+			events.fireEvent("cityBuilt", city2)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Settled cities in Test Area: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_settle_not_in_area(self):
+		city1, city2, city3, city4 = cities = TestCities.num(4)
+		
+		try:
+			events.fireEvent("cityBuilt", city3)
+			events.fireEvent("cityBuilt", city4)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities in Test Area: 0 / 2")
+		finally:
+			cities.kill()
+
+
 class TestSunkShips(ExtendedTestCase):
 
 	def setUp(self):
@@ -1130,6 +1274,8 @@ test_cases = [
 	TestPillageCount,
 	TestPiracyGold,
 	TestRaidGold,
+	TestSettledCities,
+	TestSettledCitiesArea,
 	TestSunkShips,
 	TestTradeGold,
 ]

@@ -81,6 +81,53 @@ class TestAttitudeCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestAttitudeCountCommunist(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bCommunist=True)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other communist civilizations")
+	
+	def test_communist(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+			player(iPlayer).setCivics(iCivicsEconomy, iCentralPlanning)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+				player(iPlayer).setCivics(iCivicsEconomy, iRedistribution)
+	
+	def test_not_communist(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+
+
 class TestAttitudeCountCivs(ExtendedTestCase):
 
 	def setUp(self):
@@ -1473,6 +1520,7 @@ class TestVassalCountStateReligion(ExtendedTestCase):
 test_cases = [
 	TestAttitudeCount,
 	TestAttitudeCountCivs,
+	TestAttitudeCountCommunist,
 	TestAttitudeCountIndependent,
 	TestAveragePopulation,
 	TestBuildingCount,

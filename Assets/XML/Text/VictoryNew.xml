@@ -216,6 +216,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_COMPLETE</Tag>
+		<English>be the first to complete %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ADOPT</Tag>
+		<English>adopt %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -501,7 +517,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CONQUERED_CITIES</Tag>
-		<English>%s1 cities</English>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLED_CITIES</Tag>
+		<English>%s1 %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -566,6 +590,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT</Tag>
 		<English>%s1 relations with %s2 other %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_COMMUNIST</Tag>
+		<English>Communism</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -808,7 +840,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CONQUERED_CITIES</Tag>
-		<English>Conquered cities</English>
+		<English>Conquered %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SETTLED_CITIES</Tag>
+		<English>Settled %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -857,6 +897,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT</Tag>
 		<English>%s1 relations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_COMMUNIST</Tag>
+		<English>Communist</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1121,6 +1169,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_INDEPENDENT</Tag>
 		<English>independent %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITIES</Tag>
+		<English>cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNIST</Tag>
+		<English>communist %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

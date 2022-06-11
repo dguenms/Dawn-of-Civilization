@@ -2,6 +2,8 @@ from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
 
+from Civics import isCommunist
+
 import heapq
 
 
@@ -22,6 +24,17 @@ class AreaNoStateReligion(Requirement):
 	
 	def fulfilled(self, evaluator):
 		return self.area.cities().none(lambda city: player(city).getStateReligion() == self.iReligion)
+
+
+# Third Russian UHV goal
+class Communist(Requirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ADOPT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COMMUNIST"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_COMMUNIST"
+
+	def fulfilled(self, evaluator):
+		return evaluator.any(lambda p: isCommunist(p))
 	
 
 # Second Greek UHV goal
@@ -74,7 +87,35 @@ class MoreReligion(Requirement):
 		return "%s %s" % (self.progress_text_religion(self.iOurReligion), self.progress_text_religion(self.iOtherReligion))
 
 
+# Second Russian UHV goal
+class Project(Requirement):
+
+	TYPES = (PROJECT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_COMPLETE"
+	
+	def __init__(self, iProject, **options):
+		Requirement.__init__(self, iProject, **options)
+		
+		self.iProject = iProject
+		
+		self.handle("projectBuilt", self.check_project_built)
+		self.expire("projectBuilt", self.expire_project_built)
+	
+	def check_project_built(self, goal, iProject):
+		if self.iProject == iProject:
+			goal.check()
+	
+	def expire_project_built(self, goal, iProject):
+		if self.iProject == iProject:
+			goal.expire()
+	
+	def fulfilled(self, evaluator):
+		return evaluator.any(lambda p: team(p).getProjectCount(self.iProject) > 0)
+
+
 # Second Turkic UHV goal
+# First Russian UHV goal
 class RouteConnection(Requirement):
 
 	GLOBAL_TYPES = (ROUTES, AREA)

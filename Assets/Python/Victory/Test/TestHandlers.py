@@ -354,6 +354,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onPlayerStateReligionChange((0, iCatholicism, iOrthodoxy))
 		self.assertEqual(self.argument, (self.goal, iCatholicism))
 	
+	def test_project_built(self):
+		onProjectBuilt = self.get("projectBuilt", self.capture)
+		
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			onProjectBuilt((their_city, iTheInternet))
+			self.assertEqual(self.argument, None)
+			
+			onProjectBuilt((our_city, iTheInternet))
+			self.assertEqual(self.argument, (self.goal, iTheInternet))
+		finally:
+			cities.kill()
+	
 	def test_tech_acquired(self):
 		onTechAcquired = self.get("techAcquired", self.capture)
 		

@@ -168,6 +168,13 @@ class EventHandlerRegistry(object):
 		
 		return playerGoldTrade
 	
+	def projectBuilt(self, goal, applicable, func):
+		def projectBuilt((city, iProject)):
+			if applicable(goal, city.getOwner()):
+				func(goal, iProject)
+		
+		return projectBuilt
+	
 	def techAcquired(self, goal, applicable, func):
 		def techAcquired((iTech, iTeam, iPlayer, bAnnounce)):
 			if applicable(goal, iPlayer):

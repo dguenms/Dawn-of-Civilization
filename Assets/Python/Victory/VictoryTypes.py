@@ -146,8 +146,11 @@ class InfoType(Type):
 	def format_func(self, argument, bPlural=False, **options):
 		text = self.info(argument).getText()
 		if bPlural:
-			return plural(text)
-		return text
+			text = plural(text)
+		return format_articles(text)
+	
+	def format_repr_func(self, argument, bPlural=False, **options):
+		return capitalize(self.format_func(argument, bPlural=bPlural, **options))
 
 
 class InfosType(Type):
@@ -265,6 +268,7 @@ COUNT = CountType("Count")
 CULTURELEVEL = CultureLevelType("CultureLevel")
 ERA = InfoType("Era", infos.era)
 PERCENTAGE = PercentageType("Percentage")
+PROJECT = InfoType("Project", infos.project)
 RELIGION = InfoType("Religion", infos.religion)
 RELIGION_ADJECTIVE = ReligionAdjectiveType("ReligionAdjective")
 RESOURCE = InfoType("Resource", infos.bonus)

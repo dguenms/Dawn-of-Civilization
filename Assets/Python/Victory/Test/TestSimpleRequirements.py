@@ -80,6 +80,64 @@ class TestAreaNoStateReligion(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCommunist(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Communist()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Communist()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Communist()")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Communism")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_not_communist(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Communist")
+	
+	def test_communist(self):
+		player(0).setCivics(iCivicsEconomy, iCentralPlanning)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Communist")
+		finally:
+			player(0).setCivics(iCivicsEconomy, iRedistribution)
+	
+	def test_communist_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		player(1).setCivics(iCivicsEconomy, iCentralPlanning)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Communist")
+		finally:
+			team(1).setVassal(0, False, False)
+			player(1).setCivics(iCivicsEconomy, iRedistribution)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
@@ -262,6 +320,117 @@ class TestMoreReligion(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		self.assertEqual(self.goal.checked, True)
+
+
+class TestProject(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Project(iTheInternet)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Project(The Internet)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Project(The Internet)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the Internet")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_not_completed(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "The Internet")
+	
+	def test_completed(self):
+		team(0).changeProjectCount(iTheInternet, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "The Internet")
+		finally:
+			team(0).changeProjectCount(iTheInternet, -1)
+	
+	def test_completed_other(self):
+		team(1).changeProjectCount(iTheInternet, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "The Internet")
+		finally:
+			team(1).changeProjectCount(iTheInternet, -1)
+	
+	def test_completed_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		team(1).changeProjectCount(iTheInternet, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "The Internet")
+		finally:
+			team(1).changeProjectCount(iTheInternet, -1)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_project_built(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("projectBuilt", city, iTheInternet)
+			
+			self.assertEqual(self.goal.checked, True)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_check_project_built_different_project(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("projectBuilt", city, iManhattanProject)
+			
+			self.assertEqual(self.goal.checked, False)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_expire_project_built(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("projectBuilt", city, iTheInternet)
+			
+			self.assertEqual(self.goal.checked, False)
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			city.kill()
+	
+	def test_expire_project_built_different_project(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("projectBuilt", city, iManhattanProject)
+			
+			self.assertEqual(self.goal.checked, False)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
 
 
 class TestRouteConnection(ExtendedTestCase):
@@ -771,7 +940,7 @@ class TestWonder(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "Wonder(The Pyramids)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "The Pyramids")
+		self.assertEqual(self.requirement.description(), "the Pyramids")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})
@@ -855,8 +1024,10 @@ class TestWonder(ExtendedTestCase):
 
 test_cases = [
 	TestAreaNoStateReligion,
+	TestCommunist,
 	TestControl,
 	TestMoreReligion,
+	TestProject,
 	TestRouteConnection,
 	TestTradeConnection,
 	TestWonder,

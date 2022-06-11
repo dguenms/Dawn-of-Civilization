@@ -2,8 +2,11 @@ from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
 
+from Civics import isCommunist
+
 
 # Third Holy Roman UHV goal
+# Third Russian UHV goal
 class AttitudeCount(ThresholdRequirement):
 
 	TYPES = (ATTITUDE, COUNT)
@@ -11,17 +14,21 @@ class AttitudeCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
 	
-	def __init__(self, iAttitude, iRequired, civs=None, bIndependent=False, **options):
+	def __init__(self, iAttitude, iRequired, civs=None, bIndependent=False, bCommunist=False, **options):
 		ThresholdRequirement.__init__(self, int(iAttitude), iRequired, **options)
 		
 		self.civs = civs
 		self.bIndependent = bIndependent
+		self.bCommunist = bCommunist
 		
 	def valid(self, iPlayer, iOtherPlayer, iAttitude):
 		if not player(iPlayer).canContact(iOtherPlayer):
 			return False
 		
 		if self.bIndependent and team(iOtherPlayer).isAVassal():
+			return False
+		
+		if self.bCommunist and not isCommunist(iOtherPlayer):
 			return False
 		
 		if self.civs and civ(iOtherPlayer) not in self.civs:
@@ -34,6 +41,7 @@ class AttitudeCount(ThresholdRequirement):
 	
 	def additional_formats(self):
 		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
+		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_COMMUNIST", self.bCommunist)
 		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_INDEPENDENT", self.bIndependent)
 		civilizations = in_area(civilizations, self.civs)
 		

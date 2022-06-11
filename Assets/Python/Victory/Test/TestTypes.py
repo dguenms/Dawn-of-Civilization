@@ -160,6 +160,37 @@ class TestArea(ExtendedTestCase):
 		self.assertEqual(AREA.area(self.area), plots_.of(TestCities.CITY_LOCATIONS))
 
 
+class TestAttitude(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(ATTITUDE), "Attitude")
+	
+	def test_repr(self):
+		self.assertEqual(repr(ATTITUDE), "Attitude")
+	
+	def test_equal(self):
+		self.assertEqual(ATTITUDE, AttitudeType("Attitude"))
+	
+	def test_pickle(self):
+		self.assertPickleable(ATTITUDE)
+	
+	def test_validate(self):
+		self.assertEqual(ATTITUDE.validate(AttitudeTypes.ATTITUDE_FURIOUS), True)
+		self.assertEqual(ATTITUDE.validate(0), False)
+		self.assertEqual(ATTITUDE.validate("Furious"), False)
+	
+	def test_format(self):
+		self.assertEqual(ATTITUDE.format(AttitudeTypes.ATTITUDE_FURIOUS), "furious")
+		self.assertEqual(ATTITUDE.format(0), "furious")
+		
+		self.assertEqual(ATTITUDE.format_repr(AttitudeTypes.ATTITUDE_FURIOUS), "Furious")
+		self.assertEqual(ATTITUDE.format_repr(0), "Furious")
+	
+	def test_area(self):
+		self.assertEqual(ATTITUDE.area(AttitudeTypes.ATTITUDE_FURIOUS), None)
+		self.assertEqual(ATTITUDE.area(0), None)
+
+
 class TestBuilding(ExtendedTestCase):
 
 	def test_str(self):
@@ -383,6 +414,32 @@ class TestPercentage(ExtendedTestCase):
 		self.assertEqual(PERCENTAGE.area(1), None)
 
 
+class TestProject(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(PROJECT), "Project")
+	
+	def test_repr(self):
+		self.assertEqual(repr(PROJECT), "Project")
+	
+	def test_equal(self):
+		self.assertEqual(PROJECT, InfoType("Project", infos.project))
+	
+	def test_pickle(self):
+		self.assertPickleable(PROJECT)
+	
+	def test_validate(self):
+		self.assertEqual(PROJECT.validate(iTheInternet), True)
+		self.assertEqual(PROJECT.validate("The Internet"), False)
+	
+	def test_format(self):
+		self.assertEqual(PROJECT.format(iTheInternet), "the Internet")
+		self.assertEqual(PROJECT.format_repr(iTheInternet), "The Internet")
+	
+	def test_area(self):
+		self.assertEqual(PROJECT.area(iTheInternet), None)
+
+
 class TestReligion(ExtendedTestCase):
 
 	def test_str(self):
@@ -576,6 +633,7 @@ test_cases = [
 	TestAggregate,
 	TestAmount,
 	TestArea,
+	TestAttitude,
 	TestBuilding,
 	TestCity,
 	TestCivs,
@@ -584,6 +642,7 @@ test_cases = [
 	TestCultureLevel,
 	TestEra,
 	TestPercentage,
+	TestProject,
 	TestReligion,
 	TestReligionAdjective,
 	TestResource,

@@ -6,6 +6,10 @@ import re
 plots_ = PlotFactory()
 
 
+def format_articles(string):
+	return string.replace("The", "the")
+
+
 class NamedDefinition(object):
 
 	def __init__(self):

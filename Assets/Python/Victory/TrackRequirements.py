@@ -69,19 +69,17 @@ class ConqueredCities(TrackRequirement):
 	def evaluate(self, evaluator):
 		return evaluator.sum(lambda p: cities.owner(p).where(lambda city: location(city) in self.recorded).count())
 	
-	def description(self, **options):
-		description = TrackRequirement.description(self, **options)
-		return in_area(description, self.area)
+	def additional_formats(self):
+		cities = text("TXT_KEY_VICTORY_CITIES")
+		cities = in_area(cities, self.area)
+		
+		return [cities]
 	
 	def areas(self):
 		if self.area is not None:
 			return {self.area.name(): self.area.create()}
 		return {}
 	
-	def progress_text(self, **options):
-		progress = TrackRequirement.progress_text(self, **options)
-		return in_area(progress, self.area)
-
 
 # Third Japanese UHV goal
 # Third English UHV goal
@@ -194,6 +192,46 @@ class RaidGold(TrackRequirement):
 		self.accumulated("cityCaptureGold")
 		self.accumulated("combatGold")
 
+
+# First Russian UHV goal
+class SettledCities(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLED_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SETTLED_CITIES"
+	
+	def __init__(self, iRequired, area=None, **options):
+		TrackRequirement.__init__(self, iRequired, area=area, **options)
+		
+		self.recorded = set()
+		self.area = area
+		
+		self.handle("cityBuilt", self.record_settled_city)
+		
+	def valid_city(self, city):
+		return self.area is None or city in self.area
+	
+	def record_settled_city(self, goal, city):
+		if self.valid_city(city):
+			self.recorded.add(location(city))
+			goal.check()
+	
+	def evaluate(self, evaluator):
+		return evaluator.sum(lambda p: cities.owner(p).where(lambda city: location(city) in self.recorded).count())
+	
+	def additional_formats(self):
+		cities = text("TXT_KEY_VICTORY_CITIES")
+		cities = in_area(cities, self.area)
+		
+		return [cities]
+	
+	def areas(self):
+		if self.area is not None:
+			return {self.area.name(): self.area.create()}
+		return {}
+	
 
 # Third Korean UHV goal
 # Second English UHV goal
