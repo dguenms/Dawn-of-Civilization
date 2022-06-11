@@ -3,6 +3,177 @@ from CountRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAttitudeCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AttitudeCount(Friendly, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AttitudeCount(Friendly, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other civilizations")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+	
+	def test_insufficient(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+	
+	def test_sufficient(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_no_contact(self):
+		players = [1, 2]
+		for iPlayer in players:
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestAttitudeCountCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other civilizations in Test Civs")
+	
+	def test_civs(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_other_civs(self):
+		players = [7, 8]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+
+
+class TestAttitudeCountIndependent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bIndependent=True)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other independent civilizations")
+	
+	def test_independent(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_not_independent(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		team(1).setVassal(0, True, False)
+		team(2).setVassal(7, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+
+
 class TestAveragePopulation(ExtendedTestCase):
 
 	def setUp(self):
@@ -989,7 +1160,320 @@ class TestSpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestUnitCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = UnitCount(iSwordsman, 3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "UnitCount(Swordsman, 3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "UnitCount(Swordsman, 3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three Swordsmen")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Swordsmen: 0 / 3")
+	
+	def test_fewer(self):
+		unit = makeUnit(0, iSwordsman, (10, 10))
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Swordsmen: 1 / 3")
+		finally:
+			unit.kill(False, -1)
+	
+	def test_more(self):
+		units = makeUnits(0, iSwordsman, (10, 10), 4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Swordsmen: 4 / 3")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_unique_unit(self):
+		units = makeUnits(0, iLegion, (10, 10), 4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Swordsmen: 4 / 3")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_unique_unit_required(self):
+		requirement = UnitCount(iLegion, 3)
+		
+		units = makeUnits(0, iSwordsman, (10, 10), 4)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Legions: 4 / 3")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		units = makeUnits(1, iSwordsman, (10, 10), 4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Swordsmen: 4 / 3")
+		finally:
+			team(1).setVassal(0, False, False)
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestVassalCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = VassalCount(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "VassalCount(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "VassalCount(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two vassals")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Vassals: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_fewer(self):
+		self.assertEqual(team(1).isVassal(0), False)
+		team(1).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Vassals: 1 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_sufficient(self):
+		vassals = [1, 2]
+		for iVassal in vassals:
+			team(iVassal).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Vassals: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			for iVassal in vassals:
+				team(iVassal).setVassal(0, False, False)
+	
+	def test_other_evaluator(self):
+		evaluator = ReligionEvaluator(self.iPlayer)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		team(7).setVassal(1, True, False)
+		team(8).setVassal(1, True, False)
+		
+		try:
+			self.assertEqual(team(1).isVassal(0), False)
+			self.assertEqual(team(7).isVassal(1), True)
+			self.assertEqual(team(8).isVassal(1), True)
+		
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Vassals: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(7).setVassal(1, False, False)
+			team(8).setVassal(1, False, False)
+			
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
+class TestVassalCountCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = VassalCount(2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two vassals in Test Civs")
+	
+	def test_in_civs(self):
+		team(1).setVassal(0, True, False)
+		team(2).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Vassals in Test Civs: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+			team(2).setVassal(0, False, False)
+	
+	def test_not_in_civs(self):
+		team(7).setVassal(0, True, False)
+		team(8).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Vassals in Test Civs: 0 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(7).setVassal(0, False, False)
+			team(8).setVassal(0, False, False)
+
+
+class TestVassalCountStateReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = VassalCount(2, iStateReligion=iOrthodoxy)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Orthodox vassals")
+	
+	def test_with_state_religion(self):
+		vassals = [1, 2]
+		for iVassal in vassals:
+			team(iVassal).setVassal(0, True, False)
+			player(iVassal).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Orthodox vassals: 2 / 2")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			for iVassal in vassals:
+				team(iVassal).setVassal(0, False, False)
+				player(iVassal).setLastStateReligion(-1)
+	
+	def test_without_state_religion(self):
+		team(1).setVassal(0, True, False)
+		team(2).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Orthodox vassals: 0 / 2")
+		finally:
+			team(1).setVassal(0, False, False)
+			team(2).setVassal(0, False, False)
+	
+	def test_check_vassal_before_state_religion(self):
+		team(1).setVassal(0, True, False)
+		
+		try:
+			self.assertEqual(self.goal.checked, True)
+			
+			self.goal.checked = False
+			player(1).setLastStateReligion(iOrthodoxy)
+			
+			try:
+				self.assertEqual(self.goal.checked, True)
+			finally:
+				player(1).setLastStateReligion(-1)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_check_vassal_after_state_religion(self):
+		player(1).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			self.assertEqual(self.goal.checked, True)
+			
+			self.goal.checked = False
+			team(1).setVassal(0, True, False)
+			
+			try:
+				self.assertEqual(self.goal.checked, True)
+			finally:
+				team(1).setVassal(0, False, False)
+		finally:
+			player(1).setLastStateReligion(-1)
+	
+	def test_not_check_different_state_religion(self):
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			player(1).setLastStateReligion(-1)
+
+
 test_cases = [
+	TestAttitudeCount,
+	TestAttitudeCountCivs,
+	TestAttitudeCountIndependent,
 	TestAveragePopulation,
 	TestBuildingCount,
 	TestCityCount,
@@ -998,4 +1482,8 @@ test_cases = [
 	TestPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
+	TestUnitCount,
+	TestVassalCount,
+	TestVassalCountCivs,
+	TestVassalCountStateReligion,
 ]

@@ -1,4 +1,5 @@
 from TestEvaluators import test_cases as evaluators_test_cases
+from TestFormatters import test_cases as formatters_test_cases
 from TestGoals import test_cases as goals_test_cases
 from TestHandlers import test_cases as handlers_test_cases
 from TestProgress import test_cases as progress_test_cases
@@ -15,6 +16,7 @@ setup()
 
 test_cases = (
 	evaluators_test_cases + 
+	formatters_test_cases + 
 	goals_test_cases + 
 	handlers_test_cases +
 	progress_test_cases +

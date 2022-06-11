@@ -3,6 +3,43 @@ from VictoryTypes import *
 from BaseRequirements import *
 
 
+# Third Holy Roman UHV goal
+class AttitudeCount(ThresholdRequirement):
+
+	TYPES = (ATTITUDE, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
+	
+	def __init__(self, iAttitude, iRequired, civs=None, bIndependent=False, **options):
+		ThresholdRequirement.__init__(self, int(iAttitude), iRequired, **options)
+		
+		self.civs = civs
+		self.bIndependent = bIndependent
+		
+	def valid(self, iPlayer, iOtherPlayer, iAttitude):
+		if not player(iPlayer).canContact(iOtherPlayer):
+			return False
+		
+		if self.bIndependent and team(iOtherPlayer).isAVassal():
+			return False
+		
+		if self.civs and civ(iOtherPlayer) not in self.civs:
+			return False
+		
+		return player(iOtherPlayer).AI_getAttitude(iPlayer) >= iAttitude
+	
+	def value(self, iPlayer, iAttitude):
+		return players.major().alive().where(lambda p: self.valid(iPlayer, p, iAttitude)).count()
+	
+	def additional_formats(self):
+		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
+		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_INDEPENDENT", self.bIndependent)
+		civilizations = in_area(civilizations, self.civs)
+		
+		return [civilizations]
+
+
 # Second Khmer UHV goal
 class AveragePopulation(ThresholdRequirement):
 
@@ -29,6 +66,7 @@ class AveragePopulation(ThresholdRequirement):
 # Second Ethiopian UHV goal
 # First Korean UHV goal
 # First Khmer UHV goal
+# First Holy Roman UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -64,6 +102,7 @@ class BuildingCount(ThresholdRequirement):
 # Second Roman UHV goal
 # Third Byzantine UHV goal
 # First Moorish UHV goal
+# First English UHV goal
 class CityCount(ThresholdRequirement):
 
 	TYPES = (AREA, COUNT)
@@ -169,3 +208,68 @@ class SpecialistCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, SPECIALIST.format(self.iSpecialist, bPlural=True)), self.progress_value(evaluator))
 	
 
+# Second English UHV goal
+class UnitCount(ThresholdRequirement):
+
+	TYPES = (UNIT, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIT_COUNT"
+	
+	def __init__(self, iUnit, iRequired, **options):
+		ThresholdRequirement.__init__(self, iUnit, iRequired, **options)
+		
+		self.iUnit = iUnit
+	
+	def value(self, iPlayer, iUnit):
+		return player(iPlayer).getUnitClassCount(infos.unit(iUnit).getUnitClassType())
+	
+	def description(self, **options):
+		return Requirement.description(self, bPlural=self.bPlural, **options)
+
+	def progress_text(self, **options):
+		return Requirement.progress_text(self, bPlural=self.bPlural, **options)
+
+
+# Second Holy Roman UHV goal
+class VassalCount(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_VASSAL_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_VASSAL_COUNT"
+	
+	def __init__(self, iRequired, civs=None, iStateReligion=None, **options):
+		ThresholdRequirement.__init__(self, iRequired, **options)
+		
+		self.civs = civs
+		self.iStateReligion = iStateReligion
+		
+		self.handle_any("playerChangeStateReligion", self.check_state_religion)
+		self.handle_any("vassalState", self.check_vassal)
+		
+	def check_state_religion(self, goal, iNewReligion):
+		if self.iStateReligion == iNewReligion:
+			goal.check()
+	
+	def check_vassal(self, goal):
+		goal.check()
+		
+	def valid_vassal(self, iPlayer, iVassal):
+		if self.civs and civ(iVassal) not in self.civs:
+			return False
+		
+		if self.iStateReligion is not None and player(iVassal).getStateReligion() != self.iStateReligion:
+			return False
+	
+		return team(iVassal).isVassal(player(iPlayer).getTeam())
+		
+	def value(self, iPlayer):
+		return players.major().alive().where(lambda p: self.valid_vassal(iPlayer, p)).count()
+		
+	def additional_formats(self):
+		vassal = text("TXT_KEY_VICTORY_VASSALS")
+		vassal = in_area(vassal, self.civs)
+		vassal = with_religion(vassal, self.iStateReligion)
+		
+		return [vassal]

@@ -1,5 +1,6 @@
 from Core import *
 from VictoryTypes import *
+from VictoryFormatters import *
 
 from VictoryHandlers import Handlers, event_handler_registry
 
@@ -41,7 +42,7 @@ class Requirement(object):
 		self.handle(event, self.check)
 	
 	def register_handlers(self, goal):
-		if not self.handlers.handlers:
+		if not self.handlers.handlers and not self.handlers.any_handlers:
 			self.checked("BeginPlayerTurn")
 	
 		event_handler_registry.register(self, goal)
@@ -57,9 +58,12 @@ class Requirement(object):
 		
 	def fulfilled(self, evaluator):
 		raise NotImplementedError()
+		
+	def additional_formats(self):
+		return []
 	
 	def format_parameters(self, **options):
-		return [type.format(parameter, **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)]
+		return [type.format(parameter, **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)] + self.additional_formats()
 		
 	def description(self, **options):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
@@ -77,7 +81,7 @@ class Requirement(object):
 		if self.PROGR_KEY == "TXT_KEY_VICTORY_PROGR_SIMPLE" and not self.parameters:
 			return capitalize(text(self.DESC_KEY))
 		
-		return text(self.PROGR_KEY, *self.format_parameters(**options))
+		return capitalize(text(self.PROGR_KEY, *self.format_parameters(**options)))
 	
 	def progress(self, evaluator, **options):
 		return "%s %s" % (self.indicator(evaluator), self.progress_text())
@@ -107,6 +111,9 @@ class ThresholdRequirement(Requirement):
 		return "%d / %d" % (self.evaluate(evaluator), self.required())
 	
 	def progress(self, evaluator):
+		if not self.bPlural:
+			return Requirement.progress(self, evaluator)
+	
 		return "%s: %s" % (Requirement.progress(self, evaluator), self.progress_value(evaluator))
 
 

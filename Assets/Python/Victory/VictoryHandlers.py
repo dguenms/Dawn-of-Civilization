@@ -188,6 +188,13 @@ class EventHandlerRegistry(object):
 				func(goal, iGold)
 		
 		return unitPillage
+	
+	def vassalState(self, goal, applicable, func):
+		def vassalState((iMaster, iVassal, bVassal, bCapitulated)):
+			if applicable(goal, team(iMaster).getLeaderID()):
+				func(goal)
+		
+		return vassalState
 		
 		
 		

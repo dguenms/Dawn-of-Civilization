@@ -84,6 +84,7 @@ class ConqueredCities(TrackRequirement):
 
 
 # Third Japanese UHV goal
+# Third English UHV goal
 class EraFirstDiscover(TrackRequirement):
 
 	TYPES = (ERA, COUNT)
@@ -195,6 +196,7 @@ class RaidGold(TrackRequirement):
 
 
 # Third Korean UHV goal
+# Second English UHV goal
 class SunkShips(TrackRequirement):
 
 	TYPES = (COUNT,)

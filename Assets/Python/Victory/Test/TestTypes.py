@@ -534,8 +534,8 @@ class TestTech(ExtendedTestCase):
 		self.assertPickleable(TECH)
 	
 	def test_validate(self):
-		self.assertEqual(TECH.validate(1), True)
-		self.assertEqual(TECH.validate("1"), False)
+		self.assertEqual(TECH.validate(iEngineering), True)
+		self.assertEqual(TECH.validate("Engineering"), False)
 	
 	def test_format(self):
 		self.assertEqual(TECH.format(iEngineering), "Engineering")
@@ -543,6 +543,32 @@ class TestTech(ExtendedTestCase):
 	
 	def test_area(self):
 		self.assertEqual(TECH.area(iEngineering), None)
+
+
+class TestUnit(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(UNIT), "Unit")
+	
+	def test_repr(self):
+		self.assertEqual(repr(UNIT), "Unit")
+	
+	def test_equal(self):
+		self.assertEqual(UNIT, InfoType("Unit", infos.unit))
+	
+	def test_pickle(self):
+		self.assertPickleable(UNIT)
+	
+	def test_validate(self):
+		self.assertEqual(UNIT.validate(iSwordsman), True)
+		self.assertEqual(UNIT.validate("Swordsman"), False)
+	
+	def test_format(self):
+		self.assertEqual(UNIT.format(iSwordsman), "Swordsman")
+		self.assertEqual(UNIT.format_repr(iSwordsman), "Swordsman")
+	
+	def test_area(self):
+		self.assertEqual(UNIT.area(iSwordsman), None)
 
 
 test_cases = [
@@ -564,4 +590,5 @@ test_cases = [
 	TestRoutes,
 	TestSpecialist,
 	TestTech,
+	TestUnit,
 ]

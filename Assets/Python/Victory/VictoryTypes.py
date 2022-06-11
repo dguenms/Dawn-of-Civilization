@@ -242,8 +242,21 @@ class CultureLevelType(Type):
 		return infos.cultureLevel(argument).getText()
 
 
+class AttitudeType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, AttitudeTypes)
+	
+	def format_func(self, argument):
+		return infos.attitude(argument).getDescription().lower()
+	
+	def format_repr_func(self, argument):
+		return infos.attitude(argument).getDescription()
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
+ATTITUDE = AttitudeType("Attitude")
 BUILDING = InfoType("Building", infos.building)
 CITY = CityType("City")
 CIVS = CivsType("Civs")
@@ -258,6 +271,7 @@ RESOURCE = InfoType("Resource", infos.bonus)
 ROUTES = InfosType("Routes", infos.route)
 SPECIALIST = InfoType("Specialist", infos.specialist)
 TECH = InfoType("Tech", infos.tech)
+UNIT = InfoType("Unit", infos.unit)
 
 
 FAILURE, POSSIBLE, SUCCESS = Enum.of("State", ("Failure", "Possible", "Success"))
