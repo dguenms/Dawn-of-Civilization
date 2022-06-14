@@ -75,6 +75,7 @@ class AveragePopulation(ThresholdRequirement):
 # First Korean UHV goal
 # First Khmer UHV goal
 # First Holy Roman UHV goal
+# Third Polish UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -162,6 +163,45 @@ class CorporationCount(ThresholdRequirement):
 	
 	def value(self, iPlayer, iCorporation):
 		return player(iPlayer).countCorporations(iCorporation)
+
+
+# First Polish UHV goal
+class PopulationCityCount(ThresholdRequirement):
+
+	TYPES = (COUNT, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_CITY_COUNT"
+	
+	def __init__(self, iPopulation, iRequired, **options):
+		ThresholdRequirement.__init__(self, iPopulation, iRequired, **options)
+		
+		self.iPopulation = iPopulation
+	
+	def value(self, iPlayer, iPopulation):
+		return cities.owner(iPlayer).where(self.valid_city).count()
+	
+	def value_func(self, city):
+		return city.getPopulation()
+	
+	def valid_city(self, city):
+		return self.value_func(city) >= self.iPopulation
+		
+	def progress_entries(self, iPlayer):
+		best_cities = cities.owner(iPlayer).highest(self.iRequired, self.value_func)
+		
+		if not best_cities:
+			yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_NO_CITIES"))
+			return
+		
+		for index, city in enumerate(best_cities.take(self.iRequired)):
+			if city:
+				yield "%s %s: %d / %d" % (indicator(self.valid_city(city)), text(self.PROGR_KEY, city.getName()), self.value_func(city), self.iPopulation)
+			else:
+				yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_MISSING_CITY", ordinal_word(index+1)))
+	
+	def progress(self, evaluator):
+		return list(self.progress_entries(evaluator.iPlayer))
 
 
 # Third Harappan UHV goal

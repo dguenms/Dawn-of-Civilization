@@ -82,6 +82,7 @@ class Discover(StateRequirement):
 # First Greek UHV goal
 # Third Roman UHV goal
 # Second Korean UHV goal
+# Second Polish UHV goal
 class FirstDiscover(StateRequirement):
 
 	TYPES = (TECH,)

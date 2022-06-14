@@ -947,6 +947,136 @@ class TestCorporationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestPopulationCityCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PopulationCityCount(10, 3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PopulationCityCount(10, 3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PopulationCityCount(10, 3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three cities with a population of ten")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+	
+	def test_single_city_insufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setPopulation(8)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Population in First: 8 / 10",
+				self.FAILURE + "No second city",
+				self.FAILURE + "No third city",
+			])
+		finally:
+			city.kill()
+	
+	def test_single_city_sufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setPopulation(12)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Population in First: 12 / 10",
+				self.FAILURE + "No second city",
+				self.FAILURE + "No third city",
+			])
+		finally:
+			city.kill()
+	
+	def test_enough_cities_some_sufficient(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setName("First", False)
+		city1.setPopulation(12)
+		
+		city2.setName("Second", False)
+		city2.setPopulation(10)
+		
+		city3.setName("Third", False)
+		city3.setPopulation(8)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Population in First: 12 / 10",
+				self.SUCCESS + "Population in Second: 10 / 10",
+				self.FAILURE + "Population in Third: 8 / 10",
+			])
+		finally:
+			cities.kill()
+	
+	def test_enough_cities_all_sufficient(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setName("First", False)
+		city1.setPopulation(14)
+		
+		city2.setName("Second", False)
+		city2.setPopulation(12)
+		
+		city3.setName("Third", False)
+		city3.setPopulation(10)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Population in First: 14 / 10",
+				self.SUCCESS + "Population in Second: 12 / 10",
+				self.SUCCESS + "Population in Third: 10 / 10",
+			])
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		city.setPopulation(12)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+		finally:
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestPopulationCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1527,6 +1657,7 @@ test_cases = [
 	TestCityCount,
 	TestCorporationCount,
 	TestControlledResourceCount,
+	TestPopulationCityCount,
 	TestPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
