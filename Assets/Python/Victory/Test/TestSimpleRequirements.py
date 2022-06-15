@@ -433,6 +433,111 @@ class TestProject(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestRoute(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.rectangle((60, 30), (61, 31)).named("Test Area")
+		self.requirement = Route(self.area, [iRouteRoad, iRouteRomanRoad])
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Route(Test Area, Road or Roman Road)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Route(Test Area, Road or Roman Road)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a Road or Roman Road along Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.rectangle((60, 30), (61, 31))})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
+	
+	def test_fulfilled(self):
+		for plot in self.area.create():
+			plot.setOwner(0)
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
+		finally:
+			for plot in self.area.create():
+				plot.setOwner(-1)
+				plot.setRouteType(-1)
+	
+	def test_no_route(self):
+		for plot in self.area.create():
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
+		finally:
+			for plot in self.area.create():
+				plot.setOwner(-1)
+	
+	def test_not_owned(self):
+		for plot in self.area.create():
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
+		finally:
+			for plot in self.area.create():
+				plot.setRouteType(-1)
+	
+	def test_different_routes(self):
+		for index, plot in enumerate(self.area.create()):
+			plot.setOwner(0)
+			
+			if index % 2 == 0:
+				plot.setRouteType(iRouteRoad)
+			else:
+				plot.setRouteType(iRouteRomanRoad)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
+		finally:
+			for plot in self.area.create():
+				plot.setOwner(-1)
+				plot.setRouteType(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		for plot in self.area.create():
+			plot.setOwner(1)
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
+		finally:
+			for plot in self.area.create():
+				plot.setOwner(-1)
+				plot.setRouteType(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestRouteConnection(ExtendedTestCase):
 
 	def setUp(self):
@@ -1028,6 +1133,7 @@ test_cases = [
 	TestControl,
 	TestMoreReligion,
 	TestProject,
+	TestRoute,
 	TestRouteConnection,
 	TestTradeConnection,
 	TestWonder,

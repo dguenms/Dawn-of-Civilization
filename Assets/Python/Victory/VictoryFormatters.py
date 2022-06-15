@@ -46,6 +46,12 @@ def qualify(string, qualifier, condition):
 	if condition:
 		return text(qualifier, string)
 	return string
+
+
+def qualify_adjective(string, type, qualifier):
+	if qualifier is not None:
+		return "%s %s" % (type.format(qualifier), string)
+	return string
 	
 
 def in_area(string, area):

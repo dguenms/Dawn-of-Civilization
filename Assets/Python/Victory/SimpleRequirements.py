@@ -114,6 +114,25 @@ class Project(Requirement):
 		return evaluator.any(lambda p: team(p).getProjectCount(self.iProject) > 0)
 
 
+# First Inca UHV goal
+class Route(Requirement):
+
+	TYPES = (AREA, ROUTES)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ROUTE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ROUTE"
+	
+	def __init__(self, area, routes, **options):
+		Requirement.__init__(self, area, routes, **options)
+		
+		self.area = area
+		self.routes = routes
+	
+	def fulfilled(self, evaluator):
+		return self.area.create().all(lambda p: p.getOwner() in evaluator and p.getRouteType() in self.routes)
+
+
 # Second Turkic UHV goal
 # First Russian UHV goal
 class RouteConnection(Requirement):

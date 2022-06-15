@@ -76,6 +76,7 @@ class AveragePopulation(ThresholdRequirement):
 # First Khmer UHV goal
 # First Holy Roman UHV goal
 # Third Polish UHV goal
+# First Inca UHV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -112,6 +113,7 @@ class BuildingCount(ThresholdRequirement):
 # Third Byzantine UHV goal
 # First Moorish UHV goal
 # First English UHV goal
+# Third Portuguese UHV goal
 class CityCount(ThresholdRequirement):
 
 	TYPES = (AREA, COUNT)
@@ -163,6 +165,35 @@ class CorporationCount(ThresholdRequirement):
 	
 	def value(self, iPlayer, iCorporation):
 		return player(iPlayer).countCorporations(iCorporation)
+
+
+# First Portuguese UHV goal
+class OpenBorderCount(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_OPEN_BORDER_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_OPEN_BORDER_COUNT"
+	
+	def __init__(self, iRequired, civs=None, **options):
+		ThresholdRequirement.__init__(self, iRequired, **options)
+		
+		self.civs = civs
+	
+	def value(self, iPlayer):
+		return players.major().alive().without(iPlayer).where(lambda p: self.valid(iPlayer, p)).count()
+	
+	def valid(self, iPlayer, iOther):
+		if self.civs and civ(iOther) not in self.civs:
+			return False
+		
+		return team(iPlayer).isOpenBorders(player(iOther).getTeam())
+	
+	def additional_formats(self):
+		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
+		civilizations = qualify_adjective(civilizations, CIVS, self.civs)
+		
+		return [civilizations]
 
 
 # First Polish UHV goal
@@ -218,6 +249,7 @@ class PopulationCount(ThresholdRequirement):
 
 # First Ethiopian UHV goal
 # Second Indonesian UHV goal
+# Second Portuguese UHV goal
 class ResourceCount(ThresholdRequirement):
 
 	TYPES = (RESOURCE, COUNT)

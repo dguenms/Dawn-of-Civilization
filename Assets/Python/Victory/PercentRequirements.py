@@ -24,6 +24,27 @@ class AreaPercent(PercentRequirement):
 		return self.area.create().land().count()
 
 
+# Third Inca UHV goal
+class AreaPopulationPercent(PercentRequirement):
+
+	TYPES = (AREA, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_POPULATION_PERCENT"
+	
+	def __init__(self, area, *parameters, **options):
+		PercentRequirement.__init__(self, area, *parameters, **options)
+		
+		self.area = area
+	
+	def value(self, iPlayer, area):
+		return area.create().cities().owner(iPlayer).sum(CyCity.getPopulation)
+	
+	def total(self):
+		return self.area.create().cities().sum(CyCity.getPopulation)
+
+
 # First Persian UHV goal
 # First Turkic UHV goal
 class LandPercent(PercentRequirement):

@@ -627,6 +627,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_OPEN_BORDER_COUNT</Tag>
+		<English>open border agreements with %s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ROUTE</Tag>
+		<English>a %s2 along %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT</Tag>
+		<English>%s2 of the population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -944,6 +968,30 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION_CITY_COUNT</Tag>
+		<English>Population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_OPEN_BORDER_COUNT</Tag>
+		<English>Open border agreements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE</Tag>
+		<English>%s2 along %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_POPULATION_PERCENT</Tag>
 		<English>Population in %s1</English>
 		<French></French>
 		<German></German>

@@ -947,6 +947,130 @@ class TestCorporationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestOpenBorderCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = OpenBorderCount(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "OpenBorderCount(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "OpenBorderCount(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "open border agreements with two civilizations")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Open border agreements: 0 / 2")
+	
+	def test_insufficient(self):
+		team(0).setOpenBorders(1, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Open border agreements: 1 / 2")
+		finally:
+			team(0).setOpenBorders(1, False)
+	
+	def test_sufficient(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(0).setOpenBorders(iPlayer, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Open border agreements: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(0).setOpenBorders(iPlayer, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		players = [7, 8]
+		for iPlayer in players:
+			team(0).setOpenBorders(iPlayer, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Open border agreements: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(0).setOpenBorders(iPlayer, False)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestOpenBorderCountCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = OpenBorderCount(2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "OpenBorderCount(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "OpenBorderCount(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "open border agreements with two Test Civs civilizations")
+	
+	def test_with_civs(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(0).setOpenBorders(iPlayer, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Open border agreements: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(0).setOpenBorders(iPlayer, False)
+	
+	def test_with_other_civs(self):
+		players = [7, 8]
+		for iPlayer in players:
+			team(0).setOpenBorders(iPlayer, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Open border agreements: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(0).setOpenBorders(iPlayer, False)
+
+
 class TestPopulationCityCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1657,6 +1781,8 @@ test_cases = [
 	TestCityCount,
 	TestCorporationCount,
 	TestControlledResourceCount,
+	TestOpenBorderCount,
+	TestOpenBorderCountCivs,
 	TestPopulationCityCount,
 	TestPopulationCount,
 	TestResourceCount,

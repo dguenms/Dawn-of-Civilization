@@ -109,6 +109,106 @@ class TestAreaPercent(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestAreaPopulationPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = AreaPopulationPercent(self.area, 40)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AreaPopulationPercent(Test Area, 40%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AreaPopulationPercent(Test Area, 40%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "40% of the population in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Population in Test Area: 0.00% / 40%")
+	
+	def test_less(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(5)
+		their_city.setPopulation(15)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 25.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Population in Test Area: 25.00% / 40%")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(10)
+		their_city.setPopulation(10)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 10)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Population in Test Area: 50.00% / 40%")
+		finally:
+			cities.kill()
+	
+	def test_outside(self):
+		our_inside_city, their_city, our_outside_city = cities = TestCities.owners(0, 1, 0)
+		
+		our_inside_city.setPopulation(5)
+		their_city.setPopulation(15)
+		our_outside_city.setPopulation(20)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 25.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Population in Test Area: 25.00% / 40%")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		vassal_city, other_city = cities = TestCities.owners(1, 2)
+		
+		vassal_city.setPopulation(10)
+		other_city.setPopulation(10)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 10)
+			self.assertEqual(self.requirement.percentage(evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Population in Test Area: 50.00% / 40%")
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestLandPercent(ExtendedTestCase):
 
 	def setUp(self):
@@ -376,6 +476,7 @@ class TestReligionSpreadPercent(ExtendedTestCase):
 
 test_cases = [
 	TestAreaPercent,
+	TestAreaPopulationPercent,
 	TestLandPercent,
 	TestPopulationPercent,
 	TestReligionSpreadPercent,
