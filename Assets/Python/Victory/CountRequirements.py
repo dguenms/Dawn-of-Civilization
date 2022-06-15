@@ -167,6 +167,45 @@ class CorporationCount(ThresholdRequirement):
 		return player(iPlayer).countCorporations(iCorporation)
 
 
+# Second Italian UHV goal
+class CultureLevelCityCount(ThresholdRequirement):
+
+	TYPES = (CULTURELEVEL, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CULTURE_LEVEL_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CULTURE_LEVEL_CITY_COUNT"
+	
+	def __init__(self, iCultureLevel, iRequired, **options):
+		ThresholdRequirement.__init__(self, iCultureLevel, iRequired, **options)
+		
+		self.iCultureLevel = iCultureLevel
+	
+	def value(self, iPlayer, iCultureLevel):
+		return cities.owner(iPlayer).where(self.valid_city).count()
+	
+	def value_func(self, city):
+		return city.getCultureLevel()
+	
+	def valid_city(self, city):
+		return self.value_func(city) >= self.iCultureLevel
+		
+	def progress_entries(self, iPlayer):
+		best_cities = cities.owner(iPlayer).highest(self.iRequired, self.value_func)
+		
+		if not best_cities:
+			yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_NO_CITIES"))
+			return
+		
+		for index, city in enumerate(best_cities.take(self.iRequired)):
+			if city:
+				yield "%s %s: %d / %d" % (indicator(self.valid_city(city)), text(self.PROGR_KEY, city.getName()), city.getCulture(city.getOwner()), game.getCultureThreshold(self.iCultureLevel))
+			else:
+				yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_MISSING_CITY", ordinal_word(index+1)))
+	
+	def progress(self, evaluator):
+		return list(self.progress_entries(evaluator.iPlayer))
+
+
 # First Portuguese UHV goal
 class OpenBorderCount(ThresholdRequirement):
 

@@ -947,6 +947,136 @@ class TestCorporationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCultureLevelCityCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CultureLevelCityCount(iCultureLevelRefined, 3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CultureLevelCityCount(Refined, 3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CultureLevelCityCount(Refined, 3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three cities with refined culture")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+	
+	def test_single_city_insufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setCulture(0, game.getCultureThreshold(iCultureLevelDeveloping), True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Culture in First: 100 / 1000",
+				self.FAILURE + "No second city",
+				self.FAILURE + "No third city",
+			])
+		finally:
+			city.kill()
+	
+	def test_single_city_sufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Culture in First: 1000 / 1000",
+				self.FAILURE + "No second city",
+				self.FAILURE + "No third city",
+			])
+		finally:
+			city.kill()
+	
+	def test_enough_cities_some_sufficient(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setName("First", False)
+		city1.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential), True)
+		
+		city2.setName("Second", False)
+		city2.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
+		
+		city3.setName("Third", False)
+		city3.setCulture(0, game.getCultureThreshold(iCultureLevelDeveloping), True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Culture in First: 5000 / 1000",
+				self.SUCCESS + "Culture in Second: 1000 / 1000",
+				self.FAILURE + "Culture in Third: 100 / 1000",
+			])
+		finally:
+			cities.kill()
+	
+	def test_enough_cities_all_sufficient(self):
+		city1, city2, city3 = cities = TestCities.num(3)
+		
+		city1.setName("First", False)
+		city1.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential), True)
+		
+		city2.setName("Second", False)
+		city2.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential), True)
+		
+		city3.setName("Third", False)
+		city3.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Culture in First: 5000 / 1000",
+				self.SUCCESS + "Culture in Second: 5000 / 1000",
+				self.SUCCESS + "Culture in Third: 1000 / 1000",
+			])
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		city.setCulture(0, game.getCultureThreshold(iCultureLevelRefined), True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+		finally:
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestOpenBorderCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1781,6 +1911,7 @@ test_cases = [
 	TestCityCount,
 	TestCorporationCount,
 	TestControlledResourceCount,
+	TestCultureLevelCityCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,
 	TestPopulationCityCount,
