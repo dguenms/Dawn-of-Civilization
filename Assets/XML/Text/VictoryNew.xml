@@ -707,6 +707,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALLOW_ONLY</Tag>
+		<English>only %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1081,6 +1089,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_MORE_CULTURE</Tag>
 		<English>Total culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ALLOW_ONLY</Tag>
+		<English>Only %s2 civilizations in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

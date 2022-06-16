@@ -209,6 +209,7 @@ class CultureLevelCityCount(ThresholdRequirement):
 
 
 # First Portuguese UHV goal
+# First Thai UHV goal
 class OpenBorderCount(ThresholdRequirement):
 
 	TYPES = (COUNT,)

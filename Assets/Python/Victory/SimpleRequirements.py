@@ -7,6 +7,37 @@ from Civics import isCommunist
 import heapq
 
 
+# Third Thai UHV goal
+class AllowOnly(Requirement):
+
+	TYPES = (AREA, CIVS)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW_ONLY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ALLOW_ONLY"
+	
+	def __init__(self, area, civs, **options):
+		Requirement.__init__(self, area, civs, **options)
+		
+		self.area = area
+		self.civs = civs
+	
+	def fulfilled(self, evaluator):
+		return self.area.cities().all(lambda city: self.valid(city, evaluator))
+	
+	def valid(self, city, evaluator):
+		if city.getOwner() in evaluator:
+			return True
+		
+		if city.getOwner() in self.civs:
+			return True
+		
+		if is_minor(city):
+			return True
+		
+		return False
+
+
 # Third Spanish UHV goal
 class AreaNoStateReligion(Requirement):
 
