@@ -79,6 +79,39 @@ class ConqueredCities(TrackRequirement):
 		if self.area is not None:
 			return {self.area.name(): self.area.create()}
 		return {}
+
+
+# Third Aztec UHV goal
+class EnslaveCount(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ENSLAVE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ENSLAVE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ENSLAVE_COUNT"
+	
+	def __init__(self, iRequired, excluding=None, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.excluding = excluding
+		
+		self.handle("enslave", self.increment_enslaved)
+	
+	def increment_enslaved(self, goal, unit):
+		if is_minor(unit):
+			return
+		
+		if self.excluding and civ(unit) in self.excluding:
+			return
+		
+		self.increment()
+		goal.check()
+	
+	def additional_formats(self):
+		units = text("TXT_KEY_VICTORY_UNITS")
+		units = qualify_adjective(units, CIVS, self.excluding)
+		
+		return [units]
 	
 
 # Third Japanese UHV goal

@@ -332,6 +332,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			city.kill()
 	
+	def test_enslave(self):
+		onEnslave = self.get("enslave", self.capture)
+		
+		unit = makeUnit(0, iSwordsman, (10, 10))
+		
+		try:
+			onEnslave((1, unit))
+			self.assertEqual(self.argument, None)
+			
+			onEnslave((0, unit))
+			self.assertEqual(self.argument, (self.goal, unit))
+		finally:
+			unit.kill(False, -1)
+	
 	def test_first_contact(self):
 		onFirstContact = self.get("firstContact", self.increment)
 		

@@ -147,6 +147,13 @@ class EventHandlerRegistry(object):
 		
 		return corporationSpread
 	
+	def enslave(self, goal, applicable, func):
+		def enslave((iPlayer, losingUnit)):
+			if applicable(goal, iPlayer):
+				func(goal, losingUnit)
+		
+		return enslave
+	
 	def firstContact(self, goal, applicable, func):
 		def firstContact((iTeam, iHasMetTeam)):
 			if applicable(goal, team(iTeam).getLeaderID()):
