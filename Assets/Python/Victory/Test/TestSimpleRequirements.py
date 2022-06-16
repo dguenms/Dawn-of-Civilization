@@ -221,6 +221,180 @@ class TestControl(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCultureCover(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = CultureCover(self.area)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		plot(61, 31).setOwner(-1)
+		plot(63, 31).setOwner(-1)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CultureCover(Test Area)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CultureCover(Test Area)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "all of Test Area in your territory")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+	
+	def test_some(self):
+		plot(61, 31).setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+		finally:
+			plot(61, 31).setOwner(-1)
+	
+	def test_all(self):
+		plot(61, 31).setOwner(0)
+		plot(63, 31).setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+		finally:
+			plot(61, 31).setOwner(0)
+			plot(63, 31).setOwner(0)
+	
+	def test_other_owner(self):
+		plot(61, 31).setOwner(1)
+		plot(63, 31).setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+		finally:
+			plot(61, 31).setOwner(-1)
+			plot(63, 31).setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		plot(61, 31).setOwner(1)
+		plot(63, 31).setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Test Area")
+		finally:
+			plot(61, 31).setOwner(-1)
+			plot(63, 31).setOwner(-1)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestMoreCulture(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = MoreCulture(CivsDefinition(1, 2).named("Test Civs"))
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "MoreCulture(Test Civs)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "MoreCulture(Test Civs)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "more culture than Test Civs civilizations combined")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		city0, city1, city2 = cities = TestCities.owners(0, 1, 2)
+		
+		city0.setCulture(0, 100, True)
+		city1.setCulture(1, 75, True)
+		city2.setCulture(2, 75, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Total culture: 100 / 150")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city0, city1, city2 = cities = TestCities.owners(0, 1, 2)
+		
+		city0.setCulture(0, 200, True)
+		city1.setCulture(1, 75, True)
+		city2.setCulture(2, 75, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Total culture: 200 / 150")
+		finally:
+			cities.kill()
+	
+	def test_other_player(self):
+		city0, city1, city7 = cities = TestCities.owners(0, 1, 7)
+		
+		city0.setCulture(0, 100, True)
+		city1.setCulture(1, 75, True)
+		city7.setCulture(7, 75, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Total culture: 100 / 75")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(7).setVassal(0, True, False)
+		
+		city0, city1, city7 = cities = TestCities.owners(0, 1, 7)
+		
+		city0.setCulture(0, 75, True)
+		city1.setCulture(1, 100, True)
+		city7.setCulture(7, 75, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Total culture: 150 / 100")
+		finally:
+			cities.kill()
+			team(7).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestMoreReligion(ExtendedTestCase):
 
 	def setUp(self):
@@ -1131,6 +1305,8 @@ test_cases = [
 	TestAreaNoStateReligion,
 	TestCommunist,
 	TestControl,
+	TestCultureCover,
+	TestMoreCulture,
 	TestMoreReligion,
 	TestProject,
 	TestRoute,

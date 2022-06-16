@@ -156,8 +156,7 @@ class CapitalCityDefinition(CityDefinition):
 	def area(self):
 		return None
 
-		
-		
+
 class CivsDefinition(NamedDefinition):
 
 	@classmethod

@@ -44,6 +44,7 @@ class Communist(Requirement):
 # First Viking UHV goal
 # Second Arabian UHV goal
 # First Mongol UHV goal
+# Second Ottoman UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)
@@ -57,6 +58,48 @@ class Control(Requirement):
 	
 	def fulfilled(self, evaluator):
 		return self.area.cities().all_if_any(lambda city: city.getOwner() in evaluator)
+
+
+# Second Ottoman UHV goal
+class CultureCover(Requirement):
+
+	TYPES = (AREA,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CULTURE_COVER"
+	
+	def __init__(self, area, **options):
+		Requirement.__init__(self, area, **options)
+		
+		self.area = area
+	
+	def fulfilled(self, evaluator):
+		return self.area.create().all_if_any(lambda p: p.getOwner() in evaluator)
+
+
+# Third Ottoman UHV goal
+class MoreCulture(Requirement):
+
+	TYPES = (CIVS,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_MORE_CULTURE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_MORE_CULTURE"
+	
+	def __init__(self, civs, **options):
+		Requirement.__init__(self, civs, **options)
+		
+		self.civs = civs
+	
+	def value(self, evaluator):
+		return evaluator.sum(lambda p: player(p).countTotalCulture())
+	
+	def required(self):
+		return self.civs.players.sum(lambda p: player(p).countTotalCulture())
+	
+	def fulfilled(self, evaluator):
+		return self.value(evaluator) >= self.required()
+	
+	def progress(self, evaluator):
+		return "%s %s: %d / %s" % (self.indicator(evaluator), text(self.PROGR_KEY), self.value(evaluator), self.required())
 
 
 # Third Ethiopian UHV goal
