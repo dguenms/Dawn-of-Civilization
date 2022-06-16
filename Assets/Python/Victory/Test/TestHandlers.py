@@ -274,6 +274,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_city_razed(self):
+		onCityRazed = self.get("cityRazed", self.capture)
+		
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			onCityRazed((our_city, 1))
+			self.assertEqual(self.argument, None)
+			
+			onCityRazed((their_city, 0))
+			self.assertEqual(self.argument, (self.goal,))
+		finally:
+			cities.kill()
+	
 	def test_combat_gold(self):
 		onCombatGold = self.get("combatGold", self.accumulate)
 		

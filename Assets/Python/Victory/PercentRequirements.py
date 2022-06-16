@@ -48,6 +48,7 @@ class AreaPopulationPercent(PercentRequirement):
 
 # First Persian UHV goal
 # First Turkic UHV goal
+# Third Mongol UHV goal
 class LandPercent(PercentRequirement):
 
 	TYPES = (PERCENTAGE,)

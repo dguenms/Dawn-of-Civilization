@@ -800,6 +800,89 @@ class TestRaidGold(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestRazeCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = RazeCount(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "RazeCount(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "RazeCount(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_raze(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("cityRazed", city, 0)
+			events.fireEvent("cityRazed", city, 0)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Razed cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_raze_other(self):
+		city = TestCities.one(2)
+		
+		try:
+			events.fireEvent("cityRazed", city, 1)
+			events.fireEvent("cityRazed", city, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Razed cities: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_raze_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(2)
+		
+		try:
+			events.fireEvent("cityRazed", city, 1)
+			events.fireEvent("cityRazed", city, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Razed cities: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestSettledCities(ExtendedTestCase):
 
 	def setUp(self):
@@ -1274,6 +1357,7 @@ test_cases = [
 	TestPillageCount,
 	TestPiracyGold,
 	TestRaidGold,
+	TestRazeCount,
 	TestSettledCities,
 	TestSettledCitiesArea,
 	TestSunkShips,

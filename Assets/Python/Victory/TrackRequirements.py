@@ -193,6 +193,21 @@ class RaidGold(TrackRequirement):
 		self.accumulated("combatGold")
 
 
+# Second Mongol UHV goal
+class RazeCount(TrackRequirement):
+
+	TYPES = (COUNT,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_RAZE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RAZE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RAZE_COUNT"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.incremented("cityRazed")
+
+
 # First Russian UHV goal
 class SettledCities(TrackRequirement):
 

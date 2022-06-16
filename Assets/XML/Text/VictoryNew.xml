@@ -225,7 +225,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_ADOPT</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_ADOPT</Tag>
 		<English>adopt %s1</English>
 		<French></French>
 		<German></German>
@@ -233,8 +233,16 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_CONDUCT</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_CONDUCT</Tag>
 		<English>conduct %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAZE</Tag>
+		<English>raze %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -659,6 +667,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAZE_COUNT</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1009,6 +1025,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_LEVEL_CITY_COUNT</Tag>
 		<English>Culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RAZE_COUNT</Tag>
+		<English>Razed cities</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
