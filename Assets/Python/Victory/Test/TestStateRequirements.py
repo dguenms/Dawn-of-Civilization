@@ -302,6 +302,99 @@ class TestDiscover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestEnterEraBefore(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = EnterEraBefore(iClassical, iMedieval)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "EnterEraBefore(Classical, Medieval)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "EnterEraBefore(Classical, Medieval)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the Classical era before anyone enters the Medieval era")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_enter_before(self):
+		events.fireEvent("techAcquired", iLaw, 0, 0, False)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Classical era")
+		
+		self.assertEqual(self.requirement.state, SUCCESS)
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_enter_before_other_player(self):
+		events.fireEvent("techAcquired", iLaw, 1, 1, False)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical era")
+		
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_expire(self):
+		events.fireEvent("techAcquired", iFeudalism, 1, 1, False)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical era")
+		
+		self.assertEqual(self.requirement.state, FAILURE)
+		self.assertEqual(self.goal.failed, True)
+	
+	def test_enter_after_expire(self):
+		events.fireEvent("techAcquired", iFeudalism, 1, 1, False)
+		events.fireEvent("techAcquired", iLaw, 0, 0, False)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical era")
+		
+		self.assertEqual(self.requirement.state, FAILURE)
+		self.assertEqual(self.goal.failed, True)
+	
+	def test_expire_after_enter(self):
+		events.fireEvent("techAcquired", iLaw, 0, 0, False)
+		events.fireEvent("techAcquired", iFeudalism, 1, 1, False)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Classical era")
+		
+		self.assertEqual(self.requirement.state, SUCCESS)
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_enter_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("techAcquired", iLaw, 1, 1, False)
+			
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Classical era")
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestFirstDiscover(ExtendedTestCase):
 
 	def setUp(self):
@@ -769,6 +862,7 @@ test_cases = [
 	TestContactBeforeRevealed,
 	TestConvertAfterFounding,
 	TestDiscover,
+	TestEnterEraBefore,
 	TestFirstDiscover,
 	TestFirstSettle,
 	TestNoCityLost,

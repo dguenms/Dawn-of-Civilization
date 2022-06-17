@@ -474,10 +474,160 @@ class TestReligionSpreadPercent(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestReligiousVotePercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ReligiousVotePercent(30)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ReligiousVotePercent(30%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ReligiousVotePercent(30%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "30% of the votes in the Apostolic Palace")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(5)
+		their_city.setPopulation(36)
+		
+		our_city.setHasReligion(iCatholicism, True, False, False)
+		their_city.setHasReligion(iCatholicism, True, False, False)
+		
+		our_city.setHasRealBuilding(iCatholicShrine, True)
+		
+		player(0).setLastStateReligion(iCatholicism)
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 25.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Votes in the Apostolic Palace: 25.00% / 30%")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			
+			cities.kill()
+	
+	def test_more(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(10)
+		their_city.setPopulation(10)
+		
+		our_city.setHasReligion(iCatholicism, True, False, False)
+		their_city.setHasReligion(iCatholicism, True, False, False)
+		
+		our_city.setHasRealBuilding(iCatholicShrine, True)
+		
+		player(0).setLastStateReligion(iCatholicism)
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Votes in the Apostolic Palace: 50.00% / 30%")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_not_state_religion(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(10)
+		their_city.setPopulation(10)
+		
+		our_city.setHasReligion(iCatholicism, True, False, False)
+		their_city.setHasReligion(iCatholicism, True, False, False)
+		
+		our_city.setHasRealBuilding(iCatholicShrine, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Votes in the Apostolic Palace: 0.00% / 30%")
+		finally:
+			cities.kill()
+	
+	def test_not_city_religion(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setPopulation(10)
+		their_city.setPopulation(10)
+		
+		our_city.setHasRealBuilding(iCatholicShrine, True)
+		
+		player(0).setLastStateReligion(iCatholicism)
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Votes in the Apostolic Palace: 0.00% / 30%")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		vassal_city, other_city = cities = TestCities.owners(1, 2)
+		
+		vassal_city.setPopulation(10)
+		other_city.setPopulation(10)
+		
+		vassal_city.setHasReligion(iCatholicism, True, False, False)
+		other_city.setHasReligion(iCatholicism, True, False, False)
+		
+		vassal_city.setHasRealBuilding(iCatholicShrine, True)
+		
+		player(1).setLastStateReligion(iCatholicism)
+		player(2).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 6)
+			self.assertEqual(self.requirement.percentage(evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Votes in the Apostolic Palace: 50.00% / 30%")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 test_cases = [
 	TestAreaPercent,
 	TestAreaPopulationPercent,
 	TestLandPercent,
 	TestPopulationPercent,
 	TestReligionSpreadPercent,
+	TestReligiousVotePercent,
 ]

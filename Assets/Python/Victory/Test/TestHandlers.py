@@ -364,15 +364,6 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onPeaceBrokered((self.iPlayer, 1, 2))
 		self.assertEqual(self.iCount, 1)
 	
-	def test_player_gold_trade(self):
-		onPlayerGoldTrade = self.get("playerGoldTrade", self.accumulate)
-		
-		onPlayerGoldTrade((0, 1, 100))
-		self.assertEqual(self.iCount, 0)
-		
-		onPlayerGoldTrade((1, 0, 100))
-		self.assertEqual(self.iCount, 100)
-	
 	def test_player_change_state_religion(self):
 		onPlayerStateReligionChange = self.get("playerChangeStateReligion", self.capture)
 		
@@ -382,6 +373,24 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onPlayerStateReligionChange((0, iCatholicism, iOrthodoxy))
 		self.assertEqual(self.argument, (self.goal, iCatholicism))
 	
+	def test_player_gold_trade(self):
+		onPlayerGoldTrade = self.get("playerGoldTrade", self.accumulate)
+		
+		onPlayerGoldTrade((0, 1, 100))
+		self.assertEqual(self.iCount, 0)
+		
+		onPlayerGoldTrade((1, 0, 100))
+		self.assertEqual(self.iCount, 100)
+
+	def test_player_slave_trade(self):
+		onPlayerSlaveTrade = self.get("playerSlaveTrade", self.accumulate)
+		
+		onPlayerSlaveTrade((1, 100))
+		self.assertEqual(self.iCount, 0)
+		
+		onPlayerSlaveTrade((0, 100))
+		self.assertEqual(self.iCount, 100)
+
 	def test_project_built(self):
 		onProjectBuilt = self.get("projectBuilt", self.capture)
 		

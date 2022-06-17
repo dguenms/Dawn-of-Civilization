@@ -182,6 +182,13 @@ class EventHandlerRegistry(object):
 		
 		return playerGoldTrade
 	
+	def playerSlaveTrade(self, goal, applicable, func):
+		def playerSlaveTrade((iPlayer, iGold)):
+			if applicable(goal, iPlayer):
+				func(goal, iGold)
+		
+		return playerSlaveTrade
+	
 	def projectBuilt(self, goal, applicable, func):
 		def projectBuilt((city, iProject)):
 			if applicable(goal, city.getOwner()):

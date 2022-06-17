@@ -75,6 +75,37 @@ class Discover(StateRequirement):
 		if self.iTech == iTech:
 			self.succeed()
 			goal.check()
+
+
+# Third Congolese UHV goal
+class EnterEraBefore(StateRequirement):
+
+	TYPES = (ERA, ERA)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ENTER"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ENTER_ERA_BEFORE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ENTER_ERA_BEFORE"
+
+	def __init__(self, iEra, iExpireEra, **options):
+		StateRequirement.__init__(self, iEra, iExpireEra, **options)
+		
+		self.iEra = iEra
+		self.iExpireEra = iExpireEra
+		
+		self.handle("techAcquired", self.check_enter_era)
+		self.expire("techAcquired", self.expire_enter_era)
+		
+	def check_enter_era(self, goal, iTech):
+		iEra = infos.tech(iTech).getEra()
+		if self.iEra == iEra and self.state == POSSIBLE:
+			self.succeed()
+			goal.check()
+	
+	def expire_enter_era(self, goal, iTech):
+		iEra = infos.tech(iTech).getEra()
+		if self.iExpireEra == iEra and self.state == POSSIBLE:
+			self.fail()
+			goal.expire()
 	
 
 # First Babylonian UHV goal

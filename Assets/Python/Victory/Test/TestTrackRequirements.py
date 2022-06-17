@@ -1166,6 +1166,82 @@ class TestSettledCitiesArea(ExtendedTestCase):
 			cities.kill()
 
 
+class TestSlaveTradeGold(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = SlaveTradeGold(100)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "SlaveTradeGold(100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "SlaveTradeGold(100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 gold through the slave trade")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		events.fireEvent("playerSlaveTrade", 0, 50)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 50)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from slave trade: 50 / 100")
+		
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_more(self):
+		events.fireEvent("playerSlaveTrade", 0, 200)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 200)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from slave trade: 200 / 100")
+		
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_other_player(self):
+		events.fireEvent("playerSlaveTrade", 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from slave trade: 0 / 100")
+		
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("playerSlaveTrade", 1, 100)
+		
+			self.assertEqual(self.requirement.evaluate(evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold from slave trade: 100 / 100")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestSunkShips(ExtendedTestCase):
 
 	def setUp(self):
@@ -1501,6 +1577,7 @@ test_cases = [
 	TestRazeCount,
 	TestSettledCities,
 	TestSettledCitiesArea,
+	TestSlaveTradeGold,
 	TestSunkShips,
 	TestTradeGold,
 ]

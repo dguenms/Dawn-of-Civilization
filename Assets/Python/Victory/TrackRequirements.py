@@ -201,8 +201,8 @@ class PiracyGold(TrackRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_PIRACY_GOLD"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PIRACY_GOLD"
 	
-	def __init__(self, *parameters, **options):
-		TrackRequirement.__init__(self, *parameters, **options)
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, scale(iRequired), **options)
 		
 		self.accumulated("unitPillage")
 		self.accumulated("blockade")
@@ -218,8 +218,8 @@ class RaidGold(TrackRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RAID_GOLD"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RAID_GOLD"
 	
-	def __init__(self, *parameters, **options):
-		TrackRequirement.__init__(self, *parameters, **options)
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, scale(iRequired), **options)
 		
 		self.accumulated("unitPillage")
 		self.accumulated("cityCaptureGold")
@@ -279,6 +279,21 @@ class SettledCities(TrackRequirement):
 		if self.area is not None:
 			return {self.area.name(): self.area.create()}
 		return {}
+
+
+# Second Congolese UHV goal
+class SlaveTradeGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SLAVE_TRADE_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SLAVE_TRADE_GOLD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, scale(iRequired), **options)
+		
+		self.accumulated("playerSlaveTrade")
 	
 
 # Third Korean UHV goal
@@ -312,9 +327,7 @@ class TradeGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, iRequired, **options)
-		
-		self.iRequired = scale(iRequired)
+		TrackRequirement.__init__(self, scale(iRequired), **options)
 		
 		self.handle("playerGoldTrade", self.accumulate_trade_gold)
 		self.handle("tradeMission", self.accumulate_trade_mission_gold)

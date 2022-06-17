@@ -99,4 +99,16 @@ class ReligionSpreadPercent(PercentRequirement):
 	
 	def percentage(self, evaluator):
 		return game.calculateReligionPercent(self.iReligion)
-		
+
+
+# First Congolese UHV goal
+class ReligiousVotePercent(PercentRequirement):
+
+	TYPES = (PERCENTAGE,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGIOUS_VOTE_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGIOUS_VOTE_PERCENT"
+	
+	def value(self, iPlayer):
+		return player(iPlayer).getVotes(16, 1)
