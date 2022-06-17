@@ -169,6 +169,38 @@ class CorporationCount(ThresholdRequirement):
 		return player(iPlayer).countCorporations(iCorporation)
 
 
+# Third Iranian UHV goal
+class CultureCity(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CULTURE_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CULTURE_CITY"
+	
+	def __init__(self, iRequired, **options):
+		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		
+	def value(self, iPlayer):
+		city = self.best_city(iPlayer)
+		if not city:
+			return 0
+		return self.value_func(city)
+	
+	def value_func(self, city):
+		return city.getCulture(city.getOwner())
+	
+	def best_city(self, iPlayer):
+		return cities.owner(iPlayer).maximum(self.value_func)
+		
+	def progress(self, evaluator):
+		best_city = self.best_city(evaluator.iPlayer)
+		
+		if not best_city:
+			return "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_NO_CITIES"))
+		
+		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, best_city.getName()), self.value_func(best_city), self.iRequired)
+
+
 # Second Italian UHV goal
 class CultureLevelCityCount(ThresholdRequirement):
 
@@ -210,6 +242,7 @@ class CultureLevelCityCount(ThresholdRequirement):
 
 # First Portuguese UHV goal
 # First Thai UHV goal
+# First Iranian UHV goal
 class OpenBorderCount(ThresholdRequirement):
 
 	TYPES = (COUNT,)

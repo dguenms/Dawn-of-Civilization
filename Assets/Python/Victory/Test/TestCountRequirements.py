@@ -947,6 +947,85 @@ class TestCorporationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCultureCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CultureCity(1000)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CultureCity(1000)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CultureCity(1000)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a city with 1000 culture")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities")
+	
+	def test_less(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setName("First", False)
+		city2.setName("Second", False)
+		
+		city1.setCulture(0, 100, True)
+		city2.setCulture(0, 200, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 200)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Culture in Second: 200 / 1000")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setName("First", False)
+		city2.setName("Second", False)
+		
+		city1.setCulture(0, 500, True)
+		city2.setCulture(0, 1500, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1500)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Culture in Second: 1500 / 1000")
+		finally:
+			cities.kill()
+	
+	def test_other_owner(self):
+		city = TestCities.one(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities")
+		finally:
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestCultureLevelCityCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -976,7 +1055,7 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 	def test_no_cities(self):
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No cities"])
 	
 	def test_single_city_insufficient(self):
 		city = TestCities.one()
@@ -1067,7 +1146,7 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No cities"])
 		finally:
 			city.kill()
 	
@@ -1211,7 +1290,7 @@ class TestPopulationCityCount(ExtendedTestCase):
 	
 	def tearDown(self):
 		self.requirement.deregister_handlers()
-	
+		
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "PopulationCityCount(10, 3)")
 	
@@ -1230,7 +1309,7 @@ class TestPopulationCityCount(ExtendedTestCase):
 	def test_no_cities(self):
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No cities"])
 	
 	def test_single_city_insufficient(self):
 		city = TestCities.one()
@@ -1321,7 +1400,7 @@ class TestPopulationCityCount(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No Cities"])
+			self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "No cities"])
 		finally:
 			city.kill()
 	
@@ -1911,6 +1990,7 @@ test_cases = [
 	TestCityCount,
 	TestCorporationCount,
 	TestControlledResourceCount,
+	TestCultureCity,
 	TestCultureLevelCityCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,
