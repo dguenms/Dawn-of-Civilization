@@ -772,6 +772,112 @@ class TestGoldenAges(ExtendedTestCase):
 			self.player.changeAnarchyTurns(-1)
 
 
+class TestGreatGenerals(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = GreatGenerals(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "GreatGenerals(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "GreatGenerals(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two great generals")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_great_general(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iGreatGeneral, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", unit, 0, city)
+			events.fireEvent("greatPersonBorn", unit, 0, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Great generals: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			unit.kill(False, -1)
+	
+	def test_different_unit(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iGreatScientist, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", unit, 0, city)
+			events.fireEvent("greatPersonBorn", unit, 0, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Great generals: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+			unit.kill(False, -1)
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		unit = makeUnit(1, iGreatGeneral, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", unit, 1, city)
+			events.fireEvent("greatPersonBorn", unit, 1, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Great generals: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+			unit.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		unit = makeUnit(1, iGreatGeneral, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", unit, 1, city)
+			events.fireEvent("greatPersonBorn", unit, 1, city)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Great generals: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			unit.kill(False, -1)
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestPillageCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1119,6 +1225,81 @@ class TestRazeCount(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		self.assertEqual(self.goal.checked, False)
+
+
+class TestResourceTradeGold(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ResourceTradeGold(100)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ResourceTradeGold(100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ResourceTradeGold(100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 gold by selling resources")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_resource_trade_gold(self):
+		player(0).changeGoldPerTurnByPlayer(1, 100)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, 0)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from trading resources: 100 / 100")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			player(0).changeGoldPerTurnByPlayer(1, -100)
+	
+	def test_resource_trade_gold_other_player(self):
+		player(1).changeGoldPerTurnByPlayer(2, 100)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from trading resources: 0 / 100")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			player(1).changeGoldPerTurnByPlayer(2, -100)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		player(1).changeGoldPerTurnByPlayer(2, 100)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, 1)
+		
+			self.assertEqual(self.requirement.evaluate(evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold from trading resources: 100 / 100")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			player(1).changeGoldPerTurnByPlayer(2, -100)
+			team(1).setVassal(0, False, False)
 
 
 class TestSettledCities(ExtendedTestCase):
@@ -1672,10 +1853,12 @@ test_cases = [
 	TestEnslaveCountExcluding,
 	TestEraFirstDiscover,
 	TestGoldenAges,
+	TestGreatGenerals,
 	TestPillageCount,
 	TestPiracyGold,
 	TestRaidGold,
 	TestRazeCount,
+	TestResourceTradeGold,
 	TestSettledCities,
 	TestSettledCitiesArea,
 	TestSlaveTradeGold,

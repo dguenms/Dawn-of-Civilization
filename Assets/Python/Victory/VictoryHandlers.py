@@ -161,6 +161,13 @@ class EventHandlerRegistry(object):
 		
 		return firstContact
 	
+	def greatPersonBorn(self, goal, applicable, func):
+		def greatPersonBorn((unit, iPlayer, city)):
+			if applicable(goal, iPlayer):
+				func(goal, unit)
+		
+		return greatPersonBorn
+	
 	def peaceBrokered(self, goal, applicable, func):
 		def peaceBrokered((iBroker, iPlayer1, iPlayer2)):
 			if applicable(goal, iBroker):

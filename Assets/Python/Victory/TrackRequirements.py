@@ -173,6 +173,8 @@ class EraFirstDiscover(TrackRequirement):
 
 
 # Third Chinese UHV goal
+# First Argentine UHV goal
+# Third Argentine UHV goal
 class GoldenAges(TrackRequirement):
 
 	TYPES = (COUNT,)
@@ -188,14 +190,34 @@ class GoldenAges(TrackRequirement):
 		
 		self.handle("BeginPlayerTurn", self.increment_golden_ages)
 	
-	def increment_golden_ages(self, goal, *args):
-		if goal.evaluator.any(lambda iPlayer: player(iPlayer).isGoldenAge() and not player(iPlayer).isAnarchy()):
+	def increment_golden_ages(self, goal, iGameTurn, iPlayer):
+		if player(iPlayer).isGoldenAge() and not player(iPlayer).isAnarchy():
 			self.increment()
 			goal.check()
 	
 	def progress_value(self, evaluator):
 		iGoldenAgeLength = infos.constant("GOLDEN_AGE_LENGTH")
 		return "%d / %d" % (self.evaluate(evaluator) / iGoldenAgeLength, self.required() / iGoldenAgeLength)
+
+
+# Second Mexican UHV goal
+class GreatGenerals(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CREATE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_GREAT_GENERALS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_GREAT_GENERALS"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.handle("greatPersonBorn", self.increment_great_generals)
+	
+	def increment_great_generals(self, goal, unit):
+		if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
+			self.increment()
+			goal.check()
 
 
 # First Turkic UHV goal
@@ -260,6 +282,26 @@ class RazeCount(TrackRequirement):
 		TrackRequirement.__init__(self, *parameters, **options)
 		
 		self.incremented("cityRazed")
+
+
+# Third Colombian UHV goal
+class ResourceTradeGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RESOURCE_TRADE_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RESOURCE_TRADE_GOLD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, scale(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.accumulate_trade_deal_gold)
+	
+	def accumulate_trade_deal_gold(self, goal, iGameTurn, iPlayer):
+		iGold = players.major().alive().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
+		self.accumulate(iGold)
+		goal.check()
 
 
 # First Russian UHV goal

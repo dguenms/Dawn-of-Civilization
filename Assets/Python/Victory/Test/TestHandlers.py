@@ -355,6 +355,22 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onFirstContact((1, 0))
 		self.assertEqual(self.iCount, 1)
 	
+	def test_great_person_born(self):
+		onGreatPersonBorn = self.get("greatPersonBorn", self.capture)
+		
+		city = TestCities.one()
+		unit = makeUnit(0, iGreatArtist, (10, 10))
+		
+		try:
+			onGreatPersonBorn((unit, 1, city))
+			self.assertEqual(self.argument, None)
+			
+			onGreatPersonBorn((unit, 0, city))
+			self.assertEqual(self.argument, (self.goal, unit))
+		finally:
+			city.kill()
+			unit.kill(False, -1)
+	
 	def test_peace_brokered(self):
 		onPeaceBrokered = self.get("peaceBrokered", self.increment)
 		

@@ -8,6 +8,7 @@ import heapq
 
 
 # First American UHV goal
+# First Colombian UHV goal
 class AllowNone(Requirement):
 
 	TYPES = (AREA, CIVS)
@@ -107,6 +108,7 @@ class Communist(Requirement):
 # Second Iranian UHV goal
 # Second German UHV goal
 # First American UHV goal
+# Second Colombian UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)

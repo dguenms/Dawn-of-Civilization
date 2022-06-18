@@ -43,6 +43,7 @@ class BestPopulationCities(BestCitiesRequirement):
 # Second Byzantine UHV goal
 # First Aztec UHV goal
 # Second Thai UHV goal
+# Third Mexican UHV goal
 class BestPopulationCity(BestCityRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
