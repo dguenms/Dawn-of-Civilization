@@ -77,6 +77,7 @@ class Communist(Requirement):
 # First Mongol UHV goal
 # Second Ottoman UHV goal
 # Second Iranian UHV goal
+# Second German UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)

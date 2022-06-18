@@ -136,6 +136,7 @@ class EnslaveCount(TrackRequirement):
 
 # Third Japanese UHV goal
 # Third English UHV goal
+# Third German UHV goal
 class EraFirstDiscover(TrackRequirement):
 
 	TYPES = (ERA, COUNT)
