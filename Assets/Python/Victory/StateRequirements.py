@@ -169,6 +169,27 @@ class FirstSettle(StateRequirement):
 				goal.expire()
 
 
+# Second Canadian UHV goal
+class NoCityConquered(StateRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SIMPLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_NO_CITY_CONQUERED"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_NO_CITY_CONQUERED"
+	
+	def __init__(self, **options):
+		StateRequirement.__init__(self, **options)
+		
+		self.handle("cityAcquired", self.fail_on_city_conquered)
+	
+	def fail_on_city_conquered(self, goal, city, bConquest):
+		if bConquest and self.state == POSSIBLE:
+			self.fail()
+			goal.expire()
+	
+	def fulfilled(self, evaluator):
+		return self.state != FAILURE
+
+
 # First Japanese UHV goal
 class NoCityLost(StateRequirement):
 

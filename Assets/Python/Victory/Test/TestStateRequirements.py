@@ -647,6 +647,87 @@ class TestFirstSettle(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestNoCityConquered(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = NoCityConquered()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "NoCityConquered()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "NoCityConquered()")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "never conquer any cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_city_conquered(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No cities conquered")
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		
+		self.assertEqual(self.goal.failed, False)
+	
+	def test_city_conquered(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city, True, False)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities conquered")
+			self.assertEqual(self.requirement.state, FAILURE)
+			
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			city.kill()
+	
+	def test_city_acquired(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city, False, True)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No cities conquered")
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_city_conquered_other(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("cityAcquired", 0, 1, city, True, False)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No cities conquered")
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestNoCityLost(ExtendedTestCase):
 
 	def setUp(self):
@@ -865,6 +946,7 @@ test_cases = [
 	TestEnterEraBefore,
 	TestFirstDiscover,
 	TestFirstSettle,
+	TestNoCityConquered,
 	TestNoCityLost,
 	TestSettle,
 	TestTradeMission,

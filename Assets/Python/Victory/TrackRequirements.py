@@ -28,6 +28,7 @@ class AcquiredCities(TrackRequirement):
 		return len(self.recorded)
 		
 
+# Third Canadian UHV goal
 class BrokeredPeace(TrackRequirement):
 
 	TYPES = (COUNT,)

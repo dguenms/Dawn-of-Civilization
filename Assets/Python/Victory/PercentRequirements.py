@@ -5,6 +5,7 @@ from BaseRequirements import *
 
 # Second French UHV goal
 # Third Italian UHV goal
+# Second Canadian UHV goal
 class AreaPercent(PercentRequirement):
 
 	TYPES = (AREA, PERCENTAGE)

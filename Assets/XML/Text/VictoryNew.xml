@@ -803,6 +803,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_CITY_CONQUERED</Tag>
+		<English>never conquer any cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1257,6 +1265,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RESOURCE_TRADE_GOLD</Tag>
 		<English>Gold from trading resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_CITY_CONQUERED</Tag>
+		<English>no cities conquered</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

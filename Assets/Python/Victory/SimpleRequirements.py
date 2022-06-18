@@ -109,6 +109,7 @@ class Communist(Requirement):
 # Second German UHV goal
 # First American UHV goal
 # Second Colombian UHV goal
+# Second Canadian UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)
@@ -243,6 +244,7 @@ class Route(Requirement):
 
 # Second Turkic UHV goal
 # First Russian UHV goal
+# First Canadian UHV goal
 class RouteConnection(Requirement):
 
 	GLOBAL_TYPES = (ROUTES, AREA)
