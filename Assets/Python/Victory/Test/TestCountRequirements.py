@@ -1156,6 +1156,108 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestImprovementCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ImprovementCount(iCottage, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ImprovementCount(Cottage, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ImprovementCount(Cottage, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Cottages")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cottages: 0 / 2")
+	
+	def test_fewer(self):
+		area = plots_.of([(61, 31)])
+		for plot in area:
+			plot.setOwner(0)
+			plot.setImprovementType(iCottage)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cottages: 1 / 2")
+		finally:
+			for plot in area:
+				plot.setOwner(-1)
+				plot.setImprovementType(-1)
+	
+	def test_more(self):
+		area = plots_.rectangle((61, 31), (63, 31))
+		for plot in area:
+			plot.setOwner(0)
+			plot.setImprovementType(iCottage)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Cottages: 3 / 2")
+		finally:
+			for plot in area:
+				plot.setOwner(-1)
+				plot.setImprovementType(-1)
+	
+	def test_other_owner(self):
+		area = plots_.rectangle((61, 31), (62, 31))
+		for plot in area:
+			plot.setOwner(1)
+			plot.setImprovementType(iCottage)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cottages: 0 / 2")
+		finally:
+			for plot in area:
+				plot.setOwner(-1)
+				plot.setImprovementType(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		area = plots_.rectangle((61, 31), (62, 31))
+		for plot in area:
+			plot.setOwner(1)
+			plot.setImprovementType(iCottage)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Cottages: 2 / 2")
+		finally:
+			for plot in area:
+				plot.setOwner(-1)
+				plot.setImprovementType(-1)
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestOpenBorderCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1992,6 +2094,7 @@ test_cases = [
 	TestControlledResourceCount,
 	TestCultureCity,
 	TestCultureLevelCityCount,
+	TestImprovementCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,
 	TestPopulationCityCount,

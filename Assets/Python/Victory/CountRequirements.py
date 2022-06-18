@@ -241,6 +241,34 @@ class CultureLevelCityCount(ThresholdRequirement):
 		return list(self.progress_entries(evaluator.iPlayer))
 
 
+# First Brazilian UHV goal
+# Third Brazilian UHV goal
+class ImprovementCount(ThresholdRequirement):
+
+	TYPES = (IMPROVEMENT, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_IMPROVEMENT_COUNT"
+	
+	def __init__(self, iImprovement, *parameters, **options):
+		ThresholdRequirement.__init__(self, iImprovement, *parameters, **options)
+		
+		self.iImprovement = iImprovement
+	
+	def value(self, iPlayer, iImprovement):
+		return player(iPlayer).getImprovementCount(iImprovement)
+	
+	def description(self):
+		return ThresholdRequirement.description(self, bPlural=self.bPlural)
+	
+	def progress(self, evaluator):
+		if not self.bPlural:
+			return IMPROVEMENT.format(self.iImprovement)
+		
+		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, IMPROVEMENT.format(self.iImprovement, bPlural=True)), self.progress_value(evaluator))
+		
+		
+
 # First Portuguese UHV goal
 # First Thai UHV goal
 # First Iranian UHV goal

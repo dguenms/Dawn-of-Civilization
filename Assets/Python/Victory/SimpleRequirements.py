@@ -336,6 +336,7 @@ class TradeConnection(Requirement):
 # First Italian UHV goal
 # Second Mughal UHV goal
 # Second American UHV goal
+# Second Brazilian UHV goal
 class Wonder(Requirement):
 
 	TYPES = (BUILDING,)

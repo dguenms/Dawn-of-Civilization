@@ -5,6 +5,7 @@ from BaseRequirements import *
 
 # First Phoenician UHV goal
 # First Ottoman UHV goal
+# Third Brazilian UHV goal
 class CityBuilding(CityRequirement):
 
 	GLOBAL_TYPES = (CITY,)

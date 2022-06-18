@@ -388,6 +388,32 @@ class TestEra(ExtendedTestCase):
 		self.assertEqual(ERA.area(iRenaissance), None)
 
 
+class TestImprovement(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(IMPROVEMENT), "Improvement")
+	
+	def test_repr(self):
+		self.assertEqual(repr(IMPROVEMENT), "Improvement")
+	
+	def test_equal(self):
+		self.assertEqual(IMPROVEMENT, InfoType("Improvement", infos.improvement))
+	
+	def test_pickle(self):
+		self.assertPickleable(IMPROVEMENT)
+	
+	def test_validate(self):
+		self.assertEqual(IMPROVEMENT.validate(iFarm), True)
+		self.assertEqual(IMPROVEMENT.validate("Farm"), False)
+	
+	def test_format(self):
+		self.assertEqual(IMPROVEMENT.format(iFarm), "Farm")
+		self.assertEqual(IMPROVEMENT.format_repr(iFarm), "Farm")
+	
+	def test_area(self):
+		self.assertEqual(IMPROVEMENT.area(iFarm), None)
+
+
 class TestPercentage(ExtendedTestCase):
 
 	def test_str(self):
@@ -641,6 +667,7 @@ test_cases = [
 	TestCount,
 	TestCultureLevel,
 	TestEra,
+	TestImprovement,
 	TestPercentage,
 	TestProject,
 	TestReligion,
