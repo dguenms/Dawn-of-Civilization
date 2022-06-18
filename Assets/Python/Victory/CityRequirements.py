@@ -64,6 +64,7 @@ class CityCultureLevel(CityRequirement):
 # Second Moorish UHV goal
 # Third Holy Roman UHV goal
 # Second Mandinka UHV goal
+# First Dutch UHV goal
 class CitySpecialistCount(CityRequirement):
 
 	TYPES = (CITY, SPECIALIST, COUNT)

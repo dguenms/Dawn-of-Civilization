@@ -258,10 +258,11 @@ class TestConqueredCities(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
-class TestConqueredCitiesArea(ExtendedTestCase):
+class TestConqueredCitiesInside(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ConqueredCities(2, area=plots.of([(61, 31), (63, 31)]).named("Test Area"))
+		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = ConqueredCities(2, inside=self.area)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -293,17 +294,115 @@ class TestConqueredCitiesArea(ExtendedTestCase):
 			cities.kill()
 	
 	def test_conquer_not_in_area(self):
-		city1, city2, city3, city4 = cities = TestCities.num(4)
+		_, _, city1, city2 = cities = TestCities.num(4)
 		
 		try:
-			events.fireEvent("cityAcquired", 1, 0, city3, True, False)
-			events.fireEvent("cityAcquired", 1, 0, city4, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
 			
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities in Test Area: 0 / 2")
 		finally:
 			cities.kill()
+
+
+class TestConqueredCitiesOutside(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.all().without([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = ConqueredCities(2, outside=self.area)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities outside of Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((10, 10)), "")
+	
+	def test_conquer_outside_area(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered cities outside of Test Area: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_conquer_not_in_area(self):
+		_, _, city1, city2 = cities = TestCities.num(4)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, 0, city1, True, False)
+			events.fireEvent("cityAcquired", 1, 0, city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered cities outside of Test Area: 0 / 2")
+		finally:
+			cities.kill()
+
+
+class TestConqueredCitiesCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.civs = CivsDefinition(1).named("Test Civs")
+		self.requirement = ConqueredCities(2, civs=self.civs)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Test Civs cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_conquer_of_civ(self):
+		city1, city2 = TestCities.owners(1, 1)
+		
+		try:
+			player(0).acquireCity(city1, True, False)
+			player(0).acquireCity(city2, True, False)
+			
+			self.assertEqual(cities.owner(0).count(), 2)
+			self.assertEqual(len(self.requirement.recorded), 2)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered Test Civs cities: 2 / 2")
+		finally:
+			city(61, 31).kill()
+			city(63, 31).kill()
+	
+	def test_conquer_not_of_civ(self):
+		city1, city2 = cities = TestCities.owners(2, 2)
+		
+		try:
+			player(0).acquireCity(city1, True, False)
+			player(0).acquireCity(city2, True, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered Test Civs cities: 0 / 2")
+		finally:
+			city(61, 31).kill()
+			city(63, 31).kill()
 
 
 class TestEnslaveCount(ExtendedTestCase):
@@ -1566,7 +1665,9 @@ test_cases = [
 	TestAcquiredCities,
 	TestBrokeredPeace,
 	TestConqueredCities,
-	TestConqueredCitiesArea,
+	TestConqueredCitiesInside,
+	TestConqueredCitiesOutside,
+	TestConqueredCitiesCivs,
 	TestEnslaveCount,
 	TestEnslaveCountExcluding,
 	TestEraFirstDiscover,

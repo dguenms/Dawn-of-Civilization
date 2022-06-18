@@ -94,6 +94,9 @@ class AreaDefinition(NamedDefinition):
 	def owner(self, *args, **kwargs):
 		return self.call("owner", args, kwargs)
 	
+	def without(self, *args, **kwargs):
+		return self.call("without", args, kwargs)
+	
 	def none(self, *args, **kwargs):
 		return self.create().none(*args, **kwargs)
 	

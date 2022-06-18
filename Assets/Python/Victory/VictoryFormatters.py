@@ -60,6 +60,12 @@ def in_area(string, area):
 	return string
 
 
+def outside_area(string, area):
+	if area is not None:
+		return text("TXT_KEY_VICTORY_OUTSIDE_AREA", string, AREA.format(area))
+	return string
+
+
 def with_religion(string, iReligion):
 	if iReligion is not None:
 		return text("TXT_KEY_VICTORY_WITH_RELIGION", string, RELIGION_ADJECTIVE.format(iReligion))

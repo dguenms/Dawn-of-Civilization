@@ -1431,6 +1431,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OUTSIDE_AREA</Tag>
+		<English>%s1 outside of %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_WITH_RELIGION</Tag>
 		<English>%s2 %s1</English>
 		<French></French>

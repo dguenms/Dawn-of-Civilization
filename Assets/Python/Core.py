@@ -1359,11 +1359,17 @@ class Locations(EntityCollection):
 		if not exceptions or not any(exceptions):
 			return self
 			
-		if len(exceptions) == 1 and isinstance(exceptions[0], (list, set, Locations)):
-			exceptions = exceptions[0] 
+		if len(exceptions) == 1:
+			if isinstance(exceptions[0], Locations):
+				remaining = set(self._keys) - set(exceptions[0]._keys)
+				return self.copy(remaining)
+			
+			elif isinstance(exceptions[0], (list, set)):
+				exceptions = exceptions[0]
+			
+		remaining = set(self._keys) - set(self._keyify(item) for item in exceptions)
+		return self.copy(remaining)
 	
-		return self.where(lambda loc: location(loc) not in [location(e) for e in exceptions])
-		
 	def _closest(self, *args):
 		x, y = _parse_tile(*args)
 		return find_min(self.entities(), lambda loc: distance(loc, (x, y)))
@@ -1719,6 +1725,15 @@ class Cities(Locations):
 		
 	def __str__(self):
 		return str(["%s (%s) at %s" % (city.getName(), adjective(city.getOwner()), (city.getX(), city.getY())) for city in self.entities()])
+	
+	def without(self, *exceptions):
+		if not exceptions or none(exceptions):
+			return self
+		
+		if len(exceptions) == 1 and isinstance(exceptions[0], (list, set, Locations)):
+			exceptions = exceptions[0]
+		
+		return self.where(lambda city: location(city) not in [location(loc) for loc in exceptions])
 	
 	def existing(self):
 		return self.where(lambda city: city.getX() >= 0)

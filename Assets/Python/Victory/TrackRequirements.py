@@ -42,6 +42,7 @@ class BrokeredPeace(TrackRequirement):
 
 
 # First Moorish UHV goal
+# Second Dutch UHV goal
 class ConqueredCities(TrackRequirement):
 
 	TYPES = (COUNT,)
@@ -50,16 +51,27 @@ class ConqueredCities(TrackRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONQUERED_CITIES"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONQUERED_CITIES"
 	
-	def __init__(self, iRequired, area=None, **options):
-		TrackRequirement.__init__(self, iRequired, area=area, **options)
+	def __init__(self, iRequired, civs=None, inside=None, outside=None, **options):
+		TrackRequirement.__init__(self, iRequired, civs=civs, inside=inside, outside=outside, **options)
 		
 		self.recorded = set()
-		self.area = area
+		self.civs = civs
+		self.inside = inside
+		self.outside = outside
 		
 		self.handle("cityAcquired", self.record_conquered_city)
 		
 	def valid_city(self, city):
-		return self.area is None or city in self.area
+		if self.civs is not None and Civ(city.getPreviousCiv()) not in self.civs:
+			return False
+	
+		if self.inside is not None and city not in self.inside:
+			return False
+		
+		if self.outside is not None and city in self.outside:
+			return False
+		
+		return True
 	
 	def record_conquered_city(self, goal, city, bConquest):
 		if bConquest and self.valid_city(city):
@@ -71,14 +83,22 @@ class ConqueredCities(TrackRequirement):
 	
 	def additional_formats(self):
 		cities = text("TXT_KEY_VICTORY_CITIES")
-		cities = in_area(cities, self.area)
+		cities = qualify_adjective(cities, CIVS, self.civs)
+		cities = in_area(cities, self.inside)
+		cities = outside_area(cities, self.outside)
 		
 		return [cities]
 	
 	def areas(self):
-		if self.area is not None:
-			return {self.area.name(): self.area.create()}
-		return {}
+		areas = {}
+		
+		if self.inside is not None:
+			areas[self.inside.name()] = self.inside.create()
+		
+		if self.outside is not None:
+			areas[self.outside.name()] = plots_.all().without(self.outside.create())
+		
+		return areas
 
 
 # Third Aztec UHV goal
