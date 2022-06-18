@@ -3,6 +3,103 @@ from SimpleRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAllowNone(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.civs = CivsDefinition(1).named("Test Civs")
+		self.requirement = AllowNone(self.area, self.civs)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AllowNone(Test Area, Test Civs)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AllowNone(Test Area, Test Civs)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "no Test Civs civilizations in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+	
+	def test_only_player(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+		finally:
+			city.kill()
+	
+	def test_allowed(self):
+		our_city, allowed_city = cities = TestCities.owners(0, 2)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+		finally:
+			cities.kill()
+	
+	def test_not_allowed(self):
+		our_city, not_allowed_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No Test Civs civilizations in Test Area")
+		finally:
+			cities.kill()
+	
+	def test_minor(self):
+		our_city, minor_city = cities = TestCities.owners(0, iNative)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+		finally:
+			cities.kill()
+	
+	def test_outside(self):
+		our_city1, our_city2, not_allowed_city = cities = TestCities.owners(0, 0, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		our_city, vassal_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "No Test Civs civilizations in Test Area")
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestAllowOnly(ExtendedTestCase):
 
 	def setUp(self):
@@ -1402,6 +1499,7 @@ class TestWonder(ExtendedTestCase):
 
 
 test_cases = [
+	TestAllowNone,
 	TestAllowOnly,
 	TestAreaNoStateReligion,
 	TestCommunist,

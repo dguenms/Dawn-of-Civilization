@@ -7,6 +7,34 @@ from Civics import isCommunist
 import heapq
 
 
+# First American UHV goal
+class AllowNone(Requirement):
+
+	TYPES = (AREA, CIVS)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW_NONE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ALLOW_NONE"
+	
+	def __init__(self, area, civs, **options):
+		Requirement.__init__(self, area, civs, **options)
+		
+		self.area = area
+		self.civs = civs
+	
+	def fulfilled(self, evaluator):
+		return self.area.cities().all(lambda city: self.valid(city, evaluator))
+	
+	def valid(self, city, evaluator):
+		if city.getOwner() in evaluator:
+			return True
+		
+		if city.getOwner() not in self.civs:
+			return True
+		
+		return False
+
+
 # Third Thai UHV goal
 class AllowOnly(Requirement):
 
@@ -78,6 +106,7 @@ class Communist(Requirement):
 # Second Ottoman UHV goal
 # Second Iranian UHV goal
 # Second German UHV goal
+# First American UHV goal
 class Control(Requirement):
 	
 	TYPES = (AREA,)
@@ -304,6 +333,7 @@ class TradeConnection(Requirement):
 # Second Mandinka UHV goal
 # First Italian UHV goal
 # Second Mughal UHV goal
+# Second American UHV goal
 class Wonder(Requirement):
 
 	TYPES = (BUILDING,)

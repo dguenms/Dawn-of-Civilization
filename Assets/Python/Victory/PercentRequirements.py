@@ -46,6 +46,19 @@ class AreaPopulationPercent(PercentRequirement):
 		return self.area.create().cities().sum(CyCity.getPopulation)
 
 
+# Third American UHV goal
+class CommercePercent(PercentRequirement):
+
+	TYPES = (PERCENTAGE,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COMMERCE_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_COMMERCE_PERCENT"
+	
+	def value(self, iPlayer):
+		return max(0, player(iPlayer).calculateTotalCommerce())
+
+
 # First Persian UHV goal
 # First Turkic UHV goal
 # Third Mongol UHV goal
@@ -79,6 +92,19 @@ class PopulationPercent(PercentRequirement):
 	
 	def total(self):
 		return game.getTotalPopulation()
+
+
+# Third American UHV goal
+class PowerPercent(PercentRequirement):
+
+	TYPES = (PERCENTAGE,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POWER_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POWER_PERCENT"
+	
+	def value(self, iPlayer):
+		return player(iPlayer).getPower()
 
 
 # Third Arabian UHV goal

@@ -209,6 +209,64 @@ class TestAreaPopulationPercent(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCommercePercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CommercePercent(15)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CommercePercent(15%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CommercePercent(15%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "15% of the world's commerce")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fulfilled(self):
+		player(0).changeGoldPerTurnByPlayer(0, 1)
+	
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 20.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Global commerce: 20.00% / 15%")
+		finally:
+			player(0).changeGoldPerTurnByPlayer(0, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		player(0).changeGoldPerTurnByPlayer(0, 1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 3)
+			self.assertEqual(self.requirement.percentage(evaluator), 30.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Global commerce: 30.00% / 15%")
+		finally:
+			team(1).setVassal(0, False, False)
+			player(0).changeGoldPerTurnByPlayer(0, -1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestLandPercent(ExtendedTestCase):
 
 	def setUp(self):
@@ -368,6 +426,68 @@ class TestPopulationPercent(ExtendedTestCase):
 	
 	def test_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestPowerPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PowerPercent(25)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PowerPercent(25%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PowerPercent(25%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "25% of the world's military power")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fulfilled(self):
+		units = makeUnits(0, iMilitia, (10, 10), 2)
+	
+		try:
+			self.assertEqual(self.requirement.total(), 10)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 60.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Global military power: 60.00% / 25%")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		our_unit = makeUnit(0, iMilitia, (10, 10))
+		vassal_unit = makeUnit(0, iMilitia, (10, 10))
+		
+		try:
+			self.assertEqual(self.requirement.total(), 10)
+			self.assertEqual(self.requirement.evaluate(evaluator), 8)
+			self.assertEqual(self.requirement.percentage(evaluator), 80.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Global military power: 80.00% / 25%")
+		finally:
+			our_unit.kill(False, -1)
+			vassal_unit.kill(False, -1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		self.assertEqual(self.goal.checked, True)
 
@@ -626,8 +746,10 @@ class TestReligiousVotePercent(ExtendedTestCase):
 test_cases = [
 	TestAreaPercent,
 	TestAreaPopulationPercent,
+	TestCommercePercent,
 	TestLandPercent,
 	TestPopulationPercent,
+	TestPowerPercent,
 	TestReligionSpreadPercent,
 	TestReligiousVotePercent,
 ]
