@@ -355,6 +355,7 @@ class PopulationCount(ThresholdRequirement):
 # Second Indonesian UHV goal
 # Second Portuguese UHV goal
 # Third Dutch UHV goal
+# First Zoroastrian URV goal
 class ResourceCount(ThresholdRequirement):
 
 	TYPES = (RESOURCE, COUNT)
