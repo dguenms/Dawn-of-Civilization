@@ -28,6 +28,7 @@ class BestTechPlayer(BestPlayersRequirement):
 		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
 	
 
+# Third Hindu URV goal
 class BestPopulationCities(BestCitiesRequirement):
 
 	TYPES = (COUNT,)

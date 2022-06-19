@@ -811,6 +811,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
+		<English>%s2 different great people in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1278,6 +1286,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
+		<English>Different great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -1488,7 +1504,7 @@
 
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_PLAYER</Tag>
-		<English>No Player</English>
+		<English>No player</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1496,7 +1512,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_CITY</Tag>
-		<English>No City</English>
+		<English>No city</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

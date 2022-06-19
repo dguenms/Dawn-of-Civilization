@@ -35,7 +35,7 @@ class TestCityBuilding(ExtendedTestCase):
 	
 	def test_no_city(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No City")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
 	
 	def test_city_no_building(self):
 		city = TestCities.one()
@@ -222,7 +222,7 @@ class TestCityCultureLevel(ExtendedTestCase):
 	
 	def test_no_city(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No City")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
 	
 	def test_less(self):
 		city = TestCities.one()
@@ -281,6 +281,130 @@ class TestCityCultureLevel(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CityDifferentGreatPeopleCount(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityDifferentGreatPeopleCount(Test City, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityDifferentGreatPeopleCount(Test City, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two different great people in Test City")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
+	
+	def test_fewer(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setFreeSpecialistCount(iSpecialistGreatArtist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Different great people in First: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		
+		for iSpecialist in [iSpecialistGreatArtist, iSpecialistGreatProphet, iSpecialistGreatScientist]:
+			city.setFreeSpecialistCount(iSpecialist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Different great people in First: 3 / 2")
+		finally:
+			city.kill()
+	
+	def test_unique(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setFreeSpecialistCount(iSpecialistGreatArtist, 2)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Different great people in First: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_great_people(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		
+		for iSpecialist in [iSpecialistArtist, iSpecialistPriest, iSpecialistScientist]:
+			city.setFreeSpecialistCount(iSpecialist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Different great people in First: 0 / 2")
+		finally:
+			city.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		
+		for iSpecialist in [iSpecialistGreatArtist, iSpecialistGreatProphet]:
+			city.setFreeSpecialistCount(iSpecialist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Different great people in First (controlled by Babylonia): 2 / 2")
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		
+		for iSpecialist in [iSpecialistGreatArtist, iSpecialistGreatProphet]:
+			city.setFreeSpecialistCount(iSpecialist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Different great people in First: 2 / 2")
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestCitySpecialistCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -313,7 +437,7 @@ class TestCitySpecialistCount(ExtendedTestCase):
 	
 	def test_no_city(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No City")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
 	
 	def test_no_specialists(self):
 		city = TestCities.one()
@@ -366,5 +490,6 @@ class TestCitySpecialistCount(ExtendedTestCase):
 test_cases = [
 	TestCityBuilding,
 	TestCityCultureLevel,
+	TestCityDifferentGreatPeopleCount,
 	TestCitySpecialistCount,
 ]

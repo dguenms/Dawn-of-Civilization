@@ -385,7 +385,7 @@ class TestBestPopulationCities(ExtendedTestCase):
 	
 	def test_no_cities(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "Most populous: No City (0)"])
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "Most populous: No city (0)"])
 	
 	def test_other_evaluator(self):
 		evaluator = VassalsEvaluator(self.iPlayer)
@@ -458,7 +458,7 @@ class TestBestPopulationCity(ExtendedTestCase):
 	def test_no_cities(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 		self.assertEqual(self.requirement.progress(self.evaluator), [
-			self.FAILURE + "Most populous: No City (0)"
+			self.FAILURE + "Most populous: No city (0)"
 		])
 	
 	def test_best_city(self):
@@ -601,7 +601,7 @@ class TestBestCultureCity(ExtendedTestCase):
 	def test_no_cities(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 		self.assertEqual(self.requirement.progress(self.evaluator), [
-			self.FAILURE + "Most cultured: No City (0)"
+			self.FAILURE + "Most cultured: No city (0)"
 		])
 	
 	def test_best_city(self):

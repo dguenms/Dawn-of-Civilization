@@ -176,6 +176,7 @@ class EraFirstDiscover(TrackRequirement):
 # Third Chinese UHV goal
 # First Argentine UHV goal
 # Third Argentine UHV goal
+# Second Hindu URV goal
 class GoldenAges(TrackRequirement):
 
 	TYPES = (COUNT,)

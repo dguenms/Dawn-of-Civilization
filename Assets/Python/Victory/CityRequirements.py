@@ -62,6 +62,41 @@ class CityCultureLevel(CityRequirement):
 		return "%d / %d" % (city.getCulture(city.getOwner()), game.getCultureThreshold(self.iCultureLevel))
 
 
+# First Hindu URV goal
+class CityDifferentGreatPeopleCount(CityRequirement):
+
+	TYPES = (CITY, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_DIFFERENT_GREAT_PEOPLE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_DIFFERENT_GREAT_PEOPLE_COUNT"
+	
+	GREAT_PEOPLE = [
+		iSpecialistGreatProphet, 
+		iSpecialistGreatArtist, 
+		iSpecialistGreatScientist, 
+		iSpecialistGreatMerchant, 
+		iSpecialistGreatEngineer,
+		iSpecialistGreatStatesman, 
+		iSpecialistGreatGeneral, 
+		iSpecialistGreatSpy
+	]
+	
+	def __init__(self, city, iRequired, **options):
+		CityRequirement.__init__(self, city, iRequired, **options)
+		
+		self.iRequired = iRequired
+	
+	def different_great_people(self, city):
+		return count(1 for iGreatSpecialist in self.GREAT_PEOPLE if city.getFreeSpecialistCount(iGreatSpecialist) > 0)
+	
+	def fulfilled_city(self, city):
+		return self.different_great_people(city) >= self.iRequired
+	
+	def progress_city(self, city):
+		return "%d / %d" % (self.different_great_people(city), self.iRequired)
+
+
 # Third Tibetan UHV goal
 # Second Moorish UHV goal
 # Third Holy Roman UHV goal
