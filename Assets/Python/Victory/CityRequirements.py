@@ -44,6 +44,7 @@ class CityBuilding(CityRequirement):
 # First French UHV goal
 # Second Argentine UHV goal
 # Third Zoroastrian URV goal
+# Second Jewish URV goal
 class CityCultureLevel(CityRequirement):
 
 	TYPES = (CITY, CULTURELEVEL)

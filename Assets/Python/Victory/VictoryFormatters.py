@@ -66,9 +66,15 @@ def outside_area(string, area):
 	return string
 
 
-def with_religion(string, iReligion):
+def religion_adjective(string, iReligion):
 	if iReligion is not None:
-		return text("TXT_KEY_VICTORY_WITH_RELIGION", string, RELIGION_ADJECTIVE.format(iReligion))
+		return text("TXT_KEY_VICTORY_RELIGION_ADJECTIVE", string, RELIGION_ADJECTIVE.format(iReligion))
+	return string
+	
+
+def with_religion_in_cities(string, iReligion):
+	if iReligion is not None:
+		return text("TXT_KEY_VICTORY_WITH_RELIGION_IN_CITIES", string, RELIGION.format(iReligion))
 	return string
 
 

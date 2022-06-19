@@ -7,6 +7,7 @@ from Civics import isCommunist
 
 # Third Holy Roman UHV goal
 # Third Russian UHV goal
+# Third Jewish URV goal
 class AttitudeCount(ThresholdRequirement):
 
 	TYPES = (ATTITUDE, COUNT)
@@ -14,10 +15,11 @@ class AttitudeCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
 	
-	def __init__(self, iAttitude, iRequired, civs=None, bIndependent=False, bCommunist=False, **options):
+	def __init__(self, iAttitude, iRequired, civs=None, iReligion=None, bIndependent=False, bCommunist=False, **options):
 		ThresholdRequirement.__init__(self, int(iAttitude), iRequired, **options)
 		
 		self.civs = civs
+		self.iReligion = iReligion
 		self.bIndependent = bIndependent
 		self.bCommunist = bCommunist
 		
@@ -34,6 +36,9 @@ class AttitudeCount(ThresholdRequirement):
 		if self.civs and civ(iOtherPlayer) not in self.civs:
 			return False
 		
+		if self.iReligion is not None and not cities.owner(iOtherPlayer).religion(self.iReligion):
+			return False
+		
 		return player(iOtherPlayer).AI_getAttitude(iPlayer) >= iAttitude
 	
 	def value(self, iPlayer, iAttitude):
@@ -44,6 +49,7 @@ class AttitudeCount(ThresholdRequirement):
 		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_COMMUNIST", self.bCommunist)
 		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_INDEPENDENT", self.bIndependent)
 		civilizations = in_area(civilizations, self.civs)
+		civilizations = with_religion_in_cities(civilizations, self.iReligion)
 		
 		return [civilizations]
 
@@ -369,6 +375,7 @@ class ResourceCount(ThresholdRequirement):
 
 
 # Second Ethiopian UHV goal
+# First Jewish URV goal
 class SpecialistCount(ThresholdRequirement):
 
 	TYPES = (SPECIALIST, COUNT)
@@ -456,6 +463,6 @@ class VassalCount(ThresholdRequirement):
 	def additional_formats(self):
 		vassal = text("TXT_KEY_VICTORY_VASSALS")
 		vassal = in_area(vassal, self.civs)
-		vassal = with_religion(vassal, self.iStateReligion)
+		vassal = religion_adjective(vassal, self.iStateReligion)
 		
 		return [vassal]

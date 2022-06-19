@@ -221,6 +221,77 @@ class TestAttitudeCountIndependent(ExtendedTestCase):
 				player(iPlayer).AI_setAttitudeExtra(0, 0)
 
 
+class TestAttitudeCountReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, iReligion=iJudaism)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other civilizations with Judaism in their cities")
+	
+	def test_religion_present(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+			
+		city1, city2 = cities = TestCities.owners(1, 2)
+		
+		city1.setHasReligion(iJudaism, True, False, False)
+		city2.setHasReligion(iJudaism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+			
+			cities.kill()
+	
+	def test_religion_not_present(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		cities = TestCities.owners(1, 2)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+			
+			cities.kill()
+	
+	def test_religion_no_cities(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+
+
 class TestAveragePopulation(ExtendedTestCase):
 
 	def setUp(self):
@@ -2087,6 +2158,7 @@ test_cases = [
 	TestAttitudeCountCivs,
 	TestAttitudeCountCommunist,
 	TestAttitudeCountIndependent,
+	TestAttitudeCountReligion,
 	TestAveragePopulation,
 	TestBuildingCount,
 	TestCityCount,
