@@ -8,6 +8,7 @@ from Civics import isCommunist
 # Third Holy Roman UHV goal
 # Third Russian UHV goal
 # Third Jewish URV goal
+# First Confucian URV goal
 class AttitudeCount(ThresholdRequirement):
 
 	TYPES = (ATTITUDE, COUNT)
@@ -399,6 +400,24 @@ class SpecialistCount(ThresholdRequirement):
 			return SPECIALIST.format(self.iSpecialist)
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, SPECIALIST.format(self.iSpecialist, bPlural=True)), self.progress_value(evaluator))
+
+
+# Third Confucian URV goal
+class UnitCombatCount(ThresholdRequirement):
+
+	TYPES = (UNITCOMBAT, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIT_COMBAT_COUNT"
+	
+	def __init__(self, iUnitCombat, iRequired, **options):
+		ThresholdRequirement.__init__(self, int(iUnitCombat), iRequired, **options)
+	
+	def value(self, iPlayer, iUnitCombat):
+		if not capital(iPlayer):
+			return 0
+		
+		return units.owner(iPlayer).combat(iUnitCombat).where(lambda unit: capital(iPlayer).allUpgradesAvailable(unit.getUnitType(), 0) < 0).count()
 	
 
 # Second English UHV goal

@@ -257,6 +257,18 @@ class AttitudeType(Type):
 		return infos.attitude(argument).getDescription()
 
 
+class UnitCombatType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, UnitCombatTypes)
+	
+	def format_func(self, argument):
+		return infos.unitCombat(argument).getDescription().lower()
+	
+	def format_repr_func(self, argument):
+		return infos.unitCombat(argument).getDescription().split(" ")[0]
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
 ATTITUDE = AttitudeType("Attitude")
@@ -277,6 +289,7 @@ ROUTES = InfosType("Routes", infos.route)
 SPECIALIST = InfoType("Specialist", infos.specialist)
 TECH = InfoType("Tech", infos.tech)
 UNIT = InfoType("Unit", infos.unit)
+UNITCOMBAT = UnitCombatType("UnitCombat")
 
 
 FAILURE, POSSIBLE, SUCCESS = Enum.of("State", ("Failure", "Possible", "Success"))

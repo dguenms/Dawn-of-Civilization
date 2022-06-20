@@ -654,6 +654,33 @@ class TestUnit(ExtendedTestCase):
 		self.assertEqual(UNIT.area(iSwordsman), None)
 
 
+class TestUnitCombat(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(UNITCOMBAT), "UnitCombat")
+	
+	def test_repr(self):
+		self.assertEqual(repr(UNITCOMBAT), "UnitCombat")
+	
+	def test_equal(self):
+		self.assertEqual(UNITCOMBAT, UnitCombatType("UnitCombat"))
+	
+	def test_pickle(self):
+		self.assertPickleable(UNITCOMBAT)
+	
+	def test_validate(self):
+		self.assertEqual(UNITCOMBAT.validate(UnitCombatTypes.UNITCOMBAT_MELEE), True)
+		self.assertEqual(UNITCOMBAT.validate("Melee"), False)
+		self.assertEqual(UNITCOMBAT.validate(1), False)
+	
+	def test_format(self):
+		self.assertEqual(UNITCOMBAT.format(UnitCombatTypes.UNITCOMBAT_MELEE), "melee units")
+		self.assertEqual(UNITCOMBAT.format_repr(UnitCombatTypes.UNITCOMBAT_MELEE), "Melee")
+	
+	def test_area(self):
+		self.assertEqual(UNITCOMBAT.area(UnitCombatTypes.UNITCOMBAT_MELEE), None)
+
+
 test_cases = [
 	TestEnum,
 	TestAggregate,
@@ -677,4 +704,5 @@ test_cases = [
 	TestSpecialist,
 	TestTech,
 	TestUnit,
+	TestUnitCombat,
 ]
