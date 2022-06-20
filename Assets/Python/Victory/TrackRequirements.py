@@ -222,6 +222,34 @@ class GreatGenerals(TrackRequirement):
 			goal.check()
 
 
+# First Taoist URV goal
+class HealthiestTurns(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_HEALTHIEST_TURNS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_HEALTHIEST_TURNS"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, turns(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.increment_healthiest)
+	
+	def increment_healthiest(self, goal, iGameTurn, iPlayer):
+		if players.major().alive().maximum(self.calculateHealthRating) == iPlayer:
+			self.increment()
+			goal.check()
+		
+	def calculateHealthRating(self, iPlayer):
+		if not player(iPlayer).isAlive():
+			return 0
+		
+		iHealthy = player(iPlayer).calculateTotalCityHealthiness()
+		iUnhealthy = player(iPlayer).calculateTotalCityUnhealthiness()
+		
+		return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
+
+
 # First Turkic UHV goal
 class PillageCount(TrackRequirement):
 

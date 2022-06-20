@@ -878,6 +878,96 @@ class TestGreatGenerals(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestHealthiestTurns(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = HealthiestTurns(3)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "HealthiestTurns(3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "HealthiestTurns(3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the highest life expectancy rating in the world for three turns")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_healthiest(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.changeExtraHealth(100)
+		their_city.changeExtraHealth(50)
+		
+		try:
+			for iTurn in range(3):
+				events.fireEvent("BeginPlayerTurn", iTurn, 0)
+				events.fireEvent("BeginPlayerTurn", iTurn, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Turns at highest life expectancy: 3 / 3")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_healthiest_other(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.changeExtraHealth(50)
+		their_city.changeExtraHealth(100)
+		
+		try:
+			for iTurn in range(3):
+				events.fireEvent("BeginPlayerTurn", iTurn, 0)
+				events.fireEvent("BeginPlayerTurn", iTurn, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Turns at highest life expectancy: 0 / 3")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		vassal_city, other_city = cities = TestCities.owners(1, 2)
+		
+		vassal_city.changeExtraHealth(100)
+		other_city.changeExtraHealth(20)
+		
+		try:
+			for iTurn in range(3):
+				events.fireEvent("BeginPlayerTurn", iTurn, 1)
+				events.fireEvent("BeginPlayerTurn", iTurn, 2)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Turns at highest life expectancy: 3 / 3")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+
 class TestPillageCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1854,6 +1944,7 @@ test_cases = [
 	TestEraFirstDiscover,
 	TestGoldenAges,
 	TestGreatGenerals,
+	TestHealthiestTurns,
 	TestPillageCount,
 	TestPiracyGold,
 	TestRaidGold,

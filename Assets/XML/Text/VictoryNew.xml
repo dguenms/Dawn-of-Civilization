@@ -827,6 +827,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HEALTHIEST_TURNS</Tag>
+		<English>the highest life expectancy rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SHRINE_INCOME</Tag>
+		<English>an income of %s2 gold from the %s1 shrine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1297,6 +1313,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
 		<English>Different great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_HEALTHIEST_TURNS</Tag>
+		<English>Turns at highest life expectancy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SHRINE_INCOME</Tag>
+		<English>%s1 shrine income</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
