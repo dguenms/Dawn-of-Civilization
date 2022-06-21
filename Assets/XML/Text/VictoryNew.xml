@@ -843,6 +843,30 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PEACE_TURNS</Tag>
+		<English>at peace for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAPPIEST_TURNS</Tag>
+		<English>the highest approval rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALL_ATTITUDE</Tag>
+		<English>%s1 or better relations with all other civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1329,6 +1353,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_SHRINE_INCOME</Tag>
 		<English>%s1 shrine income</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PEACE_TURNS</Tag>
+		<English>Turns at peace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_HAPPIEST_TURNS</Tag>
+		<English>Turns at highest approval rating</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ALL_ATTITUDE</Tag>
+		<English>%s1 or better relations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

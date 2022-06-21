@@ -7,6 +7,32 @@ from Civics import isCommunist
 import heapq
 
 
+# Third Buddhist URV goal
+class AllAttitude(Requirement):
+
+	TYPES = (ATTITUDE,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ALL_ATTITUDE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ALL_ATTITUDE"
+	
+	def __init__(self, iAttitude, **options):
+		Requirement.__init__(self, int(iAttitude), **options)
+		
+		self.iAttitude = int(iAttitude)
+	
+	def value(self, evaluator):
+		return evaluator.max(lambda iPlayer: players.major().alive().without(iPlayer).where(lambda p: player(p).AI_getAttitude(iPlayer) >= self.iAttitude).count())
+	
+	def required(self):
+		return players.major().alive().count() - 1
+	
+	def fulfilled(self, evaluator):
+		return self.value(evaluator) >= self.required()
+	
+	def progress(self, evaluator):
+		return "%s %s: %s / %s" % (self.indicator(evaluator), capitalize(text(self.PROGR_KEY, *self.format_parameters())), self.value(evaluator), self.required())
+
+
 # First American UHV goal
 # First Colombian UHV goal
 class AllowNone(Requirement):

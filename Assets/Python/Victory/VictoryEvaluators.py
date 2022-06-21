@@ -51,6 +51,9 @@ class Evaluator(object):
 	def sum(self, func):
 		return sum(func(iPlayer) for iPlayer in self)
 	
+	def max(self, func):
+		return max(func(iPlayer) for iPlayer in self)
+	
 	def evaluate(self, func, primary_arg=None, *args):
 		if isinstance(primary_arg, Aggregate):
 			return primary_arg.evaluate(self.evaluate_func(func), *args)

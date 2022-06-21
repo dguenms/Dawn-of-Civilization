@@ -222,6 +222,34 @@ class GreatGenerals(TrackRequirement):
 			goal.check()
 
 
+# Second Buddhist URV goal
+class HappiestTurns(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_HAPPIEST_TURNS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_HAPPIEST_TURNS"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, turns(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.increment_happiest)
+		
+	def increment_happiest(self, goal, iGameTurn, iPlayer):
+		if players.major().alive().maximum(self.calculate_happiness_rating) == iPlayer:
+			self.increment()
+			goal.check()
+	
+	def calculate_happiness_rating(self, iPlayer):
+		if not player(iPlayer).isAlive():
+			return 0
+		
+		iHappy = player(iPlayer).calculateTotalCityHappiness()
+		iUnhappy = player(iPlayer).calculateTotalCityUnhappiness()
+		
+		return (iHappy * 100) / max(1, iHappy + iUnhappy)
+
+
 # First Taoist URV goal
 class HealthiestTurns(TrackRequirement):
 
@@ -236,11 +264,11 @@ class HealthiestTurns(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.increment_healthiest)
 	
 	def increment_healthiest(self, goal, iGameTurn, iPlayer):
-		if players.major().alive().maximum(self.calculateHealthRating) == iPlayer:
+		if players.major().alive().maximum(self.calculate_health_rating) == iPlayer:
 			self.increment()
 			goal.check()
 		
-	def calculateHealthRating(self, iPlayer):
+	def calculate_health_rating(self, iPlayer):
 		if not player(iPlayer).isAlive():
 			return 0
 		
@@ -248,6 +276,26 @@ class HealthiestTurns(TrackRequirement):
 		iUnhealthy = player(iPlayer).calculateTotalCityUnhealthiness()
 		
 		return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
+
+
+# First Buddhist URV goal
+class PeaceTurns(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_PEACE_TURNS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PEACE_TURNS"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, turns(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.increment_peace_turns)
+		
+	def increment_peace_turns(self, goal, iGameTurn, iPlayer):
+		if players.major().alive().none(lambda p: team(iPlayer).isAtWar(p)):
+			self.increment()
+			goal.check()
 
 
 # First Turkic UHV goal

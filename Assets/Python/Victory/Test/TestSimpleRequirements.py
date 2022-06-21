@@ -3,6 +3,66 @@ from SimpleRequirements import *
 from TestVictoryCommon import *
 
 
+class TestAllAttitude(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AllAttitude(AttitudeTypes.ATTITUDE_PLEASED)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.others = [1, 2, 7, 8, 9, 10, 11, 12]
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AllAttitude(Pleased)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AllAttitude(Pleased)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "pleased or better relations with all other civilizations")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		for iPlayer in self.others:
+			team(iPlayer).meet(0, True)
+			player(iPlayer).AI_setAttitudeExtra(0, -100)
+	
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Pleased or better relations: 0 / 8")
+		finally:
+			for iPlayer in self.others:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_all(self):
+		for iPlayer in self.others:
+			team(iPlayer).meet(0, True)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Pleased or better relations: 8 / 8")
+		finally:
+			for iPlayer in self.others:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestAllowNone(ExtendedTestCase):
 
 	def setUp(self):
@@ -1499,6 +1559,7 @@ class TestWonder(ExtendedTestCase):
 
 
 test_cases = [
+	TestAllAttitude,
 	TestAllowNone,
 	TestAllowOnly,
 	TestAreaNoStateReligion,
