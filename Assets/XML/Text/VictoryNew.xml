@@ -883,6 +883,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPE_TURNS</Tag>
+		<English>the Pope for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1401,6 +1409,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_NO_STATE_RELIGION</Tag>
 		<English>%s1 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPE_TURNS</Tag>
+		<English>Turns as Pope</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

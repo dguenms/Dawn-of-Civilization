@@ -330,6 +330,26 @@ class PiracyGold(TrackRequirement):
 		self.accumulated("combatGold")
 
 
+# First Catholic URV goal
+class PopeTurns(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPE_TURNS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPE_TURNS"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, turns(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.increment_pope)
+	
+	def increment_pope(self, goal, iGameTurn, iPlayer):
+		if game.getSecretaryGeneral(1) == iPlayer:
+			self.increment()
+			goal.check()
+
+
 # Third Viking UHV goal
 class RaidGold(TrackRequirement):
 

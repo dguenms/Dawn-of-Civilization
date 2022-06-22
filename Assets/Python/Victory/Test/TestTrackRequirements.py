@@ -1273,6 +1273,42 @@ class TestPiracyGold(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestPopeTurns(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PopeTurns(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PopeTurns(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PopeTurns(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the Pope for two turns")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_not_pope(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Turns as Pope: 0 / 2")
+	
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestRaidGold(ExtendedTestCase):
 
 	def setUp(self):
@@ -2087,6 +2123,7 @@ test_cases = [
 	TestPeaceTurns,
 	TestPillageCount,
 	TestPiracyGold,
+	TestPopeTurns,
 	TestRaidGold,
 	TestRazeCount,
 	TestResourceTradeGold,
