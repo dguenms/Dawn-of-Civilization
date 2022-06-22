@@ -364,8 +364,51 @@ class RouteConnection(Requirement):
 		
 	def valid(self, plot, evaluator):
 		return self.valid_owner(plot, evaluator) and (plot.isCity() or plot.getRouteType() in self.routes)
+
+
+# Third Protestant URV goal
+class StateReligionPercent(Requirement):
+
+	TYPES = (RELIGION_ADJECTIVE, PERCENTAGE)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE_SURE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_STATE_RELIGION_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_STATE_RELIGION_PERCENT"
+	
+	def __init__(self, iReligion, iPercentage, bSecular=False, **options):
+		Requirement.__init__(self, iReligion, iPercentage, bSecular=bSecular, **options)
 		
+		self.iReligion = iReligion
+		self.iPercentage = iPercentage
 		
+		self.bSecular = bSecular
+	
+	def value(self):
+		iValue = players.major().alive().religion(self.iReligion).count()
+		
+		if self.bSecular:
+			iValue += players.major().alive().where(lambda p: not player(p).isStateReligion()).count()
+		
+		return iValue
+	
+	def required(self):
+		return players.major().alive().count() * self.iPercentage / 100
+	
+	def fulfilled(self, evaluator):
+		return self.value() >= self.required()
+	
+	def format_parameters(self):
+		formatted = Requirement.format_parameters(self)
+		
+		if self.bSecular:
+			formatted[0] += " " + text("TXT_KEY_VICTORY_OR_SECULAR")
+		
+		return formatted
+	
+	def progress_text(self):
+		return "%s: %d / %d" % (text(self.PROGR_KEY, *self.format_parameters()), self.value(), self.required())
+
+
 # First Harappan UHV goal
 class TradeConnection(Requirement):
 

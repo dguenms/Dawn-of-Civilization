@@ -114,6 +114,7 @@ class EnterEraBefore(StateRequirement):
 # Third Roman UHV goal
 # Second Korean UHV goal
 # Second Polish UHV goal
+# First Protestant URV goal
 class FirstDiscover(StateRequirement):
 
 	TYPES = (TECH,)

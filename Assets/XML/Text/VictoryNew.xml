@@ -250,7 +250,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ENSLAVE</Tag>
-		<English>Enslave %s1</English>
+		<English>enslave %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -258,7 +258,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ENTER</Tag>
-		<English></English>
+		<English>enter %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE</Tag>
+		<English>make sure %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -891,6 +899,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_STATE_RELIGION_PERCENT</Tag>
+		<English>at least %s2 of all civilizations are %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -1422,6 +1438,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_STATE_RELIGION_PERCENT</Tag>
+		<English>%s1 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -1737,6 +1761,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_WITH_RELIGION_IN_CITIES</Tag>
 		<English>%s1 with %s2 in their cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OR_SECULAR</Tag>
+		<English>or secular</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -381,6 +381,7 @@ class ResourceCount(ThresholdRequirement):
 # Second Ethiopian UHV goal
 # First Jewish URV goal
 # Second Catholic URV goal
+# Second Protestant URV goal
 class SpecialistCount(ThresholdRequirement):
 
 	TYPES = (SPECIALIST, COUNT)

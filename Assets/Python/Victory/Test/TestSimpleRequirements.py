@@ -1424,7 +1424,116 @@ class TestRouteConnection(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		self.assertEqual(self.goal.checked, True)
+
+
+class TestStateReligionPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = StateReligionPercent(iConfucianism, 25)
+		self.goal = TestGoal()
 		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "StateReligionPercent(Confucianism, 25%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "StateReligionPercent(Confucianism, 25%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "at least 25% of all civilizations are Confucian")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.value(), 0)
+		self.assertEqual(self.requirement.required(), 2)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian civilizations: 0 / 2")
+	
+	def test_fewer(self):
+		player(0).setLastStateReligion(iConfucianism)
+		
+		try:
+			self.assertEqual(self.requirement.value(), 1)
+			self.assertEqual(self.requirement.required(), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian civilizations: 1 / 2")
+		finally:
+			player(0).setLastStateReligion(-1)
+	
+	def test_more(self):
+		players = [0, 1, 2]
+		for iPlayer in players:
+			player(iPlayer).setLastStateReligion(iConfucianism)
+		
+		try:
+			self.assertEqual(self.requirement.value(), 3)
+			self.assertEqual(self.requirement.required(), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Confucian civilizations: 3 / 2")
+		finally:
+			for iPlayer in players:
+				player(iPlayer).setLastStateReligion(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestStateReligionPercentSecular(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = StateReligionPercent(iConfucianism, 25, bSecular=True)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "at least 25% of all civilizations are Confucian or secular")
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.value(), 0)
+		self.assertEqual(self.requirement.required(), 2)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian or secular civilizations: 0 / 2")
+	
+	def test_sufficient_religion(self):
+		player(0).setLastStateReligion(iConfucianism)
+		player(1).setLastStateReligion(iConfucianism)
+		
+		try:
+			self.assertEqual(self.requirement.value(), 2)
+			self.assertEqual(self.requirement.required(), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Confucian or secular civilizations: 2 / 2")
+		finally:
+			player(0).setLastStateReligion(-1)
+			player(1).setLastStateReligion(-1)
+	
+	def test_sufficient_secular(self):
+		player(0).setCivics(iCivicsReligion, iSecularism)
+		player(1).setCivics(iCivicsReligion, iSecularism)
+		
+		try:
+			self.assertEqual(self.requirement.value(), 2)
+			self.assertEqual(self.requirement.required(), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Confucian or secular civilizations: 2 / 2")
+		finally:
+			player(0).setCivics(iCivicsReligion, iAnimism)
+			player(1).setCivics(iCivicsReligion, iAnimism)
 
 
 class TestTradeConnection(ExtendedTestCase):
@@ -1617,6 +1726,8 @@ test_cases = [
 	TestProject,
 	TestRoute,
 	TestRouteConnection,
+	TestStateReligionPercent,
+	TestStateReligionPercentSecular,
 	TestTradeConnection,
 	TestWonder,
 ]
