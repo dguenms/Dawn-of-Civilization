@@ -68,6 +68,7 @@ class BestPopulationPlayer(BestPlayersRequirement):
 # First Arabian UHV goal
 class BestTechPlayer(BestPlayersRequirement):
 
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYER"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
 	
@@ -75,6 +76,30 @@ class BestTechPlayer(BestPlayersRequirement):
 		BestPlayersRequirement.__init__(self, *parameters, **options)
 		
 		self.checked("techAcquired")
+	
+	def metric(self, iPlayer):
+		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
+
+
+# Third Secular URV goal
+class BestTechPlayers(BestPlayersRequirement):
+
+	TYPES = (COUNT,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE_SURE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYERS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
+	
+	def __init__(self, iRequired, subject=SELF, **options):
+		BestPlayersRequirement.__init__(self, iRequired, **options)
+		
+		self.iRequired = iRequired
+		self.subject = subject
+	
+		self.checked("techAcquired")
+	
+	def description(self):
+		return text(self.DESC_KEY, COUNT.format(self.iRequired), self.subject.name.lower())
 	
 	def metric(self, iPlayer):
 		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())

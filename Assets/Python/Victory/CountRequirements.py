@@ -90,6 +90,8 @@ class AveragePopulation(ThresholdRequirement):
 # First Orthodox URV goal
 # Second Catholic URV goal
 # Third Islamic URV goal
+# First Secular URV goal
+# Second Secular URV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -382,6 +384,7 @@ class ResourceCount(ThresholdRequirement):
 # First Jewish URV goal
 # Second Catholic URV goal
 # Second Protestant URV goal
+# Second Secular URV goal
 class SpecialistCount(ThresholdRequirement):
 
 	TYPES = (SPECIALIST, COUNT)

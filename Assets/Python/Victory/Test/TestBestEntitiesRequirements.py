@@ -898,6 +898,110 @@ class TestBestTechPlayer(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestBestTechPlayers(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = BestTechPlayers(3, subject=SECULAR)
+		self.goal = TestGoal()
+		self.evaluator = SecularEvaluator(self.iPlayer)
+		
+		self.goal.evaluator = self.evaluator
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.removed_techs = dict((iPlayer, infos.techs().where(team(iPlayer).isHasTech)) for iPlayer in [0, 1, 2, 7])
+		for iPlayer, techs in self.removed_techs.items():
+			for iTech in techs:
+				team(iPlayer).setHasTech(iTech, False, iPlayer, False, False)
+		
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		for iPlayer, techs in self.removed_techs.items():
+			for iTech in techs:
+				team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
+		
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestTechPlayers(3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestTechPlayers(3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the three most advanced civilizations are secular")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		team(1).setHasTech(iGenetics, True, 1, False, False)
+		team(2).setHasTech(iEconomics, True, 2, False, False)
+		team(7).setHasTech(iLaw, True, 7, False, False)
+		team(8).setHasTech(iProperty, True, 8, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most advanced: Babylonia (9000)",
+				self.FAILURE + "Second most advanced: Harappa (1500)",
+				self.FAILURE + "Third most advanced: China (280)",
+			])
+		finally:
+			team(1).setHasTech(iGenetics, False, 1, False, False)
+			team(2).setHasTech(iEconomics, False, 2, False, False)
+			team(7).setHasTech(iLaw, False, 7, False, False)
+			team(8).setHasTech(iProperty, False, 8, False, False)
+	
+	def test_all(self):
+		team(0).setHasTech(iGenetics, True, 0, False, False)
+		team(1).setHasTech(iEconomics, True, 1, False, False)
+		team(2).setHasTech(iLaw, True, 2, False, False)
+		
+		player(0).setCivics(iCivicsReligion, iSecularism)
+		player(1).setCivics(iCivicsReligion, iSecularism)
+		player(2).setCivics(iCivicsReligion, iSecularism)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most advanced: Egypt (9000)",
+				self.SUCCESS + "Second most advanced: Babylonia (1500)",
+				self.SUCCESS + "Third most advanced: Harappa (280)",
+				"Next most advanced: China (0)",
+			])
+		finally:
+			team(0).setHasTech(iGenetics, False, 0, False, False)
+			team(1).setHasTech(iEconomics, False, 1, False, False)
+			team(2).setHasTech(iLaw, False, 2, False, False)
+			
+			player(0).setCivics(iCivicsReligion, iAnimism)
+			player(1).setCivics(iCivicsReligion, iAnimism)
+			player(2).setCivics(iCivicsReligion, iAnimism)
+	
+	def test_check_tech_acquired_not_evaluator(self):
+		events.fireEvent("techAcquired", iLaw, 1, 1, False)
+		
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_check_tech_acquired_in_evaluator(self):
+		player(1).setCivics(iCivicsReligion, iSecularism)
+		
+		try:
+			events.fireEvent("techAcquired", iLaw, 1, 1, False)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			player(1).setCivics(iCivicsReligion, iAnimism)
+	
+	def test_not_checked_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 test_cases = [
 	TestBestCultureCities,
 	TestBestCultureCity,
@@ -905,4 +1009,5 @@ test_cases = [
 	TestBestPopulationPlayer,
 	TestBestPopulationCity,
 	# TestBestTechPlayer,
+	# TestBestTechPlayers,
 ]

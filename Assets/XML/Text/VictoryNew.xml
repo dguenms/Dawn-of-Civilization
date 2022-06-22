@@ -907,6 +907,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYERS</Tag>
+		<English>the %s1 most advanced civilizations are %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
