@@ -113,6 +113,7 @@ class PowerPercent(PercentRequirement):
 # Second Tibetan UHV goal
 # Third Spanish UHV goal
 # Second Zoroastrian URV goal
+# First Islamic URV goal
 class ReligionSpreadPercent(PercentRequirement):
 
 	TYPES = (RELIGION, PERCENTAGE)

@@ -89,6 +89,7 @@ class AveragePopulation(ThresholdRequirement):
 # First Mexican UHV goal
 # First Orthodox URV goal
 # Second Catholic URV goal
+# Third Islamic URV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
