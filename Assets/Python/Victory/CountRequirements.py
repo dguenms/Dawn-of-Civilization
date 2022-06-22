@@ -87,6 +87,7 @@ class AveragePopulation(ThresholdRequirement):
 # Second Aztec UHV goal
 # First Mughal UHV goal
 # First Mexican UHV goal
+# First Orthodox URV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)

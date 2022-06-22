@@ -753,6 +753,51 @@ class TestMoreReligion(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestNoStateReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = NoStateReligion(iCatholicism)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "NoStateReligion(Catholicism)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "NoStateReligion(Catholicism)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "make sure there are no Catholic civilizations in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Catholic civilizations: 0")
+	
+	def test_one(self):
+		player(1).setLastStateReligion(iCatholicism)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Catholic civilizations: 1")
+		finally:
+			player(1).setLastStateReligion(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestProject(ExtendedTestCase):
 
 	def setUp(self):
@@ -1568,6 +1613,7 @@ test_cases = [
 	TestCultureCover,
 	TestMoreCulture,
 	TestMoreReligion,
+	TestNoStateReligion,
 	TestProject,
 	TestRoute,
 	TestRouteConnection,

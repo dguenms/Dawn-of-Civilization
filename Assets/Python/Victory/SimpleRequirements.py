@@ -222,6 +222,30 @@ class MoreReligion(Requirement):
 		return "%s %s" % (self.progress_text_religion(self.iOurReligion), self.progress_text_religion(self.iOtherReligion))
 
 
+# Third Orthodox URV goal
+class NoStateReligion(Requirement):
+
+	TYPES = (RELIGION_ADJECTIVE,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SIMPLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_NO_STATE_RELIGION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_NO_STATE_RELIGION"
+	
+	def __init__(self, iReligion, **options):
+		Requirement.__init__(self, iReligion, **options)
+		
+		self.iReligion = iReligion
+	
+	def value(self):
+		return players.major().alive().religion(self.iReligion).count()
+	
+	def fulfilled(self, evaluator):
+		return self.value() == 0
+	
+	def progress_text(self):
+		return "%s: %d" % (text(self.PROGR_KEY, *self.format_parameters()), self.value())
+
+
 # Second Russian UHV goal
 class Project(Requirement):
 

@@ -1,31 +1,31 @@
 from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
+
+
+# Second Orthodox URV goal
+class BestCultureCities(BestCitiesRequirement):
+
+	TYPES = (COUNT,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_CULTURE"
 	
+	def metric(self, city):
+		return city.getCulture(city.getOwner())
 
-# First Indonesian UHV goal
-class BestPopulationPlayer(BestPlayersRequirement):
 
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
+# Third Babylonian UHV goal
+# Second Byzantine UHV goal
+class BestCultureCity(BestCityRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_CULTURE"
 	
-	def metric(self, iPlayer):
-		return player(iPlayer).getRealPopulation()
-
-
-# First Arabian UHV goal
-class BestTechPlayer(BestPlayersRequirement):
-
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYER"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
-	
-	def __init__(self, *parameters, **options):
-		BestPlayersRequirement.__init__(self, *parameters, **options)
-		
-		self.checked("techAcquired")
-	
-	def metric(self, iPlayer):
-		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
+	def metric(self, city):
+		return city.getCulture(city.getOwner())
 	
 
 # Third Hindu URV goal
@@ -53,15 +53,28 @@ class BestPopulationCity(BestCityRequirement):
 	
 	def metric(self, city):
 		return city.getPopulation()
-
-
-# Third Babylonian UHV goal
-# Second Byzantine UHV goal
-class BestCultureCity(BestCityRequirement):
-
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_CULTURE"
 	
-	def metric(self, city):
-		return city.getCulture(city.getOwner())
+
+# First Indonesian UHV goal
+class BestPopulationPlayer(BestPlayersRequirement):
+
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
+	
+	def metric(self, iPlayer):
+		return player(iPlayer).getRealPopulation()
+
+
+# First Arabian UHV goal
+class BestTechPlayer(BestPlayersRequirement):
+
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYER"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
+	
+	def __init__(self, *parameters, **options):
+		BestPlayersRequirement.__init__(self, *parameters, **options)
+		
+		self.checked("techAcquired")
+	
+	def metric(self, iPlayer):
+		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
