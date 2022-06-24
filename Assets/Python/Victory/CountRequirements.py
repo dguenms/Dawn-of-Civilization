@@ -92,6 +92,8 @@ class AveragePopulation(ThresholdRequirement):
 # Third Islamic URV goal
 # First Secular URV goal
 # Second Secular URV goal
+# First Pagan URV goal
+# Third Olympian URV goal
 class BuildingCount(ThresholdRequirement):
 
 	TYPES = (BUILDING, COUNT)
@@ -253,6 +255,19 @@ class CultureLevelCityCount(ThresholdRequirement):
 		return list(self.progress_entries(evaluator.iPlayer))
 
 
+# Third Druidist URV goal
+class FeatureCount(ThresholdRequirement):
+
+	TYPES = (FEATURE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_FEATURE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_FEATURE_COUNT"
+	
+	def value(self, iPlayer, iFeature):
+		return plots.owner(iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
+
+
 # First Brazilian UHV goal
 # Third Brazilian UHV goal
 class ImprovementCount(ThresholdRequirement):
@@ -312,6 +327,19 @@ class OpenBorderCount(ThresholdRequirement):
 		return [civilizations]
 
 
+# Third Bon URV goal
+class PeakCount(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_PEAK_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PEAK_COUNT"
+	
+	def value(self, iPlayer):
+		return plots.owner(iPlayer).where(CyPlot.isPeak).count()
+
+
 # First Polish UHV goal
 class PopulationCityCount(ThresholdRequirement):
 
@@ -368,6 +396,11 @@ class PopulationCount(ThresholdRequirement):
 # Second Portuguese UHV goal
 # Third Dutch UHV goal
 # First Zoroastrian URV goal
+# Third Atua URV goal
+# Third Mazdaist URV goal
+# Third Rodnovery URV goal
+# Third Tengri URV goal
+# Third Yoruba URV goal
 class ResourceCount(ThresholdRequirement):
 
 	TYPES = (RESOURCE, COUNT)
@@ -410,6 +443,19 @@ class SpecialistCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, SPECIALIST.format(self.iSpecialist, bPlural=True)), self.progress_value(evaluator))
 
 
+# Third Atua URV goal
+class TerrainCount(ThresholdRequirement):
+
+	TYPES = (TERRAIN, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TERRAIN_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TERRAIN_COUNT"
+	
+	def value(self, iPlayer, iTerrain):
+		return plots.owner(iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
+
+
 # Third Confucian URV goal
 class UnitCombatCount(ThresholdRequirement):
 
@@ -449,6 +495,18 @@ class UnitCount(ThresholdRequirement):
 
 	def progress_text(self, **options):
 		return Requirement.progress_text(self, bPlural=self.bPlural, **options)
+
+
+# Third Asatru URV goal
+class UnitLevelCount(ThresholdRequirement):
+
+	TYPES = (COUNT, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIT_LEVEL_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_UNIT_LEVEL_COUNT"
+	
+	def value(self, iPlayer, iLevel):
+		return units.owner(iPlayer).where(lambda unit: unit.getLevel() >= iLevel).count()
 
 
 # Second Holy Roman UHV goal

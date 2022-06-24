@@ -65,6 +65,24 @@ class BestPopulationPlayer(BestPlayersRequirement):
 		return player(iPlayer).getRealPopulation()
 
 
+# Third Mugyo URV goal
+class BestSpecialistCity(BestCityRequirement):
+
+	TYPES = (SPECIALIST,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_SPECIALIST_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_SPECIALIST"
+	
+	def __init__(self, city, iSpecialist, **options):
+		BestCityRequirement.__init__(self, city, iSpecialist, **options)
+		
+		self.iSpecialist = iSpecialist
+	
+	def metric(self, city):
+		return city.getFreeSpecialistCount(self.iSpecialist)
+
+
 # First Arabian UHV goal
 class BestTechPlayer(BestPlayersRequirement):
 
@@ -103,3 +121,25 @@ class BestTechPlayers(BestPlayersRequirement):
 	
 	def metric(self, iPlayer):
 		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())
+
+
+# Third Baalist URV goal
+class BestTradeIncomeCity(BestCityRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TRADE_INCOME_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TRADE_INCOME"
+	
+	def metric(self, city):
+		return city.getTradeYield(YieldTypes.YIELD_COMMERCE)
+
+
+# Third Anunnaki URV goal
+class BestWonderCity(BestCityRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_WONDER_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_WONDERS"
+	
+	def metric(self, city):
+		return infos.buildings().count(lambda iBuilding: city.isHasRealBuilding(iBuilding) and isWonder(iBuilding))

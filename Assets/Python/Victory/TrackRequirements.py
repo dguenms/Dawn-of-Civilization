@@ -42,6 +42,42 @@ class BrokeredPeace(TrackRequirement):
 		self.incremented("peaceBrokered")
 
 
+# Third Vedic URV goal
+class CelebrateTurns(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CELEBRATE_TURNS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CELEBRATE_TURNS"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, turns(iRequired), **options)
+		
+		self.handle("BeginPlayerTurn", self.accumulate_celebrate_turns)
+		
+	def accumulate_celebrate_turns(self, goal, iGameTurn, iPlayer):
+		iCelebratingCities = cities.owner(iPlayer).count(CyCity.isWeLoveTheKingDay)
+		
+		if iCelebratingCities > 0:
+			self.accumulate(iCelebratingCities)
+			goal.check()
+
+
+# Third Maya Teotl URV goal
+class CombatFood(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_GAIN"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COMBAT_FOOD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_COMBAT_FOOD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, scale(iRequired), **options)
+		
+		self.accumulated("combatFood")
+
+
 # First Moorish UHV goal
 # Second Dutch UHV goal
 class ConqueredCities(TrackRequirement):
@@ -400,6 +436,21 @@ class ResourceTradeGold(TrackRequirement):
 		iGold = players.major().alive().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
 		self.accumulate(iGold)
 		goal.check()
+
+
+# Third Aztec Teotl URV goal
+class SacrificeHappiness(TrackRequirement):
+
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SACRIFICE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SACRIFICE_HAPPINESS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SACRIFICE_HAPPINESS"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.incremented("sacrificeHappiness")
 
 
 # First Russian UHV goal

@@ -564,6 +564,78 @@ class TestCultureCover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestGoldPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = GoldPercent(50)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "GoldPercent(50%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "GoldPercent(50%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "at least 50% as much gold as all other civilizations combined")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		player(0).setGold(50)
+		player(1).setGold(100)
+		player(2).setGold(100)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold: 50 / 200")
+		finally:
+			for iPlayer in [0, 1, 2]:
+				player(iPlayer).setGold(0)
+	
+	def test_more(self):
+		player(0).setGold(150)
+		player(1).setGold(100)
+		player(2).setGold(100)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold: 150 / 200")
+		finally:
+			for iPlayer in [0, 1, 2]:
+				player(iPlayer).setGold(0)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		player(0).setGold(100)
+		player(1).setGold(100)
+		player(2).setGold(300)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold: 200 / 300")
+		finally:
+			for iPlayer in [0, 1, 2]:
+				player(iPlayer).setGold(0)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestMoreCulture(ExtendedTestCase):
 
 	def setUp(self):
@@ -744,6 +816,77 @@ class TestMoreReligion(ExtendedTestCase):
 		try:
 			self.assertEqual(requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Orthodox cities: 0 Catholic cities: 0")
+		finally:
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestNoReligionPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = NoReligionPercent(50)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "NoReligionPercent(50%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "NoReligionPercent(50%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "no more than 50% of your cities to have a religion")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		city1, city2, city3, city4 = cities = TestCities.num(4)
+		
+		city1.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Cities with no religion: 3 / 4")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2, city3, city4 = cities = TestCities.num(4)
+		
+		city1.setHasReligion(iHinduism, True, False, False)
+		city2.setHasReligion(iBuddhism, True, False, False)
+		city3.setHasReligion(iConfucianism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cities with no religion: 1 / 4")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		city1, city2, city3, city4 = cities = TestCities.owners(0, 0, 1, 1)
+		
+		city1.setHasReligion(iHinduism, True, False, False)
+		city3.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Cities with no religion: 2 / 4")
 		finally:
 			cities.kill()
 	
@@ -1720,8 +1863,10 @@ test_cases = [
 	TestCommunist,
 	TestControl,
 	TestCultureCover,
+	TestGoldPercent,
 	TestMoreCulture,
 	TestMoreReligion,
+	TestNoReligionPercent,
 	TestNoStateReligion,
 	TestProject,
 	TestRoute,

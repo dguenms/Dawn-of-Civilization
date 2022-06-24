@@ -167,6 +167,33 @@ class CultureCover(Requirement):
 		return self.area.create().all_if_any(lambda p: p.getOwner() in evaluator)
 
 
+# Third Inti URV goal
+class GoldPercent(Requirement):
+
+	TYPES = (PERCENTAGE,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_GOLD_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_GOLD_PERCENT"
+	
+	def __init__(self, iPercentage, **options):
+		Requirement.__init__(self, iPercentage, **options)
+		
+		self.iPercentage = iPercentage
+	
+	def value(self, evaluator):
+		return evaluator.sum(lambda p: player(p).getGold())
+	
+	def required(self, evaluator):
+		return players.major().alive().without(evaluator.players()).sum(lambda p: player(p).getGold())
+	
+	def fulfilled(self, evaluator):
+		return self.value(evaluator) >= self.required(evaluator) * self.iPercentage / 100
+	
+	def progress(self, evaluator):
+		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, *self.format_parameters()), self.value(evaluator), self.required(evaluator))
+
+
 # Third Ottoman UHV goal
 class MoreCulture(Requirement):
 
@@ -220,6 +247,33 @@ class MoreReligion(Requirement):
 	
 	def progress_text(self, **options):
 		return "%s %s" % (self.progress_text_religion(self.iOurReligion), self.progress_text_religion(self.iOtherReligion))
+
+
+# Second Pagan URV goal
+class NoReligionPercent(Requirement):
+
+	TYPES = (PERCENTAGE,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_NO_RELIGION_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_NO_RELIGION_PERCENT"
+	
+	def __init__(self, iPercentage, **options):
+		Requirement.__init__(self, iPercentage, **options)
+		
+		self.iPercentage = iPercentage
+	
+	def value(self, evaluator):
+		return evaluator.sum(lambda p: cities.owner(p).where(lambda city: city.getReligionCount() == 0).count())
+	
+	def required(self, evaluator):
+		return evaluator.sum(lambda p: player(p).getNumCities())
+	
+	def fulfilled(self, evaluator):
+		return self.value(evaluator) >= self.required(evaluator) * self.iPercentage / 100
+	
+	def progress(self, evaluator):
+		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, *self.format_parameters()), self.value(evaluator), self.required(evaluator))
 
 
 # Third Orthodox URV goal

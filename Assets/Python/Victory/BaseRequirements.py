@@ -246,7 +246,7 @@ class BestEntitiesRequirement(Requirement):
 		return self.fulfilled(evaluator) and self.ranked(evaluator)[self.iNumEntities] or next(entity for entity in self.ranked(evaluator)[self.iNumEntities:] if self.valid_entity(entity, evaluator))
 	
 	def rank_word(self, iRank):
-		word = text(self.PROGR_KEY)
+		word = text(self.PROGR_KEY, *self.format_parameters())
 		if iRank > 0:
 			word = "%s %s" % (ordinal_word(iRank+1), word)
 		return word
@@ -256,13 +256,13 @@ class BestEntitiesRequirement(Requirement):
 	
 	def next_entity_progress(self, evaluator, entity):
 		next_key = self.valid_entity(entity, evaluator) and "TXT_KEY_VICTORY_PROGRESS_OUR_NEXT" or "TXT_KEY_VICTORY_PROGRESS_NEXT"
-		return text(next_key, text(self.PROGR_KEY), self.entity_name(entity), self.metric(entity))
+		return text(next_key, text(self.PROGR_KEY, *self.format_parameters()), self.entity_name(entity), self.metric(entity))
 	
 	def progress(self, evaluator):
 		required_ranks = self.required_ranks(evaluator)
 		
 		if not required_ranks:
-			return ["%s %s: %s (0)" % (indicator(False), capitalize(text(self.PROGR_KEY)), self.entity_name(None))]
+			return ["%s %s: %s (0)" % (indicator(False), capitalize(text(self.PROGR_KEY, *self.format_parameters())), self.entity_name(None))]
 		
 		entries = [self.entity_progress(evaluator, iRank, entity) for iRank, entity in enumerate(required_ranks) if entity is not None]
 		
@@ -305,9 +305,11 @@ class BestCityRequirement(BestCitiesRequirement):
 
 	GLOBAL_TYPES = (CITY,)
 	
-	def __init__(self, city, **options):
+	def __init__(self, city, *parameters, **options):
 		BestCitiesRequirement.__init__(self, **options)
-		Requirement.__init__(self, city, 1, **options)
+		
+		parameters = (city,) + parameters + (1,)
+		Requirement.__init__(self, *parameters, **options)
 		
 		self.required_city = city
 

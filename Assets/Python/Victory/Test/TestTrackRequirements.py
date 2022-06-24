@@ -145,6 +145,211 @@ class TestBrokeredPeace(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCelebrateTurns(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CelebrateTurns(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CelebrateTurns(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CelebrateTurns(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "your cities celebrate for two turns")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Turns of celebration: 0 / 2")
+		
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_fewer(self):
+		city = TestCities.one()
+		city.setWeLoveTheKingDay(True)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Turns of celebration: 1 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city1, city2 = cities = TestCities.num(2)
+		city1.setWeLoveTheKingDay(True)
+		city2.setWeLoveTheKingDay(True)
+		
+		try:
+			for iTurn in range(2):
+				events.fireEvent("BeginPlayerTurn", iTurn, self.iPlayer)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Turns of celebration: 4 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			cities.kill()
+	
+	def test_other_owner(self):
+		city = TestCities.one(1)
+		city.setWeLoveTheKingDay(True)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, 0)
+			events.fireEvent("BeginPlayerTurn", 0, 1)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Turns of celebration: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		city.setWeLoveTheKingDay(True)
+		
+		try:
+			for iTurn in range(2):
+				events.fireEvent("BeginPlayerTurn", iTurn, 1)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Turns of celebration: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
+class TestCombatFood(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CombatFood(10)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CombatFood(10)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CombatFood(10)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "10 food from combat")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		unit = makeUnit(1, iSwordsman, (10, 10))
+		
+		try:
+			events.fireEvent("combatFood", 0, unit, 5)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Food from combat: 5 / 10")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			unit.kill(False, -1)
+	
+	def test_more(self):
+		unit = makeUnit(1, iSwordsman, (10, 10))
+		
+		try:
+			events.fireEvent("combatFood", 0, unit, 20)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 20)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Food from combat: 20 / 10")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			unit.kill(False, -1)
+	
+	def test_different_player(self):
+		unit = makeUnit(2, iSwordsman, (10, 10))
+		
+		try:
+			events.fireEvent("combatFood", 1, unit, 10)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Food from combat: 0 / 10")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			unit.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		unit = makeUnit(2, iSwordsman, (10, 10))
+		
+		try:
+			events.fireEvent("combatFood", 1, unit, 10)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 10)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Food from combat: 10 / 10")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			unit.kill(False, -1)
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestConqueredCities(ExtendedTestCase):
 
 	def setUp(self):
@@ -1566,6 +1771,103 @@ class TestResourceTradeGold(ExtendedTestCase):
 			team(1).setVassal(0, False, False)
 
 
+class TestSacrificeHappiness(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = SacrificeHappiness(2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "SacrificeHappiness(2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "SacrificeHappiness(2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two slaves")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("sacrificeHappiness", 0, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Slaves sacrificed: 1 / 2")
+		
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		
+		try:
+			for _ in range(3):
+				events.fireEvent("sacrificeHappiness", 0, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Slaves sacrificed: 3 / 2")
+
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_different_player(self):
+		city = TestCities.one(1)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("sacrificeHappiness", 1, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Slaves sacrificed: 0 / 2")
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("sacrificeHappiness", 1, city)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Slaves sacrificed: 2 / 2")
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestSettledCities(ExtendedTestCase):
 
 	def setUp(self):
@@ -2109,6 +2411,8 @@ class TestTradeGold(ExtendedTestCase):
 test_cases = [
 	TestAcquiredCities,
 	TestBrokeredPeace,
+	TestCelebrateTurns,
+	TestCombatFood,
 	TestConqueredCities,
 	TestConqueredCitiesInside,
 	TestConqueredCitiesOutside,
@@ -2127,6 +2431,7 @@ test_cases = [
 	TestRaidGold,
 	TestRazeCount,
 	TestResourceTradeGold,
+	TestSacrificeHappiness,
 	TestSettledCities,
 	TestSettledCitiesArea,
 	TestSlaveTradeGold,

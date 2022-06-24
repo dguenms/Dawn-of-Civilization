@@ -1227,6 +1227,81 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestFeatureCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = FeatureCount(iForest, 20)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FeatureCount(Forest, 20)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FeatureCount(Forest, 20)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "20 Forest tiles")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(10) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(30)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 10)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Forest tiles: 10 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_more(self):
+		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 30)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Forest tiles: 30 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+	
+		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
+		for plot in controlled:
+			plot.setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 30)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Forest tiles: 30 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestImprovementCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -1451,6 +1526,81 @@ class TestOpenBorderCountCivs(ExtendedTestCase):
 		finally:
 			for iPlayer in players:
 				team(0).setOpenBorders(iPlayer, False)
+
+
+class TestPeakCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = PeakCount(20)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "PeakCount(20)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "PeakCount(20)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "20 peaks")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		controlled = plots_.all().where(CyPlot.isPeak).limit(10) + plots_.all().where(lambda plot: not plot.isPeak()).limit(30)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 10)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Peaks: 10 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_more(self):
+		controlled = plots_.all().where(CyPlot.isPeak).limit(30) + plots_.all().where(lambda plot: not plot.isPeak()).limit(10)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 30)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Peaks: 30 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		controlled = plots_.all().where(CyPlot.isPeak).limit(30) + plots_.all().where(lambda plot: not plot.isPeak()).limit(10)
+		for plot in controlled:
+			plot.setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 30)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Peaks: 30 / 20")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestPopulationCityCount(ExtendedTestCase):
@@ -1843,6 +1993,82 @@ class TestSpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestTerrainCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = TerrainCount(iOcean, 50)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "TerrainCount(Ocean, 50)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "TerrainCount(Ocean, 50)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "50 Ocean tiles")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(40) + plots_.all().land().limit(60)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 40)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Ocean tiles: 40 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_more(self):
+		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots_.all().land().limit(40)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 60)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots_.all().land().limit(40)
+		for plot in controlled:
+			plot.setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 60)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestUnitCombatCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2082,6 +2308,85 @@ class TestUnitCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestUnitLevelCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = UnitLevelCount(3, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "UnitLevelCount(3, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "UnitLevelCount(3, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two level three units")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		low_level_unit = makeUnit(0, iSwordsman, (10, 10))
+		high_level_unit = makeUnit(0, iSwordsman, (10, 10))
+		
+		high_level_unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three units: 1 / 2")
+		finally:
+			low_level_unit.kill(False, -1)
+			high_level_unit.kill(False, -1)
+	
+	def test_more(self):
+		units = makeUnits(0, iSwordsman, (10, 10), 3)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Level three units: 3 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		units = makeUnits(1, iSwordsman, (10, 10), 2)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Level three units: 2 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestVassalCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2308,15 +2613,19 @@ test_cases = [
 	TestControlledResourceCount,
 	TestCultureCity,
 	TestCultureLevelCityCount,
+	TestFeatureCount,
 	TestImprovementCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,
+	TestPeakCount,
 	TestPopulationCityCount,
 	TestPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
+	TestTerrainCount,
 	TestUnitCombatCount,
 	TestUnitCount,
+	TestUnitLevelCount,
 	TestVassalCount,
 	TestVassalCountCivs,
 	TestVassalCountStateReligion,

@@ -126,6 +126,13 @@ class EventHandlerRegistry(object):
 		
 		return cityRazed
 	
+	def combatFood(self, goal, applicable, func):
+		def combatFood((iPlayer, unit, iFood)):
+			if applicable(goal, iPlayer):
+				func(goal, iFood)
+		
+		return combatFood
+	
 	def combatGold(self, goal, applicable, func):
 		def combatGold((iPlayer, unit, iGold)):
 			if applicable(goal, iPlayer):
@@ -202,6 +209,13 @@ class EventHandlerRegistry(object):
 				func(goal, iProject)
 		
 		return projectBuilt
+	
+	def sacrificeHappiness(self, goal, applicable, func):
+		def sacrificeHappiness((iPlayer, city)):
+			if applicable(goal, iPlayer):
+				func(goal)
+		
+		return sacrificeHappiness
 	
 	def techAcquired(self, goal, applicable, func):
 		def techAcquired((iTech, iTeam, iPlayer, bAnnounce)):

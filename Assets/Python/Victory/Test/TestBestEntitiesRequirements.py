@@ -772,6 +772,75 @@ class TestBestPopulationPlayer(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestBestSpecialistCity(ExtendedTestCase):
+	
+	def setUp(self):
+		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = BestSpecialistCity(self.city, iSpecialistGreatScientist)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestSpecialistCity(Test City, Great Scientist)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestSpecialistCity(Test City, Great Scientist)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Test City the city with the most settled Great Scientist in the world")
+	
+	def test_area(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		city1, city2 = cities = TestCities.owners(0, 1)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most settled Great Scientist: Second (2)",
+				"Our next most settled Great Scientist: First (1)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2 = cities = TestCities.owners(0, 1)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most settled Great Scientist: First (2)",
+				"Next most settled Great Scientist: Second (1)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestBestTechPlayer(ExtendedTestCase):
 
 	def setUp(self):
@@ -1002,12 +1071,223 @@ class TestBestTechPlayers(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestBestTradeIncomeCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = BestTradeIncomeCity(self.city)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestTradeIncomeCity(Test City)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestTradeIncomeCity(Test City)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Test City the city with the highest trade income in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [
+			self.FAILURE + "Highest trade income: No city (0)"
+		])
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestBestWonderCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = BestWonderCity(self.city)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestWonderCity(Test City)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestWonderCity(Test City)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Test City the city with the most wonders in the world")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [
+			self.FAILURE + "Most wonders: No city (0)"
+		])
+	
+	def test_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setHasRealBuilding(iPyramids, True)
+		our_city.setHasRealBuilding(iHangingGardens, True)
+		
+		their_city.setName("Second", False)
+		their_city.setHasRealBuilding(iParthenon, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most wonders: First (2)",
+				"Next most wonders: Second (1)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_city_tied(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setHasRealBuilding(iPyramids, True)
+		
+		their_city.setName("Second", False)
+		their_city.setHasRealBuilding(iParthenon, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most wonders: First (1)",
+				"Next most wonders: Second (1)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_not_best_city(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setHasRealBuilding(iPyramids, True)
+		
+		their_city.setName("Second", False)
+		their_city.setHasRealBuilding(iHangingGardens, True)
+		their_city.setHasRealBuilding(iParthenon, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most wonders: Second (2)",
+				"Our next most wonders: First (1)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_best_different_location(self):
+		our_city, their_city = cities = TestCities.owners(-1, 0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setHasRealBuilding(iPyramids, True)
+		our_city.setHasRealBuilding(iHangingGardens, True)
+		
+		their_city.setName("Second", False)
+		their_city.setHasRealBuilding(iParthenon, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.FAILURE + "Most wonders: First (2)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		vassal_city, our_city, their_city = cities = TestCities.owners(1, 0, 2)
+		
+		team(1).setVassal(0, True, False)
+		
+		vassal_city.setName("First", False)
+		vassal_city.setHasRealBuilding(iPyramids, True)
+		vassal_city.setHasRealBuilding(iHangingGardens, True)
+		vassal_city.setHasRealBuilding(iParthenon, True)
+		
+		our_city.setName("Second", False)
+		our_city.setHasRealBuilding(iColossus, True)
+		
+		their_city.setName("Third", False)
+		their_city.setHasRealBuilding(iGreatLibrary, True)
+		their_city.setHasRealBuilding(iGreatLighthouse, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), [
+				self.SUCCESS + "Most wonders: First (3)",
+				"Next most wonders: Third (2)",
+			])
+		finally:
+			team(1).setVassal(0, False, False)
+			cities.kill()
+	
+	def test_only_counts_wonders(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setName("First", False)
+		our_city.setHasRealBuilding(iPyramids, True)
+		
+		their_city.setName("Second", False)
+		their_city.setHasRealBuilding(iGranary, True)
+		their_city.setHasRealBuilding(iLibrary, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most wonders: First (1)",
+				"Next most wonders: Second (0)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 test_cases = [
 	TestBestCultureCities,
 	TestBestCultureCity,
 	TestBestPopulationCities,
 	TestBestPopulationPlayer,
 	TestBestPopulationCity,
+	TestBestSpecialistCity,
 	# TestBestTechPlayer,
 	# TestBestTechPlayers,
+	TestBestTradeIncomeCity,
+	TestBestWonderCity,
 ]

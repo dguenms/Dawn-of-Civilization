@@ -108,6 +108,7 @@ class CityDifferentGreatPeopleCount(CityRequirement):
 # First Dutch UHV goal
 # First German UHV goal
 # Second Islamic URV goal
+# Third Shinto URV goal
 class CitySpecialistCount(CityRequirement):
 
 	TYPES = (CITY, SPECIALIST, COUNT)

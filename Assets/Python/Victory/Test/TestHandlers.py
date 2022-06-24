@@ -288,6 +288,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_combat_food(self):
+		onCombatFood = self.get("combatFood", self.accumulate)
+		
+		unit = makeUnit(2, iSwordsman, (20, 20))
+		
+		try:
+			onCombatFood((1, unit, 10))
+			self.assertEqual(self.iCount, 0)
+			
+			onCombatFood((0, unit, 10))
+			self.assertEqual(self.iCount, 10)
+		finally:
+			unit.kill(False, -1)
+	
 	def test_combat_gold(self):
 		onCombatGold = self.get("combatGold", self.accumulate)
 		
@@ -418,6 +432,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			
 			onProjectBuilt((our_city, iTheInternet))
 			self.assertEqual(self.argument, (self.goal, iTheInternet))
+		finally:
+			cities.kill()
+	
+	def test_sacrifice_happiness(self):
+		onSacrificeHappiness = self.get("sacrificeHappiness", self.increment)
+		
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			onSacrificeHappiness((1, their_city))
+			self.assertEqual(self.iCount, 0)
+			
+			onSacrificeHappiness((0, our_city))
+			self.assertEqual(self.iCount, 1)
 		finally:
 			cities.kill()
 	

@@ -388,6 +388,32 @@ class TestEra(ExtendedTestCase):
 		self.assertEqual(ERA.area(iRenaissance), None)
 
 
+class TestFeature(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(FEATURE), "Feature")
+	
+	def test_repr(self):
+		self.assertEqual(repr(FEATURE), "Feature")
+	
+	def test_equal(self):
+		self.assertEqual(FEATURE, InfoType("Feature", infos.feature))
+	
+	def test_pickle(self):
+		self.assertPickleable(FEATURE)
+	
+	def test_validate(self):
+		self.assertEqual(FEATURE.validate(iForest), True)
+		self.assertEqual(FEATURE.validate("Forest"), False)
+	
+	def test_format(self):
+		self.assertEqual(FEATURE.format(iForest), "Forest")
+		self.assertEqual(FEATURE.format_repr(iForest), "Forest")
+	
+	def test_area(self):
+		self.assertEqual(FEATURE.area(iForest), None)
+
+
 class TestImprovement(ExtendedTestCase):
 
 	def test_str(self):
@@ -628,6 +654,32 @@ class TestTech(ExtendedTestCase):
 		self.assertEqual(TECH.area(iEngineering), None)
 
 
+class TestTerrain(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(TERRAIN), "Terrain")
+	
+	def test_repr(self):
+		self.assertEqual(repr(TERRAIN), "Terrain")
+	
+	def test_equal(self):
+		self.assertEqual(TERRAIN, InfoType("Terrain", infos.terrain))
+	
+	def test_pickle(self):
+		self.assertPickleable(TERRAIN)
+	
+	def test_validate(self):
+		self.assertEqual(TERRAIN.validate(iOcean), True)
+		self.assertEqual(TERRAIN.validate("Ocean"), False)
+	
+	def test_format(self):
+		self.assertEqual(TERRAIN.format(iOcean), "Ocean")
+		self.assertEqual(TERRAIN.format_repr(iOcean), "Ocean")
+	
+	def test_area(self):
+		self.assertEqual(TERRAIN.area(iOcean), None)
+
+
 class TestUnit(ExtendedTestCase):
 
 	def test_str(self):
@@ -694,6 +746,7 @@ test_cases = [
 	TestCount,
 	TestCultureLevel,
 	TestEra,
+	TestFeature,
 	TestImprovement,
 	TestPercentage,
 	TestProject,
@@ -702,6 +755,7 @@ test_cases = [
 	TestResource,
 	TestRoutes,
 	TestSpecialist,
+	TestTerrain,
 	TestTech,
 	TestUnit,
 	TestUnitCombat,

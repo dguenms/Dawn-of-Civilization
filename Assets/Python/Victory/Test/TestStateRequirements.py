@@ -482,6 +482,124 @@ class TestFirstDiscover(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestFirstGreatPerson(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = FirstGreatPerson(iSpecialistGreatScientist)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FirstGreatPerson(Great Scientist)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FirstGreatPerson(Great Scientist)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Great Scientist")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_first(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_scientist = makeUnit(0, iGreatScientist, (10, 10))
+		their_scientist = makeUnit(1, iGreatScientist, (11, 11))
+		
+		try:
+			events.fireEvent("greatPersonBorn", our_scientist, 0, our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Great Scientist")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			
+			self.assertEqual(self.goal.checked, True)
+			
+			events.fireEvent("greatPersonBorn", their_scientist, 1, their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.state, SUCCESS)
+		finally:
+			our_scientist.kill(False, -1)
+			their_scientist.kill(False, -1)
+			cities.kill()
+	
+	def test_not_first(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_scientist = makeUnit(0, iGreatScientist, (10, 10))
+		their_scientist = makeUnit(1, iGreatScientist, (11, 11))
+		
+		try:
+			events.fireEvent("greatPersonBorn", their_scientist, 1, their_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Great Scientist")
+			self.assertEqual(self.requirement.state, FAILURE)
+			
+			self.assertEqual(self.goal.failed, True)
+			
+			events.fireEvent("greatPersonBorn", our_scientist, 0, our_city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.state, FAILURE)
+		finally:
+			our_scientist.kill(False, -1)
+			their_scientist.kill(False, -1)
+			cities.kill()
+	
+	def test_different_unit(self):
+		city = TestCities.one()
+		merchant = makeUnit(0, iGreatMerchant, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", merchant, 0, city)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Great Scientist")
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+			merchant.kill(False, -1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		scientist = makeUnit(1, iGreatScientist, (10, 10))
+		
+		try:
+			events.fireEvent("greatPersonBorn", scientist, 1, city)
+			
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Great Scientist")
+			self.assertEqual(self.requirement.state, SUCCESS)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			scientist.kill(False, -1)
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestFirstSettle(ExtendedTestCase):
 
 	def setUp(self):
@@ -945,6 +1063,7 @@ test_cases = [
 	TestDiscover,
 	TestEnterEraBefore,
 	TestFirstDiscover,
+	TestFirstGreatPerson,
 	TestFirstSettle,
 	TestNoCityConquered,
 	TestNoCityLost,
