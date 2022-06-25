@@ -1953,9 +1953,9 @@ PlayerTypes CyCity::findHighestCulture()
 	return m_pCity ? m_pCity->findHighestCulture() : NO_PLAYER;
 }
 
-int CyCity::calculateCulturePercent(int /*PlayerTypes*/ eIndex)
+int CyCity::calculateCulturePercent(int eCivilization)
 {
-	return m_pCity ? m_pCity->calculateCulturePercent((PlayerTypes)eIndex) : -1;
+	return m_pCity ? m_pCity->calculateCulturePercent((CivilizationTypes)eCivilization) : -1;
 }
 
 int CyCity::calculateTeamCulturePercent(int /*TeamTypes*/ eIndex)

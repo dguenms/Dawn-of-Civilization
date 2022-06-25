@@ -4280,36 +4280,63 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 	pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
 
+	log(CvWString::format(L"parse nationality help for %s", pHeadSelectedCity->getName().c_str()));
+
 	if (pHeadSelectedCity != NULL)
 	{
 		int iTotalCulture = 0;
+		int iCulture;
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (true) //GET_PLAYER((PlayerTypes)iI).isAlive())
+			PlayerTypes ePlayer = (PlayerTypes)iI;
+			CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+
+			if (GET_PLAYER(ePlayer).isAlive() && eCivilization != NO_CIVILIZATION)
 			{
-				iTotalCulture += (pHeadSelectedCity->plot()->isCore((PlayerTypes)iI) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture((PlayerTypes)iI);
-				iCulturePercent = pHeadSelectedCity->calculateOverallCulturePercent((PlayerTypes)iI);
+				iCulture = (pHeadSelectedCity->plot()->isCore(ePlayer) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
+				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
+				iTotalCulture += iCulture;
 
 				if (iCulturePercent > 0)
 				{
-					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER((PlayerTypes)iI).getPlayerTextColorR(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorG(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorB(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorA(), GET_PLAYER((PlayerTypes)iI).getCivilizationAdjective());
+					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER(ePlayer).getPlayerTextColorR(), GET_PLAYER(ePlayer).getPlayerTextColorG(), GET_PLAYER(ePlayer).getPlayerTextColorB(), GET_PLAYER(ePlayer).getPlayerTextColorA(), GET_PLAYER(ePlayer).getCivilizationAdjective());
+					szBuffer.append(szTempBuffer);
+				}
+			}
+		}
+
+		for (iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+		{
+			CivilizationTypes eCivilization = (CivilizationTypes)iI;
+
+			if (!isCivAlive(eCivilization))
+			{
+				iCulture = (eCivilization < NUM_CIVS && pHeadSelectedCity->plot()->isCore(eCivilization) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
+				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
+				iTotalCulture += iCulture;
+
+				if (iCulturePercent > 0)
+				{
+					PlayerColorTypes ePlayerColor = (PlayerColorTypes)GC.getCivilizationInfo(eCivilization).getDefaultPlayerColor();
+					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, COLORS(GC.getPlayerColorInfo(ePlayerColor).getTextColorType()), GC.getCivilizationInfo(eCivilization).getAdjective());
 					szBuffer.append(szTempBuffer);
 				}
 			}
 		}
 
 		// Leoreth: stability effects of cultural control
-		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
+		int iOwnCulture = (pHeadSelectedCity->plot()->isCore(pHeadSelectedCity->getOwner()) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE());
+		int iOwnCulturePercent = iTotalCulture == 0 ? 100 : 100 * iOwnCulture / iTotalCulture;
 
 		if (pHeadSelectedCity->getCivilizationType() != PERSIA)
 		{
-			if (iOwnCulture < 20)
+			if (iOwnCulturePercent < 20)
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
 			}
-			else if (iOwnCulture < 50)
+			else if (iOwnCulturePercent < 50)
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
