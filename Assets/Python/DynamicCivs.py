@@ -2137,7 +2137,7 @@ def leader(iPlayer):
 		if bEmpire: return iHayamWuruk
 		
 	elif iCiv == iMoors:
-		if not capital in plots.rectangle(tIberia): return iYaqub
+		if player(iPlayer).getNumCities() > 0 and not capital in plots.rectangle(tIberia): return iYaqub
 		
 	elif iCiv == iSpain:
 		if isFascist(iPlayer): return iFranco
