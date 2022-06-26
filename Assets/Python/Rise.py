@@ -230,6 +230,16 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 		message(iDefender, "TXT_KEY_MESSAGE_EXPANSION_UNITS", player(iAttacker).getCivilizationDescription(0), defender_closest.getName(), color=iRed, location=spawn, button=infos.civ(player(iAttacker).getCivilizationType()).getButton())
 
 
+@handler("changeWar")
+def endExpansion(bWar, iPlayer1, iPlayer2):
+	if not bWar:
+		for plot in plots.owner(iPlayer1).where(lambda plot: plot.getExpansion() == iPlayer2):
+			plot.resetExpansion()
+		
+		for plot in plots.owner(iPlayer2).where(lambda plot: plot.getExpansion() == iPlayer1):
+			plot.resetExpansion()
+
+
 @handler("firstCity")
 def createStartingWorkers(city):
 	iPlayer = city.getOwner()
