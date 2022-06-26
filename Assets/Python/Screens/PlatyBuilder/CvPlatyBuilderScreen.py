@@ -2386,8 +2386,8 @@ class CvWorldBuilderScreen:
 		for iUnit in xrange(gc.getNumUnitInfos()):
 			pNewCity.setUnitProduction(iUnit, pOldCity.getUnitProduction(iUnit))
 			pNewCity.setGreatPeopleUnitProgress(iUnit, pOldCity.getGreatPeopleUnitProgress(iUnit))
-		for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
-			pNewCity.changeSpecialistCommerce(iCommerce, pOldCity.getSpecialistCommerce(iCommerce) - pNewCity.getSpecialistCommerce(iCommerce))
+		#for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+		#	pNewCity.changeSpecialistCommerce(iCommerce, pOldCity.getSpecialistCommerce(iCommerce) - pNewCity.getSpecialistCommerce(iCommerce))
 		for iBonus in xrange(gc.getNumBonusInfos()):
 			pNewCity.changeFreeBonus(iBonus, pOldCity.getFreeBonus(iBonus) - pNewCity.getFreeBonus(iBonus))
 			while pOldCity.isNoBonus(iBonus) != pNewCity.isNoBonus(iBonus):
