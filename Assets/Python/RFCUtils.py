@@ -1159,3 +1159,17 @@ def getImprovementBuild(iImprovement):
 		return getImprovementBuild(iPredecessor)
 	
 	return next(iBuild for iBuild in infos.builds() if infos.build(iBuild).getImprovement() == iImprovement)
+
+
+# used: Rise
+def possibleSpawnsBetween(origin, target, iDistance):
+	return (
+		plots.rectangle(origin, target)
+			.expand(1)
+			.land()
+			.passable()
+			.where(lambda p: p.getOwner() in [plot(origin).getOwner(), plot(target).getOwner(), -1])
+			.where(lambda p: distance(p, target) >= iDistance)
+			.where(lambda p: not units.at(p).atwar(origin.getOwner()))
+			.where(lambda p: not cities.surrounding(p).notowner(origin.getOwner()))
+	)

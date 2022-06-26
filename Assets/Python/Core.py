@@ -1370,16 +1370,19 @@ class Locations(EntityCollection):
 	def closest_distance(self, *args):
 		return self._closest(*args).value
 	
-	def closest_all(self, locations):
+	def closest_pair(self, locations):
 		if not isinstance(locations, Locations):
 			raise Exception("Expected instance of Locations, received: %s" % locations)
 			
 		permutations = [(x, y) for x in self.shuffle().entities() for y in locations.shuffle().entities()]
-		closest = find_min(permutations, lambda (x, y): distance(x, y)).result
+		return find_min(permutations, lambda (x, y): distance(x, y)).result
+	
+	def closest_all(self, locations):
+		closest = self.closest_pair(locations)
 		
 		if closest is None:
 			return None
-			
+		
 		return closest[0]
 	
 	def closest_within(self, *args, **kwargs):
