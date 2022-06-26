@@ -174,7 +174,7 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 		return
 	
 	aroundCities = cities.owner(iDefender).plots().expand(2)
-	birthProtected = plots.all().where(lambda p: p.getBirthProtected() == iDefender and not p.isPlayerCore(iAttacker))
+	birthProtected = plots.all().where(lambda p: p.getBirthProtected() == iDefender and not p.isPlayerCore(iAttacker) and not p.getOwner() == iAttacker)
 	for plot in aroundCities.including(birthProtected):
 		attackers = units.at(plot).owner(iAttacker)
 		if attackers:
