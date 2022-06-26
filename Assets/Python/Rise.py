@@ -142,9 +142,13 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 	iPowerRatioThreshold = player(iAttacker).isHuman() and 80 or 50
 	iPowerRatio = 100 * iDefenderPower / iAttackerPower
 	
+	iMaxAdditionalPower = 200
+	
 	if iPowerRatio < iPowerRatioThreshold:
 		iPowerRatioDifference = iPowerRatioThreshold - iPowerRatio
 		iPowerRequired = iPowerRatioDifference * iAttackerPower / 100
+		
+		iPowerRequired = min(iPowerRequired, iMaxAdditionalPower * iDefenderPower / 100)
 		
 		additionalUnits = getAdditionalUnits(iDefender)
 		iUnitsPower = sum(infos.unit(iUnit).getPowerValue() * iAmount for iRole, iAmount in additionalUnits for iUnit, _ in getUnitsForRole(iDefender, iRole))
@@ -158,7 +162,6 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 			createRoleUnits(iDefender, capital(iDefender), additionalUnits)
 			for iUnit, iAmount in specificAdditionalUnits:
 				iExperience = max(iRoleExperience for iRole, iRoleExperience in dStartingExperience[iDefender].items() if isUnitOfRole(iUnit, iRole))
-				print "Specific additional unit %s with %d experience" % (infos.unit(iUnit).getText(), iExperience)
 				makeUnits(iDefender, iUnit, capital(iDefender), iAmount).experience(iExperience)
 
 
