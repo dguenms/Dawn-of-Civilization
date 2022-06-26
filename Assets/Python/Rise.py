@@ -226,6 +226,8 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 			iSiege: 1 + 2*iExtraAI + iExtraTargets,
 		}
 		createRoleUnits(iAttacker, spawn, dExpansionUnits.items())
+		
+		message(iDefender, "TXT_KEY_MESSAGE_EXPANSION_UNITS", player(iAttacker).getCivilizationDescription(0), defender_closest.getName(), color=iRed, location=spawn, button=infos.civ(player(iAttacker).getCivilizationType()).getButton())
 
 
 @handler("firstCity")
