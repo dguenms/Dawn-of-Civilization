@@ -12025,6 +12025,11 @@ int CvCity::calculateCulturePercent(CivilizationTypes eCivilization) const
 		return (getCultureTimes100(eCivilization) * 100) / iTotalCulture;
 	}
 
+	if (getCivilizationType() == eCivilization)
+	{
+		return 100;
+	}
+
 	return 0;
 }
 
