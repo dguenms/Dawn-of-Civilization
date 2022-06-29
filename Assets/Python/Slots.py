@@ -14,11 +14,27 @@ def findSlot(iCiv):
 	if iSlot is not None:
 		return iSlot
 	
-	iSlot = next(iSlot for iSlot in range(iNumPlayers) if not player(iSlot).isAlive() and not player(iSlot).isHuman() and not player(iSlot).isMinorCiv())
+	iSlot = next(iSlot for iSlot in range(iNumPlayers) if availableSlot(iSlot))
 	if iSlot is not None:
 		return iSlot
 
 	return -1
+	
+def availableSlot(iSlot):
+	if player(iSlot).isAlive():
+		return False
+	
+	if player(iSlot).isHuman():
+		return False
+	
+	if player(iSlot).isMinorCiv():
+		return False
+	
+	revealed_owners = set(plots.all().where(lambda plot: plot.isRevealed(game.getActiveTeam(), False)).get(lambda plot: plot.getRevealedOwner(game.getActiveTeam(), False)))
+	if iSlot in revealed_owners:
+		return False
+	
+	return True
 	
 def addPlayer(iPlayer, iCiv, iBirthTurn=-1, bAlive=False, bMinor=False):
 	game.addPlayer(iPlayer, 0, iCiv, iBirthTurn, bAlive, bMinor)
