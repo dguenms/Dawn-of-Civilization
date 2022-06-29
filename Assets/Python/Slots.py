@@ -31,10 +31,7 @@ def updateCivilization(iPlayer, iCiv, iBirthTurn=-1):
 	if iCiv == iCurrentCivilization:
 		return
 	
-	if iCurrentCivilization == -1:
-		addPlayer(iPlayer, iCiv, iBirthTurn=iBirthTurn, bAlive=True)
-	else:
-		player(iPlayer).setCivilizationType(iCiv)
+	addPlayer(iPlayer, iCiv, iBirthTurn=iBirthTurn, bAlive=True)
 	
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
