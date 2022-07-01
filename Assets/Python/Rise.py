@@ -744,6 +744,9 @@ class Birth(object):
 		if self.team.isAVassal():
 			return
 		
+		if self.team.getAtWarCount(True) > 0:
+			return
+		
 		if self.iExpansionTurns < 0:
 			return
 		
