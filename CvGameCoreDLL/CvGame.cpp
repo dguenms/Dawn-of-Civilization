@@ -6331,6 +6331,11 @@ void CvGame::doGlobalWarming()
 #else
 				iGlobalWarmingValue -= pCity->getBuildingBadHealth() * iUnhealthWeight;
 #endif
+				// Leoreth: account for plague, we do not want early global warming
+				if (pCity->isHasRealBuilding(BUILDING_PLAGUE))
+				{
+					iGlobalWarmingValue += GC.getBuildingInfo(BUILDING_PLAGUE).getHealth() * iUnhealthWeight;
+				}
 			}
 		}
 	}
