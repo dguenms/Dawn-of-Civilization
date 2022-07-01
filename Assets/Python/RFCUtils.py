@@ -819,7 +819,7 @@ def evacuate(iPlayer, tPlot):
 def expelUnits(iPlayer, area):
 	for plot in area:
 		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(lambda unit: unit.getOwner()):
-			possibleDestinations = cities.owner(iOwner).without(area.cities()).area(plot)
+			possibleDestinations = cities.owner(iOwner).without(area.cities())
 			if plot.isWater():
 				destination = possibleDestinations.coastal().closest(plot)
 			else:
