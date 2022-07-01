@@ -4504,6 +4504,12 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			return false;
 		}
 
+		// Leoreth: can still never target the current secretary general
+		if (kPlayer.getTeam() == getSecretaryGeneral(eVoteSource))
+		{
+			return false;
+		}
+
 		// Leoreth: crusade target if at war with a full member or controlling the holy city
 		if (eVoteSourceReligion != NO_RELIGION)
 		{
