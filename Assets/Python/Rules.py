@@ -279,6 +279,7 @@ def getEmigrationValue(city):
 	
 	iValue -= min(0, iHappinessDifference)
 	iValue -= min(0, iFoodDifference / 2)
+	iValue += city.getPopulation() / 5
 	
 	return iValue
 
@@ -287,7 +288,7 @@ def immigration():
 	sourcePlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() not in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getEmigrationValue(city) > 0))
 	targetPlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getImmigrationValue(city) > 0))
 	
-	iNumMigrations = min(sourcePlayers.count() / 4, targetPlayers.count())
+	iNumMigrations = min(sourcePlayers.count(), targetPlayers.count())
 	
 	sourceCities = sourcePlayers.cities().where(lambda city: city.getPopulation() > 1).highest(iNumMigrations, getEmigrationValue)
 	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)
