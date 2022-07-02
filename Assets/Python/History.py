@@ -189,17 +189,6 @@ def checkRaiders():
 	if year().between(860, 1250):
 		if turn() % turns(10) == 9:
 			giveRaiders(iVikings)
-	
-
-@handler("BeginGameTurn")
-def moorishSpawnInMorocoo():
-	if year() == year(710)-1:
-		marrakesh = city_(51, 37)
-		if marrakesh:
-			marrakesh.setHasReligion(iIslam, True, False, False)
-			
-			makeUnit(marrakesh.getOwner(), iSettler, marrakesh)
-			makeUnit(marrakesh.getOwner(), iWorker, marrakesh)
 
 
 ### FIRST CONTACT ###
@@ -496,6 +485,18 @@ def createArabArmies(iPlayer):
 
 		if not player(iArabia).isHuman() and bBaghdad:
 			makeUnits(iArabia, iSpearman, tBaghdad, 2)
+	
+
+@handler("flip")
+def flipMoorishMaghreb(iPlayer):
+	if civ(iPlayer) == iMoors:
+		city = cities.owner(iPlayer).region(rMaghreb).random()
+		
+		if city:
+			city.setHasReligion(iIslam, True, False, False)
+			
+			makeUnit(iPlayer, iSettler, city)
+			makeUnit(iPlayer, iWorker, city)
 
 
 ### IMPLEMENTATION ###
