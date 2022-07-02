@@ -26,6 +26,14 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BRITAIN_DESC</Tag>
+		<English>The British</English>
+		<French>The British</French>
+		<German>The British</German>
+		<Italian>The British</Italian>
+		<Spanish>The British</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_PEOPLES</Tag>
 		<English>Anglo-Saxon Peoples</English>
 		<French>

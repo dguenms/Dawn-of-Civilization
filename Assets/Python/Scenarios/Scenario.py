@@ -267,6 +267,8 @@ class Scenario(object):
 		
 		self.lCivilizations = kwargs.get("lCivilizations", [])
 		
+		self.dCivilizationDescriptions = kwargs.get("dCivilizationDescriptions", {})
+		
 		self.dOwnedTiles = kwargs.get("dOwnedTiles", {})
 		self.iOwnerBaseCulture = kwargs.get("iOwnerBaseCulture", 0)
 		
@@ -296,6 +298,9 @@ class Scenario(object):
 			game.setMaxTurns(game.getEstimateEndTurn() - iStartTurn)
 		
 	def setupCivilizations(self):
+		for iCiv, description in self.dCivilizationDescriptions.items():
+			infos.civ(iCiv).setDescriptionKeyPersistent(description)
+	
 		for i, iCiv in enumerate(lBirthOrder):
 			infos.civ(iCiv).setDescription("%02d" % i)
 			

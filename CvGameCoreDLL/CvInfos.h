@@ -2357,6 +2357,7 @@ public:
 	int getPaganReligion() const;
 	const wchar* getDescriptionKeyPersistent() const;
 	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
+	void setDescriptionKeyPersistent(std::wstring szDescription);
 	void setPlayable(bool bNewValue);
 	void setLeader(int iLeader, bool bNewValue);
 	bool isOriginalLeader(int iLeader) const;

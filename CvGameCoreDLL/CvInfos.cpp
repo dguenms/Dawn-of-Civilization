@@ -10606,6 +10606,11 @@ const wchar* CvCivilizationInfo::getDescriptionKeyPersistent() const
 	return m_szDescriptionPersistent;
 }
 
+void CvCivilizationInfo::setDescriptionKeyPersistent(std::wstring szDescription)
+{
+	m_szDescriptionPersistent = szDescription;
+}
+
 const wchar* CvCivilizationInfo::getAdjective(uint uiForm)
 {
 	while(m_aszAdjective.size() <= uiForm)

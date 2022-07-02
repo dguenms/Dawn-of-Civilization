@@ -232,6 +232,14 @@ scenario1700AD = Scenario(
 	
 	lCivilizations = lCivilizations,
 	
+	dCivilizationDescriptions = {
+		iTurks: "TXT_KEY_CIV_UZBEKS_DESC",
+		iVikings: "TXT_KEY_CIV_SWEDEN_DESC",
+		iHolyRome: "TXT_KEY_CIV_AUSTRIA_DESC",
+		iEngland: "TXT_KEY_CIV_BRITAIN_DESC",
+		iGermany: "TXT_KEY_CIV_HOLY_ROMAN_DESC",
+	},
+	
 	dOwnedTiles = {
 		iHolyRome : [(62, 51)],
 		iRussia : [(69, 54), (69, 55)],

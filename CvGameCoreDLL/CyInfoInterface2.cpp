@@ -63,6 +63,7 @@ void CyInfoPythonInterface2()
 		.def("getImpact", &CvCivilizationInfo::getImpact, "int ()") // Leoreth
 		.def("getStartingYear", &CvCivilizationInfo::getStartingYear, "int ()") // Leoreth
 		.def("getDescriptionKeyPersistent", &CvCivilizationInfo::pyGetDescriptionKeyPersistent, "string ()") // Leoreth
+		.def("setDescriptionKeyPersistent", &CvCivilizationInfo::setDescriptionKeyPersistent, "void (string)") // Leoreth
 
 		.def("setPlayable", &CvCivilizationInfo::setPlayable, "void (bool bNewValue)") // Leoreth
 		.def("setLeader", &CvCivilizationInfo::setLeader, "void (int iLeader, bool bNewValue)") // Leoreth
