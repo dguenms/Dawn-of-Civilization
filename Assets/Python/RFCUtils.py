@@ -947,12 +947,6 @@ def getBuildingCategory(iBuilding):
 def getLeaderCiv(iLeader):
 	return next(iCiv for iCiv in range(iNumCivs) if infos.civ(iCiv).isLeaders(iLeader))
 	
-# used: Religions, Scenarios
-def setStateReligionBeforeBirth(lCivs, iReligion):
-	for iCiv in lCivs:
-		if year() < year(dBirth[iCiv]) and player(iCiv).getStateReligion() != iReligion:
-			player(iCiv).setLastStateReligion(iReligion)
-
 # used: Rules
 def freeCargo(identifier, tile):
 	transportUnits, cargoUnits = units.at(tile).owner(identifier).split(lambda unit: unit.cargoSpace() > 0 and unit.specialCargo() == -1)

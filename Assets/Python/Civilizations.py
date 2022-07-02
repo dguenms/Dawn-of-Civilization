@@ -141,9 +141,18 @@ class Civilization(object):
 		
 		if self.iStateReligion is not None:
 			iOldStateReligion = self.player.getStateReligion()
-			self.player.setLastStateReligion(self.iStateReligion)
+			iNewStateReligion = self.iStateReligion
 			
-			events.fireEvent("playerChangeStateReligion", self.player.getID(), self.iStateReligion, iOldStateReligion)
+			if iNewStateReligion == iProtestantism and not game.isReligionFounded(iProtestantism):
+				iNewStateReligion = iCatholicism
+			
+			if iNewStateReligion == iCatholicism and not game.isReligionFounded(iCatholicism):
+				iNewStateReligion = iOrthodoxy
+			
+			if game.isReligionFounded(iNewStateReligion):
+				self.player.setLastStateReligion(iNewStateReligion)
+			
+				events.fireEvent("playerChangeStateReligion", self.player.getID(), iNewStateReligion, iOldStateReligion)
 		
 		if self.techs:
 			for iTech in self.techs:

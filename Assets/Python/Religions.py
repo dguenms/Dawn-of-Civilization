@@ -33,18 +33,6 @@ def getCatholicPreference(iPlayer):
 	return dCatholicPreference[iPlayer]
 	
 
-@handler("religionFounded")
-def onReligionFounded(iReligion):
-	if turn() == scenarioStartTurn(): return
-
-	if iReligion == iCatholicism:
-		setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
-		setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
-		
-	elif iReligion == iProtestantism:
-		setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
-
-
 @handler("buildingBuilt")	
 def onBuildingBuilt(city, iBuilding):
 	iPlayer = city.getOwner()

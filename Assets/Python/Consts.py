@@ -758,9 +758,6 @@ tPersecutionPreference = (
 (iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iBuddhism, iHinduism, iTaoism, iConfucianism), # Zoroastrianism
 )
 
-lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iItaly, iNetherlands, iGermany, iAmerica, iArgentina, iBrazil, iCanada]
-lProtestantStart = [iNetherlands, iGermany, iAmerica]
-
 # pagan religions
 iNumPaganReligions = 19
 (iAnunnaki, iAsatru, iAtua, iBaalism, iBon, iDruidism, iInti, iMazdaism, iMugyo, iOlympianism, 
