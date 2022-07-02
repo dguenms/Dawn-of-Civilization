@@ -570,7 +570,7 @@ def setup():
 	
 @handler("playerCivAssigned")
 def initName(iPlayer):
-	if not is_minor(iPlayer):
+	if not is_minor(iPlayer) and player(iPlayer).getNumCities() == 0:
 		setDesc(iPlayer, peoplesName(iPlayer))
 		checkName(iPlayer)
 		checkLeader(iPlayer)

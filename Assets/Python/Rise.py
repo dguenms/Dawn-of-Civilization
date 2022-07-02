@@ -402,7 +402,9 @@ class Birth(object):
 	
 	def updateNames(self):
 		setLeader(self.iPlayer, startingLeader(self.iPlayer))
-		setDesc(self.iPlayer, peoplesName(self.iPlayer))
+		
+		if self.player.getNumCities() == 0:
+			setDesc(self.iPlayer, peoplesName(self.iPlayer))
 		
 	def updateArea(self):
 		if self.iCiv in lExpandedFlipCivs:
