@@ -72,8 +72,8 @@ def getNextBirth():
 	lUpcomingCivs = [iCiv for iCiv, iYear in dBirth.items() if turn() < year(iYear) - turns(5)]
 	return find_min(lUpcomingCivs, dBirth.__getitem__).result
 
-def getActiveSlots():
-	return count(1 for iSlot in range(iNumPlayers) if player(iSlot).isAlive() or player(iSlot).isHuman())
+def getUnavailableSlots():
+	return count(1 for iSlot in range(iNumPlayers) if not availableSlot(iSlot))
 
 def allSlotsTaken():
-	return getActiveSlots() >= iNumPlayers-1
+	return getUnavailableSlots() >= iNumPlayers-1

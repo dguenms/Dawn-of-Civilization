@@ -47,7 +47,7 @@ def checkResurrection():
 
 
 def isResurrectionPossible():
-	iTakenSlots = getActiveSlots()
+	iTakenSlots = getUnavailableSlots()
 	iAvailableSlots = iNumPlayers-1	
 	return iTakenSlots + 1 < iAvailableSlots
 
@@ -99,7 +99,7 @@ def isPartOfResurrection(iCiv, city, bOnlyOne):
 	if game.countKnownTechNumTeams(iNationalism) == 0:
 		iOwnerStability += 1
 	
-	# flips are more likely between AIs to make the world more dynami
+	# flips are more likely between AIs to make the world more dynamic
 	# TODO: maybe restore this during autoplay?
 	#if not player(iOwner).isHuman() and not player(iPlayer).isHuman():
 	#	iOwnerStability -= 1
