@@ -638,7 +638,7 @@ class Birth(object):
 		# Thailand requires Khmer to be shaky or worse (unstable if Khmer is human)
 		if self.iCiv == iThailand:
 			iRequiredStability = player(iKhmer).isHuman() and iStabilityShaky or iStabilityStable
-			if stability(iKhmer) >= iRequiredStability:
+			if player(iKhmer).isAlive() and stability(iKhmer) >= iRequiredStability:
 				return False
 		
 		# Iran requires Persia to be dead
