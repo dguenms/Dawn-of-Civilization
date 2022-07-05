@@ -13921,15 +13921,18 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		{
 			if (isHuman())
 			{
-				if (GET_PLAYER(getOwnerINLINE()).getHasReligionCount(eIndex) == 1)
+				if (getScenarioStartTurn() != GC.getGame().getGameTurn())
 				{
-					if (GET_PLAYER(getOwnerINLINE()).canConvert(eIndex) && (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION))
+					if (GET_PLAYER(getOwnerINLINE()).getHasReligionCount(eIndex) == 1)
 					{
-						CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGERELIGION);
-						if (NULL != pInfo)
+						if (GET_PLAYER(getOwnerINLINE()).canConvert(eIndex) && (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION))
 						{
-							pInfo->setData1(eIndex);
-							gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE());
+							CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGERELIGION);
+							if (NULL != pInfo)
+							{
+								pInfo->setData1(eIndex);
+								gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE());
+							}
 						}
 					}
 				}
