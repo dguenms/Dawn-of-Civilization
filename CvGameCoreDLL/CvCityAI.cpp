@@ -10449,7 +10449,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 		int iFriendlyRelationCount = 0;
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).AI_getAttitude(getOwnerINLINE()) == ATTITUDE_FRIENDLY)
+			if (getOwnerINLINE() != iI && GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).AI_getAttitude(getOwnerINLINE()) == ATTITUDE_FRIENDLY)
 			{
 				iFriendlyRelationCount += 1;
 			}
