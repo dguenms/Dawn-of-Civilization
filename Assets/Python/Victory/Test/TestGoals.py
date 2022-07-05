@@ -148,10 +148,10 @@ class TestGoalDefinition(ExtendedTestCase):
 		self.goal_definition = GoalDefinition(BuildingCount)
 
 	def test_str(self):
-		self.assertEqual(str(self.goal_definition), "GoalDefinition(BuildingCount, ())")
+		self.assertEqual(str(self.goal_definition), "GoalDefinition(BuildingCount)")
 		
 	def test_repr(self):
-		self.assertEqual(repr(self.goal_definition), "GoalDefinition(BuildingCount, ())")
+		self.assertEqual(repr(self.goal_definition), "GoalDefinition(BuildingCount)")
 		
 	def test_equal(self):
 		identical = GoalDefinition(BuildingCount)

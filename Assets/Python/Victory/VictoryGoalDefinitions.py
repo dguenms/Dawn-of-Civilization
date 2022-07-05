@@ -7,6 +7,10 @@ from VictoryTypes import *
 
 from CityNameManager import getFoundName, getRenameName
 
+import BugCore
+AlertsOpt = BugCore.game.MoreCiv4Alerts
+AdvisorOpt = BugCore.game.Advisors
+
 
 class Parameters(object):
 
@@ -77,24 +81,23 @@ class ParameterSet(object):
 
 class GoalDefinition(object):
 
-	def __init__(self, requirement, types=tuple()):
+	def __init__(self, requirement):
 		self.requirement = requirement
-		self.types = types
 		
 	def __call__(self, *arguments, **options):
-		parameter_set = ParameterSet(global_types=self.types, types=self.requirement.TYPES, arguments=arguments)
+		parameter_set = ParameterSet(global_types=self.requirement.GLOBAL_TYPES, types=self.requirement.TYPES, arguments=arguments)
 		requirements = [self.requirement(*parameters, **options) for parameters in parameter_set]
 		
 		return GoalDescription(requirements, self.requirement.DESC_KEY, **options)
 	
 	def __repr__(self):
-		return "GoalDefinition(%s, %s)" % (self.requirement.__name__, self.types)
+		return "GoalDefinition(%s)" % (self.requirement.__name__)
 		
 	def __eq__(self, other):
 		if not isinstance(other, GoalDefinition):
 			return False
 	
-		return (self.requirement, self.types) == (other.requirement, other.types)
+		return self.requirement == other.requirement
 		
 		
 class GoalDescription(object):
@@ -276,6 +279,16 @@ class Goal(object):
 	def desc(self, key):
 		self.desc_key = key
 		return self
+	
+	def announce(self, key, condition=True):
+		if condition and player(self.iPlayer).isHuman() and not scenarioStart():
+			show(text(key, self.format_description()))
+	
+	def announce_success(self):
+		self.announce("TXT_KEY_VICTORY_ANNOUNCE_SUCCESS", AlertsOpt.isShowUHVSuccessPopup())
+	
+	def announce_failure(self):
+		self.announce("TXT_KEY_VICTORY_ANNOUNCE_FAILURE", AlertsOpt.isShowUHVFailPopup())
 	
 	def areas(self):
 		return dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
