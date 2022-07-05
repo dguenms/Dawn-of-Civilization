@@ -353,7 +353,7 @@ class Scenario(object):
 				
 		for iGoalCiv, iGoalIndex in self.lGoalsSucceeded:
 			if iCiv == iGoalCiv:
-				goal[iGoalIndex].succeed()
+				goals[iGoalIndex].succeed()
 		
 		self.setupGoals(iCiv, goals)
 		
