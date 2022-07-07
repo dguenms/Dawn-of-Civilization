@@ -90,7 +90,7 @@ Route = GoalDefinition(req.Route)
 RouteConnection = GoalDefinition(req.RouteConnection)
 StateReligionPercent = GoalDefinition(req.StateReligionPercent)
 TradeConnection = GoalDefinition(req.TradeConnection)
-Wonder = GoalDefinition(req.Wonder)
+Wonder = Wonders = GoalDefinition(req.Wonder)
 
 
 ### STATE REQUIREMENTS ###
@@ -133,3 +133,17 @@ SettledCities = GoalDefinition(req.SacrificeHappiness)
 SlaveTradeGold = GoalDefinition(req.SlaveTradeGold)
 SunkShips = GoalDefinition(req.SunkShips)
 TradeGold = GoalDefinition(req.TradeGold)
+
+
+### ARGUMENTS ###
+
+plots_ = plots
+plots = AreaArgumentFactory()
+
+civs = CivsArgument
+
+city_ = city
+city = LocationCityArgument
+
+capital_ = capital
+capital = CapitalCityArgument

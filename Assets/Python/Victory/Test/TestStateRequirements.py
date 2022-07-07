@@ -6,8 +6,8 @@ from TestVictoryCommon import *
 class TestContactBeforeRevealed(ExtendedTestCase):
 
 	def setUp(self):
-		self.civs = CivsDefinition(iChina)
-		self.area = plots.rectangle((20, 20), (30, 30)).named("Rectangle")
+		self.civs = CivsArgument(iChina)
+		self.area = AreaArgumentFactory().rectangle((20, 20), (30, 30)).named("Rectangle")
 	
 		self.requirement = ContactBeforeRevealed(self.civs, self.area)
 		self.goal = TestGoal()
@@ -27,7 +27,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "China before any of them discovers Rectangle")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Rectangle": plots_.rectangle((20, 20), (30, 30))})
+		self.assertEqual(self.requirement.areas(), {"Rectangle": plots.rectangle((20, 20), (30, 30))})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((25, 25)), "Rectangle")
@@ -603,7 +603,7 @@ class TestFirstGreatPerson(ExtendedTestCase):
 class TestFirstSettle(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
 		self.requirement = FirstSettle(self.area)
 		self.goal = TestGoal()
 		
@@ -622,7 +622,7 @@ class TestFirstSettle(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a city in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -900,7 +900,8 @@ class TestNoCityLost(ExtendedTestCase):
 class TestSettle(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Settle(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"))
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.requirement = Settle(self.area)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -918,7 +919,7 @@ class TestSettle(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -969,7 +970,8 @@ class TestSettle(ExtendedTestCase):
 class TestTradeMission(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = TradeMission(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"))
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = TradeMission(self.city)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -987,7 +989,7 @@ class TestTradeMission(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a trade mission to Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")

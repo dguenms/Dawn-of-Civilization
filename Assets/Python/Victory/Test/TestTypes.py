@@ -134,7 +134,7 @@ class TestAmount(ExtendedTestCase):
 class TestArea(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaDefinition().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.area = AreaArgument().of(TestCities.CITY_LOCATIONS).named("Test Area")
 	
 	def test_str(self):
 		self.assertEqual(str(AREA), "Area")
@@ -157,7 +157,7 @@ class TestArea(ExtendedTestCase):
 		self.assertEqual(AREA.format(self.area), "Test Area")
 	
 	def test_area(self):
-		self.assertEqual(AREA.area(self.area), plots_.of(TestCities.CITY_LOCATIONS))
+		self.assertEqual(AREA.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
 
 
 class TestAttitude(ExtendedTestCase):
@@ -223,8 +223,8 @@ class TestBuilding(ExtendedTestCase):
 class TestCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.location_city = LocationCityDefinition(61, 31).named("Location City")
-		self.capital_city = CapitalCityDefinition().named("Capital City")
+		self.location_city = LocationCityArgument(61, 31).named("Location City")
+		self.capital_city = CapitalCityArgument().named("Capital City")
 
 	def test_str(self):
 		self.assertEqual(str(CITY), "City")
@@ -251,14 +251,14 @@ class TestCity(ExtendedTestCase):
 		self.assertEqual(CITY.format_repr(self.capital_city), "Capital City")
 	
 	def test_area(self):
-		self.assertEqual(CITY.area(self.location_city), plots_.of([(61, 31)]))
+		self.assertEqual(CITY.area(self.location_city), plots.of([(61, 31)]))
 		self.assertEqual(CITY.area(self.capital_city), None)
 
 
 class TestCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.civs = CivsDefinition(iEgypt, iBabylonia, iHarappa)
+		self.civs = CivsArgument(iEgypt, iBabylonia, iHarappa)
 	
 	def test_str(self):
 		self.assertEqual(str(CIVS), "Civs")

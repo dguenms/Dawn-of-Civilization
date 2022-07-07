@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAreaPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.rectangle((50, 30), (69, 31)).named("Test Area")
+		self.area = AreaArgumentFactory().rectangle((50, 30), (69, 31)).named("Test Area")
 		self.assertEqual(self.area.land().count(), 40)
 		
 		self.requirement = AreaPercent(self.area, 30)
@@ -27,7 +27,7 @@ class TestAreaPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "30% of Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.rectangle((50, 30), (69, 31))})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.rectangle((50, 30), (69, 31))})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((50, 30)), "Test Area")
@@ -43,7 +43,7 @@ class TestAreaPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Territory in Test Area: 0.00% / 30%")
 	
 	def test_half(self):
-		controlled = plots_.rectangle((50, 30), (69, 30))
+		controlled = plots.rectangle((50, 30), (69, 30))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -58,7 +58,7 @@ class TestAreaPercent(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_all(self):
-		controlled = plots_.rectangle((50, 30), (69, 31))
+		controlled = plots.rectangle((50, 30), (69, 31))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -72,7 +72,7 @@ class TestAreaPercent(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_outside(self):
-		controlled = plots_.rectangle((50, 29), (69, 29))
+		controlled = plots.rectangle((50, 29), (69, 29))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -89,7 +89,7 @@ class TestAreaPercent(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		controlled = plots_.rectangle((50, 30), (69, 31))
+		controlled = plots.rectangle((50, 30), (69, 31))
 		for plot in controlled:
 			plot.setOwner(1)
 		
@@ -112,7 +112,7 @@ class TestAreaPercent(ExtendedTestCase):
 class TestAreaPopulationPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.requirement = AreaPopulationPercent(self.area, 40)
 		self.goal = TestGoal()
 		
@@ -131,7 +131,7 @@ class TestAreaPopulationPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "40% of the population in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -294,7 +294,7 @@ class TestLandPercent(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 	
 	def test_sufficient(self):
-		territory = plots_.all().land().limit(11 * 32)
+		territory = plots.all().land().limit(11 * 32)
 		for plot in territory:
 			plot.setOwner(self.iPlayer)
 		
@@ -308,7 +308,7 @@ class TestLandPercent(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_insufficient(self):
-		territory = plots_.all().land().limit(32)
+		territory = plots.all().land().limit(32)
 		for plot in territory:
 			plot.setOwner(self.iPlayer)
 		
@@ -326,7 +326,7 @@ class TestLandPercent(ExtendedTestCase):
 		
 		team(1).setVassal(0, True, False)
 	
-		our_territory, vassal_territory = plots_.all().land().limit(11 * 32).percentage_split(60)
+		our_territory, vassal_territory = plots.all().land().limit(11 * 32).percentage_split(60)
 		for plot in our_territory:
 			plot.setOwner(self.iPlayer)
 		

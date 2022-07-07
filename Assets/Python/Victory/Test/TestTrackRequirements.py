@@ -466,7 +466,7 @@ class TestConqueredCities(ExtendedTestCase):
 class TestConqueredCitiesInside(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.requirement = ConqueredCities(2, inside=self.area)
 		self.goal = TestGoal()
 		
@@ -479,7 +479,7 @@ class TestConqueredCitiesInside(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -515,7 +515,7 @@ class TestConqueredCitiesInside(ExtendedTestCase):
 class TestConqueredCitiesOutside(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.all().without([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().all().without([(61, 31), (63, 31)]).named("Test Area")
 		self.requirement = ConqueredCities(2, outside=self.area)
 		self.goal = TestGoal()
 		
@@ -528,7 +528,7 @@ class TestConqueredCitiesOutside(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities outside of Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -564,7 +564,7 @@ class TestConqueredCitiesOutside(ExtendedTestCase):
 class TestConqueredCitiesCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.civs = CivsDefinition(1).named("Test Civs")
+		self.civs = CivsArgument(1).named("Test Civs")
 		self.requirement = ConqueredCities(2, civs=self.civs)
 		self.goal = TestGoal()
 		
@@ -711,7 +711,7 @@ class TestEnslaveCount(ExtendedTestCase):
 class TestEnslaveCountExcluding(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = EnslaveCount(2, excluding=CivsDefinition(1).named("Test Civs"))
+		self.requirement = EnslaveCount(2, excluding=CivsArgument(1).named("Test Civs"))
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1967,7 +1967,7 @@ class TestSettledCities(ExtendedTestCase):
 class TestSettledCitiesArea(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SettledCities(2, area=plots.of([(61, 31), (63, 31)]).named("Test Area"))
+		self.requirement = SettledCities(2, area=AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area"))
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1979,7 +1979,7 @@ class TestSettledCitiesArea(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")

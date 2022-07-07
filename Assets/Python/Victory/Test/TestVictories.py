@@ -1,3 +1,4 @@
+from TestArguments import test_cases as arguments_test_cases
 from TestEvaluators import test_cases as evaluators_test_cases
 from TestFormatters import test_cases as formatters_test_cases
 from TestGoals import test_cases as goals_test_cases
@@ -15,6 +16,7 @@ from TestUtils import setup
 setup()
 
 test_cases = (
+	arguments_test_cases +
 	evaluators_test_cases + 
 	formatters_test_cases + 
 	goals_test_cases + 

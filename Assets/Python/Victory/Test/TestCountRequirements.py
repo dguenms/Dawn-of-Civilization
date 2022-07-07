@@ -131,7 +131,7 @@ class TestAttitudeCountCommunist(ExtendedTestCase):
 class TestAttitudeCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, civs=CivsArgument(1, 2).named("Test Civs"))
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -724,7 +724,7 @@ class TestBuildingCount(ExtendedTestCase):
 class TestCityCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityCount(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"), 2)
+		self.requirement = CityCount(AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area"), 2)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -742,7 +742,7 @@ class TestCityCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 		
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -1254,7 +1254,7 @@ class TestFeatureCount(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 	
 	def test_fewer(self):
-		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(10) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(30)
+		controlled = plots.all().where(lambda plot: plot.getFeatureType() == iForest).limit(10) + plots.all().where(lambda plot: plot.getFeatureType() != iForest).limit(30)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -1267,7 +1267,7 @@ class TestFeatureCount(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_more(self):
-		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
+		controlled = plots.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -1283,7 +1283,7 @@ class TestFeatureCount(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 	
-		controlled = plots_.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots_.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
+		controlled = plots.all().where(lambda plot: plot.getFeatureType() == iForest).limit(30) + plots.all().where(lambda plot: plot.getFeatureType() != iForest).limit(10)
 		for plot in controlled:
 			plot.setOwner(1)
 		
@@ -1334,7 +1334,7 @@ class TestImprovementCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Cottages: 0 / 2")
 	
 	def test_fewer(self):
-		area = plots_.of([(61, 31)])
+		area = plots.of([(61, 31)])
 		for plot in area:
 			plot.setOwner(0)
 			plot.setImprovementType(iCottage)
@@ -1349,7 +1349,7 @@ class TestImprovementCount(ExtendedTestCase):
 				plot.setImprovementType(-1)
 	
 	def test_more(self):
-		area = plots_.rectangle((61, 31), (63, 31))
+		area = plots.rectangle((61, 31), (63, 31))
 		for plot in area:
 			plot.setOwner(0)
 			plot.setImprovementType(iCottage)
@@ -1364,7 +1364,7 @@ class TestImprovementCount(ExtendedTestCase):
 				plot.setImprovementType(-1)
 	
 	def test_other_owner(self):
-		area = plots_.rectangle((61, 31), (62, 31))
+		area = plots.rectangle((61, 31), (62, 31))
 		for plot in area:
 			plot.setOwner(1)
 			plot.setImprovementType(iCottage)
@@ -1382,7 +1382,7 @@ class TestImprovementCount(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		area = plots_.rectangle((61, 31), (62, 31))
+		area = plots.rectangle((61, 31), (62, 31))
 		for plot in area:
 			plot.setOwner(1)
 			plot.setImprovementType(iCottage)
@@ -1484,7 +1484,7 @@ class TestOpenBorderCount(ExtendedTestCase):
 class TestOpenBorderCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = OpenBorderCount(2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.requirement = OpenBorderCount(2, civs=CivsArgument(1, 2).named("Test Civs"))
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1555,7 +1555,7 @@ class TestPeakCount(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 	
 	def test_fewer(self):
-		controlled = plots_.all().where(CyPlot.isPeak).limit(10) + plots_.all().where(lambda plot: not plot.isPeak()).limit(30)
+		controlled = plots.all().where(CyPlot.isPeak).limit(10) + plots.all().where(lambda plot: not plot.isPeak()).limit(30)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -1568,7 +1568,7 @@ class TestPeakCount(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_more(self):
-		controlled = plots_.all().where(CyPlot.isPeak).limit(30) + plots_.all().where(lambda plot: not plot.isPeak()).limit(10)
+		controlled = plots.all().where(CyPlot.isPeak).limit(30) + plots.all().where(lambda plot: not plot.isPeak()).limit(10)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -1584,7 +1584,7 @@ class TestPeakCount(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		controlled = plots_.all().where(CyPlot.isPeak).limit(30) + plots_.all().where(lambda plot: not plot.isPeak()).limit(10)
+		controlled = plots.all().where(CyPlot.isPeak).limit(30) + plots.all().where(lambda plot: not plot.isPeak()).limit(10)
 		for plot in controlled:
 			plot.setOwner(1)
 		
@@ -2020,7 +2020,7 @@ class TestTerrainCount(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 	
 	def test_fewer(self):
-		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(40) + plots_.all().land().limit(60)
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(40) + plots.all().land().limit(60)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -2033,7 +2033,7 @@ class TestTerrainCount(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_more(self):
-		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots_.all().land().limit(40)
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -2049,7 +2049,7 @@ class TestTerrainCount(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		controlled = plots_.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots_.all().land().limit(40)
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
 		for plot in controlled:
 			plot.setOwner(1)
 		
@@ -2479,7 +2479,7 @@ class TestVassalCount(ExtendedTestCase):
 class TestVassalCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = VassalCount(2, civs=CivsDefinition(1, 2).named("Test Civs"))
+		self.requirement = VassalCount(2, civs=CivsArgument(1, 2).named("Test Civs"))
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

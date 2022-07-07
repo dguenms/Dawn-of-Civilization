@@ -1,4 +1,5 @@
 from Core import *
+from VictoryArguments import *
 from VictoryUtils import *
 
 
@@ -182,7 +183,7 @@ class CountType(Type):
 class AreaType(Type):
 
 	def validate_func(self, argument):
-		return isinstance(argument, AreaDefinition)
+		return isinstance(argument, AreaArgument)
 	
 	def format_func(self, argument, **options):
 		return argument.name()
@@ -203,7 +204,7 @@ class PercentageType(Type):
 class CityType(Type):
 
 	def validate_func(self, argument):
-		return isinstance(argument, CityDefinition)
+		return isinstance(argument, CityArgument)
 	
 	def format_func(self, argument, **options):
 		return argument.name()
@@ -215,7 +216,7 @@ class CityType(Type):
 class CivsType(Type):
 
 	def validate_func(self, argument):
-		return isinstance(argument, CivsDefinition)
+		return isinstance(argument, CivsArgument)
 	
 	def format_func(self, argument):
 		return argument.name()

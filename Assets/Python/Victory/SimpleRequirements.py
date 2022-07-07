@@ -397,7 +397,7 @@ class RouteConnection(Requirement):
 			heuristic, node = heapq.heappop(nodes)
 			visited.add((heuristic, node))
 			
-			for plot in plots_.surrounding(node).where(lambda p: self.valid(p, evaluator)):
+			for plot in plots.surrounding(node).where(lambda p: self.valid(p, evaluator)):
 				if plot.isCity() and plot.getOwner() in evaluator and plot in targets:
 					return True
 				

@@ -8,7 +8,7 @@ from VictoryTypes import *
 from CityNameManager import getFoundName, getRenameName
 
 import BugCore
-AlertsOpt = BugCore.game.MoreCiv4Alerts
+AlertsOpt = BugCore.game.MoreCiv4lerts
 AdvisorOpt = BugCore.game.Advisors
 
 

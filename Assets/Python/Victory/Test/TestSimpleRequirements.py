@@ -66,8 +66,8 @@ class TestAllAttitude(ExtendedTestCase):
 class TestAllowNone(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
-		self.civs = CivsDefinition(1).named("Test Civs")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
+		self.civs = CivsArgument(1).named("Test Civs")
 		self.requirement = AllowNone(self.area, self.civs)
 		self.goal = TestGoal()
 		
@@ -86,7 +86,7 @@ class TestAllowNone(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "no Test Civs civilizations in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -163,8 +163,8 @@ class TestAllowNone(ExtendedTestCase):
 class TestAllowOnly(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
-		self.civs = CivsDefinition(1).named("Test Civs")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
+		self.civs = CivsArgument(1).named("Test Civs")
 		self.requirement = AllowOnly(self.area, self.civs)
 		self.goal = TestGoal()
 		
@@ -183,7 +183,7 @@ class TestAllowOnly(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "only Test Civs civilizations in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -263,7 +263,7 @@ class TestAllowOnly(ExtendedTestCase):
 class TestAreaNoStateReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.requirement = AreaNoStateReligion(self.area, iCatholicism)
 		self.goal = TestGoal()
 		
@@ -282,7 +282,7 @@ class TestAreaNoStateReligion(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "no Catholic civilizations in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -398,7 +398,8 @@ class TestCommunist(ExtendedTestCase):
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Control(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"))
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.requirement = Control(self.area)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -416,7 +417,7 @@ class TestControl(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -481,7 +482,7 @@ class TestControl(ExtendedTestCase):
 class TestCultureCover(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.requirement = CultureCover(self.area)
 		self.goal = TestGoal()
 		
@@ -503,7 +504,7 @@ class TestCultureCover(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "all of Test Area in your territory")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -639,7 +640,8 @@ class TestGoldPercent(ExtendedTestCase):
 class TestMoreCulture(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = MoreCulture(CivsDefinition(1, 2).named("Test Civs"))
+		self.civs = CivsArgument(1, 2).named("Test Civs")
+		self.requirement = MoreCulture(self.civs)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -727,7 +729,8 @@ class TestMoreCulture(ExtendedTestCase):
 class TestMoreReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = MoreReligion(plots.of(TestCities.CITY_LOCATIONS).named("Test Area"), iOrthodoxy, iCatholicism)
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.requirement = MoreReligion(self.area, iOrthodoxy, iCatholicism)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -745,7 +748,7 @@ class TestMoreReligion(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "more Orthodox than Catholic cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
@@ -1055,7 +1058,7 @@ class TestProject(ExtendedTestCase):
 class TestRoute(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = plots.rectangle((60, 30), (61, 31)).named("Test Area")
+		self.area = AreaArgumentFactory().rectangle((60, 30), (61, 31)).named("Test Area")
 		self.requirement = Route(self.area, [iRouteRoad, iRouteRomanRoad])
 		self.goal = TestGoal()
 		
@@ -1074,7 +1077,7 @@ class TestRoute(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a Road or Roman Road along Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots_.rectangle((60, 30), (61, 31))})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.rectangle((60, 30), (61, 31))})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1160,7 +1163,9 @@ class TestRoute(ExtendedTestCase):
 class TestRouteConnection(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"))
+		self.start = AreaArgumentFactory().of([(61, 31)]).named("Start Area")
+		self.target = AreaArgumentFactory().of([(65, 31)]).named("Target Area")
+		self.requirement = RouteConnection([iRouteRailroad], self.start, self.target)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1178,12 +1183,12 @@ class TestRouteConnection(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a route connection between Start Area and Target Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Start Area": plots_.of([(61, 31)]), "Target Area": plots_.of([(65, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Start Area": plots.of([(61, 31)]), "Target Area": plots.of([(65, 31)])})
 	
 	def test_direct_connection(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1205,7 +1210,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_no_connection(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		culture_plots = plots_.rectangle((62, 31), (64, 31))
+		culture_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in culture_plots:
 			plot.setOwner(0)
 		
@@ -1225,7 +1230,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_no_culture(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 		
@@ -1245,7 +1250,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_different_route_type(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRoad)
 			plot.setOwner(0)
@@ -1270,7 +1275,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_no_route_tech(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1288,7 +1293,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_no_start_city(self):
 		target = TestCities.owners(-1, -1, 0)[0]
 		
-		route_plots = plots_.rectangle((61, 31), (64, 31))
+		route_plots = plots.rectangle((61, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1310,7 +1315,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_different_start_city_owner(self):
 		start, target = cities = TestCities.owners(1, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1332,7 +1337,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_no_target_city(self):
 		start = TestCities.one()
 		
-		route_plots = plots_.rectangle((62, 31), (65, 31))
+		route_plots = plots.rectangle((62, 31), (65, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1354,7 +1359,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_target_city_different_owner(self):
 		start, target = cities = TestCities.owners(0, -1, 1)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1376,7 +1381,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_indirect_connection(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		
-		route_plots = plots_.of([(60, 32), (61, 33), (62, 33), (63, 33), (64, 33), (65, 33), (66, 32)])
+		route_plots = plots.of([(60, 32), (61, 33), (62, 33), (63, 33), (64, 33), (65, 33), (66, 32)])
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1398,7 +1403,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_connection_through_city(self):
 		cities = TestCities.num(3)
 		
-		route_plots = plots_.of([(62, 31), (64, 31)])
+		route_plots = plots.of([(62, 31), (64, 31)])
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1420,7 +1425,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_connection_through_city_different_owner(self):
 		cities = TestCities.owners(0, 1, 0)
 		
-		route_plots = plots_.of([(62, 31), (64, 31)])
+		route_plots = plots.of([(62, 31), (64, 31)])
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1444,7 +1449,7 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		cities = TestCities.num(3)
 		
-		route_plots = plots_.of([(64, 31)])
+		route_plots = plots.of([(64, 31)])
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1468,7 +1473,7 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		cities = TestCities.num(3)
 		
-		route_plots = plots_.of([(62, 31)])
+		route_plots = plots.of([(62, 31)])
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1492,7 +1497,7 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		cities = TestCities.owners(1, -1, 0)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1516,7 +1521,7 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		cities = TestCities.owners(1, -1, 1)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(0)
@@ -1542,7 +1547,7 @@ class TestRouteConnection(ExtendedTestCase):
 		
 		cities = TestCities.owners(1, -1, 1)
 		
-		route_plots = plots_.rectangle((62, 31), (64, 31))
+		route_plots = plots.rectangle((62, 31), (64, 31))
 		for plot in route_plots:
 			plot.setRouteType(iRouteRailroad)
 			plot.setOwner(1)

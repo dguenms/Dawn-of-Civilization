@@ -6,7 +6,8 @@ from TestVictoryCommon import *
 class TestCityBuilding(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityBuilding(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iGranary)
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = CityBuilding(self.city, iGranary)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -24,7 +25,7 @@ class TestCityBuilding(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a Granary in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
@@ -78,7 +79,7 @@ class TestCityBuilding(ExtendedTestCase):
 			cities.kill()
 	
 	def test_city_unique_building(self):
-		requirement = CityBuilding(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iMonument)
+		requirement = CityBuilding(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iMonument)
 		
 		city = TestCities.one()
 		city.setHasRealBuilding(iObelisk, True)
@@ -154,7 +155,7 @@ class TestCityBuilding(ExtendedTestCase):
 			city.kill()
 	
 	def test_expire_building_built_wonder(self):
-		requirement = CityBuilding(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]), iPyramids)
+		requirement = CityBuilding(LocationCityArgument(TestCities.CITY_LOCATIONS[0]), iPyramids)
 		goal = TestGoal()
 		
 		requirement.register_handlers(goal)
@@ -171,7 +172,7 @@ class TestCityBuilding(ExtendedTestCase):
 			requirement.deregister_handlers()
 	
 	def test_expire_building_built_different_wonder(self):
-		requirement = CityBuilding(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]), iPyramids)
+		requirement = CityBuilding(LocationCityArgument(TestCities.CITY_LOCATIONS[0]), iPyramids)
 		
 		city = TestCities.one(1)
 		
@@ -196,7 +197,7 @@ class TestCityBuilding(ExtendedTestCase):
 class TestCityCultureLevel(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityCultureLevel(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iCultureLevelRefined)
+		self.requirement = CityCultureLevel(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iCultureLevelRefined)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -214,7 +215,7 @@ class TestCityCultureLevel(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "refined culture in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
@@ -284,7 +285,7 @@ class TestCityCultureLevel(ExtendedTestCase):
 class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityDifferentGreatPeopleCount(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), 2)
+		self.requirement = CityDifferentGreatPeopleCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 2)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -302,7 +303,7 @@ class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two different great people in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
@@ -408,7 +409,7 @@ class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 class TestCitySpecialistCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CitySpecialistCount(LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City"), iSpecialistGreatArtist, 2)
+		self.requirement = CitySpecialistCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iSpecialistGreatArtist, 2)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -426,7 +427,7 @@ class TestCitySpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two Great Artists in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")

@@ -194,7 +194,7 @@ class TestBestCultureCities(ExtendedTestCase):
 class TestBestCultureCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		self.requirement = BestCultureCity(self.city)
 		self.goal = TestGoal()
 		
@@ -204,19 +204,19 @@ class TestBestCultureCity(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "BestCultureCity(Somecity)")
+		self.assertEqual(str(self.requirement), "BestCultureCity(Test City)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "BestCultureCity(Somecity)")
+		self.assertEqual(repr(self.requirement), "BestCultureCity(Test City)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "Somecity the most culturally advanced city in the world")
+		self.assertEqual(self.requirement.description(), "Test City the most culturally advanced city in the world")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Somecity": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Somecity")
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
 		self.assertEqual(self.requirement.area_name((62, 32)), "")
 		
 	def test_pickle(self):
@@ -525,7 +525,7 @@ class TestBestPopulationCities(ExtendedTestCase):
 class TestBestPopulationCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Somecity")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		self.requirement = BestPopulationCity(self.city)
 		self.goal = TestGoal()
 		
@@ -535,19 +535,19 @@ class TestBestPopulationCity(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "BestPopulationCity(Somecity)")
+		self.assertEqual(str(self.requirement), "BestPopulationCity(Test City)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "BestPopulationCity(Somecity)")
+		self.assertEqual(repr(self.requirement), "BestPopulationCity(Test City)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "Somecity the most populous city in the world")
+		self.assertEqual(self.requirement.description(), "Test City the most populous city in the world")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Somecity": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Somecity")
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
 		self.assertEqual(self.requirement.area_name((62, 32)), "")
 		
 	def test_pickle(self):
@@ -775,7 +775,7 @@ class TestBestPopulationPlayer(ExtendedTestCase):
 class TestBestSpecialistCity(ExtendedTestCase):
 	
 	def setUp(self):
-		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		self.requirement = BestSpecialistCity(self.city, iSpecialistGreatScientist)
 		self.goal = TestGoal()
 		
@@ -794,7 +794,7 @@ class TestBestSpecialistCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test City the city with the most settled Great Scientist in the world")
 	
 	def test_area(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1074,7 +1074,7 @@ class TestBestTechPlayers(ExtendedTestCase):
 class TestBestTradeIncomeCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		self.requirement = BestTradeIncomeCity(self.city)
 		self.goal = TestGoal()
 		
@@ -1093,7 +1093,7 @@ class TestBestTradeIncomeCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test City the city with the highest trade income in the world")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
@@ -1117,7 +1117,7 @@ class TestBestTradeIncomeCity(ExtendedTestCase):
 class TestBestWonderCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.city = LocationCityDefinition(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		self.requirement = BestWonderCity(self.city)
 		self.goal = TestGoal()
 		
@@ -1136,7 +1136,7 @@ class TestBestWonderCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test City the city with the most wonders in the world")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots_.of([TestCities.CITY_LOCATIONS[0]])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
 		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
