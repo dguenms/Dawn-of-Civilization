@@ -417,6 +417,11 @@ class TestBuildingCount(ExtendedTestCase):
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "three Granaries")
 	
+	def test_description_wonder(self):
+		requirement = BuildingCount(iPyramids, 1)
+		
+		self.assertEqual(requirement.description(), "the Pyramids")
+	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})
 
@@ -492,6 +497,57 @@ class TestBuildingCount(ExtendedTestCase):
 			self.assertEqual(requirement.evaluate(self.evaluator), 1)
 			self.assertEqual(requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Granaries and Libraries: 1 / 2")
+		finally:
+			cities.kill()
+	
+	def test_state_religion_building(self):
+		state_religion_temple = StateReligionBuildingArgument(temple).named("State religion temples")
+		requirement = BuildingCount(state_religion_temple, 2)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iBuddhistTemple, True)
+		
+		player(0).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "State religion temples: 2 / 2")
+		finally:
+			cities.kill()
+			player(0).setLastStateReligion(-1)
+	
+	def test_different_state_religion_building(self):
+		state_religion_temple = StateReligionBuildingArgument(temple).named("State religion temples")
+		requirement = BuildingCount(state_religion_temple, 2)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iBuddhistTemple, True)
+		
+		player(0).setLastStateReligion(iHinduism)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "State religion temples: 0 / 2")
+		finally:
+			cities.kill()
+			player(0).setLastStateReligion(-1)
+	
+	def test_state_religion_building_no_state_religion(self):
+		state_religion_temple = StateReligionBuildingArgument(temple).named("State religion temples")
+		requirement = BuildingCount(state_religion_temple, 2)
+		
+		cities = TestCities.num(2)
+		for city in cities:
+			city.setHasRealBuilding(iBuddhistTemple, 2)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "State religion temples: 0 / 2")
 		finally:
 			cities.kill()
 	
@@ -721,10 +777,220 @@ class TestBuildingCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCityBuildingCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		self.requirement = CityBuildingCount(self.city, iGranary, 1)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityBuildingCount(Test City, Granary, 1)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityBuildingCount(Test City, Granary, 1)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a Granary")
+	
+	def test_description_wonder(self):
+		requirement = CityBuildingCount(self.city, iPyramids, 1)
+		
+		self.assertEqual(requirement.description(), "the Pyramids")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((62, 32)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_city(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
+	
+	def test_city_no_building(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary in %s" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_city_building(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Granary in %s" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_city_building_different_owner(self):
+		city = TestCities.one(1)
+		city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary in %s (controlled by Babylonia)" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_city_building_different_location(self):
+		other_city, city = cities = TestCities.num(2)
+		
+		city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granary in %s" % other_city.getName())
+		finally:
+			cities.kill()
+	
+	def test_city_unique_building(self):
+		requirement = CityBuildingCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iMonument, 1)
+		
+		city = TestCities.one()
+		city.setHasRealBuilding(iObelisk, True)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Monument in %s" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_aggregate(self):
+		requirement = CityBuildingCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), SumAggregate(iGranary, iLibrary, iWalls), 3)
+		
+		city = TestCities.one()
+		for iBuilding in [iGranary, iLibrary, iWalls]:
+			city.setHasRealBuilding(iBuilding, True)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Granary, Library and Walls in %s: 3 / 3" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_different_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+	
+		city = TestCities.one(1)
+		city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Granary in %s" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_check_city_acquired(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityAcquired", 1, self.iPlayer, city, True, False)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_city_acquired_different_city(self):
+		city, other_city = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("cityAcquired", 1, self.iPlayer, other_city, True, False)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_check_building_built(self):
+		city = TestCities.one()
+	
+		try:
+			events.fireEvent("buildingBuilt", city, iGranary)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_building_built_different_city(self):
+		city, other_city = cities = TestCities.num(2)
+		
+		try:
+			events.fireEvent("buildingBuilt", other_city, iGranary)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			cities.kill()
+	
+	def test_check_building_built_different_building(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("buildingBuilt", city, iLibrary)
+			
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			city.kill()
+	
+	def test_expire_building_built_wonder(self):
+		requirement = CityBuildingCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]), iPyramids, 1)
+		goal = TestGoal()
+		
+		requirement.register_handlers(goal)
+	
+		city = TestCities.one(1)
+		
+		try:
+			self.assertEqual(city.getOwner(), 1)
+			events.fireEvent("buildingBuilt", city, iPyramids)
+			
+			self.assertEqual(goal.failed, True)
+		finally:
+			city.kill()
+			requirement.deregister_handlers()
+	
+	def test_expire_building_built_different_wonder(self):
+		requirement = CityBuildingCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]), iPyramids, 1)
+		
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("buildingBuilt", city, iHangingGardens)
+			
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+	
+	def test_expire_building_built_not_wonder(self):
+		city = TestCities.one(1)
+		
+		try:
+			events.fireEvent("buildingBuilt", city, iGranary)
+			
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			city.kill()
+
+
 class TestCityCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityCount(AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area"), 2)
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.requirement = CityCount(self.area, 2)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -740,6 +1006,11 @@ class TestCityCount(ExtendedTestCase):
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
+	
+	def test_description_single(self):
+		requirement = CityCount(self.area, 1)
+		
+		self.assertEqual(requirement.description(), "a city in Test Area")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
@@ -1201,8 +1472,8 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Culture in First: 5000 / 1000",
 				self.SUCCESS + "Culture in Second: 5000 / 1000",
+				self.SUCCESS + "Culture in First: 5000 / 1000",
 				self.SUCCESS + "Culture in Third: 1000 / 1000",
 			])
 		finally:
@@ -2609,6 +2880,7 @@ test_cases = [
 	TestAveragePopulation,
 	TestBuildingCount,
 	TestCityCount,
+	TestCityBuildingCount,
 	TestCorporationCount,
 	TestControlledResourceCount,
 	TestCultureCity,

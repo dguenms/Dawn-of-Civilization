@@ -20,6 +20,9 @@ class ExtendedTestCase(TestCase):
 	def assertType(self, object, expectedType):
 		self.assertEqual(type(object), expectedType)
 	
+	def assertInstance(self, object, expectedType):
+		self.assertEqual(isinstance(object, expectedType), True)
+	
 	def assertPickleable(self, object):
 		saved = pickle.dumps(object)
 		loaded = pickle.loads(saved)

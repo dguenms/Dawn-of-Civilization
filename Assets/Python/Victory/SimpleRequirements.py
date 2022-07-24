@@ -37,17 +37,18 @@ class AllAttitude(Requirement):
 # First Colombian UHV goal
 class AllowNone(Requirement):
 
-	TYPES = (AREA, CIVS)
+	GLOBAL_TYPES = (CIVS,)
+	TYPES = (AREA,)
 	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_GOAL_ALLOW_NONE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW_NONE"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ALLOW_NONE"
 	
-	def __init__(self, area, civs, **options):
-		Requirement.__init__(self, area, civs, **options)
+	def __init__(self, civs, area, **options):
+		Requirement.__init__(self, civs, area, **options)
 		
-		self.area = area
 		self.civs = civs
+		self.area = area
 	
 	def fulfilled(self, evaluator):
 		return self.area.cities().all(lambda city: self.valid(city, evaluator))
@@ -156,7 +157,7 @@ class CultureCover(Requirement):
 
 	TYPES = (AREA,)
 	
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_CULTURE_COVER"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE_IN_TERRITORY"
 	
 	def __init__(self, area, **options):
 		Requirement.__init__(self, area, **options)
@@ -211,7 +212,7 @@ class MoreCulture(Requirement):
 		return evaluator.sum(lambda p: player(p).countTotalCulture())
 	
 	def required(self):
-		return self.civs.players.sum(lambda p: player(p).countTotalCulture())
+		return self.civs.players().sum(lambda p: player(p).countTotalCulture())
 	
 	def fulfilled(self, evaluator):
 		return self.value(evaluator) >= self.required()
@@ -351,10 +352,10 @@ class Route(Requirement):
 # First Canadian UHV goal
 class RouteConnection(Requirement):
 
-	GLOBAL_TYPES = (ROUTES, AREA)
+	GLOBAL_TYPES = (ROUTES, AREA_OR_CITY)
 	TYPES = (AREA,)
 	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CREATE"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD_ROUTE_CONNECTION"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ROUTE_CONNECTION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION"
 	
@@ -370,6 +371,13 @@ class RouteConnection(Requirement):
 	def fulfilled(self, evaluator):
 		if not evaluator.any(lambda iPlayer: any(team(iPlayer).isHasTech(self.route_tech(iRoute)) for iRoute in self.routes)):
 			return False
+		
+		if isinstance(self.starts, CityArgument):
+			start = self.starts.get(evaluator.iPlayer)
+			if not start:
+				return False
+			
+			return self.connected(start.plot(), evaluator)
 		
 		return any(self.connected(start.plot(), evaluator) for start in self.starts.cities())
 		

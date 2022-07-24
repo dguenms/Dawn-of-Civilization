@@ -1,7 +1,7 @@
 from Core import *
 from VictoryEvaluators import *
 from VictoryHandlers import *
-from VictoryProgress import *
+from VictoryFormatters import *
 from Requirements import *
 from VictoryTypes import *
 
@@ -64,8 +64,12 @@ class ParameterSet(object):
 		
 	def parse_locals(self, locals):
 		if none(isinstance(argument, tuple) for argument in locals):
-			return (locals,)
-		elif not all(isinstance(argument, tuple) for argument in locals):
+			if len(self.types) == 1:
+				return tuple((argument,) for argument in locals)
+			else:
+				return (locals,)
+		
+		if not all(isinstance(argument, tuple) for argument in locals):
 			raise ValueError("Expected %d local arguments, or a sequence of tuples containing %d local arguments each, found: %s" % (len(self.types), len(self.types), locals))
 		
 		return locals
@@ -85,10 +89,15 @@ class GoalDefinition(object):
 		self.requirement = requirement
 		
 	def __call__(self, *arguments, **options):
-		parameter_set = ParameterSet(global_types=self.requirement.GLOBAL_TYPES, types=self.requirement.TYPES, arguments=arguments)
-		requirements = [self.requirement(*parameters, **options) for parameters in parameter_set]
+		try:
+			parameter_set = ParameterSet(global_types=self.requirement.GLOBAL_TYPES, types=self.requirement.TYPES, arguments=arguments)
+			requirements = [self.requirement(*parameters, **options) for parameters in parameter_set]
+			desc_key = options.pop("desc_key", self.requirement.GOAL_DESC_KEY)
 		
-		return GoalDescription(requirements, self.requirement.DESC_KEY, **options)
+			return GoalDescription(requirements, desc_key, **options)
+		
+		except ValueError, e:
+			raise ValueError("Error when parsing arguments for %s: %s" % (self.requirement.__name__, e))
 	
 	def __repr__(self):
 		return "GoalDefinition(%s)" % (self.requirement.__name__)
@@ -111,9 +120,15 @@ class GoalDescription(object):
 		
 		if self.options.get("at") is not None:
 			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
+			
+			if self.requirements[0].IN_DESC_KEY:
+				self.desc_key = self.requirements[0].IN_DESC_KEY
 		
 		if self.options.get("by") is not None:
 			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
+			
+			if self.requirements[0].BY_DESC_KEY:
+				self.desc_key = self.requirements[0].BY_DESC_KEY
 		
 	def __call__(self, iPlayer):
 		return Goal(self.requirements, self.desc_key, iPlayer, **self.options)
@@ -128,15 +143,16 @@ class GoalDescription(object):
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
 	def format_description(self):
-		requirement_descriptions = format_separators(self.requirements, ",", text("TXT_KEY_AND"), lambda requirement: requirement.description())
-		description_descs = [(self.desc_key, requirement_descriptions)] + self.desc_suffixes
-		return " ".join(text(*desc_args) for desc_args in description_descs)
+		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
 		
 
 class Goal(object):
+
+	IN_DESC_KEY = None
+	BY_DESC_KEY = None
 
 	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, by=None, at=None, every=None, **options):
 		self.requirements = requirements
@@ -245,20 +261,24 @@ class Goal(object):
 		self.handlers.add("BeginPlayerTurn", self.handle_at)
 		
 		self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(iYear)))
+		
+		if self.requirements[0].IN_DESC_KEY:
+			self.desc_key = self.requirements[0].IN_DESC_KEY
 	
 	def by(self, iYear):
 		self.iYear = iYear
 		self.handlers.add("BeginPlayerTurn", self.handle_by)
 		
 		self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(iYear)))
+		
+		if self.requirements[0].BY_DESC_KEY:
+			self.desc_key = self.requirements[0].BY_DESC_KEY
 	
 	def every(self):
 		self.handlers.add("BeginPlayerTurn", self.handle_every)
-	
+		
 	def format_description(self):
-		requirement_descriptions = format_separators(self.requirements, ",", text("TXT_KEY_AND"), lambda requirement: requirement.format_description())
-		description_descs = [(self.desc_key, requirement_descriptions)] + self.desc_suffixes
-		return " ".join(text(*desc_args) for desc_args in description_descs)
+		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -325,7 +345,10 @@ class AllGoal(Goal):
 	
 	def progress(self):
 		return sum((goal.progress() for goal in self.requirements), [])
-			
+	
+	def format_description(self):
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_suffixes)
+	
 	def add_subgoal(self, goal):
 		def fail(subgoal):
 			subgoal.set_state(FAILURE)
@@ -345,7 +368,6 @@ class DifferentCitiesGoal(Goal):
 		Goal.__init__(self, goals, goals[0].desc_key, iPlayer, **options)
 		
 		for goal in goals:
-			goal.desc_key = "TXT_KEY_VICTORY_DESC_SIMPLE"
 			self.add_subgoal(goal)
 			
 		self.recorded = {}
@@ -395,6 +417,9 @@ class DifferentCitiesGoal(Goal):
 	
 	def fulfilled(self):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
+	
+	def format_description(self):
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_suffixes)
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
@@ -414,7 +439,7 @@ class DifferentCitiesGoal(Goal):
 	
 	def progress(self):
 		return list(self.progress_entries())
-
+	
 
 class Combined(object):
 
@@ -444,11 +469,9 @@ class Combined(object):
 			return False
 		
 		return self.descriptions == other.descriptions
-		
+	
 	def format_description(self):
-		requirement_descriptions = format_separators(self.descriptions, ",", text("TXT_KEY_AND"), GoalDescription.format_description)
-		description_descs = [("TXT_KEY_VICTORY_DESC_SIMPLE", requirement_descriptions)] + self.desc_suffixes
-		return " ".join(text(*desc_args) for desc_args in description_descs)
+		return DESCRIPTION.format([(req, description.desc_key, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -459,7 +482,7 @@ class All(Combined):
 	CLASS = AllGoal
 		
 
-class Different(Combined):
+class DifferentCities(Combined):
 
 	CLASS = DifferentCitiesGoal
 		

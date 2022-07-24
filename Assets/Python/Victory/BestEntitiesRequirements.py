@@ -20,7 +20,7 @@ class BestCultureCities(BestCitiesRequirement):
 # Second Byzantine UHV goal
 class BestCultureCity(BestCityRequirement):
 
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE_CITY_WORLD"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_CULTURE"
 	
@@ -47,7 +47,7 @@ class BestPopulationCities(BestCitiesRequirement):
 # Third Mexican UHV goal
 class BestPopulationCity(BestCityRequirement):
 
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE_CITY_WORLD"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITY"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
 	

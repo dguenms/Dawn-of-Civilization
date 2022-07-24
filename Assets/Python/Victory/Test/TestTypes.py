@@ -41,70 +41,6 @@ class TestEnum(ExtendedTestCase):
 		self.assertEqual(str(third), "EnumType.Third")
 
 
-class TestAggregate(ExtendedTestCase):
-
-	def setUp(self):
-		self.aggregate = SumAggregate([1, 2, 3])
-	
-	def test_str(self):
-		self.assertEqual(str(self.aggregate), "SumAggregate(1, 2, 3)")
-	
-	def test_contains(self):
-		self.assertEqual(1 in self.aggregate, True)
-		self.assertEqual(0 in self.aggregate, False)
-	
-	def test_equal(self):
-		self.assertEqual(self.aggregate, SumAggregate([1, 2, 3]))
-		self.assertNotEqual(self.aggregate, SumAggregate([1, 2]))
-		
-		self.assertEqual(self.aggregate, 1)
-		self.assertNotEqual(self.aggregate, 0)
-	
-	def test_pickle(self):
-		self.assertPickleable(self.aggregate)
-	
-	def test_validate(self):
-		self.assertEqual(self.aggregate.validate(BUILDING.validate), True)
-		self.assertEqual(self.aggregate.validate(AREA.validate), False)
-	
-	def test_validate_mixed(self):
-		aggregate = SumAggregate([1, plots.of([(0, 0)])])
-		
-		self.assertEqual(aggregate.validate(BUILDING.validate), False)
-		self.assertEqual(aggregate.validate(AREA.validate), False)
-	
-	def test_format(self):
-		self.assertEqual(self.aggregate.format(COUNT.format), "a, two and three")
-		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Ikhanda and Granary")
-		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Ikhandas and Granaries")
-	
-	def test_evaluate(self):
-		self.assertEqual(self.aggregate.evaluate(lambda x: x), 6)
-		self.assertEqual(self.aggregate.evaluate(lambda x: x*x), 14)
-	
-	def test_average_evaluate(self):
-		average_aggregate = AverageAggregate([1, 2, 3])
-		
-		self.assertEqual(average_aggregate.evaluate(lambda x: x), 2)
-		self.assertEqual(average_aggregate.evaluate(lambda x: x+1), 3)
-	
-	def test_count_evaluate(self):
-		count_aggregate = CountAggregate([1, 2, 3])
-		
-		self.assertEqual(count_aggregate.evaluate(lambda x: x), 3)
-		self.assertEqual(count_aggregate.evaluate(lambda x: x % 2), 2)
-	
-	def test_varargs(self):
-		aggregate = SumAggregate(1, 2, 3)
-		
-		self.assertEqual(aggregate.items, [1, 2, 3])
-	
-	def test_generator(self):
-		aggregate = SumAggregate(x for x in xrange(3))
-		
-		self.assertEqual(aggregate.items, [0, 1, 2])
-
-
 class TestAmount(ExtendedTestCase):
 
 	def test_str(self):
@@ -160,6 +96,41 @@ class TestArea(ExtendedTestCase):
 		self.assertEqual(AREA.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
 
 
+class TestAreaOrCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.area = AreaArgument().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
+	
+	def test_str(self):
+		self.assertEqual(str(AREA_OR_CITY), "AreaOrCity")
+	
+	def test_repr(self):
+		self.assertEqual(repr(AREA_OR_CITY), "AreaOrCity")
+	
+	def test_equal(self):
+		self.assertEqual(AREA_OR_CITY, AreaOrCityType("AreaOrCity"))
+	
+	def test_pickle(self):
+		self.assertPickleable(AREA_OR_CITY)
+	
+	def test_validate(self):
+		self.assertEqual(AREA_OR_CITY.validate(self.area), True)
+		self.assertEqual(AREA_OR_CITY.validate(self.city), True)
+		self.assertEqual(AREA_OR_CITY.validate("area or city"), False)
+	
+	def test_format(self):
+		self.assertEqual(AREA_OR_CITY.format(self.area), "Test Area")
+		self.assertEqual(AREA_OR_CITY.format(self.city), "Test City")
+		
+		self.assertEqual(AREA_OR_CITY.format_repr(self.area), "Test Area")
+		self.assertEqual(AREA_OR_CITY.format_repr(self.city), "Test City")
+	
+	def test_area(self):
+		self.assertEqual(AREA_OR_CITY.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
+		self.assertEqual(AREA_OR_CITY.area(self.city), plots.of([TestCities.CITY_LOCATIONS[0]]))
+
+
 class TestAttitude(ExtendedTestCase):
 
 	def test_str(self):
@@ -207,6 +178,8 @@ class TestBuilding(ExtendedTestCase):
 	
 	def test_validate(self):
 		self.assertEqual(BUILDING.validate(1), True)
+		self.assertEqual(BUILDING.validate(StateReligionBuildingArgument(temple)), True)
+		
 		self.assertEqual(BUILDING.validate("1"), False)
 		self.assertEqual(BUILDING.validate(plots.of([(0, 0)])), False)
 	
@@ -586,6 +559,8 @@ class TestRoutes(ExtendedTestCase):
 	
 	def test_validate(self):
 		self.assertEqual(ROUTES.validate([iRouteRoad, iRouteRailroad]), True)
+		self.assertEqual(ROUTES.validate(infos.routes()), True)
+		
 		self.assertEqual(ROUTES.validate(iRouteRoad), False)
 		self.assertEqual(ROUTES.validate(["Road"]), False)
 	
@@ -593,6 +568,7 @@ class TestRoutes(ExtendedTestCase):
 		self.assertEqual(ROUTES.format([iRouteRoad]), "Road")
 		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad]), "Road or Roman Road")
 		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
+		self.assertEqual(ROUTES.format(infos.routes().named("routes")), "routes")
 		
 		self.assertEqual(ROUTES.format_repr([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
 	
@@ -609,7 +585,7 @@ class TestSpecialist(ExtendedTestCase):
 		self.assertEqual(repr(SPECIALIST), "Specialist")
 	
 	def test_equal(self):
-		self.assertEqual(SPECIALIST, InfoType("Specialist", infos.specialist))
+		self.assertEqual(SPECIALIST, SpecialistType("Specialist"))
 	
 	def test_pickle(self):
 		self.assertPickleable(SPECIALIST)
@@ -623,6 +599,17 @@ class TestSpecialist(ExtendedTestCase):
 		self.assertEqual(SPECIALIST.format(iSpecialistGreatScientist, bPlural=True), "Great Scientists")
 		
 		self.assertEqual(SPECIALIST.format_repr(iSpecialistGreatScientist), "Great Scientist")
+	
+	def test_format_aggregate(self):
+		normal_specialists = SumAggregate(iSpecialistScientist, iSpecialistEngineer, iSpecialistMerchant)
+		great_specialists = SumAggregate(iSpecialistGreatScientist, iSpecialistGreatEngineer, iSpecialistGreatMerchant)
+		mixed_specialists = SumAggregate(iSpecialistGreatScientist, iSpecialistGreatEngineer, iSpecialistMerchant)
+		named = SumAggregate(iSpecialistGreatScientist, iSpecialistGreatEngineer).named("Inventors")
+		
+		self.assertEqual(SPECIALIST.format(normal_specialists, bPlural=True), "Scientists, Engineers and Merchants")
+		self.assertEqual(SPECIALIST.format(great_specialists, bPlural=True), "Great Scientists, Engineers and Merchants")
+		self.assertEqual(SPECIALIST.format(mixed_specialists, bPlural=True), "Great Scientists, Great Engineers and Merchants")
+		self.assertEqual(SPECIALIST.format(named, bPlural=True), "Inventors")
 	
 	def test_area(self):
 		self.assertEqual(SPECIALIST.area(iSpecialistGreatScientist), None)
@@ -735,9 +722,9 @@ class TestUnitCombat(ExtendedTestCase):
 
 test_cases = [
 	TestEnum,
-	TestAggregate,
 	TestAmount,
 	TestArea,
+	TestAreaOrCity,
 	TestAttitude,
 	TestBuilding,
 	TestCity,

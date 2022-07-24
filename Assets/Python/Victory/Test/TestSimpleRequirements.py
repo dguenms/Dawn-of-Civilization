@@ -66,9 +66,9 @@ class TestAllAttitude(ExtendedTestCase):
 class TestAllowNone(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.civs = CivsArgument(1).named("Test Civs")
-		self.requirement = AllowNone(self.area, self.civs)
+		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
+		self.requirement = AllowNone(self.civs, self.area)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -77,13 +77,13 @@ class TestAllowNone(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "AllowNone(Test Area, Test Civs)")
+		self.assertEqual(str(self.requirement), "AllowNone(Test Civs, Test Area)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "AllowNone(Test Area, Test Civs)")
+		self.assertEqual(repr(self.requirement), "AllowNone(Test Civs, Test Area)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "no Test Civs civilizations in Test Area")
+		self.assertEqual(self.requirement.description(), "Test Area")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
@@ -501,7 +501,7 @@ class TestCultureCover(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "CultureCover(Test Area)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "all of Test Area in your territory")
+		self.assertEqual(self.requirement.description(), "Test Area")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
@@ -1180,7 +1180,7 @@ class TestRouteConnection(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "RouteConnection(Railroad, Start Area, Target Area)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "a route connection between Start Area and Target Area")
+		self.assertEqual(self.requirement.description(), "Target Area")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Start Area": plots.of([(61, 31)]), "Target Area": plots.of([(65, 31)])})
@@ -1445,7 +1445,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_multiple_start_cities(self):
-		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31), (63, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"))
+		requirement = RouteConnection([iRouteRailroad], AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Start Area"), AreaArgumentFactory().of([(65, 31)]).named("Target Area"))
 		
 		cities = TestCities.num(3)
 		
@@ -1469,7 +1469,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_multiple_target_cities(self):
-		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(63, 31), (65, 31)]).named("Target Area"))
+		requirement = RouteConnection([iRouteRailroad], AreaArgumentFactory().of([(61, 31)]).named("Start Area"), AreaArgumentFactory().of([(63, 31), (65, 31)]).named("Target Area"))
 		
 		cities = TestCities.num(3)
 		
@@ -1493,7 +1493,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_with_start_owners(self):
-		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"), start_owners=True)
+		requirement = RouteConnection([iRouteRailroad], AreaArgumentFactory().of([(61, 31)]).named("Start Area"), AreaArgumentFactory().of([(65, 31)]).named("Target Area"), start_owners=True)
 		
 		cities = TestCities.owners(1, -1, 0)
 		
@@ -1517,7 +1517,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_with_start_owners_including_target(self):
-		requirement = RouteConnection([iRouteRailroad], plots.of([(61, 31)]).named("Start Area"), plots.of([(65, 31)]).named("Target Area"), start_owners=True)
+		requirement = RouteConnection([iRouteRailroad], AreaArgumentFactory().of([(61, 31)]).named("Start Area"), AreaArgumentFactory().of([(65, 31)]).named("Target Area"), start_owners=True)
 		
 		cities = TestCities.owners(1, -1, 1)
 		
@@ -1531,6 +1531,56 @@ class TestRouteConnection(ExtendedTestCase):
 		try:
 			self.assertEqual(requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_city_start(self):
+		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((61, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area"))
+		
+		capital, destination = cities = TestCities.num(2)
+		
+		route_plots = plots.of([(62, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.areas(), {"Start City": plots.of([(61, 31)]), "Target Area": plots.of([(63, 31)])})
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Railroad from Start City to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
+	def test_city_start_no_city(self):
+		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((65, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area"))
+		
+		cities = TestCities.num(2)
+		
+		route_plots = plots.of([(62, 31), (64, 31)])
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.areas(), {"Start City": plots.of([(65, 31)]), "Target Area": plots.of([(63, 31)])})
+			self.assertEqual(requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(requirement.progress(self.evaluator), self.FAILURE + "Railroad from Start City to Target Area")
 		finally:
 			team(0).setHasTech(iRailroad, False, 0, True, False)
 			

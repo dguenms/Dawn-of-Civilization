@@ -13,6 +13,9 @@ class Requirement(object):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_SIMPLE"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SIMPLE"
+	
+	BY_DESC_KEY = ""
+	IN_DESC_KEY = ""
 
 	def __init__(self, *parameters, **options):
 		self.parameters = parameters
@@ -143,7 +146,7 @@ class CityRequirement(Requirement):
 		self.city = city
 		
 	def fulfilled(self, evaluator):
-		return evaluator.any(lambda p: self.city.get(p) and self.city.get(p).getOwner() == p and self.fulfilled_city(self.city.get(p)))
+		return evaluator.any(self.fulfilled_player)
 	
 	def progress(self, evaluator, **options):
 		city = self.city.get(evaluator.iPlayer)
@@ -158,6 +161,10 @@ class CityRequirement(Requirement):
 			return "%s %s: %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())), progress_city)
 		
 		return "%s %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())))
+	
+	def fulfilled_player(self, iPlayer):
+		city = self.city.get(iPlayer)
+		return city and city.getOwner() == iPlayer and self.fulfilled_city(city)
 		
 	def fulfilled_city(self, city):
 		raise NotImplementedError()

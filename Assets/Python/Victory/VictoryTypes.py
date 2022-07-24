@@ -25,56 +25,6 @@ class Enum(object):
 		return (self.type, self.iValue) == (other.type, other.iValue)
 
 
-class Aggregate(object):
-
-	def __init__(self, *items):
-		self.items = list(variadic(*items))
-	
-	def __repr__(self):
-		return "%s(%s)" % (type(self).__name__, ", ".join(str(item) for item in self.items))
-	
-	def __contains__(self, item):
-		return item in self.items
-	
-	def __eq__(self, other):
-		if isinstance(other, Aggregate):
-			return self.items == other.items
-		
-		return other in self
-	
-	def validate(self, validate_func):
-		return all(validate_func(item) for item in self.items)
-	
-	def format(self, format_func, **options):
-		return format_separators(self.items, ",", text("TXT_KEY_AND"), lambda item: format_func(item, **options))
-	
-	def evaluate(self, evaluate_func):
-		return self.aggregate([evaluate_func(item) for item in self.items])
-	
-	def aggregate(self, items):
-		raise NotImplementedError()
-
-
-class SumAggregate(Aggregate):
-
-	def aggregate(self, items):
-		return sum(items)
-
-
-class AverageAggregate(Aggregate):
-
-	def aggregate(self, items):
-		if len(items) == 0:
-			return 0.0
-		return 1.0 * sum(items) / len(items)
-
-
-class CountAggregate(Aggregate):
-
-	def aggregate(self, items):
-		return count(items)
-
-
 class Type(object):
 
 	def __init__(self, name):
@@ -94,6 +44,8 @@ class Type(object):
 	def format(self, argument, **options):
 		if isinstance(argument, Aggregate):
 			return argument.format(self.format_func, **options)
+		if isinstance(argument, NamedArgument):
+			return argument.name()
 		return self.format_func(argument, **options)
 		
 	def area(self, argument):
@@ -102,6 +54,8 @@ class Type(object):
 	def format_repr(self, argument):
 		if isinstance(argument, Aggregate):
 			return argument.format(self.format_repr_func)
+		if isinstance(argument, NamedArgument):
+			return argument.name()
 		return self.format_repr_func(argument)
 		
 	def validate_func(self, argument):
@@ -142,7 +96,7 @@ class InfoType(Type):
 		return type(self.info) == type(other.info)
 		
 	def validate_func(self, argument):
-		return isinstance(argument, int)
+		return isinstance(argument, (DeferredArgument, int))
 	
 	def format_func(self, argument, bPlural=False, **options):
 		text = self.info(argument).getText()
@@ -162,9 +116,19 @@ class InfosType(Type):
 		self.sub_type = InfoType(name, info)
 	
 	def validate_func(self, argument):
-		return isinstance(argument, list) and all(self.sub_type.validate(entry) for entry in argument)
+		if isinstance(argument, InfoCollection):
+			return True
+	
+		if isinstance(argument, list) and all(self.sub_type.validate(entry) for entry in argument):
+			return True
+		
+		return False
 	
 	def format_func(self, argument):
+		if isinstance(argument, InfoCollection):
+			if argument.name():
+				return argument.name()
+	
 		return format_separators(argument, ",", text("TXT_KEY_OR"), self.sub_type.format)
 		
 		
@@ -270,8 +234,53 @@ class UnitCombatType(Type):
 		return infos.unitCombat(argument).getDescription().split(" ")[0]
 
 
+class AreaOrCityType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, (AreaArgument, CityArgument))
+	
+	def format_func(self, argument):
+		return argument.name()
+	
+	def area(self, argument):
+		if isinstance(argument, AreaArgument):
+			return argument.create()
+		if isinstance(argument, CityArgument):
+			return argument.area()
+
+
+class SpecialistType(InfoType):
+
+	def __init__(self, name):
+		InfoType.__init__(self, name, infos.specialist)
+	
+	def format_great_specialist_short(self, iSpecialist, **options):
+		return self.format_func(iSpecialist, **options).split(" ")[1]
+	
+	def format(self, argument, **options):
+		if isinstance(argument, Aggregate) and not argument.name():
+			if all(iSpecialist in lGreatSpecialists for iSpecialist in argument.items):
+				formatted = argument.format(self.format_great_specialist_short, **options)
+				return self.format_func(lGreatSpecialists[0]).split(" ")[0] + " " + formatted
+		
+		return InfoType.format(self, argument, **options)
+
+
+class ResourceType(InfoType):
+
+	def __init__(self, name):
+		InfoType.__init__(self, name, infos.bonus)
+	
+	def format_func(self, argument, **options):
+		formatted = InfoType.format_func(self, argument, **options)
+		if formatted[-1] == "s":
+			formatted = formatted[:-1]
+		return formatted
+
+
 AMOUNT = SimpleType("Amount", int)
 AREA = AreaType("Area")
+AREA_OR_CITY = AreaOrCityType("AreaOrCity")
 ATTITUDE = AttitudeType("Attitude")
 BUILDING = InfoType("Building", infos.building)
 CITY = CityType("City")
@@ -286,9 +295,9 @@ PERCENTAGE = PercentageType("Percentage")
 PROJECT = InfoType("Project", infos.project)
 RELIGION = InfoType("Religion", infos.religion)
 RELIGION_ADJECTIVE = ReligionAdjectiveType("ReligionAdjective")
-RESOURCE = InfoType("Resource", infos.bonus)
+RESOURCE = ResourceType("Resource")
 ROUTES = InfosType("Routes", infos.route)
-SPECIALIST = InfoType("Specialist", infos.specialist)
+SPECIALIST = SpecialistType("Specialist")
 TECH = InfoType("Tech", infos.tech)
 TERRAIN = InfoType("Terrain", infos.terrain)
 UNIT = InfoType("Unit", infos.unit)

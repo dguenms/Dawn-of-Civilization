@@ -210,7 +210,7 @@ class TestBestCultureCity(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "BestCultureCity(Test City)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "Test City the most culturally advanced city in the world")
+		self.assertEqual(self.requirement.description(), "the most culturally advanced")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
@@ -541,7 +541,7 @@ class TestBestPopulationCity(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "BestPopulationCity(Test City)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "Test City the most populous city in the world")
+		self.assertEqual(self.requirement.description(), "the most populous")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})

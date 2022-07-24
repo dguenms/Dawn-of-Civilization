@@ -50,6 +50,27 @@ class TestSelfEvaluator(ExtendedTestCase):
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: a, SumAggregate(1, 2, 3)), 6)
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: a, AverageAggregate(1, 2, 3)), 2)
 		self.assertEqual(self.evaluator.evaluate(lambda x, a: a, CountAggregate(1, 2, 3)), 3)
+	
+	def test_evaluate_aggregate_multiple_arguments(self):
+		def func(iPlayer, first_arg, item, third_arg):
+			return 100 * first_arg + 10 * third_arg + item
+		
+		self.assertEqual(self.evaluator.evaluate(func, 1, SumAggregate(1, 2, 3), 1), 336)
+	
+	def test_evaluate_deferred(self):
+		argument = StateReligionBuildingArgument(temple)
+		
+		def func(iPlayer, iBuilding):
+			return iBuilding
+		
+		try:
+			player(0).setLastStateReligion(iBuddhism)
+			self.assertEqual(self.evaluator.evaluate(func, argument), iBuddhistTemple)
+			
+			player(0).setLastStateReligion(iHinduism)
+			self.assertEqual(self.evaluator.evaluate(func, argument), iHinduTemple)
+		finally:
+			player(0).setLastStateReligion(-1)
 
 
 class TestVassalsEvaluator(ExtendedTestCase):

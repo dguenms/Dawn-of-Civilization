@@ -602,7 +602,6 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		flippedCity.setOccupationTimer(0)
 	
 	if bFlipUnits:
-		sFlippingUnitsAfter = str([iUnit for iUnit, _ in flippingUnits])
 		for iUnit, typeUnits in flippingUnits:
 			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
 	else:

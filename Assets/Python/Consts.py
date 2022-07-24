@@ -912,6 +912,8 @@ iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpe
 iSpecialistResearchSatellite, iSpecialistCommercialSatellite, iSpecialistMilitarySatellite, 
 iSpecialistSlave) = range(iNumSpecialists)
 
+lGreatSpecialists = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
+
 #Stability Levels
 iNumStabilityLevels = 5
 (iStabilityCollapsing, iStabilityUnstable, iStabilityShaky, iStabilityStable, iStabilitySolid) = range(iNumStabilityLevels)

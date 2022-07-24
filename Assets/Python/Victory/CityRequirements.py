@@ -1,44 +1,6 @@
 from Core import *
 from VictoryTypes import *
 from BaseRequirements import *
-
-
-# First Phoenician UHV goal
-# First Ottoman UHV goal
-# Third Brazilian UHV goal
-# Second Confucian URV goal
-class CityBuilding(CityRequirement):
-
-	GLOBAL_TYPES = (CITY,)
-	TYPES = (BUILDING,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_BUILDING"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_BUILDING"
-	
-	def __init__(self, city, iBuilding, **options):
-		CityRequirement.__init__(self, city, iBuilding, **options)
-		
-		self.iBuilding = iBuilding
-		
-		self.handle("cityAcquired", self.check_city_acquired)
-		self.handle("buildingBuilt", self.check_building_built)
-		self.expire("buildingBuilt", self.expire_building_built)
-	
-	def check_city_acquired(self, goal, city, bConquest):
-		if self.city == city:
-			goal.check()
-	
-	def check_building_built(self, goal, city, iBuilding):
-		if self.city == city and self.iBuilding == base_building(iBuilding):
-			goal.check()
-	
-	def expire_building_built(self, goal, city, iBuilding):
-		if self.iBuilding == iBuilding and isWonder(iBuilding):
-			goal.expire()
-	
-	def fulfilled_city(self, city):
-		return city.isHasBuilding(unique_building(city.getOwner(), self.iBuilding))
 	
 
 # Third Turkic UHV goal
@@ -49,7 +11,8 @@ class CityBuilding(CityRequirement):
 # Third Taoist URV goal
 class CityCultureLevel(CityRequirement):
 
-	TYPES = (CITY, CULTURELEVEL)
+	GLOBAL_TYPES = (CITY,)
+	TYPES = (CULTURELEVEL,)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_CULTURE_LEVEL"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_CULTURE_LEVEL"

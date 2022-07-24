@@ -114,9 +114,15 @@ class BuildingCount(ThresholdRequirement):
 			goal.check()
 	
 	def value(self, iPlayer, iBuilding):
+		if iBuilding is NON_EXISTING:
+			return 0
+	
 		return player(iPlayer).countNumBuildings(unique_building(iPlayer, iBuilding))
 	
 	def description(self):
+		if not isinstance(self.iBuilding, (Aggregate, DeferredArgument)) and isWonder(self.iBuilding):
+			return BUILDING.format(self.iBuilding)
+	
 		return Requirement.description(self, bPlural=self.bPlural)
 		
 	def progress(self, evaluator):
@@ -124,6 +130,80 @@ class BuildingCount(ThresholdRequirement):
 			return BUILDING.format(self.iBuilding)
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, BUILDING.format(self.iBuilding, bPlural=True)), self.progress_value(evaluator))
+
+
+# First Phoenician UHV goal
+# First Ottoman UHV goal
+# Third Brazilian UHV goal
+# Second Confucian URV goal
+class CityBuildingCount(ThresholdRequirement):
+
+	GLOBAL_TYPES = (CITY,)
+	TYPES = (BUILDING, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD_IN_CITY"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_BUILDING_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_BUILDING_COUNT"
+	
+	IN_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE_IN_CITY"
+	
+	def __init__(self, city, iBuilding, iRequired, **options):
+		ThresholdRequirement.__init__(self, city, iBuilding, iRequired, **options)
+		
+		self.city = city
+		self.iBuilding = iBuilding
+		
+		self.handle("cityAcquired", self.check_city_acquired)
+		self.handle("buildingBuilt", self.check_building_built)
+		self.expire("buildingBuilt", self.expire_building_built)
+	
+	def check_city_acquired(self, goal, city, bConquest):
+		if self.city == city:
+			goal.check()
+	
+	def check_building_built(self, goal, city, iBuilding):
+		if self.city == city and self.iBuilding == base_building(iBuilding):
+			goal.check()
+	
+	def expire_building_built(self, goal, city, iBuilding):
+		if self.iBuilding == iBuilding and isWonder(iBuilding):
+			goal.expire()
+	
+	def value(self, iPlayer, city, iBuilding):
+		if city and city.getOwner() == iPlayer and city.isHasBuilding(unique_building(city.getOwner(), iBuilding)):
+			return 1
+		
+		return 0
+	
+	def description(self):
+		if not isinstance(self.iBuilding, Aggregate) and isWonder(self.iBuilding):
+			return BUILDING.format(self.iBuilding)
+		
+		return Requirement.description(self)
+	
+	def progress(self, evaluator, **options):
+		city = self.city.get(evaluator.iPlayer)
+		
+		if not city or city.isNone():
+			return "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_NO_CITY"))
+		
+		progress_key = city.getOwner() in evaluator and "TXT_KEY_VICTORY_PROGRESS_IN_CITY" or "TXT_KEY_VICTORY_PROGRESS_IN_CITY_DIFFERENT_OWNER"
+		
+		if self.iRequired > 1:
+			return "%s %s: %d / %d" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())), self.evaluate(evaluator), self.iRequired)
+		
+		return "%s %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())))
+
+
+class CityBuilding(CityBuildingCount):
+
+	GLOBAL_TYPES = (CITY,)
+	TYPES = (BUILDING,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_BUILDING"
+	
+	def __init__(self, city, iBuilding, **options):
+		CityBuildingCount.__init__(self, city, iBuilding, 1, **options)
 
 
 # Second Roman UHV goal
@@ -144,6 +224,12 @@ class CityCount(ThresholdRequirement):
 		
 		self.handle("cityBuilt", self.check)
 		self.handle("cityAcquiredAndKept", self.check)
+	
+	def description(self):
+		if self.iRequired == 1:
+			return text("TXT_KEY_VICTORY_DESC_CITY_COUNT_SINGLE", *self.format_parameters())
+		
+		return ThresholdRequirement.description(self)
 		
 	def value(self, iPlayer, area):
 		return area.cities().owner(iPlayer).count()

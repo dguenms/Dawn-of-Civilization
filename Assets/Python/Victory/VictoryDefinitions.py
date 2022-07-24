@@ -28,7 +28,6 @@ BestWonderCity = GoalDefinition(req.BestWonderCity)
 
 ### CITY REQUIREMENTS ###
 
-CityBuilding = GoalDefinition(req.CityBuilding)
 CityCultureLevel = GoalDefinition(req.CityCultureLevel)
 CityDifferentGreatPeopleCount = GoalDefinition(req.CityDifferentGreatPeopleCount)
 CitySpecialistCount = GoalDefinition(req.CitySpecialistCount)
@@ -39,6 +38,8 @@ CitySpecialistCount = GoalDefinition(req.CitySpecialistCount)
 AttitudeCount = GoalDefinition(req.AttitudeCount)
 AveragePopulation = GoalDefinition(req.AveragePopulation)
 BuildingCount = GoalDefinition(req.BuildingCount)
+CityBuildingCount = GoalDefinition(req.CityBuildingCount)
+CityBuilding = GoalDefinition(req.CityBuilding)
 CityCount = GoalDefinition(req.CityCount)
 ControlledResourceCount = GoalDefinition(req.ControlledResourceCount)
 CorporationCount = GoalDefinition(req.CorporationCount)
@@ -62,7 +63,7 @@ VassalCount = GoalDefinition(req.VassalCount)
 ### PERCENT REQUIREMENTS ###
 
 AreaPercent = GoalDefinition(req.AreaPercent)
-AreaPopulationPercent = GoalDefinition(req.AreaPercent)
+AreaPopulationPercent = GoalDefinition(req.AreaPopulationPercent)
 CommercePercent = GoalDefinition(req.CommercePercent)
 LandPercent = GoalDefinition(req.LandPercent)
 PopulationPercent = GoalDefinition(req.PopulationPercent)
@@ -85,7 +86,7 @@ MoreCulture = GoalDefinition(req.MoreCulture)
 MoreReligion = GoalDefinition(req.MoreReligion)
 NoReligionPercent = GoalDefinition(req.NoReligionPercent)
 NoStateReligion = GoalDefinition(req.NoStateReligion)
-Project = GoalDefinition(req.Project)
+Project = Projects = GoalDefinition(req.Project)
 Route = GoalDefinition(req.Route)
 RouteConnection = GoalDefinition(req.RouteConnection)
 StateReligionPercent = GoalDefinition(req.StateReligionPercent)
@@ -129,7 +130,7 @@ RaidGold = GoalDefinition(req.RaidGold)
 RazeCount = GoalDefinition(req.RazeCount)
 ResourceTradeGold = GoalDefinition(req.ResourceTradeGold)
 SacrificeHappiness = GoalDefinition(req.SacrificeHappiness)
-SettledCities = GoalDefinition(req.SacrificeHappiness)
+SettledCities = GoalDefinition(req.SettledCities)
 SlaveTradeGold = GoalDefinition(req.SlaveTradeGold)
 SunkShips = GoalDefinition(req.SunkShips)
 TradeGold = GoalDefinition(req.TradeGold)
@@ -147,3 +148,7 @@ city = LocationCityArgument
 
 capital_ = capital
 capital = CapitalCityArgument
+
+different = CountAggregate
+sum = SumAggregate
+

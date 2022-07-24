@@ -27,6 +27,75 @@ class TestNamedArgument(ExtendedTestCase):
 		self.assertEqual(self.argument.name(), "Second")
 
 
+class TestAggregate(ExtendedTestCase):
+
+	def setUp(self):
+		self.aggregate = SumAggregate([1, 2, 3])
+	
+	def test_str(self):
+		self.assertEqual(str(self.aggregate), "SumAggregate(1, 2, 3)")
+	
+	def test_contains(self):
+		self.assertEqual(1 in self.aggregate, True)
+		self.assertEqual(0 in self.aggregate, False)
+	
+	def test_equal(self):
+		self.assertEqual(self.aggregate, SumAggregate([1, 2, 3]))
+		self.assertNotEqual(self.aggregate, SumAggregate([1, 2]))
+		
+		self.assertEqual(self.aggregate, 1)
+		self.assertNotEqual(self.aggregate, 0)
+	
+	def test_pickle(self):
+		self.assertPickleable(self.aggregate)
+	
+	def test_validate(self):
+		self.assertEqual(self.aggregate.validate(BUILDING.validate), True)
+		self.assertEqual(self.aggregate.validate(AREA.validate), False)
+	
+	def test_validate_mixed(self):
+		aggregate = SumAggregate([1, plots.of([(0, 0)])])
+		
+		self.assertEqual(aggregate.validate(BUILDING.validate), False)
+		self.assertEqual(aggregate.validate(AREA.validate), False)
+	
+	def test_format(self):
+		self.assertEqual(self.aggregate.format(COUNT.format), "a, two and three")
+		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Ikhanda and Granary")
+		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Ikhandas and Granaries")
+	
+	def test_format_named(self):
+		self.aggregate.named("named aggregate")
+		
+		self.assertEqual(self.aggregate.format(BUILDING.format), "named aggregate")
+	
+	def test_evaluate(self):
+		self.assertEqual(self.aggregate.evaluate(lambda x: x), 6)
+		self.assertEqual(self.aggregate.evaluate(lambda x: x*x), 14)
+	
+	def test_average_evaluate(self):
+		average_aggregate = AverageAggregate([1, 2, 3])
+		
+		self.assertEqual(average_aggregate.evaluate(lambda x: x), 2)
+		self.assertEqual(average_aggregate.evaluate(lambda x: x+1), 3)
+	
+	def test_count_evaluate(self):
+		count_aggregate = CountAggregate([1, 2, 3])
+		
+		self.assertEqual(count_aggregate.evaluate(lambda x: x), 3)
+		self.assertEqual(count_aggregate.evaluate(lambda x: x % 2), 2)
+	
+	def test_varargs(self):
+		aggregate = SumAggregate(1, 2, 3)
+		
+		self.assertEqual(aggregate.items, [1, 2, 3])
+	
+	def test_generator(self):
+		aggregate = SumAggregate(x for x in xrange(3))
+		
+		self.assertEqual(aggregate.items, [0, 1, 2])
+
+
 class TestAreaArgument(ExtendedTestCase):
 
 	def setUp(self):
@@ -91,8 +160,18 @@ class TestAreaArgument(ExtendedTestCase):
 		
 		self.assertNotEqual(id(area1), id(area2))
 	
+	def test_add(self):
+		area = self.area.of([(0, 0)]) + self.area.of([(0, 1)])
+		
+		self.assertType(area, CombinedAreaArgument)
+		self.assertInstance(area, AreaArgument)
+		
+		created_area = area.create()
+		
+		self.assertEqual(created_area, plots.of([(0, 0), (0, 1)]))
+	
 
-class TestLocalCityArgument(ExtendedTestCase):
+class TestLocationCityArgument(ExtendedTestCase):
 
 	def setUp(self):
 		self.location = TestCities.CITY_LOCATIONS[0]
@@ -103,6 +182,13 @@ class TestLocalCityArgument(ExtendedTestCase):
 	
 	def test_repr(self):
 		self.assertEqual(repr(self.argument), "LocationCityArgument(61, 31)")
+	
+	def test_hash(self):
+		same_location = LocationCityArgument(self.location)
+		different_location = LocationCityArgument((63, 31))
+		
+		self.assertEqual(hash(self.argument), hash(same_location))
+		self.assertNotEqual(hash(self.argument), hash(different_location))
 	
 	def test_pickle(self):
 		self.assertPickleable(self.argument)
@@ -136,7 +222,7 @@ class TestLocalCityArgument(ExtendedTestCase):
 			city.kill()
 	
 	def test_get_no_city(self):
-		self.assertEqual(self.argument.get(0), None)
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
 
 
 class TestCapitalCityArgument(ExtendedTestCase):
@@ -149,6 +235,9 @@ class TestCapitalCityArgument(ExtendedTestCase):
 	
 	def test_repr(self):
 		self.assertEqual(repr(self.argument), "CapitalCityArgument()")
+	
+	def test_hash(self):
+		self.assertEqual(hash(self.argument), 0)
 	
 	def test_pickle(self):
 		self.assertPickleable(self.argument)
@@ -177,8 +266,152 @@ class TestCapitalCityArgument(ExtendedTestCase):
 			cities.kill()
 	
 	def test_get_no_city(self):
-		self.assertEqual(self.argument.get(0), None)
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
+
+
+class TestReligionHolyCityArgument(ExtendedTestCase):
+
+	def setUp(self):
+		self.argument = ReligionHolyCityArgument(iBuddhism)
 	
+	def test_str(self):
+		self.assertEqual(str(self.argument), "ReligionHolyCityArgument(Buddhism)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.argument), "ReligionHolyCityArgument(Buddhism)")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.argument)
+	
+	def test_equal_definition(self):
+		self.assertEqual(self.argument, ReligionHolyCityArgument(iBuddhism))
+		self.assertNotEqual(self.argument, ReligionHolyCityArgument(iHinduism))
+		self.assertNotEqual(self.argument, CapitalCityArgument())
+	
+	def test_equal_city(self):
+		holy_city, other_city = cities = TestCities.owners(1, 2)
+		
+		game.setHolyCity(iBuddhism, holy_city, False)
+		
+		try:
+			self.assertEqual(self.argument, holy_city)
+			self.assertNotEqual(self.argument, other_city)
+		finally:
+			game.clearHolyCity(iBuddhism)
+			cities.kill()
+	
+	def test_get(self):
+		holy_city, other_city = cities = TestCities.owners(1, 2)
+		
+		game.setHolyCity(iBuddhism, holy_city, False)
+		
+		try:
+			self.assertEqualCity(self.argument.get(0), holy_city)
+		finally:
+			game.clearHolyCity(iBuddhism)
+			cities.kill()
+	
+	def test_get_no_city(self):
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
+
+
+class TestStateReligionHolyCityArgument(ExtendedTestCase):
+
+	def setUp(self):
+		self.argument = StateReligionHolyCityArgument()
+	
+	def test_str(self):
+		self.assertEqual(str(self.argument), "StateReligionHolyCityArgument()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.argument), "StateReligionHolyCityArgument()")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.argument)
+	
+	def test_equal_definition(self):
+		self.assertEqual(self.argument, StateReligionHolyCityArgument())
+		self.assertNotEqual(self.argument, CapitalCityArgument())
+	
+	def test_equal_city(self):
+		holy_city, other_city = cities = TestCities.owners(1, 2)
+		
+		game.setHolyCity(iBuddhism, holy_city, False)
+		player(1).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(self.argument, holy_city)
+			self.assertNotEqual(self.argument, other_city)
+		finally:
+			game.clearHolyCity(iBuddhism)
+			player(0).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_get(self):
+		holy_city, other_city = cities = TestCities.owners(1, 2)
+		
+		game.setHolyCity(iBuddhism, holy_city, False)
+		player(0).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqualCity(self.argument.get(0), holy_city)
+		finally:
+			game.clearHolyCity(iBuddhism)
+			player(0).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_get_no_city(self):
+		player(0).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(self.argument.get(0), NON_EXISTING)
+		finally:
+			player(0).setLastStateReligion(-1)
+	
+	def test_get_no_state_religion(self):
+		holy_city, other_city = cities = TestCities.owners(1, 2)
+		
+		game.setHolyCity(iBuddhism, holy_city, False)
+		
+		try:
+			self.assertEqual(self.argument.get(0), NON_EXISTING)
+		finally:
+			game.clearHolyCity(iBuddhism)
+			cities.kill()
+
+
+class TestWonderCityArgument(ExtendedTestCase):
+
+	def setUp(self):
+		self.argument = WonderCityArgument(iHangingGardens)
+	
+	def test_str(self):
+		self.assertEqual(str(self.argument), "WonderCityArgument(The Hanging Gardens)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.argument), "WonderCityArgument(The Hanging Gardens)")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.argument)
+	
+	def test_equal_definition(self):
+		self.assertEqual(self.argument, WonderCityArgument(iHangingGardens))
+		self.assertNotEqual(self.argument, WonderCityArgument(iPyramids))
+		self.assertNotEqual(self.argument, CapitalCityArgument())
+	
+	def test_get(self):
+		wonder_city, other_city = cities = TestCities.owners(1, 2)
+		
+		wonder_city.setHasRealBuilding(iHangingGardens, True)
+		
+		try:
+			self.assertEqualCity(self.argument.get(0), wonder_city)
+		finally:
+			cities.kill()
+	
+	def test_get_no_city(self):
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
+
 
 class TestCivsArgument(ExtendedTestCase):
 
@@ -218,12 +451,6 @@ class TestCivsArgument(ExtendedTestCase):
 	def test_iter(self):
 		self.assertEqual(list(self.argument), [iEgypt, iBabylonia, iHarappa])
 	
-	def test_without(self):
-		self.assertEqual(self.argument.without(iHarappa), CivsArgument(iEgypt, iBabylonia))
-	
-	def test_where(self):
-		self.assertEqual(self.argument.where(lambda p: civ(p) == iEgypt), CivsArgument(iEgypt))
-	
 	def test_name(self):
 		self.assertEqual(self.argument.name(), "Egypt, Babylonia and Harappa")
 	
@@ -236,12 +463,52 @@ class TestCivsArgument(ExtendedTestCase):
 		argument = CivsArgument.group(iCivGroupAfrica)
 		
 		self.assertEqual(argument, CivsArgument(iEgypt, iPhoenicia, iEthiopia, iMali, iCongo))
+
+
+class TestStateReligionBuildingArgument(ExtendedTestCase):
+
+	def setUp(self):
+		self.argument = StateReligionBuildingArgument(temple)
+	
+	def test_str(self):
+		self.assertEqual(str(self.argument), "StateReligionBuildingArgument(temple)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.argument), "StateReligionBuildingArgument(temple)")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.argument)
+	
+	def test_equal(self):
+		self.assertEqual(self.argument, StateReligionBuildingArgument(temple))
+		self.assertNotEqual(self.argument, StateReligionBuildingArgument(cathedral))
+		self.assertNotEqual(self.argument, CapitalCityArgument)
+	
+	def test_get(self):
+		player(0).setLastStateReligion(iBuddhism)
+		
+		try:
+			self.assertEqual(self.argument.get(0), iBuddhistTemple)
+			
+			player(0).setLastStateReligion(iHinduism)
+			
+			self.assertEqual(self.argument.get(0), iHinduTemple)
+		finally:
+			player(0).setLastStateReligion(-1)
+	
+	def test_get_no_state_religion(self):
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
 		
 
 test_cases = [
 	TestNamedArgument,
+	TestAggregate,
 	TestAreaArgument,
-	TestLocalCityArgument,
+	TestLocationCityArgument,
 	TestCapitalCityArgument,
+	TestReligionHolyCityArgument,
+	TestStateReligionHolyCityArgument,
+	TestWonderCityArgument,
 	TestCivsArgument,
+	TestStateReligionBuildingArgument,
 ]

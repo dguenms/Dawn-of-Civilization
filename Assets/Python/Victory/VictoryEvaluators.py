@@ -54,10 +54,20 @@ class Evaluator(object):
 	def max(self, func):
 		return max(func(iPlayer) for iPlayer in self)
 	
-	def evaluate(self, func, primary_arg=None, *args):
-		if isinstance(primary_arg, Aggregate):
-			return primary_arg.evaluate(self.evaluate_func(func), *args)
-		return self.evaluate_func(func)(*concat(primary_arg, args))
+	def evaluate(self, func, *args):
+		arguments = list(args)
+		
+		for i, argument in enumerate(arguments):
+			if isinstance(argument, DeferredArgument):
+				arguments[i] = argument.get(self.iPlayer)
+	
+		for i, argument in enumerate(arguments):
+			if isinstance(argument, Aggregate):
+				left_arguments = arguments[:i]
+				right_arguments = arguments[i+1:]
+				return argument.evaluate(self.evaluate_func(func), left_arguments, right_arguments)
+		
+		return self.evaluate_func(func)(*arguments)
 	
 	def evaluate_func(self, func):
 		def evaluate(*args):
