@@ -17,7 +17,7 @@ class AttitudeCount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
 	
 	def __init__(self, iAttitude, iRequired, civs=None, iReligion=None, bIndependent=False, bCommunist=False, **options):
-		ThresholdRequirement.__init__(self, int(iAttitude), iRequired, **options)
+		ThresholdRequirement.__init__(self, as_int(iAttitude), iRequired, **options)
 		
 		self.civs = civs
 		self.iReligion = iReligion
@@ -491,7 +491,7 @@ class ResourceCount(ThresholdRequirement):
 
 	TYPES = (RESOURCE, COUNT)
 	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE_RESOURCES"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RESOURCE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RESOURCE_COUNT"
 	
@@ -508,8 +508,13 @@ class SpecialistCount(ThresholdRequirement):
 
 	TYPES = (SPECIALIST, COUNT)
 	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE_IN_CITIES"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_SPECIALIST_COUNT"
+	
+	SUBJECT_DESC_KEYS = {
+		STATE_RELIGION: "TXT_KEY_VICTORY_DESC_SETTLE_IN_RELIGION_CITIES",
+		SECULAR: "TXT_KEY_VICTORY_DESC_SETTLE_IN_SECULAR_CITIES",
+	}
 	
 	def __init__(self, iSpecialist, iRequired, **options):
 		ThresholdRequirement.__init__(self, iSpecialist, iRequired, **options)
@@ -551,7 +556,7 @@ class UnitCombatCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIT_COMBAT_COUNT"
 	
 	def __init__(self, iUnitCombat, iRequired, **options):
-		ThresholdRequirement.__init__(self, int(iUnitCombat), iRequired, **options)
+		ThresholdRequirement.__init__(self, as_int(iUnitCombat), iRequired, **options)
 	
 	def value(self, iPlayer, iUnitCombat):
 		if not capital(iPlayer):

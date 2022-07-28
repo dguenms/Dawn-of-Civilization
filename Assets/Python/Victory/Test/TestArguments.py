@@ -25,6 +25,11 @@ class TestNamedArgument(ExtendedTestCase):
 		
 		self.argument.named("Second")
 		self.assertEqual(self.argument.name(), "Second")
+	
+	def test_named_args(self):
+		self.argument.named("TXT_KEY_VICTORY_NAME_RELIGION_HOLY_CITY", "Buddhist")
+		
+		self.assertEqual(self.argument.name(), "the Buddhist holy city")
 
 
 class TestAggregate(ExtendedTestCase):

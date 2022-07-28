@@ -16,6 +16,7 @@ class Requirement(object):
 	
 	BY_DESC_KEY = ""
 	IN_DESC_KEY = ""
+	SUBJECT_DESC_KEYS = {}
 
 	def __init__(self, *parameters, **options):
 		self.parameters = parameters
@@ -223,6 +224,11 @@ class TrackRequirement(ThresholdRequirement):
 
 class BestEntitiesRequirement(Requirement):
 
+	SUBJECT_DESC_KEYS = {
+		STATE_RELIGION: "TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_RELIGION",
+		SECULAR: "TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_SECULAR",
+	}
+
 	def __init__(self, iNumEntities = 1, **options):
 		Requirement.__init__(self, iNumEntities, **options)
 		
@@ -278,7 +284,7 @@ class BestEntitiesRequirement(Requirement):
 			entries.append(self.next_entity_progress(evaluator, next_entity))
 		
 		return entries
-
+	
 
 class BestPlayersRequirement(BestEntitiesRequirement):
 

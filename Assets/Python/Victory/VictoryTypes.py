@@ -162,6 +162,12 @@ class PercentageType(Type):
 		return isinstance(argument, int)
 	
 	def format_func(self, argument, **options):
+		if argument == 50:
+			return text("TXT_KEY_VICTORY_HALF")
+	
+		return "%d%%" % argument
+	
+	def format_repr_func(self, argument, **options):
 		return "%d%%" % argument
 
 

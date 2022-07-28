@@ -2,6 +2,13 @@ from Core import *
 from RFCUtils import *
 
 
+def as_int(value):
+	if isinstance(value, Aggregate):
+		return value.__class__(int(item) for item in value.items)
+	
+	return int(value)
+
+
 class NonExistingArgument(object):
 
 	def __nonzero__(self):
@@ -15,13 +22,15 @@ class NamedArgument(object):
 
 	def __init__(self):
 		self.name_key = ""
+		self.name_args = []
 		
-	def named(self, key):
+	def named(self, key, *args):
 		self.name_key = key
+		self.name_args = args
 		return self
 	
 	def name(self):
-		return text(self.name_key)
+		return text(self.name_key, *self.name_args)
 
 
 class Aggregate(NamedArgument):

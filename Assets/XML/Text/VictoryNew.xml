@@ -121,6 +121,30 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_CITIES</Tag>
+		<English>settle %s1 in your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_RELIGION_CITIES</Tag>
+		<English>settle %s1 in %s2 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_SECULAR_CITIES</Tag>
+		<English>settle %s1 in secular cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CONTACT</Tag>
 		<English>make contact with %s1</English>
 		<French></French>
@@ -131,6 +155,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ACQUIRE</Tag>
 		<English>acquire %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ACQUIRE_RESOURCES</Tag>
+		<English>acquire %s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -305,6 +337,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_RELIGION</Tag>
+		<English>make sure that %s1 are %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_SECULAR</Tag>
+		<English>make sure that %s1 are secular</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_FIRST_GREAT_PERSON</Tag>
 		<English>be the first to create %s1</English>
 		<French></French>
@@ -347,6 +395,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_HAVE_IN_TERRITORY</Tag>
 		<English>have all of %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_CONTROLLED</Tag>
+		<English>make sure that %s1 is controlled by %s2 civilizations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -509,7 +565,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_RESOURCE_COUNT</Tag>
-		<English>%s2 %s1 resources</English>
+		<English>%s2 %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -525,7 +581,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SPECIALIST_COUNT</Tag>
-		<English>%s2 %s1 in your cities</English>
+		<English>%s2 %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -989,7 +1045,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYERS</Tag>
-		<English>the %s1 most advanced civilizations are %s2</English>
+		<English>the %s1 most advanced civilizations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1939,6 +1995,15 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HALF</Tag>
+		<English>half</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- Additional display text -->
 
@@ -2073,6 +2138,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_REQUIRED_ANY_OF</Tag>
 		<English>any %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_YOUR_CITIES</Tag>
+		<English>your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ADJECTIVE_CITIES</Tag>
+		<English>%s1 cities</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2702,6 +2783,14 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CATHEDRALS</Tag>
+		<English>cathedrals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_SHRINES</Tag>
 		<English>shrines</English>
 		<French></French>
@@ -2815,6 +2904,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_VIKINGS_1</Tag>
 		<English>Control the core of any European civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_SECULAR_1</Tag>
+		<English>Control a cathedral of every religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_PESEDJET</Tag>
+		<English>Be the first to create three different kinds of great people</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

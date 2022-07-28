@@ -434,6 +434,8 @@ class TestPercentage(ExtendedTestCase):
 	def test_format(self):
 		self.assertEqual(PERCENTAGE.format(1), "1%")
 		self.assertEqual(PERCENTAGE.format_repr(1), "1%")
+		
+		self.assertEqual(PERCENTAGE.format(50), "half")
 	
 	def test_area(self):
 		self.assertEqual(PERCENTAGE.area(1), None)

@@ -108,16 +108,15 @@ class BestTechPlayers(BestPlayersRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYERS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_TECH"
 	
-	def __init__(self, iRequired, subject=SELF, **options):
+	def __init__(self, iRequired, **options):
 		BestPlayersRequirement.__init__(self, iRequired, **options)
 		
 		self.iRequired = iRequired
-		self.subject = subject
 	
 		self.checked("techAcquired")
 	
 	def description(self):
-		return text(self.DESC_KEY, COUNT.format(self.iRequired), self.subject.name.lower())
+		return text(self.DESC_KEY, COUNT.format(self.iRequired))
 	
 	def metric(self, iPlayer):
 		return infos.techs().where(team(iPlayer).isHasTech).sum(lambda iTech: infos.tech(iTech).getResearchCost())

@@ -583,7 +583,7 @@ class TestGoldPercent(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "GoldPercent(50%)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "at least 50% as much gold as all other civilizations combined")
+		self.assertEqual(self.requirement.description(), "at least half as much gold as all other civilizations combined")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})
@@ -846,7 +846,7 @@ class TestNoReligionPercent(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "NoReligionPercent(50%)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "no more than 50% of your cities to have a religion")
+		self.assertEqual(self.requirement.description(), "no more than half of your cities to have a religion")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})

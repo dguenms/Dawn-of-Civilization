@@ -117,6 +117,7 @@ class GoalDescription(object):
 		self.options = options
 		
 		self.desc_suffixes = []
+		self.desc_args = []
 		
 		if self.options.get("at") is not None:
 			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
@@ -129,6 +130,14 @@ class GoalDescription(object):
 			
 			if self.requirements[0].BY_DESC_KEY:
 				self.desc_key = self.requirements[0].BY_DESC_KEY
+			
+		if self.options.get("subject") is not None:
+			subject = self.options.get("subject")
+			if subject in self.requirements[0].SUBJECT_DESC_KEYS:
+				self.desc_key = self.requirements[0].SUBJECT_DESC_KEYS.get(subject)
+			
+		if self.options.get("iReligion") is not None:
+			self.desc_args.append(RELIGION_ADJECTIVE.format(self.options.get("iReligion")))
 		
 	def __call__(self, iPlayer):
 		return Goal(self.requirements, self.desc_key, iPlayer, **self.options)
@@ -143,7 +152,7 @@ class GoalDescription(object):
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -165,7 +174,9 @@ class Goal(object):
 		self.state = POSSIBLE
 		self.title_key = ""
 		self.iYear = None
+		
 		self.desc_suffixes = []
+		self.desc_args = []
 		
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
 		
@@ -278,7 +289,7 @@ class Goal(object):
 		self.handlers.add("BeginPlayerTurn", self.handle_every)
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
+		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -347,7 +358,7 @@ class AllGoal(Goal):
 		return sum((goal.progress() for goal in self.requirements), [])
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
 	
 	def add_subgoal(self, goal):
 		def fail(subgoal):
@@ -419,7 +430,7 @@ class DifferentCitiesGoal(Goal):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
@@ -451,13 +462,14 @@ class Combined(object):
 			description.options.update(self.options)
 		
 		self.desc_suffixes = []
+		self.desc_args = []
 		
 		if self.options.get("at") is not None:
 			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
 		
 		if self.options.get("by") is not None:
 			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
-	
+		
 	def __call__(self, iPlayer):
 		return self.CLASS([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
 	
@@ -471,7 +483,7 @@ class Combined(object):
 		return self.descriptions == other.descriptions
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, description.desc_key, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, description.desc_key, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())

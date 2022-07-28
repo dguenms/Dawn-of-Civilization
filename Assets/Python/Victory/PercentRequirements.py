@@ -72,6 +72,10 @@ class LandPercent(PercentRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_LAND_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_LAND_PERCENT"
 	
+	SUBJECT_DESC_KEYS = {
+		STATE_RELIGION: "TXT_KEY_VICTORY_DESC_MAKE_SURE_CONTROLLED"
+	}
+	
 	def value(self, iPlayer):
 		return player(iPlayer).getTotalLand()
 	

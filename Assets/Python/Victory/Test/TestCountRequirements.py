@@ -2112,7 +2112,7 @@ class TestResourceCount(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "ResourceCount(Gold, 2)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "two Gold resources")
+		self.assertEqual(self.requirement.description(), "two Gold")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})
@@ -2184,7 +2184,12 @@ class TestSpecialistCount(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "SpecialistCount(Great Scientist, 2)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "two Great Scientists in your cities")
+		self.assertEqual(self.requirement.description(), "two Great Scientists")
+	
+	def test_description_religion(self):
+		requirement = SpecialistCount(iSpecialistGreatScientist, 2, iReligion=iJudaism)
+		
+		self.assertEqual(requirement.description(), "two Great Scientists")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})

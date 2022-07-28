@@ -129,9 +129,9 @@ class Progress(object):
 
 class Description(object):
 
-	def format(self, requirements, global_suffixes, required=None):
+	def format(self, requirements, desc_args, global_suffixes, required=None):
 		grouped_descriptions = self.grouped_descriptions(requirements)
-		description_entries = [self.format_entry(key, typed_parameters, descriptions, suffixes, required) for key, typed_parameters, descriptions, suffixes in grouped_descriptions]
+		description_entries = [self.format_entry(key, typed_parameters, descriptions, desc_args, suffixes, required) for key, typed_parameters, descriptions, suffixes in grouped_descriptions]
 		
 		description = format_separators(description_entries, ",", text("TXT_KEY_AND"))
 		
@@ -158,14 +158,14 @@ class Description(object):
 				parameter = tuple(parameter)
 			yield parameter
 	
-	def format_entry(self, key, typed_parameters, descriptions, suffixes, required):
+	def format_entry(self, key, typed_parameters, descriptions, desc_args, suffixes, required):
 		descriptions = format_separators(descriptions, ",", text("TXT_KEY_AND"))
 		parameters = [type.format(parameter) for type, parameter in typed_parameters]
 		
 		if required is not None:
 			descriptions = text("TXT_KEY_VICTORY_REQUIRED_OUT_OF", COUNT.format(required), descriptions)
 		
-		primary_description = [key, descriptions] + parameters
+		primary_description = [key, descriptions] + desc_args + parameters
 		return " ".join(text(*desc_args) for desc_args in (primary_description,) + suffixes)
 
 
