@@ -152,86 +152,86 @@ class TestDescription(ExtendedTestCase):
 		self.description = Description()
 	
 	def test_single_requirement(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries")
 	
 	def test_single_requirement_suffix(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [])]
 		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries by 1000 AD")
 	
 	def test_single_requirement_required(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], 2), "control two out of three Granaries")
 	
 	def test_multiple_requirements(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries, four Libraries and five Walls")
 	
 	def test_multiple_requirements_suffix(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [], [])]
 		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries, four Libraries and five Walls by 1000 AD")
 	
 	def test_multiple_requirements_required(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], 2), "control two out of three Granaries, four Libraries and five Walls")
 	
 	def test_multiple_goals(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries and acquire four Silk resources")
 	
 	def test_multiple_goals_different_suffixes(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [("TXT_KEY_VICTORY_BY", "1000 AD")]), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [("TXT_KEY_VICTORY_IN", "1500 AD")])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_BY", "1000 AD")]), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_IN", "1500 AD")])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries by 1000 AD and acquire four Silk resources in 1500 AD")
 	
 	def test_multiple_goals_global_suffix(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [])]
 		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries and acquire four Silk resources by 1000 AD")
 	
 	def test_multiple_goals_required(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], 2), "control two out of three Granaries and acquire two out of four Silk resources")
 	
 	def test_multiple_goals_shared_arguments(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "make Test City the most culturally advanced and the most populous city in the world")
 	
 	def test_multiple_goals_different_arguments(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("First City")), BestCultureCity.GOAL_DESC_KEY, []), (BestPopulationCity(LocationCityArgument((63, 31)).named("Second City")), BestPopulationCity.GOAL_DESC_KEY, [])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("First City")), BestCultureCity.GOAL_DESC_KEY, [], []), (BestPopulationCity(LocationCityArgument((63, 31)).named("Second City")), BestPopulationCity.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "make First City the most culturally advanced city in the world and make Second City the most populous city in the world")
 	
 	def test_multiple_goals_different_desc_keys(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), "TXT_KEY_VICTORY_DESC_HAVE", []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), "TXT_KEY_VICTORY_DESC_ACQUIRE", [])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), "TXT_KEY_VICTORY_DESC_HAVE", [], []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), "TXT_KEY_VICTORY_DESC_ACQUIRE", [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "have the most culturally advanced and acquire the most populous")
 	
 	def test_multiple_goals_different_suffixes(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [("TXT_KEY_VICTORY_BY", "1000 AD")]), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [("TXT_KEY_VICTORY_IN", "1500 AD")])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_BY", "1000 AD")]), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_IN", "1500 AD")])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "make Test City the most culturally advanced city in the world by 1000 AD and make Test City the most populous city in the world in 1500 AD")
 	
 	def test_multiple_goals_shared_arguments_global_suffix(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [])]
 		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "make Test City the most culturally advanced and the most populous city in the world by 1000 AD")
 	
 	def test_multiple_goals_shared_arguments_required(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], 2), "make Test City two out of the most culturally advanced and the most populous city in the world")
 

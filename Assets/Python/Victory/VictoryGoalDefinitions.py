@@ -107,37 +107,57 @@ class GoalDefinition(object):
 			return False
 	
 		return self.requirement == other.requirement
-		
-		
-class GoalDescription(object):
 
-	def __init__(self, requirements, desc_key, **options):
-		self.requirements = requirements
+
+class Describable(object):
+
+	IN_DESC_KEY = None
+	BY_DESC_KEY = None
+	SUBJECT_DESC_KEYS = {}
+
+	def __init__(self, requirement, desc_key, at=None, by=None, subject=None, iReligion=None, **options):
 		self.desc_key = desc_key
-		self.options = options
+		self.iYear = None
 		
 		self.desc_suffixes = []
 		self.desc_args = []
 		
-		if self.options.get("at") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
+		if at is not None:
+			self.at(at)		
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(at)))
 			
-			if self.requirements[0].IN_DESC_KEY:
-				self.desc_key = self.requirements[0].IN_DESC_KEY
+			if requirement.IN_DESC_KEY:
+				self.desc_key = requirement.IN_DESC_KEY
 		
-		if self.options.get("by") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
+		if by is not None:
+			self.by(by)
+			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(by)))
 			
-			if self.requirements[0].BY_DESC_KEY:
-				self.desc_key = self.requirements[0].BY_DESC_KEY
-			
-		if self.options.get("subject") is not None:
-			subject = self.options.get("subject")
-			if subject in self.requirements[0].SUBJECT_DESC_KEYS:
-				self.desc_key = self.requirements[0].SUBJECT_DESC_KEYS.get(subject)
-			
-		if self.options.get("iReligion") is not None:
-			self.desc_args.append(RELIGION_ADJECTIVE.format(self.options.get("iReligion")))
+			if requirement.BY_DESC_KEY:
+				self.desc_key = requirement.BY_DESC_KEY
+		
+		if subject is not None:
+			subject_desc_key = requirement.SUBJECT_DESC_KEYS.get(subject)
+			if subject_desc_key:
+				self.desc_key = subject_desc_key
+		
+		if iReligion is not None:
+			self.desc_args.append(RELIGION_ADJECTIVE.format(iReligion))
+	
+	def at(self, at):
+		pass
+	
+	def by(self, by):
+		pass
+
+
+class GoalDescription(Describable):
+
+	def __init__(self, requirements, desc_key, **options):
+		Describable.__init__(self, requirements[0], desc_key, **options)
+	
+		self.requirements = requirements
+		self.options = options
 		
 	def __call__(self, iPlayer):
 		return Goal(self.requirements, self.desc_key, iPlayer, **self.options)
@@ -152,20 +172,20 @@ class GoalDescription(object):
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
 		
 
-class Goal(object):
+class Goal(Describable):
 
-	IN_DESC_KEY = None
-	BY_DESC_KEY = None
-
-	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, by=None, at=None, every=None, **options):
+	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, **options):
+		self.handlers = Handlers()
+		
+		Describable.__init__(self, requirements[0], desc_key, subject=subject, **options)
+	
 		self.requirements = requirements
-		self.desc_key = desc_key
 		self.iPlayer = iPlayer
 		
 		self.mode = mode
@@ -173,26 +193,11 @@ class Goal(object):
 		
 		self.state = POSSIBLE
 		self.title_key = ""
-		self.iYear = None
-		
-		self.desc_suffixes = []
-		self.desc_args = []
 		
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
 		
-		self.handlers = Handlers()
-		
 		if self.required is None:
 			self.required = len(self.requirements)
-		
-		if by is not None:
-			self.by(by)
-		
-		if at is not None:
-			self.at(at)
-		
-		if every is not None:
-			self.every()
 		
 		self.register_handlers()
 	
@@ -270,26 +275,13 @@ class Goal(object):
 	def at(self, iYear):
 		self.iYear = iYear
 		self.handlers.add("BeginPlayerTurn", self.handle_at)
-		
-		self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(iYear)))
-		
-		if self.requirements[0].IN_DESC_KEY:
-			self.desc_key = self.requirements[0].IN_DESC_KEY
 	
 	def by(self, iYear):
 		self.iYear = iYear
 		self.handlers.add("BeginPlayerTurn", self.handle_by)
 		
-		self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(iYear)))
-		
-		if self.requirements[0].BY_DESC_KEY:
-			self.desc_key = self.requirements[0].BY_DESC_KEY
-	
-	def every(self):
-		self.handlers.add("BeginPlayerTurn", self.handle_every)
-		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
+		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -358,7 +350,7 @@ class AllGoal(Goal):
 		return sum((goal.progress() for goal in self.requirements), [])
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
 	
 	def add_subgoal(self, goal):
 		def fail(subgoal):
@@ -430,7 +422,7 @@ class DifferentCitiesGoal(Goal):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
@@ -452,23 +444,16 @@ class DifferentCitiesGoal(Goal):
 		return list(self.progress_entries())
 	
 
-class Combined(object):
+class Combined(Describable):
 
 	def __init__(self, *descriptions, **options):
+		Describable.__init__(self, descriptions[0], None, **options)
+	
 		self.descriptions = descriptions
 		self.options = options
 		
 		for description in self.descriptions:
 			description.options.update(self.options)
-		
-		self.desc_suffixes = []
-		self.desc_args = []
-		
-		if self.options.get("at") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(self.options.get("at"))))
-		
-		if self.options.get("by") is not None:
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(self.options.get("by"))))
 		
 	def __call__(self, iPlayer):
 		return self.CLASS([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
@@ -483,7 +468,7 @@ class Combined(object):
 		return self.descriptions == other.descriptions
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, description.desc_key, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, description.desc_key, description.desc_args, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())

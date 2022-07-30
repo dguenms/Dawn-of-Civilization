@@ -776,50 +776,6 @@ class TestGoal(ExtendedTestCase):
 		finally:
 			goal.deregister_handlers()
 	
-	def test_every_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, every=True)
-		city = TestCities.one()
-		
-		try:
-			self.assertEqual(goal.state, POSSIBLE)
-			
-			city.setHasRealBuilding(iGranary, 1)
-			self.assertEqual(goal.fulfilled(), True)
-			
-			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
-			self.assertEqual(goal.state, SUCCESS)
-		finally:
-			city.kill()
-			goal.deregister_handlers()
-	
-	def test_every_not_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, every=True)
-		
-		try:
-			self.assertEqual(goal.state, POSSIBLE)
-			self.assertEqual(goal.fulfilled(), False)
-			
-			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
-			self.assertEqual(goal.state, POSSIBLE)
-		finally:
-			goal.deregister_handlers()
-	
-	def test_every_different_turn(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, every=True)
-		city = TestCities.one()
-		
-		try:
-			self.assertEqual(goal.state, POSSIBLE)
-			
-			city.setHasRealBuilding(iGranary, True)
-			self.assertEqual(goal.fulfilled(), True)
-			
-			events.fireEvent("BeginPlayerTurn", 1, self.iPlayer)
-			self.assertEqual(goal.state, SUCCESS)
-		finally:
-			city.kill()
-			goal.deregister_handlers()
-	
 	def test_evaluator(self):
 		self.assertEqual(self.goal.evaluator, SelfEvaluator(self.iPlayer))
 	
