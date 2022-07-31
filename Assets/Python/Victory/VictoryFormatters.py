@@ -90,6 +90,13 @@ def capitalize(string):
 	return string[0].upper() + string[1:]
 
 
+def format_date_turn(iYear, with_turn=False):
+	if with_turn:
+		return "%s (%s)" % (format_date(iYear), text("TXT_KEY_VICTORY_TURN", year(iYear) - scenarioStartTurn()))
+	
+	return format_date(iYear)
+
+
 class Progress(object):
 		
 	def format(self, requirements, evaluator):
@@ -135,7 +142,7 @@ class Description(object):
 		
 		description = format_separators(description_entries, ",", text("TXT_KEY_AND"))
 		
-		return " ".join([description] + [text(*args) for args in global_suffixes])
+		return " ".join([description] + list(global_suffixes))
 	
 	def grouped_descriptions(self, requirements):
 		arguments = self.arguments(requirements)
@@ -146,8 +153,7 @@ class Description(object):
 		
 		for key, typed_parameters, desc_args, _, suffixes in arguments:
 			if (key, typed_parameters, desc_args, suffixes) in grouped_descriptions:
-				desc = (key, typed_parameters, desc_args, grouped_descriptions.pop((key, typed_parameters, desc_args, suffixes)), suffixes)
-				yield desc
+				yield (key, typed_parameters, desc_args, grouped_descriptions.pop((key, typed_parameters, desc_args, suffixes)), suffixes)
 	
 	def arguments(self, requirements):
 		return [(req_key, tuple(zip(req.GLOBAL_TYPES, self.convert_parameters(req.parameters))), tuple(req_args), req.description(), tuple(req_suffixes)) for req, req_key, req_args, req_suffixes in requirements]
@@ -165,8 +171,8 @@ class Description(object):
 		if required is not None:
 			descriptions = text("TXT_KEY_VICTORY_REQUIRED_OUT_OF", COUNT.format(required), descriptions)
 		
-		primary_description = [key, descriptions] + desc_args + parameters
-		return " ".join(text(*desc_args) for desc_args in (primary_description,) + suffixes)
+		combined_desc_args = [descriptions] + desc_args + parameters
+		return " ".join([text(key, *combined_desc_args)] + list(suffixes))
 
 
 PROGRESS = Progress()

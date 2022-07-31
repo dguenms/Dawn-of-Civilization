@@ -1472,8 +1472,8 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Culture in Second: 5000 / 1000",
 				self.SUCCESS + "Culture in First: 5000 / 1000",
+				self.SUCCESS + "Culture in Second: 5000 / 1000",
 				self.SUCCESS + "Culture in Third: 1000 / 1000",
 			])
 		finally:

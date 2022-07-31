@@ -2925,5 +2925,74 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+
+<!-- Interface -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILURE</Tag>
+		<English>NO</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_SUCCESS</Tag>
+		<English>YES</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_POSSIBLE</Tag>
+		<English>Not yet</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_SUCCESS_STRING</Tag>
+		<English>Goal accomplished!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILURE_STRING</Tag>
+		<English>Goal failed!</English>
+		<French>Objectif &#233;chou&#233; !</French>
+		<German>Goal failed!</German>
+		<Italian>Goal failed!</Italian>
+		<Spanish>Goal failed!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TURN</Tag>
+		<English>Turn %d1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FAILURE</Tag>
+		<English>You have failed to %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_SUCCESS</Tag>
+		<English>You have succeeded to %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 </Civ4GameText>

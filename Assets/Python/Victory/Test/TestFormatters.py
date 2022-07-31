@@ -81,6 +81,15 @@ class TestTextProcessing(ExtendedTestCase):
 	
 	def test_in_area_none(self):
 		self.assertEqual(in_area("this is a sentence", None), "this is a sentence")
+	
+	def test_format_date_turn_before(self):
+		self.assertEqual(format_date_turn(-1000, False), "1000 BC")
+	
+	def test_format_date_turn_after(self):
+		self.assertEqual(format_date_turn(1000, False), "1000 AD")
+	
+	def test_format_date_turn(self):
+		self.assertEqual(format_date_turn(1000, True), "1000 AD (Turn 221)")
 
 
 class StringProgress(object):
@@ -158,7 +167,7 @@ class TestDescription(ExtendedTestCase):
 	
 	def test_single_requirement_suffix(self):
 		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [])]
-		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
+		suffixes = ["by 1000 AD"]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries by 1000 AD")
 	
@@ -174,7 +183,7 @@ class TestDescription(ExtendedTestCase):
 	
 	def test_multiple_requirements_suffix(self):
 		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iLibrary, 4), BuildingCount.GOAL_DESC_KEY, [], []), (BuildingCount(iWalls, 5), BuildingCount.GOAL_DESC_KEY, [], [])]
-		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
+		suffixes = ["by 1000 AD"]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries, four Libraries and five Walls by 1000 AD")
 	
@@ -189,13 +198,13 @@ class TestDescription(ExtendedTestCase):
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries and acquire four Silk resources")
 	
 	def test_multiple_goals_different_suffixes(self):
-		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_BY", "1000 AD")]), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_IN", "1500 AD")])]
+		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], ["by 1000 AD"]), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], ["in 1500 AD"])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "control three Granaries by 1000 AD and acquire four Silk resources in 1500 AD")
 	
 	def test_multiple_goals_global_suffix(self):
 		requirements = [(BuildingCount(iGranary, 3), BuildingCount.GOAL_DESC_KEY, [], []), (ResourceCount(iSilk, 4), ResourceCount.GOAL_DESC_KEY, [], [])]
-		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
+		suffixes = ["by 1000 AD"]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "control three Granaries and acquire four Silk resources by 1000 AD")
 	
@@ -220,13 +229,13 @@ class TestDescription(ExtendedTestCase):
 		self.assertEqual(self.description.format(requirements, [], [], None), "have the most culturally advanced and acquire the most populous")
 	
 	def test_multiple_goals_different_suffixes(self):
-		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_BY", "1000 AD")]), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [("TXT_KEY_VICTORY_IN", "1500 AD")])]
+		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], ["by 1000 AD"]), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], ["in 1500 AD"])]
 		
 		self.assertEqual(self.description.format(requirements, [], [], None), "make Test City the most culturally advanced city in the world by 1000 AD and make Test City the most populous city in the world in 1500 AD")
 	
 	def test_multiple_goals_shared_arguments_global_suffix(self):
 		requirements = [(BestCultureCity(LocationCityArgument((61, 31)).named("Test City")), BestCultureCity.GOAL_DESC_KEY, [], []), (BestPopulationCity(LocationCityArgument((61, 31)).named("Test City")), BestPopulationCity.GOAL_DESC_KEY, [], [])]
-		suffixes = [("TXT_KEY_VICTORY_BY", "1000 AD")]
+		suffixes = ["by 1000 AD"]
 		
 		self.assertEqual(self.description.format(requirements, [], suffixes, None), "make Test City the most culturally advanced and the most populous city in the world by 1000 AD")
 	

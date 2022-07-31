@@ -119,19 +119,19 @@ class Describable(object):
 		self.desc_key = desc_key
 		self.iYear = None
 		
-		self.desc_suffixes = []
+		self.date_suffix_keys = {}
 		self.desc_args = []
 		
 		if at is not None:
-			self.at(at)		
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_IN", format_date(at)))
+			self.at(at)	
+			self.date_suffix_keys["TXT_KEY_VICTORY_IN"] = at
 			
 			if requirement.IN_DESC_KEY:
 				self.desc_key = requirement.IN_DESC_KEY
 		
 		if by is not None:
 			self.by(by)
-			self.desc_suffixes.append(("TXT_KEY_VICTORY_BY", format_date(by)))
+			self.date_suffix_keys["TXT_KEY_VICTORY_BY"] = by
 			
 			if requirement.BY_DESC_KEY:
 				self.desc_key = requirement.BY_DESC_KEY
@@ -143,6 +143,13 @@ class Describable(object):
 		
 		if iReligion is not None:
 			self.desc_args.append(RELIGION_ADJECTIVE.format(iReligion))
+	
+	def create_date_suffixes(self):
+		for key, iYear in self.date_suffix_keys.items():
+			yield text(key, format_date_turn(iYear, self.show_date_turn()))
+	
+	def show_date_turn(self):
+		return False
 	
 	def at(self, at):
 		pass
@@ -172,7 +179,7 @@ class GoalDescription(Describable):
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -193,6 +200,7 @@ class Goal(Describable):
 		
 		self.state = POSSIBLE
 		self.title_key = ""
+		self.iSuccessTurn = None
 		
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
 		
@@ -239,6 +247,7 @@ class Goal(Describable):
 	
 	def succeed(self):
 		self.set_state(SUCCESS)
+		self.iSuccessTurn = turn()
 	
 	def fail(self):
 		self.set_state(FAILURE)
@@ -279,9 +288,12 @@ class Goal(Describable):
 	def by(self, iYear):
 		self.iYear = iYear
 		self.handlers.add("BeginPlayerTurn", self.handle_by)
+	
+	def show_date_turn(self):
+		return not team(self.iPlayer).isHasTech(iCalendar) or not AdvisorOpt.isUHVFinishDateNone()
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.desc_suffixes, self.required < len(self.requirements) and self.required or None)
+		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.required < len(self.requirements) and self.required or None)
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -303,6 +315,15 @@ class Goal(Describable):
 		self.desc_key = key
 		return self
 	
+	def state_string(self):
+		if self.failed():
+			return text("TXT_KEY_VICTORY_GOAL_FAILURE")
+		
+		if self.succeeded():
+			return text("TXT_KEY_VICTORY_GOAL_SUCCESS")
+		
+		return text("TXT_KEY_VICTORY_GOAL_POSSIBLE")
+	
 	def announce(self, key, condition=True):
 		if condition and player(self.iPlayer).isHuman() and not scenarioStart():
 			show(text(key, self.format_description()))
@@ -319,8 +340,35 @@ class Goal(Describable):
 	def area_name(self, tile):
 		return "\n".join(name for name, area in self.areas().items() if tile in area)
 	
-	def progress(self):
+	def success_string(self):
+		success_string = text("TXT_KEY_VICTORY_GOAL_SUCCESS_STRING")
+		
+		if self.iSuccessTurn is not None:
+			if AdvisorOpt.isUHVFinishDateTurn():
+				success_string += " (%s - %s)" % (format_date(game.getTurnYear(self.iSuccessTurn)), text("TXT_KEY_VICTORY_TURN", self.iSuccessTurn - scenarioStartTurn()))
+			elif AdvisorOpt.isUHVFinishDateDate():
+				success_string += " (%s)" % format_date(game.getTurnYear(self.iSuccessTurn))
+	
+		return "%s %s" % (indicator(True), success_string)
+	
+	def failure_string(self):
+		return "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_GOAL_FAILURE_STRING"))
+	
+	def format_progress(self):
 		return PROGRESS.format(self.requirements, self.evaluator)
+	
+	def progress(self):
+		progress_lines = []
+		
+		if self.succeeded():
+			progress_lines.append(self.success_string())
+		elif self.failed():
+			progress_lines.append(self.failure_string())
+		
+		if self.possible() or AdvisorOpt.UHVProgressAfterFinish():
+			progress_lines += self.format_progress()
+		
+		return progress_lines
 		
 		
 class AllGoal(Goal):
@@ -346,11 +394,11 @@ class AllGoal(Goal):
 	def fulfilled(self):
 		return all(goal.succeeded() for goal in self.requirements)
 	
-	def progress(self):
-		return sum((goal.progress() for goal in self.requirements), [])
+	def format_progress(self):
+		return sum((goal.format_progress() for goal in self.requirements), [])
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
 	
 	def add_subgoal(self, goal):
 		def fail(subgoal):
@@ -422,7 +470,7 @@ class DifferentCitiesGoal(Goal):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.desc_suffixes) for goal in self.requirements for req in goal.requirements], self.desc_args, self.desc_suffixes)
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
@@ -436,11 +484,11 @@ class DifferentCitiesGoal(Goal):
 				if current_city and location(current_city) in self.recorded.values():
 					yield "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_ALREADY_COMPLETED_FOR", current_city.getName()))
 				else:
-					for entry in subgoal.progress():
+					for entry in subgoal.format_progress():
 						yield entry
 				break
 	
-	def progress(self):
+	def format_progress(self):
 		return list(self.progress_entries())
 	
 
@@ -468,7 +516,7 @@ class Combined(Describable):
 		return self.descriptions == other.descriptions
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, description.desc_key, description.desc_args, description.desc_suffixes) for description in self.descriptions for req in description.requirements], self.desc_args, self.desc_suffixes, self.options.get("required"))
+		return DESCRIPTION.format([(req, description.desc_key, description.desc_args, description.create_date_suffixes()) for description in self.descriptions for req in description.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
