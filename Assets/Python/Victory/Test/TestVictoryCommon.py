@@ -3,7 +3,7 @@ from Core import *
 from unittest import *
 
 from VictoryEvaluators import *
-from Pickle import pickle
+from Pickling import pickle
 
 
 class ExtendedTestCase(TestCase):

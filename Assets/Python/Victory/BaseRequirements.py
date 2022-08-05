@@ -67,7 +67,7 @@ class Requirement(object):
 		return []
 	
 	def format_parameters(self, **options):
-		return [type.format(parameter, **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)] + self.additional_formats()
+		return [type.format(type.scale(parameter), **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)] + self.additional_formats()
 		
 	def description(self, **options):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
@@ -103,7 +103,7 @@ class ThresholdRequirement(Requirement):
 		raise NotImplementedError()
 	
 	def required(self):
-		return self.iRequired
+		return self.TYPES[-1].scale(self.iRequired)
 		
 	def evaluate(self, evaluator):
 		return evaluator.evaluate(self.value, *self.parameters[:-1])

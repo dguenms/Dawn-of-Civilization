@@ -50,7 +50,7 @@ class TestAmount(ExtendedTestCase):
 		self.assertEqual(repr(AMOUNT), "Amount")
 	
 	def test_equal(self):
-		self.assertEqual(AMOUNT, SimpleType("Amount", int))
+		self.assertEqual(AMOUNT, AmountType("Amount"))
 	
 	def test_pickle(self):
 		self.assertPickleable(AMOUNT)
@@ -669,6 +669,32 @@ class TestTerrain(ExtendedTestCase):
 		self.assertEqual(TERRAIN.area(iOcean), None)
 
 
+class TestTurns(ExtendedTestCase):
+
+	def test_str(self):
+		self.assertEqual(str(TURNS), "Turns")
+	
+	def test_repr(self):
+		self.assertEqual(repr(TURNS), "Turns")
+	
+	def test_equal(self):
+		self.assertEqual(TURNS, TurnsType("Turns"))
+	
+	def test_pickle(self):
+		self.assertPickleable(TURNS)
+	
+	def test_validate(self):
+		self.assertEqual(TURNS.validate(10), True)
+		self.assertEqual(TURNS.validate("ten"), False)
+	
+	def test_format(self):
+		self.assertEqual(TURNS.format(10), "ten")
+		self.assertEqual(TURNS.format_repr(10), "10")
+	
+	def test_area(self):
+		self.assertEqual(TURNS.area(10), None)
+
+
 class TestUnit(ExtendedTestCase):
 
 	def test_str(self):
@@ -746,6 +772,7 @@ test_cases = [
 	TestSpecialist,
 	TestTerrain,
 	TestTech,
+	TestTurns,
 	TestUnit,
 	TestUnitCombat,
 ]

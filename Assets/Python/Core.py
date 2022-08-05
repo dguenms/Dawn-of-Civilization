@@ -654,6 +654,9 @@ def scale(value):
 
 
 def turns(iTurns):
+	if not game.isFinalInitialized():
+		return iTurns
+
 	iModifier = infos.gameSpeed().getGrowthPercent()
 	return iTurns * iModifier / 100
 	

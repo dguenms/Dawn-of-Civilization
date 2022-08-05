@@ -33,23 +33,23 @@ class ContactBeforeRevealed(StateRequirement):
 # Second Ethiopian UHV goal
 class ConvertAfterFounding(StateRequirement):
 
-	TYPES = (RELIGION, COUNT)
+	TYPES = (RELIGION, TURNS)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONVERT"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONVERT_AFTER_FOUNDING"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONVERT_AFTER_FOUNDING"
 	
 	def __init__(self, iReligion, iTurns, **options):
-		StateRequirement.__init__(self, iReligion, scale(iTurns), **options)
+		StateRequirement.__init__(self, iReligion, iTurns, **options)
 		
 		self.iReligion = iReligion
-		self.iTurns = scale(iTurns)
+		self.iTurns = iTurns
 		
 		self.handle("playerChangeStateReligion", self.check_convert)
 		
 	def check_convert(self, goal, iReligion):
 		if self.iReligion == iReligion and game.isReligionFounded(iReligion):
-			if turn() <= game.getReligionGameTurnFounded(iReligion) + self.iTurns:
+			if turn() <= game.getReligionGameTurnFounded(iReligion) + scale(self.iTurns):
 				self.succeed()
 			else:
 				self.fail()

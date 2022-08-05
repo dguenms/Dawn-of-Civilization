@@ -12,7 +12,7 @@ class AverageCultureAmount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AVERAGE_CULTURE"
 	
 	def __init__(self, iRequired, **options):
-		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		ThresholdRequirement.__init__(self, iRequired, **options)
 		
 	def value(self, iPlayer):
 		iNumCities = player(iPlayer).getNumCities()
@@ -35,7 +35,7 @@ class CultureAmount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CULTURE_AMOUNT"
 	
 	def __init__(self, iRequired, **options):
-		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		ThresholdRequirement.__init__(self, iRequired, **options)
 	
 	def value(self, iPlayer):
 		return player(iPlayer).countTotalCulture()
@@ -54,7 +54,7 @@ class GoldAmount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_GOLD_AMOUNT"
 	
 	def __init__(self, iRequired, **options):
-		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		ThresholdRequirement.__init__(self, iRequired, **options)
 	
 	def value(self, iPlayer):
 		return player(iPlayer).getGold()
@@ -69,7 +69,7 @@ class ShrineIncome(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SHRINE_INCOME"
 	
 	def __init__(self, iReligion, iRequired, **options):
-		ThresholdRequirement.__init__(self, iReligion, scale(iRequired), **options)
+		ThresholdRequirement.__init__(self, iReligion, iRequired, **options)
 	
 	def value(self, iPlayer, iReligion):
 		return cities.owner(iPlayer).sum(lambda city: city.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_GOLD, shrine(iReligion)))

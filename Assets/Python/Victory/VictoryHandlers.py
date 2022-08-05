@@ -60,8 +60,11 @@ class EventHandlerRegistry(object):
 		self.register_handlers(instance, instance.handlers.any_handlers, goal, self.applicable_any)
 		
 	def deregister(self, instance):
-		for event, handler_func in self.registered[instance]:
-			events.removeEventHandler(event, handler_func)
+		if instance in self.registered:
+			for event, handler_func in self.registered[instance]:
+				events.removeEventHandler(event, handler_func)
+			
+			del self.registered[instance]
 	
 	def BeginPlayerTurn(self, goal, applicable, func):
 		def BeginPlayerTurn((iGameTurn, iPlayer)):

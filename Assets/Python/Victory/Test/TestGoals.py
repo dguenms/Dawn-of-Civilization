@@ -274,6 +274,17 @@ class TestGoalDescription(ExtendedTestCase):
 		finally:
 			goal.deregister_handlers()
 	
+	def test_create_option_args(self):
+		goal_description = GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", at=1000, mode=STATELESS, required=1)
+		goal = goal_description(0, required=2, some_option=42)
+		
+		try:
+			self.assertEqual(goal.iYear, 1000)
+			self.assertEqual(goal.mode, STATELESS)
+			self.assertEqual(goal.required, 2)
+		finally:
+			goal.deregister_handlers()
+	
 	def test_create_subject(self):
 		goal_description = GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", subject=VASSALS)
 		goal = goal_description(0)

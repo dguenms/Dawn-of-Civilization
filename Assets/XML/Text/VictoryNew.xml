@@ -2994,5 +2994,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INTERMEDIATE</Tag>
+		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
+		<French>Nous avons accompli notre deuxi&#232;me objectif historique. Un &#226;ge d'or d&#233;bute pour notre civilisation !</French>
+		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
+		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
+		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
+		<English>Accomplished:</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 </Civ4GameText>

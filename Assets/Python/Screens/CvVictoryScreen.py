@@ -1557,12 +1557,12 @@ class CvVictoryScreen:
 					
 				# Leoreth: historical victory
 				if iLoopVC == 7:
-					self.displayGoals(screen, szTable, data.players[self.iActivePlayer].historicalGoals)
+					self.displayVictory(screen, szTable, data.players[self.iActivePlayer].historicalVictory)
 					bEntriesFound = True
 				
 				# Leoreth: Religious Victory
 				if iLoopVC == 8:
-					self.displayGoals(screen, szTable, data.players[self.iActivePlayer].religiousGoals)
+					self.displayVictory(screen, szTable, data.players[self.iActivePlayer].religiousVictory)
 					bEntriesFound = True
 					
 				if bEntriesFound:
@@ -1580,17 +1580,17 @@ class CvVictoryScreen:
 		self.drawTabs()
 
 	# Leoreth
-	def displayGoals(self, screen, szTable, goals):
-		for i, goal in enumerate(goals):
+	def displayVictory(self, screen, szTable, victory):
+		for i, goal in enumerate(victory.goals):
 			iRow = screen.appendTableRow(szTable)
 			
 			screen.setTableText(szTable, 0, iRow, goal.full_description(), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			screen.setTableText(szTable, 2, iRow, text("TXT_KEY_UHV_ACCOMPLISHED"), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText(szTable, 2, iRow, text("TXT_KEY_VICTORY_ACCOMPLISHED"), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			screen.setTableText(szTable, 3, iRow, goal.state_string(), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			
 			for row in goal.progress():
 				iRow = screen.appendTableRow(szTable)
-				screen.setTableText(szTable, 0, iRow, '    ' + " ".join(row), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				screen.setTableText(szTable, 0, iRow, "    " + row, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 # BUG Additions Start
 #	def getListCultureCities(self, iPlayer):

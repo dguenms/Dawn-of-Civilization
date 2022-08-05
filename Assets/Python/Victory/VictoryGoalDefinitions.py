@@ -166,8 +166,10 @@ class GoalDescription(Describable):
 		self.requirements = requirements
 		self.options = options
 		
-	def __call__(self, iPlayer):
-		return Goal(self.requirements, self.desc_key, iPlayer, **self.options)
+	def __call__(self, iPlayer, **options):
+		combined_options = self.options
+		combined_options.update(options)
+		return Goal(self.requirements, self.desc_key, iPlayer, **combined_options)
 	
 	def __repr__(self):
 		return "GoalDescription(%s)" % ", ".join(str(requirement) for requirement in self.requirements)
@@ -225,6 +227,8 @@ class Goal(Describable):
 			requirement.register_handlers(self)
 	
 	def deregister_handlers(self):
+		event_handler_registry.deregister(self)
+	
 		for requirement in self.requirements:
 			requirement.deregister_handlers()
 	
@@ -244,13 +248,18 @@ class Goal(Describable):
 		if self.state != state:
 			if self.mode == STATEFUL or state != SUCCESS:
 				self.state = state
+				
+				if self.state == SUCCESS:
+					self.iSuccessTurn = turn()
 	
 	def succeed(self):
 		self.set_state(SUCCESS)
-		self.iSuccessTurn = turn()
 	
 	def fail(self):
 		self.set_state(FAILURE)
+	
+	def override(self, func):
+		return func.__get__(self, Goal)
 	
 	def fulfilled(self):
 		return count(requirement.fulfilled(self.evaluator) for requirement in self.requirements) >= self.required
@@ -360,7 +369,7 @@ class Goal(Describable):
 	def progress(self):
 		progress_lines = []
 		
-		if self.succeeded():
+		if self.succeeded() and self.mode != STATELESS:
 			progress_lines.append(self.success_string())
 		elif self.failed():
 			progress_lines.append(self.failure_string())

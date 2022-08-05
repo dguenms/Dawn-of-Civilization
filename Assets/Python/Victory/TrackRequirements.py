@@ -73,7 +73,7 @@ class CombatFood(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_COMBAT_FOOD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.accumulated("combatFood")
 
@@ -186,7 +186,6 @@ class EraFirstDiscover(TrackRequirement):
 		TrackRequirement.__init__(self, iEra, iRequired, **options)
 		
 		self.iEra = iEra
-		self.iRequired = iRequired
 		
 		self.handle("techAcquired", self.increment_first_discovered)
 		self.expire("techAcquired", self.expire_insufficient_techs_left)
@@ -199,7 +198,7 @@ class EraFirstDiscover(TrackRequirement):
 	
 	def expire_insufficient_techs_left(self, goal, iTech):
 		if self.iEra == infos.tech(iTech).getEra():
-			if self.iValue + self.remaining_techs() < self.iRequired:
+			if self.iValue + self.remaining_techs() < self.required():
 				goal.expire()
 	
 	def remaining_techs(self):
@@ -215,7 +214,7 @@ class EraFirstDiscover(TrackRequirement):
 # Second Hindu URV goal
 class GoldenAges(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_EXPERIENCE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_GOLDEN_AGES"
@@ -224,9 +223,10 @@ class GoldenAges(TrackRequirement):
 	def __init__(self, iRequired, **options):
 		TrackRequirement.__init__(self, iRequired, **options)
 		
-		self.iRequired = scale(infos.constant("GOLDEN_AGE_LENGTH") * iRequired)
-		
 		self.handle("BeginPlayerTurn", self.increment_golden_ages)
+	
+	def required(self):
+		return scale(infos.constant("GOLDEN_AGE_LENGTH") * self.iRequired)
 	
 	def increment_golden_ages(self, goal, iGameTurn, iPlayer):
 		if player(iPlayer).isGoldenAge() and not player(iPlayer).isAnarchy():
@@ -359,7 +359,7 @@ class PiracyGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PIRACY_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.accumulated("unitPillage")
 		self.accumulated("blockade")
@@ -396,7 +396,7 @@ class RaidGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RAID_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.accumulated("unitPillage")
 		self.accumulated("cityCaptureGold")
@@ -428,7 +428,7 @@ class ResourceTradeGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RESOURCE_TRADE_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.accumulate_trade_deal_gold)
 	
@@ -503,7 +503,7 @@ class SlaveTradeGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SLAVE_TRADE_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.accumulated("playerSlaveTrade")
 	
@@ -539,7 +539,7 @@ class TradeGold(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_GOLD"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, scale(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("playerGoldTrade", self.accumulate_trade_gold)
 		self.handle("tradeMission", self.accumulate_trade_mission_gold)

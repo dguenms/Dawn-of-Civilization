@@ -3,7 +3,7 @@ from unittest import *
 
 from Slots import findSlot, addPlayer
 
-from Pickle import pickle
+from Pickling import pickle
 
 
 bSetupComplete = False

@@ -121,14 +121,14 @@ def goldenAge(iPlayer):
 			player(iOtherPlayer).AI_changeAttitudeExtra(iPlayer, -2)
 
 
-@handler("playerCivAssigned")
+#@handler("playerCivAssigned")
 def assignGoals(iPlayer):
 	if player(iPlayer).isHuman():
 		data.players[iPlayer].historicalGoals = createHistoricalGoals(iPlayer)
 		data.players[iPlayer].religiousGoals = createReligiousGoals(iPlayer)
 
 
-@handler("switch")
+#@handler("switch")
 def onSwitch(iPrevious, iCurrent):
 	for goal in data.players[iPrevious].goals:
 		goal.deactivate()
@@ -140,19 +140,19 @@ def onSwitch(iPrevious, iCurrent):
 	data.players[iCurrent].religiousGoals = createReligiousGoals(iCurrent)
 
 
-@handler("civicChanged")
+#@handler("civicChanged")
 def onCivicChanged(iPlayer, iOldCivic, iNewCivic):
 	if iPlayer == active() and infos.civic(iOldCivic).isStateReligion() != infos.civic(iNewCivic).isStateReligion():
 		switchReligiousGoals(iPlayer)
 
 
-@handler("playerChangeStateReligion")
+#@handler("playerChangeStateReligion")
 def onStateReligionChanged(iPlayer):
 	if iPlayer == active():
 		switchReligiousGoals(iPlayer)
 
 
-@handler("EndPlayerTurn")
+#@handler("EndPlayerTurn")
 def checkHistoricalGoldenAge(iGameTurn, iPlayer):
 	if data.players[iPlayer].bLaunchHistoricalGoldenAge:
 		data.players[iPlayer].bLaunchHistoricalGoldenAge = False

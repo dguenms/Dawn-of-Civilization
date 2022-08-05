@@ -51,6 +51,9 @@ class Type(object):
 	def area(self, argument):
 		return None
 	
+	def scale(self, argument):
+		return argument
+	
 	def format_repr(self, argument):
 		if isinstance(argument, Aggregate):
 			return argument.format(self.format_repr_func)
@@ -130,6 +133,18 @@ class InfosType(Type):
 				return argument.name()
 	
 		return format_separators(argument, ",", text("TXT_KEY_OR"), self.sub_type.format)
+
+
+class AmountType(Type):
+
+	def scale(self, argument):
+		return scale(argument)
+
+	def validate_func(self, argument):
+		return isinstance(argument, int)
+	
+	def format_func(self, argument, **options):
+		return str(argument)
 		
 		
 class CountType(Type):
@@ -142,6 +157,12 @@ class CountType(Type):
 	
 	def format_repr_func(self, argument):
 		return str(argument)
+
+
+class TurnsType(CountType):
+
+	def scale(self, argument):
+		return scale(argument)
 
 
 class AreaType(Type):
@@ -284,7 +305,7 @@ class ResourceType(InfoType):
 		return formatted
 
 
-AMOUNT = SimpleType("Amount", int)
+AMOUNT = AmountType("Amount")
 AREA = AreaType("Area")
 AREA_OR_CITY = AreaOrCityType("AreaOrCity")
 ATTITUDE = AttitudeType("Attitude")
@@ -306,6 +327,7 @@ ROUTES = InfosType("Routes", infos.route)
 SPECIALIST = SpecialistType("Specialist")
 TECH = InfoType("Tech", infos.tech)
 TERRAIN = InfoType("Terrain", infos.terrain)
+TURNS = TurnsType("Turns")
 UNIT = InfoType("Unit", infos.unit)
 UNITCOMBAT = UnitCombatType("UnitCombat")
 

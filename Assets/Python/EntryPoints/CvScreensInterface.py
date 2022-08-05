@@ -61,6 +61,7 @@ from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
 import Victories
+import VictoryVictories
 
 from Scenarios import getScenario
 from Locations import *
@@ -903,20 +904,19 @@ def isNeighbor(argsList):
 def getVictoryTooltip(argsList):
 	iPlayer, x, y = argsList
 	
-	historicalVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].historicalGoals]
-	religiousVictoryTooltip = [goal.area_name((x, y)) for goal in data.players[iPlayer].religiousGoals]
+	historicalVictoryTooltip = data.players[iPlayer].historicalVictory.area_names((x, y))
+	religiousVictoryTooltip = data.players[iPlayer].religiousVictory.area_names((x, y))
 	
 	tooltips = unique(tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip)
-	
 	return "\n".join(tooltips)
 
 # Leoreth
 def getHistoricalVictoryDescriptions(argsList):
 	iCiv = argsList[0]
-	if iCiv not in Victories.dHistoricalGoals:
+	if iCiv not in VictoryVictories.dHistoricalGoals:
 		return ""
 	
-	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dHistoricalGoals[iCiv])
+	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in VictoryVictories.dHistoricalGoals[iCiv])
 		
 def getCityName(argsList):
 	iPlayer, x, y = argsList

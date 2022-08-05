@@ -273,13 +273,13 @@ class CorporationCount(ThresholdRequirement):
 # Third Iranian UHV goal
 class CultureCity(ThresholdRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (AMOUNT,)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CULTURE_CITY"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CULTURE_CITY"
 	
 	def __init__(self, iRequired, **options):
-		ThresholdRequirement.__init__(self, scale(iRequired), **options)
+		ThresholdRequirement.__init__(self, iRequired, **options)
 		
 	def value(self, iPlayer):
 		city = self.best_city(iPlayer)

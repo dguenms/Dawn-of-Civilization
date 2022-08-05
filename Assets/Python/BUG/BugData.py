@@ -36,7 +36,7 @@
 
 from CvPythonExtensions import CyGame
 import BugUtil
-from Pickle import pickle
+from Pickling import pickle
 from StoredData import data
 
 STORED_DATA = "doc_stored_data"
