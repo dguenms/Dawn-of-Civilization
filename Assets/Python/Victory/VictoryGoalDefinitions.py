@@ -189,7 +189,7 @@ class GoalDescription(Describable):
 
 class Goal(Describable):
 
-	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, **options):
+	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, title_key="", **options):
 		self.handlers = Handlers()
 		
 		Describable.__init__(self, requirements[0], desc_key, subject=subject, **options)
@@ -201,7 +201,7 @@ class Goal(Describable):
 		self.required = required
 		
 		self.state = POSSIBLE
-		self.title_key = ""
+		self.title_key = title_key
 		self.iSuccessTurn = None
 		
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
@@ -316,14 +316,6 @@ class Goal(Describable):
 		
 		return self.description()
 		
-	def titled(self, key):
-		self.title_key = key
-		return self
-	
-	def desc(self, key):
-		self.desc_key = key
-		return self
-	
 	def state_string(self):
 		if self.failed():
 			return text("TXT_KEY_VICTORY_GOAL_FAILURE")

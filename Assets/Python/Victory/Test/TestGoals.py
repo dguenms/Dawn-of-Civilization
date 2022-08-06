@@ -598,11 +598,6 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.double_goal.description(), "Control three Granaries and four Libraries")
 		self.assertEqual(self.triple_goal.description(), "Control three Granaries, four Libraries and five Walls")
 	
-	def test_override_description(self):
-		self.goal.desc("Override description")
-		
-		self.assertEqual(self.goal.description(), "Override description")
-	
 	def test_description_global_arguments(self):
 		city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
 		goal = Goal([CityBuildingCount(city, iGranary, 1), CityBuildingCount(city, iPyramids, 1)], "TXT_KEY_VICTORY_DESC_BUILD_IN_CITY", 0)
@@ -619,18 +614,23 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(goal.description(), "Control two out of First Area, Second Area and Third Area")
 	
 	def test_title(self):
-		self.goal.titled("Some title")
+		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, title_key="Some title")
 		
-		self.assertEqual(self.goal.title(), "Some title")
+		try:
+			self.assertEqual(goal.title(), "Some title")
+		finally:
+			goal.deregister_handlers()
 	
 	def test_no_title(self):
 		self.assertEqual(self.goal.title(), "")
 	
 	def test_full_description(self):
-		self.goal.titled("Some title")
-		self.goal.desc("Some description")
+		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="Some title")
 		
-		self.assertEqual(self.goal.full_description(), "Some title: Some description")
+		try:
+			self.assertEqual(goal.full_description(), "Some title: Some description")
+		finally:
+			goal.deregister_handlers()
 	
 	def test_full_description_no_title(self):
 		self.assertEqual(self.goal.full_description(), "Control three Granaries")

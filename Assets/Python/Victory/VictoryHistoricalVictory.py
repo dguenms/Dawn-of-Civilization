@@ -565,6 +565,11 @@ dGoals = {
 }
 
 
+for iCiv, goals in dGoals.items():
+	for index, goal in enumerate(goals):
+		title_key = "TXT_KEY_VICTORY_TITLE_%s%s" % (infos.civ(iCiv).getIdentifier(), index+1)
+		goal.options["title_key"] = title_key
+
 
 def descriptions(iCiv):
 	for goal in dGoals[iCiv]:

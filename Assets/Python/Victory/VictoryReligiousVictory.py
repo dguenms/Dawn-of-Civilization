@@ -113,6 +113,11 @@ dAdditionalPaganGoal = {
 }
 
 
+for iReligion in range(iNumReligions):
+	for index, goal in enumerate(dGoals[iReligion]):
+		title_key = "TXT_KEY_VICTORY_TITLE_%s%s" % (infos.religion(iReligion).getText().upper()[:4], index+1)
+		goal.options["title_key"] = title_key
+
 
 def descriptions(iReligion):
 	for goal in dGoals[iReligion]:
