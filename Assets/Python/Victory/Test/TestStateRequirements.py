@@ -713,6 +713,7 @@ class TestFirstSettle(ExtendedTestCase):
 	
 	def test_conquest(self):
 		city = TestCities.one(iNative)
+		city.setPopulation(2)
 		
 		self.player.acquireCity(city, True, False)
 		
@@ -726,6 +727,7 @@ class TestFirstSettle(ExtendedTestCase):
 	
 	def test_settle_after_conquest(self):
 		their_city, our_city = TestCities.owners(iNative, self.iPlayer)
+		their_city.setPopulation(2)
 		
 		self.player.acquireCity(their_city, True, False)
 		
