@@ -16,56 +16,48 @@ class TestVictory(ExtendedTestCase):
 		self.descriptions = [BuildingCount(iGranary, 3)]
 		self.victory = Victory(0, self.descriptions)
 		
-		self.victory.on_failure = self.on_failure
-		self.victory.on_success = self.on_success
+		self.victory.goal_fail = self.overridden_goal_fail
+		self.victory.goal_succeed = self.overridden_goal_succeed
 		
 		self.on_failure_called = False
 		self.on_success_called = False
 	
-	def on_failure(self, goal):
-		self.on_failure_called = True
+	def overridden_goal_fail(self):
+		def fail(goal):
+			self.on_failure_called = True
+		
+		return fail
 	
-	def on_success(self, goal):
-		self.on_success_called = True
+	def overridden_goal_succeed(self):
+		def succeed(goal):
+			self.on_success_called = True
+		
+		return succeed
 	
 	def test_attributes(self):
-		try:
-			self.assertEqual(self.victory.iPlayer, 0)
-			self.assertEqual(len(self.victory.goals), 1)
-			self.assertEqual(self.victory.goals[0], Goal([req.BuildingCount(iGranary, 3)], req.BuildingCount.GOAL_DESC_KEY, 0))
-		finally:
-			self.victory.disable()
+		self.assertEqual(self.victory.iPlayer, 0)
+		self.assertEqual(len(self.victory.goals), 1)
+		self.assertEqual(self.victory.goals[0], Goal([req.BuildingCount(iGranary, 3)], req.BuildingCount.GOAL_DESC_KEY, 0))
 	
 	def test_none_succeeded(self):
-		try:
-			self.assertEqual(self.victory.succeeded_goals(), 0)
-		finally:
-			self.victory.disable()
+		self.assertEqual(self.victory.succeeded_goals(), 0)
 	
 	def test_all_succeeded(self):
 		self.victory.goals[0].succeed()
 		
-		try:
-			self.assertEqual(self.victory.succeeded_goals(), 1)
-		finally:
-			self.victory.disable()
+		self.assertEqual(self.victory.succeeded_goals(), 1)
 	
 	def test_num_goals(self):
-		try:
-			self.assertEqual(self.victory.num_goals(), 1)
-		finally:
-			self.victory.disable()
+		self.assertEqual(self.victory.num_goals(), 1)
 	
 	def test_area_names(self):
 		descriptions = [Control(AreaArgumentFactory().of([(61, 31)]).named("First Area")), Control(AreaArgumentFactory().of([(61, 31)]).named("Second Area"))]
 		victory = Victory(0, descriptions)
 		
-		try:
-			self.assertEqual(victory.area_names((61, 31)), ["First Area", "Second Area"])
-		finally:
-			self.victory.disable()
+		self.assertEqual(victory.area_names((61, 31)), ["First Area", "Second Area"])
 	
 	def test_on_failure(self):
+		self.victory.enable()
 		self.victory.goals[0].fail()
 		
 		try:
@@ -74,6 +66,7 @@ class TestVictory(ExtendedTestCase):
 			self.victory.disable()
 	
 	def test_on_success(self):
+		self.victory.enable()
 		self.victory.goals[0].succeed()
 		
 		try:
@@ -82,10 +75,7 @@ class TestVictory(ExtendedTestCase):
 			self.victory.disable()
 	
 	def test_handlers(self):
-		try:
-			self.assertEqual(len(event_handler_registry.registered), self.iRegisteredHandlers + 1)
-		finally:
-			self.victory.disable()
+		self.assertEqual(len(event_handler_registry.registered), self.iRegisteredHandlers + 1)
 	
 	def test_disable(self):
 		self.assertEqual(len(event_handler_registry.registered), self.iRegisteredHandlers + 1)
@@ -98,10 +88,7 @@ class TestVictory(ExtendedTestCase):
 		self.victory.disable()
 		self.victory.enable()
 		
-		try:
-			self.assertEqual(len(event_handler_registry.registered), self.iRegisteredHandlers + 1)
-		finally:
-			self.victory.disable()
+		self.assertEqual(len(event_handler_registry.registered), self.iRegisteredHandlers + 1)
 
 
 class TestHistoricalVictory(ExtendedTestCase):

@@ -269,30 +269,21 @@ class TestGoalDescription(ExtendedTestCase):
 		goal_description = GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", at=1000, some_option=42, another_option="hello")
 		goal = goal_description(0)
 		
-		try:
-			self.assertEqual(goal.iYear, 1000)
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.iYear, 1000)
 	
 	def test_create_option_args(self):
 		goal_description = GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", at=1000, mode=STATELESS, required=1)
 		goal = goal_description(0, required=2, some_option=42)
 		
-		try:
-			self.assertEqual(goal.iYear, 1000)
-			self.assertEqual(goal.mode, STATELESS)
-			self.assertEqual(goal.required, 2)
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.iYear, 1000)
+		self.assertEqual(goal.mode, STATELESS)
+		self.assertEqual(goal.required, 2)
 	
 	def test_create_subject(self):
 		goal_description = GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", subject=VASSALS)
 		goal = goal_description(0)
 		
-		try:
-			self.assertType(goal.evaluator, VassalsEvaluator)
-		finally:
-			goal.deregister_handlers()
+		self.assertType(goal.evaluator, VassalsEvaluator)
 
 
 class TestGoal(ExtendedTestCase):
@@ -312,10 +303,6 @@ class TestGoal(ExtendedTestCase):
 		AdvisorOpt.setUHVProgressAfterFinish(False)
 		
 	def tearDown(self):
-		self.goal.deregister_handlers()
-		self.double_goal.deregister_handlers()
-		self.triple_goal.deregister_handlers()
-		
 		team(0).setHasTech(iCalendar, False, 0, False, False)
 		
 		AdvisorOpt.setUHVFinishDate(self.iFinishDateSetting)
@@ -544,6 +531,8 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 			
 	def test_check_from_event_fulfilled(self):
+		self.goal.enable()
+	
 		self.assertEqual(self.goal.state, POSSIBLE)
 		
 		cities = TestCities.num(3)
@@ -558,6 +547,7 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(self.goal.state, SUCCESS)
 		finally:
 			cities.kill()
+			self.goal.disable()
 	
 	def test_check_from_event_not_fulfilled(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
@@ -616,10 +606,7 @@ class TestGoal(ExtendedTestCase):
 	def test_title(self):
 		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, title_key="Some title")
 		
-		try:
-			self.assertEqual(goal.title(), "Some title")
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.title(), "Some title")
 	
 	def test_no_title(self):
 		self.assertEqual(self.goal.title(), "")
@@ -627,10 +614,7 @@ class TestGoal(ExtendedTestCase):
 	def test_full_description(self):
 		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="Some title")
 		
-		try:
-			self.assertEqual(goal.full_description(), "Some title: Some description")
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.full_description(), "Some title: Some description")
 	
 	def test_full_description_no_title(self):
 		self.assertEqual(self.goal.full_description(), "Control three Granaries")
@@ -681,7 +665,6 @@ class TestGoal(ExtendedTestCase):
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
-			goal.deregister_handlers()
 	
 	def test_progress_multiline_requirement(self):
 		goal = Goal([BestPopulationCities(3)], BestPopulationCities.GOAL_DESC_KEY, self.iPlayer)
@@ -701,7 +684,6 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.progress(), [self.SUCCESS + "Most populous: First (10)", self.FAILURE + "Second most populous: Second (8)", self.FAILURE + "Third most populous: Third (5)"])
 		finally:
 			cities.kill()
-			goal.deregister_handlers()
 	
 	def test_success_string(self):
 		self.assertEqual(self.goal.success_string(), self.SUCCESS + "Goal accomplished!")
@@ -757,24 +739,18 @@ class TestGoal(ExtendedTestCase):
 	def test_by_attributes(self):
 		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=1000)
 		
-		try:
-			self.assertEqual(goal.iYear, 1000)
-			self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_BY": 1000})
-			self.assertEqual(list(goal.create_date_suffixes()), ["by 1000 AD"])
-			self.assertEqual(goal.description(), "Control three Granaries by 1000 AD")
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.iYear, 1000)
+		self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_BY": 1000})
+		self.assertEqual(list(goal.create_date_suffixes()), ["by 1000 AD"])
+		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD")
 	
 	def test_at_attributes(self):
 		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
-		try:
-			self.assertEqual(goal.iYear, 1000)
-			self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_IN": 1000})
-			self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD"])
-			self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.iYear, 1000)
+		self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_IN": 1000})
+		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD"])
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD")
 	
 	def test_attributes_without_calendar(self):
 		team(0).setHasTech(iCalendar, False, 0, False, False)
@@ -792,6 +768,7 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_by_handler(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal.enable()
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
@@ -799,10 +776,11 @@ class TestGoal(ExtendedTestCase):
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, FAILURE)
 		finally:
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_by_handler_after_success(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal.enable()
 		
 		try:
 			goal.succeed()
@@ -811,10 +789,11 @@ class TestGoal(ExtendedTestCase):
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, SUCCESS)
 		finally:
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_by_handler_different_turn(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal.enable()
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
@@ -822,10 +801,12 @@ class TestGoal(ExtendedTestCase):
 			events.fireEvent("BeginPlayerTurn", 1, self.iPlayer)
 			self.assertEqual(goal.state, POSSIBLE)
 		finally:
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_at_handler_fulfilled(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal.enable()
+		
 		city = TestCities.one()
 		
 		try:
@@ -838,10 +819,11 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.state, SUCCESS)
 		finally:
 			city.kill()
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_at_handler_not_fulfilled(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal.enable()
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
@@ -850,10 +832,11 @@ class TestGoal(ExtendedTestCase):
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 			self.assertEqual(goal.state, FAILURE)
 		finally:
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_at_handler_different_turn(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal.enable()
 		
 		try:
 			self.assertEqual(goal.state, POSSIBLE)
@@ -862,7 +845,7 @@ class TestGoal(ExtendedTestCase):
 			events.fireEvent("BeginPlayerTurn", 1, self.iPlayer)
 			self.assertEqual(goal.state, POSSIBLE)
 		finally:
-			goal.deregister_handlers()
+			goal.disable()
 	
 	def test_evaluator(self):
 		self.assertEqual(self.goal.evaluator, SelfEvaluator(self.iPlayer))
@@ -870,10 +853,7 @@ class TestGoal(ExtendedTestCase):
 	def test_evaluator_from_subject(self):
 		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, subject=WORLD)
 		
-		try:
-			self.assertEqual(goal.evaluator, WorldEvaluator(0))
-		finally:
-			goal.deregister_handlers()
+		self.assertEqual(goal.evaluator, WorldEvaluator(0))
 	
 	def test_required_fulfilled(self):
 		goal = Goal([BuildingCount(iGranary, 2), BuildingCount(iLibrary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=1)
@@ -1011,23 +991,17 @@ class TestAll(ExtendedTestCase):
 		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
 		all_goal = all(0)
 		
-		try:
-			self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
-			self.assertEqual(all_goal.iYear, 1000)
-			self.assertEqual(all_goal.requirements[0].iYear, 1000)
-		finally:
-			all_goal.deregister_handlers()
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(all_goal.iYear, 1000)
+		self.assertEqual(all_goal.requirements[0].iYear, 1000)
 	
 	def test_create_subgoal_options(self):
 		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
 		all_goal = all(0)
 		
-		try:
-			self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
-			self.assertEqual(all_goal.iYear, None)
-			self.assertEqual(all_goal.requirements[0].iYear, 1000)
-		finally:
-			all_goal.deregister_handlers()
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(all_goal.iYear, None)
+		self.assertEqual(all_goal.requirements[0].iYear, 1000)
 
 
 class TestAllGoal(ExtendedTestCase):
@@ -1037,14 +1011,16 @@ class TestAllGoal(ExtendedTestCase):
 		self.second_goal = Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
 		self.all = AllGoal([self.first_goal, self.second_goal], 0)
 		
+		self.all.enable()
+		
 		team(0).setHasTech(iCalendar, True, 0, False, False)
 		
 		self.iSetting = AdvisorOpt.getUHVFinishDate()
 		AdvisorOpt.setUHVFinishDate(0)
 	
 	def tearDown(self):
-		self.all.deregister_handlers()
-		
+		self.all.disable()
+	
 		team(0).setHasTech(iCalendar, False, 0, False, False)
 		
 		AdvisorOpt.setUHVFinishDate(self.iSetting)
@@ -1189,23 +1165,17 @@ class TestDifferentCities(ExtendedTestCase):
 		different_cities = DifferentCities(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
 		different_cities_goal = different_cities(0)
 		
-		try:
-			self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
-			self.assertEqual(different_cities_goal.iYear, 1000)
-			self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
-		finally:
-			different_cities_goal.deregister_handlers()
+		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(different_cities_goal.iYear, 1000)
+		self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
 	
 	def test_create_subgoal_options(self):
 		different_cities = DifferentCities(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
 		different_cities_goal = different_cities(0)
 		
-		try:
-			self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
-			self.assertEqual(different_cities_goal.iYear, None)
-			self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
-		finally:
-			different_cities_goal.deregister_handlers()
+		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(different_cities_goal.iYear, None)
+		self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
 
 
 class TestDifferentCitiesGoal(ExtendedTestCase):
@@ -1215,6 +1185,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 		self.second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		
 		self.different = DifferentCitiesGoal([self.first_goal, self.second_goal], 0)
+		self.different.enable()
 		
 		team(0).setHasTech(iCalendar, True, 0, False, False)
 		
@@ -1222,7 +1193,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 		AdvisorOpt.setUHVFinishDate(0)
 	
 	def tearDown(self):
-		self.different.deregister_handlers()
+		self.different.disable()
 		
 		team(0).setHasTech(iCalendar, False, 0, False, False)
 		

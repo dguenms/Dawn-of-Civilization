@@ -167,7 +167,7 @@ class GoalDescription(Describable):
 		self.options = options
 		
 	def __call__(self, iPlayer, **options):
-		combined_options = self.options
+		combined_options = self.options.copy()
 		combined_options.update(options)
 		return Goal(self.requirements, self.desc_key, iPlayer, **combined_options)
 	
@@ -191,26 +191,25 @@ class Goal(Describable):
 
 	def __init__(self, requirements, desc_key, iPlayer, subject=SELF, mode=STATEFUL, required=None, title_key="", **options):
 		self.handlers = Handlers()
-		
-		Describable.__init__(self, requirements[0], desc_key, subject=subject, **options)
 	
 		self.requirements = requirements
 		self.iPlayer = iPlayer
 		
 		self.mode = mode
 		self.required = required
+		self.title_key = title_key
 		
 		self.state = POSSIBLE
-		self.title_key = title_key
 		self.iSuccessTurn = None
+		self.bRequirementHandlers = True
 		
-		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
+		Describable.__init__(self, requirements[0], desc_key, subject=subject, **options)
 		
 		if self.required is None:
 			self.required = len(self.requirements)
 		
-		self.register_handlers()
-	
+		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
+		
 	def __repr__(self):
 		return "Goal(%s, %s)" % (self.requirements, self.iPlayer)
 	
@@ -220,17 +219,19 @@ class Goal(Describable):
 		
 		return (self.requirements, self.iPlayer) == (other.requirements, other.iPlayer)
 	
-	def register_handlers(self):
+	def enable(self):
 		event_handler_registry.register(self, self)
 	
-		for requirement in self.requirements:
-			requirement.register_handlers(self)
+		if self.bRequirementHandlers:
+			for requirement in self.requirements:
+				requirement.register_handlers(self)
 	
-	def deregister_handlers(self):
+	def disable(self):
 		event_handler_registry.deregister(self)
 	
-		for requirement in self.requirements:
-			requirement.deregister_handlers()
+		if self.bRequirementHandlers:
+			for requirement in self.requirements:
+				requirement.deregister_handlers()
 	
 	def possible(self):
 		return self.state == POSSIBLE
@@ -287,13 +288,11 @@ class Goal(Describable):
 		if year(goal.iYear) == iGameTurn:
 			goal.expire()
 	
-	def handle_every(self, goal, iGameTurn, iPlayer):
-		goal.check()
-	
 	def at(self, iYear):
 		self.iYear = iYear
+		self.bRequirementHandlers = False
 		self.handlers.add("BeginPlayerTurn", self.handle_at)
-	
+		
 	def by(self, iYear):
 		self.iYear = iYear
 		self.handlers.add("BeginPlayerTurn", self.handle_by)
@@ -376,9 +375,6 @@ class AllGoal(Goal):
 
 	def __init__(self, goals, iPlayer, **options):
 		Goal.__init__(self, goals, "TXT_KEY_VICTORY_DESC_SIMPLE", iPlayer, **options)
-		
-		for goal in goals:
-			self.add_subgoal(goal)
 	
 	def __repr__(self):
 		return "AllGoal(%s)" % ", ".join(str(goal) for goal in self.requirements)
@@ -389,8 +385,30 @@ class AllGoal(Goal):
 		
 		return Goal.__eq__(self, other)
 	
-	def register_handlers(self):
-		pass
+	def enable(self):
+		for subgoal in self.requirements:
+			subgoal.succeed = subgoal.override(self.subgoal_succeed())
+			subgoal.fail = subgoal.override(self.subgoal_fail())
+			
+			subgoal.enable()
+	
+	def disable(self):
+		for subgoal in self.requirements:
+			subgoal.disable()
+	
+	def subgoal_succeed(self):
+		def succeed(subgoal):
+			subgoal.set_state(SUCCESS)
+			self.check()
+		
+		return succeed
+	
+	def subgoal_fail(self):
+		def fail(subgoal):
+			subgoal.set_state(FAILURE)
+			self.fail()
+		
+		return fail
 	
 	def fulfilled(self):
 		return all(goal.succeeded() for goal in self.requirements)
@@ -401,27 +419,12 @@ class AllGoal(Goal):
 	def format_description(self):
 		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
 	
-	def add_subgoal(self, goal):
-		def fail(subgoal):
-			subgoal.set_state(FAILURE)
-			self.fail()
-		
-		def succeed(subgoal):
-			subgoal.set_state(SUCCESS)
-			self.check()
-		
-		goal.fail = fail.__get__(goal, Goal)
-		goal.succeed = succeed.__get__(goal, Goal)
-
 
 class DifferentCitiesGoal(Goal):
 
 	def __init__(self, goals, iPlayer, **options):
 		Goal.__init__(self, goals, goals[0].desc_key, iPlayer, **options)
 		
-		for goal in goals:
-			self.add_subgoal(goal)
-			
 		self.recorded = {}
 	
 	def __repr__(self):
@@ -433,8 +436,35 @@ class DifferentCitiesGoal(Goal):
 		
 		return Goal.__eq__(self, other)
 	
-	def register_handlers(self):
-		pass
+	def enable(self):
+		for subgoal in self.requirements:
+			subgoal.succeed = subgoal.override(self.subgoal_succeed())
+			subgoal.fail = subgoal.override(self.subgoal_fail())
+			
+			subgoal.enable()
+	
+	def disable(self):
+		for subgoal in self.requirements:
+			subgoal.disable()
+	
+	def subgoal_succeed(self):
+		def succeed(subgoal):
+			subgoal.set_state(SUCCESS)
+			self.record(subgoal)
+		
+			if self.failed():
+				subgoal.set_state(FAILURE)
+		
+			self.check()
+		
+		return succeed
+	
+	def subgoal_fail(self):
+		def fail(subgoal):
+			subgoal.set_state(FAILURE)
+			self.fail()
+		
+		return fail
 		
 	def get_city_parameter(self):
 		return next(parameter.get(self.iPlayer) for goal in self.requirements for requirement in goal.requirements for type, parameter in zip(requirement.GLOBAL_TYPES + requirement.TYPES, requirement.parameters) if type == CITY)
@@ -449,23 +479,6 @@ class DifferentCitiesGoal(Goal):
 	def unique_records(self):
 		records = [self.recorded.get(subgoal) for subgoal in self.requirements if subgoal in self.recorded]
 		return len(records) == len(set(records))
-	
-	def add_subgoal(self, goal):
-		def fail(subgoal):
-			subgoal.set_state(FAILURE)
-			self.fail()
-	
-		def succeed(subgoal):
-			subgoal.set_state(SUCCESS)
-			self.record(subgoal)
-			
-			if self.failed():
-				subgoal.set_state(FAILURE)
-			
-			self.check()
-		
-		goal.fail = fail.__get__(goal, Goal)
-		goal.succeed = succeed.__get__(goal, Goal)
 	
 	def fulfilled(self):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
@@ -504,8 +517,10 @@ class Combined(Describable):
 		for description in self.descriptions:
 			description.options.update(self.options)
 		
-	def __call__(self, iPlayer):
-		return self.CLASS([description(iPlayer) for description in self.descriptions], iPlayer, **self.options)
+	def __call__(self, iPlayer, **options):
+		combined_options = self.options.copy()
+		combined_options.update(options)
+		return self.CLASS([description(iPlayer, **combined_options) for description in self.descriptions], iPlayer, **combined_options)
 	
 	def __repr__(self):
 		return "%s(%s)" % (type(self).__name__, ", ".join(str(description) for description in self.descriptions))

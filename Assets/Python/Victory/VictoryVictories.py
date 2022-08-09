@@ -92,14 +92,39 @@ class Victory(object):
 
 	def __init__(self, iPlayer, descriptions):
 		self.iPlayer = iPlayer
-		self.goals = tuple(self.register_goal(description) for description in descriptions)
+		self.goals = tuple(self.create_goal(description) for description in descriptions)
+		
+		self.enable()
+		
+	def enable(self):
+		for goal in self.goals:
+			goal.succeed = goal.override(self.goal_succeed())
+			goal.fail = goal.override(self.goal_fail())
+			
+			goal.enable()
+	
+	def disable(self):
+		for goal in self.goals:
+			goal.disable()
 
-	def on_success(self, goal):
-		goal.announce_success()
-		self.check()
+	def goal_succeed(self):
+		def succeed(goal):
+			goal.set_state(SUCCESS)
+		
+			if goal.state == SUCCESS:
+				goal.announce_success()
+				self.check()
+		
+		return succeed
 
-	def on_failure(self, goal):
-		goal.announce_failure()
+	def goal_fail(self):
+		def fail(goal):
+			goal.set_state(FAILURE)
+	
+			if goal.state == FAILURE:
+				goal.announce_failure()
+		
+		return fail
 
 	def succeeded_goals(self):
 		return count(goal.succeeded() for goal in self.goals)
@@ -115,34 +140,6 @@ class Victory(object):
 	
 	def create_goal(self, description):
 		return description(self.iPlayer)
-
-	def register_goal(self, description):
-		def succeed(goal):
-			goal.set_state(SUCCESS)
-			
-			if goal.state == SUCCESS:
-				self.on_success(goal)
-
-		def fail(goal):
-			goal.set_state(FAILURE)
-			
-			if goal.state == FAILURE:
-				self.on_failure(goal)
-
-		goal = self.create_goal(description)
-		
-		goal.succeed = goal.override(succeed)
-		goal.fail = goal.override(fail)
-		
-		return goal
-	
-	def enable(self):
-		for goal in self.goals:
-			goal.register_handlers()
-	
-	def disable(self):
-		for goal in self.goals:
-			goal.deregister_handlers()
 
 
 class HistoricalVictory(Victory):

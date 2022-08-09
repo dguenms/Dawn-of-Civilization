@@ -1102,7 +1102,7 @@ class EntityCollection(object):
 		return self.copy(self._keys[:iSplit]), self.copy(self._keys[iSplit:])
 	
 	def grouped(self, func):
-		return ((key, self.copy(group)) for key, group in groupby(self.sort(func)._keys, lambda key: func(self._factory(key))))
+		return [(key, self.copy(group)) for key, group in groupby(self.sort(func)._keys, lambda key: func(self._factory(key)))]
 		
 	def sort(self, metric, reverse=False):
 		return self.copy(sort(self._keys, key=lambda k: metric(self._factory(k)), reverse=reverse))
