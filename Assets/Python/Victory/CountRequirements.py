@@ -127,9 +127,9 @@ class BuildingCount(ThresholdRequirement):
 		
 	def progress(self, evaluator):
 		if not self.bPlural:
-			return BUILDING.format(self.iBuilding)
+			return "%s %s" % (self.indicator(evaluator), capitalize(BUILDING.format(self.iBuilding)))
 		
-		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, BUILDING.format(self.iBuilding, bPlural=True)), self.progress_value(evaluator))
+		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
 
 
 # First Phoenician UHV goal
@@ -221,6 +221,8 @@ class CityCount(ThresholdRequirement):
 	
 	def __init__(self, *parameters, **options):
 		ThresholdRequirement.__init__(self, *parameters, **options)
+		
+		self.bPlural = True
 		
 		self.handle("cityBuilt", self.check)
 		self.handle("cityAcquiredAndKept", self.check)

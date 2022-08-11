@@ -3,6 +3,8 @@ import inspect
 
 from Core import *
 
+from VictoryHandlers import event_handler_registry
+
 
 victory_handlers = appenddict()
 
@@ -107,10 +109,10 @@ def wonderBuiltOnBuildingBuilt(city, iBuilding):
 		
 
 @handler("PythonReloaded")
-def resetVictoryHandlersOnPythonReloaded():
-	reset_victory_handlers()
+def resetHandlersOnPythonReloaded():
+	event_handler_registry.reset()
 
 
 @handler("OnLoad")
-def resetVictoryHandlersOnLoad():
-	reset_victory_handlers()
+def resetHandlersOnLoad():
+	event_handler_registry.reset()

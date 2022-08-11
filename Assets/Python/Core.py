@@ -1911,7 +1911,7 @@ class Players(EntityCollection):
 
 	def __init__(self, players):
 		if all(isinstance(x, Civ) for x in players):
-			players = [slot(x) for x in players]
+			players = [slot(x) for x in players if slot(x) >= 0]
 		elif not all(isinstance(x, int) for x in players):
 			raise Exception("All entries in Players need to be either int or Civ")
 	

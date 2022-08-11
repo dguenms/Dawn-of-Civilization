@@ -219,11 +219,11 @@ def createStartingUnits():
 def setupGoals(iCiv, goals):
 	# English tech goal
 	if iCiv == iEngland:
-		goals[2].accumulate(4, iRenaissance)
+		goals[2].requirements[0].accumulate(4)
 	
 	# Congolese slave trade goal
 	if iCiv == iCongo:
-		goals[1].accumulate(500)
+		goals[1].requirements[0].accumulate(500)
 
 
 scenario1700AD = Scenario(

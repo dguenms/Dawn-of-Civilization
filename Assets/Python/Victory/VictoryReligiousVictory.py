@@ -60,7 +60,7 @@ dGoals = {
 	),
 	iIslam: (
 		ReligionSpreadPercent(iIslam, 40),
-		CitySpecialistCount(holy_city(iIslam), great_people(), 7),
+		CitySpecialistCount(holy_city(iIslam), great_people(), 7, subject=STATE_RELIGION),
 		BuildingCount(religious_buildings(shrine).named(SHRINES), 5),
 	),
 	iProtestantism: (

@@ -214,7 +214,7 @@ class EraFirstDiscover(TrackRequirement):
 # Second Hindu URV goal
 class GoldenAges(TrackRequirement):
 
-	TYPES = (TURNS,)
+	TYPES = (COUNT,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_EXPERIENCE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_GOLDEN_AGES"
@@ -235,7 +235,7 @@ class GoldenAges(TrackRequirement):
 	
 	def progress_value(self, evaluator):
 		iGoldenAgeLength = infos.constant("GOLDEN_AGE_LENGTH")
-		return "%d / %d" % (self.evaluate(evaluator) / iGoldenAgeLength, self.required() / iGoldenAgeLength)
+		return "%d / %d" % (self.evaluate(evaluator) / scale(iGoldenAgeLength), self.iRequired)
 
 
 # Second Mexican UHV goal

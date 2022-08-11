@@ -66,6 +66,10 @@ class EventHandlerRegistry(object):
 			
 			del self.registered[instance]
 	
+	def reset(self):
+		for instance in self.registered.keys():
+			self.deregister(instance)
+	
 	def BeginPlayerTurn(self, goal, applicable, func):
 		def BeginPlayerTurn((iGameTurn, iPlayer)):
 			if applicable(goal, iPlayer):

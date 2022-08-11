@@ -1207,6 +1207,30 @@ class TestRouteConnection(ExtendedTestCase):
 			
 			cities.kill()
 	
+	def test_direct_connection_named(self):
+		requirement = RouteConnection(NamedList(iRouteRailroad).named("Some route"), self.start, self.target)
+	
+		start, target = cities = TestCities.owners(0, -1, 0)
+		
+		route_plots = plots.rectangle((62, 31), (64, 31))
+		for plot in route_plots:
+			plot.setRouteType(iRouteRailroad)
+			plot.setOwner(0)
+		
+		team(0).setHasTech(iRailroad, True, 0, True, False)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Some route from Start Area to Target Area")
+		finally:
+			team(0).setHasTech(iRailroad, False, 0, True, False)
+			
+			for plot in route_plots:
+				plot.setRouteType(-1)
+				plot.setOwner(-1)
+			
+			cities.kill()
+	
 	def test_no_connection(self):
 		start, target = cities = TestCities.owners(0, -1, 0)
 		

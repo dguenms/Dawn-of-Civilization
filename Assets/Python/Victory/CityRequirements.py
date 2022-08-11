@@ -88,14 +88,20 @@ class CitySpecialistCount(CityRequirement):
 		
 		self.bPlural = self.iRequired > 1
 		
+	def get_specialist_count(self, city):
+		if isinstance(self.iSpecialist, Aggregate):
+			return self.iSpecialist.evaluate(city.getFreeSpecialistCount)
+		
+		return city.getFreeSpecialistCount(self.iSpecialist)
+		
 	def fulfilled_city(self, city):
-		return city.getFreeSpecialistCount(self.iSpecialist) >= self.iRequired
+		return self.get_specialist_count(city) >= self.iRequired
 	
 	def description(self):
 		return CityRequirement.description(self, bPlural=self.bPlural)
 	
 	def progress_city(self, city):
-		return "%d / %d" % (city.getFreeSpecialistCount(self.iSpecialist), self.iRequired)
+		return "%d / %d" % (self.get_specialist_count(city), self.iRequired)
 		
 	def progress_text(self, **options):
 		return CityRequirement.progress_text(self, bPlural=self.bPlural)

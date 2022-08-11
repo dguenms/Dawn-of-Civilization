@@ -94,6 +94,13 @@ class TestArea(ExtendedTestCase):
 	
 	def test_area(self):
 		self.assertEqual(AREA.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
+	
+	def test_area_aggregate(self):
+		area1 = AreaArgument().of([(0, 0)])
+		area2 = AreaArgument().of([(0, 1)])
+		aggregate = SumAggregate(area1, area2)
+		
+		self.assertEqual(AREA.area(aggregate), plots.of([(0, 0), (0, 1)]))
 
 
 class TestAreaOrCity(ExtendedTestCase):
@@ -561,7 +568,7 @@ class TestRoutes(ExtendedTestCase):
 	
 	def test_validate(self):
 		self.assertEqual(ROUTES.validate([iRouteRoad, iRouteRailroad]), True)
-		self.assertEqual(ROUTES.validate(infos.routes()), True)
+		self.assertEqual(ROUTES.validate(NamedList(iRouteRoad, iRouteRailroad)), True)
 		
 		self.assertEqual(ROUTES.validate(iRouteRoad), False)
 		self.assertEqual(ROUTES.validate(["Road"]), False)
@@ -570,7 +577,7 @@ class TestRoutes(ExtendedTestCase):
 		self.assertEqual(ROUTES.format([iRouteRoad]), "Road")
 		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad]), "Road or Roman Road")
 		self.assertEqual(ROUTES.format([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
-		self.assertEqual(ROUTES.format(infos.routes().named("routes")), "routes")
+		self.assertEqual(ROUTES.format(NamedList(iRouteRoad, iRouteRailroad).named("routes")), "routes")
 		
 		self.assertEqual(ROUTES.format_repr([iRouteRoad, iRouteRomanRoad, iRouteRailroad]), "Road, Roman Road or Railroad")
 	

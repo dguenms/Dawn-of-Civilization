@@ -3,6 +3,7 @@ from Core import *
 from StoredData import data
 from Events import handler
 from Scenarios import getScenario
+from VictoryHandlers import event_handler_registry
 
 from VictoryTypes import *
 
@@ -148,6 +149,11 @@ class HistoricalVictory(Victory):
 	def create(cls, iPlayer):
 		iCiv = civ(iPlayer)
 		return cls(iPlayer, dHistoricalGoals[iCiv])
+	
+	def enable(self):
+		Victory.enable(self)
+		
+		getScenario().initGoals(self.iPlayer, self.goals)
 
 	def check(self):
 		iSucceededGoals = self.succeeded_goals()

@@ -151,8 +151,8 @@ dGoals = {
 		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis, by=-250),
 	),
 	iIndia: (
-		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),  # "a Vishwanath", "a the Mahabodhi"
-		BuildingCount(religious_buildings(temple).named(TEMPLES), 20, by=700),  # lists all the temples
+		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
+		BuildingCount(religious_buildings(temple).named(TEMPLES), 20, by=700),
 		PopulationPercent(20, at=1200),
 	),
 	iPhoenicia: (
@@ -277,7 +277,7 @@ dGoals = {
 			by=900,
 		),
 		All(
-			RouteConnection(infos.routes().named(LAND_BASED_TRADE), plots.rectangle(tChina).named(CITY_IN_CHINA), plots.of(lMediterraneanPorts).named(MEDITERRANEAN_PORT), start_owners=True),
+			RouteConnection(NamedList(iRouteRoad).named(LAND_BASED_TRADE), plots.rectangle(tChina).named(CITY_IN_CHINA), plots.of(lMediterraneanPorts).named(MEDITERRANEAN_PORT), start_owners=True),
 			CorporationCount(iSilkRoute, 10),
 			by=1100,
 		),

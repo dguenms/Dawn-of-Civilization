@@ -33,6 +33,19 @@ class NamedArgument(object):
 		return text(self.name_key, *self.name_args)
 
 
+class NamedList(NamedArgument):
+
+	def __init__(self, *items):
+		NamedArgument.__init__(self)
+		self.items = list(items)
+	
+	def __iter__(self):
+		return iter(self.items)
+	
+	def __contains__(self, item):
+		return item in self.items
+
+
 class Aggregate(NamedArgument):
 
 	def __init__(self, *items):
@@ -230,7 +243,7 @@ class CityArgument(DeferredArgument):
 		return isinstance(other, type(self))
 
 	def area(self):
-		raise NotImplementedError()
+		return None
 
 
 class LocationCityArgument(CityArgument):
@@ -278,9 +291,6 @@ class CapitalCityArgument(CityArgument):
 		
 		return city
 	
-	def area(self):
-		return None
-
 
 class ReligionHolyCityArgument(CityArgument):
 

@@ -119,7 +119,7 @@ class InfosType(Type):
 		self.sub_type = InfoType(name, info)
 	
 	def validate_func(self, argument):
-		if isinstance(argument, InfoCollection):
+		if isinstance(argument, NamedList):
 			return True
 	
 		if isinstance(argument, list) and all(self.sub_type.validate(entry) for entry in argument):
@@ -174,6 +174,9 @@ class AreaType(Type):
 		return argument.name()
 		
 	def area(self, argument):
+		if isinstance(argument, Aggregate):
+			return sum([argument_item.create() for argument_item in argument.items], plots.none())
+		
 		return argument.create()
 
 
