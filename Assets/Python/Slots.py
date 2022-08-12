@@ -42,6 +42,7 @@ def addPlayer(iPlayer, iCiv, iBirthTurn=-1, bAlive=False, bMinor=False):
 
 def updateCivilization(iPlayer, iCiv, iBirthTurn=-1):
 	data.dSlots[iCiv] = iPlayer
+	data.players[iPlayer].resetStability()
 	
 	iCurrentCivilization = player(iPlayer).getCivilizationType()
 	if iCiv == iCurrentCivilization:
@@ -51,8 +52,6 @@ def updateCivilization(iPlayer, iCiv, iBirthTurn=-1):
 	
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
-	
-	data.players[iPlayer].resetStability()
 
 def getImpact(iCiv):
 	iActiveCiv = civ()
