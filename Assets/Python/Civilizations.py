@@ -130,11 +130,12 @@ class Civilization(object):
 		return self.info.getStartingYear() != 0
 	
 	def apply(self):
-		if self.iLeader is not None:
-			self.player.setLeader(self.iLeader)
+		if not self.player.isHuman():
+			if self.iLeader is not None:
+				self.player.setLeader(self.iLeader)
 		
-		if self.sLeaderName is not None:
-			self.player.setLeaderName(text(self.sLeaderName))
+			if self.sLeaderName is not None:
+				self.player.setLeaderName(text(self.sLeaderName))
 		
 		if self.iGold is not None:
 			self.player.changeGold(scale(self.iGold))
