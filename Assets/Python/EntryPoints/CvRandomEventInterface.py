@@ -2324,10 +2324,10 @@ def canTriggerSecurityTax(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	iWalls = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_WALLS')
-	if player.getNumCities() > 0 and player.getNumCities() > player.getBuildingClassCount(iWalls):
-		return false
+	if player.getNumCities() > 0 and player.getNumCities() <= player.getBuildingClassCount(iWalls):
+		return true
 	
-	return true
+	return false
 
 
 ######## LITERACY ###########
