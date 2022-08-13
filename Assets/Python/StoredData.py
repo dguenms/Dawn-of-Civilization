@@ -30,7 +30,6 @@ class CivData:
 		
 	def setup(self):
 	
-		self.bSpawned = False
 		self.iLastTurnAlive = 0
 		
 		# DynamicCivs

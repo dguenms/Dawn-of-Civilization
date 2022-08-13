@@ -885,9 +885,6 @@ class Birth(object):
 		# reset plague
 		self.resetPlague()
 		
-		# set as spawned
-		data.civs[self.iCiv].bSpawned = True
-		
 		# send event
 		events.fireEvent("birth", self.iPlayer)
 		

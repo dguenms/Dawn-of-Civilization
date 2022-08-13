@@ -762,10 +762,6 @@ def exclusive(iCiv, *civs):
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
 def canRespawn(iCiv):
-	# only civs that have ever spawned can respawn
-	if not data.civs[iCiv].bSpawned:
-		return False
-	
 	# only dead civ need to check for resurrection
 	if player(iCiv).isAlive():
 		return False
