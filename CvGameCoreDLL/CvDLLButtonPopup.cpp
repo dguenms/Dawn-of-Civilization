@@ -2616,7 +2616,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 			for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
 			{
-				if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCapital())
+				if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
 				{
 					if (!szCityList.empty())
 					{
