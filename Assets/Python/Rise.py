@@ -234,13 +234,19 @@ def createExpansionUnits(bWar, iAttacker, iDefender):
 
 
 @handler("changeWar")
-def endExpansion(bWar, iPlayer1, iPlayer2):
+def endExpansionOnPeace(bWar, iPlayer1, iPlayer2):
 	if not bWar:
 		for plot in plots.owner(iPlayer1).where(lambda plot: plot.getExpansion() == iPlayer2):
 			plot.resetExpansion()
 		
 		for plot in plots.owner(iPlayer2).where(lambda plot: plot.getExpansion() == iPlayer1):
 			plot.resetExpansion()
+
+
+@handler("collapse")
+def endExpansionOnCollapse(iPlayer):
+	for plot in plots.all().where(lambda plot: plot.getExpansion() == iPlayer):
+		plot.resetExpansion()
 
 
 @handler("firstCity")
@@ -730,6 +736,9 @@ class Birth(object):
 			plot.resetBirthProtected()
 	
 	def expansion(self):
+		for plot in plots.all().where(lambda p: p.getExpansion() == self.iPlayer):
+			plot.resetExpansion()
+	
 		for plot in plots.expansion(self.iPlayer).without(self.area).land().where(lambda p: not p.isPeak()):
 			plot.setExpansion(self.iPlayer)
 
