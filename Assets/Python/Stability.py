@@ -196,7 +196,8 @@ def onCombatResult(winningUnit, losingUnit):
 
 @handler("releasedCivilization")
 def onReleasedPlayer(iPlayer, iReleasedCivilization):
-	releasedCities = cities.owner(iPlayer).core(Civ(iReleasedCivilization)).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
+	iReleasedCivilization = Civ(iReleasedCivilization)
+	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
 
 	doResurrection(iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
 	
