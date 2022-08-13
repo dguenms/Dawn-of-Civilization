@@ -543,7 +543,11 @@ class Congress:
 			data.iCongressTurns /= 2
 			data.currentCongress = None
 			return
-			
+		
+		# if a war congress would be followed by a normal congress, delay it
+		if self.bPostWar and data.iCongressTurns <= 1:
+			data.iCongressTurns = getCongressInterval()
+		
 		# establish contact between all participants
 		for iThisPlayer in self.invites:
 			for iThatPlayer in self.invites:
