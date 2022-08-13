@@ -5444,6 +5444,7 @@ tRenames = (
 	"Qart-Hadasht"	:	"Karkhedon",
 	"Konstantia"	:	"Konstantia",
 	"Constantinopolis"	:	"Konstantinoupolis",
+	"Istanbul" 		:	"Konstantinoupolis",
 	"Korinthos"		:	"Korinthos",
 	"Kyrene"		:	"Kyrene",
 	"Kition"		:	"Larnaka",
