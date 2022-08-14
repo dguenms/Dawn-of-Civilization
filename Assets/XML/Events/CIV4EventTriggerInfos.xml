@@ -12302,9 +12302,9 @@
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
-			<bOtherPlayerWar>1</bOtherPlayerWar>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerHasReligion>0</bOtherPlayerHasReligion>
-			<bOtherPlayerHasOtherReligion>0</bOtherPlayerHasOtherReligion>
+			<bOtherPlayerHasOtherReligion>1</bOtherPlayerHasOtherReligion>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
 			<OtherPlayerHasTech>NONE</OtherPlayerHasTech>
@@ -12315,7 +12315,7 @@
 			<PythonCanDo>canTriggerCrusade</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>doTriggerCrusade</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CRUSADE_DONE</Type>

@@ -3748,7 +3748,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CRUSADE_DONE_1</Tag>
-		<English>Congratulations! Your Crusade to secure the sacred lands of %s2_city has wrested control of the city away from the %s1:2_civ_adjective! Please choose a reward from among the benefits that may accrue from the joy your people feel in this successful Crusade.</English>
+		<English>Congratulations! Your Crusade to secure the sacred lands of %s2_city has wrested control of the city away from the infidels! Please choose a reward from among the benefits that may accrue from the joy your people feel in this successful Crusade.</English>
 		<French>F&#233;licitations ! Votre croisade pour s&#233;curiser les terres saintes de la ville : %s2_city vous a permis d'arracher le contr&#244;le de la ville aux %s1:2_civ_adjective ! Veuillez choisir une r&#233;compense parmi les avantages dus &#224; la joie du peuple.</French>
 		<German>Gl&#252;ckwunsch! Ihr Kreuzzug zur Sicherung des heiligen Gebietes der Stadt %s2_city hat die Stadt dem %s1:2_civ_adjective Volk entrissen! W&#228;hlen Sie eine Belohnung aus den Vorteilen aus, die die Freude Ihres Volkes &#252;ber diesen erfolgreichen Kreuzzug Ihnen bieten kann.</German>
 		<Italian>Congratulazioni! La crociata per conquistare le sacre terre di %s2_city ha tolto il controllo della citt&#224; ai nemici %s1:3_civ_adjective! Scegli una ricompensa tra i benefici derivati dalla gioia del tuo popolo per questa vittoriosa crociata.</Italian>
