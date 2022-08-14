@@ -181,7 +181,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iTheodosianWalls : (iByzantium, 413),
 	iHagiaSophia : (iByzantium, 537),
 	iMountAthos : (iByzantium, 800),
-	iItsukushimaShrine : (iJapan, 593),
+	iItsukushimaShrine : (iJapan, 1593),
 	iHimejiCastle : (iJapan, 1333),
 	iGurEAmir : (iTurks, 1404),
 	iDomeOfTheRock : (iArabia, 692),
