@@ -2899,10 +2899,6 @@ def canTriggerCrusade(argsList):
 		return false
 		
 	if gc.getPlayer(holyCity.getOwner()).getStateReligion() not in [iOrthodoxy, iCatholicism, iProtestantism]:
-		kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
-		kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
-		kActualTriggeredDataObject.eOtherPlayer = holyCity.getOwner()
-		
 		return true
 			
 	return false

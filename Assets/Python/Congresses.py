@@ -618,7 +618,7 @@ class Congress:
 		for (x, y), (iClaimant, iVotes) in dResults.items():
 			plot = plot_(x, y)
 			
-			bCanRefuse = (plot.getOwner() == active() and active() not in self.dVotedFor[iClaimant] and not (self.bPostWar and active() in self.losers))
+			bCanRefuse = self.canRefuse(iClaimant, plot)
 			
 			if plot.isCity():
 				self.lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
@@ -640,6 +640,27 @@ class Congress:
 		else:
 			# without human cities affected, finish the congress immediately
 			self.finishCongress()
+	
+	def canRefuse(self, iClaimant, plot):
+		if not self.isHumanOwned(plot):
+			return False
+		
+		if active() in self.dVotedFor[iClaimant]:
+			return False
+		
+		if self.bPostWar and active() in self.losers:
+			return False
+			
+		return True
+		
+	def isHumanOwned(self, plot):
+		if plot.getOwner() == active():
+			return True
+		
+		if plot.isOwned() and team(plot.getTeam()).isVassal(player().getTeam()):
+			return True
+		
+		return False
 					
 	def assignCity(self, iPlayer, iOwner, (x, y)):
 		assignedCity = city(x, y)
