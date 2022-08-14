@@ -12297,7 +12297,9 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs/>
-			<ObsoleteTechs/>
+			<ObsoleteTechs>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
+			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
