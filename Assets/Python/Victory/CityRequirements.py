@@ -1,5 +1,4 @@
 from Core import *
-from VictoryTypes import *
 from BaseRequirements import *
 	
 

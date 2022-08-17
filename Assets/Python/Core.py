@@ -6,7 +6,7 @@ from StoredData import *
 from DataStructures import *
 from Areas import *
 
-from Types import Civ
+from CoreTypes import Civ
 
 import Popup
 import BugCore

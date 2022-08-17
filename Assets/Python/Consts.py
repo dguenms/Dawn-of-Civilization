@@ -3,7 +3,7 @@
 
 from CvPythonExtensions import *
 from DataStructures import *
-from Types import *
+from CoreTypes import *
 
 gc = CyGlobalContext()
 

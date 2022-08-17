@@ -1,4 +1,4 @@
-from VictoryEvaluators import *
+from Evaluators import *
 from TestVictoryCommon import *
 
 

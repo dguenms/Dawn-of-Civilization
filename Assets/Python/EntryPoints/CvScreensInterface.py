@@ -60,7 +60,7 @@ from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
-import VictoryVictories
+import Victories
 
 from Scenarios import getScenario
 from Locations import *
@@ -912,10 +912,10 @@ def getVictoryTooltip(argsList):
 # Leoreth
 def getHistoricalVictoryDescriptions(argsList):
 	iCiv = argsList[0]
-	if iCiv not in VictoryVictories.dHistoricalGoals:
+	if iCiv not in Victories.dHistoricalGoals:
 		return ""
 	
-	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in VictoryVictories.dHistoricalGoals[iCiv])
+	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dHistoricalGoals[iCiv])
 		
 def getCityName(argsList):
 	iPlayer, x, y = argsList

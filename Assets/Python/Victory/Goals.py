@@ -1,9 +1,9 @@
 from Core import *
-from VictoryEvaluators import *
-from VictoryHandlers import *
-from VictoryFormatters import *
+from Evaluators import *
+from GoalHandlers import *
+from Formatters import *
 from Requirements import *
-from VictoryTypes import *
+from Types import *
 
 from CityNameManager import getFoundName, getRenameName
 

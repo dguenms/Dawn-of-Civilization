@@ -1,4 +1,4 @@
-from VictoryTypes import *
+from Types import *
 
 from TestVictoryCommon import *
 

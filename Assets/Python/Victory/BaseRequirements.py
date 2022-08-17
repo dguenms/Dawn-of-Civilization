@@ -1,8 +1,8 @@
 from Core import *
-from VictoryTypes import *
-from VictoryFormatters import *
+from Types import *
+from Formatters import *
 
-from VictoryHandlers import Handlers, event_handler_registry
+from GoalHandlers import Handlers, event_handler_registry
 
 
 class Requirement(object):

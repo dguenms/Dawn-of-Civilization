@@ -1,5 +1,5 @@
 from Core import *
-from VictoryTypes import *
+from Types import *
 
 
 class Evaluators(object):

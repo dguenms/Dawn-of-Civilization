@@ -3,7 +3,7 @@ import inspect
 
 from Core import *
 
-from VictoryHandlers import event_handler_registry
+from GoalHandlers import event_handler_registry
 
 
 victory_handlers = appenddict()

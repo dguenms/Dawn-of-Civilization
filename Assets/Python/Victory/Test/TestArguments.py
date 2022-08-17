@@ -1,4 +1,4 @@
-from VictoryArguments import *
+from Arguments import *
 
 from TestVictoryCommon import *
 		

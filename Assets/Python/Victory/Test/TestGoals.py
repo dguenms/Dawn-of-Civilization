@@ -1,4 +1,4 @@
-from VictoryGoalDefinitions import *
+from Goals import *
 
 from TestVictoryCommon import *
 

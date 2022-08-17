@@ -1,4 +1,4 @@
-from VictoryFormatters import *
+from Formatters import *
 from Requirements import *
 
 from TestVictoryCommon import *

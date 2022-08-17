@@ -3,9 +3,9 @@ from Core import *
 from StoredData import data
 from Events import handler
 from Scenarios import getScenario
-from VictoryHandlers import event_handler_registry
+from GoalHandlers import event_handler_registry
 
-from VictoryTypes import *
+from Types import *
 
 
 ### GLOBALS ###
@@ -19,16 +19,16 @@ dAdditionalPaganGoal = None
 
 @handler("fontsLoaded")
 def loadVictories():
-	import VictoryHistoricalVictory
-	import VictoryReligiousVictory
+	import HistoricalVictory as Historical
+	import ReligiousVictory as Religious
 	
 	global dHistoricalGoals
 	global dReligiousGoals
 	global dAdditionalPaganGoal
 	
-	dHistoricalGoals = VictoryHistoricalVictory.dGoals
-	dReligiousGoals = VictoryReligiousVictory.dGoals
-	dAdditionalPaganGoal = VictoryReligiousVictory.dAdditionalPaganGoal
+	dHistoricalGoals = Historical.dGoals
+	dReligiousGoals = Religious.dGoals
+	dAdditionalPaganGoal = Religious.dAdditionalPaganGoal
 
 
 @handler("playerCivAssigned")

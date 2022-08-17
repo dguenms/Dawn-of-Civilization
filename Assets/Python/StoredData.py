@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 from Consts import *
-from Types import *
+from CoreTypes import *
 
 gc = CyGlobalContext()
 

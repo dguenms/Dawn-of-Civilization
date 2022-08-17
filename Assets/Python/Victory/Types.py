@@ -1,6 +1,6 @@
 from Core import *
-from VictoryArguments import *
-from VictoryFormatting import *
+from Arguments import *
+from Formatting import *
 
 
 class Enum(object):

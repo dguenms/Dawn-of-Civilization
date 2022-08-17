@@ -1,4 +1,4 @@
-from VictoryHandlers import *
+from GoalHandlers import *
 from Requirements import *
 
 from TestVictoryCommon import *

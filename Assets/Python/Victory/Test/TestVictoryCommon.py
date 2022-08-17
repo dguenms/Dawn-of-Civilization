@@ -2,7 +2,7 @@ from Core import *
 
 from unittest import *
 
-from VictoryEvaluators import *
+from Evaluators import *
 from Pickling import pickle
 
 

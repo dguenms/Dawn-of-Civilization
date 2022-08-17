@@ -1,4 +1,4 @@
-from VictoryDefinitions import *
+from Definitions import *
 from Locations import *
 
 

@@ -1,7 +1,7 @@
 from Resources import setupScenarioResources
 from DynamicCivs import checkName
 from Slots import findSlot, addPlayer
-from VictoryHandlers import event_handler_registry
+from GoalHandlers import event_handler_registry
 
 from Core import *
 from RFCUtils import *

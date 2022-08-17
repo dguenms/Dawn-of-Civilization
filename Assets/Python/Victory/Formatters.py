@@ -1,6 +1,5 @@
 from Core import *
-
-from VictoryTypes import *
+from Types import *
 	
 
 def in_area(string, area):
