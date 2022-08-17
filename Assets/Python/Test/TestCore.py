@@ -715,12 +715,12 @@ class TestPlayers(TestCase):
 		self.assertEqual(actual_ids, expected_ids)
 		
 	def test_alive(self):
-		players = Players([0, 1, 2, 9])
-		self.assert_(gc.getPlayer(9) in players)
+		players = Players([0, 1, 2, 13])
+		self.assert_(gc.getPlayer(13) in players)
 		
 		players = players.alive()
 		assertType(self, players, Players)
-		self.assert_(gc.getPlayer(9) not in players)
+		self.assert_(gc.getPlayer(13) not in players)
 		
 	def test_ai(self):
 		players = self.players.ai()
@@ -923,12 +923,12 @@ class TestPlayerFactory(TestCase):
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 10)
+		self.assertEqual(len(players), 14)
 		
 	def test_major(self):
 		players = self.factory.major()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 5)
+		self.assertEqual(len(players), 9)
 		
 	def test_minor(self):
 		players = self.factory.minor()
@@ -1943,13 +1943,13 @@ class TestPlots(TestCase):
 		self.assertEqual(self.plots.name(), "")
 	
 	def test_named(self):
-		plots = self.plots.named("EUROPE")
+		plots = self.plots.named("Europe")
 		
 		assertType(self, plots, Plots)
 		self.assertEqual(plots.name(), "Europe")
 	
 	def test_name_preserved_by_transformation(self):
-		plots = self.plots.named("EUROPE")
+		plots = self.plots.named("Europe")
 		self.assertEqual(plots.name(), "Europe")
 		
 		plots = self.plots.where(lambda p: p.getX() == 1)
@@ -4182,154 +4182,16 @@ class TestSign(TestCase):
 	
 	def test_zero(self):
 		self.assertEqual(sign(0), 0)
+		
 
+class TestFormatDate(TestCase):
 
-class TestTextProcessing(TestCase):
-
-	def test_replace_first(self):
-		text = "one two three four"
-		result = replace_first(text, "TXT_KEY_CIV_EGYPT_ADJECTIVE")
-		
-		self.assertEqual(result, "Egyptian two three four")
-	
-	def test_replace_first_format(self):
-		text = "one two three four"
-		result = replace_first(text, "TXT_KEY_UHV_MORE_THAN", "ten eleven twelve")
-		
-		self.assertEqual(result, "more one than ten eleven twelve two three four")
-	
-	def test_shared_words(self):
-		first_text = "one two three and some other text"
-		second_text = "one two three there is different text here"
-		
-		result = shared_words([first_text, second_text])
-		
-		self.assertEqual(result, "one two three")
-	
-	def test_shared_words_substring(self):
-		first_text = "one two three aaaaabc"
-		second_text = "one two three aaaaabb"
-		
-		result = shared_words([first_text, second_text])
-		
-		self.assertEqual(result, "one two three")
-	
-	def test_replace_shared_words(self):
-		first_text = "one two three and some other text"
-		second_text = "one two three there is a different text here"
-		
-		first_result, second_result = replace_shared_words([first_text, second_text])
-		
-		self.assertEqual(first_result, "one two three and some other text")
-		self.assertEqual(second_result, " there is a different text here")
-		
-	def test_replace_shared_words_three(self):
-		first_text = "one two three and some other text"
-		second_text = "one two three there is a different text here"
-		third_text = "one two three yet another text or whatever"
-		
-		first_result, second_result, third_result = replace_shared_words([first_text, second_text, third_text])
-		
-		self.assertEqual(first_result, "one two three and some other text")
-		self.assertEqual(second_result, " there is a different text here")
-		self.assertEqual(third_result, " yet another text or whatever")
-	
-	def test_replace_shared_words_minimal(self):
-		first_text = "one two three and some other text"
-		second_text = "one two three and different text"
-		third_text = "one two three this is different"
-		
-		first_result, second_result, third_result = replace_shared_words([first_text, second_text, third_text])
-		
-		self.assertEqual(first_result, "one two three and some other text")
-		self.assertEqual(second_result, " and different text")
-		self.assertEqual(third_result, " this is different")
-	
-	def test_capitalize(self):
-		text = "word"
-		result = capitalize(text)
-		
-		self.assertEqual(result, "Word")
-	
-	def test_capitalize_empty(self):
-		text = ""
-		result = capitalize(text)
-		
-		self.assertEqual(result, "")
-	
-	def test_capitalize_already_capital(self):
-		text = "Word"
-		result = capitalize(text)
-		
-		self.assertEqual(result, "Word")
-	
-	def test_capitalize_multiple_words(self):
-		text = "some word"
-		result = capitalize(text)
-		
-		self.assertEqual(result, "Some word")
-	
-	def test_number_word_a(self):
-		result = number_word(1)
-		
-		self.assertEqual(result, "a")
-	
-	def test_number_word_two(self):
-		result = number_word(2)
-		
-		self.assertEqual(result, "two")
-	
-	def test_number_word_ten(self):
-		result = number_word(10)
-		
-		self.assertEqual(result, "ten")
-	
-	def test_number_word_twenty(self):
-		result = number_word(20)
-		
-		self.assertEqual(result, "20")
-	
-	def test_ordinal_word_first(self):
-		self.assertEqual(ordinal_word(1), "first")
-	
-	def test_ordinal_word_100th(self):
-		self.assertEqual(ordinal_word(100), "100th")
-	
-	def test_plural(self):
-		result = plural("word")
-		
-		self.assertEqual(result, "words")
-	
-	def test_plural_ends_with_s(self):
-		result = plural("words")
-		
-		self.assertEqual(result, "words")
-	
-	def test_plural_ends_with_y(self):
-		result = plural("library")
-		
-		self.assertEqual(result, "libraries")
-	
-	def test_plural_ends_with_ch(self):
-		self.assertEqual(plural("church"), "churches")
-	
-	def test_plural_ends_with_sh(self):
-		self.assertEqual(plural("marsh"), "marshes")
-	
-	def test_plural_ends_with_man(self):
-		self.assertEqual(plural("swordsman"), "swordsmen")
-	
-	def test_plural_irregular(self):
-		self.assertEqual(plural("Ship of the Line"), "Ships of the Line")
-		self.assertEqual(plural("Great Statesman"), "Great Statesmen")
-		self.assertEqual(plural("cathedral of your state religion"), "cathedrals of your state religion")
-	
 	def test_format_date_positive(self):
 		self.assertEqual(format_date(1000), "1000 AD")
-	
+
 	def test_format_date_negative(self):
 		self.assertEqual(format_date(-500), "500 BC")
-	
+
 
 class TestConcat(TestCase):
 
@@ -4373,43 +4235,6 @@ class TestConcat(TestCase):
 		self.assertEqual(concat([1, 2], None), [1, 2])
 
 
-class TestFuncWrappers(TestCase):
-
-	def test_equals(self):
-		def func(x, y):
-			return x + y
-		
-		equals_func = equals(func)
-		
-		self.assertEqual(equals_func(1, 2, 3), True)
-		self.assertEqual(equals_func(1, 2, 4), False)
-	
-	def test_positive(self):
-		def func(x, y):
-			return x + y
-		
-		positive_func = positive(func)
-		
-		self.assertEqual(positive_func(1, 1), True)
-		self.assertEqual(positive_func(0, 0), False)
-		self.assertEqual(positive_func(1, -2), False)
-
-
-class TestAverage(TestCase):
-
-	def test_average(self):
-		def count(list):
-			return len(list)
-		
-		def value(list):
-			return sum(list)
-		
-		average_func = average(value, count)
-		
-		self.assertEqual(average_func([1, 2, 3]), 2.0)
-		self.assertEqual(average_func([]), 0.0)
-
-
 class TestCount(TestCase):
 
 	def test_count(self):
@@ -4417,85 +4242,6 @@ class TestCount(TestCase):
 	
 	def test_count_condition(self):
 		self.assertEqual(count([1, 2, 3, 4, 5], lambda x: x >= 3), 3)
-
-
-class TestLazyPlots(TestCase):
-
-	def setUp(self):
-		self.factory = LazyPlotFactory()
-
-	def test_capital_none(self):
-		capital = self.factory.capital(0)
-		
-		assertType(self, capital, LazyPlots)
-		
-		self.assertEqual(capital.count(), 0)
-	
-	def test_capital_before(self):
-		city = gc.getPlayer(0).initCity(61, 31)
-		city.setHasRealBuilding(iPalace, True)
-		
-		try:
-			self.assertEqual(city.isCapital(), True)
-		
-			capital = self.factory.capital(0)
-		
-			assertType(self, capital, LazyPlots)
-		
-			self.assertEqual(capital.count(), 1)
-			self.assertEqual(capital.first().getX(), 61)
-			self.assertEqual(capital.first().getY(), 31)
-		finally:
-			city.kill()
-	
-	def test_capital_after(self):
-		capital = self.factory.capital(0)
-		
-		assertType(self, capital, LazyPlots)
-		
-		city = gc.getPlayer(0).initCity(61, 31)
-		city.setHasRealBuilding(iPalace, True)
-		
-		try:
-			self.assertEqual(city.isCapital(), True)
-		
-			self.assertEqual(capital.count(), 1)
-			self.assertEqual(capital.first().getX(), 61)
-			self.assertEqual(capital.first().getY(), 31)
-		finally:
-			city.kill()
-	
-	def test_capital_changed(self):
-		capital = self.factory.capital(0)
-		
-		city1 = gc.getPlayer(0).initCity(61, 31)
-		city1.setHasRealBuilding(iPalace, True)
-		
-		try:
-			self.assertEqual(city1.isCapital(), True)
-		
-			self.assertEqual(capital.count(), 1)
-			self.assertEqual(capital.first().getX(), 61)
-			self.assertEqual(capital.first().getY(), 31)
-		
-			city2 = gc.getPlayer(0).initCity(63, 31)
-			city2.setHasRealBuilding(iPalace, True)
-		
-			try:
-				self.assertEqual(city2.isCapital(), True)
-		
-				self.assertEqual(capital.count(), 1)
-				self.assertEqual(capital.first().getX(), 63)
-				self.assertEqual(capital.first().getY(), 31)
-			finally:
-				city2.kill()
-		finally:
-			city1.kill()
-	
-	def test_normal(self):
-		normal = self.factory.normal(0)
-		
-		self.assertEqual(normal.unique(), plots.normal(0).unique())
 
 
 class TestVariadic(TestCase):
@@ -4525,36 +4271,6 @@ class TestVariadic(TestCase):
 		self.assertEqual([x for x in result], [0, 1, 2])
 
 
-class TestMetrics(TestCase):
-
-	def test_metrics(self):
-		metric1 = lambda x, y: x+y
-		metric2 = lambda x, y: x*y
-		metric3 = lambda x, y: x >= y and x or y
-		
-		combined = metrics(metric1, metric2, metric3)
-		
-		self.assertEqual(combined(1, 2), (3, 2, 2))
-		self.assertEqual(combined(3, 3), (6, 9, 3))
-		self.assertEqual(combined(10, 9), (19, 90, 10))
-	
-	def test_bool_metric(self):
-		metric = lambda x: x >= 10
-		result = bool_metric(metric)
-		
-		self.assertEqual(result(0), 0)
-		self.assertEqual(result(10), 1)
-		self.assertEqual(result(20), 1)
-	
-	def test_bool_metric_additional_arguments(self):
-		metric = lambda x, y: x >= y
-		result = bool_metric(metric, 10)
-		
-		self.assertEqual(result(0), 0)
-		self.assertEqual(result(10), 1)
-		self.assertEqual(result(20), 1)
-
-
 class TestDuplefy(TestCase):
 
 	def test_duple(self):
@@ -4570,84 +4286,6 @@ class TestDuplefy(TestCase):
 		self.assertRaises(Exception, duplefy, 1, 2, 3)
 
 
-class TestDeferredCollection(TestCase):
-
-	def test_deferred(self):
-		even = lambda p: (p.getX() + p.getY()) % 2 == 0
-	
-		deferred = DeferredCollectionFactory.plots()
-		deferred = deferred.rectangle((0, 0), (1, 1))
-		deferred = deferred.where(even)
-		
-		assertType(self, deferred, DeferredCollection)
-		self.assertEqual(deferred.calls, [('rectangle', ((0, 0), (1, 1))), ('where', (even,))])
-		
-		collection = deferred.create()
-		
-		assertType(self, collection, Plots)
-		self.assertEqual(len(collection), 2)
-		self.assertEqual((0, 0) in collection, True)
-		self.assertEqual((1, 1) in collection, True)
-	
-	def test_deferred_named(self):
-		deferred = DeferredCollectionFactory.plots()
-		deferred = deferred.all()
-		deferred = deferred.clear_named("abcd")
-		
-		self.assertEqual(deferred.name(), "abcd")
-		
-		collection = deferred.create()
-		
-		assertType(self, collection, Plots)
-		self.assertEqual(collection.name(), "abcd")
-	
-	def test_deferred_named_from_civ(self):
-		deferred = DeferredCollectionFactory.plots()
-		deferred = deferred.normal(iRome)
-		
-		self.assertEqual(deferred.name(), "Rome")
-		
-		collection = deferred.create()
-		
-		self.assertEqual(collection.name(), "Rome")
-	
-	def test_deferred_multiple_creates(self):
-		deferred = DeferredCollectionFactory.plots()
-		deferred = deferred.rectangle((0, 0), (1, 1))
-		
-		col1 = deferred.create()
-		col2 = deferred.create()
-		
-		self.assertEqual(id(col1) != id(col2), True)
-	
-	def test_deferred_iter(self):
-		deferred = DeferredCollectionFactory.plots()
-		deferred = deferred.rectangle((0, 0), (1, 1))
-		
-		assertType(self, deferred, DeferredCollection)
-		
-		iterated = set([(plot.getX(), plot.getY()) for plot in deferred])
-		
-		assertType(self, deferred, DeferredCollection)
-		self.assertEqual(iterated, set([(0, 0), (0, 1), (1, 0), (1, 1)]))
-	
-	def test_deferred_add(self):
-		deferred1 = DeferredCollectionFactory.plots().rectangle((0, 0), (1, 1))
-		deferred2 = DeferredCollectionFactory.plots().rectangle((2, 0), (3, 1))
-		
-		assertType(self, deferred1, DeferredCollection)
-		assertType(self, deferred2, DeferredCollection)
-		
-		deferred = deferred1 + deferred2
-		
-		assertType(self, deferred, CombinedDeferredCollection)
-		
-		collection = deferred.create()
-		
-		assertType(self, collection, Plots)
-		self.assertEqual(len(collection), 8)
-
-
 class TestUnique(TestCase):
 
 	def test_unique_list(self):
@@ -4658,21 +4296,6 @@ class TestUnique(TestCase):
 	
 	def test_unique_tuple(self):
 		self.assertEqual(unique((1, 1, 1, 2, 2, 3)), [1, 2, 3])
-
-
-class TestChunks(TestCase):
-
-	def test_equal(self):
-		self.assertEqual(chunks([1, 2, 3], 3), [[1, 2, 3]])
-	
-	def test_one(self):
-		self.assertEqual(chunks([1, 2, 3], 1), [[1], [2], [3]])
-	
-	def test_multiple(self):
-		self.assertEqual(chunks([1, 2, 3, 4, 5, 6], 3), [[1, 2, 3], [4, 5, 6]])
-	
-	def test_remainder(self):
-		self.assertEqual(chunks([1, 2, 3, 4, 5], 3), [[1, 2, 3], [4, 5]])
 
 
 class TestMission(TestCase):
@@ -4999,18 +4622,12 @@ test_cases = [
 	TestAt,
 	TestCapital,
 	TestSign,
-	TestTextProcessing,
+	TestFormatDate,
 	TestConcat,
-	TestFuncWrappers,
-	TestAverage,
 	TestCount,
-	TestLazyPlots,
 	TestVariadic,
-	TestMetrics,
 	TestDuplefy,
-	TestDeferredCollection,
 	TestUnique,
-	TestChunks,
 	TestMission,
 	TestGetArea,
 	TestCivFactory,

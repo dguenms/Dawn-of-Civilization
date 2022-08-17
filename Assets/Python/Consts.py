@@ -3,7 +3,7 @@
 
 from CvPythonExtensions import *
 from DataStructures import *
-from Types import *
+from CoreTypes import *
 
 gc = CyGlobalContext()
 
@@ -911,6 +911,8 @@ iNumSpecialists = 19
 iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy, 
 iSpecialistResearchSatellite, iSpecialistCommercialSatellite, iSpecialistMilitarySatellite, 
 iSpecialistSlave) = range(iNumSpecialists)
+
+lGreatSpecialists = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
 #Stability Levels
 iNumStabilityLevels = 5

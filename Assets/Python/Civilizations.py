@@ -152,7 +152,6 @@ class Civilization(object):
 			
 			if game.isReligionFounded(iNewStateReligion):
 				self.player.setLastStateReligion(iNewStateReligion)
-			
 				events.fireEvent("playerChangeStateReligion", self.player.getID(), iNewStateReligion, iOldStateReligion)
 		
 		if self.techs:

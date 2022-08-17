@@ -602,7 +602,6 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		flippedCity.setOccupationTimer(0)
 	
 	if bFlipUnits:
-		sFlippingUnitsAfter = str([iUnit for iUnit, _ in flippingUnits])
 		for iUnit, typeUnits in flippingUnits:
 			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
 	else:
@@ -668,42 +667,6 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 		iNumUnits = 0
 	
 	return makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
-	
-# used: Victory
-def getReligiousVictoryType(iPlayer):
-	pPlayer = player(iPlayer)
-	iStateReligion = pPlayer.getStateReligion()
-	
-	if iStateReligion >= 0:
-		return iStateReligion
-	elif pPlayer.getLastStateReligion() == -1:
-		return iVictoryPaganism
-	elif not pPlayer.isStateReligion():
-		return iVictorySecularism
-		
-	return -1
-	
-# used: Victory
-def getApprovalRating(iPlayer):
-	pPlayer = player(iPlayer)
-	
-	if not pPlayer.isAlive(): return 0
-	
-	iHappy = pPlayer.calculateTotalCityHappiness()
-	iUnhappy = pPlayer.calculateTotalCityUnhappiness()
-	
-	return (iHappy * 100) / max(1, iHappy + iUnhappy)
-	
-# used: Victory
-def getLifeExpectancyRating(iPlayer):
-	pPlayer = player(iPlayer)
-	
-	if not pPlayer.isAlive(): return 0
-	
-	iHealthy = pPlayer.calculateTotalCityHealthiness()
-	iUnhealthy = pPlayer.calculateTotalCityUnhealthiness()
-	
-	return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
 	
 # used: RFCUtils
 # TODO: this should not be here

@@ -6,7 +6,7 @@ from StoredData import *
 from DataStructures import *
 from Areas import *
 
-from Types import Civ
+from CoreTypes import Civ
 
 import Popup
 import BugCore
@@ -30,12 +30,6 @@ translator = CyTranslator()
 engine = CyEngine()
 game = gc.getGame()
 map = gc.getMap()
-
-irregular_plurals = {
-	"Ship of the Line": "Ships of the Line",
-	"Great Statesman": "Great Statesmen",
-	"cathedral of your state religion": "cathedrals of your state religion",
-}
 
 
 def getArea(area):
@@ -64,82 +58,12 @@ def unique(iterable):
 	return [key for key, value in groupby(iterable)]
 
 
-def chunks(list, length):
-	return [list[i:i+length] for i in xrange(0, len(list), length)]
-	
-
 def until(iTurn):
 	return iTurn - turn()
 
 
 def since(iTurn):
 	return turn() - iTurn
-
-
-def bool_metric(func, *args):
-	return lambda value: int(func(value, *args))
-
-
-def metrics(*metrics):
-	return lambda *args: tuple(metric(*args) for metric in metrics)
-
-
-def replace_first(string, replace_key, *replace_args):
-	first = string.split(" ", -1)[0]
-	return string.replace(first, text(replace_key, *concat(first, replace_args)))
-
-
-def replace_shared_words(strings):
-	if not strings:
-		return strings
-		
-	shared = shared_words(strings)
-	
-	if shared in ["DA", "CB"]:
-		shared = ""
-	
-	strings = [string.replace(shared, "") for string in strings]
-	strings[0] = shared + strings[0]
-	
-	return strings
-
-
-def shared_words(strings):
-	strings = [string.split(" ") for string in strings]
-
-	index = 0
-	for words in zip(*strings):
-		if not all(word == words[0] for word in words):
-			break
-		index += 1
-	
-	return " ".join(strings[0][:index])
-
-
-def capitalize(string):
-	if not string:
-		return string
-		
-	capitalized = string[0].upper()
-	if len(string) > 1:
-		capitalized += string[1:]
-
-	return capitalized
-
-
-def uncapitalize(string):
-	if not string:
-		return string
-	
-	uncapitalized = string[0].lower()
-	if len(string) > 1:
-		uncapitalized += string[1:]
-	
-	return uncapitalized
-
-
-def number_word(number):
-	return text_if_exists("TXT_KEY_UHV_NUMBER_%s" % number, otherwise=number)
 
 
 def getPlayerExperience(unit):
@@ -152,34 +76,8 @@ def getPlayerExperience(unit):
 		iExperience += player(unit).getStateReligionFreeExperience()
 	
 	return iExperience
-
-
-def ordinal_word(number):
-	return text_if_exists("TXT_KEY_UHV_ORDINAL_%s" % number, otherwise="%d%s" % (number, text("TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX")))
-
-
-def plural(word):
-	if not word:
-		return word
-
-	if word in irregular_plurals:
-		return irregular_plurals[word]
-
-	if word.endswith('s'):
-		return word
 	
-	if word.endswith('y'):
-		return re.sub('y$', 'ies', word)
 	
-	if word.endswith('ch') or word.endswith('sh'):
-		return word + 'es'
-	
-	if word.endswith('man'):
-		return re.sub('man$', 'men', word)
-	
-	return word + 's'
-
-
 def format_date(year):
 	return text(year >= 0 and "TXT_KEY_YEAR_AD" or "TXT_KEY_YEAR_BC", abs(year))
 
@@ -214,27 +112,6 @@ def listify(item):
 
 def concat(*lists):
 	return sum((listify(list) for list in lists), [])
-
-
-def equals(func):
-	def equals_func(*args):
-		remaining, objective = args[:-1], args[-1]
-		return func(*remaining) == objective
-	return equals_func
-
-
-def positive(func):
-	def positive_func(*args):
-		return func(*args) > 0
-	return positive_func
-
-
-def average(value, count):
-	def average_function(arg):
-		if count(arg) == 0:
-			return 0.0
-		return 1.0 * value(arg) / count(arg)
-	return average_function
 
 
 def isWonder(iBuilding):
@@ -365,12 +242,16 @@ def birthRectangle(identifier, extended = None):
 	if identifier in dExtendedBirthArea and extended:
 		return dExtendedBirthArea[identifier]
 	return dBirthArea[identifier]
-	
-	
+
+
 def signature(func, *args, **kwargs):
+	return signature_name(func.__name__, *args, **kwargs)
+	
+	
+def signature_name(func_name, *args, **kwargs):
 	formatted_args = [str(arg) for arg in args]
 	formatted_kwargs = ["%s=%s" % (key, value) for key, value in kwargs.items()]
-	return "%s(%s)" % (func.__name__, ", ".join(formatted_args + formatted_kwargs))
+	return "%s(%s)" % (func_name, ", ".join(formatted_args + formatted_kwargs))
 
 
 def log(func):
@@ -391,16 +272,6 @@ def owner(entity, identifier):
 
 def count(iterable, condition = bool):
 	return len([x for x in iterable if condition(x)])
-
-
-def format_separators_shared(list, separator, last_separator, format=lambda x: x):
-	list = [format(item) for item in list]
-	list = replace_shared_words(list)
-	
-	reverse_list = [element[::-1] for element in list[::-1]]
-	list = [element[::-1].strip() for element in replace_shared_words(reverse_list)][::-1]
-	
-	return format_separators(list, separator, last_separator)
 
 
 def format_separators(list, separator, last_separator, format=lambda x: x):
@@ -650,6 +521,9 @@ def scale(value):
 
 
 def turns(iTurns):
+	if not game.isFinalInitialized():
+		return iTurns
+
 	iModifier = infos.gameSpeed().getGrowthPercent()
 	return iTurns * iModifier / 100
 	
@@ -1095,7 +969,7 @@ class EntityCollection(object):
 		return self.copy(self._keys[:iSplit]), self.copy(self._keys[iSplit:])
 	
 	def grouped(self, func):
-		return ((key, self.copy(group)) for key, group in groupby(self.sort(func)._keys, lambda key: func(self._factory(key))))
+		return [(key, self.copy(group)) for key, group in groupby(self.sort(func)._keys, lambda key: func(self._factory(key)))]
 		
 	def sort(self, metric, reverse=False):
 		return self.copy(sort(self._keys, key=lambda k: metric(self._factory(k)), reverse=reverse))
@@ -1193,10 +1067,10 @@ class EntityCollection(object):
 			final_separator = text("TXT_KEY_AND")
 		return format_separators(self.entities(), separator, final_separator, formatter)
 	
-	def named(self, key):
-		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
-	
 	def clear_named(self, name):
+		return self.named(name)
+	
+	def named(self, name):
 		self._name = name
 		return self
 	
@@ -1221,9 +1095,6 @@ class PlotFactory:
 	def of(self, list):
 		return Plots(list)
 	
-	def lazy(self):
-		return LazyPlotFactory()
-
 	def start(self, *args):
 		x, y = _parse_tile(*args)
 		return PlotsCorner(x, y)
@@ -1337,15 +1208,6 @@ class PlotFactory:
 		return self.respawnCapital(identifier)
 
 
-class LazyPlotFactory:
-
-	def capital(self, iPlayer):
-		return LazyPlots.capital(iPlayer)
-	
-	def normal(self, iPlayer):
-		return LazyPlots.normal(iPlayer)
-
-
 class Locations(EntityCollection):
 
 	def __init__(self, locations):
@@ -1355,11 +1217,17 @@ class Locations(EntityCollection):
 		if not exceptions or not any(exceptions):
 			return self
 			
-		if len(exceptions) == 1 and isinstance(exceptions[0], (list, set, Locations)):
-			exceptions = exceptions[0] 
+		if len(exceptions) == 1:
+			if isinstance(exceptions[0], Locations):
+				remaining = set(self._keys) - set(exceptions[0]._keys)
+				return self.copy(remaining)
+			
+			elif isinstance(exceptions[0], (list, set)):
+				exceptions = exceptions[0]
+			
+		remaining = set(self._keys) - set(self._keyify(item) for item in exceptions)
+		return self.copy(remaining)
 	
-		return self.where(lambda loc: location(loc) not in [location(e) for e in exceptions])
-		
 	def _closest(self, *args):
 		x, y = _parse_tile(*args)
 		return find_min(self.entities(), lambda loc: distance(loc, (x, y)))
@@ -1488,96 +1356,6 @@ class Plots(Locations):
 		return self.where(lambda p: plots.surrounding(p).any(lambda sp: sp not in self))
 
 
-class LazyPlots(object):
-
-	def __init__(self, getter):
-		self.getter = getter
-	
-	def __getattr__(self, name):
-		return getattr(self.getter(), name)
-		
-	@staticmethod
-	def capital(iPlayer):
-		return LazyPlots(lambda: plots.all().where(lambda p: at(p, capital(iPlayer))))
-	
-	@staticmethod
-	def normal(iPlayer):
-		return LazyPlots(lambda: plots.normal(iPlayer))
-
-
-class DeferredCollectionFactory(object):
-
-	def __init__(self, factory):
-		self.factory = factory
-	
-	def __getattr__(self, name):
-		return getattr(DeferredCollection(self.factory), name)
-	
-	@staticmethod
-	def plots():
-		return DeferredCollectionFactory(PlotFactory())
-
-
-class DeferredCollection(object):
-
-	def __init__(self, factory):
-		self.factory = factory
-		self.calls = []
-		self._name = ""
-	
-	def __getattr__(self, name):
-		def call_adder(*args):
-			self.calls.append((name, args))
-			
-			if args and isinstance(args[0], Civ):
-				self.clear_named(infos.civ(args[0]).getShortDescription(0))
-			
-			return self
-		return call_adder
-	
-	def __iter__(self):
-		return iter(self.create())
-	
-	def initial(self):
-		return self.factory
-	
-	def create(self):
-		instance = self.initial()
-		for func_name, args in self.calls:
-			instance = getattr(instance, func_name)(*args)
-			
-		if isinstance(instance, Plots) and self._name:
-			instance.clear_named(self.name())
-		
-		return instance
-	
-	def named(self, key):
-		return self.clear_named(text("TXT_KEY_AREA_NAME_%s" % key))
-	
-	def clear_named(self, name):
-		self._name = name
-		return self
-	
-	def name(self):
-		return self._name
-	
-	def __add__(self, other):
-		if isinstance(other, DeferredCollection):
-			return CombinedDeferredCollection(self, other)
-		raise ValueError("Can only add DeferredCollections, found: '%s'" % type(other))
-
-
-class CombinedDeferredCollection(DeferredCollection):
-
-	def __init__(self, left, right):
-		super(CombinedDeferredCollection, self).__init__(None)
-		self.left = left
-		self.right = right
-	
-	def initial(self):
-		return self.left.create() + self.right.create()
-
-		
 class CitiesCorner:
 
 	def __init__(self, x, y):
@@ -1715,6 +1493,15 @@ class Cities(Locations):
 		
 	def __str__(self):
 		return str(["%s (%s) at %s" % (city.getName(), adjective(city.getOwner()), (city.getX(), city.getY())) for city in self.entities()])
+	
+	def without(self, *exceptions):
+		if not exceptions or none(exceptions):
+			return self
+		
+		if len(exceptions) == 1 and isinstance(exceptions[0], (list, set, Locations)):
+			exceptions = exceptions[0]
+		
+		return self.where(lambda city: location(city) not in [location(loc) for loc in exceptions])
 	
 	def existing(self):
 		return self.where(lambda city: city.getX() >= 0)
@@ -1873,6 +1660,9 @@ class PlayerFactory:
 		return Players([])
 	
 	def of(self, *players):
+		if len(players) == 1 and isinstance(players[0], Players):
+			return players[0]
+	
 		return Players(players)
 	
 	def at_war(self, iPlayer):
@@ -1886,7 +1676,7 @@ class Players(EntityCollection):
 
 	def __init__(self, players):
 		if all(isinstance(x, Civ) for x in players):
-			players = [slot(x) for x in players]
+			players = [slot(x) for x in players if slot(x) >= 0]
 		elif not all(isinstance(x, int) for x in players):
 			raise Exception("All entries in Players need to be either int or Civ")
 	
@@ -1941,7 +1731,9 @@ class Players(EntityCollection):
 		return self.where(lambda p: not is_minor(p))
 		
 	def without(self, exceptions):
-		if not isinstance(exceptions, (list, set, Players)):
+		if isinstance(exceptions, types.GeneratorType):
+			exceptions = list(exceptions)
+		elif not isinstance(exceptions, (list, set, Players)):
 			exceptions = [exceptions]
 		return self.where(lambda p: p not in [player(e).getID() for e in exceptions])
 		

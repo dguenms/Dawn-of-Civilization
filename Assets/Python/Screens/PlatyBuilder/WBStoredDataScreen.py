@@ -255,10 +255,6 @@ class WBStoredDataScreen:
 				sDefender = iDefender >= 0 and infos.civ(iDefender).getText() or "Any Civilization"
 				sText = "%s - %s" % (sAttacker, sDefender)
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			elif item == "lGoals":
-				sText = u"UHV%d: " % (i+1)
-				sText += Victories.dHistoricalGoals[iSelectedCiv][i].full_description()
-				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)
 

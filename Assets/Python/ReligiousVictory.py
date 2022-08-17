@@ -1,34 +1,44 @@
-from VictoryGoals import *
+from Definitions import *
 from Locations import *
 
 
-### GOALS ###
+# city descriptors
+CAPITAL = "TXT_KEY_VICTORY_NAME_CAPITAL"
+
+# building descriptors
+CATHEDRALS = "TXT_KEY_VICTORY_NAME_CATHEDRALS"
+SHRINES = "TXT_KEY_VICTORY_NAME_SHRINES"
+
+# goal descriptors
+FIRST_SECULAR_GOAL = "TXT_KEY_VICTORY_GOAL_SECULAR_1"
+PESEDJET_GOAL = "TXT_KEY_VICTORY_GOAL_PESEDJET"
+
 
 dGoals = {
 	iHinduism: (
-		DifferentSpecialists(holyCity(iHinduism), 5),
+		CityDifferentGreatPeopleCount(holy_city(iHinduism), 5),
 		GoldenAges(3),
-		BestPopulationCities(5).religion(iHinduism),
+		BestPopulationCities(5, subject=STATE_RELIGION, iReligion=iHinduism)
 	),
 	iZoroastrianism: (
 		ResourceCount(iIncense, 6),
 		ReligionSpreadPercent(iZoroastrianism, 10),
-		CultureLevel(holyCity(iZoroastrianism), iCultureLevelLegendary),
+		CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelLegendary),
 	),
 	iJudaism: (
-		SpecialistCount(sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatStatesman), 15),
-		CultureLevel(holyCity(iJudaism), iCultureLevelLegendary),
-		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 6).minority(iJudaism).named("JEWISH_MINORITY_ATTITUDES"),
+		SpecialistCount(sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatStatesman), 15, subject=STATE_RELIGION, iReligion=iJudaism),
+		CityCultureLevel(holy_city(iJudaism), iCultureLevelLegendary),
+		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 6, iReligion=iJudaism),
 	),
 	iConfucianism: (
-		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5).named("FRIENDLY_RELATIONS"),
-		CityBuildings(holyCity(iConfucianism), wonders(), 5),
-		UnitCombatCount(sum(UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN).join("OR"), 200),
+		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5),
+		CityBuildingCount(holy_city(iConfucianism), wonders(), 5),
+		UnitCombatCount(sum(UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN), 200),
 	),
 	iTaoism: (
 		HealthiestTurns(100),
 		ShrineIncome(sum(iConfucianism, iTaoism), 40),
-		CultureLevel(holyCity(iTaoism), iCultureLevelLegendary),
+		CityCultureLevel(holy_city(iTaoism), iCultureLevelLegendary),
 	),
 	iBuddhism: (
 		PeaceTurns(100),
@@ -37,63 +47,64 @@ dGoals = {
 	),
 	iOrthodoxy: (
 		BuildingCount(iOrthodoxCathedral, 4),
-		BestCultureCities(5).religion(iOrthodoxy),
+		BestCultureCities(5, subject=STATE_RELIGION, iReligion=iOrthodoxy),
 		NoStateReligion(iCatholicism),
 	),
 	iCatholicism: (
 		PopeTurns(100),
 		All(
-			# Orthodox shrine?
-			BuildingCount(iCatholicShrine),
-			SpecialistCount(iSpecialistGreatProphet, 12).religion(iCatholicism),
+			BuildingCount(iCatholicShrine, 1),
+			SpecialistCount(iSpecialistGreatProphet, 12, subject=STATE_RELIGION, iReligion=iCatholicism),
 		),
-		WorldPercent(50).religion(iCatholicism),
+		LandPercent(50, subject=STATE_RELIGION, iReligion=iCatholicism),
 	),
 	iIslam: (
 		ReligionSpreadPercent(iIslam, 40),
-		CitySpecialistCount(holyCity(iIslam), great_people(), 7),
-		BuildingCount(religious_buildings(shrine).named("SHRINES"), 5),
+		CitySpecialistCount(holy_city(iIslam), great_people(), 7, subject=STATE_RELIGION),
+		BuildingCount(religious_buildings(shrine).named(SHRINES), 5),
 	),
 	iProtestantism: (
-		FirstDiscovered(iCivilLiberties, iSocialContract, iEconomics),
-		SpecialistCount((iSpecialistGreatMerchant, 5), (iSpecialistGreatEngineer, 5)).religion(iProtestantism),
-		StateReligionPercent(iProtestantism, 50).orSecular().named("HALF_PROTESTANT_OR_SECULAR"),
+		FirstDiscover(iCivilLiberties, iSocialContract, iEconomics),
+		SpecialistCount((iSpecialistGreatMerchant, 5), (iSpecialistGreatEngineer, 5), subject=STATE_RELIGION, iReligion=iProtestantism),
+		StateReligionPercent(iProtestantism, 50, bSecular=True),
 	),
 	iPaganVictory: (
-		BuildingCount(iPaganTemple, 15).world(),
-		NoReligionPercent(50).named("HALF_NO_RELIGION"),
+		BuildingCount(iPaganTemple, 15, subject=WORLD),
+		NoReligionPercent(50),
 	),
 	iSecularVictory: (
-		BuildingCount(religious_buildings(cathedral).named("CATHEDRALS"), 7).named("ALL_CATHEDRALS"),
+		BuildingCount(religious_buildings(cathedral).named(CATHEDRALS), 7, desc_key=FIRST_SECULAR_GOAL),
 		All(
-			BuildingCount(iUniversity, 25),
+			BuildingCount(iUniversity, 25, subject=SECULAR),
 			SpecialistCount(
 				(iSpecialistGreatScientist, 10),
 				(iSpecialistGreatStatesman, 10),
+				subject=SECULAR,
 			),
-		).secular(),
-		BestTechPlayers(5).secular(),
+		),
+		BestTechPlayers(5, subject=SECULAR),
 	),
 }
 
+
 dAdditionalPaganGoal = {
-	iAnunnaki: BestWonderCity(capital()),
+	iAnunnaki: BestWonderCity(capital().named(CAPITAL)),
 	iAsatru: UnitLevelCount(5, 5),
 	iAtua: All(
 		ResourceCount(iPearls, 4),
 		TerrainCount(iOcean, 50),
 	),
-	iBaalism: BestTradeIncomeCity(capital()),
+	iBaalism: BestTradeIncomeCity(capital().named(CAPITAL)),
 	iBon: PeakCount(50),
 	iDruidism: FeatureCount(sum(iForest, iMud), 20),
-	iInti: GoldPercent(50).named("HALF_WORLD_GOLD"),
+	iInti: GoldPercent(50),
 	iMazdaism: ResourceCount(iIncense, 6),
-	iMugyo: BestSpecialistCity(capital(), great_people()),
-	iOlympianism: BuildingCount(pagan_wonders(), 7),
-	iPesedjet: Some(FirstGreatPerson(*lGreatPeople), 3).named("FIRST_GREAT_PEOPLE"),
+	iMugyo: BestSpecialistCity(capital().named(CAPITAL), great_people()),
+	iOlympianism: BuildingCount(wonders(), 7),
+	iPesedjet: FirstGreatPerson(required=3, desc_key=PESEDJET_GOAL, *lGreatSpecialists),
 	iRodnovery: ResourceCount(iFur, 7),
 	iShendao: PopulationPercent(25),
-	iShinto: CitySpecialistCount(capital(), iSpecialistGreatSpy, 3),
+	iShinto: CitySpecialistCount(capital().named(CAPITAL), iSpecialistGreatSpy, 3),
 	iTengri: ResourceCount(iHorse, 8),
 	iTeotlMaya: CombatFood(50),
 	iTeotlAztec: SacrificeHappiness(10),
@@ -101,6 +112,17 @@ dAdditionalPaganGoal = {
 	iYoruba: ResourceCount((iIvory, 8), (iGems, 6)),
 }
 
+
 for iReligion in range(iNumReligions):
-	for i, goal in enumerate(dGoals[iReligion]):
-		goal.titled("%s%s" % (infos.religion(iReligion).getText().upper()[:4], i+1))
+	for index, goal in enumerate(dGoals[iReligion]):
+		title_key = "TXT_KEY_VICTORY_TITLE_%s%s" % (infos.religion(iReligion).getText().upper()[:4], index+1)
+		goal.options["title_key"] = title_key
+
+
+def descriptions(iReligion):
+	for goal in dGoals[iReligion]:
+		print goal.description()
+
+def pagans():
+	for iPaganReligion in sorted(dAdditionalPaganGoal.keys()):
+		print dAdditionalPaganGoal[iPaganReligion].description()

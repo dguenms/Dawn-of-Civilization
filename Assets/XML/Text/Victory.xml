@@ -2,15 +2,7 @@
 <!-- Victory -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UHV__TITLE</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_</Tag>
+		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 		<French></French>
 		<German></German>
@@ -18,10 +10,11 @@
 		<Spanish></Spanish>
 	</TEXT>
 	
-<!-- BASIC TEXT KEYS USED BY FUNDAMENTAL GOAL CODE -->
+	
+<!-- GOAL AND GOAL DEFINITION TEXT -->
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BY</Tag>
+		<Tag>TXT_KEY_VICTORY_BY</Tag>
 		<English>by %s1</English>
 		<French></French>
 		<German></German>
@@ -29,1925 +22,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_IN</Tag>
+		<Tag>TXT_KEY_VICTORY_IN</Tag>
 		<English>in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TOTAL_OF</Tag>
-		<English>a total of %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_MORE_THAN</Tag>
-		<English>more %s1 than %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TEMPLES</Tag>
-		<English>temples</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_STATE_RELIGION_CATHEDRAL</Tag>
-		<English>cathedral of your state religion</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SHRINES</Tag>
-		<English>shrines</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CATHEDRALS</Tag>
-		<English>cathedrals</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CHRISTIAN_CATHEDRALS</Tag>
-		<English>Christian Cathedrals</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_WONDERS</Tag>
-		<English>wonders</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PAGAN_WONDERS</Tag>
-		<English>pagan wonders</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_DIFFERENT_HAPPINESS_RESOURCES</Tag>
-		<English>different happiness</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TRADING_COMPANY_RESOURCES</Tag>
-		<English>trading company</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GREAT_PEOPLE</Tag>
-		<English>great people</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SOME</Tag>
-		<English>%s1 %s2 out of</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ENTITY_IN</Tag>
-		<English>%s1 %s2 in %s3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TO_YOUR_ENTITY</Tag>
-		<English>%s3 to %s1 of your %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOLD_FROM</Tag>
-		<English>%s1 gold from %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TO_PERCENT</Tag>
-		<English>%s2 to %s1%%</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PERCENT_OF</Tag>
-		<English>%s1%% of %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PERCENT_OF_POPULATION</Tag>
-		<English>%s1%% of the population in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CITY</Tag>
-		<English>city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RESOURCE</Tag>
-		<English>%s1 resource</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_OR_VASSALISE</Tag>
-		<English>%s1 or vassalise</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ENTITY_OF_SIZE</Tag>
-		<English>%s1 %s2 of size %s3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ENTITY_WITH</Tag>
-		<English>%s1 %s2 with %s3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BUILD</Tag>
-		<English>have</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_HAVE</Tag>
-		<English>have</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_PLAYER</Tag>
-		<English>(No Player)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_CITY</Tag>
-		<English>(No City)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CITY_DIFFERENT_OWNER</Tag>
-		<English>%s1 (controlled by %s2)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_MAKE_SURE</Tag>
-		<English>make sure that</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARE_RELIGION</Tag>
-		<English>are %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARE_SECULAR</Tag>
-		<English>are secular</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RELIGION_SHRINE</Tag>
-		<English>the %s1 shrine</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_UNITS_OF_LEVEL</Tag>
-		<English>%s1 units of level %s2 or higher</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TILES</Tag>
-		<English>%s1 %s2 tiles</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TURN_SUFFIX</Tag>
-		<English>(Turn %d1)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOAL_SUCCESS</Tag>
-		<English>YES</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOAL_FAILURE</Tag>
-		<English>NO</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOAL_POSSIBLE</Tag>
-		<English>Not yet</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ACCOMPLISHED</Tag>
-		<English>Accomplished:</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOAL_ACCOMPLISHED</Tag>
-		<English>Goal accomplished!</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOAL_FAILED</Tag>
-		<English>Goal failed!</English>
-		<French>Objectif &#233;chou&#233; !</French>
-		<German>Goal failed!</German>
-		<Italian>Goal failed!</Italian>
-		<Spanish>Goal failed!</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TURN</Tag>
-		<English>Turn %d1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ANNOUNCE_FAILURE</Tag>
-		<English>You have failed to %s1.</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ANNOUNCE_SUCCESS</Tag>
-		<English>You have successfully managed to %s1.</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_INTERMEDIATE</Tag>
-		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
-		<French>Nous avons accompli notre deuxi&#232;me objectif historique. Un &#226;ge d'or d&#233;bute pour notre civilisation !</French>
-		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
-		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
-		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
-	</TEXT>
-	
-<!-- NUMBERS TO BE SPELLED OUT -->
-
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_1</Tag>
-		<English>a</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_2</Tag>
-		<English>two</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_3</Tag>
-		<English>three</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_4</Tag>
-		<English>four</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_5</Tag>
-		<English>five</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_6</Tag>
-		<English>six</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_7</Tag>
-		<English>seven</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_8</Tag>
-		<English>eight</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_9</Tag>
-		<English>nine</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_10</Tag>
-		<English>ten</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_11</Tag>
-		<English>eleven</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NUMBER_12</Tag>
-		<English>twelve</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_1</Tag>
-		<English>first</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_2</Tag>
-		<English>second</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_3</Tag>
-		<English>third</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_4</Tag>
-		<English>fourth</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_5</Tag>
-		<English>fifth</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ORDINAL_DEFAULT_SUFFIX</Tag>
-		<English>th</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	
-<!-- NAMES FOR CITIES AND AREAS -->
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_BABYLON</Tag>
-		<English>Babylon</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_CARTHAGE</Tag>
-		<English>Carthage</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_CONSTANTINOPLE</Tag>
-		<English>Constantinople</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_LHASA</Tag>
-		<English>Lhasa</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_CORDOBA</Tag>
-		<English>Cordoba</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_PARIS</Tag>
-		<English>Paris</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_VIENNA</Tag>
-		<English>Vienna</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_TENOCHTITLAN</Tag>
-		<English>Tenochtitlan</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_AYUTTHAYA</Tag>
-		<English>Ayutthaya</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_AMSTERDAM</Tag>
-		<English>Amsterdam</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_BERLIN</Tag>
-		<English>Berlin</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_BUENOS_AIRES</Tag>
-		<English>Buenos Aires</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_MEXICO_CITY</Tag>
-		<English>Mexico City</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_CAPITAL</Tag>
-		<English>your capital</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_DIFFERENT_CAPITAL</Tag>
-		<English>a different capital</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_ANOTHER_CAPITAL</Tag>
-		<English>another capital</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_HOLY_CITY</Tag>
-		<English>your holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_ITS_CITY</Tag>
-		<English>its city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_JEWISH_HOLY_CITY</Tag>
-		<English>the Jewish holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_ISLAMIC_HOLY_CITY</Tag>
-		<English>the Islamic holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_HINDU_HOLY_CITY</Tag>
-		<English>the Hindu holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_CONFUCIAN_HOLY_CITY</Tag>
-		<English>the Confucian holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_TAOIST_HOLY_CITY</Tag>
-		<English>the Taoist holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_ITALY</Tag>
-		<English>Italy</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_IBERIA</Tag>
-		<English>Iberia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_HAWAII</Tag>
-		<English>Hawaii</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NEW_ZEALAND</Tag>
-		<English>New Zealand</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MARQUESAS</Tag>
-		<English>Marquesas</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_EASTER_ISLAND</Tag>
-		<English>Easter Island</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_GAUL</Tag>
-		<English>Gaul</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_BRITAIN</Tag>
-		<English>Britain</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_AFRICA</Tag>
-		<English>Africa</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_ANATOLIA</Tag>
-		<English>Anatolia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_DECCAN</Tag>
-		<English>the Deccan</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SRIVIJAYA</Tag>
-		<English>Srivijaya</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_BALKANS</Tag>
-		<English>the Balkans</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NEAR_EAST</Tag>
-		<English>the Near East</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NORTH_AFRICA</Tag>
-		<English>North Africa</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_KOREA</Tag>
-		<English>Korea</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MANCHURIA</Tag>
-		<English>Manchuria</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CHINA</Tag>
-		<English>China</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_INDOCHINA</Tag>
-		<English>Indochina</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_INDONESIA</Tag>
-		<English>Indonesia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_PHILIPPINES</Tag>
-		<English>the Philippines</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MAGHREB</Tag>
-		<English>the Maghreb</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MESOPOTAMIA</Tag>
-		<English>Mesopotamia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_WEST_AFRICA</Tag>
-		<English>West Africa</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_EUROPE</Tag>
-		<English>Europe</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NORTH_AMERICA</Tag>
-		<English>North America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SOUTH_AMERICA</Tag>
-		<English>South America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SOUTH_CENTRAL_AMERICA</Tag>
-		<English>South and Central America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_ASIA</Tag>
-		<English>Asia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_OCEANIA</Tag>
-		<English>Oceania</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SIBERIA</Tag>
-		<English>Siberia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_BRAZIL</Tag>
-		<English>Brazil</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_ANDEAN_COAST</Tag>
-		<English>the Andean Coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MEDITERRANEAN</Tag>
-		<English>the Mediterranean</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_EASTERN_MEDITERRANEAN</Tag>
-		<English>the Eastern Mediterranean</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_BLACK_SEA</Tag>
-		<English>the Black Sea</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MECCA</Tag>
-		<English>Mecca</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CAIRO</Tag>
-		<English>Cairo</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_BAGHDAD</Tag>
-		<English>Baghdad</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_VIENNA</Tag>
-		<English>Vienna</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SOUTH_ASIA</Tag>
-		<English>South Asia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_TRANSOXIANA</Tag>
-		<English>Transoxiana</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NORTHWEST_INDIA</Tag>
-		<English>Northwest India</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_NORTH_CENTRAL_AMERICA</Tag>
-		<English>North and Central America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_PERU</Tag>
-		<English>Peru</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_GRAN_COLOMBIA</Tag>
-		<English>Gran Colombia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_GUAYANAS</Tag>
-		<English>the Guayanas</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CARIBBEAN</Tag>
-		<English>the Caribbean</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CANADA</Tag>
-		<English>Canada</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_AMERICA</Tag>
-		<English>America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CITY_IN_CHINA</Tag>
-		<English>city in China</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MEDITERRANEAN_PORT</Tag>
-		<English>a Mediterranean port</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_MOSCOW</Tag>
-		<English>Moscow</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SIBERIAN_COAST</Tag>
-		<English>the Siberian coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_ATLANTIC_COAST</Tag>
-		<English>the Atlantic coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_PACIFIC_COAST</Tag>
-		<English>the Pacific coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_CAPITAL</Tag>
-		<English>your capital</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_COLONIAL</Tag>
-		<English>colonies</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_AREA_NAME_SCANDINAVIA</Tag>
-		<English>Scandinavia</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NAME_RELIGION_HOLY_CITY</Tag>
-		<English>the %s1 holy city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-
-<!-- GOAL PROGRESS -->
-
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_PLAYER_CULTURE</Tag>
-		<English>Total Culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_GOAL_TEMPLATE</Tag>
-		<English>%s1 %s2: %s5[NEWLINE]Next %s3 %s4: %s6</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NEXT</Tag>
-		<English>Next %s1: %s2 (%d3)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_OUR_NEXT</Tag>
-		<English>Our next %s1: %s2 (%d3)</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST</Tag>
-		<English>best</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_ENTITY_CITY</Tag>
-		<English>city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_ENTITY_PLAYER</Tag>
-		<English>civilization</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_POPULATION</Tag>
-		<English>most populous</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_CULTURE</Tag>
-		<English>most cultured</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_TECHNOLOGY</Tag>
-		<English>most advanced</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_WONDERS</Tag>
-		<English>most wonders</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_TRADE_INCOME</Tag>
-		<English>highest trade income</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BEST_SPECIALIST</Tag>
-		<English>most settled specialists</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_POPULATION</Tag>
-		<English>Total Population</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_GOLDEN_AGES</Tag>
-		<English>Golden Ages</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_POPULATION_PERCENT</Tag>
-		<English>Percentage of world population</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_AREA_POPULATION_PERCENT</Tag>
-		<English>Population in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_GOLD</Tag>
-		<English>Gold in treasury</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_WORLD_PERCENT</Tag>
-		<English>Percentage of the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_TRADE_GOLD</Tag>
-		<English>Gold from trade</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RESOURCE_COUNT</Tag>
-		<English>Available %s1 resources</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CONVERT_AFTER_FOUNDING</Tag>
-		<English>Convert to %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CITIES</Tag>
-		<English>%s1 cities</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_SUNK_SHIPS</Tag>
-		<English>Enemy ships sunk</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_AVERAGE_CULTURE</Tag>
-		<English>Average Culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ERA_FIRST_DISCOVERED</Tag>
-		<English>First to discover technologies in the %s1 era</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RAID_GOLD</Tag>
-		<English>Gold from raids</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ROUTE_CONNECTION</Tag>
-		<English>%s1 from %s2 to %s3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CULTURE_IN</Tag>
-		<English>Culture in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_PILLAGED</Tag>
-		<English>Improvements pillaged</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NO_CITIES</Tag>
-		<English>No Cities</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_MISSING_CITY</Tag>
-		<English>No %s1 city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RELIGION_SPREAD_PERCENT</Tag>
-		<English>%s1 spread to</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ACQUIRED_CITIES</Tag>
-		<English>Cities acquired</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_IN_CITY</Tag>
-		<English>%s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CONQUERED_CITY_COUNT</Tag>
-		<English>Conquered cities</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_IN_AREA</Tag>
-		<English>%s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_PIRACY_GOLD</Tag>
-		<English>Gold from piracy</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CITY_COUNT</Tag>
-		<English>Cities in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_AREA_NO_STATE_RELIGION</Tag>
-		<English>No %s2 civilizations in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_AREA_PERCENT</Tag>
-		<English>Territory in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_AVERAGE_POPULATION</Tag>
-		<English>Average city population</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_COUNT</Tag>
-		<English>vassals</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_IN_AREA</Tag>
-		<English>%s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_VASSAL_WITH_RELIGION</Tag>
-		<English>%s1 %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_COUNT</Tag>
-		<English>%s1 or better relations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_CIVS</Tag>
-		<English>civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_IN_AREA</Tag>
-		<English>%s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_COMMUNIST</Tag>
-		<English>communist %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_RELIGION</Tag>
-		<English>%s1 %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH_MINORITY</Tag>
-		<English>%s1 with a %s2 minority</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_INDEPENDENT</Tag>
-		<English>independent %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ATTITUDE_WITH</Tag>
-		<English>%s1 with %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_SETTLED_CITY_COUNT</Tag>
-		<English>Cities in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_COMMUNIST</Tag>
-		<English>Communist</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_TRADE_MISSION</Tag>
-		<English>Trade Mission to %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_OPEN_BORDER_COUNT</Tag>
-		<English>Open border agreements</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ROUTE</Tag>
-		<English>%s2 along %s1 in your territory</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NO_FOREIGN_CITIES</Tag>
-		<English>No foreign cities in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RAZE_COUNT</Tag>
-		<English>Cities razed</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ENSLAVE_COUNT</Tag>
-		<English>Enslaved units</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_MORE_CULTURE</Tag>
-		<English>Total culture: %d1 / %d2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RELIGIOUS_VOTE_PERCENT</Tag>
-		<English>Votes in the Apostolic Palace</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_SLAVE_TRADE_GOLD</Tag>
-		<English>Gold from slave trade</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ALLIED_COMMERCE_PERCENT</Tag>
-		<English>Global allied commerce</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ALLIED_POWER_PERCENT</Tag>
-		<English>Global allied power</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_GREAT_GENERALS</Tag>
-		<English>Great Generals</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_RESOURCE_TRADE_GOLD</Tag>
-		<English>Gold from trading resources</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_BROKERED_PEACE</Tag>
-		<English>Peace deals brokered</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CULTURE_LEVEL</Tag>
-		<English>Culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_DIFFERENT_SPECIALIST</Tag>
-		<English>Different specialists</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_HEALTHIEST_TURNS</Tag>
-		<English>Turns at highest life expectancy</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_SHRINE_INCOME</Tag>
-		<English>Shrine income from %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_PEACE_TURNS</Tag>
-		<English>Turns at peace</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_HAPPIEST_TURNS</Tag>
-		<English>Turns at highest approval rating</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_ALL_ATTITUDE</Tag>
-		<English>%s1 or better relations: %d2 / %d3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NO_STATE_RELIGION</Tag>
-		<English>%s1 civilizations: %d2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_POPE_TURNS</Tag>
-		<English>Turns as pope</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_STATE_RELIGION_PERCENT</Tag>
-		<English>%s1 civilizations: %d2 / %d3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_STATE_RELIGION_PERCENT_OR_SECULAR</Tag>
-		<English>%s1 or secular civilizations: %d2 / %d3</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_NO_RELIGION_PERCENT</Tag>
-		<English>Cities with a religion: %d1 / %d2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_UNIT_LEVEL_COUNT</Tag>
-		<English>Units of level %s1 or higher</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_TERRAIN_COUNT</Tag>
-		<English>%s1 tiles</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_PEAK_COUNT</Tag>
-		<English>Peaks</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_FEATURE_COUNT</Tag>
-		<English>%s1 tiles</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_GOLD_PERCENT</Tag>
-		<English>Gold: %d1 / %d2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_COMBAT_FOOD</Tag>
-		<English>Food from combat</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_SACRIFICE_HAPPINESS</Tag>
-		<English>Sacrificed slaves</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_CELEBRATE_TURNS</Tag>
-		<English>Turns of celebration</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROGRESS_TECHS_REMAINING</Tag>
-		<English>%d1 remaining</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1957,7 +33,7 @@
 <!-- GOAL DESCRIPTIONS -->
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BUILDING_COUNT</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROL</Tag>
 		<English>control %s1</English>
 		<French></French>
 		<German></German>
@@ -1965,167 +41,15 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BUILDING_COUNT_WORLD</Tag>
-		<English>make sure that there are %s1 in the world</English>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE</Tag>
+		<English>have %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BUILDING_COUNT_SECULAR</Tag>
-		<English>make sure that there are %s1 in secular civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PLAYER_CULTURE</Tag>
-		<English>have more than %s1 culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_WONDER</Tag>
-		<English>build %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FIRST_DISCOVERED</Tag>
-		<English>be the first to discover %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_POPULATION_CITY</Tag>
-		<English>make %s2 the most populous city in the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_CULTURE_CITY</Tag>
-		<English>make %s2 the most culturally advanced city in the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TRADE_CONNECTION</Tag>
-		<English>establish a trade connection with another civilization</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PLAYER_POPULATION</Tag>
-		<English>have a total population of %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GOLDEN_AGES</Tag>
-		<English>experience %s1 Golden Ages</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONTROL</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_POPULATION_PERCENT</Tag>
-		<English>control %s1%% of the world's population</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_POPULATION_PERCENT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CITY_BUILDING</Tag>
-		<English>build %s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PLAYER_GOLD</Tag>
-		<English>have %s1 gold</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SETTLE</Tag>
-		<English>settle %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_WORLD_PERCENT</Tag>
-		<English>control %s1%% of the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_WORLD_PERCENT_RELIGION</Tag>
-		<English>make sure that %s1%% of the world is controlled by %s3 civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CITY_COUNT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FIRST_CONTACT_NEW_WORLD</Tag>
-		<English>Make contact with a European civilization before any European civilization discovers America</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_DISCOVERED</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_DISCOVER</Tag>
 		<English>discover %s1</English>
 		<French></French>
 		<German></German>
@@ -2133,527 +57,15 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CONTROL_OR_VASSALIZE</Tag>
-		<English>control or vassalise %s1</English>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_DISCOVER</Tag>
+		<English>be the first to discover %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TRADE_GOLD</Tag>
-		<English>acquire %s1 gold by trade</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RESOURCE_COUNT</Tag>
-		<English>acquire %s1 resources</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT</Tag>
-		<English>settle %s1 in your cities</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT_RELIGION</Tag>
-		<English>make sure that %s1 are settled in %s3 civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SPECIALIST_COUNT_SECULAR</Tag>
-		<English>make sure that %s1 are settled in secular civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONVERT_AFTER_FOUNDING</Tag>
-		<English>convert to %s1 %s2 turns after its foundation</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_MORE_RELIGION</Tag>
-		<English>ensure there are %s1 cities in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SUNK_SHIPS</Tag>
-		<English>sink %s1 enemy ships</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AVERAGE_CULTURE</Tag>
-		<English>have an average city culture of %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_CITY_LOST</Tag>
-		<English>never lose a city</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ERA_FIRST_DISCOVERED</Tag>
-		<English>be the first to discover %s1 era technologies</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ANY_EUROPEAN_CORE</Tag>
-		<English>control the core of another European civilization</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FIRST_SETTLE</Tag>
-		<English>be the first to found a city in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RAID_GOLD</Tag>
-		<English>acquire %s1 gold by pillaging, conquering cities and sinking ships</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PILLAGE_COUNT</Tag>
-		<English>pillage %s1 improvements</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SILK_ROUTE</Tag>
-		<English>create an overland trade route from any city in China to one of your Mediterranean ports</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CORPORATION_COUNT</Tag>
-		<English>spread %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CULTURE_LEVEL</Tag>
-		<English>have %s1 culture in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_TECH_PLAYER</Tag>
-		<English>be the most advanced civilization</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_TECH_PLAYERS</Tag>
-		<English>make the %s1 most advanced civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RELIGION_SPREAD_PERCENT</Tag>
-		<English>spread %s1 of the world's population</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ACQUIRED_CITIES</Tag>
-		<English>acquire %s1 cities</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CITY_SPECIALIST_COUNT</Tag>
-		<English>settle %s1 in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_POPULATION_PLAYER</Tag>
-		<English>have the largest population in the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONQUERED_CITY_COUNT</Tag>
-		<English>conquer %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PIRACY_GOLD</Tag>
-		<English>acquire %s1 gold through piracy</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONTROLLED_RESOURCE_COUNT</Tag>
-		<English>secure %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_NO_STATE_RELIGION</Tag>
-		<English>allow no %s1 civilizations in %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_PERCENT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AVERAGE_POPULATION</Tag>
-		<English>have an average city population of %s1 or more</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_UNIT_COUNT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CATHOLIC_VASSALS_IN_EUROPE</Tag>
-		<English>have %s1 Catholic vassals in Europe</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ATTITUDES_IN_EUROPE</Tag>
-		<English>have at least %s2 relations with %s1 independent European civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONNECT_MOSCOW_TO_SIBERIA</Tag>
-		<English>build a railway connection in your territory from Moscow to the Siberian coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SETTLED_CITY_COUNT</Tag>
-		<English>found %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PROJECT_COUNT</Tag>
-		<English>be the first civilization to complete %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_COMMUNIST</Tag>
-		<English>adopt Communism</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_COMMUNIST_ATTITUDES</Tag>
-		<English>have %s2 relations with %s1 other communist civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TRADE_MISSION</Tag>
-		<English>conduct a trade mission to %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_POPULATION_CITIES</Tag>
-		<English>have %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_OPEN_BORDER_COUNT</Tag>
-		<English>have open border agreements with %s1 civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_EUROPEAN_OPEN_BORDERS</Tag>
-		<English>have open border agreements with %s1 European civilizations</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROUTE</Tag>
-		<English>build a %s1 along %s2</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_FOREIGN_CITIES</Tag>
-		<English>allow no foreign cities in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CULTURE_LEVEL_CITIES</Tag>
-		<English>have %s1 culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RAZE_COUNT</Tag>
-		<English>raze %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ENSLAVE_OLD_WORLD</Tag>
-		<English>enslave %s1 old world units</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CULTURE_COVERED</Tag>
-		<English>have all of %s1 in your territory</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_MORE_CULTURE_THAN_EUROPE</Tag>
-		<English>have more culture than all European civilizations combined</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RELIGIOUS_VOTE_PERCENT</Tag>
-		<English>acquire %s1%% of the votes in the Apostolic Palace</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SLAVE_TRADE_GOLD</Tag>
-		<English>acquire %s1 gold through the slave trade</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ENTER_ERA</Tag>
-		<English>enter the %s1 era</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEFORE_ENTER_ERA</Tag>
-		<English>before anyone enters the %s1 era</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CULTURE_CITIES</Tag>
-		<English>have %s1 culture</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CONQUER_FOUR_EUROPEAN_COLONIES</Tag>
-		<English>conquer four European colonies</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ALLIED_COMMERCE_PERCENT</Tag>
-		<English>control %s1%% of the world's commerce between you, your vassals and allies</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ALLIED_POWER_PERCENT</Tag>
-		<English>control %s1%% of the world's military power between you, your vassals and allies</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_EUROPEAN_COLONIES</Tag>
-		<English>allow no European colonies in %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GREAT_GENERALS</Tag>
-		<English>create %s1 great generals</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RESOURCE_TRADE_GOLD</Tag>
-		<English>acquire %s1 gold by selling resources</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_RESOURCE_TRADE_GOLD</Tag>
-		<English>acquire %s1 gold by selling resources</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_IMPROVEMENT_COUNT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CAPITAL_ATLANTIC_RAILWAY</Tag>
-		<English>connect your capital to an Atlantic port by railroad</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CAPITAL_PACIFIC_RAILWAY</Tag>
-		<English>connect your capital to a Pacific port by railroad</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BROKERED_PEACE</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_BROKERED_PEACE</Tag>
 		<English>end %s1 wars through diplomacy</English>
 		<French></French>
 		<German></German>
@@ -2661,47 +73,946 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CONTROL_CANADA_WITHOUT_EVER_CONQUERING</Tag>
-		<English>control all cities and 90% of the territory in Canada without ever conquering a city</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BUILD</Tag>
+		<English>build %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ORTHODOX_CATHEDRAL</Tag>
-		<English>control an Orthodox Cathedral</English>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE</Tag>
+		<English>make %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_DIFFERENT_SPECIALIST</Tag>
-		<English>settle %s1 great people in %s2</English>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_CITY_WORLD</Tag>
+		<English>make %s2 %s1 city in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_JEWISH_MINORITY_ATTITUDES</Tag>
-		<English>have %s2 relations with %s1 civilizations with a Jewish minority</English>
+		<Tag>TXT_KEY_VICTORY_DESC_ESTABLISH</Tag>
+		<English>establish a %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_CULTURE_CITIES</Tag>
-		<English>control the %s1 most cultured cities in the world</English>
+		<Tag>TXT_KEY_VICTORY_DESC_EXPERIENCE</Tag>
+		<English>experience %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_NO_STATE_RELIGION</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE</Tag>
+		<English>settle %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_CITIES</Tag>
+		<English>settle %s1 in your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_RELIGION_CITIES</Tag>
+		<English>settle %s1 in %s2 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLE_IN_SECULAR_CITIES</Tag>
+		<English>settle %s1 in secular cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTACT</Tag>
+		<English>make contact with %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ACQUIRE</Tag>
+		<English>acquire %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ACQUIRE_RESOURCES</Tag>
+		<English>acquire %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONVERT</Tag>
+		<English>convert to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ENSURE</Tag>
+		<English>ensure there are %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SINK</Tag>
+		<English>sink %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SIMPLE</Tag>
+		<English>%s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_FOUND</Tag>
+		<English>Be the first to found %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PILLAGE</Tag>
+		<English>pillage %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CREATE</Tag>
+		<English>create %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BUILD_ROUTE_CONNECTION</Tag>
+		<English>build a %s2 connection from %s3 to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SPREAD</Tag>
+		<English>spread %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BE</Tag>
+		<English>be %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONQUER</Tag>
+		<English>conquer %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SECURE</Tag>
+		<English>secure %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALLOW</Tag>
+		<English>allow %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GOAL_ALLOW_NONE</Tag>
+		<English>allow no %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_COMPLETE</Tag>
+		<English>be the first to complete %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ADOPT</Tag>
+		<English>adopt %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONDUCT</Tag>
+		<English>conduct %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAZE</Tag>
+		<English>raze %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ENSLAVE</Tag>
+		<English>enslave %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ENTER</Tag>
+		<English>enter %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE</Tag>
+		<English>make sure %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_RELIGION</Tag>
+		<English>make sure that %s1 are %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_THAT_ARE_SECULAR</Tag>
+		<English>make sure that %s1 are secular</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_GREAT_PERSON</Tag>
+		<English>be the first to create %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GAIN</Tag>
+		<English>gain %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SACRIFICE</Tag>
+		<English>sacrifice %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BUILD_IN_CITY</Tag>
+		<English>build %s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE_IN_CITY</Tag>
+		<English>have %s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE_IN_TERRITORY</Tag>
+		<English>have all of %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_CONTROLLED</Tag>
+		<English>make sure that %s1 is controlled by %s2 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- REQUIREMENT DESCRIPTIONS -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SIMPLE</Tag>
+		<English>%s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_PERCENT</Tag>
+		<English>%s1 of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GOLD_AMOUNT</Tag>
+		<English>%s1 gold</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER</Tag>
+		<English>the largest population in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITIES</Tag>
+		<English>the %s1 largest cities in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CULTURE_AMOUNT</Tag>
+		<English>more than %s1 culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITY</Tag>
+		<English>the most populous</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITY</Tag>
+		<English>the most culturally advanced</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_CONNECTION</Tag>
+		<English>trade connection with another civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION</Tag>
+		<English>a total population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GOLDEN_AGES</Tag>
+		<English>%s1 Golden Ages</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_BUILDING_COUNT</Tag>
+		<English>%s3 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_BUILDING</Tag>
+		<English>a %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_LAND_PERCENT</Tag>
+		<English>%s1 of the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_COUNT</Tag>
+		<English>%s2 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_COUNT_SINGLE</Tag>
+		<English>a city in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTACT_BEFORE_REVEALED</Tag>
+		<English>%s1 before any of them discovers %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_GOLD</Tag>
+		<English>%s1 gold by trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RESOURCE_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONVERT_AFTER_FOUNDING</Tag>
+		<English>%s1 %s2 turns after its founding</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SPECIALIST_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MORE_RELIGION</Tag>
+		<English>more %s2 than %s3 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SUNK_SHIPS</Tag>
+		<English>%s1 enemy ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AVERAGE_CULTURE</Tag>
+		<English>an average culture of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_CITY_LOST</Tag>
+		<English>never lose a city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ERA_FIRST_DISCOVER</Tag>
+		<English>%s2 %s1 era technologies</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAID_GOLD</Tag>
+		<English>%s1 gold by pillaging, conquering cities and sinking ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_SETTLE</Tag>
+		<English>a city in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PILLAGE_COUNT</Tag>
+		<English>%s1 improvements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ROUTE_CONNECTION</Tag>
+		<English>%s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CORPORATION_COUNT</Tag>
+		<English>%s1 to %s2 of your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_CULTURE_LEVEL</Tag>
+		<English>%s2 culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYER</Tag>
+		<English>the most advanced civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_PERCENT</Tag>
+		<English>%s1 to %s2 of the world's population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ACQUIRED_CITIES</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_SPECIALIST_COUNT</Tag>
+		<English>%s3 %s2 in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONQUERED_CITIES</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SETTLED_CITIES</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PIRACY_GOLD</Tag>
+		<English>%s1 gold through piracy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT</Tag>
+		<English>%s2 %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION</Tag>
+		<English>no %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_PERCENT</Tag>
+		<English>%s2 of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AVERAGE_POPULATION</Tag>
+		<English>an average city population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIT_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_VASSAL_COUNT</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT</Tag>
+		<English>%s1 relations with %s2 other %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_COMMUNIST</Tag>
+		<English>Communism</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_MISSION</Tag>
+		<English>a trade mission to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_CITY_COUNT</Tag>
+		<English>%s2 cities with a population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_OPEN_BORDER_COUNT</Tag>
+		<English>open border agreements with %s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ROUTE</Tag>
+		<English>a %s2 along %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT</Tag>
+		<English>%s2 of the population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CULTURE_LEVEL_CITY_COUNT</Tag>
+		<English>%s2 cities with %s1 culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RAZE_COUNT</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ENSLAVE_COUNT</Tag>
+		<English>%s1 %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MORE_CULTURE</Tag>
+		<English>more culture than %s1 civilizations combined</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALLOW_ONLY</Tag>
+		<English>only %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RELIGIOUS_VOTE_PERCENT</Tag>
+		<English>%s1 of the votes in the Apostolic Palace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SLAVE_TRADE_GOLD</Tag>
+		<English>%s1 gold through the slave trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ENTER_ERA_BEFORE</Tag>
+		<English>the %s1 era before anyone enters the %s2 era</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CULTURE_CITY</Tag>
+		<English>a city with %s1 culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_COMMERCE_PERCENT</Tag>
+		<English>%s1 of the world's commerce</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_POWER_PERCENT</Tag>
+		<English>%s1 of the world's military power</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GREAT_GENERALS</Tag>
+		<English>%s1 great generals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RESOURCE_TRADE_GOLD</Tag>
+		<English>%s1 gold by selling resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_IMPROVEMENT_COUNT</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_CITY_CONQUERED</Tag>
+		<English>never conquer any cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
+		<English>%s2 different great people in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIT_COMBAT_COUNT</Tag>
+		<English>an army of %s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HEALTHIEST_TURNS</Tag>
+		<English>the highest life expectancy rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SHRINE_INCOME</Tag>
+		<English>an income of %s2 gold from the %s1 shrine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PEACE_TURNS</Tag>
+		<English>at peace for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAPPIEST_TURNS</Tag>
+		<English>the highest approval rating in the world for %s1 turns</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ALL_ATTITUDE</Tag>
+		<English>%s1 or better relations with all other civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_STATE_RELIGION</Tag>
 		<English>make sure there are no %s1 civilizations in the world</English>
 		<French></French>
 		<German></German>
@@ -2709,1574 +1020,1996 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POPE_TURNS</Tag>
-		<English>be the Pope for %s1 turns</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_CULTURE_CITIES</Tag>
+		<English>the %s1 most cultured cities in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_HALF_PROTESTANT_OR_SECULAR</Tag>
-		<English>make sure at least half of all civilizations are Protestant or Secular</English>
+		<Tag>TXT_KEY_VICTORY_DESC_POPE_TURNS</Tag>
+		<English>the Pope for %s1 turns</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_POPULATION_CITIES</Tag>
-		<English>control the %s1 largest cities in the world</English>
+		<Tag>TXT_KEY_VICTORY_DESC_STATE_RELIGION_PERCENT</Tag>
+		<English>at least %s2 of all civilizations are %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PEACE_TURNS</Tag>
-		<English>be at peace for %s1 turns</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_TECH_PLAYERS</Tag>
+		<English>the %s1 most advanced civilizations</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_HAPPIEST_TURNS</Tag>
-		<English>have the highest approval rating in the world for %s1 turns</English>
+		<Tag>TXT_KEY_VICTORY_DESC_NO_RELIGION_PERCENT</Tag>
+		<English>no more than %s1 of your cities to have a religion</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ALL_ATTITUDE</Tag>
-		<English>have %s1 or better relations with all civilizations</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_WONDER_CITY</Tag>
+		<English>%s1 the city with the most wonders in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_FRIENDLY_RELATIONS</Tag>
-		<English>have friendly relations with %s1 civilizations</English>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIT_LEVEL_COUNT</Tag>
+		<English>%s2 level %s1 units</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_UNIT_COMBAT_COUNT</Tag>
-		<English>control an army of %s1</English>
+		<Tag>TXT_KEY_VICTORY_DESC_TERRAIN_COUNT</Tag>
+		<English>%s2 %s1 tiles</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_HEALTHIEST_TURNS</Tag>
-		<English>have the highest life expectancy rating in the world for %s1 turns</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_TRADE_INCOME_CITY</Tag>
+		<English>%s1 the city with the highest trade income in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SHRINE_INCOME</Tag>
-		<English>have an income of %s1</English>
+		<Tag>TXT_KEY_VICTORY_DESC_PEAK_COUNT</Tag>
+		<English>%s1 peaks</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_HALF_NO_RELIGION</Tag>
-		<English>allow no more than half of your cities to have a religion</English>
+		<Tag>TXT_KEY_VICTORY_DESC_FEATURE_COUNT</Tag>
+		<English>%s2 %s1 tiles</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ALL_CATHEDRALS</Tag>
-		<English>control the cathedrals of all religions</English>
+		<Tag>TXT_KEY_VICTORY_DESC_GOLD_PERCENT</Tag>
+		<English>at least %s1 as much gold as all other civilizations combined</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_WONDER_CITY</Tag>
-		<English>make %s2 the city with the most wonders in the world</English>
+		<Tag>TXT_KEY_VICTORY_DESC_BEST_SPECIALIST_CITY</Tag>
+		<English>%s1 the city with the most settled %s2 in the world</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_UNIT_LEVEL_COUNT</Tag>
-		<English>have %s1</English>
+		<Tag>TXT_KEY_VICTORY_DESC_COMBAT_FOOD</Tag>
+		<English>%s1 food from combat</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TERRAIN_COUNT</Tag>
-		<English>control %s1</English>
+		<Tag>TXT_KEY_VICTORY_DESC_SACRIFICE_HAPPINESS</Tag>
+		<English>%s1 slaves</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_TRADE_INCOME_CITY</Tag>
-		<English>make %s2 the city with the highest trade income in the world</English>
+		<Tag>TXT_KEY_VICTORY_DESC_CELEBRATE_TURNS</Tag>
+		<English>your cities celebrate for %s1 turns</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PEAK_COUNT</Tag>
-		<English>control %s1 peaks</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FEATURE_COUNT</Tag>
-		<English>control %s1</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_HALF_WORLD_GOLD</Tag>
-		<English>control at least half as much gold as all other civilizations combined</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BEST_SPECIALIST_CITY</Tag>
-		<English>make %s2 the city with the most settled great people in the world</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FIRST_GREAT_PEOPLE</Tag>
-		<English>be the first to create three different kinds of great people</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_COMBAT_FOOD</Tag>
-		<English>gain %s1 food from combat</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_SACRIFICE_HAPPINESS</Tag>
-		<English>sacrifice %s1 slaves</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_CELEBRATE_TURNS</Tag>
-		<English>have your cities celebrate for %s1 turns</English>
+		<Tag>TXT_KEY_VICTORY_DESC_ALLOW_NONE</Tag>
+		<English>%s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	
-	<!-- HISTORICAL GOAL TITLES -->
+<!-- REQUIREMENT PROGRESS -->
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AME1</Tag>
-		<English>Manifest Destiny</English>
-		<French>Destin&#233;e manifeste </French>
-		<German>Manifest Destiny</German>
-		<Italian>Manifest Destiny</Italian>
-		<Spanish>Manifest Destiny</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AME2</Tag>
-		<English>Shining City on a Hill</English>
-		<French>La cit&#233; qui scintille sur la colline </French>
-		<German>Shining City on a Hill</German>
-		<Italian>Shining City on a Hill</Italian>
-		<Spanish>Shining City on a Hill</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AME3</Tag>
-		<English>Pax Americana</English>
-		<French>Pax Americana </French>
-		<German>Pax Americana</German>
-		<Italian>Pax Americana</Italian>
-		<Spanish>Pax Americana</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARA1</Tag>
-		<English>Ijtihad</English>
-		<French>Ijtihad </French>
-		<German>Ischtihad</German>
-		<Italian>Ijtihad</Italian>
-		<Spanish>Ijtihad</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARA2</Tag>
-		<English>Jihad</English>
-		<French>Djihad </French>
-		<German>Dschihad</German>
-		<Italian>Jihad</Italian>
-		<Spanish>Jihad</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARA3</Tag>
-		<English>Dawah</English>
-		<French>Dawa </French>
-		<German>Dawah</German>
-		<Italian>Dawah</Italian>
-		<Spanish>Dawah</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARG1</Tag>
-		<English>The Argentinian Paradox</English>
-		<French>Le paradoxe argentin </French>
-		<German>Das argentinische Paradox</German>
-		<Italian>The Argentinian Paradox</Italian>
-		<Spanish>The Argentinian Paradox</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARG2</Tag>
-		<English>Tango and Poetry</English>
-		<French>Tango et po&#233;sie </French>
-		<German>Tango und Dichtung</German>
-		<Italian>Tango and Poetry</Italian>
-		<Spanish>Tango and Poetry</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ARG3</Tag>
-		<English>Peronism</English>
-		<French>P&#233;ronisme </French>
-		<German>Peronismus</German>
-		<Italian>Peronism</Italian>
-		<Spanish>Peronism</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AZT1</Tag>
-		<English>Floating Gardens</English>
-		<French>Jardins flottants </French>
-		<German>Schwimmende G&#228;rten</German>
-		<Italian>Floating Gardens</Italian>
-		<Spanish>Floating Gardens</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AZT2</Tag>
-		<English>Human Sacrifice</English>
-		<French>Sacrifices humains </French>
-		<German>Menschenopfer</German>
-		<Italian>Human Sacrifice</Italian>
-		<Spanish>Human Sacrifice</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_AZT3</Tag>
-		<English>European Flower Wars</English>
-		<French>Guerres fleuries europ&#233;ennes </French>
-		<German>Europ&#228;ische Blumenkriege</German>
-		<Italian>European Flower Wars</Italian>
-		<Spanish>European Flower Wars</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BAB1</Tag>
-		<English>Hammurabi's Code</English>
-		<French>Le Code de Hammurabi </French>
-		<German>Der Kodex von Hammurabi</German>
-		<Italian>Hammurabi's Code</Italian>
-		<Spanish>Hammurabi's Code</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BAB2</Tag>
-		<English>The Fertile Crescent</English>
-		<French>Le Croissant fertile </French>
-		<German>Der fruchtbare Halbmond</German>
-		<Italian>The Fertile Crescent</Italian>
-		<Spanish>The Fertile Crescent</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BAB3</Tag>
-		<English>The Tower of Babel</English>
-		<French>La tour de Babel </French>
-		<German>Der Turm von Babel</German>
-		<Italian>The Tower of Babel</Italian>
-		<Spanish>The Tower of Babel</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BRA1</Tag>
-		<English>The Golden Law</English>
-		<French>La Loi d'or </French>
-		<German>Das goldene Gesetz</German>
-		<Italian>The Golden Law</Italian>
-		<Spanish>The Golden Law</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BRA2</Tag>
-		<English>Maracana, Cristo Redentor, Itaipu</English>
-		<French>Maracana, Cristo Redentor, Itaipu </French>
-		<German>Maracana, Cristo Redentor, Itaipu</German>
-		<Italian>Maracana, Cristo Redentor, Itaipu</Italian>
-		<Spanish>Maracana, Cristo Redentor, Itaipu</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BRA3</Tag>
-		<English>Pindorama</English>
-		<French>Pindorama </French>
-		<German>Pindorama</German>
-		<Italian>Pindorama</Italian>
-		<Spanish>Pindorama</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BYZ1</Tag>
-		<English>Crossroads of the World</English>
-		<French>Le carrefour du monde </French>
-		<German>Wegkreuzung der Welt</German>
-		<Italian>Crossroads of the World</Italian>
-		<Spanish>Crossroads of the World</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BYZ2</Tag>
-		<English>City of the World's Desire</English>
-		<French>La ville que d&#233;sirait le monde </French>
-		<German>Stadt der weltlichen Begierden</German>
-		<Italian>City of the World's Desire</Italian>
-		<Spanish>City of the World's Desire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BYZ3</Tag>
-		<English>The Eternal Empire</English>
-		<French>L'empire &#233;ternel </French>
-		<German>Das ewige Imperium</German>
-		<Italian>The Eternal Empire</Italian>
-		<Spanish>The Eternal Empire</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAN1</Tag>
-		<English>A Mari Usque Ad Mare</English>
-		<French>A mari usque ad mare </French>
-		<German>A Mari Usque Ad Mare</German>
-		<Italian>A Mari Usque Ad Mare</Italian>
-		<Spanish>A Mari Usque Ad Mare</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAN2</Tag>
-		<English>Great White North</English>
-		<French>Le Grand Nord </French>
-		<German>Great White North</German>
-		<Italian>Great White North</Italian>
-		<Spanish>Great White North</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAN3</Tag>
-		<English>Peacekeeping</English>
-		<French>Maintien de la paix </French>
-		<German>Peacekeeping</German>
-		<Italian>Peacekeeping</Italian>
-		<Spanish>Peacekeeping</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAR1</Tag>
-		<English>New Tyre</English>
-		<French>Nouvelle Tyr </French>
-		<German>Das neue Tyrus</German>
-		<Italian>New Tyre</Italian>
-		<Spanish>New Tyre</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAR2</Tag>
-		<English>The Punic Wars</English>
-		<French>Les guerres puniques </French>
-		<German>Die punischen Kriege</German>
-		<Italian>The Punic Wars</Italian>
-		<Spanish>The Punic Wars</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CAR3</Tag>
-		<English>Traders in Purple</English>
-		<French>Marchands de pourpre </French>
-		<German>Purpurh&#228;ndlers</German>
-		<Italian>Traders in Purple</Italian>
-		<Spanish>Traders in Purple</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CHI1</Tag>
-		<English>Mandate of Heaven</English>
-		<French>Le mandat du Ciel </French>
-		<German>Mandat des Himmels</German>
-		<Italian>Mandate of Heaven</Italian>
-		<Spanish>Mandate of Heaven</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CHI2</Tag>
-		<English>The Four Great Inventions</English>
-		<French>Les quatre grandes inventions </French>
-		<German>Die Vier Gro&#223;en Erfindungen</German>
-		<Italian>The Four Great Inventions</Italian>
-		<Spanish>The Four Great Inventions</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CHI3</Tag>
-		<English>Ten Thousand Years</English>
-		<French>Dix mille ans </French>
-		<German>Zehntausend Jahre</German>
-		<Italian>Ten Thousand Years</Italian>
-		<Spanish>Ten Thousand Years</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_COL1</Tag>
-		<English>The Bolivar Doctrine</English>
-		<French>La doctrine bolivarienne </French>
-		<German>Die Bolivar-Doktrin</German>
-		<Italian>The Bolivar Doctrine</Italian>
-		<Spanish>The Bolivar Doctrine</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_COL2</Tag>
-		<English>United States of South America</English>
-		<French>Les &#201;tats-Unis d'Am&#233;rique du Sud </French>
-		<German>Vereinigte Staaten von S&#252;damerika</German>
-		<Italian>United States of South America</Italian>
-		<Spanish>United States of South America</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_COL3</Tag>
-		<English>Auge del Caf&#233;</English>
-		<French>Auge del Caf&#233; </French>
-		<German>Auge del Caf&#233;</German>
-		<Italian>Auge del Caf&#233;</Italian>
-		<Spanish>Auge del Caf&#233;</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_EGY1</Tag>
-		<English>Valley of Kings</English>
-		<French>La vall&#233;e des rois </French>
-		<German>Tal der K&#246;nige</German>
-		<Italian>Valley of Kings</Italian>
-		<Spanish>Valley of Kings</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_EGY2</Tag>
-		<English>Monuments on the Nile</English>
-		<French>Les monuments du Nil </French>
-		<German>Monumente am Nil</German>
-		<Italian>Monuments on the Nile</Italian>
-		<Spanish>Monuments on the Nile</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_EGY3</Tag>
-		<English>The Ptolemaic Dynasty</English>
-		<French>La dynastie lagide </French>
-		<German>Die Ptolemaische Dynastie</German>
-		<Italian>The Ptolemaic Dynasty</Italian>
-		<Spanish>The Ptolemaic Dynasty</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ENG1</Tag>
-		<English>The Sun Never Sets</English>
-		<French>Le soleil ne se couche jamais </French>
-		<German>Die Sonne geht niemals unter</German>
-		<Italian>The Sun Never Sets</Italian>
-		<Spanish>The Sun Never Sets</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ENG2</Tag>
-		<English>Britannia Rule the Waves</English>
-		<French>Grande-Bretagne, r&#232;gne sur les flots </French>
-		<German>Britannia Rule the Waves</German>
-		<Italian>Britannia Rule the Waves</Italian>
-		<Spanish>Britannia Rule the Waves</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ENG3</Tag>
-		<English>The Industrial Revolution</English>
-		<French>La r&#233;volution industrielle </French>
-		<German>Die industrielle Revolution</German>
-		<Italian>The Industrial Revolution</Italian>
-		<Spanish>The Industrial Revolution</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ETH1</Tag>
-		<English>Incense Road</English>
-		<French>La route de l'encens </French>
-		<German>Weihrauchstra&#223;e</German>
-		<Italian>Incense Road</Italian>
-		<Spanish>Incense Road</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ETH2</Tag>
-		<English>Nine Saints</English>
-		<French>Les Neuf Saints </French>
-		<German>Neun Heilige</German>
-		<Italian>Nine Saints</Italian>
-		<Spanish>Nine Saints</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ETH3</Tag>
-		<English>Prester John</English>
-		<French>Le royaume du pr&#234;tre Jean </French>
-		<German>Priesterk&#246;nig Johannes</German>
-		<Italian>Prester John</Italian>
-		<Spanish>Prester John</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_FRA1</Tag>
-		<English>Ancien Regime</English>
-		<French>L'Ancien R&#233;gime </French>
-		<German>Ancien Regime</German>
-		<Italian>Ancien Regime</Italian>
-		<Spanish>Ancien Regime</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_FRA2</Tag>
-		<English>The Napoleonic Empire</English>
-		<French>L'Empire napol&#233;onien </French>
-		<German>Das Napoleonische Reich</German>
-		<Italian>The Napoleonic Empire</Italian>
-		<Spanish>The Napoleonic Empire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_FRA3</Tag>
-		<English>City of Lights</English>
-		<French>La Ville-lumi&#232;re </French>
-		<German>Stadt der Lichter</German>
-		<Italian>City of Lights</Italian>
-		<Spanish>City of Lights</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GER1</Tag>
-		<English>Dichter und Denker</English>
-		<French>Dichter und Denker</French>
-		<German>Dichter und Denker</German>
-		<Italian>Dichter und Denker</Italian>
-		<Spanish>Dichter und Denker</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GER2</Tag>
-		<English>Mitteleuropa</English>
-		<French>Mitteleuropa</French>
-		<German>Mitteleuropa</German>
-		<Italian>Mitteleuropa</Italian>
-		<Spanish>Mitteleuropa</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GER3</Tag>
-		<English>Vorsprung durch Technik</English>
-		<French>Vorsprung durch Technik</French>
-		<German>Vorsprung durch Technik</German>
-		<Italian>Vorsprung durch Technik</Italian>
-		<Spanish>Vorsprung durch Technik</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GRE1</Tag>
-		<English>The School of Hellas</English>
-		<French>L'&#233;cole de la Gr&#232;ce</French>
-		<German>Die Schule von Hellas</German>
-		<Italian>The School of Hellas</Italian>
-		<Spanish>The School of Hellas</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GRE2</Tag>
-		<English>Alexander's Empire</English>
-		<French>L'empire d'Alexandre</French>
-		<German>Alexanders Reich</German>
-		<Italian>Alexander's Empire</Italian>
-		<Spanish>Alexander's Empire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_GRE3</Tag>
-		<English>Wonders of the Aegean</English>
-		<French>Les merveilles de la mer &#201;g&#233;e</French>
-		<German>Wunder der &#196;g&#228;is</German>
-		<Italian>Wonders of the Aegean</Italian>
-		<Spanish>Wonders of the Aegean</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HAR1</Tag>
-		<English>Trade Networks</English>
-		<French>R&#233;seaux commerciaux</French>
-		<German>Trade Networks</German>
-		<Italian>Trade Networks</Italian>
-		<Spanish>Trade Networks</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HAR2</Tag>
-		<English>Architecture</English>
-		<French>Architecture</French>
-		<German>Architecture</German>
-		<Italian>Architecture</Italian>
-		<Spanish>Architecture</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HAR3</Tag>
-		<English>Urban Planning</English>
-		<French>Urbanisme</French>
-		<German>Urban Planning</German>
-		<Italian>Urban Planning</Italian>
-		<Spanish>Urban Planning</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HOL1</Tag>
-		<English>Financial Center of the World</English>
-		<French>Premi&#232;re place financi&#232;re au monde </French>
-		<German>Finanzielles Zentrum der Welt</German>
-		<Italian>Financial Center of the World</Italian>
-		<Spanish>Financial Center of the World</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HOL2</Tag>
-		<English>Colonial Rivalry</English>
-		<French>Rivalit&#233; coloniale </French>
-		<German>Koloniale Rivalit&#228;t</German>
-		<Italian>Colonial Rivalry</Italian>
-		<Spanish>Colonial Rivalry</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HOL3</Tag>
-		<English>The Dutch East India Company</English>
-		<French>La compagnie n&#233;erlandaise des Indes orientales </French>
-		<German>Die Niederl&#228;nische Ostindien-Kompanie</German>
-		<Italian>The Dutch East India Company</Italian>
-		<Spanish>The Dutch East India Company</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HRE1</Tag>
-		<English>Translatio Imperii and Reformation</English>
-		<French>Translatio imperii et Réforme </French>
-		<German>Translatio Imperii and Reformation</German>
-		<Italian>Translatio Imperii and Reformation</Italian>
-		<Spanish>Translatio Imperii and Reformation</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HRE2</Tag>
-		<English>Habsburg Monarchy</English>
-		<French>Monarchie de Habsbourg </French>
-		<German>Habsburgermonarchie</German>
-		<Italian>Habsburg Monarchy</Italian>
-		<Spanish>Habsburg Monarchy</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HRE3</Tag>
-		<English>Concert of Europe</English>
-		<French>Concert europ&#233;en </French>
-		<German>Konzert Europas</German>
-		<Italian>Concert of Europe</Italian>
-		<Spanish>Concert of Europe</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INC1</Tag>
-		<English>Andean Road System</English>
-		<French>Le r&#233;seau de routes andin </French>
-		<German>Das Anden-Stra&#223;ensystem</German>
-		<Italian>Andean Road System</Italian>
-		<Spanish>Andean Road System</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INC2</Tag>
-		<English>Sierra de la Plata</English>
-		<French>Sierra de la Plata </French>
-		<German>Sierra de la Plata</German>
-		<Italian>Sierra de la Plata</Italian>
-		<Spanish>Sierra de la Plata</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INC3</Tag>
-		<English>Inkarri</English>
-		<French>Inkarri</French>
-		<German>Inkarri</German>
-		<Italian>Inkarri</Italian>
-		<Spanish>Inkarri</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IND1</Tag>
-		<English>The Dharmic Religions</English>
-		<French>Les religions dharmiques </French>
-		<German>Die Dharmischen Religionen</German>
-		<Italian>The Dharmic Religions</Italian>
-		<Spanish>The Dharmic Religions</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IND2</Tag>
-		<English>Land of Temples</English>
-		<French>Terre des temples </French>
-		<German>Land der Tempel</German>
-		<Italian>Land of Temples</Italian>
-		<Spanish>Land of Temples</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IND3</Tag>
-		<English>Sacred Rivers</English>
-		<French>Les fleuves sacr&#233;s </French>
-		<German>Heilige Fl&#252;sse</German>
-		<Italian>Sacred Rivers</Italian>
-		<Spanish>Sacred Rivers</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INO1</Tag>
-		<English>Prosperous Excellence</English>
-		<French>Excellence prosp&#232;re </French>
-		<German>Florierende Vortrefflichkeit</German>
-		<Italian>Prosperous Excellence</Italian>
-		<Spanish>Prosperous Excellence</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INO2</Tag>
-		<English>Emerald of the Equator</English>
-		<French>&#201;meraude de l'&#233;quateur </French>
-		<German>Smaragd des &#196;quators</German>
-		<Italian>Emerald of the Equator</Italian>
-		<Spanish>Emerald of the Equator</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_INO3</Tag>
-		<English>National Awakening</English>
-		<French>R&#233;veil national </French>
-		<German>Nationales Erwachen</German>
-		<Italian>National Awakening</Italian>
-		<Spanish>National Awakening</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IRA1</Tag>
-		<English>European Embassies</English>
-		<French>Ambassades europ&#233;ennes </French>
-		<German>Europ&#228;ische Botschaften</German>
-		<Italian>European Embassies</Italian>
-		<Spanish>European Embassies</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IRA2</Tag>
-		<English>Nader Shah</English>
-		<French>N&#226;dir Ch&#226;h </French>
-		<German>Nadir Schah</German>
-		<Italian>Nader Shah</Italian>
-		<Spanish>Nader Shah</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_IRA3</Tag>
-		<English>Half of the World</English>
-		<French>La moiti&#233; du monde </French>
-		<German>Die halbe Welt</German>
-		<Italian>Half of the World</Italian>
-		<Spanish>Half of the World</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ITA1</Tag>
-		<English>Renaissance Architecture</English>
-		<French>Architecture de la Renaissance </French>
-		<German>Architektur der Renaissance</German>
-		<Italian>Renaissance Architecture</Italian>
-		<Spanish>Renaissance Architecture</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ITA2</Tag>
-		<English>Renaissance Art</English>
-		<French>Art de la Renaissance </French>
-		<German>Kunst der Renaissance</German>
-		<Italian>Renaissance Art</Italian>
-		<Spanish>Renaissance Art</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ITA3</Tag>
-		<English>Mare Nostrum</English>
-		<French>Mare Nostrum </French>
-		<German>Mare Nostrum</German>
-		<Italian>Mare Nostrum</Italian>
-		<Spanish>Mare Nostrum</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JAP1</Tag>
-		<English>Tranquility and Peace</English>
-		<French>Paix et tranquilit&#233; </French>
-		<German>Ruhe und Frieden</German>
-		<Italian>Tranquility and Peace</Italian>
-		<Spanish>Tranquility and Peace</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JAP2</Tag>
-		<English>All the World Under One Roof</English>
-		<French>Le monde entier sous un m&#234;me toit </French>
-		<German>Die gesamte Welt unter einem Dach</German>
-		<Italian>All the World Under One Roof</Italian>
-		<Spanish>All the World Under One Roof</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JAP3</Tag>
-		<English>Flying Geese Paradigm</English>
-		<French>La th&#233;orie du vol d'oies sauvages </French>
-		<German>Flugg&#228;nsemodell</German>
-		<Italian>Flying Geese Paradigm</Italian>
-		<Spanish>Flying Geese Paradigm</Spanish>
+		<Tag>TXT_KEY_VICTORY_PROGR_SIMPLE</Tag>
+		<English>%s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION_PERCENT</Tag>
+		<English>Percentage of world population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLD_AMOUNT</Tag>
+		<English>Gold in treasury</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_POPULATION</Tag>
+		<English>most populous</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_CULTURE</Tag>
+		<English>most cultured</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BROKERED_PEACE</Tag>
+		<English>Peace deals brokered</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_AMOUNT</Tag>
+		<English>Total Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION</Tag>
+		<English>Total Population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLDEN_AGES</Tag>
+		<English>Golden Ages</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_BUILDING_COUNT</Tag>
+		<English>%s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_LAND_PERCENT</Tag>
+		<English>World territory controlled</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_COUNT</Tag>
+		<English>Cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CONTACT_BEFORE_REVEALED</Tag>
+		<English>Contacted %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_GOLD</Tag>
+		<English>Gold from trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RESOURCE_COUNT</Tag>
+		<English>Available %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CONVERT_AFTER_FOUNDING</Tag>
+		<English>Convert to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_MORE_RELIGION</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SUNK_SHIPS</Tag>
+		<English>Enemy ships sunk</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AVERAGE_CULTURE</Tag>
+		<English>Average city culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_CITY_LOST</Tag>
+		<English>No city lost</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ERA_FIRST_DISCOVER</Tag>
+		<English>%s1 technologies discovered first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RAID_GOLD</Tag>
+		<English>Gold from raids</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PILLAGE_COUNT</Tag>
+		<English>Improvements pillaged</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION</Tag>
+		<English>%s1 from %s2 to %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_CULTURE_LEVEL</Tag>
+		<English>Culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_TECH</Tag>
+		<English>most advanced</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_PERCENT</Tag>
+		<English>%s1 spread</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ACQUIRED_CITIES</Tag>
+		<English>Acquired cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_SPECIALIST_COUNT</Tag>
+		<English>%s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CONQUERED_CITIES</Tag>
+		<English>Conquered %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SETTLED_CITIES</Tag>
+		<English>Settled %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PIRACY_GOLD</Tag>
+		<English>Gold from piracy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_NO_STATE_RELIGION</Tag>
+		<English>No %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_PERCENT</Tag>
+		<English>Territory in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AVERAGE_POPULATION</Tag>
+		<English>Average city population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_VASSAL_COUNT</Tag>
+		<English>%s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT</Tag>
+		<English>%s1 relations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_COMMUNIST</Tag>
+		<English>Communist</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_MISSION</Tag>
+		<English>Trade mission to %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION_CITY_COUNT</Tag>
+		<English>Population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_OPEN_BORDER_COUNT</Tag>
+		<English>Open border agreements</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE</Tag>
+		<English>%s2 along %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_POPULATION_PERCENT</Tag>
+		<English>Population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_LEVEL_CITY_COUNT</Tag>
+		<English>Culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RAZE_COUNT</Tag>
+		<English>Razed cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ENSLAVE_COUNT</Tag>
+		<English>Enslaved %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_MORE_CULTURE</Tag>
+		<English>Total culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ALLOW_ONLY</Tag>
+		<English>Only %s2 civilizations in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RELIGIOUS_VOTE_PERCENT</Tag>
+		<English>Votes in the Apostolic Palace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SLAVE_TRADE_GOLD</Tag>
+		<English>Gold from slave trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ENTER_ERA_BEFORE</Tag>
+		<English>%s1 era</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_CITY</Tag>
+		<English>Culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ALLOW_NONE</Tag>
+		<English>No %s1 civilizations in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_COMMERCE_PERCENT</Tag>
+		<English>Global commerce</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POWER_PERCENT</Tag>
+		<English>Global military power</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GREAT_GENERALS</Tag>
+		<English>Great generals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RESOURCE_TRADE_GOLD</Tag>
+		<English>Gold from trading resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_CITY_CONQUERED</Tag>
+		<English>no cities conquered</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
+		<English>Different great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_HEALTHIEST_TURNS</Tag>
+		<English>Turns at highest life expectancy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SHRINE_INCOME</Tag>
+		<English>%s1 shrine income</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PEACE_TURNS</Tag>
+		<English>Turns at peace</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_HAPPIEST_TURNS</Tag>
+		<English>Turns at highest approval rating</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_ALL_ATTITUDE</Tag>
+		<English>%s1 or better relations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_STATE_RELIGION</Tag>
+		<English>%s1 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPE_TURNS</Tag>
+		<English>Turns as Pope</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_STATE_RELIGION_PERCENT</Tag>
+		<English>%s1 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_NO_RELIGION_PERCENT</Tag>
+		<English>Cities with no religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_WONDERS</Tag>
+		<English>most wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_UNIT_LEVEL_COUNT</Tag>
+		<English>Level %s1 units</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TERRAIN_COUNT</Tag>
+		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_TRADE_INCOME</Tag>
+		<English>highest trade income</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PEAK_COUNT</Tag>
+		<English>Peaks</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_FEATURE_COUNT</Tag>
+		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_GOLD_PERCENT</Tag>
+		<English>Gold</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_BEST_SPECIALIST</Tag>
+		<English>most settled %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_COMBAT_FOOD</Tag>
+		<English>Food from combat</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SACRIFICE_HAPPINESS</Tag>
+		<English>Slaves sacrificed</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CELEBRATE_TURNS</Tag>
+		<English>Turns of celebration</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KHM1</Tag>
-		<English>Angkor Wat</English>
-		<French>Angkor Vat </French>
-		<German>Angkor Wat</German>
-		<Italian>Angkor Wat</Italian>
-		<Spanish>Angkor Wat</Spanish>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
+		<English>Next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KHM2</Tag>
-		<English>Thom Baray</English>
-		<French>Thom Baray </French>
-		<German>Thom Baray</German>
-		<Italian>Thom Baray</Italian>
-		<Spanish>Thom Baray</Spanish>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_OUR_NEXT</Tag>
+		<English>Our next %s1: %s2 (%d3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KHM3</Tag>
-		<English>Preah Srei</English>
-		<French>Preah Srei </French>
-		<German>Preah Srei</German>
-		<Italian>Preah Srei</Italian>
-		<Spanish>Preah Srei</Spanish>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_REMAINING</Tag>
+		<English>%d1 remaining</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_IN_CITY</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_IN_CITY_DIFFERENT_OWNER</Tag>
+		<English>%s1 in %s2 (controlled by %s3)</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_NO_CITIES</Tag>
+		<English>No cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGRESS_MISSING_CITY</Tag>
+		<English>No %s1 city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- NUMBERS TO BE SPELLED OUT -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_1</Tag>
+		<English>a</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_2</Tag>
+		<English>two</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_3</Tag>
+		<English>three</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_4</Tag>
+		<English>four</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_5</Tag>
+		<English>five</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_6</Tag>
+		<English>six</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_7</Tag>
+		<English>seven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_8</Tag>
+		<English>eight</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_9</Tag>
+		<English>nine</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_10</Tag>
+		<English>ten</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_11</Tag>
+		<English>eleven</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUMBER_12</Tag>
+		<English>twelve</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON1</Tag>
-		<English>Catholic Congo</English>
-		<French>Le Congo catholique </French>
-		<German>Katholisches Kongo</German>
-		<Italian>Catholic Congo</Italian>
-		<Spanish>Catholic Congo</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_1</Tag>
+		<English>first</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON2</Tag>
-		<English>The Middle Passage</English>
-		<French>Le passage du milieu </French>
-		<German>Die Mittlere Passage</German>
-		<Italian>The Middle Passage</Italian>
-		<Spanish>The Middle Passage</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_2</Tag>
+		<English>second</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CON3</Tag>
-		<English>Industrial Africa</English>
-		<French>L'Afrique industrielle </French>
-		<German>Industrielles Afrika</German>
-		<Italian>Industrial Africa</Italian>
-		<Spanish>Industrial Africa</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KOR1</Tag>
-		<English>Palman Daejanggyeong and Gukjagam</English>
-		<French>Palman Daejanggyeong et Gukjagam </French>
-		<German>Palman Daejanggyeong und Gukjagam</German>
-		<Italian>Palman Daejanggyeong and Gukjagam</Italian>
-		<Spanish>Palman Daejanggyeong and Gukjagam</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_3</Tag>
+		<English>third</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KOR2</Tag>
-		<English>Choe Yun-ui</English>
-		<French>Choe Yun-ui </French>
-		<German>Choe Yun-ui</German>
-		<Italian>Choe Yun-ui</Italian>
-		<Spanish>Choe Yun-ui</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_4</Tag>
+		<English>fourth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_KOR3</Tag>
-		<English>Yi Sun-sin</English>
-		<French>Yi Sun-sin </French>
-		<German>Yi Sun-sin</German>
-		<Italian>Yi Sun-sin</Italian>
-		<Spanish>Yi Sun-sin</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAL1</Tag>
-		<English>The Great Hajj</English>
-		<French>La grand hajj </French>
-		<German>Die gro&#223;e Hadsch</German>
-		<Italian>The Great Hajj</Italian>
-		<Spanish>The Great Hajj</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_5</Tag>
+		<English>fifth</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAL2</Tag>
-		<English>The Madrassah of Timbuktu</English>
-		<French>La madrassa de Tombouctou</French>
-		<German>Die Madrasah von Timbuktu</German>
-		<Italian>The Madrassah of Timbuktu</Italian>
-		<Spanish>The Madrassah of Timbuktu</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAL3</Tag>
-		<English>Caravans of the Sahara</English>
-		<French>Caravanes du Sahara </French>
-		<German>Karawanen der Sahara</German>
-		<Italian>Caravans of the Sahara</Italian>
-		<Spanish>Caravans of the Sahara</Spanish>
+		<Tag>TXT_KEY_VICTORY_ORDINAL_DEFAULT_SUFFIX</Tag>
+		<English>th</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAY1</Tag>
-		<English>The Sun</English>
-		<French>Le soleil </French>
-		<German>Die Sonne</German>
-		<Italian>The Sun</Italian>
-		<Spanish>The Sun</Spanish>
+		<Tag>TXT_KEY_VICTORY_HALF</Tag>
+		<English>half</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- Additional display text -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_PLAYER</Tag>
+		<English>No player</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAY2</Tag>
-		<English>The Gods</English>
-		<French>Les dieux </French>
-		<German>Die G&#246;tter</German>
-		<Italian>The Gods</Italian>
-		<Spanish>The Gods</Spanish>
+		<Tag>TXT_KEY_VICTORY_NO_CITY</Tag>
+		<English>No city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MAY3</Tag>
-		<English>The Stars</English>
-		<French>Les &#233;toiles </French>
-		<German>Die Sterne</German>
-		<Italian>The Stars</Italian>
-		<Spanish>The Stars</Spanish>
+		<Tag>TXT_KEY_VICTORY_CITY_OWNED_BY</Tag>
+		<English>%s1 owned by %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALREADY_COMPLETED_FOR</Tag>
+		<English>Already completed for %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_VASSALS</Tag>
+		<English>vassals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IN_AREA</Tag>
+		<English>%s1 in %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OUTSIDE_AREA</Tag>
+		<English>%s1 outside of %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGION_ADJECTIVE</Tag>
+		<English>%s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CIVILIZATIONS</Tag>
+		<English>civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INDEPENDENT</Tag>
+		<English>independent %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITIES</Tag>
+		<English>cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNIST</Tag>
+		<English>communist %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UNITS</Tag>
+		<English>units</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WITH_RELIGION_IN_CITIES</Tag>
+		<English>%s1 with %s2 in their cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OR_SECULAR</Tag>
+		<English>or secular</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_REQUIRED_OUT_OF</Tag>
+		<English>%s1 out of %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_REQUIRED_ANY_OF</Tag>
+		<English>any %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_YOUR_CITIES</Tag>
+		<English>your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ADJECTIVE_CITIES</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+<!-- Names of arguments -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_AMSTERDAM</Tag>
+		<English>Amsterdam</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_AYUTTHAYA</Tag>
+		<English>Ayutthaya</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BABYLON</Tag>
+		<English>Babylon</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BAGHDAD</Tag>
+		<English>Baghdad</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BERLIN</Tag>
+		<English>Berlin</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BUENOS_AIRES</Tag>
+		<English>Buenos Aires</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CAIRO</Tag>
+		<English>Cairo</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CARTHAGE</Tag>
+		<English>Carthage</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CONSTANTINOPLE</Tag>
+		<English>Constantinople</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CORDOBA</Tag>
+		<English>Cordoba</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_LHASA</Tag>
+		<English>Lhasa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MECCA</Tag>
+		<English>Mecca</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MEXICO_CITY</Tag>
+		<English>Mexico City</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MOSCOW</Tag>
+		<English>Moscow</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PARIS</Tag>
+		<English>Paris</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_TENOCHTITLAN</Tag>
+		<English>Tenochtitlan</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_VIENNA</Tag>
+		<English>Vienna</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MEX1</Tag>
-		<English>Church and State</English>
-		<French>L'&#201;glise et l'&#201;tat </French>
-		<German>Kirche und Staat</German>
-		<Italian>Church and State</Italian>
-		<Spanish>Church and State</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_CAPITAL</Tag>
+		<English>your capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MEX2</Tag>
-		<English>Revolutionary Leaders</English>
-		<French>Chefs r&#233;volutionnaires </French>
-		<German>Revolutionsf&#252;hrer</German>
-		<Italian>Revolutionary Leaders</Italian>
-		<Spanish>Revolutionary Leaders</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_ANOTHER_CAPITAL</Tag>
+		<English>another capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MEX3</Tag>
-		<English>The City of Palaces</English>
-		<French>La ville des palais </French>
-		<German>Die Stadt der Pal&#228;ste</German>
-		<Italian>The City of Palaces</Italian>
-		<Spanish>The City of Palaces</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MON1</Tag>
-		<English>The Yuan Dynasty</English>
-		<French>La dynastie Yuan </French>
-		<German>Die Yuan-Dynastie</German>
-		<Italian>The Yuan Dynasty</Italian>
-		<Spanish>The Yuan Dynasty</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_DIFFERENT_CAPITAL</Tag>
+		<English>a different capital</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MON2</Tag>
-		<English>The Scourge of God</English>
-		<French>Le fl&#233;au de Dieu </French>
-		<German>Die Gei&#223;el Gottes</German>
-		<Italian>The Scourge of God</Italian>
-		<Spanish>The Scourge of God</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_HOLY_CITY</Tag>
+		<English>your holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MON3</Tag>
-		<English>Pax Mongolica</English>
-		<French>Pax Mongolica </French>
-		<German>Pax Mongolica</German>
-		<Italian>Pax Mongolica</Italian>
-		<Spanish>Pax Mongolica</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MOO1</Tag>
-		<English>Caliphate of Al-Andalus</English>
-		<French>Le califat d'Al-Andalus </French>
-		<German>Kaliphat von Al-Andalus</German>
-		<Italian>Caliphate of Al-Andalus</Italian>
-		<Spanish>Caliphate of Al-Andalus</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_ITS_CITY</Tag>
+		<English>its city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MOO2</Tag>
-		<English>Jewel of the World</English>
-		<French>Le joyau du monde </French>
-		<German>Juwel der Welt</German>
-		<Italian>Jewel of the World</Italian>
-		<Spanish>Jewel of the World</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MOO3</Tag>
-		<English>Barbary Corsairs</English>
-		<French>Corsaires barbaresques </French>
-		<German>Korsaren der Barbareskenk&#252;ste</German>
-		<Italian>Barbary Corsairs</Italian>
-		<Spanish>Barbary Corsairs</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_RELIGION_HOLY_CITY</Tag>
+		<English>the %s1 holy city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MUG1</Tag>
-		<English>Muhammad ibn Tughluq</English>
-		<French>Mouhammed ibn Tughl&#251;q </French>
-		<German>Muhammad ibn Tughluq</German>
-		<Italian>Muhammad ibn Tughluq</Italian>
-		<Spanish>Muhammad ibn Tughluq</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_AFRICA</Tag>
+		<English>Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MUG2</Tag>
-		<English>Shah Akbar</English>
-		<French>Shah Akbar </French>
-		<German>Schah Akbar</German>
-		<Italian>Shah Akbar</Italian>
-		<Spanish>Shah Akbar</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_AMERICA</Tag>
+		<English>America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_MUG3</Tag>
-		<English>Shah Jahan</English>
-		<French>Sh&#226;h Jah&#226;n </French>
-		<German>Schah Dschahan</German>
-		<Italian>Shah Jahan</Italian>
-		<Spanish>Shah Jahan</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_ANATOLIA</Tag>
+		<English>Anatolia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ASIA</Tag>
+		<English>Asia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ATLANTIC_COAST</Tag>
+		<English>the Atlantic Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BALKANS</Tag>
+		<English>the Balkans</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BLACK_SEA</Tag>
+		<English>the Black Sea coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BRITAIN</Tag>
+		<English>Britain</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BRAZIL</Tag>
+		<English>Brazil</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CARIBBEAN</Tag>
+		<English>the Caribbean</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CHINA</Tag>
+		<English>China</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_DECCAN</Tag>
+		<English>the Deccan</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_EASTER_ISLAND</Tag>
+		<English>Easter Island</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_EASTERN_MEDITERRANEAN</Tag>
+		<English>the Eastern Mediterranean coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_EUROPE</Tag>
+		<English>Europe</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_GAUL</Tag>
+		<English>Gaul</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_GRAN_COLOMBIA</Tag>
+		<English>Gran Colombia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_GUAYANAS</Tag>
+		<English>the Guayanas</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_HAWAII</Tag>
+		<English>Hawaii</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_IBERIA</Tag>
+		<English>Iberia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_INDOCHINA</Tag>
+		<English>Indochina</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_INDONESIA</Tag>
+		<English>Indonesia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ITALY</Tag>
+		<English>Italy</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_KOREA</Tag>
+		<English>Korea</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MAGHREB</Tag>
+		<English>the Maghreb</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MANCHURIA</Tag>
+		<English>Manchuria</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MARQUESAS</Tag>
+		<English>Marquesas</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MEDITERRANEAN</Tag>
+		<English>the Mediterranean</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MESOPOTAMIA</Tag>
+		<English>Mesopotamia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NEAR_EAST</Tag>
+		<English>the Near East</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NEW_ZEALAND</Tag>
+		<English>New Zealand</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NORTH_AFRICA</Tag>
+		<English>North Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NORTH_AMERICA</Tag>
+		<English>North America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA</Tag>
+		<English>North and Central America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NORTH_WEST_INDIA</Tag>
+		<English>North West India</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_OCEANIA</Tag>
+		<English>Oceania</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PACIFIC_COAST</Tag>
+		<English>the Pacific Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PERU</Tag>
+		<English>Peru</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PHILIPPINES</Tag>
+		<English>the Philippines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SCANDINAVIA</Tag>
+		<English>Scandinavia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SIBERIA</Tag>
+		<English>Siberia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SIBERIAN_COAST</Tag>
+		<English>the Siberian Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SOUTH_AMERICA</Tag>
+		<English>South America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SOUTH_ASIA</Tag>
+		<English>South Asia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SOUTH_CENTRAL_AMERICA</Tag>
+		<English>South and Central America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SRIVIJAYA</Tag>
+		<English>Srivijaya</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_TRANSOXIANA</Tag>
+		<English>Transoxiana</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_WEST_AFRICA</Tag>
+		<English>West Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_OTT1</Tag>
-		<English>The Golden Apple</English>
-		<French>La pomme d'or </French>
-		<German>Der Goldene Apfel</German>
-		<Italian>The Golden Apple</Italian>
-		<Spanish>The Golden Apple</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_ANDEAN_COAST</Tag>
+		<English>the Andean Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_OTT2</Tag>
-		<English>Empire on three Continents</English>
-		<French>Un empire sur trois continents </French>
-		<German>Reich der drei Kontinente</German>
-		<Italian>Empire on three Continents</Italian>
-		<Spanish>Empire on three Continents</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_CANADIAN_TERRITORY</Tag>
+		<English>Canadian territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_OTT3</Tag>
-		<English>The Tulip Period</English>
-		<French>L'&#232;re des tulipes </French>
-		<German>Die Tulpen-&#196;ra</German>
-		<Italian>The Tulip Period</Italian>
-		<Spanish>The Tulip Period</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_CITIES_IN_CANADA</Tag>
+		<English>all cities in Canada</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CITY_IN_CHINA</Tag>
+		<English>a city in China</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_COLONIAL</Tag>
+		<English>colonial</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT</Tag>
+		<English>one of your Mediterranean ports</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PER1</Tag>
-		<English>The First Empire</English>
-		<French>Le premier empire </French>
-		<German>Das erste Gro&#223;reich</German>
-		<Italian>The First Empire</Italian>
-		<Spanish>The First Empire</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_CATHEDRALS</Tag>
+		<English>cathedrals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PER2</Tag>
-		<English>Seven Wonders of the World</English>
-		<French>Sept merveilles du monde </French>
-		<German>Die Sieben Weltwunder</German>
-		<Italian>Seven Wonders of the World</Italian>
-		<Spanish>Seven Wonders of the World</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_SHRINES</Tag>
+		<English>shrines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PER3</Tag>
-		<English>Land of Religions</English>
-		<French>Terre des religions </French>
-		<German>Land der Religionen</German>
-		<Italian>Land of Religions</Italian>
-		<Spanish>Land of Religions</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_TEMPLES</Tag>
+		<English>temples</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_WONDERS</Tag>
+		<English>wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CHRISTIAN_CATHEDRALS</Tag>
+		<English>Christian cathedrals</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_STATE_RELIGION_CATHEDRAL</Tag>
+		<English>cathedrals of your state religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PLY1</Tag>
-		<English>Oceanic Navigators</English>
-		<French>Navigateurs oc&#233;aniques </French>
-		<German>Oceanic Navigators</German>
-		<Italian>Oceanic Navigators</Italian>
-		<Spanish>Oceanic Navigators</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_DIFFERENT_HAPPINESS_RESOURCES</Tag>
+		<English>different happiness</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PLY2</Tag>
-		<English>The Polynesian Triangle</English>
-		<French>Le triangle polyn&#233;sien </French>
-		<German>The Polynesian Triangle</German>
-		<Italian>The Polynesian Triangle</Italian>
-		<Spanish>The Polynesian Triangle</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_PLY3</Tag>
-		<English>Rano Raraku</English>
-		<French>Rano Raraku </French>
-		<German>Rano Raraku</German>
-		<Italian>Rano Raraku</Italian>
-		<Spanish>Rano Raraku</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_TRADING_COMPANY_RESOURCES</Tag>
+		<English>trading company</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POL1</Tag>
-		<English>The Folwark System</English>
-		<French>Le syst&#232;me des folwarki </French>
-		<German>Das Folwark-System</German>
-		<Italian>The Folwark System</Italian>
-		<Spanish>The Folwark System</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POL2</Tag>
-		<English>Golden Liberty</English>
-		<French>Libert&#233; dor&#233;e </French>
-		<German>Goldene Freiheit</German>
-		<Italian>Golden Liberty</Italian>
-		<Spanish>Golden Liberty</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POL3</Tag>
-		<English>The Commonwealth</English>
-		<French>La R&#233;publique aristocratique </French>
-		<German>Die Adelsrepublik</German>
-		<Italian>The Commonwealth</Italian>
-		<Spanish>The Commonwealth</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_LAND_BASED_TRADE</Tag>
+		<English>land based trade</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POR1</Tag>
-		<English>Cartaz</English>
-		<French>Cartaz </French>
-		<German>Cartaz</German>
-		<Italian>Cartaz</Italian>
-		<Spanish>Cartaz</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POR2</Tag>
-		<English>Age of Discovery</English>
-		<French>L'&#226;ge des d&#233;couvertes </French>
-		<German>Zeitalter der Entdeckungen</German>
-		<Italian>Age of Discovery</Italian>
-		<Spanish>Age of Discovery</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_POR3</Tag>
-		<English>Treaty of Tordesilhas</English>
-		<French>Le trait&#233; de Tordesilhas</French>
-		<German>Vertrag von Tordesilhas</German>
-		<Italian>Treaty of Tordesilhas</Italian>
-		<Spanish>Treaty of Tordesilhas</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_GREAT_PEOPLE</Tag>
+		<English>great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ROM1</Tag>
-		<English>Bread and Circuses</English>
-		<French>Du pain et des jeux </French>
-		<German>Brot und Spiele</German>
-		<Italian>Bread and Circuses</Italian>
-		<Spanish>Bread and Circuses</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_ALL_EUROPEAN</Tag>
+		<English>all European</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ROM2</Tag>
-		<English>Pax Romana</English>
-		<French>Pax Romana </French>
-		<German>Pax Romana</German>
-		<Italian>Pax Romana</Italian>
-		<Spanish>Pax Romana</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_EUROPEAN</Tag>
+		<English>European</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ROM3</Tag>
-		<English>Late Antiquity</English>
-		<French>L'Antiquit&#233; tardive </French>
-		<German>Sp&#228;tantike</German>
-		<Italian>Late Antiquity</Italian>
-		<Spanish>Late Antiquity</Spanish>
+		<Tag>TXT_KEY_VICTORY_NAME_EUROPEAN_CIVILIZATION</Tag>
+		<English>a European civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_LOCAL</Tag>
+		<English>local</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- Specific goal descriptions -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_VIKINGS_1</Tag>
+		<English>Control the core of any European civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_SECULAR_1</Tag>
+		<English>Control a cathedral of every religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_PESEDJET</Tag>
+		<English>Be the first to create three different kinds of great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+<!-- Interface -->
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILURE</Tag>
+		<English>NO</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_SUCCESS</Tag>
+		<English>YES</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_POSSIBLE</Tag>
+		<English>Not yet</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_RUS1</Tag>
-		<English>Eastward Expansion</English>
-		<French>Expansion vers l'est </French>
-		<German>Expansion nach Osten</German>
-		<Italian>Eastward Expansion</Italian>
-		<Spanish>Eastward Expansion</Spanish>
+		<Tag>TXT_KEY_VICTORY_GOAL_SUCCESS_STRING</Tag>
+		<English>Goal accomplished!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_RUS2</Tag>
-		<English>The Cold War</English>
-		<French>La Guerre froide </French>
-		<German>Der Kalte Krieg</German>
-		<Italian>The Cold War</Italian>
-		<Spanish>The Cold War</Spanish>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILURE_STRING</Tag>
+		<English>Goal failed!</English>
+		<French>Objectif &#233;chou&#233; !</French>
+		<German>Goal failed!</German>
+		<Italian>Goal failed!</Italian>
+		<Spanish>Goal failed!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_RUS3</Tag>
-		<English>The Iron Curtain</English>
-		<French>Le rideau de fer </French>
-		<German>Der Eiserne Vorhang</German>
-		<Italian>The Iron Curtain</Italian>
-		<Spanish>The Iron Curtain</Spanish>
+		<Tag>TXT_KEY_VICTORY_TURN</Tag>
+		<English>Turn %d1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FAILURE</Tag>
+		<English>You have failed to %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_SUCCESS</Tag>
+		<English>You have succeeded to %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INTERMEDIATE</Tag>
+		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
+		<French>Nous avons accompli notre deuxi&#232;me objectif historique. Un &#226;ge d'or d&#233;bute pour notre civilisation !</French>
+		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
+		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
+		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_SPA1</Tag>
-		<English>Plus Ultra</English>
-		<French>Plus ultra </French>
-		<German>Plus Ultra</German>
-		<Italian>Plus Ultra</Italian>
-		<Spanish>Plus Ultra</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_SPA2</Tag>
-		<English>The Treasure Fleet</English>
-		<French>La flotte des Indes </French>
-		<German>Die Schatzflotte</German>
-		<Italian>The Treasure Fleet</Italian>
-		<Spanish>The Treasure Fleet</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_SPA3</Tag>
-		<English>Soldiers of God</English>
-		<French>Les soldats de Dieu </French>
-		<German>Soldaten Gottes</German>
-		<Italian>Soldiers of God</Italian>
-		<Spanish>Soldiers of God</Spanish>
+		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
+		<English>Accomplished:</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TAM1</Tag>
-		<English>The Sangam Period</English>
-		<French>La p&#233;riode Sangam </French>
-		<German>Die Sangam-&#196;ra</German>
-		<Italian>The Sangam Period</Italian>
-		<Spanish>The Sangam Period</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TAM2</Tag>
-		<English>The Chola Empire</English>
-		<French>L'empire Chola </French>
-		<German>Das Chola-Reich</German>
-		<Italian>The Chola Empire</Italian>
-		<Spanish>The Chola Empire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TAM3</Tag>
-		<English>Indian Ocean Trade</English>
-		<French>Commerce dans l'oc&#233;an Indien </French>
-		<German>Der Indische Ozean-Handel</German>
-		<Italian>Indian Ocean Trade</Italian>
-		<Spanish>Indian Ocean Trade</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_THA1</Tag>
-		<English>The King and I</English>
-		<French>Le Roi et moi </French>
-		<German>Der K&#246;nig und ich</German>
-		<Italian>The King and I</Italian>
-		<Spanish>The King and I</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_THA2</Tag>
-		<English>Venice of the East</English>
-		<French>La Venise de l'Orient </French>
-		<German>Venedig des Ostens</German>
-		<Italian>Venice of the East</Italian>
-		<Spanish>Venice of the East</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_THA3</Tag>
-		<English>The Circle of Power</English>
-		<French>Le cercle du pouvoir </French>
-		<German>Der Kreis der Macht</German>
-		<Italian>The Circle of Power</Italian>
-		<Spanish>The Circle of Power</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TIB1</Tag>
-		<English>The Tibetan Empire</English>
-		<French>L'empire du Tibet </French>
-		<German>Das tibetanische Reich</German>
-		<Italian>The Tibetan Empire</Italian>
-		<Spanish>The Tibetan Empire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TIB2</Tag>
-		<English>Tibetan Buddhism</English>
-		<French>Bouddhisme tib&#233;tain </French>
-		<German>Tibetan Buddhism</German>
-		<Italian>Tibetan Buddhism</Italian>
-		<Spanish>Tibetan Buddhism</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TIB3</Tag>
-		<English>The Dalai Lamas</English>
-		<French>Les dala&#239;-lamas </French>
-		<German>Die Dalai Lamas</German>
-		<Italian>The Dalai Lamas</Italian>
-		<Spanish>The Dalai Lamas</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TUR1</Tag>
-		<English>The Khaganate</English>
-		<French>Le khaganat </French>
-		<German>Das Gro&#223;khanat</German>
-		<Italian>The Khaganate</Italian>
-		<Spanish>The Khaganate</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TUR2</Tag>
-		<English>The Silk Road</English>
-		<French>La route de la soie </French>
-		<German>Die Seidenstra&#223;e</German>
-		<Italian>The Silk Road</Italian>
-		<Spanish>The Silk Road</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_TUR3</Tag>
-		<English>Patronage</English>
-		<French>M&#233;c&#233;nat </French>
-		<German>M&#228;zenat</German>
-		<Italian>Patronage</Italian>
-		<Spanish>Patronage</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_VIK1</Tag>
-		<English>Norman Conquests</English>
-		<French>Les conqu&#234;tes normandes </French>
-		<German>Normannische Eroberungen</German>
-		<Italian>Norman Conquests</Italian>
-		<Spanish>Norman Conquests</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_VIK2</Tag>
-		<English>Vinland Saga</English>
-		<French>La saga du Vinland </French>
-		<German>Die Vinland-Saga</German>
-		<Italian>Vinland Saga</Italian>
-		<Spanish>Vinland Saga</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_VIK3</Tag>
-		<English>Danegeld</English>
-		<French>Danegeld </French>
-		<German>Danegeld</German>
-		<Italian>Danegeld</Italian>
-		<Spanish>Danegeld</Spanish>
-	</TEXT>
-	
-	<!-- RELIGIOUS GOAL TITLES -->
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUDA1</Tag>
-		<English>Chosen People</English>
-		<French>Peuple &#233;lu</French>
-		<German>Erw&#228;hltes Volk</German>
-		<Italian>Chosen People</Italian>
-		<Spanish>Chosen People</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUDA2</Tag>
-		<English>Promised Land</English>
-		<French>Terre promise</French>
-		<German>Gelobtes Land</German>
-		<Italian>Promised Land</Italian>
-		<Spanish>Promised Land</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_JUDA3</Tag>
-		<English>Diaspora</English>
-		<French>Diaspora</French>
-		<German>Diaspora</German>
-		<Italian>Diaspora</Italian>
-		<Spanish>Diaspora</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUDD1</Tag>
-		<English>Sila</English>
-		<French>Sila</French>
-		<German>Sila</German>
-		<Italian>Sila</Italian>
-		<Spanish>Sila</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUDD2</Tag>
-		<English>Nirvana</English>
-		<French>Nirvana</French>
-		<German>Nirwana</German>
-		<Italian>Nirvana</Italian>
-		<Spanish>Nirvana</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_BUDD3</Tag>
-		<English>Middle Way</English>
-		<French>Voie du milieu</French>
-		<German>Mittlerer Weg</German>
-		<Italian>Middle Way</Italian>
-		<Spanish>Middle Way</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CATH1</Tag>
-		<English>Holy See</English>
-		<French>Saint-Si&#232;ge</French>
-		<German>Heiliger Stuhl</German>
-		<Italian>Holy See</Italian>
-		<Spanish>Holy See</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CATH2</Tag>
-		<English>Holy Land</English>
-		<French>Terre sainte</French>
-		<German>Heiliges Land</German>
-		<Italian>Holy Land</Italian>
-		<Spanish>Holy Land</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CATH3</Tag>
-		<English>Holy Mission</English>
-		<French>Sainte mission</French>
-		<German>Heilige Mission</German>
-		<Italian>Holy Mission</Italian>
-		<Spanish>Holy Mission</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CONF1</Tag>
-		<English>Harmony</English>
-		<French>Harmonie</French>
-		<German>Harmonie</German>
-		<Italian>Harmony</Italian>
-		<Spanish>Harmony</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CONF2</Tag>
-		<English>Ritual</English>
-		<French>Rituel</French>
-		<German>Ritual</German>
-		<Italian>Ritual</Italian>
-		<Spanish>Ritual</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_CONF3</Tag>
-		<English>Loyalty</English>
-		<French>Loyaut&#233;</French>
-		<German>Loyalit&#228;t</German>
-		<Italian>Loyalty</Italian>
-		<Spanish>Loyalty</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIND1</Tag>
-		<English>Varna</English>
-		<French>Varna</French>
-		<German>Varna</German>
-		<Italian>Varna</Italian>
-		<Spanish>Varna</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIND2</Tag>
-		<English>Artha</English>
-		<French>Artha</French>
-		<German>Artha</German>
-		<Italian>Artha</Italian>
-		<Spanish>Artha</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_HIND3</Tag>
-		<English>Kama</English>
-		<French>Kama</French>
-		<German>Kama</German>
-		<Italian>Kama</Italian>
-		<Spanish>Kama</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISLA1</Tag>
-		<English>Shahada</English>
-		<French>Chahada</French>
-		<German>Schahada</German>
-		<Italian>Shahada</Italian>
-		<Spanish>Shahada</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISLA2</Tag>
-		<English>Hajj</English>
-		<French>Hajj</French>
-		<German>Hadsch</German>
-		<Italian>Hajj</Italian>
-		<Spanish>Hajj</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ISLA3</Tag>
-		<English>Jihad</English>
-		<French>Djihad</French>
-		<German>Dschihad</German>
-		<Italian>Jihad</Italian>
-		<Spanish>Jihad</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORTH1</Tag>
-		<English>Patriarchates</English>
-		<French>Les patriarcats</French>
-		<German>Patriarchate</German>
-		<Italian>Patriarchates</Italian>
-		<Spanish>Patriarchates</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORTH2</Tag>
-		<English>Iconography</English>
-		<French>Iconographie</French>
-		<German>Ikonographie</German>
-		<Italian>Iconography</Italian>
-		<Spanish>Iconography</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_TITLE_ORTH3</Tag>
-		<English>Communion</English>
-		<French>Communion</French>
-		<German>Kommunion</German>
-		<Italian>Communion</Italian>
-		<Spanish>Communion</Spanish>
-	</TEXT>
 </Civ4GameText>

@@ -1,4 +1,4 @@
-from Types import *
+from CoreTypes import *
 from CvPythonExtensions import *
 from copy import copy
 from traceback import extract_stack

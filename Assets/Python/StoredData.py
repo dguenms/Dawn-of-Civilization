@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 from Consts import *
-from Types import *
+from CoreTypes import *
 
 gc = CyGlobalContext()
 
@@ -55,8 +55,11 @@ class PlayerData:
 	def update(self, data):
 		self.__dict__.update(data)
 		
-		for goal in self.goals:
-			goal.registerHandlers()
+		if self.historicalVictory:
+			self.historicalVictory.enable()
+		
+		if self.religiousVictory:
+			self.religiousVictory.enable()
 
 	def setup(self):
 	
@@ -91,6 +94,9 @@ class PlayerData:
 		
 		self.historicalGoals = []
 		self.religiousGoals = []
+		
+		self.historicalVictory = None
+		self.religiousVictory = None
 		
 		# Stability
 		
@@ -159,10 +165,6 @@ class PlayerData:
 			if lTrend[i] != 0: return lTrend[i]
 		return 0
 	
-	@property
-	def goals(self):
-		return self.historicalGoals + self.religiousGoals
-		
 
 class GameData:
 
