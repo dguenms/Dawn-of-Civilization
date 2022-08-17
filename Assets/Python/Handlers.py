@@ -34,5 +34,5 @@ import Rules
 import Shortcuts
 import Stability
 import UniquePowers
-import Victories
+import VictoryVictories
 import Wonders

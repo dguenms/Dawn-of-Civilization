@@ -5,7 +5,6 @@ from TestGoals import test_cases as goals_test_cases
 from TestHandlers import test_cases as handlers_test_cases
 from TestRequirements import test_cases as requirements_test_cases
 from TestTypes import test_cases as types_test_cases
-from TestVictoryUtils import test_cases as utils_test_cases
 from TestVictoryVictories import test_cases as victories_test_cases
 
 from unittest import *
@@ -23,7 +22,6 @@ test_cases = (
 	handlers_test_cases +
 	requirements_test_cases +
 	types_test_cases +
-	utils_test_cases + 
 	victories_test_cases
 )
 

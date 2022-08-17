@@ -60,7 +60,6 @@ from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
-import Victories
 import VictoryVictories
 
 from Scenarios import getScenario

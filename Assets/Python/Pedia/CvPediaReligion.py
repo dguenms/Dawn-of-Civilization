@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 import CvUtil
 import string
 
-import Victories
+import VictoryVictories
 
 from Consts import *
 from RFCUtils import *
@@ -116,7 +116,7 @@ class CvPediaReligion:
 
 		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		victorytext = CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ())
-		victorytext += "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.full_description()) for goal in Victories.dReligiousGoals[self.iReligion])
+		victorytext += "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in VictoryVictories.dReligiousGoals[self.iReligion])
 		szHistory = victorytext + "\n\n" + gc.getReligionInfo(self.iReligion).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 

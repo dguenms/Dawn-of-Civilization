@@ -60,6 +60,11 @@ class TestTextProcessing(ExtendedTestCase):
 		self.assertEqual(plural("Ship of the Line"), "Ships of the Line")
 		self.assertEqual(plural("Great Statesman"), "Great Statesmen")
 		self.assertEqual(plural("cathedral of your state religion"), "cathedrals of your state religion")
+
+	def test_format_articles(self):
+		self.assertEqual(format_articles("The Internet"), "the Internet")
+		self.assertEqual(format_articles("the Internet"), "the Internet")
+		self.assertEqual(format_articles("Swordsman"), "Swordsman")
 	
 	def test_capitalize(self):
 		self.assertEqual(capitalize("hello"), "Hello")
