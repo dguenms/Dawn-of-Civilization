@@ -1247,6 +1247,11 @@ void CvInitCore::setLeaderName(PlayerTypes eID, const CvWString & szLeaderName)
 	FASSERT_BOUNDS(0, MAX_PLAYERS, eID, "CvInitCore::setLeaderName");
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
+		if (getCiv(eID) == NO_CIVILIZATION)
+		{
+			return;
+		}
+
 		CvWString szName = szLeaderName;
 		gDLL->stripSpecialCharacters(szName);
 
@@ -1561,12 +1566,6 @@ void CvInitCore::setLeader(PlayerTypes eID, LeaderHeadTypes eLeader)
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		m_aeLeader[eID] = eLeader;
-
-		// Leoreth: human uses leader name
-		if (getActivePlayer() == eID && eLeader != NO_LEADER)
-		{
-			setLeaderName(eID, GC.getLeaderHeadInfo(eLeader).getText());
-		}
 	}
 }
 
