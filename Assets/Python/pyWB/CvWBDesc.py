@@ -1472,7 +1472,7 @@ class CvCityDesc:
 			self.city.changeDefenseDamage(self.iDamage)
 		if self.iOccupation > 0:
 			self.city.setOccupationTimer(self.iOccupation)
-		if bSpecial:
+		if False:
 			self.city.changeExtraHappiness(self.iExtraHappiness - self.city.getExtraHappiness())
 			self.city.changeExtraHealth(self.iExtraHealth - self.city.getExtraHealth())
 			self.city.changeExtraTradeRoutes(self.iExtraTrade - self.city.getExtraTradeRoutes())
