@@ -5963,6 +5963,7 @@ tRenames = (
 	"Akhenaten"		:	"Al-'Amarna",
 	"Akabe"			:	"Al-Aqabah",
 	"Basra"			:	"Al-Basrah",
+	"Venezia"		:	"Al-Bundukiyya",
 	"Hurgada"		:	"Al-Ghardaqah",
 	"Hartum"		:	"Al-Hartum",
 	"Lisboa"		:	"Al-'Ishbunah",
