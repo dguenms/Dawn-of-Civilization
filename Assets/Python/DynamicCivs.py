@@ -1784,7 +1784,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra >= iIndustrial:
 			return "TXT_KEY_KINGDOM_OF"
 			
-		if isCurrentCapital(iPlayer, "Hanoi"):
+		if isCurrentCapital(iPlayer, "Dai La"):
 			return "TXT_KEY_CIV_KHMER_DAI_VIET"
 			
 	elif iCiv == iIndonesia:

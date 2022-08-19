@@ -61,7 +61,7 @@ iPeriodMing :			(102, 47), # Beijing
 iPeriodMaratha :		(90, 40),	# Delhi
 iPeriodCarthage : 		(58, 39),	# Carthage
 iPeriodVijayanagara :	(90, 30),	# Vijayanagara
-iPeriodVietnam :		(101, 37),	# Hanoi
+iPeriodVietnam :		(101, 37),	# Ha Noi
 iPeriodAustria :		(62, 49),	# Vienna
 }
 

@@ -8504,7 +8504,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Hanoi
+		CityName=Dong Kinh
 		CityPopulation=7
 		YearFounded=-300
 		YearAcquired=1010
