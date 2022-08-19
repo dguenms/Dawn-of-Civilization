@@ -30,7 +30,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Hermosillo
+		CityName=Pitic
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -6346,7 +6346,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_RUSSIA
-		CityName=Vyatka
+		CityName=Khlynov
 		CityPopulation=2
 		YearFounded=1374
 		YearAcquired=1374
