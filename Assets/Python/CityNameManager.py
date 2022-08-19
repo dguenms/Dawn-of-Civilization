@@ -7084,6 +7084,7 @@ tRenames = (
 	"Amasia"		:	"Amasya",
 	"Amman"			:	"Amman",
 	"Neokastron"	:	"Anavarin",
+	"Ankuwash"		:	"Ankara",
 	"Antiocheia"	:	"Antakya",
 	"Attaleia"		:	"Antalya",
 	"Artashat"		:	"Artashat",
