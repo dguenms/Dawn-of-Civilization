@@ -3890,6 +3890,9 @@ dIdentifiers = {
 	"Irkutsk"		:	"Irkutsk",
 	"Istanbul"		:	"Istanbul",
 	"Stambul"		:	"Istanbul",
+	"A-de Shui"		:	"Itil",
+	"Itil"			:	"Itil",
+	"Khamlij"		:	"Itil",
 	"Fort Caroline"	:	"Jacksonville",
 	"Jacksonville"	:	"Jacksonville",
 	"Jaisalmer"		:	"Jaisalmer",
@@ -5266,6 +5269,7 @@ tRenames = (
 },
 #Language: Chinese
 {
+	"Itil"			:	"A-de Shui",
 	"Anshan"		:	"Anshan",
 	"Anyang"		:	"Anyang",
 	"Aomen"			:	"Aomen",
@@ -6011,6 +6015,7 @@ tRenames = (
 	"Jbeil"			:	"Jbeil",
 	"Kabul"			:	"Kabul",
 	"Kaisareia"		:	"Kayseri",
+	"Itil"			:	"Khamlij",
 	"Imu"			:	"Kom El-Hisn",
 	"Ikonion"		:	"Konya",
 	"Leptis Magna"	:	"Libdeh Al-Kubra",
@@ -7113,6 +7118,7 @@ tRenames = (
 	"Alexandreia"	:	"Iskenderiye",
 	"Alexandretta"	:	"Iskenderun",
 	"Istanbul"		:	"Istanbul",
+	"Itil"			:	"Itil",
 	"Smyrna"		:	"Izmir",
 	"Nicomedia"		:	"Izmit",
 	"Nikaia"		:	"Iznik",
