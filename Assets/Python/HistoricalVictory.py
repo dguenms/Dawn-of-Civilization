@@ -184,8 +184,8 @@ dGoals = {
 	),
 	iPersia: (
 		LandPercent(7, by=140),
-		BuildingCount(wonders(), 7, by=350),
-		BuildingCount(religious_buildings(shrine).named(SHRINES), 2, at=350),
+		BuildingCount(wonders(), 7, by=320),
+		BuildingCount(religious_buildings(shrine).named(SHRINES), 2, at=320),
 	),
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3), by=100),
