@@ -239,6 +239,13 @@ def createResourcesBeforeBirth(iCiv):
 		createResource(x, y, iResource)
 
 
+@handler("collapse")
+def removeResourcesOnCollapse(iPlayer):
+	iCiv = civ(iPlayer)
+	for (x, y), iResource in dSpawnResources[iCiv]:
+		removeResource(x, y)
+
+
 @handler("birth")
 def removeColombianJungle(iPlayer):
 	if civ(iPlayer) == iColombia:
