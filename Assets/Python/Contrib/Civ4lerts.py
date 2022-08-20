@@ -123,6 +123,7 @@ class Civ4lerts:
 		RefusesToTalk(eventManager)
 		WorstEnemy(eventManager)
 		CancelableTribute(eventManager)
+		RestoredContact(eventManager)
 
 
 ## Displaying Alert Messages
@@ -1177,3 +1178,13 @@ class CancelableTribute(AbstractStatefulAlert):
 		
 		if cancelablePlayers:
 			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join([name(iPlayer) for iPlayer in cancelablePlayers])))
+
+
+class RestoredContact:
+
+	def __init__(self, eventManager):
+		AbstractStatefulAlert.__init__(self, eventManager)
+		eventManager.addEventHandler("restoredContact", self.onRestoredContact)
+	
+	def onRestoredContact(self, iOurTeam, iTheirTeam):
+		addMessageNoIcon(team(iOurTeam).getLeaderID(), text("TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT", name(team(iTheirTeam).getLeaderID())))

@@ -3974,7 +3974,14 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		}
 
 		// report event to Python, along with some other key state (Leoreth: moved before diplomacy in case the event starts a war)
-		CvEventReporter::getInstance().firstContact(getID(), eIndex);
+		if (!isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+		{
+			CvEventReporter::getInstance().firstContact(getID(), eIndex);
+		}
+		else
+		{
+			CvEventReporter::getInstance().restoredContact(getID(), eIndex);
+		}
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR))
 		{

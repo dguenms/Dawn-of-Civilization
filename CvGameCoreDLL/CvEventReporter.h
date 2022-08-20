@@ -47,7 +47,8 @@ public:
 	void beginPlayerTurn(int iGameTurn, PlayerTypes);
 	void endPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);						
+	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
+	void restoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
 	void combatResult(CvUnit* pWinner, CvUnit* pLoser);					
 // BUG - Combat Events - start
 	void combatRetreat(CvUnit* pAttacker, CvUnit* pDefender);

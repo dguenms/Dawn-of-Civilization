@@ -400,6 +400,14 @@
 		<Spanish>[COLOR_POSITIVE_TEXT]You can cancel your tribute to %s1.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT</Tag>
+		<English>[COLOR_POSITIVE_TEXT]You have resumed diplomatic contact with %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]You have resumed diplomatic contact with %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Euer diplomatischer Kontakt mit %s1 wurde wieder aufgenommen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]You have resumed diplomatic contact with %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]You have resumed diplomatic contact with %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_TRADE</Tag>
 		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold available for trade.[COLOR_REVERT]</English>
 		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pi&#232;ces d'or disponible pour le commerce.[COLOR_REVERT]</French>

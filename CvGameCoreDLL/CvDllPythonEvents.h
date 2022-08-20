@@ -24,7 +24,8 @@ public:
 	void reportBeginPlayerTurn(int iGameTurn, PlayerTypes);
 	void reportEndPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);						
+	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);	
+	void reportRestoredContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
 	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
 // BUG - Combat Events - start
 	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);

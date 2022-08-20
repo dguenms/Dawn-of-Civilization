@@ -210,6 +210,18 @@ void CvDllPythonEvents::reportFirstContact(TeamTypes eTeamID1, TeamTypes eTeamID
 	}
 }
 
+void CvDllPythonEvents::reportRestoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("restoredContact");
+		eventData.add((int)eTeamID1);
+		eventData.add((int)eTeamID2);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportCombatResult(CvUnit* pWinner, CvUnit* pLoser)
 {
 	if (preEvent())

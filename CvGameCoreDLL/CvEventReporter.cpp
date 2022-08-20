@@ -114,6 +114,11 @@ void CvEventReporter::firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
 	m_kPythonEventMgr.reportFirstContact(eTeamID1, eTeamID2);
 }
 
+void CvEventReporter::restoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
+{
+	m_kPythonEventMgr.reportRestoredContact(eTeamID1, eTeamID2);
+}
+
 void CvEventReporter::combatResult(CvUnit* pWinner, CvUnit* pLoser)
 {
 	m_kPythonEventMgr.reportCombatResult(pWinner, pLoser);
