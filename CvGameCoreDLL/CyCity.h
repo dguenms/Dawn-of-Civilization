@@ -609,6 +609,7 @@ public:
 	void setGameTurnAcquired(int iNewValue);
 	void setCivCulture(int iCiv, int iNewValue);
 	bool isOriginalOwner(int iPlayer);
+	int getCorporationBadHappiness();
 
 private:
 	CvCity* m_pCity;

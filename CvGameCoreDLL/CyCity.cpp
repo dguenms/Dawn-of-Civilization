@@ -2878,3 +2878,8 @@ bool CyCity::isOriginalOwner(int iPlayer)
 {
 	return m_pCity ? m_pCity->isOriginalOwner((PlayerTypes)iPlayer) : false;
 }
+
+int CyCity::getCorporationBadHappiness()
+{
+	return m_pCity ? m_pCity->getCorporationBadHappiness() : -1;
+}
