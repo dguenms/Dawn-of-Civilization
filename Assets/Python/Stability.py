@@ -1082,10 +1082,11 @@ def updateHappinessTrend(iPlayer):
 		iHappiness = city.happyLevel()
 		iUnhappiness = city.unhappyLevel(0)
 		iOvercrowding = city.getOvercrowdingPercentAnger(0) * city.getPopulation() / 1000
+		iCorporationUnhappinessOffset = min(city.getCorporationBadHappiness(), 3 * city.getCorporationCount())
 		
 		if city.isWeLoveTheKingDay() or (iPopulation >= iAveragePopulation and iHappiness - iUnhappiness >= iAveragePopulation / 4):
 			iHappyCities += 1
-		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
+		elif iUnhappiness - iOvercrowding - iCorporationUnhappinessOffset > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
 	iCurrentTrend = 0
