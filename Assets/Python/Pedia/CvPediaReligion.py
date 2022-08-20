@@ -41,9 +41,14 @@ class CvPediaReligion:
 		self.Y_EFFECTS = self.Y_REQUIRES + self.H_REQUIRES + 10
 		self.W_EFFECTS = self.top.R_PEDIA_PAGE - self.X_EFFECTS
 		self.H_EFFECTS = 110
+
+		self.X_BUILDINGS = self.X_INFO_PANE
+		self.Y_BUILDINGS = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.W_BUILDINGS = self.top.R_PEDIA_PAGE - self.X_BUILDINGS
+		self.H_BUILDINGS = self.H_REQUIRES
 		
 		self.X_HISTORY = self.X_INFO_PANE
-		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.Y_HISTORY = self.Y_BUILDINGS + self.H_BUILDINGS + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
 		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY - 10
 
@@ -54,6 +59,7 @@ class CvPediaReligion:
 		self.placeInfo()
 		self.placeRequires()
 		self.placeEffects()
+		self.placeBuildings()
 		self.placeHistory()
 
 
@@ -108,6 +114,26 @@ class CvPediaReligion:
 		for special in splitText:
 			if len(special) != 0:
 				screen.appendListBoxString(text, special, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				
+	def placeBuildings(self):
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_BUILDINGS", ()), "", False, True, self.X_BUILDINGS, self.Y_BUILDINGS, self.W_BUILDINGS, self.H_BUILDINGS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.attachLabel(panel, "", "  ")
+
+		for iBuildingClass in xrange(gc.getNumBuildingClassInfos()):
+			iCivilization = CyGame().getActiveCivilizationType()
+			if iCivilization > -1:
+				iBuilding = gc.getCivilizationInfo(iCivilization).getCivilizationBuildings(iBuildingClass)
+			else:
+				iBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
+
+			if iBuilding > -1:
+				building = infos.building(iBuilding)
+				if self.iReligion in [building.getPrereqReligion(), building.getOrPrereqReligion(), building.getStateReligion(), building.getOrStateReligion(), building.getHolyCity()]:
+					screen.attachImageButton(panel, "", gc.getBuildingInfo(iBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, -1, False)
+
 
 	def placeHistory(self):
 		screen = self.top.getScreen()
