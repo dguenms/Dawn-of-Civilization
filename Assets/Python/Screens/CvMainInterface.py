@@ -226,11 +226,12 @@ g_mainInterface = None
 # BUG - end
 
 tStabilitySymbols = (
-FontSymbols.UNSTABLE_CHAR,
-FontSymbols.UNSTABLE_CHAR,
-FontSymbols.STABLE_CHAR,
-FontSymbols.SOLID_CHAR,
-FontSymbols.SOLID_CHAR,)
+	FontSymbols.COLLAPSING_CHAR,
+	FontSymbols.UNSTABLE_CHAR,
+	FontSymbols.SHAKY_CHAR,
+	FontSymbols.STABLE_CHAR,
+	FontSymbols.SOLID_CHAR,
+)
 
 class CvMainInterface:
 	"Main Interface Screen"
@@ -5286,9 +5287,7 @@ class CvMainInterface:
 
 												if not is_minor(ePlayer):
 													iStabilityLevel = stability(ePlayer)
-													if iStabilityLevel > iStabilityShaky: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
-													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
-													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
+													cStab = unichr(CyGame().getSymbolID(tStabilitySymbols[iStabilityLevel]))
 													szBuffer += cStab
 													if (bAlignIcons):
 														scores.setStability(cStab)
