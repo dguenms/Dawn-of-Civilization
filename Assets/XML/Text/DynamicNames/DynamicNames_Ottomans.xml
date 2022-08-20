@@ -365,4 +365,20 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_NAME_POLAND</Tag>
+		<English>Lehistan</English>
+		<French>Lehistan</French>
+		<German>Lehistan</German>
+		<Italian>Lehistan</Italian>
+		<Spanish>Lehistan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_NAME_GERMANY</Tag>
+		<English>Nem&#231;e</English>
+		<French>Nem&#231;e</French>
+		<German>Nem&#231;e</German>
+		<Italian>Nem&#231;e</Italian>
+		<Spanish>Nem&#231;e</Spanish>
+	</TEXT>
 </Civ4GameText>
