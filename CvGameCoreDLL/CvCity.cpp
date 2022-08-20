@@ -19360,6 +19360,13 @@ void CvCity::applyBuildingDamage(int iDamage)
 			continue;
 		}
 
+		// buildings that are impossible to conquer have been removed immediately on conquest
+		// so if they are restored some other way, do not remove them again
+		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 0)
+		{
+			continue;
+		}
+
 		for (int iJ = 0; iJ < getNumRealBuilding((BuildingTypes)iI); iJ++)
 		{
 			buildings.push_back(iI);
