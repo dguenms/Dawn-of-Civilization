@@ -320,6 +320,9 @@ def colonialAcquisition(iPlayer, tPlot):
 				convertPlotCulture(current, iPlayer, 60, True)
 				
 		player(iPlayer).found(*location(plot))
+	
+	if plot.getOwner() >= 0:
+		player(iPlayer).forcePeace(plot.getOwner())
 		
 	makeUnits(iPlayer, iWorker, tPlot, iNumUnits)
 	createRoleUnit(iPlayer, plot, iAttack, iNumUnits)
