@@ -283,15 +283,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKIC_VASSAL</Tag>
-		<English>Atabeylik of %s3</English>
+		<English>Atabeylik of %s1</English>
 		<French>
-			<Text>Atabeylik de %s3</Text>
+			<Text>Atabeylik de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Atabeylik of %s3</German>
-		<Italian>Atabeylik of %s3</Italian>
-		<Spanish>Atabeylik of %s3</Spanish>
+		<German>Atabeylik of %s1</German>
+		<Italian>Atabeylik of %s1</Italian>
+		<Spanish>Atabeylik of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKIC_NAME_BYZANTIUM</Tag>

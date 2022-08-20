@@ -855,10 +855,12 @@ def vassalName(iPlayer, iMaster):
 	if iMasterCiv == iRome and player(iPlayer).getPeriod() == iPeriodCarthage:
 		return "TXT_KEY_CIV_ROMAN_NAME_CARTHAGE"
 		
-	if iCiv == iNetherlands: return short(iPlayer)
+	if iCiv == iNetherlands:
+		return short(iPlayer)
 
 	sSpecificName = dForeignNames[iMasterCiv].get(iCiv)
-	if sSpecificName: return sSpecificName
+	if sSpecificName:
+		return sSpecificName
 	
 	return None
 	
