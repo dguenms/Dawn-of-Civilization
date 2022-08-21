@@ -3377,6 +3377,14 @@
 		<Spanish>%s1 Expansion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_NAME_CHANGED</Tag>
+		<English>The city of %s1 has changed its name to %s2.</English>
+		<French>The city of %s1 has changed its name to %s2.</French>
+		<German>The city of %s1 has changed its name to %s2.</German>
+		<Italian>The city of %s1 has changed its name to %s2.</Italian>
+		<Spanish>The city of %s1 has changed its name to %s2.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

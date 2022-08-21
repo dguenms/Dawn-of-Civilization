@@ -110,9 +110,15 @@ def updateVietnameseNames(iCiv, iPeriod):
 	if iPeriod == iPeriodVietnam:
 		saigon = city(*tSaigon)
 		if saigon:
-			saigon.setName("Saigon", False)
+			renameOwnedCity(saigon, "Saigon")
 
 # methods
+
+def renameOwnedCity(city, sName):
+	sOldName = city.getName()
+	city.setName(sName, False)
+	
+	message(city.getOwner(), "TXT_KEY_INTERFACE_CITY_NAME_CHANGED", sOldName, sName, location=city, button="Art/Interface/Buttons/Actions/FoundCity.dds")
 
 def isResurrected(iPlayer):
 	return data.civs[iPlayer].iResurrections > 0
@@ -190,13 +196,13 @@ def updateCityNames(iPlayer):
 	for city in cities.owner(iPlayer):
 		sNewName = getRenameName(iPlayer, city.getName())
 		if sNewName is not None:
-			city.setName(sNewName, False)
+			renameOwnedCity(city, sNewName)
 			
 def updateCityNamesFound(iPlayer):
 	for city in cities.owner(iPlayer):
 		sNewName = getFoundName(iPlayer, (city.getX(), city.getY()))
 		if sNewName != "-1":
-			city.setName(sNewName, False)
+			renameOwnedCity(city, sNewName)
 			
 def findLocations(iCiv, sName):
 	return plots.all().where(lambda p: getFoundName(iCiv, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
@@ -271,7 +277,7 @@ def applyCommunistNames(iPlayer):
 	for city in cities.owner(iPlayer):
 		sName = city.getName()
 		if sName in dCommunistNames:
-			city.setName(dCommunistNames[sName], False)
+			renameOwnedCity(city, dCommunistNames[sName])
 			
 def revertCommunistNames(iPlayer):
 	for city in cities.owner(iPlayer):
@@ -280,8 +286,8 @@ def revertCommunistNames(iPlayer):
 		
 		if sIdentifier in dCommunistNames:
 			sRename = getRenameName(iPlayer, sIdentifier)
-			
-			if sRename: city.setName(sRename, False)
+			if sRename:
+				renameOwnedCity(city, sRename)
 			
 tEraNames = (
 # ancient
@@ -292,18 +298,18 @@ tEraNames = (
 {
 	"Chang'an"		:	"Xi'an",
 	'Zhongdu'		:	'Beijing',
-	'Indraprastha'		:	'Dilli',
+	'Indraprastha'	:	'Dilli',
 	'Roha'			:	'Lalibela',
 },
 # renaissance
 {
-	'Pataliputra'		:	'Patna',
+	'Pataliputra'	:	'Patna',
 	'Haojing'		:	'Aomen',
 	'Nidaros'		:	'Trondheim',
 	'Roskilde'		:	'K&#248;benhavn',
 	'Haithabu'		:	'Hamburg',
-	'Novokholmogory'	:	"Arkhangel'sk",
-	'Spas na Kholmu'	:	'Krasnyj Kholm',
+	'Novokholmogory':	"Arkhangel'sk",
+	'Spas na Kholmu':	'Krasnyj Kholm',
 	'Tumasik'		:	'Singapura',
 	'Sundapura'		:	'Jayakarta',
 	'Buda'			:	'Budapest',
@@ -358,7 +364,7 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 			if not sNewName:
 				sNewName = sNewIdentifier
 			
-			city.setName(sNewName, False)
+			renameOwnedCity(city, sNewName)
 
 @handler("religionSpread")
 def onReligionSpread(iReligion, iPlayer, city):
@@ -366,11 +372,13 @@ def onReligionSpread(iReligion, iPlayer, city):
 
 	if iCiv == iIndonesia:
 		if iReligion == iIslam:
-			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
+			if city.getName() == 'Yogyakarta': 
+				renameOwnedCity(city, "Mataram")
 			
 	# easter egg
 	if iReligion == iBuddhism:
-		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
+		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: 
+			renameOwnedCity(city, "Buddhapest")
 
 @handler("revolution")
 def onRevolution(iPlayer):
@@ -389,7 +397,7 @@ def onGreatPersonBorn(unit, iPlayer):
 		if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
 			for city in cities.owner(iPlayer):
 				if city.getName() == "Pitic":
-					city.setName("Hermosillo", False)
+					renameOwnedCity(city, "Hermosillo")
 
 
 # city coordinates
