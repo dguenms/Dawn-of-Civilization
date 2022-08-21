@@ -3974,7 +3974,7 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		}
 
 		// report event to Python, along with some other key state (Leoreth: moved before diplomacy in case the event starts a war)
-		if (!isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+		if (!isHasEverMet(eIndex))
 		{
 			CvEventReporter::getInstance().firstContact(getID(), eIndex);
 		}

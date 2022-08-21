@@ -1186,4 +1186,5 @@ class RestoredContact:
 		eventManager.addEventHandler("restoredContact", self.onRestoredContact)
 	
 	def onRestoredContact(self, (iOurTeam, iTheirTeam)):
-		addMessageNoIcon(team(iOurTeam).getLeaderID(), text("TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT", name(team(iTheirTeam).getLeaderID())))
+		if not minor(team(iTheirTeam).getLeaderID()):
+			addMessageNoIcon(team(iOurTeam).getLeaderID(), text("TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT", name(team(iTheirTeam).getLeaderID())))
