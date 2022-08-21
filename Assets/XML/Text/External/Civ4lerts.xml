@@ -832,19 +832,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_TEXT</Tag>
-		<English>UHV Fail Popup</English>
-		<French>UHV Fail Popup</French>
-		<German>UHV Fail Popup</German>
-		<Italian>UHV Fail Popup</Italian>
-		<Spanish>UHV Fail Popup</Spanish>
+		<English>Victory Fail Popup</English>
+		<French>Victory Fail Popup</French>
+		<German>Victory Fail Popup</German>
+		<Italian>Victory Fail Popup</Italian>
+		<Spanish>Victory Fail Popup</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_HOVER</Tag>
-		<English>When checked, a popup shows when the UHV fails</English>
-		<French>When checked, a popup shows when the UHV fails</French>
-		<German>When checked, a popup shows when the UHV fails</German>
-		<Italian>When checked, a popup shows when the UHV fails</Italian>
-		<Spanish>When checked, a popup shows when the UHV fails</Spanish>
+		<English>When checked, a popup shows when a victory goal fails</English>
+		<French>When checked, a popup shows when a victory goal fails</French>
+		<German>When checked, a popup shows when a victory goal fails</German>
+		<Italian>When checked, a popup shows when a victory goal fails</Italian>
+		<Spanish>When checked, a popup shows when a victory goal fails</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVSUCCESSPOPUP_TEXT</Tag>
+		<English>Victory Success Popup</English>
+		<French>Victory Success Popup</French>
+		<German>Victory Success Popup</German>
+		<Italian>Victory Success Popup</Italian>
+		<Spanish>Victory Success Popup</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVSUCCESSPOPUP_HOVER</Tag>
+		<English>When checked, a popup shows when a victory goal succeeds</English>
+		<French>When checked, a popup shows when a victory goal succeeds</French>
+		<German>When checked, a popup shows when a victory goal succeeds</German>
+		<Italian>When checked, a popup shows when a victory goal succeeds</Italian>
+		<Spanish>When checked, a popup shows when a victory goal succeeds</Spanish>
 	</TEXT>
 
 	<!-- MoreCiv4lerts_CIV4GameText -->
