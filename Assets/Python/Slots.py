@@ -1,4 +1,5 @@
 from Core import *
+from RFCUtils import *
 
 from SettlerMaps import getMap as getSettlerMap
 from WarMaps import getMap as getWarMap
@@ -65,7 +66,32 @@ def getImpact(iCiv):
 	if iCiv in dInfluences[iActiveCiv]:
 		return iImpactPlayer
 	
-	return infos.civ(iCiv).getImpact()
+	iImpact = infos.civ(iCiv).getImpact()
+	
+	if not canEverRespawn(iCiv):
+		iImpact -= 1
+	
+	if isOutdated(iCiv):
+		iImpact -= 1
+	
+	return max(iImpactMarginal, iImpact)
+			
+def isOutdated(iCiv):
+	lResurrections = dResurrections[iCiv]
+	if not lResurrections:
+		return True
+	
+	if year() >= dFall[iCiv]:
+		iFirstResurrectionStart = lResurrections[0][0]
+		iLastResurrectionEnd = lResurrections[-1][1]
+		
+		if iLastResurrectionEnd != 2020:
+			return True
+		
+		if iFirstResurrectionStart > dFall[iCiv]:
+			return True
+	
+	return False
 
 def getNextBirth():
 	lUpcomingCivs = [iCiv for iCiv, iYear in dBirth.items() if turn() < year(iYear) - turns(5)]
