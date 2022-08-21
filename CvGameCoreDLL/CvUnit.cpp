@@ -3856,13 +3856,13 @@ void CvUnit::airCircle(bool bStart)
 		return;
 	}
 
+	//cancel previos missions
+	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
+
 	if (GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isOption(PLAYEROPTION_HIDE_AIR_CIRCLING))
 	{
 		return;
 	}
-
-	//cancel previos missions
-	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
 
 	if (bStart)
 	{
