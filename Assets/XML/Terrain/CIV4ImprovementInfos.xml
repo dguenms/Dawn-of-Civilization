@@ -2087,7 +2087,10 @@
 			<Description>TXT_KEY_IMPROVEMENT_NATURE_RESERVE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_NATURE_RESERVE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_NATURE_RESERVE</ArtDefineTag>
-			<YieldChanges/>
+			<YieldChanges>
+				<iYield>0</iYield>
+				<iYield>-1</iYield>
+			</YieldChanges>
 			<RiverSideYieldChange>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
