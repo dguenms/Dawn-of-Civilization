@@ -1183,8 +1183,7 @@ class CancelableTribute(AbstractStatefulAlert):
 class RestoredContact:
 
 	def __init__(self, eventManager):
-		AbstractStatefulAlert.__init__(self, eventManager)
 		eventManager.addEventHandler("restoredContact", self.onRestoredContact)
 	
-	def onRestoredContact(self, iOurTeam, iTheirTeam):
+	def onRestoredContact(self, (iOurTeam, iTheirTeam)):
 		addMessageNoIcon(team(iOurTeam).getLeaderID(), text("TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT", name(team(iTheirTeam).getLeaderID())))
