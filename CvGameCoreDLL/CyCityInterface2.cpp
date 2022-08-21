@@ -170,5 +170,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("setCivCulture", &CyCity::setCivCulture, "void (int iCivilization, int iNewValue)")
 		.def("isOriginalOwner", &CyCity::isOriginalOwner, "bool (int iPlayer)")
 		.def("getCorporationBadHappiness", &CyCity::getCorporationBadHappiness, "int ()")
+		.def("getCorporationCount", &CyCity::getCorporationCount, "int ()")
 		;
 }

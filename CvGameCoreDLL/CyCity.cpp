@@ -2883,3 +2883,8 @@ int CyCity::getCorporationBadHappiness()
 {
 	return m_pCity ? m_pCity->getCorporationBadHappiness() : -1;
 }
+
+int CyCity::getCorporationCount()
+{
+	return m_pCity ? m_pCity->getCorporationCount() : -1;
+}

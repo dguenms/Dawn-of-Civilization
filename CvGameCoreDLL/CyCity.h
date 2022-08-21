@@ -610,6 +610,7 @@ public:
 	void setCivCulture(int iCiv, int iNewValue);
 	bool isOriginalOwner(int iPlayer);
 	int getCorporationBadHappiness();
+	int getCorporationCount();
 
 private:
 	CvCity* m_pCity;
