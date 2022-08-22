@@ -781,23 +781,28 @@ def evacuate(iPlayer, tPlot):
 def expelUnits(iPlayer, area):
 	for plot in area:
 		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(lambda unit: unit.getOwner()):
+			ownerUnits = ownerUnits.where(lambda unit: not unit.isNone() and not unit.isCargo())
+			landUnits, seaUnits = ownerUnits.split(lambda unit: unit.getDomainType() != DomainTypes.DOMAIN_SEA)
+		
 			possibleDestinations = cities.owner(iOwner).without(area.cities())
-			if plot.isWater():
-				destination = possibleDestinations.coastal().closest(plot)
-			else:
-				destination = possibleDestinations.closest(plot)
+			
+			if landUnits:
+				moveDomainUnits(iPlayer, iOwner, landUnits, possibleDestinations.closest(plot))
+			
+			if seaUnits:
+				moveDomainUnits(iPlayer, iOwner, seaUnits, possibleDestinations.coastal().closest(plot))
 				
-			for unit in ownerUnits.where(lambda unit: not unit.isCargo()):
-				if unit.isNone():
-					continue
-			
-				if not is_minor(iOwner) and destination:
-					move(unit, destination)
-				else:
-					unit.kill(False, -1)
-			
-			if destination:
-				message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(ownerUnits), adjective(iPlayer), destination.getName())
+# used: RFCUtils
+def moveDomainUnits(iPlayer, iOwner, units, destination):
+	if not is_minor(iOwner) and destination:
+		for unit in units:
+			move(unit, destination)
+		
+		message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(units), adjective(iPlayer), destination.getName())
+	
+	else:
+		for unit in units:
+			unit.kill(False, -1)
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
 # TODO: should be civ based not player based
