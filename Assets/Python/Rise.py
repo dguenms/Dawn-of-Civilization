@@ -563,7 +563,7 @@ class Birth(object):
 				continue
 		
 			if cities.owner(unit):
-				closest = cities.owner(unit).closest(unit)
+				closest = cities.owner(unit.getOwner()).closest(unit)
 			elif unit.getDomainType() == DomainTypes.DOMAIN_SEA or unit.isCargo():
 				if edge.sea():
 					closest = edge.sea().closest(unit)
