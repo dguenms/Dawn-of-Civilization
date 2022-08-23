@@ -165,7 +165,7 @@ class CityBuildingCount(ThresholdRequirement):
 			goal.check()
 	
 	def expire_building_built(self, goal, city, iBuilding):
-		if self.iBuilding == iBuilding and isWonder(iBuilding):
+		if not isinstance(self.iBuilding, Aggregate) and self.iBuilding == iBuilding and isWonder(iBuilding):
 			goal.expire()
 	
 	def value(self, iPlayer, city, iBuilding):
