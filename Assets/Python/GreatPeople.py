@@ -60,6 +60,7 @@ def create(iPlayer, iUnit, tile):
 
 def getAlias(iCiv, iType, iEra):
 	if iCiv in [iHarappa, iTamils]: return iIndia
+	elif iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam: return iArabia
 	elif iCiv == iIran: return iPersia
 	
 	return iCiv
