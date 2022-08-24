@@ -31,7 +31,7 @@ def checkResurrection():
 		
 		# civs entirely controlled by minors will always respawn
 		for iCiv in possibleResurrections:
-			if cities.respawn(iCiv).all(lambda city: is_minor(city)):
+			if cities.respawn(iCiv).all(is_minor):
 				resurrectionCities = getResurrectionCities(iCiv)
 				if canResurrectFromCities(iCiv, resurrectionCities):
 					doResurrection(iCiv, resurrectionCities)
@@ -190,6 +190,10 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	# determine prevalent religion in the resurrection area
 	iNewStateReligion = getPrevalentReligion(plots.of(resurrectionCities))
 	
+	# set state religion based on religions in the area
+	if iNewStateReligion >= 0:
+		pPlayer.setLastStateReligion(iNewStateReligion)
+	
 	for city in resurrectionCities:
 		iOwner = city.getOwner()
 		pOwner = player(iOwner)
@@ -248,10 +252,6 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 		iSiege: iArmySize + iNumCities,
 	}
 	createRoleUnits(iPlayer, capital, dStartingUnits.items())
-	
-	# set state religion based on religions in the area
-	if iNewStateReligion >= 0:
-		pPlayer.setLastStateReligion(iNewStateReligion)
 	
 	switchCivics(iPlayer)
 		
