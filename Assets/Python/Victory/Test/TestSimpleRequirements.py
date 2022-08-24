@@ -1179,6 +1179,9 @@ class TestRouteConnection(ExtendedTestCase):
 	def test_repr(self):
 		self.assertEqual(repr(self.requirement), "RouteConnection(Railroad, Start Area, Target Area)")
 	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "Target Area")
 	

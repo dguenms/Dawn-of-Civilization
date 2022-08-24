@@ -386,11 +386,12 @@ class RouteConnection(Requirement):
 	def connected(self, start, evaluator):
 		if not self.valid(start, evaluator):
 			return False
-		
-		if start in self.targets:
+			
+		targets = self.targets.create()
+		if start in targets:
 			return True
-		
-		targets = self.targets.where(lambda plot: self.valid(plot, evaluator))
+			
+		targets = targets.where(lambda plot: self.valid(plot, evaluator))
 		if not targets:
 			return False
 		
