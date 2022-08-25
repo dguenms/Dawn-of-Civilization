@@ -3513,6 +3513,14 @@
 		<Spanish>Mongol armies from Central Asia are on their way to conquer Persia!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PERIOD_AREA_CHANGE</Tag>
+		<English>Our civilization has entered a new period, changing the territory we consider historical.</English>
+		<French>Our civilization has entered a new period, changing the territory we consider historical.</French>
+		<German>Our civilization has entered a new period, changing the territory we consider historical.</German>
+		<Italian>Our civilization has entered a new period, changing the territory we consider historical.</Italian>
+		<Spanish>Our civilization has entered a new period, changing the territory we consider historical.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

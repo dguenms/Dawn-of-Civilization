@@ -24,6 +24,7 @@ import EventSigns
 import GreatPeople
 import History
 import Logging
+import Messages
 import Periods
 import Plague
 import Religions
