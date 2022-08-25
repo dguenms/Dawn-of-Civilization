@@ -650,8 +650,8 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 
 	// Leoreth
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
-		parseMinorReligionHelp(widgetDataStruct, szBuffer);
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
+		parsePaganReligionHelp(widgetDataStruct, szBuffer);
 		break;
 
 	case WIDGET_PEDIA_DESCRIPTION:
@@ -971,8 +971,8 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		break;
 
 	// Leoreth
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
-		doPediaMinorReligionJump(widgetDataStruct);
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
+		doPediaPaganReligionHelp(widgetDataStruct);
 		break;
 
 	case WIDGET_PEDIA_DESCRIPTION:
@@ -1180,7 +1180,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_JUMP_TO_CORPORATION:
 	case WIDGET_PEDIA_JUMP_TO_TERRAIN:
 	case WIDGET_PEDIA_JUMP_TO_FEATURE:
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
 	case WIDGET_PEDIA_FORWARD:
 	case WIDGET_PEDIA_BACK:
 	case WIDGET_PEDIA_MAIN:
@@ -1616,11 +1616,11 @@ void CvDLLWidgetData::doPediaBuildingJump(CvWidgetDataStruct &widgetDataStruct)
 }
 
 // Leoreth
-void CvDLLWidgetData::doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct)
+void CvDLLWidgetData::doPediaPaganReligionHelp(CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
-	argsList.add(getUniqueBuilding((CivilizationTypes)widgetDataStruct.m_iData1, PAGAN_TEMPLE));
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToBuilding", argsList.makeFunctionArgs());
+	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToPaganReligion", argsList.makeFunctionArgs());
 }
 
 void CvDLLWidgetData::doPediaProjectJump(CvWidgetDataStruct &widgetDataStruct)
@@ -5104,11 +5104,11 @@ void CvDLLWidgetData::parseCivilizationHelp(CvWidgetDataStruct &widgetDataStruct
 }
 
 // Leoreth
-void CvDLLWidgetData::parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+void CvDLLWidgetData::parsePaganReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
-	if (widgetDataStruct.m_iData1 != 0)
+	if (widgetDataStruct.m_iData1 >= 0)
 	{
-		GAMETEXT.parseMinorReligionHelp(szBuffer, (CivilizationTypes)widgetDataStruct.m_iData1);
+		GAMETEXT.parsePaganReligionHelp(szBuffer, (PaganReligionTypes)widgetDataStruct.m_iData1);
 	}
 }
 

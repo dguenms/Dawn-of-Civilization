@@ -21586,16 +21586,9 @@ bool CvGameTextMgr::setBuildingAdditionalBombardDefenseHelp(CvWStringBuffer &szB
 // BUG - Building Additional Bombard Defense - end
 
 // Leoreth
-void CvGameTextMgr::parseMinorReligionHelp(CvWStringBuffer &szBuffer, CivilizationTypes eCivilization)
+void CvGameTextMgr::parsePaganReligionHelp(CvWStringBuffer &szBuffer, PaganReligionTypes ePaganReligion)
 {
-	const wchar* szPaganReligionName = GC.getPaganReligionInfo((PaganReligionTypes)GC.getCivilizationInfo(eCivilization).getPaganReligion()).getDescription();
-
-	if (CvWString(szPaganReligionName).empty())
-	{		
-		szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
-	}
-
-	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName, gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
+	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getPaganReligionInfo(ePaganReligion).getText(), gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
 }
 
 void CvGameTextMgr::setSatelliteLimitHelp(CvWStringBuffer& szBuffer, CvCity& city)

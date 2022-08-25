@@ -563,7 +563,7 @@ enum WidgetTypes					// Exposed to Python
 // BUG - Trade Denial - end
 
 	// Leoreth
-	WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION,
+	WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION,
 
 // BUG - Foreign Advisor INFO Trade - start
 	WIDGET_TRADE_ROUTES,

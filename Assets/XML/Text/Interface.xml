@@ -2543,6 +2543,14 @@
 		<Spanish>Culture Levels</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_PAGAN_RELIGIONS</Tag>
+		<English>Pagan Religions</English>
+		<French>Pagan Religions</French>
+		<German>Heidnische Religions</German>
+		<Italian>Pagan Religionss</Italian>
+		<Spanish>Pagan Religion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BUILDINGS</Tag>
 		<English>Buildings</English>
 		<French>B&#226;timents</French>

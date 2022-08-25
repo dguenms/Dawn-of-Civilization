@@ -82,7 +82,7 @@ public:
 // BUG - Building Additional Great People - end
 	DllExport void parseGreatGeneralHelp(CvWStringBuffer &szBuffer, CvPlayer& kPlayer);
 	DllExport void parseGreatSpyHelp(CvWStringBuffer &szBuffer, CvPlayer& kPlayer); // Leoreth
-	DllExport void parseMinorReligionHelp(CvWStringBuffer &szBuffer, CivilizationTypes eCivilization); // Leoreth
+	DllExport void parsePaganReligionHelp(CvWStringBuffer &szBuffer, PaganReligionTypes ePaganReligion); // Leoreth
 
 	DllExport void setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool bCivilopediaText = false, bool bPlayerContext = false, bool bStrategyText = false, bool bTreeInfo = true, TechTypes eFromTech = NO_TECH);
 // BUG - Trade Denial - start

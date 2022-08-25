@@ -320,6 +320,7 @@ def createCivilopedia():
 								PEDIA_LEADERS			: pediaMainScreen,
 								PEDIA_CIVICS			: pediaMainScreen,
 								PEDIA_RELIGIONS			: pediaMainScreen,
+								PEDIA_PAGAN_RELIGIONS	: pediaMainScreen,
 								PEDIA_CORPORATIONS		: pediaMainScreen,
 								PEDIA_SPECIALISTS		: pediaMainScreen,
 								PEDIA_TECHS			: pediaMainScreen,
@@ -353,6 +354,7 @@ def createCivilopedia():
 							PEDIA_LEADERS			: pediaMainScreen,
 							PEDIA_CIVICS			: pediaMainScreen,
 							PEDIA_RELIGIONS			: pediaMainScreen,
+							PEDIA_PAGAN_RELIGIONS	: pediaMainScreen,
 							PEDIA_CORPORATIONS		: pediaMainScreen,
 							PEDIA_SPECIALISTS		: pediaMainScreen,
 							PEDIA_TECHS			: pediaMainScreen,
@@ -424,6 +426,11 @@ def pediaJumpToCivic(argsList):
 
 def pediaJumpToReligion(argsList):
 	pediaMainScreen.pediaJump(PEDIA_RELIGIONS, argsList[0], True, False)
+	
+	
+
+def pediaJumpToPaganReligion(argsList):
+	pediaMainScreen.pediaJump(PEDIA_PAGAN_RELIGIONS, argsList[0], True, False)
 
 
 

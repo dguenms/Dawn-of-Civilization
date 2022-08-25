@@ -246,8 +246,8 @@ public:
 	void parseStabilityMilitaryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseStabilityHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 
-	void parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
-	void doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct);
+	void parsePaganReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void doPediaPaganReligionHelp(CvWidgetDataStruct &widgetDataStruct);
 
 	void parseRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void doPediaRouteJump(CvWidgetDataStruct &widgetDataStruct);
