@@ -419,5 +419,9 @@
 			<Type>ART_DEF_MOVIE_AL_KHAZNEH</Type>
 			<Path>Art/Movies/Wonders/PetraMonastery.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_FIREWALL</Type>
+			<Path>Art/Movies/Wonders/GreatFirewall.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

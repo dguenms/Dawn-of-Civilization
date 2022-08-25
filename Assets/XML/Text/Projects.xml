@@ -58,6 +58,22 @@
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GREAT_FIREWALL</Tag>
+		<English>Great Firewall</English>
+		<French>Great Firewall</French>
+		<German>Great Firewall</German>
+		<Italian>Great Firewall</Italian>
+		<Spanish>Great Firewall</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GREAT_FIREWALL_HELP</Tag>
+		<English>[ICON_BULLET]+200% Counterespionage against all Civilizations[NEWLINE][ICON_BULLET]+1[ICON_HAPPY] per 20%[ICON_ESPIONAGE] rate</English>
+		<French>[ICON_BULLET]+200% Counterespionage against all Civilizations[NEWLINE][ICON_BULLET]+1[ICON_HAPPY] per 20%[ICON_ESPIONAGE] rate</French>
+		<German>[ICON_BULLET]+200% Counterespionage against all Civilizations[NEWLINE][ICON_BULLET]+1[ICON_HAPPY] per 20%[ICON_ESPIONAGE] rate</German>
+		<Italian>[ICON_BULLET]+200% Counterespionage against all Civilizations[NEWLINE][ICON_BULLET]+1[ICON_HAPPY] per 20%[ICON_ESPIONAGE] rate</Italian>
+		<Spanish>[ICON_BULLET]+200% Counterespionage against all Civilizations[NEWLINE][ICON_BULLET]+1[ICON_HAPPY] per 20%[ICON_ESPIONAGE] rate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_MARS_FRAMING</Tag>
 		<English>Mars Framing</English>
 		<French>

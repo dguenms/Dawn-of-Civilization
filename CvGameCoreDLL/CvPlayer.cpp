@@ -15917,9 +15917,16 @@ int CvPlayer::getEspionageMissionCostModifier(EspionageMissionTypes eMission, Pl
 
 	// Counterespionage Mission Mod
 	CvTeam& kTargetTeam = GET_TEAM(GET_PLAYER(eTargetPlayer).getTeam());
-	if (kTargetTeam.getCounterespionageModAgainstTeam(getTeam()) > 0)
+	int iCounterespionageModifier = kTargetTeam.getCounterespionageModAgainstTeam(getTeam());
+
+	if (kTargetTeam.getProjectCount(PROJECT_GREAT_FIREWALL))
 	{
-		iModifier *= kTargetTeam.getCounterespionageModAgainstTeam(getTeam());
+		iCounterespionageModifier += 200;
+	}
+
+	if (iCounterespionageModifier > 0)
+	{
+		iModifier *= iCounterespionageModifier;
 		iModifier /= 100;
 	}
 

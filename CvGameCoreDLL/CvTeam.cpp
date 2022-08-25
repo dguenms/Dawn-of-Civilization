@@ -4996,6 +4996,16 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
+						else if (eIndex == PROJECT_GREAT_FIREWALL)
+						{
+							int iLoop;
+							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+							{
+								pCity->changeCommerceHappinessPer(COMMERCE_ESPIONAGE, iChange * 5);
+							}
+						}
+
+						// Leoreth
 						else if (eIndex == PROJECT_LUNAR_COLONY)
 						{
 							GET_PLAYER((PlayerTypes)iI).changeSpaceProductionModifier(100);

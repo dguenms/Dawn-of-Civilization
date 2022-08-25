@@ -296,6 +296,11 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeCommerceHappinessPer(((CommerceTypes)iI), GC.getCommerceInfo((CommerceTypes)iI).getInitialHappiness());
 	}
 
+	if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GREAT_FIREWALL) > 0)
+	{
+		changeCommerceHappinessPer(COMMERCE_ESPIONAGE, 5);
+	}
+
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).isBuildingFree((BuildingTypes)iI))

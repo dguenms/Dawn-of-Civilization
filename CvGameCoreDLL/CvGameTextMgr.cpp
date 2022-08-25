@@ -12250,6 +12250,12 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_HELP"));
 	}
 
+	if (eProject == PROJECT_GREAT_FIREWALL)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_GREAT_FIREWALL_HELP"));
+	}
+
 	if (eProject == PROJECT_LUNAR_COLONY)
 	{
 		szBuffer.append(NEWLINE);

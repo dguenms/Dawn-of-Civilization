@@ -4923,6 +4923,15 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 2 / 1000;
 	}
 
+	if (eProject == PROJECT_GREAT_FIREWALL)
+	{
+		iValue += 5;
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_BIG_ESPIONAGE))
+		{
+			iValue += 5;
+		}
+	}
+
 	if (eProject == PROJECT_LUNAR_COLONY)
 	{
 		iValue += 5;
