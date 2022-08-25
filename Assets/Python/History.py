@@ -370,6 +370,8 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 				makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
 				makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 				
+				message(city.getOwner(), "TXT_KEY_MESSAGE_AMERICAN_WEST_COAST_CONQUERORS", adjective(iPlayer), city.getName(), color=iRed, location=city, button=infos.unit(iMinuteman).getButton())
+				
 		if enemyCities.count() < 2:
 			for plot in plots.of(lWestCoast).without(enemyCities).sample(2 - enemyCities.count()):
 				makeUnit(iPlayer, iSettler, plot)
@@ -392,6 +394,8 @@ def russianSiberianSettlement(iTech, iTeam, iPlayer):
 			
 			makeUnits(iPlayer, iRifleman, spawnPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
 			makeUnits(iPlayer, iCannon, spawnPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			
+			message(vladivostok.getOwner(), "TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS", adjective(iPlayer), vladivostok.getName(), color=iRed, location=vladivostok, button=infos.unit(iRifleman).getButton())
 			
 		elif isFree(iPlayer, tVladivostok, True):
 			player(iPlayer).found(*tVladivostok)

@@ -3393,6 +3393,126 @@
 		<Spanish>The city of %s1 has changed its name to %s2.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_AMERICAN_WEST_COAST_CONQUERORS</Tag>
+		<English>%s1 troops staking their claim on the West Coast have appeared near %s2!</English>
+		<French>%s1 troops staking their claim on the West Coast have appeared near %s2!</French>
+		<German>%s1 troops staking their claim on the West Coast have appeared near %s2!</German>
+		<Italian>%s1 troops staking their claim on the West Coast have appeared near %s2!</Italian>
+		<Spanish>%s1 troops staking their claim on the West Coast have appeared near %s2!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS</Tag>
+		<English>%s1 troops claiming the Siberian coast have appeared near %s2!</English>
+		<French>%s1 troops claiming the Siberian coast have appeared near %s2!</French>
+		<German>%s1 troops claiming the Siberian coast have appeared near %s2!</German>
+		<Italian>%s1 troops claiming the Siberian coast have appeared near %s2!</Italian>
+		<Spanish>%s1 troops claiming the Siberian coast have appeared near %s2!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GENERIC</Tag>
+		<English>We are receiving reports that a major attack of %s1 conquerors on our territory is imminent.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_CAR</Tag>
+		<English>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</English>
+		<French>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</French>
+		<German>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</German>
+		<Italian>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_GRE</Tag>
+		<English>We are receiving reports that a Roman army is planning to intervene in Greece!</English>
+		<French>We are receiving reports that a Roman army is planning to intervene in Greece!</French>
+		<German>We are receiving reports that a Roman army is planning to intervene in Greece!</German>
+		<Italian>We are receiving reports that a Roman army is planning to intervene in Greece!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to intervene in Greece!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_CEL</Tag>
+		<English>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</English>
+		<French>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</French>
+		<German>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</German>
+		<Italian>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</Italian>
+		<Spanish>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_EGY</Tag>
+		<English>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</English>
+		<French>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</French>
+		<German>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</German>
+		<Italian>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_BAB</Tag>
+		<English>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</English>
+		<French>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</French>
+		<German>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</German>
+		<Italian>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</Italian>
+		<Spanish>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_EGY</Tag>
+		<English>We are receiving reports that the Greeks are planning to subdue Egypt!</English>
+		<French>We are receiving reports that the Greeks are planning to subdue Egypt!</French>
+		<German>We are receiving reports that the Greeks are planning to subdue Egypt!</German>
+		<Italian>We are receiving reports that the Greeks are planning to subdue Egypt!</Italian>
+		<Spanish>We are receiving reports that the Greeks are planning to subdue Egypt!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_PER</Tag>
+		<English>We are receiving reports that the Greek armies intend to capture the heart of Persia!</English>
+		<French>We are receiving reports that the Greek armies intend to capture the heart of Persia!</French>
+		<German>We are receiving reports that the Greek armies intend to capture the heart of Persia!</German>
+		<Italian>We are receiving reports that the Greek armies intend to capture the heart of Persia!</Italian>
+		<Spanish>We are receiving reports that the Greek armies intend to capture the heart of Persia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TAM_INO</Tag>
+		<English>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</English>
+		<French>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</French>
+		<German>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</German>
+		<Italian>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Italian>
+		<Spanish>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_SPA_MOO</Tag>
+		<English>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</English>
+		<French>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</French>
+		<German>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</German>
+		<Italian>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</Italian>
+		<Spanish>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TUR_ARA</Tag>
+		<English>Seljuk armies from Central Asia are gathering to push into Persia!</English>
+		<French>Seljuk armies from Central Asia are gathering to push into Persia!</French>
+		<German>Seljuk armies from Central Asia are gathering to push into Persia!</German>
+		<Italian>Seljuk armies from Central Asia are gathering to push into Persia!</Italian>
+		<Spanish>Seljuk armies from Central Asia are gathering to push into Persia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TUR_BYZ</Tag>
+		<English>Seljuk armies are assembling to further push into Anatolia!</English>
+		<French>Seljuk armies are assembling to further push into Anatolia!</French>
+		<German>Seljuk armies are assembling to further push into Anatolia!</German>
+		<Italian>Seljuk armies are assembling to further push into Anatolia!</Italian>
+		<Spanish>Seljuk armies are assembling to further push into Anatolia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_MON_TUR</Tag>
+		<English>Mongol armies from Central Asia are on their way to conquer Persia!</English>
+		<French>Mongol armies from Central Asia are on their way to conquer Persia!</French>
+		<German>Mongol armies from Central Asia are on their way to conquer Persia!</German>
+		<Italian>Mongol armies from Central Asia are on their way to conquer Persia!</Italian>
+		<Spanish>Mongol armies from Central Asia are on their way to conquer Persia!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

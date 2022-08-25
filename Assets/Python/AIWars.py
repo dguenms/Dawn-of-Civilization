@@ -61,7 +61,7 @@ iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, NoCiv, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
@@ -187,7 +187,13 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if iPreferredTarget >= 0 and player(iPreferredTarget).isAlive() and team(iPreferredTarget).isVassal(iPlayer):
 		return
 	
+	if tPrereqConquest and not isConquered(tPrereqConquest):
+		return
+	
 	iStartTurn = year(iYear) + turns(data.iSeed % 10 - 5)
+	
+	if turn() == iStartTurn - turns(5):
+		warnConquest(iPlayer, iCiv, iPreferredTargetCiv, tTL, tBR)
 	
 	if turn() < player(iCiv).getLastBirthTurn() + turns(3): 
 		return
@@ -195,11 +201,16 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if not (iStartTurn <= turn() <= iStartTurn + iIntervalTurns):
 		return
 	
-	if tPrereqConquest and not isConquered(tPrereqConquest):
-		return
-	
 	spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
 	data.lConquest[iID] = True
+
+
+def warnConquest(iPlayer, iCiv, iPreferredTargetCiv, tTL, tBR):
+	text = text_if_exists("TXT_KEY_MESSAGE_CONQUERORS_%s_%s" % (infos.civ(iCiv).getIdentifier(), infos.civ(iPreferredTargetCiv).getIdentifier()), adjective(iPlayer), otherwise="TXT_KEY_MESSAGE_CONQUERORS_GENERIC")
+	conquerorCities = cities.owner(iPlayer)
+	
+	for iTarget, targetCities in cities.rectangle(tTL, tBR).notowner(iPlayer).grouped(CyCity.getOwner):
+		message(iTarget, str(text), color=iRed, location=targetCities.closest_all(conquerorCities), button=infos.civ(iCiv).getButton())
 
 
 def isConquered(tConquest):
