@@ -20423,7 +20423,7 @@ void CvGameTextMgr::setEspionageCostHelp(CvWStringBuffer &szBuffer, EspionageMis
 		}
 
 		// My points VS. Your points to mod cost
-		iTempModifier = ::getEspionageModifier(kPlayer.getTeam(), GET_PLAYER(eTargetPlayer).getTeam()) - 100;
+		/*iTempModifier = ::getEspionageModifier(kPlayer.getTeam(), GET_PLAYER(eTargetPlayer).getTeam()) - 100;
 		if (0 != iTempModifier)
 		{
 			szBuffer.append(SEPARATOR);
@@ -20431,7 +20431,7 @@ void CvGameTextMgr::setEspionageCostHelp(CvWStringBuffer &szBuffer, EspionageMis
 			szBuffer.append(gDLL->getText("TXT_KEY_ESPIONAGE_EP_RATIO_MOD", iTempModifier));
 			iModifier *= 100 + iTempModifier;
 			iModifier /= 100;
-		}
+		}*/
 
 		// Counterespionage Mission Mod
 		CvTeam& kTargetTeam = GET_TEAM(GET_PLAYER(eTargetPlayer).getTeam());

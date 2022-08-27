@@ -6824,28 +6824,21 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission, int iCostModifier)
 {
 	int iExperience = GC.getEspionageMissionInfo(eMission).getBaseExperience();
+
 	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
-
-	if (iDifficulty <= 10)
-	{
-		iExperience /= 2;
-	}
-	else if (iDifficulty > 20)
-	{
-		int iModifier = (iDifficulty - 20) / 10; // +1 at >20, +4 at >50, +8 at >90
-		iExperience *= (100 + iModifier * 50);
-		iExperience /= 100;
-	}
-
-	if (iExperience < 100)
+	iExperience += min(iDifficulty / 10, 5);
+	if (iExperience == 0)
 	{
 		return false;
 	}
 
+	iExperience *= min(iCostModifier, 200);
 	iExperience /= 100;
+
+	iExperience = max(iExperience, 1);
 
 	changeExperience(iExperience);
 	testPromotionReady();
@@ -6990,7 +6983,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 	}
 
 	PlayerTypes eTargetPlayer = plot()->getOwnerINLINE();
-	int iMissionCost;
+	int iMissionCostModifier;
 
 	if (NO_ESPIONAGEMISSION == eMission)
 	{
@@ -7018,7 +7011,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 			return false;
 		}
 
-		iMissionCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost(eMission, eTargetPlayer, plot(), iData, this);
+		iMissionCostModifier = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCostModifier(eMission, eTargetPlayer, plot(), iData, this);
 		if (GET_PLAYER(getOwnerINLINE()).doEspionageMission(eMission, eTargetPlayer, plot(), iData, this))
 		{
 			if (plot()->isActiveVisible(false))
@@ -7044,7 +7037,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission);
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission, iMissionCostModifier);
 			}
 
 			return true;

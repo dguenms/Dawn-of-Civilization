@@ -12,6 +12,7 @@
 			<iCost>15</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bSeeDemographics>1</bSeeDemographics>
+			<iBaseExperience>0</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_ESPIONAGE</Type>
@@ -19,6 +20,7 @@
 			<Help>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE_HELP</Help>
 			<iCost>100</iCost>
 			<bIsPassive>1</bIsPassive>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
@@ -28,6 +30,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
 			<iVisibilityLevel>1</iVisibilityLevel>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_INVESTIGATE_CITY</Type>
@@ -36,6 +39,7 @@
 			<bIsPassive>1</bIsPassive>
 			<bTargetsCity>1</bTargetsCity>
 			<bInvestigateCity>1</bInvestigateCity>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_RESEARCH</Type>
@@ -43,6 +47,7 @@
 			<iCost>130</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bSeeResearch>1</bSeeResearch>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_NO_ACTIVE_MISSIONS</Type>
@@ -50,6 +55,7 @@
 			<iCost>-1</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bNoActiveMissions>1</bNoActiveMissions>
+			<iBaseExperience>0</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_IMPROVEMENT</Type>
@@ -57,7 +63,7 @@
 			<iCost>75</iCost>
 			<bSelectPlot>1</bSelectPlot>
 			<bDestroyImprovement>1</bDestroyImprovement>
-			<iBaseExperience>50</iBaseExperience>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_BUILDING</Type>
@@ -66,7 +72,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>10</iDifficultyMod>
 			<iDestroyBuildingCostFactor>500</iDestroyBuildingCostFactor>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_PROJECT</Type>
@@ -75,14 +81,14 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>25</iDifficultyMod>
 			<iDestroyProjectCostFactor>500</iDestroyProjectCostFactor>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_PRODUCTION</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_PRODUCTION</Description>
 			<bTargetsCity>1</bTargetsCity>
 			<iDestroyProductionCostFactor>500</iDestroyProductionCostFactor>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_STEAL_TREASURY</Type>
@@ -91,7 +97,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>25</iDifficultyMod>
 			<iStealTreasuryTypes>100</iStealTreasuryTypes>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_INSERT_CULTURE</Type>
@@ -100,7 +106,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iCityInsertCultureAmountFactor>5</iCityInsertCultureAmountFactor>
 			<iCityInsertCultureCostFactor>500</iCityInsertCultureCostFactor>
-			<iBaseExperience>25</iBaseExperience>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_POISON_WATER</Type>
@@ -109,7 +115,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>-50</iDifficultyMod>
 			<iCityPoisonWaterCounter>5</iCityPoisonWaterCounter>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_UNHAPPINESS</Type>
@@ -118,7 +124,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>-50</iDifficultyMod>
 			<iCityUnhappinessCounter>8</iCityUnhappinessCounter>
-			<iBaseExperience>100</iBaseExperience>
+			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_REVOLT</Type>
@@ -126,7 +132,7 @@
 			<iCost>750</iCost> <!-- Default: 650 -->
 			<bTargetsCity>1</bTargetsCity>
 			<iCityRevoltCounter>1</iCityRevoltCounter>
-			<iBaseExperience>200</iBaseExperience>
+			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BUY_TECH</Type>
@@ -135,7 +141,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>25</iDifficultyMod>
 			<iBuyTechCostFactor>50</iBuyTechCostFactor>
-			<iBaseExperience>200</iBaseExperience>
+			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SWITCH_CIVIC</Type>
@@ -144,7 +150,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>50</iDifficultyMod>
 			<iSwitchCivicCostFactor>200000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
-			<iBaseExperience>300</iBaseExperience>
+			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SWITCH_RELIGION</Type>
@@ -153,7 +159,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>50</iDifficultyMod>
 			<iSwitchReligionCostFactor>250000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
-			<iBaseExperience>300</iBaseExperience>
+			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_COUNTERESPIONAGE</Type>
@@ -163,6 +169,7 @@
 			<iDifficultyMod>-100</iDifficultyMod>
 			<iCounterespionageNumTurns>10</iCounterespionageNumTurns>
 			<iCounterespionageMod>200</iCounterespionageMod>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_ASSASSINATE</Type>
@@ -172,7 +179,7 @@
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>50</iDifficultyMod>
 			<iDestroyUnitCostFactor>1</iDestroyUnitCostFactor>
-			<iBaseExperience>200</iBaseExperience>
+			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BRIBE</Type>
@@ -180,7 +187,7 @@
 			<iCost>250</iCost>
 			<iDifficultyMod>25</iDifficultyMod>
 			<iBuyUnitCostFactor>1</iBuyUnitCostFactor>
-			<iBaseExperience>25</iBaseExperience>
+			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
 	</EspionageMissionInfos>
 </Civ4EspionageMissionInfo>
