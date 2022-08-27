@@ -1348,7 +1348,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 				{
 					if (pDefender->getDamage() < pDefender->maxHitPoints() && iInitialDefenderDamage < pDefender->maxHitPoints() / 2 && pDefender->getDamage() >= (pDefender->maxHitPoints() + iInitialDefenderDamage) / 2)
 					{
-						changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWAL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+						changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
 						CvEventReporter::getInstance().combatRetreat(this, pDefender);
 						break;
 					}
