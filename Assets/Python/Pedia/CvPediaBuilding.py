@@ -228,6 +228,11 @@ class CvPediaBuilding:
 				iPaganReligion = infos.civ(civ(self.top.iActivePlayer)).getPaganReligion()
 				screen.attachImageButton(panel, "", infos.paganReligion(iPaganReligion).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION, iPaganReligion, 1, False)
 
+		# Leoreth: corporation prereqs
+		iPrereqCorporation = gc.getBuildingInfo(self.iBuilding).getPrereqCorporation()
+		if iPrereqCorporation >= 0:
+			screen.attachImageButton(panel, "", gc.getCorporationInfo(iPrereqCorporation).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CORPORATION, iPrereqCorporation, 1, False)
+
 	
 	def isStateReligionRequirement(self, lReligions, lStateReligions):
 		if set(lReligions) == set(lStateReligions): return 1

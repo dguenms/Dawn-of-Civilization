@@ -11186,12 +11186,11 @@
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PAPER</PrereqTech>
 			<ObsoleteTech>TECH_GEOGRAPHY</ObsoleteTech>
-			<PrereqBonuses>BONUS_SILK</PrereqBonuses>
+			<PrereqCorporation>CORPORATION_SILK_ROUTE</PrereqCorporation>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<bPagan>1</bPagan>
 			<iAIWeight>250</iAIWeight>
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -11216,6 +11215,12 @@
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
 			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_HORSE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
