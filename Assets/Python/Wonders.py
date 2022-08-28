@@ -140,7 +140,7 @@ def nobelPrizeEffect(unit, iPlayer):
 		if infos.unit(unit).getLeaderExperience() == 0 and infos.unit(unit).getEspionagePoints() == 0:
 			if unit.getOwner() == city.getOwner() or player(unit).AI_getAttitude(city.getOwner()) >= AttitudeTypes.ATTITUDE_PLEASED:
 				iGreatPersonType = getDefaultGreatPerson(unit.getUnitType())
-				iGreatPeoplePoints = max(4, player(city).getGreatPeopleCreated())
+				iGreatPeoplePoints = max(8, 2 * player(city).getGreatPeopleCreated())
 				
 				city.changeGreatPeopleProgress(iGreatPeoplePoints)
 				city.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
