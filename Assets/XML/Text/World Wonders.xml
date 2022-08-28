@@ -2555,19 +2555,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
-		<English>[ICON_BULLET]Only three Temples required to build Cathedrals</English>
-		<French>[ICON_BULLET]Seulement trois temples sont n&#233;cessaires pour construire des cath&#233;drales</French>
-		<German>[ICON_BULLET]Only three Temples required to build Cathedrals</German>
-		<Italian>[ICON_BULLET]Only three Temples required to build Cathedrals</Italian>
-		<Spanish>[ICON_BULLET]Only three Temples required to build Cathedrals</Spanish>
+		<English>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</English>
+		<French>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</French>
+		<German>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</German>
+		<Italian>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</Italian>
+		<Spanish>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
