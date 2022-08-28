@@ -3357,6 +3357,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iBuildingHappiness += kBuilding.getImprovementHappinessPercent(iI) * aiWorkedImprovementCount[iI] / 100;
 				}
 
+				// Leoreth: Gardens by the Bay
+				if (eBuilding == GARDENS_BY_THE_BAY)
+				{
+					iBuildingHappiness += getBuildingGoodHealth();
+				}
+
 				if (iBuildingHappiness != 0)
 				{
 					iValue += (std::min(iBuildingHappiness, iAngryPopulation) * 10)
@@ -10446,7 +10452,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == SHALIMAR_GARDENS || eBuilding == GARDENS_BY_THE_BAY)
+	else if (eBuilding == SHALIMAR_GARDENS)
 	{
 		if (goodHealth() - badHealth() < 4)
 		{

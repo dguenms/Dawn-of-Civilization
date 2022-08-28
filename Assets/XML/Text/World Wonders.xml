@@ -2355,19 +2355,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Tag>
-		<English>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</English>
-		<French>[ICON_BULLET]+2[ICON_COMMERCE] par [ICON_HEALTHY] en exc&#232;s</French>
-		<German>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</German>
-		<Italian>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Italian>
-		<Spanish>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Spanish>
+		<English>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</English>
+		<French>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</French>
+		<German>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</German>
+		<Italian>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK</Tag>

@@ -15083,6 +15083,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_GARDENS_BY_THE_BAY</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_ECOLOGY</PrereqTech>
+			<FreeBuilding>BUILDINGCLASS_RECYCLING_CENTER</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

@@ -1257,12 +1257,6 @@ void CvCity::doTurn()
 		}
 	}
 
-	// Leoreth: Gardens by the Bay effect
-	if (isHasBuildingEffect((BuildingTypes)GARDENS_BY_THE_BAY))
-	{
-		setBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)GARDENS_BY_THE_BAY).getBuildingClassType(), YIELD_COMMERCE, 2 * std::max(0, goodHealth() - badHealth()));
-	}
-
 	// Leoreth: ITER effect
 	if (isHasBuildingEffect((BuildingTypes)ITER))
 	{
@@ -4966,12 +4960,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 					}
 				}
 			}
-		}
-
-		// Gardens by the Bay
-		else if (eBuilding == GARDENS_BY_THE_BAY)
-		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * 2 * std::max(0, goodHealth() - badHealth()));
 		}
 
 		// ITER

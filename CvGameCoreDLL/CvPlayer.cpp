@@ -7199,6 +7199,19 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	{
 		changeStateReligionBuildingProductionModifier(25 * iChange);
 	}
+
+	// Gardens by the Bay
+	else if (eBuilding == GARDENS_BY_THE_BAY)
+	{
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+			if (kBuilding.getHealth() > 0)
+			{
+				changeExtraBuildingHappiness((BuildingTypes)iI, kBuilding.getHealth());
+			}
+		}
+	}
 }
 
 
