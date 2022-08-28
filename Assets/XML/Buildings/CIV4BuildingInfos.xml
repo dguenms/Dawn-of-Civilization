@@ -15284,7 +15284,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SKYTREE</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
-			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
+			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
