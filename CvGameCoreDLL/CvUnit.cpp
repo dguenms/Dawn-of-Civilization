@@ -6610,6 +6610,12 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitGreatWorkPercent();
 	iCulture /= 100;
 
+	// Harbour Opera effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	{
+		iCulture *= 2;
+	}
+
 	return std::max(0, iCulture);
 }
 

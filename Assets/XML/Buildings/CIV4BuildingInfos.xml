@@ -14953,6 +14953,7 @@
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
+			<iCultureHappiness>2</iCultureHappiness>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -14974,7 +14975,7 @@
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -15089,7 +15090,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bWater>1</bWater>
-			<iAIWeight>400</iAIWeight>
+			<iAIWeight>300</iAIWeight>
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

@@ -16923,21 +16923,6 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
-	// Harbour Opera effect
-	int iHappinessFood = 0;
-	if (city.isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
-	{
-		iHappinessFood += std::max(0, (city.happyLevel() - city.unhappyLevel()) / 2);
-	}
-
-	if (iHappinessFood != 0)
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS", iHappinessFood, info.getChar()));
-		iBaseRate += iHappinessFood;
-		bNeedSubtotal = true;
-	}
-
 	// Lotus Temple effect
 	int iNonStateReligionFood = 0;
 	if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
@@ -18126,12 +18111,6 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 			{
 				iBaseProduction += city.goodHealth() - city.badHealth();
 			}
-		}
-
-		// Harbour Opera effect
-		if (city.isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
-		{
-			iBaseProduction += std::max(0, (city.happyLevel() - city.unhappyLevel()) / 2);
 		}
 
 		// Lotus Temple effect

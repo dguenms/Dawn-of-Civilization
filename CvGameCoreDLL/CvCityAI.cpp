@@ -10445,13 +10445,6 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == HARBOUR_OPERA)
-	{
-		if (happyLevel() - unhappyLevel() < 4)
-		{
-			return -MAX_INT;
-		}
-	}
 	else if (eBuilding == SHALIMAR_GARDENS)
 	{
 		if (goodHealth() - badHealth() < 4)
@@ -10471,6 +10464,13 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 		}
 
 		if (iFriendlyRelationCount < 1)
+		{
+			return -MAX_INT;
+		}
+	}
+	else if (eBuilding == HARBOUR_OPERA)
+	{
+		if (!GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2) && !GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE3) && !GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE4))
 		{
 			return -MAX_INT;
 		}
