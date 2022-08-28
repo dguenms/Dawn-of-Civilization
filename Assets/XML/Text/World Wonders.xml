@@ -1631,19 +1631,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_HELP</Tag>
-		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</English>
-		<French>[ICON_BULLET]Rapporte de l'[ICON_GOLD] pour chaque nouvelle colonie</French>
-		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</German>
-		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Italian>
-		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Spanish>
+		<English>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</English>
+		<French>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</French>
+		<German>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</German>
+		<Italian>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</Italian>
+		<Spanish>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TORRE_DE_BELEM</Tag>

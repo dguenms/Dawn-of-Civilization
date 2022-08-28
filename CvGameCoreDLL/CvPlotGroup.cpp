@@ -241,6 +241,23 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 			pPlotNode = nextPlotsNode(pPlotNode);
 		}
 
+		// Leoreth: Escorial
+		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)ESCORIAL))
+		{
+			if (eBonus == BONUS_SILVER || eBonus == BONUS_GOLD)
+			{
+				int iLoop;
+				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+				{
+					if (pLoopCity->isHasRealBuilding((BuildingTypes)ESCORIAL))
+					{
+						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ESCORIAL).getBuildingClassType(), COMMERCE_GOLD, 2 * iChange);
+						break;
+					}
+				}
+			}
+		}
+
 		// Leoreth: Global Seed Vault
 		if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)GLOBAL_SEED_VAULT))
 		{
