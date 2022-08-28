@@ -139,6 +139,30 @@ def spreadJudaism():
 
 
 @handler("BeginGameTurn")
+def spreadHinduismSoutheastAsia():
+	lSouthEastAsianCivs = [iKhmer, iIndonesia]
+
+	if not game.isReligionFounded(iHinduism): return
+	if none(player(iCiv).isAlive() for iCiv in lSouthEastAsianCivs): return
+	if not turn().between(500, 1200): return
+	
+	if not periodic(20): return
+	
+	contacts = players.major().where(lambda p: any(player(q).canContact(p) for q in lSouthEastAsianCivs) and player(p).getStateReligion() in [iHinduism, iBuddhism])
+	if not contacts:
+		return
+	
+	southEastAsiaCities = cities.regions(rIndochina, rIndonesia)
+	potentialCities = southEastAsiaCities.where(lambda city: not city.isHasReligion(iHinduism))
+	
+	iMaxCitiesMultiplier = 2
+	if len(potentialCities) * iMaxCitiesMultiplier >= len(southEastAsiaCities):
+		spreadCity = potentialCities.random()
+		if spreadCity:
+			spreadCity.spreadReligion(iHinduism)
+
+
+@handler("BeginGameTurn")
 def spreadIslamIndonesia():
 	if not game.isReligionFounded(iIslam): return
 	if not player(iIndonesia).isAlive(): return
