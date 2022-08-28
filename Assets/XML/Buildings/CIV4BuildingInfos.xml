@@ -10306,7 +10306,6 @@
 			<Help>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SALSAL_BUDDHA</ArtDefineTag>
-			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
