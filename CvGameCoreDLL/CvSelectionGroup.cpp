@@ -22,6 +22,7 @@
 #include "CvDLLPythonIFaceBase.h"
 #include <set>
 #include "CvEventReporter.h"
+#include "CvRhyes.h"
 
 // BUG - start
 #include "CvBugOptions.h"
@@ -1016,7 +1017,10 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 		case MISSION_DISCOVER:
 			if (pLoopUnit->canDiscover(pPlot))
 			{
-				return true;
+				if (!GET_PLAYER(pLoopUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+				{
+					return true;
+				}
 			}
 			break;
 

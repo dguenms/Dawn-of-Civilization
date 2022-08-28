@@ -6235,6 +6235,12 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 				pCity->changeGreatPeopleProgress(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false) / 4);
 			}
 		}
+
+		// House of Wisdom
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+		{
+			discover();
+		}
 	}
 
 	if (plot()->isActiveVisible(false))

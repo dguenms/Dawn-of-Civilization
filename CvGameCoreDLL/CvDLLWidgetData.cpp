@@ -2268,7 +2268,6 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	BuildTypes eBuild;
 	RouteTypes eRoute;
 	BonusTypes eBonus;
-	TechTypes eFirstDiscovery, eSecondDiscovery;
 	bool bAlt;
 	bool bShift;
 	bool bValid;
@@ -2288,8 +2287,6 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	int iHigh;
 	int iLast;
 	int iRange;
-	int iFirstResearch, iSecondResearch;
-	int iFirstResearchLeft, iSecondResearchLeft;
 	int iDX, iDY;
 	int iI;
 
@@ -2620,6 +2617,12 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 // BUG - Specialist Actual Effects - start
 				GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), pMissionCity, true, 1);
 // BUG - Specialist Actual Effects - end
+
+				// House of Wisdom effect
+				if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+				{
+					parseDiscoverHelp(pMissionPlot, szBuffer);
+				}
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_CONSTRUCT)
 			{
@@ -2645,60 +2648,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_DISCOVER)
 			{
-				pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
-
-				while (pSelectedUnitNode != NULL)
-				{
-					pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
-
-					if (pSelectedUnit->canDiscover(pMissionPlot))
-					{
-						eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
-						iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
-						iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
-						
-						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
-						iSecondResearch = 0;
-						iSecondResearchLeft = -1;
-
-						if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
-						{
-							iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
-							iSecondResearchLeft = pSelectedUnit->getDiscoveryTech(eSecondDiscovery);
-						}
-						
-						szBuffer.append(NEWLINE);
-
-						if (iFirstResearch >= iFirstResearchLeft)
-						{
-							szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eFirstDiscovery).getDescription());
-							szBuffer.append(szTempBuffer);
-						}
-						else
-						{
-							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iFirstResearch, GC.getTechInfo(eFirstDiscovery).getTextKeyWide()));
-						}
-
-						if (iSecondResearch > 0)
-						{
-							szBuffer.append(gDLL->getText("TXT_KEY_AND"));
-
-							if (iSecondResearch >= iSecondResearchLeft)
-							{
-								szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eSecondDiscovery).getDescription());
-								szBuffer.append(szTempBuffer);
-							}
-							else
-							{
-								szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iSecondResearch, GC.getTechInfo(eSecondDiscovery).getTextKeyWide()));
-							}
-						}
-
-						break;
-					}
-
-					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
-				}
+				parseDiscoverHelp(pMissionPlot, szBuffer);
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_HURRY)
 			{
@@ -3460,6 +3410,71 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 		{
 			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getInterfaceModeInfo((InterfaceModeTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType())).getHelp()).c_str());
 		}
+	}
+}
+
+
+void CvDLLWidgetData::parseDiscoverHelp(CvPlot* pMissionPlot, CvWStringBuffer& szBuffer)
+{
+	CvUnit* pSelectedUnit;
+	TechTypes eFirstDiscovery, eSecondDiscovery;
+	CvWString szTempBuffer;
+	int iFirstResearch, iSecondResearch;
+	int iFirstResearchLeft, iSecondResearchLeft;
+
+	CLLNode<IDInfo>* pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+
+	while (pSelectedUnitNode != NULL)
+	{
+		pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+
+		if (pSelectedUnit->canDiscover(pMissionPlot))
+		{
+			eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
+			iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
+			iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
+
+			eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
+			iSecondResearch = 0;
+			iSecondResearchLeft = -1;
+
+			if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
+			{
+				iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
+				iSecondResearchLeft = pSelectedUnit->getDiscoveryTech(eSecondDiscovery);
+			}
+
+			szBuffer.append(NEWLINE);
+
+			if (iFirstResearch >= iFirstResearchLeft)
+			{
+				szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eFirstDiscovery).getDescription());
+				szBuffer.append(szTempBuffer);
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iFirstResearch, GC.getTechInfo(eFirstDiscovery).getTextKeyWide()));
+			}
+
+			if (iSecondResearch > 0)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_AND"));
+
+				if (iSecondResearch >= iSecondResearchLeft)
+				{
+					szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eSecondDiscovery).getDescription());
+					szBuffer.append(szTempBuffer);
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iSecondResearch, GC.getTechInfo(eSecondDiscovery).getTextKeyWide()));
+				}
+			}
+
+			break;
+		}
+
+		pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
 	}
 }
 

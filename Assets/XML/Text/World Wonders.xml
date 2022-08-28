@@ -1459,19 +1459,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Tag>
-		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</English>
-		<French>[ICON_BULLET]+200% de [ICON_RESEARCH] pour les d&#233;couvertes des personnages illustres</French>
-		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</German>
-		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Italian>
-		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Spanish>
+		<English>[ICON_BULLET]Settling Great People also grants free technologies</English>
+		<French>[ICON_BULLET]Settling Great People also grants free technologies</French>
+		<German>[ICON_BULLET]Settling Great People also grants free technologies</German>
+		<Italian>[ICON_BULLET]Settling Great People also grants free technologies</Italian>
+		<Spanish>[ICON_BULLET]Settling Great People also grants free technologies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA</Tag>
