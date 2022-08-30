@@ -6875,26 +6875,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	CivilizationTypes eCivilization = (ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getCivilizationType() : NO_CIVILIZATION;
 
 	iYield = calculateNatureYield(eYield, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM));
-	
-	// Leoreth + Merijn: Burj Khalifa effect
-	if (ePlayer != NO_PLAYER)
-	{
-		if (getTerrainType() == TERRAIN_DESERT && !isPeak())
-		{
-			if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
-			{
-				pWorkingCity = getWorkingCity();
-				
-				if (pWorkingCity != NULL)
-				{
-					if (pWorkingCity->isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
-					{
-						iYield = std::max(2, iYield);
-					}
-				}
-			}
-		}
-	}
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{

@@ -2187,19 +2187,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
-		<English>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]N&#233;cessite un d&#233;sert dans les environs de la ville[NEWLINE][ICON_BULLET]Les cases de d&#233;sert exploit&#233;es par la ville fournissent un minimum de 2[ICON_FOOD] et 2[ICON_COMMERCE]</French>
-		<German>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</German>
-		<Italian>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Italian>
-		<Spanish>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Spanish>
+		<English>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</English>
+		<French>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</French>
+		<German>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</German>
+		<Italian>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Italian>
+		<Spanish>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Tag>

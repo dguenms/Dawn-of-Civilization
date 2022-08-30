@@ -10390,7 +10390,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == UNIVERSITY_OF_SANKORE || eBuilding == BURJ_KHALIFA)
+	else if (eBuilding == UNIVERSITY_OF_SANKORE)
 	{
 		int iDesertCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)

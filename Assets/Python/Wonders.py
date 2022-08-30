@@ -107,6 +107,27 @@ def empireStateBuildingEffect(city):
 	city.setBuildingCommerceChange(infos.building(iEmpireStateBuilding).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, city.getPopulation())
 
 
+# Burj Khalifa effect: +1 commerce per corporation in the world
+@handler("buildingBuilt")
+def burjKhalifaWhenBuilt(city, iBuilding):
+	if iBuilding == iBurjKhalifa:
+		city.changeBuildingYieldChange(infos.building(iBurjKhalifa).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, sum(game.countCorporationLevels(iCorporation) for iCorporation in range(iNumCorporations)))
+
+
+@handler("corporationSpread")
+def burjKhalifaOnSpread(iCorporation):
+	city = getBuildingCity(iBurjKhalifa)
+	if city:
+		city.changeBuildingYieldChange(infos.building(iBurjKhalifa).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
+
+
+@handler("corporationRemove")
+def burjKhalifaOnRemove(iCorporation):
+	city = getBuildingCity(iBurjKhalifa)
+	if city:
+		city.changeBuildingYieldChange(infos.building(iBurjKhalifa).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, -1)
+
+
 @handler("buildingBuilt")
 def machuPicchuEffect(city, iBuilding):
 	if iBuilding == iMachuPicchu:

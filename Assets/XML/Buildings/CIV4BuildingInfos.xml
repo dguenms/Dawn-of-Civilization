@@ -15139,7 +15139,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_BURJ_KHALIFA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BURJ_KHALIFA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Help>
-			<Advisor>ADVISOR_GROWTH</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BURJ_KHALIFA</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_AERODYNAMICS</PrereqTech>
@@ -15170,15 +15170,22 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<SeaPlotYieldChanges>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>3</iYield>
+			</SeaPlotYieldChanges>
 			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_OIL</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>5</iFlavor>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>

@@ -2548,20 +2548,20 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	// Leoreth: Burj Khalifa requires desert
+	// Leoreth: Burj Khalifa requires ten desert tiles
 	if (eBuilding == BURJ_KHALIFA)
 	{
-		bool bFound = false;
+		int iNumDesertTiles = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
 			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
 			{
-				bFound = true;
+				iNumDesertTiles++;
 				break;
 			}
 		}
 
-		if (!bFound)
+		if (iNumDesertTiles < 10)
 		{
 			return false;
 		}
@@ -4975,12 +4975,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
-		}
-
-		// Burj Khalifa
-		else if (eBuilding == BURJ_KHALIFA)
-		{
-			updateYield();
 		}
 
 		// Escorial
