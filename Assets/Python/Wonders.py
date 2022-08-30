@@ -63,8 +63,14 @@ def gurEAmirEffect(city, iPlayer, iGold):
 		if player(iPlayer).isHasBuildingEffect(iGurEAmir):
 			wonderCity = cities.owner(iPlayer).building(iGurEAmir).one()
 			if wonderCity:
-				message(iPlayer, 'TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT', iGold, city.getName(), wonderCity.getName())
-				wonderCity.changeCulture(iPlayer, iGold, True)
+				iGreatPeoplePoints = iGold / 4
+				
+				city.changeGreatPeopleProgress(iGreatPeoplePoints)
+				city.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+				
+				interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
+				
+				message(iPlayer, 'TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT', city.getName(), iGreatPeoplePoints, wonderCity.getName())
 
 
 # Space Elevator effect: +1 commerce per satellite built

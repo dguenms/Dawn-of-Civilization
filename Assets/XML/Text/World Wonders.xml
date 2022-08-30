@@ -2759,27 +2759,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT</Tag>
-		<English>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</English>
-		<French>Nos arm&#233;es ont pill&#233; %d1 [ICON_CULTURE] pendant leur conqu&#234;te de %s2 et l'ont ramen&#233;e &#224; %s3.</French>
-		<German>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</German>
-		<Italian>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Italian>
-		<Spanish>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Spanish>
+		<English>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</English>
+		<French>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</French>
+		<German>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</German>
+		<Italian>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</Italian>
+		<Spanish>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Tag>
-		<English>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</English>
-		<French>[ICON_BULLET]Le ville re&#231;oit de la [ICON_CULTURE] additionnelle &#233;gale &#224; l'[ICON_GOLD] pill&#233; dans les villes conquises</French>
-		<German>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</German>
-		<Italian>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Italian>
-		<Spanish>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Spanish>
+		<English>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</English>
+		<French>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</French>
+		<German>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</German>
+		<Italian>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</Italian>
+		<Spanish>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE</Tag>
