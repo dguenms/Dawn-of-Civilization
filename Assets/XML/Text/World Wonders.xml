@@ -2103,19 +2103,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</English>
-		<French>[ICON_BULLET]+1[ICON_RESEARCH] par arme nucl&#233;aire dans le monde</French>
-		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</German>
-		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Spanish>
+		<English>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</English>
+		<French>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</French>
+		<German>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</German>
+		<Italian>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</Italian>
+		<Spanish>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER</Tag>

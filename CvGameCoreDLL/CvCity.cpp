@@ -4930,10 +4930,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Atomium
 		else if (eBuilding == ATOMIUM)
 		{
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER((PlayerTypes)iI).getNumNukeUnits());
-			}
+			int iAtomiumResearch = 10 * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_URANIUM) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_IRON) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_COPPER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_ALUMINUM);
+			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * iAtomiumResearch);
 		}
 
 		// Global Seed Vault
