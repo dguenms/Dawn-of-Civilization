@@ -10308,7 +10308,8 @@
 			<Strategy>TXT_KEY_BUILDING_SALSAL_BUDDHA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SALSAL_BUDDHA</ArtDefineTag> <!-- movie as mp4 -->
+			<ArtDefineTag>ART_DEF_BUILDING_SALSAL_BUDDHA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SALSAL_BUDDHA</MovieDefineTag>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
@@ -12147,7 +12148,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_TORRE_DE_BELEM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TORRE_DE_BELEM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TORRE_DE_BELEM</ArtDefineTag> <!-- movie as mp4 -->
+			<ArtDefineTag>ART_DEF_BUILDING_TORRE_DE_BELEM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TORRE_DE_BELEM</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -13939,7 +13941,8 @@
 			<Strategy>TXT_KEY_BUILDING_FRONTENAC_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_FRONTENAC_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_FRONTENAC</ArtDefineTag> <!-- movie as mp4 -->
+			<ArtDefineTag>ART_DEF_BUILDING_FRONTENAC</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_FRONTENAC</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_REFINING</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_RAILWAY_STATION</FreeBuilding>
@@ -14774,7 +14777,8 @@
 			<Strategy>TXT_KEY_BUILDING_BERLAYMONT_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_BERLAYMONT_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BERLAYMONT</ArtDefineTag> <!-- movie as mp4 -->
+			<ArtDefineTag>ART_DEF_BUILDING_BERLAYMONT</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BERLAYMONT</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_GLOBALISM</PrereqTech>
 			<PrereqCivic>CIVIC_MULTILATERALISM</PrereqCivic>

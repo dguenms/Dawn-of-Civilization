@@ -467,5 +467,21 @@
 			<Type>ART_DEF_MOVIE_HARBOUR_OPERA</Type>
 			<Path>Art/Movies/Wonders/HarbourOpera.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SALSAL_BUDDHA</Type>
+			<Path>Art/Movies/Wonders/SalsalBuddha.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TORRE_DE_BELEM</Type>
+			<Path>Art/Movies/Wonders/TorreDeBelem.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_FRONTENAC</Type>
+			<Path>Art/Movies/Wonders/Frontenac.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BERLAYMONT</Type>
+			<Path>Art/Movies/Wonders/Berlaymont.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
