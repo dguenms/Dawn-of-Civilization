@@ -343,7 +343,7 @@
 			<Path>Art/Movies/Wonders/GlobeTheatre.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_NATIONAL_GALLERY</Type>
+			<Type>ART_DEF_MOVIE_HERMITAGE</Type>
 			<Path>Art/Movies/Wonders/Hermitage.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -388,7 +388,7 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_APADANA_PALACE</Type>
-			<Path>Art/Movies/Wonders/apadana.dds</Path>
+			<Path>Art/Movies/Wonders/Apadana.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_CHEOMSEONGDAE</Type>
@@ -417,11 +417,55 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_AL_KHAZNEH</Type>
-			<Path>Art/Movies/Wonders/PetraMonastery.bik</Path>
+			<Path>Art/Movies/Wonders/Petra.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_GREAT_FIREWALL</Type>
 			<Path>Art/Movies/Wonders/GreatFirewall.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_DUJIANGYAN</Type>
+			<Path>Art/Movies/Wonders/Dujiangyan.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_JETAVANARAMAYA</Type>
+			<Path>Art/Movies/Wonders/Jetavanaramaya.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_NALANDA</Type>
+			<Path>Art/Movies/Wonders/Nalanda.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MOUNT_ATHOS</Type>
+			<Path>Art/Movies/Wonders/MountAthos.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GRAND_CANAL</Type>
+			<Path>Art/Movies/Wonders/GrandCanal.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SANTA_MARIA_DEL_FIORE</Type>
+			<Path>Art/Movies/Wonders/SantaMariaDelFiore.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_OXFORD_UNIVERSITY</Type>
+			<Path>Art/Movies/Wonders/OxfordUniversity.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ITSUKUSHIMA_SHRINE</Type>
+			<Path>Art/Movies/Wonders/ItsukushimaShrine.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MOTHERLAND_CALLS</Type>
+			<Path>Art/Movies/Wonders/MotherlandCalls.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_WORLD_TRADE_CENTER</Type>
+			<Path>Art/Movies/Wonders/WorldTradeCenter.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HARBOUR_OPERA</Type>
+			<Path>Art/Movies/Wonders/HarbourOpera.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
