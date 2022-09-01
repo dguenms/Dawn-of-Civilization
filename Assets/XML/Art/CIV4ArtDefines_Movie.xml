@@ -483,5 +483,65 @@
 			<Type>ART_DEF_MOVIE_BERLAYMONT</Type>
 			<Path>Art/Movies/Wonders/Berlaymont.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HOUSE_OF_WISDOM</Type>
+			<Path>Art/Movies/Wonders/House_of_Wisdom.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_KRAK_DES_CHEVALIERS</Type>
+			<Path>Art/Movies/Wonders/Krak_des_Chevaliers.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SHALIMAR_GARDENS</Type>
+			<Path>Art/Movies/Wonders/Shalimar_Gardens.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VIJAYA_STAMBHA</Type>
+			<Path>Art/Movies/Wonders/Vijaya_Stambha.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GONDESHAPUR</Type>
+			<Path>Art/Movies/Wonders/Gondeshapur.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LOUVRE</Type>
+			<Path>Art/Movies/Wonders/Louvre.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ITER</Type>
+			<Path>Art/Movies/Wonders/ITER.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TSUKIJI</Type>
+			<Path>Art/Movies/Wonders/Tsukiji.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ALAMUT</Type>
+			<Path>Art/Movies/Wonders/Alamut.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SAINT_THOMAS_CHURCH</Type>
+			<Path>Art/Movies/Wonders/Saint_Thomas_Church.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BELL_ROCK_LIGHTHOUSE</Type>
+			<Path>Art/Movies/Wonders/Bell_Rock_Lighthouse.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</Type>
+			<Path>Art/Movies/Wonders/CERN.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ESCORIAL</Type>
+			<Path>Art/Movies/Wonders/Escorial.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LOTUS_TEMPLE</Type>
+			<Path>Art/Movies/Wonders/LotusTemple.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GLOBAL_SEED_VAULT</Type>
+			<Path>Art/Movies/Wonders/Global_Seed_Vault.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

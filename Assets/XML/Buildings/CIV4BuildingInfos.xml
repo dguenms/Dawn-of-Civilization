@@ -9667,7 +9667,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_GONDESHAPUR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GONDESHAPUR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GONDESHAPUR</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_GONDESHAPUR</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GONDESHAPUR</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<StateReligion>RELIGION_ZOROASTRIANISM</StateReligion>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
@@ -10774,7 +10775,8 @@
 			<Strategy>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HOUSE_OF_WISDOM</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_HOUSE_OF_WISDOM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_HOUSE_OF_WISDOM</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -10829,7 +10831,8 @@
 			<Strategy>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HELP_KRAK_DES_CHEVALIERS</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -11298,7 +11301,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_ALAMUT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ALAMUT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ALAMUT</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ALAMUT</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ALAMUT</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -11650,7 +11654,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SAINT_THOMAS_CHURCH</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SAINT_THOMAS_CHURCH</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SAINT_THOMAS_CHURCH</MovieDefineTag>
 			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -11697,7 +11702,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_VIJAYA_STAMBHA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_VIJAYA_STAMBHA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_VIJAYA_STAMBHA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_VIJAYA_STAMBHA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_VIJAYA_STAMBHA</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -12094,7 +12100,8 @@
 			<Strategy>TXT_KEY_BUILDING_ESCORIAL_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_ESCORIAL_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ESCORIAL</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ESCORIAL</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ESCORIAL</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12568,7 +12575,8 @@
 			<Strategy>TXT_KEY_BUILDING_LOUVRE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_LOUVRE_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LOUVRE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_LOUVRE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LOUVRE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
@@ -12680,7 +12688,8 @@
 			<Strategy>TXT_KEY_BUILDING_SHALIMAR_GARDENS_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_SHALIMAR_GARDENS_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SHALIMAR_GARDENS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SHALIMAR_GARDENS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SHALIMAR_GARDENS</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -13167,7 +13176,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BELL_ROCK_LIGHTHOUSE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_METALLURGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
@@ -13538,7 +13548,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_TSUKIJI_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TSUKIJI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TSUKIJI</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_TSUKIJI</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TSUKIJI</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_REFRIGERATION</PrereqTech>
 			<PrereqBonuses>BONUS_RICE</PrereqBonuses>
@@ -14431,7 +14442,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</MovieDefineTag>
 			<PrereqTech>TECH_FISSION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_LABORATORY</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -15014,7 +15026,8 @@
 			<Strategy>TXT_KEY_BUILDING_LOTUS_TEMPLE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LOTUS_TEMPLE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_LOTUS_TEMPLE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LOTUS_TEMPLE</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_TOURISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
@@ -15060,7 +15073,8 @@
 			<Strategy>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GLOBAL_SEED_VAULT</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_GLOBAL_SEED_VAULT</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_BUILDING_GLOBAL_SEED_VAULT</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_GENETICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -15551,7 +15565,8 @@
 			<Strategy>TXT_KEY_BUILDING_ITER_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_ITER_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ITER</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ITER</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ITER</MovieDefineTag>
 			<PrereqTech>TECH_FUSION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
