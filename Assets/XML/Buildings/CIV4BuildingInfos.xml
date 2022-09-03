@@ -12229,7 +12229,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12277,7 +12277,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12444,7 +12444,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12501,7 +12501,7 @@
 			<bWater>1</bWater>
 			<iAIWeight>250</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12551,7 +12551,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12598,7 +12598,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>150</iAIWeight>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12659,7 +12659,7 @@
 			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12715,7 +12715,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>150</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12762,7 +12762,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>400</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12833,7 +12833,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12890,7 +12890,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12938,7 +12938,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>700</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -12995,7 +12995,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>700</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13106,7 +13106,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13152,7 +13152,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>700</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13205,7 +13205,7 @@
 			<bWater>1</bWater>
 			<iCoastalTradeRoutes>1</iCoastalTradeRoutes>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13252,7 +13252,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13304,7 +13304,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>300</iAIWeight>
 			<iCost>1250</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13367,7 +13367,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13422,7 +13422,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13473,7 +13473,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13527,7 +13527,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13580,7 +13580,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<bWater>1</bWater>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13631,7 +13631,7 @@
 			<bRiver>1</bRiver>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13689,7 +13689,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13780,7 +13780,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13833,7 +13833,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13881,7 +13881,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>1200</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13934,7 +13934,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>1200</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -13988,7 +13988,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>100</iAIWeight>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14046,7 +14046,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14085,7 +14085,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14146,7 +14146,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14189,7 +14189,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>1200</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14236,7 +14236,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14291,7 +14291,7 @@
 			<bWater>1</bWater>
 			<bRiver>1</bRiver>
 			<iCost>2000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14365,7 +14365,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>150</iAIWeight>
 			<iCost>700</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14413,7 +14413,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>2000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14481,7 +14481,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14564,7 +14564,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14605,7 +14605,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14720,7 +14720,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14784,7 +14784,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>300</iAIWeight>
 			<iCost>1500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14832,7 +14832,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>300</iAIWeight>
 			<iCost>1000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14927,7 +14927,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>300</iAIWeight>
 			<iCost>1500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -14974,7 +14974,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>2000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15022,7 +15022,7 @@
 			<bWater>1</bWater>
 			<iAIWeight>300</iAIWeight>
 			<iCost>1800</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iCultureHappiness>2</iCultureHappiness>
@@ -15070,7 +15070,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>400</iAIWeight>
 			<iCost>1600</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15117,7 +15117,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>400</iAIWeight>
 			<iCost>1500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15166,7 +15166,7 @@
 			<bWater>1</bWater>
 			<iAIWeight>300</iAIWeight>
 			<iCost>2000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15271,7 +15271,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>500</iAIWeight>
 			<iCost>3000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15318,7 +15318,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>300</iAIWeight>
 			<iCost>2000</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
@@ -15477,7 +15477,7 @@
 			<bWater>1</bWater>
 			<bRiver>1</bRiver>
 			<iCost>2500</iCost>
-			<iHurryCostModifier>200</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
