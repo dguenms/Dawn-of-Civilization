@@ -620,5 +620,57 @@
 			<AudioUnitVictoryScript>AS2D_VICTORY_MIDDLE</AudioUnitVictoryScript>
 			<AudioUnitDefeatScript>AS2D_LOSS_MIDDLE</AudioUnitDefeatScript>
 		</EraInfo>
+		<EraInfo>
+			<Type>ERA_NATIVE_AMERICA</Type>
+			<Description>TXT_KEY_ERA_NATIVE_AMERICA</Description>
+			<Strategy>TXT_KEY_ERA_NATIVE_AMERICA_STRATEGY</Strategy>
+			<bNoGoodies>1</bNoGoodies>
+			<bNoAnimals>1</bNoAnimals>
+			<bNoBarbUnits>0</bNoBarbUnits>
+			<bNoBarbCities>0</bNoBarbCities>
+			<iAdvancedStartPoints>1800</iAdvancedStartPoints>
+			<iStartingUnitMultiplier>2</iStartingUnitMultiplier>
+			<iStartingDefenseUnits>2</iStartingDefenseUnits>
+			<iStartingWorkerUnits>1</iStartingWorkerUnits>
+			<iStartingExploreUnits>1</iStartingExploreUnits>
+			<iStartingGold>25</iStartingGold>
+			<iFreePopulation>0</iFreePopulation>
+			<iStartPercent>25</iStartPercent>
+			<iGrowthPercent>100</iGrowthPercent>
+			<iTrainPercent>100</iTrainPercent>
+			<iConstructPercent>100</iConstructPercent>
+			<iCreatePercent>100</iCreatePercent>
+			<iResearchPercent>100</iResearchPercent>
+			<iBuildPercent>100</iBuildPercent>
+			<iImprovementPercent>100</iImprovementPercent>
+			<iGreatPeoplePercent>100</iGreatPeoplePercent>
+			<iCulturePercent>100</iCulturePercent>
+			<iAnarchyPercent>40</iAnarchyPercent>
+			<iEventChancePerTurn>4</iEventChancePerTurn>
+			<iSoundtrackSpace>800</iSoundtrackSpace>
+			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
+			<EraInfoSoundtracks>
+				<EraInfoSoundtrack>AS2D_SONG_NATIVE_AMERICAN_1</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_SONG_NATIVE_AMERICAN_2</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_SONG_NATIVE_AMERICAN_3</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_SONG_NATIVE_AMERICAN_4</EraInfoSoundtrack>
+			</EraInfoSoundtracks>
+			<CitySoundscapes>
+				<CitySoundscape>
+					<CitySizeType>CITYSIZE_SMALL</CitySizeType>
+					<SoundscapeScript>ASSS_CITY_MIDDLE_SMALL_SELECT_AMB</SoundscapeScript>
+				</CitySoundscape>
+				<CitySoundscape>
+					<CitySizeType>CITYSIZE_MEDIUM</CitySizeType>
+					<SoundscapeScript>ASSS_CITY_MIDDLE_SMALL_SELECT_AMB</SoundscapeScript>
+				</CitySoundscape>
+				<CitySoundscape>
+					<CitySizeType>CITYSIZE_LARGE</CitySizeType>
+					<SoundscapeScript>ASSS_CITY_MIDDLE_LARGE_SELECT_AMB</SoundscapeScript>
+				</CitySoundscape>
+			</CitySoundscapes>
+			<AudioUnitVictoryScript>AS2D_VICTORY_MIDDLE</AudioUnitVictoryScript>
+			<AudioUnitDefeatScript>AS2D_LOSS_MIDDLE</AudioUnitDefeatScript>
+		</EraInfo>
 	</EraInfos>
 </Civ4EraInfos>

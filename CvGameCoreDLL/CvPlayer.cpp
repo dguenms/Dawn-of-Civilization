@@ -24418,6 +24418,17 @@ EraTypes CvPlayer::getSoundtrackEra()
 	}
 	else if (eStateReligion == NO_RELIGION)
 	{
+		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL)
+		{
+			switch (getCivilizationType())
+			{
+			case MAYA:
+			case INCA:
+			case AZTECS:
+				return (EraTypes)ERA_NATIVE_AMERICA;
+			}
+		}
+
 		if (eCurrentEra == ERA_MEDIEVAL)
 		{
 			return (EraTypes)ERA_CLASSICAL;

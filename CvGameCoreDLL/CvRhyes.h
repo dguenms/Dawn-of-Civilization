@@ -368,6 +368,7 @@ enum DoCEras
 	ERA_MIDDLE_EAST,
 	ERA_EAST_ASIA,
 	ERA_SOUTH_ASIA,
+	ERA_NATIVE_AMERICA,
 };
 
 enum Regions
