@@ -208,7 +208,7 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_CHANNEL_TUNNEL</Type>
-			<Path>Art/Movies/Wonders/eurotunnel.bik</Path>
+			<Path>Art/Movies/Wonders/ChannelTunnel.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MT_RUSHMORE</Type>
@@ -355,7 +355,7 @@
 			<Path>Art/Movies/Wonders/Moai.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TRIUMPHAL_ARCH</Type>
+			<Type>ART_DEF_MOVIE_NATIONAL_EPIC</Type>
 			<Path>Art/Movies/Wonders/NationalEpic.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -542,6 +542,158 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_GLOBAL_SEED_VAULT</Type>
 			<Path>Art/Movies/Wonders/Global_Seed_Vault.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_AQUA_APPIA</Type>
+			<Path>Art/Movies/Wonders/AquaAppia.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_FLOATING_GARDENS</Type>
+			<Path>Art/Movies/Wonders/FloatingGardens.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_IRON_PILLAR</Type>
+			<Path>Art/Movies/Wonders/IronPillar.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PRAMBANAN</Type>
+			<Path>Art/Movies/Wonders/Prambanan.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MONOLITHIC_CHURCH</Type>
+			<Path>Art/Movies/Wonders/MonolithicChurch.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_OLD_SYNAGOGUE</Type>
+			<Path>Art/Movies/Wonders/OldSynagogue.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SAINT_SOPHIA</Type>
+			<Path>Art/Movies/Wonders/SaintSophia.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SILVER_TREE_FOUNTAIN</Type>
+			<Path>Art/Movies/Wonders/SilverTreeFountain.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_KREMLIN</Type>
+			<Path>Art/Movies/Wonders/Kremlin.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GUR_E_AMIR</Type>
+			<Path>Art/Movies/Wonders/Gur_e_Amir.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_POTALA_PALACE</Type>
+			<Path>Art/Movies/Wonders/PotalaPalace.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_IMAGE_OF_THE_WORLD_SQUARE</Type>
+			<Path>Art/Movies/Wonders/Image_of_the_World_Square.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BOURSE</Type>
+			<Path>Art/Movies/Wonders/Bourse.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_EMERALD_BUDDHA</Type>
+			<Path>Art/Movies/Wonders/EmeraldBuddha.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GUADALUPE_BASILICA</Type>
+			<Path>Art/Movies/Wonders/GuadalupeBasilica.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SALT_CATHEDRAL</Type>
+			<Path>Art/Movies/Wonders/SaltCathedral.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_AMBER_ROOM</Type>
+			<Path>Art/Movies/Wonders/AmberRoom.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ABBEY_MILLS</Type>
+			<Path>Art/Movies/Wonders/AbbeyMills.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CHAPULTEPEC_CASTLE</Type>
+			<Path>Art/Movies/Wonders/ChapultepecCastle.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TRIUMPHAL_ARCH</Type>
+			<Path>Art/Movies/Wonders/TriumphalArch.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MENLO_PARK</Type>
+			<Path>Art/Movies/Wonders/MenloPark.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BROOKLYN_BRIDGE</Type>
+			<Path>Art/Movies/Wonders/BrooklynBridge.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LAS_LAJAS_SANCTUARY</Type>
+			<Path>Art/Movies/Wonders/Las_Lajas.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PALACE_OF_NATIONS</Type>
+			<Path>Art/Movies/Wonders/Palace_of_Nations.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MOLE_ANTONELLIANA</Type>
+			<Path>Art/Movies/Wonders/Mole_Antonelliana.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_METROPOLITAIN</Type>
+			<Path>Art/Movies/Wonders/Metropolitain.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_NOBEL_PRIZE</Type>
+			<Path>Art/Movies/Wonders/Nobel_Prize.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GOLDEN_GATE_BRIDGE</Type>
+			<Path>Art/Movies/Wonders/Golden_Gate_Bridge.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BLETCHLEY_PARK</Type>
+			<Path>Art/Movies/Wonders/BletchleyPark.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SAGRADA_FAMILIA</Type>
+			<Path>Art/Movies/Wonders/SagradaFamilia.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CN_TOWER</Type>
+			<Path>Art/Movies/Wonders/CN_Tower.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CRYSTAL_CATHEDRAL</Type>
+			<Path>Art/Movies/Wonders/CrystalCathedral.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ATOMIUM</Type>
+			<Path>Art/Movies/Wonders/Atomium.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_IRON_DOME</Type>
+			<Path>Art/Movies/Wonders/Iron_Dome.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BURJ_KHALIFA</Type>
+			<Path>Art/Movies/Wonders/BurjKhalifa.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SKYTREE</Type>
+			<Path>Art/Movies/Wonders/Skytree.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ORIENTAL_PEARL_TOWER</Type>
+			<Path>Art/Movies/Wonders/Oriental_Pearl_Tower.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_DELTA_WORKS</Type>
+			<Path>Art/Movies/Wonders/DeltaWorks.dds</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

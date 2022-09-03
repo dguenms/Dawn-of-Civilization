@@ -9336,7 +9336,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_AQUA_APPIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_AQUA_APPIA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_AQUA_APPIA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_AQUA_APPIA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_AQUA_APPIA</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			<ObsoleteTech>TECH_CROP_ROTATION</ObsoleteTech>
@@ -9610,7 +9611,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_FLOATING_GARDENS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_FLOATING_GARDENS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_FLOATING_GARDENS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_FLOATING_GARDENS</MovieDefineTag>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
@@ -10192,7 +10194,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_IRON_PILLAR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_IRON_PILLAR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IRON_PILLAR</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_IRON_PILLAR</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_IRON_PILLAR</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -10253,7 +10256,8 @@
 			<Strategy>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PRAMBANAN_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PRAMBANAN</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_PRAMBANAN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PRAMBANAN</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
@@ -10893,7 +10897,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_MONOLITHIC_CHURCH_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_MONOLITHIC_CHURCH_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MONOLITHIC_CHURCH</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_MONOLITHIC_CHURCH</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_MONOLITHIC_CHURCH</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -11070,7 +11075,8 @@
 			<Strategy>TXT_KEY_BUILDING_OLD_SYNAGOGUE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_OLD_SYNAGOGUE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_OLD_SYNAGOGUE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_OLD_SYNAGOGUE</MovieDefineTag>
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_COMMUNE</PrereqTech>
@@ -11127,7 +11133,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_SAINT_SOPHIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SAINT_SOPHIA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SAINT_SOPHIA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SAINT_SOPHIA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SAINT_SOPHIA</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -11189,7 +11196,8 @@
 			<Strategy>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SILVER_TREE_FOUNTAIN</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SILVER_TREE_FOUNTAIN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SILVER_TREE_FOUNTAIN</MovieDefineTag>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PAPER</PrereqTech>
 			<ObsoleteTech>TECH_GEOGRAPHY</ObsoleteTech>
@@ -11596,7 +11604,8 @@
 			<Strategy>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_KREMLIN_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KREMLIN</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_KREMLIN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_KREMLIN</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -11759,7 +11768,8 @@
 			<Strategy>TXT_KEY_BUILDING_GUR_E_AMIR_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GUR_E_AMIR</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_GUR_E_AMIR</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GUR_E_AMIR</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -12206,7 +12216,8 @@
 			<Strategy>TXT_KEY_BUILDING_POTALA_PALACE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_POTALA_PALACE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_POTALA_PALACE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_POTALA_PALACE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_POTALA_PALACE</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12422,7 +12433,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_BOURSE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BOURSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BOURSE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_BOURSE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BOURSE</MovieDefineTag>
 			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12526,7 +12538,8 @@
 			<Strategy>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_IMAGE_OF_THE_WORLD_SQUARE</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12633,7 +12646,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_EMERALD_BUDDHA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_EMERALD_BUDDHA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_EMERALD_BUDDHA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_EMERALD_BUDDHA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_EMERALD_BUDDHA</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12864,7 +12878,8 @@
 			<Strategy>TXT_KEY_BUILDING_GUADALUPE_BASILICA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_GUADALUPE_BASILICA_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GUADALUPE_BASILICA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_GUADALUPE_BASILICA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GUADALUPE_BASILICA</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12911,7 +12926,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_SALT_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SALT_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SALT_CATHEDRAL</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SALT_CATHEDRAL</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SALT_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -12964,7 +12980,8 @@
 			<Strategy>TXT_KEY_BUILDING_AMBER_ROOM_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_AMBER_ROOM_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_AMBER_ROOM</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_AMBER_ROOM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_AMBER_ROOM</MovieDefineTag>
 			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
 			<OrStateReligion>RELIGION_ORTHODOXY</OrStateReligion>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
@@ -13125,7 +13142,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_ABBEY_MILLS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ABBEY_MILLS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ABBEY_MILLS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ABBEY_MILLS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ABBEY_MILLS</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -13224,7 +13242,8 @@
 			<Strategy>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHAPULTEPEC_CASTLE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_CHAPULTEPEC_CASTLE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CHAPULTEPEC_CASTLE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_NATIONALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
@@ -13391,7 +13410,8 @@
 			<Strategy>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRIUMPHAL_ARCH</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_TRIUMPHAL_ARCH</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TRIUMPHAL_ARCH</MovieDefineTag>
 			<PrereqCivic>CIVIC_CONSTITUTION</PrereqCivic>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_BALLISTICS</PrereqTech>
@@ -13444,7 +13464,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_MENLO_PARK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_MENLO_PARK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MENLO_PARK</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_MENLO_PARK</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_MENLO_PARK</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -13598,7 +13619,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_BROOKLYN_BRIDGE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BROOKLYN_BRIDGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BROOKLYN_BRIDGE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_BROOKLYN_BRIDGE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BROOKLYN_BRIDGE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_LEVEE</FreeBuilding>
@@ -13746,7 +13768,8 @@
 			<Strategy>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LAS_LAJAS_SANCTUARY</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_LAS_LAJAS_SANCTUARY</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LAS_LAJAS_SANCTUARY</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
@@ -13800,7 +13823,8 @@
 			<Strategy>TXT_KEY_BUILDING_PALACE_OF_NATIONS_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PALACE_OF_NATIONS_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PALACE_OF_NATIONS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_PALACE_OF_NATIONS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PALACE_OF_NATIONS</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_CIVIL_RIGHTS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
@@ -13846,7 +13870,8 @@
 			<Strategy>TXT_KEY_BUILDING_MOLE_ANTONELLIANA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_MOLE_ANTONELLIANA_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MOLE_ANTONELLIANA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_MOLE_ANTONELLIANA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_MOLE_ANTONELLIANA</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
@@ -14154,7 +14179,8 @@
 			<Strategy>TXT_KEY_BUILDING_METROPOLITAIN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_METROPOLITAIN</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_METROPOLITAIN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_METROPOLITAIN</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_PNEUMATICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -14200,7 +14226,8 @@
 			<Strategy>TXT_KEY_BUILDING_NOBEL_PRIZE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_NOBEL_PRIZE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_NOBEL_PRIZE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_NOBEL_PRIZE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_NOBEL_PRIZE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_REFINING</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
@@ -14253,7 +14280,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GOLDEN_GATE_BRIDGE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_GOLDEN_GATE_BRIDGE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GOLDEN_GATE_BRIDGE</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_INFRASTRUCTURE</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -14328,7 +14356,8 @@
 			<Strategy>TXT_KEY_BUILDING_BLETCHLEY_PARK_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BLETCHLEY_PARK</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_BLETCHLEY_PARK</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BLETCHLEY_PARK</MovieDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -14373,7 +14402,8 @@
 			<Strategy>TXT_KEY_BUILDING_SAGRADA_FAMILIA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SAGRADA_FAMILIA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SAGRADA_FAMILIA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SAGRADA_FAMILIA</MovieDefineTag>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_MACROECONOMICS</PrereqTech>
@@ -14565,7 +14595,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CN_TOWER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CN_TOWER</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_CN_TOWER</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CN_TOWER</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_TELEVISION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_BROADCAST_TOWER</FreeBuilding>
@@ -14678,7 +14709,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_CRYSTAL_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CRYSTAL_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CRYSTAL_CATHEDRAL</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_CRYSTAL_CATHEDRAL</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CRYSTAL_CATHEDRAL</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_TELEVISION</PrereqTech>
 			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
@@ -14885,7 +14917,8 @@
 			<Strategy>TXT_KEY_BUILDING_ATOMIUM_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_ATOMIUM_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ATOMIUM</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ATOMIUM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ATOMIUM</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_NUCLEAR_POWER</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -14931,7 +14964,8 @@
 			<Strategy>TXT_KEY_BUILDING_IRON_DOME_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_IRON_DOME_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IRON_DOME</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_IRON_DOME</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_IRON_DOME</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_LASER</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -15169,7 +15203,8 @@
 			<Strategy>TXT_KEY_BUILDING_BURJ_KHALIFA_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BURJ_KHALIFA</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_BURJ_KHALIFA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BURJ_KHALIFA</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_AERODYNAMICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -15273,7 +15308,8 @@
 			<Strategy>TXT_KEY_BUILDING_CHANNEL_TUNNEL_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_CHANNEL_TUNNEL_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHANNEL_TUNNEL</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_CHANNEL_TUNNEL</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CHANNEL_TUNNEL</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_ROBOTICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -15318,7 +15354,8 @@
 			<Civilopedia>TXT_KEY_BUILDING_SKYTREE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SKYTREE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SKYTREE</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_SKYTREE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SKYTREE</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -15382,7 +15419,8 @@
 			<Strategy>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ORIENTAL_PEARL_TOWER</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_ORIENTAL_PEARL_TOWER</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ORIENTAL_PEARL_TOWER</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
@@ -15428,7 +15466,8 @@
 			<Strategy>TXT_KEY_BUILDING_DELTA_WORKS_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_DELTA_WORKS_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_DELTA_WORKS</ArtDefineTag> <!-- needs movie -->
+			<ArtDefineTag>ART_DEF_BUILDING_DELTA_WORKS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_DELTA_WORKS</MovieDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
