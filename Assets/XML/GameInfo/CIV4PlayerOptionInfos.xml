@@ -121,12 +121,6 @@
 			<bDefault>0</bDefault>
 		</PlayerOptionInfo>
 		<PlayerOptionInfo>
-			<Type>PLAYEROPTION_HIDE_AIR_CIRCLING</Type>
-			<Description>TXT_KEY_PLAYER_OPTION_HIDE_AIR_CIRCLING</Description>
-			<Help>TXT_KEY_PLAYER_OPTION_HIDE_AIR_CIRCLING_HELP</Help>
-			<bDefault>0</bDefault>
-		</PlayerOptionInfo>
-		<PlayerOptionInfo>
 			<Type>PLAYEROPTION_MODDER_1</Type>
 			<Description>TXT_KEY_PLAYER_OPTION_MODDER_1</Description>
 			<Help>TXT_KEY_PLAYER_OPTION_MODDER_1_HELP</Help>
