@@ -63,7 +63,10 @@ WONDERS
 * merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
 
 WONDER MOVIES:
-* A New Dawn / Chronicles of Mankind (Zeta Nexus): Apadana Palace, Cheomseongdae, Crystal Palace, Flavian Amphitheatre, Forbidden Palace, Gardens by the Bay, Hubble Space Telescope, Neuschwanstein Castle, Al-Khazneh, San Marco Basilica
+* A New Dawn / Chronicles of Mankind (Zeta Nexus)
+* Caveman2Cosmos
+* Realism Invictus
+* Sword of Islam
 
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
@@ -78,6 +81,9 @@ TRANSLATION
 GAME TEXT
 * Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
 * freethink: Chinese diplomacy greetings
+
+MUSIC:
+* Native American music: Mullah Cable, freethink
 
 MISCELLANEOUS
 * Corossol: Phoenicia
