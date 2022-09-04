@@ -209,6 +209,8 @@ class Goal(Describable):
 			self.required = len(self.requirements)
 		
 		self.evaluator = EVALUATORS.get(subject, self.iPlayer)
+	
+		self._areas = dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
 		
 	def __repr__(self):
 		return "Goal(%s, %s)" % (self.requirements, self.iPlayer)
@@ -335,7 +337,7 @@ class Goal(Describable):
 		self.announce("TXT_KEY_VICTORY_ANNOUNCE_FAILURE", AlertsOpt.isShowUHVFailPopup())
 	
 	def areas(self):
-		return dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
+		return self._areas
 		
 	def area_name(self, tile):
 		return "\n".join(name for name, area in self.areas().items() if tile in area)
