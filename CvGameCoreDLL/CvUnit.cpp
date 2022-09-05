@@ -3859,8 +3859,8 @@ void CvUnit::airCircle(bool bStart)
 	//cancel previos missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
 
-	// Leoreth: cancel air circle
-	if (false)
+	// Leoreth: cancel air circling
+	if (GET_PLAYER(getOwnerINLINE()).isOption(PLAYEROPTION_HIDE_AIR_CIRCLING))
 	{
 		return;
 	}

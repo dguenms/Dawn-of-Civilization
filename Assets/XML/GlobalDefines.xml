@@ -1648,7 +1648,7 @@
 	</Define>
 	<Define>
 		<DefineName>USE_MODDERS_PLAYEROPTION_1</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>
+		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>USE_MODDERS_PLAYEROPTION_2</DefineName>
