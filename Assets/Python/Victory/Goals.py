@@ -421,7 +421,14 @@ class AllGoal(Goal):
 		return sum((goal.format_progress() for goal in self.requirements), [])
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
+		date_suffixes = list(self.create_date_suffixes())
+		
+		if date_suffixes:
+			requirement_entries = [(req, goal.desc_key, goal.desc_args, []) for goal in self.requirements for req in goal.requirements]
+		else:
+			requirement_entries = [(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements]
+		
+		return DESCRIPTION.format(requirement_entries, self.desc_args, date_suffixes)
 	
 
 class DifferentCitiesGoal(Goal):
