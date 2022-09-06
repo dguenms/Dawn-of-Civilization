@@ -944,6 +944,11 @@ class TestGoal(ExtendedTestCase):
 			self.assertEqual(goal.state_string(), "YES")
 		finally:
 			cities.kill()
+	
+	def test_immediately_fulfilled_requirement(self):
+		goal = Goal([NoCityLost()], NoCityLost.GOAL_DESC_KEY, 0)
+		
+		self.assertEqual(goal.state, SUCCESS)
 
 
 class TestAll(ExtendedTestCase):

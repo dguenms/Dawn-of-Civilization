@@ -212,6 +212,8 @@ class Goal(Describable):
 	
 		self._areas = dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
 		
+		self.check()
+		
 	def __repr__(self):
 		return "Goal(%s, %s)" % (self.requirements, self.iPlayer)
 	

@@ -85,5 +85,8 @@ class TestGoal(object):
 	def expire(self):
 		self.failed = True
 	
+	def fail(self):
+		self.failed = True
+	
 	def final_check(self):
 		self.checked = True

@@ -166,8 +166,6 @@ class FirstGreatPerson(StateRequirement):
 		if self.iSpecialist == self.specialist(unit) and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
-	
-	
 
 
 # Second Viking UHV goal
@@ -215,7 +213,7 @@ class NoCityConquered(StateRequirement):
 	def fail_on_city_conquered(self, goal, city, bConquest):
 		if bConquest and self.state == POSSIBLE:
 			self.fail()
-			goal.expire()
+			goal.fail()
 	
 	def fulfilled(self, evaluator):
 		return self.state != FAILURE
@@ -236,7 +234,7 @@ class NoCityLost(StateRequirement):
 	def fail_on_city_lost(self, goal):
 		if self.state == POSSIBLE:
 			self.fail()
-			goal.expire()
+			goal.fail()
 		
 	def fulfilled(self, evaluator):
 		return self.state != FAILURE
