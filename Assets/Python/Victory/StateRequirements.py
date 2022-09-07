@@ -181,7 +181,7 @@ class FirstSettle(StateRequirement):
 		StateRequirement.__init__(self, area, **options)
 		
 		self.area = area
-		self.allowed = players.of(*allowed)
+		self.allowed = allowed
 		
 		self.handle("cityBuilt", self.check_first_settled)
 		self.expire("cityBuilt", self.expire_first_settled)
@@ -193,7 +193,7 @@ class FirstSettle(StateRequirement):
 	
 	def expire_first_settled(self, goal, city):
 		if city in self.area and self.state == POSSIBLE:
-			if not is_minor(city) and city.getOwner() not in self.allowed:
+			if not is_minor(city) and city.getCivilizationType() not in self.allowed:
 				self.fail()
 				goal.expire()
 

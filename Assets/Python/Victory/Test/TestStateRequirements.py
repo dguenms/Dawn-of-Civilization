@@ -686,7 +686,7 @@ class TestFirstSettle(ExtendedTestCase):
 			cities.kill()
 	
 	def test_settle_first_other_allowed(self):
-		requirement = FirstSettle(self.area, allowed=[1])
+		requirement = FirstSettle(self.area, allowed=[civ(1)])
 		goal = TestGoal()
 		
 		requirement.register_handlers(goal)
