@@ -261,6 +261,7 @@ dGoals = {
 			plots.rectangle(tIndochina).without(lIndochinaExceptions).named(INDOCHINA),
 			plots.rectangle(tIndonesia).named(INDONESIA),
 			plots.rectangle(tPhilippines).named(PHILIPPINES),
+			subject=VASSALS,
 			at=1940,
 		),
 		EraFirstDiscover((iGlobal, 8), (iDigital, 8)),
