@@ -142,6 +142,10 @@ class Control(Requirement):
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
 	
+	SUBJECT_DESC_KEYS = {
+		VASSALS: "TXT_KEY_VICTORY_DESC_CONTROL_OR_VASSALIZE"
+	}
+	
 	def __init__(self, area, **options):
 		Requirement.__init__(self, area, **options)
 		

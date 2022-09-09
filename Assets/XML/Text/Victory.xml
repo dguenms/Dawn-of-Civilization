@@ -41,6 +41,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROL_OR_VASSALIZE</Tag>
+		<English>control or vassalize %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_HAVE</Tag>
 		<English>have %s1</English>
 		<French></French>
