@@ -213,7 +213,9 @@ class NoCityConquered(StateRequirement):
 	def fail_on_city_conquered(self, goal, city, bConquest):
 		if bConquest and self.state == POSSIBLE:
 			self.fail()
-			goal.fail()
+			
+			if goal.possible():
+				goal.fail()
 	
 	def fulfilled(self, evaluator):
 		return self.state != FAILURE
@@ -234,7 +236,9 @@ class NoCityLost(StateRequirement):
 	def fail_on_city_lost(self, goal):
 		if self.state == POSSIBLE:
 			self.fail()
-			goal.fail()
+			
+			if goal.possible():
+				goal.fail()
 		
 	def fulfilled(self, evaluator):
 		return self.state != FAILURE
