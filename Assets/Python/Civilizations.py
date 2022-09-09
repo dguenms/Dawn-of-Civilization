@@ -1165,6 +1165,7 @@ dAlwaysTrain = CivDict({
 	iAztecs: [iJaguar],
 	iOttomans: [iJanissary, iGreatBombard],
 	iMexico: [iGrenadier],
+	iColombia: [iAlbionLegion],
 	iBrazil: [iGrenadier],
 }, [])
 
