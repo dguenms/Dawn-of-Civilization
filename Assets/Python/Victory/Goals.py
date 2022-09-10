@@ -410,7 +410,7 @@ class AllGoal(Goal):
 	def subgoal_fail(self):
 		def fail(subgoal):
 			subgoal.set_state(FAILURE)
-			self.fail()
+			self.expire()
 		
 		return fail
 	
