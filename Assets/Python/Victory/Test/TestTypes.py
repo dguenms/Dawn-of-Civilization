@@ -90,7 +90,12 @@ class TestArea(ExtendedTestCase):
 	
 	def test_format(self):
 		self.assertEqual(AREA.format(self.area), "Test Area")
-		self.assertEqual(AREA.format(self.area), "Test Area")
+		self.assertEqual(AREA.format_repr(self.area), "Test Area")
+	
+	def test_format_area(self):
+		area = AreaArgument().of(TestCities.CITY_LOCATIONS).named("the Area")
+		
+		self.assertEqual(AREA.format_area(area), "Area")
 	
 	def test_area(self):
 		self.assertEqual(AREA.area(self.area), plots.of(TestCities.CITY_LOCATIONS))

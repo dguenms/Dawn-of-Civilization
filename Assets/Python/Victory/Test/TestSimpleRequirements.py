@@ -398,7 +398,7 @@ class TestCommunist(ExtendedTestCase):
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("the Area")
 		self.requirement = Control(self.area)
 		self.goal = TestGoal()
 		
@@ -408,19 +408,19 @@ class TestControl(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "Control(Test Area)")
+		self.assertEqual(str(self.requirement), "Control(The Area)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "Control(Test Area)")
+		self.assertEqual(repr(self.requirement), "Control(The Area)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "Test Area")
+		self.assertEqual(self.requirement.description(), "the Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
+		self.assertEqual(self.requirement.areas(), {"Area": plots.of(TestCities.CITY_LOCATIONS)})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((61, 31)), "Area")
 		self.assertEqual(self.requirement.area_name((62, 32)), "")
 	
 	def test_pickle(self):
@@ -428,14 +428,14 @@ class TestControl(ExtendedTestCase):
 	
 	def test_none(self):
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "The Area")
 	
 	def test_some(self):
 		cities = TestCities.owners(0, 0, 1)
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "The Area")
 		finally:
 			cities.kill()
 	
@@ -444,7 +444,7 @@ class TestControl(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "The Area")
 		finally:
 			cities.kill()
 	
@@ -457,7 +457,7 @@ class TestControl(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Test Area")
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "The Area")
 		finally:
 			cities.kill()
 			team(1).setVassal(0, False, False)
@@ -469,7 +469,7 @@ class TestControl(ExtendedTestCase):
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(evaluator), False)
-			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Test Area")
+			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "The Area")
 		finally:
 			cities.kill()
 	

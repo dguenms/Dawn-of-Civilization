@@ -60,6 +60,9 @@ class Type(object):
 		if isinstance(argument, NamedArgument):
 			return argument.name()
 		return self.format_repr_func(argument)
+	
+	def format_area(self, argument, **options):
+		return remove_articles(self.format(argument, **options))
 		
 	def validate_func(self, argument):
 		raise NotImplementedError()

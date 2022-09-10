@@ -73,7 +73,7 @@ class Requirement(object):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
 	
 	def areas(self, **options):
-		return dict((type.format(parameter, **options), type.area(parameter)) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters) if type.area(parameter) is not None)
+		return dict((type.format_area(parameter, **options), type.area(parameter)) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters) if type.area(parameter) is not None)
 		
 	def area_name(self, tile):
 		return "\n".join(name for name, area in self.areas().items() if tile in area)

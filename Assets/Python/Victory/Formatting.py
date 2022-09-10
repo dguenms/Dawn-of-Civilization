@@ -36,6 +36,10 @@ def format_articles(string):
 	return string.replace("The", "the")
 
 
+def remove_articles(string):
+	return string.lstrip("the").lstrip()
+
+
 def number_word(number):
 	return text_if_exists("TXT_KEY_VICTORY_NUMBER_%s" % number, otherwise=number)
 
