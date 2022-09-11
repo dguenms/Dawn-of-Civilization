@@ -1679,7 +1679,7 @@ void CvUnitAI::AI_barbAttackMove()
 		return;
 	}
 
-	if (plot()->isGoody())
+	if (!isAnimal() && plot()->isGoody())
 	{
 		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) <= 2)
 		{
