@@ -95,7 +95,7 @@ def canBeRazed(city):
 
 def getCityClaim(city):
 	iOwner = city.getOwner()
-	possibleClaims = players.major().alive().without(iOwner).before_fall()
+	possibleClaims = players.major().alive().without(iOwner).past_birth().before_fall()
 	
 	# claim based on core territory
 	coreClaims = possibleClaims.where(lambda p: city.isPlayerCore(p))
