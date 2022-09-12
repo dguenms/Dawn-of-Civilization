@@ -4842,7 +4842,7 @@ dIdentifiers = {
 	"Suza"			:	"Shush",
 	"S.Cruz de Mar Peque&#241;a":	"Sidi Ifni",
 	"Sidi Ifni"		:	"Sidi Ifni",
-	"Shouantou"		:	"Singapura",
+	"Shounantou"		:	"Singapura",
 	"Singapore"		:	"Singapura",
 	"Singapur"		:	"Singapura",
 	"Singapura"		:	"Singapura",
