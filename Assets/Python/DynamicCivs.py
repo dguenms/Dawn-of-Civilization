@@ -1136,6 +1136,8 @@ def republicAdjective(iPlayer):
 	if iCiv in [iMoors, iEngland]: return None
 	
 	if iCiv == iInca and data.civs[iPlayer].iResurrections > 0: return None
+	
+	if iCiv == iHolyRome and player(iPlayer).getPeriod() == -1: return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
 		
 	return player(iPlayer).getCivilizationAdjective(0)
 	
@@ -1513,8 +1515,8 @@ def republicTitle(iPlayer):
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
 
-	if iCiv == iHolyRome:
-		return "TXT_KEY_REPUBLIC_ADJECTIVE"
+	if iCiv == iHolyRome and pPlayer.getPeriod() == -1:
+		return "TXT_KEY_CIV_HOLY_ROME_CONFEDERATION"
 	
 	if iCiv == iPoland:
 		if pPlayer.getCurrentEra() <= iIndustrial:
@@ -1851,6 +1853,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iCiv == iHolyRome:
+		if bCityStates:
+			return "TXT_KEY_CIV_HOLY_ROME_FREE_CITIES"
+	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
