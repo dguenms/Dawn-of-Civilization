@@ -5512,7 +5512,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		bFirst = true;
 		for (iI = 0; iI < GC.getNumBuildingInfos(); ++iI)
 		{
-			if (pCity->getNumRealBuilding((BuildingTypes)iI) > 0)
+			if (pCity->getNumRealBuilding((BuildingTypes)iI) > 0 || pCity->getNumFreeBuilding((BuildingTypes)iI) > 0)
 			{
 				if (bFirst)
 				{
