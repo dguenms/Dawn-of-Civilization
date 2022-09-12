@@ -290,7 +290,7 @@ class Goal(Describable):
 	
 	def handle_by(self, goal, iGameTurn, iPlayer):
 		if year(goal.iYear) == iGameTurn:
-			goal.expire()
+			goal.final_check()
 	
 	def at(self, iYear):
 		self.iYear = iYear
