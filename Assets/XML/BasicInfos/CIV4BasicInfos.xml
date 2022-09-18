@@ -121,5 +121,10 @@
 			<Description>TXT_KEY_CONCEPT_BIRTH_OF_A_CIVILIZATION</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_BIRTH_OF_A_CIVILIZATION_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_HISTORICAL_IMPACT</Type>
+			<Description>TXT_KEY_CONCEPT_HISTORICAL_IMPACT</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_HISTORICAL_IMPACT_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

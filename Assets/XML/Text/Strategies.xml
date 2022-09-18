@@ -209,4 +209,12 @@
 		<Italian>Birth of a Civilization</Italian>
 		<Spanish>Birth of a Civilization</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_HISTORICAL_IMPACT</Tag>
+		<English>Historical Impact</English>
+		<French>Historical Impact</French>
+		<German>Historischer Einfluss</German>
+		<Italian>Historical Impact</Italian>
+		<Spanish>Historical Impact</Spanish>
+	</TEXT>
 </Civ4GameText>
