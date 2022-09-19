@@ -408,10 +408,10 @@ class TestControl(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "Control(The Area)")
+		self.assertEqual(str(self.requirement), "Control(the Area)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "Control(The Area)")
+		self.assertEqual(repr(self.requirement), "Control(the Area)")
 	
 	def test_description(self):
 		self.assertEqual(self.requirement.description(), "the Area")

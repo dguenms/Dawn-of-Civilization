@@ -90,8 +90,6 @@ class PlayerData:
 		
 		# Victory
 		
-		self.bLaunchHistoricalGoldenAge = False
-		
 		self.historicalGoals = []
 		self.religiousGoals = []
 		

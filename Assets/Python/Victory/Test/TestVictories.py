@@ -112,13 +112,17 @@ class TestHistoricalVictory(ExtendedTestCase):
 	def golden_age(self):
 		self.golden_age_called = True
 	
-	def test_succeed(self):
+	def test_succeed_and_checked(self):
 		self.victory.goals[0].succeed()
+		
+		events.fireEvent("BeginGameTurn", 0)
 		
 		self.assertEqual(self.victory_called, False)
 		self.assertEqual(self.golden_age_called, True)
 		
 		self.victory.goals[1].succeed()
+		
+		events.fireEvent("BeginGameTurn", 1)
 		
 		self.assertEqual(self.victory_called, True)
 	
@@ -157,7 +161,7 @@ class TestReligiousVictory(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
-			self.victory.check()
+			self.victory.check(0)
 			
 			self.assertEqual(self.victory_called, True)
 		finally:
