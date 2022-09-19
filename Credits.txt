@@ -63,6 +63,7 @@ WONDERS
 * merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
 
 WONDER MOVIES:
+* Nexus CinematiX (<Nexus>)
 * A New Dawn / Chronicles of Mankind (Zeta Nexus)
 * Caveman2Cosmos
 * Realism Invictus
