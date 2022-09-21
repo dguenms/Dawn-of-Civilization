@@ -508,6 +508,13 @@ class TestFirstGreatPerson(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
+	def test_fulfillable(self):
+		self.assertEqual(self.requirement.fulfillable(), True)
+		
+		self.requirement.state = FAILURE
+		
+		self.assertEqual(self.requirement.fulfillable(), False)
+	
 	def test_first(self):
 		our_city, their_city = cities = TestCities.owners(0, 1)
 		

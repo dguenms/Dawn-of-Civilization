@@ -278,6 +278,11 @@ class Goal(Describable):
 	
 	def expire(self):
 		if self.possible():
+			if self.required < len(self.requirements):
+				if count(requirement.fulfillable() for requirement in self.requirements) < self.required:
+					self.fail()
+				return
+		
 			self.fail()
 	
 	def final_check(self):
