@@ -78,6 +78,9 @@ class Victory(object):
 		self.iPlayer = iPlayer
 		self.goals = tuple(self.create_goal(description) for description in descriptions)
 		
+		self.bGoldenAge = False
+		self.bVictory = False
+		
 		self.enable()
 		
 	def enable(self):
@@ -87,13 +90,13 @@ class Victory(object):
 			
 			goal.enable()
 		
-		events.addEventHandler("BeginGameTurn", self.check)
+		events.addEventHandler("BeginGameTurn", self.check_complete)
 	
 	def disable(self):
 		for goal in self.goals:
 			goal.disable()
 		
-		events.removeEventHandler("BeginGameTurn", self.check)
+		events.removeEventHandler("BeginGameTurn", self.check_complete)
 
 	def goal_succeed(self):
 		def succeed(goal):
@@ -101,6 +104,8 @@ class Victory(object):
 		
 			if goal.state == SUCCESS:
 				goal.announce_success()
+				
+				self.check()
 		
 		return succeed
 
@@ -122,14 +127,39 @@ class Victory(object):
 	def area_names(self, tile):
 		return [goal.area_name(tile) for goal in self.goals]
 	
-	def check(self, iGameTurn):
+	def check(self):
 		pass
+	
+	def check_complete(self, iGameTurn):
+		if self.bGoldenAge:
+			self.bGoldenAge = False
+			self.golden_age()
+		
+		if self.bVictory:
+			self.bVictory = False
+			self.victory()
 	
 	def create_goal(self, description):
 		return description(self.iPlayer)
+	
+	def victory(self):
+		if game.getWinner() == -1:
+			game.setWinner(self.iPlayer, self.VICTORY_TYPE)
+	
+	def golden_age(self):
+		iGoldenAgeTurns = player(self.iPlayer).getGoldenAgeLength()
+		player(self.iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
+		
+		message(self.iPlayer, "TXT_KEY_VICTORY_INTERMEDIATE", color=iPurple)
+		
+		if player(self.iPlayer).isHuman():
+			for iOtherPlayer in players.major().alive().without(self.iPlayer):
+				player(iOtherPlayer).AI_changeAttitudeExtra(self.iPlayer, -2)
 
 
 class HistoricalVictory(Victory):
+
+	VICTORY_TYPE = VictoryTypes.VICTORY_HISTORICAL
 
 	@classmethod
 	def create(cls, iPlayer):
@@ -141,31 +171,19 @@ class HistoricalVictory(Victory):
 		
 		getScenario().initGoals(self.iPlayer, self.goals)
 
-	def check(self, iGameTurn):
+	def check(self):
 		iSucceededGoals = self.succeeded_goals()
 		iNumGoals = self.num_goals()
 		
 		if iSucceededGoals == iNumGoals - 1:
-			self.golden_age()
+			self.bGoldenAge = True
 		elif iSucceededGoals == iNumGoals:
-			self.victory()
+			self.bVictory = True
 	
-	def golden_age(self):
-		iGoldenAgeTurns = player(self.iPlayer).getGoldenAgeLength()
-		player(self.iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
-		
-		message(self.iPlayer, "TXT_KEY_VICTORY_INTERMEDIATE", color=iPurple)
-		
-		if player(self.iPlayer).isHuman():
-			for iOtherPlayer in players.major().alive().without(self.iPlayer):
-				player(iOtherPlayer).AI_changeAttitudeExtra(self.iPlayer, -2)
-	
-	def victory(self):
-		if game.getWinner() == -1:
-			game.setWinner(self.iPlayer, VictoryTypes.VICTORY_HISTORICAL)
-
 
 class ReligiousVictory(Victory):
+
+	VICTORY_TYPE = VictoryTypes.VICTORY_RELIGIOUS
 
 	@classmethod
 	def create(cls, iPlayer):
@@ -180,13 +198,9 @@ class ReligiousVictory(Victory):
 		else:
 			return cls(iPlayer, dReligiousGoals[iSecularVictory])
 
-	def check(self, iGameTurn):
+	def check(self):
 		if self.succeeded_goals() == self.num_goals():
-			self.victory()
-	
-	def victory(self):
-		if game.getWinner() == -1:
-			game.setWinner(self.iPlayer, VictoryTypes.VICTORY_RELIGIOUS)
+			self.bVictory = True
 	
 	def create_goal(self, description):
 		return description(self.iPlayer, mode=STATELESS)

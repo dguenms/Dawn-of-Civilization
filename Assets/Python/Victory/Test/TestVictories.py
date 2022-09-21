@@ -161,7 +161,11 @@ class TestReligiousVictory(ExtendedTestCase):
 			city.setHasRealBuilding(iGranary, True)
 		
 		try:
-			self.victory.check(0)
+			self.victory.check()
+			
+			self.assertEqual(self.victory_called, False)
+			
+			events.fireEvent("BeginGameTurn", 0)
 			
 			self.assertEqual(self.victory_called, True)
 		finally:
