@@ -16992,7 +16992,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 
 							if (eImprovement == eLoopImprovement)
 							{
-								if (GC.getBuildInfo((BuildTypes)iI).isFeatureRemove(pPlot->getFeatureType()) && canBuild(pPlot, (BuildTypes)iI))
+								if (GC.getBuildInfo((BuildTypes)iI).isFeatureRemove(pPlot->getFeatureType()) && (!pPlot->isOwned() || canBuild(pPlot, (BuildTypes)iI)))
 								{
 									pPlot->setFeatureType(NO_FEATURE);
 									break;
