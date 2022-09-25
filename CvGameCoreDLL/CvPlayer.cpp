@@ -17769,6 +17769,11 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 				return -1;
 			}
 
+			if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
+			{
+				return -1;
+			}
+
 			bool bValid = false;
 
 			for (int iI = 0; iI < GC.getNumBuildInfos(); ++iI)
