@@ -1447,7 +1447,7 @@
 	</Define>
 	<Define>
 		<DefineName>MIN_WATER_SIZE_FOR_OCEAN</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>15</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MIN_CITY_ATTACK_MODIFIER_FOR_SIEGE_TOWER</DefineName>

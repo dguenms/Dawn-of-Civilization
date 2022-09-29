@@ -1640,6 +1640,9 @@ class PlayerFactory:
 		
 	def civs(self, *civs):
 		return self.all().where(lambda p: civ(p) in civs)
+	
+	def group(self, iGroup):
+		return self.civs(*dCivGroups[iGroup])
 		
 	def independent(self):
 		return self.civs(iIndependent, iIndependent2)

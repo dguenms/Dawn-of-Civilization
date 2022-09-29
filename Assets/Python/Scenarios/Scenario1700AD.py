@@ -250,6 +250,28 @@ scenario1700AD = Scenario(
 	},
 	iOwnerBaseCulture = 100,
 	
+	dRevealed = {
+		iCivGroupEurope: Revealed(
+			lLandRegions=lEurope + lNorthAfrica + [rAnatolia, rMesopotamia, rArabia, rPersia], 
+			lCoastRegions=lIndia + lEastAsia + lSubSaharanAfrica + lAmerica,
+			lSeaAreas=[((29, 60), (50, 27)), ((28, 11), (58, 26)), ((79, 23), (97, 32)), ((111, 28), (123, 44)), ((0, 28), (21, 44))],
+		),
+		iCivGroupAsia: Revealed(
+			lLandRegions=lEastAsia + lIndia + [rMesopotamia, rPersia, rArabia, rCentralAsia],
+			lCoastRegions=[rEthiopia],
+			lSeaAreas=[((79, 23), (97, 32))],
+		),
+		iCivGroupMiddleEast: Revealed(
+			lLandRegions=lMiddleEast + lIndia + lNorthAfrica + [rWestAfrica, rEthiopia, rIberia, rItaly, rBalkans],
+			lCoastRegions=lEastAsia + lCentralAmerica + [rSouthAfrica, rBritain, rEurope, rScandinavia, rRussia, rUnitedStates, rBrazil],
+			lSeaAreas=[((79, 23), (97, 32))],
+		),
+		iCivGroupAfrica: Revealed(
+			lLandRegions=lSubSaharanAfrica,
+			lCoastRegions=lSubSaharanAfrica,
+		),
+	},
+	
 	dGreatPeopleCreated = {
 		iChina: 12,
 		iIndia: 8,

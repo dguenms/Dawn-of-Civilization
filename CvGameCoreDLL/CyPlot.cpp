@@ -99,7 +99,7 @@ bool CyPlot::isAdjacentToLand()
 
 bool CyPlot::isCoastalLand()
 {
-	return m_pPlot ? m_pPlot->isCoastalLand() : false;
+	return m_pPlot ? m_pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()) : false;
 }
 
 bool CyPlot::isWithinTeamCityRadius(int /*TeamTypes*/ eTeam, int /*PlayerTypes*/ eIgnorePlayer)

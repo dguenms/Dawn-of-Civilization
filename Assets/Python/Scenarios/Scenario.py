@@ -257,6 +257,21 @@ class GreatWall(object):
 		
 		for plot in plots.sum(plots.rectangle(*tCorners).without(self.lGraphicsExceptions).land() for tCorners in self.lEffectAreas):
 			plot.setWithinGreatWall(True)
+
+
+class Revealed(object):
+
+	def __init__(self, *args, **kwargs):
+		self.lLandRegions = kwargs.get("lLandRegions", [])
+		self.lCoastRegions = kwargs.get("lCoastRegions", [])
+		self.lSeaAreas = kwargs.get("lSeaAreas", [])
+	
+	def getArea(self):	
+		landPlots = plots.regions(*self.lLandRegions).where(CyPlot.isOwned)
+		coastPlots = plots.regions(*self.lCoastRegions).coastal().expand(1).water()
+		seaPlots = plots.sum(plots.rectangle(*tArea) for tArea in self.lSeaAreas).water()
+		
+		return landPlots + coastPlots + seaPlots
 			
 
 class Scenario(object):
@@ -271,6 +286,8 @@ class Scenario(object):
 		
 		self.dOwnedTiles = kwargs.get("dOwnedTiles", {})
 		self.iOwnerBaseCulture = kwargs.get("iOwnerBaseCulture", 0)
+		
+		self.dRevealed = kwargs.get("dRevealed", {})
 		
 		self.dGreatPeopleCreated = kwargs.get("dGreatPeopleCreated", {})
 		self.dGreatGeneralsCreated = kwargs.get("dGreatGeneralsCreated", {})
@@ -375,6 +392,8 @@ class Scenario(object):
 		self.adjustGreatPeople()
 		self.adjustColonists()
 		
+		self.revealTiles()
+		
 		self.initDiplomacy()
 		
 		self.restoreCivs()
@@ -422,6 +441,16 @@ class Scenario(object):
 		for iCiv, iColonists in self.dColonistsAlreadyGiven.items():
 			data.players[iCiv].iExplorationTurn = iStartTurn
 			data.players[iCiv].iColonistsAlreadyGiven = iColonists
+	
+	def revealTiles(self):
+		for iGroup, revealed in self.dRevealed.items():
+			revealedPlots = revealed.getArea()
+			revealedPlots = revealedPlots.expand(1).unique()
+			
+			for iPlayer in players.group(iGroup):
+				iTeam = player(iPlayer).getTeam()
+				for plot in revealedPlots + plots.birth(iPlayer) + plots.core(iPlayer):
+					plot.setRevealed(iTeam, True, False, -1)
 	
 	def initDiplomacy(self):
 		for iAttacker, iDefender, iWarPlan in self.lInitialWars:
