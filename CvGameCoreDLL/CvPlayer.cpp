@@ -11162,7 +11162,7 @@ int CvPlayer::getNoNonStateReligionSpreadCount() const
 
 bool CvPlayer::isNoNonStateReligionSpread() const
 {
-	return (getNoNonStateReligionSpreadCount() > 0);
+	return !isMinorCiv() && getNoNonStateReligionSpreadCount() > 0;
 }
 
 
