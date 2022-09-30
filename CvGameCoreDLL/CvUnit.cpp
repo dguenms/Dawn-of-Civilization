@@ -9699,7 +9699,7 @@ int CvUnit::withdrawalProbability() const
 	// Leoreth: recently born civilizations have additional retreat chance on their territory, or in expansion territory
 	if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
 	{
-		iWithdrawalProbability = std::min(100, iWithdrawalProbability + 50);
+		iWithdrawalProbability = std::min(90, iWithdrawalProbability + 50);
 	}
 
 	return iWithdrawalProbability;
