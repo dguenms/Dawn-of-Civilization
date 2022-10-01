@@ -212,7 +212,8 @@ class Goal(Describable):
 	
 		self._areas = dict((name, area) for requirement in self.requirements for name, area in requirement.areas().items())
 		
-		self.check()
+		for requirement in requirements:
+			requirement.init(self)
 		
 	def __repr__(self):
 		return "Goal(%s, %s)" % (self.requirements, self.iPlayer)
@@ -222,6 +223,9 @@ class Goal(Describable):
 			return False
 		
 		return (self.requirements, self.iPlayer) == (other.requirements, other.iPlayer)
+	
+	def init(self, goal):
+		pass
 	
 	def enable(self):
 		event_handler_registry.register(self, self)

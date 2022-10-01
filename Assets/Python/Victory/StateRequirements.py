@@ -210,6 +210,9 @@ class NoCityConquered(StateRequirement):
 		
 		self.handle("cityAcquired", self.fail_on_city_conquered)
 	
+	def init(self, goal):
+		goal.check()
+	
 	def fail_on_city_conquered(self, goal, city, bConquest):
 		if bConquest and self.state == POSSIBLE:
 			self.fail()
@@ -230,6 +233,9 @@ class NoCityLost(StateRequirement):
 		StateRequirement.__init__(self, **options)
 		
 		self.handle("cityLost", self.fail_on_city_lost)
+	
+	def init(self, goal):
+		goal.check()
 		
 	def fail_on_city_lost(self, goal):
 		if self.state == POSSIBLE:

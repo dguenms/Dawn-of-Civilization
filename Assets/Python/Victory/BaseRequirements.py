@@ -33,6 +33,9 @@ class Requirement(object):
 		formatted_parameters = [parameter_type.format_repr(parameter) for parameter_type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)]
 		return "%s(%s)" % (type(self).__name__, ", ".join(formatted_parameters))
 	
+	def init(self, goal):
+		pass
+	
 	def handle(self, event, func):
 		self.handlers.add(event, func)
 	
