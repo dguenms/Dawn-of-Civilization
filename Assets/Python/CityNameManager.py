@@ -4116,7 +4116,7 @@ dIdentifiers = {
 	"Leipzig"		:	"Leipzig",
 	"Lipsk"			:	"Leipzig",
 	"Le&#243;n"		:	"Le&#243;n",
-	"Liyun"			:	"Le&&#243;",
+	"Liyun"			:	"Le&#243;n",
 	"Lepcis"		:	"Leptis Magna",
 	"Leptis Magna"	:	"Leptis Magna",
 	"Libdeh Al-Kubra"	:	"Leptis Magna",
