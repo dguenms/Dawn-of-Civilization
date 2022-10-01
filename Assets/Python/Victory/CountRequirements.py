@@ -100,6 +100,10 @@ class BuildingCount(ThresholdRequirement):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
 	
+	SUBJECT_DESC_KEYS = {
+		WORLD: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD"
+	}
+	
 	def __init__(self, iBuilding, *args, **options):
 		ThresholdRequirement.__init__(self, iBuilding, *args, **options)
 		

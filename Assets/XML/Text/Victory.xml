@@ -416,6 +416,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD</Tag>
+		<English>make sure there are %s1 in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
