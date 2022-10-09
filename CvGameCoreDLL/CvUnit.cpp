@@ -1344,7 +1344,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 				pDefender->changeDamage(iDefenderDamage, getOwnerINLINE());
 
 				// Leoreth: defenders from recently born civilizations can retreat from combat after losing half their initial health
-				if (pPlot->isBirthProtected() && pPlot->getBirthProtected() == pDefender->getOwnerINLINE())
+				/*if (pPlot->isBirthProtected() && pPlot->getBirthProtected() == pDefender->getOwnerINLINE())
 				{
 					if (pDefender->getDamage() < pDefender->maxHitPoints() && iInitialDefenderDamage < pDefender->maxHitPoints() / 2 && pDefender->getDamage() >= (pDefender->maxHitPoints() + iInitialDefenderDamage) / 2)
 					{
@@ -1352,7 +1352,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 						CvEventReporter::getInstance().combatRetreat(this, pDefender);
 						break;
 					}
-				}
+				}*/
 
 				if (getCombatFirstStrikes() > 0 && isRanged())
 				{
@@ -9697,10 +9697,10 @@ int CvUnit::withdrawalProbability() const
 	int iWithdrawalProbability = std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
 
 	// Leoreth: recently born civilizations have additional retreat chance on their territory, or in expansion territory
-	if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
+	/*if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
 	{
 		iWithdrawalProbability = std::min(90, iWithdrawalProbability + 50);
-	}
+	}*/
 
 	return iWithdrawalProbability;
 }
