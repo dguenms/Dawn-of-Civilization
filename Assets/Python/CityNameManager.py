@@ -6665,6 +6665,7 @@ tRenames = (
 	"Berlin"		:	"Berlin",
 	"Brest-Litowsk"	:	"Brest-Litovsk",
 	"Bucuresti"		:	"Bucuresti",
+	"Budapest"		:	"Budapest",
 	"Byzantion"		:	"Car'grad",
 	"Constantinopolis"	:	"Car'grad",
 	"Chita"			:	"Chita",
