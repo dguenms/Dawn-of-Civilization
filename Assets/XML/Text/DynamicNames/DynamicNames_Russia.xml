@@ -50,6 +50,14 @@
 		<Spanish>Grand Duchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_GRAND_PRINCIPALITY</Tag>
+		<English>Grand Principality of %s1</English>
+		<French>Grand Principality of %s1</French>
+		<German>Grand Principality of %s1</German>
+		<Italian>Grand Principality of %s1</Italian>
+		<Spanish>Grand Principality of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_REPUBLIC</Tag>
 		<English>%s2 Federation</English>
 		<French>

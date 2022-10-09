@@ -1883,6 +1883,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if isControlled(iPlayer, plots.rectangle(tEuropeanRussia).without(lEuropeanRussiaExceptions), 5):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
+		
+		if isCurrentCapital(iPlayer, "Kiev"):
+			return "TXT_KEY_CIV_RUSSIA_GRAND_PRINCIPALITY"
 
 	elif iCiv == iNetherlands:
 		if bCityStates:
