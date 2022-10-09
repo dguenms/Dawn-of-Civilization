@@ -1877,10 +1877,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
 		if iEra <= iMedieval:
-			if (iGovernment == iRepublic and iLegitimacy in [iVassalage, iCitizenship]) or (iGovernment == iElective and iLegitimacy == iCitizenship):
+			if (civic.iGovernment == iRepublic and civic.iLegitimacy in [iVassalage, iCitizenship]) or (civic.iGovernment == iElective and civic.iLegitimacy == iCitizenship):
 				return "TXT_KEY_CIV_RUSSIA_MEDIEVAL_REPUBLIC"
 			
-			if iGovernment == iElective:
+			if civic.iGovernment == iElective:
 				if isCurrentCapital(iPlayer, "Kiev"):
 					return "TXT_KEY_CIV_RUSSIA_KIEVAN_RUS"
 				
