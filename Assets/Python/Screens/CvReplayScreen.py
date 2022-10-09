@@ -74,6 +74,8 @@ class CvReplayScreen:
 		self.replayInfo = None
 		self.bPlaying = False
 		
+		self.dColors = {}
+		
 	def setReplayInfo(self, replayInfo):
 		self.replayInfo = replayInfo
 		
@@ -174,9 +176,11 @@ class CvReplayScreen:
 		self.showEvents(self.iTurn, False)
 															
 		return
+	
+	def getCivColor(self, iCiv):
+		return gc.getPlayerColorInfo(gc.getCivilizationInfo(iCiv).getDefaultPlayerColor()).getColorTypePrimary()
 		
 	def showEvents(self, iTurn, bSilent):
-
 		self.iTurn = iTurn
 		screen = self.getScreen()
 				
@@ -190,8 +194,7 @@ class CvReplayScreen:
 			self.resetData()
 			self.showEvents(self.iTurn, False)
 			return
-			
-
+		
 		szTurnDate = CyGameTextMgr().getDateStr(self.iTurn, false, self.replayInfo.getCalendar(), self.replayInfo.getStartYear(), self.replayInfo.getGameSpeed())
 		screen.deleteWidget(self.szHeader)
 		screen.setLabel(self.szHeader, "Background", u"<font=4b>" + szTurnDate + u"<font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.Y_TITLE, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -218,8 +221,7 @@ class CvReplayScreen:
 			iY = self.replayInfo.getReplayMessagePlotY(iLoopEvent)
 			eMessageType = self.replayInfo.getReplayMessageType(iLoopEvent)
 			eColor = self.replayInfo.getReplayMessageColor(iLoopEvent)
-				
-
+			
 			if (szText != "" and not bSilent):			
 				szTextNoColor = re.sub("<color=.*?>", "", szText)
 				szText = re.sub("</color>", "", szTextNoColor)
@@ -228,12 +230,18 @@ class CvReplayScreen:
 				szText =localText.changeTextColor(szText, eColor)
 				screen.prependListBoxString(self.szAreaId, szText, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 			
-			if (eMessageType == ReplayMessageTypes.REPLAY_MESSAGE_PLOT_OWNER_CHANGE):
+			if eMessageType == ReplayMessageTypes.REPLAY_MESSAGE_PLOT_OWNER_CHANGE:
 				iPlayer = self.replayInfo.getReplayMessagePlayer(iLoopEvent)
 				if iPlayer != -1:
-					screen.setMinimapColor(MinimapModeTypes.MINIMAPMODE_REPLAY, iX, iY, self.replayInfo.getColor(iPlayer), 0.6)
+					iColor = self.dColors.get(iPlayer, self.replayInfo.getColor(iPlayer))
+					screen.setMinimapColor(MinimapModeTypes.MINIMAPMODE_REPLAY, iX, iY, iColor, 0.6)
 				else:
 					screen.setMinimapColor(MinimapModeTypes.MINIMAPMODE_REPLAY, iX, iY, gc.getInfoTypeForString("COLOR_CLEAR"), 0.6)
+			elif eMessageType == ReplayMessageTypes.REPLAY_MESSAGE_CIV_ASSIGNED:
+				iPlayer = self.replayInfo.getReplayMessagePlayer(iLoopEvent)
+				iCiv = iX
+				
+				self.dColors[iPlayer] = self.getCivColor(iCiv)
 			else:
 				if (iX > -1 and iY > -1 and not bSilent):
 					screen.minimapFlashPlot(iX, iY, gc.getInfoTypeForString("COLOR_WHITE"), 10)

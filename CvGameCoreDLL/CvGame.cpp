@@ -9348,6 +9348,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 	if (eCiv != NO_CIVILIZATION)
 	{
 		CvEventReporter::getInstance().playerCivAssigned(eNewPlayer, eCiv);
+		addReplayMessage(REPLAY_MESSAGE_CIV_ASSIGNED, eNewPlayer, (char*)NULL, eCiv);
 	}
 }
 

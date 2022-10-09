@@ -12270,6 +12270,7 @@ void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
 
 	CvEventReporter::getInstance().playerCivAssigned(getID(), iNewValue);
+	GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_CIV_ASSIGNED, getID(), (char*)NULL, iNewValue);
 }
 // edead: end
 
