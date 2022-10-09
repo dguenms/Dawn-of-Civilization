@@ -84,11 +84,8 @@ void CvSelectionGroupAI::AI_seperateNonAI(UnitAITypes eUnitAI)
 	CvUnit* pLoopUnit;
 
 	pEntityNode = headUnitNode();
-	int iCounter = 0; //Rhye (loop fix)
 	while (pEntityNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
 		pLoopUnit = ::getUnit(pEntityNode->m_data);
 		pEntityNode = nextUnitNode(pEntityNode);
 		if (pLoopUnit->AI_getUnitAIType() != eUnitAI)
@@ -109,11 +106,8 @@ void CvSelectionGroupAI::AI_seperateAI(UnitAITypes eUnitAI)
 
 	pEntityNode = headUnitNode();
 
-	int iCounter = 0; //Rhye (possible loop fix)
 	while (pEntityNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
 		pLoopUnit = ::getUnit(pEntityNode->m_data);
 		pEntityNode = nextUnitNode(pEntityNode);
 		if (pLoopUnit->AI_getUnitAIType() == eUnitAI)

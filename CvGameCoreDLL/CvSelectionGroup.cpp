@@ -2150,12 +2150,8 @@ bool CvSelectionGroup::canDoCommand(CommandTypes eCommand, int iData1, int iData
 		return false;
 
 	pUnitNode = headUnitNode();
-	int iCounter = 0; //Rhye (possible loop fix)
 	while (pUnitNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
-
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2192,12 +2188,8 @@ bool CvSelectionGroup::canEverDoCommand(CommandTypes eCommand, int iData1, int i
 	{
 		CLLNode<IDInfo>* pUnitNode = headUnitNode();
 
-    	int iCounter = 0; //Rhye (possible loop fix)
 		while (pUnitNode != NULL)
 		{
-    		iCounter++; //Rhye (fix)
-    		if (iCounter > 20) break; //Rhye (fix)
-
 			CvUnit *pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2237,12 +2229,8 @@ void CvSelectionGroup::setupActionCache()
     //cache different unit types
 	m_aDifferentUnitCache.erase(m_aDifferentUnitCache.begin(), m_aDifferentUnitCache.end());
 	CLLNode<IDInfo> *pUnitNode = headUnitNode();
-	int iCounter = 0; //Rhye (possible loop fix)
 	while(pUnitNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
-
 		CvUnit *unit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2929,12 +2917,8 @@ bool CvSelectionGroup::canMoveThrough(CvPlot* pPlot)
 	if (getNumUnits() > 0)
 	{
 		pUnitNode = headUnitNode();
-		int iCounter = 0; //Rhye (loop fix)
 		while (pUnitNode != NULL)
 		{
-			iCounter++; //Rhye (fix)
-			if (iCounter > 50) return false; //Rhye (fix) // Leoreth/3Miro: increase threshold 10->50
-
 			pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
 
