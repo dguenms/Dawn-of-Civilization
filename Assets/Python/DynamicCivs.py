@@ -694,6 +694,12 @@ def onReligionFounded(_, iPlayer):
 
 	checkName(iPlayer)
 
+
+@handler("capitalMoved")
+def onCapitalMoved(city):
+	checkName(city.getOwner())
+
+
 @handler("BeginGameTurn")
 def checkTurn(iGameTurn):
 	if every(10):
