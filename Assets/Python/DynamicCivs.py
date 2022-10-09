@@ -1874,12 +1874,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iCiv == iRussia:
 		if bEmpire and iEra >= iRenaissance:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if iEra <= iMedieval:
+			if (iGovernment == iRepublic and iLegitimacy in [iVassalage, iCitizenship]) or (iGovernment == iElective and iLegitimacy == iCitizenship):
+				return "TXT_KEY_CIV_RUSSIA_MEDIEVAL_REPUBLIC"
 			
-		if bCityStates and iEra <= iMedieval:
-			if isCurrentCapital(iPlayer, "Kiev"):
-				return "TXT_KEY_CIV_RUSSIA_KIEVAN_RUS"
+			if iGovernment == iElective:
+				if isCurrentCapital(iPlayer, "Kiev"):
+					return "TXT_KEY_CIV_RUSSIA_KIEVAN_RUS"
 				
-			return "TXT_KEY_CIV_RUSSIA_RUS"
+				return "TXT_KEY_CIV_RUSSIA_RUS"
 			
 		if isControlled(iPlayer, plots.rectangle(tEuropeanRussia).without(lEuropeanRussiaExceptions), 5):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"

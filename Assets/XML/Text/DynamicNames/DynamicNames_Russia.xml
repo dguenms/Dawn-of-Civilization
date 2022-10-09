@@ -58,6 +58,14 @@
 		<Spanish>Grand Principality of %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_MEDIEVAL_REPUBLIC</Tag>
+		<English>%s1 Republic</English>
+		<French>%s1 Republic</French>
+		<German>%s1 Republic</German>
+		<Italian>%s1 Republic</Italian>
+		<Spanish>%s1 Republic</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_REPUBLIC</Tag>
 		<English>%s2 Federation</English>
 		<French>
