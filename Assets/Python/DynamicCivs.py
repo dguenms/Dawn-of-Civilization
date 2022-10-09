@@ -736,6 +736,7 @@ def setAdjective(iPlayer, sAdj):
 	
 def setLeader(iPlayer, iLeader):
 	if not iLeader: return
+	if player(iPlayer).isHuman(): return
 	if player(iPlayer).getLeader() == iLeader: return
 	player(iPlayer).setLeader(iLeader)
 	
