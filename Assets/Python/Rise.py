@@ -897,6 +897,10 @@ class Birth(object):
 			team(iOwner).AI_setAtWarCounter(self.player.getTeam(), 0)
 			self.team.AI_setAtWarCounter(player(iOwner).getTeam(), 0)
 			return
+		
+		iRefusalModifier = dWarOnFlipProbability[iOwner]
+		if chance(iRefusalModifier):
+			player(iOwner).AI_changeMemoryCount(self.iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10 + iRefusalModifier))
 	
 	def flip(self):
 		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
