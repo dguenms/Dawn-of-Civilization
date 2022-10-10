@@ -893,33 +893,10 @@ class Birth(object):
 			self.flipPopup.text(cityNames, name(self.iPlayer)).cancel().declareWarOnFlip().launch(iOwner)
 			return
 		
-		if not self.canWarOnFlip(iOwner):
-			return
-		
 		if team(iOwner).isAtWar(self.player.getTeam()):
 			team(iOwner).AI_setAtWarCounter(self.player.getTeam(), 0)
 			self.team.AI_setAtWarCounter(player(iOwner).getTeam(), 0)
 			return
-		
-		if chance(dWarOnFlipProbability[iOwner]):
-			self.declareWarOnFlip(iOwner)
-	
-	def canWarOnFlip(self, iOwner):
-		iOwnerCiv = civ(iOwner)
-		
-		if iOwnerCiv == iCanada:
-			return False
-		
-		if iOwnerCiv == iGermany and not player(iOwner).isHuman():
-			return False
-		
-		if iOwnerCiv == iByzantium and self.iCiv == iRome:
-			return False
-		
-		return True
-	
-	def declareWarOnFlip(self, iOwner):
-		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 	
 	def flip(self):
 		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
