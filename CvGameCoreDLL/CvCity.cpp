@@ -15139,10 +15139,26 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 						{
 							if (pLoopPlot->isPotentialCityWorkForArea(area()) || getCivilizationType() == POLYNESIA)
 							{
-								// Leoreth: culture can only invade foreign core if city itself is in foreign core
-								bool bCanSpreadCore = true;
-								bool bBirthProtected = pLoopPlot->getBirthProtected() != NO_PLAYER && pLoopPlot->getBirthProtected() != ePlayer;
+								// Leoreth: cannot spread culture into birth protected civilizations
+								PlayerTypes eBirthProtectionPlayer = pLoopPlot->getBirthProtected();
+								bool bBirthProtected = eBirthProtectionPlayer != NO_PLAYER && eBirthProtectionPlayer != ePlayer;
 
+								// Leoreth: however only if it is actually within culture range of one of their cities
+								if (bBirthProtected)
+								{
+									for (int iDistance = 2; iDistance >= 0; iDistance--)
+									{
+										if (pLoopPlot->getCultureRangeCities(eBirthProtectionPlayer, iDistance) > 0)
+										{
+											break;
+										}
+									}
+
+									bBirthProtected = false;
+								}
+
+								// Leoreth: culture can only spread into foreign core if city itself is in foreign core
+								bool bCanSpreadCore = true;
 								if (!pLoopPlot->isCore(ePlayer) && iCultureRange > 2)
 								{
 									for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
@@ -15158,15 +15174,17 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 											continue;
 										}
 
-										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI))
+										if (pLoopPlot->isCore((PlayerTypes)iI))
 										{
-											bCanSpreadCore = false;
-										}
-
-										if (pLoopPlot->isCore((PlayerTypes)iI) && plot()->isCore((PlayerTypes)iI))
-										{
-											bCanSpreadCore = true;
-											break;
+											if (plot()->isCore((PlayerTypes)iI))
+											{
+												bCanSpreadCore = true;
+												break;
+											}
+											else 
+											{
+												bCanSpreadCore = false;
+											}
 										}
 									}
 								}
