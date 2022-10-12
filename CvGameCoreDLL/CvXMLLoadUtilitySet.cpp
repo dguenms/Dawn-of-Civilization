@@ -192,6 +192,11 @@ bool CvXMLLoadUtility::SetGlobalDefines()
 		return false;
 	}
 
+	if (!ReadGlobalDefines("xml\\GlobalDefinesVersion.xml", cache))
+	{
+		return false;
+	}
+
 	if (!ReadGlobalDefines("xml\\PythonCallbackDefines.xml", cache))
 	{
 		return false;
