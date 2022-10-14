@@ -1495,6 +1495,19 @@ void CvDllPythonEvents::reportPlayerDestroyed(PlayerTypes ePlayer)
 	}
 }
 
+// Leoreth: player switched
+void CvDllPythonEvents::reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("switch");
+		eventData.add((int)eOldPlayer);
+		eventData.add((int)eNewPlayer);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

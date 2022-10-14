@@ -851,8 +851,6 @@ class Birth(object):
 		if player(iPreviousPlayer).getAdvancedStartPoints() > 0:
 			player(iPreviousPlayer).AI_doAdvancedStart()
 		
-		events.fireEvent("switch", iPreviousPlayer, self.iPlayer)
-		
 		for iOtherPlayer in players.major():
 			self.player.setEspionageSpendingWeightAgainstTeam(player(iOtherPlayer).getTeam(), 0)
 	

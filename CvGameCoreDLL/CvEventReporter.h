@@ -153,6 +153,7 @@ public:
 	void autoplayEnded(); // Leoreth
 	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
 	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
+	void playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
 
 	DllExport void preSave();
 

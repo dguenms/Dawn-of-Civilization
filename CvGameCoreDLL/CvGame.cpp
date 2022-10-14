@@ -5032,6 +5032,8 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 			gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(BlockadedPlots_DIRTY_BIT, true);
 		}
+
+		CvEventReporter::getInstance().playerSwitch(eOldActivePlayer, eNewValue);
 	}
 }
 

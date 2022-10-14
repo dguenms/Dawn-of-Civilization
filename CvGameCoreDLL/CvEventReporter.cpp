@@ -548,6 +548,12 @@ void CvEventReporter::playerDestroyed(PlayerTypes ePlayer)
 	m_kPythonEventMgr.reportPlayerDestroyed(ePlayer);
 }
 
+// Leoreth: player switched
+void CvEventReporter::playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer)
+{
+	m_kPythonEventMgr.reportPlayerSwitch(eOldPlayer, eNewPlayer);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
