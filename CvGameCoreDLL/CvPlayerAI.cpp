@@ -5043,62 +5043,62 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	}
 	else
 	{
-	iAttitude = GC.getLeaderHeadInfo(getPersonalityType()).getBaseAttitude();
+		/*iAttitude = GC.getLeaderHeadInfo(getPersonalityType()).getBaseAttitude();
 
-	iAttitude += GC.getHandicapInfo(GET_PLAYER(ePlayer).getHandicapType()).getAttitudeChange();
+		iAttitude += GC.getHandicapInfo(GET_PLAYER(ePlayer).getHandicapType()).getAttitudeChange();
 
-	if (!(GET_PLAYER(ePlayer).isHuman()))
-	{
-		iAttitude += (4 - abs(AI_getPeaceWeight() - GET_PLAYER(ePlayer).AI_getPeaceWeight()));
-		iAttitude += std::min(GC.getLeaderHeadInfo(getPersonalityType()).getWarmongerRespect(), GC.getLeaderHeadInfo(GET_PLAYER(ePlayer).getPersonalityType()).getWarmongerRespect());
-	}
+		if (!(GET_PLAYER(ePlayer).isHuman()))
+		{
+			iAttitude += (4 - abs(AI_getPeaceWeight() - GET_PLAYER(ePlayer).AI_getPeaceWeight()));
+			iAttitude += std::min(GC.getLeaderHeadInfo(getPersonalityType()).getWarmongerRespect(), GC.getLeaderHeadInfo(GET_PLAYER(ePlayer).getPersonalityType()).getWarmongerRespect());
+		}*/
 
-	iAttitude -= std::max(0, (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getNumMembers() - GET_TEAM(getTeam()).getNumMembers()));
+		iAttitude = -std::max(0, (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getNumMembers() - GET_TEAM(getTeam()).getNumMembers()));
 
-	iRankDifference = (GC.getGameINLINE().getPlayerRank(getID()) - GC.getGameINLINE().getPlayerRank(ePlayer));
+		iRankDifference = (GC.getGameINLINE().getPlayerRank(getID()) - GC.getGameINLINE().getPlayerRank(ePlayer));
 
-	if (iRankDifference > 0)
-	{
-		iAttitude += ((GC.getLeaderHeadInfo(getPersonalityType()).getWorseRankDifferenceAttitudeChange() * iRankDifference) / (GC.getGameINLINE().countCivPlayersEverAlive() + 1));
-	}
-	else
-	{
-		iAttitude += ((GC.getLeaderHeadInfo(getPersonalityType()).getBetterRankDifferenceAttitudeChange() * -(iRankDifference)) / (GC.getGameINLINE().countCivPlayersEverAlive() + 1));
-	}
+		if (iRankDifference > 0)
+		{
+			iAttitude += ((GC.getLeaderHeadInfo(getPersonalityType()).getWorseRankDifferenceAttitudeChange() * iRankDifference) / (GC.getGameINLINE().countCivPlayersEverAlive() + 1));
+		}
+		else
+		{
+			iAttitude += ((GC.getLeaderHeadInfo(getPersonalityType()).getBetterRankDifferenceAttitudeChange() * -(iRankDifference)) / (GC.getGameINLINE().countCivPlayersEverAlive() + 1));
+		}
 
-	if ((GC.getGameINLINE().getPlayerRank(getID()) >= (GC.getGameINLINE().countCivPlayersEverAlive() / 2)) &&
-		  (GC.getGameINLINE().getPlayerRank(ePlayer) >= (GC.getGameINLINE().countCivPlayersEverAlive() / 2)))
-	{
-		iAttitude++;
-	}
+		if ((GC.getGameINLINE().getPlayerRank(getID()) >= (GC.getGameINLINE().countCivPlayersEverAlive() / 2)) &&
+			  (GC.getGameINLINE().getPlayerRank(ePlayer) >= (GC.getGameINLINE().countCivPlayersEverAlive() / 2)))
+		{
+			iAttitude++;
+		}
 
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_getWarSuccess(getTeam()) > GET_TEAM(getTeam()).AI_getWarSuccess(GET_PLAYER(ePlayer).getTeam()))
-	{
-		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getLostWarAttitudeChange();
-	}
+		if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_getWarSuccess(getTeam()) > GET_TEAM(getTeam()).AI_getWarSuccess(GET_PLAYER(ePlayer).getTeam()))
+		{
+			iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getLostWarAttitudeChange();
+		}
 
-	iAttitude += AI_getCloseBordersAttitude(ePlayer);
-	iAttitude += AI_getWarAttitude(ePlayer);
-	iAttitude += AI_getPeaceAttitude(ePlayer);
-	iAttitude += AI_getSameReligionAttitude(ePlayer);
-	iAttitude += AI_getDifferentReligionAttitude(ePlayer);
-	iAttitude += AI_getBonusTradeAttitude(ePlayer);
-	iAttitude += AI_getOpenBordersAttitude(ePlayer);
-	iAttitude += AI_getDefensivePactAttitude(ePlayer);
-	iAttitude += AI_getRivalDefensivePactAttitude(ePlayer);
-	iAttitude += AI_getRivalVassalAttitude(ePlayer);
-	iAttitude += AI_getShareWarAttitude(ePlayer);
-	iAttitude += AI_getFavoriteCivicAttitude(ePlayer);
-	iAttitude += AI_getTradeAttitude(ePlayer);
-	iAttitude += AI_getRivalTradeAttitude(ePlayer);
+		iAttitude += AI_getCloseBordersAttitude(ePlayer);
+		iAttitude += AI_getWarAttitude(ePlayer);
+		iAttitude += AI_getPeaceAttitude(ePlayer);
+		iAttitude += AI_getSameReligionAttitude(ePlayer);
+		iAttitude += AI_getDifferentReligionAttitude(ePlayer);
+		iAttitude += AI_getBonusTradeAttitude(ePlayer);
+		iAttitude += AI_getOpenBordersAttitude(ePlayer);
+		iAttitude += AI_getDefensivePactAttitude(ePlayer);
+		iAttitude += AI_getRivalDefensivePactAttitude(ePlayer);
+		iAttitude += AI_getRivalVassalAttitude(ePlayer);
+		iAttitude += AI_getShareWarAttitude(ePlayer);
+		iAttitude += AI_getFavoriteCivicAttitude(ePlayer);
+		iAttitude += AI_getTradeAttitude(ePlayer);
+		iAttitude += AI_getRivalTradeAttitude(ePlayer);
 
-	for (iI = 0; iI < NUM_MEMORY_TYPES; iI++)
-	{
-		iAttitude += AI_getMemoryAttitude(ePlayer, ((MemoryTypes)iI));
-	}
+		for (iI = 0; iI < NUM_MEMORY_TYPES; iI++)
+		{
+			iAttitude += AI_getMemoryAttitude(ePlayer, ((MemoryTypes)iI));
+		}
 
-	iAttitude += AI_getColonyAttitude(ePlayer);
-	iAttitude += AI_getAttitudeExtra(ePlayer);
+		iAttitude += AI_getColonyAttitude(ePlayer);
+		iAttitude += AI_getAttitudeExtra(ePlayer);
 
 		m_aiAttitudeCache[ePlayer] = range(iAttitude, -100, 100);
 
@@ -5129,7 +5129,10 @@ bool isShowSpoilerModifiers()
 
 int CvPlayerAI::AI_getFirstImpressionAttitude(PlayerTypes ePlayer) const
 {
-	bool bShowPersonalityAttitude = isShowPersonalityModifiers();
+	// Leoreth: disabled these modifiers
+	return 0;
+
+	/*bool bShowPersonalityAttitude = isShowPersonalityModifiers();
 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
     int iAttitude = GC.getHandicapInfo(kPlayer.getHandicapType()).getAttitudeChange();
 
@@ -5152,7 +5155,7 @@ int CvPlayerAI::AI_getFirstImpressionAttitude(PlayerTypes ePlayer) const
 		}
 	}
 
-    return iAttitude;
+    return iAttitude;*/
 }
 
 int CvPlayerAI::AI_getTeamSizeAttitude(PlayerTypes ePlayer) const
@@ -5307,7 +5310,14 @@ int CvPlayerAI::AI_calculateStolenCityRadiusPlots(PlayerTypes ePlayer) const
 		{
 			if (pLoopPlot->isPlayerCityRadius(getID()))
 			{
-				iCount++;
+				if (pLoopPlot->isCore(getID()))
+				{
+					iCount += 3;
+				}
+				else
+				{
+					iCount++;
+				}
 			}
 		}
 	}
@@ -5320,20 +5330,21 @@ int CvPlayerAI::AI_getCloseBordersAttitude(PlayerTypes ePlayer) const
 {
 	if (m_aiCloseBordersAttitudeCache[ePlayer] == MAX_INT)
 	{
-	int iPercent;
+		int iPercent;
 
-	if (getTeam() == GET_PLAYER(ePlayer).getTeam() || GET_TEAM(getTeam()).isVassal(GET_PLAYER(ePlayer).getTeam()) || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()))
-	{
-		return 0;
-	}
+		if (getTeam() == GET_PLAYER(ePlayer).getTeam() || GET_TEAM(getTeam()).isVassal(GET_PLAYER(ePlayer).getTeam()) || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()))
+		{
+			return 0;
+		}
 
-	//iPercent = std::min(60, (AI_calculateStolenCityRadiusPlots(ePlayer) * 3)); //Rhye
-	iPercent = std::min(60, (AI_calculateStolenCityRadiusPlots(ePlayer) * 6)); //Rhye
+		//iPercent = std::min(60, (AI_calculateStolenCityRadiusPlots(ePlayer) * 3)); //Rhye
+		iPercent = std::min(120, (AI_calculateStolenCityRadiusPlots(ePlayer) * 6)); //Rhye
 
-	if (GET_TEAM(getTeam()).AI_isLandTarget(GET_PLAYER(ePlayer).getTeam()))
-	{
-		iPercent += 40;
-	}
+		// Leoreth: used to be: +40 IF land target
+		if (!GET_TEAM(getTeam()).AI_isLandTarget(GET_PLAYER(ePlayer).getTeam()))
+		{
+			iPercent / 2;
+		}
 
 		//m_aiCloseBordersAttitudeCache[ePlayer] = ((GC.getLeaderHeadInfo(getPersonalityType()).getCloseBordersAttitudeChange() * iPercent) / 100); //Rhye
 		m_aiCloseBordersAttitudeCache[ePlayer] = (2 * (GC.getLeaderHeadInfo(getPersonalityType()).getCloseBordersAttitudeChange() * iPercent) / 100); //Rhye
@@ -5382,25 +5393,18 @@ int CvPlayerAI::AI_getPeaceAttitude(PlayerTypes ePlayer) const
 int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 {
 	int iAttitudeChange;
-	int iAttitude;
-	bool bSameReligion = false; // edead
+	int iAttitude = 0;
 
-	iAttitude = 0;
+	bool bSameReligion = getStateReligion() != NO_RELIGION && getStateReligion() != GET_PLAYER(ePlayer).getStateReligion();
+	bool bBothEastern = (getStateReligion() == CONFUCIANISM && GET_PLAYER(ePlayer).getStateReligion() == TAOISM) || (getStateReligion() == TAOISM && GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM);
 
-	// edead: begin religions - count Chinese religions as one but with less bonus (below)
-	if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
+	// Leoreth: positive relations are possible between Confucianism and Taoism
+	if (bBothEastern)
 	{
 		bSameReligion = true;
 	}
 
-	if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
-	{
-		bSameReligion = true;
-	}
-
-	//if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
 	if (bSameReligion)
-	// edead: end
 	{
 		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getSameReligionAttitudeChange();
 
@@ -5416,20 +5420,28 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 		}
 	}
 
-	// edead: less love between Chinese religions
-	if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
+	// Leoreth: reduce impact of shared religion
+	//iAttitude = max(1, iAttitude - 1);
+
+	// Leoreth: reduced benefits for different Eastern religions
+	if (bBothEastern)
 	{
 		iAttitude /= 2;
 	}
-	// edead: end
 
-	//Rhye - start (modified by Leoreth)
-	if (getCurrentEra() >= 3) //renaissance and industrial and modern
-		iAttitude /= 4;
-	else if (getCurrentEra() <= 1) //ancient, classical
-		iAttitude /= 2;
-	//medieval = default
-	//Rhye - end
+	switch (getCurrentEra())
+	{
+		case ERA_ANCIENT:
+		case ERA_CLASSICAL:
+		case ERA_RENAISSANCE:
+			iAttitude /= 2;
+			break;
+		case ERA_INDUSTRIAL:
+		case ERA_GLOBAL:
+		case ERA_DIGITAL:
+			iAttitude /= 4;
+			break;
+	}
 
 	return iAttitude;
 }

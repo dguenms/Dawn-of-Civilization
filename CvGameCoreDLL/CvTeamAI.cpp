@@ -763,21 +763,21 @@ bool CvTeamAI::AI_isLandTarget(TeamTypes eTeam) const
 	}
 	else
 	{
-	if (!AI_hasCitiesInPrimaryArea(eTeam))
-	{
+		if (!AI_hasCitiesInPrimaryArea(eTeam))
+		{
 			m_aiLandTargetCache[eTeam] = 0;
-		return false;
-	}
+			return false;
+		}
 
-	if (AI_calculateAdjacentLandPlots(eTeam) < 8)
-	{
+		if (AI_calculateAdjacentLandPlots(eTeam) < 8)
+		{
 			m_aiLandTargetCache[eTeam] = 0;
-		return false;
-	}
+			return false;
+		}
 
 		m_aiLandTargetCache[eTeam] = 1;
-	return true;
-}
+		return true;
+	}
 	// Sanguo Mod Performance, end
 }
 
@@ -1489,18 +1489,19 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 		// }
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-			{
+	{
 		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getTechRefuseAttitudeThreshold())
-				{
-					return DENIAL_ATTITUDE;
-				}
-			}
+		{
+			return DENIAL_ATTITUDE;
+		}
+	}
 	// Sanguo Mod Performance, end
 
 	if (eAttitude < ATTITUDE_FRIENDLY)
 	{
-		if ((GC.getGameINLINE().getTeamRank(getID()) < (GC.getGameINLINE().countCivTeamsEverAlive() / 2)) ||
-			  (GC.getGameINLINE().getTeamRank(eTeam) < (GC.getGameINLINE().countCivTeamsEverAlive() / 2)))
+		// Leoreth: used to be /2 instead of *2/3
+		if ((GC.getGameINLINE().getTeamRank(getID()) < (GC.getGameINLINE().countCivTeamsEverAlive() * 2 / 3)) ||
+			  (GC.getGameINLINE().getTeamRank(eTeam) < (GC.getGameINLINE().countCivTeamsEverAlive() * 2 / 3)))
 		{
 			iNoTechTradeThreshold = AI_noTechTradeThreshold();
 
@@ -1514,6 +1515,9 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 		}
 
 		iTechTradeKnownPercent = AI_techTradeKnownPercent();
+
+		// Leoreth: make AIs less willing to share lesser known techs across the board
+		iTechTradeKnownPercent = std::min(iTechTradeKnownPercent + 10, 60);
 
 		iTechTradeKnownPercent *= std::max(0, (GC.getHandicapInfo(GET_TEAM(eTeam).getHandicapType()).getTechTradeKnownModifier() + 100));
 		iTechTradeKnownPercent /= 100;
@@ -3303,8 +3307,8 @@ int CvTeamAI::AI_noTechTradeThreshold() const
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
 		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getNoTechTradeThreshold();
-				iCount++;
-			}
+		iCount++;
+	}
 	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
@@ -3340,8 +3344,8 @@ int CvTeamAI::AI_techTradeKnownPercent() const
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
 		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getTechTradeKnownPercent();
-				iCount++;
-			}
+		iCount++;
+	}
 	// Sanguo Mod Performance, end
 
 	if (iCount > 0)

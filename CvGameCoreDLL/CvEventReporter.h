@@ -154,6 +154,7 @@ public:
 	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
 	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
 	void playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
+	void techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
 
 	DllExport void preSave();
 

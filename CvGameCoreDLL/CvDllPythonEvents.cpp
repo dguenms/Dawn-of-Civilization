@@ -1508,6 +1508,20 @@ void CvDllPythonEvents::reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes e
 	}
 }
 
+// Leoreth: tech traded
+void CvDllPythonEvents::reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("techTraded");
+		eventData.add((int)eFrom);
+		eventData.add((int)eTo);
+		eventData.add((int)eTech);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

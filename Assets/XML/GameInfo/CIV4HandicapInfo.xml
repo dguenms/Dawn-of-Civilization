@@ -129,7 +129,7 @@
 			<iHealthBonus>1</iHealthBonus>
 			<iHappyBonus>4</iHappyBonus>
 			<iAttitudeChange>0</iAttitudeChange>
-			<iNoTechTradeModifier>60</iNoTechTradeModifier>
+			<iNoTechTradeModifier>50</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
 			<iUnownedTilesPerGameAnimal>150</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>225</iUnownedTilesPerBarbarianUnit>
@@ -216,7 +216,7 @@
 			<iHealthBonus>1</iHealthBonus>
 			<iHappyBonus>4</iHappyBonus>
 			<iAttitudeChange>0</iAttitudeChange>
-			<iNoTechTradeModifier>60</iNoTechTradeModifier>
+			<iNoTechTradeModifier>50</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
 			<iUnownedTilesPerGameAnimal>150</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>225</iUnownedTilesPerBarbarianUnit>

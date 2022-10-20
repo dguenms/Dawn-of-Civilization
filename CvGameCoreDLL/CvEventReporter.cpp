@@ -554,6 +554,12 @@ void CvEventReporter::playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlaye
 	m_kPythonEventMgr.reportPlayerSwitch(eOldPlayer, eNewPlayer);
 }
 
+// Leoreth: tech traded
+void CvEventReporter::techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech)
+{
+	m_kPythonEventMgr.reportTechTraded(eFrom, eTo, eTech);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
