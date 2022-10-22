@@ -1860,7 +1860,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iCiv == iHolyRome:
-		if bCityStates:
+		if bCityStates and player(iPlayer).getPeriod() == -1:
 			return "TXT_KEY_CIV_HOLY_ROME_FREE_CITIES"
 	
 		if bEmpire:
