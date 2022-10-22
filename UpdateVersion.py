@@ -13,7 +13,8 @@ def update_version():
 			base_version, suffix = version.split("-")
 			new_version = f"{base_version}-{int(suffix)+1}"
 		else:
-			new_version = f"{version}-1"
+			print("Found major mod version, did not increment")
+			return
 		
 		print(f"Update mod version to {new_version}")
 		
