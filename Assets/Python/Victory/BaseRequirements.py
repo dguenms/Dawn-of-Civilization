@@ -191,7 +191,7 @@ class StateRequirement(Requirement):
 		self.state = SUCCESS
 	
 	def fail(self):
-		# show("Requirement '%s' failed", self.description())
+		show("Requirement '%s' failed", self.description())
 		self.state = FAILURE
 	
 	def fulfilled(self, evaluator):
