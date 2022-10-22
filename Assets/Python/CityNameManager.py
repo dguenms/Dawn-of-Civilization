@@ -7201,7 +7201,7 @@ tRenames = (
 	"Qara Qorum"	:	"Ordu Baliq",
 	"Orduqent"		:	"Orduqent",
 	"Parsa"			:	"Persepolis",
-	"Poti"			:	"Poti",
+	"Poti"			:	"Fash",
 	"Praha"			:	"Prag",
 	"Nikopolis"		:	"Preveza",
 	"Qazan"			:	"Qazan",
