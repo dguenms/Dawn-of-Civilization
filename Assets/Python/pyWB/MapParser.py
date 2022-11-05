@@ -37,9 +37,7 @@ class MapParser:
 		else:
 			f.seek(position)
 		
-		position = f.tell()
-		line = parser.getNextLine(f)
-		f.seek(position)
+		f.seek(0)
 		
 		version = int(parser.findNextTokenValue(f, "Version"))
 		if version != self.getVersion():
