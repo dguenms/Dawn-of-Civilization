@@ -161,7 +161,8 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 		for _ in range(iAdditionalUnitsRequired):
 			createRoleUnits(iDefender, capital(iDefender), additionalUnits)
 			for iUnit, iAmount in specificAdditionalUnits:
-				iExperience = max(iRoleExperience for iRole, iRoleExperience in dStartingExperience[iDefender].items() if isUnitOfRole(iUnit, iRole))
+				lExperiences = [iRoleExperience for iRole, iRoleExperience in dStartingExperience[iDefender].items() if isUnitOfRole(iUnit, iRole)]
+				iExperience = lExperiences and max(lExperiences) or 0
 				makeUnits(iDefender, iUnit, capital(iDefender), iAmount).experience(iExperience)
 
 
@@ -884,6 +885,9 @@ class Birth(object):
 		iRefusalModifier = dWarOnFlipProbability[iOwner]
 		if chance(iRefusalModifier):
 			player(iOwner).AI_changeMemoryCount(self.iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10 + iRefusalModifier))
+	
+	def declareWarOnFlip(self, iOwner):
+		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 	
 	def flip(self):
 		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
