@@ -9344,7 +9344,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 		GET_PLAYER(eNewPlayer).setInitialBirthTurn(iBirthTurn);
 	}
 
-	GET_PLAYER(eNewPlayer).setAlive(bAlive);
+	GET_PLAYER(eNewPlayer).setAlive(bAlive, false);
 	GET_PLAYER(eNewPlayer).setMinorCiv(bMinor);
 
 	if (eCiv != NO_CIVILIZATION)
