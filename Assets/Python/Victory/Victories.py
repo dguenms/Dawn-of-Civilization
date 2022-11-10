@@ -102,9 +102,7 @@ class Victory(object):
 		def succeed(goal):
 			goal.set_state(SUCCESS)
 		
-			if goal.state == SUCCESS:
-				goal.announce_success()
-				
+			if goal.succeeded():
 				self.check()
 		
 		return succeed
