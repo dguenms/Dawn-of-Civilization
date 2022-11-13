@@ -342,7 +342,7 @@ class Birth(object):
 	
 	@property
 	def switchPopup(self):
-		return popup.text("TXT_KEY_POPUP_SWITCH").cancel("TXT_KEY_POPUP_NO", event_bullet).option(self.switch, "TXT_KEY_POPUP_YES").build()
+		return popup.text("TXT_KEY_POPUP_SWITCH").option(self.noSwitch, "TXT_KEY_POPUP_NO").option(self.switch, "TXT_KEY_POPUP_YES").build()
 	
 	def isHuman(self):
 		if self.iPlayer is None:
@@ -526,7 +526,6 @@ class Birth(object):
 	
 	def createUnits(self):
 		createRoleUnits(self.iPlayer, self.location, getStartingUnits(self.iPlayer))
-		createSpecificUnits(self.iPlayer, self.location)
 		
 		# select a settler if available
 		if self.isHuman():
@@ -796,7 +795,7 @@ class Birth(object):
 		if not self.canSwitch():
 			return
 
-		self.switchPopup.text(adjective(self.iPlayer)).cancel().switch().launch()
+		self.switchPopup.text(adjective(self.iPlayer)).noSwitch().switch().launch()
 	
 	def canSwitch(self):
 		if not MainOpt.isSwitchPopup():
@@ -809,6 +808,12 @@ class Birth(object):
 			return False
 	
 		return True
+	
+	def noSwitch(self):
+		if not self.isHuman():
+			createRoleUnits(self.iPlayer, self.location, getAIStartingUnits(self.iPlayer))
+		
+		createSpecificUnits(self.iPlayer, self.location)
 	
 	def switch(self):
 		iPreviousPlayer = active()

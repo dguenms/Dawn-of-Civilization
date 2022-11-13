@@ -7,12 +7,10 @@ from Events import events, handler
 ### Unit spawn functions ###
 
 def getStartingUnits(iPlayer):
-	lStartingUnits = [(iRole, iAmount) for iRole, iAmount in dStartingUnits[iPlayer].items() if iRole != iWork]
-	
-	if not player(iPlayer).isHuman():
-		lStartingUnits += dExtraAIUnits[iPlayer].items()
-	
-	return lStartingUnits
+	return [(iRole, iAmount) for iRole, iAmount in dStartingUnits[iPlayer].items() if iRole != iWork]
+
+def getAIStartingUnits(iPlayer):
+	return dExtraAIUnits[iPlayer].items()
 	
 def getAdditionalUnits(iPlayer):
 	return dAdditionalUnits[iPlayer].items()
