@@ -452,6 +452,9 @@ def canTriggerBabyBoom(argsList):
 
 	if team.getAtWarCount(true) > 0:
 		return false
+	
+	if since(player.getLastBirthTurn()) <= 1:
+		return false
 
 	for iLoopTeam in range(gc.getMAX_CIV_TEAMS()):
 		if iLoopTeam != player.getTeam():
