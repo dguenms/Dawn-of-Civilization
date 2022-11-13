@@ -534,12 +534,14 @@ class Birth(object):
 				interface.selectUnit(settler, True, False, False)
 	
 	def prepareCapital(self):
+		expelUnits(self.iPlayer, plots.surrounding(self.location), self.flippedArea())
+	
 		if plot_(self.location).isCity():
-			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100, bFlipUnits=True)
+			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100)
 		
 		for city in cities.ring(self.location):
 			if city.isHolyCity():
-				completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
+				completeCityFlip(city, self.iPlayer, city.getOwner(), 100)
 			else:
 				self.data.lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
 				
@@ -894,8 +896,11 @@ class Birth(object):
 	def declareWarOnFlip(self, iOwner):
 		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 	
+	def flippedArea(self):
+		return self.isIndependence() and self.area or plots.birth(self.iPlayer)
+	
 	def flip(self):
-		flippedPlots = self.isIndependence() and self.area or plots.birth(self.iPlayer)
+		flippedPlots = self.flippedArea()
 		
 		excludedPlots = flippedPlots.where(lambda p: p.isCity() and city_(p).isCapital() and p.isPlayerCore(p.getOwner()))
 		excludedPlots = excludedPlots.expand(1).where(lambda p: cities.surrounding(p).all(lambda city: city in excludedPlots))
