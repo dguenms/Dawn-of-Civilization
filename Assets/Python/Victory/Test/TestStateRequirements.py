@@ -183,12 +183,67 @@ class TestConvertAfterFounding(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Convert to Orthodoxy")
 			
-			self.assertEqual(self.requirement.state, FAILURE)
-			self.assertEqual(self.goal.checked, True)
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			self.assertEqual(self.goal.checked, False)
 		finally:
 			player(0).setLastStateReligion(-1)
 			
 			game.setReligionGameTurnFounded(iOrthodoxy, -1)
+	
+	def test_expire_not_founded(self):
+		events.fireEvent("BeginPlayerTurn", turn(), 0)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Convert to Orthodoxy")
+		
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		self.assertEqual(self.goal.failed, False)
+	
+	def test_expire_too_early(self):
+		game.setReligionGameTurnFounded(iOrthodoxy, turn()-1)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", turn(), 0)
+		
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Convert to Orthodoxy")
+			
+			self.assertEqual(self.requirement.state, POSSIBLE)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			game.setReligionGameTurnFounded(iOrthodoxy, -1)
+	
+	def test_expire_too_late(self):
+		game.setReligionGameTurnFounded(iOrthodoxy, turn()-10)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", turn(), 0)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Convert to Orthodoxy")
+			
+			self.assertEqual(self.requirement.state, FAILURE)
+			self.assertEqual(self.goal.failed, True)
+		finally:
+			game.setReligionGameTurnFounded(iOrthodoxy, -1)
+	
+	def test_expire_already_succeeded(self):
+		game.setReligionGameTurnFounded(iOrthodoxy, turn()-2)
+		
+		player(0).setLastStateReligion(iOrthodoxy)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", turn(), 0)
+			
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Convert to Orthodoxy")
+			
+			self.assertEqual(self.requirement.state, SUCCESS)
+			self.assertEqual(self.goal.checked, True)
+			self.assertEqual(self.goal.failed, False)
+		finally:
+			game.setReligionGameTurnFounded(iOrthodoxy, -1)
+			player(0).setLastStateReligion(-1)
 	
 	def test_convert_other_evaluator(self):
 		evaluator = VassalsEvaluator(self.iPlayer)

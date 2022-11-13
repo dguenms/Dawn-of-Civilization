@@ -45,15 +45,19 @@ class ConvertAfterFounding(StateRequirement):
 		self.iTurns = iTurns
 		
 		self.handle("playerChangeStateReligion", self.check_convert)
+		self.handle("BeginPlayerTurn", self.check_expire)
 		
 	def check_convert(self, goal, iReligion):
 		if self.iReligion == iReligion and game.isReligionFounded(iReligion):
 			if turn() <= game.getReligionGameTurnFounded(iReligion) + scale(self.iTurns):
 				self.succeed()
-			else:
+				goal.check()
+	
+	def check_expire(self, goal, iGameTurn, iPlayer):
+		if game.isReligionFounded(self.iReligion) and self.state == POSSIBLE:
+			if iGameTurn > game.getReligionGameTurnFounded(self.iReligion) + scale(self.iTurns):
 				self.fail()
-			
-			goal.final_check()
+				goal.expire()
 
 
 # First Mayan UHV goal
