@@ -2,6 +2,6 @@
 <Civ4Defines xmlns="x-schema:CIV4GlobalDefinesSchema.xml">
 	<Define>
 		<DefineName>DAWN_OF_CIV_MOD_VERSION</DefineName>
-		<DefineTextVal>1.16.7-8</DefineTextVal>
+		<DefineTextVal>1.16.7-9</DefineTextVal>
 	</Define>
 </Civ4Defines>
