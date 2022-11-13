@@ -5395,7 +5395,7 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 	int iAttitudeChange;
 	int iAttitude = 0;
 
-	bool bSameReligion = getStateReligion() != NO_RELIGION && getStateReligion() != GET_PLAYER(ePlayer).getStateReligion();
+	bool bSameReligion = getStateReligion() != NO_RELIGION && getStateReligion() == GET_PLAYER(ePlayer).getStateReligion();
 	bool bBothEastern = (getStateReligion() == CONFUCIANISM && GET_PLAYER(ePlayer).getStateReligion() == TAOISM) || (getStateReligion() == TAOISM && GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM);
 
 	// Leoreth: positive relations are possible between Confucianism and Taoism
