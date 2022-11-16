@@ -1,6 +1,6 @@
-from Arguments import *
-
 from TestVictoryCommon import *
+
+from Arguments import *
 		
 		
 class TestNamedArgument(ExtendedTestCase):
@@ -503,6 +503,24 @@ class TestStateReligionBuildingArgument(ExtendedTestCase):
 	
 	def test_get_no_state_religion(self):
 		self.assertEqual(self.argument.get(0), NON_EXISTING)
+
+
+class TestBaseBuilding(ExtendedTestCase):
+
+	def test_building(self):
+		self.assertEqual(base_building(iMonument), iMonument)
+		self.assertEqual(base_building(iObelisk), iMonument)
+	
+	def test_aggregate(self):
+		aggregate = SumAggregate(iObelisk, iGranary, iWalls)
+		
+		base_aggregate = base_building(aggregate)
+		
+		self.assertType(base_aggregate, SumAggregate)
+		self.assertEqual(base_aggregate.items, [iMonument, iGranary, iWalls])
+	
+	def test_other_argument(self):
+		self.assertEqual(base_building(CapitalCityArgument()), CapitalCityArgument())
 		
 
 test_cases = [
@@ -516,4 +534,5 @@ test_cases = [
 	TestWonderCityArgument,
 	TestCivsArgument,
 	TestStateReligionBuildingArgument,
+	TestBaseBuilding,
 ]

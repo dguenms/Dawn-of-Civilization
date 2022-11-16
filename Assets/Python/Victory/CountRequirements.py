@@ -2,6 +2,7 @@ from Core import *
 from BaseRequirements import *
 
 from Civics import isCommunist
+from Arguments import base_building
 
 
 # Third Holy Roman UHV goal
@@ -107,7 +108,7 @@ class BuildingCount(ThresholdRequirement):
 	def __init__(self, iBuilding, *args, **options):
 		ThresholdRequirement.__init__(self, iBuilding, *args, **options)
 		
-		self.iBuilding = iBuilding
+		self.iBuilding = base_building(iBuilding)
 		
 		self.handle("cityAcquired", self.check)
 		self.handle("buildingBuilt", self.check_building_built)

@@ -1,12 +1,24 @@
 from Core import *
 from RFCUtils import *
 
+from Core import base_building as base_building_core
+
 
 def as_int(value):
 	if isinstance(value, Aggregate):
-		return value.__class__(int(item) for item in value.items)
+		return value.of(int(item) for item in value.items)
 	
 	return int(value)
+
+
+def base_building(building):
+	if isinstance(building, Aggregate):
+		return building.of(base_building_core(item) for item in building.items)
+	
+	if isinstance(building, NamedArgument):
+		return building
+	
+	return base_building_core(building)
 
 
 class NonExistingArgument(object):
@@ -47,6 +59,10 @@ class NamedList(NamedArgument):
 
 
 class Aggregate(NamedArgument):
+
+	@classmethod
+	def of(cls, *items):
+		return cls(*items)
 
 	def __init__(self, *items):
 		NamedArgument.__init__(self)

@@ -770,6 +770,21 @@ class TestBuildingCount(ExtendedTestCase):
 		finally:
 			city.kill()
 			requirement.deregister_handlers()
+		
+	def test_check_building_built_unique_building_requirement(self):
+		requirement = BuildingCount(iObelisk, 3)
+		
+		city = TestCities.one()
+		
+		try:
+			requirement.register_handlers(self.goal)
+			
+			events.fireEvent("buildingBuilt", city, iObelisk)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+			requirement.deregister_handlers()
 	
 	def test_not_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
