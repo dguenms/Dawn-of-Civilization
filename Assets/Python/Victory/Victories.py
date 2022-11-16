@@ -103,6 +103,9 @@ class Victory(object):
 			goal.set_state(SUCCESS)
 		
 			if goal.succeeded():
+				if goal.mode == STATEFUL:
+					goal.announce_success()
+			
 				self.check()
 		
 		return succeed
