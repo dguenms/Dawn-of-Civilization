@@ -6709,6 +6709,7 @@ tRenames = (
 	"Kushiro"		:	"Kusiro",
 	"Ljubljana"		:	"Ljubljana",
 	"Los Angeles"	:	"Los-Andzheles",
+	"Lw&#243;w"		:	"L'vov",
 	"Masqat"		:	"Maskat",
 	"Tenochtitl&#225;n"	:	"Mekhiko",
 	"Moskva"		:	"Moskva",
