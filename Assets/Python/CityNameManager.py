@@ -175,7 +175,7 @@ def getRenameName(iPlayer, sName):
 	tLanguages = getLanguages(iCiv)
 	if not tLanguages: return None
 	
-	sIdentifier = getIdentifier(sName)
+	sIdentifier = getIdentifier(sName.encode("ascii", "xmlcharrefreplace"))
 	if not sIdentifier: return None
 	
 	for iLanguage in tLanguages:
