@@ -229,9 +229,10 @@ def checkImmigration(iGameTurn):
 @handler("techAcquired")
 def relocateCapitals(iTech, iTeam, iPlayer):
 	if not player(iPlayer).isHuman():
+		iCiv = civ(iPlayer)
 		iEra = infos.tech(iTech).getEra()
-		if (iPlayer, iEra) in dRelocatedCapitals:
-			relocateCapital(iPlayer, dRelocatedCapitals[iPlayer, iEra])
+		if (iCiv, iEra) in dRelocatedCapitals:
+			relocateCapital(iPlayer, dRelocatedCapitals[iCiv, iEra])
 
 
 ### END GAME TURN ###
