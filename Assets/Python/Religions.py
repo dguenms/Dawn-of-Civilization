@@ -194,7 +194,20 @@ def checkReformation(iTech, iTeam, iPlayer):
 	if iTech == iAcademia:
 		if player(iPlayer).getStateReligion() == iCatholicism:
 			if not game.isReligionFounded(iProtestantism):
-				player(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
+				if player(iPlayer).getNumCities() > 0:
+					player(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
+					reformation()
+
+
+@handler("firstCity")
+def checkReformationOnSpawn(city):
+	if scenario() == i1700AD:
+		return
+	
+	if not game.isReligionFounded(iProtestantism):
+		if player(city.getOwner()).getStateReligion() == iCatholicism:
+			if team(city.getTeam()).isHasTech(iAcademia):
+				player(city.getOwner()).foundReligion(iProtestantism, iProtestantism, True)
 				reformation()
 
 
