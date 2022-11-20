@@ -222,7 +222,7 @@ class GameData:
 		self.iGlobalWarAttacker = -1
 		self.iGlobalWarDefender = -1
 		
-		self.iCongressTurns = 8
+		self.iCongressTurn = -1
 		
 		self.bNoCongressOption = False
 		

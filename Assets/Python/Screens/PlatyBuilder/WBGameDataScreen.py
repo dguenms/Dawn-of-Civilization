@@ -305,13 +305,6 @@ class WBGameDataScreen:
 
 			sText = self.colorText(lList3[i][0], bEnabled, bWhite)
 			screen.setTableText("WBGameOptions", 4, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
-			if item == 3002:
-				if not cong.isCongressEnabled():
-					iTurns = -1
-				else:
-					iTurns = data.iCongressTurns
-				sText = self.colorText(str(iTurns), True, True)
-				screen.setTableText("WBGameOptions", 5, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_CENTER_JUSTIFY)
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
@@ -432,8 +425,6 @@ class WBGameDataScreen:
 				# Stored Variables
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched
-				elif iGameOption == 3002 and cong.isCongressEnabled():
-					data.iCongressTurns = max(1, data.iCongressTurns+iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

@@ -19,19 +19,24 @@ from Core import *
 
 ### Event Handlers ###
 
-@handler("GameStart")
-def setup():
-	data.iCongressTurns = getCongressInterval()
-
 @handler("BeginActivePlayerTurn")
 def checkTurn(iPlayer, iGameTurn):
 	if isCongressEnabled():
-		if data.iCongressTurns > 0:
-			data.iCongressTurns -= 1
-	
-		if data.iCongressTurns == 0:
-			data.iCongressTurns = getCongressInterval()
+		if turn() == data.iCongressTurn:
 			Congress().start()
+			scheduleCongress()
+
+
+@handler("techAcquired")
+def onTechAcquired(iTech):
+	if iTech == iNationalism and game.countKnownTechNumTeams(iNationalism) == 1:
+		scheduleCongress()
+
+
+@handler("buildingBuilt")
+def onBuildingBuilt(city, iBuilding):
+	if iBuilding == iPalaceOfNations:
+		scheduleCongress()
 
 
 @handler("changeWar")
@@ -60,6 +65,12 @@ def getCongressInterval():
 		return turns(4)
 		
 	return turns(15)
+	
+def scheduleCongress():
+	if data.iCongressTurn <= turn():
+		data.iCongressTurn = turn() + getCongressInterval()
+	else:
+		data.iCongressTurn = min(data.iCongressTurn, turn() + getCongressInterval())
 
 def isCongressEnabled():
 	if data.bNoCongressOption:
@@ -92,7 +103,7 @@ def endGlobalWar(iAttacker, iDefender):
 	if not player(iAttacker).isAlive() or not player(iDefender).isAlive():
 		return
 		
-	if data.iCongressTurns == getCongressInterval():
+	if data.iCongressTurn == turn() + getCongressInterval():
 		return
 	
 	lAttackers = [iAttacker]
@@ -540,13 +551,13 @@ class Congress:
 			
 		# normal congresses during war time may be too small because all civilisations are tied up in global wars
 		if len(self.invites) < 3:
-			data.iCongressTurns /= 2
+			data.iCongressTurn = turn() + getCongressInterval() / 2
 			data.currentCongress = None
 			return
 		
 		# if a war congress would be followed by a normal congress, delay it
-		if self.bPostWar and data.iCongressTurns <= 1:
-			data.iCongressTurns = getCongressInterval()
+		if self.bPostWar and data.iCongressTurn <= turn() + 1:
+			data.iCongressTurn = turn() + getCongressInterval()
 		
 		# establish contact between all participants
 		for iThisPlayer in self.invites:
