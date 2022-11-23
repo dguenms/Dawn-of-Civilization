@@ -17,6 +17,7 @@ dPeriods1700AD = {
 	iIndia : iPeriodMaratha,
 	iTamils : iPeriodVijayanagara,
 	iVikings : iPeriodSweden,
+	iTurks : iPeriodUzbeks,
 	iKhmer : iPeriodVietnam,
 	iMoors : iPeriodMorocco,
 	iSpain : iPeriodSpain,

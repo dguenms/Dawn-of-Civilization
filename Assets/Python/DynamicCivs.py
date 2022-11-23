@@ -462,6 +462,7 @@ dNameChanges = { # TODO: this should be covered by period
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iVikings : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
+	iTurks : "TXT_KEY_CIV_UZBEKS_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -473,6 +474,7 @@ dAdjectiveChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
 	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
+	iTurks : "TXT_KEY_CIV_UZBEKS_ADJECTIVE",
 }
 
 dStartingLeaders = [
@@ -669,6 +671,11 @@ def onPeriodChange(iPlayer, iPeriod):
 		elif iPeriod == iPeriodSweden:
 			setShort(iPlayer, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
 			setAdjective(iPlayer, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
+	
+	if iCiv == iTurks:
+		if iPeriod == iPeriodUzbeks:
+			checkNameChange(iPlayer)
+			checkAdjectiveChange(iPlayer)
 	
 	if iCiv == iMoors:
 		if iPeriod == iPeriodMorocco:
