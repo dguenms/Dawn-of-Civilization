@@ -327,7 +327,7 @@ dGoals = {
 	),
 	iSpain: (
 		FirstSettle(plots.regions(*lAmerica).named(AMERICA), allowed=dCivGroups[iCivGroupAmerica]),
-		ControlledResourceCount(sum(iSilver, iGold), 10, by=1650),
+		ControlledResourceCount(sum(iSilver, iGold), 10, subject=VASSALS, by=1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),
 			AreaNoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named(EUROPE), iProtestantism),

@@ -249,6 +249,10 @@ class ControlledResourceCount(ThresholdRequirement):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT"
 	
+	SUBJECT_DESC_KEYS = {
+		VASSALS: "TXT_KEY_VICTORY_DESC_CONTROL_DIRECTLY_OR_THROUGH_VASSALS"
+	}
+	
 	def value(self, iPlayer, iResource):
 		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource)
 
