@@ -13,7 +13,7 @@ def as_int(value):
 
 def base_building(building):
 	if isinstance(building, Aggregate):
-		return building.of(base_building_core(item) for item in building.items)
+		return building.of(base_building_core(item) for item in building.items).named(building.name_key, building.name_key)
 	
 	if isinstance(building, NamedArgument):
 		return building

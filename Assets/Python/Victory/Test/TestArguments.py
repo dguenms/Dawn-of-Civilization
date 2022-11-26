@@ -519,6 +519,15 @@ class TestBaseBuilding(ExtendedTestCase):
 		self.assertType(base_aggregate, SumAggregate)
 		self.assertEqual(base_aggregate.items, [iMonument, iGranary, iWalls])
 	
+	def test_named_aggregate(self):
+		aggregate = SumAggregate(iObelisk, iGranary, iWalls).named("buildings")
+		
+		base_aggregate = base_building(aggregate)
+		
+		self.assertType(base_aggregate, SumAggregate)
+		self.assertEqual(base_aggregate.items, [iMonument, iGranary, iWalls])
+		self.assertEqual(base_aggregate.name(), "buildings")
+	
 	def test_other_argument(self):
 		self.assertEqual(base_building(CapitalCityArgument()), CapitalCityArgument())
 		
