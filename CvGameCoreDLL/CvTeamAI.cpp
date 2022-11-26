@@ -1420,7 +1420,7 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
 	{
-		return DENIAL_TECH_MONOPOLY;
+		return DENIAL_MYSTERY;
 	}
 
 	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
