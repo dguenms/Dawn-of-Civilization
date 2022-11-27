@@ -597,7 +597,7 @@ public:
 	bool isPlayerCore(int iPlayer);
 	bool isOwnerCore();
 	int getActualCulture(int iPlayer);
-	int getPopulationLoss();
+	int getTotalPopulationLoss();
 	int countSatellites();
 	int getSatelliteSlots();
 	int getArea();

@@ -474,7 +474,7 @@ def calculateSeparatism(city):
 	iPopulation = city.getPopulation()
 	
 	if city.isOccupation():
-		iPopulation -= city.getPopulationLoss() * city.getOccupationTimer()
+		iPopulation -= city.getTotalPopulationLoss()
 	
 	return iModifier * iPopulation / 100
 
