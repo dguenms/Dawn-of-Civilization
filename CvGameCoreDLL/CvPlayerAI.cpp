@@ -6514,6 +6514,16 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 	iHumanDealWeight = AI_dealVal(ePlayer, pTheirList);
 	iAIDealWeight = GET_PLAYER(ePlayer).AI_dealVal(getID(), pOurList);
 
+	if (pTheirList->getLength() > 0 && iHumanDealWeight == 0)
+	{
+		return false;
+	}
+
+	if (pOurList->getLength() > 0 && iAIDealWeight == 0)
+	{
+		return false;
+	}
+
 	int iGoldValuePercent = AI_goldTradeValuePercent(ePlayer);
 
 	pTheirCounter->clear();
@@ -7170,7 +7180,7 @@ int CvPlayerAI::AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) co
 	int iNumCities = getNumCities();
 
 	int iCurrentAffectedCities = std::min(iNumBonuses * kBonus.getAffectedCities(), iNumCities);
-	int iChangedAffectedCities = range(0, iCurrentAffectedCities + iChange * kBonus.getAffectedCities(), iNumCities);
+	int iChangedAffectedCities = range(iCurrentAffectedCities + iChange * kBonus.getAffectedCities(), 0, iNumCities);
 
 	int iHappinessChange = 0;
 
