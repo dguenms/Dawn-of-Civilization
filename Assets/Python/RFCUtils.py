@@ -752,6 +752,14 @@ def canRespawn(iCiv):
 	if exclusive(iCiv, iGreece, iByzantium):
 		return False
 	
+	# Iran cannot respawn if Persia is alive and vice versa
+	if exclusive(iCiv, iPersia, iIran):
+		return False
+	
+	# Mexico cannot respawn if Aztecs are alive and vice versa
+	if exclusive(iCiv, iAztecs, iMexico):
+		return False
+	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 	if iCiv == iIndia and player(iMughals).isAlive():
 		return False
