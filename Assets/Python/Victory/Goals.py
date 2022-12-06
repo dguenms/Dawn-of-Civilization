@@ -323,7 +323,7 @@ class Goal(Describable):
 		return text(self.title_key)
 		
 	def full_description(self):
-		if self.title_key:
+		if self.title_key and text_if_exists(self.title_key):
 			return "%s: %s" % (self.title(), self.description())
 		
 		return self.description()
