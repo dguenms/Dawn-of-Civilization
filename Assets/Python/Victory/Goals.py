@@ -351,7 +351,7 @@ class Goal(Describable):
 		return self._areas
 		
 	def area_name(self, tile):
-		return "\n".join(name for name, area in self.areas().items() if tile in area)
+		return "\n".join(capitalize(name) for name, area in self.areas().items() if tile in area)
 	
 	def success_string(self):
 		success_string = text("TXT_KEY_VICTORY_GOAL_SUCCESS_STRING")
