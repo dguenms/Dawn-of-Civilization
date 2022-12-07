@@ -627,9 +627,14 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.title(), "")
 	
 	def test_full_description(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="Some title")
+		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="TXT_KEY_VICTORY_TITLE_CATH1")
 		
-		self.assertEqual(goal.full_description(), "Some title: Some description")
+		self.assertEqual(goal.full_description(), "Holy See: Some description")
+	
+	def test_full_description_undefined(self):
+		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="UNDEFINED_TXT_KEY")
+		
+		self.assertEqual(goal.full_description(), "Some description")
 	
 	def test_full_description_no_title(self):
 		self.assertEqual(self.goal.full_description(), "Control three Granaries")
