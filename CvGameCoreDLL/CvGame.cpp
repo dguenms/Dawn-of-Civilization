@@ -10727,7 +10727,22 @@ PeriodTypes CvGame::getPeriod(CivilizationTypes eCivilization) const
 
 void CvGame::setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod)
 {
-	m_aiCivPeriod[eCivilization] = ePeriod;
+	if (getPeriod(eCivilization) != ePeriod)
+	{
+		m_aiCivPeriod[eCivilization] = ePeriod;
+
+		// Leoreth: update for Inca UP
+		if (isFinalInitialized() && eCivilization == INCA)
+		{
+			for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+			{
+				CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
+
+				pLoopPlot->updateYield();
+				pLoopPlot->setLayoutDirty(true);
+			}
+		}
+	}
 }
 
 void CvGame::setCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn, int iValue)
