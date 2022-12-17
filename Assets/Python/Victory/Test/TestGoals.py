@@ -428,6 +428,36 @@ class TestGoal(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_check_at(self):
+		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		
+		cities = TestCities.num(3)
+		for city in cities:
+			city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.fulfilled(), True)
+			
+			goal.check()
+			self.assertEqual(goal.state, SUCCESS)
+		finally:
+			cities.kill()
+	
+	def test_check_at_different_turn(self):
+		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-2000)
+		
+		cities = TestCities.num(3)
+		for city in cities:
+			city.setHasRealBuilding(iGranary, True)
+		
+		try:
+			self.assertEqual(goal.fulfilled(), True)
+			
+			goal.check()
+			self.assertEqual(goal.state, POSSIBLE)
+		finally:
+			cities.kill()
+	
 	def test_expire(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
 		

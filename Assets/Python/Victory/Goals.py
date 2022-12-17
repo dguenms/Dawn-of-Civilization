@@ -201,7 +201,7 @@ class Goal(Describable):
 		
 		self.state = POSSIBLE
 		self.iSuccessTurn = None
-		self.bRequirementHandlers = True
+		self.bOnlyFinal = False
 		
 		Describable.__init__(self, requirements[0], desc_key, subject=subject, **options)
 		
@@ -230,16 +230,14 @@ class Goal(Describable):
 	def enable(self):
 		event_handler_registry.register(self, self)
 	
-		if self.bRequirementHandlers:
-			for requirement in self.requirements:
-				requirement.register_handlers(self)
+		for requirement in self.requirements:
+			requirement.register_handlers(self)
 	
 	def disable(self):
 		event_handler_registry.deregister(self)
 	
-		if self.bRequirementHandlers:
-			for requirement in self.requirements:
-				requirement.deregister_handlers()
+		for requirement in self.requirements:
+			requirement.deregister_handlers()
 	
 	def possible(self):
 		return self.state == POSSIBLE
@@ -277,6 +275,9 @@ class Goal(Describable):
 		if not self.possible():
 			return
 		
+		if self.bOnlyFinal and year(self.iYear) != turn():
+			return
+		
 		if self.fulfilled():
 			self.succeed()
 	
@@ -303,7 +304,7 @@ class Goal(Describable):
 	
 	def at(self, iYear):
 		self.iYear = iYear
-		self.bRequirementHandlers = False
+		self.bOnlyFinal = True
 		self.handlers.add("BeginPlayerTurn", self.handle_at)
 		
 	def by(self, iYear):
