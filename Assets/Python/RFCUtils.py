@@ -321,7 +321,7 @@ def colonialAcquisition(iPlayer, tPlot):
 				
 		player(iPlayer).found(*location(plot))
 	
-	if plot.getOwner() >= 0:
+	if plot.getOwner() >= 0 and not is_minor(plot.getOwner()) and team(player(iPlayer).getTeam()).canChangeWarPeace(plot.getTeam()):
 		player(iPlayer).forcePeace(plot.getOwner())
 		
 	makeUnits(iPlayer, iWorker, tPlot, iNumUnits)
