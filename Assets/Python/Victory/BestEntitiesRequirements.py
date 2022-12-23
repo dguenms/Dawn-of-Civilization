@@ -79,6 +79,9 @@ class BestSpecialistCity(BestCityRequirement):
 		self.iSpecialist = iSpecialist
 	
 	def metric(self, city):
+		if isinstance(self.iSpecialist, Aggregate):
+			return self.iSpecialist.evaluate(city.getFreeSpecialistCount)
+		
 		return city.getFreeSpecialistCount(self.iSpecialist)
 
 

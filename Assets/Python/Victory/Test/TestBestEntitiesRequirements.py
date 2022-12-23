@@ -835,6 +835,27 @@ class TestBestSpecialistCity(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_aggregate(self):
+		requirement = BestSpecialistCity(self.city, SumAggregate(iSpecialistGreatScientist, iSpecialistGreatArtist))
+		
+		city1, city2 = cities = TestCities.owners(0, 1)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		city1.setFreeSpecialistCount(iSpecialistGreatArtist, 2)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
+		
+		try:
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), [
+				self.SUCCESS + "Most settled Great Scientist and Artist: First (4)",
+				"Next most settled Great Scientist and Artist: Second (3)",
+			])
+		finally:
+			cities.kill()
+	
 	def test_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
