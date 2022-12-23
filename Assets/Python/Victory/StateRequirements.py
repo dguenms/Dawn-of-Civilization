@@ -146,14 +146,14 @@ class FirstDiscover(StateRequirement):
 # Third Pesedjet URV goal
 class FirstGreatPerson(StateRequirement):
 
-	TYPES = (SPECIALIST,)
+	TYPES = (UNIT,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_GREAT_PERSON"
 	
-	def __init__(self, iSpecialist, **options):
-		StateRequirement.__init__(self, iSpecialist, **options)
+	def __init__(self, iGreatPerson, **options):
+		StateRequirement.__init__(self, iGreatPerson, **options)
 		
-		self.iSpecialist = iSpecialist
+		self.iGreatPerson = iGreatPerson
 		
 		self.handle("greatPersonBorn", self.check_great_person_born)
 		self.expire("greatPersonBorn", self.expire_great_person_born)
@@ -162,12 +162,12 @@ class FirstGreatPerson(StateRequirement):
 		return next(iSpecialist for iSpecialist in infos.specialists() if infos.unit(unit).getGreatPeoples(iSpecialist))
 	
 	def check_great_person_born(self, goal, unit):
-		if self.iSpecialist == self.specialist(unit) and self.state == POSSIBLE:
+		if self.iGreatPerson == base_unit(unit) and self.state == POSSIBLE:
 			self.succeed()
 			goal.check()
 	
 	def expire_great_person_born(self, goal, unit):
-		if self.iSpecialist == self.specialist(unit) and self.state == POSSIBLE:
+		if self.iGreatPerson == base_unit(unit) and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
 

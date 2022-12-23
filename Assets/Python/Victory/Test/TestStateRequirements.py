@@ -540,7 +540,7 @@ class TestFirstDiscover(ExtendedTestCase):
 class TestFirstGreatPerson(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = FirstGreatPerson(iSpecialistGreatScientist)
+		self.requirement = FirstGreatPerson(iGreatScientist)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

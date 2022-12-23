@@ -888,7 +888,7 @@ def getAdvisorString(iBuilding):
 	
 # used: RFCUtils
 def isGreatPeopleBuilding(iBuilding):
-	return any(infos.unit(iUnit).getBuildings(iBuilding) for iUnit in lGreatPeopleUnits + [iGreatGeneral, iGreatSpy])
+	return any(infos.unit(iUnit).getBuildings(iBuilding) for iUnit in lGreatPeopleUnits)
 	
 # used: CvPediaMain
 def getBuildingCategory(iBuilding):

@@ -771,7 +771,7 @@ iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant,
 iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, 
 iAztecSlave) = range(iNumUnits)
 
-lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
+lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
 dFemaleGreatPeople = {
 iGreatProphet : iFemaleGreatProphet,

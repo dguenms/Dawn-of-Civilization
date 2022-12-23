@@ -492,7 +492,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == iModeUnits:
 			for i in xrange(abs(iChange)):
 				unit = gc.getPlayer(iPlayer).initUnit(self.iSelection, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
-				if self.iSelection in lGreatPeopleUnits or self.iSelection in [iGreatGeneral, iGreatSpy]:
+				if self.iSelection in lGreatPeopleUnits:
 					gp.assignGreatPersonName(unit, iPlayer, -1, False)
 					
 		elif self.iPlayerAddMode == iModeBuildings:

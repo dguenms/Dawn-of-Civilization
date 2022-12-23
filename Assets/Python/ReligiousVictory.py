@@ -101,7 +101,7 @@ dAdditionalPaganGoal = {
 	iMazdaism: ResourceCount(iIncense, 6),
 	iMugyo: BestSpecialistCity(capital().named(CAPITAL), great_people()),
 	iOlympianism: BuildingCount(wonders(), 7),
-	iPesedjet: FirstGreatPerson(required=3, desc_key=PESEDJET_GOAL, *lGreatSpecialists),
+	iPesedjet: FirstGreatPerson(required=3, desc_key=PESEDJET_GOAL, *lGreatPeopleUnits),
 	iRodnovery: ResourceCount(iFur, 7),
 	iShendao: PopulationPercent(25),
 	iShinto: CitySpecialistCount(capital().named(CAPITAL), iSpecialistGreatSpy, 3),
