@@ -5080,6 +5080,12 @@ bool CvPlot::isPotentialCityWorkForArea(CvArea* pArea) const
 {
 	PROFILE_FUNC();
 
+	// Leoreth: with city culture spreading only three rings, we can just allow this
+	if (!isWater())
+	{
+		return true;
+	}
+
 	CvPlot* pLoopPlot;
 	int iI;
 
