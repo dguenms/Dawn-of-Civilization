@@ -218,15 +218,15 @@ GAME RULES
     * Defensive buildings are automatically destroyed unless city defenses have not been bombarded
     * Cities can be sacked: 
         * Increased building damage
-	* Increased pillaged gold
-	* Increased unrest
-	* Some owner culture removed
-	* Non-state religion may be removed
-	* Negative opinion from the owner
+		* Increased pillaged gold
+		* Increased unrest
+		* Some owner culture removed
+		* Non-state religion may be removed
+		* Negative opinion from the owner
     * Cities can be spared:
         * Costs gold
         * Reduced building damage
-	* Reduced unrest
+		* Reduced unrest
     * Cities are not razed immediately, instead they lose population over time and are destroyed when the population reaches zero
 * Wonders only grant free buildings to cities in a valid building location
 * When upgraded, units lose all their promotions and regain the expended experience

@@ -217,4 +217,12 @@
 		<Italian>Historical Impact</Italian>
 		<Spanish>Historical Impact</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CITY_CONQUEST</Tag>
+		<English>City Conquest</English>
+		<French>City Conquest</French>
+		<German>Stadteroberung</German>
+		<Italian>City Conquest</Italian>
+		<Spanish>City Conquest</Spanish>
+	</TEXT>
 </Civ4GameText>

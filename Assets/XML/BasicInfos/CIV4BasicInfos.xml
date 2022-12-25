@@ -126,5 +126,10 @@
 			<Description>TXT_KEY_CONCEPT_HISTORICAL_IMPACT</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_HISTORICAL_IMPACT_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_CITY_CONQUEST</Type>
+			<Description>TXT_KEY_CONCEPT_CITY_CONQUEST</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_CITY_CONQUEST_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>
