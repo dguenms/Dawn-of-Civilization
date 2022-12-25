@@ -46,6 +46,17 @@ def checkResurrection():
 					return
 
 
+@handler("releasedCivilization")
+def onReleasedPlayer(iPlayer, iReleasedCivilization):
+	iReleasedCivilization = Civ(iReleasedCivilization)
+	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
+
+	doResurrection(iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
+	
+	if slot(iReleasedCivilization) >= 0:
+		player(iReleasedCivilization).AI_changeAttitudeExtra(iPlayer, 2)
+
+
 def isResurrectionPossible():
 	iTakenSlots = getUnavailableSlots()
 	iAvailableSlots = iNumPlayers-1	

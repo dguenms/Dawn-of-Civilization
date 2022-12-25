@@ -194,16 +194,6 @@ def onCombatResult(winningUnit, losingUnit):
 	if player(winningUnit).isBarbarian() and not is_minor(losingUnit):
 		data.players[losingUnit.getOwner()].iBarbarianLosses += 1
 
-@handler("releasedCivilization")
-def onReleasedPlayer(iPlayer, iReleasedCivilization):
-	iReleasedCivilization = Civ(iReleasedCivilization)
-	releasedCities = cities.owner(iPlayer).core(iReleasedCivilization).where(lambda city: not city.isPlayerCore(iPlayer) and not city.isCapital())
-
-	doResurrection(iReleasedCivilization, releasedCities, bAskFlip=False, bDisplay=True)
-	
-	if slot(iReleasedCivilization) >= 0:
-		player(iReleasedCivilization).AI_changeAttitudeExtra(iPlayer, 2)
-
 def incrementStability(iPlayer):
 	setStabilityLevel(iPlayer, min(iStabilitySolid, stability(iPlayer) + 1))
 	
