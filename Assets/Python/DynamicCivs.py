@@ -1987,7 +1987,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 			return "TXT_KEY_SULTANATE_OF"
 	
-		if iEra == iMedieval and not bEmpire:
+		if not bEmpire and not tPlayer.isHasTech(iFirearms):
 			return "TXT_KEY_SULTANATE_OF"
 			
 	elif iCiv == iOttomans:
