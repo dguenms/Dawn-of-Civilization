@@ -135,15 +135,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_VASSAL</Tag>
-		<English>Kewab of %s1</English>
+		<English>Subah of %s1</English>
 		<French>
-			<Text>Kewab de %s1</Text>
+			<Text>Subah de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Kewab of %s1</German>
-		<Italian>Kewab of %s1</Italian>
-		<Spanish>Kewab of %s1</Spanish>
+		<German>Subah of %s1</German>
+		<Italian>Subah of %s1</Italian>
+		<Spanish>Subah of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
