@@ -3581,7 +3581,12 @@ iMughals : {
 		"fShahzadi Gulbadan Begum", # 16th
 		"Abu al-Faiz ibn Mubarak", # 16th
 		"Abd al-Samad", # 16th
+		"Bishandas", # 17th
+		"Abu'l-Hasan", # 17th
 		"Ustad Mansur", # 17th
+		iIndustrial,
+		"Ghulam Murtaza Khan", # 19th
+		"Ghulam Ali Khan", # 19th
 		iGlobal,
 		"Muhammad Iqbal", # 20th
 	],
@@ -3593,6 +3598,8 @@ iMughals : {
 		"Sawai Jai Singh", # 18th
 		iIndustrial,
 		"Khwaja Nizam-ud-Din Ahmad", # 19th
+		iGlobal,
+		"Abdus Salam", # 20th
 	],
 	iGreatMerchant : [
 		"Sher Shah Suri", # 16th
@@ -3622,6 +3629,8 @@ iMughals : {
 		"fMaham Anga", # 16th
 		"Babur", # 16th
 		"Abu'l-Fazl ibn Muhammad", # 16th
+		"Shaista Khan", # 17th
+		"I'tisam-ud-Din", # 18th
 		iGlobal,
 		"Muhammad Ali Jinnah", # 20th
 		"Choudhry Ali", # 20th
