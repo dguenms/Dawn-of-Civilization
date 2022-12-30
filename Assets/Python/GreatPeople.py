@@ -310,9 +310,11 @@ iChina : {
 		"Song Yingxing", # 17th
 		"fWang Zhenyi", # 18th
 		iGlobal,
-		"Li Yuanzhe", # 20th
-		"Chen Ning Yang", # 20th
+		"Li Siguang", # 20th
+		"fWu Jianxiong", # 20th
+		"Yang Zhenning", # 20th
 		"fTu Youyou", # 20th
+		"Li Yuanzhe", # 20th
 	],
 	iGreatMerchant : [
 		"Zhang Qian", # 2nd BC
@@ -347,8 +349,11 @@ iChina : {
 		"Su Song", # 11th
 		"Wang Zhen", # 14th
 		iGlobal,
-		"Li Siguang", # 20th
-		"fWu Jianxiong", # 20th
+		"Liang Sicheng", # 20th
+		"fLin Huiyin", # 20th
+		"Ieoh Ming Pei", # 20th
+		"fLin Lanying", # 20th
+		"Charles Kao Kuen", # 20th
 	],
 	iGreatStatesman : [
 		"Gongsun Yang", # 4th BC
