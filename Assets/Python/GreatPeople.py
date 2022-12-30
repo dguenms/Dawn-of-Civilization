@@ -3065,7 +3065,7 @@ iPoland : {
 		"fWislawa Szymborska", # 20th
 	],
 	iGreatScientist : [
-		"Witelo", # 13th
+		"Witelon", # 13th
 		iRenaissance,
 		"Mikolaj Kopernik", # 16th
 		u"Michal Sedziwój", # 17th
