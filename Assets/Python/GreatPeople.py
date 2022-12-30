@@ -4143,8 +4143,9 @@ iAmerica : {
 		"Stephen Girard", # 18th
 		iIndustrial,
 		"Cornelius Vanderbilt", # 19th
-		"John D. Rockefeller", # 19th
+		"Cyrus W. Field", # 19th
 		"Andrew Carnegie", # 19th
+		"John D. Rockefeller", # 19th
 		"fHetty Green", # 19th
 		"John Pierpont Morgan", # 19th
 		iGlobal,
@@ -4157,16 +4158,20 @@ iAmerica : {
 		"Bill Gates", # 20th
 	],
 	iGreatEngineer : [
+		"Samuel Morse", # 19th
+		"Charles Goodyear", # 19th
 		"Thomas Edison", # 19th
 		"Nikola Tesla", # 19th
+		"Louis Sullivan", # 19th
 		"Henry Ford", # 19th
-		"Charles Goodyear", # 19th
 		iGlobal,
 		"Orville Wright", # 20th
 		"Frank Lloyd Wright", # 20th
 		"fLillian Moller Gilbreth", # 20th
 		"fHedy Lamarr", # 20th
+		"Eero Saarinen", # 20th
 		"fMargaret Hutchinson Rousseau", # 20th
+		"Frank Gehry", # 20th
 	],
 	iGreatStatesman : [
 		"Thomas Paine", # 18th
