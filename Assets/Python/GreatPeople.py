@@ -2729,6 +2729,7 @@ iHolyRome : {
 		"Hrabanus Maurus", # 9th
 		"Regiomontanus", # 15th
 		"Konrad Celtes", # 15th
+		"Johannes Trithemius", # 15th
 		iRenaissance,
 		"Theophrastus von Hohenheim", # 16th
 		"Gerhard Mercator", # 16th
