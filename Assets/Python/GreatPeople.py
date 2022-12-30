@@ -3884,7 +3884,6 @@ iNetherlands : {
 		"fAlida Bosshardt", # 20th
 	],
 	iGreatArtist : [
-		"Hendrick de Keyser", # 16th
 		"Rembrandt van Rijn", # 17th
 		"Johannes Vermeer", # 17th
 		"Pieter Corneliszoon Hooft", # 17th
@@ -3931,6 +3930,7 @@ iNetherlands : {
 	iGreatEngineer : [
 		"Simon Stevin", # 16th
 		"Cornelis Corneliszoon", # 16th
+		"Hendrick de Keyser", # 16th
 		"Cornelis Drebbel", # 17th
 		"Jan Leeghwater", # 17th
 		"Menno van Coehoorn", # 17th
