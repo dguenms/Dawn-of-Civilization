@@ -3514,6 +3514,7 @@ iMongols : {
 },
 iAztecs : {
 	iGreatProphet : [
+		"Mexitli" # legendary
 		"Tenoch", # 14th
 		"Tlacateotl", # 15th
 		"fPapantzin", # 15th
@@ -3521,12 +3522,16 @@ iAztecs : {
 		"fYacotzin", # 16th
 	],
 	iGreatArtist : [
-		"Cuacuauhtzin", # 15th
 		"Nezahualcoyotl", # 15th
-		"Xayacamach", # 15th
+		"Cuacuauhtzin", # 15th
+		"Aquiauhtzin", # 15th
 		"fMacuilxochitzin", # 15th
+		"Xayacamach", # 15th
+		"Ayocuan Cuetzpaltzin", # 15th
+		"Quecholcohuatl", # 16th
 	],
 	iGreatScientist : [
+		"Nezahualcoyotl", # 15th
 		"Axayacatl", # 15th
 		"Ixtlilxochitl", # 16th
 		"Coanacochtzin", # 16th
@@ -3537,15 +3542,17 @@ iAztecs : {
 		"fTecuichpoch Ixcaxochitzin", # 16th
 	],
 	iGreatEngineer : [
-		"Itzcatl", # 15th
+		"Itzcoatl", # 15th
 		"Tlacaelel", # 15th
+		"Nezahualcoyotl", # 15th
 		"Moquihuix", # 15th
 	],
 	iGreatStatesman : [
 		"Acamapichtli", # 14th
-		"Quaquapitzahuac", # 15th
-		"Tezozomoctli", # 15th
+		"Quaquapitzahuac", # 14th
 		"Nezahualcoyotl", # 15th
+		"fAtotoztli", # 15th
+		"Tezozomoctli", # 15th
 		"Nezahualpilli", # 15th
 	],
 	iGreatGeneral : [
@@ -3554,7 +3561,7 @@ iAztecs : {
 		"Itzcoatl", # 15th
 		"Maxtla", # 15th
 		"Huitzilhuitl", # 15th
-		"Chimalpopoca", # 15th
+		"Qualpopoca", # 15th
 	],
 },
 iMughals : {
