@@ -2222,12 +2222,14 @@ iSpain : {
 		"Juan de Herrera", # 16th
 		iIndustrial,
 		u"Agustín de Betancourt", # 18th
-		"Alberto de Palacio y Elissague", # 19th
-		"Esteban Terradas i Illa", # 19th
+		u"Lluís Domènech i Montaner", # 19th
 		u"Antoni Gaudí", # 19th
+		"Leonardo Torres y Quevedo", # 19th
+		"Alberto de Palacio y Elissague", # 19th
 		iGlobal,
-		"Leonardo Torres y Quevedo", # 20th
+		"Esteban Terradas i Illa", # 20th
 		"Juan de la Cierva", # 20th
+		"Ricardo Bofill", # 20th
 	],
 	iGreatStatesman : [
 		"Alfonso el Sabio", # 13th
