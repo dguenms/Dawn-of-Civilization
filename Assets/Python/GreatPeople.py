@@ -430,6 +430,7 @@ iGreece : {
 		"Homeros", # 8th BC
 		iClassical,
 		"fSappho", # 6th BC
+		"Exekias", # 6th BC
 		"Sophokles", # 5th BC
 		"Thoukydides", # 5th BC
 		"Euripides", # 5th BC
