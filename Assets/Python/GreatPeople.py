@@ -996,6 +996,7 @@ iRome : {
 		"Marcus Terentius Varro", # 1st BC
 		"Titus Lucretius Carus", # 1st BC
 		"Sosigenes", # 1st BC
+		"Gaius Iulius Iuba", # 1st BC
 		"Antonius Castor", # 1st
 		"Gaius Plinius Secundus", # 1st
 		"Strabo", # 1st
