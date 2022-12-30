@@ -1544,6 +1544,7 @@ iJapan : {
 	],
 	iGreatStatesman : [
 		"Shoutouku Taishi", # 6th
+		"Fujiwara no Kamatari", # 7th
 		"Fujiwara no Michinaga", # 11th
 		"Taira no Kiyomori", # 12th
 		"fHoujou Masako", # 12th
@@ -1564,7 +1565,6 @@ iJapan : {
 		"fSadako Ogata", # 20th
 	],
 	iGreatGeneral : [
-		"Fujiwara no Kamatari", # 7th
 		"Sakanoue no Tamuramaro", # 8th
 		"Taira no Masakado", # 10th
 		"Minamoto no Yoritomo", # 12th
@@ -1906,6 +1906,7 @@ iArabia : {
 	],
 	iGreatStatesman : [
 		"fFatimah bint Muhammad", # 7th
+		"Ziyad ibn Abih", # 7th
 		"Al-Jahiz", # 9th
 		"Al-Mawardi", # 11th
 		"Izz al-Din Usama", # 12th
@@ -1921,7 +1922,6 @@ iArabia : {
 	iGreatGeneral : [
 		"Khalid ibn al-Walid", # 7th
 		"Muawiyah", # 7th
-		"Ziyad ibn Abih", # 7th
 		"Amr ibn al-As", # 7th
 		"fKhawla bint al-Azwar", # 7th
 		"Nur ad-Din Zengi", # 12th
