@@ -1857,6 +1857,7 @@ iArabia : {
 	],
 	iGreatArtist : [
 		"Al-Asma'i", # 8th
+		"fFatima al-Suqutriyya", # 9th
 		"Ibn Muqla", # 10th
 		"Ibn al-Nadim", # 10th
 		"Al-Mutanabbi", # 10th
