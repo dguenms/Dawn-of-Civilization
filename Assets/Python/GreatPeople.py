@@ -1232,6 +1232,9 @@ iKorea : {
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
+		iIndustrial,
+		"Kim Jeong-hui", # 19th
+		"Jang Seung-eop", # 19th
 		iGlobal,
 		"Paik Nam-jun", # 20th
 		"fNa Hye-sok", # 20th
