@@ -277,7 +277,6 @@ iChina : {
 		"fCai Wenji", # 1st
 		"Gu Kaizhi", # 4th
 		iMedieval,
-		"fShangguan Wan'er", # 7th
 		"Han Yu", # 8th
 		"Fan Kuan", # 10th
 		"Su Shi", # 11th 
@@ -357,6 +356,7 @@ iChina : {
 		"Fang Xuanling", # 7th
 		"fWu Zetian", # 7th
 		"Di Renjie", # 7th
+		"fShangguan Wan'er", # 7th
 		"Fan Zhongyan", # 11th
 		"Liu Bowen", # 14th
 		iRenaissance,
