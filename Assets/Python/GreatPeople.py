@@ -1637,6 +1637,7 @@ iVikings : {
 		"Edvard Munch", # 19th norwegian
 		"Edvard Grieg", # 19th norwegian
 		iGlobal,
+		u"fSelma Lagerlöf", # 20th swedish
 		"Jean Sibelius", # 20th finnish
 		"fKaren Blixen", # 20th danish
 		u"Halldór Laxness", # 20th icelandic
@@ -1657,6 +1658,7 @@ iVikings : {
 		"Niels Henrik Abel", # 19th norwegian
 		"Johannes Rydberg", # 19th swedish
 		u"Anders Ångström", # 19th swedish
+		"Svante Arrhenius", # 19th swedish
 		"Niels Ryberg Finsen", # 19th faroese
 		iGlobal,
 		"Niels Bohr", # 20th danish
