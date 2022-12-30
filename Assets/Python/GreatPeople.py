@@ -2173,6 +2173,7 @@ iSpain : {
 		iRenaissance,
 		"Miguel de Cervantes", # 16th
 		"Garcilaso de la Vega", # 16th
+		u"Tomás Luis de Victoria", # 16th
 		"Lope de Vega", # 17th
 		u"Diego de Silva Velázquez", # 17th
 		u"fJuana Inés de la Cruz", # 17th
