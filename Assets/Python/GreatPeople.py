@@ -608,6 +608,8 @@ iIndia : {
 		iRenaissance,
 		"Nilakantha Somayaji", # 15th
 		"Kamalakara", # 17th
+		iIndustrial,
+		"Jagadish Chandra Bose", # 19th
 		iGlobal,
 		"Srinivasa Ramanujan", # 20th
 		"Chandrasekhara Venkata Raman", # 20th
@@ -640,7 +642,6 @@ iIndia : {
 		"Vidyadhar Bhattacharya", # 18th
 		"Ram Singh Malam", # 18th
 		iIndustrial,
-		"Jagadish Chandra Bose", # 19th
 		"Bhai Ram Singh", # 19th
 		"Mokshagundam Visvesvaraya", # 19th
 		"Jamsetji Tata", # 19th
