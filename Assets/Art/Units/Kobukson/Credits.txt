@@ -1,0 +1,12 @@
+Turtleship Civ5:
+Mightytoad
+
+Teamflag.nif:
+This unit was created by PPQ_Purple on CivFanatics. 
+Credits therefore are as follows:
+
+Complete design: PPQ_Purple
+Inspiration: Great Warlord unit from Rise from Erebus modmod
+
+When distributing this unit do not remove this file.
+When altering the unit your self, add your name to the list.

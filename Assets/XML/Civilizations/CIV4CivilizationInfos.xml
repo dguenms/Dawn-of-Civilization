@@ -16,14 +16,14 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AMERICA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>AME</Identifier>
 			<StartingYear>1775</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>60</LoadingTime>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>5</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>4</Trade>
@@ -120,13 +120,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARABIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ARA</Identifier>
 			<StartingYear>620</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -216,14 +216,14 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARGENTINA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>ARG</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
 				<LoadingTime>45</LoadingTime>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -314,13 +314,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AZTEC</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TEOTL_AZTEC</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>AZT</Identifier>
 			<StartingYear>1200</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -432,8 +432,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>BAB</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -534,14 +534,14 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BRAZIL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BRA</Identifier>
 			<StartingYear>1822</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
-				<LoadingTime>45</LoadingTime>
-				<LoadingTime>25</LoadingTime>
+				<LoadingTime>50</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>12</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -628,12 +628,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BYZANTIUM</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BYZ</Identifier>
 			<StartingYear>330</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -735,13 +735,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CANADA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CAN</Identifier>
 			<StartingYear>1867</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>75</LoadingTime>
-				<LoadingTime>45</LoadingTime>
+				<LoadingTime>60</LoadingTime>
+				<LoadingTime>50</LoadingTime>
 				<LoadingTime>20</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -845,12 +845,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PHOENICIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_BAALISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Baalism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_BAALISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>CAR</Identifier>
 			<StartingYear>-1200</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1158,12 +1158,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CHINA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>CHI</Identifier>
 			<StartingYear>-2070</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1280,14 +1280,14 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>COL</Identifier>
 			<StartingYear>1814</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>55</LoadingTime>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>3</Trade>
@@ -1370,8 +1370,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_EGYPT</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_PESEDJET</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Pesedjet.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>EGY</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -1498,13 +1498,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ENGLAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ENG</Identifier>
 			<StartingYear>820</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1612,12 +1612,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ETHIOPIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ETH</Identifier>
 			<StartingYear>-295</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -1734,13 +1734,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_FRANCE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>FRA</Identifier>
 			<StartingYear>750</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>25</LoadingTime>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1845,13 +1845,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GERMANY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>GER</Identifier>
 			<StartingYear>1700</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>50</LoadingTime>
-				<LoadingTime>25</LoadingTime>
+				<LoadingTime>30</LoadingTime>
+				<LoadingTime>20</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -1973,12 +1973,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GREECE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>GRE</Identifier>
 			<StartingYear>-1600</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2107,8 +2107,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>HAR</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -2210,13 +2210,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HOLY_ROMAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>HRE</Identifier>
 			<StartingYear>840</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2320,13 +2320,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INCA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>INC</Identifier>
 			<StartingYear>1150</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2413,12 +2413,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>IND</Identifier>
 			<StartingYear>-1500</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2532,13 +2532,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDONESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>INO</Identifier>
 			<StartingYear>650</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2634,13 +2634,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>IRA</Identifier>
 			<StartingYear>1501</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2739,13 +2739,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ITALY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ITA</Identifier>
 			<StartingYear>1167</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -2846,12 +2846,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JAPAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_SHINTO</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Shinto.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_SHINTO</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>JAP</Identifier>
 			<StartingYear>525</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2959,8 +2959,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KHMER</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KHM</Identifier>
 			<StartingYear>800</StartingYear>
 			<LoadingTimes>
@@ -3067,13 +3067,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CON</Identifier>
 			<StartingYear>1390</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
 				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3171,12 +3171,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KOREA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_MUGYO</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Mugyo.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_MUGYO</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>KOR</Identifier>
 			<StartingYear>-50</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3277,13 +3277,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAL</Identifier>
 			<StartingYear>989</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3391,12 +3391,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MAYA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TEOTL_MAYA</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MAY</Identifier>
 			<StartingYear>-400</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3507,14 +3507,14 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MEXICO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TEOTL_AZTEC</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>MEX</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>50</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 			</LoadingTimes>
 			<Rating>
 				<Trade>2</Trade>
@@ -3604,13 +3604,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MONGOL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MON</Identifier>
 			<StartingYear>1190</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3707,13 +3707,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MOORS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MOO</Identifier>
 			<StartingYear>711</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -3824,13 +3824,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MUGHALS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MUG</Identifier>
 			<StartingYear>1206</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4047,13 +4047,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NETHERLANDS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>HOL</Identifier>
 			<StartingYear>1580</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>40</LoadingTime>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>12</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4166,13 +4166,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_OTTOMAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>OTT</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
+				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4273,12 +4273,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PERSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>PER</Identifier>
 			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4400,13 +4400,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>POL</Identifier>
 			<StartingYear>1025</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4526,12 +4526,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ATUA</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Atua.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ATUA</PaganReligion>
+			<Impact>IMPACT_MARGINAL</Impact>
 			<Identifier>PLY</Identifier>
 			<StartingYear>-1000</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4543,7 +4543,7 @@
 				<Start>2</Start>
 			</Rating>
 			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Havaiki</City>
 				<!-- Central Polynesia -->
@@ -4641,13 +4641,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PORTUGAL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>POR</Identifier>
 			<StartingYear>1130</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>35</LoadingTime>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4766,12 +4766,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ROME</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ROM</Identifier>
 			<StartingYear>-760</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4888,13 +4888,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_RUSSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>RUS</Identifier>
 			<StartingYear>860</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -4991,13 +4991,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SPAIN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>SPA</Identifier>
 			<StartingYear>722</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>25</LoadingTime>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>6</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5187,12 +5187,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TAMILS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>TAM</Identifier>
 			<StartingYear>-300</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5301,13 +5301,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_THAILAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>THA</Identifier>
 			<StartingYear>1350</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
 				<LoadingTime>15</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5413,13 +5413,13 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_BON</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Bon.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_BON</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>TIB</Identifier>
 			<StartingYear>630</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>4</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5545,12 +5545,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TURKS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>TUR</Identifier>
 			<StartingYear>552</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5643,12 +5643,12 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_VIKING</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
+			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>VIK</Identifier>
 			<StartingYear>545</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
+				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>

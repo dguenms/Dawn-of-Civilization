@@ -632,11 +632,15 @@ public:
 #endif
 	DllExport TeamTypes getTeam() const;																	// Exposed to Python
 
-	PlayerTypes getPreviousOwner() const;																	// Exposed to Python
-	void setPreviousOwner(PlayerTypes eNewValue);
+	// Leoreth
+	CivilizationTypes getPreviousCiv() const;
+	void setPreviousCiv(CivilizationTypes eNewValue);
+	bool isPreviousOwner(PlayerTypes ePlayer) const;
 
-	PlayerTypes getOriginalOwner() const;																	// Exposed to Python
-	void setOriginalOwner(PlayerTypes eNewValue);
+	// Leoreth
+	CivilizationTypes getOriginalCiv() const;
+	void setOriginalCiv(CivilizationTypes eNewValue);
+	bool isOriginalOwner(PlayerTypes ePlayer) const;
 
 	CultureLevelTypes getCultureLevel() const;														// Exposed to Python
 	int getCultureThreshold() const;																	// Exposed to Python
@@ -649,6 +653,10 @@ public:
 
 	int getRiverPlotYield(YieldTypes eIndex) const;																// Exposed to Python
 	void changeRiverPlotYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	int getFlatRiverPlotYield(YieldTypes eYield) const;
+	void changeFlatRiverPlotYield(YieldTypes eYield, int iChange);
 
 	// Leoreth
 	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const;
@@ -794,22 +802,32 @@ public:
 	int getDomainProductionModifier(DomainTypes eIndex) const;									// Exposed to Python
 	void changeDomainProductionModifier(DomainTypes eIndex, int iChange);
 
-	int getCulture(PlayerTypes eIndex) const;													// Exposed to Python
-	int getCultureTimes100(PlayerTypes eIndex) const;													// Exposed to Python
+	int getCulture(CivilizationTypes eCivilization) const;
+	int getCulture(PlayerTypes ePlayer) const;													// Exposed to Python
+	int getCultureTimes100(CivilizationTypes eCivilization) const;
+	int getCultureTimes100(PlayerTypes ePlayer) const;													// Exposed to Python
 	//int countTotalCultureTimes100() const;			//Rhye																				// Exposed to Python
 	int countTotalCultureTimes100() const;		//Rhye																					// Exposed to Python
 	int getActualTotalCultureTimes100() const; // Leoreth
 	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																			// Exposed to Python
-	int calculateCulturePercent(PlayerTypes eIndex) const;											// Exposed to Python
+	int calculateCulturePercent(CivilizationTypes eCivilization) const;
+	int calculateCulturePercent(PlayerTypes ePlayer) const;											// Exposed to Python
+	int calculateOverallCulturePercent(CivilizationTypes eCivilization) const;
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;										// Exposed to Python
-	void setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
-	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
-	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
-	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+	void setCulture(CivilizationTypes eCivilization, int iNewValue);
+	void setCulture(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
+	void setCultureTimes100(CivilizationTypes eCivilization, int iNewValue);
+	void setCultureTimes100(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
+	void changeCulture(CivilizationTypes eCivilization, int iChange);
+	void changeCulture(PlayerTypes ePlayer, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+	void changeCultureTimes100(CivilizationTypes eCivilization, int iChange);
+	void changeCultureTimes100(PlayerTypes ePlayer, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 
 	// Leoreth
+	int getActualCultureTimes100(CivilizationTypes eCivilization) const;
 	int getActualCultureTimes100(PlayerTypes ePlayer) const;
+	int getActualCulture(CivilizationTypes eCivilization) const;
 	int getActualCulture(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;
@@ -819,8 +837,10 @@ public:
 	bool isTradeRoute(PlayerTypes eIndex) const;																	// Exposed to Python
 	void setTradeRoute(PlayerTypes eIndex, bool bNewValue);
 
-	bool isEverOwned(PlayerTypes eIndex) const;																		// Exposed to Python
-	void setEverOwned(PlayerTypes eIndex, bool bNewValue);
+	bool isEverOwned(CivilizationTypes eCivilization) const;
+	bool isEverOwned(PlayerTypes ePlayer) const;																		// Exposed to Python
+	void setEverOwned(CivilizationTypes eCivilization, bool bNewValue);
+	void setEverOwned(PlayerTypes ePlayer, bool bNewValue);
 
 	DllExport bool isRevealed(TeamTypes eIndex, bool bDebug) const;								// Exposed to Python
 	void setRevealed(TeamTypes eIndex, bool bNewValue);											// Exposed to Python
@@ -871,7 +891,8 @@ public:
 	int getBuildingOriginalOwner(BuildingTypes eIndex) const;											// Exposed to Python
 	int getBuildingOriginalTime(BuildingTypes eIndex) const;											// Exposed to Python
 
-	void setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer); // Leoreth
+	void setBuildingOriginalOwner(BuildingTypes eBuilding, CivilizationTypes eCivilization); // Leoreth
+	void setBuildingOriginalTime(BuildingTypes eBuilding, int iYear); // Leoreth
 
 	int getUnitProduction(UnitTypes eIndex) const;											// Exposed to Python
 	void setUnitProduction(UnitTypes eIndex, int iNewValue);								// Exposed to Python
@@ -952,7 +973,7 @@ public:
 	void setHasRealBuilding(BuildingTypes eIndex, bool bNewValue);	//Rhye	// Exposed to Python
 	int getNumRealBuilding(BuildingTypes eIndex) const;														// Exposed to Python
 	void setNumRealBuilding(BuildingTypes eIndex, int iNewValue);		// Exposed to Python
-	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime);
+	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, CivilizationTypes eOriginalOwner, int iOriginalTime);
 
 	bool isHasBuildingEffect(BuildingTypes eBuilding) const; // Leoreth
 
@@ -1054,6 +1075,8 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
+	int getGameTurnCivLost(CivilizationTypes eCivilization);
+	void setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue);
 	int getGameTurnPlayerLost(PlayerTypes ePlayer);
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
 	bool isColony() const;
@@ -1130,6 +1153,7 @@ public:
 
 	int countNoGlobalEffectsFreeSpecialists() const;
 	int countSatellites() const;
+	int getSatelliteSlots() const;
 	bool canSatelliteJoin() const;
 
 	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
@@ -1152,7 +1176,7 @@ public:
 	int getPopulationLoss() const;
 	void setPopulationLoss(int iNewValue);
 
-	void completeAcquisition(int iCaptureGold);
+	void completeAcquisition(int iCaptureGold, bool bChooseProduction = true);
 
 	int getRebuildProduction() const;
 
@@ -1163,13 +1187,20 @@ public:
 	void completeRaze();
 
 	bool canLiberate() const;
+	bool isCore(CivilizationTypes eCivilization) const;
 	bool isCore(PlayerTypes ePlayer) const;
+	bool isCore() const;
+
+	bool rebuild();
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
 
 	DllExport void getBuildQueue(std::vector<std::string>& astrQueue) const;
+
+	// Leoreth: exposed for CvPlayer::acquireCity
+	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
@@ -1385,13 +1416,14 @@ protected:
 /************************************************************************************************/
 
 	PlayerTypes m_eOwner;
-	PlayerTypes m_ePreviousOwner;
-	PlayerTypes m_eOriginalOwner;
+	CivilizationTypes m_ePreviousCiv;
+	CivilizationTypes m_eOriginalCiv;
 	CultureLevelTypes m_eCultureLevel;
 	ArtStyleTypes m_eArtStyle; // Leoreth
 
 	int* m_aiSeaPlotYield;
 	int* m_aiRiverPlotYield;
+	int* m_aiFlatRiverPlotYield; // Leoreth
 	int* m_aiBaseYieldRate;
 	int* m_aiYieldRateModifier;
 	int* m_aiPowerYieldRateModifier;
@@ -1417,7 +1449,7 @@ protected:
 	int* m_aiNumRevolts;
 
 	// Leoreth
-	int* m_aiGameTurnPlayerLost;
+	int* m_aiGameTurnCivLost;
 	int* m_aiCulturePlots;
 	int* m_aiCultureCosts;
 
@@ -1489,7 +1521,6 @@ protected:
 
 	void doGrowth();
 	void doCulture();
-	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 	void doProduction(bool bAllowNoProduction);
 	void doDecay();
 	void doReligion();

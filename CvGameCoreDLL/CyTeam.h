@@ -231,6 +231,7 @@ public:
 	bool isCapitulated();
 	int getTotalTechValue();
 	void changeObsoleteBuildingCount(int eBuilding, int iChange);
+	int AI_getWarPlan(int eTeam);
 
 protected:
 

@@ -7,6 +7,7 @@ import CvScreenEnums
 import CvEventInterface
 import time
 
+from Stability import *
 from RFCUtils import *
 from StoredData import data
 from Consts import *
@@ -225,11 +226,12 @@ g_mainInterface = None
 # BUG - end
 
 tStabilitySymbols = (
-FontSymbols.UNSTABLE_CHAR,
-FontSymbols.UNSTABLE_CHAR,
-FontSymbols.STABLE_CHAR,
-FontSymbols.SOLID_CHAR,
-FontSymbols.SOLID_CHAR,)
+	FontSymbols.COLLAPSING_CHAR,
+	FontSymbols.UNSTABLE_CHAR,
+	FontSymbols.SHAKY_CHAR,
+	FontSymbols.STABLE_CHAR,
+	FontSymbols.SOLID_CHAR,
+)
 
 class CvMainInterface:
 	"Main Interface Screen"
@@ -3071,6 +3073,8 @@ class CvMainInterface:
 			screen.hide(szString)
 			szString = "RateText" + str(iI)
 			screen.hide(szString)
+		
+		screen.hide("ExpansionText")
 
 		if ( CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY  and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_ADVANCED_START):
 
@@ -3098,6 +3102,16 @@ class CvMainInterface:
 							screen.show( szString )
 
 						iCount = iCount + 1;
+				
+				if not CyInterface().isCityScreenUp():
+					iAdministration = cities.owner(ePlayer).sum(calculateAdministration)
+					iSeparatism = cities.owner(ePlayer).sum(calculateSeparatism)
+					expansion = "%s %s" % (localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR))), localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR))))
+					
+					if iAdministration < iSeparatism:
+						expansion = u"<color=255,0,0>%s</color>" % expansion
+					
+					screen.setLabel("ExpansionText", "Background", expansion, CvUtil.FONT_LEFT_JUSTIFY, 14, 50 + (iCount + 1) * 19, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 			self.updateTimeText()
 			screen.setLabel( "TimeText", "Background", g_szTimeText, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 56, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -3460,6 +3474,9 @@ class CvMainInterface:
 		screen.hide( "DefenseText" )
 		screen.hide( "NationalWonderLimitText" )
 		screen.hide( "WorldWonderLimitText" )
+		screen.hide( "SatelliteLimitText" )
+		screen.hide( "AdministrationText" )
+		screen.hide( "SeparatismText" )
 		screen.hide( "CityScrollMinus" )
 		screen.hide( "CityScrollPlus" )
 		screen.hide( "CityNameText" )
@@ -3753,7 +3770,8 @@ class CvMainInterface:
 # BUG - Anger Display - start
 					if (CityScreenOpt.isShowAngerCounter()
 					and pHeadSelectedCity.getTeam() == gc.getGame().getActiveTeam()):
-						iAngerTimer = max(pHeadSelectedCity.getHurryAngerTimer(), pHeadSelectedCity.getConscriptAngerTimer())
+						iHurryAngerTimer = pHeadSelectedCity.getHurryAngerTimer() * 100 / (100 + gc.getPlayer(pHeadSelectedCity.getOwner()).getUnhappinessDecayModifier())
+						iAngerTimer = max(iHurryAngerTimer, pHeadSelectedCity.getConscriptAngerTimer())
 						if not gc.getPlayer(pHeadSelectedCity.getOwner()).isNoTemporaryUnhappiness() and iAngerTimer > 0:
 							szBuffer += u" (%i)" % iAngerTimer
 # BUG - Anger Display - end
@@ -4483,7 +4501,7 @@ class CvMainInterface:
 							screen.show( szName )
 # BUG - Limit/Extra Corporations - end
 
-				szBuffer = u"%d%% %s" %(pHeadSelectedCity.calculateOverallCulturePercent(pHeadSelectedCity.getOwner()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
+				szBuffer = u"%d%% %s" %(pHeadSelectedCity.calculateCulturePercent(pHeadSelectedCity.getCivilizationType()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
 				screen.setLabel( "NationalityText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 210, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 				screen.setHitTest( "NationalityText", HitTestTypes.HITTEST_NOHIT )
 				screen.show( "NationalityText" )
@@ -4491,38 +4509,27 @@ class CvMainInterface:
 				iWhichBar = 0
 				lBars = []
 				
-				for iPlayer in range(gc.getMAX_PLAYERS()):
-					iPercent = pHeadSelectedCity.calculateOverallCulturePercent(iPlayer)
+				for iCiv in range(gc.getNumCivilizationInfos()):
+					iPercent = pHeadSelectedCity.calculateCulturePercent(iCiv)
 					if iPercent > 0:
 						if iRemainder <= 0:
 							fPercentage = 0.0
 						else:
 							fPercentage = float(iPercent) / iRemainder
 						iRemainder -= iPercent
-						lBars.append((iPlayer, fPercentage))
+						lBars.append((iCiv, fPercentage))
 						
 				if iRemainder > 0:
-					found = find_max(lBars, lambda (iPlayer, fPercent): fPercent)
-					iPlayer, fPercent = found.result
-					lBars[found.index] = (iPlayer, fPercent + float(iRemainder))
-						
-				for i in range(len(lBars)):
-					iPlayer, fPercentage = lBars[i]
-					screen.setStackedBarColorsRGB("NationalityBar", i, gc.getPlayer(iPlayer).getPlayerTextColorR(), gc.getPlayer(iPlayer).getPlayerTextColorG(), gc.getPlayer(iPlayer).getPlayerTextColorB(), gc.getPlayer(iPlayer).getPlayerTextColorA())
+					found = find_max(lBars, lambda (iCiv, fPercent): fPercent)
+					iCiv, fPercent = found.result
+					lBars[found.index] = (iCiv, fPercent + float(iRemainder))
+				
+				for i, (iCiv, fPercentage) in enumerate(lBars):
+					iPlayerColorType = infos.civ(iCiv).getDefaultPlayerColor()
+					iTextColorType = gc.getPlayerColorInfo(iPlayerColorType).getTextColorType()
+					screen.setStackedBarColors("NationalityBar", i, gc.getPlayerColorInfo(iPlayerColorType).getTextColorType())
 					screen.setBarPercentage("NationalityBar", i, fPercentage)
 				
-				#for h in range( gc.getMAX_PLAYERS() ):
-					# Leoreth: culture of dead civs still counts, so display it
-				#	if True: #( gc.getPlayer(h).isAlive() ):
-				#		iPercent = pHeadSelectedCity.plot().calculateOverallCulturePercent(h)
-				#		if ( iPercent > 0 ):
-				#			screen.setStackedBarColorsRGB( "NationalityBar", iWhichBar, gc.getPlayer(h).getPlayerTextColorR(), gc.getPlayer(h).getPlayerTextColorG(), gc.getPlayer(h).getPlayerTextColorB(), gc.getPlayer(h).getPlayerTextColorA() )
-				#			if ( iRemainder <= 0):
-				#				screen.setBarPercentage( "NationalityBar", iWhichBar, 0.0 )
-				#			else:
-				#				screen.setBarPercentage( "NationalityBar", iWhichBar, float(iPercent) / iRemainder)
-				#			iRemainder -= iPercent
-				#			iWhichBar += 1
 				screen.show( "NationalityBar" )
 
 				iDefenseModifier = pHeadSelectedCity.getDefenseModifier(False)
@@ -4540,19 +4547,41 @@ class CvMainInterface:
 					screen.show( "DefenseText" )
 
 				# National and Worldwonder limit indicator
+				iIndicatorOffset = 400
 				iWorldWonders = pHeadSelectedCity.getNumActiveWorldWonders()
 				iWorldWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getWonderLimit()
 				if pHeadSelectedCity.isCapital():
 					iWorldWondersLimit += 1
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iWorldWonders, iWorldWondersLimit, CyGame().getSymbolID(FontSymbols.STAR_CHAR)))
-				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 400, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
+				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
 				screen.show( "WorldWonderLimitText" )
 
+				iIndicatorOffset += 40
 				iNationalWonders = pHeadSelectedCity.getNumNationalWonders()
 				iNationalWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getNationalWonderLimit()
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iNationalWonders, iNationalWondersLimit, CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)))
-				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 440, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
+				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
 				screen.show( "NationalWonderLimitText" )
+				
+				iSatellites = pHeadSelectedCity.countSatellites()
+				iSatelliteLimit = pHeadSelectedCity.getSatelliteSlots()
+				if iSatelliteLimit > 0:
+					iIndicatorOffset += 40
+					szBuffer = localText.getText("INTERFACE_CITY_SATELLITE_LIMIT", (iSatellites, iSatelliteLimit, CyGame().getSymbolID(FontSymbols.SATELLITE_CHAR)))
+					screen.setLabel("SatelliteLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_SATELLITE_LIMIT, -1, -1)
+					screen.show("SatelliteLimitText")
+				
+				iIndicatorOffset += 40
+				if pHeadSelectedCity.isOwnerCore():
+					iAdministration = calculateAdministration(pHeadSelectedCity)
+					szBuffer = localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR)))
+					screen.setLabel("AdministrationText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.show("AdministrationText")
+				else:
+					iSeparatism = calculateSeparatism(pHeadSelectedCity)
+					szBuffer = localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)))
+					screen.setLabel("SeparatismText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.show("SeparatismText")
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
 					#bDisplayCoverage = False #(pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
@@ -4628,8 +4657,6 @@ class CvMainInterface:
 					iCost = pHeadSelectedCity.getCultureCost(i)
 					if iCost >= iThreshold: break
 					lCultureCosts.append(iCost)
-					
-				print "Culture costs: " + str(lCultureCosts)
 				
 				if lCultureCosts:
 					self.pBarCultureBar.drawTickMarksList(screen, 0, iThreshold, 0, lCultureCosts, True)
@@ -5260,9 +5287,7 @@ class CvMainInterface:
 
 												if not is_minor(ePlayer):
 													iStabilityLevel = stability(ePlayer)
-													if iStabilityLevel > iStabilityShaky: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
-													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
-													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
+													cStab = unichr(CyGame().getSymbolID(tStabilitySymbols[iStabilityLevel]))
 													szBuffer += cStab
 													if (bAlignIcons):
 														scores.setStability(cStab)
@@ -5702,8 +5727,9 @@ class CvMainInterface:
 			city = gc.getMap().plot(iX, iY).getPlotCity()
 			city.changeHappinessTimer(turns(5))
 			city.setWeLoveTheKingDay(True)
-			if self.pPushedButtonUnit.isHuman(): data.iTeotlSacrifices += 1
-			self.pPushedButtonUnit.kill(false, city.getOwner())
+			self.pPushedButtonUnit.kill(False, city.getOwner())
+			
+			events.fireEvent("sacrificeHappiness", city.getOwner(), city)
 		
 		# Leoreth: start Byzantine UP
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
@@ -5773,8 +5799,8 @@ class CvMainInterface:
 # BUG - field of view slider - end
 
 	def getPaganReligionChar(self, iPlayer):
-		paganReligionName = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0)
-		
-		if not paganReligionName: return ""
+		paganReligionName = infos.paganReligion(civ(iPlayer)).getDescription()
+		if not paganReligionName: 
+			return ""
 	
 		return u"<font=2>%c</font>" % FontUtil.getChar(paganReligionName.lower())

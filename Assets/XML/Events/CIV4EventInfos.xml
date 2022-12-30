@@ -20795,7 +20795,7 @@
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts>
 				<FreeSpecialistCount>
-					<SpecialistType>SPECIALIST_GREAT_MERCHANT</SpecialistType>
+					<SpecialistType>SPECIALIST_GREAT_STATESMAN</SpecialistType>
 					<iFreeSpecialistCount>1</iFreeSpecialistCount>
 				</FreeSpecialistCount>
 			</FreeSpecialistCounts>

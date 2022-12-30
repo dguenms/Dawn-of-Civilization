@@ -223,5 +223,6 @@ void CyTeamPythonInterface()
 		.def("canCutContact", &CyTeam::canCutContact, "bool (int eTeam)")
 		.def("getTotalTechValue", &CyTeam::getTotalTechValue, "int ()")
 		.def("changeObsoleteBuildingCount", &CyTeam::changeObsoleteBuildingCount, "void (int eBuilding, int iChange)")
+		.def("AI_getWarPlan", &CyTeam::AI_getWarPlan, "int (int eTeam)")
 		;
 }

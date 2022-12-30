@@ -12,7 +12,7 @@ import string
 #import time
 import math
 
-from Consts import *
+from Core import *
 from RFCUtils import *
 from PyHelpers import PyPlayer
 from operator import itemgetter
@@ -99,16 +99,21 @@ class CvInfoScreen:
 		self.iGraph_Smoothing_7in1 = -1
 		self.iGraph_Smoothing_3in1 = -1
 
-		self.TOTAL_SCORE	= 0
-		self.ECONOMY_SCORE	= 1
-		self.INDUSTRY_SCORE	= 2
-		self.AGRICULTURE_SCORE	= 3
-		self.POWER_SCORE	= 4
-		self.CULTURE_SCORE	= 5
-		self.ESPIONAGE_SCORE	= 6
-		self.TECH_SCORE		= 7
-		self.NUM_SCORES		= 8
+		self.NUM_SCORES		= 10
 		self.RANGE_SCORES	= range(self.NUM_SCORES)
+		
+		(
+			self.TOTAL_SCORE, 
+			self.ECONOMY_SCORE, 
+			self.INDUSTRY_SCORE, 
+			self.AGRICULTURE_SCORE, 
+			self.POWER_SCORE, 
+			self.CULTURE_SCORE, 
+			self.ESPIONAGE_SCORE, 
+			self.TECH_SCORE,
+			self.POPULATION_SCORE,
+			self.LAND_SCORE
+		) = self.RANGE_SCORES
 
 		self.scoreCache	= []
 		for t in self.RANGE_SCORES:
@@ -470,6 +475,8 @@ class CvInfoScreen:
 		sTemp1[5] = localText.getObjectText("TXT_KEY_COMMERCE_CULTURE", 0)
 		sTemp1[6] = localText.getObjectText("TXT_KEY_ESPIONAGE_CULTURE", 0)
 		sTemp1[7] = localText.getText("TXT_KEY_CONCEPT_TECHNOLOGY", ())
+		sTemp1[8] = localText.getText("TXT_KEY_DEMO_SCREEN_POPULATION_TEXT", ())
+		sTemp1[9] = localText.getText("TXT_KEY_DEMO_SCREEN_LAND_AREA_TEXT", ())
 
 		for i in range(self.NUM_SCORES):
 			sTemp2[i] = BugUtil.colorText(sTemp1[i], "COLOR_YELLOW")
@@ -758,6 +765,8 @@ class CvInfoScreen:
 #BUG - 3.17 No Espionage - end
 
 		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_TECH, 7, 7, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_POPULATION, 8, 8, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_LAND_AREA, 9, 9, False)
 
 #BUG: Change Graphs - start
 		if AdvisorOpt.isGraphs():
@@ -857,7 +866,6 @@ class CvInfoScreen:
 		self.updateGraphButtons()
 
 	def buildScoreCache(self, scoreType):
-
 		# Check if the scores have already been computed
 		if (self.scoreCache[scoreType]):
 			return
@@ -910,7 +918,11 @@ class CvInfoScreen:
 		elif (scoreType == self.ESPIONAGE_SCORE):
 			return gc.getPlayer(iPlayer).getEspionageHistory(iTurn)
 		elif (scoreType == self.TECH_SCORE):
-			return gc.getPlayer(iPlayer).getTechHistory(iTurn)
+			return gc.getPlayer(iPlayer).getTechnologyHistory(iTurn)
+		elif (scoreType == self.POPULATION_SCORE):
+			return gc.getPlayer(iPlayer).getPopulationHistory(iTurn)
+		elif (scoreType == self.LAND_SCORE):
+			return gc.getPlayer(iPlayer).getLandHistory(iTurn)
 
 	# Requires the cache to be built
 	def getHistory(self, scoreType, iPlayer, iRelTurn):
@@ -2113,7 +2125,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < dBirth[iActivePlayer]):
+					if tActivePlayer.isHasTech(iCalendar):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2900,18 +2912,18 @@ class CvInfoScreen:
 	def getLog10(self, x):
 		return math.log10(max(1,x))
 
-	def getTurnDate(self,turn):
-		iYear = gc.getGame().getGameTurnYear()
+	def getTurnDate(self, turn):
+		iYear = game.getTurnYear(turn)
 		    
-		iPlayer = CyGame().getActivePlayer()
+		iPlayer = game.getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
-		if tPlayer.isHasTech(iCalendar) or iYear < dBirth[iPlayer]:  
+		if tPlayer.isHasTech(iCalendar) or game.getAIAutoPlay() > 0:  
 			if iYear < 0:
-			    return localText.getText("TXT_KEY_TIME_BC", (-iYear,))
+				return localText.getText("TXT_KEY_TIME_BC", (-iYear,))
 			else:
-			    return localText.getText("TXT_KEY_TIME_AD", (iYear,))	 
+				return localText.getText("TXT_KEY_TIME_AD", (iYear,))	 
 		elif iYear >= 1500:
 			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
 		elif iYear >= 450:
@@ -2922,8 +2934,6 @@ class CvInfoScreen:
 			return localText.getText("TXT_KEY_AGE_BRONZE", ())    
 		else:
 			return localText.getText("TXT_KEY_AGE_STONE", ())    
-		#Rhye - end
-
 
 	def lineName(self,i):
 		return self.LINE_ID + str(i)
@@ -3074,6 +3084,12 @@ class CvInfoScreen:
 						
 					elif (iSelected == 7):
 						self.iGraphTabID = self.TECH_SCORE
+					
+					elif (iSelected == 8):
+						self.iGraphTabID = self.POPULATION_SCORE
+					
+					elif (iSelected == 9):
+						self.iGraphTabID = self.LAND_SCORE
 
 					self.drawGraphs()
 

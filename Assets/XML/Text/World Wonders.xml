@@ -1459,19 +1459,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Tag>
-		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</English>
-		<French>[ICON_BULLET]+200% de [ICON_RESEARCH] pour les d&#233;couvertes des personnages illustres</French>
-		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</German>
-		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Italian>
-		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Spanish>
+		<English>[ICON_BULLET]Settling Great People also grants free technologies</English>
+		<French>[ICON_BULLET]Settling Great People also grants free technologies</French>
+		<German>[ICON_BULLET]Settling Great People also grants free technologies</German>
+		<Italian>[ICON_BULLET]Settling Great People also grants free technologies</Italian>
+		<Spanish>[ICON_BULLET]Settling Great People also grants free technologies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] increases the research boost from Great People discoveries. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]House of Wisdom[COLOR_REVERT] allows Great People to also grant free technologies when settled as a specialist. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA</Tag>
@@ -1631,19 +1631,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_HELP</Tag>
-		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</English>
-		<French>[ICON_BULLET]Rapporte de l'[ICON_GOLD] pour chaque nouvelle colonie</French>
-		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</German>
-		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Italian>
-		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Spanish>
+		<English>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</English>
+		<French>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</French>
+		<German>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</German>
+		<Italian>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</Italian>
+		<Spanish>[ICON_BULLET]Provides [ICON_GOLD] for every acquired colony[NEWLINE][ICON_BULLET]+2[ICON_GOLD] for every controlled [LINK=literal]Silver[\LINK] and [LINK=literal]Gold[\LINK] resource</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]El Escorial[COLOR_REVERT] provides gold for every acquired colony and every controlled silver and gold resource. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TORRE_DE_BELEM</Tag>
@@ -2015,11 +2015,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Tag>
-		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]+25% de [ICON_PRODUCTION] convertie en [ICON_COMMERCE]</French>
-		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</German>
-		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Italian>
-		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Spanish>
+		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</English>
+		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</French>
+		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</German>
+		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</Italian>
+		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted when building [ICON_COMMERCE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_STRATEGY</Tag>
@@ -2103,19 +2103,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</English>
-		<French>[ICON_BULLET]+1[ICON_RESEARCH] par arme nucl&#233;aire dans le monde</French>
-		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</German>
-		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Spanish>
+		<English>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</English>
+		<French>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</French>
+		<German>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</German>
+		<Italian>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</Italian>
+		<Spanish>[ICON_BULLET]+10[ICON_RESEARCH] per [LINK=literal]Uranium[\LINK] resource[NEWLINE][ICON_BULLET]+1[ICON_RESEARCH] per [LINK=literal]Iron[\LINK], [LINK=literal]Copper[\LINK], and [LINK=literal]Aluminum[\LINK] resource</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] increases the scientific output of its city per Nuclear Weapon in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Atomium[COLOR_REVERT] provides additional research from uranium, iron, copper, and aluminum resources. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER</Tag>
@@ -2159,11 +2159,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</English>
-		<French>[ICON_BULLET]+1[ICON_FOOD] pour chaque deux [ICON_HAPPY] en exc&#232;s</French>
-		<German>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</German>
-		<Italian>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Spanish>
+		<English>[ICON_BULLET]+100%[ICON_CULTURE] from Great Works</English>
+		<French>[ICON_BULLET]+100%[ICON_CULTURE] from Great Works</French>
+		<German>[ICON_BULLET]+100%[ICON_CULTURE] from Great Works</German>
+		<Italian>[ICON_BULLET]+100%[ICON_CULTURE] from Great Works</Italian>
+		<Spanish>[ICON_BULLET]+100%[ICON_CULTURE] from Great Works</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA_STRATEGY</Tag>
@@ -2187,19 +2187,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
-		<English>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]N&#233;cessite un d&#233;sert dans les environs de la ville[NEWLINE][ICON_BULLET]Les cases de d&#233;sert exploit&#233;es par la ville fournissent un minimum de 2[ICON_FOOD] et 2[ICON_COMMERCE]</French>
-		<German>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</German>
-		<Italian>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Italian>
-		<Spanish>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Spanish>
+		<English>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</English>
+		<French>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</French>
+		<German>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</German>
+		<Italian>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Italian>
+		<Spanish>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the food and commerce yield of desert tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Burj Khalifa[COLOR_REVERT] increases the commerce yield of water tiles, and provides additional commerce for every corporation in the world. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Tag>
@@ -2355,19 +2355,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Tag>
-		<English>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</English>
-		<French>[ICON_BULLET]+2[ICON_COMMERCE] par [ICON_HEALTHY] en exc&#232;s</French>
-		<German>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</German>
-		<Italian>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Italian>
-		<Spanish>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Spanish>
+		<English>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</English>
+		<French>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</French>
+		<German>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</German>
+		<Italian>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_HAPPY] per [ICON_HEALTHY] provided by buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] provides commerce for excess health in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Gardens by the Bay[COLOR_REVERT] creates a free Recycling Center in every city, and adds additional happiness to buildings that provide healthiness. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK</Tag>
@@ -2555,35 +2555,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
-		<English>[ICON_BULLET]Only three Temples required to build Cathedrals</English>
-		<French>[ICON_BULLET]Seulement trois temples sont n&#233;cessaires pour construire des cath&#233;drales</French>
-		<German>[ICON_BULLET]Only three Temples required to build Cathedrals</German>
-		<Italian>[ICON_BULLET]Only three Temples required to build Cathedrals</Italian>
-		<Spanish>[ICON_BULLET]Only three Temples required to build Cathedrals</Spanish>
+		<English>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</English>
+		<French>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</French>
+		<German>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</German>
+		<Italian>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</Italian>
+		<Spanish>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] reduces the mumber of temples required to build Cathedrals to three. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the rate at which cities with state religion construct buildings by 25%. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_MOVES] for civilian units</English>
-		<French>[ICON_BULLET]+1 [ICON_MOVES] pour les unit&#233;s civiles</French>
-		<German>[ICON_BULLET]+1[ICON_MOVES] for civilian units</German>
-		<Italian>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_MOVES] for civilian units</Spanish>
+		<English>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Morale[\LINK] promotion for civilian units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and increases the movement of civilian units by 1. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kremlin[COLOR_REVERT] increases all cities' defenses by 25%% and grants the [COLOR_HIGHLIGHT_TEXT]Morale[COLOR_REVERT] promotion to all civilian units. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH</Tag>
@@ -2759,27 +2759,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT</Tag>
-		<English>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</English>
-		<French>Nos arm&#233;es ont pill&#233; %d1 [ICON_CULTURE] pendant leur conqu&#234;te de %s2 et l'ont ramen&#233;e &#224; %s3.</French>
-		<German>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</German>
-		<Italian>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Italian>
-		<Spanish>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Spanish>
+		<English>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</English>
+		<French>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</French>
+		<German>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</German>
+		<Italian>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</Italian>
+		<Spanish>Our conquest of %s1 brought %d2 [ICON_GREATPEOPLE] to %s3.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Tag>
-		<English>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</English>
-		<French>[ICON_BULLET]Le ville re&#231;oit de la [ICON_CULTURE] additionnelle &#233;gale &#224; l'[ICON_GOLD] pill&#233; dans les villes conquises</French>
-		<German>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</German>
-		<Italian>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Italian>
-		<Spanish>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Spanish>
+		<English>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</English>
+		<French>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</French>
+		<German>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</German>
+		<Italian>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</Italian>
+		<Spanish>[ICON_BULLET]City receives additional [ICON_GREATPEOPLE] based on the [ICON_GOLD] plundered from captured cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides culture in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Gur-e-Amir[COLOR_REVERT] provides great people points in its city when conquering cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE</Tag>
@@ -3035,11 +3035,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT</Tag>
-		<English>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
+		<English>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
 		<French>Un prix Nobel a &#233;t&#233; d&#233;cern&#233; au personnage illustre %s1 %s2 de %s3, g&#233;n&#233;rant %d4 [ICON_GREATPEOPLE]</French>
-		<German>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
-		<Italian>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
-		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
+		<German>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
+		<Italian>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
+		<Spanish>A Nobel Prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_STRATEGY</Tag>
@@ -3224,6 +3224,14 @@
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNITED_NATIONS_HELP</Tag>
+		<English>[ICON_BULLET]Disables cascading defensive pacts</English>
+		<French>[ICON_BULLET]Disables cascading defensive pacts</French>
+		<German>[ICON_BULLET]Disables cascading defensive pacts</German>
+		<Italian>[ICON_BULLET]Disables cascading defensive pacts</Italian>
+		<Spanish>[ICON_BULLET]Disables cascading defensive pacts</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

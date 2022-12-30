@@ -27,7 +27,6 @@ def updateReligionSpread(iReligion):
 	for plot in plots.all():
 		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, location(plot)))
 
-@handler("GameStart")
 def init():
 	updateRegionMap()
 	for iReligion in range(iNumReligions):
@@ -146,7 +145,8 @@ tSpreadFactors = (
 # Buddhism
 {
 	iCore : 	[rIndia, rTibet, rIndochina],
-	iHistorical : 	[rCentralAsia, rChina, rManchuria, rKorea, rJapan, rIndonesia],
+	iHistorical : 	[rCentralAsia, rChina, rManchuria, rKorea, rJapan, rIndonesia, rDeccan],
+	iPeriphery : [],
 	iMinority :	[rPersia],
 },
 # Confucianism
@@ -165,6 +165,7 @@ tSpreadFactors = (
 # Zoroastrianism
 {
 	iCore :		[rPersia],
-	iMinority : 	[rIndia],
+	iPeriphery :	[rMesopotamia],
+	iMinority : 	[rIndia, rAnatolia, rEgypt, rCentralAsia],
 },
 )

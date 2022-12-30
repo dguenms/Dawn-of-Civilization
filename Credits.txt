@@ -57,9 +57,17 @@ UNITS
 * History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
 * Bakuel: Patiyodha (Gupta Longbowman)
 * RFC Classical World (srpt): Patiyodha name and button
+* MightyToad: Galleass, Hwacha, Kobukson, Lanternas (Civ5 imports)
 
 WONDERS
 * merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
+
+WONDER MOVIES:
+* Nexus CinematiX (<Nexus>)
+* A New Dawn / Chronicles of Mankind (Zeta Nexus)
+* Caveman2Cosmos
+* Realism Invictus
+* Sword of Islam
 
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
@@ -74,6 +82,9 @@ TRANSLATION
 GAME TEXT
 * Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
 * freethink: Chinese diplomacy greetings
+
+MUSIC:
+* Native American music: Mullah Cable, freethink
 
 MISCELLANEOUS
 * Corossol: Phoenicia

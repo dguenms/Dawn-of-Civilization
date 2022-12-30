@@ -37,56 +37,6 @@
 		<DefineName>NO_PLAGUES</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
 	</Define>
-	<!--Leoreth: define how often these optional civs should appear
-			value=0	Civilization never appears
-			value>0	Civilization roughly appears in every i-th game, where i is the entered value
-				(so to make this civilization appear every time, enter 1)
-		Note that if certain civilizations are controlled by the player, these civs will spawn regardless to provide a historical opponent -->
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_TAMILS</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_TIBET</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_MOORS</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_POLAND</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_CONGO</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_ARGENTINA</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_BRAZIL</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
-	</Define>
-	<Define>
-		<DefineName>PLAYER_OCCURRENCE_POLYNESIA</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
-	</Define>
-	<!-- Disable the respawn by setting the value to 0 -->
-	<Define>
-		<DefineName>PLAYER_REBIRTH_MEXICO</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
-	</Define>
-	<Define>
-		<DefineName>PLAYER_REBIRTH_COLOMBIA</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
-	</Define>
 
 <!-- BULL User Settings
 	This file is used only when BULL is running without BUG, but it will cause no harm to include it with BUG.

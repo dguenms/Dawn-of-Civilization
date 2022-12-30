@@ -1043,11 +1043,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</English>
-		<French>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</French>
-		<German>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], provides a small cash and happiness bonus.</English>
+		<French>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], provides a small cash and happiness bonus.</French>
+		<German>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], provides a small cash and happiness bonus.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], provides a small cash and happiness bonus.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], provides a small cash and happiness bonus.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE</Tag>
@@ -2147,11 +2147,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POST_OFFICE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</French>
-		<German>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</German>
-		<Italian>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] provide an extra trade route and increase espionage. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Post Offices[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]News Presses[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WHARF</Tag>
@@ -2822,7 +2822,7 @@
 		<Spanish>Sadang</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MUGYO_SADANG_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</English>
 		<French>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Sadang[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mugyo[COLOR_REVERT].</German>

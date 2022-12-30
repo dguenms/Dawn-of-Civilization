@@ -1,7 +1,48 @@
 from CvPythonExtensions import *
 from Consts import *
+from CoreTypes import *
 
 gc = CyGlobalContext()
+
+
+class CivList(list):
+
+	def __getitem__(self, index):
+		if not isinstance(index, Civ):
+			index = Civ(gc.getPlayer(index).getCivilizationType())
+		return list.__getitem__(self, index)
+
+
+class PlayerList(list):
+
+	def __getitem__(self, index):
+		if isinstance(index, Civ):
+			index = data.dSlots.get(index)
+		return list.__getitem__(self, index)
+
+
+class CivData:
+
+	def __init__(self, iCiv):
+		self.iCiv = iCiv
+		
+		self.setup()
+		
+	def setup(self):
+	
+		self.iLastTurnAlive = 0
+		
+		# DynamicCivs
+		
+		self.iAnarchyTurns = 0
+		self.iResurrections = 0
+		
+		# Rise
+		
+		self.iGreatGeneralsCreated = 0
+		self.iGreatPeopleCreated = 0
+		self.iGreatSpiesCreated = 0
+		self.iNumUnitGoldenAges = 0
 
 
 class PlayerData:
@@ -13,22 +54,25 @@ class PlayerData:
 		
 	def update(self, data):
 		self.__dict__.update(data)
+		
+		if self.historicalVictory:
+			self.historicalVictory.enable()
+		
+		if self.religiousVictory:
+			self.religiousVictory.enable()
 
 	def setup(self):
 	
-		# Rise and Fall
+		# Rise
 		
-		self.bSpawned = False
+		self.lPreservedWonders = []
+		
+		# History
 		
 		self.iColonistsAlreadyGiven = 0
-		self.iSpawnDelay = 0
-		self.iFlipsDelay = 0
-		self.iBirthTurnModifier = 0
-		self.iAnarchyTurns = 0
-		self.iResurrections = 0
-		self.iLastTurnAlive = 0
+		self.iExplorationTurn = -1
 		
-		self.iExplorationTurn = 1500
+		self.colonialAcquisitionCities = []
 		
 		# Religions
 		
@@ -46,18 +90,18 @@ class PlayerData:
 		
 		# Victory
 		
-		self.lGoals = [-1, -1, -1]
-		self.lGoalTurns = [-1, -1, -1]
-		self.bHistoricalGoldenAge = False
+		self.historicalGoals = []
+		self.religiousGoals = []
+		
+		self.historicalVictory = None
+		self.religiousVictory = None
 		
 		# Stability
 		
+		self.iLastTurnAlive = 0
+		
 		self.resetStability()
 		
-		# Tech Log
-		
-		self.iTechColumn = 0
-	
 	def resetStability(self):
 		self.iStabilityLevel = iStabilityShaky
 		
@@ -79,6 +123,8 @@ class PlayerData:
 		self.lLastWarSuccess = [0] * gc.getMAX_PLAYERS()
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
+		
+		self.bDomesticCrisis = False
 		
 	def resetEconomyTrend(self):
 		self.lEconomyTrend = []
@@ -116,14 +162,8 @@ class PlayerData:
 		for i in reversed(range(len(lTrend))):
 			if lTrend[i] != 0: return lTrend[i]
 		return 0
-		
-	def getGoal(self, iGoal):
-		return self.lGoals[iGoal]
-		
-	def setGoal(self, iGoal, iNewValue):
-		if iNewValue == 1 and self.getGoal(iGoal) == 0: return
-		self.lGoals[iGoal] = iNewValue
 	
+
 class GameData:
 
 	def __init__(self):
@@ -138,40 +178,22 @@ class GameData:
 			player.update(data)
 
 	def setup(self):
-		self.players = [PlayerData(i) for i in range(gc.getMAX_PLAYERS())]
+		self.civs = CivList(CivData(i) for i in range(iNumCivs))
+		self.players = PlayerList(PlayerData(i) for i in range(gc.getMAX_PLAYERS()))
 		
 		# Slots
 		
-		# set the default values for now, once slots become untied this should be set and kept updated on spawn
-		# already make it dynamic because rebirths will change things
-		self.dSlots = dict((gc.getPlayer(iSlot).getCivilizationType(), iSlot) for iSlot in range(gc.getMAX_PLAYERS()))
+		self.dSlots = {}
 		
-		# Rise and Fall
-
-		self.lTempEvents = []
-		self.lTempPlots = []
-		self.lTimedConquests = []
+		# Rise
 		
-		self.dCivEnabled = defaultdict({}, True)
-		self.lMinorCityFounded = [False] * iNumMinorCities
+		self.births = []
 		
-		self.iPrepareCapitalPlayer = -1
 		self.dFirstContactConquerors = dict((iCiv, False) for iCiv in lBioNewWorld)
 		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
 		self.lTradingCompanyConquerorsTargets = appenddict()
 		
-		self.lCheatersCheck = [0, -1]
-		
-		self.iRespawnCiv = -1
-		self.iFlipNewPlayer = -1
-		self.iFlipNewPlayer = -1
-		self.iOttomanSpawnTurn = -1
-		
-		self.iSpawnWar = 0
-		self.iBetrayalTurns = 0
-		self.iRebelCiv = 0
-		
-		self.lFlippingUnits = []
+		self.iBeforeObserverSlot = -1
 		
 		self.bAlreadySwitched = False
 		self.bUnlimitedSwitching = False
@@ -184,10 +206,6 @@ class GameData:
 		# Unique Powers
 		
 		self.iImmigrationTimer = 0
-		
-		self.lByzantineBribes = []
-		
-		self.lLatestRazeData = [-1] * 5
 		
 		# AI Wars
 		
@@ -204,8 +222,7 @@ class GameData:
 		self.iGlobalWarAttacker = -1
 		self.iGlobalWarDefender = -1
 		
-		self.iCongressTurns = 8
-		self.iPlayersWithNationalism = 0
+		self.iCongressTurn = -1
 		
 		self.bNoCongressOption = False
 		
@@ -215,76 +232,24 @@ class GameData:
 		
 		self.bNoPlagues = False
 		
-		# Victories
-		
-		self.bIgnoreAI = True
-		
-		self.bEthiopiaConverted = False
-		
-		self.lWonderBuilder = [-1] * (iNumBuildings - iBeginWonders)
-		self.lReligionFounder = [-1] * iNumReligions
-		self.lFirstDiscovered = [-1] * iNumTechs
-		self.lFirstEntered = [-1] * iNumEras
-		self.lFirstGreatPeople = [-1] * len(lGreatPeopleUnits)
-		self.iFirstNewWorldColony = -1
-		
-		self.iChineseGoldenAgeTurns = 0
-		self.iKoreanSinks = 0
-		self.iTamilTradeGold = 0
-		self.iColombianTradeGold = 0
-		self.iVikingGold = 0
-		self.iTurkicPillages = 0
-		self.iMoorishGold = 0
-		self.lHolyRomanShrines = [False] * 3
-		self.iEnglishSinks = 0
-		self.iMongolRazes = 0
-		self.iAztecSlaves = 0
-		self.iCongoSlaveCounter = 0
-		self.iDutchColonies = 0
-		self.iMexicanGreatGenerals = 0
-		self.iArgentineGoldenAgeTurns = 0
-		self.iCanadianPeaceDeals = 0
-		
-		self.tFirstTurkicCapital = None
-		self.tSecondTurkicCapital = None
-		
-		self.iPopeTurns = 0
-		self.iHinduGoldenAgeTurns = 0
-		self.iBuddhistPeaceTurns = 0
-		self.iBuddhistHappinessTurns = 0
-		self.iTaoistHealthTurns = 0
-		self.iVedicHappiness = 0
-		self.iTeotlSacrifices = 0
-		self.iTeotlFood = 0
-		self.bPolytheismNeverReligion = True
-		
 		# Stability
 		
 		self.iHumanStability = 0
 		self.iHumanRazePenalty = 0
 		
-		self.bCrisisImminent = False
-		
 		self.dSecedingCities = appenddict()
+
+		# Barbarians
+
+		self.lTimedConquests = []
+		self.lMinorCityFounded = [False] * iNumMinorCities
+		
+		self.period_offsets = PeriodOffsets()
 		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		
-	def setCivEnabled(self, iCiv, bNewValue):
-		self.dCivEnabled[iCiv] = bNewValue
-		
-	def isCivEnabled(self, iCiv):
-		return self.dCivEnabled[iCiv]
-		
-	def resetStability(self, iPlayer):
-		self.players[iPlayer].resetStability()
-		
-		for i, player in enumerate(self.players):
-			if iPlayer != i:
-				player.resetWarTrend(iPlayer)
-				
 	def resetHumanStability(self):
-		self.bCrisisImminent = False
 		self.iHumanStability = 0
 		self.iHumanRazePenalty = 0
 		
@@ -308,18 +273,5 @@ class GameData:
 		
 	def setStabilityLevel(self, iPlayer, iValue):
 		self.players[iPlayer].iStabilityLevel = iValue
-		
-	def getWonderBuilder(self, iWonder):
-		if iWonder < iBeginWonders: return -1
-		else: iWonder -= iBeginWonders
-		return self.lWonderBuilder[iWonder]
-		
-	def setWonderBuilder(self, iWonder, iPlayer):
-		if iWonder >= iBeginWonders:
-			iWonder -= iBeginWonders
-			self.lWonderBuilder[iWonder] = iPlayer
-		
-	def isNewWorldColonized(self):
-		return self.iFirstNewWorldColony != -1
 		
 data = GameData()

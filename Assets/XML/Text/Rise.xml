@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Actions -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP</Tag>
+		<English>The people of %s1 have joined the rising civilization of %s2. How should we respond?</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP_CANCEL</Tag>
+		<English>Accept their decision.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_FLIP_WAR</Tag>
+		<English>Declare war and reconquer them!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_ATTACKERS_EXPELLED</Tag>
+		<English>%d1 of our units have been expelled from %s2 territory and withdrawn to %s3.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_SWITCH</Tag>
+		<English>[H2]A new civilization is being born[\H2][NEWLINE]Do you wish to take permanent control of the %s1 civilization?</English>
+		<French>[H2]Naissance d'une nouvelle civilisation[\H2][NEWLINE]Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2 ?</French>
+		<German>[H2]Eine neue Zivilisation entsteht[\H2][NEWLINE]Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
+		<Italian>[H2]Nasce una nuova civilt&#224;[\H2][NEWLINE]Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
+		<Spanish>[H2]Ha nacido una nueva civilizaci&#243;n[\H2][NEWLINE]&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_GENERIC</Tag>
+		<English>We are receiving reports that the rise of the %s1 civilization is imminent.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_AME</Tag>
+		<English>Colonists in America are embracing enlightenment ideas and calling for representation and an end to unjust taxation.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ARA</Tag>
+		<English>Adherents of the prophet Mohammad are growing in strength among the Bedouins of Arabia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ARG</Tag>
+		<English>The provinces of the Rio de la Plata have formed a congress to declare independence from their motherland.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_AZT</Tag>
+		<English>Nahua speaking peoples are migrating into the Valley of Mexico looking for their prophesied new homeland.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_BRA</Tag>
+		<English>The colonial royal family is establishing an independent branch in Brazil.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_BYZ</Tag>
+		<English>The establishment of a second Roman capital in Byzantium is cementing the split of the Roman Empire into west and east.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_CAN</Tag>
+		<English>Colonial rulers are considering acts that would result in a self-governing confederation in Canada.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_CAR</Tag>
+		<English>Independent cities of Phoenician traders are beginning to form along the Levantine coast.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_CHI</Tag>
+		<English>First kingdoms are starting to develop along the Yellow River.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_COL</Tag>
+		<English>Sim&#243;n Bol&#237;var is rallying pro-independence forces in the colony of New Granada.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ENG</Tag>
+		<English>The rulers of Wessex are close to unifying all the Anglo-Saxons in England into one kingdom.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ETH</Tag>
+		<English>Successors of the old Kingdom of D'mot are about to establish a kingdom in the Ethiopian highlands.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_FRA</Tag>
+		<English>The ascent of the Carolingian dynasty is transforming the kingdom of the Franks into a Frankish Empire.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_HRE</Tag>
+		<English>Succession conflicts are making a unified Frankish Empire untenable, and its German parts are looking for their own ruler.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_GRE</Tag>
+		<English>Mycenaean city states are beginning to develop around the coast of the Aegean.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_GER</Tag>
+		<English>Unifying its Prussian and Brandenburgian holdings, the Kingdom of Prussia is about to become a new European great power.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_INC</Tag>
+		<English>The Cusco tribe is expanding beyond its home valley to begin establishing the Inca Empire.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_IND</Tag>
+		<English>Aryan peoples are migrating into the Indo-Gangetic plain and founding their own kingdoms.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_INO</Tag>
+		<English>Indianized kingdoms are beginning to develop in Indonesia around the trade along the Strait of Malacca.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_IRA</Tag>
+		<English>The Safaviyya movement is fighting to restore Shi'a Islam and native Persian rule to the Iranian plateau.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ITA</Tag>
+		<English>Italian city states are asserting their independence from the Emperor and forming independent republics.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_JAP</Tag>
+		<English>Religion and administration spreading to Japan are accelerating the formation of a Japanese empire.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_KHM</Tag>
+		<English>The ruler of Chenla is building the new capital of Angkor to found the Khmer Empire.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_CON</Tag>
+		<English>The inhabitants of the Congo river delta are establishing their first centralized kingdom.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_KOR</Tag>
+		<English>The three kingdoms of Silla, Baekje, and Goguryeo are growing on the Korean peninsula.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MAL</Tag>
+		<English>Trade of salt and gold across the Sahara is spurring the establishment of an empire in Mali.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MAY</Tag>
+		<English>Independent city states are developing on the Yucatan peninsula.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MEX</Tag>
+		<English>Officers in colonial Mexico are gathering forces to achieve independence.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MON</Tag>
+		<English>Khan Temujin is subjugating and unifying the tribes of the Mongol steppe.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MOO</Tag>
+		<English>The ousted ruler of the Ummayad dynasty is ready to cross the Strait of Gibraltar and establish a seat of power in Iberia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MUG</Tag>
+		<English>Rulers of the powerful Muslim Ghurid dynasty are preparing to push into northern India.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_HOL</Tag>
+		<English>The Dutch people are fighting to establish their own republic in the Netherlands.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_OTT</Tag>
+		<English>The Ottoman Beylik is gathering strength to subjugate Anatolia and capture the Bosphorus.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_PER</Tag>
+		<English>Persian tribes are migrating into the Iranian plateau.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_POL</Tag>
+		<English>After the Poles have adopted Christianity, they are about to be recognized as a kingdom.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_PLY</Tag>
+		<English>The rulers of Tonga have extended their influences far across the Polynesian islands.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_POR</Tag>
+		<English>The County of Portugal is reclaiming land from Al-Andalus and getting closer to founding a kingdom.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ROM</Tag>
+		<English>The Latin people of Italy have begun settling the city of Rome.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_RUS</Tag>
+		<English>Varangian nobles are intermingling with the Slavic population of eastern Europe and establishing Rus principalities.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_SPA</Tag>
+		<English>The last surviving Christian kingdom in Iberia is preparing to reconquer the peninsula from Muslim control.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_TAM</Tag>
+		<English>The Tamils are forming mercantile kingdoms along the southern coast of India.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_THA</Tag>
+		<English>The Thais of the Sukhotai Kingdom have taken control of the Chao Phraya basin.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_TIB</Tag>
+		<English>The different Tibetan kingdoms are unifying into an empire.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_TUR</Tag>
+		<English>The Gokturks are rebelling against the Rouran Khaganate.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_VIK</Tag>
+		<English>Norse raiders are beginning to venture out of Scandinavia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_EXPANSION_UNITS</Tag>
+		<English>An army of the expanding %s1 has been sighted marching towards %s2!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

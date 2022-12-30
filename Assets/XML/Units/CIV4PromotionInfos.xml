@@ -1690,7 +1690,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Logistics1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,3,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOGISTICS2</Type>
@@ -1705,7 +1705,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Logistics2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,4,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOGISTICS3</Type>
@@ -1719,7 +1719,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Logistics3.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,5,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION1</Type>
@@ -1732,7 +1732,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Deception1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,5,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION2</Type>
@@ -1746,7 +1746,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Deception2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,6,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION3</Type>
@@ -1760,7 +1760,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Deception3.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,7,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY1</Type>
@@ -1773,7 +1773,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Security1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,6,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY2</Type>
@@ -1787,7 +1787,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Security2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,7,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY3</Type>
@@ -1802,7 +1802,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Security3.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,8,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE1</Type>
@@ -1815,7 +1815,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Improvise1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,3,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE2</Type>
@@ -1829,7 +1829,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Improvise2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,4,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE3</Type>
@@ -1843,7 +1843,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Improvise3.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,5,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE4</Type>
@@ -1857,7 +1857,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Improvise4.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,6,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE5</Type>
@@ -1871,7 +1871,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Improvise5.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,7,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOYALTY</Type>
@@ -1885,7 +1885,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Loyalty.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,3,4</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR1</Type>
@@ -1899,7 +1899,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Instigator1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,8,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR2</Type>
@@ -1913,7 +1913,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Instigator2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,1,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR3</Type>
@@ -1927,7 +1927,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Instigator3.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,2,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ALCHEMIST1</Type>
@@ -1941,7 +1941,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Alchemist1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,2,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ALCHEMIST2</Type>
@@ -1955,7 +1955,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Alchemist2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,3,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ESCAPE1</Type>
@@ -1969,7 +1969,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Escape1.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,8,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ESCAPE2</Type>
@@ -1984,7 +1984,7 @@
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Escape2.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/SuperSpies_Atlas.dds,1,2</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LEADER</Type>

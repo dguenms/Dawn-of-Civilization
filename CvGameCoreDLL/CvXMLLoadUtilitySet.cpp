@@ -13,6 +13,7 @@
 #include "FProfiler.h"
 #include "FVariableSystem.h"
 #include "CvGameCoreUtils.h"
+#include "CvEventReporter.h"
 
 // Macro for Setting Global Art Defines
 #define INIT_XML_GLOBAL_LOAD(xmlInfoPath, infoArray, numInfos)  SetGlobalClassInfo(infoArray, xmlInfoPath, numInfos);
@@ -187,6 +188,11 @@ bool CvXMLLoadUtility::SetGlobalDefines()
 	}
 
 	if (!ReadGlobalDefines("xml\\GlobalDefinesAlt.xml", cache))
+	{
+		return false;
+	}
+
+	if (!ReadGlobalDefines("xml\\GlobalDefinesVersion.xml", cache))
 	{
 		return false;
 	}
@@ -430,6 +436,11 @@ bool CvXMLLoadUtility::SetGlobalTypes()
 		SetGlobalStringArray(&GC.getDirectionTypes(), "Civ4Types/DirectionTypes/DirectionType", &iEnumVal, true);
 		SetGlobalStringArray(&GC.getFootstepAudioTypes(), "Civ4Types/FootstepAudioTypes/FootstepAudioType", &GC.getNumFootstepAudioTypes());
 
+		// Leoreth: we just want to read the XML tags and not store the values
+		CvString* impactTypes;
+		int iNumImpactTypes;
+		SetGlobalStringArray(&impactTypes, "Civ4Types/ImpactTypes/ImpactType", &iNumImpactTypes);
+
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
 		SetVariableListTagPair(&GC.getFootstepAudioTags(), "FootstepAudioTags", GC.getFootstepAudioTypes(), GC.getNumFootstepAudioTypes(), "");
@@ -603,6 +614,7 @@ bool CvXMLLoadUtility::LoadBasicInfos()
 	LoadGlobalClassInfo(GC.getUnitAIInfo(), "CIV4UnitAIInfos", "BasicInfos", "Civ4UnitAIInfos/UnitAIInfos/UnitAIInfo", false);
 	LoadGlobalClassInfo(GC.getAttitudeInfo(), "CIV4AttitudeInfos", "BasicInfos", "Civ4AttitudeInfos/AttitudeInfos/AttitudeInfo", false);
 	LoadGlobalClassInfo(GC.getMemoryInfo(), "CIV4MemoryInfos", "BasicInfos", "Civ4MemoryInfos/MemoryInfos/MemoryInfo", false);
+	LoadGlobalClassInfo(GC.getPaganReligionInfo(), "CIV4PaganReligionInfos", "GameInfo", "Civ4PaganReligionInfo/PaganReligionInfos/PaganReligionInfo", false);
 
 	DestroyFXml();
 	return true;
@@ -731,6 +743,8 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	UpdateProgressCB("GlobalOther");
 
 	DestroyFXml();
+
+	CvEventReporter::getInstance().xmlLoaded();
 
 	return true;
 }

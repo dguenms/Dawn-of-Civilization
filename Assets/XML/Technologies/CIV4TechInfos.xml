@@ -3510,6 +3510,7 @@
 			<Type>TECH_ELECTRICITY</Type>
 			<Description>TXT_KEY_TECH_ELECTRICITY</Description>
 			<Civilopedia>TXT_KEY_TECH_ELECTRICITY_PEDIA</Civilopedia>
+			<Help>TXT_KEY_TECH_ELECTRICITY_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>3000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>

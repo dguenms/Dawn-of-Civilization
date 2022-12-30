@@ -232,6 +232,7 @@ public:
 	void changeGoldenAgeTurns(int iChange);
 	int getNumUnitGoldenAges();
 	void changeNumUnitGoldenAges(int iChange);
+	void setNumUnitGoldenAges(int iNewValue);
 	int getAnarchyTurns();
 	bool isAnarchy();
 	void changeAnarchyTurns(int iChange);
@@ -244,6 +245,7 @@ public:
 	void createGreatPeople(int eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
 	int getGreatPeopleCreated();
 	int getGreatGeneralsCreated();
+	int getGreatSpiesCreated();
 	int getGreatPeopleThresholdModifier();
 	int getGreatGeneralsThresholdModifier();
 	int getGreatPeopleRateModifier();
@@ -510,16 +512,6 @@ public:
 	bool AI_isWillingToTalk(int /*PlayerTypes*/ ePlayer);
 // BUG - Refuses to Talk - end
 
-	int getScoreHistory(int iTurn) const;
-	int getEconomyHistory(int iTurn) const;
-	int getIndustryHistory(int iTurn) const;
-	int getAgricultureHistory(int iTurn) const;
-	int getPowerHistory(int iTurn) const;
-	int getCultureHistory(int iTurn) const;
-	int getEspionageHistory(int iTurn) const;
-
-	int getTechHistory(int iTurn) const; // Leoreth
-
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
@@ -555,11 +547,10 @@ public:
 	int getLastBirthTurn();
 	void setLastBirthTurn(int iNewValue);
 	bool isSlaveTrade(int ePlayer);
+	bool isHasBuilding(int eBuildingType);
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
 	int countRequiredSlaves();
-	bool canRespawn();
-	bool canEverRespawn();
 	void setEspionageExperience(int iNewValue);
 	int getSettlerValue(int x, int y);
 	int getWarValue(int x, int y);
@@ -567,6 +558,7 @@ public:
 	void setModifier(int eModifierType, int iNewValue);
 	int getTechPreference(int eTech);
 	void setTechPreference(int eTech, int iNewValue);
+	void resetTechPreferences();
 	int getStartingEra();
 	void setStartingEra(int iNewValue);
 	void setTakenTilesThreshold(int iNewValue);
@@ -588,14 +580,37 @@ public:
 	void resetGreatPeopleCreated();
 	void changeYieldRateModifier(int iYieldType, int iChange);
 	void setBuildingClassPreference(int iBuildingClass, int iNewValue);
+	void resetBuildingClassPreferences();
 	int getBuildingClassPreference(int iBuildingClass);
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);
+	void changeGreatSpiesCreated(int iChange);
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
 	void setAlive(bool bNewValue);
-	void setPeriod(int iPeriod);
 	int getPeriod();
+	int getDomainFreeExperience(int iDomainType);
+	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
+	int getUnhappinessDecayModifier();
+	bool isUnstableCivic(int iCivic);
+	void setBirthProtected(bool bNewValue);
+	bool isBirthProtected();
+	void changeNoAnarchyTurns(int iChange); 
+	void AI_doAdvancedStart();
+	void setMinorCiv(bool bNewValue);
+	void verifyAlive();
+	int getReligionPopulation(int iReligion);
+
+	int getScoreHistory(int iTurn);
+	int getEconomyHistory(int iTurn);
+	int getIndustryHistory(int iTurn);
+	int getAgricultureHistory(int iTurn);
+	int getPowerHistory(int iTurn);
+	int getCultureHistory(int iTurn);
+	int getEspionageHistory(int iTurn);
+	int getTechnologyHistory(int iTurn);
+	int getPopulationHistory(int iTurn);
+	int getLandHistory(int iTurn);
 
 private:
 	CvPlayer* m_pPlayer;

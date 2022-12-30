@@ -130,20 +130,20 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BYZANTINE_UP_BODY</Tag>
-		<English>Choose the barbarian unit you wish to bribe:</English>
-		<French>Choisissez l'unit&#233; barbare &#224; soudoyer :</French>
-		<German>Choose the barbarian unit you wish to bribe:</German>
-		<Italian>Choose the barbarian unit you wish to bribe:</Italian>
-		<Spanish>Choose the barbarian unit you wish to bribe:</Spanish>
+		<Tag>TXT_KEY_BYZANTINE_UP_POPUP</Tag>
+		<English>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</English>
+		<French>[H1]Soudoyer les barbares[\H1][NEWLINE]Choisissez l'unit&#233; barbare &#224; soudoyer :[NEWLINE]</French>
+		<German>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</German>
+		<Italian>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Italian>
+		<Spanish>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>
-		<English>%s1 (%d2 gold)</English>
-		<French>%s1 (%d2 or)</French>
-		<German>%s1 (%d2 gold)</German>
-		<Italian>%s1 (%d2 gold)</Italian>
-		<Spanish>%s1 (%d2 gold)</Spanish>
+		<English>%s1 (%d2 / %d3) for %d4 [ICON_GOLD]</English>
+		<French>%s1 (%d2 / %d3) pour %d4 [ICON_GOLD]</French>
+		<German>%s1 (%d2 / %d3) f&#252;r %d4 [ICON_GOLD]</German>
+		<Italian>%s1 (%d2 / %d3) per %d4 [ICON_GOLD]</Italian>
+		<Spanish>%s1 (%d2 / %d3) por %d4 [ICON_GOLD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON_NONE</Tag>
@@ -152,14 +152,6 @@
 		<German>None</German>
 		<Italian>None</Italian>
 		<Spanish>None</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BYZANTINE_UP_TITLE</Tag>
-		<English>Bribing Barbarians</English>
-		<French>Soudoyer les barbares</French>
-		<German>Bribing Barbarians</German>
-		<Italian>Bribing Barbarians</Italian>
-		<Spanish>Bribing Barbarians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>

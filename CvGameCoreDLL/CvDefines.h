@@ -24,7 +24,7 @@
 #define RANDPLOT_NOT_CITY				(0x00000040)
 
 #ifdef _USRDLL
-#define MAX_CIV_PLAYERS				(49) //Rhye, Leoreth: +17 for Byzantium, Korea, Indonesia, Mughals, Thailand, Turks, Prussia/HRE, Italy, Tamils, Poland, Moors, Congo, Tibet, Brazil, Argentina, Canada, Polynesia, Harappa
+#define MAX_CIV_PLAYERS				(32)
 #else
 #define MAX_CIV_PLAYERS				(CvGlobals::getInstance().getMaxCivPlayers())
 #endif
@@ -34,6 +34,8 @@
 #define MAX_TEAMS					(MAX_PLAYERS)
 #define BARBARIAN_PLAYER			((PlayerTypes)MAX_CIV_PLAYERS)
 #define BARBARIAN_TEAM				((TeamTypes)MAX_CIV_TEAMS)
+
+#define _MOD_FRACTRADE
 
 // Char Count limit for edit boxes
 #define PREFERRED_EDIT_CHAR_COUNT		(15)
@@ -80,6 +82,7 @@
 #define DOUBLE_SEPARATOR				L"\n======================="
 // BUG - end
 #define TEXT_COLOR(szColor)				((int)(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString(szColor)).getColor().r * 255)), ((int)(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString(szColor)).getColor().g * 255)), ((int)(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString(szColor)).getColor().b * 255)), ((int)(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString(szColor)).getColor().a * 255))
+#define COLORS(eColor)					((int)(GC.getColorInfo((ColorTypes)eColor).getColor().r * 255)), ((int)(GC.getColorInfo((ColorTypes)eColor).getColor().g * 255)), ((int)(GC.getColorInfo((ColorTypes)eColor).getColor().b * 255)), ((int)(GC.getColorInfo((ColorTypes)eColor).getColor().a * 255))
 
 // Version Verification files and folders
 #ifdef _DEBUG

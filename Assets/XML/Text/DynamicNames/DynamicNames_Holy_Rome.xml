@@ -130,6 +130,22 @@
 		<Spanish>Habsburg</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_CONFEDERATION</Tag>
+		<English>%s2 Confederation</English>
+		<French>%s2 Confederation</French>
+		<German>%s2 Confederation</German>
+		<Italian>%s2 Confederation</Italian>
+		<Spanish>%s2 Confederation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_FREE_CITIES</Tag>
+		<English>%s2 Free Cities</English>
+		<French>%s2 Free Cities</French>
+		<German>%s2 Free Cities</German>
+		<Italian>%s2 Free Cities</Italian>
+		<Spanish>%s2 Free Cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMANY</Tag>
 		<English>Germany</English>
 		<French>

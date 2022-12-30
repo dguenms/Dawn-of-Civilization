@@ -283,11 +283,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MONARCHY_STRATEGY</Tag>
-		<English>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</English>
-		<French>Les unit&#233;s militaires cr&#233;ent du bonheur ; entretien d&#251; &#224; la distance de la capitale r&#233;duit ; vitesse de production doubl&#233;e pour les prisons</French>
-		<German>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</German>
-		<Italian>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</Italian>
-		<Spanish>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</Spanish>
+		<English>Extra happiness from military units; double production speed for Jails, Constabularies</English>
+		<French>Extra happiness from military units; double production speed for Jails, Constabularies</French>
+		<German>Extra happiness from military units; double production speed for Jails, Constabularies</German>
+		<Italian>Extra happiness from military units; double production speed for Jails, Constabularies</Italian>
+		<Spanish>Extra happiness from military units; double production speed for Jails, Constabularies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ELECTIVE</Tag>
@@ -303,11 +303,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ELECTIVE_STRATEGY</Tag>
-		<English>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</English>
-		<French>Les cases non am&#233;lior&#233;es, les camps et les p&#226;turages rapportent du commerce additionnel ; vitesse de production doubl&#233;e pour le palais</French>
-		<German>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</German>
-		<Italian>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</Italian>
-		<Spanish>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</Spanish>
+		<English>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace, Barracks, Stables</English>
+		<French>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace, Barracks, Stables</French>
+		<German>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace, Barracks, Stables</German>
+		<Italian>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace, Barracks, Stables</Italian>
+		<Spanish>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace, Barracks, Stables</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STATE_PARTY</Tag>

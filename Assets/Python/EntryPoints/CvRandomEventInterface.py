@@ -452,6 +452,9 @@ def canTriggerBabyBoom(argsList):
 
 	if team.getAtWarCount(true) > 0:
 		return false
+	
+	if since(player.getLastBirthTurn()) <= 1:
+		return false
 
 	for iLoopTeam in range(gc.getMAX_CIV_TEAMS()):
 		if iLoopTeam != player.getTeam():
@@ -1156,18 +1159,7 @@ def canTriggerSoloFlight(argsList):
 	kTriggeredData = argsList[0]
 
 	map = gc.getMap()	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iMinLandmass  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iMinLandmass  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iMinLandmass  = 6
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iMinLandmass  = 8
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iMinLandmass  = 10
-	else:
-		iMinLandmass  = 12
+	iMinLandmass  = 12
 	
 	if (map.getNumLandAreas() < iMinLandmass):
 		return false
@@ -1921,19 +1913,7 @@ def applyTheHuns1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Hun event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_HORSE_ARCHER')
 
@@ -2032,19 +2012,7 @@ def applyTheVandals1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Vandal event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits  = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_SWORDSMAN')
 
@@ -2143,19 +2111,7 @@ def applyTheGoths1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Goth event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_AXEMAN')
 
@@ -2254,19 +2210,7 @@ def applyThePhilistines1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Philistine event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_SPEARMAN')
 
@@ -2367,19 +2311,7 @@ def applyTheVedicAryans1(argsList):
 		return
 			
 	plot = map.plotByIndex(listPlots[gc.getGame().getSorenRandNum(len(listPlots), "Vedic Aryan event location")])
-	
-	if map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_DUEL'):
-		iNumUnits  = 1
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_TINY'):
-		iNumUnits  = 2
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_SMALL'):
-		iNumUnits  = 3
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_STANDARD'):
-		iNumUnits  = 4
-	elif map.getWorldSize() == CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), 'WORLDSIZE_LARGE'):
-		iNumUnits  = 5
-	else: 
-		iNumUnits  = 6
+	iNumUnits = 6
 		
 	iUnitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), 'UNIT_ARCHER')
 
@@ -2395,10 +2327,10 @@ def canTriggerSecurityTax(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	iWalls = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_WALLS')
-	if player.getNumCities() > 0 and player.getNumCities() > player.getBuildingClassCount(iWalls):
-		return false
+	if player.getNumCities() > 0 and player.getNumCities() <= player.getBuildingClassCount(iWalls):
+		return true
 	
-	return true
+	return false
 
 
 ######## LITERACY ###########
@@ -2953,35 +2885,55 @@ def canTriggerCrusade(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	
+	iReligion = kTriggeredData.eOtherPlayer
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	if iReligion != iOrthodoxy:
+		return false
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ONE_CITY_CHALLENGE) and gc.getPlayer(kTriggeredData.ePlayer).isHuman():
 		return false
+	
+	if player.isHuman() and not gc.getTeam(player.getTeam()).isAtWar(holyCity.getTeam()):
+		return false
 		
-	if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
-		kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
-		kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
-		
+	if gc.getPlayer(holyCity.getOwner()).getStateReligion() not in [iOrthodoxy, iCatholicism, iProtestantism]:
 		return true
-		
-	if kTriggeredData.eReligion == iCatholicism:
-		holyCity = gc.getGame().getHolyCity(iOrthodoxy)
-		if not holyCity.isNone():
-			if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
-				kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
-				kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
-				kActualTriggeredDataObject.eReligion = ReligionTypes(iOrthodoxy)
-				
-				return true
 			
 	return false
+
+def doTriggerCrusade(argsList):
+	kTriggeredData = argsList[0]
+	
+	iPlayer = kTriggeredData.ePlayer
+	iReligion = kTriggeredData.eReligion
+	
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
+	
+	if not gc.getPlayer(iPlayer).isHuman():
+		createRoleUnit(iPlayer, capital(iPlayer), iShockCity, 3)
+		createRoleUnit(iPlayer, capital(iPlayer), iSiege, 2)
+	
+	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).declareWar(holyCity.getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 
 def getHelpCrusade1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
+	
+	iReligion = kTriggeredData.ePlayer
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	
 	szHelp = localText.getText("TXT_KEY_EVENT_CRUSADE_HELP_1", (holyCity.getNameKey(), ))
 
@@ -2992,7 +2944,12 @@ def expireCrusade1(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 
 	if holyCity.getOwner() == kTriggeredData.ePlayer:
 		return false
@@ -3014,7 +2971,12 @@ def canTriggerCrusadeDone(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 
 	kOrigTriggeredData = player.getEventOccured(trigger.getPrereqEvent(0))
-	holyCity = gc.getGame().getHolyCity(kOrigTriggeredData.eReligion)
+	
+	iReligion = kOrigTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 
 	if holyCity.getOwner() != kTriggeredData.ePlayer:
 		return false
@@ -3025,7 +2987,7 @@ def canTriggerCrusadeDone(argsList):
 	kActualTriggeredDataObject.eReligion = kOrigTriggeredData.eReligion
 	
 	for iBuilding in range(gc.getNumBuildingInfos()):
-		if gc.getBuildingInfo(iBuilding).getHolyCity() == kOrigTriggeredData.eReligion:
+		if gc.getBuildingInfo(iBuilding).getHolyCity() == iReligion:
 			kActualTriggeredDataObject.eBuilding = BuildingTypes(iBuilding)
 			break	
 			
@@ -3035,12 +2997,16 @@ def getHelpCrusadeDone1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	szUnit = gc.getUnitInfo(holyCity.getConscriptUnit()).getTextKey()
 
 	#Rhye - start
 	#iNumUnits = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers() / 2 + 1
-	iNumUnits = 9 / 2 + 1
+	iNumUnits = 5
 	#Rhye - end
 
 	szHelp = localText.getText("TXT_KEY_EVENT_CRUSADE_DONE_HELP_1", (iNumUnits, szUnit, holyCity.getNameKey()))	
@@ -3051,7 +3017,11 @@ def canApplyCrusadeDone1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	if -1 == holyCity.getConscriptUnit():
 		return false
 	
@@ -3062,11 +3032,15 @@ def applyCrusadeDone1(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)						
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)						
 	iUnitType = holyCity.getConscriptUnit()
 	#Rhye - start
 	#iNumUnits = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers() / 2 + 1
-	iNumUnits = 9 / 2 + 1
+	iNumUnits = 5
 	#Rhye - end
 	
 	if iUnitType != -1:
@@ -3077,7 +3051,11 @@ def getHelpCrusadeDone2(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	
 	szHelp = localText.getText("TXT_KEY_EVENT_CRUSADE_DONE_HELP_2", (gc.getBuildingInfo(kTriggeredData.eBuilding).getTextKey(), holyCity.getNameKey()))	
 
@@ -3087,16 +3065,11 @@ def canApplyCrusadeDone2(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
-
-	#Rhye - switch to Jerusalem
-	if scenario() >= i600AD: #late start condition
-		if (holyCity.getX() == 60 and holyCity.getY() == 44):
-			pJerusalem = gc.getMap().plot(73, 38)
-			if (not pJerusalem.getPlotCity().isNone()):
-				holyCity = pJerusalem.getPlotCity()
-			else:
- 				return False #we don't want a Crusade on Rome
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	
 	if -1 == kTriggeredData.eBuilding or holyCity.isHasBuilding(kTriggeredData.eBuilding):
 		return False			
@@ -3107,7 +3080,11 @@ def applyCrusadeDone2(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	iReligion = kTriggeredData.eReligion
+	if iReligion == iCatholicism:
+		iReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iReligion)
 	holyCity.setNumRealBuilding(kTriggeredData.eBuilding, 1)
 						
 	if (not gc.getGame().isNetworkMultiPlayer() and kTriggeredData.ePlayer == gc.getGame().getActivePlayer()):
@@ -3123,11 +3100,15 @@ def getHelpCrusadeDone3(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
+	iHolyCityReligion = kTriggeredData.eReligion
+	if iHolyCityReligion == iCatholicism:
+		iHolyCityReligion = iOrthodoxy
+	
 	#Rhye - start
 	#iNumCities = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers()
 	iNumCities = 7
 	#Rhye - end
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	holyCity = gc.getGame().getHolyCity(iHolyCityReligion)
 	
 	szHelp = localText.getText("TXT_KEY_EVENT_CRUSADE_DONE_HELP_3", (gc.getReligionInfo(kTriggeredData.eReligion).getTextKey(), iNumCities))	
 
@@ -3150,7 +3131,12 @@ def canApplyCrusadeDone3(argsList):
 def applyCrusadeDone3(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
-	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
+	
+	iHolyCityReligion = kTriggeredData.eReligion
+	if iHolyCityReligion == iCatholicism:
+		iHolyCityReligion = iOrthodoxy
+	
+	holyCity = gc.getGame().getHolyCity(iHolyCityReligion)
 
 	listCities = []	
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
@@ -4453,7 +4439,7 @@ def doTradingCompanyConquerors2(argsList):
 	seaPlot = plots.surrounding(targets[0]).water().random()
 	
 	if seaPlot:
-		makeUnit(iPlayer, unique_unit(iGalleon), seaPlot)
+		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 	
 ######## Reformation (Leoreth) ########
 

@@ -110,6 +110,18 @@
 		<Spanish>%s2 Mahajanapadas</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_GANA_SANGHAS</Tag>
+		<English>%s2 Gana-Sanghas</English>
+		<French>
+			<Text>Gana-Sanghas %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 Gana-Sanghas</German>
+		<Italian>%s2 Gana-Sanghas</Italian>
+		<Spanish>%s2 Gana-Sanghas</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAURYA</Tag>
 		<English>Maurya</English>
 		<French>

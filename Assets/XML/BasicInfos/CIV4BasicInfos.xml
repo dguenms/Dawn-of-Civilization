@@ -111,5 +111,25 @@
 			<Description>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_PAGAN_RELIGIONS</Type>
+			<Description>TXT_KEY_CONCEPT_PAGAN_RELIGIONS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_PAGAN_RELIGIONS_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_BIRTH_OF_A_CIVILIZATION</Type>
+			<Description>TXT_KEY_CONCEPT_BIRTH_OF_A_CIVILIZATION</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_BIRTH_OF_A_CIVILIZATION_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_HISTORICAL_IMPACT</Type>
+			<Description>TXT_KEY_CONCEPT_HISTORICAL_IMPACT</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_HISTORICAL_IMPACT_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_CITY_CONQUEST</Type>
+			<Description>TXT_KEY_CONCEPT_CITY_CONQUEST</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_CITY_CONQUEST_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

@@ -113,6 +113,9 @@
 			<option id="WorstEnemy" key="Worst Enemy" 
 					type="boolean" default="True" and="Enabled" 
 					get="isShowWorstEnemyAlert" set="setShowWorstEnemyAlert"/>
+			<option id="CancelableTribute" key="Cancelable Tribute" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCancelableTributeAlert" set="setShowCancelableTributeAlert"/>
 		</section>
 	</options>
 	

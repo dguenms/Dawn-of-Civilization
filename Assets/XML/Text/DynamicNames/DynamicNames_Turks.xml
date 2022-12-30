@@ -74,6 +74,18 @@
 		<Spanish>Uzbek</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKISTAN_DEFAULT</Tag>
+		<English>Khanate of %s1</English>
+		<French>
+			<Text>Khanat von %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKESTAN_PEOPLES</Tag>
 		<English>Turkic Peoples</English>
 		<French>
@@ -271,15 +283,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKIC_VASSAL</Tag>
-		<English>Atabeylik of %s3</English>
+		<English>Atabeylik of %s1</English>
 		<French>
-			<Text>Atabeylik de %s3</Text>
+			<Text>Atabeylik de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Atabeylik of %s3</German>
-		<Italian>Atabeylik of %s3</Italian>
-		<Spanish>Atabeylik of %s3</Spanish>
+		<German>Atabeylik of %s1</German>
+		<Italian>Atabeylik of %s1</Italian>
+		<Spanish>Atabeylik of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKIC_NAME_BYZANTIUM</Tag>
+		<English>R&#251;m</English>
+		<French>
+			<Text>Roum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>R&#251;m</German>
+		<Italian>R&#251;m</Italian>
+		<Spanish>R&#251;m</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_</Tag>

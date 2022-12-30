@@ -17,6 +17,7 @@ dPeriods1700AD = {
 	iIndia : iPeriodMaratha,
 	iTamils : iPeriodVijayanagara,
 	iVikings : iPeriodSweden,
+	iTurks : iPeriodUzbeks,
 	iKhmer : iPeriodVietnam,
 	iMoors : iPeriodMorocco,
 	iSpain : iPeriodSpain,
@@ -27,16 +28,16 @@ dPeriods1700AD = {
 
 
 def setPeriod(iCiv, iPeriod):
-	if not player(iCiv).isAlive():
-		return
-		
-	if player(iCiv).getPeriod() == iPeriod:
+	if game.getPeriod(iCiv) == iPeriod:
 		return
 
-	player(iCiv).setPeriod(iPeriod)
+	game.setPeriod(iCiv, iPeriod)
+	
+	events.fireEvent("periodChange", iCiv, iPeriod)
 	
 	iPlayer = slot(iCiv)
-	events.fireEvent("periodChange", iPlayer, iPeriod)
+	if iPlayer >= 0:
+		events.fireEvent("playerPeriodChange", iPlayer, iPeriod)
 
 
 def evacuate(iPlayer):
@@ -197,6 +198,11 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	if iCiv == iJapan:
 		if iEra == iIndustrial:
 			setPeriod(iJapan, iPeriodMeiji)
+	
+	if iCiv == iInca:
+		if player(iCiv).getPeriod() == -1:
+			if iEra == iRenaissance:
+				setPeriod(iInca, iPeriodLateInca)
 	
 	if iCiv == iItaly:
 		if iEra == iIndustrial:

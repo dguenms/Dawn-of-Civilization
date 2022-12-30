@@ -1,22 +1,9 @@
-# Rhye's and Fall of Civilization - Religions management
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers       
-import Popup
-#import cPickle as pickle     	
-from Consts import *
-import CvTranslator
 from RFCUtils import *
-from StoredData import data #edead
-
-from Events import handler, popup_handler
 from Locations import *
 from Core import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
+from Events import handler, popup_handler
+
 
 # initialise coordinates
 
@@ -45,18 +32,6 @@ iAmerica	: 20,
 def getCatholicPreference(iPlayer):
 	return dCatholicPreference[iPlayer]
 	
-
-@handler("religionFounded")
-def onReligionFounded(iReligion):
-	if turn() == scenarioStartTurn(): return
-
-	if iReligion == iCatholicism:
-		setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
-		setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
-		
-	elif iReligion == iProtestantism:
-		setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
-
 
 @handler("buildingBuilt")	
 def onBuildingBuilt(city, iBuilding):
@@ -164,6 +139,30 @@ def spreadJudaism():
 
 
 @handler("BeginGameTurn")
+def spreadHinduismSoutheastAsia():
+	lSouthEastAsianCivs = [iKhmer, iIndonesia]
+
+	if not game.isReligionFounded(iHinduism): return
+	if none(player(iCiv).isAlive() for iCiv in lSouthEastAsianCivs): return
+	if not turn().between(500, 1200): return
+	
+	if not periodic(20): return
+	
+	contacts = players.major().where(lambda p: any(player(q).canContact(p) for q in lSouthEastAsianCivs) and player(p).getStateReligion() in [iHinduism, iBuddhism])
+	if not contacts:
+		return
+	
+	southEastAsiaCities = cities.regions(rIndochina, rIndonesia)
+	potentialCities = southEastAsiaCities.where(lambda city: not city.isHasReligion(iHinduism))
+	
+	iMaxCitiesMultiplier = 2
+	if len(potentialCities) * iMaxCitiesMultiplier >= len(southEastAsiaCities):
+		spreadCity = potentialCities.random()
+		if spreadCity:
+			spreadCity.spreadReligion(iHinduism)
+
+
+@handler("BeginGameTurn")
 def spreadIslamIndonesia():
 	if not game.isReligionFounded(iIslam): return
 	if not player(iIndonesia).isAlive(): return
@@ -195,7 +194,20 @@ def checkReformation(iTech, iTeam, iPlayer):
 	if iTech == iAcademia:
 		if player(iPlayer).getStateReligion() == iCatholicism:
 			if not game.isReligionFounded(iProtestantism):
-				player(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
+				if player(iPlayer).getNumCities() > 0:
+					player(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
+					reformation()
+
+
+@handler("firstCity")
+def checkReformationOnSpawn(city):
+	if scenario() == i1700AD:
+		return
+	
+	if not game.isReligionFounded(iProtestantism):
+		if player(city.getOwner()).getStateReligion() == iCatholicism:
+			if team(city.getTeam()).isHasTech(iAcademia):
+				player(city.getOwner()).foundReligion(iProtestantism, iProtestantism, True)
 				reformation()
 
 

@@ -75,8 +75,8 @@ public:
 	// **************************
 	// Member access
 	// **************************
-	DllExport const CvWString & getGameName() const	{ return m_szGameName; }
-	DllExport void setGameName(const CvWString & szGameName)	{ m_szGameName = szGameName; }
+	DllExport const CvWString& getGameName() const;
+	DllExport void setGameName(const CvWString& szGameName);
 
 	DllExport const CvWString & getGamePassword() const	{ return m_szGamePassword; }
 	DllExport void setGamePassword(const CvWString & szGamePassword)	{ m_szGamePassword = szGamePassword; }
@@ -166,7 +166,10 @@ public:
 	DllExport void setGameTurn(int iGameTurn)	{ m_iGameTurn = iGameTurn; }
 
 	DllExport int getMaxTurns() const	{ return m_iMaxTurns; }
-	DllExport void setMaxTurns(int iMaxTurns)	{ m_iMaxTurns = iMaxTurns; }
+	DllExport void setMaxTurns(int iMaxTurns)	
+	{ 
+		m_iMaxTurns = iMaxTurns; 
+	}
 
 	DllExport int getPitbossTurnTime() const	{ return m_iPitbossTurnTime; }
 	DllExport void setPitbossTurnTime(int iPitbossTurnTime)	{ m_iPitbossTurnTime = iPitbossTurnTime; }

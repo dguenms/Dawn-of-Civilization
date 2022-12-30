@@ -268,21 +268,10 @@ class WBGameDataScreen:
 			screen.setTableText("WBGameOptions", iColumn * 2 + 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
 		# Merijn: extra rows for secondary civs and RFC options
-		screen.setTableText("WBGameOptions", 0, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_SECONDARY_CIVS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.setTableText("WBGameOptions", 2, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_OPTIONS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.setTableText("WBGameOptions", 4, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_VARIABLES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		iRow = iNumRows + 3
-		for iCiv in lSecondaryCivs:
-			bEnabled = data.isCivEnabled(iCiv)
-			bDefault = iCiv not in [iHarappa, iPolynesia]
-
-			sText = self.colorText(infos.civ(iCiv).getText(), bEnabled)
-			screen.setTableText("WBGameOptions", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, 1000+iCiv, CvUtil.FONT_LEFT_JUSTIFY)
-			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
-			screen.setTableText("WBGameOptions", 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-			iRow += 1
-
 		for i in xrange(len(lList2)):
 			item = lList2[i][1]
 			iRow = iNumRows + 3 + i
@@ -290,10 +279,7 @@ class WBGameDataScreen:
 			bEnabled = False
 			bDefault = False
 
-			if item == 2000:
-				bEnabled = data.bIgnoreAI
-				bDefault = True
-			elif item == 2001:
+			if item == 2001:
 				bEnabled = data.bUnlimitedSwitching
 			elif item == 2002:
 				bEnabled = data.bNoCongressOption
@@ -319,13 +305,6 @@ class WBGameDataScreen:
 
 			sText = self.colorText(lList3[i][0], bEnabled, bWhite)
 			screen.setTableText("WBGameOptions", 4, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
-			if item == 3002:
-				if not cong.isCongressEnabled():
-					iTurns = -1
-				else:
-					iTurns = data.iCongressTurns
-				sText = self.colorText(str(iTurns), True, True)
-				screen.setTableText("WBGameOptions", 5, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_CENTER_JUSTIFY)
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
@@ -446,8 +425,6 @@ class WBGameDataScreen:
 				# Stored Variables
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched
-				elif iGameOption == 3002 and cong.isCongressEnabled():
-					data.iCongressTurns = max(1, data.iCongressTurns+iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

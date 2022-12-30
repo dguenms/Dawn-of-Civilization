@@ -172,14 +172,6 @@ class WBPlayerScreen:
 			screen.setText("AdjustCommerceFlexible" + gc.getCommerceInfo(i).getType(), "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_PYTHON, 7881, i)
 			iY += 30
 
-		#Merijn: Place Civenabled buttons
-		iY += 30
-		if civ(iPlayer) in lSecondaryCivs:
-			if data.isCivEnabled(civ(iPlayer)):
-				screen.setButtonGFC("CivEnabledButton", "", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_FOUND")).getButton(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
-			else:
-				screen.setButtonGFC("CivEnabledButton", "", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-
 	def placeScript(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = screen.getXResolution()/4 - 25
@@ -492,10 +484,6 @@ class WBPlayerScreen:
 				pPlayer.setCivics(gc.getCivicInfo(iCivic).getCivicOptionType(), iCivic)
 				dc.checkName(iPlayer)
 				screen.setLabel("CivilizationName", "Background", "<font=4b>" + pPlayer.getCivilizationDescription(0) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 50, -0.1, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-			self.interfaceScreen(iPlayer)
-			
-		elif inputClass.getFunctionName() == "CivEnabledButton":
-			data.setCivEnabled(civ(iPlayer), not data.isCivEnabled(iPlayer))
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":

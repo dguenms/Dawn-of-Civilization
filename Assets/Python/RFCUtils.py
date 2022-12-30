@@ -1,31 +1,13 @@
-# Rhye's and Fall of Civilization - Utilities
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-import Popup
-from Consts import *
-from StoredData import data
-import BugCore
-import SettlerMaps
-import WarMaps
-import CvScreenEnums
+from Civilizations import *
+from Core import *
 
 from Events import events
-from Core import *
-import Core as core
+from Popups import popup
 
-# globals
+import BugCore
+import CvScreenEnums
+
 MainOpt = BugCore.game.MainInterface
-
-tCol = (
-'255,255,255',
-'200,200,200',
-'150,150,150',
-'128,128,128'
-)
-
-
 
 bStabilityOverlay = False
 
@@ -51,7 +33,7 @@ def isMortalUnit(unit):
 	
 	return True
 
-# used: Plague, RiseAndFall
+# used: Plague
 def isDefenderUnit(unit):
 	pUnitInfo = infos.unit(unit)
 	
@@ -106,74 +88,15 @@ def minorWars(iMinorCiv):
 		for iPlayer in players.major().alive().ai():
 			if player(iPlayer).getSettlerValue(x, y) >= 90 or player(iPlayer).getWarValue(x, y) >= 6:
 				if not teamMinor.isAtWar(iPlayer):
-					teamMinor.declareWar(iPlayer, False, WarPlanTypes.WARPLAN_LIMITED)
+					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
 
-# used: RiseAndFall
+# used: Rise
 def updateMinorTechs(iMinorCiv, iMajorCiv):
 	for iTech in range(iNumTechs):
 		if team(iMajorCiv).isHasTech(iTech):
 				team(iMajorCiv).setHasTech(iTech, True, iMinorCiv, False, False)
 
-
-# used: RFCUtils, RiseAndFall, UniquePowers
-def flipUnitsInCityBefore(tCityPlot, iNewOwner, iOldOwner):
-	plotUnits = units.at(tCityPlot).owner(iOldOwner)
-	
-	flippingUnits = plotUnits.where(lambda unit: not is_minor(unit) or (not unit.isAnimal() and not unit.isFound()))
-	removedUnits = plotUnits.where(lambda unit: not unit.isCargo())
-		
-	data.lFlippingUnits = [unit.getUnitType() for unit in flippingUnits]
-	
-	for unit in removedUnits:
-		unit.kill(False, -1)
-
-# used: RFCUtils, RiseAndFall, UniquePowers
-def flipUnitsInCityAfter(tCityPlot, iPlayer):
-	for iUnitType in data.lFlippingUnits:
-		makeUnit(iPlayer, iUnitType, tCityPlot)
-		
-	data.lFlippingUnits = []
-
-# used: RiseAndFall
-def killUnitsInArea(iPlayer, area):
-	for plot in area:
-		killedUnits = units.at(plot).owner(iPlayer)
-		for unit in killedUnits:
-			unit.kill(False, -1)
-
-# used: RiseAndFall
-# TODO: accept a Plots instance instead of lPlots
-# TODO: lots of shared code with flipUnitsInCityBefore/After
-def flipUnitsInArea(lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
-	"""Creates a list of all flipping units, deletes old ones and places new ones
-	If bSkipPlotCity is True, units in a city won't flip. This is to avoid converting barbarian units that would capture a city before the flip delay"""
-	for tPlot in lPlots:
-		if bSkipPlotCity and plot(tPlot).isCity():
-			continue
-			
-		currentUnits = units.at(tPlot).owner(iOldOwner)
-			
-		# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-		if civ(iNewOwner) == iItaly and not is_minor(iOldOwner):
-			oldCapital = capital(iOldOwner)
-			if oldCapital:
-				for unit in currentUnits:
-					move(unit, oldCapital)
-			continue
-		
-		removedUnits = currentUnits.where(lambda unit: not unit.isCargo())
-		flippingUnits = currentUnits.land().where(lambda unit: not (unit.workRate(True) > 0 and unit.baseCombatStr() == 0)) \
-										   .where(lambda unit: bKillSettlers or not unit.isFound()) \
-										   .where(lambda unit: not unit.isAnimal()) \
-										   .types()
-										  
-		for unit in removedUnits:
-			unit.kill(False, -1)
-			
-		for iUnitType in flippingUnits:
-			makeUnit(iNewOwner, iUnitType, tPlot)
-
-# used: RFCUtils, RiseAndFall, UniquePowers
+# used: RFCUtils, History
 def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
 	"""Changes owner of city specified by tCityPlot.
 	bConquest specifies if it's conquered or traded.
@@ -189,7 +112,7 @@ def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
 		if not lOldOwners or iOldOwner in lOldOwners:
 			
 			if bKillUnits:
-				for unit in units.at(x, y):
+				for unit in units.at(x, y).where(lambda unit: not unit.isCargo()):
 					unit.kill(False, iNewOwner)
 					
 			pNewOwner.acquireCity(flipCity, bConquest, not bConquest)
@@ -203,7 +126,7 @@ def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
 	return None
 
 
-# used: RFCUtils, RiseAndFall, UniquePowers
+# used: RFCUtils, History
 def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2x2Decay, bBarbarian2x2Conversion, bAlwaysOwnPlots):
 	"""Converts the culture of the city and of the surrounding plots to the new owner of a city.
 	iCulturePercent determine the percentage that goes to the new owner.
@@ -248,7 +171,7 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 			if bAlwaysOwnPlots:
 				plot.setOwner(iNewOwner)
 
-# used: CvRFCEventHandler
+# used: Rules
 def spreadMajorCulture(iMajorCiv, tPlot):
 	for city in plots.surrounding(tPlot, radius=3).cities():
 		if city.getOwner() in players.minor():
@@ -263,7 +186,7 @@ def spreadMajorCulture(iMajorCiv, tPlot):
 			city.changeCulture(iMajorCiv, city.getCulture(city.getOwner()) / iDenominator, True)
 			plot(city).changeCulture(iMajorCiv, plot(city).getCulture(city.getOwner()) / iDenominator, True)
 
-# used: Congresses, RFCUtils, RiseAndFall, UniquePowers
+# used: Congresses, History, RFCUtils, Rise, Rules, Scenarios
 def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot = plot_(tPlot)
 	city = city_(tPlot)
@@ -284,14 +207,15 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 		plot.changeCulture(iLoopPlayer, -iConvertedCulture, True)
 		iTotalConvertedCulture += iConvertedCulture
 	
+	plot.resetCultureConversion()
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
-	if bOwner:
+	if bOwner and plot.isOwned():
 		plot.setOwner(iPlayer)
 		
-# used: RFCUtils
+# used: Rules
 def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
-	plot = core.plot(tPlot)
+	plot = plot_(tPlot)
 	if not plot.isOwned() or not plot.isCore(plot.getOwner()):
 		plot.setCultureConversion(iPlayer, iPercent)
 	
@@ -301,46 +225,14 @@ def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 # used: RFCUtils
 # relocates units in a city plot to a free surrounding tile
 def pushOutGarrisons(tCityPlot, iOldOwner):
-	destination = plots.surrounding(tCityPlot, radius=2).owner(iOldOwner).without(tCityPlot).land().passable().first()
+	destination = plots.surrounding(tCityPlot, radius=2).owner(iOldOwner).without(tCityPlot).land().passable().no_enemies(iOldOwner).first()
 	
 	if destination:
 		for unit in units.at(tCityPlot).owner(iOldOwner):
 			if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 				move(unit, destination)
 
-# used: RFCUtils, RiseAndFall
-# relocates units in a city plot to the nearest city
-def relocateGarrisons(tCityPlot, iOldOwner):
-	if not is_minor(iOldOwner):
-		city = cities.owner(iOldOwner).without(tCityPlot).closest(tCityPlot)
-		if city:
-			for unit in units.at(tCityPlot).owner(iOldOwner):
-				if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
-					move(unit, city)
-	
-	for unit in units.at(tCityPlot).owner(iOldOwner):
-		unit.kill(False, iOldOwner)
-			
-# used: RiseAndFall
-def removeCoreUnits(iPlayer):
-	for plot in plots.birth(iPlayer):
-		if plot.isCity():
-			iOwner = city(plot).getOwner()
-			if iOwner != iPlayer:
-				relocateGarrisons(location(plot), iOwner)
-				relocateSeaGarrisons(location(plot), iOwner)
-				createGarrisons(location(plot), iOwner, 2)
-		else:
-			for unit in units.at(plot).notowner(iPlayer):
-				iOwner = unit.getOwner()
-				if not is_minor(iOwner):
-					capital = player(iOwner).getCapitalCity()
-					if capital:
-						move(unit, capital)
-					else:
-						unit.kill(False, iPlayer)
-			
-# used: RFCUtils, RiseAndFall
+# used: RFCUtils
 def relocateSeaGarrisons(tCityPlot, iOldOwner):
 	destination = cities.owner(iOldOwner).without(tCityPlot).coastal().first()
 			
@@ -349,142 +241,21 @@ def relocateSeaGarrisons(tCityPlot, iOldOwner):
 			if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
 				move(unit, destination)
 
-
-# used: Congresses, CvRFCEventHandler, RFCUtils, RiseAndFall
+# used: Congresses, RFCUtils, Rules
 def createGarrisons(tCityPlot, iNewOwner, iNumUnits):
-	iUnitType = getBestDefender(iNewOwner)
-	makeUnits(iNewOwner, iUnitType, tCityPlot, iNumUnits)
+	createRoleUnit(iNewOwner, tCityPlot, iDefend, iNumUnits)
 
-# used: RiseAndFall, Stability
+# used: Rise, Stability
 def clearPlague(iPlayer):
 	for city in cities.owner(iPlayer).building(iPlague):
 		city.setHasRealBuilding(iPlague, False)
 
-# used: RiseAndFall
-def squareSearch(tTopLeft, tBottomRight, function, argsList, tExceptions = ()): #by LOQ
-	"""Searches all tile in the square from tTopLeft to tBottomRight and calls function for
-	every tile, passing argsList. The function called must return a tuple: (1) a (2) if
-	a plot should be painted and (3) if the search should continue."""
-	return listSearch(plots.start(tTopLeft).end(tBottomRight).without(tExceptions), function, argsList)
-	
-# used: RFCUtils, RiseAndFall
-def listSearch(lPlots, function, argsList):
-	return [tPlot for tPlot in lPlots if function(tPlot, argsList)]
-
-# used: RiseAndFall
-def outerInvasion(tCoords, argsList):
-	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-	Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
-	return invasion(tCoords, argsList, True)
-
-# used: RFCUtils
-def invasion(tCoords, argsList, bOuter):
-	plot = plot(tCoords)
-	if plot.isWater():
-		return False
-		
-	if plot.isImpassable():
-		return False
-		
-	if plot.getFeatureType() in [iMud, iJungle, iRainforest]:
-		return False
-		
-	if plot.isCity():
-		return False
-		
-	if plot.isUnit():
-		return False
-		
-	if bOuter and plot.isOwned():
-		return False
-		
-	return True
-	
-# used: RFCUtils
-def landSpawn(tCoords, argsList, bOuter):
-	plot = plot(tCoords)
-	
-	if plot.isWater():
-		return False
-		
-	if plot.isImpassable():
-		return False
-		
-	if plot.getFeatureType() in [iMud, iJungle, iRainforest]:
-		return False
-		
-	if bOwner and plot.isOwned():
-		return False
-		
-	if plot.getOwner() not in argsList:
-		return False
-		
-	if plots.surrounding(tCoords).any(lambda p: p.isUnit()):
-		return False
-	
-	return True
-
-# used: RiseAndFall
-def innerInvasion(tCoords, argsList):
-	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-	Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
-	return invasion(tCoords, argsList, False)
-
-# used: RiseAndFall
-def innerSpawn(tCoords, argsList):
-	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-	Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
-	return landSpawn(tCoords, argsList, False)
-
-# used: RiseAndFall
-def goodPlots(tCoords, argsList):
-	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-	Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh or jungle; it isn't occupied by a unit or city and if it isn't a civ's territory.
-	Unit check extended to adjacent plots"""
-	plot = plot_(tCoords)
-	
-	if plot.isWater():
-		return False
-		
-	if plot.isImpassable():
-		return False
-		
-	if plot.isUnit():
-		return False
-		
-	if plot.getTerrainType() in [iDesert, iTundra, iMarsh]:
-		return False
-		
-	if plot.getFeatureType() in [iJungle, iRainforest]:
-		return False
-		
-	if plot.isOwned():
-		return False
-		
-	return True
-
-# used: RiseAndFall
-def ownedCityPlots(tCoords, iOwner):
-	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-	Plot is valid if it contains a city belonging to the civ"""
-	city = city_(tCoords)
-	return city and city.getOwner() == iOwner
-
-# used: RiseAndFall
-def clearCatapult(iPlayer):
-	catapult = units.at(0, 0).first()
-	if catapult:
-		catapult.kill(False, -1)
-		
-	for plot in plots.surrounding((0, 0), radius=2):
-		plot.setRevealed(team(iPlayer).getID(), False, False, -1)
-
-# used: Stability
+# used: History
 def removeReligionByArea(area, iReligion):
 	for city in cities.of(area):
 		removeReligion(city, iReligion)
 			
-# used: RFCUtils
+# used: History, RFCUtils
 def removeReligion(city, iReligion):
 	if city.isHasReligion(iReligion) and not city.isHolyCity():
 		city.setHasReligion(iReligion, False, False, False)
@@ -498,7 +269,8 @@ def removeReligion(city, iReligion):
 	if city.hasBuilding(cathedral(iReligion)):
 		city.setHasRealBuilding(cathedral(iReligion), False)
 
-# used: CvRandomEventInterface, RiseAndFall
+# used: CvRandomEventInterface, History, Rules
+# TODO: this shouldn't be here
 def colonialConquest(iPlayer, tPlot):
 	iCiv = civ(iPlayer)
 	city = city_(tPlot)
@@ -514,19 +286,18 @@ def colonialConquest(iPlayer, tPlot):
 	elif iCiv in [iFrance, iEngland]:
 		iNumUnits = 3
 		
-	iSiege = getBestSiege(iPlayer)
-	iInfantry = getBestInfantry(iPlayer)
-	
 	iExp = 0
 	if not player(iPlayer).isHuman(): iExp = 2
 	
-	if iSiege:
-		makeUnits(iPlayer, iSiege, targetPlot, iNumUnits).experience(2)
-		
-	if iInfantry:
-		makeUnits(iPlayer, iInfantry, targetPlot, 2*iNumUnits).experience(2)
+	# TODO: this lacks additional experience
+	dConquerorUnits = {
+		iAttack: 2*iNumUnits,
+		iSiege: iNumUnits,
+	}
+	createRoleUnits(iPlayer, targetPlot, dConquerorUnits.items())
 
-# used: CvRandomEventInterface, RiseAndFall
+# used: CvRandomEventInterface, History
+# this shouldn't be here
 def colonialAcquisition(iPlayer, tPlot):
 	iCiv = civ(iPlayer)
 
@@ -549,18 +320,19 @@ def colonialAcquisition(iPlayer, tPlot):
 				convertPlotCulture(current, iPlayer, 60, True)
 				
 		player(iPlayer).found(*location(plot))
+	
+	if plot.getOwner() >= 0 and not is_minor(plot.getOwner()) and team(player(iPlayer).getTeam()).canChangeWarPeace(plot.getTeam()):
+		player(iPlayer).forcePeace(plot.getOwner())
 		
 	makeUnits(iPlayer, iWorker, tPlot, iNumUnits)
-	
-	iInfantry = getBestInfantry(iPlayer)
-	if iInfantry:
-		makeUnits(iPlayer, iInfantry, plot, iNumUnits)
+	createRoleUnit(iPlayer, plot, iAttack, iNumUnits)
 		
 	iMissionary = missionary(player(iPlayer).getStateReligion())
 	if iMissionary:
 		makeUnit(iPlayer, iMissionary, plot)
 
-# used: CvRandomEventInterface, RiseAndFall
+# used: CvRandomEventInterface, History
+# this shouldn't be here
 def getColonialTargets(iPlayer, bEmpty=False):
 	iCiv = civ(iPlayer)
 
@@ -573,17 +345,21 @@ def getColonialTargets(iPlayer, bEmpty=False):
 
 	lPlots = dTradingCompanyPlots[iCiv][:]
 	
+	
 	cityPlots, emptyPlots = plots.of(lPlots).split(lambda p: p.isCity())
 	targetCities = cityPlots.notowner(iPlayer).sample(iNumCities)
 	
 	if bEmpty:
-		targetPlots = emptyPlots.where_surrounding(lambda p: not p.isCity()).sample(iNumCities - len(targetCities))
-		if targetPlots:
-			return targetCities + targetPlots
+		nearbyCityPlots, settlePlots = emptyPlots.split(lambda p: plots.surrounding(p).any(CyPlot.isCity))
+		
+		targetPlots = settlePlots.sample(iNumCities - len(targetCities))
+		targetPlots += nearbyCityPlots.expand(1).where(lambda p: p.isCity() and p.getOwner() != iPlayer).sample(iNumCities - len(targetCities) - len(targetPlots))
+		
+		return targetCities + targetPlots
 	
 	return targetCities
 	
-# used: RFCUtils
+# used: History
 def getBorderPlots(iPlayer, tTL, tBR, iDirection = DirectionTypes.NO_DIRECTION, iNumPlots = 1):
 	dMetrics = {
 		DirectionTypes.NO_DIRECTION : lambda plot: 0,
@@ -601,14 +377,13 @@ def getBorderPlots(iPlayer, tTL, tBR, iDirection = DirectionTypes.NO_DIRECTION, 
 # used: RFCUtils
 def getPlotNearCityInDirection(city, iDirection):
 	secondRing = plots.ring(city, radius=2).where(lambda p: not p.isCity() and not p.isWater() and not p.isUnit() and not p.isPeak())
-	
 	return secondRing.where(lambda p: estimate_direction(city, p) == iDirection).random()
 	
 # used: RFCUtils
 def hasEnemyUnit(iPlayer, tPlot):
 	return units.at(tPlot).notowner(iPlayer).atwar(iPlayer).any()
 	
-# used: RFCUtils, RiseAndFall
+# used: Barbs, History, RFCUtils
 def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, bNoCulture=False):
 	plot = plot_(tPlot)
 	
@@ -630,12 +405,8 @@ def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, b
 			return False
 		
 	return True
-	
-# used: RiseAndFall
-def isIsland(plot, iIslandLimit = 3):
-	return map.getArea(plot_(plot).getArea()).getNumTiles <= iIslandLimit
 			
-# used: RiseAndFall
+# used: Scenarios
 def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=None):
 	if iScenario is not None:
 		if scenario() != iScenario: return
@@ -659,26 +430,7 @@ def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligio
 			
 	return city
 
-# used: CvRFCEventHandler
-def moveSlaveToNewWorld(iPlayer, unit):
-	colony = cities.owner(iPlayer).where(lambda c: c.getRegionID() in lNorthAmerica + lSouthAmerica + lSubSaharanAfrica).random()
-	move(unit, colony)
-	
-# used: CvRFCEventHandler
-# TODO: this seems expensive to check because we iterate all plots even if no slaves exist anymore
-#       maybe use specialist count, unitclass count, improvement count to short circuit?
-def checkSlaves(iPlayer):
-	if not player(iPlayer).canUseSlaves():
-		for plot in plots.owner(iPlayer):
-			if plot.getImprovementType() == iSlavePlantation:
-				plot.setImprovementType(iPlantation)
-			if plot.isCity():
-				city(plot).setFreeSpecialistCount(iSpecialistSlave, 0)
-				
-		for slave in units.owner(iPlayer).where(lambda unit: base_unit(unit) == iSlave):
-			slave.kill(False, iPlayer)
-
-# used: RFCUtils
+# used: Rules
 def freeSlaves(city, iPlayer):
 	iNumSlaves = city.getFreeSpecialistCount(iSpecialistSlave)
 	if iNumSlaves:
@@ -690,78 +442,177 @@ def replace(unit, iUnitType):
 	replaced = makeUnit(unit.getOwner(), iUnitType, unit)
 	replaced.convert(unit)
 	return replaced
-	
-# used: RFCUtils
-def getBestTrainable(iPlayer, lUnits, iDefault = iMilitia):
-	return next([unique_unit(iPlayer, iUnit) for iUnit in lUnits if player(iPlayer).canTrain(unique_unit(iPlayer, iUnit), False, False)], iDefault)
-	
-# used: AIWars, RFCUtils, RiseAndFall, Stability
-# TODO: update list or make dynamic
-def getBestInfantry(iPlayer):
-	lInfantryList = [iInfantry, iRifleman, iMusketeer, iArquebusier, iPikeman, iHeavySwordsman, iCrossbowman, iSwordsman, iLightSwordsman, iMilitia]
-	return getBestTrainable(iPlayer, lInfantryList)
-	
-# used: AIWars, RiseAndFalls, Stability
-# TODO: update list or make dynamic
-def getBestCavalry(iPlayer):
-	lCavalryList = [iCavalry, iDragoon, iHussar, iCuirassier, iPistolier, iLancer, iHorseArcher, iHorseman, iChariot]
-	return getBestTrainable(iPlayer, lCavalryList)
-	
-# used: AIWars, RFCUtils, RiseAndFall, Stability
-# TODO: update list or make dynamic
-def getBestSiege(iPlayer):
-	lSiegeList = [iHowitzer, iArtillery, iCannon, iBombard, iTrebuchet, iCatapult]
-	return getBestTrainable(iPlayer, lSiegeList)
 
-# used: RiseAndFall, Stability
-# TODO: update list or make dynamic
-def getBestCounter(iPlayer):
-	lCounterList = [iMarine, iGrenadier, iPikeman, iHeavySpearman, iSpearman]
-	return getBestTrainable(iPlayer, lCounterList)
+# used: RFCUtils
+def getRoleDomain(iRole):
+	if iRole in [iWorkerSea, iSettleSea, iAttackSea, iFerry, iEscort, iExploreSea, iLightEscort]:
+		return DomainTypes.DOMAIN_SEA
+	return DomainTypes.DOMAIN_LAND
+
+# used: RFCUtils
+def getRoleLocation(iRole, location):
+	if getRoleDomain(iRole) == DomainTypes.DOMAIN_SEA:
+		seaPlots = plots.surrounding(location, radius=2).sea().closest_within(location, radius=2)
+		return seaPlots[data.iSeed % seaPlots.count()]
+	return location
+
+# used: RFCUtils
+def getRoleAI(iRole):
+	if iRole == iDefend:
+		return UnitAITypes.UNITAI_CITY_DEFENSE
+	elif iRole in [iAttack, iShock]:
+		return UnitAITypes.UNITAI_ATTACK
+	elif iRole in [iCityAttack, iShockCity, iCitySiege]:
+		return UnitAITypes.UNITAI_ATTACK_CITY
+	elif iRole == iCounter:
+		return UnitAITypes.UNITAI_COUNTER
+	elif iRole == iWorkerSea:
+		return UnitAITypes.UNITAI_WORKER_SEA
+	elif iRole == iSettle:
+		return UnitAITypes.UNITAI_SETTLE
+	elif iRole == iSettleSea:
+		return UnitAITypes.UNITAI_SETTLER_SEA
+	elif iRole == iAttackSea:
+		return UnitAITypes.UNITAI_ATTACK_SEA
+	elif iRole == iFerry:
+		return UnitAITypes.UNITAI_ASSAULT_SEA
+	elif iRole == iEscort:
+		return UnitAITypes.UNITAI_ESCORT_SEA
+	elif iRole == iExploreSea:
+		return UnitAITypes.UNITAI_EXPLORE_SEA
+	elif iRole == iExplore:
+		return UnitAITypes.UNITAI_EXPLORE
+	elif iRole == iSkirmish:
+		return UnitAITypes.UNITAI_COLLATERAL
+	elif iRole == iWork:
+		return UnitAITypes.UNITAI_WORKER
+
+	return UnitAITypes.NO_UNITAI
+
+# used: RFCUtils
+def isUnitOfRole(iUnit, iRole):
+	unit = infos.unit(iUnit)
+	iCombatType = unit.getUnitCombatType()
+	iDomainType = unit.getDomainType()
+
+	if iRole == iBase:
+		return base_unit(iUnit) == iMilitia
+	elif iRole == iDefend:
+		return (iCombatType == UnitCombatTypes.UNITCOMBAT_ARCHER and unit.getCityDefenseModifier() > 0) or iCombatType == UnitCombatTypes.UNITCOMBAT_GUN or base_unit(iUnit) == iMilitia
+	elif iRole in [iAttack, iCityAttack]:
+		return iCombatType in [UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN]
+	elif iRole == iCounter:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0
+	elif iRole in [iShock, iShockCity]:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY or iUnit == iKeshik
+	elif iRole == iHarass:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_LIGHT_CAVALRY and not iUnit == iKeshik
+	elif iRole == iWorkerSea:
+		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getCombat() == 0
+	elif iRole == iSettle:
+		return unit.isFound()
+	elif iRole in [iSettleSea, iFerry]:
+		return unit.getCargoSpace() > 0
+	elif iRole in [iAttackSea, iEscort, iExploreSea]:
+		return iDomainType == DomainTypes.DOMAIN_SEA
+	elif iRole == iExplore:
+		return unit.isNoBadGoodies()
+	elif iRole in [iSiege, iCitySiege]:
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_SIEGE
+	elif iRole == iSkirmish:
+		return iCombatType in [UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN] and unit.getCollateralDamage() > 0
+	elif iRole == iLightEscort:
+		return iDomainType == DomainTypes.DOMAIN_SEA and unit.getWithdrawalProbability() > 0
+	elif iRole == iWork:
+		return unit.getWorkRate() > 0 and unit.getCombat() == 0 and not unit.isSlave()
 	
-# used: RFCUtils, RiseAndFall
-# TODO: update list or make dynamic
-def getBestDefender(iPlayer):
-	# Leoreth: there is a C++ error for barbarians for some reason, workaround by simply using independents
-	if player(iPlayer).isBarbarian(): iPlayer = players.independent().random()
-	lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketeer, iArquebusier, iCrossbowman, iArcher, iMilitia]
-	return getBestTrainable(iPlayer, lDefenderList)
+	raise Exception("Unexpected unit role: %d" % iRole)
 	
-# used: CvRFCEventHandler
-# TODO: update list or make dynamic
-def getBestWorker(iPlayer):
-	lWorkerList = [iLabourer, iWorker]
-	return getBestTrainable(iPlayer, lWorkerList, iWorker)
+def canCreateUnit(iPlayer, iUnit):
+	if iUnit in dNeverTrain[iPlayer]:
+		return False
 	
-# used: Congresses, RiseAndFall, Stability
+	if iUnit in dAlwaysTrain[iPlayer]:
+		return True
+	
+	if not player(iPlayer).isHuman() and iUnit in dAIAlwaysTrain[iPlayer]:
+		return True
+	
+	return player(iPlayer).canTrain(iUnit, False, False)
+
+# used: RFCUtils, Rise
+def getUnitForRole(iPlayer, iRole):
+	roleMetric = lambda unit: (infos.unit(unit).getCombat(), base_unit(unit) != unit)
+	iBestUnit = infos.units().where(lambda unit: canCreateUnit(iPlayer, unit)).where(lambda unit: isUnitOfRole(unit, iRole)).maximum(roleMetric)
+	return (iBestUnit, getRoleAI(iRole))
+
+# used: RFCUtils, Rise
+def getUnitsForRole(iPlayer, iRole):
+	iUnit, iUnitAI = getUnitForRole(iPlayer, iRole)
+	units = [(iUnit, iUnitAI)]
+	
+	if iRole == iSettleSea:
+		units.append(getUnitForRole(iPlayer, iSettle))
+		
+		for _ in range(infos.unit(iUnit).getCargoSpace()-1):
+			units.append(getUnitForRole(iPlayer, iDefend))
+	
+	return units
+
+# used: AIWars, History, RFCUtils, Rise, Stability
+def createRoleUnits(iPlayer, location, units, iExperience=0):
+	created = CreatedUnits.none()
+	for iRole, iAmount in units:
+		created += createRoleUnit(iPlayer, location, iRole, iAmount, iExperience)
+	return created
+
+# used: AIWars, Congresses, History, RFCUtils
+def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
+	created = CreatedUnits.none()
+	location = getRoleLocation(iRole, location)
+	if iRole == iSettle:
+		created += createSettlers(iPlayer, iAmount)
+	elif iRole == iMissionary:
+		created += createMissionaries(iPlayer, iAmount)
+	else:
+		for iUnit, iUnitAI in getUnitsForRole(iPlayer, iRole):
+			if iUnit is not None and location is not None:
+				iExperience += dStartingExperience[iPlayer].get(iRole, 0)
+				created += makeUnits(iPlayer, iUnit, location, iAmount, iUnitAI).experience(iExperience)
+	return created
+	
+# used: Congresses, History, RFCUtils, Rise, Stability
 def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
 	plot = plot_(tPlot)
 	
-	#plot.setRevealed(team(iPlayer).getID(), False, False, -1)
-
 	if bPermanentCultureChange:
 		cultureManager(plot, iCultureChange, iPlayer, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 	
 	if bFlipUnits: 
-		flipUnitsInCityBefore(plot, iPlayer, iOwner)
+		plotUnits = units.at(plot).owner(iOwner)
+		flippingUnits = plotUnits.where(lambda unit: not is_minor(unit) or (not unit.isAnimal() and not unit.isFound())).grouped(CyUnit.getUnitType)
+		removedUnits = plotUnits.where(lambda unit: not unit.isCargo())
+		
+		for unit in removedUnits:
+			unit.kill(False, -1)
 	else:
 		pushOutGarrisons(plot, iOwner)
 		relocateSeaGarrisons(plot, iOwner)
 	
-	flipCity(plot, False, False, iPlayer, [iOwner])
+	flippedCity = flipCity(plot, False, False, iPlayer, [iOwner])
 	
-	if bFlipUnits: 
-		flipUnitsInCityAfter(plot, iPlayer)
+	if flippedCity:
+		flippedCity.setOccupationTimer(0)
+	
+	if bFlipUnits:
+		for iUnit, typeUnits in flippingUnits:
+			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
 	else:
-		createGarrisons(tPlot, iPlayer, 2)
+		createGarrisons(plot, iPlayer, 2)
 	
 	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 	
-	return city(tPlot)
-	
-# used: Congresses, Stability
-def isNeighbor(iPlayer1, iPlayer2):
-	return game.isNeighbors(iPlayer1, iPlayer2)
+	return flippedCity
 		
 # used: Stability
 def isGreatBuilding(iBuilding):
@@ -777,7 +628,7 @@ def isGreatBuilding(iBuilding):
 	# Regular building
 	return True
 	
-# used: History, RiseAndFall, Rules, Stability
+# used: History, RFCUtils, Rules, Stability
 def relocateCapital(iPlayer, tile):
 	if not tile:
 		return
@@ -795,134 +646,118 @@ def relocateCapital(iPlayer, tile):
 	
 	events.fireEvent("capitalMoved", newCapital)
 	
-# used: RiseAndFall
+# used: Rise
 def createSettlers(iPlayer, iTargetCities):
 	capital = plots.capital(iPlayer)
 
 	iNumCities = cities.birth(iPlayer).count()
+	iNumSettlers = iTargetCities - iNumCities
 	
-	if iNumCities < iTargetCities:
-		makeUnits(iPlayer, unique_unit(iPlayer, iSettler), capital, iTargetCities - iNumCities)
-	elif not city(capital):
-		makeUnit(iPlayer, unique_unit(iPlayer, iSettler), capital)
+	if not city(capital):
+		iNumSettlers = max(iNumSettlers, 1)
+	
+	return makeUnits(iPlayer, unique_unit(iPlayer, iSettler), capital, iNumSettlers)
 		
-# used: RiseAndFall
+# used: Rise
 def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 	if not iReligion:
 		iReligion = player(iPlayer).getStateReligion()
 		
 	if iReligion < 0:
-		return
+		iNumUnits = 0
 		
 	if not game.isReligionFounded(iReligion):
-		return
+		iNumUnits = 0
 	
-	makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
-	
-# used: RiseAndFall
-def getPlayerWithMostCities(area):
-	return players.major().maximum(lambda p: area.cities().owner(p).count())
-	
-# used: CvVictoryScreen, Victory
-def getReligiousVictoryType(iPlayer):
-	pPlayer = player(iPlayer)
-	iStateReligion = pPlayer.getStateReligion()
-	
-	if iStateReligion >= 0:
-		return iStateReligion
-	elif pPlayer.getLastStateReligion() == -1:
-		return iVictoryPaganism
-	elif not pPlayer.isStateReligion():
-		return iVictorySecularism
-		
-	return -1
-	
-# used: Victory
-def getApprovalRating(iPlayer):
-	pPlayer = player(iPlayer)
-	
-	if not pPlayer.isAlive(): return 0
-	
-	iHappy = pPlayer.calculateTotalCityHappiness()
-	iUnhappy = pPlayer.calculateTotalCityUnhappiness()
-	
-	return (iHappy * 100) / max(1, iHappy + iUnhappy)
-	
-# used: Victory
-def getLifeExpectancyRating(iPlayer):
-	pPlayer = player(iPlayer)
-	
-	if not pPlayer.isAlive(): return 0
-	
-	iHealthy = pPlayer.calculateTotalCityHealthiness()
-	iUnhealthy = pPlayer.calculateTotalCityUnhealthiness()
-	
-	return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
+	return makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
 	
 # used: RFCUtils
-def getByzantineBriberyUnits(spy):
-	iTreasury = player(spy).getGold()
-	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(spy).owner(iBarbarian)]
+# TODO: this should not be here
+def getByzantineBriberyUnits(iPlayer, location):
+	iTreasury = player(iPlayer).getGold()
+	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(location).owner(iBarbarian)]
 	return [(unit, iCost) for unit, iCost in targets if iCost <= iTreasury]
 	
 # used: CvMainInterface
+# TODO: this should not be here
 def canDoByzantineBribery(spy):
-	if spy.getMoves() >= spy.maxMoves(): return False
-	if not getByzantineBriberyUnits(spy): return False
+	if spy.getMoves() >= spy.maxMoves(): 
+		return False
+		
+	if not getByzantineBriberyUnits(spy.getOwner(), location(spy)):
+		return False
+	
 	return True
 
+# used: RFCUtils
+def applyByzantineBribery(iChoice, iPlayer, x, y):
+	targets = getByzantineBriberyUnits(iPlayer, (x, y))
+	unit, iCost = targets[iChoice]
+	
+	newUnit = makeUnit(iPlayer, unit.getUnitType(), closestCity(unit, owner=iPlayer))
+	player(iPlayer).changeGold(-iCost)
+
+	unit.kill(False, -1)
+	
+	if newUnit:
+		interface.selectUnit(newUnit, True, True, False)
+
+byzantineBribePopup = popup.text("TXT_KEY_BYZANTINE_UP_POPUP") \
+						.selection(applyByzantineBribery, "TXT_KEY_BYZANTINE_UP_BUTTON") \
+						.cancel("TXT_KEY_BYZANTINE_UP_BUTTON_NONE") \
+						.build()
+
 # used: CvMainInterface
+# TODO: this should not be here
 def doByzantineBribery(spy):
-	lTargets = getByzantineBriberyUnits(spy)
-			
 	# only once per turn
 	spy.finishMoves()
 			
 	# launch popup
-	popup = Popup.PyPopup(7629, EventContextTypes.EVENTCONTEXT_ALL)
-	data.lByzantineBribes = lTargets
-	popup.setHeaderString(text("TXT_KEY_BYZANTINE_UP_TITLE"))
-	popup.setBodyString(text("TXT_KEY_BYZANTINE_UP_BODY"))
+	bribePopup = byzantineBribePopup.launcher()
 	
-	for unit, iCost in lTargets:
-		popup.addButton(text("TXT_KEY_BYZANTINE_UP_BUTTON", unit.getName(), iCost))
-		
-	popup.addButton(text("TXT_KEY_BYZANTINE_UP_BUTTON_NONE"))
-	popup.launch(False)
+	for unit, iCost in getByzantineBriberyUnits(spy.getOwner(), location(spy)):
+		bribePopup.text().applyByzantineBribery(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
 	
-def exclusive(iPlayer, *civs):
-	return civ(iPlayer) in civs and any(player(iCiv).isAlive() for iCiv in civs if civ(iPlayer) != iCiv)
+	x, y = location(spy)
+	bribePopup.cancel().launch(spy.getOwner(), x, y)
+	
+def exclusive(iCiv, *civs):
+	return iCiv in civs and any(player(iCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
 # used: CvScreensInterface, Stability
-def canRespawn(iPlayer):
-	iCiv = civ(iPlayer)
-
-	# no respawn if never spawned
-	if not data.players[iPlayer].bSpawned:
-		return False
-	
+# TODO: should move to stability
+def canRespawn(iCiv):
 	# only dead civ need to check for resurrection
-	if player(iPlayer).isAlive():
+	if player(iCiv).isAlive():
 		return False
 		
 	# check if only recently died
-	if data.players[iPlayer].iLastTurnAlive > turn() - turns(20):
+	if data.civs[iCiv].iLastTurnAlive > turn() - turns(20):
 		return False
 	
 	# check if the civ can be reborn at this date
-	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
+	if none(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iCiv]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if exclusive(iPlayer, iKhmer, iThailand):
+	if exclusive(iCiv, iKhmer, iThailand):
 		return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if exclusive(iPlayer, iRome, iItaly):
+	if exclusive(iCiv, iRome, iItaly):
 		return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if exclusive(iPlayer, iGreece, iByzantium):
+	if exclusive(iCiv, iGreece, iByzantium):
+		return False
+	
+	# Iran cannot respawn if Persia is alive and vice versa
+	if exclusive(iCiv, iPersia, iIran):
+		return False
+	
+	# Mexico cannot respawn if Aztecs are alive and vice versa
+	if exclusive(iCiv, iAztecs, iMexico):
 		return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
@@ -937,11 +772,11 @@ def canRespawn(iPlayer):
 	return True
 	
 # used: CvScreensInterface, MapDrawer, RFCUtils
-def canEverRespawn(iPlayer, iGameTurn = None):
+def canEverRespawn(iCiv, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iPlayer])
+	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iCiv])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
@@ -950,7 +785,38 @@ def evacuate(iPlayer, tPlot):
 			target = plots.surrounding(plot, radius=2).without(tPlot).where(lambda p: isFree(unit.getOwner(), p, bNoEnemyUnit=True, bCanEnter=True)).random()
 			move(unit, target)
 
+# used: Rise
+def expelUnits(iPlayer, area, excluded_area = None):
+	if excluded_area is None:
+		excluded_area = area
+
+	for plot in area:
+		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(lambda unit: unit.getOwner()):
+			ownerUnits = ownerUnits.where(lambda unit: not unit.isNone() and not unit.isCargo())
+			landUnits, seaUnits = ownerUnits.split(lambda unit: unit.getDomainType() != DomainTypes.DOMAIN_SEA)
+		
+			possibleDestinations = cities.owner(iOwner).without(excluded_area.cities())
+			
+			if landUnits:
+				moveDomainUnits(iPlayer, iOwner, landUnits, possibleDestinations.closest(plot))
+			
+			if seaUnits:
+				moveDomainUnits(iPlayer, iOwner, seaUnits, possibleDestinations.coastal().closest(plot))
+				
+# used: RFCUtils
+def moveDomainUnits(iPlayer, iOwner, units, destination):
+	if not is_minor(iOwner) and destination:
+		for unit in units:
+			move(unit, destination)
+		
+		message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(units), adjective(iPlayer), destination.getName())
+	
+	else:
+		for unit in units:
+			unit.kill(False, -1)
+
 # used: CvScreensInterface, CvPlatyBuilderScreen
+# TODO: should be civ based not player based
 def toggleStabilityOverlay(iPlayer = -1):
 	global bStabilityOverlay
 	bReturn = bStabilityOverlay
@@ -976,18 +842,18 @@ def toggleStabilityOverlay(iPlayer = -1):
 	# apply the highlight
 	for plot in plots.all().land():
 		if bDebug or plot.isRevealed(iTeam, False):
-			if plot.isCore(iPlayer):
+			if plot.isPlayerCore(iPlayer):
 				iPlotType = iCore
 			else:
-				iSettlerValue = plot.getSettlerValue(iPlayer)
+				iSettlerValue = plot.getPlayerSettlerValue(iPlayer)
 				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
-					if otherplayers.any(lambda p: plot.isCore(p)):
+					if otherplayers.any(plot.isPlayerCore):
 						iPlotType = iContest
 					else:
 						iPlotType = iHistorical
-				elif otherplayers.any(lambda p: plot.isCore(p)):
+				elif otherplayers.any(plot.isPlayerCore):
 					iPlotType = iForeignCore
 				else:
 					iPlotType = -1
@@ -1022,7 +888,7 @@ def getAdvisorString(iBuilding):
 	
 # used: RFCUtils
 def isGreatPeopleBuilding(iBuilding):
-	return any(infos.unit(iUnit).getBuildings(iBuilding) for iUnit in lGreatPeopleUnits + [iGreatGeneral, iGreatSpy])
+	return any(infos.unit(iUnit).getBuildings(iBuilding) for iUnit in lGreatPeopleUnits)
 	
 # used: CvPediaMain
 def getBuildingCategory(iBuilding):
@@ -1057,29 +923,27 @@ def getBuildingCategory(iBuilding):
 				
 # used: CvPediaLeader, CvPediaMain
 def getLeaderCiv(iLeader):
-	return next([iCiv for iCiv in range(iNumCivs) if infos.civ(iCiv).isLeaders(iLeader)], None)
+	return next(iCiv for iCiv in range(iNumCivs) if infos.civ(iCiv).isLeaders(iLeader))
 	
-# used: Religions, RiseAndFall
-def setStateReligionBeforeBirth(lCivs, iReligion):
-	for iCiv in lCivs:
-		if year() < year(dBirth[iCiv]) and player(iCiv).getStateReligion() != iReligion:
-			player(iCiv).setLastStateReligion(iReligion)
-			
+# used: Rules
 def freeCargo(identifier, tile):
 	transportUnits, cargoUnits = units.at(tile).owner(identifier).split(lambda unit: unit.cargoSpace() > 0 and unit.specialCargo() == -1)
 	
-	iTotalSpace = transportUnits.sum(lambda unit: unit.cargoSpace())
+	iTotalSpace = transportUnits.sum(CyUnit.cargoSpace)
 	iTotalCargo = cargoUnits.land().count()
 	
 	return iTotalSpace - iTotalCargo
 	
-# used: CvRFCEventHandler
+# used: Rules
 def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
-	if pLosingUnit.isAnimal(): return
+	if pLosingUnit.isAnimal(): 
+		return
 	
-	if pLosingUnit.getDomainType() != DomainTypes.DOMAIN_LAND: return
+	if pLosingUnit.getDomainType() != DomainTypes.DOMAIN_LAND: 
+		return
 	
-	if infos.unit(pLosingUnit).getCombat() == 0: return
+	if infos.unit(pLosingUnit).getCombat() == 0: 
+		return
 	
 	iPlayer = pWinningUnit.getOwner()
 	
@@ -1088,17 +952,9 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pWinningUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_WIN', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=8, location=pWinningUnit)
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
-		if civ(iPlayer) == iAztecs:
-			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and not is_minor(pLosingUnit):
-				data.iAztecSlaves += 1
-	
-# unused
-# kept for scripted settler AI later
-def getCitySiteList(iPlayer):
-	pPlayer = player(iPlayer)
-	return [pPlayer.AI_getCitySite(i) for i in range(pPlayer.AI_getNumCitySites())]
+		events.fireEvent("enslave", iPlayer, pLosingUnit)
 
-# used: Congresses, Stability
+# used: Stability
 def flipOrRelocateGarrison(city, iNumDefenders):
 	lRelocatedUnits = []
 	lFlippedUnits = []
@@ -1112,8 +968,15 @@ def flipOrRelocateGarrison(city, iNumDefenders):
 					
 	return lFlippedUnits, lRelocatedUnits
 		
+# used: Stability
+def relocateGarrisonToCore(city):
+	relocateUnitsToCore(city.getOwner(), plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or at(p, city)).units().owner(city.getOwner()))
+	
+# used: RFCUtils, Stability
+def getLocalGarrison(city):
+	return plots.surrounding(city, radius=2).where(lambda p: not p.isCity() or at(p, city)).units().owner(city.getOwner()).domain(DomainTypes.DOMAIN_LAND)
+	
 # used: RFCUtils
-# TODO: use more
 def flipUnit(unit, iNewOwner, plot):
 	if location(unit) >= (0, 0):
 		iUnitType = unit.getUnitType()
@@ -1121,73 +984,42 @@ def flipUnit(unit, iNewOwner, plot):
 		makeUnit(iNewOwner, iUnitType, plot)
 	
 # used: Congresses, Stability
-def relocateUnitsToCore(iPlayer, lUnits):
+def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
 	coreCities = cities.core(iPlayer).owner(iPlayer)
 	if not coreCities:
 		killUnits(lUnits)
 		return
 	
-	dUnits = units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().getOwner() not in [iPlayer, -1]).by_type()
-	
-	for iUnitType in dUnits:
-		for i, unit in enumerate(dUnits[iUnitType]):
-			index = i % (coreCities.count() * 2)
-			if index < coreCities.count():
-				city = coreCities[index]
+	for iType, typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().items():
+		movedUnits, removedUnits = typeUnits.percentage_split(iArmyPercent)
+		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coreCities.coastal() or coreCities
+		
+		for city, movedUnits in movedUnits.divide(destinations):
+			for unit in movedUnits:
 				move(unit, city)
+			
+		for unit in removedUnits:
+			unit.kill(-1, False)
 				
-# used: Congresses, Stability
+# used: Stability
 def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
 	for unit in units:
 		flipUnit(unit, iNewOwner, tPlot)
 
 	if len(units) < iNumDefenders and active() != iNewOwner:
-		makeUnits(iNewOwner, getBestDefender(iNewOwner), tPlot, iNumDefenders - len(units))
+		createRoleUnit(iNewOwner, tPlot, iDefend, iNumDefenders - len(units))
 		
 # used: Congresses, Stability
 def killUnits(lUnits):
-	for unit in lUnits:
+	for unit in units.of(lUnits).where(lambda unit: not unit.isCargo()):
 		if location(unit) >= (0, 0):
 			unit.kill(False, barbarian())
 			
-# used: RiseAndFall
+# used: RFCUtils, Rise
 def ensureDefenders(iPlayer, tPlot, iNumDefenders):
-	presentUnits = units.at(tPlot).owner(iPlayer).where(lambda u: u.canFight())
-	if len(presentUnits) < iNumDefenders:
-		makeUnits(iPlayer, getBestDefender(iPlayer), tPlot, iNumDefenders - len(presentUnits))
-		
-def getGoalText(baseKey, bTitle = False):
-	fullKey = baseKey
-	iGameSpeed = game.getGameSpeedType()
-	
-	if bTitle:
-		fullKey += '_TITLE'
-	elif iGameSpeed < 2:
-		fullKey += '_' + infos.gameSpeed().getText().upper()
-		
-	return text_if_exists(fullKey, otherwise=baseKey)
-		
-# used: CvVictoryScreen, WBStoredDataScreen
-def getHistoricalGoalText(iPlayer, iGoal, bTitle = False):
-	iCiv = player(iPlayer).getCivilizationType()
-	
-	baseKey = "TXT_KEY_UHV_%s%d" % (infos.civ(iCiv).getIdentifier(), iGoal + 1)
-	
-	return getGoalText(baseKey, bTitle)
-	
-def getReligiousGoalText(iReligion, iGoal, bTitle = False):
-	iGameSpeed = game.getGameSpeedType()
-
-	if iReligion < iNumReligions:
-		religionKey = infos.religion(iReligion).getText()[:3].upper()
-	elif iReligion == iNumReligions:
-		religionKey = "POL"
-	elif iReligion == iNumReligions+1:
-		religionKey = "SEC"
-		
-	baseKey = "TXT_KEY_URV_%s%d" % (religionKey, iGoal + 1)
-	
-	return getGoalText(baseKey, bTitle)
+	defenders = units.at(tPlot).owner(iPlayer).where(lambda unit: isUnitOfRole(unit, iDefend))
+	iNumRequired = max(0, iNumDefenders - defenders.count())
+	return createRoleUnit(iPlayer, tPlot, iDefend, iNumRequired)
 	
 # used: CvDawnOfMan
 def getDawnOfManText(iPlayer):
@@ -1209,14 +1041,8 @@ def isControlled(iPlayer, area, iMinCities=1):
 	if iPlayerCities < iMinCities: return False
 	
 	return True
-	
-# unused
-# keep for Rise and Fall refactoring
-def breakAutoplay():
-	if year() < year(dBirth[active()]):
-		makeUnit(active(), iSettler, (0, 0))
 		
-# used: CvRFCEventHandler
+# used: Scenarios, VictoryGoals, Wonders
 def getBuildingCity(iBuilding, bEffect = True):
 	if game.getBuildingClassCreatedCount(infos.building(iBuilding).getBuildingClassType()) == 0:
 		return None
@@ -1231,314 +1057,92 @@ def getDefaultGreatPerson(iGreatPersonType):
 	if iGreatPersonType in dFemaleGreatPeople.values():
 		return dict((v, k) for k, v in dFemaleGreatPeople.items())[iGreatPersonType]
 	return iGreatPersonType
-	
-# used: RiseAndFall
-def canSwitch(iPlayer, iBirthTurn):
-	if turn() != iBirthTurn + data.players[iPlayer].iSpawnDelay:
-		return False
-		
-	if not player(iPlayer).isAlive():
-		return False
-		
-	if data.bAlreadySwitched and not data.bUnlimitedSwitching:
-		return False
-		
-	if dSpawn[iPlayer] <= dSpawn[active()]:
-		return False
-		
-	if civ() in dNeighbours[iPlayer] and year(dSpawn[iPlayer]) < year(dSpawn[active()]) + turns(25):
-		return False
-		
-	return True
-	
-# used: RiseAndFall
-def setCivilization(iPlayer, iNewCivilization):
-	iOldCivilization = civ(iPlayer)
-	if iOldCivilization == iNewCivilization:
-		return
 
-	player(iPlayer).setCivilizationType(iNewCivilization)
-	del data.dSlots[iOldCivilization]
-	data.dSlots[iNewCivilization] = iPlayer
-	
-
-# used: RiseAndFall, History
+# used: History, Scenarios
 def findSeaPlots(tile, iRange, iCiv):
 	"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
 	return plots.surrounding(tile, radius=iRange).sea().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()
 
-
-def getOwnerStateReligion(city, iPlayer):
-	iOwner = city.getOwner()
-	if iOwner == iPlayer:
-		iOwner = city.getPreviousOwner()
-	
-	if iOwner >= 0:
-		return player(iOwner).getStateReligion()
-		
-	return -1
-	
-	
-def calculateReligionWeight(iReligion, area, iStateReligionPlayer):
-	cities = area.cities()
-	iWeight = religionCities = cities.religion(iReligion).count()
-	
-	if iStateReligionPlayer is not None:
-		iWeight += cities.where(lambda city: getOwnerStateReligion(city, iStateReligionPlayer) == iReligion).count()
-		
-	return iWeight
-
-
+# used: Rise, Stability
 def getPrevalentReligion(area, iStateReligionPlayer=None):
-	lReligions = [iReligion for iReligion in range(iNumReligions) if not infos.religion(iReligion).isLocal()]
-	found = find_max(lReligions, lambda iReligion: calculateReligionWeight(iReligion, area, iStateReligionPlayer))
+	religions = infos.religions().where(lambda iReligion: not infos.religion(iReligion).isLocal())
+	
+	religionCount = lambda iReligion: area.cities().religion(iReligion).count()
+	stateReligionCount = lambda iReligion: area.cities().notowner(iStateReligionPlayer).where(lambda city: player(city).getStateReligion() == iReligion).count()
+	previousStateReligionCount = lambda iReligion: area.cities().owner(iStateReligionPlayer).where(lambda city: slot(Civ(city.getPreviousCiv())) >= 0 and player(Civ(city.getPreviousCiv())).getStateReligion() == iReligion).count()
+	
+	found = find_max(religions, lambda iReligion: religionCount(iReligion) + stateReligionCount(iReligion) + previousStateReligionCount(iReligion))
 	
 	if found.value > 0:
 		return found.result
-		
+	
 	return -1
 
-
+# used: DynamicCivs, Periods
 def isCurrentCapital(iPlayer, *names):
 	capital = player(iPlayer).getCapitalCity()
 	if not capital: return False
 	
 	return any(location(capital) in data.dCapitalLocations[name] for name in names)
 
-
-def convertSurroundingCities(iPlayer, lPlots):
-	iConvertedCitiesCount = 0
-	iNumHumanCities = 0
-	data.iSpawnWar = 0
-				
-	lEnemies = []
-	lCities = getConvertedCities(iPlayer, lPlots)
-	
-	for city in lCities:
-		x = city.getX()
-		y = city.getY()
-		iOwner = city.getOwner()
-		iCultureChange = 0
-		
-		# Case 1: Minor civilization
-		if iOwner in players.minor():
-			iCultureChange = 100
-			
-		# Case 2: Human city
-		elif iOwner == active():
-			iNumHumanCities += 1
-			
-		# Case 3: Other
-		else:
-			iCultureChange = 100
-			if iOwner not in lEnemies: lEnemies.append(iOwner)
-			
-		if iCultureChange > 0:
-			completeCityFlip((x, y), iPlayer, iOwner, iCultureChange, True, False, False, True)
-			iConvertedCitiesCount += 1
-			
-			if turn() > scenarioStartTurn():
-				ensureDefenders(iPlayer, (x, y), 2)
-			
-	warOnSpawn(iPlayer, lEnemies)
-			
-	if iConvertedCitiesCount > 0:
-		message(iPlayer, 'TXT_KEY_FLIP_TO_US', color=iGreen)
-			
-	return iConvertedCitiesCount, iNumHumanCities
-
-
-def getConvertedCities(iPlayer, lPlots = []):
-	iCiv = civ(iPlayer)
-	lCities = []
-	
-	for city in cities.of(lPlots):
-		if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
-		
-		if city.getOwner() != iPlayer:
-			lCities.append(city)
-		
-	# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
-	if iCiv == iByzantium and player(iRome).isAlive():
-		x, y = location(plots.capital(iByzantium))
-		for city in cities.owner(iRome):
-			if city.getX() >= x-1 and city.getY() <= y:
-				if (city.getX(), city.getY()) not in lPlots:
-					lCities.append(city)
-				
-	# Leoreth: Canada also flips English/American/French cities in the Canada region
-	if iCiv == iCanada:
-		for city in cities.owner(iFrance) + cities.owner(iEngland) + cities.owner(iAmerica):
-			if city.getRegionID() == rCanada and city.getX() < plots.capital(iCanada).getX() and location(city) not in [location(c) for c in lCities]:
-				lCities.append(city)
-				
-	# Leoreth: remove capital locations
-	for city in lCities:
-		if not is_minor(city):
-			if location(city) == location(plots.capital(city.getOwner())) and city.isCapital():
-				lCities.remove(city)
-
-	return lCities
-
-
-def warOnSpawn(iPlayer, lEnemies):
-	iCiv = civ(iPlayer)
-
-	if iCiv == iCanada: 
-		return
-	
-	elif iCiv == iGermany and not player(iPlayer).isHuman():
-		return
-	
-	if year() <= year(dBirth[iCiv]) + turns(5):
-		for iEnemy in lEnemies:
-			tEnemy = team(iEnemy)
-			
-			if tEnemy.isAtWar(iPlayer): continue
-			if iCiv == iByzantium and civ(iEnemy) == iRome: continue
-		
-			iRand = rand(100)
-			if iRand >= dAIStopBirthThreshold[iEnemy]:
-				tEnemy.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
-				spawnAdditionalUnits(iPlayer)
-
-
-def spawnAdditionalUnits(iPlayer):
-	createAdditionalUnits(iPlayer, location(plots.capital(iPlayer)))
-
-
-# TODO: move to dict out of utils
-def createAdditionalUnits(iPlayer, tPlot):
-	iCiv = civ(iPlayer)
-
-	if iCiv == iIndia:
-		makeUnits(iPlayer, iArcher, tPlot, 2)
-		makeUnit(iPlayer, iLightSwordsman, tPlot)
-	elif iCiv == iGreece:
-		makeUnits(iPlayer, iHoplite, tPlot, 4)
-	elif iCiv == iPersia:
-		makeUnits(iPlayer, iImmortal, tPlot, 4)
-	elif iCiv == iCarthage:
-		makeUnit(iPlayer, iWarElephant, tPlot)
-		makeUnit(iPlayer, iNumidianCavalry, tPlot)
-	elif iCiv == iPolynesia:
-		makeUnits(iPlayer, iMilitia, tPlot, 2)
-	elif iCiv == iRome:
-		makeUnits(iPlayer, iLegion, tPlot, 4)
-	elif iCiv == iJapan:
-		makeUnits(iPlayer, iArcher, tPlot, 2)
-		makeUnits(iPlayer, iSwordsman, tPlot, 2)
-	elif iCiv == iTamils:
-		makeUnits(iPlayer, iSwordsman, tPlot, 2)
-		makeUnit(iPlayer, iWarElephant, tPlot)
-	elif iCiv == iEthiopia:
-		makeUnits(iPlayer, iArcher, tPlot, 2)
-		makeUnits(iPlayer, iShotelai, tPlot, 2)
-	elif iCiv == iKorea:
-		makeUnits(iPlayer, iHorseArcher, tPlot, 2)
-		makeUnits(iPlayer, iCrossbowman, tPlot, 2)
-	elif iCiv == iMaya:
-		makeUnits(iPlayer, iArcher, tPlot, 2)
-		makeUnits(iPlayer, iHolkan, tPlot, 2)
-	elif iCiv == iByzantium:
-		makeUnits(iPlayer, iCataphract, tPlot, 2)
-		makeUnits(iPlayer, iHorseArcher, tPlot, 2)
-	elif iCiv == iVikings:
-		makeUnits(iPlayer, iHuscarl, tPlot, 3)
-	elif iCiv == iTurks:
-		makeUnits(iPlayer, iOghuz, tPlot, 4)
-	elif iCiv == iArabia:
-		makeUnits(iPlayer, iGhazi, tPlot, 2)
-		makeUnits(iPlayer, iMobileGuard, tPlot, 4)
-	elif iCiv == iTibet:
-		makeUnits(iPlayer, iKhampa, tPlot, 2)
-	elif iCiv == iKhmer:
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-		makeUnits(iPlayer, iBallistaElephant, tPlot, 2)
-	elif iCiv == iIndonesia:
-		makeUnits(iPlayer, iSwordsman, tPlot, 2)
-		makeUnit(iPlayer, iWarElephant, tPlot)
-	elif iCiv == iMoors:
-		makeUnits(iPlayer, iCamelArcher, tPlot, 2)
-	elif iCiv == iSpain:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-	elif iCiv == iFrance:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-	elif iCiv == iEngland:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-	elif iCiv == iHolyRome:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-	elif iCiv == iRussia:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 2)
-		makeUnits(iPlayer, iSwordsman, tPlot, 2)
-		makeUnits(iPlayer, iHorseArcher, tPlot, 2)
-	elif iCiv == iNetherlands:
-		makeUnits(iPlayer, iMusketeer, tPlot, 3)
-		makeUnits(iPlayer, iPikeman, tPlot, 3)
-	elif iCiv == iMali:
-		makeUnits(iPlayer, iKelebolo, tPlot, 4)
-		makeUnits(iPlayer, iSwordsman, tPlot, 3)
-	elif iCiv == iOttomans:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iHorseArcher, tPlot, 3)
-	elif iCiv == iPoland:
-		makeUnits(iPlayer, iLancer, tPlot, 2)
-		makeUnits(iPlayer, iCrossbowman, tPlot, 2)
-	elif iCiv == iPortugal:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 3)
-		makeUnits(iPlayer, iPikeman, tPlot, 3)
-	elif iCiv == iInca:
-		makeUnits(iPlayer, iAucac, tPlot, 5)
-		makeUnits(iPlayer, iArcher, tPlot, 3)
-	elif iCiv == iItaly:
-		makeUnits(iPlayer, iLancer, tPlot, 2)
-	elif iCiv == iMongols:
-		makeUnits(iPlayer, iCrossbowman, tPlot, 2)
-		makeUnits(iPlayer, iMangudai, tPlot, 2)
-		makeUnits(iPlayer, iKeshik, tPlot, 4)
-	elif iCiv == iAztecs:
-		makeUnits(iPlayer, iJaguar, tPlot, 5)
-		makeUnits(iPlayer, iArcher, tPlot, 3)
-	elif iCiv == iMughals:
-		makeUnits(iPlayer, iSiegeElephant, tPlot, 2)
-		makeUnits(iPlayer, iHorseArcher, tPlot, 4)
-	elif iCiv == iThailand:
-		makeUnits(iPlayer, iPikeman, tPlot, 2)
-		makeUnits(iPlayer, iChangSuek, tPlot, 2)
-	elif iCiv == iCongo:
-		makeUnits(iPlayer, iPombos, tPlot, 3)
-	elif iCiv == iGermany:
-		makeUnits(iPlayer, iFusilier, tPlot, 5)
-		makeUnits(iPlayer, iBombard, tPlot, 3)
-	elif iCiv == iAmerica:
-		makeUnits(iPlayer, iGrenadier, tPlot, 3)
-		makeUnits(iPlayer, iMinuteman, tPlot, 3)
-		makeUnits(iPlayer, iCannon, tPlot, 3)
-	elif iCiv == iArgentina:
-		makeUnits(iPlayer, iRifleman, tPlot, 2)
-		makeUnits(iPlayer, iGrenadierCavalry, tPlot, 4)
-	elif iCiv == iBrazil:
-		makeUnits(iPlayer, iGrenadier, tPlot, 2)
-		makeUnits(iPlayer, iRifleman, tPlot, 3)
-		makeUnits(iPlayer, iCannon, tPlot, 2)
-	elif iCiv == iCanada:
-		makeUnits(iPlayer, iCavalry, tPlot, 2)
-		makeUnits(iPlayer, iRifleman, tPlot, 4)
-		makeUnits(iPlayer, iCannon, tPlot, 2)
-
-
+# used: Rise, Scenarios
 def convertSurroundingPlotCulture(iPlayer, plots):
 	for plot in plots:
-		if plot.isOwned() and plot.isCore(plot.getOwner()) and not plot.isCore(iPlayer): continue
+		if plot.isOwned() and plot.isPlayerCore(plot.getOwner()) and not plot.isPlayerCore(iPlayer): continue
 		if not plot.isCity():
 			convertPlotCulture(plot, iPlayer, 100, False)
 
-
-def paintPlots(plots):
+# used: CvPlatyBuilderScreen
+def paintPlots(plots, index=1000, color="COLOR_CYAN"):
 	engine.clearAreaBorderPlots(1000)
 	for plot in plots:
 		engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_CYAN", 0.7)
+
+# used: Shortcuts
+def startObserverMode(iTurns):
+	data.iBeforeObserverSlot = active()
+	iObserverSlot = player(iHarappa).isAlive() and slot(iPolynesia) or slot(iHarappa)
+	
+	makeUnit(iObserverSlot, iCatapult, (0, 0))
+	
+	game.setActivePlayer(iObserverSlot, False)
+	game.setAIAutoPlay(iTurns)
+	
+# used: Shortcuts
+def endObserverMode():
+	if data.iBeforeObserverSlot != -1:
+		if player(data.iBeforeObserverSlot).isAlive():
+			game.setActivePlayer(data.iBeforeObserverSlot, False)
+			data.iBeforeObserverSlot = -1
+		else:
+			makeUnit(active(), iCatapult, (0, 0))
+
+# used: Congresses
+def isIsland(tile):
+	return plot(tile).area().getNumTiles() == 1
+
+
+def getImprovementBuild(iImprovement):
+	if iImprovement < 0:
+		return None
+		
+	iPredecessor = next(i for i in infos.improvements() if infos.improvement(i).getImprovementUpgrade() == iImprovement)
+	if iPredecessor is not None:
+		return getImprovementBuild(iPredecessor)
+	
+	return next(iBuild for iBuild in infos.builds() if infos.build(iBuild).getImprovement() == iImprovement)
+
+
+# used: Rise
+def possibleSpawnsBetween(origin, target, iDistance):
+	return (
+		plots.rectangle(origin, target)
+			.expand(1)
+			.land()
+			.passable()
+			.where(lambda p: p.getOwner() in [plot(origin).getOwner(), plot(target).getOwner(), -1])
+			.where(lambda p: map.getArea(p.getArea()).getNumCities() > 0)
+			.where(lambda p: distance(p, target) >= iDistance)
+			.where(lambda p: not units.at(p).atwar(origin.getOwner()))
+			.where(lambda p: not cities.surrounding(p).notowner(origin.getOwner()))
+	)

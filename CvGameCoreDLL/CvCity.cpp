@@ -36,6 +36,7 @@ CvCity::CvCity()
 {
 	m_aiSeaPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiRiverPlotYield = new int[NUM_YIELD_TYPES];
+	m_aiFlatRiverPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiBaseYieldRate = new int[NUM_YIELD_TYPES];
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
 	m_aiPowerYieldRateModifier = new int[NUM_YIELD_TYPES];
@@ -58,11 +59,11 @@ CvCity::CvCity()
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
 	m_aiDomainProductionModifier = new int[NUM_DOMAIN_TYPES];
 
-	m_aiCulture = new int[MAX_PLAYERS];
+	m_aiCulture = new int[NUM_TOTAL_CIVILIZATIONS];
 	m_aiNumRevolts = new int[MAX_PLAYERS];
-	m_aiGameTurnPlayerLost = new int[MAX_PLAYERS]; // Leoreth
+	m_aiGameTurnCivLost = new int[NUM_TOTAL_CIVILIZATIONS]; // Leoreth
 
-	m_abEverOwned = new bool[MAX_PLAYERS];
+	m_abEverOwned = new bool[NUM_TOTAL_CIVILIZATIONS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
 	m_abRevealed = new bool[MAX_TEAMS];
 	m_abEspionageVisibility = new bool[MAX_TEAMS];
@@ -135,6 +136,7 @@ CvCity::~CvCity()
 
 	SAFE_DELETE_ARRAY(m_aiSeaPlotYield);
 	SAFE_DELETE_ARRAY(m_aiRiverPlotYield);
+	SAFE_DELETE_ARRAY(m_aiFlatRiverPlotYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiBaseYieldRate);
 	SAFE_DELETE_ARRAY(m_aiYieldRateModifier);
 	SAFE_DELETE_ARRAY(m_aiPowerYieldRateModifier);
@@ -158,7 +160,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifier);
 	SAFE_DELETE_ARRAY(m_aiCulture);
 	SAFE_DELETE_ARRAY(m_aiNumRevolts);
-	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiGameTurnCivLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
@@ -294,9 +296,14 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeCommerceHappinessPer(((CommerceTypes)iI), GC.getCommerceInfo((CommerceTypes)iI).getInitialHappiness());
 	}
 
+	if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GREAT_FIREWALL) > 0)
+	{
+		changeCommerceHappinessPer(COMMERCE_ESPIONAGE, 5);
+	}
+
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isBuildingFree((BuildingTypes)iI))
+		if (GET_PLAYER(getOwnerINLINE()).isBuildingFree((BuildingTypes)iI) && isValidBuildingLocation((BuildingTypes)iI))
 		{
 			setNumFreeBuilding(((BuildingTypes)iI), 1);
 		}
@@ -310,8 +317,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 	setGameTurnFounded(GC.getGameINLINE().getGameTurn());
 	setGameTurnAcquired(GC.getGameINLINE().getGameTurn()); //Rhye - infinite loop????
-
-	
 
 	// Leoreth: apply state religion building yield change
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
@@ -630,8 +635,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 /************************************************************************************************/
 
 	m_eOwner = eOwner;
-	m_ePreviousOwner = NO_PLAYER;
-	m_eOriginalOwner = eOwner;
+	m_ePreviousCiv = NO_CIVILIZATION;
+	m_eOriginalCiv = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getCivilizationType() : NO_CIVILIZATION;
 	m_eCultureLevel = NO_CULTURELEVEL;
 	m_eArtStyle = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getArtStyleType() : NO_ARTSTYLE;
 
@@ -639,6 +644,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	{
 		m_aiSeaPlotYield[iI] = 0;
 		m_aiRiverPlotYield[iI] = 0;
+		m_aiFlatRiverPlotYield[iI] = 0;
 		m_aiBaseYieldRate[iI] = 0;
 		m_aiYieldRateModifier[iI] = 0;
 		m_aiPowerYieldRateModifier[iI] = 0;
@@ -670,16 +676,20 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiDomainProductionModifier[iI] = 0;
 	}
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
 		m_aiCulture[iI] = 0;
-		m_aiNumRevolts[iI] = 0;
-		m_aiGameTurnPlayerLost[iI] = -1; // Leoreth
+		m_aiGameTurnCivLost[iI] = -1; // Leoreth
+		m_abEverOwned[iI] = false;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		m_abEverOwned[iI] = false;
+		m_aiNumRevolts[iI] = 0;
+	}
+
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
 		m_abTradeRoute[iI] = false;
 	}
 
@@ -1245,12 +1255,6 @@ void CvCity::doTurn()
 				}
 			}
 		}
-	}
-
-	// Leoreth: Gardens by the Bay effect
-	if (isHasBuildingEffect((BuildingTypes)GARDENS_BY_THE_BAY))
-	{
-		setBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)GARDENS_BY_THE_BAY).getBuildingClassType(), YIELD_COMMERCE, 2 * std::max(0, goodHealth() - badHealth()));
 	}
 
 	// Leoreth: ITER effect
@@ -2180,7 +2184,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	}
 
 	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Exploration
-	if((int)eUnit == 4) // settler
+	if (GC.getUnitInfo(eUnit).isFound())
 	{
 		int iCapitalRegion = GET_PLAYER(getOwner()).getCapitalCity()->getRegionID();
 		int iRegion = getRegionID();
@@ -2544,20 +2548,20 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	// Leoreth: Burj Khalifa requires desert
+	// Leoreth: Burj Khalifa requires ten desert tiles
 	if (eBuilding == BURJ_KHALIFA)
 	{
-		bool bFound = false;
+		int iNumDesertTiles = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
 			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
 			{
-				bFound = true;
+				iNumDesertTiles++;
 				break;
 			}
 		}
 
-		if (!bFound)
+		if (iNumDesertTiles < 10)
 		{
 			return false;
 		}
@@ -3016,7 +3020,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		// Leoreth: domain specific experience from civics
 		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
 		{
-			iExperience += GET_PLAYER(getOwnerINLINE()).getDomainExperienceModifier((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
+			iExperience += GET_PLAYER(getOwnerINLINE()).getDomainFreeExperience((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
 		}
 	}
 
@@ -3025,12 +3029,6 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
 		{
 			iExperience += GET_PLAYER(getOwnerINLINE()).getStateReligionFreeExperience();
-
-			//Leoreth: Harmandir Sahib effect
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
-			{
-				iExperience += 2;
-			}
 		}
 	}
 	
@@ -4694,15 +4692,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
 			changeRiverPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getRiverPlotYieldChange(iI) * iChange));
+			changeFlatRiverPlotYield((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getFlatRiverPlotYieldChange(iI) * iChange);
 			changeBaseYieldRate(((YieldTypes)iI), ((GC.getBuildingInfo(eBuilding).getYieldChange(iI) + getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), (YieldTypes)iI)) * iChange));
-			// Leoreth: catch the overflow bug
-			FAssert(getBaseYieldRate((YieldTypes)iI) >= 0 && getBaseYieldRate((YieldTypes)iI) <= 1000);
-			if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
-				logMajorError(CvWString::format(L"Overflow %s in (%d, %d) for processBuilding %s", GC.getYieldInfo((YieldTypes)iI).getText(), getX(), getY(), GC.getBuildingInfo(eBuilding).getText()), getX(), getY());
-				gDLL->getEngineIFace()->AutoSave();
-			}
-			changeYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getYieldModifier(iI) * iChange));
-			changePowerYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerYieldModifier(iI) * iChange));
+			changeYieldRateModifier((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getYieldModifier(iI));
+			changePowerYieldRateModifier((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getPowerYieldModifier(iI));
 		}
 
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -4937,10 +4930,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Atomium
 		else if (eBuilding == ATOMIUM)
 		{
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER((PlayerTypes)iI).getNumNukeUnits());
-			}
+			int iAtomiumResearch = 10 * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_URANIUM) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_IRON) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_COPPER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_ALUMINUM);
+			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * iAtomiumResearch);
 		}
 
 		// Global Seed Vault
@@ -4969,12 +4960,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
-		// Gardens by the Bay
-		else if (eBuilding == GARDENS_BY_THE_BAY)
-		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * 2 * std::max(0, goodHealth() - badHealth()));
-		}
-
 		// ITER
 		else if (eBuilding == ITER)
 		{
@@ -4990,10 +4975,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
 		}
 
-		// Burj Khalifa
-		else if (eBuilding == BURJ_KHALIFA)
+		// Escorial
+		else if (eBuilding == ESCORIAL)
 		{
-			updateYield();
+			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_GOLD, iChange * 2 * (GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_SILVER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_GOLD)));
 		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -5034,7 +5019,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
 			{
-				log(CvWString::format(L"changeBuildingGreatPeopleRateChange in %s from building %s while having Mount Athos", getName().c_str(), GC.getBuildingInfo(eBuilding).getText()));
 				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
 			}
 		}
@@ -5088,7 +5072,7 @@ void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
 		//Leoreth: process efficiency modifier inside (civic)
-		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100 + GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
+		changeProductionToCommerceModifier((CommerceTypes)iI, (GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) + GET_PLAYER(getOwnerINLINE()).getProcessModifier()) * iChange);
 	}
 }
 
@@ -5113,15 +5097,6 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		changeBaseYieldRate(((YieldTypes)iI), (GC.getSpecialistInfo(eSpecialist).getYieldChange(iI) * iChange));
-		// Leoreth: catch the overflow bug
-		FAssert(getBaseYieldRate((YieldTypes)iI) >= 0 && getBaseYieldRate((YieldTypes)iI) <= 1000);
-		if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
-				GC.getGame().logMsg("Overflow in (%d, %d) for processSpecialist", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "processSpecialist()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-			GC.getGame().setAIAutoPlay(0);
-			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave();
-		}
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -5211,7 +5186,7 @@ void CvCity::updateArtStyleType()
 				break;
 			}
 		}
-		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian() || (eHighestCultureCiv == MONGOLS && getOriginalOwner() != eHighestCulture))
+		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian() || (eHighestCultureCiv == MONGOLS && !isOriginalOwner(eHighestCulture)))
 		{
 			switch (id)
 			{
@@ -5309,7 +5284,7 @@ void CvCity::updateArtStyleType()
 			if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
 		}
 	}
-	else 
+	else
 	{
 		if (GET_PLAYER(eHighestCulture).isNative())
 		{
@@ -5407,7 +5382,6 @@ void CvCity::updateArtStyleType()
 		setLayoutDirty(true);
 	}
 }
-
 
 CitySizeTypes CvCity::getCitySizeType() const
 {
@@ -5584,7 +5558,7 @@ int CvCity::getCulturePercentAnger() const
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		// Leoreth: worry about culture even if they're dead
-		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv() && !GET_PLAYER((PlayerTypes)iI).isIndependent())
+		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv() && !GET_PLAYER((PlayerTypes)iI).isIndependent() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() != NO_CIVILIZATION)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
@@ -9094,7 +9068,7 @@ int CvCity::getFreeSpecialist() const
     }
 
 	//Leoreth: handle free specialists for core here for simplicity
-	if (plot()->isCore(getOwnerINLINE()))
+	if (plot()->isCore())
 	{
 		iCoreSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
 	}
@@ -9596,27 +9570,49 @@ PlayerTypes CvCity::getOwner() const
 }
 
 
-PlayerTypes CvCity::getPreviousOwner() const
+CivilizationTypes CvCity::getPreviousCiv() const
 {
-	return m_ePreviousOwner;
+	return m_ePreviousCiv;
 }
 
 
-void CvCity::setPreviousOwner(PlayerTypes eNewValue)
+void CvCity::setPreviousCiv(CivilizationTypes eNewValue)
 {
-	m_ePreviousOwner = eNewValue;
+	m_ePreviousCiv = eNewValue;
 }
 
 
-PlayerTypes CvCity::getOriginalOwner() const
+bool CvCity::isPreviousOwner(PlayerTypes ePlayer) const
 {
-	return m_eOriginalOwner;
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() == getPreviousCiv();
 }
 
 
-void CvCity::setOriginalOwner(PlayerTypes eNewValue)
+CivilizationTypes CvCity::getOriginalCiv() const
 {
-	m_eOriginalOwner = eNewValue;
+	return m_eOriginalCiv;
+}
+
+
+void CvCity::setOriginalCiv(CivilizationTypes eNewValue)
+{
+	m_eOriginalCiv = eNewValue;
+}
+
+
+bool CvCity::isOriginalOwner(PlayerTypes ePlayer) const
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	return GET_PLAYER(ePlayer).getCivilizationType() == getOriginalCiv();
 }
 
 
@@ -9813,6 +9809,24 @@ void CvCity::changeRiverPlotYield(YieldTypes eIndex, int iChange)
 
 
 // Leoreth
+int CvCity::getFlatRiverPlotYield(YieldTypes eYield) const
+{
+	return m_aiFlatRiverPlotYield[eYield];
+}
+
+
+// Leoreth
+void CvCity::changeFlatRiverPlotYield(YieldTypes eYield, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_aiFlatRiverPlotYield[eYield] += iChange;
+		updateYield();
+	}
+}
+
+
+// Leoreth
 int CvCity::getBonusYield(BonusTypes eBonus, YieldTypes eYield) const
 {
 	return m_ppaiBonusYield[eBonus][eYield];
@@ -9880,6 +9894,17 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
 			{
 				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isRiver())
+				{
+					iExtraRate += iChange;
+				}
+			}
+		}
+		if (kBuilding.getFlatRiverPlotYieldChange(eIndex) != 0)
+		{
+			int iChange = kBuilding.getFlatRiverPlotYieldChange(eIndex);
+			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+			{
+				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isRiver() && getCityIndexPlot(iI)->isFlatlands())
 				{
 					iExtraRate += iChange;
 				}
@@ -10084,12 +10109,6 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 		{
 			iYieldRateTimes100 += 100 * (goodHealth() - badHealth());
 		}
-	}
-
-	// Harbour Opera effect
-	if (eIndex == YIELD_FOOD && isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
-	{
-		iYieldRateTimes100 += 100 * std::max(0, (happyLevel() - unhappyLevel()) / 2);
 	}
 
 	// Lotus Temple effect
@@ -10594,15 +10613,6 @@ void CvCity::setTradeYield(YieldTypes eIndex, int iNewValue)
 		FAssert(getTradeYield(eIndex) >= 0);
 
 		changeBaseYieldRate(eIndex, (iNewValue - iOldValue));
-		// Leoreth: catch the overflow bug
-		FAssert(getBaseYieldRate(eIndex) >= 0 && getBaseYieldRate(eIndex) <= 1000);
-		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
-				GC.getGame().logMsg("Overflow in (%d, %d) for setTradeYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setTradeYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-			GC.getGame().setAIAutoPlay(0);
-			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave();
-		}
 	}
 }
 
@@ -10649,15 +10659,6 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 		FAssert(getExtraSpecialistYield(eYield) >= 0);
 
 		changeBaseYieldRate(eYield, (iNewYield - iOldYield));
-		// Leoreth: catch the overflow bug
-		FAssert(getBaseYieldRate(eYield) >= 0 && getBaseYieldRate(eYield) <= 1000);
-		if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
-				GC.getGame().logMsg("Overflow in (%d, %d) for updateExtraSpecialistYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateExtraSpecialistYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-			GC.getGame().setAIAutoPlay(0);
-			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave();
-		}
 	}
 }
 
@@ -10931,7 +10932,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 	if (getNumBuilding(eBuilding) > 0)
 	{
 		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-		if (!(kBuilding.isCommerceChangeOriginalOwner(eIndex)) || (getBuildingOriginalOwner(eBuilding) == getOwnerINLINE()))
+		if (!(kBuilding.isCommerceChangeOriginalOwner(eIndex)) || (getBuildingOriginalOwner(eBuilding) == getCivilizationType()))
 		{
 			iCommerce += kBuilding.getObsoleteSafeCommerceChange(eIndex) * getNumBuilding(eBuilding);
 
@@ -11381,15 +11382,6 @@ void CvCity::setCorporationYield(YieldTypes eIndex, int iNewValue)
 		FAssert(getCorporationYield(eIndex) >= 0);
 
 		changeBaseYieldRate(eIndex, (iNewValue - iOldValue));
-		// Leoreth: catch the overflow bug
-		FAssert(getBaseYieldRate(eIndex) >= 0 && getBaseYieldRate(eIndex) <= 1000);
-		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
-				GC.getGame().logMsg("Overflow in (%d, %d) for setCorporationYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-			GC.getGame().setAIAutoPlay(0);
-			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave();
-		}
 	}
 }
 
@@ -11428,7 +11420,7 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 		
 		if (iNumBonuses > 0)
 		{
-			iYield = (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			iYield = (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double yield from trading company
 			if (getCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
@@ -11473,7 +11465,7 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 		if (iNumBonuses > 0)
 		{
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-			iCommerce = (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			iCommerce = (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double commerce from trading company
 			if (getCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
@@ -11526,28 +11518,12 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 		iNewYield += std::min(25, getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
 	}
 
-	FAssert(iNewYield >= 0 && iNewYield <= 1000);
-	if (iNewYield > 1000 || iNewYield < -1000)
-	{
-		GC.getGameINLINE().logMsg("OVERFLOW: x=%d, y=%d", getX(), getY());
-		GC.getGameINLINE().setAIAutoPlayCatapult(0);
-	}
-
 	if (iOldYield != iNewYield)
 	{
 		m_aiCorporationYield[eIndex] = iNewYield;
 		FAssert(getCorporationYield(eIndex) >= 0);
 
 		changeBaseYieldRate(eIndex, (iNewYield - iOldYield));
-		// Leoreth: catch the overflow bug
-		FAssert(getBaseYieldRate(eIndex) >= 0 && getBaseYieldRate(eIndex) <= 1000);
-		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
-				GC.getGame().logMsg("Overflow in (%d, %d) for updateCorporationYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-			GC.getGame().setAIAutoPlay(0);
-			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave();
-		}
 	}
 }
 
@@ -11899,12 +11875,35 @@ void CvCity::changeDomainProductionModifier(DomainTypes eIndex, int iChange)
 }
 
 
-int CvCity::getCulture(PlayerTypes eIndex) const
+int CvCity::getCulture(CivilizationTypes eCivilization) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
 
-	return getCultureTimes100(eIndex) / 100;
+	return getCultureTimes100(eCivilization) / 100;
+}
+
+
+int CvCity::getCulture(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be >= 0");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be < MAX_PLAYERS");
+
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
+	return getCulture(eCivilization);
+}
+
+int CvCity::getActualCultureTimes100(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+
+	return m_aiCulture[eCivilization];
 }
 
 int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
@@ -11912,7 +11911,13 @@ int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	return m_aiCulture[eIndex];
+	CivilizationTypes eCivilization = GET_PLAYER(eIndex).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return 0;
+	}
+
+	return getActualCultureTimes100(eCivilization);
 }
 
 // Leoreth
@@ -11921,15 +11926,26 @@ int CvCity::getActualCulture(PlayerTypes ePlayer) const
 	return getActualCultureTimes100(ePlayer) / 100;
 }
 
+int CvCity::getCultureTimes100(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
+
+	if (plot()->getCultureConversionCivilization() == eCivilization)
+	{
+		return percent(getActualTotalCultureTimes100() - getActualCultureTimes100(eCivilization), plot()->getCultureConversionRate()) + getActualCultureTimes100(eCivilization);
+	}
+
+	return percent(getActualCultureTimes100(eCivilization), 100 - plot()->getCultureConversionRate());
+}
+
 // Leoreth
 int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
 {
-	if (plot()->getCultureConversionPlayer() == ePlayer)
-	{
-		return percent(getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer), plot()->getCultureConversionRate()) + getActualCultureTimes100(ePlayer);
-	}
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be within maximum bounds");
 
-	return percent(getActualCultureTimes100(ePlayer), 100 - plot()->getCultureConversionRate());
+	return getCultureTimes100(GET_PLAYER(ePlayer).getCivilizationType());
 }
 
 
@@ -11940,11 +11956,11 @@ int CvCity::countTotalCultureTimes100() const
 
 	iTotalCulture = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
 		//if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			iTotalCulture += getCultureTimes100((PlayerTypes)iI);
+			iTotalCulture += getActualCultureTimes100((CivilizationTypes)iI);
 		}
 	}
 
@@ -11982,15 +11998,51 @@ PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
 }
 
 
-int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
+int CvCity::calculateCulturePercent(CivilizationTypes eCivilization) const
 {
-	int iTotalCulture;
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
 
-	iTotalCulture = countTotalCultureTimes100();
+	int iTotalCulture = countTotalCultureTimes100();
 
 	if (iTotalCulture > 0)
 	{
-		return ((getCultureTimes100(eIndex) * 100) / iTotalCulture);
+		return percent(getCultureTimes100(eCivilization), 100, iTotalCulture);
+	}
+
+	if (getCivilizationType() == eCivilization)
+	{
+		return 100;
+	}
+
+	return 0;
+}
+
+
+int CvCity::calculateCulturePercent(PlayerTypes ePlayer) const
+{
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < NUM_TOTAL_CIVILIZATIONS, "ePlayer expected to be within maximum bounds");
+
+	return calculateCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
+}
+
+
+int CvCity::calculateOverallCulturePercent(CivilizationTypes eCivilization) const
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be non-negative");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be within maximum bounds");
+
+	int iTotalCulture = 0;
+
+	for (int iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
+	{
+		iTotalCulture += getCultureTimes100((CivilizationTypes)iI);
+	}
+
+	if (iTotalCulture > 0)
+	{
+		return percent(getCultureTimes100(eCivilization), 100, iTotalCulture);
 	}
 
 	return 0;
@@ -11998,26 +12050,19 @@ int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
 
 
 // Leoreth
-int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
+int CvCity::calculateOverallCulturePercent(PlayerTypes ePlayer) const
 {
-	int iTotalCulture = 0;
+	FAssertMsg(ePlayer >= 0, "ePlayer expected to be non-negative");
+	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer expected to be within maximum bounds");
 
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
-	}
+	int iTotalCulture = calculateOverallCulturePercent(GET_PLAYER(ePlayer).getCivilizationType());
 
-	if (iTotalCulture > 0)
-	{
-		return percent(getCultureTimes100(eIndex), 100, iTotalCulture);
-	}
-
-	if (eIndex == getOwner())
+	if (iTotalCulture == 0 && getOwner() == ePlayer)
 	{
 		return 100;
 	}
 
-	return 0;
+	return iTotalCulture;
 }
 
 
@@ -12043,9 +12088,31 @@ int CvCity::calculateTeamCulturePercent(TeamTypes eIndex) const
 }
 
 
-void CvCity::setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
+void CvCity::setCulture(CivilizationTypes eCivilization, int iNewValue)
 {
-	setCultureTimes100(eIndex, 100 * iNewValue, bPlots, bUpdatePlotGroups);
+	setCultureTimes100(eCivilization, 100 * iNewValue);
+}
+
+
+void CvCity::setCulture(PlayerTypes ePlayer, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
+{
+	setCultureTimes100(ePlayer, 100 * iNewValue, bPlots, bUpdatePlotGroups);
+}
+
+void CvCity::setCultureTimes100(CivilizationTypes eCivilization, int iNewValue)
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+
+	int iOldValue = getActualCultureTimes100(eCivilization);
+
+	if (iOldValue != iNewValue)
+	{
+		m_aiCulture[eCivilization] = iNewValue;
+		FAssert(getActualCultureTimes100(eCivilization) >= 0);
+
+		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
+	}
 }
 
 void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups)
@@ -12058,33 +12125,33 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 
 	if (iOldValue != iNewValue)
 	{
-		m_aiCulture[eIndex] = iNewValue;
+		setCultureTimes100(GET_PLAYER(eIndex).getCivilizationType(), iNewValue);
 		FAssert(getCultureTimes100(eIndex) >= 0);
 		FAssert(getActualCultureTimes100(eIndex) >= 0);
 
 		updateCultureLevel(bUpdatePlotGroups);
 		updateCoveredPlots(bUpdatePlotGroups); // Leoreth
 
-		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
-
 		if (bPlots)
 		{
 			doPlotCulture(true, eIndex, 0);
-			
-			// tried K-Mod code
-			//doPlotCulture(true, eIndex, (iNewValue-iOldValue)/100);
-			//doPlotCultureTimes100(true, eIndex, (iNewValue-iOldValue), false);
-			// note: this function no longer applies free city culture.
-			// also, note that if a city's culture is decreased to zero, there will probably still be some residual plot culture around the city
-			// this is because the culture level on the way up will be higher than it is on the way down.
 		}
 	}
 }
 
+void CvCity::changeCulture(CivilizationTypes eCivilization, int iChange)
+{
+	setCultureTimes100(eCivilization, getActualCultureTimes100(eCivilization) + 100 * iChange);
+}
 
 void CvCity::changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
 {
 	setCultureTimes100(eIndex, (getActualCultureTimes100(eIndex) + 100  * iChange), bPlots, bUpdatePlotGroups);
+}
+
+void CvCity::changeCultureTimes100(CivilizationTypes eCivilization, int iChange)
+{
+	setCultureTimes100(eCivilization, getActualCultureTimes100(eCivilization) + iChange);
 }
 
 void CvCity::changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
@@ -12129,19 +12196,41 @@ int CvCity::getRevoltTestProbability() const
 	return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
 }
 
-bool CvCity::isEverOwned(PlayerTypes eIndex) const
+bool CvCity::isEverOwned(CivilizationTypes eCivilization) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
-	return m_abEverOwned[eIndex];
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+	return m_abEverOwned[eCivilization];
 }
 
 
-void CvCity::setEverOwned(PlayerTypes eIndex, bool bNewValue)
+bool CvCity::isEverOwned(PlayerTypes ePlayer) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
-	m_abEverOwned[eIndex] = bNewValue;
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return false;
+	}
+
+	return isEverOwned(eCivilization);
+}
+
+
+void CvCity::setEverOwned(CivilizationTypes eCivilization, bool bNewValue)
+{
+	FAssertMsg(eCivilization >= 0, "eCivilization expected to be >= 0");
+	FAssertMsg(eCivilization < NUM_TOTAL_CIVILIZATIONS, "eCivilization expected to be < NUM_TOTAL_CIVILIZATIONS");
+	m_abEverOwned[eCivilization] = bNewValue;
+}
+
+
+void CvCity::setEverOwned(PlayerTypes ePlayer, bool bNewValue)
+{
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION)
+	{
+		setEverOwned(eCivilization, bNewValue);
+	}
 }
 
 
@@ -13386,15 +13475,6 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
 					changeBaseYieldRate(((YieldTypes)iI), pPlot->getYield((YieldTypes)iI));
-					// Leoreth: catch the overflow bug
-					FAssert(getBaseYieldRate((YieldTypes)iI) >= 0 && getBaseYieldRate((YieldTypes)iI) <= 1000);
-					if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
-						GC.getGame().logMsg("Overflow in (%d, %d) for setWorkingPlot", getX(), getY());
-						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-						GC.getGame().setAIAutoPlay(0);
-						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave();
-					}
 				}
 
 				// update plot builder special case where a plot is being worked but is (a) unimproved  or (b) un-bonus'ed
@@ -13411,15 +13491,6 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
 					changeBaseYieldRate(((YieldTypes)iI), -(pPlot->getYield((YieldTypes)iI)));
-					// Leoreth: catch the overflow bug
-					FAssert(getBaseYieldRate((YieldTypes)iI) >= 0 && getBaseYieldRate((YieldTypes)iI) <= 1000);
-					if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
-						GC.getGame().logMsg("Overflow in (%d, %d) for setWorkingPlot2", getX(), getY());
-						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-						GC.getGame().setAIAutoPlay(0);
-						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave();
-					}
 				}
 			}
 
@@ -13525,11 +13596,11 @@ int CvCity::getNumRealBuilding(BuildingTypes eIndex) const
 
 void CvCity::setNumRealBuilding(BuildingTypes eIndex, int iNewValue)
 {
-	setNumRealBuildingTimed(eIndex, iNewValue, true, getOwnerINLINE(), GC.getGameINLINE().getGameTurnYear());
+	setNumRealBuildingTimed(eIndex, iNewValue, true, getCivilizationType(), GC.getGameINLINE().getGameTurnYear());
 }
 
 
-void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime)
+void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, CivilizationTypes eOriginalOwner, int iOriginalTime)
 {
 	CvCity* pLoopCity;
 	CvWString szBuffer;
@@ -13748,11 +13819,6 @@ void CvCity::setNumFreeBuilding(BuildingTypes eIndex, int iNewValue)
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex expected to be < GC.getNumBuildingInfos()");
 
-	if (GC.getBuildingInfo(eIndex).isWater() && !isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
-	{
-		return;
-	}
-
 	if (getNumFreeBuilding(eIndex) != iNewValue)
 	{
 		iOldNumBuilding = getNumBuilding(eIndex);
@@ -13824,8 +13890,11 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 						{
 							if ((getOwnerINLINE() == iI) || (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eIndex) || GET_PLAYER((PlayerTypes)iI).hasHolyCity(eIndex))
 							{
-								CvWString szBuffer = gDLL->getText(bNewValue ? "TXT_KEY_MISC_RELIGION_SPREAD" : "TXT_KEY_MISC_RELIGION_DISAPPEARANCE", GC.getReligionInfo(eIndex).getTextKeyWide(), getNameKey());
-								gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getDefineINT("EVENT_MESSAGE_TIME_LONG"), szBuffer, GC.getReligionInfo(eIndex).getSound(), MESSAGE_TYPE_MAJOR_EVENT, GC.getReligionInfo(eIndex).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), bArrows, bArrows);
+								if (GC.getGameINLINE().isReligionSpreadNotification((PlayerTypes)iI, getOwnerINLINE()))
+								{
+									CvWString szBuffer = gDLL->getText(bNewValue ? "TXT_KEY_MISC_RELIGION_SPREAD" : "TXT_KEY_MISC_RELIGION_DISAPPEARANCE", GC.getReligionInfo(eIndex).getTextKeyWide(), getNameKey());
+									gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getDefineINT("EVENT_MESSAGE_TIME_LONG"), szBuffer, GC.getReligionInfo(eIndex).getSound(), MESSAGE_TYPE_MAJOR_EVENT, GC.getReligionInfo(eIndex).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), bArrows, bArrows);
+								}
 							}
 						}
 					}
@@ -13837,15 +13906,18 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		{
 			if (isHuman())
 			{
-				if (GET_PLAYER(getOwnerINLINE()).getHasReligionCount(eIndex) == 1)
+				if (getScenarioStartTurn() != GC.getGame().getGameTurn())
 				{
-					if (GET_PLAYER(getOwnerINLINE()).canConvert(eIndex) && (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION))
+					if (GET_PLAYER(getOwnerINLINE()).getHasReligionCount(eIndex) == 1)
 					{
-						CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGERELIGION);
-						if (NULL != pInfo)
+						if (GET_PLAYER(getOwnerINLINE()).canConvert(eIndex) && (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION))
 						{
-							pInfo->setData1(eIndex);
-							gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE());
+							CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGERELIGION);
+							if (NULL != pInfo)
+							{
+								pInfo->setData1(eIndex);
+								gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE());
+							}
 						}
 					}
 				}
@@ -14608,9 +14680,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 		if (bFinish)
 		{
-			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
-			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
-
 			// Leoreth
 			if (GC.getGameINLINE().getProjectCreatedCount(eCreateProject) == 0)
 			{
@@ -14629,6 +14698,10 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			}
 
 			GET_TEAM(getTeam()).changeProjectCount(eCreateProject, 1);
+
+			// Leoreth: moved here to counteract the below comment, it messes with the victory code and projects do not award free techs anymore
+			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
+			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
 
 			if (GC.getProjectInfo(eCreateProject).isSpaceship())
 			{
@@ -14979,21 +15052,29 @@ void CvCity::doCulture()
 	// Leoreth: let culture of dead civilizations decay
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
-	PlayerTypes ePlayer;
+	CivilizationTypes eCivilization;
 	int iChange;
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	bool bChanged = false;
+	for (int iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; iI++)
 	{
-		ePlayer = (PlayerTypes)iI;
-		if (!GET_PLAYER(ePlayer).isAlive())
+		eCivilization = (CivilizationTypes)iI;
+		if (!isCivAlive(eCivilization))
 		{
-			iChange = std::min(getActualCultureTimes100(ePlayer), iTotalCultureTimes100 / 100);
+			iChange = std::min(getActualCultureTimes100(eCivilization), iTotalCultureTimes100 / 100);
 
 			if (iChange > 0)
 			{
 				// culture of dead civilizations decreases by 1% of total city culture per turn
-				changeCultureTimes100(ePlayer, -iChange, false, true);
+				changeCultureTimes100(eCivilization, -iChange);
+				bChanged = true;
 			}
 		}
+	}
+
+	if (bChanged)
+	{
+		updateCultureLevel(true);
+		updateCoveredPlots(true);
 	}
 }
 
@@ -15058,33 +15139,65 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 						{
 							if (pLoopPlot->isPotentialCityWorkForArea(area()) || getCivilizationType() == POLYNESIA)
 							{
-								// Leoreth: culture can only invade foreign core if city itself is in foreign core
-								bool bCanSpreadCore = true;
+								// Leoreth: cannot spread culture into birth protected civilizations
+								PlayerTypes eBirthProtectionPlayer = pLoopPlot->getBirthProtected();
+								bool bBirthProtected = eBirthProtectionPlayer != NO_PLAYER && eBirthProtectionPlayer != ePlayer;
 
+								// Leoreth: however only if it is actually within culture range of one of their cities
+								if (bBirthProtected)
+								{
+									for (int iDistance = 2; iDistance >= 0; iDistance--)
+									{
+										if (pLoopPlot->getCultureRangeCities(eBirthProtectionPlayer, iDistance) > 0)
+										{
+											break;
+										}
+									}
+
+									bBirthProtected = false;
+								}
+
+								// Leoreth: culture can only spread into foreign core if city itself is in foreign core
+								bool bCanSpreadCore = true;
 								if (!pLoopPlot->isCore(ePlayer) && iCultureRange > 2)
 								{
-									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+									for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 									{
+										if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+										{
+											continue;
+										}
+
 										// Leoreth: only for civs that have already spawned yet
 										if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)iI).getInitialBirthTurn())
 										{
 											continue;
 										}
 
-										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI)) bCanSpreadCore = false;
-
-										if (pLoopPlot->isCore((PlayerTypes)iI) && plot()->isCore((PlayerTypes)iI))
+										if (pLoopPlot->isCore((PlayerTypes)iI))
 										{
-											bCanSpreadCore = true;
-											break;
+											if (plot()->isCore((PlayerTypes)iI))
+											{
+												bCanSpreadCore = true;
+												break;
+											}
+											else 
+											{
+												bCanSpreadCore = false;
+											}
 										}
 									}
 								}
 
-								if (bCanSpreadCore)
+								if (bCanSpreadCore && !bBirthProtected)
 								{
 									int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
-									if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == ITALY) iChange /= 2;
+
+									if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == ITALY)
+									{
+										iChange /= 2;
+									}
+
 									pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
 								}
 							}
@@ -15496,6 +15609,16 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 		if (getReligionCount() == 0)
 		{
 			iIncrement -= 10;
+
+			if (bDistant) 
+			{
+				iIncrement -= 10;
+			}
+		}
+
+		if (GC.getMapINLINE().getArea(getArea())->countHasReligion(eReligion, getOwnerINLINE()) == 0)
+		{
+			iIncrement -= 10;
 		}
 	}
 
@@ -15733,7 +15856,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0; // Leoreth: up to 3 (culture conversion)
+	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iID);
@@ -15840,12 +15963,12 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
-	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
-	if (uiFlag >= 3) pStream->Read(&m_iTotalCultureTimes100);
-	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamage);
-	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamageChange);
-	if (uiFlag >= 3) pStream->Read(&m_iTotalPopulationLoss);
-	if (uiFlag >= 3) pStream->Read(&m_iPopulationLoss);
+	pStream->Read(&m_iStabilityPopulation);
+	pStream->Read(&m_iTotalCultureTimes100);
+	pStream->Read(&m_iBuildingDamage);
+	pStream->Read(&m_iBuildingDamageChange);
+	pStream->Read(&m_iTotalPopulationLoss);
+	pStream->Read(&m_iPopulationLoss);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15861,13 +15984,14 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bMongolUP); // Leoreth
 
 	pStream->Read((int*)&m_eOwner);
-	pStream->Read((int*)&m_ePreviousOwner);
-	pStream->Read((int*)&m_eOriginalOwner);
+	pStream->Read((int*)&m_ePreviousCiv);
+	pStream->Read((int*)&m_eOriginalCiv);
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
 
 	pStream->Read(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	pStream->Read(NUM_YIELD_TYPES, m_aiFlatRiverPlotYield); // Leoreth
 	pStream->Read(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Read(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);
@@ -15889,11 +16013,11 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
-	pStream->Read(MAX_PLAYERS, m_aiCulture);
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
-	pStream->Read(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
-	pStream->Read(MAX_PLAYERS, m_abEverOwned);
+	pStream->Read(NUM_TOTAL_CIVILIZATIONS, m_abEverOwned);
 	pStream->Read(MAX_PLAYERS, m_abTradeRoute);
 	pStream->Read(MAX_TEAMS, m_abRevealed);
 	pStream->Read(MAX_TEAMS, m_abEspionageVisibility);
@@ -16008,18 +16132,15 @@ void CvCity::read(FDataStreamBase* pStream)
 		m_aBuildingHealthChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
 	}
 
-	if (uiFlag >= 1)
+	pStream->Read(&iNumElts);
+	m_aBuildingGreatPeopleRateChange.clear();
+	for (int i = 0; i < iNumElts; ++i)
 	{
-		pStream->Read(&iNumElts);
-		m_aBuildingGreatPeopleRateChange.clear();
-		for (int i = 0; i < iNumElts; ++i)
-		{
-			int iBuildingClass;
-			pStream->Read(&iBuildingClass);
-			int iChange;
-			pStream->Read(&iChange);
-			m_aBuildingGreatPeopleRateChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
-		}
+		int iBuildingClass;
+		pStream->Read(&iBuildingClass);
+		int iChange;
+		pStream->Read(&iChange);
+		m_aBuildingGreatPeopleRateChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
 	}
 }
 
@@ -16027,7 +16148,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=3; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion
+	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16163,13 +16284,14 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_bMongolUP); // Leoreth
 
 	pStream->Write(m_eOwner);
-	pStream->Write(m_ePreviousOwner);
-	pStream->Write(m_eOriginalOwner);
+	pStream->Write(m_ePreviousCiv); // Leoreth
+	pStream->Write(m_eOriginalCiv); // Leoreth
 	pStream->Write(m_eCultureLevel);
 	pStream->Write(m_eArtStyle); // Leoreth
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiRiverPlotYield);
+	pStream->Write(NUM_YIELD_TYPES, m_aiFlatRiverPlotYield); // Leoreth
 	pStream->Write(NUM_YIELD_TYPES, m_aiBaseYieldRate);
 	pStream->Write(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiPowerYieldRateModifier);
@@ -16191,11 +16313,11 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
-	pStream->Write(MAX_PLAYERS, m_aiCulture);
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiCulture);
 	pStream->Write(MAX_PLAYERS, m_aiNumRevolts);
-	pStream->Write(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_aiGameTurnCivLost); // Leoreth
 
-	pStream->Write(MAX_PLAYERS, m_abEverOwned);
+	pStream->Write(NUM_TOTAL_CIVILIZATIONS, m_abEverOwned);
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);
 	pStream->Write(MAX_TEAMS, m_abRevealed);
 	pStream->Write(MAX_TEAMS, m_abEspionageVisibility);
@@ -16293,14 +16415,11 @@ void CvCity::write(FDataStreamBase* pStream)
 		pStream->Write((*it).second);
 	}
 
-	if (uiFlag >= 1)
+	pStream->Write(m_aBuildingGreatPeopleRateChange.size());
+	for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
 	{
-		pStream->Write(m_aBuildingGreatPeopleRateChange.size());
-		for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
-		{
-			pStream->Write((*it).first);
-			pStream->Write((*it).second);
-		}
+		pStream->Write((*it).first);
+		pStream->Write((*it).second);
 	}
 }
 
@@ -17288,12 +17407,6 @@ void CvCity::updateBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldT
 		if (getNumActiveBuilding(eBuilding) > 0)
 		{
 			changeBaseYieldRate(eYield, iChange * getNumActiveBuilding(eBuilding));
-			FAssert(getBaseYieldRate(eYield) >= 0 && getBaseYieldRate(eYield) <= 1000);
-			// Leoreth: catch the overflow bug
-			if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
-				logMajorError(CvWString::format(L"Overflow in (%d, %d) for updateBuildingYieldChange()", getX(), getY()), getX(), getY());
-				gDLL->getEngineIFace()->AutoSave();
-			}
 		}
 	}
 }
@@ -17812,50 +17925,19 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 		return NO_PLAYER;
 	}
 
-	//Rhye - start comment
-	/*
-	//for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer) //Rhye
-	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; ++iPlayer) //Rhye
-	{
-		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-		if (kLoopPlayer.isAlive() && kLoopPlayer.getParent() == getOwnerINLINE())
-		{
-			CvCity* pLoopCapital = kLoopPlayer.getCapitalCity();
-			if (NULL != pLoopCapital)
-			{
-				if (pLoopCapital->area() == area())
-				{
-					return (PlayerTypes)iPlayer;
-				}
-			}
-		}
-	}
-
-	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
-	if (kOwner.canSplitEmpire() && kOwner.canSplitArea(area()->getID()))
-	{
-		PlayerTypes ePlayer = GET_PLAYER(getOwnerINLINE()).getSplitEmpirePlayer(area()->getID());
-
-		if (NO_PLAYER != ePlayer)
-		{
-			if (GET_PLAYER(ePlayer).isAlive())
-			{
-				return ePlayer;
-			}
-		}
-	}*/
-	//Rhye - end comment
-
 	PlayerTypes eBestPlayer = NO_PLAYER;
-	//int iBestValue = 0;
 	int iBestValue = 25; // Leoreth: some minimum amount of culture required
 
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
-	//for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer) //Rhye
-	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; ++iPlayer) //Rhye
+	for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer)
 	{
 		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+
+		if (kLoopPlayer.isMinorCiv())
+		{
+			continue;
+		}
 
 		if (kLoopPlayer.isAlive())
 		{
@@ -17874,7 +17956,7 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 
 					if (bConquest)
 					{
-						if (iPlayer == getOriginalOwner())
+						if (isOriginalOwner((PlayerTypes)iPlayer))
 						{
 							iCultureTimes100 *= 3;
 							iCultureTimes100 /= 2;
@@ -17892,10 +17974,14 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					int iValue = std::max(100, iCultureTimes100) / std::max(1, iCapitalDistance);
 
 					// Leoreth: better value for core and historical tiles
-					if (plot()->isCore(getOwner()))
+					if (plot()->isCore())
+					{
 						iValue *= 3;
+					}
 					else if (plot()->getSettlerValue(getOwner()) > 90)
+					{
 						iValue *= 2;
+					}
 
 					if (iValue > iBestValue)
 					{
@@ -18234,14 +18320,35 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 }
 
 // Leoreth
+int CvCity::getGameTurnCivLost(CivilizationTypes eCivilization)
+{
+	return m_aiGameTurnCivLost[eCivilization];
+}
+
+void CvCity::setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue)
+{
+	m_aiGameTurnCivLost[eCivilization] = iNewValue;
+}
+
+// Leoreth
 int CvCity::getGameTurnPlayerLost(PlayerTypes ePlayer)
 {
-	return m_aiGameTurnPlayerLost[ePlayer];
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization == NO_CIVILIZATION)
+	{
+		return -1;
+	}
+
+	return getGameTurnCivLost(eCivilization);
 }
 
 void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 {
-	m_aiGameTurnPlayerLost[ePlayer] = iNewValue;
+	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+	if (eCivilization != NO_CIVILIZATION)
+	{
+		setGameTurnCivLost(eCivilization, iNewValue);
+	}
 }
 
 // Leoreth
@@ -18268,64 +18375,110 @@ bool CvCity::canSlaveJoin() const
 // Leoreth
 int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 {
-	if (plot() == pPlot) return 0;
+	if (plot() == pPlot)
+	{
+		return 0;
+	}
 
 	// tiles with forts can be covered for free
-	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity())
+	{
+		return 0;
+	}
 
 	int iCost = pPlot->calculateCultureCost();
+	int iExtraCost = 0;
+
 	int iDistance = std::max(plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()), GC.getMap().calculatePathDistance(plot(), pPlot, MOVE_IGNORE_DANGER | MOVE_THROUGH_ENEMY));
 
 	if (bOrdering)
 	{
-		if (pPlot->getBonusType() < 0 && iCost >= 15) iCost += 100; 
-		iCost += 100 * iDistance;
+		if (pPlot->getBonusType() < 0 && iCost >= 15)
+		{
+			iExtraCost += 100;
+		}
+
+		iExtraCost += 100 * iDistance;
 
 		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() == -1 && iDistance > 1)
 		{
-			if (!isCoastal(20)) iCost += 1000;
-			else if (iDistance > 1) iCost += 5;
+			if (!isCoastal(20))
+			{
+				iExtraCost += 1000;
+			}
+			else if (iDistance > 1)
+			{
+				iExtraCost += 5;
+			}
 		}
 
 		// skip already owned tiles - no, only causes problems in case the controlling city is lost
 		//if (pPlot->getOwner() == getOwner()) iCost += 1000;
 
 		// even with Polynesian UP Oceans should still be covered last
-		if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+		if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+		{
+			iExtraCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+		}
 	}
 
-	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
+	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal()))
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_BONUS");
+	}
 	
-	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
-	else iCost += std::min(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	if (iDistance <= 1)
+	{
+		iExtraCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
+	}
+	else
+	{
+		iExtraCost += std::min(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	}
 
-	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	if (plot()->isRiver() && pPlot->isRiver())
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	}
 
 	// Leoreth: Inca UP
-	if (getCivilizationType() == INCA && GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	if (getCivilizationType() == INCA && (GET_PLAYER(getOwnerINLINE()).getPeriod() == NO_PERIOD || GET_PLAYER(getOwnerINLINE()).getPeriod() == PERIOD_LATE_INCA) && pPlot->isPeak())
+	{
+		iExtraCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	}
 
 	// Leoreth: Polynesian UP
-	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+	{
+		iExtraCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+	}
 
 	// Leoreth: Congolese UP
 	if (getCivilizationType() == CONGO)
 	{
 		if (pPlot->getFeatureType() == FEATURE_MARSH || pPlot->getFeatureType() == FEATURE_JUNGLE || pPlot->getFeatureType() == FEATURE_RAINFOREST)
 		{
-			iCost -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
+			iExtraCost -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
 		}
 	}
 
 	// Leoreth: Steppe Empires (use this for Steppe and Semidesert terrain later)
 	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS)
 	{
-		if (pPlot->getTerrainType() == TERRAIN_DESERT) iCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
-		if (pPlot->getTerrainType() == TERRAIN_PLAINS) iCost -= 5;
+		if (pPlot->getTerrainType() == TERRAIN_DESERT)
+		{
+			iExtraCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
+		}
+
+		if (pPlot->getTerrainType() == TERRAIN_PLAINS)
+		{
+			iExtraCost -= 5;
+		}
 	}
 
 	// Leoreth: respect game speed
-	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-	iCost /= 100;
+	iExtraCost = getTurns(iExtraCost);
+	iCost += iExtraCost;
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }
@@ -18955,9 +19108,14 @@ int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuil
 	return std::min(kBuilding.getUnignorableBombardDefenseModifier() + iBaseDefense, 100) - iBaseDefense;
 }
 
-void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer)
+void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, CivilizationTypes eCivilization)
 {
-	m_paiBuildingOriginalOwner[eBuilding] = ePlayer;
+	m_paiBuildingOriginalOwner[eBuilding] = eCivilization;
+}
+
+void CvCity::setBuildingOriginalTime(BuildingTypes eBuilding, int iYear)
+{
+	m_paiBuildingOriginalTime[eBuilding] = iYear;
 }
 
 int CvCity::calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const
@@ -19066,22 +19224,26 @@ int CvCity::countSatellites() const
 	return iCount;
 }
 
-bool CvCity::canSatelliteJoin() const
+int CvCity::getSatelliteSlots() const
 {
+	if (!GET_TEAM(getTeam()).isHasTech((TechTypes)SATELLITES))
+	{
+		return 0;
+	}
+
 	int iSpecialistSlots = 0;
-	int iSatellites = 1;
 
 	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		iSpecialistSlots += getMaxSpecialistCount((SpecialistTypes)iI);
-
-		if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
-		{
-			iSatellites += getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI);
-		}
 	}
 
-	return 5 * iSatellites < iSpecialistSlots;
+	return iSpecialistSlots / 5;
+}
+
+bool CvCity::canSatelliteJoin() const
+{
+	return countSatellites() < getSatelliteSlots();
 }
 
 int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const
@@ -19201,6 +19363,13 @@ void CvCity::applyBuildingDamage(int iDamage)
 			continue;
 		}
 
+		// buildings that are impossible to conquer have been removed immediately on conquest
+		// so if they are restored some other way, do not remove them again
+		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 0)
+		{
+			continue;
+		}
+
 		for (int iJ = 0; iJ < getNumRealBuilding((BuildingTypes)iI); iJ++)
 		{
 			buildings.push_back(iI);
@@ -19288,7 +19457,7 @@ int CvCity::getRebuildProduction() const
 	return iProduction;
 }
 
-void CvCity::completeAcquisition(int iCaptureGold)
+void CvCity::completeAcquisition(int iCaptureGold, bool bChooseProduction)
 {
 	int iOccupationTime = getOccupationTimer();
 	int iTotalBuildingDamage = getBuildingDamage();
@@ -19322,7 +19491,11 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		if (getPopulation() > getTotalPopulationLoss())
 		{
 			changePopulation(-getTotalPopulationLoss());
-			chooseProduction();
+
+			if (bChooseProduction)
+			{
+				chooseProduction();
+			}
 		}
 		else
 		{
@@ -19434,7 +19607,7 @@ bool CvCity::canLiberate() const
 		return false;
 	}
 
-	if (getOwner() == getOriginalOwner())
+	if (isOriginalOwner(getOwner()))
 	{
 		return false;
 	}
@@ -19522,7 +19695,47 @@ int CvCity::calculateBaseGreatPeopleRate() const
 	return iRate;
 }
 
+bool CvCity::isCore(CivilizationTypes eCivilization) const
+{
+	return plot()->isCore(eCivilization);
+}
+
 bool CvCity::isCore(PlayerTypes ePlayer) const
 {
 	return plot()->isCore(ePlayer);
+}
+
+bool CvCity::isCore() const
+{
+	return plot()->isCore();
+}
+
+bool CvCity::rebuild()
+{
+	bool bBuilt = false;
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (canConstruct(eBuilding) || getFirstBuildingOrder(eBuilding) != -1)
+					{
+						setNumRealBuilding(eBuilding, 1);
+						bBuilt = true;
+					}
+				}
+			}
+		}
+	}
+
+	return bBuilt;
 }

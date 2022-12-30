@@ -56,6 +56,9 @@ public:
 	DllExport const wchar* getHelp() const;
 	const wchar* getStrategy() const;
 
+	// Leoreth
+	void setDescription(std::wstring szDescription);
+
 	bool isMatchForLink(std::wstring szLink, bool bKeysOnly) const;
 
 	virtual void read(FDataStreamBase* pStream);
@@ -1820,6 +1823,8 @@ public:
 	int* getSeaPlotYieldChangeArray() const;
 	int getRiverPlotYieldChange(int i) const;				// Exposed to Python
 	int* getRiverPlotYieldChangeArray() const;
+	int getFlatRiverPlotYieldChange(int i) const; // Leoreth
+	int* getFlatRiverPlotYieldChangeArray() const; // Leoreth
 	int getGlobalSeaPlotYieldChange(int i) const;				// Exposed to Python
 	int* getGlobalSeaPlotYieldChangeArray() const;
 
@@ -2038,6 +2043,7 @@ protected:
 	int* m_piHappinessTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
+	int* m_piFlatRiverPlotYieldChange; // Leoreth
 	int* m_piGlobalSeaPlotYieldChange;
 	int* m_piYieldChange;
 	int* m_piYieldModifier;
@@ -2333,15 +2339,9 @@ public:
 	DllExport const wchar* getAdjectiveKey() const;				// Exposed to Python
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }				// Exposed to Python
 
-	std::wstring pyGetPaganReligionName(uint uiForm) { return getPaganReligionName(uiForm); }
-	const wchar* getPaganReligionName(uint uiForm = 0);
-	const wchar* getPaganReligionKey() const;
-	std::wstring pyGetPaganReligionKey() { return getPaganReligionKey(); }
-
 	DllExport const TCHAR* getFlagTexture() const;
 	DllExport const TCHAR* getArtDefineTag() const;
 	DllExport void setArtDefineTag(const TCHAR* szVal);
-	const TCHAR* getPaganReligionButton() const;
 	// Arrays
 
 	DllExport int getCivilizationBuildings(int i) const;				// Exposed to Python
@@ -2354,6 +2354,14 @@ public:
 	int getRating(RatingTypes eRating) const;
 	int getStartingYear() const;
 	const std::string getIdentifier() const;
+	int getPaganReligion() const;
+	const wchar* getDescriptionKeyPersistent() const;
+	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
+	void setDescriptionKeyPersistent(std::wstring szDescription);
+	void setPlayable(bool bNewValue);
+	void setLeader(int iLeader, bool bNewValue);
+	bool isOriginalLeader(int iLeader) const;
+	int getImpact() const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2387,6 +2395,8 @@ protected:
 	int m_iDerivativeCiv;
 
 	int m_iStartingYear; // Leoreth
+	int m_iPaganReligion; // Leoreth
+	int m_iImpact; // Leoreth
 
 	bool m_bAIPlayable;
 	bool m_bPlayable;
@@ -2394,9 +2404,9 @@ protected:
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
-	CvWString m_szPaganReligionKey; // Leoreth
-	CvString m_szPaganReligionButton; // Leoreth
 	std::string m_szIdentifier; // Leoreth
+	CvWString m_szDescriptionPersistent; // Leoreth
+
 	// Arrays
 
 	int* m_piCivilizationBuildings;
@@ -2408,6 +2418,7 @@ protected:
 	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
+	bool* m_pbOriginalLeaders; // Leoreth
 	bool* m_pbCivilizationFreeBuildingClass;
 	bool* m_pbCivilizationFreeTechs;
 	bool* m_pbCivilizationDisableTechs;
@@ -2416,7 +2427,6 @@ protected:
 
 	mutable std::vector<CvWString> m_aszShortDescription;
 	mutable std::vector<CvWString> m_aszAdjective;
-	mutable std::vector<CvWString> m_aszPaganReligion;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -4366,6 +4376,7 @@ public:
 	int getMaintenance() const;				// Exposed to Python
 	int getHappiness() const;
 	int getHealth() const;
+	int getMaxConsumableBonuses() const;		// merijn, exposed to python
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
@@ -4402,6 +4413,7 @@ protected:
 	int m_iMaintenance;
 	int m_iHappiness;
 	int m_iHealth;
+	int m_iMaxConsumableBonuses;	// merijn
 	int m_iMissionType;
 	int m_iBonusProduced;
 

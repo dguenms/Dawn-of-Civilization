@@ -260,27 +260,30 @@
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds/>
 		</UnitArtInfo>
-		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PROTESTANT_MISSIONARY</Type>
-			<Button>,Art/Interface/Buttons/Units/Missionary_Christian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,3</Button>
-			<fScale>0.44</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<bActAsLand>0</bActAsLand>
-			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Missionary/Christian/ChristianMissionary.nif</NIF>
-			<KFM>Art/Units/Missionary/Christian/ChristianMissionary.kfm</KFM>
-			<SHADERNIF>Art/Units/Missionary/Christian/ChristianMissionary_FX.nif</SHADERNIF>
-			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
-				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
-			</ShadowDef>
-			<fBattleDistance>0.35</fBattleDistance>
-			<fRangedDeathTime>0.31</fRangedDeathTime>
-			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds/>
-		</UnitArtInfo>
+        <UnitArtInfo>
+            <Type>ART_DEF_UNIT_PROTESTANT_MISSIONARY</Type>
+            <Button>Art/Interface/Buttons/Units/ProtestantMissionary.dds</Button>
+            <fScale>0.46</fScale>
+            <fInterfaceScale>1.0</fInterfaceScale>
+            <bActAsLand>0</bActAsLand>
+            <bActAsAir>0</bActAsAir>
+            <NIF>Art/Units/Protestant Missionary/JewishMissionary.nif</NIF>
+            <KFM>Art/Units/Protestant Missionary/JewishMissionary.kfm</KFM>
+            <SHADERNIF>Art/Units/Protestant Missionary/JewishMissionary_FX.nif</SHADERNIF>
+            <ShadowDef>
+                <ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+                <ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+                <fShadowScale>1</fShadowScale>
+            </ShadowDef>
+                <fBattleDistance>0.35</fBattleDistance>
+                <fRangedDeathTime>0.31</fRangedDeathTime>
+                <bActAsRanged>0</bActAsRanged>
+                <TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+            <AudioRunSounds>
+                <AudioRunTypeLoop/>
+                <AudioRunTypeEnd/>
+            </AudioRunSounds>
+        </UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CATHOLIC_MISSIONARY</Type>
 			<Button>Art/Interface/Buttons/Units/catholic_missionary.dds</Button>
@@ -3424,7 +3427,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ZULU_IMPI</Type>
+			<Type>ART_DEF_UNIT_NATIVE_RAIDER</Type>
 			<Button>,Art/Interface/Buttons/Units/Spearman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3570,9 +3573,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Hwacha_Korean/Hwacha.nif</NIF>
-			<KFM>Art/Units/Hwacha_Korean/Hwacha.kfm</KFM>
-			<SHADERNIF>Art/Units/Hwacha_Korean/Hwacha_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Hwacha/Hwacha_Civ5.nif</NIF>
+			<KFM>Art/Units/Hwacha/Hwacha_Civ5.kfm</KFM>
+			<SHADERNIF>Art/Units/Hwacha/Hwacha_Civ5.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/CatapultShadow.nif</ShadowNIF>
 				<ShadowAttachNode>Cart_Master_Dummy</ShadowAttachNode>
@@ -6974,13 +6977,13 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALLEASS</Type>
 			<Button>Art/Interface/Buttons/Units/Galleass.dds</Button>
-			<fScale>0.1</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<fScale>0.12</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Galleass/Galley.nif</NIF>
-			<KFM>Art/Units/Galleass/Galley.kfm</KFM>
-			<SHADERNIF>Art/Units/Galleass/Galley.nif</SHADERNIF>
+			<NIF>Art/Units/Galleass/Galleass_Civ5.nif</NIF>
+			<KFM>Art/Units/Galleass/Galleass_Civ5.kfm</KFM>
+			<SHADERNIF>Art/Units/Galleass/Galleass_Civ5.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/IroncladShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -7681,6 +7684,30 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MILITIA_AFRICAN</Type>
 			<Button>Art/Interface/Buttons/Units/Levy.dds</Button>
+			<fScale>0.44</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/African_Warrior/warrior2.nif</NIF>
+			<KFM>Art/Units/Warrior/Warrior.kfm</KFM>
+			<SHADERNIF>Art/Units/African_Warrior/warrior2.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_WARRIOR_AFRICAN</Type>
+			<Button>Art/Interface/Buttons/Units/Warrior.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -8511,16 +8538,16 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KOREAN_KOBUKSON</Type>
-			<Button>Art/Units/Kobukson/Kobukson.dds</Button>
-			<fScale>0.14</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Units/Kobukson.dds</Button>
+			<fScale>0.17</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Kobukson/kobukson.nif</NIF>
-			<KFM>Art/Units/Galley/Galley.kfm</KFM>
-			<SHADERNIF>Art/Units/Kobukson/kobukson.nif</SHADERNIF>
+			<NIF>Art/Units/Kobukson/Turtle_Ship_Civ5.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<SHADERNIF>Art/Units/Kobukson/Turtle_Ship_Civ5.nif</SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/GalleyShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>1.0</fShadowScale>
 			</ShadowDef>
@@ -8537,12 +8564,13 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds>
-				<AudioRunTypeLoop>LOOPSTEP_OCEAN1</AudioRunTypeLoop>
-				<AudioRunTypeEnd>ENDSTEP_OCEAN1</AudioRunTypeEnd>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
 			</AudioRunSounds>
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
@@ -8872,18 +8900,18 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ITALIAN_LANTERNAS</Type>
-			<Button>Art/Units/Lanternas/Lanternas.dds</Button>
-			<fScale>0.21</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Units/Lanternas.dds</Button>
+			<fScale>0.12</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Lanternas/EE2_Galleas.nif</NIF>
-			<KFM>Art/Units/Lanternas/EE2_Galleas.kfm</KFM>
-			<SHADERNIF>Art/Units/Lanternas/EE2_Galleas_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Lanternas/Great_Galleass_Civ5.nif</NIF>
+			<KFM>Art/Units/Lanternas/Great_Galleass_Civ5.kfm</KFM>
+			<SHADERNIF></SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/GalleyShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/IroncladShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
+				<fShadowScale>4.0</fShadowScale>
 			</ShadowDef>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
@@ -8892,12 +8920,13 @@
 				<fLength>180.0</fLength>
 				<fTaper>1</fTaper>
 				<fFadeStartTime>.2</fFadeStartTime>
-				<fFadeFalloff>0.35</fFadeFalloff>
+				<fFadeFalloff>0.4</fFadeFalloff>
 			</TrailDefinition>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.2</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>

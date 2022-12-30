@@ -1,6 +1,10 @@
 from Core import *
 from unittest import *
 
+from TestUtils import setup
+
+import types
+
 
 def assertType(test, obj, expected_type):
 	test.assertEqual(type(obj), expected_type)
@@ -175,6 +179,31 @@ class TestInfos(TestCase):
 		# then
 		self.assert_(isinstance(actual_religioninfo, CvReligionInfo))
 		self.assertEqual(actual_religioninfo.getText(), expected_religioninfo.getText())
+	
+	def test_pagan_religion(self):
+		# given
+		iPaganReligion = 0
+		expected_paganreligioninfo = gc.getPaganReligionInfo(iPaganReligion)
+		
+		# when
+		actual_paganreligioninfo = self.infos.paganReligion(iPaganReligion)
+		
+		# then
+		self.assert_(isinstance(actual_paganreligioninfo, CvInfoBase))
+		self.assertEqual(actual_paganreligioninfo.getText(), expected_paganreligioninfo.getText())
+	
+	def test_pagan_religion_civ(self):
+		# given
+		iCiv = iBabylonia
+		iExpectedPaganReligion = gc.getCivilizationInfo(iCiv).getPaganReligion()
+		expected_paganreligioninfo = gc.getPaganReligionInfo(iExpectedPaganReligion)
+		
+		# when
+		actual_paganreligioninfo = self.infos.paganReligion(iCiv)
+		
+		# then
+		self.assert_(isinstance(actual_paganreligioninfo, CvInfoBase))
+		self.assertEqual(actual_paganreligioninfo.getText(), expected_paganreligioninfo.getText())
 		
 	def test_gameSpeed(self):
 		# given
@@ -220,11 +249,13 @@ class TestInfos(TestCase):
 		actual_unitinfo = self.infos.unit(unit)
 		
 		# then
-		self.assert_(isinstance(actual_unitinfo, CvUnitInfo))
-		self.assertEqual(actual_unitinfo.getText(), expected_unitinfo.getText())
+		try:
+			self.assert_(isinstance(actual_unitinfo, CvUnitInfo))
+			self.assertEqual(actual_unitinfo.getText(), expected_unitinfo.getText())
 		
 		# cleanup
-		unit.kill(False, 0)
+		finally:
+			unit.kill(False, 0)
 		
 	def test_unit_invalid(self):
 		self.assertRaises(TypeError, self.infos.unit, gc.getMap().plot(0, 0))
@@ -251,10 +282,12 @@ class TestInfos(TestCase):
 		actual_featureinfo = self.infos.feature(plot)
 		
 		# then
-		self.assert_(isinstance(actual_featureinfo, CvFeatureInfo))
+		try:
+			self.assert_(isinstance(actual_featureinfo, CvFeatureInfo))
 		
 		# cleanup
-		plot.setFeatureType(-1, -1)
+		finally:
+			plot.setFeatureType(-1, -1)
 		
 	def test_feature_invalid(self):
 		self.assertRaises(TypeError, self.infos.feature, gc.getMap())
@@ -293,11 +326,13 @@ class TestInfos(TestCase):
 		actual_bonusinfo = self.infos.bonus(plot)
 		
 		# then
-		self.assert_(isinstance(actual_bonusinfo, CvBonusInfo))
-		self.assertEqual(actual_bonusinfo.getText(), expected_bonusinfo.getText())
+		try:
+			self.assert_(isinstance(actual_bonusinfo, CvBonusInfo))
+			self.assertEqual(actual_bonusinfo.getText(), expected_bonusinfo.getText())
 		
 		# cleanup
-		plot.setBonusType(-1)
+		finally:
+			plot.setBonusType(-1)
 		
 	def test_bonus_invalid(self):
 		self.assertRaises(TypeError, self.infos.bonus, gc.getMap())
@@ -447,13 +482,13 @@ class TestInfos(TestCase):
 		self.assert_(isinstance(actual_buildingclassinfo, CvBuildingClassInfo))
 		self.assertEqual(actual_buildingclassinfo.getText(), expected_buildingclassinfo.getText())
 	
-	def test_culture(self):
+	def test_cultureLevel(self):
 		# given
 		iCultureLevel = 0
 		expected_culturelevelinfo = gc.getCultureLevelInfo(0)
 		
 		# when
-		actual_culturelevelinfo = self.infos.culture(iCultureLevel)
+		actual_culturelevelinfo = self.infos.cultureLevel(iCultureLevel)
 		
 		# then
 		self.assert_(isinstance(actual_culturelevelinfo, CvCultureLevelInfo))
@@ -603,14 +638,51 @@ class TestCreatedUnits(TestCase):
 		single_unit = created_units.one()
 		
 		# then
-		self.assertEqual(unit.getID(), single_unit.getID())
+		try:
+			self.assertEqual(unit.getID(), single_unit.getID())
 		
 		# cleanup
-		single_unit.kill(False, 0)
+		finally:
+			single_unit.kill(False, 0)
 	
 	def test_one_many_units(self):
 		# when
 		self.assertRaises(Exception, self.created_units.one)
+	
+	def test_add(self):
+		unit1 = gc.getPlayer(0).initUnit(0, 1, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit2 = gc.getPlayer(0).initUnit(0, 1, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+		units1 = CreatedUnits([unit1])
+		units2 = CreatedUnits([unit2])
+		
+		combined = units1 + units2
+		
+		try:
+			self.assertEqual(len(combined), 2)
+			for unit in combined:
+				self.assertEqual(unit in [unit1, unit2], True)
+		finally:
+			unit1.kill(False, -1)
+			unit2.kill(False, -1)
+	
+	def test_one_promotion(self):
+		iPromotionCombat1 = infos.type("PROMOTION_COMBAT1")
+		created_units = self.created_units.promotion(iPromotionCombat1)
+		
+		for unit in created_units:
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat1), True)
+	
+	def test_multiple_promotions(self):
+		iPromotionCombat1 = infos.type("PROMOTION_COMBAT1")
+		iPromotionCombat2 = infos.type("PROMOTION_COMBAT2")
+		iPromotionCombat3 = infos.type("PROMOTION_COMBAT3")
+		created_units = self.created_units.promotion(iPromotionCombat1, iPromotionCombat2, iPromotionCombat3)
+		
+		for unit in created_units:
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat1), True)
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat2), True)
+			self.assertEqual(unit.isHasPromotion(iPromotionCombat3), True)
 		
 		
 class TestPlayers(TestCase):
@@ -643,12 +715,12 @@ class TestPlayers(TestCase):
 		self.assertEqual(actual_ids, expected_ids)
 		
 	def test_alive(self):
-		players = Players([0, 1, 2, 3])
-		self.assert_(gc.getPlayer(3) in players)
+		players = Players([0, 1, 2, 13])
+		self.assert_(gc.getPlayer(13) in players)
 		
 		players = players.alive()
 		assertType(self, players, Players)
-		self.assert_(gc.getPlayer(3) not in players)
+		self.assert_(gc.getPlayer(13) not in players)
 		
 	def test_ai(self):
 		players = self.players.ai()
@@ -697,11 +769,13 @@ class TestPlayers(TestCase):
 		actual_locations = [(city.getX(), city.getY()) for city in cities]
 		
 		# then
-		self.assertEqual(set(actual_locations), set(expected_locations))
+		try:
+			self.assertEqual(set(actual_locations), set(expected_locations))
 		
 		# cleanup
-		for x, y in expected_locations:
-			gc.getMap().plot(x, y).getPlotCity().kill()
+		finally:
+			for x, y in expected_locations:
+				gc.getMap().plot(x, y).getPlotCity().kill()
 			
 	def test_filter_by_civ(self):
 		expected_players = [0]
@@ -716,19 +790,19 @@ class TestPlayers(TestCase):
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_barbarian(self):
-		expected_players = [0, 1, 2, 49]
+		expected_players = [0, 1, 2, 32]
 		actual_players = self.players.barbarian()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 		
 	def test_independent(self):
-		expected_players = [0, 1, 2, 45, 46]
+		expected_players = [0, 1, 2, 5, 6]
 		actual_players = self.players.independent()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_native(self):
-		expected_players = [0, 1, 2, 47]
+		expected_players = [0, 1, 2, 4]
 		actual_players = self.players.native()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
@@ -759,18 +833,19 @@ class TestPlayers(TestCase):
 		has_writing = self.players.tech(iWriting)
 		has_alloys = self.players.tech(iAlloys)
 		
-		assertType(self, has_writing, Players)
-		assertType(self, has_alloys, Players)
+		try:
+			assertType(self, has_writing, Players)
+			assertType(self, has_alloys, Players)
 		
-		has_writing_ids = [i for i in has_writing]
-		has_alloys_ids = [i for i in has_alloys]
+			has_writing_ids = [i for i in has_writing]
+			has_alloys_ids = [i for i in has_alloys]
 		
-		self.assertEqual(has_writing_ids, [0, 1])
-		self.assertEqual(has_alloys_ids, [0])
-		
-		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iWriting, False, 0, False, False)
-		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iAlloys, False, 0, False, False)
-		gc.getTeam(gc.getPlayer(1).getTeam()).setHasTech(iWriting, False, 0, False, False)
+			self.assertEqual(has_writing_ids, [0, 1])
+			self.assertEqual(has_alloys_ids, [0])
+		finally:
+			gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iWriting, False, 0, False, False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iAlloys, False, 0, False, False)
+			gc.getTeam(gc.getPlayer(1).getTeam()).setHasTech(iWriting, False, 0, False, False)
 	
 	def test_at_war(self):
 		gc.getTeam(gc.getPlayer(0).getTeam()).declareWar(gc.getPlayer(1).getTeam(), True, -1)
@@ -779,28 +854,30 @@ class TestPlayers(TestCase):
 		players1 = self.players.at_war(1)
 		players2 = self.players.at_war(2)
 		
-		assertType(self, players0, Players)
-		assertType(self, players1, Players)
-		assertType(self, players2, Players)
+		try:
+			assertType(self, players0, Players)
+			assertType(self, players1, Players)
+			assertType(self, players2, Players)
 		
-		self.assertEqual(len(players0), 1)
-		self.assertEqual(len(players1), 1)
-		self.assertEqual(len(players2), 0)
+			self.assertEqual(len(players0), 1)
+			self.assertEqual(len(players1), 1)
+			self.assertEqual(len(players2), 0)
 		
-		self.assert_(1 in players0)
-		self.assert_(0 in players1)
-		
-		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
+			self.assert_(1 in players0)
+			self.assert_(0 in players1)
+		finally:
+			gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
 	
 	def test_religion(self):
 		gc.getPlayer(0).setLastStateReligion(0)
 		
 		players = self.players.religion(0)
 		
-		self.assertEqual(len(players), 1)
-		self.assertEqual(players[0], 0)
-		
-		gc.getPlayer(0).setLastStateReligion(-1)
+		try:
+			self.assertEqual(len(players), 1)
+			self.assertEqual(players[0], 0)
+		finally:
+			gc.getPlayer(0).setLastStateReligion(-1)
 		
 	def test_can_only_contain_int_and_civ(self):
 		self.assertRaises(Exception, Players, ["Egypt"])
@@ -810,22 +887,48 @@ class TestPlayers(TestCase):
 		
 		self.assert_(0 in players)
 		self.assert_(1 in players)
+	
+	def test_defensive_pacts(self):
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		players = self.players.defensivePacts()
+		
+		try:
+			self.assertEqual(players.count(), 2)
+			self.assert_(3 in players)
+			self.assert_(4 in players)
+		finally:
+			gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), False)
+		
+			gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
+		
+			gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+			gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
 
 			
 class TestPlayerFactory(TestCase):
 
 	def setUp(self):
 		self.factory = PlayerFactory()
-		
+
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), gc.getMAX_PLAYERS())
+		self.assertEqual(len(players), 14)
 		
 	def test_major(self):
 		players = self.factory.major()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 45)
+		self.assertEqual(len(players), 9)
 		
 	def test_minor(self):
 		players = self.factory.minor()
@@ -841,12 +944,14 @@ class TestPlayerFactory(TestCase):
 		vassals = self.factory.vassals(2)
 		
 		# then
-		assertType(self, vassals, Players)
-		self.assertEqual(len(vassals), 1)
-		self.assert_(gc.getPlayer(1) in vassals)
+		try:
+			assertType(self, vassals, Players)
+			self.assertEqual(len(vassals), 1)
+			self.assert_(gc.getPlayer(1) in vassals)
 		
 		# cleanup
-		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, False, False)
+		finally:
+			gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, False, False)
 	
 	def test_none(self):
 		players = self.factory.none()
@@ -870,27 +975,94 @@ class TestPlayerFactory(TestCase):
 		players1 = self.factory.at_war(1)
 		players2 = self.factory.at_war(2)
 		
-		assertType(self, players0, Players)
-		assertType(self, players1, Players)
-		assertType(self, players2, Players)
+		try:
+			assertType(self, players0, Players)
+			assertType(self, players1, Players)
+			assertType(self, players2, Players)
 		
-		# note: always at war with natives and barbarians
-		self.assertEqual(len(players0), 3)
-		self.assertEqual(len(players1), 3)
-		self.assertEqual(len(players2), 2)
+			# note: always at war with natives and barbarians
+			self.assertEqual(len(players0), 3)
+			self.assertEqual(len(players1), 3)
+			self.assertEqual(len(players2), 2)
 		
-		self.assert_(1 in players0)
-		self.assert_(0 in players1)
+			self.assert_(1 in players0)
+			self.assert_(0 in players1)
+		finally:
+			gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
+	
+	def test_allies_with_vassal(self):
+		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(gc.getPlayer(0).getTeam(), True, False)
 		
-		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
+		allies = self.factory.allies(0)
 		
+		try:
+			self.assertEqual(len(allies), 2)
+			self.assert_(0 in allies)
+			self.assert_(1 in allies)
+		finally:
+			gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(gc.getPlayer(0).getTeam(), False, False)
+	
+	def test_allies_with_defensive_pact(self):
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
 		
+		try:
+			self.assertEqual(gc.getTeam(gc.getPlayer(0).getTeam()).isDefensivePact(gc.getPlayer(1).getTeam()), True)
+			self.assertEqual(gc.getTeam(gc.getPlayer(1).getTeam()).isDefensivePact(gc.getPlayer(0).getTeam()), True)
+		
+			allies = self.factory.allies(0)
+		
+			self.assertEqual(len(allies), 2)
+			self.assert_(0 in allies)
+			self.assert_(1 in allies)
+		finally:
+			gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+	
+	def test_allies_with_defensive_pact_vassal(self):
+		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(gc.getPlayer(1).getTeam(), True, False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), True)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		
+		allies = self.factory.allies(0)
+		
+		try:
+			self.assertEqual(len(allies), 3)
+			self.assert_(0 in allies)
+			self.assert_(1 in allies)
+			self.assert_(2 in allies)
+		finally:
+			gc.getTeam(gc.getPlayer(1).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(1).getTeam(), False)
+			gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(gc.getPlayer(1).getTeam(), False, False)
+	
+	def test_defensive_pacts(self):
+		gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), True)
+		
+		gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), True)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), True)
+		
+		players = self.factory.defensivePacts(0)
+		
+		try:
+			self.assertEqual(len(players), 2)
+			self.assert_(3 in players)
+			self.assert_(4 in players)
+		finally:
+			gc.getTeam(gc.getPlayer(3).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(3).getTeam(), False)
+		
+			gc.getTeam(gc.getPlayer(4).getTeam()).setDefensivePact(gc.getPlayer(0).getTeam(), False)
+			gc.getTeam(gc.getPlayer(0).getTeam()).setDefensivePact(gc.getPlayer(4).getTeam(), False)
+
+
 class TestUnits(TestCase):
 
 	def setUp(self):
 		units = []
 		for x, y in [(0, 0), (0, 1), (0, 2), (0, 3)]:
-			unit = gc.getPlayer(3).initUnit(4, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(7).initUnit(4, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			units.append(unit)
 		self.units = Units(units)
 		self.unit = units[0]
@@ -915,93 +1087,113 @@ class TestUnits(TestCase):
 		
 	def test_owner(self):
 		# given
-		indian_unit = gc.getPlayer(5).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		indian_unit = gc.getPlayer(8).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([indian_unit])
 		
 		# when
-		indian_units = units.owner(5)
+		indian_units = units.owner(8)
 		
 		# then
-		assertType(self, indian_units, Units)
-		self.assertEqual(len(indian_units), 1)
-		self.assert_(indian_unit in indian_units)
+		try:
+			assertType(self, indian_units, Units)
+			self.assertEqual(len(indian_units), 1)
+			self.assert_(indian_unit in indian_units)
 		
 		# cleanup
-		indian_unit.kill(False, -1)
+		finally:
+			indian_unit.kill(False, -1)
 		
 	def test_owner_civ(self):
 		# given
-		indian_unit = gc.getPlayer(5).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		indian_unit = gc.getPlayer(8).initUnit(4, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([indian_unit])
 		
 		# when
 		indian_units = units.owner(iIndia)
 		
 		# then
-		assertType(self, indian_units, Units)
-		self.assertEqual(len(indian_units), 1)
-		self.assert_(indian_unit in indian_units)
+		try:
+			assertType(self, indian_units, Units)
+			self.assertEqual(len(indian_units), 1)
+			self.assert_(indian_unit in indian_units)
 		
 		# cleanup
-		indian_unit.kill(False, -1)
+		finally:
+			indian_unit.kill(False, -1)
 		
 	def test_type(self):
 		# given
-		worker = gc.getPlayer(3).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		worker = gc.getPlayer(7).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([worker])
 		
 		# when
 		workers = units.type(7)
 		
 		# then
-		assertType(self, workers, Units)
-		self.assertEqual(len(workers), 1)
-		self.assert_(worker in workers)
+		try:
+			assertType(self, workers, Units)
+			self.assertEqual(len(workers), 1)
+			self.assert_(worker in workers)
 
 		# cleanup
-		worker.kill(False, 3)
+		finally:
+			worker.kill(False, 7)
 		
 	def test_by_type(self):
 		# given
-		worker = gc.getPlayer(3).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		worker = gc.getPlayer(7).initUnit(7, 0, 4, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		units = self.units + Units([worker])
 		
 		# when
 		grouped = units.by_type()
 		
 		# then
-		assertType(self, grouped, dict)
-		self.assertEqual(len(grouped), 2)
-		self.assert_(4 in grouped)
-		self.assertEqual(len(grouped[4]), 4)
-		self.assert_(7 in grouped)
-		self.assertEqual(len(grouped[7]), 1)
+		try:
+			assertType(self, grouped, dict)
+			self.assertEqual(len(grouped), 2)
+			self.assert_(4 in grouped)
+			self.assertEqual(len(grouped[4]), 4)
+			self.assert_(7 in grouped)
+			self.assertEqual(len(grouped[7]), 1)
 		
 		# cleanup
-		worker.kill(False, 3)
+		finally:
+			worker.kill(False, 7)
 	
 	def test_types(self):
 		self.assertEqual(self.units.types(), [4, 4, 4, 4])
 	
 	def test_domain(self):
-		unit = gc.getPlayer(3).initUnit(iGalley, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		waterUnits = units.owner(3).domain(DomainTypes.DOMAIN_SEA)
+		unit = gc.getPlayer(7).initUnit(iGalley, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		waterUnits = units.owner(7).domain(DomainTypes.DOMAIN_SEA)
 		
 		self.assertEqual(len(waterUnits), 1)
 		
-		waterUnit = waterUnits[0]
-		assertType(self, waterUnit, CyUnit)
-		self.assertEqual(waterUnit.getX(), 0)
-		self.assertEqual(waterUnit.getY(), 1)
-		
-		unit.kill(False, 3)
+		try:
+			waterUnit = waterUnits[0]
+			assertType(self, waterUnit, CyUnit)
+			self.assertEqual(waterUnit.getX(), 0)
+			self.assertEqual(waterUnit.getY(), 1)
+		finally:
+			unit.kill(False, 7)
 	
 	def test_land(self):
-		landUnits = units.owner(3).land()
+		landUnits = units.owner(7).land()
 		
 		self.assertEqual(len(landUnits), 4)
 		for unit in landUnits:
 			self.assertEqual(unit.getUnitType(), 4)
+	
+	def test_combat(self):
+		swordsman = gc.getPlayer(7).initUnit(iSwordsman, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		archer = gc.getPlayer(7).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+		try:
+			archers = units.owner(7).combat(UnitCombatTypes.UNITCOMBAT_ARCHER)
+			self.assertEqual(len(archers), 1)
+		finally:
+			swordsman.kill(False, -1)
+			archer.kill(False, -1)
 
 		
 class TestUnitFactory(TestCase):
@@ -1010,11 +1202,11 @@ class TestUnitFactory(TestCase):
 		self.factory = UnitFactory()
 		self.units = []
 		for _ in range(4):
-			unit = gc.getPlayer(3).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(7).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			self.units.append(unit)
 			
 		for _ in range(3):
-			unit = gc.getPlayer(4).initUnit(4, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			unit = gc.getPlayer(8).initUnit(4, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			self.units.append(unit)
 
 	def tearDown(self):
@@ -1023,7 +1215,7 @@ class TestUnitFactory(TestCase):
 
 	def test_owner_id(self):
 		# when
-		chinese_units = self.factory.owner(3)
+		chinese_units = self.factory.owner(7)
 		
 		# then
 		assertType(self, chinese_units, Units)
@@ -1039,7 +1231,7 @@ class TestUnitFactory(TestCase):
 		
 	def test_owner_player(self):
 		# when
-		chinese_units = self.factory.owner(gc.getPlayer(3))
+		chinese_units = self.factory.owner(gc.getPlayer(7))
 		
 		# then
 		assertType(self, chinese_units, Units)
@@ -1091,13 +1283,19 @@ class TestPlots(TestCase):
 		
 	def test_contains_unit(self):
 		unit = gc.getPlayer(3).initUnit(4, 1, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		self.assert_(unit in self.plots)
-		unit.kill(False, 3)
+		
+		try:
+			self.assert_(unit in self.plots)
+		finally:
+			unit.kill(False, 3)
 		
 	def test_contains_city(self):
 		city = gc.getPlayer(3).initCity(1, 1)
-		self.assert_(city in self.plots)
-		city.kill()
+		
+		try:
+			self.assert_(city in self.plots)
+		finally:
+			city.kill()
 		
 	def test_string(self):
 		self.assertEqual(str(self.plots), str(self.tiles))
@@ -1111,14 +1309,16 @@ class TestPlots(TestCase):
 		cities = self.plots.cities()
 		
 		# then
-		assertType(self, cities, Cities)
-		self.assertEqual(len(cities), 2)
-		self.assert_(first_city in cities)
-		self.assert_(second_city in cities)
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(len(cities), 2)
+			self.assert_(first_city in cities)
+			self.assert_(second_city in cities)
 		
 		# cleanup
-		first_city.kill()
-		second_city.kill()
+		finally:
+			first_city.kill()
+			second_city.kill()
 		
 	def test_units(self):
 		# given
@@ -1131,14 +1331,16 @@ class TestPlots(TestCase):
 		units = self.plots.units()
 		
 		# then
-		assertType(self, units, Units)
-		self.assertEqual(len(units), 4)
-		for unit in tile_units:
-			self.assert_(unit in units)
+		try:
+			assertType(self, units, Units)
+			self.assertEqual(len(units), 4)
+			for unit in tile_units:
+				self.assert_(unit in units)
 			
 		# cleanup
-		for unit in tile_units:
-			unit.kill(False, 3)
+		finally:
+			for unit in tile_units:
+				unit.kill(False, 3)
 			
 	def test_without_tile(self):
 		plots = self.plots.without((1, 1))
@@ -1175,21 +1377,23 @@ class TestPlots(TestCase):
 		city = gc.getPlayer(3).initCity(1, 1)
 		plots = self.plots.without(city)
 		
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 8)
-		self.assert_((1, 1) not in plots)
-		
-		city.kill()
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 8)
+			self.assert_((1, 1) not in plots)
+		finally:
+			city.kill()
 		
 	def test_without_unit(self):
 		unit = gc.getPlayer(3).initUnit(4, 1, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		plots = self.plots.without(unit)
 		
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 8)
-		self.assert_((1, 1) not in plots)
-		
-		unit.kill(False, 3)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 8)
+			self.assert_((1, 1) not in plots)
+		finally:
+			unit.kill(False, 3)
 		
 	def test_without_list(self):
 		tiles = [(0, 0), (1, 0), (2, 0)]
@@ -1250,12 +1454,14 @@ class TestPlots(TestCase):
 		plots = self.plots.owner(0)
 		
 		# then
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 1)
-		self.assert_((1, 1) in plots)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 1)
+			self.assert_((1, 1) in plots)
 		
 		# cleanup
-		gc.getMap().plot(1, 1).setOwner(-1)
+		finally:
+			gc.getMap().plot(1, 1).setOwner(-1)
 		
 	def test_owner_civ(self):
 		# given
@@ -1265,12 +1471,14 @@ class TestPlots(TestCase):
 		plots = self.plots.owner(iEgypt)
 		
 		# then
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 1)
-		self.assert_((1, 1) in plots)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 1)
+			self.assert_((1, 1) in plots)
 		
 		# cleanup
-		gc.getMap().plot(1, 1).setOwner(-1)
+		finally:
+			gc.getMap().plot(1, 1).setOwner(-1)
 		
 	def test_notowner(self):
 		# given
@@ -1280,12 +1488,14 @@ class TestPlots(TestCase):
 		plots = self.plots.notowner(1)
 		
 		# then
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 8)
-		self.assert_((1, 1) not in plots)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 8)
+			self.assert_((1, 1) not in plots)
 		
 		# cleanup
-		gc.getMap().plot(1, 1).setOwner(-1)
+		finally:
+			gc.getMap().plot(1, 1).setOwner(-1)
 		
 	def test_notowner_civ(self):
 		# given
@@ -1295,12 +1505,14 @@ class TestPlots(TestCase):
 		plots = self.plots.notowner(iEgypt)
 		
 		# then
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 8)
-		self.assert_((1, 1) not in plots)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 8)
+			self.assert_((1, 1) not in plots)
 		
 		# cleanup
-		gc.getMap().plot(1, 1).setOwner(-1)
+		finally:
+			gc.getMap().plot(1, 1).setOwner(-1)
 	
 	def test_owners(self):
 		# given
@@ -1313,16 +1525,18 @@ class TestPlots(TestCase):
 		players = plots.owners()
 		
 		# then
-		assertType(self, players, Players)
-		self.assertEqual(len(players), 2)
-		self.assert_(0 in players)
-		self.assert_(1 in players)
-		self.assert_(-1 not in players)
+		try:
+			assertType(self, players, Players)
+			self.assertEqual(len(players), 2)
+			self.assert_(0 in players)
+			self.assert_(1 in players)
+			self.assert_(-1 not in players)
 		
 		# cleanup
-		gc.getMap().plot(2, 2).setOwner(-1)
-		gc.getMap().plot(3, 2).setOwner(-1)
-		gc.getMap().plot(4, 2).setOwner(-1)
+		finally:
+			gc.getMap().plot(2, 2).setOwner(-1)
+			gc.getMap().plot(3, 2).setOwner(-1)
+			gc.getMap().plot(4, 2).setOwner(-1)
 		
 	def test_where_surrounding(self):
 		# given
@@ -1332,14 +1546,14 @@ class TestPlots(TestCase):
 		plots = self.plots.where_surrounding(lambda p: p.getNumUnits() == 0)
 		
 		# then
-		print "units: %s" % Plots([(x, y) for x in range(5) for y in range(5)]).units()
-		print "test_where_surrounding: %s" % plots 
-		assertType(self, plots, Plots)
-		self.assertEqual(len(plots), 8)
-		self.assert_((2, 2) not in plots)
+		try:
+			assertType(self, plots, Plots)
+			self.assertEqual(len(plots), 8)
+			self.assert_((2, 2) not in plots)
 		
 		# cleanup
-		unit.kill(False, 3)
+		finally:
+			unit.kill(False, 3)
 		
 	def test_land(self):
 		plots = Plots([(64+x, 10+y) for x in range(3) for y in range(3)])
@@ -1355,12 +1569,19 @@ class TestPlots(TestCase):
 		plots = Plots([(64+x, 10+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.water()), 0)
 		
-	def test_core(self):
+	def test_core_player(self):
 		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.core(0)), 9)
 		
-	def test_no_core(self):
+	def test_no_core_player(self):
 		self.assertEqual(len(self.plots.core(0)), 0)
+	
+	def test_core_civ(self):
+		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
+		self.assertEqual(len(plots.core(iEgypt)), 9)
+	
+	def test_no_core_civ(self):
+		self.assertEqual(len(self.plots.core(iEgypt)), 0)
 		
 	def test_any(self):
 		self.assert_(self.plots.any(lambda p: p.getX() == 0))
@@ -1379,6 +1600,10 @@ class TestPlots(TestCase):
 		
 	def test_not_none(self):
 		self.assert_(not self.plots.none(lambda p: p.getX() > 1))
+	
+	def test_none_empty(self):
+		plots = PlotFactory().of([])
+		self.assertEqual(plots.none(lambda p: p.getX() > 2), True)
 		
 	def test_first(self):
 		plot = self.plots.first()
@@ -1425,6 +1650,17 @@ class TestPlots(TestCase):
 		
 		self.assert_(even.all(lambda p: (p.getX() + p.getY()) % 2 == 0))
 		self.assert_(odd.all(lambda p: (p.getX() + p.getY()) % 2 == 1))
+	
+	def test_percentage_split(self):
+		left, right = self.plots.limit(8).percentage_split(25)
+		
+		assertType(self, left, Plots)
+		assertType(self, right, Plots)
+		
+		self.assertEqual(len(left), 2)
+		self.assertEqual(len(right), 6)
+		
+		self.assertEqual(left, self.plots.limit(2))
 		
 	def test_sort(self):
 		expected_tiles = [(0, 0), (0, 1), (1, 0), (0, 2), (1, 1), (2, 0), (1, 2), (2, 1), (2, 2)]
@@ -1523,11 +1759,31 @@ class TestPlots(TestCase):
 		self.assertEqual(len(plots), 3)
 		self.assertEqual(plots, self.plots.limit(3))
 		
+	def test_percentage(self):
+		plots = self.plots.limit(5).percentage(60)
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 3)
+		self.assertEqual(plots, self.plots.limit(3))
+		
 	def test_sum(self):
 		sum = self.plots.sum(lambda p: p.getX() + p.getY())
 		
 		assertType(self, sum, int)
 		self.assertEqual(sum, 18)
+	
+	def test_average(self):
+		average = self.plots.average(lambda p: p.getX() + p.getY())
+		
+		assertType(self, average, float)
+		self.assertEqual(average, 2.0)
+	
+	def test_average_empty(self):
+		plots = Plots([])
+		average = plots.average(lambda p: p.getX() + p.getY())
+		
+		assertType(self, average, float)
+		self.assertEqual(average, 0.0)
 		
 	def test_accessor(self):
 		plot = self.plots[0]
@@ -1566,7 +1822,10 @@ class TestPlots(TestCase):
 		
 	def test_equal_other_class(self):
 		cities = Cities(self.cities)
-		self.assertRaises(TypeError, self.plots.__eq__, cities)
+		self.assert_(self.plots != cities)
+	
+	def test_unequal_none(self):
+		self.assert_(self.plots != None)
 		
 	def test_greater_than_plots(self):
 		plots = self.plots.including((3, 3))
@@ -1636,8 +1895,360 @@ class TestPlots(TestCase):
 		self.assert_((0, 0) in plots)
 		self.assert_((1, 1) in plots)
 		self.assert_((2, 2) in plots)
+	
+	def test_no_enemies(self):
+		unit0 = gc.getPlayer(0).initUnit(iArcher, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit1 = gc.getPlayer(1).initUnit(iArcher, 0, 1, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		unit2 = gc.getPlayer(2).initUnit(iArcher, 0, 2, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
+		gc.getTeam(0).setAtWar(1, True)
 		
+		plots = self.plots.no_enemies(0)
+		
+		self.assertEqual(len(plots), 8)
+		self.assert_((0, 0) in plots)
+		self.assert_((0, 1) not in plots)
+		self.assert_((0, 2) in plots)
+		
+		unit0.kill(False, -1)
+		unit1.kill(False, -1)
+		unit2.kill(False, -1)
+		
+		gc.getTeam(0).setAtWar(1, False)
+
+	def test_enrich(self):
+		tiles = [(0, 0), (0, 1), (0, 2)]
+		testPlots = Plots(tiles)
+		
+		enriched = testPlots.enrich(lambda (x, y): plots.of([(x+1, y)]))
+		
+		self.assertEqual(len(enriched), 6)
+		self.assert_((1, 0) in enriched)
+		self.assert_((1, 1) in enriched)
+		self.assert_((1, 2) in enriched)
+	
+	def test_enrich_unique(self):
+		tiles = [(0, 0)]
+		testPlots = Plots(tiles)
+		
+		func = lambda (x, y): plots.of([(x+1, y)])
+		enriched = testPlots.enrich(func).enrich(func)
+		
+		self.assertEqual(len(enriched), 3)
+		self.assert_((0, 0) in enriched)
+		self.assert_((1, 0) in enriched)
+		self.assert_((2, 0) in enriched)
+	
+	def test_no_name(self):
+		self.assertEqual(self.plots.name(), "")
+	
+	def test_named(self):
+		plots = self.plots.named("Europe")
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(plots.name(), "Europe")
+	
+	def test_name_preserved_by_transformation(self):
+		plots = self.plots.named("Europe")
+		self.assertEqual(plots.name(), "Europe")
+		
+		plots = self.plots.where(lambda p: p.getX() == 1)
+		self.assertEqual(plots.name(), "Europe")
+	
+	def test_all_if_any_empty(self):
+		plots = Plots([])
+		self.assertEqual(plots.all_if_any(lambda plot: plot.getX() >= 0), False)
+	
+	def test_all_if_any_all(self):
+		self.assertEqual(self.plots.all_if_any(lambda plot: plot.getX() >= 0), True)
+	
+	def test_all_if_any_some(self):
+		self.assertEqual(self.plots.all_if_any(lambda plot: plot.getX() >= 2), False)
+	
+	def test_take_less(self):
+		first, second, third = self.plots.take(3)
+		
+		assertType(self, first, CyPlot)
+		self.assertEqual((first.getX(), first.getY()), (0, 0))
+		
+		assertType(self, second, CyPlot)
+		self.assertEqual((second.getX(), second.getY()), (0, 1))
+		
+		assertType(self, third, CyPlot)
+		self.assertEqual((third.getX(), third.getY()), (0, 2))
+	
+	def test_take_more(self):
+		taken = self.plots.take(10)
+		
+		self.assertEqual(taken[-1], None)
+		assertType(self, taken[-2], CyPlot)
+	
+	def test_expand(self):
+		area = PlotFactory().of([(1, 1), (2, 1)])
+		
+		expectedExpanded = PlotFactory().of([(x, y) for x in range(4) for y in range(3)])
+		actualExpanded = area.expand(1)
+		
+		self.assertEqual(actualExpanded.same(expectedExpanded), True)
+	
+	def test_edge(self):
+		tiles = [(50+x, 50+y) for x in range(3) for y in range(3)]
+		area = PlotFactory().of(tiles)
+		
+		expectedTiles = [(50, 50), (50, 51), (50, 52), (51, 50), (51, 52), (52, 50), (52, 51), (52, 52)]
+		
+		edge = area.edge()
+		
+		self.assertEqual(edge.count(), len(expectedTiles))
+		for tile in expectedTiles:
+			self.assertEqual(tile in edge, True)
+	
+	def test_grouped(self):
+		grouped = list(self.plots.grouped(lambda plot: (plot.getX() + plot.getY()) % 2))
+		
+		expectedEven = [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)]
+		expectedOdd = [(0, 1), (1, 0), (1, 2), (2, 1)]
+		
+		self.assertEqual(len(grouped), 2)
+		evenGroup, oddGroup = grouped
+		
+		evenKey, evenValues = evenGroup
+		self.assertEqual(evenKey, 0)
+		assertType(self, evenValues, Plots)
+		self.assertEqual([(p.getX(), p.getY()) for p in evenValues], expectedEven)
+		
+		oddKey, oddValues = oddGroup
+		self.assertEqual(oddKey, 1)
+		assertType(self, oddValues, Plots)
+		self.assertEqual([(p.getX(), p.getY()) for p in oddValues], expectedOdd)
+	
+	def test_closest_all(self):
+		other_plots = PlotFactory().of([(4, 4), (4, 5), (5, 4), (5, 5)])
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual((closest_plot.getX(), closest_plot.getY()), (2, 2))
+		self.assertEqual((closest_other_plot.getX(), closest_other_plot.getY()), (4, 4))
+	
+	def test_closest_all_overlap(self):
+		other_plots = PlotFactory().of([(2, 2), (2, 3), (3, 2), (3, 3)])
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual((closest_plot.getX(), closest_plot.getY()), (2, 2))
+		self.assertEqual((closest_other_plot.getX(), closest_other_plot.getY()), (2, 2))
+	
+	def test_closest_all_empty(self):
+		other_plots = PlotFactory().none()
+		
+		closest_plot = self.plots.closest_all(other_plots)
+		closest_other_plot = other_plots.closest_all(self.plots)
+		
+		self.assertEqual(closest_plot, None)
+		self.assertEqual(closest_other_plot, None)
+	
+	def test_closest_all_not_locations(self):
+		other_plots = [(2, 2), (2, 3)]
+		
+		self.assertRaises(Exception, self.plots.closest_all, other_plots)
+		
+	def test_closest_within_match(self):
+		closest_within = self.plots.closest_within((2, 2))
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 1)
+		self.assertEqual((closest_within[0].getX(), closest_within[0].getY()), (2, 2))
+	
+	def test_closest_within_outside(self):
+		closest_within = self.plots.closest_within((3, 1))
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_outside_radius(self):
+		closest_within = self.plots.closest_within((4, 1), radius=2)
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_outside_radius_closer(self):
+		closest_within = self.plots.closest_within((3, 1), radius=2)
+		
+		expected_tiles = [(2, 0), (2, 1), (2, 2)]
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 3)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in closest_within]
+		
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_closest_within_empty(self):
+		closest_within = self.plots.closest_within((4, 1), radius=1)
+		
+		assertType(self, closest_within, Plots)
+		self.assertEqual(closest_within.count(), 0)
+		
+	def test_area(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaID = plot(africaTile).getArea()
+		africaPlots = plots.area(africaID)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_tile(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaPlots = plots.area(africaTile)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_plot(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaPlot = plot(africaTile)
+		africaPlots = plots.area(africaPlot)
+		
+		assertType(self, africaPlots, Plots)
+		self.assertEqual(africaPlots.count(), 1)
+		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+	
+	def test_area_city(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		
+		plots = PlotFactory().of([africaTile, americaTile])
+		
+		africaCity = gc.getPlayer(0).initCity(*africaTile)
+		africaPlots = plots.area(africaCity)
+		
+		try:
+			assertType(self, africaPlots, Plots)
+			self.assertEqual(africaPlots.count(), 1)
+			self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
+		finally:
+			africaCity.kill()
+		
+	def test_areas(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaID = plot(africaTile).getArea()
+		americaID = plot(americaTile).getArea()
+		areaPlots = plots.areas(africaID, americaID)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_tiles(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		areaPlots = plots.areas(africaTile, americaTile)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_plots(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaPlot = plot(africaTile)
+		americaPlot = plot(americaTile)
+		areaPlots = plots.areas(africaPlot, americaPlot)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		assertType(self, areaPlots, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_areas_cities(self):
+		africaTile = (48, 30)
+		americaTile = (37, 28)
+		australiaTile = (117, 11)
+		
+		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
+		
+		africaCity = gc.getPlayer(0).initCity(*africaTile)
+		americaCity = gc.getPlayer(0).initCity(*americaTile)
+		areaPlots = plots.areas(africaCity, americaCity)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in areaPlots]
+		expected_tiles = [africaTile, americaTile]
+		
+		try:
+			assertType(self, areaPlots, Plots)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			africaCity.kill()
+			americaCity.kill()
+	
+	def test_intersect(self):
+		left = PlotFactory().of([(0, 0), (0, 1)])
+		right = PlotFactory().of([(0, 1), (0, 2)])
+		
+		self.assertEqual(left.intersect(right), True)
+		self.assertEqual(right.intersect(left), True)
+	
+	def test_not_intersect(self):
+		left = PlotFactory().of([(0, 0)])
+		right = PlotFactory().of([(0, 1)])
+		
+		self.assertEqual(left.intersect(right), False)
+		self.assertEqual(right.intersect(left), False)
+	
+	def test_intersect_equal(self):
+		left = PlotFactory().of([(0, 0)])
+		right = PlotFactory().of([(0, 0)])
+		
+		self.assertEqual(left.intersect(right), True)
+		self.assertEqual(right.intersect(left), True)
+
+
 class TestPlotFactory(TestCase):
 
 	def setUp(self):
@@ -1726,10 +2337,19 @@ class TestPlotFactory(TestCase):
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
 		self.assertEqual(set(actual_tiles), set(expected_tiles))
+		self.assertEqual((1, 1) in plots, False)
 		
 	def test_ring_large(self):
 		expected_tiles = [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (1, 4), (2, 4), (3, 4)]
 		plots = self.factory.ring(2, 2, radius=2)
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in plots]
+		
+		self.assertEqual(set(actual_tiles), set(expected_tiles))
+	
+	def test_circle(self):
+		expected_tiles = [(0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3)]
+		plots = self.factory.circle(2, 2, radius=2)
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
@@ -1744,10 +2364,11 @@ class TestPlotFactory(TestCase):
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
-		self.assertEqual(set(actual_tiles), set(expected_tiles))
-		
-		gc.getMap().plot(0, 0).setOwner(-1)
-		gc.getMap().plot(1, 0).setOwner(-1)
+		try:
+			self.assertEqual(set(actual_tiles), set(expected_tiles))
+		finally:
+			gc.getMap().plot(0, 0).setOwner(-1)
+			gc.getMap().plot(1, 0).setOwner(-1)
 		
 	def test_owner_civ(self):
 		gc.getMap().plot(0, 0).setOwner(0)
@@ -1758,10 +2379,11 @@ class TestPlotFactory(TestCase):
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
-		self.assertEqual(set(actual_tiles), set(expected_tiles))
-		
-		gc.getMap().plot(0, 0).setOwner(-1)
-		gc.getMap().plot(1, 0).setOwner(-1)
+		try:
+			self.assertEqual(set(actual_tiles), set(expected_tiles))
+		finally:
+			gc.getMap().plot(0, 0).setOwner(-1)
+			gc.getMap().plot(1, 0).setOwner(-1)
 	
 	def test_birth(self):
 		plots = self.factory.birth(iEgypt)
@@ -1809,16 +2431,46 @@ class TestPlotFactory(TestCase):
 		actual_plots = self.factory.city_radius(city)
 		sorted_actual_plots = sorted([(plot.getX(), plot.getY()) for plot in actual_plots])
 		
-		self.assertEqual(sorted_actual_plots, expected_plots)
+		try:
+			self.assertEqual(sorted_actual_plots, expected_plots)
+		finally:
+			city.kill()
+	
+	def test_sum(self):
+		area1 = self.factory.of([(0, 0), (0, 1)])
+		area2 = self.factory.of([(0, 2), (0, 3)])
 		
-		city.kill()
+		combined = self.factory.sum([area1, area2])
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in combined]
+		expected_tiles = [(0, 0), (0, 1), (0, 2), (0, 3)]
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(actual_tiles, expected_tiles)
+		
+	def test_sum_empty(self):
+		combined = self.factory.sum([])
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(combined.count(), 0)
+	
+	def test_sum_one(self):
+		tiles = [(0, 0), (0, 1)]
+		area = self.factory.of(tiles)
+		
+		combined = self.factory.sum([area])
+		
+		actual_tiles = [(p.getX(), p.getY()) for p in combined]
+		
+		assertType(self, combined, Plots)
+		self.assertEqual(actual_tiles, tiles)
 
 class TestCities(TestCase):
 
 	def setUp(self):
-		city1 = gc.getPlayer(3).initCity(0, 0)
-		city2 = gc.getPlayer(3).initCity(0, 2)
-		city3 = gc.getPlayer(4).initCity(2, 0)
+		city1 = gc.getPlayer(7).initCity(0, 0)
+		city2 = gc.getPlayer(7).initCity(0, 2)
+		city3 = gc.getPlayer(8).initCity(2, 0)
 		
 		self.cities = Cities([city1, city2, city3])
 		
@@ -1841,8 +2493,11 @@ class TestCities(TestCase):
 		
 	def test_contains_unit(self):
 		unit = gc.getPlayer(3).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		self.assert_(unit in self.cities)
-		unit.kill(False, 3)
+		
+		try:
+			self.assert_(unit in self.cities)
+		finally:
+			unit.kill(False, 3)
 		
 	def test_contains_other(self):
 		self.assertRaises(TypeError, self.cities.__contains__, 0)
@@ -1917,7 +2572,7 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_owner(self):
-		cities = self.cities.owner(3)
+		cities = self.cities.owner(7)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -1945,15 +2600,17 @@ class TestCities(TestCase):
 		players = cities.owners()
 		
 		# then
-		assertType(self, players, Players)
-		self.assertEqual(len(players), 2)
-		self.assert_(0 in players)
-		self.assert_(1 in players)
+		try:
+			assertType(self, players, Players)
+			self.assertEqual(len(players), 2)
+			self.assert_(0 in players)
+			self.assert_(1 in players)
 		
 		# cleanup
-		city1.kill()
-		city2.kill()
-		city3.kill()
+		finally:
+			city1.kill()
+			city2.kill()
+			city3.kill()
 		
 	def test_building(self):
 		self.cities[0].setHasRealBuilding(iFactory, True)
@@ -1975,20 +2632,38 @@ class TestCities(TestCase):
 		assertType(self, cities, Cities)
 		self.assertEqual(actual_tiles, expected_tiles)
 		
-	def test_core(self):
+	def test_core_player(self):
 		city = gc.getPlayer(0).initCity(69, 33)
 		cities = self.cities.including(city)
 		self.assertEqual(len(cities), 4)
+		
 		actual_cities = cities.core(0)
 		expected_tiles = [(69, 33)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
-		assertType(self, cities, Cities)
-		self.assertEqual(actual_tiles, expected_tiles)
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			city.kill()
+	
+	def test_core_civ(self):
+		city = gc.getPlayer(0).initCity(69, 33)
+		cities = self.cities.including(city)
+		self.assertEqual(len(cities), 4)
 		
-		city.kill()
+		actual_cities = cities.core(iEgypt)
+		expected_tiles = [(69, 33)]
 		
+		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
+		
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			city.kill()
+			
 	def test_coastal(self):
 		city = gc.getPlayer(0).initCity(63, 10)
 		cities = self.cities.including(city)
@@ -1997,10 +2672,11 @@ class TestCities(TestCase):
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
-		assertType(self, cities, Cities)
-		self.assertEqual(actual_tiles, expected_tiles)
-		
-		city.kill()
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(actual_tiles, expected_tiles)
+		finally:
+			city.kill()
 		
 	def test_regions(self):
 		tiles = [(23, 37), (26, 38), (26, 40)] # mesoamerica, caribbean, usa
@@ -2015,15 +2691,16 @@ class TestCities(TestCase):
 		actual_cities = cities.regions(rCaribbean, rMesoamerica)
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
-		self.assertEqual(set(actual_tiles), set(expected_tiles))
-		
-		for city in created_cities:
-			city.kill()
+		try:
+			self.assertEqual(set(actual_tiles), set(expected_tiles))
+		finally:
+			for city in created_cities:
+				city.kill()
 			
 	def test_notowner(self):
 		expected_tiles = [(2, 0)]
 		
-		cities = self.cities.notowner(3)
+		cities = self.cities.notowner(7)
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
 		
 		self.assertEqual(actual_tiles, expected_tiles)
@@ -2036,13 +2713,26 @@ class TestCities(TestCase):
 		
 		self.assertEqual(actual_tiles, expected_tiles)
 		
+	def test_existing(self):
+		city = gc.getPlayer(0).initCity(4, 4)
+		
+		cities = CityFactory().of([(4, 4)])
+		
+		self.assertEqual(len(cities), 1)
+		self.assertEqual(len(cities.existing()), 1)
+		
+		city.kill()
+		
+		self.assertEqual(len(cities), 1)
+		self.assertEqual(len(cities.existing()), 0)
+		
 		
 class TestCityFactory(TestCase):
 
 	def setUp(self):
-		gc.getPlayer(3).initCity(0, 0)
-		gc.getPlayer(3).initCity(0, 2)
-		gc.getPlayer(4).initCity(2, 0)
+		gc.getPlayer(7).initCity(0, 0)
+		gc.getPlayer(7).initCity(0, 2)
+		gc.getPlayer(8).initCity(2, 0)
 		
 		self.factory = CityFactory()
 		
@@ -2051,7 +2741,7 @@ class TestCityFactory(TestCase):
 			gc.getMap().plot(x, y).getPlotCity().kill()
 			
 	def test_owner(self):
-		cities = self.factory.owner(3)
+		cities = self.factory.owner(7)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -2088,15 +2778,16 @@ class TestCityFactory(TestCase):
 		
 	def test_region(self):
 		caribbean = plots.region(rCaribbean).random()
-		city = gc.getPlayer(3).initCity(caribbean.getX(), caribbean.getY())
+		city = gc.getPlayer(7).initCity(caribbean.getX(), caribbean.getY())
 		
 		cities = self.factory.region(rCaribbean)
 		
-		assertType(self, cities, Cities)
-		self.assertEqual(len(cities), 1)
-		self.assert_(city in cities)
-		
-		city.kill()
+		try:
+			assertType(self, cities, Cities)
+			self.assertEqual(len(cities), 1)
+			self.assert_(city in cities)
+		finally:
+			city.kill()
 		
 	def test_of(self):
 		cities = self.factory.of([(0, 0), (0, 1), (0, 2)])
@@ -2137,9 +2828,11 @@ class TestMove(TestCase):
 	def test_move_city(self):
 		city = gc.getPlayer(3).initCity(0, 2)
 		move(self.unit, city)
-		self.assertEqual((self.unit.getX(), self.unit.getY()), (0, 2))
 		
-		city.kill()
+		try:
+			self.assertEqual((self.unit.getX(), self.unit.getY()), (0, 2))
+		finally:
+			city.kill()
 		
 	def test_move_no_destination(self):
 		move(self.unit, None)
@@ -2186,6 +2879,9 @@ class TestUniqueUnitsAndBuildings(TestCase):
 		
 	def test_base_building_for_unique(self):
 		self.assertEqual(base_building(iObelisk), iMonument)
+		
+	def test_base_building_for_none(self):
+		self.assertEqual(base_building(None), None)
 		
 	def test_unique_building_for_base(self):
 		self.assertEqual(unique_building(0, iMonument), iObelisk)
@@ -2237,9 +2933,10 @@ class TestMasterAndVassal(TestCase):
 		
 		self.assert_(gc.getTeam(0).isVassal(1))
 		
-		self.assertEqual(master(0), 1)
-		
-		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
+		try:
+			self.assertEqual(master(0), 1)
+		finally:
+			gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
 		
 	def test_master_no_vassal(self):
 		self.assertEqual(master(1), None)
@@ -2249,11 +2946,12 @@ class TestMasterAndVassal(TestCase):
 		
 		vassal = vassals()
 		
-		assertType(self, vassal, DefaultDict)
-		self.assertEqual(vassal[0], [])
-		self.assertEqual(vassal[1], [0])
-		
-		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
+		try:
+			assertType(self, vassal, DefaultDict)
+			self.assertEqual(vassal[0], [])
+			self.assertEqual(vassal[1], [0])
+		finally:
+			gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
 		
 	def test_vassals_no_vassals(self):
 		vassal = vassals()
@@ -2337,12 +3035,14 @@ class TestMakeUnit(TestCase):
 	def test_make_unit_city(self):
 		city = gc.getPlayer(0).initCity(0, 0)
 		unit = makeUnit(0, 4, city)
-		assertType(self, unit, CyUnit)
-		self.assertEqual(unit.getOwner(), 0)
-		self.assertEqual(unit.getUnitType(), 4)
-		self.assertEqual((unit.getX(), unit.getY()), (0, 0))
 		
-		city.kill()
+		try:
+			assertType(self, unit, CyUnit)
+			self.assertEqual(unit.getOwner(), 0)
+			self.assertEqual(unit.getUnitType(), 4)
+			self.assertEqual((unit.getX(), unit.getY()), (0, 0))
+		finally:
+			city.kill()
 		
 	def test_make_units(self):
 		units = makeUnits(0, 4, (0, 0), 3)
@@ -2388,14 +3088,22 @@ class TestDistance(TestCase):
 
 	def test_distance(self):
 		self.assertEqual(distance((0, 0), (0, 2)), 2)
+		self.assertEqual(real_distance((0, 0), (0, 2)), 2)
 		
 	def test_distance_plots(self):
 		self.assertEqual(distance(gc.getMap().plot(0, 0), gc.getMap().plot(0, 2)), 2)
+		self.assertEqual(real_distance(gc.getMap().plot(0, 0), gc.getMap().plot(0, 2)), 2)
 		
 	def test_distance_cities(self):
 		city1 = gc.getPlayer(0).initCity(0, 0)
 		city2 = gc.getPlayer(0).initCity(0, 2)
-		self.assertEqual(distance(city1, city2), 2)
+		
+		try:
+			self.assertEqual(distance(city1, city2), 2)
+			self.assertEqual(real_distance(city1, city2), 2)
+		finally:
+			city1.kill()
+			city2.kill()
 		
 
 class TestFind(TestCase):
@@ -2458,18 +3166,27 @@ class TestNames(TestCase):
 		
 	def test_name_player(self):
 		self.assertEqual(name(gc.getPlayer(0)), "Egypt")
+	
+	def test_name_none(self):
+		self.assertRaises(ValueError, name, None)
 		
 	def test_adjective(self):
 		self.assertEqual(adjective(0), "Egyptian")
 		
 	def test_adjective_player(self):
 		self.assertEqual(adjective(gc.getPlayer(0)), "Egyptian")
+	
+	def test_adjective_none(self):
+		self.assertRaises(ValueError, adjective, None)
 		
 	def test_full_name(self):
-		self.assertEqual(fullname(slot(iEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(slot(iChina)), "Han Peoples")
 		
 	def test_full_name_player(self):
-		self.assertEqual(fullname(player(iEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(player(iChina)), "Han Peoples")
+	
+	def test_full_name_none(self):
+		self.assertRaises(ValueError, fullname, None)
 		
 		
 class TestWrap(TestCase):
@@ -2517,13 +3234,19 @@ class TestPlot(TestLocation):
 		
 	def test_city(self):
 		city = gc.getPlayer(0).initCity(0, 0)
-		self.base_test(CyPlot, (0, 0), plot, city)
-		city.kill()
+		
+		try:
+			self.base_test(CyPlot, (0, 0), plot, city)
+		finally:
+			city.kill()
 		
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		self.base_test(CyPlot, (0, 0), plot, unit)
-		unit.kill(False, 0)
+		
+		try:
+			self.base_test(CyPlot, (0, 0), plot, unit)
+		finally:
+			unit.kill(False, 0)
 		
 	def test_invalid(self):
 		self.assertRaises(TypeError, plot, 0, 0, 0)
@@ -2591,13 +3314,19 @@ class TestLocationFunction(TestCase):
 		
 	def test_city(self):
 		city = gc.getPlayer(0).initCity(0, 0)
-		self.assertEqual(location(city), (0, 0))
-		city.kill()
+		
+		try:
+			self.assertEqual(location(city), (0, 0))
+		finally:
+			city.kill()
 		
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-		self.assertEqual(location(unit), (0, 0))
-		unit.kill(False, 0)
+		
+		try:
+			self.assertEqual(location(unit), (0, 0))
+		finally:
+			unit.kill(False, 0)
 		
 		
 class TestTeam(TestCase):
@@ -2620,23 +3349,26 @@ class TestTeam(TestCase):
 		plot = gc.getMap().plot(0, 0)
 		plot.setOwner(0)
 		
-		self.assertEqual(team(plot).getID(), plot.getTeam())
-		
-		plot.setOwner(-1)
+		try:
+			self.assertEqual(team(plot).getID(), plot.getTeam())
+		finally:
+			plot.setOwner(-1)
 		
 	def test_city(self):
 		city = gc.getPlayer(0).initCity(0, 0)
 		
-		self.assertEqual(team(city).getID(), city.getTeam())
-		
-		city.kill()
+		try:
+			self.assertEqual(team(city).getID(), city.getTeam())
+		finally:
+			city.kill()
 		
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
-		self.assertEqual(team(unit).getID(), unit.getTeam())
-		
-		unit.kill(False, 0)
+		try:
+			self.assertEqual(team(unit).getID(), unit.getTeam())
+		finally:
+			unit.kill(False, 0)
 		
 	def test_invalid(self):
 		self.assertRaises(TypeError, team, gc.getCivilizationInfo(0))
@@ -2671,23 +3403,28 @@ class TestPlayer(TestCase):
 	def test_plot(self):
 		plot = gc.getMap().plot(0, 0)
 		plot.setOwner(0)
-		self.assertEqual(player(plot).getID(), plot.getOwner())
-		plot.setOwner(-1)
+		
+		try:
+			self.assertEqual(player(plot).getID(), plot.getOwner())
+		finally:
+			plot.setOwner(-1)
 		
 	def test_city(self):
 		city = gc.getPlayer(0).initCity(0, 0)
 		
-		self.assertEqual(city.getOwner(), 0)
-		self.assertEqual(player(city).getID(), city.getOwner())
-		
-		city.kill()
+		try:
+			self.assertEqual(city.getOwner(), 0)
+			self.assertEqual(player(city).getID(), city.getOwner())
+		finally:
+			city.kill()
 		
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
-		self.assertEqual(player(unit).getID(), unit.getOwner())
-		
-		unit.kill(False, 0)
+		try:
+			self.assertEqual(player(unit).getID(), unit.getOwner())
+		finally:
+			unit.kill(False, 0)
 		
 	def test_invalid(self):
 		self.assertRaises(TypeError, player, gc.getCivilizationInfo(0))
@@ -2710,17 +3447,19 @@ class TestCiv(TestCase):
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
-		self.assertEqual(civ(unit), iEgypt)
-		
-		unit.kill(False, -1)
+		try:
+			self.assertEqual(civ(unit), iEgypt)
+		finally:
+			unit.kill(False, -1)
 	
 	def test_plot(self):
 		plot = gc.getMap().plot(0, 0)
 		plot.setOwner(0)
 		
-		self.assertEqual(civ(plot), iEgypt)
-		
-		plot.setOwner(-1)
+		try:
+			self.assertEqual(civ(plot), iEgypt)
+		finally:
+			plot.setOwner(-1)
 		
 	def test_plot_unowned(self):
 		plot = gc.getMap().plot(0, 0)
@@ -2794,11 +3533,12 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(original_city)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (closest_city.getX(), closest_city.getY()))
-		
-		original_city.kill()
-		closest_city.kill()
-		farther_city.kill()
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (closest_city.getX(), closest_city.getY()))
+		finally:
+			original_city.kill()
+			closest_city.kill()
+			farther_city.kill()
 	
 	def test_closest_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 63, 10, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
@@ -2807,11 +3547,12 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(unit)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (closest_city.getX(), closest_city.getY()))
-		
-		unit.kill(False, -1)
-		closest_city.kill()
-		farther_city.kill()
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (closest_city.getX(), closest_city.getY()))
+		finally:
+			unit.kill(False, -1)
+			closest_city.kill()
+			farther_city.kill()
 	
 	def test_closest_owner(self):
 		original_city = gc.getPlayer(0).initCity(63, 10)
@@ -2820,11 +3561,12 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(original_city, 0)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
-		
-		original_city.kill()
-		closest_city.kill()
-		farther_city.kill()
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			original_city.kill()
+			closest_city.kill()
+			farther_city.kill()
 	
 	def test_closest_continents(self):
 		original_city = gc.getPlayer(0).initCity(49, 35)
@@ -2833,11 +3575,12 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(original_city, same_continent=True)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
-		
-		original_city.kill()
-		closest_city.kill()
-		farther_city.kill()
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			original_city.kill()
+			closest_city.kill()
+			farther_city.kill()
 	
 	def test_coastal(self):
 		original_city = gc.getPlayer(0).initCity(63, 10)
@@ -2846,20 +3589,22 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(original_city, coastal_only=True)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
-		
-		original_city.kill()
-		closest_city.kill()
-		farther_city.kill()
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			original_city.kill()
+			closest_city.kill()
+			farther_city.kill()
 	
 	def test_no_result(self):
 		original_city = gc.getPlayer(0).initCity(63, 10)
 		
 		closest = closestCity(original_city, owner=1)
 		
-		self.assert_(closest is None)
-		
-		original_city.kill()
+		try:
+			self.assert_(closest is None)
+		finally:
+			original_city.kill()
 	
 	def test_skip_city(self):
 		unit = gc.getPlayer(0).initUnit(4, 63, 10, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
@@ -2868,12 +3613,28 @@ class TestClosestCity(TestCase):
 		
 		closest = closestCity(unit, skip_city=closest_city)
 		
-		self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			unit.kill(False, -1)
+			closest_city.kill()
+			farther_city.kill()
+	
+	def test_skip_city_plot(self):
+		unit = gc.getPlayer(0).initUnit(4, 63, 10, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		closest_city = gc.getPlayer(0).initCity(62, 13)
+		farther_city = gc.getPlayer(0).initCity(61, 15)
 		
-		unit.kill(False, -1)
-		closest_city.kill()
-		farther_city.kill()
-
+		closest_city_plot = gc.getMap().plot(62, 13)
+		
+		closest = closestCity(unit, skip_city=closest_city_plot)
+		
+		try:
+			self.assertEqual((closest.getX(), closest.getY()), (farther_city.getX(), farther_city.getY()))
+		finally:
+			unit.kill(False, -1)
+			closest_city.kill()
+			farther_city.kill()
 
 class TestSpecialbuilding(TestCase):
 
@@ -2891,6 +3652,11 @@ class TestSpecialbuilding(TestCase):
 		building = cathedral(iBuddhism)
 		
 		self.assertEqual(building, iBuddhistCathedral)
+	
+	def test_shrine(self):
+		building = shrine(iHinduism)
+		
+		self.assertEqual(building, iHinduShrine)
 
 
 class TestMap(TestCase):
@@ -3014,14 +3780,15 @@ class TestNullTeam(TestCase):
 class TestPeriod(TestCase):
 
 	def test_period(self):
-		gc.getPlayer(0).setPeriod(123)	
+		game.setPeriod(iEgypt, 123)
 		iPeriod = period(iEgypt)
 		
-		self.assertEqual(iPeriod, 123)
-		
-		gc.getPlayer(0).setPeriod(-1)
+		try:
+			self.assertEqual(iPeriod, 123)
+		finally:
+			game.setPeriod(iEgypt, -1)
 	
-	def test_period_no_player(self):
+	def test_period_not_set(self):
 		iPeriod = period(iIran)
 		self.assertEqual(iPeriod, -1)
 
@@ -3038,7 +3805,7 @@ class TestDivide(TestCase):
 		total_values = []
 		for key, values in actual_divided:
 			self.assert_(key in [100, 200, 300])
-			self.assert_(isinstance(values, list))
+			self.assert_(isinstance(values, Players))
 			self.assertEqual(len(values), 1)
 			total_values += values
 		
@@ -3054,7 +3821,7 @@ class TestDivide(TestCase):
 		total_values = []
 		for key, values in actual_divided:
 			self.assert_(key in [100, 200, 300])
-			self.assert_(isinstance(values, list))
+			self.assert_(isinstance(values, Players))
 			self.assertEqual(len(values), 2)
 			total_values += values
 		
@@ -3381,43 +4148,6 @@ class TestAt(TestCase):
 		self.assertEqual(result, False)
 
 
-class TestCivs(TestCase):
-
-	def test_one(self):
-		lCivs = civs(iEgypt)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 1)
-		
-		assertType(self, lCivs[0], Civ)
-		self.assertEqual(lCivs[0], iEgypt)
-	
-	def test_more(self):
-		lCivs = civs(iEgypt, iBabylonia, iHarappa)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 3)
-		
-		for i, iCiv in enumerate([iEgypt, iBabylonia, iHarappa]):
-			assertType(self, lCivs[i], Civ)
-			self.assertEqual(lCivs[i], iCiv)
-	
-	def test_none(self):
-		lCivs = civs()
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(lCivs, [])
-	
-	def test_int(self):
-		lCivs = civs(0)
-		
-		assertType(self, lCivs, list)
-		self.assertEqual(len(lCivs), 1)
-		
-		assertType(self, lCivs[0], Civ)
-		self.assertEqual(lCivs[0], iEgypt)
-
-
 class TestCapital(TestCase):
 
 	def test_capital(self):
@@ -3425,10 +4155,11 @@ class TestCapital(TestCase):
 		
 		capital_city = capital(0)
 		
-		self.assert_(capital_city is not None)
-		self.assertEqual(city.getID(), capital_city.getID())
-		
-		city.kill()
+		try:
+			self.assert_(capital_city is not None)
+			self.assertEqual(city.getID(), capital_city.getID())
+		finally:
+			city.kill()
 	
 	def test_not_alive(self):
 		capital_city = capital(1)
@@ -3452,6 +4183,389 @@ class TestSign(TestCase):
 	def test_zero(self):
 		self.assertEqual(sign(0), 0)
 		
+
+class TestFormatDate(TestCase):
+
+	def test_format_date_positive(self):
+		self.assertEqual(format_date(1000), "1000 AD")
+
+	def test_format_date_negative(self):
+		self.assertEqual(format_date(-500), "500 BC")
+
+
+class TestConcat(TestCase):
+
+	def test_listify_list(self):
+		self.assertEqual(listify([1, 2, 3]), [1, 2, 3])
+	
+	def test_listify_tuple(self):
+		self.assertEqual(listify((1, 2, 3)), [1, 2, 3])
+	
+	def test_listify_set(self):
+		self.assertEqual(listify(set([1, 2, 3])), [1, 2, 3])
+	
+	def test_listify_generator(self):
+		self.assertEqual(listify(i for i in xrange(3)), [0, 1, 2])
+	
+	def test_listify_int(self):
+		self.assertEqual(listify(1), [1])
+	
+	def test_listify_none(self):
+		self.assertEqual(listify(None), [])
+	
+	def test_concat_lists(self):
+		self.assertEqual(concat([1, 2], [3, 4]), [1, 2, 3, 4])
+	
+	def test_concat_list_and_int(self):
+		self.assertEqual(concat([1, 2], 3), [1, 2, 3])
+	
+	def test_concat_int_and_list(self):
+		self.assertEqual(concat(1, [2, 3]), [1, 2, 3])
+	
+	def test_concat_int_and_int(self):
+		self.assertEqual(concat(1, 2), [1, 2])
+	
+	def test_concat_generator_and_list(self):
+		self.assertEqual(concat((i for i in xrange(2)), 2), [0, 1, 2])
+	
+	def test_concat_more_than_two(self):
+		self.assertEqual(concat([1, 2], 3, (4, 5)), [1, 2, 3, 4, 5])
+	
+	def test_concat_with_none(self):
+		self.assertEqual(concat([1, 2], None), [1, 2])
+
+
+class TestCount(TestCase):
+
+	def test_count(self):
+		self.assertEqual(count([1, 2, 3, 4, 5]), 5)
+	
+	def test_count_condition(self):
+		self.assertEqual(count([1, 2, 3, 4, 5], lambda x: x >= 3), 3)
+
+
+class TestVariadic(TestCase):
+
+	def test_list(self):
+		self.assertEqual(variadic([1, 2, 3]), [1, 2, 3])
+	
+	def test_tuple(self):
+		self.assertEqual(variadic((1, 2, 3)), [1, 2, 3])
+	
+	def test_varargs(self):
+		self.assertEqual(variadic(1, 2, 3), [1, 2, 3])
+	
+	def test_set(self):
+		self.assertEqual(variadic(set([1, 2, 3])), [1, 2, 3])
+	
+	def test_item(self):
+		self.assertEqual(variadic(1), [1])
+	
+	def test_empty(self):
+		self.assertEqual(variadic(), [])
+	
+	def test_generator(self):
+		result = variadic(i for i in xrange(3))
+	
+		self.assertEqual(isinstance(result, types.GeneratorType), True)
+		self.assertEqual([x for x in result], [0, 1, 2])
+
+
+class TestDuplefy(TestCase):
+
+	def test_duple(self):
+		self.assertEqual(duplefy(1, 2), (1, 2))
+	
+	def test_single(self):
+		self.assertEqual(duplefy(1), 1)
+	
+	def test_none(self):
+		self.assertRaises(Exception, duplefy)
+	
+	def test_more(self):
+		self.assertRaises(Exception, duplefy, 1, 2, 3)
+
+
+class TestUnique(TestCase):
+
+	def test_unique_list(self):
+		self.assertEqual(unique([1, 1, 1, 2, 2, 3]), [1, 2, 3])
+	
+	def test_unique_generator(self):
+		self.assertEqual(unique(int(i/2) for i in range(6)), [0, 1, 2])
+	
+	def test_unique_tuple(self):
+		self.assertEqual(unique((1, 1, 1, 2, 2, 3)), [1, 2, 3])
+
+
+class TestMission(TestCase):
+
+	def setUp(self):
+		self.unit = gc.getPlayer(0).initUnit(0, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+		
+	def tearDown(self):
+		self.unit.kill(False, -1)
+
+	def test_mission_only(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), -1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+	
+	def test_mission_with_data(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=(1, 2), bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), 1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), 2)
+	
+	def test_mission_with_data_none(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=None, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), -1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+	
+	def test_mission_with_data_one(self):
+		mission(self.unit, MissionTypes.MISSION_SLEEP, data=1, bAppend=True)
+		
+		self.assertEqual(self.unit.getGroup().getMissionType(0), MissionTypes.MISSION_SLEEP)
+		self.assertEqual(self.unit.getGroup().getMissionData1(0), 1)
+		self.assertEqual(self.unit.getGroup().getMissionData2(0), -1)
+
+
+class TestGetArea(TestCase):
+
+	def setUp(self):
+		self.africaTile = (48, 30)
+		self.americaTile = (37, 28)
+		
+		self.africaID = plot(self.africaTile).getArea()
+		self.americaID = plot(self.americaTile).getArea()
+		
+	def test_id(self):
+		self.assertEqual(getArea(self.africaID), self.africaID)
+		self.assertEqual(getArea(self.americaID), self.americaID)
+	
+	def test_tile(self):
+		self.assertEqual(getArea(self.africaTile), self.africaID)
+		self.assertEqual(getArea(self.americaTile), self.americaID)
+	
+	def test_plot(self):
+		self.assertEqual(getArea(plot(self.africaTile)), self.africaID)
+		self.assertEqual(getArea(plot(self.americaTile)), self.americaID)
+	
+	def test_city(self):
+		africaCity = gc.getPlayer(0).initCity(*self.africaTile)
+		americaCity = gc.getPlayer(0).initCity(*self.americaTile)
+		
+		try:
+			self.assertEqual(getArea(africaCity), self.africaID)
+			self.assertEqual(getArea(americaCity), self.americaID)
+		finally:
+			africaCity.kill()
+			americaCity.kill()
+
+
+class TestCivFactory(TestCase):
+
+	def setUp(self):
+		self.factory = CivFactory()
+
+	def test_of_one(self):
+		civs = self.factory.of(iEgypt)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		
+		assertType(self, civs[0], Civ)
+		self.assertEqual(civs[0], iEgypt)
+	
+	def test_of_more(self):
+		civs = self.factory.of(iEgypt, iBabylonia, iHarappa)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 3)
+		
+		for i, iCiv in enumerate([iEgypt, iBabylonia, iHarappa]):
+			assertType(self, civs[i], Civ)
+			self.assertEqual(civs[i], iCiv)
+	
+	def test_of_none(self):
+		civs = self.factory.of()
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 0)
+	
+	def test_of_int(self):
+		civs = self.factory.of(0)
+		
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		
+		assertType(self, civs[0], Civ)
+		self.assertEqual(civs[0], iEgypt)
+
+
+class TestDictMax(TestCase):
+
+	def test_dict_max(self):
+		dict = {
+			1: 100,
+			2: 200,
+			3: 300,
+		}
+		
+		self.assertEqual(dict_max(dict), 3)
+	
+	def test_dict_max_tie(self):
+		dict = {
+			1: 100,
+			2: 200,
+			3: 200,
+		}
+		
+		self.assertEqual(dict_max(dict), 2)
+	
+	def test_dict_max_empty(self):
+		self.assertEqual(dict_max({}), None)
+
+
+class TestCivFactory(TestCase):
+
+	def setUp(self):
+		self.factory = CivFactory()
+
+	def test_all(self):
+		civs = self.factory.all()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), iNumCivs)
+		
+	def test_major(self):
+		civs = self.factory.major()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), len(lBirthOrder))
+		
+	def test_of_civs(self):
+		expected_civs = [iEgypt, iBabylonia, iHarappa]
+		actual_civs = self.factory.of(iEgypt, iBabylonia, iHarappa)
+		
+		assertType(self, actual_civs, Civilizations)
+		self.assertEqual(len(actual_civs), 3)
+		
+		for iCiv in expected_civs:
+			self.assertEqual(iCiv in actual_civs, True)
+	
+	def test_of_players(self):
+		expected_civs = [iEgypt, iBabylonia, iHarappa]
+		actual_civs = self.factory.of(0, 1, 2)
+		
+		assertType(self, actual_civs, Civilizations)
+		self.assertEqual(len(actual_civs), 3)
+		
+		for iCiv in expected_civs:
+			self.assertEqual(iCiv in actual_civs, True)
+
+
+class TestCivilizations(TestCase):
+
+	def setUp(self):
+		self.civs = Civilizations([iEgypt, iBabylonia, iHarappa])
+
+	def test_contains_player(self):
+		self.assertEqual(gc.getPlayer(0) in self.civs, True)
+	
+	def test_contains_player_id(self):
+		self.assertEqual(0 in self.civs, True)
+		
+	def test_contains_civ_id(self):
+		self.assertEqual(iEgypt in self.civs, True)
+		
+	def test_iterate(self):
+		for item in self.civs:
+			self.assertEqual(isinstance(item, Civ), True)
+			
+	def test_string(self):
+		expected_names = "The Egyptians,The Babylonians,The Harappans"
+		actual_names = str(self.civs)
+		self.assertEqual(actual_names, expected_names)
+	
+	def test_without_civ_id(self):
+		civs = self.civs.without(iEgypt)
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 2)
+		self.assertEqual(iEgypt not in civs, True)
+		
+	def test_without_player_id(self):
+		civs = self.civs.without(0)
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 2)
+		self.assertEqual(iEgypt not in civs, True)
+		
+	def test_without_list(self):
+		civs = self.civs.without([iEgypt, iBabylonia])
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		self.assertEqual(iHarappa in civs, True)
+		
+	def test_without_set(self):
+		civs = self.civs.without(set([iEgypt, iBabylonia]))
+		assertType(self, civs, Civilizations)
+		self.assertEqual(len(civs), 1)
+		self.assertEqual(iHarappa in civs, True)
+		
+	def test_can_be_built_from_players(self):
+		civs = Civilizations([0, 1])
+		
+		self.assertEqual(iEgypt in civs, True)
+		self.assertEqual(iBabylonia in civs, True)
+
+
+class TestSignature(TestCase):
+
+	def test_without_args(self):
+		def some_function():
+			pass
+		
+		self.assertEqual(signature(some_function), "some_function()")
+	
+	def test_with_args(self):
+		def some_function(arg1, arg2, arg3):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None), "some_function(1, 2, None)")
+	
+	def test_with_kwargs(self):
+		def some_function(arg1, arg2, arg3):
+			pass
+		
+		self.assertEqual(signature(some_function, arg1=1, arg2="2", arg3=None), "some_function(arg1=1, arg2=2, arg3=None)")
+	
+	def test_with_default_kwargs(self):
+		def some_function(arg1=1, arg2="2", arg3=None):
+			pass
+		
+		self.assertEqual(signature(some_function), "some_function()")
+	
+	def test_with_generic_args(self):
+		def some_function(*args):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None), "some_function(1, 2, None)")
+	
+	def test_with_generic_kwargs(self):
+		def some_function(**kwargs):
+			pass
+		
+		self.assertEqual(signature(some_function, arg1=1, arg2="2", arg3=None), "some_function(arg1=1, arg2=2, arg3=None)")
+	
+	def test_combined(self):
+		def some_function(*args, **kwargs):
+			pass
+		
+		self.assertEqual(signature(some_function, 1, "2", None, arg4=4, arg5="5", arg6=None), "some_function(1, 2, None, arg4=4, arg5=5, arg6=None)")
+	
 
 test_cases = [
 	TestTurn, 
@@ -3506,10 +4620,27 @@ test_cases = [
 	TestMatching,
 	TestDirection,
 	TestAt,
-	TestCivs,
 	TestCapital,
 	TestSign,
+	TestFormatDate,
+	TestConcat,
+	TestCount,
+	TestVariadic,
+	TestDuplefy,
+	TestUnique,
+	TestMission,
+	TestGetArea,
+	TestCivFactory,
+	TestDictMax,
+	TestCivFactory,
+	TestCivilizations,
+	TestSignature
 ]
+
+
+setup()
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
 TextTestRunner(verbosity=2).run(suite)
+
+gc.getPlayer(0).initUnit(0, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)

@@ -106,6 +106,14 @@
 		<Spanish>It is the year 1700 AD. After the Ming Dynasty has collapsed under peasant revolts, the Jurchens of Manchuria have conquered China and established the Qing Dynasty. With Manchuria and Tibet under imperial control, China has reached the greatest extent in history, and the rule of the Kangxi Emperor promises another golden era.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_COLOMBIA</Tag>
+		<English>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</English>
+		<French>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</French>
+		<German>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</German>
+		<Italian>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Italian>
+		<Spanish>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO</Tag>
 		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
 		<French>Nous sommes en l'an 1390 ap. J.-C. Le royaume du Kongo na&#238;t de l'unification de tribus &#233;tablies dans le delta du fleuve Congo. Au m&#234;me moment, les Europ&#233;ens commencent &#224; s'int&#233;resser &#224; l'Afrique. Le Kongo devra user de strat&#233;gies religieuses et &#233;conomiques afin de conserver son ind&#233;pendance.</French>
@@ -291,11 +299,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_600AD</Tag>
-		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
+		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
 		<French>Nous sommes en l'an 600 ap. J.-C. Les trois royaumes de Cor&#233;e sont prosp&#232;res, et celui de Goguryeo a m&#234;me &#233;tendu son influence en Mandchourie. Mais maintenant que la Chine s'est r&#233;unifi&#233;e, les Cor&#233;ens doivent faire preuve de vigilance s'ils veulent prot&#233;ger leur ind&#233;pendance.</French>
-		<German>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</German>
-		<Italian>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</Italian>
-		<Spanish>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</Spanish>
+		<German>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</German>
+		<Italian>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</Italian>
+		<Spanish>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_1700AD</Tag>
@@ -320,6 +328,14 @@
 		<German>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</German>
 		<Italian>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</Italian>
 		<Spanish>It is the year 400 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MEXICO</Tag>
+		<English>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</English>
+		<French>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</French>
+		<German>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</German>
+		<Italian>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Italian>
+		<Spanish>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MONGOLIA</Tag>
@@ -395,11 +411,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_IRAN</Tag>
-		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
-		<French>Nous sommes en l'an 1700 ap. J.-C. La dynastie s&#233;f&#233;vide, qui dirige la Perse depuis l'an 1500, est en perte d'autorit&#233;. Le fruit est m&#251;r pour qu'un seigneur de guerre prenne le contr&#244;le du pays et humilie ses voisins turcs, ouzbeks et moghols.</French>
-		<German>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</German>
-		<Italian>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Italian>
-		<Spanish>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Spanish>
+		<English>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</English>
+		<French>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</French>
+		<German>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</German>
+		<Italian>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</Italian>
+		<Spanish>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_IRAN_1700AD</Tag>
+		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
+		<French>Nous sommes en l'an 1700 ap. J.-C. La dynastie s&#233;f&#233;vide, qui dirige la Perse depuis l'an 1501, est en perte d'autorit&#233;. Le fruit est m&#251;r pour qu'un seigneur de guerre prenne le contr&#244;le du pays et humilie ses voisins turcs, ouzbeks et moghols.</French>
+		<German>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</German>
+		<Italian>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Italian>
+		<Spanish>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PHOENICIA</Tag>

@@ -549,6 +549,10 @@ public:
 	std::vector<CvReligionInfo*>& getReligionInfo();
 	CvReligionInfo& getReligionInfo(ReligionTypes eReligionNum);
 
+	int getNumPaganReligionInfos();
+	std::vector<CvInfoBase*>& getPaganReligionInfo();
+	CvInfoBase& getPaganReligionInfo(PaganReligionTypes ePaganReligion);
+
 	int getNumCorporationInfos();
 	std::vector<CvCorporationInfo*>& getCorporationInfo();
 	CvCorporationInfo& getCorporationInfo(CorporationTypes eCorporationNum);
@@ -1060,6 +1064,7 @@ protected:
 	std::vector<CvUpkeepInfo*> m_paUpkeepInfo;
 	std::vector<CvCultureLevelInfo*> m_paCultureLevelInfo;
 	std::vector<CvReligionInfo*> m_paReligionInfo;
+	std::vector<CvInfoBase*> m_paPaganReligionInfo;
 	std::vector<CvCorporationInfo*> m_paCorporationInfo;
 	std::vector<CvActionInfo*> m_paActionInfo;
 	std::vector<CvMissionInfo*> m_paMissionInfo;

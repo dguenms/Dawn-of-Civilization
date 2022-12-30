@@ -1,11 +1,12 @@
 # coding: utf-8
 
-from CvPythonExtensions import *
-from Consts import *
 from RFCUtils import *
-
 from Events import handler
 from Core import *
+
+import BugCore
+
+AlertOpt = BugCore.game.MoreCiv4lerts
 
 
 lTypes = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
@@ -39,16 +40,27 @@ def assignGreatPersonName(unit, iPlayer, city, bAnnounceBirth = True):
 				city = closestCity(unit)
 		
 			for iLoopPlayer in players.major().alive():
+				if AlertOpt.isGreatPeopleOurs() and iPlayer != iLoopPlayer:
+					continue
+			
+				if AlertOpt.isGreatPeopleKnown() and iPlayer != iLoopPlayer and not player(iLoopPlayer).canContact(iPlayer):
+					continue
+				
+				if AlertOpt.isGreatPeopleNearby() and not game.isNeighbors(iPlayer, iLoopPlayer):
+					continue
+			
 				if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
 					message(iLoopPlayer, text_key, unit.getName(), '%s (%s)' % (city.getName(), name(city)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
 				else:
 					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
 
-def create(iPlayer, iUnit, (x, y)):
+def create(iPlayer, iUnit, tile):
+	x, y = location(tile)
 	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
 def getAlias(iCiv, iType, iEra):
 	if iCiv in [iHarappa, iTamils]: return iIndia
+	elif iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam: return iArabia
 	elif iCiv == iIran: return iPersia
 	
 	return iCiv
@@ -216,6 +228,7 @@ iBabylonia : {
 	],
 	iGreatMerchant : [
 		"fIltani", # 18th BC
+		"Ea-nasir", # 18th BC
 		"Burna-Buriash", # 14th BC
 		"Kadashman-Enlil", # 14th BC
 		iClassical,
@@ -345,6 +358,7 @@ iChina : {
 		iMedieval,
 		"Yi Xing", # 8th
 		"Yu Hao", # 10th
+		"Zhang Sixun", # 10th
 		"Bi Sheng", # 11th
 		"Su Song", # 11th
 		"Wang Zhen", # 14th
@@ -695,7 +709,6 @@ iIndia : {
 		"Rajaraja Chola", # 10th
 		iRenaissance,
 		"fRani Durgavati", # 16th
-		"Shivaji Bhosle", # 17th
 		"Kanhoji Angre", # 17th
 		"Marthanda Varma", # 18th
 		"Hyder Ali", # 18th
@@ -821,6 +834,8 @@ iPolynesia : {
 		"Haalilio", # 19th
 		"fMeri Te Tai Mangakahia", # 19th
 		"Apirana Ngata", # 19th
+		"Wiremu Toetoe", # 19th
+		"Hemara Rerehau Paraone", # 19th
 	],
 	iGreatGeneral : [
 		"fNafanua", # legendary
@@ -2980,6 +2995,7 @@ iRussia : {
 		"Mikhail Skobelev", # 19th
 		"fVasilisa Kozhina", # 19th
 		"fNadezhda Durova", # 19th
+		"Aleksei Brusilov", # 20th
 		iGlobal,
 		"Mikhail Tukhachevsky", # 20th
 		"Georgy Zhukov", # 20th
@@ -4183,6 +4199,7 @@ iAmerica : {
 	],
 	iGreatMerchant : [
 		"Stephen Girard", # 18th
+		"Nathaniel Bowditch", # 18th
 		iIndustrial,
 		"Cornelius Vanderbilt", # 19th
 		"Cyrus W. Field", # 19th

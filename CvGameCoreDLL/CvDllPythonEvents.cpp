@@ -210,6 +210,18 @@ void CvDllPythonEvents::reportFirstContact(TeamTypes eTeamID1, TeamTypes eTeamID
 	}
 }
 
+void CvDllPythonEvents::reportRestoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("restoredContact");
+		eventData.add((int)eTeamID1);
+		eventData.add((int)eTeamID2);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportCombatResult(CvUnit* pWinner, CvUnit* pLoser)
 {
 	if (preEvent())
@@ -1233,7 +1245,7 @@ void CvDllPythonEvents::reportEndGoldenAge(PlayerTypes ePlayer)
 	}
 }
 
-void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam)
+void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact)
 {
 	if (preEvent())
 	{
@@ -1242,6 +1254,7 @@ void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eO
 		eventData.add(bWar);
 		eventData.add((int)eTeam);
 		eventData.add((int)eOtherTeam);
+		eventData.add(bFromDefensivePact);
 		postEvent(eventData);
 	}
 }
@@ -1365,15 +1378,15 @@ void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
 }
 
 // Leoreth: release dead civilizations
-void CvDllPythonEvents::reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+void CvDllPythonEvents::reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
 	if (preEvent())
 	{
 		CyArgsList eventData;
-		eventData.add("releasedPlayer");
+		eventData.add("releasedCivilization");
 
 		eventData.add((int)ePlayer);
-		eventData.add((int)eReleasedPlayer);
+		eventData.add((int)eReleasedCivilization);
 
 		postEvent(eventData);
 	}
@@ -1406,6 +1419,105 @@ void CvDllPythonEvents::reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePl
 		eventData.add((int)ePlayer1);
 		eventData.add((int)ePlayer2);
 
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: XML loaded before menu
+void CvDllPythonEvents::reportXMLLoaded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("xmlLoaded");
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: Font files loaded and font IDs assigned
+void CvDllPythonEvents::reportFontsLoaded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("fontsLoaded");
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: civic changed
+void CvDllPythonEvents::reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("civicChanged");
+		eventData.add((int)ePlayer);
+		eventData.add((int)eOldCivic);
+		eventData.add((int)eNewCivic);
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: autoplay ended
+void CvDllPythonEvents::reportAutoplayEnded()
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("autoplayEnded");
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: player civilization assigned
+void CvDllPythonEvents::reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerCivAssigned");
+		eventData.add((int)ePlayer);
+		eventData.add((int)eNewCivilization);
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: player destroyed
+void CvDllPythonEvents::reportPlayerDestroyed(PlayerTypes ePlayer)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerDestroyed");
+		eventData.add((int)ePlayer);
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: player switched
+void CvDllPythonEvents::reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("switch");
+		eventData.add((int)eOldPlayer);
+		eventData.add((int)eNewPlayer);
+		postEvent(eventData);
+	}
+}
+
+// Leoreth: tech traded
+void CvDllPythonEvents::reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("techTraded");
+		eventData.add((int)eFrom);
+		eventData.add((int)eTo);
+		eventData.add((int)eTech);
 		postEvent(eventData);
 	}
 }

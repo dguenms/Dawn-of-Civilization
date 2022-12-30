@@ -10,6 +10,7 @@ import CvPediaCivilization
 import CvPediaLeader
 import CvPediaCivic
 import CvPediaReligion
+import CvPediaPaganReligion
 import CvPediaCorporation
 import CvPediaSpecialist
 import CvPediaTech
@@ -114,6 +115,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_LEADERS			: self.placeLeaders,
 			PEDIA_CIVICS			: self.placeCivics,
 			PEDIA_RELIGIONS			: self.placeReligions,
+			PEDIA_PAGAN_RELIGIONS	: self.placePaganReligions,
 			PEDIA_CORPORATIONS		: self.placeCorporations,
 			PEDIA_SPECIALISTS		: self.placeSpecialists,
 			PEDIA_TECHS			: self.placeTechs,
@@ -152,6 +154,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_LEADERS			: self.pediaLeader,
 			PEDIA_CIVICS			: CvPediaCivic.CvPediaCivic(self),
 			PEDIA_RELIGIONS			: CvPediaReligion.CvPediaReligion(self),
+			PEDIA_PAGAN_RELIGIONS	: CvPediaPaganReligion.CvPediaPaganReligion(self),
 			PEDIA_CORPORATIONS		: CvPediaCorporation.CvPediaCorporation(self),
 			PEDIA_SPECIALISTS		: CvPediaSpecialist.CvPediaSpecialist(self),
 			PEDIA_TECHS			: CvPediaTech.CvPediaTech(self),
@@ -207,6 +210,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.szCategoryLeaders			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_LEADER", ())
 		self.szCategoryCivics			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIVIC", ())
 		self.szCategoryReligions		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_RELIGION", ())
+		self.szCategoryPaganReligions	= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PAGAN_RELIGIONS", ())
 		self.szCategoryCorporations		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CORPORATIONS", ())
 		self.szCategorySpecialists		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_SPECIALIST", ())
 		self.szCategoryTechs			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_TECH", ())
@@ -239,6 +243,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["CIVS",		self.szCategoryLeaders],
 			["CIVICS",		self.szCategoryCivics],
 			["RELIGIONS",		self.szCategoryReligions],
+			["PAGAN_RELIGIONS", self.szCategoryPaganReligions],
 			["CORPORATIONS",	self.szCategoryCorporations],
 			["SPECIALISTS",		self.szCategorySpecialists],
 			["TECHS",		self.szCategoryTechs],
@@ -271,6 +276,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			"CIVS"		: u"%c  " % CyGame().getSymbolID(FontSymbols.MAP_CHAR),
 			"CIVICS"	: u"%c  " % CyGame().getSymbolID(FontSymbols.GOLDEN_AGE_CHAR),
 			"RELIGIONS"	: u"%c  " % CyGame().getSymbolID(FontSymbols.RELIGION_CHAR),
+			"PAGAN_RELIGIONS" : u"%c  " % CyGame().getSymbolID(FontSymbols.RELIGION_CHAR),
 			"CORPORATIONS"	: u"%c  " % gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar(),
 			"SPECIALISTS"	: u"%c  " % CyGame().getSymbolID(FontSymbols.GREAT_PEOPLE_CHAR),
 			"TECHS"		: u"%c  " % gc.getCommerceInfo(CommerceTypes.COMMERCE_RESEARCH).getChar(),
@@ -467,6 +473,12 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeReligions(self):
 		self.list = self.getSortedList(gc.getNumReligionInfos(), gc.getReligionInfo)
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, gc.getReligionInfo)
+	
+	
+	
+	def placePaganReligions(self):
+		self.list = self.getSortedList(gc.getNumPaganReligionInfos(), gc.getPaganReligionInfo)
+		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION, gc.getPaganReligionInfo)
 
 
 
@@ -989,6 +1001,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			return self.pediaJump(PEDIA_MAIN, PEDIA_CIVICS, True, True)
 		elif szLink == "PEDIA_MAIN_RELIGION":
 			return self.pediaJump(PEDIA_MAIN, PEDIA_RELIGIONS, True, True)
+		elif szLink == "PEDIA_MAIN_PAGAN_RELIGION":
+			return self.pediaJump(PEDIA_MAIN, PEDIA_PAGAN_RELIGIONS, True, True)
 		elif szLink == "PEDIA_MAIN_SPECIALIST":
 			return self.pediaJump(PEDIA_MAIN, PEDIA_SPECIALISTS, True, True)
 		elif szLink == "PEDIA_MAIN_TECH":
@@ -1031,6 +1045,9 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		for i in xrange(gc.getNumReligionInfos()):
 			if gc.getReligionInfo(i).isMatchForLink(szLink, False):
 				return self.pediaJump(PEDIA_RELIGIONS, i, True, True)
+		for i in xrange(gc.getNumPaganReligionInfos()):
+			if gc.getPaganReligionInfo(i).isMatchForLink(szLink, False):
+				return self.pediaJump(PEDIA_PAGAN_RELIGIONS, i, True, True)
 		for i in xrange(gc.getNumCorporationInfos()):
 			if gc.getCorporationInfo(i).isMatchForLink(szLink, False):
 				return self.pediaJump(PEDIA_CORPORATIONS, i, True, True)

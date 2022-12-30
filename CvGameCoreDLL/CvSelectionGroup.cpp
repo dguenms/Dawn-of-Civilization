@@ -22,6 +22,7 @@
 #include "CvDLLPythonIFaceBase.h"
 #include <set>
 #include "CvEventReporter.h"
+#include "CvRhyes.h"
 
 // BUG - start
 #include "CvBugOptions.h"
@@ -1016,7 +1017,10 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 		case MISSION_DISCOVER:
 			if (pLoopUnit->canDiscover(pPlot))
 			{
-				return true;
+				if (!GET_PLAYER(pLoopUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+				{
+					return true;
+				}
 			}
 			break;
 
@@ -2146,12 +2150,8 @@ bool CvSelectionGroup::canDoCommand(CommandTypes eCommand, int iData1, int iData
 		return false;
 
 	pUnitNode = headUnitNode();
-	int iCounter = 0; //Rhye (possible loop fix)
 	while (pUnitNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
-
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2188,12 +2188,8 @@ bool CvSelectionGroup::canEverDoCommand(CommandTypes eCommand, int iData1, int i
 	{
 		CLLNode<IDInfo>* pUnitNode = headUnitNode();
 
-    	int iCounter = 0; //Rhye (possible loop fix)
 		while (pUnitNode != NULL)
 		{
-    		iCounter++; //Rhye (fix)
-    		if (iCounter > 20) break; //Rhye (fix)
-
 			CvUnit *pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2233,12 +2229,8 @@ void CvSelectionGroup::setupActionCache()
     //cache different unit types
 	m_aDifferentUnitCache.erase(m_aDifferentUnitCache.begin(), m_aDifferentUnitCache.end());
 	CLLNode<IDInfo> *pUnitNode = headUnitNode();
-	int iCounter = 0; //Rhye (possible loop fix)
 	while(pUnitNode != NULL)
 	{
-		iCounter++; //Rhye (fix)
-		if (iCounter > 20) break; //Rhye (fix)
-
 		CvUnit *unit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
@@ -2925,12 +2917,8 @@ bool CvSelectionGroup::canMoveThrough(CvPlot* pPlot)
 	if (getNumUnits() > 0)
 	{
 		pUnitNode = headUnitNode();
-		int iCounter = 0; //Rhye (loop fix)
 		while (pUnitNode != NULL)
 		{
-			iCounter++; //Rhye (fix)
-			if (iCounter > 50) return false; //Rhye (fix) // Leoreth/3Miro: increase threshold 10->50
-
 			pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
 
@@ -3542,6 +3530,11 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 	{
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
+
+		if (pLoopUnit == NULL)
+		{
+			continue;
+		}
 
 // BUG - Sentry Actions - start
 #ifdef _MOD_SENTRY
@@ -4841,7 +4834,7 @@ void CvSelectionGroup::insertAtEndMissionQueue(MissionData mission, bool bStart)
 	m_missionQueue.insertAtEnd(mission);
 
 	if ((getLengthMissionQueue() == 1) && bStart)
-	{
+	{	
 		activateHeadMission();
 	}
 

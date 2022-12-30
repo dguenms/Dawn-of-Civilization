@@ -218,15 +218,15 @@ GAME RULES
     * Defensive buildings are automatically destroyed unless city defenses have not been bombarded
     * Cities can be sacked: 
         * Increased building damage
-	* Increased pillaged gold
-	* Increased unrest
-	* Some owner culture removed
-	* Non-state religion may be removed
-	* Negative opinion from the owner
+		* Increased pillaged gold
+		* Increased unrest
+		* Some owner culture removed
+		* Non-state religion may be removed
+		* Negative opinion from the owner
     * Cities can be spared:
         * Costs gold
         * Reduced building damage
-	* Reduced unrest
+		* Reduced unrest
     * Cities are not razed immediately, instead they lose population over time and are destroyed when the population reaches zero
 * Wonders only grant free buildings to cities in a valid building location
 * When upgraded, units lose all their promotions and regain the expended experience
@@ -484,11 +484,11 @@ CIVILISATIONS
 * Inca
     * Leaders: Huayna Capac, Castilla (respawn)
     * Unique Unit: Aucac (Swordsman): +50% against Melee and Archery units, starts with Combat I
-    * Unique Building: Tambo (Post Office): requires Engineering, +25% trade route yield
+    * Unique Building: Tambo (Post Office): requires Law, +25% trade route yield
     * Unique Historical Victory:
         * Build five Tambos and a road along the Andean coast by 1500 AD
         * Have 2500 gold in 1550 AD
-        * Allow no foreign cities in South America in 1700 AD
+        * Control 90% of the population in South America in 1775 AD
 * Mongolia
     * Unique Unit: Keshik (Lancer): Light Cavalry, three moves, +1 first strike, causes collateral damage, no city attack penalty
     * Unique Unit: Mangudai (Horse Archer): +2 strength, +1 move

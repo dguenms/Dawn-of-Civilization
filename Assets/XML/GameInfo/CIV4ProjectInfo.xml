@@ -17,7 +17,7 @@
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iCost>1500</iCost>
+			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -228,6 +228,49 @@
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
+			<Type>PROJECT_GREAT_FIREWALL</Type>
+			<Description>TXT_KEY_PROJECT_GREAT_FIREWALL</Description>
+			<Civilopedia>TXT_KEY_PROJECT_GREAT_FIREWALL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_GREAT_FIREWALL_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
+			<AnyonePrereqProject>PROJECT_THE_INTERNET</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>4000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>0</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/GreatFirewall.dds</Button>
+			<PrereqProjects/>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_COPPER</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag>ART_DEF_MOVIE_GREAT_FIREWALL</MovieDefineTag>
+		</ProjectInfo>
+		<ProjectInfo>
 			<Type>PROJECT_INTERNATIONAL_SPACE_STATION</Type>
 			<Description>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Description>
 			<Civilopedia>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_PEDIA</Civilopedia>
@@ -285,7 +328,7 @@
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>400</iCost>
+			<iCost>800</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -323,7 +366,7 @@
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>800</iCost>
+			<iCost>1200</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -371,7 +414,7 @@
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>800</iCost>
+			<iCost>1200</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -419,7 +462,7 @@
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iCost>1200</iCost>
+			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -467,7 +510,7 @@
 			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iCost>1600</iCost>
+			<iCost>2400</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -515,7 +558,7 @@
 			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>1600</iCost>
+			<iCost>3000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
@@ -611,7 +654,7 @@
 			<AnyonePrereqProject>PROJECT_INTERNATIONAL_SPACE_STATION</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iCost>4000</iCost>
+			<iCost>5000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>

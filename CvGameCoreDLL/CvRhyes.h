@@ -14,8 +14,6 @@ typedef list<char*> LISTCHAR;
 #define BEGIN_WONDERS				(170) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+13) // increment if a national wonder is added
 
-#define NUM_MAJOR_PLAYERS		(45)
-#define NUM_MINORS				(5)	 // Independent, Independent2, Natives, Celtia, Barbarians
 #define NUM_CIVS				(52)
 
 #define NUM_ERAS				(ERA_DIGITAL+1)
@@ -370,6 +368,7 @@ enum DoCEras
 	ERA_MIDDLE_EAST,
 	ERA_EAST_ASIA,
 	ERA_SOUTH_ASIA,
+	ERA_NATIVE_AMERICA,
 };
 
 enum Regions

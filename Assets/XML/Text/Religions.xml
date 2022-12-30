@@ -398,7 +398,7 @@
 		<Spanish>Paganism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_PESEDJET</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_PESEDJET</Tag>
 		<English>Pesedjet</English>
 		<French>
 			<Text>Pesedjet</Text>
@@ -410,7 +410,7 @@
 		<Spanish>Pesedjet</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_SHENDAO</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_SHENDAO</Tag>
 		<English>Shendao</English>
 		<French>
 			<Text>Shenisme</Text>
@@ -422,7 +422,7 @@
 		<Spanish>Shendao</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_ANUNNAKI</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_ANUNNAKI</Tag>
 		<English>Anunnaki</English>
 		<French>
 			<Text>Anunnaki</Text>
@@ -434,7 +434,7 @@
 		<Spanish>Anunnaki</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_VEDISM</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_VEDISM</Tag>
 		<English>Vedism</English>
 		<French>
 			<Text>V&#233;disme</Text>
@@ -446,7 +446,7 @@
 		<Spanish>Vedism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_OLYMPIANISM</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_OLYMPIANISM</Tag>
 		<English>Olympianism</English>
 		<French>
 			<Text>Olympisme</Text>
@@ -458,7 +458,7 @@
 		<Spanish>Olympianism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_BAALISM</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_BAALISM</Tag>
 		<English>Baalism</English>
 		<French>
 			<Text>Baalisme</Text>
@@ -470,7 +470,7 @@
 		<Spanish>Baalism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_ATUA</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_ATUA</Tag>
 		<English>Atua</English>
 		<French>
 			<Text>Atua</Text>
@@ -482,7 +482,7 @@
 		<Spanish>Atua</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_MAZDAISM</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_MAZDAISM</Tag>
 		<English>Mazdaism</English>
 		<French>
 			<Text>Mazd&#233;isme</Text>
@@ -494,7 +494,7 @@
 		<Spanish>Mazdaism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_TEOTL</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_TEOTL</Tag>
 		<English>Teotl</English>
 		<French>
 			<Text>Teotl</Text>
@@ -506,7 +506,7 @@
 		<Spanish>Teotl</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_SHINTO</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_SHINTO</Tag>
 		<English>Shinto</English>
 		<French>
 			<Text>Shinto&#239;sme</Text>
@@ -518,7 +518,7 @@
 		<Spanish>Shinto</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_ASATRU</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_ASATRU</Tag>
 		<English>Asatru</English>
 		<French>
 			<Text>&#193;satr&#250;</Text>
@@ -530,7 +530,7 @@
 		<Spanish>Asatru</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_DRUIDISM</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_DRUIDISM</Tag>
 		<English>Druidism</English>
 		<French>
 			<Text>Druidisme</Text>
@@ -542,7 +542,7 @@
 		<Spanish>Druidism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_RODNOVERY</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_RODNOVERY</Tag>
 		<English>Rodnovery</English>
 		<French>
 			<Text>Rodnov&#233;rie</Text>
@@ -554,7 +554,7 @@
 		<Spanish>Rodnovery</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_YORUBA</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_YORUBA</Tag>
 		<English>Yoruba</English>
 		<French>
 			<Text>Yoruba</Text>
@@ -566,7 +566,7 @@
 		<Spanish>Yoruba</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_INTI</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_INTI</Tag>
 		<English>Inti</English>
 		<French>
 			<Text>Inti</Text>
@@ -578,7 +578,7 @@
 		<Spanish>Inti</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_TENGRI</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_TENGRI</Tag>
 		<English>Tengri</English>
 		<French>
 			<Text>Tengrisme</Text>
@@ -590,7 +590,7 @@
 		<Spanish>Tengri</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_BON</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_BON</Tag>
 		<English>Bon</English>
 		<French>
 			<Text>Bon</Text>
@@ -602,7 +602,7 @@
 		<Spanish>Bon</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_MUGYO</Tag>
+		<Tag>TXT_KEY_PAGAN_RELIGION_MUGYO</Tag>
 		<English>Mugyo</English>
 		<French>
 			<Text>Mugyo</Text>

@@ -47,7 +47,8 @@ public:
 	void beginPlayerTurn(int iGameTurn, PlayerTypes);
 	void endPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);						
+	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
+	void restoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
 	void combatResult(CvUnit* pWinner, CvUnit* pLoser);					
 // BUG - Combat Events - start
 	void combatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
@@ -127,7 +128,7 @@ public:
 
 	void goldenAge(PlayerTypes ePlayer);
 	void endGoldenAge(PlayerTypes ePlayer);
-	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
+	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
 
 	void setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue );
 	void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
@@ -143,9 +144,17 @@ public:
 
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
-	void releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); // Leoreth
+	void releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); // Leoreth
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
+	void xmlLoaded(); // Leoreth
+	void fontsLoaded(); // Leoreth
+	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void autoplayEnded(); // Leoreth
+	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
+	void playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
+	void techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
 
 	DllExport void preSave();
 

@@ -1679,7 +1679,7 @@ void CvUnitAI::AI_barbAttackMove()
 		return;
 	}
 
-	if (plot()->isGoody())
+	if (!isAnimal() && plot()->isGoody())
 	{
 		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) <= 2)
 		{
@@ -9639,6 +9639,12 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 	int iFirstResearch, iSecondResearch;
 	int iPercentWasted = 0;
 
+	// House of Wisdom: attempt settling instead and do it that way
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM) && AI_join())
+	{
+		return true;
+	}
+
 	if (canDiscover(plot()))
 	{
 		eFirstDiscoverTech = getDiscoveryTech();
@@ -12940,7 +12946,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
+						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian() || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
 						{
 							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
 

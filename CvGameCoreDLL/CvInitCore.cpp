@@ -1050,6 +1050,12 @@ void CvInitCore::setCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomM
 	if ( checkBounds(iOptionID, 0, m_iNumCustomMapOptions) )
 	{
 		m_aeCustomMapOptions[iOptionID] = eCustomMapOption;
+
+		CyArgsList argsList;
+		argsList.add(iOptionID);
+		argsList.add(eCustomMapOption);
+		long lResult = 0;
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "updateCustomMapOption", argsList.makeFunctionArgs(), &lResult);
 	}
 }
 
@@ -1241,6 +1247,11 @@ void CvInitCore::setLeaderName(PlayerTypes eID, const CvWString & szLeaderName)
 	FASSERT_BOUNDS(0, MAX_PLAYERS, eID, "CvInitCore::setLeaderName");
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
+		if (getCiv(eID) == NO_CIVILIZATION)
+		{
+			return;
+		}
+
 		CvWString szName = szLeaderName;
 		gDLL->stripSpecialCharacters(szName);
 
@@ -1891,6 +1902,35 @@ void CvInitCore::resetAdvancedStartPoints()
 	}
 
 	setNumAdvancedStartPoints(iPoints);
+}
+
+
+const CvWString& CvInitCore::getGameName() const
+{
+	return m_szGameName;
+}
+
+
+void CvInitCore::setGameName(const CvWString& szGameName)
+{
+	static CvWString szAppliedGameName = szGameName;
+	static CvWString szModVersion = GC.getDefineSTRING("DAWN_OF_CIV_MOD_VERSION");
+	static CvWString szLeft = " (v";
+	static CvWString szRight = ")";
+
+	if (szModVersion != NULL && !szModVersion.empty())
+	{
+		int iSuffixIndex = szAppliedGameName.find(szLeft);
+		if (iSuffixIndex != std::string::npos)
+		{
+			szAppliedGameName = szAppliedGameName.substr(0, iSuffixIndex);
+		}
+
+		m_szGameName = szAppliedGameName + szLeft + szModVersion + szRight;
+		return;
+	}
+
+	m_szGameName = szGameName;
 }
 
 

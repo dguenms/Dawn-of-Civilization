@@ -487,7 +487,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headFirstTradesNode(); (pNode != NULL); pNode = nextFirstTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getSecondPlayer())
 			{
@@ -498,7 +498,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{
@@ -521,7 +521,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headSecondTradesNode(); (pNode != NULL); pNode = nextSecondTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getFirstPlayer())
 			{
@@ -532,7 +532,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{
@@ -759,6 +759,8 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 	case TRADE_TECHNOLOGIES:
 		GET_TEAM(GET_PLAYER(eToPlayer).getTeam()).setHasTech(((TechTypes)trade.m_iData), true, eToPlayer, true, true);
 		GET_TEAM(GET_PLAYER(eToPlayer).getTeam()).setNoTradeTech(((TechTypes)trade.m_iData), true);
+
+		CvEventReporter::getInstance().techTraded(eFromPlayer, eToPlayer, (TechTypes)trade.m_iData);
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{

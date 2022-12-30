@@ -1027,3 +1027,8 @@ void CyTeam::changeObsoleteBuildingCount(int eBuilding, int iChange)
 {
 	if (m_pTeam) m_pTeam->changeObsoleteBuildingCount((BuildingTypes)eBuilding, iChange);
 }
+
+int CyTeam::AI_getWarPlan(int eTeam)
+{
+	return m_pTeam ? m_pTeam->AI_getWarPlan((TeamTypes)eTeam) : -1;
+}

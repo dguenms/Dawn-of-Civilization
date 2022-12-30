@@ -1199,8 +1199,8 @@
 		<Spanish>[ICON_BULLET]Allows Trade of[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MISC_CITY_WAS_TRADED_TO</Tag>
-		<English>%s1_CityName was traded to the %s2_CivName!!!</English>
+		<Tag>TXT_KEY_MISC_CITY_WAS_CEDED_TO</Tag>
+		<English>%s1_CityName was ceded to the %s2_CivName!!!</English>
 		<French>%s1_CityName a &#233;t&#233; &#233;chang&#233; &#224; %s2_CivName !!!</French>
 		<German>Die Stadt %s1_CityName wurde an das %s2:2_CivName &#252;bereignet!!!</German>
 		<Italian>%s1_CityName &#232; stata ceduta a %s2_CivName!!!</Italian>
@@ -1511,28 +1511,12 @@
 		<Spanish>There are new mercenaries available for hiring.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_NEWCIV_MESSAGE</Tag>
-		<English>Do you wish to take permanent control of the %s1 civilization?</English>
-		<French>Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2 ?</French>
-		<German>Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
-		<Italian>Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
-		<Spanish>&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_NEWCIV_TITLE</Tag>
 		<English>A new civilization is being born</English>
 		<French>Naissance d'une nouvelle civilisation</French>
 		<German>Eine neue Zivilisation entsteht</German>
 		<Italian>Nasce una nuova civilt&#224;</Italian>
 		<Spanish>Ha nacido una nueva civilizaci&#243;n</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_INTERFACE_NEW_CIV_SWITCH</Tag>
-		<English>[H1]A new civilization is being born[\H1][NEWLINE]Do you wish to take permanent control of the %s1 civilization?</English>
-		<French>[H1]Naissance d'une nouvelle civilisation[\H1][NEWLINE]Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2 ?</French>
-		<German>[H1]Eine neue Zivilisation entsteht[\H1][NEWLINE]Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
-		<Italian>[H1]Nasce una nuova civilt&#224;[\H1][NEWLINE]Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
-		<Spanish>[H1]Ha nacido una nueva civilizaci&#243;n[\H1][NEWLINE]&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEWS_EVENT_FAMINE_2</Tag>
@@ -1663,7 +1647,7 @@
 		<Spanish>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR</Tag>
+		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR_RELIGIOUS</Tag>
 		<English>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</English>
 		<French>Croisade contre : %s1_player (n&#233;cessite %d2_ReqNum votes sur %d3_TotNum)</French>
 		<German>Kreuzzug gegen %s1_player (Erfordert %d2_ReqNum on insgesamt %d3_TotNum Stimmen.)</German>
@@ -1711,20 +1695,12 @@
 		<Spanish>&#205;ndice</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
-		<English>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
-		<French>Les villes %s1:4 sont sur le point de d&#233;clarer leur ind&#233;pendance et de se s&#233;parer de notre civilisation. Doit-on les laisser partir pacifiquement ?</French>
-		<German>%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
-		<Italian>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
-		<Spanish>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_REBELLION_TITLE</Tag>
-		<English>Independence!</English>
-		<French>Ind&#233;pendance !</French>
-		<German>Unabh&#228;ngigkeit!</German>
-		<Italian>Indipendenza!</Italian>
-		<Spanish>&#161;Independencia!</Spanish>
+		<Tag>TXT_KEY_RESURRECTION_TEXT</Tag>
+		<English>[H1]Independence![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
+		<French>[H1]Ind&#233;pendance ![\H1][NEWLINE]Les villes %s1:4 sont sur le point de d&#233;clarer leur ind&#233;pendance et de se s&#233;parer de notre civilisation. Doit-on les laisser partir pacifiquement ?</French>
+		<German>[H1]Unabh&#228;ngigkeit![\H1][NEWLINE]%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
+		<Italian>[H1]Indipendenza![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
+		<Spanish>[H1]&#161;Independencia![\H1][NEWLINE]%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
@@ -2567,6 +2543,14 @@
 		<Spanish>Culture Levels</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_PAGAN_RELIGIONS</Tag>
+		<English>Pagan Religions</English>
+		<French>Pagan Religions</French>
+		<German>Heidnische Religions</German>
+		<Italian>Pagan Religionss</Italian>
+		<Spanish>Pagan Religion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BUILDINGS</Tag>
 		<English>Buildings</English>
 		<French>B&#226;timents</French>
@@ -3001,12 +2985,44 @@
 		<Spanish>%d1/%d2%F3</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>INTERFACE_CITY_SATELLITE_LIMIT</Tag>
+		<English>%d1/%d2%F3</English>
+		<French>%d1/%d2%F3</French>
+		<German>%d1/%d2%F3</German>
+		<Italian>%d1/%d2%F3</Italian>
+		<Spanish>%d1/%d2%F3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_ADMINISTRATION</Tag>
+		<English>%d1 %F2</English>
+		<French>%d1 %F2</French>
+		<German>%d1 %F2</German>
+		<Italian>%d1 %F2</Italian>
+		<Spanish>%d1 %F2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_SEPARATISM</Tag>
+		<English>%d1 %F2</English>
+		<French>%d1 %F2</French>
+		<German>%d1 %F2</German>
+		<Italian>%d1 %F2</Italian>
+		<Spanish>%d1 %F2</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP</Tag>
 		<English>%d1 out of %d2 National Wonders at %s3 culture</English>
 		<French>%d1 sur %d2 merveilles nationales avec une culture %s3</French>
 		<German>%d1 out of %d2 National Wonders at %s3 culture</German>
 		<Italian>%d1 out of %d2 National Wonders at %s3 culture</Italian>
 		<Spanish>%d1 out of %d2 National Wonders at %s3 culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_SATELLITE_LIMIT_HELP</Tag>
+		<English>%d1 out of %d2 possible satellites from %d3 possible specialists</English>
+		<French>%d1 out of %d2 possible satellites from %d3 possible specialists</French>
+		<German>%d1 out of %d2 possible satellites from %d3 possible specialists</German>
+		<Italian>%d1 out of %d2 possible satellites from %d3 possible specialists</Italian>
+		<Spanish>%d1 out of %d2 possible satellites from %d3 possible specialists</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP</Tag>
@@ -3215,6 +3231,294 @@
 		<German>Baut %d1_Mod%% schneller mit Geb&#228;ude [LINK=literal]%s2_BldgName[\LINK in %s3_CityName</German>
 		<Italian>Realizza %d1_Mod%% pi&#249; velocemente con [LINK=literal]%s2_BldgName[\LINK] a %s3_CityName</Italian>
 		<Spanish>Construye un %d1_Mod%% m&#225;s r&#225;pido con [LINK=literal]%s2_BldgName[\LINK] en %s3_CityName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES</Tag>
+		<English> (max %d1_max)</English>
+		<French> (max %d1_max)</French>
+		<German> (max %d1_max)</German>
+		<Italian> (max %d1_max)</Italian>
+		<Spanish> (max %d1_max)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_TOTAL_RESOURCES</Tag>
+		<English>Total: %d1_total</English>
+		<French>Total: %d1_total</French>
+		<German>Total: %d1_total</German>
+		<Italian>Total: %d1_total</Italian>
+		<Spanish>Total: %d1_total</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES_ADVISOR</Tag>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+		<Spanish>Max consumable: %d1_max</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITIES_GAIN</Tag>
+		<English>(for %D1_Change cities)</English>
+		<French>(for %D1_Change cities)</French>
+		<German>(for %D1_Change cities)</German>
+		<Italian>(for %D1_Change cities)</Italian>
+		<Spanish>(for %D1_Change cities)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITIES_LOSS</Tag>
+		<English>(currently in %D1_Change cities)</English>
+		<French>(currently in %D1_Change cities)</French>
+		<German>(currently in %D1_Change cities)</German>
+		<Italian>(currently in %D1_Change cities)</Italian>
+		<Spanish>(currently in %D1_Change cities)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_OBSERVER_MODE_HEADER</Tag>
+		<English>Start Observer Mode</English>
+		<French>Start Observer Mode</French>
+		<German>Start Observer Mode</German>
+		<Italian>Start Observer Mode</Italian>
+		<Spanish>Start Observer Mode</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_OBSERVER_MODE_BODY</Tag>
+		<English>Enter end date:</English>
+		<French>Enter end date:</French>
+		<German>Enter end date:</German>
+		<Italian>Enter end date:</Italian>
+		<Spanish>Enter end date:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CIV_SWITCH_HEADER</Tag>
+		<English>Switch Civilization</English>
+		<French>Switch Civilization</French>
+		<German>Switch Civilization</German>
+		<Italian>Switch Civilization</Italian>
+		<Spanish>Switch Civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CIV_SWITCH_BODY</Tag>
+		<English>Select Civilization to play:</English>
+		<French>Select Civilization to play:</French>
+		<German>Select Civilization to play:</German>
+		<Italian>Select Civilization to play:</Italian>
+		<Spanish>Select Civilization to play:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GOALS</Tag>
+		<English>Historical Victory goals</English>
+		<French>Objectifs de victoire historique</French>
+		<German>Historische Siegbedingungen</German>
+		<Italian>Obiettivi per le vittorie storiche</Italian>
+		<Spanish>Objetivos de la victoria hist&#243;ria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HISTORICAL</Tag>
+		<English>Historical</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGIOUS</Tag>
+		<English>Religious</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITIES_FLIPPED</Tag>
+		<English>%s1 have joined our rising empire!</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHECKF8</Tag>
+		<English>Check the Victory Conditions (F8) for details</English>
+		<French>Consulter les conditions de victoire (F8) pour de plus amples d&#233;tails</French>
+		<German>Einzelheiten in den Siegbedingungen (F8)</German>
+		<Italian>Per ulteriori dettagli consulta le Condizioni di vittoria (F8)</Italian>
+		<Spanish>Revisa las condiciones para la victoria [F8] para obtener m&#225;s detalles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_WHAT_TO_BUILD_CITY_NAME</Tag>
+		<English>What would you like to build in %s1_CityName?</English>
+		<French>Que souhaitez-vous construire dans %s1_CityName ?</French>
+		<German>Was wollt Ihr in %s1_CityName errichten?</German>
+		<Italian>Cosa vuoi creare in %s1_CityName?</Italian>
+		<Spanish>&#191;Qu&#233; os gustar&#237;a construir en %s1_CityName?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCREEN_UNSTABLE</Tag>
+		<English>%F1 Neg</English>
+		<French>%F1 Neg</French>
+		<German>%F1 Neg</German>
+		<Italian>%F1 Neg</Italian>
+		<Spanish>%F1 Neg</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAT_RIVER_PLOTS</Tag>
+		<English>Flat River Tiles</English>
+		<French>Flat River Tiles</French>
+		<German>Flat River Tiles</German>
+		<Italian>Flat River Tiles</Italian>
+		<Spanish>Flat River Tiles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_BIRTH_PROTECTED</Tag>
+		<English>Rise of %s1</English>
+		<French>Rise of %s1</French>
+		<German>Rise of %s1</German>
+		<Italian>Rise of %s1</Italian>
+		<Spanish>Rise of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_BIRTH_EXPANSION</Tag>
+		<English>%s1 Expansion</English>
+		<French>%s1 Expansion</French>
+		<German>%s1 Expansion</German>
+		<Italian>%s1 Expansion</Italian>
+		<Spanish>%s1 Expansion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_NAME_CHANGED</Tag>
+		<English>The city of %s1 has changed its name to %s2.</English>
+		<French>The city of %s1 has changed its name to %s2.</French>
+		<German>The city of %s1 has changed its name to %s2.</German>
+		<Italian>The city of %s1 has changed its name to %s2.</Italian>
+		<Spanish>The city of %s1 has changed its name to %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_AMERICAN_WEST_COAST_CONQUERORS</Tag>
+		<English>%s1 troops staking their claim on the West Coast have appeared near %s2!</English>
+		<French>%s1 troops staking their claim on the West Coast have appeared near %s2!</French>
+		<German>%s1 troops staking their claim on the West Coast have appeared near %s2!</German>
+		<Italian>%s1 troops staking their claim on the West Coast have appeared near %s2!</Italian>
+		<Spanish>%s1 troops staking their claim on the West Coast have appeared near %s2!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS</Tag>
+		<English>%s1 troops claiming the Siberian coast have appeared near %s2!</English>
+		<French>%s1 troops claiming the Siberian coast have appeared near %s2!</French>
+		<German>%s1 troops claiming the Siberian coast have appeared near %s2!</German>
+		<Italian>%s1 troops claiming the Siberian coast have appeared near %s2!</Italian>
+		<Spanish>%s1 troops claiming the Siberian coast have appeared near %s2!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GENERIC</Tag>
+		<English>We are receiving reports that a major attack of %s1 conquerors on our territory is imminent.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_CAR</Tag>
+		<English>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</English>
+		<French>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</French>
+		<German>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</German>
+		<Italian>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to cross the Strait of Sicily and attack Africa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_GRE</Tag>
+		<English>We are receiving reports that a Roman army is planning to intervene in Greece!</English>
+		<French>We are receiving reports that a Roman army is planning to intervene in Greece!</French>
+		<German>We are receiving reports that a Roman army is planning to intervene in Greece!</German>
+		<Italian>We are receiving reports that a Roman army is planning to intervene in Greece!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to intervene in Greece!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_CEL</Tag>
+		<English>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</English>
+		<French>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</French>
+		<German>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</German>
+		<Italian>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</Italian>
+		<Spanish>We are receiving reports than an ambitious Roman general is planning to conquer Gaul!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_ROM_EGY</Tag>
+		<English>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</English>
+		<French>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</French>
+		<German>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</German>
+		<Italian>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</Italian>
+		<Spanish>We are receiving reports that a Roman army is planning to turn Egypt into one of its provinces!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_BAB</Tag>
+		<English>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</English>
+		<French>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</French>
+		<German>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</German>
+		<Italian>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</Italian>
+		<Spanish>We are receiving reports that a Greek leader is planning to unite its armies and conquer Mesopotamia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_EGY</Tag>
+		<English>We are receiving reports that the Greeks are planning to subdue Egypt!</English>
+		<French>We are receiving reports that the Greeks are planning to subdue Egypt!</French>
+		<German>We are receiving reports that the Greeks are planning to subdue Egypt!</German>
+		<Italian>We are receiving reports that the Greeks are planning to subdue Egypt!</Italian>
+		<Spanish>We are receiving reports that the Greeks are planning to subdue Egypt!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_GRE_PER</Tag>
+		<English>We are receiving reports that the Greek armies intend to capture the heart of Persia!</English>
+		<French>We are receiving reports that the Greek armies intend to capture the heart of Persia!</French>
+		<German>We are receiving reports that the Greek armies intend to capture the heart of Persia!</German>
+		<Italian>We are receiving reports that the Greek armies intend to capture the heart of Persia!</Italian>
+		<Spanish>We are receiving reports that the Greek armies intend to capture the heart of Persia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TAM_INO</Tag>
+		<English>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</English>
+		<French>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</French>
+		<German>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</German>
+		<Italian>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Italian>
+		<Spanish>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_SPA_MOO</Tag>
+		<English>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</English>
+		<French>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</French>
+		<German>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</German>
+		<Italian>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</Italian>
+		<Spanish>The Spanish reconquista is gaining momentum and they are close to attempting to reconquer Andalusia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TUR_ARA</Tag>
+		<English>Seljuk armies from Central Asia are gathering to push into Persia!</English>
+		<French>Seljuk armies from Central Asia are gathering to push into Persia!</French>
+		<German>Seljuk armies from Central Asia are gathering to push into Persia!</German>
+		<Italian>Seljuk armies from Central Asia are gathering to push into Persia!</Italian>
+		<Spanish>Seljuk armies from Central Asia are gathering to push into Persia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TUR_BYZ</Tag>
+		<English>Seljuk armies are assembling to further push into Anatolia!</English>
+		<French>Seljuk armies are assembling to further push into Anatolia!</French>
+		<German>Seljuk armies are assembling to further push into Anatolia!</German>
+		<Italian>Seljuk armies are assembling to further push into Anatolia!</Italian>
+		<Spanish>Seljuk armies are assembling to further push into Anatolia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_MON_TUR</Tag>
+		<English>Mongol armies from Central Asia are on their way to conquer Persia!</English>
+		<French>Mongol armies from Central Asia are on their way to conquer Persia!</French>
+		<German>Mongol armies from Central Asia are on their way to conquer Persia!</German>
+		<Italian>Mongol armies from Central Asia are on their way to conquer Persia!</Italian>
+		<Spanish>Mongol armies from Central Asia are on their way to conquer Persia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PERIOD_AREA_CHANGE</Tag>
+		<English>Our civilization has entered a new period, changing the territory we consider historical.</English>
+		<French>Our civilization has entered a new period, changing the territory we consider historical.</French>
+		<German>Our civilization has entered a new period, changing the territory we consider historical.</German>
+		<Italian>Our civilization has entered a new period, changing the territory we consider historical.</Italian>
+		<Spanish>Our civilization has entered a new period, changing the territory we consider historical.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

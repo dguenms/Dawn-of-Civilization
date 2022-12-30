@@ -358,8 +358,8 @@ public:
 	void setPlundered(bool bNewValue);
 	int /*PlayerTypes*/getOwner();
 	int /*TeamTypes*/getTeam();
-	int /*PlayerTypes*/getPreviousOwner();
-	int /*PlayerTypes*/getOriginalOwner();
+	int getPreviousCiv();
+	int getOriginalCiv();
 	int /*CultureLevelTypes*/ getCultureLevel();
 	int getCultureThreshold();
 	int getSeaPlotYield(int /*YieldTypes*/ eIndex);
@@ -422,11 +422,12 @@ public:
 	int getCommerceHappiness();
 	int getDomainFreeExperience(int /*DomainTypes*/ eIndex);
 	int getDomainProductionModifier(int /*DomainTypes*/ eIndex);
+	int getCivCulture(int iCivilization); // Leoreth
 	int getCulture(int /*PlayerTypes*/ eIndex);
 	int getCultureTimes100(int /*PlayerTypes*/ eIndex);
 	int countTotalCultureTimes100();
 	PlayerTypes findHighestCulture();
-	int calculateCulturePercent(int eIndex);
+	int calculateCulturePercent(int eCivilization);
 	int calculateOverallCulturePercent(int ePlayer); // Leoreth
 	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bPlots);
@@ -436,6 +437,7 @@ public:
 
 	bool isTradeRoute(int /*PlayerTypes*/ eIndex);
 	bool isEverOwned(int /*PlayerTypes*/ eIndex);
+	bool isEverOwnedCiv(int iCivilization);
 
 	bool isRevealed(int /*TeamTypes*/ eIndex, bool bDebug);	
 	void setRevealed(int /*TeamTypes*/ eIndex, bool bNewValue);	
@@ -565,6 +567,7 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	int getGameTurnPlayerLost(int ePlayer);
+	int getGameTurnCivLost(int iCivilization);
 	int getNextCoveredPlot() const;
 	int getEffectiveNextCoveredPlot() const;
 	bool isCoveredBeforeExpansion(int i) const;
@@ -577,7 +580,8 @@ public:
 	void replaceReligion(int eOldReligion, int eNewReligion);
 	void removeReligion(int eReligion);
 	void spreadReligion(int eReligion);
-	void setBuildingOriginalOwner(int eBuilding, int ePlayer);
+	void setBuildingOriginalOwner(int eBuilding, int eCivilization);
+	void setBuildingOriginalTime(int eBuilding, int iYear);
 	int getHappinessYield(int eYield);
 	void triggerMeltdown(int eBuilding);
 	bool isColony();
@@ -589,8 +593,24 @@ public:
 	int getModifiedCultureRateTimes100();
 	int getModifiedCultureRate();
 	int getNumActiveWorldWonders();
-	bool isCore(int iPlayer);
+	bool isCore(int iCivilization);
+	bool isPlayerCore(int iPlayer);
+	bool isOwnerCore();
 	int getActualCulture(int iPlayer);
+	int getTotalPopulationLoss();
+	int countSatellites();
+	int getSatelliteSlots();
+	int getArea();
+	bool rebuild();
+	bool isValidBuildingLocation(int eBuilding);
+	void setOriginalCiv(int iCivilization);
+	void setEverOwned(int iCivilization, bool bNewValue);
+	void setGameTurnFounded(int iNewValue);
+	void setGameTurnAcquired(int iNewValue);
+	void setCivCulture(int iCiv, int iNewValue);
+	bool isOriginalOwner(int iPlayer);
+	int getCorporationBadHappiness();
+	int getCorporationCount();
 
 private:
 	CvCity* m_pCity;

@@ -365,6 +365,11 @@ int CyGame::getStartTurn() const
 	return (NULL != m_pGame ? m_pGame->getStartTurn() : -1);
 }
 
+void CyGame::setStartTurn(int iNewValue)
+{
+	if (m_pGame) m_pGame->setStartTurn(iNewValue);
+}
+
 int CyGame::getStartYear() const
 {
 	return (NULL != m_pGame ? m_pGame->getStartYear() : -1);
@@ -1141,11 +1146,11 @@ void CyGame::saveReplay(int iPlayer)
 	}
 }
 
-void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv)
+void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv, int iBirthTurn, bool bAlive, bool bMinor)
 {
 	if (m_pGame)
 	{
-		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv);
+		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv, iBirthTurn, bAlive, bMinor);
 	}
 }
 
@@ -1311,6 +1316,11 @@ void CyGame::autosave()
 	if (m_pGame) m_pGame->autosave();
 }
 
+void CyGame::initialSave()
+{
+	if (m_pGame) m_pGame->autosave(true);
+}
+
 void CyGame::incrementBuildingClassCreatedCount(int iBuildingClass)
 {
 	if (m_pGame) m_pGame->incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
@@ -1324,4 +1334,34 @@ void CyGame::setCityScreenOwner(int iPlayer)
 void CyGame::resetCityScreenOwner()
 {
 	if (m_pGame) m_pGame->resetCityScreenOwner();
+}
+
+void CyGame::setGreatPeopleNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setGreatPeopleNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setReligionSpreadNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setEventEffectNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
+}
+
+int CyGame::getPeriod(int iCivilization)
+{
+	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
+}
+
+void CyGame::setPeriod(int iCivilization, int iPeriod)
+{
+	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
+}
+
+int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
+{
+	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
 }

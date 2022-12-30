@@ -44,6 +44,7 @@ class BugAlertsOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addLabel(screen, center, "Alerts_Diplomacy", "Diplomacy:")
 		self.addCheckbox(screen, center, "Civ4lerts__RefusesToTalk")
 		self.addCheckbox(screen, center, "Civ4lerts__WorstEnemy")
+		self.addCheckbox(screen, center, "Civ4lerts__CancelableTribute")
 		self.addCheckbox(screen, center, "MoreCiv4lerts__OpenBordersTrade")
 		self.addCheckbox(screen, center, "MoreCiv4lerts__DefensivePactTrade")
 		self.addCheckbox(screen, center, "MoreCiv4lerts__PermanentAllianceTrade")
@@ -68,11 +69,18 @@ class BugAlertsOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addCheckboxFloatDropdown(screen, rightL, rightR, "MoreCiv4lerts__DomPop", "MoreCiv4lerts__DomPopThresh", "LAYOUT_LEFT")
 		self.addCheckboxFloatDropdown(screen, rightL, rightR, "MoreCiv4lerts__DomLand", "MoreCiv4lerts__DomLandThresh", "LAYOUT_LEFT")
 		self.addCheckbox(screen, right, "MoreCiv4lerts__ShowUHVFailPopup")
+		self.addCheckbox(screen, right, "MoreCiv4lerts__ShowUHVSuccessPopup")
 		
 		screen.attachHSeparator(column, column + "Sep")
 		
 		# Reminders
-		left, right = self.addTwoColumnLayout(screen, column, "Main")
+		left, right = self.addTwoColumnLayout(screen, column, "Main", True)
 		self.addCheckbox(screen, left, "Reminder__Enabled")
 		self.addCheckbox(screen, left, "Reminder__Autolog")
 		self.addTextDropdown(screen, left, left, "Reminder__DisplayMethod")
+		
+		self.addLabel(screen, right, "Alerts_Notifications", "Notifications:")
+		rightL, rightR = self.addTwoColumnLayout(screen, right, "Notifications")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__GreatPeople")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__ReligionSpread")
+		self.addTextDropdown(screen, rightL, rightR, "MoreCiv4lerts__EventEffects")

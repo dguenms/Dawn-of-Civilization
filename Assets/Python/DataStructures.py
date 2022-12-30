@@ -1,21 +1,26 @@
-from Types import *
+from CoreTypes import *
 from CvPythonExtensions import *
 from copy import copy
+from traceback import extract_stack
 
 
 gc = CyGlobalContext()
 
 
-def deepdict(dictionary = {}):
+def deepdict(dictionary={}):
 	return defaultdict(dictionary, {})
 
 
-def appenddict(dictionary = {}):
+def appenddict(dictionary={}):
 	return defaultdict(dictionary, [])
 
 
-def defaultdict(dictionary, default):
+def defaultdict(dictionary={}, default=None):
 	return DefaultDict(dictionary, default)
+
+
+def dictFromEdges(lNodes, lEdges):
+	return CivDict(dict((iNode, list(set([iLeft for iLeft, iRight in lEdges if iRight == iNode] + [iRight for iLeft, iRight in lEdges if iLeft == iNode]))) for iNode in lNodes), [])
 
 		
 class DefaultDict(dict):
@@ -85,7 +90,7 @@ class TileDict:
 			self.entries[self.transform(values)].append(tile)
 	
 	def __iter__(self):
-		return iter(self.entries)
+		return iter(self.entries.items())
 	
 	def __str__(self):
 		return str(self.entries)
@@ -95,3 +100,30 @@ class TileDict:
 	
 	def values(self):
 		return self.entries.values()
+
+
+def get_calling_module():
+	trace = [call[0] for call in extract_stack() if call[0] != 'DataStructures']
+	return trace[-1]
+
+
+class PeriodOffsets(object):
+
+	def __init__(self):
+		self.turn = 0
+		self.offsets = defaultdict({}, 0)
+		
+	def __call__(self, interval):
+		self._check_invalidate()
+		calling = get_calling_module()
+		offset = self.offsets[(calling, interval)]
+		self.offsets[(calling, interval)] += 1
+		return offset
+		
+	def _check_invalidate(self):
+		if gc.getGame().getGameTurn() > self.turn:
+			self._invalidate()
+	
+	def _invalidate(self):
+		self.turn = gc.getGame().getGameTurn()
+		self.offsets = defaultdict({}, 0)

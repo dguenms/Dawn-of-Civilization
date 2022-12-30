@@ -1,19 +1,10 @@
-# Rhye's and Fall of Civilization - Barbarian units and cities
-
-import CvUtil
-import PyHelpers	# LOQ
-#import Popup
-#import cPickle as pickle
 from RFCUtils import *
 from Consts import *
 from StoredData import data
 
 from Events import handler
 from Core import *
-
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer	# LOQ
+from Locations import *
 
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
@@ -45,7 +36,7 @@ tMinorCities = (
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# Lübeck
-(866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
+(866, (101, 37), iBarbarian, 'Dai La', 2, -1, -1),			# Hanoi
 (880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
@@ -53,8 +44,8 @@ tMinorCities = (
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
 (990, (49, 56), iCelts, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
-(1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
-(1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
+(1000, (71, 17), iNative, 'Quelimane', 1, iNativeRaider, 1),		# Quelimane
+(1100, (71, 20), iNative, 'Mombasa', 1, iNativeRaider, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, iHorseArcher, 1),		# Kazan
 (1400, (104, 33), iIndependent, 'Saigon', 5, iCrossbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, iPombos, 1),	# Mbanza Kongo
@@ -241,24 +232,23 @@ def spawnBarbarians(iGameTurn):
 		iNumUnits = iHandicap
 		if scenario() == i3000BC: iNumUnits += 1
 		checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
-	if year().between(450, 1600):
+	if year().between(450, 1900):
 		if scenario() == i3000BC:
-			checkSpawn(iNative, iImpi, 2 + iHandicap, (60, 10), (72, 27), spawnNatives, iGameTurn, 10, 4)
+			checkSpawn(iNative, iNativeRaider, 2 + iHandicap, (60, 10), (72, 27), spawnNatives, iGameTurn, 10, 4)
 		else:
-			checkSpawn(iNative, iImpi, 2 + iHandicap, (60, 10), (72, 27), spawnNatives, iGameTurn, 15, 4)
+			checkSpawn(iNative, iNativeRaider, 2 + iHandicap, (60, 10), (72, 27), spawnNatives, iGameTurn, 15, 4)
 	elif year().between(1600, 1800):
 		checkSpawn(iNative, iPombos, 2 + iHandicap, (60, 10), (72, 27), spawnNatives, iGameTurn, 10, 4)
 		
 	#west africa
-	if year().between(450, 1700):
-		if iGameTurn < year(1300):
-			sAdj = ["TXT_KEY_ADJECTIVE_GHANAIAN"]
-		else:
-			sAdj = ["TXT_KEY_ADJECTIVE_SONGHAI"]
-		checkSpawn(iNative, iImpi, 2, (48, 22), (63, 29), spawnMinors, iGameTurn, 16, 10, sAdj)
+	if year().between(450, 1800):
+		checkSpawn(iNative, iNativeRaider, 2, (48, 22), (66, 29), spawnNatives, iGameTurn, 16, 10)
+		
+		checkSpawn(iNative, iNativeArcher, 1, (48, 22), (66, 29), spawnNatives, iGameTurn, 12, 8)
+		checkSpawn(iNative, iNativeWarrior, 2, (48, 22), (66, 29), spawnNatives, iGameTurn, 12, 2)
 		
 	if year().between(1200, 1700):
-		checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), spawnMinors, iGameTurn, 16, 4, sAdj)
+		checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), spawnMinors, iGameTurn, 16, 4, ["TXT_KEY_ADJECTIVE_SONGHAI"])
 
 	#American natives
 	if year().between(600, 1100):

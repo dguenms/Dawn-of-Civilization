@@ -157,11 +157,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_QUOTE</Tag>
-		<English>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</English>
-		<French>"Ainsi tout est reli&#233;, le ciel et la terre, l'air et l'eau. Tous ne sont qu'une chose, pas quatre, pas deux ni trois, mais une. L&#224; o&#249; ils ne sont pas tous ensembles, ce n'est qu'un morceau incomplet."[PARAGRAPH:2]- Paracelse</French>
-		<German>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</German>
-		<Italian>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Italian>
-		<Spanish>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Spanish>
+		<English>"All is interrelated. Heaven and earth, air and water. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</English>
+		<French>"Ainsi tout est reli&#233;, le ciel et la terre, l'air et l'eau. L&#224; o&#249; ils ne sont pas tous ensembles, ce n'est qu'un morceau incomplet."[PARAGRAPH:2]- Paracelse</French>
+		<German>"All is interrelated. Heaven and earth, air and water. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</German>
+		<Italian>"All is interrelated. Heaven and earth, air and water. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Italian>
+		<Spanish>"All is interrelated. Heaven and earth, air and water. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_PEDIA</Tag>
@@ -1505,6 +1505,14 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRICITY_HELP</Tag>
+		<English>[ICON_BULLET]Diplomatic contact is maintained indefinitely</English>
+		<French>[ICON_BULLET]Diplomatic contact is maintained indefinitely</French>
+		<German>[ICON_BULLET]Diplomatic contact is maintained indefinitely</German>
+		<Italian>[ICON_BULLET]Diplomatic contact is maintained indefinitely</Italian>
+		<Spanish>[ICON_BULLET]Diplomatic contact is maintained indefinitely</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ELECTRICITY_QUOTE</Tag>

@@ -250,13 +250,10 @@ class WBStoredDataScreen:
 				sText = CyTranslator().getText(str(gc.getPlayer(i).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(i).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lConquest":
-				sAttacker = CyTranslator().getText(str(gc.getPlayer(AIWars.lConquests[i][1]).getCivilizationShortDescriptionKey()), ())
-				sDefender = CyTranslator().getText(str(gc.getPlayer(AIWars.lConquests[i][2]).getCivilizationShortDescriptionKey()), ())
-				sText = sAttacker + " - " + sDefender
-				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			elif item == "lGoals":
-				sText = u"UHV%d: " % (i+1)
-				sText += getHistoricalGoalText(iSelectedCiv, i, True)
+				iAttacker, iDefender = AIWars.lConquests[i][1:3]
+				sAttacker = infos.civ(iAttacker).getText()
+				sDefender = iDefender >= 0 and infos.civ(iDefender).getText() or "Any Civilization"
+				sText = "%s - %s" % (sAttacker, sDefender)
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)

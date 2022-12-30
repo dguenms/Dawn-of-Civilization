@@ -152,15 +152,15 @@ class PopupLauncher(object):
 		
 	def option(self, func_name, *format, **optional):
 		handle, label, button = self._option_types[func_name]
-		label = retrieve(optional, 'label', label)
-		button = retrieve(optional, 'button', button)
+		label = optional.get('label', label)
+		button = optional.get('button', button)
 		self._choices.append(('option', handle, self.format_label(label, *format), button))
 		return self
 	
 	def selection(self, func_name, *format, **optional):
 		handle, label, button = self._selection_types[func_name]
-		label = retrieve(optional, 'label', label)
-		button = retrieve(optional, 'button', button)
+		label = optional.get('label', label)
+		button = optional.get('button', button)
 		self._choices.append(('selection', handle, self.format_label(label, *format), button))
 		return self
 		
@@ -169,8 +169,8 @@ class PopupLauncher(object):
 	
 	def cancel(self, *format, **optional):
 		label, button = self._cancel_type
-		label = retrieve(optional, 'label', label)
-		button = retrieve(optional, 'button', button)
+		label = optional.get('label', label)
+		button = optional.get('button', button)
 		self._choices.append(('option', self.no_handle, self.format_label(label, *format), button))
 		return self
 	
@@ -197,12 +197,10 @@ class PopupLauncher(object):
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 		
 		# dynamically register handler func
-		func_name = self.__class__.__name__
+		func_name = register(self.__class__.__name__, self.handle_choice)
 		
 		popup.setPythonModule("CvPopupInterface")
 		popup.setOnClickedPythonCallback(func_name)
-		
-		register(func_name, self.handle_choice)
 		
 		# pass arguments
 		setters = (popup.setData1, popup.setData2, popup.setData3)

@@ -26,6 +26,8 @@ void CyInfoPythonInterface1()
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
 
+		// Leoreth
+		.def("setDescription", &CvInfoBase::setDescription, "void (string)")
 		;
 
 	python::class_<CvScalableInfo>("CvScalableInfo")
@@ -319,6 +321,7 @@ void CyInfoPythonInterface1()
 		.def("isHiddenNationality", &CvUnitInfo::isHiddenNationality, "bool ()")
 		.def("isAlwaysHostile", &CvUnitInfo::isAlwaysHostile, "bool ()")
 		.def("isPersecute", &CvUnitInfo::isPersecute, "bool ()")
+		.def("isSlave", &CvUnitInfo::isSlave, "bool ()")
 
 		.def("getUnitMaxSpeed", &CvUnitInfo::getUnitMaxSpeed, "float ()")
 		.def("getUnitPadTime", &CvUnitInfo::getUnitPadTime, "float ()")

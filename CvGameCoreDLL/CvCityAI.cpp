@@ -3357,6 +3357,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iBuildingHappiness += kBuilding.getImprovementHappinessPercent(iI) * aiWorkedImprovementCount[iI] / 100;
 				}
 
+				// Leoreth: Gardens by the Bay
+				if (eBuilding == GARDENS_BY_THE_BAY)
+				{
+					iBuildingHappiness += getBuildingGoodHealth();
+				}
+
 				if (iBuildingHappiness != 0)
 				{
 					iValue += (std::min(iBuildingHappiness, iAngryPopulation) * 10)
@@ -3991,6 +3997,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 5 : 1) * (iI == 2 ? 2 : 1)); // Leoreth: emphasize river food / commerce yield more
 					}
+					if (kBuilding.getFlatRiverPlotYieldChange(iI) > 0)
+					{
+						iTempValue += kBuilding.getFlatRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == YIELD_FOOD ? 5 : 1) * (iI == YIELD_COMMERCE ? 2 : 1);
+					}
 					iTempValue += (kBuilding.getGlobalSeaPlotYieldChange(iI) * kOwner.countNumCoastalCities() * 8);
 					iTempValue += (kBuilding.getYieldChange(iI) * 6);
 					iTempValue += ((kBuilding.getYieldModifier(iI) * getBaseYieldRate((YieldTypes)iI)) / 10);
@@ -4073,6 +4083,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					{
 						iValue += (kBuilding.getRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 8); // Leoreth: emphasise river food
 					}
+
+					if (kBuilding.getFlatRiverPlotYieldChange(YIELD_FOOD) > 0)
+					{
+						iValue += (kBuilding.getFlatRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 8); 
+					}
 				}
 
 				if (iFocusFlags & BUILDINGFOCUS_PRODUCTION)
@@ -4090,6 +4105,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if (kBuilding.getRiverPlotYieldChange(YIELD_PRODUCTION) > 0)
 					{
 						iTempValue += (kBuilding.getRiverPlotYieldChange(YIELD_PRODUCTION) * countNumRiverPlots() * 4);
+					}
+					if (kBuilding.getFlatRiverPlotYieldChange(YIELD_PRODUCTION) > 0)
+					{
+						iTempValue += kBuilding.getFlatRiverPlotYieldChange(YIELD_PRODUCTION) * countNumRiverPlots() * 4;
 					}
 					if (bProvidesPower && !isPower())
 					{
@@ -4795,7 +4814,7 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 		{
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).getProjectMaking(eProject) > 0)
+				if (iI != getOwnerINLINE() && GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).getProjectMaking(eProject) > 0)
 				{
 					if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iI) < ATTITUDE_PLEASED)
 					{
@@ -4908,6 +4927,15 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	{
 		iValue += 5;
 		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 2 / 1000;
+	}
+
+	if (eProject == PROJECT_GREAT_FIREWALL)
+	{
+		iValue += 5;
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_BIG_ESPIONAGE))
+		{
+			iValue += 5;
+		}
 	}
 
 	if (eProject == PROJECT_LUNAR_COLONY)
@@ -6374,7 +6402,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 
 			if (eProductionBuilding != NO_BUILDING)
 			{
-				if (GC.getBuildingInfo(eProductionBuilding).getSeaPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getRiverPlotYieldChange(YIELD_FOOD) > 0)
+				if (GC.getBuildingInfo(eProductionBuilding).getSeaPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getRiverPlotYieldChange(YIELD_FOOD) > 0 || GC.getBuildingInfo(eProductionBuilding).getFlatRiverPlotYieldChange(YIELD_FOOD) > 0)
 				{
 
 					iMinTurns = std::min(iMinTurns, 10);
@@ -10362,7 +10390,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == UNIVERSITY_OF_SANKORE || eBuilding == BURJ_KHALIFA)
+	else if (eBuilding == UNIVERSITY_OF_SANKORE)
 	{
 		int iDesertCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -10417,14 +10445,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == HARBOUR_OPERA)
-	{
-		if (happyLevel() - unhappyLevel() < 4)
-		{
-			return -MAX_INT;
-		}
-	}
-	else if (eBuilding == SHALIMAR_GARDENS || eBuilding == GARDENS_BY_THE_BAY)
+	else if (eBuilding == SHALIMAR_GARDENS)
 	{
 		if (goodHealth() - badHealth() < 4)
 		{
@@ -10436,13 +10457,20 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 		int iFriendlyRelationCount = 0;
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).AI_getAttitude(getOwnerINLINE()) == ATTITUDE_FRIENDLY)
+			if (getOwnerINLINE() != iI && GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).AI_getAttitude(getOwnerINLINE()) == ATTITUDE_FRIENDLY)
 			{
 				iFriendlyRelationCount += 1;
 			}
 		}
 
 		if (iFriendlyRelationCount < 1)
+		{
+			return -MAX_INT;
+		}
+	}
+	else if (eBuilding == HARBOUR_OPERA)
+	{
+		if (!GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2) && !GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE3) && !GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE4))
 		{
 			return -MAX_INT;
 		}

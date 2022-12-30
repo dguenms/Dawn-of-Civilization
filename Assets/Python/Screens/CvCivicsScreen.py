@@ -4,6 +4,7 @@ import CvScreenEnums
 import CvScreensInterface
 from Consts import *
 import Stability
+from Civics import *
 
 # Globals
 gc = CyGlobalContext()
@@ -167,6 +168,13 @@ class CvCivicsScreen:
 			sText = u"%cNone" % gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar()
 
 		screen.addMultilineText(sName, sText, iX + iSpacing, iY + self.BUTTON_LARGE + 20, self.BUTTON_LARGE + iSpacing, self.H_CIVIC_CATEGORY - self.BUTTON_LARGE - (iSpacing * 2), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		
+		sName = "CivicStability" + str(iCategory)
+		if player.isUnstableCivic(iCivic):
+			sText = text("TXT_KEY_CIVIC_SCREEN_UNSTABLE", CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
+			screen.addMultilineText(sName, sText, iX + iSpacing, iY + self.BUTTON_LARGE + 50, self.BUTTON_LARGE + iSpacing, self.H_CIVIC_CATEGORY - self.BUTTON_LARGE - (iSpacing * 2), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		else:
+			screen.hide(sName)
 
 		sName = "CivicText" + str(iCategory)
 		sText = u"<font=4b>" + gc.getCivicInfo(iCivic).getDescription() + u"</font>"
@@ -361,7 +369,7 @@ class CvCivicsScreen:
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
-			iCombovalue = Stability.getCivicStability(self.iActivePlayer, [iHoverCivic, iCivic])
+			iCombovalue = Stability.getCivicStability(self.iActivePlayer, Civics.of(iCivic, iHoverCivic))
 			bGood = iCombovalue > 0
 			bBad = iCombovalue < 0
 			

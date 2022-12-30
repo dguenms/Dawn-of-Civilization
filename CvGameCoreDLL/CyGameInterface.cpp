@@ -90,6 +90,7 @@ void CyGamePythonInterface()
 		.def("getNumAdvancedStartPoints", &CyGame::getNumAdvancedStartPoints)
 		.def("setNumAdvancedStartPoints", &CyGame::setNumAdvancedStartPoints)
 		.def("getStartTurn", &CyGame::getStartTurn, "int () - Returns the starting Turn (0 unless a scenario or advanced era start)")
+		.def("setStartTurn", &CyGame::setStartTurn, "void (int iNewValue)")
 		.def("getStartYear", &CyGame::getStartYear, "int () - Returns the starting year (e.g. -4000)")
 		.def("setStartYear", &CyGame::setStartYear, "void () - Sets the starting year (e.g. -4000)")
 		.def("getEstimateEndTurn", &CyGame::getEstimateEndTurn)
@@ -255,7 +256,7 @@ void CyGamePythonInterface()
 		.def("getReplayInfo", &CyGame::getReplayInfo, python::return_value_policy<python::manage_new_object>())
 		.def("hasSkippedSaveChecksum", &CyGame::hasSkippedSaveChecksum)
 		.def("saveReplay", &CyGame::saveReplay)
-		.def("addPlayer", &CyGame::addPlayer, "void (int eNewPlayer, int eLeader, int eCiv)")
+		.def("addPlayer", &CyGame::addPlayer, "void (int eNewPlayer, int eLeader, int eCiv, int iBirthTurn, bool bAlive, bool bMinor)")
 		.def("getCultureThreshold", &CyGame::getCultureThreshold, "int getCultureThreshold(CultureLevelTypes eLevel)")
 
 		.def("setPlotExtraYield", &CyGame::setPlotExtraYield, "void (int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield)")
@@ -303,11 +304,21 @@ void CyGamePythonInterface()
 		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
 
 		.def("autosave", &CyGame::autosave, "void ()")
+		.def("initialSave", &CyGame::initialSave, "void ()")
 
 		.def("incrementBuildingClassCreatedCount", &CyGame::incrementBuildingClassCreatedCount, "void (int iBuildingClass)")
 
 		.def("setCityScreenOwner", &CyGame::setCityScreenOwner, "void (int iPlayer)")
 		.def("resetCityScreenOwner", &CyGame::resetCityScreenOwner, "void ()")
+
+		.def("setGreatPeopleNotifications", &CyGame::setGreatPeopleNotifications, "void (int iNotificationLevel)")
+		.def("setReligionSpreadNotifications", &CyGame::setReligionSpreadNotifications, "void (int iNotificationLevel)")
+		.def("setEventEffectNotifications", &CyGame::setEventEffectNotifications, "void (int iNotificationLevel)")
+
+		.def("getPeriod", &CyGame::getPeriod, "int getPeriod(int iCivilization)")
+		.def("setPeriod", &CyGame::setPeriod, "int setPeriod(int iCivilization, int iPeriod)")
+
+		.def("getCivilizationHistory", &CyGame::getCivilizationHistory, "int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

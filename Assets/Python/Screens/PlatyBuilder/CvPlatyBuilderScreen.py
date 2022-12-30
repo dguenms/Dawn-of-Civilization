@@ -35,14 +35,12 @@ from RFCUtils import *
 import MapEditorTools as met
 import SettlerMaps
 import WarMaps
-import RiseAndFall
 import RegionMap
 import DynamicCivs as dc
 import GreatPeople as gp
 
 from Core import *
 
-rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
@@ -77,18 +75,18 @@ class CvWorldBuilderScreen:
 		self.m_iReligionMapValue = 0
 		self.m_iRegionMapID = 0
 
-		self.m_iASUnitTabID = 1
+		self.m_iASUnitTabID = 2
 		self.m_iASUnitListID = 0
 		self.m_iASCityTabID = 0
 		self.m_iASCityListID = 0
 		self.m_iASBuildingsListID = 2
 		self.m_iASAutomateListID = 1
-		self.m_iASImprovementsTabID = 2
+		self.m_iASImprovementsTabID = 1
 		self.m_iASRoutesListID = 0
 		self.m_iASImprovementsListID = 1
-		self.m_iASVisibilityTabID = 3
+		self.m_iASVisibilityTabID = 4
 		self.m_iASVisibilityListID = 0
-		self.m_iASTechTabID = 4
+		self.m_iASTechTabID = 5
 		self.m_iASTechListID = 0
 
 		self.m_bSideMenuDirty = False
@@ -165,20 +163,19 @@ class CvWorldBuilderScreen:
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
 				elif self.iPlayerAddMode == iModeVictoryMap:
-					iVictoryRegion = CvScreensInterface.getUHVTileInfo((x, y, iPlayer)) # TODO: change player to civ
-					if iVictoryRegion != -1:
-						TextKey = "TXT_KEY_UHV_AREA_%d" % iVictoryRegion
-						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
+					sVictoryText = CvScreensInterface.getVictoryTooltip((iPlayer, x, y))
+					if sVictoryText:
+						sDoCText += "<font=3b>%s</font>" % sVictoryText
 				else:
 					# CNM and settlervalue
 					if x > -1 and y > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
 						sCityName = cnm.getFoundName(iPlayer, (x, y))
 						sDoCText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == iModeWarMap:
-						iPlotWarValue = self.m_pCurrentPlot.getWarValue(iPlayer)
+						iPlotWarValue = self.m_pCurrentPlot.getPlayerWarValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_WARVALUE", ()), iPlotWarValue)
 					else:
-						iPlotSettlerValue = self.m_pCurrentPlot.getSettlerValue(iPlayer)
+						iPlotSettlerValue = self.m_pCurrentPlot.getPlayerSettlerValue(iPlayer)
 						sDoCText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_SETTLERVALUE", ()), iPlotSettlerValue)
 				if sDoCText == "":
 					screen.deleteWidget("CNMName")
@@ -405,19 +402,19 @@ class CvWorldBuilderScreen:
 					if self.m_iAdvancedStartCurrentList[self.m_advancedStartTabCtrl.getActiveTab()] == self.m_iASCityListID:
 						iOptionID = self.m_iAdvancedStartCurrentIndexes[self.m_advancedStartTabCtrl.getActiveTab()]
 						# Place City
-						if iOptionID == 0:
-							if pPlayer.getAdvancedStartCityCost(True, pPlot) > -1:
-								CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
+						#if iOptionID == 0:
+						#	if pPlayer.getAdvancedStartCityCost(True, pPlot) > -1:
+						#		CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_CITY, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Population
-						elif iOptionID == 1:
+						if iOptionID == 0:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartPopCost(True, pCity) > -1:
 									CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_POP, iPlayer, x, y, -1, True)	#Action, Player, X, Y, Data, bAdd
 
 						# City Culture
-						elif iOptionID == 2:
+						elif iOptionID == 1:
 							if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								if pPlayer.getAdvancedStartCultureCost(True, pCity) > -1:
@@ -495,7 +492,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == iModeUnits:
 			for i in xrange(abs(iChange)):
 				unit = gc.getPlayer(iPlayer).initUnit(self.iSelection, x, y, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
-				if self.iSelection in lGreatPeopleUnits or self.iSelection in [iGreatGeneral, iGreatSpy]:
+				if self.iSelection in lGreatPeopleUnits:
 					gp.assignGreatPersonName(unit, iPlayer, -1, False)
 					
 		elif self.iPlayerAddMode == iModeBuildings:
@@ -591,13 +588,13 @@ class CvWorldBuilderScreen:
 				self.changeFlipZone(self.m_pCurrentPlot, True)
 		elif self.iPlayerAddMode == iModeCore:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setCore(iPlayer, True)
+				self.m_pCurrentPlot.setCore(civ(iPlayer), True)
 		elif self.iPlayerAddMode == iModeSettlerValue:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setSettlerValue(iPlayer, iSetValue)
+				self.m_pCurrentPlot.setSettlerValue(civ(iPlayer), iSetValue)
 		elif self.iPlayerAddMode == iModeWarMap:
 			if not is_minor(iPlayer):
-				self.m_pCurrentPlot.setWarValue(iPlayer, iWarValue)
+				self.m_pCurrentPlot.setWarValue(civ(iPlayer), iWarValue)
 		elif self.iPlayerAddMode == iModeReligionMap:
 			if not self.m_pCurrentPlot.isWater():
 				self.m_pCurrentPlot.setSpreadFactor(self.m_iCurrentReligion, self.m_iReligionMapValue)
@@ -729,15 +726,15 @@ class CvWorldBuilderScreen:
 					
 		elif self.iPlayerAddMode == iModeCore:
 			if not is_minor(iPlayer):
-				pPlot.setCore(iPlayer, False)
+				pPlot.setCore(civ(iPlayer), False)
 					
 		elif self.iPlayerAddMode == iModeSettlerValue:
 			if not is_minor(iPlayer):
-				pPlot.setSettlerValue(iPlayer, 20)
+				pPlot.setSettlerValue(civ(iPlayer), 20)
 					
 		elif self.iPlayerAddMode == iModeWarMap:
 			if not is_minor(iPlayer):
-				pPlot.setWarValue(iPlayer, 0)
+				pPlot.setWarValue(civ(iPlayer), 0)
 					
 		elif self.iPlayerAddMode == iModeReligionMap:
 			if not pPlot.isWater():
@@ -1113,12 +1110,12 @@ class CvWorldBuilderScreen:
 
 			iX = iXStart + 8
 			iY += iAdjust
-			screen.setImageButton("StoredDataScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 41)
-			screen.setStyle("StoredDataScreen", "Button_HUDAdvisorRecord_Style")
-			iX += iAdjust
-			screen.addCheckBoxGFC("DoCMapsScreen", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
-				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 42, ButtonStyles.BUTTON_STYLE_LABEL)
-			iX += iAdjust
+			# screen.setImageButton("StoredDataScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 41)
+			# screen.setStyle("StoredDataScreen", "Button_HUDAdvisorRecord_Style")
+			# iX += iAdjust
+			# screen.addCheckBoxGFC("DoCMapsScreen", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
+				# iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 42, ButtonStyles.BUTTON_STYLE_LABEL)
+			# iX += iAdjust
 			screen.addCheckBoxGFC("MoveMapScreen", "Art/Interface/Buttons/MoveMap.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 44, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
@@ -1952,13 +1949,6 @@ class CvWorldBuilderScreen:
 				x, y = location(plot)
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1001, "COLOR_RED", 0.7)
 
-			# Additional cities outside flipzone (Canada)
-			lExtraCities = getConvertedCities(self.m_iCurrentPlayer)
-			for city in lExtraCities:
-				x, y = location(city)
-				if (x, y) not in lHumanPlotList and (x, y) not in lAIPlotList:
-					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
-
 
 	def changeFlipZone(self, plot, bAdd):
 		lHumanPlotList, lAIPlotList	= self.getFlipZone(self.m_iCurrentPlayer)
@@ -2007,7 +1997,7 @@ class CvWorldBuilderScreen:
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
 			for plot in plots.all().land():
-				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
+				iPlotType = plot.getPlayerWarValue(self.m_iCurrentPlayer) / 2
 				if iPlotType > 0:
 					szColor = lWarMapColors[iPlotType-1]
 					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)
@@ -2055,15 +2045,11 @@ class CvWorldBuilderScreen:
 	def showVictoryOverlay(self):
 		removeStabilityOverlay()
 		lRegions = []
-		for plot in plots.all():
-			iVictoryRegion = CvScreensInterface.getUHVTileInfo((plot.getX(), plot.getY(), self.m_iCurrentPlayer)) # TODO: change player to civ
-			if iVictoryRegion != -1:
-				if iVictoryRegion not in lRegions:
-					lRegions.append(iVictoryRegion)
-				if not plot.isWater():
-					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000 + 2*lRegions.index(iVictoryRegion), "COLOR_MAGENTA", 0.7)
-				elif self.bVictoryRectangle:
-					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1001 + 2*lRegions.index(iVictoryRegion), "COLOR_LIGHT_GREY", 0.7)
+		for index, goal in enumerate(data.players[self.m_iCurrentPlayer].historicalVictory.goals + data.players[self.m_iCurrentPlayer].religiousVictory.goals):
+			for name, area in goal.areas.items():
+				paintPlots(area.land(), 1000 + 2*index, "COLOR_MAGENTA")
+				if self.bVictoryRectangle:
+					paintPlots(area.water(), 1001 + 2*index, "COLOR_LIGHT_GREY")
 
 	def showAreaExportOverlay(self):
 		removeStabilityOverlay()
@@ -2183,11 +2169,11 @@ class CvWorldBuilderScreen:
 
 			self.m_iAdvancedStartCurrentList.append(self.m_iASCityListID)
 
-			self.m_advancedStartTabCtrl.setNumColumns((gc.getNumUnitInfos()/10)+2);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_UNITS",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns((gc.getNumUnitInfos()/10)+2);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_UNITS",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
 			self.m_advancedStartTabCtrl.setNumColumns((gc.getNumImprovementInfos()/10)+2);
 			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_IMPROVEMENTS",()));
@@ -2195,17 +2181,17 @@ class CvWorldBuilderScreen:
 
 			self.m_iAdvancedStartCurrentList.append(self.m_iASRoutesListID)
 
-			self.m_advancedStartTabCtrl.setNumColumns(1);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_VISIBILITY",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns(1);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_VISIBILITY",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
-			self.m_advancedStartTabCtrl.setNumColumns(1);
-			self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_TECH",()));
-			self.m_iAdvancedStartCurrentIndexes.append(0)
+			#self.m_advancedStartTabCtrl.setNumColumns(1);
+			#self.m_advancedStartTabCtrl.addTabSection(CyTranslator().getText("TXT_KEY_WB_AS_TECH",()));
+			#self.m_iAdvancedStartCurrentIndexes.append(0)
 
-			self.m_iAdvancedStartCurrentList.append(0)
+			#self.m_iAdvancedStartCurrentList.append(0)
 
 			addWBAdvancedStartControlTabs()
 
@@ -2400,8 +2386,8 @@ class CvWorldBuilderScreen:
 		for iUnit in xrange(gc.getNumUnitInfos()):
 			pNewCity.setUnitProduction(iUnit, pOldCity.getUnitProduction(iUnit))
 			pNewCity.setGreatPeopleUnitProgress(iUnit, pOldCity.getGreatPeopleUnitProgress(iUnit))
-		for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
-			pNewCity.changeSpecialistCommerce(iCommerce, pOldCity.getSpecialistCommerce(iCommerce) - pNewCity.getSpecialistCommerce(iCommerce))
+		#for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+		#	pNewCity.changeSpecialistCommerce(iCommerce, pOldCity.getSpecialistCommerce(iCommerce) - pNewCity.getSpecialistCommerce(iCommerce))
 		for iBonus in xrange(gc.getNumBonusInfos()):
 			pNewCity.changeFreeBonus(iBonus, pOldCity.getFreeBonus(iBonus) - pNewCity.getFreeBonus(iBonus))
 			while pOldCity.isNoBonus(iBonus) != pNewCity.isNoBonus(iBonus):

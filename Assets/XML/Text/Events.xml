@@ -3,19 +3,11 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
-		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
-		<French>La compagnie commerciale %s1:2 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter son offre ?</French>
-		<German>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
-		<Italian>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
-		<Spanish>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>
-		<English>The %s1 Trading Company</English>
-		<French>La compagnie commerciale %s1:2</French>
-		<German>The %s1 Trading Company</German>
-		<Italian>The %s1 Trading Company</Italian>
-		<Spanish>The %s1 Trading Company</Spanish>
+		<English>[H1]The %s1 Trading Company[\H1][NEWLINE]The %s2 Trading Company asks for the control of %s4 and offers %d3 gold. Refusal will lead to war. Shall we accept their offer?</English>
+		<French>[H1]La compagnie commerciale %s1:2[\H1][NEWLINE]La compagnie commerciale %s2:2 demande le contr&#244;le de %s4 et offre %d3 or en retour. Refuser causera une guerre. Devons-nous accepter son offre ?</French>
+		<German>[H1]The %s1 Trading Company[\H1][NEWLINE]The %s2 Trading Company asks for the control of %s4 and offers %d3 gold. Refusal will lead to war. Shall we accept their offer?</German>
+		<Italian>[H1]The %s1 Trading Company[\H1][NEWLINE]The %s2 Trading Company asks for the control of %s4 and offers %d3 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
+		<Spanish>[H1]The %s1 Trading Company[\H1][NEWLINE]The %s2 Trading Company asks for the control of %s4 and offers %d3 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_AIRLINER_CRASH_1</Tag>
@@ -3756,7 +3748,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CRUSADE_DONE_1</Tag>
-		<English>Congratulations! Your Crusade to secure the sacred lands of %s2_city has wrested control of the city away from the %s1:2_civ_adjective! Please choose a reward from among the benefits that may accrue from the joy your people feel in this successful Crusade.</English>
+		<English>Congratulations! Your Crusade to secure the sacred lands of %s2_city has wrested control of the city away from the infidels! Please choose a reward from among the benefits that may accrue from the joy your people feel in this successful Crusade.</English>
 		<French>F&#233;licitations ! Votre croisade pour s&#233;curiser les terres saintes de la ville : %s2_city vous a permis d'arracher le contr&#244;le de la ville aux %s1:2_civ_adjective ! Veuillez choisir une r&#233;compense parmi les avantages dus &#224; la joie du peuple.</French>
 		<German>Gl&#252;ckwunsch! Ihr Kreuzzug zur Sicherung des heiligen Gebietes der Stadt %s2_city hat die Stadt dem %s1:2_civ_adjective Volk entrissen! W&#228;hlen Sie eine Belohnung aus den Vorteilen aus, die die Freude Ihres Volkes &#252;ber diesen erfolgreichen Kreuzzug Ihnen bieten kann.</German>
 		<Italian>Congratulazioni! La crociata per conquistare le sacre terre di %s2_city ha tolto il controllo della citt&#224; ai nemici %s1:3_civ_adjective! Scegli una ricompensa tra i benefici derivati dalla gioia del tuo popolo per questa vittoriosa crociata.</Italian>
@@ -6684,9 +6676,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TIN</Tag>
-		<English>The %s1_civ_adjective Empire has become the world's leading producer of tin.</English>
+		<English>The %s1_civ_adjective people have become the world's leading producer of tin.</English>
 		<French>L'empire %s1:1_civ_adjective est devenu le premier producteur mondial d'&#233;tain.</French>
-		<German>Das %s1:3_civ_adjective Reich hat sich zu einem der weltweit f&#252;hrenden Zinnproduzenten gemausert.</German>
+		<German>Das %s1:3_civ_adjective Volk ist zu einem der weltweit f&#252;hrenden Zinnproduzenten geworden.</German>
 		<Italian>L'impero %s1:1_civ_adjective &#232; diventato il maggior produttore mondiale di stagno.</Italian>
 		<Spanish>El imperio %s1:1_civ_adjective se ha convertido en el primer productor mundial de esta&#241;o.</Spanish>
 	</TEXT>

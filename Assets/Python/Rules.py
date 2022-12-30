@@ -6,51 +6,6 @@ from Events import handler
 
 ### CONSTANTS ###
 
-
-dStartingWorkers = CivDict({
-	iChina : 1,
-	iIndia : 2,
-	iGreece : 2,
-	iPersia : 3,
-	iPhoenicia : 2,
-	iRome : 2,
-	iMaya : 1,
-	iJapan : 2,
-	iTamils : 2,
-	iEthiopia : 3,
-	iKorea : 3,
-	iByzantium : 3,
-	iVikings : 3,
-	iTurks : 3,
-	iArabia : 3,
-	iTibet : 2,
-	iKhmer : 3,
-	iIndonesia : 3,
-	iMoors : 2,
-	iSpain : 3,
-	iFrance : 3,
-	iEngland : 3,
-	iHolyRome : 3,
-	iRussia : 3,
-	iNetherlands : 3,
-	iMali : 3,
-	iPoland : 3,
-	iOttomans : 4,
-	iPortugal : 3,
-	iInca : 4,
-	iItaly : 3,
-	iMongols : 4,
-	iAztecs : 3,
-	iMughals : 3,
-	iThailand : 2,
-	iCongo : 2,
-	iGermany : 3,
-	iAmerica : 4,
-	iBrazil : 3,
-	iArgentina : 2,
-	iCanada : 3,
-})
-
 dRelocatedCapitals = {
 	(iVikings, iRenaissance): tStockholm,
 	(iHolyRome, iRenaissance): tVienna,
@@ -60,7 +15,6 @@ dRelocatedCapitals = {
 
 
 ### CITY ACQUIRED ###
-
 
 @handler("cityAcquired")
 def resetSlaves(iOwner, iPlayer, city):
@@ -83,7 +37,7 @@ def restoreCapital(iOwner, iPlayer, city):
 	
 	capital = plots.capital(iPlayer)
 	
-	if data.players[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
+	if data.civs[iPlayer].iResurrections > 0 or player(iPlayer).getPeriod() != -1:
 		capital = plots.respawnCapital(iPlayer)
 		
 	if at(city, capital):
@@ -114,20 +68,18 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 
 ### CITY ACQUIRED AND KEPT ###
 	
-
 @handler("cityAcquiredAndKept")
 def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
-		if location(plot) == location(city):
+		if at(plot, city):
 			convertTemporaryCulture(plot, iPlayer, 25, False)
-		elif plot.getOwner() == city.getPreviousOwner():
+		elif civ(plot) == city.getPreviousCiv():
 			convertTemporaryCulture(plot, iPlayer, 50, True)
 		else:
 			convertTemporaryCulture(plot, iPlayer, 25, True)
 
 
 ### CITY BUILT ###
-	
 
 @handler("cityBuilt")
 def clearMinorCulture(city):
@@ -153,7 +105,7 @@ def createColonialDefenders(city):
 	if not player(iPlayer).isHuman():
 		if civ(iPlayer) in dCivGroups[iCivGroupEurope] and city.getRegionID() not in lEurope:
 			createGarrisons(city, iPlayer, 1)
-			makeUnit(iPlayer, getBestWorker(iPlayer), city)
+			createRoleUnit(iPlayer, city, iWork, 1)
 
 
 @handler("cityBuilt")
@@ -162,27 +114,31 @@ def americanPioneerAbility(city):
 	if civ(iPlayer) == iAmerica:
 		if city.getRegionID() in lNorthAmerica:
 			createGarrisons(city, iPlayer, 1)
-			makeUnit(iPlayer, getBestWorker(iPlayer), city)
+			createRoleUnit(iPlayer, city, iWork, 1)
 
 
 ### COMBAT RESULT ###
-
-			
+		
 @handler("combatResult")
 def captureSlaves(winningUnit, losingUnit):
 	if plot(winningUnit).isWater() and freeCargo(winningUnit, winningUnit) <= 0:
 		return
 
 	if civ(winningUnit) == iAztecs:
-		captureUnit(losingUnit, winningUnit, iAztecSlave, 35)
+		captureUnit(losingUnit, winningUnit, iAztecSlave, 50)
+		return
+	
+	if civ(losingUnit) == iNative and winningUnit.getUnitType() == iBandeirante and player(winningUnit).canUseSlaves():
+		captureUnit(losingUnit, winningUnit, iSlave, 100)
+		return
+	
+	if players.major().alive().none(lambda p: team(p).isHasTech(iCompass)):
+		return
 		
-	elif civ(losingUnit) == iNative:
+	if civ(losingUnit) == iNative:
 		if civ(winningUnit) not in lBioNewWorld or any(data.dFirstContactConquerors.values()):
 			if player(winningUnit).isSlavery() or player(winningUnit).isColonialSlavery():
-				if winningUnit.getUnitType() == iBandeirante:
-					captureUnit(losingUnit, winningUnit, iSlave, 100)
-				else:
-					captureUnit(losingUnit, winningUnit, iSlave, 35)
+				captureUnit(losingUnit, winningUnit, iSlave, 50)
 
 
 @handler("combatResult")
@@ -194,12 +150,13 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 			if city:
 				iFood = scale(5)
 				city.changeFood(iFood)
-				data.iTeotlFood += iFood
+				
 				message(iWinner, 'TXT_KEY_MAYA_HOLKAN_EFFECT', adjective(losingUnit), losingUnit.getName(), iFood, city.getName())
+				
+				events.fireEvent("combatFood", iWinner, winningUnit, iFood)
 
 
 ### REVOLUTION ###
-
 
 @handler("revolution")
 def validateSlaves(iPlayer):
@@ -217,17 +174,15 @@ def validateSlaves(iPlayer):
 
 ### UNIT BUILT ###
 
-
 @handler("unitBuilt")
 def moveSlavesToNewWorld(city, unit):
 	if base_unit(unit) == iSlave and city.getRegionID() in lEurope + [rMaghreb, rAnatolia] and not city.isHuman():	
-		colony = cities.owner(iPlayer).regions(*(lNorthAmerica + lSouthAmerica + lSubSaharanAfrica)).random()
+		colony = cities.owner(iPlayer).regions(*(lAmerica + lSubSaharanAfrica)).random()
 		if colony:
 			move(unit, colony)
 
 
 ### CAPITAL MOVED ###
-
 
 @handler("capitalMoved")
 def resetAdminCenterOnPalaceBuilt(city):
@@ -257,7 +212,6 @@ def brazilianMadeireiroAbility(plot, city, iFeature):
 
 ### BEGIN GAME TURN ###
 
-
 @handler("BeginGameTurn")
 def checkImmigration(iGameTurn):
 	if iGameTurn < year(dBirth[iAmerica]) + turns(5):
@@ -267,22 +221,21 @@ def checkImmigration(iGameTurn):
 	
 	if data.iImmigrationTimer == 0:
 		immigration()
-		data.iImmigrationTimer = 3 + rand(5)
+		data.iImmigrationTimer = 3 + rand(turns(5))
 
 
 ### TECH ACQUIRED ###
 
-
 @handler("techAcquired")
 def relocateCapitals(iTech, iTeam, iPlayer):
 	if not player(iPlayer).isHuman():
+		iCiv = civ(iPlayer)
 		iEra = infos.tech(iTech).getEra()
-		if (iPlayer, iEra) in dRelocatedCapitals:
-			relocateCapital(iPlayer, dRelocatedCapitals[iPlayer, iEra])
+		if (iCiv, iEra) in dRelocatedCapitals:
+			relocateCapital(iPlayer, dRelocatedCapitals[iCiv, iEra])
 
 
 ### END GAME TURN ###
-
 
 @handler("EndGameTurn")
 def startTimedConquests():
@@ -292,18 +245,7 @@ def startTimedConquests():
 	data.lTimedConquests = []
 
 
-### FIRST CITY ###
-
-
-@handler("firstCity")
-def createStartingWorkers(city):
-	iPlayer = city.getOwner()
-	if city.isCapital() and iPlayer in dStartingWorkers:
-		makeUnits(iPlayer, getBestWorker(iPlayer), city, dStartingWorkers[iPlayer])
-
-
 ### BEGIN PLAYER TURN ###
-
 
 @handler("setPlayerAlive")
 def updateLastTurnAlive(iPlayer, bAlive):
@@ -311,16 +253,14 @@ def updateLastTurnAlive(iPlayer, bAlive):
 		return
 
 	if not bAlive and not (player(iPlayer).isHuman() and autoplay()):
-		print "lastturnalive: %s at turn %d" % (name(iPlayer), game.getGameTurn())
-		data.players[iPlayer].iLastTurnAlive = game.getGameTurn()
+		data.civs[iPlayer].iLastTurnAlive = game.getGameTurn()
 
 
 ### IMPLEMENTATIONS ###
-		
-		
+
 def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
-	iHappinessDifference = city.happyLevel - city.unhappyLevel(0)
+	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 	
 	iValue = 0
 	
@@ -340,6 +280,7 @@ def getEmigrationValue(city):
 	
 	iValue -= min(0, iHappinessDifference)
 	iValue -= min(0, iFoodDifference / 2)
+	iValue += city.getPopulation() / 5
 	
 	return iValue
 
@@ -348,7 +289,7 @@ def immigration():
 	sourcePlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() not in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getEmigrationValue(city) > 0))
 	targetPlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getImmigrationValue(city) > 0))
 	
-	iNumMigrations = min(sourcePlayers.count() / 4, targetPlayers.count())
+	iNumMigrations = min(sourcePlayers.count(), targetPlayers.count())
 	
 	sourceCities = sourcePlayers.cities().where(lambda city: city.getPopulation() > 1).highest(iNumMigrations, getEmigrationValue)
 	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)

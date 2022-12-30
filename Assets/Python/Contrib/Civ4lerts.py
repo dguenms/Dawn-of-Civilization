@@ -122,6 +122,8 @@ class Civ4lerts:
 		SlaveTrade(eventManager)
 		RefusesToTalk(eventManager)
 		WorstEnemy(eventManager)
+		CancelableTribute(eventManager)
+		RestoredContact(eventManager)
 
 
 ## Displaying Alert Messages
@@ -172,6 +174,7 @@ class AbstractStatefulAlert:
 	def __init__(self, eventManager):
 		eventManager.addEventHandler("GameStart", self.onGameStart)
 		eventManager.addEventHandler("OnLoad", self.onLoadGame)
+		eventManager.addEventHandler("switch", self.onSwitch)
 
 	def onGameStart(self, argsList):
 		self._init()
@@ -181,6 +184,10 @@ class AbstractStatefulAlert:
 		self._init()
 		self._reset()
 		return 0
+	
+	def onSwitch(self, argsList):
+		self._init()
+		self._reset()
 
 	def _init(self):
 		"Initializes globals that could not be done in __init__."
@@ -966,12 +973,16 @@ class RefusesToTalk(AbstractStatefulAlert):
 		self.check()
 
 	def onChangeWar(self, argsList):
-		bIsWar, eTeam, eRivalTeam = argsList
+		bIsWar, eTeam, eRivalTeam, bFromDefensivePact = argsList
 		self.checkIfIsAnyOrHasMetAllTeams(eTeam, eRivalTeam)
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 		
 	def onDealCanceled(self, argsList):
 		eOfferPlayer, eTargetPlayer, pTrade = argsList
@@ -997,6 +1008,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowRefusesToTalkAlert()):
 			return
 		if len(self.refusals) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer, activePlayer = PlayerUtil.getActivePlayerAndID()
 		refusals = self.refusals[eActivePlayer]
@@ -1051,7 +1064,11 @@ class WorstEnemy(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		iPreviousOwner = slot(Civ(city.getPreviousCiv()))
+		if iPreviousOwner < 0:
+			return
+		
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(iPreviousOwner), PlayerUtil.getPlayerTeamID(ePlayer))
 	
 	def onVassalState(self, argsList):
 		eMaster, eVassal, bVassal = argsList
@@ -1075,6 +1092,8 @@ class WorstEnemy(AbstractStatefulAlert):
 		if (not Civ4lertsOpt.isShowWorstEnemyAlert()):
 			return
 		if len(self.enemies) == 0:
+			return
+		if data.iBeforeObserverSlot != -1:
 			return
 		eActivePlayer = PlayerUtil.getActivePlayerID()
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()
@@ -1130,3 +1149,42 @@ class WorstEnemy(AbstractStatefulAlert):
 		self.enemies = {}
 		for player in PlayerUtil.players():
 			self.enemies[player.getID()] = [-1] * gc.getMAX_TEAMS()
+
+
+class CancelableTribute(AbstractStatefulAlert):
+
+	def __init__(self, eventManager):
+		AbstractStatefulAlert.__init__(self, eventManager)
+		eventManager.addEventHandler("BeginActivePlayerTurn", self.onBeginActivePlayerTurn)
+	
+	def onBeginActivePlayerTurn(self, args):
+		self.check()
+	
+	def check(self):
+		if not Civ4lertsOpt.isShowCancelableTributeAlert():
+			return
+		
+		iActivePlayer = game.getActivePlayer()
+		cancelablePlayers = set()
+		
+		for iDeal in range(game.getIndexAfterLastDeal()):
+			deal = game.getDeal(iDeal)
+			
+			if deal.getFirstPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthSecondTrades() == 0:
+				cancelablePlayers.add(deal.getSecondPlayer())
+				
+			elif deal.getSecondPlayer() == iActivePlayer and deal.turnsToCancel(iActivePlayer) == 0 and deal.getLengthFirstTrades() == 0:
+				cancelablePlayers.add(deal.getFirstPlayer())
+		
+		if cancelablePlayers:
+			addMessageNoIcon(iActivePlayer, text("TXT_KEY_CIV4LERTS_ON_CANCELABLE_TRIBUTE", ", ".join([name(iPlayer) for iPlayer in cancelablePlayers])))
+
+
+class RestoredContact:
+
+	def __init__(self, eventManager):
+		eventManager.addEventHandler("restoredContact", self.onRestoredContact)
+	
+	def onRestoredContact(self, (iOurTeam, iTheirTeam)):
+		if not is_minor(team(iTheirTeam).getLeaderID()):
+			addMessageNoIcon(team(iOurTeam).getLeaderID(), text("TXT_KEY_CIV4LERTS_ON_RESTORED_CONTACT", name(team(iTheirTeam).getLeaderID())))

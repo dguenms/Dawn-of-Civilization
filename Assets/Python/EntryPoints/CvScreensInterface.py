@@ -58,17 +58,19 @@ from RFCUtils import *
 from RFCUtils import canRespawn as canRespawnUtils
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
+from Stability import calculateAdministration, calculateSeparatism
 import CityNameManager as cnm
-import RiseAndFall as rnf
-import Victory as vic
+import Victories
 
+from Scenarios import getScenario
 from Locations import *
 from Core import *
 
 gc = CyGlobalContext()
 	
 def countAchievedGoals(argsList):
-	return vic.countAchievedGoals(argsList[0])
+	iPlayer = argsList[0]
+	return count(data.players[iPlayer].historicalGoals, lambda goal: goal.succeeded())
 	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen
@@ -318,6 +320,7 @@ def createCivilopedia():
 								PEDIA_LEADERS			: pediaMainScreen,
 								PEDIA_CIVICS			: pediaMainScreen,
 								PEDIA_RELIGIONS			: pediaMainScreen,
+								PEDIA_PAGAN_RELIGIONS	: pediaMainScreen,
 								PEDIA_CORPORATIONS		: pediaMainScreen,
 								PEDIA_SPECIALISTS		: pediaMainScreen,
 								PEDIA_TECHS			: pediaMainScreen,
@@ -351,6 +354,7 @@ def createCivilopedia():
 							PEDIA_LEADERS			: pediaMainScreen,
 							PEDIA_CIVICS			: pediaMainScreen,
 							PEDIA_RELIGIONS			: pediaMainScreen,
+							PEDIA_PAGAN_RELIGIONS	: pediaMainScreen,
 							PEDIA_CORPORATIONS		: pediaMainScreen,
 							PEDIA_SPECIALISTS		: pediaMainScreen,
 							PEDIA_TECHS			: pediaMainScreen,
@@ -422,6 +426,11 @@ def pediaJumpToCivic(argsList):
 
 def pediaJumpToReligion(argsList):
 	pediaMainScreen.pediaJump(PEDIA_RELIGIONS, argsList[0], True, False)
+	
+	
+
+def pediaJumpToPaganReligion(argsList):
+	pediaMainScreen.pediaJump(PEDIA_PAGAN_RELIGIONS, argsList[0], True, False)
 
 
 
@@ -897,285 +906,23 @@ def isNeighbor(argsList):
 	if civ(iNeighbor) in dNeighbors[civ(iPlayer)]: return 1
 	else: return 0
 	
-#Leoreth
-def getUHVTileInfo(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iPlayer = argsList[2]
-	iCiv = civ(iPlayer)
+# Leoreth
+def getVictoryTooltip(argsList):
+	iPlayer, x, y = argsList
 	
-	plot = gc.getMap().plot(x, y)
+	historicalVictoryTooltip = data.players[iPlayer].historicalVictory.area_names((x, y))
+	religiousVictoryTooltip = data.players[iPlayer].religiousVictory.area_names((x, y))
 	
-	if iCiv == iGreece:
-		if (x, y) in plots.normal(iEgypt):
-			return 0
-			
-		if (x, y) in plots.normal(iCarthage):
-			return 1
-			
-		if (x, y) in plots.normal(iBabylonia):
-			return 2
-			
-		if (x, y) in plots.normal(iPersia):
-			return 3
-			
-	elif iCiv == iIran:
-		if plot in plots.rectangle(tSafavidMesopotamia):
-			return 4
-		
-		if plot in plots.rectangle(tTransoxiana):
-			return 5
-		
-		if plot in plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions):
-			return 6
-			
-	elif iCiv == iPhoenicia:
-		if plot in plots.normal(iItaly).without([(62, 47), (63, 47), (63, 46)]):
-			return 37
-		
-		if (x, y) in plots.rectangle(tIberia):
-			return 8
-			
-	elif iCiv == iItaly:
-		if plot in plots.rectangle(tMediterranean).without(lMediterraneanExceptions) and plot.isCoastalLand():
-			return 7
-			
-	elif iCiv == iRome:
-		if (x, y) in plots.normal(iSpain):
-			return 8
-				
-		if plot in plots.rectangle(tGaul):
-			return 9
-		
-		if (x, y) in plots.core(iEngland):
-			return 10
-		
-		if plot in plots.rectangle(tAfrica):
-			return 11
-		
-		if (x, y) in plots.core(iByzantium):
-			return 12
-			
-		if (x, y) in plots.core(iEgypt):
-			return 13
+	tooltips = unique(tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip)
+	return "\n".join(tooltips)
 
-	elif iCiv == iJapan:
-		if plot in plots.rectangle(tKorea):
-			return 14
-		
-		if plot in plots.rectangle(tManchuria):
-			return 15
-		
-		if plot in plots.rectangle(tChina):
-			return 16
-		
-		if plot in plots.rectangle(tIndochina).without(lIndochinaExceptions):
-			return 17
-		
-		if plot in plots.rectangle(tIndonesia):
-			return 18
-		
-		if plot in plots.rectangle(tPhilippines):
-			return 19
-			
-	elif iCiv == iEthiopia:
-		if plot.getRegionID() in lAfrica:
-			return 33
-		
-	elif iCiv == iByzantium:
-		if plot in plots.rectangle(tBalkans):
-			return 21
-		
-		if plot in plots.rectangle(tNorthAfrica):
-			return 22
-		
-		if plot in plots.rectangle(tNearEast):
-			return 23
-			
-	elif iCiv == iArabia:
-		if (x, y) in plots.core(iEgypt):
-			return 24
-		
-		if plot in plots.rectangle(tAfrica):
-			return 25
-		
-		if (x, y) in plots.core(iBabylonia):
-			return 26
-				
-		if (x, y) in plots.core(iPersia):
-			return 27
-		
-		if (x, y) in plots.normal(iSpain):
-			return 28
-			
-	elif iCiv == iSpain:
-		if plot in plots.rectangle(tEurope):
-			return 29
-		
-		elif plot in plots.rectangle(tEasternEurope):
-			return 29
-			
-	elif iCiv == iFrance:
-		if plot in plots.rectangle(tEurope):
-			return 29
-			
-		elif plot in plots.rectangle(tEasternEurope):
-			return 29
-		
-		if plot in plots.rectangle(tNorthAmerica):
-			return 30
-			
-	elif iCiv == iEngland:
-		if plot.getRegionID() in lNorthAmerica:
-			return 31
-				
-		if plot.getRegionID() in lSouthAmerica:
-			return 32
-				
-		if plot.getRegionID() in lAfrica:
-			return 33
-				
-		if plot.getRegionID() in lAsia:
-			return 34
-			
-		if plot.getRegionID() in lOceania:
-			return 35
-			
-	elif iCiv == iGermany:
-		if (x, y) in plots.normal(iFrance):
-			return 36
-		
-		if (x, y) in plots.normal(iItaly):
-			return 37
-		
-		if (x, y) in plots.normal(iRussia):
-			return 38
-		
-		if (x, y) in plots.normal(iEngland):
-			return 39
-		
-		if (x, y) in plots.normal(iVikings):
-			return 40
-			
-	elif iCiv == iRussia:
-		if plot in plots.rectangle(tSiberia):
-			return 41
-			
-	elif iCiv == iInca:
-		if (x, y) in lAndeanCoast:
-			return 42
-		
-		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
-			return 43
-			
-	elif iCiv == iOttomans:
-		if (x,y) in lEasternMediterranean:
-			return 47
-			
-		if (x,y) in lBlackSea:
-			return 48
-		
-		if plot in plots.surrounding(tCairo):
-			return 49
-		
-		if plot in plots.surrounding(tMecca):
-			return 50
-		
-		if plot in plots.surrounding(tBaghdad):
-			return 51
-		
-		if plot in plots.surrounding(tVienna):
-			return 52
-			
-	elif iCiv == iThailand:
-		if plot in plots.rectangle(tSouthAsia):
-			return 53
-			
-	elif iCiv == iAmerica:
-		if plot in plots.rectangle(tNorthCentralAmerica):
-			return 54
-			
-	elif iCiv == iTamils:
-		if plot in plots.rectangle(tDeccan):
-			return 55
-		
-		if plot in plots.rectangle(tSrivijaya):
-			return 56
-			
-	elif iCiv == iMoors:
-		if plot in plots.rectangle(tIberia):
-			return 57
-		
-		if plot in plots.rectangle(tMaghreb):
-			return 58
-		
-		if plot in plots.rectangle(tWestAfrica):
-			return 59
-			
-	elif iCiv == iPortugal:
-		if plot.getRegionID() in lAfrica:
-			return 33
-					
-		if plot.getRegionID() in lAsia:
-			return 34
-		
-		if plot in plots.rectangle(tBrazil):
-			return 60
-			
-	elif iCiv == iColombia:
-		if plot in plots.rectangle(tPeru):
-			return 43
-		
-		if plot in plots.rectangle(tGranColombia):
-			return 44
-		
-		if plot in plots.rectangle(tGuayanas):
-			return 45
-		
-		if plot in plots.rectangle(tCaribbean):
-			return 46
-		
-		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
-			return 61
-				
-	elif iCiv == iCanada:
-		if (x, y) in lAtlanticCoast:
-			return 63
-			
-		if (x, y) in lPacificCoast:
-			return 64
-		
-		if plot in plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) or plot in plots.rectangle(tCanadaEast).without(lCanadaEastExceptions):
-			return 62
-			
-	elif iCiv == iPolynesia:
-		if plot in plots.rectangle(tHawaii):
-			return 65
-		
-		if plot in plots.rectangle(tNewZealand):
-			return 66
-		
-		if plot in plots.rectangle(tMarquesas):
-			return 67
-		
-		if plot in plots.rectangle(tEasterIsland):
-			return 68
-			
-	elif iCiv == iMongols:
-		if (x, y) in plots.normal(iChina):
-			return 69
-			
-	elif iCiv == iTurks:
-		if (x, y) in lMediterraneanPorts:
-			return 70
-			
-		if plot in plots.rectangle(tChina):
-			return 71
-				
-		# free IDs: 20
-		# continue with ID 72
-			
-	return -1
+# Leoreth
+def getHistoricalVictoryDescriptions(argsList):
+	iCiv = argsList[0]
+	if iCiv not in Victories.dHistoricalGoals:
+		return ""
+	
+	return "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dHistoricalGoals[iCiv])
 		
 def getCityName(argsList):
 	iPlayer, x, y = argsList
@@ -1188,45 +935,29 @@ def getCityName(argsList):
 		return result
 		
 def canRespawn(argsList):
-	iPlayer = argsList[0]
+	iCiv = argsList[0]
 	
-	if canRespawnUtils(iPlayer): return 1
+	if canRespawnUtils(Civ(iCiv)): return 1
 	
 	return 0
 	
 def canEverRespawn(argsList):
-	iPlayer, iGameTurn = argsList
+	iCiv, iGameTurn = argsList
 	
-	if canEverRespawnUtils(iPlayer, iGameTurn): return 1
+	if canEverRespawnUtils(Civ(iCiv), iGameTurn): return 1
 	
 	return 0
 
 def toggleStabilityOverlay():
 	toggleStabilityOverlayUtils()
+
+def updateCustomMapOption(argsList):
+	iOptionID, iOption = argsList
+	if iOptionID == 0:
+		scenario = getScenario(iOption)
+		scenario.setupCivilizations()
+		scenario.setupLeaders()
 		
-def applyClaimCityEvent(argsList):
-	data.currentCongress.applyClaimCityEvent(argsList[0])
-	
-def applyVoteCityEvent(argsList):
-	data.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
-	
-def applyIntroductionEvent(argsList):
-	data.currentCongress.applyIntroductionEvent()
-	
-def applyRefusalEvent(argsList):
-	data.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyEvent(argsList):
-	data.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
-	
-def applyBriberyResultEvent(argsList):
-	data.currentCongress.applyBriberyResultEvent()
-	
-### Rise And Fall
-
-def applyNewCivSwitchEvent(argsList):
-	rnf.applyNewCivSwitchEvent(argsList)
-
 
 #######################################################################################
 ## Handle Close Map

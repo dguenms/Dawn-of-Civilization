@@ -617,8 +617,11 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_GENERAL_KILLED", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getEraInfo(GC.getGameINLINE().getCurrentEra()).getAudioUnitDefeatScript(), MESSAGE_TYPE_MAJOR_EVENT);
+					if (GC.getGameINLINE().isGreatPeopleNotification((PlayerTypes)iI, getOwnerINLINE()) || GC.getGameINLINE().isGreatPeopleNotification((PlayerTypes)iI, ePlayer))
+					{
+						szBuffer = gDLL->getText("TXT_KEY_MISC_GENERAL_KILLED", getNameKey());
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getEraInfo(GC.getGameINLINE().getCurrentEra()).getAudioUnitDefeatScript(), MESSAGE_TYPE_MAJOR_EVENT);
+					}
 				}
 			}
 		}
@@ -1235,6 +1238,8 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	getDefenderCombatValues(*pDefender, pPlot, iAttackerStrength, iAttackerFirepower, iDefenderOdds, iDefenderStrength, iAttackerDamage, iDefenderDamage, &cdDefenderDetails);
 	int iAttackerKillOdds = iDefenderOdds * (100 - withdrawalProbability()) / 100;
 
+	int iInitialDefenderDamage = pDefender->getDamage();
+
 	if (isHuman() || pDefender->isHuman())
 	{
 		//Added ST
@@ -1327,7 +1332,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 								if (pCapital != NULL)
 								{
 									changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
-									//pDefender->setXY(pDefender->getX_INLINE()-1, pDefender->getY_INLINE()-1, true, true, pCapital->plot()->isVisibleToWatchingHuman(), true);
+									pDefender->setXY(pDefender->getX_INLINE()-1, pDefender->getY_INLINE()-1, true, true, pCapital->plot()->isVisibleToWatchingHuman(), true);
 									CvEventReporter::getInstance().combatRetreat(this, pDefender);
 									break;
 								}
@@ -1337,6 +1342,17 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 				}
 
 				pDefender->changeDamage(iDefenderDamage, getOwnerINLINE());
+
+				// Leoreth: defenders from recently born civilizations can retreat from combat after losing half their initial health
+				/*if (pPlot->isBirthProtected() && pPlot->getBirthProtected() == pDefender->getOwnerINLINE())
+				{
+					if (pDefender->getDamage() < pDefender->maxHitPoints() && iInitialDefenderDamage < pDefender->maxHitPoints() / 2 && pDefender->getDamage() >= (pDefender->maxHitPoints() + iInitialDefenderDamage) / 2)
+					{
+						changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+						CvEventReporter::getInstance().combatRetreat(this, pDefender);
+						break;
+					}
+				}*/
 
 				if (getCombatFirstStrikes() > 0 && isRanged())
 				{
@@ -1718,7 +1734,7 @@ void CvUnit::updateCombat(bool bQuick)
 			if (!GET_PLAYER(pDefender->getOwnerINLINE()).isMinorCiv() && !GET_PLAYER(pDefender->getOwnerINLINE()).isBarbarian())
 			{
 				szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
 				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
@@ -1744,9 +1760,9 @@ void CvUnit::updateCombat(bool bQuick)
 		else
 		{
 			szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, pDefender->getDomainType() == DOMAIN_SEA ? "AS2D_OUR_SEA_WITHDRAWL" : "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, pDefender->getDomainType() == DOMAIN_SEA ? "AS2D_THEIR_SEA_WITHDRAWL" : "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
 			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
 			checkRemoveSelectionAfterAttack();
@@ -2606,6 +2622,15 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 	}
 
+	// Leoreth: protect newborn civilizations from barbarians
+	if (isBarbarian() || GET_PLAYER(getOwnerINLINE()).isMinorCiv())
+	{
+		if (pPlot->isBirthProtected() && !(pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() == getOwnerINLINE()))
+		{
+			return false;
+		}
+	}
+
 	CvArea *pPlotArea = pPlot->area();
 	TeamTypes ePlotTeam = pPlot->getTeam();
 	bool bCanEnterArea = canEnterArea(ePlotTeam, pPlotArea);
@@ -2719,8 +2744,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			}
 		}
 
-		// Leoreth: make sure that hidden nationality units that entered cities through open borders cannot attack from there
-		if (bAttack && m_pUnitInfo->isHiddenNationality() && plot()->isCity() && plot()->getPlotCity()->getOwner() != getOwner())
+		if (!bAttack && pPlot->isCity() && isAlwaysHostile(pPlot) && !atWar(getTeam(), pPlot->getTeam()))
 		{
 			return false;
 		}
@@ -2766,6 +2790,18 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		if (!bAttack)
 		{
 			if (pPlot->isEnemyCity(*this))
+			{
+				return false;
+			}
+		}
+	}
+
+	// Leoreth: cannot capture last city of recently born civilization
+	if (pPlot->getBirthProtected() == pPlot->getOwner())
+	{
+		if (!bAttack)
+		{
+			if (pPlot->isEnemyCity(*this) && GET_PLAYER(pPlot->getOwnerINLINE()).getNumCities() <= 1)
 			{
 				return false;
 			}
@@ -3823,6 +3859,12 @@ void CvUnit::airCircle(bool bStart)
 	//cancel previos missions
 	gDLL->getEntityIFace()->RemoveUnitFromBattle( this );
 
+	// Leoreth: cancel air circling
+	if (GET_PLAYER(getOwnerINLINE()).isOption(PLAYEROPTION_HIDE_AIR_CIRCLING))
+	{
+		return;
+	}
+
 	if (bStart)
 	{
 		CvAirMissionDefinition kDefinition;
@@ -3850,12 +3892,6 @@ bool CvUnit::canHeal(const CvPlot* pPlot) const
 	}
 
 	if (healRate(pPlot) <= 0)
-	{
-		return false;
-	}
-
-	// Leoreth: hidden nationality units can enter cities with open borders but don't let them heal there because it's an easy area to retreat to
-	if (m_pUnitInfo->isHiddenNationality() && pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() != getOwnerINLINE())
 	{
 		return false;
 	}
@@ -3922,6 +3958,12 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 		{
 			iTotalHeal += (GC.getDefineINT("FRIENDLY_HEAL_RATE") + getExtraFriendlyHeal());
 		}
+	}
+
+	// Leoreth: additional healing for recently born players in their territory
+	if (plot()->getBirthProtected() == getOwnerINLINE())
+	{
+		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE");
 	}
 
 	// XXX optimize this (save it?)
@@ -4907,6 +4949,18 @@ bool CvUnit::bombard()
 	}
 
 	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
+
+	// Leoreth: recently born civilizations have additional bombard damage on their territory, or if expansion target
+	if ((pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() == getOwnerINLINE()) || (pTargetPlot->isExpansion() && pTargetPlot->isExpansionEffect(getOwnerINLINE())))
+	{
+		iBombardModifier += 100;
+	}
+
+	// Leoreth: recently born civilizations receive reduced bombard damage on their territory
+	if (pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() != getOwnerINLINE())
+	{
+		iBombardModifier -= 50;
+	}
 
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
@@ -6182,6 +6236,12 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 				pCity->changeGreatPeopleProgress(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false) / 4);
 			}
 		}
+
+		// House of Wisdom
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+		{
+			discover();
+		}
 	}
 
 	if (plot()->isActiveVisible(false))
@@ -6557,6 +6617,12 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitGreatWorkPercent();
 	iCulture /= 100;
 
+	// Harbour Opera effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	{
+		iCulture *= 2;
+	}
+
 	return std::max(0, iCulture);
 }
 
@@ -6771,29 +6837,21 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission, int iCostModifier)
 {
 	int iExperience = GC.getEspionageMissionInfo(eMission).getBaseExperience();
+
 	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
-
-	if (iDifficulty <= 10)
-	{
-		iExperience /= 2;
-	}
-	else if (iDifficulty > 20)
-	{
-		int iModifier = (iDifficulty - 20) / 10; // +1 at >20, +4 at >50, +8 at >90
-		iExperience *= (100 + iModifier * 50);
-	}
-
-	if (iExperience < 100)
+	iExperience += min(iDifficulty / 10, 5);
+	if (iExperience == 0)
 	{
 		return false;
 	}
 
+	iExperience *= min(iCostModifier, 200);
 	iExperience /= 100;
 
-	log(CvWString::format(L"Spy experience for mission %s: difficulty was %d, experience is %d", GC.getEspionageMissionInfo(eMission).getText(), iDifficulty, iExperience));
+	iExperience = max(iExperience, 1);
 
 	changeExperience(iExperience);
 	testPromotionReady();
@@ -6938,7 +6996,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 	}
 
 	PlayerTypes eTargetPlayer = plot()->getOwnerINLINE();
-	int iMissionCost;
+	int iMissionCostModifier;
 
 	if (NO_ESPIONAGEMISSION == eMission)
 	{
@@ -6966,7 +7024,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 			return false;
 		}
 
-		iMissionCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost(eMission, eTargetPlayer, plot(), iData, this);
+		iMissionCostModifier = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCostModifier(eMission, eTargetPlayer, plot(), iData, this);
 		if (GET_PLAYER(getOwnerINLINE()).doEspionageMission(eMission, eTargetPlayer, plot(), iData, this))
 		{
 			if (plot()->isActiveVisible(false))
@@ -6992,7 +7050,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission);
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission, iMissionCostModifier);
 			}
 
 			return true;
@@ -7568,6 +7626,7 @@ int CvUnit::getStackExperienceToGive(int iNumUnits) const
 int CvUnit::upgradePrice(UnitTypes eUnit) const
 {
 	int iPrice;
+	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
 
 	//Rhye - start comment (Kael)
 	//CyArgsList argsList;
@@ -7590,6 +7649,18 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	iPrice = GC.getDefineINT("BASE_UNIT_UPGRADE_COST");
 
 	iPrice += (std::max(0, (GET_PLAYER(getOwnerINLINE()).getProductionNeeded(eUnit) - GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType()))) * GC.getDefineINT("UNIT_UPGRADE_COST_PER_PRODUCTION"));
+
+	if (!canFight() && kUnit.getWorkRate() > 0)
+	{
+		iPrice *= kUnit.getWorkRate() - m_pUnitInfo->getWorkRate();
+		iPrice /= 10;
+	}
+
+	if (kUnit.getCityAttackModifier() > 0 && m_pUnitInfo->getCityAttackModifier() > 0)
+	{
+		iPrice *= (100 + std::max(kUnit.getCityAttackModifier(), m_pUnitInfo->getCityAttackModifier()));
+		iPrice /= 100;
+	}
 
 	if (!isHuman() && !isBarbarian())
 	{
@@ -8082,18 +8153,7 @@ int CvUnit::visibilityRange() const
 
 int CvUnit::baseMoves() const
 {
-	int iMoves = m_pUnitInfo->getMoves() + getExtraMoves() + GET_TEAM(getTeam()).getExtraMoves(getDomainType());
-
-	// Leoreth: Kremlin effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KREMLIN))
-	{
-		if (!canFight() && getDomainType() == DOMAIN_LAND)
-		{
-			iMoves += 1;
-		}
-	}
-
-	return iMoves;
+	return m_pUnitInfo->getMoves() + getExtraMoves() + GET_TEAM(getTeam()).getExtraMoves(getDomainType());
 }
 
 
@@ -8636,6 +8696,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		if (!noDefensiveBonus())
 		{
 			iExtraModifier = pPlot->defenseModifier(getTeam(), (pAttacker != NULL) ? pAttacker->ignoreBuildingDefense() : true);
+
 			iModifier += iExtraModifier;
 			if (pCombatDetails != NULL)
 			{
@@ -9414,6 +9475,12 @@ int CvUnit::fortifyModifier() const
 		return 0;
 	}
 
+	// Leoreth: recently born civilizations fortify immediately in their territory
+	if (plot()->getBirthProtected() == getOwnerINLINE() && getFortifyTurns() > 0)
+	{
+		return GC.getDefineINT("MAX_FORTIFY_TURNS") * GC.getFORTIFY_MODIFIER_PER_TURN();
+	}
+
 	return (getFortifyTurns() * GC.getFORTIFY_MODIFIER_PER_TURN());
 }
 
@@ -9582,19 +9649,7 @@ bool CvUnit::isNukeImmune() const
 
 int CvUnit::maxInterceptionProbability() const
 {
-	int iInterceptProbability = m_pUnitInfo->getInterceptionProbability() + getExtraIntercept();
-
-	// Leoreth: Iron Dome effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)IRON_DOME))
-	{
-		if (plot()->getOwner() == getOwnerINLINE())
-		{
-			iInterceptProbability *= 3;
-			iInterceptProbability /= 2;
-		}
-	}
-
-	return std::max(0, iInterceptProbability);
+	return std::max(0, m_pUnitInfo->getInterceptionProbability() + getExtraIntercept());
 }
 
 
@@ -9606,7 +9661,22 @@ int CvUnit::currInterceptionProbability() const
 	}
 	else
 	{
-		return ((maxInterceptionProbability() * currHitPoints()) / maxHitPoints());
+		int iInterceptProbability = maxInterceptionProbability();
+
+		// Leoreth: Iron Dome effect
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)IRON_DOME))
+		{
+			if (plot()->getOwner() == getOwnerINLINE())
+			{
+				iInterceptProbability *= 3;
+				iInterceptProbability /= 2;
+			}
+		}
+
+		iInterceptProbability *= currHitPoints();
+		iInterceptProbability /= maxHitPoints();
+
+		return iInterceptProbability;
 	}
 }
 
@@ -9624,7 +9694,15 @@ int CvUnit::withdrawalProbability() const
 		return 0;
 	}
 
-	return std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
+	int iWithdrawalProbability = std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
+
+	// Leoreth: recently born civilizations have additional retreat chance on their territory, or in expansion territory
+	/*if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
+	{
+		iWithdrawalProbability = std::min(90, iWithdrawalProbability + 50);
+	}*/
+
+	return iWithdrawalProbability;
 }
 
 
@@ -11174,7 +11252,8 @@ int CvUnit::getAlwaysHealCount() const
 
 bool CvUnit::isAlwaysHeal() const
 {
-	return (getAlwaysHealCount() > 0);
+	// Leoreth: recently spawned can always heal in their territory, or in expansion territory
+	return (getAlwaysHealCount() > 0 || plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()));
 }
 
 void CvUnit::changeAlwaysHealCount(int iChange)
@@ -11889,9 +11968,19 @@ PlayerTypes CvUnit::getVisualOwner(TeamTypes eForTeam) const
 	{
 		if (m_pUnitInfo->isHiddenNationality())
 		{
-			if (!plot()->isCity(true, getTeam()))
+			if (getDomainType() == DOMAIN_LAND)
 			{
-				return BARBARIAN_PLAYER;
+				if (!plot()->isOwned() || !(plot()->getOwnerINLINE() == getOwnerINLINE() || GET_TEAM(plot()->getTeam()).isOpenBorders(getTeam())))
+				{
+					return BARBARIAN_PLAYER;
+				}
+			}
+			else
+			{
+				if (!plot()->isCity(true, getTeam()))
+				{
+					return BARBARIAN_PLAYER;
+				}
 			}
 		}
 	}
@@ -12861,6 +12950,23 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 		}
 	}
 
+	// Leoreth: cannot capture last city of recently born civilization
+	if (pPlot->getBirthProtected() == pPlot->getOwnerINLINE())
+	{
+		if (pPlot->isEnemyCity(*this) && GET_PLAYER(pPlot->getOwnerINLINE()).getNumCities() <= 1)
+		{
+			return false;
+		}
+	}
+
+	if (isAlwaysHostile(pPlot))
+	{
+		if (pPlot->isCity() && !atWar(getTeam(), pPlot->getTeam()))
+		{
+			return false;
+		}
+	}
+
 	return true;
 }
 
@@ -12977,6 +13083,12 @@ void CvUnit::collateralCombat(const CvPlot* pPlot, CvUnit* pSkipUnit)
 				{
 					int iCityDefenseLimit = std::max(0, 100 - pPlot->getPlotCity()->getDefenseModifier(false));
 					iMaxDamage = std::min(iMaxDamage, iCityDefenseLimit);
+				}
+
+				// Leoreth: recently born civilizations take at most 10% collateral damage in their territory
+				if (pPlot->getBirthProtected() == pBestUnit->getOwnerINLINE())
+				{
+					iMaxDamage = std::min(iMaxDamage, pBestUnit->getDamage() + 10);
 				}
 
 				iUnitDamage = std::max(pBestUnit->getDamage(), std::min(pBestUnit->getDamage() + iCollateralDamage, iMaxDamage));
@@ -14020,15 +14132,25 @@ bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 		return false;
 	}
 
-	if (NULL != pPlot && pPlot->isCity(true, getTeam()))
+	if (NULL != pPlot)
 	{
-		return false;
-	}
+		if (pPlot->isOwned())
+		{
+			if (getOwnerINLINE() == pPlot->getOwnerINLINE())
+			{
+				return false;
+			}
 
-	// Leoreth: land units are safe in own territory
-	if (NULL != pPlot && !pPlot->isWater() && pPlot->getOwnerINLINE() == getOwnerINLINE())
-	{
-		return false;
+			if (getDomainType() == DOMAIN_LAND && GET_TEAM(getTeam()).isOpenBorders(pPlot->getTeam()))
+			{
+				return false;
+			}
+		}
+
+		if (getDomainType() != DOMAIN_LAND && pPlot->isCity(true, getTeam()))
+		{
+			return false;
+		}
 	}
 
 	return true;
@@ -14241,7 +14363,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_INDIA)
 	{
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MUGHALS)
 			{
@@ -14293,7 +14415,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 // edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
 bool CvUnit::canTradeUnit(PlayerTypes eReceivingPlayer)
 {
-	if (eReceivingPlayer == NO_PLAYER || eReceivingPlayer >= NUM_MAJOR_PLAYERS || getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
+	if (eReceivingPlayer == NO_PLAYER || GET_PLAYER(eReceivingPlayer).isMinorCiv() || GET_PLAYER(eReceivingPlayer).isBarbarian() || GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian())
 	{
 		return false;
 	}
@@ -14549,8 +14671,13 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 			iLoot += GC.getGame().getSorenRandNum(iLoot, "Random loot");
 			GET_PLAYER(getOwner()).changeGold(iLoot);
 
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
+				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					continue;
+				}
+
 				if (iI != getOwner() && GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
 					if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
@@ -14810,31 +14937,7 @@ bool CvUnit::rebuild()
 		return false;
 	}
 
-	bool bBuilt = false;
-	CvCity* pCity = plot()->getPlotCity();
-
-	BuildingTypes eBuilding;
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-	{
-		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
-
-		if (eBuilding != NO_BUILDING)
-		{
-			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-
-			if (kBuilding.getFreeStartEra() != NO_ERA)
-			{
-				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
-				{
-					if (pCity->canConstruct(eBuilding) || pCity->getFirstBuildingOrder(eBuilding) != -1)
-					{
-						pCity->setNumRealBuilding(eBuilding, 1);
-						bBuilt = true;
-					}
-				}
-			}
-		}
-	}
+	bool bBuilt = plot()->getPlotCity()->rebuild();
 
 	if (bBuilt)
 	{

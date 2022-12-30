@@ -56,12 +56,18 @@ void CyInfoPythonInterface2()
 		.def("getArtDefineTag", &CvCivilizationInfo::getArtDefineTag, "string ()")
 		.def("getButton", &CvCivilizationInfo::getButton, "string ()")
 
-		.def("getPaganReligionName", &CvCivilizationInfo::pyGetPaganReligionName, "wstring ()")
-		.def("getPaganReligionButton", &CvCivilizationInfo::getPaganReligionButton, "string ()")
-
 		.def("getDerivativeCiv", &CvCivilizationInfo::getDerivativeCiv, "int ()")
 
 		.def("getIdentifier", &CvCivilizationInfo::getIdentifier, "string ()") // Leoreth
+		.def("getPaganReligion", &CvCivilizationInfo::getPaganReligion, "int ()") // Leoreth
+		.def("getImpact", &CvCivilizationInfo::getImpact, "int ()") // Leoreth
+		.def("getStartingYear", &CvCivilizationInfo::getStartingYear, "int ()") // Leoreth
+		.def("getDescriptionKeyPersistent", &CvCivilizationInfo::pyGetDescriptionKeyPersistent, "string ()") // Leoreth
+		.def("setDescriptionKeyPersistent", &CvCivilizationInfo::setDescriptionKeyPersistent, "void (string)") // Leoreth
+
+		.def("setPlayable", &CvCivilizationInfo::setPlayable, "void (bool bNewValue)") // Leoreth
+		.def("setLeader", &CvCivilizationInfo::setLeader, "void (int iLeader, bool bNewValue)") // Leoreth
+		.def("isOriginalLeader", &CvCivilizationInfo::isOriginalLeader, "bool (int iLeader)") // Leoreth
 
 		// Arrays
 

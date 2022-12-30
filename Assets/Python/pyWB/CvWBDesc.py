@@ -6,6 +6,9 @@ import sys
 import CvUtil
 from array import *
 
+from Core import *
+from RFCUtils import *
+
 # globals
 gc = CyGlobalContext()
 version = 11
@@ -107,6 +110,17 @@ class CvGameDesc:
 	def apply(self):
 		"after reading, apply the game data"
 		gc.getGame().setStartYear(self.iStartYear)
+		gc.getGame().setStartTurn(turns(self.gameTurn))
+		gc.getGame().setGameTurn(turns(self.gameTurn))
+		
+		if self.maxTurns > 0:
+			gc.getGame().setMaxTurns(turns(self.maxTurns))
+		else:
+			gc.getGame().changeMaxTurns(-turns(self.gameTurn))
+			
+		for option in self.options:
+			optionType = gc.getInfoTypeForString(option)
+			gc.getGame().setOption(optionType, True)
 
 	def write(self, f):
 		"write out game data"
@@ -882,7 +896,8 @@ class CvUnitDesc:
 		"save unit desc to a file"
 		Info = gc.getUnitInfo(unit.getUnitType())
 		f.write("\tBeginUnit\n")
-		f.write("\t\tUnitType=%s, UnitOwner=%d, (%s)\n" %(Info.getType(), unit.getOwner(), gc.getPlayer(unit.getOwner()).getName().encode(fileencoding)))
+		f.write("\t\tUnitType=%s\n" %(Info.getType(),))
+		f.write("\t\tUnitOwner=%s\n" %(gc.getCivilizationInfo(unit.getCivilizationType()).getType(),))
 		if (len(unit.getNameNoDesc()) > 0):
 			f.write("\t\tUnitName=%s\n" %(unit.getNameNoDesc().encode(fileencoding),))
 		if unit.getLeaderUnitType() != -1:
@@ -932,10 +947,13 @@ class CvUnitDesc:
 				break
 
 			v = parser.findTokenValue(toks, "UnitType")
-			vOwner = parser.findTokenValue(toks, "UnitOwner")
-			if (v!=-1 and vOwner != -1):
+			if v != -1:
 				self.unitType = v
-				self.owner = int(vOwner)
+				continue
+			
+			v = parser.findTokenValue(toks, "UnitOwner")
+			if v != -1:
+				self.owner = v
 				continue
 
 			v = parser.findTokenValue(toks, "UnitName")
@@ -1015,8 +1033,11 @@ class CvUnitDesc:
 
 	def apply(self):
 		"after reading, this will actually apply the data"
-		player = getPlayer(self.owner)
-		if (player):
+		if self.owner:
+			iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
+			if iCiv < 0:
+				return
+		
 			# print ("unit apply %d %d" %(self.plotX, self.plotY))
 			CvUtil.pyAssert(self.plotX>=0 and self.plotY>=0, "invalid plot coords")
 			unitTypeNum = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), self.unitType)
@@ -1028,7 +1049,7 @@ class CvUnitDesc:
 				else:
 					eUnitAI = UnitAITypes.NO_UNITAI
 
-				unit = player.initUnit(unitTypeNum, self.plotX, self.plotY, UnitAITypes(eUnitAI), self.facingDirection)
+				unit = player(iCiv).initUnit(unitTypeNum, self.plotX, self.plotY, UnitAITypes(eUnitAI), self.facingDirection)
 			if unit:
 				if (self.szName != None):
 					unit.setName(self.szName)
@@ -1088,7 +1109,7 @@ class CvCityDesc:
 		self.plotY=-1
 	## Platy Builder ##
 		self.szScriptData = ""
-		self.lCulture = []
+		self.dCulture = {}
 		self.iDamage = 0
 		self.iOccupation = 0
 		self.iExtraHappiness = 0
@@ -1100,13 +1121,19 @@ class CvCityDesc:
 		self.lBuildingHealth = []
 		self.lFreeBonus = []
 		self.lNoBonus = []
+		
+		# Leoreth
+		self.iYearFounded = None
+		self.iYearAcquired = None
+		self.originalOwner = None
+		self.lPreviousOwners = []
 
 	def write(self, f, plot):
 		"write out city data"
 		city = plot.getPlotCity()
 		CvUtil.pyAssert(city.isNone()==0, "null city?")
 		f.write("\tBeginCity\n")
-		f.write("\t\tCityOwner=%d, (%s)\n" %(city.getOwner(), gc.getPlayer(city.getOwner()).getName().encode(fileencoding)))
+		f.write("\t\tCityOwner=%s\n" %(gc.getCivilizationInfo(city.getCivilizationType()).getType(),))
 		f.write("\t\tCityName=%s\n" %(city.getNameKey().encode(fileencoding),))
 		f.write("\t\tCityPopulation=%d\n" %(city.getPopulation(),))
 		if (city.isProductionUnit()):
@@ -1142,10 +1169,17 @@ class CvCityDesc:
 			f.write("\t\tScriptData=%s\n" %city.getScriptData())
 
 		# Player culture
+		bAnyCulture = False
 		for iPlayerLoop in range(gc.getMAX_PLAYERS()):
 			iPlayerCulture = city.getCulture(iPlayerLoop)
 			if (iPlayerCulture > 0):
-				f.write("\t\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
+				if not bAnyCulture:
+					f.write("\t\tBeginCulture\n")
+					bAnyCulture = True
+				f.write("\t\t\tCivilization=%s, Culture=%d\n" %(gc.getCivilizationInfo(gc.getPlayer(iPlayerLoop).getCivilizationType()).getType(), iPlayerCulture))
+		if bAnyCulture:
+			f.write("\t\tEndCulture\n")
+			
 		if city.getDefenseDamage() > 0:
 			f.write("\t\tDamage=%d\n" %(city.getDefenseDamage(),))
 		if city.getOccupationTimer() > 0:
@@ -1172,6 +1206,15 @@ class CvCityDesc:
 				f.write("\t\tFreeBonus=%s, Amount=%s\n" %(gc.getBonusInfo(item).getType(), city.getFreeBonus(item)))
 			if city.isNoBonus(item):
 				f.write("\t\tNoBonus=%s\n" % gc.getBonusInfo(item).getType())
+		
+		# Leoreth:
+		f.write("\t\tYearFounded=%s\n" % gc.getGame().getTurnYear(city.getGameTurnFounded()))
+		f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
+		f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+		for iCiv in range(gc.getNumCivilizationInfos()):
+			if city.isEverOwnedCiv(iCiv) and city.getOriginalCiv() != iCiv:
+				f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+		
 		f.write("\tEndCity\n")
 
 	def read(self, f, iX, iY):
@@ -1189,7 +1232,7 @@ class CvCityDesc:
 			# City - Owner
 			vOwner=parser.findTokenValue(toks, "CityOwner")
 			if (vOwner != -1):
-				self.owner = int(vOwner)
+				self.owner = vOwner
 				continue
 
 			# City - Name
@@ -1269,15 +1312,23 @@ class CvCityDesc:
 			if v!=-1:
 				self.szScriptData = v
 				continue
+				
+			if parser.findTokenValue(toks, "BeginCulture") != -1:
+				while (True):
+					nextLine = parser.getNextLine(f)
+					toks = parser.getTokens(nextLine)
+					
+					vCiv = parser.findTokenValue(toks, "Civilization")
+					vCulture = parser.findTokenValue(toks, "Culture")
+					if vCiv != -1 and vCulture != -1:
+						self.dCulture[vCiv] = int(vCulture)
+						continue
+					
+					v = parser.findTokenValue(toks, "EndCulture") 
+					if v != -1:
+						break
 
 		## Platy Builder ##
-			for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
-				szCityTag = ("Player%dCulture" %(iPlayerLoop))
-				v = parser.findTokenValue(toks, szCityTag)
-				if v!=-1:
-					if int(v) > 0:
-						self.lCulture.append([iPlayerLoop, int(v)])
-					continue
 			v=parser.findTokenValue(toks, "Damage")
 			if v!=-1:
 				self.iDamage = int(v)
@@ -1331,15 +1382,35 @@ class CvCityDesc:
 			if v != -1:
 				self.lNoBonus.append(gc.getInfoTypeForString(v))
 				continue
+				
+			# Leoreth
+			v = parser.findTokenValue(toks, "YearFounded")
+			if v != -1:
+				self.iYearFounded = int(v)
+				continue
+			
+			v = parser.findTokenValue(toks, "YearAcquired")
+			if v != -1:
+				self.iYearAcquired = int(v)
+				continue
+			
+			v = parser.findTokenValue(toks, "PreviousOwner")
+			if v != -1:
+				if self.originalOwner is None:
+					self.originalOwner = v
+				self.lPreviousOwners.append(v)
+				continue
 
 			if parser.findTokenValue(toks, "EndCity")!=-1:
 				break
 
 	def apply(self, bSpecial):
 		"after reading, this will actually apply the data"
-		player = getPlayer(self.owner)
-		if (player):
-			self.city = player.initCity(self.plotX, self.plotY)
+		iCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.owner))
+		if iCiv < 0:
+			return
+		
+		self.city = player(iCiv).initCity(self.plotX, self.plotY)
 
 		if (self.name != None):
 			self.city.setName(self.name, False)
@@ -1347,8 +1418,14 @@ class CvCityDesc:
 		if self.population > -1:
 			self.city.setPopulation(self.population)
 
-		for item in self.lCulture:
-			self.city.setCulture(item[0], item[1], true)
+		for civType, iCulture in self.dCulture.items():
+			iCultureCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), civType))
+			if iCultureCiv >= 0:
+				iCulturePlayer = slot(iCultureCiv)
+				if iCulturePlayer >= 0:
+					self.city.setCulture(iCulturePlayer, scale(iCulture), True)
+				else:
+					self.city.setCivCulture(iCultureCiv, scale(iCulture))
 
 		for bldg in (self.bldgType):
 			bldgTypeNum = CvUtil.findInfoTypeNum(gc.getBuildingInfo, gc.getNumBuildingInfos(), bldg)
@@ -1395,7 +1472,7 @@ class CvCityDesc:
 			self.city.changeDefenseDamage(self.iDamage)
 		if self.iOccupation > 0:
 			self.city.setOccupationTimer(self.iOccupation)
-		if bSpecial:
+		if False:
 			self.city.changeExtraHappiness(self.iExtraHappiness - self.city.getExtraHappiness())
 			self.city.changeExtraHealth(self.iExtraHealth - self.city.getExtraHealth())
 			self.city.changeExtraTradeRoutes(self.iExtraTrade - self.city.getExtraTradeRoutes())
@@ -1412,6 +1489,21 @@ class CvCityDesc:
 			for item in self.lNoBonus:
 				if self.city.isNoBonus(item): continue
 				self.city.changeNoBonusCount(item, 1)
+				
+		# Leoreth
+		if self.iYearFounded:
+			self.city.setGameTurnFounded(year(self.iYearFounded))
+		if self.iYearAcquired:
+			self.city.setGameTurnAcquired(year(self.iYearAcquired))
+		if self.originalOwner:
+			iOriginalOwnerCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.originalOwner))
+			if iOriginalOwnerCiv >= 0:
+				self.city.setOriginalCiv(iOriginalOwnerCiv)
+				self.city.setEverOwned(iOriginalOwnerCiv, True)
+		for previousOwner in self.lPreviousOwners:
+			iPreviousOwnerCiv = CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivicOptionInfos(), previousOwner)
+			if iPreviousOwnerCiv >= 0:
+				self.city.setEverOwned(iPreviousOwnerCiv, True)
 
 ###########
 class CvPlotDesc:
@@ -1420,9 +1512,9 @@ class CvPlotDesc:
 		self.iX = -1
 		self.iY = -1
 		self.riverNSDirection = CardinalDirectionTypes.NO_CARDINALDIRECTION
-		self.isNOfRiver = 0
+		self.isNOfRiver = None
 		self.riverWEDirection = CardinalDirectionTypes.NO_CARDINALDIRECTION
-		self.isWOfRiver = 0
+		self.isWOfRiver = None
 		self.isStartingPlot = 0
 		self.bonusType = None
 		self.improvementType = None
@@ -1438,19 +1530,28 @@ class CvPlotDesc:
 		self.szScriptData = ""
 		self.abTeamPlotRevealed = []
 		self.lCulture = []
+	
+	@property
+	def plot(self):
+		return CyMap().plot(self.iX, self.iY)
 
 	def needToWritePlot(self, plot):
 		"returns true if this plot needs to be written out."
 		return True
+		
+	def applyPlotType(self):
+		if self.plotType != PlotTypes.NO_PLOT:
+			self.plot.setPlotType(self.plotType, False, False)
+	
+	def applyTerrainType(self):
+		if self.terrainType:
+			terrainTypeNum = CvUtil.findInfoTypeNum(gc.getTerrainInfo, gc.getNumTerrainInfos(), self.terrainType)
+			self.plot.setTerrainType(terrainTypeNum, False, False)
 
 	def preApply(self):
 		"apply plot and terrain type"
-		plot = CyMap().plot(self.iX, self.iY)
-		if (self.plotType != PlotTypes.NO_PLOT):
-			plot.setPlotType(self.plotType, False, False)
-		if (self.terrainType):
-			terrainTypeNum = CvUtil.findInfoTypeNum(gc.getTerrainInfo, gc.getNumTerrainInfos(), self.terrainType)
-			plot.setTerrainType(terrainTypeNum, False, False)
+		self.applyPlotType()
+		self.applyTerrainType()
 
 	def write(self, f, plot):
 		"save plot desc to a file"
@@ -1510,9 +1611,11 @@ class CvPlotDesc:
 			f.write("\n")	# terminate reveal line
 	## Platy Builder ##
 		for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
-			iPlayerCulture = plot.getCulture(iPlayerLoop)
-			if iPlayerCulture > 0:
-				f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
+			iCivilization = gc.getPlayer(iPlayerLoop).getCivilizationType()
+			if iCivilization >= 0:
+				iPlayerCulture = plot.getCivCulture(iCivilization)
+				if iPlayerCulture > 0:
+					f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
 
 		f.write("EndPlot\n")
 
@@ -1638,32 +1741,70 @@ class CvPlotDesc:
 						self.lCulture.append([iPlayerLoop, int(v)])
 					continue
 		return True
+		
+	def applyRivers(self):
+		if self.isNOfRiver is not None:
+			self.plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
+		
+		if self.isWOfRiver is not None:
+			self.plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
+	
+	def applyBonus(self):
+		if self.bonusType:
+			bonusTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusType)
+			self.plot.setBonusType(bonusTypeNum)
+	
+	def applyFeature(self):
+		if self.featureType:
+			featureTypeNum = CvUtil.findInfoTypeNum(gc.getFeatureInfo, gc.getNumFeatureInfos(), self.featureType)
+			self.plot.setFeatureType(featureTypeNum, self.featureVariety)
 
 	def apply(self):
 		"after reading, this will actually apply the data"
 		#print("apply plot %d %d" %(self.iX, self.iY))
-		plot = CyMap().plot(self.iX, self.iY)
-		plot.setNOfRiver(self.isNOfRiver, self.riverWEDirection)
-		plot.setWOfRiver(self.isWOfRiver, self.riverNSDirection)
-		plot.setStartingPlot(self.isStartingPlot)
-		if (self.bonusType):
-			bonusTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusType)
-			plot.setBonusType(bonusTypeNum)
+		self.applyRivers()
+		self.plot.setStartingPlot(self.isStartingPlot)
+		self.applyBonus()
+		
 		if (self.improvementType):
 			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
-			plot.setImprovementType(improvementTypeNum)
-		if (self.featureType):
-			featureTypeNum = CvUtil.findInfoTypeNum(gc.getFeatureInfo, gc.getNumFeatureInfos(), self.featureType)
-			plot.setFeatureType(featureTypeNum, self.featureVariety)
+			self.plot.setImprovementType(improvementTypeNum)
+			
+		self.applyFeature()
+
 		if (self.routeType):
 			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)
-			plot.setRouteType(routeTypeNum)
+			self.plot.setRouteType(routeTypeNum)
 
 		if (self.szLandmark != ""):
 			CyEngine().addLandmark(CyMap().plot(self.iX, self.iY), "%s" %(self.szLandmark))
 
 		if (self.szScriptData != ""):
-			plot.setScriptData(self.szScriptData)
+			self.plot.setScriptData(self.szScriptData)
+	
+	def applyDevelopment(self):
+		self.applyUnits()
+		self.applyCity(True)
+	
+		if (self.improvementType):
+			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
+			self.plot.setImprovementType(improvementTypeNum)
+			
+			iBuild = getImprovementBuild(improvementTypeNum)
+			if iBuild is not None:
+				if infos.build(iBuild).isFeatureRemove(self.plot.getFeatureType()):
+					self.plot.setFeatureType(-1, 0)
+
+		if (self.routeType):
+			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)
+			self.plot.setRouteType(routeTypeNum)
+
+		if (self.szLandmark != ""):
+			CyEngine().addLandmark(CyMap().plot(self.iX, self.iY), "%s" %(self.szLandmark))
+
+		if (self.szScriptData != ""):
+			self.plot.setScriptData(self.szScriptData)
+		
 
 	def applyUnits(self):
 		#print "--apply units"
@@ -1721,7 +1862,7 @@ class CvMapDesc:
 
 	def read(self, f):
 		"read map data"
-		self.__init__()
+		#self.__init__()
 		parser = CvWBParser()
 		if parser.findNextToken(f, "BeginMap")==false:
 			print "can't find map"

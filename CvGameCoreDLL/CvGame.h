@@ -251,7 +251,6 @@ public:
 
 	int getAIAutoPlay();																				// Exposed to Python
 	DllExport void setAIAutoPlay(int iNewValue);																// Exposed to Python
-	void setAIAutoPlayCatapult(int iNewValue); //Rhye
 	void changeAIAutoPlay(int iChange);
 
 	DllExport unsigned int getInitialTime();
@@ -491,7 +490,7 @@ public:
 
 	bool hasSkippedSaveChecksum() const;
 
-	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv);   // Exposed to Python
+	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv, int iBirthTurn, bool bAlive, bool bMinor);   // Exposed to Python
 
 	bool testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScore = NULL) const;
 
@@ -574,11 +573,23 @@ public:
 	// Leoreth
 	bool isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const;
 	TeamTypes determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const;
-	void autosave();
+	void autosave(bool bInitial = false);
 	bool isPlayerAutoplay(PlayerTypes ePlayer = NO_PLAYER);
 	void setCityScreenOwner(PlayerTypes ePlayer);
 	void resetCityScreenOwner();
 	PlayerTypes getCityScreenOwner() const;
+
+	bool isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const;
+
+	NotificationLevels getGreatPeopleNotifications() const;
+	void setGreatPeopleNotifications(NotificationLevels eNotificationLevel);
+	bool isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getReligionSpreadNotifications() const;
+	void setReligionSpreadNotifications(NotificationLevels eNotificationLevel);
+	bool isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getEventEffectNotifications() const;
+	void setEventEffectNotifications(NotificationLevels eNotificationLevel);
+	bool isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
 
 	// Leoreth: graphics paging
 	int getXResolution() const;
@@ -588,6 +599,12 @@ public:
 	int getYResolution() const;
 	void setYResolution(int iNewValue);
 	void changeYResolution(int iChange);
+
+	PeriodTypes getPeriod(CivilizationTypes eCivilization) const;
+	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod);
+
+	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const;
+	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue);
 
 protected:
 	int m_iElapsedGameTurns;
@@ -635,6 +652,11 @@ protected:
 	PlayerTypes m_eEventPlayer;
 	PlayerTypes m_eCityScreenOwner;
 
+	// Leoreth
+	NotificationLevels m_eGreatPeopleNotifications;
+	NotificationLevels m_eReligionSpreadNotifications;
+	NotificationLevels m_eEventEffectNotifications;
+
 	CvString m_szScriptData;
 
 	int* m_aiRankPlayer;        // Ordered by rank...
@@ -646,6 +668,7 @@ protected:
 
 	// Leoreth
 	int* m_aiTechRankTeam;
+	char* m_aiCivPeriod;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;
@@ -667,6 +690,9 @@ protected:
 	IDInfo* m_paHeadquarters;
 
 	int** m_apaiPlayerVote;
+
+	// Leoreth
+	std::hash_map<int, std::hash_map<int, int> >* m_aiCivilizationHistory;
 
 	std::vector<CvWString> m_aszDestroyedCities;
 	std::vector<CvWString> m_aszGreatPeopleBorn;

@@ -24,7 +24,8 @@ public:
 	void reportBeginPlayerTurn(int iGameTurn, PlayerTypes);
 	void reportEndPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);						
+	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);	
+	void reportRestoredContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
 	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
 // BUG - Combat Events - start
 	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
@@ -104,7 +105,7 @@ public:
 
 	void reportGoldenAge(PlayerTypes ePlayer);
 	void reportEndGoldenAge(PlayerTypes ePlayer);
-	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
+	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
 	void reportChat(CvWString szString);				
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
@@ -113,9 +114,17 @@ public:
 
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
-	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
+	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
+	void reportXMLLoaded(); // Leoreth
+	void reportFontsLoaded(); // Leoreth
+	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void reportAutoplayEnded(); // Leoreth
+	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void reportPlayerDestroyed(PlayerTypes ePlayer); // Leoreth
+	void reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
+	void reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

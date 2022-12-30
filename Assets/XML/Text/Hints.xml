@@ -978,6 +978,62 @@
 		<Spanish>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_81</Tag>
+		<English>NEW: Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</English>
+		<French>NEW: Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</French>
+		<German>NEW: Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</German>
+		<Italian>NEW: Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</Italian>
+		<Spanish>NEW: Press Ctrl + A to enable Observer Mode. This allows you to enter autoplay from any point in the game until a desired date. The AI will assume control over your current civilization until autoplay is over. If the civilization is still alive at that point, control will be restored to you. You can combine this with cheat mode (Ctrl + Z) to watch the world develop as autoplay progresses.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_82</Tag>
+		<English>NEW: Use SHIFT + L-Click to select multiple cities at once.</English>
+		<French>NEW: Use SHIFT + L-Click to select multiple cities at once.</French>
+		<German>NEW: Use SHIFT + L-Click to select multiple cities at once.</German>
+		<Italian>NEW: Use SHIFT + L-Click to select multiple cities at once.</Italian>
+		<Spanish>NEW: Use SHIFT + L-Click to select multiple cities at once.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_83</Tag>
+		<English>NEW: Use SHIFT + R-Click to create a rally point for newly constructed units.</English>
+		<French>NEW: Use SHIFT + R-Click to create a rally point for newly constructed units.</French>
+		<German>NEW: Use SHIFT + R-Click to create a rally point for newly constructed units.</German>
+		<Italian>NEW: Use SHIFT + R-Click to create a rally point for newly constructed units.</Italian>
+		<Spanish>NEW: Use SHIFT + R-Click to create a rally point for newly constructed units.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_84</Tag>
+		<English>NEW: Use CTRL + L-Click to select all cities on a continent.</English>
+		<French>NEW: Use CTRL + L-Click to select all cities on a continent.</French>
+		<German>NEW: Use CTRL + L-Click to select all cities on a continent.</German>
+		<Italian>NEW: Use CTRL + L-Click to select all cities on a continent.</Italian>
+		<Spanish>NEW: Use CTRL + L-Click to select all cities on a continent.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_85</Tag>
+		<English>NEW: Try enabling minimize pop-ups in the options screen. Pop-ups regarding what to build in cities will instead appear as buttons on the top right of the screen.</English>
+		<French>NEW: Try enabling minimize pop-ups in the options screen. Pop-ups regarding what to build in cities will instead appear as buttons on the top right of the screen.</French>
+		<German>NEW: Try enabling minimize pop-ups in the options screen. Pop-ups regarding what to build in cities will instead appear as buttons on the top right of the screen.</German>
+		<Italian>NEW: Try enabling minimize pop-ups in the options screen. Pop-ups regarding what to build in cities will instead appear as buttons on the top right of the screen.</Italian>
+		<Spanish>NEW: Try enabling minimize pop-ups in the options screen. Pop-ups regarding what to build in cities will instead appear as buttons on the top right of the screen.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_86</Tag>
+		<English>NEW: Build queues can be saved using CTRL + a number key and then recalled by clicking the same number again.</English>
+		<French>NEW: Build queues can be saved using CTRL + a number key and then recalled by clicking the same number again.</French>
+		<German>NEW: Build queues can be saved using CTRL + a number key and then recalled by clicking the same number again.</German>
+		<Italian>NEW: Build queues can be saved using CTRL + a number key and then recalled by clicking the same number again.</Italian>
+		<Spanish>NEW: Build queues can be saved using CTRL + a number key and then recalled by clicking the same number again.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_87</Tag>
+		<English>NEW: Use ALT L-Click to set up an infinite production queue of units.</English>
+		<French>NEW: Use ALT L-Click to set up an infinite production queue of units.</French>
+		<German>NEW: Use ALT L-Click to set up an infinite production queue of units.</German>
+		<Italian>NEW: Use ALT L-Click to set up an infinite production queue of units.</Italian>
+		<Spanish>NEW: Use ALT L-Click to set up an infinite production queue of units.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_</Tag>
 		<English></English>
 		<French></French>

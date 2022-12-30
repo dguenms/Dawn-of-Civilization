@@ -415,6 +415,7 @@ public:
 	// Leoreth
 
 	void changeImmobileTimer(int iChange);
+	void testPromotionReady();
 
 protected:
 	CvUnit* m_pUnit;

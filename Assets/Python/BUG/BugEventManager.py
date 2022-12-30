@@ -275,6 +275,10 @@ class BugEventManager(CvEventManager.CvEventManager):
 		self._checkEvent(eventType)
 		self.EventHandlerMap[eventType].remove(eventHandler)
 	
+	# Leoreth
+	def hasEventHandler(self, eventType, eventHandler):
+		return eventHandler in self.EventHandlerMap[eventType]
+	
 	def setEventHandler(self, eventType, eventHandler):
 		"""Removes all previously installed event handlers for the given 
 		event type and installs a new handler, adding the event if necessary.
@@ -373,7 +377,7 @@ class BugEventManager(CvEventManager.CvEventManager):
 
 	def _handleDefaultEvent(self, eventType, argsList):
 		if self.EventHandlerMap.has_key(eventType):
-			for eventHandler in self.EventHandlerMap[eventType]:
+			for eventHandler in self.EventHandlerMap[eventType][:]:
 				try:
 					eventHandler(argsList)
 				except:

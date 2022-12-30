@@ -1,8 +1,10 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
+
 from Consts import *
 from RFCUtils import *
+import Victories
 
 gc = CyGlobalContext()
 
@@ -117,11 +119,8 @@ class CvPediaCivic:
 		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		if self.iCivic == iSecularism:
 			victorytext = CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ())
-			iVictory = iVictorySecularism
-			bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
-			for iGoal in range(3):
-				victorytext += bullet + getReligiousGoalText(iVictory, iGoal) + "\n"
-			szHistory = victorytext + "\n" + gc.getCivicInfo(self.iCivic).getCivilopedia()
+			victorytext += "\n".join(u"%c%s" % (game.getSymbolID(FontSymbols.BULLET_CHAR), goal.description()) for goal in Victories.dReligiousGoals[iVictorySecularism])
+			szHistory = victorytext + "\n\n" + gc.getCivicInfo(self.iCivic).getCivilopedia()
 		else:
 			szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)

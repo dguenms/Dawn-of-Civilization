@@ -126,7 +126,7 @@ class BugFinanceAdvisor:
 		sValue = str(iValue)
 		if iValue > 0: sValue = '+' + sValue
 		
-		iNextStabilityLevel = determineStabilityLevel(iStabilityLevel, iValue)
+		iNextStabilityLevel = determineStabilityLevel(ePlayer, iStabilityLevel, iValue)
 		
 		szTempBuffer += " (%s)" % sValue
 		

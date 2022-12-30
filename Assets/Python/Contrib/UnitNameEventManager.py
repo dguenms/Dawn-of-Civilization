@@ -78,7 +78,7 @@ import RandomNameUtils
 import random
 import Popup as PyPopup
 import BugData
-
+from Core import *
 
 SD_MOD_ID = "UnitCnt"
 RENAME_EVENT_ID = CvUtil.getNewEventID("UnitNaming.Rename")
@@ -173,7 +173,13 @@ class UnitNameEventManager:
 		return
 
 
+class CityNameWrapper(object):
 
+	def __init__(self, name):
+		self.name = name
+	
+	def getName(self):
+		return self.name
 
 
 class AbstractBuildUnitName(object):
@@ -181,18 +187,41 @@ class AbstractBuildUnitName(object):
 	def __init__(self, eventManager, *args, **kwargs):
 		super(AbstractBuildUnitName, self).__init__(*args, **kwargs)
 
+
 class BuildUnitName(AbstractBuildUnitName):
 
 	def __init__(self, eventManager, *args, **kwargs):
 		super(BuildUnitName, self).__init__(eventManager, *args, **kwargs)
 
 		eventManager.addEventHandler("kbdEvent", self.onKbdEvent)
+		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("cityBuilt", self.onCityBuilt)
 		eventManager.addEventHandler("goodyReceived", self.onGoodyReceived)
 
 		self.eventMgr = eventManager
 		self.config = None
+
+	def onUnitCreated(self, argsList):
+		pUnit = argsList[0]
+		iPlayer = pUnit.getOwner()
+
+		if iPlayer == PlayerUtil.getActivePlayerID() and UnitNamingOpt.isEnabled():
+			pPlayer = gc.getPlayer(iPlayer)
+			pCity = pPlayer.getCapitalCity()
+			if pCity is None or pCity.isNone():
+				pCity = CityNameWrapper(adjective(iPlayer))
+			lUnitReName = UnitReName()
+			zsEra = gc.getEraInfo(pPlayer.getCurrentEra()).getType()
+
+			if pUnit and not pUnit.isNone() and pUnit.getOwner() == iPlayer:
+				if pUnit.getNameNoDesc() == "":
+					zsUnitCombat = lUnitReName.getUnitCombat(pUnit)
+					zsUnitClass = gc.getUnitClassInfo(pUnit.getUnitClassType()).getType()
+					zsUnitNameConv = lUnitReName.getUnitNameConvFromIniFile(zsEra, zsUnitClass, zsUnitCombat)
+					zsUnitName = lUnitReName.getUnitName(zsUnitNameConv, pUnit, pCity, True)
+					if zsUnitName:
+						pUnit.setName(zsUnitName)
 
 	def onKbdEvent(self, argsList):
 		eventType,key,mx,my,px,py = argsList
@@ -339,7 +368,7 @@ class UnitReName(object):
 ##  - ^rd^ - random name
 #		check if random naming convention is required
 		if not (zsName.find("^rd^") == -1):
-			zsRandomName = RandomNamegetRandomName()
+			zsRandomName = RandomNameUtils.getRandomName()
 			zsName = zsName.replace("^rd^", zsRandomName)
 
 
@@ -348,7 +377,7 @@ class UnitReName(object):
 ##  - ^rc^ - random civ related name
 #		check if random civ related naming convention is required
 		if not (zsName.find("^rc^") == -1):
-			zsRandomName = RandomNamegetRandomCivilizationName(pPlayer.getCivilizationType())
+			zsRandomName = RandomNameUtils.getRandomCivilizationName(pPlayer.getCivilizationType())
 			zsName = zsName.replace("^rc^", zsRandomName)
 
 		#BUGPrint("UnitNameEM-C [" + zsName + "]")
@@ -458,7 +487,8 @@ class UnitReName(object):
 
 # Return immediately if the unit passed in is invalid
 		if (pUnit == None
-		or pUnit.isNone()):
+		or pUnit.isNone() 
+		or pUnit.getUnitType() == iPioneer):
 			return "UNITCOMBAT_None"
 
 		iUnitCombat = pUnit.getUnitCombatType()

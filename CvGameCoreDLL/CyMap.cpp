@@ -349,3 +349,8 @@ int CyMap::maxPlotDistance()
 {
 	return m_pMap ? m_pMap->maxPlotDistance() : -1;
 }
+
+int CyMap::getScenario()
+{
+	return m_pMap ? m_pMap->getScenario() : -1;
+}

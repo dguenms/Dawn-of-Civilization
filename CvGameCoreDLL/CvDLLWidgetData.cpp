@@ -155,12 +155,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 // BUG - Min/Max Commerce Rate - end
 
 	case WIDGET_CITY_TAB:
-		{
-			CvWString szTemp;
-            szTemp.Format(L"%s", GC.getCityTabInfo((CityTabTypes)widgetDataStruct.m_iData1).getDescription());
-			szBuffer.assign(szTemp);
-		}
-		break;
+	{
+		CvWString szTemp;
+		szTemp.Format(L"%s", GC.getCityTabInfo((CityTabTypes)widgetDataStruct.m_iData1).getDescription());
+		szBuffer.assign(szTemp);
+	}
+	break;
 
 	case WIDGET_CONTACT_CIV:
 		parseContactCivHelp(widgetDataStruct, szBuffer);
@@ -650,8 +650,8 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 
 	// Leoreth
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
-		parseMinorReligionHelp(widgetDataStruct, szBuffer);
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
+		parsePaganReligionHelp(widgetDataStruct, szBuffer);
 		break;
 
 	case WIDGET_PEDIA_DESCRIPTION:
@@ -701,16 +701,20 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseCommerceModHelp(widgetDataStruct, szBuffer);
 		break;
 
-// BUG - Trade Hover - start
+		// BUG - Trade Hover - start
 	case WIDGET_TRADE_ROUTES:
 		parseTradeRoutes(widgetDataStruct, szBuffer);
 		break;
-// BUG - Trade Hover - end
+		// BUG - Trade Hover - end
 
 	// Merijn
 	case WIDGET_HELP_WONDER_LIMIT:
 		parseWonderLimitHelp(widgetDataStruct, szBuffer);
 		break;
+
+	// Leoreth
+	case WIDGET_HELP_SATELLITE_LIMIT:
+		parseSatelliteLimitHelp(widgetDataStruct, szBuffer);
 
 	}
 }
@@ -967,8 +971,8 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		break;
 
 	// Leoreth
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
-		doPediaMinorReligionJump(widgetDataStruct);
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
+		doPediaPaganReligionHelp(widgetDataStruct);
 		break;
 
 	case WIDGET_PEDIA_DESCRIPTION:
@@ -1176,7 +1180,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_JUMP_TO_CORPORATION:
 	case WIDGET_PEDIA_JUMP_TO_TERRAIN:
 	case WIDGET_PEDIA_JUMP_TO_FEATURE:
-	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
+	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
 	case WIDGET_PEDIA_FORWARD:
 	case WIDGET_PEDIA_BACK:
 	case WIDGET_PEDIA_MAIN:
@@ -1612,11 +1616,11 @@ void CvDLLWidgetData::doPediaBuildingJump(CvWidgetDataStruct &widgetDataStruct)
 }
 
 // Leoreth
-void CvDLLWidgetData::doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct)
+void CvDLLWidgetData::doPediaPaganReligionHelp(CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
-	argsList.add(getUniqueBuilding((CivilizationTypes)widgetDataStruct.m_iData1, PAGAN_TEMPLE));
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToBuilding", argsList.makeFunctionArgs());
+	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToPaganReligion", argsList.makeFunctionArgs());
 }
 
 void CvDLLWidgetData::doPediaProjectJump(CvWidgetDataStruct &widgetDataStruct)
@@ -2076,7 +2080,9 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		if (iHurryAngerLength > 0)
 		{
 			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iHurryAnger, (iHurryAngerLength * iHurryAngerModifier + pHeadSelectedCity->getHurryAngerTimer())));
+			int iTotalHurryAngerLength = iHurryAngerLength * iHurryAngerModifier + pHeadSelectedCity->getHurryAngerTimer();
+			int iEffectiveHurryAngerLength = iTotalHurryAngerLength * 100 / (100 + GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getUnhappinessDecayModifier());
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iHurryAnger, (iEffectiveHurryAngerLength)));
 		}
 
 		if (!(pHeadSelectedCity->isProductionUnit()) && !(pHeadSelectedCity->isProductionBuilding()))
@@ -2157,8 +2163,10 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 
 			if (iConscriptAngerLength > 0)
 			{
+				int iTotalAngerLength = iConscriptAngerLength + pHeadSelectedCity->getConscriptAngerTimer();
+				int iEffectiveAngerLength = iTotalAngerLength * 100 / (100 + GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getUnhappinessDecayModifier());
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iConscriptAnger, (iConscriptAngerLength + pHeadSelectedCity->getConscriptAngerTimer())));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iConscriptAnger, iEffectiveAngerLength));
 			}
 
 			iMinCityPopulation = pHeadSelectedCity->conscriptMinCityPopulation();
@@ -2260,7 +2268,6 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	BuildTypes eBuild;
 	RouteTypes eRoute;
 	BonusTypes eBonus;
-	TechTypes eFirstDiscovery, eSecondDiscovery;
 	bool bAlt;
 	bool bShift;
 	bool bValid;
@@ -2280,8 +2287,6 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	int iHigh;
 	int iLast;
 	int iRange;
-	int iFirstResearch, iSecondResearch;
-	int iFirstResearchLeft, iSecondResearchLeft;
 	int iDX, iDY;
 	int iI;
 
@@ -2612,6 +2617,12 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 // BUG - Specialist Actual Effects - start
 				GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), pMissionCity, true, 1);
 // BUG - Specialist Actual Effects - end
+
+				// House of Wisdom effect
+				if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+				{
+					parseDiscoverHelp(pMissionPlot, szBuffer);
+				}
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_CONSTRUCT)
 			{
@@ -2637,60 +2648,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_DISCOVER)
 			{
-				pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
-
-				while (pSelectedUnitNode != NULL)
-				{
-					pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
-
-					if (pSelectedUnit->canDiscover(pMissionPlot))
-					{
-						eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
-						iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
-						iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
-						
-						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
-						iSecondResearch = 0;
-						iSecondResearchLeft = -1;
-
-						if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
-						{
-							iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
-							iSecondResearchLeft = pSelectedUnit->getDiscoveryTech(eSecondDiscovery);
-						}
-						
-						szBuffer.append(NEWLINE);
-
-						if (iFirstResearch >= iFirstResearchLeft)
-						{
-							szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eFirstDiscovery).getDescription());
-							szBuffer.append(szTempBuffer);
-						}
-						else
-						{
-							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iFirstResearch, GC.getTechInfo(eFirstDiscovery).getTextKeyWide()));
-						}
-
-						if (iSecondResearch > 0)
-						{
-							szBuffer.append(gDLL->getText("TXT_KEY_AND"));
-
-							if (iSecondResearch >= iSecondResearchLeft)
-							{
-								szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eSecondDiscovery).getDescription());
-								szBuffer.append(szTempBuffer);
-							}
-							else
-							{
-								szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iSecondResearch, GC.getTechInfo(eSecondDiscovery).getTextKeyWide()));
-							}
-						}
-
-						break;
-					}
-
-					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
-				}
+				parseDiscoverHelp(pMissionPlot, szBuffer);
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_HURRY)
 			{
@@ -2781,7 +2739,13 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 					if (pSelectedUnit->canGreatWork(pMissionPlot))
 					{
-						szTempBuffer.Format(L"%s+%d%c", NEWLINE, pSelectedUnit->getGreatWorkCulture(pMissionPlot), GC.getCommerceInfo(COMMERCE_CULTURE).getChar());
+						int iGreatWorkCulture = pSelectedUnit->getGreatWorkCulture(pMissionPlot);
+						if (pMissionPlot->isDifferentCultureConversionPlayer(pSelectedUnit->getOwner()))
+						{
+							iGreatWorkCulture = percent(iGreatWorkCulture, 100 - pMissionPlot->getCultureConversionRate());
+						}
+
+						szTempBuffer.Format(L"%s+%d%c", NEWLINE, iGreatWorkCulture, GC.getCommerceInfo(COMMERCE_CULTURE).getChar());
 						szBuffer.append(szTempBuffer);
 						break;
 					}
@@ -3450,6 +3414,71 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 }
 
 
+void CvDLLWidgetData::parseDiscoverHelp(CvPlot* pMissionPlot, CvWStringBuffer& szBuffer)
+{
+	CvUnit* pSelectedUnit;
+	TechTypes eFirstDiscovery, eSecondDiscovery;
+	CvWString szTempBuffer;
+	int iFirstResearch, iSecondResearch;
+	int iFirstResearchLeft, iSecondResearchLeft;
+
+	CLLNode<IDInfo>* pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+
+	while (pSelectedUnitNode != NULL)
+	{
+		pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+
+		if (pSelectedUnit->canDiscover(pMissionPlot))
+		{
+			eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
+			iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
+			iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
+
+			eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
+			iSecondResearch = 0;
+			iSecondResearchLeft = -1;
+
+			if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
+			{
+				iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
+				iSecondResearchLeft = pSelectedUnit->getDiscoveryTech(eSecondDiscovery);
+			}
+
+			szBuffer.append(NEWLINE);
+
+			if (iFirstResearch >= iFirstResearchLeft)
+			{
+				szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eFirstDiscovery).getDescription());
+				szBuffer.append(szTempBuffer);
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iFirstResearch, GC.getTechInfo(eFirstDiscovery).getTextKeyWide()));
+			}
+
+			if (iSecondResearch > 0)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_AND"));
+
+				if (iSecondResearch >= iSecondResearchLeft)
+				{
+					szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eSecondDiscovery).getDescription());
+					szBuffer.append(szTempBuffer);
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iSecondResearch, GC.getTechInfo(eSecondDiscovery).getTextKeyWide()));
+				}
+			}
+
+			break;
+		}
+
+		pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+	}
+}
+
+
 void CvDLLWidgetData::parseCitizenHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	CvCity* pHeadSelectedCity;
@@ -3721,11 +3750,10 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 	}
 
 	//Rhye
-	//szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CONTACT_LEADER", GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getNameKey(), GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getCivilizationShortDescription()));
-	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CONTACT_LEADER", GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getNameKey(), GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getCivilizationDescription()));
+	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CONTACT_LEADER", GET_PLAYER(ePlayer).getNameKey(), GET_PLAYER(ePlayer).getCivilizationDescription()));
 
 	szBuffer.append(NEWLINE);
-	GAMETEXT.parsePlayerTraits(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
+	GAMETEXT.parsePlayerTraits(szBuffer, ePlayer);
 
 	if (!(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isHasMet(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam())) && !(gDLL->getChtLvl() > 0))
 	{
@@ -3734,9 +3762,9 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 	}
 	else
 	{
-		if (!(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).isHuman()))
+		if (!(GET_PLAYER(ePlayer).isHuman()))
 		{
-			if (!(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).AI_isWillingToTalk(GC.getGameINLINE().getActivePlayer())))
+			if (!(GET_PLAYER(ePlayer).AI_isWillingToTalk(GC.getGameINLINE().getActivePlayer())))
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_REFUSES_TO_TALK"));
@@ -3782,7 +3810,7 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 		szBuffer.append(NEWLINE);
 
 		//Rhye - start
-		if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS)
+		if (!GET_PLAYER(ePlayer).isMinorCiv() && !GET_PLAYER(ePlayer).isBarbarian())
 		{
 			parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
 			parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
@@ -3791,9 +3819,9 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
 
-		if ((GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam() != GC.getGameINLINE().getActiveTeam()) && !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam())))
+		if ((GET_PLAYER(ePlayer).getTeam() != GC.getGameINLINE().getActiveTeam()) && !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER(ePlayer).getTeam())))
 		{
-			if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).canDeclareWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam()))
+			if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).canDeclareWar(GET_PLAYER(ePlayer).getTeam()))
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_ALT_DECLARE_WAR"));
@@ -3839,18 +3867,7 @@ void CvDLLWidgetData::parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataS
 	CyArgsList argsList;
 	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "countAchievedGoals", argsList.makeFunctionArgs(), &result);
-	int iResult = (int)result;
-	szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED"));
-	szBuffer.append(gDLL->getText(" "));
-	if (iResult == 0) {		
-		szBuffer.append("0");
-	}
-	else if (iResult == 1) {		
-		szBuffer.append("1");
-	}
-	else if (iResult == 2) {
-		szBuffer.append("0");
-	}
+	szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED", (int)result));
 	szBuffer.append(NEWLINE);
 }
 //Rhye - end
@@ -4057,7 +4074,14 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct, CvWSt
 			eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
 			break;
 		case TRADE_RESOURCES:
-			GAMETEXT.setBonusHelp(szBuffer, ((BonusTypes)widgetDataStruct.m_iData2));
+			if (gDLL->isDiplomacy() || gDLL->isMPDiplomacy())
+			{
+				GAMETEXT.setBonusTradeHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData2, false, NO_PLAYER, NULL, eWhoFrom, eWhoTo);
+			}
+			else
+			{
+				GAMETEXT.setBonusHelp(szBuffer, ((BonusTypes)widgetDataStruct.m_iData2));
+			}
 			eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
 			break;
 		case TRADE_CITIES:
@@ -4271,36 +4295,63 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 	pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
 
+	log(CvWString::format(L"parse nationality help for %s", pHeadSelectedCity->getName().c_str()));
+
 	if (pHeadSelectedCity != NULL)
 	{
 		int iTotalCulture = 0;
+		int iCulture;
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (true) //GET_PLAYER((PlayerTypes)iI).isAlive())
+			PlayerTypes ePlayer = (PlayerTypes)iI;
+			CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
+
+			if (GET_PLAYER(ePlayer).isAlive() && eCivilization != NO_CIVILIZATION)
 			{
-				iTotalCulture += (pHeadSelectedCity->plot()->isCore((PlayerTypes)iI) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture((PlayerTypes)iI);
-				iCulturePercent = pHeadSelectedCity->calculateOverallCulturePercent((PlayerTypes)iI);
+				iCulture = (pHeadSelectedCity->plot()->isCore(ePlayer) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
+				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
+				iTotalCulture += iCulture;
 
 				if (iCulturePercent > 0)
 				{
-					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER((PlayerTypes)iI).getPlayerTextColorR(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorG(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorB(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorA(), GET_PLAYER((PlayerTypes)iI).getCivilizationAdjective());
+					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER(ePlayer).getPlayerTextColorR(), GET_PLAYER(ePlayer).getPlayerTextColorG(), GET_PLAYER(ePlayer).getPlayerTextColorB(), GET_PLAYER(ePlayer).getPlayerTextColorA(), GET_PLAYER(ePlayer).getCivilizationAdjective());
+					szBuffer.append(szTempBuffer);
+				}
+			}
+		}
+
+		for (iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+		{
+			CivilizationTypes eCivilization = (CivilizationTypes)iI;
+
+			if (!isCivAlive(eCivilization))
+			{
+				iCulture = (eCivilization < NUM_CIVS && pHeadSelectedCity->plot()->isCore(eCivilization) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
+				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
+				iTotalCulture += iCulture;
+
+				if (iCulturePercent > 0)
+				{
+					PlayerColorTypes ePlayerColor = (PlayerColorTypes)GC.getCivilizationInfo(eCivilization).getDefaultPlayerColor();
+					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, COLORS(GC.getPlayerColorInfo(ePlayerColor).getTextColorType()), GC.getCivilizationInfo(eCivilization).getAdjective());
 					szBuffer.append(szTempBuffer);
 				}
 			}
 		}
 
 		// Leoreth: stability effects of cultural control
-		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
+		int iOwnCulture = (pHeadSelectedCity->plot()->isCore(pHeadSelectedCity->getOwner()) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE());
+		int iOwnCulturePercent = iTotalCulture == 0 ? 100 : 100 * iOwnCulture / iTotalCulture;
 
 		if (pHeadSelectedCity->getCivilizationType() != PERSIA)
 		{
-			if (iOwnCulture < 20)
+			if (iOwnCulturePercent < 20)
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
 			}
-			else if (iOwnCulture < 50)
+			else if (iOwnCulturePercent < 50)
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
@@ -5047,7 +5098,6 @@ void CvDLLWidgetData::parseRemoveHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 {
 	if (widgetDataStruct.m_iData1 != 0)
 	{
-		log("parse remove help");
 		GAMETEXT.setRemoveHelp(szBuffer, (TechTypes)widgetDataStruct.m_iData1);
 	}
 }
@@ -5069,11 +5119,11 @@ void CvDLLWidgetData::parseCivilizationHelp(CvWidgetDataStruct &widgetDataStruct
 }
 
 // Leoreth
-void CvDLLWidgetData::parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+void CvDLLWidgetData::parsePaganReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
-	if (widgetDataStruct.m_iData1 != 0)
+	if (widgetDataStruct.m_iData1 >= 0)
 	{
-		GAMETEXT.parseMinorReligionHelp(szBuffer, (CivilizationTypes)widgetDataStruct.m_iData1);
+		GAMETEXT.parsePaganReligionHelp(szBuffer, (PaganReligionTypes)widgetDataStruct.m_iData1);
 	}
 }
 
@@ -5450,5 +5500,14 @@ void CvDLLWidgetData::parseWonderLimitHelp(CvWidgetDataStruct& widgetDataStruct,
 	if (NULL != pHeadSelectedCity)
 	{
 		GAMETEXT.setWonderLimitHelp(szBuffer, *pHeadSelectedCity, widgetDataStruct.m_iData1);
+	}
+}
+
+void CvDLLWidgetData::parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setSatelliteLimitHelp(szBuffer, *pHeadSelectedCity);
 	}
 }

@@ -7,8 +7,8 @@ import PyHelpers
 import time
 from Consts import * #Rhye
 from RFCUtils import *
-import Victory as vic
 from StoredData import data
+from Core import *
 
 # BUG - start
 import AttitudeUtil
@@ -665,11 +665,8 @@ class CvVictoryScreen:
 				iSecretaryGeneralVote = -1
 				if (gc.getGame().canHaveSecretaryGeneral(i) and -1 != gc.getGame().getSecretaryGeneral(i)):
 					for j in range(gc.getNumVoteInfos()):
-						print j
 						if gc.getVoteInfo(j).isVoteSourceType(i):
-							print "votesource"
 							if gc.getVoteInfo(j).isSecretaryGeneral():
-								print "secgen"
 								iSecretaryGeneralVote = j
 								break
 
@@ -1558,69 +1555,17 @@ class CvVictoryScreen:
 							iRow = screen.appendTableRow(szTable)
 					bEntriesFound = True
 					
-				#Rhye - start
-				if (iLoopVC == 7):
-					for i in range(3):
-						iRow = screen.appendTableRow(szTable)
-						sGoalTitle = getHistoricalGoalText(self.iActivePlayer, i, True)
-						sGoalText = getHistoricalGoalText(self.iActivePlayer, i)
-						sGoalTurn = ''
-						if not gc.getTeam(self.iActivePlayer).isHasTech(iCalendar) or AdvisorOpt.isUHVFinishDateTurn():
-							iVictoryYear = dVictoryYears[self.iActivePlayer][i]
-							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (year(iVictoryYear) - scenarioStartTurn(),))
-						sGoalDisplay = sGoalText + sGoalTurn
-						if self.X_EXTRA < 100:
-							screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							iRow = screen.appendTableRow(szTable)
-						else:
-							sGoalDisplay = sGoalTitle + ': ' + sGoalDisplay
-						screen.setTableText(szTable, 0, iRow, sGoalDisplay, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
-						screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						if data.players[self.iActivePlayer].lGoals[i] == 1:
-							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						elif data.players[self.iActivePlayer].lGoals[i] == 0:   
-							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						else:       
-							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						# edead: start help text (Leoreth: goal progress display adapted from SoI)
-						aHelpStrings = vic.getUHVHelp(self.iActivePlayer, i)
-						if len(aHelpStrings) > 0:
-							for szHelp in aHelpStrings:
-								iRow = screen.appendTableRow(szTable)
-								szHelp = "    " + szHelp
-								screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				# Leoreth: historical victory
+				if iLoopVC == 7:
+					self.displayVictory(screen, szTable, data.players[self.iActivePlayer].historicalVictory)
 					bEntriesFound = True
-				#Rhye - end
 				
 				# Leoreth: Religious Victory
 				if iLoopVC == 8:
-					iVictoryType = getReligiousVictoryType(self.iActivePlayer)
-					if iVictoryType == -1:
-						iRow = screen.appendTableRow(szTable)
-						screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_NO_RELIGIOUS_GOALS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-					else:
-						for i in range(3):
-							iRow = screen.appendTableRow(szTable)
-							sGoalText = getReligiousGoalText(iVictoryType, i)
-							if iVictoryType == iVictoryPaganism and i == 1: 
-								sGoalText += "_" + str(gc.getCivilizationInfo(gc.getPlayer(self.iActivePlayer).getCivilizationType()).getPaganReligionName(0).upper())
-								if civ(self.iActivePlayer) == iMaya: sGoalText += "_MAYA"
-							screen.setTableText(szTable, 0, iRow, localText.getText(str(sGoalText), ()), '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							if vic.checkReligiousGoal(self.iActivePlayer, i) == 1: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_YES'
-							elif vic.checkReligiousGoal(self.iActivePlayer, i) == 0: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_NO'
-							else: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_NOTYET'
-							screen.setTableText(szTable, 3, iRow, localText.getText(sGoalProgress, ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							
-							aHelpStrings = vic.getURVHelp(self.iActivePlayer, i)
-							if len(aHelpStrings) > 0:
-								for szHelp in aHelpStrings:
-									iRow = screen.appendTableRow(szTable)
-									szHelp = '    ' + szHelp
-									screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						bEntriesFound = True
+					self.displayVictory(screen, szTable, data.players[self.iActivePlayer].religiousVictory)
+					bEntriesFound = True
 					
-				if (bEntriesFound):
+				if bEntriesFound:
 					screen.appendTableRow(szTable)
 					screen.appendTableRow(szTable)
 
@@ -1633,6 +1578,19 @@ class CvVictoryScreen:
 					screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getCivilizationShortDescription(0), j, j, False )
 		
 		self.drawTabs()
+
+	# Leoreth
+	def displayVictory(self, screen, szTable, victory):
+		for i, goal in enumerate(victory.goals):
+			iRow = screen.appendTableRow(szTable)
+			
+			screen.setTableText(szTable, 0, iRow, goal.full_description(), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText(szTable, 2, iRow, text("TXT_KEY_VICTORY_ACCOMPLISHED"), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText(szTable, 3, iRow, goal.state_string(), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			
+			for row in goal.progress():
+				iRow = screen.appendTableRow(szTable)
+				screen.setTableText(szTable, 0, iRow, "    " + row, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 # BUG Additions Start
 #	def getListCultureCities(self, iPlayer):

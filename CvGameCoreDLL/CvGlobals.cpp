@@ -2139,6 +2139,23 @@ CvReligionInfo& CvGlobals::getReligionInfo(ReligionTypes eReligionNum)
 	return *(m_paReligionInfo[eReligionNum]);
 }
 
+int CvGlobals::getNumPaganReligionInfos()
+{
+	return (int)m_paPaganReligionInfo.size();
+}
+
+std::vector<CvInfoBase*>& CvGlobals::getPaganReligionInfo()
+{
+	return m_paPaganReligionInfo;
+}
+
+CvInfoBase& CvGlobals::getPaganReligionInfo(PaganReligionTypes ePaganReligion)
+{
+	FAssert(ePaganReligion > -1);
+	FAssert(ePaganReligion < GC.getNumPaganReligionInfos());
+	return *(m_paPaganReligionInfo[ePaganReligion]);
+}
+
 int CvGlobals::getNumCorporationInfos()
 {
 	return (int)m_paCorporationInfo.size();
@@ -3453,6 +3470,7 @@ void CvGlobals::deleteInfoArrays()
 	deleteInfoArray(m_paVoteInfo);
 	deleteInfoArray(m_paProjectInfo);
 	deleteInfoArray(m_paReligionInfo);
+	deleteInfoArray(m_paPaganReligionInfo);
 	deleteInfoArray(m_paCorporationInfo);
 	deleteInfoArray(m_paCommerceInfo);
 	deleteInfoArray(m_paEmphasizeInfo);

@@ -5,7 +5,7 @@ tSilkRoute = ((80, 46), (99, 52))
 tMiddleEast = ((68, 38), (85, 46))
 # see tCaribbean
 tSubSaharanAfrica = ((49, 10), (77, 29))
-# see tSouthAsia
+tIndianOcean = ((76, 24), (117, 39))
 
 lMiddleEastExceptions = [(68, 39), (69, 39), (71, 40)]
 
@@ -81,11 +81,7 @@ tEasternEurope = ((69, 48), (73, 64))
 
 # second French goal: control 40% of Europe and North America in 1800 AD
 # first English goal: colonize every continent by 1730 AD
-# third Maya goal: make contact with a European civilization before they have discovered America
 tNorthAmerica = ((10, 40), (37, 58))
-
-# third Maya goal: make contact with a European civilization before they have discovered America
-tSouthCentralAmerica = ((13, 3), (41, 39))
 
 # first Russian goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
 tSiberia = ((82, 50), (112, 64))
@@ -120,7 +116,7 @@ lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 
 lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-tSouthAsia = ((76, 24), (117, 39))
+tSouthAsia = ((88, 24), (110, 38))
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
 tSafavidMesopotamia = ((75, 39), (79, 43))
@@ -150,12 +146,15 @@ lCanadaEastExceptions = [(30, 50), (31, 50), (32, 50), (32, 51)]
 
 ### Tiles ###
 
+tAyutthaya = (101, 33)
+tBabylon = (76, 40)
 tBaghdad = (77, 40)
 tBeijing = (102, 47)
 tCairo = (69, 34)
 tCarthage = (58, 39)
 tConstantinople = (68, 45)
 tCopenhagen = (60, 56)
+tCordoba = (51, 41)
 tGdansk = (64, 54)
 tGuangzhou = (105, 39)
 tHangzhou = (107, 43)
@@ -163,13 +162,18 @@ tHaojing = (104, 39)
 tJerusalem = (73, 38)
 tKaifeng = (103, 44)
 tKoenigsberg = (65, 54)
+tLhasa = (96, 43)
 tLuoyang = (103, 43)
 tMecca = (75, 33)
 tMemel = (65, 55)
+tMexico = (18, 37)
 tParis = (55, 50)
+tQiqihar = (107, 53)
 tRome = (60, 44)
+tSaigon = (104, 33)
 tShanghai = (106, 44)
 tStockholm = (63, 59)
+tTenochtitlan = (18, 37)
 tThebes = (68, 33)
 tTokyo = (116, 47)
 tVienna = (62, 49)
