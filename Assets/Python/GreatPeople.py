@@ -3322,6 +3322,7 @@ iItaly : {
 		iRenaissance,
 		"Michelangelo Buonarroti", # 16th
 		"Raffaello Sanzio", # 16th
+		"Giovanni Pierluigi da Palestrina", # 16th
 		"fSofonisba Anguissola", # 16th
 		"Michelangelo Merisi da Caravaggio", # 16th
 		"Claudio Monteverdi", # 17th
@@ -3373,6 +3374,7 @@ iItaly : {
 	iGreatEngineer : [
 		"Taccola", # 15th
 		"Filippo Brunelleschi", # 15th
+		"Giovanni Fontana", # 15th
 		iRenaissance,
 		"Leon Battista Alberti", # 15th
 		"Leonardo da Vinci", # 15th
