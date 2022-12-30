@@ -855,6 +855,9 @@ iPersia : {
 		"Mesrop", # 17th
 		iIndustrial,
 		"Mihr 'Ali", # 19th
+		"Sani al Mulk", # 19th
+		"Mirza Abdollah", # 19th
+		"Kamal-ol-Molk", # 19th
 		iGlobal,
 		"fForough Farrokhzad", # 20th
 		"Hossein Amanat", # 20th
