@@ -277,6 +277,7 @@ iChina : {
 		"fCai Wenji", # 1st
 		"Gu Kaizhi", # 4th
 		iMedieval,
+		"Yan Liben", # 7th
 		"Han Yu", # 8th
 		"Fan Kuan", # 10th
 		"Su Shi", # 11th 
@@ -290,6 +291,7 @@ iChina : {
 		iGlobal,
 		"Qi Baishi", # 20th
 		"Lu Xun", # 20th
+		"Xu Beihong", # 20th
 		"Lin Yutang", # 20th
 		"Wu Guanzhong", # 20th
 	],
