@@ -3884,6 +3884,7 @@ iNetherlands : {
 		"fAlida Bosshardt", # 20th
 	],
 	iGreatArtist : [
+		"Orlande de Lassus", # 16th
 		"Rembrandt van Rijn", # 17th
 		"Johannes Vermeer", # 17th
 		"Pieter Corneliszoon Hooft", # 17th
