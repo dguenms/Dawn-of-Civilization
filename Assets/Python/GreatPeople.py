@@ -552,6 +552,7 @@ iIndia : {
 		"Chaitanya Mahaprabhu", # 16th
 		"fMeera", # 16th
 		iIndustrial,
+		"Lalon", # 19th
 		"Ramakrishna", # 19th
 		"Swami Vivekananda", # 19th
 		"Shirdi Sai Baba", # 19th
@@ -577,11 +578,15 @@ iIndia : {
 		"Purandara Dasa", # 16th
 		"Tansen", # 16th
 		"Nainsukh", # 18th
+		u"Nihâl Chand", # 18th
 		iIndustrial,
+		"Mola Ram", # 19th
 		"Muthuswami Dikshitar", # 19th
 		"Raja Ravi Varma", # 19th
 		iGlobal,
 		"Rabindranath Tagore", # 20th
+		"fGauhar Jaan", # 20th
+		"Kazi Nazrul Islam", # 20th
 		"Raja Rao", # 20th
 		"fAmrita Sher-Gil", # 20th
 		"fMadurai Shanmukhavadivu Subbulakshmi", # 20th
@@ -608,6 +613,7 @@ iIndia : {
 		"Chandrasekhara Venkata Raman", # 20th
 		"Satyendra Nath Bose", # 20th
 		"fAsima Chatterjee", # 20th
+		"Gopalasamudram Narayanan Ramachandran", # 20th tamil
 	],
 	iGreatMerchant : [
 		"Nattal Sahu", # 12th
@@ -619,17 +625,23 @@ iIndia : {
 		iGlobal,
 		"Kappalottiya Tamizhan", # 20th
 		"Jehangir Ratanji Dadabhoy Tata", # 20th
+		"Amartya Sen", # 20th
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
 		"Baudhayana", # 8th BC
 		"Lagadha", # 1st
+		"Mahasena", # 3rd tamil
 		iMedieval, 
 		"Gundan Anivaritachari", # 7th
+		"Parakramabahu", # 12th tamil
+		"Ruvari Malithamma", # 12th
 		iRenaissance, 
 		"Vidyadhar Bhattacharya", # 18th
+		"Ram Singh Malam", # 18th
 		iIndustrial,
 		"Jagadish Chandra Bose", # 19th
+		"Bhai Ram Singh", # 19th
 		"Mokshagundam Visvesvaraya", # 19th
 		"Jamsetji Tata", # 19th
 		iGlobal,
@@ -653,12 +665,14 @@ iIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
+		"Ishwar Chandra Vidyasagar", # 19th
 		iGlobal,
 		"Vallabhbhai Patel", # 20th
 		"fSarojini Naidu", # 20th
 		"Sarvepalli Radhakrishnan", # 20th
 		"Bhimrao Ramji Ambedkar", # 20th
 		"Jawaharlal Nehru", # 20th
+		"Sheikh Mujibur Rahman", # 20th
 	],
 	iGreatGeneral : [
 		"Chandragupta Maurya", # 4th BC
