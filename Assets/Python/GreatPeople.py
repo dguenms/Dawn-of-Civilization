@@ -500,13 +500,16 @@ iGreece : {
 		"Ioannis Argyris", # 20th
 	],
 	iGreatStatesman : [
+		"Lykourgos", # 9th BC
+		iClassical,
 		"Solon", # 6th BC
 		"Kleisthenes", # 6th BC
 		"fGorgo", # 5th BC
 		"Alkibiades", # 5th BC
+		"Aresteides", # 5th BC
 		"Kimon", # 5th BC
+		"Epaminondas", # 4th BC
 		"Isokrates", # 4th BC
-		"Aresteides", # 4th BC
 		iIndustrial,
 		"Adamantios Korais", # 19th
 		"Ioannis Kapodistrias", # 19th
