@@ -1,0 +1,635 @@
+TABLE OF CONTENTS
+* Major Features
+* Game Rules
+* Buildings
+* Unique Buildings
+* Wonders
+* Units
+* Unique Units
+* Wonders
+* Projects
+* Civics
+* Civilizations
+* Corporations
+* Leaders
+* Unique Powers
+* Unique Historical Victories
+* Improvements
+* Resources
+* Events
+* Stability
+* Balance
+* Artificial Intelligence
+* Scenarios
+* Historical Immersion
+* Interface
+* Documentation
+* Bugfixes
+* Codebase
+
+MAJOR FEATURES
+* New implementation of civilization spawns
+	* Conditional civilization spawns are checked ten turns before the spawn date
+	* Civilizations are no longer tied to a specific slot and will use any available slot that is unused or occupied by a dead civilization
+	* If no available slot exists, an active civilization can be collapsed to vacate the slot
+	* Every civilization has an associated historical impact, and only civs with lower impact can vacate slots for those with higher impact
+	* The player civilization and civilizations relevant to the player civilization are always considered to be of the highest impact
+	* The overall number of slots in the game has been reduced from 49 to 32, improving performance
+	* Removed "rebirth" mechanism and made all civilizations playable through autoplay
+	* The territory revealed at the spawn is dynamically determined based on what is revealed to nearby civilizations
+	* Cities flipped during spawn receive all buildings granted to newly founded cities for free
+	* Interface messages announce when a spawn is imminent, when a spawn actually takes place, and which cities are flipped
+	* Cities that exist at a spawn plot are always flipped, wonders from cities that need to be cleared to free the spawn plot get moved to the new capital once it is founded
+	* Free civics switch in the first turn after spawn
+	* After spawn, most civilizations enter "advanced start" mode, granting a budget to place initial improvements and city buildings
+	* Recently spawned civilizations receive "birth protection" for ten turns for every tile in their birth area:
+		* Cannot be declared war upon
+		* Flip cannot be refused, the only options are war or peace
+		* Foreign units are not flipped, but expelled to their owner's core cities
+		* If they have only one city, it cannot be conquered even if undefended
+		* Free unit upkeep
+		* Other civilizations cannot spread culture
+		* Other civilizations cannot found cities
+		* City conquest does not kill population, destroy buildings, or cause unrest
+		* Barbarian units cannot enter, but remain inside controlled cities
+		* Units heal faster and can heal after moving
+		* Units can immediately fortify in one turn
+		* Defending units take at most 10% collateral damage per attack
+		* Siege units deal twice the bombard damage
+		* Cities only take half the bombard damage
+		* Enemy units receive only half the normal terrain defense modifier
+		* When declared war upon, cities receive additional defenders
+		* When declared war upon, additional units appear in the capital
+		* When declared war upon by a human player, and they are significantly weaker than the attacker, they receive even further units to compensate for the difference
+		* When declared war upon, all enemy units are expelled from their birth area to their owner's closest city
+	* Certain civilizations can additional receive "expansion" bonuses on specific tiles for a limited amount of time:
+		* Conquering a city in the covered area can extend the expansion period
+		* City conquest does not kill population, destroy buildings, or cause unrest
+		* Units can heal after moving
+		* Siege units deal twice the bombard damage
+		* AI civilizations will declare war on other civilizations controlling cities in their expansion area
+		* When AI civilizations declare war on an enemy controlling cities in the expansion area, a free army spawns near the closest city in the area
+* New implementation of the map as a custom map instead of scenario files
+	* The game is now started using "Play Now"
+	* The desired starting date can be selected as a game option
+	* Only one map file and additional files for each scenario that only contains the differences for improved consistences
+	* Resources spawn dates are used directly to place later spawning resources on the map
+	* Reborn civilization previously on playable when available at scenario start are available in all scenarios
+	* Leaders can be selected at game start
+	* Cities present at scenario start have historically accurate founding turns and previous owners
+	* Wonders present at scenario start have historically accurate builders and construction turns
+* New implementation of victory goals
+	* Reuse of code between goal checks and goal display to avoid inconsistencies
+	* Similar goals share the same code
+	* Extensive testing of all goal functionality
+	* Improved goal progress display, especially for "best city/player" type goals
+	* Announcements when goals are failed and completed
+* New implementation of autoplay
+	* Remove need for artificial units including the catapult
+	* Current date is always shown during autoplay
+	* Initial autosaves are created when autoplay starts and ends
+	* Added a shortcut to set the game to autoplay and observe how the game evolves
+* Added civilization periods
+	* Different periods can be associated with different stability maps, core areas, modifiers
+	* Periods affect dynamic names
+	* Civilizations can have multiple different periods, each triggered by various events
+	* Periods entirely replace the "reborn" attribute
+* Added a shortcut to switch the current civilization via dropdown menu
+* Added wonder movies or static pictures for every wonder in the game
+* Added Native American specific soundtrack
+
+GAME RULES
+* Apostolic Palace resolutions can also assign core cities
+* Congresses do not permanently flip culture
+* National Wonders are always destroyed on city conquest
+* Civilian units are never flipped as part of a congress city assignment
+* Units are not relocated during congress city assignments if they are still on neutral or allied territory
+* Hidden nationality units cannot heal in foreign cities
+* Great Artist great works do not end city unrest
+* AI conqueror spawns that cause wars first break master-vassal relationships
+* Unique buildings that require an earlier technology can only be captured if you have the technology for your version of the building
+* Defensive pacts are canceled before civilizations declare war due to a refused congress decision
+* Additional specialist food from all sources is limited to +1
+* Flips on civilization spawn reset culture conversion
+* Satellite and slave specialists cannot receive extra food
+* Recently spawned or respawned civilizations cannot become vassals
+* Improved consistency of respawn conditions and city assignments
+* Conqueror events during ongoing wars reset the war and trigger another refuse to speak period
+* Scripted religion spawns cannot happen if no eligible city exists in the game
+* When a religion disappears from a city, it is always the religion with the least influence in the city, instead of a random present religion
+* Tolerating a religion does no longer allow it to spread to ahistorical regions
+* Great people buildings are immune to nuclear weapons
+* Religious buildings are not automatically destroyed on city conquest
+* Non-state religion buildings have a higher chance to be destroyed on city conquest
+* Recently spawned civilizations are no longer prohibited from declaring war, only being declared upon
+* The Apostolic Palace can no longer vote to assign cities of non-members
+* Enforced peace at scenario start is now only five turns on normal speed
+* Slaves can be captured after the first civilization discovers Compass
+* Enabled fractional trade: trade routes can now produce fractional trade yields
+* Hidden nationality units are only displayed as barbarian on neutral territory, or on foreign territory when there are no open borders with their actual owner
+* Enabled releasing vassals
+* Declarations of war from defensive pacts do not cause negative attitude penalties
+* Vassals of the same master cannot demand cities from each other during a congress
+* Peace, war, etc counters only increment while civilizations can contact each other
+* Even during congresses not caused by wars, there is a minimal claim on war targets
+* Congress claims only include at most one tile of the same name
+* Congress city assignments do not flip units but instead relocate them to their core
+* Culture conversion is reset when a city flips to a new owner
+* Chance of capturing slaves increased to 50%
+* Increased the speed at which religions spread at long distance to historical regions where they are not present
+* Available city claims during a congress are limited to ten
+* New cities start with food stored based on their starting buildings
+* Air units can also be rebased to cities of vassals and defensive pact partners
+* Conqueror units spawned start with the Mercenary promotion
+* During resurrections and secessions, units are evacuated instead of flipped
+* When a city is flipped, its unrest is removed
+* Declaring war from cascading defensive pacts does not cancel defensive pacts
+* Minor units get destroyed instead of expelled during flips
+* Global warming ignores city unhealth from plagues
+* The current secretary general cannot be targeted by a war resolution
+* Vassals cannot receive scripted AI conquerors
+* Regular congresses are prevented from coinciding with war congresses
+* It is possible to refuse congress demands on a vassal's cities as their master
+* Peacefully surrendering a city during the trading corporation event creates a peace treaty
+* Conquerors cannot spawn on land masses without cities
+* Improved calculation of spy experience to make it more common
+* The maximum withdrawal chance is 90%
+* Minor civilizations can never prevent non-state religion spread
+* Valid building locations are checked before granting free buildings
+* Culture can conver islands in the third ring of a city
+
+BUILDINGS
+* Coastal buildings (Wharf, Customs House, Drydock, Container Terminal): cannot be built on the Caspian Sea
+* Increased production cost of most late game buildings
+* Sewer: reduced cost to 150
+* Stock Exchange: added appropriate art for the Renaissance and Industrial eras
+* Levee: only affects flat river tiles
+* National Monument: requires Nationalism, increased production cost
+* Airport: requires Oil
+* Solar Plant: reduced maximum latitude to 40 degrees
+
+UNIQUE BUILDINGS
+* Inca Tambo: requires Law
+* Dutch Dike: requires Urban Planning
+
+WONDERS
+* Added wonder movies from Chronicles of Mankind
+* Coastal wonder requirements for adjacent bodies of water are consistent with other coastal buildings
+* Oracle: obsoletes with Ethics
+* Salsal Buddha: no longer requires Buddhist state religion
+* Theodosian Walls: obsoletes with Logistics
+* House of Wisdom: effect changed to settling great people grants free technologies
+* Grand Canal: only affects flat river tiles
+* Silver Tree Fountain: no longer requires pagan religion, requires Silk Route, +100% production with Horse
+* Notre Dame: effect changed to +25% building construction speed with state religion
+* Gur-e-Amir: requires Patronage and Gems, provides great people points instead of culture
+* Escorial: +2 gold per controlled Silver and Gold resource, effect does not get triggered by reconquered cities
+* Kremlin: free Morale promotion for civilian units instead of +1 move
+* Porcelain Tower: effect overrides no foreign trade civic effects
+* Nobel Prize: increased great people points generated
+* Palace of Nations: does not affect congress claims on core cities
+* Sagrada Familia: requires Catholicism
+* United Nations: also disables cascading defensive pacts for all civilizations
+* Atomium: effect changed to +10 research per Uranium, +1 research per Iron, Copper, Aluminium
+* Harbour Opera: effect changed to +2 happiness per culture level and +100% culture from Great Works
+* Gardens by the Bay: effect changed to free Recycling Centers and extra happiness for buildings that provide health
+* Burj Khalifa: requires 10 desert tiles, effect changed to +3 commerce on water tiles and +1 commerce per corporation in the world, +100% production with Oil
+* Skytree: requires Superconductors
+* ITER: effect changed to +1 commerce for every 20 power consumed in the world
+
+PROJECTS
+* Added Great Firewall: +200% counterespionage, +1 happiness per 20% espionage rate
+* Increased production cost of some projects
+
+UNITS
+* Protestant Missionary: new graphics
+* Trebuchet: also requires Machinery
+* Galleass: new graphics
+* Pistolier: requires Combined Arms, -1 strength, -10% retreat chance, +5% open terrain strength
+* Infantry: also requires Ballistics
+* Satellite: can do recon missions
+
+UNIQUE UNITS
+* Native Raider: renamed from Impi
+* Polynesian Waka: can also build Ocean Fisheries and Harvesting Boats
+* Roman Ballista: fixed missing animations
+* Tamil Rocketeer: fixed missing animations
+* Korean Hwacha: new graphics
+* Korean Kobukson: new graphics
+* Byzantine Dromon: new graphics
+* Turkic Oghuz: cannot capture cities unless at war
+* Viking Huscarl: requires Steel
+* Italian Lanternas: new graphics
+* Portuguese Bandeirante: counts as city defender, always captures slaves if you can use slaves
+
+CIVICS
+* Republic: -1 food from Paddy Field
+* Elective: yield effect does not apply to city tiles, double production for Barracks and Stables
+* State Party: requires Macroeconomics
+* Public Welfare: requires Social Services
+* Central Planning: requires Labour Unions
+* Tributaries: removed +25% trade route yield, added +50% trade route yield with vassals
+
+CIVILIZATIONS
+* Byzantium: removed parts of the Egyptian coasts from its flip zone
+* Italy: removed conditional spawn condition
+
+CORPORATIONS
+* Accounted for more late game buildings in corporation spread
+* Silk Route: cannot spread to Crete and Cyprus
+* Steel Industry: requires Metallurgy as intended, not Steel
+
+LEADERS
+* Adjusted favourite civics for many leaders
+* Alp Arslan: increased negative attitude due to differing religion
+* William III: reduced negative attitude due to differing religion
+* Alexander II: removed
+* Alexander I: added as a replacement of Alexander II
+* Nasser: uses Baibars music instead of Suryavarman music
+
+RELIGIONS
+* added Bon as a Tibetan pagan religion
+* added Mugyo as a Korean pagan religion
+* Zoroastrianism: added more periphery regions
+* Buddhism: Deccan is a historical region
+* Helped Hinduism spread in Southeast Asia
+
+UNIQUE POWERS
+* Maya unique power: expires with the Renaissance, scales with game speed
+* French unique power: does not affect congress claims on core cities
+
+UNIQUE HISTORICAL VICTORIES
+* changed the Phoenician UHV:
+	* second goal: the area of Iberia includes the entire Iberian peninsula
+* changed the Persian UHV:
+	* second goal: changed the deadline to 320 AD
+	* third goal: changed the deadline to 320 AD
+* changed the Spanish UHV:
+	* second goal: included resources controlled by vassals
+* changed the Inca UHV:
+	* new third goal: control 90% of the population in South America in 1775 AD
+* changed the American UHV:
+	* third goal: now also factors in vassals of defensive pact partners
+
+IMPROVEMENTS
+* Paddy Field: assigned unique shortcut
+* Nature Reserve: -1 production
+
+RESOURCES
+* Camels: requires Riding to be connected
+
+EVENTS
+* Smokeless Powder event affects Musketeers
+* Greed event cannot fail due to minor civilizations or barbarians
+* Baby Boom event cannot be triggered by making peace with minor civilizations
+* Leading Producer of Tin event message clarified
+* Security Tax event requires at least one city
+* Crusade event has more historically accurate conditions and outcomes, and expires with Academia
+* New Dynasty event grants a great statesman instead of a great merchant
+* Herbalist event requires at least one city
+* Baby Boom event cannot be triggered right after a civilization has spawned
+
+STABILITY
+* Core and periphery population scores determining expansion stability are displayed in main interface, city screen, and domestic advisor
+* Stability from neutral happiness reverts to zero over time
+* Improved calculation of relations stability
+* Removed Central Asia and Russia from the Ottoman stability map
+* Only one stability check can happen each turn
+* Player controlled civilizations can still collapse after winning the game
+* Civilizations that are already scheduled for collapse have no further stability checks
+* Stricter requirements to receive cities after collapse if they are your war target
+* Stable and solid civilizations are protected from single city respawns on their territory
+* Expansion stability accounts for population about to be lost in recently conquered cities
+* Some stability rules are more forgiving towards AIs in situations where it is not aware of their effect
+* Civilizations that have no overexpansion do not collapse, and instead suffer from anarchy and unrest
+* Additional civics stability when running Nationhood or Multilateralism after the discovery of Nationalism
+* Additional civics stability when running any Legitimacy civic except Authority, Vassalage, or Citizenship after the discovery of Statecraft
+* Negative stability effects (collapse, collapse to core, anarchy crisis) have a cooldown period to prevent frequent repitition
+* Human player cannot receive cities after a collapse based on war targets
+* Limited the barbarian losses stability penalty and increased its decay speed
+* Restricted original owner city claims on collapse and secession
+* Reduced stability impact of corporation unhappiness
+* Meritocracy and Caste System are incompatible
+
+BALANCE
+* Reduced impact of American claims during congresses
+* Independents and barbarians are never affected by strikes due to lack of gold
+* It is a lot more difficult to reclaim lost colonies in congress
+* Moors are considered Middle Eastern instead of European
+* Switch civics and switch state religion espionage missions are more expensive, and their cost scales with the target number of cities
+* Reduced the Viking tech modifier
+* Increased upgrade costs for worker and siege units
+* Improved Russian starting situation and modifiers
+* Improved Japanese modifiers
+* Increased tech diffusion to independents and barbarians
+* Reduced Polish core area to exclude Lithuania
+* Inca core expands if independent after reaching the Renaissance
+* Polynesia cannot receive new world conquerors
+* Immigration occurs somewhat more frequently
+* Adjusted English maintenance modifiers
+
+ARTIFICIAL INTELLIGENCE
+* Improved AI wonder preferences
+* Improved Greek tech preferences
+* AI unlikely to build buildings that require power in cities without power
+* AI will never accept bribes to give away its own city during a congress
+* AI correctly evaluates the military happiness provided by units
+* AI considers temporary unhappiness decay modifier effect of Revolutionism
+* AI considers temporary unhappiness decay modifier when deciding to use abilities that cause temporary unhappiness
+* AI will prioritise Nuclear Plants if it wants to build ICBMs
+* AI is less likely to choose civics that have negative stability effects
+* AI will not initiate diplomacy on the first turn of a scenario
+* AI assigns less value to potential building effects when evaluating a resource
+* AI assigns less value to happiness and health effects of resources
+* AI will take relations into account when deciding to declare war after refusing a congress assignment
+* AI is less likely to agree with congress claims on recently lost cities
+* AI refuses to trade away strategic resources for free
+* AI is more proactive about trading slaves
+* AI accounts for cities that can settle slaves when determining how many slaves it needs
+* AI accounts for the number of slaves needed in the slave trade value
+* AI of European civilizations only support colonial city claims in congress if the target is a non-Western civilization
+* Improved the logic selecting worst enemies
+* Increased Arabian war map values for Northern Africa
+* Animals do not guard tribal villages
+* Adjusted diplomacy AI:
+	* Removed first impression modifiers
+	* Increased impact of shared religion in the Renaissance
+	* Increased maximum impact of close borders
+	* Increased impact of close borders in core territory
+	* Reduced AI willingness to trade with civilizations that have already traded a lot of technologies
+	* Reduced AI willingness to trade technologies that are not yet widespread
+	* AI rejects trade offers that have no value
+
+SCENARIOS
+* Congo starts with Guilds and the Elective civic
+* Resources around Orduqent disappear later in the game
+* Italian cities start with Jails instead of Courthouses
+* Later scenario no longer start out with full years of peace trade yield modifier
+* Horses spawn in northern Mexico
+* Vikings start with fewer technologies
+* Additional native units spawn in Africa before 1900 AD
+* Mali starts with Elective
+* Santa Fe is included in the Mexican birth area
+* Sinai is included in the Arabian birth area
+* Roman Upper Egypt is included in the Byzantine birth area
+* 600 AD scenario:
+	* Location of Aksum matches Ethiopian spawn location
+	* Added Anuradhapura on Ceylon, containing the Jetavanaramaya wonder
+* 1700 AD scenario:
+	* England starts with Bombards
+	* Iran starts with Cartography and Geography
+	* Netherlands start with Urban Planning
+	* Removed unintended fishing boat from land tile
+	* Confucianism is present in Shenyang
+	* Initial Congolese victory progress scales with game speed
+	* Removed unintended camp improvement
+	* Removed additional Chinese militia
+	* Lhasa and Qiqihaer have starting defenders
+	* Fixed Kingdom of Mysore starting name
+
+HISTORICAL IMMERSION
+* Added great people names for many civilizations
+* Added Polynesian Great Statesman names
+* Corrected dawn of man text for Korea
+* Increased number of cities after which Mongolia gets empire dynamic names
+* Vassal dynamic names use their master's dynamic adjective, instead of the master's default adjective
+* The Vijayanagara dynamic name for the Tamils appears somewhat later
+* Phoenicia receives free units and buildings when founding Carthage
+* Turks no longer switch from Tamerlane back to Alp Arslan
+* Holy Rome no longer prematurely transitions to Austria
+* Moors now correctly transition into Morocco
+* Added Songhai dynamic names for Mali
+* Added Almoravid and Saadi dynamic names for the Moors
+* Added Kingdom of Cambodia dynamic name for Khmer
+* Added Akkadian dynamic name for Babylonia
+* Added Myceanean dynamic name for Greece
+* Akbar appears later
+* Increased volume of Polish unit selection barks
+* Added Rum dynamic name for Byzantium as Turkic vassal
+* An appropriate sound is played when naval units retreat
+* Removed Shivaji Bhosle as a great general name
+* Added dawn of man texts for Mexico and Colombia
+* Shorted Alchemy quote
+* Islamic Egypt uses Arabian great people names
+* Dynamic names are updated when a capital is moved
+
+GRAPHICS
+* Added option to hide the air circle animations
+
+INTERFACE
+* Added BUG configuration options to limit which notifications are displayed
+* Financial advisor includes buildings that generate gold with access to power
+* Actual building effects display commerce from buildings with power
+* Building tooltips show clean power if the city has clean power
+* Disabled notification for plague damage
+* Congress dialogue explains if the human player is excluded from a congress due to being involved in a global war
+* Culture modifier of 0% is not displayed
+* When a civilization is released, the camera centers on its capital
+* Roman UP effect is displayed in the building tooltip
+* The wonder limit is not displayed in the tooltip of already constructed wonders
+* Added a custom dialogue when Catholicism is founded by building a cathedral
+* A warning is shown once stability drops to Collapsing
+* Added a notification when temporary unhappiness decays
+* Added a notification when you collapse or lose stability due to barbarian losses or losing cities
+* Maximum amount of resources consumed is displayed in the corporation tooltip
+* Corrected a misspelling in the Nobel Prize effect notification
+* Vassal freedom thresholds in diplomacy tooltip are coloured red if exceeded
+* Sagrada Familia effect is displayed in the process tooltip
+* Added a notification when tribute can be canceled
+* Current actual health or happiness provided by resources is displayed in the diplomacy screen
+* Removed display of turns to the next culture level in the city screen if the city is already at Legendary culture
+* Great Work tooltip displays effective culture provided to a city (if affected by culture conversion)
+* Happiness decay modifier is reflected in the hurry and conscript tooltips
+* Electricity maintaining diplomatic contact with other civilizations is displayed in the technology tooltip
+* Construction order dialog title includes the name of the city
+* Added a satellite slot indicator in the city screen
+* The civics advisor indicates outdated or unstable civics
+* State religion change popups do not appear during the first turn of a scenario
+* Each stability level has a distinct symbol
+* Added a notification when contact is restored
+* Added a notification when a city name changes without changing owner
+* Added interface messages and warning notifications for scheduled conqueror events
+* Added interface message when a period change 
+* Spy promotion buttons have a black background
+* Free buildings granted by wonders are shown in the city tooltip
+* Clarified message when AIs refuse to accept technologies
+
+DOCUMENTATION
+* Corrected concepts entry regarding cities founded on resource tiles
+* Corrected Llanero civilopedia entry
+* Corrected raze penalty civilopedia entry
+* Corrected civilization starting dates in the civilopedia
+* Corrected space race related loading screen hints to refer to the Mars Colony instead
+* Corrected reference to Ideology in civilopedia to Revolutionism
+* Added Revolutionism civilopedia entry
+* Added maximum amount of resources consumed to the corporation civilopedia entry
+* Corrected Kelebolo strategy text
+* Clarified description of the Sagrada Familia effect
+* Corrected grammar in first Portuguese UHV goal description
+* Corrected Sejmik strategy text
+* Corrected the Reformation concept civilopedia entry
+* Added a concepts entry for Pagan Religions
+* Corrected civilopedia references mentioning Astronomy to Exploration
+* Corrected technologies required to trigger trading company conquerors in civilopedia
+* Corrected Secularism civilopedia entry
+* Added National Monument civilopedia entry
+* Corrected the strategy texts for Monarchy and Elective
+* Added associated buildings and wonders to the religion civilopedia entry
+* Corrected Post Office strategy text
+* Added a pagan religion civilopedia section
+* Added a concepts entry for city conquest rules
+
+BUGFIXES
+* Fixed tile yield display for yields of 10 or more
+* Fixed a crash related to premature collapse
+* Fixed a crash related to culture conversion
+* Fixed a crash related to city assignment after collapse
+* Fixed a Python error during stability calculation
+* Fixed negative attitude from sacking cities
+* Fixed a bug where someone can become a vassal or master with zero cities
+* Fixed a bug that allowed wonders to be destroyed on city conquest
+* Fixed a bug that relocated units to the old owner instead of the new owner after a congress city assignment
+* Fixed determination of involved civilizations in a post-war congress
+* Fixed a bug that caused cities not to be razed when their unrest reaches zero
+* Fixed a bug that prevented Indraprastha from spawning on Marathon speed
+* Fixed a bug affecting tile culture
+* Fixed an inconsistency between player commerce and city specific commerce
+* Fixed Grenadier Cavalry sleep animation
+* Fixed a soundtrack issue when winning the game
+* Fixed a bug that caused incorrect culture coverage after resurrection
+* Fixed inconsistencies in city culture changes
+* Fixed the end of game graph
+* Fixed stability check on capital move
+* Fixed issue with corporation spread on slower game speeds
+* Fixed first Japanese UHV goal display for all game speeds
+* Fixed first Russian UHV goal display
+* Fixed first Indonesian UHV goal display
+* Fixed a bug that caused trading company events to fire in the 1700 AD scenario
+* Fixed first Portuguese UHV goal display
+* Fixed third Confucian UHV display
+* Fixed a bug that disabled the Culture Level civilopedia section
+* Fixed a bug that prevented moving cities using worldbuilder
+* Fixed first Protestant URV goal requiring Economics as stated
+* Fixed a bug in the religious population calculation
+* Fixed second Khmer UHV goal display
+* Fixed the Khmer empire dynamic name
+* Fixed Byzantine Despotate dynamic names
+* Fixed an error in the Japanese UHV tile tooltip
+* Fixed display of great people names in interface notifications
+* Fixed a bug that caused incorrect assignment of cities after a collapse
+* Fixed a bug in the selection of the Jewish holy city
+* Fixed a bug that canceled AI conqueror spawns under certain conditions
+* Fixed tile culture coverage cost to correctly scale with game speed
+* Fixed a bug that made Philip II appear too early
+* Fixed conditions that make Tamerlane appear
+* Fixed a bug that rendered roads and resources spawned before birth invisible
+* Fixed a bug that prevented cities from getting cultural control over their own tile
+* Fixed a Python error during the trading company conqueror event
+* Fixed San Martin's diplomacy music
+* Fixed display of UHV goals that require to control a percentage of territory
+* Fixed a Python error during the Reformation event
+* Fixed a bug where additional yields from the Moorish UP persisted even after they entered the Renaissance
+* Fixed first Islamic URV goal display
+* Fixed a bug that involved dead civilizations in the Reformation event
+* Fixed a bug that prevented great people placed with worldbuilder from getting dynamic names
+* Fixed the interface notification for city secessions
+* Fixed an error encountered when flipping units in an area
+* Fixed a bug where ships could capture slaves in cargo without having cargo space available
+* Fixed inconsistent criteria for being considered communist, fascist, etc. between victory and dynamic names
+* Fixed first and third American UHV goal display
+* Fixed third Indian UHV goal display
+* Fixed a bug that allowed other civilizations to benefit from the Ethiopian UP
+* Fixed some buildings unintentionally being classified as immune to nuclear weapons
+* Fixed a bug in the bribery dialogue during congresses
+* Fixed a bug that caused war participants to be excluded from its post war congress
+* Fixed a bug that allowed cities to be reduced to size 0 from emigration
+* Fixed display of religion spread goals
+* Fixed North America tile tooltip for the second French UHV goal
+* Fixed errors when Catholicism is founded by building a cathedral
+* Fixed an error in the flip refusal dialogue when player cities are about to flip during a congress
+* Fixed display of population percent goals
+* Fixed an error that occurs when a scripted Chinese city spawn happens on a tile with a tribal village
+* Fixed Mongol conqueror spawns to not occur on tiles with enemy units
+* Fixed a bug where a single stability check on Unstable can cause a collapse
+* Fixed interface notification when a great person is born outside of a city
+* Fixed a bug where Porcelain Tower grants trade routes with independent cities
+* Fixed first Congolese UHV goal display
+* Fixed a bug that prevented religion spread from the Arabian UP to have any additional side effects
+* Fixed a bug where acquiring a vassal during a war triggered enemy defensive pacts
+* Fixed a bug that allowed conqueror units to spawn on islands
+* Fixed a bug where units are incorrectly relocated when a nearby city secedes
+* Fixed a bug that caused additional collapses to be caused by a collapse
+* Fixed a bug that caused spies to gain excessive amounts of experience
+* Fixed a bug where hidden nationality units are not affected by the Russian UP
+* Fixed a bug where Iron Dome prevented air units from acquiring experience and promotions
+* Fixed third Catholic URV goal display
+* Fixed a bug that caused mass disappearance of a corporation
+* Fixed a bug that prevented usage of BUG's unit rename functionality
+* Fixed expiration of the third German UHV goal
+* Fixed an error in the Oriental Pearl Tower effect
+* Fixed a bug that prevented scripted unit spawns from receiving free starting experience from civics etc
+* Fixed first Inca UHV tile tooltip
+* Fixed a bug that prevented the AI from surrendering if they have only one core city left
+* Fixed possible spawn locations for American conquerors
+* Fixed a goal that expired the first UHV goal of any player acquiring a Japanese city
+* Fixed wrong years on the statistics graph x axis labels
+* Fixed impact of the Sagrada Familia effect
+* Fixed a bug preventing immigration between cities
+* Fixed a bug preventing acquiring cultural control over a tile
+* Fixed a C++ error encountered when a city is flipped
+* Fixed a bug that allowed only assignments of far away war targets after a collapse, when it should have been only close war targets
+* Fixed a bug where congresses do not continue after loading an autosave
+* Fixed a congress bug where you could only claim to found on plots where you cannot found a city
+* Fixed a bug that allowed to claim cities of recently spawned civilizations in congress
+* Fixed a C++ error encountered when deleting units
+* Fixed incorrect assignment of technologies to respawned civilizations
+* Fixed a bug that prevented the Congolese spawn due to the presence of Rainforest or Marsh
+* Fixed third Jewish URV goal
+* Fixed Protestant holy city selection
+* Fixed area required by the Third Thai UHV goal
+* Fixed a bug in the civics stability calculation
+* Fixed an error in the Silver Tree Fountain effect
+* Fixed a bug in culture conversion decay
+* Fixed a bug that prevented free buildings from wonders for city at landlocked locations
+* Fixed a bug that allowed holy cities to be destroyed during the Harappan collapse
+* Fixed a bug that prevented negative relations from religious civs towards civs without religion
+* Fixed message after a successful congress bribe
+* Fixed war resolutions being referred to as crusades even within the United Nations
+* Fixed a bug that displays a construction selection dialog for conquered cities even when they are gifted away
+* Fixed a bug where Indonesian AI conquerors declare war on Indonesia even when it does not control the target
+* Fixed a bug where tile culture coverage for a city recedes when a nearby Fort is built or removed
+* Fixed a bug where building yield rate and power yield rate modifiers are not applied
+* Fixed impact of Amber Room on the willingness to agree to defensive pacts
+* Fixed Python error during trading company event city assignment
+* Fixed a bug that caused the Russian unique power to damage Russian hidden nationality units
+* Fixed a bug that allowed building improvements on tiles without natural food or irrigation
+* Fixed popup dialog for the Byzantine unique power
+* Fixed a bug where Salsal Buddha enabled trade with barbarians
+* Fixed trading company conquerors when the target tile is adjacent to an existing city
+* Fixed a bug that prevented won games being recognised in the hall of fame
+* Fixed a bug that caused defensive pacts to be canceled when vassals are involved in a war
+* Fixed a bug that applied the razed cities stability penalty to AI civilizations
+* Fixed a bug that let barbarians be relocated into another civilization's territory
+* Fixed specialist commerce after moving a city using world builder
+* Fixed the immigration interval to scale with game speed
+* Fixed a crash caused by the Channel Tunnel effect
+* Fixed a bug preventing the stability to reset after a civilization is resurrected
+* Fixed a bug preventing to grant independence to a dead civilization
+* Fixed a Python error that occurred when independence is granted
+* Fixed incorrect wonder hurry modifiers
+* Fixed a bug that prevented renaming cities whose name contains a special character
+* Fixed a bug that prevented Protestantism being correctly founded on the Dutch spawn
+* Fixed a bug in persisting the next congress turn
+* Fixed a bug in the assignment of tithe gold
+* Fixed a bug in the calculation of expansion stability when cities are in unrest
+* Fixed a bug that can lead to peace with barbarians
+
+CODEBASE
+* Introduced Core module containing commonly used base functions and classes, especially to manipulate collections of plots, cities, units
+* Extensive unit test coverage for Core functionality
+* Introduced Events module to easily add event handlers via decorator
+* Improved code to make Python reloads more robust regarding game state
+* Removed redundant leader memory entries
+* Removed some dubious early loop exits added by Rhye
+* Introduced version number accessible within the game
+* Removed ability to edit stored data and maps from the world builder
