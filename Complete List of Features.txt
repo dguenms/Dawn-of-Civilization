@@ -353,9 +353,9 @@ CIVILISATIONS
     * Unique Building: Apothecary (Pharmacy): requires Medicine, +2 health, +2 food from improved Incense tiles, +1 food from improved Spice and Silk tiles
     * Unique Power: Additional stability from recently conquered cities
     * Unique Historical Victory:
-	* Control 7% of the world by 140 AD
-	* Control 7 world wonders by 350 AD
-	* Control 2 holy city shrines by 350 AD
+		* Control 7% of the world by 140 AD
+		* Control 7 world wonders by 350 AD
+		* Control 2 holy city shrines by 350 AD
 * Rome
     * Unique Unit: Legion (Swordsman): increased cost, +2 strength, can build Roman Road (+1 movement with Masonry)
     * Unique Unit: Ballista (Catapult): +2 strength, no city attack modifier
@@ -742,7 +742,7 @@ NEW CIVILISATIONS
         * Have Open Borders with 6 European civilizations in 1650 AD
         * Control Mesopotamia, Transoxania and Northwestern India in 1750 AD
         * Have a city with 20000 culture in 1800 AD
-* Prussia/Germany
+* Prussia / Germany
     * Spawn: 1700 AD in Berlin
     * Leaders: Frederick, Bismarck
     * Color: Dark Gray / Black
@@ -752,9 +752,9 @@ NEW CIVILISATIONS
     * Unique Building: Assembly Plant (Factory): +1 free engineer, +2 experience for Armoured units
     * Unique Power: The Power of Doctrine: Units retain all their experience when upgraded
     * Unique Historical Victory:
-	* Have 7 great people in Berlin in 1900 AD
-	* Control Italy, France, Scandinavia, England and Russia in 1940 AD
-	* Be the first to discover eight Industrial and eight Global technologies
+		* Have 7 great people in Berlin in 1900 AD
+		* Control Italy, France, Scandinavia, England and Russia in 1940 AD
+		* Be the first to discover eight Industrial and eight Global technologies
 * Mexico
     * Spawn: 1810 AD in Ciudad de México
     * Rebirth: of Aztecs
