@@ -1,27 +1,28 @@
 TABLE OF CONTENTS
 * Major Features
 * Game Rules
-* Buildings
-* Unique Buildings
-* Wonders
-* Units
-* Unique Units
-* Wonders
-* Projects
-* Civics
 * Civilizations
-* Corporations
 * Leaders
 * Unique Powers
 * Unique Historical Victories
+* Buildings
+* Unique Buildings
+* Wonders
+* Projects
+* Units
+* Unique Units
+* Civics
+* Corporations
 * Improvements
 * Resources
 * Events
 * Stability
-* Balance
-* Artificial Intelligence
+* Congresses
 * Scenarios
 * Historical Immersion
+* Balance
+* Artificial Intelligence
+* Graphics
 * Interface
 * Documentation
 * Bugfixes
@@ -99,64 +100,91 @@ MAJOR FEATURES
 * Added Native American specific soundtrack
 
 GAME RULES
-* Apostolic Palace resolutions can also assign core cities
-* Congresses do not permanently flip culture
-* National Wonders are always destroyed on city conquest
-* Civilian units are never flipped as part of a congress city assignment
-* Units are not relocated during congress city assignments if they are still on neutral or allied territory
-* Hidden nationality units cannot heal in foreign cities
+* Changed conqueror events:
+	* AI conqueror events that cause wars first break master-vassal relationships
+	* Conqueror events during ongoing wars reset the war and trigger another refuse to speak period
+	* Conqueror units spawned start with the Mercenary promotion
+	* Vassals cannot receive scripted AI conquerors
+	* Conquerors cannot spawn on land masses without cities
+	* Peacefully surrendering a city during the trading corporation event creates a peace treaty
+* Changed city conquest:
+	* National Wonders are always destroyed
+	* Religious buildings are not automatically destroyed on city conquest
+	* Non-state religion buildings have a higher chance to be destroyed on city conquest
+	* Unique buildings that require an earlier technology can only be captured if you have the technology for your version of the building
+* Changed vassalisation:
+	* Enabled releasing vassals
+	* Recently spawned or respawned civilizations cannot become vassals
+* Changed religion:
+	* Scripted religion spawns cannot happen if no eligible city exists in the game
+	* When a religion disappears from a city, it is always the religion with the least influence in the city, instead of a random present religion
+	* Tolerating a religion does no longer allow it to spread to ahistorical regions
+	* Increased the speed at which religions spread at long distance to historical regions where they are not present
+	* Minor civilizations can never prevent non-state religion spread
+* Changed city assignments:
+	* Improved consistency of respawn conditions and city assignments
+	* Culture conversion is reset when a city is assigned to a new owner
+	* Apostolic Palace resolutions can also assign core cities
+	* The Apostolic Palace can no longer vote to assign cities of non-members
+	* During resurrections and secessions, units are evacuated instead of flipped
+	* City assignment removes unrest
+	* Minor units get destroyed instead of expelled
+* Changed existing birth protections:
+	* Recently spawned civilizations are no longer prohibited from declaring war, only being declared upon
+	* Enforced peace at scenario start is now only five turns on normal speed
+* Changed diplomatic relations:
+	* Declarations of war from defensive pacts do not cause negative attitude penalties
+	* Peace, war, etc counters only increment while civilizations can contact each other
+	* Declaring war from cascading defensive pacts does not cancel defensive pacts
+	* The current secretary general cannot be targeted by a war resolution
+* Changed slaves:
+	* Slaves can be captured after the first civilization discovers Compass
+	* Chance of capturing slaves increased to 50%
+* Changed unit rules:
+	* Hidden nationality units cannot heal in foreign cities
+	* Hidden nationality units are only displayed as barbarian on neutral territory, or on foreign territory when there are no open borders with their actual owner
+	* Air units can also be rebased to cities of vassals and defensive pact partners
+	* The maximum withdrawal chance is 90%
+	* Improved calculation of spy experience to make it more common
 * Great Artist great works do not end city unrest
-* AI conqueror spawns that cause wars first break master-vassal relationships
-* Unique buildings that require an earlier technology can only be captured if you have the technology for your version of the building
-* Defensive pacts are canceled before civilizations declare war due to a refused congress decision
 * Additional specialist food from all sources is limited to +1
-* Flips on civilization spawn reset culture conversion
 * Satellite and slave specialists cannot receive extra food
-* Recently spawned or respawned civilizations cannot become vassals
-* Improved consistency of respawn conditions and city assignments
-* Conqueror events during ongoing wars reset the war and trigger another refuse to speak period
-* Scripted religion spawns cannot happen if no eligible city exists in the game
-* When a religion disappears from a city, it is always the religion with the least influence in the city, instead of a random present religion
-* Tolerating a religion does no longer allow it to spread to ahistorical regions
 * Great people buildings are immune to nuclear weapons
-* Religious buildings are not automatically destroyed on city conquest
-* Non-state religion buildings have a higher chance to be destroyed on city conquest
-* Recently spawned civilizations are no longer prohibited from declaring war, only being declared upon
-* The Apostolic Palace can no longer vote to assign cities of non-members
-* Enforced peace at scenario start is now only five turns on normal speed
-* Slaves can be captured after the first civilization discovers Compass
 * Enabled fractional trade: trade routes can now produce fractional trade yields
-* Hidden nationality units are only displayed as barbarian on neutral territory, or on foreign territory when there are no open borders with their actual owner
-* Enabled releasing vassals
-* Declarations of war from defensive pacts do not cause negative attitude penalties
-* Vassals of the same master cannot demand cities from each other during a congress
-* Peace, war, etc counters only increment while civilizations can contact each other
-* Even during congresses not caused by wars, there is a minimal claim on war targets
-* Congress claims only include at most one tile of the same name
-* Congress city assignments do not flip units but instead relocate them to their core
-* Culture conversion is reset when a city flips to a new owner
-* Chance of capturing slaves increased to 50%
-* Increased the speed at which religions spread at long distance to historical regions where they are not present
-* Available city claims during a congress are limited to ten
 * New cities start with food stored based on their starting buildings
-* Air units can also be rebased to cities of vassals and defensive pact partners
-* Conqueror units spawned start with the Mercenary promotion
-* During resurrections and secessions, units are evacuated instead of flipped
-* When a city is flipped, its unrest is removed
-* Declaring war from cascading defensive pacts does not cancel defensive pacts
-* Minor units get destroyed instead of expelled during flips
 * Global warming ignores city unhealth from plagues
-* The current secretary general cannot be targeted by a war resolution
-* Vassals cannot receive scripted AI conquerors
-* Regular congresses are prevented from coinciding with war congresses
-* It is possible to refuse congress demands on a vassal's cities as their master
-* Peacefully surrendering a city during the trading corporation event creates a peace treaty
-* Conquerors cannot spawn on land masses without cities
-* Improved calculation of spy experience to make it more common
-* The maximum withdrawal chance is 90%
-* Minor civilizations can never prevent non-state religion spread
 * Valid building locations are checked before granting free buildings
 * Culture can conver islands in the third ring of a city
+
+CIVILIZATIONS
+* Byzantium: removed parts of the Egyptian coasts from its flip zone
+* Italy: removed conditional spawn condition
+
+LEADERS
+* Adjusted favourite civics for many leaders
+* Alp Arslan: increased negative attitude due to differing religion
+* William III: reduced negative attitude due to differing religion
+* Alexander II: removed
+* Alexander I: added as a replacement of Alexander II
+* Nasser: uses Baibars music instead of Suryavarman music
+
+UNIQUE POWERS
+* Maya unique power: expires with the Renaissance, scales with game speed
+* French unique power: does not affect congress claims on core cities
+
+UNIQUE HISTORICAL VICTORIES
+* changed the Phoenician UHV:
+	* second goal: the area of Iberia includes the entire Iberian peninsula
+* changed the Persian UHV:
+	* second goal: changed the deadline to 320 AD
+	* third goal: changed the deadline to 320 AD
+* changed the Spanish UHV:
+	* second goal: included resources controlled by vassals
+* changed the Inca UHV:
+	* new third goal: control 90% of the population in South America in 1775 AD
+* changed the American UHV:
+	* third goal: now also factors in vassals of defensive pact partners
+
 
 BUILDINGS
 * Coastal buildings (Wharf, Customs House, Drydock, Container Terminal): cannot be built on the Caspian Sea
@@ -230,22 +258,10 @@ CIVICS
 * Central Planning: requires Labour Unions
 * Tributaries: removed +25% trade route yield, added +50% trade route yield with vassals
 
-CIVILIZATIONS
-* Byzantium: removed parts of the Egyptian coasts from its flip zone
-* Italy: removed conditional spawn condition
-
 CORPORATIONS
 * Accounted for more late game buildings in corporation spread
 * Silk Route: cannot spread to Crete and Cyprus
 * Steel Industry: requires Metallurgy as intended, not Steel
-
-LEADERS
-* Adjusted favourite civics for many leaders
-* Alp Arslan: increased negative attitude due to differing religion
-* William III: reduced negative attitude due to differing religion
-* Alexander II: removed
-* Alexander I: added as a replacement of Alexander II
-* Nasser: uses Baibars music instead of Suryavarman music
 
 RELIGIONS
 * added Bon as a Tibetan pagan religion
@@ -253,23 +269,6 @@ RELIGIONS
 * Zoroastrianism: added more periphery regions
 * Buddhism: Deccan is a historical region
 * Helped Hinduism spread in Southeast Asia
-
-UNIQUE POWERS
-* Maya unique power: expires with the Renaissance, scales with game speed
-* French unique power: does not affect congress claims on core cities
-
-UNIQUE HISTORICAL VICTORIES
-* changed the Phoenician UHV:
-	* second goal: the area of Iberia includes the entire Iberian peninsula
-* changed the Persian UHV:
-	* second goal: changed the deadline to 320 AD
-	* third goal: changed the deadline to 320 AD
-* changed the Spanish UHV:
-	* second goal: included resources controlled by vassals
-* changed the Inca UHV:
-	* new third goal: control 90% of the population in South America in 1775 AD
-* changed the American UHV:
-	* third goal: now also factors in vassals of defensive pact partners
 
 IMPROVEMENTS
 * Paddy Field: assigned unique shortcut
@@ -311,54 +310,18 @@ STABILITY
 * Reduced stability impact of corporation unhappiness
 * Meritocracy and Caste System are incompatible
 
-BALANCE
-* Reduced impact of American claims during congresses
-* Independents and barbarians are never affected by strikes due to lack of gold
-* It is a lot more difficult to reclaim lost colonies in congress
-* Moors are considered Middle Eastern instead of European
-* Switch civics and switch state religion espionage missions are more expensive, and their cost scales with the target number of cities
-* Reduced the Viking tech modifier
-* Increased upgrade costs for worker and siege units
-* Improved Russian starting situation and modifiers
-* Improved Japanese modifiers
-* Increased tech diffusion to independents and barbarians
-* Reduced Polish core area to exclude Lithuania
-* Inca core expands if independent after reaching the Renaissance
-* Polynesia cannot receive new world conquerors
-* Immigration occurs somewhat more frequently
-* Adjusted English maintenance modifiers
-
-ARTIFICIAL INTELLIGENCE
-* Improved AI wonder preferences
-* Improved Greek tech preferences
-* AI unlikely to build buildings that require power in cities without power
-* AI will never accept bribes to give away its own city during a congress
-* AI correctly evaluates the military happiness provided by units
-* AI considers temporary unhappiness decay modifier effect of Revolutionism
-* AI considers temporary unhappiness decay modifier when deciding to use abilities that cause temporary unhappiness
-* AI will prioritise Nuclear Plants if it wants to build ICBMs
-* AI is less likely to choose civics that have negative stability effects
-* AI will not initiate diplomacy on the first turn of a scenario
-* AI assigns less value to potential building effects when evaluating a resource
-* AI assigns less value to happiness and health effects of resources
-* AI will take relations into account when deciding to declare war after refusing a congress assignment
-* AI is less likely to agree with congress claims on recently lost cities
-* AI refuses to trade away strategic resources for free
-* AI is more proactive about trading slaves
-* AI accounts for cities that can settle slaves when determining how many slaves it needs
-* AI accounts for the number of slaves needed in the slave trade value
-* AI of European civilizations only support colonial city claims in congress if the target is a non-Western civilization
-* Improved the logic selecting worst enemies
-* Increased Arabian war map values for Northern Africa
-* Animals do not guard tribal villages
-* Adjusted diplomacy AI:
-	* Removed first impression modifiers
-	* Increased impact of shared religion in the Renaissance
-	* Increased maximum impact of close borders
-	* Increased impact of close borders in core territory
-	* Reduced AI willingness to trade with civilizations that have already traded a lot of technologies
-	* Reduced AI willingness to trade technologies that are not yet widespread
-	* AI rejects trade offers that have no value
+CONGRESSES
+* City assignments do not permanently flip culture
+* Units are not relocated during city assignments if they are still on neutral or allied territory
+* Civilian units are never flipped as part of a city assignment
+* Defensive pacts are canceled before civilizations declare war due to a refused city assignment
+* Vassals of the same master cannot demand cities from each other
+* Claims only include at most one tile of the same name
+* City assignments do not flip units but instead relocate them to their core
+* Available city claims limited to ten
+* Even during congresses not caused by wars, there is a minimal claim on war targets
+* Regular congresses are prevented from coinciding with war congresses
+* Masters can refuse demands on cities owned by their vassals
 
 SCENARIOS
 * Congo starts with Guilds and the Elective civic
@@ -412,6 +375,55 @@ HISTORICAL IMMERSION
 * Shorted Alchemy quote
 * Islamic Egypt uses Arabian great people names
 * Dynamic names are updated when a capital is moved
+
+BALANCE
+* Reduced impact of American claims during congresses
+* Independents and barbarians are never affected by strikes due to lack of gold
+* It is a lot more difficult to reclaim lost colonies in congress
+* Moors are considered Middle Eastern instead of European
+* Switch civics and switch state religion espionage missions are more expensive, and their cost scales with the target number of cities
+* Reduced the Viking tech modifier
+* Increased upgrade costs for worker and siege units
+* Improved Russian starting situation and modifiers
+* Improved Japanese modifiers
+* Increased tech diffusion to independents and barbarians
+* Reduced Polish core area to exclude Lithuania
+* Inca core expands if independent after reaching the Renaissance
+* Polynesia cannot receive new world conquerors
+* Immigration occurs somewhat more frequently
+* Adjusted English maintenance modifiers
+
+ARTIFICIAL INTELLIGENCE
+* Improved AI wonder preferences
+* Improved Greek tech preferences
+* AI unlikely to build buildings that require power in cities without power
+* AI will never accept bribes to give away its own city during a congress
+* AI correctly evaluates the military happiness provided by units
+* AI considers temporary unhappiness decay modifier effect of Revolutionism
+* AI considers temporary unhappiness decay modifier when deciding to use abilities that cause temporary unhappiness
+* AI will prioritise Nuclear Plants if it wants to build ICBMs
+* AI is less likely to choose civics that have negative stability effects
+* AI will not initiate diplomacy on the first turn of a scenario
+* AI assigns less value to potential building effects when evaluating a resource
+* AI assigns less value to happiness and health effects of resources
+* AI will take relations into account when deciding to declare war after refusing a congress assignment
+* AI is less likely to agree with congress claims on recently lost cities
+* AI refuses to trade away strategic resources for free
+* AI is more proactive about trading slaves
+* AI accounts for cities that can settle slaves when determining how many slaves it needs
+* AI accounts for the number of slaves needed in the slave trade value
+* AI of European civilizations only support colonial city claims in congress if the target is a non-Western civilization
+* Improved the logic selecting worst enemies
+* Increased Arabian war map values for Northern Africa
+* Animals do not guard tribal villages
+* Adjusted diplomacy AI:
+	* Removed first impression modifiers
+	* Increased impact of shared religion in the Renaissance
+	* Increased maximum impact of close borders
+	* Increased impact of close borders in core territory
+	* Reduced AI willingness to trade with civilizations that have already traded a lot of technologies
+	* Reduced AI willingness to trade technologies that are not yet widespread
+	* AI rejects trade offers that have no value
 
 GRAPHICS
 * Added option to hide the air circle animations
