@@ -43,6 +43,7 @@ MAJOR FEATURES
 	* Cities that exist at a spawn plot are always flipped, wonders from cities that need to be cleared to free the spawn plot get moved to the new capital once it is founded
 	* Free civics switch in the first turn after spawn
 	* After spawn, most civilizations enter "advanced start" mode, granting a budget to place initial improvements and city buildings
+	* Removed unit defections
 	* Recently spawned civilizations receive "birth protection" for ten turns for every tile in their birth area:
 		* Cannot be declared war upon
 		* Flip cannot be refused, the only options are war or peace
@@ -180,11 +181,8 @@ UNIQUE HISTORICAL VICTORIES
 	* third goal: changed the deadline to 320 AD
 * changed the Spanish UHV:
 	* second goal: included resources controlled by vassals
-* changed the Inca UHV:
-	* new third goal: control 90% of the population in South America in 1775 AD
 * changed the American UHV:
 	* third goal: now also factors in vassals of defensive pact partners
-
 
 BUILDINGS
 * Coastal buildings (Wharf, Customs House, Drydock, Container Terminal): cannot be built on the Caspian Sea
@@ -195,10 +193,6 @@ BUILDINGS
 * National Monument: requires Nationalism, increased production cost
 * Airport: requires Oil
 * Solar Plant: reduced maximum latitude to 40 degrees
-
-UNIQUE BUILDINGS
-* Inca Tambo: requires Law
-* Dutch Dike: requires Urban Planning
 
 WONDERS
 * Added wonder movies from Chronicles of Mankind
@@ -226,7 +220,7 @@ WONDERS
 * ITER: effect changed to +1 commerce for every 20 power consumed in the world
 
 PROJECTS
-* Added Great Firewall: +200% counterespionage, +1 happiness per 20% espionage rate
+* Added Great Firewall (Telecommunications, The Internet): +200% counterespionage, +1 happiness per 20% espionage rate
 * Increased production cost of some projects
 
 UNITS
@@ -372,7 +366,7 @@ HISTORICAL IMMERSION
 * An appropriate sound is played when naval units retreat
 * Removed Shivaji Bhosle as a great general name
 * Added dawn of man texts for Mexico and Colombia
-* Shorted Alchemy quote
+* Shortened Alchemy quote
 * Islamic Egypt uses Arabian great people names
 * Dynamic names are updated when a capital is moved
 
