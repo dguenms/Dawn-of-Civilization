@@ -2391,6 +2391,7 @@ iFrance : {
 		u"fIrène Joliot-Curie", # 20th
 		"Jacques Monod", # 20th
 		u"Benoît Mandelbrot", # 20th
+		"Alexandre Grothendieck", # 20th
 	],
 	iGreatMerchant : [
 		u"Éloi de Noyon", # 7th
