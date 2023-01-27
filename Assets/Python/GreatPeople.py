@@ -2387,6 +2387,7 @@ iFrance : {
 		"fMarie-Sophie Germain", # 19th
 		"fMarie Curie", # 19th
 		"Antoine Henri Becquerel", # 19th
+		u"Henri Poincaré", # 19th
 		iGlobal,
 		u"fIrène Joliot-Curie", # 20th
 		"Jacques Monod", # 20th
