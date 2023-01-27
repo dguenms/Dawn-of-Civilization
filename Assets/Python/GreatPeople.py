@@ -4228,9 +4228,10 @@ iAmerica : {
 		"Orville Wright", # 20th
 		"Frank Lloyd Wright", # 20th
 		"fLillian Moller Gilbreth", # 20th
-		"fHedy Lamarr", # 20th
+		"Robert Moses", # 20th
 		"Eero Saarinen", # 20th
 		"fMargaret Hutchinson Rousseau", # 20th
+		"fHedy Lamarr", # 20th
 		"Frank Gehry", # 20th
 	],
 	iGreatStatesman : [
