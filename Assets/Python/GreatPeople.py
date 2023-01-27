@@ -2803,6 +2803,7 @@ iHolyRome : {
 		u"Albert Szent-Györgyi", # 20th
 		"Wolfgang Pauli", # 20th
 		u"Kurt Gödel", # 20th
+		u"Paul Erdös", # 20th
 	],
 	iGreatMerchant : [
 		"Hildebrand Veckinchusen", # 14th
