@@ -75,19 +75,21 @@ def getImpact(iCiv):
 	return max(iImpactMarginal, iImpact)
 			
 def isOutdated(iCiv):
+	if year() < year(dFall[iCiv]):
+		return False
+
 	lResurrections = dResurrections[iCiv]
 	if not lResurrections:
 		return True
 	
-	if year() >= dFall[iCiv]:
-		iFirstResurrectionStart = lResurrections[0][0]
-		iLastResurrectionEnd = lResurrections[-1][1]
+	iFirstResurrectionStart = lResurrections[0][0]
+	iLastResurrectionEnd = lResurrections[-1][1]
 		
-		if iLastResurrectionEnd != 2020:
-			return True
+	if iLastResurrectionEnd < 2020:
+		return True
 		
-		if iFirstResurrectionStart > dFall[iCiv]:
-			return True
+	if iFirstResurrectionStart > dFall[iCiv]:
+		return True
 	
 	return False
 
