@@ -37,6 +37,11 @@ def freeSlotFor(iCiv):
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityUnstable and since(year(dFall[p])) >= 0).minimum(metric)
 	if iSlot is not None:
 		completeCollapse(iSlot)
+		return
+	
+	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityUnstable and getImpact(civ(p)) < iCivImpact).minimum(metric)
+	if iSlot is not None:
+		completeCollapse(iSlot)
 	
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
