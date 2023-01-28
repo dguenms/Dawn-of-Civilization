@@ -1219,3 +1219,8 @@ bool CyPlot::isExpansion()
 {
 	return m_pPlot ? m_pPlot->isExpansion() : -1;
 }
+
+void CyPlot::setRevealedOwner(int eTeam, int eNewValue)
+{
+	if (m_pPlot) m_pPlot->setRevealedOwner((TeamTypes)eTeam, (PlayerTypes)eNewValue);
+}

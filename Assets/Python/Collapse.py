@@ -56,6 +56,9 @@ def completeCollapse(iPlayer):
 		
 	# take care of the remnants of the civ
 	player(iPlayer).killUnits()
+	
+	# remove human vision so their slot can be safely reassigned
+	resetRevealedOwner(iPlayer)
 		
 	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
 	

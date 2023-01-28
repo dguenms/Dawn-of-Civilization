@@ -290,5 +290,6 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("resetExpansion", &CyPlot::resetExpansion, "void ()")
 		.def("getExpansion", &CyPlot::getExpansion, "int ()")
 		.def("isExpansion", &CyPlot::isExpansion, "bool ()")
+		.def("setRevealedOwner", &CyPlot::setRevealedOwner, "void (int eTeam, int eNewValue)")
 	;
 }

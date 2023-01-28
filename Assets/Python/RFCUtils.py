@@ -1146,3 +1146,10 @@ def possibleSpawnsBetween(origin, target, iDistance):
 			.where(lambda p: not units.at(p).atwar(origin.getOwner()))
 			.where(lambda p: not cities.surrounding(p).notowner(origin.getOwner()))
 	)
+
+
+# used: Slots, Collapse
+def resetRevealedOwner(iPlayer):
+	for plot in plots.all():
+		if plot.getRevealedOwner(game.getActiveTeam(), False) == iPlayer:
+			plot.setRevealedOwner(game.getActiveTeam(), slot(iIndependent))
