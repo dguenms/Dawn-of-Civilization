@@ -776,7 +776,7 @@ def canEverRespawn(iCiv, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iCiv])
+	return any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iCiv])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
