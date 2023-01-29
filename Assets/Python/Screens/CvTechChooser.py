@@ -875,7 +875,7 @@ class CvTechChooser:
 					
 			flavor = lambda x: gc.getTechInfo(x).getFlavorValue(iFlavor)
 
-			lTechs = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearch(i, False)]
+			lTechs = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearch(i, False) if flavor(i) > 0]
 			iFirstDiscovery = find_max(lTechs, flavor).result
 			
 			iSecondDiscovery = None
