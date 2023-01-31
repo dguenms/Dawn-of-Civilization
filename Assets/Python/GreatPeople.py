@@ -3356,7 +3356,7 @@ iItaly : {
 		"Tommaso d'Aquino", # 13th
 		"Francesco d'Assisi", # 13th
 		"fGuglielma", # 13th
-		"fCaterina di Giacomo di Benincasa", # 14th
+		"fCaterina Benincasa", # 14th
 		iRenaissance,
 		"Giuliano della Rovere", # 15th
 		"Camillo Borghese", # 16th
