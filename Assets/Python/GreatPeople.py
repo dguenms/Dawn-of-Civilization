@@ -3362,9 +3362,13 @@ iItaly : {
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
 		"Matteo Ricci", # 16th
+		"Prospero Lorenzo Lambertini", # 18th
 		iIndustrial,
 		"Giovanni Maria Mastai-Ferretti", # 19th
 		"Giovanni Bosco", # 19th
+		iGlobal,
+		"Angelo Giuseppe Roncalli", # 20th
+		"Giovanni Battista Enrico Antonio Maria Montini", # 20th
 	],
 	iGreatArtist : [
 		"Dante Alighieri", # 13th
