@@ -2203,6 +2203,7 @@ iSpain : {
 		iRenaissance,
 		"Ignacio de Loyola", # 16th
 		u"Juan de Sepúlveda", # 16th
+		"Francisco Javier", # 16th
 		u"fTeresa de Ávila", # 16th
 		u"Francisco Suárez", # 16th
 		u"Bartolomé de Las Casas", # 16th
@@ -3353,14 +3354,17 @@ iInca : {
 },
 iItaly : {
 	iGreatProphet : [
+		"Bonaventura da Bagnoregio", # 13th
 		"Tommaso d'Aquino", # 13th
 		"Francesco d'Assisi", # 13th
 		"fGuglielma", # 13th
 		"fCaterina Benincasa", # 14th
 		iRenaissance,
 		"Giuliano della Rovere", # 15th
+		"fAngela Merici", # 16th
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
+		"Carlo Borromeo", # 16th
 		"Matteo Ricci", # 16th
 		"Prospero Lorenzo Lambertini", # 18th
 		iIndustrial,
@@ -3368,6 +3372,7 @@ iItaly : {
 		"Giovanni Bosco", # 19th
 		iGlobal,
 		"Angelo Giuseppe Roncalli", # 20th
+		"Pio da Pietrelcina", # 20th
 		"Giovanni Battista Enrico Antonio Maria Montini", # 20th
 	],
 	iGreatArtist : [
