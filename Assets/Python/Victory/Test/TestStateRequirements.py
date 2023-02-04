@@ -539,9 +539,17 @@ class TestFirstDiscover(ExtendedTestCase):
 
 class TestFirstGreatPerson(ExtendedTestCase):
 
+	class TestGoalRequired(TestGoal):
+	
+		def __init__(self, requirement):
+			TestGoal.__init__(self)
+			
+			self.requirements = [requirement]
+			self.required = 1
+
 	def setUp(self):
 		self.requirement = FirstGreatPerson(iGreatScientist)
-		self.goal = TestGoal()
+		self.goal = self.TestGoalRequired(self.requirement)
 		
 		self.requirement.register_handlers(self.goal)
 	
@@ -562,13 +570,6 @@ class TestFirstGreatPerson(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
-	
-	def test_fulfillable(self):
-		self.assertEqual(self.requirement.fulfillable(), True)
-		
-		self.requirement.state = FAILURE
-		
-		self.assertEqual(self.requirement.fulfillable(), False)
 	
 	def test_first(self):
 		our_city, their_city = cities = TestCities.owners(0, 1)

@@ -89,15 +89,11 @@ class GoalDefinition(object):
 		self.requirement = requirement
 		
 	def __call__(self, *arguments, **options):
-		try:
-			parameter_set = ParameterSet(global_types=self.requirement.GLOBAL_TYPES, types=self.requirement.TYPES, arguments=arguments)
-			requirements = [self.requirement(*parameters, **options) for parameters in parameter_set]
-			desc_key = options.pop("desc_key", self.requirement.GOAL_DESC_KEY)
-		
-			return GoalDescription(requirements, desc_key, **options)
-		
-		except ValueError, e:
-			raise ValueError("Error when parsing arguments for %s: %s" % (self.requirement.__name__, e))
+		parameter_set = ParameterSet(global_types=self.requirement.GLOBAL_TYPES, types=self.requirement.TYPES, arguments=arguments)
+		requirements = [self.requirement(*parameters, **options) for parameters in parameter_set]
+		desc_key = options.pop("desc_key", self.requirement.GOAL_DESC_KEY)
+
+		return GoalDescription(requirements, desc_key, **options)
 	
 	def __repr__(self):
 		return "GoalDefinition(%s)" % (self.requirement.__name__)
@@ -283,11 +279,6 @@ class Goal(Describable):
 	
 	def expire(self):
 		if self.possible():
-			if self.required < len(self.requirements):
-				if count(requirement.fulfillable() for requirement in self.requirements) < self.required:
-					self.fail()
-				return
-		
 			self.fail()
 	
 	def final_check(self):

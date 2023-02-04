@@ -482,21 +482,6 @@ class TestGoal(ExtendedTestCase):
 		self.goal.expire()
 		self.assertEqual(self.goal.state, SUCCESS)
 	
-	def test_expire_required(self):
-		goal = Goal([FirstGreatPerson(iGreatArtist), FirstGreatPerson(iGreatMerchant), FirstGreatPerson(iGreatScientist)], FirstGreatPerson.GOAL_DESC_KEY, self.iPlayer, required=2)
-		
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		goal.requirements[0].state = FAILURE
-		goal.expire()
-		
-		self.assertEqual(goal.state, POSSIBLE)
-		
-		goal.requirements[1].state = FAILURE
-		goal.expire()
-		
-		self.assertEqual(goal.state, FAILURE)
-	
 	def test_final_check_not_fulfilled(self):
 		self.assertEqual(self.goal.state, POSSIBLE)
 		self.assertEqual(self.goal.fulfilled(), False)

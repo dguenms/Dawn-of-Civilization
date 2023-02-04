@@ -169,7 +169,14 @@ class FirstGreatPerson(StateRequirement):
 	def expire_great_person_born(self, goal, unit):
 		if self.iGreatPerson == base_unit(unit) and self.state == POSSIBLE:
 			self.fail()
-			goal.expire()
+			
+			if goal.possible():
+				if goal.required < len(goal.requirements):
+					if count(requirement.state != FAILURE for requirement in goal.requirements) < goal.required:
+						goal.fail()
+						return
+				
+				goal.fail()
 
 
 # Second Viking UHV goal

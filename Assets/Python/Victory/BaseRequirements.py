@@ -66,9 +66,6 @@ class Requirement(object):
 	def fulfilled(self, evaluator):
 		raise NotImplementedError()
 	
-	def fulfillable(self):
-		return True
-		
 	def additional_formats(self):
 		return []
 	
@@ -196,9 +193,6 @@ class StateRequirement(Requirement):
 	def fulfilled(self, evaluator):
 		return self.state == SUCCESS
 	
-	def fulfillable(self):
-		return self.state != FAILURE
-
 
 class TrackRequirement(ThresholdRequirement): 
 
