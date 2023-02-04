@@ -1040,6 +1040,9 @@ class EntityCollection(object):
 			return (element,)
 
 	def divide(self, keys):
+		if not keys:
+			raise ValueError("Divide among empty keys: %s" % self)
+	
 		shuffled_keys = self.shuffle()._keys[:]
 		return [(key, self.copy(key for j, key in enumerate(shuffled_keys) if j % len(keys) == i)) for i, key in enumerate(keys)]
 	
@@ -1630,7 +1633,7 @@ class Units(EntityCollection):
 class PlayerFactory:
 
 	def all(self):
-		return Players(range(gc.getMAX_PLAYERS())).alive()
+		return Players(range(gc.getMAX_PLAYERS())).where(lambda p: player(p).getCivilizationType() >= 0)
 		
 	def major(self):
 		return self.all().where(lambda p: not is_minor(p))

@@ -3826,6 +3826,11 @@ class TestDivide(TestCase):
 			total_values += values
 		
 		self.assertEqual(set(total_values), set([0, 1, 2, 3, 4, 5]))
+	
+	def test_divide_none(self):
+		players = Players([0, 1, 2])
+		
+		self.assertRaises(ValueError, players.divide, [])
 		
 		
 class TestFormatSeparators(TestCase):
