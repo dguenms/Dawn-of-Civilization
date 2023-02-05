@@ -3935,10 +3935,8 @@ bool CvPlot::isFriendlyCity(const CvUnit& kUnit, bool bCheckImprovement) const
 // Leoreth
 bool CvPlot::isAlliedCity(const CvUnit& kUnit, bool bCheckImprovement) const
 {
-	log("isAlliedCity");
 	if (!isFriendlyCity(kUnit, bCheckImprovement))
 	{
-		log("not friendly city");
 		return false;
 	}
 

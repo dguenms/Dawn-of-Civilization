@@ -1790,7 +1790,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		pNewCity->setEverOwned(((PlayerTypes)iI), abEverOwned[iI]);
 	}
 
-	// Leoreth: log game turn of losing this city for previous owner
+	// Leoreth: track game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
 	int iTotalBuildingDamage = 0;

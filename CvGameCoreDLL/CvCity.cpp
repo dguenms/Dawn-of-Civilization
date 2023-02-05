@@ -19532,7 +19532,10 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
 			if (kBuilding.getDefenseModifier() > 0 || kBuilding.getBombardDefenseModifier() > 0 || kBuilding.getUnignorableBombardDefenseModifier() > 0)
 			{
-				setHasRealBuilding((BuildingTypes)iI, false);
+				if (!::isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()))
+				{
+					setHasRealBuilding((BuildingTypes)iI, false);
+				}
 			}
 		}
 	}
