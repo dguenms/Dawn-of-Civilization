@@ -10830,6 +10830,7 @@ int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 	if (eIndex == COMMERCE_CULTURE && GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
 	{
 		iTotalModifier += getSpaceProductionModifier() / 2;
+		iTotalModifier += GET_PLAYER(getOwnerINLINE()).getSpaceProductionModifier() / 2;
 	}
 
 	return std::max(0, iTotalModifier); // Leoreth
