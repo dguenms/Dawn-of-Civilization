@@ -527,6 +527,10 @@ class Birth(object):
 	def createUnits(self):
 		createRoleUnits(self.iPlayer, self.location, getStartingUnits(self.iPlayer))
 		
+		# only create units if coming from autoplay, otherwise after the switch
+		if self.iPlayer == active():
+			createSpecificUnits(self.iPlayer, self.location)
+		
 		# select a settler if available
 		if self.isHuman():
 			settler = units.at(self.location).owner(self.iPlayer).where(lambda unit: unit.isFound()).last()
