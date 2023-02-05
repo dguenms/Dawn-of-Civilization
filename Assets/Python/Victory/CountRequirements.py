@@ -254,7 +254,7 @@ class ControlledResourceCount(ThresholdRequirement):
 	}
 	
 	def value(self, iPlayer, iResource):
-		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource)
+		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource) + player(iPlayer).getBonusExport(iResource)
 
 
 # Second Turkic UHV goal
