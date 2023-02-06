@@ -685,7 +685,7 @@ class Birth(object):
 		if plots.owner(active()).closest_distance(self.location) <= 10:
 			key = "TXT_KEY_MESSAGE_RISE_%s" % infos.civ(self.iCiv).getIdentifier()
 			text = text_if_exists(key, adjective(self.iPlayer), otherwise="TXT_KEY_MESSAGE_RISE_GENERIC")
-			message(active(), str(text), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
+			message(active(), text.encode("ascii", "xmlcharrefreplace"), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
 	
 	def activate(self):
 		if self.iPlayer is None:
