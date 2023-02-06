@@ -132,6 +132,10 @@ class FirstDiscover(StateRequirement):
 		self.handle("techAcquired", self.check_first_discovered)
 		self.expire("techAcquired", self.expire_first_discovered)
 	
+	def init(self, goal):
+		if game.countKnownTechNumTeams(self.iTech) > 0:
+			goal.set_state(FAILURE)
+	
 	def check_first_discovered(self, goal, iTech):
 		if self.iTech == iTech and game.countKnownTechNumTeams(iTech) == 1:
 			self.succeed()
