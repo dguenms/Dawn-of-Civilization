@@ -129,7 +129,7 @@ tNorthCentralAmerica = ((3, 33), (37, 63))
 
 # first Colombian goal: allow no European civilizations in Peru, Gran Colombia, Guayanas and the Caribbean in 1870 AD
 tPeru = ((25, 16), (32, 24))
-tGranColombia = ((21, 25), (32, 35))
+tGranColombia = ((24, 25), (32, 32))
 tGuayanas = ((33, 27), (37, 31))
 tCaribbean = ((25, 33), (33, 39))
 
