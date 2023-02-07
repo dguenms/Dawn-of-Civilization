@@ -230,6 +230,30 @@
 		<Spanish>Aragonese</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_ASTURIAS</Tag>
+		<English>Asturias</English>
+		<French>
+			<Text>Asturies</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Asturias</German>
+		<Italian>Asturias</Italian>
+		<Spanish>Asturias</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_ASTURIAN</Tag>
+		<English>Asturian</English>
+		<French>
+			<Text>asturien:asturienne:asturiennes:asturiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Asturian</German>
+		<Italian>Asturian</Italian>
+		<Spanish>Asturian</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_VASSAL</Tag>
 		<English>Viceroyalty of %s1</English>
 		<French>

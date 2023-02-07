@@ -85,7 +85,7 @@ dCapitals = {
 	iItaly : ["Fiorenza", "Roma"],
 	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
 	iArabia : ["Dimashq"],
-	iSpain : ["La Paz", "Barcelona", "Valencia"],
+	iSpain : ["La Paz", "Barcelona", "Valencia", "Oviedo"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
 	iNetherlands : ["Brussels", "Antwerpen"], # TODO: no matches for Brussels
 }

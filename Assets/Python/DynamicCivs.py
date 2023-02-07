@@ -1055,6 +1055,9 @@ def specificName(iPlayer):
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
 			return "TXT_KEY_CIV_SPAIN_ARAGON"
+		
+		if isCurrentCapital(iPlayer, "Oviedo"):
+			return "TXT_KEY_CIV_SPAIN_ASTURIAS"
 			
 		if not bSpain:
 			return "TXT_KEY_CIV_SPAIN_CASTILE"
@@ -1378,6 +1381,9 @@ def specificAdjective(iPlayer):
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
 			return "TXT_KEY_CIV_SPAIN_ARAGONESE"
+		
+		if isCurrentCapital(iPlayer, "Oviedo"):
+			return "TXT_KEY_CIV_SPAIN_ASTURIAN"
 			
 		if not bSpain:
 			return "TXT_KEY_CIV_SPAIN_CASTILIAN"
