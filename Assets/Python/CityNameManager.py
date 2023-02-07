@@ -302,6 +302,7 @@ tEraNames = (
 	'Zhongdu'		:	'Beijing',
 	'Indraprastha'	:	'Dilli',
 	'Roha'			:	'Lalibela',
+	'Vibo Valentia'	:	'Monteleone',
 },
 # renaissance
 {
@@ -331,13 +332,15 @@ tEraNames = (
 	'Khlynov'		:	'Vjatka',
 	'Dong Kinh'		:	'Ha Noi',
 },
-# modern
+# global
 {
 	'Angora'		:	'Ankara',
 	'Hanseong'		:	'Seoul',
 	'Jehol'			:	'Chengde',
+	'Pura'			:	'Iranshahr',
+	'Monteleone'	:	'Vibo Valentia',
 },
-# future
+# digital
 {},
 )
 
@@ -3871,6 +3874,7 @@ dIdentifiers = {
 	"Iconium"		:	"Ikonion",
 	"Ikonion"		:	"Ikonion",
 	"Konya"			:	"Ikonion",
+	"Quniyah"		:	"Ikonion",
 	"Ilebo"			:	"Ilebo",
 	"Port-Francqui"	:	"Ilebo",
 	"Ilion"			:	"Ilion",
@@ -4487,6 +4491,7 @@ dIdentifiers = {
 	"Pagan"			:	"Pagan",
 	"Phukam"		:	"Pagan",
 	"Pugan"			:	"Pagan",
+	"Pukkam"		:	"Pagan",
 	"Palembang"		:	"Palembang",
 	"Palimb&#227;o"	:	"Palembang",
 	"Parenban"		:	"Palembang",
@@ -4659,6 +4664,7 @@ dIdentifiers = {
 	"Cordoba"		:	"Qurtubah",
 	"Cordova"		:	"Qurtubah",
 	"Corduba"		:	"Qurtubah",
+	"Cordoue"		:	"Qurtubah",
 	"Kordoba"		:	"Qurtubah",
 	"Qurtuba"		:	"Qurtubah",
 	"Qurtubah"		:	"Qurtubah",
@@ -5294,6 +5300,7 @@ tRenames = (
 	"Patna"			:	"Patna",
 	"Puducherry"	:	"Puducherry",
 	"Peshawar"		:	"Purushapura",
+	"Pagan"			:	"Pukkam",
 	"Serampore"		:	"Serampore",
 	"Thanjavur"		:	"Thanjavur",
 	"Tharangambadi"	:	"Tharangambadi",
@@ -6094,6 +6101,7 @@ tRenames = (
 	"Qandahar"		:	"Qandahar",
 	"Qart-Hadasht"	:	"Qartaj",
 	"Cartagena"		:	"Qartayannat al-Halfa",
+	"Ikonion"		:	"Quniyah",
 	"Qurtubah"		:	"Qurtubah",
 	"Cirta"			:	"Qustantinah",
 	"Constantinopolis"	:	"Qustantiniyah",
@@ -6233,6 +6241,7 @@ tRenames = (
 	"Marseille"		:	"Marsella",
 	"Masqat"		:	"Mascate",
 	"Melilla"		:	"Melilla",
+	"Milano"		:	"Mil&#225;n",
 	"Danibaan"		:	"Monte Alb&#225;n",
 	"Neapolis"		:	"N&#225;poles",
 	"Nueva Iberia"	:	"Nueva Iberia",
@@ -6318,6 +6327,7 @@ tRenames = (
 	"Nkuna"			:	"Brazzaville",
 	"Brest"			:	"Brest",
 	"Bruxelles"		:	"Bruxelles",
+	"Budapest"		:	"Budapest",
 	"C&#223;diz"	:	"Cadix",
 	"Guangzhou"		:	"Canton",
 	"Cape of Good Hope"	:	"Cap de Bonne-Esp&#233;rance",
@@ -6328,6 +6338,7 @@ tRenames = (
 	"K&#248;benhavn":	"Copenhague",
 	"Roskilde"		:	"Copenhague",
 	"Mbandaka"		:	"Coquilhatville",
+	"Qurtubah"		:	"Cordoue",
 	"Dimashq"		:	"Damas",
 	"Dilli"			:	"Delhi",
 	"Loubomo"		:	"Delisie",
@@ -6369,6 +6380,7 @@ tRenames = (
 	"Lyon"			:	"Lyon",
 	"Aomen"			:	"Macao",
 	"Haojing"		:	"Macao",
+	"Madrid"		:	"Madrid",
 	"Marrakus"		:	"Marrakech",
 	"Marseille"		:	"Marseille",
 	"Masqat"		:	"Mascate",
