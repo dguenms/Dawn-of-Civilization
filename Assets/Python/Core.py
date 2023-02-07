@@ -35,6 +35,8 @@ map = gc.getMap()
 def getArea(area):
 	if isinstance(area, (CyPlot, CyCity)):
 		return area.getArea()
+	elif isinstance(area, CyUnit):
+		return getArea(plot(area))
 	elif isinstance(area, tuple) and len(area) == 2:
 		return plot(area).getArea()
 	return area

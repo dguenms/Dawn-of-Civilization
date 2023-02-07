@@ -567,8 +567,8 @@ class Birth(object):
 			if unit.isAnimal():
 				unit.kill(False, -1)
 				continue
-		
-			if cities.owner(unit):
+			
+			if cities.owner(unit.getOwner()):
 				closest = cities.owner(unit.getOwner()).closest(unit)
 			elif unit.getDomainType() == DomainTypes.DOMAIN_SEA or unit.isCargo():
 				if edge.sea():
@@ -576,7 +576,7 @@ class Birth(object):
 				else:
 					closest = plots.all().sea().without(self.area).closest(unit)
 			else:
-				closest = edge.land().closest(unit)
+				closest = edge.land().area(unit).closest(unit)
 			
 			if closest:
 				move(unit, closest)
