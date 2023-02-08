@@ -290,7 +290,7 @@ iChina : {
 		"fCai Wenji", # 1st
 		"Gu Kaizhi", # 4th
 		iMedieval,
-		"fShangguan Wan'er", # 7th
+		"Yan Liben", # 7th
 		"Han Yu", # 8th
 		"Fan Kuan", # 10th
 		"Su Shi", # 11th 
@@ -304,6 +304,7 @@ iChina : {
 		iGlobal,
 		"Qi Baishi", # 20th
 		"Lu Xun", # 20th
+		"Xu Beihong", # 20th
 		"Lin Yutang", # 20th
 		"Wu Guanzhong", # 20th
 	],
@@ -322,9 +323,11 @@ iChina : {
 		"Song Yingxing", # 17th
 		"fWang Zhenyi", # 18th
 		iGlobal,
-		"Li Yuanzhe", # 20th
-		"Chen Ning Yang", # 20th
+		"Li Siguang", # 20th
+		"fWu Jianxiong", # 20th
+		"Yang Zhenning", # 20th
 		"fTu Youyou", # 20th
+		"Li Yuanzhe", # 20th
 	],
 	iGreatMerchant : [
 		"Zhang Qian", # 2nd BC
@@ -360,8 +363,11 @@ iChina : {
 		"Su Song", # 11th
 		"Wang Zhen", # 14th
 		iGlobal,
-		"Li Siguang", # 20th
-		"fWu Jianxiong", # 20th
+		"Liang Sicheng", # 20th
+		"fLin Huiyin", # 20th
+		"Ieoh Ming Pei", # 20th
+		"fLin Lanying", # 20th
+		"Charles Kao Kuen", # 20th
 	],
 	iGreatStatesman : [
 		"Gongsun Yang", # 4th BC
@@ -371,6 +377,7 @@ iChina : {
 		"Fang Xuanling", # 7th
 		"fWu Zetian", # 7th
 		"Di Renjie", # 7th
+		"fShangguan Wan'er", # 7th
 		"Fan Zhongyan", # 11th
 		"Liu Bowen", # 14th
 		iRenaissance,
@@ -444,6 +451,7 @@ iGreece : {
 		"Homeros", # 8th BC
 		iClassical,
 		"fSappho", # 6th BC
+		"Exekias", # 6th BC
 		"Sophokles", # 5th BC
 		"Thoukydides", # 5th BC
 		"Euripides", # 5th BC
@@ -513,13 +521,16 @@ iGreece : {
 		"Ioannis Argyris", # 20th
 	],
 	iGreatStatesman : [
+		"Lykourgos", # 9th BC
+		iClassical,
 		"Solon", # 6th BC
 		"Kleisthenes", # 6th BC
 		"fGorgo", # 5th BC
 		"Alkibiades", # 5th BC
+		"Aresteides", # 5th BC
 		"Kimon", # 5th BC
+		"Epaminondas", # 4th BC
 		"Isokrates", # 4th BC
-		"Aresteides", # 4th BC
 		iIndustrial,
 		"Adamantios Korais", # 19th
 		"Ioannis Kapodistrias", # 19th
@@ -566,6 +577,7 @@ iIndia : {
 		"Chaitanya Mahaprabhu", # 16th
 		"fMeera", # 16th
 		iIndustrial,
+		"Lalon", # 19th
 		"Ramakrishna", # 19th
 		"Swami Vivekananda", # 19th
 		"Shirdi Sai Baba", # 19th
@@ -591,11 +603,15 @@ iIndia : {
 		"Purandara Dasa", # 16th
 		"Tansen", # 16th
 		"Nainsukh", # 18th
+		u"Nihâl Chand", # 18th
 		iIndustrial,
+		"Mola Ram", # 19th
 		"Muthuswami Dikshitar", # 19th
 		"Raja Ravi Varma", # 19th
 		iGlobal,
 		"Rabindranath Tagore", # 20th
+		"fGauhar Jaan", # 20th
+		"Kazi Nazrul Islam", # 20th
 		"Raja Rao", # 20th
 		"fAmrita Sher-Gil", # 20th
 		"fMadurai Shanmukhavadivu Subbulakshmi", # 20th
@@ -617,11 +633,14 @@ iIndia : {
 		iRenaissance,
 		"Nilakantha Somayaji", # 15th
 		"Kamalakara", # 17th
+		iIndustrial,
+		"Jagadish Chandra Bose", # 19th
 		iGlobal,
 		"Srinivasa Ramanujan", # 20th
 		"Chandrasekhara Venkata Raman", # 20th
 		"Satyendra Nath Bose", # 20th
 		"fAsima Chatterjee", # 20th
+		"Gopalasamudram Narayanan Ramachandran", # 20th tamil
 	],
 	iGreatMerchant : [
 		"Nattal Sahu", # 12th
@@ -633,17 +652,22 @@ iIndia : {
 		iGlobal,
 		"Kappalottiya Tamizhan", # 20th
 		"Jehangir Ratanji Dadabhoy Tata", # 20th
+		"Amartya Sen", # 20th
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
 		"Baudhayana", # 8th BC
 		"Lagadha", # 1st
+		"Mahasena", # 3rd tamil
 		iMedieval, 
 		"Gundan Anivaritachari", # 7th
+		"Parakramabahu", # 12th tamil
+		"Ruvari Malithamma", # 12th
 		iRenaissance, 
 		"Vidyadhar Bhattacharya", # 18th
+		"Ram Singh Malam", # 18th
 		iIndustrial,
-		"Jagadish Chandra Bose", # 19th
+		"Bhai Ram Singh", # 19th
 		"Mokshagundam Visvesvaraya", # 19th
 		"Jamsetji Tata", # 19th
 		iGlobal,
@@ -667,12 +691,14 @@ iIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
+		"Ishwar Chandra Vidyasagar", # 19th
 		iGlobal,
 		"Vallabhbhai Patel", # 20th
 		"fSarojini Naidu", # 20th
 		"Sarvepalli Radhakrishnan", # 20th
 		"Bhimrao Ramji Ambedkar", # 20th
 		"Jawaharlal Nehru", # 20th
+		"Sheikh Mujibur Rahman", # 20th
 	],
 	iGreatGeneral : [
 		"Chandragupta Maurya", # 4th BC
@@ -870,6 +896,9 @@ iPersia : {
 		"Mesrop", # 17th
 		iIndustrial,
 		"Mihr 'Ali", # 19th
+		"Sani al Mulk", # 19th
+		"Mirza Abdollah", # 19th
+		"Kamal-ol-Molk", # 19th
 		iGlobal,
 		"fForough Farrokhzad", # 20th
 		"Hossein Amanat", # 20th
@@ -1011,6 +1040,7 @@ iRome : {
 		"Marcus Terentius Varro", # 1st BC
 		"Titus Lucretius Carus", # 1st BC
 		"Sosigenes", # 1st BC
+		"Gaius Iulius Iuba", # 1st BC
 		"Antonius Castor", # 1st
 		"Gaius Plinius Secundus", # 1st
 		"Strabo", # 1st
@@ -1247,6 +1277,9 @@ iKorea : {
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
+		iIndustrial,
+		"Kim Jeong-hui", # 19th
+		"Jang Seung-eop", # 19th
 		iGlobal,
 		"Paik Nam-jun", # 20th
 		"fNa Hye-sok", # 20th
@@ -1556,6 +1589,7 @@ iJapan : {
 	],
 	iGreatStatesman : [
 		"Shoutouku Taishi", # 6th
+		"Fujiwara no Kamatari", # 7th
 		"Fujiwara no Michinaga", # 11th
 		"Taira no Kiyomori", # 12th
 		"fHoujou Masako", # 12th
@@ -1576,7 +1610,6 @@ iJapan : {
 		"fSadako Ogata", # 20th
 	],
 	iGreatGeneral : [
-		"Fujiwara no Kamatari", # 7th
 		"Sakanoue no Tamuramaro", # 8th
 		"Taira no Masakado", # 10th
 		"Minamoto no Yoritomo", # 12th
@@ -1649,6 +1682,7 @@ iVikings : {
 		"Edvard Munch", # 19th norwegian
 		"Edvard Grieg", # 19th norwegian
 		iGlobal,
+		u"fSelma Lagerlöf", # 20th swedish
 		"Jean Sibelius", # 20th finnish
 		"fKaren Blixen", # 20th danish
 		u"Halldór Laxness", # 20th icelandic
@@ -1669,6 +1703,7 @@ iVikings : {
 		"Niels Henrik Abel", # 19th norwegian
 		"Johannes Rydberg", # 19th swedish
 		u"Anders Ångström", # 19th swedish
+		"Svante Arrhenius", # 19th swedish
 		"Niels Ryberg Finsen", # 19th faroese
 		iGlobal,
 		"Niels Bohr", # 20th danish
@@ -1867,6 +1902,7 @@ iArabia : {
 	],
 	iGreatArtist : [
 		"Al-Asma'i", # 8th
+		"fFatima al-Suqutriyya", # 9th
 		"Ibn Muqla", # 10th
 		"Ibn al-Nadim", # 10th
 		"Al-Mutanabbi", # 10th
@@ -1915,6 +1951,7 @@ iArabia : {
 	],
 	iGreatStatesman : [
 		"fFatimah bint Muhammad", # 7th
+		"Ziyad ibn Abih", # 7th
 		"Al-Jahiz", # 9th
 		"Al-Mawardi", # 11th
 		"Izz al-Din Usama", # 12th
@@ -1930,7 +1967,6 @@ iArabia : {
 	iGreatGeneral : [
 		"Khalid ibn al-Walid", # 7th
 		"Muawiyah", # 7th
-		"Ziyad ibn Abih", # 7th
 		"Amr ibn al-As", # 7th
 		"fKhawla bint al-Azwar", # 7th
 		"Nur ad-Din Zengi", # 12th
@@ -2167,6 +2203,7 @@ iSpain : {
 		iRenaissance,
 		"Ignacio de Loyola", # 16th
 		u"Juan de Sepúlveda", # 16th
+		"Francisco Javier", # 16th
 		u"fTeresa de Ávila", # 16th
 		u"Francisco Suárez", # 16th
 		u"Bartolomé de Las Casas", # 16th
@@ -2182,6 +2219,7 @@ iSpain : {
 		iRenaissance,
 		"Miguel de Cervantes", # 16th
 		"Garcilaso de la Vega", # 16th
+		u"Tomás Luis de Victoria", # 16th
 		"Lope de Vega", # 17th
 		u"Diego de Silva Velázquez", # 17th
 		u"fJuana Inés de la Cruz", # 17th
@@ -2229,12 +2267,14 @@ iSpain : {
 		"Juan de Herrera", # 16th
 		iIndustrial,
 		u"Agustín de Betancourt", # 18th
-		"Alberto de Palacio y Elissague", # 19th
-		"Esteban Terradas i Illa", # 19th
+		u"Lluís Domènech i Montaner", # 19th
 		u"Antoni Gaudí", # 19th
+		"Leonardo Torres y Quevedo", # 19th
+		"Alberto de Palacio y Elissague", # 19th
 		iGlobal,
-		"Leonardo Torres y Quevedo", # 20th
+		"Esteban Terradas i Illa", # 20th
 		"Juan de la Cierva", # 20th
+		"Ricardo Bofill", # 20th
 	],
 	iGreatStatesman : [
 		"Alfonso el Sabio", # 13th
@@ -2348,10 +2388,12 @@ iFrance : {
 		"fMarie-Sophie Germain", # 19th
 		"fMarie Curie", # 19th
 		"Antoine Henri Becquerel", # 19th
+		u"Henri Poincaré", # 19th
 		iGlobal,
 		u"fIrène Joliot-Curie", # 20th
 		"Jacques Monod", # 20th
 		u"Benoît Mandelbrot", # 20th
+		"Alexandre Grothendieck", # 20th
 	],
 	iGreatMerchant : [
 		u"Éloi de Noyon", # 7th
@@ -2744,6 +2786,7 @@ iHolyRome : {
 		"Hrabanus Maurus", # 9th
 		"Regiomontanus", # 15th
 		"Konrad Celtes", # 15th
+		"Johannes Trithemius", # 15th
 		iRenaissance,
 		"Theophrastus von Hohenheim", # 16th
 		"Gerhard Mercator", # 16th
@@ -2761,6 +2804,7 @@ iHolyRome : {
 		u"Albert Szent-Györgyi", # 20th
 		"Wolfgang Pauli", # 20th
 		u"Kurt Gödel", # 20th
+		u"Paul Erdös", # 20th
 	],
 	iGreatMerchant : [
 		"Hildebrand Veckinchusen", # 14th
@@ -3074,7 +3118,7 @@ iPoland : {
 		"fWislawa Szymborska", # 20th
 	],
 	iGreatScientist : [
-		"Witelo", # 13th
+		"Witelon", # 13th
 		iRenaissance,
 		"Mikolaj Kopernik", # 16th
 		u"Michal Sedziwój", # 17th
@@ -3310,18 +3354,26 @@ iInca : {
 },
 iItaly : {
 	iGreatProphet : [
+		"Bonaventura da Bagnoregio", # 13th
 		"Tommaso d'Aquino", # 13th
 		"Francesco d'Assisi", # 13th
 		"fGuglielma", # 13th
-		"fCaterina di Giacomo di Benincasa", # 14th
+		"fCaterina Benincasa", # 14th
 		iRenaissance,
 		"Giuliano della Rovere", # 15th
+		"fAngela Merici", # 16th
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
+		"Carlo Borromeo", # 16th
 		"Matteo Ricci", # 16th
+		"Prospero Lorenzo Lambertini", # 18th
 		iIndustrial,
 		"Giovanni Maria Mastai-Ferretti", # 19th
 		"Giovanni Bosco", # 19th
+		iGlobal,
+		"Angelo Giuseppe Roncalli", # 20th
+		"Pio da Pietrelcina", # 20th
+		"Giovanni Battista Enrico Antonio Maria Montini", # 20th
 	],
 	iGreatArtist : [
 		"Dante Alighieri", # 13th
@@ -3331,6 +3383,7 @@ iItaly : {
 		iRenaissance,
 		"Michelangelo Buonarroti", # 16th
 		"Raffaello Sanzio", # 16th
+		"Giovanni Pierluigi da Palestrina", # 16th
 		"fSofonisba Anguissola", # 16th
 		"Michelangelo Merisi da Caravaggio", # 16th
 		"Claudio Monteverdi", # 17th
@@ -3382,6 +3435,7 @@ iItaly : {
 	iGreatEngineer : [
 		"Taccola", # 15th
 		"Filippo Brunelleschi", # 15th
+		"Giovanni Fontana", # 15th
 		iRenaissance,
 		"Leon Battista Alberti", # 15th
 		"Leonardo da Vinci", # 15th
@@ -3521,6 +3575,7 @@ iMongols : {
 },
 iAztecs : {
 	iGreatProphet : [
+		"Mexitli" # legendary
 		"Tenoch", # 14th
 		"Tlacateotl", # 15th
 		"fPapantzin", # 15th
@@ -3528,12 +3583,16 @@ iAztecs : {
 		"fYacotzin", # 16th
 	],
 	iGreatArtist : [
-		"Cuacuauhtzin", # 15th
 		"Nezahualcoyotl", # 15th
-		"Xayacamach", # 15th
+		"Cuacuauhtzin", # 15th
+		"Aquiauhtzin", # 15th
 		"fMacuilxochitzin", # 15th
+		"Xayacamach", # 15th
+		"Ayocuan Cuetzpaltzin", # 15th
+		"Quecholcohuatl", # 16th
 	],
 	iGreatScientist : [
+		"Nezahualcoyotl", # 15th
 		"Axayacatl", # 15th
 		"Ixtlilxochitl", # 16th
 		"Coanacochtzin", # 16th
@@ -3544,15 +3603,17 @@ iAztecs : {
 		"fTecuichpoch Ixcaxochitzin", # 16th
 	],
 	iGreatEngineer : [
-		"Itzcatl", # 15th
+		"Itzcoatl", # 15th
 		"Tlacaelel", # 15th
+		"Nezahualcoyotl", # 15th
 		"Moquihuix", # 15th
 	],
 	iGreatStatesman : [
 		"Acamapichtli", # 14th
-		"Quaquapitzahuac", # 15th
-		"Tezozomoctli", # 15th
+		"Quaquapitzahuac", # 14th
 		"Nezahualcoyotl", # 15th
+		"fAtotoztli", # 15th
+		"Tezozomoctli", # 15th
 		"Nezahualpilli", # 15th
 	],
 	iGreatGeneral : [
@@ -3561,7 +3622,7 @@ iAztecs : {
 		"Itzcoatl", # 15th
 		"Maxtla", # 15th
 		"Huitzilhuitl", # 15th
-		"Chimalpopoca", # 15th
+		"Qualpopoca", # 15th
 	],
 },
 iMughals : {
@@ -3581,7 +3642,12 @@ iMughals : {
 		"fShahzadi Gulbadan Begum", # 16th
 		"Abu al-Faiz ibn Mubarak", # 16th
 		"Abd al-Samad", # 16th
+		"Bishandas", # 17th
+		"Abu'l-Hasan", # 17th
 		"Ustad Mansur", # 17th
+		iIndustrial,
+		"Ghulam Murtaza Khan", # 19th
+		"Ghulam Ali Khan", # 19th
 		iGlobal,
 		"Muhammad Iqbal", # 20th
 	],
@@ -3593,6 +3659,8 @@ iMughals : {
 		"Sawai Jai Singh", # 18th
 		iIndustrial,
 		"Khwaja Nizam-ud-Din Ahmad", # 19th
+		iGlobal,
+		"Abdus Salam", # 20th
 	],
 	iGreatMerchant : [
 		"Sher Shah Suri", # 16th
@@ -3622,6 +3690,8 @@ iMughals : {
 		"fMaham Anga", # 16th
 		"Babur", # 16th
 		"Abu'l-Fazl ibn Muhammad", # 16th
+		"Shaista Khan", # 17th
+		"I'tisam-ud-Din", # 18th
 		iGlobal,
 		"Muhammad Ali Jinnah", # 20th
 		"Choudhry Ali", # 20th
@@ -3884,7 +3954,7 @@ iNetherlands : {
 		"fAlida Bosshardt", # 20th
 	],
 	iGreatArtist : [
-		"Hendrick de Keyser", # 16th
+		"Orlande de Lassus", # 16th
 		"Rembrandt van Rijn", # 17th
 		"Johannes Vermeer", # 17th
 		"Pieter Corneliszoon Hooft", # 17th
@@ -3931,6 +4001,7 @@ iNetherlands : {
 	iGreatEngineer : [
 		"Simon Stevin", # 16th
 		"Cornelis Corneliszoon", # 16th
+		"Hendrick de Keyser", # 16th
 		"Cornelis Drebbel", # 17th
 		"Jan Leeghwater", # 17th
 		"Menno van Coehoorn", # 17th
@@ -4143,8 +4214,9 @@ iAmerica : {
 		"Nathaniel Bowditch", # 18th
 		iIndustrial,
 		"Cornelius Vanderbilt", # 19th
-		"John D. Rockefeller", # 19th
+		"Cyrus W. Field", # 19th
 		"Andrew Carnegie", # 19th
+		"John D. Rockefeller", # 19th
 		"fHetty Green", # 19th
 		"John Pierpont Morgan", # 19th
 		iGlobal,
@@ -4157,16 +4229,21 @@ iAmerica : {
 		"Bill Gates", # 20th
 	],
 	iGreatEngineer : [
+		"Samuel Morse", # 19th
+		"Charles Goodyear", # 19th
 		"Thomas Edison", # 19th
 		"Nikola Tesla", # 19th
+		"Louis Sullivan", # 19th
 		"Henry Ford", # 19th
-		"Charles Goodyear", # 19th
 		iGlobal,
 		"Orville Wright", # 20th
 		"Frank Lloyd Wright", # 20th
 		"fLillian Moller Gilbreth", # 20th
-		"fHedy Lamarr", # 20th
+		"Robert Moses", # 20th
+		"Eero Saarinen", # 20th
 		"fMargaret Hutchinson Rousseau", # 20th
+		"fHedy Lamarr", # 20th
+		"Frank Gehry", # 20th
 	],
 	iGreatStatesman : [
 		"Thomas Paine", # 18th
