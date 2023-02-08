@@ -922,6 +922,9 @@ class Birth(object):
 			city = completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
 			city.rebuild()
 			
+			iMinPopulation = self.player.getCurrentEra() + 1
+			city.setPopulation(max(iMinPopulation, city.getPopulation()))
+			
 			if since(scenarioStartTurn()):
 				ensureDefenders(self.iPlayer, city, 2)
 		
