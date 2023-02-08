@@ -2557,7 +2557,6 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
 			{
 				iNumDesertTiles++;
-				break;
 			}
 		}
 
