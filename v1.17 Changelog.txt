@@ -1,6 +1,7 @@
 TABLE OF CONTENTS
 * Major Features
 * Game Rules
+* Technologies
 * Civilizations
 * Leaders
 * Unique Powers
@@ -157,6 +158,9 @@ GAME RULES
 * Valid building locations are checked before granting free buildings
 * Culture can conver islands in the third ring of a city
 
+TECHNOLOGIES
+* Added more flavors to many technologies
+
 CIVILIZATIONS
 * Byzantium: removed parts of the Egyptian coasts from its flip zone
 * Italy: removed conditional spawn condition
@@ -221,6 +225,7 @@ WONDERS
 
 PROJECTS
 * Added Great Firewall (Telecommunications, The Internet): +200% counterespionage, +1 happiness per 20% espionage rate
+* Golden Record: takes global space production modifier into account
 * Increased production cost of some projects
 
 UNITS
@@ -303,6 +308,7 @@ STABILITY
 * Restricted original owner city claims on collapse and secession
 * Reduced stability impact of corporation unhappiness
 * Meritocracy and Caste System are incompatible
+* Collapse to core results in a forced release of all vassals
 
 CONGRESSES
 * City assignments do not permanently flip culture
@@ -629,6 +635,9 @@ BUGFIXES
 * Fixed a bug in the assignment of tithe gold
 * Fixed a bug in the calculation of expansion stability when cities are in unrest
 * Fixed a bug that can lead to peace with barbarians
+* Fixed the Colombian stability map
+* Fixed a bug that would destroy Theodosian Walls when their city is sacked
+* Fixed prediction of technologies discovered by great people in the tech tree advisor
 
 CODEBASE
 * Introduced Core module containing commonly used base functions and classes, especially to manipulate collections of plots, cities, units
