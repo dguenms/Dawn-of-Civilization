@@ -89,7 +89,7 @@ def collapseToCore(iPlayer):
 	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) < 90)
 	
 	# release all vassals
-	for iVassal in players.vassal(iPlayer):
+	for iVassal in players.vassals(iPlayer):
 		team(iVassal).setVassal(player(iPlayer).getTeam(), False, False)
 				
 	# more than half ahistorical, only secede ahistorical cities
