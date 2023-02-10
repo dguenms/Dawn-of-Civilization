@@ -1421,11 +1421,15 @@ class CvCityDesc:
 		for civType, iCulture in self.dCulture.items():
 			iCultureCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), civType))
 			if iCultureCiv >= 0:
+				# game is not initialised so scale by game speed manually
+				iCulture *= infos.gameSpeed().getGrowthPercent()
+				iCulture /= 100
+			
 				iCulturePlayer = slot(iCultureCiv)
 				if iCulturePlayer >= 0:
-					self.city.setCulture(iCulturePlayer, scale(iCulture), True)
+					self.city.setCulture(iCulturePlayer, iCulture, True)
 				else:
-					self.city.setCivCulture(iCultureCiv, scale(iCulture))
+					self.city.setCivCulture(iCultureCiv, iCulture)
 
 		for bldg in (self.bldgType):
 			bldgTypeNum = CvUtil.findInfoTypeNum(gc.getBuildingInfo, gc.getNumBuildingInfos(), bldg)
