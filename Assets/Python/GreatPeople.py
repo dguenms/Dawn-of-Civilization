@@ -3663,7 +3663,6 @@ iMughals : {
 		"Abdus Salam", # 20th
 	],
 	iGreatMerchant : [
-		"Sher Shah Suri", # 16th
 		"Raja Todar Mal", # 16th
 		"Virji Vora", # 17th
 		"Mir Jumla", # 17th
@@ -3699,6 +3698,7 @@ iMughals : {
 	iGreatGeneral : [
 		"Zahir-ud-din Muhammad Babur", # 15th
 		"Mir Baqi", # 15th
+		"Sher Shah Suri", # 16th
 		"Bayram Khan", # 16th
 		"Abul Muzaffar Aurangzeb", # 17th
 		"Abudullah Khan Barha", # 18th
