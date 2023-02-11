@@ -5455,7 +5455,6 @@ tRenames = (
 	"Ninua"			:	"Nainava",
 	"Pathragada"	:	"Pathragada",
 	"Peshawar"		:	"Peshawar",
-	"Yerushalayim"	:	"Qods",
 	"Ragha"			:	"Ragha",
 	"Samarqand"		:	"Samarqand",
 	"Hekatompilos"	:	"Sauloe",
@@ -5466,6 +5465,7 @@ tRenames = (
 	"Tehran"		:	"Tehran",
 	"Tureng Tepe"	:	"Tureng Tepe",
 	"Udaipur"		:	"Udaipur",
+	"Yerushalayim"	:	"Urishlim",
 },
 #Language: Greek
 {
