@@ -1506,6 +1506,9 @@ def vassalTitle(iPlayer, iMaster):
 	if iMasterCiv == iEngland and iCiv == iMughals:
 		if not player(iIndia).isAlive():
 			return dSpecificVassalTitles[iEngland][iIndia]
+	
+	if iMasterCiv == iEgypt and player(iMasterCiv).getStateReligion() == iIslam:
+		return dMasterTitles[iArabia]
 
 	sSpecificTitle = dSpecificVassalTitles[iMasterCiv].get(iCiv)
 	if sSpecificTitle: return sSpecificTitle
