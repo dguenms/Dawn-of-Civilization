@@ -6,54 +6,54 @@ lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
 ### Capitals ###
 
 dCapitals = CivDict({
-iEgypt :		(69, 33), # Thebes
-iBabylonia :	(76, 40), # Babylon
-iHarappa :		(87, 40), # Harappa
-iChina :		(100, 44), # Chang'an
-iGreece :		(67, 41), # Athens
-iIndia :		(94, 40), # Pataliputra
-iPhoenicia :	(73, 40), # Sur
-iPolynesia :	(4, 18), # Tonga
-iPersia :		(82, 38), # Persepolis
-iRome :			(60, 44), # Rome
-iMaya :			(22, 35), # Tikal
-iTamils :		(91, 30), # Thanjavur
-iEthiopia :		(72, 30), # Aksum
-iKorea :		(109, 46), # Seoul
-iByzantium :	(68, 45), # Constantinople
-iJapan :		(113, 45), # Kyoto
-iVikings :		(60, 59), # Oslo
-iTurks :		(88, 49), # Orduqent
-iArabia :		(75, 33), # Mecca
-iTibet :		(96, 43), # Lhasa
-iIndonesia :	(100, 26), # Palembang
-iMoors :		(51, 41), # Cordoba
-iSpain :		(52, 44), # Madrid
-iFrance :		(55, 50), # Paris
-iKhmer :		(102, 33), # Angkor
-iEngland :		(53, 54), # London
-iHolyRome :		(59, 51), # Frankfurt
-iRussia :		(73, 54), # Moskow
-iMali :			(51, 30), # Djenne
-iPoland :		(65, 51), # Krakow
-iPortugal :		(49, 43), # Lisboa
-iInca :			(28, 22), # Cuzco
-iItaly :		(59, 46), # Florence
-iMongols :		(99, 51), # Karakorum
-iAztecs :		(18, 37), # Tenochtitlan
-iMughals : 		(90, 40), # Delhi
-iOttomans : 	(70, 43), # Sogut
-iThailand : 	(101, 33), # Ayutthaya
-iCongo : 		(62, 20), # Mbanza Kongo
-iIran : 		(81, 41), # Esfahan
-iNetherlands :	(57, 53), # Amsterdam
-iGermany : 		(62, 53), # Berlin
-iAmerica :		(27, 46), # Washington
-iArgentina :	(34, 11), # Buenos Aires
-iMexico :		(18, 37), # Mexico City
-iColombia :		(27, 29), # Bogota
-iBrazil :		(41, 18), # Rio de Janeiro
-iCanada :		(30, 52), # Montreal
+iEgypt :		(79, 43), # Thebes
+iBabylonia :	(89, 47), # Babylon
+iHarappa :		(102, 47), # Harappa
+iChina :		(121, 52), # Chang'an
+iGreece :		(76, 51), # Athens
+iIndia :		(110, 45), # Pataliputra
+iPhoenicia :	(84, 47), # Sur
+iPolynesia :	(4, 21), # Tonga
+iPersia :		(94, 45), # Persepolis
+iRome :			(68, 53), # Rome
+iMaya :			(22, 41), # Tikal
+iTamils :		(107, 34), # Thanjavur
+iEthiopia :		(84, 35), # Aksum
+iKorea :		(131, 54), # Seoul
+iByzantium :	(79, 55), # Constantinople
+iJapan :		(137, 53), # Kyoto
+iVikings :		(67, 75), # Oslo
+iTurks :		(105, 58), # Orduqent
+iArabia :		(86, 39), # Mecca
+iTibet :		(113, 48), # Lhasa
+iIndonesia :	(120, 27), # Palembang
+iMoors :		(57, 49), # Cordoba
+iSpain :		(57, 51), # Madrid
+iFrance :		(61, 60), # Paris
+iKhmer :		(121, 37), # Angkor
+iEngland :		(58, 64), # London
+iHolyRome :		(65, 62), # Cologne
+iRussia :		(86, 66), # Moskow
+iMali :			(58, 35), # Djenne
+iPoland :		(74, 61), # Krakow
+iPortugal :		(54, 50), # Lisboa
+iInca :			(31, 24), # Cuzco
+iItaly :		(67, 55), # Florence
+iMongols :		(119, 61), # Karakorum
+iAztecs :		(17, 43), # Tenochtitlan
+iMughals : 		(105, 45), # Delhi
+iOttomans : 	(80, 53), # Sogut
+iThailand : 	(119, 37), # Ayutthaya
+iCongo : 		(71, 25), # Mbanza Kongo
+iIran : 		(93, 48), # Esfahan
+iNetherlands :	(62, 64), # Amsterdam
+iGermany : 		(69, 63), # Berlin
+iAmerica :		(29, 54), # Washington
+iArgentina :	(38, 13), # Buenos Aires
+iMexico :		(17, 43), # Mexico City
+iColombia :		(30, 34), # Bogota
+iBrazil :		(44, 20), # Rio de Janeiro
+iCanada :		(32, 61), # Montreal
 })
 
 dPeriodCapitals = {
