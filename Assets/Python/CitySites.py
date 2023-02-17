@@ -1,15 +1,10 @@
-from CvPythonExtensions import *
+from Core import *
 
-gc = CyGlobalContext()
-map = gc.getMap()
-engine = CyEngine()
 
 def calculateBonusImprovementFood(iBonus):
-	iBonusImprovement = -1
-	for iImprovement in range(gc.getNumImprovementInfos()):
-		improvement = gc.getImprovementInfo(iImprovement)
-		if improvement.isImprovementBonusTrade(iBonus) and not improvement.isActsAsCity():
-			return improvement.getImprovementBonusYield(iBonus, YieldTypes.YIELD_FOOD)
+	bonus_improvement = infos.improvements().where(lambda info: infos.improvement(info).isImprovementBonusTrade(iBonus) and not infos.improvement(info).isActsAsCity()).first()
+	if bonus_improvement is not None:
+		return infos.improvement(bonus_improvement).getImprovementBonusYield(iBonus, YieldTypes.YIELD_FOOD)
 
 def calculateTileFood(plot):
 	iFood = plot.getYield(YieldTypes.YIELD_FOOD)
@@ -29,7 +24,7 @@ def calculateCityFood(site, tileFood):
 		plot = plotCity(site.getX(), site.getY(), i)
 		index = map.plotIndex(plot.getX(), plot.getY())
 		
-		if (plot.getX(), plot.getY()) == (site.getX(), site.getY()):
+		if location(site) == location(plot)
 			continue
 		
 		iFood += tileFood[index]

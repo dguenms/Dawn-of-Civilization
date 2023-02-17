@@ -1,22 +1,15 @@
-from CvPythonExtensions import *
+from Core import *
 
-from Consts import *
-from RFCUtils import utils
-from StoredData import data
-
-def isResurrected(iCiv):
-	return (data.players[iCiv].iResurrections > 0)
 
 def getSpecialLanguages(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iCiv = pPlayer.getCivilizationType()
+	iCiv = civ(iPlayer)
 
 	if iCiv == iCivEgypt:
-		if pPlayer.getStateReligion() == iIslam:
+		if player(iPlayer).getStateReligion() == iIslam:
 			return (iLangEgyptianArabic, iLangArabian)
 	
 	elif iCiv == iCivInca:
-		if isResurrected(iPlayer):
+		if data.civs[iCiv].iResurrections > 0:
 			return (iLangSpanish,)
 			
 	return None
@@ -27,7 +20,7 @@ def getLanguages(iPlayer):
 	if tSpecialLanguages:
 		return tSpecialLanguages
 		
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+	iCiv = civ(iPlayer)
 	if iCiv in dLanguages:
 		return dLanguages[iCiv]
 
@@ -41,7 +34,7 @@ def getCivicNames(iPlayer):
 	return {}
 	
 def getEraNames(iPlayer):
-	iCurrentEra = gc.getPlayer(iPlayer).getCurrentEra()
+	iCurrentEra = player(iPlayer).getCurrentEra()
 	
 	dNames = {}
 	for iEra in range(iCurrentEra+1):
@@ -50,7 +43,7 @@ def getEraNames(iPlayer):
 	return dNames
 	
 def findLocations(iPlayer, name):
-	return [tPlot for tPlot in utils.getWorldPlotsList() if getName(iPlayer, tPlot) == name or getName(iEngland, tPlot) == name]
+	return plots.all().where(lambda p: getName(iPlayer, p) == name or getName(iEngland, p) == name)
 	
 def getName(iPlayer, tPlot):
 	name = getTileName(tPlot)
