@@ -7,9 +7,15 @@ from CityNameManager import determineCapitalLocations
 
 import SettlerMaps, WarMaps, RegionMap
 
+lStartingDates = [
+	"3000 BC",
+	# "600 AD",
+	# "1700 AD",
+]
+
 
 lCustomMapOptions = [
-	("Starting Date", ["3000 BC", "600 AD", "1700 AD"], "3000 BC"),
+	("Starting Date", lStartingDates, lStartingDates[0]),
 ]
 
 lMinorCivs = [iCelts, iNative, iIndependent, iIndependent2]
