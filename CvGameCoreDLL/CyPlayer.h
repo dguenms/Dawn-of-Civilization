@@ -587,7 +587,7 @@ public:
 	void changeGreatSpiesCreated(int iChange);
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
-	void setAlive(bool bNewValue);
+	void setAlive(bool bNewValue, bool bTurnActive);
 	int getPeriod();
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);

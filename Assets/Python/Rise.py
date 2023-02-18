@@ -703,7 +703,7 @@ class Birth(object):
 		self.player.setInitialBirthTurn(self.iTurn)
 		
 		if not self.isHuman():
-			self.player.setAlive(True)
+			self.player.setAlive(True, True)
 		
 		self.area = plots.birth(self.iPlayer) + plots.core(self.iPlayer)
 		self.area = self.area.unique()

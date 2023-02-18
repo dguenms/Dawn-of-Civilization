@@ -159,7 +159,7 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	teamPlayer = team(iPlayer)
 	iCiv = civ(iPlayer)
 	
-	pPlayer.setAlive(True)
+	pPlayer.setAlive(True, False)
 
 	for iOtherPlayer in players.major().without(iPlayer):
 		teamPlayer.makePeace(iOtherPlayer)
