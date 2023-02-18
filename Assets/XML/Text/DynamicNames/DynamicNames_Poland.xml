@@ -109,4 +109,12 @@
 		<Italian>Poland</Italian>
 		<Spanish>Poland</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLISH_VASSAL</Tag>
+		<English>Voivodeship of %s1</English>
+		<French>Voivodeship of %s1</French>
+		<German>Voivodeship of %s1</German>
+		<Italian>Voivodeship of %s1</Italian>
+		<Spanish>Voivodeship of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

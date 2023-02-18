@@ -248,6 +248,7 @@ dMasterTitles = {
 	iFrance : "TXT_KEY_ADJECTIVE_TITLE",
 	iEngland : "TXT_KEY_CIV_ENGLISH_VASSAL",
 	iRussia : "TXT_KEY_CIV_RUSSIAN_VASSAL",
+	iPoland : "TXT_KEY_CIV_POLISH_VASSAL",
 	iNetherlands : "TXT_KEY_ADJECTIVE_TITLE",
 	iPortugal : "TXT_KEY_ADJECTIVE_TITLE",
 	iMongols : "TXT_KEY_CIV_MONGOL_VASSAL",
