@@ -723,7 +723,7 @@ def doByzantineBribery(spy):
 	bribePopup.cancel().launch(spy.getOwner(), x, y)
 	
 def exclusive(iCiv, *civs):
-	return iCiv in civs and any(player(iCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
+	return iCiv in civs and any(player(iOtherCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
