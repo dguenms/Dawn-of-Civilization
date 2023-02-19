@@ -1,9 +1,12 @@
-from CvPythonExtensions import *
-from Consts import *
 from Core import *
 from RFCUtils import *
+
+import BugPath as path
+
 import Setup
 import os
+
+EXPORT_MAPS_PATH = "Assets/Maps"
 
 IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
 iLongestName = len("Netherlands") #Netherlands currently has the longest civ name
@@ -121,6 +124,27 @@ def getRegionValue(plot, *args, **kwargs):
 
 
 def exportAreaExport(lPlots, bWaterException, bPeakException):
+	if not lPlots:
+		show("No area selected")
+		return
+	
+	x_coords, y_coords = zip(*lPlots)
+	tTL = (min(x_coords), min(y_coords))
+	tBR = (max(x_coords), max(y_coords))
+	
+	exceptions = [location(p) for p in plots.rectangle(tTL, tBR) if location(p) not in lPlots and not p.isWater()]
+
+	file_path = "%s/%s/%s" % (path.getModDir(), EXPORT_MAPS_PATH, "Export/Area.txt")
+	file = open(file_path, "w")
+	
+	try:
+		content = "rectangle = (%s,\t%s)\nexceptions = %s\nlist = %s" % (tTL, tBR, exceptions, lPlots)
+		file.write(content)
+		show("Area exported")
+	finally:
+		file.close()
+		
+	"""
 	if lPlots:
 		sLocation = "other"
 		sName = "NewArea"
@@ -144,6 +168,7 @@ def exportAreaExport(lPlots, bWaterException, bPeakException):
 		show("Area exported")
 	else:
 		show("No area selected")
+	"""
 
 
 def writeMapFile(sFileLocaton, sName, valueFunction, *args, **kwargs):
