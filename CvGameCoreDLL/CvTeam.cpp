@@ -3971,6 +3971,9 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		if ((getID() == GC.getGameINLINE().getActiveTeam()) || (eIndex == GC.getGameINLINE().getActiveTeam()))
 		{
 			gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+
+			// Leoreth: contacting the first civilization makes espionage commerce flexible
+			gDLL->getInterfaceIFace()->setDirty(PercentButtons_DIRTY_BIT, true);
 		}
 
 		// report event to Python, along with some other key state (Leoreth: moved before diplomacy in case the event starts a war)
