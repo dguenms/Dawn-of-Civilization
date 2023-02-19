@@ -6,13 +6,13 @@ lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
 ### Capitals ###
 
 dCapitals = CivDict({
-iEgypt :		(79, 43), # Thebes
+iEgypt :		(79, 43), # Memphis
 iBabylonia :	(89, 47), # Babylon
 iHarappa :		(102, 47), # Harappa
 iChina :		(121, 52), # Chang'an
 iGreece :		(76, 51), # Athens
 iIndia :		(110, 45), # Pataliputra
-iPhoenicia :	(84, 47), # Sur
+iPhoenicia :	(84, 47), # Tyre
 iPolynesia :	(4, 21), # Tonga
 iPersia :		(94, 45), # Persepolis
 iRome :			(68, 53), # Rome
@@ -22,7 +22,7 @@ iEthiopia :		(84, 35), # Aksum
 iKorea :		(131, 54), # Seoul
 iByzantium :	(79, 55), # Constantinople
 iJapan :		(137, 53), # Kyoto
-iVikings :		(67, 75), # Oslo
+iVikings :		(67, 75), # Nidaros
 iTurks :		(105, 58), # Orduqent
 iArabia :		(86, 39), # Mecca
 iTibet :		(113, 48), # Lhasa
@@ -41,7 +41,7 @@ iInca :			(31, 24), # Cuzco
 iItaly :		(67, 55), # Florence
 iMongols :		(119, 61), # Karakorum
 iAztecs :		(17, 43), # Tenochtitlan
-iMughals : 		(105, 45), # Delhi
+iMughals : 		(105, 46), # Delhi
 iOttomans : 	(80, 53), # Sogut
 iThailand : 	(119, 37), # Ayutthaya
 iCongo : 		(71, 25), # Mbanza Kongo
@@ -57,41 +57,41 @@ iCanada :		(32, 61), # Montreal
 })
 
 dPeriodCapitals = {
-iPeriodMing :			(102, 47), # Beijing
-iPeriodMaratha :		(90, 40),	# Delhi
-iPeriodCarthage : 		(58, 39),	# Carthage
-iPeriodVijayanagara :	(90, 30),	# Vijayanagara
-iPeriodVietnam :		(101, 37),	# Ha Noi
-iPeriodAustria :		(62, 49),	# Vienna
+iPeriodMing :			(125, 56), # Beijing
+iPeriodMaratha :		(105, 46),	# Delhi
+iPeriodCarthage : 		(67, 48),	# Carthage
+iPeriodVijayanagara :	(106, 37),	# Vijayanagara
+iPeriodVietnam :		(121, 42),	# Ha Noi
+iPeriodAustria :		(71, 59),	# Vienna
 }
 
 # new capital locations if changed during the game
 dNewCapitals = CivDict({
-iJapan :	(116, 46),	# Tokyo
-iVikings :	(63, 59),	# Stockholm
-iHolyRome :	(62, 49),	# Vienna
-iItaly :	(60, 44),	# Rome
-iMongols :	(102, 47),	# Khanbaliq
-iOttomans :	(68, 45),	# Istanbul
+iJapan :	(140, 54),	# Tokyo
+iVikings :	(73, 71),	# Stockholm
+iHolyRome :	(71, 59),	# Vienna
+iItaly :	(68, 53),	# Rome
+iMongols :	(125, 56),	# Khanbaliq
+iOttomans :	(79, 55),	# Istanbul
 })
 
 # new capital locations on respawn
 dRespawnCapitals = CivDict({
-iEgypt :	(69, 35),	# Cairo
-iChina :	(102, 47),	# Beijing
-iIndia :	(90, 40),	# Delhi
-iPersia :	(81, 41),	# Esfahan
-iEthiopia :	(72, 28),	# Addis Ababa
-iJapan :	(116, 46),	# Tokyo
-iVikings :	(63, 59),	# Stockholm
-iTurks : 	(84, 41),	# Herat
-iIndonesia :(104, 25),	# Jakarta
-iMoors :	(51, 37),	# Marrakesh
-iHolyRome :	(62, 49),	# Vienna
-iInca :		(26, 22),	# Lima
-iItaly :	(60, 44),	# Rome
-iMughals :	(85, 37),	# Karachi
-iOttomans :	(68, 45),	# Istanbul
+iEgypt :	(79, 43),	# Cairo
+iChina :	(125, 56),	# Beijing
+iIndia :	(105, 46),	# Delhi
+iPersia :	(93, 48),	# Esfahan
+iEthiopia :	(84, 32),	# Addis Ababa
+iJapan :	(140, 54),	# Tokyo
+iVikings :	(73, 71),	# Stockholm
+iTurks : 	(97, 49),	# Herat
+iIndonesia :(123, 25),	# Jakarta
+iMoors :	(57, 44),	# Marrakesh
+iHolyRome :	(71, 59),	# Vienna
+iInca :		(28, 25),	# Lima
+iItaly :	(68, 53),	# Rome
+iMughals :	(99, 43),	# Karachi
+iOttomans :	(79, 55),	# Istanbul
 })
 
 ### Birth Area ###
