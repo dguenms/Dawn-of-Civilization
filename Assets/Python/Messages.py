@@ -3,7 +3,7 @@ from Events import handler
 
 from SettlerMaps import dPeriodSettlerMaps
 from WarMaps import dPeriodWarMaps
-from Areas import dPeriodCoreArea, dPeriodNormalArea, dPeriodBroaderArea
+from Areas import dPeriodCoreArea
 
 
 @handler("playerPeriodChange")
