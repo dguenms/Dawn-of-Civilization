@@ -876,15 +876,6 @@ def isForeignCorePlot(argsList):
 	return 0
 
 # Leoreth
-def isBroaderPlot(argsList):
-	x, y, iPlayer = argsList
-	
-	if is_minor(iPlayer):
-		return 0
-	
-	return (x, y) in plots.broader(iPlayer)
-
-# Leoreth
 def onTechStolen(argsList):
 	iPlayer = argsList[0]
 	iTech = argsList[1]

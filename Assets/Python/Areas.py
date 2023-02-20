@@ -233,63 +233,6 @@ iPeriodOttomanConstantinople :	[(86, 50), (87, 50)],
 iPeriodModernGermany :			[(69, 61)],
 })
 
-### Broader Area ###
-
-dBroaderArea = CivDict({
-iEgypt :		((60, 26), 	(74, 38)),
-iBabylonia :	((72, 37), 	(78, 44)),
-iHarappa :		((90, 40), 	(90, 40)),
-iChina :		((95, 38), 	(108, 50)),
-iGreece :		((62, 39), 	(77, 47)),
-iIndia :		((85, 28), 	(99, 43)),
-iPhoenicia :	((71, 39), 	(74, 41)),
-iPolynesia :	((1, 15), 	(17, 38)),
-iPersia :		((70, 37), 	(87, 49)),
-iRome :			((49, 35), 	(73, 50)),
-iMaya :			((19, 30), 	(26, 37)),
-iTamils :		((90, 28), 	(93, 34)),
-iEthiopia :		((67, 21), 	(77, 30)),
-iKorea :		((106, 45), (110, 52)),
-iByzantium :	((58, 34), 	(74, 45)),
-iJapan :		((110, 40), (116, 56)),
-iVikings :		((58, 56), 	(71, 65)),
-iTurks :		((79, 44),	(103, 52)),
-iArabia :		((64, 30), 	(85, 44)),
-iTibet :		((92, 41), 	(98, 45)),
-iIndonesia :	((98, 24), 	(113, 31)),
-iMoors :		((51, 37), 	(58, 43)),
-iSpain :		((49, 38), 	(55, 46)),
-iFrance :		((49, 44), 	(61, 52)),
-iKhmer :		((97, 25), 	(105, 39)),
-iEngland :		((48, 53), 	(54, 60)),
-iHolyRome :		((58, 43), 	(64, 54)),
-iRussia :		((65, 48), 	(92, 59)),
-iMali :			((48, 26), 	(59, 34)),
-iPoland :		((63, 50), 	(67, 55)),
-iPortugal :		((49, 40), 	(51, 45)),
-iInca :			((24, 14), 	(30, 27)),
-iItaly :		((57, 47), 	(65, 47)),
-iMongols :		((82, 44), 	(110, 62)),
-iAztecs :		((14, 32), 	(24, 43)),
-iMughals :		((86, 37), 	(94, 43)),
-iOttomans :		((68, 42), 	(86, 49)),
-iThailand :		((97, 25), 	(105, 39)),
-iCongo :		((61, 19), 	(65, 22)),
-iNetherlands :	((56, 51), 	(58, 54)),
-iGermany :		((55, 46), 	(67, 57)),
-iAmerica :		((10, 42), 	(37, 56)),
-iArgentina :	((29,  3), 	(36, 15)),
-iColombia :		((33, 32),	(33, 32)),
-iBrazil :		((32, 14), 	(43, 28)),
-iCanada :		(( 8, 50), 	(37, 67)),
-})
-
-dPeriodBroaderArea = {
-iPeriodByzantineConstantinople :	((64, 38),	(74, 45)),
-iPeriodAustria :					((61, 46),	(66, 50)),
-iPeriodPakistan :					((84, 37),	(94, 43)),
-}
-
 ### Expansion area ###
 
 dExpansionArea = CivDict({

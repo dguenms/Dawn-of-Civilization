@@ -1179,12 +1179,6 @@ class PlotFactory:
 			return self.area(dPeriodNormalArea, dPeriodNormalAreaExceptions, iPeriod)
 		return self.area(dNormalArea, dNormalAreaExceptions, identifier)
 
-	def broader(self, identifier):
-		iPeriod = player(identifier).getPeriod()
-		if iPeriod in dPeriodBroaderArea:
-			return self.rectangle(*dPeriodBroaderArea[identifier])
-		return self.rectangle(*dBroaderArea[identifier])
-	
 	def expansion(self, identifier):
 		if identifier not in dExpansionArea:
 			return self.none()
@@ -1428,9 +1422,6 @@ class CityFactory:
 
 	def core(self, identifier):
 		return self.plots.core(identifier).cities()
-
-	def broader(self, identifier):
-		return self.plots.broader(identifier).cities()
 
 	def respawn(self, identifier):
 		return self.plots.respawn(identifier).cities()
