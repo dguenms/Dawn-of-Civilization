@@ -142,10 +142,10 @@ dGoals = {
 	iGreece: (
 		FirstDiscover(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
 		Control(
-			plots.normal(iEgypt),
-			plots.normal(iPhoenicia),
-			plots.normal(iBabylonia),
-			plots.normal(iPersia),
+			plots.core(iEgypt), # TODO: define in locations or use region
+			plots.core(iPhoenicia), # TODO: define in locations or use region
+			plots.core(iBabylonia), # TODO: define in locations or use region
+			plots.core(iPersia), # TODO: define in locations or use region
 			at=-330,
 		),
 		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis, by=-250),
@@ -158,7 +158,7 @@ dGoals = {
 	iPhoenicia: (
 		CityBuilding(city(tCarthage).named(CARTHAGE), iPalace, iGreatCothon, by=-300),
 		Control(
-			plots.rectangle(dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named(ITALY),
+			plots.rectangle(dCoreArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named(ITALY), # TODO: define in locations or use region
 			plots.rectangle(tIberia).named(IBERIA),
 			at=-100,
 		),
@@ -190,7 +190,7 @@ dGoals = {
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3), by=100),
 		CityCount(
-			(plots.normal(iSpain).named(IBERIA), 2),
+			(plots.core(iSpain).named(IBERIA), 2), # TODO: define in locations or use region
 			(plots.rectangle(tGaul).named(GAUL), 2),
 			(plots.core(iEngland).named(BRITAIN), 1),
 			(plots.rectangle(tAfrica).named(AFRICA), 2),
@@ -293,7 +293,7 @@ dGoals = {
 		Control(
 			plots.core(iEgypt),
 			plots.rectangle(tAfrica).named(MAGHREB),
-			plots.normal(iSpain),
+			plots.core(iSpain), # TODO: define in locations or use region
 			plots.core(iBabylonia).named(MESOPOTAMIA),
 			plots.core(iPersia),
 			subject=VASSALS,
@@ -493,11 +493,11 @@ dGoals = {
 	iGermany: (
 		CitySpecialistCount(start(iGermany).named(BERLIN), great_people(), 7, at=1900),
 		Control(
-			plots.normal(iItaly),
-			plots.normal(iFrance),
-			plots.normal(iEngland),
-			plots.normal(iVikings).named(SCANDINAVIA),
-			plots.normal(iRussia),
+			plots.core(iItaly), # TODO: define in locations or use region
+			plots.core(iFrance), # TODO: define in locations or use region
+			plots.core(iEngland), # TODO: define in locations or use region
+			plots.core(iVikings).named(SCANDINAVIA), # TODO: define in locations or use region
+			plots.core(iRussia), # TODO: define in locations or use region
 			at=1940,
 		),
 		EraFirstDiscover((iIndustrial, 8), (iGlobal, 8)),
