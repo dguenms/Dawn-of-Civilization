@@ -1187,7 +1187,7 @@ class PlotFactory:
 	def respawn(self, identifier):
 		if identifier in dRespawnArea:
 			return self.rectangle(*dRespawnArea[identifier])
-		return self.normal(identifier)
+		return self.birth(identifier)
 	
 	def capital(self, identifier):
 		iPeriod = player(identifier).getPeriod()
