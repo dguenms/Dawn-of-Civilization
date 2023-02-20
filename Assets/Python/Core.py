@@ -1163,6 +1163,8 @@ class PlotFactory:
 		if extended is None: extended = isExtendedBirth(identifier)
 		if identifier in dExtendedBirthArea and extended:
 			return self.area(dExtendedBirthArea, dBirthAreaExceptions, identifier)
+		if identifier not in dBirthArea:
+			return self.core(identifier)
 		return self.area(dBirthArea, dBirthAreaExceptions, identifier)
 
 	def core(self, identifier):
