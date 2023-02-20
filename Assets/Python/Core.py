@@ -1429,9 +1429,6 @@ class CityFactory:
 	def core(self, identifier):
 		return self.plots.core(identifier).cities()
 
-	def normal(self, identifier):
-		return self.plots.normal(identifier).cities()
-
 	def broader(self, identifier):
 		return self.plots.broader(identifier).cities()
 

@@ -867,15 +867,6 @@ def isCorePlot(argsList):
 	return (x, y) in plots.core(iPlayer)
 
 # Leoreth
-def isNormalPlot(argsList):
-	x, y, iPlayer = argsList
-	
-	if is_minor(iPlayer):
-		return 0
-		
-	return (x, y) in plots.normal(iPlayer)
-
-# Leoreth
 def isForeignCorePlot(argsList):
 	x, y = argsList
 	

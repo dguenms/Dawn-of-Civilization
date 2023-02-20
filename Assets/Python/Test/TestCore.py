@@ -2397,10 +2397,6 @@ class TestPlotFactory(TestCase):
 		plots = self.factory.core(iEgypt)
 		assertType(self, plots, Plots)
 		
-	def test_normal(self):
-		plots = self.factory.normal(iEgypt)
-		assertType(self, plots, Plots)
-		
 	def test_broader(self):
 		plots = self.factory.broader(iEgypt)
 		assertType(self, plots, Plots)
