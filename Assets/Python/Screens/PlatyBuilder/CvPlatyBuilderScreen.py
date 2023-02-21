@@ -61,6 +61,8 @@ lMoveMapModes = [iModeMoveMap, iModeMoveMap2]
 
 class CvWorldBuilderScreen:
 
+	importedArea = []
+
 	def __init__ (self) :
 		self.m_advancedStartTabCtrl = None
 		self.m_bShowBigBrush = False
@@ -104,7 +106,7 @@ class CvWorldBuilderScreen:
 		self.bVictoryRectangle = False
 		self.lMoveUnit = []
 		self.iMoveCity = -1
-		self.TempInfo = []
+		self.TempInfo = self.importedArea[:]
 ## Platy Builder ##
 
 		self.lCurrentFlipZone = []

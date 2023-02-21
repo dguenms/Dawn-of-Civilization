@@ -4,6 +4,7 @@ from Areas import *
 import Locations
 
 from CvScreensInterface import worldBuilderScreen as worldBuilder
+from CvPlatyBuilderScreen import CvWorldBuilderScreen
 
 import BugPath as path
 import csv
@@ -101,6 +102,10 @@ def exportPlotList():
 		file.write(content)
 	finally:
 		file.close()
+
+
+def importArea(area):
+	CvWorldBuilderScreen.importedArea = [location(p) for p in area]
 	
 		
 ### Specific marker functions ###
