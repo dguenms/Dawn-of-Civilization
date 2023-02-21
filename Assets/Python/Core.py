@@ -1186,7 +1186,7 @@ class PlotFactory:
 
 	def respawn(self, identifier):
 		if identifier in dRespawnArea:
-			return self.rectangle(*dRespawnArea[identifier])
+			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
 		return self.birth(identifier)
 	
 	def capital(self, identifier):
