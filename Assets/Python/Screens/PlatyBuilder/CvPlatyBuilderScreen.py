@@ -61,8 +61,6 @@ lMoveMapModes = [iModeMoveMap, iModeMoveMap2]
 
 class CvWorldBuilderScreen:
 
-	importedArea = []
-
 	def __init__ (self) :
 		self.m_advancedStartTabCtrl = None
 		self.m_bShowBigBrush = False
@@ -106,7 +104,7 @@ class CvWorldBuilderScreen:
 		self.bVictoryRectangle = False
 		self.lMoveUnit = []
 		self.iMoveCity = -1
-		self.TempInfo = self.importedArea[:]
+		self.TempInfo = []
 ## Platy Builder ##
 
 		self.lCurrentFlipZone = []
@@ -720,7 +718,7 @@ class CvWorldBuilderScreen:
 				pPlot.setWOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
 				
 		elif self.iPlayerAddMode == iModeAddLandMark:
-			CyEngine().removeSign(pPlot, iPlayer)
+			CyEngine().removeSign(pPlot, -1)
 			
 		elif self.iPlayerAddMode == iModeFlip:
 			if not is_minor(iPlayer):

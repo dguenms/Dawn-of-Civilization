@@ -97,6 +97,7 @@ def createCarthaginianDefenses(city):
 			
 ### UNIT BUILT ###
 
+# TODO: revise cities or disable mechanic
 lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou, tHaojing]
 
 @handler("unitBuilt")
