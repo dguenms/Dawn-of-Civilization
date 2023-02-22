@@ -39,9 +39,10 @@ def createRectangleLandmarks(label, tTL, tBR):
 	createLandmarks(dLandmarks)
 
 
-def paintPlots(lPlots, index=1000, color="COLOR_CYAN"):
+def paintArea(area, index=1000, color="COLOR_CYAN"):
 	engine.clearAreaBorderPlots(index)
-	for (x, y) in lPlots:
+	for p in area:
+		x, y = location(p)
 		engine.fillAreaBorderPlotAlt(x, y, index, color, 0.7)	
 
 
@@ -65,23 +66,26 @@ def exportLandmarks():
 		file.close()
 
 
+def getCorners(area):
+	tiles = [location(p) for p in area]
+	x_coords, y_coords = zip(*tiles)
+	return (min(x_coords), min(y_coords)), (max(x_coords), max(y_coords))
+
+
 def exportArea():
 	area = worldBuilder.TempInfo[:]
 	if not area:
 		return
+		
+	tBL, tTR = getCorners(area)
 	
-	min_x = min(t[0] for t in area)
-	min_y = min(t[1] for t in area)
-	max_x = max(t[0] for t in area)
-	max_y = max(t[1] for t in area)
-	
-	exceptions = [location(p) for p in plots.rectangle((min_x, min_y), (max_x, max_y)) if location(p) not in area and not p.isWater()]
+	exceptions = [location(p) for p in plots.rectangle(tBL, tTR) if location(p) not in area and not p.isWater()]
 
 	file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, "Export/Area.txt")
 	file = open(file_path, "w")
 	
 	try:
-		content = "rectangle = %s\nexceptions = %s" % (((min_x, min_y), (max_x, max_y)), exceptions)
+		content = "rectangle = (%s,\t%s)\nexceptions = %s" % (tBL, tTR, exceptions)
 		print content
 		file.write(content)
 	finally:
@@ -105,10 +109,38 @@ def exportPlotList():
 
 
 def importArea(area):
-	CvWorldBuilderScreen.importedArea = [location(p) for p in area]
+	worldBuilder.TempInfo = [location(p) for p in area]
+	worldBuilder.showAreaExportOverlay()
+
+
+def importRectangle(tCorners):
+	importArea(plots.rectangle(*tCorners))
 	
 		
 ### Specific marker functions ###
 
 def markCapitals():
 	createCivLandmarks(dCapitals)
+
+
+def markLocationTiles():
+	for name, value in Locations.__dict__.items():
+		if name.startswith("_"):
+			continue
+		
+		if isinstance(value, tuple) and len(value) == 2 and all(isinstance(item, int) for item in value):
+			createLandmark(value, name)
+
+
+def markLocationAreas():
+	for name, value in Locations.__dict__.items():
+		if name.startswith("_"):
+			continue
+		
+		if isinstance(value, tuple) and len(value) == 2 and all(isinstance(item, tuple) for item in value):
+			area = plots.rectangle(*value)
+			paintArea(area)
+			
+			tBL, tTR = getCorners(area)
+			createLandmark(tBL, name)
+			createLandmark(tTR, name)
