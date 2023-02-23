@@ -443,7 +443,7 @@ lCivilizations = [
 		iThailand,
 		iGold=800,
 		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism],
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism, iTributaries],
 		techs=techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage)
 	),
 	Civilization(
