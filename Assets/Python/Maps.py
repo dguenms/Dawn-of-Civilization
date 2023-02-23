@@ -15,6 +15,41 @@ engine = CyEngine()
 MAPS_PATH = "Assets/Maps"
 
 
+class Map(object):
+
+	@staticmethod
+	def read(map_path):
+		file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, map_path)
+		file = open(file_path)
+		
+		try:
+			for y, line in enumerate(reversed(list(csv.reader(file)))):
+				for x, value in enumerate(line):
+					if value:
+						yield (x, y), value
+		except:
+			file.close()
+			raise
+		
+		file.close()
+
+	def __init__(self, map_path):
+		self.path = map_path
+		self.map = None
+	
+	def __getitem__(self, (x, y)):
+		if self.map is None:
+			self.load()
+		
+		return self.map[y][x]
+	
+	def load(self):
+		self.map = [[None for x in range(iWorldX)] for y in range(iWorldY)]
+		
+		for (x, y), value in self.read(self.path):
+			self.map[y][x] = value
+
+
 ### Generic Landmark Functions ###
 
 def createLandmark(tile, label):
