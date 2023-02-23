@@ -170,6 +170,14 @@
 		<Spanish>Mughal</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_GHORID</Tag>
+		<English>Ghorid</English>
+		<French>Ghorid</French>
+		<German>Ghorid</German>
+		<Italian>Ghorid</Italian>
+		<Spanish>Ghorid</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
 		<English>Mughals</English>
 		<French>

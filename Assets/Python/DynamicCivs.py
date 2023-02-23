@@ -441,6 +441,7 @@ dEmpireThreshold = {
 	iPoland : 3,
 	iInca : 3,
 	iMongols : 8,
+	iMughals : 6,
 	iItaly : 4,
 	iIran : 4,
 	iGermany : 4,
@@ -1447,6 +1448,10 @@ def specificAdjective(iPlayer):
 				
 		if bMonarchy:
 			return "TXT_KEY_CIV_MONGOLIA_MONGOL"
+	
+	elif iCiv == iMughals:
+		if not tPlayer.isHasTech(iFirearms):
+			return "TXT_KEY_CIV_MUGHALS_GHORID"
 				
 	elif iCiv == iOttomans:
 		return "TXT_KEY_CIV_OTTOMANS_OTTOMAN"
