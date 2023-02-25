@@ -246,7 +246,7 @@ def onCityAcquired(iOwner, iNewOwner, city):
 	elif sOldName == 'Kerimane' and iNewOwnerCiv != iJapan: sNewName = 'Quelimane'
 	elif sOldName == 'Sofara' and iNewOwnerCiv != iJapan: sNewName = 'Sofala'
 	elif sOldName == 'Singidunon' and iNewOwnerCiv != iByzantium: sNewName = 'Belgrad'
-	elif sOldName == 'York' and iNewOwnerCiv == iCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
+	elif sOldName == 'York' and iNewOwnerCiv == iCanada and city.getRegionID() == rOntario: sNewName = 'Toronto'
 	elif sOldName == 'Prey Nokor': sNewName = 'Saigon'
 	
 	if sNewName:

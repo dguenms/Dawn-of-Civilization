@@ -1,101 +1,94 @@
 from Core import *
+from Maps import Map
 from Events import handler
 
 iNumReligionMapTypes = 5
 (iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
 
-def getMapValue(x, y):
-	return tRegionMap[iWorldY-1-y][x]
+def getSpreadFactor(iReligion, plot):
+	iRegion = plot.getRegionID()
+	if iRegion < 0: 
+		return -1
 	
-def getSpreadFactor(iReligion, (x, y)):
-	iRegion = plot(x, y).getRegionID()
-	if iRegion < 0: return -1
-	
-	for iFactor in tSpreadFactors[iReligion].keys():
-		if iRegion in tSpreadFactors[iReligion][iFactor]:
-			return iFactor
-	
-	return iNone
+	return next((iFactor for iFactor, lRegions in tSpreadFactors[iReligion].items() if iRegion in lRegions), iNone)
 	
 def updateRegionMap():
-	for plot in plots.all():
-		plot.setRegionID(getMapValue(plot.getX(), plot.getY()))
-			
+	for (x, y), iRegion in Map.read("Regions.csv"):
+		plot(x, y).setRegionID(iRegion)
+
 	map.recalculateAreas()
 			
 def updateReligionSpread(iReligion):
 	for plot in plots.all():
-		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, location(plot)))
+		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, plot))
 
 def init():
 	updateRegionMap()
 	for iReligion in range(iNumReligions):
 		updateReligionSpread(iReligion)
-		
-
-tRegionMap = ((-1,) * iWorldX,) * iWorldY
 				
 
+# TODO: revisit
 tSpreadFactors = (
 # Judaism
 {
-	iMinority :	[rEgypt, rMesopotamia, rPersia, rAnatolia, rBalkans, rItaly, rIberia, rEurope, rRussia, rBritain, rUnitedStates],
+	iMinority :	[rBritain, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rRuthenia, rLevant, rMesopotamia, rAnatolia, rCaucasus, rArabia, rEgypt, rMaghreb, rPersia, rEthiopia, rAtlanticSeaboard, rMidwest, rCalifornia, rOntario, rQuebec, rMaritimes]
 },
 # Orthodoxy
 {
-	iCore :		[rRussia, rEthiopia],
-	iHistorical : 	[rBalkans, rAnatolia, rMesopotamia, rEgypt, rSiberia],
-	iPeriphery : 	[rMaghreb, rItaly, rPersia, rAlaska],
-	iMinority :	[rCentralAsia],
+	iCore :		[rRuthenia, rEthiopia, rGreece, rCaucasus],
+	iHistorical : 	[rBalkans, rAnatolia, rLevant, rMesopotamia, rEgypt, rNubia, rEuropeanArctic, rUrals, rSiberia],
+	iPeriphery : 	[rMaghreb, rItaly, rPonticSteppe, rAmericanArctic, rCentralAsianSteppe],
+	iMinority :	[rBaltics, rPoland, rPersia, rKhorasan, rTransoxiana, rTarimBasin, rNorthChina],
 },
 # Catholicism
 {
-	iCore :		[rEurope, rItaly, rIberia],
-	iHistorical :	[rBritain, rScandinavia, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rColombia, rPeru, rBrazil, rArgentina, rSouthAfrica],
-	iPeriphery :	[rBalkans, rAustralia, rOceania, rWestAfrica],
+	iCore :		[rFrance, rCentralEurope, rPoland, rIreland, rItaly, rIberia],
+	iHistorical :	[rBritain, rScandinavia, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCape, rPhilippines],
+	iPeriphery :	[rBalkans, rGreece, rAmericanArctic, rOntario, rMidwest, rDeepSouth, rGreatPlains, rCalifornia, rAustralia, rOceania, rGuinea, rCongo, rSwahiliCoast, rMadagascar],
 },
 # Protestantism
 {
-	iCore :		[rBritain, rEurope, rScandinavia, rUnitedStates],
-	iHistorical :	[rCanada, rAlaska, rAustralia],
-	iPeriphery :	[rOceania, rSouthAfrica],
+	iCore :		[rBritain, rLowerGermany, rScandinavia, rAtlanticSeaboard, rMidwest, rOntario, rGreatPlains, rDeepSouth, rMaritimes],
+	iHistorical :	[rCalifornia, rCascadia, rAmericanArctic, rAustralia],
+	iPeriphery :	[rFrance, rOceania, rCape, rZambezi],
+	iMinority : 	[rPoland, rCentralEurope, rBrazil, rKorea]
 },
 # Islam
 {
-	iCore : 	[rArabia, rMesopotamia, rEgypt],
-	iHistorical : 	[rPersia, rMaghreb, rCentralAsia, rIndia, rIndonesia, rWestAfrica],
-	iPeriphery : 	[rEthiopia, rItaly, rIberia, rAnatolia, rBalkans, rDeccan],
-	iMinority : 	[rRussia, rSiberia],
+	iCore : 	[rArabia, rMesopotamia, rEgypt, rLevant],
+	iHistorical : 	[rPersia, rKhorasan, rSindh, rPunjab, rTransoxiana, rMaghreb, rIndonesia, rSahel, rSahara, rHornOfAfrica],
+	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHindustan, rRajputana, rBengal, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
+	iMinority : 	[rUrals, rSiberia, rCaucasus, rTarimBasin, rMongolia],
 },
 # Hinduism
 {
-	iCore : 	[rIndia, rDeccan],
-	iHistorical : 	[rIndochina, rIndonesia],
+	iCore : 	[rHindustan, rRajputana, rDeccan, rBengal, rDravida],
+	iHistorical : 	[rPunjab, rSindh, rIndochina, rIndonesia, rPhilippines],
 },
 # Buddhism
 {
-	iCore : 	[rIndia, rTibet, rIndochina],
-	iHistorical : 	[rCentralAsia, rChina, rManchuria, rKorea, rJapan, rIndonesia, rDeccan],
-	iPeriphery : [],
-	iMinority :	[rPersia],
+	iCore : 	[rHindustan, rRajputana, rBengal, rTibet, rIndochina],
+	iHistorical : 	[rDeccan, rDravida, rPunjab, rSindh, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
+	iMinority :	[rTransoxiana, rKhorasan],
 },
 # Confucianism
 {
-	iCore : 	[rChina, rManchuria],
+	iCore : 	[rNorthChina, rSouthChina, rManchuria],
 	iHistorical :	[rKorea],
-	iPeriphery : 	[rCentralAsia, rTibet],
+	iPeriphery : 	[rMongolia, rTibet],
 	iMinority : 	[rJapan, rIndonesia, rIndochina, rAustralia],
 },
 # Taoism
 {
-	iCore : 	[rChina],
+	iCore : 	[rNorthChina, rSouthChina],
 	iHistorical : 	[rManchuria],
-	iPeriphery : 	[rTibet, rCentralAsia],
+	iPeriphery : 	[rTibet, rMongolia],
 },
 # Zoroastrianism
 {
 	iCore :		[rPersia],
-	iPeriphery :	[rMesopotamia],
-	iMinority : 	[rIndia, rAnatolia, rEgypt, rCentralAsia],
+	iPeriphery : 	[rKhorasan, rMesopotamia, rTransoxiana, rLevant],
+	iMinority : 	[rSindh, rRajputana],
 },
 )

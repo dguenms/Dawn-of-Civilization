@@ -567,7 +567,7 @@ def giveColonists(iPlayer):
 			
 			# help England with settling Canada and Australia
 			if iCiv == iEngland:
-				colonialCities = cities.regions(rCanada, rAustralia).owner(iPlayer)
+				colonialCities = cities.regions(rOntario, rMaritimes, rAustralia).owner(iPlayer)
 				if colonialCities:
 					sourceCities = colonialCities
 					

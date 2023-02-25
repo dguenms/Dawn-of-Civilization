@@ -6,7 +6,7 @@ import Locations
 from CvScreensInterface import worldBuilderScreen as worldBuilder
 from CvPlatyBuilderScreen import CvWorldBuilderScreen
 
-import BugPath as path
+import os
 import csv
 
 
@@ -15,23 +15,54 @@ engine = CyEngine()
 MAPS_PATH = "Assets/Maps"
 
 
+def getPath(file_name):
+	return "%s\Mods\\RFC Dawn of Civilization\\Assets\\Maps\\%s" % (os.getcwd(), file_name)
+
+
 class Map(object):
 
 	@staticmethod
-	def read(map_path):
-		file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, map_path)
-		file = open(file_path)
+	def is_valid_value(value):
+		if value is None:
+			return False
+		
+		if value == "":
+			return False
+		
+		return True
+	
+	@staticmethod
+	def cast_value(value):
+		try:
+			return int(value)
+		except ValueError:
+			return value
+
+	@staticmethod
+	def read(file_path):
+		file = open(getPath(file_path))
 		
 		try:
 			for y, line in enumerate(reversed(list(csv.reader(file)))):
 				for x, value in enumerate(line):
-					if value:
-						yield (x, y), value
+					if Map.is_valid_value(value):
+						yield (x, y), Map.cast_value(value)
 		except:
 			file.close()
 			raise
 		
 		file.close()
+	
+	@staticmethod
+	def write(rows, file_path):
+		file = open(getPath(file_path), "wb")
+		writer = csv.writer(file)
+		
+		try:
+			for row in reversed(rows):
+				writer.writerow(row)
+		finally:
+			file.close()
 
 	def __init__(self, map_path):
 		self.path = map_path
@@ -43,11 +74,21 @@ class Map(object):
 		
 		return self.map[y][x]
 	
-	def load(self):
+	def __setitem__(self, (x, y), value):
+		self.map[y][x] = value
+	
+	def reset(self):
 		self.map = [[None for x in range(iWorldX)] for y in range(iWorldY)]
+	
+	def load(self):
+		self.reset()
 		
 		for (x, y), value in self.read(self.path):
-			self.map[y][x] = value
+			self[x, y] = value
+	
+	def export(self):
+		if self.map is not None:
+			self.write(self.map, "Export/%s" % self.path)
 
 
 ### Generic Landmark Functions ###
@@ -89,8 +130,7 @@ def getLandmarks():
 
 
 def exportLandmarks():
-	file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, "Export/Landmarks.txt")
-	file = open(file_path, "w")
+	file = open(getPath("Export/Landmarks.txt"), "w")
 	
 	try:
 		for plot, caption in getLandmarks():
@@ -116,8 +156,7 @@ def exportArea():
 	
 	exceptions = [location(p) for p in plots.rectangle(tBL, tTR) if location(p) not in area and not p.isWater()]
 
-	file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, "Export/Area.txt")
-	file = open(file_path, "w")
+	file = open(getPath("Export/Area.txt"), "w")
 	
 	try:
 		content = "rectangle = (%s,\t%s)\nexceptions = %s" % (tBL, tTR, exceptions)
@@ -132,8 +171,7 @@ def exportPlotList():
 	if not area:
 		return
 		
-	file_path = "%s/%s/%s" % (path.getModDir(), MAPS_PATH, "Export/PlotList.txt")
-	file = open(file_path, "w")
+	file = open(getPath("Export/PlotList.txt"), "w")
 	
 	try:
 		content = "plotList = %s" % (area,)
@@ -150,7 +188,23 @@ def importArea(area):
 
 def importRectangle(tCorners):
 	importArea(plots.rectangle(*tCorners))
+
+
+def exportBaseTerrain():
+	map = Map("BaseTerrain.csv")
+	map.reset()
 	
+	for p in plots.all():
+		x, y = location(p)
+	
+		if p.isWater():
+			map[x, y] = 0
+		elif p.isPeak():
+			map[x, y] = 2
+		else:
+			map[x, y] = 1
+	
+	map.export()
 		
 ### Specific marker functions ###
 
