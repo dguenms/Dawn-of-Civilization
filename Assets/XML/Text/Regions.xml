@@ -765,6 +765,681 @@
 		<Italian>Antarctica</Italian>
 		<Spanish>Antarctica</Spanish>
 	</TEXT>
+	
+	
+	<TEXT>
+		<Tag>TXT_KEY_REGION_100</Tag>
+		<English>Mediterranean Sea</English>
+		<French>Mediterranean Sea</French>
+		<German>Mediterranean Sea</German>
+		<Italian>Mediterranean Sea</Italian>
+		<Spanish>Mediterranean Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_101</Tag>
+		<English>Black Sea</English>
+		<French>Black Sea</French>
+		<German>Black Sea</German>
+		<Italian>Black Sea</Italian>
+		<Spanish>Black Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_102</Tag>
+		<English>Caspian Sea</English>
+		<French>Caspian Sea</French>
+		<German>Caspian Sea</German>
+		<Italian>Caspian Sea</Italian>
+		<Spanish>Caspian Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_103</Tag>
+		<English>Baltic Sea</English>
+		<French>Baltic Sea</French>
+		<German>Baltic Sea</German>
+		<Italian>Baltic Sea</Italian>
+		<Spanish>Baltic Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_104</Tag>
+		<English>North Sea</English>
+		<French>North Sea</French>
+		<German>North Sea</German>
+		<Italian>North Sea</Italian>
+		<Spanish>North Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_105</Tag>
+		<English>Atlantic Ocean</English>
+		<French>Atlantic Ocean</French>
+		<German>Atlantic Ocean</German>
+		<Italian>Atlantic Ocean</Italian>
+		<Spanish>Atlantic Ocean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_106</Tag>
+		<English>Caribbean Sea</English>
+		<French>Caribbean Sea</French>
+		<German>Caribbean Sea</German>
+		<Italian>Caribbean Sea</Italian>
+		<Spanish>Caribbean Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_107</Tag>
+		<English>Gulf of Mexico</English>
+		<French>Gulf of Mexico</French>
+		<German>Gulf of Mexico</German>
+		<Italian>Gulf of Mexico</Italian>
+		<Spanish>Gulf of Mexico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_108</Tag>
+		<English>Hudson Bay</English>
+		<French>Hudson Bay</French>
+		<German>Hudson Bay</German>
+		<Italian>Hudson Bay</Italian>
+		<Spanish>Hudson Bay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_109</Tag>
+		<English>Arctic Ocean</English>
+		<French>Arctic Ocean</French>
+		<German>Arctic Ocean</German>
+		<Italian>Arctic Ocean</Italian>
+		<Spanish>Arctic Ocean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_110</Tag>
+		<English>Red Sea</English>
+		<French>Red Sea</French>
+		<German>Red Sea</German>
+		<Italian>Red Sea</Italian>
+		<Spanish>Red Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_111</Tag>
+		<English>Arabian Sea</English>
+		<French>Arabian Sea</French>
+		<German>Arabian Sea</German>
+		<Italian>Arabian Sea</Italian>
+		<Spanish>Arabian Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_112</Tag>
+		<English>Persian Gulf</English>
+		<French>Persian Gulf</French>
+		<German>Persian Gulf</German>
+		<Italian>Persian Gulf</Italian>
+		<Spanish>Persian Gulf</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_113</Tag>
+		<English>Gulf of Bengal</English>
+		<French>Gulf of Bengal</French>
+		<German>Gulf of Bengal</German>
+		<Italian>Gulf of Bengal</Italian>
+		<Spanish>Gulf of Bengal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_114</Tag>
+		<English>Indian Ocean</English>
+		<French>Indian Ocean</French>
+		<German>Indian Ocean</German>
+		<Italian>Indian Ocean</Italian>
+		<Spanish>Indian Ocean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_115</Tag>
+		<English>Australasian Sea</English>
+		<French>Australasian Sea</French>
+		<German>Australasian Sea</German>
+		<Italian>Australasian Sea</Italian>
+		<Spanish>Australasian Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_116</Tag>
+		<English>South China Sea</English>
+		<French>South China Sea</French>
+		<German>South China Sea</German>
+		<Italian>South China Sea</Italian>
+		<Spanish>South China Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_117</Tag>
+		<English>East China Sea</English>
+		<French>East China Sea</French>
+		<German>East China Sea</German>
+		<Italian>East China Sea</Italian>
+		<Spanish>East China Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_118</Tag>
+		<English>Sea of Japan</English>
+		<French>Sea of Japan</French>
+		<German>Sea of Japan</German>
+		<Italian>Sea of Japan</Italian>
+		<Spanish>Sea of Japan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_119</Tag>
+		<English>Sea of Okhotsk</English>
+		<French>Sea of Okhotsk</French>
+		<German>Sea of Okhotsk</German>
+		<Italian>Sea of Okhotsk</Italian>
+		<Spanish>Sea of Okhotsk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_120</Tag>
+		<English>Bering Sea</English>
+		<French>Bering Sea</French>
+		<German>Bering Sea</German>
+		<Italian>Bering Sea</Italian>
+		<Spanish>Bering Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_121</Tag>
+		<English>Pacific Ocean</English>
+		<French>Pacific Ocean</French>
+		<German>Pacific Ocean</German>
+		<Italian>Pacific Ocean</Italian>
+		<Spanish>Pacific Ocean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_122</Tag>
+		<English>Southern Ocean</English>
+		<French>Southern Ocean</French>
+		<German>Southern Ocean</German>
+		<Italian>Southern Ocean</Italian>
+		<Spanish>Southern Ocean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_123</Tag>
+		<English>Lake Vanern</English>
+		<French>Lake Vanern</French>
+		<German>Lake Vanern</German>
+		<Italian>Lake Vanern</Italian>
+		<Spanish>Lake Vanern</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_124</Tag>
+		<English>Lake Vattern</English>
+		<French>Lake Vattern</French>
+		<German>Lake Vattern</German>
+		<Italian>Lake Vattern</Italian>
+		<Spanish>Lake Vattern</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_125</Tag>
+		<English>Lake Inari</English>
+		<French>Lake Inari</French>
+		<German>Lake Inari</German>
+		<Italian>Lake Inari</Italian>
+		<Spanish>Lake Inari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_126</Tag>
+		<English>Lake Paijanne</English>
+		<French>Lake Paijanne</French>
+		<German>Lake Paijanne</German>
+		<Italian>Lake Paijanne</Italian>
+		<Spanish>Lake Paijanne</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_127</Tag>
+		<English>Lake Oulu</English>
+		<French>Lake Oulu</French>
+		<German>Lake Oulu</German>
+		<Italian>Lake Oulu</Italian>
+		<Spanish>Lake Oulu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_128</Tag>
+		<English>Lake Saimaa</English>
+		<French>Lake Saimaa</French>
+		<German>Lake Saimaa</German>
+		<Italian>Lake Saimaa</Italian>
+		<Spanish>Lake Saimaa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_129</Tag>
+		<English>Lake Peipus</English>
+		<French>Lake Peipus</French>
+		<German>Lake Peipus</German>
+		<Italian>Lake Peipus</Italian>
+		<Spanish>Lake Peipus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_130</Tag>
+		<English>Lake Ladoga</English>
+		<French>Lake Ladoga</French>
+		<German>Lake Ladoga</German>
+		<Italian>Lake Ladoga</Italian>
+		<Spanish>Lake Ladoga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_131</Tag>
+		<English>Lake Onega</English>
+		<French>Lake Onega</French>
+		<German>Lake Onega</German>
+		<Italian>Lake Onega</Italian>
+		<Spanish>Lake Onega</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_132</Tag>
+		<English>Lake Van</English>
+		<French>Lake Van</French>
+		<German>Lake Van</German>
+		<Italian>Lake Van</Italian>
+		<Spanish>Lake Van</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_133</Tag>
+		<English>Lake Sevan</English>
+		<French>Lake Sevan</French>
+		<German>Lake Sevan</German>
+		<Italian>Lake Sevan</Italian>
+		<Spanish>Lake Sevan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_134</Tag>
+		<English>Lake Urmia</English>
+		<French>Lake Urmia</French>
+		<German>Lake Urmia</German>
+		<Italian>Lake Urmia</Italian>
+		<Spanish>Lake Urmia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_135</Tag>
+		<English>Aral Sea</English>
+		<French>Aral Sea</French>
+		<German>Aral Sea</German>
+		<Italian>Aral Sea</Italian>
+		<Spanish>Aral Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_136</Tag>
+		<English>Lake Tengiz</English>
+		<French>Lake Tengiz</French>
+		<German>Lake Tengiz</German>
+		<Italian>Lake Tengiz</Italian>
+		<Spanish>Lake Tengiz</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_137</Tag>
+		<English>Lake Balkhash</English>
+		<French>Lake Balkhash</French>
+		<German>Lake Balkhash</German>
+		<Italian>Lake Balkhash</Italian>
+		<Spanish>Lake Balkhash</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_138</Tag>
+		<English>Issyk-Kul</English>
+		<French>Issyk-Kul</French>
+		<German>Issyk-Kul</German>
+		<Italian>Issyk-Kul</Italian>
+		<Spanish>Issyk-Kul</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_139</Tag>
+		<English>Lake Alakol</English>
+		<French>Lake Alakol</French>
+		<German>Lake Alakol</German>
+		<Italian>Lake Alakol</Italian>
+		<Spanish>Lake Alakol</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_140</Tag>
+		<English>Lake Zaysan</English>
+		<French>Lake Zaysan</French>
+		<German>Lake Zaysan</German>
+		<Italian>Lake Zaysan</Italian>
+		<Spanish>Lake Zaysan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_141</Tag>
+		<English>Lake Uvs</English>
+		<French>Lake Uvs</French>
+		<German>Lake Uvs</German>
+		<Italian>Lake Uvs</Italian>
+		<Spanish>Lake Uvs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_142</Tag>
+		<English>Lake Khovsgol</English>
+		<French>Lake Khovsgol</French>
+		<German>Lake Khovsgol</German>
+		<Italian>Lake Khovsgol</Italian>
+		<Spanish>Lake Khovsgol</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_143</Tag>
+		<English>Lake Baikal</English>
+		<French>Lake Baikal</French>
+		<German>Lake Baikal</German>
+		<Italian>Lake Baikal</Italian>
+		<Spanish>Lake Baikal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_144</Tag>
+		<English>Lake Taymyr</English>
+		<French>Lake Taymyr</French>
+		<German>Lake Taymyr</German>
+		<Italian>Lake Taymyr</Italian>
+		<Spanish>Lake Taymyr</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_145</Tag>
+		<English>Lake Hulun</English>
+		<French>Lake Hulun</French>
+		<German>Lake Hulun</German>
+		<Italian>Lake Hulun</Italian>
+		<Spanish>Lake Hulun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_146</Tag>
+		<English>Lake Qinghai</English>
+		<French>Lake Qinghai</French>
+		<German>Lake Qinghai</German>
+		<Italian>Lake Qinghai</Italian>
+		<Spanish>Lake Qinghai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_147</Tag>
+		<English>Lop Nur</English>
+		<French>Lop Nur</French>
+		<German>Lop Nur</German>
+		<Italian>Lop Nur</Italian>
+		<Spanish>Lop Nur</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_148</Tag>
+		<English>Lake Siling</English>
+		<French>Lake Siling</French>
+		<German>Lake Siling</German>
+		<Italian>Lake Siling</Italian>
+		<Spanish>Lake Siling</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_149</Tag>
+		<English>Lake Dongting</English>
+		<French>Lake Dongting</French>
+		<German>Lake Dongting</German>
+		<Italian>Lake Dongting</Italian>
+		<Spanish>Lake Dongting</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_150</Tag>
+		<English>Lake Poyang</English>
+		<French>Lake Poyang</French>
+		<German>Lake Poyang</German>
+		<Italian>Lake Poyang</Italian>
+		<Spanish>Lake Poyang</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_151</Tag>
+		<English>Lake Tai</English>
+		<French>Lake Tai</French>
+		<German>Lake Tai</German>
+		<Italian>Lake Tai</Italian>
+		<Spanish>Lake Tai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_152</Tag>
+		<English>Tonle Sap</English>
+		<French>Tonle Sap</French>
+		<German>Tonle Sap</German>
+		<Italian>Tonle Sap</Italian>
+		<Spanish>Tonle Sap</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_153</Tag>
+		<English>Seto Inland Sea</English>
+		<French>Seto Inland Sea</French>
+		<German>Seto Inland Sea</German>
+		<Italian>Seto Inland Sea</Italian>
+		<Spanish>Seto Inland Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_154</Tag>
+		<English>Lake Eyre</English>
+		<French>Lake Eyre</French>
+		<German>Lake Eyre</German>
+		<Italian>Lake Eyre</Italian>
+		<Spanish>Lake Eyre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_155</Tag>
+		<English>Lake Chad</English>
+		<French>Lake Chad</French>
+		<German>Lake Chad</German>
+		<Italian>Lake Chad</Italian>
+		<Spanish>Lake Chad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_156</Tag>
+		<English>Lake Tana</English>
+		<French>Lake Tana</French>
+		<German>Lake Tana</German>
+		<Italian>Lake Tana</Italian>
+		<Spanish>Lake Tana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_157</Tag>
+		<English>Lake Turkana</English>
+		<French>Lake Turkana</French>
+		<German>Lake Turkana</German>
+		<Italian>Lake Turkana</Italian>
+		<Spanish>Lake Turkana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_158</Tag>
+		<English>Lake Nyanza</English>
+		<French>Lake Nyanza</French>
+		<German>Lake Nyanza</German>
+		<Italian>Lake Nyanza</Italian>
+		<Spanish>Lake Nyanza</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_159</Tag>
+		<English>Lake Mwitanzege</English>
+		<French>Lake Mwitanzege</French>
+		<German>Lake Mwitanzege</German>
+		<Italian>Lake Mwitanzege</Italian>
+		<Spanish>Lake Mwitanzege</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_160</Tag>
+		<English>Lake Rweru</English>
+		<French>Lake Rweru</French>
+		<German>Lake Rweru</German>
+		<Italian>Lake Rweru</Italian>
+		<Spanish>Lake Rweru</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_161</Tag>
+		<English>Lake Tanganyika</English>
+		<French>Lake Tanganyika</French>
+		<German>Lake Tanganyika</German>
+		<Italian>Lake Tanganyika</Italian>
+		<Spanish>Lake Tanganyika</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_162</Tag>
+		<English>Lake Mweru</English>
+		<French>Lake Mweru</French>
+		<German>Lake Mweru</German>
+		<Italian>Lake Mweru</Italian>
+		<Spanish>Lake Mweru</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_163</Tag>
+		<English>Lake Bangweulu</English>
+		<French>Lake Bangweulu</French>
+		<German>Lake Bangweulu</German>
+		<Italian>Lake Bangweulu</Italian>
+		<Spanish>Lake Bangweulu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_164</Tag>
+		<English>Lake Rukwa</English>
+		<French>Lake Rukwa</French>
+		<German>Lake Rukwa</German>
+		<Italian>Lake Rukwa</Italian>
+		<Spanish>Lake Rukwa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_165</Tag>
+		<English>Lake Malawi</English>
+		<French>Lake Malawi</French>
+		<German>Lake Malawi</German>
+		<Italian>Lake Malawi</Italian>
+		<Spanish>Lake Malawi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_166</Tag>
+		<English>Great Bear Lake</English>
+		<French>Great Bear Lake</French>
+		<German>Great Bear Lake</German>
+		<Italian>Great Bear Lake</Italian>
+		<Spanish>Great Bear Lake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_167</Tag>
+		<English>Lake Tidee</English>
+		<French>Lake Tidee</French>
+		<German>Lake Tidee</German>
+		<Italian>Lake Tidee</Italian>
+		<Spanish>Lake Tidee</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_168</Tag>
+		<English>Lake Athabasca</English>
+		<French>Lake Athabasca</French>
+		<German>Lake Athabasca</German>
+		<Italian>Lake Athabasca</Italian>
+		<Spanish>Lake Athabasca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_169</Tag>
+		<English>Reindeer Lake</English>
+		<French>Reindeer Lake</French>
+		<German>Reindeer Lake</German>
+		<Italian>Reindeer Lake</Italian>
+		<Spanish>Reindeer Lake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_170</Tag>
+		<English>Lake Dubawt</English>
+		<French>Lake Dubawt</French>
+		<German>Lake Dubawt</German>
+		<Italian>Lake Dubawt</Italian>
+		<Spanish>Lake Dubawt</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_171</Tag>
+		<English>Baker Lake</English>
+		<French>Baker Lake</French>
+		<German>Baker Lake</German>
+		<Italian>Baker Lake</Italian>
+		<Spanish>Baker Lake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_172</Tag>
+		<English>Lake Winnipeg</English>
+		<French>Lake Winnipeg</French>
+		<German>Lake Winnipeg</German>
+		<Italian>Lake Winnipeg</Italian>
+		<Spanish>Lake Winnipeg</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_173</Tag>
+		<English>Lake Superior</English>
+		<French>Lake Superior</French>
+		<German>Lake Superior</German>
+		<Italian>Lake Superior</Italian>
+		<Spanish>Lake Superior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_174</Tag>
+		<English>Lake Michigan</English>
+		<French>Lake Michigan</French>
+		<German>Lake Michigan</German>
+		<Italian>Lake Michigan</Italian>
+		<Spanish>Lake Michigan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_175</Tag>
+		<English>Lake Huron</English>
+		<French>Lake Huron</French>
+		<German>Lake Huron</German>
+		<Italian>Lake Huron</Italian>
+		<Spanish>Lake Huron</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_176</Tag>
+		<English>Lake Erie</English>
+		<French>Lake Erie</French>
+		<German>Lake Erie</German>
+		<Italian>Lake Erie</Italian>
+		<Spanish>Lake Erie</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_177</Tag>
+		<English>Lake Ontario</English>
+		<French>Lake Ontario</French>
+		<German>Lake Ontario</German>
+		<Italian>Lake Ontario</Italian>
+		<Spanish>Lake Ontario</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_178</Tag>
+		<English>Lake Mistassini</English>
+		<French>Lake Mistassini</French>
+		<German>Lake Mistassini</German>
+		<Italian>Lake Mistassini</Italian>
+		<Spanish>Lake Mistassini</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_179</Tag>
+		<English>Lobstick Lake</English>
+		<French>Lobstick Lake</French>
+		<German>Lobstick Lake</German>
+		<Italian>Lobstick Lake</Italian>
+		<Spanish>Lobstick Lake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_180</Tag>
+		<English>Great Salt Lake</English>
+		<French>Great Salt Lake</French>
+		<German>Great Salt Lake</German>
+		<Italian>Great Salt Lake</Italian>
+		<Spanish>Great Salt Lake</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_181</Tag>
+		<English>Lake Nicaragua</English>
+		<French>Lake Nicaragua</French>
+		<German>Lake Nicaragua</German>
+		<Italian>Lake Nicaragua</Italian>
+		<Spanish>Lake Nicaragua</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_182</Tag>
+		<English>Lake Titicaca</English>
+		<French>Lake Titicaca</French>
+		<German>Lake Titicaca</German>
+		<Italian>Lake Titicaca</Italian>
+		<Spanish>Lake Titicaca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_183</Tag>
+		<English>Mar Chiquita Lake</English>
+		<French>Mar Chiquita Lake</French>
+		<German>Mar Chiquita Lake</German>
+		<Italian>Mar Chiquita Lake</Italian>
+		<Spanish>Mar Chiquita Lake</Spanish>
+	</TEXT>
+	
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_</Tag>
 		<English></English>

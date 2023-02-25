@@ -1440,10 +1440,10 @@ def specificAdjective(iPlayer):
 			if capital.getRegionID() == rPersia:
 				return "TXT_KEY_CIV_MONGOLIA_HULAGU"
 				
-			if location(capital) != location(plots.capital(iMongols)) and capital.getRegionID() == rCentralAsia:
+			if location(capital) != location(plots.capital(iMongols)) and capital.getRegionID() in [rCentralAsianSteppe, rTarimBasin, rKhorasan]:
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
 				
-			if 2 * cities.region(rChina).owner(iPlayer).count() >= cities.region(rChina).count():
+			if 2 * cities.regions(rNorthChina, rSouthChina).owner(iPlayer).count() >= cities.region(rChina).count():
 				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
 		if bMonarchy:

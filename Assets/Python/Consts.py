@@ -890,28 +890,44 @@ iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterNati
 iParameterWarSuccess, iParameterWarWeariness, iParameterBarbarianLosses) = range(iNumStabilityParameters)						# Military
 
 #Regions
-iNumRegions = 38
-(rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia, rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb,
-rPersia, rIndia, rDeccan, rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet, rCentralAsia, rSiberia,
-rAustralia, rOceania, rEthiopia, rWestAfrica, rSouthAfrica, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica,
-rBrazil, rArgentina, rPeru, rColombia) = range(iNumRegions)
+iNumRegions = 82
+(rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland,
+rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rEuropeanArctic, rUrals, rAnatolia, rCaucasus, rLevant, rMesopotamia,
+rArabia, rEgypt, rNubia, rMaghreb, rPersia, rKhorasan, rTransoxiana, rSindh, rPunjab, rRajputana,
+rHindustan, rBengal, rDeccan, rDravida, rIndochina, rIndonesia, rPhilippines, rSouthChina, rNorthChina, rKorea,
+rJapan, rTibet, rTarimBasin, rMongolia, rManchuria, rAmur, rCentralAsianSteppe, rSiberia, rAustralia, rOceania,
+rEthiopia, rHornOfAfrica, rSwahiliCoast, rGreatLakes, rZambezi, rMadagascar, rCape, rKalahari, rCongo, rGuinea, 
+rSahel, rSahara, rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rAridoamerica, rCalifornia, rCascadia, rOntario, 
+rQuebec, rMaritimes, rAmericanArctic, rCaribbean, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, 
+rSouthernCone, rAntarctica) = range(iNumRegions)
 
-lNewWorld = [rAustralia, rOceania, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
+iNumWaterRegions = 84
+(rMediterraneanSea, rBlackSea, rCaspianSea, rBalticSea, rNorthSea, rAtlanticOcean, rCaribbeanSea, rGulfOfMexico, rHudsonBay, rArcticOcean,
+rRedSea, rArabianSea, rPersianGulf, rGulfOfBengal, rIndianOcean, rAustralasianSea, rSouthChinaSea, rEastChinaSea, rSeaOfJapan, rSeaOfOkhotsk, 
+rBeringSea, rPacificOcean, rSouthernOcean, rVanern, rVattern, rInari, rPaijanne, rOulu, rSaimaa, rPeipus, 
+rLadoga, rOnega, rVan, rSevan, rUrmia, rAralSea, rTengiz, rBalkhash, rIssykKul, rAlakol, 
+rZaysan, rUvs, rKhovsgol, rBaikal, rTaymyr, rHulun, rQinghai, rLopNur, rSiling, rDongting, 
+rPoyang, rTai, rTonleSap, rSetoInlandSea, rEyre, rChad, rTana, rTurkana, rNyanza, rMwitanzege, 
+rRweru, rTanganyika, rMweru, rBangweulu, rRukwa, rMalawi, rGreatBear, rTidee, rAthabasca, rReindeer, 
+rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rOntario, rMistassini, rLobstick, 
+rGreatSalt, rNicaragua, rTiticaca, rMarChiquita) = range(100, 100 + iNumWaterRegions)
 
-lEurope = [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
-lMiddleEast = [rAnatolia, rMesopotamia, rArabia, rPersia, rCentralAsia]
-lIndia = [rIndia, rDeccan]
-lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
-lNorthAfrica = [rEgypt, rMaghreb]
-lSubSaharanAfrica = [rEthiopia, rSouthAfrica, rWestAfrica]
-lSouthAmerica = [rBrazil, rArgentina, rPeru, rColombia]
-lCentralAmerica = [rCaribbean, rMesoamerica]
-lNorthAmerica = [rCanada, rAlaska, rUnitedStates]
+lEurope = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rEuropeanArctic, rUrals, rSiberia]
+lMiddleEast = [rAnatolia, rCaucasus, rLevant, rMesopotamia, rArabia, rPersia, rKhorasan, rTransoxiana]
+lIndia = [rSindh, rPunjab, rRajputana, rHindustan, rBengal, rDeccan, rDravida]
+lEastAsia = [rIndochina, rIndonesia, rPhilippines, rSouthChina, rNorthChina, rKorea, rJapan, rTibet, rTarimBasin, rMongolia, rManchuria, rAmur, rCentralAsianSteppe]
+lNorthAfrica = [rEgypt, rNubia, rMaghreb]
+lSubSaharanAfrica = [rEthiopia, rHornOfAfrica, rSwahiliCoast, rGreatLakes, rZambezi, rMadagascar, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara]
+lSouthAmerica = [rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone]
+lCentralAmerica = [rCaribbean, rMesoamerica, rCentralAmerica]
+lNorthAmerica = [rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rAridoamerica, rCalifornia, rCascadia, rOntario, rQuebec, rMaritimes, rAmericanArctic]
 lOceania = [rAustralia, rOceania]
 
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
 lAmerica = lSouthAmerica + lCentralAmerica + lNorthAmerica
+
+lNewWorld = lAmerica + lOceania
 
 #Projects
 
