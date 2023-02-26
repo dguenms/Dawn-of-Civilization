@@ -205,6 +205,27 @@ def exportBaseTerrain():
 			map[x, y] = 1
 	
 	map.export()
+
+
+def validateCityNames():
+	for (x, y), name in Map.read("Cities.csv"):
+		if name.startswith(" ") or name.endswith(" "):
+			print "Trailing whitespace: '%s'" % name
+		
+		try:
+			name.decode("utf-8").encode("latin-1")
+		except:
+			print "Unsupported characters: '%s'" % name
+
+
+def markUnnamedTiles():
+	for (x, y), name in Map.read("Cities.csv"):
+		p = plot(x, y)
+		
+		if name == "?":
+			if player(0).canFound(x, y):
+				createLandmark((x, y), "Unnamed")
+				
 		
 ### Specific marker functions ###
 
