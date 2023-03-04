@@ -5,7 +5,7 @@ from Formatters import *
 from Requirements import *
 from Types import *
 
-from CityNameManager import getFoundName, getRenameName
+import CityNames as cn
 
 import BugCore
 AlertsOpt = BugCore.game.MoreCiv4lerts
@@ -507,8 +507,8 @@ class DifferentCitiesGoal(Goal):
 			if subgoal.succeeded():
 				recorded_location = self.recorded.get(subgoal)
 				recorded_city = city(recorded_location)
-				city_name = recorded_city and recorded_city.getName() or getFoundName(self.iPlayer, recorded_location)
-				yield "%s %s" % (indicator(True), getRenameName(self.iPlayer, city_name) or city_name)
+				city_name = recorded_city and recorded_city.getName() or cn.getName(self.iPlayer, recorded_location)
+				yield "%s %s" % (indicator(True), cn.translate(self.iPlayer, city_name) or city_name)
 			else:
 				current_city = self.get_city_parameter()
 				if current_city and location(current_city) in self.recorded.values():

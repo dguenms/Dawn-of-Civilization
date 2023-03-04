@@ -39,7 +39,6 @@ import CvPopupInterface
 import CvScreenUtilsInterface
 import ScreenInput as PyScreenInput
 from CvScreenEnums import *
-from CvPythonExtensions import *
 
 # BUG - Options - end
 import BugCore
@@ -51,22 +50,20 @@ TechWindowOpt = BugCore.game.TechWindow
 g_bIsScreenActive = -1
 
 #Rhye - start
-from StoredData import data
-from Consts import *
 from Areas import *
 from RFCUtils import *
 from RFCUtils import canRespawn as canRespawnUtils
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 from Stability import calculateAdministration, calculateSeparatism
-import CityNameManager as cnm
+
+import CityNames as cn
 import Victories
 
 from Scenarios import getScenario
 from Locations import *
 from Core import *
 
-gc = CyGlobalContext()
 	
 def countAchievedGoals(argsList):
 	iPlayer = argsList[0]
@@ -909,12 +906,12 @@ def getHistoricalVictoryDescriptions(argsList):
 def getCityName(argsList):
 	iPlayer, x, y = argsList
 	
-	result = cnm.getFoundName(iPlayer, (x,y))
+	name = cn.getName(iPlayer, (x, y))
 	
-	if result == -1:
+	if not name:
 		return ""
-	else:
-		return result
+	
+	return name
 		
 def canRespawn(argsList):
 	iCiv = argsList[0]

@@ -4,7 +4,7 @@ import Setup
 import SettlerMaps
 import WarMaps
 import RegionMap
-import CityNameManager
+import CityNames
 import Civilizations
 import Modifiers
 import AIParameters
