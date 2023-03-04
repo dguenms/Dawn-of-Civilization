@@ -11375,7 +11375,7 @@ void CvPlot::invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange)
 }
 // Sanguo Mod Performance, end
 
-short CvPlot::getRegionID() const
+int CvPlot::getRegionID() const
 {
 	return m_iRegionID;
 }
@@ -11588,33 +11588,34 @@ int CvPlot::calculateCultureCost() const
 // Leoreth
 bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 {
-	if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian()) return false;
-
-	if (GET_PLAYER(ePlayer).getNumCities() == 0) return false;
-
-	if (GET_PLAYER(ePlayer).getCapitalCity() == NULL) return false;
-
-	int rid = GET_PLAYER(ePlayer).getCapitalCity()->getRegionID();
-
-	switch (getRegionID())
+	if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian())
 	{
-	case REGION_ALASKA:
-	case REGION_CANADA:
-	case REGION_UNITED_STATES:
-	case REGION_CARIBBEAN:
-	case REGION_MESOAMERICA:
-	case REGION_BRAZIL:
-	case REGION_ARGENTINA:
-	case REGION_PERU:
-	case REGION_COLOMBIA:
-		return true;
-	case REGION_ETHIOPIA:
-	case REGION_WEST_AFRICA:
-	case REGION_SOUTH_AFRICA:
-		if (rid != REGION_ETHIOPIA && rid != REGION_WEST_AFRICA && rid != REGION_SOUTH_AFRICA) return true;
-	default:
 		return false;
 	}
+
+	if (GET_PLAYER(ePlayer).getNumCities() == 0)
+	{
+		return false;
+	}
+
+	if (GET_PLAYER(ePlayer).getCapitalCity() == NULL)
+	{
+		return false;
+	}
+
+	switch (getRegionGroup())
+	{
+	case REGION_GROUP_NORTH_AMERICA:
+	case REGION_GROUP_SOUTH_AMERICA:
+		return true;
+	case REGION_GROUP_SUB_SAHARAN_AFRICA:
+		if (GET_PLAYER(ePlayer).getCapitalCity()->getRegionGroup() == REGION_GROUP_SUB_SAHARAN_AFRICA)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 // Leoreth
@@ -11774,4 +11775,128 @@ bool CvPlot::isExpansion() const
 bool CvPlot::isExpansionEffect(PlayerTypes ePlayer) const
 {
 	return getExpansion() == ePlayer && (getBirthProtected() == ePlayer || getBirthProtected() == NO_PLAYER);
+}
+
+int CvPlot::getContinentID() const
+{
+	switch (getRegionGroup())
+	{
+	case REGION_GROUP_EUROPE:
+		return 0;	// Europe = 0
+	case REGION_GROUP_MIDDLE_EAST:
+	case REGION_GROUP_NORTH_AFRICA:
+		return 1; // Middle East = 1
+	case REGION_GROUP_SOUTH_ASIA:
+	case REGION_GROUP_NORTH_ASIA:
+	case REGION_GROUP_EAST_ASIA:
+		return 2;	// East Asia = 2
+	case REGION_GROUP_OCEANIA:
+		return 3;	// Australia = 3
+	case REGION_GROUP_SUB_SAHARAN_AFRICA:
+		return 4;	// Africa = 4;
+	case REGION_GROUP_NORTH_AMERICA:
+		return 5;	// North America = 5
+	case REGION_GROUP_SOUTH_AMERICA:
+		return 6;	// South America = 6
+	}
+
+	return -1;
+}
+
+int CvPlot::getRegionGroup() const
+{
+	switch (getRegionID())
+	{
+	case REGION_ATLANTIC_SEABOARD:
+	case REGION_DEEP_SOUTH:
+	case REGION_MIDWEST:
+	case REGION_GREAT_PLAINS:
+	case REGION_ARIDOAMERICA:
+	case REGION_CALIFORNIA:
+	case REGION_CASCADIA:
+	case REGION_ONTARIO:
+	case REGION_QUEBEC:
+	case REGION_AMERICAN_ARCTIC:
+	case REGION_CARIBBEAN:
+	case REGION_MESOAMERICA:
+	case REGION_CENTRAL_AMERICA:
+		return REGION_GROUP_NORTH_AMERICA;
+	case REGION_NEW_GRANADA:
+	case REGION_AMAZONIA:
+	case REGION_BRAZIL:
+	case REGION_ANDES:
+	case REGION_SOUTHERN_CONE:
+		return REGION_GROUP_SOUTH_AMERICA;
+	case REGION_BRITAIN:
+	case REGION_IRELAND:
+	case REGION_IBERIA:
+	case REGION_ITALY:
+	case REGION_FRANCE:
+	case REGION_LOWER_GERMANY:
+	case REGION_CENTRAL_EUROPE:
+	case REGION_BALKANS:
+	case REGION_GREECE:
+	case REGION_POLAND:
+	case REGION_BALTICS:
+	case REGION_SCANDINAVIA:
+	case REGION_RUTHENIA:
+	case REGION_PONTIC_STEPPE:
+	case REGION_URALS:
+		return REGION_GROUP_EUROPE;
+	case REGION_ANATOLIA:
+	case REGION_CAUCASUS:
+	case REGION_LEVANT:
+	case REGION_MESOPOTAMIA:
+	case REGION_ARABIA:
+	case REGION_PERSIA:
+	case REGION_KHORASAN:
+	case REGION_TRANSOXIANA:
+		return REGION_GROUP_MIDDLE_EAST;
+	case REGION_EGYPT:
+	case REGION_NUBIA:
+	case REGION_MAGHREB:
+	case REGION_SAHARA:
+		return REGION_GROUP_NORTH_AFRICA;
+	case REGION_ETHIOPIA:
+	case REGION_HORN_OF_AFRICA:
+	case REGION_SWAHILI_COAST:
+	case REGION_GREAT_LAKES:
+	case REGION_ZAMBEZI:
+	case REGION_MADAGASCAR:
+	case REGION_CAPE:
+	case REGION_KALAHARI:
+	case REGION_CONGO:
+	case REGION_GUINEA:
+	case REGION_SAHEL:
+		return REGION_GROUP_SUB_SAHARAN_AFRICA;
+	case REGION_SINDH:
+	case REGION_PUNJAB:
+	case REGION_RAJPUTANA:
+	case REGION_HINDUSTAN:
+	case REGION_BENGAL:
+	case REGION_DECCAN:
+	case REGION_DRAVIDA:
+	case REGION_INDOCHINA:
+	case REGION_INDONESIA:
+		return REGION_GROUP_SOUTH_ASIA;
+	case REGION_CENTRAL_ASIAN_STEPPE:
+	case REGION_SIBERIA:
+	case REGION_AMUR:
+	case REGION_MONGOLIA:
+		return REGION_GROUP_NORTH_ASIA;
+	case REGION_PHILIPPINES:
+	case REGION_SOUTH_CHINA:
+	case REGION_NORTH_CHINA:
+	case REGION_TARIM_BASIN:
+	case REGION_MANCHURIA:
+	case REGION_KOREA:
+	case REGION_JAPAN:
+		return REGION_GROUP_EAST_ASIA;
+	case REGION_AUSTRALIA:
+	case REGION_OCEANIA:
+		return REGION_GROUP_OCEANIA;
+	default:
+		FAssert(false);
+		return NO_REGION_GROUP;
+	}
 }

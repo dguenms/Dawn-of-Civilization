@@ -8599,16 +8599,14 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				if (pLoopCity->isHolyCity(JUDAISM)) iValue *= 2;
 			}
 
-			if (eReligion == (ReligionTypes)PROTESTANTISM)
+			if (eReligion == PROTESTANTISM)
 			{
-				int iRegion = pLoopCity->getRegionID();
-				if (iRegion != REGION_BRITAIN && iRegion != REGION_IBERIA && iRegion != REGION_ITALY && iRegion != REGION_BALKANS && iRegion != REGION_EUROPE && iRegion != REGION_SCANDINAVIA && iRegion != REGION_RUSSIA)
+				if (pLoopCity->getRegionGroup() != REGION_GROUP_EUROPE)
 				{
 					iValue = 5;
 				}
 
-				int iCapitalRegion = getCapitalCity()->getRegionID();
-				if (iRegion == iCapitalRegion)
+				if (pLoopCity->getRegionGroup() == getCapitalCity()->getRegionGroup())
 				{
 					iValue *= 3;
 				}
@@ -24535,21 +24533,14 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	CvCity* pCapital = GET_PLAYER(ePlayer).getCapitalCity();
 	if (pCapital != NULL)
 	{
-		switch (pCapital->getRegionID())
+		switch (pCapital->getRegionGroup())
 		{
-			case REGION_ALASKA:
-			case REGION_CANADA:
-			case REGION_UNITED_STATES:
-			case REGION_MESOAMERICA:
-			case REGION_CARIBBEAN:
-			case REGION_COLOMBIA:
-			case REGION_PERU:
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-				bNewWorld = true;
-				break;
-			default:
-				bNewWorld = true;
+		case REGION_GROUP_NORTH_AMERICA:
+		case REGION_GROUP_SOUTH_AMERICA:
+			bNewWorld = true;
+			break;
+		default:
+			bNewWorld = false;
 		}
 	}
 
@@ -24657,26 +24648,6 @@ int CvPlayer::countColonies() const
 	}
 
 	return iNumColonies;
-}
-
-int CvPlayer::countSlaveCities() const
-{
-	if (isMinorCiv() || getNumCities() == 0) return 0;
-	
-	int iNumSlaveCities = 0;
-
-	int iLoop, rid;
-	CvCity* pLoopCity;
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		rid = pLoopCity->getRegionID();
-		if (rid != REGION_BRITAIN && rid != REGION_IBERIA && rid != REGION_MAGHREB && rid != REGION_ITALY && rid != REGION_EUROPE && rid != REGION_RUSSIA && rid != REGION_SCANDINAVIA && rid != REGION_BALKANS && rid != REGION_ANATOLIA)
-		{
-			iNumSlaveCities++;
-		}
-	}
-
-	return iNumSlaveCities;
 }
 
 int CvPlayer::countVassalCities() const
@@ -25382,21 +25353,11 @@ bool CvPlayer::canBuySlaves() const
 	{
 		if (getNumCities() > 0)
 		{
-			switch (getCapitalCity()->getRegionID())
+			switch (getCapitalCity()->getRegionGroup())
 			{
-				case REGION_CANADA:
-				case REGION_ALASKA:
-				case REGION_UNITED_STATES:
-				case REGION_CARIBBEAN:
-				case REGION_MESOAMERICA:
-				case REGION_BRAZIL:
-				case REGION_ARGENTINA:
-				case REGION_PERU:
-				case REGION_COLOMBIA:
-					return true;
-					break;
-				default:
-					;
+			case REGION_GROUP_NORTH_AMERICA:
+			case REGION_GROUP_SOUTH_AMERICA:
+				return true;
 			}
 		}
 	}

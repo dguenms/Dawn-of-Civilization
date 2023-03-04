@@ -529,7 +529,7 @@ public:
 	void write(FDataStreamBase* pStream);
 
 	// Leoreth
-	short getRegionID() const;
+	int getRegionID() const;
 	void setRegionID(short iNewValue);
 	CvWString getRegionName() const;
 
@@ -573,6 +573,9 @@ public:
 	PlayerTypes getExpansion() const;
 	bool isExpansion() const;
 	bool isExpansionEffect(PlayerTypes ePlayer) const;
+
+	int getContinentID() const;
+	int getRegionGroup() const;
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();

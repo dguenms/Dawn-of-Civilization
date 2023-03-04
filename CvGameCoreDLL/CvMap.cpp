@@ -1426,8 +1426,8 @@ void CvMap::calculateAreas()
 	CvArea* scandinavia = addArea();
 	CvArea* denmark = addArea();
 
-	int asiaID = plot(100, 44)->getArea(); // Chang'an
-	int americaID = plot(27, 46)->getArea(); // Washington
+	int asiaID = plot(121, 52)->getArea(); // Chang'an
+	int americaID = plot(29, 54)->getArea(); // Washington
 
 	int europeID = europe->getID();
 	int africaID = africa->getID();
@@ -1451,40 +1451,60 @@ void CvMap::calculateAreas()
 			
 			if (!plot->isWater())
 			{
+				switch (plot->getRegionGroup())
+				{
+				case REGION_GROUP_EUROPE:
+				case REGION_GROUP_MIDDLE_EAST:
+					if (plot->getArea() == asiaID)
+					{
+						plot->setArea(europeID);
+					}
+					break;
+				case REGION_GROUP_SUB_SAHARAN_AFRICA:
+					if (plot->getArea() == asiaID)
+					{
+						plot->setArea(africaID);
+					}
+					break;
+				case REGION_GROUP_SOUTH_AMERICA:
+					if (plot->getArea() == americaID)
+					{
+						plot->setArea(southAmericaID);
+					}
+					break;
+				}
+
 				switch (plot->getRegionID())
 				{
-				case REGION_BRITAIN:
-				case REGION_IBERIA:
-				case REGION_ITALY:
-				case REGION_BALKANS:
-				case REGION_EUROPE:
-				case REGION_RUSSIA:
 				case REGION_SIBERIA:
-				case REGION_ANATOLIA:
-				case REGION_MESOPOTAMIA:
-				case REGION_ARABIA:
+				case REGION_AMUR:
+				case REGION_CENTRAL_ASIAN_STEPPE:
 				case REGION_EGYPT:
-				case REGION_PERSIA:
-					if (plot->getArea() == asiaID) plot->setArea(europeID);
+				case REGION_NUBIA:
+					if (plot->getArea() == asiaID)
+					{
+						plot->setArea(europeID);
+					}
 					break;
 				case REGION_SCANDINAVIA:
 					if (plot->getArea() == asiaID)
 					{
-						if ((iX == 59 && iY >= 55 && iY <= 57) || (iX == 60 && iY == 56)) plot->setArea(denmarkID);
-						else plot->setArea(scandinaviaID);
+						if (iX >= 66 && iX <= 68 && iY >= 66 && iY <= 69)
+						{
+							plot->setArea(denmarkID);
+						}
+						else
+						{
+							plot->setArea(scandinaviaID);
+						}
 					}
 					break;
 				case REGION_MAGHREB:
-				case REGION_ETHIOPIA:
-				case REGION_WEST_AFRICA:
-				case REGION_SOUTH_AFRICA:
-					if (plot->getArea() == asiaID) plot->setArea(africaID);
-					break;
-				case REGION_BRAZIL:
-				case REGION_ARGENTINA:
-				case REGION_PERU:
-				case REGION_COLOMBIA:
-					if (plot->getArea() == americaID) plot->setArea(southAmericaID);
+				case REGION_SAHARA:
+					if (plot->getArea() == asiaID)
+					{
+						plot->setArea(africaID);
+					}
 					break;
 				}
 			}

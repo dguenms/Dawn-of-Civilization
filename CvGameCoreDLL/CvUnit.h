@@ -966,7 +966,7 @@ protected:
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
 
-	int getOriginalArtStyle(int regionID);
+	int getOriginalArtStyle(const CvPlot* pPlot) const;
 };
 
 #endif
