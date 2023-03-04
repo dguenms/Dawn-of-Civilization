@@ -5,6 +5,7 @@ from GoalHandlers import event_handler_registry
 
 from Core import *
 from RFCUtils import *
+from Civilizations import *
 from Parsers import *
 
 

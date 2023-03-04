@@ -257,6 +257,11 @@ class GameData:
 		self.dUnitsLost = {}
 		self.dBuildingsBuilt = {}
 		
+		# City Names
+		
+		self.dChangedCities = {}
+		self.dRenamedCities = {}
+		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		

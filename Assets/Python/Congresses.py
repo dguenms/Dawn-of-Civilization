@@ -1,18 +1,11 @@
-# Rhye's and Fall of Civilization - World Congresses
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-from RFCUtils import *
-from Consts import *
-import CityNameManager as cnm
-from StoredData import data # edead
-
 from Events import handler
 from Popups import popup
 
 import Popups
 
+import CityNames as cn
+
+from RFCUtils import *
 from Locations import *
 from Core import *
 
@@ -251,7 +244,7 @@ class Congress:
 			if city:
 				event.applyClaimCity(city.getName(), button=infos.civ(city).getButton())
 			else:
-				event.applyClaimCity(cnm.getFoundName(active(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
+				event.applyClaimCity(cn.getName(civ(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
 				
 		event.noClaim().launch()
 
@@ -271,11 +264,11 @@ class Congress:
 		if plot.isCity():
 			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_CITY", name(iClaimant), adjective(plot), city(plot).getName())
 		elif plot.getOwner() == iClaimant:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cn.getName(iClaimant, (x, y)))
 		elif plot.isOwned():
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cn.getName(iClaimant, (x, y)))
 		else:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cn.getName(iClaimant, (x, y)))
 			
 		event.approveClaim().abstainClaim().denyClaim().launch(iClaimant, plot.getOwner())
 		
@@ -638,7 +631,7 @@ class Congress:
 				else:
 					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				self.lColonies.append((cnm.getFoundName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				self.lColonies.append((cn.getName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
 				if bCanRefuse:
 					self.lHumanAssignments.append((iClaimant, (x, y)))
 				else:
@@ -1177,7 +1170,7 @@ class Congress:
 			for plot in plots.all().where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater() and pPlayer.canFound(p.getX(), p.getY())).regions(*(lSubSaharanAfrica + lOceania)):
 				if pPlayer.isHuman() and not plot.isRevealed(iPlayer, False): continue
 				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
-				if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, plot):
+				if iSettlerMapValue >= 90 and cn.getName(iPlayer, plot):
 					iFoundValue = pPlayer.AI_foundValue(plot.getX(), plot.getY(), -1, False)
 					lPlots.append((plot.getX(), plot.getY(), max(1, min(5, iFoundValue / 2500 - 1))))
 		
@@ -1185,7 +1178,7 @@ class Congress:
 		lPlots = sort(lPlots, lambda p: p[2] + rand(3), True)
 		
 		# remove settled plots with the same name
-		lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cnm.getFoundName(iPlayer, (x, y)) not in [cnm.getFoundName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
+		lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cn.getName(iPlayer, (x, y)) not in [cn.getName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
 		
 		return lPlots[:10]
 		

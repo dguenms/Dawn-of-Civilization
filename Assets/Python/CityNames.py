@@ -1,363 +1,260 @@
 from Core import *
+from Files import *
+
+from Events import handler
 
 
-def getSpecialLanguages(iPlayer):
-	iCiv = civ(iPlayer)
+### CONSTANTS ###
 
-	if iCiv == iCivEgypt:
-		if player(iPlayer).getStateReligion() == iIslam:
-			return (iLangEgyptianArabic, iLangArabian)
-	
-	elif iCiv == iCivInca:
-		if data.civs[iCiv].iResurrections > 0:
-			return (iLangSpanish,)
-			
-	return None
-	
-def getLanguages(iPlayer):
-	tSpecialLanguages = getSpecialLanguages(iPlayer)
-	
-	if tSpecialLanguages:
-		return tSpecialLanguages
-		
-	iCiv = civ(iPlayer)
-	if iCiv in dLanguages:
-		return dLanguages[iCiv]
-
-	return None
-	
-def getTileName(tPlot):
-	x, y = tPlot
-	return tCities[iWorldY-1-y][x]
-	
-def getCivicNames(iPlayer):
-	return {}
-	
-def getEraNames(iPlayer):
-	iCurrentEra = player(iPlayer).getCurrentEra()
-	
-	dNames = {}
-	for iEra in range(iCurrentEra+1):
-		dNames.update(tEraNames[iEra])
-		
-	return dNames
-	
-def findLocations(iPlayer, name):
-	return plots.all().where(lambda p: getName(iPlayer, p) == name or getName(iEngland, p) == name)
-	
-def getName(iPlayer, tPlot):
-	name = getTileName(tPlot)
-	
-	if name in data.dChangedCities:
-		name = data.dChangedCities[name]
-		
-	if name in data.dChangedNames:
-		name = data.dChangedNames[name]
-	else:
-		dEraNames = getEraNames(iPlayer)
-		if name in dEraNames:
-			data.dChangedNames[name] = dEraNames[name]
-			name = dEraNames[name]
-		
-	dCivicNames = getCivicNames(iPlayer)
-	if name in dCivicNames:
-		name = dCivicNames[name]
-		
-	name = translateName(iPlayer, name)
-	
-	return name
-	
-def translateName(iPlayer, name):
-	tLanguages = getLanguages(iPlayer)
-	if not tLanguages: return name
-	
-	for iLanguage in tLanguages:
-		if name in tRenames[iLanguage]:
-			return tRenames[iLanguage]
-		if name in tRenames[iLanguage].values():
-			return name
-			
-	return name
-	
-def checkCity(iPlayer, city):
-	name = getName(iPlayer, (city.getX(), city.getY()))
-	
-	if name:
-		city.setName(name, False)
-		
-def checkCities(iPlayer):
-	for city in utils.getCityList(iPlayer):
-		checkCity(iPlayer, city)
-
-def setup():
-	global tCities
-	tCities = utils.readMap('Cities')
-	
-def onCityAcquired(city, iNewOwner):
-	checkCity(iNewOwner, city)
-		
-def onCityBuilt(city):
-	checkCity(city.getOwner(), city)
-	
-def onRevolution(iPlayer):
-	checkCities(iPlayer)
-	
-def onReligionSpread(iPlayer):
-	checkCities(iPlayer)
-	
-def onTechAcquired(iPlayer):
-	checkCities(iPlayer)
-
-tCities = None
-
-iNumLanguages = 41
-(iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
-iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
-iLangJapanese, iLangEthiopian, iLangKorean, iLangMayan, iLangByzantine, 
-iLangViking, iLangArabian, iLangKhmer, iLangIndonesian, iLangSpanish, 
-iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch, 
-iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian, 
-iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese, 
-iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
-iLangHarappan) = range(iNumLanguages)
+iNumLanguages = 38
+(iLangAmerican, iLangArabic, iLangBabylonian, iLangByzantine, iLangCeltic, 
+iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, iLangEgyptianArabic, 
+iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, iLangGreek, 
+iLangIndian, iLangIndonesian, iLangItalian, iLangJapanese, iLangKhmer, 
+iLangKorean, iLangLatin, iLangMande, iLangMayan, iLangMongolian, 
+iLangNahuatl, iLangPersian, iLangPhoenician, iLangPolish, iLangPolynesian, 
+iLangPortuguese, iLangQuechua, iLangRussian, iLangSpanish, iLangThai, 
+iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
 
 dLanguages = {
-	iCivEgypt:	(iLangEgyptian,),
-	iCivBabylonia: (iLangBabylonian,),
-	iCivHarappa: (iLangHarappan, iLangIndian),
-	iCivChina: (iLangChinese,),
-	iCivGreece: (iLangGreek,),
-	iCivIndia: (iLangIndian,),
-	iCivCarthage: (iLangPhoenician,),
-	iCivPolynesia: (iLangPolynesian,),
-	iCivPersia: (iLangPersian,),
-	iCivRome: (iLangLatin,),
-	iCivMaya: (iLangMayan, iLangAztec),
-	iCivTamils: (iLangIndian,),
-	iCivEthiopia: (iLangEthiopian,),
-	iCivKorea: (iLangKorean, iLangChinese),
-	iCivByzantium: (iLangByzantine, iLangLatin),
-	iCivJapan: (iLangJapanese,),
-	iCivVikings: (iLangViking,),
-	iCivTurks: (iLangTurkish, iLangArabian, iLangPersian),
-	iCivArabia: (iLangArabian,),
-	iCivTibet: (iLangTibetan, iLangChinese),
-	iCivKhmer: (iLangKhmer, iLangIndonesian),
-	iCivIndonesia: (iLangIndonesian, iLangKhmer),
-	iCivMoors: (iLangArabian,),
-	iCivSpain: (iLangSpanish,),
-	iCivFrance: (iLangFrench,),
-	iCivEngland: (iLangEnglish,),
-	iCivHolyRome: (iLangGerman,),
-	iCivRussia: (iLangRussian,),
-	iCivMali: (iLangMalian,),
-	iCivPoland: (iLangPolish, iLangRussian),
-	iCivPortugal: (iLangPortuguese, iLangSpanish),
-	iCivInca: (iLangQuechua,),
-	iCivItaly: (iLangItalian,),
-	iCivMongols: (iLangMongolian, iLangTurkish, iLangChinese),
-	iCivAztecs: (iLangAztec,),
-	iCivMughals: (iLangPersian, iLangArabian, iLangIndian),
-	iCivOttomans: (iLangTurkish, iLangArabian),
-	iCivThailand: (iLangThai, iLangKhmer, iLangIndonesian),
-	iCivCongo: (iLangCongolese,),
-	iCivIran: (iLangArabian, iLangPersian),
-	iCivNetherlands: (iLangDutch,),
-	iCivGermany: (iLangPrussian, iLangGerman),
-	iCivAmerica: (iLangAmerican, iLangEnglish),
-	iCivArgentina: (iLangSpanish,),
-	iCivMexico: (iLangSpanish,),
-	iCivColombia: (iLangSpanish,),
-	iCivBrazil: (iLangPortuguese, iLangSpanish),
-	iCivCanada: (iLangAmerican, iLangEnglish, iLangFrench),
-	iCivCeltia: (iLangCeltic,),
-}
-			
-tEraNames = (
-# ancient
-{},
-# classical
-{},
-# medieval
-{
-	"Chang'an"		:	"Xi'an",
-	'Zhongdu'		:	'Beijing',
-	'Indraprastha'		:	'Dilli',
-	'Roha'			:	'Lalibela',
-},
-# renaissance
-{
-	'Pataliputra'		:	'Patna',
-	'Haojing'		:	'Aomen',
-	'Nidaros'		:	'Trondheim',
-	'Roskilde'		:	'K&#248;benhavn',
-	'Haithabu'		:	'Hamburg',
-	'Novokholmogory'	:	"Arkhangel'sk",
-	'Spas na Kholmu'	:	'Krasnyj Kholm',
-	'Tumasik'		:	'Singapura',
-	'Sundapura'		:	'Jayakarta',
-	'Buda'			:	'Budapest',
-},
-# industrial
-{
-	'Yax Mutal'		:	'Tikal',
-	'Edo'			:	'Toukyou',
-	'Mo&#231;ambique'	:	'Lauren&#231;o Marques',
-	'Constantinopolis'	:	'Istanbul',
-	'Fiorenza'		:	'Firenze',
-	'Dagou'			:	'Gaoxiong',
-	'Ayutthaya'		:	'Bangkok',
-	'York'			:	'Toronto',
-	'Barara'		:	'Addis Ababa',
-},
-# modern
-{
-	'Angora'		:	'Ankara',
-	'Hanseong'		:	'Seoul',
-	'Jehol'			:	'Chengde',
-},
-# future
-{},
-)
-	
-dCommunistNames = {
-	'Caricyn'		:	'Stalingrad',
-	'Sankt-Peterburg'	:	'Leningrad',
-	"Tver'"			:	'Kalinin',
-	'Ekaterinburg'		:	'Sverdlovsk',
-	'Nizhnij Novgorod'	:	'Gorki',
-	'Samara'		:	'Kujbyshev',
-	"Car'grad"		:	"Konstantinopol'",
-	'Bobrujsk'		:	'Stalink',
-	'Vjatka'		:	'Kirov',
-	'Bavly'			:	"Oktjabr'skij",
-	'Sumin'			:	'Sumy',
-	'Sjangan'		:	'Gon Kong',
+	iEgypt:	[iLangEgyptian],
+	iBabylonia: [iLangBabylonian],
+	iHarappa: [iLangIndian],
+	iChina: [iLangChinese],
+	iGreece: [iLangGreek],
+	iIndia: [iLangIndian],
+	iPhoenicia: [iLangPhoenician],
+	iPolynesia: [iLangPolynesian],
+	iPersia: [iLangPersian],
+	iRome: [iLangLatin],
+	iMaya: [iLangMayan, iLangNahuatl],
+	iTamils: [iLangIndian],
+	iEthiopia: [iLangEthiopian],
+	iKorea: [iLangKorean, iLangChinese],
+	iByzantium: [iLangByzantine],
+	iJapan: [iLangJapanese],
+	iVikings: [iLangViking],
+	iTurks: [iLangTurkish, iLangPersian, iLangArabic],
+	iArabia: [iLangArabic],
+	iTibet: [iLangTibetan, iLangChinese],
+	iKhmer: [iLangKhmer, iLangIndonesian],
+	iIndonesia: [iLangIndonesian, iLangKhmer],
+	iMoors: [iLangArabic],
+	iSpain: [iLangSpanish],
+	iFrance: [iLangFrench],
+	iEngland: [iLangEnglish],
+	iHolyRome: [iLangGerman],
+	iRussia: [iLangRussian],
+	iMali: [iLangMande],
+	iPoland: [iLangPolish, iLangRussian], 
+	iPortugal: [iLangPortuguese, iLangSpanish],
+	iInca: [iLangQuechua],
+	iItaly: [iLangItalian],
+	iMongols: [iLangMongolian, iLangTurkish, iLangChinese],
+	iAztecs: [iLangNahuatl],
+	iMughals: [iLangPersian, iLangArabic, iLangIndian],
+	iOttomans: [iLangTurkish, iLangArabic],
+	iThailand: [iLangThai, iLangKhmer, iLangIndonesian],
+	iCongo: [iLangCongolese],
+	iIran: [iLangArabic, iLangPersian],
+	iNetherlands: [iLangDutch],
+	iGermany: [iLangGerman],
+	iAmerica: [iLangAmerican, iLangEnglish],
+	iArgentina: [iLangSpanish],
+	iMexico: [iLangSpanish],
+	iColombia: [iLangSpanish],
+	iBrazil: [iLangPortuguese, iLangSpanish],
+	iCanada: [iLangAmerican, iLangEnglish, iLangFrench],
+	iCelts: [iLangCeltic],
 }
 
-tRenames = (
-#Language: Egyptian
-{
-},
-#Language: Egyptian Arabic
-{
-},
-#Language: Indian
-{
-},
-#Language: Chinese
-{
-},
-#Language: Tibetan
-{
-},
-#Language: Babylonian
-{
-},
-#Language: Persian
-{
-},
-#Language: Greek
-{
-},
-#Language: Phoenician
-{
-},
-#Language: Latin
-{
-},
-#Language: Mayan
-{
-},
-#Language: Japanese
-{
-},
-#Language: Ethiopian
-{
-},
-#Language: Korean
-{
-},
-#Language: Byzantine
-{
-},
-#Language: Viking
-{
-},
-#Language: Arabian
-{
-},
-#Language: Khmer
-{
-},
-#Language: Indonesian
-{
-},
-#Language: Spanish
-{
-},
-#Language: French
-{
-},
-#Language: English
-{
-},
-#Language: German
-{
-},
-#Language: Russian
-{
-},
-#Language: Dutch
-{
-},
-#Language: Malian
-{
-},
-#Language: Polish
-{
-},
-#Language: Portuguese
-{
-},
-#Language: Quechua
-{
-},
-#Language: Italian
-{
-},
-#Language: Mongolian
-{
-},
-#Language: Aztec
-{
-},
-#Language: Turkish
-{
-},
-#Language: Thai
-{
-},
-#Language: Congolese
-{
-},
-#Language: Prussian
-{
-},
-#Language: American
-{
-},
-#Language: Celtic
-{
-},
-#Language: Mexican
-{
-},
-#Language: Polynesian
-{
-},
-#Language: Harappan
-{
-},
-)
+
+### CSV CITY NAME MAP ###
+
+city_names = FileMap("Cities.csv")
+
+
+### TRANSLATION DICTIONARIES ###
+
+dLanguageNames = {
+	iLangAmerican: "American",
+	iLangArabic: "Arabic",
+	iLangBabylonian: "Babylonian",
+	iLangByzantine: "Byzantine",
+	iLangCeltic: "Celtic",
+	iLangChinese: "Chinese",
+	iLangCongolese: "Congolese",
+	iLangDutch: "Dutch",
+	iLangEgyptian: "Egyptian",
+	iLangEgyptianArabic: "EgyptianArabic",
+	iLangEnglish: "English",
+	iLangEthiopian: "Ethiopian",
+	iLangFrench: "French",
+	iLangGerman: "German",
+	iLangGreek: "Greek",
+	iLangIndian: "Indian",
+	iLangIndonesian: "Indonesian",
+	iLangItalian: "Italian",
+	iLangJapanese: "Japanese",
+	iLangKhmer: "Khmer",
+	iLangKorean: "Korean",
+	iLangLatin: "Latin",
+	iLangMande: "Mande",
+	iLangMayan: "Mayan",
+	iLangMongolian: "Mongolian",
+	iLangNahuatl: "Nahuatl",
+	iLangPersian: "Persian",
+	iLangPhoenician: "Phoenician",
+	iLangPolish: "Polish",
+	iLangPolynesian: "Polynesian",
+	iLangPortuguese: "Portuguese",
+	iLangQuechua: "Quechua",
+	iLangRussian: "Russian",
+	iLangSpanish: "Spanish",
+	iLangThai: "Thai",
+	iLangTibetan: "Tibetan",
+	iLangTurkish: "Turkish",
+	iLangViking: "Viking",
+}
+
+dTranslations = dict((iLanguage, FileDict("Translations/%s.csv" % dLanguageNames[iLanguage])) for iLanguage in range(iNumLanguages))
+
+
+### EVENT HANDLERS ###
+
+@handler("cityBuilt")
+def onCityBuilt(city):
+	updateName(city)
+
+
+@handler("cityAcquired")
+def onCityAcquired(iOwner, iNewOwner, city):
+	updateName(city)
 	
+	# how do we handle fallback languages in case the new owner has no translation
+	# and potentially keeps a non-local translation in place
+
+
+@handler("birth")
+def onBirth(iPlayer):
+	# update some colonial to Mexican city names
+	
+	pass
+	
+
+@handler("periodChange")
+def onPeriodChange(iCiv, iPeriod):
+	# Prey Nokor becomes Saigon
+	
+	updateNames(iCiv)
+
+
+@handler("religionSpread")
+def onReligionSpread(iReligion, iPlayer, city):
+	# Yogyakarta changes to Mataram with Islam
+	# Budapest is renamed to Buddhapest with Buddhism
+	
+	updateName(city)
+
+
+@handler("revolution")
+def onRevolution(iPlayer):
+	# civic names are handled by a different function, not persistence
+	
+	updateNames(iPlayer)
+
+
+@handler("greatPersonBorn")
+def onGreatPersonBorn(unit, iPlayer):
+	# Pitic changes to Hermosillo when a great general is born
+	
+	updateNames(iPlayer)
+
+
+
+### MAIN FUNCTIONS ###
+
+def updateNames(identifier):
+	for city in cities.owner(identifier):
+		updateName(city)
+
+
+def updateName(city):
+	if is_minor(city):
+		return
+
+	iCiv = civ(city)
+	name = getName(iCiv, city)
+	
+	if city.getName() != name:
+		city.setName(name, False)
+
+
+def getName(identifier, tile):
+	iCiv = civ(identifier)
+
+	name = city_names[tile]
+	
+	name = data.dChangedCities.get(name, name)
+	name = data.dRenamedCities.get(name, name)
+	
+	name = getCivicRenames(iCiv).get(name, name)
+	
+	name = translateName(iCiv, name)
+	
+	return name
+
+
+def translateName(iCiv, name):
+	for iLanguage in getLanguages(iCiv):
+		if name in dTranslations[iLanguage]:
+			return dTranslations[iLanguage][name]
+		
+		if name in dTranslations[iLanguage].values():
+			return name
+	
+	return name
+
+
+def getLanguages(iCiv):
+	return getSpecialLanguages(iCiv) or dLanguages.get(iCiv)
+
+
+def getSpecialLanguages(iCiv):
+	iPlayer = slot(iCiv)
+	if iPlayer < 0:
+		return None
+	
+	if iCiv == iEgypt:
+		if player(iPlayer).getStateReligion() == iIslam:
+			return [iLangEgyptianArabic, iLangArabian]
+	
+	elif iCiv == iInca:
+		if data.civs[iCiv].iResurrections > 0:
+			return [iLangSpanish]
+	
+	return None
+
+
+def findLocations(name):
+	return plots.all().land().where(lambda p: city_names[p] == name)
+	
+	
+def getCivicRenames(iCiv):
+	iPlayer = slot(iCiv)
+	if iPlayer < 0:
+		return {}
+	
+	return {}
+
+
+def renameCity(oldName, newName):
+	data.dRenamedCities[oldName] = newName
+	
+	# how do we announce when a city name has changed for someone who owns the city
+
+
+def moveCity(oldCity, newCity):
+	data.dChangedCities[oldCity] = newCity
+	
+	# how do we announce when a city has moved for someone who owns the city

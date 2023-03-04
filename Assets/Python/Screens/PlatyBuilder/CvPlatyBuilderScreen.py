@@ -25,25 +25,24 @@ import WBInfoScreen
 import WBTradeScreen
 import CvEventManager
 import Popup
-import CityNameManager as cnm
 import WBStoredDataScreen
 
-from CvPlatyBuilderSettings import *
-
-from Consts import *
-from RFCUtils import *
 import MapEditorTools as met
+import DynamicCivs as dc
+import GreatPeople as gp
+import CityNames as cn
+
 import SettlerMaps
 import WarMaps
 import RegionMap
-import DynamicCivs as dc
-import GreatPeople as gp
+
+from CvPlatyBuilderSettings import *
 
 from Core import *
+from RFCUtils import *
 
 localText = CyTranslator()
 
-gc = CyGlobalContext()
 
 iNumModes = 46
 (iModeOwnership, iModeUnits, iModeBuildings, iModeCity, iModeStartingPlot, iModeAddLandMark, iModePlotData, iModeRiver, iModeImprovements, iModeBonus,
@@ -167,9 +166,9 @@ class CvWorldBuilderScreen:
 					if sVictoryText:
 						sDoCText += "<font=3b>%s</font>" % sVictoryText
 				else:
-					# CNM and settlervalue
+					# city names and settlervalue
 					if x > -1 and y > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
-						sCityName = cnm.getFoundName(iPlayer, (x, y))
+						sCityName = cn.getName(iPlayer, (x, y))
 						sDoCText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == iModeWarMap:
 						iPlotWarValue = self.m_pCurrentPlot.getPlayerWarValue(iPlayer)
@@ -508,7 +507,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == iModeCity:
 			if self.m_pCurrentPlot.isCity(): return
 			pCity = gc.getPlayer(iPlayer).initCity(x, y)
-			sName = cnm.getFoundName(iPlayer, (x, y))
+			sName = cn.getName(iPlayer, (x, y))
 			if sName:
 				pCity.setName(sName, True)
 			if bPython:
@@ -2306,7 +2305,7 @@ class CvWorldBuilderScreen:
 			if pOldCity:
 				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cnm.getFoundName(self.m_iCurrentPlayer, location(self.m_pCurrentPlot))
+				sName = cn.getName(self.m_iCurrentPlayer, self.m_pCurrentPlot)
 				if not sName:
 					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
@@ -2330,7 +2329,7 @@ class CvWorldBuilderScreen:
 			if pOldCity:
 				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				sName = cn.getName(self.m_iCurrentPlayer, (x, y))
 				if sName:
 					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)

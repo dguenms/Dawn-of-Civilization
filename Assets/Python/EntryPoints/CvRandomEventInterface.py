@@ -10,21 +10,14 @@
 # No other modules should import this
 #
 import CvUtil
-from CvPythonExtensions import *
+import CityNames as cn
 
-from Consts import * #Rhye
 from Religions import embraceReformation, tolerateReformation, counterReformation
-import PyHelpers #Leoreth
-import CityNameManager as cnm
-from StoredData import data
-from RFCUtils import *
 
+from RFCUtils import *
 from Core import *
 
-gc = CyGlobalContext()
 localText = CyTranslator()
-localText = CyTranslator()
-
 
 ######## BLESSED SEA ###########
 
@@ -4339,7 +4332,7 @@ def getTradingCompanyConquerors1HelpText(argsList):
 				
 			targetNames.append(city.getName())
 		else:
-			targetNames.append(cnm.getFoundName(iPlayer, location(plot)))
+			targetNames.append(cn.getName(iPlayer, plot))
 	
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
 	sTargetNames = ', '.join(targetNames)

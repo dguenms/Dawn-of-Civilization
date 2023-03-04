@@ -1,5 +1,5 @@
 from Core import *
-from Maps import Map
+from Files import FileMap
 from Events import handler
 
 iNumReligionMapTypes = 5
@@ -13,7 +13,7 @@ def getSpreadFactor(iReligion, plot):
 	return next((iFactor for iFactor, lRegions in tSpreadFactors[iReligion].items() if iRegion in lRegions), iNone)
 	
 def updateRegionMap():
-	for (x, y), iRegion in Map.read("Regions.csv"):
+	for (x, y), iRegion in FileMap.read("Regions.csv"):
 		plot(x, y).setRegionID(iRegion)
 
 	map.recalculateAreas()

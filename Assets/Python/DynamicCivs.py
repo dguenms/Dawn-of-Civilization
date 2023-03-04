@@ -10,7 +10,7 @@ from Events import handler
 from Core import name as short
 from Core import adjective as civAdjective
 
-import CityNameManager as cnm
+import CityNames as cn
 
 
 ### Constants ###
@@ -769,9 +769,11 @@ def desc(iPlayer, sTextKey=str("%s1")):
 def capitalName(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	if capital: 
-		sCapitalName = cnm.getLanguageRename(cnm.iLangEnglish, capital.getName())
-		if sCapitalName: return sCapitalName
-		else: return capital.getName()
+		sCapitalName = cn.translate(iEngland, capital.getName())
+		if sCapitalName: 
+			return sCapitalName
+		
+		return capital.getName()
 	
 	return short(iPlayer)
 	

@@ -1,5 +1,6 @@
 from Core import *
 from Areas import *
+from Maps import *
 
 import Locations
 
@@ -11,84 +12,6 @@ import csv
 
 
 engine = CyEngine()
-
-MAPS_PATH = "Assets/Maps"
-
-
-def getPath(file_name):
-	return "%s\Mods\\RFC Dawn of Civilization\\Assets\\Maps\\%s" % (os.getcwd(), file_name)
-
-
-class Map(object):
-
-	@staticmethod
-	def is_valid_value(value):
-		if value is None:
-			return False
-		
-		if value == "":
-			return False
-		
-		return True
-	
-	@staticmethod
-	def cast_value(value):
-		try:
-			return int(value)
-		except ValueError:
-			return value
-
-	@staticmethod
-	def read(file_path):
-		file = open(getPath(file_path))
-		
-		try:
-			for y, line in enumerate(reversed(list(csv.reader(file)))):
-				for x, value in enumerate(line):
-					if Map.is_valid_value(value):
-						yield (x, y), Map.cast_value(value)
-		except:
-			file.close()
-			raise
-		
-		file.close()
-	
-	@staticmethod
-	def write(rows, file_path):
-		file = open(getPath(file_path), "wb")
-		writer = csv.writer(file)
-		
-		try:
-			for row in reversed(rows):
-				writer.writerow(row)
-		finally:
-			file.close()
-
-	def __init__(self, map_path):
-		self.path = map_path
-		self.map = None
-	
-	def __getitem__(self, (x, y)):
-		if self.map is None:
-			self.load()
-		
-		return self.map[y][x]
-	
-	def __setitem__(self, (x, y), value):
-		self.map[y][x] = value
-	
-	def reset(self):
-		self.map = [[None for x in range(iWorldX)] for y in range(iWorldY)]
-	
-	def load(self):
-		self.reset()
-		
-		for (x, y), value in self.read(self.path):
-			self[x, y] = value
-	
-	def export(self):
-		if self.map is not None:
-			self.write(self.map, "Export/%s" % self.path)
 
 
 ### Generic Landmark Functions ###
