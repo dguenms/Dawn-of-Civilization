@@ -2186,146 +2186,21 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Exploration
 	if (GC.getUnitInfo(eUnit).isFound())
 	{
-		int iCapitalRegion = GET_PLAYER(getOwner()).getCapitalCity()->getRegionID();
+		CvPlot* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity()->plot();
+
+		int iCapitalRegion = GET_PLAYER(getOwnerINLINE()).getCapitalCity()->getRegionID();
 		int iRegion = getRegionID();
 
-		int iCapitalContinent = -1;
-		int iCityContinent = -1;
-
-		switch (iCapitalRegion)
-		{
-			case REGION_BRITAIN:
-			case REGION_IBERIA:
-			case REGION_ITALY:
-			case REGION_BALKANS:
-			case REGION_SCANDINAVIA:
-			case REGION_EUROPE:
-			case REGION_RUSSIA:
-				iCapitalContinent = 0;	// Europe = 0
-				break;
-			case REGION_ANATOLIA:
-			case REGION_MESOPOTAMIA:
-			case REGION_ARABIA:
-			case REGION_EGYPT:
-			case REGION_MAGHREB:
-			case REGION_PERSIA:
-				iCapitalContinent = 1; // Middle East = 1
-				break;
-			case REGION_INDIA:
-			case REGION_DECCAN:
-			case REGION_INDOCHINA:
-			case REGION_INDONESIA:
-			case REGION_CHINA:
-			case REGION_KOREA:
-			case REGION_JAPAN:
-			case REGION_MANCHURIA:
-			case REGION_TIBET:
-			case REGION_CENTRAL_ASIA:
-			case REGION_SIBERIA:
-				iCapitalContinent = 2;	// East Asia = 2
-				break;
-			case REGION_AUSTRALIA:
-			case REGION_OCEANIA:
-				iCapitalContinent = 3;	// Australia = 3
-				break;
-			case REGION_ETHIOPIA:
-			case REGION_WEST_AFRICA:
-			case REGION_SOUTH_AFRICA:
-				iCapitalContinent = 4;	// Africa = 4;
-				break;
-			case REGION_CANADA:
-			case REGION_ALASKA:
-			case REGION_UNITED_STATES:
-			case REGION_CARIBBEAN:
-			case REGION_MESOAMERICA:
-				iCapitalContinent = 5;	// North America = 5
-				break;
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				iCapitalContinent = 6;	// South America = 6
-				break;
-			default:
-				FAssert(false);
-				break;
-		}
-
-		
-		switch (iRegion)
-		{
-			case REGION_BRITAIN:
-			case REGION_IBERIA:
-			case REGION_ITALY:
-			case REGION_BALKANS:
-			case REGION_SCANDINAVIA:
-			case REGION_EUROPE:
-			case REGION_RUSSIA:
-				iCityContinent = 0;	// Europe = 0
-				break;
-			case REGION_ANATOLIA:
-			case REGION_MESOPOTAMIA:
-			case REGION_ARABIA:
-			case REGION_EGYPT:
-			case REGION_MAGHREB:
-			case REGION_PERSIA:
-				iCityContinent = 1; // Middle East = 1
-				break;
-			case REGION_INDIA:
-			case REGION_DECCAN:
-			case REGION_INDOCHINA:
-			case REGION_INDONESIA:
-			case REGION_CHINA:
-			case REGION_KOREA:
-			case REGION_JAPAN:
-			case REGION_MANCHURIA:
-			case REGION_TIBET:
-			case REGION_CENTRAL_ASIA:
-			case REGION_SIBERIA:
-				iCityContinent = 2;	// East Asia = 2
-				break;
-			case REGION_AUSTRALIA:
-			case REGION_OCEANIA:
-				iCityContinent = 3;	// Australia = 3
-				break;
-			case REGION_ETHIOPIA:
-			case REGION_WEST_AFRICA:
-			case REGION_SOUTH_AFRICA:
-				iCityContinent = 4;	// Africa = 4;
-				break;
-			case REGION_CANADA:
-			case REGION_ALASKA:
-			case REGION_UNITED_STATES:
-			case REGION_CARIBBEAN:
-			case REGION_MESOAMERICA:
-				iCityContinent = 5;	// North America = 5
-				break;
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				iCityContinent = 6;	// South America = 6
-				break;
-			default:
-				FAssert(false);
-				break;
-		}
+		int iCapitalContinent = GET_PLAYER(getOwner()).getCapitalCity()->plot()->getContinentID();
+		int iCityContinent = plot()->getContinentID();
 
 		bool bException = false;
 
-		if (iCapitalRegion == REGION_RUSSIA && iRegion == REGION_SIBERIA)
-		{
-			bException = true;
-		}
-		else if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_BALKANS) && (iCityContinent == 0 || iCityContinent == 1))
+		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_BALKANS) && (iCityContinent == 0 || iCityContinent == 1))
 		{
 			bException = true;
 		}
 		else if ((iCapitalRegion == REGION_IBERIA && iRegion == REGION_MAGHREB) || (iCapitalRegion == REGION_MAGHREB && iRegion == REGION_IBERIA))
-		{
-			bException = true;
-		}
-		else if ((iCapitalRegion == REGION_CENTRAL_ASIA && iRegion == REGION_PERSIA) || (iCapitalRegion == REGION_PERSIA && iRegion == REGION_CENTRAL_ASIA))
 		{
 			bException = true;
 		}
@@ -5145,235 +5020,237 @@ ArtStyleTypes CvCity::getArtStyleType() const
 	return m_eArtStyle;
 }
 
+int CvCity::determineArtStyleType() const
+{
+	PlayerTypes eHighestCulture = findHighestCulture(true);
+
+	if (eHighestCulture == NO_PLAYER)
+	{
+		eHighestCulture = getOwnerINLINE();
+	}
+
+	CvPlayer& kHighestCulturePlayer = GET_PLAYER(eHighestCulture);
+	CivilizationTypes eHighestCultureCiv = kHighestCulturePlayer.getCivilizationType();
+
+	int eRegion = getRegionID();
+	int eRegionGroup = getRegionGroup();
+
+	if (kHighestCulturePlayer.isNative())
+	{
+		switch (eRegion)
+		{
+		case REGION_ARIDOAMERICA:
+		case REGION_MESOAMERICA:
+		case REGION_CENTRAL_AMERICA:
+		case REGION_CARIBBEAN:
+			return GC.getCivilizationInfo(AZTECS).getArtStyleType();
+		}
+
+		if (eRegionGroup == REGION_GROUP_NORTH_AMERICA)
+		{
+			return GC.getCivilizationInfo(NATIVE_AMERICANS).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_SOUTH_AMERICA)
+		{
+			return GC.getCivilizationInfo(INCA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_SUB_SAHARAN_AFRICA)
+		{
+			return GC.getCivilizationInfo(CONGO).getArtStyleType();
+		}
+	}
+	else if (kHighestCulturePlayer.isIndependent() || kHighestCulturePlayer.isBarbarian() || (eHighestCultureCiv == MONGOLS && !isOriginalOwner(eHighestCulture)))
+	{
+		switch (eRegion)
+		{
+		case REGION_BRITAIN:
+		case REGION_IRELAND:
+			return GC.getCivilizationInfo(ENGLAND).getArtStyleType();
+		case REGION_ARIDOAMERICA:
+		case REGION_MESOAMERICA:
+		case REGION_CARIBBEAN:
+		case REGION_CENTRAL_AMERICA:
+			if (eHighestCultureCiv == AZTECS || eHighestCultureCiv == MAYA)
+			{
+				return GC.getCivilizationInfo(eHighestCultureCiv).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(SPAIN).getArtStyleType();
+		case REGION_FRANCE:
+		case REGION_QUEBEC:
+		case REGION_LOWER_GERMANY:
+		case REGION_CENTRAL_EUROPE:
+		case REGION_POLAND:
+			return GC.getCivilizationInfo(FRANCE).getArtStyleType();
+		case REGION_IBERIA:
+		case REGION_CALIFORNIA:
+			return GC.getCivilizationInfo(SPAIN).getArtStyleType();
+		case REGION_ITALY:
+		case REGION_BALKANS:
+		case REGION_GREECE:
+			return GC.getCivilizationInfo(ROME).getArtStyleType();
+		case REGION_BALTICS:
+		case REGION_SCANDINAVIA:
+			return GC.getCivilizationInfo(VIKINGS).getArtStyleType();
+		case REGION_RUTHENIA:
+		case REGION_EUROPEAN_ARCTIC:
+		case REGION_URALS:
+		case REGION_SIBERIA:
+			return GC.getCivilizationInfo(RUSSIA).getArtStyleType();
+		case REGION_MAGHREB:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(ROME).getArtStyleType();
+		case REGION_ANATOLIA:
+		case REGION_CAUCASUS:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(PERSIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(ROME).getArtStyleType();
+		case REGION_LEVANT:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(CARTHAGE).getArtStyleType();
+		case REGION_MESOPOTAMIA:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(BABYLONIA).getArtStyleType();
+		case REGION_ARABIA:
+			return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+		case REGION_EGYPT:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			else if (GET_PLAYER(eHighestCulture).getCurrentEra() == ERA_ANCIENT)
+			{
+				return GC.getCivilizationInfo(EGYPT).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(ROME).getArtStyleType();
+		case REGION_NUBIA:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			else if (GET_PLAYER(eHighestCulture).getCurrentEra() == ERA_ANCIENT)
+			{
+				return GC.getCivilizationInfo(EGYPT).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(CONGO).getArtStyleType();
+		case REGION_PERSIA:
+		case REGION_KHORASAN:
+		case REGION_TRANSOXIANA:
+			return GC.getCivilizationInfo(PERSIA).getArtStyleType();
+		case REGION_HORN_OF_AFRICA:
+		case REGION_SWAHILI_COAST:
+		case REGION_SAHEL:
+		case REGION_SAHARA:
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(CONGO).getArtStyleType();
+		case REGION_INDOCHINA:
+		case REGION_INDONESIA:
+			return GC.getCivilizationInfo(KHMER).getArtStyleType();
+		case REGION_PHILIPPINES:
+			if (isHasReligion(CATHOLICISM))
+			{
+				return GC.getCivilizationInfo(SPAIN).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(KHMER).getArtStyleType();
+		case REGION_SOUTH_CHINA:
+		case REGION_NORTH_CHINA:
+		case REGION_TARIM_BASIN:
+		case REGION_TIBET:
+		case REGION_KOREA:
+			return GC.getCivilizationInfo(CHINA).getArtStyleType();
+		case REGION_JAPAN:
+			return GC.getCivilizationInfo(JAPAN).getArtStyleType();
+		case REGION_MONGOLIA:
+		case REGION_MANCHURIA:
+		case REGION_AMUR:
+		case REGION_CENTRAL_ASIAN_STEPPE:
+		case REGION_PONTIC_STEPPE:
+			return GC.getCivilizationInfo(MONGOLS).getArtStyleType();
+		}
+		
+		if (eRegionGroup == REGION_GROUP_NORTH_AMERICA)
+		{
+			return GC.getCivilizationInfo(AMERICA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_SOUTH_AMERICA)
+		{
+			return GC.getCivilizationInfo(INCA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_EUROPE)
+		{
+			return GC.getCivilizationInfo(FRANCE).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_MIDDLE_EAST)
+		{
+			return GC.getCivilizationInfo(PERSIA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_NORTH_AFRICA)
+		{
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(ARABIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(ROME).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_SUB_SAHARAN_AFRICA)
+		{
+			return GC.getCivilizationInfo(CONGO).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_SOUTH_ASIA)
+		{
+			if (isHasReligion(ISLAM))
+			{
+				return GC.getCivilizationInfo(PERSIA).getArtStyleType();
+			}
+			return GC.getCivilizationInfo(INDIA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_NORTH_ASIA)
+		{
+			return GC.getCivilizationInfo(MONGOLS).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_EAST_ASIA)
+		{
+			return GC.getCivilizationInfo(CHINA).getArtStyleType();
+		}
+		else if (eRegionGroup == REGION_GROUP_OCEANIA)
+		{
+			return GC.getCivilizationInfo(POLYNESIA).getArtStyleType();
+		}
+	}
+	else if (eHighestCultureCiv == MONGOLS)
+	{
+		if (getPopulation() >= 5)
+		{
+			return GC.getCivilizationInfo(CHINA).getArtStyleType();
+		}
+	}
+	else if (eHighestCultureCiv == AZTECS || eHighestCultureCiv == MAYA || eHighestCultureCiv == INCA)
+	{
+		if (isHasReligion(CATHOLICISM))
+		{
+			return GC.getCivilizationInfo(SPAIN).getArtStyleType();
+		}
+	}
+
+	return GC.getCivilizationInfo(eHighestCultureCiv).getArtStyleType();
+}
+
 void CvCity::updateArtStyleType()
 {
-	bool bECS = (GC.getDefineINT("ETHNIC_CITY_STYLES") == 1);
-	PlayerTypes eHighestCulture = findHighestCulture(true);
-	if (eHighestCulture == NO_PLAYER) eHighestCulture = getOwnerINLINE();
-	int id = getRegionID();
-
-	ArtStyleTypes eNewArtStyle = GET_PLAYER(eHighestCulture).getArtStyleType();
-	CivilizationTypes eHighestCultureCiv = GET_PLAYER(eHighestCulture).getCivilizationType();
-
-	if (bECS)
-	{
-		if (GET_PLAYER(eHighestCulture).isNative())
-		{
-			switch (id)
-			{
-			case REGION_ALASKA:
-			case REGION_CANADA:
-			case REGION_UNITED_STATES:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_NATIVE_AMERICA;
-				break;
-			case REGION_MESOAMERICA:
-			case REGION_CARIBBEAN:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
-				break;
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_SOUTH_AMERICA;
-				break;
-			case REGION_ETHIOPIA:
-			case REGION_WEST_AFRICA:
-			case REGION_SOUTH_AFRICA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_AFRICA;
-				break;
-			default:
-				break;
-			}
-		}
-		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian() || (eHighestCultureCiv == MONGOLS && !isOriginalOwner(eHighestCulture)))
-		{
-			switch (id)
-			{
-			case REGION_ALASKA:
-			case REGION_CANADA:
-			case REGION_UNITED_STATES:
-			case REGION_BRITAIN:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_ANGLO_AMERICA;
-				break;
-			case REGION_MESOAMERICA:
-			case REGION_CARIBBEAN:
-				if (eHighestCultureCiv == AZTECS || eHighestCultureCiv == MAYA) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
-				break;
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				if (eHighestCultureCiv == INCA) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_SOUTH_AMERICA;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
-				break;
-			case REGION_ETHIOPIA:
-			case REGION_WEST_AFRICA:
-			case REGION_SOUTH_AFRICA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_AFRICA;
-				break;
-			case REGION_IBERIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
-				break;
-			case REGION_ITALY:
-			case REGION_BALKANS:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
-				break;
-			case REGION_MAGHREB:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_ARABIA;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
-				break;
-			case REGION_ANATOLIA:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_CRESCENT;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
-				break;
-			case REGION_EUROPE:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_EUROPE;
-				break;
-			case REGION_SCANDINAVIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_NORSE;
-				break;
-			case REGION_RUSSIA:
-			case REGION_SIBERIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_RUSSIA;
-				break;
-			case REGION_ARABIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_ARABIA;
-				break;
-			case REGION_EGYPT:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_ARABIA;
-				else if (GET_PLAYER(eHighestCulture).getCurrentEra() == ERA_ANCIENT) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_EGYPT;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
-				break;
-			case REGION_INDIA:
-			case REGION_DECCAN:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_CRESCENT;
-				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_INDIA;
-				break;
-			case REGION_INDOCHINA:
-			case REGION_INDONESIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_SOUTH_EAST_ASIA;
-				break;
-			case REGION_CHINA:
-			case REGION_MANCHURIA:
-			case REGION_TIBET:
-			case REGION_KOREA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_ASIA;
-				break;
-			case REGION_JAPAN:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_JAPAN;
-				break;
-			case REGION_CENTRAL_ASIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_MONGOLIA;
-				break;
-			case REGION_AUSTRALIA:
-			case REGION_OCEANIA:
-				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_SOUTH_PACIFIC;
-				break;
-			default:
-				break;
-			}
-		}
-		else if (eHighestCultureCiv == MONGOLS)
-		{
-			if (getPopulation() >= 5) eNewArtStyle = (ArtStyleTypes)GC.getCivilizationInfo(CHINA).getArtStyleType();
-		}
-		else if (eHighestCultureCiv == AZTECS || eHighestCultureCiv == MAYA || eHighestCultureCiv == INCA)
-		{
-			if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
-		}
-	}
-	else
-	{
-		if (GET_PLAYER(eHighestCulture).isNative())
-		{
-			switch (id)
-			{
-			case REGION_ALASKA:
-			case REGION_CANADA:
-			case REGION_UNITED_STATES:
-			case REGION_MESOAMERICA:
-			case REGION_CARIBBEAN:
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				eNewArtStyle = ARTSTYLE_SOUTH_AMERICA_OLD;
-				break;
-			default:
-				eNewArtStyle = ARTSTYLE_AFRICAN;
-				break;
-			}
-		}
-		else if (GET_PLAYER(eHighestCulture).isIndependent() || GET_PLAYER(eHighestCulture).isBarbarian())
-		{
-			switch (id)
-			{
-			case REGION_BRITAIN:
-			case REGION_EUROPE:
-			case REGION_SCANDINAVIA:
-			case REGION_RUSSIA:
-			case REGION_SIBERIA:
-			case REGION_AUSTRALIA:
-			case REGION_CANADA:
-			case REGION_ALASKA:
-			case REGION_UNITED_STATES:
-				eNewArtStyle = ARTSTYLE_EUROPEAN;
-				break;
-			case REGION_ITALY:
-				if (GET_PLAYER(eHighestCulture).getCurrentEra() >= ERA_MEDIEVAL) eNewArtStyle = ARTSTYLE_EUROPEAN;
-				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
-				break;
-			case REGION_IBERIA:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
-				else if (GET_PLAYER(eHighestCulture).getCurrentEra() >= ERA_MEDIEVAL) eNewArtStyle = ARTSTYLE_EUROPEAN;
-				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
-				break;
-			case REGION_ANATOLIA:
-			case REGION_MAGHREB:
-				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
-				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
-				break;
-			case REGION_MESOPOTAMIA:
-			case REGION_ARABIA:
-			case REGION_EGYPT:
-			case REGION_PERSIA:
-			case REGION_INDIA:
-			case REGION_DECCAN:
-				eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
-				break;
-			case REGION_INDOCHINA:
-			case REGION_INDONESIA:
-			case REGION_CHINA:
-			case REGION_KOREA:
-			case REGION_JAPAN:
-			case REGION_MANCHURIA:
-			case REGION_TIBET:
-			case REGION_CENTRAL_ASIA:
-				eNewArtStyle = ARTSTYLE_ASIAN;
-				break;
-			case REGION_OCEANIA:
-				eNewArtStyle = ARTSTYLE_BARBARIAN_OLD;
-				break;
-			case REGION_ETHIOPIA:
-			case REGION_WEST_AFRICA:
-			case REGION_SOUTH_AFRICA:
-				eNewArtStyle = ARTSTYLE_AFRICAN;
-				break;
-			case REGION_CARIBBEAN:
-			case REGION_MESOAMERICA:
-			case REGION_BRAZIL:
-			case REGION_ARGENTINA:
-			case REGION_PERU:
-			case REGION_COLOMBIA:
-				if (isHasReligion((ReligionTypes)CATHOLICISM) || isHasReligion((ReligionTypes)PROTESTANTISM)) eNewArtStyle = ARTSTYLE_EUROPEAN;
-				else eNewArtStyle = ARTSTYLE_SOUTH_AMERICA_OLD;
-				break;
-			default:
-				break;
-			}
-		}
-	}
+	ArtStyleTypes eNewArtStyle = (ArtStyleTypes)determineArtStyleType();
 
 	if (m_eArtStyle != eNewArtStyle)
 	{
@@ -18181,12 +18058,6 @@ int CvCity::getRegionID() const
 	return plot()->getRegionID();
 }
 
-//Leoreth: to protect Middle Eastern cities from repeated invasions
-bool CvCity::isMiddleEast() const
-{
-	return (getRegionID() == REGION_PERSIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_ANATOLIA || (getX_INLINE() == 68 && getY_INLINE() == 45));
-}
-
 int CvCity::getSpecialistGoodHappiness() const
 {
 	return m_iSpecialistGoodHappiness;
@@ -19747,4 +19618,9 @@ bool CvCity::rebuild()
 	}
 
 	return bBuilt;
+}
+
+int CvCity::getRegionGroup() const
+{
+	return plot()->getRegionGroup();
 }

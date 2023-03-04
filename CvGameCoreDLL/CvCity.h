@@ -249,6 +249,7 @@ public:
 	void setID(int iID);
 
 	int getRegionID() const;
+	int getRegionGroup() const;
 
 	DllExport int getX() const;																			// Exposed to Python
 #ifdef _USRDLL
@@ -1067,7 +1068,6 @@ public:
 	bool isAutoRaze() const;
 
 	//Leoreth
-	bool isMiddleEast() const;
 	int getSpecialistGoodHappiness() const;
 	int getSpecialistBadHappiness() const;
 	void changeSpecialistGoodHappiness(int iChange);
@@ -1092,6 +1092,7 @@ public:
 	int getEffectiveNextCoveredPlot() const;
 	bool isCoveredBeforeExpansion(int i) const;
 	void updateGreatWall();
+	int determineArtStyleType() const;
 	void updateArtStyleType();
 	int getDistanceTradeModifier(CvCity* pOtherCity) const;
 	int getCapitalTradeModifier(CvCity* pOtherCity) const;
