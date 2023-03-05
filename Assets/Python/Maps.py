@@ -1,6 +1,9 @@
+# coding: utf-8
+
 from Core import *
 from Areas import *
-from Maps import *
+from Files import *
+from CityNames import *
 
 import Locations
 
@@ -17,7 +20,7 @@ engine = CyEngine()
 ### Generic Landmark Functions ###
 
 def createLandmark(tile, label):
-	engine.addLandmark(plot(tile), label.encode("latin-1"))
+	engine.addLandmark(plot(tile), label.encode("latin-1", "xmlcharrefreplace"))
 
 
 def createLandmarks(dLandmarks):
@@ -62,6 +65,10 @@ def exportLandmarks():
 			file.write(content)
 	finally:
 		file.close()
+
+
+def exportCityNames():
+	city_names.export()
 
 
 def getCorners(area):
@@ -131,7 +138,7 @@ def exportBaseTerrain():
 
 
 def validateCityNames():
-	for (x, y), name in Map.read("Cities.csv"):
+	for (x, y), name in FileMap.read("Cities.csv"):
 		if name.startswith(" ") or name.endswith(" "):
 			print "Trailing whitespace: '%s'" % name
 		
@@ -142,12 +149,20 @@ def validateCityNames():
 
 
 def markUnnamedTiles():
-	for (x, y), name in Map.read("Cities.csv"):
+	for (x, y), name in FileMap.read("Cities.csv"):
 		p = plot(x, y)
 		
 		if name == "?":
 			if player(0).canFound(x, y):
 				createLandmark((x, y), "Unnamed")
+
+
+def markCityNames():
+	for (x, y), name in FileMap.read("Cities.csv"):
+		if name in ["^", "?"]:
+			continue
+		
+		createLandmark((x, y), name)
 				
 		
 ### Specific marker functions ###
