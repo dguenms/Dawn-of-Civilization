@@ -52,7 +52,7 @@ def getLandmarks():
 	for iSign in range(engine.getNumSigns()):
 		sign = engine.getSignByIndex(iSign)
 		if sign.getPlayerType() == -1:
-			yield sign.getPlot(), sign.getCaption().encode("latin-1")
+			yield sign.getPlot(), sign.getCaption()
 
 
 def exportLandmarks():
@@ -68,6 +68,7 @@ def exportLandmarks():
 
 
 def exportCityNames():
+	city_names.update(((location(p), name) for p, name in getLandmarks()))
 	city_names.export()
 
 
@@ -149,7 +150,7 @@ def validateCityNames():
 
 
 def markUnnamedTiles():
-	for (x, y), name in FileMap.read("Cities.csv"):
+	for (x, y), name in city_names:
 		p = plot(x, y)
 		
 		if name == "?":
@@ -158,7 +159,7 @@ def markUnnamedTiles():
 
 
 def markCityNames():
-	for (x, y), name in FileMap.read("Cities.csv"):
+	for (x, y), name in city_names:
 		if name in ["^", "?"]:
 			continue
 		
