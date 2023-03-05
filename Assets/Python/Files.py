@@ -1,13 +1,39 @@
 from Core import *
 
+from itertools import chain
+
 import os
 import csv
+import cStringIO
 
 MAPS_PATH = "Assets/Maps"
 
 
 def getPath(file_name):
 	return "%s\Mods\\RFC Dawn of Civilization\\Assets\\Maps\\%s" % (os.getcwd(), file_name)
+
+
+class UnicodeWriter:
+    """
+    A CSV writer which will write rows to CSV file "f",
+    which is encoded in the given encoding.
+    """
+
+    def __init__(self, f, dialect=csv.excel, encoding="utf-8", **kwds):
+        self.queue = cStringIO.StringIO()
+        self.writer = csv.writer(self.queue, dialect=dialect, **kwds)
+        self.stream = f
+
+    def writerow(self, row):
+        self.writer.writerow([s.encode("utf-8") for s in row])
+        data = self.queue.getvalue()
+        data = data.decode("utf-8").encode("utf-8")
+        self.stream.write(data)
+        self.queue.truncate(0)
+
+    def writerows(self, rows):
+        for row in rows:
+            self.writerow(row)
 
 
 class FileMap(object):
@@ -23,11 +49,11 @@ class FileMap(object):
 		return True
 	
 	@staticmethod
-	def cast_value(value):
+	def parse(value):
 		try:
 			return int(value)
 		except ValueError:
-			return value
+			return value.decode("utf8")
 
 	@classmethod
 	def read(cls, file_path):
@@ -37,7 +63,7 @@ class FileMap(object):
 			for y, line in enumerate(reversed(list(csv.reader(file)))):
 				for x, value in enumerate(line):
 					if cls.is_valid_value(value):
-						yield (x, y), cls.cast_value(value)
+						yield (x, y), cls.parse(value)
 		except:
 			file.close()
 			raise
@@ -47,10 +73,11 @@ class FileMap(object):
 	@staticmethod
 	def write(rows, file_path):
 		file = open(getPath(file_path), "wb")
-		writer = csv.writer(file)
+		writer = UnicodeWriter(file)
 		
 		try:
 			for row in reversed(rows):
+				row = [cell and cell or u"" for cell in row]
 				writer.writerow(row)
 		finally:
 			file.close()
@@ -88,8 +115,10 @@ class FileMap(object):
 		self.create(chain(iter(self), iter(other)))
 	
 	def export(self):
-		if self.map is not None:
-			self.write(self.map, "Export/%s" % self.path)
+		if self.map is None:
+			self.load()
+		
+		self.write(self.map, "Export/%s" % self.path)
 
 
 class FileDict(object):
