@@ -112,6 +112,19 @@ def exportPlotList():
 		file.close()
 
 
+def exportCSV():
+	area = worldBuilder.TempInfo[:]
+	if not area:
+		return
+	
+	map = FileMap("ExportedArea.csv")
+	
+	values = [(location(p), str(value)) for p, value in FileMap.read("Export/BaseMap.csv")] + [(tile, "1") for tile in area]
+	
+	map.update(values)
+	map.export()
+
+
 def importArea(area):
 	worldBuilder.TempInfo = [location(p) for p in area]
 	worldBuilder.showAreaExportOverlay()
@@ -122,31 +135,35 @@ def importRectangle(tCorners):
 
 
 def exportBaseTerrain():
-	map = Map("BaseTerrain.csv")
-	map.reset()
-	
-	for p in plots.all():
-		x, y = location(p)
-	
+	map = FileMap("BaseTerrain.csv")
+
+	def terrain(p):
 		if p.isWater():
-			map[x, y] = 0
-		elif p.isPeak():
-			map[x, y] = 2
+			return 1
+		elif p.Peak():
+			return 2
 		else:
-			map[x, y] = 1
+			return 0
 	
+	values = [(location(p), terrain(p)) for p in plots.all()]
+	
+	map.update(values)
 	map.export()
+	
 
-
-def validateCityNames():
-	for (x, y), name in FileMap.read("Cities.csv"):
-		if name.startswith(" ") or name.endswith(" "):
-			print "Trailing whitespace: '%s'" % name
-		
-		try:
-			name.decode("utf-8").encode("latin-1")
-		except:
-			print "Unsupported characters: '%s'" % name
+def exportBaseSettlerMap():
+	map = FileMap("BaseMap.csv")
+	
+	def terrain(p):
+		if p.isWater():
+			return ""
+		else:
+			return "0"
+	
+	values = [(location(p), terrain(p)) for p in plots.all()]
+	
+	map.update(values)
+	map.export()
 
 
 def markUnnamedTiles():

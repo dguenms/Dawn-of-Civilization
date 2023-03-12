@@ -1,10 +1,6 @@
 from Core import *
 from RFCUtils import *
 
-from SettlerMaps import getMap as getSettlerMap
-from WarMaps import getMap as getWarMap
-from Logging import time
-
 
 def findSlot(iCiv):
 	iSlot = next(iSlot for iSlot in range(iNumPlayers) if civ(iSlot) == iCiv)

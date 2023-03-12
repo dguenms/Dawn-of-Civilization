@@ -57,7 +57,10 @@ class FileMap(object):
 
 	@classmethod
 	def read(cls, file_path):
-		file = open(getPath(file_path))
+		try:
+			file = open(getPath(file_path))
+		except IOError:
+			return
 		
 		try:
 			for y, line in enumerate(reversed(list(csv.reader(file)))):
@@ -125,7 +128,10 @@ class FileDict(object):
 
 	@staticmethod
 	def read(file_path):
-		file = open(getPath(file_path))
+		try:
+			file = open(getPath(file_path))
+		except IOError:
+			return
 		
 		try:
 			for line in csv.reader(file):
