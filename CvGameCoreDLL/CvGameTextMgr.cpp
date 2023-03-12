@@ -4573,7 +4573,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        {
 				int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlerValue(pPlot->getX(), pPlot->getY());
 	            
-				if (iSettlerValue >= 90)
+				if (iSettlerValue >= 1)
                 {
                     if (bForeignCore)
                     {

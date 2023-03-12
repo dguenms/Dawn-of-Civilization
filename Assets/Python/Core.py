@@ -32,6 +32,10 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+def civ_name(iCiv):
+	return infos.civ(iCiv).getShortDescription(0).replace(" ", "_")
+
+
 def getArea(area):
 	if isinstance(area, (CyPlot, CyCity)):
 		return area.getArea()
