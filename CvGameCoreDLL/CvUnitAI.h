@@ -163,7 +163,6 @@ protected:
 	bool AI_pillage(int iBonusValueThreshold = 0);
 	bool AI_pillageRange(int iRange, int iBonusValueThreshold = 0);
 	bool AI_found();
-	bool AI_found_map(int modifier); //Rhye
 	bool AI_foundRange(int iRange, bool bFollow = false);
 	bool AI_assaultSeaTransport(bool bBarbarian = false);
 	bool AI_settlerSeaTransport();

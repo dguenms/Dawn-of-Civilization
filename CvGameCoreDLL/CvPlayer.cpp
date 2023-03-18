@@ -18382,73 +18382,6 @@ void CvPlayer::setPbemNewTurn(bool bNew)
 }
 
 
-//Rhye - start
-
-int CvPlayer::verifySettlersHalt(int threshold)
-{
-	CvPlot* pLoopPlot;
-	int iI, iJ;
-	int count = 0;
-	int countRevealed = 0;
-
-
-	for (iI = 0; iI < EARTH_X; iI++)
-	{
-		for (iJ = 0; iJ < EARTH_Y; iJ++)
-		{
-			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
-
-			if (pLoopPlot != NULL)
-			{
-				if (canFound(iI, iJ))
-				{
-					if (!(pLoopPlot->isOwned()))
-					{
-						if (pLoopPlot->getSettlerValue(getID()) >= threshold)
-						{
-							count++;
-
-							if (pLoopPlot->isRevealed(getTeam(), false))
-							{
-								countRevealed++;
-								return countRevealed; //This shouldn't be here,
-								                      //but as in CvCityAI::AI_bestUnit() we use the return value as a bool,
-													  //and as this function isn't used elsewhere, it can be stopped to save time
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	return countRevealed;
-}
-
-
-int CvPlayer::getSettlerValue(int x, int y)
-{
-	return GC.getMap().plot(x, y)->getSettlerValue(getID());
-}
-
-// Leoreth - return civic preference, see CvRhyes
-/*int CvPlayer::getCivicPreference(int column)
-{
-    FAssertMsg(column < 5, "Illegal civic option type");
-    FAssertMsg(column >= 0, "Illegal civic option type");
-
-    int iResult = civicMatrix[getID()][getCurrentEra()][column];
-
-    if (iResult == -1)
-    {
-        return iResult;
-    }
-    else
-    {
-        return iResult + 5*column;
-    }
-}*/
-
-
 void CvPlayer::setFlag(CvWString s)
 {
 	GC.getInitCore().setFlagDecal( getID(), s );
@@ -18474,17 +18407,6 @@ LeaderHeadTypes CvPlayer::getLeader()
 	return GC.getInitCore().getLeader((PlayerTypes)getID());
 }
 
-//Rhye - end
-
-//Rhye - start (by jDog - for Warlords!)
-void CvPlayer::resetRelations( PlayerTypes ePlayer )
-{
-	//logMsg("resetting player AI relations");
-
-	FAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
-	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
-
-}
 
 void CvPlayer::reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset )
 {
@@ -24408,11 +24330,6 @@ bool CvPlayer::hasSpaceshipArrived() const
 	}
 
 	return false;
-}
-
-int CvPlayer::getWarValue(int x, int y)
-{
-	return GC.getMap().plot(x, y)->getWarValue(getID());
 }
 
 bool CvPlayer::isHasBuilding(BuildingTypes eIndex) const

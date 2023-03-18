@@ -83,8 +83,6 @@ int cyGetTurnYearForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eC
 int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
 // edead: end
 
-int cyGetSettlerValue(int iPlayer, int x, int y);
-
 void cyLog(std::string logfile, std::string message);
 
 void cySetDirty(int iDirtyBit, bool bNewValue);

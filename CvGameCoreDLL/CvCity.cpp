@@ -17861,7 +17861,7 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					{
 						iValue *= 3;
 					}
-					else if (plot()->getSettlerValue(getOwner()) > 90)
+					else if (plot()->getSettlerValue(getOwner()) > 0)
 					{
 						iValue *= 2;
 					}

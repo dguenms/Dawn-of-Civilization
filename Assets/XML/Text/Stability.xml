@@ -1026,6 +1026,14 @@
 		<Spanish>Historical Area</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CONQUEST_AREA</Tag>
+		<English>Conquest Area</English>
+		<French>Conquest Area</French>
+		<German>Conquest Area</German>
+		<Italian>Conquest Area</Italian>
+		<Spanish>Conquest Area</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_IMMOBILIZED_UNITS</Tag>
 		<English>Due to the military crisis, we have temporarily lost control over our units!</English>
 		<French>&#192; cause de la crise militaire, nous avons temporairement perdu le contr&#244;le de nos unit&#233;s militaires !</French>

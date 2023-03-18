@@ -2652,7 +2652,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 			CvWString szCity = gDLL->getText("TXT_KEY_CITY_LIBERATE", pLoopCity->getNameKey(), GET_PLAYER(eLiberationPlayer).getCivilizationShortDescription()); //Rhye
 			gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szCity, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION")->getPath(), -pLoopCity->getID(), WIDGET_GENERAL);
 		}
-		else if (pLoopCity->plot()->getSettlerValue(ePlayer) < 90)
+		else if (pLoopCity->plot()->getSettlerValue(ePlayer) == 0)
 		{
 			bool bFound = false;
 			for (int iI = 0; iI < NUM_CIVS; iI++)

@@ -330,7 +330,6 @@ public:
 	void AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int iOuterRadius) const;
 	
 	void AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) const;
-	int AI_browseStep(int iMinFoundValueThreshold, int iBestFoundValue, CvPlot* pBestFoundPlot, int iModifier); //Rhye
 	void AI_invalidateCitySites(int iMinFoundValueThreshold) const;
 	bool AI_isPlotCitySite(CvPlot* pPlot) const;
 	int AI_getNumAreaCitySites(int iAreaID, int& iBestValue) const;

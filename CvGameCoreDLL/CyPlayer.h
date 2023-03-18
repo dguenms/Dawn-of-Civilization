@@ -552,8 +552,6 @@ public:
 	void setStabilityParameter(int eParameter, int iNewValue);
 	int countRequiredSlaves();
 	void setEspionageExperience(int iNewValue);
-	int getSettlerValue(int x, int y);
-	int getWarValue(int x, int y);
 	int getModifier(int eModifierType);
 	void setModifier(int eModifierType, int iNewValue);
 	int getTechPreference(int eTech);

@@ -1842,48 +1842,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
     int tempX = pPlot->getX_INLINE();
 	int tempY = pPlot->getY_INLINE();
 
-    int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
+	int iSettlerMapValue = pPlot->getSettlerValue(getID());
 
 	if (!canFound(iX, iY))
 	{
 		return 0;
-	}
-
-	//Leoreth: prevent France from founding Metz
-	if (iX == 57 && iY == 50)
-	{
-		return 0;
-	}
-
-	//Leoreth: prevent HRE from founding Bremen
-	if (iX == 58 && iY == 53)
-	{
-		return 0;
-	}
-
-	if (iX == 62 && (iY == 51 || iY == 52 || iY == 54))
-	{
-		return 0;
-	}
-
-	//Leoreth: if Poland exists, prevent HRE from founding cities in its core
-	if (getCivilizationType() == HOLY_ROME)
-	{
-	    if (iX >= 63 && iY >= 49)
-	    {
-			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
-				{
-					continue;
-				}
-
-				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == POLAND && GET_PLAYER((PlayerTypes)iI).isPlayable())
-				{
-					return 0;
-				}
-			}
-	    }
 	}
 
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
@@ -1966,7 +1929,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 				if (pLoopPlot != NULL)
 				{
-					if (pLoopPlot->plotCheck(PUF_isOtherTeam, getID()) != NULL && iSettlerMapValue < 800)
+					if (pLoopPlot->plotCheck(PUF_isOtherTeam, getID()) != NULL && iSettlerMapValue < 10)
 					{
 						return 0;
 					}
@@ -2012,16 +1975,10 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
         }
 	}
 
-	//Rhye - start
-	/*if (iOwnedTiles > (NUM_CITY_PLOTS / 3))
-	{
-		return 0;
-	}*/
-	if (iOwnedTiles > (NUM_CITY_PLOTS *2/3) && iSettlerMapValue < 800) //+1?
+	if (iOwnedTiles > 14 && iSettlerMapValue < 10)
 	{
 		return 0;
 	}
-	//Rhye - end
 
 	iBadTile = 0;
 
@@ -2405,18 +2362,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iValue += std::max(0, iResourceValue);
 
-	//Rhye - start
 	/*if (iTakenTiles > (NUM_CITY_PLOTS / 3) && iResourceValue < 250)
 	{
 		return 0;
 	}*/
-	if (iTakenTiles > (NUM_CITY_PLOTS *2/3) && iResourceValue < 250 && iSettlerMapValue < 800)
-	{
-		return 0;
-	}
-	//Rhye - end
-
-	if (iTakenTiles > AI_getTakenTilesThreshold())
+	if (iTakenTiles > 14 && iResourceValue < 250 && iSettlerMapValue < 10)
 	{
 		return 0;
 	}
@@ -2425,7 +2375,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		return 0;
 	}*/
-	if (iTeammateTakenTiles > (NUM_CITY_PLOTS *2/3) && iSettlerMapValue < 800)
+	if (iTeammateTakenTiles > 14 && iSettlerMapValue < 10)
 	{
 		return 0;
 	}
@@ -2737,7 +2687,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS)) {
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS)) 
+	{
 		iTeamAreaCities = GET_TEAM(getTeam()).countNumCitiesByArea(pArea);
 		if (iTeamAreaCities == 0) {
 			switch (getCivilizationType())
@@ -2761,15 +2712,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			default:
 				break;
 			}
-		}
-	}
-
-	// Leoreth: more English settlements in North America
-	if (getCivilizationType() == ENGLAND)
-	{
-		if (pArea->getID() == GC.getMap().plot(27, 46)->getArea()) // Washington tile
-		{
-			iValue *= 2;
 		}
 	}
 
@@ -2815,7 +2757,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}
 
 	iValue /= (std::max(0, (iBadTile - (NUM_CITY_PLOTS / 4))) + 3);
-	if (!(iX >= 67 && iX <= 70 && iY >= 43 && iY <= 46) && !(iX >= 79 && iX <= 18 && iY >= 110 && iY <= 10)) { //Rhye (exclude Turkey and Siberia)
+
 	if (bStartingLoc)
 	{
 		iDifferentAreaTile = 0;
@@ -2832,35 +2774,17 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 		iValue /= (std::max(0, (iDifferentAreaTile - ((NUM_CITY_PLOTS * 2) / 3))) + 2);
 	}
-	} //Rhye
 
-	//Rhye - start
-
-	int iTempSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(tempX, tempY);
-
-	iValue *= iTempSettlerMapValue;
-	iValue /= 100;
-
-	if (iTempSettlerMapValue <= 3)
-		return 0;
-	if (iTempSettlerMapValue <= 60)
-		iValue /= 2;
-	/*if (settlersMaps[getID()][EARTH_Y - 1 - tempY][tempX] >= 200) {
-		iValue *= 11;
-		iValue /= 10;
-	}
-	if (settlersMaps[getID()][EARTH_Y - 1 - tempY][tempX] >= 400) {
-		iValue *= 11;
-		iValue /= 10;
-	}*/
-	if (iTempSettlerMapValue > 60)
-	//	iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
+	if (iSettlerMapValue > 0)
 	{
-		//iValue *= 100 + GC.getASyncRand().get(40, "Random Value");
-		iValue *= (100 + ((GC.getGameINLINE().getSorenRand().getSeed() % ((tempX+10)*(tempY+10) + (EARTH_X-tempX) + (EARTH_Y-tempY))) % 50)); //RFCMP
-		iValue /= 100;
+		iValue *= iSettlerMapValue;
 	}
-	//Rhye - end
+
+	// iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
+	if (iSettlerMapValue >= 5)
+	{
+		iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
+	}
 
 	return std::max(1, iValue);
 }
@@ -2988,46 +2912,37 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 3;
 	}
 
-	//Rhye - start
 	int iSettlerMapValue = pCity->plot()->getSettlerValue(getID());
-
-	// Leoreth: discourage vassals from excessive independent conquests
-	if (GET_TEAM(getTeam()).isAVassal() && GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() && iSettlerMapValue < 90)
-	{
-		return 0;
-	}
-
-	if (iSettlerMapValue <= 3)
-		iValue -= 2;
-	else if (iSettlerMapValue <= 20)
-		iValue -= 1;
-	else if (iSettlerMapValue >= 500) //500-700
-		iValue += 2; // Leoreth: lowered because of war maps influence
-	else if (iSettlerMapValue >= 300) //300-400
-		iValue += 1; // Leoreth: lowered because of war maps influence
-
-	//Leoreth: take war maps into account here as well
-	if (pCity->plot()->getBirthProtected() != pCity->getOwner())
-	{
-		iValue += pCity->plot()->getWarValue(getID()) / 2;
-	}
+	int iWarMapValue = pCity->plot()->getWarValue(getID());
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
 	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
-		if (pCity->plot()->getWarValue(getID()) == 0)
+		if (iWarMapValue == 0)
 		{
-			iValue /= 5;
+			return 0;
 		}
 	}
 
-	if (getCivilizationType() == MONGOLS)
+	// Leoreth: discourage vassals from excessive independent conquests
+	if (GET_TEAM(getTeam()).isAVassal() && GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() && iSettlerMapValue == 0)
 	{
-		if (pCity->getCivilizationType() == CHINA)
-		{
-			iValue += 2;
-		}
+		return 0;
 	}
+
+	if (iSettlerMapValue == 0)
+	{
+		iValue -= 2;
+	}
+	else if (iSettlerMapValue >= 5)
+	{
+		iValue += 1;
+	}
+	else if (iSettlerMapValue >= 10)
+	{
+		iValue += 2;
+	}
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -3041,34 +2956,22 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
 		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
-		if (isMinorCiv() || pCity->plot()->getSettlerValue(getID()) >= 90 || pCity->plot()->getWarValue(getID()) > 0)
+		if (isMinorCiv() || iSettlerMapValue > 0 || iWarMapValue > 0)
 		{
 			iValue += 2;
 		}
 	}
-	//Rhye - end
 
-	if (getCivilizationType() == FRANCE && pCity->at(69, 52))
+	//Leoreth: take war maps into account here as well
+	if (pCity->plot()->getBirthProtected() != pCity->getOwner())
 	{
-		if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
-		{
-			return 0;
-		}
-	}
+		iValue += iWarMapValue;
 
-	// Leoreth: America shouldn't fight the English all the way to Canada
-	if (getCivilizationType() == AMERICA)
-	{
-		switch (pCity->getRegionID())
+		if (iWarMapValue == 0)
 		{
-		case REGION_QUEBEC:
-		case REGION_ONTARIO:
-		case REGION_MARITIMES:
-		case REGION_AMERICAN_ARCTIC:
 			iValue /= 3;
 		}
 	}
-
 
 	if (!bIgnoreAttackers)
 	{
@@ -7917,29 +7820,15 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 	FAssert(pCity->getOwnerINLINE() != getID());
 
-	//Rhye - start
 	//iValue = 300;
 	iValue = 0;
-	//Rhye - end
 
 	iValue += (pCity->getPopulation() * 50);
 
 	iValue += (pCity->getCultureLevel() * 200);
 
-	//Rhye - start
 	//iValue += (((((pCity->getPopulation() * 50) + GC.getGameINLINE().getElapsedGameTurns() + 100) * 4) * pCity->plot()->calculateCulturePercent(pCity->getOwnerINLINE())) / 100);
 	iValue += (((((pCity->getPopulation() * 30) + GC.getGameINLINE().getElapsedGameTurns()/8 + 40) * 4) * pCity->plot()->calculateCulturePercent(pCity->getOwnerINLINE())) / 100);
-
-
-	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-	{
-		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500)
-		{
-			iValue *= 2;
-			iValue /= 3;
-		}
-	}
-	//Rhye - end
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
@@ -8041,7 +7930,7 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 
 				if (!pCity->isPreviousOwner(getID()))
 				{
-					if (pCity->plot()->getSettlerValue(getID()) < 90 && pCity->plot()->getWarValue(getID()) == 0)
+					if (pCity->plot()->getSettlerValue(getID()) == 0 && pCity->plot()->getWarValue(getID()) == 0)
 					{
 						return DENIAL_UNKNOWN;
 					}
@@ -18446,7 +18335,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 	CvPlot* pLoopPlot;
 	int iLoopX, iLoopY;
 	int iValue;
-	int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
+	int iSettlerMapValue = GC.getMapINLINE().plot(iX, iY)->getSettlerValue(getID());
 
 	for (iLoopX = -iOuterRadius; iLoopX <= iOuterRadius; iLoopX++)
 	{
@@ -18457,7 +18346,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 			{
 				if (stepDistance(0, 0, iLoopX, iLoopY) <= iInnerRadius)
 				{
-					if (!((iLoopX == 0) && (iLoopY == 0)) && iSettlerMapValue < 800)
+					if (!((iLoopX == 0) && (iLoopY == 0)) && iSettlerMapValue < 10)
 					{
 						pLoopPlot->setFoundValue(getID(), 0);
 					}
@@ -18545,8 +18434,8 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 			if (pLoopPlot->isRevealed(getTeam(), false))
 			{
-				if (pLoopPlot->getSettlerValue(getID()) > 90) //Rhye
-				{ //Rhye
+				if (pLoopPlot->getSettlerValue(getID()) > 0)
+				{
 					iValue = pLoopPlot->getFoundValue(getID());
 
 					if (iValue > iMinFoundValueThreshold)
@@ -18562,36 +18451,9 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 							}
 						}
 					}
-				} //Rhye
+				}
 			}
 		}
-		//Rhye - start (commented as not working)
-		/*iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 700);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 500);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 400);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 300);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 200);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 150);
-		if (pBestFoundPlot != NULL)
-			iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 90);
-		if (pBestFoundPlot != NULL)
-			if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS))
-				{
-					iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 60);
-					iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 40);
-				}
-		if (pBestFoundPlot != NULL)
-			if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-				{
-					iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 20);
-					//iBestFoundValue = AI_browseStep(iMinFoundValueThreshold, iBestFoundValue, pBestFoundPlot, 3);
-				}*/
-		//Rhye - end
 
 		if (pBestFoundPlot != NULL)
 		{
@@ -18605,49 +18467,6 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 		iPass++;
 	}
 }
-
-//Rhye - start
-int CvPlayerAI::AI_browseStep(int iMinFoundValueThreshold, int iBestFoundValue, CvPlot* pBestFoundPlot, int iModifier)
-{
-	int iValue;
-	//int iI;
-	int iI, iJ;
-
-	for (iI = 0; iI < EARTH_X; iI++)
-	{
-		for (iJ = 0; iJ < EARTH_Y; iJ++)
-		{
-			CvPlot* pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
-			if (pLoopPlot->getSettlerValue(getID()) == iModifier)
-
-		/*for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
-		{
-			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
-			if (settlersMaps[getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] == iModifier)*/
-			{
-				if (pLoopPlot->isRevealed(getTeam(), false))
-				{
-					iValue = pLoopPlot->getFoundValue(getID());
-					if (iValue > iMinFoundValueThreshold)
-					{
-						if (!AI_isPlotCitySite(pLoopPlot))
-						{
-							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
-
-							if (iValue > iBestFoundValue)
-							{
-								iBestFoundValue = iValue;
-								pBestFoundPlot = pLoopPlot;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	return iBestFoundValue;
-}
-//Rhye - end
 
 
 void CvPlayerAI::AI_invalidateCitySites(int iMinFoundValueThreshold) const

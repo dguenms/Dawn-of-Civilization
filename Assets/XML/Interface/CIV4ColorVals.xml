@@ -1169,5 +1169,33 @@
 			<fBlue>1.00</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_STABILITY_CORE</Type>
+			<fRed>0.24</fRed>
+			<fGreen>0.67</fGreen>
+			<fBlue>0.69</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_STABILITY_HISTORICAL</Type>
+			<fRed>0.03</fRed>
+			<fGreen>0.70</fGreen>
+			<fBlue>0.27</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_STABILITY_CONQUEST</Type>
+			<fRed>0.98</fRed>
+			<fGreen>0.72</fGreen>
+			<fBlue>0.22</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_STABILITY_FOREIGN</Type>
+			<fRed>0.94</fRed>
+			<fGreen>0.25</fGreen>
+			<fBlue>0.40</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

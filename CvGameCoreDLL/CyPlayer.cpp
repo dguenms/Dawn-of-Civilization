@@ -2483,16 +2483,6 @@ void CyPlayer::setEspionageExperience(int iNewValue)
 		m_pPlayer->setEspionageExperience(iNewValue);
 }
 
-int CyPlayer::getSettlerValue(int x, int y)
-{
-	return m_pPlayer ? m_pPlayer->getSettlerValue(x, y) : -1;
-}
-
-int CyPlayer::getWarValue(int x, int y)
-{
-	return m_pPlayer ? m_pPlayer->getWarValue(x, y) : -1;
-}
-
 int CyPlayer::getModifier(int eModifierType)
 {
 	return m_pPlayer ? m_pPlayer->getModifier((ModifierTypes)eModifierType) : 0;

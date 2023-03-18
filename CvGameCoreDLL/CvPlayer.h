@@ -1236,20 +1236,15 @@ public:
 
 	// Leoreth
 
-	int verifySettlersHalt(int threshold); //Rhye
 	void setFlag(CvWString s); //Rhye
 	void setLeader(int i); //Rhye
 	void setLeaderName(CvWString name);
 	LeaderHeadTypes getLeader(); //Rhye
-	void resetRelations( PlayerTypes ePlayer ); //Rhye
 	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
-	void processCivNames(); //Rhye - dynamic civ names - not jdog's
 	DenialTypes AI_slaveTrade(PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
 	bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
-	int getSettlerValue(int x, int y); // Leoreth
-	int getWarValue(int x, int y); //Leoreth
 	
 	EraTypes getStartingEra() const;
 	void setStartingEra(EraTypes eNewValue);
