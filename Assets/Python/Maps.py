@@ -134,6 +134,11 @@ def importRectangle(tCorners):
 	importArea(plots.rectangle(*tCorners))
 
 
+def importSettlerMap(iCiv):
+	area = [tile for tile, value in FileMap.read("Settler/%s.csv" % civ_name(iCiv)) if value and not plot(tile).isWater()]
+	importArea(area)
+
+
 def exportBaseTerrain():
 	map = FileMap("BaseTerrain.csv")
 
