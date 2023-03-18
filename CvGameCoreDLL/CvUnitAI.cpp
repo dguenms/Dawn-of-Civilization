@@ -448,41 +448,10 @@ bool CvUnitAI::AI_follow()
 	{
 		if (area()->getBestFoundValue(getOwnerINLINE()) > 0)
 		{
-			//Rhye - ???
 			if (AI_foundRange(FOUND_RANGE, true))
 			{
 				return true;
 			}
-			//Rhye - start (as condition was added in AI_foundRange(), try with the other method if it fails)
-			if (AI_found_map(700))
-			{
-				return true;
-			}
-			if (AI_found_map(500))
-			{
-				return true;
-			}
-			if (AI_found_map(400))
-			{
-				return true;
-			}
-			if (AI_found_map(300))
-			{
-				return true;
-			}
-			if (AI_found_map(200))
-			{
-				return true;
-			}
-			if (AI_found_map(150))
-			{
-				return true;
-			}
-			if (AI_found_map(90))
-			{
-				return true;
-			}
-			//Rhye - end
 		}
 	}
 
@@ -12767,7 +12736,7 @@ bool CvUnitAI::AI_found()
 	{
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
 
-		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) < 90)
+		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) == 0)
 		{
 			return false;
 		}
@@ -12821,94 +12790,6 @@ bool CvUnitAI::AI_found()
 }
 
 
-
-//Rhye - start
-
-bool CvUnitAI::AI_found_map(int modifier)
-{
-	PROFILE_FUNC();
-
-	CvPlot* pLoopPlot;
-	CvPlot* pBestPlot;
-	CvPlot* pBestFoundPlot;
-	int iPathTurns;
-	int iValue;
-	int iBestValue;
-	int iI, iJ;
-
-	iBestValue = 0;
-	pBestPlot = NULL;
-	pBestFoundPlot = NULL;
-
-
-	for (iI = 0; iI < EARTH_X; iI++)
-	{
-		for (iJ = 0; iJ < EARTH_Y; iJ++)
-		{
-			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
-
-			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) >= modifier)
-			{
-				if (pLoopPlot != NULL)
-				{
-					if (AI_plotValid(pLoopPlot))
-					{
-						if (canFound(pLoopPlot))
-						{
-							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
-
-							if (iValue > 0)
-							{
-								if (!(pLoopPlot->isVisibleEnemyUnit(getOwnerINLINE())))
-								{
-									if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup(), 3) == 0)
-									{
-										if (generatePath(pLoopPlot, MOVE_SAFE_TERRITORY, true, &iPathTurns))
-										{
-											iValue *= 1000;
-
-											iValue /= (iPathTurns + 2); //Rhye - più aumenta il valore (default +1) più preferisce fondare lontano
-
-											if (iValue > iBestValue)
-											{
-												iBestValue = iValue;
-												pBestPlot = getPathEndTurnPlot();
-												pBestFoundPlot = pLoopPlot;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	if ((pBestPlot != NULL) && (pBestFoundPlot != NULL))
-	{
-		if (atPlot(pBestFoundPlot))
-		{
-			getGroup()->pushMission(MISSION_FOUND, -1, -1, 0, false, false, MISSIONAI_FOUND, pBestFoundPlot);
-			return true;
-		}
-		else
-		{
-			//FAssert(!atPlot(pBestPlot));
-			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), MOVE_SAFE_TERRITORY, false, false, MISSIONAI_FOUND, pBestFoundPlot);
-			return true;
-		}
-	}
-
-	return false;
-}
-
-
-
-
-//Rhye - end
-
 // Returns true if a mission was pushed...
 bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 {
@@ -12941,7 +12822,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian() || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
+						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian())
 						{
 							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
 

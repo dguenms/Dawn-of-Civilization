@@ -2369,27 +2369,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[iI] /= 100;
 	}
 
-	//Rhye - start switch (unit AI types)
-
-	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).verifySettlersHalt(300)) {}
-	else if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).verifySettlersHalt(40))
-		{
-		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
-			aiUnitAIVal[UNITAI_SETTLE] /= 2;
-		}
-	else aiUnitAIVal[UNITAI_SETTLE] /= 4;
-
-	/*if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 25)
-		aiUnitAIVal[UNITAI_SETTLE] /= 4;
-	else if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 20)
-		aiUnitAIVal[UNITAI_SETTLE] /= 3;
-	else if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 15)
-		aiUnitAIVal[UNITAI_SETTLE] /= 2;
-	else if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= 4 && GET_PLAYER(getOwnerINLINE()).getNumCities() >= 10)
-		if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)5) != (CivicTypes)27) {
-			aiUnitAIVal[UNITAI_SETTLE] *= 2;
-			aiUnitAIVal[UNITAI_SETTLE] /= 3;
-		}*/
 
 
 	switch (getCivilizationType())

@@ -7482,35 +7482,14 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (GET_PLAYER(eIndex).getCivilizationType() == KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
-	{
-		return 82393;
-	}
-
-	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (getSettlerValue(eIndex) >= 800))
-	{
-		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
-		if (iValue > area()->getBestFoundValue(eIndex))
-		{
-			area()->setBestFoundValue(eIndex, iValue);
-		}
-
-		return iValue;
-	}
-
 	if (NULL == m_aiFoundValue)
 	{
 		return 0;
 	}
 
-	if (m_aiFoundValue[eIndex] == -1 || GET_PLAYER(eIndex).getCivilizationType() == NETHERLANDS)
+	if (m_aiFoundValue[eIndex] == -1)
 	{
 		m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
-
-		if (GET_PLAYER(eIndex).getCivilizationType() == NETHERLANDS)
-		{
-			m_aiFoundValue[eIndex] = abs(m_aiFoundValue[eIndex]);
-		}
 
 		if (m_aiFoundValue[eIndex] > area()->getBestFoundValue(eIndex))
 		{

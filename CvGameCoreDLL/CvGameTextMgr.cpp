@@ -4544,60 +4544,29 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	else
 	{
 	    // Leoreth: tile stability info text
-        bool bCore = pPlot->isCore(GC.getGameINLINE().getActivePlayer());
-		bool bForeignCore = false;
-
-		for (iI = 0; iI < NUM_CIVS; iI++)
+		if (!pPlot->isWater())
 		{
-			if (iI != GC.getGameINLINE().getActiveCivilizationType())
+			if (pPlot->isCore(GC.getGameINLINE().getActivePlayer()))
 			{
-				if (pPlot->isCore((CivilizationTypes)iI))
-				{
-					if (isCivAlive((CivilizationTypes)iI) || canEverRespawn((CivilizationTypes)iI))
-					{
-						bForeignCore = true;
-						break;
-					}
-				}
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_STABILITY_CORE")));
+				szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
 			}
-		}
+			else if (pPlot->getSettlerValue(GC.getGameINLINE().getActivePlayer()) > 0)
+			{
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_STABILITY_HISTORICAL")));
+				szString.append(gDLL->getText("TXT_KEY_STABILITY_HISTORICAL_AREA"));
+			}
+			else if (pPlot->getWarValue(GC.getGameINLINE().getActivePlayer()) > 1)
+			{
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_STABILITY_CONQUEST")));
+				szString.append(gDLL->getText("TXT_KEY_STABILITY_CONQUEST_AREA"));
+			}
+			else
+			{
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_STABILITY_FOREIGN")));
+				szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_AREA"));
+			}
 
-	    if (pPlot->getPlotType() == PLOT_LAND || pPlot->getPlotType() == PLOT_HILLS)
-	    {
-	        if (bCore)
-	        {
-	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_CYAN")));
-	            szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
-	        }
-	        else
-	        {
-				int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlerValue(pPlot->getX(), pPlot->getY());
-	            
-				if (iSettlerValue >= 1)
-                {
-                    if (bForeignCore)
-                    {
-                        szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_YELLOW_TEXT")));
-                        szString.append(gDLL->getText("TXT_KEY_STABILITY_CONTESTED_AREA"));
-                    }
-                    else
-                    {
-                        szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_GREEN_TEXT")));
-                        szString.append(gDLL->getText("TXT_KEY_STABILITY_HISTORICAL_AREA"));
-                    }
-                }
-                else
-                    if (bForeignCore)
-                    {
-                        szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_RED_TEXT")));
-                        szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_CORE_AREA"));
-                    }
-                    else
-                    {
-                        szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_ORANGE_TEXT")));
-                        szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_AREA"));
-                    }
-	        }
 	        szString.append(CvWString::format( ENDCOLR ));
 	        szString.append(NEWLINE);
 	    }
