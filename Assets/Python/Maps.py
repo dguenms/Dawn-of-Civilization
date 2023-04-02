@@ -55,6 +55,11 @@ def getLandmarks():
 			yield sign.getPlot(), sign.getCaption()
 
 
+def removeLandmarks():
+	for plot, caption in getLandmarks():
+		engine.removeLandmark(plot)
+
+
 def exportLandmarks():
 	file = open(getPath("Export/Landmarks.txt"), "w")
 	
@@ -119,7 +124,7 @@ def exportCSV():
 	
 	map = FileMap("ExportedArea.csv")
 	
-	values = [(location(p), str(value)) for p, value in FileMap.read("Export/BaseMap.csv")] + [(tile, "1") for tile in area]
+	values = [(location(p), str(value)) for p, value in FileMap.read("Export/BaseMap.csv")] + [(tile, "1") for tile in area] + [(location(p), str(value)) for p, value in getLandmarks()]
 	
 	map.update(values)
 	map.export()
@@ -137,6 +142,9 @@ def importRectangle(tCorners):
 def importSettlerMap(iCiv):
 	area = [tile for tile, value in FileMap.read("Settler/%s.csv" % civ_name(iCiv)) if value and not plot(tile).isWater()]
 	importArea(area)
+	
+	landmarks = dict((tile, str(value)) for tile, value in FileMap.read("Settler/%s.csv" % civ_name(iCiv)) if int(value) > 1)
+	createLandmarks(landmarks)
 
 
 def exportBaseTerrain():
