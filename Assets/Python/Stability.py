@@ -410,7 +410,7 @@ def getSeparatismModifier(iPlayer, city):
 	plot = city.plot()
 	civic = civics(iPlayer)
 	
-	bHistorical = plot.getPlayerSettlerValue(iPlayer) >= 90
+	bHistorical = plot.getPlayerSettlerValue(iPlayer) > 0
 	bFall = since(year(dFall[iPlayer])) >= 0
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
@@ -505,7 +505,7 @@ def calculateStability(iPlayer):
 	
 	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
-		bHistorical = city.plot().getPlayerSettlerValue(iPlayer) >= 90
+		bHistorical = city.plot().getPlayerSettlerValue(iPlayer) > 0
 		
 		# Recent conquests
 		if bHistorical and since(city.getGameTurnAcquired()) <= turns(20):

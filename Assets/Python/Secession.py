@@ -108,7 +108,7 @@ def getCityClaim(city):
 	# claim based on original owner, unless lost a long time ago
 	iOriginalOwner = possibleClaims.ai().where(city.isOriginalOwner).first()
 	if iOriginalOwner is not None:
-		if plot(city).getPlayerSettlerValue(iOriginalOwner) >= 90:
+		if plot(city).getPlayerSettlerValue(iOriginalOwner) > 0:
 			if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(50):
 				return civ(iOriginalOwner)
 	
@@ -121,7 +121,7 @@ def getCityClaim(city):
 	
 	# claim based on war targets: needs to be winning the war based on war success, not available to human player
 	closest = closestCity(city, same_continent=True)
-	warClaims = possibleClaims.without(active()).where(lambda p: team(p).isAtWar(team(iOwner).getID()) and player(p).getWarValue(*location(city)) >= 8 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
+	warClaims = possibleClaims.without(active()).where(lambda p: team(p).isAtWar(team(iOwner).getID()) and plot(city).getPlayerWarValue(p) >= 3 and team(p).AI_getWarSuccess(team(iOwner).getID()) > team(iOwner).AI_getWarSuccess(team(p).getID()))
 	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
 	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
 	if warClaims:

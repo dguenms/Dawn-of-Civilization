@@ -368,7 +368,7 @@ def determineTargetPlayer(iPlayer):
 	for plot in plots.all():
 		iOwner = plot.getOwner()
 		if iOwner in lPotentialTargets:
-			dTargetValues[iOwner] += pPlayer.getWarValue(plot.getX(), plot.getY())
+			dTargetValues[iOwner] += plot.getPlayerWarValue(iPlayer)
 				
 	# hard to attack with lost contact
 	for iLoopPlayer in lPotentialTargets:

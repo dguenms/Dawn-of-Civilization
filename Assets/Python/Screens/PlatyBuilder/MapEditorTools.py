@@ -80,14 +80,14 @@ def getSettlerValue(plot, *args, **kwargs):
 	iPlayer = kwargs.get('iPlayer', None)
 	
 	if plot.isWater():
-		return 20
+		return 0
 	elif plot.isPeak() and location(plot) in lPeakExceptions:
-		return 20
+		return 0
 		
 	if iPlayer is not None:
-		return player(iPlayer).getSettlerValue(plot.getX(), plot.getY())
+		return plot.getPlayerSettlerValue(iPlayer)
 		
-	return 20
+	return 0
 
 def exportWarMap(iPlayer):
 	sLocation = "WarMaps"
@@ -100,7 +100,7 @@ def exportWarMap(iPlayer):
 def getWarValue(plot, *args, **kwargs):
 	iPlayer = kwargs.get('iPlayer', None)
 	if iPlayer is not None:
-		return player(iPlayer).getWarValue(plot.getX(), plot.getY())
+		return plot.getPlayerWarValue(iPlayer)
 	return 0
 
 

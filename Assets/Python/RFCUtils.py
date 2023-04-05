@@ -84,9 +84,8 @@ def restorePeaceHuman(iMinorCiv, bOpenBorders):
 def minorWars(iMinorCiv):
 	teamMinor = team(iMinorCiv)
 	for city in cities.owner(iMinorCiv):
-		x, y = location(city)
 		for iPlayer in players.major().existing().ai():
-			if player(iPlayer).getSettlerValue(x, y) >= 90 or player(iPlayer).getWarValue(x, y) >= 6:
+			if plot(city).getPlayerSettlerValue(iPlayer) > 0 or plot(city).getPlayerSettlerValue(iPlayer) >= 3:
 				if not teamMinor.isAtWar(iPlayer):
 					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
 
@@ -178,9 +177,9 @@ def spreadMajorCulture(iMajorCiv, tPlot):
 			iOwner = city.getOwner()
 			
 			iDenominator = 25
-			if player(iMajorCiv).getSettlerValue(city.getX(), city.getY()) >= 400:
+			if plot(city).getPlayerSettlerValue(iMajorCiv) >= 5:
 				iDenominator = 10
-			elif player(iMajorCiv).getSettlerValue(city.getX(), city.getY()) >= 150:
+			elif plot(city).getPlayerSettlerValue(iMajorCiv) >= 2:
 				iDenominator = 15
 				
 			city.changeCulture(iMajorCiv, city.getCulture(city.getOwner()) / iDenominator, True)
@@ -847,9 +846,8 @@ def toggleStabilityOverlay(iPlayer = -1):
 				iPlotType = iCore
 			else:
 				iSettlerValue = plot.getPlayerSettlerValue(iPlayer)
-				if bDebug and iSettlerValue == 3:
+				if bDebug and iSettlerValue == 0:
 					iPlotType = iAIForbidden
-				elif iSettlerValue >= 90:
 					if othercivs.any(plot.isCore):
 						iPlotType = iContest
 					else:
