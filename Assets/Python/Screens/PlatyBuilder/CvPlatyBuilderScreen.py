@@ -735,7 +735,7 @@ class CvWorldBuilderScreen:
 					
 		elif self.iPlayerAddMode == iModeSettlerValue:
 			if not is_minor(iPlayer):
-				pPlot.setSettlerValue(civ(iPlayer), 20)
+				pPlot.setSettlerValue(civ(iPlayer), 0)
 					
 		elif self.iPlayerAddMode == iModeWarMap:
 			if not is_minor(iPlayer):

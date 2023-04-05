@@ -86,7 +86,7 @@ def downgradeCottages(iPlayer):
 		
 def collapseToCore(iPlayer):
 	nonCoreCities = cities.owner(iPlayer).where(lambda city: not city.isPlayerCore(iPlayer))
-	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) < 90)
+	ahistoricalCities = nonCoreCities.where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) == 0)
 	
 	# release all vassals
 	for iVassal in players.vassals(iPlayer):

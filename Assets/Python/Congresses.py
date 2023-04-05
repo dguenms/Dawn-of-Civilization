@@ -871,15 +871,13 @@ class Congress:
 					iClaimValidity -= 10
 				
 			# generic settler map bonus
-			iClaimantValue = plot.getPlayerSettlerValue(iClaimant)
-			if iClaimantValue >= 90:
-				iClaimValidity += max(1, iClaimantValue / 100)
+			iClaimValidity += plot.getPlayerSettlerValue(iClaimant)
 
 			# Europeans support colonialism unless they want the plot for themselves (not against Western civs)
 			if civ(iVoter) in dCivGroups[iCivGroupEurope]:
 				if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
 					if not bOwner or civ(iOwner) not in dTechGroups[iTechGroupWestern]:
-						if plot.getPlayerSettlerValue(iVoter) < 90:
+						if plot.getPlayerSettlerValue(iVoter) == 0:
 							iClaimValidity += 10
 							
 			# vote to support settler maps for civs from your own group
@@ -890,11 +888,11 @@ class Congress:
 				iClaimantValue = plot.getPlayerSettlerValue(iClaimant)
 				iOwnerValue = plot.getPlayerSettlerValue(iOwner)
 				
-				if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
-				if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
+				if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue > 0: iClaimantValue *= 2
+				if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue > 0: iOwnerValue *= 2
 				
-				iClaimValidity += max(1, iClaimantValue / 100)
-				iClaimValidity -= max(1, iOwnerValue / 100)
+				iClaimValidity += iClaimantValue
+				iClaimValidity -= iOwnerValue
 			
 		# own expansion targets
 		if not bOwnClaim:
@@ -907,15 +905,15 @@ class Congress:
 				iOwnerPower = team(iOwner).getPower(True)
 			
 				if iClaimantPower > iOwnerPower:
-					if iOwnSettlerValue >= 200: iFavorClaimant -= max(1, iOwnSettlerValue / 100)
-					if iOwnWarTargetValue > 0: iFavorClaimant -= max(1, iOwnWarTargetValue / 2)
+					if iOwnSettlerValue >= 2: iFavorClaimant -= iOwnSettlerValue
+					if iOwnWarTargetValue > 0: iFavorClaimant -= iOwnWarTargetValue
 				elif iOwnerPower > iClaimantPower:
-					if iOwnSettlerValue >= 200: iFavorOwner -= max(1, iOwnSettlerValue / 100)
-					if iOwnWarTargetValue > 0: iFavorOwner -= max(1, iOwnWarTargetValue / 2)
+					if iOwnSettlerValue >= 2: iFavorOwner -= iOwnSettlerValue
+					if iOwnWarTargetValue > 0: iFavorOwner -= iOwnWarTargetValue
 			# if vote for free territory, reduce the validity of the claim
 			else:
-				if iOwnSettlerValue >= 200: iClaimValidity -= max(1, iOwnSettlerValue / 100)
-				if iOwnWarTargetValue > 0: iClaimValidity -= max(1, iOwnWarTargetValue / 2)
+				if iOwnSettlerValue >= 2: iClaimValidity -= iOwnSettlerValue
+				if iOwnWarTargetValue > 0: iClaimValidity -= iOwnWarTargetValue
 		
 		# city factors
 		if bCity:
@@ -1129,15 +1127,15 @@ class Congress:
 					if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
 						if is_minor(iLoopPlayer) or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) < iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
 							if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
-								if iSettlerMapValue > 90:
-									iValue += max(1, iSettlerMapValue / 100)
+								if iSettlerMapValue > 0:
+									iValue += iSettlerMapValue
 									
 				# weaker and collapsing empires
 				if not is_minor(iLoopPlayer):
 					if game.getPlayerRank(iPlayer) > iNumPlayersAlive / 2 and game.getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
 						if data.players[iLoopPlayer].iStabilityLevel == iStabilityCollapsing:
-							if iSettlerMapValue >= 90:
-								iValue += max(1, iSettlerMapValue / 100)
+							if iSettlerMapValue > 0:
+								iValue += iSettlerMapValue
 									
 				# close to own empire
 				closest = closestCity(city, iPlayer)
@@ -1147,7 +1145,7 @@ class Congress:
 					
 				# after war: war targets
 				if self.bPostWar:
-					iValue += plot.getPlayerWarValue(iPlayer) / 2
+					iValue += plot.getPlayerWarValue(iPlayer)
 				elif iValue == 0 and plot.getPlayerWarValue(iPlayer) > 0:
 					iValue += 1
 					
@@ -1170,7 +1168,7 @@ class Congress:
 			for plot in plots.all().where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater() and pPlayer.canFound(p.getX(), p.getY())).regions(*(lSubSaharanAfrica + lOceania)):
 				if pPlayer.isHuman() and not plot.isRevealed(iPlayer, False): continue
 				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
-				if iSettlerMapValue >= 90 and cn.getName(iPlayer, plot):
+				if iSettlerMapValue > 0 and cn.getName(iPlayer, plot):
 					iFoundValue = pPlayer.AI_foundValue(plot.getX(), plot.getY(), -1, False)
 					lPlots.append((plot.getX(), plot.getY(), max(1, min(5, iFoundValue / 2500 - 1))))
 		

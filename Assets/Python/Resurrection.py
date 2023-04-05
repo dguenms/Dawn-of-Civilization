@@ -192,7 +192,7 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 		
 	# add former colonies that are still free
 	for city in players.minor().existing().cities().where(lambda city: city.isOriginalOwner(iPlayer)):
-		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
+		if plot(city).getPlayerSettlerValue(iPlayer) > 0:
 			if city not in resurrectionCities:
 				resurrectionCities = resurrectionCities.including(city)
 
