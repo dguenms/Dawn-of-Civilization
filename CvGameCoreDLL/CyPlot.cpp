@@ -1235,6 +1235,11 @@ void CyPlot::setRevealedOwner(int eTeam, int eNewValue)
 	if (m_pPlot) m_pPlot->setRevealedOwner((TeamTypes)eTeam, (PlayerTypes)eNewValue);
 }
 
+int CyPlot::getContinentArea()
+{
+	return m_pPlot ? m_pPlot->getContinentArea() : -1;
+}
+
 void CyPlot::updateRevealedOwner(int eTeam)
 {
 	if (m_pPlot) m_pPlot->updateRevealedOwner((TeamTypes)eTeam);
