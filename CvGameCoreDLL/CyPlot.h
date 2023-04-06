@@ -310,6 +310,8 @@ public:
 	void setRevealedOwner(int eTeam, int eNewValue);
 	void updateRevealedOwner(int eTeam);
 
+	int getContinentArea();
+
 private:
 	CvPlot* m_pPlot;
 };

@@ -293,6 +293,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("setRevealedOwner", &CyPlot::setRevealedOwner, "void (int eTeam, int eNewValue)")
 		.def("setBonusVarietyType", &CyPlot::setBonusVarietyType, "void (int eBonusType)")
 		.def("getBonusVarietyType", &CyPlot::getBonusVarietyType, "int ()")
+		.def("getContinentArea", &CyPlot::getContinentArea, "int ()")
 		.def("updateRevealedOwner", &CyPlot::updateRevealedOwner, "void (int eTeam)")
 	;
 }

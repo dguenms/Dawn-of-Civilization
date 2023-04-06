@@ -22,6 +22,18 @@ lExpandedFlipCivs = [
 	iByzantium
 ]
 
+lExpansionCivs = [
+	iPersia,
+	iRome,
+	iVikings,
+	iTurks,
+	iArabia,
+	iSpain,
+	iMongols,
+	iMughals,
+	iOttomans,
+]
+
 lIndependenceCivs = [
 	iByzantium,
 	iArgentina,
@@ -758,11 +770,13 @@ class Birth(object):
 		for plot in plots.all().where(lambda p: p.getExpansion() == self.iPlayer):
 			plot.resetExpansion()
 	
-		for plot in plots.expansion(self.iPlayer).without(self.area).land().where(lambda p: not p.isPeak()):
-			plot.setExpansion(self.iPlayer)
+		if self.iCiv in lExpansionCivs:
+			capital_continent = plot_(self.location).getContinentArea()
+			for plot in plots.all().without(self.area).where(lambda p: p.getPlayerWarValue(self.iPlayer) >= 5).where(lambda p: p.getContinentArea() == capital_continent).land().where(lambda p: not p.isPeak()):
+				plot.setExpansion(self.iPlayer)
 
-		self.iExpansionDelay = rand(turns(5)) + 1
-		self.iExpansionTurns = turns(30)
+			self.iExpansionDelay = rand(turns(5)) + 1
+			self.iExpansionTurns = turns(30)
 	
 	def checkExpansion(self):
 		if not self.player.isExisting():
