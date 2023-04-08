@@ -506,13 +506,16 @@ def calculateStability(iPlayer):
 	for city in cities.owner(iPlayer):
 		iPopulation = city.getPopulation()
 		bHistorical = city.plot().getPlayerSettlerValue(iPlayer) > 0
+		bConquest = city.plot().getPlayerWarValue(iPlayer) > 1
 		
 		# Recent conquests
-		if bHistorical and since(city.getGameTurnAcquired()) <= turns(20):
+		if since(city.getGameTurnAcquired()) <= turns(20):
 			if city.getPreviousCiv() < 0:
-				iRecentlyFounded += 1
+				if bHistorical:
+					iRecentlyFounded += 1
 			else:
-				iRecentlyConquered += 1
+				if bHistorical or bConquest:
+					iRecentlyConquered += 1
 			
 		# Religions
 		if city.getReligionCount() == 0:
