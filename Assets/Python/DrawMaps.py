@@ -16,6 +16,23 @@ iMaya, iMexico, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iOtt
 iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iTamils, iThailand, iTibet, iTurks,
 iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = range(iNumCivs)
 
+iNumRegions = 82
+(rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland,
+rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rEuropeanArctic, rUrals, rAnatolia, rCaucasus, rLevant, rMesopotamia,
+rArabia, rEgypt, rNubia, rMaghreb, rPersia, rKhorasan, rTransoxiana, rSindh, rPunjab, rRajputana,
+rHindustan, rBengal, rDeccan, rDravida, rIndochina, rIndonesia, rPhilippines, rSouthChina, rNorthChina, rKorea,
+rJapan, rTibet, rTarimBasin, rMongolia, rManchuria, rAmur, rCentralAsianSteppe, rSiberia, rAustralia, rOceania,
+rEthiopia, rHornOfAfrica, rSwahiliCoast, rGreatLakes, rZambezi, rMadagascar, rCape, rKalahari, rCongo, rGuinea, 
+rSahel, rSahara, rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rAridoamerica, rCalifornia, rCascadia, rOntario, 
+rQuebec, rMaritimes, rAmericanArctic, rCaribbean, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, 
+rSouthernCone, rAntarctica) = range(iNumRegions)
+
+iNumReligions = 10
+(iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam, iHinduism, iBuddhism, iConfucianism, iTaoism, iZoroastrianism) = range(iNumReligions)
+
+iNumReligionMapTypes = 5
+(iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
+
 
 dCivNames = {
 	iAmerica: "America",
@@ -68,8 +85,21 @@ dCivNames = {
 	iVikings: "Vikings",
 }
 
+dReligionNames = {
+	iJudaism: "Judaism",
+	iOrthodoxy: "Orthodoxy",
+	iCatholicism: "Catholicism",
+	iProtestantism: "Protestantism",
+	iIslam: "Islam",
+	iHinduism: "Hinduism",
+	iBuddhism: "Buddhism",
+	iConfucianism: "Confucianism",
+	iTaoism: "Taoism",
+	iZoroastrianism: "Zoroastrianism",
+}
 
-(LAND, WATER, PEAK, CORE, HISTORICAL, CONQUEST, FOREIGN) = range(7)
+
+(LAND, WATER, PEAK, CORE, HISTORICAL, CONQUEST, FOREIGN, MINORITY, PERIPHERY) = range(9)
 
 plot_colors = {
 	LAND: (175, 175, 175),
@@ -79,6 +109,8 @@ plot_colors = {
 	HISTORICAL: (8, 179, 69),
 	CONQUEST: (250, 184, 56),
 	FOREIGN: (240, 64, 102),
+	PERIPHERY: (250, 184, 56),
+	MINORITY: (255, 220, 115),
 }
 
 
@@ -165,6 +197,70 @@ iAmerica :	[(24, 54), (25, 54), (26, 54), (26, 59), (27, 59)],
 iCanada :	[(26, 62), (27, 62), (28, 62), (29, 62), (30, 59), (30, 62), (31, 59), (32, 59), (33, 59), (33, 60)],
 }
 
+tSpreadFactors = (
+# Judaism
+{
+	iMinority :	[rBritain, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rRuthenia, rLevant, rMesopotamia, rAnatolia, rCaucasus, rArabia, rEgypt, rMaghreb, rPersia, rEthiopia, rAtlanticSeaboard, rMidwest, rCalifornia, rOntario, rQuebec, rMaritimes]
+},
+# Orthodoxy
+{
+	iCore :		[rRuthenia, rEthiopia, rGreece, rCaucasus],
+	iHistorical : 	[rBalkans, rAnatolia, rLevant, rMesopotamia, rEgypt, rNubia, rEuropeanArctic, rUrals, rSiberia],
+	iPeriphery : 	[rMaghreb, rItaly, rPonticSteppe, rAmericanArctic, rCentralAsianSteppe],
+	iMinority :	[rBaltics, rPoland, rPersia, rKhorasan, rTransoxiana, rTarimBasin, rNorthChina],
+},
+# Catholicism
+{
+	iCore :		[rFrance, rCentralEurope, rPoland, rIreland, rItaly, rIberia],
+	iHistorical :	[rBritain, rScandinavia, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCape, rPhilippines],
+	iPeriphery :	[rBalkans, rGreece, rAmericanArctic, rOntario, rMidwest, rDeepSouth, rGreatPlains, rCalifornia, rAustralia, rOceania, rGuinea, rCongo, rSwahiliCoast, rMadagascar],
+},
+# Protestantism
+{
+	iCore :		[rBritain, rLowerGermany, rScandinavia, rAtlanticSeaboard, rMidwest, rOntario, rGreatPlains, rDeepSouth, rMaritimes],
+	iHistorical :	[rCalifornia, rCascadia, rAmericanArctic, rAustralia],
+	iPeriphery :	[rFrance, rOceania, rCape, rZambezi],
+	iMinority : 	[rPoland, rCentralEurope, rBrazil, rKorea]
+},
+# Islam
+{
+	iCore : 	[rArabia, rMesopotamia, rEgypt, rLevant],
+	iHistorical : 	[rPersia, rKhorasan, rSindh, rPunjab, rTransoxiana, rMaghreb, rIndonesia, rSahel, rSahara, rHornOfAfrica],
+	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHindustan, rRajputana, rBengal, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
+	iMinority : 	[rUrals, rSiberia, rCaucasus, rTarimBasin, rMongolia],
+},
+# Hinduism
+{
+	iCore : 	[rHindustan, rRajputana, rDeccan, rBengal, rDravida],
+	iHistorical : 	[rPunjab, rSindh, rIndochina, rIndonesia, rPhilippines],
+},
+# Buddhism
+{
+	iCore : 	[rHindustan, rRajputana, rBengal, rTibet, rIndochina],
+	iHistorical : 	[rDeccan, rDravida, rPunjab, rSindh, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
+	iMinority :	[rTransoxiana, rKhorasan],
+},
+# Confucianism
+{
+	iCore : 	[rNorthChina, rSouthChina, rManchuria],
+	iHistorical :	[rKorea],
+	iPeriphery : 	[rMongolia, rTibet],
+	iMinority : 	[rJapan, rIndonesia, rIndochina, rAustralia],
+},
+# Taoism
+{
+	iCore : 	[rNorthChina, rSouthChina],
+	iHistorical : 	[rManchuria],
+	iPeriphery : 	[rTibet, rMongolia],
+},
+# Zoroastrianism
+{
+	iCore :		[rPersia],
+	iPeriphery : 	[rKhorasan, rMesopotamia, rTransoxiana, rLevant],
+	iMinority : 	[rSindh, rRajputana],
+},
+)
+
 
 def iterate_map(file_path):
 	full_file_path = Path.cwd() / "Assets/Maps" / file_path
@@ -229,10 +325,63 @@ def draw_stability_map(iCiv):
 	image.save(image_path)
 
 
-def draw_stability_maps():
+def getSpreadFactor(iReligion, iRegion):
+	if iRegion < 0: 
+		return -1
+	
+	return next((iFactor for iFactor, lRegions in tSpreadFactors[iReligion].items() if iRegion in lRegions), iNone)
+
+
+def iterate_religion_spread_factors(iReligion):
+	region_values = iterate_map("Regions.csv")
+	terrain_values = iterate_map("Export/BaseTerrain.csv")
+	
+	for ((x, y), iRegion), (_, iTerrain) in zip(region_values, terrain_values):
+		iSpreadFactor = getSpreadFactor(iReligion, iRegion)
+	
+		if iTerrain == 0:
+			yield (x, y), WATER
+	
+		elif iTerrain == 2:
+			yield (x, y), PEAK
+		
+		elif iSpreadFactor == iCore:
+			yield (x, y), CORE
+		
+		elif iSpreadFactor == iHistorical:
+			yield (x, y), HISTORICAL
+		
+		elif iSpreadFactor == iPeriphery:
+			yield (x, y), PERIPHERY
+		
+		elif iSpreadFactor == iMinority:
+			yield (x, y), MINORITY
+		
+		else:
+			yield (x, y), LAND
+			
+
+
+def draw_religion_map(iReligion):
+	image = Image.new("RGB", (iWorldX, iWorldY), "white")
+	pixels = image.load()
+	
+	for (x, y), spread_factor_type in iterate_religion_spread_factors(iReligion):
+		pixels[x, y] = plot_colors[spread_factor_type]
+	
+	image = image.resize((iWorldX * 4, iWorldY * 4))
+	
+	image_path = Path.cwd() / "Maps/Religions" / f"{dReligionNames[iReligion]}.png"
+	image.save(image_path)
+
+
+def draw_maps():
 	for iCiv in dCivNames:
 		draw_stability_map(iCiv)
+	
+	for iReligion in range(iNumReligions):
+		draw_religion_map(iReligion)
 
 
 if __name__ == "__main__":
-	draw_stability_maps()
+	draw_maps()
