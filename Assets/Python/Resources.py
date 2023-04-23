@@ -32,14 +32,8 @@ def setup():
 	global dRemovedResources
 	dRemovedResources = TileDict(dRemovedResourcesDict, year)
 	
-	global dPlotTypes
-	dPlotTypes = TileDict(dPlotTypesDict, year)
-	
 	global dFeatures
 	dFeatures = TileDict(dFeaturesDict, year)
-	
-	for tile in lNewfoundlandCapes:
-		dFeatures[tile] = (700, iCape)
 	
 	global dRemovedFeatures
 	dRemovedFeatures = TileDict(dRemovedFeaturesDict, year)
@@ -47,183 +41,269 @@ def setup():
 	global dConquerorPlotTypes
 	dConquerorPlotTypes = TileDict(dConquerorPlotTypesDict)
 	
-	global dConquerorRemovedFeatures
-	dConquerorRemovedFeatures = TileDict(dConquerorRemovedFeaturesDict)
-	
-	for tile in lNewfoundlandCapes:
-		dRemovedFeatures[tile] = 1500
-		
-	global dRoutes
-	dRoutes = appenddict(dict((year(iYear), tiles) for iYear, tiles in dRoutesDict.items()))
-
 
 ### Constants ###
 
 # initialise bonuses variables
 
-lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
-lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
-
 dResourcesDict = {
-	(88, 37)  : (-1000, iHorse),   # Gujarat
-	(78, 42)  : (-800,  iCopper),  # Assyria
-	(88, 47)  : (-100,  iSilk),    # Silk Route
-	(85, 46)  : (-100,  iSilk),    # Silk Route
-	(108, 47) : (-50,   iPig),     # Hanseong
-	(71, 34)  : (900,   iIron),    # Egypt
-	(72, 24)  : (1100,  iSugar),   # East Africa
-	(70, 17)  : (1100,  iSugar),   # Zimbabwe
-	(67, 11)  : (1100,  iSugar),   # South Africa
-	(66, 23)  : (1100,  iBanana),  # Central Africa
-	(64, 20)  : (1100,  iBanana),  # Central Africa
-	(57, 46)  : (1100,  iWine),    # Savoy
-	(57, 45)  : (1100,  iClam),    # Savoy
-	(50, 44)  : (1100,  iIron),    # Portugal
-	(96, 36)  : (1250,  iFish),    # Bengal
-	(56, 54)  : (1500,  iFish),    # Amsterdam
-	(57, 52)  : (1500,  iWheat),   # Amsterdam
-	(58, 52)  : (1500,  iCow),     # Amsterdam
-	(29, 52)  : (1600,  iCow),     # Montreal
-	(18, 53)  : (1600,  iCow),     # Alberta
-	(12, 52)  : (1600,  iCow),     # British Columbia
-	(28, 46)  : (1600,  iCow),     # Washington area
-	(30, 49)  : (1600,  iCow),     # New York area
-	(23, 42)  : (1600,  iCow),     # Jacksonville area
-	(18, 46)  : (1600,  iCow),     # Colorado
-	(20, 45)  : (1600,  iCow),     # Texas
-	(37, 14)  : (1600,  iCow),     # Argentina
-	(33, 11)  : (1600,  iCow),     # Argentina
-	(35, 10)  : (1600,  iCow),     # Pampas
-	(24, 43)  : (1600,  iCotton),  # near Florida
-	(23, 45)  : (1600,  iCotton),  # Louisiana
-	(22, 44)  : (1600,  iCotton),  # Louisiana
-	(13, 45)  : (1600,  iCotton),  # California
-	(26, 49)  : (1600,  iPig),     # Lakes
-	(19, 51)  : (1600,  iSheep),   # Canadian border
-	(19, 48)  : (1600,  iWheat),   # Midwest
-	(20, 53)  : (1600,  iWheat),   # Manitoba
-	(22, 33)  : (1600,  iBanana),  # Guatemala
-	(27, 31)  : (1600,  iBanana),  # Colombia
-	(43, 23)  : (1600,  iBanana),  # Brazil
-	(39, 26)  : (1600,  iBanana),  # Brazil
-	(49, 44)  : (1600,  iCorn),    # Galicia
-	(54, 48)  : (1600,  iCorn),    # France
-	(67, 47)  : (1600,  iCorn),    # Romania
-	(106, 50) : (1600,  iCorn),    # Manchuria
-	(77, 52)  : (1600,  iCorn),    # Caricyn
-	(92, 35)  : (1600,  iSpices),  # Deccan
-	(16, 54)  : (1700,  iHorse),   # Alberta
-	(26, 45)  : (1700,  iHorse),   # Washington area
-	(21, 48)  : (1700,  iHorse),   # Midwest
-	(19, 45)  : (1700,  iHorse),   # Texas
-	(17, 42)  : (1700,  iHorse),   # Mexico
-	(40, 25)  : (1700,  iHorse),   # Brazil
-	(33, 10)  : (1700,  iHorse),   # Buenos Aires area
-	(32, 8)   : (1700,  iHorse),   # Pampas
-	(30, 30)  : (1700,  iHorse),   # Venezuela
-	(27, 36)  : (1700,  iSugar),   # Caribbean
-	(39, 25)  : (1700,  iSugar),   # Brazil
-	(37, 20)  : (1700,  iSugar),   # inner Brazil
-	(29, 37)  : (1700,  iSugar),   # Hispaniola
-	(104, 52) : (1700,  iCorn),    # Manchuria
-	(89, 36)  : (1700,  iCorn),    # India
-	(38, 18)  : (1700,  iCoffee),  # Brazil
-	(39, 20)  : (1700,  iCoffee),  # Brazil
-	(38, 22)  : (1700,  iCoffee),  # Brazil
-	(27, 30)  : (1700,  iCoffee),  # Colombia
-	(29, 30)  : (1700,  iCoffee),  # Colombia
-	(26, 27)  : (1700,  iCoffee),  # Colombia
-	(104, 25) : (1700,  iCoffee),  # Java
-	(67, 44)  : (1700,  iTobacco), # Turkey
-	(39, 16)  : (1700,  iFish),    # Brazil
-	(70, 59)  : (1700,  iDeer),    # St Petersburg
-	(12, 45)  : (1850,  iWine),    # California
-	(31, 10)  : (1850,  iWine),    # Andes
-	(113, 11) : (1850,  iWine),    # Barossa Valley
-	(114, 11) : (1850,  iSheep),   # Australia
-	(116, 13) : (1850,  iSheep),   # Australia
-	(121, 6)  : (1850,  iSheep),   # New Zealand
-	(58, 47)  : (1850,  iRice),    # Vercelli
-	(12, 49)  : (1850,  iRice),    # California
-	(11, 45)  : (1850,  iFish),    # California
-	(87, 35)  : (1850,  iFish),    # Mumbai
-	(115, 52) : (1850,  iCow),     # Hokkaido
-	(1, 38)   : (1850,  iSugar),   # Hawaii
-	(5, 36)   : (1850,  iBanana),  # Hawaii
-	(108, 18) : (1850,  iCamel),   # Australia
+	(103, 42) : (-1000, iHorse),	# Gujarat
+	(78, 44)  : (-600,  iCotton),	# Egypt
+	(127, 44) : (-200,  iRice),     # South China
+	(125, 46) : (-200,  iRice),     # South China
+	(125, 45) : (-200,  iCitrus),   # South China
+	(129, 47) : (-200,  iCitrus),   # South China
+	(124, 46) : (-200,  iSilk),     # South China
+	(124, 43) : (-200,  iSilk),     # South China
+	(127, 42) : (-200,  iFish),     # South China
+	(129, 45) : (-200,  iClam),     # South China
+	(125, 41) : (-200,  iClam),     # South China
+	(85, 51)  : (200,   iCitrus),   # Levant
+	(83, 45)  : (200,   iCitrus),   # Levant
+	(76, 44)  : (200,   iCitrus),   # Egypt
+	(98, 58)  : (200,   iSilk),     # Transoxiana
+	(99, 54)  : (200,   iSilk),     # Transoxiana
+	(113, 45) : (200,   iSilk),     # Assam
+	(90, 19)  : (400,   iBanana),   # Madagascar
+	(90, 18)  : (400,   iSugar),	# Madagascar
+	(99, 43)  : (400,   iCotton),   # Sindh
+	(78, 56)  : (550,   iSilk),     # Thrace
+	(92, 47)  : (600,   iCitrus),   # Persia
+	(81, 30)  : (600,   iBanana),   # Central Africa
+	(76, 27)  : (600,   iBanana),   # Central Africa
+	(75, 31)  : (600,   iBanana),   # Central Africa
+	(0, 43)   : (600,   iSugar),	# Hawaii
+	(62, 48)  : (700,   iCitrus),   # Algeria
+	(57, 46)  : (700,   iCitrus),   # Morocco
+	(57, 48)  : (700,   iCitrus),   # Andalusia
+	(59, 50)  : (700,   iCitrus),   # Andalusia
+	(89, 46)  : (700,   iSugar),	# Mesopotamia
+	(78, 41)  : (700,   iSugar),	# Egypt
+	(113, 44) : (800,   iOpium),    # Bengal
+	(82, 40)  : (900,   iIron),		# Egypt
+	(73, 25)  : (1000,  iBanana),   # Congo
+	(70, 30)  : (1000,  iBanana),   # Cameroon
+	(62, 32)  : (1000,  iBanana),   # West Africa
+	(116, 42) : (1000,  iOpium),    # Burma
+	(117, 45) : (1000,  iOpium),    # Burma
+	(83, 24)  : (1100,  iSugar),	# Nigeria
+	(83, 19)  : (1100,  iSugar),	# Mozambique
+	(92, 60)  : (1200,  iSilk),     # Volga Delta
+	(121, 47) : (1200,  iOpium),    # Sichuan
+	(52, 44)  : (1400,  iSugar),	# Madeira
+	(112, 43) : (1400,  iCotton),   # Bengal
+	(63, 65)  : (1500,  iCow),      # Netherlands
+	(81, 18)  : (1500,  iCitrus),   # Mozambique
+	(28, 44)  : (1500,  iSugar),	# Cuba
+	(31, 43)  : (1500,  iSugar),	# Hispaniola
+	(28, 42)  : (1500,  iSugar),	# Jamaica
+	(35, 42)  : (1500,  iSugar),	# Antilles
+	(39, 34)  : (1550,  iSugar),	# Guianas
+	(48, 27)  : (1550,  iSugar),	# Northern Brazil
+	(43, 21)  : (1550,  iSugar),	# Southern Brazil
+	(132, 44) : (1600,  iFish),     # Taiwan
+	(29, 53)  : (1600,  iCow),      # Carolinas
+	(32, 57)  : (1600,  iCow),      # New England
+	(31, 61)  : (1600,  iCow),      # Ontario
+	(40, 16)  : (1600,  iCow),      # Southern Brazil
+	(44, 23)  : (1600,  iCow),      # Southern Brazil
+	(33, 37)  : (1600,  iCow),      # Venezuela
+	(24, 50)  : (1600,  iCow),      # Alabama
+	(15, 46)  : (1600,  iCow),      # Mexico
+	(37, 10)  : (1600,  iCow),      # Argentina
+	(39, 11)  : (1600,  iCow),      # Argentina
+	(16, 48)  : (1600,  iHorse),    # Mexico
+	(28, 53)  : (1600,  iHorse),    # Carolinas
+	(45, 30)  : (1600,  iHorse),    # Northern Brazil
+	(44, 31)  : (1600,  iBanana),   # Northern Brazil
+	(49, 29)  : (1600,  iBanana),   # Northern Brazil
+	(43, 20)  : (1600,  iBanana),   # Southern Brazil
+	(28, 35)  : (1600,  iBanana),   # Colombia
+	(25, 37)  : (1600,  iBanana),   # Costa Rica
+	(37, 41)  : (1600,  iCocoa),    # Antilles
+	(96, 19)  : (1600,  iSugar),	# Mauritius
+	(123, 24) : (1600,  iTea),		# Java
+	(24, 57)  : (1650,  iPig),      # Midwest
+	(29, 61)  : (1650,  iPig),      # Ontario
+	(42, 25)  : (1650,  iSugar),	# Central Brazil
+	(46, 30)  : (1650,  iCotton),   # Northern Brazil
+	(47, 25)  : (1650,  iCocoa),    # Northern Brazil
+	(18, 54)  : (1700,  iWheat),    # Nebraska
+	(19, 62)  : (1700,  iWheat),    # Manitoba
+	(15, 63)  : (1700,  iWheat),    # Alberta
+	(20, 57)  : (1700,  iWheat),    # Iowa
+	(37, 13)  : (1700,  iWheat),    # Argentina
+	(126, 52) : (1700,  iCorn),     # China
+	(104, 41) : (1700,  iCorn),     # Rajasthan
+	(78, 57)  : (1700,  iCorn),     # Romania
+	(60, 58)  : (1700,  iCorn),     # France
+	(64, 32)  : (1700,  iCorn),     # West Africa
+	(77, 16)  : (1700,  iCorn),     # South Africa
+	(53, 66)  : (1700,  iPotato),   # Ireland
+	(57, 63)  : (1700,  iPotato),   # England
+	(17, 51)  : (1700,  iCow),      # Texas
+	(18, 49)  : (1700,  iCow),      # Texas
+	(16, 62)  : (1700,  iCow),      # Alberta
+	(41, 23)  : (1700,  iCow),      # Central Brazil
+	(36, 14)  : (1700,  iCow),      # Patagonia
+	(32, 11)  : (1700,  iCow),      # Chile
+	(40, 15)  : (1700,  iSheep),    # Uruguay
+	(35, 6)   : (1700,  iSheep),    # Patagonia
+	(18, 52)  : (1700,  iHorse),    # Comanche
+	(20, 55)  : (1700,  iHorse),    # Missouri
+	(15, 59)  : (1700,  iHorse),    # Wyoming
+	(33, 35)  : (1700,  iHorse),    # Venezuela
+	(37, 12)  : (1700,  iHorse),    # Argentina
+	(81, 71)  : (1700,  iDeer),     # Ingria
+	(79, 70)  : (1700,  iFish),     # Ingria
+	(21, 40)  : (1700,  iBanana),   # Guatemala
+	(33, 42)  : (1700,  iCoffee),   # Hispaniola
+	(46, 25)  : (1700,  iCoffee),	# Eastern Brazil
+	(46, 22)  : (1700,  iCoffee),   # Southern Brazil
+	(43, 22)  : (1700,  iCoffee),   # Southern Brazil
+	(42, 19)  : (1700,  iCoffee),   # Southern Brazil
+	(43, 26)  : (1700,  iCoffee),   # Central Brazil
+	(125, 24) : (1700,  iCoffee),   # Java
+	(78, 55)  : (1700,  iTobacco),  # Thrace
+	(103, 38) : (1700,  iTobacco),  # India
+	(131, 44) : (1700,  iTea),      # Taiwan
+	(87, 60)  : (1750,  iWheat),    # Ukraine
+	(58, 66)  : (1750,  iPotato),   # England
+	(60, 62)  : (1750,  iPotato),   # France
+	(69, 64)  : (1750,  iPotato),   # Germany
+	(74, 64)  : (1750,  iPotato),   # Poland
+	(25, 51)  : (1750,  iCotton),	# Georgia
+	(21, 50)  : (1750,  iCotton),	# Louisiana
+	(22, 52)  : (1750,  iCotton),	# Mississippi
+	(23, 51)  : (1750,  iCotton),	# Alabama
+	(74, 12)  : (1750,  iWine),     # South Africa
+	(41, 17)  : (1750,  iWine),     # Southern Brazil
+	(128, 62) : (1800,  iCorn),     # Manchuria
+	(87, 65)  : (1800,  iPotato),   # Russia
+	(124, 51) : (1800,  iPotato),   # China
+	(139, 11) : (1800,  iSheep),    # Australia
+	(140, 13) : (1800,  iSheep),    # Australia
+	(47, 22)  : (1800,  iCitrus),   # Southern Brazil
+	(41, 18)  : (1800,  iCitrus),   # Southern Brazil
+	(78, 16)  : (1800,  iCitrus),   # South Africa
+	(80, 14)  : (1800,  iSugar),	# Natal
+	(85, 25)  : (1800,  iSpices),   # Zanzibar (nutmeg)
+	(37, 39)  : (1800,  iSpices),   # Grenada (nutmeg)
+	(93, 27)  : (1800,  iSpices),   # Seychelles (cinnamon)
+	(94, 18)  : (1800,  iSpices),   # Reunion (vanilla)
+	(90, 21)  : (1800,  iSpices),   # Madagascar (vanilla)
+	(88, 18)  : (1800,  iSpices),   # Madagascar (vanilla)
+	(30, 32)  : (1800,  iCoffee),   # Colombia
+	(32, 33)  : (1800,  iCoffee),   # Colombia
+	(30, 38)  : (1800,  iCoffee),   # Colombia
+	(10, 51)  : (1800,  iCotton),   # California
+	(111, 43) : (1800,  iTea),      # West Bengal
+	(149, 4)  : (1800,  iSheep),    # New Zealand
+	(1, 8)    : (1800,  iSheep),    # New Zealand
+	(8, 55)   : (1850,  iRice),     # California
+	(137, 62) : (1850,  iCow),      # Hokkaido
+	(8, 53)   : (1850,  iCow),      # California
+	(8, 52)   : (1850,  iSheep),    # California
+	(8, 54)   : (1850,  iCitrus),   # California
+	(4, 41)   : (1850,  iCitrus),   # Hawaii
+	(142, 11) : (1850,  iCitrus),   # Australia
+	(9, 52)   : (1850,  iDates),    # California
+	(10, 22)  : (1850,  iSpices),   # Tahiti (vanilla)
+	(83, 27)  : (1850,  iCoffee),   # Kenya
+	(81, 24)  : (1850,  iCoffee),   # Tanzania
+	(58, 32)  : (1850,  iCocoa),    # Ivory Coast
+	(61, 32)  : (1850,  iCocoa),    # Ghana
+	(68, 32)  : (1850,  iCocoa),    # Nigeria
+	(69, 29)  : (1850,  iCocoa),    # Cameroon
+	(82, 20)  : (1850,  iTobacco),  # Malawi
+	(122, 48) : (1850,  iTobacco),  # Sichuan
+	(128, 61) : (1850,  iTobacco),  # Manchuria
+	(105, 35) : (1850,  iTea),      # Tamil Nadu
+	(109, 31) : (1850,  iTea),      # Sri Lanka
+	(91, 54)  : (1850,  iTea),      # Azerbaijan
+	(7, 55)   : (1850,  iWine),     # California
+	(35, 13)  : (1850,  iWine),     # Argentina
+	(33, 12)  : (1850,  iWine),     # Chile
+	(138, 10) : (1850,  iWine),     # Australia
+	(38, 33)  : (1850,  iGold),     # Guianas
+	(9, 53)   : (1850,  iGold),     # California
+	(7, 56)   : (1850,  iGold),     # California
+	(10, 54)  : (1850,  iSilver),   # Nevada
+	(16, 54)  : (1860,  iGold),     # Colorado
+	(12, 60)  : (1860,  iSilver),   # Idaho
+	(26, 49)  : (1900,  iCitrus),   # Florida
+	(83, 29)  : (1900,  iTea),      # Kenya
+	(71, 29)  : (1900,  iRubber),   # Cameroon
+	(74, 29)  : (1900,  iRubber),   # Congo
+	(74, 24)  : (1900,  iRubber),   # Congo
+	(118, 36) : (1900,  iRubber),   # Malaysia
+	(119, 33) : (1900,  iRubber),   # Thailand
+	(125, 29) : (1900,  iRubber),   # Borneo
+	(130, 30) : (1900,  iRubber),   # Sulawesi
+	(131, 18) : (1900,  iCamel),	# Australia
 }
 
 dSpawnResourcesDict = {
-	(90, 28) : (iTamils,    iFish),
-	(78, 40) : (iArabia,	iSheep),
-	(95, 43) : (iTibet,     iWheat),
-	(97, 44) : (iTibet,     iHorse),
-	(78, 51) : (iMongols,   iSilk),
-	(61, 22) : (iCongo,     iCotton),
-	(63, 19) : (iCongo,     iIvory),
-	(61, 24) : (iCongo,     iIvory),
-	(17, 41) : (iMexico,    iHorse),
-	(16, 42) : (iMexico,    iIron),
-	(28, 31) : (iColombia,  iIron),
-	(31, 10) : (iArgentina, iWine),
-	(31, 6)  : (iArgentina, iSheep),
-	(32, 11) : (iArgentina, iIron),
-	(36, 18) : (iBrazil,    iCorn),
-	(42, 18) : (iBrazil,    iFish),
+	(107, 61) : (iTurks,       iHorse),
+	(113, 47) : (iTibet,       iWheat),
+	(115, 49) : (iTibet,       iHorse),
+	(55, 52)  : (iPortugal,    iIron),
+	(61, 66)  : (iNetherlands, iFish),
+	(15, 47)  : (iMexico,      iIron),
+	(48, 21)  : (iBrazil,      iFish),
 }
 
 dRemovedResourcesDict = {
-	(51, 36) : 550, # Ivory in Morocco
-	(58, 37) : 550, # Ivory in Tunisia
-	(87, 49) : 1100, # Sheep near Orduqent
-	(89, 51) : 1100, # Camel near Orduqent
-	(67, 29) : 1200, # Cotton in Nubia
-}
-
-dRoutesDict = {
-	-200 : lSilkRoute,
-	-100 : [(88, 47)],
-}
-
-dSpawnRoutes = {
-	iMongols : [(101, 48), (100, 49), (100, 50), (99, 50)],
-}
-
-# there must be stuff like this elsewhere, maybe barbs?
-dPlotTypesDict = {
-	(88, 47) : (-100, PlotTypes.PLOT_HILLS),
+	(75, 51) : -50, # Silver in Greece
+	(77, 55) : -50, # Gold in Macedonia
+	(81, 44) : -50, # Gems (turquoise) in Egypt
+	(74, 44) : 200, # Spices (silphium) in Cyrenaica
+	(55, 53) : 400, # Gold in Spain
+	(59, 51) : 400, # Silver in Spain
+	(83, 47) : 500, # Dye (murex) in Phoenicia
+	(73, 46) : 500, # Dye (murex) in Cyrenaica
+	(68, 47) : 500, # Dye (murex) in Tunisia
+	(70, 50) : 500, # Dye (murex) in Italy
+	(61, 48) : 500, # Dye (murex) in Algeria
+	(58, 47) : 500, # Dye (murex) in Morocco
+	(66, 46) : 550, # Ivory in Tunisia
+	(58, 45) : 550, # Ivory in Morocco
+	(79, 39) : 1200, # Cotton in Nubia
+	(78, 56) : 1300, # Silk in Thrace
+	(75, 58) : 1400, # Gold in Transylvania
+	(32, 42) : 1600, # Gold in Hispaniola
+	(92, 60) : 1600, # Silk in the Volga Delta
+	(47, 24) : 1650, # Dye (brazilwood) in Brazil
+	(53, 66) : 1850, # Potato in Ireland
 }
 
 dFeaturesDict = {
-	(35, 54) : (700,  iMud),         # Newfoundland obstacles
-	(92, 35) : (1600, iRainforest),  # Deccan
-	(11, 46) : (1850, iFloodPlains), # California
-	(11, 47) : (1850, iFloodPlains), # California
-	(11, 48) : (1850, iFloodPlains), # California
+	(8, 55) : (1850, iFloodPlains), # California
+	(8, 54) : (1850, iFloodPlains), # California
+	(8, 53) : (1850, iFloodPlains), # California
+	(9, 52) : (1850, iFloodPlains), # California
 }
 
 dRemovedFeaturesDict = {
-	(67, 30)  : 550,  # Sudan
-	(67, 31)  : 550,  # Sudan
-	(113, 25) : 1000, # allow settling New Guinea
-	(102, 35) : 1350, # open up Vietnam
-	(35, 54)  : 1500, # Newfoundland blocker
-	(116, 24) : 1500, # Port Moresby
-	(82, 47)  : 1600, # Transoxiana
-	(83, 46)  : 1600, # Transoxiana
-	(85, 49)  : 1600, # Transoxiana
+	(69, 56)  : 400,  # Venice
+	(80, 37)  : 550,  # Nubia
+	(81, 39)  : 550,  # Nubia
+	(81, 38)  : 550,  # Nubia
+	(63, 65)  : 1500, # Netherlands
+	(62, 64)  : 1500, # Netherlands
+	(99, 59)  : 1600, # Transoxiana
+	(98, 58)  : 1600, # Transoxiana
+	(96, 56)  : 1600, # Transoxiana
+	(97, 57)  : 1600, # Transoxiana
+	(81, 70)  : 1700, # Ingria
+	(80, 69)  : 1700, # Ingria
 }
 
 dConquerorPlotTypesDict = {
-	(29, 23) : (iInca, PlotTypes.PLOT_HILLS),
-	(31, 13) : (iInca, PlotTypes.PLOT_HILLS),
-	(32, 19) : (iInca, PlotTypes.PLOT_HILLS),
-	(27, 29) : (iInca, PlotTypes.PLOT_HILLS),
-}
-
-dConquerorRemovedFeaturesDict = {
-	(27, 30) : iInca,
-	(28, 31) : iInca,
+	(33, 25) : (iInca, PlotTypes.PLOT_HILLS),
+	(36, 22) : (iInca, PlotTypes.PLOT_HILLS),
+	(29, 29) : (iInca, PlotTypes.PLOT_HILLS),
+	(33, 12) : (iInca, PlotTypes.PLOT_HILLS),
 }
 
 
@@ -259,24 +339,6 @@ def removeResources():
 
 
 @handler("BeginGameTurn")
-def createRoutes():
-	for tile in dRoutes[game.getGameTurn()]:
-		plot(tile).setRouteType(iRouteRoad)
-
-
-@handler("prepareBirth")
-def createRoutesBeforeSpawn(iCiv):
-	for tile in dSpawnRoutes.get(iCiv, []):
-		plot(tile).setRouteType(iRouteRoad)
-
-
-@handler("BeginGameTurn")
-def changePlotType():
-	for tile, type in dPlotTypes[game.getGameTurn()]:
-		plot(tile).setPlotType(type, True, True)
-
-
-@handler("BeginGameTurn")
 def createFeatures():
 	for tile, iFeature in dFeatures[game.getGameTurn()]:
 		plot(tile).setFeatureType(iFeature, 0)
@@ -298,13 +360,6 @@ def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
 		plot(tile).setPlotType(type, True, True)
 
 
-@handler("conquerors")
-def removeConquerorFeatures(iConquerorPlayer, iTargetPlayer):
-	iTargetCiv = civ(iTargetPlayer)
-	for tile in dConquerorRemovedFeatures[iTargetCiv]:
-		plot(tile).setFeatureType(-1, 0)
-
-
 def setupScenarioResources():
 	setup()
 	iStartTurn = scenarioStartTurn()
@@ -324,16 +379,6 @@ def setupScenarioResources():
 			for x, y in lResources:
 				removeResource(x, y)
 	
-	for iTurn, lRoutes in dRoutes.items():
-		if iTurn <= iStartTurn:
-			for x, y in lRoutes:
-				plot(x, y).setRouteType(iRouteRoad)
-	
-	for iTurn, lPlots in dPlotTypes:
-		if iTurn <= iStartTurn:
-			for (x, y), iPlotType in lPlots:
-				plot(x, y).setPlotType(iPlotType, True, True)
-	
 	for iTurn, lFeatures in dFeatures:
 		if iTurn <= iStartTurn:
 			for (x, y), iFeature in lFeatures:
@@ -352,11 +397,6 @@ def setupScenarioResources():
 			for (x, y), iPlotType in lPlots:
 				plot(x, y).setPlotType(iPlotType, True, True)
 	
-	for iCiv, lFeatures in dConquerorRemovedFeatures:
-		if year(dFall[iCiv]) <= iStartTurn:
-			for x, y in lFeatures:
-				plot(x, y).setFeatureType(-1, 0)
-		
 
 # Leoreth: bonus removal alerts by edead
 def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", removeTextKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
