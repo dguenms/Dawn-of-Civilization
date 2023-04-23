@@ -4,6 +4,7 @@ from Core import *
 from Areas import *
 from Files import *
 from CityNames import *
+from Resources import *
 
 import Locations
 
@@ -194,6 +195,145 @@ def markCityNames():
 			continue
 		
 		createLandmark((x, y), name)
+
+
+def markResource(iResource):
+	name = infos.bonus(iResource).getText()
+	
+	for p in plots.all():
+		if p.getBonusType(-1) == iResource:
+			if p.getBonusVarietyType(-1) != -1:
+				createLandmark(p, infos.bonus(p.getBonusVarietyType(-1)).getText())
+			else:
+				createLandmark(p, name)
+
+
+def markResourceSpawns(iResource):
+	name = infos.bonus(iResource).getText()
+	
+	for tile, (iYear, iResourceSpawn) in dResourcesDict.items():
+		if iResource == iResourceSpawn:
+			createLandmark(tile, "%s %s" % (name, iYear))
+
+
+def markTerrainSpawns():
+	for tile, (iYear, iResource) in dResourcesDict.items():
+		createLandmark(tile, "%s %s" % (infos.bonus(iResource).getText(), iYear))
+	
+	for tile, (iCiv, iResource) in dSpawnResourcesDict.items():
+		createLandmark(tile, "%s %s start" % (infos.bonus(iResource).getText(), infos.civ(iCiv).getShortDescription(0)))
+	
+	for tile, iYear in dRemovedResourcesDict.items():
+		iResource = plot(tile).getBonusType(-1)
+		createLandmark(tile, iResource >= 0 and "(%s %s)" % (infos.bonus(iResource).getText(), iYear) or "(%s)" % iYear)
+	
+	for tile, (iYear, iFeature) in dFeaturesDict.items():
+		createLandmark(tile, "%s %s" % (infos.feature(iFeature).getText(), iYear))
+	
+	for tile, iYear in dRemovedFeaturesDict.items():
+		iFeature = plot(tile).getFeatureType()
+		createLandmark(tile, iFeature >= 0 and "(%s %s)" % (infos.feature(iFeature).getText(), iYear) or "(%s)" % iYear)
+	
+	for tile, (iCiv, iPlotType) in dConquerorPlotTypesDict.items():
+		createLandmark(tile, "%s %s conquerors" % (iPlotType, infos.civ(iCiv).getShortDescription(0)))
+
+
+def listResources():
+	global_resources = defaultdict(default=0)
+	global_spawns = defaultdict(default=0)
+	
+	regions = list(range(iNumRegions)) + list(range(100, 100 + iNumWaterRegions))
+	
+	region_resources = dict((iRegion, defaultdict(default=0)) for iRegion in regions)
+	region_spawns = dict((iRegion, defaultdict(default=0)) for iRegion in regions)
+	
+	resource_regions = dict((iResource, defaultdict(default=0)) for iResource in range(iNumBonuses))
+	spawn_regions = dict((iResource, defaultdict(default=0)) for iResource in range(iNumBonuses))
+	
+	for p in plots.all():
+		iResource = p.getBonusType(-1)
+		iRegion = p.getRegionID()
+		
+		if iResource >= 0:
+			global_resources[iResource] += 1
+			
+			if iRegion >= 0:
+				region_resources[iRegion][iResource] += 1
+				resource_regions[iResource][iRegion] += 1
+	
+	for tile, (_, iResource) in dResourcesDict.items():
+		global_spawns[iResource] += 1
+		region_spawns[plot(tile).getRegionID()][iResource] += 1
+		spawn_regions[iResource][plot(tile).getRegionID()] += 1
+	
+	for tile, (_, iResource) in dSpawnResourcesDict.items():
+		global_spawns[iResource] += 1
+		region_spawns[plot(tile).getRegionID()][iResource] += 1
+		spawn_regions[iResource][plot(tile).getRegionID()] += 1
+	
+	for tile in dRemovedResourcesDict.keys():
+		iResource = plot(tile).getBonusType(-1)
+		if iResource >= 0:
+			global_spawns[iResource] -= 1
+			region_spawns[plot(tile).getRegionID()][iResource] -= 1
+			spawn_regions[iResource][plot(tile).getRegionID()] -= 1
+	
+	lines = []
+	
+	lines.append("TOTAL RESOURCES\n")
+	
+	for iResource in range(iNumBonuses):
+		iResources = global_resources.get(iResource, 0)
+		iSpawns = global_spawns.get(iResource, 0)
+		
+		if iResources > 0 or iSpawns != 0:
+			if iSpawns != 0:
+				lines.append(" * %s: %d (%s%d)\n" % (infos.bonus(iResource).getText(), iResources, iSpawns > 0 and "+" or "", iSpawns))
+			else:
+				lines.append(" * %s: %d\n" % (infos.bonus(iResource).getText(), iResources))
+	
+	for iResource in range(iNumBonuses):
+		resource_lines = []
+		
+		for iRegion in regions:
+			iResourceRegions = resource_regions[iResource].get(iRegion, 0)
+			iSpawnRegions = spawn_regions[iResource].get(iRegion, 0)
+			
+			if iResourceRegions > 0 or iSpawnRegions != 0:
+				if iSpawnRegions != 0:
+					resource_lines.append(" * %s: %d (%s%d)\n" % (text("TXT_KEY_REGION_%d" % iRegion), iResourceRegions, iSpawnRegions > 0 and "+" or "", iSpawnRegions))
+				else:
+					resource_lines.append(" * %s: %d\n" % (text("TXT_KEY_REGION_%d" % iRegion), iResourceRegions))
+		
+		if resource_lines:
+			lines.append("\n")
+			lines.append(infos.bonus(iResource).getText().upper() + "\n")
+			lines += resource_lines
+	
+	for iRegion in regions:
+		region_lines = []
+	
+		for iResource in range(iNumBonuses):
+			iResources = region_resources[iRegion].get(iResource, 0)
+			iSpawns = region_spawns[iRegion].get(iResource, 0)
+			
+			if iResources > 0 or iSpawns != 0:
+				if iSpawns != 0:
+					region_lines.append(" * %s: %d (%s%d)\n" % (infos.bonus(iResource).getText(), iResources, iSpawns > 0 and "+" or "", iSpawns))
+				else:
+					region_lines.append(" * %s: %d\n" % (infos.bonus(iResource).getText(), iResources))
+		
+		if region_lines:
+			lines.append("\n")
+			lines.append(text("TXT_KEY_REGION_%d" % iRegion).upper() + "\n")
+			lines += region_lines
+	
+	file = open(getPath("Export/Resources.txt"), "w")
+	
+	try:
+		file.writelines(lines)
+	finally:
+		file.close()
 				
 		
 ### Specific marker functions ###
