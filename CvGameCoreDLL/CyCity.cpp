@@ -2839,9 +2839,9 @@ int CyCity::getArea()
 	return m_pCity ? m_pCity->getArea() : -1;
 }
 
-bool CyCity::rebuild()
+bool CyCity::rebuild(int iEra)
 {
-	return m_pCity ? m_pCity->rebuild() : false;
+	return m_pCity ? m_pCity->rebuild((EraTypes)iEra) : false;
 }
 
 bool CyCity::isValidBuildingLocation(int iBuilding)

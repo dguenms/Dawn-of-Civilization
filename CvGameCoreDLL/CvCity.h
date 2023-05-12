@@ -1192,7 +1192,7 @@ public:
 	bool isCore(PlayerTypes ePlayer) const;
 	bool isCore() const;
 
-	bool rebuild();
+	bool rebuild(EraTypes eEra = NO_ERA);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

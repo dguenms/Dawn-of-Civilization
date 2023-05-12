@@ -978,7 +978,7 @@ class Birth(object):
 		
 		for city in flippedCities:
 			city = completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)
-			city.rebuild()
+			city.rebuild(-1)
 			
 			iMinPopulation = self.player.getCurrentEra() + 1
 			city.setPopulation(max(iMinPopulation, city.getPopulation()))

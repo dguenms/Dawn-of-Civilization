@@ -19590,9 +19590,14 @@ bool CvCity::isCore() const
 	return plot()->isCore();
 }
 
-bool CvCity::rebuild()
+bool CvCity::rebuild(EraTypes eEra)
 {
 	bool bBuilt = false;
+
+	if (eEra == NO_ERA)
+	{
+		eEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
+	}
 
 	BuildingTypes eBuilding;
 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -19605,7 +19610,7 @@ bool CvCity::rebuild()
 
 			if (kBuilding.getFreeStartEra() != NO_ERA)
 			{
-				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				if (eEra >= kBuilding.getFreeStartEra())
 				{
 					if (canConstruct(eBuilding) || getFirstBuildingOrder(eBuilding) != -1)
 					{
