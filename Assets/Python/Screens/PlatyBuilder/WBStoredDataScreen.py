@@ -7,7 +7,6 @@ import WBReligionScreen
 import WBCorporationScreen
 import WBGameDataScreen
 import WBInfoScreen
-import Barbs
 import AIWars
 import BugData
 import DynamicCivs as dc
@@ -223,10 +222,6 @@ class WBStoredDataScreen:
 			elif item == "lFirstContactMongols": # Mongol conquerors
 				sText = CyTranslator().getText(str(gc.getPlayer(lMongolCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lMongolCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-
-			elif item == "lMinorCityFounded":
-				sText = Barbs.tMinorCities[i][3]
-				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 			elif item == "lFirstDiscovered": # Technologies
 				sText = gc.getTechInfo(i).getDescription()

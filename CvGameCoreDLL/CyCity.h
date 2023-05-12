@@ -601,7 +601,7 @@ public:
 	int countSatellites();
 	int getSatelliteSlots();
 	int getArea();
-	bool rebuild();
+	bool rebuild(int iEra);
 	bool isValidBuildingLocation(int eBuilding);
 	void setOriginalCiv(int iCivilization);
 	void setEverOwned(int iCivilization, bool bNewValue);
