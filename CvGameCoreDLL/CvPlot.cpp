@@ -9975,11 +9975,46 @@ void CvPlot::read(FDataStreamBase* pStream)
 	}
 
 	// Leoreth
-	pStream->Read(NUM_CIVS, m_abCore);
-	pStream->Read(NUM_CIVS, m_aiSettlerValue);
-	pStream->Read(NUM_CIVS, m_aiWarValue);
-	pStream->Read(NUM_RELIGIONS, m_aiReligionSpreadFactor);
-	pStream->Read(NUM_RELIGIONS, m_aiReligionInfluence);
+	SAFE_DELETE_ARRAY(m_abCore);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_abCore = new byte[cCount];
+		pStream->Read(cCount, m_abCore);
+	}
+
+	SAFE_DELETE_ARRAY(m_aiSettlerValue);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_aiSettlerValue = new byte[cCount];
+		pStream->Read(cCount, m_aiSettlerValue);
+	}
+
+	SAFE_DELETE_ARRAY(m_aiWarValue);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_aiWarValue = new byte[cCount];
+		pStream->Read(cCount, m_aiWarValue);
+	}
+
+	SAFE_DELETE_ARRAY(m_aiReligionSpreadFactor);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_aiReligionSpreadFactor = new byte[cCount];
+		pStream->Read(cCount, m_aiReligionSpreadFactor);
+	}
+
+	SAFE_DELETE_ARRAY(m_aiReligionInfluence);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_aiReligionInfluence = new short[cCount];
+		pStream->Read(cCount, m_aiReligionInfluence);
+	}
+
 	pStream->Read(&m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
@@ -10053,7 +10088,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	// m_bFlagDirty not saved
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
-	pStream->Write(m_bWithinGreatWall);
+	pStream->Write(m_bWithinGreatWall); // Leoreth
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_eCultureConversionCivilization); // Leoreth
@@ -10253,11 +10288,56 @@ void CvPlot::write(FDataStreamBase* pStream)
 	}
 
 	// Leoreth
-	pStream->Write(NUM_CIVS, m_abCore);
-	pStream->Write(NUM_CIVS, m_aiSettlerValue);
-	pStream->Write(NUM_CIVS, m_aiWarValue);
-	pStream->Write(NUM_RELIGIONS, m_aiReligionSpreadFactor);
-	pStream->Write(NUM_RELIGIONS, m_aiReligionInfluence);
+	if (NULL == m_abCore)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_CIVS);
+		pStream->Write(NUM_CIVS, m_abCore);
+	}
+
+	if (NULL == m_aiSettlerValue)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_CIVS);
+		pStream->Write(NUM_CIVS, m_aiSettlerValue);
+	}
+
+	if (NULL == m_aiWarValue)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_CIVS);
+		pStream->Write(NUM_CIVS, m_aiWarValue);
+	}
+
+	if (NULL == m_aiReligionSpreadFactor)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_RELIGIONS);
+		pStream->Write(NUM_RELIGIONS, m_aiReligionSpreadFactor);
+	}
+
+	if (NULL == m_aiReligionInfluence)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_RELIGIONS);
+		pStream->Write(NUM_RELIGIONS, m_aiReligionInfluence);
+	}
+
 	pStream->Write(m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
