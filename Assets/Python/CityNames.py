@@ -229,7 +229,7 @@ def getSpecialLanguages(iCiv):
 	
 	if iCiv == iEgypt:
 		if player(iPlayer).getStateReligion() == iIslam:
-			return [iLangEgyptianArabic, iLangArabian]
+			return [iLangEgyptianArabic, iLangArabic]
 	
 	elif iCiv == iInca:
 		if data.civs[iCiv].iResurrections > 0:
