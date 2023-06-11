@@ -1,4 +1,5 @@
 from Civilizations import *
+from Civilizations import dNeverTrain
 from Core import *
 
 from Events import events

@@ -1,4 +1,3 @@
-from RFCUtils import *
 from Core import *
 
 from Events import events, handler
