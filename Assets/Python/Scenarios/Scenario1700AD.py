@@ -207,6 +207,13 @@ lCivilizations = [
 		techs=techs.column(10)
 	),
 ]
+
+lTribalVillages = [
+	((130, 20), (141, 23)), # Northern Australia
+	((138, 9), (143, 17)), # Eastern Australia
+	((0, 6), (2, 12)), # New Zealand
+	((69, 29), (78, 33)), # Central Africa
+]
 	
 
 def createStartingUnits():
@@ -231,6 +238,7 @@ scenario1700AD = Scenario(
 	fileName = "RFC_1700AD",
 	
 	lCivilizations = lCivilizations,
+	lTribalVillages = lTribalVillages,
 	
 	dCivilizationDescriptions = {
 		iTurks: "TXT_KEY_CIV_UZBEKS_DESC",

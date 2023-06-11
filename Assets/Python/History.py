@@ -3,6 +3,7 @@ from RFCUtils import *
 from Core import *
 from Locations import *
 from Popups import popup
+from Scenarios import SCENARIOS
 
 
 dRelocatedCapitals = CivDict({
@@ -116,37 +117,10 @@ def foundChineseCity(city, unit):
 @handler("BeginGameTurn")
 def placeGoodyHuts(iGameTurn):
 	if iGameTurn == scenarioStartTurn() + 3:
-			
-		if scenario() == i3000BC:
-			placeHut((101, 38), (107, 41)) # Southern China
-			placeHut((62, 45), (67, 50)) # Balkans
-			placeHut((69, 42), (76, 46)) # Asia Minor
-		
-		if scenario() <= i600AD:
-			placeHut((49, 40), (54, 46)) # Iberia
-			placeHut((57, 51), (61, 56)) # Denmark / Northern Germany
-			placeHut((48, 55), (49, 58)) # Ireland
-			placeHut((50, 53), (54, 60)) # Britain
-			placeHut((57, 57), (65, 65)) # Scandinavia
-			placeHut((73, 53), (81, 58)) # Russia
-			placeHut((81, 43), (86, 47)) # Transoxania
-			placeHut((88, 30), (94, 36)) # Deccan
-			placeHut((110, 40), (113, 43)) # Shikoku
-			placeHut((114, 49), (116, 52)) # Hokkaido
-			placeHut((85, 53), (99, 59)) # Siberia
-			placeHut((103, 24), (109, 29)) # Indonesia
-			placeHut((68, 17), (72, 23)) # East Africa
-			placeHut((65, 10), (70, 16)) # South Africa
-			placeHut((22, 48), (29, 51)) # Great Lakes
-			placeHut((18, 44), (22, 52)) # Great Plains
-			placeHut((34, 25), (39, 29)) # Amazonas Delta
-			placeHut((33, 9), (37, 15)) # Parana Delta
-			placeHut((25, 36), (32, 39)) # Caribbean
-		
-		placeHut((107, 19), (116, 22)) # Northern Australia
-		placeHut((114, 10), (118, 17)) # Western Australia
-		placeHut((120, 5), (123, 11)) # New Zealand
-		placeHut((59, 25), (67, 28)) # Central Africa
+		for iScenario, scenario_definition in SCENARIOS.items():
+			if scenario() <= iScenario:
+				for tTL, tBR in scenario_definition.lTribalVillages:
+					placeTribalVillage(tTL, tBR)
 
 
 @handler("BeginGameTurn")
@@ -681,7 +655,7 @@ def handleColonialConquest(iPlayer):
 		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 
 
-def placeHut(tTL, tBR):
+def placeTribalVillage(tTL, tBR):
 	plot = plots.rectangle(tTL, tBR).where(lambda p: not p.isWater() and not p.isPeak() and p.getFeatureType() != iMud and p.getBonusType(-1) == -1).where(lambda p: not p.isOwned()).random()
 
 	if plot:
