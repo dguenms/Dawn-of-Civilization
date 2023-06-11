@@ -1,17 +1,41 @@
+# coding: utf-8
+
 from Core import *
 from RFCUtils import *
 from Events import handler
 
 
+def periodic(iTurns, seed):
+	return (turn() + hash(seed)) % turns(iTurns)
+
+
+def best_civ_of_group(iGroup):
+	return civs.of(*dTechGroups[iGroup]).alive().maximum(lambda c: player(c).getScoreHistory(turn()))
+
+
+def best_civ_of_same_tech_group(iCiv):
+	iTechGroup = next(iGroup for iGroup in dTechGroups if iCiv in dTechGroups[iGroup])
+	return best_civ_of_group(iTechGroup)
+
+
+def add_city_buildings(tile, iCiv):
+	city(tile).rebuild(player(iCiv).getCurrentEra())
+		
+	for iDefensiveBuilding in infos.buildings().where(isDefensiveBuilding):
+		if player(iCiv).canConstruct(iDefensiveBuilding, False, False, False):
+			city(tile).setHasRealBuilding(iDefensiveBuilding, True)
+
+
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iTechGroup=None, units={}, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iTechGroup=None, iCulture=0, units={}, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
 		self.name = name
 		self.iPopulation = iPopulation
 		self.iTechGroup = iTechGroup
+		self.iCulture = iCulture
 		self.units = units
 		self.adjective = adjective
 		self.condition = condition
@@ -28,10 +52,10 @@ class MinorCity(object):
 			return
 		
 		if self.every(10):
-			self.addUnits()
+			self.add_unit()
 		
 		if self.every(25):
-			self.addBuildings()
+			self.add_buildings()
 	
 	def canFound(self):
 		if plot(self.tile).getImprovementType() == iCityRuins:
@@ -51,9 +75,9 @@ class MinorCity(object):
 		
 		return True
 		
-	def getTechCiv(self):
+	def get_tech_civ(self):
 		if self.iTechGroup is not None:
-			iTechCiv = civs.of(*dTechGroups[self.iTechGroup]).maximum(lambda p: player(p).getScoreHistory(turn()))
+			iTechCiv = best_civ_of_group(self.iTechGroup)
 			if iTechCiv >= 0:
 				return iTechCiv
 		
@@ -68,35 +92,46 @@ class MinorCity(object):
 		founded = city(x, y)
 		
 		if founded:
-			iTechCiv = self.getTechCiv()
+			iTechEra = player(self.get_tech_civ()).getCurrentEra()
 			
-			founded.setName(self.name)
+			founded.setName(self.name, False)
 			founded.setPopulation(self.iPopulation)
+			founded.setCulture(founded.getOwner(), scale(self.iCulture) + iTechEra * scale(100), True)
 			
-			founded.rebuild(player(iTechCiv).getCurrentEra())
-			
-			for iRole, iNumUnits in self.units.items():
-				for iUnit, iUnitAI in getUnitsForRole(iTechCiv, iRole):
-					units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
-					
-					if self.adjective:
-						units.adjective(self.adjective)
+			self.add_buildings()
+			self.create_units()
 			
 	def every(self, iTurns):
-		return turn() + hash(self) % turns(iTurns) == 0
+		return periodic(iTurns, self)
 	
-	def addUnits(self):
-		iTechCiv = self.getTechCiv()
+	def get_units(self):
+		iTechCiv = self.get_tech_civ()
 		
 		for iRole, iNumUnits in self.units.items():
 			for iUnit, iUnitAI in getUnitsForRole(iTechCiv, iRole):
-				if units.at(self.tile).type(iUnit).count() < iNumUnits + max(0, player(iTechCiv).getCurrentEra() - 1):
-					makeUnit(self.iOwner, iUnit, self.tile, iUnitAI)
+				yield base_unit(iUnit), iNumUnits, iUnitAI
 	
-	def addBuildings(self):
-		city(self.tile).rebuild(player(self.getTechCiv()).getCurrentEra())
+	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
+		units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
 		
-		# should also add defensive buildings
+		if self.adjective:
+			units.adjective(self.adjective)
+	
+	def create_units(self):
+		for iUnit, iNumUnits, iUnitAI in self.get_units():
+			self.make_units(iUnit, iUnitAI, iNumUnits)
+	
+	def add_unit(self):
+		iTechCiv = self.get_tech_civ()
+	
+		for iUnit, iNumUnits, iUnitAI in self.get_units():
+			if units.at(self.tile).type(iUnit).count() < iNumUnits + max(0, player(iTechCiv).getCurrentEra() - 1):
+				self.make_units(iUnit, iUnitAI)
+	
+	def add_buildings(self):
+		print "add buildings: %s" % self.name
+		iTechCiv = self.get_tech_civ()
+		add_city_buildings(self.tile, iTechCiv)
 
 
 NUM_BARBARIAN_TYPES = 7
@@ -106,10 +141,10 @@ NUM_BARBARIAN_TYPES = 7
 class Barbarians(object):
 
 	SPAWN_LIMITS = {
-		ANIMALS: 5,
+		ANIMALS: 3,
 		NOMADS: 3,
 		MINORS: 5,
-		NATIVES: 5,
+		NATIVES: 3,
 		PIRATES: 3,
 	}
 	
@@ -153,13 +188,19 @@ class Barbarians(object):
 		return False
 	
 	def notify(self):
-		adjective_text = text_if_exists(self.adjective, "TXT_KEY_ADJECTIVE_BARBARIAN")
+		adjective_text = text_if_exists(self.adjective, otherwise="TXT_KEY_ADJECTIVE_BARBARIAN")
 		unit = infos.unit(self.units.items()[0][0])
 		location = plots.rectangle(self.area).closest(capital(active()))
 		
 		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=location)
 	
 	def can_spawn(self):
+		if not (year(self.iStart) <= year() <= year(self.iEnd)):
+			return False
+		
+		if not self.every():
+			return False
+	
 		if self.pattern in [NOMADS, INVADERS, SEA_INVADERS]:
 			if not self.valid_targets():
 				return False
@@ -168,21 +209,30 @@ class Barbarians(object):
 			return False
 		
 		if self.pattern == MINORS:
-			if plots.rectangle(self.area).land().all(lambda p: p.isOwned() and not owner(p, self.iOwner)):
+			if plots.rectangle(self.area).land().all(lambda p: p.isOwned() and not owner(p, self.get_owner())):
 				return False
 	
-		if year(self.iStart) <= year() <= year(self.iEnd):
-			if self.every():
-				return True
-		
-		return False
+		return True
 	
 	def every(self):
-		return turn() + hash(self) % turns(self.iInterval) == 0
+		return periodic(self.iInterval, self)
 	
 	def spawn(self):
 		for iUnit, plot in zip(self.get_spawn_units(), self.get_spawn_plots()):
-			makeUnit(self.iOwner, iUnit, plot, self.get_unit_ai(iUnit, plot))
+			unit = makeUnit(self.get_owner(), iUnit, plot, self.get_unit_ai(iUnit, plot))
+			
+			data.addBarbarianUnit(self, unit)
+			
+			if self.adjective:
+				set_unit_adjective(unit, self.adjective)
+	
+	def get_owner(self):
+		if self.pattern == MINORS:
+			minor_city = cities.rectangle(self.area).where(lambda city: is_minor(city.getOwner())).first()
+			if minor_city:
+				return civ(minor_city.getOwner())
+		
+		return self.iOwner
 	
 	def valid_targets(self):
 		return cities.rectangle(self.target_area).any(lambda city: not is_minor(city.getOwner()))
@@ -193,10 +243,8 @@ class Barbarians(object):
 		if iLimit is None:
 			return False
 			
-		owned_units = plots.rectangle(self.area).units().owner(self.iOwner)
-		
 		for iUnit, iNumUnits in self.units.items():
-			if owned_units.type(iUnit).count() >= iLimit * iNumUnits:
+			if data.countBarbarianUnits(self, iUnit) >= iLimit * iNumUnits:
 				return True
 		
 		return False
@@ -208,8 +256,11 @@ class Barbarians(object):
 		spawn_area = plots.rectangle(self.area).passable().where(self.valid_spawn)
 		iNumUnits = sum(self.units.values())
 		
+		if not spawn_area:
+			return []
+		
 		if self.pattern == MINORS:
-			minor_city = spawn_area.cities().owner(self.iOwner).random()
+			minor_city = spawn_area.cities().owner(self.get_owner()).random()
 			if minor_city:
 				return [minor_city] * iNumUnits
 			
@@ -252,14 +303,14 @@ class Barbarians(object):
 			if map.getArea(plot.getArea()).getNumCities() == 0:
 				return False
 		
-		if units.at(plot).notowner(self.iOwner):
+		if units.at(plot).notowner(self.get_owner()):
 			return False
 		
 		if cities.surrounding(plot):
 			return False
 		
 		if self.pattern in [ANIMALS, NOMADS, MINORS, PIRATES]:
-			if not owner(plot, self.iOwner):
+			if plot.isOwned():
 				return False
 		
 		if self.pattern == ANIMALS:
@@ -274,8 +325,8 @@ class Barbarians(object):
 
 
 minor_cities = [
-	MinorCity(-3000, iIndependent2, (92, 46), "Shushan", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_ELAMITE"),
-	MinorCity(-3000, iIndependent, (90, 45), "Unug", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SUMERIAN"),
+	MinorCity(-3000, iIndependent2, (92, 46), "Shushan", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_ELAMITE"),
+	MinorCity(-3000, iIndependent, (90, 45), "Unug", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_SUMERIAN"),
 	MinorCity(-2200, iIndependent2, (86, 50), "Halab", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MARIOTE"),
 	MinorCity(-2000, iIndependent, (118, 49), "Sanxingdui", iPopulation=2, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
@@ -313,10 +364,10 @@ minor_cities = [
 barbarians = [
 	Barbarians(-3000, -850, {iBear: 1}, ((65, 62), (132, 73)), 5, ANIMALS),
 	Barbarians(-3000, -850, {iWolf: 1}, ((65, 62), (132, 73)), 5, ANIMALS),
-	Barbarians(-3000, -850, {iPanther: 1}, ((54, 11), (84, 41)), 5, ANIMALS),
-	Barbarians(-3000, -850, {iLion: 1}, ((54, 11), (84, 41)), 5, ANIMALS),
-	Barbarians(-3000, -850, {iPanther: 1}, ((101, 33), (113, 45)), 5, ANIMALS),
-	Barbarians(-3000, -850, {iLion: 1}, ((101, 33), (113, 45)), 5, ANIMALS),
+	Barbarians(-3000, -850, {iPanther: 1}, ((54, 11), (84, 41)), 8, ANIMALS),
+	Barbarians(-3000, -850, {iLion: 1}, ((54, 11), (84, 41)), 8, ANIMALS),
+	Barbarians(-3000, -850, {iPanther: 1}, ((101, 33), (113, 45)), 10, ANIMALS),
+	Barbarians(-3000, -850, {iLion: 1}, ((101, 33), (113, 45)), 10, ANIMALS),
 	Barbarians(-3000, -1500, {iWarrior: 2}, ((79, 56), (103, 62)), 8, NOMADS, target_area=((83, 44), (104, 51)), adjective="TXT_KEY_ADJECTIVE_INDO_EUROPEAN"),
 	Barbarians(-2000, -1200, {iWarrior: 2}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(-1800, -1200, {iWarrior: 2}, ((87, 44), (91, 52)), 10, INVADERS, adjective="TXT_KEY_ADJECTIVE_KASSITE"),
@@ -440,3 +491,50 @@ def onBeginGameTurn():
 	
 	for barbarian in barbarians:
 		barbarian.check()
+	
+	maintainFallenCivilizations()
+
+
+@handler("unitBuilt")
+def assignMinorUnitAdjective(city, unit):
+	if not is_minor(city.getOwner()):
+		return
+
+	minor_city_adjective = next(minor_city.adjective for minor_city in minor_cities if at(city, minor_city.tile))
+	if minor_city_adjective:
+		set_unit_adjective(unit, minor_city_adjective)
+
+
+@handler("unitLost")
+def barbarianUnitLost(unit):
+	if not is_minor(unit.getOwner()):
+		return
+	
+	data.removeBarbarianUnit(unit)
+
+
+def maintainFallenCivilizations():
+	fallen_civs = civs.major().notalive().where(canEverRespawn)
+	
+	for iFallenCiv in fallen_civs:
+		if periodic(20, iFallenCiv):
+			fallen_cities = cities.respawn(iFallenCiv).where(is_minor)
+			
+			if fallen_cities:
+				iTechCiv = best_civ_of_same_tech_group(iFallenCiv)
+				if iTechCiv < 0:
+					iTechCiv = iFallenCiv
+				
+				if slot(iTechCiv) < 0:
+					continue
+				
+				iNumDesiredUnits = 2 + player(iTechCiv).getCurrentEra()
+				iDefender, iDefenseAI = getUnitForRole(iTechCiv, iDefend)
+				
+				for city in fallen_cities:
+					add_city_buildings(city, iTechCiv)
+					
+					iNumCurrentUnits = units.at(city).where(CyUnit.canFight).count()
+					if iNumCurrentUnits < iNumDesiredUnits:
+						makeUnits(city.getOwner(), iDefender, city, iNumDesiredUnits-iNumCurrentUnits, iDefenseAI)
+				

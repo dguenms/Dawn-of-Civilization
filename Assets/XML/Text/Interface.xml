@@ -3553,6 +3553,14 @@
 		<Spanish>[ICON_BULLET]Pede entrar en</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ADJECTIVE</Tag>
+		<English>%s1 %s2</English>
+		<French>%s1 %s2</French>
+		<German>%s1 %s2</German>
+		<Italian>%s1 %s2</Italian>
+		<Spanish>%s1 %s2</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

@@ -1153,3 +1153,12 @@ def resetRevealedOwner(iPlayer):
 	for plot in plots.all():
 		if not plot.isRevealed(game.getActiveTeam(), False) and plot.getRevealedOwner(game.getActiveTeam(), False) == iPlayer:
 			plot.setRevealedOwner(game.getActiveTeam(), slot(iIndependent))
+
+
+# used: Minors
+def isDefensiveBuilding(iBuilding):
+	if isWonder(iBuilding):
+		return False
+
+	building = infos.building(iBuilding)
+	return building.getDefenseModifier() > 0 or building.getBombardDefenseModifier() > 0 or building.getUnignorableBombardDefenseModifier() > 0

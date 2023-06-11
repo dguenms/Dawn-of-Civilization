@@ -682,16 +682,7 @@ def handleColonialConquest(iPlayer):
 
 
 def placeHut(tTL, tBR):
-	plotList = []
-	
-	for plot in plots.start(tTL).end(tBR):
-		if plot.isFlatlands() or plot.isHills():
-			if plot.getFeatureType() != iMud:
-				if plot.getOwner() < 0:
-					plotList.append(location(plot))
-	
-	if not plotList:
-		return
-	
-	tPlot = random_entry(plotList)
-	plot_(tPlot).setImprovementType(iHut)
+	plot = plots.rectangle(tTL, tBR).where(lambda p: not p.isWater() and not p.isPeak() and p.getFeatureType() != iMud and p.getBonusType(-1) == -1).where(lambda p: not p.isOwned()).random()
+
+	if plot:
+		plot.setImprovementType(iHut)

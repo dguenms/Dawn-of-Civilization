@@ -1818,11 +1818,23 @@ class Civilizations(EntityCollection):
 
 	def __str__(self):
 		return ",".join([infos.civ(item).getText() for item in self.entities()])
+	
+	# TODO: test
+	def alive(self):
+		return self.where(lambda c: player(c).isAlive())
+	
+	# TODO: test
+	def notalive(self):
+		return self.where(lambda c: not player(c).isAlive())
 		
 	def without(self, exceptions):
 		if not isinstance(exceptions, (list, set, Players)):
 			exceptions = [exceptions]
 		return self.where(lambda c: c not in [civ(e) for e in exceptions])
+	
+	# TODO: test
+	def past_birth(self):
+		return self.where(lambda c: year() >= year(dBirth[c]))
 	
 	def before_fall(self):
 		return self.where(lambda c: year() < year(dFall[c]))
@@ -1838,6 +1850,10 @@ class CivFactory(object):
 	
 	def of(self, *items):
 		return Civilizations([civ(element) for element in items])
+
+
+def set_unit_adjective(unit, adjective):
+	unit.setName(text("TXT_KEY_UNIT_ADJECTIVE", text(adjective), unit.getName()))
 
 		
 class CreatedUnits(object):
@@ -1863,7 +1879,7 @@ class CreatedUnits(object):
 			return self
 	
 		for unit in self:
-			unit.setName('%s %s' % (text(adjective), unit.getName()))
+			set_unit_adjective(unit, adjective)
 			
 		return self
 			
