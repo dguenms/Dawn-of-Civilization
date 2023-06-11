@@ -246,9 +246,10 @@ class GameData:
 		# Barbarians
 
 		self.lTimedConquests = []
-		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.period_offsets = PeriodOffsets()
+		
+		self.barbarian_units = {}
 		
 		# Statistics
 		
@@ -289,5 +290,21 @@ class GameData:
 		
 	def setStabilityLevel(self, iPlayer, iValue):
 		self.players[iPlayer].iStabilityLevel = iValue
+	
+	def addBarbarianUnit(self, spawn, unit):
+		key = (spawn, unit.getUnitType())
+		if key not in self.barbarian_units:
+			self.barbarian_units[key] = []
+		
+		self.barbarian_units[key].append(unit.getID())
+	
+	def removeBarbarianUnit(self, unit):
+		for (_, iUnit), unit_ids in self.barbarian_units:
+			if unit.getUnitType() == iUnit:
+				if unit.getID() in unit_ids:
+					unit_ids.remove(unit.getID())
+	
+	def countBarbarianUnits(self, spawn, iUnit):
+		return len(self.barbarian_units.get((spawn, iUnit), []))
 		
 data = GameData()
