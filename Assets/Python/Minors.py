@@ -129,7 +129,6 @@ class MinorCity(object):
 				self.make_units(iUnit, iUnitAI)
 	
 	def add_buildings(self):
-		print "add buildings: %s" % self.name
 		iTechCiv = self.get_tech_civ()
 		add_city_buildings(self.tile, iTechCiv)
 

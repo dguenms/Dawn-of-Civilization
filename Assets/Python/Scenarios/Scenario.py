@@ -296,6 +296,8 @@ class Scenario(object):
 		self.dOwnedTiles = kwargs.get("dOwnedTiles", {})
 		self.iOwnerBaseCulture = kwargs.get("iOwnerBaseCulture", 0)
 		
+		self.lTribalVillages = kwargs.get("lTribalVillages", [])
+		
 		self.dRevealed = kwargs.get("dRevealed", {})
 		
 		self.dGreatPeopleCreated = kwargs.get("dGreatPeopleCreated", {})
