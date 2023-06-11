@@ -138,7 +138,7 @@ class FileDict(object):
 				if len(line) < 2:
 					continue
 				
-				yield line[:2]
+				yield line[0].decode("utf-8"), line[1].decode("utf-8")
 		except:
 			file.close()
 			raise
