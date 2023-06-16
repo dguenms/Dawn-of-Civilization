@@ -86,7 +86,7 @@
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
+					<BonusType>BONUS_RARE_EARTHS</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
@@ -263,7 +263,7 @@
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
+					<BonusType>BONUS_RARE_EARTHS</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
@@ -960,7 +960,7 @@
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
+					<BonusType>BONUS_RARE_EARTHS</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
@@ -1071,7 +1071,7 @@
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
+					<BonusType>BONUS_RARE_EARTHS</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
