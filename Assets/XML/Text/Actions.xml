@@ -94,6 +94,14 @@
 		<Spanish>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_HARVEST_BOATS</Tag>
+		<English>Create [LINK=IMPROVEMENT_HARVEST_BOATS]Harvest Boats[\LINK]</English>
+		<French>Create [LINK=IMPROVEMENT_HARVEST_BOATS]Harvest Boats[\LINK]</French>
+		<German>Create [LINK=IMPROVEMENT_HARVEST_BOATS]Harvest Boats[\LINK]</German>
+		<Italian>Create [LINK=IMPROVEMENT_HARVEST_BOATS]Harvest Boats[\LINK]</Italian>
+		<Spanish>Create [LINK=IMPROVEMENT_HARVEST_BOATS]Harvest Boats[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifier[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] pendant %d1 tours.[NEWLINE]Cet ordre sacrifie l'esclave, causant des c&#233;l&#233;brations et du bonheur dans la ville pendant %d2 tours. L'esclave sera d&#233;truit.</French>

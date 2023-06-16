@@ -14345,6 +14345,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_HARVEST_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_OCEAN_FISHERY</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -14524,6 +14528,10 @@
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_HARVEST_BOATS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
