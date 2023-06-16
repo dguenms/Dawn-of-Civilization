@@ -4410,20 +4410,31 @@
 					<BonusType>BONUS_OIL</BonusType>
 					<iHealthChange>-1</iHealthChange>
 				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_RUBBER</BonusType>
+					<iHealthChange>-1</iHealthChange>
+				</BonusHealthChange>
 			</BonusHealthChanges>
 			<BonusYieldModifiers>
 				<BonusYieldModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>15</iYield>
+						<iYield>10</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 				<BonusYieldModifier>
 					<BonusType>BONUS_OIL</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>15</iYield>
+						<iYield>10</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+				<BonusYieldModifier>
+					<BonusType>BONUS_RUBBER</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>10</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
