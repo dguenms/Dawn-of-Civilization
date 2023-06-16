@@ -425,8 +425,58 @@
 						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<ImprovementPillage/>
+			<ImprovementUpgrade/>
+			<TechYieldChanges/>
+			<RouteYieldChanges/>
+			<bGraphicalOnly>0</bGraphicalOnly>
+		</ImprovementInfo>
+		<ImprovementInfo>
+			<Type>IMPROVEMENT_HARVEST_BOATS</Type>
+			<Description>TXT_KEY_IMPROVEMENT_HARVEST_BOATS</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_HARVEST_BOATS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_HARVEST_BOATS</ArtDefineTag>
+			<bActsAsCity>0</bActsAsCity>
+			<bHillsMakesValid>0</bHillsMakesValid>
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
+			<bRiverSideMakesValid>0</bRiverSideMakesValid>
+			<bNoFreshWater>0</bNoFreshWater>
+			<bRequiresFlatlands>0</bRequiresFlatlands>
+			<bRequiresRiverSide>0</bRequiresRiverSide>
+			<bRequiresIrrigation>0</bRequiresIrrigation>
+			<bCarriesIrrigation>0</bCarriesIrrigation>
+			<bRequiresFeature>0</bRequiresFeature>
+			<bWater>1</bWater>
+			<bGoody>0</bGoody>
+			<bPermanent>0</bPermanent>
+			<iAdvancedStartCost>30</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iTilesPerGoody>0</iTilesPerGoody>
+			<iGoodyRange>0</iGoodyRange>
+			<iFeatureGrowth>0</iFeatureGrowth>
+			<iUpgradeTime>0</iUpgradeTime>
+			<iAirBombDefense>5</iAirBombDefense>
+			<iDefenseModifier>0</iDefenseModifier>
+			<iHappinessPercent>0</iHappinessPercent>
+			<iPillageGold>5</iPillageGold>
+			<bOutsideBorders>0</bOutsideBorders>
+			<TerrainMakesValids/>
+			<FeatureMakesValids/>
+			<BonusTypeStructs>
 				<BonusTypeStruct>
 					<BonusType>BONUS_DYE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_AMBER</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
@@ -561,17 +611,6 @@
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>2</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_AMBER</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>

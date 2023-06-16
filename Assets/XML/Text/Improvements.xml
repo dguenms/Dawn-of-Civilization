@@ -133,4 +133,12 @@
 		<Italian>Solar Collector</Italian>
 		<Spanish>Solar Collector</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_HARVEST_BOATS</Tag>
+		<English>Harvest Boats</English>
+		<French>Harvest Boats</French>
+		<German>Harvest Boats</German>
+		<Italian>Harvest Boats</Italian>
+		<Spanish>Harvest Boats</Spanish>
+	</TEXT>
 </Civ4GameText>
