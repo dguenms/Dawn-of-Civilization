@@ -20,9 +20,9 @@
 			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_COTTON</BonusType>
-				<BonusType>BONUS_INCENSE</BonusType>
 				<BonusType>BONUS_SILK</BonusType>
 				<BonusType>BONUS_CAMEL</BonusType>
+				<BonusType>BONUS_OPIUM</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -89,7 +89,7 @@
 			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_CORN</BonusType>
-				<BonusType>BONUS_POTATO</BonusType>
+				<BonusType>BONUS_MILLET</BonusType>
 				<BonusType>BONUS_RICE</BonusType>
 				<BonusType>BONUS_WHEAT</BonusType>
 			</PrereqBonuses>
@@ -164,7 +164,6 @@
 				<BonusType>BONUS_SHEEP</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_DYE</BonusType>
-				<BonusType>BONUS_FUR</BonusType>
 				<BonusType>BONUS_SILK</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
@@ -272,6 +271,7 @@
 			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_MARBLE</BonusType>
+				<BonusType>BONUS_FUR</BonusType>
 				<BonusType>BONUS_GOLD</BonusType>
 				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_PEARL</BonusType>
@@ -311,7 +311,7 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
-				<BonusType>BONUS_OIL</BonusType>
+				<BonusType>BONUS_RARE_EARTHS</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
