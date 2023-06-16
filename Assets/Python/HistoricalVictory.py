@@ -131,7 +131,7 @@ dGoals = {
 	),
 	iHarappa: (
 		TradeConnection(by=-1600),
-		BuildingCount((iReservoir, 3), (iGranary, 2), (iSmokehouse, 2), by=-1500),
+		BuildingCount((iReservoir, 3), (iGranary, 2), (iWeaver, 2), by=-1500),
 		PopulationCount(30, by=-800),
 	),
 	iChina: (

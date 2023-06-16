@@ -147,16 +147,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SMOKEHOUSE</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Smokehouse/Smokehouse (Medieval).nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Smokehouse/Button_Smokehouse.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INCAN_TAMBO</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>1</bAnimated>
@@ -3526,6 +3516,56 @@
 			<NIF>Art/Structures/Buildings/Stadium/veterans04.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Stadium/stadium.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TANNERY</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Tannery/Tannery.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Tannery/Tannery.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JEWELLER</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jeweller/Bete_Giyorgis.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Jeweller/Jeweller.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GROCER</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.05</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Market/Market.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/Grocer.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,11</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ABATTOIR</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Abattoir/food_plant.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Abattoir/Abattoir.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GRAIN_SILO</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Grain_Silo/grain_elevator.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Grain_Silo/Grain_Silo.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

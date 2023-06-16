@@ -125,15 +125,7 @@
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_WHEAT</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_RICE</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_CORN</BonusType>
+					<BonusType>BONUS_SALT</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
@@ -146,65 +138,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_GRANARY</BuildingClass>
-			<Type>BUILDING_INCAN_TERRACE</Type>
-			<Description>TXT_KEY_BUILDING_INCAN_TERRACE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_INCAN_TERRACE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_INCAN_TERRACE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_TANNERY</BuildingClass>
+			<Type>BUILDING_TANNERY</Type>
+			<Description>TXT_KEY_BUILDING_TANNERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TANNERY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TANNERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
-			<FreeStartEra>ERA_MEDIEVAL</FreeStartEra>
-			<PrereqTech>TECH_POTTERY</PrereqTech>
-			<iCost>60</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>80</iConquestProb>
-			<iFoodKept>25</iFoodKept>
-			<iAsset>4</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<BonusHealthChanges>
-				<BonusHealthChange>
-					<BonusType>BONUS_WHEAT</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_RICE</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_CORN</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-			</BonusHealthChanges>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-			<bGraphicalOnly>1</bGraphicalOnly>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SMOKEHOUSE</BuildingClass>
-			<Type>BUILDING_SMOKEHOUSE</Type>
-			<Description>TXT_KEY_BUILDING_SMOKEHOUSE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SMOKEHOUSE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SMOKEHOUSE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SMOKEHOUSE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TANNERY</ArtDefineTag>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
-			<PrereqTech>TECH_PASTORALISM</PrereqTech>
+			<PrereqTech>TECH_TANNING</PrereqTech>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -212,24 +154,22 @@
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_FUR</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_COW</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
 					<BonusType>BONUS_DEER</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_PIG</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -269,6 +209,125 @@
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_WEAVER</BuildingClass>
+			<Type>BUILDING_WEAVER</Type>
+			<Description>TXT_KEY_BUILDING_WEAVER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WEAVER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WEAVER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_WEAVER</ArtDefineTag>
+			<PrereqTech>TECH_LEVERAGE</PrereqTech>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_DYE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_COTTON</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SHEEP</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SILK</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_WEAVER</BuildingClass>
+			<Type>BUILDING_CONGOLESE_MBWADI</Type>
+			<Description>TXT_KEY_BUILDING_CONGOLESE_MBWADI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONGOLESE_MBWADI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONGOLESE_MBWADI_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONGOLESE_MBWADI</ArtDefineTag>
+			<PrereqTech>TECH_LEVERAGE</PrereqTech>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>10</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+			</CommerceModifiers>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_DYE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_COTTON</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SHEEP</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SILK</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -957,6 +1016,24 @@
 			<iConquestProb>80</iConquestProb>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_CLAM</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_CRAB</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_FISH</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_WHALE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
 			<SeaPlotYieldChanges>
 				<iYield>1</iYield>
 			</SeaPlotYieldChanges>
@@ -1420,13 +1497,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_WEAVER</BuildingClass>
-			<Type>BUILDING_WEAVER</Type>
-			<Description>TXT_KEY_BUILDING_WEAVER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_WEAVER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_WEAVER_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_JEWELLER</BuildingClass>
+			<Type>BUILDING_JEWELLER</Type>
+			<Description>TXT_KEY_BUILDING_JEWELLER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JEWELLER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_JEWELLER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_WEAVER</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_JEWELLER</ArtDefineTag>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1454,82 +1531,19 @@
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
-					<BonusType>BONUS_DYE</BonusType>
+					<BonusType>BONUS_AMBER</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_COTTON</BonusType>
+					<BonusType>BONUS_GEMS</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_SHEEP</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_WEAVER</BuildingClass>
-			<Type>BUILDING_CONGOLESE_MBWADI</Type>
-			<Description>TXT_KEY_BUILDING_CONGOLESE_MBWADI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CONGOLESE_MBWADI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CONGOLESE_MBWADI_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CONGOLESE_MBWADI</ArtDefineTag>
-			<PrereqTech>TECH_AESTHETICS</PrereqTech>
-			<iCost>80</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>70</iConquestProb>
-			<iMaxLatitude>90</iMaxLatitude>
-			<iAsset>2</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceModifiers>
-				<iCommerce>10</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</CommerceModifiers>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_DYE</BonusType>
+					<BonusType>BONUS_JADE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_COTTON</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SHEEP</BonusType>
+					<BonusType>BONUS_PEARL</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
@@ -1570,24 +1584,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_FUR</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_IVORY</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_WHALE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1626,24 +1622,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_FUR</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_IVORY</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_WHALE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1678,24 +1656,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_FUR</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_IVORY</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_WHALE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1974,10 +1934,6 @@
 			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
-					<BonusType>BONUS_GEMS</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
 					<BonusType>BONUS_GOLD</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
@@ -2026,10 +1982,6 @@
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
 			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_GEMS</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_GOLD</BonusType>
 					<iHappinessChange>1</iHappinessChange>
@@ -2089,10 +2041,6 @@
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
 			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_GEMS</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_GOLD</BonusType>
 					<iHappinessChange>1</iHappinessChange>
@@ -2244,15 +2192,15 @@
 			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_BANANA</BonusType>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_OPIUM</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_WINE</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_SPICES</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
@@ -2292,23 +2240,23 @@
 			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_BANANA</BonusType>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_OPIUM</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_WINE</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
 			</BonusHealthChanges>
 			<BonusYieldChanges>
 				<BonusYieldChange>
-					<BonusType>BONUS_INCENSE</BonusType>
+					<BonusType>BONUS_OPIUM</BonusType>
 					<YieldChanges>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</YieldChanges>
 				</BonusYieldChange>
 				<BonusYieldChange>
@@ -2363,15 +2311,15 @@
 			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_BANANA</BonusType>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_OPIUM</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_WINE</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_SPICES</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
@@ -2383,6 +2331,57 @@
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_GROCER</BuildingClass>
+			<Type>BUILDING_GROCER</Type>
+			<Description>TXT_KEY_BUILDING_GROCER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GROCER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GROCER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_GROCER</ArtDefineTag>
+			<PrereqTech>TECH_GUILDS</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_BANANA</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_CITRUS</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_DATES</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_OLIVES</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_SPICES</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -2550,20 +2549,6 @@
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
-			<BonusHealthChanges>
-				<BonusHealthChange>
-					<BonusType>BONUS_CLAM</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_CRAB</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_FISH</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-			</BonusHealthChanges>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
@@ -2610,15 +2595,15 @@
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
+					<BonusType>BONUS_COCOA</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
 					<BonusType>BONUS_COFFEE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_TEA</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SUGAR</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
@@ -2682,15 +2667,15 @@
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
+					<BonusType>BONUS_COCOA</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
 					<BonusType>BONUS_COFFEE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_TEA</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SUGAR</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
@@ -4033,7 +4018,7 @@
 			<Description>TXT_KEY_BUILDING_DISTILLERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_DISTILLERY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_DISTILLERY_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DISTILLERY</ArtDefineTag>
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 			<iCost>180</iCost>
@@ -4042,46 +4027,21 @@
 			<iConquestProb>60</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>4</iAsset>
-			<iHealth>-1</iHealth>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusYieldChanges>
-				<BonusYieldChange>
-					<BonusType>BONUS_WHEAT</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_RICE</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_WINE</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_POTATO</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
 					<BonusType>BONUS_SUGAR</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-			</BonusYieldChanges>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -4264,6 +4224,88 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ABATTOIR</BuildingClass>
+			<Type>BUILDING_ABATTOIR</Type>
+			<Description>TXT_KEY_BUILDING_ABATTOIR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ABATTOIR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ABATTOIR_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ABATTOIR</ArtDefineTag>
+			<PrereqTech>TECH_REFRIGERATION</PrereqTech>
+			<iCost>160</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_COW</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_PIG</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_GRAIN_SILO</BuildingClass>
+			<Type>BUILDING_GRAIN_SILO</Type>
+			<Description>TXT_KEY_BUILDING_GRAIN_SILO</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GRAIN_SILO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GRAIN_SILO_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_GRAIN_SILO</ArtDefineTag>
+			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_CORN</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_MILLET</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_RICE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_WHEAT</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -5420,13 +5462,7 @@
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
+			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>´
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -5633,12 +5669,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -5839,12 +5869,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -6047,12 +6071,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -6253,12 +6271,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -6459,12 +6471,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -6665,12 +6671,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
@@ -6871,12 +6871,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -7077,12 +7071,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
@@ -7283,12 +7271,6 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>

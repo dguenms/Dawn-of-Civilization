@@ -3054,6 +3054,38 @@
 		<Spanish>Arena</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TANNERY</Tag>
+		<English>Tannery</English>
+		<French>Tannery</French>
+		<German>Tannery</German>
+		<Italian>Tannery</Italian>
+		<Spanish>Tannery</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWELLER</Tag>
+		<English>Jeweler</English>
+		<French>Jeweler</French>
+		<German>Jeweler</German>
+		<Italian>Jeweler</Italian>
+		<Spanish>Jeweler</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ABATTOIR</Tag>
+		<English>Abattoir</English>
+		<French>Abattoir</French>
+		<German>Abattoir</German>
+		<Italian>Abattoir</Italian>
+		<Spanish>Abattoir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GRAIN_SILO</Tag>
+		<English>Grain Silo</English>
+		<French>Grain Silo</French>
+		<German>Grain Silo</German>
+		<Italian>Grain Silo</Italian>
+		<Spanish>Grain Silo</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
