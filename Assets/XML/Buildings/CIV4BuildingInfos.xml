@@ -5103,6 +5103,9 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SUPERCOMPUTER</ArtDefineTag>
 			<PrereqTech>TECH_COMPUTERS</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_RARE_EARTHS</Bonus>
+			</PrereqBonuses>
 			<iCost>600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -5248,6 +5251,9 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SOLAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_RARE_EARTHS</Bonus>
+			</PrereqBonuses>
 			<bPower>1</bPower>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -5279,6 +5285,9 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FIBER_NETWORK</ArtDefineTag>
 			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_RARE_EARTHS</Bonus>
+			</PrereqBonuses>
 			<iCost>750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -5321,6 +5330,9 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AUTOMATED_FACTORY</ArtDefineTag>
 			<PrereqTech>TECH_AUTOMATION</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_RARE_EARTHS</Bonus>
+			</PrereqBonuses>
 			<iCost>750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
