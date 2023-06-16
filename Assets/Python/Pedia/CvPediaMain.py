@@ -769,31 +769,38 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		lFeatures.sort()
 		self.list = lFeatures
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_FEATURE, gc.getFeatureInfo)
-
-
-
+	
+	
 	def placeResources(self):
 		lResources = []
 		dResourceMap = {}
+		dImprovementMap = {}
 		
-		for iImprovement in xrange(gc.getNumImprovementInfos()):
-			ImprovementInfo = gc.getImprovementInfo(iImprovement)
-			lImprovementResources = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if ImprovementInfo.isBonusTrade(iBonus) and iBonus not in [item for sublist in dResourceMap.values() for item in sublist] and not gc.getBonusInfo(iBonus).isGraphicalOnly()]
+		lImprovementInfos = sorted([gc.getImprovementInfo(iImprovement) for iImprovement in xrange(gc.getNumImprovementInfos())], key=lambda improvement: improvement.isWater())
+		lBonuses = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if not gc.getBonusInfo(iBonus).isGraphicalOnly()]
+		
+		for improvementInfo in reversed(lImprovementInfos):
+			for iBonus in lBonuses:
+				if improvementInfo.isBonusTrade(iBonus):
+					dResourceMap[iBonus] = improvementInfo.getText()
+		
+		for iBonus in lBonuses:
+			if iBonus not in dResourceMap:
+				dResourceMap[iBonus] = "Media"
+		
+		for iBonus, improvement in dResourceMap.items():
+			if improvement not in dImprovementMap:
+				dImprovementMap[improvement] = []
 			
-			if lImprovementResources:
-				dResourceMap[ImprovementInfo.getText()] = lImprovementResources
-		
-		lOther = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if iBonus not in [item for sublist in dResourceMap.values() for item in sublist] and not gc.getBonusInfo(iBonus).isGraphicalOnly()]
-		if lOther:
-			dResourceMap["Media"] = lOther
+			dImprovementMap[improvement].append(iBonus)
 				
-		for sImprovement in sorted(dResourceMap.keys()):
+		for sImprovement in sorted(dImprovementMap.keys()):
 			if lResources:
 				lResources.append(("", -1))
 				
 			lResources.append((sImprovement, -1))
 			
-			for iBonus in dResourceMap[sImprovement]:
+			for iBonus in dImprovementMap[sImprovement]:
 				lResources.append((gc.getBonusInfo(iBonus).getDescription(), iBonus))
 
 		self.list = lResources
