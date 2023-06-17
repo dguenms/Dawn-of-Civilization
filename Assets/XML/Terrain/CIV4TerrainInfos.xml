@@ -490,7 +490,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
-			<iCultureCost>5</iCultureCost>
+			<iCultureCost>10</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Tundra.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -1538,7 +1538,7 @@
 			<iMovement>2</iMovement>
 			<iSeeFrom>1</iSeeFrom>
 			<iSeeThrough>1</iSeeThrough>
-			<iBuildModifier>0</iBuildModifier>
+			<iBuildModifier>50</iBuildModifier>
 			<iDefense>50</iDefense>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Coast.dds</Button>
 			<FootstepSounds>
@@ -1692,6 +1692,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
 			<iDefense>10</iDefense>
+			<iCultureCost>5</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Coast.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -1845,8 +1846,9 @@
 			<iMovement>1</iMovement>
 			<iSeeFrom>1</iSeeFrom>
 			<iSeeThrough>1</iSeeThrough>
-			<iBuildModifier>0</iBuildModifier>
+			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>5</iCultureCost>
 			<Button>Art/Interface/Buttons/BaseTerrain/Semidesert.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -1998,7 +2000,7 @@
 			<iMovement>1</iMovement>
 			<iSeeFrom>1</iSeeFrom>
 			<iSeeThrough>1</iSeeThrough>
-			<iBuildModifier>0</iBuildModifier>
+			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
 			<Button>Art/Interface/Buttons/BaseTerrain/Steppe.dds</Button>
 			<FootstepSounds>
@@ -2154,6 +2156,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>5</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Plains.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -2307,6 +2310,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>20</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_SaltFlat.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>

@@ -11637,6 +11637,8 @@ int CvPlot::calculateCultureCost() const
 	iCost += GC.getTerrainInfo(getTerrainType()).getCultureCostModifier();
 	if (getFeatureType() >= 0) iCost += GC.getFeatureInfo(getFeatureType()).getCultureCostModifier();
 
+	iCost = std::max(0, iCost);
+
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
 
