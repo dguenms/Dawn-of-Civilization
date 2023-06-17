@@ -578,6 +578,15 @@
 			<DefaultBuilding>BUILDING_STADIUM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ZOO</Type>
+			<Description>TXT_KEY_BUILDING_ZOO</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_ZOO</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
 			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

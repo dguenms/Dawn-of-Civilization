@@ -3086,6 +3086,14 @@
 		<Spanish>Grain Silo</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOO</Tag>
+		<English>Zoo</English>
+		<French>Zoo</French>
+		<German>Zoo</German>
+		<Italian>Zoo</Italian>
+		<Spanish>Zoo</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

@@ -4064,6 +4064,7 @@
 			<iHealth>2</iHealth>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -5038,6 +5039,57 @@
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ZOO</BuildingClass>
+			<Type>BUILDING_ZOO</Type>
+			<Description>TXT_KEY_BUILDING_ZOO</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ZOO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ZOO_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ZOO</ArtDefineTag>
+			<PrereqTech>TECH_ECOLOGY</PrereqTech>
+			<iCost>400</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>50</iConquestProb>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_CAMEL</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_FUR</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_IVORY</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_WHALE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CONTAINER_TERMINAL</BuildingClass>
