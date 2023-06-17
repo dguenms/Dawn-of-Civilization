@@ -2203,6 +2203,10 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<bTerrainDoubleMove>1</bTerrainDoubleMove>
 				</TerrainDoubleMove>
+				<TerrainDoubleMove>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<bTerrainDoubleMove>1</bTerrainDoubleMove>
+				</TerrainDoubleMove>
 			</TerrainDoubleMoves>
 			<Button>Art/Interface/Buttons/Promotions/DesertAdaptation.dds</Button>
 		</PromotionInfo>
