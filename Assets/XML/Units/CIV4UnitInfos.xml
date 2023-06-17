@@ -7843,10 +7843,18 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<iTerrainAttack>50</iTerrainAttack>
 				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainAttack>50</iTerrainAttack>
+				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<iTerrainDefense>50</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
 					<iTerrainDefense>50</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
@@ -9397,10 +9405,18 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
 					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
@@ -9884,10 +9900,18 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
 					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
@@ -11118,10 +11142,18 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<iTerrainAttack>25</iTerrainAttack>
 				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainAttack>25</iTerrainAttack>
+				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<iTerrainDefense>25</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
 					<iTerrainDefense>25</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
