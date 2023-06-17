@@ -1685,32 +1685,7 @@ bool CvPlot::isWithinTeamCityRadius(TeamTypes eTeam, PlayerTypes eIgnorePlayer) 
 
 bool CvPlot::isLake() const
 {
-	CvArea* pArea;
-
-	pArea = area();
-
-	//Rhye - start (salt lake)
-	int saltLakePlots[13][2] = {
-	{76, 43}, //Van
-	{82, 48}, //Aral sea
-	{82, 49},
-	{83, 48},
-	{83, 49},
-	{87, 50}, //eastern Balkhash
-	{88, 50},
-	{88, 48}, //Aydar
-	{72, 49}, //Black Sea
-	{112, 43}, //Japan
-	{113, 44},
-	{112, 14}, //Eyre
-	{14, 48} //Great Salt Lake
-	};
-
-	for (int i = 0; i < 13; i++) {
-		if (getX() == saltLakePlots[i][0] && getY() == saltLakePlots[i][1])
-			return false;
-	}
-	//Rhye - end
+	CvArea* pArea = area();
 
 	if (pArea != NULL)
 	{
@@ -1727,12 +1702,6 @@ bool CvPlot::isFreshWater() const
 {
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
-
-	// Leoreth: salt lakes
-	if (GC.getTerrainInfo(getTerrainType()).isSaline())
-	{
-		return false;
-	}
 
 	if (isWater())
 	{
@@ -6713,7 +6682,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		iYield += GC.getYieldInfo(eYield).getPeakChange();
 	}
 
-	if (isLake())
+	if (isLake() && !GC.getTerrainInfo(getTerrainType()).isSaline())
 	{
 		iYield += GC.getYieldInfo(eYield).getLakeChange();
 	}
