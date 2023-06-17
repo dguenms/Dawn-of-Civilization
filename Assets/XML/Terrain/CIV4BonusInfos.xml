@@ -55,6 +55,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_AMBER</ArtDefineTag>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1519,6 +1520,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_JADE</ArtDefineTag>
 			<TechCityTrade>TECH_MASONRY</TechCityTrade>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
