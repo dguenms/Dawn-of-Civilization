@@ -1431,7 +1431,7 @@
 			<Civilopedia>TXT_KEY_BONUS_INCENSE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_INCENSE</ArtDefineTag>
-			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechCityTrade>TECH_PRIESTHOOD</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1679,7 +1679,7 @@
 			<Civilopedia>TXT_KEY_BONUS_OPIUM_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_OPIUM</ArtDefineTag>
-			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechCityTrade>TECH_MEDICINE</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1797,7 +1797,7 @@
 			<Civilopedia>TXT_KEY_BONUS_RUBBER_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_RUBBER</ArtDefineTag>
-			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechCityTrade>TECH_CONSTRUCTION</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
@@ -2062,7 +2062,7 @@
 			<Civilopedia>TXT_KEY_BONUS_TEA_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_TEA</ArtDefineTag>
-			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechCityTrade>TECH_AESTHETICS</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -2116,7 +2116,7 @@
 			<Civilopedia>TXT_KEY_BONUS_TOBACCO_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_TOBACCO</ArtDefineTag>
-			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechCityTrade>TECH_PRIESTHOOD</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
