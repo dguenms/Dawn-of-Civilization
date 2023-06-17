@@ -6718,16 +6718,6 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		iYield += GC.getYieldInfo(eYield).getLakeChange();
 	}
 
-	if (eTeam != NO_TEAM)
-	{
-		eBonus = getBonusType(eTeam);
-
-		if (eBonus != NO_BONUS)
-		{
-			iYield += GC.getBonusInfo(eBonus).getYieldChange(eYield);
-		}
-	}
-
 	if (isRiver())
 	{
 		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType()).getRiverYieldChange(eYield) : GC.getFeatureInfo(getFeatureType()).getRiverYieldChange(eYield));
@@ -6757,6 +6747,19 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 					}
 				}
 			}
+		}
+	}
+
+	// Leoreth: clamp negative values so that bonus yields are always applied
+	iYield = std::max(0, iYield);
+
+	if (eTeam != NO_TEAM)
+	{
+		eBonus = getBonusType(eTeam);
+
+		if (eBonus != NO_BONUS)
+		{
+			iYield += GC.getBonusInfo(eBonus).getYieldChange(eYield);
 		}
 	}
 

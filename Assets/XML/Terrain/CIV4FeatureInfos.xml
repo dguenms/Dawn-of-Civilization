@@ -347,6 +347,7 @@
 			<ArtDefineTag>ART_DEF_FEATURE_FLOOD_PLAINS</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>3</iYieldChange>
+				<iYieldChange>-1</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange>
 				<iYield>0</iYield>
@@ -582,7 +583,9 @@
 			<Description>TXT_KEY_FEATURE_MARSH</Description>
 			<Civilopedia>TXT_KEY_FEATURE_MARSH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_MARSH</ArtDefineTag>
-			<YieldChanges/>
+			<YieldChanges>
+				<iYieldChange>-1</iYieldChange>
+			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
 			<iMovement>2</iMovement>
