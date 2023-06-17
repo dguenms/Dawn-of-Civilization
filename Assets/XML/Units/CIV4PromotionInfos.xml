@@ -2210,5 +2210,17 @@
 			</TerrainDoubleMoves>
 			<Button>Art/Interface/Buttons/Promotions/DesertAdaptation.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_STEPPE_ADAPTATION</Type>
+			<Description>TXT_KEY_PROMOTION_STEPPE_ADAPTATION</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<TerrainDoubleMoves>
+				<TerrainDoubleMove>
+					<TerrainType>TERRAIN_STEPPE</TerrainType>
+					<bTerrainDoubleMove>1</bTerrainDoubleMove>
+				</TerrainDoubleMove>
+			</TerrainDoubleMoves>
+			<Button>Art/Interface/Buttons/Promotions/SteppeAdaptation.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
