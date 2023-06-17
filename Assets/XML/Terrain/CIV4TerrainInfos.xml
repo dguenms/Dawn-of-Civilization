@@ -2292,13 +2292,9 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>2</iYield>
-			</Yields>
-			<RiverYieldChange>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 				<iYield>1</iYield>
-			</RiverYieldChange>
+			</Yields>
+			<RiverYieldChange/>
 			<HillsYieldChange/>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
@@ -2449,7 +2445,7 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
-				<iYield>3</iYield>
+				<iYield>2</iYield>
 			</Yields>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
