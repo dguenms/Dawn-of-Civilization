@@ -1134,7 +1134,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>50</iHealthPercent>
 			<iDefense>50</iDefense>
-			<iCultureCost>0</iCultureCost>
+			<iCultureCost>5</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>3</iGrowth>
