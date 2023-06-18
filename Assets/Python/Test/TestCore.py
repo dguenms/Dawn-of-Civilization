@@ -1556,7 +1556,7 @@ class TestPlots(TestCase):
 			unit.kill(False, 3)
 		
 	def test_land(self):
-		plots = Plots([(64+x, 10+y) for x in range(3) for y in range(3)])
+		plots = Plots([(69+x, 37+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.land()), 9)
 		
 	def test_no_land(self):
@@ -1566,19 +1566,19 @@ class TestPlots(TestCase):
 		self.assertEqual(len(self.plots.water()), 9)
 		
 	def test_no_water(self):
-		plots = Plots([(64+x, 10+y) for x in range(3) for y in range(3)])
+		plots = Plots([(69+x, 37+y) for x in range(3) for y in range(3)])
 		self.assertEqual(len(plots.water()), 0)
 		
 	def test_core_player(self):
-		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
-		self.assertEqual(len(plots.core(0)), 9)
+		plots = Plots([(78+x, 41+y) for x in range(3) for y in range(3)])
+		self.assertEqual(len(plots.core(0)), 8)
 		
 	def test_no_core_player(self):
 		self.assertEqual(len(self.plots.core(0)), 0)
 	
 	def test_core_civ(self):
-		plots = Plots([(67+x, 33+y) for x in range(3) for y in range(3)])
-		self.assertEqual(len(plots.core(iEgypt)), 9)
+		plots = Plots([(78+x, 41+y) for x in range(3) for y in range(3)])
+		self.assertEqual(len(plots.core(iEgypt)), 8)
 	
 	def test_no_core_civ(self):
 		self.assertEqual(len(self.plots.core(iEgypt)), 0)
@@ -1878,10 +1878,10 @@ class TestPlots(TestCase):
 			self.assert_((plot.getX(), plot.getY()) != (-1, -1))
 			
 	def test_regions(self):
-		tiles = [(23, 37), (26, 38), (26, 40)] # mesoamerica, caribbean, usa
+		tiles = [(23, 44), (25, 45), (21, 49)] # mesoamerica, caribbean, usa
 		plots = Plots(tiles)
 		
-		expected_tiles = [(23, 37), (26, 38)]
+		expected_tiles = [(23, 44), (25, 45)]
 		actual_plots = plots.regions(rCaribbean, rMesoamerica)
 		actual_tiles = [(plot.getX(), plot.getY()) for plot in actual_plots]
 		
@@ -2104,8 +2104,8 @@ class TestPlots(TestCase):
 		self.assertEqual(closest_within.count(), 0)
 		
 	def test_area(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
 		
 		plots = PlotFactory().of([africaTile, americaTile])
 		
@@ -2117,8 +2117,8 @@ class TestPlots(TestCase):
 		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
 	
 	def test_area_tile(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
 		
 		plots = PlotFactory().of([africaTile, americaTile])
 		
@@ -2129,8 +2129,8 @@ class TestPlots(TestCase):
 		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
 	
 	def test_area_plot(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
 		
 		plots = PlotFactory().of([africaTile, americaTile])
 		
@@ -2142,8 +2142,8 @@ class TestPlots(TestCase):
 		self.assertEqual((africaPlots[0].getX(), africaPlots[0].getY()), africaTile)
 	
 	def test_area_city(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
 		
 		plots = PlotFactory().of([africaTile, americaTile])
 		
@@ -2158,9 +2158,9 @@ class TestPlots(TestCase):
 			africaCity.kill()
 		
 	def test_areas(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
-		australiaTile = (117, 11)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
+		australiaTile = (126, 18)
 		
 		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
 		
@@ -2175,9 +2175,9 @@ class TestPlots(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 	
 	def test_areas_tiles(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
-		australiaTile = (117, 11)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
+		australiaTile = (126, 18)
 		
 		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
 		
@@ -2190,9 +2190,9 @@ class TestPlots(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 	
 	def test_areas_plots(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
-		australiaTile = (117, 11)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
+		australiaTile = (126, 18)
 		
 		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
 		
@@ -2207,9 +2207,9 @@ class TestPlots(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 	
 	def test_areas_cities(self):
-		africaTile = (48, 30)
-		americaTile = (37, 28)
-		australiaTile = (117, 11)
+		africaTile = (54, 41)
+		americaTile = (27, 47)
+		australiaTile = (126, 18)
 		
 		plots = PlotFactory().of([africaTile, americaTile, australiaTile])
 		
@@ -2283,9 +2283,9 @@ class TestPlotFactory(TestCase):
 		self.assertEqual(len(plots), iWorldX * iWorldY)
 		
 	def test_region(self):
-		expected_tiles = [(25, 38), (26, 38), (27, 38), (27, 36), (29, 37), (30, 37), (30, 39), (32, 37), (33, 33), (33, 35)]
+		expected_tiles = [(53, 67), (54, 67), (52, 66), (53, 66), (54, 66), (53, 65), (54, 65), (52, 64), (53, 64)]
 		region = Plots(expected_tiles)
-		plots = self.factory.region(rCaribbean)
+		plots = self.factory.region(rIreland)
 		self.assertEqual(len(region), len(plots))
 		self.assert_(plots.same(region))
 		
@@ -2304,7 +2304,7 @@ class TestPlotFactory(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_surrounding_wrap(self):
-		expected_tiles = [(0, 0), (1, 0), (0, 1), (1, 1), (123, 0), (123, 1)]
+		expected_tiles = [(0, 0), (1, 0), (0, 1), (1, 1), (149, 0), (149, 1)]
 		plots = self.factory.surrounding((0, 0))
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
@@ -2625,12 +2625,12 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_core_player(self):
-		city = gc.getPlayer(0).initCity(69, 33)
+		city = gc.getPlayer(0).initCity(79, 43)
 		cities = self.cities.including(city)
 		self.assertEqual(len(cities), 4)
 		
 		actual_cities = cities.core(0)
-		expected_tiles = [(69, 33)]
+		expected_tiles = [(79, 43)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
@@ -2641,12 +2641,12 @@ class TestCities(TestCase):
 			city.kill()
 	
 	def test_core_civ(self):
-		city = gc.getPlayer(0).initCity(69, 33)
+		city = gc.getPlayer(0).initCity(79, 43)
 		cities = self.cities.including(city)
 		self.assertEqual(len(cities), 4)
 		
 		actual_cities = cities.core(iEgypt)
-		expected_tiles = [(69, 33)]
+		expected_tiles = [(79, 43)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
@@ -2657,10 +2657,10 @@ class TestCities(TestCase):
 			city.kill()
 			
 	def test_coastal(self):
-		city = gc.getPlayer(0).initCity(63, 10)
+		city = gc.getPlayer(0).initCity(54, 35)
 		cities = self.cities.including(city)
 		actual_cities = cities.coastal()
-		expected_tiles = [(63, 10)]
+		expected_tiles = [(54, 35)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
@@ -2671,7 +2671,7 @@ class TestCities(TestCase):
 			city.kill()
 		
 	def test_regions(self):
-		tiles = [(23, 37), (26, 38), (26, 40)] # mesoamerica, caribbean, usa
+		tiles =  [(23, 44), (25, 45), (21, 49)] # mesoamerica, caribbean, usa
 		created_cities = []
 		for x, y in tiles:
 			city = gc.getPlayer(0).initCity(x, y)
@@ -2679,7 +2679,7 @@ class TestCities(TestCase):
 		
 		cities = Cities(created_cities)
 		
-		expected_tiles = [(23, 37), (26, 38)]
+		expected_tiles = [(23, 44), (25, 45)]
 		actual_cities = cities.regions(rCaribbean, rMesoamerica)
 		actual_tiles = [(city.getX(), city.getY()) for city in actual_cities]
 		
@@ -3184,13 +3184,13 @@ class TestNames(TestCase):
 class TestWrap(TestCase):
 
 	def test_wrap_x(self):
-		self.assertEqual(wrap(124, 0), (0, 0))
+		self.assertEqual(wrap(150, 0), (0, 0))
 		
 	def test_wrap_x_negative(self):
-		self.assertEqual(wrap(-1, 0), (123, 0))
+		self.assertEqual(wrap(-1, 0), (149, 0))
 		
 	def test_wrap_y(self):
-		self.assertEqual(wrap(0, 68), (0, 67))
+		self.assertEqual(wrap(0, 80), (0, 79))
 		
 	def test_wrap_y_negative(self):
 		self.assertEqual(wrap(0, -1), (0, 0))
@@ -3202,7 +3202,7 @@ class TestWrap(TestCase):
 		self.assertEqual(wrap(gc.getMap().plot(0, 0)), (0, 0))
 		
 	def test_wrap_invalid_plot(self):
-		self.assertEqual(wrap(gc.getMap().plot(124, 68)), None)
+		self.assertEqual(wrap(gc.getMap().plot(150, 80)), None)
 		
 		
 class TestLocation(TestCase):
@@ -3561,9 +3561,9 @@ class TestClosestCity(TestCase):
 			farther_city.kill()
 	
 	def test_closest_continents(self):
-		original_city = gc.getPlayer(0).initCity(49, 35)
-		closest_city = gc.getPlayer(0).initCity(47, 36)
-		farther_city = gc.getPlayer(0).initCity(57, 27)
+		original_city = gc.getPlayer(0).initCity(68, 53)
+		closest_city = gc.getPlayer(0).initCity(65, 53)
+		farther_city = gc.getPlayer(0).initCity(62, 53)
 		
 		closest = closestCity(original_city, same_continent=True)
 		
@@ -3575,9 +3575,9 @@ class TestClosestCity(TestCase):
 			farther_city.kill()
 	
 	def test_coastal(self):
-		original_city = gc.getPlayer(0).initCity(63, 10)
-		closest_city = gc.getPlayer(0).initCity(65, 11)
-		farther_city = gc.getPlayer(0).initCity(61, 15)
+		original_city = gc.getPlayer(0).initCity(58, 35)
+		closest_city = gc.getPlayer(0).initCity(56, 35)
+		farther_city = gc.getPlayer(0).initCity(54, 35)
 		
 		closest = closestCity(original_city, coastal_only=True)
 		
