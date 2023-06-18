@@ -94,6 +94,7 @@ dResourcesDict = {
 	(112, 43) : (1400,  iCotton),   # Bengal
 	(63, 65)  : (1500,  iCow),      # Netherlands
 	(81, 18)  : (1500,  iCitrus),   # Mozambique
+	(70, 48)  : (1500,  iCitrus),   # Sicily
 	(28, 44)  : (1500,  iSugar),	# Cuba
 	(31, 43)  : (1500,  iSugar),	# Hispaniola
 	(28, 42)  : (1500,  iSugar),	# Jamaica
