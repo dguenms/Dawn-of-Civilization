@@ -22973,4 +22973,33 @@
 		<fMaxWetLevel>0.5</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script3DSound>
+	<Script3DSound>
+        <ScriptID>AS3D_SS_SAVANNA_BIRD</ScriptID>
+        <SoundID>SND_SAVANNA_BIRD</SoundID>
+        <SoundType>GAME_AMBIENCE</SoundType>
+        <iMinVolume>75</iMinVolume>
+        <iMaxVolume>75</iMaxVolume>
+        <iPitchChangeDown>0</iPitchChangeDown>
+        <iPitchChangeUp>0</iPitchChangeUp>
+        <bLooping>1</bLooping>
+        <iMinTimeDelay>3000</iMinTimeDelay>
+        <iMaxTimeDelay>5000</iMaxTimeDelay>
+        <StartPosition>RANDOM</StartPosition>
+        <EndPosition>RANDOM</EndPosition>
+        <iMinVelocity>0</iMinVelocity>
+        <iMaxVelocity>0</iMaxVelocity>
+        <iMinDistanceFromListener>500</iMinDistanceFromListener>
+        <iMaxDistanceFromListener>1000</iMaxDistanceFromListener>
+        <iMinDistanceForMaxVolume>1000</iMinDistanceForMaxVolume>
+        <iMaxDistanceForMaxVolume>1000</iMaxDistanceForMaxVolume>
+        <iMinCutoffDistance>1000</iMinCutoffDistance>
+        <iMaxCutoffDistance>1000</iMaxCutoffDistance>
+        <bTaperForSoundtracks>0</bTaperForSoundtracks>
+        <iLengthOfSound>0</iLengthOfSound>
+        <fMinDryLevel>1.0</fMinDryLevel>
+        <fMaxDryLevel>1.0</fMaxDryLevel>
+        <fMinWetLevel>0.0</fMinWetLevel>
+        <fMaxWetLevel>0.0</fMaxWetLevel>
+        <iNotPlayPercent>0</iNotPlayPercent>
+    </Script3DSound>
 </Script3DSounds>
