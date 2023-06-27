@@ -1351,9 +1351,9 @@
 					<FootstepAudioScript>AS3D_UN_TREBUCHET_STOP_LEAVES</FootstepAudioScript>
 				</FootstepSound>
 			</FootstepSounds>
-			<WorldSoundscapeAudioScript>ASSS_FOREST_SELECT_AMB</WorldSoundscapeAudioScript>
+			<WorldSoundscapeAudioScript>ASSS_SAVANNA_SELECT_AMB</WorldSoundscapeAudioScript>
 			<EffectType>EFFECT_BIRDSCATTER</EffectType>
-			<iEffectProbability>10</iEffectProbability>
+			<iEffectProbability>15</iEffectProbability>
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
 		</FeatureInfo>
 	</FeatureInfos>

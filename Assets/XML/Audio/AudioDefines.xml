@@ -11514,6 +11514,20 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+            <SoundID>SND_SAVANNA_BIRD</SoundID>
+            <Filename>Sounds/Ambient/SavannaBird</Filename>
+            <LoadType>DYNAMIC_RES</LoadType>
+            <bIsCompressed>1</bIsCompressed>
+            <bInGeneric>1</bInGeneric>
+        </SoundData>
+		<SoundData>
+            <SoundID>SND_AMB_SAVANNALOOP</SoundID>
+            <Filename>Sounds/Ambient/SavannaBedLp</Filename>
+            <LoadType>STREAMED</LoadType>
+            <bIsCompressed>1</bIsCompressed>
+            <bInGeneric>1</bInGeneric>
+        </SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>
