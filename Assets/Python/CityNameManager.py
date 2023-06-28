@@ -5220,6 +5220,7 @@ dIdentifiers = {
 	"Jerusalem"		:	"Yerushalayim",
 	"Kud&#252;s"	:	"Yerushalayim",
 	"Qods"			:	"Yerushalayim",
+	"Urishlim"		:	"Yerushalayim",
 	"Urshalim"		:	"Yerushalayim",
 	"Urushalim"		:	"Yerushalayim",
 	"Yerushalayim"	:	"Yerushalayim",
