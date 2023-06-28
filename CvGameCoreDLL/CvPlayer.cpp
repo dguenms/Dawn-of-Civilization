@@ -25405,6 +25405,11 @@ void CvPlayer::checkCapitalCity()
 
 void CvPlayer::restoreGeneralThreshold()
 {
+	if (getGreatGeneralsCreated() == 0)
+	{
+		return;
+	}
+
 	changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
 
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
