@@ -24740,13 +24740,16 @@ int CvPlayer::countRequiredSlaves() const
 				{
 					pLoopPlot = plotCity(pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE(), iJ);
 
-					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
+					if (pLoopPlot != NULL)
 					{
-						if (pLoopPlot->canUseSlave(getID()))
+						if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
 						{
-							if (!pLoopPlot->isOwned() || pLoopPlot->getOwnerINLINE() == getID())
+							if (pLoopPlot->canUseSlave(getID()))
 							{
-								iNumRequiredSlaves++;
+								if (!pLoopPlot->isOwned() || pLoopPlot->getOwnerINLINE() == getID())
+								{
+									iNumRequiredSlaves++;
+								}
 							}
 						}
 					}
