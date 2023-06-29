@@ -62,7 +62,7 @@ class GoldAmount(ThresholdRequirement):
 # Second Taoist URV goal
 class ShrineIncome(ThresholdRequirement):
 
-	TYPES = (RELIGION_ADJECTIVE, AMOUNT)
+	TYPES = (RELIGION_ADJECTIVE, COUNT)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_SHRINE_INCOME"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SHRINE_INCOME"
