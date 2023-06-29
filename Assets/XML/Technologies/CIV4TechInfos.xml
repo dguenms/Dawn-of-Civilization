@@ -3188,6 +3188,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
 				<PrereqTech>TECH_HORTICULTURE</PrereqTech>
@@ -3446,7 +3449,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SOCIAL_CONTRACT</PrereqTech>
