@@ -165,6 +165,10 @@ class GoalDescription(Describable):
 	def __call__(self, iPlayer, **options):
 		combined_options = self.options.copy()
 		combined_options.update(options)
+		
+		for requirement in self.requirements:
+			requirement.reset()
+		
 		return Goal(self.requirements, self.desc_key, iPlayer, **combined_options)
 	
 	def __repr__(self):

@@ -218,7 +218,7 @@ class TestShrineIncome(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "ShrineIncome(Orthodoxy, 2)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "an income of 2 gold from the Orthodox shrine")
+		self.assertEqual(self.requirement.description(), "an income of two gold from the Orthodox shrine")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})

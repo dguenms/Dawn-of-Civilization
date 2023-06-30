@@ -284,6 +284,19 @@ class TestGoalDescription(ExtendedTestCase):
 		goal = goal_description(0)
 		
 		self.assertType(goal.evaluator, VassalsEvaluator)
+	
+	def test_create_resets_requirements(self):
+		requirement = FirstDiscover(iWriting)
+		goal_description = GoalDescription([requirement], "TXT_KEY_VICTORY_DESC_CONTROL")
+		
+		requirement.succeed()
+		
+		self.assertEqual(goal_description.requirements[0].state, SUCCESS)
+		
+		goal = goal_description(0)
+		
+		self.assertEqual(goal_description.requirements[0].state, POSSIBLE)
+		self.assertEqual(goal.requirements[0].state, POSSIBLE)
 
 
 class TestGoal(ExtendedTestCase):

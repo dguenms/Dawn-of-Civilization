@@ -62,6 +62,9 @@ class Requirement(object):
 		
 	def indicator(self, evaluator):
 		return indicator(self.fulfilled(evaluator))
+	
+	def reset(self):
+		return
 		
 	def fulfilled(self, evaluator):
 		raise NotImplementedError()
@@ -182,6 +185,9 @@ class StateRequirement(Requirement):
 	def __init__(self, *parameters, **options):
 		Requirement.__init__(self, *parameters, **options)
 		
+		self.reset()
+	
+	def reset(self):
 		self.state = POSSIBLE
 	
 	def succeed(self):
