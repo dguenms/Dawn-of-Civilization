@@ -1141,7 +1141,7 @@ class Congress:
 									
 				# weaker and collapsing empires
 				if not is_minor(iLoopPlayer):
-					if game.getPlayerRank(iLoopPlayer) > iNumPlayersAlive / 2 and game.getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
+					if game.getPlayerRank(iPlayer) > iNumPlayersAlive / 2 and game.getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
 						if data.players[iLoopPlayer].iStabilityLevel == iStabilityCollapsing:
 							if iSettlerMapValue >= 90:
 								iValue += max(1, iSettlerMapValue / 100)
