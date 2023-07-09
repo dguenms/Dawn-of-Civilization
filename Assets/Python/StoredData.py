@@ -43,6 +43,10 @@ class CivData:
 		self.iGreatPeopleCreated = 0
 		self.iGreatSpiesCreated = 0
 		self.iNumUnitGoldenAges = 0
+		
+		# History
+		
+		self.bTradingCompanyConquerors = True
 
 
 class PlayerData:

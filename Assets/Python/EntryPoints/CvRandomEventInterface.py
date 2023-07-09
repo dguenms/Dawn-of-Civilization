@@ -4294,6 +4294,9 @@ def canTriggerTradingCompanyConquerors(argsList):
 	
 	if iCiv not in dTradingCompanyPlots or not dTradingCompanyPlots[iCiv] or not player(iPlayer).isHuman():
 		return False
+		
+	if not data.civs[iCiv].bTradingCompanyConquerors:
+		return False
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
 	data.lTradingCompanyConquerorsTargets[iCiv] = getColonialTargets(iPlayer, True)
@@ -4392,6 +4395,8 @@ def doTradingCompanyConquerors1(argsList):
 
 	iNewGold = pPlayer.getGold() - iGold
 	pPlayer.setGold(max(0, iNewGold))
+	
+	data.civs[iCiv].bTradingCompanyConquerors = False
 
 def canChooseTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
@@ -4440,6 +4445,15 @@ def doTradingCompanyConquerors2(argsList):
 	
 	if seaPlot:
 		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
+	
+	data.civs[iCiv].bTradingCompanyConquerors = False
+
+def doTradingCompanyConquerors3(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
+	
+	data.civs[iCiv].bTradingCompanyConquerors = False
 	
 ######## Reformation (Leoreth) ########
 
