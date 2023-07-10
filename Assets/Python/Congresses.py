@@ -1213,7 +1213,7 @@ class Congress:
 		self.invites = self.invites.alive().where(lambda p: player(p).getNumCities() > 0)
 		
 		# America receives an invite if there are still claims in the west
-		if player(iAmerica).isAlive() and iAmerica not in self.invites and not self.bPostWar:
+		if player(iAmerica).isAlive() and player(iAmerica).getNumCities() > 0 and iAmerica not in self.invites and not self.bPostWar:
 			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)
