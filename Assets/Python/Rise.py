@@ -536,6 +536,10 @@ class Birth(object):
 			settler = units.at(self.location).owner(self.iPlayer).where(lambda unit: unit.isFound()).last()
 			if settler:
 				interface.selectUnit(settler, True, False, False)
+		
+		# update revealed owners
+		for plot in plots.all():
+			plot.updateRevealedOwner(self.team.getID())
 	
 	def prepareCapital(self):
 		expelUnits(self.iPlayer, plots.surrounding(self.location), self.flippedArea())

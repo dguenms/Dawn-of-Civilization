@@ -306,6 +306,7 @@ public:
 	bool isExpansion();
 
 	void setRevealedOwner(int eTeam, int eNewValue);
+	void updateRevealedOwner(int eTeam);
 
 private:
 	CvPlot* m_pPlot;
