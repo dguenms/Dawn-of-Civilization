@@ -250,6 +250,13 @@ class GameData:
 		
 		self.period_offsets = PeriodOffsets()
 		
+		# Statistics
+		
+		self.dUnitsBuilt = {}
+		self.dUnitsKilled = {}
+		self.dUnitsLost = {}
+		self.dBuildingsBuilt = {}
+		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		

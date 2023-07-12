@@ -2668,19 +2668,20 @@ class CvInfoScreen:
 
 		aiUnitsBuilt = []
 		for iUnitLoop in range(iNumUnits):
-			aiUnitsBuilt.append(CyStatistics().getPlayerNumUnitsBuilt(self.iActivePlayer, iUnitLoop))
+			aiUnitsBuilt.append(CyStatistics().getPlayerNumUnitsBuilt(self.iActivePlayer, iUnitLoop) - data.dUnitsBuilt.get(iUnitLoop, 0))
 
 		aiUnitsKilled = []
 		for iUnitLoop in range(iNumUnits):
-			aiUnitsKilled.append(CyStatistics().getPlayerNumUnitsKilled(self.iActivePlayer, iUnitLoop))
+			aiUnitsKilled.append(CyStatistics().getPlayerNumUnitsKilled(self.iActivePlayer, iUnitLoop) - data.dUnitsKilled.get(iUnitLoop, 0))
 
 		aiUnitsLost = []
 		for iUnitLoop in range(iNumUnits):
-			aiUnitsLost.append(CyStatistics().getPlayerNumUnitsLost(self.iActivePlayer, iUnitLoop))
+			aiUnitsLost.append(CyStatistics().getPlayerNumUnitsLost(self.iActivePlayer, iUnitLoop) - data.dUnitsLost.get(iUnitLoop, 0))
 
 		aiBuildingsBuilt = []
-		for iBuildingLoop in range(iNumBuildings):
-			aiBuildingsBuilt.append(CyStatistics().getPlayerNumBuildingsBuilt(self.iActivePlayer, iBuildingLoop))
+		for iBuildingClassLoop in infos.buildingClasses():
+			iBuildingLoop = unique_building_from_class(self.iActivePlayer, iBuildingClassLoop)
+			aiBuildingsBuilt.append(CyStatistics().getPlayerNumBuildingsBuilt(self.iActivePlayer, iBuildingLoop) - data.dBuildingsBuilt.get(iBuildingLoop, 0))
 
 		aiUnitsCurrent = []
 		for iUnitLoop in range(iNumUnits):
@@ -2873,14 +2874,15 @@ class CvInfoScreen:
 			screen.setTableInt(szUnitsTable, iCol, iRow, str(iNumUnitsLost), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		# Add Buildings to table
-		for iBuildingLoop in range(iNumBuildings):
-			iRow = iBuildingLoop
+		for iBuildingClassLoop in infos.buildingClasses():
+			iBuildingLoop = unique_building_from_class(self.iActivePlayer, iBuildingClassLoop)
+			iRow = iBuildingClassLoop
 
 			iCol = 0
 			szBuildingName = gc.getBuildingInfo(iBuildingLoop).getDescription()
 			screen.setTableText(szBuildingsTable, iCol, iRow, szBuildingName, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			iCol = 1
-			iNumBuildingsBuilt = aiBuildingsBuilt[iBuildingLoop]
+			iNumBuildingsBuilt = aiBuildingsBuilt[iBuildingClassLoop]
 			screen.setTableInt(szBuildingsTable, iCol, iRow, str(iNumBuildingsBuilt), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 #BUG: improvements - start

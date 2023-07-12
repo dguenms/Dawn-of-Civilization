@@ -2004,7 +2004,7 @@ class Infos:
 	def buildingClass(self, identifier):
 		return gc.getBuildingClassInfo(identifier)
 	
-	def buildingClasses(self, identifier):
+	def buildingClasses(self):
 		return InfoCollection.type(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos())
 
 	def civ(self, identifier):
@@ -2154,6 +2154,9 @@ class Infos:
 	
 	def units(self):
 		return InfoCollection.type(gc.getUnitInfo, gc.getNumUnitInfos())
+	
+	def unitClasses(self):
+		return InfoCollection.type(gc.getUnitClassInfo, gc.getNumUnitClassInfos())
 	
 	def unitCombat(self, iUnitCombat):
 		return gc.getUnitCombatInfo(iUnitCombat)

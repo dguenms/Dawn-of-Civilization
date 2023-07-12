@@ -854,6 +854,20 @@ class Birth(object):
 		
 		for iOtherPlayer in players.major():
 			self.player.setEspionageSpendingWeightAgainstTeam(player(iOtherPlayer).getTeam(), 0)
+		
+		# update statistics offsets
+		
+		statistics = CyStatistics()
+		
+		dUnitsBuilt = dict((iUnit, statistics.getPlayerNumUnitsBuilt(self.iPlayer, iUnit)) for iUnit in infos.units())
+		dUnitsKilled = dict((iUnit, statistics.getPlayerNumUnitsKilled(self.iPlayer, iUnit)) for iUnit in infos.units())
+		dUnitsLost = dict((iUnit, statistics.getPlayerNumUnitsLost(self.iPlayer, iUnit)) for iUnit in infos.units())
+		dBuildingsBuilt = dict((iBuilding, statistics.getPlayerNumBuildingsBuilt(self.iPlayer, iBuilding)) for iBuilding in infos.buildings())
+		
+		data.dUnitsBuilt = dict((iUnit, iNumUnits) for iUnit, iNumUnits in dUnitsBuilt.items() if iNumUnits > 0)
+		data.dUnitsKilled = dict((iUnit, iNumUnits) for iUnit, iNumUnits in dUnitsKilled.items() if iNumUnits > 0)
+		data.dUnitsLost = dict((iUnit, iNumUnits) for iUnit, iNumUnits in dUnitsLost.items() if iNumUnits > 0)
+		data.dBuildingsBuilt = dict((iBuilding, iNumBuildings) for iBuilding, iNumBuildings in dBuildingsBuilt.items() if iNumBuildings > 0)
 	
 	def birth(self):
 		# initial save
