@@ -226,7 +226,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
 						
-					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
+					lArrivalExceptions = [(25, 32), (26, 40), (26, 41), (25, 42), (25, 41), (23, 42), (21, 42)]
 						
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
