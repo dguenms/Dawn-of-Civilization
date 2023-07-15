@@ -1961,11 +1961,6 @@ void CvUnitAI::AI_attackMove()
 			{
 				return;
 			}
-
-			if (AI_routeCity())
-			{
-				return;
-			}
 		}
 	}
 
