@@ -465,7 +465,7 @@ CIVILISATIONS
     * Leaders: Isabella, Philip II, Franco
     * Unique Unit: Tercio (Arquebusier): starts with Pinch, Formation
     * Unique Unit: Conquistador (Cuirassier): can fortify, +50% attack against Spearman, Swordsman, Axeman, Heavy Swordsman
-    * Unique Building: Citadel (Castle): halved cost, no extra production with Stone, +5 experience for Siege units
+    * Unique Building: Citadel (Castle): halved cost, no extra production with Stone, -25% city maintenance
     * Unique Historical Victory:
         * Be the first to found a city in America
         * Control directly or by vassal a total of 10 Silver and Gold resources by 1650 AD
