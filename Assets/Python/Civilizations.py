@@ -1469,14 +1469,15 @@ dTechPreferences = {
 		iFirearms: 40,
 		iReplaceableParts: 30,
 		iLogistics: 30,
+		iAcademia: 20,
 		iCivilLiberties: 20,
 		iEducation: 15,
 		iGuilds: 15,
 		iChemistry: 15,
 	},
 	iHolyRome : {
-		iAcademia: 50,
 		iPrinting: 50,
+		iAcademia: 30,
 		iFirearms: 20,
 		iReplaceableParts: 20,
 		iEducation: 15,
@@ -1577,6 +1578,7 @@ dTechPreferences = {
 		iExploration: -50,
 	},
 	iNetherlands : {
+		iAcademia: 30,
 		iExploration: 20,
 		iFirearms: 20,
 		iOptics: 20,
@@ -1586,7 +1588,6 @@ dTechPreferences = {
 		iEconomics: 20,
 		iCivilLiberties: 20,
 		iHumanities: 20,
-		iAcademia: 20,
 		iChemistry: 15,
 	},
 	iGermany : {
