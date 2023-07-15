@@ -1003,7 +1003,7 @@ iGermany : [],
 
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
-lMongolCivs = [iPersia, iByzantium, iArabia, iRussia]
+lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRussia]
 
 (i3000BC, i600AD, i1700AD) = range(3)
 
