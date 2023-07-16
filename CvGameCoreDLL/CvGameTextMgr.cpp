@@ -11250,7 +11250,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		}
 	}
 
-	if (kBuilding.getMaintenanceModifier() != 0)
+	if (GC.getBuildingInfo((BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)kBuilding.getBuildingClassType()).getDefaultBuildingIndex()).getMaintenanceModifier() != 0)
 	{
 		if (pCity != NULL && !pCity->plot()->isCore(ePlayer))
 		{
