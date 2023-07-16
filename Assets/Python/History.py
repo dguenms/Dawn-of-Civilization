@@ -302,38 +302,27 @@ def mongolConquerors(iTeamX, iHasMetTeamY):
 				data.setFirstContactMongols(iCivX, False)
 	
 				teamTarget = team(iTeamX)
-					
-				if iCivX == iArabia:
-					tTL = (73, 31)
-					tBR = (84, 43)
-					iDirection = DirectionTypes.DIRECTION_EAST
-				elif iCivX == iPersia:
-					tTL = (73, 37)
-					tBR = (86, 48)
-					iDirection = DirectionTypes.DIRECTION_NORTH
-				elif iCivX == iByzantium:
-					tTL = (68, 41)
-					tBR = (77, 46)
-					iDirection = DirectionTypes.DIRECTION_EAST
-				elif iCivX == iRussia:
-					tTL = (68, 48)
-					tBR = (81, 62)
-					iDirection = DirectionTypes.DIRECTION_EAST
-
-				lTargetList = getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
 				
-				if not lTargetList: return
+				mongol_cities = cities.owner(iMongols)
+				target_cities = cities.owner(iCivX)
+				lTargetCities = [(mongol_cities.closest(target_city), target_city) for target_city in target_cities]
+				lSelectedTargets = sorted(lTargetCities, key=lambda (mongol_city, target_city): distance(mongol_city, target_city))[:3]
+				
+				if not lSelectedTargets:
+					return
 
 				team(iMongols).declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
 				
 				iHandicap = 0
 				if teamtype(iTeamX).isHuman():
 					iHandicap = game.getHandicapType() / 2
-
-				for tPlot in lTargetList:
-					makeUnits(iMongols, iKeshik, tPlot, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-					makeUnits(iMongols, iMangudai, tPlot, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-					makeUnits(iMongols, iTrebuchet, tPlot, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+				
+				for mongol_city, target_city in lSelectedTargets:
+					tSpawn = possibleSpawnsBetween(mongol_city, target_city, iDistance=3).closest(target_city)
+					
+					makeUnits(iMongols, iKeshik, tSpawn, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+					makeUnits(iMongols, iMangudai, tSpawn, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+					makeUnits(iMongols, iTrebuchet, tSpawn, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
 					
 				message(iTeamX, 'TXT_KEY_MONGOL_HORDE_HUMAN')
 				if team().canContact(iTeamX):
