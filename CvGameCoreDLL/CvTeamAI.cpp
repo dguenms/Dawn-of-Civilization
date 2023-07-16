@@ -1712,12 +1712,6 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
-	//Leoreth: recently spawned or respawned civs won't vassalize
-	if (GC.getGame().getGameTurn() < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
-	{
-		return DENIAL_NO_GAIN;
-	}
-
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
@@ -1783,6 +1777,23 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
 	CvTeam& kMasterTeam = GET_TEAM(eTeam);
+
+	//Leoreth: recently spawned or respawned civs won't vassalize
+	if (GC.getGame().getGameTurn() < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// Leoreth: not if either of them are birth protected
+	if (GET_PLAYER(getLeaderID()).isBirthProtected())
+	{
+		return DENIAL_POWER_US;
+	}
+
+	if (GET_PLAYER(kMasterTeam.getLeaderID()).isBirthProtected())
+	{
+		return DENIAL_NO_GAIN;
+	}
 
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
