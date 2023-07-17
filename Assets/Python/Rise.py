@@ -913,7 +913,7 @@ class Birth(object):
 		
 		iRefusalModifier = dWarOnFlipProbability[iOwner]
 		if chance(iRefusalModifier):
-			player(iOwner).AI_changeMemoryCount(self.iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10 + iRefusalModifier))
+			player(iOwner).AI_changeMemoryCount(self.iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(5 + iRefusalModifier / 10))
 	
 	def declareWarOnFlip(self, iOwner):
 		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
