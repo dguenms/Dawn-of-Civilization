@@ -142,13 +142,14 @@ def onCityBuilt(city):
 def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 	iMasterCiv = civ(iMaster)
 	iVassalCiv = civ(iVassal)
-
-	if iVassalCiv == iInca:
-		setPeriod(iInca, iPeriodPeru)
+	
+	if bVassal:
+		if iVassalCiv == iInca:
+			setPeriod(iInca, iPeriodPeru)
 		
-	if iVassalCiv == iChina:
-		if bCapitulated and iMasterCiv == iMongols:
-			setPeriod(iMongols, iPeriodYuan)
+		if iVassalCiv == iChina:
+			if bCapitulated and iMasterCiv == iMongols:
+				setPeriod(iMongols, iPeriodYuan)
 			
 
 @handler("capitalMoved")
