@@ -121,8 +121,6 @@ class ProgressBar:
 			
 			if iX > self.w or abs(iX - iXPrev) < 5: break
 			
-			print "Draw tick mark"
-			
 			self._drawline(screen, self.id, iX, self.m_y1, iX, self.m_y2, self.color, bDouble)
 			if self.marks == TICK_MARKS:
 				self._drawline(screen, self.id, iX, self.m_y3, iX, self.m_y4, self.color, bDouble)
