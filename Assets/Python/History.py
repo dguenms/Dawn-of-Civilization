@@ -303,8 +303,10 @@ def mongolConquerors(iTeamX, iHasMetTeamY):
 	
 				teamTarget = team(iTeamX)
 				
+				mongol_area = plots.rectangle((70, 39), (86, 58))
+				
 				mongol_cities = cities.owner(iMongols)
-				target_cities = cities.owner(iCivX)
+				target_cities = mongol_area.cities().owner(iCivX)
 				lTargetCities = [(mongol_cities.closest(target_city), target_city) for target_city in target_cities]
 				lSelectedTargets = sorted(lTargetCities, key=lambda (mongol_city, target_city): distance(mongol_city, target_city))[:3]
 				
