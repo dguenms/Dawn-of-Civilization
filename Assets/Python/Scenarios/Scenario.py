@@ -223,6 +223,14 @@ WONDER_ORIGINAL_BUILDERS = {
 	iBourse : (iNetherlands, 1602),
 }
 
+DEFAULT_CIV_DESCRIPTIONS = {}
+
+
+@handler("fontsLoaded")
+def loadCivDescriptions():
+	global DEFAULT_CIV_DESCRIPTIONS
+	DEFAULT_CIV_DESCRIPTIONS = dict((iCiv, infos.civ(iCiv).getDescriptionKeyPersistent()) for iCiv in infos.civs())
+
 
 class GreatWall(object):
 
@@ -315,6 +323,9 @@ class Scenario(object):
 			game.setMaxTurns(game.getEstimateEndTurn() - iStartTurn)
 		
 	def setupCivilizations(self):
+		for iCiv, description in DEFAULT_CIV_DESCRIPTIONS.items():
+			infos.civ(iCiv).setDescriptionKeyPersistent(description)
+	
 		for iCiv, description in self.dCivilizationDescriptions.items():
 			infos.civ(iCiv).setDescriptionKeyPersistent(description)
 	
