@@ -547,7 +547,7 @@ class Congress:
 		if self.bPostWar:
 			iHostPlayer = self.winners.alive().first()
 		else:
-			iHostPlayer = self.invites.where(lambda p: player(p).getNumCities() > 0).random()
+			iHostPlayer = self.invites.where(lambda p: cities.core(p).owner(p).any()).random()
 			
 		# normal congresses during war time may be too small because all civilisations are tied up in global wars
 		if len(self.invites) < 3:
