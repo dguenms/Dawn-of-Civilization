@@ -1427,7 +1427,7 @@
 	</Define>
 	<Define>
 		<DefineName>VICTORY_SOUNDTRACK_AVAILABLE</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MAX_WITHDRAWAL_PROBABILITY</DefineName>

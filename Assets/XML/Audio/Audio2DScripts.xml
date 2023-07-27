@@ -110,7 +110,7 @@
 		<iMaxLeftPan>-1</iMaxLeftPan>
 		<iMinRightPan>-1</iMinRightPan>
 		<iMaxRightPan>-1</iMaxRightPan>
-		<bLooping>1</bLooping>
+		<bLooping>0</bLooping>
 		<iMinTimeDelay>0</iMinTimeDelay>
 		<iMaxTimeDelay>0</iMaxTimeDelay>
 		<bTaperForSoundtracks>0</bTaperForSoundtracks>

@@ -62,6 +62,12 @@ def onStateReligionChanged(iPlayer):
 		switchReligiousGoals(iPlayer)
 
 
+@handler("victory")
+def onVictory(iWinner):
+	if iPlayer == active():
+		CyInterface().DoSoundtrack("AS2D_VICTORY")
+
+
 	
 ### UTILITY FUNCTIONS ###
 
