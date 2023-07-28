@@ -292,43 +292,57 @@ def conquistadors(iTeamX, iHasMetTeamY):
 
 
 @handler("firstContact")
-def mongolConquerors(iTeamX, iHasMetTeamY):
+def firstContactMongolConquerors(iTeamX, iHasMetTeamY):
 	if civ(iHasMetTeamY) == iMongols and not player(iMongols).isHuman():
-		iCivX = civ(iTeamX)
-	
-		if iCivX in lMongolCivs:
-			if year() < year(1500) and data.isFirstContactMongols(iCivX):
+		mongolConquerors(iTeamX)
 
-				data.setFirstContactMongols(iCivX, False)
-	
-				teamTarget = team(iTeamX)
-				
-				mongol_area = plots.rectangle((70, 39), (86, 58))
-				
-				mongol_cities = cities.owner(iMongols)
-				target_cities = mongol_area.cities().owner(iCivX)
-				lTargetCities = [(mongol_cities.closest(target_city), target_city) for target_city in target_cities]
-				lSelectedTargets = sorted(lTargetCities, key=lambda (mongol_city, target_city): distance(mongol_city, target_city))[:3]
-				
-				if not lSelectedTargets:
-					return
 
-				team(iMongols).declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
+@handler("flip")
+def flipMongolConquerors(iPlayer):
+	if civ(iPlayer) == iMongols and not player(iPlayer).isHuman():
+		for iOtherPlayer in players.major().alive().without(iPlayer):
+			if player(iPlayer).canContact(iOtherPlayer):
+				mongolConquerors(player(iOtherPlayer).getTeam())
+
+
+def mongolConquerors(iTargetTeam):
+	iTargetCiv = civ(iTargetTeam)
+
+	if iTargetCiv in lMongolCivs:
+		if year() < year(1500) and player(iMongols).getNumCities() > 0 and data.isFirstContactMongols(iTargetCiv):
+			data.setFirstContactMongols(iTargetCiv, False)
+
+			teamTarget = team(iTargetTeam)
+			
+			mongol_area = plots.rectangle((70, 39), (86, 58))
+			
+			mongol_cities = cities.owner(iMongols)
+			target_cities = mongol_area.cities().owner(iTargetCiv)
+			lTargetCities = [(mongol_cities.closest(target_city), target_city) for target_city in target_cities]
+			lSelectedTargets = sorted(lTargetCities, key=lambda (mongol_city, target_city): distance(mongol_city, target_city))[:3]
+			
+			print "mongol cities: %s" % mongol_cities
+			print "target cities: %s" % target_cities
+			
+			if not lSelectedTargets:
+				return
+
+			team(iMongols).declareWar(iTargetTeam, True, WarPlanTypes.WARPLAN_TOTAL)
+			
+			iHandicap = 0
+			if teamtype(iTargetTeam).isHuman():
+				iHandicap = game.getHandicapType() / 2
+			
+			for mongol_city, target_city in lSelectedTargets:
+				tSpawn = possibleSpawnsBetween(mongol_city, target_city, iDistance=3).closest(target_city)
 				
-				iHandicap = 0
-				if teamtype(iTeamX).isHuman():
-					iHandicap = game.getHandicapType() / 2
+				makeUnits(iMongols, iKeshik, tSpawn, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnits(iMongols, iMangudai, tSpawn, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnits(iMongols, iTrebuchet, tSpawn, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
 				
-				for mongol_city, target_city in lSelectedTargets:
-					tSpawn = possibleSpawnsBetween(mongol_city, target_city, iDistance=3).closest(target_city)
-					
-					makeUnits(iMongols, iKeshik, tSpawn, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-					makeUnits(iMongols, iMangudai, tSpawn, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-					makeUnits(iMongols, iTrebuchet, tSpawn, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-					
-				message(iTeamX, 'TXT_KEY_MONGOL_HORDE_HUMAN')
-				if team().canContact(iTeamX):
-					message(active(), 'TXT_KEY_MONGOL_HORDE', adjective(iTeamX))
+			message(iTargetTeam, 'TXT_KEY_MONGOL_HORDE_HUMAN')
+			if team().canContact(iTargetTeam):
+				message(active(), 'TXT_KEY_MONGOL_HORDE', adjective(iTargetTeam))
 
 
 ### TECH ACQUIRED ###
