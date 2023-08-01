@@ -42,6 +42,13 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SONG_OPENING_MENU_RFC</SoundID>
+			<Filename>Sounds/Soundtrack/OpeningMenuRFC</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SONG_VICTORY</SoundID>
 			<Filename>Sounds/Soundtrack/VictoryRFC</Filename>
 			<LoadType>STREAMED</LoadType>

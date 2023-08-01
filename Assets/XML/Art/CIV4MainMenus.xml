@@ -15,5 +15,14 @@
 			<Loading>MAINMENU_LOAD_BTS</Loading>
 			<LoadingSlideshow>MAINMENU_SLIDESHOW_LOAD_BTS</LoadingSlideshow>
 		</MainMenu>
+		<MainMenu>
+			<Type>MAIN_MENU_RFC</Type>
+			<Description>Rhye's and Fall of Civilization</Description>
+			<Scene>MAINMENU_SCENE</Scene>
+			<SceneNoShader>MAINMENU_SCENE_NO_SHADER</SceneNoShader>
+			<Soundtrack>AS2D_OPENING_MENU_RFC</Soundtrack>
+			<Loading>MAINMENU_LOAD_BTS</Loading>
+			<LoadingSlideshow>MAINMENU_SLIDESHOW_LOAD_BTS</LoadingSlideshow>
+		</MainMenu>
 	</MainMenus>
 </Civ4MainMenus>
