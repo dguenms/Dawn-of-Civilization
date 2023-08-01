@@ -1202,6 +1202,7 @@ class Congress:
 			self.invites = self.invites.including(self.losers.where(lambda p: rank(p) < iLowestWinnerRank))
 			
 		self.invites = self.invites.including(players.major().without(self.invites).sort(rank))
+		self.invites = self.invites.novassal()
 		self.invites = self.invites.limit(getNumInvitations())
 		
 		# if not a war congress, exclude civs in global wars
@@ -1213,7 +1214,7 @@ class Congress:
 		self.invites = self.invites.alive().where(lambda p: player(p).getNumCities() > 0)
 		
 		# America receives an invite if there are still claims in the west
-		if player(iAmerica).isAlive() and player(iAmerica).getNumCities() > 0 and iAmerica not in self.invites and not self.bPostWar:
+		if player(iAmerica).isAlive() and not team(player(iAmerica).getTeam()).isAVassal() and player(iAmerica).getNumCities() > 0 and iAmerica not in self.invites and not self.bPostWar:
 			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)
