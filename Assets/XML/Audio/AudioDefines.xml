@@ -189,7 +189,7 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SONG_R_F_C</SoundID>
+			<SoundID>SONG_RFC</SoundID>
 			<Filename>Sounds/Soundtrack/RFC</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>

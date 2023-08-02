@@ -3204,8 +3204,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_R_F_C</ScriptID>
-		<SoundID>SONG_R_F_C</SoundID>
+		<ScriptID>AS2D_RFC</ScriptID>
+		<SoundID>SONG_RFC</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
 		<iMinVolume>70</iMinVolume>
 		<iMaxVolume>70</iMaxVolume>
