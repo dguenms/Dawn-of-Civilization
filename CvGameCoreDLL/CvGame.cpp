@@ -5152,7 +5152,7 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 
 		gDLL->getInterfaceIFace()->setDirty(Center_DIRTY_BIT, true);
 		CvEventReporter::getInstance().victory(eNewWinner, eNewVictory);
-		gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
+		//gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
 	}
 }
 

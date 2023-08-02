@@ -66,6 +66,8 @@ def onStateReligionChanged(iPlayer):
 def onVictory(iPlayer):
 	if iPlayer == active():
 		CyInterface().DoSoundtrack("AS2D_VICTORY")
+	else:
+		CyInterface().DoSoundtrack("AS2D_DEFEAT")
 
 
 	
