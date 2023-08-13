@@ -1553,8 +1553,13 @@ dTechPreferences = {
 		iFission: 12,
 	},
 	iMongols : {
-		iPaper: 15,
+		iGunpowder: 100,
+		iLogistics: 40,
+		iStatecraft: 20,
+		iPrinting: 20,
 		
+		iExploration: -100,
+		iOptics: -100,
 		iFirearms: -40,
 		iCombinedArms: -40,
 	},
