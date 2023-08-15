@@ -10564,6 +10564,12 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 		{
 			return false;
 		}
+
+		// Leoreth: exclude peaks unless specifically for peaks
+		if (kTrigger.getPlotType() != PLOT_PEAK && isPeak())
+		{
+			return false;
+		}
 	}
 
 	if (kTrigger.getNumFeaturesRequired() > 0)
