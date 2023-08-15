@@ -178,7 +178,8 @@ class FirstGreatPerson(StateRequirement):
 				if goal.required < len(goal.requirements):
 					if count(requirement.state != FAILURE for requirement in goal.requirements) < goal.required:
 						goal.fail()
-						return
+
+					return
 				
 				goal.fail()
 
