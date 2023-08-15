@@ -52,6 +52,14 @@ lAlwaysClear = [
 	iHarappa,
 ]
 
+lBirthWars = [
+	(iArabia, iEgypt),
+	(iArabia, iBabylonia),
+	(iArabia, iPersia),
+	(iMongols, iChina),
+	(iOttomans, iByzantium),
+]
+
 
 ### Event Handlers ###
 
@@ -616,6 +624,7 @@ class Birth(object):
 			self.checkSwitch()
 		elif iUntilBirth == 0:
 			self.flip()
+			self.wars()
 			
 		if iUntilBirth < 0:
 			self.checkExpansion()
@@ -959,3 +968,19 @@ class Birth(object):
 		self.civ.advancedStart()
 		
 		events.fireEvent("flip", self.iPlayer)
+	
+	def wars(self):
+		if self.isHuman():
+			return
+	
+		expansionArea = plots.all().where(lambda p: p.getExpansion() == self.iPlayer)
+		expansionTargets = expansionArea.owners()
+		
+		for iTarget in expansionTargets:
+			if (self.iCiv, civ(iTarget)) in lBirthWars:
+				self.team.declareWar(player(iTarget).getTeam(), True, WarPlanTypes.WARPLAN_TOTAL)
+				
+				if player(iTarget).isHuman():
+					for plot in expansionArea.owner(iTarget).core(iTarget):
+						plot.resetExpansion()
+		
