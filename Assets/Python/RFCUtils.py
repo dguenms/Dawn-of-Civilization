@@ -560,10 +560,11 @@ def getUnitsForRole(iPlayer, iRole):
 	return units
 
 # used: AIWars, History, RFCUtils, Rise, Stability
-def createRoleUnits(iPlayer, location, units, iExperience=0):
+def createRoleUnits(iPlayer, location, units, iExperience=0, bCreateSettlers=True):
 	created = CreatedUnits.none()
 	for iRole, iAmount in units:
-		created += createRoleUnit(iPlayer, location, iRole, iAmount, iExperience)
+		if bCreateSettlers or iRole != iSettle:
+			created += createRoleUnit(iPlayer, location, iRole, iAmount, iExperience)
 	return created
 
 # used: AIWars, Congresses, History, RFCUtils
@@ -647,13 +648,13 @@ def relocateCapital(iPlayer, tile):
 	events.fireEvent("capitalMoved", newCapital)
 	
 # used: Rise
-def createSettlers(iPlayer, iTargetCities):
+def createSettlers(iPlayer, iTargetCities, bGrantCapital=True):
 	capital = plots.capital(iPlayer)
 
 	iNumCities = cities.birth(iPlayer).count()
 	iNumSettlers = iTargetCities - iNumCities
 	
-	if not city(capital):
+	if bGrantCapital and not city(capital):
 		iNumSettlers = max(iNumSettlers, 1)
 	
 	return makeUnits(iPlayer, unique_unit(iPlayer, iSettler), capital, iNumSettlers)

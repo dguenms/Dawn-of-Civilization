@@ -41,6 +41,10 @@ lDynamicReligionCivs = [
 	iCanada
 ]
 
+lInvasionCivs = [
+	iOttomans,
+]
+
 dClearedForBirth = {
 	iIndia: iHarappa,
 	iByzantium: iGreece,
@@ -265,6 +269,17 @@ def createStartingWorkers(city):
 	
 	if iNumStartingWorkers > 0:
 		createRoleUnit(iPlayer, city, iWork, iNumStartingWorkers)
+	
+
+@handler("firstCity")
+def createInvaderSettlers(city):
+	iPlayer = city.getOwner()
+	if not civ(iPlayer) in lInvasionCivs:
+		return
+	
+	iNumSettlers = dStartingUnits[iPlayer].get(iSettler, 0)
+	if iNumSettlers > 0:
+		createSettlers(iPlayer, iNumSettlers, bGrantCapital=False)
 
 
 @handler("firstCity")
@@ -533,7 +548,13 @@ class Birth(object):
 			plot.setRevealed(self.team.getID(), True, False, -1)
 	
 	def createUnits(self):
-		createRoleUnits(self.iPlayer, self.location, getStartingUnits(self.iPlayer))
+		bInvasionCiv = self.iCiv in lInvasionCivs
+		
+		createRoleUnits(self.iPlayer, self.location, getStartingUnits(self.iPlayer), bCreateSettlers=not bInvasionCiv)
+		
+		# if invader but no cities in birth, still grant a settler now
+		if bInvasionCiv and not cities.birth(self.iPlayer):
+			createRoleUnit(self.iPlayer, self.location, iSettle)
 		
 		# only create units if coming from autoplay, otherwise after the switch
 		if self.iPlayer == active():
@@ -555,14 +576,15 @@ class Birth(object):
 		if plot_(self.location).isCity():
 			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100)
 		
-		for city in cities.ring(self.location):
-			if city.isHolyCity():
-				completeCityFlip(city, self.iPlayer, city.getOwner(), 100)
-			else:
-				self.data.lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
+		if self.iCiv not in lInvasionCivs:
+			for city in cities.ring(self.location):
+				if city.isHolyCity():
+					completeCityFlip(city, self.iPlayer, city.getOwner(), 100)
+				else:
+					self.data.lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
 				
-				plot_(city).eraseAIDevelopment()
-				plot_(city).setImprovementType(iCityRuins)
+					plot_(city).eraseAIDevelopment()
+					plot_(city).setImprovementType(iCityRuins)
 		
 		for plot in plots.surrounding(self.location):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
