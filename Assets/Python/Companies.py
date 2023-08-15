@@ -59,7 +59,7 @@ def checkCompany(iCompany, iGameTurn):
 	iMaxCompanies = getCompanyLimit(iCompany)
 		
 	# count the number of companies
-	iCompanyCount = players.major().alive().sum(lambda p: player(p).countCorporations(iCompany))
+	iCompanyCount = players.major().existing().sum(lambda p: player(p).countCorporations(iCompany))
 			
 	# return if gameturn is beyond company fall date and removed from all cities
 	if iMaxCompanies == 0 and iCompanyCount == 0:

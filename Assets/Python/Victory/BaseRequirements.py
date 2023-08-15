@@ -130,7 +130,7 @@ class ThresholdRequirement(Requirement):
 class PercentRequirement(ThresholdRequirement):
 
 	def total(self):
-		return players.major().alive().sum(self.value)
+		return players.major().existing().sum(self.value)
 	
 	def percentage(self, evaluator):
 		iTotal = self.total()
@@ -302,7 +302,7 @@ class BestEntitiesRequirement(Requirement):
 class BestPlayersRequirement(BestEntitiesRequirement):
 
 	def entities(self):
-		return players.major().alive()
+		return players.major().existing()
 	
 	def valid_entity(self, iPlayer, evaluator):
 		return iPlayer in evaluator

@@ -210,7 +210,7 @@ def isImmune(iPlayer):
 	pPlayer = player(iPlayer)
 	
 	# must not be dead
-	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
+	if not pPlayer.isExisting():
 		return True
 		
 	# only for major civs
@@ -841,7 +841,7 @@ def calculateStability(iPlayer):
 	iBarbarianLossesStability = 0 # like previously
 	
 	# iterate ongoing wars
-	for iEnemy in players.major().alive():
+	for iEnemy in players.major().existing():
 		pEnemy = player(iEnemy)
 		if tPlayer.isAtWar(iEnemy):
 			iTempWarSuccessStability = calculateTrendScore(data.players[iPlayer].lWarTrend[iEnemy])
@@ -1026,7 +1026,7 @@ def calculateSumScore(lScores, iThreshold = 1):
 def updateEconomyTrend(iPlayer):
 	pPlayer = player(iPlayer)
 	
-	if not pPlayer.isAlive(): return
+	if not pPlayer.isExisting(): return
 	
 	iPreviousCommerce = data.players[iPlayer].iPreviousCommerce
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
@@ -1056,7 +1056,7 @@ def updateEconomyTrend(iPlayer):
 def updateHappinessTrend(iPlayer):
 	pPlayer = player(iPlayer)
 	
-	if not pPlayer.isAlive(): return
+	if not pPlayer.isExisting(): return
 	
 	iNumCities = pPlayer.getNumCities()
 	

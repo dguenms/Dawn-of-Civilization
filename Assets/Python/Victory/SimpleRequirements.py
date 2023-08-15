@@ -20,10 +20,10 @@ class AllAttitude(Requirement):
 		self.iAttitude = int(iAttitude)
 	
 	def value(self, evaluator):
-		return evaluator.max(lambda iPlayer: players.major().alive().without(iPlayer).where(lambda p: player(p).AI_getAttitude(iPlayer) >= self.iAttitude).count())
+		return evaluator.max(lambda iPlayer: players.major().existing().without(iPlayer).where(lambda p: player(p).AI_getAttitude(iPlayer) >= self.iAttitude).count())
 	
 	def required(self):
-		return players.major().alive().count() - 1
+		return players.major().existing().count() - 1
 	
 	def fulfilled(self, evaluator):
 		return self.value(evaluator) >= self.required()
@@ -188,7 +188,7 @@ class GoldPercent(Requirement):
 		return evaluator.sum(lambda p: player(p).getGold())
 	
 	def required(self, evaluator):
-		return players.major().alive().without(evaluator.players()).sum(lambda p: player(p).getGold())
+		return players.major().existing().without(evaluator.players()).sum(lambda p: player(p).getGold())
 	
 	def fulfilled(self, evaluator):
 		return self.value(evaluator) >= self.required(evaluator) * self.iPercentage / 100
@@ -294,7 +294,7 @@ class NoStateReligion(Requirement):
 		self.iReligion = iReligion
 	
 	def value(self):
-		return players.major().alive().religion(self.iReligion).count()
+		return players.major().existing().religion(self.iReligion).count()
 	
 	def fulfilled(self, evaluator):
 		return self.value() == 0
@@ -449,15 +449,15 @@ class StateReligionPercent(Requirement):
 		self.bSecular = bSecular
 	
 	def value(self):
-		iValue = players.major().alive().religion(self.iReligion).count()
+		iValue = players.major().existing().religion(self.iReligion).count()
 		
 		if self.bSecular:
-			iValue += players.major().alive().where(lambda p: not player(p).isStateReligion()).count()
+			iValue += players.major().existing().where(lambda p: not player(p).isStateReligion()).count()
 		
 		return iValue
 	
 	def required(self):
-		return players.major().alive().count() * self.iPercentage / 100
+		return players.major().existing().count() * self.iPercentage / 100
 	
 	def fulfilled(self, evaluator):
 		return self.value() >= self.required()
@@ -481,7 +481,7 @@ class TradeConnection(Requirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_CONNECTION"
 	
 	def fulfilled(self, evaluator):
-		other_players = players.major().alive().without(evaluator.players())
+		other_players = players.major().existing().without(evaluator.players())
 		return evaluator.any(lambda iPlayer: other_players.any(lambda iOtherPlayer: player(iPlayer).canContact(iOtherPlayer) and player(iPlayer).canTradeNetworkWith(iOtherPlayer)))
 
 

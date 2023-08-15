@@ -234,7 +234,7 @@ def isExtendedBirth(iPlayer):
 	if player(iPlayer).isHuman(): return False
 	
 	# add special conditions for extended AI flip zones here
-	if civ(iPlayer) == iOttomans and player(iByzantium).isAlive(): return False
+	if civ(iPlayer) == iOttomans and player(iByzantium).isExisting(): return False
 	
 	return True
 
@@ -491,12 +491,12 @@ def unique_unit(identifier, iUnit):
 
 
 def master(iPlayer):
-	return players.all().alive().where(lambda p: team(iPlayer).isVassal(p)).first()
+	return players.all().existing().where(lambda p: team(iPlayer).isVassal(p)).first()
 
 
 def vassals():
 	vassals = appenddict()
-	for iPlayer in players.all().alive():
+	for iPlayer in players.all().existing():
 		master_id = master(iPlayer)
 		if master_id:
 			vassals[master_id].append(iPlayer)
@@ -1726,8 +1726,14 @@ class Players(EntityCollection):
 	def alive(self):
 		return self.where(lambda p: player(p).isAlive())
 	
+	def existing(self):
+		return self.where(lambda p: player(p).isExisting())
+	
 	def notalive(self):
 		return self.where(lambda p: not player(p).isAlive())
+	
+	def notexisting(self):
+		return self.where(lambda p: not player(p).isExisting())
 		
 	def ai(self):
 		return self.where(lambda p: not player(p).isHuman())

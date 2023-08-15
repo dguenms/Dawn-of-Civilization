@@ -143,7 +143,7 @@ def spreadHinduismSoutheastAsia():
 	lSouthEastAsianCivs = [iKhmer, iIndonesia]
 
 	if not game.isReligionFounded(iHinduism): return
-	if none(player(iCiv).isAlive() for iCiv in lSouthEastAsianCivs): return
+	if none(player(iCiv).isExisting() for iCiv in lSouthEastAsianCivs): return
 	if not turn().between(500, 1200): return
 	
 	if not periodic(20): return
@@ -165,7 +165,7 @@ def spreadHinduismSoutheastAsia():
 @handler("BeginGameTurn")
 def spreadIslamIndonesia():
 	if not game.isReligionFounded(iIslam): return
-	if not player(iIndonesia).isAlive(): return
+	if not player(iIndonesia).isExisting(): return
 	if not turn().between(1300, 1600): return
 	
 	if not periodic(15): return
@@ -267,18 +267,18 @@ def schism(orthodoxCapital, catholicCapital, replace, distant, message):
 	if player().getStateReligion() == iOrthodoxy and not autoplay():
 		eventpopup(-1, text("TXT_KEY_SCHISM_TITLE"), text(message, catholicCapital.getName()), ())
 		
-	for iPlayer in players.major().alive().ai().religion(iOrthodoxy):
+	for iPlayer in players.major().existing().ai().religion(iOrthodoxy):
 		if 2 * replace.owner(iPlayer).count() >= player(iPlayer).getNumCities():
 			player(iPlayer).setLastStateReligion(iCatholicism)
 
 
 def reformation():				
-	for iPlayer in players.major().alive():
+	for iPlayer in players.major().existing():
 		reformationChoice(iPlayer)
 			
-	for iPlayer in players.major().alive():
+	for iPlayer in players.major().existing():
 		if data.players[iPlayer].iReformationDecision == 2:
-			for iTargetPlayer in players.major().alive():
+			for iTargetPlayer in players.major().existing():
 				if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and civ(iTargetPlayer) != iNetherlands and not team(iTargetPlayer).isAVassal():
 					team(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 					
@@ -360,7 +360,7 @@ def checkLateReligionFounding(iReligion, iTech):
 	if game.isReligionFounded(iReligion):
 		return
 		
-	allPlayers = players.major().alive()
+	allPlayers = players.major().existing()
 	techPlayers = allPlayers.tech(iTech)
 				
 	if 2 * techPlayers.count() >= allPlayers.count():

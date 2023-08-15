@@ -177,7 +177,7 @@ def checkEarlyColonists():
 def checkLateColonists():
 	if year().between(1350, 1918):
 		for iCiv in dTradingCompanyPlots:
-			if player(iCiv).isAlive():
+			if player(iCiv).isExisting():
 				iPlayer = slot(iCiv)
 				if data.players[iPlayer].iExplorationTurn >= 0:
 					if turn() == data.players[iPlayer].iExplorationTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
@@ -300,7 +300,7 @@ def firstContactMongolConquerors(iTeamX, iHasMetTeamY):
 @handler("flip")
 def flipMongolConquerors(iPlayer):
 	if civ(iPlayer) == iMongols and not player(iPlayer).isHuman():
-		for iOtherPlayer in players.major().alive().without(iPlayer):
+		for iOtherPlayer in players.major().existing().without(iPlayer):
 			if player(iPlayer).canContact(iOtherPlayer):
 				mongolConquerors(player(iOtherPlayer).getTeam())
 
@@ -548,7 +548,7 @@ def buildCapitalInfrastructure(iPlayer, city):
 def giveEarlyColonists(iCiv):
 	pPlayer = player(iCiv)
 	
-	if pPlayer.isAlive() and not pPlayer.isHuman():
+	if pPlayer.isExisting() and not pPlayer.isHuman():
 		capital = pPlayer.getCapitalCity()
 
 		if iCiv == iRome:
@@ -567,7 +567,7 @@ def giveColonists(iPlayer):
 	pTeam = team(iPlayer)
 	iCiv = civ(iPlayer)
 	
-	if pPlayer.isAlive() and not pPlayer.isHuman() and iCiv in dMaxColonists:
+	if pPlayer.isExisting() and not pPlayer.isHuman() and iCiv in dMaxColonists:
 		if pTeam.isHasTech(iExploration) and data.players[iPlayer].iColonistsAlreadyGiven < dMaxColonists[iCiv]:
 			sourceCities = cities.core(iCiv).owner(iPlayer)
 			
@@ -594,7 +594,7 @@ def giveRaiders(iCiv):
 	pPlayer = player(iCiv)
 	pTeam = team(iCiv)
 	
-	if pPlayer.isAlive() and not pPlayer.isHuman():
+	if pPlayer.isExisting() and not pPlayer.isHuman():
 		city = cities.owner(iCiv).coastal().random()
 		if city:
 			seaPlot = findSeaPlots(location(city), 1, iCiv)

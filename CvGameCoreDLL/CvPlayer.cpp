@@ -11881,6 +11881,13 @@ void CvPlayer::verifyAlive()
 }
 
 
+// Leoreth
+bool CvPlayer::isExisting() const
+{
+	return isAlive() && getNumCities() > 0;
+}
+
+
 bool CvPlayer::isTurnActive() const
 {
 	return m_bTurnActive;

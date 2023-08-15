@@ -190,7 +190,7 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	pPlayer.setLastBirthTurn(turn())
 		
 	# add former colonies that are still free
-	for city in players.minor().alive().cities().where(lambda city: city.isOriginalOwner(iPlayer)):
+	for city in players.minor().existing().cities().where(lambda city: city.isOriginalOwner(iPlayer)):
 		if pPlayer.getSettlerValue(city.getX(), city.getY()) >= 90:
 			if city not in resurrectionCities:
 				resurrectionCities = resurrectionCities.including(city)
@@ -296,11 +296,11 @@ def getResurrectionTechs(iPlayer):
 	for lTechGroup in dTechGroups.values():
 		if civ(iPlayer) in lTechGroup:
 			for iPeer in lTechGroup:
-				if civ(iPlayer) != iPeer and player(iPeer).isAlive():
+				if civ(iPlayer) != iPeer and player(iPeer).isExisting():
 					lSourcePlayers.append(iPeer)
 			
 	# direct neighbors (India can benefit from England etc)
-	for iPeer in players.major().alive().without(iPlayer).without(lSourcePlayers):
+	for iPeer in players.major().existing().without(iPlayer).without(lSourcePlayers):
 		if game.isNeighbors(iPlayer, iPeer):
 			lSourcePlayers.append(iPeer)
 				

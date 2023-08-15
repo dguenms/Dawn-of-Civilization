@@ -60,7 +60,7 @@ def checkUnitsInEnemyTerritory(iPlayer1, iPlayer2):
 # used: AIWars
 def restorePeaceAI(iMinorCiv, bOpenBorders):
 	teamMinor = team(iMinorCiv)
-	for iPlayer in players.major().alive().ai():
+	for iPlayer in players.major().existing().ai():
 		if team(iMinorCiv).isAtWar(player(iPlayer).getTeam()):
 			bInvadingIndependents = checkUnitsInEnemyTerritory(iPlayer, iMinorCiv)
 			bInvadedByIndependents = checkUnitsInEnemyTerritory(iMinorCiv, iPlayer)
@@ -73,7 +73,7 @@ def restorePeaceAI(iMinorCiv, bOpenBorders):
 def restorePeaceHuman(iMinorCiv, bOpenBorders): 
 	teamMinor = team(iMinorCiv)
 	iHuman = active()
-	if player().isAlive():
+	if player().isExisting():
 		if teamMinor.isAtWar(iHuman):
 			bInvadingIndependents = checkUnitsInEnemyTerritory(iHuman, iMinorCiv)
 			bInvadedByIndependents = checkUnitsInEnemyTerritory(iMinorCiv, iHuman)
@@ -85,7 +85,7 @@ def minorWars(iMinorCiv):
 	teamMinor = team(iMinorCiv)
 	for city in cities.owner(iMinorCiv):
 		x, y = location(city)
-		for iPlayer in players.major().alive().ai():
+		for iPlayer in players.major().existing().ai():
 			if player(iPlayer).getSettlerValue(x, y) >= 90 or player(iPlayer).getWarValue(x, y) >= 6:
 				if not teamMinor.isAtWar(iPlayer):
 					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
@@ -724,7 +724,7 @@ def doByzantineBribery(spy):
 	bribePopup.cancel().launch(spy.getOwner(), x, y)
 	
 def exclusive(iCiv, *civs):
-	return iCiv in civs and any(player(iOtherCiv).isAlive() for iOtherCiv in civs if iCiv != iOtherCiv)
+	return iCiv in civs and any(player(iOtherCiv).isExisting() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
 # used: CvScreensInterface, Stability
 # TODO: should move to stability
@@ -1112,7 +1112,7 @@ def startObserverMode(iTurns):
 # used: Shortcuts
 def endObserverMode():
 	if data.iBeforeObserverSlot != -1:
-		if player(data.iBeforeObserverSlot).isAlive():
+		if player(data.iBeforeObserverSlot).isExisting():
 			game.setActivePlayer(data.iBeforeObserverSlot, False)
 			data.iBeforeObserverSlot = -1
 		else:

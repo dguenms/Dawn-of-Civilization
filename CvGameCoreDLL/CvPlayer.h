@@ -740,6 +740,8 @@ public:
 	void setAlive(bool bNewValue, bool bTurnActive = true);
 	void verifyAlive();
 
+	bool isExisting() const; // Leoreth
+
 	DllExport bool isTurnActive() const;
 	DllExport void setTurnActive(bool bNewValue, bool bDoTurn = true);
 

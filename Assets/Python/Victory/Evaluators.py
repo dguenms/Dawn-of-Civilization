@@ -109,21 +109,21 @@ class ReligionEvaluator(Evaluator):
 
 	def players(self):
 		if player(self.iPlayer).getStateReligion() >= 0:
-			for iSameReligion in players.major().alive().where(lambda p: player(p).getStateReligion() == player(self.iPlayer).getStateReligion()):
+			for iSameReligion in players.major().existing().where(lambda p: player(p).getStateReligion() == player(self.iPlayer).getStateReligion()):
 				yield iSameReligion
 
 
 class SecularEvaluator(Evaluator):
 
 	def players(self):
-		for iSecular in players.major().alive().where(lambda p: not player(p).isStateReligion()):
+		for iSecular in players.major().existing().where(lambda p: not player(p).isStateReligion()):
 			yield iSecular
 
 
 class WorldEvaluator(Evaluator):
 
 	def players(self):
-		for iPlayer in players.major().alive():
+		for iPlayer in players.major().existing():
 			yield iPlayer
 
 

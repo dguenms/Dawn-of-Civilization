@@ -2790,3 +2790,8 @@ int CyPlayer::getLandHistory(int iTurn)
 {
 	return m_pPlayer ? m_pPlayer->getLandHistory(iTurn) : -1;
 }
+
+bool CyPlayer::isExisting()
+{
+	return m_pPlayer ? m_pPlayer->isExisting() : false;
+}

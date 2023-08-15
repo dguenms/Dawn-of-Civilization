@@ -43,7 +43,7 @@ class AttitudeCount(ThresholdRequirement):
 		return player(iOtherPlayer).AI_getAttitude(iPlayer) >= iAttitude
 	
 	def value(self, iPlayer, iAttitude):
-		return players.major().alive().where(lambda p: self.valid(iPlayer, p, iAttitude)).count()
+		return players.major().existing().where(lambda p: self.valid(iPlayer, p, iAttitude)).count()
 	
 	def additional_formats(self):
 		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
@@ -408,7 +408,7 @@ class OpenBorderCount(ThresholdRequirement):
 		self.civs = civs
 	
 	def value(self, iPlayer):
-		return players.major().alive().without(iPlayer).where(lambda p: self.valid(iPlayer, p)).count()
+		return players.major().existing().without(iPlayer).where(lambda p: self.valid(iPlayer, p)).count()
 	
 	def valid(self, iPlayer, iOther):
 		if self.civs and civ(iOther) not in self.civs:
@@ -644,7 +644,7 @@ class VassalCount(ThresholdRequirement):
 		return team(iVassal).isVassal(player(iPlayer).getTeam())
 		
 	def value(self, iPlayer):
-		return players.major().alive().where(lambda p: self.valid_vassal(iPlayer, p)).count()
+		return players.major().existing().where(lambda p: self.valid_vassal(iPlayer, p)).count()
 		
 	def additional_formats(self):
 		vassal = text("TXT_KEY_VICTORY_VASSALS")

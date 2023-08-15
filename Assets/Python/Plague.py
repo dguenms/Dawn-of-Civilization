@@ -68,7 +68,7 @@ def progressPlagueCountdown():
 		return
 
 	for iPlayer in players.all().barbarian():
-		if player(iPlayer).isAlive():
+		if player(iPlayer).isExisting():
 			if data.players[iPlayer].iPlagueCountdown > 0:
 				data.players[iPlayer].iPlagueCountdown -= 1
 				if data.players[iPlayer].iPlagueCountdown == 2:
@@ -195,7 +195,7 @@ def calculateTotalPlagueHealth(iPlayer, iPlague):
 
 
 def startPlague(iPlague):
-	iPlayer = players.major().alive().where(isVulnerable).minimum(lambda iPlayer: calculateTotalPlagueHealth(iPlayer, iPlague))
+	iPlayer = players.major().existing().where(isVulnerable).minimum(lambda iPlayer: calculateTotalPlagueHealth(iPlayer, iPlague))
 	
 	if iPlayer and calculateTotalPlagueHealth(iPlayer, iPlague) <= 200:
 		city = cities.owner(iPlayer).random()

@@ -192,7 +192,7 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 
 	if iCiv == iSpain:
 		if iEra == iRenaissance and player(iCiv).getPeriod() == -1:
-			if player(iMoors).isAlive() and cities.owner(iMoors).region(rIberia).none():
+			if player(iMoors).isExisting() and cities.owner(iMoors).region(rIberia).none():
 				setPeriod(iSpain, iPeriodSpain)
 				setPeriod(iMoors, iPeriodMorocco)
 	

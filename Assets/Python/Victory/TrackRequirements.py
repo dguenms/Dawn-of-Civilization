@@ -271,7 +271,7 @@ class HappiestTurns(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.increment_happiest)
 		
 	def increment_happiest(self, goal, iGameTurn, iPlayer):
-		if players.major().alive().maximum(self.calculate_happiness_rating) == iPlayer:
+		if players.major().existing().maximum(self.calculate_happiness_rating) == iPlayer:
 			self.increment()
 			goal.check()
 	
@@ -299,7 +299,7 @@ class HealthiestTurns(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.increment_healthiest)
 	
 	def increment_healthiest(self, goal, iGameTurn, iPlayer):
-		if players.major().alive().maximum(self.calculate_health_rating) == iPlayer:
+		if players.major().existing().maximum(self.calculate_health_rating) == iPlayer:
 			self.increment()
 			goal.check()
 		
@@ -328,7 +328,7 @@ class PeaceTurns(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.increment_peace_turns)
 		
 	def increment_peace_turns(self, goal, iGameTurn, iPlayer):
-		if players.major().alive().none(lambda p: team(iPlayer).isAtWar(p)):
+		if players.major().existing().none(lambda p: team(iPlayer).isAtWar(p)):
 			self.increment()
 			goal.check()
 
@@ -432,7 +432,7 @@ class ResourceTradeGold(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.accumulate_trade_deal_gold)
 	
 	def accumulate_trade_deal_gold(self, goal, iGameTurn, iPlayer):
-		iGold = players.major().alive().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
+		iGold = players.major().existing().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
 		self.accumulate(iGold)
 		goal.check()
 
@@ -554,7 +554,7 @@ class TradeGold(TrackRequirement):
 		goal.check()
 	
 	def accumulate_trade_deal_gold(self, goal, iGameTurn, iPlayer):
-		iGold = players.major().alive().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
+		iGold = players.major().existing().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
 		self.accumulate(iGold * 100)
 		goal.check()
 	

@@ -77,7 +77,7 @@ def mughalUP(city, iBuilding):
 # Russian UP: enemy units are damaged every turn while being in the Russia region
 @handler("BeginGameTurn")
 def russianUP(self):
-	if player(iRussia).isAlive():
+	if player(iRussia).isExisting():
 		for unit in plots.rectangle(tRussia).owner(iRussia).units():
 			if team(iRussia).isAtWar(unit.getOwner()) or (infos.unit(unit).isHiddenNationality() and unit.getCivilizationType() != iRussia and not team(unit.getTeam()).isOpenBorders(team(iRussia).getID())):
 				unit.changeDamage(8, slot(iRussia))
@@ -86,7 +86,7 @@ def russianUP(self):
 # Indonesian UP: additional gold for foreign ships in your core
 @handler("BeginGameTurn")
 def indonesianUP():
-	if not player(iIndonesia).isAlive():
+	if not player(iIndonesia).isExisting():
 		return
 
 	seaUnits = plots.core(iIndonesia).owner(iIndonesia).units().domain(DomainTypes.DOMAIN_SEA)

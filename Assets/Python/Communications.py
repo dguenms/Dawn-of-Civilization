@@ -13,13 +13,13 @@ def decayCommunications(iGameTurn):
 	else:
 		iPeriod = 12
 		
-	for iPlayer in players.major().alive().periodic_iter(iPeriod):
+	for iPlayer in players.major().existing().periodic_iter(iPeriod):
 		if canDecay(iGameTurn, iPlayer):
 			decay(iPlayer)
 
 
 def canDecay(iGameTurn, iPlayer):
-	if not player(iPlayer).isAlive():
+	if not player(iPlayer).isExisting():
 		return False
 	
 	if iGameTurn < player(iPlayer).getLastBirthTurn() + turns(15):
@@ -32,7 +32,7 @@ def canDecay(iGameTurn, iPlayer):
 	
 	
 def decay(iPlayer):
-	contacts = players.major().alive().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
+	contacts = players.major().existing().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
 	
 	# master/vassal relationships: keep only masters where contact can be cut with all vassals
 	dVassals = vassals()

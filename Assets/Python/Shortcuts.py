@@ -65,7 +65,7 @@ def civSwitchShortcut(eventType, key):
 		
 		popup.createPullDown(0)
 		
-		for iPlayer in players.major().alive():
+		for iPlayer in players.major().existing():
 			popup.addPullDownString(name(iPlayer), iPlayer, 0)
 		
 		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)

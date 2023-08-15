@@ -39,7 +39,7 @@ def assignGreatPersonName(unit, iPlayer, city, bAnnounceBirth = True):
 				text_key = 'TXT_KEY_MISC_GP_BORN_OUTSIDE'
 				city = closestCity(unit)
 		
-			for iLoopPlayer in players.major().alive():
+			for iLoopPlayer in players.major().existing():
 				if AlertOpt.isGreatPeopleOurs() and iPlayer != iLoopPlayer:
 					continue
 			

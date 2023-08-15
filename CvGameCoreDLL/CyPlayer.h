@@ -612,6 +612,8 @@ public:
 	int getPopulationHistory(int iTurn);
 	int getLandHistory(int iTurn);
 
+	bool isExisting();
+
 private:
 	CvPlayer* m_pPlayer;
 };

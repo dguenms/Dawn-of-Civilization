@@ -10,7 +10,7 @@ from Events import events, handler
 def checkScheduledCollapse():
 	for iPlayer in players.major():
 		if data.players[iPlayer].iTurnsToCollapse == 0:
-			if player(iPlayer).isAlive():
+			if player(iPlayer).isExisting():
 				completeCollapse(iPlayer)
 			data.players[iPlayer].iTurnsToCollapse = -1
 		elif data.players[iPlayer].iTurnsToCollapse > 0:
@@ -26,7 +26,7 @@ def checkAvailableSlots():
 
 def freeSlotFor(iCiv):
 	iCivImpact = getImpact(iCiv)
-	availableSlots = players.major().alive().where(lambda p: getImpact(civ(p)) <= iCivImpact)
+	availableSlots = players.major().existing().where(lambda p: getImpact(civ(p)) <= iCivImpact)
 	metric = lambda iPlayer: (getImpact(civ(iPlayer)), until(year(dFall[iPlayer])))
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityCollapsing).minimum(metric)

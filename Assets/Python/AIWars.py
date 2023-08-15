@@ -175,7 +175,7 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if player(iPlayer).isHuman():
 		return
 		
-	if not player(iPlayer).isAlive() and iCiv != iTurks: 
+	if not player(iPlayer).isExisting() and iCiv != iTurks: 
 		return
 	
 	if team(iPlayer).isAVassal():
@@ -184,7 +184,7 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if data.lConquest[iID]:
 		return
 		
-	if iPreferredTarget >= 0 and player(iPreferredTarget).isAlive() and team(iPreferredTarget).isVassal(iPlayer):
+	if iPreferredTarget >= 0 and player(iPreferredTarget).isExisting() and team(iPreferredTarget).isVassal(iPlayer):
 		return
 	
 	if tPrereqConquest and not isConquered(tPrereqConquest):
@@ -242,7 +242,7 @@ def conquerorWar(iPlayer, iTarget, iWarPlan):
 def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 	iCiv = civ(iPlayer)
 	
-	if not player(iPlayer).isAlive():
+	if not player(iPlayer).isExisting():
 		for iTech in getResurrectionTechs(iPlayer):
 			team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
 			
@@ -251,7 +251,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 	targetCities = cities.rectangle(tTL, tBR).notowner(iPlayer).where(lambda city: not team(city).isVassal(iPlayer)).lowest(iNumTargets, lambda city: (city.getOwner() == iPreferredTarget, distance(city, capital(iPlayer))))
 	owners = set(city.getOwner() for city in targetCities)
 	
-	if iPreferredTarget >= 0 and iPreferredTarget not in owners and player(iPreferredTarget).isAlive():
+	if iPreferredTarget >= 0 and iPreferredTarget not in owners and player(iPreferredTarget).isExisting():
 		conquerorWar(iPlayer, iPreferredTarget, iWarPlan)
 			
 	for iOwner in owners:
@@ -323,7 +323,7 @@ def planWars(iGameTurn):
 
 
 def determineAttackingPlayer():
-	return players.major().alive().where(possibleTargets).maximum(lambda p: data.players[p].iAggressionLevel)
+	return players.major().existing().where(possibleTargets).maximum(lambda p: data.players[p].iAggressionLevel)
 
 
 def possibleTargets(iPlayer):
@@ -346,7 +346,7 @@ def determineTargetPlayer(iPlayer):
 		if iLoopPlayer == iPlayer: continue
 		
 		# requires live civ and past contact
-		if not pLoopPlayer.isAlive(): continue
+		if not pLoopPlayer.isExisting(): continue
 		if not tPlayer.isHasMet(iLoopPlayer): continue
 		
 		# no masters or vassals

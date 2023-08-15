@@ -157,7 +157,7 @@ def spawnBarbarians(iGameTurn):
 	if year().between(-210, 50):
 		checkSpawn(iBarbarian, iWarGalley, 1, (49, 37), (72, 44), spawnPirates, iGameTurn, 8, 0)
 	#pirates in Barbary coast
-	if not player(iMoors).isAlive():
+	if not player(iMoors).isExisting():
 		if year().between(-50, 700):
 			checkSpawn(iBarbarian, iWarGalley, 1, (46, 30), (62, 39), spawnPirates, iGameTurn, 18, 0)
 		elif year().between(700, 1400):
@@ -284,7 +284,7 @@ def spawnBarbarians(iGameTurn):
 	# Oromos in the Horn of Africa
 	if year().between(1500, 1700):
 		iNumUnits = 1
-		if player(iEthiopia).isAlive():
+		if player(iEthiopia).isExisting():
 			iNumUnits += 1
 			if year().between(1600, 1700): iNumUnits += 1
 		checkSpawn(iBarbarian, iOromoWarrior, iNumUnits, (69, 25), (74, 28), spawnInvaders, iGameTurn, 8, 3)
@@ -334,11 +334,11 @@ def foundMinorCities(iGameTurn):
 		
 def canFoundCity(sName):
 	if sName == 'Kanchipuram' and player(iTamils).isHuman(): return False
-	elif sName == 'Tanjapuri' and player(iTamils).isAlive(): return False
+	elif sName == 'Tanjapuri' and player(iTamils).isExisting(): return False
 	elif sName == 'Zhongdu' and player(iChina).isHuman(): return False
 	elif sName == 'Hamburg' and (player(iHolyRome).isHuman() or data.iSeed % 4 == 0): return False
 	elif sName == 'L&#252;beck' and (player(iHolyRome).isHuman() or data.iSeed % 4 != 0): return False
-	elif sName == 'Rasa' and player(iTibet).isAlive(): return False
+	elif sName == 'Rasa' and player(iTibet).isExisting(): return False
 	
 	return True
 	

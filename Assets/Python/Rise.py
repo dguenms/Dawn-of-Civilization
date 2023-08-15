@@ -310,7 +310,7 @@ def fragmentIndependents():
 
 @handler("BeginGameTurn")
 def checkMinorTechs():
-	iMinor = players.independent().alive().periodic(20)
+	iMinor = players.independent().existing().periodic(20)
 	if iMinor:
 		updateMinorTechs(iMinor, barbarian())
 
@@ -442,7 +442,7 @@ class Birth(object):
 			ownerCities = cities.all().area(self.location).where(lambda city: city.getOwner() in owners).where(lambda city: not plot(city).isPlayerCore(city.getOwner()))
 			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)) and real_distance(city, self.location) <= 14)
 			
-			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().alive().without(self.iPlayer)))
+			additionalPlots = closerCities.plots().expand(2).where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().existing().without(self.iPlayer)))
 			
 			self.area += additionalPlots
 			self.area = self.area.unique()
@@ -519,7 +519,7 @@ class Birth(object):
 		
 		# revealed by enough civilizations in your tech group
 		iTechGroup = next(iGroup for iGroup in dTechGroups if self.iCiv in dTechGroups[iGroup])
-		peers = players.major().alive().without(self.iPlayer).where(lambda p: civ(p) in dTechGroups[iTechGroup])
+		peers = players.major().existing().without(self.iPlayer).where(lambda p: civ(p) in dTechGroups[iTechGroup])
 		peerRevealed = plots.none()
 		
 		def isPeerRevealed(plot):
@@ -665,16 +665,16 @@ class Birth(object):
 		
 		# Byzantium requires Rome to be alive and Greece to be dead (human Rome can avoid Byzantine spawn by being solid)
 		if self.iCiv == iByzantium:
-			if not player(iRome).isAlive():
+			if not player(iRome).isExisting():
 				return False
-			elif player(iGreece).isAlive():
+			elif player(iGreece).isExisting():
 				return False
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
 		# Italy requires Rome to be dead
 		if self.iCiv == iItaly:
-			if player(iRome).isAlive():
+			if player(iRome).isExisting():
 				return False
 		
 		# Ottomans require that the Turks managed to conquer at least one city in the Near East
@@ -685,17 +685,17 @@ class Birth(object):
 		# Thailand requires Khmer to be shaky or worse (unstable if Khmer is human)
 		if self.iCiv == iThailand:
 			iRequiredStability = player(iKhmer).isHuman() and iStabilityShaky or iStabilityStable
-			if player(iKhmer).isAlive() and stability(iKhmer) >= iRequiredStability:
+			if player(iKhmer).isExisting() and stability(iKhmer) >= iRequiredStability:
 				return False
 		
 		# Iran requires Persia to be dead
 		if self.iCiv == iIran:
-			if player(iPersia).isAlive():
+			if player(iPersia).isExisting():
 				return False
 		
 		# Mexico requires Aztecs to be dead
 		if self.iCiv == iMexico:
-			if player(iAztecs).isAlive():
+			if player(iAztecs).isExisting():
 				return False
 				
 		# further checks skipped if base impact is critical or better
@@ -772,7 +772,7 @@ class Birth(object):
 		self.iExpansionTurns = turns(30)
 	
 	def checkExpansion(self):
-		if not self.player.isAlive():
+		if not self.player.isExisting():
 			return
 		
 		if self.player.getNumCities() == 0:
@@ -823,7 +823,7 @@ class Birth(object):
 		if not self.isHuman() and iClearedCiv not in lAlwaysClear:
 			return
 			
-		if not player(iClearedCiv).isAlive():
+		if not player(iClearedCiv).isExisting():
 			return
 		
 		if player(iClearedCiv).isHuman():

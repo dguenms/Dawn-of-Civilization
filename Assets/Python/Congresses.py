@@ -85,14 +85,14 @@ def startsGlobalWar(attackers, defenders):
 	if attackers < 2: return False
 	if defenders < 2: return False
 	
-	worldPowers = players.major().alive().where(lambda p: not team(p).isAVassal()).sort(lambda p: team(p).getPower(True), True).fraction(4)
+	worldPowers = players.major().existing().where(lambda p: not team(p).isAVassal()).sort(lambda p: team(p).getPower(True), True).fraction(4)
 	participatingPowers = worldPowers.where(lambda p: p in attackers + defenders)
 	
 	return 2 * participatingPowers.count() >= worldPowers.count()
 				
 def determineAlliances(iAttacker, iDefender):
-	attackers = players.major().alive().where(team(iDefender).isAtWar)
-	defenders = players.major().alive().where(team(iAttacker).isAtWar)
+	attackers = players.major().existing().where(team(iDefender).isAtWar)
+	defenders = players.major().existing().where(team(iAttacker).isAtWar)
 	
 	return attackers.without(defenders), defenders.without(attackers)
 
@@ -100,7 +100,7 @@ def isGlobalWar():
 	return (data.iGlobalWarAttacker != -1 and data.iGlobalWarDefender != -1)
 	
 def endGlobalWar(iAttacker, iDefender):
-	if not player(iAttacker).isAlive() or not player(iDefender).isAlive():
+	if not player(iAttacker).isExisting() or not player(iDefender).isExisting():
 		return
 		
 	if data.iCongressTurn == turn() + getCongressInterval():
@@ -116,13 +116,13 @@ def endGlobalWar(iAttacker, iDefender):
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:
-		if not player(iLoopPlayer).isAlive(): continue
+		if not player(iLoopPlayer).isExisting(): continue
 		if team(iLoopPlayer).isAVassal(): continue
 		if iLoopPlayer == iAttacker: continue
 		team(iLoopPlayer).makePeace(iDefender)
 		
 	for iLoopPlayer in lDefenders:
-		if not player(iLoopPlayer).isAlive(): continue
+		if not player(iLoopPlayer).isExisting(): continue
 		if team(iLoopPlayer).isAVassal(): continue
 		if iLoopPlayer == iDefender: continue
 		team(iLoopPlayer).makePeace(iAttacker)
@@ -545,7 +545,7 @@ class Congress:
 		self.invite()
 		
 		if self.bPostWar:
-			iHostPlayer = self.winners.alive().first()
+			iHostPlayer = self.winners.existing().first()
 		else:
 			iHostPlayer = self.invites.where(lambda p: cities.core(p).owner(p).any()).random()
 			
@@ -1069,7 +1069,7 @@ class Congress:
 		
 		for iLoopPlayer in players.all():
 			if iLoopPlayer == iPlayer: continue
-			if not player(iLoopPlayer).isAlive(): continue
+			if not player(iLoopPlayer).isExisting(): continue
 			
 			# after a war: winners can only claim from losers and vice versa
 			if self.bPostWar:
@@ -1211,10 +1211,10 @@ class Congress:
 			self.invites = self.invites.without(lAttackers)
 			self.invites = self.invites.without(lDefenders)
 			
-		self.invites = self.invites.alive().where(lambda p: player(p).getNumCities() > 0)
+		self.invites = self.invites.existing()
 		
 		# America receives an invite if there are still claims in the west
-		if player(iAmerica).isAlive() and not team(player(iAmerica).getTeam()).isAVassal() and player(iAmerica).getNumCities() > 0 and iAmerica not in self.invites and not self.bPostWar:
+		if player(iAmerica).isExisting() and not team(player(iAmerica).getTeam()).isAVassal() and iAmerica not in self.invites and not self.bPostWar:
 			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)

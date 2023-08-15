@@ -718,13 +718,13 @@ def checkTurn(iGameTurn):
 
 		
 def checkName(iPlayer):
-	if not player(iPlayer).isAlive(): return
+	if not player(iPlayer).isExisting(): return
 	if is_minor(iPlayer): return
 	if player(iPlayer).getNumCities() == 0: return
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
-	if not player(iPlayer).isAlive(): return
+	if not player(iPlayer).isExisting(): return
 	if is_minor(iPlayer): return
 	setLeader(iPlayer, leader(iPlayer))
 	setLeaderName(iPlayer, leaderName(iPlayer))
@@ -820,7 +820,7 @@ def getEmpireThreshold(iPlayer):
 	if iCiv == iEthiopia and not game.isReligionFounded(iIslam):
 		return 4
 	
-	if iCiv == iRome and not player(iByzantium).isAlive():
+	if iCiv == iRome and not player(iByzantium).isExisting():
 		return 7
 		
 	return 5
@@ -1049,10 +1049,10 @@ def specificName(iPlayer):
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_SPAIN_AL_ANDALUS"
 	
-		bSpain = not player(iMoors).isAlive() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
+		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isAlive() or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
+			if not player(iPortugal).isExisting() or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
@@ -1065,7 +1065,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_SPAIN_CASTILE"
 			
 	elif iCiv == iFrance:
-		if iEra == iMedieval and not player(iHolyRome).isAlive():
+		if iEra == iMedieval and not player(iHolyRome).isExisting():
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iCiv == iEngland:
@@ -1117,7 +1117,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
 			
 	elif iCiv == iGermany:
-		if getColumn(iPlayer) <= 14 and pPlayer.isAlive() and (not player(iHolyRome).isAlive() or not team(iHolyRome).isVassal(iPlayer)):
+		if getColumn(iPlayer) <= 14 and pPlayer.isExisting() and (not player(iHolyRome).isExisting() or not team(iHolyRome).isVassal(iPlayer)):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
 def adjective(iPlayer, bIgnoreVassal = False):
@@ -1147,10 +1147,10 @@ def republicAdjective(iPlayer):
 	iCiv = civ(iPlayer)
 
 	if iCiv == iRome:
-		if player(iByzantium).isAlive(): return None
+		if player(iByzantium).isExisting(): return None
 
 	if iCiv == iByzantium:
-		if player(iRome).isAlive(): return None
+		if player(iRome).isExisting(): return None
 		
 	if iCiv in [iMoors, iEngland]: return None
 	
@@ -1192,7 +1192,7 @@ def specificAdjective(iPlayer):
 				if tPlayer.isHasTech(iGunpowder):
 					return "TXT_KEY_CIV_EGYPT_MAMLUK"
 		
-				if player(iArabia).isAlive():
+				if player(iArabia).isExisting():
 					return "TXT_KEY_CIV_EGYPT_FATIMID"
 			
 				return "TXT_KEY_CIV_EGYPT_AYYUBID"
@@ -1287,7 +1287,7 @@ def specificAdjective(iPlayer):
 		return "TXT_KEY_CIV_POLYNESIA_TUI_TONGA"
 		
 	elif iCiv == iRome:
-		if player(iByzantium).isAlive() and not team(iByzantium).isVassal(team(iCiv).getID()):
+		if player(iByzantium).isExisting() and not team(iByzantium).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 			
 	elif iCiv == iTamils:
@@ -1312,7 +1312,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
 			
 	elif iCiv == iByzantium:
-		if player(iRome).isAlive() and player(iRome).getNumCities() > 0 and not team(iRome).isVassal(team(iCiv).getID()):
+		if player(iRome).isExisting() and player(iRome).getNumCities() > 0 and not team(iRome).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
 		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
@@ -1375,10 +1375,10 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"
 			
 	elif iCiv == iSpain:
-		bSpain = not player(iMoors).isAlive() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
+		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isAlive() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
+			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
@@ -1391,7 +1391,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_SPAIN_CASTILIAN"
 			
 	elif iCiv == iFrance:
-		if iEra == iMedieval and not player(iHolyRome).isAlive():
+		if iEra == iMedieval and not player(iHolyRome).isExisting():
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 	
 	elif iCiv == iKhmer:
@@ -1406,7 +1406,7 @@ def specificAdjective(iPlayer):
 		if isCurrentCapital(iPlayer, "Buda"):
 			return "TXT_KEY_CIV_HOLY_ROME_HUNGARIAN"
 	
-		if player(iGermany).isAlive() and civic.iLegitimacy == iConstitution:
+		if player(iGermany).isExisting() and civic.iLegitimacy == iConstitution:
 			return "TXT_KEY_CIV_HOLY_ROME_AUSTRO_HUNGARIAN"
 			
 		iVassals = 0
@@ -1461,7 +1461,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIAN"
 			
 	elif iCiv == iGermany:
-		if getColumn(iPlayer) <= 14 and player(iHolyRome).isAlive() and not team(iHolyRome).isVassal(iPlayer):
+		if getColumn(iPlayer) <= 14 and player(iHolyRome).isExisting() and not team(iHolyRome).isVassal(iPlayer):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIAN"
 	
 ### Title methods ###
@@ -1510,7 +1510,7 @@ def vassalTitle(iPlayer, iMaster):
 		return "TXT_KEY_CIV_AUSTRIAN_POLAND"
 		
 	if iMasterCiv == iEngland and iCiv == iMughals:
-		if not player(iIndia).isAlive():
+		if not player(iIndia).isExisting():
 			return dSpecificVassalTitles[iEngland][iIndia]
 	
 	if iMasterCiv == iEgypt and player(iMasterCiv).getStateReligion() == iIslam:
@@ -1864,14 +1864,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if civic.iLegitimacy == iRevolutionism:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if not player(iHolyRome).isAlive() and iEra == iMedieval:
+		if not player(iHolyRome).isExisting() and iEra == iMedieval:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iEngland:
 		if capital not in cities.core(iEngland):
 			return "TXT_KEY_CIV_ENGLAND_EXILE"
 			
-		if iEra == iMedieval and player(iFrance).isAlive() and team(iFrance).isAVassal() and civ(master(iFrance)) == iEngland:
+		if iEra == iMedieval and player(iFrance).isExisting() and team(iFrance).isAVassal() and civ(master(iFrance)) == iEngland:
 			return "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE"
 			
 		if getColumn(iPlayer) >= 11:
@@ -1891,7 +1891,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if isCurrentCapital(iPlayer, "Buda"):
 			return "TXT_KEY_KINGDOM_OF"
 			
-		if player(iGermany).isAlive():
+		if player(iGermany).isExisting():
 			return "TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF"
 		
 	elif iCiv == iRussia:
@@ -1940,7 +1940,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
 	elif iCiv == iPortugal:
-		if capital in cities.core(iBrazil) and not player(iBrazil).isAlive():
+		if capital in cities.core(iBrazil) and not player(iBrazil).isExisting():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
 			
 		if not capital in plots.rectangle(tIberia):
@@ -2024,7 +2024,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iCiv == iGermany:
 		if iEra >= iIndustrial and bEmpire:
-			if player(iHolyRome).isAlive() and team(iHolyRome).isAVassal() and civ(master(iHolyRome)) == iGermany:
+			if player(iHolyRome).isExisting() and team(iHolyRome).isExisting() and civ(master(iHolyRome)) == iGermany:
 				return "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE"
 				
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
@@ -2066,7 +2066,7 @@ def leader(iPlayer):
 
 	if is_minor(iPlayer): return None
 	
-	if not player(iPlayer).isAlive(): return None
+	if not player(iPlayer).isExisting(): return None
 	
 	if player(iPlayer).isHuman(): return None
 	
