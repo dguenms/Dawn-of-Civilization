@@ -12410,12 +12410,14 @@ bool CvGameSpeedInfo::read(CvXMLLoadUtility* pXML)
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GameTurnInfos"))
 	{
 		m_iNumTurnIncrements = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+
 		if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
 		{
 			allocateGameTurnInfos(getNumTurnIncrements());
 
 			// loop through each tag
-			for (j=0;j<getNumTurnIncrements();j++)
+			j = 0;
+			while (true)
 			{
 				pXML->GetChildXmlValByName(&iTempVal, "iMonthIncrement");
 				getGameTurnInfo(j).iMonthIncrement = iTempVal;
@@ -12425,6 +12427,17 @@ bool CvGameSpeedInfo::read(CvXMLLoadUtility* pXML)
 				// if we cannot set the current xml node to it's next sibling then we will break out of the for loop
 				// otherwise we will continue looping
 				if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+				{
+					break;
+				}
+
+				if (getGameTurnInfo(j).iNumGameTurnsPerIncrement != 0)
+				{
+					j++;
+				}
+
+
+				if (j >= getNumTurnIncrements())
 				{
 					break;
 				}
