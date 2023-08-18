@@ -78,6 +78,7 @@ public:
 	int getNumMembers();
 	bool isAlive();
 	bool isEverAlive();
+	bool isExisting();
 	int getNumCities();
 	int getTotalPopulation();
 	int getTotalLand();

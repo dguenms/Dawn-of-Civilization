@@ -263,6 +263,11 @@ bool CyTeam::isEverAlive()
 	return m_pTeam ? m_pTeam->isEverAlive() : false;
 }
 
+bool CyTeam::isExisting()
+{
+	return m_pTeam ? m_pTeam->isExisting() : false;
+}
+
 int CyTeam::getNumCities()
 {
 	return m_pTeam ? m_pTeam->getNumCities() : -1;

@@ -122,6 +122,8 @@ public:
 	int isEverAlive() const;																														// Exposed to Python
 	void changeEverAliveCount(int iChange);
 
+	bool isExisting() const;
+
 	int getNumCities() const;																														// Exposed to Python
 	void changeNumCities(int iChange);							
 

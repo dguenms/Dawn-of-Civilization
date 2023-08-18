@@ -3304,6 +3304,12 @@ void CvTeam::changeEverAliveCount(int iChange)
 }
 
 
+bool CvTeam::isExisting() const
+{
+	return isAlive() && getNumCities() > 0;
+}
+
+
 int CvTeam::getNumCities() const														
 {
 	return m_iNumCities;

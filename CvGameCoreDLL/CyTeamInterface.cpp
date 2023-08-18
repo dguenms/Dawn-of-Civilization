@@ -224,5 +224,6 @@ void CyTeamPythonInterface()
 		.def("getTotalTechValue", &CyTeam::getTotalTechValue, "int ()")
 		.def("changeObsoleteBuildingCount", &CyTeam::changeObsoleteBuildingCount, "void (int eBuilding, int iChange)")
 		.def("AI_getWarPlan", &CyTeam::AI_getWarPlan, "int (int eTeam)")
+		.def("isExisting", &CyTeam::isExisting, "bool ()")
 		;
 }
