@@ -718,13 +718,13 @@ def checkTurn(iGameTurn):
 
 		
 def checkName(iPlayer):
-	if not player(iPlayer).isExisting(): return
+	if not player(iPlayer).isAlive(): return
 	if is_minor(iPlayer): return
 	if player(iPlayer).getNumCities() == 0: return
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
-	if not player(iPlayer).isExisting(): return
+	if not player(iPlayer).isAlive(): return
 	if is_minor(iPlayer): return
 	setLeader(iPlayer, leader(iPlayer))
 	setLeaderName(iPlayer, leaderName(iPlayer))
@@ -2066,7 +2066,7 @@ def leader(iPlayer):
 
 	if is_minor(iPlayer): return None
 	
-	if not player(iPlayer).isExisting(): return None
+	if not player(iPlayer).isAlive(): return None
 	
 	if player(iPlayer).isHuman(): return None
 	

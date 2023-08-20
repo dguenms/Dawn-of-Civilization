@@ -1112,7 +1112,7 @@ def startObserverMode(iTurns):
 # used: Shortcuts
 def endObserverMode():
 	if data.iBeforeObserverSlot != -1:
-		if player(data.iBeforeObserverSlot).isExisting():
+		if player(data.iBeforeObserverSlot).isAlive():
 			game.setActivePlayer(data.iBeforeObserverSlot, False)
 			data.iBeforeObserverSlot = -1
 		else:

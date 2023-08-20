@@ -491,12 +491,12 @@ def unique_unit(identifier, iUnit):
 
 
 def master(iPlayer):
-	return players.all().existing().where(lambda p: team(iPlayer).isVassal(p)).first()
+	return players.all().alive().where(lambda p: team(iPlayer).isVassal(p)).first()
 
 
 def vassals():
 	vassals = appenddict()
-	for iPlayer in players.all().existing():
+	for iPlayer in players.all().alive():
 		master_id = master(iPlayer)
 		if master_id:
 			vassals[master_id].append(iPlayer)
