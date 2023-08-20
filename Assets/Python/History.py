@@ -102,7 +102,7 @@ lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou
 @handler("unitBuilt")
 def foundChineseCity(city, unit):
 	if unit.isFound() and civ(unit) == iChina and not player(unit).isHuman():
-		plot = plots.of(lChineseCities).where(lambda plot: isFree(unit.getOwner(), plot, bNoCity=True, bNoEnemyUnit=True, bNoCulture=True, bNoCulture=True)).random()
+		plot = plots.of(lChineseCities).where(lambda plot: isFree(unit.getOwner(), plot, bNoCity=True, bNoEnemyUnit=True, bCanEnter=True, bNoCulture=True)).random()
 	
 		if plot:
 			plot.setOwner(unit.getOwner())
