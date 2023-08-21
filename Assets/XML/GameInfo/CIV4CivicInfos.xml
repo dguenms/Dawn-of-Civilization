@@ -943,7 +943,7 @@
 			<Description>TXT_KEY_CIVIC_SECULARISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_SECULARISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Strategy>
-			<TechPrereq>TECH_CIVIL_RIGHTS</TechPrereq>
+			<TechPrereq>TECH_SOCIOLOGY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Secularism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
