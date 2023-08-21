@@ -8609,6 +8609,11 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				{
 					iValue *= 3;
 				}
+
+				if (!pLoopCity->isHasReligion(CATHOLICISM))
+				{
+					iValue = 0;
+				}
 			}
 
 			iValue = std::max(1, iValue);
