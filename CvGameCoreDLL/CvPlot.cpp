@@ -11461,6 +11461,10 @@ void CvPlot::setCore(CivilizationTypes eCivilization, bool bNewValue)
 	if (m_abCore == NULL)
 	{
 		m_abCore = new byte[NUM_CIVS];
+		for (int iI = 0; iI < NUM_CIVS; iI++)
+		{
+			m_abCore[iI] = 0;
+		}
 	}
 
 	m_abCore[eCivilization] = bNewValue;
@@ -11504,6 +11508,10 @@ void CvPlot::setSettlerValue(CivilizationTypes eCivilization, int iNewValue)
 	if (m_aiSettlerValue == NULL)
 	{
 		m_aiSettlerValue = new byte[NUM_CIVS];
+		for (int iI = 0; iI < NUM_CIVS; iI++)
+		{
+			m_aiSettlerValue[iI] = 0;
+		}
 	}
 
 	m_aiSettlerValue[eCivilization] = iNewValue;
@@ -11544,6 +11552,10 @@ void CvPlot::setWarValue(CivilizationTypes eCivilization, int iNewValue)
 	if (m_aiWarValue == NULL)
 	{
 		m_aiWarValue = new byte[NUM_CIVS];
+		for (int iI = 0; iI < NUM_CIVS; iI++)
+		{
+			m_aiWarValue[iI] = 0;
+		}
 	}
 
 	m_aiWarValue[eCivilization] = iNewValue;
@@ -11605,6 +11617,10 @@ void CvPlot::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
 	if (m_aiReligionSpreadFactor == NULL)
 	{
 		m_aiReligionSpreadFactor = new byte[NUM_RELIGIONS];
+		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			m_aiReligionSpreadFactor[iI] = 0;
+		}
 	}
 
 	m_aiReligionSpreadFactor[eReligion] = iNewValue;
@@ -11694,6 +11710,10 @@ void CvPlot::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
 	if (m_aiReligionInfluence == NULL)
 	{
 		m_aiReligionInfluence = new short[NUM_RELIGIONS];
+		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			m_aiReligionInfluence[iI] = 0;
+		}
 	}
 
 	m_aiReligionInfluence[eReligion] = iNewValue;
