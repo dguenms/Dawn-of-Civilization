@@ -1849,6 +1849,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
+	if (iSettlerMapValue == 0)
+	{
+		return 0;
+	}
+
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
@@ -1860,6 +1865,17 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		if (!bStartingLoc && !bAdvancedStart)
 		{
 			if (!bIsCoastal && iNumAreaCities == 0)
+			{
+				return 0;
+			}
+		}
+	}
+
+	if (iSettlerMapValue < 10)
+	{
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+		{
+			if (plotDirection(iX, iY, (DirectionTypes)iI)->isCity())
 			{
 				return 0;
 			}
@@ -1975,7 +1991,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
         }
 	}
 
-	if (iOwnedTiles > 14 && iSettlerMapValue < 10)
+	// Leoreth: temporarily disable
+	if (false && iOwnedTiles > 14 && iSettlerMapValue < 10)
 	{
 		return 0;
 	}
@@ -2589,7 +2606,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			//iValue -= (std::max(0, (8 - plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE()))) * 200); //Rhye
 			iValue -= (std::max(0, (5 - plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE()))) * 200);
 		}
-		else
+		else if (false) // Leoreth: temporarily disable distance
 		{
 		    int iDistance = plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
 		    int iNumCities = getNumCities();
@@ -2637,7 +2654,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			}
 		}
 	}
-	else
+	else if (false) // Leoreth: temporarily disable
 	{
 		pNearestCity = GC.getMapINLINE().findCity(iX, iY, ((isBarbarian()) ? NO_PLAYER : getID()), ((isBarbarian()) ? NO_TEAM : getTeam()), false);
 		if (pNearestCity != NULL)
@@ -2656,7 +2673,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		iValue *= 2;
 	}
-	else
+	else if (false) // Leoreth: temporarily disable
 	{
 		iTeamAreaCities = GET_TEAM(getTeam()).countNumCitiesByArea(pArea);
 		iThreatAreaCities = 0;
@@ -2778,6 +2795,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	if (iSettlerMapValue > 0)
 	{
 		iValue *= iSettlerMapValue;
+	}
+
+	// Leoreth: really value designated city sites
+	if (iSettlerMapValue >= 10)
+	{
+		iValue *= 5;
 	}
 
 	// iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
@@ -2918,7 +2941,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	// Leoreth: don't conquer independents in regions you're not supposed to
 	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
-		if (iWarMapValue == 0)
+		if (iWarMapValue == 0 && iSettlerMapValue <= 1)
 		{
 			return 0;
 		}
@@ -18442,7 +18465,18 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 					{
 						if (!AI_isPlotCitySite(pLoopPlot))
 						{
-							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+							//iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+
+							iValue += 100000 * pLoopPlot->getSettlerValue(getID());
+
+							/*CvWString szName;
+							CyArgsList argsList4;
+							argsList4.add(getID());
+							argsList4.add(pLoopPlot->getX());
+							argsList4.add(pLoopPlot->getY());
+							gDLL->getPythonIFace()->callFunction(PYScreensModule, "getCityName", argsList4.makeFunctionArgs(), &szName);
+
+							log(CvWString::format(L"%s city %s: found value = %d, map value = %d", getCivilizationShortDescription(), szName.c_str(), iValue, pLoopPlot->getSettlerValue(getID())));*/
 
 							if (iValue > iBestFoundValue)
 							{
