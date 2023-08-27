@@ -416,6 +416,7 @@ public:
 
 	void changeImmobileTimer(int iChange);
 	void testPromotionReady();
+	bool isExisting();
 
 protected:
 	CvUnit* m_pUnit;

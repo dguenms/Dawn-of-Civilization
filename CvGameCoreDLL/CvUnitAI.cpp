@@ -11676,6 +11676,20 @@ bool CvUnitAI::AI_cityAttack(int iRange, int iOddsThreshold, bool bFollow)
 				{
 					if (pLoopPlot->isCity() || (pLoopPlot->isCity(true, getTeam()) && pLoopPlot->isVisibleEnemyUnit(this)))
 					{
+						// Leoreth: protect from barbarians
+						if (isBarbarian() && pLoopPlot->isOwned())
+						{
+							if (GET_PLAYER(pLoopPlot->getOwnerINLINE()).isMinorCiv())
+							{
+								continue;
+							}
+
+							if (GET_PLAYER(pLoopPlot->getOwnerINLINE()).getInitialBirthTurn() + getTurns(20) > GC.getGameINLINE().getGameTurn())
+							{
+								continue;
+							}
+						}
+
 						if (AI_potentialEnemy(pLoopPlot->getTeam(), pLoopPlot))
 						{
 							if (!atPlot(pLoopPlot) && ((bFollow) ? canMoveInto(pLoopPlot, true) : (generatePath(pLoopPlot, 0, true, &iPathTurns) && (iPathTurns <= iRange))))
@@ -12592,6 +12606,20 @@ bool CvUnitAI::AI_pillageRange(int iRange, int iBonusValueThreshold)
 			{
 				if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()))
 				{
+					// Leoreth: protect from barbarians
+					if (isBarbarian() && pLoopPlot->isOwned())
+					{
+						if (GET_PLAYER(pLoopPlot->getOwnerINLINE()).isMinorCiv())
+						{
+							continue;
+						}
+
+						if (GET_PLAYER(pLoopPlot->getOwnerINLINE()).getInitialBirthTurn() + getTurns(20) > GC.getGameINLINE().getGameTurn())
+						{
+							continue;
+						}
+					}
+
 					if (potentialWarAction(pLoopPlot))
 					{
                         CvCity * pWorkingCity = pLoopPlot->getWorkingCity();

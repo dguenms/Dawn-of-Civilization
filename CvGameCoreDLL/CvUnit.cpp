@@ -8492,6 +8492,12 @@ bool CvUnit::isDead() const
 }
 
 
+bool CvUnit::isExisting() const
+{
+	return getX_INLINE() >= 0 && getY_INLINE() >= 0;
+}
+
+
 void CvUnit::setBaseCombatStr(int iCombat)
 {
 	m_iBaseCombat = iCombat;

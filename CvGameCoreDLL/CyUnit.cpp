@@ -1722,3 +1722,8 @@ void CyUnit::testPromotionReady()
 {
 	if (m_pUnit) m_pUnit->testPromotionReady();
 }
+
+bool CyUnit::isExisting()
+{
+	return m_pUnit ? m_pUnit->isExisting() : false;
+}
