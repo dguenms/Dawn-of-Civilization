@@ -51,6 +51,8 @@ class MinorCity(object):
 		if not is_minor(city.getOwner()):
 			return
 		
+		return
+		
 		if self.every(10):
 			self.add_unit()
 		
