@@ -6,7 +6,7 @@ from Events import handler
 
 
 def periodic(iTurns, seed):
-	return (turn() + hash(seed)) % turns(iTurns)
+	return (turn() + hash(seed)) % turns(iTurns) == 0
 
 
 def best_civ_of_group(iGroup):
