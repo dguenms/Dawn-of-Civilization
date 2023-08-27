@@ -186,6 +186,14 @@
 		<Spanish>Cree</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_CUMAN</Tag>
+		<English>Cuman</English>
+		<French>Cuman</French>
+		<German>Cuman</German>
+		<Italian>Cuman</Italian>
+		<Spanish>Cuman</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_EDO</Tag>
 		<English>Edo</English>
 		<French>Edo</French>
@@ -570,6 +578,14 @@
 		<Spanish>Sea Peoples</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_SHAN</Tag>
+		<English>Shan</English>
+		<French>Shan</French>
+		<German>Shan</German>
+		<Italian>Shan</Italian>
+		<Spanish>Shan</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SHONA</Tag>
 		<English>Shona</English>
 		<French>Shona</French>
@@ -602,7 +618,7 @@
 		<Spanish>Slavic</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_ADJECTIVE_SOGIAN</Tag>
+		<Tag>TXT_KEY_ADJECTIVE_SOGDIAN</Tag>
 		<English>Sogdian</English>
 		<French>Sogdian</French>
 		<German>Sogdian</German>
