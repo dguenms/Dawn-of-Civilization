@@ -356,6 +356,7 @@ public:
 	DllExport int currHitPoints() const;																	// Exposed to Python						
 	bool isHurt() const;																				// Exposed to Python						
 	DllExport bool isDead() const;																				// Exposed to Python						
+	bool isExisting() const;
 
 	void setBaseCombatStr(int iCombat);																																										// Exposed to Python
 	int baseCombatStr() const;																																										// Exposed to Python

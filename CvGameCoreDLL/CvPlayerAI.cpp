@@ -2941,7 +2941,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	// Leoreth: don't conquer independents in regions you're not supposed to
 	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || pCity->isBarbarian())
 	{
-		if (iWarMapValue == 0 && iSettlerMapValue <= 1)
+		if (iWarMapValue == 0)
 		{
 			return 0;
 		}
@@ -2982,6 +2982,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		if (isMinorCiv() || iSettlerMapValue > 0 || iWarMapValue > 0)
 		{
 			iValue += 2;
+
+			if (!isBarbarian())
+			{
+				iValue += 2 * iWarMapValue;
+			}
 		}
 	}
 
