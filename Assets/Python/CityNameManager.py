@@ -7132,7 +7132,7 @@ tRenames = (
 },
 #Language: Mongolian
 {
-	"Astrakhan"		:	"Astrakhan",
+	"Astrakhan"		:	"Xacitarxan",
 	"Chita"			:	"Cyty",
 	"Irkutsk"		:	"Erkh&#252;&#252;",
 	"Hailaer"		:	"Hulun",
