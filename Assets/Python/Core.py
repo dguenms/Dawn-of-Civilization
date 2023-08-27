@@ -1177,12 +1177,6 @@ class PlotFactory:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.area(dCoreArea, dCoreAreaExceptions, identifier)
 
-	def normal(self, identifier):
-		iPeriod = player(identifier).getPeriod()
-		if iPeriod in dPeriodNormalArea:
-			return self.area(dPeriodNormalArea, dPeriodNormalAreaExceptions, iPeriod)
-		return self.area(dNormalArea, dNormalAreaExceptions, identifier)
-
 	def expansion(self, identifier):
 		if identifier not in dExpansionArea:
 			return self.none()

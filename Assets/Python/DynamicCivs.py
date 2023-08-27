@@ -1857,7 +1857,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_SPAIN_CROWN_OF"
 			
 	elif iCiv == iFrance:
-		if not capital in cities.normal(iFrance):
+		if not capital in cities.core(iFrance):
 			return "TXT_KEY_CIV_FRANCE_EXILE"
 			
 		if iEra >= iIndustrial and bEmpire:
