@@ -20,6 +20,7 @@ def best_civ_of_same_tech_group(iCiv):
 
 def add_city_buildings(tile, iCiv):
 	city(tile).rebuild(player(iCiv).getCurrentEra())
+	return
 		
 	for iDefensiveBuilding in infos.buildings().where(isDefensiveBuilding):
 		if player(iCiv).canConstruct(iDefensiveBuilding, False, False, False):
@@ -44,14 +45,14 @@ class MinorCity(object):
 		if self.canFound():
 			self.found()
 		
+		return
+		
 		city = city_(self.tile)
 		if not city:
 			return
 		
 		if not is_minor(city.getOwner()):
 			return
-		
-		return
 		
 		if self.every(10):
 			self.add_unit()
@@ -107,10 +108,10 @@ class MinorCity(object):
 		return periodic(iTurns, self)
 	
 	def get_units(self):
-		iTechCiv = self.get_tech_civ()
+		iUnitCiv = self.get_tech_civ()
 		
 		for iRole, iNumUnits in self.units.items():
-			for iUnit, iUnitAI in getUnitsForRole(iTechCiv, iRole):
+			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole):
 				yield base_unit(iUnit), iNumUnits, iUnitAI
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
