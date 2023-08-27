@@ -101,7 +101,7 @@ def createCarthaginianDefenses(city):
 # TODO: revise cities or disable mechanic
 lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou, tHaojing]
 
-@handler("unitBuilt")
+# @handler("unitBuilt")
 def foundChineseCity(city, unit):
 	if unit.isFound() and civ(unit) == iChina and not player(unit).isHuman():
 		plot = plots.of(lChineseCities).where(lambda plot: isFree(unit.getOwner(), plot, bNoCity=True, bNoEnemyUnit=True, bCanEnter=True, bNoCulture=True)).random()
