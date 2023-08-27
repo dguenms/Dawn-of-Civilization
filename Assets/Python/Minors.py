@@ -173,6 +173,18 @@ class Barbarians(object):
 		if self.target_area is None:
 			self.target_area = area
 	
+	def __repr__(self):
+		return "%s barbarians: %s" % (text(self.adjective), format_separators(self.units.keys(), ", ", text("TXT_KEY_AND"), format=lambda iUnit: infos.unit(iUnit).getText()))
+	
+	def spawn_data(self):
+		data = {
+			"iStart": self.iStart,
+			"iEnd": self.iEnd,
+			"units": self.units,
+			"iInterval": self.iInterval,
+		}
+		return data
+	
 	def check(self):
 		if self.can_notify():
 			self.notify()
@@ -222,7 +234,7 @@ class Barbarians(object):
 		for iUnit, plot in zip(self.get_spawn_units(), self.get_spawn_plots()):
 			unit = makeUnit(self.get_owner(), iUnit, plot, self.get_unit_ai(iUnit, plot))
 			
-			data.addBarbarianUnit(self, unit)
+			data.units[unit].spawn_data = self.spawn_data()
 			
 			if self.adjective:
 				set_unit_adjective(unit, self.adjective)
@@ -238,6 +250,9 @@ class Barbarians(object):
 	def valid_targets(self):
 		return cities.rectangle(self.target_area).any(lambda city: not is_minor(city.getOwner()))
 	
+	def count_existing(self, iUnit):
+		return units.owner(self.iOwner).type(iUnit).where(lambda unit: data.units[unit].spawn_data == self.spawn_data()).count()
+	
 	def spawn_limit(self):
 		iLimit = self.SPAWN_LIMITS.get(self.pattern)
 		
@@ -245,7 +260,7 @@ class Barbarians(object):
 			return False
 			
 		for iUnit, iNumUnits in self.units.items():
-			if data.countBarbarianUnits(self, iUnit) >= iLimit * iNumUnits:
+			if self.count_existing(iUnit) >= iLimit * iNumUnits:
 				return True
 		
 		return False
@@ -504,14 +519,6 @@ def assignMinorUnitAdjective(city, unit):
 	minor_city_adjective = next(minor_city.adjective for minor_city in minor_cities if at(city, minor_city.tile))
 	if minor_city_adjective:
 		set_unit_adjective(unit, minor_city_adjective)
-
-
-@handler("unitLost")
-def barbarianUnitLost(unit):
-	if not is_minor(unit.getOwner()):
-		return
-	
-	data.removeBarbarianUnit(unit)
 
 
 def maintainFallenCivilizations():
