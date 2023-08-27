@@ -769,7 +769,7 @@ def desc(iPlayer, sTextKey=str("%s1")):
 def capitalName(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	if capital: 
-		sCapitalName = cn.translate(iEngland, capital.getName())
+		sCapitalName = cn.translateName(iEngland, capital.getName())
 		if sCapitalName: 
 			return sCapitalName
 		
@@ -1445,7 +1445,7 @@ def specificAdjective(iPlayer):
 			if location(capital) != location(plots.capital(iMongols)) and capital.getRegionID() in [rCentralAsianSteppe, rTarimBasin, rKhorasan]:
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
 				
-			if 2 * cities.regions(rNorthChina, rSouthChina).owner(iPlayer).count() >= cities.region(rChina).count():
+			if 2 * cities.regions(rNorthChina, rSouthChina).owner(iPlayer).count() >= cities.regions(rNorthChina, rSouthChina).count():
 				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
 		if bMonarchy:
