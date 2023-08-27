@@ -162,7 +162,7 @@ class Victory(object):
 		message(self.iPlayer, "TXT_KEY_VICTORY_INTERMEDIATE", color=iPurple)
 		
 		if player(self.iPlayer).isHuman():
-			for iOtherPlayer in players.major().existing().without(self.iPlayer):
+			for iOtherPlayer in players.major().alive().without(self.iPlayer):
 				player(iOtherPlayer).AI_changeAttitudeExtra(self.iPlayer, -2)
 
 

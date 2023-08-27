@@ -277,7 +277,7 @@ class TestWorldEvaluator(ExtendedTestCase):
 		self.assertEqual(2 in self.evaluator, False)
 	
 	def test_iterate(self):
-		self.assertEqual(list(self.evaluator), players.major().existing().without(2).entities())
+		self.assertEqual(list(self.evaluator), players.major().alive().without(2).entities())
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
@@ -287,8 +287,8 @@ class TestWorldEvaluator(ExtendedTestCase):
 		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 2), False)
 	
 	def test_evaluate(self):
-		self.assertEqual(self.evaluator.evaluate(lambda x: x), players.major().existing().without(2).sum(lambda x: x))
-		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), players.major().existing().without(2).sum(lambda x: x+1))
+		self.assertEqual(self.evaluator.evaluate(lambda x: x), players.major().alive().without(2).sum(lambda x: x))
+		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), players.major().alive().without(2).sum(lambda x: x+1))
 
 
 class TestComparison(ExtendedTestCase):
