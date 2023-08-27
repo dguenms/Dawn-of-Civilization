@@ -115,3 +115,8 @@ def resetHandlersOnPythonReloaded():
 @handler("OnLoad")
 def resetHandlersOnLoad():
 	event_handler_registry.reset()
+
+
+@handler("BeginGameTurn")
+def evictSaveData():
+	data.units.evict()

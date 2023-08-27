@@ -21,6 +21,28 @@ class PlayerList(list):
 		return list.__getitem__(self, index)
 
 
+class UnitDict(dict):
+
+	def __getitem__(self, item):
+		if isinstance(item, CyUnit):
+			return self.__getitem__((item.getOwner(), item.getID()))
+		if item not in self:
+			self[item] = UnitData()
+			return self[item]
+		return dict.__getitem__(self, item)
+	
+	def __setitem__(self, key, value):
+		if isinstance(key, CyUnit):
+			dict.__setitem__(self, (key.getOwner(), key.getID()), value)
+		else:
+			dict.__setitem__(self, key, value)
+	
+	def evict(self):
+		for iOwner, iID in self.keys():
+			if not gc.getPlayer(iOwner).getUnit(iID).isExisting():
+				del self[(iOwner, iID)]
+
+
 class CivData:
 
 	def __init__(self, iCiv):
@@ -166,6 +188,18 @@ class PlayerData:
 		for i in reversed(range(len(lTrend))):
 			if lTrend[i] != 0: return lTrend[i]
 		return 0
+
+
+class UnitData(object):
+
+	def __init__(self):
+		self.setup()
+	
+	def update(self, data):
+		self.__dict__.update(data)
+	
+	def setup(self):
+		self.spawn_data = {}
 	
 
 class GameData:
@@ -180,10 +214,17 @@ class GameData:
 			data = player.__dict__.copy()
 			player.setup()
 			player.update(data)
+		
+		for civ in self.civs:
+			data = player.__dict__.copy()
+			civ.setup()
+			civ.update(data)
 
 	def setup(self):
 		self.civs = CivList(CivData(i) for i in range(iNumCivs))
 		self.players = PlayerList(PlayerData(i) for i in range(gc.getMAX_PLAYERS()))
+		
+		self.units = UnitDict()
 		
 		# Slots
 		
@@ -290,21 +331,6 @@ class GameData:
 		
 	def setStabilityLevel(self, iPlayer, iValue):
 		self.players[iPlayer].iStabilityLevel = iValue
-	
-	def addBarbarianUnit(self, spawn, unit):
-		key = (spawn, unit.getUnitType())
-		if key not in self.barbarian_units:
-			self.barbarian_units[key] = []
-		
-		self.barbarian_units[key].append(unit.getID())
-	
-	def removeBarbarianUnit(self, unit):
-		for (_, iUnit), unit_ids in self.barbarian_units:
-			if unit.getUnitType() == iUnit:
-				if unit.getID() in unit_ids:
-					unit_ids.remove(unit.getID())
-	
-	def countBarbarianUnits(self, spawn, iUnit):
-		return len(self.barbarian_units.get((spawn, iUnit), []))
+
 		
 data = GameData()
