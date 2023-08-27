@@ -423,7 +423,7 @@ class AllGoal(Goal):
 		return all(goal.succeeded() for goal in self.requirements)
 	
 	def format_progress(self):
-		return sum((goal.format_progress() for goal in self.requirements), [])
+		return sum(([progress.replace(indicator(False), indicator(goal.succeeded())) for progress in goal.format_progress()] for goal in self.requirements), [])
 	
 	def format_description(self):
 		date_suffixes = list(self.create_date_suffixes())
