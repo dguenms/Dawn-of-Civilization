@@ -697,10 +697,6 @@ class Birth(object):
 		if self.iCiv == iMexico:
 			if player(iAztecs).isExisting():
 				return False
-				
-		# further checks skipped if base impact is critical or better
-		if infos.civ(self.iCiv).getImpact() >= iImpactCritical:
-			return True
 	
 		# independence civs require all players controlling cities in their area to be stable or worse
 		if self.isIndependence():
