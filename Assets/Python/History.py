@@ -208,12 +208,11 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				
 				iNewWorldCiv = civ(iNewWorldPlayer)
 				
-				bAlreadyContacted = data.dFirstContactConquerors[iNewWorldCiv]
-				
-				# avoid "return later" exploit
-				if year() <= year(dBirth[iAztecs]) + turns(10):
+				if player(iNewWorldCiv).isBirthProtected():
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					return
+				
+				bAlreadyContacted = data.dFirstContactConquerors[iNewWorldCiv]
 					
 				if not bAlreadyContacted:
 					if iNewWorldCiv == iMaya:
@@ -254,12 +253,6 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						if year() < year(dBirth[active()]):
 							iModifier1 += 1
 							iModifier2 += 1
-						
-						# disable birth protection if still active
-						player(iNewWorldPlayer).setBirthProtected(False)
-						for p in plots.all():
-							if p.getBirthProtected() == iNewWorldPlayer:
-								p.resetBirthProtected()
 							
 						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
 						
