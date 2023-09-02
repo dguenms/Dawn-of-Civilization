@@ -357,6 +357,7 @@ minor_cities = [
 	MinorCity(300, iIndependent2, (89, 37), "Sana'a", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_YEMENI"),
 	MinorCity(400, iIndependent2, (118, 45), "Dali", iPopulation=4, iTechGroup=iTechGroupFarEast, units={iDefend: 3, iShock: 1}, adjective="TXT_KEY_ADJECTIVE_BAI"),
 	MinorCity(400, iIndependent, (123, 39), "Indrapura", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 4}, adjective="TXT_KEY_ADJECTIVE_CHAM"),
+	MinorCity(400, iIndependent2, (123, 25), "Sunda Kelapa", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SUNDANESE"),
 	MinorCity(700, iNative, (34, 22), "Tiwanaku", iPopulation=1, iTechGroup=iTechGroupNativeAmerica, adjective="TXT_KEY_ADJECTIVE_AYMARA"),
 	MinorCity(700, iIndependent2, (71, 36), "Njimi", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_KANURI"),
 	MinorCity(750, iIndependent, (91, 60), "Atil", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_KHAZAR"),
