@@ -9,6 +9,7 @@ dCapitals = CivDict({
 iEgypt :		(79, 43), # Memphis
 iBabylonia :	(89, 47), # Babylon
 iHarappa :		(102, 47), # Harappa
+iAssyria :		(89, 50), # Asshur
 iChina :		(121, 52), # Chang'an
 iGreece :		(76, 51), # Athens
 iIndia :		(110, 45), # Pataliputra
@@ -120,6 +121,7 @@ dCoreArea = CivDict({
 iEgypt :		((78, 41),	(80, 44)),
 iBabylonia :	((88, 45),	(90, 48)),
 iHarappa :		((99, 45),	(102, 47)),
+iAssyria :		((88, 49),	(90, 51)),
 iChina :		((120, 51),	(126, 56)),
 iGreece :		((74, 49),	(80, 53)),
 iIndia :		((107, 44),	(111, 46)),

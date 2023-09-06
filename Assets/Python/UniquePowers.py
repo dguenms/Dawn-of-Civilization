@@ -150,3 +150,9 @@ def canadianUP(_, city, iPopulation):
 		city.changeGreatPeopleUnitProgress(iGreatPerson, iProgress)
 		
 		message(city.getOwner(), 'TXT_KEY_UP_MULTICULTURALISM', city.getName(), infos.unit(iGreatPerson).getText(), iProgress, event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iGreatPerson).getButton(), color=iGreen, location=city)
+
+
+@handler("cityAcquired")
+def assyrianPower(iOwner, iPlayer, city, bConquest):
+	if civ(iPlayer) == iAssyria and bConquest:
+		city.setOccupationTimer(0)

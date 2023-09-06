@@ -22,6 +22,7 @@ dLanguages = {
 	iEgypt:	[iLangEgyptian],
 	iBabylonia: [iLangBabylonian],
 	iHarappa: [iLangIndian],
+	iAssyria: [iLangBabylonian],
 	iChina: [iLangChinese],
 	iGreece: [iLangGreek],
 	iIndia: [iLangIndian],

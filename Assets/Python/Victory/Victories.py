@@ -173,7 +173,7 @@ class HistoricalVictory(Victory):
 	@classmethod
 	def create(cls, iPlayer):
 		iCiv = civ(iPlayer)
-		return cls(iPlayer, dHistoricalGoals[iCiv])
+		return cls(iPlayer, dHistoricalGoals.get(iCiv, []))
 	
 	def enable(self):
 		Victory.enable(self)

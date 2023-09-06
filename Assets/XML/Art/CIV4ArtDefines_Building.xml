@@ -3577,5 +3577,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Zoo/Zoo.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ASSYRIAN_KALLIU</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Kalliu/caravanhouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Kalliu/Kalliu.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

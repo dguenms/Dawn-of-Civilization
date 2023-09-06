@@ -490,6 +490,7 @@ dStartingLeaders = [
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
+	iAssyria : iAshurbanipal,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
 	iPersia : iCyrus,
@@ -724,6 +725,7 @@ def checkName(iPlayer):
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
+	if player(iPlayer).isHuman(): return
 	if not player(iPlayer).isAlive(): return
 	if is_minor(iPlayer): return
 	setLeader(iPlayer, leader(iPlayer))

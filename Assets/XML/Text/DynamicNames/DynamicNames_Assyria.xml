@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_DESC</Tag>
+		<English>The Assyrians</English>
+		<French>The Assyrians</French>
+		<German>The Assyrians</German>
+		<Italian>The Assyrians</Italian>
+		<Spanish>The Assyrians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_PEOPLES</Tag>
+		<English>Assyrian Peoples</English>
+		<French>Assyrian Peoples</French>
+		<German>Assyrian Peoples</German>
+		<Italian>Assyrian Peoples</Italian>
+		<Spanish>Assyrian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_ADJECTIVE</Tag>
+		<English>Assyrian</English>
+		<French>Assyrian</French>
+		<German>Assyrian</German>
+		<Italian>Assyrian</Italian>
+		<Spanish>Assyrian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_SHORT_DESC</Tag>
+		<English>Assyria</English>
+		<French>Assyria</French>
+		<German>Assyria</German>
+		<Italian>Assyria</Italian>
+		<Spanish>Assyria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -3526,6 +3526,22 @@
 		<Spanish>[COLOR_UNIT_TEXT]Steamships[COLOR_REVERT] have three cargo spaces and can withdraw from combat.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIAN_AZMARU</Tag>
+		<English>Azmaru</English>
+		<French>Azmaru</French>
+		<German>Azmaru</German>
+		<Italian>Azmaru</Italian>
+		<Spanish>Azmaru</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIAN_SIEGE_RAM</Tag>
+		<English>Siege Ram</English>
+		<French>Siege Ram</French>
+		<German>Siege Ram</German>
+		<Italian>Siege Ram</Italian>
+		<Spanish>Siege Ram</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

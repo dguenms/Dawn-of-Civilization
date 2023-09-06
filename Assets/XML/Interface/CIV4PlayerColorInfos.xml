@@ -420,5 +420,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_EBONY_CLAY</Type> <!-- Assyria -->
+			<ColorTypePrimary>COLOR_PLAYER_EBONY_CLAY</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_MARIGOLD</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_EBONY_CLAY_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
