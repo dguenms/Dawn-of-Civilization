@@ -248,7 +248,7 @@ class WBGameDataScreen:
 		lList3.sort()
 
 		iNumRows = (len(lList) + nColumns - 1) / nColumns
-		iNumRows2 = iNumRows + 3 + max(len(lSecondaryCivs), len(lList2), len(lList3))
+		iNumRows2 = iNumRows + 3 + max(len(lList2), len(lList3))
 		for i in xrange(iNumRows2):
 			screen.appendTableRow("WBGameOptions")
 

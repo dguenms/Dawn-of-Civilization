@@ -1153,4 +1153,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ASHURBANIPAL</Tag>
+		<English>Ashurbanipal</English>
+		<French>Ashurbanipal</French>
+		<German>Ashurbanipal</German>
+		<Italian>Ashurbanipal</Italian>
+		<Spanish>Ashurbanipal</Spanish>
+	</TEXT>
 </Civ4GameText>

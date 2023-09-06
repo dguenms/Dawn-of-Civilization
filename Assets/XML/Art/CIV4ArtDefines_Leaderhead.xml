@@ -1022,5 +1022,13 @@
 			<NoShaderNIF>art/LeaderHeads/Zara Yaqob/Zara_Yaqob_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ASHURBANIPAL</Type>
+			<Button>Art/Leaderheads/Ashurbanipal/ashurbanipal.dds</Button>
+			<NIF>Art/Leaderheads/Ashurbanipal/ashurbanipal.nif</NIF>
+			<KFM>Art/Leaderheads/Ashurbanipal/brennus.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Ashurbanipal/ashurbanipal.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Ashurbanipal/brennus_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

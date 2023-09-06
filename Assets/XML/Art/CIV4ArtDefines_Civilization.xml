@@ -342,5 +342,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Flower.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_ASSYRIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Assyria.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Assyria.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

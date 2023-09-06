@@ -58,6 +58,22 @@
 		<Spanish>Great Generals can start Golden Ages</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_ASS_TITLE</Tag>
+		<English>The Power of the First Empire:</English>
+		<French>The Power of the First Empire:</French>
+		<German>The Power of the First Empire:</German>
+		<Italian>The Power of the First Empire:</Italian>
+		<Spanish>The Power of the First Empire:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ASS</Tag>
+		<English>No resistance in conquered cities</English>
+		<French>No resistance in conquered cities</French>
+		<German>No resistance in conquered cities</German>
+		<Italian>No resistance in conquered cities</Italian>
+		<Spanish>No resistance in conquered cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_AZT_TITLE</Tag>
 		<English>The Power of Flower Wars:</English>
 		<French>Le pouvoir des guerres fleuries :</French>

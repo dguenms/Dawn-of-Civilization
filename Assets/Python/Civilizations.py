@@ -190,6 +190,10 @@ lCivilizations = [
 		techs=techs.of(iMining, iPottery, iAgriculture)
 	),
 	Civilization(
+		iAssyria,
+		techs=techs.of(iMining, iPottery, iPastoralism, iAgriculture, iMythology)
+	),
+	Civilization(
 		iChina,
 		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage)
 	),
@@ -528,6 +532,11 @@ lCivilizations = [
 ### Starting units ###
 
 dStartingUnits = CivDict({
+	iAssyria: {
+		iSettle: 1,
+		iWork: 1,
+		iBase: 1,
+	},
 	iChina: {
 		iSettle: 1,
 		iWork: 1,

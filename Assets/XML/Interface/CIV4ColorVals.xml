@@ -1197,5 +1197,26 @@
 			<fBlue>0.40</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_EBONY_CLAY</Type>
+			<fRed>0.14</fRed>
+			<fGreen>0.18</fGreen>
+			<fBlue>0.26</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_EBONY_CLAY_TEXT</Type>
+			<fRed>0.4</fRed>
+			<fGreen>0.43</fGreen>
+			<fBlue>0.48</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MARIGOLD</Type>
+			<fRed>0.71</fRed>
+			<fGreen>0.56</fGreen>
+			<fBlue>0.15</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

@@ -20,6 +20,10 @@ BeginPlot
 		UnitOwner=CIVILIZATION_EGYPT
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_EGYPT
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_SETTLER
 		UnitOwner=CIVILIZATION_EGYPT
 	EndUnit
@@ -31,6 +35,10 @@ BeginPlot
 		UnitOwner=CIVILIZATION_BABYLONIA
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_BABYLONIA
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_SETTLER
 		UnitOwner=CIVILIZATION_BABYLONIA
 	EndUnit
@@ -39,6 +47,10 @@ BeginPlot
 	x=102,y=47
 	BeginUnit
 		UnitType=UNIT_MILITIA
+		UnitOwner=CIVILIZATION_HARAPPANS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_HARAPPANS
 	EndUnit
 	BeginUnit

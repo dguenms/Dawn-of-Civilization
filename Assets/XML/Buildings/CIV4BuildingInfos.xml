@@ -712,6 +712,32 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
+			<Type>BUILDING_ASSYRIAN_KALLIU</Type>
+			<Description>TXT_KEY_BUILDING_ASSYRIAN_KALLIU</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ASSYRIAN_KALLIU_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ASSYRIAN_KALLIU_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ASSYRIAN_KALLIU</ArtDefineTag>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+			<PrereqTech>TECH_RIDING</PrereqTech>
+			<iTradeRoutes>1</iTradeRoutes>
+			<bNeverCapture>1</bNeverCapture>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
 			<Type>BUILDING_MONGOLIAN_GER</Type>
 			<Description>TXT_KEY_BUILDING_MONGOLIAN_GER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MONGOLIAN_GER_PEDIA</Civilopedia>
