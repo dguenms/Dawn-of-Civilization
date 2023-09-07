@@ -5393,6 +5393,12 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 
 	iAttitude = 0;
 
+	// Leoreth: Nubian UP
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NUBIA)
+	{
+		return 0;
+	}
+
 	// Leoreth: if state religion, even have negative relations with non-state religion civs
 	if ((GET_PLAYER(ePlayer).getStateReligion() != NO_RELIGION) && (getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
 	{

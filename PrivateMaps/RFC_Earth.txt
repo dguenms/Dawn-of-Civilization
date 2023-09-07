@@ -34539,7 +34539,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=38
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34550,7 +34549,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=40
-	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35015,6 +35013,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=37
+	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35022,8 +35022,7 @@ BeginPlot
 	x=78,y=38
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_IVORY
-	BonusVarietyType=BONUS_IVORY_AFRICAN
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

@@ -13,13 +13,13 @@ iWorldY = 80
 iNumPlayers = gc.getMAX_PLAYERS()
 
 # civilizations, not players
-iNumCivs = 58
+iNumCivs = 59
 (iAmerica, iArabia, iArgentina, iAssyria, iAztecs, iBabylonia, iBrazil, iByzantium, iCanada, iCarthage, 
 iCelts, iChina, iColombia, iEgypt, iEngland, iEthiopia, iFrance, iGermany, iGreece, iHarappa, 
 iHolyRome, iInca, iIndia, iIndonesia, iIran, iItaly, iJapan, iKhmer, iCongo, iKorea, 
-iMali, iMaya, iMexico, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iOttomans, iPersia, 
-iPoland, iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iTamils, iThailand, iTibet, 
-iTurks, iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = tuple(Civ(i) for i in range(iNumCivs))
+iMali, iMaya, iMexico, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iNubia, iOttomans, 
+iPersia, iPoland, iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iTamils, iThailand, 
+iTibet, iTurks, iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = tuple(Civ(i) for i in range(iNumCivs))
 
 iPhoenicia = iCarthage
 
@@ -32,6 +32,7 @@ lBirthOrder = [
 	iGreece,
 	iIndia,
 	iCarthage,
+	iNubia,
 	iPolynesia,
 	iPersia,
 	iRome,
@@ -92,7 +93,7 @@ dCivGroups = {
 iCivGroupEurope : [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],
 iCivGroupAsia : [iIndia, iChina, iHarappa, iPolynesia, iPersia, iJapan, iTamils, iKorea, iByzantium, iTibet, iKhmer, iIndonesia, iRussia, iMongols, iMughals, iThailand, iTurks],
 iCivGroupMiddleEast : [iEgypt, iBabylonia, iAssyria, iPersia, iByzantium, iArabia, iMoors, iOttomans, iCarthage, iTurks, iIran],
-iCivGroupAfrica : [iEgypt, iCarthage, iEthiopia, iMali, iCongo],
+iCivGroupAfrica : [iEgypt, iCarthage, iNubia, iEthiopia, iMali, iCongo],
 iCivGroupAmerica : [iMaya, iInca, iAztecs, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
 }
 
@@ -103,7 +104,7 @@ iNumTechGroups = 4
 
 dTechGroups = {
 iTechGroupWestern : [iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
-iTechGroupMiddleEast : [iEgypt, iBabylonia, iHarappa, iAssyria, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iOttomans, iMughals, iTamils, iCongo, iTurks, iIran],
+iTechGroupMiddleEast : [iEgypt, iBabylonia, iHarappa, iAssyria, iIndia, iCarthage, iNubia, iPersia, iEthiopia, iArabia, iMoors, iMali, iOttomans, iMughals, iTamils, iCongo, iTurks, iIran],
 iTechGroupFarEast : [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongols, iThailand],
 iTechGroupNativeAmerica : [iPolynesia, iMaya, iInca, iAztecs],
 }
@@ -139,6 +140,7 @@ lNeighbours = [
 	(iEgypt, iGreece),
 	(iEgypt, iPersia),
 	(iEgypt, iCarthage),
+	(iEgypt, iNubia),
 	(iEgypt, iRome),
 	(iEgypt, iEthiopia),
 	(iEgypt, iByzantium),
@@ -195,6 +197,8 @@ lNeighbours = [
 	(iCarthage, iMoors),
 	(iCarthage, iOttomans),
 	(iCarthage, iItaly),
+	(iNubia, iEthiopia),
+	(iNubia, iArabia),
 	(iPersia, iTurks),
 	(iPersia, iByzantium),
 	(iPersia, iOttomans),
@@ -336,6 +340,7 @@ iChina : -2070,
 iGreece : -1600,
 iIndia : -1500,
 iPhoenicia : -1200,
+iNubia : -1070,
 iPolynesia : -1000,
 iPersia : -850,
 iRome : -753,
@@ -390,6 +395,7 @@ iChina : 1127,
 iGreece : -146,
 iIndia : 600,
 iPhoenicia : -146,
+iNubia : 1518,
 iPolynesia : 1200,
 iPersia : 651,
 iRome : 235,
@@ -472,6 +478,7 @@ iAssyria : 2,
 iChina : 1,
 iGreece : 2,
 iPersia : 3,
+iNubia : 1,
 iRome : 3,
 iMaya : 1,
 iTamils : 1,
@@ -512,6 +519,7 @@ iChina: 40,
 iGreece: 50,
 iIndia: 20,
 iPhoenicia: 20,
+iNubia: 20,
 iPolynesia: 20,
 iPersia: 30,
 iRome: 20,
@@ -616,6 +624,7 @@ iChina : 30,
 iGreece : 35,
 iIndia : 50,
 iPhoenicia : 35,
+iNubia : 30,
 iPolynesia : 50,
 iPersia : 30,
 iRome : 25,
@@ -784,40 +793,40 @@ iNumBonusVarieties = 19
 iGemsEmeralds, iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iCitrusOranges, iCrabShrimp) = range(iNumBonuses, iNumBonuses + iNumBonusVarieties)
 
 
-iNumBuildings = 323
+iNumBuildings = 324
 (iPalace, iBarracks, iIkhanda, iGranary, iTannery, iPaganTemple, iWeaver, iMbwadi, iMonument, iObelisk, 
-iStele, iCandi, iEdict, iMalae, iTotemPole, iWalls, iDun, iStable, iGer, iLibrary, 
-iEdubba, iTaixue, iHoTrai, iSangam, iHarbor, iAqueduct, iBaray, iNoria, iStepwell, iTheatre, 
-iOdeon, iHippodrome, iPavilion, iArena, iBallCourt, iCharreadaArena, iGarden, iLighthouse, iTradingPost, iJeweller,
-iMarket, iForum, iGlassmaker, iJail, iSacrificialAltar, iKalliu, iDivan, iBath, iReservoir, iHammam, 
-iForge, iMint, iArtStudio, iCastle, iCitadel, iPharmacy, iApothecary, iAlchemist, iGrocer, iPostOffice, 
-iTambo, iCaravanserai, iWharf, iCoffeehouse, iSalon, iBank, iRoyalExchange, iConstabulary, iMountedPolice, iCustomsHouse, 
-iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, iSewer, iStarFort, iEstate, 
-iMausoleum, iFazenda, iHacienda, iDrydock, iLevee, iDike, iObservatory, iWarehouse, iCourthouse, iFactory, 
-iAssemblyPlant, iZaibatsu, iDistillery, iPark, iCoalPlant, iRailwayStation, iLaboratory, iResearchInstitute, iAbattoir, iGrainSilo, 
-iNewsPress, iIndustrialPark, iCinema, iHospital, iSupermarket, iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, 
-iIntelligenceAgency, iElectricalGrid, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iZoo, iContainerTerminal, 
-iNuclearPlant, iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm, iJewishTemple, 
-iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicTemple, iCatholicCathedral, iCatholicMonastery, 
-iCatholicShrine, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, iHinduTemple, 
-iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, 
-iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, iAcademy, 
-iAdministrativeCenter, iManufactory, iArmoury, iMuseum, iStockExchange, iTradingCompanyBuilding, iIberianTradingCompanyBuilding, iNationalMonument, iNationalTheatre, iNationalGallery, 
-iNationalCollege, iMilitaryAcademy, iSecretService, iIronworks, iRedCross, iNationalPark, iCentralBank, iSpaceport, iGreatSphinx, iPyramids, 
-iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, iColossus, iStatueOfZeus, 
-iGreatMausoleum, iParthenon, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iAquaAppia, iAlKhazneh, iTempleOfKukulkan, iMachuPicchu, 
-iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, iNalanda, iTheodosianWalls, iHagiaSophia, iBorobudur, iMezquita, iShwedagonPaya, 
-iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, iCheomseongdae, iHimejiCastle, iGrandCanal, iWatPreahPisnulok, iKhajuraho, iSpiralMinaret, 
-iDomeOfTheRock, iHouseOfWisdom, iKrakDesChevaliers, iMonolithicChurch, iUniversityOfSankore, iNotreDame, iOldSynagogue, iSaintSophia, iSilverTreeFountain, iSantaMariaDelFiore, 
-iAlamut, iSanMarcoBasilica, iSistineChapel, iPorcelainTower, iTopkapiPalace, iKremlin, iSaintThomasChurch, iVijayaStambha, iGurEAmir, iRedFort, 
-iTajMahal, iForbiddenPalace, iVersailles, iBlueMosque, iEscorial, iTorreDeBelem, iPotalaPalace, iOxfordUniversity, iHarmandirSahib, iSaintBasilsCathedral, 
-iBourse, iItsukushimaShrine, iImageOfTheWorldSquare, iLouvre, iEmeraldBuddha, iShalimarGardens, iTrafalgarSquare, iHermitage, iGuadalupeBasilica, iSaltCathedral, 
-iAmberRoom, iStatueOfLiberty, iBrandenburgGate, iAbbeyMills, iBellRockLighthouse, iChapultepecCastle, iEiffelTower, iWestminsterPalace, iTriumphalArch, iMenloPark, 
-iCrystalPalace, iTsukijiFishMarket, iBrooklynBridge, iHollywood, iEmpireStateBuilding, iLasLajasSanctuary, iPalaceOfNations, iMoleAntonelliana, iNeuschwanstein, iFrontenac, 
-iWembley, iLubyanka, iCristoRedentor, iMetropolitain, iNobelPrize, iGoldenGateBridge, iBletchleyPark, iSagradaFamilia, iCERN, iItaipuDam, 
-iGraceland, iCNTower, iPentagon, iUnitedNations, iCrystalCathedral, iMotherlandCalls, iBerlaymont, iWorldTradeCenter, iAtomium, iIronDome, 
-iHarbourOpera, iLotusTemple, iGlobalSeedVault, iGardensByTheBay, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iSkytree, iOrientalPearlTower, iDeltaWorks, 
-iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
+iStele, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, iWalls, iDun, iStable, iGer, 
+iLibrary, iEdubba, iTaixue, iHoTrai, iSangam, iHarbor, iAqueduct, iBaray, iNoria, iStepwell, 
+iTheatre, iOdeon, iHippodrome, iPavilion, iArena, iBallCourt, iCharreadaArena, iGarden, iLighthouse, iTradingPost, 
+iJeweller,iMarket, iForum, iGlassmaker, iJail, iSacrificialAltar, iKalliu, iDivan, iBath, iReservoir, 
+iHammam, iForge, iMint, iArtStudio, iCastle, iCitadel, iPharmacy, iApothecary, iAlchemist, iGrocer, 
+iPostOffice, iTambo, iCaravanserai, iWharf, iCoffeehouse, iSalon, iBank, iRoyalExchange, iConstabulary, iMountedPolice, 
+iCustomsHouse, iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, iSewer, iStarFort, 
+iEstate, iMausoleum, iFazenda, iHacienda, iDrydock, iLevee, iDike, iObservatory, iWarehouse, iCourthouse, 
+iFactory, iAssemblyPlant, iZaibatsu, iDistillery, iPark, iCoalPlant, iRailwayStation, iLaboratory, iResearchInstitute, iAbattoir, 
+iGrainSilo, iNewsPress, iIndustrialPark, iCinema, iHospital, iSupermarket, iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, 
+iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iZoo, 
+iContainerTerminal, iNuclearPlant, iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm, 
+iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicTemple, iCatholicCathedral, 
+iCatholicMonastery, iCatholicShrine, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, 
+iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, 
+iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, 
+iAcademy, iAdministrativeCenter, iManufactory, iArmoury, iMuseum, iStockExchange, iTradingCompanyBuilding, iIberianTradingCompanyBuilding, iNationalMonument, iNationalTheatre, 
+iNationalGallery, iNationalCollege, iMilitaryAcademy, iSecretService, iIronworks, iRedCross, iNationalPark, iCentralBank, iSpaceport, iGreatSphinx, 
+iPyramids, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, iColossus, 
+iStatueOfZeus, iGreatMausoleum, iParthenon, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iAquaAppia, iAlKhazneh, iTempleOfKukulkan, 
+iMachuPicchu, iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, iNalanda, iTheodosianWalls, iHagiaSophia, iBorobudur, iMezquita, 
+iShwedagonPaya, iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, iCheomseongdae, iHimejiCastle, iGrandCanal, iWatPreahPisnulok, iKhajuraho, 
+iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iKrakDesChevaliers, iMonolithicChurch, iUniversityOfSankore, iNotreDame, iOldSynagogue, iSaintSophia, iSilverTreeFountain, 
+iSantaMariaDelFiore, iAlamut, iSanMarcoBasilica, iSistineChapel, iPorcelainTower, iTopkapiPalace, iKremlin, iSaintThomasChurch, iVijayaStambha, iGurEAmir, 
+iRedFort, iTajMahal, iForbiddenPalace, iVersailles, iBlueMosque, iEscorial, iTorreDeBelem, iPotalaPalace, iOxfordUniversity, iHarmandirSahib, 
+iSaintBasilsCathedral, iBourse, iItsukushimaShrine, iImageOfTheWorldSquare, iLouvre, iEmeraldBuddha, iShalimarGardens, iTrafalgarSquare, iHermitage, iGuadalupeBasilica, 
+iSaltCathedral, iAmberRoom, iStatueOfLiberty, iBrandenburgGate, iAbbeyMills, iBellRockLighthouse, iChapultepecCastle, iEiffelTower, iWestminsterPalace, iTriumphalArch, 
+iMenloPark, iCrystalPalace, iTsukijiFishMarket, iBrooklynBridge, iHollywood, iEmpireStateBuilding, iLasLajasSanctuary, iPalaceOfNations, iMoleAntonelliana, iNeuschwanstein, 
+iFrontenac, iWembley, iLubyanka, iCristoRedentor, iMetropolitain, iNobelPrize, iGoldenGateBridge, iBletchleyPark, iSagradaFamilia, iCERN, 
+iItaipuDam, iGraceland, iCNTower, iPentagon, iUnitedNations, iCrystalCathedral, iMotherlandCalls, iBerlaymont, iWorldTradeCenter, iAtomium, 
+iIronDome, iHarbourOpera, iLotusTemple, iGlobalSeedVault, iGardensByTheBay, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iSkytree, iOrientalPearlTower, 
+iDeltaWorks, iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
@@ -964,20 +973,20 @@ iVictorySecularism = 11
 
 
 #leaders
-iNumLeaders = 126
+iNumLeaders = 127
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iRamesses, iCleopatra, iBaibars, iNasser, iSargon, iHammurabi, iVatavelli,
 iAshurbanipal, iQinShiHuang, iTaizong, iHongwu, iMao, iPericles, iAlexanderTheGreat, iGeorge, iAsoka, iChandragupta, 
-iShivaji, iGandhi, iHiram, iHannibal, iAhoeitu, iCyrus, iDarius, iKhosrow, iJuliusCaesar, iAugustus, 
-iPacal, iRajendra, iKrishnaDevaRaya, iEzana, iZaraYaqob, iMenelik, iWangKon, iSejong, iJustinian, iBasil, 
-iKammu, iOdaNobunaga, iMeiji, iRagnar, iGustav, iGerhardsen, iBumin, iAlpArslan, iTamerlane, iHarun, 
-iSaladin, iSongtsen, iLobsangGyatso, iDharmasetu, iHayamWuruk, iSuharto, iRahman, iYaqub, iIsabella, iPhilip, 
-iFranco, iCharlemagne, iLouis, iNapoleon, iDeGaulle, iSuryavarman, iAlfred, iElizabeth, iVictoria, iChurchill, 
-iBarbarossa, iCharles, iFrancis, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMansaMusa, iCasimir, 
-iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, iCavour, 
-iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iMehmed, iSuleiman, iAtaturk, 
-iNaresuan, iMongkut, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iFrederick, iBismarck, iHitler, 
-iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, iBolivar, iPedro, 
-iVargas, iMacDonald, iTrudeau, iBoudica, iBrennus, iSittingBull) = range(iNumLeaders)
+iShivaji, iGandhi, iHiram, iHannibal, iTaharqa, iAhoeitu, iCyrus, iDarius, iKhosrow, iJuliusCaesar, 
+iAugustus, iPacal, iRajendra, iKrishnaDevaRaya, iEzana, iZaraYaqob, iMenelik, iWangKon, iSejong, iJustinian, 
+iBasil, iKammu, iOdaNobunaga, iMeiji, iRagnar, iGustav, iGerhardsen, iBumin, iAlpArslan, iTamerlane, 
+iHarun, iSaladin, iSongtsen, iLobsangGyatso, iDharmasetu, iHayamWuruk, iSuharto, iRahman, iYaqub, iIsabella, 
+iPhilip, iFranco, iCharlemagne, iLouis, iNapoleon, iDeGaulle, iSuryavarman, iAlfred, iElizabeth, iVictoria, 
+iChurchill, iBarbarossa, iCharles, iFrancis, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMansaMusa, 
+iCasimir, iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, 
+iCavour, iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iMehmed, iSuleiman, 
+iAtaturk, iNaresuan, iMongkut, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iFrederick, iBismarck, 
+iHitler, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, iBolivar, 
+iPedro, iVargas, iMacDonald, iTrudeau, iBoudica, iBrennus, iSittingBull) = range(iNumLeaders)
 
 dResurrectionLeaders = CivDict({
 	iChina : iHongwu,

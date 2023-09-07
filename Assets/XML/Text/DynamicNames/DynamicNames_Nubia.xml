@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_DESC</Tag>
+		<English>The Nubians</English>
+		<French>The Nubians</French>
+		<German>The Nubians</German>
+		<Italian>The Nubians</Italian>
+		<Spanish>The Nubians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_PEOPLES</Tag>
+		<English>Nubian Peoples</English>
+		<French>Nubian Peoples</French>
+		<German>Nubian Peoples</German>
+		<Italian>Nubian Peoples</Italian>
+		<Spanish>Nubian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_ADJECTIVE</Tag>
+		<English>Nubian</English>
+		<French>Nubian</French>
+		<German>Nubian</German>
+		<Italian>Nubian</Italian>
+		<Spanish>Nubian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_SHORT_DESC</Tag>
+		<English>Nubia</English>
+		<French>Nubia</French>
+		<German>Nubia</German>
+		<Italian>Nubia</Italian>
+		<Spanish>Nubia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_KUSH</Tag>
+		<English>Kush</English>
+		<French>Kush</French>
+		<German>Kush</German>
+		<Italian>Kush</Italian>
+		<Spanish>Kush</Spanish>
+	</TEXT>
+</Civ4GameText>
