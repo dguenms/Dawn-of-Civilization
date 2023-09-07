@@ -690,6 +690,22 @@
 		<Spanish>Cities receive half the construction cost as culture after a building is completed</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_NUB_TITLE</Tag>
+		<English>The Power of Baqt:</English>
+		<French>The Power of Baqt:</French>
+		<German>The Power of Baqt:</German>
+		<Italian>The Power of Baqt:</Italian>
+		<Spanish>The Power of Baqt:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUB</Tag>
+		<English>No negative attitude from different state religion</English>
+		<French>No negative attitude from different state religion</French>
+		<German>No negative attitude from different state religion</German>
+		<Italian>No negative attitude from different state religion</Italian>
+		<Spanish>No negative attitude from different state religion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
 		<English>The Power of Satrapy:</English>
 		<French>Le pouvoir des satrapies :</French>

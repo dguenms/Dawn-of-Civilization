@@ -1218,5 +1218,26 @@
 			<fBlue>0.15</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_WALNUT</Type>
+			<fRed>0.36</fRed>
+			<fGreen>0.32</fGreen>
+			<fBlue>0.28</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_BUDDHA_YELLOW</Type>
+			<fRed>0.82</fRed>
+			<fGreen>0.69</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_WALNUT_TEXT</Type>
+			<fRed>0.36</fRed>
+			<fGreen>0.32</fGreen>
+			<fBlue>0.28</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

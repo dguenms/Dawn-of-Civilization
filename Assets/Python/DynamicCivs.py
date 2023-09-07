@@ -495,6 +495,7 @@ dStartingLeaders = [
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
+	iNubia : iTaharqa,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
 	iMaya : iPacal,
@@ -942,6 +943,10 @@ def specificName(iPlayer):
 	elif iCiv == iGreece:
 		if not bCityStates and bEmpire and iEra <= iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIA"
+	
+	elif iCiv == iNubia:
+		if iEra <= iClassical:
+			return "TXT_KEY_CIV_NUBIA_KUSH"
 			
 	elif iCiv == iPolynesia:
 		if isCurrentCapital(iPlayer, "Kaua'i", "O'ahu", "Maui"):

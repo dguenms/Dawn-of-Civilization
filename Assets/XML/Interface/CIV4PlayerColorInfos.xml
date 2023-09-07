@@ -426,5 +426,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_MARIGOLD</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_EBONY_CLAY_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_WALNUT</Type> <!-- Nubia -->
+			<ColorTypePrimary>COLOR_PLAYER_WALNUT</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_BUDDHA_YELLOW</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_WALNUT_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

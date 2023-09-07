@@ -9,11 +9,12 @@ dCapitals = CivDict({
 iEgypt :		(79, 43), # Memphis
 iBabylonia :	(89, 47), # Babylon
 iHarappa :		(102, 47), # Harappa
-iAssyria :		(89, 50), # Asshur
+iAssyria :		(89, 50), # Ash-shur
 iChina :		(121, 52), # Chang'an
 iGreece :		(76, 51), # Athens
 iIndia :		(110, 45), # Pataliputra
 iPhoenicia :	(84, 47), # Tyre
+iNubia :		(81, 38), # Meroe
 iPolynesia :	(4, 21), # Tonga
 iPersia :		(94, 45), # Persepolis
 iRome :			(68, 53), # Rome
@@ -126,6 +127,7 @@ iChina :		((120, 51),	(126, 56)),
 iGreece :		((74, 49),	(80, 53)),
 iIndia :		((107, 44),	(111, 46)),
 iPhoenicia :	((84, 47),	(85, 49)),
+iNubia :		((78, 38),	(81, 39)),
 iPolynesia :	((3, 20),	(5, 23)),
 iPersia :		((92, 43),	(95, 50)),
 iRome :			((66, 50),	(72, 57)),

@@ -8,15 +8,15 @@ from Events import handler
 
 ### CONSTANTS ###
 
-iNumLanguages = 38
+iNumLanguages = 39
 (iLangAmerican, iLangArabic, iLangBabylonian, iLangByzantine, iLangCeltic, 
 iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, iLangEgyptianArabic, 
 iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, iLangGreek, 
 iLangIndian, iLangIndonesian, iLangItalian, iLangJapanese, iLangKhmer, 
 iLangKorean, iLangLatin, iLangMande, iLangMayan, iLangMongolian, 
-iLangNahuatl, iLangPersian, iLangPhoenician, iLangPolish, iLangPolynesian, 
-iLangPortuguese, iLangQuechua, iLangRussian, iLangSpanish, iLangThai, 
-iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
+iLangNahuatl, iLangNubian, iLangPersian, iLangPhoenician, iLangPolish, 
+iLangPolynesian, iLangPortuguese, iLangQuechua, iLangRussian, iLangSpanish, 
+iLangThai, iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
 
 dLanguages = {
 	iEgypt:	[iLangEgyptian],
@@ -27,6 +27,7 @@ dLanguages = {
 	iGreece: [iLangGreek],
 	iIndia: [iLangIndian],
 	iPhoenicia: [iLangPhoenician],
+	iNubia: [iLangNubian, iLangEgyptian],
 	iPolynesia: [iLangPolynesian],
 	iPersia: [iLangPersian],
 	iRome: [iLangLatin],
@@ -106,6 +107,7 @@ dLanguageNames = {
 	iLangMayan: "Mayan",
 	iLangMongolian: "Mongolian",
 	iLangNahuatl: "Nahuatl",
+	iLangNubian: "Nubian",
 	iLangPersian: "Persian",
 	iLangPhoenician: "Phoenician",
 	iLangPolish: "Polish",

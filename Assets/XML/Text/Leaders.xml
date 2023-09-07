@@ -1161,4 +1161,20 @@
 		<Italian>Ashurbanipal</Italian>
 		<Spanish>Ashurbanipal</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TAHARQA</Tag>
+		<English>Taharqa</English>
+		<French>Taharqa</French>
+		<German>Taharqa</German>
+		<Italian>Taharqa</Italian>
+		<Spanish>Taharqa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

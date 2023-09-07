@@ -218,6 +218,13 @@ lCivilizations = [
 		techs=techs.column(2).including(iAlloys, iWriting, iShipbuilding)
 	),
 	Civilization(
+		iNubia,
+		iGold=200,
+		iAdvancedStartPoints=60,
+		lCivics=[iMonarchy, iDeification],
+		techs=techs.column(2).including(iAlloys, iWriting, iCalendar)
+	),
+	Civilization(
 		iPolynesia,
 		techs=techs.of(iTanning, iMythology, iSailing, iSeafaring)
 	),
@@ -568,6 +575,12 @@ dStartingUnits = CivDict({
 		iSettleSea: 1,
 		iFerry: 1,
 		iEscort: 1,
+	},
+	iNubia: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 3,
+		iAttack: 1,
 	},
 	iPolynesia: {
 		iSettle: 1,

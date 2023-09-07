@@ -348,5 +348,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Assyria.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_NUBIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Nubia.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Nubia.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>
