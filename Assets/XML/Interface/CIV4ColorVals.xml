@@ -1239,5 +1239,26 @@
 			<fBlue>0.28</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_CRIMSON</Type>
+			<fRed>0.67</fRed>
+			<fGreen>0.24</fGreen>
+			<fBlue>0.18</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ORANGE_PEEL</Type>
+			<fRed>0.97</fRed>
+			<fGreen>0.62</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_CRIMSON_TEXT</Type>
+			<fRed>0.77</fRed>
+			<fGreen>0.34</fGreen>
+			<fBlue>0.28</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

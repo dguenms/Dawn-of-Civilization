@@ -1038,5 +1038,13 @@
 			<NoShaderNIF>Art/Leaderheads/Taharqa/Tachnechobrus.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Taharqa/Tachnechobrus_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MURSILI</Type>
+			<Button>Art/Leaderheads/Mursili/Mursili.dds</Button>
+			<NIF>Art/Leaderheads/Mursili/tokugawa.nif</NIF>
+			<KFM>Art/Leaderheads/Mursili/tokugawa.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Mursili/tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Mursili/kublai_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

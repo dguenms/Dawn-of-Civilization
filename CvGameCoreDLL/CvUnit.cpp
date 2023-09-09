@@ -7292,7 +7292,10 @@ bool CvUnit::goldenAge()
 bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible) const
 {
     FAssertMsg(eBuild < GC.getNumBuildInfos(), "Index out of bounds");
-	if (!(m_pUnitInfo->getBuilds(eBuild)))
+
+	bool bHittiteUP = (getCivilizationType() == HITTITES && getUnitCombatType() == UNITCOMBAT_MELEE && eBuild == GC.getInfoTypeForString("BUILD_REMOVE_FOREST"));
+
+	if (!(m_pUnitInfo->getBuilds(eBuild)) && !bHittiteUP)
 	{
 		return false;
 	}
@@ -8327,6 +8330,11 @@ int CvUnit::workRate(bool bMax) const
 		{
 			return 0;
 		}
+	}
+
+	if (getCivilizationType() == HITTITES && getUnitCombatType() == UNITCOMBAT_MELEE)
+	{
+		return 100;
 	}
 
 	iRate = m_pUnitInfo->getWorkRate();

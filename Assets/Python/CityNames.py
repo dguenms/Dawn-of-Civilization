@@ -8,15 +8,15 @@ from Events import handler
 
 ### CONSTANTS ###
 
-iNumLanguages = 39
+iNumLanguages = 40
 (iLangAmerican, iLangArabic, iLangBabylonian, iLangByzantine, iLangCeltic, 
 iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, iLangEgyptianArabic, 
 iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, iLangGreek, 
-iLangIndian, iLangIndonesian, iLangItalian, iLangJapanese, iLangKhmer, 
-iLangKorean, iLangLatin, iLangMande, iLangMayan, iLangMongolian, 
-iLangNahuatl, iLangNubian, iLangPersian, iLangPhoenician, iLangPolish, 
-iLangPolynesian, iLangPortuguese, iLangQuechua, iLangRussian, iLangSpanish, 
-iLangThai, iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
+iLangHittite, iLangIndian, iLangIndonesian, iLangItalian, iLangJapanese, 
+iLangKhmer, iLangKorean, iLangLatin, iLangMande, iLangMayan, 
+iLangMongolian, iLangNahuatl, iLangNubian, iLangPersian, iLangPhoenician, 
+iLangPolish, iLangPolynesian, iLangPortuguese, iLangQuechua, iLangRussian, 
+iLangSpanish, iLangThai, iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
 
 dLanguages = {
 	iEgypt:	[iLangEgyptian],
@@ -24,6 +24,7 @@ dLanguages = {
 	iHarappa: [iLangIndian],
 	iAssyria: [iLangBabylonian],
 	iChina: [iLangChinese],
+	iHittites: [iLangHittite, iLangBabylonian],
 	iGreece: [iLangGreek],
 	iIndia: [iLangIndian],
 	iPhoenicia: [iLangPhoenician],
@@ -96,6 +97,7 @@ dLanguageNames = {
 	iLangFrench: "French",
 	iLangGerman: "German",
 	iLangGreek: "Greek",
+	iLangHittite: "Hittite",
 	iLangIndian: "Indian",
 	iLangIndonesian: "Indonesian",
 	iLangItalian: "Italian",

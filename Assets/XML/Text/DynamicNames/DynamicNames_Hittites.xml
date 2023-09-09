@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_DESC</Tag>
+		<English>The Hittites</English>
+		<French>The Hittites</French>
+		<German>The Hittites</German>
+		<Italian>The Hittites</Italian>
+		<Spanish>The Hittites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_PEOPLES</Tag>
+		<English>Hittite Peoples</English>
+		<French>Hittite Peoples</French>
+		<German>Hittite Peoples</German>
+		<Italian>Hittite Peoples</Italian>
+		<Spanish>Hittite Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_ADJECTIVE</Tag>
+		<English>Hittite</English>
+		<French>Hittite</French>
+		<German>Hittite</German>
+		<Italian>Hittite</Italian>
+		<Spanish>Hittite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_SHORT_DESC</Tag>
+		<English>Hittites</English>
+		<French>Hittites</French>
+		<German>Hittites</German>
+		<Italian>Hittites</Italian>
+		<Spanish>Hittites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
+</Civ4GameText>
