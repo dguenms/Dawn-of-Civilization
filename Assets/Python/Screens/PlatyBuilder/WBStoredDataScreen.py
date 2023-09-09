@@ -224,8 +224,8 @@ class WBStoredDataScreen:
 				sText = gc.getTechInfo(i).getDescription()
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getTechInfo(i).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lWonderBuilder": # Wonders
-				sText = gc.getBuildingInfo(i+iBeginWonders).getDescription()
-				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getBuildingInfo(i+iBeginWonders).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				sText = gc.getBuildingInfo(i+iFirstWonder).getDescription()
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getBuildingInfo(i+iFirstWonder).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lReligionFounder": # Religions
 				sText = gc.getReligionInfo(i).getDescription()
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getReligionInfo(i).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
