@@ -492,6 +492,7 @@ dStartingLeaders = [
 	iHarappa : iVatavelli,
 	iAssyria : iAshurbanipal,
 	iChina : iQinShiHuang,
+	iHittites : iMursili,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,

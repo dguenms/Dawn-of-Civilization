@@ -354,5 +354,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Nubia.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_HITTITES</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Hittites.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_SunDisk.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

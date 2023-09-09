@@ -283,7 +283,7 @@
 			<bAnimated>1</bAnimated>
 			<fScale>1.31</fScale>
 			<fInterfaceScale>0.47</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Forge/Forge.nif</NIF>
+			<NIF>Art/Structures/Buildings/Forge_New/Blast.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Forge.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,9</Button>
 		</BuildingArtInfo>
@@ -3596,6 +3596,16 @@
 			<NIF>Art/Structures/Buildings/Mudbrick Pyramid/NubianPyramid.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Mudbrick Pyramid/Nuri_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HITTITE_BLOOMERY</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.31</fScale>
+			<fInterfaceScale>0.47</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Forge/Forge.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Bloomery/Bloomery.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

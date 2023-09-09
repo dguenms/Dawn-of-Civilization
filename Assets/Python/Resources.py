@@ -245,6 +245,7 @@ dResourcesDict = {
 }
 
 dSpawnResourcesDict = {
+	(82, 54)  : (iHittites,    iIron),
 	(107, 61) : (iTurks,       iHorse),
 	(113, 47) : (iTibet,       iWheat),
 	(115, 49) : (iTibet,       iHorse),

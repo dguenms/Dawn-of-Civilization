@@ -191,11 +191,17 @@ lCivilizations = [
 	),
 	Civilization(
 		iAssyria,
-		techs=techs.of(iMining, iPottery, iPastoralism, iAgriculture, iMythology)
+		techs=techs.column(1).including(iSmelting)
 	),
 	Civilization(
 		iChina,
 		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage)
+	),
+	Civilization(
+		iHittites,
+		iGold=40,
+		lCivics=[iMonarchy, iSlavery],
+		techs=techs.column(2).without(iRiding, iSeafaring).including(iAlloys)
 	),
 	Civilization(
 		iGreece,
@@ -222,7 +228,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=60,
 		lCivics=[iMonarchy, iDeification],
-		techs=techs.column(2).including(iAlloys, iWriting, iCalendar)
+		techs=techs.column(2).without(iSeafaring).including(iAlloys, iWriting, iCalendar)
 	),
 	Civilization(
 		iPolynesia,
@@ -549,6 +555,13 @@ dStartingUnits = CivDict({
 		iWork: 1,
 		iBase: 1,
 		iDefend: 1,
+	},
+	iHittites: {
+		iSettle: 1,
+		iWork: 1,
+		iBase: 1,
+		iDefend: 1,
+		iHarass: 2,
 	},
 	iIndia: {
 		iSettle: 1,

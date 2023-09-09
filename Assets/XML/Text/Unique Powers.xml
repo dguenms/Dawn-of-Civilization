@@ -370,6 +370,22 @@
 		<Spanish>Positive health contributes to city growth during the Ancient era</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_HIT_TITLE</Tag>
+		<English>The Power of Charcoal:</English>
+		<French>The Power of Charcoal:</French>
+		<German>The Power of Charcoal:</German>
+		<Italian>The Power of Charcoal:</Italian>
+		<Spanish>The Power of Charcoal:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HIT</Tag>
+		<English>Melee units can chop down forests</English>
+		<French>Melee units can chop down forests</French>
+		<German>Melee units can chop down forests</German>
+		<Italian>Melee units can chop down forests</Italian>
+		<Spanish>Melee units can chop down forests</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_HOL_TITLE</Tag>
 		<English>The Power of Trading Companies:</English>
 		<French>Le pouvoir des compagnies commerciales :</French>
