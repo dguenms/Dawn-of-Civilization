@@ -112,7 +112,10 @@ class MinorCity(object):
 		
 		for iRole, iNumUnits in self.units.items():
 			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole):
-				yield base_unit(iUnit), iNumUnits, iUnitAI
+				try:
+					yield base_unit(iUnit), iNumUnits, iUnitAI
+				except TypeError, e:
+					raise Exception("Error creating unit for iRole=%s, name=%s: %s" % (iRole, self.name, e))
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
 		units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
