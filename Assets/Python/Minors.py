@@ -112,6 +112,9 @@ class MinorCity(object):
 		
 		for iRole, iNumUnits in self.units.items():
 			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole):
+				if iUnit is None:
+					iUnit = iMilitia
+			
 				try:
 					yield base_unit(iUnit), iNumUnits, iUnitAI
 				except TypeError, e:
