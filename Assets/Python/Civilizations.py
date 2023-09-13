@@ -247,7 +247,7 @@ lCivilizations = [
 		iGold=100,
 		iAdvancedStartPoints=150,
 		lCivics=[iRepublic, iSlavery, iRedistribution],
-		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding)
+		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iShipbuilding)
 	),
 	Civilization(
 		iCelts,
