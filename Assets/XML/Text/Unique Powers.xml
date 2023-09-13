@@ -210,6 +210,22 @@
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_CEL_TITLE</Tag>
+		<English>The Power of Druids:</English>
+		<French>The Power of Druids:</French>
+		<German>The Power of Druids:</German>
+		<Italian>The Power of Druids:</Italian>
+		<Spanish>The Power of Druids:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CEL</Tag>
+		<English>Units in forests heal at the same rate as in friendly cities</English>
+		<French>Units in forests heal at the same rate as in friendly cities</French>
+		<German>Units in forests heal at the same rate as in friendly cities</German>
+		<Italian>Units in forests heal at the same rate as in friendly cities</Italian>
+		<Spanish>Units in forests heal at the same rate as in friendly cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_CHI_TITLE</Tag>
 		<English>The Power of Myriads:</English>
 		<French>Le pouvoir des myriades :</French>

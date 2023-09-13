@@ -117,10 +117,6 @@ def startMinorWars(iGameTurn):
 		iMinor = players.independent().periodic(13)
 		if iMinor:
 			minorWars(iMinor)
-			
-		iMinor = players.civs(iCelts).periodic(50)
-		if iMinor:
-			minorWars(iMinor)
 
 
 @handler("BeginGameTurn")

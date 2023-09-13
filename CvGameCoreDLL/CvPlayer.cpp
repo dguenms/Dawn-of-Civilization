@@ -11824,7 +11824,7 @@ void CvPlayer::verifyAlive()
 
 		if (!bKill)
 		{
-			if (!isBarbarian() && !isNative() && getCivilizationType() != CELTS) // Leoreth: natives and celts should behave like barbarians
+			if (!isBarbarian() && !isNative()) // Leoreth: natives should behave like barbarians
 			{
 				if (getNumCities() == 0 /*&& getAdvancedStartPoints() < 0*/)
 				{

@@ -18,8 +18,6 @@ lCustomMapOptions = [
 	("Starting Date", lStartingDates, lStartingDates[0]),
 ]
 
-lMinorCivs = [iCelts, iNative, iIndependent, iIndependent2]
-
 
 def getDescription():
 	return "Dawn of Civilization"

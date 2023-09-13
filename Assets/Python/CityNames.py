@@ -32,6 +32,7 @@ dLanguages = {
 	iPolynesia: [iLangPolynesian],
 	iPersia: [iLangPersian],
 	iRome: [iLangLatin],
+	iCelts: [iLangCeltic],
 	iMaya: [iLangMayan, iLangNahuatl],
 	iTamils: [iLangIndian],
 	iEthiopia: [iLangEthiopian],
@@ -70,7 +71,6 @@ dLanguages = {
 	iColombia: [iLangSpanish],
 	iBrazil: [iLangPortuguese, iLangSpanish],
 	iCanada: [iLangAmerican, iLangEnglish, iLangFrench],
-	iCelts: [iLangCeltic],
 }
 
 

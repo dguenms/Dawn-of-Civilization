@@ -3941,6 +3941,11 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 			iTotalHeal += pCity->getHealRate();
 		}
 	}
+	// Leoreth: Celtic UP
+	else if (getCivilizationType() == CELTS && pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST"))
+	{
+		iTotalHeal += GC.getDefineINT("CITY_HEAL_RATE") + getExtraFriendlyHeal();
+	}
 	else
 	{
 		if (!GET_TEAM(getTeam()).isFriendlyTerritory(pPlot->getTeam()))

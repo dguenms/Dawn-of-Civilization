@@ -1246,7 +1246,7 @@ void CvCityAI::AI_chooseProduction()
 
 			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).isBarbarian() || GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS)
+				if (GET_PLAYER((PlayerTypes)iI).isBarbarian() || GET_PLAYER((PlayerTypes)iI).isNative())
 				{
 					iAreaThreatCities += pArea->getCitiesPerPlayer((PlayerTypes)iI);
 				}

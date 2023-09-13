@@ -19,6 +19,7 @@ iNubia :		(81, 38), # Meroe
 iPolynesia :	(4, 21), # Tonga
 iPersia :		(94, 45), # Persepolis
 iRome :			(68, 53), # Rome
+iCelts :		(62, 57), # Nemessos
 iMaya :			(22, 41), # Tikal
 iTamils :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
@@ -133,6 +134,7 @@ iNubia :		((78, 38),	(81, 39)),
 iPolynesia :	((3, 20),	(5, 23)),
 iPersia :		((92, 43),	(95, 50)),
 iRome :			((66, 50),	(72, 57)),
+iCelts :		((59, 56),	(63, 61)),
 iMaya :			((21, 41),	(23, 44)),
 iTamils :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),

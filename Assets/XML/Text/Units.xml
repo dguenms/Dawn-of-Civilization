@@ -3542,6 +3542,14 @@
 		<Spanish>Siege Ram</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CELTIC_OATHSWORN</Tag>
+		<English>Oathsworn</English>
+		<French>Oathsworn</French>
+		<German>Oathsworn</German>
+		<Italian>Oathsworn</Italian>
+		<Spanish>Oathsworn</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

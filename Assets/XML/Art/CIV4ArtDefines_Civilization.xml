@@ -50,8 +50,8 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_CELT</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Celtia.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,3,1</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_CelticCross.dds</Path>
+			<Button>Art/Interface/Buttons/Civilizations/Celts.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Triskele.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>

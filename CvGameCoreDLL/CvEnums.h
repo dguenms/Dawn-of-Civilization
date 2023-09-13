@@ -1251,6 +1251,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	JULIUS_CAESAR,
 	AUGUSTUS,
 
+	BRENNUS,
+
 	PACAL,
 
 	RAJENDRA,
@@ -1383,7 +1385,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	TRUDEAU,
 
 	BOUDICA,
-	BRENNUS,
 
 	SITTING_BULL,
 
