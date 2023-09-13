@@ -247,8 +247,11 @@ lCivilizations = [
 		iGold=100,
 		iAdvancedStartPoints=150,
 		lCivics=[iRepublic, iSlavery, iRedistribution],
-		lEnemies=[iCelts],
 		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding)
+	),
+	Civilization(
+		iCelts,
+		techs=techs.column(2).including(iAlloys),
 	),
 	Civilization(
 		iMaya,
@@ -298,7 +301,6 @@ lCivilizations = [
 		iVikings,
 		iGold=150,
 		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
-		lEnemies=[iCelts],
 		techs=techs.column(6).without(iScholarship, iEthics)
 	),
 	Civilization(
@@ -369,7 +371,6 @@ lCivilizations = [
 		iAdvancedStartPoints=80,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
-		lEnemies=[iCelts],
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
@@ -378,7 +379,6 @@ lCivilizations = [
 		iAdvancedStartPoints=120,
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
-		lEnemies=[iCelts],
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
@@ -614,6 +614,12 @@ dStartingUnits = CivDict({
 		iAttack: 4,
 		iWorkerSea: 1,
 		iFerry: 2,
+	},
+	iCelts: {
+		iSettle: 3,
+		iWork: 1,
+		iDefend: 3,
+		iAttack: 4,
 	},
 	iMaya: {
 		iSettle: 1,

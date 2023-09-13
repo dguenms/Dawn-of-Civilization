@@ -2071,6 +2071,52 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
+			<Type>BUILDING_CELTIC_METALWORKER</Type>
+			<Description>TXT_KEY_BUILDING_CELTIC_METALWORKER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CELTIC_METALWORKER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CELTIC_METALWORKER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CELTIC_METALWORKER</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_BLOOMERY</PrereqTech>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iHealth>-1</iHealth>
+			<iAsset>4</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>25</iYield>
+			</YieldModifiers>
+			<UnitCombatFreeExperiences>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iExperience>3</iExperience>
+				</UnitCombatFreeExperience>
+			</UnitCombatFreeExperiences>
+			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SILVER</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
 			<Type>BUILDING_MANDE_MINT</Type>
 			<Description>TXT_KEY_BUILDING_MANDE_MINT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MANDE_MINT_PEDIA</Civilopedia>

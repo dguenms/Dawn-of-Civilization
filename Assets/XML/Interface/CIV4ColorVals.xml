@@ -1260,5 +1260,26 @@
 			<fBlue>0.28</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_BROWNISH_GREEN</Type>
+			<fRed>0.43</fRed>
+			<fGreen>0.53</fGreen>
+			<fBlue>0.16</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_PALE_BROWN</Type>
+			<fRed>0.9</fRed>
+			<fGreen>0.65</fGreen>
+			<fBlue>0.42</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_BROWNISH_GREEN_TEXT</Type>
+			<fRed>0.59</fRed>
+			<fGreen>0.69</fGreen>
+			<fBlue>0.28</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_DESC</Tag>
+		<English>The Celts</English>
+		<French>The Celts</French>
+		<German>The Celts</German>
+		<Italian>The Celts</Italian>
+		<Spanish>The Celts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_PEOPLES</Tag>
+		<English>Celtic Peoples</English>
+		<French>
+			<Text>Peuples celtes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Keltenv&#246;lkerreich:Keltenv&#246;lkerreich:Keltenv&#246;lkerreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli celtici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblo Celta</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
+		<English>
+			<Text>Celtic:Celts</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>celte:celte:celtes:celtes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Keltisch:keltischen:keltische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>celtico:celtica:celtici:celtiche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>celta:celta:celtas:celtas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_SHORT_DESC</Tag>
+		<English>Celts</English>
+		<French>Celts</French>
+		<German>Celts</German>
+		<Italian>Celts</Italian>
+		<Spanish>Celts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_DEFAULT</Tag>
+		<English>%s2 Chiefdoms</English>
+		<French>%s2 Chiefdoms</French>
+		<German>%s2 Chiefdoms</German>
+		<Italian>%s2 Chiefdoms</Italian>
+		<Spanish>%s2 Chiefdoms</Spanish>
+	</TEXT>
+</Civ4GameText>
