@@ -833,7 +833,7 @@ iStele, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, iWalls, iDun, iSta
 iLibrary, iEdubba, iTaixue, iHoTrai, iSangam, iHarbor, iAqueduct, iBaray, iNoria, iStepwell, 
 iTheatre, iOdeon, iHippodrome, iPavilion, iArena, iBallCourt, iCharreadaArena, iGarden, iLighthouse, iTradingPost, 
 iJeweller,iMarket, iForum, iGlassmaker, iJail, iSacrificialAltar, iKalliu, iDivan, iBath, iReservoir, 
-iHammam, iForge, iBloomery, iMetalworker, iMint, iArtStudio, iCastle, iCitadel, iPharmacy, iApothecary, 
+iHammam, iForge, iBloomeryBuilding, iMetalworker, iMint, iArtStudio, iCastle, iCitadel, iPharmacy, iApothecary, 
 iAlchemist, iGrocer, iPostOffice, iTambo, iCaravanserai, iWharf, iCoffeehouse, iSalon, iBank, iRoyalExchange, 
 iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, 
 iSewer, iStarFort, iEstate, iMausoleum, iFazenda, iHacienda, iDrydock, iLevee, iDike, iObservatory, 
