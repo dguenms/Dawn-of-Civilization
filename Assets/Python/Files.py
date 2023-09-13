@@ -138,7 +138,10 @@ class FileDict(object):
 				if len(line) < 2:
 					continue
 				
-				yield line[0].decode("utf-8"), line[1].decode("utf-8")
+				try:
+					yield line[0].decode("utf-8"), line[1].decode("utf-8")
+				except UnicodeDecodeError, e:
+					raise Exception("Failed decoding line '%s' of '%s': %s" % (line, file_path, e))
 		except:
 			file.close()
 			raise
