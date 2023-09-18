@@ -8,7 +8,7 @@ from Events import handler
 
 ### CONSTANTS ###
 
-iNumLanguages = 40
+iNumLanguages = 41
 (iLangAmerican, iLangArabic, iLangBabylonian, iLangByzantine, iLangCeltic, 
 iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, iLangEgyptianArabic, 
 iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, iLangGreek, 
@@ -16,7 +16,8 @@ iLangHittite, iLangIndian, iLangIndonesian, iLangItalian, iLangJapanese,
 iLangKhmer, iLangKorean, iLangLatin, iLangMande, iLangMayan, 
 iLangMongolian, iLangNahuatl, iLangNubian, iLangPersian, iLangPhoenician, 
 iLangPolish, iLangPolynesian, iLangPortuguese, iLangQuechua, iLangRussian, 
-iLangSpanish, iLangThai, iLangTibetan, iLangTurkish, iLangViking) = range(iNumLanguages)
+iLangSpanish, iLangThai, iLangTibetan, iLangTurkish, iLangVietnamese, 
+iLangViking) = range(iNumLanguages)
 
 dLanguages = {
 	iEgypt:	[iLangEgyptian],
@@ -36,6 +37,7 @@ dLanguages = {
 	iMaya: [iLangMayan, iLangNahuatl],
 	iTamils: [iLangIndian],
 	iEthiopia: [iLangEthiopian],
+	iVietnam: [iLangVietnamese, iLangChinese],
 	iKorea: [iLangKorean, iLangChinese],
 	iByzantium: [iLangByzantine],
 	iJapan: [iLangJapanese],
@@ -121,6 +123,7 @@ dLanguageNames = {
 	iLangThai: "Thai",
 	iLangTibetan: "Tibetan",
 	iLangTurkish: "Turkish",
+	iLangVietnamese: "Vietnamese",
 	iLangViking: "Viking",
 }
 

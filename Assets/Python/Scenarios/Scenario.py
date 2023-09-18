@@ -44,6 +44,7 @@ LEADER_DATES = {
 	iEzana: 320,
 	iZaraYaqob: 1440,
 	iMenelik: 1890,
+	iLeLoi: 1400,
 	iWangKon: 920,
 	iSejong: 1420,
 	iJustinian: 530,

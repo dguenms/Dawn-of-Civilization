@@ -274,6 +274,12 @@ lCivilizations = [
 		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
 	),
 	Civilization(
+		iVietnam,
+		iGold=100,
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution],
+		techs=techs.column(3).including(iBloomery, iLiterature, iPriesthood)
+	),
+	Civilization(
 		iKorea,
 		iGold=200,
 		iAdvancedStartPoints=60,
@@ -645,6 +651,11 @@ dStartingUnits = CivDict({
 		iWorkerSea: 1,
 		iEscort: 1,
 		# 1 Shotelai
+	},
+	iVietnam: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 2,
 	},
 	iKorea: {
 		iSettle: 1,

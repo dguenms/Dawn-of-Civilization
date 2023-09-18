@@ -503,6 +503,7 @@ dStartingLeaders = [
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iEzana,
+	iVietnam: iLeLoi,
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,

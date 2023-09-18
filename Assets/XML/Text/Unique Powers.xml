@@ -962,6 +962,22 @@
 		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_VIE_TITLE</Tag>
+		<English>The Power of Resistance:</English>
+		<French>The Power of Resistance:</French>
+		<German>The Power of Resistance:</German>
+		<Italian>The Power of Resistance:</Italian>
+		<Spanish>The Power of Resistance:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIE</Tag>
+		<English>When attacking within their own territory, units receive the defensive bonus of their current tile</English>
+		<French>When attacking within their own territory, units receive the defensive bonus of their current tile</French>
+		<German>When attacking within their own territory, units receive the defensive bonus of their current tile</German>
+		<Italian>When attacking within their own territory, units receive the defensive bonus of their current tile</Italian>
+		<Spanish>When attacking within their own territory, units receive the defensive bonus of their current tile</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raids:</English>
 		<French>Le pouvoir des raids :</French>

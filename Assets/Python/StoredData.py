@@ -49,6 +49,9 @@ class CivData:
 		self.iCiv = iCiv
 		
 		self.setup()
+	
+	def update(self, data):
+		self.__dict__.update(data)
 		
 	def setup(self):
 	

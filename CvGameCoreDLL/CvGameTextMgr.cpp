@@ -3395,6 +3395,84 @@ It is fine for a human player mouse-over (which is what it is used for).
                         }
                     }
 
+					// Leoreth: Vietnamese UP
+					if (pAttacker->getCivilizationType() == VIETNAM && pAttacker->getOwnerINLINE() == pPlot->getOwnerINLINE())
+					{
+						if (!pAttacker->noDefensiveBonus())
+						{
+							iModifier = pAttacker->plot()->defenseModifier(pAttacker->getTeam(), pDefender->ignoreBuildingDefense());
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_TILE_MOD", -iModifier));
+							}
+						}
+
+						iModifier = pAttacker->fortifyModifier();
+
+						if (iModifier != 0)
+						{
+							szString.append(NEWLINE);
+							szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_FORTIFY_MOD", -iModifier));
+						}
+
+						if (pAttacker->plot()->isCity(true, pAttacker->getTeam()))
+						{
+							iModifier = pAttacker->cityDefenseModifier();
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_CITY_MOD", -iModifier));
+							}
+						}
+
+						if (pAttacker->plot()->isHills())
+						{
+							iModifier = pAttacker->hillsDefenseModifier();
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_HILLS_MOD", -iModifier));
+							}
+						}
+
+						// Leoreth
+						if (pAttacker->plot()->isPlains())
+						{
+							iModifier = pAttacker->plainsDefenseModifier();
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", -iModifier));
+							}
+						}
+
+						if (pAttacker->plot()->getFeatureType() != NO_FEATURE)
+						{
+							iModifier = pAttacker->featureDefenseModifier(pAttacker->plot()->getFeatureType());
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", -iModifier, GC.getFeatureInfo(pAttacker->plot()->getFeatureType()).getTextKeyWide()));
+							}
+						}
+						else
+						{
+							iModifier = pAttacker->terrainDefenseModifier(pAttacker->plot()->getTerrainType());
+
+							if (iModifier != 0)
+							{
+								szString.append(NEWLINE);
+								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", -iModifier, GC.getTerrainInfo(pAttacker->plot()->getTerrainType()).getTextKeyWide()));
+							}
+						}
+					}
+
                     iModifier = pAttacker->getKamikazePercent();
                     if (iModifier != 0)
                     {

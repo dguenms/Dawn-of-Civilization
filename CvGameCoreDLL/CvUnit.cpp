@@ -8856,10 +8856,82 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		else
 		{
 			iExtraModifier = -pAttacker->terrainAttackModifier(pAttackedPlot->getTerrainType());
-			iModifier += iExtraModifier;
+			iTempModifier += iExtraModifier;
 			if (pCombatDetails != NULL)
 			{
 				pCombatDetails->iTerrainAttackModifier = iExtraModifier;
+			}
+		}
+
+		// Leoreth: Vietnamese UP
+		if (pAttacker->getCivilizationType() == VIETNAM && pAttacker->getOwnerINLINE() == pAttackedPlot->getOwnerINLINE())
+		{
+			if (!pAttacker->noDefensiveBonus())
+			{
+				iExtraModifier = -pAttacker->plot()->defenseModifier(pAttacker->getTeam(), ignoreBuildingDefense());
+
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iPlotDefenseModifier = iExtraModifier;
+				}
+			}
+
+			iExtraModifier = -pAttacker->fortifyModifier();
+			iTempModifier += iExtraModifier;
+			if (pCombatDetails != NULL)
+			{
+				pCombatDetails->iFortifyModifier = iExtraModifier;
+			}
+
+			if (pAttacker->plot()->isCity(true, pAttacker->getTeam()))
+			{
+				iExtraModifier = -pAttacker->cityDefenseModifier();
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iCityDefenseModifier = iExtraModifier;
+				}
+			}
+
+			if (pAttacker->plot()->isHills())
+			{
+				iExtraModifier = -pAttacker->hillsDefenseModifier();
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iHillsDefenseModifier = iExtraModifier;
+				}
+			}
+
+			// Leoreth
+			if (pAttacker->plot()->isPlains())
+			{
+				iExtraModifier = -pAttacker->plainsDefenseModifier();
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iPlainsDefenseModifier = iExtraModifier;
+				}
+			}
+
+			if (pAttacker->plot()->getFeatureType() != NO_FEATURE)
+			{
+				iExtraModifier = -pAttacker->featureDefenseModifier(pAttacker->plot()->getFeatureType());
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iFeatureDefenseModifier = iExtraModifier;
+				}
+			}
+			else
+			{
+				iExtraModifier = -pAttacker->terrainDefenseModifier(pAttacker->plot()->getTerrainType());
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iTerrainDefenseModifier = iExtraModifier;
+				}
 			}
 		}
 

@@ -1305,6 +1305,41 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_THEATRE</BuildingClass>
+			<Type>BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Type>
+			<Description>TXT_KEY_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</ArtDefineTag>
+			<PrereqTech>TECH_LITERATURE</PrereqTech>
+			<FreePromotion>PROMOTION_AMPHIBIOUS</FreePromotion>
+			<iCost>60</iCost>
+			<iConquestProb>50</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_THEATRE</BuildingClass>
 			<Type>BUILDING_BYZANTINE_HIPPODROME</Type>
 			<Description>TXT_KEY_BUILDING_BYZANTINE_HIPPODROME</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BYZANTINE_HIPPODROME_PEDIA</Civilopedia>
