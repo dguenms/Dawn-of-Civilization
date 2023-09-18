@@ -3617,5 +3617,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Metalworker/Metalworker.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Water Puppet Theatre/Court_Asia.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Water Puppet Theatre/waterpuppettheatre.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

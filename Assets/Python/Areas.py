@@ -23,6 +23,7 @@ iCelts :		(62, 57), # Nemessos
 iMaya :			(22, 41), # Tikal
 iTamils :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
+iVietnam : 		(121, 42), # Hanoi
 iKorea :		(131, 54), # Seoul
 iByzantium :	(79, 55), # Constantinople
 iJapan :		(137, 53), # Kyoto
@@ -138,6 +139,7 @@ iCelts :		((59, 56),	(63, 61)),
 iMaya :			((21, 41),	(23, 44)),
 iTamils :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),
+iVietnam :		((120, 41),	(122, 43)),
 iKorea :		((130, 53),	(132, 56)),
 iByzantium :	((76, 51),	(87, 55)),
 iJapan :		((135, 52),	(140, 55)),

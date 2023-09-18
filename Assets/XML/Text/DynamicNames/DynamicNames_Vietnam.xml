@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_DESC</Tag>
+		<English>The Vietnamese</English>
+		<French>The Vietnamese</French>
+		<German>The Vietnamese</German>
+		<Italian>The Vietnamese</Italian>
+		<Spanish>The Vietnamese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_PEOPLES</Tag>
+		<English>Nanyue Peoples</English>
+		<French>Nanyue Peoples</French>
+		<German>Nanyue Peoples</German>
+		<Italian>Nanyue Peoples</Italian>
+		<Spanish>Nanyue Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Tag>
+		<English>Vietnamese</English>
+		<French>Vietnamese</French>
+		<German>Vietnamese</German>
+		<Italian>Vietnamese</Italian>
+		<Spanish>Vietnamese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_SHORT_DESC</Tag>
+		<English>Vietnam</English>
+		<French>Vietnam</French>
+		<German>Vietnam</German>
+		<Italian>Vietnam</Italian>
+		<Spanish>Vietnam</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_DEFAULT</Tag>
+		<English>Dai Viet</English>
+		<French>Dai Viet</French>
+		<German>Dai Viet</German>
+		<Italian>Dai Viet</Italian>
+		<Spanish>Dai Viet</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -401,7 +401,7 @@ barbarians = [
 	Barbarians(-1500, -850, {iChariot: 2}, ((79, 56), (103, 62)), 8, NOMADS, target_area=((83, 44), (104, 51)), adjective="TXT_KEY_ADJECTIVE_IRANIAN"),
 	Barbarians(-1500, -300, {iLightSwordsman: 2}, ((120, 42), (129, 50)), 12, MINORS, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	Barbarians(-1500, -500, {iArcher: 1}, ((105, 39), (111, 43)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_GIRIJAN"),
-	Barbarians(-1250, -1150, {iGalley: 1, iAxeman: 2}, ((74, 44), (85, 54)), 1, SEA_INVADERS, target_area=((74, 39), (91, 54)), adjective="TXT_KEY_ADJECTIVE_SEA_PEOPLES"),
+	# Barbarians(-1250, -1150, {iGalley: 1, iAxeman: 2}, ((74, 44), (85, 54)), 1, SEA_INVADERS, target_area=((74, 39), (91, 54)), adjective="TXT_KEY_ADJECTIVE_SEA_PEOPLES"),
 	Barbarians(-1200, -900, {iVulture: 2}, ((87, 44), (91, 52)), 10, INVADERS, adjective="TXT_KEY_ADJECTIVE_KASSITE"),
 	Barbarians(-1200, 400, {iSkirmisher: 1, iLightSwordsman: 1}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(-1200, -500, {iSkirmisher: 1}, ((84, 44), (88, 52)), 10, NOMADS, target_area=((84, 44), (91, 52)), adjective="TXT_KEY_ADJECTIVE_ARAMEAN"),

@@ -5779,6 +5779,85 @@
 			<CivilizationActionSound>AS3D_OTTOMAN_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_VIETNAM</Type>
+			<Description>TXT_KEY_CIV_VIETNAM_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_VIETNAM_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_VIETNAM_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_LEMON</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_VIETNAM</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
+			<Identifier>VIE</Identifier>
+			<StartingYear>-257</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>5</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Dai La</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingType>BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitType>UNIT_VIETNAMESE_RATTAN_ARCHER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_LE_LOI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_CHINA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>
 			<Description>TXT_KEY_CIV_VIKING_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_VIKING_SHORT_DESC</ShortDescription>
