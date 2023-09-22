@@ -504,6 +504,7 @@ dStartingLeaders = [
 	iTamils : iRajendra,
 	iEthiopia : iEzana,
 	iVietnam: iLeLoi,
+	iKushans: iKanishka,
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,

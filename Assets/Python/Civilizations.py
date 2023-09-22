@@ -280,6 +280,12 @@ lCivilizations = [
 		techs=techs.column(3).including(iBloomery, iLiterature, iPriesthood)
 	),
 	Civilization(
+		iKushans,
+		iGold=200,
+		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iMonasticism, iConquest],
+		techs=techs.column(4).including(iGeneralship, iCurrency, iPhilosophy)
+	),
+	Civilization(
 		iKorea,
 		iGold=200,
 		iAdvancedStartPoints=60,
@@ -657,6 +663,13 @@ dStartingUnits = CivDict({
 		iWork: 1,
 		iDefend: 2,
 	},
+	iKushans: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 2,
+		iShock: 4,
+		iCityAttack: 2,
+	},
 	iKorea: {
 		iSettle: 1,
 		iWork: 2,
@@ -972,6 +985,10 @@ dExtraAIUnits = CivDict({
 	iTamils: {
 		iShock: 1,
 		iMissionary: 1,
+	},
+	iKushans: {
+		iShockCity: 3,
+		iCityAttack: 2,
 	},
 	iKorea: {
 		iCounter: 2,

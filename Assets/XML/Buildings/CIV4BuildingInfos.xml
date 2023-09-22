@@ -1767,6 +1767,40 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
+			<Type>BUILDING_KUSHAN_CARAVANSERAI</Type>
+			<Description>TXT_KEY_BUILDING_KUSHAN_CARAVANSERAI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KUSHAN_CARAVANSERAI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KUSHAN_CARAVANSERAI_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KUSHAN_CARAVANSERAI</ArtDefineTag>
+			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
+			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<iTradeRoutes>1</iTradeRoutes>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
 			<Type>BUILDING_JAIL</Type>
 			<Description>TXT_KEY_BUILDING_JAIL</Description>
@@ -2651,67 +2685,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_ADMIN</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_POST_OFFICE</BuildingClass>
-			<Type>BUILDING_IRANIAN_CARAVANSERAI</Type>
-			<Description>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</ArtDefineTag>
-			<PrereqTech>TECH_PAPER</PrereqTech>
-			<iCost>120</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>60</iConquestProb>
-			<iMaxLatitude>90</iMaxLatitude>
-			<iTradeRoutes>2</iTradeRoutes>
-			<iAsset>3</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</CommerceChanges>
-			<BonusYieldChanges>
-				<BonusYieldChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<YieldChanges>
-						<iYield>2</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-			</BonusYieldChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
@@ -4270,6 +4243,35 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>8</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
+			<Type>BUILDING_IRANIAN_BAGH</Type>
+			<Description>TXT_KEY_BUILDING_IRANIAN_BAGH</Description>
+			<Civilopedia>TXT_KEY_BUILDING_IRANIAN_BAGH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_IRANIAN_BAGH_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_BAGH</ArtDefineTag>
+			<PrereqTech>TECH_AESTHETICS</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iHappiness>4</iHappiness>
+			<iHealth>2</iHealth>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>2</iYield>
+			</YieldChanges>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>

@@ -1295,5 +1295,19 @@
 			<fBlue>0</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_EMERALD</Type>
+			<fRed>0</fRed>
+			<fGreen>0.6</fGreen>
+			<fBlue>0.4</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_EMERALD_TEXT</Type>
+			<fRed>0</fRed>
+			<fGreen>0.48</fGreen>
+			<fBlue>0.32</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

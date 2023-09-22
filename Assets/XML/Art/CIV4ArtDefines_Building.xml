@@ -1958,16 +1958,6 @@
 			<Button>Art/Structures/Wonders/Red_Fort/RedFort.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</Type>
-			<LSystem>LSYSTEM_3x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.1</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Caravanserai/elestable.nif</NIF>
-			<KFM/>
-			<Button>art/Structures/Buildings/Caravanserai/Caravanserai.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ORTHODOX_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
@@ -3626,6 +3616,26 @@
 			<NIF>Art/Structures/Buildings/Water Puppet Theatre/Court_Asia.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Water Puppet Theatre/waterpuppettheatre.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_IRANIAN_BAGH</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Bagh/bath_middle_east.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Bagh/bagh.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KUSHAN_CARAVANSERAI</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Caravanserai/caravan2.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Caravanserai/Button_Caravanserai.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
