@@ -125,7 +125,7 @@ def exportCSV():
 	
 	map = FileMap("ExportedArea.csv")
 	
-	values = [(location(p), str(value)) for p, value in FileMap.read("Export/BaseMap.csv")] + [(tile, "1") for tile in area] + [(location(p), str(value)) for p, value in getLandmarks()]
+	values = [(location(p), "0") for p, value in FileMap.read("Export/BaseTerrain.csv") if value > 0] + [(tile, "1") for tile in area] + [(location(p), str(value)) for p, value in getLandmarks()]
 	
 	map.update(values)
 	map.export()

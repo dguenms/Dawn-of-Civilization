@@ -2745,8 +2745,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_POST_OFFICE</BuildingClassType>
-					<BuildingType>BUILDING_IRANIAN_CARAVANSERAI</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_PARK</BuildingClassType>
+					<BuildingType>BUILDING_IRANIAN_BAGH</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
@@ -3332,6 +3332,80 @@
 			<DerivativeCiv>CIVILIZATION_JAPAN</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_KOREA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_KOREA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_KUSHANS</Type>
+			<Description>TXT_KEY_CIV_KUSHANS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_KUSHANS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_KUSHANS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_KUSHANS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_EMERALD</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_KUSHANS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
+			<Identifier>KUS</Identifier>
+			<StartingYear>-135</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>1</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Kucha</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingType>BUILDING_KUSHAN_CARAVANSERAI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
+					<UnitType>UNIT_KUSHAN_ASVAKA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses/>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_KANISHKA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_INDIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INDIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_MALI</Type>

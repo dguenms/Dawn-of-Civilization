@@ -586,6 +586,30 @@
 		<Spanish>Double specialist slots in capital</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_KUS_TITLE</Tag>
+		<English>The Power of Syncretism:</English>
+		<French>The Power of Syncretism:</French>
+		<German>The Power of Syncretism:</German>
+		<Italian>The Power of Syncretism:</Italian>
+		<Spanish>The Power of Syncretism:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KUS</Tag>
+		<English>Spreading a religion that is not the owner's state religion grants additional gold</English>
+		<French>Spreading a religion that is not the owner's state religion grants additional gold</French>
+		<German>Spreading a religion that is not the owner's state religion grants additional gold</German>
+		<Italian>Spreading a religion that is not the owner's state religion grants additional gold</Italian>
+		<Spanish>Spreading a religion that is not the owner's state religion grants additional gold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SYNCRETISM_EFFECT</Tag>
+		<English>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</English>
+		<French>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</French>
+		<German>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</German>
+		<Italian>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</Italian>
+		<Spanish>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
 		<French>Le pouvoir de la richesse :</French>

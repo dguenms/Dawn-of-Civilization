@@ -504,7 +504,7 @@ def isUnitOfRole(iUnit, iRole):
 	elif iRole == iCounter:
 		return iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0
 	elif iRole in [iShock, iShockCity]:
-		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY or iUnit == iKeshik
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY and iUnit != iWarElephant or iUnit == iKeshik
 	elif iRole == iHarass:
 		return iCombatType == UnitCombatTypes.UNITCOMBAT_LIGHT_CAVALRY and not iUnit == iKeshik
 	elif iRole == iWorkerSea:

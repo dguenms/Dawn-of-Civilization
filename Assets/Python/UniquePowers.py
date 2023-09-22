@@ -156,3 +156,15 @@ def canadianUP(_, city, iPopulation):
 def assyrianPower(iOwner, iPlayer, city, bConquest):
 	if civ(iPlayer) == iAssyria and bConquest:
 		city.setOccupationTimer(0)
+
+
+@handler("unitSpreadReligionAttempt")
+def kushanPower(unit, iReligion, bSuccess):
+	if civ(unit.getOwner()) == iKushans and bSuccess:
+		spread_city = city(unit)
+		capital_city = capital(unit)
+		if spread_city and capital_city:
+			if player(spread_city.getOwner()).getStateReligion() != iReligion:
+				iGold = scale(20 + distance(capital_city, spread_city))
+				message(unit.getOwner(), "TXT_KEY_UP_SYNCRETISM_EFFECT", iGold, infos.religion(iReligion).getText(), spread_city.getName(), location=spread_city, button=infos.religion(iReligion).getButton())
+				player(unit.getOwner()).changeGold(iGold)

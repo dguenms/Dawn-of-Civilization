@@ -42965,7 +42965,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=53
-	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -44718,6 +44717,7 @@ BeginPlot
 	x=99,y=53
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -45158,6 +45158,7 @@ BeginPlot
 	x=100,y=50
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -45169,7 +45170,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=52
-	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1

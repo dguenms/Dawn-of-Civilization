@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_DESC</Tag>
+		<English>The Kushans</English>
+		<French>The Kushans</French>
+		<German>The Kushans</German>
+		<Italian>The Kushans</Italian>
+		<Spanish>The Kushans</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_PEOPLES</Tag>
+		<English>Tocharian Peoples</English>
+		<French>Tocharian Peoples</French>
+		<German>Tocharian Peoples</German>
+		<Italian>Tocharian Peoples</Italian>
+		<Spanish>Tocharian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_ADJECTIVE</Tag>
+		<English>Kushan</English>
+		<French>Kushan</French>
+		<German>Kushan</German>
+		<Italian>Kushan</Italian>
+		<Spanish>Kushan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_SHORT_DESC</Tag>
+		<English>Kushans</English>
+		<French>Kushans</French>
+		<German>Kushans</German>
+		<Italian>Kushans</Italian>
+		<Spanish>Kushans</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_DEFAULT</Tag>
+		<English>Kushan Empire</English>
+		<French>Kushan Empire</French>
+		<German>Kushan Empire</German>
+		<Italian>Kushan Empire</Italian>
+		<Spanish>Kushan Empire</Spanish>
+	</TEXT>
+</Civ4GameText>

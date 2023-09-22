@@ -366,5 +366,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Vietnam.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_KUSHANS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Kushans.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tamga.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

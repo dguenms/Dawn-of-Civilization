@@ -24,6 +24,7 @@ iMaya :			(22, 41), # Tikal
 iTamils :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
 iVietnam : 		(121, 42), # Hanoi
+iKushans :		(100, 52), # Bactra
 iKorea :		(131, 54), # Seoul
 iByzantium :	(79, 55), # Constantinople
 iJapan :		(137, 53), # Kyoto
@@ -140,6 +141,7 @@ iMaya :			((21, 41),	(23, 44)),
 iTamils :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),
 iVietnam :		((120, 41),	(122, 43)),
+iKushans :		((100, 49),	(102, 53)),
 iKorea :		((130, 53),	(132, 56)),
 iByzantium :	((76, 51),	(87, 55)),
 iJapan :		((135, 52),	(140, 55)),

@@ -426,7 +426,7 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Intelligence Agencies[COLOR_REVERT] increase the espionage points created by the city and grant experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in their city. [COLOR_BUILDING_TEXT]Intelligence Agencies[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] world wonder.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Tag>
+		<Tag>TXT_KEY_BUILDING_KUSHAN_CARAVANSERAI</Tag>
 		<English>Caravanserai</English>
 		<French>
 			<Text>Caravans&#233;rail:Caravans&#233;rails</Text>
@@ -436,14 +436,6 @@
 		<German>Caravanserai</German>
 		<Italian>Caravanserai</Italian>
 		<Spanish>Caravanserai</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORGE_STRATEGY</Tag>
@@ -3132,6 +3124,14 @@
 		<German>Water Puppet Theatre</German>
 		<Italian>Water Puppet Theatre</Italian>
 		<Spanish>Water Puppet Theatre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IRANIAN_BAGH</Tag>
+		<English>Bagh</English>
+		<French>Bagh</French>
+		<German>Bagh</German>
+		<Italian>Bagh</Italian>
+		<Spanish>Bagh</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
