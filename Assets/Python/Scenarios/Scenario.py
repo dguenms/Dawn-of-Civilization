@@ -45,6 +45,7 @@ LEADER_DATES = {
 	iZaraYaqob: 1440,
 	iMenelik: 1890,
 	iLeLoi: 1400,
+	iTopiltzin: 900,
 	iKanishka: 130,
 	iWangKon: 920,
 	iSejong: 1420,

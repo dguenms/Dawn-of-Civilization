@@ -456,5 +456,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_VERYDARK_BLUE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_EMERALD_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_CARMINE</Type> <!-- Toltecs -->
+			<ColorTypePrimary>COLOR_PLAYER_CARMINE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_JADE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_CARMINE_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

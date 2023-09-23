@@ -342,6 +342,16 @@ void CvPlayer::init(PlayerTypes eID)
 			changeHurryCount((HurryTypes)1, 1);
 		}
 
+		// Toltec UP: +1 production and +2 culture per specialist
+		if (getCivilizationType() == TOLTECS)
+		{
+			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+			{
+				changeSpecialistExtraYield((SpecialistTypes)iI, YIELD_PRODUCTION, 1);
+			}
+			changeSpecialistExtraCommerce(COMMERCE_CULTURE, 2);
+		}
+
 		// Thai UP: +1 commerce per excess happiness
 		if (getCivilizationType() == THAILAND)
 		{

@@ -3637,5 +3637,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Caravanserai/Button_Caravanserai.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TOLTEC_OBSIDIAN_WORKSHOP</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Obsidian Workshop/Meso1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Obsidian Workshop/ObsidianWorkshop.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

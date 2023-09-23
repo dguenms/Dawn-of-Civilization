@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_DESC</Tag>
+		<English>The Toltecs</English>
+		<French>The Toltecs</French>
+		<German>The Toltecs</German>
+		<Italian>The Toltecs</Italian>
+		<Spanish>The Toltecs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_PEOPLES</Tag>
+		<English>Nahua Peoples</English>
+		<French>Nahua Peoples</French>
+		<German>Nahua Peoples</German>
+		<Italian>Nahua Peoples</Italian>
+		<Spanish>Nahua Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_ADJECTIVE</Tag>
+		<English>Toltec</English>
+		<French>Toltec</French>
+		<German>Toltec</German>
+		<Italian>Toltec</Italian>
+		<Spanish>Toltec</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_SHORT_DESC</Tag>
+		<English>Toltecs</English>
+		<French>Toltecs</French>
+		<German>Toltecs</German>
+		<Italian>Toltecs</Italian>
+		<Spanish>Toltecs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
+</Civ4GameText>
