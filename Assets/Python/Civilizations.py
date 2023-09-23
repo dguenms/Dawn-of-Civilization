@@ -283,7 +283,7 @@ lCivilizations = [
 		iKushans,
 		iGold=200,
 		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iMonasticism, iConquest],
-		techs=techs.column(4).including(iGeneralship, iCurrency, iPhilosophy)
+		techs=techs.column(4).including(iGeneralship, iCurrency, iPhilosophy).without(iNavigation)
 	),
 	Civilization(
 		iKorea,

@@ -3341,8 +3341,8 @@
 			<Civilopedia>TXT_KEY_CIV_KUSHANS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_EMERALD</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KUSHANS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KUS</Identifier>
