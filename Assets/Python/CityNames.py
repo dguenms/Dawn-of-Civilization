@@ -38,6 +38,7 @@ dLanguages = {
 	iTamils: [iLangIndian],
 	iEthiopia: [iLangEthiopian],
 	iVietnam: [iLangVietnamese, iLangChinese],
+	iToltecs: [iLangNahuatl],
 	iKushans: [iLangIndian, iLangGreek, iLangTurkish],
 	iKorea: [iLangKorean, iLangChinese],
 	iByzantium: [iLangByzantine],

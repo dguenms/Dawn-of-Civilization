@@ -3348,7 +3348,7 @@
 			<Identifier>KUS</Identifier>
 			<StartingYear>-135</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>3</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5755,6 +5755,85 @@
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_TOLTECS</Type>
+			<Description>TXT_KEY_CIV_TOLTECS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_TOLTECS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_TOLTECS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_TOLTECS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_CARMINE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_TOLTECS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_TEOTL_AZTEC</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
+			<Identifier>TOL</Identifier>
+			<StartingYear>-200</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>3</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>3</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Teotihuacan</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_JEWELLER</BuildingClassType>
+					<BuildingType>BUILDING_TOLTEC_OBSIDIAN_WORKSHOP</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
+					<UnitType>UNIT_TOLTEC_ATL_ATL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TOPILTZIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_AZTEC</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_AZTEC_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_AZTEC_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_TURKS</Type>
 			<Description>TXT_KEY_CIV_TURKS_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_TURKS_SHORT_DESC</ShortDescription>
@@ -5867,7 +5946,7 @@
 			<Identifier>VIE</Identifier>
 			<StartingYear>-257</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>

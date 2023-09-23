@@ -501,7 +501,7 @@
 		<Tag>TXT_KEY_UP_IRA</Tag>
 		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
 		<French>Les b&#226;timents religieux produisent +2 [ICON_CULTURE] et +2 [ICON_RESEARCH]</French>
-		<German>Religi&#246;se Geb&#228;ude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
+		<German>Religi&#246;se Geb&#228;ude produzieren +2 [ICON_CULTURE] und +2 [ICON_RESEARCH]</German>
 		<Italian>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Italian>
 		<Spanish>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Spanish>
 	</TEXT>
@@ -952,6 +952,22 @@
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
 		<Italian>Can train unlimited missionaries; Missionaries can enter foreign territory</Italian>
 		<Spanish>Can train unlimited missionaries; Missionaries can enter foreign territory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TOL_TITLE</Tag>
+		<English>The Power of Artisans:</English>
+		<French>The Power of Artisans:</French>
+		<German>The Power of Artisans:</German>
+		<Italian>The Power of Artisans:</Italian>
+		<Spanish>The Power of Artisans:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TOL</Tag>
+		<English>Specialists produce +1 [ICON_PRODUCTION] and +2 [ICON_CULTURE]</English>
+		<French>Specialists produce +1 [ICON_PRODUCTION] and +2 [ICON_CULTURE]</French>
+		<German>Specialists produce +1 [ICON_PRODUCTION] and +2 [ICON_CULTURE]</German>
+		<Italian>Specialists produce +1 [ICON_PRODUCTION] and +2 [ICON_CULTURE]</Italian>
+		<Spanish>Specialists produce +1 [ICON_PRODUCTION] and +2 [ICON_CULTURE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>

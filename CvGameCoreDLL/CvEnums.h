@@ -1190,14 +1190,15 @@ enum CivilizationTypes		// Exposed to Python
 	TAMILS,
 	THAILAND,
 	TIBET,
+	TOLTECS,
 	TURKS,
 	VIETNAM,
 	VIKINGS,
 	ZULU,
 	INDEPENDENT,
 	INDEPENDENT2,
-	NATIVE,
 
+	NATIVE,
 	MINOR_CIV,
 	BARBARIAN_CIV,
 
@@ -1266,6 +1267,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	MENELIK,
 
 	LE_LOI,
+
+	TOPILTZIN,
 
 	KANISHKA,
 

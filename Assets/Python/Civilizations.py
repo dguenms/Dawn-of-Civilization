@@ -280,6 +280,12 @@ lCivilizations = [
 		techs=techs.column(3).including(iBloomery, iLiterature, iPriesthood)
 	),
 	Civilization(
+		iToltecs,
+		iGold=100,
+		lCivics=[iDespotism, iSlavery, iRedistribution, iDeification],
+		techs=techs.column(3).without(iAlloys, iRiding, iShipbuilding).including(iMathematics, iPriesthood)
+	),
+	Civilization(
 		iKushans,
 		iGold=200,
 		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iMonasticism, iConquest],
@@ -662,6 +668,12 @@ dStartingUnits = CivDict({
 		iSettle: 1,
 		iWork: 1,
 		iDefend: 2,
+	},
+	iToltecs: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 1,
+		iAttack: 2,
 	},
 	iKushans: {
 		iSettle: 2,

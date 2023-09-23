@@ -1309,5 +1309,26 @@
 			<fBlue>0.32</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_CARMINE</Type>
+			<fRed>0.58</fRed>
+			<fGreen>0.20</fGreen>
+			<fBlue>0.13</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_JADE</Type>
+			<fRed>0.56</fRed>
+			<fGreen>0.93</fGreen>
+			<fBlue>0.56</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_CARMINE_TEXT</Type>
+			<fRed>0.7</fRed>
+			<fGreen>0.3</fGreen>
+			<fBlue>0.22</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

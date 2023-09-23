@@ -1062,5 +1062,13 @@
 			<NoShaderNIF>Art/Leaderheads/Kanishka/ragnar_lodbrok.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Kanishka/ragnar_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TOPILTZIN</Type>
+			<Button>Art/Leaderheads/Topiltzin/topiltzin.dds</Button>
+			<NIF>Art/Leaderheads/Topiltzin/pacal.nif</NIF>
+			<KFM>Art/Leaderheads/Topiltzin/pacal.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Topiltzin/pacal.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Topiltzin/pacal_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
