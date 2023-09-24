@@ -4759,7 +4759,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// Leoreth: plot is subject to special rules after a civilization has been born
 		if (pPlot->isBirthProtected())
 		{
-			szString.append(GET_PLAYER(pPlot->getBirthProtected()).formatColor(gDLL->getText("TXT_KEY_INTERFACE_BIRTH_PROTECTED", GET_PLAYER(pPlot->getBirthProtected()).getCivilizationShortDescription())));
+			szString.append(GET_PLAYER(pPlot->getBirthProtected()).formatColor(gDLL->getText("TXT_KEY_INTERFACE_BIRTH_PROTECTED", GC.getCivilizationInfo(GET_PLAYER(pPlot->getBirthProtected()).getCivilizationType()).getDescription())));
 			szString.append(NEWLINE);
 		}
 
