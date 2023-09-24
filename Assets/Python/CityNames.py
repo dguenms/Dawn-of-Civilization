@@ -42,6 +42,7 @@ dLanguages = {
 	iKushans: [iLangIndian, iLangGreek, iLangTurkish],
 	iKorea: [iLangKorean, iLangChinese],
 	iByzantium: [iLangByzantine],
+	iMalays: [iLangIndonesian, iLangKhmer],
 	iJapan: [iLangJapanese],
 	iVikings: [iLangViking],
 	iTurks: [iLangTurkish, iLangPersian, iLangArabic],

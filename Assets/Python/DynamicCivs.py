@@ -508,6 +508,7 @@ dStartingLeaders = [
 	iKushans: iKanishka,
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
+	iMalays : iSriJayanasa,
 	iVikings : iRagnar,
 	iTurks : iBumin,
 	iArabia : iHarun,

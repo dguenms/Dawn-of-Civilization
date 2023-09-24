@@ -308,6 +308,14 @@ lCivilizations = [
 		techs=techs.column(5).including(iArchitecture, iPolitics, iEthics)
 	),
 	Civilization(
+		iMalays,
+		iGold=200,
+		iAdvancedStartPoints=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iCasteSystem, iMerchantTrade, iDeification],
+		techs=techs.column(5).including(iEthics).without(iGeneralship, iEngineering)
+	),
+	Civilization(
 		iJapan,
 		iGold=100,
 		iAdvancedStartPoints=60,
@@ -699,6 +707,15 @@ dStartingUnits = CivDict({
 		iMissionary: 1,
 		iFerry: 2,
 		iEscort: 2,
+	},
+	iMalays: {
+		iSettle: 1,
+		iSettleSea: 1,
+		iWork: 1,
+		iWorkerSea: 1,
+		iDefend: 1,
+		iMissionary: 1,
+		iEscort: 1,
 	},
 	iJapan: {
 		iSettle: 3,

@@ -1167,6 +1167,7 @@ enum CivilizationTypes		// Exposed to Python
 
 	KOREA,
 	KUSHANS,
+	MALAYS,
 	MALI,
 	MAYA,
 	MEXICO,
@@ -1174,8 +1175,8 @@ enum CivilizationTypes		// Exposed to Python
 	MOORS,
 	MUGHALS,
 	NATIVE_AMERICANS,
-	NETHERLANDS,
 
+	NETHERLANDS,
 	NUBIA,
 	OTTOMANS,
 	PERSIA,
@@ -1185,8 +1186,8 @@ enum CivilizationTypes		// Exposed to Python
 	ROME,
 	RUSSIA,
 	SPAIN,
-	SUMERIA,
 
+	SUMERIA,
 	TAMILS,
 	THAILAND,
 	TIBET,
@@ -1196,8 +1197,8 @@ enum CivilizationTypes		// Exposed to Python
 	VIKINGS,
 	ZULU,
 	INDEPENDENT,
-	INDEPENDENT2,
 
+	INDEPENDENT2,
 	NATIVE,
 	MINOR_CIV,
 	BARBARIAN_CIV,
@@ -1277,6 +1278,9 @@ enum LeaderHeadTypes			// Exposed to Python
 
 	JUSTINIAN,
 	BASIL,
+
+	SRI_JAYANASA,
+	TUN_PERAK,
 
 	KAMMU,
 	ODA_NOBUNADA,

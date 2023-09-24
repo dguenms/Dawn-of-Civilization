@@ -610,6 +610,22 @@
 		<Spanish>We gained %d1 [ICON_GOLD] after spreading %s2 to %s3.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MAA_TITLE</Tag>
+		<English>The Power of Straits:</English>
+		<French>The Power of Straits:</French>
+		<German>The Power of Straits:</German>
+		<Italian>The Power of Straits:</Italian>
+		<Spanish>The Power of Straits:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAA</Tag>
+		<English>+2 trade routes for cities with different landmasses within their third ring</English>
+		<French>+2 trade routes for cities with different landmasses within their third ring</French>
+		<German>+2 trade routes for cities with different landmasses within their third ring</German>
+		<Italian>+2 trade routes for cities with different landmasses within their third ring</Italian>
+		<Spanish>+2 trade routes for cities with different landmasses within their third ring</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
 		<French>Le pouvoir de la richesse :</French>

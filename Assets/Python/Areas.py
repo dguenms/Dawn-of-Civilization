@@ -28,6 +28,7 @@ iToltecs :		(17, 43), # Tollan
 iKushans :		(100, 52), # Bactra
 iKorea :		(131, 54), # Seoul
 iByzantium :	(79, 55), # Constantinople
+iMalays :		(120, 27), # Palembang
 iJapan :		(137, 53), # Kyoto
 iVikings :		(67, 75), # Nidaros
 iTurks :		(105, 58), # Orduqent
@@ -146,6 +147,7 @@ iToltecs :		((16, 42),	(18, 44)),
 iKushans :		((100, 49),	(102, 53)),
 iKorea :		((130, 53),	(132, 56)),
 iByzantium :	((76, 51),	(87, 55)),
+iMalays :		((119, 26),	(121, 31)),
 iJapan :		((135, 52),	(140, 55)),
 iVikings :		((65, 67),	(68, 75)),
 iTurks :		((96, 54),	(107, 59)),

@@ -330,6 +330,19 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeMaxFoodKeptPercent(25);
 	}
 
+	// Leoreth: Malay UP: +2 trade routes for cities with different landmass within third ring
+	if (getCivilizationType() == MALAYS)
+	{
+		for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+		{
+			if (plotCity3(getX(), getY(), iI)->getArea() != getArea())
+			{
+				changeExtraTradeRoutes(2);
+				break;
+			}
+		}
+	}
+
 	// Leoreth: Prambanan effect: +25% food kept on city growth
 	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PRAMBANAN))
 	{
@@ -18342,7 +18355,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	// Leoreth: Steppe Empires (use this for Steppe and Semidesert terrain later)
 	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS)
 	{
-		if (pPlot->getTerrainType() == TERRAIN_DESERT)
+		if (pPlot->getTerrainType() == TERRAIN_DESERT || pPlot->getTerrainType() == TERRAIN_STEPPE || pPlot->getTerrainType() == TERRAIN_SEMIDESERT)
 		{
 			iExtraCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
 		}

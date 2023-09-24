@@ -462,5 +462,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_JADE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_CARMINE_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_BRIGHT_GREEN</Type> <!-- Malays -->
+			<ColorTypePrimary>COLOR_PLAYER_BRIGHT_GREEN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_BRIGHT_GREEN_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

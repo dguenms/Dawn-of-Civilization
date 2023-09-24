@@ -51,6 +51,8 @@ LEADER_DATES = {
 	iSejong: 1420,
 	iJustinian: 530,
 	iBasil: 980,
+	iSriJayanasa: 700,
+	iTunPerak: 1450,
 	iKammu: 790,
 	iOdaNobunaga: 1580,
 	iMeiji: 1870,
