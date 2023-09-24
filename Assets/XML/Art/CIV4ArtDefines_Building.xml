@@ -3647,5 +3647,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Obsidian Workshop/ObsidianWorkshop.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MALAY_GUDANG</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>15.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Gudang/greek_dock_1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Gudang/Button_Gudang.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

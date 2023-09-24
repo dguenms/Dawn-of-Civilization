@@ -378,5 +378,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Ocelot.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MALAYS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Malays.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Mandala.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>
