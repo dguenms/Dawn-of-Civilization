@@ -639,14 +639,6 @@
 			<BackgroundKFM>art/leaderheads/Suharto/mao_tse_tung_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_DHARMASETU</Type>
-			<Button>Art/leaderheads/Dharmasetu/Dharmasetu_btn.dds</Button>
-			<NIF>art/leaderheads/Dharmasetu/Arawak.nif</NIF>
-			<KFM>art/leaderheads/Dharmasetu/Arawak.kfm</KFM>
-			<NoShaderNIF>art/leaderheads/Dharmasetu/Arawak.nif</NoShaderNIF>
-			<BackgroundKFM>art/leaderheads/Dharmasetu/Arawak_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SHIVAJI</Type>
 			<Button>Art/leaderheads/Bhoja/Bhoja.dds</Button>
 			<NIF>art/leaderheads/Bhoja/Asoka.nif</NIF>

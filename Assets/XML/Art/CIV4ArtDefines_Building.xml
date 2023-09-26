@@ -1898,7 +1898,7 @@
 			<Button>Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INDONESIAN_CANDI</Type>
+			<Type>ART_DEF_BUILDING_JAVANESE_CANDI</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.0</fScale>

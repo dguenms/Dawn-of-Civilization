@@ -1079,14 +1079,6 @@
 		<Spanish>Las ciudades %s1:4 han declarado su independencia del dominio extranjero.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INDONESIAN_UP</Tag>
-		<English>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</English>
-		<French>Le commerce passant par nos mers contribue &#224; notre tr&#233;sor &#224; hauteur de %d1 [ICON_GOLD] !</French>
-		<German>Der durch unsere Gew&#228;sser verlaufende Handel bringt unserer Schatzkammer %d1 [ICON_GOLD]!</German>
-		<Italian>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</Italian>
-		<Spanish>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_INVADERS_HUMAN</Tag>
 		<English>%s1 armies have invaded our territory!</English>
 		<French>Les arm&#233;es %s1:4 ont envahi notre territoire !</French>

@@ -9,7 +9,7 @@ lVikingTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iC
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iTamils, iVietnam, iMalays, iJava, iKhmer, iMughals, iThailand]
 
 
 # city names
@@ -305,11 +305,6 @@ dGoals = {
 		AcquiredCities(5, by=1000),
 		ReligionSpreadPercent(iBuddhism, 25, by=1400),
 		CitySpecialistCount(start(iTibet).named(LHASA), iSpecialistGreatProphet, 5, by=1700),
-	),
-	iIndonesia: (
-		BestPopulationPlayer(at=1300),
-		ResourceCount(different(happiness_resources()).named(DIFFERENT_HAPPINESS_RESOURCES), 10, by=1500),
-		PopulationPercent(9, at=1940),
 	),
 	iMoors: (
 		All(

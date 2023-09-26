@@ -14454,7 +14454,7 @@ int CvUnit::getOriginalArtStyle(const CvPlot* pPlot) const
 		return GC.getCivilizationInfo(KHMER).getUnitArtStyleType();
 	case REGION_INDONESIA:
 	case REGION_PHILIPPINES:
-		return GC.getCivilizationInfo(INDONESIA).getUnitArtStyleType();
+		return GC.getCivilizationInfo(JAVA).getUnitArtStyleType();
 	case REGION_SOUTH_CHINA:
 	case REGION_NORTH_CHINA:
 	case REGION_TARIM_BASIN:

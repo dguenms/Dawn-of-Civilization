@@ -767,7 +767,7 @@ def canRespawn(iCiv):
 	
 	# Exception during Japanese UHV
 	if player(iJapan).isHuman() and year().between(1920, 1945):
-		if iCiv in [iChina, iKorea, iIndonesia, iThailand]:
+		if iCiv in [iChina, iKorea, iMalays, iJava, iThailand]:
 			return False
 			
 	return True

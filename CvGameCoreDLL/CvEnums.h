@@ -1158,10 +1158,10 @@ enum CivilizationTypes		// Exposed to Python
 	HOLY_ROME,
 	INCA,
 	INDIA,
-	INDONESIA,
 	IRAN,
 	ITALY,
 	JAPAN,
+	JAVA,
 	KHMER,
 	CONGO,
 
@@ -1300,12 +1300,11 @@ enum LeaderHeadTypes			// Exposed to Python
 	SONGTSEN,
 	LOBSANG_GYATSO,
 
-	DHARMASETU,
-	HAYAM_WURUK,
-	SUHARTO,
-
 	RAHMAN,
 	YAQUB,
+
+	HAYAM_WURUK,
+	SUHARTO,
 
 	ISABELLA,
 	PHILIP,

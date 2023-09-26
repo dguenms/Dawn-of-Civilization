@@ -2589,108 +2589,6 @@
 			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
-			<Type>CIVILIZATION_INDONESIA</Type>
-			<Description>TXT_KEY_CIV_INDONESIA_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_INDONESIA_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_INDONESIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_TEAL</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_INDONESIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
-			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
-			<Impact>IMPACT_SIGNIFICANT</Impact>
-			<Identifier>INO</Identifier>
-			<StartingYear>650</StartingYear>
-			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
-				<LoadingTime>1</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-			</LoadingTimes>
-			<Rating>
-				<Trade>4</Trade>
-				<Production>1</Production>
-				<Culture>3</Culture>
-				<Growth>5</Growth>
-				<Start>2</Start>
-			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
-			<Cities>
-				<City>Trowulan</City>
-				<City>Borobudur</City>
-				<City>Chaiya</City>
-				<City>Prambanan</City>
-				<City>Kota Gede</City>
-				<City>Malang</City>
-				<City>Surakarta</City>
-				<City>Bojonegoro</City>
-				<City>Ratu Boko</City>
-				<City>Cirebon</City>
-				<City>Bandar</City>
-				<City>Penataran</City>
-				<City>Pajang</City>
-				<City>Demak</City>
-				<City>Plaosan</City>
-				<City>Bantam</City>
-			</Cities>
-			<Buildings>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-					<BuildingType>BUILDING_INDONESIAN_CANDI</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
-				</Building>
-			</Buildings>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_DJONG</UnitType>
-				</Unit>
-			</Units>
-			<FreeUnitClasses>
-				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
-					<iFreeUnits>1</iFreeUnits>
-				</FreeUnitClass>
-			</FreeUnitClasses>
-			<FreeBuildingClasses>
-				<FreeBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
-					<bFreeBuildingClass>1</bFreeBuildingClass>
-				</FreeBuildingClass>
-			</FreeBuildingClasses>
-			<FreeTechs/>
-			<DisableTechs/>
-			<InitialCivics>
-				<CivicType>CIVIC_CHIEFDOM</CivicType>
-				<CivicType>CIVIC_AUTHORITY</CivicType>
-				<CivicType>CIVIC_TRADITIONALISM</CivicType>
-				<CivicType>CIVIC_RECIPROCITY</CivicType>
-				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
-			</InitialCivics>
-			<Leaders>
-				<Leader>
-					<LeaderName>LEADER_DHARMASETU</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_HAYAM_WURUK</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_SUHARTO</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-			</Leaders>
-			<DerivativeCiv>CIVILIZATION_KHMER</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
-		</CivilizationInfo>
-		<CivilizationInfo>
 			<Type>CIVILIZATION_IRAN</Type>
 			<Description>TXT_KEY_CIV_IRAN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_IRAN_SHORT_DESC</ShortDescription>
@@ -3014,6 +2912,104 @@
 			<DerivativeCiv>CIVILIZATION_KOREA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_JAPAN_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_JAPAN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_JAVA</Type>
+			<Description>TXT_KEY_CIV_JAVA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_JAVA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_JAVA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_JAVA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_HIBISCUS</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_JAVA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
+			<Identifier>JAV</Identifier>
+			<StartingYear>716</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>9</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>5</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Trowulan</City>
+				<City>Borobudur</City>
+				<City>Chaiya</City>
+				<City>Prambanan</City>
+				<City>Kota Gede</City>
+				<City>Malang</City>
+				<City>Surakarta</City>
+				<City>Bojonegoro</City>
+				<City>Ratu Boko</City>
+				<City>Cirebon</City>
+				<City>Bandar</City>
+				<City>Penataran</City>
+				<City>Pajang</City>
+				<City>Demak</City>
+				<City>Plaosan</City>
+				<City>Bantam</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<BuildingType>BUILDING_JAVANESE_CANDI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_JAVANESE_SILAT</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_HAYAM_WURUK</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SUHARTO</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_MALAYS</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_KHMER</Type>
@@ -3466,7 +3462,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_DJONG</UnitType>
+					<UnitType>UNIT_MALAY_DJONG</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3501,7 +3497,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_KHMER</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_JAVA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
@@ -4944,7 +4940,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_INDONESIA</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_MALAYS</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_INCA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_INCA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>

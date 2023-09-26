@@ -254,18 +254,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_DHARMASETU</Tag>
-		<English>Dharmasetu</English>
-		<French>
-			<Text>Dharmasetu</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Dharmasetu</German>
-		<Italian>Dharmasetu</Italian>
-		<Spanish>Dharmasetu</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_LEADER_DOM_PEDRO</Tag>
 		<English>Pedro II</English>
 		<French>

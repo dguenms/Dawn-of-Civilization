@@ -83,21 +83,6 @@ def russianUP(self):
 				unit.changeDamage(8, slot(iRussia))
 
 
-# Indonesian UP: additional gold for foreign ships in your core
-@handler("BeginGameTurn")
-def indonesianUP():
-	if not player(iIndonesia).isExisting():
-		return
-
-	seaUnits = plots.core(iIndonesia).owner(iIndonesia).units().domain(DomainTypes.DOMAIN_SEA)
-	iNumUnits = seaUnits.notowner(iIndonesia).where(lambda unit: not team(iIndonesia).isAtWar(unit.getTeam())).count()
-				
-	if iNumUnits > 0:
-		iGold = 5 * iNumUnits
-		player(iIndonesia).changeGold(iGold)
-		message(slot(iIndonesia), 'TXT_KEY_INDONESIAN_UP', iGold)
-
-
 @handler("BeginGameTurn")
 def resetBabylonianPower():
 	data.bBabyloniaTechReceived = False

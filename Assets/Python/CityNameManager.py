@@ -39,7 +39,6 @@ iTurks : [iLangTurkish, iLangArabian, iLangPersian],
 iArabia : [iLangArabian],
 iTibet : [iLangTibetan, iLangChinese],
 iKhmer : [iLangKhmer, iLangIndonesian],
-iIndonesia : [iLangIndonesian, iLangKhmer],
 iMoors : [iLangArabian],
 iSpain : [iLangSpanish],
 iFrance : [iLangFrench],
@@ -374,11 +373,6 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 @handler("religionSpread")
 def onReligionSpread(iReligion, iPlayer, city):
 	iCiv = civ(iPlayer)
-
-	if iCiv == iIndonesia:
-		if iReligion == iIslam:
-			if city.getName() == 'Yogyakarta': 
-				renameOwnedCity(city, "Mataram")
 			
 	# easter egg
 	if iReligion == iBuddhism:

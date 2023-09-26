@@ -468,5 +468,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BRIGHT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_HIBISCUS</Type> <!-- Java -->
+			<ColorTypePrimary>COLOR_PLAYER_HIBISCUS</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_HIBISCUS_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_DESC</Tag>
+		<English>The Javanese</English>
+		<French>The Javanese</French>
+		<German>The Javanese</German>
+		<Italian>The Javanese</Italian>
+		<Spanish>The Javanese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_PEOPLES</Tag>
+		<English>Javanese Peoples</English>
+		<French>Javanese Peoples</French>
+		<German>Javanese Peoples</German>
+		<Italian>Javanese Peoples</Italian>
+		<Spanish>Javanese Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_ADJECTIVE</Tag>
+		<English>Javanese</English>
+		<French>Javanese</French>
+		<German>Javanese</German>
+		<Italian>Javanese</Italian>
+		<Spanish>Javanese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_SHORT_DESC</Tag>
+		<English>Java</English>
+		<French>Java</French>
+		<German>Java</German>
+		<Italian>Java</Italian>
+		<Spanish>Java</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+</Civ4GameText>
