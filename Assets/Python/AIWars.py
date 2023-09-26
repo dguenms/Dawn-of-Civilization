@@ -61,7 +61,7 @@ iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (8, iTamils, iMalays, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)

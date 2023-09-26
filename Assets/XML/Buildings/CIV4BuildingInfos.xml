@@ -452,12 +452,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
-			<Type>BUILDING_INDONESIAN_CANDI</Type>
-			<Description>TXT_KEY_BUILDING_INDONESIAN_CANDI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_INDONESIAN_CANDI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Strategy>
+			<Type>BUILDING_JAVANESE_CANDI</Type>
+			<Description>TXT_KEY_BUILDING_JAVANESE_CANDI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JAVANESE_CANDI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_JAVANESE_CANDI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INDONESIAN_CANDI</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_JAVANESE_CANDI</ArtDefineTag>
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>40</iCost>

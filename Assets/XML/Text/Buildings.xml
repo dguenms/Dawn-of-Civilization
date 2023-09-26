@@ -602,7 +602,7 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Heritage[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Horticulture[COLOR_REVERT] technology and provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI</Tag>
+		<Tag>TXT_KEY_BUILDING_JAVANESE_CANDI</Tag>
 		<English>Candi</English>
 		<French>
 			<Text>Candi</Text>
@@ -614,12 +614,12 @@
 		<Spanish>Candi</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</English>
-		<French>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</French>
-		<German>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</Spanish>
+		<Tag>TXT_KEY_BUILDING_JAVANESE_CANDI_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Javanese replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</English>
+		<French>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Javanese replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</French>
+		<German>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Javanese replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Javanese replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Javanese replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>

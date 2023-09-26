@@ -352,12 +352,12 @@ lCivilizations = [
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
 	),
 	Civilization(
-		iIndonesia,
+		iJava,
 		iGold=300,
 		iAdvancedStartPoints=100,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iCasteSystem, iMerchantTrade, iDeification],
-		techs=techs.column(5).including(iEthics).without(iGeneralship)
+		techs=techs.column(5).without(iGeneralship).including(iEthics, iArtisanry)
 	),
 	Civilization(
 		iMoors,
@@ -768,14 +768,6 @@ dStartingUnits = CivDict({
 		iWorkerSea: 1,
 		# 1 Buddhist Missionary
 	},
-	iIndonesia: {
-		iSettle: 1,
-		iSettleSea: 2,
-		iWork: 2,
-		iDefend: 1,
-		iMissionary: 1,
-		iEscort: 1,
-	},
 	iMoors: {
 		iSettle: 2,
 		iWork: 1,
@@ -788,6 +780,16 @@ dStartingUnits = CivDict({
 		iFerry: 1,
 		iEscort: 1,
 		# if human Spain or Moors: 1 Crossbowman
+	},
+	iJava : {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 2,
+		iCityAttack: 2,
+		iFerry: 2,
+		iEscort: 2,
+		iWorkerSea: 1,
+		iMissionary: 1,
 	},
 	iSpain: {
 		iSettle: 2,
@@ -1022,6 +1024,12 @@ dExtraAIUnits = CivDict({
 	iKorea: {
 		iCounter: 2,
 		iDefend: 2,
+	},
+	iMalays: {
+		iDefend: 2,
+	},
+	iJava: {
+		iCityAttack: 2,
 	},
 	iEngland: {
 		iAttack: 2,
@@ -1513,7 +1521,7 @@ dTechPreferences = {
 		iTheology: 20,
 		iDoctrine: 20,
 	},
-	iIndonesia : {
+	iJava : {
 		iAesthetics: 30,
 		iArtisanry: 30,
 		iExploration: -20,
@@ -1732,7 +1740,7 @@ dDefaultWonderPreferences = {
 	iIndia: -15,
 	iRome: -20,
 	iArabia: -15,
-	iIndonesia: -15,
+	iJava: -15,
 	iFrance: -12,
 	iKhmer: -15,
 	iEngland: -12,
@@ -1891,7 +1899,7 @@ dBuildingPreferences = {
 	iTibet : {
 		iPotalaPalace: 40,
 	},
-	iIndonesia : {
+	iJava : {
 		iBorobudur: 40,
 		iPrambanan: 40,
 		iGardensByTheBay: 40,

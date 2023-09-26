@@ -140,7 +140,7 @@ def spreadJudaism():
 
 @handler("BeginGameTurn")
 def spreadHinduismSoutheastAsia():
-	lSouthEastAsianCivs = [iKhmer, iIndonesia]
+	lSouthEastAsianCivs = [iKhmer, iMalays, iJava]
 
 	if not game.isReligionFounded(iHinduism): return
 	if none(player(iCiv).isExisting() for iCiv in lSouthEastAsianCivs): return
@@ -165,12 +165,12 @@ def spreadHinduismSoutheastAsia():
 @handler("BeginGameTurn")
 def spreadIslamIndonesia():
 	if not game.isReligionFounded(iIslam): return
-	if not player(iIndonesia).isExisting(): return
+	if not player(iJava).isExisting() and not player(iMalays).isExisting(): return
 	if not turn().between(1300, 1600): return
 	
 	if not periodic(15): return
 	
-	indonesianContacts = players.major().where(lambda p: player(iIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
+	indonesianContacts = players.major().where(lambda p: (player(iJava).canContact(p) or player(iMalays).canContact(p)) and player(p).getStateReligion() == iIslam)
 	if not indonesianContacts:
 		return
 		
@@ -178,7 +178,7 @@ def spreadIslamIndonesia():
 	potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
 	
 	iMaxCitiesMultiplier = 2
-	if player(iIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+	if player(iMalays).getStateReligion() == iIslam or player(iJava).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
 	
 	if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
 		spreadCity = potentialCities.random()

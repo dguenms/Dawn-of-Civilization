@@ -2039,7 +2039,7 @@ iTibet : {
 		"Ngawang Namgyal", # 17th
 	],
 },
-iIndonesia : {
+iJava : {
 	iGreatProphet : [
 		"Maha Rsi Agastya", # 5th
 		"Buddha Pahyien", # 4th

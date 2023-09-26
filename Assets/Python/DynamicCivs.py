@@ -101,7 +101,6 @@ dSpecificVassalTitles = deepdict({
 		iEthiopia : "TXT_KEY_CIV_SPANISH_ETHIOPIA",
 		iMaya : "TXT_KEY_CIV_SPANISH_MAYA",
 		iByzantium : "TXT_KEY_CIV_SPANISH_BYZANTIUM",
-		iIndonesia : "TXT_KEY_CIV_SPANISH_INDONESIA",
 		iMoors : "TXT_KEY_CIV_SPANISH_MOORS",
 		iFrance : "TXT_KEY_CIV_SPANISH_FRANCE",
 		iNetherlands : "TXT_KEY_ADJECTIVE_TITLE",
@@ -148,7 +147,6 @@ dSpecificVassalTitles = deepdict({
 		iByzantium : "TXT_KEY_CIV_ENGLISH_BYZANTIUM",
 		iVikings : "TXT_KEY_CIV_ENGLISH_VIKINGS",
 		iArabia : "TXT_KEY_MANDATE_OF",
-		iIndonesia : "TXT_KEY_CIV_ENGLISH_INDONESIA",
 		iFrance : "TXT_KEY_CIV_ENGLISH_FRANCE",
 		iHolyRome : "TXT_KEY_CIV_ENGLISH_HOLY_ROME",
 		iGermany : "TXT_KEY_CIV_ENGLISH_GERMANY",
@@ -170,7 +168,6 @@ dSpecificVassalTitles = deepdict({
 		iAmerica : "TXT_KEY_ADJECTIVE_TITLE",
 	},
 	iNetherlands : {
-		iIndonesia : "TXT_KEY_CIV_DUTCH_INDONESIA",
 		iMali : "TXT_KEY_CIV_DUTCH_MALI",
 		iEthiopia : "TXT_KEY_CIV_DUTCH_ETHIOPIA",
 		iCongo : "TXT_KEY_CIV_DUTCH_CONGO",
@@ -179,7 +176,6 @@ dSpecificVassalTitles = deepdict({
 	},
 	iPortugal : {
 		iIndia : "TXT_KEY_CIV_PORTUGUESE_INDIA",
-		iIndonesia : "TXT_KEY_CIV_PORTUGUESE_INDIA",
 		iMali : "TXT_KEY_CIV_PORTUGUESE_MALI",
 		iCongo : "TXT_KEY_CIV_PORTUGUESE_CONGO",
 		iBrazil : "TXT_KEY_CIV_PORTUGUESE_BRAZIL",
@@ -209,7 +205,6 @@ dSpecificVassalTitles = deepdict({
 		iEthiopia : "TXT_KEY_CIV_OTTOMAN_ETHIOPIA",
 		iByzantium : "TXT_KEY_CIV_OTTOMAN_BYZANTIUM",
 		iArabia : "TXT_KEY_CIV_OTTOMAN_ARABIA",
-		iIndonesia : "TXT_KEY_CIV_OTTOMAN_INDONESIA",
 		iRussia : "TXT_KEY_CIV_OTTOMAN_RUSSIA",
 	},
 	iGermany : {
@@ -242,7 +237,6 @@ dMasterTitles = {
 	iTurks : "TXT_KEY_CIV_TURKIC_VASSAL",
 	iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL",
 	iTibet : "TXT_KEY_CIV_TIBETAN_VASSAL",
-	iIndonesia : "TXT_KEY_CIV_INDONESIAN_VASSAL",
 	iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL",
 	iSpain : "TXT_KEY_CIV_SPANISH_VASSAL",
 	iFrance : "TXT_KEY_ADJECTIVE_TITLE",
@@ -311,7 +305,6 @@ dForeignAdjectives = deepdict({
 		iByzantium : "TXT_KEY_CIV_CHINESE_ADJECTIVE_BYZANTIUM",
 		iArabia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_ARABIA",
 		iKhmer : "TXT_KEY_CIV_CHINESE_ADJECTIVE_KHMER",
-		iIndonesia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_INDONESIA",
 		iMongols : "TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA",
 		iOttomans : "TXT_KEY_CIV_CHINESE_ADJECTIVE_OTTOMANS",
 		iTibet : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET",
@@ -325,7 +318,6 @@ dForeignNames = deepdict({
 	iPersia : {
 		iByzantium : "TXT_KEY_CIV_PERSIAN_NAME_BYZANTIUM",
 		iTurks : "TXT_KEY_CIV_PERSIAN_NAME_TURKS",
-		iIndonesia : "TXT_KEY_CIV_PERSIAN_NAME_INDONESIA",
 	},
 	iRome : {
 		iEgypt : "TXT_KEY_CIV_ROMAN_NAME_EGYPT",
@@ -365,7 +357,6 @@ dForeignNames = deepdict({
 		iByzantium : "TXT_KEY_CIV_ARABIAN_NAME_BYZANTIUM",
 		iTurks : "TXT_KEY_CIV_ARABIAN_NAME_TURKS",
 		iArabia : "TXT_KEY_CIV_ARABIAN_NAME_ARABIA",
-		iIndonesia : "TXT_KEY_CIV_ARABIAN_NAME_INDONESIA",
 		iMoors : "TXT_KEY_CIV_ARABIAN_NAME_MOORS",
 		iSpain : "TXT_KEY_CIV_ARABIAN_NAME_SPAIN",
 		iPortugal : "TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL",
@@ -417,13 +408,13 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iVikings, iColombia]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
-lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo]
+lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongols]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
@@ -434,7 +425,6 @@ dEmpireThreshold = {
 	iTamils : 3,
 	iKorea : 4,
 	iTibet : 2,
-	iIndonesia : 4,
 	iMoors : 3,
 	iHolyRome : 3,
 	iRussia : 8,
@@ -514,8 +504,8 @@ dStartingLeaders = [
 	iArabia : iHarun,
 	iTibet : iSongtsen,
 	iKhmer : iSuryavarman,
-	iIndonesia : iDharmasetu,
 	iMoors : iRahman,
+	iJava : iHayamWuruk,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
 	iEngland : iAlfred,
@@ -1043,21 +1033,19 @@ def specificName(iPlayer):
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_KHMER_CAMBODIA"
 			
-	elif iCiv == iIndonesia:
+	elif iCiv == iMoors:	
+		if capital in plots.rectangle(tIberia):
+			return capitalName(iPlayer)
+			
+		return "TXT_KEY_CIV_MOORS_MOROCCO"
+			
+	elif iCiv == iJava:
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_INDONESIA_MATARAM"
 			
 		if iEra <= iRenaissance:
 			if bEmpire:
 				return "TXT_KEY_CIV_INDONESIA_MAJAPAHIT"
-				
-			return "TXT_KEY_CIV_INDONESIA_SRIVIJAYA"
-			
-	elif iCiv == iMoors:	
-		if capital in plots.rectangle(tIberia):
-			return capitalName(iPlayer)
-			
-		return "TXT_KEY_CIV_MOORS_MOROCCO"
 		
 	elif iCiv == iSpain:
 		if iReligion == iIslam:
@@ -1838,10 +1826,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if isCurrentCapital(iPlayer, "Dai La"):
 			return "TXT_KEY_CIV_KHMER_DAI_VIET"
 			
-	elif iCiv == iIndonesia:
-		if iReligion == iIslam:
-			return "TXT_KEY_SULTANATE_OF"
-			
 	elif iCiv == iMoors:
 		if bCityStates:
 			return "TXT_KEY_CIV_MOORS_TAIFAS"
@@ -1857,6 +1841,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iCiv == iJava:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_OF"
 			
 	elif iCiv == iSpain:
 		if iReligion == iIslam:
@@ -2192,13 +2180,13 @@ def leader(iPlayer):
 	elif iCiv == iTibet:
 		if year() >= year(1500): return iLobsangGyatso
 		
-	elif iCiv == iIndonesia:
+	elif iCiv == iMoors:
+		if player(iPlayer).getNumCities() > 0 and not capital in plots.rectangle(tIberia): return iYaqub
+		
+	elif iCiv == iJava:
 		if iEra >= iGlobal: return iSuharto
 		
 		if bEmpire: return iHayamWuruk
-		
-	elif iCiv == iMoors:
-		if player(iPlayer).getNumCities() > 0 and not capital in plots.rectangle(tIberia): return iYaqub
 		
 	elif iCiv == iSpain:
 		if isFascist(iPlayer): return iFranco

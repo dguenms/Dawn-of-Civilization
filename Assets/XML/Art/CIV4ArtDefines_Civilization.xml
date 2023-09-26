@@ -247,12 +247,6 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_INDONESIA</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Indonesia.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_SuryaMajapahit.dds</Path>
-			<bWhiteFlag>0</bWhiteFlag>
-		</CivilizationArtInfo>
-		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_THAILAND</Type>
 			<Button>Art/Interface/Buttons/Civilizations/thailand.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Garuda.dds</Path>
@@ -382,6 +376,12 @@
 			<Type>ART_DEF_CIVILIZATION_MALAYS</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Malays.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Mandala.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_JAVA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Java.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_SuryaMajapahit.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>
