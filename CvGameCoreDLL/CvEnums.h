@@ -1330,12 +1330,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	ANAWRAHTA,
 	BAYINNAUNG,
 
-	IVAN,
-	PETER,
-	CATHERINE,
-	ALEXANDER,
-	STALIN,
-
 	MANSA_MUSA,
 
 	CASIMIR,
@@ -1362,6 +1356,12 @@ enum LeaderHeadTypes			// Exposed to Python
 	IBN_TUGHLUQ,
 	AKBAR,
 	BHUTTO,
+
+	IVAN,
+	PETER,
+	CATHERINE,
+	ALEXANDER,
+	STALIN,
 
 	MEHMED,
 	SULEIMAN,

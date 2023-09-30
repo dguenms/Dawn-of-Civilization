@@ -415,13 +415,6 @@ lCivilizations = [
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
-		iRussia,
-		iGold=200,
-		iAdvancedStartPoints=50,
-		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade],
-		techs=techs.column(6).including(iFeudalism).without(iScholarship)
-	),
-	Civilization(
 		iMali,
 		iGold=600,
 		iAdvancedStartPoints=50,
@@ -479,6 +472,14 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iTheocracy, iConquest],
 		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder)
+	),
+	Civilization(
+		iRussia,
+		iGold=300,
+		iAdvancedStartPoints=200,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy],
+		techs=techs.column(8)
 	),
 	Civilization(
 		iOttomans,
@@ -839,12 +840,6 @@ dStartingUnits = CivDict({
 		iAttack: 2,
 		iMissionary: 1,
 	},
-	iRussia: {
-		iSettle: 4,
-		iWork: 2,
-		iDefend: 2,
-		iHarass: 4,
-	},
 	iMali: {
 		iSettle: 3,
 		iWork: 2,
@@ -911,6 +906,13 @@ dStartingUnits = CivDict({
 		iAttack: 4,
 		iHarass: 2,
 		iMissionary: 4,
+	},
+	iRussia: {
+		iSettle: 4,
+		iWork: 3,
+		iDefend: 4,
+		iAttack: 3,
+		iCounter: 3,
 	},
 	iOttomans: {
 		iSettle: 3,
@@ -1161,11 +1163,6 @@ dAdditionalUnits = CivDict({
 		iDefend: 3,
 		iAttack: 3,
 	},
-	iRussia: {
-		iAttack: 2,
-		iDefend: 2,
-		iHarass: 2,
-	},
 	iMali: {
 		iSkirmish: 4,
 		iAttack: 3,
@@ -1198,6 +1195,10 @@ dAdditionalUnits = CivDict({
 	iMughals: {
 		iShockCity: 2,
 		iHarass: 4,
+	},
+	iRussia: {
+		iAttack: 4,
+		iDefend: 3,
 	},
 	iOttomans: {
 		iDefend: 3,
@@ -1301,7 +1302,6 @@ dAIAlwaysTrain = CivDict({
 	iFrance: [iCrossbowman],
 	iEngland: [iCrossbowman],
 	iHolyRome: [iCrossbowman],
-	iRussia: [iCrossbowman],
 	iPoland: [iCrossbowman],
 	iTurks: [iLancer],
 }, [])
@@ -1605,21 +1605,6 @@ dTechPreferences = {
 		iOptics: 15,
 		iFission: 12,
 	},
-	iRussia : {
-		iMacroeconomics: 30,
-		iCombinedArms: 30,
-		iReplaceableParts: 30,
-		iHeritage: 15,
-		iPatronage: 15,
-		iUrbanPlanning: 15,
-		iFission: 12,
-		
-		iPhilosophy: -20,
-		iPrinting: -20,
-		iCivilLiberties: -20,
-		iSocialContract: -20,
-		iRepresentation: -20,
-	},
 	iMali : {
 		iEducation: 30,
 	},
@@ -1691,6 +1676,21 @@ dTechPreferences = {
 		iFeudalism: -20,
 		iMachinery: -20,
 		iGunpowder: -20,
+	},
+	iRussia : {
+		iMacroeconomics: 30,
+		iCombinedArms: 30,
+		iReplaceableParts: 30,
+		iHeritage: 15,
+		iPatronage: 15,
+		iUrbanPlanning: 15,
+		iFission: 12,
+		
+		iPhilosophy: -20,
+		iPrinting: -20,
+		iCivilLiberties: -20,
+		iSocialContract: -20,
+		iRepresentation: -20,
 	},
 	iOttomans : {
 		iGunpowder: 30,
@@ -1989,17 +1989,6 @@ dBuildingPreferences = {
 		iPalaceOfNations: 20,
 		iNotreDame: 15,
 	},
-	iRussia : {
-		iKremlin: 40,
-		iSaintBasilsCathedral: 40,
-		iLubyanka: 40,
-		iHermitage: 40,
-		iMotherlandCalls: 30,
-		iAmberRoom: 30,
-		iSaintSophia: 30,
-		iMountAthos: 20,
-		iMetropolitain: 20,
-	},
 	iMali : {
 		iUniversityOfSankore: 40,
 	},
@@ -2028,6 +2017,17 @@ dBuildingPreferences = {
 	},
 	iMongols : {
 		iSilverTreeFountain: 40,
+	},
+	iRussia : {
+		iKremlin: 40,
+		iSaintBasilsCathedral: 40,
+		iLubyanka: 40,
+		iHermitage: 40,
+		iMotherlandCalls: 30,
+		iAmberRoom: 30,
+		iSaintSophia: 30,
+		iMountAthos: 20,
+		iMetropolitain: 20,
 	},
 	iOttomans : {
 		iTopkapiPalace: 60,

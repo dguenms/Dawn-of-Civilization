@@ -2885,142 +2885,6 @@ iHolyRome : {
 		"Wilhelm Franz von Habsburg-Lothringen", # 20th
 	],
 },
-iRussia : {
-	iGreatProphet : [
-		"fOlga", # 10th
-		"Sergey Radonezhsky", # 14th
-		"Paisiy Yaroslavov", # 15th
-		iRenaissance,
-		"Feofan Prokopovich", # 18th
-		"Seraphim Sarovsky", # 18th
-		iIndustrial,
-		"fHelena Blavatsky", # 19th
-		"Grigori Rasputin", # 19th
-		"Nikolai Rerikh", # 19th
-		iGlobal,
-		"Nikolai Berdyaev", # 20th
-		"Georges Florovsky", # 20th
-		"Alexei Losev", # 20th
-	],
-	iGreatArtist : [
-		"Feofan Grek", # 14th
-		"Andrei Rublev", # 15th
-		iRenaissance,
-		"Antiokh Kantemir", # 18th
-		"Alexander Sumarokov", # 18th
-		"Fedot Shubin", # 18th
-		"Gavrila Derzhavin", # 18th
-		iIndustrial,
-		"Alexander Pushkin", # 19th
-		"Fyodor Dostoyevsky", # 19th
-		"Leo Tolstoy", # 19th
-		"Pyotr Ilyich Tchaikovsky", # 19th
-		"Modest Mussorgsky", # 19th
-		"Anton Chekov", # 19th
-		iGlobal,
-		"Wassily Kandinsky", # 20th
-		"fAnna Pavlova", # 20th
-		"fNatalia Goncharova", # 20th
-		"Dmitri Shostakovich", # 20th
-	],
-	iGreatScientist : [
-		"Mikhail Lomonosov", # 18th
-		"Andrei Ivanovich Leksel", # 18th
-		iIndustrial,
-		"Nikolai Lobachevsky", # 19th
-		"Mikhail Ostrogradsky", # 20th
-		"Dmitri Mendeleyev", # 19th
-		"fSofia Kovalevskaya", # 19th
-		"Konstantin Tsiolkovsky", # 19th
-		iGlobal,
-		"Pavel Cherenkov", # 20th
-		"Yulii Borisovich Khariton", # 20th
-	],
-	iGreatMerchant : [
-		"Afanasiy Nikitin", # 15th
-		iRenaissance,
-		"Vitus Bering", # 18th
-		"Grigory Shelikhov", # 18th
-		"Pavel Lebedev-Lastochkin", # 18th
-		iIndustrial,
-		"Ivan Kruzenshtern", # 19th
-		"Nikolai Chukmaldin", # 19th
-		"Karl Faberzhe", # 19th
-		iGlobal,
-		"Nikolai Kondratiev", # 20th
-	],
-	iGreatEngineer : [
-		"Lazar Serb", # 15th
-		iRenaissance,
-		"Postnik Yakovlev", # 16th
-		"Vasily Bazhenov", # 18th
-		"Ivan Starov", # 18th
-		iIndustrial,
-		"Vladimir Shukhov", # 19th
-		"Sergey Prokudin-Gorsky", # 19th
-		iGlobal,
-		"Mikhail Kalashnikov", # 20th
-		"Sergei Korolev", # 20th
-		"Andrey Tupolev", # 20th
-		u"Léon Theremin", # 20th
-		"Vladimir Zvorykin", # 20th
-		"Igor Sikorsky", # 20th
-		"fValentina Tereshkova", # 20th
-	],
-	iGreatStatesman : [
-		"Vladimir Sviatoslavich", # 11th
-		"Yaroslav Mudry", # 11th
-		"fMarfa Posadnitsa", # 15th
-		"Ivan Vasilyevich", # 15th
-		iRenaissance,
-		"Vasily Tatishchev", # 18th
-		"Nikita Panin", # 18th
-		"fYekaterina Vorontsova-Dashkova", # 18th
-		iIndustrial,
-		"Mikhail Speransky", # 19th
-		"Mikhail Bakunin", # 19th
-		"Vladimir Lenin", # 19th
-		iGlobal,
-		"Leon Trotsky", # 20th
-		"fAlexandra Kollontai", # 20th
-		"Andrei Sakharov", # 20th
-		"Mikhail Gorbachev", # 20th
-	],
-	iGreatGeneral : [
-		"Alexander Nevsky", # 13th
-		"Ivan Grozny", # 15th
-		iRenaissance,
-		"Mikhail Romanov", # 17th
-		"Alexander Suvorov", # 18th
-		"Grigory Potemkin", # 18th
-		"Mikhail Kutuzov", # 18th
-		iIndustrial,
-		"Pavel Nakhimov", # 19th
-		"Mikhail Skobelev", # 19th
-		"fVasilisa Kozhina", # 19th
-		"fNadezhda Durova", # 19th
-		"Aleksei Brusilov", # 20th
-		iGlobal,
-		"Mikhail Tukhachevsky", # 20th
-		"Georgy Zhukov", # 20th
-		"Konstantin Rokossovsky", # 20th
-		"Vasily Chuikov", # 20th
-	],
-	iGreatSpy : [
-		"Fyodor Romodanovsky", # 17th
-		iIndustrial,
-		"Alexander Benkendorf", # 19th
-		"Pyotr Rachkovsky", # 19th
-		iGlobal,
-		"Ilie Catarau", # 20th
-		"Felix Dzerzhinsky", # 20th
-		"Richard Sorge", # 20th
-		"Ivan Serov", # 20th
-		u"Sándor Goldberger", # 20th
-		"Lavrentiy Beria", # 20th
-		"Oleg Gordievsky", # 20th
-	],
-},
 iMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th
@@ -3708,6 +3572,142 @@ iMughals : {
 	],
 	iGreatSpy : [
 		"Hamid Gul", # 20th
+	],
+},
+iRussia : {
+	iGreatProphet : [
+		"fOlga", # 10th
+		"Sergey Radonezhsky", # 14th
+		"Paisiy Yaroslavov", # 15th
+		iRenaissance,
+		"Feofan Prokopovich", # 18th
+		"Seraphim Sarovsky", # 18th
+		iIndustrial,
+		"fHelena Blavatsky", # 19th
+		"Grigori Rasputin", # 19th
+		"Nikolai Rerikh", # 19th
+		iGlobal,
+		"Nikolai Berdyaev", # 20th
+		"Georges Florovsky", # 20th
+		"Alexei Losev", # 20th
+	],
+	iGreatArtist : [
+		"Feofan Grek", # 14th
+		"Andrei Rublev", # 15th
+		iRenaissance,
+		"Antiokh Kantemir", # 18th
+		"Alexander Sumarokov", # 18th
+		"Fedot Shubin", # 18th
+		"Gavrila Derzhavin", # 18th
+		iIndustrial,
+		"Alexander Pushkin", # 19th
+		"Fyodor Dostoyevsky", # 19th
+		"Leo Tolstoy", # 19th
+		"Pyotr Ilyich Tchaikovsky", # 19th
+		"Modest Mussorgsky", # 19th
+		"Anton Chekov", # 19th
+		iGlobal,
+		"Wassily Kandinsky", # 20th
+		"fAnna Pavlova", # 20th
+		"fNatalia Goncharova", # 20th
+		"Dmitri Shostakovich", # 20th
+	],
+	iGreatScientist : [
+		"Mikhail Lomonosov", # 18th
+		"Andrei Ivanovich Leksel", # 18th
+		iIndustrial,
+		"Nikolai Lobachevsky", # 19th
+		"Mikhail Ostrogradsky", # 20th
+		"Dmitri Mendeleyev", # 19th
+		"fSofia Kovalevskaya", # 19th
+		"Konstantin Tsiolkovsky", # 19th
+		iGlobal,
+		"Pavel Cherenkov", # 20th
+		"Yulii Borisovich Khariton", # 20th
+	],
+	iGreatMerchant : [
+		"Afanasiy Nikitin", # 15th
+		iRenaissance,
+		"Vitus Bering", # 18th
+		"Grigory Shelikhov", # 18th
+		"Pavel Lebedev-Lastochkin", # 18th
+		iIndustrial,
+		"Ivan Kruzenshtern", # 19th
+		"Nikolai Chukmaldin", # 19th
+		"Karl Faberzhe", # 19th
+		iGlobal,
+		"Nikolai Kondratiev", # 20th
+	],
+	iGreatEngineer : [
+		"Lazar Serb", # 15th
+		iRenaissance,
+		"Postnik Yakovlev", # 16th
+		"Vasily Bazhenov", # 18th
+		"Ivan Starov", # 18th
+		iIndustrial,
+		"Vladimir Shukhov", # 19th
+		"Sergey Prokudin-Gorsky", # 19th
+		iGlobal,
+		"Mikhail Kalashnikov", # 20th
+		"Sergei Korolev", # 20th
+		"Andrey Tupolev", # 20th
+		u"Léon Theremin", # 20th
+		"Vladimir Zvorykin", # 20th
+		"Igor Sikorsky", # 20th
+		"fValentina Tereshkova", # 20th
+	],
+	iGreatStatesman : [
+		"Vladimir Sviatoslavich", # 11th
+		"Yaroslav Mudry", # 11th
+		"fMarfa Posadnitsa", # 15th
+		"Ivan Vasilyevich", # 15th
+		iRenaissance,
+		"Vasily Tatishchev", # 18th
+		"Nikita Panin", # 18th
+		"fYekaterina Vorontsova-Dashkova", # 18th
+		iIndustrial,
+		"Mikhail Speransky", # 19th
+		"Mikhail Bakunin", # 19th
+		"Vladimir Lenin", # 19th
+		iGlobal,
+		"Leon Trotsky", # 20th
+		"fAlexandra Kollontai", # 20th
+		"Andrei Sakharov", # 20th
+		"Mikhail Gorbachev", # 20th
+	],
+	iGreatGeneral : [
+		"Alexander Nevsky", # 13th
+		"Ivan Grozny", # 15th
+		iRenaissance,
+		"Mikhail Romanov", # 17th
+		"Alexander Suvorov", # 18th
+		"Grigory Potemkin", # 18th
+		"Mikhail Kutuzov", # 18th
+		iIndustrial,
+		"Pavel Nakhimov", # 19th
+		"Mikhail Skobelev", # 19th
+		"fVasilisa Kozhina", # 19th
+		"fNadezhda Durova", # 19th
+		"Aleksei Brusilov", # 20th
+		iGlobal,
+		"Mikhail Tukhachevsky", # 20th
+		"Georgy Zhukov", # 20th
+		"Konstantin Rokossovsky", # 20th
+		"Vasily Chuikov", # 20th
+	],
+	iGreatSpy : [
+		"Fyodor Romodanovsky", # 17th
+		iIndustrial,
+		"Alexander Benkendorf", # 19th
+		"Pyotr Rachkovsky", # 19th
+		iGlobal,
+		"Ilie Catarau", # 20th
+		"Felix Dzerzhinsky", # 20th
+		"Richard Sorge", # 20th
+		"Ivan Serov", # 20th
+		u"Sándor Goldberger", # 20th
+		"Lavrentiy Beria", # 20th
+		"Oleg Gordievsky", # 20th
 	],
 },
 iOttomans : {
