@@ -115,15 +115,6 @@ lCivilizations = [
 		dAttitudes={iFrance: -2, iOttomans: -4}
 	),
 	Civilization(
-		iRussia,
-		iLeader=iPeter,
-		iGold=350,
-		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iCentralism, iManorialism, iRegulatedTrade, iTheocracy],
-		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-		dAttitudes={iVikings: -2, iOttomans: -4}
-	),
-	Civilization(
 		iPoland,
 		iLeader=iSobieski,
 		iGold=200,
@@ -148,6 +139,15 @@ lCivilizations = [
 		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iTributaries],
 		techs=techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
 		dAttitudes={iEngland: -2, iIndia: -2, iIran: -2}
+	),
+	Civilization(
+		iRussia,
+		iLeader=iPeter,
+		iGold=350,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iDespotism, iCentralism, iManorialism, iRegulatedTrade, iTheocracy],
+		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
+		dAttitudes={iVikings: -2, iOttomans: -4}
 	),
 	Civilization(
 		iOttomans,
@@ -250,9 +250,9 @@ scenario1700AD = Scenario(
 	
 	dOwnedTiles = {
 		iHolyRome : [(62, 51)],
-		iRussia : [(69, 54), (69, 55)],
 		iPortugal : [(47, 45), (48, 45), (49, 40), (50, 42), (50, 43), (50, 44)],
 		iPoland : [(64, 53), (65, 56), (66, 55), (66, 56), (68, 53), (68, 54), (68, 56)],
+		iRussia : [(69, 54), (69, 55)],
 		iNetherlands : [(58, 52), (58, 53)],
 		iGermany : [(58, 49), (59, 49), (60, 49)],
 	},

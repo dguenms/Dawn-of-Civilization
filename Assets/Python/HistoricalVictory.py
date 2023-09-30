@@ -376,18 +376,6 @@ dGoals = {
 			by=1850,
 		),
 	),
-	iRussia: (
-		All(
-			SettledCities(7, area=plots.rectangle(tSiberia).named(SIBERIA), by=1700),
-			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.of(lSiberianCoast).named(SIBERIAN_COAST), by=1920),
-		),
-		Projects(iManhattanProject, iLunarLanding),
-		All(
-			Communist(),
-			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True),
-			by=1950,
-		),
-	),
 	iMali: (
 		TradeMission(holy_city(), by=1350),
 		All(
@@ -442,6 +430,18 @@ dGoals = {
 		BuildingCount(iIslamicCathedral, 3, by=1500),
 		Wonders(iRedFort, iShalimarGardens, iTajMahal, by=1660),
 		CultureAmount(50000, at=1750),
+	),
+	iRussia: (
+		All(
+			SettledCities(7, area=plots.rectangle(tSiberia).named(SIBERIA), by=1700),
+			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.of(lSiberianCoast).named(SIBERIAN_COAST), by=1920),
+		),
+		Projects(iManhattanProject, iLunarLanding),
+		All(
+			Communist(),
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True),
+			by=1950,
+		),
 	),
 	iOttomans: (
 		CityBuildingCount(capital().named(CAPITAL), wonders(), 4, at=1550),

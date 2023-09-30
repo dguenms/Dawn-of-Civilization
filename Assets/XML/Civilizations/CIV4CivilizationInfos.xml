@@ -5291,10 +5291,10 @@
 			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>RUS</Identifier>
-			<StartingYear>860</StartingYear>
+			<StartingYear>1263</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>6</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
