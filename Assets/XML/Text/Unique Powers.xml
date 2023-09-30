@@ -554,6 +554,22 @@
 		<Spanish>Todas las unidades militares terrestres tienen una bonificaci&#243;n al defender ciudades</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_JAV_TITLE</Tag>
+		<English>The Power of Island Agriculture:</English>
+		<French>The Power of Island Agriculture:</French>
+		<German>The Power of Island Agriculture:</German>
+		<Italian>The Power of Island Agriculture:</Italian>
+		<Spanish>The Power of Island Agriculture:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_JAV</Tag>
+		<English>Improvements that provide food have twice the effect on islands</English>
+		<French>Improvements that provide food have twice the effect on islands</French>
+		<German>Improvements that provide food have twice the effect on islands</German>
+		<Italian>Improvements that provide food have twice the effect on islands</Italian>
+		<Spanish>Improvements that provide food have twice the effect on islands</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
 		<English>The Power of Monsoons:</English>
 		<French>Le pouvoir des moussons :</French>
