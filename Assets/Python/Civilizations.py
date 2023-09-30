@@ -408,6 +408,13 @@ lCivilizations = [
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
+		iBurma,
+		iGold=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iTributaries],
+		techs=techs.column(6).including(iFeudalism, iTheology)
+	),
+	Civilization(
 		iRussia,
 		iGold=200,
 		iAdvancedStartPoints=50,
@@ -822,6 +829,14 @@ dStartingUnits = CivDict({
 		iCityAttack: 3,
 		iShockCity: 3,
 		iCitySiege: 4,
+		iMissionary: 1,
+	},
+	iBurma: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 3,
+		iCounter: 2,
+		iAttack: 2,
 		iMissionary: 1,
 	},
 	iRussia: {

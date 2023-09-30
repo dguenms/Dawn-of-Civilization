@@ -8946,7 +8946,11 @@ int CvPlayer::unitsGoldenAgeReady() const
 			eSpecialist = pLoopUnit->getSettledSpecialist();
 			if (eSpecialist != NO_SPECIALIST && !pabSpecialistUsed[eSpecialist])
 			{
-				pabSpecialistUsed[eSpecialist] = true;
+				// Burmese UP: can use unlimited prophets for golden ages
+				if (getCivilizationType() != BURMA || eSpecialist != SPECIALIST_GREAT_PRIEST)
+				{
+					pabSpecialistUsed[eSpecialist] = true;
+				}
 				iCount++;
 			}
 		}
@@ -8990,7 +8994,14 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 	if (pUnitAlive != NULL)
 	{
 		//pabUnitUsed[pUnitAlive->getUnitType()] = true;
-		if (pUnitAlive->getSettledSpecialist() != NO_SPECIALIST) pabSpecialistUsed[pUnitAlive->getSettledSpecialist()] = true;
+		if (pUnitAlive->getSettledSpecialist() != NO_SPECIALIST)
+		{
+			// Burmese UP: can use unlimited great prophets in golden ages
+			if (getCivilizationType() != BURMA || pUnitAlive->getSettledSpecialist() != SPECIALIST_GREAT_PRIEST)
+			{
+				pabSpecialistUsed[pUnitAlive->getSettledSpecialist()] = true;
+			}
+		}
 		iUnitsRequired--;
 	}
 
@@ -9004,7 +9015,7 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 			if (pLoopUnit->isGoldenAge())
 			{
 				//if (!(pabUnitUsed[pLoopUnit->getUnitType()]))
-				if (pLoopUnit->getSettledSpecialist() != NO_SPECIALIST && !pabSpecialistUsed[pLoopUnit->getSettledSpecialist()])
+				if (pLoopUnit->getSettledSpecialist() != NO_SPECIALIST && !pabSpecialistUsed[pLoopUnit->getSettledSpecialist()] && pLoopUnit != pUnitAlive)
 				{
 					iValue = 10000;
 
@@ -9023,7 +9034,14 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 		if (pBestUnit != NULL)
 		{
 			//pabUnitUsed[pBestUnit->getUnitType()] = true;
-			if (pBestUnit->getSettledSpecialist() != NO_SPECIALIST) pabSpecialistUsed[pBestUnit->getSettledSpecialist()] = true;
+			if (pBestUnit->getSettledSpecialist() != NO_SPECIALIST)
+			{
+				// Burmese UP: can use unlimited great prophets for golden ages
+				if (getCivilizationType() != BURMA || pBestUnit->getSettledSpecialist() != SPECIALIST_GREAT_PRIEST)
+				{
+					pabSpecialistUsed[pBestUnit->getSettledSpecialist()] = true;
+				}
+			}
 
 			pBestUnit->kill(true);
 

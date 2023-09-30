@@ -971,6 +971,59 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
+			<Type>BUILDING_BURMESE_KYAUNG</Type>
+			<Description>TXT_KEY_BUILDING_BURMESE_KYAUNG</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BURMESE_KYAUNG_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BURMESE_KYAUNG_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BURMESE_KYAUNG</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_WRITING</PrereqTech>
+			<iCost>90</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iHappiness>2</iHappiness>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
 			<Type>BUILDING_THAI_HO_TRAI</Type>
 			<Description>TXT_KEY_BUILDING_THAI_HO_TRAI</Description>
 			<Civilopedia>TXT_KEY_BUILDING_THAI_HO_TRAI_PEDIA</Civilopedia>

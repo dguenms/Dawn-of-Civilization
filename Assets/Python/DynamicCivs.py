@@ -510,6 +510,7 @@ dStartingLeaders = [
 	iFrance : iCharlemagne,
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
+	iBurma : iAnawrahta,
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
 	iMali : iMansaMusa,

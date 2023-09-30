@@ -122,6 +122,22 @@
 		<Spanish>Sugar counts as oil for Oil Industry</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_BUR_TITLE</Tag>
+		<English>The Power of Dharma Kings:</English>
+		<French>The Power of Dharma Kings:</French>
+		<German>The Power of Dharma Kings:</German>
+		<Italian>The Power of Dharma Kings:</Italian>
+		<Spanish>The Power of Dharma Kings:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BUR</Tag>
+		<English>Can use unlimited Great Prophets to start Golden Ages</English>
+		<French>Can use unlimited Great Prophets to start Golden Ages</French>
+		<German>Can use unlimited Great Prophets to start Golden Ages</German>
+		<Italian>Can use unlimited Great Prophets to start Golden Ages</Italian>
+		<Spanish>Can use unlimited Great Prophets to start Golden Ages</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
 		<English>The Power of Bribery:</English>
 		<French>Le pouvoir des pots-de-vin :</French>

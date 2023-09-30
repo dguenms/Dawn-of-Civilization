@@ -1206,6 +1206,22 @@
 		<Spanish>Tun Perak</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_ANAWRAHTA</Tag>
+		<English>Anawrahta</English>
+		<French>Anawrahta</French>
+		<German>Anawrahta</German>
+		<Italian>Anawrahta</Italian>
+		<Spanish>Anawrahta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BAYINNAUNG</Tag>
+		<English>Bayinnaung</English>
+		<French>Bayinnaung</French>
+		<German>Bayinnaung</German>
+		<Italian>Bayinnaung</Italian>
+		<Spanish>Bayinnaung</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_</Tag>
 		<English></English>
 		<French></French>

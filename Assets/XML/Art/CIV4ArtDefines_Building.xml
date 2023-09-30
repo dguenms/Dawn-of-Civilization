@@ -3657,5 +3657,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Gudang/Button_Gudang.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BURMESE_KYAUNG</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Kyaung/Theatre.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Kyaung/Kyaung.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

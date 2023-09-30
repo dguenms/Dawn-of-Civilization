@@ -474,5 +474,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_HIBISCUS_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_DARK_EMERALD</Type> <!-- Burma -->
+			<ColorTypePrimary>COLOR_PLAYER_DARK_EMERALD</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DARK_EMERALD_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
