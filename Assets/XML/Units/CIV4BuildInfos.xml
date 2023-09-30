@@ -127,7 +127,7 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
-					<bRemove>1</bRemove>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
