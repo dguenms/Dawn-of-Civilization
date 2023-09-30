@@ -1510,7 +1510,16 @@ void CvPlot::updatePlotGroupBonus(bool bAdd)
 				{
 					if ((pPlotGroup != NULL) && isBonusNetwork(getTeam()))
 					{
-						pPlotGroup->changeNumBonuses(eNonObsoleteBonus, ((bAdd) ? 1 : -1));
+						int iBonusChange = 1;
+
+						if (GET_PLAYER(getOwnerINLINE()).getCivilizationType() == JAVA && area()->getNumTiles() <= 30 && getImprovementType() != NO_IMPROVEMENT)
+						{
+							if (GC.getImprovementInfo(getImprovementType()).getYieldChange(YIELD_FOOD) > 0 || GC.getImprovementInfo(getImprovementType()).getImprovementBonusYield(eNonObsoleteBonus, YIELD_FOOD) > 0)
+							{
+								iBonusChange = 2;
+							}
+						}
+						pPlotGroup->changeNumBonuses(eNonObsoleteBonus, bAdd ? iBonusChange : -iBonusChange);
 					}
 				}
 			}
@@ -6838,6 +6847,15 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		if (eYield == YIELD_FOOD && iYield > 0 && getTerrainType() == TERRAIN_PLAINS)
 		{
 			iYield += 1;
+		}
+	}
+
+	// Leoreth: Javanese UP: double yield from food improvements on islands
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == JAVA && area()->getNumTiles() <= 30)
+	{
+		if (GC.getImprovementInfo(eImprovement).getYieldChange(YIELD_FOOD) > 0 || (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && GC.getImprovementInfo(eImprovement).getImprovementBonusYield(getBonusType(GET_PLAYER(ePlayer).getTeam()), YIELD_FOOD) > 0))
+		{
+			iYield *= 2;
 		}
 	}
 
