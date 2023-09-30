@@ -84,6 +84,8 @@ LEADER_DATES = {
 	iBarbarossa: 1160,
 	iCharles: 1550,
 	iFrancis: 1800,
+	iAnawrahta: 1050,
+	iBayinnaung: 1550,
 	iIvan: 1540,
 	iPeter: 1690,
 	iCatherine: 1770,

@@ -1139,10 +1139,11 @@ enum CivilizationTypes		// Exposed to Python
 	AZTECS,
 	BABYLONIA,
 	BRAZIL,
+	BURMA,
 	BYZANTIUM, 
 	CANADA,
-	CARTHAGE,
 
+	CARTHAGE,
 	CELTS,
 	CHINA, 
 	COLOMBIA, 
@@ -1152,8 +1153,8 @@ enum CivilizationTypes		// Exposed to Python
 	FRANCE,
 	GERMANY,
 	GREECE,
-	HARAPPA,
 
+	HARAPPA,
 	HITTITES,
 	HOLY_ROME,
 	INCA,
@@ -1163,8 +1164,8 @@ enum CivilizationTypes		// Exposed to Python
 	JAPAN,
 	JAVA,
 	KHMER,
-	CONGO,
 
+	CONGO,
 	KOREA,
 	KUSHANS,
 	MALAYS,
@@ -1174,8 +1175,8 @@ enum CivilizationTypes		// Exposed to Python
 	MONGOLS,
 	MOORS,
 	MUGHALS,
-	NATIVE_AMERICANS,
 
+	NATIVE_AMERICANS,
 	NETHERLANDS,
 	NUBIA,
 	OTTOMANS,
@@ -1185,8 +1186,8 @@ enum CivilizationTypes		// Exposed to Python
 	PORTUGAL,
 	ROME,
 	RUSSIA,
-	SPAIN,
 
+	SPAIN,
 	SUMERIA,
 	TAMILS,
 	THAILAND,
@@ -1196,8 +1197,8 @@ enum CivilizationTypes		// Exposed to Python
 	VIETNAM,
 	VIKINGS,
 	ZULU,
-	INDEPENDENT,
 
+	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,
 	MINOR_CIV,
@@ -1325,6 +1326,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	BARBAROSSA,
 	CHARLES,
 	FRANCIS,
+
+	ANAWRAHTA,
+	BAYINNAUNG,
 
 	IVAN,
 	PETER,

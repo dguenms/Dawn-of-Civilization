@@ -41,6 +41,7 @@ iFrance :		(61, 60), # Paris
 iKhmer :		(121, 37), # Angkor
 iEngland :		(58, 64), # London
 iHolyRome :		(65, 62), # Cologne
+iBurma :		(117, 42), # Bagan
 iRussia :		(86, 66), # Moskow
 iMali :			(58, 35), # Djenne
 iPoland :		(74, 61), # Krakow
@@ -159,6 +160,7 @@ iFrance :		((59, 56),	(63, 62)),
 iKhmer :		((120, 34),	(123, 38)),
 iEngland :		((56, 63),	(59, 67)),
 iHolyRome :		((64, 59),	(70, 63)),
+iBurma :		((116, 38),	(117, 43)),
 iRussia :		((81, 65),	(90, 70)),
 iMali :			((57, 34),	(61, 38)),
 iPoland :		((72, 61),	(76, 64)),

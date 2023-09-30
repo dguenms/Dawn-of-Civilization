@@ -3574,6 +3574,22 @@
 		<Spanish>Silat</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_BURMESE_KYUNDAW</Tag>
+		<English>Kyundaw</English>
+		<French>Kyundaw</French>
+		<German>Kyundaw</German>
+		<Italian>Kyundaw</Italian>
+		<Spanish>Kyundaw</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BURMESE_CASSAY</Tag>
+		<English>Cassay</English>
+		<French>Cassay</French>
+		<German>Cassay</German>
+		<Italian>Cassay</Italian>
+		<Spanish>Cassay</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

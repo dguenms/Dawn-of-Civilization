@@ -1310,6 +1310,20 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
+			<Type>COLOR_PLAYER_DARK_EMERALD</Type>
+			<fRed>0</fRed>
+			<fGreen>0.49</fGreen>
+			<fBlue>0.31</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_DARK_EMERALD_TEXT</Type>
+			<fRed>0</fRed>
+			<fGreen>0.39</fGreen>
+			<fBlue>0.22</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
 			<Type>COLOR_PLAYER_CARMINE</Type>
 			<fRed>0.58</fRed>
 			<fGreen>0.20</fGreen>

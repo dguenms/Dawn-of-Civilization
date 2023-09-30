@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_DESC</Tag>
+		<English>The Burmese</English>
+		<French>The Burmese</French>
+		<German>The Burmese</German>
+		<Italian>The Burmese</Italian>
+		<Spanish>The Burmese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_PEOPLES</Tag>
+		<English>Bamar Peoples</English>
+		<French>Bamar Peoples</French>
+		<German>Bamar Peoples</German>
+		<Italian>Bamar Peoples</Italian>
+		<Spanish>Bamar Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_ADJECTIVE</Tag>
+		<English>Burmese</English>
+		<French>Burmese</French>
+		<German>Burmese</German>
+		<Italian>Burmese</Italian>
+		<Spanish>Burmese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_SHORT_DESC</Tag>
+		<English>Burma</English>
+		<French>Burma</French>
+		<German>Burma</German>
+		<Italian>Burma</Italian>
+		<Spanish>Burma</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_DEFAULT</Tag>
+		<English>Bagan Kingdom</English>
+		<French>Bagan Kingdom</French>
+		<German>Bagan Kingdom</German>
+		<Italian>Bagan Kingdom</Italian>
+		<Spanish>Bagan Kingdom</Spanish>
+	</TEXT>
+</Civ4GameText>
