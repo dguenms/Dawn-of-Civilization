@@ -1521,6 +1521,13 @@
 			<Button>,Art/Interface/Buttons/Promotions/Flanking2.dds,Art/Interface/Buttons/Promotions_Atlas.dds,7,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
+			<Type>PROMOTION_RIVER_COMBAT</Type>
+			<Description>TXT_KEY_PROMOTION_RIVER_COMBAT</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<iRiverAttack>25</iRiverAttack>
+			<Button>Art/Interface/Buttons/Promotions/RiverCombat.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>
 			<Type>PROMOTION_SENTRY</Type>
 			<Description>TXT_KEY_PROMOTION_SENTRY</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>

@@ -5279,6 +5279,89 @@
 			<CivilizationActionSound>AS3D_ROME_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_RUS</Type>
+			<Description>TXT_KEY_CIV_RUS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_RUS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_RUS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_RUS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_CYAN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_RUS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
+			<Identifier>UKR</Identifier>
+			<StartingYear>880</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>3</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Vladimir</City>
+				<City>Starajarussa</City>
+				<City>Suzdal</City>
+				<City>Jelets</City>
+				<City>Ribinsk</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_WHARF</BuildingClassType>
+					<BuildingType>BUILDING_RUS_VOLOK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_RUS_DRUZHINA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_YAROSLAV</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_RUSSIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_RUSSIA</Type>
 			<Description>TXT_KEY_CIV_RUSSIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_RUSSIA_SHORT_DESC</ShortDescription>
@@ -5377,7 +5460,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_POLAND</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_RUS</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>

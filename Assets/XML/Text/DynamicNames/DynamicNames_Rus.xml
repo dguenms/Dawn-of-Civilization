@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_DESC</Tag>
+		<English>The Rus</English>
+		<French>The Rus</French>
+		<German>The Rus</German>
+		<Italian>The Rus</Italian>
+		<Spanish>The Rus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUTHENIA_PEOPLES</Tag>
+		<English>Varangian Peoples</English>
+		<French>Varangian Peoples</French>
+		<German>Varangian Peoples</German>
+		<Italian>Varangian Peoples</Italian>
+		<Spanish>Varangian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_ADJECTIVE</Tag>
+		<English>Ruthenian</English>
+		<French>Ruthenian</French>
+		<German>Ruthenian</German>
+		<Italian>Ruthenian</Italian>
+		<Spanish>Ruthenian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_SHORT_DESC</Tag>
+		<English>Ruthenia</English>
+		<French>Ruthenia</French>
+		<German>Ruthenia</German>
+		<Italian>Ruthenia</Italian>
+		<Spanish>Ruthenia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUTHENIA_DEFAULT</Tag>
+		<English>Kievan Rus</English>
+		<French>Kievan Rus</French>
+		<German>Kievan Rus</German>
+		<Italian>Kievan Rus</Italian>
+		<Spanish>Kievan Rus</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -3667,5 +3667,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Kyaung/Kyaung.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_RUS_VOLOK</Type>
+			<LSystem>LSYSTEM_PORTAGE</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>15.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Volok/river_dock1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Volok/Volok.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

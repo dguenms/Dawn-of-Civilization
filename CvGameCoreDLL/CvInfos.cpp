@@ -1866,6 +1866,7 @@ m_iHillsAttackPercent(0),
 m_iHillsDefensePercent(0),
 m_iPlainsAttackPercent(0), // Leoreth
 m_iPlainsDefensePercent(0), // Leoreth
+m_iRiverAttackPercent(0), // Leoreth
 m_iCommandType(NO_COMMAND),
 m_iRevoltProtection(0),
 m_iCollateralDamageProtection(0),
@@ -2082,6 +2083,12 @@ int CvPromotionInfo::getPlainsDefensePercent() const
 	return m_iPlainsDefensePercent;
 }
 
+// Leoreth
+int CvPromotionInfo::getRiverAttackPercent() const
+{
+	return m_iRiverAttackPercent;
+}
+
 int CvPromotionInfo::getCommandType() const
 {
 	return m_iCommandType;
@@ -2287,6 +2294,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHillsDefensePercent);
 	stream->Read(&m_iPlainsAttackPercent); // Leoreth
 	stream->Read(&m_iPlainsDefensePercent); // Leoreth
+	stream->Read(&m_iRiverAttackPercent); // Leoreth
 	stream->Read(&m_iCommandType);
 	stream->Read(&m_iRevoltProtection);
 	stream->Read(&m_iCollateralDamageProtection);
@@ -2385,6 +2393,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iHillsDefensePercent);
 	stream->Write(m_iPlainsAttackPercent); // Leoreth
 	stream->Write(m_iPlainsDefensePercent); // Leoreth
+	stream->Write(m_iRiverAttackPercent); // Leoreth
 	stream->Write(m_iCommandType);
 	stream->Write(m_iRevoltProtection);
 	stream->Write(m_iCollateralDamageProtection);
@@ -2476,6 +2485,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iHillsDefensePercent, "iHillsDefense");
 	pXML->GetChildXmlValByName(&m_iPlainsAttackPercent, "iPlainsAttack"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iPlainsDefensePercent, "iPlainsDefense"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iRiverAttackPercent, "iRiverAttack"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iRevoltProtection, "iRevoltProtection");
 	pXML->GetChildXmlValByName(&m_iCollateralDamageProtection, "iCollateralDamageProtection");
 	pXML->GetChildXmlValByName(&m_iPillageChange, "iPillageChange");

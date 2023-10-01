@@ -1383,6 +1383,14 @@
 			<!--<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>-->
 			<Rotate>45</Rotate>
 		</ArtRef>
+		<ArtRef Name="building:LSYSTEM_PORTAGE">
+			<Attribute Class="Scalar">szSpecialLayout:CityRiver</Attribute>
+			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
+			<Attribute Class="Scalar">bNoContour:0</Attribute>
+			<Attribute Class="Scalar">bNoWaterTest:1</Attribute>
+			<!--<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>-->
+			<Rotate>315</Rotate>
+		</ArtRef>
 		<ArtRef Name="building:LSYSTEM_LIGHTHOUSE">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="Scalar">bNoWaterTest:1</Attribute>

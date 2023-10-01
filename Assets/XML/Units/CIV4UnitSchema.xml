@@ -815,6 +815,7 @@
 	<ElementType name="iWithdrawalChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iCargoChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iCollateralDamageChange" content="textOnly" dt:type="int"/>
+	<ElementType name="iRiverAttack" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iBombardRateChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iFirstStrikesChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iChanceFirstStrikesChange" content="textOnly" dt:type="int"/>
@@ -893,6 +894,7 @@
 		<element type="iHillsDefense" minOccurs="0"/>
 		<element type="iPlainsAttack" minOccurs="0"/>
 		<element type="iPlainsDefense" minOccurs="0"/>
+		<element type="iRiverAttack" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iKamikazePercent" minOccurs="0"/>
 		<element type="iRevoltProtection" minOccurs="0"/>
 		<element type="iCollateralDamageProtection" minOccurs="0"/>

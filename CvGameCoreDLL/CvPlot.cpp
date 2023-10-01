@@ -7099,6 +7099,21 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Leoreth: Ruthenian UP: +1 commerce on unimproved land tiles in your trade network
+		if (eCivilization == RUS)
+		{
+			if (eYield == YIELD_COMMERCE)
+			{
+				if (!isWater() && !isCity() && !isImpassable() && getImprovementType() == NO_IMPROVEMENT)
+				{
+					if (getOwnerINLINE() == ePlayer && isBonusNetwork(getTeam()))
+					{
+						iYield += 1;
+					}
+				}
+			}
+		}
+
 		if (GET_PLAYER(ePlayer).isGoldenAge())
 		{
 			if (iYield >= GC.getYieldInfo(eYield).getGoldenAgeYieldThreshold())

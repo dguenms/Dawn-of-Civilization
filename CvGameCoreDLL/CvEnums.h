@@ -1185,8 +1185,9 @@ enum CivilizationTypes		// Exposed to Python
 	POLYNESIA,
 	PORTUGAL,
 	ROME,
-	RUSSIA,
+	RUS,
 
+	RUSSIA,
 	SPAIN,
 	SUMERIA,
 	TAMILS,
@@ -1196,8 +1197,8 @@ enum CivilizationTypes		// Exposed to Python
 	TURKS,
 	VIETNAM,
 	VIKINGS,
-	ZULU,
 
+	ZULU,
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,
@@ -1329,6 +1330,8 @@ enum LeaderHeadTypes			// Exposed to Python
 
 	ANAWRAHTA,
 	BAYINNAUNG,
+
+	YAROSLAV,
 
 	MANSA_MUSA,
 

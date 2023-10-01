@@ -6742,6 +6742,23 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 		}
 	}
 
+	iTemp = GC.getPromotionInfo(ePromotion).getRiverAttackPercent();
+	if (iTemp != 0)
+	{
+		iExtra = getExtraRiverAttackPercent();
+		iTemp *= (100 + iExtra * 2);
+		iTemp /= 100;
+		if ((AI_getUnitAIType() == UNITAI_ATTACK) ||
+			(AI_getUnitAIType() == UNITAI_COUNTER))
+		{
+			iValue += (iTemp / 5);
+		}
+		else
+		{
+			iValue += (iTemp / 20);
+		}
+	}
+
 	iTemp = GC.getPromotionInfo(ePromotion).getRevoltProtection();
 	if ((AI_getUnitAIType() == UNITAI_CITY_DEFENSE) ||
 		(AI_getUnitAIType() == UNITAI_CITY_COUNTER) ||
