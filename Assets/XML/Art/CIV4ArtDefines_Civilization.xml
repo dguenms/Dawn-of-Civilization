@@ -390,5 +390,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Peacock.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_RUS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Rus.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tryzub.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

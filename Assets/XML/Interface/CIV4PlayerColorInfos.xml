@@ -229,12 +229,6 @@
 			<TextColorType>COLOR_PLAYER_MIDDLE_BLUE</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_MIDDLE_CYAN</Type>
-			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_CYAN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_MIDDLE_CYAN_TEXT</TextColorType>
-		</PlayerColorInfo>
-		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_BROWN</Type> <!-- Moors and Native America -->
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_BROWN</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
@@ -479,6 +473,12 @@
 			<ColorTypePrimary>COLOR_PLAYER_DARK_EMERALD</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_EMERALD_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_MIDDLE_CYAN</Type> <!-- Rus -->
+			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_CYAN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_MIDDLE_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

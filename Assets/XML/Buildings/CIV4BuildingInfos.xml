@@ -2899,7 +2899,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_WHARF</ArtDefineTag>
 			<PrereqTech>TECH_COMPASS</PrereqTech>
 			<bWater>1</bWater>
-			<iCost>140</iCost>
+			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -2917,12 +2917,35 @@
 			</BuildingClassNeededs>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_WHARF</BuildingClass>
+			<Type>BUILDING_RUS_VOLOK</Type>
+			<Description>TXT_KEY_BUILDING_RUS_VOLOK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_RUS_VOLOK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_RUS_VOLOK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_RUS_VOLOK</ArtDefineTag>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
+			<bRiver>1</bRiver>
+			<iCost>140</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>15</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iTradeRouteModifier>50</iTradeRouteModifier>
+			<iAsset>3</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>

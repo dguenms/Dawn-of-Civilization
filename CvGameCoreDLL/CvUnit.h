@@ -432,6 +432,7 @@ public:
 	int hillsDefenseModifier() const;																				// Exposed to Python
 	int plainsAttackModifier() const; // Leoreth
 	int plainsDefenseModifier() const; // Leoreth
+	int riverAttackModifier() const; // Leoreth
 	int terrainAttackModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int terrainDefenseModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int featureAttackModifier(FeatureTypes eFeature) const;								// Exposed to Python
@@ -641,6 +642,10 @@ public:
 	// Leoreth
 	int getExtraPlainsDefensePercent() const;
 	void changeExtraPlainsDefensePercent(int iChange);
+
+	// Leoreth
+	int getExtraRiverAttackPercent() const;
+	void changeExtraRiverAttackPercent(int iChange);
 
 	int getRevoltProtection() const;																									// Exposed to Python
 	void changeRevoltProtection(int iChange);
@@ -898,6 +903,7 @@ protected:
 	int m_iExtraHillsDefensePercent;
 	int m_iExtraPlainsAttackPercent; // Leoreth
 	int m_iExtraPlainsDefensePercent; // Leoreth
+	int m_iExtraRiverAttackPercent; // Leoreth
 	int m_iRevoltProtection;
 	int m_iCollateralDamageProtection;
 	int m_iPillageChange;

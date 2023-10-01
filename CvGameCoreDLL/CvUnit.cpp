@@ -361,6 +361,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iExtraHillsDefensePercent = 0;
 	m_iExtraPlainsAttackPercent = 0; // Leoreth
 	m_iExtraPlainsDefensePercent = 0; // Leoreth
+	m_iExtraRiverAttackPercent = 0; // Leoreth
 	m_iRevoltProtection = 0;
 	m_iCollateralDamageProtection = 0;
 	m_iPillageChange = 0;
@@ -8571,6 +8572,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iHillsDefenseModifier = 0;
 		pCombatDetails->iPlainsAttackModifier = 0; // Leoreth
 		pCombatDetails->iPlainsDefenseModifier = 0; // Leoreth
+		pCombatDetails->iRiverAttackModifier = 0; // Leoreth
 		pCombatDetails->iFeatureAttackModifier = 0;
 		pCombatDetails->iFeatureDefenseModifier = 0;
 		pCombatDetails->iTerrainAttackModifier = 0;
@@ -8841,6 +8843,17 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			if (pCombatDetails != NULL)
 			{
 				pCombatDetails->iPlainsAttackModifier = iExtraModifier;
+			}
+		}
+
+		// Leoreth
+		if (!pAttackedPlot->isCity() && pAttackedPlot->isRiver() && pAttacker->plot()->isRiver())
+		{
+			iExtraModifier = -pAttacker->riverAttackModifier();
+			iTempModifier += iExtraModifier;
+			if (pCombatDetails != NULL)
+			{
+				pCombatDetails->iRiverAttackModifier = iExtraModifier;
 			}
 		}
 
@@ -9856,6 +9869,13 @@ int CvUnit::plainsAttackModifier() const
 int CvUnit::plainsDefenseModifier() const
 {
 	return m_pUnitInfo->getPlainsDefenseModifier() + getExtraPlainsDefensePercent();
+}
+
+
+// Leoreth
+int CvUnit::riverAttackModifier() const
+{
+	return getExtraRiverAttackPercent();
 }
 
 
@@ -11694,6 +11714,23 @@ void CvUnit::changeExtraPlainsDefensePercent(int iChange)
 	}
 }
 
+// Leoreth
+int CvUnit::getExtraRiverAttackPercent() const
+{
+	return m_iExtraRiverAttackPercent;
+}
+
+// Leoreth
+void CvUnit::changeExtraRiverAttackPercent(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iExtraRiverAttackPercent += iChange;
+
+		setInfoBarDirty(true);
+	}
+}
+
 int CvUnit::getRevoltProtection() const
 {
 	return m_iRevoltProtection;
@@ -12683,6 +12720,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraHillsDefensePercent(GC.getPromotionInfo(eIndex).getHillsDefensePercent() * iChange);
 		changeExtraPlainsAttackPercent(GC.getPromotionInfo(eIndex).getPlainsAttackPercent() * iChange); // Leoreth
 		changeExtraPlainsDefensePercent(GC.getPromotionInfo(eIndex).getPlainsDefensePercent() * iChange); // Leoreth
+		changeExtraRiverAttackPercent(GC.getPromotionInfo(eIndex).getRiverAttackPercent() * iChange); // Leoreth
 		changeRevoltProtection(GC.getPromotionInfo(eIndex).getRevoltProtection() * iChange);
 		changeCollateralDamageProtection(GC.getPromotionInfo(eIndex).getCollateralDamageProtection() * iChange);
 		changePillageChange(GC.getPromotionInfo(eIndex).getPillageChange() * iChange);
@@ -12839,6 +12877,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraHillsDefensePercent);
 	pStream->Read(&m_iExtraPlainsAttackPercent); // Leoreth
 	pStream->Read(&m_iExtraPlainsDefensePercent); // Leoreth
+	pStream->Read(&m_iExtraRiverAttackPercent); // Leoreth
 	pStream->Read(&m_iRevoltProtection);
 	pStream->Read(&m_iCollateralDamageProtection);
 	pStream->Read(&m_iPillageChange);
@@ -12947,6 +12986,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraHillsDefensePercent);
 	pStream->Write(m_iExtraPlainsAttackPercent); // Leoreth
 	pStream->Write(m_iExtraPlainsDefensePercent); // Leoreth
+	pStream->Write(m_iExtraRiverAttackPercent); // Leoreth
 	pStream->Write(m_iRevoltProtection);
 	pStream->Write(m_iCollateralDamageProtection);
 	pStream->Write(m_iPillageChange);

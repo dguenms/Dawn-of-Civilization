@@ -1019,6 +1019,13 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 			}
 		}
 
+		// Leoreth
+		if (pUnit->riverAttackModifier() != 0)
+		{
+			szString.append(NEWLINE);
+			szString.append(gDLL->getText("TXT_KEY_UNIT_RIVER_ATTACK", pUnit->riverAttackModifier()));
+		}
+
 		for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
 		{
 			if (pUnit->terrainAttackModifier((TerrainTypes)iI) == pUnit->terrainDefenseModifier((TerrainTypes)iI))
@@ -3374,6 +3381,18 @@ It is fine for a human player mouse-over (which is what it is used for).
 						}
 					}
 
+					// Leoreth
+					if (!pPlot->isCity() && pPlot->isRiver() && pAttacker->plot()->isRiver())
+					{
+						iModifier = pAttacker->riverAttackModifier();
+
+						if (iModifier != 0)
+						{
+							szString.append(NEWLINE);
+							szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_EXTRA_RIVER_MOD", -iModifier));
+						}
+					}
+
                     if (pPlot->getFeatureType() != NO_FEATURE)
                     {
                         iModifier = pAttacker->featureAttackModifier(pPlot->getFeatureType());
@@ -3620,6 +3639,18 @@ It is fine for a human player mouse-over (which is what it is used for).
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", iModifier));
+				}
+			}
+
+			// Leoreth
+			if (!pPlot->isCity() && pPlot->isRiver() && pAttacker->plot()->isRiver())
+			{
+				iModifier = pAttacker->riverAttackModifier();
+
+				if (iModifier != 0)
+				{
+					szString.append(NEWLINE);
+					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_EXTRA_RIVER_MOD", iModifier));
 				}
 			}
 
@@ -7009,6 +7040,13 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	{
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_PLAINS_DEFENSE_TEXT", GC.getPromotionInfo(ePromotion).getPlainsDefensePercent()));
+	}
+
+	// Leoreth
+	if (GC.getPromotionInfo(ePromotion).getRiverAttackPercent() != 0)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_EXTRA_RIVER_ATTACK_TEXT", GC.getPromotionInfo(ePromotion).getRiverAttackPercent()));
 	}
 
 	if (GC.getPromotionInfo(ePromotion).getRevoltProtection() != 0)

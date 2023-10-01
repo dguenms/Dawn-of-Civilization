@@ -2503,12 +2503,28 @@
 		<Spanish>[ICON_BULLET]%D1_Change%% Open Terrain Defense</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_RIVER_ATTACK</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Attack Along Rivers</English>
+		<French>[ICON_BULLET]%D1_Change%% Attack Along Rivers</French>
+		<German>[ICON_BULLET]%D1_Change%% Attack Along Rivers</German>
+		<Italian>[ICON_BULLET]%D1_Change%% Attack Along Rivers</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%% Attack Along Rivers</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_COMBAT_PLOT_PLAINS_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</English>
 		<French>[ICON_BULLET]%D1_Bonus%% d&#251; au terrain d&#233;gag&#233; (capacit&#233; de l'unit&#233;)</French>
 		<German>[ICON_BULLET]%D1_Bonus%% durch offenes Terrain (Einheitenf&#228;higkeit)</German>
 		<Italian>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Italian>
 		<Spanish>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMBAT_PLOT_EXTRA_RIVER_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</English>
+		<French>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</French>
+		<German>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</German>
+		<Italian>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</Italian>
+		<Spanish>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PLAINS_ATTACK_TEXT</Tag>
@@ -2525,6 +2541,14 @@
 		<German>[ICON_BULLET]%D1_Bonus%% Verteidigung in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</Italian>
 		<Spanish>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_EXTRA_RIVER_ATTACK_TEXT</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% Attack Along Rivers</English>
+		<French>[ICON_BULLET]%D1_Bonus%% Attack Along Rivers</French>
+		<German>[ICON_BULLET]%D1_Bonus%% Attack Along Rivers</German>
+		<Italian>[ICON_BULLET]%D1_Bonus%% Attack Along Rivers</Italian>
+		<Spanish>[ICON_BULLET]%D1_Bonus%% Attack Along Rivers</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVELS</Tag>
