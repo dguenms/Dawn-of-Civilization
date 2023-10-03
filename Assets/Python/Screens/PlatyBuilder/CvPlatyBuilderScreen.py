@@ -147,7 +147,7 @@ class CvWorldBuilderScreen:
 		x, y = location(self.m_pCurrentPlot)
 		iPlayer = self.m_iCurrentPlayer
 		if not CyInterface().isInAdvancedStart():
-			sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), x, y)
+			sText = "<font=3b>%s, X: %d, Y: %d, City: %s</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), x, y, cn.getName(game.getActivePlayer(), self.m_pCurrentPlot))
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 
 			if self.iPlayerAddMode in lDoCMapModes + [iModeCity]:
