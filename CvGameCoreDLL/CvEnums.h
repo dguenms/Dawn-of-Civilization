@@ -1190,14 +1190,15 @@ enum CivilizationTypes		// Exposed to Python
 	RUSSIA,
 	SPAIN,
 	SUMERIA,
+	SWAHILI,
 	TAMILS,
 	THAILAND,
 	TIBET,
 	TOLTECS,
 	TURKS,
 	VIETNAM,
-	VIKINGS,
 
+	VIKINGS,
 	ZULU,
 	INDEPENDENT,
 	INDEPENDENT2,
@@ -1332,6 +1333,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	BAYINNAUNG,
 
 	YAROSLAV,
+
+	MUWAHIB,
 
 	MANSA_MUSA,
 

@@ -1102,5 +1102,13 @@
 			<NoShaderNIF>Art/Leaderheads/Yaroslav/Yaroslav.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Yaroslav/kublai_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DAWUD</Type>
+			<Button>Art/LeaderHeads/Dawud/Dawud.dds</Button>
+			<NIF>Art/LeaderHeads/Dawud/Charles De Gaulle.nif</NIF>
+			<KFM>Art/LeaderHeads/Dawud/Charles De Gaulle.kfm</KFM>
+			<NoShaderNIF>Art/LeaderHeads/Dawud/Charles De Gaulle.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Dawud/Charles De Gaulle_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

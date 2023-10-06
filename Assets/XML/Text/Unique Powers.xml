@@ -946,6 +946,22 @@
 		<Spanish>Las unidades navales nuevas reciben +2 puntos de movimiento</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SWA_TITLE</Tag>
+		<English>The Power of Palm Trees:</English>
+		<French>The Power of Palm Trees:</French>
+		<German>The Power of Palm Trees:</German>
+		<Italian>The Power of Palm Trees:</Italian>
+		<Spanish>The Power of Palm Trees:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWA</Tag>
+		<English>Can construct coastal improvements without removing Savannas and Forests</English>
+		<French>Can construct coastal improvements without removing Savannas and Forests</French>
+		<German>Can construct coastal improvements without removing Savannas and Forests</German>
+		<Italian>Can construct coastal improvements without removing Savannas and Forests</Italian>
+		<Spanish>Can construct coastal improvements without removing Savannas and Forests</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<French>The pouvoir de la thalassocratie :</French>

@@ -2895,6 +2895,8 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 				eRoute = ((RouteTypes)(GC.getBuildInfo(eBuild).getRoute()));
 				eBonus = pMissionPlot->getBonusType(pHeadSelectedUnit->getTeam());
 
+				bool bSwahiliUP = pHeadSelectedUnit->getCivilizationType() == SWAHILI && pMissionPlot->isCoastalLand() && GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT;
+
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
 					iYield = 0;
@@ -2910,7 +2912,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 					if (NO_FEATURE != pMissionPlot->getFeatureType())
 					{
-						if (GC.getBuildInfo(eBuild).isFeatureRemove(pMissionPlot->getFeatureType()))
+						if (GC.getBuildInfo(eBuild).isFeatureRemove(pMissionPlot->getFeatureType()) && !bSwahiliUP)
 						{
 							iYield -= GC.getFeatureInfo(pMissionPlot->getFeatureType()).getYieldChange(iI);
 						}
@@ -3074,7 +3076,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 				if (pMissionPlot->getFeatureType() != NO_FEATURE)
 				{
-					if (GC.getBuildInfo(eBuild).isFeatureRemove(pMissionPlot->getFeatureType()))
+					if (GC.getBuildInfo(eBuild).isFeatureRemove(pMissionPlot->getFeatureType()) && !bSwahiliUP)
 					{
 						iProduction = pMissionPlot->getFeatureProduction(eBuild, pHeadSelectedUnit->getTeam(), &pCity);
 

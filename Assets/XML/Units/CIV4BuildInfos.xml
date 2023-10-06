@@ -72,6 +72,13 @@
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -93,9 +100,16 @@
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
 					<PrereqTech>NONE</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -116,6 +130,13 @@
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -137,9 +158,16 @@
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
 					<PrereqTech>NONE</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -220,6 +248,13 @@
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -238,6 +273,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -257,6 +299,13 @@
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -276,6 +325,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_K</HotKey>
@@ -292,6 +355,15 @@
 			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
 			<HotKey>KB_L</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
@@ -307,6 +379,13 @@
 			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -326,6 +405,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -345,6 +431,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -363,6 +456,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -382,6 +482,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -400,6 +507,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -426,6 +540,13 @@
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>0</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
 			<bAltDown>0</bAltDown>
@@ -443,6 +564,13 @@
 			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -464,6 +592,13 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_Q</HotKey>
 			<bAltDown>0</bAltDown>
@@ -480,6 +615,13 @@
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -499,6 +641,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -532,6 +681,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -550,6 +706,13 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -588,6 +751,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -607,6 +777,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_O</HotKey>
@@ -625,6 +809,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -644,6 +835,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_T</HotKey>
@@ -662,6 +867,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -681,6 +893,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_T</HotKey>
@@ -713,6 +939,27 @@
 			<bCtrlDown>1</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFort.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,9</Button>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_REMOVE_TAIGA</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_TAIGA</Description>
+			<iTime>0</iTime>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_REMOVE_JUNGLE</Type>
@@ -767,6 +1014,27 @@
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_REMOVE_SAVANNA</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_SAVANNA</Description>
+			<iTime>0</iTime>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -856,7 +1124,29 @@
 			<Button>Art/Structures/Improvements/Solar_Collector/Button_SolarPlant.dds</Button>
 		</BuildInfo>
 		<BuildInfo>
-			<Type>BUILD_DEFORESTATION</Type>
+			<Type>BUILD_DEFORESTATION_TAIGA</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
+			<iTime>0</iTime>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_DEFORESTATION_JUNGLE</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
 			<iTime>0</iTime>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
@@ -908,6 +1198,13 @@
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -927,6 +1224,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
@@ -946,6 +1257,13 @@
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -966,6 +1284,20 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
 			<bAltDown>0</bAltDown>
@@ -984,6 +1316,13 @@
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1001,6 +1340,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1022,6 +1368,13 @@
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1041,6 +1394,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_K</HotKey>
@@ -1060,6 +1427,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1080,6 +1454,20 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
 			<bAltDown>0</bAltDown>
@@ -1098,6 +1486,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1115,6 +1510,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1136,6 +1538,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_CALENDAR</PrereqTech>
 					<iTime>600</iTime>
@@ -1153,6 +1562,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1174,6 +1590,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1191,6 +1614,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1212,6 +1642,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1229,6 +1666,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1250,6 +1694,13 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 					<iTime>600</iTime>
@@ -1267,6 +1718,13 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1291,7 +1749,13 @@
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
-			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -1313,7 +1777,13 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
-			</FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_O</HotKey>
 			<bAltDown>0</bAltDown>
@@ -1331,6 +1801,13 @@
 			<ImprovementType>IMPROVEMENT_HAMLET</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -1351,6 +1828,20 @@
 					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_T</HotKey>

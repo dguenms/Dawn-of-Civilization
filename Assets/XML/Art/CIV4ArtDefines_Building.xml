@@ -3677,5 +3677,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Volok/Volok.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SWAHILI_ISLAND_FORT</Type>
+			<LSystem>LSYSTEM_LIGHTHOUSE</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.55</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Island Fort/LamuFort.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Island Fort/LamuFort_btn.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

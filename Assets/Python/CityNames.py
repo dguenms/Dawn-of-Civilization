@@ -57,6 +57,7 @@ dLanguages = {
 	iHolyRome: [iLangGerman],
 	iBurma: [iLangBurmese, iLangIndian],
 	iRus: [iLangRussian],
+	iSwahili: [iLangArabic],
 	iMali: [iLangMande],
 	iPoland: [iLangPolish, iLangRussian], 
 	iPortugal: [iLangPortuguese, iLangSpanish],

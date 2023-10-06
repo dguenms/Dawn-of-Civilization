@@ -480,5 +480,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MIDDLE_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_CREAM</Type> <!-- Swahili -->
+			<ColorTypePrimary>COLOR_PLAYER_CREAM</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_ORANGE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_CREAM_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

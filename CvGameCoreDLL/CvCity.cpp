@@ -18468,8 +18468,10 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 	int iOldValue;
 	int iCultureRange;
 	int iI;
+	bool bMinor;
 
 	iOldValue = getNextCoveredPlot();
+	bMinor = GET_PLAYER(getOwnerINLINE()).isMinorCiv();
 
 	if (iNewValue < iOldValue)
 	{
@@ -18486,7 +18488,12 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 				if (pLoopPlot != NULL)
 				{
 					iCultureRange = std::max(0, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
-					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
+
+					// Leoreth: only two rings for minor civilizations
+					if (!bMinor || iCultureRange <= 2)
+					{
+						pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
+					}
 				}
 			}
 		}
@@ -18513,7 +18520,11 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 						bCoveredNewPlot = true;
 					}
 
-					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
+					// Leoreth: only two rings for minor civilizations
+					if (!bMinor || iCultureRange <= 2)
+					{
+						pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
+					}
 				}
 			}
 		}
