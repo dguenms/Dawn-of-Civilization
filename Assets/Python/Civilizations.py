@@ -422,6 +422,14 @@ lCivilizations = [
 		techs=techs.column(6).including(iGuilds).without(iScholarship)
 	),
 	Civilization(
+		iSwahili,
+		iGold=200,
+		iAdvancedStartPoints=50,
+		iStateReligion=iIslam,
+		lCivics=[iElective, iCitizenship, iSlavery, iMerchantTrade, iClergy, iTributaries],
+		techs=techs.column(6).including(iGuilds, iAlchemy)
+	),
+	Civilization(
 		iMali,
 		iGold=600,
 		iAdvancedStartPoints=50,
@@ -852,6 +860,16 @@ dStartingUnits = CivDict({
 		iWork: 2,
 		iDefend: 2,
 		iAttack: 2,
+	},
+	iSwahili: {
+		iSettle: 1,
+		iWork: 1,
+		iWorkerSea: 2,
+		iDefend: 1,
+		iSkirmish: 1,
+		iExploreSea: 1,
+		iSettleSea: 1,
+		iMissionary: 1,
 	},
 	iMali: {
 		iSettle: 3,

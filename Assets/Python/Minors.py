@@ -316,7 +316,7 @@ class Barbarians(object):
 	
 	def valid_spawn(self, plot):
 		if self.pattern in [SEA_INVADERS, PIRATES]:
-			if not plot.isWater():
+			if plot.getTerrainType() not in [iCoast, iArcticCoast]:
 				return False
 				
 		else:
@@ -373,7 +373,7 @@ minor_cities = [
 	MinorCity(880, iIndependent2, (74, 59), "Buda", iPopulation=3, iTechGroup=iTechGroupWestern, units={iHarass: 5}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
 	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
 	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
-	MinorCity(900, iIndependent, (85, 28), "Muqdisho", iPopulation=3, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
+	MinorCity(900, iIndependent, (87, 29), "Muqdisho", iPopulation=3, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
 	MinorCity(900, iNative, (79, 18), "Zimbabwe", iPopulation=2, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SHONA"),
 	MinorCity(1000, iBarbarian, (92, 66), "Qazan", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_BULGAR"),
 	MinorCity(1000, iNative, (67, 34), "Kano", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_HAUSA"),

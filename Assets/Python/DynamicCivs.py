@@ -512,6 +512,7 @@ dStartingLeaders = [
 	iHolyRome : iBarbarossa,
 	iBurma : iAnawrahta,
 	iRus : iYaroslav,
+	iSwahili : iDawud,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
 	iPortugal : iAfonso,

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_DESC</Tag>
+		<English>The Swahilis</English>
+		<French>The Swahilis</French>
+		<German>The Swahilis</German>
+		<Italian>The Swahilis</Italian>
+		<Spanish>The Swahilis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_PEOPLES</Tag>
+		<English>Swahili Peoples</English>
+		<French>Swahili Peoples</French>
+		<German>Swahili Peoples</German>
+		<Italian>Swahili Peoples</Italian>
+		<Spanish>Swahili Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_ADJECTIVE</Tag>
+		<English>Swahili</English>
+		<French>Swahili</French>
+		<German>Swahili</German>
+		<Italian>Swahili</Italian>
+		<Spanish>Swahili</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_SHORT_DESC</Tag>
+		<English>Swahili</English>
+		<French>Swahili</French>
+		<German>Swahili</German>
+		<Italian>Swahili</Italian>
+		<Spanish>Swahili</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_DEFAULT</Tag>
+		<English>Kilwa Sultanate</English>
+		<French>Kilwa Sultanate</French>
+		<German>Kilwa Sultanate</German>
+		<Italian>Kilwa Sultanate</Italian>
+		<Spanish>Kilwa Sultanate</Spanish>
+	</TEXT>
+</Civ4GameText>

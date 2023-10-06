@@ -38,6 +38,22 @@
 		<Spanish>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_REMOVE_TAIGA</Tag>
+		<English>Remove [LINK=FEATURE_TAIGA]Taiga[\LINK]</English>
+		<French>Remove [LINK=FEATURE_TAIGA]Taiga[\LINK]</French>
+		<German>Remove [LINK=FEATURE_TAIGA]Taiga[\LINK]</German>
+		<Italian>Remove [LINK=FEATURE_TAIGA]Taiga[\LINK]</Italian>
+		<Spanish>Remove [LINK=FEATURE_TAIGA]Taiga[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_REMOVE_SAVANNA</Tag>
+		<English>Remove [LINK=FEATURE_SAVANNA]Savanna[\LINK]</English>
+		<French>Remove [LINK=FEATURE_SAVANNA]Savanna[\LINK]</French>
+		<German>Remove [LINK=FEATURE_SAVANNA]Savanna[\LINK]</German>
+		<Italian>Remove [LINK=FEATURE_SAVANNA]Savanna[\LINK]</Italian>
+		<Spanish>Remove [LINK=FEATURE_SAVANNA]Savanna[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
 		<English>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</English>
 		<French>construire une [LINK=ROUTE_ROMAN_ROAD]voie romaine[\LINK]</French>

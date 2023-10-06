@@ -8614,12 +8614,6 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 			if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
 			{
 				setImprovementType((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement());
-
-				// Leoreth: forts allow to cover cities: if tile unowned, let the building team claim it, otherwise let setImprovementType() handle it
-				/*if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
-				{
-					if (getOwner() == NO_PLAYER) changeCultureRangeCities(GET_TEAM(eTeam).getLeaderID(), 0, 1, true);
-				}*/
 			}
 
 			if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
@@ -8629,7 +8623,7 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 
 			if (getFeatureType() != NO_FEATURE)
 			{
-				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()) && GET_TEAM(eTeam).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(getFeatureType())))
+				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()) && GET_TEAM(eTeam).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(getFeatureType())) && !(GET_PLAYER(getOwnerINLINE()).getCivilizationType() == SWAHILI && isCoastalLand() && GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT))
 				{
 					FAssertMsg(eTeam != NO_TEAM, "eTeam should be valid");
 
