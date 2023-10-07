@@ -488,6 +488,13 @@ lCivilizations = [
 		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder)
 	),
 	Civilization(
+		iThailand,
+		iGold=300,
+		iStateReligion=iBuddhism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism, iTributaries],
+		techs=techs.column(8).without(iCompass, iDoctrine)
+	),
+	Civilization(
 		iRussia,
 		iGold=300,
 		iAdvancedStartPoints=200,
@@ -502,13 +509,6 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iClergy, iConquest],
 		techs=techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder)
-	),
-	Civilization(
-		iThailand,
-		iGold=800,
-		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism, iTributaries],
-		techs=techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage)
 	),
 	Civilization(
 		iCongo,
@@ -935,6 +935,13 @@ dStartingUnits = CivDict({
 		iHarass: 2,
 		iMissionary: 4,
 	},
+	iThailand: {
+		iSettle: 1,
+		iWork: 2,
+		iCounter: 2,
+		iShock: 2,
+		iMissionary: 1,
+	},
 	iRussia: {
 		iSettle: 4,
 		iWork: 3,
@@ -950,13 +957,6 @@ dStartingUnits = CivDict({
 		iShock: 3,
 		iSiege: 4,
 		iMissionary: 2,
-	},
-	iThailand: {
-		iSettle: 1,
-		iWork: 2,
-		iCounter: 3,
-		iShock: 2,
-		iMissionary: 1,
 	},
 	iCongo: {
 		iSettle: 1,
@@ -1224,6 +1224,10 @@ dAdditionalUnits = CivDict({
 		iShockCity: 2,
 		iHarass: 4,
 	},
+	iThailand: {
+		iCounter: 2,
+		iShock: 2,
+	},
 	iRussia: {
 		iAttack: 4,
 		iDefend: 3,
@@ -1231,10 +1235,6 @@ dAdditionalUnits = CivDict({
 	iOttomans: {
 		iDefend: 3,
 		iHarass: 3,
-	},
-	iThailand: {
-		iCounter: 2,
-		iShock: 2,
 	},
 	iCongo: {
 		iAttack: 3,
