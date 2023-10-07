@@ -1279,6 +1279,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	WANG_KON,
 	SEJONG,
 
+	SURYAVARMAN,
+
 	JUSTINIAN,
 	BASIL,
 
@@ -1318,8 +1320,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	NAPOLEON,
 	DE_GAULLE,
 
-	SURYAVARMAN,
-
 	ALFRED,
 	ELIZABETH,
 	VICTORIA,
@@ -1334,7 +1334,7 @@ enum LeaderHeadTypes			// Exposed to Python
 
 	YAROSLAV,
 
-	MUWAHIB,
+	SULEIMAN_IBN_DAWUD,
 
 	MANSA_MUSA,
 
