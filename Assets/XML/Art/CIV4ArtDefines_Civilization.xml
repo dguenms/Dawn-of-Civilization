@@ -249,7 +249,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_THAILAND</Type>
 			<Button>Art/Interface/Buttons/Civilizations/thailand.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Garuda.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_WhiteElephant.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>

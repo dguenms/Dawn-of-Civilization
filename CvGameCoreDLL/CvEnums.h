@@ -1363,6 +1363,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	AKBAR,
 	BHUTTO,
 
+	NARESUAN,
+	MONGKUT,
+
 	IVAN,
 	PETER,
 	CATHERINE,
@@ -1372,9 +1375,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	MEHMED,
 	SULEIMAN,
 	ATATURK,
-
-	NARESUAN,
-	MONGKUT,
 
 	MBEMBA,
 
