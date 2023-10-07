@@ -300,6 +300,13 @@ lCivilizations = [
 		techs=techs.column(5).without(iGeneralship, iEngineering, iCurrency)
 	),
 	Civilization(
+		iKhmer,
+		iGold=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification],
+		techs=techs.column(4).including(iEngineering, iMedicine, iAesthetics)
+	),
+	Civilization(
 		iByzantium,
 		iGold=400,
 		iAdvancedStartPoints=100,
@@ -382,14 +389,6 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
 		techs=techs.column(6).including(iFeudalism, iTheology)
-	),
-	Civilization(
-		iKhmer,
-		iGold=200,
-		iAdvancedStartPoints=60,
-		iStateReligion=iHinduism,
-		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification],
-		techs=techs.column(6).including(iNobility, iArchitecture, iArtisanry, iScholarship, iEthics)
 	),
 	Civilization(
 		iEngland,
@@ -721,6 +720,14 @@ dStartingUnits = CivDict({
 		iShock: 1,
 		iMissionary: 1,
 	},
+	iKhmer: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 2,
+		iAttack: 1,
+		iMissionary: 1,
+		iWorkerSea: 1,
+	},
 	iByzantium: {
 		iSettle: 4,
 		iWork: 2,
@@ -780,16 +787,6 @@ dStartingUnits = CivDict({
 		iDefend: 2,
 		iHarass: 2,
 		iMissionary: 1,
-	},
-	iKhmer: {
-		iSettle: 1,
-		iSettleSea: 1,
-		iWork: 2,
-		iDefend: 1,
-		iShockCity: 3,
-		iMissionary: 1,
-		iWorkerSea: 1,
-		# 1 Buddhist Missionary
 	},
 	iMoors: {
 		iSettle: 2,
@@ -1350,8 +1347,6 @@ def createSpecificUnits(iPlayer, tile):
 		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
-	elif iCiv == iKhmer:
-		makeUnit(iPlayer, iBuddhistMissionary, tile)
 	elif iCiv == iMoors:
 		if civ() in [iSpain, iMoors]:
 			makeUnit(iPlayer, iCrossbowman, tile)

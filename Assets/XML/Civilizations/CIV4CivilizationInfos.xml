@@ -3104,14 +3104,14 @@
 			<ShortDescription>TXT_KEY_CIV_KHMER_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_KHMER_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_KHMER_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_BROWNISH_RED</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KHMER</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KHM</Identifier>
-			<StartingYear>800</StartingYear>
+			<StartingYear>50</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>20</LoadingTime>
 				<LoadingTime>2</LoadingTime>

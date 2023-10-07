@@ -123,7 +123,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_KHMER</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Khmer.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Cambodia.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Apsara.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
