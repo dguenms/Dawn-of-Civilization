@@ -73,6 +73,42 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
+			<Type>BUILDING_SWEDISH_SOLDATTORP</Type>
+			<Description>TXT_KEY_BUILDING_SWEDISH_SOLDATTORP</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SWEDISH_SOLDATTORP_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SWEDISH_SOLDATTORP_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SWEDISH_SOLDATTORP</ArtDefineTag>
+			<FreePromotion>PROMOTION_DRILL1</FreePromotion>
+			<bNeverCapture>1</bNeverCapture>
+			<iCost>50</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<iPower>3</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
+			<DomainFreeExperiences>
+				<DomainFreeExperience>
+					<DomainType>DOMAIN_LAND</DomainType>
+					<iExperience>3</iExperience>
+				</DomainFreeExperience>
+			</DomainFreeExperiences>
+			<DomainProductionModifiers>
+				<DomainProductionModifier>
+					<DomainType>DOMAIN_LAND</DomainType>
+					<iProductionModifier>25</iProductionModifier>
+				</DomainProductionModifier>
+			</DomainProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
 			<Type>BUILDING_ZULU_IKHANDA</Type>
 			<Description>TXT_KEY_BUILDING_ZULU_IKHANDA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ZULU_IKHANDA_PEDIA</Civilopedia>

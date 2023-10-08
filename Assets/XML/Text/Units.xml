@@ -3606,6 +3606,22 @@
 		<Spanish>Dhow</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDISH_CAROLEAN</Tag>
+		<English>Carolean</English>
+		<French>Carolean</French>
+		<German>Carolean</German>
+		<Italian>Carolean</Italian>
+		<Spanish>Carolean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDISH_HAKKAPELIITTA</Tag>
+		<English>Hakkapeliitta</English>
+		<French>Hakkapeliitta</French>
+		<German>Hakkapeliitta</German>
+		<Italian>Hakkapeliitta</Italian>
+		<Spanish>Hakkapeliitta</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

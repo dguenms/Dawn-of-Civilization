@@ -1110,5 +1110,13 @@
 			<NoShaderNIF>Art/LeaderHeads/Dawud/Charles De Gaulle.nif</NoShaderNIF>
 			<BackgroundKFM>Art/LeaderHeads/Dawud/Charles De Gaulle_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CHRISTIAN</Type>
+			<Button>Art/Leaderheads/Christian/Christian.dds</Button>
+			<NIF>Art/Leaderheads/Christian/Peter.nif</NIF>
+			<KFM>Art/Leaderheads/Christian/Peter.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Christian/Peter.nif</NoShaderNIF>
+			<BackgroundKFM>Art/leaderheads/Christian/charles de gaulle_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

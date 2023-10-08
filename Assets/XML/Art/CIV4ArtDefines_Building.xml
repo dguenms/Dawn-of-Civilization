@@ -3687,5 +3687,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Island Fort/LamuFort_btn.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SWEDISH_SOLDATTORP</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Soldattorp/jail.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Soldattorp/Soldattorp.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

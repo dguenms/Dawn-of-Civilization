@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
+		<English>The Swedish</English>
+		<French>The Swedish</French>
+		<German>The Swedish</German>
+		<Italian>The Swedish</Italian>
+		<Spanish>The Swedish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_PEOPLES</Tag>
+		<English>Swedish Peoples</English>
+		<French>Swedish Peoples</French>
+		<German>Swedish Peoples</German>
+		<Italian>Swedish Peoples</Italian>
+		<Spanish>Swedish Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
+		<English>Swedish</English>
+		<French>Swedish</French>
+		<German>Swedish</German>
+		<Italian>Swedish</Italian>
+		<Spanish>Swedish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
+		<English>Sweden</English>
+		<French>Sweden</French>
+		<German>Sweden</German>
+		<Italian>Sweden</Italian>
+		<Spanish>Sweden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -5740,6 +5740,89 @@
 			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_SWEDEN</Type>
+			<Description>TXT_KEY_CIV_SWEDEN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_SWEDEN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_SWEDEN_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_SWEDEN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
+			<Impact>IMPACT_SIGNIFICANT</Impact>
+			<Identifier>SWE</Identifier>
+			<StartingYear>1252</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>3</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>4</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Birka</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+					<BuildingType>BUILDING_SWEDISH_SOLDATTORP</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_PISTOLIER</UnitClassType>
+					<UnitType>UNIT_SWEDISH_HAKKAPELIITTA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
+					<UnitType>UNIT_SWEDISH_CAROLEAN</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_GUSTAV</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_VIKING</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_VIKING_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_VIKING_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_TAMILS</Type>
 			<Description>TXT_KEY_CIV_TAMILS_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_TAMILS_SHORT_DESC</ShortDescription>
@@ -6453,7 +6536,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_GUSTAV</LeaderName>
+					<LeaderName>LEADER_CHRISTIAN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
@@ -6461,7 +6544,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_AMERICA</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_SWEDEN</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_VIKING_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_VIKING_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
