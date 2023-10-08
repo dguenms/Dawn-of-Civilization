@@ -8,7 +8,7 @@ from Events import handler
 
 ### CONSTANTS ###
 
-iNumLanguages = 42
+iNumLanguages = 43
 (iLangAmerican, iLangArabic, iLangBabylonian, iLangBurmese, iLangByzantine, 
 iLangCeltic, iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, 
 iLangEgyptianArabic, iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, 
@@ -16,8 +16,8 @@ iLangGreek, iLangHittite, iLangIndian, iLangIndonesian, iLangItalian,
 iLangJapanese, iLangKhmer, iLangKorean, iLangLatin, iLangMande, 
 iLangMayan, iLangMongolian, iLangNahuatl, iLangNubian, iLangPersian, 
 iLangPhoenician, iLangPolish, iLangPolynesian, iLangPortuguese, iLangQuechua, 
-iLangRussian, iLangSpanish, iLangThai, iLangTibetan, iLangTurkish, 
-iLangVietnamese, iLangViking) = range(iNumLanguages)
+iLangRussian, iLangSpanish, iLangSwedish, iLangThai, iLangTibetan, 
+iLangTurkish, iLangVietnamese, iLangViking) = range(iNumLanguages)
 
 dLanguages = {
 	iEgypt:	[iLangEgyptian],
@@ -66,9 +66,10 @@ dLanguages = {
 	iMongols: [iLangMongolian, iLangTurkish, iLangChinese],
 	iAztecs: [iLangNahuatl],
 	iMughals: [iLangPersian, iLangArabic, iLangIndian],
+	iThailand: [iLangThai, iLangKhmer, iLangIndonesian],
+	iSweden: [iLangSwedish, iLangViking],
 	iRussia: [iLangRussian],
 	iOttomans: [iLangTurkish, iLangArabic],
-	iThailand: [iLangThai, iLangKhmer, iLangIndonesian],
 	iCongo: [iLangCongolese],
 	iIran: [iLangArabic, iLangPersian],
 	iNetherlands: [iLangDutch],
@@ -127,6 +128,7 @@ dLanguageNames = {
 	iLangQuechua: "Quechua",
 	iLangRussian: "Russian",
 	iLangSpanish: "Spanish",
+	iLangSwedish: "Swedish",
 	iLangThai: "Thai",
 	iLangTibetan: "Tibetan",
 	iLangTurkish: "Turkish",

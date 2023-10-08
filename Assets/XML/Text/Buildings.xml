@@ -3174,6 +3174,14 @@
 		<Spanish>Island Fort</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDISH_SOLDATTORP</Tag>
+		<English>Soldattorp</English>
+		<French>Soldattorp</French>
+		<German>Soldattorp</German>
+		<Italian>Soldattorp</Italian>
+		<Spanish>Soldattorp</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

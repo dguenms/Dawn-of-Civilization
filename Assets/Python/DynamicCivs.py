@@ -521,9 +521,10 @@ dStartingLeaders = [
 	iMongols : iGenghisKhan,
 	iAztecs : iMontezuma,
 	iMughals : iTughluq,
+	iThailand : iNaresuan,
+	iSweden : iGustav,
 	iRussia : iIvan,
 	iOttomans : iMehmed,
-	iThailand : iNaresuan,
 	iCongo : iMbemba,
 	iIran : iAbbas,
 	iNetherlands : iWillemVanOranje,
@@ -2167,8 +2168,6 @@ def leader(iPlayer):
 		
 	elif iCiv == iVikings:
 		if iEra >= iGlobal: return iGerhardsen
-		
-		if iEra >= iRenaissance: return iGustav
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
