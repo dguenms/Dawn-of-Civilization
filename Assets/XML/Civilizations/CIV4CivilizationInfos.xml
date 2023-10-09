@@ -6370,9 +6370,9 @@
 			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>VIE</Identifier>
-			<StartingYear>-257</StartingYear>
+			<StartingYear>938</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
