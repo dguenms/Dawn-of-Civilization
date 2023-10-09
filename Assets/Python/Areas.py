@@ -23,7 +23,6 @@ iCelts :		(62, 57), # Nemessos
 iMaya :			(22, 41), # Tikal
 iTamils :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
-iVietnam : 		(121, 42), # Hanoi
 iToltecs :		(17, 43), # Tollan
 iKushans :		(100, 52), # Bactra
 iKorea :		(131, 54), # Seoul
@@ -43,6 +42,7 @@ iEngland :		(58, 64), # London
 iHolyRome :		(65, 62), # Cologne
 iBurma :		(117, 42), # Bagan
 iRus :			(81, 62), # Kyiv
+iVietnam : 		(121, 42), # Hanoi
 iSwahili :		(84, 23), # Kilwa
 iMali :			(58, 35), # Djenne
 iPoland :		(74, 61), # Krakow

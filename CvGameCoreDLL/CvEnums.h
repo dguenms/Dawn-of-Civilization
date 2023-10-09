@@ -1271,8 +1271,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	ZARA_YAQOB,
 	MENELIK,
 
-	LE_LOI,
-
 	TOPILTZIN,
 
 	KANISHKA,
@@ -1334,6 +1332,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	BAYINNAUNG,
 
 	YAROSLAV,
+
+	LE_LOI,
 
 	SULEIMAN_IBN_DAWUD,
 

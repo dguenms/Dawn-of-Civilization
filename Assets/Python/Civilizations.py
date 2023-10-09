@@ -274,12 +274,6 @@ lCivilizations = [
 		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
 	),
 	Civilization(
-		iVietnam,
-		iGold=100,
-		lCivics=[iMonarchy, iCasteSystem, iRedistribution],
-		techs=techs.column(3).including(iBloomery, iLiterature, iPriesthood)
-	),
-	Civilization(
 		iToltecs,
 		iGold=100,
 		lCivics=[iDespotism, iSlavery, iRedistribution, iDeification],
@@ -412,6 +406,13 @@ lCivilizations = [
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iTributaries],
 		techs=techs.column(6).including(iFeudalism, iTheology)
+	),
+	Civilization(
+		iVietnam,
+		iGold=200,
+		iStateReligion=iConfucianism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iTributaries],
+		techs=techs.column(6).including(iCivilService, iAlchemy, iFortification)
 	),
 	Civilization(
 		iRus,
@@ -702,11 +703,6 @@ dStartingUnits = CivDict({
 		iEscort: 1,
 		# 1 Shotelai
 	},
-	iVietnam: {
-		iSettle: 1,
-		iWork: 1,
-		iDefend: 2,
-	},
 	iToltecs: {
 		iSettle: 1,
 		iWork: 1,
@@ -857,6 +853,14 @@ dStartingUnits = CivDict({
 		iWork: 2,
 		iDefend: 3,
 		iCounter: 2,
+		iAttack: 2,
+		iMissionary: 1,
+	},
+	iVietnam: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 1,
+		iSkirmish: 2,
 		iAttack: 2,
 		iMissionary: 1,
 	},
@@ -1335,6 +1339,7 @@ dAlwaysTrain = CivDict({
 	iTamils: [iWarElephant],
 	iByzantium: [iLegion],
 	iArabia: [iMobileGuard, iGhazi],
+	iVietnam: [iRattanArcher],
 	iAztecs: [iJaguar],
 	iOttomans: [iJanissary, iGreatBombard],
 	iMexico: [iGrenadier],
