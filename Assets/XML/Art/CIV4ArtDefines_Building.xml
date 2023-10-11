@@ -3583,9 +3583,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.4</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Mudbrick Pyramid/NubianPyramid.nif</NIF>
+			<NIF>Art/Structures/Buildings/Mudbrick_Pyramid/NubianPyramid.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Mudbrick Pyramid/Nuri_Button.dds</Button>
+			<Button>Art/Structures/Buildings/Mudbrick_Pyramid/Nuri_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HITTITE_BLOOMERY</Type>
@@ -3613,9 +3613,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Water Puppet Theatre/Court_Asia.nif</NIF>
+			<NIF>Art/Structures/Buildings/Water_Puppet_Theatre/Court_Asia.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Water Puppet Theatre/waterpuppettheatre.dds</Button>
+			<Button>Art/Structures/Buildings/Water_Puppet_Theatre/waterpuppettheatre.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_IRANIAN_BAGH</Type>
@@ -3643,9 +3643,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Obsidian Workshop/Meso1.nif</NIF>
+			<NIF>Art/Structures/Buildings/Obsidian_Workshop/Meso1.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Obsidian Workshop/ObsidianWorkshop.dds</Button>
+			<Button>Art/Structures/Buildings/Obsidian_Workshop/ObsidianWorkshop.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MALAY_GUDANG</Type>
@@ -3683,9 +3683,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.55</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Island Fort/LamuFort.nif</NIF>
+			<NIF>Art/Structures/Buildings/Island_Fort/LamuFort.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Island Fort/LamuFort_btn.dds</Button>
+			<Button>Art/Structures/Buildings/Island_Fort/LamuFort_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SWEDISH_SOLDATTORP</Type>
