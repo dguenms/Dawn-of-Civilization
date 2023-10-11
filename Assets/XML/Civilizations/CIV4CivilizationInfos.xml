@@ -3601,10 +3601,10 @@
 			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAL</Identifier>
-			<StartingYear>989</StartingYear>
+			<StartingYear>300</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>8</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
