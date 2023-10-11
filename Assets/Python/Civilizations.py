@@ -301,6 +301,12 @@ lCivilizations = [
 		techs=techs.column(4).including(iEngineering, iMedicine, iAesthetics)
 	),
 	Civilization(
+		iMali,
+		iGold=200,
+		lCivics=[iMonarchy, iSlavery, iMerchantTrade],
+		techs=techs.column(3).including(iMathematics, iContract, iCurrency, iLiterature, iPriesthood)
+	),
+	Civilization(
 		iByzantium,
 		iGold=400,
 		iAdvancedStartPoints=100,
@@ -428,14 +434,6 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iElective, iCitizenship, iSlavery, iMerchantTrade, iClergy, iTributaries],
 		techs=techs.column(6).including(iGuilds, iAlchemy)
-	),
-	Civilization(
-		iMali,
-		iGold=600,
-		iAdvancedStartPoints=50,
-		iStateReligion=iIslam,
-		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iClergy],
-		techs=techs.column(6).including(iTheology)
 	),
 	Civilization(
 		iPoland,
@@ -732,6 +730,11 @@ dStartingUnits = CivDict({
 		iMissionary: 1,
 		iWorkerSea: 1,
 	},
+	iMali: {
+		iSettle: 1,
+		iWork: 1,
+		iSkirmish: 3,
+	},
 	iByzantium: {
 		iSettle: 4,
 		iWork: 2,
@@ -879,12 +882,6 @@ dStartingUnits = CivDict({
 		iExploreSea: 1,
 		iSettleSea: 1,
 		iMissionary: 1,
-	},
-	iMali: {
-		iSettle: 3,
-		iWork: 2,
-		iSkirmish: 5,
-		iMissionary: 2,
 	},
 	iPoland: {
 		iSettle: 1,
@@ -1195,6 +1192,10 @@ dAdditionalUnits = CivDict({
 		iAttack: 3,
 		iShockCity: 2,
 	},
+	iMali: {
+		iSkirmish: 2,
+		iAttack: 2,
+	},
 	iMoors: {
 		# 2 Camel Archers
 	},
@@ -1212,10 +1213,6 @@ dAdditionalUnits = CivDict({
 	},
 	iHolyRome: {
 		iDefend: 3,
-		iAttack: 3,
-	},
-	iMali: {
-		iSkirmish: 4,
 		iAttack: 3,
 	},
 	iPoland: {
