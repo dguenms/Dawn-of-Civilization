@@ -962,6 +962,22 @@
 		<Spanish>Can construct coastal improvements without removing Savannas and Forests</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SWE_TITLE</Tag>
+		<English>The Power of Lagom:</English>
+		<French>The Power of Lagom:</French>
+		<German>The Power of Lagom:</German>
+		<Italian>The Power of Lagom:</Italian>
+		<Spanish>The Power of Lagom:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWE</Tag>
+		<English>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</English>
+		<French>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</French>
+		<German>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</German>
+		<Italian>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Italian>
+		<Spanish>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<French>The pouvoir de la thalassocratie :</French>
