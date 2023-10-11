@@ -9324,6 +9324,12 @@ void CvCity::setWeLoveTheKingDay(bool bNewValue)
 
 		updateMaintenance();
 
+		// Leoreth: Swedish UP: +50% great people rate when city is celebrating
+		if (getCivilizationType() == SWEDEN)
+		{
+			changeGreatPeopleRateModifier(50 * (bNewValue ? 1 : -1));
+		}
+
 		eCivic = NO_CIVIC;
 
 		for (iI = 0; iI < GC.getNumCivicInfos(); iI++)
