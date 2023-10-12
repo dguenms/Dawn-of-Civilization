@@ -308,16 +308,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Forge.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ARABIAN_ALCHEMIST</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>2</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Alchemist/caravan.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Alchemist/Alchemist.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FACTORY</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3696,6 +3686,26 @@
 			<NIF>Art/Structures/Buildings/Soldattorp/jail.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Soldattorp/Soldattorp.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PERSIAN_QANAT</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.11</fScale>
+			<fInterfaceScale>0.88</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Qanat/sewer.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Qanat/Qanat.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ARABIAN_ALCHEMIST</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.44</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Persian Apothecary/Apothecary.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Alchemist/Alchemist.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

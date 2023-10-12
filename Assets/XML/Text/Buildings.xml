@@ -3182,6 +3182,14 @@
 		<Spanish>Soldattorp</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERSIAN_QANAT</Tag>
+		<English>Qanat</English>
+		<French>Qanat</French>
+		<German>Qanat</German>
+		<Italian>Qanat</Italian>
+		<Spanish>Qanat</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
