@@ -1280,6 +1280,8 @@ enum LeaderHeadTypes			// Exposed to Python
 
 	SURYAVARMAN,
 
+	MANSA_MUSA,
+
 	JUSTINIAN,
 	BASIL,
 
@@ -1336,8 +1338,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	LE_LOI,
 
 	SULEIMAN_IBN_DAWUD,
-
-	MANSA_MUSA,
 
 	CASIMIR,
 	SOBIESKI,
