@@ -1257,10 +1257,10 @@ enum LeaderHeadTypes			// Exposed to Python
 	DARIUS,
 	KHOSROW,
 
+	BRENNUS,
+
 	JULIUS_CAESAR,
 	AUGUSTUS,
-
-	BRENNUS,
 
 	PACAL,
 

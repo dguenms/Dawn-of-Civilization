@@ -243,15 +243,15 @@ lCivilizations = [
 		techs=techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding)
 	),
 	Civilization(
-		iRome,
-		iGold=100,
-		iAdvancedStartPoints=150,
-		lCivics=[iRepublic, iSlavery, iRedistribution],
-		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iShipbuilding)
-	),
-	Civilization(
 		iCelts,
 		techs=techs.column(2).including(iAlloys),
+	),
+	Civilization(
+		iRome,
+		iGold=100,
+		iAdvancedStartPoints=200,
+		lCivics=[iRepublic, iSlavery, iRedistribution],
+		techs=techs.column(4).without(iRiding, iShipbuilding, iNavigation)
 	),
 	Civilization(
 		iMaya,
@@ -662,19 +662,20 @@ dStartingUnits = CivDict({
 		iShock: 2,
 		# 1 War Elephant
 	},
-	iRome: {
-		iSettle: 4,
-		iWork: 2,
-		iDefend: 3,
-		iAttack: 4,
-		iWorkerSea: 1,
-		iFerry: 2,
-	},
 	iCelts: {
 		iSettle: 3,
 		iWork: 1,
 		iDefend: 3,
 		iAttack: 4,
+	},
+	iRome: {
+		iSettle: 3,
+		iWork: 2,
+		iDefend: 3,
+		iAttack: 4,
+		iSettleSea: 1,
+		iWorkerSea: 1,
+		iFerry: 1,
 	},
 	iMaya: {
 		iSettle: 1,
