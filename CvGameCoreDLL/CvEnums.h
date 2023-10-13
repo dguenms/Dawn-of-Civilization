@@ -1285,6 +1285,11 @@ enum LeaderHeadTypes			// Exposed to Python
 	JUSTINIAN,
 	BASIL,
 
+	CHARLEMAGNE,
+	LOUIS,
+	NAPOLEON,
+	DE_GAULLE,
+
 	SRI_JAYANASA,
 	TUN_PERAK,
 
@@ -1315,11 +1320,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	ISABELLA,
 	PHILIP,
 	FRANCO,
-
-	CHARLEMAGNE,
-	LOUIS,
-	NAPOLEON,
-	DE_GAULLE,
 
 	ALFRED,
 	ELIZABETH,

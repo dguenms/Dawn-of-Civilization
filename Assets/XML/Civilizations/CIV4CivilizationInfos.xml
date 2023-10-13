@@ -1811,10 +1811,10 @@
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>FRA</Identifier>
-			<StartingYear>750</StartingYear>
+			<StartingYear>496</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>6</LoadingTime>
-				<LoadingTime>1</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
