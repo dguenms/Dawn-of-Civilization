@@ -726,24 +726,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Markets[COLOR_REVERT] increase a city's wealth. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT] and allow you to hire two [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. [COLOR_BUILDING_TEXT]Markets[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MANDE_MINT</Tag>
-		<English>Mint</English>
-		<French>
-			<Text>H&#244;tel de la Monnaie:H&#244;tels de la Monnaie</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>M&#252;nzanstalt</German>
-		<Italian>Zecca</Italian>
-		<Spanish>Ceca:Cecas</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MANDE_MINT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</English>
-		<French>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</French>
-		<German>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</Spanish>
+		<Tag>TXT_KEY_BUILDING_MANDE_WANGARA</Tag>
+		<English>Wangara</English>
+		<French>Wangara</French>
+		<German>Wangara</German>
+		<Italian>Wangara</Italian>
+		<Spanish>Wangara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE_STRATEGY</Tag>
