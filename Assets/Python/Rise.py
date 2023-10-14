@@ -61,6 +61,7 @@ dClearedForBirth = {
 	iIndia: iHarappa,
 	iByzantium: iGreece,
 	iItaly: iRome,
+	iRussia: iRus,
 	iMexico: iAztecs,
 }
 
