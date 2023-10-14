@@ -1061,7 +1061,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_JEWELLER</BuildingClassType>
 					<BuildingType>BUILDING_PHOENICIAN_GLASSMAKER</BuildingType>
 				</Building>
 				<Building>
