@@ -374,24 +374,12 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Dun[COLOR_REVERT], the Celtic replacement for [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], gives all eligible units built in this city the [COLOR_HIGHLIGHT_TEXT]Guerrilla I[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE</Tag>
-		<English>Royal Exchange</English>
-		<French>
-			<Text>Bourse royale</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>K&#246;nigliche B&#246;rse</German>
-		<Italian>Borsa Reale</Italian>
-		<Spanish>Bolsa Real</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</English>
-		<French>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the French replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</French>
-		<German>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the German replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the Italian replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the Spanish replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</Spanish>
+		<Tag>TXT_KEY_BUILDING_ENGLISH_EXCHEQUER</Tag>
+		<English>Exchequer</English>
+		<French>Exchequer</French>
+		<German>Exchequer</German>
+		<Italian>Exchequer</Italian>
+		<Spanish>Exchequer</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
