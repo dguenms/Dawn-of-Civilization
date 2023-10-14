@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Brazil -->
+<!-- Malays -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALAYS_DESC</Tag>
@@ -8,14 +8,6 @@
 		<German>The Malays</German>
 		<Italian>The Malays</Italian>
 		<Spanish>The Malays</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALAYS_PEOPLES</Tag>
-		<English>Austronesian Peoples</English>
-		<French>Austronesian Peoples</French>
-		<German>Austronesian Peoples</German>
-		<Italian>Austronesian Peoples</Italian>
-		<Spanish>Austronesian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALAYS_ADJECTIVE</Tag>
@@ -27,14 +19,22 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALAYS_SHORT_DESC</Tag>
-		<English>Malays</English>
-		<French>Malays</French>
-		<German>Malays</German>
-		<Italian>Malays</Italian>
-		<Spanish>Malays</Spanish>
+		<English>Malaya</English>
+		<French>Malaya</French>
+		<German>Malaya</German>
+		<Italian>Malaya</Italian>
+		<Spanish>Malaya</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALAYS_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_MALAYA_PEOPLES</Tag>
+		<English>Austronesian Peoples</English>
+		<French>Austronesian Peoples</French>
+		<German>Austronesian Peoples</German>
+		<Italian>Austronesian Peoples</Italian>
+		<Spanish>Austronesian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_DEFAULT</Tag>
 		<English>Melayu Kingdom</English>
 		<French></French>
 		<German></German>
