@@ -1728,8 +1728,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
-					<BuildingType>BUILDING_ENGLISH_ROYAL_EXCHANGE</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_ENGLISH_EXCHEQUER</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
