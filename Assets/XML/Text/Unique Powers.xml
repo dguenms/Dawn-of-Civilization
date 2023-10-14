@@ -978,7 +978,7 @@
 		<Spanish>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
+		<Tag>TXT_KEY_UP_DRA_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<French>The pouvoir de la thalassocratie :</French>
 		<German>Die Macht der Thalassokratie:</German>
@@ -986,7 +986,7 @@
 		<Spanish>The Power of Thalassocracy:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TAM</Tag>
+		<Tag>TXT_KEY_UP_DRA</Tag>
 		<English>Extra commerce on coast and ocean tiles</English>
 		<French>Les cases d'oc&#233;an rapportent du commerce suppl&#233;mentaire</French>
 		<German>Zus&#228;tzlicher Kommerz auf K&#252;sten- und Ozeanfeldern</German>
@@ -994,12 +994,12 @@
 		<Spanish>Extra commerce on coast and ocean tiles</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TAMIL_CONQUESTS_TARGET</Tag>
-		<English>The Tamils have fielded an army to conquer our civilization!</English>
-		<French>Les Tamouls ont lev&#233; une arm&#233;e pour conqu&#233;rir notre civilisation !</French>
-		<German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
-		<Italian>The Tamils have fielded an army to conquer our civilization!</Italian>
-		<Spanish>The Tamils have fielded an army to conquer our civilization!</Spanish>
+		<Tag>TXT_KEY_UP_DRAVIDIA_CONQUESTS_TARGET</Tag>
+		<English>The Dravidians have fielded an army to conquer our civilization!</English>
+		<French>The Dravidians have fielded an army to conquer our civilization!</French>
+		<German>The Dravidians have fielded an army to conquer our civilization!</German>
+		<Italian>The Dravidians have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Dravidians have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>

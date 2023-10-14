@@ -1111,12 +1111,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
-			<Type>BUILDING_TAMIL_SANGAM</Type>
-			<Description>TXT_KEY_BUILDING_TAMIL_SANGAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TAMIL_SANGAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Strategy>
+			<Type>BUILDING_DRAVIDIAN_SANGAM</Type>
+			<Description>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_SANGAM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_DRAVIDIAN_SANGAM</ArtDefineTag>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<iCost>90</iCost>

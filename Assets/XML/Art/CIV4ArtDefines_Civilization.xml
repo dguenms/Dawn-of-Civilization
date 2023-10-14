@@ -277,9 +277,9 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_TAMILS</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Tamil.dds</Path>
+			<Type>ART_DEF_CIVILIZATION_DRAVIDIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Dravidia.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Dravidia.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>

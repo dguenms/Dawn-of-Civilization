@@ -16,7 +16,7 @@ lOldCivilizations = [
 	iPersia,
 	iRome,
 	iMaya,
-	iTamils,
+	iDravidia,
 	iEthiopia,
 	iKorea,
 	iByzantium,

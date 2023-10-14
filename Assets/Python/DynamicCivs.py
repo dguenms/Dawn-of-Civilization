@@ -23,7 +23,7 @@ dDefaultInsertNames = {
 	iVikings : "TXT_KEY_CIV_VIKINGS_SCANDINAVIA",
 	iKhmer : "TXT_KEY_CIV_KHMER_KAMPUCHEA",
 	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARTICLE",
-	iTamils : "TXT_KEY_CIV_TAMILS_TAMIL_NADU",
+	iDravidia : "TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU",
 	iMaya : "TXT_KEY_CIV_MAYA_YUCATAN",
 	iThailand : "TXT_KEY_CIV_THAILAND_SIAM",
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCO",
@@ -415,14 +415,14 @@ lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iVikings, iColombia]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
-lPeoplesRepublicAdj = [iTamils, iByzantium, iMongols]
+lPeoplesRepublicAdj = [iDravidia, iByzantium, iMongols]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 
 dEmpireThreshold = {
 	iPhoenicia : 4,
 	iPolynesia : 3,
-	iTamils : 3,
+	iDravidia : 3,
 	iKorea : 4,
 	iTibet : 2,
 	iMoors : 3,
@@ -491,7 +491,7 @@ dStartingLeaders = [
 	iCelts : iBrennus,
 	iMaya : iPacal,
 	iJapan : iKammu,
-	iTamils : iRajendra,
+	iDravidia : iRajendra,
 	iEthiopia : iEzana,
 	iVietnam: iLeLoi,
 	iToltecs : iTopiltzin,
@@ -544,7 +544,7 @@ dStartingLeaders = [
 {
 	iChina : iHongwu,
 	iIndia : iShivaji,
-	iTamils : iKrishnaDevaRaya,
+	iDravidia : iKrishnaDevaRaya,
 	iKorea : iSejong,
 	iJapan : iOdaNobunaga,
 	iTurks : iTamerlane,
@@ -959,12 +959,12 @@ def specificName(iPlayer):
 			
 		return "TXT_KEY_CIV_POLYNESIA_TONGA"
 		
-	elif iCiv == iTamils:
+	elif iCiv == iDravidia:
 		if getColumn(iPlayer) >= 11 or scenario() == i1700AD:
-			return "TXT_KEY_CIV_TAMILS_MYSORE"
+			return "TXT_KEY_CIV_DRAVIDIA_MYSORE"
 			
 		if getColumn(iPlayer) >= 9:
-			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
+			return "TXT_KEY_CIV_DRAVIDIA_VIJAYANAGARA"
 			
 	elif iCiv == iEthiopia:
 		if not game.isReligionFounded(iIslam):
@@ -1296,19 +1296,19 @@ def specificAdjective(iPlayer):
 		if player(iByzantium).isExisting() and not team(iByzantium).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 			
-	elif iCiv == iTamils:
+	elif iCiv == iDravidia:
 		if iReligion == iIslam:
 			if iEra in [iMedieval, iRenaissance]:
-				return "TXT_KEY_CIV_TAMILS_BAHMANI"
+				return "TXT_KEY_CIV_DRAVIDIA_BAHMANI"
 	
 		if iEra <= iClassical:
 			if isCurrentCapital(iPlayer, "Madurai", "Thiruvananthapuram"):
-				return "TXT_KEY_CIV_TAMILS_PANDYAN"
+				return "TXT_KEY_CIV_DRAVIDIA_PANDYAN"
 				
 			if isCurrentCapital(iPlayer, "Cochin", "Kozhikode"):
-				return "TXT_KEY_CIV_TAMILS_CHERA"
+				return "TXT_KEY_CIV_DRAVIDIA_CHERA"
 				
-			return "TXT_KEY_CIV_TAMILS_CHOLA"
+			return "TXT_KEY_CIV_DRAVIDIA_CHOLA"
 			
 	elif iCiv == iEthiopia:
 		if iReligion == iIslam:
@@ -1722,7 +1722,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra >= iIndustrial:
 			return "TXT_KEY_EMPIRE_OF"
 			
-	elif iCiv == iTamils:
+	elif iCiv == iDravidia:
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	
@@ -2160,7 +2160,7 @@ def leader(iPlayer):
 		
 		if iEra >= iMedieval: return iZaraYaqob
 		
-	elif iCiv == iTamils:
+	elif iCiv == iDravidia:
 		if iEra >= iRenaissance: return iKrishnaDevaRaya
 		
 	elif iCiv == iByzantium:
@@ -2311,7 +2311,7 @@ def leaderName(iPlayer):
 			if year() >= year(1700):
 				return "TXT_KEY_LEADER_KANGXI"
 				
-	elif iCiv == iTamils:
+	elif iCiv == iDravidia:
 		if iLeader == iKrishnaDevaRaya:
 			if year() >= year(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"

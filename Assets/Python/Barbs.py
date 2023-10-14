@@ -333,8 +333,8 @@ def foundMinorCities(iGameTurn):
 			data.lMinorCityFounded[i] = True
 		
 def canFoundCity(sName):
-	if sName == 'Kanchipuram' and player(iTamils).isHuman(): return False
-	elif sName == 'Tanjapuri' and player(iTamils).isExisting(): return False
+	if sName == 'Kanchipuram' and player(iDravidia).isHuman(): return False
+	elif sName == 'Tanjapuri' and player(iDravidia).isExisting(): return False
 	elif sName == 'Zhongdu' and player(iChina).isHuman(): return False
 	elif sName == 'Hamburg' and (player(iHolyRome).isHuman() or data.iSeed % 4 == 0): return False
 	elif sName == 'L&#252;beck' and (player(iHolyRome).isHuman() or data.iSeed % 4 != 0): return False

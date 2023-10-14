@@ -61,7 +61,7 @@ iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, iMalays, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (8, iDravidia, iMalays, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
@@ -273,7 +273,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if iCiv == iGreece:
 			makeUnit(iPlayer, iCompanion, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 		
-		if iCiv == iTamils:
+		if iCiv == iDravidia:
 			makeUnit(iPlayer, iWarElephant, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 			
 		if iCiv == iSpain:

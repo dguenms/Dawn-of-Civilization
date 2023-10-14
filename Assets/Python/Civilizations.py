@@ -260,7 +260,7 @@ lCivilizations = [
 		techs=techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing)
 	),
 	Civilization(
-		iTamils,
+		iDravidia,
 		iGold=200,
 		iAdvancedStartPoints=80,
 		iStateReligion=iHinduism,
@@ -682,16 +682,16 @@ dStartingUnits = CivDict({
 		iWork: 1,
 		iSkirmish: 2,
 	},
-	iTamils: {
+	iDravidia: {
 		iSettle: 1,
 		iSettleSea: 1,
 		iWork: 2,
 		iDefend: 1,
-		iShock: 1,
 		iAttack: 2,
 		iMissionary: 1,
 		iWorkerSea: 1,
 		iEscort: 1,
+		# 1 War Elephant
 	},
 	iEthiopia: {
 		iSettle: 2,
@@ -1079,7 +1079,7 @@ dExtraAIUnits = CivDict({
 		iDefend: 2,
 		iAttack: 3,
 	},
-	iTamils: {
+	iDravidia: {
 		iShock: 1,
 		iMissionary: 1,
 	},
@@ -1156,7 +1156,7 @@ dAdditionalUnits = CivDict({
 		iDefend: 2,
 		iAttack: 2,
 	},
-	iTamils: {
+	iDravidia: {
 		iAttack: 2,
 		iShock: 1,
 	},
@@ -1367,6 +1367,8 @@ def createSpecificUnits(iPlayer, tile):
 	if iCiv == iPersia:
 		makeUnits(iPlayer, iImmortal, tile, 4, UnitAITypes.UNITAI_ATTACK)
 		makeUnit(iPlayer, iWarElephant, tile)
+	elif iCiv == iDravidia:
+		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
 	elif iCiv == iMoors:
@@ -1524,7 +1526,7 @@ dTechPreferences = {
 		iCalendar: 40,
 		iAesthetics: 30,
 	},
-	iTamils : {
+	iDravidia : {
 		iCement: 20,
 		iCompass: 20,
 		iCalendar: 20,
@@ -1913,7 +1915,7 @@ dBuildingPreferences = {
 	iMaya : {
 		iTempleOfKukulkan: 40,
 	},
-	iTamils : {
+	iDravidia : {
 		iJetavanaramaya: 30,
 		iKhajuraho: 20,
 	},
