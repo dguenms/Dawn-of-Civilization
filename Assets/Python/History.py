@@ -2,6 +2,7 @@ from Events import handler
 from RFCUtils import *
 from Core import *
 from Locations import *
+from Stability import *
 from Popups import popup
 from Scenarios import SCENARIOS
 
@@ -412,6 +413,21 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 def removeOrthodoxyFromAnatolia(iPlayer):
 	if civ(iPlayer) == iByzantium:
 		removeReligionByArea(plots.region(rAnatolia), iOrthodoxy)
+		
+
+### PREPARE BIRTH ###
+
+@handler("prepareBirth")
+def relocateCelts(iPlayer):
+	if civ(iPlayer) == iFrance:
+		iCelticPlayer = slot(iCelts)
+	
+		if iCelticPlayer >= 0 and player(iCelticPlayer).isAlive() and not player(iCelticPlayer).isHuman():
+			newCapital = cities.owner(iCelts).where(lambda city: city not in cities.birth(iFrance)).random()
+			if newCapital:
+				relocateCapital(iCelticPlayer, newCapital)
+			else:
+				completeCollapse(iCelticPlayer)
 
 
 ### BIRTH ###
@@ -421,7 +437,7 @@ def stabilizeAustria(iPlayer):
 	if civ(iPlayer) == iGermany:
 		iHolyRomanPlayer = slot(iHolyRome)
 
-		if stability(iHolyRomanPlayer) < iStabilityShaky:
+		if iHolyRomanPlayer >= 0 and stability(iHolyRomanPlayer) < iStabilityShaky:
 			data.setStabilityLevel(iHolyRomanPlayer, iStabilityShaky)
 			
 
