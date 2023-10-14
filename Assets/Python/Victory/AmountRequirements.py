@@ -23,7 +23,7 @@ class AverageCultureAmount(ThresholdRequirement):
 
 # First Egyption UHV goal
 # Third Egyptian UHV goal
-# First Tamil UHV goal
+# First Dravidian UHV goal
 # Third Khmer UHV goal
 # Third Mughal UHV goal
 class CultureAmount(ThresholdRequirement):
@@ -41,7 +41,7 @@ class CultureAmount(ThresholdRequirement):
 	
 
 # Third Phoenician UHV goal
-# First Tamil UHV goal
+# First Dravidian UHV goal
 # First Byzantine UHV goal
 # Third Mandinka UHV goal
 # Second Inca UHV goal

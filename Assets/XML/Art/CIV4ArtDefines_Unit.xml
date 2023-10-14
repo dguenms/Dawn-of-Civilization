@@ -5974,15 +5974,15 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_TAMIL_DHARANI</Type>
-			<Button>Art/Units/Tamil Dharani/Button_Dharani.dds</Button>
+			<Type>ART_DEF_UNIT_DRAVIDIAN_DHARANI</Type>
+			<Button>Art/Units/Dharani/Button_Dharani.dds</Button>
 			<fScale>0.14</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Tamil Dharani/wargalley_chola.nif</NIF>
+			<NIF>Art/Units/Dharani/wargalley_chola.nif</NIF>
 			<KFM>Art/Units/Galley/Galley.kfm</KFM>
-			<SHADERNIF>Art/Units/Tamil Dharani/wargalley_chola.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Dharani/wargalley_chola.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -9265,7 +9265,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_TAMIL_ROCKETEER</Type>
+			<Type>ART_DEF_UNIT_DRAVIDIAN_ROCKETEER</Type>
 			<Button>Art/Units/Rocketeer/Rocketeer.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>

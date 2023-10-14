@@ -13,7 +13,7 @@ iNumCivs = 57
 iChina, iColombia, iEgypt, iEngland, iEthiopia, iFrance, iGermany, iGreece, iHarappa, iHolyRome, 
 iInca, iIndia, iIndonesia, iIran, iItaly, iJapan, iKhmer, iCongo, iKorea, iMali, 
 iMaya, iMexico, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iOttomans, iPersia, iPoland, 
-iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iTamils, iThailand, iTibet, iTurks,
+iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iDravidia, iThailand, iTibet, iTurks,
 iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = range(iNumCivs)
 
 iNumRegions = 82
@@ -78,7 +78,7 @@ dCivNames = {
 	iRome: "Rome",
 	iRussia: "Russia",
 	iSpain: "Spain",
-	iTamils: "Tamils",
+	iDravidia: "Dravidia",
 	iThailand: "Thailand",
 	iTibet: "Tibet",
 	iTurks: "Turkestan",
@@ -126,7 +126,7 @@ iPolynesia :	((3, 20),	(5, 23)),
 iPersia :		((92, 43),	(95, 50)),
 iRome :			((66, 50),	(72, 57)),
 iMaya :			((21, 41),	(23, 44)),
-iTamils :		((105, 31),	(108, 35)),
+iDravidia :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),
 iKorea :		((130, 53),	(132, 56)),
 iByzantium :	((76, 51),	(87, 55)),

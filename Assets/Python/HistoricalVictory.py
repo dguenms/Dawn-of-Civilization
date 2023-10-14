@@ -9,7 +9,7 @@ lVikingTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iC
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-lSouthAsianCivs = [iIndia, iTamils, iVietnam, iMalays, iJava, iKhmer, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
 
 
 # city names
@@ -205,7 +205,7 @@ dGoals = {
 		Wonder(iTempleOfKukulkan, by=900),
 		ContactBeforeRevealed(group(iCivGroupEurope).named(EUROPEAN_CIVILIZATION), plots.regions(*lAmerica).named(AMERICA)),
 	),
-	iTamils: (
+	iDravidia: (
 		All(
 			GoldAmount(3000),
 			CultureAmount(2000),

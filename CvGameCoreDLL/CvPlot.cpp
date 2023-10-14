@@ -7090,8 +7090,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// Leoreth: Tamil UP
-		if (eCivilization == TAMILS)
+		// Leoreth: Dravidian UP
+		if (eCivilization == DRAVIDIA)
 		{
 			if (isWater() && eYield == YIELD_COMMERCE)
 			{

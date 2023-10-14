@@ -2038,7 +2038,7 @@
 			<Button>Art/Interface/Buttons/Builds/buildwatermill.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TAMIL_SANGAM</Type>
+			<Type>ART_DEF_BUILDING_DRAVIDIAN_SANGAM</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>

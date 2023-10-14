@@ -35,7 +35,7 @@ dLanguages = {
 	iRome: [iLangLatin],
 	iCelts: [iLangCeltic],
 	iMaya: [iLangMayan, iLangNahuatl],
-	iTamils: [iLangIndian],
+	iDravidia: [iLangIndian],
 	iEthiopia: [iLangEthiopian],
 	iToltecs: [iLangNahuatl],
 	iKushans: [iLangIndian, iLangGreek, iLangTurkish],

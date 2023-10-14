@@ -12467,7 +12467,7 @@ void CvPlayerAI::AI_doCommerce()
 				iIdealPercent = 40;
 			}
 
-			if ((getCivilizationType() == INDIA || getCivilizationType() == TAMILS) && getCurrentEra() >= ERA_MEDIEVAL)
+			if ((getCivilizationType() == INDIA || getCivilizationType() == DRAVIDIA) && getCurrentEra() >= ERA_MEDIEVAL)
 			{
 				iIdealPercent = 40;
 			}

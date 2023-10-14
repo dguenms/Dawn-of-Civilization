@@ -2429,7 +2429,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;*/
-	case TAMILS:
+	case DRAVIDIA:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		break;

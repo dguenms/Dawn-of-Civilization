@@ -6751,13 +6751,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GRENADIER</Class>
-			<Type>UNIT_TAMIL_ROCKETEER</Type>
+			<Type>UNIT_DRAVIDIAN_ROCKETEER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_TAMIL_ROCKETEER</Description>
-			<Civilopedia>TXT_KEY_UNIT_TAMIL_ROCKETEER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_TAMIL_ROCKETEER_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Description>
+			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -6851,7 +6851,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_TAMIL_ROCKETEER</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DRAVIDIAN_ROCKETEER</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16446,13 +16446,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_COG</Class>
-			<Type>UNIT_TAMIL_DHARANI</Type>
+			<Type>UNIT_DRAVIDIAN_DHARANI</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_TAMIL_DHARANI</Description>
-			<Civilopedia>TXT_KEY_UNIT_TAMIL_DHARANI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_DRAVIDIAN_DHARANI</Description>
+			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -16529,7 +16529,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_TAMIL_DHARANI</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DRAVIDIAN_DHARANI</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>

@@ -21,7 +21,7 @@ iPersia :		(94, 45), # Persepolis
 iRome :			(68, 53), # Rome
 iCelts :		(62, 57), # Nemessos
 iMaya :			(22, 41), # Tikal
-iTamils :		(107, 34), # Thanjavur
+iDravidia :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
 iToltecs :		(17, 43), # Tollan
 iKushans :		(100, 52), # Bactra
@@ -143,7 +143,7 @@ iPersia :		((92, 43),	(95, 50)),
 iRome :			((66, 50),	(72, 57)),
 iCelts :		((59, 56),	(63, 61)),
 iMaya :			((21, 41),	(23, 44)),
-iTamils :		((105, 31),	(108, 35)),
+iDravidia :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),
 iVietnam :		((120, 41),	(122, 43)),
 iToltecs :		((16, 42),	(18, 44)),

@@ -47,7 +47,7 @@ tGaul = ((51, 47), (58, 52))
 # second Arabian goal: control or vassalize Spain, the Maghreb, Egypt, Mesopotamia and Persia in 1300 AD
 tAfrica = ((50, 36), (61, 39))
 
-# second Tamil goal: control or vassalize the Deccan and Srivijaya in 1000 AD
+# second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
 tDeccan = ((88, 28), (94, 36))
 tSrivijaya = ((98, 25), (105, 29))
 

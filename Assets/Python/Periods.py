@@ -15,7 +15,7 @@ dPeriods600AD = {
 dPeriods1700AD = {
 	iChina : iPeriodMing,
 	iIndia : iPeriodMaratha,
-	iTamils : iPeriodVijayanagara,
+	iDravidia : iPeriodVijayanagara,
 	iVikings : iPeriodSweden,
 	iTurks : iPeriodUzbeks,
 	iKhmer : iPeriodVietnam,
@@ -177,9 +177,9 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
 	iEra = infos.tech(iTech).getEra()
 	
-	if iCiv == iTamils:
+	if iCiv == iDravidia:
 		if iEra == iMedieval:
-			setPeriod(iTamils, iPeriodVijayanagara)
+			setPeriod(iDravidia, iPeriodVijayanagara)
 	
 	if iCiv == iVikings:
 		if iEra == iRenaissance:

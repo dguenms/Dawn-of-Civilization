@@ -3489,12 +3489,12 @@
 		<Spanish>We are receiving reports that the Greek armies intend to capture the heart of Persia!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_CONQUERORS_TAM_INO</Tag>
-		<English>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</English>
-		<French>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</French>
-		<German>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</German>
-		<Italian>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Italian>
-		<Spanish>We are receiving reports that Tamil traders intend to conquer a permanent foothold in Indonesia!</Spanish>
+		<Tag>TXT_KEY_MESSAGE_CONQUERORS_DRA_INO</Tag>
+		<English>We are receiving reports that Dravidian traders intend to conquer a permanent foothold in Indonesia!</English>
+		<French>We are receiving reports that Dravidian traders intend to conquer a permanent foothold in Indonesia!</French>
+		<German>We are receiving reports that Dravidian traders intend to conquer a permanent foothold in Indonesia!</German>
+		<Italian>We are receiving reports that Dravidian traders intend to conquer a permanent foothold in Indonesia!</Italian>
+		<Spanish>We are receiving reports that Dravidian traders intend to conquer a permanent foothold in Indonesia!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CONQUERORS_SPA_MOO</Tag>

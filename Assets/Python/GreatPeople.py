@@ -59,7 +59,7 @@ def create(iPlayer, iUnit, tile):
 	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
 def getAlias(iCiv, iType, iEra):
-	if iCiv in [iHarappa, iTamils]: return iIndia
+	if iCiv in [iHarappa, iDravidia]: return iIndia
 	elif iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam: return iArabia
 	elif iCiv == iIran: return iPersia
 	

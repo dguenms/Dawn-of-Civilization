@@ -36,7 +36,7 @@ lCivilizations = [
 		dAttitudes={iMughals: -2, iOttomans: -4}
 	),
 	Civilization(
-		iTamils,
+		iDravidia,
 		iLeader=iKrishnaDevaRaya,
 		sLeaderName="TXT_KEY_LEADER_TIPU_SULTAN",
 		iGold=400,
@@ -284,7 +284,7 @@ scenario1700AD = Scenario(
 		iChina: 12,
 		iIndia: 8,
 		iPersia: 4,
-		iTamils: 5,
+		iDravidia: 5,
 		iKorea: 6,
 		iJapan: 6,
 		iVikings: 8,
@@ -305,7 +305,7 @@ scenario1700AD = Scenario(
 		iChina: 4,
 		iIndia: 3,
 		iPersia: 2,
-		iTamils: 2,
+		iDravidia: 2,
 		iKorea: 3,
 		iJapan: 3,
 		iVikings: 3,
@@ -337,7 +337,7 @@ scenario1700AD = Scenario(
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
 	
-	lAllGoalsFailed = [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
+	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
 	

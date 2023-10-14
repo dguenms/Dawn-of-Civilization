@@ -1886,7 +1886,7 @@
 		<Spanish>[COLOR_UNIT_TEXT]Aztec Slaves[COLOR_REVERT] build improvements including [COLOR_HIGHLIGHT_TEXT]Slave Plantations[COLOR_REVERT], can settle in a city as a [COLOR_HIGHLIGHT_TEXT]Slave[COLOR_REVERT] specialist, can hurry production in a city and can be sacrificed in cities for temporary happiness.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI</Tag>
+		<Tag>TXT_KEY_UNIT_DRAVIDIAN_DHARANI</Tag>
 		<English>Dharani</English>
 		<French>
 			<Text>Dharani</Text>
@@ -1906,12 +1906,12 @@
 		<Spanish>[COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</English>
-		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</French>
-		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Spanish>
+		<Tag>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</English>
+		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</French>
+		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
@@ -3366,7 +3366,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Malay replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TAMIL_ROCKETEER</Tag>
+		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Tag>
 		<English>Rocketeer</English>
 		<French>
 			<Text>Tireur de fus&#233;es</Text>
@@ -3378,12 +3378,12 @@
 		<Spanish>Rocketeer</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TAMIL_ROCKETEER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
-		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
-		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
+		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
+		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
+		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
