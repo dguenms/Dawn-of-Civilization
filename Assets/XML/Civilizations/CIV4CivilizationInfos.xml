@@ -5512,8 +5512,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
-					<BuildingType>BUILDING_RUSSIAN_RESEARCH_INSTITUTE</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingType>BUILDING_RUSSIAN_KATORGA</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

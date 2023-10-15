@@ -1034,14 +1034,6 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Public Transportation[COLOR_REVERT] increases a city's health and even more increase the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_RUSSIAN_RESEARCH_INSTITUTE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Research Institute[COLOR_REVERT], the Russian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], provides a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</English>
-		<French>The [COLOR_BUILDING_TEXT]Research Institute[COLOR_REVERT], the Russian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], provides a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</French>
-		<German>The [COLOR_BUILDING_TEXT]Research Institute[COLOR_REVERT], the Russian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], provides a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Research Institute[COLOR_REVERT], the Russian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], provides a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Research Institute[COLOR_REVERT], the Russian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], provides a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SECURITY_BUREAU</Tag>
 		<English>Security Bureau</English>
 		<French>
@@ -3152,6 +3144,14 @@
 		<German>Calmecac</German>
 		<Italian>Calmecac</Italian>
 		<Spanish>Calmecac</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSSIAN_KATORGA</Tag>
+		<English>Katorga</English>
+		<French>Katorga</French>
+		<German>Katorga</German>
+		<Italian>Katorga</Italian>
+		<Spanish>Katorga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
