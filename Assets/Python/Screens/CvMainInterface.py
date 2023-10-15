@@ -2510,7 +2510,7 @@ class CvMainInterface:
 						if plot.isCity():
 							city = plot.getPlotCity()
 							if civ(city) == iAztecs and not city.isWeLoveTheKingDay():
-								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(iSacrificialAltar).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
+								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(unique_building(pUnit.getOwner(), iPaganTemple)).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
 								screen.show("BottomButtonContainer")
 								iCount = iCount + 1
 						

@@ -688,7 +688,7 @@
 			<Button>Art/Interface/Buttons/Buildings/rcmp_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AZTEC_SACRIFICIAL_ALTAR</Type>
+			<Type>ART_DEF_BUILDING_TEOTL_STEP_PYRAMID</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.62</fScale>
@@ -2518,16 +2518,6 @@
 			<Button>Art/Structures/Buildings/Mazdaist_Temple/mazdaist_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TEOTL_STEP_PYRAMID</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.95</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Teotl_Step_Pyramid/Aztec.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Teotl_Step_Pyramid/step_pyramid.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SHINTO_SHRINE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3628,12 +3618,22 @@
 			<Button>Art/Structures/Buildings/Caravanserai/Button_Caravanserai.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TOLTEC_OBSIDIAN_WORKSHOP</Type>
+			<Type>ART_DEF_BUILDING_AZTEC_CALMECAC</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Calmecac/Meso1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Calmecac/Calmecac.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TOLTEC_OBSIDIAN_WORKSHOP</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Obsidian_Workshop/Meso1.nif</NIF>
+			<NIF>Art/Structures/Buildings/Obsidian_Workshop/Meso2.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Obsidian_Workshop/ObsidianWorkshop.dds</Button>
 		</BuildingArtInfo>

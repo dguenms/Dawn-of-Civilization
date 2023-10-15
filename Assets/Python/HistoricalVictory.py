@@ -423,7 +423,7 @@ dGoals = {
 	),
 	iAztecs: (
 		BestPopulationCity(start(iAztecs).named(TENOCHTITLAN), at=1520),
-		BuildingCount((iPaganTemple, 6), (iSacrificialAltar, 6), by=1650),
+		BuildingCount((iPaganTemple, 6), (iCalmecac, 6), by=1650),
 		EnslaveCount(20, excluding=group(iCivGroupAmerica).named(EUROPEAN)),
 	),
 	iMughals: (

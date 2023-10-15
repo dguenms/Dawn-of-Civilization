@@ -94,14 +94,6 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Cold Storage Plant[COLOR_REVERT], the Argentine replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_AZTEC_SACRIFICIAL_ALTAR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</English>
-		<French>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</French>
-		<German>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BANK_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] greatly increase a city's production of wealth and allow you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Central Bank[COLOR_REVERT] national wonder.</English>
 		<French>[COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] greatly increase a city's production of wealth and allow you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Central Bank[COLOR_REVERT] national wonder.</French>
@@ -3152,6 +3144,14 @@
 		<German>Qanat</German>
 		<Italian>Qanat</Italian>
 		<Spanish>Qanat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AZTEC_CALMECAC</Tag>
+		<English>Calmecac</English>
+		<French>Calmecac</French>
+		<German>Calmecac</German>
+		<Italian>Calmecac</Italian>
+		<Spanish>Calmecac</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
