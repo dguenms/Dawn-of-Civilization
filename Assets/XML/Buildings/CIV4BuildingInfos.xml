@@ -822,12 +822,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
-			<Type>BUILDING_MONGOLIAN_GER</Type>
-			<Description>TXT_KEY_BUILDING_MONGOLIAN_GER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MONGOLIAN_GER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Strategy>
+			<Type>BUILDING_MONGOLIAN_ORTEGE</Type>
+			<Description>TXT_KEY_BUILDING_MONGOLIAN_ORTEGE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MONGOLIAN_ORTEGE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_ORTEGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_GER</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_ORTEGE</ArtDefineTag>
 			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -836,6 +836,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>2</iAsset>
 			<iPower>4</iPower>
+			<iTradeRoutes>1</iTradeRoutes>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<UnitCombatFreeExperiences>

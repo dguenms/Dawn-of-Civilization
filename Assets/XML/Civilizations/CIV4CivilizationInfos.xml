@@ -4079,7 +4079,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
-					<BuildingType>BUILDING_MONGOLIAN_GER</BuildingType>
+					<BuildingType>BUILDING_MONGOLIAN_ORTEGE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
