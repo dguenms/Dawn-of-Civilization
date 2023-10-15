@@ -458,24 +458,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Granaries[COLOR_REVERT] store food to help increase a city's growth rate and increase the city's health with access to [COLOR_HIGHLIGHT_TEXT]Corn[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rice[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Wheat[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MONGOLIAN_GER</Tag>
-		<English>Ger</English>
-		<French>
-			<Text>Yourte:Yourtes</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Jurte</German>
-		<Italian>Ger</Italian>
-		<Spanish>Ger:Gers</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</Spanish>
+		<Tag>TXT_KEY_BUILDING_MONGOLIAN_ORTEGE</Tag>
+		<English>Ortege</English>
+		<French>Ortege</French>
+		<German>Ortege</German>
+		<Italian>Ortege</Italian>
+		<Spanish>Ortege</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREEK_ODEON_STRATEGY</Tag>
