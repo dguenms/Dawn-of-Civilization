@@ -2306,6 +2306,45 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
+			<Type>BUILDING_RUSSIAN_KATORGA</Type>
+			<Description>TXT_KEY_BUILDING_RUSSIAN_KATORGA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_RUSSIAN_KATORGA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_RUSSIAN_KATORGA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_RUSSIAN_KATORGA</ArtDefineTag>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
+			<PrereqTech>TECH_LAW</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>50</iConquestProb>
+			<iMaintenanceModifier>-25</iMaintenanceModifier>
+			<iHurryAngerModifier>-50</iHurryAngerModifier>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>0</iYield>
+				<iYield>4</iYield>
+			</YieldChanges>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</CommerceChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BATH</BuildingClass>
 			<Type>BUILDING_BATH</Type>
 			<Description>TXT_KEY_BUILDING_BATH</Description>
@@ -4739,52 +4778,6 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_OBSERVATORY</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_LABORATORY</BuildingClass>
-			<Type>BUILDING_RUSSIAN_RESEARCH_INSTITUTE</Type>
-			<Description>TXT_KEY_BUILDING_RUSSIAN_RESEARCH_INSTITUTE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_RUSSIAN_RESEARCH_INSTITUTE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_RUSSIAN_RESEARCH_INSTITUTE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_RUSSIAN_RESEARCH_INSTITUTE</ArtDefineTag>
-			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<iCost>300</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>70</iConquestProb>
-			<iSpaceProductionModifier>50</iSpaceProductionModifier>
-			<iAsset>8</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<PowerCommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
-			</PowerCommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<FreeSpecialistCounts>
-				<FreeSpecialistCount>
-					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-					<iFreeSpecialistCount>1</iFreeSpecialistCount>
-				</FreeSpecialistCount>
-			</FreeSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>

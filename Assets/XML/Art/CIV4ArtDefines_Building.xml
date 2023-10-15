@@ -3707,5 +3707,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Alchemist/Alchemist.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_RUSSIAN_KATORGA</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Katorga/east_war_college.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Katorga/Katorga.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
