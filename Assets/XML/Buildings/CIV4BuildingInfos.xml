@@ -4246,12 +4246,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LEVEE</BuildingClass>
-			<Type>BUILDING_DUTCH_DIKE</Type>
-			<Description>TXT_KEY_BUILDING_DUTCH_DIKE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_DUTCH_DIKE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_DUTCH_DIKE_STRATEGY</Strategy>
+			<Type>BUILDING_DUTCH_POLDER</Type>
+			<Description>TXT_KEY_BUILDING_DUTCH_POLDER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DUTCH_POLDER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DUTCH_POLDER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_DUTCH_DIKE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_DUTCH_POLDER</ArtDefineTag>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
 			<bWater>1</bWater>
 			<bRiver>1</bRiver>

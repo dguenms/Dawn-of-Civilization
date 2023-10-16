@@ -938,7 +938,7 @@ iMarket, iForum, iCaravanserai, iWangara, iJail, iDivan, iKatorga, iBath, iReser
 iForge, iBloomeryBuilding, iMetalworker, iArtStudio, iCastle, iCitadel, iIslandFort, iPharmacy, iAlchemist, 
 iGrocer, iPostOffice, iTambo, iWharf, iVolok, iCoffeehouse, iSalon, iBank, iConstabulary, iMountedPolice, iCustomsHouse, 
 iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, iSewer, iStarFort, iEstate, 
-iMausoleum, iFazenda, iHacienda, iDrydock, iLevee, iDike, iObservatory, iWarehouse, iCourthouse, iExchequer, 
+iMausoleum, iFazenda, iHacienda, iDrydock, iLevee, iPolder, iObservatory, iWarehouse, iCourthouse, iExchequer, 
 iFactory, iAssemblyPlant, iZaibatsu, iDistillery, iPark, iBagh, iCoalPlant, iRailwayStation, iLaboratory, iAbattoir, 
 iGrainSilo, iNewsPress, iIndustrialPark, iCinema, iHospital, iSupermarket, iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, 
 iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iZoo, 
