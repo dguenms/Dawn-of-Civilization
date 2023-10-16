@@ -2038,16 +2038,6 @@
 			<Button>Art/Interface/Buttons/Builds/buildwatermill.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_DRAVIDIAN_SANGAM</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Sangam/Sringeri.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Sangam/Button_Sangam.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TIBETAN_GOMPA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>1</bAnimated>
@@ -3716,6 +3706,16 @@
 			<NIF>Art/Structures/Buildings/Katorga/east_war_college.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Katorga/Katorga.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Gopuram/india_temple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Gopuram/Gopuram.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
