@@ -1494,8 +1494,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
-					<BuildingType>BUILDING_DRAVIDIAN_SANGAM</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
+					<BuildingType>BUILDING_DRAVIDIAN_GOPURAM</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

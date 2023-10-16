@@ -1134,20 +1134,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT] increase food output in cities with access to power.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM</Tag>
-		<English>Sangam</English>
-		<French>Sangam</French>
-		<German>Sangam</German>
-		<Italian>Sangam</Italian>
-		<Spanish>Sangam</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Dravidian replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
-		<French>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Dravidian replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</French>
-		<German>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Dravidian replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Dravidian replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Dravidian replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</Spanish>
+		<Tag>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM</Tag>
+		<English>Gopuram</English>
+		<French>Gopuram</French>
+		<German>Gopuram</German>
+		<Italian>Gopuram</Italian>
+		<Spanish>Gopuram</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZULU_IKHANDA_STRATEGY</Tag>

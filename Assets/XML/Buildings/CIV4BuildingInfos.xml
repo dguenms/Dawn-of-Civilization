@@ -1112,59 +1112,6 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
-			<Type>BUILDING_DRAVIDIAN_SANGAM</Type>
-			<Description>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_DRAVIDIAN_SANGAM_STRATEGY</Strategy>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_DRAVIDIAN_SANGAM</ArtDefineTag>
-			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
-			<PrereqTech>TECH_WRITING</PrereqTech>
-			<iCost>90</iCost>
-			<iConquestProb>70</iConquestProb>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iAsset>3</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
-				</SpecialistCount>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
 			<Type>BUILDING_AZTEC_CALMECAC</Type>
 			<Description>TXT_KEY_BUILDING_AZTEC_CALMECAC</Description>
 			<Civilopedia>TXT_KEY_BUILDING_AZTEC_CALMECAC_PEDIA</Civilopedia>
@@ -3635,6 +3582,82 @@
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CIVIC_SQUARE</BuildingClass>
+			<Type>BUILDING_DRAVIDIAN_GOPURAM</Type>
+			<Description>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</ArtDefineTag>
+			<PrereqTech>TECH_STATECRAFT</PrereqTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>150</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldModifiers>
+				<iYield>10</iYield>
+			</YieldModifiers>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
