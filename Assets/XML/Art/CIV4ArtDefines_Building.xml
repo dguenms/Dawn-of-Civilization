@@ -3717,5 +3717,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Gopuram/Gopuram.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_THAI_FLOATING_MARKET</Type>
+			<LSystem>LSYSTEM_RIVER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Floating Market/chinaport.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Floating Market/Button_Floating_Market.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
