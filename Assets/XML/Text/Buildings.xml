@@ -1150,20 +1150,12 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Ikhanda[COLOR_REVERT], the Zulu replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT], are more expensive and lower city maintenance costs.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI</Tag>
-		<English>Ho Trai</English>
-		<French>Ho Trai</French>
-		<German>Ho Trai</German>
-		<Italian>Ho Trai</Italian>
-		<Spanish>Ho Trai</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], increases happiness and is cheaper.</English>
-		<French>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], increases happiness and is cheaper.</French>
-		<German>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], increases happiness and is cheaper.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], increases happiness and is cheaper.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], increases happiness and is cheaper.</Spanish>
+		<Tag>TXT_KEY_BUILDING_THAI_FLOATING_MARKET</Tag>
+		<English>Floating Market</English>
+		<French>Floating Market</French>
+		<German>Floating Market</German>
+		<Italian>Floating Market</Italian>
+		<Spanish>Floating Market</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEATRE_STRATEGY</Tag>
