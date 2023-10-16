@@ -830,36 +830,20 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DUTCH_DIKE</Tag>
-		<English>Dike</English>
-		<French>
-			<Text>Digue:Digues</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Deich</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Diga:Dighe</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Dijk:Dijken</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_DUTCH_POLDER</Tag>
+		<English>Polder</English>
+		<French>Polder</French>
+		<German>Polder</German>
+		<Italian>Polder</Italian>
+		<Spanish>Polder</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DUTCH_DIKE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</English>
-		<French>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</French>
-		<German>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</Spanish>
+		<Tag>TXT_KEY_BUILDING_DUTCH_POLDER_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Polder[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</English>
+		<French>The [COLOR_BUILDING_TEXT]Polder[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</French>
+		<German>The [COLOR_BUILDING_TEXT]Polder[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Polder[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Polder[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], provides a production bonus from all water tiles worked by a city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WALLS_STRATEGY</Tag>
