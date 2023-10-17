@@ -651,8 +651,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
-					<BuildingType>BUILDING_BRAZILIAN_FAZENDA</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
+					<BuildingType>BUILDING_BRAZILIAN_SAMBADROME</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

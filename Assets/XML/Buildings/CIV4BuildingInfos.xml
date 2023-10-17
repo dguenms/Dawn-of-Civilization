@@ -1622,6 +1622,29 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
+			<Type>BUILDING_BRAZILIAN_SAMBADROME</Type>
+			<Description>TXT_KEY_BUILDING_BRAZILIAN_SAMBADROME</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BRAZILIAN_SAMBADROME_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BRAZILIAN_SAMBADROME_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BRAZILIAN_SAMBADROME</ArtDefineTag>
+			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<iCost>80</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iHappiness>4</iHappiness>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>20</iCommerce>
+			</CommerceHappinesses>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_BABYLONIAN_GARDEN</Type>
 			<Description>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_PEDIA</Civilopedia>
@@ -4007,104 +4030,6 @@
 					<iFreeSpecialistCount>1</iFreeSpecialistCount>
 				</FreeSpecialistCount>
 			</FreeSpecialistCounts>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_ADMIN</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_ESTATE</BuildingClass>
-			<Type>BUILDING_BRAZILIAN_FAZENDA</Type>
-			<Description>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</ArtDefineTag>
-			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
-			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
-			<iCost>150</iCost>
-			<iConquestProb>50</iConquestProb>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iAsset>1</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
-			</CommerceChanges>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
-			<CommerceHappinesses>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>5</iCommerce>
-			</CommerceHappinesses>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<BonusYieldChanges>
-				<BonusYieldChange>
-					<BonusType>BONUS_BANANA</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SUGAR</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_COFFEE</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_TOBACCO</BonusType>
-					<YieldChanges>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-			</BonusYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
