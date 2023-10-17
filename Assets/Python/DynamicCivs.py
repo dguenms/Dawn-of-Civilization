@@ -1570,7 +1570,7 @@ def republicTitle(iPlayer):
 			return key(iPlayer, "CSA")
 			
 	if iCiv == iColombia:
-		if isControlled(iPlayer, plots.region(rPeru)) and isControlled(iPlayer, plots.rectangle(tColombia)):
+		if isControlled(iPlayer, plots.region(rAndes)) and isControlled(iPlayer, plots.rectangle(tColombia)):
 			return "TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES"
 			
 	if pPlayer.getStateReligion() == iIslam:
@@ -1707,7 +1707,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iCiv == iColombia:
 		if bEmpire:
-			if isControlled(iPlayer, plots.region(rPeru)) and isControlled(iPlayer, plots.rectangle(tColombia)):
+			if isControlled(iPlayer, plots.region(rAndes)) and isControlled(iPlayer, plots.rectangle(tColombia)):
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
 		
 			return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
