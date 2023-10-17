@@ -3727,5 +3727,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Floating Market/Button_Floating_Market.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BRAZILIAN_SAMBADROME</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>5.0</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Sambadrome/Teuchitlan01.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Sambadrome/Button_Carnival.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

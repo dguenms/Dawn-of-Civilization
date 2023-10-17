@@ -158,24 +158,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Broadcast Towers[COLOR_REVERT] greatly increase a city's cultural output with access to power. They also increase the happiness output from using the culture slider, or if you have access to [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] and allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Broadcast Towers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] world wonder.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
-		<English>Fazenda</English>
-		<French>
-			<Text>Fazenda:Fazendas</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Fazenda</German>
-		<Italian>Fazenda</Italian>
-		<Spanish>Fazenda</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT].</Spanish>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_SAMBADROME</Tag>
+		<English>Sambadrome</English>
+		<French>Sambadrome</French>
+		<German>Sambadrome</German>
+		<Italian>Sambadrome</Italian>
+		<Spanish>Sambadrome</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUNKER_STRATEGY</Tag>
