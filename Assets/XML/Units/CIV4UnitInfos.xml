@@ -17143,6 +17143,7 @@
 			<iNukeRange>-1</iNukeRange>
 			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
+			<iBombardRate>8</iBombardRate>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
