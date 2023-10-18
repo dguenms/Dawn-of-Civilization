@@ -2218,7 +2218,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_DUTCH_EAST_INDIAMAN</Type>
+			<Type>ART_DEF_UNIT_DUTCH_FLUYT</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,10</Button>
 			<fScale>0.18</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>

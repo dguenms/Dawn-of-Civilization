@@ -17238,13 +17238,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GALLEON</Class>
-			<Type>UNIT_DUTCH_EAST_INDIAMAN</Type>
+			<Type>UNIT_DUTCH_FLUYT</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN</Description>
-			<Civilopedia>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_DUTCH_FLUYT</Description>
+			<Civilopedia>TXT_KEY_UNIT_DUTCH_FLUYT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DUTCH_FLUYT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bRivalTerritory>1</bRivalTerritory>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -17303,7 +17303,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DUTCH_EAST_INDIAMAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DUTCH_FLUYT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
