@@ -530,14 +530,6 @@
 		<Spanish>[COLOR_UNIT_TEXT]Fighters[COLOR_REVERT] can intercept enemy air units, destroy improvements, bomb city defenses, perform recon missions and damage enemy units.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MANDE_FARARI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</English>
-		<French>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</French>
-		<German>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</English>
 		<French>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</French>
