@@ -1975,8 +1975,8 @@
 					<UnitType>UNIT_FRENCH_GENDARME</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
-					<UnitType>UNIT_FRENCH_GUARD</UnitType>
+					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<UnitType>UNIT_FRENCH_GRIBEAUVAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
