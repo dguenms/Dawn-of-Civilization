@@ -4552,7 +4552,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
-					<UnitType>UNIT_DUTCH_EAST_INDIAMAN</UnitType>
+					<UnitType>UNIT_DUTCH_FLUYT</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>

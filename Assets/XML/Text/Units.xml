@@ -1346,36 +1346,20 @@
 		<Spanish>[COLOR_UNIT_TEXT]Panthers[COLOR_REVERT] are Barbarian units that spawn in Africa from 3000 to 850 BC.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN</Tag>
-		<English>East Indiaman</English>
-		<French>
-			<Text>Indiaman</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Ostindienfahrer</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>East Indiaman:East Indiaman</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Nav&#237;o de las Indias Orientales:Nav&#237;os de las Indias Orientales</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_UNIT_DUTCH_FLUYT</Tag>
+		<English>Fluyt</English>
+		<French>Fluyt</French>
+		<German>Fluyt</German>
+		<Italian>Fluyt</Italian>
+		<Spanish>Fluyt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</English>
-		<French>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</French>
-		<German>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</German>
-		<Italian>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Fluyt[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</English>
+		<French>The [COLOR_UNIT_TEXT]Fluyt[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</French>
+		<German>The [COLOR_UNIT_TEXT]Fluyt[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Fluyt[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Fluyt[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER</Tag>

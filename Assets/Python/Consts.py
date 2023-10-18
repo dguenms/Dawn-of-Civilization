@@ -888,7 +888,7 @@ iLlanero, iDragoon, iGuard, iCassay, iGrenadierCavalry, iCavalry, iRural, iWarEl
 iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, iTrebuchet, iBombard, iHwacha, iSiegeElephant, 
 iGreatBombard, iCannon, iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, 
 iWarGalley, iHeavyGalley, iDromon, iLongship, iCog, iDharani, iDhow, iGalleass, iDjong, iKobukson, 
-iLanternas, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, iManOfWar, 
+iLanternas, iCaravel, iCarrack, iGalleon, iFluyt, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, iManOfWar, 
 iSteamship, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, 
 iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, iFighter, iZero, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, 
 iDrone, iNuclearBomber, iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, 
