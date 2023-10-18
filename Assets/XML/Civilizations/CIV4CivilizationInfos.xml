@@ -3783,6 +3783,10 @@
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_MANDE_KELEBOLO</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_MANDE_FARARI</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
