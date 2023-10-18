@@ -3054,24 +3054,12 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FRENCH_GUARD</Tag>
-		<English>Guard</English>
-		<French>
-			<Text>Garde</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Guard</German>
-		<Italian>Guard</Italian>
-		<Spanish>Guard</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_FRENCH_GUARD_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Spanish>
+		<Tag>TXT_KEY_UNIT_FRENCH_GRIBEAUVAL</Tag>
+		<English>Gribeauval</English>
+		<French>Gribeauval</French>
+		<German>Gribeauval</German>
+		<Italian>Gribeauval</Italian>
+		<Spanish>Gribeauval</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRENCH_GENDARME</Tag>
