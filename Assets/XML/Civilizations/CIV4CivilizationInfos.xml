@@ -4323,6 +4323,10 @@
 					<UnitClassType>UNITCLASS_BOMBARD</UnitClassType>
 					<UnitType>UNIT_MUGHAL_SIEGE_ELEPHANT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_MUGHAL_SOWAR</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
