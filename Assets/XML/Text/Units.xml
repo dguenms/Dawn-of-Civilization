@@ -2,26 +2,6 @@
 <!-- Units -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
-		<English>Minuteman</English>
-		<French>
-			<Text>Minuteman</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Minuteman</German>
-		<Italian>Minuteman</Italian>
-		<Spanish>Minuteman</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Tag>
 		<English>Grenadier Cavalry</English>
 		<French>
@@ -3592,6 +3572,22 @@
 		<German>Sowar</German>
 		<Italian>Sowar</Italian>
 		<Spanish>Sowar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_SUPERCARRIER</Tag>
+		<English>Supercarrier</English>
+		<French>Supercarrier</French>
+		<German>Supercarrier</German>
+		<Italian>Supercarrier</Italian>
+		<Spanish>Supercarrier</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_FLYING_FORTRESS</Tag>
+		<English>Flying Fortress</English>
+		<French>Flying Fortress</French>
+		<German>Flying Fortress</German>
+		<Italian>Flying Fortress</Italian>
+		<Spanish>Flying Fortress</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>

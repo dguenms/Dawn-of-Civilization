@@ -66,8 +66,12 @@
 					<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
-					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
+					<UnitClassType>UNITCLASS_CARRIER</UnitClassType>
+					<UnitType>UNIT_AMERICAN_SUPERCARRIER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_BOMBER</UnitClassType>
+					<UnitType>UNIT_AMERICAN_FLYING_FORTRESS</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
