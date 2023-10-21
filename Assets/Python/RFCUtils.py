@@ -384,11 +384,11 @@ def hasEnemyUnit(iPlayer, tPlot):
 	return units.at(tPlot).notowner(iPlayer).atwar(iPlayer).any()
 	
 # used: Barbs, History, RFCUtils
-def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, bNoCulture=False):
+def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, bNoCulture=False, iCityDistance=1):
 	plot = plot_(tPlot)
 	
 	if bNoCity:
-		if cities.surrounding(plot):
+		if cities.surrounding(plot, radius=iCityDistance):
 			return False
 			
 	if bNoEnemyUnit:
