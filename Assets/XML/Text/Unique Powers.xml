@@ -483,27 +483,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND</Tag>
-		<English>One extra [ICON_HEALTHY] for every three excess [ICON_HAPPY]</English>
-		<French>Un [ICON_HEALTHY] pour chaque trois [ICON_HAPPY] en exc&#232;s</French>
-		<German>Eine zus&#228;tzliche [ICON_HAPPY] pro zwei &#252;berz&#228;hlige [ICON_HEALTHY]</German>
-		<Italian>Niente anarchia durante le rivoluzioni</Italian>
-		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UP_INO_TITLE</Tag>
-		<English>The Power of Straits:</English>
-		<French>The pouvoir des d&#233;troits :</French>
-		<German>Die Macht der Meerengen:</German>
-		<Italian>The Power of Straits:</Italian>
-		<Spanish>The Power of Straits:</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UP_INO</Tag>
-		<English>Additional gold from foreign ships passing through your core</English>
-		<French>Les navires &#233;trangers qui passent par votre c&#156;ur historique rapportent de l'or additionnel</French>
-		<German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
-		<Italian>Additional gold from foreign ships passing through your core</Italian>
-		<Spanish>Additional gold from foreign ships passing through your core</Spanish>
+		<English>One extra [ICON_HEALTHY] from buildings that provide [ICON_HAPPY]</English>
+		<French>One extra [ICON_HEALTHY] from buildings that provide [ICON_HAPPY]</French>
+		<German>One extra [ICON_HEALTHY] from buildings that provide [ICON_HAPPY]</German>
+		<Italian>One extra [ICON_HEALTHY] from buildings that provide [ICON_HAPPY]</Italian>
+		<Spanish>One extra [ICON_HEALTHY] from buildings that provide [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA_TITLE</Tag>

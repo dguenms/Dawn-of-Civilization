@@ -10321,6 +10321,13 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				{
 					iHealth += GET_PLAYER(ePlayer).getExtraBuildingHealth(eBuilding);
 				}
+
+				// Leoreth: Indian UP: +1 health for buildings that provide happiness
+				if (GET_PLAYER(ePlayer).getCivilizationType() == INDIA && GC.getBuildingInfo(eBuilding).getHappiness() > 0)
+				{
+					iHealth += 1;
+				}
+
 			}
 		}
 		if (iHealth != 0)
@@ -12898,17 +12905,6 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_HANDICAP", iHealth));
 			szBuffer.append(NEWLINE);
-		}
-
-		// Leoreth: Indian UP
-		if (city.getCivilizationType() == INDIA)
-		{
-			iHealth = (city.happyLevel() - city.unhappyLevel()) / 3;
-			if (iHealth > 0)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_HAPPINESS", iHealth));
-				szBuffer.append(NEWLINE);
-			}
 		}
 
 		szBuffer.append(L"-----------------------\n");

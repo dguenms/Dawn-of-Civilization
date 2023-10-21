@@ -4547,6 +4547,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingBadHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
 		}
 
+		// Leoreth: Indian UP: Purity: +1 health from buildings that provide happiness
+		if (getCivilizationType() == INDIA && GC.getBuildingInfo(eBuilding).getHappiness() > 0)
+		{
+			changeBuildingGoodHealth(iChange);
+		}
+
 		if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 		{
 			changeStateReligionHappiness(((ReligionTypes)(GC.getBuildingInfo(eBuilding).getReligionType())), (GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * iChange));
@@ -5706,7 +5712,7 @@ int CvCity::unhappyLevel(int iExtra) const
 }
 
 
-int CvCity::happyLevel(bool bSpecial) const
+int CvCity::happyLevel() const
 {
 	int iHappiness;
 
@@ -5737,9 +5743,9 @@ int CvCity::happyLevel(bool bSpecial) const
 	}
 
 	// Leoreth: Shalimar Gardens effect
-	if (bSpecial && isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
+	if (isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
 	{
-		iHappiness += std::max(0, goodHealth(false) - badHealth());
+		iHappiness += std::max(0, goodHealth() - badHealth());
 	}
 
 	return std::max(0, iHappiness);
@@ -5835,7 +5841,7 @@ int CvCity::totalBadBuildingHealth() const
 }
 
 
-int CvCity::goodHealth(bool bSpecial) const
+int CvCity::goodHealth() const
 {
 	int iTotalHealth;
 	int iHealth;
@@ -5897,16 +5903,6 @@ int CvCity::goodHealth(bool bSpecial) const
 	if (iHealth > 0)
 	{
 		iTotalHealth += iHealth;
-	}
-
-	// Leoreth: Indian UP: +1 health for every 3 excess happiness
-	if (bSpecial && getCivilizationType() == INDIA)
-	{
-		iHealth = (happyLevel(false) - unhappyLevel()) / 3;
-		if (iHealth > 0)
-		{
-			iTotalHealth += iHealth;
-		}
 	}
 
 	return iTotalHealth;
@@ -7580,6 +7576,12 @@ int CvCity::getBuildingGoodHealth(BuildingTypes eBuilding) const
 	iHealth += std::max(0, getBuildingHealthChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()));
 	iHealth += std::max(0, GET_PLAYER(getOwnerINLINE()).getExtraBuildingHealth(eBuilding));
 
+	// Leoreth: Indian UP: +1 health from happiness buildings
+	if (getCivilizationType() == INDIA && GC.getBuildingInfo(eBuilding).getHappiness() > 0)
+	{
+		iHealth += 1;
+	}
+
 	return iHealth;
 }
 
@@ -8058,6 +8060,12 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 
 	// Global
 	addGoodOrBad(kBuilding.getGlobalHealth(), iGood, iBad);
+
+	// Leoreth: Indian UP
+	if (getCivilizationType() == INDIA && kBuilding.getHappiness() > 0)
+	{
+		addGoodOrBad(1, iGood, iBad);
+	}
 
 	// No Unhealthiness from Buildings
 	if (isBuildingOnlyHealthy())
