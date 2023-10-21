@@ -104,8 +104,8 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_INCA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Inca.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,7</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Tumi.dds</Path>
+			<Button>Art/Interface/Buttons/Civilizations/Inca.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Sun.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -116,8 +116,8 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_JAPAN</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Japan.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,6</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_RisingSun2_I.dds</Path>
+			<Button>Art/Interface/Buttons/Civilizations/Japan.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_SunSeal.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -129,7 +129,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_KOREA</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Korea.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Ihwamun.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_KoreanSymbol.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -140,7 +140,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_MAYA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Maya.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,6,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Maya.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tzolkin.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -164,7 +164,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_OTTOMAN</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Turkey.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,2,1</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Turkey.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tugra.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -176,7 +176,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_PERSIA</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Persia2.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Persia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Achaemenid.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -206,7 +206,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_VIKING</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Viking.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,1,1</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Vikings.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Raven.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -243,7 +243,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_ITALY</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Italy.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Lion_of_Marc.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_LombardCross.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -267,7 +267,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_IRAN</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Iran.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Safavid_Lion2.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Safavid_Lion.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -297,7 +297,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_HARAPPANS</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Harappa.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Indus.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_TradeSeal.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
