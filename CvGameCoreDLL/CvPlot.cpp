@@ -7090,15 +7090,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// Leoreth: Dravidian UP
-		if (eCivilization == DRAVIDIA)
-		{
-			if (isWater() && eYield == YIELD_COMMERCE)
-			{
-				iYield += 1;
-			}
-		}
-
 		// Leoreth: Ruthenian UP: +1 commerce on unimproved land tiles in your trade network
 		if (eCivilization == RUS)
 		{

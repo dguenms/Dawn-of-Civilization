@@ -10247,6 +10247,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			// Leoreth: new modifier for trade routes with vassals
 			iModifier += getVassalTradeModifier(pOtherCity);
 
+			// Leoreth: Dravidian UP: Trade Guilds: +10% foreign trade yield per traded resource
+			if (getCivilizationType() == DRAVIDIA)
+			{
+				iModifier += 10 * (GET_PLAYER(getOwnerINLINE()).getNumTradeBonusImports(pOtherCity->getOwner()) + GET_PLAYER(getOwnerINLINE()).getNumTradeBonusExports(pOtherCity->getOwner()));
+			}
+
 			// Leoreth: Channel Tunnel effect
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
 			{

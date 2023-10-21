@@ -282,6 +282,22 @@
 		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_DRA_TITLE</Tag>
+		<English>The Power of Trade Guilds:</English>
+		<French>The Power of Trade Guilds:</French>
+		<German>The Power of Trade Guilds:</German>
+		<Italian>The Power of Trade Guilds:</Italian>
+		<Spanish>The Power of Trade Guilds:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_DRA</Tag>
+		<English>+10% foreign trade route yield for every traded resource</English>
+		<French>+10% foreign trade route yield for every traded resource</French>
+		<German>+10% foreign trade route yield for every traded resource</German>
+		<Italian>+10% foreign trade route yield for every traded resource</Italian>
+		<Spanish>+10% foreign trade route yield for every traded resource</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
 		<English>The Power of the Pharaoh:</English>
 		<French>Le pouvoir du pharaon :</French>
@@ -960,22 +976,6 @@
 		<German>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</German>
 		<Italian>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Italian>
 		<Spanish>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UP_DRA_TITLE</Tag>
-		<English>The Power of Thalassocracy:</English>
-		<French>The pouvoir de la thalassocratie :</French>
-		<German>Die Macht der Thalassokratie:</German>
-		<Italian>The Power of Thalassocracy:</Italian>
-		<Spanish>The Power of Thalassocracy:</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UP_DRA</Tag>
-		<English>Extra commerce on coast and ocean tiles</English>
-		<French>Les cases d'oc&#233;an rapportent du commerce suppl&#233;mentaire</French>
-		<German>Zus&#228;tzlicher Kommerz auf K&#252;sten- und Ozeanfeldern</German>
-		<Italian>Extra commerce on coast and ocean tiles</Italian>
-		<Spanish>Extra commerce on coast and ocean tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_DRAVIDIA_CONQUESTS_TARGET</Tag>
