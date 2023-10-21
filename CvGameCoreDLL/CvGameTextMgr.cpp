@@ -20048,6 +20048,18 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 						iModifier += iNewMod;
 					}
 
+					// Leoreth: Dravidian UP: Trade Guilds: +10% foreign trade yield per traded resource
+					if (pCity->getCivilizationType() == DRAVIDIA)
+					{
+						iNewMod = 10 * (GET_PLAYER(pCity->getOwnerINLINE()).getNumTradeBonusImports(pOtherCity->getOwner()) + GET_PLAYER(pCity->getOwnerINLINE()).getNumTradeBonusExports(pOtherCity->getOwner()));
+						if (0 != iNewMod)
+						{
+							szBuffer.append(NEWLINE);
+							szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_TRADED_RESOURCES", iNewMod));
+							iModifier += iNewMod;
+						}
+					}
+
 					// Leoreth: Channel Tunnel effect
 					if (GET_PLAYER(pCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
 					{

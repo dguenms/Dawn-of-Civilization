@@ -154,6 +154,14 @@
 		<Spanish>%D1_Mod%%: for trading with Vassal</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_TRADED_RESOURCES</Tag>
+		<English>%D1_Mod%%: from amount of traded resources</English>
+		<French>%D1_Mod%%: from amount of traded resources</French>
+		<German>%D1_Mod%%: from amount of traded resources</German>
+		<Italian>%D1_Mod%%: from amount of traded resources</Italian>
+		<Spanish>%D1_Mod%%: from amount of traded resources</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DISTANCE</Tag>
 		<English>%D1%%: from City Distance</English>
 		<French>%D1%% : distance de la ville</French>

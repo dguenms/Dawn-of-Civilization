@@ -181,6 +181,7 @@ public:
 	int getNumAvailableBonuses(BonusTypes eBonus) const;																									// Exposed to Python
 	DllExport int getNumTradeableBonuses(BonusTypes eBonus) const;																				// Exposed to Python
 	int getNumTradeBonusImports(PlayerTypes ePlayer) const;																								// Exposed to Python
+	int getNumTradeBonusExports(PlayerTypes ePlayer) const;
 	bool hasBonus(BonusTypes eBonus) const;									// Exposed to Python
 
 	bool isTradingWithTeam(TeamTypes eTeam, bool bIncludeCancelable) const;

@@ -4911,6 +4911,45 @@ int CvPlayer::getNumTradeBonusImports(PlayerTypes ePlayer) const
 	return iCount;
 }
 
+int CvPlayer::getNumTradeBonusExports(PlayerTypes ePlayer) const
+{
+	CLLNode<TradeData>* pNode;
+	CvDeal* pLoopDeal;
+	int iCount;
+	int iLoop;
+
+	FAssert(ePlayer != getID());
+
+	iCount = 0;
+
+	for (pLoopDeal = GC.getGameINLINE().firstDeal(&iLoop); pLoopDeal != NULL; pLoopDeal = GC.getGameINLINE().nextDeal(&iLoop))
+	{
+		if ((pLoopDeal->getFirstPlayer() == getID()) && (pLoopDeal->getSecondPlayer() == ePlayer))
+		{
+			for (pNode = pLoopDeal->headFirstTradesNode(); (pNode != NULL); pNode = pLoopDeal->nextFirstTradesNode(pNode))
+			{
+				if (pNode->m_data.m_eItemType == TRADE_RESOURCES)
+				{
+					iCount++;
+				}
+			}
+		}
+
+		if ((pLoopDeal->getFirstPlayer() == ePlayer) && (pLoopDeal->getSecondPlayer() == getID()))
+		{
+			for (pNode = pLoopDeal->headSecondTradesNode(); (pNode != NULL); pNode = pLoopDeal->nextSecondTradesNode(pNode))
+			{
+				if (pNode->m_data.m_eItemType == TRADE_RESOURCES)
+				{
+					iCount++;
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
+
 
 bool CvPlayer::isTradingWithTeam(TeamTypes eTeam, bool bIncludeCancelable) const
 {
