@@ -25,9 +25,9 @@
 			<TextColorType>COLOR_PLAYER_LIGHT_BROWN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_CYAN</Type> <!-- Greece -->
+			<Type>PLAYERCOLOR_CYAN</Type> <!-- Maya -->
 			<ColorTypePrimary>COLOR_PLAYER_CYAN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARKER_GRAY</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -37,10 +37,10 @@
 			<TextColorType>COLOR_PLAYER_DARK_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_CYAN</Type> <!-- Inca -->
-			<ColorTypePrimary>COLOR_PLAYER_DARK_CYAN</ColorTypePrimary>
+			<Type>PLAYERCOLOR_VERY_DARK_CYAN</Type> <!-- Harappa -->
+			<ColorTypePrimary>COLOR_PLAYER_VERY_DARK_CYAN</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_DARK_CYAN_TEXT</TextColorType>
+			<TextColorType>COLOR_PLAYER_VERY_DARK_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_GREEN</Type> <!-- Arabia -->
@@ -79,7 +79,7 @@
 			<TextColorType>COLOR_PLAYER_GRAY_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_GREEN</Type> <!-- Aztecs and Mexico -->
+			<Type>PLAYERCOLOR_GREEN</Type> <!-- Aztecs -->
 			<ColorTypePrimary>COLOR_PLAYER_GREEN</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_GREEN_TEXT</TextColorType>
@@ -99,11 +99,11 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_PINK</Type>
 			<ColorTypePrimary>COLOR_PLAYER_PINK</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARKER_GRAY</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_PINK_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_PURPLE</Type> <!-- Harappa -->
+			<Type>PLAYERCOLOR_PURPLE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_PURPLE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_PURPLE_TEXT</TextColorType>
@@ -127,9 +127,9 @@
 			<TextColorType>COLOR_PLAYER_YELLOW_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_LIGHT_GREEN</Type>
+			<Type>PLAYERCOLOR_LIGHT_GREEN</Type> <!-- Mexico -->
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARK_GREEN</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_DARK_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -139,7 +139,7 @@
 			<TextColorType>COLOR_PLAYER_LIGHT_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_VERY_LIGHT_BLUE</Type> <!-- Argentina -->
+			<Type>PLAYERCOLOR_VERY_LIGHT_BLUE</Type> <!-- Portugal -->
 			<ColorTypePrimary>COLOR_PLAYER_VERY_LIGHT_BLUE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_VERY_LIGHT_BLUE_TEXT</TextColorType>
@@ -157,7 +157,7 @@
 			<TextColorType>COLOR_PLAYER_LIGHT_PURPLE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_LIGHT_ORANGE</Type> <!-- Persia and Iran -->
+			<Type>PLAYERCOLOR_LIGHT_ORANGE</Type> <!-- Iran -->
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_ORANGE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_PERSIA_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_ORANGE_TEXT</TextColorType>
@@ -187,7 +187,7 @@
 			<TextColorType>COLOR_PLAYER_DARK_GRAY_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_GRAY_GREEN</Type> <!-- Celts -->
+			<Type>PLAYERCOLOR_DARK_GRAY_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_GRAY3</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_GRAY_TEXT</TextColorType>
@@ -217,7 +217,7 @@
 			<TextColorType>COLOR_PLAYER_MIDDLE_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_LEMON</Type> <!-- Germany -->
+			<Type>PLAYERCOLOR_DARK_LEMON</Type> <!-- Holy Rome -->
 			<ColorTypePrimary>COLOR_PLAYER_DARK_LEMON</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_LEMON_TEXT</TextColorType>
@@ -235,15 +235,15 @@
 			<TextColorType>COLOR_PLAYER_BROWN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_ORANGE</Type> <!-- Turkey -->
+			<Type>PLAYERCOLOR_DARK_ORANGE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_ORANGE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_ORANGE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_DARK_GREEN</Type> <!-- Portugal -->
+			<Type>PLAYERCOLOR_DARK_DARK_GREEN</Type> <!-- Ottomans -->
 			<ColorTypePrimary>COLOR_PLAYER_DARK_DARK_GREEN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_PALE_RED</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_DARK_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -325,19 +325,13 @@
 			<TextColorType>COLOR_PLAYER_GREYISH_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_GREYISH_CYAN</Type> <!-- Maya -->
+			<Type>PLAYERCOLOR_GREYISH_CYAN</Type> <!-- Argentina -->
 			<ColorTypePrimary>COLOR_PLAYER_GREYISH_CYAN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARK_BLUE</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_GREYISH_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_KOREA</Type> <!-- Korea -->
-			<ColorTypePrimary>COLOR_PLAYER_PALE_RED</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_PALE_RED</TextColorType>
-		</PlayerColorInfo>
-		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_TEAL</Type> <!-- Indonesia -->
+			<Type>PLAYERCOLOR_TEAL</Type>
 			<ColorTypePrimary>COLOR_PLAYER_TEAL</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_DARK_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_TEAL</TextColorType>
@@ -349,16 +343,10 @@
 			<TextColorType>COLOR_PLAYER_DARK_ROT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_SILVER</Type> <!-- Seljuks -->
+			<Type>PLAYERCOLOR_SILVER</Type> <!-- Greece -->
 			<ColorTypePrimary>COLOR_SILVER</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_SILVER</TextColorType>
-		</PlayerColorInfo>
-		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_ITALY</Type> <!-- Italy -->
-			<ColorTypePrimary>COLOR_PLAYER_DARK_RED_ITALY</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_DARK_RED_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_MIDDLE_PINK</Type> <!-- Poland -->
@@ -379,12 +367,6 @@
 			<TextColorType>COLOR_PLAYER_MAROON_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_MEXICO</Type>
-			<ColorTypePrimary>COLOR_X_OLIVEDRAB</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_RED</ColorTypeSecondary>
-			<TextColorType>COLOR_X_OLIVEDRAB</TextColorType>
-		</PlayerColorInfo>
-		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_MIDDLE_INDIGO</Type> <!-- Colombia -->
 			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_INDIGO</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
@@ -397,7 +379,7 @@
 			<TextColorType>COLOR_PLAYER_PALE_ORANGE</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_BROWNISH_RED</Type> <!-- Khmer -->
+			<Type>PLAYERCOLOR_BROWNISH_RED</Type>
 			<ColorTypePrimary>COLOR_PLAYER_BROWNISH_RED</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BROWNISH_RED</TextColorType>
@@ -491,6 +473,36 @@
 			<ColorTypePrimary>COLOR_PLAYER_BRIGHT_RED</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BRIGHT_RED_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_DARK_CYAN</Type> <!-- Korea -->
+			<ColorTypePrimary>COLOR_PLAYER_DARK_CYAN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DARK_CYAN_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_OCHRE</Type> <!-- Inca -->
+			<ColorTypePrimary>COLOR_PLAYER_OCHRE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_OCHRE</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_PALE_RED</Type>
+			<ColorTypePrimary>COLOR_PLAYER_PALE_RED</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_PALE_RED</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_PALE_GREEN</Type> <!-- Italy -->
+			<ColorTypePrimary>COLOR_PLAYER_PALE_GREEN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_PALE_GREEN_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_LIGHT_OCHRE</Type> <!-- Persia -->
+			<ColorTypePrimary>COLOR_PLAYER_LIGHT_OCHRE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_PERSIA_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_LIGHT_OCHRE</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
