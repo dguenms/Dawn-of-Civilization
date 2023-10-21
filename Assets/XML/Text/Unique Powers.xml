@@ -571,19 +571,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
-		<English>The Power of Monsoons:</English>
-		<French>Le pouvoir des moussons :</French>
-		<German>Die Macht des Monsuns:</German>
-		<Italian>Il potere dei monsoni:</Italian>
-		<Spanish>El poder de los monzones:</Spanish>
+		<English>The Power of Canals:</English>
+		<French>The Power of Canals:</French>
+		<German>The Power of Canals:</German>
+		<Italian>The Power of Canals:</Italian>
+		<Spanish>The Power of Canals:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHM</Tag>
-		<English>All land units can move through jungles and rainforests, can build farms on rainforest</English>
-		<French>Toutes les unit&#233;s terrestres peuvent se d&#233;placer &#224; travers la jungle, et les fermes peuvent &#234;tre construites dans la for&#234;t tropicale</French>
-		<German>Landeinheiten k&#246;nnen Dschungel und Regenwald durchqueren, kann Farmen in Regenwald errichten</German>
-		<Italian>Tutte le unit&#224; di terra si possono muovere attraverso la giungla</Italian>
-		<Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
+		<English>Can convert production into food in your capital</English>
+		<French>Can convert production into food in your capital</French>
+		<German>Can convert production into food in your capital</German>
+		<Italian>Can convert production into food in your capital</Italian>
+		<Spanish>Can convert production into food in your capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CON_TITLE</Tag>

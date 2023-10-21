@@ -2695,44 +2695,16 @@ bool CvCity::canCreate(ProjectTypes eProject, bool bContinue, bool bTestVisible)
 
 bool CvCity::canMaintain(ProcessTypes eProcess, bool bContinue) const
 {
-	//Rhye - start
-//Speed: Modified by Kael 04/19/2007
-//	CyCity* pyCity = new CyCity((CvCity*)this);
-//	CyArgsList argsList;
-//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-//	argsList.add(eProcess);
-//	argsList.add(bContinue);
-//	long lResult=0;
-//	gDLL->getPythonIFace()->callFunction(PYGameModule, "canMaintain", argsList.makeFunctionArgs(), &lResult);
-//	delete pyCity;	// python fxn must not hold on to this pointer
-//	if (lResult == 1)
-//	{
-//		return true;
-//	}
-//Speed: End Modify
-	//Rhye - end
+	// Leoreth: Khmer UP: can convert 25% production into food in capital
+	if (getCivilizationType() == KHMER && isCapital() && eProcess == PROCESS_FOOD)
+	{
+		return true;
+	}
 
 	if (!(GET_PLAYER(getOwnerINLINE()).canMaintain(eProcess, bContinue)))
 	{
 		return false;
 	}
-
-	//Rhye - start
-//Speed: Modified by Kael 04/19/2007
-//	pyCity = new CyCity((CvCity*)this);
-//	CyArgsList argsList2; // XXX
-//	argsList2.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-//	argsList2.add(eProcess);
-//	argsList2.add(bContinue);
-//	lResult=0;
-//	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotMaintain", argsList2.makeFunctionArgs(), &lResult);
-//	delete pyCity;	// python fxn must not hold on to this pointer
-//	if (lResult == 1)
-//	{
-//		return false;
-//	}
-//Speed: End Modify
-	//Rhye - end
 
 	return true;
 }
@@ -10003,24 +9975,30 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra) const
 
 int CvCity::getYieldRate(YieldTypes eIndex) const
 {
-	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
+	int iBaseYieldRate = getBaseYieldRate(eIndex);
 
 	// Harappan UP: Sanitation: positive health contributes to city growth
-	if (eIndex == YIELD_FOOD && getCivilizationType() == HARAPPA && GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT  && !isFoodProduction())
+	if (eIndex == YIELD_FOOD && getCivilizationType() == HARAPPA && GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT && !isFoodProduction())
 	{
-		if (iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
+		if (iBaseYieldRate * getBaseYieldRateModifier(eIndex) - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
 		{
-			iYieldRateTimes100 += 100 * (goodHealth() - badHealth());
+			iBaseYieldRate += (goodHealth() - badHealth());
 		}
+	}
+
+	// Khmer UP: Canals: can convert 25% production into food in capital
+	if (eIndex == YIELD_FOOD && getProductionProcess() == PROCESS_FOOD)
+	{
+		iBaseYieldRate += getYieldRate(YIELD_PRODUCTION) / 4;
 	}
 
 	// Lotus Temple effect
 	if (eIndex == YIELD_FOOD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
 	{
-		iYieldRateTimes100 += 100 * (getReligionCount() - (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) ? 1 : 0));
+		iBaseYieldRate += (getReligionCount() - (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) ? 1 : 0));
 	}
 
-	return (iYieldRateTimes100 / 100);
+	return iBaseYieldRate * getBaseYieldRateModifier(eIndex) / 100;
 }
 
 

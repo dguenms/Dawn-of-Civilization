@@ -42,5 +42,17 @@
 			</ProductionToCommerceModifiers>
 			<Button>Art/Interface/Buttons/Process/ProcessCulture.dds</Button>
 		</ProcessInfo>
+		<ProcessInfo>
+			<Type>PROCESS_FOOD</Type>
+			<Description>TXT_KEY_PROCESS_FOOD</Description>
+			<Strategy>TXT_KEY_PROCESS_FOOD_STRATEGY</Strategy>
+			<TechPrereq>NONE</TechPrereq>
+			<ProductionToCommerceModifiers>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+			</ProductionToCommerceModifiers>
+			<Button>,-,Art/Interface/Buttons/Actions_Builds_Leaderheads_Specialists_Atlas.dds,4,7</Button>
+		</ProcessInfo>
 	</ProcessInfos>
 </Civ4ProcessInfo>

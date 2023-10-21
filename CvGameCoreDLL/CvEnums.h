@@ -1609,6 +1609,11 @@ enum SpaceShipInfoTypes
 enum ProcessTypes				// Exposed to Python
 {
 	NO_PROCESS = -1,
+
+	PROCESS_WEALTH,
+	PROCESS_RESEARCH,
+	PROCESS_CULTURE,
+	PROCESS_FOOD,
 };
 
 enum VoteTypes					// Exposed to Python

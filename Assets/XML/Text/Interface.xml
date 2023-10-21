@@ -1343,6 +1343,14 @@
 		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_PROCESS</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Converting [ICON_PRODUCTION]</English>
+		<French>[ICON_BULLET]%D1%F2 from Converting [ICON_PRODUCTION]</French>
+		<German>[ICON_BULLET]%D1%F2 from Converting [ICON_PRODUCTION]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Converting [ICON_PRODUCTION]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Converting [ICON_PRODUCTION]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Fortified Units</English>
 		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux unit&#233;s fortifi&#233;es</French>
