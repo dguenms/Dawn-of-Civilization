@@ -3086,13 +3086,8 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_CHANGE_PRODUCTION", iProduction, pCity->getNameKey()));
 						}
 
-						bool bKhmerUP = GC.getGame().getActiveCivilizationType() == KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && pMissionPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST");
-
-						if (!bKhmerUP)
-						{
-							szBuffer.append(NEWLINE);
-							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
-						}
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
 					}
 
 				}

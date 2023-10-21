@@ -12654,6 +12654,13 @@ void CvGameTextMgr::setProcessHelp(CvWStringBuffer &szBuffer, ProcessTypes eProc
 			szBuffer.append(gDLL->getText("TXT_KEY_PROCESS_CONVERTS", iProductionToCommerceModifier, GC.getYieldInfo(YIELD_PRODUCTION).getChar(), GC.getCommerceInfo((CommerceTypes) iI).getChar()));
 		}
 	}
+
+	// Leoreth: Khmer UP: Canals: can convert production to food in capital
+	if (eProcess == PROCESS_FOOD)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROCESS_CONVERTS", 25, GC.getYieldInfo(YIELD_PRODUCTION).getChar(), GC.getYieldInfo(YIELD_FOOD).getChar()));
+	}
 }
 
 void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
@@ -17058,6 +17065,19 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
+	// Khmer UP: Canals (can convert production to food in the capital)
+	if (city.getProductionProcess() == PROCESS_FOOD)
+	{
+		int iProcessFood = city.getYieldRate(YIELD_PRODUCTION) / 4;
+		if (iProcessFood != 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_PROCESS", iProcessFood, info.getChar()));
+			iBaseRate += iProcessFood;
+			bNeedSubtotal = true;
+		}
+	}
+
 	// Lotus Temple effect
 	int iNonStateReligionFood = 0;
 	if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
@@ -18246,6 +18266,12 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 			{
 				iBaseProduction += city.goodHealth() - city.badHealth();
 			}
+		}
+
+		// Khmer UP: Canals (can convert production to food in the capital)
+		if (city.getProductionProcess() == PROCESS_FOOD)
+		{
+			iBaseProduction += city.getYieldRate(YIELD_PRODUCTION) / 4;
 		}
 
 		// Lotus Temple effect

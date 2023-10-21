@@ -2641,13 +2641,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
 			// Leoreth: impassable feature with improvement can be entered
-			bImpassableFeature = m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (pPlot->getImprovementType() == NO_IMPROVEMENT);
-
-			// Leoreth: Khmer UP
-			if (getCivilizationType() == KHMER && (pPlot->getFeatureType() == FEATURE_JUNGLE || pPlot->getFeatureType() == FEATURE_RAINFOREST))
-			{
-				bImpassableFeature = false;
-			}
+			bImpassableFeature = m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && pPlot->getImprovementType() == NO_IMPROVEMENT;
 
 			// Leoreth: attacks on impassable tiles are possible now
 			if (bImpassableFeature && !bAttack)
@@ -13047,12 +13041,6 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 	{
 		// Leoreth: impassable feature with improvement can be entered
 		bool bImpassableFeature = m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (pPlot->getImprovementType() == NO_IMPROVEMENT);
-
-		// Leoreth: Khmer UP
-		if (getCivilizationType() == KHMER && (pPlot->getFeatureType() == 1 || pPlot->getFeatureType() == 8))
-		{
-			bImpassableFeature = false;
-		}
 
 		// Leoreth: attacks on impassable tiles are possible now
 		if (bImpassableFeature)

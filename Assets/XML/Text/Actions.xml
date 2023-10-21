@@ -285,4 +285,12 @@
 		<Italian>[ICON_BULLET]Can rebuild free buildings in cities</Italian>
 		<Spanish>[ICON_BULLET]Can rebuild free buildings in cities</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROCESS_FOOD</Tag>
+		<English>Build Food</English>
+		<French>Build Food</French>
+		<German>Build Food</German>
+		<Italian>Build Food</Italian>
+		<Spanish>Build Food</Spanish>
+	</TEXT>
 </Civ4GameText>

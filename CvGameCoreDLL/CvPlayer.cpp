@@ -6565,6 +6565,11 @@ bool CvPlayer::canCreate(ProjectTypes eProject, bool bContinue, bool bTestVisibl
 
 bool CvPlayer::canMaintain(ProcessTypes eProcess, bool bContinue) const
 {
+	if (GC.getProcessInfo(eProcess).getTechPrereq() == NO_TECH)
+	{
+		return false;
+	}
+	
 	if (!(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getProcessInfo(eProcess).getTechPrereq()))))
 	{
 		return false;
@@ -7291,17 +7296,7 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 	{
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
-			bool bKhmerUP = false;
-
-			if (getCivilizationType() == KHMER)
-			{
-				if (eBuild == GC.getInfoTypeForString("BUILD_FARM") && pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST"))
-				{
-					bKhmerUP = true;
-				}
-			}
-
-			if (!bKhmerUP && !(GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(pPlot->getFeatureType()))))
+			if (!(GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(pPlot->getFeatureType()))))
 			{
 				return false;
 			}
