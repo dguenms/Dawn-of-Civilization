@@ -192,7 +192,7 @@ public:
 	int getVassalHappiness() const;																		// Exposed to Python
 	int getVassalUnhappiness() const;																		// Exposed to Python
 	int unhappyLevel(int iExtra = 0) const;																	// Exposed to Python 
-	int happyLevel(bool bSpecial = true) const;																				// Exposed to Python				
+	int happyLevel() const;																				// Exposed to Python				
 	int angryPopulation(int iExtra = 0) const;										// Exposed to Python
 
 	int visiblePopulation() const;
@@ -204,7 +204,7 @@ public:
 	int unhealthyPopulation(bool bNoAngry = false, int iExtra = 0) const;	// Exposed to Python
 	int totalGoodBuildingHealth() const;																		// Exposed to Python
 	int totalBadBuildingHealth() const;														// Exposed to Python
-	int goodHealth(bool bSpecial = true) const;																				// Exposed to Python
+	int goodHealth() const;																				// Exposed to Python
 	int badHealth(bool bNoAngry = false, int iExtra = 0) const;		// Exposed to Python
 	int healthRate(bool bNoAngry = false, int iExtra = 0) const;	// Exposed to Python
 	int foodConsumption(bool bNoAngry = false, int iExtra = 0) const;				// Exposed to Python

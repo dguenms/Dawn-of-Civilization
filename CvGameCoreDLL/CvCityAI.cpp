@@ -3437,6 +3437,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iBuildingHealth += kBuilding.getImprovementHealthPercent(iI) * aiWorkedImprovementCount[iI] / 100;
 				}
 
+				// Leoreth: Indian UP: +1 health from buildings that provide happiness
+				if (getCivilizationType() == INDIA && kBuilding.getHappiness() > 0)
+				{
+					iBuildingHealth += 1;
+				}
+
 				if (iBuildingHealth != 0)
 				{
 					iValue += (std::min(iBuildingHealth, iBadHealth) * 12)
