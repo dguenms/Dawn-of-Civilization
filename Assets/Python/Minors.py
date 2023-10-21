@@ -73,7 +73,7 @@ class MinorCity(object):
 		if not self.condition():
 			return False
 		
-		if not isFree(self.iOwner, self.tile, bNoCity=True, bNoCulture=True):
+		if not isFree(self.iOwner, self.tile, bNoCity=True, bNoCulture=True) and not isFree(self.iOwner, self.tile, bNoCity=True, iCityDistance=2):
 			return False
 		
 		return True
@@ -89,6 +89,7 @@ class MinorCity(object):
 	def found(self):
 		x, y = location(self.tile)
 		
+		convertPlotCulture(self.tile, self.iOwner, 100, bOwner=True)
 		expelUnits(self.iOwner, plots.surrounding(x, y))
 		
 		player(self.iOwner).found(x, y)
@@ -354,8 +355,8 @@ minor_cities = [
 	MinorCity(-2000, iBarbarian, (118, 49), "Sanxingdui", iPopulation=2, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
 	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
+	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
 	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
-	MinorCity(-680, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
 	MinorCity(-600, iIndependent, (97, 53), "Margu", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
 	MinorCity(-500, iNative, (19, 41), "Danibaan", iPopulation=2, iTechGroup=iTechGroupNativeAmerica, units={iSkirmish: 1}, adjective="TXT_KEY_ADJECTIVE_ZAPOTEC"),
 	MinorCity(-260, iIndependent, (121, 42), "Co Loa", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
