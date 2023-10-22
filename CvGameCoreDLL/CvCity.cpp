@@ -10291,8 +10291,12 @@ int CvCity::getDistanceTradeModifier(CvCity* pOtherCity) const
 	if (pOtherCity == NULL) return 0;
 	
 	int iDistance = stepDistance(getX_INLINE(), getY_INLINE(), pOtherCity->getX_INLINE(), pOtherCity->getY_INLINE());
-	iDistance /= 5;
-	iDistance *= 5;
+
+	// Mande UP: Long Distance Trade: double trade yield from distance for inland cities
+	if (getCivilizationType() == MALI && !isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
+	{
+		iDistance *= 2;
+	}
 		
 	return iDistance * GC.getDefineINT("DISTANCE_TRADE_MODIFIER");
 }

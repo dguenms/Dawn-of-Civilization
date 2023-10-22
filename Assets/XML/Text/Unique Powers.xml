@@ -659,19 +659,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
-		<English>The Power of Wealth:</English>
-		<French>Le pouvoir de la richesse :</French>
-		<German>Die Macht des Wohlstands:</German>
-		<Italian>Il potere della ricchezza:</Italian>
-		<Spanish>El poder de la riqueza:</Spanish>
+		<English>The Power of Long Distance Trade:</English>
+		<French>The Power of Long Distance Trade:</French>
+		<German>The Power of Long Distance Trade:</German>
+		<Italian>The Power of Long Distance Trade:</Italian>
+		<Spanish>The Power of Long Distance Trade:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL</Tag>
-		<English>+1 commerce in every land plot</English>
-		<French>+1 commerce sur toutes les cases terrestres</French>
-		<German>+1 Kommerz auf jedem Land-Gel&#228;ndefeld</German>
-		<Italian>+1 commercio in ogni casella di terra</Italian>
-		<Spanish>+1 intercambio en cada casilla de tierra</Spanish>
+		<English>Double trade yield from distance for inland cities</English>
+		<French>Double trade yield from distance for inland cities</French>
+		<German>Double trade yield from distance for inland cities</German>
+		<Italian>Double trade yield from distance for inland cities</Italian>
+		<Spanish>Double trade yield from distance for inland cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
