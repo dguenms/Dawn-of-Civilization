@@ -17864,7 +17864,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 				return -1;
 			}
 
-			if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
+			if (eImprovement == IMPROVEMENT_SLAVE_PLANTATION)
 			{
 				return -1;
 			}
@@ -24701,8 +24701,7 @@ int CvPlayer::countRequiredSlaves() const
 	}
 
 	int iNumRequiredSlaves = 0;
-	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
-	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
+	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(IMPROVEMENT_SLAVE_PLANTATION);
 
 	BonusTypes eBonus;
 	int iLoop;
@@ -24722,7 +24721,7 @@ int CvPlayer::countRequiredSlaves() const
 
 					if (pLoopPlot != NULL)
 					{
-						if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
+						if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != IMPROVEMENT_SLAVE_PLANTATION)
 						{
 							if (pLoopPlot->canUseSlave(getID()))
 							{
@@ -24756,7 +24755,7 @@ int CvPlayer::countRequiredSlaves() const
 	// subtract slaves they already have
 	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 	{
-		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)iI)).getBuilds(eSlavePlantation))
+		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)iI)).getBuilds(GC.getInfoTypeForString("BUILD_SLAVE_PLANTATION")))
 		{
 			iNumRequiredSlaves -= getUnitClassCount((UnitClassTypes)iI);
 		}
