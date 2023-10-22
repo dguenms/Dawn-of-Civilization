@@ -14394,13 +14394,6 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES", kCorporation.getMaxConsumableBonuses()));
 	}
-	
-
-	// Leoreth: display sugar consumption in the tooltip
-	if (GC.getGame().getActiveCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
-	{
-		szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo(BONUS_SUGAR).getChar()));
-	}
 
 	if (kCorporation.getBonusProduced() != NO_BONUS)
 	{
@@ -14529,14 +14522,6 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 			break;
 		}
 	}
-	// Merijn: Brazil UP display
-	if (pCity->getCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
-	{
-		if (pCity->getNumBonuses(BONUS_SUGAR) > 0)
-		{
-			bResources = true;
-		}
-	}
 
 	bool bActive = (pCity->isActiveCorporation(eCorporation) || (bForceCorporation && bResources));
 
@@ -14650,16 +14635,6 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 
 				szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo((BonusTypes)kCorporation.getPrereqBonus(i)).getChar()));
 			}
-		}
-		
-		// Brazil UP display
-		if (pCity->getCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
-		{
-			if (!bFirst)
-			{
-				szBuffer.append(L", ");
-			}
-			szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo(BONUS_SUGAR).getChar()));
 		}
 
 		if (bActive)
