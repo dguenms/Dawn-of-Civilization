@@ -1343,7 +1343,8 @@ void CvCity::doTurn()
 	{
 		setWeLoveTheKingDay(false);
 	}
-	else if ((getPopulation() >= GC.getDefineINT("WE_LOVE_THE_KING_POPULATION_MIN_POPULATION")) && (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("WE_LOVE_THE_KING_RAND"), "Do We Love The King?") < getPopulation()))
+	// Brazilian UP: Cities are guaranteed to celebrate if able
+	else if ((getPopulation() >= GC.getDefineINT("WE_LOVE_THE_KING_POPULATION_MIN_POPULATION")) && (getCivilizationType() == BRAZIL || GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("WE_LOVE_THE_KING_RAND"), "Do We Love The King?") < getPopulation()))
 	{
 		setWeLoveTheKingDay(true);
 	}
@@ -11374,12 +11375,6 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			iNumBonuses += getNumBonuses(eBonus);
 		}
 
-		// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
-		if (getCivilizationType() == BRAZIL && eCorporation == (CorporationTypes)6)
-		{
-			iNumBonuses += getNumBonuses(BONUS_SUGAR);
-		}
-
 		if (iNumBonuses > 0)
 		{
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
@@ -12516,18 +12511,6 @@ bool CvCity::isCorporationBonus(BonusTypes eBonus) const
 						return true;
 					}
 				}
-			}
-		}
-	}
-	
-	// Merijn: Brazilian UP
-	if (GET_PLAYER(getOwnerINLINE()).isActiveCorporation((CorporationTypes)6))
-	{
-		if (getCivilizationType() == BRAZIL && eBonus == BONUS_SUGAR)
-		{
-			if (isHasCorporation((CorporationTypes)6))
-			{
-				return true;
 			}
 		}
 	}
