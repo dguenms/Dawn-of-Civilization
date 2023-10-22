@@ -3934,17 +3934,28 @@ void CvCity::hurry(HurryTypes eHurry)
 		setUnitHurried(getProductionUnit(), true);
 	}
 
-	GET_PLAYER(getOwnerINLINE()).changeGold(-(iHurryGold));
-	changePopulation(-(iHurryPopulation));
-
 	// Leoreth: amount of sacrificed population increases hurry anger
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
-	// Leoreth: Pyramids negate unhappiness scaling
-	//if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
-	//	iHurryAngerModifier = 1;
+	CvCity* pUnhappyCity = this;
 
-	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
+	// Leoreth: Russian UP: temporary unhappiness is applied to your happiest city
+	if (getCivilizationType() == RUSSIA)
+	{
+		int iLoop;
+		for (CvCity* pTempCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pTempCity != NULL; pTempCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+		{
+			if (pTempCity->happyLevel() - pTempCity->unhappyLevel() > pUnhappyCity->happyLevel() - pUnhappyCity->unhappyLevel())
+			{
+				pUnhappyCity = pTempCity;
+			}
+		}
+	}
+
+	pUnhappyCity->changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
+
+	GET_PLAYER(getOwnerINLINE()).changeGold(-(iHurryGold));
+	changePopulation(-(iHurryPopulation));
 
 	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
 	{
@@ -4246,12 +4257,27 @@ void CvCity::conscript(bool bForce)
 	CvUnit* pUnit = initConscriptedUnit();
 	FAssertMsg(pUnit != NULL, "pUnit expected to be assigned (not NULL)");
 
-	changePopulation(-(getConscriptPopulation()));
-
 	if (!bForce)
 	{
-		changeConscriptAngerTimer(flatConscriptAngerLength());
+		CvCity* pUnhappyCity = this;
+
+		// Leoreth: Russian UP: temporary unhappiness is applied to your happiest city
+		if (getCivilizationType() == RUSSIA)
+		{
+			int iLoop;
+			for (CvCity* pTempCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pTempCity != NULL; pTempCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+			{
+				if (pTempCity->happyLevel() - pTempCity->unhappyLevel() > pUnhappyCity->happyLevel() - pUnhappyCity->unhappyLevel())
+				{
+					pUnhappyCity = pTempCity;
+				}
+			}
+		}
+
+		pUnhappyCity->changeConscriptAngerTimer(flatConscriptAngerLength());
 	}
+
+	changePopulation(-(getConscriptPopulation()));
 
 	setDrafted(true);
 
