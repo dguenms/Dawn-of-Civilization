@@ -843,19 +843,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
-		<English>The Power of Golden Liberty:</English>
-		<French>Le pouvoir de la Libert&#233; dor&#233;e :</French>
-		<German>Die Macht der Goldenen Freiheit:</German>
-		<Italian>The Power of Golden Liberty:</Italian>
-		<Spanish>The Power of Golden Liberty:</Spanish>
+		<English>The Power of Folwarks:</English>
+		<French>The Power of Folwarks:</French>
+		<German>The Power of Folwarks:</German>
+		<Italian>The Power of Folwarks:</Italian>
+		<Spanish>The Power of Folwarks:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL</Tag>
-		<English>Additional food and commerce during Golden Ages</English>
-		<French>Les &#226;ges d'or rapportent davantage de nourriture et de commerce</French>
-		<German>Zus&#228;tzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
-		<Italian>Additional food and commerce during Golden Ages</Italian>
-		<Spanish>Additional food and commerce during Golden Ages</Spanish>
+		<English>Extra [ICON_COMMERCE] from Farms and Pastures</English>
+		<French>Extra [ICON_COMMERCE] from Farms and Pastures</French>
+		<German>Extra [ICON_COMMERCE] from Farms and Pastures</German>
+		<Italian>Extra [ICON_COMMERCE] from Farms and Pastures</Italian>
+		<Spanish>Extra [ICON_COMMERCE] from Farms and Pastures</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR_TITLE</Tag>

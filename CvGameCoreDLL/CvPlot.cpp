@@ -2546,7 +2546,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == MEXICO && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
+	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == MEXICO && eImprovement == IMPROVEMENT_FARM && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}
@@ -2554,8 +2554,8 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	// Leoreth: different fishing boats for different sea levels
 	if (GC.getImprovementInfo(eImprovement).isWater())
 	{
-		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FISHING_BOATS") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST")) return false;
-		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_OCEAN_FISHERY") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
+		if (eImprovement == IMPROVEMENT_FISHING_BOATS && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST")) return false;
+		if (eImprovement == IMPROVEMENT_OCEAN_FISHERY && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
 	}
 
 	if (getFeatureType() != NO_FEATURE)
@@ -5467,11 +5467,11 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 		// Leoreth: gain plot control over slave plantation without being able to practice slavery
 		if (eNewValue != NO_PLAYER)
 		{
-			if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
+			if (getImprovementType() == IMPROVEMENT_SLAVE_PLANTATION)
 			{
 				if (!GET_PLAYER(eNewValue).canUseSlaves())
 				{
-					setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
+					setImprovementType(IMPROVEMENT_PLANTATION);
 				}
 			}
 		}
@@ -6859,6 +6859,15 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+	// Leoreth: Polish UP: +1 commerce from Farm and Pasture
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == POLAND && eYield == YIELD_COMMERCE)
+	{
+		if (eImprovement == IMPROVEMENT_FARM || eImprovement == IMPROVEMENT_PASTURE)
+		{
+			iYield += 1;
+		}
+	}
+
 	return iYield;
 }
 
@@ -7101,20 +7110,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (iYield >= GC.getYieldInfo(eYield).getGoldenAgeYieldThreshold())
 			{
 				iYield += GC.getYieldInfo(eYield).getGoldenAgeYield();
-			}
-
-			// Leoreth: Polish UP: +1 food and commerce during golden ages for every tile that produces at least two
-			if (eCivilization == POLAND)
-			{
-				if (eYield == YIELD_FOOD)
-				{
-					if (iYield >= 2) iYield += 1;
-				}
-
-				if (eYield == YIELD_COMMERCE)
-				{
-					if (iYield >= 3) iYield += 1; // normal golden age effect has to be accounted for
-				}
 			}
 		}
 	}
