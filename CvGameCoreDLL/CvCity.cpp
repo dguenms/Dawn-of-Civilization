@@ -10345,6 +10345,12 @@ int CvCity::getPeaceTradeModifier(TeamTypes eTeam) const
 
 	int iPeaceTurns = std::min(GC.getDefineINT("FOREIGN_TRADE_FULL_CREDIT_PEACE_TURNS"), GET_TEAM(getTeam()).AI_getAtPeaceCounter(eTeam));
 
+	// Canadian UP: Double trade route yield from years of peace
+	if (getCivilizationType() == CANADA)
+	{
+		iPeaceTurns *= 2;
+	}
+
 	/*if (GC.getGameINLINE().getElapsedGameTurns() <= iPeaceTurns)
 	{
 		return GC.getDefineINT("FOREIGN_TRADE_MODIFIER");
