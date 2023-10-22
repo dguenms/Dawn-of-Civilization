@@ -10956,15 +10956,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue /= 2;
 	}
 
-	// Leoreth: take American UP into account
-	if (getCivilizationType() == AMERICA)
-	{
-		if (eCivic == CIVIC_DEMOCRACY || eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_FREE_ENTERPRISE)
-		{
-			iValue += 100;
-		}
-	}
-
 	return iValue;
 }
 

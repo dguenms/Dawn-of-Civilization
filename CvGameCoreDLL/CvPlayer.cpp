@@ -10620,19 +10620,6 @@ void CvPlayer::changeBuildingBadHealth(int iChange)
 
 int CvPlayer::getExtraHappiness() const
 {
-	// Leoreth: American UP
-	if (getCivilizationType() == AMERICA)
-	{
-		int iCivicHappiness = 0;
-
-		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_DEMOCRACY) iCivicHappiness += 2;
-		if (getCivics(CIVICOPTION_LEGITIMACY) == CIVIC_CONSTITUTION) iCivicHappiness += 2;
-		if (getCivics(CIVICOPTION_SOCIETY) == CIVIC_INDIVIDUALISM) iCivicHappiness += 2;
-		if (getCivics(CIVICOPTION_ECONOMY) == CIVIC_FREE_ENTERPRISE) iCivicHappiness += 2;
-
-		return m_iExtraHappiness + iCivicHappiness;
-	}
-
 	return m_iExtraHappiness;
 }
 

@@ -3,19 +3,35 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME_TITLE</Tag>
-		<English>The Power of the American Dream:</English>
-		<French>Le pouvoir du r&#234;ve am&#233;ricain :</French>
-		<German>Die Macht des Amerikanischen Traums:</German>
-		<Italian>Il potere del sogno americano:</Italian>
-		<Spanish>El poder del sue&#241;o americano:</Spanish>
+		<English>The Power of Manifest Destiny</English>
+		<French>The Power of Manifest Destiny</French>
+		<German>The Power of Manifest Destiny</German>
+		<Italian>The Power of Manifest Destiny</Italian>
+		<Spanish>The Power of Manifest Destiny</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
-		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
-		<French>Bonheur additionnel avec les doctrines d&#233;mocratie, constitution, individualisme et libre entreprise</French>
-		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
-		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
-		<Spanish>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Spanish>
+		<English>Additional population growth and happiness in cities after immigration and improving resources</English>
+		<French>Additional population growth and happiness in cities after immigration and improving resources</French>
+		<German>Additional population growth and happiness in cities after immigration and improving resources</German>
+		<Italian>Additional population growth and happiness in cities after immigration and improving resources</Italian>
+		<Spanish>Additional population growth and happiness in cities after immigration and improving resources</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MANIFEST_DESTINY_IMPROVEMENT</Tag>
+		<English>Improving a nearby %s1 resource increased population and happiness in %s2.</English>
+		<French>Improving a nearby %s1 resource increased population and happiness in %s2.</French>
+		<German>Improving a nearby %s1 resource increased population and happiness in %s2.</German>
+		<Italian>Improving a nearby %s1 resource increased population and happiness in %s2.</Italian>
+		<Spanish>Improving a nearby %s1 resource increased population and happiness in %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MANIFEST_DESTINY_IMMIGRATION</Tag>
+		<English>Recent immigration increased population and happiness in %s1.</English>
+		<French>Recent immigration increased population and happiness in %s1.</French>
+		<German>Recent immigration increased population and happiness in %s1.</German>
+		<Italian>Recent immigration increased population and happiness in %s1.</Italian>
+		<Spanish>Recent immigration increased population and happiness in %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
