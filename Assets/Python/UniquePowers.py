@@ -115,6 +115,33 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 			city.setMongolUP(False)
 
 
+@handler("improvementBuilt")
+def americanImprovementPower(iImprovement, x, y):
+	improved = plot(x, y)
+	if iImprovement >= 0 and improved.isOwned() and civ(improved) == iAmerica and not improved.isWater():
+		if improved.getBonusType(improved.getTeam()) >= 0 and infos.improvement(iImprovement).isImprovementBonusTrade(improved.getBonusType(improved.getTeam())) and not infos.improvement(iImprovement).isActsAsCity():
+			improved_city = improved.getWorkingCity()
+			if not improved_city or improved_city.isNone():
+				closest = closestCity(improved, owner=improved.getOwner())
+				if closest and not closest.isNone() and distance(closest, improved) <= 3:
+					improved_city = closest
+			
+			if improved_city and not improved_city.isNone():
+				improved_city.changePopulation(1)
+				improved_city.changeHappinessTimer(turns(10))
+				
+				message(improved.getOwner(), "TXT_KEY_UP_MANIFEST_DESTINY_IMPROVEMENT", infos.bonus(improved.getBonusType(improved.getTeam())).getText(), improved_city.getName())
+
+
+@handler("immigration")
+def americanImmigrationPower(_, city):
+	if civ(city) == iAmerica:
+		city.changePopulation(1)
+		city.changeHappinessTimer(turns(10))
+		
+		message(city.getOwner(), "TXT_KEY_UP_MANIFEST_DESTINY_IMMIGRATION", city.getName())
+
+
 @handler("immigration")
 def canadianUP(_, city, iPopulation):
 	if civ(city) == iCanada:
