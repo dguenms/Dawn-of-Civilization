@@ -254,7 +254,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ABATTOIR</BuildingClassType>
 					<BuildingType>BUILDING_ARGENTINE_REFRIGERATION_PLANT</BuildingType>
 				</Building>
 				<Building>
