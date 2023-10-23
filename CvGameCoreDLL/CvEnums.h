@@ -1258,7 +1258,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	GILGAMESH,
 	HAMMURABI,
 
-	VATAVELLI,
+	WENT_ANTU,
 
 	ASHURBANIPAL,
 
