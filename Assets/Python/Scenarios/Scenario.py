@@ -17,7 +17,7 @@ LEADER_DATES = {
 	iBaibars: 1260,
 	iSargon: -2400,
 	iHammurabi: -1800,
-	iVatavelli: -2000,
+	iWentAntu: -2000,
 	iAshurbanipal: -660,
 	iQinShiHuang: -220,
 	iTaizong: 630,

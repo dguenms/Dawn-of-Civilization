@@ -4653,10 +4653,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_VATAVELLI</Type>
-			<Description>TXT_KEY_LEADER_VATAVELLI</Description>
-			<Civilopedia>TXT_KEY_LEADER_VATAVELLI_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_VATAVELLI</ArtDefineTag>
+			<Type>LEADER_WENT_ANTU</Type>
+			<Description>TXT_KEY_LEADER_WENT_ANTU</Description>
+			<Civilopedia>TXT_KEY_LEADER_WENT_ANTU_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_WENT_ANTU</ArtDefineTag>
 			<iWonderConstructRand>50</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>8</iBasePeaceWeight>

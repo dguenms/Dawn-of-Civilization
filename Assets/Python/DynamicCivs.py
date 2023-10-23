@@ -478,7 +478,7 @@ dStartingLeaders = [
 	iEgypt : iRamesses,
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
-	iHarappa : iVatavelli,
+	iHarappa : iWentAntu,
 	iAssyria : iAshurbanipal,
 	iChina : iQinShiHuang,
 	iHittites : iMursili,

@@ -1124,7 +1124,7 @@ iVictorySecularism = 11
 
 #leaders
 iNumLeaders = 137
-(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iRamesses, iCleopatra, iBaibars, iNasser, iSargon, iHammurabi, iVatavelli,
+(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iRamesses, iCleopatra, iBaibars, iNasser, iSargon, iHammurabi, iWentAntu,
 iAshurbanipal, iQinShiHuang, iTaizong, iHongwu, iMao, iMursili, iPericles, iAlexanderTheGreat, iGeorge, iAsoka, 
 iChandragupta, iShivaji, iGandhi, iHiram, iHannibal, iTaharqa, iAhoeitu, iCyrus, iDarius, iKhosrow, 
 iBrennus, iJuliusCaesar, iAugustus, iPacal, iRajendra, iKrishnaDevaRaya, iEzana, iZaraYaqob, iMenelik, iTopiltzin, 

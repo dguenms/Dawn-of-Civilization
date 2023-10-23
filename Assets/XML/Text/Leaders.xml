@@ -902,16 +902,16 @@
 		<Spanish>Tipu Sultan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_VATAVELLI</Tag>
-		<English>Vatavelli</English>
+		<Tag>TXT_KEY_LEADER_WENT_ANTU</Tag>
+		<English>Went-Antu</English>
 		<French>
-			<Text>Vatavelli</Text>
+			<Text>Went-Antu</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Vatavelli</German>
-		<Italian>Vatavelli</Italian>
-		<Spanish>Vatavelli</Spanish>
+		<German>Went-Antu</German>
+		<Italian>Went-Antu</Italian>
+		<Spanish>Went-Antu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_WANGKON</Tag>

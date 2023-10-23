@@ -727,7 +727,7 @@
 			<BackgroundKFM>art/LeaderHeads/Justinian/Justinian_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_VATAVELLI</Type>
+			<Type>ART_DEF_LEADER_WENT_ANTU</Type>
 			<Button>Art/Leaderheads/Sennacherib/SennacheribButton.dds</Button>
 			<NIF>Art/LeaderHeads/Sennacherib/josef_stalin.nif</NIF>
 			<KFM>Art/LeaderHeads/Sennacherib/josef_stalin.kfm</KFM>
