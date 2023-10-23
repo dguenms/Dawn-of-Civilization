@@ -888,11 +888,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_KRISHNA_DEVA_RAYA</Type>
-			<Button>Art/LeaderHeads/Mihirakula/Button_Mihirakula.dds</Button>
-			<NIF>art/LeaderHeads/Mihirakula/Pacal.nif</NIF>
-			<KFM>art/LeaderHeads/Mihirakula/Pacal.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Mihirakula/Pacal_Nonshader.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Mihirakula/Pacal_BG.kfm</BackgroundKFM>
+			<Button>Art/LeaderHeads/Dharmapala/Krishnadevaraya.dds</Button>
+			<NIF>art/LeaderHeads/Dharmapala/masinissa.nif</NIF>
+			<KFM>art/LeaderHeads/Dharmapala/augustus_caesar.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Dharmapala/masinissa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Dharmapala/Augustus_Caesar_BG2.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BHUTTO</Type>
