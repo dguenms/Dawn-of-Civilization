@@ -9595,7 +9595,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_TOLTEC_ATL_ATL</Type>
+			<Type>ART_DEF_UNIT_TOLTEC_ATLATL</Type>
 			<Button>Art/Units/AtlAtl/atl_atl.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>

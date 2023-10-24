@@ -3502,12 +3502,12 @@
 		<Spanish>Rattan Archer</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TOLTEC_ATL_ATL</Tag>
-		<English>Atl-Atl</English>
-		<French>Atl-Atl</French>
-		<German>Atl-Atl</German>
-		<Italian>Atl-Atl</Italian>
-		<Spanish>Atl-Atl</Spanish>
+		<Tag>TXT_KEY_UNIT_TOLTEC_ATLATL</Tag>
+		<English>Atlatl</English>
+		<French>Atlatl</French>
+		<German>Atlatl</German>
+		<Italian>Atlatl</Italian>
+		<Spanish>Atlatl</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JAVANESE_SILAT</Tag>

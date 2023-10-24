@@ -6236,7 +6236,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
-					<UnitType>UNIT_TOLTEC_ATL_ATL</UnitType>
+					<UnitType>UNIT_TOLTEC_ATLATL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
