@@ -8298,13 +8298,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SKIRMISHER</Class>
-			<Type>UNIT_TOLTEC_ATL_ATL</Type>
+			<Type>UNIT_TOLTEC_ATLATL</Type>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_TOLTEC_ATL_ATL</Description>
-			<Civilopedia>TXT_KEY_UNIT_TOLTEC_ATL_ATL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_TOLTEC_ATL_ATL_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_TOLTEC_ATLATL</Description>
+			<Civilopedia>TXT_KEY_UNIT_TOLTEC_ATLATL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_TOLTEC_ATLATL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -8408,7 +8408,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>8</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_TOLTEC_ATL_ATL</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_TOLTEC_ATLATL</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
