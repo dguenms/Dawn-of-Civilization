@@ -140,12 +140,29 @@ def importRectangle(tCorners):
 	importArea(plots.rectangle(*tCorners))
 
 
-def importSettlerMap(iCiv):
-	area = [tile for tile, value in FileMap.read("Settler/%s.csv" % civ_name(iCiv)) if value and not plot(tile).isWater()]
+def importCore(iCiv):
+	importArea(plots.core(iCiv))
+
+
+def importMap(path, iCiv):
+	area = [tile for tile, value in FileMap.read("%s/%s.csv" % (path, civ_name(iCiv))) if value and not plot(tile).isWater()]
 	importArea(area)
 	
-	landmarks = dict((tile, str(value)) for tile, value in FileMap.read("Settler/%s.csv" % civ_name(iCiv)) if int(value) > 1)
+	landmarks = dict((tile, str(value)) for tile, value in FileMap.read("%s/%s.csv" % (path, civ_name(iCiv))) if int(value) > 1)
 	createLandmarks(landmarks)
+
+
+def importSettlerMap(iCiv):
+	importMap("Settler", iCiv)
+
+
+def importWarMap(iCiv):
+	importMap("War", iCiv)
+
+
+def clearMap(iIndex=1000):
+	removeLandmarks()
+	engine.clearAreaBorderPlots(iIndex)
 
 
 def exportBaseTerrain():
