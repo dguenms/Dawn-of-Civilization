@@ -233,6 +233,11 @@ def markResourceSpawns(iResource):
 			createLandmark(tile, "%s %s" % (name, iYear))
 
 
+def markAllResourceSpawns():
+	for iResource in range(iNumBonuses):
+		markResourceSpawns(iResource)
+
+
 def markTerrainSpawns():
 	for tile, (iYear, iResource) in dResourcesDict.items():
 		createLandmark(tile, "%s %s" % (infos.bonus(iResource).getText(), iYear))
