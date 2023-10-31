@@ -475,7 +475,7 @@
 			<TextColorType>COLOR_PLAYER_BRIGHT_RED_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_DARK_CYAN</Type> <!-- Korea -->
+			<Type>PLAYERCOLOR_DARK_CYAN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_CYAN</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_CYAN_TEXT</TextColorType>
@@ -503,6 +503,18 @@
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_OCHRE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_PERSIA_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_OCHRE</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_BLUEISH_PURPLE</Type> <!-- Korea -->
+			<ColorTypePrimary>COLOR_PLAYER_BLUEISH_PURPLE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_BRIGHT_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_BLUEISH_PURPLE_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_DRAB_BLUE</Type>
+			<ColorTypePrimary>COLOR_PLAYER_DRAB_BLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DRAB_BLUE</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
