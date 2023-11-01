@@ -23333,7 +23333,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=52
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -29960,7 +29960,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=59
-	FeatureType=FEATURE_FOREST, FeatureVariety=4
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -30419,7 +30419,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=59
-	BonusType=BONUS_COW
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -31781,7 +31781,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=58
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -32260,6 +32259,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=58
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -37366,8 +37366,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=32
-	BonusType=BONUS_COW
-	BonusVarietyType=BONUS_COW_BROWN
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -37832,13 +37831,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=32
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COW
+	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=84,y=33
-	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -38295,6 +38294,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=33
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39687,6 +39687,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=35
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -40158,7 +40159,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=35
-	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -63312,6 +63312,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=20
+	BonusType=BONUS_BANANA
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -64160,7 +64161,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=16
-	BonusType=BONUS_BANANA
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
