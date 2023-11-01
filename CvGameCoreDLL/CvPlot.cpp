@@ -3262,7 +3262,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		}
 	}
 
-	bool bHasTerrainCost = (iRegularCost > 1);
+	bool bHasTerrainCost = true; // (iRegularCost > 1);
 
 	iRegularCost = std::min(iRegularCost, pUnit->baseMoves());
 
