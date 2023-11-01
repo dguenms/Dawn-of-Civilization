@@ -180,6 +180,7 @@ dResourcesDict = {
 	(74, 12)  : (1750,  iWine),     # South Africa
 	(41, 17)  : (1750,  iWine),     # Southern Brazil
 	(128, 62) : (1800,  iCorn),     # Manchuria
+	(80, 63)  : (1800,  iPotato),   # Belarus
 	(87, 65)  : (1800,  iPotato),   # Russia
 	(124, 51) : (1800,  iPotato),   # China
 	(139, 11) : (1800,  iSheep),    # Australia
@@ -204,6 +205,7 @@ dResourcesDict = {
 	(8, 55)   : (1850,  iRice),     # California
 	(137, 62) : (1850,  iCow),      # Hokkaido
 	(8, 53)   : (1850,  iCow),      # California
+	(142, 17) : (1850,  iCow),		# Queensland
 	(8, 52)   : (1850,  iSheep),    # California
 	(8, 54)   : (1850,  iCitrus),   # California
 	(4, 41)   : (1850,  iCitrus),   # Hawaii
@@ -232,6 +234,7 @@ dResourcesDict = {
 	(10, 54)  : (1850,  iSilver),   # Nevada
 	(16, 54)  : (1860,  iGold),     # Colorado
 	(12, 60)  : (1860,  iSilver),   # Idaho
+	(138, 9)  : (1900,  iWheat),    # Victoria
 	(26, 49)  : (1900,  iCitrus),   # Florida
 	(83, 29)  : (1900,  iTea),      # Kenya
 	(71, 29)  : (1900,  iRubber),   # Cameroon
@@ -270,6 +273,7 @@ dRemovedResourcesDict = {
 	(58, 47)  : 500, # Dye (murex) in Morocco
 	(66, 46)  : 550, # Ivory in Tunisia
 	(58, 45)  : 550, # Ivory in Morocco
+	(63, 94)  : 550, # Ivory in Persia
 	(100, 50) : 1100, # Silver in Bactria
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
