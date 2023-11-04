@@ -1164,12 +1164,20 @@ class PlotFactory:
 		return sum(areas, self.none())
 
 	def birth(self, identifier, extended=None):
-		if extended is None: extended = isExtendedBirth(identifier)
-		if identifier in dExtendedBirthArea and extended:
-			return self.area(dExtendedBirthArea, dBirthAreaExceptions, identifier)
-		if identifier not in dBirthArea:
-			return self.core(identifier)
-		return self.area(dBirthArea, dBirthAreaExceptions, identifier)
+		if extended is None: 
+			extended = isExtendedBirth(identifier)
+		
+		if extended:
+			if identifier in dExtendedBirthArea:
+				if identifier in dExtendedBirthAreaExceptions:
+					return self.area(dExtendedBirthArea, dExtendedBirthAreaExceptions, identifier)
+				
+				return self.area(dExtendedBirthArea, dBirthAreaExceptions, identifier)
+		
+		if identifier in dBirthArea:
+			return self.area(dBirthArea, dBirthAreaExceptions, identifier)
+		
+		return self.core(identifier)
 
 	def core(self, identifier):
 		iPeriod = player(identifier).getPeriod()
