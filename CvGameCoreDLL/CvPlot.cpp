@@ -6522,6 +6522,7 @@ void CvPlot::updateWorkingCity()
 		{
 			FAssertMsg(isOwned(), "isOwned is expected to be true");
 			FAssertMsg(!isBeingWorked(), "isBeingWorked did not return false as expected");
+			FAssertMsg(pBestCity->getCityPlotIndex(this) >= 0, "plot expected to be in range of working city");
 			m_workingCity = pBestCity->getIDInfo();
 		}
 		else

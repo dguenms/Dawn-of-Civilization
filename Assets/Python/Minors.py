@@ -87,12 +87,13 @@ class MinorCity(object):
 		return self.iOwner
 	
 	def found(self):
+		iOwnerPlayer = slot(self.iOwner)
 		x, y = location(self.tile)
 		
-		convertPlotCulture(self.tile, self.iOwner, 100, bOwner=True)
-		expelUnits(self.iOwner, plots.surrounding(x, y))
+		convertPlotCulture(self.tile, iOwnerPlayer, 100, bOwner=True)
+		expelUnits(iOwnerPlayer, plots.surrounding(x, y))
 		
-		player(self.iOwner).found(x, y)
+		player(iOwnerPlayer).found(x, y)
 		founded = city(x, y)
 		
 		if founded:
