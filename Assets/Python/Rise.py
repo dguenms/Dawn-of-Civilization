@@ -95,6 +95,11 @@ def initBirths():
 		birth.check()
 
 
+@handler("GameStart")
+def initCamera():
+	plot(dCapitals[active()]).cameraLookAt()
+
+
 @handler("BeginGameTurn")
 def checkBirths():
 	for birth in data.births:
