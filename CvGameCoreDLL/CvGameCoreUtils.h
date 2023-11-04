@@ -225,7 +225,7 @@ inline int sgn(int x)
 // Leoreth: multiply and divide ints without overflow as long as the result is an int
 inline int percent(int iValue, int iFactor, int iDivisor = 100)
 {
-	FAssertMsg(iDivisor >= iFactor, "Percent calculation may overflow");
+	//FAssertMsg(iDivisor >= iFactor, "Percent calculation may overflow");
 	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
 }
 

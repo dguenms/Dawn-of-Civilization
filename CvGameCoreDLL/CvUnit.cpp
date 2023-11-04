@@ -6528,7 +6528,7 @@ int CvUnit::getTradeGold(const CvPlot* pPlot) const
 	iGold = (m_pUnitInfo->getBaseTrade() + (m_pUnitInfo->getTradeMultiplier() * ((pCapitalCity != NULL) ? pCity->calculateTradeProfit(pCapitalCity) : 0)));
 
 	// Leoreth: to help Mali
-	if (GET_PLAYER(getOwnerINLINE()).isStateReligion() && pCity->isHolyCity(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && iGold < 2000)
+	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && pCity->isHolyCity(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && iGold < 2000)
 	{
 		iGold = std::min(iGold*2, 2000);
 	}
