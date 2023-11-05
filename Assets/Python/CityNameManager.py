@@ -104,12 +104,6 @@ def updateMexicanCityNames(iPlayer):
 	if civ(iPlayer) == iMexico:
 		updateCityNamesFound(iPlayer)
 
-@handler("periodChange")
-def updateVietnameseNames(iCiv, iPeriod):
-	if iPeriod == iPeriodVietnam:
-		saigon = city(*tSaigon)
-		if saigon:
-			renameOwnedCity(saigon, "Saigon")
 
 # methods
 

@@ -3607,7 +3607,7 @@ enum PeriodTypes
 {
 	NO_PERIOD = -1,
 
-	PERIOD_LATE_INCA = 19,
+	PERIOD_LATE_INCA = 17,
 };
 
 // Leoreth
