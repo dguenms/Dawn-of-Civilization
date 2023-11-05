@@ -671,9 +671,6 @@ def onPeriodChange(iPlayer, iPeriod):
 		elif iPeriod == iPeriodNorway:
 			setShort(iPlayer, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
 			setAdjective(iPlayer, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
-		elif iPeriod == iPeriodSweden:
-			setShort(iPlayer, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-			setAdjective(iPlayer, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
 	
 	if iCiv == iTurks:
 		if iPeriod == iPeriodUzbeks:

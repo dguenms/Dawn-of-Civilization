@@ -73,7 +73,6 @@ iPeriodMing :			(125, 56), # Beijing
 iPeriodMaratha :		(105, 46),	# Delhi
 iPeriodCarthage : 		(67, 48),	# Carthage
 iPeriodVijayanagara :	(106, 37),	# Vijayanagara
-iPeriodVietnam :		(121, 42),	# Ha Noi
 iPeriodAustria :		(71, 59),	# Vienna
 }
 
@@ -304,7 +303,6 @@ iPeriodSeljuks : 					((92, 48),	(98, 53)),
 iPeriodSaudi :						((84, 38),	(90, 43)),
 iPeriodMorocco : 					((56, 43),	(60, 47)),
 iPeriodSpain : 						((54, 48),	(59, 54)),
-iPeriodVietnam : 					((120, 40),	(122, 43)),
 iPeriodAustria : 					((69, 58),	(72, 61)),
 iPeriodLateInca :					((28, 20),	(34, 25)),
 iPeriodModernItaly : 				((65, 53),	(70, 57)),
@@ -320,7 +318,6 @@ iPeriodModernGreece :			[(74, 54)],
 iPeriodMaratha :				[(102, 43), (102, 44), (102, 45), (102, 46), (102, 47), (103, 43), (103, 44), (103, 45), (103, 46), (103, 47), (106, 38), (106, 39), (106, 40), (107, 38), (107, 39), (107, 40)],
 iPeriodCarthage :				[(64, 45), (64, 46), (65, 45), (65, 46), (70, 48)],
 iPeriodSpain :					[(54, 49), (54, 50), (54, 51), (54, 52), (55, 49), (55, 50), (55, 51), (55, 52)],
-iPeriodVietnam :				[(120, 40)],
 iPeriodLateInca :				[(34, 24), (34, 25)],
 iPeriodModernItaly :			[(65, 53)],
 iPeriodOttomanConstantinople :	[(86, 50), (87, 50)],

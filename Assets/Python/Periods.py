@@ -5,7 +5,6 @@ from Events import events, handler
 
 dEvacuatePeriods = {
 	iPhoenicia : iPeriodCarthage,
-	iKhmer : iPeriodVietnam,
 }
 
 dPeriods600AD = {
@@ -16,9 +15,8 @@ dPeriods1700AD = {
 	iChina : iPeriodMing,
 	iIndia : iPeriodMaratha,
 	iDravidia : iPeriodVijayanagara,
-	iVikings : iPeriodSweden,
+	iVikings : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
-	iKhmer : iPeriodVietnam,
 	iMoors : iPeriodMorocco,
 	iSpain : iPeriodSpain,
 	iHolyRome : iPeriodAustria,
@@ -70,9 +68,6 @@ def setup():
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iThailand:
-		setPeriod(iKhmer, iPeriodVietnam)
-	
 	if iCiv == iGermany:
 		setPeriod(iHolyRome, iPeriodAustria)
 
@@ -103,8 +98,7 @@ def onResurrection(iPlayer):
 	if iCiv == iArabia:
 		setPeriod(iArabia, iPeriodSaudi)
 		
-	# TODO: it was like this in onResurrection - figure out the intent
-	if iCiv in [iArabia, iMongols]:
+	if iCiv == iMongols:
 		setPeriod(iCiv, -1)
 
 
@@ -114,11 +108,11 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	iOwnerCiv = civ(iOwner)
 
 	if iCiv == iOttomans:
-		if city.at(68, 45):
+		if city.at(*tConstantinople):
 			setPeriod(iOttomans, iPeriodOttomanConstantinople)
 	
 	if iTurks in [iCiv, iOwnerCiv]:
-		if isControlled(iTurks, plots.core(iPersia)):
+		if isControlled(iTurks, plots.core(iIran)):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:
 			setPeriod(iTurks, -1)
@@ -218,9 +212,7 @@ def getVikingPeriod(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	
 	if capital:
-		if isCurrentCapital(iPlayer, "Stockholm", "Kalmar"):
-			return iPeriodSweden
-		elif isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
+		if isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
 			return iPeriodNorway
 		elif isCurrentCapital(iPlayer, "Roskilde"):
 			return iPeriodDenmark
