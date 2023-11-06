@@ -1,5 +1,6 @@
 from Core import *
 from RFCUtils import *
+from Locations import *
 from Events import events, handler
 
 
@@ -22,6 +23,39 @@ dPeriods1700AD = {
 	iHolyRome : iPeriodAustria,
 	iInca : iPeriodPeru,
 	iOttomans : iPeriodOttomanConstantinople,
+}
+
+iNumPeriods = 22
+(iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodVijayanagara,
+iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodDenmark, iPeriodNorway, 
+iPeriodUzbeks, iPeriodSaudi, iPeriodMorocco, iPeriodSpain, iPeriodAustria, 
+iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, iPeriodPakistan, 
+iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
+
+
+dPeriodNames = {
+	iPeriodMing:					"Ming",
+	iPeriodMaratha:					"Maratha",
+	iPeriodModernGreece:			"Modern_Greece",
+	iPeriodCarthage:				"Carthage",
+	iPeriodVijayanagara:			"Vijayanagara",
+	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
+	iPeriodSeljuks:					"Seljuks",
+	iPeriodMeiji:					"Meiji",
+	iPeriodDenmark:					"Denmark",
+	iPeriodNorway:					"Norway",
+	iPeriodUzbeks:					"Uzbeks",
+	iPeriodSaudi:					"Saudi",
+	iPeriodMorocco:					"Morocco",
+	iPeriodSpain:					"Spain",
+	iPeriodAustria:					"Austria",
+	iPeriodYuan:					"Yuan",
+	iPeriodPeru:					"Peru",
+	iPeriodLateInca:				"Late_Inca",
+	iPeriodModernItaly:				"Modern_Italy",
+	iPeriodPakistan:				"Pakistan",
+	iPeriodOttomanConstantinople:	"Ottoman_Constantinople",
+	iPeriodModernGermany:			"Modern_Germany",
 }
 
 

@@ -158,6 +158,12 @@ def importSettlerMap(iCiv):
 
 def importWarMap(iCiv):
 	importMap("War", iCiv)
+	
+
+def showSettlerValues(iCiv):
+	values = dict((p, p.getSettlerValue(iCiv)) for p in plots.all().land() if p.getSettlerValue(iCiv) > 0)
+	importArea(values.keys())
+	createLandmarks(dict((key, str(value)) for key, value in values.items() if value > 1))
 
 
 def clearMap(iIndex=1000):
