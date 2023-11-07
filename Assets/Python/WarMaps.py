@@ -29,4 +29,3 @@ def activate(iPlayer, iCivilization):
 @handler("periodChange")
 def updateMapOnPeriodChange(iCivilization, iPeriod):
 	applyMap(iCivilization, iPeriod)
-}
