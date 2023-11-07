@@ -1993,7 +1993,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Topkapi Palace effect: initial production in conquered cities
 	if (bConquest && isHasBuildingEffect((BuildingTypes)TOPKAPI_PALACE))
 	{
-		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
+		pNewCity->changeOverflowProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2, pNewCity->getProductionModifier());
 	}
 
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
