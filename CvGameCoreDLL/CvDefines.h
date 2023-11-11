@@ -24,7 +24,7 @@
 #define RANDPLOT_NOT_CITY				(0x00000040)
 
 #ifdef _USRDLL
-#define MAX_CIV_PLAYERS				(32)
+#define MAX_CIV_PLAYERS				(36)
 #else
 #define MAX_CIV_PLAYERS				(CvGlobals::getInstance().getMaxCivPlayers())
 #endif
