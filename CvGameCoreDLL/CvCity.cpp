@@ -5304,6 +5304,12 @@ bool CvCity::isBarbarian() const
 }
 
 
+bool CvCity::isIndependent() const
+{
+	return GET_PLAYER(getOwnerINLINE()).isIndependent();
+}
+
+
 bool CvCity::isHuman() const
 {
 	return GET_PLAYER(getOwnerINLINE()).isHuman();

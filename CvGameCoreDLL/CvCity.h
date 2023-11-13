@@ -167,6 +167,7 @@ public:
 
 	bool hasTrait(TraitTypes eTrait) const;																	// Exposed to Python
 	bool isBarbarian() const;																								// Exposed to Python
+	bool isIndependent() const; // Leoreth
 	bool isHuman() const;																										// Exposed to Python
 	DllExport bool isVisible(TeamTypes eTeam, bool bDebug) const;						// Exposed to Python
 
