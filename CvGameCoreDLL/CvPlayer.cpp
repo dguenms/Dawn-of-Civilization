@@ -5849,33 +5849,38 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	//Leoreth: prevent AI from settling on food resources
 	if (!isHuman())
 	{
-		BonusTypes bonus = pPlot->getBonusType();
-		if (bonus != NO_BONUS)
+		BonusTypes eBonus = pPlot->getBonusType();
+		if (eBonus != NO_BONUS)
 		{
-			switch ((int)bonus)
+			if (GC.getBonusInfo(eBonus).getYieldChange(YIELD_FOOD) > 0)
 			{
-			case BONUS_BANANA:
-			case BONUS_CORN:
-			case BONUS_COW:
-			case BONUS_DEER:
-			case BONUS_PIG:
-			case BONUS_RICE:
-			case BONUS_SHEEP:
-			case BONUS_WHEAT:
-			case BONUS_IVORY:
 				return false;
-				break;
-			default:
-				break;
 			}
 		}
 	}
 
-	// Leoreth: America/France don't care about Canada until the Canadians spawn
-	if (getID() != GC.getGame().getActivePlayer() && GC.getGameINLINE().getGameTurn() < getTurns(GC.getCivilizationInfo(CANADA).getStartingYear()) + getTurns(5))
+	if (!isHuman() && GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(CANADA).getStartingYear()) + getTurns(5))
 	{
-		if (getCivilizationType() == AMERICA && iY >= 51) return false;
-		if (getCivilizationType() == FRANCE && iX <= 24 && iY >= 51) return false;
+		if (getCivilizationType() == AMERICA)
+		{
+			switch (pPlot->getRegionID())
+			{
+			case REGION_MARITIMES:
+			case REGION_QUEBEC:
+			case REGION_ONTARIO:
+			case REGION_AMERICAN_ARCTIC:
+				return false;
+			}
+		}
+		else if (getCivilizationType() == FRANCE)
+		{
+			switch (pPlot->getRegionID())
+			{
+			case REGION_ONTARIO:
+			case REGION_AMERICAN_ARCTIC:
+				return false;
+			}
+		}
 	}
 
 	return true;
