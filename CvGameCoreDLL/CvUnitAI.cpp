@@ -5402,6 +5402,18 @@ void CvUnitAI::AI_settlerSeaMove()
 		}
 	}
 
+	// Leoreth: if we have a settler, pick up a defender
+	if (iSettlerCount > 0)
+	{
+		log("Check pickup defender");
+		if (AI_pickup(UNITAI_CITY_DEFENSE))
+		{
+			log("pickup");
+			return;
+		}
+	}
+
+	log("check pickup settler");
 	if (AI_pickup(UNITAI_SETTLE))
 	{
 		return;
@@ -13242,9 +13254,22 @@ bool CvUnitAI::AI_settlerSeaTransport()
 
 	if (iAreaBestFoundValue > iOtherAreaBestFoundValue)
 	{
-		//let the settler walk.
-		unloadAll();
-		return true;
+		// see if its better to walk
+		log(CvWString::format(L"Check if settler should walk: (%d, %d)", getX(), getY()));
+		int iTransportPathTurns;
+		int iSettlerPathTurns;
+
+		bool bTransportPath = generatePath(pAreaBestPlot, 0, true, &iTransportPathTurns);
+		bool bSettlerPath = pSettlerUnit->generatePath(pAreaBestPlot, 0, true, &iSettlerPathTurns);
+
+		log(CvWString::format(L"bTransportPath: %d (%d turns), bSettlerPath: %d (%d turns)", bTransportPath, iTransportPathTurns, bSettlerPath, iSettlerPathTurns));
+		if (bSettlerPath && iSettlerPathTurns < iTransportPathTurns)
+		{
+			//let the settler walk.
+			log(CvWString::format(L"Let the settler walk: (%d, %d)", getX(), getY()));
+			unloadAll();
+			return true;
+		}
 	}
 
 	iBestValue = 0;

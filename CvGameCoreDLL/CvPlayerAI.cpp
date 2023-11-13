@@ -18532,6 +18532,24 @@ bool CvPlayerAI::AI_isPlotCitySite(CvPlot* pPlot) const
 
 }
 
+// Leoreth
+int CvPlayerAI::AI_bestCitySiteSettlerValue(int iAreaID) const
+{
+	std::vector<int>::iterator it;
+	int iBestValue = 0;
+
+	for (it = m_aiAICitySites.begin(); it != m_aiAICitySites.end(); it++)
+	{
+		CvPlot* pCitySitePlot = GC.getMapINLINE().plotByIndex((*it));
+		if (iAreaID == -1 || pCitySitePlot->getArea() == iAreaID)
+		{
+			iBestValue = std::max(iBestValue, pCitySitePlot->getSettlerValue(getID()));
+		}
+	}
+
+	return iBestValue;
+}
+
 int CvPlayerAI::AI_getNumAreaCitySites(int iAreaID, int& iBestValue) const
 {
 	std::vector<int>::iterator it;
