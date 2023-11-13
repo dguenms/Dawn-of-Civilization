@@ -2879,7 +2879,7 @@ def canTriggerCrusade(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	
-	iReligion = kTriggeredData.eOtherPlayer
+	iReligion = kTriggeredData.eReligion
 	if iReligion == iCatholicism:
 		iReligion = iOrthodoxy
 	
