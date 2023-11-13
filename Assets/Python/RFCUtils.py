@@ -94,7 +94,7 @@ def minorWars(iMinorCiv):
 def updateMinorTechs(iMinorCiv, iMajorCiv):
 	for iTech in range(iNumTechs):
 		if team(iMajorCiv).isHasTech(iTech):
-				team(iMajorCiv).setHasTech(iTech, True, iMinorCiv, False, False)
+			team(iMinorCiv).setHasTech(iTech, True, iMinorCiv, False, False)
 
 # used: RFCUtils, History
 def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
