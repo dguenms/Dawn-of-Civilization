@@ -130,6 +130,14 @@
 		<Spanish>Celtiberian</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_CELTIC</Tag>
+		<English>Celtic</English>
+		<French>Celtic</French>
+		<German>Celtic</German>
+		<Italian>Celtic</Italian>
+		<Spanish>Celtic</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_CHAM</Tag>
 		<English>Cham</English>
 		<French>Cham</French>
