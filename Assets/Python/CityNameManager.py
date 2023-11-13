@@ -99,7 +99,7 @@ def determineCapitalLocations():
 			
 	data.dCapitalLocations = dLocations
 
-@handler("birth")
+#@handler("birth")
 def updateMexicanCityNames(iPlayer):
 	if civ(iPlayer) == iMexico:
 		updateCityNamesFound(iPlayer)
@@ -202,7 +202,7 @@ def updateCityNamesFound(iPlayer):
 def findLocations(iCiv, sName):
 	return plots.all().where(lambda p: getFoundName(iCiv, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
 
-@handler("cityBuilt")
+#@handler("cityBuilt")
 def onCityBuilt(city):
 	if is_minor(city):
 		return
@@ -222,7 +222,7 @@ def onCityBuilt(city):
 	if sNewName:
 		city.setName(sNewName, False)
 		
-@handler("cityAcquired")
+#@handler("cityAcquired")
 def onCityAcquired(iOwner, iNewOwner, city):
 	iNewOwnerCiv = civ(iNewOwner)
 
@@ -342,7 +342,7 @@ def getEraRename(sName, iEra):
 		return tEraNames[iEra][sName]
 	return None
 
-@handler("techAcquired")
+#@handler("techAcquired")
 def onTechAcquired(iTech, iTeam, iPlayer):
 	ownerCities = cities.owner(iPlayer)
 	
@@ -364,7 +364,7 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 			
 			renameOwnedCity(city, sNewName)
 
-@handler("religionSpread")
+#@handler("religionSpread")
 def onReligionSpread(iReligion, iPlayer, city):
 	iCiv = civ(iPlayer)
 			
@@ -373,7 +373,7 @@ def onReligionSpread(iReligion, iPlayer, city):
 		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: 
 			renameOwnedCity(city, "Buddhapest")
 
-@handler("revolution")
+#@handler("revolution")
 def onRevolution(iPlayer):
 	if isCommunist(iPlayer):
 		applyCommunistNames(iPlayer)
@@ -384,7 +384,7 @@ def onRevolution(iPlayer):
 		updateCityNames(iPlayer)
 	
 
-@handler("greatPersonBorn")
+#@handler("greatPersonBorn")
 def onGreatPersonBorn(unit, iPlayer):
 	if civ(iPlayer) == iMexico:
 		if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
