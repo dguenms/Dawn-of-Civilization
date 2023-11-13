@@ -147,6 +147,7 @@ iCanada : 		((6, 59),	(37, 68)),
 # TODO: restore and adjust
 dExtendedBirthArea = CivDict({
 iSpain : 		((54, 51),	(62, 54)),
+iEngland :		((55, 62),	(59, 71)),
 iInca : 		((29, 20),	(35, 25)),
 iMongols : 		((96, 52),	(132, 66)),
 iOttomans : 	((78, 51),	(87, 56)),
