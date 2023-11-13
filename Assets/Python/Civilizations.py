@@ -673,9 +673,8 @@ dStartingUnits = CivDict({
 		iWork: 2,
 		iDefend: 3,
 		iAttack: 4,
-		iSettleSea: 1,
+		iSettleSea: 2,
 		iWorkerSea: 1,
-		iFerry: 1,
 	},
 	iMaya: {
 		iSettle: 1,
