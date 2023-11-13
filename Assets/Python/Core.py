@@ -1213,6 +1213,10 @@ class PlotFactory:
 		if identifier in dNewCapitals:
 			return plot(dNewCapitals[identifier])
 		return self.respawnCapital(identifier)
+	
+	def sites(self, identifier):
+		pPlayer = player(identifier)
+		return self.of([pPlayer.AI_getCitySite(i) for i in range(pPlayer.AI_getNumCitySites())])
 
 
 class Locations(EntityCollection):
