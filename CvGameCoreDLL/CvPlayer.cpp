@@ -7545,15 +7545,6 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 {
 	int iSupport;
 
-	// Leoreth: help AIs, especially those that start with large stacks, so they don't disband them
-	if (!isHuman())
-	{
-		if (GC.getGame().getGameTurn() < getLastBirthTurn() + getTurns(20))
-		{
-			return 0;
-		}
-	}
-
 	iFreeUnits = GC.getHandicapInfo(getHandicapType()).getFreeUnits();
 
 	iFreeUnits += getBaseFreeUnits();
@@ -7600,12 +7591,11 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 		iSupport /= 100;
 	}
 
-	//Rhye - start (modern units cost more)
-	if (getCurrentEra() >= 2) { //medieval
-		iSupport *= (3*(getCurrentEra()-1) + 100); //100-100-103-106-109-112
-		iSupport /= 100;
+	// Leoreth: independents pay less
+	if (isIndependent())
+	{
+		iSupport /= 2;
 	}
-	//Rhye - end
 
 	FAssert(iSupport >= 0);
 
@@ -7616,12 +7606,6 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 int CvPlayer::calculateUnitCost() const
 {
 	if (isAnarchy())
-	{
-		return 0;
-	}
-
-	// Leoreth: independents do not have to pay unit costs
-	if (isIndependent())
 	{
 		return 0;
 	}
