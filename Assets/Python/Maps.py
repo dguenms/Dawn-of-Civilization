@@ -266,6 +266,11 @@ def markTerrainSpawns():
 		createLandmark(tile, "%s %s conquerors" % (iPlotType, infos.civ(iCiv).getShortDescription(0)))
 
 
+def markRegions():
+	for plot in plots.all():
+		createLandmark(plot, str(plot.getRegionID()))
+
+
 def listResources():
 	global_resources = defaultdict(default=0)
 	global_spawns = defaultdict(default=0)

@@ -14467,6 +14467,7 @@ int CvUnit::getOriginalArtStyle(const CvPlot* pPlot) const
 		return GC.getCivilizationInfo(EGYPT).getUnitArtStyleType();
 	case REGION_SINDH:
 	case REGION_PUNJAB:
+	case REGION_HINDU_KUSH:
 	case REGION_RAJPUTANA:
 	case REGION_HINDUSTAN:
 	case REGION_BENGAL:
