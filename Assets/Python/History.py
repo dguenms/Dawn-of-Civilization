@@ -3,6 +3,7 @@ from RFCUtils import *
 from Core import *
 from Locations import *
 from Stability import *
+from CityNames import getName
 from Popups import popup
 from Scenarios import SCENARIOS
 
@@ -111,6 +112,23 @@ def foundChineseCity(city, unit):
 			plot.setOwner(unit.getOwner())
 			player(unit).found(plot.getX(), plot.getY())
 			unit.kill(False, -1)
+
+
+@handler("unitBuilt")
+def grantSettlerSea(city, unit):
+	if unit.isFound() and not player(unit).isHuman():
+		site = plots.sites(city).where(lambda p: p.getSettlerValue(civ(city)) >= 10 and p.isCoastalLand()).first()
+		
+		print "Sites for %s: %s" % (name(city), [(getName(city.getOwner(), location(p)), p.getSettlerValue(civ(city))) for p in plots.sites(city)])
+		
+		if site and city.plot().isCoastalLand():
+			print "unit ai settler sea: %s" % player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLER_SEA)
+			if player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLER_SEA) < player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLE) + 1:
+				iBestTransport, _ = getUnitForRole(city.getOwner(), iSettleSea)
+				
+				if iBestTransport is not None:
+					print "Grant settler sea"
+					makeUnit(city.getOwner(), iBestTransport, city, UnitAITypes.UNITAI_SETTLER_SEA)
 
 
 ### BEGIN GAME TURN ###
