@@ -7475,8 +7475,10 @@ bool CvPlot::isBestAdjacentFound(PlayerTypes eIndex)
 {
 	CvPlot* pAdjacentPlot;
 	int iI;
+	int iAdjacentSettlerValue;
 
 	int iPlotValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE());
+	int iSettlerValue = getSettlerValue(eIndex);
 
 	if (iPlotValue == 0)
 	{
@@ -7489,7 +7491,13 @@ bool CvPlot::isBestAdjacentFound(PlayerTypes eIndex)
 
 		if ((pAdjacentPlot != NULL) && pAdjacentPlot->isRevealed(GET_PLAYER(eIndex).getTeam(), false))
 		{
-			//if (pAdjacentPlot->getFoundValue(eIndex) >= getFoundValue(eIndex))
+			iAdjacentSettlerValue = pAdjacentPlot->getSettlerValue(eIndex);
+
+			if ((GET_PLAYER(eIndex).canFound(pAdjacentPlot->getX(), pAdjacentPlot->getY()) || iAdjacentSettlerValue >= 10) && (iAdjacentSettlerValue >= 10 || iSettlerValue <= 1) && iAdjacentSettlerValue > iSettlerValue)
+			{
+				return false;
+			}
+
 			if (GET_PLAYER(eIndex).AI_foundValue(pAdjacentPlot->getX_INLINE(), pAdjacentPlot->getY_INLINE()) > iPlotValue)
 			{
 				return false;
