@@ -910,7 +910,7 @@ void CvTeam::doTurn()
 					if (GET_TEAM((TeamTypes)iJ).isAlive())
 */
 					// From Mongoose SDK, BarbarianPassiveTechFix
-					if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isBarbarian())
+					if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isBarbarian() && !GET_TEAM((TeamTypes)iJ).isMinorCiv())
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
