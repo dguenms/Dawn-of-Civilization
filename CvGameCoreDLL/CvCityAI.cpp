@@ -621,7 +621,6 @@ void CvCityAI::AI_chooseProduction()
 	{
 		if (getProduction() > 0)
 		{
-
 			if ((getProductionUnitAI() == UNITAI_SETTLE) && kPlayer.AI_isFinancialTrouble())
 			{
 
@@ -740,6 +739,9 @@ void CvCityAI::AI_chooseProduction()
 
     int iTargetCulturePerTurn = AI_calculateTargetCulturePerTurn();
 
+	int iAreaBestSettlerValue = kPlayer.AI_bestCitySiteSettlerValue(pArea->getID());
+	int iWaterAreaBestSettlerValue = pWaterArea ? kPlayer.AI_bestCitySiteSettlerValue(pWaterArea->getID()) : 0;
+
     int iAreaBestFoundValue;
     int iNumAreaCitySites = kPlayer.AI_getNumAreaCitySites(getArea(), iAreaBestFoundValue);
 
@@ -765,7 +767,8 @@ void CvCityAI::AI_chooseProduction()
 		//iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 2) / 3, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
      	if ((bLandWar || bAssault) && bMajorWar)
      	{
-     		iMaxSettlers = (iMaxSettlers + 2) / 3;
+     		//iMaxSettlers = (iMaxSettlers + 2) / 3;
+			iMaxSettlers = std::min(1, iMaxSettlers); // Leoreth
      	}
     }
 
@@ -1051,7 +1054,7 @@ void CvCityAI::AI_chooseProduction()
     	}
     }
 
-    if (bMaybeWaterArea)
+    if (bMaybeWaterArea && !isIndependent())
 	{
 		if (kPlayer.AI_getNumTrainAIUnits(UNITAI_ATTACK_SEA) + kPlayer.AI_getNumTrainAIUnits(UNITAI_PIRATE_SEA) + kPlayer.AI_getNumTrainAIUnits(UNITAI_RESERVE_SEA) < 3)
 		{
@@ -1206,7 +1209,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	if	(!bLandWar && !bAssault && (iTargetCulturePerTurn > getCommerceRate(COMMERCE_CULTURE)))
+	if	(!bLandWar && !bMajorWar && !bAssault && (iTargetCulturePerTurn > getCommerceRate(COMMERCE_CULTURE)))
 	{
 		//if (GC.getGameINLINE().getSorenRandNum(bAggressiveAI ? 3 : 2, "AI Culture Build") == 0) //Rhye
 		if (GC.getGameINLINE().getSorenRandNum(2, "AI Culture Build") == 0) //Rhye
@@ -1307,6 +1310,7 @@ void CvCityAI::AI_chooseProduction()
 	UnitTypes eBestSpreadUnit = NO_UNIT;
 	int iBestSpreadUnitValue = -1;
 
+	if (!isIndependent())
 	{
 		int iSpreadUnitRoll = (100 - iBuildUnitProb) / 3;
 		iSpreadUnitRoll += bLandWar ? 0 : 10;
@@ -1341,7 +1345,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-
+	log(CvWString::format(L"Decide settler: iAreaBestFoundValue %d > iMinFoundValue %d || iWaterAreaBestFoundValue = %d > iMinFoundValue %d", iAreaBestFoundValue, iMinFoundValue, iWaterAreaBestFoundValue, iMinFoundValue));
 	if ((iAreaBestFoundValue > iMinFoundValue) || (iWaterAreaBestFoundValue > iMinFoundValue))
 	{
 		if (pWaterArea != NULL)
@@ -1365,27 +1369,25 @@ void CvCityAI::AI_chooseProduction()
 				iSettlerSeaNeeded = std::min(1, iSettlerSeaNeeded);
 			}
 
-			// Leoreth: more settlers for colonial civs
-			switch (getCivilizationType())
+			// Leoreth: more settlers for important overseas colonies
+			if (iWaterAreaBestSettlerValue >= 20)
 			{
-			case ENGLAND:
-			case FRANCE:
-			case NETHERLANDS:
-			case SPAIN:
-			case PORTUGAL:
-				iSettlerSeaNeeded *= 3;
-				iSettlerSeaNeeded /= 2;
+				iSettlerSeaNeeded += 1;
 			}
+
+			log(CvWString::format(L"Decide water area settler: total water area unit AIs %d < iSettlerSeaNeeded %d", kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA), iSettlerSeaNeeded));
 
 			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) < iSettlerSeaNeeded)
 			{
 				if (AI_chooseUnit(UNITAI_SETTLER_SEA))
 				{
+					log("Choose settler: water area");
 					return;
 				}
 			}
 		}
 
+		log(CvWString::format(L"Decide land settler: iPlotSettlerCount %d == 0, iNumSettlers %d < iMaxSettlers %d, bLandWar %d, bMajorWar %d", iPlotSettlerCount, iNumSettlers, iMaxSettlers, bLandWar, bMajorWar));
 		if (iPlotSettlerCount == 0)
 		{
 			if ((iNumSettlers < iMaxSettlers) && (!(bLandWar && bMajorWar) || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
@@ -1427,7 +1429,7 @@ void CvCityAI::AI_chooseProduction()
     }
 
 	// don't build frivolous things if this is an important city unless we at war
-    if (!bImportantCity || bLandWar || bAssault)
+    if (!bImportantCity || (bLandWar && bMajorWar) || bAssault)
     {
         if (bPrimaryArea)
         {
@@ -1440,7 +1442,7 @@ void CvCityAI::AI_chooseProduction()
             }
         }
 
-        if (!bLandWar && !bDanger)
+        if (!(bLandWar && bMajorWar) && !bDanger)
         {
 			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_EXPLORE) < (kPlayer.AI_neededExplorers(pArea)))
 			{
@@ -1514,7 +1516,7 @@ void CvCityAI::AI_chooseProduction()
 		return;
 	}
 
-	if (iBestSpreadUnitValue > ((iSpreadUnitThreshold * 60) / 100))
+	if (!isIndependent() && iBestSpreadUnitValue > ((iSpreadUnitThreshold * 60) / 100))
 	{
 		if (AI_chooseUnit(eBestSpreadUnit, UNITAI_MISSIONARY))
 		{
@@ -1753,7 +1755,7 @@ void CvCityAI::AI_chooseProduction()
 	}
 
 	//if (!bAlwaysPeace && !(bLandWar || bAssault) && (kPlayer.AI_isDoStrategy(AI_STRATEGY_OWABWNW) || (GC.getGame().getSorenRandNum(12, "AI consider Nuke") == 0))) //Rhye (more nukes)
-	if (!bAlwaysPeace && !(bLandWar || bAssault) && (kPlayer.AI_isDoStrategy(AI_STRATEGY_OWABWNW) || (GC.getGame().getSorenRandNum(4, "AI consider Nuke") == 0))) //Rhye
+	if (!bAlwaysPeace && !((bLandWar && bMajorWar) || bAssault) && (kPlayer.AI_isDoStrategy(AI_STRATEGY_OWABWNW) || (GC.getGame().getSorenRandNum(4, "AI consider Nuke") == 0))) //Rhye
 	{
 		int iTotalNukes = kPlayer.AI_totalUnitAIs(UNITAI_ICBM);
 		int iNukesWanted = 1 + 2 * std::min(kPlayer.getNumCities(), GC.getGame().getNumCities() - kPlayer.getNumCities());
@@ -1776,7 +1778,7 @@ void CvCityAI::AI_chooseProduction()
 
     if ((!bImportantCity || bDefenseWar) && (iUnitCostPercentage < iMaxUnitSpending))
     {
-        if (!bFinancialTrouble && !bGetBetterUnits && (bLandWar || ((bAssault || kPlayer.AI_isDoStrategy(AI_STRATEGY_DAGGER)) && !bAssaultAssist)))
+        if (!bFinancialTrouble && !bGetBetterUnits && ((bLandWar && bMajorWar) || ((bAssault || kPlayer.AI_isDoStrategy(AI_STRATEGY_DAGGER)) && !bAssaultAssist)))
         {
         	int iTrainInvaderChance = iBuildUnitProb + 10;
         	if (bAggressiveAI)
@@ -1846,7 +1848,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	if (!bLandWar)
+	if (!(bLandWar && bMajorWar))
 	{
 		if ((pWaterArea != NULL) && (iWaterPercent > 40))
 		{
@@ -1863,7 +1865,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	if (iBestSpreadUnitValue > ((iSpreadUnitThreshold * 40) / 100))
+	if (!isIndependent() && iBestSpreadUnitValue > ((iSpreadUnitThreshold * 40) / 100))
 	{
 		if (AI_chooseUnit(eBestSpreadUnit, UNITAI_MISSIONARY))
 		{
@@ -1887,7 +1889,7 @@ void CvCityAI::AI_chooseProduction()
 	//int iNeededSpies = iNumCitiesInArea / 3; //Rhye
 	int iNeededSpies = iNumCitiesInArea / 5; //Rhye
 	iNeededSpies += isCapital() ? 1 : 0;
-	if (iNumSpies < iNeededSpies)
+	if (!isIndependent() && iNumSpies < iNeededSpies)
 	{
 		if (GC.getGameINLINE().getSorenRandNum(100, "AI Train Spy") < 5 + 50 / (1 + iNumSpies))
 		{
@@ -1976,7 +1978,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	if (!bLandWar)
+	if (!(bLandWar && bMajorWar))
 	{
 		if ((iCulturePressure > 90) || kPlayer.AI_isDoStrategy(AI_STRATEGY_CULTURE2))
 		{
@@ -2057,7 +2059,7 @@ void CvCityAI::AI_chooseProduction()
 	}
 
 
-	if (!bLandWar)
+	if (!(bLandWar && bMajorWar))
 	{
 		if (AI_chooseBuilding(iEconomyFlags, 40, 8))
 		{
@@ -2115,7 +2117,7 @@ void CvCityAI::AI_chooseProduction()
 	bChooseUnit = false;
 	if (iUnitCostPercentage < iMaxUnitSpending + 5)
 	{
-		if ((bLandWar) ||
+		if ((bLandWar && bMajorWar) ||
 			  ((kPlayer.getNumCities() <= 3) && (GC.getGameINLINE().getElapsedGameTurns() < 60)) ||
 			  (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") < AI_buildUnitProb()) ||
 				(isHuman() && (getGameTurnFounded() == GC.getGameINLINE().getGameTurn())))
