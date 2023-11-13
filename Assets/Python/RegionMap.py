@@ -58,7 +58,7 @@ tSpreadFactors = (
 {
 	iCore : 	[rArabia, rMesopotamia, rEgypt, rLevant],
 	iHistorical : 	[rPersia, rKhorasan, rSindh, rPunjab, rTransoxiana, rMaghreb, rIndonesia, rSahel, rSahara, rHornOfAfrica],
-	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHindustan, rRajputana, rBengal, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
+	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHinduKush, rHindustan, rRajputana, rBengal, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
 	iMinority : 	[rUrals, rSiberia, rCaucasus, rTarimBasin, rMongolia],
 },
 # Hinduism
@@ -69,7 +69,7 @@ tSpreadFactors = (
 # Buddhism
 {
 	iCore : 	[rHindustan, rRajputana, rBengal, rTibet, rIndochina],
-	iHistorical : 	[rDeccan, rDravida, rPunjab, rSindh, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
+	iHistorical : 	[rDeccan, rDravida, rPunjab, rSindh, rHinduKush, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
 	iMinority :	[rTransoxiana, rKhorasan],
 },
 # Confucianism
