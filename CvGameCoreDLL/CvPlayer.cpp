@@ -24921,46 +24921,6 @@ bool CvPlayer::isNeighbor(PlayerTypes ePlayer)
 	return (GET_PLAYER(getID()).AI_calculateStolenCityRadiusPlots(ePlayer) > 0 || GET_PLAYER(ePlayer).AI_calculateStolenCityRadiusPlots(getID()) > 0);
 }
 
-int CvPlayer::AI_getTakenTilesThreshold() const
-{
-	return m_iTakenTilesThreshold;
-}
-
-void CvPlayer::setTakenTilesThreshold(int iNewValue)
-{
-	m_iTakenTilesThreshold = iNewValue;
-}
-
-int CvPlayer::AI_getDistanceSubtrahend() const
-{
-	return m_iDistanceSubtrahend;
-}
-
-void CvPlayer::setDistanceSubtrahend(int iNewValue)
-{
-	m_iDistanceSubtrahend = iNewValue;
-}
-
-int CvPlayer::AI_getDistanceFactor() const
-{
-	return m_iDistanceFactor;
-}
-
-void CvPlayer::setDistanceFactor(int iNewValue)
-{
-	m_iDistanceFactor = iNewValue;
-}
-
-int CvPlayer::AI_getCompactnessModifier() const
-{
-	return m_iCompactnessModifier;
-}
-
-void CvPlayer::setCompactnessModifier(int iNewValue)
-{
-	m_iCompactnessModifier = iNewValue;
-}
-
 int CvPlayer::AI_getTargetDistanceValueModifier() const
 {
 	return m_iTargetDistanceValueModifier;

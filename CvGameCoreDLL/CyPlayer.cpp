@@ -2505,30 +2505,6 @@ void CyPlayer::setStartingEra(int iNewValue)
 		m_pPlayer->setStartingEra((EraTypes)iNewValue);
 }
 
-void CyPlayer::setTakenTilesThreshold(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setTakenTilesThreshold(iNewValue);
-}
-
-void CyPlayer::setDistanceSubtrahend(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setDistanceSubtrahend(iNewValue);
-}
-
-void CyPlayer::setDistanceFactor(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setDistanceFactor(iNewValue);
-}
-
-void CyPlayer::setCompactnessModifier(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setCompactnessModifier(iNewValue);
-}
-
 void CyPlayer::setTargetDistanceValueModifier(int iNewValue)
 {
 	if (m_pPlayer)
