@@ -1992,7 +1992,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}
 
 	// Leoreth: temporarily disable
-	if (false && iOwnedTiles > 14 && iSettlerMapValue < 10)
+	if (iOwnedTiles > 14 && iSettlerMapValue < 10)
 	{
 		return 0;
 	}
@@ -2606,74 +2606,84 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			//iValue -= (std::max(0, (8 - plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE()))) * 200); //Rhye
 			iValue -= (std::max(0, (5 - plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE()))) * 200);
 		}
-		else if (false) // Leoreth: temporarily disable distance
+		else
 		{
 		    int iDistance = plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
-		    int iNumCities = getNumCities();
 
-			// Leoreth
-			iValue -= (abs(iDistance) - AI_getDistanceSubtrahend()) * AI_getDistanceFactor();
+			// Leoreth: adjusted - distance impacted by map value?
+			//iValue -= (abs(iDistance) - 4) * 500;
+			iValue -= (abs(iDistance) - 3) * 500;
 
-			iValue *= (8 + iNumCities * 4);
-			iValue /= (2 + (iNumCities * 4) + iDistance);
-			if (pNearestCity->isCapital())
+			// Leoreth: disabled
+			if (false)
 			{
-				iValue *= 150;
-				iValue /= 100;
-			}
-			else if (getCapitalCity() != NULL)
-			{
-				//Provide up to a 50% boost to value (80% for adv.start)
-				//for city sites which are relatively close to the core
-				//compared with the most distance city from the core
-				//(having a boost rather than distance penalty avoids some distortion)
+				int iNumCities = getNumCities();
 
-				//This is not primarly about maitenance but more about empire
-				//shape as such forbidden palace/state property are not big deal.
-				CvCity* pLoopCity;
-				int iLoop;
-				int iMaxDistanceFromCapital = 0;
-
-				int iCapitalX = getCapitalCity()->getX();
-				int iCapitalY = getCapitalCity()->getY();
-
-				for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+				iValue *= (8 + iNumCities * 4);
+				iValue /= (2 + (iNumCities * 4) + iDistance);
+				if (pNearestCity->isCapital())
 				{
-					iMaxDistanceFromCapital = std::max(iMaxDistanceFromCapital, plotDistance(iCapitalX, iCapitalY, pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE()));
+					iValue *= 150;
+					iValue /= 100;
 				}
+				else if (getCapitalCity() != NULL)
+				{
+					//Provide up to a 50% boost to value (80% for adv.start)
+					//for city sites which are relatively close to the core
+					//compared with the most distance city from the core
+					//(having a boost rather than distance penalty avoids some distortion)
 
-				int iDistanceToCapital = plotDistance(iCapitalX, iCapitalY, iX, iY);
+					//This is not primarly about maitenance but more about empire
+					//shape as such forbidden palace/state property are not big deal.
+					CvCity* pLoopCity;
+					int iLoop;
+					int iMaxDistanceFromCapital = 0;
 
-				FAssert(iMaxDistanceFromCapital > 0);
+					int iCapitalX = getCapitalCity()->getX();
+					int iCapitalY = getCapitalCity()->getY();
 
-				// Rhye
-				//iValue *= 100 + (((bAdvancedStart ? 80 : 50) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
-				iValue *= 100 + (((bAdvancedStart ? 80 : AI_getCompactnessModifier()) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
+					for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+					{
+						iMaxDistanceFromCapital = std::max(iMaxDistanceFromCapital, plotDistance(iCapitalX, iCapitalY, pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE()));
+					}
 
-				iValue /= 100;
+					int iDistanceToCapital = plotDistance(iCapitalX, iCapitalY, iX, iY);
+
+					FAssert(iMaxDistanceFromCapital > 0);
+
+					// Leoreth: compactness impacted by map value?
+					iValue *= 100 + (((bAdvancedStart ? 80 : 50) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
+					iValue /= 100;
+				}
 			}
 		}
 	}
-	else if (false) // Leoreth: temporarily disable
+	else
 	{
-		pNearestCity = GC.getMapINLINE().findCity(iX, iY, ((isBarbarian()) ? NO_PLAYER : getID()), ((isBarbarian()) ? NO_TEAM : getTeam()), false);
+		// Leoreth: disable old code, instead prevent 1 value tiles
+		if (iSettlerMapValue <= 1)
+		{
+			return false;
+		}
+
+		/*pNearestCity = GC.getMapINLINE().findCity(iX, iY, ((isBarbarian()) ? NO_PLAYER : getID()), ((isBarbarian()) ? NO_TEAM : getTeam()), false);
 		if (pNearestCity != NULL)
 		{
 			int iDistance = plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
 			iValue -= std::min(500 * iDistance, (8000 * iDistance) / GC.getMapINLINE().maxPlotDistance());
-		}
+		}*/
 	}
 
 	if (iValue <= 0)
 	{
-		return 1;
+		return 0;
 	}
 
 	if (pArea->getNumCities() == 0)
 	{
 		iValue *= 2;
 	}
-	else if (false) // Leoreth: temporarily disable
+	else if (false) // Leoreth: disabled
 	{
 		iTeamAreaCities = GET_TEAM(getTeam()).countNumCitiesByArea(pArea);
 		iThreatAreaCities = 0;
@@ -2704,30 +2714,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS)) 
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS))
 	{
-		iTeamAreaCities = GET_TEAM(getTeam()).countNumCitiesByArea(pArea);
-		if (iTeamAreaCities == 0) {
-			switch (getCivilizationType())
+		if (GET_TEAM(getTeam()).countNumCitiesByArea(pArea) == 0)
+		{
+			if (iSettlerMapValue >= 20)
 			{
-			case FRANCE:
 				iValue *= 5;
 				iValue /= 4;
-				break;
-			case ENGLAND:
-				iValue *= 5;
-				iValue /= 3;
-				break;
-			case NETHERLANDS:
-				iValue *= 5;
-				iValue /= 3;
-				break;
-			case PORTUGAL:
-				iValue *= 5;
-				iValue /= 4;
-				break;
-			default:
-				break;
 			}
 		}
 	}
@@ -3037,20 +3031,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())) * AI_getTargetDistanceValueModifier() / 100);
 	}
 
-	if (pCity->getX_INLINE() <= 43) //wars in America
+	if (pCity->plot()->getRegionGroup() == REGION_GROUP_NORTH_AMERICA || pCity->plot()->getRegionGroup() == REGION_GROUP_SOUTH_AMERICA)
 	{ 
-		switch (getCivilizationType())
+		if (iWarMapValue > 0)
 		{
-			case SPAIN:
-			case FRANCE:
-			case ENGLAND:
-			case NETHERLANDS:
-			case PORTUGAL:
-				iValue *= 4;
-				iValue /= 3;
-				break;
-			default:
-				break;
+			iValue *= 4;
+			iValue /= 3;
 		}
 	}
 
