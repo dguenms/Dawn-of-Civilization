@@ -305,9 +305,6 @@ public:
 	
 	int AI_playerCloseness(PlayerTypes eIndex, int iMaxDistance) const;
 	
-	int AI_getTotalCityThreat() const;
-	int AI_getTotalFloatingDefenseNeeded() const;
-	
 	int AI_getTotalAreaCityThreat(CvArea* pArea) const;
 	int AI_countNumAreaHostileUnits(CvArea* pArea, bool bPlayer, bool bTeam, bool bNeutral, bool bHostile) const;
 	int AI_getTotalFloatingDefendersNeeded(CvArea* pArea) const;
