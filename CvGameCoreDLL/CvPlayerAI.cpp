@@ -918,25 +918,7 @@ void CvPlayerAI::AI_updateFoundValues(bool bStartingLoc) const
 
 			if (pLoopPlot->isRevealed(getTeam(), false))// || AI_isPrimaryArea(pLoopPlot->area()))
 			{
-				/*long lResult=-1;
-				if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
-				{
-					CyArgsList argsList;
-					argsList.add((int)getID());
-					argsList.add(pLoopPlot->getX());
-					argsList.add(pLoopPlot->getY());
-					gDLL->getPythonIFace()->callFunction(PYGameModule, "getCityFoundValue", argsList.makeFunctionArgs(), &lResult);
-				}
-
-				if (lResult == -1)
-				{*/
-					iValue = AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE());
-				/*}
-				else
-				{
-					iValue = lResult;
-				}*/
-
+				iValue = AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE());
 				pLoopPlot->setFoundValue(getID(), iValue);
 
 				if (iValue > pLoopPlot->area()->getBestFoundValue(getID()))
@@ -1854,6 +1836,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
+	// Leoreth: only consider value 1 sites if no desired sites are available
+	if (iSettlerMapValue == 1)
+	{
+		if (AI_bestCitySiteSettlerValue() >= 10)
+		{
+			return 0;
+		}
+	}
+
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
@@ -1991,7 +1982,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
         }
 	}
 
-	// Leoreth: temporarily disable
 	if (iOwnedTiles > 14 && iSettlerMapValue < 10)
 	{
 		return 0;
@@ -2002,6 +1992,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
+
+		// Leoreth: 10+ city site in radius
+		if (iSettlerMapValue == 1)
+		{
+			if (pLoopPlot->isCity() && (pLoopPlot->getSettlerValue(getID()) >= 10 || pLoopPlot->getSettlerValue(pLoopPlot->getOwner()) >= 0))
+			{
+				return 0;
+			}
+		}
 
 		if (iI != CITY_HOME_PLOT)
 		{
@@ -2611,8 +2610,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		    int iDistance = plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
 
 			// Leoreth: adjusted - distance impacted by map value?
-			//iValue -= (abs(iDistance) - 4) * 500;
-			iValue -= (abs(iDistance) - 3) * 500;
+			iValue -= (abs(iDistance) - 4) * 500;
+			//iValue -= (abs(iDistance) - 3) * 500;
 
 			// Leoreth: disabled
 			if (false)
@@ -2784,17 +2783,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 
 		iValue /= (std::max(0, (iDifferentAreaTile - ((NUM_CITY_PLOTS * 2) / 3))) + 2);
-	}
-
-	if (iSettlerMapValue > 0)
-	{
-		iValue *= iSettlerMapValue;
-	}
-
-	// Leoreth: really value designated city sites
-	if (iSettlerMapValue >= 10)
-	{
-		iValue *= 5;
 	}
 
 	// iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
@@ -18449,22 +18437,22 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 				{
 					iValue = pLoopPlot->getFoundValue(getID());
 
+					// Leoreth: weigh by settler map value - applied here to keep found value within short
+					iValue *= pLoopPlot->getSettlerValue(getID());
+
+					// Leoreth: really value designated city sites
+					if (pLoopPlot->getSettlerValue(getID()) >= 10)
+					{
+						iValue *= 5;
+					}
+
 					if (iValue > iMinFoundValueThreshold)
 					{
 						if (!AI_isPlotCitySite(pLoopPlot))
 						{
 							//iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
 
-							iValue += 100000 * pLoopPlot->getSettlerValue(getID());
-
-							/*CvWString szName;
-							CyArgsList argsList4;
-							argsList4.add(getID());
-							argsList4.add(pLoopPlot->getX());
-							argsList4.add(pLoopPlot->getY());
-							gDLL->getPythonIFace()->callFunction(PYScreensModule, "getCityName", argsList4.makeFunctionArgs(), &szName);
-
-							log(CvWString::format(L"%s city %s: found value = %d, map value = %d", getCivilizationShortDescription(), szName.c_str(), iValue, pLoopPlot->getSettlerValue(getID())));*/
+							//iValue += 100000 * pLoopPlot->getSettlerValue(getID());
 
 							if (iValue > iBestFoundValue)
 							{
@@ -18486,6 +18474,7 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 		{
 			break;
 		}
+
 		iPass++;
 	}
 }

@@ -1345,7 +1345,6 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	log(CvWString::format(L"Decide settler: iAreaBestFoundValue %d > iMinFoundValue %d || iWaterAreaBestFoundValue = %d > iMinFoundValue %d", iAreaBestFoundValue, iMinFoundValue, iWaterAreaBestFoundValue, iMinFoundValue));
 	if ((iAreaBestFoundValue > iMinFoundValue) || (iWaterAreaBestFoundValue > iMinFoundValue))
 	{
 		if (pWaterArea != NULL)
@@ -1387,7 +1386,6 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		log(CvWString::format(L"Decide land settler: iPlotSettlerCount %d == 0, iNumSettlers %d < iMaxSettlers %d, bLandWar %d, bMajorWar %d", iPlotSettlerCount, iNumSettlers, iMaxSettlers, bLandWar, bMajorWar));
 		if (iPlotSettlerCount == 0)
 		{
 			if ((iNumSettlers < iMaxSettlers) && (!(bLandWar && bMajorWar) || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
