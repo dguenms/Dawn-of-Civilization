@@ -558,6 +558,10 @@ class Birth(object):
 		if bCanPeerReveal:
 			revealed += peerRevealed
 		
+		# for AI, reveal nearby settler targets to improve settler AI
+		if not self.isHuman():
+			revealed += plots.all().land().where(lambda p: p.getSettlerValue(self.iCiv) >= 10).where(lambda p: distance(self.location, p) <= 15).expand(2)
+		
 		# reveal tiles
 		for plot in revealed:
 			plot.setRevealed(self.team.getID(), True, False, -1)
