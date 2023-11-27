@@ -269,6 +269,8 @@ public:
 	int getRegionID();
 	void setRegionID(int iNewValue);
 
+	int getRegionGroup();
+
 	bool isCore(int iCivilization);
 	bool isPlayerCore(int iPlayer);
 	bool isOwnerCore();

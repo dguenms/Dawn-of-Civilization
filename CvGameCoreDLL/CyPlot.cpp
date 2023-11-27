@@ -1078,6 +1078,11 @@ void CyPlot::setRegionID(int iNewValue)
 		m_pPlot->setRegionID(iNewValue);
 }
 
+int CyPlot::getRegionGroup()
+{
+	return m_pPlot ? m_pPlot->getRegionGroup() : -1;
+}
+
 bool CyPlot::isCore(int iCivilization)
 {
 	return m_pPlot ? m_pPlot->isCore((CivilizationTypes)iCivilization) : false;

@@ -96,38 +96,31 @@ def createCarthaginianDefenses(city):
 			makeUnits(iPhoenicia, iArcher, tCarthage, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
 			makeUnits(iPhoenicia, iNumidianCavalry, tCarthage, 3)
 			makeUnits(iPhoenicia, iWarElephant, tCarthage, 2, UnitAITypes.UNITAI_CITY_COUNTER)
+
+
+@handler("cityBuilt")
+def createColonialWorker(city):
+	if not player(city).isHuman():
+		capital_city = capital(city.getOwner())
+		
+		if capital_city and plot(city).getRegionGroup() != plot(capital_city).getRegionGroup():
+			if plots.city_radius(city).any(lambda p: p.getBonusType(-1) >= 0 and p.getImprovementType() == -1):
+				if plot(city).area().getNumAIUnits(city.getOwner(), UnitAITypes.UNITAI_WORKER) < plot(city).area().getCitiesPerPlayer(city.getOwner()):
+					createRoleUnit(city.getOwner(), city, iWork)
 			
 			
 ### UNIT BUILT ###
-
-# TODO: revise cities or disable mechanic
-lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou, tHaojing]
-
-# @handler("unitBuilt")
-def foundChineseCity(city, unit):
-	if unit.isFound() and civ(unit) == iChina and not player(unit).isHuman():
-		plot = plots.of(lChineseCities).where(lambda plot: isFree(unit.getOwner(), plot, bNoCity=True, bNoEnemyUnit=True, bCanEnter=True, bNoCulture=True)).random()
-	
-		if plot:
-			plot.setOwner(unit.getOwner())
-			player(unit).found(plot.getX(), plot.getY())
-			unit.kill(False, -1)
-
 
 @handler("unitBuilt")
 def grantSettlerSea(city, unit):
 	if unit.isFound() and not player(unit).isHuman():
 		site = plots.sites(city).where(lambda p: p.getSettlerValue(civ(city)) >= 10 and p.isCoastalLand()).first()
 		
-		print "Sites for %s: %s" % (name(city), [(getName(city.getOwner(), location(p)), p.getSettlerValue(civ(city))) for p in plots.sites(city)])
-		
 		if site and city.plot().isCoastalLand():
-			print "unit ai settler sea: %s" % player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLER_SEA)
 			if player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLER_SEA) < player(unit).AI_totalUnitAIs(UnitAITypes.UNITAI_SETTLE) + 1:
 				iBestTransport, _ = getUnitForRole(city.getOwner(), iSettleSea)
 				
 				if iBestTransport is not None:
-					print "Grant settler sea"
 					makeUnit(city.getOwner(), iBestTransport, city, UnitAITypes.UNITAI_SETTLER_SEA)
 
 
