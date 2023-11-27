@@ -260,6 +260,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		//Leoreth
 		.def("getRegionID", &CyPlot::getRegionID, "int ()")
 		.def("setRegionID", &CyPlot::setRegionID, "void (int iNewValue)")
+		.def("getRegionGroup", &CyPlot::getRegionGroup, "int ()")
 		.def("isCore", &CyPlot::isCore, "bool (int iCivilization)")
 		.def("isPlayerCore", &CyPlot::isPlayerCore, "bool (int iPlayer)")
 		.def("isOwnerCore", &CyPlot::isOwnerCore, "bool ()")
