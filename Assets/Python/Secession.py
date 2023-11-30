@@ -136,7 +136,8 @@ def getCityClaim(city):
 	return -1
 		
 def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
-	if not city: return
+	if not city: 
+		return
 	
 	name = city.getName()
 	iOldOwner = city.getOwner()
@@ -156,7 +157,12 @@ def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 		killUnits(lRelocatedUnits)
 	
 	completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
-	flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
+	
+	if not player(iNewOwner).isMinorCiv():
+		flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
+	else:
+		killUnits(lFlippedUnits)
+		createRoleUnit(iNewOwner, tile, iDefend, iNumDefenders)
 	
 	if is_minor(iNewOwner):
 		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', name, color=iRed)

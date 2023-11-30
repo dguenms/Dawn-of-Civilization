@@ -9375,7 +9375,9 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 
 	//Rhye - start
 	if (isMinorCiv())
+	{
 		return;
+	}
 	//Rhye - end
 
 	if (iChange != 0)
@@ -11145,7 +11147,10 @@ int CvPlayer::getStateReligionCount() const
 
 bool CvPlayer::isStateReligion() const
 {
-	if (isMinorCiv() || isBarbarian()) return false;
+	if (isMinorCiv() || isBarbarian())
+	{
+		return false;
+	}
 
 	return (getStateReligionCount() > 0);
 }

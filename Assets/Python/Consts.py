@@ -91,7 +91,6 @@ lCivOrder = lBirthOrder + [
 	iIndependent,
 	iIndependent2,
 	iNative,
-	iCelts,
 	iBarbarian
 ]
 
