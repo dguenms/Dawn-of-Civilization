@@ -45,8 +45,6 @@ class MinorCity(object):
 		if self.canFound():
 			self.found()
 		
-		return
-		
 		city = city_(self.tile)
 		if not city:
 			return

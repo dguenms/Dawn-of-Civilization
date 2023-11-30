@@ -1731,37 +1731,36 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 		}
 
 
-		if (!GET_PLAYER((PlayerTypes)eTeam).isMinorCiv() && !GET_PLAYER((PlayerTypes)getID()).isMinorCiv()) { //Rhye
-
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		if (!GET_PLAYER((PlayerTypes)eTeam).isMinorCiv() && !GET_PLAYER((PlayerTypes)getID()).isMinorCiv()) //Rhye
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_TEAM(eTeam).getName().GetCString()); //Rhye
-					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-				}
-				else if (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam)
-				{
-					//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", getName().GetCString()); //Rhye
-					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription()); //Rhye
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-				}
-				else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
-				{
-					//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRMAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_TEAM(eTeam).getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
+					else if (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam)
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
+					else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRMAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
 				}
 			}
-		}
 
-		//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-		szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
-		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-
+			//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 		} //Rhye
 
 		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
