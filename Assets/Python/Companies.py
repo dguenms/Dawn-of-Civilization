@@ -116,7 +116,7 @@ def getCityValue(city, iCompany):
 
 	# civilization requirements
 	if iCompany == iTradingCompany:
-		if iOwnerCiv not in dTradingCompanyPlots:
+		if iOwnerCiv not in dCivGroups[iCivGroupEurope]:
 			return -1
 		if iOwnerCiv == iNetherlands:
 			iValue += 2

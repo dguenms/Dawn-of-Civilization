@@ -4281,11 +4281,13 @@ def canTriggerTradingCompanyConquerors(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
 	
-	if scenario() == i1700AD: return False
-
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
+	if scenario() == i1700AD: 
+		return False
 	
-	if iCiv not in dTradingCompanyPlots or not dTradingCompanyPlots[iCiv] or not player(iPlayer).isHuman():
+	if not player(iPlayer).isHuman():
+		return False
+	
+	if iCiv not in lTradingCompanyCivs:
 		return False
 		
 	if not data.civs[iCiv].bTradingCompanyConquerors:
