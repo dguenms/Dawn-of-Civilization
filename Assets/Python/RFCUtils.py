@@ -543,21 +543,21 @@ def canCreateUnit(iPlayer, iUnit):
 	return player(iPlayer).canTrain(iUnit, False, False)
 
 # used: RFCUtils, Rise
-def getUnitForRole(iPlayer, iRole):
-	roleMetric = lambda unit: (infos.unit(unit).getCombat(), base_unit(unit) != unit)
+def getUnitForRole(iPlayer, iRole, bUnique=True):
+	roleMetric = lambda unit: (infos.unit(unit).getCombat(), bUnique and base_unit(unit) != unit)
 	iBestUnit = infos.units().where(lambda unit: canCreateUnit(iPlayer, unit)).where(lambda unit: isUnitOfRole(unit, iRole)).maximum(roleMetric)
 	return (iBestUnit, getRoleAI(iRole))
 
 # used: RFCUtils, Rise
-def getUnitsForRole(iPlayer, iRole):
-	iUnit, iUnitAI = getUnitForRole(iPlayer, iRole)
+def getUnitsForRole(iPlayer, iRole, bUnique=False):
+	iUnit, iUnitAI = getUnitForRole(iPlayer, iRole, bUnique=bUnique)
 	units = [(iUnit, iUnitAI)]
 	
 	if iRole == iSettleSea:
-		units.append(getUnitForRole(iPlayer, iSettle))
+		units.append(getUnitForRole(iPlayer, iSettle, bUnique=bUnique))
 		
 		for _ in range(infos.unit(iUnit).getCargoSpace()-1):
-			units.append(getUnitForRole(iPlayer, iDefend))
+			units.append(getUnitForRole(iPlayer, iDefend, bUnique=bUnique))
 	
 	return units
 
