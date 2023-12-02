@@ -29,13 +29,13 @@ def add_city_buildings(tile, iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iTechGroup=None, iCulture=0, units={}, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, units={}, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
 		self.name = name
 		self.iPopulation = iPopulation
-		self.iTechGroup = iTechGroup
+		self.iCiv = iCiv
 		self.iCulture = iCulture
 		self.units = units
 		self.adjective = adjective
@@ -77,10 +77,15 @@ class MinorCity(object):
 		return True
 		
 	def get_tech_civ(self):
-		if self.iTechGroup is not None:
-			iTechCiv = best_civ_of_group(self.iTechGroup)
-			if iTechCiv >= 0:
-				return iTechCiv
+		if self.iCiv is not None:
+			if player(self.iCiv).isAlive():
+				return self.iCiv
+			
+			iTechGroup = next(iTechGroup for iTechGroup, lTechGroupCivs in dTechGroups.items() if self.iCiv in lTechGroupCivs)
+			if iTechGroup is not None:
+				iTechCiv = best_civ_of_group(iTechGroup)
+				if iTechCiv >= 0:
+					return iTechCiv
 		
 		return self.iOwner
 	
@@ -111,14 +116,11 @@ class MinorCity(object):
 		iUnitCiv = self.get_tech_civ()
 		
 		for iRole, iNumUnits in self.units.items():
-			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole):
+			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole, bUnique=False):
 				if iUnit is None:
 					iUnit = iMilitia
 			
-				try:
-					yield base_unit(iUnit), iNumUnits, iUnitAI
-				except TypeError, e:
-					raise Exception("Error creating unit for iRole=%s, name=%s: %s" % (iRole, self.name, e))
+				yield base_unit(iUnit), iNumUnits, iUnitAI
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
 		units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
@@ -348,42 +350,42 @@ class Barbarians(object):
 
 
 minor_cities = [
-	MinorCity(-3000, iIndependent2, (92, 46), "Shushan", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_ELAMITE"),
-	# MinorCity(-3000, iIndependent, (90, 45), "Unug", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_SUMERIAN"),
-	MinorCity(-2200, iIndependent2, (86, 50), "Halab", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MARIOTE"),
-	MinorCity(-2000, iBarbarian, (118, 49), "Sanxingdui", iPopulation=2, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
-	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
-	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
-	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
-	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
-	MinorCity(-600, iIndependent, (97, 53), "Margu", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
-	MinorCity(-600, iIndependent, (66, 57), "Melpum", iPopulation=1, iTechGroup=iTechGroupWestern, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CELTIC"),
-	MinorCity(-500, iNative, (19, 41), "Danibaan", iPopulation=2, iTechGroup=iTechGroupNativeAmerica, units={iSkirmish: 1}, adjective="TXT_KEY_ADJECTIVE_ZAPOTEC"),
-	MinorCity(-260, iIndependent, (121, 42), "Co Loa", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
-	MinorCity(-200, iIndependent, (125, 43), "Panyu", iPopulation=2, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
-	MinorCity(-75, iIndependent, (105, 55), "Kash", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_UIGHUR"),
-	MinorCity(190, iIndependent2, (123, 39), "Indrapura", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 4}, adjective="TXT_KEY_ADJECTIVE_CHAM"),
-	MinorCity(300, iIndependent2, (89, 37), "Sana'a", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_YEMENI"),
-	MinorCity(400, iIndependent2, (118, 45), "Dali", iPopulation=4, iTechGroup=iTechGroupFarEast, units={iDefend: 3, iShock: 1}, adjective="TXT_KEY_ADJECTIVE_BAI"),
-	MinorCity(400, iIndependent2, (123, 25), "Sunda Kelapa", iPopulation=3, iTechGroup=iTechGroupFarEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SUNDANESE"),
-	MinorCity(500, iIndependent, (69, 56), "Venexia", iPopulation=5, iTechGroup=iTechGroupWestern, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_VENETIAN"),
-	MinorCity(700, iNative, (34, 22), "Tiwanaku", iPopulation=1, iTechGroup=iTechGroupNativeAmerica, adjective="TXT_KEY_ADJECTIVE_AYMARA"),
-	MinorCity(700, iIndependent2, (71, 36), "Njimi", iPopulation=1, iTechGroup=iTechGroupMiddleEast, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_KANURI"),
-	MinorCity(750, iIndependent, (91, 60), "Atil", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_KHAZAR"),
-	MinorCity(800, iNative, (30, 34), u"Bacatá", iPopulation=1, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MUISCA"),
-	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iTechGroup=iTechGroupWestern, units={iDefend: 2, iCounter: 1}, adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
-	MinorCity(840, iIndependent, (54, 65), u"Áth Cliath", iPopulation=1, iTechGroup=iTechGroupWestern, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_IRISH"),
-	MinorCity(880, iIndependent2, (74, 59), "Buda", iPopulation=3, iTechGroup=iTechGroupWestern, units={iHarass: 5}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
-	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
-	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
-	MinorCity(900, iIndependent, (87, 29), "Muqdisho", iPopulation=3, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
+	MinorCity(-3000, iIndependent2, (92, 46), "Shushan", iPopulation=1, iCiv=iBabylonia, units={iDefend: 1}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_ELAMITE"),
+	# MinorCity(-3000, iIndependent, (90, 45), "Unug", iPopulation=1, iCiv=iBabylonia, units={iDefend: 2}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_SUMERIAN"),
+	MinorCity(-2200, iIndependent2, (86, 50), "Halab", iPopulation=1, iCiv=iAssyria, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MARIOTE"),
+	MinorCity(-2000, iBarbarian, (118, 49), "Sanxingdui", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
+	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iCiv=iBabylonia, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
+	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=1, iCiv=iAssyria, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
+	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iCiv=iPersia, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
+	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
+	MinorCity(-600, iIndependent, (97, 53), "Margu", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
+	MinorCity(-600, iIndependent, (66, 57), "Melpum", iPopulation=1, iCiv=iRome, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CELTIC"),
+	MinorCity(-500, iNative, (19, 41), "Danibaan", iPopulation=2, iCiv=iMaya, units={iSkirmish: 1}, adjective="TXT_KEY_ADJECTIVE_ZAPOTEC"),
+	MinorCity(-260, iIndependent, (121, 42), "Co Loa", iPopulation=3, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
+	MinorCity(-200, iIndependent, (125, 43), "Panyu", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
+	MinorCity(-75, iIndependent, (105, 55), "Kash", iPopulation=2, iCiv=iKushans, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_UIGHUR"),
+	MinorCity(190, iIndependent2, (123, 39), "Indrapura", iPopulation=3, iCiv=iKhmer, units={iDefend: 4}, adjective="TXT_KEY_ADJECTIVE_CHAM"),
+	MinorCity(300, iIndependent2, (89, 37), "Sana'a", iPopulation=2, iCiv=iEthiopia, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_YEMENI"),
+	MinorCity(400, iIndependent2, (118, 45), "Dali", iPopulation=4, iCiv=iChina, units={iDefend: 3, iShock: 1}, adjective="TXT_KEY_ADJECTIVE_BAI"),
+	MinorCity(400, iIndependent2, (123, 25), "Sunda Kelapa", iPopulation=3, iCiv=iJava, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SUNDANESE"),
+	MinorCity(500, iIndependent, (69, 56), "Venexia", iPopulation=5, iCiv=iRome, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_VENETIAN"),
+	MinorCity(700, iNative, (34, 22), "Tiwanaku", iPopulation=1, iCiv=iInca, adjective="TXT_KEY_ADJECTIVE_AYMARA"),
+	MinorCity(700, iIndependent2, (71, 36), "Njimi", iPopulation=1, iCiv=iArabia, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_KANURI"),
+	MinorCity(750, iIndependent, (91, 60), "Atil", iPopulation=2, iCiv=iTurks, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_KHAZAR"),
+	MinorCity(800, iNative, (30, 34), u"Bacatá", iPopulation=1, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MUISCA"),
+	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iCiv=iCelts, units={iDefend: 2, iCounter: 1}, adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
+	MinorCity(840, iIndependent, (54, 65), u"Áth Cliath", iPopulation=1, iCiv=iCelts, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_IRISH"),
+	MinorCity(880, iIndependent2, (74, 59), "Buda", iPopulation=3, iCiv=iHolyRome, units={iHarass: 5}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
+	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iCiv=iInca, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
+	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iCiv=iInca, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
+	MinorCity(900, iIndependent, (87, 29), "Muqdisho", iPopulation=3, iCiv=iSwahili, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
 	MinorCity(900, iNative, (79, 18), "Zimbabwe", iPopulation=2, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SHONA"),
-	MinorCity(1000, iBarbarian, (92, 66), "Qazan", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_BULGAR"),
-	MinorCity(1000, iNative, (67, 34), "Kano", iPopulation=2, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_HAUSA"),
+	MinorCity(1000, iBarbarian, (92, 66), "Qazan", iPopulation=2, iCiv=iTurks, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_BULGAR"),
+	MinorCity(1000, iNative, (67, 34), "Kano", iPopulation=2, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_HAUSA"),
 	MinorCity(1100, iIndependent, (144, 33), "Nan Madol", iPopulation=1),
-	MinorCity(1180, iNative, (66, 31), "Edo", iPopulation=3, iTechGroup=iTechGroupMiddleEast, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_EDO"),
-	MinorCity(1300, iNative, (15, 44), "Ts'intsuntsani", iPopulation=3, iTechGroup=iTechGroupNativeAmerica, units={iDefend: 3, iAttack:2}, adjective="TXT_KEY_ADJECTIVE_PUREPECHA"),
-	MinorCity(1350, iIndependent2, (81, 32), "Bonga", iPopulation=3, iTechGroup=iTechGroupMiddleEast, units={iDefend: 3}),
+	MinorCity(1180, iNative, (66, 31), "Edo", iPopulation=3, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_EDO"),
+	MinorCity(1300, iNative, (15, 44), "Ts'intsuntsani", iPopulation=3, iCiv=iAztecs, units={iDefend: 3, iAttack:2}, adjective="TXT_KEY_ADJECTIVE_PUREPECHA"),
+	MinorCity(1350, iIndependent2, (81, 32), "Bonga", iPopulation=3, iCiv=iEthiopia, units={iDefend: 3}),
 	MinorCity(1585, iNative, (74, 23), "Mwimbele", iPopulation=1, units={iSkirmish: 2}, adjective="TXT_KEY_ADJECTIVE_LUBA"),
 	MinorCity(1610, iNative, (89, 18), "Antananarivo", iPopulation=1, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_MALAGASY"),
 ]
