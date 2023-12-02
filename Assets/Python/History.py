@@ -203,16 +203,16 @@ def conquistadors(iTeamX, iHasMetTeamY):
 					
 				if not bAlreadyContacted:
 					if iNewWorldCiv == iMaya:
-						tContactZoneTL = (15, 30)
-						tContactZoneBR = (34, 42)
+						tContactZoneTL = (11, 36)
+						tContactZoneBR = (38, 49)
 					elif iNewWorldCiv == iAztecs:
-						tContactZoneTL = (11, 31)
-						tContactZoneBR = (34, 43)
+						tContactZoneTL = (11, 36)
+						tContactZoneBR = (38, 49)
 					elif iNewWorldCiv == iInca:
-						tContactZoneTL = (21, 11)
-						tContactZoneBR = (36, 40)
-						
-					lArrivalExceptions = [(25, 32), (26, 40), (26, 41), (25, 42), (25, 41), (23, 42), (21, 42)]
+						tContactZoneTL = (21, 13)
+						tContactZoneBR = (35, 40)
+
+					lArrivalExceptions = [(27, 47), (27, 48), (26, 48), (26, 49), (22, 49), (21, 49), (20, 49), (25, 37), (26, 36), (27, 37)]
 						
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
