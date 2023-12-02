@@ -54,7 +54,7 @@ def resetNationalWonders(iOwner, iPlayer, city, bConquest, bTrade):
 
 @handler("cityAcquired")
 def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
-	if bTrade and iPlayer in dTradingCompanyPlots and location(city) in dTradingCompanyPlots[iPlayer]:
+	if bTrade and civ(iPlayer) in lTradingCompanyCivs and city.getRegionID() in lAsia + lSubSaharanAfrica:
 		for plot in plots.surrounding(city):
 			if location(plot) == location(city):
 				convertPlotCulture(plot, iPlayer, 51, False)

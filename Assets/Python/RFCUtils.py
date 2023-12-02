@@ -335,19 +335,23 @@ def colonialAcquisition(iPlayer, tPlot):
 # this shouldn't be here
 def getColonialTargets(iPlayer, bEmpty=False):
 	iCiv = civ(iPlayer)
-
-	if iCiv in [iSpain, iFrance]:
-		iNumCities = 1
-	elif iCiv == iPortugal and not player(iPortugal).isHuman():
-		iNumCities = 5
-	else:
-		iNumCities = 3
-
-	lPlots = dTradingCompanyPlots[iCiv][:]
 	
+	dNumCities = {
+		iFrance: 2,
+		iSpain: 1,
+		iEngland: 4,
+		iPortugal: 5,
+		iNetherlands: 4,
+	}
 	
-	cityPlots, emptyPlots = plots.of(lPlots).split(lambda p: p.isCity())
-	targetCities = cityPlots.notowner(iPlayer).sample(iNumCities)
+	iNumCities = dNumCities[iCiv]
+	if player(iPlayer).isHuman():
+		iNumCities = min(3, iNumCities)
+		
+	targetPlots = plots.all().coastal().where(lambda p: p.getRegionID() in lAsia or (iCiv == iPortugal and p.getRegionID() in lSubSaharanAfrica))
+	
+	cityPlots, emptyPlots = targetPlots.split(CyPlot.isCity)
+	targetCities = cityPlots.notowner(iPlayer).highest(iNumCities, metric=lambda p: p.getWarValue(iCiv))
 	
 	if bEmpty:
 		nearbyCityPlots, settlePlots = emptyPlots.split(lambda p: plots.surrounding(p).any(CyPlot.isCity))

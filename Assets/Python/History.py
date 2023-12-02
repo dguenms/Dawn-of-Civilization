@@ -163,7 +163,7 @@ def checkEarlyColonists():
 @handler("BeginGameTurn")
 def checkLateColonists():
 	if year().between(1350, 1918):
-		for iCiv in dTradingCompanyPlots:
+		for iCiv in lLateColonyCivs:
 			if player(iCiv).isExisting():
 				iPlayer = slot(iCiv)
 				if data.players[iPlayer].iExplorationTurn >= 0:
@@ -342,9 +342,7 @@ def openIcelandRoute(iTech):
 @handler("techAcquired")
 def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 	if iTech == iRailroad and civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
-		lWestCoast = [(11, 50), (11, 49), (11, 48), (11, 47), (11, 46), (12, 45)]
-				
-		enemyCities = cities.of(lWestCoast).notowner(iAmerica)
+		enemyCities = cities.region(rCalifornia).notowner(iAmerica)
 		
 		for iEnemy in enemyCities.owners():
 			team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
@@ -358,7 +356,7 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 				message(city.getOwner(), "TXT_KEY_MESSAGE_AMERICAN_WEST_COAST_CONQUERORS", adjective(iPlayer), city.getName(), color=iRed, location=city, button=infos.unit(iMinuteman).getButton())
 				
 		if enemyCities.count() < 2:
-			for plot in plots.of(lWestCoast).without(enemyCities).sample(2 - enemyCities.count()):
+			for plot in plots.region(rCalifornia).coastal().without(enemyCities).highest(2 - enemyCities.count(), metric=lambda p: p.getSettlerValue(iAmerica)):
 				makeUnit(iPlayer, iSettler, plot)
 				makeUnit(iPlayer, iMinuteman, plot)
 
@@ -366,27 +364,25 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 @handler("techAcquired")
 def russianSiberianSettlement(iTech, iTeam, iPlayer):
 	if iTech == iRailroad and civ(iPlayer) == iRussia and not player(iPlayer).isHuman():
-		tVladivostok = (111, 51)
+		siberiaPlot = plots.region(rAmur).coastal().maximum(lambda p: p.getSettlerValue(iRussia))
 		
-		vladivostok = city(tVladivostok)
+		convertPlotCulture(siberiaPlot, iPlayer, 100, True)
 		
-		convertPlotCulture(plot_(tVladivostok), iPlayer, 100, True)
-		
-		if vladivostok and vladivostok.getOwner() != iPlayer:
-			spawnPlot = plots.surrounding(tVladivostok).land().passable().where(lambda plot: not city_(plot)).random()
+		if siberiaPlot.isCity() and siberiaPlot.getOwner() != iPlayer:
+			spawnPlot = plots.surrounding(siberiaPlot).land().passable().where(lambda p: not p.isCity()).random()
 			
-			team(iTeam).declareWar(vladivostok.getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
+			team(iTeam).declareWar(siberiaPlot.getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 			
 			makeUnits(iPlayer, iRifleman, spawnPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
 			makeUnits(iPlayer, iCannon, spawnPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-			message(vladivostok.getOwner(), "TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS", adjective(iPlayer), vladivostok.getName(), color=iRed, location=vladivostok, button=infos.unit(iRifleman).getButton())
+			message(siberiaPlot.getOwner(), "TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS", adjective(iPlayer), siberiaPlot.getPlotCity().getName(), color=iRed, location=siberiaPlot, button=infos.unit(iRifleman).getButton())
 			
-		elif isFree(iPlayer, tVladivostok, True):
-			player(iPlayer).found(*tVladivostok)
-			makeUnits(iPlayer, iRifleman, tVladivostok, 2)
+		elif isFree(iPlayer, siberiaPlot, True):
+			player(iPlayer).found(*location(siberiaPlot))
+			makeUnits(iPlayer, iRifleman, siberiaPlot, 2)
 			
-			for plot in plots.surrounding(tVladivostok):
+			for plot in plots.surrounding(siberiaPlot):
 				convertPlotCulture(plot, iPlayer, 80, True)
 
 
