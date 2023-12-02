@@ -15,28 +15,28 @@ iThreshold = 100
 iMinValue = 30
 
 iRomeCarthageYear = -220
-tRomeCarthageTL = (53, 37)
-tRomeCarthageBR = (61, 40)
+tRomeCarthageTL = (60, 45)
+tRomeCarthageBR = (70, 49)
 
 iRomeGreeceYear = -150
-tRomeGreeceTL = (64, 40)
-tRomeGreeceBR = (68, 45)
+tRomeGreeceTL = (73, 49)
+tRomeGreeceBR = (78, 56)
 
 iRomeMesopotamiaYear = -100
-tRomeMesopotamiaTL = (70, 38)
-tRomeMesopotamiaBR = (78, 45)
+tRomeMesopotamiaTL = (82, 44)
+tRomeMesopotamiaBR = (90, 50)
 
 iRomeAnatoliaYear = -100
-tRomeAnatoliaTL = (70, 38)
-tRomeAnatoliaBR = (75, 45)
+tRomeAnatoliaTL = (79, 51)
+tRomeAnatoliaBR = (88, 55)
 
 iRomeCeltiaYear = -50
-tRomeCeltiaTL = (52, 45)
-tRomeCeltiaBR = (59, 51)
+tRomeCeltiaTL = (56, 55)
+tRomeCeltiaBR = (64, 62)
 
 iRomeEgyptYear = 0
-tRomeEgyptTL = (65, 31)
-tRomeEgyptBR = (72, 36)
+tRomeEgyptTL = (76, 40)
+tRomeEgyptBR = (82, 45)
 
 # following setup: iPlayer, iPreferredTarget, TL, BR, iNumTargets, iStartYear, iTurnInterval
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
@@ -46,43 +46,43 @@ tConquestRomeCelts = (3, iRome, iCelts, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCe
 tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
-tGreeceMesopotamiaTL = (70, 38)
-tGreeceMesopotamiaBR = (78, 45)
-tGreeceEgyptTL = (65, 31)
-tGreeceEgyptBR = (72, 36)
-tGreecePersiaTL = (79, 37)
-tGreecePersiaBR = (85, 45)
+tGreeceMesopotamiaTL = (81, 45)
+tGreeceMesopotamiaBR = (90, 55)
+tGreeceEgyptTL = (76, 40)
+tGreeceEgyptBR = (82, 45)
+tGreecePersiaTL = (91, 43)
+tGreecePersiaBR = (97, 52)
 
 tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
 tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
 tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
-tCholaSumatraTL = (98, 26)
-tCholaSumatraBR = (101, 28)
+tCholaSumatraTL = (115, 26)
+tCholaSumatraBR = (121, 31)
 
 tConquestCholaSumatra = (8, iDravidia, iMalays, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
-tSpainMoorsTL = (50, 40)
-tSpainMoorsBR = (54, 42)
+tSpainMoorsTL = (55, 48)
+tSpainMoorsBR = (60, 51)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iTurksPersiaYear = 1000
-tTurksPersiaTL = (78, 37)
-tTurksPersiaBR = (85, 43)
+tTurksPersiaTL = (91, 43)
+tTurksPersiaBR = (98, 52)
 
 iTurksAnatoliaYear = 1100
-tTurksAnatoliaTL = (69, 37)
-tTurksAnatoliaBR = (78, 45)
+tTurksAnatoliaTL = (80, 51)
+tTurksAnatoliaBR = (87, 55)
 
 tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
 tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
 iMongolsPersiaYear = 1220
-tMongolsPersiaTL = (79, 37)
-tMongolsPersiaBR = (85, 49)
+tMongolsPersiaTL = (91, 43)
+tMongolsPersiaBR = (98, 52)
 
 tConquestMongolsPersia = (12, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
