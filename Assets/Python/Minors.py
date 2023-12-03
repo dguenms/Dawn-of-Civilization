@@ -119,7 +119,7 @@ class MinorCity(object):
 			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole, bUnique=False):
 				if iUnit is None:
 					iUnit = iMilitia
-			
+				
 				yield base_unit(iUnit), iNumUnits, iUnitAI
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
