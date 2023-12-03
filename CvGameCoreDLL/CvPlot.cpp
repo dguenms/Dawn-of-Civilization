@@ -5341,6 +5341,26 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 				}
 			}
 
+			// Leoreth: free improvement on small islands for the AI
+			if (getOwnerINLINE() == NO_PLAYER && eNewValue != NO_PLAYER && !GET_PLAYER(eNewValue).isHuman())
+			{
+				if (getImprovementType() == NO_IMPROVEMENT && area()->getNumTiles() <= 4)
+				{
+					BonusTypes eBonus = getBonusType(GET_PLAYER(eNewValue).getTeam());
+
+					if (eBonus != NO_BONUS)
+					{
+						for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+						{
+							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity())
+							{
+								setImprovementType((ImprovementTypes)iI);
+							}
+						}
+					}
+				}
+			}
+
 			m_eOwner = eNewValue;
 
 			setWorkingCityOverride(NULL);
