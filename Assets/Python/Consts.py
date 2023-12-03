@@ -138,11 +138,8 @@ iOrange = 88
 iTan = 90
 iLime = 100
 
-# independent cities
-iNumMinorCities = 40
-
 # scripted conquerors
-iNumConquests = 13
+iNumConquests = 14
 
 lNeighbours = [
 	(iEgypt, iBabylonia),

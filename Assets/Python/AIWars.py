@@ -80,13 +80,34 @@ tTurksAnatoliaBR = (87, 55)
 tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
 tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
+iEnglandIrelandYear = 1200
+tEnglandIrelandTL = (52, 64)
+tEnglandIrelandBR = (54, 67)
+
+tConquestEnglandIreland = (12, iEngland, iCelts, tEnglandIrelandTL, tEnglandIrelandBR, 2, iEnglandIrelandYear, 10)
+
 iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (91, 43)
 tMongolsPersiaBR = (98, 52)
 
-tConquestMongolsPersia = (12, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (13, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
+lConquests = [
+	tConquestRomeCarthage, 
+	tConquestRomeGreece, 
+	tConquestRomeAnatolia, 
+	tConquestRomeCelts, 
+	tConquestRomeEgypt, 
+	tConquestGreeceMesopotamia, 
+	tConquestGreeceEgypt, 
+	tConquestGreecePersia, 
+	tConquestCholaSumatra, 
+	tConquestSpainMoors, 
+	tConquestTurksPersia, 
+	tConquestTurksAnatolia, 
+	tConquestEnglandIreland,
+	tConquestMongolsPersia,
+]
 
 
 @handler("GameStart")
@@ -276,7 +297,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if iCiv == iDravidia:
 			makeUnit(iPlayer, iWarElephant, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-		if iCiv == iSpain:
+		if iCiv in [iSpain, iEngland]:
 			createRoleUnit(iPlayer, tPlot, iShockCity, 2*iExtra)
 			
 		if iCiv == iTurks:
