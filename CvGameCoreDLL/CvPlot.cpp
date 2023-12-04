@@ -5352,7 +5352,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 					{
 						for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 						{
-							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity())
+							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity() && iI != IMPROVEMENT_SLAVE_PLANTATION)
 							{
 								setImprovementType((ImprovementTypes)iI);
 							}
