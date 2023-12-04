@@ -202,10 +202,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				bAlreadyContacted = data.dFirstContactConquerors[iNewWorldCiv]
 					
 				if not bAlreadyContacted:
-					if iNewWorldCiv == iMaya:
-						tContactZoneTL = (11, 36)
-						tContactZoneBR = (38, 49)
-					elif iNewWorldCiv == iAztecs:
+					if iNewWorldCiv in [iMaya, iToltecs, iAztecs]:
 						tContactZoneTL = (11, 36)
 						tContactZoneBR = (38, 49)
 					elif iNewWorldCiv == iInca:
