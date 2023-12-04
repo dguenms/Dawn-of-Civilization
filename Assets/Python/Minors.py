@@ -314,9 +314,25 @@ class Barbarians(object):
 			if infos.unit(iUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
 				return UnitAITypes.UNITAI_ASSAULT_SEA
 		
-		return UnitAITypes.UNITAI_ATTACK		
+		return UnitAITypes.UNITAI_ATTACK
+	
+	@staticmethod
+	def valid_unit_spawn_terrain(plot, iUnit):
+		if infos.unit(iUnit).getTerrainImpassable(plot.getTerrainType()):
+			return False
+		
+		if plot.getFeatureType() >= 0 and infos.unit(iUnit).getFeatureImpassable(plot.getFeatureType()):
+			return False
+		
+		return True
+	
+	def valid_spawn_terrain(self, plot):
+		return all(self.valid_unit_spawn_terrain(plot, iUnit) for iUnit in self.units)
 	
 	def valid_spawn(self, plot):
+		if not self.valid_spawn_terrain(plot):
+			return False
+	
 		if self.pattern in [SEA_INVADERS, PIRATES]:
 			if plot.getTerrainType() not in [iCoast, iArcticCoast]:
 				return False
