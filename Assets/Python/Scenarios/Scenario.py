@@ -1,6 +1,6 @@
 from Resources import setupScenarioResources
 from DynamicCivs import checkName
-from Slots import findSlot, addPlayer
+from Slots import findSlot, addPlayer, initWars
 from GoalHandlers import event_handler_registry
 
 from Core import *
@@ -357,6 +357,8 @@ class Scenario(object):
 	def init(self):
 		event_handler_registry.reset()
 		
+		initWars(game.getActivePlayer())
+		
 		for civ in self.lCivilizations:
 			iCiv = civ.iCiv
 			
@@ -365,6 +367,8 @@ class Scenario(object):
 			
 			iPlayer = findSlot(iCiv)
 			addPlayer(iPlayer, iCiv, bAlive=True, bMinor=not civ.isPlayable())
+			
+			initWars(iPlayer)
 	
 		events.fireEvent("playerCivAssigned", game.getActivePlayer(), game.getActiveCivilizationType())
 		events.fireEvent("playerCivAssigned", gc.getBARBARIAN_PLAYER(), iBarbarian)

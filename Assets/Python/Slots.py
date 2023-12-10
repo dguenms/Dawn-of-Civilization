@@ -49,8 +49,25 @@ def updateCivilization(iPlayer, iCiv, iBirthTurn=-1):
 	
 	addPlayer(iPlayer, iCiv, iBirthTurn=iBirthTurn, bAlive=True)
 	
+	initWars(iPlayer)
+	
 	if iCurrentCivilization in data.dSlots:
 		del data.dSlots[iCurrentCivilization]
+
+def initWars(iPlayer):
+	iCiv = player(iPlayer).getCivilizationType()
+	iTeam = player(iPlayer).getTeam()
+	
+	if iCiv == iNative:
+		for iOtherPlayer in players.all().alive():
+			if not player(iOtherPlayer).isBarbarian():
+				setMutualWar(iTeam, player(iOtherPlayer).getTeam())
+	
+	else:
+		setMutualWar(iTeam, gc.getBARBARIAN_TEAM())
+		
+		if player(iNative).isExisting():
+			setMutualWar(iTeam, player(iNative).getTeam())
 
 def getImpact(iCiv):
 	iActiveCiv = civ()

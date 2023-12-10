@@ -1154,3 +1154,9 @@ def resetRevealedOwner(iPlayer):
 	for plot in plots.all():
 		if not plot.isRevealed(game.getActiveTeam(), False) and plot.getRevealedOwner(game.getActiveTeam(), False) == iPlayer:
 			plot.setRevealedOwner(game.getActiveTeam(), slot(iIndependent))
+
+
+# used: Slots
+def setMutualWar(iTeam1, iTeam2):
+	team(iTeam1).setAtWar(iTeam2, True)
+	team(iTeam2).setAtWar(iTeam1, True)
