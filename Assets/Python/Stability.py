@@ -101,7 +101,7 @@ def triggerCrisis(iPlayer):
 	# help AI to not immediately collapse
 	if not player(iPlayer).isHuman() and not bFall:
 		# with no overexpansion at all, just have a domestic crisis (once until back at shaky again)
-		if not data.players[iPlayer].bDomesticCrisis and data.players[iPlayer].lStabilityCategoryValues[0] <= 0:
+		if not data.players[iPlayer].bDomesticCrisis and data.players[iPlayer].lStabilityCategoryValues[0] >= 0:
 			domesticCrisis(iPlayer)
 			return
 		
