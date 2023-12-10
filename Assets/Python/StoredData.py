@@ -209,7 +209,7 @@ class GameData:
 		
 		# Unique Powers
 		
-		self.iImmigrationTimer = 0
+		self.iImmigrationTimer = 1
 		
 		# AI Wars
 		
