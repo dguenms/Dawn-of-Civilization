@@ -5927,7 +5927,6 @@
 			<bTeamShare>1</bTeamShare>
 			<DiploVoteType>DIPLOVOTE_POPE</DiploVoteType>
 			<bNukeImmune>1</bNukeImmune>
-			<bStateReligion>1</bStateReligion>
 			<iCost>-1</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
