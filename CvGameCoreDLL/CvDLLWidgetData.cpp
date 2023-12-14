@@ -2294,7 +2294,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	bShift = gDLL->shiftKey();
 
 	CvWString szTemp;
-	szTemp.Format(SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getActionInfo(widgetDataStruct.m_iData1).getHotKeyDescription().c_str());
+	szTemp.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getActionInfo(widgetDataStruct.m_iData1).getHotKeyDescription().c_str());
 	szBuffer.assign(szTemp);
 
 	pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
@@ -2617,12 +2617,6 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 // BUG - Specialist Actual Effects - start
 				GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), pMissionCity, true, 1);
 // BUG - Specialist Actual Effects - end
-
-				// House of Wisdom effect
-				if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
-				{
-					parseDiscoverHelp(pMissionPlot, szBuffer);
-				}
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_CONSTRUCT)
 			{
@@ -3301,6 +3295,16 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			if (!CvWString(GC.getMissionInfo((MissionTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType())).getHelp()).empty())
 			{
 				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo((MissionTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType())).getHelp()).c_str());
+			}
+
+			// House of Wisdom effect
+			if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_JOIN && GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(NEWLINE);
+				szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getMissionInfo(MISSION_DISCOVER).getDescription(), GC.getBuildingInfo((BuildingTypes)HOUSE_OF_WISDOM).getText()).c_str());
+				parseDiscoverHelp(pMissionPlot, szBuffer);
+				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo(MISSION_DISCOVER).getHelp()).c_str());
 			}
 		}
 
