@@ -5775,10 +5775,27 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						{
 							pCapitalCity->createGreatPeople(eFreeUnit, false, false);
 						}
-					}
 
-					iFreeTechs += GC.getTechInfo(eIndex).getFirstFreeTechs();
-					szBuffer = gDLL->getText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", GC.getTechInfo(eIndex).getTextKeyWide());
+						for (iI = 0; iI < MAX_PLAYERS; iI++)
+						{
+							if (GET_PLAYER((PlayerTypes)iI).isAlive())
+							{
+								if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+								{
+									szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_GREAT_PERSON", GET_PLAYER(ePlayer).getCivilizationShortDescriptionKey(), GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText()); //Rhye
+								}
+								else
+								{
+									szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_GREAT_PERSON", GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText());
+								}
+								gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+							}
+						}
+
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_GREAT_PERSON", GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText());
+						GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+						
+					}
 				}
 			}
 
@@ -5827,7 +5844,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						}
 					}
 
-					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex).getTextKeyWide());
+					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getTechInfo(eIndex).getTextKeyWide());
 					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 				}
 			}

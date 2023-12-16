@@ -3521,6 +3521,22 @@
 		<Spanish>Our civilization has entered a new period, changing the territory we consider historical.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_SOMEONE_FIRST_TO_GREAT_PERSON</Tag>
+		<English>%s1_PlyrName is the first to discover %s2_TechName and receive a %s3!</English>
+		<French>%s1_PlyrName is the first to discover %s2_TechName and receive a %s3!</French>
+		<German>%s1_PlyrName is the first to discover %s2_TechName and receive a %s3!</German>
+		<Italian>%s1_PlyrName is the first to discover %s2_TechName and receive a %s3!</Italian>
+		<Spanish>%s1_PlyrName is the first to discover %s2_TechName and receive a %s3!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_UNKNOWN_FIRST_TO_GREAT_PERSON</Tag>
+		<English>A distant civilization is the first to discover %s1_TechName and receive a %s2!</English>
+		<French>A distant civilization is the first to discover %s1_TechName and receive a %s2!</French>
+		<German>A distant civilization is the first to discover %s1_TechName and receive a %s2!</German>
+		<Italian>A distant civilization is the first to discover %s1_TechName and receive a %s2!</Italian>
+		<Spanish>A distant civilization is the first to discover %s1_TechName and receive a %s2!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
