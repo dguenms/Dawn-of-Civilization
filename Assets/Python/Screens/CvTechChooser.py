@@ -53,9 +53,13 @@ class CvTechChooser:
 
 
 
-	def interfaceScreen(self):
+	def interfaceScreen(self, iPlayer = None):
 		''
-		self.iPlayer = CyGame().getActivePlayer()
+		if iPlayer is not None:
+			self.iPlayer = iPlayer
+		else:
+			self.iPlayer = CyGame().getActivePlayer()
+		
 		if CyGame().isPitbossHost():
 			return
 
@@ -191,7 +195,7 @@ class CvTechChooser:
 			screen.setActivation("CivDropDown", ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
 			for j in xrange(gc.getMAX_PLAYERS()):
 				if gc.getPlayer(j).isAlive():
-					screen.addPullDownString("CivDropDown", gc.getPlayer(j).getName(), j, j, self.iPlayer == j)
+					screen.addPullDownString("CivDropDown", gc.getPlayer(j).getCivilizationShortDescription(0), j, j, self.iPlayer == j)
 
 		# Check Redraw
 		if screen.isPersistent() and not (self.bResearched or self.bBuilt):
@@ -955,9 +959,9 @@ class CvTechChooser:
 		# Debug
 		elif inputClass.getFunctionName() == "CivDropDown":
 			iIndex = screen.getSelectedPullDownID("CivDropDown")
-			self.iPlayer = screen.getPullDownData("CivDropDown", iIndex)
+			iPlayer = screen.getPullDownData("CivDropDown", iIndex)
 			screen.setPersistent(False)
-			self.interfaceScreen()
+			self.interfaceScreen(iPlayer)
 			return
 
 		# Advanced Start
