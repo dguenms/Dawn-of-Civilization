@@ -5784,7 +5784,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 				{
 					if (pLoopPlot->isCity())
 					{
-						if (pLoopPlot->area() == pPlot->area())
+						//if (pLoopPlot->area() == pPlot->area())
 						{
 							return false;
 						}
