@@ -4744,6 +4744,9 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(NEWLINE);
 		}
 
+		szString.append(CvWString::format(L"Continent area: %d", pPlot->getContinentArea()));
+		szString.append(NEWLINE);
+
 		// Leoreth: display plot index, only bugfix purposes
 		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
 		szString.append(szTempBuffer);
