@@ -5004,6 +5004,14 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 			}
 		}
 
+		if (!isHotSeat())
+		{
+			for (int iI = 0; iI < NUM_PLAYEROPTION_TYPES; iI++)
+			{
+				GET_PLAYER(eNewValue).setOption((PlayerOptionTypes)iI, GET_PLAYER(eOldActivePlayer).isOption((PlayerOptionTypes)iI));
+			}
+		}
+
 		if (GC.IsGraphicsInitialized())
 		{
 			GC.getMapINLINE().updateFog();
