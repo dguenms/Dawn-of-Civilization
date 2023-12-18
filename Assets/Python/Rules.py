@@ -270,7 +270,10 @@ def getImmigrationValue(city):
 	
 	if city.getRegionID() in lNorthAmerica:
 		iValue += 5
-		
+	
+	if iValue > 0:
+		iValue += rand(0, 2)
+	
 	return iValue
 	
 	
@@ -278,9 +281,14 @@ def getEmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
 	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 	
+	iValue = 0
+	
 	iValue -= min(0, iHappinessDifference)
 	iValue -= min(0, iFoodDifference / 2)
 	iValue += city.getPopulation() / 5
+	
+	if iValue > 0:
+		iValue += rand(0, 2)
 	
 	return iValue
 
@@ -308,7 +316,7 @@ def immigration():
 				pCurrent.changeUpgradeProgress(turns(10))
 					
 		# migration brings culture
-		targetPlot = plot(city)
+		targetPlot = plot(targetCity)
 		iTargetPlayer = targetCity.getOwner()
 		iSourcePlayer = sourceCity.getOwner()
 		
@@ -316,7 +324,7 @@ def immigration():
 		targetPlot.changeCulture(iSourcePlayer, iCultureChange, False)
 		
 		iCultureChange = targetCity.getCulture(iTargetPlayer) / targetCity.getPopulation()
-		targetCity.changeCulture(iSourcePlayer, iCultureChange, False, False)
+		targetCity.changeCulture(iSourcePlayer, iCultureChange, False)
 		
 		# chance to spread religions in source city
 		lReligions = [iReligion for iReligion in range(iNumReligions) if sourceCity.isHasReligion(iReligion) and not targetCity.isHasReligion(iReligion)]
