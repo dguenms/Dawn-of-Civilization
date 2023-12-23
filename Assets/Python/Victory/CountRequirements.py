@@ -377,6 +377,12 @@ class ImprovementCount(ThresholdRequirement):
 		ThresholdRequirement.__init__(self, iImprovement, *parameters, **options)
 		
 		self.iImprovement = iImprovement
+		
+		self.handle("improvementBuilt", self.check_improvement_built)
+	
+	def check_improvement_built(self, goal, iImprovement):
+		if self.iImprovement == iImprovement:
+			goal.check()
 	
 	def value(self, iPlayer, iImprovement):
 		return player(iPlayer).getImprovementCount(iImprovement)

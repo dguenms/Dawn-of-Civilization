@@ -385,6 +385,30 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			city.kill()
 			unit.kill(False, -1)
 	
+	def test_improvement_built(self):
+		onImprovementBuilt = self.get("improvementBuilt", self.capture)
+		
+		own_plot = plot_(68, 45)
+		own_plot.setOwner(0)
+		own_plot.setImprovementType(iCottage)
+		
+		other_plot = plot(69, 45)
+		other_plot.setOwner(1)
+		other_plot.setImprovementType(iCottage)
+		
+		try:
+			onImprovementBuilt((iCottage, 69, 45))
+			self.assertEqual(self.argument, None)
+			
+			onImprovementBuilt((iCottage, 68, 45))
+			self.assertEqual(self.argument, (self.goal, iCottage))
+		finally:
+			own_plot.setOwner(-1)
+			own_plot.setImprovementType(-1)
+			
+			other_plot.setOwner(-1)
+			other_plot.setImprovementType(-1)
+	
 	def test_peace_brokered(self):
 		onPeaceBrokered = self.get("peaceBrokered", self.increment)
 		

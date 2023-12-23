@@ -182,6 +182,13 @@ class EventHandlerRegistry(object):
 		
 		return greatPersonBorn
 	
+	def improvementBuilt(self, goal, applicable, func):
+		def improvementBuilt((iImprovement, iX, iY)):
+			if plot(iX, iY).isOwned() and applicable(goal, plot(iX, iY).getOwner()):
+				func(goal, iImprovement)
+		
+		return improvementBuilt
+	
 	def peaceBrokered(self, goal, applicable, func):
 		def peaceBrokered((iBroker, iPlayer1, iPlayer2)):
 			if applicable(goal, iBroker):

@@ -1684,10 +1684,38 @@ class TestImprovementCount(ExtendedTestCase):
 			
 			team(1).setVassal(0, False, False)
 	
-	def test_check_turnly(self):
-		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+	def test_check_improvement_built(self):
+		plot = plot_(68, 35)
+		plot.setOwner(0)
+		plot.setImprovementType(iCottage)
 		
-		self.assertEqual(self.goal.checked, True)
+		try:
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			plot.setOwner(-1)
+			plot.setImprovementType(-1)
+	
+	def test_check_improvement_built_other_owner(self):
+		plot = plot_(68, 35)
+		plot.setOwner(1)
+		plot.setImprovementType(iCottage)
+		
+		try:
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			plot.setOwner(-1)
+			plot.setImprovementType(-1)
+	
+	def test_check_improvement_built_other_improvement(self):
+		plot = plot_(68, 35)
+		plot.setOwner(0)
+		plot.setImprovementType(iHamlet)
+		
+		try:
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			plot.setOwner(-1)
+			plot.setImprovementType(-1)
 
 
 class TestOpenBorderCount(ExtendedTestCase):
