@@ -61,13 +61,13 @@ def initWars(iPlayer):
 	if iCiv == iNative:
 		for iOtherPlayer in players.all().alive():
 			if not player(iOtherPlayer).isBarbarian():
-				setMutualWar(iTeam, player(iOtherPlayer).getTeam())
+				team(gc.getBARBARIAN_TEAM()).declareWar(iTeam, False, WarPlanTypes.WARPLAN_LIMITED)
 	
 	else:
-		setMutualWar(iTeam, gc.getBARBARIAN_TEAM())
+		team(gc.getBARBARIAN_TEAM()).declareWar(iTeam, False, WarPlanTypes.WARPLAN_LIMITED)
 		
 		if player(iNative).isExisting():
-			setMutualWar(iTeam, player(iNative).getTeam())
+			team(player(iNative).getTeam()).declareWar(iTeam, False, WarPlanTypes.WARPLAN_LIMITED)
 
 def getImpact(iCiv):
 	iActiveCiv = civ()
