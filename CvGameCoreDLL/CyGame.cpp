@@ -406,6 +406,11 @@ int CyGame::getMinutesPlayed() const
 	return (NULL != m_pGame ? m_pGame->getMinutesPlayed() : 0);
 }
 
+int CyGame::getSecondsPlayed() const
+{
+	return m_pGame ? m_pGame->getSecondsPlayed() : 0;
+}
+
 int CyGame::getTargetScore() const
 {
 	return (NULL != m_pGame ? m_pGame->getTargetScore() : -1);

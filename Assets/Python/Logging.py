@@ -2,7 +2,7 @@ from Core import *
 
 from Events import handler
 
-from datetime import datetime
+from datetime import timedelta
 
 
 RISE_LOG = "Rise.log"
@@ -16,10 +16,10 @@ TECHS = None
 class Timer(object):
 
 	def __init__(self):
-		self.start = datetime.now()
+		self.start = game.getSecondsPlayed()
 	
 	def elapsed(self):
-		return datetime.now() - self.start
+		return timedelta(seconds=game.getSecondsPlayed() - self.start)
 
 
 class TechLog(object):
