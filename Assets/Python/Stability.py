@@ -393,12 +393,11 @@ def calculateAdministration(city):
 	iPopulation = city.getPopulation()
 	iCurrentEra = player(iPlayer).getCurrentEra()
 	iAdministrationModifier = getAdministrationModifier(iCurrentEra)
-	
-	bSingleCoreCity = cities.core(iPlayer).owner(iPlayer).count() == 1
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
-	if bSingleCoreCity and iCurrentEra > iAncient: 
-		iAdministration *= 2
+	
+	if city.isCapital():
+		iAdministration += iPopulation
 	
 	return iAdministration
 	
