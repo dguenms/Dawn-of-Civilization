@@ -191,6 +191,7 @@ public:
 
 	DllExport int getTurnSlice() const;																			// Exposed to Python
 	int getMinutesPlayed() const;																	// Exposed to Python
+	int getSecondsPlayed() const;
 	void setTurnSlice(int iNewValue);
 	void changeTurnSlice(int iChange);
 

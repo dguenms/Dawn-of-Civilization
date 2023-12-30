@@ -108,6 +108,7 @@ public:
 	void setEstimateEndTurn(int iNewValue);
 	int getTurnSlice() const;
 	int getMinutesPlayed() const;
+	int getSecondsPlayed() const;
 	int getTargetScore() const;
 	void setTargetScore(int iNewValue);
 

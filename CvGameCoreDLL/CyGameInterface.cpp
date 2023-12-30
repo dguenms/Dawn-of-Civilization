@@ -97,6 +97,7 @@ void CyGamePythonInterface()
 		.def("setEstimateEndTurn", &CyGame::setEstimateEndTurn)
 		.def("getTurnSlice", &CyGame::getTurnSlice)
 		.def("getMinutesPlayed", &CyGame::getMinutesPlayed, "Returns the number of minutes since the game began")
+		.def("getSecondsPlayed", &CyGame::getSecondsPlayed, "int ()")
 		.def("getTargetScore", &CyGame::getTargetScore)
 		.def("setTargetScore", &CyGame::setTargetScore)
 

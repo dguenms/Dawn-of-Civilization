@@ -3716,6 +3716,12 @@ int CvGame::getMinutesPlayed() const
 }
 
 
+int CvGame::getSecondsPlayed() const
+{
+	return getTurnSlice() / gDLL->getTurnsPerSecond();
+}
+
+
 void CvGame::setTurnSlice(int iNewValue)
 {
 	m_iTurnSlice = iNewValue;
