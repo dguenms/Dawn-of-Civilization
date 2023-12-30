@@ -701,13 +701,15 @@ def _parse_tile(*args):
 	raise TypeError("Only accepts two coordinates or a tuple of two coordinates, received: %s %s" % (args, type(args[0])))
 		
 
-def _iterate(first, next, getter = lambda x: x):
+def _iterate(first, next, mapper = lambda x: x):
 	list = []
 	entity, iter = first(False)
 	while entity:
-		list.append(getter(entity))
+		mapped_entity = mapper(entity)
+		if mapped_entity is not None:
+			yield mapped_entity
+		
 		entity, iter = next(iter, False)
-	return [x for x in list if x is not None]
 	
 	
 def wrap(*args):
@@ -1385,6 +1387,9 @@ class CityFactory:
 
 	def owner(self, identifier):
 		owner = player(identifier)
+		if not owner:
+			return self.none()
+		
 		cities = _iterate(owner.firstCity, owner.nextCity)
 		return Cities(cities)
 		
