@@ -347,15 +347,15 @@ def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 		for city in enemyCities:
 			plot = plots.surrounding(city).without(city).land().passable().no_enemies(iPlayer).random()
 			if plot:
-				makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-				makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+				createRoleUnit(iPlayer, plot, iCityAttack, 3)
+				createRoleUnit(iPlayer, plot, iCitySiege, 2)
 				
 				message(city.getOwner(), "TXT_KEY_MESSAGE_AMERICAN_WEST_COAST_CONQUERORS", adjective(iPlayer), city.getName(), color=iRed, location=city, button=infos.unit(iMinuteman).getButton())
 				
 		if enemyCities.count() < 2:
 			for plot in plots.region(rCalifornia).coastal().without(enemyCities).highest(2 - enemyCities.count(), metric=lambda p: p.getSettlerValue(iAmerica)):
-				makeUnit(iPlayer, iSettler, plot)
-				makeUnit(iPlayer, iMinuteman, plot)
+				createRoleUnit(iPlayer, plot, iSettle)
+				createRoleUnit(iPlayer, plot, iDefend)
 
 
 @handler("techAcquired")
@@ -370,14 +370,14 @@ def russianSiberianSettlement(iTech, iTeam, iPlayer):
 			
 			team(iTeam).declareWar(siberiaPlot.getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 			
-			makeUnits(iPlayer, iRifleman, spawnPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iPlayer, iCannon, spawnPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			createRoleUnit(iPlayer, spawnPlot, iCityAttack, 4)
+			createRoleUnit(iPlayer, spawnPlot, iCitySiege, 2)
 			
 			message(siberiaPlot.getOwner(), "TXT_KEY_MESSAGE_RUSSIAN_SIBERIAN_CONQUERORS", adjective(iPlayer), siberiaPlot.getPlotCity().getName(), color=iRed, location=siberiaPlot, button=infos.unit(iRifleman).getButton())
 			
 		elif isFree(iPlayer, siberiaPlot, True):
 			player(iPlayer).found(*location(siberiaPlot))
-			makeUnits(iPlayer, iRifleman, siberiaPlot, 2)
+			createRoleUnit(iPlayer, siberiaPlot, iDefend, 2)
 			
 			for plot in plots.surrounding(siberiaPlot):
 				convertPlotCulture(plot, iPlayer, 80, True)
