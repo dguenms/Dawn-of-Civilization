@@ -12,7 +12,7 @@ from Locations import *
 from Core import *
 
 
-@handler("firstCity")
+#@handler("firstCity")
 def initBabylonianUP(city):
 	# Babylonian UP: receive a free tech after discovering the first five techs
 	iCivilization = civ(city)
