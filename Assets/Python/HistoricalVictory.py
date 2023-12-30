@@ -39,6 +39,7 @@ ITS_CITY = "TXT_KEY_VICTORY_NAME_ITS_CITY"
 
 # area names
 AFRICA = "TXT_KEY_VICTORY_NAME_AFRICA"
+ANDES = "TXT_KEY_VICTORY_NAME_ANDES"
 ATLANTIC_COAST = "TXT_KEY_VICTORY_NAME_ATLANTIC_COAST"
 AMERICA = "TXT_KEY_VICTORY_NAME_AMERICA"
 ANATOLIA = "TXT_KEY_VICTORY_NAME_ANATOLIA"
@@ -52,6 +53,7 @@ CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
 EASTERN_MEDITERRANEAN = "TXT_KEY_VICTORY_NAME_EASTERN_MEDITERRANEAN"
+EGYPT = "TXT_KEY_VICTORY_NAME_EGYPT"
 EUROPE = "TXT_KEY_VICTORY_NAME_EUROPE"
 GAUL = "TXT_KEY_VICTORY_NAME_GAUL"
 GRAN_COLOMBIA = "TXT_KEY_VICTORY_NAME_GRAN_COLOMBIA"
@@ -72,11 +74,12 @@ NEW_ZEALAND = "TXT_KEY_VICTORY_NAME_NEW_ZEALAND"
 NORTH_AFRICA = "TXT_KEY_VICTORY_NAME_NORTH_AFRICA"
 NORTH_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_AMERICA"
 NORTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA"
-NORTH_WEST_INDIA = "TXT_KEY_VICTORY_NAME_NORTH_WEST_INDIA"
 OCEANIA = "TXT_KEY_VICTORY_NAME_OCEANIA"
 PACIFIC_COAST = "TXT_KEY_VICTORY_NAME_PACIFIC_COAST"
+PERSIA = "TXT_KEY_VICTORY_NAME_PERSIA"
 PERU = "TXT_KEY_VICTORY_NAME_PERU"
 PHILIPPINES = "TXT_KEY_VICTORY_NAME_PHILIPPINES"
+PUNJAB = "TXT_KEY_VICTORY_NAME_PUNJAB"
 SCANDINAVIA = "TXT_KEY_VICTORY_NAME_SCANDINAVIA"
 SIBERIA = "TXT_KEY_VICTORY_NAME_SIBERIA"
 SIBERIAN_COAST = "TXT_KEY_VICTORY_NAME_SIBERIAN_COAST"
@@ -159,7 +162,7 @@ dGoals = {
 		CityBuilding(city(tCarthage).named(CARTHAGE), iPalace, iGreatCothon, by=-300),
 		Control(
 			plots.rectangle(dCoreArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named(ITALY), # TODO: define in locations or use region
-			plots.rectangle(tIberia).named(IBERIA),
+			plots.region(rIberia).named(IBERIA),
 			at=-100,
 		),
 		GoldAmount(5000, at=200),
@@ -167,7 +170,7 @@ dGoals = {
 	iPolynesia: (
 		Settle(
 			plots.rectangle(tHawaii).named(HAWAII),
-			plots.rectangle(tNewZealand).named(NEW_ZEALAND),
+			(plots.rectangle(tNewZealandEast) + plots.rectangle(tNewZealandWest)).named(NEW_ZEALAND),
 			plots.rectangle(tMarquesas).named(MARQUESAS),
 			plots.rectangle(tEasterIsland).named(EASTER_ISLAND),
 			required=2,
@@ -175,7 +178,7 @@ dGoals = {
 		),
 		Settle(
 			plots.rectangle(tHawaii).named(HAWAII),
-			plots.rectangle(tNewZealand).named(NEW_ZEALAND),
+			(plots.rectangle(tNewZealandEast) + plots.rectangle(tNewZealandWest)).named(NEW_ZEALAND),
 			plots.rectangle(tMarquesas).named(MARQUESAS),
 			plots.rectangle(tEasterIsland).named(EASTER_ISLAND),
 			by=1000,
@@ -190,12 +193,12 @@ dGoals = {
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3), by=100),
 		CityCount(
-			(plots.core(iSpain).named(IBERIA), 2), # TODO: define in locations or use region
-			(plots.rectangle(tGaul).named(GAUL), 2),
-			(plots.core(iEngland).named(BRITAIN), 1),
-			(plots.rectangle(tAfrica).named(AFRICA), 2),
-			(plots.core(iByzantium).named(ANATOLIA), 4),
-			(plots.core(iEgypt), 2),
+			(plots.region(rIberia).named(IBERIA), 2),
+			(plots.region(rFrance).named(GAUL), 2),
+			(plots.region(rBritain).named(BRITAIN), 1),
+			(plots.region(rMaghreb).named(AFRICA), 2),
+			(plots.regions(rGreece, rAnatolia).named(ANATOLIA), 4),
+			(plots.region(rEgypt).named(EGYPT), 2),
 			at=320,
 		),
 		FirstDiscover(iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService),
@@ -212,7 +215,7 @@ dGoals = {
 			at=800,
 		),
 		Control(
-			plots.rectangle(tDeccan).named(DECCAN),
+			plots.regions(rDravida, rDeccan).named(DECCAN),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
 			subject=VASSALS,
 			at=1000,
@@ -242,9 +245,9 @@ dGoals = {
 			at=1200,
 		),
 		CityCount(
-			(plots.rectangle(tBalkans).named(BALKANS), 3),
-			(plots.rectangle(tNorthAfrica).named(NORTH_AFRICA), 3),
-			(plots.rectangle(tNearEast).named(NEAR_EAST), 3),
+			(plots.regions(rGreece, rBalkans).named(BALKANS), 3),
+			(plots.regions(rEgypt, rMaghreb).named(NORTH_AFRICA), 3),
+			(plots.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).named(NEAR_EAST), 3),
 			at=1450,
 		),
 	),
@@ -255,12 +258,12 @@ dGoals = {
 			by=1600,
 		),
 		Control(
-			plots.rectangle(tKorea).named(KOREA),
-			plots.rectangle(tManchuria).named(MANCHURIA),
-			plots.rectangle(tChina).named(CHINA),
-			plots.rectangle(tIndochina).without(lIndochinaExceptions).named(INDOCHINA),
-			plots.rectangle(tIndonesia).named(INDONESIA),
-			plots.rectangle(tPhilippines).named(PHILIPPINES),
+			plots.region(rKorea).named(KOREA),
+			plots.regions(rManchuria, rAmur).named(MANCHURIA),
+			plots.regions(rNorthChina, rSouthChina).named(CHINA),
+			plots.region(rIndochina).named(INDOCHINA),
+			plots.region(rIndonesia).named(INDONESIA),
+			plots.region(rPhilippines).named(PHILIPPINES),
 			subject=VASSALS,
 			at=1940,
 		),
@@ -278,7 +281,7 @@ dGoals = {
 			by=900,
 		),
 		All(
-			RouteConnection(NamedList(iRouteRoad).named(LAND_BASED_TRADE), plots.rectangle(tChina).named(CITY_IN_CHINA), plots.of(lMediterraneanPorts).named(MEDITERRANEAN_PORT), start_owners=True),
+			RouteConnection(NamedList(iRouteRoad).named(LAND_BASED_TRADE), plots.regions(rNorthChina, rSouthChina).named(CITY_IN_CHINA), plots.regions(rEgypt, rLevant, rAnatolia).coastal().named(MEDITERRANEAN_PORT), start_owners=True),
 			CorporationCount(iSilkRoute, 10),
 			by=1100,
 		),
@@ -291,11 +294,11 @@ dGoals = {
 	iArabia: (
 		BestTechPlayer(at=1300),
 		Control(
-			plots.core(iEgypt),
-			plots.rectangle(tAfrica).named(MAGHREB),
-			plots.core(iSpain), # TODO: define in locations or use region
-			plots.core(iBabylonia).named(MESOPOTAMIA),
-			plots.core(iPersia),
+			plots.region(rEgypt).named(EGYPT),
+			plots.region(rMaghreb).named(MAGHREB),
+			plots.region(rIberia).named(IBERIA),
+			plots.regions(rLevant, rMesopotamia).named(MESOPOTAMIA),
+			plots.regions(rPersia, rKhorasan).named(PERSIA),
 			subject=VASSALS,
 			at=1300,
 		),
@@ -308,8 +311,8 @@ dGoals = {
 	),
 	iMoors: (
 		All(
-			CityCount(plots.rectangle(tMaghreb).named(MAGHREB), 3),
-			ConqueredCities(2, inside=plots.rectangle(tIberia).named(IBERIA)),
+			CityCount(plots.region(rMaghreb).named(MAGHREB), 3),
+			ConqueredCities(2, inside=plots.region(rIberia).named(IBERIA)),
 			ConqueredCities(2, inside=plots.rectangle(tWestAfrica).named(WEST_AFRICA)),
 			at=1200,
 		),
@@ -325,15 +328,15 @@ dGoals = {
 		ControlledResourceCount(sum(iSilver, iGold), 10, subject=VASSALS, by=1650),
 		All(
 			ReligionSpreadPercent(iCatholicism, 30),
-			AreaNoStateReligion((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named(EUROPE), iProtestantism),
+			AreaNoStateReligion(plots.regions(*lEuropeProper).named(EUROPE), iProtestantism),
 			at=1650,
 		),
 	),
 	iFrance: (
 		CityCultureLevel(start(iFrance).named(PARIS), iCultureLevelLegendary, at=1700),
 		All(
-			AreaPercent((plots.rectangle(tEurope) + plots.rectangle(tEasternEurope)).named(EUROPE), 40, subject=VASSALS),
-			AreaPercent(plots.rectangle(tNorthAmerica).named(NORTH_AMERICA), 40, subject=VASSALS),
+			AreaPercent(plots.regions(*lEuropeProper).named(EUROPE), 40, subject=VASSALS),
+			AreaPercent(plots.regions(*[iRegion for iRegion in lNorthAmerica if iRegion != rAmericanArctic]).named(NORTH_AMERICA), 40, subject=VASSALS),
 			at=1800,
 		),
 		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain, by=1900),
@@ -397,7 +400,7 @@ dGoals = {
 		OpenBorderCount(14, by=1550),
 		ResourceCount(sum(lColonialResources).named(TRADING_COMPANY_RESOURCES), 12, by=1650),
 		CityCount(sum(
-			plots.rectangle(tBrazil).named(BRAZIL),
+			plots.region(rBrazil).named(BRAZIL),
 			plots.regions(*lAfrica).named(AFRICA),
 			plots.regions(*lAsia).named(ASIA),
 		), 15, by=1700),
@@ -405,7 +408,7 @@ dGoals = {
 	iInca: (
 		All(
 			BuildingCount(iTambo, 5),
-			Route(plots.of(lAndeanCoast).named(ANDEAN_COAST), [iRouteRoad]),
+			Route(plots.region(rAndes).coastal().named(ANDEAN_COAST), [iRouteRoad]),
 			by=1550,
 		),
 		GoldAmount(2500, by=1550),
@@ -414,7 +417,7 @@ dGoals = {
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore, by=1500),
 		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1600),
-		AreaPercent(plots.rectangle(tMediterranean).without(lMediterraneanExceptions).coastal().named(MEDITERRANEAN), 65, by=1930),
+		AreaPercent(plots.all().adjacent_region(rMediterraneanSea).named(MEDITERRANEAN), 65, by=1930),
 	),
 	iMongols: (
 		Control(plots.regions(rNorthChina, rSouthChina).named(CHINA), at=1300),
@@ -433,8 +436,8 @@ dGoals = {
 	),
 	iRussia: (
 		All(
-			SettledCities(7, area=plots.rectangle(tSiberia).named(SIBERIA), by=1700),
-			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.of(lSiberianCoast).named(SIBERIAN_COAST), by=1920),
+			SettledCities(7, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
+			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
 		),
 		Projects(iManhattanProject, iLunarLanding),
 		All(
@@ -447,8 +450,8 @@ dGoals = {
 		CityBuildingCount(capital().named(CAPITAL), wonders(), 4, at=1550),
 		All(
 			CultureCover(
-				plots.of(lEasternMediterranean).named(EASTERN_MEDITERRANEAN),
-				plots.of(lBlackSea).named(BLACK_SEA),
+				plots.regions(rBalkans, rGreece, rAnatolia, rLevant, rEgypt).adjacent_region(rMediterraneanSea).named(EASTERN_MEDITERRANEAN),
+				plots.all().adjacent_region(rBlackSea).named(BLACK_SEA),
 			),
 			Control(
 				plots.surrounding(tCairo).named(CAIRO),
@@ -463,7 +466,7 @@ dGoals = {
 	iThailand: (
 		OpenBorderCount(10, at=1650),
 		BestPopulationCity(start(iThailand).named(AYUTTHAYA), at=1700),
-		AllowOnly(plots.rectangle(tSouthAsia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
+		AllowOnly(plots.regions(rDravida, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
 	),
 	iCongo: (
 		ReligiousVotePercent(15, by=1650),
@@ -473,9 +476,9 @@ dGoals = {
 	iIran: (
 		OpenBorderCount(6, civs=group(iCivGroupEurope).named(EUROPEAN), by=1650),
 		Control(
-			plots.rectangle(tSafavidMesopotamia).named(MESOPOTAMIA),
-			plots.rectangle(tTransoxiana).named(TRANSOXIANA),
-			plots.rectangle(tNorthWestIndia).named(NORTH_WEST_INDIA),
+			plots.region(rMesopotamia).named(MESOPOTAMIA),
+			plots.region(rTransoxiana).named(TRANSOXIANA),
+			plots.region(rPunjab).named(PUNJAB),
 			at=1750,
 		),
 		CultureCity(20000, at=1800),
@@ -499,7 +502,7 @@ dGoals = {
 	),
 	iAmerica: (
 		All(
-			AllowNone(group(iCivGroupEurope).named(EUROPEAN), plots.rectangle(tNorthCentralAmerica).named(NORTH_CENTRAL_AMERICA)),
+			AllowNone(group(iCivGroupEurope).named(EUROPEAN), plots.regions(*(lNorthAmerica + lCentralAmerica)).named(NORTH_CENTRAL_AMERICA)),
 			Control(plots.core(iMexico), subject=VASSALS),
 			at=1900,
 		),
@@ -523,14 +526,12 @@ dGoals = {
 	iColombia: (
 		AllowNone(
 			group(iCivGroupEurope).named(EUROPEAN),
-			plots.rectangle(tPeru).named(PERU),
-			plots.rectangle(tGranColombia).named(GRAN_COLOMBIA),
-			plots.rectangle(tGuayanas).named(GUAYANAS),
-			plots.rectangle(tCaribbean).named(CARIBBEAN),
+			plots.region(rNewGranada).named(GRAN_COLOMBIA),
+			plots.region(rAndes).named(ANDES),
 			at=1870,
 		),
 		Control(
-			plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions).named(SOUTH_AMERICA),
+			plots.regions(*lSouthAmerica).named(SOUTH_AMERICA),
 			at=1920,
 		),
 		ResourceTradeGold(3000, by=1950),
@@ -546,13 +547,13 @@ dGoals = {
 	),
 	iCanada: (
 		All(
-			RouteConnection([iRouteRailroad], capital().named(CAPITAL), plots.of(lAtlanticCoast).named(ATLANTIC_COAST)),
-			RouteConnection([iRouteRailroad], capital().named(CAPITAL), plots.of(lPacificCoast).named(PACIFIC_COAST)),
+			RouteConnection([iRouteRailroad], capital().named(CAPITAL), plots.regions(rMaritimes, rQuebec).adjacent_region(rAtlanticOcean).named(ATLANTIC_COAST)),
+			RouteConnection([iRouteRailroad], capital().named(CAPITAL), plots.regions(rCascadia, rAmericanArctic).adjacent_region(rPacificOcean).named(PACIFIC_COAST)),
 			by=1920,
 		),
 		All(
-			Control((plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) + plots.rectangle(tCanadaEast).without(lCanadaEastExceptions)).named(CITIES_IN_CANADA)),
-			AreaPercent((plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) + plots.rectangle(tCanadaEast).without(lCanadaEastExceptions)).named(CANADIAN_TERRITORY), 90),
+			Control((plots.regions(rMaritimes, rQuebec, rOntario) + plots.regions(rGreatPlains, rCascadia).where(lambda p: p.getY() >= iCanadianNorthSouthBorder) + plots.region(rAmericanArctic).where(lambda p: p.getX() >= iCanadianEastWestBorder)).named(CITIES_IN_CANADA)),
+			AreaPercent((plots.regions(rMaritimes, rQuebec, rOntario) + plots.regions(rGreatPlains, rCascadia).where(lambda p: p.getY() >= iCanadianNorthSouthBorder) + plots.region(rAmericanArctic).where(lambda p: p.getX() >= iCanadianEastWestBorder)).named(CANADIAN_TERRITORY), 90),
 			NoCityConquered(),
 			by=1950,
 		),

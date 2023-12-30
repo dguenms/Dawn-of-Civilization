@@ -74,15 +74,6 @@ def mughalUP(city, iBuilding):
 		city.changeCulture(city.getOwner(), iCost / 2, True)
 
 
-# Russian UP: enemy units are damaged every turn while being in the Russia region
-@handler("BeginGameTurn")
-def russianUP(self):
-	if player(iRussia).isExisting():
-		for unit in plots.rectangle(tRussia).owner(iRussia).units():
-			if team(iRussia).isAtWar(unit.getOwner()) or (infos.unit(unit).isHiddenNationality() and unit.getCivilizationType() != iRussia and not team(unit.getTeam()).isOpenBorders(team(iRussia).getID())):
-				unit.changeDamage(8, slot(iRussia))
-
-
 @handler("BeginGameTurn")
 def resetBabylonianPower():
 	data.bBabyloniaTechReceived = False

@@ -189,6 +189,12 @@ class AreaArgument(NamedArgument):
 	def region(self, *args, **kwargs):
 		return self.call("region", args, kwargs)
 	
+	def adjacent_regions(self, *args, **kwargs):
+		return self.call("adjacent_regions", args, kwargs)
+
+	def adjacent_region(self, *args, **kwargs):
+		return self.call("adjacent_region", args, kwargs)
+	
 	def capital(self, *args, **kwargs):
 		return self.call("capital", args, kwargs)
 	

@@ -1078,6 +1078,11 @@ void CyPlot::setRegionID(int iNewValue)
 		m_pPlot->setRegionID(iNewValue);
 }
 
+std::wstring CyPlot::getRegionName()
+{
+	return m_pPlot ? m_pPlot->getRegionName() : L"";
+}
+
 int CyPlot::getRegionGroup()
 {
 	return m_pPlot ? m_pPlot->getRegionGroup() : -1;

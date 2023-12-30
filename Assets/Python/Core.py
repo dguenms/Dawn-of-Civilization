@@ -1287,6 +1287,12 @@ class Locations(EntityCollection):
 	
 	def region(self, iRegion):
 		return self.regions(iRegion)
+	
+	def adjacent_regions(self, *regions):
+		return self.where(lambda loc: plots.surrounding(loc).any(lambda sloc: sloc.getRegionID() in regions))
+	
+	def adjacent_region(self, iRegion):
+		return self.adjacent_regions(iRegion)
 		
 	def where_surrounding(self, condition, radius=1):
 		return self.where(lambda loc: plots.surrounding(loc, radius=radius).all(condition))

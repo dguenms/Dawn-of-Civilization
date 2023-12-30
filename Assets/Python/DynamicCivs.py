@@ -1008,10 +1008,10 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
 		
 	elif iCiv == iTurks:
-		if capital in plots.rectangle(tKhazaria):
+		if capital in plots.regions(rCaucasus, rPonticSteppe):
 			return "TXT_KEY_CIV_TURKS_KHAZARIA"
 	
-		if capital in plots.rectangle(tAnatolia):
+		if capital in plots.region(rAnatolia):
 			return "TXT_KEY_CIV_TURKS_RUM"
 			
 		if iEra >= iRenaissance and not tPlayer.isAVassal():
@@ -1035,7 +1035,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_KHMER_CAMBODIA"
 			
 	elif iCiv == iMoors:	
-		if capital in plots.rectangle(tIberia):
+		if capital in plots.region(rIberia):
 			return capitalName(iPlayer)
 			
 		return "TXT_KEY_CIV_MOORS_MOROCCO"
@@ -1052,10 +1052,10 @@ def specificName(iPlayer):
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_SPAIN_AL_ANDALUS"
 	
-		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
+		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.region(rIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isExisting() or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
+			if not player(iPortugal).isExisting() or not player(iPortugal).getCapitalCity() in plots.region(rIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
@@ -1072,7 +1072,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iCiv == iEngland:
-		if getColumn(iPlayer) >= 11 and cities.rectangle(tBritain).owner(iPlayer) >= 3:
+		if getColumn(iPlayer) >= 11 and 1 < cities.region(rBritain) <= cities.region(rBritain).owner(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iCiv == iHolyRome:
@@ -1102,7 +1102,7 @@ def specificName(iPlayer):
 			return capitalName(iPlayer)
 			
 	elif iCiv == iRussia:
-		if not (bEmpire and iEra >= iRenaissance) and not isControlled(iPlayer, plots.rectangle(tEuropeanRussia).without(lEuropeanRussiaExceptions), 5):
+		if not (bEmpire and iEra >= iRenaissance) and not isControlled(iPlayer, plots.regions(rRuthenia, rPonticSteppe, rEuropeanArctic), 5):
 			if not bCityStates and isCurrentCapital(iPlayer, "Moskva"):
 				return "TXT_KEY_CIV_RUSSIA_MUSCOVY"
 				
@@ -1329,16 +1329,16 @@ def specificAdjective(iPlayer):
 		if bResurrected:
 			return "TXT_KEY_CIV_TURKS_TIMURID"
 	
-		if capital in plots.rectangle(tKhazaria):
+		if capital in plots.regions(rCaucasus, rPonticSteppe):
 			return "TXT_KEY_CIV_TURKS_KHAZAR"
 		
-		if isControlled(iPlayer, plots.core(iPersia)):
+		if isControlled(iPlayer, plots.regions(rPersia, rKhorasan)):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.core(iPersia):
+		if capital in plots.regions(rPersia, rKhorasan):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.rectangle(tAnatolia):
+		if capital in plots.region(rAnatolia):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 			
 		if iEra >= iRenaissance:
@@ -1374,14 +1374,14 @@ def specificAdjective(iPlayer):
 			elif iEra == iRenaissance:
 				return "TXT_KEY_CIV_MOORS_SAADI"
 			
-		if not capital in plots.rectangle(tIberia):
+		if not capital in plots.region(rIberia):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"
 			
 	elif iCiv == iSpain:
-		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.rectangle(tIberia)
+		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.region(rIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.rectangle(tIberia):
+			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.region(rIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
@@ -1402,7 +1402,7 @@ def specificAdjective(iPlayer):
 			return infos.civ(iKhmer).getAdjective(0)
 			
 	elif iCiv == iEngland:
-		if getColumn(iPlayer) >= 11 and cities.rectangle(tBritain).owner(iPlayer) >= 3:
+		if getColumn(iPlayer) >= 11 and 1 < cities.region(rBritain) <= cities.region(rBritain).owner(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iCiv == iHolyRome:
@@ -1567,7 +1567,7 @@ def republicTitle(iPlayer):
 			return key(iPlayer, "CSA")
 			
 	if iCiv == iColombia:
-		if isControlled(iPlayer, plots.region(rAndes)) and isControlled(iPlayer, plots.rectangle(tColombia)):
+		if isControlled(iPlayer, plots.regions(rNewGranada, rAndes)):
 			return "TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES"
 			
 	if pPlayer.getStateReligion() == iIslam:
@@ -1704,7 +1704,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iCiv == iColombia:
 		if bEmpire:
-			if isControlled(iPlayer, plots.region(rAndes)) and isControlled(iPlayer, plots.rectangle(tColombia)):
+			if isControlled(iPlayer, plots.regions(rNewGranada, rAndes)):
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
 		
 			return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
@@ -1768,7 +1768,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_VIKINGS_ALTHINGS"
 		
-		if isControlled(iPlayer, plots.rectangle(tBritain)):
+		if isControlled(iPlayer, plots.region(rBritain)):
 			return "TXT_KEY_CIV_VIKINGS_NORTH_SEA_EMPIRE"
 				
 		if iReligion < 0 and iEra < iRenaissance:
@@ -1831,7 +1831,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_MOORS_TAIFAS"
 			
-		if iReligion == iIslam and capital in plots.rectangle(tIberia):
+		if iReligion == iIslam and capital in plots.region(rIberia):
 			if bEmpire:
 				return "TXT_KEY_CALIPHATE_OF"
 				
@@ -1881,7 +1881,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
-			if cities.rectangle(tBritain).owner(iPlayer) >= 3:
+			if 1 < cities.region(rBritain) <= cities.region(rBritain).owner(iPlayer):
 				return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iCiv == iHolyRome:
@@ -1913,7 +1913,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if capital in cities.core(iBrazil) and not player(iBrazil).isExisting():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
 			
-		if not capital in plots.rectangle(tIberia):
+		if not capital in plots.region(rIberia):
 			return "TXT_KEY_CIV_PORTUGAL_EXILE"
 			
 		if bEmpire and iEra >= iRenaissance:
@@ -1989,7 +1989,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 				return "TXT_KEY_CIV_RUSSIA_RUS"
 			
-		if isControlled(iPlayer, plots.rectangle(tEuropeanRussia).without(lEuropeanRussiaExceptions), 5):
+		if isControlled(iPlayer, plots.regions(rRuthenia, rPonticSteppe, rEuropeanArctic), 5):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
 		
 		if isCurrentCapital(iPlayer, "Kiev"):
@@ -2180,7 +2180,7 @@ def leader(iPlayer):
 		if year() >= year(1500): return iLobsangGyatso
 		
 	elif iCiv == iMoors:
-		if player(iPlayer).getNumCities() > 0 and not capital in plots.rectangle(tIberia): return iYaqub
+		if player(iPlayer).getNumCities() > 0 and not capital in plots.region(rIberia): return iYaqub
 		
 	elif iCiv == iJava:
 		if iEra >= iGlobal: return iSuharto

@@ -128,20 +128,25 @@ def getCityValue(city, iCompany):
 	
 	# geographical requirements
 	if iCompany == iSilkRoute:
-		if city not in cities.rectangle(tSilkRoute) and city not in cities.rectangle(tMiddleEast).without(lMiddleEastExceptions):
+		if city.getRegionID() not in [rMongolia, rTarimBasin, rTransoxiana, rKhorasan, rPersia, rMesopotamia, rLevant]:
 			return -1
 			
 	elif iCompany == iTradingCompany:
-		if city not in cities.rectangle(tCaribbean) and city not in cities.rectangle(tSubSaharanAfrica) and city not in cities.rectangle(tIndianOcean) and not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
-			return -1
-		if city in cities.rectangle(tCaribbean):
+		if not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
+			if city.getRegionID() not in [rCaribbean, rArabia, rDeccan, rDravida, rIndochina, rIndonesia, rPhilippines] + lSubSaharanAfrica:
+				return -1
+			
+			if not city.isCoastal(20):
+				return -1
+	
+		if city.getRegionID() == rCaribbean:
 			iValue += 1
 	
-	# trade companies and fishing industry - coastal cities only
-	if iCompany in [iTradingCompany, iFishingIndustry]:
+	# fishing industry - coastal cities only
+	if iCompany == iFishingIndustry:
 		if not city.isCoastal(20):
 			return -1
-
+	
 	# penalty for silk route if coastal (mitigatable by harbor)
 	if iCompany == iSilkRoute:
 		if city.isCoastal(20):
