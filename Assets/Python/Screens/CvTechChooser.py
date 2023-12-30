@@ -798,6 +798,10 @@ class CvTechChooser:
 			if player.isResearchingTech(tech):
 				szText += str(iQueue) + ". "
 			szText += TechInfo.getDescription()
+			
+			# Leoreth: display tech spread
+			# szText += " (%d/%d)" % (players.major().alive().where(lambda p: gc.getTeam(p).isHasTech(tech)).count(), players.major().alive().count())
+			
 			screen.setTextAt(szTechID, "TechList", szText, CvUtil.FONT_LEFT_JUSTIFY, iX + self.TECH_ICON_SIZE + 12, iY + 12, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_TECH_TREE, tech, -1)
 			screen.setActivation(szTechID, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
 			screen.setHitTest(szTechID, HitTestTypes.HITTEST_NOHIT)
