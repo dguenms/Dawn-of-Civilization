@@ -195,7 +195,7 @@ lCivilizations = [
 	),
 	Civilization(
 		iChina,
-		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage)
+		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology)
 	),
 	Civilization(
 		iHittites,
@@ -207,14 +207,14 @@ lCivilizations = [
 		iGreece,
 		iGold=100,
 		lCivics=[iRepublic, iSlavery, iDeification],
-		techs=techs.column(2).including(iAlloys, iArithmetics, iWriting)
+		techs=techs.column(2).including(iAlloys, iWriting)
 	),
 	Civilization(
 		iIndia,
 		iGold=80,
 		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iDeification],
-		techs=techs.column(2).including(iAlloys, iWriting, iCalendar).without(iSeafaring)
+		techs=techs.column(2).including(iAlloys, iWriting).without(iSeafaring)
 	),
 	Civilization(
 		iPhoenicia,
@@ -320,7 +320,7 @@ lCivilizations = [
 		iAdvancedStartPoints=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
-		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iScholarship)
+		techs=techs.column(5).including(iNobility, iPolitics).without(iMedicine, iPhilosophy)
 	),
 	Civilization(
 		iMalays,
@@ -396,7 +396,7 @@ lCivilizations = [
 		iAdvancedStartPoints=80,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
-		techs=techs.column(6).including(iFeudalism, iTheology)
+		techs=techs.column(6).including(iFeudalism, iTheology, iCivilService)
 	),
 	Civilization(
 		iHolyRome,
