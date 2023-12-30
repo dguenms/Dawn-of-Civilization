@@ -268,6 +268,7 @@ public:
 	// Leoreth
 	int getRegionID();
 	void setRegionID(int iNewValue);
+	std::wstring getRegionName();
 
 	int getRegionGroup();
 

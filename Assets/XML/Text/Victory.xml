@@ -2389,6 +2389,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ANDES</Tag>
+		<English>Andes</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ANATOLIA</Tag>
 		<English>Anatolia</English>
 		<French></French>
@@ -2479,6 +2487,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_EASTERN_MEDITERRANEAN</Tag>
 		<English>the Eastern Mediterranean coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_EGYPT</Tag>
+		<English>Egypt</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2645,14 +2661,6 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_NORTH_WEST_INDIA</Tag>
-		<English>North West India</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_OCEANIA</Tag>
 		<English>Oceania</English>
 		<French></French>
@@ -2669,6 +2677,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PERSIA</Tag>
+		<English>Persia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_PERU</Tag>
 		<English>Peru</English>
 		<French></French>
@@ -2679,6 +2695,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_PHILIPPINES</Tag>
 		<English>the Philippines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PUNJAB</Tag>
+		<English>Punjab</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

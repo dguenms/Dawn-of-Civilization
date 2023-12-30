@@ -77,7 +77,7 @@ def checkJudaism(iGameTurn):
 		return
 
 	if iGameTurn == year(-1500) - turns(data.iSeed % 5):
-		foundReligion(selectHolyCity(plots.rectangle(tJudaism), tJerusalem), iJudaism)
+		foundReligion(selectHolyCity(plots.regions(rEgypt, rLevant, rMesopotamia), tJerusalem), iJudaism)
 
 
 @handler("BeginGameTurn")

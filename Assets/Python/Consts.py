@@ -1042,7 +1042,8 @@ rRweru, rTanganyika, rMweru, rBangweulu, rRukwa, rMalawi, rGreatBear, rTidee, rA
 rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rOntario, rMistassini, rLobstick, 
 rGreatSalt, rNicaragua, rTiticaca, rMarChiquita, rKhanka) = range(100, 100 + iNumWaterRegions)
 
-lEurope = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rEuropeanArctic, rUrals, rSiberia]
+lEuropeProper = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe]
+lEuropeAsia = [rEuropeanArctic, rUrals, rSiberia]
 lMiddleEast = [rAnatolia, rCaucasus, rLevant, rMesopotamia, rArabia, rPersia, rKhorasan, rTransoxiana]
 lIndia = [rSindh, rPunjab, rRajputana, rHindustan, rBengal, rDeccan, rDravida]
 lEastAsia = [rIndochina, rIndonesia, rPhilippines, rSouthChina, rNorthChina, rKorea, rJapan, rTibet, rTarimBasin, rMongolia, rManchuria, rAmur, rCentralAsianSteppe]
@@ -1053,6 +1054,7 @@ lCentralAmerica = [rCaribbean, rMesoamerica, rCentralAmerica]
 lNorthAmerica = [rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rAridoamerica, rCalifornia, rCascadia, rOntario, rQuebec, rMaritimes, rAmericanArctic]
 lOceania = [rAustralia, rOceania]
 
+lEurope = lEuropeProper + lEuropeAsia
 lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
 lAmerica = lSouthAmerica + lCentralAmerica + lNorthAmerica
