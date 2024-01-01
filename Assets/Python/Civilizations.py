@@ -179,15 +179,15 @@ lCivilizations = [
 	Civilization(
 		iEgypt,
 		lCivics=[iMonarchy, iRedistribution, iDeification],
-		techs=techs.of(iMining, iPottery, iAgriculture)
+		techs=techs.of(iMining, iPottery, iAgriculture, iMythology)
 	),
 	Civilization(
 		iBabylonia,
-		techs=techs.of(iPottery, iPastoralism, iAgriculture)
+		techs=techs.of(iPottery, iPastoralism, iAgriculture, iMythology)
 	),
 	Civilization(
 		iHarappa,
-		techs=techs.of(iMining, iPottery, iAgriculture)
+		techs=techs.of(iMining, iPottery, iAgriculture, iSailing)
 	),
 	Civilization(
 		iAssyria,
