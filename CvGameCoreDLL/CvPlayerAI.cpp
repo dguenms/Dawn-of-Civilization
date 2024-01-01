@@ -12445,7 +12445,7 @@ void CvPlayerAI::AI_doCommerce()
 
 			if (getCivilizationType() == EGYPT && getCurrentEra() >= ERA_CLASSICAL)
 			{
-				iIdealPercent = 30;
+				iIdealPercent = 50;
 			}
 
 			if (AI_isDoStrategy(AI_STRATEGY_CULTURE4))
