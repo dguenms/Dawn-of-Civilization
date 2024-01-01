@@ -1833,6 +1833,14 @@ dBuildingPreferences = {
 		
 		iOracle: -60,
 	},
+	iHarappa : {
+		iPyramids: 0,
+		iGreatSphinx: 0,
+	},
+	iAssyria : {
+		iPyramids: 0,
+		iGreatSphinx: 0,
+	},
 	iChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
