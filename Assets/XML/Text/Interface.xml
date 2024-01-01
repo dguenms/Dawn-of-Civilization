@@ -3593,6 +3593,14 @@
 		<Spanish>%s1 %s2</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIPLE_SPEED_WITH</Tag>
+		<English>Triple Production Speed with [LINK=literal]%s1_Bonus[\LINK]</English>
+		<French>Triple Production Speed with [LINK=literal]%s1_Bonus[\LINK]</French>
+		<German>Dreifache Produktionsgeschwindigkeit mit Bonusgut [LINK=literal]%s1_Bonus[\LINK]</German>
+		<Italian>Triple Production Speed with [LINK=literal]%s1_Bonus[\LINK]</Italian>
+		<Spanish>Triple Production Speed with [LINK=literal]%s1_Bonus[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

@@ -2066,10 +2066,6 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		// Leoreth: anger scales with amount of sacrificed population
 		int iHurryAngerModifier = (1 + iHurryPopulation) / 2;
 
-		// Leoreth: Pyramids negate unhappiness scaling
-		//if (GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
-		//	iHurryAngerModifier = 1;
-
 		int iHurryAnger = GC.getDefineINT("HURRY_POP_ANGER") * iHurryAngerModifier;
 
 		if (pHeadSelectedCity->isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))

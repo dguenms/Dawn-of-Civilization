@@ -4678,6 +4678,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		CvCity* pLoopCity;
 		int iLoop;
 
+		// Pyramids
+		if (eBuilding == PYRAMIDS)
+		{
+			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), getBonusGoodHappiness() * iChange);
+		}
+
 		// Mount Athos
 		if (eBuilding == MOUNT_ATHOS)
 		{
@@ -6012,7 +6018,7 @@ int CvCity::foodDifference(bool bBottom) const
 		return 0;
 	}
 
-	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	if (isFoodProduction() /*&& !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS)*/)
 	{
 		iDifference = std::min(0, (getYieldRate(YIELD_FOOD) - foodConsumption()));
 	}
@@ -8341,6 +8347,12 @@ void CvCity::changeBonusGoodHappiness(int iChange)
 		FAssert(getBonusGoodHappiness() >= 0);
 
 		AI_setAssignWorkDirty(true);
+
+		// Leoreth: Pyramids effect
+		if (isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+		{
+			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)PYRAMIDS).getBuildingClassType(), iChange);
+		}
 	}
 }
 
