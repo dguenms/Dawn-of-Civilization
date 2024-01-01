@@ -64,6 +64,7 @@ INDOCHINA = "TXT_KEY_VICTORY_NAME_INDOCHINA"
 INDONESIA = "TXT_KEY_VICTORY_NAME_INDONESIA"
 ITALY = "TXT_KEY_VICTORY_NAME_ITALY"
 KOREA = "TXT_KEY_VICTORY_NAME_KOREA"
+LEVANT = "TXT_KEY_VICTORY_NAME_LEVANT"
 MAGHREB = "TXT_KEY_VICTORY_NAME_MAGHREB"
 MANCHURIA = "TXT_KEY_VICTORY_NAME_MANCHURIA"
 MARQUESAS = "TXT_KEY_VICTORY_NAME_MARQUESAS"
@@ -74,6 +75,7 @@ NEW_ZEALAND = "TXT_KEY_VICTORY_NAME_NEW_ZEALAND"
 NORTH_AFRICA = "TXT_KEY_VICTORY_NAME_NORTH_AFRICA"
 NORTH_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_AMERICA"
 NORTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA"
+NUBIA = "TXT_KEY_VICTORY_NAME_NUBIA"
 OCEANIA = "TXT_KEY_VICTORY_NAME_OCEANIA"
 PACIFIC_COAST = "TXT_KEY_VICTORY_NAME_PACIFIC_COAST"
 PERSIA = "TXT_KEY_VICTORY_NAME_PERSIA"
@@ -123,9 +125,21 @@ FIRST_VIKING_GOAL = "TXT_KEY_VICTORY_GOAL_VIKINGS_1"
 
 dGoals = {
 	iEgypt: (
-		CultureAmount(500, at=-850),
-		Wonders(iPyramids, iGreatLibrary, iGreatLighthouse, by=-100),
-		CultureAmount(5000, at=100),
+		All(
+			Wonders(iGreatSphinx, iPyramids),
+			CultureAmount(500),
+			by=-1200,
+		),
+		Control(
+			plots.region(rNubia).named(NUBIA),
+			plots.region(rLevant).named(LEVANT),
+			by=-600,
+		),
+		All(
+			Wonders(iGreatLibrary, iGreatLighthouse),
+			CultureAmount(5000),
+			by=-200,
+		),
 	),
 	iBabylonia: (
 		FirstDiscover(iConstruction, iArithmetics, iWriting, iCalendar, iContract),

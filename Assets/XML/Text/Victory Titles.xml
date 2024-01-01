@@ -277,19 +277,19 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_EGY1</Tag>
-		<English>Valley of Kings</English>
-		<French>La vall&#233;e des rois </French>
-		<German>Tal der K&#246;nige</German>
-		<Italian>Valley of Kings</Italian>
-		<Spanish>Valley of Kings</Spanish>
+		<English>The Old Kingdom</English>
+		<French>The Old Kingdom</French>
+		<German>The Old Kingdom</German>
+		<Italian>The Old Kingdom</Italian>
+		<Spanish>The Old Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_EGY2</Tag>
-		<English>Monuments on the Nile</English>
-		<French>Les monuments du Nil </French>
-		<German>Monumente am Nil</German>
-		<Italian>Monuments on the Nile</Italian>
-		<Spanish>Monuments on the Nile</Spanish>
+		<English>The New Kingdom</English>
+		<French>The New Kingdom</French>
+		<German>The New Kingdom</German>
+		<Italian>The New Kingdom</Italian>
+		<Spanish>The New Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_EGY3</Tag>

@@ -2581,6 +2581,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_LEVANT</Tag>
+		<English>the Levant</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_MAGHREB</Tag>
 		<English>the Maghreb</English>
 		<French></French>
@@ -2655,6 +2663,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA</Tag>
 		<English>North and Central America</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NUBIA</Tag>
+		<English>Nubia</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
