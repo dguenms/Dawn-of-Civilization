@@ -6676,8 +6676,8 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	iProductionNeeded *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
 	iProductionNeeded /= 100;
 
-	iProductionNeeded *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getTrainPercent();
-	iProductionNeeded /= 100;
+	//iProductionNeeded *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getTrainPercent();
+	//iProductionNeeded /= 100;
 
 	// Leoreth
 	if (GC.getUnitInfo(eUnit).isWorker())
@@ -6732,8 +6732,13 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	iProductionNeeded *= iCostModifier;
 	iProductionNeeded /= 100;
 
+	/*if (GC.getUnitInfo(eUnit).isFound())
+	{
+		iProductionNeeded *= 2;
+	}*/
+
 	// increase unit cost with era
-	int iEraModifier = 100;
+	/*int iEraModifier = 100;
 	if (GC.getUnitInfo(eUnit).isFoodProduction())
 	{
 		iEraModifier += 5 * getCurrentEra();
@@ -6746,7 +6751,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	}
 
 	iProductionNeeded *= iEraModifier;
-	iProductionNeeded /= 100;
+	iProductionNeeded /= 100;*/
 
 	return std::max(1, iProductionNeeded);
 }
