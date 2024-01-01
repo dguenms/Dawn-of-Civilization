@@ -168,7 +168,7 @@ class Barbarians(object):
 		PIRATES: "TXT_KEY_BARBARIAN_NOTIFICATION_PIRATES"
 	}
 
-	def __init__(self, iStart, iEnd, units, area, iInterval, pattern, iOwner=iBarbarian, target_area=None, adjective=None):
+	def __init__(self, iStart, iEnd, units, area, iInterval, pattern, iOwner=iBarbarian, target_area=None, adjective=None, iAlternativeCiv=None):
 		self.iStart = iStart
 		self.iEnd = iEnd
 		self.units = units
@@ -178,6 +178,7 @@ class Barbarians(object):
 		self.iOwner = iOwner
 		self.target_area = target_area
 		self.adjective = adjective
+		self.iAlternativeCiv = iAlternativeCiv
 		
 		if self.target_area is None:
 			self.target_area = area
@@ -217,6 +218,9 @@ class Barbarians(object):
 		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=location)
 	
 	def can_spawn(self):
+		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
+			return False
+	
 		if not (year(self.iStart) <= year() <= year(self.iEnd)):
 			return False
 		
@@ -428,6 +432,7 @@ barbarians = [
 	Barbarians(-1200, -500, {iSkirmisher: 1}, ((84, 44), (88, 52)), 10, NOMADS, target_area=((84, 44), (91, 52)), adjective="TXT_KEY_ADJECTIVE_ARAMEAN"),
 	# Barbarians(-1100, -600, {iSwordsman: 1}, ((79, 51), (84, 55)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_PHRYGIAN"),
 	Barbarians(-1000, -600, {iHorseman: 1}, ((85, 54), (92, 60)), 10, INVADERS, target_area=((83, 44), (91, 52)), adjective="TXT_KEY_ADJECTIVE_CIMMERIAN"),
+	Barbarians(-1000, 400, {iMedjay: 1}, ((78, 35),	(82, 40)), 8, MINORS, iAlternativeCiv=iNubia, adjective="TXT_KEY_ADJECTIVE_NUBIAN"),
 	Barbarians(-800, -300, {iHorseman: 2}, ((78, 57), (102, 63)), 8, NOMADS, target_area=((83, 44), (104, 57)), adjective="TXT_KEY_ADJECTIVE_SCYTHIAN"),
 	# Barbarians(-650, -50, {iGallicWarrior: 1}, ((56, 55), (75, 61)), 6, INVADERS, target_area=((64, 49), (79, 57))),
 	# Barbarians(-650, -50, {iAxeman: 1}, ((69, 56), (78, 61)), 8, INVADERS, target_area=((73, 49), (84, 55)), adjective="TXT_KEY_ADJECTIVE_GALATIAN"),

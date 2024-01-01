@@ -683,6 +683,11 @@ class Birth(object):
 		if not infos.civ(self.iCiv).isAIPlayable():
 			return False
 		
+		# Nubia requires no cities
+		if self.iCiv == iNubia:
+			if cities.birth(self.iCiv):
+				return False
+		
 		# Byzantium requires Rome to be alive and Greece to be dead (human Rome can avoid Byzantine spawn by being solid)
 		if self.iCiv == iByzantium:
 			if not player(iRome).isExisting():
