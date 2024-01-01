@@ -369,7 +369,7 @@ bool CvCityAI::AI_avoidGrowth()
 		return true;
 	}
 
-	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	if (isFoodProduction() /*&& !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS)*/)
 	{
 		return true;
 	}

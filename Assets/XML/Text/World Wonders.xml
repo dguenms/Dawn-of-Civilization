@@ -875,19 +875,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
-		<English>[ICON_BULLET]Cities continue to grow when using Food for Production</English>
-		<French>[ICON_BULLET]Les villes continuent de cro&#238;tre lorsqu'elles utilisent la nourriture comme production</French>
-		<German>[ICON_BULLET]St&#228;dte wachsen weiterhin, wenn Nahrung zur Produktion verwendet wird</German>
-		<Italian>[ICON_BULLET]Cities continue to grow when using Food for Production</Italian>
-		<Spanish>[ICON_BULLET]Cities continue to grow when using Food for Production</Spanish>
+		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per [ICON_HAPPY] from resources</English>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per [ICON_HAPPY] from resources</French>
+		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per [ICON_HAPPY] from resources</German>
+		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per [ICON_HAPPY] from resources</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per [ICON_HAPPY] from resources</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and produces additional great people points from happiness resources. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and produces additional great people points from happiness resources. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and produces additional great people points from happiness resources. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and produces additional great people points from happiness resources. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and produces additional great people points from happiness resources. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT</Tag>
