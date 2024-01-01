@@ -34559,7 +34559,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=42
-	BonusType=BONUS_DATES
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
