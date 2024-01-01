@@ -6456,18 +6456,6 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		else if (isHumanVictoryWonder(eBuilding, RED_FORT, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, TAJ_MAHAL, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, HARMANDIR_SAHIB, MUGHALS)) return false;
-
-		// Leoreth: delay Babylonia building Pyramids and Sphinx
-		if (getCivilizationType() == BABYLONIA)
-		{
-			if (eBuilding == (BuildingTypes)PYRAMIDS || eBuilding == (BuildingTypes)GREAT_SPHINX)
-			{
-				if (!GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)HANGING_GARDENS).getPrereqAndTech()) && !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)ISHTAR_GATE).getPrereqAndTech()))
-				{
-					return false;
-				}
-			}
-		}
 	}
 
 	return true;
