@@ -1011,7 +1011,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX</Tag>
-		<English>Great Sphinx</English>
+		<English>The Great Sphinx</English>
 		<French>
 			<Text>Grand Sphinx</Text>
 			<Gender>Male</Gender>
@@ -1022,24 +1022,16 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>Great Sphinx</Italian>
-		<Spanish>Great Sphinx</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
-		<English>[ICON_BULLET]Food is added to Production when building Wonders</English>
-		<French>[ICON_BULLET]La nourriture est ajout&#233;e &#224; la production lors de la construction de merveilles</French>
-		<German>[ICON_BULLET]Beim Errichten von Wundern wird Nahrung zur Produktion addiert</German>
-		<Italian>[ICON_BULLET]Food is added to Production when building Wonders</Italian>
-		<Spanish>[ICON_BULLET]Food is added to Production when building Wonders</Spanish>
+		<Italian>The Great Sphinx</Italian>
+		<Spanish>The Great Sphinx</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] provides additional happiness with Dye, Gold, and Incense. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] provides additional happiness with Dye, Gold, and Incense. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] provides additional happiness with Dye, Gold, and Incense. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] provides additional happiness with Dye, Gold, and Incense. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] provides additional happiness with Dye, Gold, and Incense. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Tag>
