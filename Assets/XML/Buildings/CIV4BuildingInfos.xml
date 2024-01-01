@@ -8889,7 +8889,6 @@
 			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
 			<Civilopedia>TXT_KEY_BUILDING_GREAT_SPHINX_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_SPHINX</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_SPHINX</MovieDefineTag>
@@ -8902,7 +8901,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
 			<iAIWeight>100</iAIWeight>
-			<iCost>150</iCost>
+			<iCost>100</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8925,6 +8924,20 @@
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
 			<ConstructSound>AS2D_BUILD_STONEHENGE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_DYE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
