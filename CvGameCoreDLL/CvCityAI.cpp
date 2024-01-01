@@ -2379,6 +2379,22 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+	case BABYLONIA:
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+        aiUnitAIVal[UNITAI_SETTLE] /= 50;
+		break;
+	case ASSYRIA:
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		aiUnitAIVal[UNITAI_SETTLE] /= 50;
+		break;
+	case GREECE:
+		aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 4;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 5;
@@ -2387,18 +2403,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 3;
 		aiUnitAIVal[UNITAI_SETTLE] /= 2;
 		aiUnitAIVal[UNITAI_MISSIONARY] /= 5;
-		break;
-	case BABYLONIA:
-		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
-		aiUnitAIVal[UNITAI_ATTACK] *= 2;
-        aiUnitAIVal[UNITAI_SETTLE] /= 50;
-		break;
-	case GREECE:
-		aiUnitAIVal[UNITAI_SETTLE] *= 2;
-		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		break;
 	case INDIA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
