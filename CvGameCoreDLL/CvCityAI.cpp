@@ -3002,6 +3002,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 								}
 							}
 
+							int iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference((BuildingClassTypes)iI);
 
 							if (iValue > 0)
 							{
@@ -3029,8 +3030,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										// Leoreth: building preferences from Python
 										iTempValue = 10;
 
-										int iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference((BuildingClassTypes)iI);
-										
 										if (iBuildingPreference > -MAX_INT)
 										{
 											if (iBuildingPreference > 0)
@@ -3045,8 +3044,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											} 
 											else 
 											{
-												iTempValue = 0;
-												iValue = 0;
+												continue;
 											}
 										}
 
@@ -3054,15 +3052,18 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									}
 								}
 
-								if (bAsync)
+								if (iValue > 0)
 								{
-									iValue *= (GC.getASyncRand().get(25, "AI Best Building ASYNC") + 100);
-									iValue /= 100;
-								}
-								else
-								{
-									iValue *= (GC.getGameINLINE().getSorenRandNum(25, "AI Best Building") + 100);
-									iValue /= 100;
+									if (bAsync)
+									{
+										iValue *= (GC.getASyncRand().get(25, "AI Best Building ASYNC") + 100);
+										iValue /= 100;
+									}
+									else
+									{
+										iValue *= (GC.getGameINLINE().getSorenRandNum(25, "AI Best Building") + 100);
+										iValue /= 100;
+									}
 								}
 
 								iValue += getBuildingProduction(eLoopBuilding);
@@ -3100,6 +3101,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									{
 										iBestValue = iValue;
 										eBestBuilding = eLoopBuilding;
+
+										FAssert(iBuildingPreference != 0);
 									}
 								}
 							}

@@ -25398,10 +25398,7 @@ void CvPlayer::setBuildingClassPreference(BuildingClassTypes eBuildingClass, int
 
 void CvPlayer::resetBuildingClassPreferences()
 {
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-	{
-		setBuildingClassPreference((BuildingClassTypes)iI, 0);
-	}
+	m_buildingClassPreference.clear();
 }
 
 int CvPlayer::getBuildingClassPreference(BuildingClassTypes eBuildingClass) const
