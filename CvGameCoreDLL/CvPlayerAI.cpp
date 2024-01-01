@@ -1993,10 +1993,16 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		pLoopPlot = plotCity(iX, iY, iI);
 
-		// Leoreth: 10+ city site in radius
 		if (iSettlerMapValue == 1)
 		{
+			// Leoreth: 10+ city site in radius
 			if (pLoopPlot->isCity() && (pLoopPlot->getSettlerValue(getID()) >= 10 || pLoopPlot->getSettlerValue(pLoopPlot->getOwner()) >= 0))
+			{
+				return 0;
+			}
+
+			// Leoreth: early civs are too eager to expand
+			if (getCurrentEra() == ERA_ANCIENT)
 			{
 				return 0;
 			}
