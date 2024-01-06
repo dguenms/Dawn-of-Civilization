@@ -11,7 +11,7 @@ class TestAllAttitude(ExtendedTestCase):
 		
 		self.requirement.register_handlers(self.goal)
 		
-		self.others = [1, 2, 7, 8, 9, 10, 11, 12]
+		self.others = [1, 2, 6, 7, 8, 9, 10, 11]
 	
 	def tearDown(self):
 		self.requirement.deregister_handlers()

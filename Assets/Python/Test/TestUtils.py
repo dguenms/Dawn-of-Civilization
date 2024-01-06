@@ -14,11 +14,11 @@ def setup():
 	if bSetupComplete:
 		return
 		
-	for iSlot, iCiv in enumerate([iChina, iIndia, iGreece, iPhoenicia, iPolynesia, iPersia]):
-		addPlayer(7 + iSlot, iCiv, bAlive=True)
-		data.dSlots[iCiv] = 7 + iSlot
-		
-	for i in [4, 5, 6]:
+	for iSlot, iCiv in enumerate([iAssyria, iChina, iHittites, iGreece, iIndia, iPhoenicia]):
+		addPlayer(6 + iSlot, iCiv, bAlive=True)
+		data.dSlots[iCiv] = 6 + iSlot
+	
+	for i in [3, 4, 5]:
 		unit = makeUnit(i, iMilitia, (i, 0))
 		player(i).verifyAlive()
 		unit.kill(False, -1)

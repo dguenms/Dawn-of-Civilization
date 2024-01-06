@@ -132,58 +132,58 @@ class TestAlliesEvaluator(ExtendedTestCase):
 		team(1).setVassal(0, True, False)
 		team(2).setVassal(0, True, True)
 		
-		team(7).setDefensivePact(0, True)
-		team(0).setDefensivePact(7, True)
+		team(6).setDefensivePact(0, True)
+		team(0).setDefensivePact(6, True)
 		
-		team(8).setVassal(7, True, False)
+		team(7).setVassal(6, True, False)
 		
-		team(10).setVassal(9, True, False)
+		team(9).setVassal(8, True, False)
 		
-		team(11).setDefensivePact(12, True)
-		team(12).setDefensivePact(11, True)
+		team(10).setDefensivePact(11, True)
+		team(11).setDefensivePact(10, True)
 	
 	def tearDown(self):
 		team(1).setVassal(0, False, False)
 		team(2).setVassal(0, False, True)
 		
-		team(7).setDefensivePact(0, False)
-		team(0).setDefensivePact(7, False)
+		team(6).setDefensivePact(0, False)
+		team(0).setDefensivePact(6, False)
 		
-		team(8).setVassal(7, False, False)
+		team(7).setVassal(6, False, False)
 		
-		team(10).setVassal(9, False, False)
+		team(9).setVassal(8, False, False)
 		
-		team(11).setDefensivePact(12, False)
-		team(12).setDefensivePact(11, False)
+		team(10).setDefensivePact(11, False)
+		team(11).setDefensivePact(10, False)
 	
 	def test_contains(self):
 		self.assertEqual(0 in self.evaluator, True)
 		self.assertEqual(1 in self.evaluator, True)
 		self.assertEqual(2 in self.evaluator, True)
+		self.assertEqual(6 in self.evaluator, True)
 		self.assertEqual(7 in self.evaluator, True)
-		self.assertEqual(8 in self.evaluator, True)
 		
+		self.assertEqual(8 in self.evaluator, False)
 		self.assertEqual(9 in self.evaluator, False)
 		self.assertEqual(10 in self.evaluator, False)
 		self.assertEqual(11 in self.evaluator, False)
-		self.assertEqual(12 in self.evaluator, False)
 	
 	def test_iterate(self):
-		self.assertEqual(list(self.evaluator), [0, 1, 2, 7, 8])
+		self.assertEqual(list(self.evaluator), [0, 1, 2, 6, 7])
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
 	
 	def test_any(self):
 		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
-		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 9), False)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 8), False)
 	
 	def test_sum(self):
 		self.assertEqual(self.evaluator.sum(lambda iPlayer: 1), 5)
 	
 	def test_evaluate(self):
-		self.assertEqual(self.evaluator.evaluate(lambda x: x), 18)
-		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 23)
+		self.assertEqual(self.evaluator.evaluate(lambda x: x), 16)
+		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 21)
 
 
 class TestReligionEvaluator(ExtendedTestCase):

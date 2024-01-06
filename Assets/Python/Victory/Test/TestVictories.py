@@ -1,7 +1,7 @@
 from Victories import *
 from Definitions import BuildingCount, Control
 from GoalHandlers import event_handler_registry
-from Goals import Goal
+from Goals import Goal, AllGoal
 
 from TestVictoryCommon import *
 
@@ -129,9 +129,16 @@ class TestHistoricalVictory(ExtendedTestCase):
 	def test_create(self):
 		victory = HistoricalVictory.create(0)
 		
+		first_goal = AllGoal([Goal([req.Wonder(iGreatSphinx), req.Wonder(iPyramids)], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(500)], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
+		second_goal = Goal([req.Control(AreaArgumentFactory().region(rNubia).named("Nubia")), req.Control(AreaArgumentFactory().region(rLevant).named("the Levant"))], req.Control.GOAL_DESC_KEY, 0)
+		third_goal = AllGoal([Goal([req.Wonder(iGreatLibrary), req.Wonder(iGreatLighthouse)], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(5000)], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
+		
 		try:
 			self.assertEqual(victory.iPlayer, 0)
-			self.assertEqual(victory.goals, (Goal([req.CultureAmount(500)], req.CultureAmount.GOAL_DESC_KEY, 0), Goal([req.Wonder(iPyramids), req.Wonder(iGreatLibrary), req.Wonder(iGreatLighthouse)], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(5000)], req.CultureAmount.GOAL_DESC_KEY, 0)))
+			
+			
+			
+			self.assertEqual(victory.goals, (first_goal, second_goal, third_goal))
 		finally:
 			victory.disable()
 

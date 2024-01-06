@@ -66,8 +66,8 @@ class TestAggregate(ExtendedTestCase):
 	
 	def test_format(self):
 		self.assertEqual(self.aggregate.format(COUNT.format), "a, two and three")
-		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Ikhanda and Granary")
-		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Ikhandas and Granaries")
+		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Soldattorp and Ikhanda")
+		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Soldattorps and Ikhandas")
 	
 	def test_format_named(self):
 		self.aggregate.named("named aggregate")
@@ -467,7 +467,7 @@ class TestCivsArgument(ExtendedTestCase):
 	def test_group(self):
 		argument = CivsArgument.group(iCivGroupAfrica)
 		
-		self.assertEqual(argument, CivsArgument(iEgypt, iPhoenicia, iEthiopia, iMali, iCongo))
+		self.assertEqual(argument, CivsArgument(iEgypt, iPhoenicia, iNubia, iEthiopia, iMali, iSwahili, iCongo))
 
 
 class TestStateReligionBuildingArgument(ExtendedTestCase):

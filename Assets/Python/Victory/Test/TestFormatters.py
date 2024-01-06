@@ -94,7 +94,7 @@ class TestTextProcessing(ExtendedTestCase):
 		self.assertEqual(format_date_turn(1000, False), "1000 AD")
 	
 	def test_format_date_turn(self):
-		self.assertEqual(format_date_turn(1000, True), "1000 AD (Turn 221)")
+		self.assertEqual(format_date_turn(1000, True), "1000 AD (Turn 290)")
 	
 	def test_remove_articles(self):
 		self.assertEqual(remove_articles("the Mediterranean"), "Mediterranean")

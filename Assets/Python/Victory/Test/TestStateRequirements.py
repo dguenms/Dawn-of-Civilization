@@ -7,7 +7,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 
 	def setUp(self):
 		self.civs = CivsArgument(iChina)
-		self.area = AreaArgumentFactory().rectangle((20, 20), (30, 30)).named("Rectangle")
+		self.area = AreaArgumentFactory().rectangle((35, 25), (40, 30)).named("Rectangle")
 	
 		self.requirement = ContactBeforeRevealed(self.civs, self.area)
 		self.goal = TestGoal()
@@ -27,11 +27,11 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "China before any of them discovers Rectangle")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Rectangle": plots.rectangle((20, 20), (30, 30))})
+		self.assertEqual(self.requirement.areas(), {"Rectangle": plots.rectangle((35, 25), (40, 30))})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((25, 25)), "Rectangle")
-		self.assertEqual(self.requirement.area_name((35, 35)), "")
+		self.assertEqual(self.requirement.area_name((35, 25)), "Rectangle")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_contact(self):
 		events.fireEvent("firstContact", self.iPlayer, team(iChina).getID())
@@ -52,7 +52,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 	
 	def test_contact_after_revealed(self):
-		plot(25, 25).setRevealed(team(iChina).getID(), True, False, team(iChina).getID())
+		plot(35, 25).setRevealed(team(iChina).getID(), True, False, team(iChina).getID())
 		
 		events.fireEvent("firstContact", self.iPlayer, team(iChina).getID())
 		
@@ -63,7 +63,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 			self.assertEqual(self.requirement.state, FAILURE)
 			self.assertEqual(self.goal.checked, True)
 		finally:
-			plot(25, 25).setRevealed(team(iChina).getID(), False, False, team(iChina).getID())
+			plot(35, 25).setRevealed(team(iChina).getID(), False, False, team(iChina).getID())
 	
 	def test_other_evaluator(self):
 		evaluator = VassalsEvaluator(self.iPlayer)
