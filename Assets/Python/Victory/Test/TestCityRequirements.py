@@ -215,6 +215,91 @@ class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCityPopulation(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CityPopulation(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 5)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityPopulation(Test City, 5)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityPopulation(Test City, 5)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a population of 5 in Test City")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_city(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
+	
+	def test_less(self):
+		city = TestCities.one()
+		city.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Population in %s: 4 / 5" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Population in %s: 6 / 5" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Population in %s (controlled by Babylonia): 6 / 5" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Population in %s: 6 / 5" % city.getName())
+		finally:
+			city.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestCitySpecialistCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -301,5 +386,6 @@ class TestCitySpecialistCount(ExtendedTestCase):
 test_cases = [
 	TestCityCultureLevel,
 	TestCityDifferentGreatPeopleCount,
+	TestCityPopulation,
 	TestCitySpecialistCount,
 ]
