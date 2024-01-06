@@ -110,19 +110,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_BAB2</Tag>
-		<English>The Fertile Crescent</English>
-		<French>Le Croissant fertile </French>
-		<German>Der fruchtbare Halbmond</German>
-		<Italian>The Fertile Crescent</Italian>
-		<Spanish>The Fertile Crescent</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_BAB3</Tag>
 		<English>The Tower of Babel</English>
 		<French>La tour de Babel </French>
 		<German>Der Turm von Babel</German>
 		<Italian>The Tower of Babel</Italian>
 		<Spanish>The Tower of Babel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BAB3</Tag>
+		<English>The Fertile Crescent</English>
+		<French>Le Croissant fertile </French>
+		<German>Der fruchtbare Halbmond</German>
+		<Italian>The Fertile Crescent</Italian>
+		<Spanish>The Fertile Crescent</Spanish>
 	</TEXT>
 	
 	<TEXT>
