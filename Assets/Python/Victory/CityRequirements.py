@@ -63,6 +63,26 @@ class CityDifferentGreatPeopleCount(CityRequirement):
 		return "%d / %d" % (self.different_great_people(city), self.iRequired)
 
 
+# Third Babylonian UHV goal
+class CityPopulation(CityRequirement):
+
+	TYPES = (CITY, AMOUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_POPULATION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_POPULATION"
+	
+	def __init__(self, city, iRequired, **options):
+		CityRequirement.__init__(self, city, iRequired, **options)
+		
+		self.iRequired = iRequired
+	
+	def fulfilled_city(self, city):
+		return city.getPopulation() >= self.iRequired
+	
+	def progress_city(self, city):
+		return "%d / %d" % (city.getPopulation(), self.iRequired)
+
+
 # Third Tibetan UHV goal
 # Second Moorish UHV goal
 # Third Holy Roman UHV goal

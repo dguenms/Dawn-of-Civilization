@@ -988,6 +988,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_POPULATION</Tag>
+		<English>a population of %s2 in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_UNIT_COMBAT_COUNT</Tag>
 		<English>an army of %s2 %s1</English>
 		<French></French>
@@ -1649,6 +1657,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CITY_DIFFERENT_GREAT_PEOPLE_COUNT</Tag>
 		<English>Different great people</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_POPULATION</Tag>
+		<English>Population</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
