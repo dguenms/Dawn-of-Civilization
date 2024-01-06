@@ -8926,15 +8926,11 @@
 			<ConstructSound>AS2D_BUILD_STONEHENGE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
-					<BonusType>BONUS_DYE</BonusType>
+					<BonusType>BONUS_STONE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_GOLD</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_INCENSE</BonusType>
+					<BonusType>BONUS_MARBLE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
