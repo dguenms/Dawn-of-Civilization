@@ -291,6 +291,7 @@ class TestCitySpecialistCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Great Artists in %s: 2 / 2" % city.getName())
 		finally:
 			city.kill()
+			team(1).setVassal(0, False, False)
 	
 	def test_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)

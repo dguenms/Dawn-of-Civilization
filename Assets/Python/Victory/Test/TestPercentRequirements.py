@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAreaPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().rectangle((50, 30), (69, 31)).named("Test Area")
+		self.area = AreaArgumentFactory().rectangle((60, 40), (79, 41)).named("Test Area")
 		self.assertEqual(self.area.land().count(), 40)
 		
 		self.requirement = AreaPercent(self.area, 30)
@@ -27,10 +27,10 @@ class TestAreaPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "30% of Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.rectangle((50, 30), (69, 31))})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.rectangle((60, 40), (79, 41))})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((50, 30)), "Test Area")
+		self.assertEqual(self.requirement.area_name((60, 40)), "Test Area")
 		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_pickle(self):
@@ -43,7 +43,7 @@ class TestAreaPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Territory in Test Area: 0.00% / 30%")
 	
 	def test_half(self):
-		controlled = plots.rectangle((50, 30), (69, 30))
+		controlled = plots.rectangle((60, 40), (79, 40))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -58,7 +58,7 @@ class TestAreaPercent(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_all(self):
-		controlled = plots.rectangle((50, 30), (69, 31))
+		controlled = plots.rectangle((60, 40), (79, 41))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -72,7 +72,7 @@ class TestAreaPercent(ExtendedTestCase):
 				plot.setOwner(-1)
 	
 	def test_outside(self):
-		controlled = plots.rectangle((50, 29), (69, 29))
+		controlled = plots.rectangle((60, 39), (79, 39))
 		for plot in controlled:
 			plot.setOwner(0)
 		
@@ -89,7 +89,7 @@ class TestAreaPercent(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		controlled = plots.rectangle((50, 30), (69, 31))
+		controlled = plots.rectangle((60, 40), (79, 41))
 		for plot in controlled:
 			plot.setOwner(1)
 		
@@ -294,26 +294,26 @@ class TestLandPercent(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 	
 	def test_sufficient(self):
-		territory = plots.all().land().limit(11 * 32)
+		territory = plots.all().land().limit(11 * 48)
 		for plot in territory:
 			plot.setOwner(self.iPlayer)
 		
 		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 11 * 32)
-			self.assertAlmostEqual(self.requirement.percentage(self.evaluator), 10.89, places=2)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 11 * 48)
+			self.assertAlmostEqual(self.requirement.percentage(self.evaluator), 10.87, places=2)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "World territory controlled: 10.89% / 10%")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "World territory controlled: 10.87% / 10%")
 		finally:
 			for plot in territory:
 				plot.setOwner(-1)
 	
 	def test_insufficient(self):
-		territory = plots.all().land().limit(32)
+		territory = plots.all().land().limit(48)
 		for plot in territory:
 			plot.setOwner(self.iPlayer)
 		
 		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 32)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 48)
 			self.assertAlmostEqual(self.requirement.percentage(self.evaluator), 0.99, places=2)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "World territory controlled: 0.99% / 10%")
@@ -326,7 +326,7 @@ class TestLandPercent(ExtendedTestCase):
 		
 		team(1).setVassal(0, True, False)
 	
-		our_territory, vassal_territory = plots.all().land().limit(11 * 32).percentage_split(60)
+		our_territory, vassal_territory = plots.all().land().limit(11 * 48).percentage_split(60)
 		for plot in our_territory:
 			plot.setOwner(self.iPlayer)
 		
@@ -334,10 +334,10 @@ class TestLandPercent(ExtendedTestCase):
 			plot.setOwner(1)
 		
 		try:
-			self.assertEqual(self.requirement.evaluate(evaluator), 11 * 32)
-			self.assertAlmostEqual(self.requirement.percentage(evaluator), 10.89, places=2)
+			self.assertEqual(self.requirement.evaluate(evaluator), 11 * 48)
+			self.assertAlmostEqual(self.requirement.percentage(evaluator), 10.87, places=2)
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "World territory controlled: 10.89% / 10%")
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "World territory controlled: 10.87% / 10%")
 		finally:
 			for plot in our_territory + vassal_territory:
 				plot.setOwner(-1)

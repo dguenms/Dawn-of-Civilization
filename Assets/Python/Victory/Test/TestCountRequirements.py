@@ -388,7 +388,7 @@ class TestAveragePopulation(ExtendedTestCase):
 class TestBuildingCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BuildingCount(iGranary, 3)
+		self.requirement = BuildingCount(iMarket, 3)
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -397,15 +397,15 @@ class TestBuildingCount(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "BuildingCount(Granary, 3)")
+		self.assertEqual(str(self.requirement), "BuildingCount(Market, 3)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "BuildingCount(Granary, 3)")
+		self.assertEqual(repr(self.requirement), "BuildingCount(Market, 3)")
 	
 	def test_equals(self):
-		identical_requirement = BuildingCount(iGranary, 3)
-		different_building = BuildingCount(iLibrary, 3)
-		different_count = BuildingCount(iGranary, 4)
+		identical_requirement = BuildingCount(iMarket, 3)
+		different_building = BuildingCount(iGranary, 3)
+		different_count = BuildingCount(iMarket, 4)
 		
 		self.assertEqual(self.requirement, identical_requirement)
 		self.assertNotEqual(self.requirement, different_building)
@@ -415,7 +415,7 @@ class TestBuildingCount(ExtendedTestCase):
 		self.assertPickleable(self.requirement)
 
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "three Granaries")
+		self.assertEqual(self.requirement.description(), "three Markets")
 	
 	def test_description_wonder(self):
 		requirement = BuildingCount(iPyramids, 1)
@@ -428,18 +428,18 @@ class TestBuildingCount(ExtendedTestCase):
 	def test_none(self):
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granaries: 0 / 3")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 0 / 3")
 
 	def test_some(self):
 		cities = TestCities.num(2)
 	
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Granaries: 2 / 3")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 2 / 3")
 		finally:
 			cities.kill()
 	
@@ -447,12 +447,12 @@ class TestBuildingCount(ExtendedTestCase):
 		cities = TestCities.num(3)
 		
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Granaries: 3 / 3")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Markets: 3 / 3")
 		finally:
 			cities.kill()
 	
@@ -460,12 +460,12 @@ class TestBuildingCount(ExtendedTestCase):
 		cities = TestCities.num(4)
 		
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Granaries: 4 / 3")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Markets: 4 / 3")
 		finally:
 			cities.kill()
 	
@@ -573,12 +573,12 @@ class TestBuildingCount(ExtendedTestCase):
 		
 		cities = TestCities.owners(0, 1, 2)
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(evaluator), False)
-			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Granaries: 2 / 3")
+			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Markets: 2 / 3")
 		finally:
 			cities.kill()
 			
@@ -593,12 +593,12 @@ class TestBuildingCount(ExtendedTestCase):
 		
 		cities = TestCities.owners(0, 1, 2, 3)
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Granaries: 3 / 3")
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Markets: 3 / 3")
 		finally:
 			cities.kill()
 			
@@ -615,12 +615,12 @@ class TestBuildingCount(ExtendedTestCase):
 		
 		cities = TestCities.owners(0, 1, 2, 3)
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(evaluator), False)
-			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Granaries: 2 / 3")
+			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Markets: 2 / 3")
 		finally:
 			cities.kill()
 			
@@ -635,12 +635,12 @@ class TestBuildingCount(ExtendedTestCase):
 		
 		cities = TestCities.owners(0, 1, 2)
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(evaluator), False)
-			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Granaries: 2 / 3")
+			self.assertEqual(self.requirement.progress(evaluator), self.FAILURE + "Markets: 2 / 3")
 		finally:
 			cities.kill()
 			
@@ -652,12 +652,12 @@ class TestBuildingCount(ExtendedTestCase):
 		
 		cities = TestCities.owners(0, 1, 2)
 		for city in cities:
-			city.setHasRealBuilding(iGranary, True)
+			city.setHasRealBuilding(iMarket, True)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Granaries: 3 / 3")
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Markets: 3 / 3")
 		finally:
 			cities.kill()
 	
@@ -720,7 +720,7 @@ class TestBuildingCount(ExtendedTestCase):
 		city = TestCities.one()
 		
 		try:
-			events.fireEvent("buildingBuilt", city, iGranary)
+			events.fireEvent("buildingBuilt", city, iMarket)
 			
 			self.assertEqual(self.goal.checked, True)
 		finally:
@@ -730,7 +730,7 @@ class TestBuildingCount(ExtendedTestCase):
 		city = TestCities.one()
 		
 		try:
-			events.fireEvent("buildingBuilt", city, iTerrace)
+			events.fireEvent("buildingBuilt", city, iForum)
 			
 			self.assertEqual(self.goal.checked, True)
 		finally:
@@ -740,7 +740,7 @@ class TestBuildingCount(ExtendedTestCase):
 		city = TestCities.one(1)
 		
 		try:
-			events.fireEvent("buildingBuilt", city, iGranary)
+			events.fireEvent("buildingBuilt", city, iMarket)
 			
 			self.assertEqual(self.goal.checked, False)
 		finally:
@@ -750,7 +750,7 @@ class TestBuildingCount(ExtendedTestCase):
 		city = TestCities.one()
 		
 		try:
-			events.fireEvent("buildingBuilt", city, iLibrary)
+			events.fireEvent("buildingBuilt", city, iGranary)
 			
 			self.assertEqual(self.goal.checked, False)
 		finally:
