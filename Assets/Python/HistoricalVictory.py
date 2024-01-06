@@ -143,8 +143,12 @@ dGoals = {
 	),
 	iBabylonia: (
 		FirstDiscover(iConstruction, iArithmetics, iWriting, iCalendar, iContract),
-		BestPopulationCity(city(tBabylon).named(BABYLON), at=-850),
-		BestCultureCity(city(tBabylon).named(BABYLON), at=-700),
+		CityBuildingCount(city(tBabylon).named(BABYLON), wonders(), 3, by=-850),
+		All(
+			CityPopulation(city(tBabylon).named(BABYLON), 12),
+			CityCultureLevel(city(tBabylon).named(BABYLON), iCultureLevelRefined),
+			by=-700,
+		),
 	),
 	iHarappa: (
 		TradeConnection(by=-1600),
