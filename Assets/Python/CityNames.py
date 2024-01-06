@@ -19,7 +19,7 @@ iLangPhoenician, iLangPolish, iLangPolynesian, iLangPortuguese, iLangQuechua,
 iLangRussian, iLangSpanish, iLangSwedish, iLangThai, iLangTibetan, 
 iLangTurkish, iLangVietnamese, iLangViking) = range(iNumLanguages)
 
-dLanguages = {
+dLanguages = CivDict({
 	iEgypt:	[iLangEgyptian],
 	iBabylonia: [iLangBabylonian],
 	iHarappa: [iLangIndian],
@@ -80,7 +80,7 @@ dLanguages = {
 	iColombia: [iLangSpanish],
 	iBrazil: [iLangPortuguese, iLangSpanish],
 	iCanada: [iLangAmerican, iLangEnglish, iLangFrench],
-}
+}, [])
 
 
 ### CSV CITY NAME MAP ###
@@ -205,7 +205,7 @@ def updateName(city):
 	iCiv = civ(city)
 	name = getName(iCiv, city)
 	
-	if city.getName() != name:
+	if name and city.getName() != name:
 		city.setName(name, False)
 
 
@@ -224,8 +224,8 @@ def getName(identifier, tile):
 	return name
 
 
-def translateName(iCiv, name):
-	for iLanguage in getLanguages(iCiv):
+def translateName(identifier, name):
+	for iLanguage in getLanguages(identifier):
 		if name in dTranslations[iLanguage]:
 			return dTranslations[iLanguage][name]
 		
@@ -235,17 +235,17 @@ def translateName(iCiv, name):
 	return name
 
 
-def getLanguages(iCiv):
-	return getSpecialLanguages(iCiv) or dLanguages.get(iCiv)
+def getLanguages(identifier):
+	return getSpecialLanguages(identifier) or dLanguages[identifier]
 
 
-def getSpecialLanguages(iCiv):
-	iPlayer = slot(iCiv)
-	if iPlayer < 0:
+def getSpecialLanguages(identifier):
+	iCiv = civ(identifier)
+	if player(identifier).getID() < 0:
 		return None
 	
 	if iCiv == iEgypt:
-		if player(iPlayer).getStateReligion() == iIslam:
+		if player(identifier).getStateReligion() == iIslam:
 			return [iLangEgyptianArabic, iLangArabic]
 	
 	elif iCiv == iInca:
