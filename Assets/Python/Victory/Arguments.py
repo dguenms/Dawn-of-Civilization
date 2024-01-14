@@ -186,8 +186,10 @@ class AreaArgument(NamedArgument):
 	def regions(self, *args, **kwargs):
 		return self.call("regions", args, kwargs)
 
-	def region(self, *args, **kwargs):
-		return self.call("region", args, kwargs)
+	def region(self, iRegion):
+		self.call("region", (iRegion,), {})
+		self.named(text("TXT_KEY_REGION_%d" % iRegion))
+		return self
 	
 	def adjacent_regions(self, *args, **kwargs):
 		return self.call("adjacent_regions", args, kwargs)
