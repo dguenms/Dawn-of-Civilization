@@ -1412,9 +1412,13 @@ dTechPreferences = {
 		iDivination: 20,
 		iPhilosophy: 20,
 		iPriesthood: 20,
+		iNavigation: 20,
+		iShipbuilding: 20,
+		iArithmetics: 20,
 		
 		iAlloys: -20,
 		iBloomery: -50,
+		iRiding: -50,
 	},
 	iBabylonia : {
 		iWriting: 30,
@@ -1424,21 +1428,31 @@ dTechPreferences = {
 		iProperty: 20,
 		iDivination: 20,
 		iConstruction: 20,
+		iArithmetics: 20,
 	
-		iPriesthood: -50,
-		iMathematics: -30,
+		iMathematics: -50,
+		iLiterature: -50,
 		iAlloys: -30,
 		iBloomery: -30,
 		iSteel: -30,
 	},
 	iHarappa : {
 		iMasonry: 20,
-		iPastoralism: 20,
-		iPottery: 20,
 		
-		iMythology: -50,
+		iAlloys: -50,
 		iDivination: -50,
 		iCeremony: -50,
+	},
+	iAssyria : {
+		iMasonry: 40,
+		iAlloys: 30,
+		iLeverage: 30,
+		iCeremony: 20,
+		iWriting: 20,
+		iArithmetics: 20,
+		
+		iRiding: -40,
+		iSeafaring: -20,
 	},
 	iChina : {
 		iAesthetics: 40,
@@ -1464,6 +1478,11 @@ dTechPreferences = {
 		iCombinedArms: -40,
 		iDivination: -20,
 		iSailing: -20,	
+	},
+	iHittites: {
+		iBloomery: 50,
+		iContract: 20,
+		iConstruction: 20,
 	},
 	iGreece : {
 		iPhilosophy: 50,
