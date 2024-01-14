@@ -187,7 +187,7 @@ lCivilizations = [
 	),
 	Civilization(
 		iHarappa,
-		techs=techs.of(iMining, iPottery, iAgriculture, iSailing)
+		techs=techs.of(iTanning, iMining, iPottery, iAgriculture)
 	),
 	Civilization(
 		iAssyria,
