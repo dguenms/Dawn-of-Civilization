@@ -263,6 +263,7 @@ dRemovedResourcesDict = {
 	(77, 55)  : -50, # Gold in Macedonia
 	(81, 44)  : -50, # Gems (turquoise) in Egypt
 	(74, 44)  : 200, # Spices (silphium) in Cyrenaica
+	(87, 49)  : 200, # Horses in Syria
 	(55, 53)  : 400, # Gold in Spain
 	(59, 51)  : 400, # Silver in Spain
 	(83, 47)  : 500, # Dye (murex) in Phoenicia
