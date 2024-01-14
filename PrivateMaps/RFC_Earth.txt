@@ -39302,6 +39302,7 @@ BeginPlot
 	x=87,y=49
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
