@@ -3082,6 +3082,70 @@
 		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
 		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_DISCOVER_OTHER</Tag>
+		<English>%s1 is the first to discover %s2.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_DISCOVER_UNKNOWN</Tag>
+		<English>An unknown civilization is the first to discover %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_GREAT_PERSON_OTHER</Tag>
+		<English>The first %s2 is born in %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_GREAT_PERSON_UNKNOWN</Tag>
+		<English>The first %s1 is born in an unknown civilization.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_SETTLE_OTHER</Tag>
+		<English>%s1 is the first to settle %s2.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_SETTLE_UNKNOWN</Tag>
+		<English>An unknown civilization is the first to settle %s1.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_TRIBUTE_OTHER</Tag>
+		<English>%s1 is the first to receive tribute.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_GREAT_PERSON_UNKNOWN</Tag>
+		<English>An unknown civilization is the first to receive tribute.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>

@@ -74,7 +74,7 @@ class Discover(StateRequirement):
 		
 		self.handle("techAcquired", self.check_discovered)
 		
-	def check_discovered(self, goal, iTech):
+	def check_discovered(self, goal, iTech, iPlayer):
 		if self.iTech == iTech:
 			self.succeed()
 			goal.check()
@@ -98,13 +98,13 @@ class EnterEraBefore(StateRequirement):
 		self.handle("techAcquired", self.check_enter_era)
 		self.expire("techAcquired", self.expire_enter_era)
 		
-	def check_enter_era(self, goal, iTech):
+	def check_enter_era(self, goal, iTech, iPlayer):
 		iEra = infos.tech(iTech).getEra()
 		if self.iEra == iEra and self.state == POSSIBLE:
 			self.succeed()
 			goal.check()
 	
-	def expire_enter_era(self, goal, iTech):
+	def expire_enter_era(self, goal, iTech, iPlayer):
 		iEra = infos.tech(iTech).getEra()
 		if self.iExpireEra == iEra and self.state == POSSIBLE:
 			self.fail()
@@ -136,15 +136,16 @@ class FirstDiscover(StateRequirement):
 		if game.countKnownTechNumTeams(self.iTech) > 0:
 			goal.set_state(FAILURE)
 	
-	def check_first_discovered(self, goal, iTech):
+	def check_first_discovered(self, goal, iTech, iPlayer):
 		if self.iTech == iTech and game.countKnownTechNumTeams(iTech) == 1:
 			self.succeed()
 			goal.check()
 	
-	def expire_first_discovered(self, goal, iTech):
+	def expire_first_discovered(self, goal, iTech, iPlayer):
 		if self.iTech == iTech and self.state == POSSIBLE:
 			self.fail()
-			goal.expire()
+			goal.announce_failure_cause(iPlayer, "TXT_KEY_VICTORY_ANNOUNCE_FIRST_DISCOVER", TECH.format(iTech))
+			goal.expire()	
 
 
 # Third Pesedjet URV goal
@@ -180,7 +181,8 @@ class FirstGreatPerson(StateRequirement):
 						goal.fail()
 
 					return
-				
+			
+				goal.announce_failure_cause(unit.getOwner(), "TXT_KEY_VICTORY_ANNOUNCE_FIRST_GREAT_PERSON", UNIT.format(unit.getUnitType()))
 				goal.fail()
 
 
@@ -211,6 +213,7 @@ class FirstSettle(StateRequirement):
 		if city in self.area and self.state == POSSIBLE:
 			if not is_minor(city) and city.getCivilizationType() not in self.allowed:
 				self.fail()
+				goal.announce_failure_cause(city.getOwner(), "TXT_KEY_VICTORY_ANNOUNCE_FIRST_SETTLE", AREA.format(self.area))
 				goal.expire()
 
 

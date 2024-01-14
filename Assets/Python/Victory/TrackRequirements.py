@@ -189,13 +189,13 @@ class EraFirstDiscover(TrackRequirement):
 		self.handle("techAcquired", self.increment_first_discovered)
 		self.expire("techAcquired", self.expire_insufficient_techs_left)
 		
-	def increment_first_discovered(self, goal, iTech):
+	def increment_first_discovered(self, goal, iTech, iPlayer):
 		if self.iEra == infos.tech(iTech).getEra():
 			if game.countKnownTechNumTeams(iTech) == 1:
 				self.increment()
 				goal.check()
 	
-	def expire_insufficient_techs_left(self, goal, iTech):
+	def expire_insufficient_techs_left(self, goal, iTech, iPlayer):
 		if self.iEra == infos.tech(iTech).getEra():
 			if self.iValue + self.remaining_techs() < self.required():
 				goal.expire()

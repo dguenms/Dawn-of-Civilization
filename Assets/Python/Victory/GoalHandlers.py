@@ -234,7 +234,7 @@ class EventHandlerRegistry(object):
 	def techAcquired(self, goal, applicable, func):
 		def techAcquired((iTech, iTeam, iPlayer, bAnnounce)):
 			if applicable(goal, iPlayer):
-				func(goal, iTech)
+				func(goal, iTech, iPlayer)
 	
 		return techAcquired
 	

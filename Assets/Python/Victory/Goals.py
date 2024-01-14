@@ -343,6 +343,13 @@ class Goal(Describable):
 	def announce_failure(self):
 		self.announce("TXT_KEY_VICTORY_ANNOUNCE_FAILURE", AlertsOpt.isShowUHVFailPopup())
 	
+	def announce_failure_cause(self, iCausePlayer, text_key, *format_args):
+		if self.possible() and AlertsOpt.isShowUHVFailPopup():
+			if player(self.iPlayer).canContact(iCausePlayer):
+				show(text("%s_OTHER" % text_key, name(iCausePlayer), *format_args))
+			else:
+				show(text("%s_UNKNOWN" % text_key, *format_args))
+	
 	def areas(self):
 		return self._areas
 		
