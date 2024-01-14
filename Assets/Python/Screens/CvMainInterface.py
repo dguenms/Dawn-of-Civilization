@@ -3124,6 +3124,8 @@ class CvMainInterface:
 					pPlayer = gc.getPlayer(ePlayer)
 					iGold = pPlayer.getGold()
 					iGoldRate = pPlayer.calculateGoldRate()
+					iCurrentResearch = pPlayer.getCurrentResearch()
+					iResearchTurnsLeft = iCurrentResearch >= 0 and pPlayer.getResearchTurnsLeft(iCurrentResearch, True) or None
 					if iGold < 0:
 						szText = BugUtil.getText("TXT_KEY_MISC_NEG_GOLD", iGold)
 						if iGoldRate != 0:
@@ -3138,8 +3140,10 @@ class CvMainInterface:
 						if iGoldRate != 0:
 							if iGoldRate >= 0:
 								szText += BugUtil.getText("TXT_KEY_MISC_POS_GOLD_PER_TURN", iGoldRate)
-							elif iGold + iGoldRate >= 0:
+							elif iCurrentResearch >= 0 and iGold + iGoldRate * iResearchTurnsLeft >= 0:
 								szText += BugUtil.getText("TXT_KEY_MISC_NEG_WARNING_GOLD_PER_TURN", iGoldRate)
+							elif iGold + iGoldRate >= 0:
+								szText += BugUtil.getText("TXT_KEY_MISC_NEG_STRONG_WARNING_GOLD_PER_TURN", iGoldRate)
 							else:
 								szText += BugUtil.getText("TXT_KEY_MISC_NEG_GOLD_PER_TURN", iGoldRate)
 					if pPlayer.isStrike():

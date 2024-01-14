@@ -2062,6 +2062,14 @@
 		<Spanish>[SPACE][COLOR_YELLOW](%D1_Change/turno)[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_NEG_STRONG_WARNING_GOLD_PER_TURN</Tag>
+		<English>[SPACE][COLOR_PLAYER_ORANGE_TEXT](%D1_Change/Turn)[COLOR_REVERT]</English>
+		<French>[SPACE][COLOR_ORANGE](%D1_Change/tour)[COLOR_REVERT]</French>
+		<German>[SPACE][COLOR_ORANGE](%D1_Change/Runde)[COLOR_REVERT]</German>
+		<Italian>[SPACE][COLOR_ORANGE](%D1_Change/Turno)[COLOR_REVERT]</Italian>
+		<Spanish>[SPACE][COLOR_ORANGE](%D1_Change/turno)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_POS_WARNING_GOLD_PER_TURN</Tag>
 		<English>[SPACE][COLOR_YELLOW](%D1_Change/Turn)[COLOR_REVERT]</English>
 		<French>[SPACE][COLOR_YELLOW](%D1_Change/tour)[COLOR_REVERT]</French>
