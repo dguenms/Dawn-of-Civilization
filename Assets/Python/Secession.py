@@ -162,7 +162,6 @@ def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 		flipOrCreateDefenders(iNewOwner, lFlippedUnits, tile, iNumDefenders)
 	else:
 		killUnits(lFlippedUnits)
-		createRoleUnit(iNewOwner, tile, iDefend, iNumDefenders)
 	
 	if is_minor(iNewOwner):
 		message(iOldOwner, 'TXT_KEY_STABILITY_CITY_INDEPENDENCE', name, color=iRed)
