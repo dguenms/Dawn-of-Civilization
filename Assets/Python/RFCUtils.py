@@ -553,7 +553,7 @@ def getUnitForRole(iPlayer, iRole, bUnique=True):
 	return (iBestUnit, getRoleAI(iRole))
 
 # used: RFCUtils, Rise
-def getUnitsForRole(iPlayer, iRole, bUnique=False):
+def getUnitsForRole(iPlayer, iRole, bUnique=True):
 	iUnit, iUnitAI = getUnitForRole(iPlayer, iRole, bUnique=bUnique)
 	units = [(iUnit, iUnitAI)]
 	
