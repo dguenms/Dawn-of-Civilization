@@ -256,6 +256,71 @@ class TestCelebrateTurns(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestCityCaptureGold(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CityCaptureGold(100)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.city = TestCities.one(1)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		self.city.kill()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityCaptureGold(100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityCaptureGold(100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 gold from conquering cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_city_capture_gold(self):
+		events.fireEvent("cityCaptureGold", self.city, self.iPlayer, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from conquering cities: 100 / 100")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_city_capture_gold_other(self):
+		events.fireEvent("cityCaptureGold", self.city, 1, 100)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from conquering cities: 0 / 100")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		self.goal.evaluator = evaluator
+		
+		team(1).setVassal(0, True, False)
+		
+		try:
+			events.fireEvent("cityCaptureGold", self.city, 1, 100)
+		
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from conquering cities: 100 / 100")
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			team(1).setVassal(0, False, False)
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestCombatFood(ExtendedTestCase):
 
 	def setUp(self):
@@ -2412,6 +2477,7 @@ test_cases = [
 	TestAcquiredCities,
 	TestBrokeredPeace,
 	TestCelebrateTurns,
+	TestCityCaptureGold,
 	TestCombatFood,
 	TestConqueredCities,
 	TestConqueredCitiesInside,

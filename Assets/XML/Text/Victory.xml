@@ -660,6 +660,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_CAPTURE_GOLD</Tag>
+		<English>%s1 gold from conquering cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_FIRST_SETTLE</Tag>
 		<English>a city in %s1</English>
 		<French></French>
@@ -1361,6 +1369,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RAID_GOLD</Tag>
 		<English>Gold from raids</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_CAPTURE_GOLD</Tag>
+		<English>Gold from conquering cities</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
