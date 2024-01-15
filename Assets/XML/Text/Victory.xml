@@ -265,6 +265,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_GENERATE</Tag>
+		<English>generate %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CONQUER</Tag>
 		<English>conquer %s1</English>
 		<French></French>
@@ -1076,6 +1084,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_PRODUCTION</Tag>
+		<English>%s1 production</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_STATE_RELIGION_PERCENT</Tag>
 		<English>at least %s2 of all civilizations are %s1</English>
 		<French></French>
@@ -1737,6 +1753,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_POPE_TURNS</Tag>
 		<English>Turns as Pope</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_PRODUCTION</Tag>
+		<English>Generated production</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
