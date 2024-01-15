@@ -62,6 +62,21 @@ class CelebrateTurns(TrackRequirement):
 			goal.check()
 
 
+# First Assyrian Goal
+class CityCaptureGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_CAPTURE_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_CAPTURE_GOLD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.accumulated("cityCaptureGold")
+
+
 # Third Maya Teotl URV goal
 class CombatFood(TrackRequirement):
 
