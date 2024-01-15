@@ -5355,6 +5355,8 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity() && iI != IMPROVEMENT_SLAVE_PLANTATION)
 							{
 								setImprovementType((ImprovementTypes)iI);
+								setRouteType((RouteTypes)GC.getInfoTypeForString("ROUTE_ROAD"), true);
+								break;
 							}
 						}
 					}
