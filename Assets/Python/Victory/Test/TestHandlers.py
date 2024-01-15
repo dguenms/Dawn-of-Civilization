@@ -480,7 +480,7 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		self.assertEqual(self.argument, None)
 		
 		onTechAcquired((iEngineering, self.iPlayer, self.iPlayer, False))
-		self.assertEqual(self.argument, (self.goal, iEngineering))
+		self.assertEqual(self.argument, (self.goal, iEngineering, self.iPlayer))
 	
 	def test_trade_mission(self):
 		onTradeMission = self.get("tradeMission", self.accumulate)

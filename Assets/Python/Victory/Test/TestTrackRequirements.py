@@ -1579,6 +1579,60 @@ class TestPopeTurns(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestProduction(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Production(10)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def teatDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Production(10)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Production(10)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "10 production")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		city = TestCities.one()
+
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		try:
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 5)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 5 / 10")
+		finally:
+			city.kill()
+	
+	def test_sufficient(self):
+		city = TestCities.one()
+		
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		try:
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 5)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 10)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 10 / 10")
+		finally:
+			city.kill()
+
+
 class TestRaidGold(ExtendedTestCase):
 
 	def setUp(self):
@@ -2494,6 +2548,7 @@ test_cases = [
 	TestPillageCount,
 	TestPiracyGold,
 	TestPopeTurns,
+	TestProduction,
 	TestRaidGold,
 	TestRazeCount,
 	TestResourceTradeGold,

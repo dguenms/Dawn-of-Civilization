@@ -400,6 +400,26 @@ class PopeTurns(TrackRequirement):
 			goal.check()
 
 
+class Production(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_GENERATE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_PRODUCTION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PRODUCTION"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.handle("BeginPlayerTurn", self.accumulate_production)
+	
+	def accumulate_production(self, goal, iGameTurn, iPlayer):
+		iProduction = cities.owner(iPlayer).sum(lambda city: city.getYieldRate(YieldTypes.YIELD_PRODUCTION))
+		if iProduction > 0:
+			self.accumulate(iProduction)
+			goal.check()
+
+
 # Third Viking UHV goal
 class RaidGold(TrackRequirement):
 

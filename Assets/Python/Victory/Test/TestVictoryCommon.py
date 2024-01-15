@@ -93,3 +93,6 @@ class TestGoal(object):
 	
 	def final_check(self):
 		self.checked = True
+	
+	def announce_failure_cause(self, *args):
+		pass
