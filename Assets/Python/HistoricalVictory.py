@@ -175,6 +175,11 @@ dGoals = {
 		FirstDiscover(iCompass, iPaper, iGunpowder, iPrinting),
 		GoldenAges(4, by=1800),
 	),
+	iHittites: (
+		ResourceCount(sum(iCopper, iIron), 4, by=-900),
+		Production(1000, by=-800),
+		FirstTribute(),
+	),
 	iGreece: (
 		FirstDiscover(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
 		Control(
