@@ -151,9 +151,24 @@ dGoals = {
 		),
 	),
 	iHarappa: (
-		TradeConnection(by=-1600),
+		TradeConnection(by=-1800),
 		BuildingCount((iReservoir, 3), (iGranary, 2), (iWeaver, 2), by=-1500),
-		PopulationCount(30, by=-800),
+		PopulationCount(45, by=-800),
+	),
+	iAssyria: (
+		All(
+			CityCaptureGold(250),
+			UnitLevelCount(3, 5),
+			by=-1200,
+		),
+		Control(
+			plots.region(rMesopotamia).named(MESOPOTAMIA),
+			plots.region(rPersia).named(PERSIA),
+			plots.region(rLevant).named(LEVANT),
+			plots.region(rEgypt).named(EGYPT),
+			by=-900,
+		),
+		CitySpecialistCount(capital().named(CAPITAL), great_people(), 3, by=-600),
 	),
 	iChina: (
 		BuildingCount((iConfucianCathedral, 2), (iTaoistCathedral, 2), by=1000),
