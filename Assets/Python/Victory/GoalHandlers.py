@@ -245,6 +245,13 @@ class EventHandlerRegistry(object):
 		
 		return tradeMission
 	
+	def tribute(self, goal, applicable, func):
+		def tribute((iFrom, iTo)):
+			if applicable(goal, iTo):
+				func(goal, iTo)
+		
+		return tribute
+	
 	def unitPillage(self, goal, applicable, func):
 		def unitPillage((unit, iImprovement, iRoute, iPlayer, iGold)):
 			if applicable(goal, iPlayer):

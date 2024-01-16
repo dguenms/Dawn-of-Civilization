@@ -217,6 +217,28 @@ class FirstSettle(StateRequirement):
 				goal.expire()
 
 
+class FirstTribute(StateRequirement):
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_TRIBUTE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_FIRST_TRIBUTE"
+	
+	def __init__(self, **options):
+		StateRequirement.__init__(self, **options)
+		
+		self.handle("tribute", self.succeed_on_tribute)
+		self.expire("tribute", self.fail_on_tribute)
+	
+	def succeed_on_tribute(self, goal, iTo):
+		self.succeed()
+		goal.check()
+	
+	def fail_on_tribute(self, goal, iTo):
+		self.fail()
+		goal.announce_failure_cause(iTo, "TXT_KEY_VICTORY_ANNOUNCE_FIRST_TRIBUTE")
+		goal.fail()
+
+
 # Second Canadian UHV goal
 class NoCityConquered(StateRequirement):
 

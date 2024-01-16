@@ -125,6 +125,7 @@ public:
 	void reportPlayerDestroyed(PlayerTypes ePlayer); // Leoreth
 	void reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
 	void reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
+	void reportTribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

@@ -988,6 +988,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FIRST_TRIBUTE</Tag>
+		<English>the first to receive tribute in a peace treaty</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_NO_CITY_CONQUERED</Tag>
 		<English>never conquer any cities</English>
 		<French></French>
@@ -1673,6 +1681,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RESOURCE_TRADE_GOLD</Tag>
 		<English>Gold from trading resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_FIRST_TRIBUTE</Tag>
+		<English>tribute received</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

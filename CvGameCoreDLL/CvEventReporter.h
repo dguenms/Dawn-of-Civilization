@@ -155,6 +155,7 @@ public:
 	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
 	void playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
 	void techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
+	void tribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
 
 	DllExport void preSave();
 
