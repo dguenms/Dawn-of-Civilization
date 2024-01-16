@@ -183,10 +183,11 @@ dGoals = {
 	iGreece: (
 		FirstDiscover(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
 		Control(
-			plots.core(iEgypt), # TODO: define in locations or use region
-			plots.core(iPhoenicia), # TODO: define in locations or use region
-			plots.core(iBabylonia), # TODO: define in locations or use region
-			plots.core(iPersia), # TODO: define in locations or use region
+			plots.region(rAnatolia),
+			plots.region(rLevant).named(LEVANT),
+			plots.region(rMesopotamia),
+			plots.region(rPersia),
+			plots.region(rEgypt),
 			at=-330,
 		),
 		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis, by=-250),
