@@ -830,6 +830,56 @@ class TestFirstSettle(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestFirstTribute(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = FirstTribute()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FirstTribute()")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FirstTribute()")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the first to receive tribute in a peace treaty")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_initial(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Tribute received")
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_first_tribute(self):
+		print "test first tribute"
+		events.fireEvent("tribute", 1, 0)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Tribute received")
+		self.assertEqual(self.requirement.state, SUCCESS)
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_first_tribute_other(self):
+		events.fireEvent("tribute", 2, 1)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Tribute received")
+		self.assertEqual(self.requirement.state, FAILURE)
+		self.assertEqual(self.goal.failed, True)
+
+
 class TestNoCityConquered(ExtendedTestCase):
 
 	def setUp(self):
@@ -1132,6 +1182,7 @@ test_cases = [
 	TestFirstDiscover,
 	TestFirstGreatPerson,
 	TestFirstSettle,
+	TestFirstTribute,
 	TestNoCityConquered,
 	TestNoCityLost,
 	TestSettle,

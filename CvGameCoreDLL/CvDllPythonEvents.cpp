@@ -1522,6 +1522,19 @@ void CvDllPythonEvents::reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, Tec
 	}
 }
 
+// Leoreth: tribute given
+void CvDllPythonEvents::reportTribute(PlayerTypes eFrom, PlayerTypes eTo)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("tribute");
+		eventData.add((int)eFrom);
+		eventData.add((int)eTo);
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

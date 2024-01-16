@@ -69,6 +69,7 @@ events.addEvent("sacrificeHappiness")
 events.addEvent("prepareBirth")
 events.addEvent("flip")
 events.addEvent("conquerors")
+events.addEvent("tribute")
 
 
 @handler("buildingBuilt")

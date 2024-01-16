@@ -491,6 +491,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onTradeMission((iGreatMerchant, 0, 20, 20, 100))
 		self.assertEqual(self.iCount, 100)
 	
+	def test_tribute(self):
+		onTribute = self.get("tribute", self.capture)
+		
+		onTribute((2, 1))
+		self.assertEqual(self.argument, None)
+		
+		onTribute((1, self.iPlayer))
+		self.assertEqual(self.argument, (self.goal, self.iPlayer))
+	
 	def test_unit_pillage(self):
 		onUnitPillage = self.get("unitPillage", self.accumulate)
 		

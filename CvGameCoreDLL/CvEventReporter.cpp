@@ -560,6 +560,12 @@ void CvEventReporter::techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes e
 	m_kPythonEventMgr.reportTechTraded(eFrom, eTo, eTech);
 }
 
+// Leoreth: tribute given
+void CvEventReporter::tribute(PlayerTypes eFrom, PlayerTypes eTo)
+{
+	m_kPythonEventMgr.reportTribute(eFrom, eTo);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
