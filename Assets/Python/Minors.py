@@ -29,7 +29,7 @@ def add_city_buildings(tile, iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, units={}, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
@@ -37,6 +37,7 @@ class MinorCity(object):
 		self.iPopulation = iPopulation
 		self.iCiv = iCiv
 		self.iCulture = iCulture
+		self.bIgnoreRuins = bIgnoreRuins
 		self.units = units
 		self.adjective = adjective
 		self.condition = condition
@@ -59,7 +60,7 @@ class MinorCity(object):
 			self.add_buildings()
 	
 	def canFound(self):
-		if plot(self.tile).getImprovementType() == iCityRuins:
+		if not self.bIgnoreRuins and plot(self.tile).getImprovementType() == iCityRuins:
 			return False
 	
 		if year() < year(self.iYear):
@@ -375,6 +376,7 @@ minor_cities = [
 	MinorCity(-2600, iIndependent2, (86, 50), "Halab", iPopulation=1, iCiv=iAssyria, units={iDefend: 1, iWork: 1}, iCulture=10, adjective="TXT_KEY_ADJECTIVE_MARIOTE"),
 	MinorCity(-2000, iBarbarian, (118, 49), "Sanxingdui", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iCiv=iBabylonia, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
+	MinorCity(-1200, iIndependent2, (105, 46), "Indraprastha", iPopulation=1, iCiv=iIndia, units={iDefend: 1, iAttack: 1}, bIgnoreRuins=True, adjective="TXT_KEY_ADJECTIVE_VEDIC"),
 	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=1, iCiv=iAssyria, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
 	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iCiv=iPersia, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
 	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
