@@ -517,6 +517,7 @@ class Wonder(Requirement):
 	
 	def expire_building_built(self, goal, city, iBuilding):
 		if self.iBuilding == iBuilding:
+			goal.announce_failure_cause(city.getOwner(), "TXT_KEY_VICTORY_ANNOUNCE_FIRST_BUILDING", BUILDING.format(iBuilding))
 			goal.expire()
 	
 	def fulfilled(self, evaluator):

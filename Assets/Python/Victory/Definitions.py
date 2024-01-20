@@ -55,6 +55,7 @@ PopulationCount = GoalDefinition(req.PopulationCount)
 ResourceCount = GoalDefinition(req.ResourceCount)
 SpecialistCount = GoalDefinition(req.SpecialistCount)
 TerrainCount = GoalDefinition(req.TerrainCount)
+TradeRouteCount = GoalDefinition(req.TradeRouteCount)
 UnitCombatCount = GoalDefinition(req.UnitCombatCount)
 UnitCount = GoalDefinition(req.UnitCount)
 UnitLevelCount = GoalDefinition(req.UnitLevelCount)
@@ -71,6 +72,7 @@ PopulationPercent = GoalDefinition(req.PopulationPercent)
 PowerPercent = GoalDefinition(req.PowerPercent)
 ReligionSpreadPercent = GoalDefinition(req.ReligionSpreadPercent)
 ReligiousVotePercent = GoalDefinition(req.ReligiousVotePercent)
+RevealedPercent = GoalDefinition(req.RevealedPercent)
 
 
 ### SIMPLE REQUIREMENTS ###

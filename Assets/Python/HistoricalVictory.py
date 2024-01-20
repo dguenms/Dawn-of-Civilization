@@ -39,6 +39,7 @@ ITS_CITY = "TXT_KEY_VICTORY_NAME_ITS_CITY"
 
 # area names
 AFRICA = "TXT_KEY_VICTORY_NAME_AFRICA"
+AFRICAN_COAST = "TXT_KEY_VICTORY_NAME_AFRICAN_COAST"
 ANDES = "TXT_KEY_VICTORY_NAME_ANDES"
 ATLANTIC_COAST = "TXT_KEY_VICTORY_NAME_ATLANTIC_COAST"
 AMERICA = "TXT_KEY_VICTORY_NAME_AMERICA"
@@ -199,12 +200,14 @@ dGoals = {
 	),
 	iPhoenicia: (
 		CityBuilding(city(tCarthage).named(CARTHAGE), iPalace, iGreatCothon, by=-300),
+		ControlledResourceCount(iDye, 6),
 		Control(
 			plots.rectangle(dCoreArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named(ITALY), # TODO: define in locations or use region
 			plots.region(rIberia).named(IBERIA),
 			at=-100,
 		),
-		GoldAmount(5000, at=200),
+		TradeRouteCount(20),
+		RevealedPercent(plots.all().water().adjacent_regions(*lAfrica).named(AFRICAN_COAST), 50),
 	),
 	iPolynesia: (
 		Settle(

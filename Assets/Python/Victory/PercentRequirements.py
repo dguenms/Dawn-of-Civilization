@@ -146,3 +146,23 @@ class ReligiousVotePercent(PercentRequirement):
 	
 	def value(self, iPlayer):
 		return player(iPlayer).getVotes(16, 1)
+
+
+class RevealedPercent(PercentRequirement):
+
+	TYPES = (AREA, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_REVEAL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_REVEALED_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_REVEALED_PERCENT"
+	
+	def __init__(self, area, *parameters, **options):
+		PercentRequirement.__init__(self, area, *parameters, **options)
+		
+		self.area = area
+	
+	def evaluate(self, evaluator):
+		return self.area.create().where(lambda p: evaluator.any(lambda ep: p.isRevealed(player(ep).getTeam(), False))).count()
+
+	def total(self):
+		return self.area.create().count()

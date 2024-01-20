@@ -47,6 +47,9 @@ class Type(object):
 		if isinstance(argument, NamedArgument):
 			return argument.name()
 		return self.format_func(argument, **options)
+	
+	def create(self, argument):
+		return argument
 		
 	def area(self, argument):
 		return None
@@ -170,6 +173,9 @@ class TurnsType(CountType):
 
 class AreaType(Type):
 
+	def create(self, argument):
+		return argument.create()
+
 	def validate_func(self, argument):
 		return isinstance(argument, AreaArgument)
 	
@@ -178,9 +184,9 @@ class AreaType(Type):
 		
 	def area(self, argument):
 		if isinstance(argument, Aggregate):
-			return sum([argument_item.create() for argument_item in argument.items], plots.none())
+			return sum(argument.items, plots.none())
 		
-		return argument.create()
+		return argument
 
 
 class PercentageType(Type):

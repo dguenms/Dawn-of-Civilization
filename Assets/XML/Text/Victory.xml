@@ -249,6 +249,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_REVEAL</Tag>
+		<English>reveal %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SPREAD</Tag>
 		<English>spread %s1</English>
 		<French></French>
@@ -924,6 +932,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_REVEALED_PERCENT</Tag>
+		<English>%s2 of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SLAVE_TRADE_GOLD</Tag>
 		<English>%s1 gold through the slave trade</English>
 		<French></French>
@@ -1142,6 +1158,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TERRAIN_COUNT</Tag>
 		<English>%s2 %s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_ROUTE_COUNT</Tag>
+		<English>trade routes</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1623,6 +1647,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_REVEALED_PERCENT</Tag>
+		<English>Revealed %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_SLAVE_TRADE_GOLD</Tag>
 		<English>Gold from slave trade</English>
 		<French></French>
@@ -1817,6 +1849,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TERRAIN_COUNT</Tag>
 		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COUNT</Tag>
+		<English>%s1 trade routes</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2447,6 +2487,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_AFRICA</Tag>
 		<English>Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_AFRICAN_COAST</Tag>
+		<English>the African Coast</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3195,8 +3243,24 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_GREAT_PERSON_UNKNOWN</Tag>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_TRIBUTE_UNKNOWN</Tag>
 		<English>An unknown civilization is the first to receive tribute.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_BUILDING_OTHER</Tag>
+		<English>%s1 is the first to build %s2.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANNOUNCE_FIRST_BUILDING_UNKNOWN</Tag>
+		<English>An unknown civilization is the first to build %s1.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
