@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAllAttitude(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AllAttitude(AttitudeTypes.ATTITUDE_PLEASED)
+		self.requirement = AllAttitude(AttitudeTypes.ATTITUDE_PLEASED).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -68,7 +68,7 @@ class TestAllowNone(ExtendedTestCase):
 	def setUp(self):
 		self.civs = CivsArgument(1).named("Test Civs")
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = AllowNone(self.civs, self.area)
+		self.requirement = AllowNone(self.civs, self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -165,7 +165,7 @@ class TestAllowOnly(ExtendedTestCase):
 	def setUp(self):
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
 		self.civs = CivsArgument(1).named("Test Civs")
-		self.requirement = AllowOnly(self.area, self.civs)
+		self.requirement = AllowOnly(self.area, self.civs).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -264,7 +264,7 @@ class TestAreaNoStateReligion(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = AreaNoStateReligion(self.area, iCatholicism)
+		self.requirement = AreaNoStateReligion(self.area, iCatholicism).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -340,7 +340,7 @@ class TestAreaNoStateReligion(ExtendedTestCase):
 class TestCommunist(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Communist()
+		self.requirement = Communist().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -399,7 +399,7 @@ class TestControl(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("the Area")
-		self.requirement = Control(self.area)
+		self.requirement = Control(self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -483,7 +483,7 @@ class TestCultureCover(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = CultureCover(self.area)
+		self.requirement = CultureCover(self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -568,7 +568,7 @@ class TestCultureCover(ExtendedTestCase):
 class TestGoldPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = GoldPercent(50)
+		self.requirement = GoldPercent(50).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -641,7 +641,7 @@ class TestMoreCulture(ExtendedTestCase):
 
 	def setUp(self):
 		self.civs = CivsArgument(1, 2).named("Test Civs")
-		self.requirement = MoreCulture(self.civs)
+		self.requirement = MoreCulture(self.civs).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -730,7 +730,7 @@ class TestMoreReligion(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
-		self.requirement = MoreReligion(self.area, iOrthodoxy, iCatholicism)
+		self.requirement = MoreReligion(self.area, iOrthodoxy, iCatholicism).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -831,7 +831,7 @@ class TestMoreReligion(ExtendedTestCase):
 class TestNoReligionPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = NoReligionPercent(50)
+		self.requirement = NoReligionPercent(50).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -902,7 +902,7 @@ class TestNoReligionPercent(ExtendedTestCase):
 class TestNoStateReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = NoStateReligion(iCatholicism)
+		self.requirement = NoStateReligion(iCatholicism).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -947,7 +947,7 @@ class TestNoStateReligion(ExtendedTestCase):
 class TestProject(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Project(iTheInternet)
+		self.requirement = Project(iTheInternet).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1059,7 +1059,8 @@ class TestRoute(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().rectangle((60, 30), (61, 31)).named("Test Area")
-		self.requirement = Route(self.area, [iRouteRoad, iRouteRomanRoad])
+		self.actual_area = self.area.create()
+		self.requirement = Route(self.area, [iRouteRoad, iRouteRomanRoad]).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1087,7 +1088,7 @@ class TestRoute(ExtendedTestCase):
 		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
 	
 	def test_fulfilled(self):
-		for plot in self.area.create():
+		for plot in self.actual_area:
 			plot.setOwner(0)
 			plot.setRouteType(iRouteRoad)
 		
@@ -1095,34 +1096,34 @@ class TestRoute(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
 		finally:
-			for plot in self.area.create():
+			for plot in self.actual_area:
 				plot.setOwner(-1)
 				plot.setRouteType(-1)
 	
 	def test_no_route(self):
-		for plot in self.area.create():
+		for plot in self.actual_area:
 			plot.setOwner(0)
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
 		finally:
-			for plot in self.area.create():
+			for plot in self.actual_area:
 				plot.setOwner(-1)
 	
 	def test_not_owned(self):
-		for plot in self.area.create():
+		for plot in self.actual_area:
 			plot.setRouteType(iRouteRoad)
 		
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Road or Roman Road along Test Area in your territory")
 		finally:
-			for plot in self.area.create():
+			for plot in self.actual_area:
 				plot.setRouteType(-1)
 	
 	def test_different_routes(self):
-		for index, plot in enumerate(self.area.create()):
+		for index, plot in enumerate(self.actual_area):
 			plot.setOwner(0)
 			
 			if index % 2 == 0:
@@ -1134,7 +1135,7 @@ class TestRoute(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
 		finally:
-			for plot in self.area.create():
+			for plot in self.actual_area:
 				plot.setOwner(-1)
 				plot.setRouteType(-1)
 	
@@ -1142,7 +1143,7 @@ class TestRoute(ExtendedTestCase):
 		evaluator = VassalsEvaluator(self.iPlayer)
 		team(1).setVassal(0, True, False)
 		
-		for plot in self.area.create():
+		for plot in self.actual_area:
 			plot.setOwner(1)
 			plot.setRouteType(iRouteRoad)
 		
@@ -1150,7 +1151,7 @@ class TestRoute(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
 			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Road or Roman Road along Test Area in your territory")
 		finally:
-			for plot in self.area.create():
+			for plot in self.actual_area:
 				plot.setOwner(-1)
 				plot.setRouteType(-1)
 	
@@ -1165,7 +1166,7 @@ class TestRouteConnection(ExtendedTestCase):
 	def setUp(self):
 		self.start = AreaArgumentFactory().of([(61, 31)]).named("Start Area")
 		self.target = AreaArgumentFactory().of([(65, 31)]).named("Target Area")
-		self.requirement = RouteConnection([iRouteRailroad], self.start, self.target)
+		self.requirement = RouteConnection([iRouteRailroad], self.start, self.target).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1568,7 +1569,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_city_start(self):
-		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((61, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area"))
+		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((61, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area")).create()
 		
 		capital, destination = cities = TestCities.num(2)
 		
@@ -1593,7 +1594,7 @@ class TestRouteConnection(ExtendedTestCase):
 			cities.kill()
 	
 	def test_city_start_no_city(self):
-		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((65, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area"))
+		requirement = RouteConnection([iRouteRailroad], LocationCityArgument((65, 31)).named("Start City"), AreaArgumentFactory().of([(63, 31)]).named("Target Area")).create()
 		
 		cities = TestCities.num(2)
 		
@@ -1654,7 +1655,7 @@ class TestRouteConnection(ExtendedTestCase):
 class TestStateReligionPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = StateReligionPercent(iConfucianism, 25)
+		self.requirement = StateReligionPercent(iConfucianism, 25).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1717,7 +1718,7 @@ class TestStateReligionPercent(ExtendedTestCase):
 class TestStateReligionPercentSecular(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = StateReligionPercent(iConfucianism, 25, bSecular=True)
+		self.requirement = StateReligionPercent(iConfucianism, 25, bSecular=True).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1764,7 +1765,7 @@ class TestStateReligionPercentSecular(ExtendedTestCase):
 class TestTradeConnection(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = TradeConnection()
+		self.requirement = TradeConnection().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1840,7 +1841,7 @@ class TestTradeConnection(ExtendedTestCase):
 class TestWonder(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Wonder(iPyramids)
+		self.requirement = Wonder(iPyramids).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

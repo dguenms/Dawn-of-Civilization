@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAverageCultureAmount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AverageCultureAmount(500)
+		self.requirement = AverageCultureAmount(500).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -80,7 +80,7 @@ class TestAverageCultureAmount(ExtendedTestCase):
 class TestCultureAmount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CultureAmount(500)
+		self.requirement = CultureAmount(500).create()
 		self.goal = TestGoal()
 	
 		self.requirement.register_handlers(self.goal)
@@ -134,7 +134,7 @@ class TestCultureAmount(ExtendedTestCase):
 class TestGoldAmount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = GoldAmount(500)
+		self.requirement = GoldAmount(500).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -203,7 +203,7 @@ class TestGoldAmount(ExtendedTestCase):
 class TestShrineIncome(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ShrineIncome(iOrthodoxy, 2)
+		self.requirement = ShrineIncome(iOrthodoxy, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

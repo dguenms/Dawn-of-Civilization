@@ -166,10 +166,9 @@ class GoalDescription(Describable):
 		combined_options = self.options.copy()
 		combined_options.update(options)
 		
-		for requirement in self.requirements:
-			requirement.reset()
+		requirements = [requirement.create() for requirement in self.requirements]
 		
-		return Goal(self.requirements, self.desc_key, iPlayer, **combined_options)
+		return Goal(requirements, self.desc_key, iPlayer, **combined_options)
 	
 	def __repr__(self):
 		return "GoalDescription(%s)" % ", ".join(str(requirement) for requirement in self.requirements)

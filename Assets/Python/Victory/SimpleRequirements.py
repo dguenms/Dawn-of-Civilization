@@ -168,7 +168,7 @@ class CultureCover(Requirement):
 		self.area = area
 	
 	def fulfilled(self, evaluator):
-		return self.area.create().all_if_any(lambda p: p.getOwner() in evaluator)
+		return self.area.all_if_any(lambda p: p.getOwner() in evaluator)
 
 
 # Third Inti URV goal
@@ -346,7 +346,7 @@ class Route(Requirement):
 		self.routes = routes
 	
 	def fulfilled(self, evaluator):
-		return self.area.create().all(lambda p: p.getOwner() in evaluator and p.getRouteType() in self.routes)
+		return self.area.all(lambda p: p.getOwner() in evaluator and p.getRouteType() in self.routes)
 
 
 # Second Turkic UHV goal
@@ -362,7 +362,7 @@ class RouteConnection(Requirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION"
 	
 	def __init__(self, routes, starts, targets, start_owners=False, **options):
-		Requirement.__init__(self, routes, starts, targets, **options)
+		Requirement.__init__(self, routes, starts, targets, start_owners=start_owners, **options)
 		
 		self.routes = routes
 		self.starts = starts
@@ -391,11 +391,10 @@ class RouteConnection(Requirement):
 		if not self.valid(start, evaluator):
 			return False
 			
-		targets = self.targets.create()
-		if start in targets:
+		if start in self.targets:
 			return True
 			
-		targets = targets.where(lambda plot: self.valid(plot, evaluator))
+		targets = self.targets.where(lambda plot: self.valid(plot, evaluator))
 		if not targets:
 			return False
 		

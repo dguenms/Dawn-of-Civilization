@@ -20,6 +20,7 @@ class Requirement(object):
 
 	def __init__(self, *parameters, **options):
 		self.parameters = parameters
+		self.options = options
 		
 		self.handlers = Handlers()
 	
@@ -30,7 +31,7 @@ class Requirement(object):
 		return self.parameters == other.parameters
 	
 	def __repr__(self):
-		formatted_parameters = [parameter_type.format_repr(parameter) for parameter_type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)]
+		formatted_parameters = [parameter_type.format_repr(parameter) for parameter_type, parameter in self.get_types_and_parameters()]
 		return "%s(%s)" % (type(self).__name__, ", ".join(formatted_parameters))
 	
 	def init(self, goal):
@@ -56,6 +57,14 @@ class Requirement(object):
 
 	def deregister_handlers(self):
 		event_handler_registry.deregister(self)
+	
+	def get_types_and_parameters(self):
+		for parameter_type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters):
+			yield parameter_type, parameter
+	
+	def create(self):
+		created_parameters = [parameter_type.create(parameter) for parameter_type, parameter in self.get_types_and_parameters()]
+		return self.__class__(*created_parameters, **self.options)
 		
 	def check(self, goal, *args):
 		goal.check()
@@ -63,9 +72,6 @@ class Requirement(object):
 	def indicator(self, evaluator):
 		return indicator(self.fulfilled(evaluator))
 	
-	def reset(self):
-		return
-		
 	def fulfilled(self, evaluator):
 		raise NotImplementedError()
 	
@@ -73,13 +79,13 @@ class Requirement(object):
 		return []
 	
 	def format_parameters(self, **options):
-		return [type.format(type.scale(parameter), **options) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters)] + self.additional_formats()
+		return [type.format(type.scale(parameter), **options) for type, parameter in self.get_types_and_parameters()] + self.additional_formats()
 		
 	def description(self, **options):
 		return text(self.DESC_KEY, *self.format_parameters(**options))
 	
 	def areas(self, **options):
-		return dict((type.format_area(parameter, **options), type.area(parameter)) for type, parameter in zip(self.GLOBAL_TYPES + self.TYPES, self.parameters) if type.area(parameter) is not None)
+		return dict((type.format_area(parameter, **options), type.area(parameter)) for type, parameter in self.get_types_and_parameters() if type.area(parameter) is not None)
 		
 	def area_name(self, tile):
 		return "\n".join(name for name, area in self.areas().items() if tile in area)
@@ -185,9 +191,6 @@ class StateRequirement(Requirement):
 	def __init__(self, *parameters, **options):
 		Requirement.__init__(self, *parameters, **options)
 		
-		self.reset()
-	
-	def reset(self):
 		self.state = POSSIBLE
 	
 	def succeed(self):

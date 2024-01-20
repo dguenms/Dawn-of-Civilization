@@ -162,7 +162,7 @@ class EnslaveCount(TrackRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ENSLAVE_COUNT"
 	
 	def __init__(self, iRequired, excluding=None, **options):
-		TrackRequirement.__init__(self, iRequired, **options)
+		TrackRequirement.__init__(self, iRequired, excluding=excluding, **options)
 		
 		self.excluding = excluding
 		

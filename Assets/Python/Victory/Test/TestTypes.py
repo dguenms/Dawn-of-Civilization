@@ -55,6 +55,9 @@ class TestAmount(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(AMOUNT)
 	
+	def test_create(self):
+		self.assertEqual(AMOUNT.create(1), 1)
+	
 	def test_validate(self):
 		self.assertEqual(AMOUNT.validate(1), True)
 		self.assertEqual(AMOUNT.validate("1"), False)
@@ -71,6 +74,7 @@ class TestArea(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgument().of(TestCities.CITY_LOCATIONS).named("Test Area")
+		self.actual_area = self.area.create()
 	
 	def test_str(self):
 		self.assertEqual(str(AREA), "Area")
@@ -83,6 +87,9 @@ class TestArea(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(AREA)
+	
+	def test_create(self):
+		self.assertEqual(AREA.create(self.area), self.actual_area)
 	
 	def test_validate(self):
 		self.assertEqual(AREA.validate(self.area), True)
@@ -98,11 +105,11 @@ class TestArea(ExtendedTestCase):
 		self.assertEqual(AREA.format_area(area), "Area")
 	
 	def test_area(self):
-		self.assertEqual(AREA.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
+		self.assertEqual(AREA.area(self.actual_area), plots.of(TestCities.CITY_LOCATIONS))
 	
 	def test_area_aggregate(self):
-		area1 = AreaArgument().of([(0, 0)])
-		area2 = AreaArgument().of([(0, 1)])
+		area1 = plots.of([(0, 0)])
+		area2 = plots.of([(0, 1)])
 		aggregate = SumAggregate(area1, area2)
 		
 		self.assertEqual(AREA.area(aggregate), plots.of([(0, 0), (0, 1)]))
@@ -113,6 +120,8 @@ class TestAreaOrCity(ExtendedTestCase):
 	def setUp(self):
 		self.area = AreaArgument().of(TestCities.CITY_LOCATIONS).named("Test Area")
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
+		
+		self.actual_area = self.area.create()
 	
 	def test_str(self):
 		self.assertEqual(str(AREA_OR_CITY), "AreaOrCity")
@@ -125,6 +134,10 @@ class TestAreaOrCity(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(AREA_OR_CITY)
+	
+	def test_create(self):
+		self.assertEqual(AREA_OR_CITY.create(self.area), self.actual_area)
+		self.assertEqual(AREA_OR_CITY.create(self.city), self.city)
 	
 	def test_validate(self):
 		self.assertEqual(AREA_OR_CITY.validate(self.area), True)
@@ -139,7 +152,7 @@ class TestAreaOrCity(ExtendedTestCase):
 		self.assertEqual(AREA_OR_CITY.format_repr(self.city), "Test City")
 	
 	def test_area(self):
-		self.assertEqual(AREA_OR_CITY.area(self.area), plots.of(TestCities.CITY_LOCATIONS))
+		self.assertEqual(AREA_OR_CITY.area(self.actual_area), plots.of(TestCities.CITY_LOCATIONS))
 		self.assertEqual(AREA_OR_CITY.area(self.city), plots.of([TestCities.CITY_LOCATIONS[0]]))
 
 
@@ -156,6 +169,9 @@ class TestAttitude(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(ATTITUDE)
+	
+	def test_create(self):
+		self.assertEqual(ATTITUDE.create(AttitudeTypes.ATTITUDE_FURIOUS), AttitudeTypes.ATTITUDE_FURIOUS)
 	
 	def test_validate(self):
 		self.assertEqual(ATTITUDE.validate(AttitudeTypes.ATTITUDE_FURIOUS), True)
@@ -187,6 +203,9 @@ class TestBuilding(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(BUILDING)
+	
+	def test_create(self):
+		self.assertEqual(BUILDING.create(1), 1)
 	
 	def test_validate(self):
 		self.assertEqual(BUILDING.validate(1), True)
@@ -223,6 +242,10 @@ class TestCity(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(CITY)
 	
+	def test_create(self):
+		self.assertEqual(CITY.create(self.location_city), self.location_city)
+		self.assertEqual(CITY.create(self.capital_city), self.capital_city)
+	
 	def test_validate(self):
 		self.assertEqual(CITY.validate(self.location_city), True)
 		self.assertEqual(CITY.validate(self.capital_city), True)
@@ -257,6 +280,9 @@ class TestCivs(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(CIVS)
 	
+	def test_create(self):
+		self.assertEqual(CIVS.create(self.civs), self.civs)
+	
 	def test_validate(self):
 		self.assertEqual(CIVS.validate(self.civs), True)
 		self.assertEqual(CIVS.validate(1), False)
@@ -282,6 +308,9 @@ class TestCorporation(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(CORPORATION)
+	
+	def test_create(self):
+		self.assertEqual(CORPORATION.create(iTradingCompany), iTradingCompany)
 	
 	def test_validate(self):
 		self.assertEqual(CORPORATION.validate(iTradingCompany), True)
@@ -309,6 +338,9 @@ class TestCount(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(COUNT)
 	
+	def test_create(self):
+		self.assertEqual(COUNT.create(1), 1)
+	
 	def test_validate(self):
 		self.assertEqual(COUNT.validate(1), True)
 		self.assertEqual(COUNT.validate("1"), False)
@@ -334,6 +366,9 @@ class TestCultureLevel(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(CULTURELEVEL)
+	
+	def test_create(self):
+		self.assertEqual(CULTURELEVEL.create(iCultureLevelInfluential), iCultureLevelInfluential)
 	
 	def test_validate(self):
 		self.assertEqual(CULTURELEVEL.validate(iCultureLevelInfluential), True)
@@ -361,6 +396,9 @@ class TestEra(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(ERA)
 	
+	def test_create(self):
+		self.assertEqual(ERA.create(iRenaissance), iRenaissance)
+	
 	def test_validate(self):
 		self.assertEqual(ERA.validate(iRenaissance), True)
 		self.assertEqual(ERA.validate("Renaissance"), False)
@@ -386,6 +424,9 @@ class TestFeature(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(FEATURE)
+	
+	def test_create(self):
+		self.assertEqual(FEATURE.create(iForest), iForest)
 	
 	def test_validate(self):
 		self.assertEqual(FEATURE.validate(iForest), True)
@@ -413,6 +454,9 @@ class TestImprovement(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(IMPROVEMENT)
 	
+	def test_create(self):
+		self.assertEqual(IMPROVEMENT.create(iFarm), iFarm)
+	
 	def test_validate(self):
 		self.assertEqual(IMPROVEMENT.validate(iFarm), True)
 		self.assertEqual(IMPROVEMENT.validate("Farm"), False)
@@ -438,6 +482,9 @@ class TestPercentage(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(PERCENTAGE)
+	
+	def test_create(self):
+		self.assertEqual(PERCENTAGE.create(1), 1)
 	
 	def test_validate(self):
 		self.assertEqual(PERCENTAGE.validate(1), True)
@@ -467,6 +514,9 @@ class TestProject(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(PROJECT)
 	
+	def test_create(self):
+		self.assertEqual(PROJECT.create(iTheInternet), iTheInternet)
+	
 	def test_validate(self):
 		self.assertEqual(PROJECT.validate(iTheInternet), True)
 		self.assertEqual(PROJECT.validate("The Internet"), False)
@@ -492,6 +542,9 @@ class TestReligion(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(RELIGION)
+	
+	def test_create(self):
+		self.assertEqual(RELIGION.create(iOrthodoxy), iOrthodoxy)
 	
 	def test_validate(self):
 		self.assertEqual(RELIGION.validate(iOrthodoxy), True)
@@ -519,6 +572,9 @@ class TestReligionAdjective(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(RELIGION_ADJECTIVE)
 	
+	def test_create(self):
+		self.assertEqual(RELIGION_ADJECTIVE.create(iOrthodoxy), iOrthodoxy)
+	
 	def test_validate(self):
 		self.assertEqual(RELIGION_ADJECTIVE.validate(iOrthodoxy), True)
 		self.assertEqual(RELIGION_ADJECTIVE.validate("Orthodoxy"), False)
@@ -545,6 +601,9 @@ class TestResource(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(RESOURCE)
 	
+	def test_create(self):
+		self.assertEqual(RESOURCE.create(iCopper), iCopper)
+	
 	def test_validate(self):
 		self.assertEqual(RESOURCE.validate(iCopper), True)
 		self.assertEqual(RESOURCE.validate("Copper"), False)
@@ -570,6 +629,10 @@ class TestRoutes(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(ROUTES)
+	
+	def test_create(self):
+		self.assertEqual(ROUTES.create([iRouteRoad, iRouteRailroad]), [iRouteRoad, iRouteRailroad])
+		self.assertEqual(ROUTES.create(NamedList(iRouteRoad, iRouteRailroad)), NamedList(iRouteRoad, iRouteRailroad))
 	
 	def test_validate(self):
 		self.assertEqual(ROUTES.validate([iRouteRoad, iRouteRailroad]), True)
@@ -603,6 +666,9 @@ class TestSpecialist(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(SPECIALIST)
+	
+	def test_create(self):
+		self.assertEqual(SPECIALIST.create(iSpecialistGreatScientist), iSpecialistGreatScientist)
 	
 	def test_validate(self):
 		self.assertEqual(SPECIALIST.validate(iSpecialistGreatScientist), True)
@@ -643,6 +709,9 @@ class TestTech(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(TECH)
 	
+	def test_create(self):
+		self.assertEqual(TECH.create(iEngineering), iEngineering)
+	
 	def test_validate(self):
 		self.assertEqual(TECH.validate(iEngineering), True)
 		self.assertEqual(TECH.validate("Engineering"), False)
@@ -668,6 +737,9 @@ class TestTerrain(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(TERRAIN)
+	
+	def test_create(self):
+		self.assertEqual(TERRAIN.create(iOcean), iOcean)
 	
 	def test_validate(self):
 		self.assertEqual(TERRAIN.validate(iOcean), True)
@@ -695,6 +767,9 @@ class TestTurns(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(TURNS)
 	
+	def test_create(self):
+		self.assertEqual(TURNS.create(10), 10)
+	
 	def test_validate(self):
 		self.assertEqual(TURNS.validate(10), True)
 		self.assertEqual(TURNS.validate("ten"), False)
@@ -721,6 +796,9 @@ class TestUnit(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(UNIT)
 	
+	def test_create(self):
+		self.assertEqual(UNIT.create(iSwordsman), iSwordsman)
+	
 	def test_validate(self):
 		self.assertEqual(UNIT.validate(iSwordsman), True)
 		self.assertEqual(UNIT.validate("Swordsman"), False)
@@ -746,6 +824,9 @@ class TestUnitCombat(ExtendedTestCase):
 	
 	def test_pickle(self):
 		self.assertPickleable(UNITCOMBAT)
+	
+	def test_create(self):
+		self.assertEqual(UNITCOMBAT.create(UnitCombatTypes.UNITCOMBAT_MELEE), UnitCombatTypes.UNITCOMBAT_MELEE)
 	
 	def test_validate(self):
 		self.assertEqual(UNITCOMBAT.validate(UnitCombatTypes.UNITCOMBAT_MELEE), True)

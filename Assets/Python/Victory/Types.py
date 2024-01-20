@@ -275,6 +275,11 @@ class UnitCombatType(Type):
 
 class AreaOrCityType(Type):
 
+	def create(self, argument):
+		if isinstance(argument, AreaArgument):
+			return argument.create()
+		return argument
+
 	def validate_func(self, argument):
 		return isinstance(argument, (AreaArgument, CityArgument))
 	
@@ -282,10 +287,9 @@ class AreaOrCityType(Type):
 		return argument.name()
 	
 	def area(self, argument):
-		if isinstance(argument, AreaArgument):
-			return argument.create()
 		if isinstance(argument, CityArgument):
 			return argument.area()
+		return argument
 
 
 class SpecialistType(InfoType):
