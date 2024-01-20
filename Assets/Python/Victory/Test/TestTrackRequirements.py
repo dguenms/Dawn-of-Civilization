@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAcquiredCities(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AcquiredCities(2)
+		self.requirement = AcquiredCities(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -81,7 +81,7 @@ class TestAcquiredCities(ExtendedTestCase):
 class TestBrokeredPeace(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BrokeredPeace(2)
+		self.requirement = BrokeredPeace(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -148,7 +148,7 @@ class TestBrokeredPeace(ExtendedTestCase):
 class TestCelebrateTurns(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CelebrateTurns(2)
+		self.requirement = CelebrateTurns(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -259,7 +259,7 @@ class TestCelebrateTurns(ExtendedTestCase):
 class TestCityCaptureGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityCaptureGold(100)
+		self.requirement = CityCaptureGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -418,7 +418,7 @@ class TestCombatFood(ExtendedTestCase):
 class TestConqueredCities(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ConqueredCities(2)
+		self.requirement = ConqueredCities(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -532,7 +532,7 @@ class TestConqueredCitiesInside(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = ConqueredCities(2, inside=self.area)
+		self.requirement = ConqueredCities(2, inside=self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -581,7 +581,7 @@ class TestConqueredCitiesOutside(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().all().without([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = ConqueredCities(2, outside=self.area)
+		self.requirement = ConqueredCities(2, outside=self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -630,7 +630,7 @@ class TestConqueredCitiesCivs(ExtendedTestCase):
 
 	def setUp(self):
 		self.civs = CivsArgument(1).named("Test Civs")
-		self.requirement = ConqueredCities(2, civs=self.civs)
+		self.requirement = ConqueredCities(2, civs=self.civs).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -678,7 +678,7 @@ class TestConqueredCitiesCivs(ExtendedTestCase):
 class TestEnslaveCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = EnslaveCount(2)
+		self.requirement = EnslaveCount(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -776,7 +776,7 @@ class TestEnslaveCount(ExtendedTestCase):
 class TestEnslaveCountExcluding(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = EnslaveCount(2, excluding=CivsArgument(1).named("Test Civs"))
+		self.requirement = EnslaveCount(2, excluding=CivsArgument(1).named("Test Civs")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -817,7 +817,7 @@ class TestEnslaveCountExcluding(ExtendedTestCase):
 class TestEraFirstDiscover(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = EraFirstDiscover(iClassical, 2)
+		self.requirement = EraFirstDiscover(iClassical, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -976,7 +976,7 @@ class TestEraFirstDiscover(ExtendedTestCase):
 class TestGoldenAges(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = GoldenAges(2)
+		self.requirement = GoldenAges(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1045,7 +1045,7 @@ class TestGoldenAges(ExtendedTestCase):
 class TestGreatGenerals(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = GreatGenerals(2)
+		self.requirement = GreatGenerals(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1151,7 +1151,7 @@ class TestGreatGenerals(ExtendedTestCase):
 class TestHappiestTurns(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = HappiestTurns(3)
+		self.requirement = HappiestTurns(3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1241,7 +1241,7 @@ class TestHappiestTurns(ExtendedTestCase):
 class TestHealthiestTurns(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = HealthiestTurns(3)
+		self.requirement = HealthiestTurns(3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1331,7 +1331,7 @@ class TestHealthiestTurns(ExtendedTestCase):
 class TestPeaceTurns(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PeaceTurns(2)
+		self.requirement = PeaceTurns(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1379,7 +1379,7 @@ class TestPeaceTurns(ExtendedTestCase):
 class TestPillageCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PillageCount(2)
+		self.requirement = PillageCount(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1444,7 +1444,7 @@ class TestPillageCount(ExtendedTestCase):
 class TestPiracyGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PiracyGold(100)
+		self.requirement = PiracyGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1546,7 +1546,7 @@ class TestPiracyGold(ExtendedTestCase):
 class TestPopeTurns(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PopeTurns(2)
+		self.requirement = PopeTurns(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1582,7 +1582,7 @@ class TestPopeTurns(ExtendedTestCase):
 class TestProduction(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Production(10)
+		self.requirement = Production(10).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1636,7 +1636,7 @@ class TestProduction(ExtendedTestCase):
 class TestRaidGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = RaidGold(100)
+		self.requirement = RaidGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1735,7 +1735,7 @@ class TestRaidGold(ExtendedTestCase):
 class TestRazeCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = RazeCount(2)
+		self.requirement = RazeCount(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1818,7 +1818,7 @@ class TestRazeCount(ExtendedTestCase):
 class TestResourceTradeGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ResourceTradeGold(100)
+		self.requirement = ResourceTradeGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1893,7 +1893,7 @@ class TestResourceTradeGold(ExtendedTestCase):
 class TestSacrificeHappiness(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SacrificeHappiness(2)
+		self.requirement = SacrificeHappiness(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1990,7 +1990,7 @@ class TestSacrificeHappiness(ExtendedTestCase):
 class TestSettledCities(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SettledCities(2)
+		self.requirement = SettledCities(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2086,7 +2086,7 @@ class TestSettledCities(ExtendedTestCase):
 class TestSettledCitiesArea(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SettledCities(2, area=AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area"))
+		self.requirement = SettledCities(2, area=AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2134,7 +2134,7 @@ class TestSettledCitiesArea(ExtendedTestCase):
 class TestSlaveTradeGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SlaveTradeGold(100)
+		self.requirement = SlaveTradeGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2210,7 +2210,7 @@ class TestSlaveTradeGold(ExtendedTestCase):
 class TestSunkShips(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SunkShips(2)
+		self.requirement = SunkShips(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2315,7 +2315,7 @@ class TestSunkShips(ExtendedTestCase):
 class TestTradeGold(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = TradeGold(100)
+		self.requirement = TradeGold(100).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

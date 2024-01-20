@@ -17,7 +17,7 @@ class AttitudeCount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
 	
 	def __init__(self, iAttitude, iRequired, civs=None, iReligion=None, bIndependent=False, bCommunist=False, **options):
-		ThresholdRequirement.__init__(self, as_int(iAttitude), iRequired, **options)
+		ThresholdRequirement.__init__(self, as_int(iAttitude), iRequired, civs=civs, iReligion=iReligion, bIndependent=bIndependent, bCommunist=bCommunist, **options)
 		
 		self.civs = civs
 		self.iReligion = iReligion
@@ -410,7 +410,7 @@ class OpenBorderCount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_OPEN_BORDER_COUNT"
 	
 	def __init__(self, iRequired, civs=None, **options):
-		ThresholdRequirement.__init__(self, iRequired, **options)
+		ThresholdRequirement.__init__(self, iRequired, civs=civs, **options)
 		
 		self.civs = civs
 	
@@ -637,7 +637,7 @@ class VassalCount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_VASSAL_COUNT"
 	
 	def __init__(self, iRequired, civs=None, iStateReligion=None, **options):
-		ThresholdRequirement.__init__(self, iRequired, **options)
+		ThresholdRequirement.__init__(self, iRequired, civs=civs, iStateReligion=iStateReligion, **options)
 		
 		self.civs = civs
 		self.iStateReligion = iStateReligion

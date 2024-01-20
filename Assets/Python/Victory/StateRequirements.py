@@ -196,7 +196,7 @@ class FirstSettle(StateRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_FIRST_SETTLE"
 	
 	def __init__(self, area, allowed=[], **options):
-		StateRequirement.__init__(self, area, **options)
+		StateRequirement.__init__(self, area, allowed=allowed, **options)
 		
 		self.area = area
 		self.allowed = allowed

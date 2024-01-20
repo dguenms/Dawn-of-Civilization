@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestBestCultureCities(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BestCultureCities(3)
+		self.requirement = BestCultureCities(3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -195,7 +195,7 @@ class TestBestCultureCity(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = BestCultureCity(self.city)
+		self.requirement = BestCultureCity(self.city).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -337,7 +337,7 @@ class TestBestCultureCity(ExtendedTestCase):
 class TestBestPopulationCities(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BestPopulationCities(3)
+		self.requirement = BestPopulationCities(3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -526,7 +526,7 @@ class TestBestPopulationCity(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = BestPopulationCity(self.city)
+		self.requirement = BestPopulationCity(self.city).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -668,7 +668,7 @@ class TestBestPopulationCity(ExtendedTestCase):
 class TestBestPopulationPlayer(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BestPopulationPlayer()
+		self.requirement = BestPopulationPlayer().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -776,7 +776,7 @@ class TestBestSpecialistCity(ExtendedTestCase):
 	
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = BestSpecialistCity(self.city, iSpecialistGreatScientist)
+		self.requirement = BestSpecialistCity(self.city, iSpecialistGreatScientist).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -865,7 +865,7 @@ class TestBestSpecialistCity(ExtendedTestCase):
 class TestBestTechPlayer(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BestTechPlayer()
+		self.requirement = BestTechPlayer().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -991,7 +991,7 @@ class TestBestTechPlayer(ExtendedTestCase):
 class TestBestTechPlayers(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BestTechPlayers(3, subject=SECULAR)
+		self.requirement = BestTechPlayers(3, subject=SECULAR).create()
 		self.goal = TestGoal()
 		self.evaluator = SecularEvaluator(self.iPlayer)
 		
@@ -1096,7 +1096,7 @@ class TestBestTradeIncomeCity(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = BestTradeIncomeCity(self.city)
+		self.requirement = BestTradeIncomeCity(self.city).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1139,7 +1139,7 @@ class TestBestWonderCity(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = BestWonderCity(self.city)
+		self.requirement = BestWonderCity(self.city).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

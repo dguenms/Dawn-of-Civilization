@@ -19,10 +19,10 @@ class AreaPercent(PercentRequirement):
 		self.area = area
 		
 	def value(self, iPlayer, area):
-		return area.create().land().owner(iPlayer).count()
+		return area.land().owner(iPlayer).count()
 	
 	def total(self):
-		return self.area.create().land().count()
+		return self.area.land().count()
 
 
 # Third Inca UHV goal
@@ -40,10 +40,10 @@ class AreaPopulationPercent(PercentRequirement):
 		self.area = area
 	
 	def value(self, iPlayer, area):
-		return area.create().cities().owner(iPlayer).sum(CyCity.getPopulation)
+		return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
 	
 	def total(self):
-		return self.area.create().cities().sum(CyCity.getPopulation)
+		return self.area.cities().sum(CyCity.getPopulation)
 
 
 # Third American UHV goal
@@ -162,7 +162,7 @@ class RevealedPercent(PercentRequirement):
 		self.area = area
 	
 	def evaluate(self, evaluator):
-		return self.area.create().where(lambda p: evaluator.any(lambda ep: p.isRevealed(player(ep).getTeam(), False))).count()
+		return self.area.where(lambda p: evaluator.any(lambda ep: p.isRevealed(player(ep).getTeam(), False))).count()
 
 	def total(self):
-		return self.area.create().count()
+		return self.area.count()

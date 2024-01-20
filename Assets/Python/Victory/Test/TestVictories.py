@@ -129,15 +129,12 @@ class TestHistoricalVictory(ExtendedTestCase):
 	def test_create(self):
 		victory = HistoricalVictory.create(0)
 		
-		first_goal = AllGoal([Goal([req.Wonder(iGreatSphinx), req.Wonder(iPyramids)], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(500)], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
-		second_goal = Goal([req.Control(AreaArgumentFactory().region(rNubia).named("Nubia")), req.Control(AreaArgumentFactory().region(rLevant).named("the Levant"))], req.Control.GOAL_DESC_KEY, 0)
-		third_goal = AllGoal([Goal([req.Wonder(iGreatLibrary), req.Wonder(iGreatLighthouse)], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(5000)], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
+		first_goal = AllGoal([Goal([req.Wonder(iGreatSphinx).create(), req.Wonder(iPyramids).create()], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(500).create()], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
+		second_goal = Goal([req.Control(AreaArgumentFactory().region(rNubia).named("Nubia")).create(), req.Control(AreaArgumentFactory().region(rLevant).named("the Levant")).create()], req.Control.GOAL_DESC_KEY, 0)
+		third_goal = AllGoal([Goal([req.Wonder(iGreatLibrary).create(), req.Wonder(iGreatLighthouse).create()], req.Wonder.GOAL_DESC_KEY, 0), Goal([req.CultureAmount(5000).create()], req.CultureAmount.GOAL_DESC_KEY, 0)], 0)
 		
 		try:
 			self.assertEqual(victory.iPlayer, 0)
-			
-			
-			
 			self.assertEqual(victory.goals, (first_goal, second_goal, third_goal))
 		finally:
 			victory.disable()

@@ -9,7 +9,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 		self.civs = CivsArgument(iChina)
 		self.area = AreaArgumentFactory().rectangle((35, 25), (40, 30)).named("Rectangle")
 	
-		self.requirement = ContactBeforeRevealed(self.civs, self.area)
+		self.requirement = ContactBeforeRevealed(self.civs, self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -91,7 +91,7 @@ class TestContactBeforeRevealed(ExtendedTestCase):
 class TestConvertAfterFounding(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ConvertAfterFounding(iOrthodoxy, 5)
+		self.requirement = ConvertAfterFounding(iOrthodoxy, 5).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -275,7 +275,7 @@ class TestConvertAfterFounding(ExtendedTestCase):
 class TestDiscover(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = Discover(iEngineering)
+		self.requirement = Discover(iEngineering).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -360,7 +360,7 @@ class TestDiscover(ExtendedTestCase):
 class TestEnterEraBefore(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = EnterEraBefore(iClassical, iMedieval)
+		self.requirement = EnterEraBefore(iClassical, iMedieval).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -453,7 +453,7 @@ class TestEnterEraBefore(ExtendedTestCase):
 class TestFirstDiscover(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = FirstDiscover(iEngineering)
+		self.requirement = FirstDiscover(iEngineering).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -548,7 +548,7 @@ class TestFirstGreatPerson(ExtendedTestCase):
 			self.required = 1
 
 	def setUp(self):
-		self.requirement = FirstGreatPerson(iGreatScientist)
+		self.requirement = FirstGreatPerson(iGreatScientist).create()
 		self.goal = self.TestGoalRequired(self.requirement)
 		
 		self.requirement.register_handlers(self.goal)
@@ -667,7 +667,7 @@ class TestFirstSettle(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
-		self.requirement = FirstSettle(self.area)
+		self.requirement = FirstSettle(self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -833,7 +833,7 @@ class TestFirstSettle(ExtendedTestCase):
 class TestFirstTribute(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = FirstTribute()
+		self.requirement = FirstTribute().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -964,7 +964,7 @@ class TestNoCityConquered(ExtendedTestCase):
 class TestNoCityLost(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = NoCityLost()
+		self.requirement = NoCityLost().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1016,7 +1016,7 @@ class TestSettle(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
-		self.requirement = Settle(self.area)
+		self.requirement = Settle(self.area).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1086,7 +1086,7 @@ class TestTradeMission(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = TradeMission(self.city)
+		self.requirement = TradeMission(self.city).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

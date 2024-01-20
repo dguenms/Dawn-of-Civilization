@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestAttitudeCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2)
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -84,7 +84,7 @@ class TestAttitudeCount(ExtendedTestCase):
 class TestAttitudeCountCommunist(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bCommunist=True)
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bCommunist=True).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -131,7 +131,7 @@ class TestAttitudeCountCommunist(ExtendedTestCase):
 class TestAttitudeCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, civs=CivsArgument(1, 2).named("Test Civs"))
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, civs=CivsArgument(1, 2).named("Test Civs")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -176,7 +176,7 @@ class TestAttitudeCountCivs(ExtendedTestCase):
 class TestAttitudeCountIndependent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bIndependent=True)
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, bIndependent=True).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -224,7 +224,7 @@ class TestAttitudeCountIndependent(ExtendedTestCase):
 class TestAttitudeCountReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, iReligion=iJudaism)
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, iReligion=iJudaism).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -295,7 +295,7 @@ class TestAttitudeCountReligion(ExtendedTestCase):
 class TestAveragePopulation(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = AveragePopulation(4)
+		self.requirement = AveragePopulation(4).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -388,7 +388,7 @@ class TestAveragePopulation(ExtendedTestCase):
 class TestBuildingCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = BuildingCount(iMarket, 3)
+		self.requirement = BuildingCount(iMarket, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -796,7 +796,7 @@ class TestCityBuildingCount(ExtendedTestCase):
 
 	def setUp(self):
 		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = CityBuildingCount(self.city, iGranary, 1)
+		self.requirement = CityBuildingCount(self.city, iGranary, 1).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1005,7 +1005,7 @@ class TestCityCount(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of(TestCities.CITY_LOCATIONS).named("Test Area")
-		self.requirement = CityCount(self.area, 2)
+		self.requirement = CityCount(self.area, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1114,7 +1114,7 @@ class TestCityCount(ExtendedTestCase):
 class TestControlledResourceCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ControlledResourceCount(iGold, 2)
+		self.requirement = ControlledResourceCount(iGold, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1201,7 +1201,7 @@ class TestControlledResourceCount(ExtendedTestCase):
 class TestCorporationCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CorporationCount(iTradingCompany, 3)
+		self.requirement = CorporationCount(iTradingCompany, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1307,7 +1307,7 @@ class TestCorporationCount(ExtendedTestCase):
 class TestCultureCity(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CultureCity(1000)
+		self.requirement = CultureCity(1000).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1386,7 +1386,7 @@ class TestCultureCity(ExtendedTestCase):
 class TestCultureLevelCityCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CultureLevelCityCount(iCultureLevelRefined, 3)
+		self.requirement = CultureLevelCityCount(iCultureLevelRefined, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1516,7 +1516,7 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 class TestFeatureCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = FeatureCount(iForest, 20)
+		self.requirement = FeatureCount(iForest, 20).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1591,7 +1591,7 @@ class TestFeatureCount(ExtendedTestCase):
 class TestImprovementCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ImprovementCount(iCottage, 2)
+		self.requirement = ImprovementCount(iCottage, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1721,7 +1721,7 @@ class TestImprovementCount(ExtendedTestCase):
 class TestOpenBorderCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = OpenBorderCount(2)
+		self.requirement = OpenBorderCount(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1798,7 +1798,7 @@ class TestOpenBorderCount(ExtendedTestCase):
 class TestOpenBorderCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = OpenBorderCount(2, civs=CivsArgument(1, 2).named("Test Civs"))
+		self.requirement = OpenBorderCount(2, civs=CivsArgument(1, 2).named("Test Civs")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1845,7 +1845,7 @@ class TestOpenBorderCountCivs(ExtendedTestCase):
 class TestPeakCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PeakCount(20)
+		self.requirement = PeakCount(20).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1920,7 +1920,7 @@ class TestPeakCount(ExtendedTestCase):
 class TestPopulationCityCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PopulationCityCount(10, 3)
+		self.requirement = PopulationCityCount(10, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2050,7 +2050,7 @@ class TestPopulationCityCount(ExtendedTestCase):
 class TestPopulationCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PopulationCount(5)
+		self.requirement = PopulationCount(5).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2140,7 +2140,7 @@ class TestPopulationCount(ExtendedTestCase):
 class TestResourceCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ResourceCount(iGold, 2)
+		self.requirement = ResourceCount(iGold, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2212,7 +2212,7 @@ class TestResourceCount(ExtendedTestCase):
 class TestSpecialistCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SpecialistCount(iSpecialistGreatScientist, 2)
+		self.requirement = SpecialistCount(iSpecialistGreatScientist, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2315,7 +2315,7 @@ class TestSpecialistCount(ExtendedTestCase):
 class TestTerrainCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = TerrainCount(iOcean, 50)
+		self.requirement = TerrainCount(iOcean, 50).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2391,7 +2391,7 @@ class TestTerrainCount(ExtendedTestCase):
 class TestUnitCombatCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = UnitCombatCount(UnitCombatTypes.UNITCOMBAT_ARCHER, 2)
+		self.requirement = UnitCombatCount(UnitCombatTypes.UNITCOMBAT_ARCHER, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2533,7 +2533,7 @@ class TestUnitCombatCount(ExtendedTestCase):
 class TestUnitCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = UnitCount(iSwordsman, 3)
+		self.requirement = UnitCount(iSwordsman, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2630,7 +2630,7 @@ class TestUnitCount(ExtendedTestCase):
 class TestUnitLevelCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = UnitLevelCount(3, 2)
+		self.requirement = UnitLevelCount(3, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2709,7 +2709,7 @@ class TestUnitLevelCount(ExtendedTestCase):
 class TestVassalCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = VassalCount(2)
+		self.requirement = VassalCount(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2798,7 +2798,7 @@ class TestVassalCount(ExtendedTestCase):
 class TestVassalCountCivs(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = VassalCount(2, civs=CivsArgument(1, 2).named("Test Civs"))
+		self.requirement = VassalCount(2, civs=CivsArgument(1, 2).named("Test Civs")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2839,7 +2839,7 @@ class TestVassalCountCivs(ExtendedTestCase):
 class TestVassalCountStateReligion(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = VassalCount(2, iStateReligion=iOrthodoxy)
+		self.requirement = VassalCount(2, iStateReligion=iOrthodoxy).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

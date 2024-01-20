@@ -6,7 +6,7 @@ from TestVictoryCommon import *
 class TestCityCultureLevel(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityCultureLevel(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iCultureLevelRefined)
+		self.requirement = CityCultureLevel(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iCultureLevelRefined).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -94,7 +94,7 @@ class TestCityCultureLevel(ExtendedTestCase):
 class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityDifferentGreatPeopleCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 2)
+		self.requirement = CityDifferentGreatPeopleCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -218,7 +218,7 @@ class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 class TestCityPopulation(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CityPopulation(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 5)
+		self.requirement = CityPopulation(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 5).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -303,7 +303,7 @@ class TestCityPopulation(ExtendedTestCase):
 class TestCitySpecialistCount(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CitySpecialistCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iSpecialistGreatArtist, 2)
+		self.requirement = CitySpecialistCount(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), iSpecialistGreatArtist, 2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

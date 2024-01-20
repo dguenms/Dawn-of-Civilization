@@ -9,7 +9,7 @@ class TestAreaPercent(ExtendedTestCase):
 		self.area = AreaArgumentFactory().rectangle((60, 40), (79, 41)).named("Test Area")
 		self.assertEqual(self.area.land().count(), 40)
 		
-		self.requirement = AreaPercent(self.area, 30)
+		self.requirement = AreaPercent(self.area, 30).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -113,7 +113,7 @@ class TestAreaPopulationPercent(ExtendedTestCase):
 
 	def setUp(self):
 		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
-		self.requirement = AreaPopulationPercent(self.area, 40)
+		self.requirement = AreaPopulationPercent(self.area, 40).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -212,7 +212,7 @@ class TestAreaPopulationPercent(ExtendedTestCase):
 class TestCommercePercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = CommercePercent(15)
+		self.requirement = CommercePercent(15).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -270,7 +270,7 @@ class TestCommercePercent(ExtendedTestCase):
 class TestLandPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = LandPercent(10)
+		self.requirement = LandPercent(10).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -353,7 +353,7 @@ class TestLandPercent(ExtendedTestCase):
 class TestPopulationPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PopulationPercent(30)
+		self.requirement = PopulationPercent(30).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -433,7 +433,7 @@ class TestPopulationPercent(ExtendedTestCase):
 class TestPowerPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = PowerPercent(25)
+		self.requirement = PowerPercent(25).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -495,7 +495,7 @@ class TestPowerPercent(ExtendedTestCase):
 class TestReligionSpreadPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ReligionSpreadPercent(iOrthodoxy, 30)
+		self.requirement = ReligionSpreadPercent(iOrthodoxy, 30).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -597,7 +597,7 @@ class TestReligionSpreadPercent(ExtendedTestCase):
 class TestReligiousVotePercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = ReligiousVotePercent(30)
+		self.requirement = ReligiousVotePercent(30).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)

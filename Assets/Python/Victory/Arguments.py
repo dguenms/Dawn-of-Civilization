@@ -51,6 +51,12 @@ class NamedList(NamedArgument):
 		NamedArgument.__init__(self)
 		self.items = list(items)
 	
+	def __eq__(self, other):
+		if not isinstance(other, self.__class__):
+			return False
+		
+		return self.items == other.items
+	
 	def __iter__(self):
 		return iter(self.items)
 	

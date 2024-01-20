@@ -285,27 +285,24 @@ class TestGoalDescription(ExtendedTestCase):
 		
 		self.assertType(goal.evaluator, VassalsEvaluator)
 	
-	def test_create_resets_requirements(self):
-		requirement = FirstDiscover(iWriting)
+	def test_create_recreates_requirements(self):
+		requirement = Control(AreaArgumentFactory().of([(0, 0)]))
 		goal_description = GoalDescription([requirement], "TXT_KEY_VICTORY_DESC_CONTROL")
-		
-		requirement.succeed()
-		
-		self.assertEqual(goal_description.requirements[0].state, SUCCESS)
 		
 		goal = goal_description(0)
 		
-		self.assertEqual(goal_description.requirements[0].state, POSSIBLE)
-		self.assertEqual(goal.requirements[0].state, POSSIBLE)
-
+		self.assertEqual(goal_description.requirements[0] is goal.requirements[0], False)
+		self.assertType(goal_description.requirements[0].parameters[0], AreaArgument)
+		self.assertType(goal.requirements[0].parameters[0], Plots)
+	
 
 class TestGoal(ExtendedTestCase):
 
 	def setUp(self):
-		self.goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
 		
-		self.double_goal = Goal([BuildingCount(iGranary, 3), BuildingCount(iLibrary, 4)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
-		self.triple_goal = Goal([BuildingCount(iGranary, 3), BuildingCount(iLibrary, 4), BuildingCount(iWalls, 5)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.double_goal = Goal([BuildingCount(iGranary, 3).create(), BuildingCount(iLibrary, 4).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.triple_goal = Goal([BuildingCount(iGranary, 3).create(), BuildingCount(iLibrary, 4).create(), BuildingCount(iWalls, 5).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
 		
 		team(0).setHasTech(iCalendar, True, 0, False, False)
 		
@@ -328,11 +325,11 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(repr(self.goal), "Goal([BuildingCount(Granary, 3)], 0)")
 	
 	def test_equal(self):
-		identical = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
-		different_requirement = Goal([BuildingCount(iGranary, 4)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
-		different_num_requirements = Goal([BuildingCount(iGranary, 3), BuildingCount(iLibrary, 4)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
-		different_description = Goal([BuildingCount(iGranary, 3)], "SOME_OTHER_TXT_KEY", 0)
-		different_player = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 1)
+		identical = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		different_requirement = Goal([BuildingCount(iGranary, 4).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		different_num_requirements = Goal([BuildingCount(iGranary, 3).create(), BuildingCount(iLibrary, 4).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		different_description = Goal([BuildingCount(iGranary, 3).create()], "SOME_OTHER_TXT_KEY", 0)
+		different_player = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 1)
 		
 		self.assertEqual(self.goal, identical)
 		self.assertNotEqual(self.goal, different_requirement)
@@ -442,7 +439,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_check_at(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
 		
 		cities = TestCities.num(3)
 		for city in cities:
@@ -457,7 +454,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_check_at_different_turn(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-2000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-2000)
 		
 		cities = TestCities.num(3)
 		for city in cities:
@@ -607,7 +604,7 @@ class TestGoal(ExtendedTestCase):
 			city.kill()
 	
 	def test_check_other_evaluator(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer, subject=VASSALS)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer, subject=VASSALS)
 		
 		self.assertEqual(goal.state, POSSIBLE)
 		
@@ -633,21 +630,21 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_description_global_arguments(self):
 		city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		goal = Goal([CityBuildingCount(city, iGranary, 1), CityBuildingCount(city, iPyramids, 1)], "TXT_KEY_VICTORY_DESC_BUILD_IN_CITY", 0)
+		goal = Goal([CityBuildingCount(city, iGranary, 1).create(), CityBuildingCount(city, iPyramids, 1).create()], "TXT_KEY_VICTORY_DESC_BUILD_IN_CITY", 0)
 		
 		self.assertEqual(goal.description(), "Build a Granary and the Pyramids in Test City")
 	
 	def test_description_required(self):
 		goal = Goal([
-			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[0]]).named("First Area")), 
-			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[1]]).named("Second Area")),
-			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[2]]).named("Third Area")),
+			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[0]]).named("First Area")).create(), 
+			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[1]]).named("Second Area")).create(),
+			Control(AreaArgumentFactory().of([TestCities.CITY_LOCATIONS[2]]).named("Third Area")).create(),
 		], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=2)
 		
 		self.assertEqual(goal.description(), "Control two out of First Area, Second Area and Third Area")
 	
 	def test_title(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, title_key="Some title")
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, title_key="Some title")
 		
 		self.assertEqual(goal.title(), "Some title")
 	
@@ -655,12 +652,12 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.title(), "")
 	
 	def test_full_description(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="TXT_KEY_VICTORY_TITLE_CATH1")
+		goal = Goal([BuildingCount(iGranary, 3).create()], "Some description", 0, title_key="TXT_KEY_VICTORY_TITLE_CATH1")
 		
 		self.assertEqual(goal.full_description(), "Holy See: Some description")
 	
 	def test_full_description_undefined(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "Some description", 0, title_key="UNDEFINED_TXT_KEY")
+		goal = Goal([BuildingCount(iGranary, 3).create()], "Some description", 0, title_key="UNDEFINED_TXT_KEY")
 		
 		self.assertEqual(goal.full_description(), "Some description")
 	
@@ -674,7 +671,7 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.area_name((10, 10)), "")
 	
 	def test_areas(self):
-		goal = Goal([Control(AreaArgumentFactory().rectangle((20, 20), (30, 30)).named("First Area")), Control(AreaArgumentFactory().rectangle((20, 20), (40, 40)).named("Second Area"))], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer)
+		goal = Goal([Control(AreaArgumentFactory().rectangle((20, 20), (30, 30)).named("First Area")).create(), Control(AreaArgumentFactory().rectangle((20, 20), (40, 40)).named("Second Area")).create()], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer)
 		
 		self.assertEqual(goal.areas(), {"First Area": plots.rectangle((20, 20), (30, 30)), "Second Area": plots.rectangle((20, 20), (40, 40))})
 		self.assertEqual(goal.area_name((25, 25)), "Second Area\nFirst Area")
@@ -700,7 +697,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_progress_other_evaluator(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer, subject=VASSALS)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer, subject=VASSALS)
 		
 		team(1).setVassal(0, True, False)
 		
@@ -715,7 +712,7 @@ class TestGoal(ExtendedTestCase):
 			team(1).setVassal(0, False, False)
 	
 	def test_progress_multiline_requirement(self):
-		goal = Goal([BestPopulationCities(3)], BestPopulationCities.GOAL_DESC_KEY, self.iPlayer)
+		goal = Goal([BestPopulationCities(3).create()], BestPopulationCities.GOAL_DESC_KEY, self.iPlayer)
 		
 		city0, city1, city2 = cities = TestCities.owners(0, 1, 2)
 		
@@ -785,7 +782,7 @@ class TestGoal(ExtendedTestCase):
 		])
 	
 	def test_by_attributes(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=1000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=1000)
 		
 		self.assertEqual(goal.iYear, 1000)
 		self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_BY": 1000})
@@ -793,7 +790,7 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(goal.description(), "Control three Granaries by 1000 AD")
 	
 	def test_at_attributes(self):
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
 		self.assertEqual(goal.iYear, 1000)
 		self.assertEqual(goal.date_suffix_keys, {"TXT_KEY_VICTORY_IN": 1000})
@@ -802,20 +799,20 @@ class TestGoal(ExtendedTestCase):
 	
 	def test_attributes_without_calendar(self):
 		team(0).setHasTech(iCalendar, False, 0, False, False)
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
 		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 290)"])
 		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 290)")
 	
 	def test_attributes_with_game_settings(self):
 		AdvisorOpt.setUHVFinishDate(1)
-		goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
+		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
 		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 290)"])
 		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 290)")
 	
 	def test_by_handler(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
 		goal.enable()
 		
 		try:
@@ -827,7 +824,7 @@ class TestGoal(ExtendedTestCase):
 			goal.disable()
 	
 	def test_by_handler_after_success(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
 		goal.enable()
 		
 		try:
@@ -840,7 +837,7 @@ class TestGoal(ExtendedTestCase):
 			goal.disable()
 	
 	def test_by_handler_different_turn(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)
 		goal.enable()
 		
 		try:
@@ -852,7 +849,7 @@ class TestGoal(ExtendedTestCase):
 			goal.disable()
 	
 	def test_at_handler_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
 		goal.enable()
 		
 		city = TestCities.one()
@@ -870,7 +867,7 @@ class TestGoal(ExtendedTestCase):
 			goal.disable()
 	
 	def test_at_handler_not_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
 		goal.enable()
 		
 		try:
@@ -883,7 +880,7 @@ class TestGoal(ExtendedTestCase):
 			goal.disable()
 	
 	def test_at_handler_different_turn(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=-3000)
 		goal.enable()
 		
 		try:
@@ -899,12 +896,12 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.evaluator, SelfEvaluator(self.iPlayer))
 	
 	def test_evaluator_from_subject(self):
-		goal = Goal([BuildingCount(iGranary, 1)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, subject=WORLD)
+		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, subject=WORLD)
 		
 		self.assertEqual(goal.evaluator, WorldEvaluator(0))
 	
 	def test_required_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 2), BuildingCount(iLibrary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=1)
+		goal = Goal([BuildingCount(iGranary, 2).create(), BuildingCount(iLibrary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=1)
 		
 		cities = TestCities.num(2)
 		for city in cities:
@@ -917,7 +914,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_required_not_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 2), BuildingCount(iLibrary, 2), BuildingCount(iWalls, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=2)
+		goal = Goal([BuildingCount(iGranary, 2).create(), BuildingCount(iLibrary, 2).create(), BuildingCount(iWalls, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, required=2)
 		
 		cities = TestCities.num(2)
 		for city in cities:
@@ -930,7 +927,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_succeed_stateless(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		
 		self.assertEqual(goal.state, POSSIBLE)
 		
@@ -938,13 +935,13 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(goal.state, POSSIBLE)
 	
 	def test_succeeded_stateless_not_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		
 		self.assertEqual(goal.state, POSSIBLE)
 		self.assertEqual(goal.succeeded(), False)
 	
 	def test_succeeded_stateless_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		
 		cities = TestCities.num(2)
 		for city in cities:
@@ -971,18 +968,18 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.state_string(), "YES")
 	
 	def test_state_string_stateless_possible(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		
 		self.assertEqual(goal.state_string(), "Not yet")
 	
 	def test_state_string_stateless_failure(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		goal.set_state(FAILURE)
 		
 		self.assertEqual(goal.state_string(), "NO")
 	
 	def test_state_string_stateless_fulfilled(self):
-		goal = Goal([BuildingCount(iGranary, 2)], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
+		goal = Goal([BuildingCount(iGranary, 2).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, mode=STATELESS)
 		
 		cities = TestCities.num(2)
 		for city in cities:
@@ -994,7 +991,7 @@ class TestGoal(ExtendedTestCase):
 			cities.kill()
 	
 	def test_immediately_fulfilled_requirement(self):
-		goal = Goal([NoCityLost()], NoCityLost.GOAL_DESC_KEY, 0)
+		goal = Goal([NoCityLost().create()], NoCityLost.GOAL_DESC_KEY, 0)
 		
 		self.assertEqual(goal.state, SUCCESS)
 
@@ -1038,13 +1035,13 @@ class TestAll(ExtendedTestCase):
 	def test_create(self):
 		all_goal = self.all(0)
 		
-		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
 	
 	def test_create_options(self):
 		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
 		all_goal = all(0)
 		
-		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
 		self.assertEqual(all_goal.iYear, 1000)
 		self.assertEqual(all_goal.requirements[0].iYear, 1000)
 	
@@ -1052,7 +1049,7 @@ class TestAll(ExtendedTestCase):
 		all = All(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
 		all_goal = all(0)
 		
-		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(all_goal, AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
 		self.assertEqual(all_goal.iYear, None)
 		self.assertEqual(all_goal.requirements[0].iYear, 1000)
 
@@ -1060,8 +1057,8 @@ class TestAll(ExtendedTestCase):
 class TestAllGoal(ExtendedTestCase):
 
 	def setUp(self):
-		self.first_goal = Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
-		self.second_goal = Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.first_goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
+		self.second_goal = Goal([BuildingCount(iLibrary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)
 		self.all = AllGoal([self.first_goal, self.second_goal], 0)
 		
 		self.all.enable()
@@ -1085,10 +1082,10 @@ class TestAllGoal(ExtendedTestCase):
 		self.assertEqual(repr(self.all), "AllGoal(Goal([BuildingCount(Granary, 3)], 0), Goal([BuildingCount(Library, 3)], 0))")
 	
 	def test_equal(self):
-		identical = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
-		different_goal = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iWalls, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
-		different_num_goals = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
-		different_player = AllGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 1)
+		identical = AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_goal = AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iWalls, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_num_goals = AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0)
+		different_player = AllGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0), Goal([BuildingCount(iLibrary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 1)
 		
 		self.assertEqual(self.all, identical)
 		self.assertNotEqual(self.all, different_goal)
@@ -1218,15 +1215,15 @@ class TestDifferentCities(ExtendedTestCase):
 		different_cities = DifferentCities(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL"), by=1000)
 		different_cities_goal = different_cities(0)
 		
-		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
 		self.assertEqual(different_cities_goal.iYear, 1000)
 		self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
 	
 	def test_create_subgoal_options(self):
-		different_cities = DifferentCities(GoalDescription([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
+		different_cities = DifferentCities(GoalDescription([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", by=1000))
 		different_cities_goal = different_cities(0)
 		
-		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3)], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
+		self.assertEqual(different_cities_goal, DifferentCitiesGoal([Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0)], 0))
 		self.assertEqual(different_cities_goal.iYear, None)
 		self.assertEqual(different_cities_goal.requirements[0].iYear, 1000)
 
@@ -1234,8 +1231,8 @@ class TestDifferentCities(ExtendedTestCase):
 class TestDifferentCitiesGoal(ExtendedTestCase):
 
 	def setUp(self):
-		self.first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
-		self.second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		self.first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		self.second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		
 		self.different = DifferentCitiesGoal([self.first_goal, self.second_goal], 0)
 		self.different.enable()
@@ -1259,10 +1256,10 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 		self.assertEqual(repr(self.different), "DifferentCitiesGoal(Goal([CityCultureLevel(First Capital, Developing)], 0), Goal([CityCultureLevel(Second Capital, Refined)], 0))")
 	
 	def test_equal(self):
-		identical = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
-		different_goal = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelInfluential)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
-		different_num_goals = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
-		different_player = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 1)
+		identical = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_goal = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelInfluential)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_num_goals = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 0)
+		different_player = DifferentCitiesGoal([Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0), Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)], 1)
 		
 		self.assertEqual(self.different, identical)
 		self.assertNotEqual(self.different, different_goal)
@@ -1482,29 +1479,29 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 		self.assertEqual(self.different.description(), "Have developing culture in First Capital and refined culture in Second Capital")
 	
 	def test_description_at(self):
-		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
-		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		different = DifferentCitiesGoal([first_goal, second_goal], 0, at=1000)
 		
 		self.assertEqual(different.description(), "Have developing culture in First Capital and refined culture in Second Capital in 1000 AD")
 	
 	def test_description_by(self):
-		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
-		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		different = DifferentCitiesGoal([first_goal, second_goal], 0, by=1000)
 		
 		self.assertEqual(different.description(), "Have developing culture in First Capital and refined culture in Second Capital by 1000 AD")
 	
 	def test_description_subgoal_at(self):
-		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0, at=1000)
-		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0, at=1000)
+		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		different = DifferentCitiesGoal([first_goal, second_goal], 0)
 		
 		self.assertEqual(different.description(), "Have developing culture in First Capital in 1000 AD and have refined culture in Second Capital")
 	
 	def test_description_subgoal_by(self):
-		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping)], "TXT_KEY_VICTORY_DESC_HAVE", 0, by=1000)
-		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined)], "TXT_KEY_VICTORY_DESC_HAVE", 0)
+		first_goal = Goal([CityCultureLevel(CapitalCityArgument().named("First Capital"), iCultureLevelDeveloping).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0, by=1000)
+		second_goal = Goal([CityCultureLevel(CapitalCityArgument().named("Second Capital"), iCultureLevelRefined).create()], "TXT_KEY_VICTORY_DESC_HAVE", 0)
 		different = DifferentCitiesGoal([first_goal, second_goal], 0)
 		
 		self.assertEqual(different.description(), "Have developing culture in First Capital by 1000 AD and have refined culture in Second Capital")
