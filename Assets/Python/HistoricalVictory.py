@@ -194,7 +194,7 @@ dGoals = {
 	),
 	iIndia: (
 		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
-		BuildingCount(religious_buildings(temple).named(TEMPLES), 20, by=700),
+		BuildingCount(religious_buildings(temple).named(TEMPLES), 25, by=700),
 		PopulationPercent(20, at=1200),
 	),
 	iPhoenicia: (
