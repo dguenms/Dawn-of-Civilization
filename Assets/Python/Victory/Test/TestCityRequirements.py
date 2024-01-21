@@ -24,10 +24,10 @@ class TestCityCultureLevel(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "refined culture in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
 		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_no_city(self):
@@ -112,10 +112,10 @@ class TestCityDifferentGreatPeopleCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two different great people in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
 		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_pickle(self):
@@ -236,10 +236,10 @@ class TestCityPopulation(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "a population of 5 in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
 		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_pickle(self):
@@ -321,10 +321,10 @@ class TestCitySpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two Great Artists in Test City")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
 		self.assertEqual(self.requirement.area_name((42, 42)), "")
 	
 	def test_pickle(self):

@@ -39,7 +39,7 @@ class ExtendedTestCase(TestCase):
 
 class TestCities(object):
 
-	CITY_LOCATIONS = [(61, 31), (63, 31), (65, 31), (67, 31), (69, 31)]
+	CITY_LOCATIONS = [(57, 35), (59, 35), (61, 35), (63, 35), (65, 35)]
 	
 	@staticmethod
 	def owners(*owners):
@@ -52,6 +52,14 @@ class TestCities(object):
 	@staticmethod
 	def one(iOwner = 0):
 		return player(iOwner).initCity(*TestCities.CITY_LOCATIONS[0])
+	
+	@staticmethod
+	def plot(index):
+		return plot(TestCities.CITY_LOCATIONS[index])
+	
+	@staticmethod
+	def city(index):
+		return city(TestCities.CITY_LOCATIONS[index])
 
 	def __init__(self, lOwners):
 		if len(lOwners) > len(self.CITY_LOCATIONS):

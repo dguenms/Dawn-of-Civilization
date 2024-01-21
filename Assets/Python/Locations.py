@@ -10,6 +10,10 @@ iTurkicEastWestBorder = 106
 
 ## Victory
 
+# second Phoenician goal: control Iberia and Italy by 150 BC
+tPhoenicianItaly = ((65, 48), (72, 55))
+lPhoenicianItalyExceptions = [(65, 48), (66, 48), (67, 48), (72, 55)]
+
 # first Polynesian goal: settle two out of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 # second Polynesian goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
 tHawaii = ((0, 40), (4, 43))

@@ -171,7 +171,7 @@ class CityBuildingCount(ThresholdRequirement):
 	
 	def expire_building_built(self, goal, city, iBuilding):
 		if not isinstance(self.iBuilding, Aggregate) and self.iBuilding == iBuilding and isWonder(iBuilding):
-			goal.announce_failure_cause(city.getOwner(), "TXT_KEY_VICTORY_ANNOUNCE_FIRST_CITY_BUILDING", BUILDING.format(iBuilding))
+			goal.announce_failure_cause(city.getOwner(), "TXT_KEY_VICTORY_ANNOUNCE_FIRST_BUILDING", BUILDING.format(iBuilding))
 			goal.expire()
 	
 	def value(self, iPlayer, city, iBuilding):

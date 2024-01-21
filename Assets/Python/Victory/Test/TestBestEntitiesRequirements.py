@@ -216,8 +216,8 @@ class TestBestCultureCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -547,8 +547,8 @@ class TestBestPopulationCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -794,7 +794,7 @@ class TestBestSpecialistCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "Test City the city with the most settled Great Scientist in the world")
 	
 	def test_area(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(61, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1117,8 +1117,8 @@ class TestBestTradeIncomeCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1160,8 +1160,8 @@ class TestBestWonderCity(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 		
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)

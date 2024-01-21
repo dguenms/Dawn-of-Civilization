@@ -531,7 +531,7 @@ class TestConqueredCities(ExtendedTestCase):
 class TestConqueredCitiesInside(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(57, 35), (59, 35)]).named("Test Area")
 		self.requirement = ConqueredCities(2, inside=self.area).create()
 		self.goal = TestGoal()
 		
@@ -544,10 +544,10 @@ class TestConqueredCitiesInside(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(57, 35), (59, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test Area")
 		self.assertEqual(self.requirement.area_name((10, 10)), "")
 	
 	def test_conquer_in_area(self):
@@ -580,7 +580,7 @@ class TestConqueredCitiesInside(ExtendedTestCase):
 class TestConqueredCitiesOutside(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().all().without([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().all().without([(57, 35), (59, 35)]).named("Test Area")
 		self.requirement = ConqueredCities(2, outside=self.area).create()
 		self.goal = TestGoal()
 		
@@ -593,10 +593,10 @@ class TestConqueredCitiesOutside(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities outside of Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(57, 35), (59, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test Area")
 		self.assertEqual(self.requirement.area_name((10, 10)), "")
 	
 	def test_conquer_outside_area(self):
@@ -657,8 +657,8 @@ class TestConqueredCitiesCivs(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Conquered Test Civs cities: 2 / 2")
 		finally:
-			city(61, 31).kill()
-			city(63, 31).kill()
+			TestCities.city(0).kill()
+			TestCities.city(1).kill()
 	
 	def test_conquer_not_of_civ(self):
 		city1, city2 = cities = TestCities.owners(2, 2)
@@ -671,8 +671,8 @@ class TestConqueredCitiesCivs(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Conquered Test Civs cities: 0 / 2")
 		finally:
-			city(61, 31).kill()
-			city(63, 31).kill()
+			TestCities.city(0).kill()
+			TestCities.city(1).kill()
 
 
 class TestEnslaveCount(ExtendedTestCase):
@@ -1611,21 +1611,21 @@ class TestProduction(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		try:
-			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 5)
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 2)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 5 / 10")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 2 / 10")
 		finally:
 			city.kill()
 	
 	def test_sufficient(self):
 		city = TestCities.one()
 		
-		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
-		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		for _ in range(5):
+			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		try:
-			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 5)
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 2)
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 10)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 10 / 10")
@@ -2057,8 +2057,8 @@ class TestSettledCities(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities: 0 / 2")
 		finally:
-			city(61, 31).kill()
-			city(63, 31).kill()
+			TestCities.city(0).kill()
+			TestCities.city(1).kill()
 	
 	def test_conquered(self):
 		city1, city2 = TestCities.owners(1, 1)
@@ -2074,8 +2074,8 @@ class TestSettledCities(ExtendedTestCase):
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Settled cities: 0 / 2")
 		finally:
-			city(61, 31).kill()
-			city(63, 31).kill()
+			TestCities.city(0).kill()
+			TestCities.city(1).kill()
 	
 	def test_not_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
@@ -2086,7 +2086,7 @@ class TestSettledCities(ExtendedTestCase):
 class TestSettledCitiesArea(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SettledCities(2, area=AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")).create()
+		self.requirement = SettledCities(2, area=AreaArgumentFactory().of([(57, 35), (59, 35)]).named("Test Area")).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2098,10 +2098,10 @@ class TestSettledCitiesArea(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "two cities in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(57, 35), (59, 35)])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test Area")
 		self.assertEqual(self.requirement.area_name((10, 10)), "")
 	
 	def test_settle_in_area(self):
