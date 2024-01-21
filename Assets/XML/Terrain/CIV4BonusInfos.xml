@@ -745,7 +745,6 @@
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COW</ArtDefineTag>
 			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
-			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
@@ -818,7 +817,6 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_DEER</ArtDefineTag>
 			<TechCityTrade>TECH_TANNING</TechCityTrade>
-			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
@@ -904,7 +902,6 @@
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PIG</ArtDefineTag>
 			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
-			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
@@ -1035,7 +1032,6 @@
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_SHEEP</ArtDefineTag>
 			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
-			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
