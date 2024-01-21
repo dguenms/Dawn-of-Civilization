@@ -1561,7 +1561,7 @@
 			<Type>ART_DEF_BUILDING_GREAT_COTHON</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.9</fScale>
+			<fScale>1.8</fScale>
 			<fInterfaceScale>1.7</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/GreatCothon/doppelhafen.nif</NIF>
 			<KFM/>
