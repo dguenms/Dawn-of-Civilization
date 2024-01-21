@@ -3872,30 +3872,31 @@ bool CvPlot::isFriendlyCity(const CvUnit& kUnit, bool bCheckImprovement) const
 	}
 
 	TeamTypes ePlotTeam = getTeam();
-
-	if (NO_TEAM != ePlotTeam)
+	if (ePlotTeam == NO_TEAM)
 	{
-		if (kUnit.isEnemy(ePlotTeam))
-		{
-			return false;
-		}
+		return true;
+	}
 
-		TeamTypes eTeam = GET_PLAYER(kUnit.getCombatOwner(ePlotTeam, this)).getTeam();
+	if (kUnit.isEnemy(ePlotTeam))
+	{
+		return false;
+	}
 
-		if (eTeam == ePlotTeam)
-		{
-			return true;
-		}
+	TeamTypes eTeam = GET_PLAYER(kUnit.getCombatOwner(ePlotTeam, this)).getTeam();
 
-		if (GET_TEAM(eTeam).isOpenBorders(ePlotTeam))
-		{
-			return true;
-		}
+	if (eTeam == ePlotTeam)
+	{
+		return true;
+	}
 
-		if (GET_TEAM(ePlotTeam).isVassal(eTeam))
-		{
-			return true;
-		}
+	if (GET_TEAM(eTeam).isOpenBorders(ePlotTeam))
+	{
+		return true;
+	}
+
+	if (GET_TEAM(ePlotTeam).isVassal(eTeam))
+	{
+		return true;
 	}
 
 	return false;
