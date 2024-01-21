@@ -1165,7 +1165,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TRADE_ROUTE_COUNT</Tag>
-		<English>trade routes</English>
+		<English>%s1 trade routes</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1856,7 +1856,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COUNT</Tag>
-		<English>%s1 trade routes</English>
+		<English>trade routes</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -199,15 +199,20 @@ dGoals = {
 		PopulationPercent(20, at=1200),
 	),
 	iPhoenicia: (
-		CityBuilding(city(tCarthage).named(CARTHAGE), iPalace, iGreatCothon, by=-300),
-		ControlledResourceCount(iDye, 6),
-		Control(
-			plots.rectangle(dCoreArea[iItaly]).without((62, 47), (63, 47), (63, 46)).named(ITALY), # TODO: define in locations or use region
-			plots.region(rIberia).named(IBERIA),
-			at=-100,
+		All(
+			ControlledResourceCount(iDye, 5),
+			TradeRouteCount(15),
+			by=-300
 		),
-		TradeRouteCount(20),
-		RevealedPercent(plots.all().water().adjacent_regions(*lAfrica).named(AFRICAN_COAST), 50),
+		All(
+			CityBuilding(city(tCarthage).named(CARTHAGE), iPalace, iGreatCothon, by=-400),
+			Control(
+				plots.rectangle(tPhoenicianItaly).without(lPhoenicianItalyExceptions).named(ITALY),
+				plots.region(rIberia),
+				by=-150
+			),
+		),
+		RevealedPercent(plots.all().water().adjacent_regions(*lAfrica).named(AFRICAN_COAST), 50, by=1),
 	),
 	iPolynesia: (
 		Settle(

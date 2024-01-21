@@ -162,7 +162,7 @@ class RevealedPercent(PercentRequirement):
 		self.area = area
 	
 	def evaluate(self, evaluator):
-		return self.area.where(lambda p: evaluator.any(lambda ep: p.isRevealed(player(ep).getTeam(), False))).count()
+		return self.area.where(lambda p: plots.surrounding(p).where(lambda sp: sp.isWater() == p.isWater()).all(lambda sp: evaluator.any(lambda ep: sp.isRevealed(player(ep).getTeam(), False)))).count()
 
 	def total(self):
 		return self.area.count()

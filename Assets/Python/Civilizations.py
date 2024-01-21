@@ -1894,7 +1894,7 @@ dBuildingPreferences = {
 		iGreatLighthouse: 15,
 		
 		iPyramids: -100,
-		iGreatCothon: 0,
+		iGreatCothon: -100,
 	},
 	iIndia : {
 		iKhajuraho: 30,

@@ -822,8 +822,8 @@ class TestCityBuildingCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([TestCities.CITY_LOCATIONS[0]])})
 	
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test City")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1031,8 +1031,8 @@ class TestCityCount(ExtendedTestCase):
 		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS)})
 		
 	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((61, 31)), "Test Area")
-		self.assertEqual(self.requirement.area_name((62, 32)), "")
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test Area")
+		self.assertEqual(self.requirement.area_name((58, 36)), "")
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -1182,7 +1182,7 @@ class TestControlledResourceCount(ExtendedTestCase):
 			city.plot().setBonusType(iGold)
 		
 		city1.setHasRealBuilding(iPalace, True)
-		plot(62, 31).setRouteType(iRouteRoad)
+		plot(58, 35).setRouteType(iRouteRoad)
 		
 		try:
 			self.assertEqual(self.requirement.evaluate(evaluator), 2)
@@ -2388,6 +2388,71 @@ class TestTerrainCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestTradeRouteCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = TradeRouteCount(3).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "TradeRouteCount(3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "TradeRouteCount(3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three trade routes")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade routes: 0 / 3")
+	
+	def test_fewer(self):
+		cities = TestCities.num(2)
+		
+		plot(58, 35).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade routes: 2 / 3")
+		finally:
+			cities.kill()
+			plot(58, 35).setRouteType(-1)
+	
+	def test_sufficient(self):
+		cities = TestCities.num(3)
+		
+		plot(58, 35).setRouteType(iRouteRoad)
+		plot(60, 35).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Trade routes: 3 / 3")
+		finally:
+			cities.kill()
+			plot(58, 35).setRouteType(-1)
+			plot(60, 35).setRouteType(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestUnitCombatCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2943,6 +3008,7 @@ test_cases = [
 	TestResourceCount,
 	TestSpecialistCount,
 	TestTerrainCount,
+	TestTradeRouteCount,
 	TestUnitCombatCount,
 	TestUnitCount,
 	TestUnitLevelCount,

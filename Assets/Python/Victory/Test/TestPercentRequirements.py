@@ -112,7 +112,7 @@ class TestAreaPercent(ExtendedTestCase):
 class TestAreaPopulationPercent(ExtendedTestCase):
 
 	def setUp(self):
-		self.area = AreaArgumentFactory().of([(61, 31), (63, 31)]).named("Test Area")
+		self.area = AreaArgumentFactory().of([(57, 35), (59, 35)]).named("Test Area")
 		self.requirement = AreaPopulationPercent(self.area, 40).create()
 		self.goal = TestGoal()
 		
@@ -131,7 +131,7 @@ class TestAreaPopulationPercent(ExtendedTestCase):
 		self.assertEqual(self.requirement.description(), "40% of the population in Test Area")
 	
 	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(61, 31), (63, 31)])})
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(57, 35), (59, 35)])})
 	
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
@@ -743,6 +743,97 @@ class TestReligiousVotePercent(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestRevealedPercent(ExtendedTestCase):
+
+	def setUp(self):
+		self.plots = [(58, 30), (59, 30)]
+		self.area = AreaArgumentFactory().of(self.plots).named("Test Area")
+		self.requirement = RevealedPercent(self.area, 50).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "RevealedPercent(Test Area, 50%)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "RevealedPercent(Test Area, 50%)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "half of Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(58, 30), (59, 30)])})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_only_tiles_is_insufficient(self):
+		for tile in self.plots:
+			plot(tile).setRevealed(0, True, False, 0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 0.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Revealed Test Area: 0.00% / 50%")
+		finally:
+			for tile in self.plots:
+				plot(tile).setRevealed(0, False, False, 0)
+	
+	def test_sufficient(self):
+		for plot in plots.surrounding(58, 30):
+			plot.setRevealed(0, True, False, 0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Revealed Test Area: 50.00% / 50%")
+		finally:
+			for plot in plots.surrounding(58, 30):
+				plot.setRevealed(0, False, False, 0)
+	
+	def test_same_domain_sufficient(self):
+		for plot in plots.surrounding(58, 30).water():
+			plot.setRevealed(0, True, False, 0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.percentage(self.evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Revealed Test Area: 50.00% / 50%")
+		finally:
+			for plot in plots.surrounding(58, 30):
+				plot.setRevealed(0, False, False, 0)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		for plot in plots.surrounding(58, 30):
+			plot.setRevealed(1, True, False, 1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 1)
+			self.assertEqual(self.requirement.percentage(evaluator), 50.0)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Revealed Test Area: 50.00% / 50%")
+		finally:
+			for plot in plots.surrounding(58, 30):
+				plot.setRevealed(1, False, False, 1)
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+		
+
+
 test_cases = [
 	TestAreaPercent,
 	TestAreaPopulationPercent,
@@ -752,4 +843,5 @@ test_cases = [
 	TestPowerPercent,
 	TestReligionSpreadPercent,
 	TestReligiousVotePercent,
+	TestRevealedPercent,
 ]

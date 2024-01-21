@@ -1279,7 +1279,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			city = self.different.get_city_parameter()
 		
 			self.assertType(city, CyCity)
-			self.assertEqual(location(city), (61, 31))
+			self.assertEqual(location(city), (57, 35))
 		finally:
 			capital.kill()
 	
@@ -1293,7 +1293,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 		try:
 			self.first_goal.succeed()
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
 			self.assertEqual(self.different.recorded.get(self.second_goal), None)
 			
 			self.assertEqual(self.different.unique_records(), True)
@@ -1301,8 +1301,8 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			second_capital.setHasRealBuilding(iPalace, True)
 			self.second_goal.succeed()
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
-			self.assertEqual(self.different.recorded.get(self.second_goal), (63, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (59, 35))
 			
 			self.assertEqual(self.different.unique_records(), True)
 		finally:
@@ -1315,8 +1315,8 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			self.first_goal.succeed()
 			self.second_goal.succeed()
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
-			self.assertEqual(self.different.recorded.get(self.second_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (57, 35))
 			
 			self.assertEqual(self.different.unique_records(), False)
 		finally:
@@ -1344,7 +1344,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			self.assertEqual(self.second_goal.state, POSSIBLE)
 			self.assertEqual(self.different.state, POSSIBLE)
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
 			self.assertEqual(self.different.recorded.get(self.second_goal), None)
 			
 			self.assertEqual(self.different.format_progress(), [
@@ -1363,8 +1363,8 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			self.assertEqual(self.second_goal.state, SUCCESS)
 			self.assertEqual(self.different.state, SUCCESS)
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
-			self.assertEqual(self.different.recorded.get(self.second_goal), (63, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (59, 35))
 			
 			self.assertEqual(self.different.format_progress(), [
 				self.SUCCESS + "First",
@@ -1393,7 +1393,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			self.assertEqual(self.second_goal.state, POSSIBLE)
 			self.assertEqual(self.different.state, POSSIBLE)
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
 			self.assertEqual(self.different.recorded.get(self.second_goal), None)
 			
 			self.assertEqual(self.different.format_progress(), [
@@ -1407,8 +1407,8 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			self.assertEqual(self.second_goal.state, FAILURE)
 			self.assertEqual(self.different.state, FAILURE)
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
-			self.assertEqual(self.different.recorded.get(self.second_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
+			self.assertEqual(self.different.recorded.get(self.second_goal), (57, 35))
 			
 			self.assertEqual(self.different.format_progress(), [
 				self.SUCCESS + "First",
@@ -1461,7 +1461,7 @@ class TestDifferentCitiesGoal(ExtendedTestCase):
 			
 			capital.setCulture(0, 1000, False)
 			
-			self.assertEqual(self.different.recorded.get(self.first_goal), (61, 31))
+			self.assertEqual(self.different.recorded.get(self.first_goal), (57, 35))
 			self.assertEqual(self.different.recorded.get(self.second_goal), None)
 			
 			self.assertEqual(self.first_goal.state, SUCCESS)

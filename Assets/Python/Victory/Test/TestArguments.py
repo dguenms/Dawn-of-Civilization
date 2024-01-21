@@ -183,10 +183,10 @@ class TestLocationCityArgument(ExtendedTestCase):
 		self.argument = LocationCityArgument(self.location)
 		
 	def test_str(self):
-		self.assertEqual(str(self.argument), "LocationCityArgument(61, 31)")
+		self.assertEqual(str(self.argument), "LocationCityArgument(57, 35)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.argument), "LocationCityArgument(61, 31)")
+		self.assertEqual(repr(self.argument), "LocationCityArgument(57, 35)")
 	
 	def test_hash(self):
 		same_location = LocationCityArgument(self.location)
@@ -216,7 +216,7 @@ class TestLocationCityArgument(ExtendedTestCase):
 	
 	def test_from_varargs(self):
 		argument = LocationCityArgument(*self.location)
-		self.assertEqual(str(argument), "LocationCityArgument(61, 31)")
+		self.assertEqual(str(argument), "LocationCityArgument(57, 35)")
 	
 	def test_get(self):
 		city = TestCities.one()
