@@ -22858,7 +22858,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=40
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23268,7 +23268,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=40
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
