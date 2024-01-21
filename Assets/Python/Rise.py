@@ -539,7 +539,7 @@ class Birth(object):
 		peerRevealed = plots.none()
 		
 		def isPeerRevealed(plot):
-			iRequiredPeers = plot.isWater() and peers.count() / 2 or peers.count() * 2 / 3
+			iRequiredPeers = (plot.isWater() and self.team.isMapTrading()) and peers.count() / 2 or peers.count() * 2 / 3
 			return count(peer for peer in peers if plot.isRevealed(player(peer).getTeam(), False)) >= min(iRequiredPeers, peers.count()-1)
 		
 		if peers.count() > 2:
