@@ -2228,6 +2228,13 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int dx, int dy, int origina
 					{
 						int fromLevel = seeFromLevel(eTeam);
 						int throughLevel = pPlot->seeThroughLevel();
+
+						// Leoreth: reduce water sight of land units
+						if (!isWater() && pPlot->isWater())
+						{
+							fromLevel -= 1;
+						}
+
 						if(outerRing) //check strictly higher level
 						{
 							CvPlot *passThroughPlot = plotXY(getX_INLINE(), getY_INLINE(), nextDX, nextDY);
