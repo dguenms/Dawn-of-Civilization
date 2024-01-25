@@ -81,6 +81,12 @@ def relocateFoundedCapital(city):
 @handler("cityBuilt")
 def buildFoundedCapitalInfrastructure(city):
 	buildCapitalInfrastructure(city.getOwner(), city)
+
+
+@handler("cityBuilt")
+def createEgyptianDefenses(city):
+	if civ(city) == iEgypt and player(city.getOwner()).getNumCities() == 2 and player(iNubia).isHuman():
+		makeUnit(city.getOwner(), iArcher, city)
 	
 	
 @handler("cityBuilt")
