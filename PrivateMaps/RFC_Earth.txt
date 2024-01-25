@@ -35503,7 +35503,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35999,6 +35998,7 @@ BeginPlot
 	x=80,y=36
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36483,13 +36483,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=37
-	BonusType=BONUS_DYE
-	BonusVarietyType=BONUS_DYE_HENNA
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=38
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_HENNA
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -36950,7 +36950,7 @@ EndPlot
 BeginPlot
 	x=82,y=39
 	BonusType=BONUS_GOLD
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -37400,6 +37400,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
+	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
