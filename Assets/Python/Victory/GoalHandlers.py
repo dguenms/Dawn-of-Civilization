@@ -224,6 +224,13 @@ class EventHandlerRegistry(object):
 		
 		return projectBuilt
 	
+	def religionFounded(self, goal, applicable, func):
+		def religionFounded((iReligion, iPlayer)):
+			if applicable(goal, iPlayer):
+				func(goal, iReligion)
+		
+		return religionFounded
+	
 	def sacrificeHappiness(self, goal, applicable, func):
 		def sacrificeHappiness((iPlayer, city)):
 			if applicable(goal, iPlayer):

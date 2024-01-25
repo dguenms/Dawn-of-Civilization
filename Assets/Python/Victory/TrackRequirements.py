@@ -600,4 +600,3 @@ class TradeGold(TrackRequirement):
 
 	def evaluate(self, evaluator):
 		return self.iValue / 100
-	

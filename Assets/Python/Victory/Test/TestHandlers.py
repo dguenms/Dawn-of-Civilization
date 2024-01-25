@@ -459,6 +459,15 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			cities.kill()
 	
+	def test_religion_founded(self):
+		onReligionFounded = self.get("religionFounded", self.capture)
+		
+		onReligionFounded((iBuddhism, 1))
+		self.assertEqual(self.argument, None)
+		
+		onReligionFounded((iBuddhism, self.iPlayer))
+		self.assertEqual(self.argument, (self.goal, iBuddhism))
+	
 	def test_sacrifice_happiness(self):
 		onSacrificeHappiness = self.get("sacrificeHappiness", self.increment)
 		

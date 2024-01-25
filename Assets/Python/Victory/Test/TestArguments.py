@@ -467,7 +467,7 @@ class TestCivsArgument(ExtendedTestCase):
 	def test_group(self):
 		argument = CivsArgument.group(iCivGroupAfrica)
 		
-		self.assertEqual(argument, CivsArgument(iEgypt, iPhoenicia, iNubia, iEthiopia, iMali, iSwahili, iCongo))
+		self.assertEqual(argument, CivsArgument(iEgypt, iNubia, iPhoenicia, iEthiopia, iMali, iSwahili, iCongo))
 
 
 class TestStateReligionBuildingArgument(ExtendedTestCase):
