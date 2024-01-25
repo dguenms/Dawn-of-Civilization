@@ -912,6 +912,9 @@ iNumUnitRoles = 22
 iAttackSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
 iWork, iMissionary) = range(iNumUnitRoles)
 
+# Promotions
+iDesertAdaptation = 82
+
 
 iNumBonuses = 54
 (iAluminium, iAmber, iCamel, iCitrus, iCoal, iCopper, iDates, iHorse, iIron, iMarble,
