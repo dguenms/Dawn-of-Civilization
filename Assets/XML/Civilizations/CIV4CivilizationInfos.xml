@@ -2403,7 +2403,7 @@
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
-			<Impact>IMPACT_SIGNIFICANT</Impact>
+			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>HIT</Identifier>
 			<StartingYear>-1800</StartingYear>
 			<LoadingTimes>
