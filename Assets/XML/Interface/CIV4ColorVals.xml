@@ -1219,10 +1219,10 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
-			<Type>COLOR_PLAYER_WALNUT</Type>
-			<fRed>0.36</fRed>
-			<fGreen>0.32</fGreen>
-			<fBlue>0.28</fBlue>
+			<Type>COLOR_PLAYER_LILAC</Type>
+			<fRed>0.47</fRed>
+			<fGreen>0.33</fGreen>
+			<fBlue>0.47</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
@@ -1233,10 +1233,10 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
-			<Type>COLOR_PLAYER_WALNUT_TEXT</Type>
-			<fRed>0.36</fRed>
-			<fGreen>0.32</fGreen>
-			<fBlue>0.28</fBlue>
+			<Type>COLOR_PLAYER_LILAC_TEXT</Type>
+			<fRed>0.57</fRed>
+			<fGreen>0.43</fGreen>
+			<fBlue>0.57</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
