@@ -38,10 +38,17 @@ lTribalVillages = [
 ]
 
 
+def createStartingUnits():
+	if not player(iEgypt).isHuman():
+		makeUnit(iEgypt, iArcher, plots.capital(iEgypt))
+
+
 scenario3000BC = Scenario(
 	iStartYear = -3000,
 	fileName = "RFC_3000BC",
 	
 	lCivilizations = lCivilizations,
 	lTribalVillages = lTribalVillages,
+	
+	createStartingUnits = createStartingUnits,
 )
