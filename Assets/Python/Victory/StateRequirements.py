@@ -239,6 +239,31 @@ class FirstTribute(StateRequirement):
 		goal.fail()
 
 
+class Found(StateRequirement):
+
+	TYPES = (RELIGION,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_FOUND"
+	
+	def __init__(self, iReligion, **options):
+		StateRequirement.__init__(self, iReligion, **options)
+		
+		self.iReligion = iReligion
+		
+		self.handle("religionFounded", self.check_religion_founded)
+		self.expire("religionFounded", self.expire_religion_founded)
+	
+	def check_religion_founded(self, goal, iReligion):
+		if self.iReligion == iReligion:
+			self.succeed()
+			goal.check()
+	
+	def expire_religion_founded(self, goal, iReligion):
+		if self.iReligion == iReligion:
+			self.fail()
+			goal.expire()
+
+
 # Second Canadian UHV goal
 class NoCityConquered(StateRequirement):
 

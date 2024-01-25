@@ -1588,6 +1588,107 @@ class TestFeatureCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestHappyCityPopulation(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = HappyCityPopulation(5).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "HappyCityPopulation(5)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "HappyCityPopulation(5)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a population of five in happy cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Happy city population: 0 / 5")
+	
+	def test_insufficient(self):
+		city = TestCities.one()
+		city.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Happy city population: 4 / 5")
+		finally:
+			city.kill()
+	
+	def test_insufficient_happy(self):
+		happy_city, unhappy_city = cities = TestCities.num(2)
+		
+		happy_city.setPopulation(3)
+		unhappy_city.setPopulation(10)
+		
+		try:
+			self.assertEqual(happy_city.angryPopulation(0) <= 0, True)
+			self.assertEqual(unhappy_city.angryPopulation(0) > 0, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Happy city population: 3 / 5")
+		finally:
+			cities.kill()
+	
+	def test_sufficient(self):
+		first_city, second_city = cities = TestCities.num(2)
+		
+		first_city.setPopulation(3)
+		second_city.setPopulation(3)
+		
+		try:
+			self.assertEqual(first_city.angryPopulation(0) <= 0, True)
+			self.assertEqual(second_city.angryPopulation(0) <= 0, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Happy city population: 6 / 5")
+		finally:
+			cities.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+	
+		player_city, vassal_city = cities = TestCities.owners(0, 1)
+		
+		team(1).setVassal(0, True, False)
+		
+		player_city.setPopulation(3)
+		vassal_city.setPopulation(3)
+		
+		try:
+			self.assertEqual(player_city.angryPopulation(0) <= 0, True)
+			self.assertEqual(vassal_city.angryPopulation(0) <= 0, True)
+			
+			self.assertEqual(self.requirement.evaluate(evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Happy city population: 6 / 5")
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestImprovementCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2999,6 +3100,7 @@ test_cases = [
 	TestCultureCity,
 	TestCultureLevelCityCount,
 	TestFeatureCount,
+	TestHappyCityPopulation,
 	TestImprovementCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,

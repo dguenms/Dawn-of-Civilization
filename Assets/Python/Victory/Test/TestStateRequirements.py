@@ -880,10 +880,71 @@ class TestFirstTribute(ExtendedTestCase):
 		self.assertEqual(self.goal.failed, True)
 
 
+class TestFound(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Found(iBuddhism).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Found(Buddhism)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Found(Buddhism)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Buddhism")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_not_founded(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism")
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		
+		self.assertEqual(self.goal.failed, False)
+	
+	def test_founded(self):
+		events.fireEvent("religionFounded", iBuddhism, self.iPlayer)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Buddhism")
+		self.assertEqual(self.requirement.state, SUCCESS)
+		
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_founded_other_religion(self):
+		events.fireEvent("religionFounded", iHinduism, self.iPlayer)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism")
+		self.assertEqual(self.requirement.state, POSSIBLE)
+		
+		self.assertEqual(self.goal.failed, False)
+	
+	def test_founded_other_player(self):
+		events.fireEvent("religionFounded", iBuddhism, 1)
+		
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism")
+		self.assertEqual(self.requirement.state, FAILURE)
+		
+		self.assertEqual(self.goal.failed, True)
+
+
 class TestNoCityConquered(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = NoCityConquered()
+		self.requirement = NoCityConquered().create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -1183,6 +1244,7 @@ test_cases = [
 	TestFirstGreatPerson,
 	TestFirstSettle,
 	TestFirstTribute,
+	TestFound,
 	TestNoCityConquered,
 	TestNoCityLost,
 	TestSettle,

@@ -365,6 +365,17 @@ class FeatureCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
 
 
+class HappyCityPopulation(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_HAPPY_CITY_POPULATION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_HAPPY_CITY_POPULATION"
+	
+	def value(self, iPlayer):
+		return cities.owner(iPlayer).where(lambda city: city.angryPopulation(0) <= 0).sum(CyCity.getPopulation)
+
+
 # First Brazilian UHV goal
 # Third Brazilian UHV goal
 class ImprovementCount(ThresholdRequirement):

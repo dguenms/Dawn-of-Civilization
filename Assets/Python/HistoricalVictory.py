@@ -2,6 +2,8 @@ from Definitions import *
 from Locations import *
 
 
+lHappinessResources = [iResource for iResource in infos.bonuses() if infos.bonus(iResource).getHappiness() > 0]
+
 # first Viking goal: control a European core in 1050 AD
 lVikingTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iVikings and dBirth[iCiv] <= 1050]
 
@@ -109,6 +111,7 @@ STATE_RELIGION_CATHEDRAL = "TXT_KEY_VICTORY_NAME_STATE_RELIGION_CATHEDRAL"
 
 # resource descriptors
 DIFFERENT_HAPPINESS_RESOURCES = "TXT_KEY_VICTORY_NAME_DIFFERENT_HAPPINESS_RESOURCES"
+HAPPINESS_RESOURCES = "TXT_KEY_VICTORY_NAME_HAPPINESS_RESOURCES"
 TRADING_COMPANY_RESOURCES = "TXT_KEY_VICTORY_NAME_TRADING_COMPANY_RESOURCES"
 
 # routes descriptors
@@ -180,6 +183,20 @@ dGoals = {
 		ResourceCount(sum(iCopper, iIron), 4, by=-900),
 		Production(1000, by=-800),
 		FirstTribute(),
+	),
+	iNubia: (
+		All(
+			GoldAmount(200),
+			CultureAmount(200),
+			ResourceCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 5),
+			by=-900,
+		),
+		HappyCityPopulation(40, by=-300),
+		All(
+			Found(iOrthodoxy),
+			BuildingCount(iOrthodoxCathedral, 1),
+			by=600,
+		),
 	),
 	iGreece: (
 		FirstDiscover(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
