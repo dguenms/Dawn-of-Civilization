@@ -106,6 +106,14 @@
 		<Spanish>Berber</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_BLEMMYES</Tag>
+		<English>Blemmyes</English>
+		<French>Blemmyes</French>
+		<German>Blemmyes</German>
+		<Italian>Blemmyes</Italian>
+		<Spanish>Blemmyes</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_BULGAR</Tag>
 		<English>Bulgar</English>
 		<French>Bulgar</French>
@@ -410,6 +418,14 @@
 		<Spanish>Komi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_LIBYAN</Tag>
+		<English>Libyan</English>
+		<French>Libyan</French>
+		<German>Libyan</German>
+		<Italian>Libyan</Italian>
+		<Spanish>Libyan</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_LUBA</Tag>
 		<English>Luba</English>
 		<French>Luba</French>
@@ -688,6 +704,14 @@
 		<German>Tibetan</German>
 		<Italian>Tibetan</Italian>
 		<Spanish>Tibetan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TJEHENU</Tag>
+		<English>Tjehenu</English>
+		<French>Tjehenu</French>
+		<German>Tjehenu</German>
+		<Italian>Tjehenu</Italian>
+		<Spanish>Tjehenu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TUPI</Tag>
