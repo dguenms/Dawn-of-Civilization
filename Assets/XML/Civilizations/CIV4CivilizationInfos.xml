@@ -4609,14 +4609,14 @@
 			<ShortDescription>TXT_KEY_CIV_NUBIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_NUBIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_NUBIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_WALNUT</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_LILAC</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NUBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>NUB</Identifier>
-			<StartingYear>-1070</StartingYear>
+			<StartingYear>-1650</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>

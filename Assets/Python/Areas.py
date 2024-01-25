@@ -12,10 +12,10 @@ iHarappa :		(102, 47), # Harappa
 iAssyria :		(89, 50), # Ash-shur
 iChina :		(121, 52), # Chang'an
 iHittites :		(83, 54), # Hattusha
+iNubia :		(81, 37), # Meroe
 iGreece :		(76, 51), # Athens
 iIndia :		(110, 45), # Pataliputra
 iPhoenicia :	(84, 47), # Tyre
-iNubia :		(81, 38), # Meroe
 iPolynesia :	(4, 21), # Tonga
 iPersia :		(94, 45), # Persepolis
 iRome :			(68, 53), # Rome
@@ -109,7 +109,6 @@ iOttomans :	(79, 55),	# Istanbul
 # TODO: core area is fallback, define actual birth areas where different
 dBirthArea = CivDict({
 iIndia :		((105, 43),	(112, 46)),
-iNubia :		((78, 37),	(82, 40)),
 iPersia :		((91, 43),	(98, 52)),
 iCelts :		((59, 55),	(67, 61)),
 iKushans :		((96, 47),	(103, 55)),
@@ -157,7 +156,6 @@ iArgentina :	((32, 9),	(39, 17))
 
 dBirthAreaExceptions = CivDict({
 iIndia :		[(105, 43), (106, 43), (107, 43), (108, 43), (109, 43), (110, 43), (111, 46), (112, 46)],
-iNubia :		[(80, 40), (81, 40), (82, 40)],
 iPersia :		[(91, 45)],
 iCelts :		[(59, 55), (60, 55), (61, 55), (64, 60), (64, 61), (65, 58), (65, 59), (65, 60), (65, 61), (66, 58), (66, 59), (66, 60), (66, 61), (67, 55), (67, 56), (67, 58), (67, 59), (67, 60), (67, 61)],
 iKushans :		[(96, 47), (96, 48), (96, 49), (96, 50), (96, 51), (97, 47), (97, 48), (97, 49), (97, 50), (97, 51), (103, 52), (103, 53), (103, 54), (103, 55)],
@@ -203,10 +201,10 @@ iHarappa :		((99, 45),	(102, 47)),
 iAssyria :		((88, 49),	(90, 51)),
 iChina :		((120, 51),	(126, 56)),
 iHittites :		((82, 52),	(85, 54)),
+iNubia :		((78, 37),	(82, 39)),
 iGreece :		((74, 49),	(80, 53)),
 iIndia :		((107, 44),	(111, 46)),
 iPhoenicia :	((84, 47),	(85, 49)),
-iNubia :		((78, 38),	(81, 39)),
 iPolynesia :	((3, 20),	(5, 23)),
 iPersia :		((92, 43),	(95, 50)),
 iRome :			((66, 50),	(72, 57)),

@@ -403,10 +403,10 @@
 			<TextColorType>COLOR_PLAYER_EBONY_CLAY_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_WALNUT</Type> <!-- Nubia -->
-			<ColorTypePrimary>COLOR_PLAYER_WALNUT</ColorTypePrimary>
+			<Type>PLAYERCOLOR_LILAC</Type> <!-- Nubia -->
+			<ColorTypePrimary>COLOR_PLAYER_LILAC</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_BUDDHA_YELLOW</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_WALNUT_TEXT</TextColorType>
+			<TextColorType>COLOR_PLAYER_LILAC_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_CRIMSON</Type> <!-- Hittites -->

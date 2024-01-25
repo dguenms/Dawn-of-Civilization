@@ -482,10 +482,10 @@ dStartingLeaders = [
 	iAssyria : iAshurbanipal,
 	iChina : iQinShiHuang,
 	iHittites : iMursili,
+	iNubia : iTaharqa,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
-	iNubia : iTaharqa,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
 	iCelts : iBrennus,
@@ -935,14 +935,14 @@ def specificName(iPlayer):
 			
 			if iEra == iRenaissance and turn() >= year(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
-			
-	elif iCiv == iGreece:
-		if not bCityStates and bEmpire and iEra <= iClassical:
-			return "TXT_KEY_CIV_GREECE_MACEDONIA"
 	
 	elif iCiv == iNubia:
 		if iEra <= iClassical:
 			return "TXT_KEY_CIV_NUBIA_KUSH"
+			
+	elif iCiv == iGreece:
+		if not bCityStates and bEmpire and iEra <= iClassical:
+			return "TXT_KEY_CIV_GREECE_MACEDONIA"
 			
 	elif iCiv == iPolynesia:
 		if isCurrentCapital(iPlayer, "Kaua'i", "O'ahu", "Maui"):
