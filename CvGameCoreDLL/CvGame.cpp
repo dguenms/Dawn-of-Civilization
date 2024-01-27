@@ -3101,7 +3101,7 @@ int CvGame::countCivPlayersAlive() const
 
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isMinorCiv())
 		{
 			iCount++;
 		}
@@ -3156,7 +3156,7 @@ int CvGame::countCivTeamsAlive() const
 
 	for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
-		if (GET_TEAM((TeamTypes)iI).isAlive())
+		if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
 		{
 			iCount++;
 		}
@@ -3889,6 +3889,18 @@ int CvGame::getNumCities() const
 
 int CvGame::getNumCivCities() const
 {
+	int iNumCities = getNumCities();
+
+	iNumCities -= GET_PLAYER(BARBARIAN_PLAYER).getNumCities();
+
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			iNumCities -= GET_PLAYER((PlayerTypes)iI).getNumCities();
+		}
+	}
+
 	return (getNumCities() - GET_PLAYER(BARBARIAN_PLAYER).getNumCities());
 }
 
