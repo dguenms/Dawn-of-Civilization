@@ -239,7 +239,7 @@ lCivilizations = [
 	Civilization(
 		iPersia,
 		iGold=200,
-		iAdvancedStartPoints=100,
+		iAdvancedStartPoints=200,
 		iStateReligion=iZoroastrianism,
 		lCivics=[iMonarchy, iManorialism, iRedistribution, iClergy],
 		techs=techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding)
