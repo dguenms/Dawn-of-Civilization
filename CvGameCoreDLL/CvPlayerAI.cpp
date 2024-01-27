@@ -1836,9 +1836,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
-	// Leoreth: only consider value 1 sites if no desired sites are available
+	// Leoreth: only consider value 1 sites if no desired sites are available and if important enough
 	if (iSettlerMapValue == 1)
 	{
+		if (GC.getCivilizationInfo(getCivilizationType()).getImpact() <= 1) // limited or worse
+		{
+			return 0;
+		}
+
 		if (AI_bestCitySiteSettlerValue() >= 10)
 		{
 			return 0;
