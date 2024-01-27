@@ -298,7 +298,12 @@ def checkLostCoreCollapse(iPlayer):
 def determineStabilityThreshold(iPlayer, iCurrentLevel):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if isDecline(iPlayer): iThreshold += 10
+	if isDecline(iPlayer): 
+		iThreshold += 10
+		
+		# not that decline already reduces impact by 1
+		if getImpact(iPlayer) == iImpactMarginal:
+			iThreshold += 5
 	
 	return iThreshold
 	
