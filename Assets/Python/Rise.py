@@ -683,6 +683,11 @@ class Birth(object):
 		if not infos.civ(self.iCiv).isAIPlayable():
 			return False
 		
+		if autoplay():
+			if infos.civ(self.iCiv).getImpact() <= iImpactLimited:
+				if year(dBirth[active()]) > year(dFall[self.iCiv]):
+					return False
+		
 		# Nubia requires no cities
 		if self.iCiv == iNubia:
 			if cities.birth(self.iCiv):
