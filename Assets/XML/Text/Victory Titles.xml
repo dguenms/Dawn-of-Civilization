@@ -902,27 +902,27 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_PER1</Tag>
+		<English>Royal Road</English>
+		<French>Royal Road</French>
+		<German>Royal Road</German>
+		<Italian>Royal Road</Italian>
+		<Spanish>Royal Road</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_PER2</Tag>
+		<English>Wonders of the World</English>
+		<French>Merveilles du monde </French>
+		<German>Die Weltwunder</German>
+		<Italian>Wonders of the World</Italian>
+		<Spanish>Wonders of the World</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_PER3</Tag>
 		<English>The First Empire</English>
 		<French>Le premier empire </French>
 		<German>Das erste Gro&#223;reich</German>
 		<Italian>The First Empire</Italian>
 		<Spanish>The First Empire</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_PER2</Tag>
-		<English>Seven Wonders of the World</English>
-		<French>Sept merveilles du monde </French>
-		<German>Die Sieben Weltwunder</German>
-		<Italian>Seven Wonders of the World</Italian>
-		<Spanish>Seven Wonders of the World</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_PER3</Tag>
-		<English>Land of Religions</English>
-		<French>Terre des religions </French>
-		<German>Land der Religionen</German>
-		<Italian>Land of Religions</Italian>
-		<Spanish>Land of Religions</Spanish>
 	</TEXT>
 	
 	<TEXT>
