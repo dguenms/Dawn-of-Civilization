@@ -30,6 +30,7 @@ MECCA = "TXT_KEY_VICTORY_NAME_MECCA"
 MEXICO_CITY = "TXT_KEY_VICTORY_NAME_MEXICO_CITY"
 MOSCOW = "TXT_KEY_VICTORY_NAME_MOSCOW"
 PARIS = "TXT_KEY_VICTORY_NAME_PARIS"
+PERSEPOLIS = "TXT_KEY_VICTORY_NAME_PERSEPOLIS"
 TENOCHTITLAN = "TXT_KEY_VICTORY_NAME_TENOCHTITLAN"
 VIENNA = "TXT_KEY_VICTORY_NAME_VIENNA"
 
@@ -250,9 +251,9 @@ dGoals = {
 		Wonder(iMoaiStatues, by=1200),
 	),
 	iPersia: (
-		LandPercent(7, by=140),
-		BuildingCount(wonders(), 7, by=320),
-		BuildingCount(religious_buildings(shrine).named(SHRINES), 2, at=320),
+		RouteConnection([iRouteRoad], city(tPersepolis).named(PERSEPOLIS), plots.region(rAnatolia), by=-500),
+		BuildingCount(wonders(), 10, by=-300),
+		PopulationPercent(35, at=-300),
 	),
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3), by=100),
