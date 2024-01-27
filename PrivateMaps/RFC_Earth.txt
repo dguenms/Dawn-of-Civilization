@@ -36522,8 +36522,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=44
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
