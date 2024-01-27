@@ -1199,8 +1199,8 @@
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_CEMENT</PrereqTech>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>100</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>60</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>80</iConquestProb>
 			<iFoodKept>25</iFoodKept>
