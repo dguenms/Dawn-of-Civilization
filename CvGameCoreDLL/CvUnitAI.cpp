@@ -1690,7 +1690,7 @@ void CvUnitAI::AI_barbAttackMove()
 			}
 		}
 	}
-	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 3))
+	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 2))
 	{
 		if (AI_cityAttack(1, 15))
 		{
@@ -1715,7 +1715,7 @@ void CvUnitAI::AI_barbAttackMove()
 			}
 		}
 	}
-	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 2))
+	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 3 / 2))
 	{
 		if (AI_pillageRange(2))
 		{
