@@ -5846,6 +5846,91 @@ FeatureTypes CvPlot::getFeatureType() const
 }
 
 
+int CvPlot::determineVariety(FeatureTypes eFeature) const
+{
+	if (eFeature == NO_FEATURE)
+	{
+		eFeature = getFeatureType();
+	}
+
+	if (eFeature == FEATURE_FOREST)
+	{
+		switch (getTerrainType())
+		{
+		case TERRAIN_DESERT:
+		case TERRAIN_SEMIDESERT:
+		case TERRAIN_SAVANNA:
+			return 5; // tropical
+		case TERRAIN_TUNDRA:
+			return 2; // snowy
+		case TERRAIN_STEPPE:
+			return 0; // leafy
+		case TERRAIN_MOORLAND:
+			if (getRegionGroup() == REGION_GROUP_NORTH_AMERICA)
+			{
+				return 2; // snowy
+			}
+			else if (getRegionID() == REGION_SCANDINAVIA)
+			{
+				if (getLatitude() >= 78)
+				{
+					return 2; // snowy
+				}
+			}
+			else if (getLatitude() >= 70)
+			{
+				return 2; // snowy
+			}
+			return 1; // evergreen
+		case TERRAIN_GRASS:
+		case TERRAIN_PLAINS:
+			switch (getRegionID())
+			{
+			case REGION_IRELAND:
+			case REGION_BRITAIN:
+			case REGION_FRANCE:
+			case REGION_LOWER_GERMANY:
+			case REGION_CENTRAL_EUROPE:
+			case REGION_BALKANS:
+				return 4; // hybrid
+			case REGION_POLAND:
+			case REGION_BALTICS:
+			case REGION_SCANDINAVIA:
+			case REGION_RUTHENIA:
+			case REGION_URALS:
+			case REGION_MANCHURIA:
+			case REGION_AMUR:
+			case REGION_SIBERIA:
+			case REGION_CAPE:
+			case REGION_ATLANTIC_SEABOARD:
+			case REGION_MIDWEST:
+			case REGION_CASCADIA:
+			case REGION_ONTARIO:
+			case REGION_QUEBEC:
+			case REGION_MARITIMES:
+			case REGION_SOUTHERN_CONE:
+			case REGION_HINDU_KUSH:
+				return 1; // evergreen
+			case REGION_SOUTH_CHINA:
+			case REGION_KOREA:
+			case REGION_JAPAN:
+				return 3; // bamboo
+			case REGION_CONGO:
+			case REGION_GUINEA:
+			case REGION_CARIBBEAN:
+			case REGION_AMAZONIA:
+			case REGION_BRAZIL:
+				return 5; // tropical
+			}
+
+			return 0; // leafy
+		}
+	}
+
+	return (GC.getFeatureInfo(eFeature).getArtInfo()->getNumVarieties() * ((getLatitude() * 9) / 8)) / 90;
+}
+
+
 void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 {
 	CvCity* pLoopCity;
@@ -5862,7 +5947,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 	{
 		if (iVariety == -1)
 		{
-			iVariety = ((GC.getFeatureInfo(eNewValue).getArtInfo()->getNumVarieties() * ((getLatitude() * 9) / 8)) / 90);
+			iVariety = determineVariety(eNewValue);
 		}
 
 		iVariety = range(iVariety, 0, (GC.getFeatureInfo(eNewValue).getArtInfo()->getNumVarieties() - 1));
