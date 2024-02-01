@@ -3568,16 +3568,6 @@
 			<Button>Art/Structures/Buildings/Bloomery/Bloomery.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CELTIC_METALWORKER</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.8</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Metalworker/Bronzeshop_barb.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Metalworker/Metalworker.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3736,6 +3726,16 @@
 			<NIF>Art/Structures/Buildings/Sambadrome/Teuchitlan01.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Sambadrome/Button_Carnival.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CELTIC_MENHIR</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Menhir/barracks.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Menhir/menhir.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

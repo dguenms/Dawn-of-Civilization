@@ -1180,8 +1180,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
-					<BuildingType>BUILDING_CELTIC_METALWORKER</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<BuildingType>BUILDING_CELTIC_MENHIR</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

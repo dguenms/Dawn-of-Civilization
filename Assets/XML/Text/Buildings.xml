@@ -3014,14 +3014,6 @@
 		<Spanish>Bloomery</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CELTIC_METALWORKER</Tag>
-		<English>Metalworker</English>
-		<French>Metalworker</French>
-		<German>Metalworker</German>
-		<Italian>Metalworker</Italian>
-		<Spanish>Metalworker</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Tag>
 		<English>Water Puppet Theatre</English>
 		<French>Water Puppet Theatre</French>
@@ -3108,6 +3100,14 @@
 		<German>Katorga</German>
 		<Italian>Katorga</Italian>
 		<Spanish>Katorga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CELTIC_MENHIR</Tag>
+		<English>Menhir</English>
+		<French>Menhir</French>
+		<German>Menhir</German>
+		<Italian>Menhir</Italian>
+		<Spanish>Menhir</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

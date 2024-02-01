@@ -932,12 +932,12 @@ iGemsEmeralds, iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iC
 
 iNumBuildings = 140
 (iPalace, iBarracks, iSoldattorp, iIkhanda, iGranary, iTannery, iPaganTemple, iWeaver, iMbwadi, iMonument, 
-iObelisk, iStele, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, iWalls, iDun, iStable, 
-iKalliu, iOrtege, iLibrary, iEdubba, iTaixue, iKyaung, iCalmecac, iHarbor, iAqueduct, iQanat, 
-iBaray, iNoria, iStepwell, iTheatre, iOdeon, iWaterPuppetTheatre, iHippodrome, iPavilion, iArena, iBallCourt, 
-iCharreadaArena, iSambadrome, iGarden, iLighthouse, iGudang, iTradingPost, iJeweller, iGlassmaker, iObsidianWorkshop, iMarket, 
-iForum, iCaravanserai, iWangara, iFloatingMarket, iJail, iDivan, iKatorga, iBath, iReservoir, iHammam, 
-iForge, iBloomeryBuilding, iMetalworker, iArtStudio, iCastle, iCitadel, iIslandFort, iPharmacy, iAlchemist, 
+iObelisk, iMenhir, iStele, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, iWalls, iDun, 
+iStable, iKalliu, iOrtege, iLibrary, iEdubba, iTaixue, iKyaung, iCalmecac, iHarbor, iAqueduct, 
+iQanat, iBaray, iNoria, iStepwell, iTheatre, iOdeon, iWaterPuppetTheatre, iHippodrome, iPavilion, iArena, 
+iBallCourt, iCharreadaArena, iSambadrome, iGarden, iLighthouse, iGudang, iTradingPost, iJeweller, iGlassmaker, iObsidianWorkshop, 
+iMarket, iForum, iCaravanserai, iWangara, iFloatingMarket, iJail, iDivan, iKatorga, iBath, iReservoir, 
+iHammam, iForge, iBloomeryBuilding, iArtStudio, iCastle, iCitadel, iIslandFort, iPharmacy, iAlchemist, 
 iGrocer, iPostOffice, iTambo, iWharf, iVolok, iCoffeehouse, iSalon, iBank, iConstabulary, iMountedPolice, iCustomsHouse, 
 iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iGopuram, iRathaus, iSejmik, iSewer, iStarFort, 
 iEstate, iMausoleum, iHacienda, iDrydock, iLevee, iPolder, iObservatory, iWarehouse, iCourthouse, iExchequer, 
