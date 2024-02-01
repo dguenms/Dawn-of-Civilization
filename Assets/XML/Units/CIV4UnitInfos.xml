@@ -45,13 +45,37 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<TerrainAttacks>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainAttack>50</iTerrainAttack>
+				</TerrainAttack>
+				<TerrainAttack>
+					<TerrainType>TERRAIN_SAVANNA</TerrainType>
+					<iTerrainAttack>50</iTerrainAttack>
+				</TerrainAttack>
+			</TerrainAttacks>
+			<TerrainDefenses>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
+					<iTerrainDefense>50</iTerrainDefense>
+				</TerrainDefense>
+				<TerrainDefense>
+					<TerrainType>TERRAIN_SAVANNA</TerrainType>
+					<iTerrainDefense>50</iTerrainDefense>
+				</TerrainDefense>
+			</TerrainDefenses>
 			<TerrainNatives>
 				<TerrainNative>
-					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
 					<bTerrainNative>1</bTerrainNative>
 				</TerrainNative>
 				<TerrainNative>
-					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<TerrainType>TERRAIN_SAVANNA</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_SEMIDESERT</TerrainType>
 					<bTerrainNative>1</bTerrainNative>
 				</TerrainNative>
 				<TerrainNative>
@@ -114,7 +138,31 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<bFeatureNative>1</bFeatureNative>
 				</FeatureNative>
+				<FeatureNative>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
 			</FeatureNatives>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureDefense>50</iFeatureDefense>
+				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureDefense>50</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
 			<iAsset>1</iAsset>
 			<iPower>1</iPower>
 			<UnitMeshGroups>
@@ -171,10 +219,42 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<FeatureNatives>
 				<FeatureNative>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+				<FeatureNative>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<bFeatureNative>1</bFeatureNative>
 				</FeatureNative>
 			</FeatureNatives>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>100</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureAttack>100</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>100</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureDefense>100</iFeatureDefense>
+				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureDefense>100</iFeatureDefense>
+				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureDefense>100</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
 			<iAsset>1</iAsset>
 			<iPower>1</iPower>
 			<UnitMeshGroups>
@@ -231,7 +311,11 @@
 					<bTerrainNative>1</bTerrainNative>
 				</TerrainNative>
 				<TerrainNative>
-					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<TerrainType>TERRAIN_MOORLAND</TerrainType>
+					<bTerrainNative>1</bTerrainNative>
+				</TerrainNative>
+				<TerrainNative>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
 					<bTerrainNative>1</bTerrainNative>
 				</TerrainNative>
 			</TerrainNatives>
@@ -240,7 +324,41 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<bFeatureNative>1</bFeatureNative>
 				</FeatureNative>
+				<FeatureNative>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
 			</FeatureNatives>
+			<FeatureNatives>
+				<FeatureNative>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+				<FeatureNative>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<bFeatureNative>1</bFeatureNative>
+				</FeatureNative>
+			</FeatureNatives>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<FeatureDefenses>
+				<FeatureDefense>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureDefense>50</iFeatureDefense>
+				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureDefense>50</iFeatureDefense>
+				</FeatureDefense>
+			</FeatureDefenses>
 			<iAsset>1</iAsset>
 			<iPower>1</iPower>
 			<UnitMeshGroups>
