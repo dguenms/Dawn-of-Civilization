@@ -473,7 +473,7 @@ barbarians = [
 	Barbarians(300, 1500, {iCamelArcher: 1}, ((56, 39), (76, 44)), 9, NOMADS, target_area=((54, 34), (76, 48)), adjective="TXT_KEY_ADJECTIVE_BERBER"),
 	Barbarians(300, 1500, {iCamelArcher: 1}, ((86, 38), (91, 45)), 10, NOMADS, target_area=((77, 39), (91, 50)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
 	Barbarians(350, 600, {iHorseArcher: 3}, ((98, 43), (108, 49)), 6, INVADERS, target_area=((98, 42), (112, 49)), adjective="TXT_KEY_ADJECTIVE_HUNA"),
-	Barbarians(350, 550, {iSwordsman: 3, iAxeman: 3}, ((59, 59), (65, 65)), 5, INVADERS, target_area=((59, 55), (66, 63)), adjective="TXT_KEY_ADJECTIVE_FRANKISH"),
+	Barbarians(350, 550, {iSwordsman: 3, iAxeman: 3}, ((59, 59), (65, 65)), 5, INVADERS, target_area=((59, 55), (66, 63)), iAlternativeCiv=iFrance, adjective="TXT_KEY_ADJECTIVE_FRANKISH"),
 	Barbarians(350, 550, {iSwordsman: 3, iHorseArcher: 1}, ((66, 53), (73, 58)), 5, INVADERS, target_area=((65, 51), (73, 57)), adjective="TXT_KEY_ADJECTIVE_OSTROGOTHIC"),
 	Barbarians(350, 700, {iSwordsman: 3, iAxeman: 2}, ((54, 49), (62, 58)), 6, INVADERS, adjective="TXT_KEY_ADJECTIVE_VISIGOTHIC"),
 	Barbarians(350, 450, {iHorseArcher: 3}, ((61, 57), (77, 62)), 3, INVADERS, target_area=((57, 51), (79, 61)), adjective="TXT_KEY_ADJECTIVE_HUNNIC"),
