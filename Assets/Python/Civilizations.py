@@ -667,9 +667,10 @@ dStartingUnits = CivDict({
 	},
 	iCelts: {
 		iSettle: 3,
-		iWork: 1,
+		iWork: 2,
 		iDefend: 3,
 		iAttack: 4,
+		iExplore: 1,
 	},
 	iRome: {
 		iSettle: 3,
@@ -1311,6 +1312,9 @@ dAdditionalUnits = CivDict({
 }, {})
 
 dStartingExperience = CivDict({
+	iCelts: {
+		iAttack: 2,
+	},
 	iMughals: {
 		iAttack: 2,
 	},
