@@ -981,6 +981,9 @@ class Birth(object):
 		team(iOwner).declareWar(self.player.getTeam(), False, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 	
 	def flippedArea(self):
+		if self.iCiv == iEngland and player(iCelts).isHuman():
+			return plots.birth(self.iPlayer, extended=False)
+	
 		return self.isIndependence() and self.area or plots.birth(self.iPlayer)
 	
 	def flip(self):

@@ -72,6 +72,7 @@ dPeriodCapitals = {
 iPeriodMing :			(125, 56), # Beijing
 iPeriodMaratha :		(105, 46),	# Delhi
 iPeriodCarthage : 		(67, 48),	# Carthage
+iPeriodInsularCelts :	(54, 65),	# Dublin
 iPeriodVijayanagara :	(106, 37),	# Vijayanagara
 iPeriodAustria :		(71, 59),	# Vienna
 }
@@ -143,7 +144,6 @@ iBrazil :		((40, 16),	(49, 34)),
 iCanada : 		((6, 59),	(37, 68)),
 })
 
-# TODO: restore and adjust
 dExtendedBirthArea = CivDict({
 iSpain : 		((54, 51),	(62, 54)),
 iEngland :		((55, 62),	(59, 71)),
@@ -295,6 +295,7 @@ iPeriodMing : 						((120, 49),	(129, 56)),
 iPeriodModernGreece :				((74, 49),	(76, 54)),
 iPeriodMaratha : 					((102, 38),	(107, 47)),
 iPeriodCarthage:					((64, 45),	(70, 48)),
+iPeriodInsularCelts :				((52, 64),	(56, 67)),
 iPeriodByzantineConstantinople :	((77, 54),	(80, 55)),
 iPeriodMeiji : 						((134, 49),	(140, 59)),
 iPeriodSeljuks : 					((92, 48),	(98, 53)),

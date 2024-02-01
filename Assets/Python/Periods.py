@@ -25,19 +25,13 @@ dPeriods1700AD = {
 	iOttomans : iPeriodOttomanConstantinople,
 }
 
-iNumPeriods = 22
-(iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodVijayanagara,
-iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodDenmark, iPeriodNorway, 
-iPeriodUzbeks, iPeriodSaudi, iPeriodMorocco, iPeriodSpain, iPeriodAustria, 
-iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, iPeriodPakistan, 
-iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
-
 
 dPeriodNames = {
 	iPeriodMing:					"Ming",
 	iPeriodMaratha:					"Maratha",
 	iPeriodModernGreece:			"Modern_Greece",
 	iPeriodCarthage:				"Carthage",
+	iPeriodInsularCelts:			"Insular_Celts",
 	iPeriodVijayanagara:			"Vijayanagara",
 	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
 	iPeriodSeljuks:					"Seljuks",
@@ -102,7 +96,9 @@ def setup():
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iGermany:
+	if iCiv == iFrance:
+		setPeriod(iCelts, iPeriodInsularCelts)
+	elif iCiv == iGermany:
 		setPeriod(iHolyRome, iPeriodAustria)
 
 

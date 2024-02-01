@@ -423,21 +423,6 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 def removeOrthodoxyFromAnatolia(iPlayer):
 	if civ(iPlayer) == iByzantium:
 		removeReligionByArea(plots.region(rAnatolia), iOrthodoxy)
-		
-
-### PREPARE BIRTH ###
-
-@handler("prepareBirth")
-def relocateCelts(iPlayer):
-	if civ(iPlayer) == iFrance:
-		iCelticPlayer = slot(iCelts)
-	
-		if iCelticPlayer >= 0 and player(iCelticPlayer).isAlive() and not player(iCelticPlayer).isHuman():
-			newCapital = cities.owner(iCelts).where(lambda city: city not in cities.birth(iFrance)).random()
-			if newCapital:
-				relocateCapital(iCelticPlayer, newCapital)
-			else:
-				completeCollapse(iCelticPlayer)
 
 
 ### BIRTH ###
@@ -500,6 +485,27 @@ def flipMoorishMaghreb(iPlayer):
 			
 			makeUnit(iPlayer, iSettler, city)
 			makeUnit(iPlayer, iWorker, city)
+
+
+### PERIOD CHANGE ###
+
+
+@handler("playerPeriodChange")
+def relocateCelts(iPlayer, iPeriod):
+	if iPeriod == iPeriodInsularCelts:
+		newCapital = cities.owner(iCelts).matching(lambda city: city.getRegionID() == rIreland, lambda city: city.getRegionID() == rBritain, lambda city: city not in cities.birth(iFrance)).random()
+		
+		if not newCapital and not player(iPlayer).isHuman():
+			completeCollapse(iPlayer)
+			return
+		
+		relocateCapital(iPlayer, newCapital)
+		
+		ahistoricalCities = cities.owner(iCelts).where(lambda city: plot(city).getPlayerSettlerValue(iPlayer) == 0)
+		if ahistoricalCities:
+			secedeCities(iPlayer, ahistoricalCities)
+		
+		data.players[iPlayer].resetStability()
 
 
 ### IMPLEMENTATION ###
