@@ -318,6 +318,8 @@ public:
 	DllExport CvString pickFeatureDummyTag(int mouseX, int mouseY);
 	DllExport void resetFeatureModel();
 
+	int determineVariety(FeatureTypes eFeature = NO_FEATURE) const;
+
 	DllExport BonusTypes getBonusType(TeamTypes eTeam = NO_TEAM) const;																							// Exposed to Python
 	BonusTypes getNonObsoleteBonusType(TeamTypes eTeam = NO_TEAM) const;																	// Exposed to Python
 	void setBonusType(BonusTypes eNewValue);																															// Exposed to Python

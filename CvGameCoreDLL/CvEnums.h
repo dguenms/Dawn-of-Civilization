@@ -711,6 +711,8 @@ enum TerrainTypes						// Exposed to Python
 	TERRAIN_MOORLAND,
 	TERRAIN_SALTFLAT,
 	TERRAIN_SALTLAKE,
+	TERRAIN_ATOLL,
+	TERRAIN_SAVANNA,
 };
 
 enum PlotTypes							// Exposed to Python
