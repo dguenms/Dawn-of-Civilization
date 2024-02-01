@@ -1073,6 +1073,14 @@ class EntityCollection(object):
 		enriched = self + enrich
 		return enriched.unique()
 	
+	def matching(self, *conditions):
+		for condition in conditions:
+			matched = self.where(condition)
+			if matched:
+				return matched
+		
+		return self.empty()
+	
 	def format(self, separator=",", final_separator=None, formatter=lambda x: x):
 		if final_separator is None:
 			final_separator = text("TXT_KEY_AND")
