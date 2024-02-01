@@ -326,7 +326,7 @@ class Settle(StateRequirement):
 		self.area = area
 		
 		self.handle("cityBuilt", self.check_settled)
-		self.expire("cityBuilt", self.expire_settled)
+		#self.expire("cityBuilt", self.expire_settled)
 		
 	def check_settled(self, goal, city):
 		if city in self.area and self.state == POSSIBLE:

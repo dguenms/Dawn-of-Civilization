@@ -74,6 +74,11 @@ class TestAggregate(ExtendedTestCase):
 		
 		self.assertEqual(self.aggregate.format(BUILDING.format), "named aggregate")
 	
+	def test_format_separator(self):
+		self.aggregate.separated(" or")
+		
+		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Soldattorp or Ikhanda")
+	
 	def test_evaluate(self):
 		self.assertEqual(self.aggregate.evaluate(lambda x: x), 6)
 		self.assertEqual(self.aggregate.evaluate(lambda x: x*x), 14)

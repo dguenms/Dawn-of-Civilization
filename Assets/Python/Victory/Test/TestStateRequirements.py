@@ -1104,7 +1104,7 @@ class TestSettle(ExtendedTestCase):
 	def test_pickle(self):
 		self.assertPickleable(self.requirement)
 	
-	def test_settle_first(self):
+	def test_settle(self):
 		city = TestCities.one()
 		
 		try:
@@ -1125,22 +1125,6 @@ class TestSettle(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
 		finally:
 			city.kill()
-	
-	def test_settle_after(self):
-		their_city, our_city = cities = TestCities.owners(1, 0)
-		
-		try:
-			events.fireEvent("cityBuilt", their_city)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
-			
-			events.fireEvent("cityBuilt", our_city)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
-		finally:
-			cities.kill()
 
 
 class TestTradeMission(ExtendedTestCase):

@@ -266,6 +266,13 @@ class EventHandlerRegistry(object):
 		
 		return unitPillage
 	
+	def unitSpreadReligionAttempt(self, goal, applicable, func):
+		def unitSpreadReligionAttempt((unit, iReligion, bSuccess)):
+			if applicable(goal, unit.getOwner()) and bSuccess:
+				func(goal, iReligion)
+		
+		return unitSpreadReligionAttempt
+	
 	def vassalState(self, goal, applicable, func):
 		def vassalState((iMaster, iVassal, bVassal, bCapitulated)):
 			if applicable(goal, team(iMaster).getLeaderID()):

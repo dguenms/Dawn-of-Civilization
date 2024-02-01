@@ -73,6 +73,7 @@ class Aggregate(NamedArgument):
 	def __init__(self, *items):
 		NamedArgument.__init__(self)
 		self.items = list(variadic(*items))
+		self.separator = "TXT_KEY_AND"
 	
 	def __repr__(self):
 		return "%s(%s)" % (type(self).__name__, ", ".join(str(item) for item in self.items))
@@ -93,13 +94,17 @@ class Aggregate(NamedArgument):
 		if self.name_key:
 			return self.name()
 	
-		return format_separators(self.items, ",", text("TXT_KEY_AND"), lambda item: format_func(item, **options))
+		return format_separators(self.items, ",", text(self.separator), lambda item: format_func(item, **options))
 	
 	def evaluate(self, evaluate_func, left_arguments=None, right_arguments=None):
 		return self.aggregate([evaluate_func(*concat(left_arguments, item, right_arguments)) for item in self.items])
 	
 	def aggregate(self, items):
 		raise NotImplementedError()
+	
+	def separated(self, separator):
+		self.separator = separator
+		return self
 
 
 class SumAggregate(Aggregate):

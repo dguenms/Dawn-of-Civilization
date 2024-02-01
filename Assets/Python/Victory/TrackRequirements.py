@@ -102,13 +102,14 @@ class ConqueredCities(TrackRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CONQUERED_CITIES"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CONQUERED_CITIES"
 	
-	def __init__(self, iRequired, civs=None, inside=None, outside=None, **options):
-		TrackRequirement.__init__(self, iRequired, civs=civs, inside=inside, outside=outside, **options)
+	def __init__(self, iRequired, civs=None, inside=None, outside=None, bControl=True, **options):
+		TrackRequirement.__init__(self, iRequired, civs=civs, inside=inside, outside=outside, bControl=bControl, **options)
 		
 		self.recorded = set()
 		self.civs = civs
 		self.inside = inside
 		self.outside = outside
+		self.bControl = bControl
 		
 		self.handle("cityAcquired", self.record_conquered_city)
 		
@@ -130,7 +131,7 @@ class ConqueredCities(TrackRequirement):
 			goal.check()
 	
 	def evaluate(self, evaluator):
-		return evaluator.sum(lambda p: cities.owner(p).where(lambda city: location(city) in self.recorded).count())
+		return plots.of(self.recorded).where(lambda p: not self.bControl or (p.isCity() and p.getOwner() in evaluator)).count()
 	
 	def additional_formats(self):
 		cities = text("TXT_KEY_VICTORY_CITIES")
@@ -450,6 +451,26 @@ class RazeCount(TrackRequirement):
 		TrackRequirement.__init__(self, *parameters, **options)
 		
 		self.incremented("cityRazed")
+
+
+class ReligionSpreadCount(TrackRequirement):
+
+	TYPES = (RELIGION, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SPREAD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_COUNT"
+	
+	def __init__(self, iReligion, iCount, **options):
+		TrackRequirement.__init__(self, iReligion, iCount, **options)
+		
+		self.iReligion = iReligion
+		
+		self.handle("unitSpreadReligionAttempt", self.increment_religion_spread)
+	
+	def increment_religion_spread(self, goal, iReligion):
+		if self.iReligion == iReligion:
+			self.increment()
 
 
 # Third Colombian UHV goal
