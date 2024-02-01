@@ -123,12 +123,12 @@ class TestParameterSet(ExtendedTestCase):
 	def test_str(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
 		
-		self.assertEqual(str(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(22, 4)])")
+		self.assertEqual(str(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(23, 4)])")
 	
 	def test_repr(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
 	
-		self.assertEqual(repr(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(22, 4)])")
+		self.assertEqual(repr(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(23, 4)])")
 	
 	def test_equal(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
@@ -801,15 +801,15 @@ class TestGoal(ExtendedTestCase):
 		team(0).setHasTech(iCalendar, False, 0, False, False)
 		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
-		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 290)"])
-		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 290)")
+		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 270)"])
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 270)")
 	
 	def test_attributes_with_game_settings(self):
 		AdvisorOpt.setUHVFinishDate(1)
 		goal = Goal([BuildingCount(iGranary, 3).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, at=1000)
 		
-		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 290)"])
-		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 290)")
+		self.assertEqual(list(goal.create_date_suffixes()), ["in 1000 AD (Turn 270)"])
+		self.assertEqual(goal.description(), "Control three Granaries in 1000 AD (Turn 270)")
 	
 	def test_by_handler(self):
 		goal = Goal([BuildingCount(iGranary, 1).create()], "TXT_KEY_VICTORY_DESC_CONTROL", 0, by=-3000)

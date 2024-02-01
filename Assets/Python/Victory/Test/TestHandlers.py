@@ -524,6 +524,25 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		finally:
 			our_unit.kill(False, -1)
 			their_unit.kill(False, -1)
+	
+	def test_unit_spread_religion_attempt(self):
+		onUnitSpreadReligionAttempt = self.get("unitSpreadReligionAttempt", self.capture)
+		
+		our_unit = makeUnit(0, iSwordsman, (20, 20))
+		their_unit = makeUnit(1, iSwordsman, (25, 25))
+		
+		try:
+			onUnitSpreadReligionAttempt((their_unit, iOrthodoxy, True))
+			self.assertEqual(self.argument, None)
+			
+			onUnitSpreadReligionAttempt((our_unit, iOrthodoxy, False))
+			self.assertEqual(self.argument, None)
+			
+			onUnitSpreadReligionAttempt((our_unit, iOrthodoxy, True))
+			self.assertEqual(self.argument, (self.goal, iOrthodoxy))
+		finally:
+			our_unit.kill(False, -1)
+			their_unit.kill(False, -1)
 		
 
 test_cases = [

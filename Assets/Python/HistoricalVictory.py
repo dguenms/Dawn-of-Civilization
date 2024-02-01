@@ -82,6 +82,7 @@ NORTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA"
 NUBIA = "TXT_KEY_VICTORY_NAME_NUBIA"
 OCEANIA = "TXT_KEY_VICTORY_NAME_OCEANIA"
 PACIFIC_COAST = "TXT_KEY_VICTORY_NAME_PACIFIC_COAST"
+PANNONIA = "TXT_KEY_VICTORY_NAME_PANNONIA"
 PERSIA = "TXT_KEY_VICTORY_NAME_PERSIA"
 PERU = "TXT_KEY_VICTORY_NAME_PERU"
 PHILIPPINES = "TXT_KEY_VICTORY_NAME_PHILIPPINES"
@@ -123,6 +124,9 @@ ALL_EUROPEAN = "TXT_KEY_VICTORY_NAME_ALL_EUROPEAN"
 EUROPEAN = "TXT_KEY_VICTORY_NAME_EUROPEAN"
 EUROPEAN_CIVILIZATION = "TXT_KEY_VICTORY_NAME_EUROPEAN_CIVILIZATION"
 LOCAL = "TXT_KEY_VICTORY_NAME_LOCAL"
+
+# separators
+OR = "TXT_KEY_OR"
 
 # goal descriptors
 FIRST_VIKING_GOAL = "TXT_KEY_VICTORY_GOAL_VIKINGS_1"
@@ -254,6 +258,19 @@ dGoals = {
 		RouteConnection([iRouteRoad], city(tPersepolis).named(PERSEPOLIS), plots.region(rAnatolia), by=-500),
 		BuildingCount(wonders(), 10, by=-300),
 		PopulationPercent(35, at=-300),
+	),
+	iCelts: (
+		ConqueredCities(2, bControl=False, by=-150),
+		Settle(
+			plots.region(rIreland),
+			plots.region(rBritain),
+			plots.region(rIberia),
+			plots.region(rCentralEurope).named(PANNONIA),
+			plots.region(rAnatolia),
+			required=3,
+			by=-150,
+		),
+		ReligionSpreadCount(sum(iOrthodoxy, iCatholicism).separated(OR), 12, by=1000),
 	),
 	iRome: (
 		BuildingCount((iBarracks, 6), (iAqueduct, 5), (iArena, 4), (iForum, 3), by=100),
