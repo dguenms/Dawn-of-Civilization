@@ -22,6 +22,10 @@
 					<PrereqTech>TECH_ENGINEERING</PrereqTech>
 					<iMovementChange>-10</iMovementChange>
 				</TechMovementChange>
+				<TechMovementChange>
+					<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
+					<iMovementChange>-5</iMovementChange>
+				</TechMovementChange>
 			</TechMovementChanges>
 			<Button>Art/Interface/Buttons/Builds/BuildRoad.dds</Button>
 		</RouteInfo>
@@ -31,8 +35,8 @@
 			<iValue>3</iValue>
 			<iAdvancedStartCost>18</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iMovement>20</iMovement>
-			<iFlatMovement>6</iFlatMovement>
+			<iMovement>15</iMovement>
+			<iFlatMovement>8</iFlatMovement>
 			<BonusType>NONE</BonusType>
 			<PrereqOrBonuses>
 				<PrereqOrBonus>
@@ -43,7 +47,12 @@
 				</PrereqOrBonus>
 			</PrereqOrBonuses>
 			<Yields/>
-			<TechMovementChanges/>
+			<TechMovementChanges>
+				<TechMovementChange>
+					<PrereqTech>TECH_ELECTRONICS</PrereqTech>
+					<iMovementChange>-3</iMovementChange>
+				</TechMovementChange>
+			</TechMovementChanges>
 			<Button>Art/Interface/Buttons/Builds/BuildRailroad.dds</Button>
 		</RouteInfo>
 		<RouteInfo>
@@ -57,7 +66,12 @@
 			<BonusType>NONE</BonusType>
 			<PrereqOrBonuses/>
 			<Yields/>
-			<TechMovementChanges/>
+			<TechMovementChanges>
+				<TechMovementChange>
+					<PrereqTech>TECH_ENGINEERING</PrereqTech>
+					<iMovementChange>-5</iMovementChange>
+				</TechMovementChange>
+			</TechMovementChanges>
 			<Button>Art/Interface/Buttons/Builds/BuildPavedRoad.dds</Button>
 		</RouteInfo>
 		<RouteInfo>
@@ -66,8 +80,8 @@
 			<iValue>3</iValue>
 			<iAdvancedStartCost>18</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iMovement>20</iMovement>
-			<iFlatMovement>6</iFlatMovement>
+			<iMovement>15</iMovement>
+			<iFlatMovement>4</iFlatMovement>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqOrBonuses/>
 			<Yields/>
