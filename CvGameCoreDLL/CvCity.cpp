@@ -7173,7 +7173,7 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 	}
 	iNumVassalCities /= std::max(1, GET_TEAM(getTeam()).getNumMembers());
 
-	int iNumCitiesMaintenance = (GET_PLAYER(getOwnerINLINE()).getNumCities() + iNumVassalCities) * iNumCitiesPercent;
+	int iNumCitiesMaintenance = std::max(1, GET_PLAYER(getOwnerINLINE()).getNumCities() + iNumVassalCities - 0) * iNumCitiesPercent;
 
 	//iNumCitiesMaintenance = std::min(iNumCitiesMaintenance, GC.getHandicapInfo(getHandicapType()).getMaxNumCitiesMaintenance() * 100);
 
@@ -7184,7 +7184,7 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 	// Leoreth: apply large empire penalty here
 	int iSizeThreshold = 6 + 3 * GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	int iMultiplier = 5; //(GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
-	int iNumCities = GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / iSizeThreshold;
+	int iNumCities = std::min(GET_PLAYER(getOwnerINLINE()).getNumCities(), GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / iSizeThreshold);
 
 	if (iNumCities > 10)
 	{
