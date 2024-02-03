@@ -415,12 +415,17 @@ def getSeparatismModifier(iPlayer, city):
 	civic = civics(iPlayer)
 	
 	bHistorical = plot.getPlayerSettlerValue(iPlayer) > 0
+	bConquest = plot.getPlayerWarValue(iPlayer) > 1
 	bFall = since(year(dFall[iPlayer])) >= 0
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
 	
 	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
+	
+	# recent conquests in conquest area
+	if bConquest and city.getOriginalCiv() != iCiv and since(city.getGameTurnAcquired()) <= turns(10):
+		return 0
 	
 	# ahistorical tiles
 	if not bHistorical:
