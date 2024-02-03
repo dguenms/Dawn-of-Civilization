@@ -582,10 +582,11 @@ def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
 	elif iRole == iMissionary:
 		created += createMissionaries(iPlayer, iAmount)
 	else:
-		for iUnit, iUnitAI in getUnitsForRole(iPlayer, iRole):
-			if iUnit is not None and location is not None:
-				iExperience += dStartingExperience[iPlayer].get(iRole, 0)
-				created += makeUnits(iPlayer, iUnit, location, iAmount, iUnitAI).experience(iExperience)
+		for _ in range(iAmount):
+			for iUnit, iUnitAI in getUnitsForRole(iPlayer, iRole):
+				if iUnit is not None and location is not None:
+					iExperience += dStartingExperience[iPlayer].get(iRole, 0)
+					created += makeUnits(iPlayer, iUnit, location, 1, iUnitAI).experience(iExperience)
 	return created
 	
 # used: Congresses, History, RFCUtils, Rise, Stability
