@@ -186,7 +186,7 @@ dGoals = {
 	),
 	iHittites: (
 		ResourceCount(sum(iCopper, iIron), 4, by=-900),
-		Production(1000, by=-800),
+		Production(1200, by=-800),
 		FirstTribute(),
 	),
 	iNubia: (
