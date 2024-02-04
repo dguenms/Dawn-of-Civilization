@@ -11057,14 +11057,8 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				switch (getCivilizationType())
+				if (eFavorite == ISLAM)
 				{
-				case OTTOMANS:
-				case ARABIA:
-				case EGYPT:
-				case MALI:
-				case CARTHAGE:
-				case PERSIA:
 					iValue /= 2;
 				}
 			}
@@ -11113,7 +11107,9 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 		return 0;
 	}
 
-	int iValue = GC.getGameINLINE().countReligionLevels(eReligion);
+	// Leoreth: we don't care about global religion spread
+	int iValue = 0; // GC.getGameINLINE().countReligionLevels(eReligion);
+	int iPaganValue = 0;
 
 	int iLoop;
 	CvCity* pLoopCity;
@@ -11121,8 +11117,19 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 	{
 		if (pLoopCity->isHasReligion(eReligion))
 		{
-			iValue += pLoopCity->getPopulation();
+			// Leoreth: value ahistorical cities less
+			iValue += std::max(0, pLoopCity->getPopulation() - (pLoopCity->plot()->getSettlerValue(getID()) < 90 ? 10 : 0));
 		}
+
+		if (pLoopCity->getReligionCount() == 0 && getLastStateReligion() == NO_RELIGION)
+		{
+			iPaganValue += pLoopCity->getPopulation();
+		}
+	}
+
+	if (iPaganValue > iValue * 2)
+	{
+		return 0;
 	}
 
 	CvCity* pHolyCity = GC.getGameINLINE().getHolyCity(eReligion);
