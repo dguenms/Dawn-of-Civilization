@@ -299,8 +299,8 @@ def immigration():
 	
 	iNumMigrations = min(sourcePlayers.count(), targetPlayers.count())
 	
-	sourceCities = sourcePlayers.cities().where(lambda city: city.getPopulation() > 1).highest(iNumMigrations, getEmigrationValue)
-	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)
+	sourceCities = sourcePlayers.cities().where(lambda city: city.getRegionID() not in lNewWorld).where(lambda city: city.getPopulation() > 1).highest(iNumMigrations, getEmigrationValue)
+	targetCities = targetPlayers.cities().regions(*lNewWorld).highest(iNumMigrations, getImmigrationValue)
 	
 	for sourceCity, targetCity in zip(sourceCities, targetCities):
 		iPopulation = 1
