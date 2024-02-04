@@ -477,9 +477,6 @@ class Birth(object):
 		# civilization attributes
 		self.civ.apply()
 		
-		# additional starting techs
-		self.assignAdditionalTechs()
-		
 		# dynamic starting religion
 		if self.iCiv in lDynamicReligionCivs:
 			iPrevalentReligion = getPrevalentReligion(self.area, self.iPlayer)
@@ -830,6 +827,7 @@ class Birth(object):
 	
 	def checkSwitch(self):
 		if not self.canSwitch():
+			self.assignAdditionalTechs()
 			return
 
 		self.switchPopup.text(adjective(self.iPlayer)).noSwitch().switch().launch()
@@ -848,6 +846,7 @@ class Birth(object):
 	
 	def noSwitch(self):
 		if not self.isHuman():
+			self.assignAdditionalTechs()
 			createRoleUnits(self.iPlayer, self.location, getAIStartingUnits(self.iPlayer))
 		
 		createSpecificUnits(self.iPlayer, self.location)
