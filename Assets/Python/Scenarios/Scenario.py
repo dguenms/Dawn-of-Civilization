@@ -1,6 +1,6 @@
 from Resources import setupScenarioResources
 from DynamicCivs import checkName
-from Slots import findSlot, addPlayer, initWars
+from Slots import findSlot, findMinorSlot, addPlayer, initWars
 from GoalHandlers import event_handler_registry
 
 from Core import *
@@ -361,12 +361,13 @@ class Scenario(object):
 		
 		for civ in self.lCivilizations:
 			iCiv = civ.iCiv
+			bMinor = not civ.isPlayable()
 			
 			if game.getActiveCivilizationType() == iCiv:
 				continue
 			
-			iPlayer = findSlot(iCiv)
-			addPlayer(iPlayer, iCiv, bAlive=True, bMinor=not civ.isPlayable())
+			iPlayer = bMinor and findMinorSlot(iCiv) or findSlot(iCiv)
+			addPlayer(iPlayer, iCiv, bAlive=True, bMinor=bMinor)
 			
 			initWars(iPlayer)
 	

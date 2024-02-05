@@ -17,17 +17,17 @@ lCivilizations = [
 		techs=techs.of(iMining, iPottery, iAgriculture)
 	),
 	Civilization(
-		iCelts
-	),
-	Civilization(
 		iNative,
 		techs=techs.of(iTanning, iMythology)
 	),
 	Civilization(
-		iIndependent
+		iCelts
 	),
 	Civilization(
 		iIndependent2
+	),
+	Civilization(
+		iIndependent
 	),
 ]
 

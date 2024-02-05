@@ -50,9 +50,9 @@ lCivilizations = [
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),
 	Civilization(
-		iIndependent,
-		iGold=100,
-		techs=techs.column(5)
+		iNative,
+		iGold=300,
+		techs=techs.column(4)
 	),
 	Civilization(
 		iIndependent2,
@@ -60,10 +60,10 @@ lCivilizations = [
 		techs=techs.column(5)
 	),
 	Civilization(
-		iNative,
-		iGold=300,
-		techs=techs.column(4)
-	)
+		iIndependent,
+		iGold=100,
+		techs=techs.column(5)
+	),
 ]
 
 

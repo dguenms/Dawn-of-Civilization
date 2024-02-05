@@ -20,6 +20,9 @@ def findSlot(iCiv):
 		return iSlot
 
 	return -1
+
+def findMinorSlot(iCiv):
+	return next(iSlot for iSlot in reversed(range(iNumPlayers)) if civ(iSlot) == -1)
 	
 def availableSlot(iSlot):
 	if player(iSlot).isAlive():

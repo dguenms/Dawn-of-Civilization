@@ -192,9 +192,9 @@ lCivilizations = [
 		techs=techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
 	),
 	Civilization(
-		iIndependent,
-		iGold=500,
-		techs=techs.column(10)
+		iNative,
+		iGold=300,
+		techs=techs.column(7)
 	),
 	Civilization(
 		iIndependent2,
@@ -202,9 +202,9 @@ lCivilizations = [
 		techs=techs.column(10)
 	),
 	Civilization(
-		iNative,
-		iGold=300,
-		techs=techs.column(7)
+		iIndependent,
+		iGold=500,
+		techs=techs.column(10)
 	),
 ]
 	
