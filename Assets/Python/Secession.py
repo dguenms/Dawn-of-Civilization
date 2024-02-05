@@ -69,6 +69,9 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 def canBeRazed(city):	
 	if city.isHolyCity():
 		return False
+	
+	if city.getNumActiveWorldWonders() > 0:
+		return False
 
 	# always raze Harappan cities, except holy city
 	if civ(city) == iHarappa and not player(city).isHuman():
