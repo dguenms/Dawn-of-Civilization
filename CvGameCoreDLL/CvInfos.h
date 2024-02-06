@@ -5493,6 +5493,7 @@ public:
 	int getImprovementPercent() const;		//	Exposed to Python
 	int getGreatPeoplePercent() const;		//	Exposed to Python
 	int getAnarchyPercent() const;				//	Exposed to Python
+	int getMaintenanceRangePercent() const; // Leoreth
 	int getEventChancePerTurn() const;				//	Exposed to Python
 	int getSoundtrackSpace() const;				//	Exposed to Python
 	int getNumSoundtracks() const;				//	Exposed to Python
@@ -5531,6 +5532,7 @@ protected:
 	int m_iImprovementPercent;
 	int m_iGreatPeoplePercent;
 	int m_iAnarchyPercent;
+	int m_iMaintenanceRangePercent; // Leoreth
 	int m_iEventChancePerTurn;
 	int m_iSoundtrackSpace;
 	int m_iNumSoundtracks;
