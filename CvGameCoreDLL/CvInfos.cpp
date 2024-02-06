@@ -20344,6 +20344,7 @@ m_iBuildPercent(0),
 m_iImprovementPercent(0),
 m_iGreatPeoplePercent(0),
 m_iAnarchyPercent(0),
+m_iMaintenanceRangePercent(0),
 m_iEventChancePerTurn(0),
 m_iSoundtrackSpace(0),
 m_iNumSoundtracks(0),
@@ -20448,6 +20449,12 @@ int CvEraInfo::getAnarchyPercent() const
 	return m_iAnarchyPercent;
 }
 
+// Leoreth
+int CvEraInfo::getMaintenanceRangePercent() const
+{
+	return m_iMaintenanceRangePercent;
+}
+
 int CvEraInfo::getEventChancePerTurn() const
 {
 	return m_iEventChancePerTurn;
@@ -20542,6 +20549,7 @@ bool CvEraInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iImprovementPercent, "iImprovementPercent");
 	pXML->GetChildXmlValByName(&m_iGreatPeoplePercent, "iGreatPeoplePercent");
 	pXML->GetChildXmlValByName(&m_iAnarchyPercent, "iAnarchyPercent");
+	pXML->GetChildXmlValByName(&m_iMaintenanceRangePercent, "iMaintenanceRangePercent");
 	pXML->GetChildXmlValByName(&m_iEventChancePerTurn, "iEventChancePerTurn");
 	pXML->GetChildXmlValByName(&m_iSoundtrackSpace, "iSoundtrackSpace");
 	pXML->GetChildXmlValByName(&m_bFirstSoundtrackFirst, "bFirstSoundtrackFirst");

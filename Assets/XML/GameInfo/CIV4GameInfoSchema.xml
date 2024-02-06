@@ -984,6 +984,7 @@
 	<ElementType name="iGreatPeoplePercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iCulturePercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iAnarchyPercent" content="textOnly" dt:type="int"/>
+	<ElementType name="iMaintenanceRangePercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iEventChancePerTurn" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iInflationOffset" content="textOnly" dt:type="int"/>
@@ -1288,6 +1289,7 @@
 		<element type="iGreatPeoplePercent"/>
 		<element type="iCulturePercent"/>
 		<element type="iAnarchyPercent"/>
+		<element type="iMaintenanceRangePercent"/>
 		<element type="iEventChancePerTurn"/>
 		<element type="iSoundtrackSpace"/>
 		<element type="bFirstSoundtrackFirst"/>

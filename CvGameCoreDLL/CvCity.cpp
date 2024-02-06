@@ -7100,7 +7100,10 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 	int iBestCapitalMaintenance;
 	int iTempMaintenance;
 	int iDistance;
+	int iMaxDistance;
 	int iLoop;
+
+	iMaxDistance = GC.getMapINLINE().maxPlotDistance() * GC.getEraInfo(GET_PLAYER(getOwnerINLINE()).getCurrentEra()).getMaintenanceRangePercent() / 100;
 
 	iWorstCityMaintenance = 0;
 	iBestCapitalMaintenance = MAX_INT;
@@ -7130,7 +7133,7 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 		iTempMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercentByID(getOwnerINLINE()); //Rhye
 		iTempMaintenance /= 100;
 
-		iTempMaintenance /= GC.getMapINLINE().maxPlotDistance();
+		iTempMaintenance /= iMaxDistance;
 
 		iWorstCityMaintenance = std::max(iWorstCityMaintenance, iTempMaintenance);
 
