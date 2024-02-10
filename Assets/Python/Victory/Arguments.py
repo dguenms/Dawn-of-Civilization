@@ -87,6 +87,9 @@ class Aggregate(NamedArgument):
 		
 		return other in self
 	
+	def create(self):
+		return self.of(*[item.create() for item in self.items]).named(self.name_key, *self.name_args).separated(self.separator)
+	
 	def validate(self, validate_func):
 		return all(validate_func(item) for item in self.items)
 	
