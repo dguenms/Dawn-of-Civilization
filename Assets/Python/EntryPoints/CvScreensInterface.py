@@ -889,8 +889,8 @@ def isNeighbor(argsList):
 def getVictoryTooltip(argsList):
 	iPlayer, x, y = argsList
 	
-	historicalVictoryTooltip = data.players[iPlayer].historicalVictory.area_names((x, y))
-	religiousVictoryTooltip = data.players[iPlayer].religiousVictory.area_names((x, y))
+	historicalVictoryTooltip = data.players[iPlayer].historicalVictory and data.players[iPlayer].historicalVictory.area_names((x, y)) or []
+	religiousVictoryTooltip = data.players[iPlayer].religiousVictory and data.players[iPlayer].religiousVictory.area_names((x, y)) or []
 	
 	tooltips = unique(tooltip for tooltip in historicalVictoryTooltip + religiousVictoryTooltip if tooltip)
 	return "\n".join(tooltips)
