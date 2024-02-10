@@ -339,11 +339,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ENG</Tag>
-		<English>Faraway Cities incur no extra Maintenance</English>
-		<French>Les villes lointaines ne n&#233;cessitent pas d'entretien suppl&#233;mentaire</French>
-		<German>Weit entfernte St&#228;dte kosten keinen zus&#228;tzlichen Unterhalt</German>
-		<Italian>Le unit&#224; navali hanno 2 possibilit&#224; di Attacchi improvvisi supplementari</Italian>
-		<Spanish>Las unidades navales tienen 2 posibilidades adicionales de ataque de iniciativa</Spanish>
+		<English>Reduced colony maintenance from number of colonies per continent</English>
+		<French>Reduced colony maintenance from number of colonies per continent</French>
+		<German>Geringerer Kolonie-Unterhalt durch die Anzahl Kolonien pro Kontinent</German>
+		<Italian>Reduced colony maintenance from number of colonies per continent</Italian>
+		<Spanish>Reduced colony maintenance from number of colonies per continent</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
