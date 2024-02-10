@@ -779,19 +779,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO_TITLE</Tag>
-		<English>The Power of Irrigation:</English>
-		<French>Le pouvoir de l'irrigation :</French>
-		<German>Die Macht der Bew&#228;sserung:</German>
-		<Italian>The Power of Irrigation:</Italian>
-		<Spanish>The Power of Irrigation:</Spanish>
+		<English>The Power of Horticulture:</English>
+		<French>The Power of Horticulture:</French>
+		<German>Die Macht der Hortikultur:</German>
+		<Italian>The Power of Horticulture:</Italian>
+		<Spanish>The Power of Horticulture:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO</Tag>
-		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
-		<French>Sur les cases de plaines, les am&#233;liorations qui rapportent de la nourriture en rapportent une de plus jusqu'&#224; la Renaissance</French>
-		<German>Verbesserungen, die Nahrung produzieren, geben eine zus&#228;tzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
-		<Italian>Improvements that yield food give one extra food on plains tiles until the Renaissance</Italian>
-		<Spanish>Improvements that yield food give one extra food on plains tiles until the Renaissance</Spanish>
+		<English>+2 [ICON_FOOD] from Orchard</English>
+		<French>+2 [ICON_FOOD] from Orchard</French>
+		<German>+2 [ICON_FOOD] from Orchard</German>
+		<Italian>+2 [ICON_FOOD] from Orchard</Italian>
+		<Spanish>+2 [ICON_FOOD] from Orchard</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG_TITLE</Tag>

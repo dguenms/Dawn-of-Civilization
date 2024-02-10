@@ -1758,8 +1758,7 @@ bool CvPlot::isFreshWater() const
 
 bool CvPlot::isPotentialIrrigation() const
 {
-	// Leoreth: all Moorish improvements that give food spread irrigation
-	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
+	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation())))
 	{
 		if ((getTeam() != NO_TEAM) && GET_TEAM(getTeam()).isIrrigation())
 		{
@@ -1782,7 +1781,7 @@ bool CvPlot::canHavePotentialIrrigation() const
 
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
+		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation())
 		{
 			if (canHaveImprovement(((ImprovementTypes)iI), NO_TEAM, true))
 			{
@@ -6957,12 +6956,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
-	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
+	// Leoreth: Moorish UP: +2 food from Orchards
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == MOORS)
 	{
-		if (eYield == YIELD_FOOD && iYield > 0 && getTerrainType() == TERRAIN_PLAINS)
+		if (eYield == YIELD_FOOD && eImprovement == IMPROVEMENT_ORCHARD)
 		{
-			iYield += 1;
+			iYield += 2;
 		}
 	}
 
