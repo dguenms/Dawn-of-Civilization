@@ -31,7 +31,7 @@
 			<iHurryPercent>33</iHurryPercent>
 			<iHurryConscriptAngerPercent>300</iHurryConscriptAngerPercent>
 			<iInflationPercent>18</iInflationPercent>
-			<iInflationOffset>-360</iInflationOffset>
+			<iInflationOffset>-500</iInflationOffset>
 			<iVictoryDelayPercent>300</iVictoryDelayPercent>
 			<GameTurnInfos>
 				<!-- Ancient Era -->
@@ -186,7 +186,7 @@
 			<iHurryPercent>66</iHurryPercent>
 			<iHurryConscriptAngerPercent>150</iHurryConscriptAngerPercent>
 			<iInflationPercent>24</iInflationPercent>
-			<iInflationOffset>-180</iInflationOffset>
+			<iInflationOffset>-300</iInflationOffset>
 			<iVictoryDelayPercent>150</iVictoryDelayPercent>
 			<GameTurnInfos>
 				<!-- Ancient Era -->
@@ -341,7 +341,7 @@
 			<iHurryPercent>100</iHurryPercent>
 			<iHurryConscriptAngerPercent>100</iHurryConscriptAngerPercent>
 			<iInflationPercent>35</iInflationPercent>
-			<iInflationOffset>-120</iInflationOffset>
+			<iInflationOffset>-200</iInflationOffset>
 			<iVictoryDelayPercent>100</iVictoryDelayPercent>
 			<GameTurnInfos>
 				<!-- Ancient Era -->
