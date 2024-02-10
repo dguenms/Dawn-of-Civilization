@@ -354,6 +354,7 @@ public:
 	int calculateNumCitiesMaintenance() const;									// Exposed to Python
 	int calculateColonyMaintenance() const;									// Exposed to Python
 	int calculateCorporationMaintenance() const;									// Exposed to Python
+	int calculateBaseDistanceMaintenanceTimes100() const;
 	int calculateDistanceMaintenanceTimes100() const;										// Exposed to Python
 	int calculateNumCitiesMaintenanceTimes100() const;									// Exposed to Python
 	int calculateColonyMaintenanceTimes100() const;									// Exposed to Python

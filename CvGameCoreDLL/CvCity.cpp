@@ -7093,60 +7093,67 @@ int CvCity::calculateDistanceMaintenance() const
 	return (calculateDistanceMaintenanceTimes100() / 100);
 }
 
-int CvCity::calculateDistanceMaintenanceTimes100() const
+int CvCity::calculateBaseDistanceMaintenanceTimes100() const
 {
 	CvCity* pLoopCity;
-	int iWorstCityMaintenance;
-	int iBestCapitalMaintenance;
-	int iTempMaintenance;
+	int iLoop;
 	int iDistance;
 	int iMaxDistance;
-	int iLoop;
+	int iMaintenanceDistance;
+	int iMaintenance;
 
-	iMaxDistance = GC.getMapINLINE().maxPlotDistance() * GC.getEraInfo(GET_PLAYER(getOwnerINLINE()).getCurrentEra()).getMaintenanceRangePercent() / 100;
-
-	iWorstCityMaintenance = 0;
-	iBestCapitalMaintenance = MAX_INT;
+	int iGreatestDistance = 0;
+	int iClosestGovernmentCenterDistance = MAX_INT;
 
 	for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 	{
 		iDistance = plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE());
 
-		// Leoreth: English UP: distance capped at 10
-		if (getCivilizationType() == ENGLAND)
-		{
-			iDistance = std::min(10, iDistance);
-		}
-
-		iTempMaintenance = 100 * (GC.getDefineINT("MAX_DISTANCE_CITY_MAINTENANCE") * iDistance);
-
-		iTempMaintenance *= (getPopulation() + 7);
-		iTempMaintenance /= 10;
-
-		iTempMaintenance *= std::max(0, (GET_PLAYER(getOwnerINLINE()).getDistanceMaintenanceModifier() + 100));
-		iTempMaintenance /= 100;
-
-		iTempMaintenance *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDistanceMaintenancePercent();
-		iTempMaintenance /= 100;
-
-		//iTempMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercent(); //Rhye
-		iTempMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercentByID(getOwnerINLINE()); //Rhye
-		iTempMaintenance /= 100;
-
-		iTempMaintenance /= iMaxDistance;
-
-		iWorstCityMaintenance = std::max(iWorstCityMaintenance, iTempMaintenance);
+		iGreatestDistance = std::max(iGreatestDistance, iDistance);
 
 		if (pLoopCity->isGovernmentCenter())
 		{
-			iBestCapitalMaintenance = std::min(iBestCapitalMaintenance, iTempMaintenance);
+			iClosestGovernmentCenterDistance = std::min(iClosestGovernmentCenterDistance, iDistance);
 		}
 	}
 
-	iTempMaintenance = std::min(iWorstCityMaintenance, iBestCapitalMaintenance);
-	FAssert(iTempMaintenance >= 0);
+	iMaintenanceDistance = std::min(iGreatestDistance, iClosestGovernmentCenterDistance);
 
-	return iTempMaintenance;
+	iMaintenance = 100 * (GC.getDefineINT("MAX_DISTANCE_CITY_MAINTENANCE") * iMaintenanceDistance);
+
+	iMaintenance *= (getPopulation() + 7);
+	iMaintenance /= 10;
+
+	iMaintenance *= std::max(0, (GET_PLAYER(getOwnerINLINE()).getDistanceMaintenanceModifier() + 100));
+	iMaintenance /= 100;
+
+	iMaintenance *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getDistanceMaintenancePercent();
+	iMaintenance /= 100;
+
+	iMaxDistance = GC.getMapINLINE().maxPlotDistance() * GC.getEraInfo(GET_PLAYER(getOwnerINLINE()).getCurrentEra()).getMaintenanceRangePercent() / 100;
+
+	iMaintenance /= iMaxDistance;
+
+	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
+	if (pCapital && plot()->isOverseas(pCapital->plot()))
+	{
+		iMaintenance /= 2;
+	}
+
+	FAssert(iMaintenance >= 0);
+	return iMaintenance;
+}
+
+int CvCity::calculateDistanceMaintenanceTimes100() const
+{
+	int iMaintenance = calculateBaseDistanceMaintenanceTimes100();
+
+	iMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercentByID(getOwnerINLINE()); //Rhye
+	iMaintenance /= 100;
+
+	FAssert(iMaintenance >= 0);
+
+	return iMaintenance;
 }
 
 int CvCity::calculateNumCitiesMaintenance() const
@@ -7217,7 +7224,12 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 	}
 
 	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
-	if (pCapital && pCapital->area() == area())
+	if (pCapital && !plot()->isOverseas(pCapital->plot()))
+	{
+		return 0;
+	}
+
+	if (area()->getNumCities() == 1)
 	{
 		return 0;
 	}
@@ -7239,12 +7251,22 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 	iNumCitiesPercent *= GC.getHandicapInfo(getHandicapType()).getColonyMaintenancePercent();
 	iNumCitiesPercent /= 100;
 
-	int iNumCities = (area()->getCitiesPerPlayer(getOwnerINLINE()) - 1) * iNumCitiesPercent;
+	int iNumCities = area()->getCitiesPerPlayer(getOwnerINLINE());
+
+	// English UP
+	if (getCivilizationType() == ENGLAND)
+	{
+		iNumCities -= 1;
+	}
+
+	iNumCities *= iNumCitiesPercent;
 
 	int iMaintenance = (iNumCities * iNumCities) / 100;
 
-	// influenced by English UP here
 	iMaintenance = std::min(iMaintenance, (GC.getHandicapInfo(getHandicapType()).getMaxColonyMaintenance() * calculateDistanceMaintenanceTimes100()) / 100);
+
+	iMaintenance *= GET_PLAYER(getOwnerINLINE()).getModifier(MODIFIER_COLONY_MAINTENANCE);
+	iMaintenance /= 100;
 
 	FAssert(iMaintenance >= 0);
 
