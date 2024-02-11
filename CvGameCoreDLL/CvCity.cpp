@@ -15542,6 +15542,11 @@ bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 
 	if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
 
+	if (GC.getReligionInfo(eReligion).isLocal() && GC.getGameINLINE().isReligionFounded(eReligion) && GET_PLAYER(GC.getGameINLINE().getHolyCity(eReligion)->getOwnerINLINE()).isMinorCiv())
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -15597,6 +15602,11 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 	if (eStateReligion == eReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
 
 	if (eSpread == RELIGION_SPREAD_MINORITY) iTurns *= 2;
+
+	if (GC.getReligionInfo(eReligion).isLocal() && eSpread == RELIGION_SPREAD_MINORITY && !isHasPrecursor(eReligion))
+	{
+		iTurns *= 2;
+	}
 
 	return getTurns(iTurns);
 }
