@@ -198,7 +198,9 @@ lCivilizations = [
 	),
 	Civilization(
 		iChina,
-		techs=techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology)
+		iGold=50,
+		lCivics=[iDespotism],
+		techs=techs.column(1).without(iSailing).including(iSmelting, iLeverage, iProperty, iCeremony)
 	),
 	Civilization(
 		iHittites,
@@ -609,9 +611,10 @@ dStartingUnits = CivDict({
 	},
 	iChina: {
 		iSettle: 1,
-		iWork: 1,
+		iWork: 2,
 		iBase: 1,
-		iDefend: 1,
+		iDefend: 2,
+		iAttack: 1,
 	},
 	iHittites: {
 		iSettle: 1,

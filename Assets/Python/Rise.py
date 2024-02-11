@@ -489,8 +489,7 @@ class Birth(object):
 				
 	def assignAdditionalTechs(self):
 		if self.iCiv == iChina and scenario() == i3000BC and not self.isHuman():
-			for iTech in [iProperty, iAlloys]:
-				self.team.setHasTech(iTech, True, self.iPlayer, False, False)
+			self.team.setHasTech(iAlloys, True, self.iPlayer, False, False)
 	
 	def assignAttributes(self):
 		# civilization attributes

@@ -4608,14 +4608,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									iValue /= iPreference;
 								}
 
-								if (getCivilizationType() == CHINA && iI == WRITING)
-								{
-									if (GC.getGame().getActiveCivilizationType() != BABYLONIA && GC.getGame().countKnownTechNumTeams((TechTypes)WRITING) > 0)
-									{
-										iValue *= 4;
-									}
-								}
-
 								iValue = std::max(1, iValue);
 
 								if (iValue > iBestValue)
@@ -12433,10 +12425,10 @@ void CvPlayerAI::AI_doCommerce()
 			iIdealPercent = std::min(iIdealPercent, 20);
 
 			// Leoreth: some civs historically focus on culture
-			if (getCivilizationType() == CHINA && GC.getGame().getTechRank(getTeam()) < 3) 
+			/*if (getCivilizationType() == CHINA && GC.getGame().getTechRank(getTeam()) < 3)
 			{
 				iIdealPercent = 40 - 10 * GC.getGame().getTeamRank(getTeam());
-			}
+			}*/
 
 			if (getCivilizationType() == JAPAN && getCurrentEra() < ERA_INDUSTRIAL && GC.getGame().getTechRank(getTeam()) < GC.getGame().countCivPlayersAlive() / 2)
 			{
@@ -12448,9 +12440,9 @@ void CvPlayerAI::AI_doCommerce()
 				iIdealPercent = 40;
 			}
 
-			if (getCivilizationType() == EGYPT && getCurrentEra() >= ERA_CLASSICAL)
+			if (getCivilizationType() == EGYPT)
 			{
-				iIdealPercent = 50;
+				iIdealPercent = (getCurrentEra() >= ERA_CLASSICAL) ? 50 : 20;
 			}
 
 			if (AI_isDoStrategy(AI_STRATEGY_CULTURE4))
