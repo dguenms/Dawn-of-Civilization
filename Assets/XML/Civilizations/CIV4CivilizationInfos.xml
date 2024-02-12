@@ -3830,7 +3830,7 @@
 			<ShortDescription>TXT_KEY_CIV_MAYA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_MAYA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_MAYA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_CYAN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_VERY_DARK_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MAYA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
