@@ -571,7 +571,7 @@ def assignMinorUnitAdjective(city, unit):
 
 
 def maintainFallenCivilizations():
-	fallen_civs = civs.major().notalive().where(canEverRespawn)
+	fallen_civs = civs.major().past_birth().notalive().where(canEverRespawn)
 	
 	for iFallenCiv in fallen_civs:
 		if periodic(20, iFallenCiv):
