@@ -10332,7 +10332,7 @@ EndPlot
 BeginPlot
 	x=23,y=40
 	BonusType=BONUS_OBSIDIAN
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
