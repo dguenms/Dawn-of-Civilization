@@ -1463,5 +1463,19 @@
 			<fBlue>0.65</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_APPLE</Type>
+			<fRed>0.37</fRed>
+			<fGreen>0.88</fGreen>
+			<fBlue>0.29</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_APPLE_TEXT</Type>
+			<fRed>0.24</fRed>
+			<fGreen>0.77</fGreen>
+			<fBlue>0.17</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

@@ -2295,7 +2295,7 @@
 			<ShortDescription>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_HARAPPANS_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_VERY_DARK_CYAN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_APPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
