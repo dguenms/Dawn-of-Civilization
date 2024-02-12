@@ -115,13 +115,17 @@ class MinorCity(object):
 	
 	def get_units(self):
 		iUnitCiv = self.get_tech_civ()
+		bUnique = self.iCiv == iUnitCiv
 		
 		for iRole, iNumUnits in self.units.items():
-			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole, bUnique=False):
+			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole, bUnique=bUnique):
 				if iUnit is None:
 					iUnit = iMilitia
 				
-				yield base_unit(iUnit), iNumUnits, iUnitAI
+				if not bUnique:
+					iUnit = base_unit(iUnit)
+				
+				yield iUnit, iNumUnits, iUnitAI
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
 		units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
@@ -137,7 +141,7 @@ class MinorCity(object):
 		iTechCiv = self.get_tech_civ()
 	
 		for iUnit, iNumUnits, iUnitAI in self.get_units():
-			if units.at(self.tile).type(iUnit).count() < iNumUnits + max(0, player(iTechCiv).getCurrentEra() - 1):
+			if units.surrounding(self.tile).type(iUnit).count() < iNumUnits + max(0, player(iTechCiv).getCurrentEra() - 1):
 				self.make_units(iUnit, iUnitAI)
 	
 	def add_buildings(self):

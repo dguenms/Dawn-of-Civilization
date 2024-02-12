@@ -1571,6 +1571,9 @@ class UnitFactory:
 			return Units([])
 			
 		return Units([UnitKey.of(plot(*args).getUnit(i)) for i in range(plot(*args).getNumUnits())])
+	
+	def surrounding(self, *args, **kwargs):
+		return plots.surrounding(*args, **kwargs).units()
 		
 		
 class UnitKey(object):
