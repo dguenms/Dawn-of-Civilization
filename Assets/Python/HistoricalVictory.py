@@ -287,8 +287,11 @@ dGoals = {
 		FirstDiscover(iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService),
 	),
 	iMaya: (
-		Discover(iCalendar, by=200),
-		Wonder(iTempleOfKukulkan, by=900),
+		All(
+			Discover(iCalendar, by=-100),
+			Discover(iArithmetics, by=100),
+		)
+		Wonder(iTempleOfKukulkan, by=600),
 		ContactBeforeRevealed(group(iCivGroupEurope).named(EUROPEAN_CIVILIZATION), plots.regions(*lAmerica).named(AMERICA)),
 	),
 	iDravidia: (
