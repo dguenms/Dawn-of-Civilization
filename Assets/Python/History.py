@@ -156,7 +156,6 @@ def checkEarlyColonists():
 	dEarlyColonistYears = {
 		-850 : iGreece,
 		-700 : iCarthage,
-		-600 : iRome,
 		-400 : iRome,
 	}
 	
@@ -304,9 +303,6 @@ def mongolConquerors(iTargetTeam):
 			lTargetCities = [(mongol_cities.closest(target_city), target_city) for target_city in target_cities]
 			lSelectedTargets = sorted(lTargetCities, key=lambda (mongol_city, target_city): distance(mongol_city, target_city))[:3]
 			
-			print "mongol cities: %s" % mongol_cities
-			print "target cities: %s" % target_cities
-			
 			if not lSelectedTargets:
 				return
 
@@ -334,12 +330,6 @@ def mongolConquerors(iTargetTeam):
 def recordExplorationTurn(iTech, iTeam, iPlayer):
 	if iTech == iExploration:
 		data.players[iPlayer].iExplorationTurn = game.getGameTurn()
-
-
-@handler("techAcquired")
-def openIcelandRoute(iTech):		
-	if iTech == iCompass:
-		plot(49, 62).setTerrainType(iCoast, True, True)
 
 
 @handler("techAcquired")
