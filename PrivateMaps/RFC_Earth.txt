@@ -29949,7 +29949,6 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_WHEAT
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -30408,7 +30407,6 @@ BeginPlot
 	x=68,y=57
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -47805,7 +47803,6 @@ EndPlot
 BeginPlot
 	x=106,y=33
 	BonusType=BONUS_RICE
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48265,7 +48262,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=34
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57619,13 +57615,11 @@ EndPlot
 BeginPlot
 	x=127,y=49
 	BonusType=BONUS_RICE
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=127,y=50
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57633,7 +57627,6 @@ BeginPlot
 	x=127,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58074,7 +58067,6 @@ BeginPlot
 	x=128,y=49
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58542,7 +58534,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=50
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
