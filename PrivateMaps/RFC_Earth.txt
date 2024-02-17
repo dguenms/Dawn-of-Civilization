@@ -47358,6 +47358,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=36
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -47365,7 +47366,6 @@ BeginPlot
 	x=105,y=37
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -47380,7 +47380,7 @@ BeginPlot
 	x=105,y=39
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_COTTON
+	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48274,8 +48274,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=36
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48300,7 +48298,7 @@ BeginPlot
 	x=107,y=39
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_RICE
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48744,7 +48742,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=35
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -48755,6 +48752,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=37
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -49209,7 +49207,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=35
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_FISH
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
