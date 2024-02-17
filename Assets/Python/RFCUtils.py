@@ -92,9 +92,24 @@ def minorWars(iMinorCiv):
 
 # used: Rise
 def updateMinorTechs(iMinorCiv, iMajorCiv):
-	for iTech in range(iNumTechs):
-		if team(iMajorCiv).isHasTech(iTech):
-			team(iMinorCiv).setHasTech(iTech, True, iMinorCiv, False, False)
+	techs = infos.techs().where(team(iMajorCiv).isHasTech)
+	
+	if civ(iMinorCiv) == iNative:
+		techs = techs.where(lambda iTech: all(iEnabledTech in techs for iEnabledTech in getEnabledTechs(iTech)))
+
+	for iTech in techs:
+		team(iMinorCiv).setHasTech(iTech, True, iMinorCiv, False, False)
+		
+
+# used: RFCUtils
+def getEnabledTechs(iTech):
+	return infos.techs().where(lambda iOtherTech: isRequirement(iTech, iOtherTech))
+
+
+# RFCUtils
+def isRequirement(iPrereq, iTech):
+	return any(infos.tech(iTech).getPrereqAndTechs(i) == iPrereq for i in range(4)) or (infos.tech(iTech).getPrereqOrTechs(0) == iPrereq and infos.tech(iTech).getPrereqOrTechs(1) == -1)
+
 
 # used: RFCUtils, History
 def flipCity(tCityPlot, bConquest, bKillUnits, iNewOwner, lOldOwners = []):
