@@ -454,6 +454,38 @@ class PeakCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(CyPlot.isPeak).count()
 
 
+# Third Dravidian UHV goal
+class PopulationCity(ThresholdRequirement):
+
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_CITY"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_CITY"
+	
+	def __init__(self, iRequired, **options):
+		ThresholdRequirement.__init__(self, iRequired, **options)
+		
+	def value(self, iPlayer):
+		city = self.best_city(iPlayer)
+		if not city:
+			return 0
+		return self.value_func(city)
+	
+	def value_func(self, city):
+		return city.getPopulation()
+	
+	def best_city(self, iPlayer):
+		return cities.owner(iPlayer).maximum(self.value_func)
+		
+	def progress(self, evaluator):
+		best_city = self.best_city(evaluator.iPlayer)
+		
+		if not best_city:
+			return "%s %s" % (indicator(False), text("TXT_KEY_VICTORY_PROGRESS_NO_CITIES"))
+		
+		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, best_city.getName()), self.value_func(best_city), scale(self.iRequired))
+
+
 # First Polish UHV goal
 class PopulationCityCount(ThresholdRequirement):
 
