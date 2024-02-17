@@ -259,7 +259,7 @@ lCivilizations = [
 	),
 	Civilization(
 		iMaya,
-		iGold=200,
+		iGold=100,
 		lCivics=[iDespotism, iSlavery],
 		techs=techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing)
 	),
