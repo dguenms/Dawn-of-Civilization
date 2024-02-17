@@ -329,7 +329,7 @@ def fragmentIndependents():
 
 @handler("BeginGameTurn")
 def checkMinorTechs():
-	iMinor = players.independent().existing().periodic(20)
+	iMinor = players.civs(iIndependent, iIndependent2, iNative).existing().periodic(8)
 	if iMinor:
 		updateMinorTechs(iMinor, barbarian())
 
