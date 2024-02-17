@@ -198,6 +198,7 @@ def resetAdminCenterOnPalaceBuilt(city):
 def brazilianMadeireiroAbility(plot, city, iFeature):
 	dFeatureGold = defaultdict({
 		iForest : 15,
+		iSavanna : 15,
 		iJungle : 20,
 		iRainforest : 20,
 	}, 0)

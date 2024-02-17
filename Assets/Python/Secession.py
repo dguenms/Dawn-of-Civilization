@@ -173,7 +173,7 @@ def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 def getPossibleMinors(iPlayer):
 	lPossibleMinors = [iIndependent, iIndependent2]
 
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
+	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iMaya, iToltecs, iAztecs, iInca, iMali, iEthiopia, iCongo]:
 		lPossibleMinors = [iNative]
 		
 	if gc.getGame().getCurrentEra() <= iMedieval:
