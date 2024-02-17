@@ -296,17 +296,18 @@ dGoals = {
 	),
 	iDravidia: (
 		All(
-			GoldAmount(3000),
-			CultureAmount(2000),
-			at=800,
+			GoldAmount(5000, at=600),
+			CultureAmount(2500, at=600),
+			TradeGold(7500, by=1200),
 		),
 		Control(
-			plots.regions(rDravida, rDeccan).named(DECCAN),
+			plots.regions(rDravida, rDeccan, rRajputana).named(DECCAN),
+			plots.region(rBengal),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
 			subject=VASSALS,
 			at=1000,
 		),
-		TradeGold(4000, by=1200),
+		PopulationCity(25, by=1500),
 	),
 	iEthiopia: (
 		ResourceCount(iIncense, 3, by=400),
