@@ -6,6 +6,7 @@ from Civics import isCommunist
 import heapq
 
 
+# Third Ethiopian UHV goal
 # Third Buddhist URV goal
 class AllAttitude(Requirement):
 
@@ -14,22 +15,39 @@ class AllAttitude(Requirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ALL_ATTITUDE"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ALL_ATTITUDE"
 	
-	def __init__(self, iAttitude, **options):
-		Requirement.__init__(self, int(iAttitude), **options)
+	def __init__(self, iAttitude, civs=None, **options):
+		Requirement.__init__(self, int(iAttitude), civs=civs, **options)
 		
 		self.iAttitude = int(iAttitude)
+		self.civs = civs
+	
+	def valid_players(self):
+		valid_players = players.major().alive()
+		
+		if self.civs:
+			valid_players = valid_players.civs(*self.civs)
+		
+		return valid_players
 	
 	def value(self, evaluator):
-		return evaluator.max(lambda iPlayer: players.major().alive().without(iPlayer).where(lambda p: player(p).AI_getAttitude(iPlayer) >= self.iAttitude).count())
+		return evaluator.max(lambda iPlayer: self.valid_players().without(iPlayer).where(lambda p: player(p).AI_getAttitude(iPlayer) >= self.iAttitude).count())
 	
 	def required(self):
-		return players.major().alive().count() - 1
+		return self.valid_players().count() - 1
 	
 	def fulfilled(self, evaluator):
 		return self.value(evaluator) >= self.required()
 	
 	def progress(self, evaluator):
 		return "%s %s: %s / %s" % (self.indicator(evaluator), capitalize(text(self.PROGR_KEY, *self.format_parameters())), self.value(evaluator), self.required())
+	
+	def additional_formats(self):
+		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
+		
+		civilizations = qualify_adjective(civilizations, CIVS, self.civs)
+		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_OTHER", not self.civs)
+		
+		return [civilizations]
 
 
 # First American UHV goal
