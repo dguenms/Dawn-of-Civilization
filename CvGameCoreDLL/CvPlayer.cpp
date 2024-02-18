@@ -22946,7 +22946,7 @@ PlayerTypes CvPlayer::pickConqueredCityOwner(const CvCity& kCity) const
 	return getID();
 }
 
-bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer, bool bIgnoreAgreements) const
+bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 {
 	CvPlayer& kOtherPlayer = GET_PLAYER(ePlayer);
 
@@ -22960,7 +22960,7 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer, bool bIgnoreAgreement
 		return true;
 	}
 
-	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()) || (bIgnoreAgreements && !atWar(getTeam(), kOtherPlayer.getTeam())))
+	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))
 	{
 		if (GET_TEAM(getTeam()).isVassal(kOtherPlayer.getTeam()))
 		{

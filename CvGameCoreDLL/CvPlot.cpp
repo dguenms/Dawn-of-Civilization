@@ -7205,6 +7205,18 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Leoreth: Ethiopian UP: +1 food on hill tiles that yield at least one food
+		if (eCivilization == ETHIOPIA)
+		{
+			if (eYield == YIELD_FOOD)
+			{
+				if (isHills() && iYield > 0 && getOwnerINLINE() == ePlayer)
+				{
+					iYield += 1;
+				}
+			}
+		}
+
 		// Leoreth: Ruthenian UP: +1 commerce on unimproved land tiles in your trade network
 		if (eCivilization == RUS)
 		{

@@ -14137,24 +14137,6 @@ bool CvCity::canHaveTradeRouteWith(const CvCity* pCity) const
 	{
 		return true;
 	}
-
-	// Ethiopian UP: cities can trade with other cities of the same state religion
-	if (getCivilizationType() == ETHIOPIA)
-	{
-		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
-		if (eStateReligion != NO_RELIGION)
-		{
-			if (isHasReligion(eStateReligion) && pCity->isHasReligion(eStateReligion))
-			{
-				return true;
-			}
-		}
-
-		if (!GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith(pCity->getOwnerINLINE()))
-		{
-			return false;
-		}
-	}
 	
 	return pCity->plotGroup(getOwnerINLINE()) == plotGroup(getOwnerINLINE());
 }
@@ -14188,7 +14170,7 @@ void CvCity::updateTradeRoutes()
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith((PlayerTypes)iI, getCivilizationType() == ETHIOPIA)) // Leoreth: includes Ethiopian UP
+			if (GET_PLAYER(getOwnerINLINE()).canHaveTradeRoutesWith((PlayerTypes)iI))
 			{
 				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 				{
@@ -14196,7 +14178,7 @@ void CvCity::updateTradeRoutes()
 					{
 						if (!(pLoopCity->isTradeRoute(getOwnerINLINE())) || (getTeam() == GET_PLAYER((PlayerTypes)iI).getTeam()))
 						{
-							if (canHaveTradeRouteWith(pLoopCity)) // Leoreth: includes Ethiopian UP
+							if (canHaveTradeRouteWith(pLoopCity))
 							{
 // BUG - Fractional Trade Routes - start
 #ifdef _MOD_FRACTRADE
