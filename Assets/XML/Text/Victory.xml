@@ -1085,7 +1085,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ALL_ATTITUDE</Tag>
-		<English>%s1 or better relations with all other civilizations</English>
+		<English>%s1 or better relations with all %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2296,6 +2296,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OTHER</Tag>
+		<English>other %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_UNITS</Tag>
 		<English>units</English>
 		<French></French>
@@ -3131,8 +3139,24 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_AFRICAN</Tag>
+		<English>African</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ALL_EUROPEAN</Tag>
 		<English>all European</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CHRISTIAN</Tag>
+		<English>Christian</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

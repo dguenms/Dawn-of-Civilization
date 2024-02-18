@@ -120,7 +120,9 @@ TRADING_COMPANY_RESOURCES = "TXT_KEY_VICTORY_NAME_TRADING_COMPANY_RESOURCES"
 LAND_BASED_TRADE = "TXT_KEY_VICTORY_NAME_LAND_BASED_TRADE"
 
 # civilization descriptors
+AFRICAN = "TXT_KEY_VICTORY_NAME_AFRICAN"
 ALL_EUROPEAN = "TXT_KEY_VICTORY_NAME_ALL_EUROPEAN"
+CHRISTIAN = "TXT_KEY_VICTORY_NAME_CHRISTIAN"
 EUROPEAN = "TXT_KEY_VICTORY_NAME_EUROPEAN"
 EUROPEAN_CIVILIZATION = "TXT_KEY_VICTORY_NAME_EUROPEAN_CIVILIZATION"
 LOCAL = "TXT_KEY_VICTORY_NAME_LOCAL"
@@ -296,8 +298,8 @@ dGoals = {
 	),
 	iDravidia: (
 		All(
-			GoldAmount(5000, at=600),
 			CultureAmount(2500, at=600),
+			GoldAmount(5000, at=600),
 			TradeGold(7500, by=1200),
 		),
 		Control(
@@ -310,14 +312,17 @@ dGoals = {
 		PopulationCity(25, by=1500),
 	),
 	iEthiopia: (
-		ResourceCount(iIncense, 3, by=400),
+		ResourceCount(iIncense, 5, by=400),
 		All(
-			ConvertAfterFounding(iOrthodoxy, 5),
-			SpecialistCount(iSpecialistGreatProphet, 3),
-			BuildingCount(iOrthodoxCathedral, 1),
+			SpecialistCount(iSpecialistGreatProphet, 5),
+			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 10, iStateReligion=sum(iOrthodoxy, iCatholicism).named(CHRISTIAN)),
 			by=1200,
 		),
-		MoreReligion(plots.regions(*lAfrica).named(AFRICA), iOrthodoxy, iIslam, at=1500),
+		All(
+			AllowOnly(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN)),
+			AllAttitude(AttitudeTypes.ATTITUDE_FRIENDLY, civs=group(iCivGroupAfrica).named(AFRICAN)),
+			at=1930,
+		),
 	),
 	iKorea: (
 		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1200),

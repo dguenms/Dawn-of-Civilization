@@ -63,6 +63,65 @@ class TestAllAttitude(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestAllAttitudeCivs(ExtendedTestCase):
+
+	def setUp(self):
+		self.civs = NamedList(iEgypt, iBabylonia, iHarappa).named("test")
+		self.requirement = AllAttitude(AttitudeTypes.ATTITUDE_PLEASED, civs=self.civs).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AllAttitude(Pleased)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AllAttitude(Pleased)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "pleased or better relations with all test civilizations")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		for iCiv in self.civs:
+			team(iCiv).meet(0, True)
+			player(iCiv).AI_setAttitudeExtra(0, -100)
+	
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Pleased or better relations: 0 / 2")
+		finally:
+			for iCiv in self.civs:
+				team(iCiv).cutContact(0)
+				player(iCiv).AI_setAttitudeExtra(0, 0)
+	
+	def test_all(self):
+		for iCiv in self.civs:
+			team(iCiv).meet(0, True)
+			player(iCiv).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Pleased or better relations: 2 / 2")
+		finally:
+			for iCiv in self.civs:
+				team(iCiv).cutContact(0)
+				player(iCiv).AI_setAttitudeExtra(0, 0)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestAllowNone(ExtendedTestCase):
 
 	def setUp(self):
@@ -1940,6 +1999,7 @@ class TestWonder(ExtendedTestCase):
 
 test_cases = [
 	TestAllAttitude,
+	TestAllAttitudeCivs,
 	TestAllowNone,
 	TestAllowOnly,
 	TestAreaNoStateReligion,

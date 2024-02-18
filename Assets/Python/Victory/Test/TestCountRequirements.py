@@ -292,6 +292,53 @@ class TestAttitudeCountReligion(ExtendedTestCase):
 				player(iPlayer).AI_setAttitudeExtra(0, 0)
 
 
+class TestAttitudeCountStateReligion(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2, iStateReligion=iCatholicism).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "friendly relations with two other Catholic civilizations")
+	
+	def test_with_state_religion(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).setLastStateReligion(iCatholicism)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+			
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Friendly relations: 2 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).setLastStateReligion(-1)
+				player(iPlayer).AI_setAttitudeExtra(0, 100)
+	
+	def test_without_state_religion(self):
+		players = [1, 2]
+		for iPlayer in players:
+			team(iPlayer).meet(0, False)
+			player(iPlayer).AI_setAttitudeExtra(0, 100)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Friendly relations: 0 / 2")
+		finally:
+			for iPlayer in players:
+				team(iPlayer).cutContact(0)
+				player(iPlayer).AI_setAttitudeExtra(0, 0)
+
+
 class TestAveragePopulation(ExtendedTestCase):
 
 	def setUp(self):
@@ -3170,6 +3217,7 @@ test_cases = [
 	TestAttitudeCountCommunist,
 	TestAttitudeCountIndependent,
 	TestAttitudeCountReligion,
+	TestAttitudeCountStateReligion,
 	TestAveragePopulation,
 	TestBuildingCount,
 	TestCityCount,

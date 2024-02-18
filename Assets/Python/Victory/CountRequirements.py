@@ -5,6 +5,7 @@ from Civics import isCommunist
 from Arguments import base_building
 
 
+# Second Ethiopian UHV goal
 # Third Holy Roman UHV goal
 # Third Russian UHV goal
 # Third Jewish URV goal
@@ -16,11 +17,12 @@ class AttitudeCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_ATTITUDE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ATTITUDE_COUNT"
 	
-	def __init__(self, iAttitude, iRequired, civs=None, iReligion=None, bIndependent=False, bCommunist=False, **options):
-		ThresholdRequirement.__init__(self, as_int(iAttitude), iRequired, civs=civs, iReligion=iReligion, bIndependent=bIndependent, bCommunist=bCommunist, **options)
+	def __init__(self, iAttitude, iRequired, civs=None, iReligion=None, iStateReligion=None, bIndependent=False, bCommunist=False, **options):
+		ThresholdRequirement.__init__(self, as_int(iAttitude), iRequired, civs=civs, iReligion=iReligion, iStateReligion=iStateReligion, bIndependent=bIndependent, bCommunist=bCommunist, **options)
 		
 		self.civs = civs
 		self.iReligion = iReligion
+		self.iStateReligion = iStateReligion
 		self.bIndependent = bIndependent
 		self.bCommunist = bCommunist
 		
@@ -40,6 +42,15 @@ class AttitudeCount(ThresholdRequirement):
 		if self.iReligion is not None and not cities.owner(iOtherPlayer).religion(self.iReligion):
 			return False
 		
+		if self.iStateReligion is not None:
+			if isinstance(self.iStateReligion, Aggregate):
+				lStateReligions = self.iStateReligion.items
+			else:
+				lStateReligions = [self.iStateReligion]
+			
+			if player(iOtherPlayer).getStateReligion() not in lStateReligions:
+				return False
+		
 		return player(iOtherPlayer).AI_getAttitude(iPlayer) >= iAttitude
 	
 	def value(self, iPlayer, iAttitude):
@@ -49,6 +60,7 @@ class AttitudeCount(ThresholdRequirement):
 		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")
 		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_COMMUNIST", self.bCommunist)
 		civilizations = qualify(civilizations, "TXT_KEY_VICTORY_INDEPENDENT", self.bIndependent)
+		civilizations = qualify_adjective(civilizations, RELIGION_ADJECTIVE, self.iStateReligion)
 		civilizations = in_area(civilizations, self.civs)
 		civilizations = with_religion_in_cities(civilizations, self.iReligion)
 		
