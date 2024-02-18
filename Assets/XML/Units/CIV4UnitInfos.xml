@@ -3423,6 +3423,10 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_BLOOMERY</PrereqTech>
+			<PrereqBonuses>
+				<BonusType>BONUS_OBSIDIAN</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
+			</PrereqBonuses>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
