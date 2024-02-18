@@ -347,19 +347,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
-		<English>The Power of Communion:</English>
-		<French>Le pouvoir de la communion :</French>
-		<German>Die Macht der Kommunion:</German>
-		<Italian>The Power of Communion:</Italian>
-		<Spanish>The Power of Communion:</Spanish>
+		<English>The Power of Highlands:</English>
+		<French>The Power of Highlands:</French>
+		<German>Die Macht des Hochlands:</German>
+		<Italian>The Power of Highlands:</Italian>
+		<Spanish>The Power of Highlands:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH</Tag>
-		<English>Cities have a trade connection to all other cities with your state religion</English>
-		<French>Vos villes ont une connexion commerciale avec toutes les villes adeptes de votre religion d'&#201;tat</French>
-		<German>St&#228;dte haben eine Handelsverbindung zu allen anderen St&#228;dten mit Ihrer Staatsreligion</German>
-		<Italian>Cities have a trade connection to all other cities with your state religion</Italian>
-		<Spanish>Cities have a trade connection to all other cities with your state religion</Spanish>
+		<English>+1 [ICON_FOOD] on hill tiles that yield at least one [ICON_FOOD]</English>
+		<French>+1 [ICON_FOOD] on hill tiles that yield at least one [ICON_FOOD]</French>
+		<German>+1 [ICON_FOOD] on hill tiles that yield at least one [ICON_FOOD]</German>
+		<Italian>+1 [ICON_FOOD] on hill tiles that yield at least one [ICON_FOOD]</Italian>
+		<Spanish>+1 [ICON_FOOD] on hill tiles that yield at least one [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA_TITLE</Tag>
