@@ -1961,11 +1961,8 @@
 			<Strategy>TXT_KEY_BUILDING_TOLTEC_OBSIDIAN_WORKSHOP_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TOLTEC_OBSIDIAN_WORKSHOP</ArtDefineTag>
-			<PrereqTech>TECH_AESTHETICS</PrereqTech>
-			<PrereqBonuses>
-				<Bonus>BONUS_OBSIDIAN</Bonus>
-			</PrereqBonuses>
-			<iCost>80</iCost>
+			<PrereqTech>TECH_ALLOYS</PrereqTech>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
