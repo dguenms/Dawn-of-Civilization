@@ -3226,6 +3226,22 @@
 		<Spanish>[ICON_BULLET]Disables cascading defensive pacts</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Tag>
+		<English>Pyramid of the Sun</English>
+		<French>Pyramid of the Sun</French>
+		<German>Pyramid of the Sun</German>
+		<Italian>Pyramid of the Sun</Italian>
+		<Spanish>Pyramid of the Sun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_HELP</Tag>
+		<English>[ICON_BULLET]+3 [ICON_GREATPEOPLE] per Citizen</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

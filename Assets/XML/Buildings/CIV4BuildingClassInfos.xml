@@ -1345,6 +1345,15 @@
 			<DefaultBuilding>BUILDING_PARTHENON</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_PYRAMID_OF_THE_SUN</Type>
+			<Description>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_PYRAMID_OF_THE_SUN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TEMPLE_OF_ARTEMIS</Type>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
