@@ -279,9 +279,9 @@ lCivilizations = [
 	),
 	Civilization(
 		iToltecs,
-		iGold=100,
-		lCivics=[iDespotism, iSlavery, iRedistribution, iDeification],
-		techs=techs.column(3).without(iAlloys, iRiding, iShipbuilding).including(iMathematics, iPriesthood)
+		iGold=50,
+		lCivics=[iRedistribution, iDeification],
+		techs=techs.column(2).including(iConstruction, iArithmetics).without(iSeafaring)
 	),
 	Civilization(
 		iKushans,
