@@ -28,6 +28,7 @@ BestWonderCity = GoalDefinition(req.BestWonderCity)
 
 ### CITY REQUIREMENTS ###
 
+CityCulture = GoalDefinition(req.CityCulture)
 CityCultureLevel = GoalDefinition(req.CityCultureLevel)
 CityDifferentGreatPeopleCount = GoalDefinition(req.CityDifferentGreatPeopleCount)
 CityPopulation = GoalDefinition(req.CityPopulation)

@@ -32,6 +32,7 @@ MOSCOW = "TXT_KEY_VICTORY_NAME_MOSCOW"
 PARIS = "TXT_KEY_VICTORY_NAME_PARIS"
 PERSEPOLIS = "TXT_KEY_VICTORY_NAME_PERSEPOLIS"
 TENOCHTITLAN = "TXT_KEY_VICTORY_NAME_TENOCHTITLAN"
+TOLLAN = "TXT_KEY_VICTORY_NAME_TOLLAN"
 VIENNA = "TXT_KEY_VICTORY_NAME_VIENNA"
 
 # city descriptors
@@ -322,6 +323,19 @@ dGoals = {
 			AllowOnly(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN)),
 			AllAttitude(AttitudeTypes.ATTITUDE_FRIENDLY, civs=group(iCivGroupAfrica).named(AFRICAN)),
 			at=1930,
+		),
+	),
+	iToltecs: (
+		All(
+			CityPopulation(city(tTenochtitlan).named(TOLLAN), 10),
+			CityCulture(city(tTenochtitlan).named(TOLLAN), 200),
+			by=200,
+		),
+		GoldenAges(1, by=550),
+		All(
+			PopulationCount(40),
+			CultureAmount(2000),
+			by=1000,
 		),
 	),
 	iKorea: (

@@ -224,6 +224,7 @@ class EraFirstDiscover(TrackRequirement):
 
 
 # Third Chinese UHV goal
+# Second Toltec UHV goal
 # First Argentine UHV goal
 # Third Argentine UHV goal
 # Second Hindu URV goal
@@ -251,6 +252,14 @@ class GoldenAges(TrackRequirement):
 	def progress_value(self, evaluator):
 		iGoldenAgeLength = infos.constant("GOLDEN_AGE_LENGTH")
 		return "%d / %d" % (self.evaluate(evaluator) / scale(iGoldenAgeLength), self.iRequired)
+	
+	def additional_formats(self):
+		golden_age = text("TXT_KEY_VICTORY_GOLDEN_AGE")
+		
+		if self.bPlural:
+			golden_age = plural(golden_age)
+		
+		return [golden_age]
 
 
 # Second Mexican UHV goal
