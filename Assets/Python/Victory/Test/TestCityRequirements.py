@@ -3,6 +3,94 @@ from CityRequirements import *
 from TestVictoryCommon import *
 
 
+class TestCityCulture(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = CityCulture(LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City"), 100).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CityCulture(Test City, 100)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CityCulture(Test City, 100)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "100 culture in Test City")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_no_city(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
+	
+	def test_less(self):
+		city = TestCities.one()
+		city.setCulture(0, 50, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Culture in %s: 50 / 100" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setCulture(0, 200, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Culture in %s: 200 / 100" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		
+		city.plot().resetCultureConversion()
+		city.setCulture(1, 100, False)
+		city.plot().resetCultureConversion()
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Culture in %s (controlled by Babylonia): 100 / 100" % city.getName())
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		city = TestCities.one(1)
+		
+		city.plot().resetCultureConversion()
+		city.setCulture(1, 100, False)
+		city.plot().resetCultureConversion()
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Culture in %s: 100 / 100" % city.getName())
+		finally:
+			team(1).setVassal(0, False, False)
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+		
+
+
 class TestCityCultureLevel(ExtendedTestCase):
 
 	def setUp(self):
@@ -384,6 +472,7 @@ class TestCitySpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 test_cases = [
+	TestCityCulture,
 	TestCityCultureLevel,
 	TestCityDifferentGreatPeopleCount,
 	TestCityPopulation,

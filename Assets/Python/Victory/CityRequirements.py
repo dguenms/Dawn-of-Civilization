@@ -1,5 +1,26 @@
 from Core import *
 from BaseRequirements import *
+
+
+# First Toltec UHV goal
+class CityCulture(CityRequirement):
+
+	GLOBAL_TYPES = (CITY,)
+	TYPES = (AMOUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_CULTURE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_CULTURE"
+	
+	def __init__(self, city, iCulture, **options):
+		CityRequirement.__init__(self, city, iCulture, **options)
+		
+		self.iCulture = iCulture
+	
+	def fulfilled_city(self, city):
+		return city.getCulture(city.getOwner()) >= self.iCulture
+	
+	def progress_city(self, city):
+		return "%s / %s" % (city.getCulture(city.getOwner()), self.iCulture)
 	
 
 # Third Babylonian UHV goal

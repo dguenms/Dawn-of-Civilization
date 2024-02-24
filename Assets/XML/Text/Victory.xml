@@ -549,7 +549,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_GOLDEN_AGES</Tag>
-		<English>%s1 Golden Ages</English>
+		<English>%s1 %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -718,6 +718,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CORPORATION_COUNT</Tag>
 		<English>%s1 to %s2 of your cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CITY_CULTURE</Tag>
+		<English>%s2 culture in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1344,7 +1352,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_GOLDEN_AGES</Tag>
-		<English>Golden Ages</English>
+		<English>%s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1473,6 +1481,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE_CONNECTION</Tag>
 		<English>%s1 from %s2 to %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CITY_CULTURE</Tag>
+		<English>Culture</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2359,6 +2375,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLDEN_AGE</Tag>
+		<English>Golden Age</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- Names of arguments -->
 
@@ -2493,6 +2517,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_TENOCHTITLAN</Tag>
 		<English>Tenochtitlan</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_TOLLAN</Tag>
+		<English>Tollan</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
