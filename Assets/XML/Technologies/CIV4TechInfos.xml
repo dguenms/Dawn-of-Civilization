@@ -653,11 +653,6 @@
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>3</iGridX>
 			<iGridY>9</iGridY>
-			<CommerceFlexible>
-				<bFlexible>0</bFlexible>
-				<bFlexible>0</bFlexible>
-				<bFlexible>1</bFlexible>
-			</CommerceFlexible>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -933,6 +928,11 @@
 			<bTechTrading>1</bTechTrading>
 			<iGridX>4</iGridX>
 			<iGridY>9</iGridY>
+			<CommerceFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>1</bFlexible>
+			</CommerceFlexible>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
