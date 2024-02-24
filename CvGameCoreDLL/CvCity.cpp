@@ -4684,6 +4684,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), getBonusGoodHappiness() * iChange);
 		}
 
+		// Pyramid of the Sun
+		if (eBuilding == PYRAMID_OF_THE_SUN)
+		{
+			changeBaseGreatPeopleRate(getSpecialistCount(SPECIALIST_CITIZEN) * iChange * 3);
+		}
+
 		// Mount Athos
 		if (eBuilding == MOUNT_ATHOS)
 		{
@@ -19207,6 +19213,16 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 		iGreatPeopleRate += iCultureLevelRate;
 	}*/
 
+	// Pyramid of the Sun: +3 great people rate per citizen
+	if (eSpecialist == SPECIALIST_CITIZEN)
+	{
+		if (isHasBuildingEffect((BuildingTypes)PYRAMID_OF_THE_SUN))
+		{
+			iGreatPeopleRate += 3;
+		}
+	}
+
+	// International Space Station: +2 great people rate per satellite
 	if (kSpecialist.isSatellite())
 	{
 		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_INTERNATIONAL_SPACE_STATION))

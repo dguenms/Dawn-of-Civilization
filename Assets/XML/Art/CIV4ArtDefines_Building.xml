@@ -3737,5 +3737,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Menhir/menhir.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Pyramid_of_the_Sun/pyramid.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Wonders/PyramidOfTheSun.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
