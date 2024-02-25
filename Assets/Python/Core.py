@@ -1316,6 +1316,10 @@ class Locations(EntityCollection):
 	
 	def intersect(self, locations):
 		return any(loc in locations for loc in self)
+	
+	# TODO: test
+	def revealed(self, identifier):
+		return self.where(lambda loc: plot(loc).isRevealed(player(identifier).getTeam(), False))
 
 
 class Plots(Locations):

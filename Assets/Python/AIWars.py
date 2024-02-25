@@ -153,6 +153,11 @@ def checkWarPlans(iGameTurn):
 
 
 @handler("BeginGameTurn")
+def checkTargetMinors():
+	targetMinors()
+
+
+@handler("BeginGameTurn")
 def increaseAggressionLevels():
 	for iLoopPlayer in players.major():
 		data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[iLoopPlayer] + rand(2)
@@ -337,6 +342,23 @@ def planWars(iGameTurn):
 		team(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
 	
 	data.iNextTurnAIWar = iGameTurn + getNextInterval(iGameTurn)
+
+
+def targetMinors():
+	for iPlayer in players.major().ai().existing().periodic_iter(10):
+		if players.major().existing().any(lambda p: team(iPlayer).isAtWar(player(p).getTeam())):
+			continue
+	
+		if players.major().existing().any(lambda p: team(iPlayer).AI_getWarPlan(player(p).getTeam()) != WarPlanTypes.NO_WARPLAN):
+			continue
+		
+		for city in cities.all().where(is_minor).revealed(iPlayer):
+			if team(iPlayer).isAtWar(city.getTeam()):
+				continue
+		
+			if plot(city).getPlayerSettlerValue(iPlayer) >= 10 or plot(city).getPlayerWarValue(iPlayer) >= 6:
+				declareWar(iPlayer, city.getOwner(), WarPlanTypes.WARPLAN_LIMITED)
+				break
 
 
 def determineAttackingPlayer():
