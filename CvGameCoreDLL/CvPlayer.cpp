@@ -7365,7 +7365,7 @@ int CvPlayer::getImprovementUpgradeRate() const
 {
 	int iRate;
 
-	iRate = 2; // XXX
+	iRate = 100; // XXX
 
 	iRate *= std::max(0, (getImprovementUpgradeRateModifier() + 100));
 	iRate /= 100;

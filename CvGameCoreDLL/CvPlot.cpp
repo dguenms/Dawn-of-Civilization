@@ -857,6 +857,8 @@ void CvPlot::doImprovement()
 
 void CvPlot::doImprovementUpgrade()
 {
+	int iUpgradeTime;
+
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
 		ImprovementTypes eImprovementUpdrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
@@ -865,6 +867,14 @@ void CvPlot::doImprovementUpgrade()
 			if (isBeingWorked() || GC.getImprovementInfo(eImprovementUpdrade).isOutsideBorders())
 			{
 				changeUpgradeProgress(GET_PLAYER(getOwnerINLINE()).getImprovementUpgradeRate());
+
+				iUpgradeTime = GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType());
+
+				if (getFeatureType() != NO_IMPROVEMENT && GC.getFeatureInfo(getFeatureType()).getHealthPercent() < 0)
+				{
+					iUpgradeTime *= 100 + std::abs(GC.getFeatureInfo(getFeatureType()).getHealthPercent());
+					iUpgradeTime /= 100;
+				}
 
 				if (getUpgradeProgress() >= GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType()))
 				{
@@ -6830,13 +6840,15 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
 			if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CONGO)
 			{
-				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
-					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
-					getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH"))
+				if (eYield == YIELD_FOOD || eYield == YIELD_PRODUCTION)
 				{
-					if ((int)eYield == 0 || (int)eYield == 1)
+					switch (getFeatureType())
 					{
+					case FEATURE_JUNGLE:
+					case FEATURE_RAINFOREST:
+					case FEATURE_MARSH:
 						iYield += 1;
+						break;
 					}
 				}
 			}
