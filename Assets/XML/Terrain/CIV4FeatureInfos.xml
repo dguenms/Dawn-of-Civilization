@@ -352,7 +352,7 @@
 			<RiverYieldChange>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
-				<iYield>1</iYield>
+				<iYield>0</iYield>
 			</RiverYieldChange>
 			<HillsYieldChange/>
 			<iMovement>1</iMovement>
