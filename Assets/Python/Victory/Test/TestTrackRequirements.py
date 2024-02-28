@@ -723,6 +723,93 @@ class TestConqueredCitiesCivs(ExtendedTestCase):
 			TestCities.city(1).kill()
 
 
+class TestConstructed(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = Constructed(iMarket, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "Constructed(Market, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "Constructed(Market, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Markets")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 0 / 2")
+	
+	def test_less(self):
+		city = TestCities.one()
+	
+		events.fireEvent("buildingBuilt", city, iMarket)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 1 / 2")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		cities = TestCities.num(3)
+		
+		for city in cities:
+			events.fireEvent("buildingBuilt", city, iMarket)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Markets: 3 / 2")
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(1)
+		
+		events.fireEvent("buildingBuilt", city, iMarket)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 0 / 2")
+		finally:
+			city.kill()
+	
+	def test_different_building(self):
+		cities = TestCities.num(3)
+		
+		for city in cities:
+			events.fireEvent("buildingBuilt", city, iLibrary)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Markets: 0 / 2")
+		finally:
+			cities.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestEnslaveCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2681,6 +2768,7 @@ test_cases = [
 	TestConqueredCitiesInside,
 	TestConqueredCitiesOutside,
 	TestConqueredCitiesCivs,
+	TestConstructed,
 	TestEnslaveCount,
 	TestEnslaveCountExcluding,
 	TestEraFirstDiscover,
