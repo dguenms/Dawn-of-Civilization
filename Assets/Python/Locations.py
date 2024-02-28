@@ -8,6 +8,10 @@ tNewfoundland = ((38, 62), (40, 64))
 
 iTurkicEastWestBorder = 106
 
+# History
+
+lKushanRoad = [(99, 51), (100, 50), (101, 49)]
+
 ## Victory
 
 # second Phoenician goal: control Iberia and Italy by 150 BC

@@ -498,6 +498,15 @@ def relocateCelts(iPlayer, iPeriod):
 		data.players[iPlayer].resetStability()
 
 
+### PREPARE BIRTH ###
+
+@handler("prepareBirth")
+def prepareKushanBirth(iCiv):
+	if iCiv == iKushans:
+		for plot in plots.of(lKushanRoad):
+			plot.setRouteType(iRouteRoad)
+
+
 ### IMPLEMENTATION ###
 
 def relocateCapitals(iPlayer, city):
