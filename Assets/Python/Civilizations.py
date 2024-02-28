@@ -285,8 +285,9 @@ lCivilizations = [
 	),
 	Civilization(
 		iKushans,
-		iGold=200,
-		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iMonasticism, iConquest],
+		iGold=100,
+		iAdvancedStartPoints=120,
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iClergy, iConquest],
 		techs=techs.column(4).including(iGeneralship, iCurrency, iPhilosophy).without(iNavigation)
 	),
 	Civilization(
@@ -717,10 +718,12 @@ dStartingUnits = CivDict({
 	},
 	iKushans: {
 		iSettle: 2,
-		iWork: 2,
+		iWork: 3,
 		iDefend: 2,
-		iShock: 4,
+		iShockCity: 4,
 		iCityAttack: 2,
+		iSkirmish: 2,
+		iCitySiege: 2,
 	},
 	iKorea: {
 		iSettle: 1,
@@ -1096,8 +1099,9 @@ dExtraAIUnits = CivDict({
 		iMissionary: 1,
 	},
 	iKushans: {
-		iShockCity: 3,
+		iShockCity: 4,
 		iCityAttack: 2,
+		iSiege: 3,
 	},
 	iKorea: {
 		iCounter: 2,
@@ -1318,6 +1322,11 @@ dAdditionalUnits = CivDict({
 dStartingExperience = CivDict({
 	iCelts: {
 		iAttack: 2,
+	},
+	iKushans: {
+		iCityAttack: 3,
+		iShockCity: 3,
+		iCitySiege: 2,
 	},
 	iMughals: {
 		iAttack: 2,
