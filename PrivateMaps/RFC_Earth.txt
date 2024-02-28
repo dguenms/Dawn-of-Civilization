@@ -45609,7 +45609,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -46067,7 +46067,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=49
-	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
