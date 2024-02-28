@@ -24,7 +24,7 @@ iMaya :			(22, 41), # Tikal
 iDravidia :		(107, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
 iToltecs :		(17, 43), # Tollan
-iKushans :		(100, 52), # Bactra
+iKushans :		(102, 49), # Taxila
 iKorea :		(131, 54), # Seoul
 iByzantium :	(79, 55), # Constantinople
 iMalays :		(120, 27), # Palembang
