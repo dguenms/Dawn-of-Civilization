@@ -47469,7 +47469,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=53
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -47484,12 +47484,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=55
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=105,y=56
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -47930,7 +47930,7 @@ BeginPlot
 	x=106,y=53
 	BonusType=BONUS_DATES
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -47942,17 +47942,17 @@ BeginPlot
 	x=106,y=55
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=56
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=106,y=57
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -48410,12 +48410,12 @@ EndPlot
 BeginPlot
 	x=107,y=56
 	BonusType=BONUS_CAMEL
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=57
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -48874,7 +48874,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -49336,7 +49336,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=57
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -49777,12 +49777,12 @@ BeginPlot
 	x=110,y=56
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=110,y=57
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -50233,7 +50233,7 @@ EndPlot
 BeginPlot
 	x=111,y=57
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
