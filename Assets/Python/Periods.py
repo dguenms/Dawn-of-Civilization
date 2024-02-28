@@ -33,6 +33,7 @@ dPeriodNames = {
 	iPeriodCarthage:				"Carthage",
 	iPeriodInsularCelts:			"Insular_Celts",
 	iPeriodVijayanagara:			"Vijayanagara",
+	iPeriodIndianKushans:			"Indian_Kushans",
 	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
 	iPeriodSeljuks:					"Seljuks",
 	iPeriodMeiji:					"Meiji",
@@ -150,6 +151,10 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
+	
+	if iCiv == iKushans:
+		if cities.region(rHindustan).owner(iKushans).count() >= 2:
+			setPeriod(iKushans, iPeriodIndianKushans)
 
 	
 @handler("firstCity")

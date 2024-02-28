@@ -1150,12 +1150,12 @@ dResurrectionLeaders = CivDict({
 })
 
 # update DLL constants when this changes
-iNumPeriods = 23
+iNumPeriods = 24
 (iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodInsularCelts,
-iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodDenmark, 
-iPeriodNorway, iPeriodUzbeks, iPeriodSaudi, iPeriodMorocco, iPeriodSpain, 
-iPeriodAustria, iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, 
-iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
+iPeriodVijayanagara, iPeriodIndianKushans, iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, 
+iPeriodDenmark, iPeriodNorway, iPeriodUzbeks, iPeriodSaudi, iPeriodMorocco, 
+iPeriodSpain, iPeriodAustria, iPeriodYuan, iPeriodPeru, iPeriodLateInca, 
+iPeriodModernItaly, iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
 
 iNumImpacts = 5
 (iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
