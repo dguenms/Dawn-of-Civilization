@@ -121,14 +121,14 @@ def getCityValue(city, iCompany):
 		if iOwnerCiv == iNetherlands:
 			iValue += 2
 	elif iCompany == iSilkRoute:
-		if city.getRegionID() in [rTarimBasin, rTransoxiana, rKhorasan, rPersia]:
+		if city.getRegionID() in [rTarimBasin, rTransoxiana, rHinduKush, rKhorasan, rPersia]:
 			iValue += 2
 		elif city.getRegionID() in [rSouthChina, rNorthChina]:
 			iValue -= 2
 	
 	# geographical requirements
 	if iCompany == iSilkRoute:
-		if city.getRegionID() not in [rMongolia, rTarimBasin, rTransoxiana, rKhorasan, rPersia, rMesopotamia, rLevant]:
+		if city.getRegionID() not in [rMongolia, rTarimBasin, rTransoxiana, rKhorasan, rHinduKush, rPersia, rMesopotamia, rLevant]:
 			return -1
 			
 	elif iCompany == iTradingCompany:
