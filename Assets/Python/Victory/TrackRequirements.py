@@ -153,6 +153,36 @@ class ConqueredCities(TrackRequirement):
 		return areas
 
 
+# First Kushan UHV goal
+class Constructed(TrackRequirement):
+
+	TYPES = (BUILDING, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BUILD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
+	
+	def __init__(self, iBuilding, iRequired, **options):
+		TrackRequirement.__init__(self, iBuilding, iRequired, **options)
+		
+		self.iBuilding = base_building(iBuilding)
+		
+		self.handle("buildingBuilt", self.increment_constructed)
+	
+	def increment_constructed(self, goal, city, iBuilding):
+		if self.iBuilding == base_building(iBuilding):
+			self.increment()
+			goal.check()
+	
+	def description(self):
+		return Requirement.description(self, bPlural=self.bPlural)
+		
+	def progress(self, evaluator):
+		if not self.bPlural:
+			return "%s %s" % (self.indicator(evaluator), capitalize(BUILDING.format(self.iBuilding)))
+		
+		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
+
+
 # Third Aztec UHV goal
 class EnslaveCount(TrackRequirement):
 

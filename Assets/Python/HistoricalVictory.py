@@ -338,6 +338,24 @@ dGoals = {
 			by=1000,
 		),
 	),
+	iKushans: (
+		Constructed(
+			(iPaganTemple, 3),
+			(iBuddhistTemple, 6),
+			(iHinduTemple, 3),
+			by=250,
+		),
+		All(
+			CorporationCount(iSilkRoute, 8),
+			ReligionSpreadCount(iBuddhism, 12),
+			by=500,
+		),
+		All(
+			GoldAmount(6000),
+			CultureAmount(6000),
+			by=700,
+		),
+	),
 	iKorea: (
 		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1200),
 		FirstDiscover(iPrinting),
