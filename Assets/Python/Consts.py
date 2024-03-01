@@ -915,6 +915,7 @@ iWork, iMissionary) = range(iNumUnitRoles)
 
 # Promotions
 iDesertAdaptation = 82
+iSteppeAdaptation = 83
 
 
 iNumBonuses = 54
