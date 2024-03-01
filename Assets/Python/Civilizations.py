@@ -296,14 +296,14 @@ lCivilizations = [
 		iAdvancedStartPoints=60,
 		iStateReligion=iBuddhism,
 		lCivics=[iDespotism, iCasteSystem, iRedistribution],
-		techs=techs.column(5).without(iGeneralship, iEngineering, iCurrency)
+		techs=techs.column(4).without(iNavigation).including(iPhilosophy)
 	),
 	Civilization(
 		iKhmer,
 		iGold=100,
 		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification],
-		techs=techs.column(4).including(iEngineering, iMedicine, iAesthetics)
+		techs=techs.column(4).without(iNavigation).including(iEngineering)
 	),
 	Civilization(
 		iMali,
