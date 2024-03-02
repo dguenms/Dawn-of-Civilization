@@ -48874,12 +48874,12 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=108,y=57
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -49331,7 +49331,7 @@ BeginPlot
 	x=109,y=56
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -50243,12 +50243,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=59
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=111,y=60
-	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -50679,12 +50679,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=57
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=112,y=58
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -51119,6 +51119,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=56
+	BonusType=BONUS_DATES
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -51130,6 +51131,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=58
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
