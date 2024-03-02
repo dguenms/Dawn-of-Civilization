@@ -395,6 +395,7 @@ minor_cities = [
 	MinorCity(-500, iNative, (19, 41), "Danibaan", iPopulation=2, iCiv=iMaya, units={iSkirmish: 1}, adjective="TXT_KEY_ADJECTIVE_ZAPOTEC"),
 	MinorCity(-260, iIndependent, (121, 42), "Co Loa", iPopulation=3, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
 	MinorCity(-200, iIndependent, (125, 43), "Panyu", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
+	MinorCity(-150, iIndependent2, (112, 57), "Jiaohe", iPopulation=1, iCiv=iChina, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_TOCHARIAN"),
 	MinorCity(-75, iIndependent, (105, 55), "Kash", iPopulation=2, iCiv=iKushans, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_UIGHUR"),
 	MinorCity(190, iIndependent2, (123, 39), "Indrapura", iPopulation=3, iCiv=iKhmer, units={iDefend: 4}, adjective="TXT_KEY_ADJECTIVE_CHAM"),
 	MinorCity(300, iIndependent2, (89, 37), "Sana'a", iPopulation=2, iCiv=iEthiopia, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_YEMENI"),
