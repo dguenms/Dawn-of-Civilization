@@ -39,6 +39,7 @@ iCanadianEastWestBorder = 8
 
 ### Tiles ###
 
+tAngkor = (121, 37)
 tBabylon = (89, 47)
 tBaghdad = (89, 47)
 tBeijing = (125, 56)

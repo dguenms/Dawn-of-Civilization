@@ -16,6 +16,7 @@ lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, 
 
 # city names
 AMSTERDAM = "TXT_KEY_VICTORY_NAME_AMSTERDAM"
+ANGKOR = "TXT_KEY_VICTORY_NAME_ANGKOR"
 AYUTTHAYA = "TXT_KEY_VICTORY_NAME_AYUTTHAYA"
 BABYLON = "TXT_KEY_VICTORY_NAME_BABYLON"
 BAGHDAD = "TXT_KEY_VICTORY_NAME_BAGHDAD"
@@ -361,6 +362,22 @@ dGoals = {
 		FirstDiscover(iPrinting),
 		SunkShips(20),
 	),
+	iKhmer: (
+		All(
+			CultureAmount(2000, by=600),
+			CultureAmount(12000, by=1400),
+		),
+		All(
+			BuildingCount((iHinduMonastery, 4), (iBuddhistMonastery, 4)),
+			Wonder(iWatPreahPisnulok),
+			at=1200,
+		),
+		All(
+			AveragePopulation(12, at=1200),
+			AveragePopulation(15, by=1400),
+			BestPopulationCity(city(tAngkor).named(ANGKOR), at=1400),
+		),
+	),
 	iByzantium: (
 		GoldAmount(5000, at=1000),
 		All(
@@ -464,15 +481,6 @@ dGoals = {
 			at=1800,
 		),
 		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain, by=1900),
-	),
-	iKhmer: (
-		All(
-			BuildingCount((iHinduMonastery, 4), (iBuddhistMonastery, 4)),
-			Wonder(iWatPreahPisnulok),
-			at=1200,
-		),
-		AveragePopulation(12, at=1450),
-		CultureAmount(8000, by=1450),
 	),
 	iEngland: (
 		CityCount(
