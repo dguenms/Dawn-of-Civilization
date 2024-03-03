@@ -300,9 +300,9 @@ lCivilizations = [
 	),
 	Civilization(
 		iKhmer,
-		iGold=100,
+		iGold=50,
 		iStateReligion=iHinduism,
-		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification],
+		lCivics=[iDespotism, iCasteSystem, iRedistribution, iDeification],
 		techs=techs.column(4).without(iNavigation).including(iEngineering)
 	),
 	Civilization(
