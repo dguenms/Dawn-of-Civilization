@@ -498,6 +498,14 @@
 		<Spanish>Median</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_MON</Tag>
+		<English>Mon</English>
+		<French>Mon</French>
+		<German>Mon</German>
+		<Italian>Mon</Italian>
+		<Spanish>Mon</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_MUISCA</Tag>
 		<English>Muisca</English>
 		<French>Muisca</French>
@@ -696,6 +704,14 @@
 		<German>Sundanese</German>
 		<Italian>Sundanese</Italian>
 		<Spanish>Sundanese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TAI</Tag>
+		<English>Tai</English>
+		<French>Tai</French>
+		<German>Tai</German>
+		<Italian>Tai</Italian>
+		<Spanish>Tai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TATAR</Tag>
