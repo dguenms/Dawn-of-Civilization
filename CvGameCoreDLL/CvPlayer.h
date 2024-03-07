@@ -775,6 +775,8 @@ public:
 	DllExport CivilizationTypes getCivilizationType() const;																					// Exposed to Python
 	DllExport void setCivilizationType(CivilizationTypes iNewValue);	//edead
 
+	void applyCivilization(CivilizationTypes eCivilization, int iChange);
+
 	DllExport LeaderHeadTypes getLeaderType() const;																									// Exposed to Python
 
 	LeaderHeadTypes getPersonalityType() const;																												// Exposed to Python
