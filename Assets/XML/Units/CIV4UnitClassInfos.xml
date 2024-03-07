@@ -91,7 +91,7 @@
 			<Description>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>3</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_RELIGIOUS_PERSECUTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
