@@ -114,7 +114,6 @@ Found = GoalDefinition(req.Found)
 NoCityConquered = GoalDefinition(req.NoCityConquered)
 NoCityLost = GoalDefinition(req.NoCityLost)
 Settle = GoalDefinition(req.Settle)
-TradeMission = GoalDefinition(req.TradeMission)
 
 
 ### TRACK REQUIREMENTS ###
@@ -146,6 +145,7 @@ SettledCities = GoalDefinition(req.SettledCities)
 SlaveTradeGold = GoalDefinition(req.SlaveTradeGold)
 SunkShips = GoalDefinition(req.SunkShips)
 TradeGold = GoalDefinition(req.TradeGold)
+TradeMissionCount = GoalDefinition(req.TradeMissionCount)
 
 
 ### ARGUMENTS ###

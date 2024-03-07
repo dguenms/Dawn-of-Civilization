@@ -378,6 +378,19 @@ dGoals = {
 			BestPopulationCity(city(tAngkor).named(ANGKOR), at=1400),
 		),
 	),
+	iMali: (
+		All(
+			GoldAmount(2000, by=1000),
+			GoldAmount(5000, by=1200),
+			GoldAmount(15000, by=1500),
+		),
+		TradeMissionCount(holy_city(), 2, by=1250),
+		All(
+			Wonder(iUniversityOfSankore),
+			CitySpecialistCount(wonder(iUniversityOfSankore).named(ITS_CITY), iSpecialistGreatProphet, 1),
+			by=1350,
+		),
+	),
 	iByzantium: (
 		GoldAmount(5000, at=1000),
 		All(
@@ -509,18 +522,6 @@ dGoals = {
 			CitySpecialistCount(city(tVienna).named(VIENNA), sum(iSpecialistGreatArtist, iSpecialistGreatStatesman), 10),
 			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8, civs=group(iCivGroupEurope).named(EUROPE), bIndependent=True),
 			by=1850,
-		),
-	),
-	iMali: (
-		TradeMission(holy_city(), by=1350),
-		All(
-			Wonder(iUniversityOfSankore),
-			CitySpecialistCount(wonder(iUniversityOfSankore).named(ITS_CITY), iSpecialistGreatProphet, 1),
-			by=1500,
-		),
-		All(
-			GoldAmount(5000, by=1500),
-			GoldAmount(15000, by=1700),
 		),
 	),
 	iPoland: (

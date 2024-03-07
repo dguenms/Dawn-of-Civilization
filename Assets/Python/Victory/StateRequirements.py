@@ -337,26 +337,4 @@ class Settle(StateRequirement):
 		if city in self.area and self.state == POSSIBLE:
 			self.fail()
 			goal.expire()
-
-
-# First Mandinka UHV goal
-class TradeMission(StateRequirement):
-
-	TYPES = (CITY,)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONDUCT"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_MISSION"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_MISSION"
-	
-	def __init__(self, city, **options):
-		StateRequirement.__init__(self, city, **options)
-		
-		self.city = city
-		
-		self.handle("tradeMission", self.check_trade_mission)
-		
-	def check_trade_mission(self, goal, (x, y), iGold):
-		if at(self.city.get(goal.evaluator.iPlayer), (x, y)):
-			self.succeed()
-			goal.check()
 	
