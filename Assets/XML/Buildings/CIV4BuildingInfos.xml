@@ -10135,7 +10135,7 @@
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_LAW</PrereqTech>
 			<ObsoleteTech>TECH_GEOLOGY</ObsoleteTech>
-			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
+			<PrereqBonuses>BONUS_POTATO</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
