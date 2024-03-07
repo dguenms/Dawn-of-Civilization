@@ -336,27 +336,7 @@ void CvPlayer::init(PlayerTypes eID)
 			}
 		}
 
-		// Leoreth: make sure Phoenicia can always hurry units
-		if (getCivilizationType() == CARTHAGE)
-		{
-			changeHurryCount((HurryTypes)1, 1);
-		}
-
-		// Toltec UP: +1 production and +2 culture per specialist
-		if (getCivilizationType() == TOLTECS)
-		{
-			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
-			{
-				changeSpecialistExtraYield((SpecialistTypes)iI, YIELD_PRODUCTION, 1);
-			}
-			changeSpecialistExtraCommerce(COMMERCE_CULTURE, 2);
-		}
-
-		// Thai UP: +1 commerce per excess happiness
-		if (getCivilizationType() == THAILAND)
-		{
-			changeHappinessExtraYield(YIELD_COMMERCE, 1);
-		}
+		applyCivilization(getCivilizationType(), 1);
 	}
 
 	AI_init();
@@ -12268,6 +12248,9 @@ void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 		return;
 	}
 
+	applyCivilization(getCivilizationType(), -1);
+	applyCivilization(iNewValue, 1);
+
 	GC.getInitCore().setCiv(getID(), iNewValue);
 
 	setCivDescription(L"");
@@ -12310,6 +12293,40 @@ void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 	GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_CIV_ASSIGNED, getID(), (char*)NULL, iNewValue);
 }
 // edead: end
+
+
+void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
+{
+	int iI;
+
+	// Phoenician UP: can always hurry units
+	if (eCivilization == CARTHAGE)
+	{
+		changeHurryCount((HurryTypes)1, iChange);
+	}
+
+	// Toltec UP: +1 production and +2 culture per specialist
+	if (eCivilization == TOLTECS)
+	{
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			changeSpecialistExtraYield((SpecialistTypes)iI, YIELD_PRODUCTION, iChange);
+		}
+		changeSpecialistExtraCommerce(COMMERCE_CULTURE, 2 * iChange);
+	}
+
+	// Mande UP: can trade across desert
+	if (eCivilization == MALI)
+	{
+		GET_TEAM(getTeam()).changeTerrainTradeCount(TERRAIN_DESERT, iChange);
+	}
+
+	// Thai UP: +1 commerce per excess happiness
+	if (eCivilization == THAILAND)
+	{
+		changeHappinessExtraYield(YIELD_COMMERCE, iChange);
+	}
+}
 
 
 LeaderHeadTypes CvPlayer::getLeaderType() const
