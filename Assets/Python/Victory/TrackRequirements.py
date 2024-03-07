@@ -660,3 +660,33 @@ class TradeGold(TrackRequirement):
 
 	def evaluate(self, evaluator):
 		return self.iValue / 100
+
+
+# Second Mandinka UHV goal
+class TradeMissionCount(TrackRequirement):
+
+	TYPES = (CITY, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONDUCT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_MISSION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_MISSION"
+	
+	def __init__(self, city, iRequired, **options):
+		TrackRequirement.__init__(self, city, iRequired, **options)
+		
+		self.city = city
+		
+		self.handle("tradeMission", self.check_trade_mission)
+		
+	def check_trade_mission(self, goal, (x, y), iGold):
+		if at(self.city.get(goal.evaluator.iPlayer), (x, y)):
+			self.increment()
+			goal.check()
+	
+	def additional_formats(self):
+		trade_mission = text("TXT_KEY_VICTORY_TRADE_MISSION")
+		
+		if self.bPlural:
+			trade_mission = plural(trade_mission)
+		
+		return [trade_mission]

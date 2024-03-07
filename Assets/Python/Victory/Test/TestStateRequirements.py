@@ -1125,98 +1125,6 @@ class TestSettle(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Test Area")
 		finally:
 			city.kill()
-
-
-class TestTradeMission(ExtendedTestCase):
-
-	def setUp(self):
-		self.city = LocationCityArgument(TestCities.CITY_LOCATIONS[0]).named("Test City")
-		self.requirement = TradeMission(self.city).create()
-		self.goal = TestGoal()
-		
-		self.requirement.register_handlers(self.goal)
-	
-	def tearDown(self):
-		self.requirement.deregister_handlers()
-	
-	def test_str(self):
-		self.assertEqual(str(self.requirement), "TradeMission(Test City)")
-	
-	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "TradeMission(Test City)")
-	
-	def test_description(self):
-		self.assertEqual(self.requirement.description(), "a trade mission to Test City")
-	
-	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {"Test City": plots.of([(57, 35)])})
-	
-	def test_area_name(self):
-		self.assertEqual(self.requirement.area_name((57, 35)), "Test City")
-		self.assertEqual(self.requirement.area_name((42, 42)), "")
-	
-	def test_pickle(self):
-		self.assertPickleable(self.requirement)
-	
-	def test_no_city(self):
-		events.fireEvent("tradeMission", iGreatMerchant, 0, 57, 35, 1000)
-		
-		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade mission to Test City")
-		self.assertEqual(self.goal.checked, False)
-	
-	def test_trade_mission(self):
-		city = TestCities.one()
-		
-		try:
-			events.fireEvent("tradeMission", iGreatMerchant, 0, 57, 35, 1000)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Trade mission to Test City")
-			self.assertEqual(self.goal.checked, True)
-		finally:
-			city.kill()
-	
-	def test_trade_mission_other_owner(self):
-		city = TestCities.one(1)
-		
-		try:
-			events.fireEvent("tradeMission", iGreatMerchant, 0, 57, 35, 1000)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Trade mission to Test City")
-			self.assertEqual(self.goal.checked, True)
-		finally:
-			city.kill()
-	
-	def test_trade_mission_different_player(self):
-		city = TestCities.one()
-		
-		try:
-			events.fireEvent("tradeMission", iGreatMerchant, 1, 57, 35, 1000)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade mission to Test City")
-			self.assertEqual(self.goal.checked, False)
-		finally:
-			city.kill()
-	
-	def test_trade_mission_different_city(self):
-		city1, city2 = cities = TestCities.num(2)
-		
-		try:
-			events.fireEvent("tradeMission", iGreatMerchant, 0, 59, 35, 1000)
-			
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade mission to Test City")
-			self.assertEqual(self.goal.checked, False)
-		finally:
-			cities.kill()
-	
-	def test_not_check_turnly(self):
-		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
-		
-		self.assertEqual(self.goal.checked, False)
 	
 
 test_cases = [
@@ -1232,5 +1140,4 @@ test_cases = [
 	TestNoCityConquered,
 	TestNoCityLost,
 	TestSettle,
-	TestTradeMission,
 ]

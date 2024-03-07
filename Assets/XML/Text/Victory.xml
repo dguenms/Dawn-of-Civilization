@@ -869,7 +869,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TRADE_MISSION</Tag>
-		<English>a trade mission to %s1</English>
+		<English>%s2 %s3 to %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1616,7 +1616,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_MISSION</Tag>
-		<English>Trade mission to %s1</English>
+		<English>Trade missions to %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2386,6 +2386,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOLDEN_AGE</Tag>
 		<English>Golden Age</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_MISSION</Tag>
+		<English>trade mission</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
