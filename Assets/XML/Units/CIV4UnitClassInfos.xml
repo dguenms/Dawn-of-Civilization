@@ -99,7 +99,7 @@
 			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_JEWISH_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -107,7 +107,7 @@
 			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_PROTESTANT_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -115,7 +115,7 @@
 			<Description>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_CATHOLIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -123,7 +123,7 @@
 			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_ORTHODOX_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -131,7 +131,7 @@
 			<Description>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_ISLAMIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -139,7 +139,7 @@
 			<Description>TXT_KEY_UNIT_HINDU_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_HINDU_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -147,7 +147,7 @@
 			<Description>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_BUDDHIST_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -155,7 +155,7 @@
 			<Description>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_CONFUCIAN_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -163,7 +163,7 @@
 			<Description>TXT_KEY_UNIT_TAOIST_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_TAOIST_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -171,7 +171,7 @@
 			<Description>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_ZOROASTRIAN_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
