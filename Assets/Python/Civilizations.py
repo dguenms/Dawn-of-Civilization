@@ -308,7 +308,7 @@ lCivilizations = [
 	Civilization(
 		iMali,
 		iGold=200,
-		lCivics=[iMonarchy, iSlavery, iMerchantTrade],
+		lCivics=[iDespotism, iSlavery, iMerchantTrade],
 		techs=techs.column(3).including(iMathematics, iContract, iCurrency, iLiterature, iPriesthood)
 	),
 	Civilization(
