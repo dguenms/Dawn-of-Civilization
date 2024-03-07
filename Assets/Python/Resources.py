@@ -274,7 +274,7 @@ dRemovedResourcesDict = {
 	(58, 47)  : 500, # Dye (murex) in Morocco
 	(66, 46)  : 550, # Ivory in Tunisia
 	(58, 45)  : 550, # Ivory in Morocco
-	(63, 94)  : 550, # Ivory in Persia
+	(94, 43)  : 550, # Ivory in Persia
 	(100, 50) : 1100, # Silver in Bactria
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
