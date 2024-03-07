@@ -6441,7 +6441,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		else if (isHumanVictoryWonder(eBuilding, SISTINE_CHAPEL, ITALY)) return false;
 		else if (isHumanVictoryWonder(eBuilding, SANTA_MARIA_DEL_FIORE, ITALY)) return false;
 
-		else if (isHumanVictoryWonder(eBuilding, UNIVERSITY_OF_SANKORE, ITALY)) return false;
+		else if (isHumanVictoryWonder(eBuilding, UNIVERSITY_OF_SANKORE, MALI)) return false;
 
 		else if (isHumanVictoryWonder(eBuilding, MEZQUITA, MOORS)) return false;
 
@@ -7171,8 +7171,8 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		updatePlotGroups();
 	}
 
-	// University of Sankore
-	else if (eBuilding == UNIVERSITY_OF_SANKORE)
+	// Great Adobe Mosque
+	else if (eBuilding == GREAT_ADOBE_MOSQUE)
 	{
 		updateYield();
 	}

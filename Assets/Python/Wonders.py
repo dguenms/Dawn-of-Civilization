@@ -3,6 +3,16 @@ from RFCUtils import *
 from Events import handler
 
 
+@handler("techTraded")
+def universityOfSankoreEffect(iFromPlayer, iToPlayer, iTech):
+	if player(iToPlayer).isHasBuildingEffect(iUniversityOfSankore):
+		iGold = team(iToPlayer).getResearchCost(iTech) / 2
+		wonderCity = cities.owner(iToPlayer).building(iUniversityOfSankore).one() or (-1, -1)
+		message(iToPlayer, 'TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_EFFECT', iGold, infos.tech(iTech).getText(), location=wonderCity, button=infos.building(iUniversityOfSankore).getButton())
+		player(iToPlayer).changeGold(iGold)
+		
+
+
 @handler("cityAcquired")
 def escorialAcquiredCity(iOwner, iPlayer, city):
 	escorialEffect(iPlayer, city)

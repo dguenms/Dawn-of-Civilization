@@ -10374,12 +10374,12 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == UNIVERSITY_OF_SANKORE)
+	else if (eBuilding == GREAT_ADOBE_MOSQUE)
 	{
 		int iDesertCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
+			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT || getCityIndexPlot(iI)->getTerrainType() == TERRAIN_SEMIDESERT)
 			{
 				iDesertCount += 1;
 			}
