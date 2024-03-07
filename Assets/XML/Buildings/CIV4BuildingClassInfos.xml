@@ -1598,6 +1598,15 @@
 			<DefaultBuilding>BUILDING_KHAJURAHO</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GREAT_ADOBE_MOSQUE</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GREAT_ADOBE_MOSQUE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SPIRAL_MINARET</Type>
 			<Description>TXT_KEY_BUILDING_SPIRAL_MINARET</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>

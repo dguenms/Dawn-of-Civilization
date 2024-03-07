@@ -695,5 +695,9 @@
 			<Type>ART_DEF_MOVIE_DELTA_WORKS</Type>
 			<Path>Art/Movies/Wonders/DeltaWorks.dds</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_ADOBE_MOSQUE</Type>
+			<Path>Art/Movies/Wonders/Great_Adobe_Mosque.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

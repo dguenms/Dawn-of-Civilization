@@ -7208,10 +7208,10 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// Leoreth: University of Sankore effect
-		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)UNIVERSITY_OF_SANKORE))
+		// Leoreth: Great Adobe Mosque effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)GREAT_ADOBE_MOSQUE))
 		{
-			if (getTerrainType() == TERRAIN_DESERT && eYield == YIELD_COMMERCE)
+			if ((getTerrainType() == TERRAIN_DESERT || getTerrainType() == TERRAIN_SEMIDESERT) && eYield == YIELD_COMMERCE)
 			{
 				iYield += 1;
 			}

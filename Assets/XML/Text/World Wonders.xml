@@ -2538,14 +2538,6 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] sur les cases de d&#233;sert</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
 		<English>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</English>
 		<French>[ICON_BULLET]Cities with State [ICON_RELIGION] construct buildings +25% faster</French>
@@ -3242,11 +3234,35 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_</Tag>
-		<English></English>
+		<Tag>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Tag>
+		<English>Great Adobe Mosque</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
 		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert and Semidesert</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] sur les cases de d&#233;sert et semi-d&#233;sert</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert and Semidesert</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert and Semidesert</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert and Semidesert</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Tag>
+		<English>[ICON_BULLET]Receive additional [ICON_GOLD] when trading technologies</English>
+		<French>[ICON_BULLET]Receive additional [ICON_GOLD] when trading technologies</French>
+		<German>[ICON_BULLET]Receive additional [ICON_GOLD] when trading technologies</German>
+		<Italian>[ICON_BULLET]Receive additional [ICON_GOLD] when trading technologies</Italian>
+		<Spanish>[ICON_BULLET]Receive additional [ICON_GOLD] when trading technologies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_EFFECT</Tag>
+		<English>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</English>
+		<French>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</French>
+		<German>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</German>
+		<Italian>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</Italian>
+		<Spanish>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</Spanish>
 	</TEXT>
 </Civ4GameText>
