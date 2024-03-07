@@ -683,11 +683,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL</Tag>
-		<English>Double trade yield from distance for inland cities</English>
-		<French>Double trade yield from distance for inland cities</French>
-		<German>Double trade yield from distance for inland cities</German>
-		<Italian>Double trade yield from distance for inland cities</Italian>
-		<Spanish>Double trade yield from distance for inland cities</Spanish>
+		<English>Double trade yield from distance for inland cities and desert provides trade connections</English>
+		<French>Double trade yield from distance for inland cities and desert provides trade connections</French>
+		<German>Double trade yield from distance for inland cities and desert provides trade connections</German>
+		<Italian>Double trade yield from distance for inland cities and desert provides trade connections</Italian>
+		<Spanish>Double trade yield from distance for inland cities and desert provides trade connections</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
