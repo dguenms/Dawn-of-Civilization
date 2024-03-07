@@ -11232,7 +11232,6 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
-			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
