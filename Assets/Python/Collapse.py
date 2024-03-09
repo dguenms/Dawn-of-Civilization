@@ -44,6 +44,10 @@ def freeSlotFor(iCiv):
 		completeCollapse(iSlot)
 	
 def scheduleCollapse(iPlayer):
+	# AI Rome does not collapse during Byzantine autoplay
+	if civ(iPlayer) == iRome and autoplay() and civ() == iByzantium:
+		return
+		
 	data.players[iPlayer].iTurnsToCollapse = 1
 	
 def completeCollapse(iPlayer):
