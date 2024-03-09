@@ -45,6 +45,7 @@ ITS_CITY = "TXT_KEY_VICTORY_NAME_ITS_CITY"
 # area names
 AFRICA = "TXT_KEY_VICTORY_NAME_AFRICA"
 AFRICAN_COAST = "TXT_KEY_VICTORY_NAME_AFRICAN_COAST"
+ANDALUSIA = "TXT_KEY_VICTORY_NAME_ANDALUSIA"
 ANDES = "TXT_KEY_VICTORY_NAME_ANDES"
 ATLANTIC_COAST = "TXT_KEY_VICTORY_NAME_ATLANTIC_COAST"
 AMERICA = "TXT_KEY_VICTORY_NAME_AMERICA"
@@ -55,6 +56,7 @@ BLACK_SEA = "TXT_KEY_VICTORY_NAME_BLACK_SEA"
 BRAZIL = "TXT_KEY_VICTORY_NAME_BRAZIL"
 BRITAIN = "TXT_KEY_VICTORY_NAME_BRITAIN"
 CARIBBEAN = "TXT_KEY_VICTORY_NAME_CARIBBEAN"
+CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
@@ -392,16 +394,22 @@ dGoals = {
 		),
 	),
 	iByzantium: (
-		GoldAmount(5000, at=1000),
+		GoldAmount(5000, by=1000),
 		All(
 			BestPopulationCity(city(tConstantinople).named(CONSTANTINOPLE)),
 			BestCultureCity(city(tConstantinople).named(CONSTANTINOPLE)),
 			at=1200,
 		),
-		CityCount(
-			(plots.regions(rGreece, rBalkans).named(BALKANS), 3),
-			(plots.regions(rEgypt, rMaghreb).named(NORTH_AFRICA), 3),
-			(plots.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).named(NEAR_EAST), 3),
+		Control(
+			plots.region(rGreece),
+			plots.region(rBalkans).named(BALKANS),
+			plots.region(rAnatolia),
+			plots.region(rCaucasus).named(CAUCASUS),
+			plots.region(rLevant).named(LEVANT),
+			plots.region(rEgypt),
+			plots.region(rMaghreb).named(AFRICA),
+			plots.rectangle(tAndalusia).named(ANDALUSIA),
+			plots.region(rItaly),
 			at=1450,
 		),
 	),
