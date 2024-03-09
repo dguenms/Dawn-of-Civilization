@@ -2653,6 +2653,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ANDALUSIA</Tag>
+		<English>Andalusia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ASIA</Tag>
 		<English>Asia</English>
 		<French></French>
@@ -2703,6 +2711,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_CARIBBEAN</Tag>
 		<English>the Caribbean</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CAUCASUS</Tag>
+		<English>the Caucasus</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

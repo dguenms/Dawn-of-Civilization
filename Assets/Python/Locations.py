@@ -29,6 +29,9 @@ tEasterIsland = ((20, 18),	(20, 18))
 # second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
 tSrivijaya = ((115, 26), (121, 32))
 
+# third Byzantine goal: control Greece, the Balkans, Anatolia, the Caucasus, the Levant, Egypt, Africa, Andalusia and Italy in 1450 AD
+tAndalusia = ((54, 48), (60, 50))
+
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tWestAfrica = ((54, 31), (65, 40))
 
