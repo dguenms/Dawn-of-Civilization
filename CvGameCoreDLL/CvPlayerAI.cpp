@@ -1305,85 +1305,11 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, P
                             iRazeValue += GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();
 						}
 					}
-					//Rhye - moved down
-					/*//Rhye - start
-					int iX = pCity->getX_INLINE();
-					int iY = pCity->getY_INLINE();
-					if ((iX == 58 && iY == 39) || //Carthage
-						(iX == 76 && iY == 40) || //Babylon
-						(iX == 76 && iY == 42) || //Niniveh
-						(iX == 77 && iY == 42) || //Niniveh
-						(iX == 77 && iY == 38) || //Ur
-						(iX == 71 && iY == 43) || //Gordium
-						(iX == 73 && iY == 43) || //Hattusas
-						(iX == 77 && iY == 44) || //Artaxata
-						(iX == 69 && iY == 15) || //Zimbabwe
-						(iX == 71 && iY == 17)) //Quelimane
-						iRazeValue += 60;
-					//Rhye - end
-
-					if (iRazeValue > 0)
-					{
-					    for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
-					    {
-                            if (hasTrait((TraitTypes)iI))
-                            {
-                                iRazeValue *= (100 - (GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier()));
-                                iRazeValue /= 100;
-							}
-						}
-
-                        if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)
-						{
-							bRaze = true;
-							pCity->doTask(TASK_RAZE);
-						}
-					}*/
 				}
 			}
 		}
-		//Rhye - moved here
 
-		//Rhye - start
-		int iX = pCity->getX_INLINE();
-		int iY = pCity->getY_INLINE();
-		if ((iX == 58 && iY == 39) || //Carthage
-			//(iX == 76 && iY == 40) || //Babylon
-			(iX == 62 && iY == 42) || //Pompeii
-			(iX == 76 && iY == 42) || //Niniveh
-			(iX == 77 && iY == 42) || //Niniveh
-			(iX == 77 && iY == 38) || //Ur
-			(iX == 71 && iY == 43) || //Gordium
-			(iX == 73 && iY == 43) || //Hattusas
-			(iX == 77 && iY == 44) || //Artaxata
-			(iX == 69 && iY == 15) || //Zimbabwe
-			(iX == 71 && iY == 17)) { //Quelimane
-			iRazeValue += 60;
-			if (pCity->hasActiveWorldWonder())
-				iRazeValue -= 30;
-			}
-		else if ((iX == 73 && iY == 40) || //Sur
-			(iX == 59 && iY == 50) || //Mainz
-			(iX == 54 && iY == 38)) { //Russadir
-			iRazeValue += 20;
-			if (pCity->hasActiveWorldWonder())
-				iRazeValue -= 10;
-			}
-        // Leoreth: added more 600 AD cities here
-		else if ((iX == 68 && iY == 45) || //Byzantium
-            (iX == 60 && iY == 37) ||     //Tripolis
-            (iX == 64 && iY == 36) ||     //Bengazi
-            (iX == 67 && iY == 36) ||     //Alexandria
-            (iX == 69 && iY == 35) ||     //Cairo
-            (iX == 82 && iY == 38) ||     //Shiraz
-            (iX == 83 && iY == 45) ||     //Merv
-            (iX == 85 && iY == 47) ||    //Samarkand
-			(iX == 102 && iY == 47) ||	//Beijing
-			(iX == 75 && iY == 44) ||	//Trabzon
-			(iX == 72 && iY == 43)){	//Konya
-				iRazeValue -= 30;
-			}
-
+		// moved here by Rhye
 		if (iRazeValue > 0)
 		{
 			for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
@@ -1402,7 +1328,6 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, P
 				return;
 			}
 		}
-		//Rhye - end moved part
 	}
 
 	if (!bRaze && canSack(pCity))
@@ -16810,12 +16735,6 @@ int CvPlayerAI::AI_goldTradeValuePercent(PlayerTypes eOtherPlayer) const
 	if (AI_isFinancialTrouble())
 	{
 		iValue += 1;
-	}
-
-	// Leoreth: Byzantine UP: double value of Byzantine gold
-	if (eOtherPlayer != NO_PLAYER && GET_PLAYER(eOtherPlayer).getCivilizationType() == BYZANTIUM)
-	{
-		iValue *= 2;
 	}
 
 	return 100 * iValue;

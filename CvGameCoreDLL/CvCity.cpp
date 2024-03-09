@@ -4728,6 +4728,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_CULTURE, iChange * iWonderCulture);
 		}
 
+		// Byzantine UP: +1 espionage in capital per 100 gold in treasury and +1 gold per 100 culture in capital
+		if (getCivilizationType() == BYZANTIUM && eBuilding == 0)
+		{
+			changeBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / 100);
+		}
+
 		// Temple of Kukulkan
 		if (eBuilding == TEMPLE_OF_KUKULKAN)
 		{
@@ -5355,6 +5361,11 @@ bool CvCity::isDisorder() const
 
 bool CvCity::isHolyCity(ReligionTypes eIndex) const
 {
+	if (isHasBuildingEffect((BuildingTypes)HAGIA_SOPHIA))
+	{
+		return true;
+	}
+
 	return (GC.getGameINLINE().getHolyCity(eIndex) == this);
 }
 
@@ -12080,6 +12091,16 @@ void CvCity::setCultureTimes100(CivilizationTypes eCivilization, int iNewValue)
 		FAssert(getActualCultureTimes100(eCivilization) >= 0);
 
 		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
+
+		// Byzantine UP: +1 gold per 200 culture in capital
+		if (eCivilization == BYZANTIUM && getCivilizationType() == BYZANTIUM && isCapital())
+		{
+			int iGoldChange = iNewValue / 20000 - iOldValue / 20000;
+			if (iGoldChange != 0)
+			{
+				changeBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_GOLD, iGoldChange);
+			}
+		}
 	}
 }
 

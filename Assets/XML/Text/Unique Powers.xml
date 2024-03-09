@@ -155,19 +155,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
-		<English>The Power of Bribery:</English>
-		<French>Le pouvoir des pots-de-vin :</French>
-		<German>Die Macht der Bestechung:</German>
-		<Italian>The Power of Bribery:</Italian>
-		<Spanish>The Power of Bribery:</Spanish>
+		<English>The Power of Splendor:</English>
+		<French>The Power of Splendor:</French>
+		<German>The Power of Splendor:</German>
+		<Italian>The Power of Splendor:</Italian>
+		<Spanish>The Power of Splendor:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
-		<English>Double gold value in trades, spies can bribe barbarian units</English>
-		<French>L'or vaut en double lors des &#233;changes, et les espions peuvent soudoyer les unit&#233;s barbares</French>
-		<German>Doppelter Wert von Gold beim Handeln, Spione k&#246;nnen barbarische Einheiten bestechen</German>
-		<Italian>Double gold value in trades, spies can bribe barbarian units</Italian>
-		<Spanish>Double gold value in trades, spies can bribe barbarian units</Spanish>
+		<English>Additional [ICON_ESPIONAGE] for every 100 [ICON_GOLD] in treasury and additional [ICON_GOLD] for every 200 [ICON_CULTURE] in the capital</English>
+		<French>Additional [ICON_ESPIONAGE] for every 100 [ICON_GOLD] in treasury and additional [ICON_GOLD] for every 200 [ICON_CULTURE] in the capital</French>
+		<German>Additional [ICON_ESPIONAGE] for every 100 [ICON_GOLD] in treasury and additional [ICON_GOLD] for every 200 [ICON_CULTURE] in the capital</German>
+		<Italian>Additional [ICON_ESPIONAGE] for every 100 [ICON_GOLD] in treasury and additional [ICON_GOLD] for every 200 [ICON_CULTURE] in the capital</Italian>
+		<Spanish>Additional [ICON_ESPIONAGE] for every 100 [ICON_GOLD] in treasury and additional [ICON_GOLD] for every 200 [ICON_CULTURE] in the capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>
