@@ -16345,7 +16345,7 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_COAST</TerrainType>
-					<iTerrainAttack>25</iTerrainAttack>
+					<iTerrainAttack>50</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<iAsset>1</iAsset>
