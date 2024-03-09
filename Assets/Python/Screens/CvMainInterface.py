@@ -9,6 +9,7 @@ import time
 
 from Stability import *
 from RFCUtils import *
+from Rules import *
 from StoredData import data
 from Consts import *
 from Core import *
@@ -2515,8 +2516,8 @@ class CvMainInterface:
 								iCount = iCount + 1
 						
 					# Leoreth: Byzantine UP: bribe barbarians
-					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and civ(pUnit) == iByzantium and player(iByzantium).getNumCities() > 0:
-						if canDoByzantineBribery(pUnit):
+					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and player(pUnit).getNumCities() > 0:
+						if canBribeUnits(pUnit):
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
@@ -5737,7 +5738,7 @@ class CvMainInterface:
 		
 		# Leoreth: start Byzantine UP
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
-			doByzantineBribery(g_pSelectedUnit)
+			doUnitBribes(g_pSelectedUnit)
 		# Leoreth: end
 
 		return 0

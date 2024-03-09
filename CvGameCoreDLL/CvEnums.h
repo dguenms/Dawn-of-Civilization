@@ -2276,6 +2276,10 @@ enum CorporationTypes				// Exposed to Python
 enum HurryTypes						// Exposed to Python
 {
 	NO_HURRY = -1,
+
+	HURRY_POPULATION,
+	HURRY_GOLD_UNITS,
+	HURRY_GOLD_BUILDINGS,
 };
 
 enum UpkeepTypes					// Exposed to Python

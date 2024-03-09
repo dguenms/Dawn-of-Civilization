@@ -259,6 +259,68 @@ def updateLastTurnAlive(iPlayer, bAlive):
 
 ### IMPLEMENTATIONS ###
 
+def isBribableUnit(iPlayer, unit):
+	if not unit.canFight():
+		return False
+	
+	if unit.isInvisible(player(iPlayer).getTeam(), False):
+		return False
+	
+	if unit.getDomainType() != DomainTypes.DOMAIN_LAND:
+		return False
+	
+	return True
+
+
+def getPossibleBribes(iPlayer, location):
+	iTreasury = player(iPlayer).getGold()
+	targets = [(unit, infos.unit(unit).getProductionCost() * 3 / 2) for unit in units.at(location).owner(iBarbarian)]
+	return [(unit, iCost) for unit, iCost in targets if isBribableUnit(iPlayer, unit) and iCost <= iTreasury]
+
+
+def canBribeUnits(spy):
+	if not player(spy).canHurry(1):
+		return False
+	
+	if plot(spy).isOwned() and plot(spy).getOwner() != spy.getOwner():
+		return False
+
+	if spy.getMoves() >= spy.maxMoves(): 
+		return False
+		
+	if not getPossibleBribes(spy.getOwner(), location(spy)):
+		return False
+	
+	return True
+
+
+def applyUnitBribes(iChoice, iPlayer, x, y):
+	targets = getPossibleBribes(iPlayer, (x, y))
+	unit, iCost = targets[iChoice]
+	
+	newUnit = makeUnit(iPlayer, unit.getUnitType(), closestCity(unit, owner=iPlayer))
+	player(iPlayer).changeGold(-iCost)
+
+	unit.kill(False, -1)
+	
+	if newUnit:
+		interface.selectUnit(newUnit, True, True, False)
+
+
+def doUnitBribes(spy):
+	# only once per turn
+	spy.finishMoves()
+			
+	# launch popup
+	bribePopup = unit_bribe_popup.launcher()
+	
+	for unit, iCost in getPossibleBribes(spy.getOwner(), location(spy)):
+		bribePopup.text().applyUnitBribes(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
+	
+	x, y = location(spy)
+	bribePopup.cancel().launch(spy.getOwner(), x, y)
+
+
 def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
 	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
@@ -340,3 +402,11 @@ def immigration():
 		message(iTargetPlayer, 'TXT_KEY_UP_IMMIGRATION', targetCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=targetCity)
 
 		events.fireEvent("immigration", sourceCity, targetCity, iPopulation, iCultureChange)
+
+
+### POPUPS ###
+
+unit_bribe_popup = popup.text("TXT_KEY_BRIBE_UNITS_POPUP") \
+						.selection(applyUnitBribes, "TXT_KEY_BRIBE_UNITS_BUTTON") \
+						.cancel("TXT_KEY_BRIBE_UNITS_BUTTON_NONE") \
+						.build()

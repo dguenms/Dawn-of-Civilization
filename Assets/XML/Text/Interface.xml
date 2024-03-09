@@ -3601,6 +3601,46 @@
 		<Spanish>Triple Production Speed with [LINK=literal]%s1_Bonus[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACTION_BRIBE_UNITS</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Soudoyer les barbares[COLOR_REVERT][NEWLINE]Permet &#224; votre espion d'offrir de l'or afin de convaincre l'une des unit&#233;s barbares sur cette case de se joindre &#224; votre arm&#233;e.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BRIBE_UNITS_POPUP</Tag>
+		<English>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</English>
+		<French>[H1]Soudoyer les barbares[\H1][NEWLINE]Choisissez l'unit&#233; barbare &#224; soudoyer :[NEWLINE]</French>
+		<German>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</German>
+		<Italian>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Italian>
+		<Spanish>[H1]Bribing Barbarians[\H1][NEWLINE]Choose the barbarian unit you wish to bribe:[NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BRIBE_UNITS_BUTTON</Tag>
+		<English>%s1 (%d2 / %d3) for %d4 [ICON_GOLD]</English>
+		<French>%s1 (%d2 / %d3) pour %d4 [ICON_GOLD]</French>
+		<German>%s1 (%d2 / %d3) f&#252;r %d4 [ICON_GOLD]</German>
+		<Italian>%s1 (%d2 / %d3) per %d4 [ICON_GOLD]</Italian>
+		<Spanish>%s1 (%d2 / %d3) por %d4 [ICON_GOLD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BRIBE_UNITS_BUTTON_NONE</Tag>
+		<English>None</English>
+		<French>Aucun</French>
+		<German>None</German>
+		<Italian>None</Italian>
+		<Spanish>None</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BRIBE_UNITS_EFFECT</Tag>
+		<English>[NEWLINE][ICON_BULLET]Spies can bribe Barbarian units</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

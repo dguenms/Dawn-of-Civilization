@@ -8048,6 +8048,12 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	// Leoreth: hurrying units with gold also allows to bribe barbarians
+	if (GC.getCivicInfo(eCivic).isHurry(HURRY_GOLD_UNITS))
+	{
+		szHelpText.append(gDLL->getText("TXT_KEY_BRIBE_UNITS_EFFECT"));
+	}
+
 	//	Gold cost per unit
 	if (GC.getCivicInfo(eCivic).getGoldPerUnit() != 0)
 	{

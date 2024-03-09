@@ -694,57 +694,6 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 	
 	return makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
 	
-# used: RFCUtils
-# TODO: this should not be here
-def getByzantineBriberyUnits(iPlayer, location):
-	iTreasury = player(iPlayer).getGold()
-	targets = [(unit, infos.unit(unit).getProductionCost() * 2) for unit in units.at(location).owner(iBarbarian)]
-	return [(unit, iCost) for unit, iCost in targets if iCost <= iTreasury]
-	
-# used: CvMainInterface
-# TODO: this should not be here
-def canDoByzantineBribery(spy):
-	if spy.getMoves() >= spy.maxMoves(): 
-		return False
-		
-	if not getByzantineBriberyUnits(spy.getOwner(), location(spy)):
-		return False
-	
-	return True
-
-# used: RFCUtils
-def applyByzantineBribery(iChoice, iPlayer, x, y):
-	targets = getByzantineBriberyUnits(iPlayer, (x, y))
-	unit, iCost = targets[iChoice]
-	
-	newUnit = makeUnit(iPlayer, unit.getUnitType(), closestCity(unit, owner=iPlayer))
-	player(iPlayer).changeGold(-iCost)
-
-	unit.kill(False, -1)
-	
-	if newUnit:
-		interface.selectUnit(newUnit, True, True, False)
-
-byzantineBribePopup = popup.text("TXT_KEY_BYZANTINE_UP_POPUP") \
-						.selection(applyByzantineBribery, "TXT_KEY_BYZANTINE_UP_BUTTON") \
-						.cancel("TXT_KEY_BYZANTINE_UP_BUTTON_NONE") \
-						.build()
-
-# used: CvMainInterface
-# TODO: this should not be here
-def doByzantineBribery(spy):
-	# only once per turn
-	spy.finishMoves()
-			
-	# launch popup
-	bribePopup = byzantineBribePopup.launcher()
-	
-	for unit, iCost in getByzantineBriberyUnits(spy.getOwner(), location(spy)):
-		bribePopup.text().applyByzantineBribery(unit.getName(), unit.currHitPoints(), unit.maxHitPoints(), iCost, button=unit.getButton())
-	
-	x, y = location(spy)
-	bribePopup.cancel().launch(spy.getOwner(), x, y)
-	
 def exclusive(iCiv, *civs):
 	return iCiv in civs and any(player(iOtherCiv).isExisting() for iOtherCiv in civs if iCiv != iOtherCiv)
 	
