@@ -418,6 +418,13 @@ def removeOrthodoxyFromAnatolia(iPlayer):
 ### BIRTH ###
 
 @handler("birth")
+def romanRelations(iPlayer):
+	if civ(iPlayer) == iByzantium and player(iRome).isExisting():
+		iRomePlayer = slot(iRome)
+		player(iRomePlayer).AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_EVENT_GOOD_TO_US, 4)
+
+
+@handler("birth")
 def stabilizeAustria(iPlayer):
 	if civ(iPlayer) == iGermany:
 		iHolyRomanPlayer = slot(iHolyRome)
