@@ -9278,7 +9278,9 @@ int CvPlayer::getGold() const
 
 void CvPlayer::setGold(int iNewValue)
 {
-	if (getGold() != iNewValue)
+	int iOldValue = getGold();
+
+	if (iOldValue != iNewValue)
 	{
 		m_iGold = iNewValue;
 
@@ -9287,6 +9289,17 @@ void CvPlayer::setGold(int iNewValue)
 			gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+		}
+
+		// Byzantine UP: +1 espionage in capital per 100 gold in treasury
+		if (getCivilizationType() == BYZANTIUM && getNumCities() > 0)
+		{
+			int iEspionageChange = iNewValue / 100 - iOldValue / 100;
+
+			if (iEspionageChange != 0)
+			{
+				getCapitalCity()->changeBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, iEspionageChange);
+			}
 		}
 	}
 }
