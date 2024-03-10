@@ -322,7 +322,6 @@ lCivilizations = [
 	Civilization(
 		iFrance,
 		iGold=100,
-		iAdvancedStartPoints=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
 		techs=techs.column(5).including(iNobility, iPolitics).without(iMedicine, iPhilosophy)
