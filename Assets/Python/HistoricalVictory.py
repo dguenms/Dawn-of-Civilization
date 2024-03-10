@@ -413,6 +413,15 @@ dGoals = {
 			at=1450,
 		),
 	),
+	iFrance: (
+		CityCultureLevel(start(iFrance).named(PARIS), iCultureLevelLegendary, at=1700),
+		All(
+			AreaPercent(plots.regions(*lEuropeProper).named(EUROPE), 40, subject=VASSALS),
+			AreaPercent(plots.regions(*[iRegion for iRegion in lNorthAmerica if iRegion != rAmericanArctic]).named(NORTH_AMERICA), 40, subject=VASSALS),
+			at=1800,
+		),
+		CityBuilding(start(iFrance).named(PARIS), iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain, by=1900),
+	),
 	iJapan: (
 		All(
 			AverageCultureAmount(6000),
@@ -493,15 +502,6 @@ dGoals = {
 			AreaNoStateReligion(plots.regions(*lEuropeProper).named(EUROPE), iProtestantism),
 			at=1650,
 		),
-	),
-	iFrance: (
-		CityCultureLevel(start(iFrance).named(PARIS), iCultureLevelLegendary, at=1700),
-		All(
-			AreaPercent(plots.regions(*lEuropeProper).named(EUROPE), 40, subject=VASSALS),
-			AreaPercent(plots.regions(*[iRegion for iRegion in lNorthAmerica if iRegion != rAmericanArctic]).named(NORTH_AMERICA), 40, subject=VASSALS),
-			at=1800,
-		),
-		Wonders(iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain, by=1900),
 	),
 	iEngland: (
 		CityCount(
