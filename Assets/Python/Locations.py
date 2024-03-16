@@ -32,6 +32,9 @@ tSrivijaya = ((115, 26), (121, 32))
 # third Byzantine goal: control Greece, the Balkans, Anatolia, the Caucasus, the Levant, Egypt, Africa, Andalusia and Italy in 1450 AD
 tAndalusia = ((54, 48), (60, 50))
 
+# third Malay goal: 
+tMalaya = ((119, 30), (120, 32))
+
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tWestAfrica = ((54, 31), (65, 40))
 

@@ -37,10 +37,11 @@ TOLLAN = "TXT_KEY_VICTORY_NAME_TOLLAN"
 VIENNA = "TXT_KEY_VICTORY_NAME_VIENNA"
 
 # city descriptors
+ANOTHER_CAPITAL = "TXT_KEY_VICTORY_NAME_ANOTHER_CAPITAL"
 CAPITAL = "TXT_KEY_VICTORY_NAME_CAPITAL"
 DIFFERENT_CAPITAL = "TXT_KEY_VICTORY_NAME_DIFFERENT_CAPITAL"
-ANOTHER_CAPITAL = "TXT_KEY_VICTORY_NAME_ANOTHER_CAPITAL"
 ITS_CITY = "TXT_KEY_VICTORY_NAME_ITS_CITY"
+MALAYAN_CITY = "TXT_KEY_VICTORY_NAME_MALAYAN_CITY"
 
 # area names
 AFRICA = "TXT_KEY_VICTORY_NAME_AFRICA"
@@ -422,18 +423,22 @@ dGoals = {
 		),
 		CityBuilding(start(iFrance).named(PARIS), iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain, by=1900),
 	),
-	iJapan: (
+	iMalays: (
 		All(
-			AverageCultureAmount(6000),
-			NoCityLost(),
-			by=1600,
+			TradeRouteCommerce(1600, by=1000),
+			TradeRouteCommerce(8000, by=1500),
 		),
+		ResourceCount(different(happiness_resources()).named(DIFFERENT_HAPPINESS_RESOURCES), 14, by=1300),
+		CityBuilding(area_city(tMalaya).named(MALAYAN_CITY), iHinduCathedral, iBuddhistCathedral, iIslamicCathedral, by=1500),
+	),
+	iJapan: (
+		FoundedCultureAmount(30000, by=1600),
 		Control(
-			plots.region(rKorea).named(KOREA),
+			plots.region(rKorea),
 			plots.regions(rManchuria, rAmur).named(MANCHURIA),
 			plots.regions(rNorthChina, rSouthChina).named(CHINA),
-			plots.region(rIndochina).named(INDOCHINA),
-			plots.region(rIndonesia).named(INDONESIA),
+			plots.region(rIndochina),
+			plots.region(rIndonesia),
 			plots.region(rPhilippines).named(PHILIPPINES),
 			subject=VASSALS,
 			at=1940,
@@ -493,6 +498,11 @@ dGoals = {
 			by=1300,
 		),
 		PiracyGold(3000, by=1650),
+	),
+	iJava: (
+		Wonders(iPrambanan, iBorobudur),
+		HappyCityPopulation(50, by=1350),
+		BuildingCount(iIslamicCathedral, 3, by=1500),
 	),
 	iSpain: (
 		FirstSettle(plots.regions(*lAmerica).named(AMERICA), allowed=dCivGroups[iCivGroupAmerica]),

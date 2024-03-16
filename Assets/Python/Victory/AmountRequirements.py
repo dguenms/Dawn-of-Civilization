@@ -38,6 +38,21 @@ class CultureAmount(ThresholdRequirement):
 	
 	def value(self, iPlayer):
 		return player(iPlayer).countTotalCulture()
+
+
+# First Japanese UHV goal
+class FoundedCultureAmount(ThresholdRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_FOUNDED_CULTURE_AMOUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_FOUNDED_CULTURE_AMOUNT"
+	
+	def __init__(self, iRequired, **options):
+		ThresholdRequirement.__init__(self, iRequired, **options)
+	
+	def value(self, iPlayer):
+		return cities.owner(iPlayer).where(lambda city: city.getOriginalCiv() == civ(iPlayer)).sum(lambda city: city.getCulture(iPlayer))
 	
 
 # Third Phoenician UHV goal

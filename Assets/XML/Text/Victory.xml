@@ -1291,6 +1291,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_ROUTE_COMMERCE</Tag>
+		<English>%s1 commerce from city trade routes</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FOUNDED_CULTURE_AMOUNT</Tag>
+		<English>more than %s1 culture in founded cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -2006,6 +2022,22 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COMMERCE</Tag>
+		<English>Commerce from city trade routes</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_FOUNDED_CULTURE_AMOUNT</Tag>
+		<English>Founded city culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -2598,6 +2630,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ITS_CITY</Tag>
 		<English>its city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MALAYAN_CITY</Tag>
+		<English>a Malayan city</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

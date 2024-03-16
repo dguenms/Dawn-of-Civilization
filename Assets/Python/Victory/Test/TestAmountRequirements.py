@@ -131,6 +131,75 @@ class TestCultureAmount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestFoundedCultureAmount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = FoundedCultureAmount(500).create()
+		self.goal = TestGoal()
+	
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FoundedCultureAmount(500)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FoundedCultureAmount(500)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "more than 500 culture in founded cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_less(self):
+		city = TestCities.one()
+		city.setCulture(self.iPlayer, 100, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Founded city culture: 100 / 500")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setCulture(self.iPlayer, 1000, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1000)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Founded city culture: 1000 / 500")
+		finally:
+			city.kill()
+	
+	def test_not_founded(self):
+		city = TestCities.one(1)
+		player(0).acquireCity(city, False, True)
+		
+		TestCities.city(0).setCulture(self.iPlayer, 500, True)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Founded city culture: 0 / 500")
+		finally:
+			city_plot = TestCities.city(0).plot()
+			TestCities.city(0).kill()
+			city_plot.resetCultureConversion()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestGoldAmount(ExtendedTestCase):
 
 	def setUp(self):
@@ -284,6 +353,7 @@ class TestShrineIncome(ExtendedTestCase):
 test_cases = [
 	TestAverageCultureAmount,
 	TestCultureAmount,
+	TestFoundedCultureAmount,
 	TestGoldAmount,
 	TestShrineIncome,
 ]

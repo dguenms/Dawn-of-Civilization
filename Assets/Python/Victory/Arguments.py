@@ -317,6 +317,39 @@ class LocationCityArgument(CityArgument):
 		return plots.of([self.tile])
 
 
+# TODO: test
+class AreaCityArgument(CityArgument):
+
+	def __init__(self, plots):
+		CityArgument.__init__(self)
+	
+		self.plots = plots
+	
+	def __repr__(self):
+		return "AreaCityArgument%s" % (self.plots,)
+	
+	def __eq__(self, other):
+		if not isinstance(other, AreaCityArgument):
+			return CityArgument.__eq__(self, other)
+		
+		return self.plots == other.plots
+	
+	def __hash__(self):
+		return hash(self.plots)
+	
+	def get(self, iPlayer):
+		if not self.plots.cities():
+			return NON_EXISTING
+		
+		if not self.plots.cities().owner(iPlayer):
+			return self.plots.cities().first()
+		
+		return self.plots.cities().owner(iPlayer).first()
+	
+	def area(self):
+		return self.plots
+
+
 class CapitalCityArgument(CityArgument):
 
 	def __repr__(self):
@@ -469,6 +502,9 @@ def group(iGroup):
 
 def start(identifier):
 	return LocationCityArgument(dCapitals[identifier])
+
+def area_city(tRectangle):
+	return AreaCityArgument(AreaArgumentFactory().rectangle(tRectangle))
 
 def happiness_resources():
 	return [iResource for iResource in infos.bonuses() if infos.bonus(iResource).getHappiness() > 0]
