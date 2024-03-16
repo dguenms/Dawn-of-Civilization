@@ -489,6 +489,7 @@ barbarians = [
 	Barbarians(400, 1200, {iSwordsman: 2}, ((118, 43), (122, 47)), 12, MINORS, adjective="TXT_KEY_ADJECTIVE_BAI"),
 	Barbarians(500, 800, {iHorseArcher: 2}, ((105, 54), (123, 61)), 12, NOMADS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_UIGHUR", promotions=(iDesertAdaptation, iSteppeAdaptation)),
 	Barbarians(500, 900, {iHorseArcher: 3}, ((98, 55), (123, 62)), 6, NOMADS, target_area=((94, 52), (128, 61)), adjective="TXT_KEY_ADJECTIVE_TURKIC", promotions=(iSteppeAdaptation,)),
+	Barbarians(500, 1000, {iSkirmisher: 1}, ((137, 56), (140, 62)), 16, NATIVES, target_area=((134, 49), (140, 55)), adjective="TXT_KEY_ADJECTIVE_EMISHI"),
 	Barbarians(500, 1800, {iNativeRaider: 2, iNativeArcher: 1, iNativeWarrior: 2}, ((62, 24), (77, 33)), 16, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_BANTU"),
 	Barbarians(500, 1900, {iNativeRaider: 2}, ((69, 19), (78, 32)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_BANTU"),
 	Barbarians(550, 850, {iHorseArcher: 2}, ((70, 57), (80, 62)), 9, INVADERS, target_area=((65, 55), (79, 62)), adjective="TXT_KEY_ADJECTIVE_AVAR"),
