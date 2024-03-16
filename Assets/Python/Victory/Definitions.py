@@ -8,6 +8,7 @@ import Requirements as req
 
 AverageCultureAmount = GoalDefinition(req.AverageCultureAmount)
 CultureAmount = GoalDefinition(req.CultureAmount)
+FoundedCultureAmount = GoalDefinition(req.FoundedCultureAmount)
 GoldAmount = GoalDefinition(req.GoldAmount)
 ShrineIncome = GoalDefinition(req.ShrineIncome)
 
@@ -146,6 +147,7 @@ SlaveTradeGold = GoalDefinition(req.SlaveTradeGold)
 SunkShips = GoalDefinition(req.SunkShips)
 TradeGold = GoalDefinition(req.TradeGold)
 TradeMissionCount = GoalDefinition(req.TradeMissionCount)
+TradeRouteCommerce = GoalDefinition(req.TradeRouteCommerce)
 
 
 ### ARGUMENTS ###

@@ -690,3 +690,22 @@ class TradeMissionCount(TrackRequirement):
 			trade_mission = plural(trade_mission)
 		
 		return [trade_mission]
+
+
+class TradeRouteCommerce(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_GENERATE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_ROUTE_COMMERCE"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COMMERCE"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.handle("BeginPlayerTurn", self.accumulate_trade_route_commerce)
+	
+	def accumulate_trade_route_commerce(self, goal, iGameTurn, iPlayer):
+		iGold = cities.owner(iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE))
+		self.accumulate(iGold)
+		goal.check()
