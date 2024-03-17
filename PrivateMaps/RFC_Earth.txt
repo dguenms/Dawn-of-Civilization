@@ -12596,6 +12596,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=48
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13059,6 +13060,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=48
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16422,6 +16424,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=58
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17881,7 +17884,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=69
-	TerrainType=TERRAIN_ARCTIC_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18158,6 +18161,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=35
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18328,7 +18332,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=69
-	TerrainType=TERRAIN_OCEAN
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22231,6 +22236,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=76
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -29624,7 +29630,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=77
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -30071,7 +30076,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=77
-	BonusType=BONUS_FISH
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -30526,6 +30531,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=77
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
