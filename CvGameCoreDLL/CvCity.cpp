@@ -5361,11 +5361,6 @@ bool CvCity::isDisorder() const
 
 bool CvCity::isHolyCity(ReligionTypes eIndex) const
 {
-	if (isHasBuildingEffect((BuildingTypes)HAGIA_SOPHIA))
-	{
-		return true;
-	}
-
 	return (GC.getGameINLINE().getHolyCity(eIndex) == this);
 }
 
