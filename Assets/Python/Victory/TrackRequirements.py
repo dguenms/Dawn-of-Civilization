@@ -460,7 +460,7 @@ class Production(TrackRequirement):
 			goal.check()
 
 
-# Third Viking UHV goal
+# Third Norse UHV goal
 class RaidGold(TrackRequirement):
 
 	TYPES = (AMOUNT,)

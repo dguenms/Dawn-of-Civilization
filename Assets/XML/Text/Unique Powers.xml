@@ -1082,7 +1082,7 @@
 		<Spanish>When attacking within their own territory, units receive the defensive bonus of their current tile</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
+		<Tag>TXT_KEY_UP_NOR_TITLE</Tag>
 		<English>The Power of Raids:</English>
 		<French>Le pouvoir des raids :</French>
 		<German>Die Macht des Raubens:</German>
@@ -1090,7 +1090,7 @@
 		<Spanish>El poder del pillaje:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_VIK</Tag>
+		<Tag>TXT_KEY_UP_NOR</Tag>
 		<English>Additional gold from pillaging, sacking cities and sinking ships during the Middle Ages</English>
 		<French>Piller, saccager des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
 		<German>Zus&#228;tzliches gold durch Pl&#252;nderung von St&#228;dten und Verbesserungen und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>

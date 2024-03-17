@@ -1792,12 +1792,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
-			<Type>BUILDING_VIKING_TRADING_POST</Type>
-			<Description>TXT_KEY_BUILDING_VIKING_TRADING_POST</Description>
-			<Civilopedia>TXT_KEY_BUILDING_VIKING_TRADING_POST_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_VIKING_TRADING_POST_STRATEGY</Strategy>
+			<Type>BUILDING_NORSE_TRADING_POST</Type>
+			<Description>TXT_KEY_BUILDING_NORSE_TRADING_POST</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NORSE_TRADING_POST_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NORSE_TRADING_POST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_VIKING_TRADING_POST</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_NORSE_TRADING_POST</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
 			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<FreePromotion>PROMOTION_NAVIGATION1</FreePromotion>

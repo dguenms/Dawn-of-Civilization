@@ -21,7 +21,7 @@ lOldCivilizations = [
 	iKorea,
 	iByzantium,
 	iJapan,
-	iVikings,
+	iNorse,
 	iTurks,
 	iArabia,
 	iTibet,

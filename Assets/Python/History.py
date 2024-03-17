@@ -180,7 +180,7 @@ def checkLateColonists():
 def checkRaiders():
 	if year().between(860, 1250):
 		if turn() % turns(10) == 9:
-			giveRaiders(iVikings)
+			giveRaiders(iNorse)
 
 
 ### FIRST CONTACT ###

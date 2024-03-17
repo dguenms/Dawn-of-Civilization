@@ -145,7 +145,7 @@ class Communist(Requirement):
 # Second Phoenician UHV goal
 # Second Dravidian UHV goal
 # Second Japanese UHV goal
-# First Viking UHV goal
+# First Norse UHV goal
 # Second Arabian UHV goal
 # First Mongol UHV goal
 # Second Ottoman UHV goal

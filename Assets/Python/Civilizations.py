@@ -343,7 +343,7 @@ lCivilizations = [
 		techs=techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics)
 	),
 	Civilization(
-		iVikings,
+		iNorse,
 		iGold=150,
 		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
 		techs=techs.column(6).without(iScholarship, iEthics)
@@ -781,7 +781,7 @@ dStartingUnits = CivDict({
 		iMissionary: 1,
 		iWorkerSea: 2,
 	},
-	iVikings: {
+	iNorse: {
 		iSettle: 1,
 		iWork: 2,
 		iSettleSea: 2,
@@ -1195,7 +1195,7 @@ dAdditionalUnits = CivDict({
 		iDefend: 3,
 		iAttack: 3,
 	},
-	iVikings: {
+	iNorse: {
 		# 3 Huscarls
 	},
 	iTurks: {
@@ -1369,7 +1369,7 @@ dAlwaysTrain = CivDict({
 }, [])
 
 dAIAlwaysTrain = CivDict({
-	iVikings: [iCrossbowman],
+	iNorse: [iCrossbowman],
 	iMoors: [iCrossbowman],
 	iSpain: [iCrossbowman],
 	iFrance: [iCrossbowman],
@@ -1418,7 +1418,7 @@ dSpecificAdditionalUnits = CivDict({
 	iKorea: {
 		iCrossbowman: 2,
 	},
-	iVikings: {
+	iNorse: {
 		iHuscarl: 3,
 	},
 	iMoors: {
@@ -1606,7 +1606,7 @@ dTechPreferences = {
 		iReplaceableParts: -20,
 		iScientificMethod: -20,
 	},
-	iVikings : {
+	iNorse : {
 		iMachinery: 30,
 		iCivilService: 30,
 		iCompass: 20,
@@ -1996,7 +1996,7 @@ dBuildingPreferences = {
 		iSalsalBuddha: 20,
 		iImageOfTheWorldSquare: 20,
 	},
-	iVikings : {
+	iNorse : {
 		iNobelPrize: 30,
 		iGlobalSeedVault: 30,
 		iCERN: 15,

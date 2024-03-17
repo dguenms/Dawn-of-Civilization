@@ -1946,7 +1946,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Khampa[COLOR_REVERT], the Tibetan replacement for the the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], can explore rival territory and has an attack bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL</Tag>
+		<Tag>TXT_KEY_UNIT_NORSE_HUSCARL</Tag>
 		<English>Huscarl</English>
 		<French>
 			<Text>Housecarl</Text>
@@ -1974,12 +1974,12 @@
 		<Spanish>[COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Whaling boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Offshore Platforms[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marine Reserves[COLOR_REVERT], cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Cartography[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</English>
-		<French>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</French>
-		<German>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</Spanish>
+		<Tag>TXT_KEY_UNIT_NORSE_HUSCARL_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WOLF_STRATEGY</Tag>
@@ -3082,7 +3082,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP</Tag>
+		<Tag>TXT_KEY_UNIT_NORSE_LONGSHIP</Tag>
 		<English>Longship</English>
 		<French>
 			<Text>Drakkar</Text>
@@ -3094,12 +3094,12 @@
 		<Spanish>Longship</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Spanish>
+		<Tag>TXT_KEY_UNIT_NORSE_LONGSHIP_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Norse replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_DROMON</Tag>

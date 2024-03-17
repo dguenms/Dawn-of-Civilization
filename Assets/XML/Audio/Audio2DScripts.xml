@@ -306,8 +306,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_SONG_VIKING</ScriptID>
-		<SoundID>SONG_VIKING</SoundID>
+		<ScriptID>AS2D_SONG_NORSE</ScriptID>
+		<SoundID>SONG_NORSE</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
 		<iMinVolume>70</iMinVolume>
 		<iMaxVolume>70</iMaxVolume>

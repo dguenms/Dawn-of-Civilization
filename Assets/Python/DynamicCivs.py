@@ -20,7 +20,7 @@ encoding = "utf-8"
 ### Dictionaries with text keys
 
 dDefaultInsertNames = {
-	iVikings : "TXT_KEY_CIV_VIKINGS_SCANDINAVIA",
+	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIA",
 	iKhmer : "TXT_KEY_CIV_KHMER_KAMPUCHEA",
 	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARTICLE",
 	iDravidia : "TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU",
@@ -32,7 +32,7 @@ dDefaultInsertNames = {
 }
 
 dDefaultInsertAdjectives = {
-	iVikings : "TXT_KEY_CIV_VIKINGS_SCANDINAVIAN",
+	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIAN",
 	iKhmer : "TXT_KEY_CIV_KHMER_KAMPUCHEAN",
 	iThailand : "TXT_KEY_CIV_THAILAND_SIAMESE",
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCAN",
@@ -84,9 +84,9 @@ dSpecificVassalTitles = deepdict({
 		iRome : "TXT_KEY_CIV_BYZANTINE_ROME",
 		iSpain : "TXT_KEY_CIV_BYZANTINE_SPAIN",
 	},
-	iVikings : {
-		iEngland : "TXT_KEY_CIV_VIKING_ENGLAND",
-		iRussia : "TXT_KEY_CIV_VIKING_RUSSIA",
+	iNorse : {
+		iEngland : "TXT_KEY_CIV_NORSE_ENGLAND",
+		iRussia : "TXT_KEY_CIV_NORSE_RUSSIA",
 	},
 	iArabia : {
 		iOttomans : "TXT_KEY_CIV_ARABIAN_OTTOMANS",
@@ -119,7 +119,7 @@ dSpecificVassalTitles = deepdict({
 		iItaly : "TXT_KEY_CIV_FRENCH_ITALY",
 		iEthiopia : "TXT_KEY_CIV_FRENCH_ETHIOPIA",
 		iByzantium : "TXT_KEY_CIV_FRENCH_BYZANTIUM",
-		iVikings : "TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF",
+		iNorse : "TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF",
 		iArabia : "TXT_KEY_MANDATE_OF",
 		iEngland : "TXT_KEY_CIV_FRENCH_ENGLAND",
 		iSpain : "TXT_KEY_CIV_FRENCH_SPAIN",
@@ -145,7 +145,7 @@ dSpecificVassalTitles = deepdict({
 		iEthiopia : "TXT_KEY_CIV_ENGLISH_ETHIOPIA",
 		iMaya : "TXT_KEY_CIV_ENGLISH_MAYA",
 		iByzantium : "TXT_KEY_CIV_ENGLISH_BYZANTIUM",
-		iVikings : "TXT_KEY_CIV_ENGLISH_VIKINGS",
+		iNorse : "TXT_KEY_CIV_ENGLISH_NORSE",
 		iArabia : "TXT_KEY_MANDATE_OF",
 		iFrance : "TXT_KEY_CIV_ENGLISH_FRANCE",
 		iHolyRome : "TXT_KEY_CIV_ENGLISH_HOLY_ROME",
@@ -328,7 +328,7 @@ dForeignNames = deepdict({
 		iPhoenicia : "TXT_KEY_CIV_ROMAN_NAME_PHOENICIA",
 		iEthiopia : "TXT_KEY_CIV_ROMAN_NAME_ETHIOPIA",
 		iByzantium : "TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM",
-		iVikings : "TXT_KEY_CIV_ROMAN_NAME_VIKINGS",
+		iNorse : "TXT_KEY_CIV_ROMAN_NAME_NORSE",
 		iTurks : "TXT_KEY_CIV_ROMAN_NAME_TURKS",
 		iKhmer : "TXT_KEY_CIV_ROMAN_NAME_KHMER",
 		iSpain : "TXT_KEY_CIV_ROMAN_NAME_SPAIN",
@@ -408,10 +408,10 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iVikings, iColombia]
+lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
@@ -452,7 +452,7 @@ dNameChanges = { # TODO: this should be covered by period
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
-	iVikings : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
+	iNorse : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iTurks : "TXT_KEY_CIV_UZBEKS_SHORT_DESC",
 }
@@ -464,7 +464,7 @@ dAdjectiveChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
-	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
+	iNorse : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iTurks : "TXT_KEY_CIV_UZBEKS_ADJECTIVE",
 }
@@ -499,7 +499,7 @@ dStartingLeaders = [
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iMalays : iSriJayanasa,
-	iVikings : iRagnar,
+	iNorse : iRagnar,
 	iTurks : iBumin,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
@@ -548,7 +548,7 @@ dStartingLeaders = [
 	iKorea : iSejong,
 	iJapan : iOdaNobunaga,
 	iTurks : iTamerlane,
-	iVikings : iGustav,
+	iNorse : iGustav,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
@@ -573,7 +573,7 @@ def setup():
 	elif iScenario == i1700AD:
 		data.civs[iEgypt].iResurrections += 1
 		
-		for iCiv in [iVikings]:
+		for iCiv in [iNorse]:
 			checkNameChange(slot(iCiv))
 			checkAdjectiveChange(slot(iCiv))
 	
@@ -664,7 +664,7 @@ def onPeriodChange(iPlayer, iPeriod):
 			checkNameChange(iPlayer)
 			checkAdjectiveChange(iPlayer)
 	
-	if iCiv == iVikings:
+	if iCiv == iNorse:
 		if iPeriod == iPeriodDenmark:
 			setShort(iPlayer, text("TXT_KEY_CIV_DENMARK_SHORT_DESC"))
 			setAdjective(iPlayer, text("TXT_KEY_CIV_DENMARK_ADJECTIVE"))
@@ -991,21 +991,21 @@ def specificName(iPlayer):
 			if not isCurrentCapital(iPlayer, "Konstantinoupolis"):
 				return capitalName(iPlayer)
 			
-	elif iCiv == iVikings:	
+	elif iCiv == iNorse:	
 		if bEmpire:
 			if not isCurrentCapital(iPlayer, "Stockholm", "Kalmar") or iEra > iRenaissance:
-				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
+				return "TXT_KEY_CIV_NORSE_DENMARK_NORWAY"
 	
 		if isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
-			return "TXT_KEY_CIV_VIKINGS_NORWAY"
+			return "TXT_KEY_CIV_NORSE_NORWAY"
 			
 		if isCurrentCapital(iPlayer, "Stockholm", "Kalmar"):
-			return "TXT_KEY_CIV_VIKINGS_SWEDEN"
+			return "TXT_KEY_CIV_NORSE_SWEDEN"
 			
 		if isCurrentCapital(iPlayer, "Roskilde"):
-			return "TXT_KEY_CIV_VIKINGS_DENMARK"
+			return "TXT_KEY_CIV_NORSE_DENMARK"
 			
-		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
+		return "TXT_KEY_CIV_NORSE_SCANDINAVIA"
 		
 	elif iCiv == iTurks:
 		if capital in plots.regions(rCaucasus, rPonticSteppe):
@@ -1320,10 +1320,6 @@ def specificAdjective(iPlayer):
 			
 		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
 			return infos.civ(iRome).getAdjective(0)
-			
-	elif iCiv == iVikings:
-		if bEmpire:
-			return "TXT_KEY_CIV_VIKINGS_SWEDISH"
 			
 	elif iCiv == iTurks:
 		if bResurrected:
@@ -1764,19 +1760,19 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
 			
-	elif iCiv == iVikings:
+	elif iCiv == iNorse:
 		if bCityStates:
-			return "TXT_KEY_CIV_VIKINGS_ALTHINGS"
+			return "TXT_KEY_CIV_NORSE_ALTHINGS"
 		
 		if isControlled(iPlayer, plots.region(rBritain)):
-			return "TXT_KEY_CIV_VIKINGS_NORTH_SEA_EMPIRE"
+			return "TXT_KEY_CIV_NORSE_NORTH_SEA_EMPIRE"
 				
 		if iReligion < 0 and iEra < iRenaissance:
-			return "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS"
+			return "TXT_KEY_CIV_NORSE_NORSE_KINGDOMS"
 			
 		if bEmpire:
 			if iEra <= iMedieval:
-				return "TXT_KEY_CIV_VIKINGS_KALMAR_UNION"
+				return "TXT_KEY_CIV_NORSE_KALMAR_UNION"
 				
 			if iEra == iRenaissance or isCurrentCapital(iPlayer, "Stockholm"):
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
@@ -2163,7 +2159,7 @@ def leader(iPlayer):
 	elif iCiv == iByzantium:
 		if year() >= year(1000): return iBasil
 		
-	elif iCiv == iVikings:
+	elif iCiv == iNorse:
 		if iEra >= iGlobal: return iGerhardsen
 		
 	elif iCiv == iTurks:

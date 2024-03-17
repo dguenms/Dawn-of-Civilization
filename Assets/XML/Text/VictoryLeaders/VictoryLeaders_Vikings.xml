@@ -2,7 +2,7 @@
 <!-- Victory Leader Names -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_1</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_1</Tag>
 		<English>Ragnar Lodbrok</English>
 		<French></French>
 		<German></German>
@@ -10,7 +10,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_2</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_2</Tag>
 		<English>Cnut the Great</English>
 		<French></French>
 		<German></German>
@@ -18,7 +18,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_3</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_3</Tag>
 		<English>Harald Fairhair</English>
 		<French></French>
 		<German></German>
@@ -26,7 +26,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_4</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_4</Tag>
 		<English>Sven Forkbeard</English>
 		<French></French>
 		<German></German>
@@ -34,7 +34,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_5</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_5</Tag>
 		<English>Harald Hardrada</English>
 		<French></French>
 		<German></German>
@@ -42,7 +42,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_6</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_6</Tag>
 		<English>Rurik</English>
 		<French></French>
 		<German></German>
@@ -50,7 +50,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_7</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_7</Tag>
 		<English>Harald Bluetooth</English>
 		<French></French>
 		<German></German>
@@ -58,7 +58,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_8</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_8</Tag>
 		<English>Olof Sk&#246;tkonung</English>
 		<French></French>
 		<German></German>
@@ -66,7 +66,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_9</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_9</Tag>
 		<English>Olaf Tryggvason</English>
 		<French></French>
 		<German></German>
@@ -74,7 +74,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_10</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_10</Tag>
 		<English>Aud the Deep-Minded</English>
 		<French></French>
 		<German></German>
@@ -82,7 +82,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_11</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_11</Tag>
 		<English>&#222;orgeir Lj&#243;svetningag&#243;&#240;i</English>
 		<French></French>
 		<German></German>
@@ -90,7 +90,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_12</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_12</Tag>
 		<English>Erik the Red</English>
 		<French></French>
 		<German></German>
@@ -98,7 +98,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_13</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_13</Tag>
 		<English>&#222;orfinn Karlsefni</English>
 		<French></French>
 		<German></German>
@@ -106,7 +106,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_14</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_14</Tag>
 		<English>Erik Bloodaxe</English>
 		<French></French>
 		<German></German>
@@ -114,7 +114,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_15</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_15</Tag>
 		<English>Blot-Sven</English>
 		<French></French>
 		<German></German>
@@ -122,7 +122,7 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_LEADER_NAME_VIK_16</Tag>
+		<Tag>TXT_KEY_VICTORY_LEADER_NAME_NOR_16</Tag>
 		<English>D&#243;maldi</English>
 		<French></French>
 		<German></German>

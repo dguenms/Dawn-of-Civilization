@@ -163,6 +163,12 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_NORSE</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Norse.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Raven.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_OTTOMAN</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Turkey.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tugra.dds</Path>
@@ -202,12 +208,6 @@
 			<Type>ART_DEF_CIVILIZATION_SUMERIA</Type>
 			<Button>,Art/Interface/Buttons/Civilizations/India.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,5</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Sumeria.dds</Path>
-			<bWhiteFlag>0</bWhiteFlag>
-		</CivilizationArtInfo>
-		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_VIKING</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Vikings.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Raven.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>

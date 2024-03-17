@@ -36,7 +36,7 @@ lCivilizations = [
 		techs=techs.column(6).without(iScholarship)
 	),
 	Civilization(
-		iVikings,
+		iNorse,
 		iGold=150,
 		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iConquest],
 		lEnemies=[iIndependent, iIndependent2],
@@ -101,20 +101,20 @@ def createStartingUnits():
 	createRoleUnit(iByzantium, capital, iFerry, 2)
 	createRoleUnit(iByzantium, capital, iAttackSea, 2)
 	
-	# Vikings
-	capital = plots.capital(iVikings)
-	createRoleUnit(iVikings, capital, iWorkerSea)
-	createRoleUnit(iVikings, capital, iExploreSea, player(iVikings).isHuman() and 2 or 3)
+	# Norse
+	capital = plots.capital(iNorse)
+	createRoleUnit(iNorse, capital, iWorkerSea)
+	createRoleUnit(iNorse, capital, iExploreSea, player(iNorse).isHuman() and 2 or 3)
 	
-	if player(iVikings).isHuman():
-		createRoleUnit(iVikings, capital, iSettleSea)
-		createRoleUnit(iVikings, capital, iSettle)
-		createRoleUnit(iVikings, capital, iDefend, 2)
+	if player(iNorse).isHuman():
+		createRoleUnit(iNorse, capital, iSettleSea)
+		createRoleUnit(iNorse, capital, iSettle)
+		createRoleUnit(iNorse, capital, iDefend, 2)
 	else:
-		makeUnit(iVikings, iSettler, (60, 56))
-		makeUnit(iVikings, iArcher, (60, 56))
-		makeUnit(iVikings, iSettler, (63, 59))
-		makeUnit(iVikings, iArcher, (63, 59))
+		makeUnit(iNorse, iSettler, (60, 56))
+		makeUnit(iNorse, iArcher, (60, 56))
+		makeUnit(iNorse, iSettler, (63, 59))
+		makeUnit(iNorse, iArcher, (63, 59))
 	
 	# Korea
 	capital = plots.capital(iKorea)

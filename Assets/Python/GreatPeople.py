@@ -1650,7 +1650,7 @@ iJapan : {
 		"Keiji Suzuki", # 20th
 	],
 },
-iVikings : {
+iNorse : {
 	iGreatProphet : [
 		"Ansgar", # 9th swedish
 		u"Haraldr Blátonn", # 10th danish

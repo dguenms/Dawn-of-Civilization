@@ -3468,7 +3468,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_VIKING_HUSCARL</Type>
+			<Type>ART_DEF_UNIT_NORSE_HUSCARL</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6313,7 +6313,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_VIKING_HUSCARL</Type>
+			<Type>ART_DEF_UNIT_NORSE_HUSCARL</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -8737,7 +8737,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_VIKING_LONGSHIP</Type>
+			<Type>ART_DEF_UNIT_NORSE_LONGSHIP</Type>
 			<Button>Art/Units/Longship/longboat.dds</Button>
 			<fScale>0.18</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>

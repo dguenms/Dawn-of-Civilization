@@ -26,7 +26,7 @@ lExpansionCivs = [
 	iPersia,
 	iRome,
 	iKushans,
-	iVikings,
+	iNorse,
 	iTurks,
 	iArabia,
 	iSpain,
