@@ -908,10 +908,10 @@ iGreatSpy : iFemaleGreatSpy,
 }
 
 
-iNumUnitRoles = 22
+iNumUnitRoles = 23
 (iBase, iDefend, iAttack, iCounter, iShock, iHarass, iCityAttack, iWorkerSea, iSettle, iSettleSea, 
-iAttackSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, iLightEscort,
-iWork, iMissionary) = range(iNumUnitRoles)
+iAttackSea, iAssaultSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreSea, iSkirmish, 
+iLightEscort, iWork, iMissionary) = range(iNumUnitRoles)
 
 # Promotions
 iDesertAdaptation = 82
