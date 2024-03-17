@@ -218,7 +218,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Lighthouse.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_VIKING_TRADING_POST</Type>
+			<Type>ART_DEF_BUILDING_NORSE_TRADING_POST</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.38</fScale>

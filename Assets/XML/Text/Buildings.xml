@@ -722,12 +722,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] increase a city's research and provide culture. [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]National College[COLOR_REVERT] national wonder.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_VIKING_TRADING_POST_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Viking replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</English>
-		<French>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Viking replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</French>
-		<German>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Viking replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Viking replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Viking replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</Spanish>
+		<Tag>TXT_KEY_BUILDING_NORSE_TRADING_POST_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</English>
+		<French>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</French>
+		<German>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all ships built in this city the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LIBRARY_STRATEGY</Tag>
@@ -3108,6 +3108,22 @@
 		<German>Menhir</German>
 		<Italian>Menhir</Italian>
 		<Spanish>Menhir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NORSE_TRADING_POST</Tag>
+		<English>Trading Post</English>
+		<French>Comptoir</French>
+		<German>Handelsposten</German>
+		<Italian>Base commerciale</Italian>
+		<Spanish>Puesto comercial:Puestos comerciales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NORSE_TRADING_POST_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Trading Post[COLOR_REVERT], the Norse replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], improves the food output of water plots and gives the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] to ships built in that city.</English>
+		<French>Le [COLOR_BUILDING_TEXT]comptoir[COLOR_REVERT], version viking du [COLOR_BUILDING_TEXT]phare[COLOR_REVERT], am&#233;liore le rendement des cases de mer produisant de la nourriture et fournit la [COLOR_HIGHLIGHT_TEXT]navigation I[COLOR_REVERT] aux bateaux construits dans la ville.</French>
+		<German>Der nordische [COLOR_BUILDING_TEXT]Handelsposten[COLOR_REVERT] ersetzt den [COLOR_BUILDING_TEXT]Leuchtturm[COLOR_REVERT]. Er verbessert den Nahrungsaussto&#223; von K&#252;stengebieten und stattet die in der Stadt gebauten Schiffe mit der [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT]-Bef&#246;rderung aus.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]base commerciale[COLOR_REVERT], l'equivalente vichingo del [COLOR_BUILDING_TEXT]faro[COLOR_REVERT], incrementa la produzione di cibo delle caselle d'acqua e concede la promozione [COLOR_HIGHLIGHT_TEXT]navigazione I[COLOR_REVERT] alle navi costruite in quella citt&#224;.</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Puesto comercial[COLOR_REVERT], el equivalente vikingo del [COLOR_BUILDING_TEXT]Faro[COLOR_REVERT], mejora la producci&#243;n de alimentos en las casillas de agua y otorga [COLOR_HIGHLIGHT_TEXT]Navegaci&#243;n I[COLOR_REVERT] a los barcos construidos en esa ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

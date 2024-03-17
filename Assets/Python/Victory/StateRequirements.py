@@ -186,7 +186,7 @@ class FirstGreatPerson(StateRequirement):
 				goal.fail()
 
 
-# Second Viking UHV goal
+# Second Norse UHV goal
 # First Spanish UHV goal
 class FirstSettle(StateRequirement):
 

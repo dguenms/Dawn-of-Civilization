@@ -1871,7 +1871,7 @@
 		<Spanish>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VIKING_NAVAL_UP</Tag>
+		<Tag>TXT_KEY_NORSE_NAVAL_UP</Tag>
 		<English>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</English>
 		<French>Vous avez obtenu %d1 [ICON_GOLD] en coulant [NUM1:un:une] %s3 %s2.</French>
 		<German>Sie haben %s1 [ICON_GOLD] durch das Versenken eines %s2 %s3.</German>

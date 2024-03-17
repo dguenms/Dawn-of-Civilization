@@ -4,8 +4,8 @@ from Locations import *
 
 lHappinessResources = [iResource for iResource in infos.bonuses() if infos.bonus(iResource).getHappiness() > 0]
 
-# first Viking goal: control a European core in 1050 AD
-lVikingTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iVikings and dBirth[iCiv] <= 1050]
+# first Norse goal: control a European core in 1050 AD
+lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iNorse and dBirth[iCiv] <= 1050]
 
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
@@ -136,7 +136,7 @@ LOCAL = "TXT_KEY_VICTORY_NAME_LOCAL"
 OR = "TXT_KEY_OR"
 
 # goal descriptors
-FIRST_VIKING_GOAL = "TXT_KEY_VICTORY_GOAL_VIKINGS_1"
+FIRST_NORSE_GOAL = "TXT_KEY_VICTORY_GOAL_NORSE_1"
 
 
 dGoals = {
@@ -445,8 +445,8 @@ dGoals = {
 		),
 		EraFirstDiscover((iGlobal, 8), (iDigital, 8)),
 	),
-	iVikings: (
-		Control(required=1, at=1050, desc_key=FIRST_VIKING_GOAL, *lVikingTargets),
+	iNorse: (
+		Control(required=1, at=1050, desc_key=FIRST_NORSE_GOAL, *lNorseTargets),
 		FirstSettle(plots.regions(*lAmerica).named(AMERICA), allowed=dCivGroups[iCivGroupAmerica], by=1100),
 		RaidGold(3000, by=1500),
 	),
@@ -645,7 +645,7 @@ dGoals = {
 			plots.core(iItaly), # TODO: define in locations or use region
 			plots.core(iFrance), # TODO: define in locations or use region
 			plots.core(iEngland), # TODO: define in locations or use region
-			plots.core(iVikings).named(SCANDINAVIA), # TODO: define in locations or use region
+			plots.core(iNorse).named(SCANDINAVIA), # TODO: define in locations or use region
 			plots.core(iRussia), # TODO: define in locations or use region
 			at=1940,
 		),

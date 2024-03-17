@@ -16,7 +16,7 @@ dPeriods1700AD = {
 	iChina : iPeriodMing,
 	iIndia : iPeriodMaratha,
 	iDravidia : iPeriodVijayanagara,
-	iVikings : iPeriodDenmark,
+	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
 	iMoors : iPeriodMorocco,
 	iSpain : iPeriodSpain,
@@ -187,9 +187,9 @@ def onCapitalMoved(city):
 		else:
 			setPeriod(iPhoenicia, -1)
 	
-	if iOwnerCiv == iVikings:
+	if iOwnerCiv == iNorse:
 		if player(iOwner).getCurrentEra() >= iRenaissance:
-			setPeriod(iVikings, getVikingPeriod(iOwner))
+			setPeriod(iNorse, getNorsePeriod(iOwner))
 	
 	if iOwnerCiv == iMoors:
 		if player(iOwner).getCurrentEra() >= iIndustrial and city.getRegionID() != rIberia:
@@ -205,9 +205,9 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 		if iEra == iMedieval:
 			setPeriod(iDravidia, iPeriodVijayanagara)
 	
-	if iCiv == iVikings:
+	if iCiv == iNorse:
 		if iEra == iRenaissance:
-			setPeriod(iVikings, getVikingPeriod(iPlayer))
+			setPeriod(iNorse, getNorsePeriod(iPlayer))
 	
 	if iCiv == iMoors:
 		if iEra == iIndustrial:
@@ -238,7 +238,7 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 			setPeriod(iGermany, iPeriodModernGermany)
 			
 			
-def getVikingPeriod(iPlayer):
+def getNorsePeriod(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	
 	if capital:

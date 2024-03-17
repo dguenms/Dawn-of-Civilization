@@ -5120,7 +5120,7 @@ int CvCity::determineArtStyleType() const
 			return GC.getCivilizationInfo(ROME).getArtStyleType();
 		case REGION_BALTICS:
 		case REGION_SCANDINAVIA:
-			return GC.getCivilizationInfo(VIKINGS).getArtStyleType();
+			return GC.getCivilizationInfo(NORSE).getArtStyleType();
 		case REGION_RUTHENIA:
 		case REGION_EUROPEAN_ARCTIC:
 		case REGION_URALS:
@@ -19497,8 +19497,8 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 
 	int iSackGold = iCaptureGold / 2;
 
-	// Leoreth: Viking UP
-	if (getCivilizationType() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+	// Leoreth: Norse UP
+	if (getCivilizationType() == NORSE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 	{
 		iSackGold += iCaptureGold + iSackGold;
 	}

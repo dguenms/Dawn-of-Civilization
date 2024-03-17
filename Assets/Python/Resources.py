@@ -356,9 +356,6 @@ def createFeatures():
 def removeFeatures(iGameTurn):
 	for tile in dRemovedFeatures[game.getGameTurn()]:
 		plot(tile).setFeatureType(-1, 0)
-		
-	if iGameTurn == year(700) and player(iVikings).isHuman():
-		plot(41, 58).setFeatureType(-1, 0)
 
 
 @handler("conquerors")

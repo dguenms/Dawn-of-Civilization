@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Vikings -->
+<!-- Norse -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_DESC</Tag>
-		<English>The Vikings</English>
-		<French>
-			<Text>Les Vikings</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Wikinger:Die Wikinger:den Wikingern</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>I Vichinghi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Los Vikingos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_CIV_NORSE_DESC</Tag>
+		<English>The Norse</English>
+		<French>The Norse</French>
+		<German>The Norse</German>
+		<Italian>The Norse</Italian>
+		<Spanish>The Norse</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
@@ -182,7 +166,7 @@
 		<Spanish>National Gathering of %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_PEOPLES</Tag>
 		<English>Norse Peoples</English>
 		<French>
 			<Text>Peuplades nordiques</Text>
@@ -206,7 +190,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
 			<Text>Royaume de %s1</Text>
@@ -230,7 +214,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_COMMUNIST</Tag>
 		<English>Democratic Republic of %s1</English>
 		<French>
 			<Text>R&#233;publique d&#233;mocratique de %s1</Text>
@@ -254,7 +238,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
 		<French>
 			<Text>Rassemblement national de %s1</Text>
@@ -266,7 +250,7 @@
 		<Spanish>National Gathering of %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_NORSE_KINGDOMS</Tag>
 		<English>Norse Kingdoms</English>
 		<French>
 			<Text>Royaumes scandinaves</Text>
@@ -278,7 +262,7 @@
 		<Spanish>Norse Kingdoms</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_KALMAR_UNION</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_KALMAR_UNION</Tag>
 		<English>Kalmar Union</English>
 		<French>
 			<Text>Union de Kalmar</Text>
@@ -290,7 +274,7 @@
 		<Spanish>Kalmar Union</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_ALTHINGS</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_ALTHINGS</Tag>
 		<English>%s2 Althings</English>
 		<French>
 			<Text>Althings %s2</Text>
@@ -302,7 +286,7 @@
 		<Spanish>%s2 Althings</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_NORTH_SEA_EMPIRE</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_NORTH_SEA_EMPIRE</Tag>
 		<English>North Sea Empire</English>
 		<French>
 			<Text>Empire de la mer du Nord</Text>
@@ -314,7 +298,7 @@
 		<Spanish>North Sea Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SWEDISH</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_SWEDISH</Tag>
 		<English>Swedish</English>
 		<French>
 			<Text>su&#233;dois:su&#233;doise:su&#233;dois:su&#233;doises</Text>
@@ -326,7 +310,7 @@
 		<Spanish>Swedish</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_DENMARK_NORWAY</Tag>
 		<English>Denmark-Norway</English>
 		<French>
 			<Text>Danemark-Norv&#232;ge</Text>
@@ -338,7 +322,7 @@
 		<Spanish>Denmark-Norway</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_NORWAY</Tag>
 		<English>Norway</English>
 		<French>
 			<Text>Norv&#232;ge</Text>
@@ -350,7 +334,7 @@
 		<Spanish>Norway</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SWEDEN</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_SWEDEN</Tag>
 		<English>Sweden</English>
 		<French>
 			<Text>Su&#232;de</Text>
@@ -362,7 +346,7 @@
 		<Spanish>Sweden</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_DENMARK</Tag>
 		<English>Denmark</English>
 		<French>
 			<Text>Danemark</Text>
@@ -374,7 +358,7 @@
 		<Spanish>Denmark</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIA</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_SCANDINAVIA</Tag>
 		<English>Scandinavia</English>
 		<French>
 			<Text>Scandinavie</Text>
@@ -398,7 +382,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIAN</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_SCANDINAVIAN</Tag>
 		<English>Scandinavian</English>
 		<French>
 			<Text>scandinave:scandinave:scandinaves:scandinaves</Text>
@@ -410,7 +394,7 @@
 		<Spanish>Scandinavian</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_ENGLAND</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_ENGLAND</Tag>
 		<English>Danelaw</English>
 		<French>
 			<Text>Danelaw</Text>
@@ -422,7 +406,7 @@
 		<Spanish>Danelaw</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_RUSSIA</Tag>
+		<Tag>TXT_KEY_CIV_NORSE_RUSSIA</Tag>
 		<English>Varangian Principalities</English>
 		<French>
 			<Text>Principaut&#233;s var&#232;gues</Text>
@@ -434,51 +418,19 @@
 		<Spanish>Varangian Principalities</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_ADJECTIVE</Tag>
-		<English>Viking</English>
-		<French>
-			<Text>viking:viking:vikings:vikings</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>
-			<Text>Wikingisch:wikingischen:wikingische</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Vichingo:Vichinga:Vichinghi:Vichinghe</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Vikingo:Vikingos</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_CIV_NORSE_ADJECTIVE</Tag>
+		<English>Norse</English>
+		<French>Norse</French>
+		<German>Norse</German>
+		<Italian>Norse</Italian>
+		<Spanish>Norse</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_SHORT_DESC</Tag>
-		<English>Vikings</English>
-		<French>
-			<Text>Vikings</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Wikingerland</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Vichinghi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Vikingland</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_CIV_NORSE_SHORT_DESC</Tag>
+		<English>Norse</English>
+		<French>Norse</French>
+		<German>Norse</German>
+		<Italian>Norse</Italian>
+		<Spanish>Norse</Spanish>
 	</TEXT>
 </Civ4GameText>

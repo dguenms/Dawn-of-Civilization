@@ -1176,7 +1176,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_VIK1</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR1</Tag>
 		<English>Norman Conquests</English>
 		<French>Les conqu&#234;tes normandes </French>
 		<German>Normannische Eroberungen</German>
@@ -1184,7 +1184,7 @@
 		<Spanish>Norman Conquests</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_VIK2</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR2</Tag>
 		<English>Vinland Saga</English>
 		<French>La saga du Vinland </French>
 		<German>Die Vinland-Saga</German>
@@ -1192,7 +1192,7 @@
 		<Spanish>Vinland Saga</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_VIK3</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR3</Tag>
 		<English>Danegeld</English>
 		<French>Danegeld </French>
 		<German>Danegeld</German>

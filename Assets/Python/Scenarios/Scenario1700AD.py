@@ -62,7 +62,7 @@ lCivilizations = [
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
 	),
 	Civilization(
-		iVikings, # Sweden
+		iNorse, # Sweden # TODO: this should be Denmark
 		iLeader=iGustav,
 		iGold=150,
 		iStateReligion=iProtestantism,
@@ -147,7 +147,7 @@ lCivilizations = [
 		iStateReligion=iOrthodoxy,
 		lCivics=[iDespotism, iCentralism, iManorialism, iRegulatedTrade, iTheocracy],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-		dAttitudes={iVikings: -2, iOttomans: -4}
+		dAttitudes={iSweden: -2, iOttomans: -4}
 	),
 	Civilization(
 		iOttomans,
@@ -242,7 +242,7 @@ scenario1700AD = Scenario(
 	
 	dCivilizationDescriptions = {
 		iTurks: "TXT_KEY_CIV_UZBEKS_DESC",
-		iVikings: "TXT_KEY_CIV_SWEDEN_DESC",
+		iNorse: "TXT_KEY_CIV_SWEDEN_DESC", # TODO: this should be Denmark
 		iHolyRome: "TXT_KEY_CIV_AUSTRIA_DESC",
 		iEngland: "TXT_KEY_CIV_BRITAIN_DESC",
 		iGermany: "TXT_KEY_CIV_HOLY_ROMAN_DESC",
@@ -287,7 +287,7 @@ scenario1700AD = Scenario(
 		iDravidia: 5,
 		iKorea: 6,
 		iJapan: 6,
-		iVikings: 8,
+		iNorse: 8,
 		iTurks: 4,
 		iSpain: 8,
 		iFrance: 8,
@@ -308,7 +308,7 @@ scenario1700AD = Scenario(
 		iDravidia: 2,
 		iKorea: 3,
 		iJapan: 3,
-		iVikings: 3,
+		iNorse: 3,
 		iTurks: 3,
 		iSpain: 4,
 		iFrance: 3,
@@ -324,7 +324,7 @@ scenario1700AD = Scenario(
 	},
 	
 	dColonistsAlreadyGiven = {
-		iVikings : 1,
+		iNorse : 1,
 		iSpain : 7,
 		iFrance : 3,
 		iEngland : 3,
@@ -337,7 +337,7 @@ scenario1700AD = Scenario(
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
 	
-	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
+	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
 	

@@ -55,13 +55,13 @@ def mongolUP(iOwner, iPlayer, city, bConquest):
 
 
 @handler("combatResult")
-def vikingUP(winningUnit, losingUnit):
+def norseUP(winningUnit, losingUnit):
 	iWinner = winningUnit.getOwner()
-	if (civ(iWinner) == iVikings and year() <= year(1500)) or winningUnit.getUnitType() == iCorsair:
+	if (civ(iWinner) == iNorse and year() <= year(1500)) or winningUnit.getUnitType() == iCorsair:
 		if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
 			iGold = scale(infos.unit(losingUnit).getProductionCost() / 2)
 			player(iWinner).changeGold(iGold)
-			message(iWinner, 'TXT_KEY_VIKING_NAVAL_UP', iGold, adjective(losingUnit), losingUnit.getName())
+			message(iWinner, 'TXT_KEY_NORSE_NAVAL_UP', iGold, adjective(losingUnit), losingUnit.getName())
 			
 			events.fireEvent("combatGold", iWinner, winningUnit, iGold)
 

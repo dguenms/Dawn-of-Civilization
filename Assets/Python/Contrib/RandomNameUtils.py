@@ -159,7 +159,7 @@ civilizationNameHash =	{
 								"MID" : (),
 								"END" : ()
 							},
-							"CIVILIZATION_VIKING" :
+							"CIVILIZATION_NORSE" :
 							{
 								"PRE" : ("A","Ab","c","Ad","Af","Agr","st","As","Al","Adw","Adr","Ar","r","h","ad","D","r","w","d","th","Et","Er","El","ow","F","r","r","w","wyd","l","l","a","b","er","ed","th","r","eg","r","d","l","c","n","r","h","ev","k","a","r","h","h","b","ic"),
 								"MID" : ("a","e","u","o","re","ale","li","ay","rdo","e","i","i","ra","la","li","nda","erra","i","e","ra","la","li","o","ra","go","i","e","re","y"),

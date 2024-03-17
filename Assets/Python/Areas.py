@@ -30,7 +30,7 @@ iKhmer :		(121, 37), # Angkor
 iByzantium :	(79, 55), # Constantinople
 iMalays :		(120, 27), # Palembang
 iJapan :		(137, 53), # Kyoto
-iVikings :		(68, 75), # Nidaros
+iNorse :		(68, 75), # Nidaros
 iTurks :		(105, 58), # Orduqent
 iArabia :		(86, 39), # Mecca
 iTibet :		(113, 48), # Lhasa
@@ -80,7 +80,6 @@ iPeriodAustria :		(71, 59),	# Vienna
 # new capital locations if changed during the game
 dNewCapitals = CivDict({
 iJapan :	(140, 54),	# Tokyo
-iVikings :	(73, 71),	# Stockholm
 iHolyRome :	(71, 59),	# Vienna
 iItaly :	(68, 53),	# Rome
 iMongols :	(125, 56),	# Khanbaliq
@@ -95,7 +94,6 @@ iIndia :	(105, 46),	# Delhi
 iPersia :	(93, 48),	# Esfahan
 iEthiopia :	(84, 32),	# Addis Ababa
 iJapan :	(140, 54),	# Tokyo
-iVikings :	(73, 71),	# Stockholm
 iTurks : 	(97, 49),	# Herat
 iMoors :	(57, 44),	# Marrakesh
 iHolyRome :	(71, 59),	# Vienna
@@ -221,7 +219,7 @@ iKhmer :		((120, 36),	(122, 38)),
 iByzantium :	((74, 49),	(81, 55)),
 iMalays :		((119, 26),	(121, 31)),
 iJapan :		((135, 52),	(140, 55)),
-iVikings :		((65, 67),	(68, 75)),
+iNorse :		((65, 67),	(68, 75)),
 iTurks :		((96, 54),	(107, 59)),
 iArabia :		((84, 38),	(90, 49)),
 iTibet :		((111, 47),	(114, 49)),
@@ -331,7 +329,7 @@ iPeriodModernGermany :			[(69, 61)],
 dExpansionArea = CivDict({
 # iPersia :		((69, 37), (78, 45)),
 # iRome :			((51, 38), (73, 48)),
-# iVikings :		((48, 50), (56, 60)),
+# iNorse :		((48, 50), (56, 60)),
 # iTurks :		((69, 36), (85, 45)),
 # iArabia :		((50, 36), (85, 43)),
 # iSpain :		((49, 40), (55, 45)),

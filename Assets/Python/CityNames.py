@@ -14,10 +14,10 @@ iLangCeltic, iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian,
 iLangEgyptianArabic, iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, 
 iLangGreek, iLangHittite, iLangIndian, iLangIndonesian, iLangItalian, 
 iLangJapanese, iLangKhmer, iLangKorean, iLangLatin, iLangMande, 
-iLangMayan, iLangMongolian, iLangNahuatl, iLangNubian, iLangPersian, 
-iLangPhoenician, iLangPolish, iLangPolynesian, iLangPortuguese, iLangQuechua, 
-iLangRussian, iLangSpanish, iLangSwedish, iLangThai, iLangTibetan, 
-iLangTurkish, iLangVietnamese, iLangViking) = range(iNumLanguages)
+iLangMayan, iLangMongolian, iLangNahuatl, iLangNorse, iLangNubian, 
+iLangPersian, iLangPhoenician, iLangPolish, iLangPolynesian, iLangPortuguese, 
+iLangQuechua, iLangRussian, iLangSpanish, iLangSwedish, iLangThai, 
+iLangTibetan, iLangTurkish, iLangVietnamese) = range(iNumLanguages)
 
 dLanguages = CivDict({
 	iEgypt:	[iLangEgyptian],
@@ -43,7 +43,7 @@ dLanguages = CivDict({
 	iByzantium: [iLangByzantine],
 	iMalays: [iLangIndonesian, iLangKhmer],
 	iJapan: [iLangJapanese],
-	iVikings: [iLangViking],
+	iNorse: [iLangNorse],
 	iTurks: [iLangTurkish, iLangPersian, iLangArabic],
 	iArabia: [iLangArabic],
 	iTibet: [iLangTibetan, iLangChinese],
@@ -67,7 +67,7 @@ dLanguages = CivDict({
 	iAztecs: [iLangNahuatl],
 	iMughals: [iLangPersian, iLangArabic, iLangIndian],
 	iThailand: [iLangThai, iLangKhmer, iLangIndonesian],
-	iSweden: [iLangSwedish, iLangViking],
+	iSweden: [iLangSwedish, iLangNorse],
 	iRussia: [iLangRussian],
 	iOttomans: [iLangTurkish, iLangArabic],
 	iCongo: [iLangCongolese],
@@ -119,6 +119,7 @@ dLanguageNames = {
 	iLangMayan: "Mayan",
 	iLangMongolian: "Mongolian",
 	iLangNahuatl: "Nahuatl",
+	iLangNorse: "Norse",
 	iLangNubian: "Nubian",
 	iLangPersian: "Persian",
 	iLangPhoenician: "Phoenician",
@@ -133,7 +134,6 @@ dLanguageNames = {
 	iLangTibetan: "Tibetan",
 	iLangTurkish: "Turkish",
 	iLangVietnamese: "Vietnamese",
-	iLangViking: "Viking",
 }
 
 dTranslations = dict((iLanguage, FileDict("Translations/%s.csv" % dLanguageNames[iLanguage])) for iLanguage in range(iNumLanguages))

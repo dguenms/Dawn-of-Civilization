@@ -5105,7 +5105,7 @@ bool CvUnit::pillage()
 			iPillageGold = (int)lPillageGold;
 
 			//Rhye - start UP (Viking)
-			if (getCivilizationType() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+			if (getCivilizationType() == NORSE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 			{
 				iPillageGold *= 5;
 			}
@@ -14437,7 +14437,7 @@ int CvUnit::getOriginalArtStyle(const CvPlot* pPlot) const
 		return GC.getCivilizationInfo(HOLY_ROME).getUnitArtStyleType();
 	case REGION_SCANDINAVIA:
 	case REGION_BALTICS:
-		return GC.getCivilizationInfo(VIKINGS).getUnitArtStyleType();
+		return GC.getCivilizationInfo(NORSE).getUnitArtStyleType();
 	case REGION_RUTHENIA:
 	case REGION_EUROPEAN_ARCTIC:
 	case REGION_URALS:

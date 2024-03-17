@@ -8,13 +8,14 @@ from pathlib import Path
 iWorldX = 150
 iWorldY = 80
 
-iNumCivs = 57
-(iAmerica, iArabia, iArgentina, iAztecs, iBabylonia, iBrazil, iByzantium, iCanada, iPhoenicia, iCelts, 
-iChina, iColombia, iEgypt, iEngland, iEthiopia, iFrance, iGermany, iGreece, iHarappa, iHolyRome, 
-iInca, iIndia, iIndonesia, iIran, iItaly, iJapan, iKhmer, iCongo, iKorea, iMali, 
-iMaya, iMexico, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iOttomans, iPersia, iPoland, 
-iPolynesia, iPortugal, iRome, iRussia, iSpain, iSumeria, iDravidia, iThailand, iTibet, iTurks,
-iVikings, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = range(iNumCivs)
+iNumCivs = 68
+(iAmerica, iArabia, iArgentina, iAssyria, iAztecs, iBabylonia, iBrazil, iBurma, iByzantium, iCanada, 
+iCarthage, iCelts, iChina, iColombia, iDravidia, iEgypt, iEngland, iEthiopia, iFrance, iGermany, 
+iGreece, iHarappa, iHittites, iHolyRome, iInca, iIndia, iIran, iItaly, iJapan, iJava, 
+iKhmer, iCongo, iKorea, iKushans, iMalays, iMali, iMaya, iMexico, iMongols, iMoors, 
+iMughals, iNativeAmericans, iNetherlands, iNorse, iNubia, iOttomans, iPersia, iPoland, iPolynesia, iPortugal, 
+iRome, iRus, iRussia, iSpain, iSumeria, iSwahili, iSweden, iThailand, iTibet, iToltecs, 
+iTurks, iVietnam, iZulu, iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = range(iNumCivs)
 
 iNumRegions = 82
 (rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland,
@@ -82,7 +83,7 @@ dCivNames = {
 	iThailand: "Thailand",
 	iTibet: "Tibet",
 	iTurks: "Turkestan",
-	iVikings: "Vikings",
+	iNorse: "Norse",
 }
 
 dReligionNames = {
@@ -131,7 +132,7 @@ iEthiopia :		((82, 33),	(85, 36)),
 iKorea :		((130, 53),	(132, 56)),
 iByzantium :	((76, 51),	(87, 55)),
 iJapan :		((135, 52),	(140, 55)),
-iVikings :		((65, 67),	(68, 75)),
+iNorse :		((65, 67),	(68, 75)),
 iTurks :		((96, 54),	(107, 59)),
 iArabia :		((84, 38),	(90, 49)),
 iTibet :		((111, 47),	(114, 49)),
