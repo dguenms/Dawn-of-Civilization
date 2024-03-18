@@ -387,6 +387,7 @@ class RouteConnection(Requirement):
 		self.targets = targets
 		
 		self.start_owners = start_owners
+		self.cached_start_owners = None
 	
 	def fulfilled(self, evaluator):
 		if not evaluator.any(lambda iPlayer: any(team(iPlayer).isHasTech(self.route_tech(iRoute)) for iRoute in self.routes)):
@@ -399,6 +400,7 @@ class RouteConnection(Requirement):
 			
 			return self.connected(start.plot(), evaluator)
 		
+		self.cached_start_owners = self.start_owners and self.starts.cities().owners() or []
 		return any(self.connected(start.plot(), evaluator) for start in self.starts.cities())
 		
 	def route_tech(self, iRoute):
@@ -439,7 +441,7 @@ class RouteConnection(Requirement):
 		if plot.getOwner() in evaluator:
 			return True
 		
-		if self.start_owners and plot.getOwner() in self.starts.cities().owners():
+		if self.start_owners and plot.getOwner() in self.cached_start_owners:
 			return True
 		
 		return False
