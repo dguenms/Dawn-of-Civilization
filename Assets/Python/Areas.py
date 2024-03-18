@@ -31,7 +31,7 @@ iByzantium :	(79, 55), # Constantinople
 iMalays :		(120, 27), # Palembang
 iJapan :		(137, 53), # Kyoto
 iNorse :		(68, 75), # Nidaros
-iTurks :		(105, 58), # Orduqent
+iTurks :		(104, 58), # Orduqent
 iArabia :		(86, 39), # Mecca
 iTibet :		(113, 48), # Lhasa
 iMoors :		(57, 49), # Cordoba
