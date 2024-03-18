@@ -17,7 +17,7 @@ dCompanyTechs = {
 	iComputerIndustry : [iEconomics, iComputers],
 }
 
-tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
+tCompaniesLimit = (16, 20, 24, 16, 20, 20, 10, 16, 20) # kind of arbitrary currently, see how this plays out
 
 dCompanyExpiry = defaultdict({
 	iSilkRoute : 1500,
