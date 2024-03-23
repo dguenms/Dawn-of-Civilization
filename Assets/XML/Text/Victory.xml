@@ -464,6 +464,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_DISCOVER_ALL</Tag>
+		<English>discover all %s1 technologies</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -2033,6 +2041,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_FOUNDED_CULTURE_AMOUNT</Tag>
 		<English>Founded city culture</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_COMPLETE_ERA</Tag>
+		<English>%s1 technologies</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

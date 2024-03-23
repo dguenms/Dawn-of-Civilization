@@ -468,7 +468,7 @@ dGoals = {
 		),
 	),
 	iArabia: (
-		BestTechPlayer(at=1300),
+		CompleteEra(iMedieval, by=1200),
 		Control(
 			plots.region(rEgypt).named(EGYPT),
 			plots.region(rMaghreb).named(MAGHREB),

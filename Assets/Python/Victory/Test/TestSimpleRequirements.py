@@ -454,6 +454,80 @@ class TestCommunist(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestCompleteEra(ExtendedTestCase):
+
+	def setUp(self):
+		self.classical_techs = infos.techs().where(lambda iTech: infos.tech(iTech).getEra() == iClassical)
+	
+		self.requirement = CompleteEra(iClassical)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "CompleteEra(Classical)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "CompleteEra(Classical)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Classical")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((42, 42)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		team(self.iPlayer).setHasTech(iLaw, True, self.iPlayer, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Classical technologies: 1 / 21")
+		finally:
+			team(self.iPlayer).setHasTech(iLaw, False, self.iPlayer, False, False)
+	
+	def test_all(self):
+		for iTech in self.classical_techs:
+			team(self.iPlayer).setHasTech(iTech, True, self.iPlayer, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 21)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Classical technologies: 21 / 21")
+		finally:
+			for iTech in self.classical_techs:
+				team(self.iPlayer).setHasTech(iTech, False, self.iPlayer, False, False)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		for iTech in self.classical_techs:
+			team(iTech % 2).setHasTech(iTech, True, iTech % 2, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.evaluate(evaluator), 21)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Classical technologies: 21 / 21")
+		finally:
+			for iTech in self.classical_techs:
+				team(iTech % 2).setHasTech(iTech, False, iTech % 2, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestControl(ExtendedTestCase):
 
 	def setUp(self):
@@ -2004,6 +2078,7 @@ test_cases = [
 	TestAllowOnly,
 	TestAreaNoStateReligion,
 	TestCommunist,
+	TestCompleteEra,
 	TestControl,
 	TestCultureCover,
 	TestGoldPercent,
