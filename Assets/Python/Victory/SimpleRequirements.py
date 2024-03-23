@@ -139,6 +139,26 @@ class Communist(Requirement):
 
 	def fulfilled(self, evaluator):
 		return evaluator.any(lambda p: isCommunist(p))
+
+
+class CompleteEra(ThresholdRequirement):
+
+	TYPES = (ERA,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_DISCOVER_ALL"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_COMPLETE_ERA"
+	
+	def __init__(self, iEra, **options):
+		ThresholdRequirement.__init__(self, iEra, **options)
+		
+		self.iEra = iEra
+		self.bPlural = True
+	
+	def evaluate(self, evaluator):
+		return infos.techs().where(lambda iTech: infos.tech(iTech).getEra() == self.iEra).count(lambda iTech: evaluator.any(lambda iPlayer: team(iPlayer).isHasTech(iTech)))
+	
+	def required(self):
+		return infos.techs().count(lambda iTech: infos.tech(iTech).getEra() == self.iEra)
 	
 
 # Second Greek UHV goal
