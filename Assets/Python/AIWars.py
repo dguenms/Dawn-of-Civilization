@@ -41,9 +41,9 @@ tRomeEgyptBR = (82, 45)
 # following setup: iPlayer, iPreferredTarget, TL, BR, iNumTargets, iStartYear, iTurnInterval
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
-tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
+tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 3, iRomeAnatoliaYear, 10)
 tConquestRomeCelts = (3, iRome, iCelts, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
-tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 3, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
 tGreeceMesopotamiaTL = (81, 45)
@@ -53,9 +53,9 @@ tGreeceEgyptBR = (82, 45)
 tGreecePersiaTL = (91, 43)
 tGreecePersiaBR = (97, 52)
 
-tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
-tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
-tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
+tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 3, iAlexanderYear, 20)
+tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 3, iAlexanderYear, 20)
+tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 3, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
 tCholaSumatraTL = (115, 26)
@@ -286,16 +286,16 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 			iExtra += 1
 			
 		if not player(iPlayer).isHuman():
-			if iCiv == iMongols:
+			if iCiv in [iGreece, iRome, iMongols] and iPreferredTarget != iCelts:
 				iExtra += 2
 			
-			elif iCiv in [iGreece, iRome, iTurks] and iPreferredTarget != iCelts:
+			elif iCiv == iTurks:
 				iExtra += 1
 		
 		tPlot = findNearestLandPlot(city, iPlayer)
 		
 		dConquestUnits = {
-			iCityAttack: 2 + iExtra,
+			iCityAttack: 2 + iExtra + max(0, iExtra-2),
 			iCitySiege: 1 + iExtra + min(1, iExtra),
 			iDefend: 1,
 		}
