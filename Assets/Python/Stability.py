@@ -29,6 +29,12 @@ tEraAdministrationModifier = (
 	400, # future
 )
 
+dCivilizationAdministrationModifier = CivDict({
+	iChina: -50,
+	iNubia: -100,
+	iRome: 50,
+}, 0)
+
 
 @handler("BeginGameTurn")
 def crisisCountdown():
@@ -396,8 +402,7 @@ def calculateAdministration(city):
 		return 0
 	
 	iPopulation = city.getPopulation()
-	iCurrentEra = player(iPlayer).getCurrentEra()
-	iAdministrationModifier = getAdministrationModifier(iCurrentEra)
+	iAdministrationModifier = getAdministrationModifier(iPlayer)
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
@@ -546,7 +551,7 @@ def calculateStability(iPlayer):
 				else: iDifferentReligionPopulation += iPopulation
 				
 	iAdministrationImprovements = plots.core(iPlayer).owner(iPlayer).where(lambda plot: plot.getWorkingCity() and plot.getImprovementType() in [iVillage, iTown]).count()
-	iAdministration += getAdministrationModifier(iCurrentEra) * iAdministrationImprovements / 100
+	iAdministration += getAdministrationModifier(iPlayer) * iAdministrationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(since(turns(10)))
@@ -1185,8 +1190,11 @@ def isTolerated(iPlayer, iReligion):
 	
 	return False
 	
-def getAdministrationModifier(iEra):
-	return tEraAdministrationModifier[iEra]
+def getAdministrationModifier(iPlayer):
+	iEra = player(iPlayer).getCurrentEra()
+	iModifier = tEraAdministrationModifier[iEra] + dCivilizationAdministrationModifier[iPlayer]
+
+	return max(100, iModifier)
 	
 def isDecline(iPlayer):
 	return not player(iPlayer).isHuman() and year() >= year(dFall[iPlayer])
