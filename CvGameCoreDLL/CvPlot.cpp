@@ -3941,7 +3941,7 @@ bool CvPlot::isAlliedCity(const CvUnit& kUnit, bool bCheckImprovement) const
 	}
 
 	TeamTypes eTeam = GET_PLAYER(kUnit.getCombatOwner(getTeam(), this)).getTeam();
-	return GET_TEAM(getTeam()).isAllied(eTeam);
+	return GET_TEAM(eTeam).isAllied(getTeam());
 }
 
 
