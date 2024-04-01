@@ -17400,6 +17400,12 @@ int CvPlayer::getAdvancedStartPopCost(bool bAdd, CvCity* pCity) const
 		return -1;
 	}
 
+	// Leoreth: can only add
+	if (!bAdd)
+	{
+		return -1;
+	}
+
 	int iCost = (getGrowthThreshold(1) * GC.getDefineINT("ADVANCED_START_POPULATION_COST")) / 100;
 
 	if (NULL != pCity)
@@ -17447,6 +17453,12 @@ int CvPlayer::getAdvancedStartPopCost(bool bAdd, CvCity* pCity) const
 int CvPlayer::getAdvancedStartCultureCost(bool bAdd, CvCity* pCity) const
 {
 	if (0 == getNumCities())
+	{
+		return -1;
+	}
+
+	// Leoreth: can only add
+	if (!bAdd)
 	{
 		return -1;
 	}
@@ -17504,6 +17516,12 @@ int CvPlayer::getAdvancedStartBuildingCost(BuildingTypes eBuilding, bool bAdd, C
 	int iNumBuildingType = 0;
 
 	int iCost = (getProductionNeeded(eBuilding) * GC.getBuildingInfo(eBuilding).getAdvancedStartCost()) / 100;
+
+	// Leoreth: can only add
+	if (!bAdd)
+	{
+		return -1;
+	}
 
 	if (iCost < 0)
 	{
@@ -17618,6 +17636,12 @@ int CvPlayer::getAdvancedStartRouteCost(RouteTypes eRoute, bool bAdd, CvPlot* pP
 	}
 
 	if (eRoute == NO_ROUTE)
+	{
+		return -1;
+	}
+
+	// Leoreth: can only add
+	if (!bAdd)
 	{
 		return -1;
 	}
@@ -17743,6 +17767,12 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 	}
 
 	if (0 == getNumCities())
+	{
+		return -1;
+	}
+
+	// Leoreth: can only add
+	if (!bAdd)
 	{
 		return -1;
 	}
@@ -17882,6 +17912,12 @@ int CvPlayer::getAdvancedStartTechCost(TechTypes eTech, bool bAdd) const
 	}
 
 	if (0 == getNumCities())
+	{
+		return -1;
+	}
+
+	// Leoreth: can only add
+	if (!bAdd)
 	{
 		return -1;
 	}
