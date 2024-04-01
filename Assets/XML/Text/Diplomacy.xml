@@ -554,6 +554,14 @@
 		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CHARLEMAGNE_1</Tag>
+		<English>We graciously welcome the mighty leader of [CT_CIV_SHORT] to our presence.</English>
+		<French>Nous accueillons gracieusement le puissant chef des [CT_CIV_SHORT:3] parmi nous.</French>
+		<German>Wir heißen das mächtige Staatsoberhaupt des Volkes von [CT_CIV_SHORT] gnädigerweise willkommen.</German>
+		<Italian>Accogliamo con grazia il grande leader di [CT_CIV_SHORT] alla nostra presenza.</Italian>
+		<Spanish>Os damos una cordial bienvenida ante nuestra presencia, oh, líder de la poderosa tierra de [CT_CIV_SHORT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>
