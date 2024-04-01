@@ -10,11 +10,13 @@ dEvacuatePeriods = {
 
 dPeriods600AD = {
 	iPhoenicia : iPeriodCarthage,
+	iCelts : iPeriodInsularCelts,
 }
 
 dPeriods1700AD = {
 	iChina : iPeriodMing,
 	iIndia : iPeriodMaratha,
+	iCelts : iPeriodInsularCelts,
 	iDravidia : iPeriodVijayanagara,
 	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,

@@ -15,11 +15,58 @@ lCivilizations = [
 		techs=techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility)
 	),
 	Civilization(
+		iNubia,
+		iGold=50,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iMonarchy, iVassalage, iSlavery, iRedistribution, iMonasticism],
+		techs=techs.column(5).including(iNobility, iArchitecture),
+	),
+	Civilization(
+		iIndia,
+		iLeader=iChandragupta,
+		iGold=200,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iRedistribution, iClergy],
+		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics),
+	),
+	Civilization(
+		iCelts,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iManorialism, iRedistribution, iMonasticism],
+		techs=techs.column(4).including(iCurrency, iLaw, iMedicine, iPhilosophy, iEthics),
+	),
+	Civilization(
+		iDravidia,
+		iGold=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iMerchantTrade, iMonasticism],
+		techs=techs.column(5).including(iArtisanry, iPolitics, iEthics),
+	),
+	Civilization(
+		iToltecs,
+		iGold=50,
+		lCivics=[iRedistribution, iDeification],
+		techs=techs.column(4).including(iCurrency, iEngineering).without(iNavigation)
+	),
+	Civilization(
 		iKorea,
 		iGold=200,
 		iStateReligion=iBuddhism,
 		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism],
 		techs=techs.column(6).including(iMachinery).without(iScholarship),
+	),
+	Civilization(
+		iKhmer,
+		iGold=50,
+		iStateReligion=iHinduism,
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism],
+		techs=techs.column(5).including(iArtisanry).without(iLaw, iMedicine),
+	),
+	Civilization(
+		iMali,
+		iGold=200,
+		lCivics=[iDespotism, iSlavery, iRedistribution],
+		techs=techs.column(4).without(iNavigation).including(iAesthetics, iCurrency),
 	),
 	Civilization(
 		iByzantium,
@@ -29,11 +76,25 @@ lCivilizations = [
 		techs=techs.column(6).including(iFortification,iMachinery, iCivilService)
 	),
 	Civilization(
+		iFrance,
+		iGold=150,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		techs=techs.column(6).without(iSteel, iArtisanry, iPolitics)
+	),
+	Civilization(
+		iMalays,
+		iGold=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification],
+		techs=techs.column(5).including(iEthics).without(iEngineering)
+	),
+	Civilization(
 		iJapan,
 		iGold=300,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
-		techs=techs.column(6).without(iScholarship)
+		techs=techs.column(6).without(iPolitics, iScholarship)
 	),
 	Civilization(
 		iNorse,
@@ -90,36 +151,51 @@ lTribalVillages = [
 
 
 def createStartingUnits():
-	# Japan
-	capital = plots.capital(iJapan)
-	if not player(iJapan).isHuman():
-		makeUnits(iJapan, iCrossbowman, capital, 2)
-		makeUnits(iJapan, iSamurai, capital, 3)
+	# Celts
+	capital = plots.capital(iCelts)
+	createRoleUnit(iDravidia, capital, iFerry, 1)
+
+	# Dravidia
+	capital = plots.capital(iDravidia)
+	createRoleUnit(iDravidia, capital, iFerry, 2)
+	createRoleUnit(iDravidia, capital, iEscort, 1)
+	createRoleUnit(iDravidia, capital, iWorkerSea, 2)
+	
+	# Korea
+	capital = plots.capital(iKorea)
+	if not player(iKorea).isHuman():
+		makeUnits(iKorea, iHeavySwordsman, capital, 2)
+	
+	# Khmer
+	capital = plots.capital(iKhmer)
+	createRoleUnit(iKhmer, capital, iWorkerSea)
 	
 	# Byzantium
 	capital = plots.capital(iByzantium)
 	createRoleUnit(iByzantium, capital, iFerry, 2)
 	createRoleUnit(iByzantium, capital, iAttackSea, 2)
 	
+	# Malays
+	capital = plots.capital(iMalays)
+	createRoleUnit(iMalays, capital, iFerry, 1)
+	createRoleUnit(iMalays, capital, iEscort, 1)
+	createRoleUnit(iMalays, capital, iWorkerSea, 2)
+	
+	# Japan
+	capital = plots.capital(iJapan)
+	if not player(iJapan).isHuman():
+		makeUnits(iJapan, iCrossbowman, capital, 2)
+		makeUnits(iJapan, iSamurai, capital, 3)
+	
 	# Norse
 	capital = plots.capital(iNorse)
 	createRoleUnit(iNorse, capital, iWorkerSea)
 	createRoleUnit(iNorse, capital, iExploreSea, player(iNorse).isHuman() and 2 or 3)
-	
-	if player(iNorse).isHuman():
-		createRoleUnit(iNorse, capital, iSettleSea)
-		createRoleUnit(iNorse, capital, iSettle)
-		createRoleUnit(iNorse, capital, iDefend, 2)
-	else:
-		makeUnit(iNorse, iSettler, (60, 56))
-		makeUnit(iNorse, iArcher, (60, 56))
-		makeUnit(iNorse, iSettler, (63, 59))
-		makeUnit(iNorse, iArcher, (63, 59))
-	
-	# Korea
-	capital = plots.capital(iKorea)
-	if not player(iKorea).isHuman():
-		makeUnits(iKorea, iHeavySwordsman, capital, 2)
+
+
+def setupGoals(iCiv, goals):
+	if iCiv == iKhmer:
+		goals[0].requirements[0].succeed()
 
 
 scenario600AD = Scenario(
@@ -131,13 +207,28 @@ scenario600AD = Scenario(
 	
 	iOwnerBaseCulture = 20,
 	
+	dGreatPeopleCreated = {
+		iChina: 5,
+		iIndia: 4,
+		iDravidia: 2,
+		iKorea: 1,
+		iToltecs: 1,
+	},
+	dGreatGeneralsCreated = {
+		iChina: 1,
+		iIndia: 1,
+	},
+	
+	lAllGoalsFailed = [iNubia, iIndia, iCelts, iDravidia, iToltecs],
+	setupGoals = setupGoals,
+	
 	greatWall = GreatWall(
-		tGraphicsTL = (99, 46),
-		tGraphicsBR = (104, 49),
-		lGraphicsExceptions = [(99, 47), (99, 48), (99, 49), (100, 49), (101, 49), (104, 49)],
-		lBorderExceptions = [(99, 45)],
+		tGraphicsTL = (118, 54),
+		tGraphicsBR = (128, 58),
+		lGraphicsExceptions = [(118, 55), (118, 56), (118, 57), (118, 58), (119, 55), (119, 56), (119, 57), (119, 58), (120, 55), (120, 56), (120, 57), (120, 58), (121, 56), (121, 57), (121, 58), (122, 56), (122, 57), (122, 58), (123, 58)],
+		lClearCulture = [(127, 59), (128, 59), (129, 57), (129, 58)],
 		
-		lEffectAreas = [((99, 40), (104, 49)), ((103, 39), (107, 45))],
+		lEffectAreas = [((118, 46), (129, 53)), ((124, 54), (128, 58)), ((121, 54), (123, 55)), ((119, 54), (120, 54)), ((123, 56), (123, 57))],
 	),
 	
 	createStartingUnits = createStartingUnits,

@@ -5,11 +5,14 @@ from Areas import *
 from Files import *
 from CityNames import *
 from Resources import *
+from Scenarios import *
 
 import Locations
 
 from CvScreensInterface import worldBuilderScreen as worldBuilder
 from CvPlatyBuilderScreen import CvWorldBuilderScreen
+
+from CvWBDesc import CvWBDesc
 
 import os
 import csv
@@ -129,6 +132,11 @@ def exportCSV():
 	
 	map.update(values)
 	map.export()
+
+
+def exportScenario():
+	full_path = "Mods/RFC Dawn of Civilization/PrivateMaps/%s_WB" % getScenario().fileName
+	CvWBDesc().write(full_path, bDevelopmentOnly=True)
 
 
 def importArea(area):

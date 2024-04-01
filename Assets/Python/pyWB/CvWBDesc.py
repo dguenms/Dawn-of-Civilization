@@ -892,7 +892,7 @@ class CvUnitDesc:
 		self.iBaseCombatStr = -1
 		self.iExtraCargo = 0
 
-	def write(self, f, unit, plot):
+	def write(self, f, unit, plot, bDevelopmentOnly = False):
 		"save unit desc to a file"
 		Info = gc.getUnitInfo(unit.getUnitType())
 		f.write("\tBeginUnit\n")
@@ -900,35 +900,37 @@ class CvUnitDesc:
 		f.write("\t\tUnitOwner=%s\n" %(gc.getCivilizationInfo(unit.getCivilizationType()).getType(),))
 		if (len(unit.getNameNoDesc()) > 0):
 			f.write("\t\tUnitName=%s\n" %(unit.getNameNoDesc().encode(fileencoding),))
-		if unit.getLeaderUnitType() != -1:
-			f.write("\t\tLeaderUnitType=%s\n" %(gc.getUnitInfo(unit.getLeaderUnitType()).getType()))
-		if unit.getDamage() > 0:
-			f.write("\t\tDamage=%d\n" %(unit.getDamage(),))
-		f.write("\t\tLevel=%d, Experience=%d\n" %(unit.getLevel(), unit.getExperience()))
-		for i in xrange(gc.getNumPromotionInfos()):
-			if unit.isHasPromotion(i):
-				f.write("\t\tPromotionType=%s\n" %(gc.getPromotionInfo(i).getType()))
+			
+		if not bDevelopmentOnly:
+			if unit.getLeaderUnitType() != -1:
+				f.write("\t\tLeaderUnitType=%s\n" %(gc.getUnitInfo(unit.getLeaderUnitType()).getType()))
+			if unit.getDamage() > 0:
+				f.write("\t\tDamage=%d\n" %(unit.getDamage(),))
+			f.write("\t\tLevel=%d, Experience=%d\n" %(unit.getLevel(), unit.getExperience()))
+			for i in xrange(gc.getNumPromotionInfos()):
+				if unit.isHasPromotion(i):
+					f.write("\t\tPromotionType=%s\n" %(gc.getPromotionInfo(i).getType()))
 
-		f.write("\t\tFacingDirection=%d\n" %(unit.getFacingDirection(),))
-		if (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_SLEEP):
-			f.write("\t\tSleep\n")
-		elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_INTERCEPT):
-			f.write("\t\tIntercept\n")
-		elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_PATROL):
-			f.write("\t\tPatrol\n")
-		elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_PLUNDER):
-			f.write("\t\tPlunder\n")
-		f.write("\t\tUnitAIType=%s\n" %(gc.getUnitAIInfo(unit.getUnitAIType()).getType()))
-		if unit.getScriptData():
-			f.write("\t\tScriptData=%s\n" %unit.getScriptData())
+			f.write("\t\tFacingDirection=%d\n" %(unit.getFacingDirection(),))
+			if (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_SLEEP):
+				f.write("\t\tSleep\n")
+			elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_INTERCEPT):
+				f.write("\t\tIntercept\n")
+			elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_PATROL):
+				f.write("\t\tPatrol\n")
+			elif (unit.getGroup().getActivityType() == ActivityTypes.ACTIVITY_PLUNDER):
+				f.write("\t\tPlunder\n")
+			f.write("\t\tUnitAIType=%s\n" %(gc.getUnitAIInfo(unit.getUnitAIType()).getType()))
+			if unit.getScriptData():
+				f.write("\t\tScriptData=%s\n" %unit.getScriptData())
 
 	## Platy Builder ##
-		if unit.getImmobileTimer() > 0:
-			f.write("\t\tImmobile=%d\n" %(unit.getImmobileTimer()))
-		if unit.baseCombatStr() != Info.getCombat():
-			f.write("\t\tCombatStr=%d\n" %(unit.baseCombatStr()))
-		if unit.cargoSpace() != Info.getCargoSpace():
-			f.write("\t\tExtraCargo=%d\n" %(unit.cargoSpace() - Info.getCargoSpace()))
+			if unit.getImmobileTimer() > 0:
+				f.write("\t\tImmobile=%d\n" %(unit.getImmobileTimer()))
+			if unit.baseCombatStr() != Info.getCombat():
+				f.write("\t\tCombatStr=%d\n" %(unit.baseCombatStr()))
+			if unit.cargoSpace() != Info.getCargoSpace():
+				f.write("\t\tExtraCargo=%d\n" %(unit.cargoSpace() - Info.getCargoSpace()))
 
 		f.write("\tEndUnit\n")
 
@@ -1128,7 +1130,7 @@ class CvCityDesc:
 		self.originalOwner = None
 		self.lPreviousOwners = []
 
-	def write(self, f, plot):
+	def write(self, f, plot, bDevelopmentOnly = False):
 		"write out city data"
 		city = plot.getPlotCity()
 		CvUtil.pyAssert(city.isNone()==0, "null city?")
@@ -1136,14 +1138,17 @@ class CvCityDesc:
 		f.write("\t\tCityOwner=%s\n" %(gc.getCivilizationInfo(city.getCivilizationType()).getType(),))
 		f.write("\t\tCityName=%s\n" %(city.getNameKey().encode(fileencoding),))
 		f.write("\t\tCityPopulation=%d\n" %(city.getPopulation(),))
-		if (city.isProductionUnit()):
-			f.write("\t\tProductionUnit=%s\n" %(gc.getUnitInfo(city.getProductionUnit()).getType(),))
-		elif (city.isProductionBuilding()):
-			f.write("\t\tProductionBuilding=%s\n" %(gc.getBuildingInfo(city.getProductionBuilding()).getType(),))
-		elif (city.isProductionProject()):
-			f.write("\t\tProductionProject=%s\n" %(gc.getProjectInfo(city.getProductionProject()).getType(),))
-		elif (city.isProductionProcess()):
-			f.write("\t\tProductionProcess=%s\n" %(gc.getProcessInfo(city.getProductionProcess()).getType(),))
+		
+		
+		if not bDevelopmentOnly:
+			if (city.isProductionUnit()):
+				f.write("\t\tProductionUnit=%s\n" %(gc.getUnitInfo(city.getProductionUnit()).getType(),))
+			elif (city.isProductionBuilding()):
+				f.write("\t\tProductionBuilding=%s\n" %(gc.getBuildingInfo(city.getProductionBuilding()).getType(),))
+			elif (city.isProductionProject()):
+				f.write("\t\tProductionProject=%s\n" %(gc.getProjectInfo(city.getProductionProject()).getType(),))
+			elif (city.isProductionProcess()):
+				f.write("\t\tProductionProcess=%s\n" %(gc.getProcessInfo(city.getProductionProcess()).getType(),))
 
 		for iI in range(gc.getNumBuildingInfos()):
 			if city.getNumRealBuilding(iI) > 0:
@@ -1165,8 +1170,9 @@ class CvCityDesc:
 			for iJ in range(city.getAddedFreeSpecialistCount(iI)):
 				f.write("\t\tFreeSpecialistType=%s\n" %(gc.getSpecialistInfo(iI).getType()))
 
-		if city.getScriptData():
-			f.write("\t\tScriptData=%s\n" %city.getScriptData())
+		if not bDevelopmentOnly:
+			if city.getScriptData():
+				f.write("\t\tScriptData=%s\n" %city.getScriptData())
 
 		# Player culture
 		bAnyCulture = False
@@ -1179,41 +1185,45 @@ class CvCityDesc:
 				f.write("\t\t\tCivilization=%s, Culture=%d\n" %(gc.getCivilizationInfo(gc.getPlayer(iPlayerLoop).getCivilizationType()).getType(), iPlayerCulture))
 		if bAnyCulture:
 			f.write("\t\tEndCulture\n")
-			
-		if city.getDefenseDamage() > 0:
-			f.write("\t\tDamage=%d\n" %(city.getDefenseDamage(),))
-		if city.getOccupationTimer() > 0:
-			f.write("\t\tOccupation=%d\n" %(city.getOccupationTimer(),))
-		if city.getExtraHappiness() != 0:
-			f.write("\t\tExtraHappiness=%d\n" %(city.getExtraHappiness(),))
-		if city.getExtraHealth() != 0:
-			f.write("\t\tExtraHealth=%d\n" %(city.getExtraHealth(),))
-		if city.getExtraTradeRoutes() != 0:
-			f.write("\t\tExtraTrade=%d\n" %(city.getExtraTradeRoutes(),))
-		for item in xrange(gc.getNumBuildingClassInfos()):
-			for k in xrange(YieldTypes.NUM_YIELD_TYPES):
-				if city.getBuildingYieldChange(item, k) != 0:
-					f.write("\t\tModifiedBuilding=%s, Yield=%s, Amount=%s\n" %(gc.getBuildingClassInfo(item).getType(), gc.getYieldInfo(k).getType(), city.getBuildingYieldChange(item, k)))
-			for k in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
-				if city.getBuildingCommerceChange(item, k) != 0:
-					f.write("\t\tModifiedBuilding=%s, Commerce=%s, Amount=%s\n" %(gc.getBuildingClassInfo(item).getType(), gc.getCommerceInfo(k).getType(), city.getBuildingCommerceChange(item, k)))
-			if city.getBuildingHappyChange(item) != 0:
-				f.write("\t\tModifiedBuilding=%s, Happy=%s\n" %(gc.getBuildingClassInfo(item).getType(), city.getBuildingHappyChange(item)))
-			if city.getBuildingHealthChange(item) != 0:
-				f.write("\t\tModifiedBuilding=%s, Health=%s\n" %(gc.getBuildingClassInfo(item).getType(), city.getBuildingHealthChange(item)))
-		for item in xrange(gc.getNumBonusInfos()):
-			if city.getFreeBonus(item) > 0:
-				f.write("\t\tFreeBonus=%s, Amount=%s\n" %(gc.getBonusInfo(item).getType(), city.getFreeBonus(item)))
-			if city.isNoBonus(item):
-				f.write("\t\tNoBonus=%s\n" % gc.getBonusInfo(item).getType())
+		
+		if not bDevelopmentOnly:
+			if city.getDefenseDamage() > 0:
+				f.write("\t\tDamage=%d\n" %(city.getDefenseDamage(),))
+			if city.getOccupationTimer() > 0:
+				f.write("\t\tOccupation=%d\n" %(city.getOccupationTimer(),))
+			if city.getExtraHappiness() != 0:
+				f.write("\t\tExtraHappiness=%d\n" %(city.getExtraHappiness(),))
+			if city.getExtraHealth() != 0:
+				f.write("\t\tExtraHealth=%d\n" %(city.getExtraHealth(),))
+			if city.getExtraTradeRoutes() != 0:
+				f.write("\t\tExtraTrade=%d\n" %(city.getExtraTradeRoutes(),))
+			for item in xrange(gc.getNumBuildingClassInfos()):
+				for k in xrange(YieldTypes.NUM_YIELD_TYPES):
+					if city.getBuildingYieldChange(item, k) != 0:
+						f.write("\t\tModifiedBuilding=%s, Yield=%s, Amount=%s\n" %(gc.getBuildingClassInfo(item).getType(), gc.getYieldInfo(k).getType(), city.getBuildingYieldChange(item, k)))
+				for k in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+					if city.getBuildingCommerceChange(item, k) != 0:
+						f.write("\t\tModifiedBuilding=%s, Commerce=%s, Amount=%s\n" %(gc.getBuildingClassInfo(item).getType(), gc.getCommerceInfo(k).getType(), city.getBuildingCommerceChange(item, k)))
+				if city.getBuildingHappyChange(item) != 0:
+					f.write("\t\tModifiedBuilding=%s, Happy=%s\n" %(gc.getBuildingClassInfo(item).getType(), city.getBuildingHappyChange(item)))
+				if city.getBuildingHealthChange(item) != 0:
+					f.write("\t\tModifiedBuilding=%s, Health=%s\n" %(gc.getBuildingClassInfo(item).getType(), city.getBuildingHealthChange(item)))
+			for item in xrange(gc.getNumBonusInfos()):
+				if city.getFreeBonus(item) > 0:
+					f.write("\t\tFreeBonus=%s, Amount=%s\n" %(gc.getBonusInfo(item).getType(), city.getFreeBonus(item)))
+				if city.isNoBonus(item):
+					f.write("\t\tNoBonus=%s\n" % gc.getBonusInfo(item).getType())
 		
 		# Leoreth:
-		f.write("\t\tYearFounded=%s\n" % gc.getGame().getTurnYear(city.getGameTurnFounded()))
-		f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
-		f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+		if not bDevelopmentOnly or city.getGameTurnFounded() != game.getGameTurn():
+			f.write("\t\tYearFounded=%s\n" % gc.getGame().getTurnYear(city.getGameTurnFounded()))
+		if not bDevelopmentOnly or city.getGameTurnAcquired() != game.getGameTurn():
+			f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
+		if not bDevelopmentOnly or city.getOriginalCiv() != city.getCivilizationType():
+			f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
 		for iCiv in range(gc.getNumCivilizationInfos()):
-			if city.isEverOwnedCiv(iCiv) and city.getOriginalCiv() != iCiv:
-				f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
+			if city.isEverOwnedCiv(iCiv) and city.getOriginalCiv() != iCiv and city.getCivilizationType() != iCiv:
+				f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(iCiv).getType())
 		
 		f.write("\tEndCity\n")
 
@@ -1412,7 +1422,7 @@ class CvCityDesc:
 		
 		self.city = player(iCiv).initCity(self.plotX, self.plotY)
 
-		if (self.name != None):
+		if self.name:
 			self.city.setName(self.name, False)
 
 		if self.population > -1:
@@ -1495,6 +1505,11 @@ class CvCityDesc:
 				self.city.changeNoBonusCount(item, 1)
 				
 		# Leoreth
+		if not self.iYearFounded:
+			self.iYearFounded = scenarioStartYear()
+		if not self.iYearAcquired:
+			self.iYearAcquired = scenarioStartYear()
+		
 		if self.iYearFounded:
 			self.city.setGameTurnFounded(year(self.iYearFounded))
 		if self.iYearAcquired:
@@ -1540,8 +1555,20 @@ class CvPlotDesc:
 	def plot(self):
 		return CyMap().plot(self.iX, self.iY)
 
-	def needToWritePlot(self, plot):
+	def needToWritePlot(self, plot, bDevelopmentOnly = False):
 		"returns true if this plot needs to be written out."
+		if bDevelopmentOnly:
+			if plot.isCity():
+				return True
+			if plot.getImprovementType() != -1:
+				return True
+			if plot.getRouteType() != -1:
+				return True
+			if plot.getNumUnits() > 0:
+				return True
+			
+			return False
+		
 		return True
 		
 	def applyPlotType(self):
@@ -1558,71 +1585,82 @@ class CvPlotDesc:
 		self.applyPlotType()
 		self.applyTerrainType()
 
-	def write(self, f, plot):
+	def write(self, f, plot, bDevelopmentOnly = False):
 		"save plot desc to a file"
+		if plot.at(0, 0):
+			log_with_trace("write plot at %s" % (location(plot),))
 		f.write("BeginPlot\n")
 		f.write("\tx=%d,y=%d\n" %(plot.getX(), plot.getY()))
 
-		# scriptData
-		if (plot.getScriptData() != ""):
-			f.write("\tScriptData=%s\n" %plot.getScriptData())
-		# rivers
-		if (plot.getRiverNSDirection() != CardinalDirectionTypes.NO_CARDINALDIRECTION):
-			f.write("\tRiverNSDirection=%d\n" %(int(plot.getRiverNSDirection()),) )
-		if (plot.isNOfRiver()):
-			f.write("\tisNOfRiver\n")
-		if (plot.getRiverWEDirection() != CardinalDirectionTypes.NO_CARDINALDIRECTION):
-			f.write("\tRiverWEDirection=%d\n" %(int(plot.getRiverWEDirection()),) )
-		if (plot.isWOfRiver()):
-			f.write("\tisWOfRiver\n")
-		# extras
-		if (plot.isStartingPlot()):
-			f.write("\tStartingPlot\n")
-		if (plot.getBonusType(-1)!=-1):
-			f.write("\tBonusType=%s\n" %(gc.getBonusInfo(plot.getBonusType(-1)).getType()) )
-		if (plot.getBonusVarietyType(-1) != -1):
-			f.write("\tBonusVarietyType=%s\n" % gc.getBonusInfo(plot.getBonusVarietyType(-1)).getType())
+		if not bDevelopmentOnly:
+			# scriptData
+			if (plot.getScriptData() != ""):
+				f.write("\tScriptData=%s\n" %plot.getScriptData())
+			# rivers
+			if (plot.getRiverNSDirection() != CardinalDirectionTypes.NO_CARDINALDIRECTION):
+				f.write("\tRiverNSDirection=%d\n" %(int(plot.getRiverNSDirection()),) )
+			if (plot.isNOfRiver()):
+				f.write("\tisNOfRiver\n")
+			if (plot.getRiverWEDirection() != CardinalDirectionTypes.NO_CARDINALDIRECTION):
+				f.write("\tRiverWEDirection=%d\n" %(int(plot.getRiverWEDirection()),) )
+			if (plot.isWOfRiver()):
+				f.write("\tisWOfRiver\n")
+			# extras
+			if (plot.isStartingPlot()):
+				f.write("\tStartingPlot\n")
+			if (plot.getBonusType(-1)!=-1):
+				f.write("\tBonusType=%s\n" %(gc.getBonusInfo(plot.getBonusType(-1)).getType()) )
+			if (plot.getBonusVarietyType(-1) != -1):
+				f.write("\tBonusVarietyType=%s\n" % gc.getBonusInfo(plot.getBonusVarietyType(-1)).getType())
+				
 		if (plot.getImprovementType()!=-1):
 			f.write("\tImprovementType=%s\n" %(gc.getImprovementInfo(plot.getImprovementType()).getType()) )
-		if (plot.getFeatureType()!=-1):
-			f.write("\tFeatureType=%s, FeatureVariety=%d\n"
-			%(gc.getFeatureInfo(plot.getFeatureType()).getType(), plot.getFeatureVariety(), ) )
+				
+		if not bDevelopmentOnly:
+			if (plot.getFeatureType()!=-1):
+				f.write("\tFeatureType=%s, FeatureVariety=%d\n"
+				%(gc.getFeatureInfo(plot.getFeatureType()).getType(), plot.getFeatureVariety(), ) )
+				
 		if (plot.getRouteType()!=-1):
 			f.write("\tRouteType=%s\n" %(gc.getRouteInfo(plot.getRouteType()).getType()) )
-		if (plot.getTerrainType()!=-1):
-			f.write("\tTerrainType=%s\n" %(gc.getTerrainInfo(plot.getTerrainType()).getType()) )
-		if (plot.getPlotType()!=PlotTypes.NO_PLOT):
-			f.write("\tPlotType=%d\n" %(int(plot.getPlotType()),) )
+			
+		if not bDevelopmentOnly:
+			if (plot.getTerrainType()!=-1):
+				f.write("\tTerrainType=%s\n" %(gc.getTerrainInfo(plot.getTerrainType()).getType()) )
+			if (plot.getPlotType()!=PlotTypes.NO_PLOT):
+				f.write("\tPlotType=%d\n" %(int(plot.getPlotType()),) )
 
 		# units
 		for i in range(plot.getNumUnits()):
 			unit=plot.getUnit(i)
 			if unit.getUnitType() == -1:
 				continue
-			CvUnitDesc().write(f, unit, plot)
+			CvUnitDesc().write(f, unit, plot, bDevelopmentOnly)
 		# city
 		if (plot.isCity()):
-			CvCityDesc().write(f, plot)
+			CvCityDesc().write(f, plot, bDevelopmentOnly)
 
 		# Fog of War
-		bFirstReveal=true
-		for iTeamLoop in range(gc.getMAX_CIV_TEAMS()):
-			if gc.getTeam(iTeamLoop).isAlive():
-				if plot.isRevealed(iTeamLoop,0):
-					# Plot is revealed for this Team so write out the fact that it is; if not revealed don't write anything
-					if bFirstReveal:
-						f.write("\tTeamReveal=")
-						bFirstReveal=false
-					f.write("%d," %(iTeamLoop))
-		if bFirstReveal==false:
-			f.write("\n")	# terminate reveal line
+		if not bDevelopmentOnly:
+			bFirstReveal=true
+			for iTeamLoop in range(gc.getMAX_CIV_TEAMS()):
+				if gc.getTeam(iTeamLoop).isAlive():
+					if plot.isRevealed(iTeamLoop,0):
+						# Plot is revealed for this Team so write out the fact that it is; if not revealed don't write anything
+						if bFirstReveal:
+							f.write("\tTeamReveal=")
+							bFirstReveal=false
+						f.write("%d," %(iTeamLoop))
+			if bFirstReveal==false:
+				f.write("\n")	# terminate reveal line
+			
 	## Platy Builder ##
-		for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
-			iCivilization = gc.getPlayer(iPlayerLoop).getCivilizationType()
-			if iCivilization >= 0:
-				iPlayerCulture = plot.getCivCulture(iCivilization)
-				if iPlayerCulture > 0:
-					f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
+			for iPlayerLoop in xrange(gc.getMAX_PLAYERS()):
+				iCivilization = gc.getPlayer(iPlayerLoop).getCivilizationType()
+				if iCivilization >= 0:
+					iPlayerCulture = plot.getCivCulture(iCivilization)
+					if iPlayerCulture > 0:
+						f.write("\tPlayer%dCulture=%d, (%s)\n" %(iPlayerLoop, iPlayerCulture, gc.getPlayer(iPlayerLoop).getName().encode(fileencoding)))
 
 		f.write("EndPlot\n")
 
@@ -2042,7 +2080,7 @@ class CvWBDesc:
 	def getDescFileName(self, fileName):
 		return fileName+getWBSaveExtension()
 
-	def write(self, fileName):
+	def write(self, fileName, bDevelopmentOnly = False):
 		"Save out a high-level desc of the world, and height/terrainmaps"
 		fileName = os.path.normpath(fileName)
 		fileName,ext = os.path.splitext(fileName)
@@ -2050,20 +2088,22 @@ class CvWBDesc:
 		CvUtil.pyPrint( 'saveDesc:%s, curDir:%s' %(fileName,os.getcwd()) )
 
 		f = file(self.getDescFileName(fileName), "w")		# open text file
-	## Platy Builder ##
-		f.write("%s\n" %("Platy Builder"))
-		f.write("bLoadSpecial=1\n")
-	## Platy Builder ##
-		f.write("Version=%d\n" %(self.getVersion(),))
-		self.gameDesc.write(f)	# write game info
+		
+		if not bDevelopmentOnly:
+		## Platy Builder ##
+			f.write("%s\n" %("Platy Builder"))
+			f.write("bLoadSpecial=1\n")
+		## Platy Builder ##
+			f.write("Version=%d\n" %(self.getVersion(),))
+			self.gameDesc.write(f)	# write game info
 
-		for i in range(gc.getMAX_TEAMS()):
-			CvTeamDesc().write(f, i)		# write team info
+			for i in range(gc.getMAX_TEAMS()):
+				CvTeamDesc().write(f, i)		# write team info
 
-		for i in range(gc.getMAX_PLAYERS()):
-			CvPlayerDesc().write(f, i)		# write player info
+			for i in range(gc.getMAX_PLAYERS()):
+				CvPlayerDesc().write(f, i)		# write player info
 
-		self.mapDesc.write(f)	# write map info
+			self.mapDesc.write(f)	# write map info
 
 		f.write("\n### Plot Info ###\n")
 		iGridW = CyMap().getGridWidth()
@@ -2072,15 +2112,16 @@ class CvWBDesc:
 			for iY in range(iGridH):
 				plot = CyMap().plot(iX, iY)
 				pDesc = CvPlotDesc()
-				if pDesc.needToWritePlot(plot):
-					pDesc.write(f, plot)
+				if pDesc.needToWritePlot(plot, bDevelopmentOnly):
+					pDesc.write(f, plot, bDevelopmentOnly)
 
-		f.write("\n### Sign Info ###\n")
-		iNumSigns = CyEngine().getNumSigns()
-		for i in range(iNumSigns):
-			sign = CyEngine().getSignByIndex(i)
-			pDesc = CvSignDesc()
-			pDesc.write(f, sign)
+		if not bDevelopmentOnly:
+			f.write("\n### Sign Info ###\n")
+			iNumSigns = CyEngine().getNumSigns()
+			for i in range(iNumSigns):
+				sign = CyEngine().getSignByIndex(i)
+				pDesc = CvSignDesc()
+				pDesc.write(f, sign)
 
 		f.close()
 

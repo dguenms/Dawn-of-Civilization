@@ -340,7 +340,7 @@ lCivilizations = [
 		iAdvancedStartPoints=60,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
-		techs=techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics)
+		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iArtisanry)
 	),
 	Civilization(
 		iNorse,
@@ -352,7 +352,7 @@ lCivilizations = [
 		iTurks,
 		iGold=100,
 		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iConquest],
-		techs=techs.column(5).including(iNobility, iSteel).column(5).without(iNavigation, iMedicine, iPhilosophy)
+		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),
 	Civilization(
 		iArabia,
