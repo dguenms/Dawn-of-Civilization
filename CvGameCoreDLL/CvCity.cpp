@@ -18819,6 +18819,11 @@ struct disappearingReligionCompare
 
 ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bConquest) const
 {
+	if (!GC.getGame().isFinalInitialized())
+	{
+		return NO_RELIGION;
+	}
+
 	int iI;
 	ReligionTypes eReligion;
 	std::vector<ReligionTypes> religions;

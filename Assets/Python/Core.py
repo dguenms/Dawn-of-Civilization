@@ -270,6 +270,14 @@ def log(func):
 	return logged_func
 
 
+def traced(func):
+	def traced_func(*args, **kwargs):
+		log_with_trace(signature(func, *args, **kwargs))
+		return func(*args, **kwargs)
+	
+	return traced_func
+
+
 def owner(entity, identifier):
 	if isinstance(identifier, Civ):
 		return owner(entity, slot(identifier))

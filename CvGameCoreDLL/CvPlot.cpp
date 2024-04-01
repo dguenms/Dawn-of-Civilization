@@ -5361,7 +5361,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 			// Leoreth: free improvement on small islands for the AI
 			if (getOwnerINLINE() == NO_PLAYER && eNewValue != NO_PLAYER && !GET_PLAYER(eNewValue).isHuman())
 			{
-				if (getImprovementType() == NO_IMPROVEMENT && area()->getNumTiles() <= 4)
+				if (getImprovementType() == NO_IMPROVEMENT && area()->getNumTiles() <= 4 && !isWater())
 				{
 					BonusTypes eBonus = getBonusType(GET_PLAYER(eNewValue).getTeam());
 
