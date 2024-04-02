@@ -6511,6 +6511,26 @@ bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 	return false;
 }
 
+bool CvTeam::isAccessibleTerritory(TeamTypes eTeam) const
+{
+	if (eTeam == NO_TEAM)
+	{
+		return false;
+	}
+
+	if (eTeam == getID())
+	{
+		return true;
+	}
+
+	if (isOpenBorders(eTeam))
+	{
+		return true;
+	}
+
+	return false;
+}
+
 int CvTeam::getEspionagePointsAgainstTeam(TeamTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -7286,7 +7306,7 @@ bool CvTeam::isAllied(TeamTypes eTeam) const
 		{
 			if (isVassal((TeamTypes)iI))
 			{
-				if (GET_TEAM((TeamTypes)iI).isAllied(eTeam));
+				if (GET_TEAM((TeamTypes)iI).isAllied(eTeam))
 				{
 					return true;
 				}

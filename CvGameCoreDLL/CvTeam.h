@@ -307,6 +307,7 @@ public:
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);		// Exposed to Python 
 
 	bool isFriendlyTerritory(TeamTypes eTeam) const;
+	bool isAccessibleTerritory(TeamTypes eTeam) const;
 
 	int getVictoryCountdown(VictoryTypes eIndex) const;																							// Exposed to Python
 	void setVictoryCountdown(VictoryTypes eIndex, int iTurnsLeft);

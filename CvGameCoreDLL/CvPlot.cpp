@@ -3878,7 +3878,7 @@ bool CvPlot::isCity(bool bCheckImprovement, TeamTypes eForTeam) const
 	{
 		if (GC.getImprovementInfo(getImprovementType()).isActsAsCity())
 		{
-			if (NO_TEAM == eForTeam || (NO_TEAM == getTeam() && GC.getImprovementInfo(getImprovementType()).isOutsideBorders()) || GET_TEAM(eForTeam).isFriendlyTerritory(getTeam()))
+			if (NO_TEAM == eForTeam || (NO_TEAM == getTeam() && GC.getImprovementInfo(getImprovementType()).isOutsideBorders()) || GET_TEAM(getTeam()).isAccessibleTerritory(eForTeam))
 			{
 				return true;
 			}
