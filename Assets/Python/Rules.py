@@ -285,9 +285,9 @@ def getEmigrationValue(city):
 	
 	iValue -= min(0, iHappinessDifference)
 	iValue -= min(0, iFoodDifference / 2)
-	iValue += city.getPopulation() / 5
 	
 	if iValue > 0:
+		iValue += city.getPopulation() / 5
 		iValue += rand(0, 2)
 	
 	return iValue
