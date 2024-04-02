@@ -221,7 +221,7 @@ def checkImmigration(iGameTurn):
 	
 	if data.iImmigrationTimer == 0:
 		immigration()
-		data.iImmigrationTimer = 3 + rand(turns(5))
+		data.iImmigrationTimer = turns(3 + rand(5))
 
 
 ### TECH ACQUIRED ###
