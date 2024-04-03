@@ -121,14 +121,15 @@ def isPartOfResurrection(iCiv, city, bOnlyOne):
 	
 	# if shaky, only the prospective capital, colonies or core cities that are not our core flip
 	if iOwnerStability <= iStabilityShaky:
-		if bCapital or (city.isCore(iCiv) and not city.isPlayerCore(iOwner)) or city.isColony():
+		if bCapital:
+			return True
+		
+		if city.isCore(iCiv) and not city.isPlayerCore(iOwner):
+			return True
+		
+		if city.isColony():
 			return True
 	
-	# if stable, only the prospective capital flips
-	if iOwnerStability <= iStabilityStable:
-		if bCapital and not bOnlyOne:
-			return True
-			
 	return False
 
 def canResurrectFromCities(iCiv, resurrectionCities):
