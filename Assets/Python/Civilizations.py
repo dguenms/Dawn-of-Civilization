@@ -366,6 +366,7 @@ lCivilizations = [
 	Civilization(
 		iTibet,
 		iGold=50,
+		iAdvancedStartPoints=25,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iMerchantTrade, iClergy, iConquest],
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
@@ -810,7 +811,7 @@ dStartingUnits = CivDict({
 		iSettle: 1,
 		iWork: 1,
 		iDefend: 2,
-		iHarass: 2,
+		iHarass: 4,
 		iMissionary: 1,
 	},
 	iMoors: {
