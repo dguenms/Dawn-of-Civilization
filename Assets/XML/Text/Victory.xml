@@ -1292,6 +1292,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_POPULATION_COUNT</Tag>
+		<English>%s1 to a total population of %s2</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_CITY</Tag>
 		<English>a city of size %s1 or larger</English>
 		<French></French>
@@ -2017,6 +2025,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_COUNT</Tag>
 		<English>%s1 spread</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_POPULATION_COUNT</Tag>
+		<English>%s1 spread population</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

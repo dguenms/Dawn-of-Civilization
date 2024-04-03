@@ -481,9 +481,9 @@ dGoals = {
 		ReligionSpreadPercent(iIslam, 30),
 	),
 	iTibet: (
-		AcquiredCities(5, by=1000),
-		ReligionSpreadPercent(iBuddhism, 25, by=1400),
-		CitySpecialistCount(start(iTibet).named(LHASA), iSpecialistGreatProphet, 5, by=1700),
+		AcquiredCities(6, by=1000),
+		ReligionSpreadPopulationCount(iBuddhism, 60, by=1400),
+		CitySpecialistCount(start(iTibet).named(LHASA), iSpecialistGreatProphet, 7, by=1700),
 	),
 	iMoors: (
 		All(
