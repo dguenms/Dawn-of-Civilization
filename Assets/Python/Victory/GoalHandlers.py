@@ -269,7 +269,7 @@ class EventHandlerRegistry(object):
 	def unitSpreadReligionAttempt(self, goal, applicable, func):
 		def unitSpreadReligionAttempt((unit, iReligion, bSuccess)):
 			if applicable(goal, unit.getOwner()) and bSuccess:
-				func(goal, iReligion)
+				func(goal, iReligion, unit)
 		
 		return unitSpreadReligionAttempt
 	

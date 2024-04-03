@@ -539,7 +539,7 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 			self.assertEqual(self.argument, None)
 			
 			onUnitSpreadReligionAttempt((our_unit, iOrthodoxy, True))
-			self.assertEqual(self.argument, (self.goal, iOrthodoxy))
+			self.assertEqual(self.argument, (self.goal, iOrthodoxy, our_unit))
 		finally:
 			our_unit.kill(False, -1)
 			their_unit.kill(False, -1)

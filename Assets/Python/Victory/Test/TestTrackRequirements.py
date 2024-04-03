@@ -2044,6 +2044,163 @@ class TestReligionSpreadCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread: 0 / 2")
 		finally:
 			unit.kill(-1, False)
+
+
+class TestReligionSpreadPopulationCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ReligionSpreadPopulationCount(iBuddhism, 5).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ReligionSpreadPopulationCount(Buddhism, 5)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ReligionSpreadPopulationCount(Buddhism, 5)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Buddhism to a total population of five")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 0 / 5")
+	
+	def test_insufficient(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iBuddhistMissionary, city)
+		
+		city.setPopulation(3)
+	
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 3 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
+	
+	def test_sufficient(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iBuddhistMissionary, city)
+		
+		city.setPopulation(6)
+		
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, True)
+				
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Buddhism spread population: 6 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
+	
+	def test_no_city(self):
+		unit = makeUnit(0, iBuddhistMissionary, (20, 20))
+		
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 0 / 5")
+		finally:
+			unit.kill(-1, False)
+	
+	def test_two_cities(self):
+		first_city, second_city = cities = TestCities.num(2)
+		first_unit, second_unit = [makeUnit(0, iBuddhistMissionary, city) for city in cities]
+		
+		first_city.setPopulation(3)
+		second_city.setPopulation(2)
+		
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", first_unit, iBuddhism, True)
+			events.fireEvent("unitSpreadReligionAttempt", second_unit, iBuddhism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 5)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Buddhism spread population: 5 / 5")
+		finally:
+			cities.kill()
+			first_unit.kill(-1, False)
+			second_unit.kill(-1, False)
+	
+	def test_different_unit_owner(self):
+		city = TestCities.one()
+		unit = makeUnit(1, iBuddhistMissionary, city)
+		
+		city.setPopulation(6)
+		
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 0 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
+	
+	def test_different_city_owner(self):
+		city = TestCities.one(1)
+		unit = makeUnit(0, iBuddhistMissionary, city)
+		
+		city.setPopulation(6)
+		
+		try:
+			events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Buddhism spread population: 6 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
+	
+	def test_different_religion(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iBuddhistMissionary, city)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("unitSpreadReligionAttempt", unit, iHinduism, True)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 0 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
+	
+	def test_unsuccessful(self):
+		city = TestCities.one()
+		unit = makeUnit(0, iBuddhistMissionary, city)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("unitSpreadReligionAttempt", unit, iBuddhism, False)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhism spread population: 0 / 5")
+		finally:
+			unit.kill(-1, False)
+			city.kill()
 	
 
 class TestResourceTradeGold(ExtendedTestCase):
@@ -2883,6 +3040,7 @@ test_cases = [
 	TestRaidGold,
 	TestRazeCount,
 	TestReligionSpreadCount,
+	TestReligionSpreadPopulationCount,
 	TestResourceTradeGold,
 	TestSacrificeHappiness,
 	TestSettledCities,

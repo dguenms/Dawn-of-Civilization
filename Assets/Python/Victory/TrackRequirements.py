@@ -507,9 +507,30 @@ class ReligionSpreadCount(TrackRequirement):
 		
 		self.handle("unitSpreadReligionAttempt", self.increment_religion_spread)
 	
-	def increment_religion_spread(self, goal, iReligion):
+	def increment_religion_spread(self, goal, iReligion, unit):
 		if self.iReligion == iReligion:
 			self.increment()
+
+
+class ReligionSpreadPopulationCount(TrackRequirement):
+
+	TYPES = (RELIGION, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SPREAD"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_POPULATION_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_POPULATION_COUNT"
+	
+	def __init__(self, iReligion, iCount, **options):
+		TrackRequirement.__init__(self, iReligion, iCount, **options)
+		
+		self.iReligion = iReligion
+		
+		self.handle("unitSpreadReligionAttempt", self.accumulate_religion_spread_population)
+	
+	def accumulate_religion_spread_population(self, goal, iReligion, unit):
+		if self.iReligion == iReligion and city(unit):
+			self.accumulate(city(unit).getPopulation())
+	
 
 
 # Third Colombian UHV goal
