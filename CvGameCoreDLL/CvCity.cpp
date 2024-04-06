@@ -343,12 +343,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
-	// Leoreth: Prambanan effect: +25% food kept on city growth
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PRAMBANAN))
-	{
-		changeMaxFoodKeptPercent(25);
-	}
-
 	// Leoreth: Old Synagogue effect: +2 gold for Jewish religious buildings
 	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)OLD_SYNAGOGUE))
 	{

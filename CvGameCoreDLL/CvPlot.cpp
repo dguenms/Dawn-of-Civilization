@@ -6837,7 +6837,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		{
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
 
-			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
+			// Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
 			if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CONGO)
 			{
 				if (eYield == YIELD_FOOD || eYield == YIELD_PRODUCTION)
@@ -6850,6 +6850,15 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 						iYield += 1;
 						break;
 					}
+				}
+			}
+
+			// Prambanan effect: +1 production on islands
+			if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)PRAMBANAN))
+			{
+				if (isWater() && eYield == YIELD_PRODUCTION && GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield) > 0)
+				{
+					iYield += 1;
 				}
 			}
 		}
