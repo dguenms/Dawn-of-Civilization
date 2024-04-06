@@ -500,8 +500,8 @@ dGoals = {
 		PiracyGold(3000, by=1650),
 	),
 	iJava: (
-		Wonders(iPrambanan, iBorobudur),
-		HappyCityPopulation(50, by=1350),
+		Wonders(iPrambanan, iBorobudur, by=1100),
+		HappyCityPopulation(75, by=1350),
 		BuildingCount(iIslamicCathedral, 3, by=1500),
 	),
 	iSpain: (
