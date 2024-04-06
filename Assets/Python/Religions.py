@@ -164,11 +164,17 @@ def spreadHinduismSoutheastAsia():
 
 @handler("BeginGameTurn")
 def spreadIslamIndonesia():
-	if not game.isReligionFounded(iIslam): return
-	if not player(iJava).isExisting() and not player(iMalays).isExisting(): return
-	if not turn().between(1300, 1600): return
+	if not game.isReligionFounded(iIslam): 
+		return
+		
+	if not player(iJava).isExisting() and not player(iMalays).isExisting(): 
+		return
+
+	if not turn().between(1250, 1600): 
+		return
 	
-	if not periodic(15): return
+	if not periodic(10): 
+		return
 	
 	indonesianContacts = players.major().where(lambda p: (player(iJava).canContact(p) or player(iMalays).canContact(p)) and player(p).getStateReligion() == iIslam)
 	if not indonesianContacts:
