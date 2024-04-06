@@ -212,6 +212,9 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if tPrereqConquest and not isConquered(tPrereqConquest):
 		return
 	
+	if iCiv == iSpain and player(iPreferredTarget).isHuman():
+		return
+	
 	iStartTurn = year(iYear) + turns(data.iSeed % 10 - 5)
 	
 	if turn() == iStartTurn - turns(5):
