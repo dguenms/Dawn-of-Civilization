@@ -7136,19 +7136,16 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Prambanan
-	if (eBuilding == PRAMBANAN)
-	{
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			pLoopCity->changeMaxFoodKeptPercent(25 * iChange);
-		}
-	}
-
 	// Salsal Buddha
 	if (eBuilding == SALSAL_BUDDHA)
 	{
 		updatePlotGroups();
+	}
+
+	// Prambanan
+	if (eBuilding == PRAMBANAN)
+	{
+		updateYield();
 	}
 
 	// Great Adobe Mosque

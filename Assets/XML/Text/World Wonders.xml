@@ -1355,11 +1355,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN_HELP</Tag>
-		<English>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</English>
-		<French>[ICON_BULLET]Toutes les villes stockent 25% de [ICON_FOOD] en plus apr&#232;s la croissance</French>
-		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</German>
-		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Italian>
-		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Spanish>
+		<English>[ICON_BULLET]+1 [ICON_PRODUCTION] on Islands</English>
+		<French>[ICON_BULLET]+1 [ICON_PRODUCTION] on Islands</French>
+		<German>[ICON_BULLET]+1 [ICON_PRODUCTION] on Islands</German>
+		<Italian>[ICON_BULLET]+1 [ICON_PRODUCTION] on Islands</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_PRODUCTION] on Islands</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Tag>
