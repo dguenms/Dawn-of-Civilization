@@ -385,7 +385,7 @@ lCivilizations = [
 		iAdvancedStartPoints=150,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iClergy],
-		techs=techs.column(6).including(iMachinery, iAlchemy, iTheology).without(iPolitics)
+		techs=techs.column(6).including(iMachinery, iAlchemy, iTheology)
 	),
 	Civilization(
 		iSpain,
