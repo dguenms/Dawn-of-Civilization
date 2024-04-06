@@ -372,20 +372,20 @@ lCivilizations = [
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
 	),
 	Civilization(
-		iJava,
-		iGold=300,
-		iAdvancedStartPoints=100,
-		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iCasteSystem, iMerchantTrade, iDeification],
-		techs=techs.column(5).without(iGeneralship).including(iEthics, iArtisanry)
-	),
-	Civilization(
 		iMoors,
 		iGold=200,
 		iAdvancedStartPoints=150,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iClergy],
 		techs=techs.column(6).including(iMachinery, iAlchemy, iTheology)
+	),
+	Civilization(
+		iJava,
+		iGold=300,
+		iAdvancedStartPoints=100,
+		iStateReligion=iHinduism,
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification],
+		techs=techs.column(6).without(iNobility, iPolitics, iScholarship)
 	),
 	Civilization(
 		iSpain,
@@ -1394,13 +1394,19 @@ def createSpecificUnits(iPlayer, tile):
 	if iCiv == iPersia:
 		makeUnits(iPlayer, iImmortal, tile, 4, UnitAITypes.UNITAI_ATTACK)
 		makeUnit(iPlayer, iWarElephant, tile)
+	if iCiv == iKorea:
+		makeUnit(iPlayer, iConfucianMissionary, tile)
 	elif iCiv == iDravidia:
 		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
+	elif iCiv == iMalays:
+		makeUnit(iPlayer, iHinduMissionary, tile)
 	elif iCiv == iMoors:
 		if civ() in [iSpain, iMoors]:
 			makeUnit(iPlayer, iCrossbowman, tile)
+	elif iCiv == iJava:
+		makeUnit(iPlayer, iBuddhistMissionary, tile)
 	elif iCiv == iSpain:
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
@@ -1979,6 +1985,14 @@ dBuildingPreferences = {
 	iKorea : {
 		iCheomseongdae: 30,
 	},
+	iKhmer : {
+		iWatPreahPisnulok: 30,
+		iShwedagonPaya: 30,
+		iTajMahal: 20,
+		iBorobudur: 20,
+		iPrambanan: 20,
+		iNalanda: 20,
+	},
 	iByzantium : {
 		iHagiaSophia: 40,
 		iTheodosianWalls: 30,
@@ -1993,6 +2007,8 @@ dBuildingPreferences = {
 		iTsukijiFishMarket: 30,
 		iSkytree: 30,
 	
+		iBorobudur: -30,
+		iPrambanan: -30,
 		iGreatWall: -100,
 	},
 	iTurks : {
@@ -2061,14 +2077,6 @@ dBuildingPreferences = {
 		iBerlaymont: 20,
 		iLargeHadronCollider: 20,
 		iITER: 20,
-	},
-	iKhmer : {
-		iWatPreahPisnulok: 30,
-		iShwedagonPaya: 30,
-		iTajMahal: 20,
-		iBorobudur: 20,
-		iPrambanan: 20,
-		iNalanda: 20,
 	},
 	iEngland : {
 		iTradingCompanyBuilding: 50,
