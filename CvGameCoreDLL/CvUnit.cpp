@@ -9781,20 +9781,13 @@ int CvUnit::evasionProbability() const
 
 int CvUnit::withdrawalProbability() const
 {
-	if (getDomainType() == DOMAIN_LAND && plot()->isWater())
+	// Leoreth: ignored if amphibious
+	if (getDomainType() == DOMAIN_LAND && plot()->isWater() && !isAmphib())
 	{
 		return 0;
 	}
 
-	int iWithdrawalProbability = std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
-
-	// Leoreth: recently born civilizations have additional retreat chance on their territory, or in expansion territory
-	/*if (plot()->getBirthProtected() == getOwnerINLINE() || plot()->isExpansionEffect(getOwnerINLINE()))
-	{
-		iWithdrawalProbability = std::min(90, iWithdrawalProbability + 50);
-	}*/
-
-	return iWithdrawalProbability;
+	return std::max(0, (m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal()));
 }
 
 
