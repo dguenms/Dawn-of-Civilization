@@ -487,8 +487,8 @@ dGoals = {
 	),
 	iMoors: (
 		All(
-			CityCount(plots.region(rMaghreb).named(MAGHREB), 3),
-			ConqueredCities(2, inside=plots.region(rIberia).named(IBERIA)),
+			CityCount(plots.region(rMaghreb).named(MAGHREB), 4),
+			ConqueredCities(3, inside=plots.region(rIberia).named(IBERIA)),
 			ConqueredCities(2, inside=plots.rectangle(tWestAfrica).named(WEST_AFRICA)),
 			at=1200,
 		),
