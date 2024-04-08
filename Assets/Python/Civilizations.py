@@ -398,7 +398,7 @@ lCivilizations = [
 	Civilization(
 		iEngland,
 		iGold=200,
-		iAdvancedStartPoints=80,
+		iAdvancedStartPoints=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
 		techs=techs.column(6).including(iFeudalism, iTheology, iCivilService)
@@ -846,11 +846,12 @@ dStartingUnits = CivDict({
 	},
 	iEngland: {
 		iSettle: 2,
-		iSettleSea: 1,
 		iWork: 2,
 		iDefend: 3,
+		iShockCity: 1,
 		iMissionary: 1,
-		iWorkerSea: 2,
+		iWorkerSea: 1,
+		iEscort: 1,
 		iFerry: 1,
 	},
 	iHolyRome: {
@@ -1118,6 +1119,7 @@ dExtraAIUnits = CivDict({
 	},
 	iEngland: {
 		iAttack: 2,
+		iShock: 2,
 	},
 	iPoland: {
 		iCounter: 2,
