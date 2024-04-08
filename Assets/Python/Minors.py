@@ -29,7 +29,7 @@ def add_city_buildings(tile, iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
@@ -39,6 +39,7 @@ class MinorCity(object):
 		self.iCulture = iCulture
 		self.bIgnoreRuins = bIgnoreRuins
 		self.units = units
+		self.buildings = buildings
 		self.adjective = adjective
 		self.condition = condition
 	
@@ -147,6 +148,9 @@ class MinorCity(object):
 	def add_buildings(self):
 		iTechCiv = self.get_tech_civ()
 		add_city_buildings(self.tile, iTechCiv)
+		
+		for iBuilding in self.buildings:
+			city(self.tile).setHasRealBuilding(iBuilding, True)
 
 
 NUM_BARBARIAN_TYPES = 7
@@ -406,7 +410,7 @@ minor_cities = [
 	MinorCity(700, iIndependent2, (71, 36), "Njimi", iPopulation=1, iCiv=iArabia, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_KANURI"),
 	MinorCity(750, iIndependent, (91, 60), "Atil", iPopulation=2, iCiv=iTurks, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_KHAZAR"),
 	MinorCity(800, iNative, (30, 34), u"Bacatá", iPopulation=1, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_MUISCA"),
-	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iCiv=iCelts, units={iDefend: 2, iCounter: 1}, adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
+	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iCiv=iFrance, units={iDefend: 2, iCounter: 1}, buildings=[iWalls], adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
 	MinorCity(840, iIndependent, (54, 65), u"Áth Cliath", iPopulation=1, iCiv=iCelts, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_IRISH"),
 	MinorCity(880, iIndependent2, (74, 59), "Buda", iPopulation=3, iCiv=iHolyRome, units={iHarass: 5}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
 	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iCiv=iInca, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
