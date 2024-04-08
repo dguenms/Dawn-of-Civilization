@@ -3600,6 +3600,12 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 		}
 	}
 
+	if (eBestPlayer != NO_PLAYER && getBirthProtected() != NO_PLAYER && getBirthProtected() != eBestPlayer && GET_PLAYER(eBestPlayer).isMinorCiv() && !isCity())
+	{
+		eBestPlayer = NO_PLAYER;
+	}
+	
+
 	return eBestPlayer;
 }
 
