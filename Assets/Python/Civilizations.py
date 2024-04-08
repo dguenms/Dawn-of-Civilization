@@ -406,7 +406,7 @@ lCivilizations = [
 	Civilization(
 		iHolyRome,
 		iGold=150,
-		iAdvancedStartPoints=120,
+		iAdvancedStartPoints=150,
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy, iTributaries],
 		techs=techs.column(6).including(iFeudalism, iTheology)
