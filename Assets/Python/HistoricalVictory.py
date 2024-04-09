@@ -69,6 +69,7 @@ GRAN_COLOMBIA = "TXT_KEY_VICTORY_NAME_GRAN_COLOMBIA"
 GUAYANAS = "TXT_KEY_VICTORY_NAME_GUAYANAS"
 HAWAII = "TXT_KEY_VICTORY_NAME_HAWAII"
 IBERIA = "TXT_KEY_VICTORY_NAME_IBERIA"
+INDIA = "TXT_KEY_VICTORY_NAME_INDIA"
 INDOCHINA = "TXT_KEY_VICTORY_NAME_INDOCHINA"
 INDONESIA = "TXT_KEY_VICTORY_NAME_INDONESIA"
 ITALY = "TXT_KEY_VICTORY_NAME_ITALY"
@@ -95,6 +96,7 @@ PUNJAB = "TXT_KEY_VICTORY_NAME_PUNJAB"
 SCANDINAVIA = "TXT_KEY_VICTORY_NAME_SCANDINAVIA"
 SIBERIA = "TXT_KEY_VICTORY_NAME_SIBERIA"
 SIBERIAN_COAST = "TXT_KEY_VICTORY_NAME_SIBERIAN_COAST"
+SOUTH_AFRICA = "TXT_KEY_VICTORY_NAME_SOUTH_AFRICA"
 SOUTH_AMERICA = "TXT_KEY_VICTORY_NAME_SOUTH_AMERICA"
 SOUTH_ASIA = "TXT_KEY_VICTORY_NAME_SOUTH_ASIA"
 SOUTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_SOUTH_CENTRAL_AMERICA"
@@ -514,18 +516,20 @@ dGoals = {
 		),
 	),
 	iEngland: (
-		CityCount(
-			(plots.regions(*lNorthAmerica).named(NORTH_AMERICA), 5),
-			(plots.regions(*(lSouthAmerica + lCentralAmerica)).named(SOUTH_CENTRAL_AMERICA), 3),
-			(plots.regions(*lAfrica).named(AFRICA), 4),
-			(plots.regions(*lAsia).named(ASIA), 5),
-			(plots.regions(*lOceania).named(OCEANIA), 3),
-			by=1730,
+		All(
+			CityCount(plots.regions(*lNorthAmerica).named(NORTH_AMERICA), 6),
+			CityCount(plots.regions(*(lSouthAmerica + lCentralAmerica)).named(SOUTH_CENTRAL_AMERICA), 4),
+			CityCount(plots.regions(*lAfrica).named(AFRICA), 3),
+			CityCount(plots.regions(*lIndia).named(INDIA), 3),
+			UnitCombatLevelCount(UnitCombatTypes.UNITCOMBAT_NAVAL, 3, 25),
+			by=1770,
 		),
 		All(
-			UnitCount(sum(iFrigate, iShipOfTheLine), 25),
-			SunkShips(50),
-			by=1800,
+			CityCount(plots.regions(*lAsia).named(ASIA), 12),
+			CityCount(plots.regions(*lAfrica).named(AFRICA), 10),
+			CityCount(plots.regions(*lOceania).named(OCEANIA), 6),
+			RouteConnection([iRouteRailroad], plots.regions(rEgypt, rMaghreb).coastal().named(NORTH_AFRICA), plots.regions(rCape).named(SOUTH_AFRICA)),
+			by=1880,
 		),
 		EraFirstDiscover((iRenaissance, 8), (iIndustrial, 8)),
 	),
