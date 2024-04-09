@@ -646,6 +646,23 @@ class UnitCombatCount(ThresholdRequirement):
 			return 0
 		
 		return units.owner(iPlayer).combat(iUnitCombat).where(lambda unit: capital(iPlayer).allUpgradesAvailable(unit.getUnitType(), 0) < 0).count()
+
+
+class UnitCombatLevelCount(ThresholdRequirement):
+
+	TYPES = (UNITCOMBAT, COUNT, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIT_COMBAT_LEVEL_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_UNIT_COMBAT_LEVEL_COUNT"
+	
+	def __init__(self, iUnitCombat, iLevel, iRequired, **options):
+		ThresholdRequirement.__init__(self, as_int(iUnitCombat), iLevel, iRequired, **options)
+	
+	def value(self, iPlayer, iUnitCombat, iLevel):
+		if not capital(iPlayer):
+			return 0
+	
+		return units.owner(iPlayer).combat(iUnitCombat).where(lambda unit: capital(iPlayer).allUpgradesAvailable(unit.getUnitType(), 0) < 0).where(lambda unit: unit.getLevel() >= iLevel).count()
 	
 
 # Second English UHV goal

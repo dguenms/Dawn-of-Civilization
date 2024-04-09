@@ -1188,6 +1188,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIT_COMBAT_LEVEL_COUNT</Tag>
+		<English>%s3 level %s2 %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TERRAIN_COUNT</Tag>
 		<English>%s2 %s1 tiles</English>
 		<French></French>
@@ -1929,6 +1937,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_UNIT_LEVEL_COUNT</Tag>
 		<English>Level %s1 units</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_UNIT_COMBAT_LEVEL_COUNT</Tag>
+		<English>Level %s2 %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2885,6 +2901,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_INDIA</Tag>
+		<English>India</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_INDOCHINA</Tag>
 		<English>Indochina</English>
 		<French></French>
@@ -3087,6 +3111,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_SIBERIAN_COAST</Tag>
 		<English>the Siberian Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SOUTH_AFRICA</Tag>
+		<English>South Africa</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

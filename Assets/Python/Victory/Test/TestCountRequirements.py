@@ -2820,6 +2820,167 @@ class TestUnitCombatCount(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		self.assertEqual(self.goal.checked, True)
+
+
+class TestUnitCombatLevelCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = UnitCombatLevelCount(UnitCombatTypes.UNITCOMBAT_ARCHER, 3, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "UnitCombatLevelCount(Archery, 3, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "UnitCombatLevelCount(Archery, 3, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two level three archery units")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three archery units: 0 / 2")
+	
+	def test_fewer(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iPalace, True)
+	
+		high_level_unit = makeUnit(0, iArcher, (10, 10))
+		low_level_unit = makeUnit(0, iArcher, (10, 10))
+		
+		low_level_unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three archery units: 1 / 2")
+		finally:
+			high_level_unit.kill(False, -1)
+			low_level_unit.kill(False, -1)
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iPalace, True)
+	
+		units = makeUnits(0, iArcher, (10, 10), 3)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Level three archery units: 3 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			city.kill()
+	
+	def test_different_combat_type(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iPalace, True)
+	
+		units = makeUnits(0, iMilitia, (10, 10), 2)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three archery units: 0 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			city.kill()
+	
+	def test_outdated(self):
+		city = TestCities.one()
+		city.setHasRealBuilding(iPalace, True)
+		city.plot().setBonusType(iIron)
+	
+		team(0).setHasTech(iBloomery, True, 0, False, False)
+		team(0).setHasTech(iMachinery, True, 0, False, False)
+		
+		units = makeUnits(0, iArcher, (10, 10), 2)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three archery units: 0 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			
+			team(0).setHasTech(iBloomery, False, 0, False, False)
+			team(0).setHasTech(iMachinery, False, 0, False, False)
+			
+			city.plot().setBonusType(-1)
+			city.kill()
+	
+	def test_different_owner(self):
+		city = TestCities.one(2)
+		city.setHasRealBuilding(iPalace, True)
+	
+		units = makeUnits(2, iArcher, (10, 10), 2)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Level three archery units: 0 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(2).setVassal(0, True, False)
+		
+		city = TestCities.one(2)
+		city.setHasRealBuilding(iPalace, True)
+		
+		units = makeUnits(2, iArcher, (10, 10), 2)
+		
+		for unit in units:
+			unit.setLevel(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Level three archery units: 2 / 2")
+		finally:
+			for unit in units:
+				unit.kill(False, -1)
+			
+			team(2).setVassal(0, False, False)
+			
+			city.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
 	
 
 class TestUnitCount(ExtendedTestCase):
@@ -3240,6 +3401,7 @@ test_cases = [
 	TestTerrainCount,
 	TestTradeRouteCount,
 	TestUnitCombatCount,
+	TestUnitCombatLevelCount,
 	TestUnitCount,
 	TestUnitLevelCount,
 	TestVassalCount,
