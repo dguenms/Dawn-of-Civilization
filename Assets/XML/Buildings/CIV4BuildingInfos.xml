@@ -1068,7 +1068,6 @@
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<iCost>90</iCost>
 			<iConquestProb>70</iConquestProb>
-			<iHappiness>2</iHappiness>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -1097,6 +1096,26 @@
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<BonusYieldChanges>
+				<BonusYieldChange>
+					<BonusType>BONUS_AMBER</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_GEMS</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_JADE</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+			</BonusYieldChanges>
 			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
