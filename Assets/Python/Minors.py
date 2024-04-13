@@ -348,6 +348,9 @@ class Barbarians(object):
 		return all(self.valid_unit_spawn_terrain(plot, iUnit) for iUnit in self.units)
 	
 	def valid_spawn(self, plot):
+		if plot.getBirthProtected() >= 0:
+			return False
+	
 		if not self.valid_spawn_terrain(plot):
 			return False
 	
