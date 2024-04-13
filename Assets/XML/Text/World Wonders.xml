@@ -2523,19 +2523,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Tag>
-		<English>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</English>
-		<French>[ICON_BULLET][ICON_PRODUCTION] doubl&#233;e pour les b&#226;timents de la [ICON_RELIGION] d'&#201;tat</French>
-		<German>[ICON_BULLET]Doppelte [ICON_PRODUCTION] f&#252;r Geb&#228;ude der Staats [ICON_RELIGION]</German>
-		<Italian>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Italian>
-		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Spanish>
+		<English>[ICON_BULLET][ICON_GREATPEOPLE] Birth Rate is increased by Current [ICON_GOLD] Rate</English>
+		<French>[ICON_BULLET][ICON_GREATPEOPLE] Birth Rate is increased by Current [ICON_GOLD] Rate</French>
+		<German>[ICON_BULLET][ICON_GREATPEOPLE] Birth Rate is increased by Current [ICON_GOLD] Rate</German>
+		<Italian>[ICON_BULLET][ICON_GREATPEOPLE] Birth Rate is increased by Current [ICON_GOLD] Rate</Italian>
+		<Spanish>[ICON_BULLET][ICON_GREATPEOPLE] Birth Rate is increased by Current [ICON_GOLD] Rate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] increases your great people birth rate by your current gold rate. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] increases your great people birth rate by your current gold rate. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] increases your great people birth rate by your current gold rate. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] increases your great people birth rate by your current gold rate. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] increases your great people birth rate by your current gold rate. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
