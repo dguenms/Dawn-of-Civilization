@@ -414,6 +414,7 @@ lCivilizations = [
 	Civilization(
 		iBurma,
 		iGold=100,
+		iAdvancedStartPoints=80,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iTributaries],
 		techs=techs.column(6).including(iFeudalism, iTheology)
