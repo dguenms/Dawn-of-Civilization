@@ -546,6 +546,14 @@ dGoals = {
 			by=1850,
 		),
 	),
+	iBurma: (
+		GoldAmount(3000, by=1300),
+		GoldenAges(3, by=1700),
+		All(
+			Control(plots.region(rIndochina), at=1580),
+			Control(plots.region(rIndochina), at=1760),
+		),
+	),
 	iPoland: (
 		PopulationCityCount(12, 3, by=1400),
 		FirstDiscover(iCivilLiberties),
