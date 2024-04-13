@@ -2005,13 +2005,14 @@ dBuildingPreferences = {
 		iSistineChapel: -20,
 	},
 	iJapan : {
-		iItsukushimaShrine: 30,
-		iHimejiCastle: 30,
+		iItsukushimaShrine: 50,
+		iHimejiCastle: 50,
 		iTsukijiFishMarket: 30,
 		iSkytree: 30,
 	
-		iBorobudur: -30,
-		iPrambanan: -30,
+		iBorobudur: -60,
+		iPrambanan: -60,
+		iShwedagonPaya: 0,
 		iGreatWall: -100,
 	},
 	iTurks : {
