@@ -28904,7 +28904,7 @@
 			<Description>TXT_KEY_LEADER_KAMMU</Description>
 			<Civilopedia>TXT_KEY_LEADER_KAMMU_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_KAMMU</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>6</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
