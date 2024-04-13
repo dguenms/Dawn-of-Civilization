@@ -4924,10 +4924,6 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_STEEL</PrereqTech>
-			<PrereqBonuses>
-				<BonusType>BONUS_COPPER</BonusType>
-				<BonusType>BONUS_IRON</BonusType>
-			</PrereqBonuses>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4950,10 +4946,6 @@
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 				<FeatureImpassable>
