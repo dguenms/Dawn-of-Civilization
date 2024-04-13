@@ -2999,8 +2999,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 								}
 							}
 
-							int iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference((BuildingClassTypes)iI);
-
 							if (iValue > 0)
 							{
 								iTurnsLeft = getProductionTurnsLeft(eLoopBuilding, 0);
@@ -3023,29 +3021,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 										}
 										iValue += iTempValue;
-										
-										// Leoreth: building preferences from Python
-										iTempValue = 10;
-
-										if (iBuildingPreference > -MAX_INT)
-										{
-											if (iBuildingPreference > 0)
-											{
-												iTempValue *= iBuildingPreference;
-												iTempValue /= 10;
-											} 
-											else if (iBuildingPreference < 0) 
-											{
-												iTempValue *= 10;
-												iTempValue /= iBuildingPreference;
-											} 
-											else 
-											{
-												continue;
-											}
-										}
-
-										iValue += iTempValue - 10;
 									}
 								}
 
@@ -3098,8 +3073,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									{
 										iBestValue = iValue;
 										eBestBuilding = eLoopBuilding;
-
-										FAssert(iBuildingPreference != 0);
 									}
 								}
 							}
@@ -4629,6 +4602,26 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 			iValue /= (8 - getPopulation());
 		}
 
+	}
+
+	// Leoreth: AI building value weights
+	int iBuildingClassPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference(eBuildingClass);
+	if (iBuildingClassPreference != -MAX_INT)
+	{
+		if (iBuildingClassPreference == 0)
+		{
+			return -MAX_INT;
+		}
+		else if (iBuildingClassPreference > 0)
+		{
+			iValue *= iBuildingClassPreference;
+			iValue /= 10;
+		}
+		else if (iBuildingClassPreference < 0)
+		{
+			iValue *= 10;
+			iValue /= iBuildingClassPreference;
+		}
 	}
 
 	return std::max(0, iValue);
