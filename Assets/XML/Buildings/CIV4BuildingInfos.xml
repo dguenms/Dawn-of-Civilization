@@ -10802,7 +10802,7 @@
 			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

@@ -6436,6 +6436,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		else if (isHumanVictoryWonder(eBuilding, RED_FORT, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, TAJ_MAHAL, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, HARMANDIR_SAHIB, MUGHALS)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, SHWEDAGON_PAYA, BURMA)) return false;
 	}
 
 	return true;
@@ -6879,15 +6881,6 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 	// Leoreth: civics
 	iMultiplier += getBuildingProductionModifier(eBuilding);
 
-	// Khajuraho effect
-	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)SHWEDAGON_PAYA))
-	{
-	    if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() != NO_SPECIALBUILDING && GC.getBuildingInfo(eBuilding).getPrereqReligion() == getStateReligion())
-		{
-			iMultiplier += 100;
-		}
-	}
-
 	if (::isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 	{
 		iMultiplier += getMaxGlobalBuildingProductionModifier();
@@ -7116,6 +7109,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 				changeImprovementYieldChange((ImprovementTypes)iI, YIELD_PRODUCTION, 2 * iChange);
 			}
 		}
+	}
+
+	// Shwedagon Paya
+	if (eBuilding == SHWEDAGON_PAYA)
+	{
+		changeGreatPeopleRateModifier(getCommercePercent(COMMERCE_GOLD) * iChange);
 	}
 
 	// Himeji Castle
@@ -12871,6 +12870,12 @@ void CvPlayer::setCommercePercent(CommerceTypes eIndex, int iNewValue)
 					int iAdjustment = std::min(m_aiCommercePercent[iI], iTotalCommercePercent - 100);
 					m_aiCommercePercent[iI] -= iAdjustment;
 					iTotalCommercePercent -= iAdjustment;
+
+					// Shwedagon Paya effect: gold rate added to great people rate modifier
+					if (iI == COMMERCE_GOLD && isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+					{
+						changeGreatPeopleRateModifier(-iAdjustment);
+					}
 				}
 				else
 				{

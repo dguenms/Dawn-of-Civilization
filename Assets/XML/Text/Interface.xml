@@ -2639,6 +2639,14 @@
 		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_FROM_GOLD_RATE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</English>
+		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</French>
+		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_PLAYER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
 		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce au pouvoir unique</French>

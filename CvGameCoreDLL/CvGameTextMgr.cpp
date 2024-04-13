@@ -18743,6 +18743,14 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		}
 	}
 
+	// Leoreth: Shwedagon Paya effect
+	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_GREATPEOPLE_FROM_GOLD_RATE", GET_PLAYER(city.getOwner()).getCommercePercent(COMMERCE_GOLD)));
+		szBuffer.append(NEWLINE);
+		iModifier += GET_PLAYER(city.getOwner()).getCommercePercent(COMMERCE_GOLD);
+	}
+
 	// Leoreth: Greek UP
 	if (city.getCivilizationType() == GREECE && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() <= ERA_CLASSICAL)
 	{
