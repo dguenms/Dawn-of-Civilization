@@ -1374,13 +1374,10 @@ void CvCityAI::AI_chooseProduction()
 				iSettlerSeaNeeded += 1;
 			}
 
-			log(CvWString::format(L"Decide water area settler: total water area unit AIs %d < iSettlerSeaNeeded %d", kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA), iSettlerSeaNeeded));
-
 			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) < iSettlerSeaNeeded)
 			{
 				if (AI_chooseUnit(UNITAI_SETTLER_SEA))
 				{
-					log("Choose settler: water area");
 					return;
 				}
 			}
@@ -3110,14 +3107,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 					}
 				}
 			}
-		}
-	}
-
-	if (getCivilizationType() == MOORS && isCapital() && getRegionID() == REGION_IBERIA)
-	{
-		if (canConstruct((BuildingTypes)MEZQUITA))
-		{
-			eBestBuilding = (BuildingTypes)MEZQUITA;
 		}
 	}
 
