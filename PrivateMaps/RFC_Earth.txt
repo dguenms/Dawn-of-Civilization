@@ -53310,6 +53310,7 @@ BeginPlot
 	x=118,y=40
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -53343,7 +53344,7 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -54279,7 +54280,6 @@ BeginPlot
 	x=120,y=43
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
