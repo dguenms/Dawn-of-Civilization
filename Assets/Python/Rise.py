@@ -466,6 +466,10 @@ class Birth(object):
 			self.area += additionalPlots
 			self.area = self.area.unique()
 		
+		if self.iCiv == iRussia:
+			if player(iRussia).isHuman() or player(iRus).isHuman():
+				self.area = self.area.without(plots.rectangle(tNovgorod))
+		
 		if self.iCiv == iMexico:
 			self.area = self.area.where(lambda p: p.isPlayerCore(self.iPlayer) or not owner(p, iAmerica))
 		
@@ -982,6 +986,9 @@ class Birth(object):
 	def flippedArea(self):
 		if self.iCiv == iEngland and player(iCelts).isHuman():
 			return plots.birth(self.iPlayer, extended=False)
+		
+		if self.iCiv == iRussia and (player(iRussia).isHuman() or player(iRus).isHuman()):
+			return plots.birth(self.iPlayer).without(plots.rectangle(tNovgorod))
 	
 		return self.isIndependence() and self.area or plots.birth(self.iPlayer)
 	

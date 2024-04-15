@@ -12,6 +12,10 @@ iTurkicEastWestBorder = 106
 
 lKushanRoad = [(99, 51), (100, 50), (101, 49)]
 
+# Rise
+
+tNovgorod = ((81, 68), (84, 71))
+
 ## Victory
 
 # second Phoenician goal: control Iberia and Italy by 150 BC
