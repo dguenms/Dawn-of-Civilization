@@ -3111,7 +3111,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_RUS_VOLOK</ArtDefineTag>
 			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<bRiver>1</bRiver>
-			<iCost>140</iCost>
+			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
@@ -3120,6 +3120,12 @@
 			<iAsset>3</iAsset>
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<Flavors>
 				<Flavor>
