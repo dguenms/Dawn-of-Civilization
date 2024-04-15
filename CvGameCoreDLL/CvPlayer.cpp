@@ -25431,6 +25431,11 @@ int CvPlayer::getBuildingClassPreference(BuildingClassTypes eBuildingClass) cons
 	return -MAX_INT;
 }
 
+int CvPlayer::getBuildingClassPreference(BuildingTypes eBuilding) const
+{
+	return getBuildingClassPreference((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType());
+}
+
 bool CvPlayer::isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const
 {
 	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
