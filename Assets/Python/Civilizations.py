@@ -2004,6 +2004,7 @@ dBuildingPreferences = {
 		
 		iNotreDame: -20,
 		iSistineChapel: -20,
+		iSaintSophia: -50,
 	},
 	iJapan : {
 		iItsukushimaShrine: 50,
