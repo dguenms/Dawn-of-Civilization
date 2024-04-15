@@ -9995,6 +9995,7 @@ bool CvUnitAI::AI_switchHurry()
 {
 	CvCity* pCity;
 	BuildingTypes eBestBuilding;
+	int iBuildingPreference;
 	int iValue;
 	int iBestValue;
 	int iI;
@@ -10016,19 +10017,24 @@ bool CvUnitAI::AI_switchHurry()
 			BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
 
 			if (NO_BUILDING != eBuilding)
-		{
-				if (pCity->canConstruct(eBuilding))
 			{
-					if (pCity->getBuildingProduction(eBuilding) == 0)
+				if (pCity->canConstruct(eBuilding))
 				{
-						if (getMaxHurryProduction(pCity) >= pCity->getProductionNeeded(eBuilding))
+					if (pCity->getBuildingProduction(eBuilding) == 0)
 					{
-							iValue = pCity->AI_buildingValue(eBuilding);
-
-						if (iValue > iBestValue)
+						if (getMaxHurryProduction(pCity) >= pCity->getProductionNeeded(eBuilding))
 						{
-							iBestValue = iValue;
-								eBestBuilding = eBuilding;
+							iBuildingPreference = GET_PLAYER(getOwnerINLINE()).getBuildingClassPreference(eBuilding);
+
+							if (iBuildingPreference == -MAX_INT || iBuildingPreference > 0)
+							{
+								iValue = pCity->AI_buildingValue(eBuilding);
+
+								if (iValue > iBestValue)
+								{
+									iBestValue = iValue;
+									eBestBuilding = eBuilding;
+								}
 							}
 						}
 					}

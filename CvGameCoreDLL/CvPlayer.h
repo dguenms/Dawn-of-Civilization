@@ -1263,6 +1263,7 @@ public:
 
 	// Leoreth
 	int getBuildingClassPreference(BuildingClassTypes eBuildingClass) const;
+	int getBuildingClassPreference(BuildingTypes eBuilding) const;
 	void setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue);
 	void resetBuildingClassPreferences();
 
