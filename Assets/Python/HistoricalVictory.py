@@ -554,6 +554,15 @@ dGoals = {
 			Control(plots.region(rIndochina), at=1760),
 		),
 	),
+	iRus: (
+		ReligionPopulationCount(iOrthodoxy, 30, by=1200),
+		DefeatedUnits(civs(iBarbarian), 25, by=1250),
+		All(
+			ResourceCount((iFur, 4), (iSalt, 3)),
+			TradeGold(200),
+			by=1450,
+		),
+	),
 	iPoland: (
 		PopulationCityCount(12, 3, by=1400),
 		FirstDiscover(iCivilLiberties),

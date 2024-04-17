@@ -486,6 +486,12 @@ class CivsArgument(NamedArgument):
 			return format_separators(self, ",", text("TXT_KEY_AND"), lambda iCiv: infos.civ(iCiv).getShortDescription(0))
 		
 		return NamedArgument.name(self)
+	
+	def adjective(self):
+		if not self.name_key:
+			return format_separators(self, ",", text("TXT_KEY_AND"), lambda iCiv: infos.civ(iCiv).getAdjective(0))
+		
+		return NamedArgument.name(self)
 		
 
 ### Wrapper Functions ###

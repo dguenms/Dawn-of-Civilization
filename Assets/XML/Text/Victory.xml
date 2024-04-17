@@ -472,6 +472,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_DEFEAT</Tag>
+		<English>defeat %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -558,6 +566,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_POPULATION</Tag>
 		<English>a total population of %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_RELIGION_POPULATION</Tag>
+		<English>a %s1 population of %s2</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -662,6 +678,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SUNK_SHIPS</Tag>
 		<English>%s1 enemy ships</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_DEFEATED_UNITS</Tag>
+		<English>%s2 %s1 units</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1399,6 +1423,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_RELIGION_POPULATION</Tag>
+		<English>%s1 Population</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_GOLDEN_AGES</Tag>
 		<English>%s2</English>
 		<French></French>
@@ -1473,6 +1505,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_SUNK_SHIPS</Tag>
 		<English>Enemy ships sunk</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_DEFEATED_UNITS</Tag>
+		<English>defeated %s1 units</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

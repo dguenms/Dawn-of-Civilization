@@ -183,6 +183,27 @@ class Constructed(TrackRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
 
 
+class DefeatedUnits(TrackRequirement):
+
+	TYPES = (CIVS_ADJECTIVE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_DEFEAT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_DEFEATED_UNITS"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_DEFEATED_UNITS"
+	
+	def __init__(self, lCivs, iRequired, **options):
+		TrackRequirement.__init__(self, lCivs, iRequired, **options)
+		
+		self.lCivs = lCivs
+		
+		self.handle("combatResult", self.increment_defeated)
+	
+	def increment_defeated(self, goal, unit):
+		if unit.getOwner() in self.lCivs:
+			self.increment()
+			goal.check()
+
+
 # Third Aztec UHV goal
 class EnslaveCount(TrackRequirement):
 
