@@ -810,6 +810,90 @@ class TestConstructed(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestDefeatedUnits(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = DefeatedUnits(CivsArgument(iBabylonia), 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.our_unit = makeUnit(0, iSwordsman, (10, 10))
+		self.their_unit = makeUnit(1, iSwordsman, (11, 11))
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		self.our_unit.kill(False, -1)
+		self.their_unit.kill(False, -1)
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "DefeatedUnits(Babylonia, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "DefeatedUnits(Babylonia, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Babylonian units")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Defeated Babylonian units: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_less(self):
+		events.fireEvent("combatResult", self.our_unit, self.their_unit)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Defeated Babylonian units: 1 / 2")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_more(self):
+		for _ in range(3):
+			events.fireEvent("combatResult", self.our_unit, self.their_unit)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Defeated Babylonian units: 3 / 2")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_defeat(self):
+		for _ in range(3):
+			events.fireEvent("combatResult", self.their_unit, self.our_unit)
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Defeated Babylonian units: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_other_civilization(self):
+		other_unit = makeUnit(2, iSwordsman, (9, 9))
+		
+		try:
+			for _ in range(3):
+				events.fireEvent("combatResult", self.our_unit, other_unit)
+				
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Defeated Babylonian units: 0 / 2")
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			other_unit.kill(False, -1)
+
+	def test_not_checked_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestEnslaveCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -3025,6 +3109,7 @@ test_cases = [
 	TestConqueredCitiesOutside,
 	TestConqueredCitiesCivs,
 	TestConstructed,
+	TestDefeatedUnits,
 	TestEnslaveCount,
 	TestEnslaveCountExcluding,
 	TestEraFirstDiscover,

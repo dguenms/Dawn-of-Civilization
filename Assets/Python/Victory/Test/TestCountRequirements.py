@@ -2364,6 +2364,126 @@ class TestPopulationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestReligionPopulationCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ReligionPopulationCount(iConfucianism, 5).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ReligionPopulationCount(Confucianism, 5)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ReligionPopulationCount(Confucianism, 5)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a Confucian population of five")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian Population: 0 / 5")
+	
+	def test_less(self):
+		city = TestCities.one()
+		city.setHasReligion(iConfucianism, True, False, False)
+		city.setPopulation(4)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian Population: 4 / 5")
+		finally:
+			city.kill()
+	
+	def test_more(self):
+		city = TestCities.one()
+		city.setHasReligion(iConfucianism, True, False, False)
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Confucian Population: 6 / 5")
+		finally:
+			city.kill()
+	
+	def test_multiple_cities(self):
+		cities = TestCities.num(2)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+			city.setPopulation(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 6)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Confucian Population: 6 / 5")
+		finally:
+			cities.kill()
+	
+	def test_other_religion(self):
+		city = TestCities.one()
+		city.setHasReligion(iTaoism, True, False, False)
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian Population: 0 / 5")
+		finally:
+			city.kill()
+	
+	def test_other_owner(self):
+		city = TestCities.one(1)
+		city.setHasReligion(iConfucianism, True, False, False)
+		city.setPopulation(6)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Confucian Population: 0 / 5")
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		our_city, vassal_city = cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+		
+		our_city.setPopulation(4)
+		vassal_city.setPopulation(3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 7)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Confucian Population: 7 / 5")
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestResourceCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -3396,6 +3516,7 @@ test_cases = [
 	TestPopulationCity,
 	TestPopulationCityCount,
 	TestPopulationCount,
+	TestReligionPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
 	TestTerrainCount,

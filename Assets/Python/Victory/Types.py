@@ -225,6 +225,16 @@ class CivsType(Type):
 		return argument.name()
 
 
+# TODO: test
+class CivsAdjectiveType(Type):
+
+	def validate_func(self, argument):
+		return isinstance(argument, CivsArgument)
+	
+	def format(self, argument, **options):
+		return argument.adjective()
+
+
 class ReligionAdjectiveType(InfoType):
 
 	def __init__(self, name):
@@ -328,6 +338,7 @@ ATTITUDE = AttitudeType("Attitude")
 BUILDING = InfoType("Building", infos.building)
 CITY = CityType("City")
 CIVS = CivsType("Civs")
+CIVS_ADJECTIVE = CivsAdjectiveType("CivsAdjective")
 CORPORATION = InfoType("Corporation", infos.corporation)
 COUNT = CountType("Count")
 CULTURELEVEL = CultureLevelType("CultureLevel")

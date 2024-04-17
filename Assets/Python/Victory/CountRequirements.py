@@ -549,6 +549,17 @@ class PopulationCount(ThresholdRequirement):
 		return player(iPlayer).getTotalPopulation()
 
 
+class ReligionPopulationCount(ThresholdRequirement):
+
+	TYPES = (RELIGION_ADJECTIVE, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_POPULATION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_POPULATION"
+	
+	def value(self, iPlayer, iReligion):
+		return player(iPlayer).getReligionPopulation(iReligion)
+
+
 # First Ethiopian UHV goal
 # Second Indonesian UHV goal
 # Second Portuguese UHV goal
