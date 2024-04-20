@@ -29,7 +29,7 @@ def add_city_buildings(tile, iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
@@ -40,6 +40,7 @@ class MinorCity(object):
 		self.bIgnoreRuins = bIgnoreRuins
 		self.units = units
 		self.buildings = buildings
+		self.bUnique = bUnique
 		self.adjective = adjective
 		self.condition = condition
 	
@@ -116,7 +117,7 @@ class MinorCity(object):
 	
 	def get_units(self):
 		iUnitCiv = self.get_tech_civ()
-		bUnique = self.iCiv == iUnitCiv
+		bUnique = self.bUnique and self.iCiv == iUnitCiv
 		
 		for iRole, iNumUnits in self.units.items():
 			for iUnit, iUnitAI in getUnitsForRole(iUnitCiv, iRole, bUnique=bUnique):
@@ -404,7 +405,7 @@ minor_cities = [
 	MinorCity(-200, iIndependent, (125, 43), "Panyu", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_NANYUE"),
 	MinorCity(-150, iIndependent2, (112, 57), "Jiaohe", iPopulation=1, iCiv=iChina, units={iHarass: 1}, adjective="TXT_KEY_ADJECTIVE_TOCHARIAN"),
 	MinorCity(-75, iIndependent, (105, 55), "Kash", iPopulation=2, iCiv=iKushans, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_UIGHUR"),
-	MinorCity(190, iIndependent2, (123, 39), "Indrapura", iPopulation=3, iCiv=iKhmer, units={iDefend: 4}, adjective="TXT_KEY_ADJECTIVE_CHAM"),
+	MinorCity(190, iIndependent2, (123, 39), "Indrapura", iPopulation=3, iCiv=iChina, units={iDefend: 3}, bUnique=False, adjective="TXT_KEY_ADJECTIVE_CHAM"),
 	MinorCity(300, iIndependent2, (89, 37), "Sana'a", iPopulation=2, iCiv=iEthiopia, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_YEMENI"),
 	MinorCity(400, iIndependent2, (118, 45), "Dali", iPopulation=4, iCiv=iChina, units={iDefend: 3, iShock: 1}, adjective="TXT_KEY_ADJECTIVE_BAI"),
 	MinorCity(500, iIndependent2, (123, 25), "Sunda Kelapa", iPopulation=3, iCiv=iMalays, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SUNDANESE"),
