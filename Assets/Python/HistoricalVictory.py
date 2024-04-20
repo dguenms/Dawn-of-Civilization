@@ -563,6 +563,11 @@ dGoals = {
 			by=1450,
 		),
 	),
+	iVietnam: (
+		GreatGenerals(2, by=1500),
+		BuildingCount(iConfucianCathedral, 1, by=1600),
+		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1700),
+	),
 	iPoland: (
 		PopulationCityCount(12, 3, by=1400),
 		FirstDiscover(iCivilLiberties),
