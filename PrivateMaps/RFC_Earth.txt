@@ -54745,7 +54745,6 @@ BeginPlot
 	x=121,y=42
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -55219,7 +55218,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=42
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
