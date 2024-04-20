@@ -130,10 +130,13 @@ class MinorCity(object):
 				yield iUnit, iNumUnits, iUnitAI
 	
 	def make_units(self, iUnit, iUnitAI, iNumUnits=1):
-		units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
+		for unit in units.at(self.tile).where(lambda unit: unit.upgradeAvailable(unit.getUnitType(), infos.unit(iUnit).getUnitClassType(), 0)).limit(iNumUnits):
+			unit.kill(False, -1)
+	
+		created_units = makeUnits(self.iOwner, iUnit, self.tile, iNumUnits, iUnitAI)
 		
 		if self.adjective:
-			units.adjective(self.adjective)
+			created_units.adjective(self.adjective)
 	
 	def create_units(self):
 		for iUnit, iNumUnits, iUnitAI in self.get_units():
