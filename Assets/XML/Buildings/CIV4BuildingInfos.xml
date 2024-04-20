@@ -1481,7 +1481,6 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</ArtDefineTag>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
-			<FreePromotion>PROMOTION_AMPHIBIOUS</FreePromotion>
 			<iCost>60</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1499,6 +1498,32 @@
 					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<BonusYieldChanges>
+				<BonusYieldChange>
+					<BonusType>BONUS_FISH</BonusType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_CLAM</BonusType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_CRAB</BonusType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+			</BonusYieldChanges>
 			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<Flavors>
 				<Flavor>
