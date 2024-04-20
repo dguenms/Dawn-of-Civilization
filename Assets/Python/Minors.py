@@ -143,6 +143,9 @@ class MinorCity(object):
 			self.make_units(iUnit, iUnitAI, iNumUnits)
 	
 	def add_unit(self):
+		if units.surrounding(self.tile).atwar(city(self.tile).getOwner()):
+			return
+	
 		iTechCiv = self.get_tech_civ()
 	
 		for iUnit, iNumUnits, iUnitAI in self.get_units():
