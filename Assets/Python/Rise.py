@@ -597,7 +597,7 @@ class Birth(object):
 		expelUnits(self.iPlayer, plots.surrounding(self.location), self.flippedArea())
 	
 		if plot_(self.location).isCity():
-			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100)
+			completeCityFlip(self.location, self.iPlayer, city_(self.location).getOwner(), 100, bCreateGarrisons=False)
 		
 		if self.iCiv not in lInvasionCivs:
 			for city in cities.ring(self.location):

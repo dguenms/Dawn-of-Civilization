@@ -609,7 +609,7 @@ def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
 	return created
 	
 # used: Congresses, History, RFCUtils, Rise, Stability
-def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
+def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True, bCreateGarrisons = True):
 	plot = plot_(tPlot)
 	
 	if bPermanentCultureChange:
@@ -634,7 +634,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	if bFlipUnits:
 		for iUnit, typeUnits in flippingUnits:
 			makeUnits(iPlayer, iUnit, plot, len(typeUnits))
-	else:
+	elif bCreateGarrisons:
 		createGarrisons(plot, iPlayer, 2)
 	
 	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
