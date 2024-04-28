@@ -161,8 +161,20 @@ class RevealedPercent(PercentRequirement):
 		
 		self.area = area
 	
-	def evaluate(self, evaluator):
-		return self.area.where(lambda p: plots.surrounding(p).where(lambda sp: sp.isWater() == p.isWater()).all(lambda sp: evaluator.any(lambda ep: sp.isRevealed(player(ep).getTeam(), False)))).count()
+	def isRevealed(self, plot, revealed):
+		if location(plot) not in revealed:
+			return False
+	
+		surrounding = plots.surrounding(plot).where(lambda p: plot.getArea() == p.getArea()).set()
+		revealed_surrounding = surrounding & revealed
+		
+		return len(surrounding) == len(revealed_surrounding)
+
+	def value(self, iPlayer, area):
+		iTeam = player(iPlayer).getTeam()
+		revealed = plots.all().where(lambda p: p.isRevealed(iTeam, False)).set()
+	
+		return area.where(lambda p: self.isRevealed(p, revealed)).count()
 
 	def total(self):
 		return self.area.count()
