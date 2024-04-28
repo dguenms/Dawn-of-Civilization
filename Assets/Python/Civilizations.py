@@ -899,14 +899,13 @@ dStartingUnits = CivDict({
 		iMissionary: 1,
 	},
 	iPoland: {
-		iSettle: 1,
+		iSettle: 2,
 		iWork: 2,
 		iDefend: 1,
 		iAttack: 2,
 		iShock: 2,
 		iSiege: 1,
 		iMissionary: 1,
-		# if human: 1 Settler (to account for scripted AI spawn)
 	},
 	iPortugal: {
 		iSettle: 1,
@@ -1416,10 +1415,6 @@ def createSpecificUnits(iPlayer, tile):
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
 			makeUnits(iPlayer, iLancer, tile, 2)
-	elif iCiv == iPoland:
-		if bHuman:
-			# to account for scripted AI settler spawn
-			makeUnit(iPlayer, iSettler, tile)
 	elif iCiv == iInca:
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
