@@ -238,6 +238,9 @@ class AreaArgument(NamedArgument):
 	def water(self, *args, **kwargs):
 		return self.call("water", args, kwargs)
 	
+	def sea(self, *args, **kwargs):
+		return self.call("sea", args, kwargs)
+	
 	def core(self, iCiv):
 		return self.call_for_civ("core", iCiv)
 	

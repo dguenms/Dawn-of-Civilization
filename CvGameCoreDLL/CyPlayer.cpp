@@ -2761,3 +2761,8 @@ bool CyPlayer::isExisting()
 {
 	return m_pPlayer ? m_pPlayer->isExisting() : false;
 }
+
+void CyPlayer::changeBonusImport(int eBonus, int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeBonusImport((BonusTypes)eBonus, iChange);
+}
