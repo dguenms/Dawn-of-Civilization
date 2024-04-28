@@ -890,12 +890,12 @@ dStartingUnits = CivDict({
 	},
 	iSwahili: {
 		iSettle: 1,
-		iWork: 1,
+		iWork: 3,
 		iWorkerSea: 2,
 		iDefend: 1,
-		iSkirmish: 1,
+		iSkirmish: 2,
 		iExploreSea: 1,
-		iSettleSea: 1,
+		iSettleSea: 2,
 		iMissionary: 1,
 	},
 	iPoland: {
