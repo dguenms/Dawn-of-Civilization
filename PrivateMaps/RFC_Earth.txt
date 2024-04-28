@@ -35904,7 +35904,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=20
-	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -36363,7 +36362,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=17
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -36371,6 +36370,7 @@ BeginPlot
 	x=81,y=18
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -36380,7 +36380,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_COAL
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -37282,6 +37282,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=17
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -37747,7 +37748,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=18
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
