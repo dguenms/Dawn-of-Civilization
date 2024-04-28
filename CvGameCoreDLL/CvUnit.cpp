@@ -2485,15 +2485,17 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 		}
 	}
 
-	//Leoreth: Tibetan UP
-	if (getCivilizationType() == TIBET)
+	// Leoreth: civilian and naval units can enter independent territory
+	if (GET_TEAM(eTeam).isMinorCiv())
 	{
-		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		if (!canFight())
 		{
-			if (GC.getUnitInfo(getUnitType()).getReligionSpreads(iI) > 0)
-			{
-				return true;
-			}
+			return true;
+		}
+
+		if (getDomainType() == DOMAIN_SEA)
+		{
+			return true;
 		}
 	}
 
