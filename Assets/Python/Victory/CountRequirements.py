@@ -637,8 +637,11 @@ class TradeRouteCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_ROUTE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COUNT"
 	
+	def count_trade_routes(self, city):
+		return count(city.getTradeCity(i) and not city.getTradeCity(i).isNone() for i in range(city.getTradeRoutes()))
+	
 	def value(self, iPlayer):
-		return cities.owner(iPlayer).sum(CyCity.getTradeRoutes)
+		return cities.owner(iPlayer).sum(self.count_trade_routes)
 
 
 # Third Confucian URV goal
