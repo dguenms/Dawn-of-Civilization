@@ -1089,6 +1089,9 @@ class EntityCollection(object):
 		
 		return self.empty()
 	
+	def set(self):
+		return set(self._keys)
+	
 	def format(self, separator=",", final_separator=None, formatter=lambda x: x):
 		if final_separator is None:
 			final_separator = text("TXT_KEY_AND")
