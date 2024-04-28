@@ -33264,12 +33264,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=66
+	BonusType=BONUS_AMBER
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=74,y=67
-	BonusType=BONUS_AMBER
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -33751,13 +33752,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=66
-	BonusType=BONUS_AMBER
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=75,y=67
-	BonusType=BONUS_FISH
+	BonusType=BONUS_AMBER
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34198,7 +34198,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=62
-	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -35178,6 +35177,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=62
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -35670,7 +35670,6 @@ BeginPlot
 	x=79,y=60
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
