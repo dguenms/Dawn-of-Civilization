@@ -410,6 +410,7 @@ public:
 	void setPlayable(bool bNewValue);
 	int getBonusExport(int /*BonusTypes*/ iIndex);
 	int getBonusImport(int /*BonusTypes*/ iIndex);
+	void changeBonusImport(int eBonus, int iChange); // Leoreth
 
 	int getImprovementCount(int /*ImprovementTypes*/ iIndex);
 

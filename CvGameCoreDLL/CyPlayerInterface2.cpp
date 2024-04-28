@@ -145,5 +145,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getLandHistory", &CyPlayer::getLandHistory, "int (int iTurn)")
 
 		.def("isExisting", &CyPlayer::isExisting, "bool ()")
+		.def("changeBonusImport", &CyPlayer::changeBonusImport, "void (int eBonus, int iChange)")
 		;
 }

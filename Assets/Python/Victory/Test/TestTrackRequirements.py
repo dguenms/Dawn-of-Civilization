@@ -1547,6 +1547,77 @@ class TestHealthiestTurns(ExtendedTestCase):
 			team(1).setVassal(0, False, False)
 
 
+class TestImportCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = ImportCount(iSilk, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ImportCount(Silk, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ImportCount(Silk, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Silk")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+	
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Imported Silk resources: 0 / 2")
+	
+	def test_less(self):
+		player(self.iPlayer).changeBonusImport(iSilk, 1)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Imported Silk resources: 1 / 2")
+		finally:
+			player(self.iPlayer).changeBonusImport(iSilk, -1)
+	
+	def test_more(self):
+		player(self.iPlayer).changeBonusImport(iSilk, 2)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Imported Silk resources: 4 / 2")
+		finally:
+			player(self.iPlayer).changeBonusImport(iSilk, -2)
+	
+	def test_other_resource(self):
+		player(self.iPlayer).changeBonusImport(iDye, 1)
+		
+		try:
+			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Imported Silk resources: 0 / 2")
+		finally:
+			player(self.iPlayer).changeBonusImport(iDye, -1)
+
+
 class TestPeaceTurns(ExtendedTestCase):
 
 	def setUp(self):
@@ -3117,6 +3188,7 @@ test_cases = [
 	TestGreatGenerals,
 	TestHappiestTurns,
 	TestHealthiestTurns,
+	TestImportCount,
 	TestPeaceTurns,
 	TestPillageCount,
 	TestPiracyGold,

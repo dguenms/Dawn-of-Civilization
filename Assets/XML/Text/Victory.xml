@@ -480,6 +480,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_IMPORT_RESOURCES</Tag>
+		<English>import a cumulative of %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -2126,6 +2134,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_IMPORT_COUNT</Tag>
+		<English>imported %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_NEXT</Tag>
@@ -3256,6 +3272,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT</Tag>
 		<English>one of your Mediterranean ports</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_WORLD_COASTLINES</Tag>
+		<English>the world's coastlines</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

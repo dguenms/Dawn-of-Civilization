@@ -389,6 +389,28 @@ class HealthiestTurns(TrackRequirement):
 		return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
 
 
+class ImportCount(TrackRequirement):
+
+	TYPES = (RESOURCE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_IMPORT_RESOURCES"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_IMPORT_COUNT"
+	
+	def __init__(self, iResource, iRequired, **options):
+		TrackRequirement.__init__(self, iResource, iRequired, **options)
+		
+		self.iResource = iResource
+		
+		self.handle("BeginPlayerTurn", self.accumulate_resources)
+	
+	def accumulate_resources(self, goal, iGameTurn, iPlayer):
+		for iResource in infos.bonuses().where(lambda iResource: self.iResource == iResource):
+			self.accumulate(player(iPlayer).getBonusImport(iResource))
+		
+		goal.check()
+
+
 # First Buddhist URV goal
 class PeaceTurns(TrackRequirement):
 

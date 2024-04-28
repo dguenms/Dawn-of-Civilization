@@ -8,7 +8,7 @@ lHappinessResources = [iResource for iResource in infos.bonuses() if infos.bonus
 lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iNorse and dBirth[iCiv] <= 1050]
 
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
-lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco]
+lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
@@ -111,6 +111,7 @@ CITIES_IN_CANADA = "TXT_KEY_VICTORY_NAME_CITIES_IN_CANADA"
 CITY_IN_CHINA = "TXT_KEY_VICTORY_NAME_CITY_IN_CHINA"
 COLONIAL = "TXT_KEY_VICTORY_NAME_COLONIAL"
 MEDITERRANEAN_PORT = "TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT"
+WORLD_COASTLINES = "TXT_KEY_VICTORY_NAME_WORLD_COASTLINES"
 
 # building descriptors
 SHRINES = "TXT_KEY_VICTORY_NAME_SHRINES"
@@ -567,6 +568,11 @@ dGoals = {
 		GreatGenerals(2, by=1500),
 		BuildingCount(iConfucianCathedral, 1, by=1600),
 		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1700),
+	),
+	iSwahili: (
+		ImportCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 100, by=1300),
+		RevealedPercent(plots.all().sea().where(lambda p: p.getTerrainType() in [iCoast, iArcticCoast]).named(WORLD_COASTLINES), 35, by=1400),
+		TradeRouteCount(25, by=1500),
 	),
 	iPoland: (
 		PopulationCityCount(12, 3, by=1400),
