@@ -107,7 +107,9 @@ class MinorCity(object):
 			
 			founded.setName(self.name, False)
 			founded.setPopulation(self.iPopulation)
-			founded.setCulture(founded.getOwner(), scale(self.iCulture) + iTechEra * scale(100), True)
+			
+			if self.iOwner != iNative:
+				founded.setCulture(founded.getOwner(), scale(self.iCulture) + iTechEra * scale(100), True)
 			
 			self.add_buildings()
 			self.create_units()
