@@ -458,9 +458,8 @@ def getSeparatismModifier(iPlayer, city):
 	if city.hasBuilding(unique_building(iPlayer, iJail)):
 		iModifier -= 1
 	
-	# overseas colonies with Portuguese UP and Colonialism
+	# overseas colonies with Colonialism
 	if city.isColony():
-		if iCiv == iPortugal: iModifier -= 2
 		if civic.iTerritory == iColonialism and bHistorical: iModifier -= 1
 	
 	# cap
