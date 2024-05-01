@@ -120,13 +120,13 @@ class BuildingCount(ThresholdRequirement):
 	def __init__(self, iBuilding, *args, **options):
 		ThresholdRequirement.__init__(self, iBuilding, *args, **options)
 		
-		self.iBuilding = base_building(iBuilding)
+		self.iBuilding = iBuilding
 		
 		self.handle("cityAcquired", self.check)
 		self.handle("buildingBuilt", self.check_building_built)
 	
 	def check_building_built(self, goal, city, iBuilding):
-		if base_building(iBuilding) == self.iBuilding:
+		if base_building(iBuilding) == base_building(self.iBuilding):
 			goal.check()
 	
 	def value(self, iPlayer, iBuilding):
