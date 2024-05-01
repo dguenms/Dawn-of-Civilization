@@ -590,7 +590,7 @@ dGoals = {
 	),
 	iInca: (
 		All(
-			BuildingCount(iTambo, 5),
+			BuildingCount(iTambo, 7),
 			Route(plots.region(rAndes).coastal().named(ANDEAN_COAST), [iRouteRoad]),
 			by=1550,
 		),
