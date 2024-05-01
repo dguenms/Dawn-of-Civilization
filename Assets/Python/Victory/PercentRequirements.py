@@ -178,3 +178,23 @@ class RevealedPercent(PercentRequirement):
 
 	def total(self):
 		return self.area.count()
+
+
+class WaterAreaPercent(PercentRequirement):
+
+	TYPES = (AREA, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_PERCENT"
+	
+	def __init__(self, area, *parameters, **options):
+		PercentRequirement.__init__(self, area, *parameters, **options)
+		
+		self.area = area
+		
+	def value(self, iPlayer, area):
+		return area.water().owner(iPlayer).count()
+	
+	def total(self):
+		return self.area.water().count()

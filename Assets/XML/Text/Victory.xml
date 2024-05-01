@@ -3270,6 +3270,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_INDIAN_TRADE_ROUTE</Tag>
+		<English>the Indian Trade Route</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT</Tag>
 		<English>one of your Mediterranean ports</English>
 		<French></French>
