@@ -7,6 +7,9 @@ lHappinessResources = [iResource for iResource in infos.bonuses() if infos.bonus
 # first Norse goal: control a European core in 1050 AD
 lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iNorse and dBirth[iCiv] <= 1050]
 
+# first Portuguese goal
+lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rDravida, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]
+
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
 
@@ -110,6 +113,7 @@ CANADIAN_TERRITORY = "TXT_KEY_VICTORY_NAME_CANADIAN_TERRITORY"
 CITIES_IN_CANADA = "TXT_KEY_VICTORY_NAME_CITIES_IN_CANADA"
 CITY_IN_CHINA = "TXT_KEY_VICTORY_NAME_CITY_IN_CHINA"
 COLONIAL = "TXT_KEY_VICTORY_NAME_COLONIAL"
+INDIAN_TRADE_ROUTE = "TXT_KEY_VICTORY_NAME_INDIAN_TRADE_ROUTE"
 MEDITERRANEAN_PORT = "TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT"
 WORLD_COASTLINES = "TXT_KEY_VICTORY_NAME_WORLD_COASTLINES"
 
@@ -580,13 +584,9 @@ dGoals = {
 		BuildingCount(sum(iOrthodoxCathedral, iCatholicCathedral, iProtestantCathedral).named(CHRISTIAN_CATHEDRALS), 3, by=1600),
 	),
 	iPortugal: (
-		OpenBorderCount(14, by=1550),
+		WaterAreaPercent(plots.regions(*lIndianTradeRegions).expand(1).regions(rAtlanticOcean, rIndianOcean, rArabianSea).named(INDIAN_TRADE_ROUTE), 35, by=1550),
+		OpenBorderCount(14, by=1600),
 		ResourceCount(sum(lColonialResources).named(TRADING_COMPANY_RESOURCES), 12, by=1650),
-		CityCount(sum(
-			plots.region(rBrazil).named(BRAZIL),
-			plots.regions(*lAfrica).named(AFRICA),
-			plots.regions(*lAsia).named(ASIA),
-		), 15, by=1700),
 	),
 	iInca: (
 		All(

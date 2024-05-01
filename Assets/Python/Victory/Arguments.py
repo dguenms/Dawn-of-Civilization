@@ -241,6 +241,9 @@ class AreaArgument(NamedArgument):
 	def sea(self, *args, **kwargs):
 		return self.call("sea", args, kwargs)
 	
+	def expand(self, *args, **kwargs):
+		return self.call("expand", args, kwargs)
+	
 	def core(self, iCiv):
 		return self.call_for_civ("core", iCiv)
 	

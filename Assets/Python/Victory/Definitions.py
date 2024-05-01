@@ -79,6 +79,7 @@ PowerPercent = GoalDefinition(req.PowerPercent)
 ReligionSpreadPercent = GoalDefinition(req.ReligionSpreadPercent)
 ReligiousVotePercent = GoalDefinition(req.ReligiousVotePercent)
 RevealedPercent = GoalDefinition(req.RevealedPercent)
+WaterAreaPercent = GoalDefinition(req.WaterAreaPercent)
 
 
 ### SIMPLE REQUIREMENTS ###

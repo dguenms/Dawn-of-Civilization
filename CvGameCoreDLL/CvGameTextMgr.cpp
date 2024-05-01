@@ -4691,7 +4691,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		gDLL->getPythonIFace()->callFunction(PYScreensModule, "getVictoryTooltip", victoryTooltipArgs.makeFunctionArgs(), &victoryTooltip);
 
-		if (!pPlot->isWater() && !pPlot->isPeak())
+		if (true)
 		{
 			if (!victoryTooltip.empty())
 			{
