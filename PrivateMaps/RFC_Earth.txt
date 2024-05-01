@@ -27761,7 +27761,6 @@ BeginPlot
 	x=62,y=60
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
