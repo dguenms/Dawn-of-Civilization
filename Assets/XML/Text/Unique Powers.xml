@@ -843,19 +843,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR_TITLE</Tag>
-		<English>The Power of Exploration:</English>
-		<French>Le pouvoir de l'exploration :</French>
-		<German>Die Macht des Kundschaftens:</German>
-		<Italian>Il potere dell'esplorazione:</Italian>
-		<Spanish>El poder de la exploraci&#243;n:</Spanish>
+		<English>The Power of Cartaz:</English>
+		<French>The Power of Cartaz:</French>
+		<German>Die Macht der Cartaz:</German>
+		<Italian>The Power of Cartaz:</Italian>
+		<Spanish>The Power of Cartaz:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR</Tag>
-		<English>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</English>
-		<French>Le commerce transoc&#233;anique est permis avec la Cartographie, et l'instabilit&#233; caus&#233;e par les colonies d'outre-mer est r&#233;duite</French>
-		<German>Ozeanhandel erm&#246;glicht durch Kartographie, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
-		<Italian>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Italian>
-		<Spanish>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Spanish>
+		<English>+1 trade route in overseas colonies until the Industrial era</English>
+		<French>+1 trade route in overseas colonies until the Industrial era</French>
+		<German>+1 Handelsroute in Kolonien vor dem Industriezeitalter</German>
+		<Italian>+1 trade route in overseas colonies until the Industrial era</Italian>
+		<Spanish>+1 trade route in overseas colonies until the Industrial era</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>

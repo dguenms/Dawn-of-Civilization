@@ -14123,6 +14123,12 @@ int CvCity::getTradeRoutes() const
 	}
 	iTradeRoutes += getExtraTradeRoutes();
 
+	// Portuguese UP: +1 trade routes in colonies before the Industrial era
+	if (getCivilizationType() == PORTUGAL && isColony() && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_RENAISSANCE)
+	{
+		iTradeRoutes += 1;
+	}
+
 	return std::min(iTradeRoutes, GC.getDefineINT("MAX_TRADE_ROUTES"));
 }
 

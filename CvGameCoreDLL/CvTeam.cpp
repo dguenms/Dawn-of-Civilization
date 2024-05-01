@@ -5320,12 +5320,6 @@ int CvTeam::getTerrainTradeCount(TerrainTypes eIndex) const
 
 bool CvTeam::isTerrainTrade(TerrainTypes eIndex) const
 {
-	// Leoreth: Portuguese UP: Ocean trade with Cartography
-	if (eIndex == TERRAIN_OCEAN)
-	{
-		if (GET_PLAYER(getLeaderID()).getCivilizationType() == PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
-	}
-
 	return (getTerrainTradeCount(eIndex) > 0);
 }
 
