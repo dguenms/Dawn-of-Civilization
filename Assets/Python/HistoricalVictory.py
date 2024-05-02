@@ -603,7 +603,7 @@ dGoals = {
 		AreaPercent(plots.all().adjacent_region(rMediterraneanSea).named(MEDITERRANEAN), 65, by=1930),
 	),
 	iMongols: (
-		Control(plots.regions(rNorthChina, rSouthChina).named(CHINA), at=1300),
+		Control(plots.regions(rNorthChina, rSouthChina).named(CHINA), at=1350),
 		RazeCount(7),
 		LandPercent(12, by=1500),
 	),
