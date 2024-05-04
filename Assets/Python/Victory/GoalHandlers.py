@@ -231,12 +231,12 @@ class EventHandlerRegistry(object):
 		
 		return religionFounded
 	
-	def sacrificeHappiness(self, goal, applicable, func):
-		def sacrificeHappiness((iPlayer, city)):
+	def sacrificeGoldenAge(self, goal, applicable, func):
+		def sacrificeGoldenAge((iPlayer, city)):
 			if applicable(goal, iPlayer):
 				func(goal)
 		
-		return sacrificeHappiness
+		return sacrificeGoldenAge
 	
 	def techAcquired(self, goal, applicable, func):
 		def techAcquired((iTech, iTeam, iPlayer, bAnnounce)):

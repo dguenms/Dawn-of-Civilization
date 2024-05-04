@@ -2436,7 +2436,7 @@ class TestResourceTradeGold(ExtendedTestCase):
 class TestSacrificeHappiness(ExtendedTestCase):
 
 	def setUp(self):
-		self.requirement = SacrificeHappiness(2).create()
+		self.requirement = SacrificeGoldenAges(2).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -2445,13 +2445,13 @@ class TestSacrificeHappiness(ExtendedTestCase):
 		self.requirement.deregister_handlers()
 	
 	def test_str(self):
-		self.assertEqual(str(self.requirement), "SacrificeHappiness(2)")
+		self.assertEqual(str(self.requirement), "SacrificeGoldenAges(2)")
 	
 	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "SacrificeHappiness(2)")
+		self.assertEqual(repr(self.requirement), "SacrificeGoldenAges(2)")
 	
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "two slaves")
+		self.assertEqual(self.requirement.description(), "two golden ages")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {})
@@ -2463,11 +2463,11 @@ class TestSacrificeHappiness(ExtendedTestCase):
 		city = TestCities.one()
 		
 		try:
-			events.fireEvent("sacrificeHappiness", 0, city)
+			events.fireEvent("sacrificeGoldenAge", 0, city)
 			
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Slaves sacrificed: 1 / 2")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Golden ages from sacrificing slaves: 1 / 2")
 		
 			self.assertEqual(self.goal.checked, True)
 		finally:
@@ -2478,11 +2478,11 @@ class TestSacrificeHappiness(ExtendedTestCase):
 		
 		try:
 			for _ in range(3):
-				events.fireEvent("sacrificeHappiness", 0, city)
+				events.fireEvent("sacrificeGoldenAge", 0, city)
 			
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Slaves sacrificed: 3 / 2")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Golden ages from sacrificing slaves: 3 / 2")
 
 			self.assertEqual(self.goal.checked, True)
 		finally:
@@ -2493,11 +2493,11 @@ class TestSacrificeHappiness(ExtendedTestCase):
 		
 		try:
 			for _ in range(2):
-				events.fireEvent("sacrificeHappiness", 1, city)
+				events.fireEvent("sacrificeGoldenAge", 1, city)
 			
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Slaves sacrificed: 0 / 2")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Golden ages from sacrificing slaves: 0 / 2")
 			
 			self.assertEqual(self.goal.checked, False)
 		finally:
@@ -2513,11 +2513,11 @@ class TestSacrificeHappiness(ExtendedTestCase):
 		
 		try:
 			for _ in range(2):
-				events.fireEvent("sacrificeHappiness", 1, city)
+				events.fireEvent("sacrificeGoldenAge", 1, city)
 			
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Slaves sacrificed: 2 / 2")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Golden ages from sacrificing slaves: 2 / 2")
 			
 			self.assertEqual(self.goal.checked, True)
 		finally:

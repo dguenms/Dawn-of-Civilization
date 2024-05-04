@@ -468,8 +468,8 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onReligionFounded((iBuddhism, self.iPlayer))
 		self.assertEqual(self.argument, (self.goal, iBuddhism))
 	
-	def test_sacrifice_happiness(self):
-		onSacrificeHappiness = self.get("sacrificeHappiness", self.increment)
+	def test_sacrifice_golden_age(self):
+		onSacrificeHappiness = self.get("sacrificeGoldenAge", self.increment)
 		
 		our_city, their_city = cities = TestCities.owners(0, 1)
 		

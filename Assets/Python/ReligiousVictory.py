@@ -107,7 +107,7 @@ dAdditionalPaganGoal = {
 	iShinto: CitySpecialistCount(capital().named(CAPITAL), iSpecialistGreatSpy, 3),
 	iTengri: ResourceCount(iHorse, 8),
 	iTeotlMaya: CombatFood(50),
-	iTeotlAztec: SacrificeHappiness(10),
+	iTeotlAztec: SacrificeGoldenAges(10),
 	iVedism: CelebrateTurns(100),
 	iYoruba: ResourceCount((iIvory, 8), (iGems, 6)),
 }

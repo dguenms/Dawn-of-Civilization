@@ -13,6 +13,9 @@ lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rDravida, rHornOfAf
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
 
+# third Aztec goal: control a European core by 1750 AD
+lAztecTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope]]
+
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
 
@@ -144,6 +147,7 @@ OR = "TXT_KEY_OR"
 
 # goal descriptors
 FIRST_NORSE_GOAL = "TXT_KEY_VICTORY_GOAL_NORSE_1"
+THIRD_AZTEC_GOAL = "TXT_KEY_VICTORY_GOAL_AZTECS_3"
 
 
 dGoals = {
@@ -609,8 +613,8 @@ dGoals = {
 	),
 	iAztecs: (
 		BestPopulationCity(start(iAztecs).named(TENOCHTITLAN), at=1520),
-		BuildingCount((iPaganTemple, 6), (iCalmecac, 6), by=1650),
-		EnslaveCount(20, excluding=group(iCivGroupAmerica).named(EUROPEAN)),
+		SacrificeGoldenAges(16, by=1650),
+		Control(required=1, by=1750, desc_key=THIRD_AZTEC_GOAL, *lAztecTargets)
 	),
 	iMughals: (
 		BuildingCount(iIslamicCathedral, 3, by=1500),
