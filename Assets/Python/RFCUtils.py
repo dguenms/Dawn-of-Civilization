@@ -640,6 +640,15 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	plot.setRevealed(team(iPlayer).getID(), True, False, -1)
 	
 	return flippedCity
+
+
+def updateStartingCulture():
+	capital_city = capital(active())
+	if not capital_city:
+		return
+	
+	for plot in plots.surrounding(capital_city, radius=capital_city.getCultureLevel()):
+		plot.updateCulture()
 		
 # used: Stability
 def isGreatBuilding(iBuilding):
