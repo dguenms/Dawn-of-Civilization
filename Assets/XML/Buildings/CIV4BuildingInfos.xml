@@ -10316,7 +10316,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_FLOATING_GARDENS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_FLOATING_GARDENS</MovieDefineTag>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
+			<PrereqTech>TECH_ETHICS</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
