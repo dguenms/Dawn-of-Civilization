@@ -21007,10 +21007,6 @@
 					<UnitAIType>UNITAI_WORKER</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_ENGINEER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
 			</UnitAIs>
 			<Builds>
 				<Build>
@@ -21044,7 +21040,6 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<iWorkRate>100</iWorkRate>
-			<iBaseHurry>30</iBaseHurry>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
