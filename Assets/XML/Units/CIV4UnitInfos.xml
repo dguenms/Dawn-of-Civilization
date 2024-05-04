@@ -2926,6 +2926,10 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_ALLOYS</PrereqTech>
+			<PrereqBonuses>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_OBSIDIAN</BonusType>
+			</PrereqBonuses>
 			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -2955,6 +2959,7 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iWithdrawalProb>25</iWithdrawalProb>
 			<iCityAttack>10</iCityAttack>
 			<iConscription>1</iConscription>
 			<iCultureGarrison>5</iCultureGarrison>
