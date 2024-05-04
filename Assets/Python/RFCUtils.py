@@ -1137,3 +1137,12 @@ def isDefensiveBuilding(iBuilding):
 
 	building = infos.building(iBuilding)
 	return building.getDefenseModifier() > 0 or building.getBombardDefenseModifier() > 0 or building.getUnignorableBombardDefenseModifier() > 0
+
+
+# used: Collapse
+def removeBuildings(city):
+	for iBuilding in infos.buildings():
+		if city.isHasRealBuilding(iBuilding):
+			if not isWonder(iBuilding):
+				if infos.building(iBuilding).getFreeStartEra() < 0 or infos.building(iBuilding).getFreeStartEra() > player(city).getCurrentEra():
+					city.setHasRealBuilding(iBuilding, False)
