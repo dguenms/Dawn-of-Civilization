@@ -99,11 +99,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT</Tag>
-		<English>Military units can enslave defeated enemy units, can sacrifice slaves to increase city happiness</English>
-		<French>Les unit&#233;s militaires peuvent asservir les unit&#233;s vaincues, et il est possible de sacrifier des esclaves pour augmenter le bonheur des villes</French>
-		<German>Versklavung besiegter feindlicher Einheiten durch Milit&#228;reinheiten, can Sklaven opfern, um Zufriedenheit in St&#228;dten zu erh&#246;hen</German>
-		<Italian>Le unit&#224; militari possono schiavizzare le unit&#224; nemiche sconfitte</Italian>
-		<Spanish>Las unidades militares pueden esclavizar a las unidades enemigas derrotadas</Spanish>
+		<English>Military units can enslave defeated enemy units, can sacrifice slaves to trigger a short golden age</English>
+		<French>Military units can enslave defeated enemy units, can sacrifice slaves to trigger a short golden age</French>
+		<German>Versklavung besiegter feindlicher Einheiten durch Milit&#228;reinheiten, can Sklaven opfern, um ein kurzes goldenes Zeitalter zu starten</German>
+		<Italian>Military units can enslave defeated enemy units, can sacrifice slaves to trigger a short golden age</Italian>
+		<Spanish>Military units can enslave defeated enemy units, can sacrifice slaves to trigger a short golden age</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB_TITLE</Tag>
