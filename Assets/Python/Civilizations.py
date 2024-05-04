@@ -480,9 +480,10 @@ lCivilizations = [
 	),
 	Civilization(
 		iAztecs,
-		iGold=600,
-		lCivics=[iDespotism, iCitizenship, iSlavery, iRedistribution, iDeification],
-		techs=techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iAlloys, iRiding, iShipbuilding)
+		iGold=200,
+		iAdvancedStartPoints=30,
+		lCivics=[iMonarchy, iCitizenship, iSlavery, iRedistribution, iDeification],
+		techs=techs.column(4).including(iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iRiding, iShipbuilding, iCement, iNavigation)
 	),
 	Civilization(
 		iMughals,
@@ -944,10 +945,11 @@ dStartingUnits = CivDict({
 		iSiege: 4,
 	},
 	iAztecs: {
-		iSettle: 2,
+		iSettle: 1,
 		iWork: 2,
 		iAttack: 4,
 		iDefend: 2,
+		iWorkerSea: 2,
 	},
 	iMughals: {
 		iSettle: 3,
