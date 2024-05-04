@@ -402,7 +402,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_SACRIFICE</Tag>
-		<English>sacrifice %s1</English>
+		<English>start %s1 by sacrificing slaves</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1292,8 +1292,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_DESC_SACRIFICE_HAPPINESS</Tag>
-		<English>%s1 slaves</English>
+		<Tag>TXT_KEY_VICTORY_DESC_SACRIFICE_GOLDEN_AGES</Tag>
+		<English>%s1 golden ages</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2063,8 +2063,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_PROGR_SACRIFICE_HAPPINESS</Tag>
-		<English>Slaves sacrificed</English>
+		<Tag>TXT_KEY_VICTORY_PROGR_SACRIFICE_GOLDEN_AGES</Tag>
+		<English>Golden ages from sacrificing slaves</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3439,6 +3439,14 @@
 
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_NORSE_1</Tag>
+		<English>Control the core of any European civilization</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_AZTECS_3</Tag>
 		<English>Control the core of any European civilization</English>
 		<French></French>
 		<German></German>

@@ -334,7 +334,7 @@ def checkMinorTechs():
 	iMinor = players.civs(iIndependent, iIndependent2, iNative).existing().periodic(8)
 	if iMinor:
 		updateMinorTechs(iMinor, barbarian())
-
+	
 
 class Birth(object):
 
@@ -613,7 +613,7 @@ class Birth(object):
 		
 		for plot in plots.surrounding(self.location):
 			convertPlotCulture(plot, self.iPlayer, 100, bOwner=True)
-			
+		
 	def resetPlague(self):
 		self.data.iPlagueCountdown = -10
 		clearPlague(self.iPlayer)

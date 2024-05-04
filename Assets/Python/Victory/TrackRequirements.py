@@ -597,18 +597,18 @@ class ResourceTradeGold(TrackRequirement):
 
 
 # Third Aztec Teotl URV goal
-class SacrificeHappiness(TrackRequirement):
+class SacrificeGoldenAges(TrackRequirement):
 
 	TYPES = (COUNT,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SACRIFICE"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_SACRIFICE_HAPPINESS"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SACRIFICE_HAPPINESS"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SACRIFICE_GOLDEN_AGES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SACRIFICE_GOLDEN_AGES"
 	
 	def __init__(self, *parameters, **options):
 		TrackRequirement.__init__(self, *parameters, **options)
 		
-		self.incremented("sacrificeHappiness")
+		self.incremented("sacrificeGoldenAge")
 
 
 # First Russian UHV goal
