@@ -712,6 +712,12 @@ class Birth(object):
 			if player(iRome).isExisting():
 				return False
 		
+		# Aztecs require Toltecs to be dead
+		if self.iCiv == iAztecs:
+			iRequiredStability = player(iToltecs).isHuman() and iStabilityUnstable or iStabilityShaky
+			if player(iToltecs).isExisting() and stability(iToltecs) >= iRequiredStability:
+				return False
+		
 		# Ottomans require that the Turks managed to conquer at least one city in the Near East
 		if self.iCiv == iOttomans:
 			if cities.birth(iOttomans).none(CyCity.isHuman) and cities.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).none(lambda city: iTurks in [city.getCivilizationType(), city.getPreviousCiv()]):
