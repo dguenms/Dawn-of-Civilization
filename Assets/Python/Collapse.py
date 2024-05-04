@@ -81,8 +81,8 @@ def downgradeCottages(iPlayer):
 		elif iImprovement == iCottage: 
 			plot.setImprovementType(-1)
 		
-		# Destroy all Harappan improvements
-		if civ(iPlayer) == iHarappa and not player(iPlayer).isHuman():
+		# Destroy all Harappan and Toltec improvements
+		if civ(iPlayer) in [iHarappa, iToltecs] and not player(iPlayer).isHuman():
 			if iImprovement >= 0:
 				plot.setImprovementType(-1)
 				

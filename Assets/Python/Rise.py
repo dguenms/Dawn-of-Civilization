@@ -62,12 +62,14 @@ dClearedForBirth = {
 	iIndia: iHarappa,
 	iByzantium: iGreece,
 	iItaly: iRome,
+	iAztecs: iToltecs,
 	iRussia: iRus,
 	iMexico: iAztecs,
 }
 
 lAlwaysClear = [
 	iHarappa,
+	iToltecs,
 ]
 
 lBirthWars = [
