@@ -437,7 +437,7 @@ class CvGameUtils:
 	
 		# Leoreth: Aztec UP: sacrifice slaves
 		if iData1 == 10000:
-			return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (turns(5), turns(5)))
+			return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (turns(1), turns(10)))
 						
 		# Leoreth: Byzantine UP: bribe button
 		if iData1 == 10001:

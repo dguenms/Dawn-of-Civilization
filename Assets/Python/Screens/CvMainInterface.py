@@ -2507,10 +2507,9 @@ class CvMainInterface:
 						
 					# Leoreth: Aztec UP: sacrifice slaves
 					if pUnit.getUnitType() == iAztecSlave and civ(pUnit) == iAztecs:
-						plot = plot_(pUnit)
-						if plot.isCity():
-							city = plot.getPlotCity()
-							if civ(city) == iAztecs and not city.isWeLoveTheKingDay():
+						city = city_(pUnit)
+						if city:
+							if civ(city) == iAztecs and city.isCapital():
 								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(unique_building(pUnit.getOwner(), iPaganTemple)).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
 								screen.show("BottomButtonContainer")
 								iCount = iCount + 1
@@ -5730,11 +5729,13 @@ class CvMainInterface:
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()
 			city = gc.getMap().plot(iX, iY).getPlotCity()
-			city.changeHappinessTimer(turns(5))
-			city.setWeLoveTheKingDay(True)
+			
+			player(city).changeGoldenAgeTurns(turns(1))
+			city.changeHurryAngerTimer(turns(10))
+			
 			self.pPushedButtonUnit.kill(False, city.getOwner())
 			
-			events.fireEvent("sacrificeHappiness", city.getOwner(), city)
+			events.fireEvent("sacrificeGoldenAge", city.getOwner(), city)
 		
 		# Leoreth: start Byzantine UP
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:

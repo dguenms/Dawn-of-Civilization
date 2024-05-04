@@ -119,11 +119,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifier[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] pendant %d1 tours.[NEWLINE]Cet ordre sacrifie l'esclave, causant des c&#233;l&#233;brations et du bonheur dans la ville pendant %d2 tours. L'esclave sera d&#233;truit.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]Starts a [ICON_GOLDENAGE] Golden Age for %d1 turns[NEWLINE]+1 [ICON_UNHAPPY] for %d2 turns[NEWLINE]This will consume the slave.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]Starts a [ICON_GOLDENAGE] Golden Age for %d1 turns[NEWLINE]+1 [ICON_UNHAPPY] for %d2 turns[NEWLINE]This will consume the slave.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]Starts a [ICON_GOLDENAGE] Golden Age for %d1 turns[NEWLINE]+1 [ICON_UNHAPPY] for %d2 turns[NEWLINE]This will consume the slave.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]Starts a [ICON_GOLDENAGE] Golden Age for %d1 turns[NEWLINE]+1 [ICON_UNHAPPY] for %d2 turns[NEWLINE]This will consume the slave.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]Starts a [ICON_GOLDENAGE] Golden Age for %d1 turns[NEWLINE]+1 [ICON_UNHAPPY] for %d2 turns[NEWLINE]This will consume the slave.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE</Tag>
