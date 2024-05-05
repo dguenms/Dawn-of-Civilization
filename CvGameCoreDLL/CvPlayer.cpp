@@ -12329,12 +12329,6 @@ void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
 	{
 		GET_TEAM(getTeam()).changeTerrainTradeCount(TERRAIN_DESERT, iChange);
 	}
-
-	// Thai UP: +1 commerce per excess happiness
-	if (eCivilization == THAILAND)
-	{
-		changeHappinessExtraYield(YIELD_COMMERCE, iChange);
-	}
 }
 
 

@@ -28,6 +28,10 @@ def canDecay(iGameTurn, iPlayer):
 	if team(iPlayer).isHasTech(iElectricity):
 		return False
 	
+	# Thai UP: can never lose contact
+	if civ(iPlayer) == iThailand:
+		return False
+	
 	return True
 	
 	
