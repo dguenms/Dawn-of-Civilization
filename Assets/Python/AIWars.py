@@ -101,7 +101,6 @@ lConquests = [
 	tConquestGreeceMesopotamia, 
 	tConquestGreeceEgypt, 
 	tConquestGreecePersia, 
-	tConquestCholaSumatra, 
 	tConquestSpainMoors, 
 	tConquestTurksPersia, 
 	tConquestTurksAnatolia, 
@@ -215,9 +214,6 @@ def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPL
 	if iCiv == iSpain and player(iPreferredTarget).isHuman():
 		return
 	
-	if iCiv == iDravidia and civ() == iJava:
-		return
-	
 	iStartTurn = year(iYear) + turns(data.iSeed % 10 - 5)
 	
 	if turn() == iStartTurn - turns(5):
@@ -310,9 +306,6 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if iCiv == iGreece:
 			makeUnit(iPlayer, iCompanion, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 		
-		if iCiv == iDravidia:
-			makeUnit(iPlayer, iWarElephant, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-			
 		if iCiv in [iSpain, iEngland]:
 			createRoleUnit(iPlayer, tPlot, iShockCity, 2*iExtra)
 			
