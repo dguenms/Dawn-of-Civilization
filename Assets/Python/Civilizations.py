@@ -505,7 +505,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=200,
 		iStateReligion=iProtestantism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy],
 		techs=techs.column(8).including(iCompanies)
 	),
 	Civilization(
@@ -970,7 +970,7 @@ dStartingUnits = CivDict({
 	iSweden: {
 		iSettle: 2,
 		iWork: 3,
-		iCounter: 2,
+		iCounter: 3,
 		iDefend: 2,
 		iAttack: 2,
 		iMissionary: 2,
