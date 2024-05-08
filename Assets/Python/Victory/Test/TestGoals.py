@@ -671,12 +671,12 @@ class TestGoal(ExtendedTestCase):
 		self.assertEqual(self.goal.area_name((10, 10)), "")
 	
 	def test_areas(self):
-		goal = Goal([Control(AreaArgumentFactory().rectangle((20, 20), (30, 30)).named("First Area")).create(), Control(AreaArgumentFactory().rectangle((20, 20), (40, 40)).named("Second Area")).create()], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer)
+		goal = Goal([Control(AreaArgumentFactory().rectangle((30, 30), (32, 32)).named("First Area")).create(), Control(AreaArgumentFactory().rectangle((30, 30), (35, 35)).named("Second Area")).create()], "TXT_KEY_VICTORY_DESC_CONTROL", self.iPlayer)
 		
-		self.assertEqual(goal.areas(), {"First Area": plots.rectangle((20, 20), (30, 30)), "Second Area": plots.rectangle((20, 20), (40, 40))})
-		self.assertEqual(goal.area_name((25, 25)), "Second Area\nFirst Area")
-		self.assertEqual(goal.area_name((35, 35)), "Second Area")
-		self.assertEqual(goal.area_name((45, 45)), "")
+		self.assertEqual(goal.areas(), {"First Area": plots.rectangle((30, 30), (32, 32)), "Second Area": plots.rectangle((30, 30), (35, 35))})
+		self.assertEqual(goal.area_name((31, 31)), "Second Area\nFirst Area")
+		self.assertEqual(goal.area_name((33, 33)), "Second Area")
+		self.assertEqual(goal.area_name((40, 40)), "")
 	
 	def test_progress_not_fulfilled(self):
 		self.assertEqual(self.goal.progress(), [self.FAILURE + "Granaries: 0 / 3"])

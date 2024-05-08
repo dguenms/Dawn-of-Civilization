@@ -112,6 +112,7 @@ WEST_AFRICA = "TXT_KEY_VICTORY_NAME_WEST_AFRICA"
 
 # area descriptors
 ANDEAN_COAST = "TXT_KEY_VICTORY_NAME_ANDEAN_COAST"
+BALTIC_SEA_REGION = "TXT_KEY_VICTORY_NAME_BALTIC_SEA_REGION"
 CANADIAN_TERRITORY = "TXT_KEY_VICTORY_NAME_CANADIAN_TERRITORY"
 CITIES_IN_CANADA = "TXT_KEY_VICTORY_NAME_CITIES_IN_CANADA"
 CITY_IN_CHINA = "TXT_KEY_VICTORY_NAME_CITY_IN_CHINA"
@@ -621,6 +622,16 @@ dGoals = {
 		Wonders(iRedFort, iShalimarGardens, iTajMahal, by=1660),
 		CultureAmount(50000, at=1750),
 	),
+	iThailand: (
+		OpenBorderCount(10, at=1650),
+		BestPopulationCity(start(iThailand).named(AYUTTHAYA), at=1700),
+		AllowOnly(plots.regions(rDravida, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
+	),
+	iSweden: (
+		CultureCover(plots.all().adjacent_region(rBalticSea).land().named(BALTIC_SEA_REGION), by=1650),
+		StateReligionCount(group(iCivGroupEurope).named(EUROPEAN), iProtestantism, 6, by=1700),
+		HappiestTurns(50, by=1980),
+	),
 	iRussia: (
 		All(
 			SettledCities(7, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
@@ -649,11 +660,6 @@ dGoals = {
 			by=1700,
 		),
 		MoreCulture(group(iCivGroupEurope).named(ALL_EUROPEAN), at=1800),
-	),
-	iThailand: (
-		OpenBorderCount(10, at=1650),
-		BestPopulationCity(start(iThailand).named(AYUTTHAYA), at=1700),
-		AllowOnly(plots.regions(rDravida, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
 	),
 	iCongo: (
 		ReligiousVotePercent(15, by=1650),

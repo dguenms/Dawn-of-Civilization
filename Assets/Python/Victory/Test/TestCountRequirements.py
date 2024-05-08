@@ -2735,6 +2735,90 @@ class TestTerrainCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestStateReligionCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = StateReligionCount(CivsArgument(iEgypt, iBabylonia, iHarappa).named("area"), iZoroastrianism, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "StateReligionCount(area, Zoroastrianism, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "StateReligionCount(area, Zoroastrianism, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "there are two area civilizations with Zoroastrian state religion")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Area civilizations with Zoroastrian state religion: 0 / 2")
+	
+	def test_fewer(self):
+		player(iEgypt).setLastStateReligion(iZoroastrianism)
+		
+		cities = TestCities.owners(iEgypt, iBabylonia, iHarappa)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Area civilizations with Zoroastrian state religion: 1 / 2")
+		finally:
+			player(iEgypt).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_more(self):
+		lCivs = [iEgypt, iBabylonia, iHarappa]
+		
+		for iCiv in lCivs:
+			player(iCiv).setLastStateReligion(iZoroastrianism)
+		
+		cities = TestCities.owners(*lCivs)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Area civilizations with Zoroastrian state religion: 3 / 2")
+		finally:
+			for iCiv in lCivs:
+				player(iCiv).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_other_civilization(self):
+		lCivs = [iEgypt, iAssyria]
+		
+		for iCiv in lCivs:
+			player(iCiv).setLastStateReligion(iZoroastrianism)
+		
+		cities = TestCities.owners(*lCivs)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Area civilizations with Zoroastrian state religion: 1 / 2")
+		finally:
+			for iCiv in lCivs:
+				player(iCiv).setLastStateReligion(-1)
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestTradeRouteCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -3519,6 +3603,7 @@ test_cases = [
 	TestReligionPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
+	TestStateReligionCount,
 	TestTerrainCount,
 	TestTradeRouteCount,
 	TestUnitCombatCount,
