@@ -1363,6 +1363,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_STATE_RELIGION_COUNT</Tag>
+		<English>there are %s3 %s1 civilizations with %s2 state religion</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -2194,6 +2202,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGRESS_MISSING_CITY</Tag>
 		<English>No %s1 city</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_STATE_RELIGION_COUNT</Tag>
+		<English>%s1 civilizations with %s2 state religion</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3232,6 +3248,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ANDEAN_COAST</Tag>
 		<English>the Andean Coast</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BALTIC_SEA_REGION</Tag>
+		<English>the Baltic Sea Region</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

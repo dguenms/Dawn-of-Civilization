@@ -617,6 +617,18 @@ class SpecialistCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, SPECIALIST.format(self.iSpecialist, bPlural=True)), self.progress_value(evaluator))
 
 
+class StateReligionCount(ThresholdRequirement):
+
+	TYPES = (CIVS, RELIGION_ADJECTIVE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_MAKE_SURE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_STATE_RELIGION_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_STATE_RELIGION_COUNT"
+	
+	def value(self, iPlayer, lCivs, iReligion):
+		return players.major().existing().civs(*lCivs).religion(iReligion).count()
+
+
 # Third Atua URV goal
 class TerrainCount(ThresholdRequirement):
 

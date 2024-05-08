@@ -353,7 +353,8 @@ class Goal(Describable):
 		return self._areas
 		
 	def area_name(self, tile):
-		return "\n".join(capitalize(name) for name, area in self.areas().items() if tile in area)
+		plot = plot_(tile)
+		return "\n".join(capitalize(name) for name, area in self.areas().items() if plot in area and not plot.isPeak() and (not plot.isWater() or not area.land()))
 	
 	def success_string(self):
 		success_string = text("TXT_KEY_VICTORY_GOAL_SUCCESS_STRING")
