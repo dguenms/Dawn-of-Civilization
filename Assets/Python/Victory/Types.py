@@ -308,7 +308,7 @@ class SpecialistType(InfoType):
 		InfoType.__init__(self, name, infos.specialist)
 	
 	def format_great_specialist_short(self, iSpecialist, **options):
-		return self.format_func(iSpecialist, **options).split(" ")[1]
+		return " ".join(self.format_func(iSpecialist, **options).split(" ")[1:])
 	
 	def format(self, argument, **options):
 		if isinstance(argument, Aggregate) and not argument.name():
