@@ -2587,14 +2587,6 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_BAGHDAD</Tag>
-		<English>Baghdad</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_BERLIN</Tag>
 		<English>Berlin</English>
 		<French></French>
@@ -2605,14 +2597,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_BUENOS_AIRES</Tag>
 		<English>Buenos Aires</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_CAIRO</Tag>
-		<English>Cairo</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2645,14 +2629,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_LHASA</Tag>
 		<English>Lhasa</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_MECCA</Tag>
-		<English>Mecca</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2845,14 +2821,6 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_BLACK_SEA</Tag>
-		<English>the Black Sea coast</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_BRITAIN</Tag>
 		<English>Britain</English>
 		<French></French>
@@ -2903,14 +2871,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_EASTER_ISLAND</Tag>
 		<English>Easter Island</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NAME_EASTERN_MEDITERRANEAN</Tag>
-		<English>the Eastern Mediterranean coast</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3151,6 +3111,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_PHILIPPINES</Tag>
 		<English>the Philippines</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_PONTIC_STEPPE</Tag>
+		<English>the Pontic Steppe</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

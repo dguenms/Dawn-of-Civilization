@@ -28,15 +28,12 @@ AMSTERDAM = "TXT_KEY_VICTORY_NAME_AMSTERDAM"
 ANGKOR = "TXT_KEY_VICTORY_NAME_ANGKOR"
 AYUTTHAYA = "TXT_KEY_VICTORY_NAME_AYUTTHAYA"
 BABYLON = "TXT_KEY_VICTORY_NAME_BABYLON"
-BAGHDAD = "TXT_KEY_VICTORY_NAME_BAGHDAD"
 BERLIN = "TXT_KEY_VICTORY_NAME_BERLIN"
 BUENOS_AIRES = "TXT_KEY_VICTORY_NAME_BUENOS_AIRES"
-CAIRO = "TXT_KEY_VICTORY_NAME_CAIRO"
 CARTHAGE = "TXT_KEY_VICTORY_NAME_CARTHAGE"
 CONSTANTINOPLE = "TXT_KEY_VICTORY_NAME_CONSTANTINOPLE"
 CORDOBA = "TXT_KEY_VICTORY_NAME_CORDOBA"
 LHASA = "TXT_KEY_VICTORY_NAME_LHASA"
-MECCA = "TXT_KEY_VICTORY_NAME_MECCA"
 MEXICO_CITY = "TXT_KEY_VICTORY_NAME_MEXICO_CITY"
 MOSCOW = "TXT_KEY_VICTORY_NAME_MOSCOW"
 PARIS = "TXT_KEY_VICTORY_NAME_PARIS"
@@ -62,7 +59,6 @@ AMERICA = "TXT_KEY_VICTORY_NAME_AMERICA"
 ANATOLIA = "TXT_KEY_VICTORY_NAME_ANATOLIA"
 ASIA = "TXT_KEY_VICTORY_NAME_ASIA"
 BALKANS = "TXT_KEY_VICTORY_NAME_BALKANS"
-BLACK_SEA = "TXT_KEY_VICTORY_NAME_BLACK_SEA"
 BRAZIL = "TXT_KEY_VICTORY_NAME_BRAZIL"
 BRITAIN = "TXT_KEY_VICTORY_NAME_BRITAIN"
 CARIBBEAN = "TXT_KEY_VICTORY_NAME_CARIBBEAN"
@@ -70,7 +66,6 @@ CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
-EASTERN_MEDITERRANEAN = "TXT_KEY_VICTORY_NAME_EASTERN_MEDITERRANEAN"
 EGYPT = "TXT_KEY_VICTORY_NAME_EGYPT"
 EUROPE = "TXT_KEY_VICTORY_NAME_EUROPE"
 GAUL = "TXT_KEY_VICTORY_NAME_GAUL"
@@ -101,6 +96,7 @@ PANNONIA = "TXT_KEY_VICTORY_NAME_PANNONIA"
 PERSIA = "TXT_KEY_VICTORY_NAME_PERSIA"
 PERU = "TXT_KEY_VICTORY_NAME_PERU"
 PHILIPPINES = "TXT_KEY_VICTORY_NAME_PHILIPPINES"
+PONTIC_STEPPE = "TXT_KEY_VICTORY_NAME_PONTIC_STEPPE"
 PUNJAB = "TXT_KEY_VICTORY_NAME_PUNJAB"
 SCANDINAVIA = "TXT_KEY_VICTORY_NAME_SCANDINAVIA"
 SIBERIA = "TXT_KEY_VICTORY_NAME_SIBERIA"
@@ -656,19 +652,22 @@ dGoals = {
 	iOttomans: (
 		CityBuildingCount(capital().named(CAPITAL), wonders(), 4, at=1550),
 		All(
-			CultureCover(
-				plots.regions(rBalkans, rGreece, rAnatolia, rLevant, rEgypt).adjacent_region(rMediterraneanSea).named(EASTERN_MEDITERRANEAN),
-				plots.all().adjacent_region(rBlackSea).named(BLACK_SEA),
-			),
 			Control(
-				plots.surrounding(tCairo).named(CAIRO),
-				plots.surrounding(tMecca).named(MECCA),
-				plots.surrounding(tBaghdad).named(BAGHDAD),
-				plots.surrounding(tVienna).named(VIENNA),
+				plots.region(rAnatolia),
+				plots.region(rCaucasus).named(CAUCASUS),
+				plots.region(rPonticSteppe).named(PONTIC_STEPPE),
+				plots.region(rLevant).named(LEVANT),
+				plots.region(rMesopotamia),
+				plots.region(rArabia),
+				plots.region(rEgypt),
+				plots.region(rMaghreb).named(MAGHREB),
+				plots.region(rGreece),
+				plots.region(rBalkans).named(BALKANS),
 			),
+			CityCount(plots.region(rCentralEurope), 2),
 			by=1700,
 		),
-		MoreCulture(group(iCivGroupEurope).named(ALL_EUROPEAN), at=1800),
+		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 12, by=1800),
 	),
 	iCongo: (
 		ReligiousVotePercent(15, by=1650),
