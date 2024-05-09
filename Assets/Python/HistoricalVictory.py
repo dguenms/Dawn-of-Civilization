@@ -19,6 +19,9 @@ lAztecTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope]]
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
 
+# first Russian goal: control three Orthodox Cathedrals and three Orthodox wonders by 1550 AD
+lOrthodoxWonders = [iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding) and iOrthodoxy in [infos.building(iBuilding).getPrereqReligion(), infos.building(iBuilding).getOrPrereqReligion()]]
+
 
 # city names
 AMSTERDAM = "TXT_KEY_VICTORY_NAME_AMSTERDAM"
@@ -126,6 +129,7 @@ SHRINES = "TXT_KEY_VICTORY_NAME_SHRINES"
 TEMPLES = "TXT_KEY_VICTORY_NAME_TEMPLES"
 CHRISTIAN_CATHEDRALS = "TXT_KEY_VICTORY_NAME_CHRISTIAN_CATHEDRALS"
 STATE_RELIGION_CATHEDRAL = "TXT_KEY_VICTORY_NAME_STATE_RELIGION_CATHEDRAL"
+ORTHODOX_WONDERS = "TXT_KEY_VICTORY_NAME_ORTHODOX_WONDERS"
 
 # resource descriptors
 DIFFERENT_HAPPINESS_RESOURCES = "TXT_KEY_VICTORY_NAME_DIFFERENT_HAPPINESS_RESOURCES"
@@ -633,15 +637,20 @@ dGoals = {
 		HappiestTurns(50, by=1980),
 	),
 	iRussia: (
+		BuildingCount(
+			(iOrthodoxCathedral, 3), 
+			(sum(*lOrthodoxWonders).named(ORTHODOX_WONDERS), 3), 
+			by=1550
+		),
 		All(
-			SettledCities(7, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
+			SettledCities(10, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
 			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
 		),
-		Projects(iManhattanProject, iLunarLanding),
 		All(
 			Communist(),
 			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True),
-			by=1950,
+			UnitCount((iICBM, 30), (iSatellite, 30)),
+			by=1970,
 		),
 	),
 	iOttomans: (

@@ -3366,6 +3366,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ORTHODOX_WONDERS</Tag>
+		<English>Orthodox wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_DIFFERENT_HAPPINESS_RESOURCES</Tag>
