@@ -675,7 +675,7 @@ dGoals = {
 		EnterEraBefore(iIndustrial, iGlobal),
 	),
 	iIran: (
-		OpenBorderCount(6, civs=group(iCivGroupEurope).named(EUROPEAN), by=1650),
+		OpenBorderCount(10, civs=group(iCivGroupEurope).named(EUROPEAN), by=1650),
 		Control(
 			plots.region(rMesopotamia).named(MESOPOTAMIA),
 			plots.region(rTransoxiana).named(TRANSOXIANA),
