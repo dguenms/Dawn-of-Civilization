@@ -670,7 +670,7 @@ dGoals = {
 		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 12, by=1800),
 	),
 	iCongo: (
-		ReligiousVotePercent(15, by=1650),
+		ReligiousVotePercent(12, by=1650),
 		SlaveTradeGold(1000, by=1800),
 		EnterEraBefore(iIndustrial, iGlobal),
 	),
