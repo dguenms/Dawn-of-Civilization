@@ -10,16 +10,12 @@
 		<Spanish>The Norse</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
-		<English>The Swedish</English>
-		<French>
-			<Text>Les Su&#233;dois</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>The Swedish</German>
-		<Italian>The Swedish</Italian>
-		<Spanish>The Swedish</Spanish>
+		<Tag>TXT_KEY_CIV_DENMARK_DESC</Tag>
+		<English>The Danish</English>
+		<French>The Danish</French>
+		<German>The Danish</German>
+		<Italian>The Danish</Italian>
+		<Spanish>The Danish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>

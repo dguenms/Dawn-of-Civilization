@@ -27,15 +27,6 @@ lCivilizations = [
 		dAttitudes={iMughals: -2}
 	),
 	Civilization(
-		iIran,
-		iLeader=iAbbas,
-		iGold=200,
-		iStateReligion=iIslam,
-		lCivics=[iMonarchy, iVassalage, iSlavery, iMerchantTrade, iTheocracy, iConquest],
-		techs=techs.column(10).including(iCombinedArms, iGeography, iUrbanPlanning, iHorticulture),
-		dAttitudes={iMughals: -2, iOttomans: -4}
-	),
-	Civilization(
 		iDravidia,
 		iLeader=iKrishnaDevaRaya,
 		sLeaderName="TXT_KEY_LEADER_TIPU_SULTAN",
@@ -62,13 +53,12 @@ lCivilizations = [
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
 	),
 	Civilization(
-		iNorse, # Sweden # TODO: this should be Denmark
-		iLeader=iGustav,
+		iNorse, # Denmark
+		iLeader=iChristian,
 		iGold=150,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iCentralism, iManorialism, iRegulatedTrade, iClergy],
-		techs=techs.column(11).without(iEconomics, iHorticulture),
-		dAttitudes={iRussia: -2, iPoland: -2}
+		techs=techs.column(10)
 	),
 	Civilization(
 		iTurks, # Uzbeks
@@ -115,6 +105,22 @@ lCivilizations = [
 		dAttitudes={iFrance: -2, iOttomans: -4}
 	),
 	Civilization(
+		iBurma,
+		iLeader=iBayinnaung,
+		iGold=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iDespotism, iVassalage, iCasteSystem, iRegulatedTrade, iMonasticism, iConquest],
+		techs=techs.column(9).including(iFirearms, iLogistics),
+	),
+	Civilization(
+		iVietnam,
+		iLeader=iLeLoi,
+		iGold=150,
+		iStateReligion=iConfucianism,
+		lCivics=[iMonarchy, iCentralism, iCasteSystem, iRegulatedTrade, iClergy, iTributaries],
+		techs=techs.column(9).including(iFirearms, iAcademia, iHeritage, iStatecraft),
+	),
+	Civilization(
 		iPoland,
 		iLeader=iSobieski,
 		iGold=200,
@@ -139,6 +145,15 @@ lCivilizations = [
 		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iTributaries],
 		techs=techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
 		dAttitudes={iEngland: -2, iIndia: -2, iIran: -2}
+	),
+	Civilization(
+		iSweden,
+		iLeader=iGustav,
+		iGold=250,
+		iStateReligion=iProtestantism,
+		lCivics=[iMonarchy, iCentralism, iManorialism, iRegulatedTrade, iClergy],
+		techs=techs.column(11).without(iEconomics, iHorticulture),
+		dAttitudes={iRussia: -2, iPoland: -2}
 	),
 	Civilization(
 		iRussia,
@@ -173,6 +188,15 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iVassalage, iSlavery, iRegulatedTrade, iClergy],
 		techs=techs.column(8).including(iCartography, iJudiciary),
+	),
+	Civilization(
+		iIran,
+		iLeader=iAbbas,
+		iGold=200,
+		iStateReligion=iIslam,
+		lCivics=[iMonarchy, iVassalage, iSlavery, iMerchantTrade, iTheocracy, iConquest],
+		techs=techs.column(10).including(iCombinedArms, iGeography, iUrbanPlanning, iHorticulture),
+		dAttitudes={iMughals: -2, iOttomans: -4}
 	),
 	Civilization(
 		iNetherlands,
@@ -216,13 +240,6 @@ lTribalVillages = [
 ]
 	
 
-def createStartingUnits():
-	# Japan
-	capital = plots.capital(iJapan)
-	if not player(iJapan).isHuman():
-		createRoleUnit(iJapan, capital, iSettle)
-
-
 def setupGoals(iCiv, goals):
 	# English tech goal
 	if iCiv == iEngland:
@@ -242,20 +259,13 @@ scenario1700AD = Scenario(
 	
 	dCivilizationDescriptions = {
 		iTurks: "TXT_KEY_CIV_UZBEKS_DESC",
-		iNorse: "TXT_KEY_CIV_SWEDEN_DESC", # TODO: this should be Denmark
+		iNorse: "TXT_KEY_CIV_DENMARK_DESC",
 		iHolyRome: "TXT_KEY_CIV_AUSTRIA_DESC",
 		iEngland: "TXT_KEY_CIV_BRITAIN_DESC",
 		iGermany: "TXT_KEY_CIV_HOLY_ROMAN_DESC",
 	},
 	
-	dOwnedTiles = {
-		iHolyRome : [(62, 51)],
-		iPortugal : [(47, 45), (48, 45), (49, 40), (50, 42), (50, 43), (50, 44)],
-		iPoland : [(64, 53), (65, 56), (66, 55), (66, 56), (68, 53), (68, 54), (68, 56)],
-		iRussia : [(69, 54), (69, 55)],
-		iNetherlands : [(58, 52), (58, 53)],
-		iGermany : [(58, 49), (59, 49), (60, 49)],
-	},
+	dOwnedTiles = {},
 	iOwnerBaseCulture = 100,
 	
 	dRevealed = {
@@ -337,19 +347,16 @@ scenario1700AD = Scenario(
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
 	
-	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand],
+	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
 	
 	greatWall = GreatWall(
-		tGraphicsTL = (99, 46),
-		tGraphicsBR = (106, 49),
-		lGraphicsExceptions = [(99, 47), (99, 48), (99, 49), (100, 49), (101, 49), (104, 49)],
-		lBorderExceptions = [(99, 45)],
-		lClearCulture = [(103, 50), (104, 50), (105, 50), (106, 50)],
+		tGraphicsTL = (118, 54),
+		tGraphicsBR = (128, 58),
+		lClearCulture = [(122, 57), (125, 59), (126, 59), (127, 59), (128, 59), (129, 57), (129, 58), (129, 59)],
+		lGraphicsExceptions = [(122, 57)],
 		
-		lEffectAreas = [((99, 40), (104, 49)), ((103, 39), (107, 45))],
+		lEffectAreas = [((118, 44), (129, 53)), ((117, 47), (117, 50)), ((123, 43), (125, 43)), ((119, 54), (128, 54)), ((120, 55), (125, 55)), ((123, 56), (128, 57)), ((124, 58), (128, 58))],
 	),
-	
-	createStartingUnits = createStartingUnits,
 )

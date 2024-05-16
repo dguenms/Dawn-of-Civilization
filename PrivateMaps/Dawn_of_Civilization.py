@@ -10,7 +10,7 @@ import SettlerMaps, WarMaps, RegionMap
 lStartingDates = [
 	"3000 BC",
 	"600 AD",
-	# "1700 AD",
+	"1700 AD",
 ]
 
 

@@ -1587,8 +1587,6 @@ class CvPlotDesc:
 
 	def write(self, f, plot, bDevelopmentOnly = False):
 		"save plot desc to a file"
-		if plot.at(0, 0):
-			log_with_trace("write plot at %s" % (location(plot),))
 		f.write("BeginPlot\n")
 		f.write("\tx=%d,y=%d\n" %(plot.getX(), plot.getY()))
 

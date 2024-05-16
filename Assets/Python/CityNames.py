@@ -201,6 +201,9 @@ def updateNames(identifier):
 def updateName(city):
 	if not game.isFinalInitialized():
 		return
+	
+	if turn() == scenarioStartTurn():
+		return
 
 	if is_minor(city):
 		return

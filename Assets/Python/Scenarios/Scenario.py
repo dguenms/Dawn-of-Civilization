@@ -190,10 +190,13 @@ WONDER_ORIGINAL_BUILDERS = {
 	iMonolithicChurch : (iEthiopia, 1181),
 	iJetavanaramaya : (iDravidia, 273),
 	iCheomseongdae : (iKorea, 632),
+	iPyramidOfTheSun : (iToltecs, 200),
 	iOrthodoxShrine : (iByzantium, 335),
 	iTheodosianWalls : (iByzantium, 413),
 	iHagiaSophia : (iByzantium, 537),
 	iMountAthos : (iByzantium, 800),
+	iUniversityOfSankore : (iMali, 988),
+	iGreatAdobeMosque : (iMali, 1300),
 	iItsukushimaShrine : (iJapan, 1593),
 	iHimejiCastle : (iJapan, 1333),
 	iGurEAmir : (iTurks, 1404),
@@ -215,7 +218,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iOxfordUniversity : (iEngland, 1096),
 	iProtestantShrine : (iHolyRome, 1503),
 	iSaintThomasChurch : (iHolyRome, 1496),
-	iUniversityOfSankore : (iMali, 988),
+	iSaltCathedral : (iPoland, 1330),
 	iOldSynagogue : (iPoland, 1407),
 	iTorreDeBelem : (iPortugal, 1519),
 	iSantaMariaDelFiore : (iItaly, 1436),
@@ -234,6 +237,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iBlueMosque : (iOttomans, 1616),
 	iImageOfTheWorldSquare : (iIran, 1629),
 	iBourse : (iNetherlands, 1602),
+	iAmberRoom : (iGermany, 1700),
 }
 
 DEFAULT_CIV_DESCRIPTIONS = {}
