@@ -66,6 +66,7 @@ CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
+EASTERN_EUROPE = "TXT_KEY_VICTORY_NAME_EASTERN_EUROPE"
 EGYPT = "TXT_KEY_VICTORY_NAME_EGYPT"
 EUROPE = "TXT_KEY_VICTORY_NAME_EUROPE"
 GAUL = "TXT_KEY_VICTORY_NAME_GAUL"
@@ -685,18 +686,19 @@ dGoals = {
 		CultureCity(20000, at=1800),
 	),
 	iNetherlands: (
-		CitySpecialistCount(start(iNetherlands).named(AMSTERDAM), iSpecialistGreatMerchant, 3, at=1745),
+		CitySpecialistCount(start(iNetherlands).named(AMSTERDAM), iSpecialistGreatMerchant, 4, at=1745),
 		ConqueredCities(4, civs=group(iCivGroupEurope).named(EUROPEAN), outside=plots.regions(*lEurope).named(EUROPE), by=1745),
-		ResourceCount(iSpices, 7, by=1775),
+		ResourceCount(iSpices, 10, by=1775),
 	),
 	iGermany: (
-		CitySpecialistCount(start(iGermany).named(BERLIN), great_people(), 7, at=1900),
+		CitySpecialistCount(start(iGermany).named(BERLIN), great_people(), 9, at=1900),
 		Control(
-			plots.core(iItaly), # TODO: define in locations or use region
-			plots.core(iFrance), # TODO: define in locations or use region
-			plots.core(iEngland), # TODO: define in locations or use region
-			plots.core(iNorse).named(SCANDINAVIA), # TODO: define in locations or use region
-			plots.core(iRussia), # TODO: define in locations or use region
+			plots.region(rItaly),
+			plots.region(rCentralEurope),
+			plots.region(rFrance),
+			plots.region(rBritain),
+			plots.region(rScandinavia),
+			plots.regions(rPoland, rBaltics, rRuthenia).named(EASTERN_EUROPE),
 			at=1940,
 		),
 		EraFirstDiscover((iIndustrial, 8), (iGlobal, 8)),
