@@ -452,7 +452,6 @@ dNameChanges = { # TODO: this should be covered by period
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
-	iNorse : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iTurks : "TXT_KEY_CIV_UZBEKS_SHORT_DESC",
 }
@@ -464,7 +463,6 @@ dAdjectiveChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
-	iNorse : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iTurks : "TXT_KEY_CIV_UZBEKS_ADJECTIVE",
 }
@@ -546,19 +544,22 @@ dStartingLeaders = [
 	iIndia : iShivaji,
 	iDravidia : iKrishnaDevaRaya,
 	iKorea : iSejong,
+	iNorse : iChristian,
 	iJapan : iOdaNobunaga,
 	iTurks : iTamerlane,
-	iNorse : iGustav,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
 	iHolyRome : iFrancis,
-	iNetherlands : iWilliam,
+	iBurma : iBayinnaung,
+	iVietnam : iLeLoi,
 	iPoland : iSobieski,
 	iPortugal : iJoao,
 	iMughals : iAkbar,
+	iSweden : iGustav,
 	iRussia : iPeter,
 	iOttomans : iSuleiman,
+	iNetherlands : iWilliam,
 }]
 
 ### Event handlers
@@ -572,10 +573,6 @@ def setup():
 		
 	elif iScenario == i1700AD:
 		data.civs[iEgypt].iResurrections += 1
-		
-		for iCiv in [iNorse]:
-			checkNameChange(slot(iCiv))
-			checkAdjectiveChange(slot(iCiv))
 	
 @handler("playerCivAssigned")
 def initName(iPlayer):
@@ -992,15 +989,8 @@ def specificName(iPlayer):
 				return capitalName(iPlayer)
 			
 	elif iCiv == iNorse:	
-		if bEmpire:
-			if not isCurrentCapital(iPlayer, "Stockholm", "Kalmar") or iEra > iRenaissance:
-				return "TXT_KEY_CIV_NORSE_DENMARK_NORWAY"
-	
 		if isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
 			return "TXT_KEY_CIV_NORSE_NORWAY"
-			
-		if isCurrentCapital(iPlayer, "Stockholm", "Kalmar"):
-			return "TXT_KEY_CIV_NORSE_SWEDEN"
 			
 		if isCurrentCapital(iPlayer, "Roskilde"):
 			return "TXT_KEY_CIV_NORSE_DENMARK"
