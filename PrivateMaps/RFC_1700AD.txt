@@ -3485,6 +3485,10 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=65,y=63
+	ImprovementType=IMPROVEMENT_VILLAGE
+EndPlot
+BeginPlot
 	x=65,y=64
 	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
@@ -4461,7 +4465,6 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_JUDAISM
@@ -12203,6 +12206,11 @@ EndPlot
 BeginPlot
 	x=130,y=39
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=130,y=44
+	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
