@@ -1203,7 +1203,7 @@ public:
 	DllExport void getBuildQueue(std::vector<std::string>& astrQueue) const;
 
 	// Leoreth: exposed for CvPlayer::acquireCity
-	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
+	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate, bool bOwned = false);
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);

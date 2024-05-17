@@ -310,7 +310,7 @@ class Scenario(object):
 		self.dCivilizationDescriptions = kwargs.get("dCivilizationDescriptions", {})
 		
 		self.dOwnedTiles = kwargs.get("dOwnedTiles", {})
-		self.iOwnerBaseCulture = kwargs.get("iOwnerBaseCulture", 0)
+		self.iCultureTurns = kwargs.get("iCultureTurns", 0)
 		
 		self.lTribalVillages = kwargs.get("lTribalVillages", [])
 		
@@ -437,10 +437,9 @@ class Scenario(object):
 		self.updateNames()
 	
 	def adjustTerritories(self):
-		for plot in plots.all():
-			if plot.isOwned():
-				plot.changeCulture(plot.getOwner(), self.iOwnerBaseCulture, False)
-				convertPlotCulture(plot, plot.getOwner(), 100, False)
+		for city in cities.all():
+			for _ in range(turns(self.iCultureTurns)):
+				city.doPlotCulture(False, city.getOwner(), city.getModifiedCultureRate(), True)
 		
 		for iCiv, lTiles in self.dOwnedTiles.items():
 			for plot in plots.of(lTiles):

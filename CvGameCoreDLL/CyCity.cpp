@@ -2888,3 +2888,8 @@ int CyCity::getCorporationCount()
 {
 	return m_pCity ? m_pCity->getCorporationCount() : -1;
 }
+
+void CyCity::doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned)
+{
+	if (m_pCity) m_pCity->doPlotCulture(bUpdate, (PlayerTypes)ePlayer, iCultureRate, bOwned);
+}
