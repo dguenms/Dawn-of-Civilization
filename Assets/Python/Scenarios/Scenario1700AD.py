@@ -266,7 +266,7 @@ scenario1700AD = Scenario(
 	},
 	
 	dOwnedTiles = {},
-	iOwnerBaseCulture = 100,
+	iCultureTurns = 100,
 	
 	dRevealed = {
 		iCivGroupEurope: Revealed(

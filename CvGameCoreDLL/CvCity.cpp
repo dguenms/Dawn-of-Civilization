@@ -15035,7 +15035,7 @@ void CvCity::doCulture()
 }
 
 
-void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
+void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate, bool bOwned)
 {
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
@@ -15090,6 +15090,11 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 					if (iCultureRange <= eCultureLevel)
 					{
 						pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
+						if (bOwned && pLoopPlot->getOwnerINLINE() != getOwnerINLINE())
+						{
+							continue;
+						}
 
 						if (pLoopPlot != NULL)
 						{

@@ -611,6 +611,7 @@ public:
 	bool isOriginalOwner(int iPlayer);
 	int getCorporationBadHappiness();
 	int getCorporationCount();
+	void doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned);
 
 private:
 	CvCity* m_pCity;
