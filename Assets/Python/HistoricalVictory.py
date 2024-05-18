@@ -704,10 +704,12 @@ dGoals = {
 		EraFirstDiscover((iIndustrial, 8), (iGlobal, 8)),
 	),
 	iAmerica: (
-		All(
-			AllowNone(group(iCivGroupEurope).named(EUROPEAN), plots.regions(*(lNorthAmerica + lCentralAmerica)).named(NORTH_CENTRAL_AMERICA)),
-			Control(plots.core(iMexico), subject=VASSALS),
-			at=1900,
+		ControlledResourceCount(
+			(improvement_resources(iFarm, iPasture), 20),
+			(improvement_resources(iPlantation, iOrchard), 15),
+			(improvement_resources(iMine, iQuarry), 35),
+			subject=VASSALS,
+			by=1880,
 		),
 		Wonders(iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations, by=1950),
 		All(
