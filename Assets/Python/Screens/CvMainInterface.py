@@ -3752,7 +3752,7 @@ class CvMainInterface:
 					screen.show( "ProductionText" )
 				
 				if (pHeadSelectedCity.isProductionProcess()):
-					szBuffer = u"%d%c" %(pHeadSelectedCity.getYieldRate(YieldTypes.YIELD_PRODUCTION), gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar())
+					szBuffer = u"%d%c" %(pHeadSelectedCity.getBaseYieldRate(YieldTypes.YIELD_PRODUCTION), gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar())
 				elif (pHeadSelectedCity.isFoodProduction() and (iProductionDiffJustFood > 0)):
 					szBuffer = u"%d%c + %d%c" %(iProductionDiffJustFood, gc.getYieldInfo(YieldTypes.YIELD_FOOD).getChar(), iProductionDiffNoFood, gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar())
 				else:
