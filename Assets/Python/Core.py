@@ -107,7 +107,8 @@ def variadic(*items):
 def listify(item):
 	if isinstance(item, list):
 		return item
-	if isinstance(item, (tuple, set)):
+	# TODO: test info collection
+	if isinstance(item, (tuple, set, InfoCollection)):
 		return list(item)
 	if isinstance(item, types.GeneratorType):
 		return [x for x in item]

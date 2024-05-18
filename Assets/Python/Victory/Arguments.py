@@ -535,3 +535,6 @@ def great_people():
 
 def state_religion_building(func):
 	return StateReligionBuildingArgument(func)
+
+def improvement_resources(*improvements):
+	return SumAggregate(infos.bonuses().where(lambda iBonus: any(infos.improvement(iImprovement).isImprovementBonusTrade(iBonus) for iImprovement in improvements))).named(format_separators(improvements, ",", text("TXT_KEY_AND"), lambda iImprovement: infos.improvement(iImprovement).getText()))
