@@ -125,7 +125,7 @@ dResourcesDict = {
 	(96, 19)  : (1600,  iSugar),	# Mauritius
 	(123, 24) : (1600,  iTea),		# Java
 	(24, 57)  : (1650,  iPig),      # Midwest
-	(29, 61)  : (1650,  iPig),      # Ontario
+	(30, 61)  : (1650,  iPig),      # Ontario
 	(42, 25)  : (1650,  iSugar),	# Central Brazil
 	(46, 30)  : (1650,  iCotton),   # Northern Brazil
 	(47, 25)  : (1650,  iCocoa),    # Northern Brazil
@@ -143,7 +143,7 @@ dResourcesDict = {
 	(53, 66)  : (1700,  iPotato),   # Ireland
 	(57, 63)  : (1700,  iPotato),   # England
 	(17, 51)  : (1700,  iCow),      # Texas
-	(18, 49)  : (1700,  iCow),      # Texas
+	(18, 50)  : (1700,  iCow),      # Texas
 	(16, 62)  : (1700,  iCow),      # Alberta
 	(41, 23)  : (1700,  iCow),      # Central Brazil
 	(36, 14)  : (1700,  iCow),      # Patagonia
