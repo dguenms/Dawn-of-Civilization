@@ -675,19 +675,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
-		<English>The Power of Arid Agriculture:</English>
-		<French>Le pouvoir de l'aridoculture :</French>
-		<German>Die Macht der Ariden Landwirtschaft:</German>
-		<Italian>The Power of Arid Agriculture:</Italian>
-		<Spanish>The Power of Arid Agriculture:</Spanish>
+		<English>The Power of Positivism:</English>
+		<French>The Power of Positivism:</French>
+		<German>Die Macht des Positivismus:</German>
+		<Italian>The Power of Positivism:</Italian>
+		<Spanish>The Power of Positivism:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX</Tag>
-		<English>Can build farms on hills</English>
-		<French>Les fermes peuvent &#234;tre construites sur les collines</French>
-		<German>Kann Farmen auf H&#252;geln errichten</German>
-		<Italian>Can build farms on hills</Italian>
-		<Spanish>Can build farms on hills</Spanish>
+		<English>Converts +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</English>
+		<French>Converts +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</French>
+		<German>Konvertiert +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</German>
+		<Italian>Converts +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</Italian>
+		<Spanish>Converts +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON_TITLE</Tag>

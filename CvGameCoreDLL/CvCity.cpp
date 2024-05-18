@@ -4966,11 +4966,19 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 {
 	int iI;
+	int iProductionToCommerceModifier;
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
-		//Leoreth: process efficiency modifier inside (civic)
-		changeProductionToCommerceModifier((CommerceTypes)iI, (GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) + GET_PLAYER(getOwnerINLINE()).getProcessModifier()) * iChange);
+		iProductionToCommerceModifier = GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) + GET_PLAYER(getOwnerINLINE()).getProcessModifier();
+
+		// Mexican UP: +50% production converted to research
+		if (getCivilizationType() == MEXICO && iI == COMMERCE_RESEARCH)
+		{
+			iProductionToCommerceModifier += 50;
+		}
+
+		changeProductionToCommerceModifier((CommerceTypes)iI, iProductionToCommerceModifier * iChange);
 	}
 }
 
