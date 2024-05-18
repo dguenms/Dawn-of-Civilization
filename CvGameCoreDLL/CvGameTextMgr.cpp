@@ -17299,267 +17299,270 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	setYieldHelp(szBuffer, city, YIELD_PRODUCTION);
 
 	int iBaseProduction = city.getBaseYieldRate(YIELD_PRODUCTION) + iPastOverflow + iFromChops;
-	int iBaseModifier = city.getBaseYieldRateModifier(YIELD_PRODUCTION);
+	int iBaseModifier = !city.isProductionProcess() ? city.getBaseYieldRateModifier(YIELD_PRODUCTION) : 100;
 
-	UnitTypes eUnit = city.getProductionUnit();
-	if (NO_UNIT != eUnit)
+	if (!city.isProductionProcess())
 	{
-		CvUnitInfo& unit = GC.getUnitInfo(eUnit);
-
-		// Domain
-		int iDomainMod = city.getDomainProductionModifier((DomainTypes)unit.getDomainType());
-
-		// Leoreth: also include civic domain production modifier
-		iDomainMod += GET_PLAYER(city.getOwnerINLINE()).getDomainProductionModifier((DomainTypes)unit.getDomainType());
-
-		if (0 != iDomainMod)
+		UnitTypes eUnit = city.getProductionUnit();
+		if (NO_UNIT != eUnit)
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_DOMAIN", iDomainMod, GC.getDomainInfo((DomainTypes)unit.getDomainType()).getTextKeyWide()));
-			szBuffer.append(NEWLINE);
-			iBaseModifier += iDomainMod;
-		}
+			CvUnitInfo& unit = GC.getUnitInfo(eUnit);
 
-		// Military
-		if (unit.isMilitaryProduction())
-		{
-			int iMilitaryMod = city.getMilitaryProductionModifier() + GET_PLAYER(city.getOwnerINLINE()).getMilitaryProductionModifier();
-			if (0 != iMilitaryMod)
+			// Domain
+			int iDomainMod = city.getDomainProductionModifier((DomainTypes)unit.getDomainType());
+
+			// Leoreth: also include civic domain production modifier
+			iDomainMod += GET_PLAYER(city.getOwnerINLINE()).getDomainProductionModifier((DomainTypes)unit.getDomainType());
+
+			if (0 != iDomainMod)
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MILITARY", iMilitaryMod));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_DOMAIN", iDomainMod, GC.getDomainInfo((DomainTypes)unit.getDomainType()).getTextKeyWide()));
 				szBuffer.append(NEWLINE);
-				iBaseModifier += iMilitaryMod;
+				iBaseModifier += iDomainMod;
 			}
-		}
 
-		// Bonus
-		for (int i = 0; i < GC.getNumBonusInfos(); i++)
-		{
-			if (city.hasBonus((BonusTypes)i))
+			// Military
+			if (unit.isMilitaryProduction())
 			{
-				int iBonusMod = unit.getBonusProductionModifier(i);
-				if (0 != iBonusMod)
+				int iMilitaryMod = city.getMilitaryProductionModifier() + GET_PLAYER(city.getOwnerINLINE()).getMilitaryProductionModifier();
+				if (0 != iMilitaryMod)
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, unit.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MILITARY", iMilitaryMod));
 					szBuffer.append(NEWLINE);
-					iBaseModifier += iBonusMod;
+					iBaseModifier += iMilitaryMod;
 				}
 			}
-		}
 
-		// Trait
-		for (int i = 0; i < GC.getNumTraitInfos(); i++)
-		{
-			if (city.hasTrait((TraitTypes)i))
+			// Bonus
+			for (int i = 0; i < GC.getNumBonusInfos(); i++)
 			{
-				int iTraitMod = unit.getProductionTraits(i);
-
-				if (unit.getSpecialUnitType() != NO_SPECIALUNIT)
+				if (city.hasBonus((BonusTypes)i))
 				{
-					iTraitMod += GC.getSpecialUnitInfo((SpecialUnitTypes) unit.getSpecialUnitType()).getProductionTraits(i);
-				}
-				if (0 != iTraitMod)
-				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TRAIT", iTraitMod, unit.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
-					szBuffer.append(NEWLINE);
-					iBaseModifier += iTraitMod;
+					int iBonusMod = unit.getBonusProductionModifier(i);
+					if (0 != iBonusMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, unit.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iBonusMod;
+					}
 				}
 			}
-		}
 
-		// Religion
-		if (NO_PLAYER != city.getOwnerINLINE() && NO_RELIGION != GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
-		{
-			if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
+			// Trait
+			for (int i = 0; i < GC.getNumTraitInfos(); i++)
 			{
-				int iReligionMod = GET_PLAYER(city.getOwnerINLINE()).getStateReligionUnitProductionModifier();
-				if (0 != iReligionMod)
+				if (city.hasTrait((TraitTypes)i))
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_RELIGION", iReligionMod, GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).getTextKeyWide()));
-					szBuffer.append(NEWLINE);
-					iBaseModifier += iReligionMod;
+					int iTraitMod = unit.getProductionTraits(i);
+
+					if (unit.getSpecialUnitType() != NO_SPECIALUNIT)
+					{
+						iTraitMod += GC.getSpecialUnitInfo((SpecialUnitTypes)unit.getSpecialUnitType()).getProductionTraits(i);
+					}
+					if (0 != iTraitMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TRAIT", iTraitMod, unit.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iTraitMod;
+					}
 				}
 			}
-		}
 
-		// Leoreth: Statue of Zeus effect
-		/*if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)STATUE_OF_ZEUS) && city.isHasRealBuilding(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT", 25, GC.getBuildingInfo(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)).getTextKeyWide()));
-			szBuffer.append(NEWLINE);
-			iBaseModifier += 25;
-		}*/
-	}
-
-	BuildingTypes eBuilding = city.getProductionBuilding();
-	if (NO_BUILDING != eBuilding)
-	{
-		CvBuildingInfo& building = GC.getBuildingInfo(eBuilding);
-
-		// Bonus
-		for (int i = 0; i < GC.getNumBonusInfos(); i++)
-		{
-			if (city.hasBonus((BonusTypes)i))
+			// Religion
+			if (NO_PLAYER != city.getOwnerINLINE() && NO_RELIGION != GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
 			{
-				int iBonusMod = building.getBonusProductionModifier(i);
-				if (0 != iBonusMod)
+				if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, building.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
-					szBuffer.append(NEWLINE);
-					iBaseModifier += iBonusMod;
+					int iReligionMod = GET_PLAYER(city.getOwnerINLINE()).getStateReligionUnitProductionModifier();
+					if (0 != iReligionMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_RELIGION", iReligionMod, GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iReligionMod;
+					}
 				}
 			}
-		}
 
-		// Trait
-		for (int i = 0; i < GC.getNumTraitInfos(); i++)
-		{
-			if (city.hasTrait((TraitTypes)i))
+			// Leoreth: Statue of Zeus effect
+			/*if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)STATUE_OF_ZEUS) && city.isHasRealBuilding(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
 			{
-				int iTraitMod = building.getProductionTraits(i);
-
-				if (building.getSpecialBuildingType() != NO_SPECIALBUILDING)
-				{
-					iTraitMod += GC.getSpecialBuildingInfo((SpecialBuildingTypes) building.getSpecialBuildingType()).getProductionTraits(i);
-				}
-				if (0 != iTraitMod)
-				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TRAIT", iTraitMod, building.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
-					szBuffer.append(NEWLINE);
-					iBaseModifier += iTraitMod;
-				}
-			}
-		}
-
-		// Civic (Leoreth)
-		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding);
-		if (0 != iCivicMod)
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
-			szBuffer.append(NEWLINE);
-			iBaseModifier += iCivicMod;
-		}
-
-		// Wonder
-		if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
-		{
-			int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxGlobalBuildingProductionModifier();
-			if (0 != iWonderMod)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_WONDER", iWonderMod));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT", 25, GC.getBuildingInfo(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)).getTextKeyWide()));
 				szBuffer.append(NEWLINE);
-				iBaseModifier += iWonderMod;
-			}
+				iBaseModifier += 25;
+			}*/
 		}
 
-		// Team Wonder
-		if (isTeamWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
+		BuildingTypes eBuilding = city.getProductionBuilding();
+		if (NO_BUILDING != eBuilding)
 		{
-			int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxTeamBuildingProductionModifier();
-			if (0 != iWonderMod)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TEAM_WONDER", iWonderMod));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += iWonderMod;
-			}
-		}
+			CvBuildingInfo& building = GC.getBuildingInfo(eBuilding);
 
-		// National Wonder
-		if (isNationalWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
-		{
-			int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxPlayerBuildingProductionModifier();
-			if (0 != iWonderMod)
+			// Bonus
+			for (int i = 0; i < GC.getNumBonusInfos(); i++)
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_NATIONAL_WONDER", iWonderMod));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += iWonderMod;
-			}
-		}
-
-		// Religion
-		if (NO_PLAYER != city.getOwnerINLINE() && NO_RELIGION != GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
-		{
-			if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
-			{
-				int iReligionMod = GET_PLAYER(city.getOwnerINLINE()).getStateReligionBuildingProductionModifier();
-				if (0 != iReligionMod)
+				if (city.hasBonus((BonusTypes)i))
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_RELIGION", iReligionMod, GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).getTextKeyWide()));
+					int iBonusMod = building.getBonusProductionModifier(i);
+					if (0 != iBonusMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, building.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iBonusMod;
+					}
+				}
+			}
+
+			// Trait
+			for (int i = 0; i < GC.getNumTraitInfos(); i++)
+			{
+				if (city.hasTrait((TraitTypes)i))
+				{
+					int iTraitMod = building.getProductionTraits(i);
+
+					if (building.getSpecialBuildingType() != NO_SPECIALBUILDING)
+					{
+						iTraitMod += GC.getSpecialBuildingInfo((SpecialBuildingTypes)building.getSpecialBuildingType()).getProductionTraits(i);
+					}
+					if (0 != iTraitMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TRAIT", iTraitMod, building.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iTraitMod;
+					}
+				}
+			}
+
+			// Civic (Leoreth)
+			int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding);
+			if (0 != iCivicMod)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += iCivicMod;
+			}
+
+			// Wonder
+			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
+			{
+				int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxGlobalBuildingProductionModifier();
+				if (0 != iWonderMod)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_WONDER", iWonderMod));
 					szBuffer.append(NEWLINE);
-					iBaseModifier += iReligionMod;
+					iBaseModifier += iWonderMod;
+				}
+			}
+
+			// Team Wonder
+			if (isTeamWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
+			{
+				int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxTeamBuildingProductionModifier();
+				if (0 != iWonderMod)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_TEAM_WONDER", iWonderMod));
+					szBuffer.append(NEWLINE);
+					iBaseModifier += iWonderMod;
+				}
+			}
+
+			// National Wonder
+			if (isNationalWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && NO_PLAYER != city.getOwnerINLINE())
+			{
+				int iWonderMod = GET_PLAYER(city.getOwnerINLINE()).getMaxPlayerBuildingProductionModifier();
+				if (0 != iWonderMod)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_NATIONAL_WONDER", iWonderMod));
+					szBuffer.append(NEWLINE);
+					iBaseModifier += iWonderMod;
+				}
+			}
+
+			// Religion
+			if (NO_PLAYER != city.getOwnerINLINE() && NO_RELIGION != GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
+			{
+				if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
+				{
+					int iReligionMod = GET_PLAYER(city.getOwnerINLINE()).getStateReligionBuildingProductionModifier();
+					if (0 != iReligionMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_RELIGION", iReligionMod, GC.getReligionInfo(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iReligionMod;
+					}
+				}
+			}
+
+			// Leoreth: display Roman UP
+			if (city.getCivilizationType() == ROME)
+			{
+				if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_ROME", 30));
+					szBuffer.append(NEWLINE);
+					iBaseModifier += 30;
+				}
+			}
+
+			// Leoreth: display Holy Roman UP
+			if (city.getCivilizationType() == HOLY_ROME)
+			{
+				if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+				{
+					if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_HOLY_ROME", 100));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += 100;
+					}
 				}
 			}
 		}
 
-		// Leoreth: display Roman UP
-		if (city.getCivilizationType() == ROME)
+		ProjectTypes eProject = city.getProductionProject();
+		if (NO_PROJECT != eProject)
 		{
-			if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_ROME", 30));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += 30;
-			}
-		}
+			CvProjectInfo& project = GC.getProjectInfo(eProject);
 
-		// Leoreth: display Holy Roman UP
-		if (city.getCivilizationType() == HOLY_ROME)
-		{
-			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+			// Leoreth: existing projects
+			if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
 			{
-				if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
+				int iExistingMod = project.getExistingProductionModifier();
+				if (0 != iExistingMod)
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_HOLY_ROME", 100));
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT", iExistingMod));
 					szBuffer.append(NEWLINE);
-					iBaseModifier += 100;
+					iBaseModifier += iExistingMod;
 				}
 			}
-		}
-	}
 
-	ProjectTypes eProject = city.getProductionProject();
-	if (NO_PROJECT != eProject)
-	{
-		CvProjectInfo& project = GC.getProjectInfo(eProject);
-
-		// Leoreth: existing projects
-		if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
-		{
-			int iExistingMod = project.getExistingProductionModifier();
-			if (0 != iExistingMod)
+			// Spaceship
+			if (project.isSpaceship())
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT", iExistingMod));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += iExistingMod;
-			}
-		}
-
-		// Spaceship
-		if (project.isSpaceship())
-		{
-			int iSpaceshipMod = city.getSpaceProductionModifier();
-			if (NO_PLAYER != city.getOwnerINLINE())
-			{
-				iSpaceshipMod += GET_PLAYER(city.getOwnerINLINE()).getSpaceProductionModifier();
-			}
-			if (0 != iSpaceshipMod)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_SPACESHIP", iSpaceshipMod));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += iSpaceshipMod;
-			}
-		}
-
-		// Bonus
-		for (int i = 0; i < GC.getNumBonusInfos(); i++)
-		{
-			if (city.hasBonus((BonusTypes)i))
-			{
-				int iBonusMod = project.getBonusProductionModifier(i);
-				if (0 != iBonusMod)
+				int iSpaceshipMod = city.getSpaceProductionModifier();
+				if (NO_PLAYER != city.getOwnerINLINE())
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, project.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
+					iSpaceshipMod += GET_PLAYER(city.getOwnerINLINE()).getSpaceProductionModifier();
+				}
+				if (0 != iSpaceshipMod)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_SPACESHIP", iSpaceshipMod));
 					szBuffer.append(NEWLINE);
-					iBaseModifier += iBonusMod;
+					iBaseModifier += iSpaceshipMod;
+				}
+			}
+
+			// Bonus
+			for (int i = 0; i < GC.getNumBonusInfos(); i++)
+			{
+				if (city.hasBonus((BonusTypes)i))
+				{
+					int iBonusMod = project.getBonusProductionModifier(i);
+					if (0 != iBonusMod)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_MOD_BONUS", iBonusMod, project.getTextKeyWide(), GC.getBonusInfo((BonusTypes)i).getTextKeyWide()));
+						szBuffer.append(NEWLINE);
+						iBaseModifier += iBonusMod;
+					}
 				}
 			}
 		}
@@ -18275,107 +18278,110 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 
 	int iBaseModifier = 100;
 
-	// Leoreth: Chinese unique power
-	int iPlayerMod = owner.getYieldRateModifier(eYieldType);
-	if (0 != iPlayerMod)
+	if (!city.isProductionProcess())
 	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_PLAYER", iPlayerMod, info.getChar()));
-		szBuffer.append(NEWLINE);
-		iBaseModifier += iPlayerMod;
-	}
-
-	// Buildings
-	int iBuildingMod = 0;
-	for (int i = 0; i < GC.getNumBuildingInfos(); i++)
-	{
-		CvBuildingInfo& infoBuilding = GC.getBuildingInfo((BuildingTypes)i);
-		if (city.getNumBuilding((BuildingTypes)i) > 0 && !GET_TEAM(city.getTeam()).isObsoleteBuilding((BuildingTypes)i))
+		// Leoreth: Chinese unique power
+		int iPlayerMod = owner.getYieldRateModifier(eYieldType);
+		if (0 != iPlayerMod)
 		{
-			for (int iLoop = 0; iLoop < city.getNumBuilding((BuildingTypes)i); iLoop++)
-			{
-				iBuildingMod += infoBuilding.getYieldModifier(eYieldType);
-			}
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_PLAYER", iPlayerMod, info.getChar()));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += iPlayerMod;
 		}
-		for (int j = 0; j < MAX_PLAYERS; j++)
+
+		// Buildings
+		int iBuildingMod = 0;
+		for (int i = 0; i < GC.getNumBuildingInfos(); i++)
 		{
-			if (GET_PLAYER((PlayerTypes)j).isAlive())
+			CvBuildingInfo& infoBuilding = GC.getBuildingInfo((BuildingTypes)i);
+			if (city.getNumBuilding((BuildingTypes)i) > 0 && !GET_TEAM(city.getTeam()).isObsoleteBuilding((BuildingTypes)i))
 			{
-				if (GET_PLAYER((PlayerTypes)j).getTeam() == owner.getTeam())
+				for (int iLoop = 0; iLoop < city.getNumBuilding((BuildingTypes)i); iLoop++)
 				{
-					int iLoop;
-					for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)j).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)j).nextCity(&iLoop))
+					iBuildingMod += infoBuilding.getYieldModifier(eYieldType);
+				}
+			}
+			for (int j = 0; j < MAX_PLAYERS; j++)
+			{
+				if (GET_PLAYER((PlayerTypes)j).isAlive())
+				{
+					if (GET_PLAYER((PlayerTypes)j).getTeam() == owner.getTeam())
 					{
-						if (pLoopCity->getNumBuilding((BuildingTypes)i) > 0 && !GET_TEAM(pLoopCity->getTeam()).isObsoleteBuilding((BuildingTypes)i))
+						int iLoop;
+						for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)j).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)j).nextCity(&iLoop))
 						{
-							for (int iLoop = 0; iLoop < pLoopCity->getNumBuilding((BuildingTypes)i); iLoop++)
+							if (pLoopCity->getNumBuilding((BuildingTypes)i) > 0 && !GET_TEAM(pLoopCity->getTeam()).isObsoleteBuilding((BuildingTypes)i))
 							{
-								iBuildingMod += infoBuilding.getGlobalYieldModifier(eYieldType);
+								for (int iLoop = 0; iLoop < pLoopCity->getNumBuilding((BuildingTypes)i); iLoop++)
+								{
+									iBuildingMod += infoBuilding.getGlobalYieldModifier(eYieldType);
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
-	CvArea* pArea = city.continentArea();
-	if (NULL != pArea)
-	{
-		iBuildingMod += pArea->getYieldRateModifier(city.getOwnerINLINE(), eYieldType);
-	}
-	if (0 != iBuildingMod)
-	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));
-		szBuffer.append(NEWLINE);
-		iBaseModifier += iBuildingMod;
-	}
-
-	// Power
-	if (city.isPower())
-	{
-		int iPowerMod = city.getPowerYieldRateModifier(eYieldType);
-		if (0 != iPowerMod)
+		CvArea* pArea = city.continentArea();
+		if (NULL != pArea)
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_POWER", iPowerMod, info.getChar()));
+			iBuildingMod += pArea->getYieldRateModifier(city.getOwnerINLINE(), eYieldType);
+		}
+		if (0 != iBuildingMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));
 			szBuffer.append(NEWLINE);
-			iBaseModifier += iPowerMod;
+			iBaseModifier += iBuildingMod;
 		}
-	}
 
-	// Resources
-	int iBonusMod = city.getBonusYieldRateModifier(eYieldType);
-	if (0 != iBonusMod)
-	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BONUS", iBonusMod, info.getChar()));
-		szBuffer.append(NEWLINE);
-		iBaseModifier += iBonusMod;
-	}
-
-	// Capital
-	if (city.isCapital())
-	{
-		int iCapitalMod = owner.getCapitalYieldRateModifier(eYieldType);
-		if (0 != iCapitalMod)
+		// Power
+		if (city.isPower())
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CAPITAL", iCapitalMod, info.getChar()));
+			int iPowerMod = city.getPowerYieldRateModifier(eYieldType);
+			if (0 != iPowerMod)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_POWER", iPowerMod, info.getChar()));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += iPowerMod;
+			}
+		}
+
+		// Resources
+		int iBonusMod = city.getBonusYieldRateModifier(eYieldType);
+		if (0 != iBonusMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BONUS", iBonusMod, info.getChar()));
 			szBuffer.append(NEWLINE);
-			iBaseModifier += iCapitalMod;
+			iBaseModifier += iBonusMod;
 		}
-	}
 
-	// Civics
-	int iCivicMod = 0;
-	for (int i = 0; i < GC.getNumCivicOptionInfos(); i++)
-	{
-		if (NO_CIVIC != owner.getCivics((CivicOptionTypes)i))
+		// Capital
+		if (city.isCapital())
 		{
-			iCivicMod += GC.getCivicInfo(owner.getCivics((CivicOptionTypes)i)).getYieldModifier(eYieldType);
+			int iCapitalMod = owner.getCapitalYieldRateModifier(eYieldType);
+			if (0 != iCapitalMod)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CAPITAL", iCapitalMod, info.getChar()));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += iCapitalMod;
+			}
 		}
-	}
-	if (0 != iCivicMod)
-	{
-		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CIVICS", iCivicMod, info.getChar()));
-		szBuffer.append(NEWLINE);
-		iBaseModifier += iCivicMod;
+
+		// Civics
+		int iCivicMod = 0;
+		for (int i = 0; i < GC.getNumCivicOptionInfos(); i++)
+		{
+			if (NO_CIVIC != owner.getCivics((CivicOptionTypes)i))
+			{
+				iCivicMod += GC.getCivicInfo(owner.getCivics((CivicOptionTypes)i)).getYieldModifier(eYieldType);
+			}
+		}
+		if (0 != iCivicMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CIVICS", iCivicMod, info.getChar()));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += iCivicMod;
+		}
 	}
 
 	FAssertMsg((iBaseModifier * iBaseProduction) / 100 == city.getYieldRate(eYieldType), "Yield Modifier in setProductionHelp does not agree with actual value");
