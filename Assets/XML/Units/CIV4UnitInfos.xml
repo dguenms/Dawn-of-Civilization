@@ -3192,13 +3192,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SWORDSMAN</Class>
-			<Type>UNIT_JAVANESE_SILAT</Type>
+			<Type>UNIT_JAVANESE_PENDEKAR</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_JAVANESE_SILAT</Description>
-			<Civilopedia>TXT_KEY_UNIT_JAVANESE_SILAT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_JAVANESE_SILAT_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_JAVANESE_PENDEKAR</Description>
+			<Civilopedia>TXT_KEY_UNIT_JAVANESE_PENDEKAR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_JAVANESE_PENDEKAR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -3268,7 +3268,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_JAVANESE_SILAT</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_JAVANESE_PENDEKAR</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

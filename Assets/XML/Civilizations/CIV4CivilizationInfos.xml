@@ -3177,7 +3177,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_JAVANESE_SILAT</UnitType>
+					<UnitType>UNIT_JAVANESE_PENDEKAR</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>

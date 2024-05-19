@@ -5794,27 +5794,6 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_JAVANESE_SILAT</Type>
-			<Button>Art/Units/Silat/silat_btn.dds</Button>
-			<fScale>0.44</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<bActAsLand>0</bActAsLand>
-			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Silat/Silat.nif</NIF>
-			<KFM>Art/Units/Unique_Maya_Holkan/Unique_Mayan_Holkan.kfm</KFM>
-			<SHADERNIF>Art/Units/Silat/Silat.nif</SHADERNIF>
-			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
-				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
-			</ShadowDef>
-			<fBattleDistance>0.35</fBattleDistance>
-			<fRangedDeathTime>0.31</fRangedDeathTime>
-			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds/>
-		</UnitArtInfo>
-		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SELJUK_GHULAM_WARRIOR</Type>
 			<Button>Art/Interface/Buttons/Units/Ghulam Warrior.dds</Button>
 			<fScale>0.42</fScale>
@@ -9619,15 +9598,15 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_JAVANESE_SILAT</Type>
-			<Button>Art/Units/Silat/Button_Silat.dds</Button>
+			<Type>ART_DEF_UNIT_JAVANESE_PENDEKAR</Type>
+			<Button>Art/Units/Pendekar/Button_Silat.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Silat/MalayKerisBudaWarrior.nif</NIF>
+			<NIF>Art/Units/Pendekar/MalayKerisBudaWarrior.nif</NIF>
 			<KFM>Art/Units/Unique/Inca/Quechua/IncanQuechua.kfm</KFM>
-			<SHADERNIF>Art/Units/Silat/MalayKerisBudaWarrior.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Pendekar/MalayKerisBudaWarrior.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
