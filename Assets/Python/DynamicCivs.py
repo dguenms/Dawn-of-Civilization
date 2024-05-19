@@ -1764,7 +1764,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if iEra <= iMedieval:
 				return "TXT_KEY_CIV_NORSE_KALMAR_UNION"
 				
-			if iEra == iRenaissance or isCurrentCapital(iPlayer, "Stockholm"):
+			if iEra == iRenaissance:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
 	elif iCiv == iTurks:
