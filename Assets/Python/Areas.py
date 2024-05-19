@@ -65,7 +65,7 @@ iArgentina :	(38, 13), # Buenos Aires
 iMexico :		(17, 43), # Mexico City
 iColombia :		(30, 34), # Bogota
 iBrazil :		(44, 20), # Rio de Janeiro
-iCanada :		(32, 61), # Montreal
+iCanada :		(31, 61), # Montreal
 })
 
 dPeriodCapitals = {
