@@ -1635,6 +1635,85 @@ class TestFeatureCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestFreeSpecialistCity(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = FreeSpecialistCity(1).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.register_handlers(self.goal)
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "FreeSpecialistCity(1)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "FreeSpecialistCity(1)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "a city with a free specialists")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities")
+	
+	def test_insufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Free specialists in First: 0 / 1")
+		finally:
+			city.kill()
+	
+	def test_sufficient(self):
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		
+		player(0).setCivics(iCivicsLegitimacy, iConstitution)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Free specialists in First: 1 / 1")
+		finally:
+			city.kill()
+			player(0).setCivics(iCivicsLegitimacy, iAuthority)
+	
+	def test_sufficient(self):
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		
+		player(1).setCivics(iCivicsLegitimacy, iConstitution)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities")
+		finally:
+			city.kill()
+			player(1).setCivics(iCivicsLegitimacy, iAuthority)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestHappyCityPopulation(ExtendedTestCase):
 
 	def setUp(self):
@@ -3592,6 +3671,7 @@ test_cases = [
 	TestCultureCity,
 	TestCultureLevelCityCount,
 	TestFeatureCount,
+	TestFreeSpecialistCity,
 	TestHappyCityPopulation,
 	TestImprovementCount,
 	TestOpenBorderCount,
