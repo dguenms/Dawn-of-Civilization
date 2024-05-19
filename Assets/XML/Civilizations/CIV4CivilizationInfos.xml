@@ -3179,6 +3179,10 @@
 					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_JAVANESE_PENDEKAR</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_BOMBARD</UnitClassType>
+					<UnitType>UNIT_JAVANESE_LANTAKA</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
