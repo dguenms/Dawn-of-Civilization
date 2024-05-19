@@ -4908,7 +4908,8 @@ bool CvUnit::canBombard(const CvPlot* pPlot) const
 		return false;
 	}
 
-	if (isCargo())
+	// Leoreth: amphibious artillery can bombard from cargo
+	if (isCargo() && !isAmphib())
 	{
 		return false;
 	}
@@ -9155,8 +9156,8 @@ bool CvUnit::canAttack(const CvUnit& defender) const
 		return false;
 	}
 
-	// Artillery can't amphibious attack
-	if (plot()->isWater() && !defender.plot()->isWater())
+	// Artillery can't amphibious attack - Leoreth: unless amphibious promotion
+	if (plot()->isWater() && !defender.plot()->isWater() && !isAmphib())
 	{
 		if (combatLimitAgainst(&defender) < 100)
 		{
