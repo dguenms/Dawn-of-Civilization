@@ -742,11 +742,11 @@ dGoals = {
 		ResourceTradeGold(3000, by=1950),
 	),
 	iBrazil: (
-		ImprovementCount((iSlavePlantation, 8), (iPasture, 4), at=1880),
+		ImprovementCount((iSlavePlantation, 12), (iPasture, 4), at=1880),
 		Wonders(iWembley, iCristoRedentor, iItaipuDam),
 		All(
-			ImprovementCount(iForestPreserve, 20),
-			CityBuilding(capital().named(CAPITAL), iNationalPark),
+			ImprovementCount(iForestPreserve, 30),
+			FreeSpecialistCity(12),
 			by=1950,
 		),
 	),

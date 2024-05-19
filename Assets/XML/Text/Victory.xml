@@ -1028,6 +1028,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_FREE_SPECIALIST_CITY</Tag>
+		<English>a city with %s1 free specialists</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_COMMERCE_PERCENT</Tag>
 		<English>%s1 of the world's commerce</English>
 		<French></French>
@@ -1825,6 +1833,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CULTURE_CITY</Tag>
 		<English>Culture in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_FREE_SPECIALIST_CITY</Tag>
+		<English>Free specialists in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
