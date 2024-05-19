@@ -105,7 +105,7 @@ dResourcesDict = {
 	(132, 44) : (1600,  iFish),     # Taiwan
 	(29, 53)  : (1600,  iCow),      # Carolinas
 	(32, 57)  : (1600,  iCow),      # New England
-	(31, 61)  : (1600,  iCow),      # Ontario
+	(32, 61)  : (1600,  iCow),      # Ontario
 	(40, 16)  : (1600,  iCow),      # Southern Brazil
 	(44, 23)  : (1600,  iCow),      # Southern Brazil
 	(33, 37)  : (1600,  iCow),      # Venezuela
