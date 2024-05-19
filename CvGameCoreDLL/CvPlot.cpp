@@ -2561,12 +2561,6 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 	}
 
-	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == MEXICO && eImprovement == IMPROVEMENT_FARM && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
-	{
-		bMexico = true;
-	}
-
 	// Leoreth: different fishing boats for different sea levels
 	if (GC.getImprovementInfo(eImprovement).isWater())
 	{
@@ -2593,7 +2587,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 	}
 
-	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands() && !bMexico) // Mexican UP
+	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
 	{
 		return false;
 	}
@@ -2662,7 +2656,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
-		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI) && !bMexico) // Mexican UP
+		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI))
 		{
 			return false;
 		}
