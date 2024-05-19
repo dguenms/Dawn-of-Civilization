@@ -471,7 +471,7 @@ def getRoleDomain(iRole):
 # used: RFCUtils
 def getRoleLocation(iRole, location):
 	if getRoleDomain(iRole) == DomainTypes.DOMAIN_SEA:
-		seaPlots = plots.surrounding(location, radius=2).sea().closest_within(location, radius=2)
+		seaPlots = plots.surrounding(location, radius=3).sea().closest_within(location, radius=3)
 		if seaPlots:
 			return seaPlots[data.iSeed % seaPlots.count()]
 	
