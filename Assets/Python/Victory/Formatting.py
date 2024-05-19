@@ -37,7 +37,7 @@ def format_articles(string):
 
 
 def remove_articles(string):
-	return string.lstrip("the ").lstrip("a ").lstrip()
+	return " ".join(word for word in string.split() if word not in ["the", "a"])
 
 
 def number_word(number):
