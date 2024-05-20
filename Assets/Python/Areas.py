@@ -321,24 +321,6 @@ iPeriodOttomanConstantinople :	[(86, 50), (87, 50)],
 iPeriodModernGermany :			[(69, 61)],
 })
 
-### Expansion area ###
-
-# TODO: only set expansion to true or false and use war maps
-dExpansionArea = CivDict({
-# iPersia :		((69, 37), (78, 45)),
-# iRome :			((51, 38), (73, 48)),
-# iNorse :		((48, 50), (56, 60)),
-# iTurks :		((69, 36), (85, 45)),
-# iArabia :		((50, 36), (85, 43)),
-# iSpain :		((49, 40), (55, 45)),
-# iMongols :		((72, 37), (110, 56)),
-# iMughals :		((86, 33), (96, 40)),
-# iOttomans :		((64, 32), (77, 48)),
-})
-
-dExpansionAreaExceptions = CivDict({
-}, [])
-
 ### Respawn area ###
 
 dRespawnArea = CivDict({
