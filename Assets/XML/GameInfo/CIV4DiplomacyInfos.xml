@@ -1262,6 +1262,58 @@
 							<LeaderType>LEADER_IVAN_IV</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_ASHURBANIPAL</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_MURSILI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_TAHARQA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_TOPILTZIN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_KANISHKA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_SRI_JAYANASA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_TUN_PERAK</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_CHRISTIAN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_ANAWRAHTA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_BAYINNAUNG</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_YAROSLAV</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_LE_LOI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_DAWUD</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
