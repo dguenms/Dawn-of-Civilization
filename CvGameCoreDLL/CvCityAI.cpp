@@ -2386,6 +2386,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 50;
 		break;
+	case NUBIA:
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_COUNTER] *= 2;
+		break;
 	case GREECE:
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
@@ -2421,9 +2425,16 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case PERSIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		break;
+	case CELTS:
+		aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_PILLAGE] *= 3;
+		break;
 	case ROME:      // leave unit AI unchanged so far
         aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
-        aiUnitAIVal[UNITAI_COUNTER] *= 2;
+        //aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		aiUnitAIVal[UNITAI_COLLATERAL] *= 2;
 		break;
 		/*aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -2433,6 +2444,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case DRAVIDIA:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		break;
+	case TOLTECS:
+		aiUnitAIVal[UNITAI_WORKER] *= 2;
+		break;
+	case KUSHANS:
+		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
 		break;
 	case ETHIOPIA:
 		break;
@@ -2452,6 +2469,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
         aiUnitAIVal[UNITAI_SETTLE] /= 3;
+		break;
+	case MALAYS:
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 5;
 		break;
 	case JAPAN:
 		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)MACHINE_TOOLS))
@@ -2488,6 +2510,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case TIBET:
 		aiUnitAIVal[UNITAI_MISSIONARY] *= 5;
+		break;
+	case JAVA:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_SEA] *= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 5;
 		break;
 	case MOORS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -2537,6 +2565,13 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
 		break;
+	case BURMA:
+		aiUnitAIVal[UNITAI_ATTACK] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 5;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 3;
+		aiUnitAIVal[UNITAI_ATTACK_SEA] /= 3;
+		aiUnitAIVal[UNITAI_ESCORT_SEA] /= 3;
+		break;
 	case RUSSIA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 3;
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
@@ -2545,6 +2580,20 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
+		break;
+	case RUS:
+		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+		break;
+	case VIETNAM:
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
+		aiUnitAIVal[UNITAI_CITY_COUNTER] *= 3;
+		aiUnitAIVal[UNITAI_COUNTER] *= 3;
+		break;
+	case SWAHILI:
+		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		break;
 	case MALI:
 		break;
@@ -2601,6 +2650,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case THAILAND:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
+	case SWEDEN:
+		if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_RENAISSANCE)
+		{
+			aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		}
 		break;
 	case CONGO:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
