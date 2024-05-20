@@ -11845,7 +11845,7 @@ bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 	case REGION_GROUP_SOUTH_AMERICA:
 		return true;
 	case REGION_GROUP_SUB_SAHARAN_AFRICA:
-		if (GET_PLAYER(ePlayer).getCapitalCity()->getRegionGroup() == REGION_GROUP_SUB_SAHARAN_AFRICA)
+		if (GET_PLAYER(ePlayer).getCapitalCity()->getRegionGroup() != REGION_GROUP_SUB_SAHARAN_AFRICA)
 		{
 			return true;
 		}
