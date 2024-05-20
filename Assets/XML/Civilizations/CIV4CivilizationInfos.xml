@@ -341,7 +341,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
 					<BuildingType>BUILDING_ASSYRIAN_KALLIU</BuildingType>
 				</Building>
 				<Building>
