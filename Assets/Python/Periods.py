@@ -125,6 +125,9 @@ def onResurrection(iPlayer):
 		else:
 			setPeriod(iIndia, -1)
 	
+	if iCiv == iCelts:
+		setPeriod(iCelts, iPeriodInsularCelts)
+	
 	if iCiv == iArabia:
 		setPeriod(iArabia, iPeriodSaudi)
 		

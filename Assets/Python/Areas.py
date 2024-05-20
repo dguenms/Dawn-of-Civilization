@@ -92,6 +92,7 @@ iEgypt :	(79, 43),	# Cairo
 iChina :	(125, 56),	# Beijing
 iIndia :	(105, 46),	# Delhi
 iPersia :	(93, 48),	# Esfahan
+iCelts :	(54, 65),	# Dublin
 iEthiopia :	(84, 32),	# Addis Ababa
 iJapan :	(140, 54),	# Tokyo
 iTurks : 	(97, 49),	# Herat
@@ -105,7 +106,6 @@ iOttomans :	(79, 55),	# Istanbul
 
 ### Birth Area ###
 
-# TODO: core area is fallback, define actual birth areas where different
 dBirthArea = CivDict({
 iIndia :		((105, 43),	(112, 46)),
 iPersia :		((91, 43),	(98, 52)),
@@ -345,6 +345,7 @@ dRespawnArea = CivDict({
 iEgypt :	((76, 39),	(83, 45)),
 iChina :	((117, 43),	(129, 58)),
 iIndia :	((103, 37),	(110, 46)),
+iCelts :	((52, 64),	(56, 67)),
 iByzantium :((76, 51),	(87, 55)),
 iTurks :	((92, 48),	(101, 55)),
 iMoors :	((56, 43),	(61, 47)),
