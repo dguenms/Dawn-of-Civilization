@@ -1486,8 +1486,8 @@ dTechPreferences = {
 	},
 	iAssyria : {
 		iMasonry: 40,
+		iLeverage: 40,
 		iAlloys: 30,
-		iLeverage: 30,
 		iCeremony: 20,
 		iWriting: 20,
 		iArithmetics: 20,
@@ -1524,6 +1524,10 @@ dTechPreferences = {
 		iBloomery: 50,
 		iContract: 20,
 		iConstruction: 20,
+	},
+	iNubia: {
+		iPriesthood: 20,
+		iEthics: 20,
 	},
 	iGreece : {
 		iPhilosophy: 50,
@@ -1572,6 +1576,10 @@ dTechPreferences = {
 	
 		iTheology: -40,
 	},
+	iCelts : {
+		iEthics: 20,
+		iBloomery: 20,
+	},
 	iRome : {
 		iTheology: 30,
 		iCurrency: 20,
@@ -1595,6 +1603,18 @@ dTechPreferences = {
 		iAcademia: -20,
 		iReplaceableParts: -20,
 	},
+	iToltecs : {
+		iMathematics: 30,
+		iWriting: 20,
+		iCalendar: 20,
+		iContract: 20,
+	},
+	iKushans : {
+		iAesthetics: 20,
+		iEngineering: 20,
+		iArchitecture: 20,
+		iMedicine: 20,
+	},
 	iKorea : {
 		iPrinting: 30,
 		iGunpowder: 30,
@@ -1604,11 +1624,46 @@ dTechPreferences = {
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
 	},
+	iKhmer : {
+		iPhilosophy: 30,
+		iSailing: 30,
+		iCalendar: 30,
+		iCivilService: 30,
+		iAesthetics: 20,
+		
+		iCurrency: -30,
+		iExploration: -30,
+	},
 	iByzantium : {
 		iFinance: -50,
 		iOptics: -20,
 		iFirearms: -20,
 		iExploration: -20,
+	},
+	iMali : {
+		iScholarship: 40,
+		iDoctrine: 30,
+	},
+	iFrance : {
+		iReplaceableParts: 30,
+		iFirearms: 20,
+		iExploration: 20,
+		iGeography: 20,
+		iLogistics: 20,
+		iPatronage: 20,
+		iMeasurement: 20,
+		iAcademia: 20,
+		iEducation: 15,
+		iFeudalism: 15,
+		iChemistry: 15,
+		iSociology: 15,
+		iFission: 12,
+	},
+	iMalays : {
+		iEcology: 40,
+		iCompass: 30,
+		iPolitics: 20,
+		iArtisanry: 20,
 	},
 	iJapan : {
 		iFeudalism: 40,
@@ -1647,8 +1702,11 @@ dTechPreferences = {
 		iDoctrine: 20,
 	},
 	iJava : {
-		iAesthetics: 30,
-		iArtisanry: 30,
+		iPolitics: 30,
+		iGunpowder: 30,
+		iCompass: 20,
+		iCivilService: 20,
+	
 		iExploration: -20,
 	},
 	iMoors : {
@@ -1667,31 +1725,6 @@ dTechPreferences = {
 		iGuilds: 15,
 		iGunpowder: 15,
 		iChemistry: 15,
-	},
-	iFrance : {
-		iReplaceableParts: 30,
-		iFirearms: 20,
-		iExploration: 20,
-		iGeography: 20,
-		iLogistics: 20,
-		iPatronage: 20,
-		iMeasurement: 20,
-		iAcademia: 20,
-		iEducation: 15,
-		iFeudalism: 15,
-		iChemistry: 15,
-		iSociology: 15,
-		iFission: 12,
-	},
-	iKhmer : {
-		iPhilosophy: 30,
-		iSailing: 30,
-		iCalendar: 30,
-		iCivilService: 30,
-		iAesthetics: 20,
-		
-		iCurrency: -30,
-		iExploration: -30,
 	},
 	iEngland : {
 		iExploration: 40,
@@ -1715,21 +1748,25 @@ dTechPreferences = {
 		iOptics: 15,
 		iFission: 12,
 	},
-	iMali : {
-		iEducation: 30,
+	iBurma : {
+		iLogistics: 20,
+		iCombinedArms: 20,
 	},
-	iMughals : {
-		iHumanities: 30,
-		iPhilosophy: 20,
-		iEducation: 20,
-		iPaper: 20,
-		iPatronage: 20,
-		iEngineering: 15,
-	
-		iReplaceableParts: -30,
-		iScientificMethod: -30,
-		iCombinedArms: -30,
-		iExploration: -30,
+	iRus : {
+		iCompass: 30,
+		iCommune: 20,
+	},
+	iVietnam : {
+		iPrinting: 20,
+		iHeritage: 20,
+		iStatecraft: 20,
+		iLabourUnions: 20,
+	},
+	iSwahili : {
+		iCompass: 30,
+		iFortification: 20,
+		
+		iCartography: -40,
 	},
 	iPoland : {
 		iCombinedArms: 30,
@@ -1767,6 +1804,19 @@ dTechPreferences = {
 		iAcademia: 20,
 		iFission: 12,
 	},
+	iMughals : {
+		iHumanities: 30,
+		iPhilosophy: 20,
+		iEducation: 20,
+		iPaper: 20,
+		iPatronage: 20,
+		iEngineering: 15,
+	
+		iReplaceableParts: -30,
+		iScientificMethod: -30,
+		iCombinedArms: -30,
+		iExploration: -30,
+	},
 	iMongols : {
 		iGunpowder: 100,
 		iLogistics: 40,
@@ -1786,6 +1836,14 @@ dTechPreferences = {
 		iFeudalism: -20,
 		iMachinery: -20,
 		iGunpowder: -20,
+	},
+	iSweden : {
+		iCombinedArms: 40,
+		iFirearms: 30,
+		iLogistics: 30,
+		iRefining: 30,
+		iCivilLiberties: 20,
+		iBiology: 20,
 	},
 	iRussia : {
 		iMacroeconomics: 30,
@@ -1990,6 +2048,14 @@ dBuildingPreferences = {
 	iEthiopia : {
 		iMonolithicChurch: 40,
 	},
+	iToltecs : {
+		iPyramidOfTheSun: 30,
+	},
+	iKushans : {
+		iSalsalBuddha: 30,
+		iNalanda: 20,
+		iKhajuraho: 20,
+	},
 	iKorea : {
 		iCheomseongdae: 30,
 	},
@@ -2001,6 +2067,10 @@ dBuildingPreferences = {
 		iPrambanan: 20,
 		iNalanda: 20,
 	},
+	iMali : {
+		iUniversityOfSankore: 40,
+		iGreatAdobeMosque: 40,
+	},
 	iByzantium : {
 		iHagiaSophia: 40,
 		iTheodosianWalls: 30,
@@ -2009,68 +2079,6 @@ dBuildingPreferences = {
 		iNotreDame: -20,
 		iSistineChapel: -20,
 		iSaintSophia: -50,
-	},
-	iJapan : {
-		iItsukushimaShrine: 50,
-		iHimejiCastle: 50,
-		iTsukijiFishMarket: 30,
-		iSkytree: 30,
-	
-		iBorobudur: -60,
-		iPrambanan: -60,
-		iShwedagonPaya: 0,
-		iGreatWall: -100,
-	},
-	iTurks : {
-		iGurEAmir: 40,
-		iSalsalBuddha: 20,
-		iImageOfTheWorldSquare: 20,
-	},
-	iNorse : {
-		iNobelPrize: 30,
-		iGlobalSeedVault: 30,
-		iCERN: 15,
-	},
-	iArabia: {
-		iSpiralMinaret: 40,
-		iDomeOfTheRock: 40,
-		iHouseOfWisdom: 40,
-		iBurjKhalifa: 40,
-		iAlamut: 30,
-	
-		iTopkapiPalace: -80,
-		iMezquita: -50,
-	},
-	iTibet : {
-		iPotalaPalace: 40,
-	},
-	iJava : {
-		iBorobudur: 40,
-		iPrambanan: 40,
-		iGardensByTheBay: 40,
-		iShwedagonPaya: 20,
-		iWatPreahPisnulok: 20,
-		iNalanda: 20,
-	},
-	iMoors : {
-		iMezquita: 100,
-		
-		iUniversityOfSankore: -40,
-		iSpiralMinaret: -40,
-		iTopkapiPalace: -40,
-		iBlueMosque: -40,
-	},
-	iSpain : {
-		iEscorial: 30,
-		iGuadalupeBasilica: 30,
-		iChapultepecCastle: 30,
-		iSagradaFamilia: 30,
-		iCristoRedentor: 20,
-		iWembley: 20,
-		iIberianTradingCompanyBuilding: 20,
-		iTorreDeBelem: 15,
-		iNotreDame: 15,
-		iMezquita: 15,
 	},
 	iFrance : {
 		iTradingCompanyBuilding: 40,
@@ -2087,6 +2095,79 @@ dBuildingPreferences = {
 		iBerlaymont: 20,
 		iLargeHadronCollider: 20,
 		iITER: 20,
+	},
+	iMalays : {
+		iGardensByTheBay: 40,
+		iPrambanan: 20,
+		iBorobudur: 20,
+	},
+	iJapan : {
+		iItsukushimaShrine: 50,
+		iHimejiCastle: 50,
+		iTsukijiFishMarket: 30,
+		iSkytree: 30,
+	
+		iBorobudur: -60,
+		iPrambanan: -60,
+		iShwedagonPaya: 0,
+		iGreatWall: -100,
+	},
+	iTurks : {
+		iGurEAmir: 40,
+		iSalsalBuddha: 20,
+		iImageOfTheWorldSquare: 20,
+		
+		iShwedagonPaya: -30,
+	},
+	iNorse : {
+		iNobelPrize: 20,
+		iGlobalSeedVault: 30,
+		iCERN: 15,
+	},
+	iArabia: {
+		iSpiralMinaret: 40,
+		iDomeOfTheRock: 40,
+		iHouseOfWisdom: 40,
+		iBurjKhalifa: 40,
+		iAlamut: 30,
+	
+		iTopkapiPalace: -80,
+		iMezquita: -50,
+		iUniversityOfSankore: -30,
+		iGreatAdobeMosque: -30,
+	},
+	iTibet : {
+		iPotalaPalace: 40,
+	},
+	iMoors : {
+		iMezquita: 100,
+		
+		iUniversityOfSankore: -40,
+		iSpiralMinaret: -40,
+		iTopkapiPalace: -40,
+		iBlueMosque: -40,
+		iUniversityOfSankore: -30,
+		iGreatAdobeMosque: -30,
+	},
+	iJava : {
+		iBorobudur: 40,
+		iPrambanan: 40,
+		iGardensByTheBay: 30,
+		iShwedagonPaya: 20,
+		iWatPreahPisnulok: 20,
+		iNalanda: 20,
+	},
+	iSpain : {
+		iEscorial: 30,
+		iGuadalupeBasilica: 30,
+		iChapultepecCastle: 30,
+		iSagradaFamilia: 30,
+		iCristoRedentor: 20,
+		iWembley: 20,
+		iIberianTradingCompanyBuilding: 20,
+		iTorreDeBelem: 15,
+		iNotreDame: 15,
+		iMezquita: 15,
 	},
 	iEngland : {
 		iTradingCompanyBuilding: 50,
@@ -2111,8 +2192,15 @@ dBuildingPreferences = {
 		iPalaceOfNations: 20,
 		iNotreDame: 15,
 	},
-	iMali : {
-		iUniversityOfSankore: 40,
+	iBurma : {
+		iShwedagonPaya: 50,
+		iWatPreahPisnulok: 20,
+		iEmeraldBuddha: 20,
+	},
+	iRus : {
+		iSaintSophia: 40,
+		iSaintBasilsCathedral: 20,
+		iKremlin: 20,
 	},
 	iPoland : {
 		iSaltCathedral: 30,
@@ -2185,6 +2273,10 @@ dBuildingPreferences = {
 		iTajMahal: 20,
 		iBorobudur: 20,
 		iGreatCothon: 15,
+	},
+	iSweden : {
+		iNobelPrize: 30,
+		iGlobalSeedVault: 20,
 	},
 	iIran: {
 		iImageOfTheWorldSquare: 30,
