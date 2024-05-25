@@ -1,0 +1,14 @@
+# Italy now also flips Rome on spawn
+# second UHV goal changed to "build three universities by 1570 AD"
+# fixed the dynamic names of Italy's vassals
+# Italy gets two workers on spawn
+# Italy spawns with Compass and Civil Service now, but without Divine Right
+# The Italian UP now gives every city one free specialist for each of its wonders until the Industrial Age
+# changed some Italy coefficients (slower growth and unit production)
+# Topkapi Palace requires Printing Press now
+# Brandenburg Gate is more expensive
+# fixed the building size of protestant buildings
+# fixed Italy's first UHV goal
+# decreased Arabia's likeliness to research Banking
+# Radio is now an Industrial Tech
+# Italy's first UHV goal now requires Education instead of Optics

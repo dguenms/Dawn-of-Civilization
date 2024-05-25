@@ -1,0 +1,22 @@
+# removed the overlap between Phoenicia's and Babylonia's core
+# adjusted the economic/growth/AI modifiers to fit with Italy
+# made Phoenicia autoraze Gordion and Hattusas
+# increased the likeliness of a Roman war on Greece
+# "Italy" now also represents Renaissance Italy
+	# spawn in 1167 (Lombard League)
+	# "Lion of Mark" coat of arms (courtesy of the RFCEurope modmod)
+# implemented the Italian UP: The Power of Renaissance - wonders add their value in culture as GPP
+# implemented the Italian UHV:
+	# Be the first to discover Banking, Optics, Radio and Fascism
+	# Acquire 8 happiness resources by 1500 AD
+	# Control Greece, Libya and Ethiopia in 1930 AD
+# implemented the Italian city names map and city name checks
+# added dynamic GP names for Italy
+# implemented overlay maps for Italy: settler/stability, AI wars
+# added dynamic names for Italy
+# moved Massilia one tile west, Venice one tile east, along with corresponding resource movements
+# wine and clams spawn in Savoy 1100 AD
+# The civilopedia entry for the Apostolic Palace now acknowledges that it moves the holy city of its religion
+# disabled switch to a reborn civilization during autoplay
+# placed Adur Farnbag and a Zoroastrian temple in Sirajis in the 600 AD scenario
+# increased Netherlands tech speed by roughly 15%
