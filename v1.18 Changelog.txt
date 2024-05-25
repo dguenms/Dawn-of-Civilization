@@ -1,0 +1,927 @@
+TABLE OF CONTENTS
+* Major Features
+* Civilizations
+* Technologies
+* Units
+* New Buildings
+* Buildings
+* New Wonders
+* Wonders
+* Civics
+* New Terrain
+* Terrain
+* New Features
+* Features
+* New Resources
+* Resources
+* New Improvements
+* Improvements
+* Corporations
+* Promotions
+* Game Rules
+* Stability
+* Interface
+* Historical Immersion
+* Balance
+* Artificial Intelligence
+* Implementation
+* Performance
+
+Last commit 18172fdcd3dd8d5df270d74ba94e0aca615b8c7d
+
+MAJOR FEATURES
+* New, larger and highly detailed map, including many new terrain, feature, and resource types
+* 13 new civilizations
+* Extended game length: 80 turns added on Normal game speed
+* Blue Marble included by default
+* New implementation of settler and war map values and logic to simplify logic and improve control
+* New implementation of minor city spawns to achieve better developed and defended minors, including from collapsed civilizations
+* New implementation of barbarian spawns to achieve more contextual and better targeted barbarians
+* New stability maps: distinction of core, historical, conquest, and foreign areas
+	* Core area: cities contribute to the stability limit
+	* Historical area: cities slightly contribute to instability, temporary positive stability on city conquest
+	* Conquest area: cities fully contribute to instability except for the first turns after conquest, temporary positive stability on city conquest
+	* Foreign area: cities fully contribute to instability
+* Resources can have different graphical varieties on the map
+
+CIVILIZATIONS
+* Egypt
+	* Birth: 3000 BC
+	* Coat of Arms: Eye of Ra, yellow/blue
+	* Leaders: Ramesses II, Cleopatra, Baibars
+	* Unique Unit: War Chariot (Chariot): +25% flood plains strength, starts with Desert Adaptation
+	* Unique Building: Obelisk (Monument): +25% culture, +1 priest slot
+	* Unique Power: Pharaoh: Monarchy, Redistribution, and Deification are enabled at start
+	* Unique Historical Victory:
+		* Build the Sphinx and the Pyramids and have more than 500 culture by 1200 BC
+		* Control Nubia and the Levant by 600 BC
+		* Build the Great Library and the Great Lighthouse and have more than 5000 culture by 200 BC
+* Babylonia
+	* Birth: 3000 BC
+	* Coat of Arms: Lamassu, purple/yellow
+	* Leaders: Sargon, Hammurabi
+	* Unique Unit: Asharittu Bowman (Archer): causes collateral damage
+	* Unique Building: Edubba (Library): reduced cost, +2 research
+	* Unique Power: Cradle of Civilization: Free technology after the first five discovered technologies
+	* Unique Historical Victory:
+		* Be the first to discover Construction, Arithmetics, Writing, Calendar, and Contract
+		* Build three wonders in Babylon by 850 BC
+		* Have a population of 12 and refined culture in Babylon by 700 BC
+* Harappa
+	* Birth: 3000 BC
+	* Coat of Arms: Seal, green/black
+	* Leaders: Went-Antu
+	* Unique Unit: City Builder (Settler): additional population in founded cities
+	* Unique Building: Reservoir (Bath): reduced cost, requires Masonry, does not require Aqueduct
+	* Unique Power: Sanitation: Positive health contributes to growth in the Ancient era
+	* Unique Historical Victory:
+		* Establish a trade connection with another civilization by 1800 BC
+		* Control three Reservoirs, two Granaries and two Weavers by 1500 BC
+		* Have a total population of 45 by 800 BC
+* Assyria
+	* Birth: 2600 BC
+	* Coat of Arms: Star, gray/yellow
+	* Leaders: Ashurbanipal
+	* Unique Units:
+		* Azmaru (Spearman): +50% city attack
+		* Siege Ram (Catapult): reduced cost, -1 strength, reduced collateral damage, requires Leverage, starts with Cover
+	* Unique Building: Kalliu (Barracks): -25% maintenance
+	* Unique Power: First Empire: No resistance in conquered cities
+	* Unique Historical Victory:
+		* Acquire 250 gold from conquering cities and have five level three units by 1200 BC
+		* Control Mesopotamia, Persia, the Levant, and Egypt by 900 BC
+		* Settle three great people in your capital by 600 BC
+* China
+	* Birth: 2070 BC
+	* Coat of Arms: Dragon, yellow/black
+	* Leaders: Qin Shi Huang, Tang Taizong, Hongwu, Mao Zedong
+	* Unique Units:
+		* Cho-Ko-Nu (Crossbowman): +1 first strike, causes collateral damage
+		* Firelancer (Arquebusier): -1 strength, causes collateral damage, requires Gunpowder
+	* Unique Building: Taixue (Library): +1 scientist slot, +1 statesman slot
+	* Unique Power: Myriads: Cities keep an additional +25% food after growing
+	* Unique Historical Victory:
+		* Control four Confucian Guozijians and three Taoist Gongs by 1000 AD
+		* Be the first to discover Compass, Paper, Gunpowder, and Printing
+		* Experience four Golden Ages by 1800 AD
+* Hittites
+	* Birth: 1800 BC
+	* Coat of Arms: Standard, orange/yellow
+	* Leaders: Murshili
+	* Unique Unit: Huluganni (Chariot): +1 strength, +25% hills strength, starts with Cover and Mobility
+	* Unique Building: Bloomery (Forge): requires Bloomery, double construction speed with Iron
+	* Unique Power: Charcoal: Melee units can chop down forests
+	* Unique Historical Victory:
+		* Acquire four Copper and Iron resources by 900 BC
+		* Generate 1200 production by 800 BC
+		* Be the first to receive tribute in a peace treaty
+* Nubia
+	* Birth: 1650 BC
+	* Coat of Arms: Scarab, purple/orange
+	* Leaders: Taharqa
+	* Unique Unit: Medjay (Archer): +1 strength
+	* Unique Building: Mudbrick Pyramid (Monument): +2 production
+	* Unique Power: Baqt: No negative attitude from different state religion
+	* Unique Historical Victory:
+		* Have 200 gold and 200 culture and acquire five happiness resources by 900 BC
+		* Have a population of 40 in happy cities by 300 BC
+		* Found Orthodoxy and control an Orthodox Cathedral by 600 AD
+* Greece
+	* Birth: 1600 BC
+	* Coat of Arms: Owl, blue/black
+	* Leaders: Pericles, Alexander
+	* Unique Units:
+		* Hoplite (Spearman): +1 strength, starts with Cover and Shock
+		* Companion (Horseman): +25% city strength, starts with Blitz and March
+	* Unique Building: Odeon (Theatre): +1 happiness, +1 statesman slot
+	* Unique Power: Philosophy: +150% great people birth rate until the end of the Classical era
+	* Unique Historical Victory:
+		* Be the first to discover Mathematics, Literature, Aesthetics, Philosophy, and Medicine
+		* Control Anatolia, the Levant, Mesopotamia, Persia, and Egypt in 330 BC
+		* Build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
+* India
+	* Birth: 1500 BC
+	* Coat of Arms: Wheel, orange/yellow
+	* Leaders: Ashoka, Chandragupta, Shivaji, Gandhi
+	* Unique Units:
+		* Varu (Lancer): increased cost, +2 strength, -1 movement, +25% against heavy cavalry
+		* Patiyodha (Longbowman): -1 strength, +25% forest and rainforest attack, starts with Formation and Woodsman I, requires Nobility
+	* Unique Building: Edict (Monument): -10% maintenance
+	* Unique Power: Purity: +1 health from buildings that provide happiness
+	* Unique Historical Victory:
+		* Control Vishwanath and the Mahabodhi in 100 BC
+		* Control 25 temples by 700 AD
+		* Control 20% of the world's population in 1200 AD
+* Phoenicia
+	* Birth: 1200 BC
+	* Coat of Arms: Tanit, purple/yellow
+	* Leaders: Hiram, Hannibal
+	* Unique Units:
+		* Sacred Band (Spearman): +25% city strength, starts with Amphibious
+		* Numidian Cavalry (Horseman): can enter desert, +25% city strength, +50% against melee units, starts with Disengage I and Desert Adaptation
+	* Unique Building: Glassmaker (Jeweller): requires Contract, +50% trade route yield, +1 merchant slot
+	* Unique Power: Mercenaries: Can always hurry units with gold and pays half the cost and no extra upkeep for hurried units
+	* Unique Historical Victory:
+		* Control five Dye resources and have 15 trade routes by 300 BC
+		* Build a Palace and the Great Cothon in Carthage by 400 BC and control Italy and Iberia by 100 BC
+		* Reveal half the African Coast by 1 AD
+* Polynesia
+	* Birth: 1000 BC
+	* Coat of Arms: Flower, pink/white
+	* Leader: Ahoeitu
+	* Unique Unit: Waka (Galley): reduced cost, +2 movement, -1 cargo, can create sea improvements
+	* Unique Building: Mala'e (Monument): +2 culture, +1 artist slot
+	* Unique Power: Navigation: No penalties for cultural expansion over Ocean tiles
+	* Unique Historical Victory:
+		* Settle two out of Hawaii, New Zealand, Marquesas, and Easter Island by 800 AD
+		* Settle Hawaii, New Zealand, Marquesas, and Easter Island by 1000 AD
+		* Build Moai Statues by 1200 AD
+* Persia
+	* Birth: 850 BC
+	* Coat of Arms: Shahbaz, orange/red
+	* Leader: Cyrus, Dareios, Khosrow
+	* Unique Unit:
+		* Immortal (Spearman): reduced cost, +100% attack against Archer, starts with March
+		* Savaran (Lancer): requires Nobility, reduced cost, -2 strength, +25% city strength
+	* Unique Building: Qanat (Aqueduct): reduced cost, +1 food on Dates, Cotton, Opium, Spices, Wine
+	* Unique Power: Satrapy: Additional stability for recently conquered cities
+	* Unique Historical Victory:
+		* Build a Road connection from Persepolis to Anatolia by 500 BC
+		* Control ten wonders by 300 BC
+		* Control 35% of the world's population by 300 BC
+* Celts
+	* Birth: 600 BC
+	* Coat of Arms: Triskele, green/brown
+	* Leader: Brennus
+	* Unique Unit: Oathsworn (Light Swordsman): does not require resources, +25% city attack, +1 move, starts with Mobility
+	* Unique Building: Menhir (Monument): +3 experience for melee units
+	* Unique Power: Druids: Units heal in forests at the same rate as in friendly cities
+	* Unique Historical Victory:
+		* Conquer two cities by 150 BC
+		* Settle three out of Ireland, Britain, Iberia, Pannonia, and Anatolia by 150 BC
+		* Spread Orthodoxy or Catholicism to twelve cities by 1000 AD
+* Rome
+	* Birth: 509 BC
+	* Coat of Arms: Laurels, red/yellow
+	* Leader: Julius Caesar, Augustus Caesar
+	* Unique Units:
+		* Legion (Swordsman): increased cost, +2 strength, can build Roman Roads
+		* Ballista (Catapult): +2 strength, -50% city attack
+	* Unique Building: Forum (Market): +25% great people birth rate, +2 statesman slots
+	* Unique Power: Infrastructure: +30% production for buildings already in capital
+	* Unique Historical Victory:
+		* Control eight Barracks, six Aqueducts, five Arenas and four Forums by 50 BC
+		* Control two cities in Iberia, three cities in Gaul, a city in Britain, three cities in Africa, four cities in Anatolia, three cities in Egypt and two cities in the Levant in 100 AD
+		* Be the first to discover Architecture, Politics, Scholarship, Machinery, and Civil Service
+* Maya
+	* Birth: 400 BC
+	* Coat of Arms: Calendar, blue/red
+	* Leader: Pacal
+	* Unique Unit: Holkan (Skirmisher): requires Smelting, -1 strength, creates food on victory
+	* Unique Building: Ball Court (Arena): +2 experience for melee and archery units
+	* Unique Power: Long Count: additional food in all cities for every technology discovered before the Middle Ages
+	* Unique Historical Victory:
+		* Discover Calendar by 100 BC and Arithmetics by 100 AD
+		* Build Temple of Kukulkan by 600 AD
+		* Make contact with a European civilization before any of them discovers America
+* Dravidians
+	* Birth: 300 BC
+	* Coat of Arms: Buddha, blue/yellow
+	* Leaders: Rajendra Chola, Krishna Deva Raya
+	* Unique Units:
+		* Dharani (Cog): requires Artisanry, +2 movement, +1 strength, +2 first strikes
+		* Rocketeer (Grenadier): +2 strength, additional collateral damage, +25% against Musketeer
+	* Unique Building: Gopuram (Civic Square): +10% food
+	* Unique Power: Trade Guilds: +10% foreign trade route yield for every traded resource
+	* Unique Historical Victory:
+		* Have 2500 culture and 5000 gold in 600 AD and acquire 7500 gold by trade by 1200 AD
+		* Control or vassalize the Deccan, Bengal and Srivijaya in 1000 AD
+		* Have a city of size 25 or larger by 1500 AD
+* Ethiopia
+	* Birth: 295 BC
+	* Coat of Arms: Pentagram, yellow/green
+	* Leaders: Ezana, Zara Yaqob, Menelik
+	* Unique Units:
+		* Shotelai (Swordsman): alternatively requires Obsidian, can enter desert, starts with Guerilla I
+		* Mehal Sefari (Rifleman): starts with Guerilla I and Guerilla II
+	* Unique Building: Stele (Monument): +2 priest slots
+	* Unique Power: Highlands: +1 food on hill tiles that yield at least one food
+	* Unique Historical Victory:
+		* Acquire five Incense resources by 400 AD
+		* Settle five great prophets in your cities and have pleased relations with ten other Christian civilizations by 1200 AD
+		* Allow only African civilizations in Africa and have friendly relations with all African civilizations in 1930 AD
+* Toltecs
+	* Birth: 200 BC
+	* Coat of Arms: Ocelot, red/green
+	* Leader: Topiltzin
+	* Unique Unit: Atlatl (Skirmisher): +25% against melee and archery units
+	* Unique Building: Obsidian Workshop (Jeweller): +3 experience for melee units
+	* Unique Power: Artisans: +1 production and +2 culture per specialist
+	* Unique Historical Victory:
+		* Have a population of 10 and 200 culture in Tollan by 200 AD
+		* Experience a golden age by 550 AD
+		* Have a total population of 40 and more than 2000 culture by 1000 AD
+* Kushans
+	* Birth: 135 BC
+	* Coat of Arms: Tughra, green/blue
+	* Leader: Kanishka
+	* Unique Unit: Asvaka (Horseman): +1 strength, +25% city attack, starts with City Raider I
+	* Unique Building: Caravanserai (Market): +1 trade route
+	* Unique Power: Syncretism: Receives gold for spreading religions that are not the owner's state religion
+	* Unique Historical Victory:
+		* Build three Pagan Temples, six Buddhist Stupas and three Hindu Mandirs by 250 AD
+		* Spread Silk Route to eight of your cities and Buddhism to twelve cities by 500 AD
+		* Have 6000 gold and 6000 culture by 700 AD
+* Korea
+	* Birth: 50 BC
+	* Coat of Arms: Taegeuk, purple/red
+	* Leaders: Wang Kon, Sejong
+	* Unique Units:
+		* Hwacha (Bombard): +3 strength, -50% city attack
+		* Kobukson (Galleass): +2 strength, starts with Drill I and Drill II
+	* Unique Building: Seowon (University): requires Paper
+	* Unique Power: Education: Double specialist slots in capital
+	* Unique Historical Victory:
+		* Control a Buddhist Chaitya and a Confucian Guozijian by 1200 AD
+		* Be the first to discover Printing
+		* Sink 20 enemy ships
+* Khmer
+	* Birth: 50 AD
+	* Coat of Arms: Apsara Dancer, blue/white
+	* Leader: Suryavarman II
+	* Unique Unit: Ballista Elephant (War Elephant): +25% city attack, targets Heavy Cavalry
+	* Unique Building: Baray (Aqueduct): +2 food
+	* Unique Power: Canals: Capital can convert production into food
+	* Unique Historical Victory:
+		* Have more than 2000 culture by 600 AD and more than 12000 culture by 1200 AD
+		* Build Wat Preah Pisnulok and control four Hindu Ashrams and four Buddhist Sanghas in 1200 AD
+		* Have an average city population of 12 in 1200 AD and of 15 in 1400 AD and make Angkor the most populous city in the world in 1400 AD
+* Mali
+	* Birth: 300 AD
+	* Coat of Arms: Kanaga Mask, brown/black
+	* Leader: Mansa Musa
+	* Unique Units:
+		* Kelebolo (Skirmisher): can enter desert, +50% against melee and heavy cavalry
+		* Farari (Lancer): does not require Horse, starts with River Combat and Desert Adaptation
+	* Unique Building: Wangara (Market): +2 commerce from Copper, Gold, Ivory, Salt
+	* Unique Power: Long Distance Trade: Inland trade route receive double yields from city distance and Desert tiles connect trade routes
+	* Unique Historical Victory:
+		* Have 2000 gold by 1000 AD, 5000 gold by 1200 AD and 15000 gold by 1500 AD
+		* Conduct two trade missions to your holy city by 1250 AD
+		* Build University of Sankore and settle a Great Prophet in its city by 1350 AD
+* Byzantium
+	* Birth: 330 AD
+	* Coat of Arms: Christogram, purple/yellow
+	* Leaders: Justinian, Basil II
+	* Unique Units:
+		* Cataphract (Lancer): requires Nobility, starts with Shock
+		* Dromon (Heavy Galley): +1 strength, +25% coast attack, causes collateral damage
+	* Unique Building: Hippodrome (Theatre): +1 happiness, +1 happiness from Horse
+	* Unique Power: Splendor: Additional espionage from gold in treasure and additional gold from culture in capital
+	* Unique Historical Victory:
+		* Have 5000 gold by 1000 AD
+		* Make Constantinople the most populous and the most culturally advanced city in the world in 1200 AD
+		* Control Greece, the Balkans, Anatolia, the Caucasus, the Levant, Egypt, Africa, Andalusia and Italy in 1450 AD
+* France
+	* Birth: 496 AD
+	* Coat of Arms: Fleur de Lys, blue/yellow
+	* Leaders: Charlemagne, Louis XIV, Napoleon, de Gaulle
+	* Unique Units:
+		* Gendarme (Cuirassier): starts with Pinch and Leadership
+		* Gribeauval (Cannon): +1 move, starts with Pinch
+	* Unique Building: Salon (Coffee House): +25% culture, +25% great people birth rate, +1 statesman slot
+	* Unique Power: Diplomacy: Diplomatic penalties decay faster and more likely to be voted for in Congress
+	* Unique Historical Victory:
+		* Have legendary culture in Paris in 1700 AD
+		* Control 40% of Europe and 40% of North America in 1800 AD
+		* Build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain in Paris by 1900 AD
+* Malays
+	* Birth: 500 AD
+	* Coat of Arms: Mandala, green/purple
+	* Leaders: Sri Jayanasa, Tun Perak
+	* Unique Unit: Djong (Galleass): +50% coast defense, +50% against Privateer
+	* Unique Building: Gudang (Lighthouse): +2 commerce on Spices, Dye, Sugar
+	* Unique Power: Straits: +2 trade routes in cities with a different landmass within their third ring
+	* Unique Historical Victory:
+		* Generate 1600 commerce from city trade routes by 1000 AD and 8000 commerce from city trade routes by 1500 AD
+		* Acquire 14 different happiness resources by 1300 AD
+		* Build a Hindu Kshetra, a Buddhist Chaitya and an Islamic Grand Mosque in a Malayan city by 1500 AD
+* Japan
+	* Birth: 525 AD
+	* Coat of Arms: Chrysanthemum, white/red
+	* Leaders: Kammu, Oda Nobunaga, Meiji
+	* Unique Units:
+		* Samurai (Heavy Swordsman): starts with Leadership
+		* Zero (Fighter): reduced cost, +25% evasion chance, +50% against water units
+	* Unique Building: Zaibatsu (Factory): +1 free engineer, +1 commerce on water tiles
+	* Unique Power: Modernization: +50% research for techs three other civilizations are willing to trade after completing all Medieval technologies
+	* Unique Historical Victory:
+		* Have more than 30000 culture in founded cities by 1600 AD
+		* Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and the Philippines in 1940 AD
+		* Be the first to discover eight Global era technologies and eight Digital era technologies
+* Norse
+	* Birth: 545 AD
+	* Coat of Arms: Raven, purple/black
+	* Leaders: Ragnar, Christian, Gerhardsen
+	* Unique Units:
+		* Huscarl (Heavy Swordsman): requires Steel, +10% city attack, starts with Amphibious
+		* Longship (Heavy Galley): requires Artisanry and Shipbuilding, +2 movement, +2 cargo, can bombard city defenses
+	* Unique Building: Trade Post (Lighthouse): +1 merchant slot, +1 production +1 commerce from Whale, free Navigation I promotion
+	* Unique Power: Raids: Additional gold from pillaging, sacking cities, and sinking ships during the Middle Ages
+	* Unique Historical Victory:
+		* Control the core of any European civilization in 1050 AD
+		* Be the first to found a city in America by 1100 AD
+		* Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
+* Turks
+	* Birth: 552 AD
+	* Coat of Arms: Bow and Arrow, blue/white
+	* Leaders: Bumin, Alp Arslan, Tamerlane
+	* Unique Unit: Oghuz (Horse Archer): +1 movement, hidden nationality, starts with March and Steppe Adaptation
+	* Unique Building: Divan (Jail): -25% maintenance, +1 statesman slot
+	* Unique Power: Orda: Barbarians cannot enter territory while at peace and attacked mounted barbarians will join your armies while at war
+	* Unique Historical Victory:
+		* Control 7% of the world and pillage 20 improvements by 900 AD
+		* Build a land based trade connection from a city in China to one of your Mediterranean ports and spread Silk Route to 14 of your cities by 1100 AD
+		* Have developing culture in your capital by 900 AD, refined culture in a different capital by 1100 AD and influential culture in another capital by 1400 AD
+* Arabs
+	* Birth: 620 AD
+	* Coat of Arms: Shahada, green/white
+	* Leaders: Harun al-Rashid, Saladin
+	* Unique Units:
+		* Ghazi (Heavy Swordsman): +10% city attack, +1 movement
+		* Mobile Guard (Lancer): does not require Iron, +25% city strength, +20% retreat chance
+	* Unique Building: Alchemist (Pharmacy): +10% research
+	* Unique Power: Faith: State religion spreads with temples to conquered cities
+	* Unique Historical Victory:
+		* Discover all Medieval technologies by 1200 AD
+		* Control or vassalize Egypt, the Maghreb, Iberia, Mesopotamia and Persia by 1300 AD
+		* Spread Islam to 30% of the world's population
+* Tibet
+	* Birth: 630 AD
+	* Coat of Arms: Buddhist Knot, red/orange
+	* Leaders: Songtsen Gampo, Lobsang Gyatso
+	* Unique Unit: Khampa (Horse Archer): can enter Tundra, +50% city attack, +50% hills attack, starts with Mobility
+	* Unique Building: Gompa (University): requires Paper, -15% research, +25% defense, +1 priest slot, +1 free priest
+	* Unique Power: Missionaries: Can train unlimited missionaries and missionaries can enter foreign territory
+	* Unique Historical Victory:
+		* Acquire six cities by 1000 AD
+		* Spread Buddhism to cities with a total population of 60 by 1400 AD
+		* Settle seven Great Prophets in Lhasa by 1700 AD
+* Moors
+	* Birth: 711 AD
+	* Coat of Arms: Moon, brown/yellow
+	* Leaders: Abd-ar-Rahman, Yaqub al-Mansur
+	* Unique Unit: Corsair (Privateer): -2 strength, reduced cost, +25% coast strength, receives gold on victory
+	* Unique Building: Noria (Aqueduct): +2 production
+	* Unique Power: Horticulture: +2 food from Orchard
+	* Unique Historical Victory:
+		* Control four cities in the Maghreb and conquer three cities in Iberia and two cities in West Africa in 1200 AD
+		* Build La Mezquita and settle four Great Prophets, Scientists and Engineers in Cordoba by 1300 AD
+		* Acquire 3000 gold through piracy by 1650 AD
+* Java
+	* Birth: 716 AD
+	* Coat of Arms: Surya Majapahit, pink/purple
+	* Leaders: Hayam Wuruk, Suharto
+	* Unique Units:
+		* Pendekar (Swordsman): +30% retreat chance, starts with Amphibious
+		* Lantaka (Bombard): starts with Amphibious
+	* Unique Building: Candi (Monument): +2 production, +1 engineer slot
+	* Unique Power: Island Agriculture: Food improvements on islands have double effect
+	* Unique Historical Victory:
+		* Build Prambanan and Borobudur by 1100 AD
+		* Have a population of 75 in happy cities by 1350 AD
+		* Control three Islamic Grand Mosques by 1500 AD
+* Spain
+	* Birth: 722 AD
+	* Coat of Arms: Castle, yellow/red
+	* Leaders: Isabella, Philip
+	* Unique Units:
+		* Tercio (Arquebusier): starts with Pinch and Formation
+		* Conquistador (Cuirassier): requires Exploration and Firearms, +50% attack against Light Swordsman, Swordsman, Heavy Swordsman, Spearman, Heavy Spearman, can enter Jungle and Rainforest
+	* Unique Building: Citadel (Castle): -25% maintenance
+	* Unique Power: Discovery: +2 movement for naval units
+	* Unique Historical Victory:
+		* Be the first to found a city in America
+		* Control twelve Silver and Gold resources directly or by vassal by 1650 AD
+		* Spread Catholicism to 30% of the world's population and allow no Protestant civilizations in Europe in 1650 AD
+* England
+	* Birth: 820 AD
+	* Coat of Arms: Three Lions, red/yellow
+	* Leaders: Alfred, Elizabeth, Victoria, Churchill
+	* Unique Units:
+		* Redcoat (Musketeer): causes collateral damage
+		* Man-o-War (Ship of the Line): +3 strength, +1 movement
+	* Unique Building: Exchequer (Courthouse): requires Judiciary, reduced cost, +1 trade route
+	* Unique Power: Indirect Rule: Reduced colony maintenance from number of colonies per continent
+	* Unique Historical Victory:
+		* Control six cities in North America, four cities in South and Central America, three cities in Africa and three cities in India and have 25 level three naval units by 1770 AD
+		* Control twelve cities in Asia, ten cities in Africa and six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
+		* Be the first to discover eight Renaissance era technologies and eight Industrial era technologies
+* Holy Rome
+	* Birth: 840 AD
+	* Coat of Arms:	Eagle, yellow/black
+	* Leaders: Barbarossa, Charles V, Francis I
+	* Unique Units:
+		* Landsknecht (Pikeman): +50% against melee units, starts with Leadership
+		* Grenzer (Grenadier): requires Geography, +25% retreat chance, starts with Disengage I and Guerilla I
+	* Unique Building: Rathaus (Civic Square): -25% maintenance
+	* Unique Power: Investiture: Double production of state religion buildings
+	* Unique Historical Victory:
+		 * Control Saint Peter's Cathedral in 1000 AD, control Church of the Anastasis in 1200 AD and control All Saints' Church in 1550 AD
+		 * Have three Catholic vassals in Europe by 1650 AD
+		 * Settle ten Great Artists and Statesmen in Vienna and have pleased relations with ten other independent civilizations in Europe by 1850 AD
+* Burma
+	* Birth: 849 AD
+	* Coat of Arms: Peacock, green/yellow
+	* Leaders: Anawrahta, Bayinnaung
+	* Unique Units:
+		* Kyundaw (Heavy Spearman): +25% retreat chance, can enter Rainforest
+		* Cassay (Dragoon): starts with Pinch and Blitz
+	* Unique Building: Kyaung (Library): +2 priest slots, +1 food on Amber, Gems, Jade
+	* Unique Power: Dharma Kings: Can use unlimited Great Prophets for Golden Ages
+	* Unique Historical Victory:
+		* Have 3000 gold by 1300 AD
+		* Experience three Golden Ages by 1700 AD
+		* Control Indochina in 1580 AD and control Indochina in 1760 AD
+* Rus
+	* Birth: 880 AD
+	* Coat of Arms: Trident, blue/yellow
+	* Leader: Yaroslav
+	* Unique Unit: Druzhina (Heavy Swordsman): requires Steel, +1 movement, starts with Woodsman I, Flanking I, and River Combat
+	* Unique Building: Volok (Wharf): requires Navigation, does not require coast, requires river, +1 merchant slot
+	* Unique Power: Varangians: +1 commerce on unimproved tiles in your trade network
+	* Unique Historical Victory:
+		* Have an Orthodox population of 30 by 1200 AD
+		* Defeat 25 barbarian units by 1250 AD
+		* Acquire four Fur and three Salt resources and acquire 200 gold by trade by 1450 AD
+* Vietnam
+	* Birth: 938 AD
+	* Coat of Arms: Lily, yellow/red
+	* Leader: Le Loi
+	* Unique Unit: Rattan Archer (Longbowman): requires Civil Service, +1 first strike, starts with Guerilla I and Woodsman I
+	* Unique Building: Water Puppet Theatre (Theatre): +1 artist slot, +2 commerce on Clam, Crab, Fish
+	* Unique Power: Resistance: When attacking in own territory, units receive defensive bonus of their own tiles
+	* Unique Historical Victory:
+		* Create two Great Generals by 1500 AD
+		* Control a Confucian Guozijian by 1600 AD
+		* Have three cities with Influential culture by 1700 AD
+* Swahilis
+	* Birth: 957 AD
+	* Coat of Arms: Clove, yellow/orange
+	* Leader: Suleiman ibn Dawud
+	* Unique Unit: Dhow (Cog): +2 movement, +25% retreat chance
+	* Unique Building: Island Fort (Castle): requires coast, +1 trade route
+	* Unique Power: Palm Trees: Can construct coastal improvements without removing Savanna or Forest
+	* Unique Historical Victory:
+		* Import a cumulative of 100 happiness resources by 1300 AD
+		* Reveal 35% of the world's coastlines by 1400 AD
+		* Have 25 trade routes by 1500 AD
+* Poland
+	* Birth: 1025 AD
+	* Coat of Arms: Eagle, red/white
+	* Leaders: Casimir, Sobieski, Pilsudski, Walesa
+	* Unique Unit: Winged Hussar (Cuirassier): +50% attack against Arquebusier, Musketeer
+	* Unique Building: Sejmik (Civic Square): +2 happiness, +10% gold
+	* Unique Power: Folwarks: +1 commerce from Farm and Pasture
+	* Unique Historical Victory:
+		* Have three cities with a population of 12 by 1400 AD
+		* Be the first to discover Civil Liberties
+		* Control three Christian Cathedrals by 1600 AD
+* Portugal
+	* Birth: 1130 AD
+	* Coat of Arms: Escudo, blue/white
+	* Leaders: Afonso Henriques, Joao II, Maria II
+	* Unique Unit:
+		* Bandeirante (Explorer): +4 strength, can attack, starts with Guerilla I and Woodsman I, can capture slaves regardless of civics, guaranteed to capture slaves
+		* Carrack (Caravel): +1 cargo, can carry any cargo, can bombard city defenses, starts with Sentry
+	* Unique Building: Feitoria (Customs House): +1 commerce on water tiles
+	* Unique Power: Cartaz: +1 trade route in overseas colonies until the Industrial era
+	* Unique Historical Victory:
+		* Control 35% of the Indian Trade Route by 1550 AD
+		* Have open border agreements with 14 civilizations by 1600 AD
+		* Acquire twelve trading company resources by 1650 AD
+* Inca
+	* Birth: 1150 AD
+	* Coat of Arms: Sun Mask, orange/red
+	* Leader: Huayna Capac
+	* Unique Unit: Aucac (Swordsman): reduced cost, requires Mining, requires no resources, -1 strength, +50% against melee and archery, starts with Combat I
+	* Unique Building: Tambo (Post Office): reduced cost, requires Law, +25% trade route yield
+	* Unique Power: Terraces: Mountains produce 2 food and 1 production
+	* Unique Historical Victory:
+		* Control seven Tambos and build a road along the Andean coast by 1550 AD
+		* Have 2500 gold by 1550 AD
+		* Control 90% of the population in South America in 1775 AD
+* Italy
+	* Birth: 1167 AD
+	* Coat of Arms: Lombard cross, green/white
+	* Leaders: Lorenzo de' Medici, Cavour
+	* Unique Units:
+		* Balestriere (Crossbowman): +1 first strike, +25% city attack, starts with Amphibious
+		* Lanternas (Galleass): +2 strength, +1 movement
+	* Unique Building: Art Studio (Forge): +25% culture, +1 artist slot
+	* Unique Power: Renaissance: Free specialist in all cities until the Industrial era
+	* Unique Historical Victory:
+		* Build San Marco Basilica, the Sistine Chapel, and Santa Maria del Fiore by 1500 AD
+		* Have three cities with Influential culture by 1600 AD
+		* Control 65% of the Mediterranean by 1930 AD
+* Mongols
+	* Birth: 1190 AD
+	* Coat of Arms: ?, brown/yellow
+	* Leaders: Genghis Khan, Kublai Khan
+	* Unique Units:
+		* Mangudai (Horse Archer): +2 strength, +1 movement, starts with Steppe Adaptation
+		* Keshik (Lancer): +1 movement, +1 first strike, +25% city attack, causes collateral damage, starts with Steppe Adaptation, considered light cavalry
+	* Unique Building: Ortege (Stable): +1 trade route, +2 experience for Light and Heavy Cavalry, +2 food from Horse, +1 food from Sheep and Cow
+	* Unique Power: Terror: Cities threatened by your armies descend into unrest
+	* Unique Historical Victory:
+		* Control China in 1350 AD
+		* Raze seven cities
+		* Control 12% of the world by 1500 AD
+* Aztecs
+	* Birth: 1200 AD
+	* Coat of Arms: Snake, green/black
+	* Leader: Montezuma
+	* Unique Unit: Jaguar (Swordsman): alternatively requires Obisidian, can enter Rainforest and Jungle, reduced cost, +30% retreat chance, starts with Woodsman I
+	* Unique Building: Calmecac (Library): +3 melee unit experience
+	* Unique Power: Flower Wars: can enslave defeated enemy units, can sacrifice slaves to start a short golden age
+	* Unique Historical Victory:
+		* Make Tenochtitlan the most populous city in the world in 1520 AD
+		* Start 16 Golden Ages by sacrificing slaves by 1650 AD
+		* Control the core of any European civilization by 1750 AD
+* Mughals
+	* Birth: 1206 AD
+	* Coat of Arms: Moon, green/yellow
+	* Leaders: Muhammad ibn Tughluq, Akbar
+	* Unique Units:
+		* Siege Elephant (Bombard): +1 strength, +25% against archery and gunpowder units
+		* Sowar (Cuirassier): +25% city attack
+	* Unique Building: Mausoleum (Estate): requires Heritage, +1 free artist
+	* Unique Power: Architecture: completing a building grants half its construction cost as culture
+	* Unique Historical Victory:
+		* Control three Islamic Grand Mosques by 1500 AD
+		* Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD
+		* Have more than 50000 culture in 1750 AD
+* Thailand
+	* Birth: 1238 AD
+	* Coat of Arms: Elephant, red/white
+	* Leaders: Naresuan, Mongkut
+	* Unique Unit: Chang Suek (Lancer): +50% attack against Arquebusier, Musketeer, +50% against heavy cavalry, can enter Jungle and Rainforest
+	* Unique Building: Floating Market (Market): requires river, +2 food
+	* Unique Power: Embassies: Never loses contact with another civilization
+	* Unique Historical Victory:
+		* Have open border agreements with ten civilizations in 1650 AD
+		* Make Ayutthaya the most populous city in the world in 1700 AD
+		* Allow only local civilizations in South Asia in 1900 AD
+* Sweden
+	* Birth: 1252 AD
+	* Coat of Arms: blue/yellow
+	* Leader: Gustav Adolph
+	* Unique Units:
+		* Carolean (Musketeer): requires Combined Arms, +25% retreat chance, starts with March and Formation
+		* Hakkapeliitta (Pistolier): +1 strength, -10% open terrain strength, starts with Shock and Pinch
+	* Unique Building: Soldattorp (Barracks): +25% land unit production, free Drill I promotion
+	* Unique Power: Lagom: Celebrating cities gain +50% great people birth rate
+	* Unique Historical Victory:
+		* Have all of the Baltic Sea Region in your territory in 1650 AD
+		* Make sure there are six European civilizations with Protestant state religion by 1700 AD
+		* Have the highest approval rating in the world for 50 turns by 1980 AD
+* Russia
+	* Birth: 1263 AD
+	* Coat of Arms: Eagle, red/yellow
+	* Leaders: Ivan IV, Peter, Catherine, Alexander I, Stalin
+	* Unique Units:
+		* Strelets (Arquebusier): starts with City Garrison I
+		* Cossack (Hussar): requires Measurement, +10 retreat chance, +25% against light and heavy cavalry
+	* Unique Building: Katorga (Jail): +4 production, -50% unhappiness from sacrificing population
+	* Unique Power: Hardship: Unhappiness from hurrying and drafting is applied to your happiest city
+	* Unique Historical Victory:
+		* Control three Orthodox Cathedrals and three Orthodox wonders by 1550 AD
+		* Settle ten cities in Siberia by 1700 AD and build a railroad connection from Moscow to the Siberian coast by 1920 AD
+		* Adopt Communism, have friendly relations with five other communist civilizations, and control 30 ICBMs and 30 Satellites by 1970 AD
+* Ottomans
+	* Birth: 1280 AD
+	* Coat of Arms: Tughra, green/white
+	* Leaders: Mehmed, Suleiman, Ataturk
+	* Unique Units:
+		* Janissary (Arquebusier): +25% against melee, archery, heavy cavalry
+		* Great Bombard (Bombard): +25% city attack
+	* Unique Building: Hammam (Bath): +2 happiness
+	* Unique Power: Devshirme: Can conscript two extra units in cities with non-state religions
+	* Unique Historical Victory:
+		* Have four wonders in your capital in 1550 AD
+		* Control Anatolia, the Caucasus, the Pontic Steppe, the Levant, Mesopotamia, Arabia, Egypt, the Maghreb, Greece, the Balkans, and two cities in Central Europe by 1700 AD
+		* Settle twelve Great Military Instructors, Artists and Statesmen in your cities by 1800 AD
+* Congo
+	* Birth: 1390 AD
+	* Coat of Arms: Cross, green/brown
+	* Leader: Mbemba
+	* Unique Unit: Pombos (Heavy Swordsman): can enter rainforest, jungle, marsh, +50% against gunpowder units
+	* Unique Building: Mbwadi (Weaver): +10% gold, +1 merchant slot
+	* Unique Power: Tropics: Extra food and production and no unhealth from Rainforest, Jungle and Marsh
+	* Unique Historical Victory:
+		* Acquire 12% of the votes in the Apostolic Palace by 1650 AD
+		* Acquire 1000 gold through the slave trade by 1800 AD
+		* Enter the Industrial era before anyone enters the Global era
+* Iran
+	* Birth: 1501 AD
+	* Coat of Arms: Lion, orange/red
+	* Leaders: Abbas, Khomeini
+	* Unique Unit: Qizilbash (Arquebusier): +25% against gunpowder units, starts with Guerilla I
+	* Unique Building: Bagh (Park): requires Aesthetics, +2 food, +2 happiness
+	* Unique Power: Safaviyya: Religious buildings produce +2 culture and +2 research
+	* Unique Historical Victory:
+		* Have open border agreements with ten European civilizations by 1650 AD
+		* Control Mesopotamia, Transoxiana and the Punjab in 1750 AD
+		* Have a city with 20000 culture in 1800 AD
+* Netherlands
+	* Birth: 1580 AD
+	* Coat of Arms: Lion, orange/black
+	* Leaders: Willem van Oranje, William III
+	* Unique Unit: Fluyt (Galleon): +2 strength, +1 cargo, can enter foreign territory
+	* Unique Building: Polder (Levee): requires Urban Planning, reduced cost, +1 production on water tiles
+	* Unique Power: Trading Companies: Double yield and commerce from the Trading Company corporation
+	* Unique Historical Victory:
+		* Settle four Great Merchants in Amsterdam in 1745 AD
+		* Conquer four European cities outside of Europe by 1745 AD
+		* Acquire ten Spice resources by 1775 AD
+* Germany
+	* Birth: 1700 AD
+	* Coat of Arms: Iron Cross, grey/black
+	* Leaders: Frederick, Bismarck
+	* Unique Units:
+		* Fusilier (Musketeer): starts with Drill I and II
+		* Panzer (Tank): +25% attack against Rifleman, Infantry, starts with Leadership
+	* Unique Building: Assembly Plant (Factory): +1 engineer slot, +1 free engineer, +2 experience for armored units
+	* Unique Power: Doctrine: Units retain all their experience when upgraded
+	* Unique Historical Victory:
+		* Settle nine great people in Berlin in 1900 AD
+		* Control Italy, Central Europe, France, Britain, Scandinavia and Eastern Europe in 1940 AD
+		* Be the first to discover eight Industrial era technologies and eight Global era technologies
+* America
+	* Birth: 1775 AD
+	* Coat of Arms: Stars, blue/white
+	* Leaders: Washington, Lincoln, Roosevelt
+	* Unique Units:
+		* Pioneer (Settler): can defend, strength 10, +50% open terrain defense, free defender and worker in North American cities
+		* Supercarrier (Carrier): +6 strength, +1 movement, +2 cargo, +30% intercept chance, starts with Medic I and Sentry
+		* Stratofortress (Bomber): +4 range, +25% evade chance, causes additional collateral damage
+	* Unique Building: Mall (Department Store): +25% gold with power, +1 merchant slot
+	* Unique Power: Manifest Destiny: Additional population growth and happiness in cities after immigration and improving resources
+	* Unique Historical Victory:
+		* Control 20 Farm and Pasture resources, 15 Plantation and Orchard resources, and 35 Mine and Quarry resources directly or through vassals by 1880 AD
+		* Build the Statue of Liberty, Brooklyn Bridge, the Empire State Building, Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD
+		* Control 75% of the world's commerce and 75% of the world's military power directly or through allies by 1990 AD
+* Argentina
+	* Birth: 1810 AD
+	* Coat of Arms: Sun, blue/yellow
+	* Leaders: San Martin, Peron
+	* Unique Unit: Grenadier Cavalry (Dragoon): +25% attack against Musketeer, Rifleman
+	* Unique Building: Refrigeration Plant (Abattoir): +2 commerce from Cow, Pig, Sheep, Deer
+	* Unique Power: Juntas: Great Generals can start Golden Ages
+	* Unique Historical Victory:
+		* Experience two Golden Ages by 1930 AD
+		* Have legendary culture in Buenos Aires by 1960 AD
+		* Experience six Golden Ages by 2000 AD
+* Mexico
+	* Birth: 1810 AD
+	* Coat of Arms: Eagle and Snake, green/blue
+	* Leaders: Juarez, Santa Anna, Cardenas
+	* Unique Unit: Rural (Cavalry): reduced cost, starts with Combat I
+	* Unique Building: Charreada Arena (Arena): +1 happiness from Horse, +2 experience for light and heavy cavalry
+	* Unique Power: Positivism: Converts +50% of production to research
+	* Unique Historical Victory:
+		* Control three cathedrals of your state religion by 1880 AD
+		* Create three Great Generals by 1940 AD
+		* Make Mexico City the most populous city in the world in 1960 AD
+* Colombia
+	* Birth: 1814 AD
+	* Coat of Arms: Eagle, purple/yellow
+	* Leader: Bolivar
+	* Unique Units:
+		* Albion Legion (Grenadier): +2 strength, +1 movement
+		* Llanero (Hussar): +25% against Musketeer, Rifleman, starts with Mobility
+	* Unique Building: Hacienda (Estate): +1 food from Banana, +3 commerce from Coffee
+	* Unique Power: Liberator: No resistance on city conquest in South America
+	* Unique Historical Victory:
+		* Allow no European civilization in Gran Colombia and the Andes in 1870 AD
+		* Control South America in 1920 AD
+		* Acquire 3000 gold by selling resources by 1950 AD
+* Brazil
+	* Birth: 1822 AD
+	* Coat of Arms: Globe, green/yellow
+	* Leaders: Pedro II, Vargas
+	* Unique Unit: Madeirero (Labourer): starts with Woodsman II, creates gold when removing Forest, Rainforest, Jungle
+	* Unique Building: Sambadrome (Arena): +2 happiness, +1 happiness per 10% culture rate
+	* Unique Power: Cordiality: Cities are guaranteed to celebrate if they meet the requirements
+	* Unique Historial Victory:
+		* Control twelve Slave Plantations and four Pastures in 1880 AD
+		* Build Wembley, Cristo Redentor, and Itaipu Dam
+		* Control 30 Nature Reserves and have a city with twelve free specialists by 1950 AD
+* Canada
+	* Birth: 1867 AD
+	* Coat of Arms: Maple Leaf, red/white
+	* Leaders: MacDonald, Trudeau
+	* Unique Unit: Corvette (Destroyer): reduced cost, -4 strength, +2 movement, starts with Sentry
+	* Unique Building: Royal Mounted Police (Constabulary): +2 happiness from Horse
+	* Unique Power: Multilateralism: Double trade route yield from years of peace
+	* Unique Historical Victory:
+		* Build a Railroad connection from your capital to the Atlantic Coast and Pacific Coast by 1920 AD
+		* Control all cities in Canada and half of Canadian territory and never conquer any cities by 1950 AD
+		* End twelve wars through diplomacy by 2000 AD
+
+TECHNOLOGIES
+* Literature: enables adjusting culture rate instead of Writing
+* Cartography: additional movement on Roads
+* Electricity: additional movement on Railroads
+		
+UNITS
+* Spy: has two moves
+* Missionary: limit increased to 5
+* Persecutor: requires Theology, reduced cost, limit increased to 3
+* Great Merchant: can enter desert
+* Increased movement for all naval units
+* Unit modifiers for Desert also apply for Semidesert
+* Animal units have terrain and feature strength modifiers depending on their native biomes
+
+NEW BUILDINGS
+* Tannery (Tanning): +1 happiness from Fur, +1 health from Deer
+* Jeweller (Aesthetics): +2 culture, +1 artist slot, +1 happiness from Gems, Pearls, Amber, Jade
+* Grocer (Guilds): +1 health from Citrus, Amber, Dates, Banana, Spices
+* Abattoir (Refrigeration): +1 health from Cow, Pig
+* Grain Silo (Labour Unions): +1 health from Wheat, Corn, Rice, Millet
+* Zoo (Ecology): +1 happiness from Camel, Fur, Ivory, Whale
+
+BUILDINGS
+* Smokehouse: removed
+* Weaver: requires Leverage, -1 culture, -1 artist slot
+* Manufactory: requires Companies
+
+NEW WONDERS
+* Pyramid of the Sun: +3 great people points per Citizen
+* Great Adobe Mosque: requires Doctrine, Ivory, Islam, +2 commerce on Desert and Semidesert, +2 priest slots
+
+WONDERS
+* Increased costs for many ancient and classical wonders
+* Sphinx: +1 happiness from Stone, Marble
+* Pyramids: require Pottery, +1 priest and engineer slot, +1 great people point per happiness resource
+* Floating Gardens: require Ethics
+* Saint Sophia: requires Compass, reduced cost
+* Shwedagon Paya: current gold rate increases great people birth rate
+* Prambanan: +1 production on islands
+* Hagia Sophia: +1 gold per city with state religion
+* La Mezquita: requires Education
+* Machu Picchu: requires Potatoes
+
+CIVICS
+* Republic: removed additional specialist slots
+* Citizenship: Spies can bribe barbarian units
+
+NEW TERRAIN
+* Arctic Coast: 2 commerce, +10% defense
+* Atoll: 2 food, 1 commerce, +100% improvement construction time
+* Lagoon: 1 food 2 commerce, 2 movement cost, +50% defense, +50% improvement construction time
+* Moorland: 1 food, +1 commerce next to river
+* Salt Flat: 1 production, 1 commerce, 2 movement cost, +25% improvement construction time, cannot build cities
+* Salt Lake: 2 commerce
+* Savanna: 1 food, +1 commerce next to river
+* Semidesert: 1 production, +1 commerce next to river, +25% improvement construction time, cannot build cities unless coastal or riverside
+* Steppe: 1 production, +1 food next to river, +25% improvement construction time, cannot build cities unless coastal or riverside
+
+TERRAIN
+* Impassable terrain: Ice, Tundra, and Desert are impassable by default unless allowed by a specific unit ability, covering the tile with culture, or for Settlers that can found on the tile
+
+NEW FEATURES
+* Savanna: +1 food
+* Taiga: -1 food, +1 production, 2 movement cost, +0.5 health, +50% defense
+
+FEATURES
+* Flood Plains: -1 production, no commerce from being adjacent to riverside
+* Marsh: -1 food, additional graphical varieties
+* Forest: additional graphical varieties
+
+NEW RESOURCES:
+* Potatoes: +1 food, +2 food with Farm (Agriculture), +1 health for two cities, +1 happiness with Distillery
+* Millet: +1 food, +2 food with Farm (Agriculture), +1 health for one city, +1 health with Grain Silo
+* Amber: +1 commerce, +3 commerce with Mine or Harvest Boats (Mining), +1 happiness for three cities, +1 happiness with Jeweller, obsoletes with Synthetics
+* Obsidian: +1 production, +2 commerce with Mine (Mining), alternative requirement for Spearman, Light Swordsman, and some unique units
+* Rare Earths: +1 commerce, revealed by Metallurgy, +3 with Mine (Electronics), required for Supercomputer, Solar Plant, Fiber Network, Automated Factory, accelerated production Skytree, Oriental Pearl Tower, Large Hadron Collider, ITER, The Internet, Great Firewall, Mars Hydroponics, Mars Control Center, consumed by Computer Industry
+* Citrus: +1 food, +3 food with Orchard (Pottery), +1 health for two cities, +1 health with Grocer, has citrus and orange varieties
+* Dates: +1 food, +2 food with Orchard (Pottery), +1 health for two cities, +1 health with Grocer
+* Olives: +1 food, +3 food with Orchard (Pottery), +1 health for two cities, +1 health with Grocer
+* Cocoa: +1 food, +1 food +1 commerce with Plantation (Calendar), +1 happiness for three cities, +1 happiness with Coffee House, consumed by Trading Company
+* Opium: +1 commerce, +2 commerce with Plantation (Medicine), +1 happiness for three cities, +1 health with Pharmacy, consumed by Silk Route
+* Rubber: +1 production, +2 production with Plantation (Construction), +10% production with Industrial Park
+* Jade: +1 commerce, -1 production +3 commerce with Quarry (Masonry), +1 happiness for three cities, +1 happiness with Jeweller, obsoletes with Synthetics
+* Salt: +1 commerce, +1 food -1 production +2 commerce with Quarry (Masonry), +1 health for three cities, +1 health with Granary
+
+RESOURCES
+* Livestock resources no longer require Refrigeration to be traded
+* Dye: has indigo, henna, cochineal, and murex (water) varieties
+* Cow: has brown and Holstein varieties
+* Crab: has crab and shrimps varieties
+* Gems: has gems, diamond, emerald, sapphire, ruby, and turquoise varieties
+* Ivory: has Asian and African varieties
+* Pig: has pink and furry varieties
+* Sheep: has white, black, and Llama varieties
+* Spices: has pepper, cinnamon, nutmeg, saffron, and vanilla varieties
+
+NEW IMPROVEMENTS
+* Harvest Boats: connects Amber and Dye on Water
+
+IMPROVEMENTS
+* Lumbermill: requires flatlands
+* Windmill: +1 commerce on coast
+* Plantation: reduce commerce provided for some resources
+* Forts on unowned tiles are passable to sea units
+* Plantations and Orchards on Jungle are enabled with Crop Rotation
+* Incense, Tobacco are connected after discovering Priesthood
+* Tea is connected after discovering Aesthetics
+
+CORPORATIONS
+* Increased global corporation limits
+
+PROMOTIONS
+* Heavy Cavalry units have access to City Raider II and City Raider III
+* Desert Adaptation also applies for Semidesert
+* Added Steppe Adaptation promotions for some units to provide double movement on Steppe
+
+GAME RULES
+* Capital flip on spawn immediately expands culture
+* Civilian and naval units can enter independent territory
+* Flipped capitals do not receive free garrisons
+* No restrictions on withdrawal, collateral attack, bombardment from cargo for Amphibious units
+* Limited the vision range of land units into sea tiles
+* Limited amount of territory revealed on spawn if map trading is not yet available
+* Increased limit of concurrent major civilizations to 36
+* Expansion area is determined by war map values instead of a dedicated expansion map
+
+STABILITY
+* Capital city grants non-scaling additional stability limit
+
+INTERFACE
+* Production modifiers not displayed in production tooltip while converting production to commerce
+* Income indicator is green if income is positive, yellow if income is negative but sufficient to fund the completion of the currently researched technology, orange if negative but less than the remaining treasury, and red otherwise
+* Autoplay progress bar has the colour of the current civilization
+* Camera is centered at the spawn location during autoplay
+* World builder overlay displays the current tile's city name
+
+HISTORICAL IMMERSION
+* Removed scripted Tamil conquerors
+* Expansion stability scales differently for some civilizations
+
+BALANCE
+* The AI receives free improvements and roads when gaining cultural control over one tile islands with resources
+* The AI receives a free worker when founding an overseas colony
+* Independents only pay halved unit upkeep instead of none
+* The AI receives a free transport ship after building a settler in a coastal city if the destination city site is also coastal
+
+ARTIFICIAL INTELLIGENCE
+* Improved impact of AI building preferences on Great Engineer actions
+* Improved AI handling of transport ships to ferry settlers, especially in cases where an alternative but slower land route exists
+* AI is less intimidated out of building settlers by being at war with independents
+
+IMPLEMENTATION
+* Settler, war, religion, and city name maps are accessed as CSV files and edited as ODS files for ease of editing
+
+PERFORMANCE
+* Optimized memory consumption for plot data

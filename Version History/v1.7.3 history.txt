@@ -1,0 +1,12 @@
+# Temple of Solomon now loses its effect with Liberalism, instead of acquiring it
+# fixed the transition to democracy instability (you now only need to have Representation before you can switch to Parliament without penalty)
+# Arabian expansion now also in the 3000 BC scenario
+# Made Washington more reluctant to peacefully vassalize
+# included Algor Mortis' fixes to the Roman UP and Italian spawn crashes
+# included robf32's fix to the Persian spawn crash
+# England's first UHV goal now requires them to build a total of 25 frigates and ships of the line
+# added an SoI style UHV goal progress display
+# fixed the Persian UHV so that it also accounts for the new wonders added in DoC
+# expanded the Roman UHV requirements to include the whole Roman Empire (4 cities in Greece or Anatolia, 2 cities in Egypt)
+# changed the Arabian UHV requirements to controlling or vassalizing Spain, the Maghreb, Mesopotamia and Persia
+# the Arabian UHV now requires at least one of the area's cities to be controlled by them or one of their vassals, and no cities controlled by anyone else (e.g. your vassal Persia could hold Mesopotamia for you as well)

@@ -1,0 +1,24 @@
+# excluded Sirajis from Arabian flip
+# part of the Arabian units and settlers spawn in Baghdad and Cairo
+# AI Arabian capital gets moved to Cairo or Baghdad in 650 AD
+# extended the Russian historical area to the Ukraine to encourage the conquest of Kiev
+# changed the Roman UP so that units can't spawn on islands anymore
+# Byzantium now only spawns when Greece is dead or Rome controls at least one city in its core
+# Italy now only spawns when at least half of the Italian cities are independent (usually either Rome or Venice not conquered yet)
+# Former city garrisons get pushed out before they flip to Italy to avoid that they become a military power
+# reduced the probability of 600 AD preplaced cities to get razed
+# changed Abu Bakr's personality to focus on science as well
+# preplaced Naples in 600 AD
+# Tripolis and Benghazi are independent in 600 AD now
+# fixed unique GP names
+# added Ethiopian and Khmer GP names, expanded Portuguese GP names (credit to JiimBV)
+# forced reborn AI civs to found a new city
+# moved sheep from Mecca to Baghdad
+# moved fish in the North Sea to be accessible to Amsterdam only (also discourage Aarhus)
+# rebirth civs now found a new city on their rebirth plot if possible (you'll see Florence more often)
+# Rome is now excluded from the Italian rebirth flip
+# added a Safavid rebirth for Persia in 1500 AD in Esfahan (no new unique assets)
+# new Persian leaders: Abbas I, Khomeini
+# new Italian leader: Cavour, replacing Victor Emmanuel
+# Netherlands now found larger cities with more buildings
+# all civilizations now start with appropriate civics and state religions if applicable

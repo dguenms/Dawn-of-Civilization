@@ -1,0 +1,19 @@
+# reduced Constantinople's starting culture
+# Arabia now flips Jerusalem, Memphis, Alexandria and Tisfun in 640 AD
+# Byzantine 600 AD spawn date now properly displayed
+# renamed Alexandretta to Antiochia
+# rearranged resources in Anatolia (removed 1 wheat and 1 clam)
+# Bulgar, Cuman, Pecheneg barbarian spawns to challenge Byzantium to the west and north
+# Arabian UHV now erases non-state religions except holy cities
+# preplaced Tisfun/Ctesiphon/Baghdad in the 600 AD scenario
+# made Justinian less military inclined
+# nerfed several Byzantine coefficients, most prominently research, GP rate, production, city upkeep
+# reduced Byzantine likeliness to train settlers or offensive units
+# changed Cataphracts to strength 9, +25% against melee
+# removed Byzantine spearmen in 600 AD Africa
+# reduced Babylonian likeliness to train settlers
+# original Byzantine war and settler/stability maps added (replacing the former Greek maps)
+# Theodosian Walls don't create GPP anymore, Hagia Sophia now increases the chance of creating an artist
+# removed wheat, ivory near Tripolis
+# original Byzantine city name map, renaming function up to date
+# Changed Italian UP to "free specialist in your three largest cities until the industrial age"

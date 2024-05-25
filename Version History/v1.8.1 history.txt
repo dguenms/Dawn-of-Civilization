@@ -1,0 +1,27 @@
+# Islam is now properly founded when Mecca is built
+# Expanded the dynamic name scheme to allow for a greater variety of names, depending on more diverse conditions
+# The Chinese UP now properly applies only to undiscovered techs
+# The Chinese are now incapable of trading monopoly techs as intended
+
+# America starts with Scientific Method
+# Turkey now has a much higher chance to start at war with Byzantium
+# AI Turkey gets additional gunpowder units on spawn
+# Buddhism spread increased
+# focused Chinese settling on its main rivers instead of North China
+# increased cost of Westminster Palace
+
+# English UP now works properly
+# Porcelain Tower effect reduced to 10%
+# fixed Japan's tech goal
+# fixed Mongol's starting techs
+# AI Mongols start without Engineering and Guilds
+# Trading Company conquerors now convert part of a conquered city's culture
+
+# fixed capital moving to Carthage even if you're not Phoenicia
+# Arabian and Viking great scientists now can build Academies as intended, not Military Academies
+
+# RiseAndFall.py
+# Victory.py
+# CivGameCoreDLL.dll
+# Consts.py
+# DynamicCivs.py
