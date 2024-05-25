@@ -13614,8 +13614,8 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 
 			if (pCity != NULL && GC.getBonusInfo(eBonus).getAffectedCities() != 0)
 			{
-				int iDifference = kActivePlayer.getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() - pCity->getCultureRank();
-				int iResourceDifference = iDifference > 0 ? iDifference / GC.getBonusInfo(eBonus).getAffectedCities() : std::abs(iDifference) / GC.getBonusInfo(eBonus).getAffectedCities() + 1;
+				int iDifference = kActivePlayer.getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() - (pCity->getCultureRank() + 1);
+				int iResourceDifference = iDifference >= 0 ? (iDifference / GC.getBonusInfo(eBonus).getAffectedCities()) : (std::abs(iDifference + 1) / GC.getBonusInfo(eBonus).getAffectedCities() + 1);
 
 				if (iResourceDifference == 0)
 				{
