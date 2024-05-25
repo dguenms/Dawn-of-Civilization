@@ -14149,6 +14149,7 @@ void CvPlayer::changeUnimprovedTileYield(YieldTypes eYield, int iChange)
 	{
 		m_aiUnimprovedTileYield[eYield] += iChange;
 
+		updateYield();
 		AI_updateAssignWork();
 	}
 }
