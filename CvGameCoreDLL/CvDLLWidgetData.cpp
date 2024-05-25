@@ -4299,8 +4299,6 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 	pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
 
-	log(CvWString::format(L"parse nationality help for %s", pHeadSelectedCity->getName().c_str()));
-
 	if (pHeadSelectedCity != NULL)
 	{
 		int iTotalCulture = 0;
