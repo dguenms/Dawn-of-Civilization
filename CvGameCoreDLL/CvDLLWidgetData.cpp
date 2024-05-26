@@ -4311,9 +4311,7 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 			if (GET_PLAYER(ePlayer).isAlive() && eCivilization != NO_CIVILIZATION)
 			{
-				iCulture = (pHeadSelectedCity->plot()->isCore(ePlayer) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
 				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
-				iTotalCulture += iCulture;
 
 				if (iCulturePercent > 0)
 				{
@@ -4329,10 +4327,8 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 			if (!isCivAlive(eCivilization))
 			{
-				iCulture = (eCivilization < NUM_CIVS && pHeadSelectedCity->plot()->isCore(eCivilization) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(eCivilization);
 				iCulturePercent = pHeadSelectedCity->calculateCulturePercent(eCivilization);
-				iTotalCulture += iCulture;
-
+				
 				if (iCulturePercent > 0)
 				{
 					PlayerColorTypes ePlayerColor = (PlayerColorTypes)GC.getCivilizationInfo(eCivilization).getDefaultPlayerColor();
@@ -4343,8 +4339,7 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 		}
 
 		// Leoreth: stability effects of cultural control
-		int iOwnCulture = (pHeadSelectedCity->plot()->isCore(pHeadSelectedCity->getOwner()) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE());
-		int iOwnCulturePercent = iTotalCulture == 0 ? 100 : 100 * iOwnCulture / iTotalCulture;
+		int iOwnCulturePercent = pHeadSelectedCity->calculateCulturePercent(pHeadSelectedCity->getOwnerINLINE());
 
 		if (pHeadSelectedCity->getCivilizationType() != PERSIA)
 		{
