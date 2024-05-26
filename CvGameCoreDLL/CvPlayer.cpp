@@ -1793,6 +1793,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Leoreth: track game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
+	// Leoreth: old owner knows who acquired their city
+	pNewCity->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true);
+
 	int iTotalBuildingDamage = 0;
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
@@ -4430,7 +4433,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 				return false;
 			}
 
-			if (!pCityTraded->isRevealed(GET_PLAYER(eWhoTo).getTeam(), false))
+			if (!GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isVassal(getTeam()) && !pCityTraded->isRevealed(GET_PLAYER(eWhoTo).getTeam(), false))
 			{
 				return false;
 			}
