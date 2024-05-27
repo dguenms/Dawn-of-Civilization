@@ -6441,6 +6441,19 @@ bool CvPlayerAI::AI_considerOffer(PlayerTypes ePlayer, const CLinkList<TradeData
 				}
 			}
 
+			if (AI_getAttitude(ePlayer) < ATTITUDE_FRIENDLY)
+			{
+				if (iOurValue > 10 * GC.getDefineINT("PEACE_TREATY_LENGTH"))
+				{
+					return false;
+				}
+			}
+
+			if (pOurList->getLength() > 1)
+			{
+				return false;
+			}
+
 			if (AI_getMemoryCount(ePlayer, MEMORY_MADE_DEMAND_RECENT) > 0)
 			{
 				return false;
