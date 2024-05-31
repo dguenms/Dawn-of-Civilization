@@ -21,9 +21,6 @@ lCivilizations = [
 		techs=techs.of(iTanning, iMythology)
 	),
 	Civilization(
-		iCelts
-	),
-	Civilization(
 		iIndependent2
 	),
 	Civilization(
