@@ -27,8 +27,6 @@ TABLE OF CONTENTS
 * Implementation
 * Performance
 
-Last commit 18172fdcd3dd8d5df270d74ba94e0aca615b8c7d
-
 MAJOR FEATURES
 * New, larger and highly detailed map, including many new terrain, feature, and resource types
 * 13 new civilizations
