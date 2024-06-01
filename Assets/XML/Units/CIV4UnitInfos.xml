@@ -21046,7 +21046,6 @@
 			<Description>TXT_KEY_UNIT_SLAVE</Description>
 			<Civilopedia>TXT_KEY_UNIT_SLAVE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SLAVE_STRATEGY</Strategy>
-			<Help>TXT_KEY_UNIT_SLAVE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bSlave>1</bSlave>
 			<UnitAIs>
@@ -21060,6 +21059,10 @@
 				</UnitAI>
 			</UnitAIs>
 			<Builds>
+				<Build>
+					<BuildType>BUILD_SLAVE_MINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 				<Build>
 					<BuildType>BUILD_SLAVE_PLANTATION</BuildType>
 					<bBuild>1</bBuild>
@@ -21125,6 +21128,10 @@
 				</UnitAI>
 			</UnitAIs>
 			<Builds>
+				<Build>
+					<BuildType>BUILD_SLAVE_MINE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 				<Build>
 					<BuildType>BUILD_SLAVE_PLANTATION</BuildType>
 					<bBuild>1</bBuild>

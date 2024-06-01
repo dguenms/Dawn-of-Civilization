@@ -291,6 +291,36 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildMine.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,7</Button>
 		</BuildInfo>
 		<BuildInfo>
+			<Type>BUILD_SLAVE_MINE</Type>
+			<Description>TXT_KEY_BUILD_SLAVE_MINE</Description>
+			<iTime>0</iTime>
+			<bKill>1</bKill>
+			<ImprovementType>IMPROVEMENT_SLAVE_MINE</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>0</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_M</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildMine.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,7</Button>
+		</BuildInfo>
+		<BuildInfo>
 			<Type>BUILD_WORKSHOP</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>

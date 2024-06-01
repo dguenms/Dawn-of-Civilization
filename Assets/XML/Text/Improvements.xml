@@ -141,4 +141,12 @@
 		<Italian>Harvest Boats</Italian>
 		<Spanish>Harvest Boats</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_MINE</Tag>
+		<English>Slave Mine</English>
+		<French>Slave Mine</French>
+		<German>Slave Mine</German>
+		<Italian>Slave Mine</Italian>
+		<Spanish>Slave Mine</Spanish>
+	</TEXT>
 </Civ4GameText>
