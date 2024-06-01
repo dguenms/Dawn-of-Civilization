@@ -17858,7 +17858,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 				return -1;
 			}
 
-			if (eImprovement == IMPROVEMENT_SLAVE_PLANTATION)
+			if (eImprovement == IMPROVEMENT_SLAVE_PLANTATION || eImprovement == IMPROVEMENT_SLAVE_MINE)
 			{
 				return -1;
 			}
@@ -24696,6 +24696,7 @@ int CvPlayer::countRequiredSlaves() const
 
 	int iNumRequiredSlaves = 0;
 	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(IMPROVEMENT_SLAVE_PLANTATION);
+	CvImprovementInfo& kSlaveMine = GC.getImprovementInfo(IMPROVEMENT_SLAVE_MINE);
 
 	BonusTypes eBonus;
 	int iLoop;
@@ -24704,7 +24705,7 @@ int CvPlayer::countRequiredSlaves() const
 	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		eBonus = (BonusTypes)iI;
-		if (kSlavePlantation.isImprovementBonusTrade(eBonus))
+		if (kSlavePlantation.isImprovementBonusTrade(eBonus) || kSlaveMine.isImprovementBonusTrade(eBonus))
 		{
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
@@ -24715,7 +24716,7 @@ int CvPlayer::countRequiredSlaves() const
 
 					if (pLoopPlot != NULL)
 					{
-						if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != IMPROVEMENT_SLAVE_PLANTATION)
+						if (pLoopPlot->getBonusType() == eBonus && !pLoopPlot->isSlaveImprovement())
 						{
 							if (pLoopPlot->canUseSlave(getID()))
 							{
@@ -24749,7 +24750,7 @@ int CvPlayer::countRequiredSlaves() const
 	// subtract slaves they already have
 	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 	{
-		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)iI)).getBuilds(GC.getInfoTypeForString("BUILD_SLAVE_PLANTATION")))
+		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)iI)).isSlave())
 		{
 			iNumRequiredSlaves -= getUnitClassCount((UnitClassTypes)iI);
 		}
@@ -24764,8 +24765,8 @@ CvCity* CvPlayer::findSlaveCity() const
 
 	std::vector<CvCity*> lViableCities;
 
-	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
-	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
+	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(IMPROVEMENT_SLAVE_PLANTATION);
+	CvImprovementInfo& kSlaveMine = GC.getImprovementInfo(IMPROVEMENT_SLAVE_MINE);
 
 	BonusTypes eBonus;
 	int iLoop;
@@ -24774,7 +24775,7 @@ CvCity* CvPlayer::findSlaveCity() const
 	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		eBonus = (BonusTypes)iI;
-		if (kSlavePlantation.isImprovementBonusTrade(eBonus))
+		if (kSlavePlantation.isImprovementBonusTrade(eBonus) || kSlaveMine.isImprovementBonusTrade(eBonus))
 		{
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
@@ -24783,7 +24784,7 @@ CvCity* CvPlayer::findSlaveCity() const
 				{
 					pLoopPlot = plotCity(pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE(), iJ);
 
-					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
+					if (pLoopPlot->getBonusType() == eBonus && !pLoopPlot->isSlaveImprovement())
 					{
 						lViableCities.push_back(pLoopCity);
 					}

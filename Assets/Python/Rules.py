@@ -164,6 +164,10 @@ def validateSlaves(iPlayer):
 			for plot in plots.owner(iPlayer).where(lambda plot: plot.getImprovementType() == iSlavePlantation):
 				plot.setImprovementType(iPlantation)
 		
+		if player(iPlayer).getImprovementCount(iSlaveMine) > 0:
+			for plot in plots.owner(iPlayer).where(lambda plot: plot.getImprovementType() == iSlaveMine):
+				plot.setImprovementType(iMine)
+		
 		for city in cities.owner(iPlayer):
 			city.setFreeSpecialistCount(iSpecialistSlave, 0)
 				

@@ -30,6 +30,14 @@
 		<Spanish>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_SLAVE_MINE</Tag>
+		<English>Create [LINK=IMPROVEMENT_SLAVE_MINE]Slave Mine[\LINK]</English>
+		<French>Create [LINK=IMPROVEMENT_SLAVE_MINE]Slave Mine[\LINK]</French>
+		<German>Create [LINK=IMPROVEMENT_SLAVE_MINE]Slave Mine[\LINK]</German>
+		<Italian>Create [LINK=IMPROVEMENT_SLAVE_MINE]Slave Mine[\LINK]</Italian>
+		<Spanish>Create [LINK=IMPROVEMENT_SLAVE_MINE]Slave Mine[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_REMOVE_RAINFOREST</Tag>
 		<English>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</English>
 		<French>d&#233;fricher la [LINK=FEATURE_RAINFOREST]for&#234;t tropicale[\LINK]</French>

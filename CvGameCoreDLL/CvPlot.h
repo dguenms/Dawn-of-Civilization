@@ -579,6 +579,8 @@ public:
 	int getContinentID() const;
 	int getRegionGroup() const;
 
+	bool isSlaveImprovement() const;
+
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
 	void pageGraphicsOut();

@@ -5369,7 +5369,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 					{
 						for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 						{
-							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity() && iI != IMPROVEMENT_SLAVE_PLANTATION)
+							if (GC.getImprovementInfo((ImprovementTypes)iI).isImprovementBonusTrade(eBonus) && !GC.getImprovementInfo((ImprovementTypes)iI).isActsAsCity() && iI != IMPROVEMENT_SLAVE_PLANTATION && iI != IMPROVEMENT_SLAVE_MINE)
 							{
 								setImprovementType((ImprovementTypes)iI);
 								setRouteType((RouteTypes)GC.getInfoTypeForString("ROUTE_ROAD"), true);
@@ -5511,6 +5511,13 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 				if (!GET_PLAYER(eNewValue).canUseSlaves())
 				{
 					setImprovementType(IMPROVEMENT_PLANTATION);
+				}
+			}
+			else if (getImprovementType() == IMPROVEMENT_SLAVE_MINE)
+			{
+				if (!GET_PLAYER(eNewValue).canUseSlaves())
+				{
+					setImprovementType(IMPROVEMENT_MINE);
 				}
 			}
 		}
@@ -12149,4 +12156,9 @@ int CvPlot::getRegionGroup() const
 	default:
 		return NO_REGION_GROUP;
 	}
+}
+
+bool CvPlot::isSlaveImprovement() const
+{
+	return getImprovementType() == IMPROVEMENT_SLAVE_MINE || getImprovementType() == IMPROVEMENT_SLAVE_PLANTATION;
 }
