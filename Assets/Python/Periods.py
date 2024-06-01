@@ -153,6 +153,10 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
+	
+	if iOwnerCiv == iCelts:
+		if player(iCelts).getNumCities() > 0 and cities.owner(iCelts).region(iFrance).count() == 0:
+			setPeriod(iCelts, iPeriodInsularCelts)
 
 	
 @handler("firstCity")
