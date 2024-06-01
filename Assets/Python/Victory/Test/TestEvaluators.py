@@ -76,30 +76,40 @@ class TestSelfEvaluator(ExtendedTestCase):
 class TestVassalsEvaluator(ExtendedTestCase):
 
 	def setUp(self):
-		self.evaluator = VassalsEvaluator(0)
+		self.iFirstMaster = 0
+		self.iSecondMaster = 4
+		self.iThirdMaster = 6
 		
-		team(1).setVassal(0, True, True)
-		team(2).setVassal(0, True, False)
+		self.iFirstMasterCapitulatedVassal = 1
+		self.iFirstMasterPeaceVassal = 2
 		
-		team(8).setVassal(7, True, True)
-		team(10).setVassal(9, True, False)
+		self.iSecondMasterCapitulatedVassal = 5
+		self.iThirdMasterPeaceVassal = 7
+		
+		self.evaluator = VassalsEvaluator(self.iFirstMaster)
+		
+		team(self.iFirstMasterCapitulatedVassal).setVassal(self.iFirstMaster, True, True)
+		team(self.iFirstMasterPeaceVassal).setVassal(self.iFirstMaster, True, False)
+		
+		team(self.iSecondMasterCapitulatedVassal).setVassal(self.iSecondMaster, True, True)
+		team(self.iThirdMasterPeaceVassal).setVassal(self.iThirdMaster, True, False)
 		
 	def tearDown(self):
-		team(1).setVassal(0, False, True)
-		team(2).setVassal(0, False, False)
+		team(self.iFirstMasterCapitulatedVassal).setVassal(self.iFirstMaster, False, True)
+		team(self.iFirstMasterPeaceVassal).setVassal(self.iFirstMaster, False, False)
 		
-		team(8).setVassal(7, False, True)
-		team(10).setVassal(9, False, False)
+		team(self.iSecondMasterCapitulatedVassal).setVassal(self.iSecondMaster, False, True)
+		team(self.iThirdMasterPeaceVassal).setVassal(self.iThirdMaster, False, False)
 	
 	def test_contains(self):
-		self.assertEqual(0 in self.evaluator, True)
-		self.assertEqual(1 in self.evaluator, True)
-		self.assertEqual(2 in self.evaluator, True)
+		self.assertEqual(self.iFirstMaster in self.evaluator, True)
+		self.assertEqual(self.iFirstMasterCapitulatedVassal in self.evaluator, True)
+		self.assertEqual(self.iFirstMasterPeaceVassal in self.evaluator, True)
 		
-		self.assertEqual(7 in self.evaluator, False)
-		self.assertEqual(8 in self.evaluator, False)
-		self.assertEqual(9 in self.evaluator, False)
-		self.assertEqual(10 in self.evaluator, False)
+		self.assertEqual(self.iSecondMaster in self.evaluator, False)
+		self.assertEqual(self.iSecondMasterCapitulatedVassal in self.evaluator, False)
+		self.assertEqual(self.iThirdMaster in self.evaluator, False)
+		self.assertEqual(self.iThirdMasterPeaceVassal in self.evaluator, False)
 	
 	def test_iterate(self):
 		self.assertEqual(list(self.evaluator), [0, 1, 2])
@@ -108,8 +118,8 @@ class TestVassalsEvaluator(ExtendedTestCase):
 		self.assertPickleable(self.evaluator)
 	
 	def test_any(self):
-		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
-		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 3), False)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == self.iFirstMasterCapitulatedVassal), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == self.iSecondMaster), False)
 	
 	def test_sum(self):
 		self.assertEqual(self.evaluator.sum(lambda iPlayer: 1), 3)
@@ -127,63 +137,76 @@ class TestVassalsEvaluator(ExtendedTestCase):
 class TestAlliesEvaluator(ExtendedTestCase):
 
 	def setUp(self):
-		self.evaluator = AlliesEvaluator(0)
+		self.iPlayer = 0
+		self.iPlayerPeaceVassal = 1
+		self.iPlayerCapitulatedVassal = 2
 		
-		team(1).setVassal(0, True, False)
-		team(2).setVassal(0, True, True)
+		self.iAlly = 3
+		self.iAllyPeaceVassal = 4
 		
-		team(6).setDefensivePact(0, True)
-		team(0).setDefensivePact(6, True)
+		self.iDifferentMaster = 5
+		self.iDifferentMasterVassal = 6
 		
-		team(7).setVassal(6, True, False)
+		self.iUnrelatedAlly = 7
+		self.iUnrelatedOtherAlly = 8
+	
+		self.evaluator = AlliesEvaluator(self.iPlayer)
 		
-		team(9).setVassal(8, True, False)
+		team(self.iPlayerPeaceVassal).setVassal(self.iPlayer, True, False)
+		team(self.iPlayerCapitulatedVassal).setVassal(self.iPlayer, True, True)
 		
-		team(10).setDefensivePact(11, True)
-		team(11).setDefensivePact(10, True)
+		team(self.iPlayer).setDefensivePact(self.iAlly, True)
+		team(self.iAlly).setDefensivePact(self.iPlayer, True)
+		
+		team(self.iAllyPeaceVassal).setVassal(self.iAlly, True, False)
+		
+		team(self.iDifferentMasterVassal).setVassal(self.iDifferentMaster, True, False)
+		
+		team(self.iUnrelatedAlly).setDefensivePact(self.iUnrelatedOtherAlly, True)
+		team(self.iUnrelatedOtherAlly).setDefensivePact(self.iUnrelatedAlly, True)
 	
 	def tearDown(self):
-		team(1).setVassal(0, False, False)
-		team(2).setVassal(0, False, True)
+		team(self.iPlayerPeaceVassal).setVassal(self.iPlayer, False, False)
+		team(self.iPlayerCapitulatedVassal).setVassal(self.iPlayer, False, True)
 		
-		team(6).setDefensivePact(0, False)
-		team(0).setDefensivePact(6, False)
+		team(self.iPlayer).setDefensivePact(self.iAlly, False)
+		team(self.iAlly).setDefensivePact(self.iPlayer, False)
 		
-		team(7).setVassal(6, False, False)
+		team(self.iAllyPeaceVassal).setVassal(self.iAlly, False, False)
 		
-		team(9).setVassal(8, False, False)
+		team(self.iDifferentMasterVassal).setVassal(self.iDifferentMaster, False, False)
 		
-		team(10).setDefensivePact(11, False)
-		team(11).setDefensivePact(10, False)
+		team(self.iUnrelatedAlly).setDefensivePact(self.iUnrelatedOtherAlly, False)
+		team(self.iUnrelatedOtherAlly).setDefensivePact(self.iUnrelatedAlly, False)
 	
 	def test_contains(self):
-		self.assertEqual(0 in self.evaluator, True)
-		self.assertEqual(1 in self.evaluator, True)
-		self.assertEqual(2 in self.evaluator, True)
-		self.assertEqual(6 in self.evaluator, True)
-		self.assertEqual(7 in self.evaluator, True)
+		self.assertEqual(self.iPlayer in self.evaluator, True)
+		self.assertEqual(self.iPlayerPeaceVassal in self.evaluator, True)
+		self.assertEqual(self.iPlayerCapitulatedVassal in self.evaluator, True)
+		self.assertEqual(self.iAlly in self.evaluator, True)
+		self.assertEqual(self.iAllyPeaceVassal in self.evaluator, True)
 		
-		self.assertEqual(8 in self.evaluator, False)
-		self.assertEqual(9 in self.evaluator, False)
-		self.assertEqual(10 in self.evaluator, False)
-		self.assertEqual(11 in self.evaluator, False)
+		self.assertEqual(self.iDifferentMaster in self.evaluator, False)
+		self.assertEqual(self.iDifferentMasterVassal in self.evaluator, False)
+		self.assertEqual(self.iUnrelatedAlly in self.evaluator, False)
+		self.assertEqual(self.iUnrelatedOtherAlly in self.evaluator, False)
 	
 	def test_iterate(self):
-		self.assertEqual(list(self.evaluator), [0, 1, 2, 6, 7])
+		self.assertEqual(list(self.evaluator), [self.iPlayer, self.iPlayerPeaceVassal, self.iPlayerCapitulatedVassal, self.iAlly, self.iAllyPeaceVassal])
 	
 	def test_pickle(self):
 		self.assertPickleable(self.evaluator)
 	
 	def test_any(self):
-		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 1), True)
-		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == 8), False)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == self.iPlayerPeaceVassal), True)
+		self.assertEqual(self.evaluator.any(lambda iPlayer: iPlayer == self.iDifferentMasterVassal), False)
 	
 	def test_sum(self):
 		self.assertEqual(self.evaluator.sum(lambda iPlayer: 1), 5)
 	
 	def test_evaluate(self):
-		self.assertEqual(self.evaluator.evaluate(lambda x: x), 16)
-		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), 21)
+		self.assertEqual(self.evaluator.evaluate(lambda x: x), self.iPlayer + self.iPlayerPeaceVassal + self.iPlayerCapitulatedVassal + self.iAlly + self.iAllyPeaceVassal)
+		self.assertEqual(self.evaluator.evaluate(lambda x, a: x+a, 1), self.iPlayer + self.iPlayerPeaceVassal + self.iPlayerCapitulatedVassal + self.iAlly + self.iAllyPeaceVassal + 5)
 
 
 class TestReligionEvaluator(ExtendedTestCase):

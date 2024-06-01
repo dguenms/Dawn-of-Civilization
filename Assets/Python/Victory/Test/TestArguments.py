@@ -66,8 +66,8 @@ class TestAggregate(ExtendedTestCase):
 	
 	def test_format(self):
 		self.assertEqual(self.aggregate.format(COUNT.format), "a, two and three")
-		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Soldattorp and Ikhanda")
-		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Soldattorps and Ikhandas")
+		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Kalliu and Soldattorp")
+		self.assertEqual(self.aggregate.format(BUILDING.format, bPlural=True), "Barracks, Kallius and Soldattorps")
 	
 	def test_format_named(self):
 		self.aggregate.named("named aggregate")
@@ -77,7 +77,7 @@ class TestAggregate(ExtendedTestCase):
 	def test_format_separator(self):
 		self.aggregate.separated(" or")
 		
-		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Soldattorp or Ikhanda")
+		self.assertEqual(self.aggregate.format(BUILDING.format), "Barracks, Kalliu or Soldattorp")
 	
 	def test_evaluate(self):
 		self.assertEqual(self.aggregate.evaluate(lambda x: x), 6)

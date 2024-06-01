@@ -123,12 +123,12 @@ class TestParameterSet(ExtendedTestCase):
 	def test_str(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
 		
-		self.assertEqual(str(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(23, 4)])")
+		self.assertEqual(str(parameter_set), "ParameterSet((), (Building, Count), [Parameters(%d, 3), Parameters(%d, 4)])" % (iGranary, iLibrary))
 	
 	def test_repr(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
 	
-		self.assertEqual(repr(parameter_set), "ParameterSet((), (Building, Count), [Parameters(4, 3), Parameters(23, 4)])")
+		self.assertEqual(repr(parameter_set), "ParameterSet((), (Building, Count), [Parameters(%d, 3), Parameters(%d, 4)])" % (iGranary, iLibrary))
 	
 	def test_equal(self):
 		parameter_set = ParameterSet(tuple(), (BUILDING, COUNT), ((iGranary, 3), (iLibrary, 4)))
