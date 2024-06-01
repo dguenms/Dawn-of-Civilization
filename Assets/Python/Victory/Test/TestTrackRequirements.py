@@ -1921,6 +1921,32 @@ class TestProduction(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 15 / 10")
 		finally:
 			city.kill()
+	
+	def test_removed_forest(self):
+		city = TestCities.one()
+		plot = plot_(city)
+		
+		events.fireEvent("plotFeatureRemoved", plot, iForest, city)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 30)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 30 / 10")
+		finally:
+			city.kill()
+	
+	def test_removed_savanna(self):
+		city = TestCities.one()
+		plot = plot_(city)
+		
+		events.fireEvent("plotFeatureRemoved", plot, iSavanna, city)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 0 / 10")
+		finally:
+			city.kill()
 
 
 class TestRaidGold(ExtendedTestCase):

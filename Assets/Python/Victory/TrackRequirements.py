@@ -495,12 +495,21 @@ class Production(TrackRequirement):
 		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.accumulate_production)
+		self.handle("plotFeatureRemoved", self.accumulate_feature_production)
 	
 	def accumulate_production(self, goal, iGameTurn, iPlayer):
 		iProduction = cities.owner(iPlayer).sum(lambda city: city.getYieldRate(YieldTypes.YIELD_PRODUCTION))
 		if iProduction > 0:
 			self.accumulate(iProduction)
 			goal.check()
+	
+	def accumulate_feature_production(self, goal, iFeature):
+		iFeatureRemoveBuild = infos.builds().where(lambda iBuild: infos.build(iBuild).getImprovement() < 0 and infos.build(iBuild).isFeatureRemove(iFeature)).first()
+		if iFeatureRemoveBuild:
+			iFeatureRemoveProduction = infos.build(iFeatureRemoveBuild).getFeatureProduction(iFeature)
+			if iFeatureRemoveProduction > 0:
+				self.accumulate(iFeatureRemoveProduction)
+				goal.check()
 
 
 # Third Norse UHV goal

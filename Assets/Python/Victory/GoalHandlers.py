@@ -217,6 +217,13 @@ class EventHandlerRegistry(object):
 		
 		return playerSlaveTrade
 	
+	def plotFeatureRemoved(self, goal, applicable, func):
+		def plotFeatureRemoved((plot, iFeature, city)):
+			if city and applicable(goal, city.getOwner()):
+				func(goal, iFeature)
+		
+		return plotFeatureRemoved
+	
 	def projectBuilt(self, goal, applicable, func):
 		def projectBuilt((city, iProject)):
 			if applicable(goal, city.getOwner()):

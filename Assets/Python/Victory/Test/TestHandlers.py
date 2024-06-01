@@ -444,6 +444,20 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		
 		onPlayerSlaveTrade((0, 100))
 		self.assertEqual(self.iCount, 100)
+	
+	def test_plot_feature_removed(self):
+		onPlotFeatureRemoved = self.get("plotFeatureRemoved", self.capture)
+		
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		try:
+			onPlotFeatureRemoved((plot(their_city), iForest, their_city))
+			self.assertEqual(self.argument, None)
+			
+			onPlotFeatureRemoved((plot(our_city), iForest, our_city))
+			self.assertEqual(self.argument, (self.goal, iForest))
+		finally:
+			cities.kill()
 
 	def test_project_built(self):
 		onProjectBuilt = self.get("projectBuilt", self.capture)
