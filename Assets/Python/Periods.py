@@ -26,6 +26,12 @@ dPeriods1700AD = {
 	iOttomans : iPeriodOttomanConstantinople,
 }
 
+dScenarioPeriods = {
+	-3000: {},
+	600: dPeriods600AD,
+	1700: dPeriods1700AD,
+}
+
 
 dPeriodNames = {
 	iPeriodMing:					"Ming",
@@ -77,19 +83,6 @@ def evacuate(iPlayer):
 			else:
 				setPeriod(iCiv, -1)
 	return False
-
-
-@handler("GameStart")
-def setup():
-	iScenario = scenario()
-	
-	if iScenario >= i600AD:
-		for iCiv, iPeriod in dPeriods600AD.items():
-			setPeriod(iCiv, iPeriod)
-	
-	if iScenario == i1700AD:
-		for iCiv, iPeriod in dPeriods1700AD.items():
-			setPeriod(iCiv, iPeriod)
 
 
 @handler("birth")

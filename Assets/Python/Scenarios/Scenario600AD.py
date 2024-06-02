@@ -153,7 +153,7 @@ lTribalVillages = [
 def createStartingUnits():
 	# Celts
 	capital = plots.capital(iCelts)
-	createRoleUnit(iDravidia, capital, iFerry, 1)
+	createRoleUnit(iCelts, capital, iFerry, 1)
 
 	# Dravidia
 	capital = plots.capital(iDravidia)

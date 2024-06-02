@@ -2,6 +2,7 @@ from Resources import setupScenarioResources
 from DynamicCivs import checkName
 from Slots import findSlot, findMinorSlot, addPlayer, initWars
 from GoalHandlers import event_handler_registry
+from Periods import dScenarioPeriods, setPeriod
 
 from Core import *
 from RFCUtils import *
@@ -417,6 +418,7 @@ class Scenario(object):
 		
 		setupScenarioResources()
 		
+		self.updatePeriods()
 		self.createStartingUnits()
 		
 		self.greatWall.apply()
@@ -502,3 +504,9 @@ class Scenario(object):
 	def updateNames(self):
 		for iPlayer in players.major():
 			checkName(iPlayer)
+	
+	def updatePeriods(self):
+		for iYear, dPeriods in dScenarioPeriods.items():
+			if self.iStartYear >= iYear:
+				for iCiv, iPeriod in dPeriods.items():
+					setPeriod(iCiv, iPeriod)
