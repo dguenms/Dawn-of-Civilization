@@ -3659,7 +3659,7 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 }
 
 
-int CvCity::getProductionModifier(BuildingTypes eBuilding) const
+int CvCity::getProductionModifier(BuildingTypes eBuilding, bool bHurry) const
 {
 	int iMultiplier = GET_PLAYER(getOwnerINLINE()).getProductionModifier(eBuilding);
 
@@ -3675,7 +3675,11 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 	{
 		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
 		{
-			iMultiplier += GET_PLAYER(getOwnerINLINE()).getStateReligionBuildingProductionModifier();
+			// Leoreth: does not apply to world wonders
+			if (!isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+			{
+				iMultiplier += GET_PLAYER(getOwnerINLINE()).getStateReligionBuildingProductionModifier();
+			}
 		}
 	}
 
@@ -3987,7 +3991,7 @@ bool CvCity::hurryOverflow(HurryTypes eHurry, int* iProduction, int* iGold, bool
 		FAssertMsg(eBuilding != NO_BUILDING, "eBuilding is expected to be assigned a valid building type");
 		iTotal = getProductionNeeded(eBuilding);
 		iCurrent = getBuildingProduction(eBuilding);
-		iModifier = getProductionModifier(eBuilding);
+		iModifier = getProductionModifier(eBuilding, true);
 		iGoldPercent = GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT");
 	}
 	else if (isProductionProject())
@@ -6139,7 +6143,7 @@ int CvCity::getHurryCost(bool bExtra, BuildingTypes eBuilding, bool bIgnoreNew) 
 {
 	int iProductionLeft = getProductionNeeded(eBuilding) - getBuildingProduction(eBuilding);
 
-	return getHurryCost(bExtra, iProductionLeft, getHurryCostModifier(eBuilding, bIgnoreNew), getProductionModifier(eBuilding));
+	return getHurryCost(bExtra, iProductionLeft, getHurryCostModifier(eBuilding, bIgnoreNew), getProductionModifier(eBuilding, true));
 }
 
 int CvCity::getHurryCost(bool bExtra, int iProductionLeft, int iHurryModifier, int iModifier) const

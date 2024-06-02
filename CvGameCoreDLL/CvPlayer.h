@@ -217,7 +217,7 @@ public:
 	DllExport int getProductionNeeded(BuildingTypes eBuilding) const;																						// Exposed to Python
 	DllExport int getProductionNeeded(ProjectTypes eProject) const;																							// Exposed to Python
 	int getProductionModifier(UnitTypes eUnit) const;
-	int getProductionModifier(BuildingTypes eBuilding) const;
+	int getProductionModifier(BuildingTypes eBuilding, bool bHurry = false) const;
 	int getProductionModifier(ProjectTypes eProject) const;
 
 	DllExport int getBuildingClassPrereqBuilding(BuildingTypes eBuilding, BuildingClassTypes ePrereqBuildingClass, int iExtra = 0) const;	// Exposed to Python

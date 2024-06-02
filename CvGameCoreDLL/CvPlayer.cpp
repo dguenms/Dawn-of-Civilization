@@ -6862,7 +6862,7 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit) const
 	return iMultiplier;
 }
 
-int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
+int CvPlayer::getProductionModifier(BuildingTypes eBuilding, bool bHurry) const
 {
 	int iMultiplier = 0;
 	for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
@@ -6879,7 +6879,10 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 	}
 
 	// Leoreth: civics
-	iMultiplier += getBuildingProductionModifier(eBuilding);
+	if (!bHurry)
+	{
+		iMultiplier += getBuildingProductionModifier(eBuilding);
+	}
 
 	if (::isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 	{
