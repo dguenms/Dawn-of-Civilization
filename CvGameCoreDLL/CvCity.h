@@ -124,7 +124,7 @@ public:
 
 	int getProductionModifier() const;																						// Exposed to Python
 	int getProductionModifier(UnitTypes eUnit) const;															// Exposed to Python
-	int getProductionModifier(BuildingTypes eBuilding) const;											// Exposed to Python
+	int getProductionModifier(BuildingTypes eBuilding, bool bHurry = false) const;											// Exposed to Python
 	int getProductionModifier(ProjectTypes eProject) const;												// Exposed to Python
 
 	int getOverflowProductionDifference(int iProductionNeeded, int iProduction, int iProductionModifier, int iDiff, int iModifiedProduction) const;
