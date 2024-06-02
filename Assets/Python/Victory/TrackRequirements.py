@@ -503,10 +503,10 @@ class Production(TrackRequirement):
 			self.accumulate(iProduction)
 			goal.check()
 	
-	def accumulate_feature_production(self, goal, iFeature):
+	def accumulate_feature_production(self, goal, plot, city, iFeature):
 		iFeatureRemoveBuild = infos.builds().where(lambda iBuild: infos.build(iBuild).getImprovement() < 0 and infos.build(iBuild).isFeatureRemove(iFeature)).first()
 		if iFeatureRemoveBuild:
-			iFeatureRemoveProduction = infos.build(iFeatureRemoveBuild).getFeatureProduction(iFeature)
+			iFeatureRemoveProduction = plot.getFeatureProduction(iFeatureRemoveBuild, city.getTeam(), city)
 			if iFeatureRemoveProduction > 0:
 				self.accumulate(iFeatureRemoveProduction)
 				goal.check()
