@@ -3641,6 +3641,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FOOD_TO_PRODUCTION_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</English>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</French>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

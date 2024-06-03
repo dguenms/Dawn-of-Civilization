@@ -1414,6 +1414,7 @@ public:
 	int getLevelExperienceModifier() const; // Leoreth
 	int getUnhappinessDecayModifier() const; // Leoreth
 	int getVassalTradeModifier() const; // Leoreth
+	int getFoodProductionModifier() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
@@ -1533,6 +1534,7 @@ protected:
 	int m_iLevelExperienceModifier; // Leoreth
 	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iVassalTradeModifier; // Leoreth
+	int m_iFoodProductionModifier; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;

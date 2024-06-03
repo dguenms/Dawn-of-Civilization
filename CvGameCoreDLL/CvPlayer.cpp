@@ -529,6 +529,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNoResistanceCount = 0; // Leoreth
 	m_iNoTemporaryUnhappinessCount = 0; // Leoreth
 	m_iUnhappinessDecayModifier = 0; // Leoreth
+	m_iFoodProductionModifier = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -18345,6 +18346,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
 	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
 	changeUnhappinessDecayModifier(GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() * iChange); // Leoreth
+	changeFoodToProductionModifier(GC.getCivicInfo(eCivic).getFoodProductionModifier() * iChange); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18661,6 +18663,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNoResistanceCount); // Leoreth
 	pStream->Read(&m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Read(&m_iUnhappinessDecayModifier); // Leoreth
+	pStream->Read(&m_iFoodProductionModifier); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19096,6 +19099,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNoResistanceCount); // Leoreth
 	pStream->Write(m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Write(m_iUnhappinessDecayModifier); // Leoreth
+	pStream->Write(m_iFoodProductionModifier); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -25545,6 +25549,16 @@ void CvPlayer::changeUnhappinessDecayModifier(int iChange)
 int CvPlayer::getUnhappinessDecayModifier() const
 {
 	return m_iUnhappinessDecayModifier;
+}
+
+int CvPlayer::getFoodProductionModifier() const
+{
+	return m_iFoodProductionModifier;
+}
+
+void CvPlayer::changeFoodToProductionModifier(int iChange)
+{
+	m_iFoodProductionModifier += iChange;
 }
 
 PeriodTypes CvPlayer::getPeriod() const
