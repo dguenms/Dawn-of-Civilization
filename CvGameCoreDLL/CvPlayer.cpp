@@ -530,6 +530,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNoTemporaryUnhappinessCount = 0; // Leoreth
 	m_iUnhappinessDecayModifier = 0; // Leoreth
 	m_iFoodProductionModifier = 0; // Leoreth
+	m_iCulturedCityFreeSpecialists = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -10647,6 +10648,24 @@ void CvPlayer::changeLargestCityHappiness(int iChange)
 
 
 // Leoreth
+int CvPlayer::getCulturedCityFreeSpecialists() const
+{
+	return m_iCulturedCityFreeSpecialists;
+}
+
+
+void CvPlayer::changeCulturedCityFreeSpecialists(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCulturedCityFreeSpecialists += iChange;
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
+
+// Leoreth
 int CvPlayer::getSpecialistHappiness() const
 {
 	return m_iSpecialistHappiness;
@@ -18347,6 +18366,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
 	changeUnhappinessDecayModifier(GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() * iChange); // Leoreth
 	changeFoodToProductionModifier(GC.getCivicInfo(eCivic).getFoodProductionModifier() * iChange); // Leoreth
+	changeCulturedCityFreeSpecialists(GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists() * iChange); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18664,6 +18684,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 	pStream->Read(&m_iFoodProductionModifier); // Leoreth
+	pStream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18999,7 +19020,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 1;
+	uint uiFlag = 0;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19100,6 +19121,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Write(m_iUnhappinessDecayModifier); // Leoreth
 	pStream->Write(m_iFoodProductionModifier); // Leoreth
+	pStream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);

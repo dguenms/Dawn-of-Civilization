@@ -694,6 +694,10 @@ public:
 	void changeStateReligionFreeExperience(int iChange);
 
 	// Leoreth
+	int getCulturedCityFreeSpecialists() const;
+	void changeCulturedCityFreeSpecialists(int iChange);
+
+	// Leoreth
 	void checkCapitalCity();
 
 	DllExport CvCity* getCapitalCity() const;																																	// Exposed to Python
@@ -1478,6 +1482,7 @@ protected:
 	int m_iNoTemporaryUnhappinessCount; // Leoreth
 	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iFoodProductionModifier; // Leoreth
+	int m_iCulturedCityFreeSpecialists; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

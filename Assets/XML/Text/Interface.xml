@@ -3649,6 +3649,14 @@
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_FOOD] converted to [ICON_PRODUCTION]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CULTURED_CITIES_FREE_SPECIALISTS</Tag>
+		<English>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</English>
+		<French>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</French>
+		<German>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</German>
+		<Italian>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
