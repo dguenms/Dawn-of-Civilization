@@ -1001,11 +1001,11 @@ iNumBuildingsPlague = iNumBuildings+1
 #Civics
 iNumCivics = 42
 (iChiefdom, iDespotism, iMonarchy, iRepublic, iElective, iStateParty, iDemocracy,
-iAuthority, iCitizenship, iVassalage, iMeritocracy, iCentralism, iRevolutionism, iConstitution,
+iAuthority, iCitizenship, iVassalage, iTheocracy, iBureaucracy, iStratocracy, iConstitution,
 iTraditionalism, iSlavery, iManorialism, iCasteSystem, iIndividualism, iTotalitarianism, iEgalitarianism,
 iReciprocity, iRedistribution, iMerchantTrade, iRegulatedTrade, iFreeEnterprise, iCentralPlanning, iPublicWelfare,
-iAnimism, iDeification, iClergy, iMonasticism, iTheocracy, iTolerance, iSecularism,
-iSovereignty, iConquest, iTributaries, iIsolationism, iColonialism, iNationhood, iMultilateralism) = range(iNumCivics)
+iAnimism, iDeification, iClergy, iSyncretism, iMonasticism, iFanaticism, iSecularism,
+iSovereignty, iHegemony, iThalassocracy, iIsolationism, iColonialism, iNationhood, iMultilateralism) = range(iNumCivics)
 
 iNumCivicCategories = 6
 (iCivicsGovernment, iCivicsLegitimacy, iCivicsSociety, iCivicsEconomy, iCivicsReligion, iCivicsTerritory) = range(iNumCivicCategories)

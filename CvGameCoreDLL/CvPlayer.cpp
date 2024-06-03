@@ -25661,7 +25661,7 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 
 	if (GET_TEAM(getTeam()).isHasTech((TechTypes)NATIONALISM))
 	{
-		if (eCivic == CIVIC_CONQUEST || eCivic == CIVIC_TRIBUTARIES)
+		if (eCivic == CIVIC_HEGEMONY || eCivic == CIIVC_THALASSOCRACY)
 		{
 			return true;
 		}

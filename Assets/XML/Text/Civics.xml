@@ -390,66 +390,6 @@
 		<Spanish>Double production speed for Libraries, Aqueducts, Theatres and Markets; can spend gold to finish unit production</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_MERITOCRACY</Tag>
-		<English>Meritocracy</English>
-		<French>
-			<Text>M&#233;ritocratie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Meritocracy</German>
-		<Italian>Meritocracy</Italian>
-		<Spanish>Meritocracy</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_MERITOCRACY_STRATEGY</Tag>
-		<English>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</English>
-		<French>Moins d'exp&#233;rience requise pour les promotions des unit&#233;s ; les rizi&#232;res rapportend de la nourriture additionnelle ; les moulins &#224; vent et &#224; eau rapportent du commerce additionnel, tout comme les sp&#233;cialistes</French>
-		<German>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</German>
-		<Italian>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</Italian>
-		<Spanish>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CENTRALISM</Tag>
-		<English>Centralism</English>
-		<French>
-			<Text>Centralisme</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Centralism</German>
-		<Italian>Centralism</Italian>
-		<Spanish>Centralism</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CENTRALISM_STRATEGY</Tag>
-		<English>Increased production and gold in capital</English>
-		<French>Production et or augment&#233;s dans la capitale</French>
-		<German>Increased production and gold in capital</German>
-		<Italian>Increased production and gold in capital</Italian>
-		<Spanish>Increased production and gold in capital</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM</Tag>
-		<English>Revolutionism</English>
-		<French>
-			<Text>R&#233;volutionarisme</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Revolutionism</German>
-		<Italian>Revolutionism</Italian>
-		<Spanish>Revolutionism</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM_STRATEGY</Tag>
-		<English>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</English>
-		<French>Taux de natalit&#233; des g&#233;n&#233;raux illustres augment&#233; ; pas de malheur temporaire ; les ateliers et les scieries rapportent de la production additionnelle ; les journaux et les tours de radiodiffusion cr&#233;ent du bonheur additionnel</French>
-		<German>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</German>
-		<Italian>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Italian>
-		<Spanish>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
 		<English>Democracy</English>
 		<French>
@@ -690,66 +630,6 @@
 		<Spanish>Increased great people birth rate in cities with state religion</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_TOLERANCE</Tag>
-		<English>Tolerance</English>
-		<French>
-			<Text>Tol&#233;rance</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Tolerance</German>
-		<Italian>Tolerance</Italian>
-		<Spanish>Tolerance</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_TOLERANCE_STRATEGY</Tag>
-		<English>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</English>
-		<French>Les religions non officielles cr&#233;ent du bonheur ; culture augment&#233;e dans la capitale ; vous pouvez produire des missionnaires sans monast&#232;re</French>
-		<German>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</German>
-		<Italian>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</Italian>
-		<Spanish>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CONQUEST</Tag>
-		<English>Conquest</English>
-		<French>
-			<Text>Conqu&#234;te</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Conquest</German>
-		<Italian>Conquest</Italian>
-		<Spanish>Conquest</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CONQUEST_STRATEGY</Tag>
-		<English>Extra experience for land units; reduced growth rate for Cottages, Hamlets and Villages; extra gold on city conquest</English>
-		<French>Les unit&#233;s terrestres re&#231;oivent de l'exp&#233;rience additionnelle ; taux de croissance r&#233;duit pour les cottages, hameaux et villages ; vous recevez plus d'or au moment de conqu&#233;rir des villes</French>
-		<German>Extra experience for land units; reduced growth rate for Cottages, Hamlets and Villages; extra gold on city conquest</German>
-		<Italian>Extra experience for land units; reduced growth rate for Cottages, Hamlets and Villages; extra gold on city conquest</Italian>
-		<Spanish>Extra experience for land units; reduced growth rate for Cottages, Hamlets and Villages; extra gold on city conquest</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_TRIBUTARIES</Tag>
-		<English>Tributaries</English>
-		<French>
-			<Text>&#201;tats tributaires</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Tributaries</German>
-		<Italian>Tributaries</Italian>
-		<Spanish>Tributaries</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_TRIBUTARIES_STRATEGY</Tag>
-		<English>Extra commerce in capital from vassal cities; military units are produced with food; extra commerce from trade routes</English>
-		<French>Commerce additionnel dans la capitale pour chaque ville vassale ; les unit&#233;s militaires sont produites avec de la nourriture ; les routes commerciales rapportent du commerce additionnel</French>
-		<German>Extra commerce in capital from vassal cities; military units are produced with food; extra commerce from trade routes</German>
-		<Italian>Extra commerce in capital from vassal cities; military units are produced with food; extra commerce from trade routes</Italian>
-		<Spanish>Extra commerce in capital from vassal cities; military units are produced with food; extra commerce from trade routes</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ISOLATIONISM</Tag>
 		<English>Isolationism</English>
 		<French>
@@ -832,6 +712,54 @@
 		<German>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</German>
 		<Italian>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Italian>
 		<Spanish>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUREAUCRACY</Tag>
+		<English>Bureaucracy</English>
+		<French>Bureaucracy</French>
+		<German>Bureaucracy</German>
+		<Italian>Bureaucracy</Italian>
+		<Spanish>Bureaucracy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STRATOCRACY</Tag>
+		<English>Stratocracy</English>
+		<French>Stratocracy</French>
+		<German>Stratocracy</German>
+		<Italian>Stratocracy</Italian>
+		<Spanish>Stratocracy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SYNCRETISM</Tag>
+		<English>Syncretism</English>
+		<French>Syncretism</French>
+		<German>Syncretism</German>
+		<Italian>Syncretism</Italian>
+		<Spanish>Syncretism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
+		<English>Fanaticism</English>
+		<French>Fanaticism</French>
+		<German>Fanaticism</German>
+		<Italian>Fanaticism</Italian>
+		<Spanish>Fanaticism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_HEGEMONY</Tag>
+		<English>Hegemony</English>
+		<French>Hegemony</French>
+		<German>Hegemony</German>
+		<Italian>Hegemony</Italian>
+		<Spanish>Hegemony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_THALASSOCRACY</Tag>
+		<English>Thalassocracy</English>
+		<French>Thalassocracy</French>
+		<German>Thalassocracy</German>
+		<Italian>Thalassocracy</Italian>
+		<Spanish>Thalassocracy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_</Tag>
