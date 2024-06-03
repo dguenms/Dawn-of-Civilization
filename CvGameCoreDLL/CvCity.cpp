@@ -9009,22 +9009,27 @@ void CvCity::changeNukeModifier(int iChange)
 
 int CvCity::getFreeSpecialist() const
 {
-    // Leoreth: Italian UP, only until the industrial era
-    int iItalianSpecialists = 0;
-	int iCoreSpecialists = 0;
+	int iTotalFreeSpecialists = m_iFreeSpecialist;
 
-    if (getCivilizationType() == ITALY && GET_PLAYER(getOwnerINLINE()).getCurrentEra() < 4)
-    {
-		iItalianSpecialists = 1;
-    }
-
-	//Leoreth: handle free specialists for core here for simplicity
-	if (plot()->isCore())
+	// Italian UP: +1 free specialist until the Industrial era
+	if (getCivilizationType() == ITALY && GET_PLAYER(getOwnerINLINE()).getCurrentEra() < ERA_INDUSTRIAL)
 	{
-		iCoreSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
+		iTotalFreeSpecialists += 1;
 	}
 
-	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists;
+	// Leoreth: free core specialists civic effect
+	if (plot()->isCore())
+	{
+		iTotalFreeSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
+	}
+
+	// Leoreth: most cultured cities free specialists civic effect
+	if (getCultureRank() < GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities())
+	{
+		iTotalFreeSpecialists += GET_PLAYER(getOwnerINLINE()).getCulturedCityFreeSpecialists();
+	}
+
+	return iTotalFreeSpecialists;
 }
 
 
@@ -19160,6 +19165,8 @@ void CvCity::setCultureRank(int iNewValue)
 				processBonusEffect((BonusTypes)iI, hasBonusEffect((BonusTypes)iI) ? 1 : -1);
 			}
 		}
+
+		AI_setAssignWorkDirty(true);
 	}
 }
 

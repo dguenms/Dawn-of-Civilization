@@ -5789,6 +5789,7 @@ m_iLevelExperienceModifier(0), // Leoreth
 m_iUnhappinessDecayModifier(0), // Leoreth
 m_iVassalTradeModifier(0), // Leoreth
 m_iFoodProductionModifier(0), // Leoreth
+m_iCulturedCityFreeSpecialists(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -6446,6 +6447,11 @@ int CvCivicInfo::getFoodProductionModifier() const
 	return m_iFoodProductionModifier;
 }
 
+int CvCivicInfo::getCulturedCityFreeSpecialists() const
+{
+	return m_iCulturedCityFreeSpecialists;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -6505,11 +6511,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iLevelExperienceModifier); // Leoreth
 	stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 	stream->Read(&m_iVassalTradeModifier); // Leoreth
-
-	if (uiFlag >= 1)
-	{
-		stream->Read(&m_iFoodProductionModifier); // Leoreth
-	}
+	stream->Read(&m_iFoodProductionModifier); // Leoreth
+	stream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6639,7 +6642,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1;
+	uint uiFlag=0;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6695,6 +6698,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUnhappinessDecayModifier); // Leoreth
 	stream->Write(m_iVassalTradeModifier); // Leoreth
 	stream->Write(m_iFoodProductionModifier); // Leoreth
+	stream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6829,6 +6833,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iUnhappinessDecayModifier, "iUnhappinessDecayModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iFoodProductionModifier, "iFoodProductionModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iCulturedCityFreeSpecialists, "iCulturedCityFreeSpecialists"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

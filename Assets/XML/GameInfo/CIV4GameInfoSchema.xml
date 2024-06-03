@@ -875,6 +875,7 @@
 	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoTemporaryUnhappiness" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iFoodProductionModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCulturedCityFreeSpecialists" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -925,6 +926,7 @@
 		<element type="iLevelExperienceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
 		<element type="iLargestCityHappiness" minOccurs="0"/>
+		<element type="iCulturedCityFreeSpecialists" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iSpecialistHappiness" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWarWearinessModifier" minOccurs="0"/>
 		<element type="iUnhappinessDecayModifier" minOccurs="0"/> <!-- Leoreth -->

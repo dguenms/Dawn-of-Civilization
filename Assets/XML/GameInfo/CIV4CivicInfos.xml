@@ -60,7 +60,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<!-- +1 specialist in most cultured cities -->
+			<iCulturedCityFreeSpecialists>1</iCulturedCityFreeSpecialists>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
