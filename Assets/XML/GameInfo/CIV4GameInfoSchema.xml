@@ -874,6 +874,7 @@
 	<ElementType name="iUnhappinessDecayModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoTemporaryUnhappiness" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iFoodProductionModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -899,6 +900,7 @@
 		<element type="iCorporationUnhappinessModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWonderProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iProcessModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iFoodProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iExtraHealth" minOccurs="0"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iFreeExperience" minOccurs="0"/>

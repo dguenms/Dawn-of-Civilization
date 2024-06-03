@@ -47,6 +47,7 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
 			<iDistanceMaintenanceModifier>-25</iDistanceMaintenanceModifier>
+			<iFoodProductionModifier>50</iFoodProductionModifier>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>

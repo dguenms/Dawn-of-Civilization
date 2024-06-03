@@ -540,10 +540,14 @@ public:
 	int getCorporationUnhappinessModifier() const;
 	void changeCorporationUnhappinessModifier(int iChange);
 
-	//Leoreth
+	// Leoreth
 	int getProcessModifier() const;
 	void changeProcessModifier(int iChange);
 	void updateProductionToCommerceModifier();
+
+	// Leoreth
+	int getFoodProductionModifier() const;
+	void changeFoodToProductionModifier(int iChange);
 
 	int getTotalMaintenance() const;																																					// Exposed to Python
 	void changeTotalMaintenance(int iChange);
@@ -557,7 +561,7 @@ public:
 	DllExport int getExtraHealth() const;																																			// Exposed to Python
 	void changeExtraHealth(int iChange);
 
-	//Leoreth
+	// Leoreth
 	int getPollutionModifier() const;
 	void changePollutionModifier(int iChange);
 
@@ -1473,6 +1477,7 @@ protected:
 	int m_iNoResistanceCount; // Leoreth
 	int m_iNoTemporaryUnhappinessCount; // Leoreth
 	int m_iUnhappinessDecayModifier; // Leoreth
+	int m_iFoodProductionModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;
