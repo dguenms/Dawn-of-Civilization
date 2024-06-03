@@ -10732,7 +10732,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}*/
 
 	// Leoreth: some stability related AI help
-	if (eCivic == CIVIC_TOLERANCE || eCivic == CIVIC_SECULARISM)
+	if (eCivic == CIVIC_SYNCRETISM || eCivic == CIVIC_SECULARISM)
 	{
 		if (getStabilityParameter(PARAMETER_RELIGION) < 0)
 		{
@@ -10786,7 +10786,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth: boost some modern civics as soon as available
 	switch (eCivic)
 	{
-	case CIVIC_REVOLUTIONISM:
+	case CIVIC_STRATOCRACY:
 	case CIVIC_CONSTITUTION:
 	case CIVIC_INDIVIDUALISM:
 	case CIVIC_TOTALITARIANISM:
@@ -10799,7 +10799,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue *= 6;
 		iValue /= 5;
 		break;
-	case CIVIC_TOLERANCE:
+	case CIVIC_SYNCRETISM:
 	case CIVIC_SECULARISM:
 		if (getCurrentEra() >= ERA_GLOBAL)
 		{

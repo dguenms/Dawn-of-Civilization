@@ -226,14 +226,6 @@
 		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CONQUEST_BONUS</Tag>
-		<English>[ICON_BULLET]+2 additional Stability Points on city conquest</English>
-		<French>[ICON_BULLET]+2 points de stabilit&#233; &#224; la conqu&#234;te d'une ville</French>
-		<German>[ICON_BULLET]+2 zus&#228;tzliche Stabilit&#228;tspunkte bei Stadteroberung</German>
-		<Italian>[ICON_BULLET]+2 punti stabilit&#224; addizionali conquistando una citt&#224;.</Italian>
-		<Spanish>[ICON_BULLET]+2 puntos de estabilidad adicionales por conquista de ciudad</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
 		<English>[ICON_BULLET]%D1_Change Free Specialist per Core City</English>
 		<French>[ICON_BULLET]%D1_Change sp&#233;cialiste gratuit par ville dans le c&#156;ur historique</French>
@@ -331,11 +323,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
-		<English>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</English>
-		<French>[ICON_BULLET]Peut convertir de la production en commerce avec une efficacit&#233; de %D1_Mod%%</French>
-		<German>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</German>
-		<Italian>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</Italian>
-		<Spanish>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</Spanish>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</English>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</French>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>

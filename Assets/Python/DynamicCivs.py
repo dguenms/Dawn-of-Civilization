@@ -913,7 +913,7 @@ def specificName(iPlayer):
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
-	bTheocracy = (civic.iReligion == iTheocracy)
+	bTheocracy = civic.iLegitimacy == iTheocracy or civic.iReligion == iFanaticism
 	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
@@ -1165,7 +1165,7 @@ def specificAdjective(iPlayer):
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
-	bTheocracy = (civic.iReligion == iTheocracy)
+	bTheocracy = civic.iLegitimacy == iTheocracy or civic.iReligion == iFanaticism
 	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
@@ -1581,7 +1581,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
-	bTheocracy = (civic.iReligion == iTheocracy)
+	bTheocracy = civic.iLegitimacy == iTheocracy or civic.iReligion == iFanaticism
 	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns
@@ -1695,7 +1695,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
 			
-		if civic.iLegitimacy == iCentralism:
+		if civic.iLegitimacy == iBureaucracy:
 			return "TXT_KEY_EMPIRE_OF"
 			
 		if iEra >= iIndustrial:
@@ -1846,7 +1846,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra >= iIndustrial and bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if civic.iLegitimacy == iRevolutionism:
+		if civic.iLegitimacy == iStratocracy:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if not player(iHolyRome).isExisting() and iEra == iMedieval:
@@ -2063,7 +2063,7 @@ def leader(iPlayer):
 	civic = civics(iPlayer)
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
-	bTheocracy = (civic.iReligion == iTheocracy)
+	bTheocracy = civic.iLegitimacy == iTheocracy or civic.iReligion == iFanaticism
 	bResurrected = data.civs[iPlayer].iResurrections > 0
 	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
 	iAnarchyTurns = data.civs[iPlayer].iAnarchyTurns

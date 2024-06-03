@@ -104,7 +104,7 @@ def isRepublic(iPlayer):
 def isCityStates(iPlayer):
 	civic = civics(iPlayer)
 	
-	if civic.iLegitimacy not in [iAuthority, iCitizenship, iCentralism]:
+	if civic.iLegitimacy not in [iAuthority, iCitizenship, iBureaucracy]:
 		return False
 	
 	if civic.iGovernment in [iRepublic, iElective, iDemocracy]:

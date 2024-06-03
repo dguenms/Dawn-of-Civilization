@@ -578,7 +578,7 @@ def calculateStability(iPlayer):
 	
 	# recent expansion stability
 	iConquestModifier = 1
-	if iConquest in civics: iConquestModifier += 1
+	if iHegemony in civics: iConquestModifier += 1
 	if iCiv == iPersia: iConquestModifier += 1 # Persian UP
 	
 	iRecentExpansionStability += iRecentlyFounded
@@ -668,7 +668,7 @@ def calculateStability(iPlayer):
 		if iCurrentEra >= iIndustrial: iCivicEraTechStability -= (iCurrentEra - iRenaissance) * 3
 		
 	if tPlayer.isHasTech(iRepresentation):
-		if (iRepublic, iDemocracy) not in civics and (iRevolutionism, iConstitution) not in civics: iCivicEraTechStability -= 5
+		if (iRepublic, iDemocracy) not in civics and (iStratocracy, iConstitution) not in civics: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iCivilRights):
 		if (iSlavery, iManorialism, iCasteSystem) in civics: iCivicEraTechStability -= 5
@@ -678,7 +678,7 @@ def calculateStability(iPlayer):
 		
 	if tPlayer.isHasTech(iNationalism):
 		if (iNationhood, iMultilateralism) in civics: iCivicEraTechStability += 5
-		if (iConquest, iTributaries) in civics: iCivicEraTechStability -= 5
+		if (iHegemony, iThalassocracy) in civics: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iDoctrine):
 		if (iAnimism, iDeification) in civics: iCivicEraTechStability -= 5
@@ -690,7 +690,7 @@ def calculateStability(iPlayer):
 		if iCasteSystem in civics: iCivicEraTechStability += 3
 		
 	elif iStateReligion == iConfucianism:
-		if iMeritocracy in civics: iCivicEraTechStability += 3
+		if iBureaucracy in civics: iCivicEraTechStability += 3
 		
 	elif iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
 		if iSlavery in civics: iCivicEraTechStability -= 3
@@ -733,7 +733,7 @@ def calculateStability(iPlayer):
 			iCap = 2 * (iBelieverThreshold - 100) / 5
 			if iBelieverStability < iCap: iBelieverStability = iCap
 			
-			if iBelieverStability > 0 and iTolerance in civics: iBelieverStability /= 2
+			if iBelieverStability > 0 and iSyncretism in civics: iBelieverStability /= 2
 			
 			iReligionStability += iBelieverStability
 			
@@ -779,7 +779,7 @@ def calculateStability(iPlayer):
 			elif stability(iLoopPlayer) == iStabilityUnstable: iVassalStability -= 1
 			elif stability(iLoopPlayer) == iStabilitySolid: iVassalStability += 2
 			
-			if iTributaries in civics: iVassalStability += 2
+			if iVassalage in civics: iVassalStability += 2
 			
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
@@ -914,29 +914,29 @@ def getCivicStability(iPlayer, civics=None):
 	if iTotalitarianism in civics:
 		if iStateParty in civics: iStability += 5
 		if iDespotism in civics: iStability += 3
-		if iRevolutionism in civics: iStability += 3
+		if iStratocracy in civics: iStability += 3
 		if iCentralPlanning in civics: iStability += 3
 		if iDemocracy in civics: iStability -= 3
 		if iConstitution in civics: iStability -= 5
 		if iSecularism in civics: iStability += 2
-		if (iTolerance, iMonasticism) in civics: iStability -= 3
+		if (iSyncretism, iMonasticism) in civics: iStability -= 3
 		
 	if iCentralPlanning in civics:
 		if iEgalitarianism in civics: iStability += 2
 		if iStateParty in civics: iStability += 2
-		if iCentralism in civics: iStability += 2
+		if iBureaucracy in civics: iStability += 2
 		
 	if iEgalitarianism in civics:
 		if iDemocracy in civics: iStability += 2
 		if iConstitution in civics: iStability += 2
-		if notcivics(iTolerance, iSecularism) in civics: iStability -= 3
+		if notcivics(iSyncretism, iSecularism) in civics: iStability -= 3
 		
 	if iIndividualism in civics:
 		if (iRepublic, iDemocracy) in civics: iStability += 2
 		if iFreeEnterprise in civics: iStability += 3
 		if iCentralPlanning in civics: iStability -= 5
 		if (iRegulatedTrade, iPublicWelfare) in civics: iStability -= 2
-		if iTolerance in civics: iStability += 2
+		if iSecularism in civics: iStability += 2
 		
 	if iTheocracy in civics:
 		if (iIndividualism, iEgalitarianism) in civics: iStability -= 3
@@ -951,7 +951,7 @@ def getCivicStability(iPlayer, civics=None):
 	if iVassalage in civics:
 		if (iIndividualism, iEgalitarianism) in civics: iStability -= 5
 		if (iFreeEnterprise, iCentralPlanning, iPublicWelfare) in civics: iStability -= 3
-		if iTributaries in civics: iStability += 5
+		if iThalassocracy in civics: iStability += 2
 		
 		if iCurrentEra == iMedieval:
 			if iMonarchy in civics: iStability += 2
@@ -962,7 +962,7 @@ def getCivicStability(iPlayer, civics=None):
 		if iVassalage in civics: iStability -= 3
 		if iMerchantTrade in civics: iStability += 2
 		
-	if iCentralism in civics:
+	if iBureaucracy in civics:
 		if iDemocracy in civics: iStability -= 5
 		if iRegulatedTrade in civics: iStability += 3
 		if iClergy in civics: iStability += 2
@@ -975,7 +975,7 @@ def getCivicStability(iPlayer, civics=None):
 		if iNationhood in civics: iStability += 3
 		
 	if iCasteSystem in civics:
-		if iMeritocracy in civics: iStability -= 4
+		if iBureaucracy in civics: iStability -= 4
 		if iClergy in civics: iStability += 2
 		if iSecularism in civics: iStability -= 3
 		
@@ -983,28 +983,28 @@ def getCivicStability(iPlayer, civics=None):
 		if iDespotism in civics: iStability -= 3
 		if iTotalitarianism in civics: iStability -= 3
 		if iEgalitarianism in civics: iStability += 2
-		if iTheocracy in civics: iStability -= 3
+		if iFanaticism in civics: iStability -= 3
 		
 	if iMonarchy in civics:
 		if (iClergy, iMonasticism) in civics: iStability += 2
 		
 	if iElective in civics:
-		if iCentralism in civics: iStability -= 5
+		if iBureaucracy in civics: iStability -= 5
 		
 	if iConstitution in civics:
 		if iDemocracy in civics: iStability += 2
 		
-	if iRevolutionism in civics:
-		if notcivics(iTolerance, iSecularism) in civics: iStability -= 3
+	if iStratocracy in civics:
+		if notcivics(iSyncretism, iSecularism) in civics: iStability -= 3
 		
 	if iRegulatedTrade in civics:
 		if iManorialism in civics: iStability += 2
-		if iMeritocracy in civics: iStability += 3
+		if iBureaucracy in civics: iStability += 3
 		
 	if iIsolationism in civics:
 		if (iMerchantTrade, iFreeEnterprise) in civics: iStability -= 4
 		if (iRegulatedTrade, iCentralPlanning) in civics: iStability += 3
-		if iMeritocracy in civics: iStability += 3
+		if iBureaucracy in civics: iStability += 3
 		
 	return iStability
 
@@ -1175,7 +1175,7 @@ def isTolerated(iPlayer, iReligion):
 	if iStateReligion == iReligion: return True
 	
 	# civics
-	if pPlayer.getCivics(4) in [iTolerance, iSecularism]: return True
+	if pPlayer.getCivics(4) in [iSyncretism, iSecularism]: return True
 	
 	# Exceptions
 	if iStateReligion == iConfucianism and iReligion == iTaoism: return True
