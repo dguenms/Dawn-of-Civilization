@@ -2564,7 +2564,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	// Leoreth: different fishing boats for different sea levels
 	if (GC.getImprovementInfo(eImprovement).isWater())
 	{
-		if (eImprovement == IMPROVEMENT_FISHING_BOATS && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST")) return false;
+		if (eImprovement == IMPROVEMENT_FISHING_BOATS && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST") || getTerrainType() != GC.getInfoTypeForString("TERRAIN_ARCTIC_COAST")) return false;
 		if (eImprovement == IMPROVEMENT_OCEAN_FISHERY && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
 	}
 
