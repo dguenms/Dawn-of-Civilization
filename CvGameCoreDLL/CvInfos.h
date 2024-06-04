@@ -1416,6 +1416,7 @@ public:
 	int getVassalTradeModifier() const; // Leoreth
 	int getFoodProductionModifier() const; // Leoreth
 	int getCulturedCityFreeSpecialists() const; // Leoreth
+	int getCapitalBuildingProductionModifier() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
@@ -1537,6 +1538,7 @@ protected:
 	int m_iVassalTradeModifier; // Leoreth
 	int m_iFoodProductionModifier; // Leoreth
 	int m_iCulturedCityFreeSpecialists; // Leoreth
+	int m_iCapitalBuildingProductionModifier; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;

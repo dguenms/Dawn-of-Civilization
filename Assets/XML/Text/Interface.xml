@@ -1367,7 +1367,7 @@
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MISC_HELP_PROD_ROME</Tag>
+		<Tag>TXT_KEY_MISC_HELP_PROD_CAPITAL_BUILDING</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</English>
 		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] parce que le b&#226;timent actuel est d&#233;j&#224; dans votre capitale</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</German>
@@ -2311,12 +2311,12 @@
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
-		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] lors de la conqu&#234;te d'une ville</French>
-		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
-		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Italian>
-		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Spanish>
+		<Tag>TXT_KEY_CIVIC_CAPITAL_BUILDING_PRODUCTION_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] for Buildings Already in Capital</English>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] for Buildings Already in Capital</French>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] for Buildings Already in Capital</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] for Buildings Already in Capital</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] for Buildings Already in Capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_COST</Tag>
@@ -3257,7 +3257,7 @@
 		<Spanish>[SPACE]con energ&#237;a ([ICON_CLEAN_POWER])</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BUILDS_FASTER_WITH_ROMAN_UP</Tag>
+		<Tag>TXT_KEY_BUILDING_BUILDS_FASTER_WITH_CAPITAL_BUILDING</Tag>
 		<English>Builds %d1_Mod%% Faster with [LINK=literal]%s2_BldgName[\LINK] in %s3_CityName</English>
 		<French>Construit %d1_Mod%% plus vite avec : [LINK=literal]%s2_BldgName[\LINK] &#224; %s3_CityName</French>
 		<German>Baut %d1_Mod%% schneller mit Geb&#228;ude [LINK=literal]%s2_BldgName[\LINK in %s3_CityName</German>
