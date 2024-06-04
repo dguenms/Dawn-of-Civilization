@@ -876,6 +876,7 @@
 	<ElementType name="bNoTemporaryUnhappiness" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iFoodProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCulturedCityFreeSpecialists" content="textOnly" dt:type="int"/>
+	<ElementType name="iCapitalBuildingProductionModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -953,6 +954,7 @@
 		<element type="iStateReligionUnitProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionBuildingProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionFreeExperience" minOccurs="0"/>
+		<element type="iCapitalBuildingProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="YieldModifiers" minOccurs="0"/>
 		<element type="CapitalYieldModifiers" minOccurs="0"/>
 		<element type="TradeYieldModifiers" minOccurs="0"/>

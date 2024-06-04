@@ -7831,6 +7831,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER", GC.getCivicInfo(eCivic).getCaptureGoldModifier()));
 	}
 
+	// Capital building production modifier
+	if (GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPITAL_BUILDING_PRODUCTION_MODIFIER", GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier()));
+	}
+
 	// No resistance
 	if (GC.getCivicInfo(eCivic).isNoResistance())
 	{
@@ -11709,17 +11716,21 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			}
 		}
 
-		// Roman UP
-		if (pCity != NULL && !bCivilopediaText && GC.getGameINLINE().getActiveCivilizationType() == ROME && GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getNumCities() > 0)
+		// Leoreth: civics capital building production modifier
+		if (pCity != NULL && !bCivilopediaText)
 		{
 			CvCity* pCapital = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCapitalCity();
-			if (!isNationalWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && !isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && kBuilding.getProductionCost() > 0)
+			int iCapitalBuildingProductionModifier = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCapitalBuildingProductionModifier();
+			if (pCapital != NULL && iCapitalBuildingProductionModifier != 0)
 			{
-				szBuffer.append(gDLL->getText(pCapital->isHasRealBuilding(eBuilding) ? "TXT_KEY_COLOR_POSITIVE" : "TXT_KEY_COLOR_NEGATIVE"));
-				szBuffer.append(L" (");
-				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BUILDS_FASTER_WITH_ROMAN_UP", 30, kBuilding.getText(), pCapital->getName().c_str()));
-				szBuffer.append(L")");
-				szBuffer.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				if (!isNationalWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && !isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && kBuilding.getProductionCost() > 0)
+				{
+					szBuffer.append(gDLL->getText(pCapital->isHasRealBuilding(eBuilding) ? "TXT_KEY_COLOR_POSITIVE" : "TXT_KEY_COLOR_NEGATIVE"));
+					szBuffer.append(L" (");
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BUILDS_FASTER_WITH_CAPITAL_BUILDING", iCapitalBuildingProductionModifier, kBuilding.getText(), pCapital->getName().c_str()));
+					szBuffer.append(L")");
+					szBuffer.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				}
 			}
 		}
 
@@ -17506,14 +17517,14 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 				}
 			}
 
-			// Leoreth: display Roman UP
-			if (city.getCivilizationType() == ROME)
+			if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity() != NULL && GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
 			{
-				if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
+				int iCapitalBuildingMod = GET_PLAYER(city.getOwnerINLINE()).getCapitalBuildingProductionModifier();
+				if (iCapitalBuildingMod != 0)
 				{
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_ROME", 30));
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CAPITAL_BUILDING", iCapitalBuildingMod));
 					szBuffer.append(NEWLINE);
-					iBaseModifier += 30;
+					iBaseModifier += iCapitalBuildingMod;
 				}
 			}
 

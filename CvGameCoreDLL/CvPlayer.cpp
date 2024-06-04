@@ -531,6 +531,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iUnhappinessDecayModifier = 0; // Leoreth
 	m_iFoodProductionModifier = 0; // Leoreth
 	m_iCulturedCityFreeSpecialists = 0; // Leoreth
+	m_iCapitalBuildingProductionModifier = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -6880,10 +6881,28 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding, bool bHurry) const
 		}
 	}
 
-	// Leoreth: civics
+	// Leoreth: civics building production modifier
 	if (!bHurry)
 	{
 		iMultiplier += getBuildingProductionModifier(eBuilding);
+	}
+
+	// Leoreth: capital building production modifier
+	if (getCapitalCity() != NULL && getCapitalCity()->isHasRealBuilding(eBuilding))
+	{
+		iMultiplier += getCapitalBuildingProductionModifier();
+	}
+
+	// Leoreth: Holy Roman UP: +100% production of state religion buildings
+	if (getCivilizationType() == HOLY_ROME)
+	{
+		if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+		{
+			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == getStateReligion())
+			{
+				iMultiplier += 100;
+			}
+		}
 	}
 
 	if (::isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
@@ -11053,6 +11072,29 @@ void CvPlayer::changeCaptureGoldModifier(int iChange)
 	}
 }
 
+
+// Leoreth
+int CvPlayer::getCapitalBuildingProductionModifier() const
+{
+	return m_iCapitalBuildingProductionModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeCapitalBuildingProductionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCapitalBuildingProductionModifier += iChange;
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
+
+
 // Leoreth
 bool CvPlayer::isSlavery() const
 {
@@ -12335,6 +12377,12 @@ void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
 	if (eCivilization == CARTHAGE)
 	{
 		changeHurryCount((HurryTypes)1, iChange);
+	}
+
+	// Roman UP: +30% production for buildings already in capital
+	if (eCivilization == ROME)
+	{
+		changeCapitalBuildingProductionModifier(30 * iChange);
 	}
 
 	// Toltec UP: +1 production and +2 culture per specialist
@@ -18367,6 +18415,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeUnhappinessDecayModifier(GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() * iChange); // Leoreth
 	changeFoodToProductionModifier(GC.getCivicInfo(eCivic).getFoodProductionModifier() * iChange); // Leoreth
 	changeCulturedCityFreeSpecialists(GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists() * iChange); // Leoreth
+	changeCapitalBuildingProductionModifier(GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier() * iChange); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18685,6 +18734,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 	pStream->Read(&m_iFoodProductionModifier); // Leoreth
 	pStream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
+	pStream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19122,6 +19172,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iUnhappinessDecayModifier); // Leoreth
 	pStream->Write(m_iFoodProductionModifier); // Leoreth
 	pStream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
+	pStream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);

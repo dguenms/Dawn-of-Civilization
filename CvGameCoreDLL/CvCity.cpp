@@ -3683,27 +3683,6 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding, bool bHurry) const
 		}
 	}
 
-	// Leoreth: new Roman UP
-	if (getCivilizationType() == ROME)
-	{
-		if (GET_PLAYER(getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
-		{
-			iMultiplier += 30;
-		}
-	}
-
-	// Leoreth: Holy Roman UP: +100% production of state religion buildings
-	if (getCivilizationType() == HOLY_ROME)
-	{
-		if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
-		{
-			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
-			{
-				iMultiplier += 100;
-			}
-		}
-	}
-
 	return std::max(0, iMultiplier);
 }
 
