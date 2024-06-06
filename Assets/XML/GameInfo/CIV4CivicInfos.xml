@@ -816,6 +816,7 @@
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iNonStateReligionHappiness>-1</iNonStateReligionHappiness>
+			<iShrineIncomeLimitChange>20</iShrineIncomeLimitChange>
 			<SpecialistTypeExtraYields>
 				<SpecialistTypeExtraYield>
 					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
@@ -826,7 +827,6 @@
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
 			</SpecialistTypeExtraYields>
-			<!-- shrine yield? -->
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>

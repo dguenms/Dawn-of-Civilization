@@ -1002,6 +1002,10 @@ public:
 	int getFreeImprovementUpgradeCount() const;
 	void changeFreeImprovementUpgradeCount(int iChange);
 
+	// Leoreth
+	int getShrineIncomeLimitChange() const;
+	void changeShrineIncomeLimitChange(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1379,6 +1383,8 @@ public:
 
 	void setMinorCiv(bool bNewValue);
 
+	int getShrineIncomeLimit() const;
+
 	int getScoreHistory(int iTurn) const;
 	int getEconomyHistory(int iTurn) const;
 	int getIndustryHistory(int iTurn) const;
@@ -1494,6 +1500,7 @@ protected:
 	int m_iCulturedCityFreeSpecialists; // Leoreth
 	int m_iCapitalBuildingProductionModifier; // Leoreth
 	int m_iFreeImprovementUpgradeCount; // Leoreth
+	int m_iShrineIncomeLimitChange; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

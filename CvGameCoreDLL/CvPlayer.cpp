@@ -18739,6 +18739,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Read(&m_iFreeImprovementUpgradeCount); // Leoreth
+	pStream->Read(&m_iShrineIncomeLimitChange); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19178,6 +19179,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Write(m_iFreeImprovementUpgradeCount); // Leoreth
+	pStream->Write(m_iShrineIncomeLimitChange); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -25654,6 +25656,16 @@ void CvPlayer::changeFreeImprovementUpgradeCount(int iChange)
 	m_iFreeImprovementUpgradeCount += iChange;
 }
 
+int CvPlayer::getShrineIncomeLimitChange() const
+{
+	return m_iShrineIncomeLimitChange;
+}
+
+void CvPlayer::changeShrineIncomeLimitChange(int iChange)
+{
+	m_iShrineIncomeLimitChange += iChange;
+}
+
 PeriodTypes CvPlayer::getPeriod() const
 {
 	return GC.getGameINLINE().getPeriod(getCivilizationType());
@@ -25791,4 +25803,18 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 	}
 
 	return false;
+}
+
+int CvPlayer::getShrineIncomeLimit() const
+{
+	int iShrineIncomeLimit = MAX_COM_SHRINE;
+
+	iShrineIncomeLimit += getShrineIncomeLimitChange();
+
+	if (isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK))
+	{
+		iShrineIncomeLimit *= 2;
+	}
+
+	return iShrineIncomeLimit;
 }

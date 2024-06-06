@@ -10913,7 +10913,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 				}
 				
 				// modified by Leoreth to account for the Dome of the Rock effect
-				int iShrineLimit = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK) ? 2 * MAX_COM_SHRINE : MAX_COM_SHRINE;
+				int iShrineLimit = GET_PLAYER(getOwnerINLINE()).getShrineIncomeLimit();
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != NO_RELIGION)
 				{
