@@ -1432,6 +1432,7 @@ public:
 	bool isColonialSlavery() const; // Leoreth
 	bool isNoResistance() const; // Leoreth
 	bool isNoTemporaryUnhappiness() const; // Leoreth
+	bool isFreeImprovementUpgrade() const; // Leoreth
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }			// Exposed to Python
 	const wchar* getWeLoveTheKing();
@@ -1475,6 +1476,7 @@ public:
 	bool isSpecialistValid(int i) const;								// Exposed to Python
 
 	int getImprovementYieldChanges(int i, int j) const;				// Exposed to Python
+	int getSpecialistTypeExtraYield(int i, int j) const;
 
 	void read(FDataStreamBase* stream);
 	void write(FDataStreamBase* stream);
@@ -1554,6 +1556,7 @@ protected:
 	bool m_bColonialSlavery; // Leoreth
 	bool m_bNoResistance; // Leoreth
 	bool m_bNoTemporaryUnhappiness; // Leoreth
+	bool m_bFreeImprovementUpgrade; // Leoreth
 
 	CvWString m_szWeLoveTheKingKey;
 
@@ -1583,6 +1586,7 @@ protected:
 	bool* m_pabSpecialistValid;
 
 	int** m_ppiImprovementYieldChanges;
+	int** m_ppiSpecialistTypeExtraYields; // Leoreth
 
 };
 

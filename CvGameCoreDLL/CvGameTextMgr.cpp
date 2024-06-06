@@ -7448,6 +7448,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	// Leoreth: free improvement upgrade
+	if (GC.getCivicInfo(eCivic).isFreeImprovementUpgrade())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_IMPROVEMENT_UPGRADE"));
+	}
+
 	//	Military unit production modifier
 	if (GC.getCivicInfo(eCivic).getMilitaryProductionModifier() != 0)
 	{
@@ -7781,6 +7788,26 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 
 	// Leoreth: Specialist Yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST").GetCString(), GC.getCivicInfo(eCivic).getSpecialistExtraYieldArray());
+
+	// Leoreth: specialist type extra yield
+	int iSpecialistTypeExtraYield;
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		iLast = 0;
+
+		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+		{
+			iSpecialistTypeExtraYield = GC.getCivicInfo(eCivic).getSpecialistTypeExtraYield(iJ, iI);
+			if (iSpecialistTypeExtraYield != 0)
+			{
+				szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_TYPE_EXTRA_YIELD", iSpecialistTypeExtraYield, GC.getYieldInfo((YieldTypes)iI).getChar()).c_str());
+				CvWString szSpecialist;
+				szSpecialist.Format(L"<link=literal>%s</link>", GC.getSpecialistInfo((SpecialistTypes)iJ).getDescription());
+				setListHelp(szHelpText, szFirstBuffer, szSpecialist, L", ", iSpecialistTypeExtraYield != iLast);
+				iLast = iSpecialistTypeExtraYield;
+			}
+		}
+	}
 
 	// Leoreth: excess happiness yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS").GetCString(), GC.getCivicInfo(eCivic).getHappinessExtraYieldArray());
