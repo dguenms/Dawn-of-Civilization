@@ -1005,7 +1005,7 @@ iAuthority, iCitizenship, iVassalage, iTheocracy, iBureaucracy, iStratocracy, iC
 iTraditionalism, iSlavery, iManorialism, iCasteSystem, iIndividualism, iTotalitarianism, iEgalitarianism,
 iReciprocity, iRedistribution, iMerchantTrade, iRegulatedTrade, iFreeEnterprise, iCentralPlanning, iPublicWelfare,
 iAnimism, iDeification, iClergy, iSyncretism, iMonasticism, iFanaticism, iSecularism,
-iSovereignty, iHegemony, iThalassocracy, iIsolationism, iColonialism, iNationhood, iMultilateralism) = range(iNumCivics)
+iKinship, iHegemony, iThalassocracy, iIsolationism, iColonialism, iNationhood, iMultilateralism) = range(iNumCivics)
 
 iNumCivicCategories = 6
 (iCivicsGovernment, iCivicsLegitimacy, iCivicsSociety, iCivicsEconomy, iCivicsReligion, iCivicsTerritory) = range(iNumCivicCategories)

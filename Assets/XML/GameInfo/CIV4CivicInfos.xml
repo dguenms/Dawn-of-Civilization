@@ -851,11 +851,11 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
-			<Type>CIVIC_SOVEREIGNTY</Type>
-			<Description>TXT_KEY_CIVIC_SOVEREIGNTY</Description>
-			<Civilopedia>TXT_KEY_CIVIC_SOVEREIGNTY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_SOVEREIGNTY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Sovereignty.dds</Button>
+			<Type>CIVIC_KINSHIP</Type>
+			<Description>TXT_KEY_CIVIC_KINSHIP</Description>
+			<Civilopedia>TXT_KEY_CIVIC_KINSHIP_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_KINSHIP_STRATEGY</Strategy>
+			<Button>,Art/Interface/Buttons/Civics/Kinship.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>

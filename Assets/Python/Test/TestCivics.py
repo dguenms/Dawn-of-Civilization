@@ -27,7 +27,7 @@ class TestCivics(TestCase):
 			gc.getPlayer(0).setCivics(iCivicsSociety, iTraditionalism)
 			gc.getPlayer(0).setCivics(iCivicsEconomy, iRedistribution)
 			gc.getPlayer(0).setCivics(iCivicsReligion, iDeification)
-			gc.getPlayer(0).setCivics(iCivicsTerritory, iSovereignty)
+			gc.getPlayer(0).setCivics(iCivicsTerritory, iKinship)
 	
 	def test_active(self):
 		gc.getPlayer(0).setCivics(iCivicsGovernment, iDemocracy)
@@ -37,7 +37,7 @@ class TestCivics(TestCase):
 		try:
 			self.assertEqual(civics.active(iDemocracy), True)
 			self.assertEqual(civics.active(iMonarchy), False)
-			self.assertEqual(civics.active(iSovereignty), True)
+			self.assertEqual(civics.active(iKinship), True)
 			self.assertEqual(civics.active(iMultilateralism), False)
 		finally:
 			gc.getPlayer(0).setCivics(iCivicsGovernment, iMonarchy)
@@ -50,7 +50,7 @@ class TestCivics(TestCase):
 		try:
 			self.assertEqual(iDemocracy in civics, True)
 			self.assertEqual(iMonarchy in civics, False)
-			self.assertEqual(iSovereignty in civics, True)
+			self.assertEqual(iKinship in civics, True)
 			self.assertEqual(iMultilateralism in civics, False)
 		finally:
 			gc.getPlayer(0).setCivics(iCivicsGovernment, iMonarchy)
@@ -64,7 +64,7 @@ class TestCivics(TestCase):
 			self.assertEqual((iMonarchy, iDemocracy) in civics, True)
 			self.assertEqual((iMonarchy, iRepublic) in civics, False)
 			self.assertEqual((iRepublic, iDemocracy) in civics, True)
-			self.assertEqual((iSovereignty, iDemocracy) in civics, True)
+			self.assertEqual((iKinship, iDemocracy) in civics, True)
 		finally:
 			gc.getPlayer(0).setCivics(iCivicsGovernment, iMonarchy)
 	
@@ -78,7 +78,7 @@ class TestCivics(TestCase):
 			self.assertEqual((iDemocracy, iPublicWelfare) in civics, True)
 			self.assertEqual((iMonarchy, iPublicWelfare) in civics, False)
 			self.assertEqual((iDemocracy, iRedistribution) in civics, False)
-			self.assertEqual((iDemocracy, iSovereignty) in civics, True)
+			self.assertEqual((iDemocracy, iKinship) in civics, True)
 		finally:
 			gc.getPlayer(0).setCivics(iCivicsGovernment, iMonarchy)
 			gc.getPlayer(0).setCivics(iCivicsEconomy, iRedistribution)
@@ -117,11 +117,11 @@ class TestCivics(TestCase):
 		
 		self.assertEqual(iDemocracy in civics, True)
 		self.assertEqual(iConstitution in civics, True)
-		self.assertEqual(iSovereignty in civics, False)
+		self.assertEqual(iKinship in civics, False)
 		self.assertEqual((iDemocracy, iConstitution) in civics, True)
 		self.assertEqual((iMonarchy, iDemocracy) in civics, True)
 		self.assertEqual((iCitizenship, iConstitution) in civics, True)
-		self.assertEqual(iSovereignty not in civics, True)
+		self.assertEqual(iKinship not in civics, True)
 		self.assertEqual(iMonarchy not in civics, True)
 		self.assertEqual(iDemocracy not in civics, False)
 	
