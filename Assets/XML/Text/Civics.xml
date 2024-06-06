@@ -42,19 +42,15 @@
 		<Spanish>The most primitive Religion civic</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY</Tag>
-		<English>Sovereignty</English>
-		<French>
-			<Text>Souverainet&#233;</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Sovereignty</German>
-		<Italian>Sovereignty</Italian>
-		<Spanish>Sovereignty</Spanish>
+		<Tag>TXT_KEY_CIVIC_KINSHIP</Tag>
+		<English>Kinship</English>
+		<French>Kinship</French>
+		<German>Kinship</German>
+		<Italian>Kinship</Italian>
+		<Spanish>Kinship</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_KINSHIP_STRATEGY</Tag>
 		<English>The most primitive Territory civic</English>
 		<French>La doctrine territoriale la plus primitive</French>
 		<German>The most primitive Territory civic</German>

@@ -94,7 +94,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -194,7 +194,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -292,7 +292,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -379,7 +379,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -497,7 +497,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -595,7 +595,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -689,7 +689,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -776,7 +776,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -883,7 +883,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -993,7 +993,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1103,7 +1103,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1214,7 +1214,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1324,7 +1324,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1426,7 +1426,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1536,7 +1536,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1656,7 +1656,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1770,7 +1770,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1896,7 +1896,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2003,7 +2003,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2135,7 +2135,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2269,7 +2269,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2380,7 +2380,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2459,7 +2459,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2561,7 +2561,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2658,7 +2658,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2769,7 +2769,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2882,7 +2882,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2985,7 +2985,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3098,7 +3098,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3204,7 +3204,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3316,7 +3316,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3420,7 +3420,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3522,7 +3522,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3600,7 +3600,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3694,7 +3694,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3816,7 +3816,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3932,7 +3932,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4021,7 +4021,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4128,7 +4128,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4245,7 +4245,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4356,7 +4356,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4476,7 +4476,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4591,7 +4591,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4699,7 +4699,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4786,7 +4786,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4885,7 +4885,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5012,7 +5012,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5134,7 +5134,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5261,7 +5261,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5378,7 +5378,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5504,7 +5504,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5591,7 +5591,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5678,7 +5678,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5794,7 +5794,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5890,7 +5890,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5969,7 +5969,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6052,7 +6052,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6160,7 +6160,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6292,7 +6292,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6375,7 +6375,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6465,7 +6465,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6552,7 +6552,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6650,7 +6650,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6878,7 +6878,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -7107,7 +7107,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -7304,7 +7304,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -7426,7 +7426,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -7715,7 +7715,7 @@
 				<CivicType>CIVIC_TRADITIONALISM</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
