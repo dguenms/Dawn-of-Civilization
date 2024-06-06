@@ -6484,6 +6484,11 @@ bool CvCivicInfo::isFreeImprovementUpgrade() const
 	return m_bFreeImprovementUpgrade;
 }
 
+int CvCivicInfo::getShrineIncomeLimitChange() const
+{
+	return m_iShrineIncomeLimitChange;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -6546,6 +6551,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iFoodProductionModifier); // Leoreth
 	stream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 	stream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
+	stream->Read(&m_iShrineIncomeLimitChange); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6749,7 +6755,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFoodProductionModifier); // Leoreth
 	stream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	stream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
-	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
+	stream->Write(m_iShrineIncomeLimitChange); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6765,6 +6771,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bColonialSlavery); // Leoreth
 	stream->Write(m_bNoResistance); // Leoreth
 	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
+	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
 
 	// Arrays
 
@@ -6892,6 +6899,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCulturedCityFreeSpecialists, "iCulturedCityFreeSpecialists"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bFreeImprovementUpgrade, "bFreeImprovementUpgrade"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iShrineIncomeLimitChange, "iShrineIncomeLimitChange"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{
