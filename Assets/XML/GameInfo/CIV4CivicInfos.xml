@@ -293,7 +293,15 @@
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iLevelExperienceModifier>-25</iLevelExperienceModifier>
 			<iGreatGeneralRateModifier>100</iGreatGeneralRateModifier>
-			<!-- Great Generals can act as any great person -->
+			<SpecialistTypeExtraYields>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_GREAT_GENERAL</SpecialistType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>4</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+			</SpecialistTypeExtraYields>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
@@ -441,7 +449,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Individualism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iImprovementUpgradeRateModifier>100</iImprovementUpgradeRateModifier>
+			<bFreeImprovementUpgrade>1</bFreeImprovementUpgrade>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
@@ -701,7 +709,15 @@
 				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</SpecialistExtraYields>
-			<!-- Great Statesman can act as any great person -->
+			<SpecialistTypeExtraYields>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_GREAT_STATESMAN</SpecialistType>
+					<YieldChanges>
+						<iYield>2</iYield>
+						<iYield>4</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+			</SpecialistTypeExtraYields>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
@@ -800,7 +816,16 @@
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iNonStateReligionHappiness>-1</iNonStateReligionHappiness>
-			<!-- Great Prophet can act as any great person -->
+			<SpecialistTypeExtraYields>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+						<iYield>5</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+			</SpecialistTypeExtraYields>
 			<!-- shrine yield? -->
 		</CivicInfo>
 		<CivicInfo>

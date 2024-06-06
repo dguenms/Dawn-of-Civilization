@@ -877,6 +877,17 @@
 	<ElementType name="iFoodProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCulturedCityFreeSpecialists" content="textOnly" dt:type="int"/>
 	<ElementType name="iCapitalBuildingProductionModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="YieldChanges" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistTypeExtraYield" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="YieldChanges"/>
+	</ElementType>
+	<ElementType name="SpecialistTypeExtraYields" content="eltOnly">
+		<element type="SpecialistTypeExtraYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="bFreeImprovementUpgrade" content="textOnly" dt:type="boolean"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -909,6 +920,7 @@
 		<element type="iWorkerCostModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWorkerSpeedModifier" minOccurs="0"/>
 		<element type="iImprovementUpgradeRateModifier" minOccurs="0"/>
+		<element type="bFreeImprovementUpgrade" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iMilitaryProductionModifier" minOccurs="0"/>
 		<element type="iBaseFreeUnits" minOccurs="0"/>
 		<element type="iBaseFreeMilitaryUnits" minOccurs="0"/>
@@ -962,6 +974,7 @@
 		<element type="CapitalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="SpecialistTypeExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnimprovedTileYields" minOccurs="0"/> <!-- Leoreth -->

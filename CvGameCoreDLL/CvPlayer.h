@@ -997,6 +997,11 @@ public:
 	int getUnhappinessDecayModifier() const;
 	void changeUnhappinessDecayModifier(int iChange);
 
+	// Leoreth
+	bool isFreeImprovementUpgrade() const;
+	int getFreeImprovementUpgradeCount() const;
+	void changeFreeImprovementUpgradeCount(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1488,6 +1493,7 @@ protected:
 	int m_iFoodProductionModifier; // Leoreth
 	int m_iCulturedCityFreeSpecialists; // Leoreth
 	int m_iCapitalBuildingProductionModifier; // Leoreth
+	int m_iFreeImprovementUpgradeCount; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

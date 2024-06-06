@@ -858,15 +858,23 @@ void CvPlot::doImprovement()
 void CvPlot::doImprovementUpgrade()
 {
 	int iUpgradeTime;
+	int iUpgradeRate;
 
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
-		ImprovementTypes eImprovementUpdrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
-		if (eImprovementUpdrade != NO_IMPROVEMENT)
+		ImprovementTypes eImprovementUpgrade = (ImprovementTypes)GC.getImprovementInfo(getImprovementType()).getImprovementUpgrade();
+		if (eImprovementUpgrade != NO_IMPROVEMENT)
 		{
-			if (isBeingWorked() || GC.getImprovementInfo(eImprovementUpdrade).isOutsideBorders())
+			if (isBeingWorked() || GC.getImprovementInfo(eImprovementUpgrade).isOutsideBorders() || GET_PLAYER(getOwnerINLINE()).isFreeImprovementUpgrade())
 			{
-				changeUpgradeProgress(GET_PLAYER(getOwnerINLINE()).getImprovementUpgradeRate());
+				iUpgradeRate = GET_PLAYER(getOwnerINLINE()).getImprovementUpgradeRate();
+
+				if (isBeingWorked() && GET_PLAYER(getOwnerINLINE()).isFreeImprovementUpgrade())
+				{
+					iUpgradeRate *= 2;
+				}
+
+				changeUpgradeProgress(iUpgradeRate);
 
 				iUpgradeTime = GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType());
 
@@ -878,7 +886,7 @@ void CvPlot::doImprovementUpgrade()
 
 				if (getUpgradeProgress() >= GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType()))
 				{
-					setImprovementType(eImprovementUpdrade);
+					setImprovementType(eImprovementUpgrade);
 				}
 			}
 		}
@@ -4707,6 +4715,11 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 	}
 
 	iUpgradeRate = GET_PLAYER(ePlayer).getImprovementUpgradeRate();
+
+	if (isBeingWorked() && (ePlayer == getOwnerINLINE() && GET_PLAYER(ePlayer).isFreeImprovementUpgrade()))
+	{
+		iUpgradeRate *= 2;
+	}
 
 	if (iUpgradeRate == 0)
 	{

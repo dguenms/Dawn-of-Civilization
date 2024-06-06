@@ -532,6 +532,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iFoodProductionModifier = 0; // Leoreth
 	m_iCulturedCityFreeSpecialists = 0; // Leoreth
 	m_iCapitalBuildingProductionModifier = 0; // Leoreth
+	m_iFreeImprovementUpgradeCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -18416,6 +18417,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeFoodToProductionModifier(GC.getCivicInfo(eCivic).getFoodProductionModifier() * iChange); // Leoreth
 	changeCulturedCityFreeSpecialists(GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists() * iChange); // Leoreth
 	changeCapitalBuildingProductionModifier(GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier() * iChange); // Leoreth
+	changeFreeImprovementUpgradeCount(GC.getCivicInfo(eCivic).isFreeImprovementUpgrade() ? iChange : 0); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18427,7 +18429,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeUnimprovedTileYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnimprovedTileYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
-			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); // Leoreth
+			changeSpecialistExtraYield((SpecialistTypes)iJ, (YieldTypes)iI, GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange); // Leoreth
+			changeSpecialistExtraYield((SpecialistTypes)iJ, (YieldTypes)iI, GC.getCivicInfo(eCivic).getSpecialistTypeExtraYield(iJ, iI) * iChange); // Leoreth
 		}
 	}
 
@@ -18735,6 +18738,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFoodProductionModifier); // Leoreth
 	pStream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
+	pStream->Read(&m_iFreeImprovementUpgradeCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19173,6 +19177,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iFoodProductionModifier); // Leoreth
 	pStream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	pStream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
+	pStream->Write(m_iFreeImprovementUpgradeCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -25632,6 +25637,21 @@ int CvPlayer::getFoodProductionModifier() const
 void CvPlayer::changeFoodToProductionModifier(int iChange)
 {
 	m_iFoodProductionModifier += iChange;
+}
+
+bool CvPlayer::isFreeImprovementUpgrade() const
+{
+	return getFreeImprovementUpgradeCount() > 0;
+}
+
+int CvPlayer::getFreeImprovementUpgradeCount() const
+{
+	return m_iFreeImprovementUpgradeCount;
+}
+
+void CvPlayer::changeFreeImprovementUpgradeCount(int iChange)
+{
+	m_iFreeImprovementUpgradeCount += iChange;
 }
 
 PeriodTypes CvPlayer::getPeriod() const

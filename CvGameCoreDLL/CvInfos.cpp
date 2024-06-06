@@ -5825,7 +5825,8 @@ m_paiMinimalSpecialistCounts(NULL), // Leoreth
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
-m_ppiImprovementYieldChanges(NULL)
+m_ppiImprovementYieldChanges(NULL),
+m_ppiSpecialistTypeExtraYields(NULL)
 {
 }
 
@@ -5860,6 +5861,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
+
 	if (m_ppiImprovementYieldChanges != NULL)
 	{
 		for (iI=0;iI<GC.getNumImprovementInfos();iI++)
@@ -5867,6 +5869,16 @@ CvCivicInfo::~CvCivicInfo()
 			SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges[iI]);
 		}
 		SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges);
+	}
+
+	// Leoreth
+	if (m_ppiSpecialistTypeExtraYields != NULL)
+	{
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields);
 	}
 }
 
@@ -6458,6 +6470,20 @@ int CvCivicInfo::getCapitalBuildingProductionModifier() const
 	return m_iCapitalBuildingProductionModifier;
 }
 
+int CvCivicInfo::getSpecialistTypeExtraYield(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiSpecialistTypeExtraYields[i][j];
+}
+
+bool CvCivicInfo::isFreeImprovementUpgrade() const
+{
+	return m_bFreeImprovementUpgrade;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -6535,6 +6561,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bColonialSlavery); // Leoreth
 	stream->Read(&m_bNoResistance); // Leoreth
 	stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
+	stream->Read(&m_bFreeImprovementUpgrade); // Leoreth
 
 	// Arrays
 
@@ -6642,6 +6669,21 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 		stream->Read(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
 	}
 
+	if (m_ppiSpecialistTypeExtraYields != NULL)
+	{
+		for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields);
+	}
+	m_ppiSpecialistTypeExtraYields = new int* [GC.getNumSpecialistInfos()];
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		m_ppiSpecialistTypeExtraYields[i] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppiSpecialistTypeExtraYields[i]);
+	}
+
 	stream->ReadString(m_szWeLoveTheKingKey);
 }
 
@@ -6707,6 +6749,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFoodProductionModifier); // Leoreth
 	stream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	stream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
+	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6750,6 +6793,11 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	for(i=0;i<GC.getNumImprovementInfos();i++)
 	{
 		stream->Write(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
+	}
+
+	for (i = 0; i < GC.getNumSpecialistInfos(); i++)
+	{
+		stream->Write(NUM_YIELD_TYPES, m_ppiSpecialistTypeExtraYields[i]);
 	}
 
 	stream->WriteString(m_szWeLoveTheKingKey);
@@ -6843,6 +6891,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iFoodProductionModifier, "iFoodProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCulturedCityFreeSpecialists, "iCulturedCityFreeSpecialists"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bFreeImprovementUpgrade, "bFreeImprovementUpgrade"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{
@@ -6998,6 +7047,52 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 							else
 							{
 								pXML->InitList(&m_ppiImprovementYieldChanges[iIndex], NUM_YIELD_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	pXML->Init2DIntList(&m_ppiSpecialistTypeExtraYields, GC.getNumSpecialistInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistTypeExtraYields"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (j = 0; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "SpecialistType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "YieldChanges"))
+							{
+								// call the function that sets the yield change variable
+								pXML->SetYields(&m_ppiSpecialistTypeExtraYields[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_ppiSpecialistTypeExtraYields[iIndex], NUM_YIELD_TYPES);
 							}
 						}
 
