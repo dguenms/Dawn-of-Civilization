@@ -775,6 +775,7 @@
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bStateReligion>1</bStateReligion>
 			<iNonStateReligionHappiness>1</iNonStateReligionHappiness>
+			<bNoStateReligionAnarchy>1</bNoStateReligionAnarchy>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>

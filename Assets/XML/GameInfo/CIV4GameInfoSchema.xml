@@ -889,6 +889,7 @@
 	</ElementType>
 	<ElementType name="bFreeImprovementUpgrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iShrineIncomeLimitChange" content="textOnly" dt:type="int"/>
+	<ElementType name="bNoStateReligionAnarchy" content="textOnly" dt:type="boolean"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -963,6 +964,7 @@
 		<element type="iCivicPercentAnger" minOccurs="0"/>
 		<element type="bStateReligion" minOccurs="0"/>
 		<element type="bNoNonStateReligionSpread" minOccurs="0"/>
+		<element type="bNoStateReligionAnarchy" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iStateReligionHappiness" minOccurs="0"/>
 		<element type="iNonStateReligionHappiness" minOccurs="0"/>
 		<element type="iStateReligionUnitProductionModifier" minOccurs="0"/>

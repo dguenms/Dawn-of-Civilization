@@ -533,6 +533,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iCulturedCityFreeSpecialists = 0; // Leoreth
 	m_iCapitalBuildingProductionModifier = 0; // Leoreth
 	m_iFreeImprovementUpgradeCount = 0; // Leoreth
+	m_iShrineIncomeLimitChange = 0; // Leoreth
+	m_iNoStateReligionAnarchyCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -8843,6 +8845,11 @@ int CvPlayer::getReligionAnarchyLength() const
 	int iAnarchyLength;
 
 	if (getMaxAnarchyTurns() == 0)
+	{
+		return 0;
+	}
+
+	if (isNoStateReligionAnarchy())
 	{
 		return 0;
 	}
@@ -18418,6 +18425,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeCulturedCityFreeSpecialists(GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists() * iChange); // Leoreth
 	changeCapitalBuildingProductionModifier(GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier() * iChange); // Leoreth
 	changeFreeImprovementUpgradeCount(GC.getCivicInfo(eCivic).isFreeImprovementUpgrade() ? iChange : 0); // Leoreth
+	changeShrineIncomeLimitChange(GC.getCivicInfo(eCivic).getShrineIncomeLimitChange() * iChange); // Leoreth
+	changeNoStateReligionAnarchyCount(GC.getCivicInfo(eCivic).isNoStateReligionAnarchy() ? iChange : 0); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18740,6 +18749,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Read(&m_iFreeImprovementUpgradeCount); // Leoreth
 	pStream->Read(&m_iShrineIncomeLimitChange); // Leoreth
+	pStream->Read(&m_iNoStateReligionAnarchyCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19180,6 +19190,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
 	pStream->Write(m_iFreeImprovementUpgradeCount); // Leoreth
 	pStream->Write(m_iShrineIncomeLimitChange); // Leoreth
+	pStream->Write(m_iNoStateReligionAnarchyCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -25664,6 +25675,21 @@ int CvPlayer::getShrineIncomeLimitChange() const
 void CvPlayer::changeShrineIncomeLimitChange(int iChange)
 {
 	m_iShrineIncomeLimitChange += iChange;
+}
+
+bool CvPlayer::isNoStateReligionAnarchy() const
+{
+	return getNoStateReligionAnarchyCount() > 0;
+}
+
+int CvPlayer::getNoStateReligionAnarchyCount() const
+{
+	return m_iNoStateReligionAnarchyCount;
+}
+
+void CvPlayer::changeNoStateReligionAnarchyCount(int iChange)
+{
+	m_iNoStateReligionAnarchyCount += iChange;
 }
 
 PeriodTypes CvPlayer::getPeriod() const
