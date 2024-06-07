@@ -2359,6 +2359,22 @@
 		<Spanish>[ICON_BULLET]Improvements Upgrade without Being Worked</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_COLONY_MAINTENANCE</Tag>
+		<English>[ICON_BULLET]No Colony Maintenance</English>
+		<French>[ICON_BULLET]No Colony Maintenance</French>
+		<German>[ICON_BULLET]No Colony Maintenance</German>
+		<Italian>[ICON_BULLET]No Colony Maintenance</Italian>
+		<Spanish>[ICON_BULLET]No Colony Maintenance</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_COLONY_MAINTENANCE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Colony Maintenance</English>
+		<French>[ICON_BULLET]%D1_Mod%% Colony Maintenance</French>
+		<German>[ICON_BULLET]%D1_Mod%% Colony Maintenance</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Colony Maintenance</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Colony Maintenance</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_COST</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</English>
 		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] n&#233;cessaire pour former des ouvriers</French>

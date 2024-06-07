@@ -491,15 +491,16 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iBuildingOnlyHealthyCount = 0;
 	m_iDistanceMaintenanceModifier = 0;
 	m_iNumCitiesMaintenanceModifier = 0;
+	m_iColonyMaintenanceModifier = 0;
 	m_iCorporationMaintenanceModifier = 0;
-	m_iCorporationCommerceModifier = 0; //Leoreth
+	m_iCorporationCommerceModifier = 0; // Leoreth
 	m_iCorporationUnhappinessModifier = 0; // Leoreth
-	m_iProcessModifier = 0; //Leoreth
+	m_iProcessModifier = 0; // Leoreth
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
 	m_iLevelExperienceModifier = 0;
 	m_iExtraHealth = 0;
-	m_iPollutionModifier = 0; //Leoreth
+	m_iPollutionModifier = 0; // Leoreth
 	m_iBuildingGoodHealth = 0;
 	m_iBuildingBadHealth = 0;
 	m_iExtraHappiness = 0;
@@ -10427,6 +10428,25 @@ void CvPlayer::changeNumCitiesMaintenanceModifier(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getColonyMaintenanceModifier() const
+{
+	return m_iColonyMaintenanceModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeColonyMaintenanceModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iColonyMaintenanceModifier += iChange;
+
+		updateMaintenance();
+	}
+}
+
+
 int CvPlayer::getCorporationMaintenanceModifier() const
 {
 	return m_iCorporationMaintenanceModifier;
@@ -18368,13 +18388,14 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeStateReligionGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getStateReligionGreatPeopleRateModifier() * iChange);
 	changeDistanceMaintenanceModifier(GC.getCivicInfo(eCivic).getDistanceMaintenanceModifier() * iChange);
 	changeNumCitiesMaintenanceModifier(GC.getCivicInfo(eCivic).getNumCitiesMaintenanceModifier() * iChange);
+	changeColonyMaintenanceModifier(GC.getCivicInfo(eCivic).getColonyMaintenanceModifier() * iChange); // Leoreth
 	changeCorporationMaintenanceModifier(GC.getCivicInfo(eCivic).getCorporationMaintenanceModifier() * iChange);
-	changeCorporationCommerceModifier(GC.getCivicInfo(eCivic).getCorporationCommerceModifier() * iChange); //Leoreth
+	changeCorporationCommerceModifier(GC.getCivicInfo(eCivic).getCorporationCommerceModifier() * iChange); // Leoreth
 	changeCorporationUnhappinessModifier(GC.getCivicInfo(eCivic).getCorporationUnhappinessModifier() * iChange); // Leoreth
 	changeMaxGlobalBuildingProductionModifier(GC.getCivicInfo(eCivic).getWonderProductionModifier() * iChange); // Leoreth
-	changeProcessModifier(GC.getCivicInfo(eCivic).getProcessModifier() * iChange); //Leoreth
+	changeProcessModifier(GC.getCivicInfo(eCivic).getProcessModifier() * iChange); // Leoreth
 	changeExtraHealth(GC.getCivicInfo(eCivic).getExtraHealth() * iChange);
-	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); //Leoreth
+	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); // Leoreth
 	changeFreeExperience(GC.getCivicInfo(eCivic).getFreeExperience() * iChange);
 	changeWorkerCostModifier(GC.getCivicInfo(eCivic).getWorkerCostModifier() * iChange); // Leoreth
 	changeWorkerSpeedModifier(GC.getCivicInfo(eCivic).getWorkerSpeedModifier() * iChange);
@@ -18395,7 +18416,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeSpecialistHappiness(GC.getCivicInfo(eCivic).getSpecialistHappiness() * iChange); // Leoreth
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
-	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
+	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); // Leoreth
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
@@ -18708,15 +18729,16 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBuildingOnlyHealthyCount);
 	pStream->Read(&m_iDistanceMaintenanceModifier);
 	pStream->Read(&m_iNumCitiesMaintenanceModifier);
+	pStream->Read(&m_iColonyMaintenanceModifier); // Leoreth
 	pStream->Read(&m_iCorporationMaintenanceModifier);
-	pStream->Read(&m_iCorporationCommerceModifier); //Leoreth
+	pStream->Read(&m_iCorporationCommerceModifier); // Leoreth
 	pStream->Read(&m_iCorporationUnhappinessModifier); // Leoreth
-	pStream->Read(&m_iProcessModifier); //Leoreth
+	pStream->Read(&m_iProcessModifier); // Leoreth
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
 	pStream->Read(&m_iLevelExperienceModifier);
 	pStream->Read(&m_iExtraHealth);
-	pStream->Read(&m_iPollutionModifier); //Leoreth
+	pStream->Read(&m_iPollutionModifier); // Leoreth
 	pStream->Read(&m_iBuildingGoodHealth);
 	pStream->Read(&m_iBuildingBadHealth);
 	pStream->Read(&m_iExtraHappiness);
@@ -19150,6 +19172,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingOnlyHealthyCount);
 	pStream->Write(m_iDistanceMaintenanceModifier);
 	pStream->Write(m_iNumCitiesMaintenanceModifier);
+	pStream->Write(m_iColonyMaintenanceModifier); // Leoreth
 	pStream->Write(m_iCorporationMaintenanceModifier);
 	pStream->Write(m_iCorporationCommerceModifier); // Leoreth
 	pStream->Write(m_iCorporationUnhappinessModifier); // Leoreth

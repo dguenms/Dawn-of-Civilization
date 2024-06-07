@@ -679,6 +679,7 @@
 	<ElementType name="iStateReligionGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iDistanceMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iNumCitiesMaintenanceModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iColonyMaintenanceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iCorporationMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCorporationCommerceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iCorporationUnhappinessModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
@@ -911,6 +912,7 @@
 		<element type="iStateReligionGreatPeopleRateModifier" minOccurs="0"/>
 		<element type="iDistanceMaintenanceModifier" minOccurs="0"/>
 		<element type="iNumCitiesMaintenanceModifier" minOccurs="0"/>
+		<element type="iColonyMaintenanceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCorporationMaintenanceModifier" minOccurs="0"/>
 		<element type="iCorporationCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCorporationUnhappinessModifier" minOccurs="0"/> <!-- Leoreth -->

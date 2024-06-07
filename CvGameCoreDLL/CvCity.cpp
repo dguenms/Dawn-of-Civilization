@@ -7262,6 +7262,9 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 
 	iMaintenance = std::min(iMaintenance, (GC.getHandicapInfo(getHandicapType()).getMaxColonyMaintenance() * calculateDistanceMaintenanceTimes100()) / 100);
 
+	iMaintenance *= std::max(0, GET_PLAYER(getOwnerINLINE()).getColonyMaintenanceModifier() + 100);
+	iMaintenance /= 100;
+
 	iMaintenance *= GET_PLAYER(getOwnerINLINE()).getModifier(MODIFIER_COLONY_MAINTENANCE);
 	iMaintenance /= 100;
 

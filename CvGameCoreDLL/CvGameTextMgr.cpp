@@ -7328,6 +7328,21 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	// Colony Maintenance Modifier
+	if (GC.getCivicInfo(eCivic).getColonyMaintenanceModifier() != 0)
+	{
+		if (GC.getCivicInfo(eCivic).getColonyMaintenanceModifier() <= -100)
+		{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_COLONY_MAINTENANCE"));
+		}
+		else
+		{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_COLONY_MAINTENANCE_MODIFIER", GC.getCivicInfo(eCivic).getColonyMaintenanceModifier()));
+		}
+	}
+
 	//	Corporations Maintenance Modifer...
 	if (GC.getCivicInfo(eCivic).getCorporationMaintenanceModifier() != 0)
 	{
