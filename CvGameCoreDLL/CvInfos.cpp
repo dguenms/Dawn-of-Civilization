@@ -5805,6 +5805,8 @@ m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_bNoResistance(false), // Leoreth
 m_bNoTemporaryUnhappiness(false), // Leoreth
+m_bFreeImprovementUpgrade(false), // Leoreth
+m_bNoStateReligionAnarchy(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -6489,6 +6491,11 @@ int CvCivicInfo::getShrineIncomeLimitChange() const
 	return m_iShrineIncomeLimitChange;
 }
 
+bool CvCivicInfo::isNoStateReligionAnarchy() const
+{
+	return m_bNoStateReligionAnarchy;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -6568,6 +6575,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNoResistance); // Leoreth
 	stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 	stream->Read(&m_bFreeImprovementUpgrade); // Leoreth
+	stream->Read(&m_bNoStateReligionAnarchy); // Leoreth
 
 	// Arrays
 
@@ -6772,6 +6780,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNoResistance); // Leoreth
 	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
 	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
+	stream->Write(m_bNoStateReligionAnarchy); // Leoreth
 
 	// Arrays
 
@@ -6900,6 +6909,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bFreeImprovementUpgrade, "bFreeImprovementUpgrade"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iShrineIncomeLimitChange, "iShrineIncomeLimitChange"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoStateReligionAnarchy, "bNoStateReligionAnarchy"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

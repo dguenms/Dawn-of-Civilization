@@ -7775,6 +7775,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SHRINE_INCOME_LIMIT_CHANGE", GC.getCivicInfo(eCivic).getShrineIncomeLimitChange()));
 	}
 
+	// Leoreth: no anarchy from state religion changes
+	if (GC.getCivicInfo(eCivic).isNoStateReligionAnarchy())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_STATE_RELIGION_ANARCHY"));
+	}
+
 	//	Yield Modifiers
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_IN_ALL_CITIES").GetCString(), GC.getCivicInfo(eCivic).getYieldModifierArray(), true);
 
