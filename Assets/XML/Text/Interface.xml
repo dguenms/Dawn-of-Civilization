@@ -2343,6 +2343,14 @@
 		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] from Changing State Religion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OCCUPATION_TIME_CHANGE</Tag>
+		<English>[ICON_BULLET]%D1_Change turns of [ICON_OCCUPATION] in Conquered Cities</English>
+		<French>[ICON_BULLET]%D1_Change turns of [ICON_OCCUPATION] in Conquered Cities</French>
+		<German>[ICON_BULLET]%D1_Change turns of [ICON_OCCUPATION] in Conquered Cities</German>
+		<Italian>[ICON_BULLET]%D1_Change turns of [ICON_OCCUPATION] in Conquered Cities</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change turns of [ICON_OCCUPATION] in Conquered Cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FREE_IMPROVEMENT_UPGRADE</Tag>
 		<English>[ICON_BULLET]Improvements Upgrade without Being Worked</English>
 		<French>[ICON_BULLET]Improvements Upgrade without Being Worked</French>
