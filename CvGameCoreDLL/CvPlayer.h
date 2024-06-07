@@ -529,10 +529,14 @@ public:
 	int getNumCitiesMaintenanceModifier() const;																															// Exposed to Python
 	void changeNumCitiesMaintenanceModifier(int iChange);
 
+	// Leoreth
+	int getColonyMaintenanceModifier() const;
+	void changeColonyMaintenanceModifier(int iChange);
+
 	int getCorporationMaintenanceModifier() const;																															// Exposed to Python
 	void changeCorporationMaintenanceModifier(int iChange);
 
-	//Leoreth
+	// Leoreth
 	int getCorporationCommerceModifier() const;
 	void changeCorporationCommerceModifier(int iChange);
 
@@ -1468,6 +1472,7 @@ protected:
 	int m_iBuildingOnlyHealthyCount;
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
+	int m_iColonyMaintenanceModifier; // Leoreth
 	int m_iCorporationMaintenanceModifier;
 	int m_iCorporationCommerceModifier; // Leoreth
 	int m_iCorporationUnhappinessModifier; // Leoreth

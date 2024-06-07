@@ -1372,6 +1372,7 @@ public:
 	int getStateReligionGreatPeopleRateModifier() const;				// Exposed to Python
 	int getDistanceMaintenanceModifier() const;				// Exposed to Python
 	int getNumCitiesMaintenanceModifier() const;				// Exposed to Python
+	int getColonyMaintenanceModifier() const; // Leoreth
 	int getCorporationMaintenanceModifier() const;				// Exposed to Python
 	int getCorporationCommerceModifier() const; // Leoreth
 	int getCorporationUnhappinessModifier() const; // Leoreth
@@ -1499,6 +1500,7 @@ protected:
 	int m_iStateReligionGreatPeopleRateModifier;
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
+	int m_iColonyMaintenanceModifier; // Leoreth
 	int m_iCorporationMaintenanceModifier;
 	int m_iCorporationCommerceModifier; // Leoreth
 	int m_iCorporationUnhappinessModifier; // Leoreth

@@ -5746,11 +5746,12 @@ m_iDomesticGreatGeneralRateModifier(0),
 m_iStateReligionGreatPeopleRateModifier(0),
 m_iDistanceMaintenanceModifier(0),
 m_iNumCitiesMaintenanceModifier(0),
+m_iColonyMaintenanceModifier(0), // Leoreth
 m_iCorporationMaintenanceModifier(0),
-m_iCorporationCommerceModifier(0), //Leoreth
+m_iCorporationCommerceModifier(0), // Leoreth
 m_iCorporationUnhappinessModifier(0), // Leoreth
 m_iWonderProductionModifier(0), // Leoreth
-m_iProcessModifier(0), //Leoreth
+m_iProcessModifier(0), // Leoreth
 m_iExtraHealth(0),
 m_iPollutionModifier(0), //Leoreth
 m_iFreeExperience(0),
@@ -5934,6 +5935,12 @@ int CvCivicInfo::getDistanceMaintenanceModifier() const
 int CvCivicInfo::getNumCitiesMaintenanceModifier() const
 {
 	return m_iNumCitiesMaintenanceModifier;
+}
+
+// Leoreth
+int CvCivicInfo::getColonyMaintenanceModifier() const
+{
+	return m_iColonyMaintenanceModifier;
 }
 
 int CvCivicInfo::getCorporationMaintenanceModifier() const
@@ -6520,11 +6527,12 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionGreatPeopleRateModifier);
 	stream->Read(&m_iDistanceMaintenanceModifier);
 	stream->Read(&m_iNumCitiesMaintenanceModifier);
+	stream->Read(&m_iColonyMaintenanceModifier); // Leoreth
 	stream->Read(&m_iCorporationMaintenanceModifier);
-	stream->Read(&m_iCorporationCommerceModifier); //Leoreth
+	stream->Read(&m_iCorporationCommerceModifier); // Leoreth
 	stream->Read(&m_iCorporationUnhappinessModifier); // Leoreth
 	stream->Read(&m_iWonderProductionModifier); // Leoreth
-	stream->Read(&m_iProcessModifier); //Leoreth
+	stream->Read(&m_iProcessModifier); // Leoreth
 	stream->Read(&m_iExtraHealth);
 	stream->Read(&m_iPollutionModifier); //Leoreth
 	stream->Read(&m_iFreeExperience);
@@ -6726,11 +6734,12 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionGreatPeopleRateModifier);
 	stream->Write(m_iDistanceMaintenanceModifier);
 	stream->Write(m_iNumCitiesMaintenanceModifier);
+	stream->Write(m_iColonyMaintenanceModifier); // Leoreth
 	stream->Write(m_iCorporationMaintenanceModifier);
-	stream->Write(m_iCorporationCommerceModifier); //Leoreth
+	stream->Write(m_iCorporationCommerceModifier); // Leoreth
 	stream->Write(m_iCorporationUnhappinessModifier); // Leoreth
 	stream->Write(m_iWonderProductionModifier); // Leoreth
-	stream->Write(m_iProcessModifier); //Leoreth
+	stream->Write(m_iProcessModifier); // Leoreth
 	stream->Write(m_iExtraHealth);
 	stream->Write(m_iPollutionModifier); //Leoreth
 	stream->Write(m_iFreeExperience);
@@ -6858,11 +6867,12 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionGreatPeopleRateModifier, "iStateReligionGreatPeopleRateModifier");
 	pXML->GetChildXmlValByName(&m_iDistanceMaintenanceModifier, "iDistanceMaintenanceModifier");
 	pXML->GetChildXmlValByName(&m_iNumCitiesMaintenanceModifier, "iNumCitiesMaintenanceModifier");
+	pXML->GetChildXmlValByName(&m_iColonyMaintenanceModifier, "iColonyMaintenanceModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCorporationMaintenanceModifier, "iCorporationMaintenanceModifier");
-	pXML->GetChildXmlValByName(&m_iCorporationCommerceModifier, "iCorporationCommerceModifier"); //Leoreth
+	pXML->GetChildXmlValByName(&m_iCorporationCommerceModifier, "iCorporationCommerceModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCorporationUnhappinessModifier, "iCorporationUnhappinessModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWonderProductionModifier, "iWonderProductionModifier"); // Leoreth
-	pXML->GetChildXmlValByName(&m_iProcessModifier, "iProcessModifier"); //Leoreth
+	pXML->GetChildXmlValByName(&m_iProcessModifier, "iProcessModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
 	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iFreeExperience, "iFreeExperience");

@@ -989,6 +989,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Colonialism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iColonyMaintenanceModifier>-50</iColonyMaintenanceModifier>
 			<bColonialSlavery>1</bColonialSlavery>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
