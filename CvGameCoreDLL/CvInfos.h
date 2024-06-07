@@ -1418,6 +1418,7 @@ public:
 	int getCulturedCityFreeSpecialists() const; // Leoreth
 	int getCapitalBuildingProductionModifier() const; // Leoreth
 	int getShrineIncomeLimitChange() const; // Leoreth
+	int getOccupationTimeChange() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
@@ -1544,6 +1545,7 @@ protected:
 	int m_iCulturedCityFreeSpecialists; // Leoreth
 	int m_iCapitalBuildingProductionModifier; // Leoreth
 	int m_iShrineIncomeLimitChange; // Leoreth
+	int m_iOccupationTimeChange; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;

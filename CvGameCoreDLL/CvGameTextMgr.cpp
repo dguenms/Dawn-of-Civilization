@@ -7886,6 +7886,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_RESISTANCE"));
 	}
 
+	// Occupation time change
+	if (GC.getCivicInfo(eCivic).getOccupationTimeChange() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_OCCUPATION_TIME_CHANGE", getTurns(GC.getCivicInfo(eCivic).getOccupationTimeChange())));
+	}
+
 	// No temporary unhappiness
 	if (GC.getCivicInfo(eCivic).isNoTemporaryUnhappiness())
 	{

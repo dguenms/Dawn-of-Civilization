@@ -5791,6 +5791,8 @@ m_iVassalTradeModifier(0), // Leoreth
 m_iFoodProductionModifier(0), // Leoreth
 m_iCulturedCityFreeSpecialists(0), // Leoreth
 m_iCapitalBuildingProductionModifier(0), // Leoreth
+m_iShrineIncomeLimitChange(0), // Leoreth
+m_iOccupationTimeChange(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -6496,6 +6498,11 @@ bool CvCivicInfo::isNoStateReligionAnarchy() const
 	return m_bNoStateReligionAnarchy;
 }
 
+int CvCivicInfo::getOccupationTimeChange() const
+{
+	return m_iOccupationTimeChange;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -6559,6 +6566,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
 	stream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
 	stream->Read(&m_iShrineIncomeLimitChange); // Leoreth
+	stream->Read(&m_iOccupationTimeChange); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6764,6 +6772,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
 	stream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
 	stream->Write(m_iShrineIncomeLimitChange); // Leoreth
+	stream->Write(m_iOccupationTimeChange); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6910,6 +6919,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bFreeImprovementUpgrade, "bFreeImprovementUpgrade"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iShrineIncomeLimitChange, "iShrineIncomeLimitChange"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoStateReligionAnarchy, "bNoStateReligionAnarchy"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iOccupationTimeChange, "iOccupationTimeChange"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

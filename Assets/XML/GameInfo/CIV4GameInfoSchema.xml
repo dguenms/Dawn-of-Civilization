@@ -890,6 +890,7 @@
 	<ElementType name="bFreeImprovementUpgrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iShrineIncomeLimitChange" content="textOnly" dt:type="int"/>
 	<ElementType name="bNoStateReligionAnarchy" content="textOnly" dt:type="boolean"/>
+	<ElementType name="iOccupationTimeChange" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -955,6 +956,7 @@
 		<element type="iColonyCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCaptureGoldModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iShrineIncomeLimitChange" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iOccupationTimeChange" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoResistance" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->

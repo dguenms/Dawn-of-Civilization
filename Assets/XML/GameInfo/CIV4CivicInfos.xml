@@ -871,6 +871,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iCaptureGoldModifier>25</iCaptureGoldModifier>
+			<iOccupationTimeChange>-1</iOccupationTimeChange>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
@@ -889,7 +890,6 @@
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
-			<!-- -1 turn of city unrest -->
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>

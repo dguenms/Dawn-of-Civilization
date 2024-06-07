@@ -1006,6 +1006,15 @@ public:
 	int getShrineIncomeLimitChange() const;
 	void changeShrineIncomeLimitChange(int iChange);
 
+	// Leoreth
+	bool isNoStateReligionAnarchy() const;
+	int getNoStateReligionAnarchyCount() const;
+	void changeNoStateReligionAnarchyCount(int iChange);
+
+	// Leoreth
+	int getOccupationTimeChange() const;
+	void changeOccupationTimeChange(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1385,10 +1394,6 @@ public:
 
 	int getShrineIncomeLimit() const;
 
-	bool isNoStateReligionAnarchy() const;
-	int getNoStateReligionAnarchyCount() const;
-	void changeNoStateReligionAnarchyCount(int iChange);
-
 	int getScoreHistory(int iTurn) const;
 	int getEconomyHistory(int iTurn) const;
 	int getIndustryHistory(int iTurn) const;
@@ -1506,6 +1511,7 @@ protected:
 	int m_iFreeImprovementUpgradeCount; // Leoreth
 	int m_iShrineIncomeLimitChange; // Leoreth
 	int m_iNoStateReligionAnarchyCount; // Leoreth
+	int m_iOccupationTimeChange; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;
