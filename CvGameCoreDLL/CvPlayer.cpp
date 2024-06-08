@@ -6214,9 +6214,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	bool bStateReligion = GC.getBuildingInfo(eBuilding).getStateReligion() == NO_RELIGION || GC.getBuildingInfo(eBuilding).getStateReligion() == getStateReligion();
 	bool bOrStateReligion = GC.getBuildingInfo(eBuilding).getOrStateReligion() != NO_RELIGION && GC.getBuildingInfo(eBuilding).getOrStateReligion() == getStateReligion();
-	bool bSecularism = getCivics(CIVICOPTION_RELIGION) == CIVIC_SECULARISM;
 
-	if (!bStateReligion && !bOrStateReligion && !bSecularism)
+	if (!bStateReligion && !bOrStateReligion)
 	{
 		return false;
 	}

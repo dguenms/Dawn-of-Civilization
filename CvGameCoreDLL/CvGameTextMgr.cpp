@@ -8038,13 +8038,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
-	// Leoreth: ignore state religion requirements with Secularism
-	if (eCivic == CIVIC_SECULARISM)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_IGNORE_STATE_RELIGION"));
-	}
-	
 	int iDoubleModifierCount = 0;
 	CvWStringBuffer szDoubleModifiers;
 	szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_START"));

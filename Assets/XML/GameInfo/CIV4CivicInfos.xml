@@ -24,7 +24,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_DESPOTISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Strategy>
 			<TechPrereq>TECH_PROPERTY</TechPrereq>
-			<Button>,Art/Interface/Buttons/Civics/DespotismCivic.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Despotism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<Hurrys>
@@ -178,7 +178,7 @@
 			<Description>TXT_KEY_CIVIC_AUTHORITY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_AUTHORITY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_AUTHORITY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Despotism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Authority.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
