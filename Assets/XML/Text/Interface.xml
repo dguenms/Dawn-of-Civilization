@@ -2375,6 +2375,14 @@
 		<Spanish>[ICON_BULLET]%D1_Mod%% Colony Maintenance</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FROM_STATE_RELIGION_BUILDINGS</Tag>
+		<English>[SPACE]from State [ICON_RELIGION] Buildings</English>
+		<French>[SPACE]from State [ICON_RELIGION] Buildings</French>
+		<German>[SPACE]from State [ICON_RELIGION] Buildings</German>
+		<Italian>[SPACE]from State [ICON_RELIGION] Buildings</Italian>
+		<Spanish>[SPACE]from State [ICON_RELIGION] Buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_COST</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</English>
 		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] n&#233;cessaire pour former des ouvriers</French>
