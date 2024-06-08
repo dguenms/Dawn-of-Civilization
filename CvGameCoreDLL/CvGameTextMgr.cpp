@@ -7873,7 +7873,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	if (GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists() != 0)
 	{
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CULTURED_CITIES_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists(), bPlayerContext ? GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getTargetNumCities() : 4));
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CULTURED_CITIES_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists(), bPlayerContext ? GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getTargetNumCities()-1 : 3));
 	}
 
 	// Leoreth: specialist happiness
