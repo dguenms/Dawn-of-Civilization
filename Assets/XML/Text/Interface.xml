@@ -2320,11 +2320,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SPECIALIST_TYPE_EXTRA_YIELD</Tag>
-		<English>[ICON_BULLET]%D1_Change%F2_Icon from[SPACE]</English>
-		<French>[ICON_BULLET]%D1_Change%F2_Icon :[SPACE]</French>
-		<German>[ICON_BULLET]%D1_Change%F2_Icon von[SPACE]</German>
-		<Italian>[ICON_BULLET]%D1_Change%F2_Icon da[SPACE]</Italian>
-		<Spanish>[ICON_BULLET]%D1_Change %F2_Icon por[SPACE]</Spanish>
+		<English>[ICON_BULLET]%s1 from %s2</English>
+		<French>[ICON_BULLET]%s1 from %s2</French>
+		<German>[ICON_BULLET]%s1 from %s2</German>
+		<Italian>[ICON_BULLET]%s1 from %s2</Italian>
+		<Spanish>[ICON_BULLET]%s1 from %s2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SHRINE_INCOME_LIMIT_CHANGE</Tag>
@@ -2381,6 +2381,14 @@
 		<German>[SPACE]from State [ICON_RELIGION] Buildings</German>
 		<Italian>[SPACE]from State [ICON_RELIGION] Buildings</Italian>
 		<Spanish>[SPACE]from State [ICON_RELIGION] Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_HAPPY] from[SPACE]</English>
+		<French>[ICON_BULLET]%D1_Change[ICON_HAPPY] from[SPACE]</French>
+		<German>[ICON_BULLET]%D1_Change[ICON_HAPPY] from[SPACE]</German>
+		<Italian>[ICON_BULLET]%D1_Change[ICON_HAPPY] from[SPACE]</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change[ICON_HAPPY] from[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_COST</Tag>
