@@ -252,7 +252,7 @@
 			<iStateReligionHappiness>2</iStateReligionHappiness>
 			<SpecialistValids>
 				<SpecialistValid>
-					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<bValid>1</bValid>
 				</SpecialistValid>
 			</SpecialistValids>
@@ -260,6 +260,12 @@
 				<iYield>0</iYield>
 				<iYield>2</iYield>
 			</StateReligionBuildingYields>
+			<SpecialBuildingNotRequireds>
+				<SpecialBuildingNotRequired>
+					<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
+					<bNotRequired>1</bNotRequired>
+				</SpecialBuildingNotRequired>
+			</SpecialBuildingNotRequireds>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
@@ -1018,7 +1024,6 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<!-- -50% colony maintenance -->
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
