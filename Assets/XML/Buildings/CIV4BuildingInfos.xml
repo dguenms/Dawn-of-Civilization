@@ -8598,7 +8598,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_COLLEGE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NATIONAL_COLLEGE</MovieDefineTag>
-			<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
+			<PrereqTech>TECH_EDUCATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>400</iCost>
@@ -8620,13 +8620,13 @@
 			</SpecialistCounts>
 			<PrereqBuildingClassPercents>
 				<PrereqBuildingClassPercent>
-					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
-					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+					<iBuildingNeededPercent>75</iBuildingNeededPercent>
 				</PrereqBuildingClassPercent>
 			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>

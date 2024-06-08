@@ -435,7 +435,7 @@
 			<fInterfaceScale>0.67</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/University/University.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/National_College/Sorbonne.dds</Button>
+			<Button>Art/Structures/Buildings/National_College/NationalCollege.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KOREAN_SEOWON</Type>
