@@ -437,7 +437,7 @@
 			<TechPrereq>TECH_LITERATURE</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Caste System.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iWorkerSpeedModifier>50</iWorkerSpeedModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
@@ -826,14 +826,14 @@
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iNonStateReligionHappiness>-1</iNonStateReligionHappiness>
-			<iShrineIncomeLimitChange>20</iShrineIncomeLimitChange>
+			<iShrineIncomeLimitChange>10</iShrineIncomeLimitChange>
 			<SpecialistTypeExtraYields>
 				<SpecialistTypeExtraYield>
 					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
 					<YieldChanges>
 						<iYield>0</iYield>
 						<iYield>2</iYield>
-						<iYield>5</iYield>
+						<iYield>4</iYield>
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
 			</SpecialistTypeExtraYields>
@@ -871,42 +871,11 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
-			<Type>CIVIC_HEGEMONY</Type>
-			<Description>TXT_KEY_CIVIC_HEGEMONY</Description>
-			<Civilopedia>TXT_KEY_CIVIC_HEGEMONY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_HEGEMONY_STRATEGY</Strategy>
-			<TechPrereq>TECH_GENERALSHIP</TechPrereq>
-			<Button>,Art/Interface/Buttons/Civics/Hegemony.dds</Button>
-			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iCaptureGoldModifier>25</iCaptureGoldModifier>
-			<iOccupationTimeChange>-1</iOccupationTimeChange>
-			<BuildingProductionModifiers>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_STABLE</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_CASTLE</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_JAIL</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-			</BuildingProductionModifiers>
-		</CivicInfo>
-		<CivicInfo>
-			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
 			<Type>CIVIC_THALASSOCRACY</Type>
 			<Description>TXT_KEY_CIVIC_THALASSOCRACY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_THALASSOCRACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_THALASSOCRACY_STRATEGY</Strategy>
-			<TechPrereq>TECH_FEUDALISM</TechPrereq>
+			<TechPrereq>TECH_NAVIGATION</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Thalassocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
@@ -969,6 +938,37 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
+			<Type>CIVIC_HEGEMONY</Type>
+			<Description>TXT_KEY_CIVIC_HEGEMONY</Description>
+			<Civilopedia>TXT_KEY_CIVIC_HEGEMONY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_HEGEMONY_STRATEGY</Strategy>
+			<TechPrereq>TECH_GENERALSHIP</TechPrereq>
+			<Button>,Art/Interface/Buttons/Civics/Hegemony.dds</Button>
+			<iAnarchyLength>1</iAnarchyLength>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<iCaptureGoldModifier>25</iCaptureGoldModifier>
+			<iOccupationTimeChange>-1</iOccupationTimeChange>
+			<BuildingProductionModifiers>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_STABLE</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_CASTLE</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_JAIL</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+			</BuildingProductionModifiers>
+		</CivicInfo>
+		<CivicInfo>
+			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
 			<Type>CIVIC_ISOLATIONISM</Type>
 			<Description>TXT_KEY_CIVIC_ISOLATIONISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_ISOLATIONISM_PEDIA</Civilopedia>
@@ -1019,8 +1019,8 @@
 					<ImprovementType>IMPROVEMENT_SLAVE_MINE</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -1046,8 +1046,24 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<!-- happiness from buildings? -->
-			<!-- experience in borders? -->
+			<BuildingHappinessChanges>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_MONUMENT</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_CIVIC_SQUARE</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_NEWS_PRESS</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_BROADCAST_TOWER</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+			</BuildingHappinessChanges>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
