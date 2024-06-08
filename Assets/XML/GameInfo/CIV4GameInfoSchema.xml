@@ -892,6 +892,9 @@
 	<ElementType name="iShrineIncomeLimitChange" content="textOnly" dt:type="int"/>
 	<ElementType name="bNoStateReligionAnarchy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iOccupationTimeChange" content="textOnly" dt:type="int"/>
+	<ElementType name="StateReligionBuildingYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -986,6 +989,7 @@
 		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnimprovedTileYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="StateReligionBuildingYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys" minOccurs="0"/>
 		<element type="SpecialBuildingNotRequireds" minOccurs="0"/>
 		<element type="SpecialistValids" minOccurs="0"/>

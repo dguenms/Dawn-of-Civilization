@@ -18459,6 +18459,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeHappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getHappinessExtraYield(iI) * iChange);
 		changeUnhappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnhappinessExtraYield(iI) * iChange);
 		changeUnimprovedTileYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnimprovedTileYield(iI) * iChange);
+		changeReligionYieldChange((YieldTypes)iI, GC.getCivicInfo(eCivic).getStateReligionBuildingYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
 			changeSpecialistExtraYield((SpecialistTypes)iJ, (YieldTypes)iI, GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange); // Leoreth

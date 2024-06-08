@@ -256,7 +256,10 @@
 					<bValid>1</bValid>
 				</SpecialistValid>
 			</SpecialistValids>
-			<!-- +2 production from state religion buildings -->
+			<StateReligionBuildingYields>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</StateReligionBuildingYields>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
