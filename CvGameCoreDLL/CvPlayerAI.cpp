@@ -10187,6 +10187,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getDomesticGreatGeneralRateModifier() * getNumMilitaryUnits()) / 100);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
+	iValue += -((kCivic.getColonyMaintenanceModifier() * std::max(0, (countColonies() - 3))) / 8);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * calculateDistanceMaintenance()) / 100);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
@@ -10200,6 +10201,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -(kCivic.getGoldPerUnit() * getNumUnits());
 	iValue += -(kCivic.getGoldPerMilitaryUnit() * getNumMilitaryUnits() * iWarmongerPercent) / 200;
 	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 100 : 500)); // Leoreth
+	iValue += kCivic.getFoodProductionModifier() * (AI_neededWorkers() + findBestFoundValue() > 0 ? 3 : 0 + isMilitaryFoodProduction() ? 3 : 0) / 15; // Leoreth
+	iValue += kCivic.isFreeImprovementUpgrade() ? 2 * getNumCities() : 0; // Leoreth
+	iValue += kCivic.getOccupationTimeChange() * iWarmongerPercent / (bWarPlan ? 4 : 20); // Leoreth
+	iValue += kCivic.getCapitalBuildingProductionModifier() * (getNumCities() - 1) / 8; // Leoreth
 
 	// Leoreth: experience cost reduction
 	iValue += -kCivic.getLevelExperienceModifier() * getNumMilitaryUnits() * iWarmongerPercent / 2500;
@@ -10214,6 +10219,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
+	iValue += kCivic.getCulturedCityFreeSpecialists() * std::min(getNumCities(), GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities() - 1) * 12; // Leoreth
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
@@ -10392,6 +10398,22 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 	}
 
+	// Leoreth: no state religion change anarchy
+	if (kCivic.isNoStateReligionAnarchy())
+	{
+		if (isStateReligion() && iHighestReligionCount > 0)
+		{
+			for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+			{
+				if (getStateReligion() != iI && countReligionCities((ReligionTypes)iI) >= iHighestReligionCount * 3 / 4)
+				{
+					iValue += getNumCities();
+					break;
+				}
+			}
+		}
+	}
+
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		iTempValue = 0;
@@ -10421,6 +10443,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 100;
 		}
 
+		// Leoreth: specialist specific yield changes
+		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+		{
+			iTempValue += AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistTypeExtraYield(iJ, iI) * countSpecialists((SpecialistTypes)iJ) / 100;
+		}
+
 		// Leoreth: unimproved tile yield
 		if (kCivic.getUnimprovedTileYield(iI) != 0)
 		{
@@ -10439,6 +10467,24 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		// Leoreth: specialist extra yield
 		iTempValue += ((AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15) / 100;
 
+		// Leoreth: state religion building yield change
+		if (kCivic.getStateReligionBuildingYield(iI) != 0)
+		{
+			if (getStateReligion() != NO_RELIGION)
+			{
+				int iStateReligionBuildingValue = 0;
+				for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
+				{
+					if (GC.getBuildingInfo((BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iJ)).getStateReligion() == getStateReligion())
+					{
+						iStateReligionBuildingValue += AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getStateReligionBuildingYield(iI) * getBuildingClassCount((BuildingClassTypes)iJ);
+					}
+				}
+
+				iTempValue += iStateReligionBuildingValue / 100;
+			}
+		}
+
 		if (iI == YIELD_FOOD)
 		{
 			iTempValue *= 3;
@@ -10455,8 +10501,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += iTempValue;
 	}
 
-	//Leoreth: process modifier
-	//do nothing here, look if other effects are enough
+	// Leoreth: process modifier
+	iTempValue += kCivic.getProcessModifier() * getNumCities() / 8;
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
@@ -10499,6 +10545,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 	{
+		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
 		if (kCivic.getBuildingHappinessChanges(iI) != 0)
 		{
 			iValue += (kCivic.getBuildingHappinessChanges(iI) * getBuildingClassCount((BuildingClassTypes)iI) * 3);
@@ -10506,11 +10554,19 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		if (kCivic.getBuildingProductionModifier(iI) != 0)
 		{
-			BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
 
 			if (eBuilding != NO_BUILDING && getNumCities() > 0 && canConstruct(eBuilding))
 			{
 				iValue += 2 * kCivic.getBuildingProductionModifier(iI) * (getNumCities() - getBuildingClassCountPlusMaking((BuildingClassTypes)iI)) / (100 * getNumCities());
+			}
+		}
+
+		// Leoreth: shrine income income limit changes
+		if (kCivic.getShrineIncomeLimitChange() != 0)
+		{
+			if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != 0)
+			{
+				iValue += std::max(0, std::min(kCivic.getShrineIncomeLimitChange(), GC.getGameINLINE().countReligionLevels((ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType()) - MAX_COM_SHRINE)) * AI_commerceWeight(COMMERCE_GOLD);
 			}
 		}
 	}
@@ -10559,7 +10615,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += (iTempValue / 2);
 	}
 
-	// Leoreth: domain production and experience
+	// Leoreth: domain experience
 	int iDomainDivisor;
 	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
 	{
