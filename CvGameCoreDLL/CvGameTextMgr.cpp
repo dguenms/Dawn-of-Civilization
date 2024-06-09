@@ -5241,8 +5241,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		if (iRate > 0)
 		{
 			int iPop = ((iRate - 1) / pCity->flatHurryAngerLength() + 1) * GC.getDefineINT("HURRY_POP_ANGER");
-			int iEffectiveRate = iRate * 100 / (100 + GET_PLAYER(pCity->getOwnerINLINE()).getUnhappinessDecayModifier());
-			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(ANGRY_POP_CHAR), iEffectiveRate);
+			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(ANGRY_POP_CHAR), iRate);
 			szString.append(szTempBuffer);
 		}
 	}
@@ -5255,8 +5254,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		if (iRate > 0)
 		{
 			int iPop = ((iRate - 1) / pCity->flatConscriptAngerLength() + 1) * GC.getDefineINT("CONSCRIPT_POP_ANGER");
-			int iEffectiveRate = iRate * 100 / (100 + GET_PLAYER(pCity->getOwnerINLINE()).getUnhappinessDecayModifier());
-			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(CITIZEN_CHAR), iEffectiveRate);
+			szTempBuffer.Format(L" (%d %c %d)", iPop, gDLL->getSymbolID(CITIZEN_CHAR), iRate);
 			szString.append(szTempBuffer);
 		}
 	}
@@ -6606,11 +6604,6 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 
 		int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
 
-		if (pCity != NULL)
-		{
-			iHappinessChange += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistHappiness();
-		}
-
 		if (iHappinessChange != 0)
 		{
 			if (iHappinessChange > 0)
@@ -7209,33 +7202,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
-	// Minimal specialists
-	bFirst = true;
-	int iMinimalSpecialistCount;
-	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
-	{
-		if (GC.getCivicInfo(eCivic).getMinimalSpecialistCount(iI) > 0)
-		{
-			if (bFirst) 
-			{
-				iMinimalSpecialistCount = GC.getCivicInfo(eCivic).getMinimalSpecialistCount(iI);
-				if (iMinimalSpecialistCount == 1)
-				{
-					szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_CIVIC_AT_LEAST_ONE_SPECIALIST").c_str());
-				} 
-				else 
-				{
-					szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_CIVIC_MINIMAL_SPECIALISTS", iMinimalSpecialistCount).c_str());
-				}
-			}
-
-			CvWString szSpecialist;
-			szSpecialist.Format(L"<link=literal>%s</link>", GC.getSpecialistInfo((SpecialistTypes)iI).getDescription());
-			setListHelp(szHelpText, szFirstBuffer, szSpecialist, L", ", bFirst);
-			bFirst = false;
-		}
-	}
-
 	// Leoreth: Level experience modifier
 	if (GC.getCivicInfo(eCivic).getLevelExperienceModifier() != 0)
 	{
@@ -7366,27 +7332,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_EXTRA_HEALTH", abs(GC.getCivicInfo(eCivic).getExtraHealth()), ((GC.getCivicInfo(eCivic).getExtraHealth() > 0) ? gDLL->getSymbolID(HEALTHY_CHAR): gDLL->getSymbolID(UNHEALTHY_CHAR))));
 	}
 
-	// Leoreth: Pollution modifier
-	if (GC.getCivicInfo(eCivic).getPollutionModifier() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_POLLUTION_MODIFIER", GC.getCivicInfo(eCivic).getPollutionModifier()));
-	}
-
-	// Commerce from vassal cities
-	if (GC.getCivicInfo(eCivic).getVassalCityCommerce() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE", GC.getCivicInfo(eCivic).getVassalCityCommerce()));
-	}
-
-	// Commerce from colonies
-	if (GC.getCivicInfo(eCivic).getColonyCommerce() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_COLONY_COMMERCE", GC.getCivicInfo(eCivic).getColonyCommerce()));
-	}
-
 	//	Free Experience
 	if (GC.getCivicInfo(eCivic).getFreeExperience() != 0)
 	{
@@ -7402,13 +7347,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DOMAIN_XP", GC.getCivicInfo(eCivic).getDomainExperienceModifier((DomainTypes)iI), GC.getDomainInfo((DomainTypes)iI).getText()));
 		}
-	}
-
-	// Worker production modifier
-	if (GC.getCivicInfo(eCivic).getWorkerCostModifier() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_WORKER_COST", GC.getCivicInfo(eCivic).getWorkerCostModifier()));
 	}
 
 	//	Worker speed modifier
@@ -7474,16 +7412,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_PRODUCTION", GC.getCivicInfo(eCivic).getMilitaryProductionModifier()));
-	}
-
-	// Leoreth: domain military production modifier
-	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
-	{
-		if (GC.getCivicInfo(eCivic).getDomainProductionModifier((DomainTypes)iI) != 0)
-		{
-			szHelpText.append(NEWLINE);
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DOMAIN_PRODUCTION", GC.getCivicInfo(eCivic).getDomainProductionModifier((DomainTypes)iI), GC.getDomainInfo((DomainTypes)iI).getText()));
-		}
 	}
 
 	//	Free units population percent
@@ -7580,13 +7508,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getFreeSpecialist()));
 	}
 
-	// Leoreth: free specialists close to capital
-	if (GC.getCivicInfo(eCivic).getCoreFreeSpecialist() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getCoreFreeSpecialist()));
-	}
-
 	//	Trade routes
 	if (GC.getCivicInfo(eCivic).getTradeRoutes() != 0)
 	{
@@ -7613,13 +7534,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_FOREIGN_TRADE_MODIFIER"));
-	}
-
-	//  Leoreth: capital trade yield modifier
-	if (GC.getCivicInfo(eCivic).getCapitalTradeModifier() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER", GC.getCivicInfo(eCivic).getCapitalTradeModifier()));
 	}
 
 	// Leoreth: defensive pact trade modifier
@@ -7852,12 +7766,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
-	// Leoreth: excess happiness yield
-	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS").GetCString(), GC.getCivicInfo(eCivic).getHappinessExtraYieldArray());
-
-	// Leoreth: angry population yield
-	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_ANGRY_POPULATION").GetCString(), GC.getCivicInfo(eCivic).getUnhappinessExtraYieldArray());
-
 	// Leoreth: unimproved tile yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_UNIMPROVED_TILES").GetCString(), GC.getCivicInfo(eCivic).getUnimprovedTileYieldArray());
 
@@ -7866,13 +7774,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CULTURED_CITIES_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getCulturedCityFreeSpecialists(), bPlayerContext ? GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getTargetNumCities()-1 : 3));
-	}
-
-	// Leoreth: specialist happiness
-	if (GC.getCivicInfo(eCivic).getSpecialistHappiness() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_HAPPINESS", abs(GC.getCivicInfo(eCivic).getSpecialistHappiness()), GC.getCivicInfo(eCivic).getSpecialistHappiness() > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 	}
 
 	// Capture gold modifier
@@ -7889,39 +7790,11 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPITAL_BUILDING_PRODUCTION_MODIFIER", GC.getCivicInfo(eCivic).getCapitalBuildingProductionModifier()));
 	}
 
-	// No resistance
-	if (GC.getCivicInfo(eCivic).isNoResistance())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_RESISTANCE"));
-	}
-
 	// Occupation time change
 	if (GC.getCivicInfo(eCivic).getOccupationTimeChange() != 0)
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_OCCUPATION_TIME_CHANGE", getTurns(GC.getCivicInfo(eCivic).getOccupationTimeChange())));
-	}
-
-	// No temporary unhappiness
-	if (GC.getCivicInfo(eCivic).isNoTemporaryUnhappiness())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_TEMPORARY_UNHAPPINESS"));
-	}
-
-	// Unhappiness decay modifier
-	if (GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		if (GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() == 100)
-		{
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER_DOUBLE"));
-		}
-		else
-		{
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER", GC.getCivicInfo(eCivic).getUnhappinessDecayModifier()));
-		}
 	}
 
 	//	Improvement Yields
@@ -12909,16 +12782,6 @@ void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		//Leoreth: environmentalism effect
-		if (GET_PLAYER(city.getOwner()).getPollutionModifier() != 0)
-		{
-			if (city.badHealth() - iTotalHealth != 0)
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_POLLUTION_MODIFIER", city.badHealth() - iTotalHealth));
-				szBuffer.append(NEWLINE);
-			}
-		}
-
 		szBuffer.append(L"-----------------------\n");
 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_TOTAL_UNHEALTHY", city.badHealth()));
@@ -13510,8 +13373,7 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		{
 			iHappy = GC.getDefineINT("TEMP_HAPPY");
 			iTotalHappy += iHappy;
-			int iEffectiveHappinessTimer = city.getHappinessTimer() * 100 / (100 + GET_PLAYER(city.getOwnerINLINE()).getUnhappinessDecayModifier());
-			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_TEMP", iHappy, iEffectiveHappinessTimer));
+			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_TEMP", iHappy, city.getHappinessTimer()));
 			szBuffer.append(NEWLINE);
 		}
 
@@ -17408,9 +17270,6 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			// Domain
 			int iDomainMod = city.getDomainProductionModifier((DomainTypes)unit.getDomainType());
 
-			// Leoreth: also include civic domain production modifier
-			iDomainMod += GET_PLAYER(city.getOwnerINLINE()).getDomainProductionModifier((DomainTypes)unit.getDomainType());
-
 			if (0 != iDomainMod)
 			{
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_DOMAIN", iDomainMod, GC.getDomainInfo((DomainTypes)unit.getDomainType()).getTextKeyWide()));
@@ -20207,14 +20066,6 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				{
 					szBuffer.append(NEWLINE);
 					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_DISTANCE", iNewMod));
-					iModifier += iNewMod;
-				}
-
-				iNewMod = pCity->getCapitalTradeModifier(pOtherCity);
-				if (0 != iNewMod)
-				{
-					szBuffer.append(NEWLINE);
-					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_CAPITAL_ROUTE", iNewMod));
 					iModifier += iNewMod;
 				}
 

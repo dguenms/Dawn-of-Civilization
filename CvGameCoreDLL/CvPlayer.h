@@ -434,10 +434,6 @@ public:
 	int getFeatureProductionModifier() const;																															// Exposed to Python
 	void changeFeatureProductionModifier(int iChange);
 
-	// Leoreth
-	int getWorkerCostModifier() const;
-	void changeWorkerCostModifier(int iChange);
-
 	int getWorkerSpeedModifier() const;																																		// Exposed to Python
 	void changeWorkerSpeedModifier(int iChange);
 	
@@ -565,10 +561,6 @@ public:
 	DllExport int getExtraHealth() const;																																			// Exposed to Python
 	void changeExtraHealth(int iChange);
 
-	// Leoreth
-	int getPollutionModifier() const;
-	void changePollutionModifier(int iChange);
-
 	int getBuildingGoodHealth() const;																																				// Exposed to Python
 	void changeBuildingGoodHealth(int iChange);
 
@@ -584,10 +576,6 @@ public:
 	int getLargestCityHappiness() const;																																			// Exposed to Python
 	void changeLargestCityHappiness(int iChange);
 
-	// Leoreth
-	int getSpecialistHappiness() const;
-	void changeSpecialistHappiness(int iChange);
-
 	int getWarWearinessPercentAnger() const;																																	// Exposed to Python
 	void updateWarWearinessPercentAnger();
 	int getModifiedWarWearinessPercentAnger(int iWarWearinessPercentAnger) const;
@@ -597,10 +585,6 @@ public:
 
 	int getFreeSpecialist() const;																																						// Exposed to Python
 	void changeFreeSpecialist(int iChange);
-
-	//Leoreth
-	int getCoreFreeSpecialist() const;
-	void changeCoreFreeSpecialist(int iChange);
 
 	int getNoForeignTradeCount() const;
 	bool isNoForeignTrade() const;																																						// Exposed to Python
@@ -638,29 +622,12 @@ public:
 	void changeColonialSlaveryCount(int iChange);
 
 	// Leoreth
-	int getCapitalTradeModifier() const;
-	void changeCapitalTradeModifier(int iChange);
-
-	// Leoreth
 	int getDefensivePactTradeModifier() const;
 	void changeDefensivePactTradeModifier(int iChange);
 
 	// Leoreth
 	int getVassalTradeModifier() const;
 	void changeVassalTradeModifier(int iChange);
-
-	// Leoreth
-	int getVassalCityCommerce() const;
-	void changeVassalCityCommerce(int iChange);
-
-	// Leoreth
-	int getColonyCommerce() const;
-	void changeColonyCommerce(int iChange);
-
-	// Leoreth
-	int getCapitalCommerce() const;
-	void updateCapitalCommerce();
-	void applyCapitalCommerce(int iChange);
 
 	// Leoreth
 	int getWorkerCount() const;
@@ -949,14 +916,6 @@ public:
 	DllExport bool isSpecialistValid(SpecialistTypes eIndex) const;																		// Exposed to Python
 	void changeSpecialistValidCount(SpecialistTypes eIndex, int iChange);
 
-	// Leoreth
-	int getPotentialSpecialistCount(SpecialistTypes eIndex) const;
-	void changePotentialSpecialistCount(SpecialistTypes eIndex, int iChange);
-
-	// Leoreth
-	int getMinimalSpecialistCount(SpecialistTypes eIndex) const;
-	void changeMinimalSpecialistCount(SpecialistTypes eIndex, int iChange);
-
 	DllExport bool isResearchingTech(TechTypes eIndex) const;																					// Exposed to Python
 	void setResearchingTech(TechTypes eIndex, bool bNewValue);
 
@@ -969,19 +928,8 @@ public:
 	void changeSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
 
 	// Leoreth
-	int getHappinessExtraYield(YieldTypes eIndex) const;
-	void changeHappinessExtraYield(YieldTypes eIndex, int iChange);
-
-	// Leoreth
-	int getUnhappinessExtraYield(YieldTypes eIndex) const;
-	void changeUnhappinessExtraYield(YieldTypes eIndex, int iChange);
-
-	// Leoreth
 	int getUnimprovedTileYield(YieldTypes eIndex) const;
 	void changeUnimprovedTileYield(YieldTypes eIndex, int iChange);
-
-	// Leoreth
-	void updateHappinessExtraYield();
 
 	// Leoreth
 	int getCaptureGoldModifier() const;
@@ -991,15 +939,6 @@ public:
 	bool isNoResistance() const;
 	int getNoResistanceCount() const;
 	void changeNoResistanceCount(int iChange);
-
-	// Leoreth
-	bool isNoTemporaryUnhappiness() const;
-	int getNoTemporaryUnhappinessCount() const;
-	void changeNoTemporaryUnhappinessCount(int iChange);
-
-	// Leoreth
-	int getUnhappinessDecayModifier() const;
-	void changeUnhappinessDecayModifier(int iChange);
 
 	// Leoreth
 	bool isFreeImprovementUpgrade() const;
@@ -1314,10 +1253,8 @@ public:
 	EraTypes getSoundtrackEra();
 
 	// Leoreth
-	int getDomainProductionModifier(DomainTypes eDomainType) const;
 	int getDomainFreeExperience(DomainTypes eDomainType) const;
 
-	void changeDomainProductionModifier(DomainTypes eDomainType, int iChange);
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
 
 	int countColonies() const;
@@ -1444,7 +1381,6 @@ protected:
 	int m_iMaxPlayerBuildingProductionModifier;
 	int m_iFreeExperience;
 	int m_iFeatureProductionModifier;
-	int m_iWorkerCostModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1481,35 +1417,27 @@ protected:
 	int m_iUpkeepModifier;
 	int m_iLevelExperienceModifier;
 	int m_iExtraHealth;
-	int m_iPollutionModifier; // Leoreth
 	int m_iBuildingGoodHealth;
 	int m_iBuildingBadHealth;
 	int m_iExtraHappiness;
 	int m_iBuildingHappiness;
 	int m_iLargestCityHappiness;
-	int m_iSpecialistHappiness; // Leoreth
 	int m_iWarWearinessPercentAnger;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
-	int m_iCoreFreeSpecialist; // Leoreth
 	int m_iNoForeignTradeCount;
 	int m_iNoForeignTradeModifierCount; // Leoreth
 	int m_iNoCorporationsCount;
 	int m_iNoForeignCorporationsCount;
 	int m_iCoastalTradeRoutes;
 	int m_iTradeRoutes;
-	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iVassalTradeModifier; // Leoreth
-	int m_iVassalCityCommerce; // Leoreth
-	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iSlaveryCount; // Leoreth
 	int m_iNoSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
 	int m_iNoResistanceCount; // Leoreth
-	int m_iNoTemporaryUnhappinessCount; // Leoreth
-	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iFoodProductionModifier; // Leoreth
 	int m_iCulturedCityFreeSpecialists; // Leoreth
 	int m_iCapitalBuildingProductionModifier; // Leoreth
@@ -1590,8 +1518,6 @@ protected:
 
 	int m_iWorkerCount;
 
-	int m_iCapitalCommerce;
-
 	int m_iFreeTechsOnDiscovery;
 
 	PlayerTypes m_eID;
@@ -1616,15 +1542,12 @@ protected:
 	int* m_aiStateReligionBuildingCommerce;
 	int* m_aiSpecialistExtraCommerce;
 	int* m_aiSpecialistExtraYield; // Leoreth
-	int* m_aiHappinessExtraYield; // Leoreth
-	int* m_aiUnhappinessExtraYield; // Leoreth
 	int* m_aiUnimprovedTileYield; // Leoreth
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
 
-	//Leoreth
-	int* m_aiDomainProductionModifiers;
+	// Leoreth
 	int* m_aiDomainExperienceModifiers;
 
 	int* m_aiStabilityParameters;
@@ -1660,8 +1583,6 @@ protected:
 	int* m_paiHasCorporationCount;
 	int* m_paiUpkeepCount;
 	int* m_paiSpecialistValidCount;
-	int* m_paiPotentialSpecialistCount; // Leoreth
-	int* m_paiMinimalSpecialistCount; // Leoreth
 
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;

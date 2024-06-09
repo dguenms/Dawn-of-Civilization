@@ -5753,9 +5753,7 @@ m_iCorporationUnhappinessModifier(0), // Leoreth
 m_iWonderProductionModifier(0), // Leoreth
 m_iProcessModifier(0), // Leoreth
 m_iExtraHealth(0),
-m_iPollutionModifier(0), //Leoreth
 m_iFreeExperience(0),
-m_iWorkerCostModifier(0), // Leoreth
 m_iWorkerSpeedModifier(0),
 m_iImprovementUpgradeRateModifier(0),
 m_iMilitaryProductionModifier(0),
@@ -5767,15 +5765,10 @@ m_iGoldPerUnit(0),
 m_iGoldPerMilitaryUnit(0),
 m_iHappyPerMilitaryUnit(0),
 m_iLargestCityHappiness(0),
-m_iSpecialistHappiness(0), // Leoreth
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
-m_iCoreFreeSpecialist(0), //Leoreth
 m_iTradeRoutes(0),
-m_iCapitalTradeModifier(0), // Leoreth
 m_iDefensivePactTradeModifier(0), // Leoreth
-m_iVassalCityCommerce(0), // Leoreth
-m_iColonyCommerce(0), // Leoreth
 m_iCaptureGoldModifier(0), // Leoreth
 m_iTechPrereq(NO_TECH),
 m_iCivicPercentAnger(0),
@@ -5787,7 +5780,6 @@ m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
 m_iLevelExperienceModifier(0), // Leoreth
-m_iUnhappinessDecayModifier(0), // Leoreth
 m_iVassalTradeModifier(0), // Leoreth
 m_iFoodProductionModifier(0), // Leoreth
 m_iCulturedCityFreeSpecialists(0), // Leoreth
@@ -5806,8 +5798,6 @@ m_bNoNonStateReligionSpread(false),
 m_bSlavery(false), // Leoreth
 m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
-m_bNoResistance(false), // Leoreth
-m_bNoTemporaryUnhappiness(false), // Leoreth
 m_bFreeImprovementUpgrade(false), // Leoreth
 m_bNoStateReligionAnarchy(false), // Leoreth
 m_piYieldModifier(NULL),
@@ -5817,17 +5807,13 @@ m_piCommerceModifier(NULL),
 m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piSpecialistExtraYield(NULL), //Leoreth
-m_piHappinessExtraYield(NULL), // Leoreth
-m_piUnhappinessExtraYield(NULL), // Leoreth
 m_piUnimprovedTileYield(NULL), // Leoreth
 m_piStateReligionBuildingYield(NULL), // Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiBuildingProductionModifiers(NULL), //Leoreth
 m_paiFeatureHappinessChanges(NULL),
-m_paiDomainProductionModifiers(NULL), // Leoreth
 m_paiDomainExperienceModifiers(NULL), // Leoreth
-m_paiMinimalSpecialistCounts(NULL), // Leoreth
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
@@ -5854,17 +5840,13 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piCapitalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); //Leoreth
-	SAFE_DELETE_ARRAY(m_piHappinessExtraYield); // Leoreth
-	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_piUnimprovedTileYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_piStateReligionBuildingYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
-	SAFE_DELETE_ARRAY(m_paiDomainProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers); // Leoreth
-	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts); // Leoreth
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
@@ -5979,21 +5961,9 @@ int CvCivicInfo::getExtraHealth() const
 	return m_iExtraHealth;
 }
 
-//Leoreth
-int CvCivicInfo::getPollutionModifier() const
-{
-	return m_iPollutionModifier;
-}
-
 int CvCivicInfo::getFreeExperience() const
 {
 	return m_iFreeExperience;
-}
-
-// Leoreth
-int CvCivicInfo::getWorkerCostModifier() const
-{
-	return m_iWorkerCostModifier;
 }
 
 int CvCivicInfo::getWorkerSpeedModifier() const
@@ -6051,12 +6021,6 @@ int CvCivicInfo::getLargestCityHappiness() const
 	return m_iLargestCityHappiness;
 }
 
-// Leoreth
-int CvCivicInfo::getSpecialistHappiness() const
-{
-	return m_iSpecialistHappiness;
-}
-
 int CvCivicInfo::getWarWearinessModifier() const
 {
 	return m_iWarWearinessModifier;
@@ -6067,39 +6031,15 @@ int CvCivicInfo::getFreeSpecialist() const
 	return m_iFreeSpecialist;
 }
 
-//Leoreth
-int CvCivicInfo::getCoreFreeSpecialist() const
-{
-	return m_iCoreFreeSpecialist;
-}
-
 int CvCivicInfo::getTradeRoutes() const
 {
 	return m_iTradeRoutes;
 }
 
 // Leoreth
-int CvCivicInfo::getCapitalTradeModifier() const
-{
-	return m_iCapitalTradeModifier;
-}
-
-// Leoreth
 int CvCivicInfo::getDefensivePactTradeModifier() const
 {
 	return m_iDefensivePactTradeModifier;
-}
-
-// Leoreth
-int CvCivicInfo::getVassalCityCommerce() const
-{
-	return m_iVassalCityCommerce;
-}
-
-// Leoreth
-int CvCivicInfo::getColonyCommerce() const
-{
-	return m_iColonyCommerce;
 }
 
 // Leoreth
@@ -6320,34 +6260,6 @@ int* CvCivicInfo::getSpecialistExtraYieldArray() const
 }
 
 // Leoreth
-int CvCivicInfo::getHappinessExtraYield(int i) const
-{
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_piHappinessExtraYield ? m_piHappinessExtraYield[i] : -1;
-}
-
-// Leoreth
-int* CvCivicInfo::getHappinessExtraYieldArray() const
-{
-	return m_piHappinessExtraYield;
-}
-
-// Leoreth
-int CvCivicInfo::getUnhappinessExtraYield(int i) const
-{
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_piUnhappinessExtraYield ? m_piUnhappinessExtraYield[i] : -1;
-}
-
-// Leoreth
-int* CvCivicInfo::getUnhappinessExtraYieldArray() const
-{
-	return m_piUnhappinessExtraYield;
-}
-
-// Leoreth
 int CvCivicInfo::getUnimprovedTileYield(int i) const
 {
 	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
@@ -6405,14 +6317,6 @@ int CvCivicInfo::getFeatureHappinessChanges(int i) const
 }
 
 // Leoreth
-int CvCivicInfo::getDomainProductionModifier(int i) const
-{
-	FAssertMsg(i < NUM_DOMAIN_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_paiDomainProductionModifiers ? m_paiDomainProductionModifiers[i] : -1;
-}
-
-// Leoreth
 int CvCivicInfo::getDomainExperienceModifier(int i) const
 {
 	FAssertMsg(i < NUM_DOMAIN_TYPES, "Index out of bounds");
@@ -6448,33 +6352,6 @@ int CvCivicInfo::getImprovementYieldChanges(int i, int j) const
 	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
 	FAssertMsg(j > -1, "Index out of bounds");
 	return m_ppiImprovementYieldChanges[i][j];
-}
-
-int* CvCivicInfo::getMinimalSpecialistCountsArray() const
-{
-	return m_paiMinimalSpecialistCounts;
-}
-
-int CvCivicInfo::getMinimalSpecialistCount(int i) const
-{
-	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_paiMinimalSpecialistCounts ? m_paiMinimalSpecialistCounts[i] : -1;
-}
-
-bool CvCivicInfo::isNoResistance() const
-{
-	return m_bNoResistance;
-}
-
-bool CvCivicInfo::isNoTemporaryUnhappiness() const
-{
-	return m_bNoTemporaryUnhappiness;
-}
-
-int CvCivicInfo::getUnhappinessDecayModifier() const
-{
-	return m_iUnhappinessDecayModifier;
 }
 
 int CvCivicInfo::getVassalTradeModifier() const
@@ -6550,9 +6427,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iWonderProductionModifier); // Leoreth
 	stream->Read(&m_iProcessModifier); // Leoreth
 	stream->Read(&m_iExtraHealth);
-	stream->Read(&m_iPollutionModifier); //Leoreth
 	stream->Read(&m_iFreeExperience);
-	stream->Read(&m_iWorkerCostModifier); // Leoreth
 	stream->Read(&m_iWorkerSpeedModifier);
 	stream->Read(&m_iImprovementUpgradeRateModifier);
 	stream->Read(&m_iMilitaryProductionModifier);
@@ -6564,15 +6439,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iGoldPerMilitaryUnit);
 	stream->Read(&m_iHappyPerMilitaryUnit);
 	stream->Read(&m_iLargestCityHappiness);
-	stream->Read(&m_iSpecialistHappiness); // Leoreth
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
-	stream->Read(&m_iCoreFreeSpecialist); //Leoreth
 	stream->Read(&m_iTradeRoutes);
-	stream->Read(&m_iCapitalTradeModifier); // Leoreth
-	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
-	stream->Read(&m_iVassalCityCommerce); // Leoreth
-	stream->Read(&m_iColonyCommerce); // Leoreth
 	stream->Read(&m_iCaptureGoldModifier); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
@@ -6584,7 +6453,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
 	stream->Read(&m_iLevelExperienceModifier); // Leoreth
-	stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 	stream->Read(&m_iVassalTradeModifier); // Leoreth
 	stream->Read(&m_iFoodProductionModifier); // Leoreth
 	stream->Read(&m_iCulturedCityFreeSpecialists); // Leoreth
@@ -6604,8 +6472,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
-	stream->Read(&m_bNoResistance); // Leoreth
-	stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 	stream->Read(&m_bFreeImprovementUpgrade); // Leoreth
 	stream->Read(&m_bNoStateReligionAnarchy); // Leoreth
 
@@ -6641,16 +6507,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistExtraYield);
 
 	// Leoreth
-	SAFE_DELETE_ARRAY(m_piHappinessExtraYield);
-	m_piHappinessExtraYield = new int[NUM_YIELD_TYPES];
-	stream->Read(NUM_YIELD_TYPES, m_piHappinessExtraYield);
-
-	// Leoreth
-	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield);
-	m_piUnhappinessExtraYield = new int[NUM_YIELD_TYPES];
-	stream->Read(NUM_YIELD_TYPES, m_piUnhappinessExtraYield);
-
-	// Leoreth
 	SAFE_DELETE_ARRAY(m_piUnimprovedTileYield);
 	m_piUnimprovedTileYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piUnimprovedTileYield);
@@ -6678,19 +6534,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
 
 	// Leoreth
-	SAFE_DELETE_ARRAY(m_paiDomainProductionModifiers);
-	m_paiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES];
-	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainProductionModifiers);
-
-	// Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers);
 	m_paiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
 	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers);
-
-	// Leoreth
-	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
-	m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
-	stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
 
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
@@ -6762,9 +6608,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iWonderProductionModifier); // Leoreth
 	stream->Write(m_iProcessModifier); // Leoreth
 	stream->Write(m_iExtraHealth);
-	stream->Write(m_iPollutionModifier); //Leoreth
 	stream->Write(m_iFreeExperience);
-	stream->Write(m_iWorkerCostModifier); // Leoreth
 	stream->Write(m_iWorkerSpeedModifier);
 	stream->Write(m_iImprovementUpgradeRateModifier);
 	stream->Write(m_iMilitaryProductionModifier);
@@ -6776,15 +6620,10 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iGoldPerMilitaryUnit);
 	stream->Write(m_iHappyPerMilitaryUnit);
 	stream->Write(m_iLargestCityHappiness);
-	stream->Write(m_iSpecialistHappiness); // Leoreth
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
-	stream->Write(m_iCoreFreeSpecialist); //Leoreth
 	stream->Write(m_iTradeRoutes);
-	stream->Write(m_iCapitalTradeModifier); // Leoreth
 	stream->Write(m_iDefensivePactTradeModifier); // Leoreth
-	stream->Write(m_iVassalCityCommerce); // Leoreth
-	stream->Write(m_iColonyCommerce); // Leoreth
 	stream->Write(m_iCaptureGoldModifier); // Leoreth
 	stream->Write(m_iTechPrereq);
 	stream->Write(m_iCivicPercentAnger);
@@ -6796,7 +6635,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
 	stream->Write(m_iLevelExperienceModifier); // Leoreth
-	stream->Write(m_iUnhappinessDecayModifier); // Leoreth
 	stream->Write(m_iVassalTradeModifier); // Leoreth
 	stream->Write(m_iFoodProductionModifier); // Leoreth
 	stream->Write(m_iCulturedCityFreeSpecialists); // Leoreth
@@ -6816,8 +6654,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bSlavery); // Leoreth
 	stream->Write(m_bNoSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
-	stream->Write(m_bNoResistance); // Leoreth
-	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
 	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
 	stream->Write(m_bNoStateReligionAnarchy); // Leoreth
 
@@ -6830,17 +6666,13 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piCapitalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); //Leoreth
-	stream->Write(NUM_YIELD_TYPES, m_piHappinessExtraYield); // Leoreth
-	stream->Write(NUM_YIELD_TYPES, m_piUnhappinessExtraYield); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piUnimprovedTileYield); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piStateReligionBuildingYield); // Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
-	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainProductionModifiers); // Leoreth
 	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers); // Leoreth
-	stream->Write(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts); // Leoreth
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
 	stream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
@@ -6896,9 +6728,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iWonderProductionModifier, "iWonderProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iProcessModifier, "iProcessModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
-	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iFreeExperience, "iFreeExperience");
-	pXML->GetChildXmlValByName(&m_iWorkerCostModifier, "iWorkerCostModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWorkerSpeedModifier, "iWorkerSpeedModifier");
 	pXML->GetChildXmlValByName(&m_iImprovementUpgradeRateModifier, "iImprovementUpgradeRateModifier");
 	pXML->GetChildXmlValByName(&m_iMilitaryProductionModifier, "iMilitaryProductionModifier");
@@ -6914,16 +6744,11 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_iLargestCityHappiness, "iLargestCityHappiness");
-	pXML->GetChildXmlValByName(&m_iSpecialistHappiness, "iSpecialistHappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
-	pXML->GetChildXmlValByName(&m_iCoreFreeSpecialist, "iCoreFreeSpecialist"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
-	pXML->GetChildXmlValByName(&m_iCapitalTradeModifier, "iCapitalTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iVassalTradeModifier, "iVassalTradeModifier"); // Leoreth
-	pXML->GetChildXmlValByName(&m_iVassalCityCommerce, "iVassalCityCommerce"); // Leoreth
-	pXML->GetChildXmlValByName(&m_iColonyCommerce, "iColonyCommerce"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoForeignTrade, "bNoForeignTrade");
 	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier"); // Leoreth
@@ -6935,8 +6760,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
-	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
-	pXML->GetChildXmlValByName(&m_bNoTemporaryUnhappiness, "bNoTemporaryUnhappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
@@ -6944,7 +6767,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
-	pXML->GetChildXmlValByName(&m_iUnhappinessDecayModifier, "iUnhappinessDecayModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iFoodProductionModifier, "iFoodProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCulturedCityFreeSpecialists, "iCulturedCityFreeSpecialists"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier"); // Leoreth
@@ -7025,28 +6847,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	// Leoreth
-	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "HappinessExtraYields"))
-	{
-		pXML->SetYields(&m_piHappinessExtraYield);
-		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
-	}
-	else
-	{
-		pXML->InitList(&m_piHappinessExtraYield, NUM_YIELD_TYPES);
-	}
-
-	// Leoreth
-	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "UnhappinessExtraYields"))
-	{
-		pXML->SetYields(&m_piUnhappinessExtraYield);
-		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
-	}
-	else
-	{
-		pXML->InitList(&m_piUnhappinessExtraYield, NUM_YIELD_TYPES);
-	}
-
-	// Leoreth
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "UnimprovedTileYields"))
 	{
 		pXML->SetYields(&m_piUnimprovedTileYield);
@@ -7076,15 +6876,11 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 
 	// Leoreth
-	pXML->SetVariableListTagPair(&m_paiMinimalSpecialistCounts, "MinimalSpecialists", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
-
-	// Leoreth
 	pXML->SetVariableListTagPair(&m_paiBuildingProductionModifiers, "BuildingProductionModifiers", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 
 	pXML->SetVariableListTagPair(&m_paiFeatureHappinessChanges, "FeatureHappinessChanges", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());
 
 	// Leoreth
-	pXML->SetVariableListTagPair(&m_paiDomainProductionModifiers, "DomainProductionModifiers", sizeof(GC.getDomainInfo((DomainTypes)0)), NUM_DOMAIN_TYPES);
 	pXML->SetVariableListTagPair(&m_paiDomainExperienceModifiers, "DomainExperienceModifiers", sizeof(GC.getDomainInfo((DomainTypes)0)), NUM_DOMAIN_TYPES);
 
 	// initialize the boolean list to the correct size and all the booleans to false

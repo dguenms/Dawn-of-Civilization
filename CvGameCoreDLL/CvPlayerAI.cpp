@@ -10191,7 +10191,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
 	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 15);
-	iValue += (100 * AI_neededWorkers() / (std::max(1, 100 + kCivic.getWorkerCostModifier())) / 15); // Leoreth
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
 	iValue += (kCivic.getMilitaryProductionModifier() * getNumCities() * iWarmongerPercent) / (bWarPlan ? 300 : 500 );
 	iValue += (kCivic.getBaseFreeUnits() / 2);
@@ -10233,24 +10232,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 	}
 
-	//Leoreth: free core specialist
-	if (kCivic.getCoreFreeSpecialist() > 0)
-	{
-		int iLoop;
-		CvCity* pLoopCity;
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			if (pLoopCity->plot()->isCore())
-			{
-				iValue += kCivic.getCoreFreeSpecialist() * 12;
-			}
-		}
-	}
-
 	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 8) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * /*3*/ 4) : 0);
 	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
-	iValue += (pCapital) ? ((100 + kCivic.getCapitalTradeModifier()) * pCapital->getTradeRoutes() * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100) : 0; // Leoreth
 	iValue += (100 + kCivic.getDefensivePactTradeModifier()) * iConnectedForeignCities * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100; // Leoreth
 	if (kCivic.isNoCorporations())
 	{
@@ -10316,21 +10300,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
-	}
-
-	// Leoreth: pollution modifier
-	iTempValue = 0;
-	if (kCivic.getPollutionModifier() != 0)
-	{
-		int iHealthDifference;
-		int iLoop;
-		CvCity* pLoopCity;
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			iHealthDifference = pLoopCity->badHealth() - (100 + kCivic.getPollutionModifier()) * pLoopCity->badHealth() / 100;
-			iTempValue += (6 * AI_getHealthWeight(isCivic(eCivic) ? -iHealthDifference : iHealthDifference, 1));
-		}
-		iValue = iTempValue / 100;
 	}
 
 	iTempValue = kCivic.getHappyPerMilitaryUnit() * 3;
@@ -10470,57 +10439,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		// Leoreth: specialist extra yield
 		iTempValue += ((AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15) / 100;
 
-		// Leoreth: excess happiness yield
-		if (kCivic.getHappinessExtraYield(iI) != 0)
-		{
-			CvCity* pLoopCity;
-			int iLoop;
-			int iHappinessYield = 0;
-			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-			{
-				iHappinessYield += std::min(pLoopCity->getPopulation(), std::max(0, pLoopCity->happyLevel() - pLoopCity->unhappyLevel())) * kCivic.getHappinessExtraYield(iI);
-			}
-
-			iTempValue += iHappinessYield * AI_averageYieldMultiplier((YieldTypes)iI) / 100;
-		}
-
-		// Leoreth: excess unhappiness yield
-		if (kCivic.getUnhappinessExtraYield(iI) != 0)
-		{
-			CvCity* pLoopCity;
-			int iLoop;
-			int iUnhappinessYield = 0;
-			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-			{
-				iUnhappinessYield += std::max(0, pLoopCity->unhappyLevel() - pLoopCity->happyLevel()) * kCivic.getUnhappinessExtraYield(iI);
-			}
-
-			iTempValue += iUnhappinessYield * AI_averageYieldMultiplier((YieldTypes)iI) / 100;
-		}
-
-
-		if (iI == YIELD_COMMERCE)
-		{
-			int iCapitalCommerce = 0;
-			
-			// Leoreth: commerce in capital per colony
-			iCapitalCommerce += kCivic.getColonyCommerce() * countColonies();
-			
-			// Leoreth: commerce in capital per vassal city
-			if (kCivic.getVassalCityCommerce() != 0)
-			{
-				for (int iJ = 0; iJ < MAX_PLAYERS; iJ++)
-				{
-					if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isVassal(getTeam()))
-					{
-						iCapitalCommerce += kCivic.getVassalCityCommerce() * GET_PLAYER((PlayerTypes)iJ).getNumCities();
-					}
-				}
-			}
-
-			iTempValue += getCapitalYieldRateModifier(YIELD_COMMERCE) * iCapitalCommerce / 100;
-		}
-
 		if (iI == YIELD_FOOD)
 		{
 			iTempValue *= 3;
@@ -10650,47 +10568,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		else iDomainDivisor = 5;
 
 		iValue += (kCivic.getDomainExperienceModifier(iI) * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / (iDomainDivisor * 100);
-		iValue += (kCivic.getDomainProductionModifier(iI) * getNumCities() * iWarmongerPercent) / (iDomainDivisor * (bWarPlan ? 300 : 500));
 	}
 
 	// Leoreth: capture workers
 	if (kCivic.isSlavery())
 	{
 		iValue += AI_neededWorkers() * iWarmongerPercent / 15;
-	}
-
-	// Leoreth: no resistance on city conquest
-	if (kCivic.isNoResistance())
-	{
-		iValue += (bWarPlan ? 200 : 120) * iWarmongerPercent / 100;
-	}
-
-	// Leoreth: no temporary unhappiness
-	if (kCivic.isNoTemporaryUnhappiness())
-	{
-		for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
-		{
-			if (GC.getHurryInfo((HurryTypes)iI).isAnger() && canHurry((HurryTypes)iI))
-			{
-				iValue += AI_getHappinessWeight(3, 1) * getNumCities();
-			}
-		}
-
-		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1);
-	}
-
-	// Leoreth: unhappiness decay modifier
-	if (kCivic.getUnhappinessDecayModifier() != 0)
-	{
-		for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
-		{
-			if (GC.getHurryInfo((HurryTypes)iI).isAnger() && canHurry((HurryTypes)iI))
-			{
-				iValue += AI_getHappinessWeight(3, 1) * getNumCities() * kCivic.getUnhappinessDecayModifier() / 100;
-			}
-		}
-
-		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1) * kCivic.getUnhappinessDecayModifier() / 100;
 	}
 
 	// Leoreth: enabled wonders with civic prereq

@@ -2744,11 +2744,6 @@ void CyCity::setBuildingOriginalTime(int eBuilding, int iYear)
 	if (m_pCity) m_pCity->setBuildingOriginalTime((BuildingTypes)eBuilding, iYear);
 }
 
-int CyCity::getHappinessYield(int eYield)
-{
-	return m_pCity ? m_pCity->getHappinessYield((YieldTypes)eYield) : 0;
-}
-
 void CyCity::triggerMeltdown(int eBuilding)
 {
 	if (m_pCity) m_pCity->triggerMeltdown((BuildingTypes)eBuilding);
