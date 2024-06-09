@@ -2077,8 +2077,7 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		{
 			szBuffer.append(NEWLINE);
 			int iTotalHurryAngerLength = iHurryAngerLength * iHurryAngerModifier + pHeadSelectedCity->getHurryAngerTimer();
-			int iEffectiveHurryAngerLength = iTotalHurryAngerLength * 100 / (100 + GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getUnhappinessDecayModifier());
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iHurryAnger, (iEffectiveHurryAngerLength)));
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iHurryAnger, iTotalHurryAngerLength));
 		}
 
 		if (!(pHeadSelectedCity->isProductionUnit()) && !(pHeadSelectedCity->isProductionBuilding()))
@@ -2160,9 +2159,8 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 			if (iConscriptAngerLength > 0)
 			{
 				int iTotalAngerLength = iConscriptAngerLength + pHeadSelectedCity->getConscriptAngerTimer();
-				int iEffectiveAngerLength = iTotalAngerLength * 100 / (100 + GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getUnhappinessDecayModifier());
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iConscriptAnger, iEffectiveAngerLength));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_ANGER_TURNS", iConscriptAnger, iTotalAngerLength));
 			}
 
 			iMinCityPopulation = pHeadSelectedCity->conscriptMinCityPopulation();

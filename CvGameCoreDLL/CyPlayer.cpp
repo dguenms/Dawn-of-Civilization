@@ -2634,11 +2634,6 @@ void CyPlayer::launch(int iVictory)
 	if (m_pPlayer) m_pPlayer->launch((VictoryTypes)iVictory);
 }
 
-bool CyPlayer::isNoTemporaryUnhappiness()
-{
-	return m_pPlayer ? m_pPlayer->isNoTemporaryUnhappiness() : false;
-}
-
 void CyPlayer::setAlive(bool bNewValue, bool bTurnActive)
 {
 	if (m_pPlayer)
@@ -2660,11 +2655,6 @@ int CyPlayer::getDomainFreeExperience(int iDomainType)
 void CyPlayer::changeGoldPerTurnByPlayer(int iPlayer, int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeGoldPerTurnByPlayer((PlayerTypes)iPlayer, iChange);
-}
-
-int CyPlayer::getUnhappinessDecayModifier()
-{
-	return m_pPlayer ? m_pPlayer->getUnhappinessDecayModifier() : -1;
 }
 
 bool CyPlayer::isUnstableCivic(int iCivic)

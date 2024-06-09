@@ -718,10 +718,6 @@ public:
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
 
-	// Leoreth
-	int getHappinessYield(YieldTypes eIndex) const;
-	void updateHappinessYield();
-
 	int getCommerceRate(CommerceTypes eIndex) const;									// Exposed to Python
 	int getCommerceRateTimes100(CommerceTypes eIndex) const;									// Exposed to Python
 	int getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const;			// Exposed to Python
@@ -1097,7 +1093,6 @@ public:
 	int determineArtStyleType() const;
 	void updateArtStyleType();
 	int getDistanceTradeModifier(CvCity* pOtherCity) const;
-	int getCapitalTradeModifier(CvCity* pOtherCity) const;
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int getVassalTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;

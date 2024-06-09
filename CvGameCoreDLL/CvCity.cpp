@@ -390,8 +390,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	updateFeatureHappiness();
 	updatePowerHealth();
 
-	updateHappinessYield();
-
 	GET_PLAYER(getOwnerINLINE()).updateMaintenance();
 
 	GC.getMapINLINE().updateWorkingCity();
@@ -1072,8 +1070,6 @@ void CvCity::kill(bool bUpdatePlotGroups)
 
 	setPopulation(0);
 
-	updateHappinessYield();
-
 	AI_assignWorkingPlots();
 
 	clearOrderQueue();
@@ -1231,8 +1227,6 @@ void CvCity::doTurn()
 
 	doPlotCulture(false, getOwnerINLINE(), getModifiedCultureRate());
 
-	updateHappinessYield();
-
 	doProduction(bAllowNoProduction);
 
 	doDecay();
@@ -1301,26 +1295,24 @@ void CvCity::doTurn()
 		return;
 	}
 
-	int iUnhappinessDecay = -1 * (100 + GET_PLAYER(getOwnerINLINE()).getUnhappinessDecayModifier()) / 100;
-
 	if (getHurryAngerTimer() > 0)
 	{
-		changeHurryAngerTimer(iUnhappinessDecay);
+		changeHurryAngerTimer(-1);
 	}
 
 	if (getConscriptAngerTimer() > 0)
 	{
-		changeConscriptAngerTimer(iUnhappinessDecay);
+		changeConscriptAngerTimer(-1);
 	}
 
 	if (getDefyResolutionAngerTimer() > 0)
 	{
-		changeDefyResolutionAngerTimer(iUnhappinessDecay);
+		changeDefyResolutionAngerTimer(-1);
 	}
 
 	if (getHappinessTimer() > 0)
 	{
-		changeHappinessTimer(iUnhappinessDecay);
+		changeHappinessTimer(-1);
 	}
 
 	if (getEspionageHealthCounter() > 0)
@@ -1330,7 +1322,7 @@ void CvCity::doTurn()
 
 	if (getEspionageHappinessCounter() > 0)
 	{
-		changeEspionageHappinessCounter(iUnhappinessDecay);
+		changeEspionageHappinessCounter(-1);
 	}
 
 	if (isOccupation() || (angryPopulation() > 0) || (healthRate() < 0))
@@ -4999,8 +4991,6 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
 
-	iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
-
 	if (iHappinessChange > 0)
 	{
 		changeSpecialistGoodHappiness(iHappinessChange * iChange);
@@ -5535,11 +5525,6 @@ int CvCity::getReligionPercentAnger() const
 
 int CvCity::getHurryPercentAnger(int iExtra) const
 {
-	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
-	{
-		return 0;
-	}
-
 	if (getHurryAngerTimer() == 0)
 	{
 		return 0;
@@ -5558,11 +5543,6 @@ int CvCity::getHurryPercentAnger(int iExtra) const
 
 int CvCity::getConscriptPercentAnger(int iExtra) const
 {
-	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
-	{
-		return 0;
-	}
-
 	if (getConscriptAngerTimer() == 0)
 	{
 		return 0;
@@ -5580,11 +5560,6 @@ int CvCity::getConscriptPercentAnger(int iExtra) const
 
 int CvCity::getDefyResolutionPercentAnger(int iExtra) const
 {
-	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
-	{
-		return 0;
-	}
-
 	if (getDefyResolutionAngerTimer() == 0)
 	{
 		return 0;
@@ -5986,9 +5961,6 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	{
 		iTotalHealth += iHealth;
 	}
-
-	//Leoreth: civic pollution modifier
-	iTotalHealth = iTotalHealth * (100 + GET_PLAYER(getOwner()).getPollutionModifier()) / 100;
 
 	return (unhealthyPopulation(bNoAngry, iExtra) - iTotalHealth);
 }
@@ -7437,11 +7409,6 @@ void CvCity::changeEspionageHealthCounter(int iChange)
 
 int CvCity::getEspionageHappinessCounter() const
 {
-	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
-	{
-		return 0;
-	}
-
 	return m_iEspionageHappinessCounter;
 }
 
@@ -8999,12 +8966,6 @@ int CvCity::getFreeSpecialist() const
 		iTotalFreeSpecialists += 1;
 	}
 
-	// Leoreth: free core specialists civic effect
-	if (plot()->isCore())
-	{
-		iTotalFreeSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
-	}
-
 	// Leoreth: most cultured cities free specialists civic effect
 	if (getCultureRank() < GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities()-1)
 	{
@@ -10313,26 +10274,11 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 		// Leoreth: new distance modifier
 		iModifier += getDistanceTradeModifier(pOtherCity);
 
-		// Leoreth: new modifier for trade routes with capital
-		iModifier += getCapitalTradeModifier(pOtherCity);
-
 		// Leoreth: new culture level based modifier
 		iModifier += getCultureTradeRouteModifier() * getCultureLevel();
 	}
 
 	return iModifier;
-}
-
-int CvCity::getCapitalTradeModifier(CvCity* pOtherCity) const
-{
-	if (pOtherCity == NULL) return 0;
-
-	if (isCapital() || (pOtherCity->getOwner() == getOwner() && pOtherCity->isCapital()))
-	{
-		return GET_PLAYER(getOwner()).getCapitalTradeModifier();
-	}
-
-	return 0;
 }
 
 int CvCity::getDefensivePactTradeModifier(CvCity* pOtherCity) const
@@ -10636,39 +10582,6 @@ void CvCity::updateExtraSpecialistYield()
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		updateExtraSpecialistYield((YieldTypes)iI);
-	}
-}
-
-
-// Leoreth
-int CvCity::getHappinessYield(YieldTypes eIndex) const
-{
-	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(eIndex > -1, "Index out of bounds");
-
-	return m_aiHappinessYield[eIndex];
-}
-
-
-// Leoreth
-void CvCity::updateHappinessYield()
-{
-	int iHappinessDifference = happyLevel() - unhappyLevel(0);
-	int iHappinessMultiplier = std::min(getPopulation(), abs(iHappinessDifference));
-
-	int iOldYield, iNewYield;
-	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
-	{
-		iOldYield = getHappinessYield((YieldTypes)iI);
-		iNewYield = iHappinessMultiplier * (iHappinessDifference > 0 ? GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI));
-
-		if (iOldYield != iNewYield)
-		{
-			m_aiHappinessYield[iI] = iNewYield;
-			changeBaseYieldRate((YieldTypes)iI, iNewYield - iOldYield);
-
-			AI_assignWorkingPlots();
-		}
 	}
 }
 
@@ -13073,7 +12986,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 		iMaxSpecialistCount *= 2;
 	}
 
-	return std::max(std::min(GET_PLAYER(getOwnerINLINE()).getPotentialSpecialistCount(eIndex), GET_PLAYER(getOwnerINLINE()).getMinimalSpecialistCount(eIndex)), iMaxSpecialistCount);
+	return iMaxSpecialistCount;
 }
 
 
@@ -19656,8 +19569,6 @@ int CvCity::calculateBaseYieldRate(YieldTypes eYield) const
 	}
 
 	iYield += getTradeYield(eYield);
-
-	iYield += getHappinessYield(eYield);
 
 	iYield += getCorporationYield(eYield);
 

@@ -1379,9 +1379,7 @@ public:
 	int getWonderProductionModifier() const; // Leoreth
 	int getProcessModifier() const; // Leoreth
 	int getExtraHealth() const;						// Exposed to Python
-	int getPollutionModifier() const; // Leoreth
 	int getFreeExperience() const;				// Exposed to Python
-	int getWorkerCostModifier() const; // Leoreth
 	int getWorkerSpeedModifier() const;				// Exposed to Python
 	int getImprovementUpgradeRateModifier() const;				// Exposed to Python
 	int getMilitaryProductionModifier() const;				// Exposed to Python
@@ -1393,15 +1391,10 @@ public:
 	int getGoldPerMilitaryUnit() const;				// Exposed to Python
 	int getHappyPerMilitaryUnit() const;				// Exposed to Python
 	int getLargestCityHappiness() const;					// Exposed to Python
-	int getSpecialistHappiness() const; // Leoreth
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
-	int getCoreFreeSpecialist() const; // Leoreth
 	int getTradeRoutes() const;				// Exposed to Python
-	int getCapitalTradeModifier() const; // Leoreth
 	int getDefensivePactTradeModifier() const; // Leoreth
-	int getVassalCityCommerce() const; // Leoreth
-	int getColonyCommerce() const; // Leoreth
 	int getCaptureGoldModifier() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
@@ -1413,7 +1406,6 @@ public:
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 	int getLevelExperienceModifier() const; // Leoreth
-	int getUnhappinessDecayModifier() const; // Leoreth
 	int getVassalTradeModifier() const; // Leoreth
 	int getFoodProductionModifier() const; // Leoreth
 	int getCulturedCityFreeSpecialists() const; // Leoreth
@@ -1433,8 +1425,6 @@ public:
 	bool isSlavery() const; // Leoreth
 	bool isNoSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
-	bool isNoResistance() const; // Leoreth
-	bool isNoTemporaryUnhappiness() const; // Leoreth
 	bool isFreeImprovementUpgrade() const; // Leoreth
 	bool isNoStateReligionAnarchy() const; // Leoreth
 
@@ -1458,10 +1448,6 @@ public:
 	int* getSpecialistExtraCommerceArray() const;
 	int getSpecialistExtraYield(int i) const; // Leoreth
 	int* getSpecialistExtraYieldArray() const; // Leoreth
-	int getHappinessExtraYield(int i) const; // Leoreth
-	int* getHappinessExtraYieldArray() const; // Leoreth
-	int getUnhappinessExtraYield(int i) const; // Leoreth
-	int* getUnhappinessExtraYieldArray() const; // Leoreth
 	int getUnimprovedTileYield(int i) const; // Leoreth
 	int* getUnimprovedTileYieldArray() const; // Leoreth
 	int getStateReligionBuildingYield(int i) const; // Leoreth
@@ -1471,11 +1457,7 @@ public:
 	int getBuildingProductionModifier(int i) const;	//Leoreth
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
 
-	int getDomainProductionModifier(int i) const; // Leoreth
 	int getDomainExperienceModifier(int i) const; // Leoreth
-
-	int* getMinimalSpecialistCountsArray() const; // Leoreth
-	int getMinimalSpecialistCount(int i) const; // Leoreth
 
 	bool isHurry(int i) const;													// Exposed to Python
 	bool isSpecialBuildingNotRequired(int i) const;			// Exposed to Python
@@ -1509,9 +1491,7 @@ protected:
 	int m_iWonderProductionModifier; // Leoreth
 	int m_iProcessModifier; // Leoreth
 	int m_iExtraHealth;
-	int m_iPollutionModifier; //Leoreth
 	int m_iFreeExperience;
-	int m_iWorkerCostModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1523,15 +1503,10 @@ protected:
 	int m_iGoldPerMilitaryUnit;
 	int m_iHappyPerMilitaryUnit;
 	int m_iLargestCityHappiness;
-	int m_iSpecialistHappiness; // Leoreth
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
-	int m_iCoreFreeSpecialist; // Leoreth
 	int m_iTradeRoutes;
-	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
-	int m_iVassalCityCommerce; // Leoreth
-	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
@@ -1543,7 +1518,6 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 	int m_iLevelExperienceModifier; // Leoreth
-	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iVassalTradeModifier; // Leoreth
 	int m_iFoodProductionModifier; // Leoreth
 	int m_iCulturedCityFreeSpecialists; // Leoreth
@@ -1563,8 +1537,6 @@ protected:
 	bool m_bSlavery; // Leoreth
 	bool m_bNoSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
-	bool m_bNoResistance; // Leoreth
-	bool m_bNoTemporaryUnhappiness; // Leoreth
 	bool m_bFreeImprovementUpgrade; // Leoreth
 	bool m_bNoStateReligionAnarchy; // Leoreth
 
@@ -1579,17 +1551,13 @@ protected:
 	int* m_piCapitalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piSpecialistExtraYield; // Leoreth
-	int* m_piHappinessExtraYield; // Leoreth
-	int* m_piUnhappinessExtraYield; // Leoreth
 	int* m_piUnimprovedTileYield; // Leoreth
 	int* m_piStateReligionBuildingYield; // Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; // Leoreth
 	int* m_paiFeatureHappinessChanges;
-	int* m_paiMinimalSpecialistCounts; // Leoreth
 
-	int* m_paiDomainProductionModifiers; // Leoreth
 	int* m_paiDomainExperienceModifiers; // Leoreth
 
 	bool* m_pabHurry;

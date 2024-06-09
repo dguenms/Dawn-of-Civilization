@@ -585,12 +585,10 @@ public:
 	void changeGreatGeneralsCreated(int iChange);
 	void changeGreatSpiesCreated(int iChange);
 	void launch(int iVictory);
-	bool isNoTemporaryUnhappiness();
 	void setAlive(bool bNewValue, bool bTurnActive);
 	int getPeriod();
 	int getDomainFreeExperience(int iDomainType);
 	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
-	int getUnhappinessDecayModifier();
 	bool isUnstableCivic(int iCivic);
 	void setBirthProtected(bool bNewValue);
 	bool isBirthProtected();
