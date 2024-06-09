@@ -10564,7 +10564,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		// Leoreth: shrine income income limit changes
 		if (kCivic.getShrineIncomeLimitChange() != 0)
 		{
-			if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != 0)
+			if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != 0 && isHasBuilding(eBuilding))
 			{
 				iValue += std::max(0, std::min(kCivic.getShrineIncomeLimitChange(), GC.getGameINLINE().countReligionLevels((ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType()) - MAX_COM_SHRINE)) * AI_commerceWeight(COMMERCE_GOLD);
 			}
