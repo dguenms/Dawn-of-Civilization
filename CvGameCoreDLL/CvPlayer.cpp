@@ -3912,6 +3912,21 @@ int CvPlayer::countNumBuildings(BuildingTypes eBuilding) const
 }
 
 
+// Leoreth
+int CvPlayer::countSpecialists(SpecialistTypes eSpecialist) const
+{
+	int iCount = 0;
+
+	int iLoop;
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iCount += pLoopCity->getSpecialistCount(eSpecialist) + pLoopCity->getFreeSpecialistCount(eSpecialist);
+	}
+
+	return iCount;
+}
+
+
 int CvPlayer::countNumCitiesConnectedToCapital() const
 {
 	CvCity* pLoopCity;
