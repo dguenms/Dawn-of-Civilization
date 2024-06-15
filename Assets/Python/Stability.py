@@ -684,7 +684,7 @@ def calculateStability(iPlayer):
 		if (iAnimism, iDeification) in civics: iCivicEraTechStability -= 5
 	
 	if tPlayer.isHasTech(iStatecraft):
-		if (iAuthority, iCitizenship, iVassalage) not in civics: iCivicEraTechStability += 5
+		if (iPersonalism, iCitizenship, iVassalage) not in civics: iCivicEraTechStability += 5
 	
 	if iStateReligion == iHinduism:
 		if iCasteSystem in civics: iCivicEraTechStability += 3

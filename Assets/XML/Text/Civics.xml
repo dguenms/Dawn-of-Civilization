@@ -346,19 +346,15 @@
 		<Spanish>Extra free specialist in all cities; double available slots for statesmen; double production speed for Courthouses</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_AUTHORITY</Tag>
-		<English>Authority</English>
-		<French>
-			<Text>Autorit&#233;</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Authority</German>
-		<Italian>Authority</Italian>
-		<Spanish>Authority</Spanish>
+		<Tag>TXT_KEY_CIVIC_PERSONALISM</Tag>
+		<English>Personalism</English>
+		<French>Personalism</French>
+		<German>Personalism</German>
+		<Italian>Personalism</Italian>
+		<Spanish>Personalism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_AUTHORITY_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_PERSONALISM_STRATEGY</Tag>
 		<English>The most primitve Legitimacy civic</English>
 		<French>La doctrine de l&#233;gitimit&#233; la plus primitive</French>
 		<German>The most primitve Legitimacy civic</German>
