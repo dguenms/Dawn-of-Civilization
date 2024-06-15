@@ -23,7 +23,7 @@ class TestCivics(TestCase):
 			self.assertEqual(civics.iTerritory, iMultilateralism)
 		finally:
 			gc.getPlayer(0).setCivics(iCivicsGovernment, iMonarchy)
-			gc.getPlayer(0).setCivics(iCivicsLegitimacy, iAuthority)
+			gc.getPlayer(0).setCivics(iCivicsLegitimacy, iPersonalism)
 			gc.getPlayer(0).setCivics(iCivicsSociety, iTraditionalism)
 			gc.getPlayer(0).setCivics(iCivicsEconomy, iRedistribution)
 			gc.getPlayer(0).setCivics(iCivicsReligion, iDeification)

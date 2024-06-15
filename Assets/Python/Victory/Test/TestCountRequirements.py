@@ -1691,7 +1691,7 @@ class TestFreeSpecialistCity(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Free specialists in First: 1 / 1")
 		finally:
 			city.kill()
-			player(0).setCivics(iCivicsLegitimacy, iAuthority)
+			player(0).setCivics(iCivicsLegitimacy, iPersonalism)
 	
 	def test_sufficient(self):
 		city = TestCities.one(1)
@@ -1706,7 +1706,7 @@ class TestFreeSpecialistCity(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No cities")
 		finally:
 			city.kill()
-			player(1).setCivics(iCivicsLegitimacy, iAuthority)
+			player(1).setCivics(iCivicsLegitimacy, iPersonalism)
 	
 	def test_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
