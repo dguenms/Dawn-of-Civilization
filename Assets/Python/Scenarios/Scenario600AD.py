@@ -11,7 +11,7 @@ lCivilizations = [
 		iLeader=iTaizong, 
 		iGold=300,
 		iStateReligion=iConfucianism,
-		lCivics=[iDespotism, iCitizenship, iManorialism, iMerchantTrade, iMonasticism],
+		lCivics=[iDespotism, iCitizenship, iManorialism, iMerchantTrade, iSyncretism, iHegemony],
 		techs=techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility)
 	),
 	Civilization(
@@ -39,7 +39,7 @@ lCivilizations = [
 		iDravidia,
 		iGold=100,
 		iStateReligion=iHinduism,
-		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iMerchantTrade, iMonasticism],
+		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iMerchantTrade, iMonasticism, iThalassocracy],
 		techs=techs.column(5).including(iArtisanry, iPolitics, iEthics),
 	),
 	Civilization(
@@ -59,7 +59,7 @@ lCivilizations = [
 		iKhmer,
 		iGold=50,
 		iStateReligion=iHinduism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism],
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism, iThalassocracy],
 		techs=techs.column(5).including(iArtisanry).without(iLaw, iMedicine),
 	),
 	Civilization(
@@ -72,28 +72,28 @@ lCivilizations = [
 		iByzantium,
 		iGold=400,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).including(iFortification,iMachinery, iCivilService)
 	),
 	Civilization(
 		iFrance,
 		iGold=150,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).without(iSteel, iArtisanry, iPolitics)
 	),
 	Civilization(
 		iMalays,
 		iGold=100,
 		iStateReligion=iBuddhism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification],
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification, iThalassocracy],
 		techs=techs.column(5).including(iEthics).without(iEngineering)
 	),
 	Civilization(
 		iJapan,
 		iGold=300,
 		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification, iThalassocracy],
 		techs=techs.column(6).without(iPolitics, iScholarship)
 	),
 	Civilization(

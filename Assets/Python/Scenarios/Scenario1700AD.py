@@ -13,7 +13,7 @@ lCivilizations = [
 		sLeaderName="TXT_KEY_LEADER_KANGXI",
 		iGold=300,
 		iStateReligion=iConfucianism,
-		lCivics=[iDespotism, iBureaucracy, iManorialism, iRegulatedTrade, iMonasticism, iIsolationism],
+		lCivics=[iDespotism, iBureaucracy, iManorialism, iRegulatedTrade, iSyncretism, iIsolationism],
 		techs=techs.column(10).including(iHorticulture, iUrbanPlanning).without(iExploration, iOptics, iAcademia),
 		dAttitudes={iKorea: 2}
 	),
@@ -40,7 +40,7 @@ lCivilizations = [
 		iLeader=iSejong,
 		iGold=200,
 		iStateReligion=iConfucianism,
-		lCivics=[iDespotism, iBureaucracy, iCasteSystem, iRegulatedTrade, iMonasticism, iIsolationism],
+		lCivics=[iDespotism, iBureaucracy, iCasteSystem, iRegulatedTrade, iSyncretism, iIsolationism],
 		techs=techs.column(10).without(iExploration, iOptics, iAcademia),
 		dAttitudes={iChina: 2}
 	),
@@ -91,7 +91,7 @@ lCivilizations = [
 		iLeader=iVictoria,
 		iGold=600,
 		iStateReligion=iProtestantism,
-		lCivics=[iMonarchy, iBureaucracy, iIndividualism, iFreeEnterprise, iSecularism, iColonialism],
+		lCivics=[iMonarchy, iBureaucracy, iIndividualism, iFreeEnterprise, iClergy, iColonialism],
 		techs=techs.column(11).without(iUrbanPlanning, iHorticulture),
 		dAttitudes={iFrance: -4, iPortugal: 2, iMughals: -2, iOttomans: -2}
 	),
@@ -100,7 +100,7 @@ lCivilizations = [
 		iLeader=iFrancis,
 		iGold=150,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iMonarchy, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning, iHorticulture).without(iExploration),
 		dAttitudes={iFrance: -2, iOttomans: -4}
 	),
@@ -117,7 +117,7 @@ lCivilizations = [
 		iLeader=iLeLoi,
 		iGold=150,
 		iStateReligion=iConfucianism,
-		lCivics=[iMonarchy, iBureaucracy, iCasteSystem, iRegulatedTrade, iClergy, iThalassocracy],
+		lCivics=[iMonarchy, iBureaucracy, iCasteSystem, iRegulatedTrade, iSyncretism, iThalassocracy],
 		techs=techs.column(9).including(iFirearms, iAcademia, iHeritage, iStatecraft),
 	),
 	Civilization(
@@ -125,7 +125,7 @@ lCivilizations = [
 		iLeader=iSobieski,
 		iGold=200,
 		iStateReligion=iCatholicism,
-		lCivics=[iElective, iBureaucracy, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iSyncretism],
 		techs=techs.column(11).without(iEconomics, iGeography, iHorticulture, iUrbanPlanning),
 	),
 	Civilization(
@@ -142,7 +142,7 @@ lCivilizations = [
 		iLeader=iAkbar,
 		iGold=200,
 		iStateReligion=iIslam,
-		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
+		lCivics=[iDespotism, iTheocracy, iManorialism, iRegulatedTrade, iSyncretism, iHegemony],
 		techs=techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
 		dAttitudes={iEngland: -2, iIndia: -2, iIran: -2}
 	),
