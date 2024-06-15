@@ -151,7 +151,7 @@ lCivilizations = [
 		iLeader=iGustav,
 		iGold=250,
 		iStateReligion=iProtestantism,
-		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(11).without(iEconomics, iHorticulture),
 		dAttitudes={iRussia: -2, iPoland: -2}
 	),
@@ -160,7 +160,7 @@ lCivilizations = [
 		iLeader=iPeter,
 		iGold=350,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iTheocracy, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iDespotism, iTheocracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
 		dAttitudes={iSweden: -2, iOttomans: -4}
 	),
