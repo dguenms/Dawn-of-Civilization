@@ -793,6 +793,7 @@ BUILDINGS
 * Smokehouse: removed
 * Weaver: requires Leverage, -1 culture, -1 artist slot
 * Manufactory: requires Companies
+* National College: requires Education, requires Libraries
 
 NEW WONDERS
 * Pyramid of the Sun: +3 great people points per Citizen
@@ -811,8 +812,54 @@ WONDERS
 * Machu Picchu: requires Potatoes
 
 CIVICS
-* Republic: removed additional specialist slots
-* Citizenship: Spies can bribe barbarian units
+* Government
+	* Chiefdom (low)
+	* Despotism (Property, medium): can hurry using population
+	* Monarchy (Ceremony, medium): +1 happiness per military unit, -25% city distance maintenance, +50% food converted to production
+	* Republic (Writing, high): +1 free specialist in 3 most cultured cities, -1 food from Farm, Paddy Field, Plantation, +1 food from Fishing Boats, +1 commerce from Cottage, Hamlet
+	* Elective (Politics, low): +1 commerce from Camp, Pasture, +1 commerce from unimproved tiles, double production for Palace
+	* State Property (Macroeconomics, high): no number of cities maintenance, +2 espionage per specialist
+	* Democracy (Representation, medium): +100% great people birth rate, +3 happiness in 4 largest cities
+* Legitimacy
+	* Personalism (low)
+	* Citizenship (Law, high): double production for Aqueduct, Theatre, Market, Library, can hurry units with gold, can bribe barbarians
+	* Vassalage (Feudalism, low): can produce units with food, +25% trade route yield with vassals, +1 production from Farm
+	* Theocracy (Theology, medium): +2 happiness with state religion, double priest slots, +2 production from state religion buildings, can train missionaries without monasteries
+	* Bureaucracy (Statecraft, high): +50% production and commerce in capital, +25% production for buildings already in capital, can hurry buildings with gold
+	* Stratocracy (Journalism, low): -25% experience required for promotions, +100% great people birth rate, +4 production per Great Military Instructor
+	* Constitution (Social Contract, medium): +1 free specialist, double statesman slots, double production for Courthouse
+* Society
+	* Traditionalism (low)
+	* Slavery (Masonry, low): can capture enemy workers, +1 production from Quarry, +1 commerce from Orchard, Plantation, Slave Plantation
+	* Manorialism (Calendar, low): +1 production from Pasture, +1 commerce from Farm, Paddy Field, -2 health
+	* Caste System (Contract, medium): +50% improvement construction speed, +1 food from Plantation
+	* Individualism (Civil Liberties, medium): +2 commerce from Village, Town, improvements upgrade without being worked
+	* Totalitarianism (Psychology, none): +3 experience for land units, no war weariness, extra units without upkeep
+	* Egalitarianism (Sociology, high): +2 research per specialist, double artist slots, cannot use slaves
+* Economy
+	* Reciprocity (low)
+	* Redistribution (Arithmetics, medium): +25% food in capital, -25% trade route yield, double production for Granary
+	* Merchant Trade (Currency, low): +1 trade route, +1 happiness from Oasis
+	* Regulated Trade (Guilds, high): +50% commerce in capital, +1 commerce from Workshop, Plantation, Slave Plantation, double production for Customs House
+	* Free Enterprise (Economics, low): +50% corporation commerce, +50% trade route yield, double merchant slots
+	* Central Planning (Labour Unions, medium): +1 production per specialist, +1 food from Workshop, +1 commerce from Mine, Watermill, double production for Factory, Coal Plant, Hydro Plant, Electrical Grid
+	* Public Welfare (Social Services, high): +1 commerce per specialist, -50% corporation unhappiness, double conversion of production to commerce, +2 food, +4 production per Great Statesman
+* Religion
+	* Animism (low)
+	* Deification (Divination, medium): +25% wonder production, +1 happiness from Pagan Temple, +1 unhappiness from state religion
+	* Clergy (Priesthood, high): +25% building production with state religion
+	* Syncretism (Philosophy, low): +1 happiness from non-state religion, no anarchy from changing state religion, +2 food from Paddy Field, +25% culture in all cities
+	* Monasticism (Ethics, low): +50% great people birth rate with state religion
+	* Fanaticism (Doctrine, medium): +2 experience with state religion, no non-state religion spread, +1 unhappiness from non-state religion, +10 shrine income limit, +2 production, +4 commerce per Great Prophet
+	* Secularism (Scientific Method, medium): no state religion, +10% research in all cities, double scientist slots
+* Territory
+	* Kinship (low)
+	* Thalassocracy (Navigation, medium): +2 commerce from Fishing Boats, Harvest Goats, -1 commerce from Hamlet, Village, Town, double production for Harbour, Lighthouse, Wharf
+	* Hemegony (Generalship, high): +25% gold on conquest, -1 turn of city occupation, double production for Barracks, Stable, Jail, Castle
+	* Isolationism (Heritage, medium): no foreign trade, +1 food per specialist, +25% espionage in all cities
+	* Colonialism (Geography, medium): -50% colony maintenance, +4 naval unit experience, +1 production, +1 commerce from Slave Plantation, Slave Mine, can capture slaves
+	* Nationhood (Nationalism, low): can draft 3 units, +1 production from Town, +1 happiness from Monument, Civic Square, News Press, Broadcast Tower, cannot use slaves
+	* Multilateralism (Globalism, medium): +100% war weariness, +100% trade route yield with defensive pact partners, +20% production from trade routes, +4 air unit experience, cannot use slaves
 
 NEW TERRAIN
 * Arctic Coast: 2 commerce, +10% defense
@@ -865,6 +912,7 @@ RESOURCES
 
 NEW IMPROVEMENTS
 * Harvest Boats: connects Amber and Dye on Water
+* Slave Mine: built by slaves, +3 production, +1 commerce, +1 unhappiness, can only be built on resources connected by Mines
 
 IMPROVEMENTS
 * Lumbermill: requires flatlands
@@ -892,6 +940,8 @@ GAME RULES
 * Limited amount of territory revealed on spawn if map trading is not yet available
 * Increased limit of concurrent major civilizations to 36
 * Expansion area is determined by war map values instead of a dedicated expansion map
+* Civic building production modifiers do not impact hurry costs
+* Religion building production modifiers do not impact wonders
 
 STABILITY
 * Capital city grants non-scaling additional stability limit
@@ -908,6 +958,7 @@ HISTORICAL IMMERSION
 * Expansion stability scales differently for some civilizations
 
 BALANCE
+* Reduced production from hurrying with population
 * The AI receives free improvements and roads when gaining cultural control over one tile islands with resources
 * The AI receives a free worker when founding an overseas colony
 * Independents only pay halved unit upkeep instead of none
