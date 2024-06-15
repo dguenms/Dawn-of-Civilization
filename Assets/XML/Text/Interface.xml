@@ -323,11 +323,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
-		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</French>
-		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</German>
-		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</Italian>
-		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] converted to commerce</Spanish>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Converted to Commerce</English>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Converted to Commerce</French>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Converted to Commerce</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Converted to Commerce</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Converted to Commerce</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>

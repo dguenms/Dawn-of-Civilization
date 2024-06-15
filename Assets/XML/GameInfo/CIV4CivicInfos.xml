@@ -712,7 +712,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Public Welfare.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iLargestCityHappiness>3</iLargestCityHappiness>
+			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
 			<iProcessModifier>100</iProcessModifier>
 			<SpecialistExtraYields>
 				<iYield>0</iYield>
