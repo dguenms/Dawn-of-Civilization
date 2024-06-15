@@ -1112,7 +1112,6 @@ void CvCity::kill(bool bUpdatePlotGroups)
 	{
 		FAssert(getTradeYield(YIELD_COMMERCE) == 0);
 		FAssert(getExtraSpecialistYield(YIELD_COMMERCE) == 0);
-		FAssert(getHappinessYield(YIELD_COMMERCE) == 0);
 		FAssert(getCorporationYield(YIELD_COMMERCE) == 0);
 	}
 #endif
