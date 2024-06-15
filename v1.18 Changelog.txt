@@ -826,7 +826,7 @@ CIVICS
 	* Vassalage (Feudalism, low): can produce units with food, +25% trade route yield with vassals, +1 production from Farm
 	* Theocracy (Theology, medium): +2 happiness with state religion, double priest slots, +2 production from state religion buildings, can train missionaries without monasteries
 	* Bureaucracy (Statecraft, high): +50% production and commerce in capital, +25% production for buildings already in capital, can hurry buildings with gold
-	* Stratocracy (Journalism, low): -25% experience required for promotions, +100% great people birth rate, +4 production per Great Military Instructor
+	* Stratocracy (Journalism, low): -25% experience required for promotions, +100% great general birth rate, +4 production per Great Military Instructor
 	* Constitution (Social Contract, medium): +1 free specialist, double statesman slots, double production for Courthouse
 * Society
 	* Traditionalism (low)
