@@ -211,7 +211,7 @@ lCivilizations = [
 	Civilization(
 		iNubia,
 		iGold=100,
-		lCivics=[iDespotism, iSlavery],
+		lCivics=[iDespotism, iSlavery, iDeification],
 		techs=techs.column(1).including(iMasonry, iSmelting, iProperty, iCeremony, iDivination)
 	),
 	Civilization(
@@ -249,6 +249,7 @@ lCivilizations = [
 	Civilization(
 		iCelts,
 		techs=techs.column(2).including(iAlloys),
+		lCivics=[iMonarchy],
 	),
 	Civilization(
 		iRome,
@@ -287,7 +288,7 @@ lCivilizations = [
 		iKushans,
 		iGold=100,
 		iAdvancedStartPoints=120,
-		lCivics=[iMonarchy, iSlavery, iRedistribution, iClergy, iHegemony],
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iSyncretism, iHegemony],
 		techs=techs.column(4).including(iGeneralship, iCurrency, iPhilosophy).without(iNavigation)
 	),
 	Civilization(
@@ -295,7 +296,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=60,
 		iStateReligion=iBuddhism,
-		lCivics=[iDespotism, iCasteSystem, iRedistribution],
+		lCivics=[iDespotism, iCasteSystem, iRedistribution, iSyncretism],
 		techs=techs.column(4).without(iNavigation).including(iPhilosophy)
 	),
 	Civilization(
@@ -316,14 +317,14 @@ lCivilizations = [
 		iGold=400,
 		iAdvancedStartPoints=100,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iCitizenship, iSlavery, iMerchantTrade, iClergy],
+		lCivics=[iDespotism, iCitizenship, iSlavery, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(5).including(iArchitecture, iPolitics, iEthics)
 	),
 	Civilization(
 		iFrance,
 		iGold=100,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(5).including(iNobility, iPolitics).without(iMedicine, iPhilosophy)
 	),
 	Civilization(
@@ -331,7 +332,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=100,
 		iStateReligion=iBuddhism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification],
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iSyncretism, iThalassocracy],
 		techs=techs.column(5).including(iEthics).without(iGeneralship, iEngineering)
 	),
 	Civilization(
@@ -339,7 +340,7 @@ lCivilizations = [
 		iGold=100,
 		iAdvancedStartPoints=60,
 		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification],
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification, iThalassocracy],
 		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iArtisanry)
 	),
 	Civilization(
@@ -368,7 +369,7 @@ lCivilizations = [
 		iGold=50,
 		iAdvancedStartPoints=25,
 		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iMerchantTrade, iClergy, iHegemony],
+		lCivics=[iMonarchy, iVassalage, iMerchantTrade, iMonasticism, iHegemony],
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
 	),
 	Civilization(
@@ -376,7 +377,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=150,
 		iStateReligion=iIslam,
-		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iClergy],
+		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).including(iMachinery, iAlchemy, iTheology)
 	),
 	Civilization(
@@ -384,7 +385,7 @@ lCivilizations = [
 		iGold=300,
 		iAdvancedStartPoints=100,
 		iStateReligion=iHinduism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification],
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iMerchantTrade, iDeification, iThalassocracy],
 		techs=techs.column(6).without(iNobility, iPolitics, iScholarship)
 	),
 	Civilization(
@@ -392,7 +393,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=100,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).including(iFeudalism, iAlchemy, iGuilds)
 	),
 	Civilization(
@@ -408,7 +409,7 @@ lCivilizations = [
 		iGold=150,
 		iAdvancedStartPoints=150,
 		iStateReligion=iCatholicism,
-		lCivics=[iElective, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
+		lCivics=[iElective, iTheocracy, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).including(iFeudalism, iTheology)
 	),
 	Civilization(
@@ -454,7 +455,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=60,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy],
+		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iThalassocracy],
 		techs=techs.column(7).including(iPatronage)
 	),
 	Civilization(
@@ -482,7 +483,7 @@ lCivilizations = [
 		iAztecs,
 		iGold=200,
 		iAdvancedStartPoints=30,
-		lCivics=[iMonarchy, iCitizenship, iSlavery, iRedistribution, iDeification],
+		lCivics=[iMonarchy, iCitizenship, iSlavery, iRedistribution, iDeification, iHegemony],
 		techs=techs.column(4).including(iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iRiding, iShipbuilding, iCement, iNavigation)
 	),
 	Civilization(
@@ -505,7 +506,7 @@ lCivilizations = [
 		iGold=200,
 		iAdvancedStartPoints=200,
 		iStateReligion=iProtestantism,
-		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(8).including(iCompanies)
 	),
 	Civilization(
@@ -513,7 +514,7 @@ lCivilizations = [
 		iGold=300,
 		iAdvancedStartPoints=200,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy],
+		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(8)
 	),
 	Civilization(
@@ -521,7 +522,7 @@ lCivilizations = [
 		iGold=300,
 		iAdvancedStartPoints=200,
 		iStateReligion=iIslam,
-		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iClergy, iHegemony],
+		lCivics=[iDespotism, iTheocracy, iSlavery, iRegulatedTrade, iFanaticism, iHegemony],
 		techs=techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder)
 	),
 	Civilization(
@@ -535,7 +536,7 @@ lCivilizations = [
 		iGold=600,
 		iAdvancedStartPoints=250,
 		iStateReligion=iIslam,
-		lCivics=[iMonarchy, iVassalage, iSlavery, iMerchantTrade, iFanaticism],
+		lCivics=[iMonarchy, iTheocracy, iSlavery, iMerchantTrade, iFanaticism, iHegemony],
 		techs=techs.column(9).including(iHeritage, iFirearms)
 	),
 	Civilization(
