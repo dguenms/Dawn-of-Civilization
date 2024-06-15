@@ -1843,7 +1843,7 @@ class CvPlotDesc:
 			self.plot.setImprovementType(improvementTypeNum)
 			
 			iBuild = getImprovementBuild(improvementTypeNum)
-			if iBuild is not None:
+			if iBuild is not None and self.plot.getFeatureType() >= 0:
 				if infos.build(iBuild).isFeatureRemove(self.plot.getFeatureType()):
 					self.plot.setFeatureType(-1, 0)
 
