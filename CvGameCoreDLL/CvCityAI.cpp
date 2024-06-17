@@ -558,8 +558,9 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
                 iTempValue += ((iGreatPeopleRate * iBestSpreadValue));
             }
 		}
-		iTempValue *= 100;
-		iTempValue /= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
+
+		iTempValue *= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
+		iTempValue /= 100;
 
 		iTempValue /= (1 + iEmphasisCount);
 		iValue += iTempValue;
