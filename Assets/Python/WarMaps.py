@@ -13,7 +13,7 @@ def applyMap(iCivilization, iPeriod=-1):
 			plot(x, y).setWarValue(iCivilization, iValue)
 	
 	if iPeriod != -1:
-		for (x, y), iValue in FileMap.read("War/Period/%s.csv" % dPeriodNames[iPeriod]):
+		for (x, y), iValue in FileMap.read("War/Period/%s.csv" % dPeriodNames[iPeriod], bIgnoreMissing=True):
 			if not plot(x, y).isWater():
 				plot(x, y).setWarValue(iCivilization, iValue)
 			

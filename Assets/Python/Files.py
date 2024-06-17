@@ -56,10 +56,12 @@ class FileMap(object):
 			return value.decode("utf8")
 
 	@classmethod
-	def read(cls, file_path):
+	def read(cls, file_path, bIgnoreMissing=False):
 		try:
 			file = open(getPath(file_path))
 		except IOError:
+			if not bIgnoreMissing:
+				raise Exception("No CSV file on file path: '%s'" % file_path)
 			return
 		
 		try:
