@@ -3397,8 +3397,7 @@ int CvGame::getImprovementUpgradeTime(ImprovementTypes eImprovement) const
 {
 	int iTime;
 
-	// Leoreth: use times100
-	iTime = 100 * GC.getImprovementInfo(eImprovement).getUpgradeTime();
+	iTime = GC.getImprovementInfo(eImprovement).getUpgradeTime();
 
 	iTime *= GC.getGameSpeedInfo(getGameSpeedType()).getImprovementPercent();
 	iTime /= 100;

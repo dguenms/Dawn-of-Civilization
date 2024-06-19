@@ -884,7 +884,10 @@ void CvPlot::doImprovementUpgrade()
 					iUpgradeTime /= 100;
 				}
 
-				if (getUpgradeProgress() >= GC.getGameINLINE().getImprovementUpgradeTime(getImprovementType()))
+				// Leoreth: x100 to match x100 upgrade rate
+				iUpgradeTime *= 100;
+
+				if (getUpgradeProgress() >= iUpgradeTime)
 				{
 					setImprovementType(eImprovementUpgrade);
 				}
@@ -4707,11 +4710,12 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 	int iUpgradeRate;
 	int iTurnsLeft;
 
-	iUpgradeLeft = (GC.getGameINLINE().getImprovementUpgradeTime(eImprovement) - ((getImprovementType() == eImprovement) ? getUpgradeProgress() : 0));
+	// Leoreth: x100 to match x100 upgrade rate
+	iUpgradeLeft = (GC.getGameINLINE().getImprovementUpgradeTime(eImprovement) * 100 - ((getImprovementType() == eImprovement) ? getUpgradeProgress() : 0));
 
 	if (ePlayer == NO_PLAYER)
 	{
-		return iUpgradeLeft;
+		return iUpgradeLeft / 100;
 	}
 
 	iUpgradeRate = GET_PLAYER(ePlayer).getImprovementUpgradeRate();
@@ -4723,7 +4727,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 
 	if (iUpgradeRate == 0)
 	{
-		return iUpgradeLeft;
+		return iUpgradeLeft / 100;
 	}
 
 	iTurnsLeft = (iUpgradeLeft / iUpgradeRate);
