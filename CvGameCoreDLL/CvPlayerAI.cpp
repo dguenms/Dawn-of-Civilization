@@ -10898,7 +10898,7 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 		if (pLoopCity->isHasReligion(eReligion))
 		{
 			// Leoreth: value ahistorical cities less
-			iValue += std::max(0, pLoopCity->getPopulation() - (pLoopCity->plot()->getSettlerValue(getID()) < 90 ? 10 : 0));
+			iValue += std::max(0, pLoopCity->getPopulation() - (pLoopCity->plot()->getSettlerValue(getID()) == 0 ? 10 : 0));
 		}
 
 		if (pLoopCity->getReligionCount() == 0 && getLastStateReligion() == NO_RELIGION)
