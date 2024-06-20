@@ -148,7 +148,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
 	
 	if iOwnerCiv == iCelts:
-		if player(iCelts).getNumCities() > 0 and cities.owner(iCelts).region(iFrance).count() == 0:
+		if player(iCelts).getNumCities() > 0 and cities.core(iCelts).owner(iCelts).count() == 0:
 			setPeriod(iCelts, iPeriodInsularCelts)
 
 	
