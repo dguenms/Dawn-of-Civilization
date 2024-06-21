@@ -99,7 +99,7 @@ lCivilizations = [
 	Civilization(
 		iNorse,
 		iGold=150,
-		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iThalassocracy],
+		lCivics=[iElective, iSlavery, iMerchantTrade, iThalassocracy],
 		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(6).without(iEthics)
 	),
