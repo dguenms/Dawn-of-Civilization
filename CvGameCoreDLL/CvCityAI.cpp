@@ -513,7 +513,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 			}
 		}
 
-        if (!isHuman() && (iCurrentEra <= ((iTotalEras * 2) / 3)))
+        if (!isHuman() && (iCurrentEra <= ((iTotalEras * 2) / 3)) && getGreatPeopleRateModifier() > 0)
         {
             // try to spawn a prophet for any shrines we have yet to build
             bool bNeedProphet = false;
@@ -559,8 +559,8 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
             }
 		}
 
-		iTempValue *= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
-		iTempValue /= 100;
+		iTempValue *= getGreatPeopleRateModifier();
+		iTempValue /= GET_PLAYER(getOwnerINLINE()).AI_averageGreatPeopleMultiplier();
 
 		iTempValue /= (1 + iEmphasisCount);
 		iValue += iTempValue;
