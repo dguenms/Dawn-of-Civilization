@@ -162,8 +162,8 @@ class MinorCity(object):
 			city(self.tile).setHasRealBuilding(iBuilding, True)
 
 
-NUM_BARBARIAN_TYPES = 7
-(ANIMALS, NOMADS, MINORS, INVADERS, NATIVES, SEA_INVADERS, PIRATES) = range(NUM_BARBARIAN_TYPES)
+NUM_BARBARIAN_TYPES = 8
+(ANIMALS, NOMADS, MINORS, INVADERS, CLOSE_INVADERS, NATIVES, SEA_INVADERS, PIRATES) = range(NUM_BARBARIAN_TYPES)
 
 
 class Barbarians(object):
@@ -181,6 +181,7 @@ class Barbarians(object):
 		NOMADS: "TXT_KEY_BARBARIAN_NOTIFICATION_NOMADS",
 		MINORS: "TXT_KEY_BARBARIAN_NOTIFICATION_MINORS",
 		INVADERS: "TXT_KEY_BARBARIAN_NOTIFICATION_INVADERS",
+		CLOSE_INVADERS: "TXT_KEY_BARBARIAN_NOTIFICATION_INVADERS",
 		NATIVES: "TXT_KEY_BARBARIAN_NOTIFICATION_NATIVES",
 		SEA_INVADERS: "TXT_KEY_BARBARIAN_NOTIFICATION_SEA_INVADERS",
 		PIRATES: "TXT_KEY_BARBARIAN_NOTIFICATION_PIRATES"
@@ -246,7 +247,7 @@ class Barbarians(object):
 		if not self.every():
 			return False
 	
-		if self.pattern in [NOMADS, INVADERS, SEA_INVADERS]:
+		if self.pattern in [NOMADS, INVADERS, CLOSE_INVADERS, SEA_INVADERS]:
 			if not self.valid_targets():
 				return False
 		
@@ -318,7 +319,7 @@ class Barbarians(object):
 			
 			return [spawn_area.random()] * iNumUnits
 		
-		elif self.pattern in [INVADERS, SEA_INVADERS]:
+		elif self.pattern in [INVADERS, CLOSE_INVADERS, SEA_INVADERS]:
 			return [spawn_area.random()] * iNumUnits
 		
 		else:
@@ -345,7 +346,7 @@ class Barbarians(object):
 	
 	@staticmethod
 	def valid_unit_spawn_terrain(plot, iUnit):
-		if infos.unit(iUnit).getTerrainImpassable(plot.getTerrainType()):
+		if infos.unit(iUnit).getTerrainImpassable(plot.getTerrainType()) and not plot.isOwned():
 			return False
 		
 		if plot.getFeatureType() >= 0 and infos.unit(iUnit).getFeatureImpassable(plot.getFeatureType()):
@@ -377,7 +378,7 @@ class Barbarians(object):
 		if units.at(plot).notowner(self.get_owner()):
 			return False
 		
-		if cities.surrounding(plot):
+		if self.pattern != CLOSE_INVADERS and cities.surrounding(plot):
 			return False
 		
 		if self.pattern in [ANIMALS, NOMADS, MINORS, PIRATES]:
@@ -389,7 +390,7 @@ class Barbarians(object):
 				return False
 		
 		if self.pattern == INVADERS:
-			if not plots.surrounding(plot).notowner(plot.getOwner()):
+			if not plots.surrounding(plot).where(lambda p: p.getOwner() != plot.getOwner() or p.isWater()):
 				return False
 		
 		return True
@@ -456,14 +457,14 @@ barbarians = [
 	# Barbarians(-1500, -300, {iLightSwordsman: 2}, ((120, 42), (129, 50)), 12, MINORS, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	Barbarians(-1500, -500, {iArcher: 1}, ((105, 39), (111, 43)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_GIRIJAN"),
 	Barbarians(-1400, -800, {iChariot: 1, iLightSwordsman: 1}, ((98, 42), (109, 51)), 10, INVADERS, target_area=((99, 41), (113, 46)), adjective="TXT_KEY_ADJECTIVE_VEDIC"),
-	Barbarians(-1250, -1150, {iAxeman: 4}, ((74, 44), (85, 54)), 1, INVADERS, target_area=((74, 39), (91, 54)), adjective="TXT_KEY_ADJECTIVE_SEA_PEOPLES"),
+	Barbarians(-1250, -1150, {iAxeman: 3}, ((78, 44), (85, 52)), 1, CLOSE_INVADERS, target_area=((77, 41), (91, 54)), adjective="TXT_KEY_ADJECTIVE_SEA_PEOPLES"),
 	Barbarians(-1200, -900, {iVulture: 2}, ((87, 44), (91, 52)), 10, INVADERS, adjective="TXT_KEY_ADJECTIVE_KASSITE"),
 	Barbarians(-1200, 400, {iSkirmisher: 1, iLightSwordsman: 1}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(-1200, -500, {iSkirmisher: 1}, ((84, 44), (88, 52)), 10, NOMADS, target_area=((84, 44), (91, 52)), adjective="TXT_KEY_ADJECTIVE_ARAMEAN"),
 	Barbarians(-1100, -600, {iLightSwordsman: 1}, ((79, 51), (84, 55)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_PHRYGIAN"),
 	Barbarians(-1000, -600, {iHorseman: 1}, ((85, 54), (92, 60)), 10, INVADERS, target_area=((83, 44), (91, 52)), adjective="TXT_KEY_ADJECTIVE_CIMMERIAN"),
 	Barbarians(-1000, 400, {iMedjay: 1}, ((78, 35),	(82, 40)), 8, MINORS, iAlternativeCiv=iNubia, adjective="TXT_KEY_ADJECTIVE_NUBIAN"),
-	Barbarians(-800, -300, {iHorseman: 2}, ((78, 57), (102, 63)), 8, NOMADS, target_area=((83, 44), (104, 57)), adjective="TXT_KEY_ADJECTIVE_SCYTHIAN"),
+	Barbarians(-400, -100, {iHorseman: 2}, ((78, 57), (102, 63)), 8, NOMADS, target_area=((83, 44), (104, 57)), adjective="TXT_KEY_ADJECTIVE_SCYTHIAN"),
 	# Barbarians(-650, -50, {iGallicWarrior: 1}, ((56, 55), (75, 61)), 6, INVADERS, target_area=((64, 49), (79, 57))),
 	# Barbarians(-650, -50, {iAxeman: 1}, ((69, 56), (78, 61)), 8, INVADERS, target_area=((73, 49), (84, 55)), adjective="TXT_KEY_ADJECTIVE_GALATIAN"),
 	# Barbarians(-650, -50, {iLightSwordsman: 1}, ((54, 50), (58, 54)), 10, INVADERS, target_area=((54, 48), (62, 54)), adjective="TXT_KEY_ADJECTIVE_CELTIBERIAN"),
@@ -475,7 +476,6 @@ barbarians = [
 	Barbarians(-400, -150, {iHorseArcher: 3}, ((96, 42), (105, 49)), 9, INVADERS, target_area=((98, 42), (112, 49)), adjective="TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"),
 	Barbarians(-350, 200, {iLightSwordsman: 1}, ((113, 47), (117, 54)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_TIBETAN"),
 	Barbarians(-300, 400, {iHorseArcher: 3}, ((113, 55), (128, 62)), 7, NOMADS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_XIONGNU", promotions=(iDesertAdaptation, iSteppeAdaptation)),
-	Barbarians(-300, 400, {iHorseArcher: 2}, ((79, 58), (88, 63)), 8, NOMADS, target_area=((65, 50), (84, 58)), adjective="TXT_KEY_ADJECTIVE_SARMATIAN"),
 	Barbarians(-300, 300, {iCamelRider: 1}, ((86, 38), (91, 45)), 10, NOMADS, target_area=((77, 39), (91, 50)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
 	#Barbarians(-250, 300, {iAxeman: 3}, ((64, 59), (75, 65)), 10, INVADERS, target_area=((58, 52), (71, 62)), adjective="TXT_KEY_ADJECTIVE_GERMANIC"),
 	#Barbarians(-250, 300, {iAxeman: 2}, ((64, 59), (75, 65)), 12, INVADERS, target_area=((58, 52), (71, 62)), adjective="TXT_KEY_ADJECTIVE_GERMANIC"),
@@ -484,6 +484,7 @@ barbarians = [
 	Barbarians(-200, 300, {iCamelRider: 1}, ((56, 39), (71, 44)), 9, NOMADS, target_area=((54, 34), (76, 48)), adjective="TXT_KEY_ADJECTIVE_BERBER"),
 	Barbarians(-200, 700, {iWarElephant: 1}, ((103, 37), (118, 42)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_HINDI"),
 	Barbarians(-200, 700, {iWarGalley: 1}, ((84, 22), (95, 37)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
+	Barbarians(-100, 400, {iHorseArcher: 2}, ((79, 58), (88, 63)), 8, NOMADS, target_area=((65, 50), (84, 58)), adjective="TXT_KEY_ADJECTIVE_SARMATIAN"),
 	Barbarians(-50, 700, {iWarGalley: 1}, ((54, 42), (69, 50)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_BARBARY"),
 	Barbarians(0, 200, {iAxeman: 2}, ((101, 37), (112, 45)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_HINDI"),
 	Barbarians(0, 800, {iSwordsman: 2}, ((116, 37), (119, 43)), 10, NATIVES, target_area=((64, 56), (72, 65)), adjective="TXT_KEY_ADJECTIVE_MON"),

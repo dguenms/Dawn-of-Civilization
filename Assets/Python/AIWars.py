@@ -288,10 +288,10 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 			iExtra += 1
 			
 		if not player(iPlayer).isHuman():
-			if iCiv in [iGreece, iRome, iMongols] and iPreferredTarget != iCelts:
+			if iCiv in [iRome, iMongols] and iPreferredTarget != iCelts:
 				iExtra += 2
 			
-			elif iCiv == iTurks:
+			elif iCiv in [iGreece, iTurks]:
 				iExtra += 1
 		
 		tPlot = findNearestLandPlot(city, iPlayer)
