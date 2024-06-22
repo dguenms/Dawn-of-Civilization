@@ -2176,7 +2176,7 @@
 		<!-- COCOA crops -->
 		<ArtRef Name="art:cocoa_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cocoa/Spices_LSystem.nif::2x2_01_Spice_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2187,7 +2187,7 @@
 		</ArtRef>
 		<ArtRef Name="art:Cocoa_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cocoa/Spices_LSystem.nif::2x2_01_Spice_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2199,7 +2199,7 @@
 		</ArtRef>
 		<ArtRef Name="art:Cocoa_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cocoa/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2210,7 +2210,7 @@
 		</ArtRef>
 		<ArtRef Name="art:COCOA_ORCHARD_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cocoa/Spices_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -2218,7 +2218,7 @@
 		</ArtRef>
 		<ArtRef Name="art:COCOA_ORCHARD_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cocoa/Spices_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -3576,7 +3576,7 @@
 		</ArtRef>
 		<!-- Cocoa -->
 		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COCOA_ORCHARD_GRINDER</Attribute>
@@ -3589,8 +3589,8 @@
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
-			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COCOA</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COCOA_ORCHARD_GRINDER</Attribute>
