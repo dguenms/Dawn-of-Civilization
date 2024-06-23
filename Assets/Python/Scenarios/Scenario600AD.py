@@ -18,8 +18,8 @@ lCivilizations = [
 		iNubia,
 		iGold=50,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iMonarchy, iVassalage, iSlavery, iRedistribution, iMonasticism],
-		techs=techs.column(5).including(iNobility, iArchitecture),
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iMonasticism],
+		techs=techs.column(5).including(iArchitecture, iEthics),
 	),
 	Civilization(
 		iIndia,
@@ -52,14 +52,14 @@ lCivilizations = [
 		iKorea,
 		iGold=200,
 		iStateReligion=iBuddhism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism],
+		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iSyncretism],
 		techs=techs.column(6).including(iMachinery).without(iScholarship),
 	),
 	Civilization(
 		iKhmer,
 		iGold=50,
 		iStateReligion=iHinduism,
-		lCivics=[iDespotism, iCitizenship, iCasteSystem, iRedistribution, iMonasticism, iThalassocracy],
+		lCivics=[iDespotism, iCasteSystem, iRedistribution, iSyncretism, iThalassocracy],
 		techs=techs.column(5).including(iArtisanry).without(iLaw, iMedicine),
 	),
 	Civilization(
@@ -72,14 +72,14 @@ lCivilizations = [
 		iByzantium,
 		iGold=400,
 		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
+		lCivics=[iDespotism, iCitizenship, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).including(iFortification,iMachinery, iCivilService)
 	),
 	Civilization(
 		iFrance,
 		iGold=150,
 		iStateReligion=iCatholicism,
-		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
+		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
 		techs=techs.column(6).without(iSteel, iArtisanry, iPolitics)
 	),
 	Civilization(
@@ -93,7 +93,7 @@ lCivilizations = [
 		iJapan,
 		iGold=300,
 		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iDeification, iThalassocracy],
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iDeification, iThalassocracy],
 		techs=techs.column(6).without(iPolitics, iScholarship)
 	),
 	Civilization(
@@ -106,7 +106,7 @@ lCivilizations = [
 	Civilization(
 		iTurks,
 		iGold=100,
-		lCivics=[iDespotism, iVassalage, iSlavery, iMerchantTrade, iHegemony],
+		lCivics=[iDespotism, iSlavery, iMerchantTrade, iHegemony],
 		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),

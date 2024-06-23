@@ -204,7 +204,7 @@ lCivilizations = [
 		iGold=800,
 		iStateReligion=iProtestantism,
 		lCivics=[iRepublic, iBureaucracy, iIndividualism, iFreeEnterprise, iSecularism, iColonialism],
-		techs=techs.column(11).without(iHorticulture, iScientificMethod),
+		techs=techs.column(11).without(iHorticulture),
 		dAttitudes={iFrance: 2, iPortugal: -2, iOttomans: -2}
 	),
 	Civilization(
