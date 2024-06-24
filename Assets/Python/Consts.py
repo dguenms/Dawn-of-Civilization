@@ -1059,7 +1059,7 @@ rLadoga, rOnega, rVan, rSevan, rUrmia, rAralSea, rTengiz, rBalkhash, rIssykKul, 
 rZaysan, rUvs, rKhovsgol, rBaikal, rTaymyr, rHulun, rQinghai, rLopNur, rSiling, rDongting, 
 rPoyang, rTai, rTonleSap, rSetoInlandSea, rEyre, rChad, rTana, rTurkana, rNyanza, rMwitanzege, 
 rRweru, rTanganyika, rMweru, rBangweulu, rRukwa, rMalawi, rGreatBear, rTidee, rAthabasca, rReindeer, 
-rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rOntario, rMistassini, rLobstick, 
+rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rLakeOntario, rMistassini, rLobstick, 
 rGreatSalt, rNicaragua, rTiticaca, rMarChiquita, rKhanka) = range(100, 100 + iNumWaterRegions)
 
 lEuropeProper = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe]
@@ -1120,17 +1120,6 @@ iTaiga, iSavanna) = range(iNumFeatures)
 iNumTerrains = 19
 (iGrass, iPlains, iDesert, iTundra, iSnow, iCoast, iOcean, iTerrainPeak, iTerrainHill, iMarsh, 
 iLagoon, iArcticCoast, iSemidesert, iSteppe, iMoorland, iSaltFlat, iSaltLake, iAtoll, iTerrainSavanna) = range(iNumTerrains)
-
-iGrass = 0
-iPlains = 1
-iDesert = 2
-iTundra = 3
-iSnow = 4
-iCoast = 5
-iOcean = 6
-iTerrainPeak = 7
-iTerrainHills = 8
-iMarsh = 9
 
 #Plague
 iImmunity = 20
