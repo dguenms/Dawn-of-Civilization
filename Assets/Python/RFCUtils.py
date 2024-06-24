@@ -827,23 +827,19 @@ def toggleStabilityOverlay(iPlayer = -1):
 	# apply the highlight
 	for plot in plots.all().land():
 		if bDebug or plot.isRevealed(iTeam, False):
-			if plot.isPlayerCore(iPlayer):
-				iPlotType = iCore
-			else:
-				iSettlerValue = plot.getPlayerSettlerValue(iPlayer)
-				if bDebug and iSettlerValue == 0:
-					iPlotType = iAIForbidden
-					if othercivs.any(plot.isCore):
-						iPlotType = iContest
-					else:
-						iPlotType = iHistorical
-				elif othercivs.any(plot.isCore):
-					iPlotType = iForeignCore
+			if not plot.isPeak() and not plot.isWater():
+				if plot.isPlayerCore(iPlayer):
+					iPlotType = iCoreArea
+				elif plot.getPlayerSettlerValue(iPlayer) > 0:
+					iPlotType = iHistoricalArea
+				elif plot.getPlayerWarValue(iPlayer) > 1:
+					iPlotType = iConquestArea
 				else:
-					iPlotType = -1
-			if iPlotType != -1:
+					iPlotType = iForeignArea
+			
 				szColor = lStabilityColors[iPlotType]
-				engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType, szColor, 0.7)
+				engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000 + iPlotType, szColor, 0.7)
+
 				
 # used: CvScreensInterface, RFCUtils, CvPlatyBuilderScreen
 def removeStabilityOverlay():
