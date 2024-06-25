@@ -5008,7 +5008,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 			if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT)
 			{
-				if ((pPlot->getUpgradeProgress() > 0) || pPlot->isBeingWorked())
+				if ((pPlot->getUpgradeProgress() > 0) || pPlot->isBeingWorked() || (pPlot->isOwned() && GET_PLAYER(pPlot->getOwnerINLINE()).isFreeImprovementUpgrade()))
 				{
 					iTurns = pPlot->getUpgradeTimeLeft(eImprovement, eRevealOwner);
 
