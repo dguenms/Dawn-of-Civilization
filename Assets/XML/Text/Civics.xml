@@ -691,11 +691,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CASTE_SYSTEM_STRATEGY</Tag>
-		<English>Faster improvement construction; extra food from Plantations</English>
-		<French>Vitesse de construction des am&#233;liorations augment&#233;e ; les plantations rapportent de la nourriture suppl&#233;mentaire</French>
-		<German>Faster improvement construction; extra food from Plantations</German>
-		<Italian>Faster improvement construction; extra food from Plantations</Italian>
-		<Spanish>Faster improvement construction; extra food from Plantations</Spanish>
+		<English>Extra health in all cities; extra food from Plantations; double production for weavers, jewellers, grocers, and pharmacies</English>
+		<French>Extra health in all cities; extra food from Plantations; double production for weavers, jewellers, grocers, and pharmacies</French>
+		<German>Extra health in all cities; extra food from Plantations; double production for weavers, jewellers, grocers, and pharmacies</German>
+		<Italian>Extra health in all cities; extra food from Plantations; double production for weavers, jewellers, grocers, and pharmacies</Italian>
+		<Spanish>Extra health in all cities; extra food from Plantations; double production for weavers, jewellers, grocers, and pharmacies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUREAUCRACY</Tag>
