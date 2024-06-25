@@ -435,11 +435,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MANORIALISM_STRATEGY</Tag>
-		<English>Extra city unhealthiness; extra production from pastures; extra commerce from farms and paddy fields</English>
-		<French>Extra city unhealthiness; extra production from pastures; extra commerce from farms and paddy fields</French>
-		<German>Extra city unhealthiness; extra production from pastures; extra commerce from farms and paddy fields</German>
-		<Italian>Extra city unhealthiness; extra production from pastures; extra commerce from farms and paddy fields</Italian>
-		<Spanish>Extra city unhealthiness; extra production from pastures; extra commerce from farms and paddy fields</Spanish>
+		<English>Faster improvement construction; extra production from pastures; extra commerce from farms and paddy fields</English>
+		<French>Faster improvement construction; extra production from pastures; extra commerce from farms and paddy fields</French>
+		<German>Faster improvement construction; extra production from pastures; extra commerce from farms and paddy fields</German>
+		<Italian>Faster improvement construction; extra production from pastures; extra commerce from farms and paddy fields</Italian>
+		<Spanish>Faster improvement construction; extra production from pastures; extra commerce from farms and paddy fields</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_INDIVIDUALISM</Tag>
