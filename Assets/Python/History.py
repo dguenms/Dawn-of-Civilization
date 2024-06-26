@@ -232,6 +232,10 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
+					if iNewWorldCiv in [iToltecs, iAztecs]:
+						data.dFirstContactConquerors[iToltecs] = True
+						data.dFirstContactConquerors[iAztecs] = True
+					
 					events.fireEvent("conquerors", iOldWorldPlayer, iNewWorldPlayer)
 					
 					newWorldPlots = plots.start(tContactZoneTL).end(tContactZoneBR).without(lArrivalExceptions)
