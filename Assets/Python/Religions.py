@@ -111,7 +111,7 @@ def checkSchism(iGameTurn):
 	
 	stateReligionCities, noStateReligionCities, differentStateReligionCities = majorCities.buckets(lambda city: player(city).getStateReligion() == iOrthodoxy, lambda city: player(city).getStateReligion() == -1)
 	
-	if not stateReligionCities: return
+	if stateReligionCities.count() <= 1: return
 	if not noStateReligionCities and not minorCities: return
 	
 	if stateReligionCities >= noStateReligionCities + minorCities: return
