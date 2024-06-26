@@ -363,10 +363,14 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	if player(iPlayer).isHuman():
 		iNumCities = min(3, iNumCities)
 		
-	targetPlots = plots.all().coastal().where(lambda p: p.getRegionID() in lAsia or (iCiv == iPortugal and p.getRegionID() in lSubSaharanAfrica))
+	lColonialRegions = [iRegion for iRegion in lAsia if iRegion != rLevant]
+	if iCiv == iPortugal:
+		lColonialRegions += lSubSaharanAfrica
+		
+	targetPlots = plots.all().coastal().regions(*lColonialRegions)
 	
 	cityPlots, emptyPlots = targetPlots.split(CyPlot.isCity)
-	targetCities = cityPlots.notowner(iPlayer).highest(iNumCities, metric=lambda p: p.getWarValue(iCiv))
+	targetCities = cityPlots.notowner(iPlayer).where(lambda p: p.getWarValue(iCiv) > 1).highest(iNumCities, metric=lambda p: p.getWarValue(iCiv))
 	
 	if bEmpty:
 		nearbyCityPlots, settlePlots = emptyPlots.split(lambda p: plots.surrounding(p).any(CyPlot.isCity))
