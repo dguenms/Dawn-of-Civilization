@@ -190,6 +190,13 @@ def checkRaiders():
 			giveRaiders(iNorse)
 
 
+@handler("BeginGameTurn")
+def createSilkRoute():
+	if year() == year(-75):
+		for plot in plots.of(lSilkRoute):
+			plot.setRouteType(iRouteRoad)
+
+
 ### FIRST CONTACT ###
 
 @handler("firstContact")
