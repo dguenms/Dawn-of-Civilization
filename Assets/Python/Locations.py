@@ -11,6 +11,7 @@ iTurkicEastWestBorder = 106
 # History
 
 lKushanRoad = [(99, 51), (100, 50), (101, 49)]
+lHejazRoad = [(84, 44), (84, 43), (85, 42), (85, 41), (86, 40)]
 
 # Rise
 

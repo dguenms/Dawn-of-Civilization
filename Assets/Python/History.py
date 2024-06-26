@@ -44,6 +44,13 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 ### FIRST CITY ###
 
 @handler("firstCity")
+def createHejazRoad(city):
+	if civ(city) == iArabia:
+		for plot in plots.of(lHejazRoad):
+			plot.setRouteType(iRouteRoad)
+
+
+@handler("firstCity")
 def createAdditionalPolishSettler(city):
 	iPlayer = city.getOwner()
 	if city.isCapital() and civ(iPlayer) == iPoland and not player(iPlayer).isHuman():

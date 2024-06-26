@@ -38343,7 +38343,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
