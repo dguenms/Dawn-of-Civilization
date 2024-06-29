@@ -1746,10 +1746,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
-    int tempX = pPlot->getX_INLINE();
-	int tempY = pPlot->getY_INLINE();
-
 	int iSettlerMapValue = pPlot->getSettlerValue(getID());
+	int iNearbyCities;
+	bool bNearbySameValue;
 
 	if (!canFound(iX, iY))
 	{
@@ -1918,6 +1917,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}
 
 	iBadTile = 0;
+	iNearbyCities = 0;
+	bNearbySameValue = false;
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
@@ -1935,6 +1936,16 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			if (getCurrentEra() == ERA_ANCIENT)
 			{
 				return 0;
+			}
+		}
+
+		if (pLoopPlot->isCity() && pLoopPlot->getOwnerINLINE() == getID())
+		{
+			iNearbyCities++;
+
+			if (pLoopPlot->getSettlerValue(getID()) >= iSettlerMapValue)
+			{
+				bNearbySameValue = true;
 			}
 		}
 
@@ -1966,6 +1977,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
                 }
             }*/
 		}
+	}
+
+	if (bNearbySameValue && iNearbyCities > 1)
+	{
+		return 0;
 	}
 
 	iBadTile /= 2;
