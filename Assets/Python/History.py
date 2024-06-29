@@ -353,7 +353,7 @@ def recordExplorationTurn(iTech, iTeam, iPlayer):
 @handler("techAcquired")
 def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 	if iTech == iRailroad and civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
-		enemyCities = cities.region(rCalifornia).notowner(iAmerica)
+		enemyCities = cities.region(rCalifornia).notowner(iAmerica).where(lambda city: team(iTeam).canDeclareWar(city.getTeam()))
 		
 		for iEnemy in enemyCities.owners():
 			team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
