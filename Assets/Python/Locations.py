@@ -44,6 +44,9 @@ tMalaya = ((119, 30), (120, 32))
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tWestAfrica = ((54, 31), (65, 40))
 
+# first Inca goal: build a road along the Andean coast by 1550 AD
+lAndeanRoadExceptions = [(28, 33), (21, 32)]
+
 # second Canadian goal: control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
 iCanadianNorthSouthBorder = 62
 iCanadianEastWestBorder = 8
