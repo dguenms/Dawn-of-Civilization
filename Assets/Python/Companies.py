@@ -167,6 +167,7 @@ def getCityValue(city, iCompany):
 
 	elif iCompany == iTradingCompany:
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iCoffeehouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCustomsHouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iWarehouse)): iValue += 1
@@ -208,7 +209,7 @@ def getCityValue(city, iCompany):
 
 	elif iCompany == iLuxuryIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
-		if city.hasBuilding(unique_building(iOwner, iCoffeehouse)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iJeweller)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iDepartmentStore)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHotel)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iNationalGallery)): iValue += 3
@@ -247,12 +248,6 @@ def getCityValue(city, iCompany):
 						iTempValue += city.getNumBonuses(iBonus) * 2
 				else:
 					iTempValue += city.getNumBonuses(iBonus) * 2
-	
-	# # Brazilian UP: sugar counts as oil for Oil Industry
-	# if iOwnerCiv == iBrazil and iCompany == iOilIndustry:
-		# if city.getNumBonuses(iSugar) > 0:
-			# bFound = True
-			# iTempValue += city.getNumBonuses(iSugar) * 3
 				
 	if not bFound: 
 		return -1

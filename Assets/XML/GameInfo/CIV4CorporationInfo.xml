@@ -271,11 +271,12 @@
 			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
 				<BonusType>BONUS_MARBLE</BonusType>
-				<BonusType>BONUS_FUR</BonusType>
 				<BonusType>BONUS_GOLD</BonusType>
 				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_PEARL</BonusType>
 				<BonusType>BONUS_SILVER</BonusType>
+				<BonusType>BONUS_AMBER</BonusType>
+				<BonusType>BONUS_JADE</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
