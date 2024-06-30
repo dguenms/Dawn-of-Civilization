@@ -62931,6 +62931,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=34
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
