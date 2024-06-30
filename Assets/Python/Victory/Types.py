@@ -151,6 +151,15 @@ class AmountType(Type):
 	
 	def format_func(self, argument, **options):
 		return str(argument)
+
+
+class NumberType(Type):
+	
+	def validate_func(self, argument):
+		return isinstance(argument, int)
+	
+	def format_func(self, argument, **options):
+		return str(argument)
 		
 		
 class CountType(Type):
@@ -345,6 +354,7 @@ CULTURELEVEL = CultureLevelType("CultureLevel")
 ERA = InfoType("Era", infos.era)
 FEATURE = InfoType("Feature", infos.feature)
 IMPROVEMENT = InfoType("Improvement", infos.improvement)
+NUMBER = NumberType("Number")
 PERCENTAGE = PercentageType("Percentage")
 PROJECT = InfoType("Project", infos.project)
 RELIGION = InfoType("Religion", infos.religion)

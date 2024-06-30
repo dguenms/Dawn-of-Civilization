@@ -12,15 +12,15 @@ class CityCulture(CityRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_CULTURE"
 	
 	def __init__(self, city, iCulture, **options):
-		CityRequirement.__init__(self, city, iCulture, **options)
+		CityRequirement.__init__(self, city, scale(iCulture), **options)
 		
 		self.iCulture = iCulture
 	
 	def fulfilled_city(self, city):
-		return city.getCulture(city.getOwner()) >= self.iCulture
+		return city.getCulture(city.getOwner()) >= scale(self.iCulture)
 	
 	def progress_city(self, city):
-		return "%s / %s" % (city.getCulture(city.getOwner()), self.iCulture)
+		return "%s / %s" % (city.getCulture(city.getOwner()), scale(self.iCulture))
 	
 
 # Third Babylonian UHV goal
@@ -88,7 +88,7 @@ class CityDifferentGreatPeopleCount(CityRequirement):
 # Third Babylonian UHV goal
 class CityPopulation(CityRequirement):
 
-	TYPES = (CITY, AMOUNT)
+	TYPES = (CITY, NUMBER)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_POPULATION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_POPULATION"
