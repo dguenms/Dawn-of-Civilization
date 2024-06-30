@@ -200,10 +200,10 @@ class CvCorporationScreen:
 						szListLabels.append(szList)
 						szList = u""
 						
-			iActivePlayer = CyGame().getActivePlayer()
-			if civ(iActivePlayer) == iBrazil and i == companies.iOilIndustry:
-				eBonus = iSugar
-				szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
+			# iActivePlayer = CyGame().getActivePlayer()
+			# if civ(iActivePlayer) == iBrazil and i == companies.iOilIndustry:
+				# eBonus = iSugar
+				# szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
 			if len(szList) > 0:
 				szListLabels.append(szList)
@@ -369,15 +369,15 @@ class CvCorporationScreen:
 					iTotalResources += iAvailableBonus
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
-			if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
-				eBonus = iSugar
-				szList = u""
-				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
-				szList += u" : "
-				iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
-				iTotalResources += iAvailableBonus
-				szList += u"%d" % iAvailableBonus
-				szListLabels.append(szList)
+			# if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
+				# eBonus = iSugar
+				# szList = u""
+				# szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
+				# szList += u" : "
+				# iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+				# iTotalResources += iAvailableBonus
+				# szList += u"%d" % iAvailableBonus
+				# szListLabels.append(szList)
 			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_TOTAL_RESOURCES", (iTotalResources,)))
 			szListLabels.append(localText.getText("TXT_KEY_CORPORATION_MAX_CONSUMABLE_BONUSES_ADVISOR", (gc.getCorporationInfo(iLinkCorporation).getMaxConsumableBonuses(),)))
 			

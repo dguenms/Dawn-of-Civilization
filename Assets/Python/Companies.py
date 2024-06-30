@@ -248,11 +248,11 @@ def getCityValue(city, iCompany):
 				else:
 					iTempValue += city.getNumBonuses(iBonus) * 2
 	
-	# Brazilian UP: sugar counts as oil for Oil Industry
-	if iOwnerCiv == iBrazil and iCompany == iOilIndustry:
-		if city.getNumBonuses(iSugar) > 0:
-			bFound = True
-			iTempValue += city.getNumBonuses(iSugar) * 3
+	# # Brazilian UP: sugar counts as oil for Oil Industry
+	# if iOwnerCiv == iBrazil and iCompany == iOilIndustry:
+		# if city.getNumBonuses(iSugar) > 0:
+			# bFound = True
+			# iTempValue += city.getNumBonuses(iSugar) * 3
 				
 	if not bFound: 
 		return -1
