@@ -2697,6 +2697,13 @@ void CvUnitAI::AI_pillageMove()
 		return;
 	}
 
+	if (isBarbarian() || getCivilizationType() == NATIVE)
+	{
+		AI_setUnitAIType(UNITAI_ATTACK_CITY);
+		AI_attackCityMove();
+		return;
+	}
+
 	if (AI_choke(1))
 	{
 		return;
