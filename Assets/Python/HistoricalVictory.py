@@ -528,17 +528,20 @@ dGoals = {
 	),
 	iEngland: (
 		All(
-			CityCount(plots.regions(*lNorthAmerica).named(NORTH_AMERICA), 6),
-			CityCount(plots.regions(*(lSouthAmerica + lCentralAmerica)).named(SOUTH_CENTRAL_AMERICA), 4),
-			CityCount(plots.regions(*lAfrica).named(AFRICA), 3),
-			CityCount(plots.regions(*lIndia).named(INDIA), 3),
+			CityCount(
+				(plots.regions(*lNorthAmerica).named(NORTH_AMERICA), 6),
+				(plots.regions(*(lSouthAmerica + lCentralAmerica)).named(SOUTH_CENTRAL_AMERICA), 4),
+				(plots.regions(*lAfrica).named(AFRICA), 3),
+			),
 			UnitCombatLevelCount(UnitCombatTypes.UNITCOMBAT_NAVAL, 3, 25),
 			by=1770,
 		),
 		All(
-			CityCount(plots.regions(*lAsia).named(ASIA), 12),
-			CityCount(plots.regions(*lAfrica).named(AFRICA), 10),
-			CityCount(plots.regions(*lOceania).named(OCEANIA), 6),
+			CityCount(
+				(plots.regions(*lAsia).named(ASIA), 12),
+				(plots.regions(*lAfrica).named(AFRICA), 10),
+				(plots.regions(*lOceania).named(OCEANIA), 6),
+			),
 			RouteConnection([iRouteRailroad], plots.regions(rEgypt, rMaghreb).coastal().named(NORTH_AFRICA), plots.regions(rCape).named(SOUTH_AFRICA)),
 			by=1880,
 		),
