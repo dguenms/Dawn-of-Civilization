@@ -148,7 +148,7 @@ class ConqueredCities(TrackRequirement):
 			areas[self.inside.name()] = self.inside.create()
 		
 		if self.outside is not None:
-			areas[self.outside.name()] = plots.all().without(self.outside.create())
+			areas[text("TXT_KEY_VICTORY_OUTSIDE_OF", AREA.format(self.outside))] = plots.all().without(self.outside.create())
 		
 		return areas
 
