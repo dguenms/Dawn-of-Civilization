@@ -367,6 +367,9 @@ class Barbarians(object):
 		if self.pattern in [SEA_INVADERS, PIRATES]:
 			if plot.getTerrainType() not in [iCoast, iArcticCoast]:
 				return False
+			
+			if map.getArea(plot.getArea()).isLake():
+				return False
 				
 		else:
 			if plot.isWater():
