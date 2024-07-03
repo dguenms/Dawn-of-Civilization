@@ -40747,7 +40747,7 @@ BeginPlot
 	x=90,y=55
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
