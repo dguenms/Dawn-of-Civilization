@@ -279,8 +279,8 @@ dRemovedResourcesDict = {
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
 	(75, 58)  : 1400, # Gold in Transylvania
-	(32, 42)  : 1600, # Gold in Hispaniola
 	(92, 60)  : 1600, # Silk in the Volga Delta
+	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
 	(53, 66)  : 1850, # Potato in Ireland
 }
