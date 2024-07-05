@@ -572,11 +572,11 @@ dGoals = {
 		),
 	),
 	iRus: (
-		ReligionPopulationCount(iOrthodoxy, 30, by=1200),
 		DefeatedUnits(civs(iBarbarian), 25, by=1250),
+		TradeRouteCommerce(800, by=1300),
 		All(
-			ResourceCount((iFur, 4), (iSalt, 3)),
-			TradeGold(200),
+			ResourceCount((sum(lHappinessResources).named(HAPPINESS_RESOURCES), 6), (iSalt, 3)),
+			TradeGold(600),
 			by=1450,
 		),
 	),
