@@ -2428,9 +2428,15 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		int iNumDesertTiles = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
+			switch (getCityIndexPlot(iI)->getTerrainType())
 			{
+			case TERRAIN_DESERT:
+			case TERRAIN_SEMIDESERT:
+			case TERRAIN_SALTFLAT:
 				iNumDesertTiles++;
+				break;
+			default:
+				;
 			}
 		}
 
