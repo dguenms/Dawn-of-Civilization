@@ -1023,6 +1023,8 @@ public:
 	CvSelectionGroup* addSelectionGroup();
 	void deleteSelectionGroup(int iID);
 
+	void separateAttackCitySelectionGroups();
+
 	// pending triggers iteration
 	EventTriggeredData* firstEventTriggered(int *pIterIdx, bool bRev=false) const;
 	EventTriggeredData* nextEventTriggered(int *pIterIdx, bool bRev=false) const;

@@ -611,6 +611,9 @@ public:
 
 	bool isExisting();
 
+	void AI_unitUpdate();
+	void separateAttackCitySelectionGroups();
+
 private:
 	CvPlayer* m_pPlayer;
 };

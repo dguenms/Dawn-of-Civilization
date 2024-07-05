@@ -144,5 +144,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 
 		.def("isExisting", &CyPlayer::isExisting, "bool ()")
 		.def("changeBonusImport", &CyPlayer::changeBonusImport, "void (int eBonus, int iChange)")
+		.def("AI_unitUpdate", &CyPlayer::AI_unitUpdate, "void ()")
+		.def("separateAttackCitySelectionGroups", &CyPlayer::separateAttackCitySelectionGroups, "void ()")
 		;
 }

@@ -14718,6 +14718,26 @@ void CvPlayer::deleteSelectionGroup(int iID)
 	FAssertMsg(bRemoved, "could not find group, delete failed");
 }
 
+void CvPlayer::separateAttackCitySelectionGroups()
+{
+	int iLoop;
+	for (CvSelectionGroup* pGroup = firstSelectionGroup(&iLoop); pGroup != NULL; pGroup = nextSelectionGroup(&iLoop))
+	{
+		if (pGroup->getHeadUnit() != NULL)
+		{
+			switch (pGroup->getHeadUnit()->AI_getUnitAIType())
+			{
+			case UNITAI_ATTACK_CITY:
+			case UNITAI_ATTACK_CITY_LEMMING:
+				pGroup->AI_makeForceSeparate();
+				break;
+			default:
+				;
+			}
+		}
+	}
+}
+
 EventTriggeredData* CvPlayer::firstEventTriggered(int *pIterIdx, bool bRev) const
 {
 	return !bRev ? m_eventsTriggered.beginIter(pIterIdx) : m_eventsTriggered.endIter(pIterIdx);
@@ -25345,7 +25365,16 @@ PeriodTypes CvPlayer::getPeriod() const
 
 void CvPlayer::setBirthProtected(bool bNewValue)
 {
-	m_bBirthProtected = bNewValue;
+	if (isBirthProtected() != bNewValue)
+	{
+		m_bBirthProtected = bNewValue;
+
+		if (!isBirthProtected())
+		{
+			separateAttackCitySelectionGroups();
+			AI_unitUpdate();
+		}
+	}
 }
 
 bool CvPlayer::isBirthProtected() const
