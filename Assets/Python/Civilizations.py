@@ -462,7 +462,7 @@ lCivilizations = [
 		iInca,
 		iGold=700,
 		lCivics=[iMonarchy, iSlavery, iRedistribution, iDeification],
-		techs=techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood).without(iSeafaring, iAlloys, iRiding, iShipbuilding)
+		techs=techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood).without(iSeafaring, iRiding, iShipbuilding)
 	),
 	Civilization(
 		iItaly,
@@ -922,7 +922,7 @@ dStartingUnits = CivDict({
 	iInca: {
 		iSettle: 1,
 		iWork: 4,
-		iAttack: 4,
+		iCityAttack: 4,
 		iDefend: 2,
 		# if not human: 1 Settler
 	},
@@ -1141,6 +1141,9 @@ dExtraAIUnits = CivDict({
 		iSiege: 6,
 		iHarass: 5,
 		iExplore: 2,
+	},
+	iInca: {
+		iCityAttack: 2,
 	},
 	iIran: {
 		iAttack: 6,
