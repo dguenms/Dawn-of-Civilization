@@ -175,7 +175,7 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 	iPowerRatioThreshold = player(iAttacker).isHuman() and 80 or 50
 	iPowerRatio = 100 * iDefenderPower / iAttackerPower
 	
-	iMaxAdditionalPower = 200
+	iMaxAdditionalPower = 50
 	
 	if iPowerRatio < iPowerRatioThreshold:
 		iPowerRatioDifference = iPowerRatioThreshold - iPowerRatio
