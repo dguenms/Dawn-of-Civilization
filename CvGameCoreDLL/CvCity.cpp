@@ -2195,7 +2195,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 		bool bException = false;
 
-		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_BALKANS) && (iCityContinent == 0 || iCityContinent == 1))
+		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_GREECE) && (iCityContinent == 0 || iCityContinent == 1))
 		{
 			bException = true;
 		}
