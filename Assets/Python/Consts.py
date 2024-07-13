@@ -1166,7 +1166,7 @@ iNumImpacts = 5
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 lLateColonyCivs = lTradingCompanyCivs + [iGermany]
 
-lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRussia]
+lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRus]
 
 (i3000BC, i600AD, i1700AD) = range(3)
 
