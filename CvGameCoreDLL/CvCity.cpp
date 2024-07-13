@@ -6111,7 +6111,7 @@ int CvCity::getHurryCost(bool bExtra, int iProductionLeft, int iHurryModifier, i
 		int iExtraProduction = getExtraProductionDifference(iProduction, iModifier);
 		if (iExtraProduction > 0)
 		{
-			int iAdjustedProd = iProduction * iProduction;
+			uint iAdjustedProd = iProduction * iProduction;
 
 			// round up
 			iProduction = (iAdjustedProd + (iExtraProduction - 1)) / iExtraProduction;
