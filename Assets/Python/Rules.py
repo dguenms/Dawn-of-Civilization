@@ -146,7 +146,7 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 		iWinner = winningUnit.getOwner()
 		if player(iWinner).getNumCities() > 0:
 			city = closestCity(winningUnit, iWinner)
-			if city:
+			if city and distance(winningUnit, city) <= 10:
 				iFood = scale(5)
 				city.changeFood(iFood)
 				
