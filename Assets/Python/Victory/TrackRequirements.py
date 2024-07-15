@@ -562,6 +562,7 @@ class ReligionSpreadCount(TrackRequirement):
 	def increment_religion_spread(self, goal, iReligion, unit):
 		if self.iReligion == iReligion:
 			self.increment()
+			goal.check()
 
 
 class ReligionSpreadPopulationCount(TrackRequirement):
@@ -582,6 +583,7 @@ class ReligionSpreadPopulationCount(TrackRequirement):
 	def accumulate_religion_spread_population(self, goal, iReligion, unit):
 		if self.iReligion == iReligion and city(unit):
 			self.accumulate(city(unit).getPopulation())
+			goal.check()
 	
 
 
