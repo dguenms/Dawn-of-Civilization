@@ -1261,7 +1261,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=33
-	ImprovementType=IMPROVEMENT_SLAVE_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=41,y=34
@@ -1304,7 +1304,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=42,y=31
-	ImprovementType=IMPROVEMENT_SLAVE_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=43,y=21
