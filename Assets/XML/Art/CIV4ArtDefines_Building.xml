@@ -3703,9 +3703,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Floating Market/chinaport.nif</NIF>
+			<NIF>Art/Structures/Buildings/Floating_Market/chinaport.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Floating Market/Button_Floating_Market.dds</Button>
+			<Button>Art/Structures/Buildings/Floating_Market/Button_Floating_Market.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BRAZILIAN_SAMBADROME</Type>
