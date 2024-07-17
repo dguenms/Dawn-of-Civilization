@@ -216,26 +216,8 @@ class Barbarians(object):
 		return data
 	
 	def check(self):
-		if self.can_notify():
-			self.notify()
-	
 		if self.can_spawn():
 			self.spawn()
-	
-	def can_notify(self):
-		if self.iStart == turn():
-			affected_area = plots.rectangle(self.area) + plots.rectangle(self.area)
-			if affected_area.expand(3).owner(active()):
-				return True
-		
-		return False
-	
-	def notify(self):
-		adjective_text = text_if_exists(self.adjective, otherwise="TXT_KEY_ADJECTIVE_BARBARIAN")
-		unit = infos.unit(self.units.items()[0][0])
-		location = plots.rectangle(self.area).closest(capital(active()))
-		
-		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=location)
 	
 	def can_spawn(self):
 		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
@@ -264,7 +246,9 @@ class Barbarians(object):
 		return periodic(self.iInterval, self)
 	
 	def spawn(self):
-		for iUnit, plot in zip(self.get_spawn_units(), self.get_spawn_plots()):
+		lSpawnPlots = self.get_spawn_plots()
+		
+		for iUnit, plot in zip(self.get_spawn_units(), lSpawnPlots):
 			unit = makeUnit(self.get_owner(), iUnit, plot, self.get_unit_ai(iUnit, plot))
 			
 			data.units[unit].spawn_data = self.spawn_data()
@@ -275,6 +259,10 @@ class Barbarians(object):
 			if self.promotions:
 				for iPromotion in self.promotions:
 					unit.setHasPromotion(iPromotion, True)
+		
+		for plot in lSpawnPlots:
+			if self.can_notify(plot):
+				self.notify(plot)
 	
 	def get_owner(self):
 		if self.pattern == MINORS:
@@ -397,6 +385,21 @@ class Barbarians(object):
 				return False
 		
 		return True
+	
+	def can_notify(self, plot):
+		if turn() <= self.iStart + turns(self.iInterval):
+			if plot.isVisible(player().getTeam(), False):
+				closest = closestCity(plot, owner=active(), same_continent=not plot.isWater(), coastal_only=plot.isWater())
+				if closest and distance(plot, closest) <= 5:
+					return True
+		
+		return False
+	
+	def notify(self, plot):
+		adjective_text = text_if_exists(self.adjective, otherwise="TXT_KEY_ADJECTIVE_BARBARIAN")
+		unit = infos.unit(self.units.items()[0][0])
+		
+		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=plot)
 
 
 minor_cities = [
