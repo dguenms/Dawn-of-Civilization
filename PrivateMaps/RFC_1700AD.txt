@@ -1564,7 +1564,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
@@ -3561,7 +3561,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
@@ -4068,7 +4068,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_ARENA
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_STAR_FORT
@@ -4113,7 +4113,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
@@ -4153,7 +4153,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_STAR_FORT
@@ -9007,7 +9007,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_CHINESE_TAIXUE
+		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
@@ -9463,7 +9463,7 @@ BeginPlot
 		CityPopulation=12
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_CHINESE_TAIXUE
+		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
