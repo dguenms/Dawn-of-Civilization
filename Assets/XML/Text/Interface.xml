@@ -3729,6 +3729,14 @@
 		<Spanish>[ICON_BULLET]%D1_Change free specialists in %d2_NumCities Most Cultured Cities</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_WIDGET_FIRST_DISCOVERED</Tag>
+		<English>First discovered by %s1 in %d2 %s3</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

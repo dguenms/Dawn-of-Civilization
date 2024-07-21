@@ -320,6 +320,9 @@ void CyGamePythonInterface()
 		.def("setPeriod", &CyGame::setPeriod, "int setPeriod(int iCivilization, int iPeriod)")
 
 		.def("getCivilizationHistory", &CyGame::getCivilizationHistory, "int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)")
+
+		.def("getFirstDiscovered", &CyGame::getFirstDiscovered, "int (int iTech)")
+		.def("getFirstDiscoveredTech", &CyGame::getFirstDiscoveredTurn, "int (int iTech)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

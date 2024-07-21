@@ -255,6 +255,7 @@ public:
 
 	void parseWonderLimitHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer);
+	void parseFirstDiscoveredHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer);
 
 protected:
 	
