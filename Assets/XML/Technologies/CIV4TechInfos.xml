@@ -2641,14 +2641,14 @@
 		</TechInfo>
 
 <!-- #11 -->
-<!-- Cost 1200/1200/1350/1350/1350/1500/1500, iAsset 44 -->
+<!-- Cost 1400/1400/1550/1550/1550/1700/1700, iAsset 44 -->
 
 		<TechInfo>
 			<Type>TECH_COMBINED_ARMS</Type>
 			<Description>TXT_KEY_TECH_COMBINED_ARMS</Description>
 			<Civilopedia>TXT_KEY_TECH_COMBINED_ARMS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>1350</iCost>
+			<iCost>1550</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>44</iAsset>
@@ -2685,7 +2685,7 @@
 			<Description>TXT_KEY_TECH_ECONOMICS</Description>
 			<Civilopedia>TXT_KEY_TECH_ECONOMICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>1500</iCost>
+			<iCost>1700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_MERCHANT</FirstFreeUnitClass>
@@ -2719,7 +2719,7 @@
 			<Description>TXT_KEY_TECH_GEOGRAPHY</Description>
 			<Civilopedia>TXT_KEY_TECH_GEOGRAPHY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>1200</iCost>
+			<iCost>1400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iTradeRoutes>1</iTradeRoutes>
@@ -2753,7 +2753,7 @@
 			<Description>TXT_KEY_TECH_SCIENTIFIC_METHOD</Description>
 			<Civilopedia>TXT_KEY_TECH_SCIENTIFIC_METHOD_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>1500</iCost>
+			<iCost>1700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_SCIENTIST</FirstFreeUnitClass>
@@ -2794,7 +2794,7 @@
 			<Description>TXT_KEY_TECH_URBAN_PLANNING</Description>
 			<Civilopedia>TXT_KEY_TECH_URBAN_PLANNING_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>1350</iCost>
+			<iCost>1500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>44</iAsset>
@@ -2846,7 +2846,7 @@
 			<Description>TXT_KEY_TECH_CIVIL_LIBERTIES</Description>
 			<Civilopedia>TXT_KEY_TECH_CIVIL_LIBERTIES_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>1350</iCost>
+			<iCost>1500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>44</iAsset>
@@ -2890,7 +2890,7 @@
 			<Description>TXT_KEY_TECH_HORTICULTURE</Description>
 			<Civilopedia>TXT_KEY_TECH_HORTICULTURE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>1200</iCost>
+			<iCost>1400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>44</iAsset>
@@ -2930,14 +2930,14 @@
 
 
 <!-- #12 -->
-<!-- Cost 1500/1500/1650/1650/1650/1800/1800, iAsset 48  -->
+<!-- Cost 1700/1700/1850/1850/1850/2000/2000, iAsset 48 -->
 
 		<TechInfo>
 			<Type>TECH_REPLACEABLE_PARTS</Type>
 			<Description>TXT_KEY_TECH_REPLACEABLE_PARTS</Description>
 			<Civilopedia>TXT_KEY_TECH_REPLACEABLE_PARTS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>1650</iCost>
+			<iCost>1850</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -2975,7 +2975,7 @@
 			<Description>TXT_KEY_TECH_HYDRAULICS</Description>
 			<Civilopedia>TXT_KEY_TECH_HYDRAULICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>1500</iCost>
+			<iCost>1700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3015,7 +3015,7 @@
 			<Description>TXT_KEY_TECH_PHYSICS</Description>
 			<Civilopedia>TXT_KEY_TECH_PHYSICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>1650</iCost>
+			<iCost>1800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3048,7 +3048,7 @@
 			<Description>TXT_KEY_TECH_GEOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_GEOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>1800</iCost>
+			<iCost>2000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3083,7 +3083,7 @@
 			<Description>TXT_KEY_TECH_MEASUREMENT</Description>
 			<Civilopedia>TXT_KEY_TECH_MEASUREMENT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>1500</iCost>
+			<iCost>1700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3123,7 +3123,7 @@
 			<Description>TXT_KEY_TECH_SOCIOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_SOCIOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>1650</iCost>
+			<iCost>1850</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3166,7 +3166,7 @@
 			<Description>TXT_KEY_TECH_SOCIAL_CONTRACT</Description>
 			<Civilopedia>TXT_KEY_TECH_SOCIAL_CONTRACT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>1650</iCost>
+			<iCost>1850</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_RENAISSANCE</Era>
 			<iAsset>48</iAsset>
@@ -3202,14 +3202,14 @@
 		</TechInfo>
 
 <!-- #13 -->
-<!-- Cost 2000/2000/2250/2250/2250/2500/2500, iAsset 52  -->
+<!-- Cost 2500/2500/2750/2750/2750/3000/3000, iAsset 52 -->
 
 		<TechInfo>
 			<Type>TECH_MACHINE_TOOLS</Type>
 			<Description>TXT_KEY_TECH_MACHINE_TOOLS</Description>
 			<Civilopedia>TXT_KEY_TECH_MACHINE_TOOLS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>2500</iCost>
+			<iCost>3000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3242,7 +3242,7 @@
 			<Description>TXT_KEY_TECH_THERMODYNAMICS</Description>
 			<Civilopedia>TXT_KEY_TECH_THERMODYNAMICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>2250</iCost>
+			<iCost>2750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3275,7 +3275,7 @@
 			<Description>TXT_KEY_TECH_METALLURGY</Description>
 			<Civilopedia>TXT_KEY_TECH_METALLURGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>2250</iCost>
+			<iCost>2750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3313,7 +3313,7 @@
 			<Description>TXT_KEY_TECH_CHEMISTRY</Description>
 			<Civilopedia>TXT_KEY_TECH_CHEMISTRY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>2000</iCost>
+			<iCost>2500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3350,7 +3350,7 @@
 			<Description>TXT_KEY_TECH_BIOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_BIOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>2500</iCost>
+			<iCost>3000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3387,7 +3387,7 @@
 			<Description>TXT_KEY_TECH_REPRESENTATION</Description>
 			<Civilopedia>TXT_KEY_TECH_REPRESENTATION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>2250</iCost>
+			<iCost>2750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_STATESMAN</FirstFreeUnitClass>
@@ -3425,7 +3425,7 @@
 			<Description>TXT_KEY_TECH_NATIONALISM</Description>
 			<Civilopedia>TXT_KEY_TECH_NATIONALISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>2000</iCost>
+			<iCost>2500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
@@ -3461,14 +3461,14 @@
 		</TechInfo>
 
 <!-- #14 -->
-<!-- Cost 2500/2500/2750/2750/2750/3000/3000, iAsset 56  -->
+<!-- Cost 3000/3000/3250/3250/3250/3500/3500, iAsset 56 -->
 
 		<TechInfo>
 			<Type>TECH_BALLISTICS</Type>
 			<Description>TXT_KEY_TECH_BALLISTICS</Description>
 			<Civilopedia>TXT_KEY_TECH_BALLISTICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>2500</iCost>
+			<iCost>3000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3508,7 +3508,7 @@
 			<Description>TXT_KEY_TECH_ENGINE</Description>
 			<Civilopedia>TXT_KEY_TECH_ENGINE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>2750</iCost>
+			<iCost>3250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>60</iAsset>
@@ -3549,7 +3549,7 @@
 			<Description>TXT_KEY_TECH_RAILROAD</Description>
 			<Civilopedia>TXT_KEY_TECH_RAILROAD_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3000</iCost>
+			<iCost>3500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3587,7 +3587,7 @@
 			<Civilopedia>TXT_KEY_TECH_ELECTRICITY_PEDIA</Civilopedia>
 			<Help>TXT_KEY_TECH_ELECTRICITY_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>3000</iCost>
+			<iCost>3500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3620,7 +3620,7 @@
 			<Description>TXT_KEY_TECH_REFRIGERATION</Description>
 			<Civilopedia>TXT_KEY_TECH_REFRIGERATION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>2500</iCost>
+			<iCost>3000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>60</iAsset>
@@ -3663,7 +3663,7 @@
 			<Description>TXT_KEY_TECH_LABOUR_UNIONS</Description>
 			<Civilopedia>TXT_KEY_TECH_LABOUR_UNIONS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>2750</iCost>
+			<iCost>3250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iFeatureProductionModifier>50</iFeatureProductionModifier>
@@ -3704,7 +3704,7 @@
 			<Description>TXT_KEY_TECH_JOURNALISM</Description>
 			<Civilopedia>TXT_KEY_TECH_JOURNALISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>2750</iCost>
+			<iCost>3250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3740,14 +3740,14 @@
 		</TechInfo>
 
 <!-- #15 -->
-<!-- Cost 3000/3000/3250/3250/3250/3500/3500, iAsset 60  -->
+<!-- Cost 3500/3500/3750/3750/3750/4000/4000, iAsset 60 -->
 
 		<TechInfo>
 			<Type>TECH_PNEUMATICS</Type>
 			<Description>TXT_KEY_TECH_PNEUMATICS</Description>
 			<Civilopedia>TXT_KEY_TECH_PNEUMATICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>3250</iCost>
+			<iCost>3750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>60</iAsset>
@@ -3785,7 +3785,7 @@
 			<Description>TXT_KEY_TECH_ASSEMBLY_LINE</Description>
 			<Civilopedia>TXT_KEY_TECH_ASSEMBLY_LINE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3500</iCost>
+			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_ENGINEER</FirstFreeUnitClass>
@@ -3819,7 +3819,7 @@
 			<Description>TXT_KEY_TECH_REFINING</Description>
 			<Civilopedia>TXT_KEY_TECH_REFINING_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3000</iCost>
+			<iCost>3500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3856,7 +3856,7 @@
 			<Description>TXT_KEY_TECH_FILM</Description>
 			<Civilopedia>TXT_KEY_TECH_FILM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>3000</iCost>
+			<iCost>3500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_ARTIST</FirstFreeUnitClass>
@@ -3896,7 +3896,7 @@
 			<Description>TXT_KEY_TECH_MICROBIOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_MICROBIOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>3250</iCost>
+			<iCost>3750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>56</iAsset>
@@ -3929,7 +3929,7 @@
 			<Description>TXT_KEY_TECH_CONSUMERISM</Description>
 			<Civilopedia>TXT_KEY_TECH_CONSUMERISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3500</iCost>
+			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>64</iAsset>
@@ -3965,7 +3965,7 @@
 			<Description>TXT_KEY_TECH_CIVIL_RIGHTS</Description>
 			<Civilopedia>TXT_KEY_TECH_CIVIL_RIGHTS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>3250</iCost>
+			<iCost>3750</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>64</iAsset>
@@ -4003,13 +4003,14 @@
 
 <!-- #16 -->
 <!-- Cost 3200/3200/3600/3600/3600/4000/4000, iAsset 64  -->
+<!-- Cost 4000/4000/4500/4500/4500/5000/5000, iAsset 64 -->
 
 		<TechInfo>
 			<Type>TECH_INFRASTRUCTURE</Type>
 			<Description>TXT_KEY_TECH_INFRASTRUCTURE</Description>
 			<Civilopedia>TXT_KEY_TECH_INFRASTRUCTURE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3600</iCost>
+			<iCost>4500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>64</iAsset>
@@ -4049,7 +4050,7 @@
 			<Description>TXT_KEY_TECH_FLIGHT</Description>
 			<Civilopedia>TXT_KEY_TECH_FLIGHT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>4000</iCost>
+			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>64</iAsset>
@@ -4089,7 +4090,7 @@
 			<Description>TXT_KEY_TECH_SYNTHETICS</Description>
 			<Civilopedia>TXT_KEY_TECH_SYNTHETICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3200</iCost>
+			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>64</iAsset>
@@ -4130,7 +4131,7 @@
 			<Description>TXT_KEY_TECH_RADIO</Description>
 			<Civilopedia>TXT_KEY_TECH_RADIO_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>3600</iCost>
+			<iCost>4500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>64</iAsset>
@@ -4174,7 +4175,7 @@
 			<Description>TXT_KEY_TECH_PSYCHOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_PSYCHOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3200</iCost>
+			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_SPY</FirstFreeUnitClass>
@@ -4215,7 +4216,7 @@
 			<Description>TXT_KEY_TECH_MACROECONOMICS</Description>
 			<Civilopedia>TXT_KEY_TECH_MACROECONOMICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>3600</iCost>
+			<iCost>4500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>60</iAsset>
@@ -4255,7 +4256,7 @@
 			<Description>TXT_KEY_TECH_SOCIAL_SERVICES</Description>
 			<Civilopedia>TXT_KEY_TECH_SOCIAL_SERVICES_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>4000</iCost>
+			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>60</iAsset>
@@ -4291,14 +4292,14 @@
 		</TechInfo>
 
 <!-- #17 -->
-<!-- Cost 4000/4000/4500/4500/4500/5000/5000, iAsset 68  -->
+<!-- Cost 5000/5000/5500/5500/5500/6000/6000, iAsset 68 -->
 
 		<TechInfo>
 			<Type>TECH_AVIATION</Type>
 			<Description>TXT_KEY_TECH_AVIATION</Description>
 			<Civilopedia>TXT_KEY_TECH_AVIATION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>4500</iCost>
+			<iCost>5500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4336,7 +4337,7 @@
 			<Description>TXT_KEY_TECH_ROCKETRY</Description>
 			<Civilopedia>TXT_KEY_TECH_ROCKETRY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>4500</iCost>
+			<iCost>5500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4374,7 +4375,7 @@
 			<Description>TXT_KEY_TECH_FISSION</Description>
 			<Civilopedia>TXT_KEY_TECH_FISSION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>5000</iCost>
+			<iCost>6000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4408,7 +4409,7 @@
 			<Description>TXT_KEY_TECH_ELECTRONICS</Description>
 			<Civilopedia>TXT_KEY_TECH_ELECTRONICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>4500</iCost>
+			<iCost>5500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4447,7 +4448,7 @@
 			<Description>TXT_KEY_TECH_TELEVISION</Description>
 			<Civilopedia>TXT_KEY_TECH_TELEVISION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>4000</iCost>
+			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4484,7 +4485,7 @@
 			<Description>TXT_KEY_TECH_POWER_PROJECTION</Description>
 			<Civilopedia>TXT_KEY_TECH_POWER_PROJECTION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>5000</iCost>
+			<iCost>6000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4517,7 +4518,7 @@
 			<Description>TXT_KEY_TECH_GLOBALISM</Description>
 			<Civilopedia>TXT_KEY_TECH_GLOBALISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>4000</iCost>
+			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>68</iAsset>
@@ -4558,14 +4559,14 @@
 		</TechInfo>
 
 <!-- #18 -->
-<!-- Cost 6000/6000/7000/7000/7000/7500/7500, iAsset 72  -->
+<!-- Cost 7000/7000/7500/7500/7500/8000/8000, iAsset 72 -->
 
 		<TechInfo>
 			<Type>TECH_RADAR</Type>
 			<Description>TXT_KEY_TECH_RADAR</Description>
 			<Civilopedia>TXT_KEY_TECH_RADAR_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>6000</iCost>
+			<iCost>7000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4605,7 +4606,7 @@
 			<Description>TXT_KEY_TECH_SPACEFLIGHT</Description>
 			<Civilopedia>TXT_KEY_TECH_SPACEFLIGHT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>7500</iCost>
+			<iCost>8000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4641,7 +4642,7 @@
 			<Description>TXT_KEY_TECH_NUCLEAR_POWER</Description>
 			<Civilopedia>TXT_KEY_TECH_NUCLEAR_POWER_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>6500</iCost>
+			<iCost>7500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4682,7 +4683,7 @@
 			<Description>TXT_KEY_TECH_LASER</Description>
 			<Civilopedia>TXT_KEY_TECH_LASER_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>6000</iCost>
+			<iCost>7000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4715,7 +4716,7 @@
 			<Description>TXT_KEY_TECH_COMPUTERS</Description>
 			<Civilopedia>TXT_KEY_TECH_COMPUTERS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iCost>7500</iCost>
+			<iCost>8000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4752,7 +4753,7 @@
 			<Description>TXT_KEY_TECH_TOURISM</Description>
 			<Civilopedia>TXT_KEY_TECH_TOURISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<iCost>6500</iCost>
+			<iCost>7500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
@@ -4793,7 +4794,7 @@
 			<Description>TXT_KEY_TECH_ECOLOGY</Description>
 			<Civilopedia>TXT_KEY_TECH_ECOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>6500</iCost>
+			<iCost>7500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_GLOBAL</Era>
 			<iAsset>72</iAsset>
