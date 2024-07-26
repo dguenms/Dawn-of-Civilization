@@ -368,8 +368,11 @@ class Barbarians(object):
 		
 		if units.at(plot).notowner(self.get_owner()):
 			return False
-		
-		if self.pattern != CLOSE_INVADERS and cities.surrounding(plot):
+			
+		if self.pattern == CLOSE_INVADERS:
+			if plot.isCity():
+				return False
+		elif cities.surrounding(plot):
 			return False
 		
 		if self.pattern in [ANIMALS, NOMADS, MINORS, PIRATES]:
