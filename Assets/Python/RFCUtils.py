@@ -1155,3 +1155,39 @@ def removeBuildings(city):
 			if not isWonder(iBuilding):
 				if infos.building(iBuilding).getFreeStartEra() < 0 or infos.building(iBuilding).getFreeStartEra() > player(city).getCurrentEra():
 					city.setHasRealBuilding(iBuilding, False)
+
+
+# used: Birth
+def downgradeAreaCottages(iPlayer, area):
+	for plot in area.owner(iPlayer):
+		iImprovement = plot.getImprovementType()
+		
+		if iImprovement == iTown:
+			plot.setImprovementType(iVillage)
+		elif iImprovement == iVillage:
+			plot.setImprovementType(iHamlet)
+		elif iImprovement == iHamlet:
+			plot.setImprovementType(iCottage)
+		elif iImprovement == iCottage:
+			plot.setImprovementType(-1)
+		
+		plot.setUpgradeProgress(0)
+
+
+# used: Rules
+def downgradeCityCottages(city):
+	for plot in plots.city_radius(city):
+		if plot.getOwner() == city.getOwner():
+			if plot.getWorkingCity() == city or plot.getWorkingCity() is None:
+				iImprovement = plot.getImprovementType()
+				
+				if iImprovement == iTown:
+					plot.setImprovementType(iVillage)
+				elif iImprovement == iVillage:
+					plot.setImprovementType(iHamlet)
+				elif iImprovement == iHamlet:
+					plot.setImprovementType(iCottage)
+				elif iImprovement == iCottage:
+					plot.setImprovementType(-1)
+				
+				plot.setUpgradeProgress(0)

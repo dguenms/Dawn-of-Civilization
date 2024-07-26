@@ -1028,6 +1028,9 @@ class Birth(object):
 		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.land())
 		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.water().where(lambda p: p.getPlayerCityRadiusCount(self.iPlayer) > 0))
 		
+		if self.player.getCurrentEra() <= iRenaissance:
+			downgradeAreaCottages(self.iPlayer, flippedPlots.land())
+		
 		for iOwner, cityNames in flippedPlayerCities.items():
 			self.warOnFlip(iOwner, cityNames)
 		

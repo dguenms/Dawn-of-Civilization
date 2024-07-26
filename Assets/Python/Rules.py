@@ -65,6 +65,12 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 				convertPlotCulture(plot, iPlayer, 15, False)
 
 
+@handler("cityAcquired")
+def downgradeCottages(iOwner, iPlayer, city, bConquest, bTrade):
+	if bConquest and player(iPlayer).getCurrentEra() <= iRenaissance:
+		downgradeCityCottages(city)
+
+
 ### CITY ACQUIRED AND KEPT ###
 	
 @handler("cityAcquiredAndKept")

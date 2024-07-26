@@ -858,12 +858,12 @@
 		<Spanish>FOREIGN</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_DOWNGRADE_COTTAGES</Tag>
-		<English>The economic crisis is impeding our cottage growth!</English>
-		<French>La crise &#233;conomique ralentit la croissance de nos cottages !</French>
-		<German>The economic crisis is impeding our cottage growth!</German>
-		<Italian>The economic crisis is impeding our cottage growth!</Italian>
-		<Spanish>The economic crisis is impeding our cottage growth!</Spanish>
+		<Tag>TXT_KEY_STABILITY_DOWNGRADE_IMPROVEMENTS</Tag>
+		<English>Our improvements have been destroyed in the ongoing crisis!</English>
+		<French>Our improvements have been destroyed in the ongoing crisis!</French>
+		<German>Our improvements have been destroyed in the ongoing crisis!</German>
+		<Italian>Our improvements have been destroyed in the ongoing crisis!</Italian>
+		<Spanish>Our improvements have been destroyed in the ongoing crisis!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMIC_CRISIS</Tag>
