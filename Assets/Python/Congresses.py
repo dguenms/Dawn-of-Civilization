@@ -671,7 +671,7 @@ class Congress:
 		
 		defenders = units.at(x, y).owner(iOwner)
 		if iOwner in players.major():
-			relocateUnitsToCore(iOwner, defenders)
+			relocateUnitsToCore(iOwner, defenders, exceptions=[(x, y)])
 		else:
 			killUnits(defenders)
 		

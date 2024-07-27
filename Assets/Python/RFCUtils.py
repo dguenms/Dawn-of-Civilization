@@ -968,15 +968,16 @@ def flipUnit(unit, iNewOwner, plot):
 		makeUnit(iNewOwner, iUnitType, plot)
 	
 # used: Congresses, Stability
-def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
-	coreCities = cities.core(iPlayer).owner(iPlayer)
+def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100, exceptions = []):
+	coreCities = cities.core(iPlayer).without(exceptions).owner(iPlayer)
+	coastalCities = coreCities.coastal() or cities.owner(iPlayer).without(exceptions).coastal()
 	if not coreCities:
 		killUnits(lUnits)
 		return
 	
 	for iType, typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().items():
 		movedUnits, removedUnits = typeUnits.percentage_split(iArmyPercent)
-		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coreCities.coastal() or coreCities
+		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coastalCities or coreCities
 		
 		for city, movedUnits in movedUnits.divide(destinations):
 			for unit in movedUnits:
