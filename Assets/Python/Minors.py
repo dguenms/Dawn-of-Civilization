@@ -620,8 +620,9 @@ def maintainFallenCivilizations():
 				if slot(iTechCiv) < 0:
 					continue
 				
-				iNumDesiredUnits = 2 + player(iTechCiv).getCurrentEra()
-				iDefender, iDefenseAI = getUnitForRole(iTechCiv, iDefend)
+				iNumDesiredUnits = 2 + player(iTechCiv).getCurrentEra() / 2
+				bUnique = iFallenCiv == iTechCiv
+				iDefender, iDefenseAI = getUnitForRole(iTechCiv, iDefend, bUnique=bUnique)
 				
 				for city in fallen_cities:
 					add_city_buildings(city, iTechCiv)
