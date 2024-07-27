@@ -600,7 +600,7 @@ dGoals = {
 	iInca: (
 		All(
 			BuildingCount(iTambo, 7),
-			Route(plots.region(rAndes).coastal().without(lAndeanRoadExceptions).named(ANDEAN_COAST), [iRouteRoad]),
+			Route(plots.region(rAndes).coastal().passable().without(lAndeanRoadExceptions).named(ANDEAN_COAST), [iRouteRoad]),
 			by=1550,
 		),
 		GoldAmount(2500, by=1550),
