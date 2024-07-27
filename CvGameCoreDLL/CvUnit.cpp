@@ -14875,6 +14875,9 @@ bool CvUnit::greatMission()
 		if (pSpreadPlot == NULL || !pSpreadPlot->isCity()) break;
 
 		pSpreadPlot->getPlotCity()->spreadReligion(eReligion, false);
+
+		// Python Event
+		CvEventReporter::getInstance().unitSpreadReligionAttempt(this, eReligion, true);
 	}
 
 	// remove from eligible cities
