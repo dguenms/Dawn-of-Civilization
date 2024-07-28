@@ -37145,7 +37145,7 @@ EndPlot
 BeginPlot
 	x=82,y=72
 	BonusType=BONUS_MARBLE
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
