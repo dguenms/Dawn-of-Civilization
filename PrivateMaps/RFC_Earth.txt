@@ -57151,14 +57151,14 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_PIG
-	BonusVarietyType=BONUS_PIG_FURRY
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=126,y=51
+	BonusType=BONUS_PIG
+	BonusVarietyType=BONUS_PIG_FURRY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot

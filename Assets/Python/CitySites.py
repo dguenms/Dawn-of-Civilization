@@ -24,14 +24,14 @@ def calculateCityFood(site, tileFood):
 		plot = plotCity(site.getX(), site.getY(), i)
 		index = map.plotIndex(plot.getX(), plot.getY())
 		
-		if location(site) == location(plot)
+		if location(site) == location(plot):
 			continue
 		
 		iFood += tileFood[index]
 		
 		# coastal cities receive Harbor food
-		if site.isCoastalLand() and plot.isWater():
-			iFood += 1
+		#if site.isCoastalLand() and plot.isWater():
+		#	iFood += 1
 	
 	return iFood
 
@@ -50,12 +50,20 @@ def isOutstandingSite(sites, site, food):
 			return False
 	
 	return True
-		
+	
 
-lTileFood = [calculateTileFood(map.plotByIndex(i)) for i in range(map.numPlots())]
-lSiteFood = [calculateCityFood(map.plotByIndex(i), lTileFood) for i in range(map.numPlots())]
+def calculateSiteFoodList():
+	lTileFood = [calculateTileFood(map.plotByIndex(i)) for i in range(map.numPlots())]
+	lSiteFood = [calculateCityFood(map.plotByIndex(i), lTileFood) for i in range(map.numPlots())]
+	return lSiteFood
 
-lOutstandingSites = findOutstandingSites(lSiteFood)
+def markOutstandingSites():
+	lOutstandingSites = findOutstandingSites(calculateSiteFoodList())
 
-for index, food in lOutstandingSites:
-	engine.addLandmark(map.plotByIndex(index), str(food))
+	for index, food in lOutstandingSites:
+		engine.addLandmark(map.plotByIndex(index), str(food))
+
+def markCityFood():
+	for index, food in enumerate(calculateSiteFoodList()):
+		plot = map.plotByIndex(index)
+		engine.addLandmark(plot, str(food))
