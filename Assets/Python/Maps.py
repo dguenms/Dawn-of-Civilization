@@ -6,6 +6,7 @@ from Files import *
 from CityNames import *
 from Resources import *
 from Scenarios import *
+from Periods import *
 
 import Locations
 
@@ -152,20 +153,30 @@ def importCore(iCiv):
 	importArea(plots.core(iCiv))
 
 
-def importMap(path, iCiv):
-	area = [tile for tile, value in FileMap.read("%s/%s.csv" % (path, civ_name(iCiv))) if value and not plot(tile).isWater()]
+def importMap(path):
+	area = [tile for tile, value in FileMap.read(path) if value and not plot(tile).isWater()]
 	importArea(area)
 	
-	landmarks = dict((tile, str(value)) for tile, value in FileMap.read("%s/%s.csv" % (path, civ_name(iCiv))) if int(value) > 1)
+	landmarks = dict((tile, str(value)) for tile, value in FileMap.read(path) if int(value) > 1)
 	createLandmarks(landmarks)
 
 
+def importCivMap(path, iCiv):
+	filePath = "%s/%s.csv" % (path, civ_name(iCiv))
+	return importMap(filePath)
+
+
+def importPeriodMap(path, iPeriod):
+	filePath = "%s/Period/%s.csv" % (path, dPeriodNames[iPeriod])
+	return importMap(filePath)
+
+
 def importSettlerMap(iCiv):
-	importMap("Settler", iCiv)
+	importCivMap("Settler", iCiv)
 
 
 def importWarMap(iCiv):
-	importMap("War", iCiv)
+	importCivMap("War", iCiv)
 	
 
 def showSettlerValues(iCiv):
