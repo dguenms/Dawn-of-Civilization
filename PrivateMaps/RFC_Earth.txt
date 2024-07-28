@@ -38377,6 +38377,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=48
+	isNOfRiver
+	RiverWEDirection=3
 	BonusType=BONUS_OPIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
