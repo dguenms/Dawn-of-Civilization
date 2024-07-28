@@ -329,6 +329,7 @@ class Scenario(object):
 		self.setupGoals = kwargs.get("setupGoals", lambda *args: None)
 		
 		self.createStartingUnits = kwargs.get("createStartingUnits", lambda: None)
+		self.updateData = kwargs.get("updateData", lambda: None)
 		
 		self.greatWall = kwargs.get("greatWall", GreatWall())
 	
@@ -436,6 +437,7 @@ class Scenario(object):
 		self.restoreCivs()
 		self.restoreLeaders()
 		
+		self.updateData()
 		self.updateNames()
 	
 	def adjustTerritories(self):
