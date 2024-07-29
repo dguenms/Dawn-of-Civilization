@@ -259,22 +259,23 @@ dSpawnResourcesDict = {
 }
 
 dRemovedResourcesDict = {
-	(75, 51)  : -50, # Silver in Greece
-	(77, 55)  : -50, # Gold in Macedonia
-	(81, 44)  : -50, # Gems (turquoise) in Egypt
-	(74, 44)  : 200, # Spices (silphium) in Cyrenaica
-	(87, 49)  : 200, # Horses in Syria
-	(55, 53)  : 400, # Gold in Spain
-	(59, 51)  : 400, # Silver in Spain
-	(83, 47)  : 500, # Dye (murex) in Phoenicia
-	(73, 46)  : 500, # Dye (murex) in Cyrenaica
-	(68, 47)  : 500, # Dye (murex) in Tunisia
-	(70, 50)  : 500, # Dye (murex) in Italy
-	(61, 48)  : 500, # Dye (murex) in Algeria
-	(58, 47)  : 500, # Dye (murex) in Morocco
-	(66, 46)  : 550, # Ivory in Tunisia
-	(58, 45)  : 550, # Ivory in Morocco
-	(94, 43)  : 550, # Ivory in Persia
+	(88, 51)  : -200, # Olives in Assyria
+	(75, 51)  :  -50, # Silver in Greece
+	(77, 55)  :  -50, # Gold in Macedonia
+	(74, 44)  :  200, # Spices (silphium) in Cyrenaica
+	(87, 49)  :  200, # Horses in Syria
+	(55, 53)  :  400, # Gold in Spain
+	(59, 51)  :  400, # Silver in Spain
+	(83, 48)  :  500, # Clams in Phoenicia
+	(83, 47)  :  500, # Dye (murex) in Phoenicia
+	(73, 46)  :  500, # Dye (murex) in Cyrenaica
+	(68, 47)  :  500, # Dye (murex) in Tunisia
+	(70, 50)  :  500, # Dye (murex) in Italy
+	(61, 48)  :  500, # Dye (murex) in Algeria
+	(58, 47)  :  500, # Dye (murex) in Morocco
+	(66, 46)  :  550, # Ivory in Tunisia
+	(58, 45)  :  550, # Ivory in Morocco
+	(94, 43)  :  550, # Ivory in Persia
 	(100, 50) : 1100, # Silver in Bactria
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
@@ -297,6 +298,10 @@ dRemovedFeaturesDict = {
 	(80, 37)  : 550,  # Nubia
 	(81, 39)  : 550,  # Nubia
 	(81, 38)  : 550,  # Nubia
+	(87, 48)  : 1050, # Mesopotamia
+	(89, 45)  : 1050, # Mesopotamia
+	(91, 45)  : 1050, # Mesopotamia
+	(88, 46)  : 1050, # Mesopotamia
 	(63, 65)  : 1500, # Netherlands
 	(62, 64)  : 1500, # Netherlands
 	(99, 59)  : 1600, # Transoxiana

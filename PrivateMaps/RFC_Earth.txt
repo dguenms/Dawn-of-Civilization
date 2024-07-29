@@ -37456,6 +37456,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=48
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -37894,7 +37895,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=44
-	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37925,7 +37925,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=49
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39289,7 +39288,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=47
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -39326,7 +39324,6 @@ BeginPlot
 	x=87,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39744,7 +39741,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=45
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -39822,7 +39818,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=56
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40275,7 +40270,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=54
-	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
