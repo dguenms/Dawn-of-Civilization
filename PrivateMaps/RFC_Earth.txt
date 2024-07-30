@@ -47430,6 +47430,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=47
+	RiverNSDirection=2
+	isWOfRiver
 	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -47886,12 +47888,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=46
+	RiverNSDirection=2
+	isWOfRiver
 	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=47
+	RiverNSDirection=2
+	isWOfRiver
 	BonusType=BONUS_DYE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -48347,16 +48353,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=46
-	RiverNSDirection=2
-	isWOfRiver
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=47
-	isNOfRiver
-	RiverWEDirection=1
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
@@ -48364,6 +48368,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=48
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=0
 EndPlot
