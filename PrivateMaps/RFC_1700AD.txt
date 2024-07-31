@@ -6935,10 +6935,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
-	x=84,y=44
-	ImprovementType=IMPROVEMENT_ORCHARD
-EndPlot
-BeginPlot
 	x=84,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -6987,10 +6983,6 @@ EndPlot
 BeginPlot
 	x=84,y=46
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=84,y=49
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=84,y=51
@@ -7489,10 +7481,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=87,y=52
-	ImprovementType=IMPROVEMENT_PASTURE
-EndPlot
-BeginPlot
 	x=87,y=54
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -7597,10 +7585,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=88,y=46
-	ImprovementType=IMPROVEMENT_COTTAGE
-EndPlot
-BeginPlot
 	x=88,y=47
 	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
@@ -7652,10 +7636,6 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=88,y=51
-	ImprovementType=IMPROVEMENT_ORCHARD
-EndPlot
-BeginPlot
 	x=88,y=53
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -7663,10 +7643,6 @@ EndPlot
 BeginPlot
 	x=88,y=55
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=88,y=56
-	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=88,y=60
@@ -7725,10 +7701,6 @@ BeginPlot
 		YearAcquired=900
 		PreviousOwner=CIVILIZATION_ARABIA
 	EndCity
-EndPlot
-BeginPlot
-	x=89,y=45
-	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=89,y=46

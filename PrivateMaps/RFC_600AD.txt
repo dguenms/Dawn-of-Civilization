@@ -1119,10 +1119,6 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=84,y=44
-	ImprovementType=IMPROVEMENT_ORCHARD
-EndPlot
-BeginPlot
 	x=84,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -1334,10 +1330,6 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_PERSIA
 	EndCity
-EndPlot
-BeginPlot
-	x=88,y=51
-	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=89,y=37
