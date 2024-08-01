@@ -10841,7 +10841,7 @@ void CvGame::setFirstDiscovered(TechTypes eTech, CivilizationTypes eCiv)
 {
 	FAssert(eTech > NO_TECH);
 	FAssert(eTech < GC.getNumTechInfos());
-	FAssert(eCiv > NO_CIV);
+	FAssert(eCiv > NO_CIVILIZATION);
 	FAssert(eCiv < NUM_CIVS);
 
 	m_aiFirstDiscovered[eTech] = eCiv;
@@ -10857,7 +10857,7 @@ int CvGame::getFirstDiscoveredTurn(TechTypes eTech) const
 
 void CvGame::setFirstDiscoveredTurn(TechTypes eTech, int iTurn)
 {
-	FAssert(eTech > NO_TECHS);
+	FAssert(eTech > NO_TECH);
 	FAssert(eTech < GC.getNumTechInfos());
 
 	m_aiFirstDiscoveredTurn[eTech] = iTurn;
