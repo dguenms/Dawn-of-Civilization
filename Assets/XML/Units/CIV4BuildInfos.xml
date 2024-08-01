@@ -75,7 +75,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -133,7 +133,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -251,7 +251,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -332,7 +332,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -390,7 +390,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
 					<iTime>400</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
@@ -413,7 +413,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -464,7 +464,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -515,7 +515,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -598,7 +598,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -649,7 +649,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -714,7 +714,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -784,7 +784,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -842,7 +842,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -900,7 +900,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -980,7 +980,7 @@
 					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<PrereqTech>TECH_ECOLOGY</PrereqTech>
 					<iTime>600</iTime>
-					<iProduction>0</iProduction>
+					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 			</FeatureStructs>
