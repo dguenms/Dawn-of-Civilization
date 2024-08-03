@@ -103,6 +103,7 @@ dCivGroups = {
 iCivGroupEurope : [iGreece, iRome, iCelts, iByzantium, iFrance, iNorse, iSpain, iEngland, iHolyRome, iRus, iItaly, iPoland, iPortugal, iSweden, iRussia, iNetherlands, iGermany],
 iCivGroupAsia : [iIndia, iChina, iHarappa, iPolynesia, iPersia, iJapan, iDravidia, iKushans, iKorea, iKhmer, iMalays, iJava, iTibet, iBurma, iVietnam, iMongols, iMughals, iThailand, iRussia, iTurks],
 iCivGroupMiddleEast : [iEgypt, iBabylonia, iAssyria, iHittites, iPersia, iKushans, iByzantium, iArabia, iMoors, iSwahili, iOttomans, iCarthage, iTurks, iIran],
+iCivGroupMediterranean : [iEgypt, iGreece, iPhoenicia, iRome, iByzantium, iFrance, iArabia, iMoors, iSpain, iPortugal, iItaly, iOttomans],
 iCivGroupAfrica : [iEgypt, iNubia, iCarthage, iEthiopia, iMali, iMoors, iSwahili, iCongo],
 iCivGroupAmerica : [iMaya, iToltecs, iInca, iAztecs, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
 }

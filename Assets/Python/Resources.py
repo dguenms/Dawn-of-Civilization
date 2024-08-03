@@ -41,6 +41,9 @@ def setup():
 	global dConquerorPlotTypes
 	dConquerorPlotTypes = TileDict(dConquerorPlotTypesDict)
 	
+	global dCivGroupResources
+	dCivGroupResources = TileDict(dCivGroupResourcesDict)
+	
 
 ### Constants ###
 
@@ -319,6 +322,15 @@ dConquerorPlotTypesDict = {
 	(33, 12) : (iInca, PlotTypes.PLOT_HILLS),
 }
 
+dCivGroupResourcesDict = {
+	(63, 56) : (iCivGroupMediterranean, iOlives, 600),
+	(62, 55) : (iCivGroupMediterranean, iWine, 600),
+	(60, 56) : (iCivGroupMediterranean, iWine, 600),
+	(63, 59) : (iCivGroupMediterranean, iWine, 600),
+	(65, 60) : (iCivGroupMediterranean, iWine, 600),
+	(72, 59) : (iCivGroupMediterranean, iWine, 600),
+}
+
 
 @handler("BeginGameTurn")
 def createResources():
@@ -370,6 +382,24 @@ def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
 		plot(tile).setPlotType(type, True, True)
 
 
+@handler("cityAcquiredAndKept")
+def spreadCivGroupResourcesOnConquest(iPlayer, city):
+	spreadCivGroupResources(city)
+
+
+@handler("cityBuilt")
+def spreadCivGroupResourcesOnFounding(city):
+	spreadCivGroupResources(city)
+
+
+def spreadCivGroupResources(city):
+	for iCivGroup, lResources in dCivGroupResources:
+		if city.getCivilizationType() in dCivGroups[iCivGroup]:
+			for (x, y), iResource, _ in lResources:
+				if city.getRegionID() == plot(x, y).getRegionID():
+					createResource(x, y, iResource)
+
+
 def setupScenarioResources():
 	setup()
 	iStartTurn = scenarioStartTurn()
@@ -406,6 +436,11 @@ def setupScenarioResources():
 		if year(dFall[iCiv]) <= iStartTurn:
 			for (x, y), iPlotType in lPlots:
 				plot(x, y).setPlotType(iPlotType, True, True)
+	
+	for iCivGroup, lResources in dCivGroupResources:
+		for (x, y), iResource, iYear in lResources:
+			if year(iYear) <= iStartTurn:
+				createResource(x, y, iResource)
 	
 
 # Leoreth: bonus removal alerts by edead

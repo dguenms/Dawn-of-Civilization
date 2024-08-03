@@ -25949,7 +25949,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=56
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -26847,7 +26846,6 @@ BeginPlot
 	x=60,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27726,7 +27724,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=55
-	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28174,7 +28171,6 @@ BeginPlot
 	x=63,y=56
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28194,7 +28190,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=59
-	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -29073,7 +29068,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=60
-	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -29900,6 +29894,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=49
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30358,7 +30353,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=49
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32267,7 +32261,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=59
-	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
