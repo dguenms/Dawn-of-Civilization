@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Diplomacy -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_JUAREZ_1</Tag>
+		<English>Please support [OUR_CIV_SHORT] and its people. We depend on your help!</English>
+		<French>Veuillez soutenir le [OUR_CIV_SHORT] et son peuple. Nous avons besoin de votre aide !</French>
+		<German>Please support [OUR_CIV_SHORT] and it's people. We depend on your help!</German>
+		<Italian>Please support [OUR_CIV_SHORT] and it's people. We depend on your help!</Italian>
+		<Spanish>Please support [OUR_CIV_SHORT] and it's people. We depend on your help!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_PEDRO_II</Tag>
+		<English>This will be of mutual benefit for us both, don't you think so?</English>
+		<French>Ceci nous b&#233;n&#233;ficiera mutuellement, ne croyez-vous pas ?</French>
+		<German>This will be of mutual benefit for us both, don't you think so?</German>
+		<Italian>This will be of mutual benefit for us both, don't you think so?</Italian>
+		<Spanish>This will be of mutual benefit for us both, don't you think so?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAGNAR_LODBROK_1</Tag>
+		<English>Hail and well met, [CT_NAME]! I am [OUR_NAME], ruler of the glorious [OUR_CIV_SHORT]. So tell me: does [CT_CIV_SHORT] have a lot of rich and unprotected coastal cities, or what?</English>
+		<French>Bonjour, [CT_NAME], c'est un vrai plaisir ! Je suis [OUR_NAME], chef des glorieux [OUR_CIV_SHORT]. Dites-moi : est-ce que [CT_CIV_SHORT] dispose de nombreuses villes c&#244;ti&#232;res riches et faiblement prot&#233;g&#233;es ?</French>
+		<German>Tag auch, [CT_NAME]! Ich bin [OUR_NAME], Staatsoberhaupt des ruhmreichen Volkes von [OUR_CIV_SHORT]. Nun, dann erz&#228;hlt mal: Besitzt Ihr vielleicht ein paar reiche, schutzlose K&#252;stenst&#228;dte?</German>
+		<Italian>Salute a te, [CT_NAME]! Io sono [OUR_NAME], glorioso sovrano [OUR_CIV_ADJ]. Parliamo, dunque: [CT_CIV_SHORT] ha molte citt&#224; costiere ricche e poco protette, vero?</Italian>
+		<Spanish>Saludos y bienaventuranzas, [CT_NAME]. Soy [OUR_NAME], dirigente de la gloriosa tierra de [OUR_CIV_SHORT]. Decidme, &#191;tiene o no [CT_CIV_SHORT] muchas ciudades costeras pr&#243;speras e indefensas?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAMESSES_II_1</Tag>
+		<English>Mighty [OUR_NAME], all-powerful god-king of [OUR_CIV_SHORT] welcomes you, [CT_NAME]! Feel free to grovel in terror and awe if the mood takes you.</English>
+		<French>[OUR_NAME], tout puissant roi et divinit&#233; des [OUR_CIV_SHORT], vous souhaite la bienvenue, [CT_NAME] ! N'h&#233;sitez pas &#224; vous prosterner devant moi ou &#224; vous &#233;taler &#224; mes pieds si le c&#339;ur vous en dit !</French>
+		<German>Ich, [OUR_NAME], allm&#228;chtiges Staatsoberhaupt des Volkes von [OUR_CIV_SHORT], hei&#223;e Euch willkommen, [CT_NAME]! Es steht Euch frei, ehrf&#252;rchtig vor mir niederzuknien, wenn Euch danach ist.</German>
+		<Italian>Il potente [OUR_NAME], onnipotente e divino leader [OUR_CIV_ADJ] ti d&#224; il benvenuto, [CT_NAME]! Prostrati pure in preda al terrore e alla meraviglia, se ne hai voglia.</Italian>
+		<Spanish>El gran [OUR_NAME], rey dios todopoderoso de [OUR_CIV_SHORT] os da la bienvenida, [CT_NAME]. Pod&#233;is postraros ante m&#237; presa de un temor reverencial si se os antoja.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SAN_MARTIN</Tag>
+		<English>Our armies are evenly matched, but I believe in a battle I would win out. So that this does not occur I ask you to meet our demands.</English>
+		<French>Nos arm&#233;es sont de force &#233;gale, mais je crois que je gagnerais en cas de bataille. Afin que cela ne se produise pas, je vous demande de satisfaire nos exigences.</French>
+		<German>Helfen hei?t br?derlich teilen, [CT_NAME].</German>
+		<Italian>Se ci tieni a me, condividi, [CT_NAME].</Italian>
+		<Spanish>Compartir es de generosos, [CT_NAME].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_JUAREZ_1</Tag>
+		<English>[OUR_CIV_SHORT] needs this and demands your assistance!</English>
+		<French>[OUR_CIV_SHORT] a besoin de ceci et demande votre aide !</French>
+		<German>[OUR_CIV_SHORT] needs this and demands your assistance!</German>
+		<Italian>[OUR_CIV_SHORT] needs this and demands your assistance!</Italian>
+		<Spanish>[OUR_CIV_SHORT] needs this and demands your assistance!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_PEDRO_II</Tag>
+		<English>Brazil is strong in many ways, [CT_NAME]. Do not force me to show you how strong.</English>
+		<French>Le Br&#233;sil est fort, [CT_NAME]. Ne me poussez pas &#224; vous montrer &#224; quel point.</French>
+		<German>Brazil is strong in many ways, [CT_NAME]. Do not force me to show you how strong.</German>
+		<Italian>Brazil is strong in many ways, [CT_NAME]. Do not force me to show you how strong.</Italian>
+		<Spanish>Brazil is strong in many ways, [CT_NAME]. Do not force me to show you how strong.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_SAN_MARTIN</Tag>
+		<English>You are outgunned and outclassed. I suggest you give me what I demand.</English>
+		<French>Vous avez moins d'&#233;quipement que nous. Vous &#234;tes surclass&#233;. Je sugg&#232;re que vous me donniez ce que je veux.</French>
+		<German>Schlagt ein, wenn Ihr kein zweites Gettysburg erleben wollt! </German>
+		<Italian>Dammi ci? che chiedo o proverai l'ira della nostra &amp;quot;terribile e rapida spada.&amp;quot; </Italian>
+		<Spanish>Dadnos esto o sentir?is la c?lera de nuestra &amp;quot;terrible y veloz espada&amp;quot;. </Spanish>
+	</TEXT>
+	<TEXT>
+    <Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALFRED</Tag>
+         <English>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the santity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</English>
+         <French>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!</French>
+         <German>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</German>
+         <Italian>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</Italian>
+         <Spanish>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_JUAREZ_1</Tag>
+		<English>Can you spare this for the people of the [OUR_EMPIRE]?</English>
+		<French>Pourriez-vous fournir ceci au peuple du [OUR_EMPIRE] ?</French>
+		<German>Can you spare this for the people of the [OUR_EMPIRE]?</German>
+		<Italian>Can you spare this for the people of the [OUR_EMPIRE]?</Italian>
+		<Spanish>Can you spare this for the people of the [OUR_EMPIRE]?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_PEDRO_II</Tag>
+		<English>My people have faith in me, [CT_NAME]. Please help me not to disappoint them.</English>
+		<French>Mon peuple a foi en moi, [CT_NAME]. Aidez-moi &#224; ne pas le d&#233;cevoir.</French>
+		<German>My people have faith in me, [CT_NAME]. Please help me not to disappoint them.</German>
+		<Italian>My people have faith in me, [CT_NAME]. Please help me not to disappoint them.</Italian>
+		<Spanish>My people have faith in me, [CT_NAME]. Please help me not to disappoint them.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SAN_MARTIN</Tag>
+		<English>The simplest strategy is for me to ask you for what we need and hope your good will wins out.</English>
+		<French>La strat&#233;gie la plus simple pour moi est de vous demander de nous fournir ce dont nous avons besoin et esp&#233;rer de la bonne volont&#233; de votre part.</French>
+		<German>Ihr werdet einem treuen Freund diese kleine Bitte doch nicht abschlagen, [CT_NAME]?</German>
+		<Italian>Avresti un po' di questi in nome della nostra amicizia, [CT_NAME]?</Italian>
+		<Spanish>&#191;Podr?ais darles esto a unos buenos amigos, [CT_NAME]?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_GENERIC</Tag>
+		<English>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</English>
+		<French>Salutations, [CT_NAME]! Je suis [OUR_NAME], souverain de la grande civilisation de [OUR_CIV_SHORT].</French>
+		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
+		<Italian>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</Italian>
+		<Spanish>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_1</Tag>
+		<English>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</English>
+		<French>La paix soit sur vous, [CT_NAME] de [CT_CIV_SHORT]. Si vous attendez la b&#233;n&#233;diction d'Allah, soyez bon avec son peuple, car Allah aidera celui qui suit la voie d'Allah.</French>
+		<German>Friede sei mit Euch, [CT_NAME] von [CT_CIV_SHORT]. Falls Ihr die Segnungen Allahs erwartet, seid freundlich zu seinem Volk, denn Allah wird dem helfen, der die Wege Allahs bewegt.</German>
+		<Italian>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</Italian>
+		<Spanish>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ATATURK_1</Tag>
+		<English>I am [OUR_NAME], the President of the Turkish people. We Turks do not consider our principles as dogmas contained in books that are said to come from heaven. We derive our inspiration not from heaven, or from an unseen world, but directly from life.</English>
+		<French>Je suis [OUR_NAME], pr&#233;sident du peuple turc. Nous autres Turcs ne consid&#233;rons pas nos principes comme des dogmes &#233;crits dans des livres descendus du ciel. Nous tirons notre inspiration non pas du ciel, ni d'un monde invisible, mais directement de la vie.</French>
+		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
+		<Italian>I am [OUR_NAME], the President of the Turkish people. We Turks do not consider our principles as dogmas contained in books that are said to come from heaven. We derive our inspiration not from heaven, or from an unseen world, but directly from life.</Italian>
+		<Spanish>I am [OUR_NAME], the President of the Turkish people. We Turks do not consider our principles as dogmas contained in books that are said to come from heaven. We derive our inspiration not from heaven, or from an unseen world, but directly from life.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CARDENAS_1</Tag>
+		<English>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</English>
+		<French>Hola. Je suis [OUR_NAME] du [OUR_EMPIRE]. Je suis convaincu que les bonnes intentions d'un souverain ne sont pas suffisantes et que le facteur collectif repr&#233;sent&#233; par les travailleurs est indispensable. N'&#234;tes-vous pas d'accord, [CT_NAME] ?</French>
+		<German>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</German>
+		<Italian>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</Italian>
+		<Spanish>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHARLES_1</Tag>
+		<English>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</English>
+		<French>Bienvenue, [CT_NAME]. Nous nous lierons volontiers d'amiti&#233; avec vous. &#202;tes-vous avare de territoire, ou avare de paix et de tranquilit&#233; ?</French>
+		<German>Willkommen, [CT_NAME]. Wir w&#252;rden Freundschaft mit Euch willkommen hei&#223;en. Giert Ihr nach Eroberungen, oder nach Frieden und Ruhe?</German>
+		<Italian>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Italian>
+		<Spanish>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MENELIK_1</Tag>
+		<English>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</English>
+		<French>Au nom de Dieu, salut, [CT_NAME] de [CT_CIV_SHORT]. Nous sommes l'empereur [OUR_NAME] de l'[OUR_CIV_SHORT]. Nous savons que le progr&#232;s mat&#233;riel et spirituel est essentiel &#224; l'homme. Vous joindrez-vous &#224; nous dans notre labeur incessant pour atteindre les deux ?</French>
+		<German>Gr&#252;&#223;e im Namen Gottes, [CT_NAME] von [CT_CIV_SHORT]. Wir sind Kaiser [OUR_NAME] von [OUR_CIV_SHORT]. Wir wissen, dass k&#246;rperlicher und spiritueller Fortschritt essentiell f&#252;r den Menschen sind. Werdet Ihr daran teilhaben, wie wir ununterbrochen f&#252;r das gleichzeitige Erlangen von beidem arbeiten?</German>
+		<Italian>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</Italian>
+		<Spanish>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_JUAREZ_1</Tag>
+		<English>Greetings, [CT_NAME]. My name is [OUR_NAME], and I am the president of [OUR_CIV_SHORT]. My motto is: when there is respect, there is peace!</English>
+		<French>Salutations, [CT_NAME]. Je m'appelle [OUR_NAME], et je suis pr&#233;sident du [OUR_CIV_SHORT]. Ma devise est la suivante : l&#224; o&#249; r&#232;gne le respect r&#232;gne la paix !</French>
+		<German>Greetings, [CT_NAME]. My name is [OUR_NAME], and I am the president of [OUR_CIV_SHORT]. My motto is: when there is respect, there is peace!</German>
+		<Italian>Greetings, [CT_NAME]. My name is [OUR_NAME], and I am the president of [OUR_CIV_SHORT]. My motto is: when there is respect, there is peace!</Italian>
+		<Spanish>Greetings, [CT_NAME]. My name is [OUR_NAME], and I am the president of [OUR_CIV_SHORT]. My motto is: when there is respect, there is peace!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOMEINI_1</Tag>
+		<English>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</English>
+		<French>Moi, [OUR_NAME] du [OUR_EMPIRE], vous salue. Sachez que ceux qui parlent de nationalisme, de d&#233;mocratie et d'autres choses du genre le font afin de d&#233;tourner notre nation de sa mission.</French>
+		<German>Ich, [OUR_NAME] von der [OUR_EMPIRE], gr&#252;&#223;e Euch. Wisset, dass jene, welche von Nationalismus, Demokratie und solchen Dingen sprechen, Eure Nation von ihrer Mission abbringen wollen.</German>
+		<Italian>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</Italian>
+		<Spanish>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_I_1</Tag>
+		<English>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</English>
+		<French>Bonjour. Je suis [OUR_NAME], empereur de [OUR_CIV_SHORT]. Et d&#233;diant tous mes efforts au bien-&#234;tre de mon peuple, je d&#233;fendrai l'id&#233;e de l'autocratie comme l'ont fait tous mes anc&#234;tres.</French>
+		<German>Gr&#252;&#223;e. Ich bin [OUR_NAME], Kaiser von [OUR_CIV_SHORT]. W&#228;hrend ich all meine Anstrengungen dem Wohlergehen meines Volkes widme, werde ich das Konzept der Autokratie besch&#252;tzen wie alle meine Vorv&#228;ter.</German>
+		<Italian>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</Italian>
+		<Spanish>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_PEDRO_II</Tag>
+		<English>Welcome to humble [OUR_CIV_SHORT]. I am [OUR_NAME], leader of this far-reaching and ever progressing country. Tell me, who are you?</English>
+		<French>Bienvenue dans l'humble [OUR_CIV_SHORT]. Je suis [OUR_NAME], souverain de ce grand pays en progr&#232;s constant. Dites-moi, qui &#234;tes-vous ?</French>
+		<German>Welcome to humble [OUR_CIV_SHORT]. I am [OUR_NAME], leader of this far-reaching and ever progressing country. Tell me, who are you?</German>
+		<Italian>Welcome to humble [OUR_CIV_SHORT]. I am [OUR_NAME], leader of this far-reaching and ever progressing country. Tell me, who are you?</Italian>
+		<Spanish>Welcome to humble [OUR_CIV_SHORT]. I am [OUR_NAME], leader of this far-reaching and ever progressing country. Tell me, who are you?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SAN_MARTIN</Tag>
+		<English>Hello, friend. My name is [OUR_NAME], but you can call me Jose. Or you can call me Francisco. Or you can call me Martin. Just don't call me late for dinner. </English>
+		<French>Bonjour, cher ami. Je m'appelle [OUR_NAME], mais vous pouvez m'appeler Jos&#233;. Ou Francisco. Ou Mart&#237;n. Mais ne m'appelez pas en retard pour d&#238;ner.</French>
+		<German>Hello, friend. My name is [OUR_NAME], but you can call me Jose. Or you can call me Francisco. Or you can call me Martin. Just don't call me late for dinner. </German>
+		<Italian>Hello, friend. My name is [OUR_NAME], but you can call me Jose. Or you can call me Francisco. Or you can call me Martin. Just don't call me late for dinner. </Italian>
+		<Spanish>Hello, friend. My name is [OUR_NAME], but you can call me Jose. Or you can call me Francisco. Or you can call me Martin. Just don't call me late for dinner. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SANTA_ANNA_1</Tag>
+		<English>Hello, [CT_NAME]. I am General Santa Anna, Savior of Mexico! What have you come to offer me in tribute?</English>
+		<French>Bonjour, [CT_NAME]. Je suis le g&#233;n&#233;ral Santa Anna, sauveur du Mexique ! Que venez-vous m'offrir en tribut ?</French>
+		<German>Hello, [CT_NAME]. I am General Santa Anna, Savior of Mexico! What have you come to offer me in tribute?</German>
+		<Italian>Hello, [CT_NAME]. I am General Santa Anna, Savior of Mexico! What have you come to offer me in tribute?</Italian>
+		<Spanish>Hello, [CT_NAME]. I am General Santa Anna, Savior of Mexico! What have you come to offer me in tribute?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TAIZONG_1</Tag>
+		<English>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT]?</English>
+		<French>Salutations, [CT_NAME]. Je suis [OUR_NAME], empereur de toute la terre sous les cieux. D'innombrables serviteurs sont sous mon pouvoir absolu. Oserez-vous froisser le souverain divin de la puissante [OUR_CIV_SHORT] ?</French>
+		<German>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT].</German>
+		<Italian>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT].</Italian>
+		<Spanish>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_IVAN_IV_1</Tag>
+		<English>[OUR_NAME] of [OUR_CIV_SHORT] greets you. I do not praise myself or my courage, but I praise God, for he protected me, a sinful man, from deadly dangers and created me capable of doing many human things.</English>
+		<French>[OUR_NAME] de [OUR_CIV_SHORT] vous salue. Je ne loue pas mon propre courage, mais je loue Dieu, qui m'a prot&#233;g&#233;, p&#233;cheur que je suis, de p&#233;rils mortels et qui m'a rendu capable d'accomplir de nombreuses choses.</French>
+		<German>[OUR_NAME] von [OUR_CIV_SHORT] gr&#252;&#223;t Euch. Ich lobe weder mich selbst noch meinen Mut, aber ich lobe Gott, denn er besch&#252;tzte mich, einen s&#252;ndigen Mann, vor t&#246;dlichen Gefahren und erm&#246;glichte mir, viele menschliche Dinge zu tun.</German>
+		<Italian>[OUR_NAME] of [OUR_CIV_SHORT] greets you. I do not praise myself or my courage, but I praise God, for he protected me, a sinful man, from deadly dangers and created me capable of doing many human things.</Italian>
+		<Spanish>[OUR_NAME] of [OUR_CIV_SHORT] greets you. I do not praise myself or my courage, but I praise God, for he protected me, a sinful man, from deadly dangers and created me capable of doing many human things.</Spanish>
+	</TEXT>
+		<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALFRED</Tag>
+		<English>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the santity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</English>
+		<French>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!</French>
+		<German>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</German>
+		<Italian>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</Italian>
+		<Spanish>[OUR_NAME] of [OUR_CIV_SHORT] hails you. For the sanity of your relam I say on to you, Doom very evenly! Do not doom one doom to the rich; another to the poor! Nor doom one doom to your friend; another to your foe!.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ATATURK_1</Tag>
+		<English>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religion is a bridge... History is a bridge...</English>
+		<French>Nous devons nous pr&#233;parer &#224; b&#226;tir une amiti&#233; entre nos peuples. Comment un peuple se pr&#233;pare-t-il pour une telle chose ? En renfor&#231;ant les ponts naturels qui existent entre nous. La langue est un pont... La religion est un pont... L'histoire est un pont...</French>
+		<German>Wir m&#252;ssen uns bereit machen, die Freundschaft zwischen unseren V&#246;lkern aufzubauen. Wie wird ein Volk auf solch ein Vorhaben vorbereitet? Indem wir die nat&#252;rlichen Br&#252;cken st&#228;rken, die zwischen uns existieren. Sprache ist eine Br&#252;cke ... Religion ist eine Br&#252;cke ... Geschichte ist eine Br&#252;cke ...</German>
+		<Italian>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</Italian>
+		<Spanish>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MENELIK_1</Tag>
+		<English>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</English>
+		<French>Bienvenue, [CT_NAME]. Imagination, d&#233;vouement et pers&#233;v&#233;rance, avec la gr&#226;ce divine, assureront votre succ&#232;s. De quoi voulez-vous discuter ?</French>
+		<German>Willkommen, [CT_NAME]. Vorstellungskraft, Hingabe, Durchhalteverm&#246;gen, zusammen mit Gottes Gnade, wird Euren Erfolg sichern. Was sollen wir besprechen?</German>
+		<Italian>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</Italian>
+		<Spanish>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_JUAREZ_1</Tag>
+		<English>Greetings, [CT_NAME]! It is so great to be at peace with you glorious nation!</English>
+		<French>Salutations, [CT_NAME] ! Qu'il est bon d'&#234;tre en paix avec votre glorieuse nation !</French>
+		<German>Greetings, [CT_NAME]! It is so great to be at peace with you glorious nation!</German>
+		<Italian>Greetings, [CT_NAME]! It is so great to be at peace with you glorious nation!</Italian>
+		<Spanish>Greetings, [CT_NAME]! It is so great to be at peace with you glorious nation!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_PEDRO_II</Tag>
+		<English>I see you have come to visit, [CT_NAME]. Tell me what is it you wish to discuss.</English>
+		<French>Je constate que vous &#234;tes venu nous visiter, [CT_NAME]. Dites-moi de quoi vous voulez discuter.</French>
+		<German>I see you have come to visit, [CT_NAME]. Tell me, what is it you wish to discuss.</German>
+		<Italian>I see you have come to visit, [CT_NAME]. Tell me, what is it you wish to discuss.</Italian>
+		<Spanish>I see you have come to visit, [CT_NAME]. Tell me, what is it you wish to discuss.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SAN_MARTIN</Tag>
+		<English>Finally I get to talk to a worthy adversary. What can the [OUR_EMPIRE] do for you?</English>
+		<French>Enfin, je parle &#224; un adversaire digne de ce nom. Qu'est-ce que la [OUR_EMPIRE] peut faire pour vous ?</French>
+		<German>Seid gegr??t, [CT_NAME]. Nehmt Platz und lasst uns ein wenig plaudern.</German>
+		<Italian>Salve, [CT_NAME]. Siediti e parliamo per un po'.</Italian>
+		<Spanish>Saludos, [CT_NAME]. Sentaos y charlemos un rato.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MENELIK_1</Tag>
+		<English>The world is well supplied with people who wish to rule and dominate others. People like you.</English>
+		<French>Le monde est rempli de gens qui veulent r&#233;gner et dominer les autres. Des gens comme vous.</French>
+		<German>Die Welt ist gut versorgt mit Menschen, die andere beherrschen und dominieren wollen. Menschen wie Euch.</German>
+		<Italian>The world is well supplied with people who wish to rule and dominate others. People like you.</Italian>
+		<Spanish>The world is well supplied with people who wish to rule and dominate others. People like you.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_JUAREZ_1</Tag>
+		<English>Oh, you again... What are you going to complain about?</English>
+		<French>Oh, encore vous... De quoi &#234;tes-vous venu vous plaindre ?</French>
+		<German>Oh, you again... What are you going to complain about?</German>
+		<Italian>Oh, you again... What are you going to complain about?</Italian>
+		<Spanish>Oh, you again... What are you going to complain about?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_KHOMEINI_1</Tag>
+		<English>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</English>
+		<French>Si l'on permet &#224; un infid&#232;le de continuer &#224; corrompre la Terre, la souffrance morale de l'infid&#232;le n'en sera que renforc&#233;e. Si l'on tue l'infid&#232;le, et que cela met fin &#224; ses m&#233;faits, sa mort sera pour lui une b&#233;n&#233;diction.</French>
+		<German>Wenn man einem Ungl&#228;ubigen erlaubt, seine Rolle als Verderber der Erde fortzusetzen, wird das moralische Leiden des Ungl&#228;ubigen umso gr&#246;&#223;er sein. Wenn man den Ungl&#228;ubigen t&#246;tet, und ihn vom Fortsetzen seiner Untaten abh&#228;lt, wird ihm sein Tod ein Segen sein.</German>
+		<Italian>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</Italian>
+		<Spanish>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_I_1</Tag>
+		<English>Treachery, cowardice and lies are everywhere - and your nation is no exception.</English>
+		<French>La tra&#238;trise, la l&#226;chet&#233; et les mensonges sont partout - et votre nation ne fait pas exception.</French>
+		<German>Verrat, Feigheit und L&#252;gen sind &#252;berall - und Eure Nation ist keine Ausnahme.</German>
+		<German>Verrat, Feigheit und L&#252;gen sind &#252;berall - und Eure Nation ist keine Ausnahme.</German>
+		<Italian>Treachery, cowardice and lies are everywhere - and your nation is no exception.</Italian>
+		<Spanish>Treachery, cowardice and lies are everywhere - and your nation is no exception.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_ALFRED</Tag>
+		<English>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men.</English>
+		<French>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men.</French>
+		<German>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men.</German>
+		<German>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men.</German>
+		<Italian>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men..</Italian>
+		<Spanish>Remember what punishments befell us in this world when we ourselves did not cherish learning nor transmit it to other men.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_PEDRO_II</Tag>
+		<English>Speak fast [CT_CIV_ADJ]. I have enough on my schedule already.</English>
+		<French>Parlez vite, [CT_CIV_ADJ]. Mon horaire est d&#233;j&#224; assez rempli.</French>
+		<German>Speak fast [CT_CIV_ADJ]. I have enough on my schedule already.</German>
+		<Italian>Speak fast [CT_CIV_ADJ]. I have enough on my schedule already.</Italian>
+		<Spanish>Speak fast [CT_CIV_ADJ]. I have enough on my schedule already.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_SAN_MARTIN</Tag>
+		<English>You lack the guile to trick me. Be warned I will not react well to deceit. </English>
+		<French>Vous n'&#234;tes pas assez rus&#233; pour me tromper. Soyez averti que je ne r&#233;agirai pas favorablement si vous essayez.</French>
+		<German>Was verschafft mir die zweifelhafte Ehre Eures Besuchs?</German>
+		<Italian>E a cosa devo il dubbio onore della tua presenza?</Italian>
+		<Spanish>&#191;Y a qu? debemos el dudoso honor de vuestra compa??a?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_JUAREZ_1</Tag>
+		<English>The government of the [OUR_EMPIRE] will fulfill its duty to defend its independence and to repel foreign aggression, and accept the struggle to which it has been provoked!</English>
+		<French>Le gouvernement du [OUR_EMPIRE] accomplira son devoir de d&#233;fendre son ind&#233;pendance et de repousser toute agression, et accepte de lutter en r&#233;ponse &#224; la provocation !</French>
+		<German>The government of the [OUR_EMPIRE] will fulfill its duty to defend its independence, to repel foreign aggression, and accept the struggle to which it has been provoked!</German>
+		<Italian>The government of the [OUR_EMPIRE] will fulfill its duty to defend its independence, to repel foreign aggression, and accept the struggle to which it has been provoked!</Italian>
+		<Spanish>The government of the [OUR_EMPIRE] will fulfill its duty to defend its independence, to repel foreign aggression, and accept the struggle to which it has been provoked!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_PEDRO_II</Tag>
+		<English>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</English>
+		<French>Jamais ! Je vous punirai pour vos crimes contre le [OUR_CIV_SHORT] et son peuple !</French>
+		<German>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</German>
+		<Italian>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</Italian>
+		<Spanish>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_SAN_MARTIN</Tag>
+		<English>I knew you would beg for peace eventually, but there will be no peace until you surrender.</English>
+		<French>Je savais que vous finiriez par nous supplier de faire la paix, mais il n'y aura pas de paix avant votre reddition.</French>
+		<German>Wie ein Freund von mir zu sagen pflegte: 'Ich akzeptiere nur die sofortige und bedingungslose Kapitulation'. ?u?erst treffend, nicht wahr?</German>
+		<Italian>Come disse una volta un mio amico: &amp;quot;L'unica cosa accettabile ? una resa incondizionata e immediata.&amp;quot; Conciso, non trovi?</Italian>
+		<Spanish>Como un amigo m?o dijo una vez: &amp;quot;Ninguna condici?n es aceptable, salvo una rendici?n incondicional e inmediata&amp;quot;. Es una l?stima, &#191;no cre?is?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_ALFRED</Tag>
+		<English> [CT_NAME] seems to me a very foolish man, and very wretched, who will not increase his understanding while he is in the world, and ever wish and long to reach that endless life where all shall be made clear. </English>
+		<French>[CT_NAME] seems to me a very foolish man, and very wretched, who will not increase his understanding while he is in the world, and ever wish and long to reach that endless life where all shall be made clear.</French>
+		<German>[CT_NAME] seems to me a very foolish man, and very wretched, who will not increase his understanding while he is in the world, and ever wish and long to reach that endless life where all shall be made clear.</German>
+		<Italian>[CT_NAME] seems to me a very foolish man, and very wretched, who will not increase his understanding while he is in the world, and ever wish and long to reach that endless life where all shall be made clear.</Italian>
+		<Spanish>[CT_NAME] seems to me a very foolish man, and very wretched, who will not increase his understanding while he is in the world, and ever wish and long to reach that endless life where all shall be made clear.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_JUAREZ_1</Tag>
+		<English>Get out of my office!</English>
+		<French>Sortez de mon bureau !</French>
+		<German>Get out of my office!</German>
+		<Italian>Get out of my office!</Italian>
+		<Spanish>Get out of my office!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_PEDRO_II</Tag>
+		<English>You make me sad, [CT_NAME]. Go away.</English>
+		<French>Vous m'attristez, [CT_NAME]. Partez.</French>
+		<German>You make me sad, [CT_NAME]. Go away.</German>
+		<Italian>You make me sad, [CT_NAME]. Go away.</Italian>
+		<Spanish>You make me sad, [CT_NAME]. Go away.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_SAN_MARTIN</Tag>
+		<English>I will now use my cunning knowledge of tactics to ignore you.</English>
+		<French>Permettez-moi d'user de mes grandes comp&#233;tences tactiques afin de vous ignorer.</French>
+		<German>Fahrt zur H?lle!</German>
+		<Italian>Sparisci.</Italian>
+		<Spanish>Pod?is iros al cuerno.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_NATIVE_1</Tag>
+		<English>Your words are but the grunts of a diseased pig, [CT_NAME]. I do not hear them.</English>
+		<French>Vos paroles sonnent &#224; mes oreilles tels les horribles grognements d'un porc agonisant, [CT_NAME]. Je ne les &#233;couterai pas plus longtemps.</French>
+		<German>Ihr sprecht mit gespaltener Zunge, [CT_NAME], und ich will es nicht h&#246;ren!</German>
+		<Italian>Le tue parole risuonano come i grugniti di un maiale morente, [CT_NAME]. Un rumore fastidioso che non voglio udire.</Italian>
+		<Spanish>Vuestras palabras no son m&#225;s que gru&#241;idos de un cerdo enfermo, [CT_NAME]. Como tales, no las escucho.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_NATIVE_1</Tag>
+		<English>Give me this, [CT_NAME] and perhaps our two nations can live in peace for a while longer.</English>
+		<French>Donnez-moi ce que je demande, [CT_NAME], et peut-&#234;tre nos deux nations pourront-elles cohabiter en paix quelque temps encore.</French>
+		<German>Gebt uns, was wir verlangen, [CT_NAME], dann besteht die Chance, dass unsere Zivilisationen noch eine Weile in Frieden miteinander leben!</German>
+		<Italian>Dammi questo, [CT_NAME], e forse le nostre due nazioni vivranno in pace per un altro po'.</Italian>
+		<Spanish>Dadme esto, [CT_NAME], y es posible que nuestras naciones puedan vivir en paz un poco m&#225;s.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_NATIVE_1</Tag>
+		<English>Hand this over, [CT_NAME], and I might let you continue to exist for a short while longer.</English>
+		<French>Donnez-nous ce tribut, [CT_NAME], et il est possible que je vous laisse vivre... quelque temps, en tout cas.</French>
+		<German>Her damit, [CT_NAME]! Dann werde ich Euch vielleicht noch eine Weile verschonen!</German>
+		<Italian>Dammelo, [CT_NAME], e potrei lasciarti continuare a esistere ancora un po'.</Italian>
+		<Spanish>Entregadnos esto, [CT_NAME] y puede que os deje perdurar un poco m&#225;s.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_NATIVE_1</Tag>
+		<English>Unlikely as it may seem, it appears that your puny civilization has something that we want. I suggest you hand it over quickly. </English>
+		<French>Aussi ahurissant que cela puisse para&#238;tre, il semblerait que votre ridicule petite civilisation dispose de quelque chose qui pourrait nous &#234;tre utile. Je vous sugg&#232;re de nous le d&#233;livrer au plus vite.</French>
+		<German>So unglaublich es auch klingen mag: Eure mickrige Zivilisation scheint tats&#228;chlich etwas zu haben, was wir wollen. Ihr w&#228;rt gut beraten, es uns schnellstens zu &#252;berlassen! </German>
+		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civilt&#224; possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
+		<Spanish>Por extra&#241;o que suene, parece que vuestra civilizaci&#243;n tiene algo que queremos. Os sugiero que nos lo deis r&#225;pidamente. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_NATIVE_1</Tag>
+		<English>Welcome, [CT_NAME]. And how is that undefended civilization of yours coming along?</English>
+		<French>Bienvenue, [CT_NAME]. Alors, comment &#233;volue donc la situation dans votre petite civilisation si vuln&#233;rable ?</French>
+		<German>Willkommen, [CT_NAME]! Und, wie stehen die Dinge in Eurer hilflosen kleinen Zivilisation?</German>
+		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civilt&#224; indifesa?</Italian>
+		<Spanish>Saludos, [CT_NAME]. &#191;C&#243;mo est&#225; esa civilizaci&#243;n indefensa de la que ven&#237;s?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_NATIVE_1</Tag>
+		<English>Not a chance. The mighty [OUR_CIV_ADJ] people do not care to make peace with cattle-stealing brigands like you.</English>
+		<French>N'y comptez pas ! Le puissant peuple des [OUR_CIV_ADJ] ne souhaite pas faire la paix avec des vils voleurs de b&#233;tail de votre esp&#232;ce.</French>
+		<German>Keine Chance! Das m&#228;chtige [OUR_CIV_ADJ:3] Volk hat kein Interesse daran, mit miesen Viehdieben wie Euch Frieden zu schlie&#223;en! </German>
+		<Italian>Neanche per idea. Al potente sovrano [OUR_CIV_ADJ] non pu&#242; interessare la pace con briganti ladri di bestiame come voi. </Italian>
+		<Spanish>Ni en broma. El poderoso pueblo [OUR_CIV_ADJ:1] no se molesta ni en hacer las paces con cuatreros bergantes como vosotros. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_NATIVE_1</Tag>
+		<English>Greetings, [CT_NAME]! The [OUR_CIV_ADJ] people always enjoy meeting vulnerable and undefended new civilizations!</English>
+		<French>Mes hommages, [CT_NAME] ! Le peuple des [OUR_CIV_ADJ] est toujours enchant&#233; de rencontrer de nouvelles civilisations vuln&#233;rables et sans d&#233;fense !</French>
+		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Das [OUR_CIV_ADJ:3] Volk ist stets hoch erfreut, die Bekanntschaft schutz- und wehrloser neuer Zivilisationen zu machen!</German>
+		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] &#232; sempre lieto di incontrare nuove civilt&#224; vulnerabili e indifese!</Italian>
+		<Spanish>¡Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Tag>
+		<English>So you have emerged from your fetid country and come to me, [CT_NAME]. To what do I owe this extremely dubious honor?</English>
+		<French>Vous avez enfin r&#233;ussi &#224; sortir de cet horrible pays pour venir me voir, [CT_NAME]. Que me vaut un pareil honneur ?</French>
+		<German>Oha, Ihr habt Euer stinkendes Land verlassen, um mich zu besuchen, [CT_NAME]? Was verschafft mir denn diese zweifelhafte Ehre?</German>
+		<Italian>E cos&#236; hai lasciato quel tuo fetido paese e sei venuto da me, [CT_NAME]. E a cosa devo questo dubbio onore?</Italian>
+		<Spanish>As&#237; que hab&#233;is salido de vuestro f&#233;tido pa&#237;s y hab&#233;is venido a verme, [CT_NAME]. &#191;A qu&#233; debo tan dudoso honor?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MEHMED_1</Tag>
+		<English>We require mighty [CT_CIV_SHORT]'s assistance. I hope you won't disappoint us.</English>
+		<French>Nous avons besoin de l'aide du [CT_CIV_SHORT]. J'esp&#232;re que vous ne nous d&#233;cevrez pas.</French>
+		<German>Wir k&#246;nnten die Hilfe des m&#228;chtigen Volkes von [CT_CIV_SHORT] brauchen und hoffen doch sehr, dass Ihr uns nicht im Stich lasst!</German>
+		<Italian>Chiediamo aiuto alla tua potente civilt&#224;. Spero che non ci deluderai.</Italian>
+		<Spanish>Necesitamos la ayuda y la fortaleza de [CT_CIV]. Espero que no nos decepcion&#233;is.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_DEFENSIVE_PACT</Tag>
+		<English>A Mutual Protection Pact - Each Party Agrees to Automatically Declare War if the Other Party is Attacked.</English>
+		<French>Pacte d'assistance mutuelle : chaque partie accepte de d&#233;clarer automatiquement la guerre si l'autre est attaqu&#233;e.</French>
+		<German>Ein Verteidigungsb&#252;ndnis - Beide Parteien stimmen zu, den Angreifern der anderen Partei automatisch den Krieg zu erkl&#228;ren.</German>
+		<Italian>Un patto di protezione reciproca: ogni civilt&#224; accetta di dichiarare automaticamente guerra se la civilt&#224; alleata viene attaccata.</Italian>
+		<Spanish>Un acuerdo de protecci&#243;n mutua: cada parte accede a declarar autom&#225;ticamente la guerra si alguien ataca a la otra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_SLAVE</Tag>
+		<English>Slave Trade</English>
+		<French>Commerce des esclaves</French>
+		<German>Sklavenhandel</German>
+		<Italian>Slave Trade</Italian>
+		<Spanish>Slave Trade</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TRUDEAU_1</Tag>
+		<English>Good day and bonjour to you, [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insists that masters in our own house we must be.</English>
+		<French>Bonjour et good day, [CT_NAME]. Le peuple [OUR_CIV_ADJ] souhaite la paix, mais nous insistons pour &#234;tre ma&#238;tres chez nous.</French>
+		<German>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</German>
+		<Italian>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</Italian>
+		<Spanish>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MEIJI_1</Tag>
+		<English>Finally we meet [CT_NAME], I have been awaiting your arrival. I am Meiji of Japan. Come, we have much to discuss. You have very nice dress, and I am impressed by your armies. Please, show me your ways and I shall show you the wonders of Japan...</English>
+		<French>Nous nous rencontrons enfin, [CT_NAME]. J'attendais votre arriv&#233;e. Je suis Meiji du Japon. Venez, discutons. Vos habits sont tr&#232;s beaux, vos arm&#233;es m'impresionnent. Montrez-moi vos coutumes, et je vous montrerai les merveilles du Japon...</French>
+		<German>Finally we meet [CT_NAME], I have been awaiting your arrival. I am Meiji of Japan. Come, we have much to discuss. You have very nice dress, and I am impressed by your armies. Please, show me your ways and I shall show you the wonders of Japan...</German>
+		<Italian>Finally we meet [CT_NAME], I have been awaiting your arrival. I am Meiji of Japan. Come, we have much to discuss. You have very nice dress, and I am impressed by your armies. Please, show me your ways and I shall show you the wonders of Japan...</Italian>
+		<Spanish>Finally we meet [CT_NAME], I have been awaiting your arrival. I am Meiji of Japan. Come, we have much to discuss. You have very nice dress, and I am impressed by your armies. Please, show me your ways and I shall show you the wonders of Japan...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AFONSO_1</Tag>
+		<English>Welcome to the independent [OUR_CIV_ADJ] lands! I am the king [OUR_NAME], will [CT_CIV_SHORT] recognize [OUR_CIV_SHORT]'s independence or do I need to convince you with my armies?</English>
+		<French>Bienvenue dans les terres ind&#233;pendantes du [OUR_CIV_SHORT] ! Je suis le roi [OUR_NAME]. Le [CT_CIV_SHORT] reconna&#238;tra-t-il l'ind&#233;pendance [OUR_CIV_ADJ] ou dois-je vous en convaincre &#224; l'aide de mes arm&#233;es !</French>
+		<German>Seid gegr??t, [CT_NAME]. Mein Name ist [OUR_NAME]. Es ist mir eine Ehre, Eure Bekanntschaft zu machen.</German>
+		<Italian>Saluti, [CT_NAME]. Sono [OUR_NAME]. ? davvero un onore incontrarti.</Italian>
+		<Spanish>Saludos, [CT_NAME]. Soy [OUR_NAME]. Es todo un honor conoceros.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AFONSO_1</Tag>
+		<English>Here comes my best friend, [CT_NAME]! What brings you today to [OUR_CIV_SHORT]?</English>
+		<French>Voici mon bon ami [CT_NAME]! Qu'est-ce qui vous am&#232;ne au [OUR_CIV_SHORT] ?</French>
+		<German>Seid gegr??t, [CT_NAME]. Nehmt Platz und lasst uns ein wenig plaudern.</German>
+		<Italian>Salve, [CT_NAME]. Siediti e parliamo per un po'.</Italian>
+		<Spanish>Saludos, [CT_NAME]. Sentaos y charlemos un rato.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AFONSO_1</Tag>
+		<English>You are an enemy of [OUR_CIV_SHORT], but I will talk to you.</English>
+		<French>Vous &#234;tes un ennemi du [OUR_CIV_SHORT], mais j'accepte de vous parler.</French>
+		<German>Was verschafft mir die zweifelhafte Ehre Eures Besuchs?</German>
+		<Italian>E a cosa devo il dubbio onore della tua presenza?</Italian>
+		<Spanish>&#191;Y a qu? debemos el dudoso honor de vuestra compa??a?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AFONSO_1</Tag>
+		<English>We desperatedly demand your assistance, [CT_NAME]! [OUR_CIV_SHORT]'s future depends on you!</English>
+		<French>Nous avons d&#233;sesp&#233;r&#233;ment besoin de votre aide, [CT_NAME] ! Le futur du [OUR_CIV_SHORT] d&#233;pend de vous !</French>
+		<German>Ihr werdet einem treuen Freund diese kleine Bitte doch nicht abschlagen, [CT_NAME]?</German>
+		<Italian>Avresti un po' di questi in nome della nostra amicizia, [CT_NAME]?</Italian>
+		<Spanish>&#191;Podr?ais darles esto a unos buenos amigos, [CT_NAME]?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AFONSO_1</Tag>
+		<English>Any chance you share your wealth with [OUR_CIV_SHORT]?</English>
+		<French>Y a-t-il une chance que vous partagiez votre richesse avec le [OUR_CIV_SHORT] ?</French>
+		<German>Helfen hei?t br?derlich teilen, [CT_NAME].</German>
+		<Italian>Se ci tieni a me, condividi, [CT_NAME].</Italian>
+		<Spanish>Compartir es de generosos, [CT_NAME].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AFONSO_1</Tag>
+		<English>Recognizing me as king of the [OUR_EMPIRE] is not enough! I demand the following in tribute!</English>
+		<French>Me reconna&#238;tre comme roi du [OUR_EMPIRE] est insuffisant ! J'exige le tribut suivant !</French>
+		<German>Schlagt ein, wenn Ihr kein zweites Gettysburg erleben wollt! </German>
+		<Italian>Dammi ci? che chiedo o proverai l'ira della nostra &quot;terribile e rapida spada.&quot; </Italian>
+		<Spanish>Dadnos esto o sentir?is la c?lera de nuestra &quot;terrible y veloz espada&quot;. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Tag>
+		<English>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
+		<French>Moi, Bumin Qaghan, fus jadis un esclave, mais suis d&#233;sormais libre. Fils des hommes libres par la loi de l'&#233;p&#233;e, je forge la puissance de mon peuple chevauchant sous le ciel de Tengri.</French>
+		<German>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</German>
+		<Italian>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Italian>
+		<Spanish>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALP_ARSLAN_1</Tag>
+		<English>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</English>
+		<French>J'aimerais savoir ce que vous faites de vos prisonniers. Nul ch&#226;timent n'est plus lourd que le mien : je vous pardonnerais et vous ferais chevaucher librement d'ouest en est.</French>
+		<German>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</German>
+		<Italian>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Italian>
+		<Spanish>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TAMERLANE_1</Tag>
+		<English>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</English>
+		<French>Avec mon &#233;p&#233;e tremp&#233;e, j'ai conquis de vastes pans du monde pour agrandir Samarcande et Boukhara, mes capitales et r&#233;sidences ; et toi, cr&#233;ature pitoyable, tu &#233;changerais ces deux cit&#233;s contre une taupe. La v&#233;rit&#233; est la seule s&#251;ret&#233;.</French>
+		<German>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</German>
+		<Italian>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Italian>
+		<Spanish>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MEMORY_SACKED_CITY</Tag>
+		<English>"You sacked one of our cities!"</English>
+		<French>"Vous avez saccag&#233; l'une de nos villes !"</French>
+		<German>"Ihr habt eine unserer St&#228;dte gepl&#252;ndert!"</German>
+		<Italian>"Hai saccheggiato una delle nostre citt&#224;!"</Italian>
+		<Spanish>"&#161;Saqueasteis una de nuestras ciudades!"</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HONGWU</Tag>
+		<English>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</English>
+		<French>Camarade souverain, l'Empire du Milieu peut t'apprendre l'importance de ta voix. Pour servir tes sujets, ne bredouille pas, n'h&#233;site pas ! Parle fort, avec clart&#233;, sans crainte !</French>
+		<German>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</German>
+		<Italian>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Italian>
+		<Spanish>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_TAIZONG</Tag>
+		<English>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</English>
+		<French>Tant de choses dans la vie sont des miroirs. Le miroir de bronze m'a donn&#233; de beaux habits, celui de l'antiquit&#233; m'a montr&#233; la grandeur et le d&#233;clin de mon royaume, celui de tes amis te montrera tel que tu es. J'ai perdu mon miroir ! Ne perds pas le tien ! N'oublie pas ceux qui te sont chers !</French>
+		<German>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</German>
+		<Italian>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Italian>
+		<Spanish>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOSROW</Tag>
+		<English>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered by our vast armies. It would be wise that you leave aside your pride and accept my greatness, unless you want to be a new acquisition for it.</English>
+		<French>En tant que shahanshah de Perse, j'ai h&#233;rit&#233; de la puissance et de la richesse de mille terres conquises par nos vastes arm&#233;es. Il serait sage de laisser votre orgueil de c&#244;t&#233; et d'accepter ma grandeur, &#224; moins de vouloir &#234;tre la prochaine acquisition &#224; y contribuer.</French>
+		<German>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</German>
+		<Italian>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Italian>
+		<Spanish>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_LEADER_KHOSROW</Tag>
+		<English>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</English>
+		<French>En tant que roi des rois, l'empire que vous exercez sur nous laisse croire que vos sages sont plus sages que les n&#244;tres. Soit vous nous expliquez ce jeu des &#233;checs, soit vous nous demandez un tribut.</French>
+		<German>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</German>
+		<Italian>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Italian>
+		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
