@@ -4684,6 +4684,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
+		// Shwedagon Paya
+		if (eBuilding == SHWEDAGON_PAYA)
+		{
+			changeGreatPeopleRateModifier(GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD) * iChange);
+		}
+
 		// Louvre
 		if (eBuilding == LOUVRE)
 		{
