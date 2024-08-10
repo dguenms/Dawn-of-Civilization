@@ -281,13 +281,16 @@ dGoals = {
 	),
 	iCelts: (
 		ConqueredCities(2, bControl=False, by=-150),
-		Settle(
-			plots.region(rIreland),
-			plots.region(rBritain),
-			plots.region(rIberia),
-			plots.region(rCentralEurope).named(PANNONIA),
-			plots.region(rAnatolia),
-			required=3,
+		All(
+			CityCount(plots.region(rFrance).named(GAUL), 3),
+			Settle(
+				plots.region(rIreland),
+				plots.region(rBritain),
+				plots.region(rIberia),
+				plots.region(rCentralEurope).named(PANNONIA),
+				plots.region(rAnatolia),
+				required=3,
+			),
 			by=-150,
 		),
 		ReligionSpreadCount(sum(iOrthodoxy, iCatholicism).separated(OR), 12, by=1000),

@@ -65,9 +65,9 @@ class Progress(object):
 
 class Description(object):
 
-	def format(self, requirements, desc_args, global_suffixes, required=None):
+	def format(self, requirements, desc_args, global_suffixes, desc_required=None):
 		grouped_descriptions = self.grouped_descriptions(requirements)
-		description_entries = [self.format_entry(key, typed_parameters, descriptions, desc_args + list(req_args), suffixes, required) for key, typed_parameters, req_args, descriptions, suffixes in grouped_descriptions]
+		description_entries = [self.format_entry(key, typed_parameters, descriptions, desc_args + list(req_args), suffixes, req_required and req_required or desc_required) for key, typed_parameters, req_args, descriptions, suffixes, req_required in grouped_descriptions]
 		
 		description = format_separators(description_entries, ",", text("TXT_KEY_AND"))
 		
@@ -77,15 +77,15 @@ class Description(object):
 		arguments = self.arguments(requirements)
 		
 		grouped_descriptions = appenddict()
-		for key, typed_parameters, desc_args, description, suffixes in arguments:
-			grouped_descriptions[(key, typed_parameters, desc_args, suffixes)].append(description)
+		for key, typed_parameters, desc_args, description, suffixes, required in arguments:
+			grouped_descriptions[(key, typed_parameters, desc_args, suffixes, required)].append(description)
 		
-		for key, typed_parameters, desc_args, _, suffixes in arguments:
-			if (key, typed_parameters, desc_args, suffixes) in grouped_descriptions:
-				yield (key, typed_parameters, desc_args, grouped_descriptions.pop((key, typed_parameters, desc_args, suffixes)), suffixes)
+		for key, typed_parameters, desc_args, _, suffixes, required in arguments:
+			if (key, typed_parameters, desc_args, suffixes, required) in grouped_descriptions:
+				yield (key, typed_parameters, desc_args, grouped_descriptions.pop((key, typed_parameters, desc_args, suffixes, required)), suffixes, required)
 	
 	def arguments(self, requirements):
-		return [(req_key, tuple(zip(req.GLOBAL_TYPES, self.convert_parameters(req.parameters))), tuple(req_args), req.description(), tuple(req_suffixes)) for req, req_key, req_args, req_suffixes in requirements]
+		return [(req_key, tuple(zip(req.GLOBAL_TYPES, self.convert_parameters(req.parameters))), tuple(req_args), req.description(), tuple(req_suffixes), req_required) for req, req_key, req_args, req_suffixes, req_required in requirements]
 	
 	def convert_parameters(self, parameters):
 		for parameter in parameters:
