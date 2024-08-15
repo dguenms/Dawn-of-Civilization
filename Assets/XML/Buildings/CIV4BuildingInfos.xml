@@ -10769,7 +10769,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>250</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<iCost>500</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
