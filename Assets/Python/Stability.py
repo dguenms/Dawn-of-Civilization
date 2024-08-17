@@ -30,7 +30,7 @@ tEraAdministrationModifier = (
 )
 
 dCivilizationAdministrationModifier = CivDict({
-	iChina: -50,
+	iChina: -100,
 	iNubia: -100,
 	iRome: 50,
 }, 0)
