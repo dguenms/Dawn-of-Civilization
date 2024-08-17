@@ -690,7 +690,7 @@ class Birth(object):
 		
 		if autoplay():
 			if infos.civ(self.iCiv).getImpact() <= iImpactLimited:
-				if year(dBirth[active()]) > year(dFall[self.iCiv]):
+				if year(dBirth[active()]) > year(dFall[self.iCiv]) + turns(20):
 					return False
 		
 		# Nubia requires no cities
@@ -721,12 +721,6 @@ class Birth(object):
 		# Ottomans require that the Turks managed to conquer at least one city in the Near East
 		if self.iCiv == iOttomans:
 			if cities.birth(iOttomans).none(CyCity.isHuman) and cities.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).none(lambda city: iTurks in [city.getCivilizationType(), city.getPreviousCiv()]):
-				return False
-		
-		# Thailand requires Khmer to be shaky or worse (unstable if Khmer is human)
-		if self.iCiv == iThailand:
-			iRequiredStability = player(iKhmer).isHuman() and iStabilityShaky or iStabilityStable
-			if player(iKhmer).isExisting() and stability(iKhmer) >= iRequiredStability:
 				return False
 		
 		# Iran requires Persia to be dead
