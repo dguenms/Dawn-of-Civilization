@@ -5754,9 +5754,15 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 			int iFreeTechs = 0;
 
+			if (GC.getGameINLINE().getFirstDiscovered(eIndex) == NO_CIVILIZATION)
+			{
+				GC.getGameINLINE().setFirstDiscovered(eIndex, GET_PLAYER(getLeaderID()).getCivilizationType());
+				GC.getGameINLINE().setFirstDiscoveredTurn(eIndex, GC.getGameINLINE().getGameTurn());
+			}
+
 			if (bFirst)
 			{
-				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
+				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1 && GC.getGameINLINE().getFirstDiscovered(eIndex) == GET_PLAYER(getLeaderID()).getCivilizationType())
 				{
 					eFreeUnit = GET_PLAYER(ePlayer).getTechFreeUnit(eIndex);
 					if (eFreeUnit != NO_UNIT)

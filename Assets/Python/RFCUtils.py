@@ -566,9 +566,15 @@ def canCreateUnit(iPlayer, iUnit):
 	return player(iPlayer).canTrain(iUnit, False, False)
 
 # used: RFCUtils, Rise
+@log
 def getUnitForRole(iPlayer, iRole, bUnique=True):
-	roleMetric = lambda unit: (infos.unit(unit).getCombat(), bUnique and base_unit(unit) != unit)
-	iBestUnit = infos.units().where(lambda unit: canCreateUnit(iPlayer, unit)).where(lambda unit: isUnitOfRole(unit, iRole)).maximum(roleMetric)
+	roleMetric = lambda unit: (infos.unit(unit).getCombat(), bUnique == (base_unit(unit) != unit))
+	possibleUnits = infos.units().where(lambda unit: canCreateUnit(iPlayer, unit)).where(lambda unit: isUnitOfRole(unit, iRole))
+	
+	if not bUnique:
+		possibleUnits = possibleUnits.map(base_unit)
+	
+	iBestUnit = possibleUnits.maximum(roleMetric)
 	return (iBestUnit, getRoleAI(iRole))
 
 # used: RFCUtils, Rise
@@ -968,15 +974,16 @@ def flipUnit(unit, iNewOwner, plot):
 		makeUnit(iNewOwner, iUnitType, plot)
 	
 # used: Congresses, Stability
-def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100):
-	coreCities = cities.core(iPlayer).owner(iPlayer)
+def relocateUnitsToCore(iPlayer, lUnits, iArmyPercent = 100, exceptions = []):
+	coreCities = cities.core(iPlayer).without(exceptions).owner(iPlayer)
+	coastalCities = coreCities.coastal() or cities.owner(iPlayer).without(exceptions).coastal()
 	if not coreCities:
 		killUnits(lUnits)
 		return
 	
 	for iType, typeUnits in units.of(lUnits).where(lambda unit: unit.plot() and unit.plot().isOwned()).by_type().items():
 		movedUnits, removedUnits = typeUnits.percentage_split(iArmyPercent)
-		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coreCities.coastal() or coreCities
+		destinations = infos.unit(iType).getDomainType() == DomainTypes.DOMAIN_SEA and coastalCities or coreCities
 		
 		for city, movedUnits in movedUnits.divide(destinations):
 			for unit in movedUnits:
@@ -1155,3 +1162,39 @@ def removeBuildings(city):
 			if not isWonder(iBuilding):
 				if infos.building(iBuilding).getFreeStartEra() < 0 or infos.building(iBuilding).getFreeStartEra() > player(city).getCurrentEra():
 					city.setHasRealBuilding(iBuilding, False)
+
+
+# used: Birth
+def downgradeAreaCottages(iPlayer, area):
+	for plot in area.owner(iPlayer):
+		iImprovement = plot.getImprovementType()
+		
+		if iImprovement == iTown:
+			plot.setImprovementType(iVillage)
+		elif iImprovement == iVillage:
+			plot.setImprovementType(iHamlet)
+		elif iImprovement == iHamlet:
+			plot.setImprovementType(iCottage)
+		elif iImprovement == iCottage:
+			plot.setImprovementType(-1)
+		
+		plot.setUpgradeProgress(0)
+
+
+# used: Rules
+def downgradeCityCottages(city):
+	for plot in plots.city_radius(city):
+		if plot.getOwner() == city.getOwner():
+			if plot.getWorkingCity() == city or plot.getWorkingCity() is None:
+				iImprovement = plot.getImprovementType()
+				
+				if iImprovement == iTown:
+					plot.setImprovementType(iVillage)
+				elif iImprovement == iVillage:
+					plot.setImprovementType(iHamlet)
+				elif iImprovement == iHamlet:
+					plot.setImprovementType(iCottage)
+				elif iImprovement == iCottage:
+					plot.setImprovementType(-1)
+				
+				plot.setUpgradeProgress(0)

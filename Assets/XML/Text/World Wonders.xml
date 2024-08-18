@@ -2179,11 +2179,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
-		<English>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</English>
-		<French>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</French>
-		<German>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</German>
-		<Italian>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Italian>
-		<Spanish>[ICON_BULLET]Requires 10 Desert tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Spanish>
+		<English>[ICON_BULLET]Requires a total of 10 Desert, Semidesert, or Salt Flat tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</English>
+		<French>[ICON_BULLET]Requires a total of 10 Desert, Semidesert, or Salt Flat tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</French>
+		<German>[ICON_BULLET]Requires a total of 10 Desert, Semidesert, or Salt Flat tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</German>
+		<Italian>[ICON_BULLET]Requires a total of 10 Desert, Semidesert, or Salt Flat tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Italian>
+		<Spanish>[ICON_BULLET]Requires a total of 10 Desert, Semidesert, or Salt Flat tiles in city radius[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] per Corporation in the world</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_STRATEGY</Tag>

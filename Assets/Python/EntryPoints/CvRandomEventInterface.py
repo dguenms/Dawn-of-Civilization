@@ -2887,7 +2887,10 @@ def canTriggerCrusade(argsList):
 		return false
 	
 	holyCity = gc.getGame().getHolyCity(iReligion)
-
+	
+	if holyCity.isNone():
+		return false
+	
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ONE_CITY_CHALLENGE) and gc.getPlayer(kTriggeredData.ePlayer).isHuman():
 		return false
 	

@@ -806,9 +806,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -1263,7 +1261,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=33
-	ImprovementType=IMPROVEMENT_SLAVE_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=41,y=34
@@ -1306,7 +1304,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=42,y=31
-	ImprovementType=IMPROVEMENT_SLAVE_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=43,y=21
@@ -1566,7 +1564,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
@@ -3563,7 +3561,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
@@ -4070,7 +4068,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_ARENA
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_STAR_FORT
@@ -4115,7 +4113,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
@@ -4155,7 +4153,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_NORSE_TRADING_POST
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_STAR_FORT
@@ -5525,7 +5523,6 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		BuildingType=BUILDING_PARTHENON
-		BuildingType=BUILDING_MOUNT_ATHOS
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -5559,6 +5556,7 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
+		BuildingType=BUILDING_MOUNT_ATHOS
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
@@ -6502,7 +6500,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_UNIVERSITY
@@ -6566,7 +6564,7 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_PHARMACY
@@ -6937,10 +6935,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
-	x=84,y=44
-	ImprovementType=IMPROVEMENT_ORCHARD
-EndPlot
-BeginPlot
 	x=84,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -6989,10 +6983,6 @@ EndPlot
 BeginPlot
 	x=84,y=46
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=84,y=49
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=84,y=51
@@ -7219,7 +7209,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_UNIVERSITY
@@ -7491,10 +7481,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=87,y=52
-	ImprovementType=IMPROVEMENT_PASTURE
-EndPlot
-BeginPlot
 	x=87,y=54
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -7537,7 +7523,6 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
@@ -7571,7 +7556,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -7598,10 +7583,6 @@ BeginPlot
 	x=88,y=39
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=88,y=46
-	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=88,y=47
@@ -7655,10 +7636,6 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=88,y=51
-	ImprovementType=IMPROVEMENT_ORCHARD
-EndPlot
-BeginPlot
 	x=88,y=53
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -7666,10 +7643,6 @@ EndPlot
 BeginPlot
 	x=88,y=55
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=88,y=56
-	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=88,y=60
@@ -7728,10 +7701,6 @@ BeginPlot
 		YearAcquired=900
 		PreviousOwner=CIVILIZATION_ARABIA
 	EndCity
-EndPlot
-BeginPlot
-	x=89,y=45
-	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=89,y=46
@@ -8278,7 +8247,6 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -8601,7 +8569,6 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_RUSSIAN_KATORGA
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
@@ -9012,7 +8979,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_CHINESE_TAIXUE
+		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
@@ -9468,7 +9435,7 @@ BeginPlot
 		CityPopulation=12
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_CHINESE_TAIXUE
+		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
@@ -10787,7 +10754,6 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_WAT_PREAH_PISNULOK
 		BuildingType=BUILDING_EMERALD_BUDDHA
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST

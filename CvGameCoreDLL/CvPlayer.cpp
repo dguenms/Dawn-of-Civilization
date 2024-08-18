@@ -7111,12 +7111,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Shwedagon Paya
-	if (eBuilding == SHWEDAGON_PAYA)
-	{
-		changeGreatPeopleRateModifier(getCommercePercent(COMMERCE_GOLD) * iChange);
-	}
-
 	// Himeji Castle
 	if (eBuilding == HIMEJI_CASTLE)
 	{
@@ -9762,6 +9756,7 @@ int CvPlayer::getGreatPeopleRateModifier() const
 void CvPlayer::changeGreatPeopleRateModifier(int iChange)
 {
 	m_iGreatPeopleRateModifier = (m_iGreatPeopleRateModifier + iChange);
+	FAssert(m_iGreatGeneralRateModifier >= 0);
 }
 
 
@@ -12794,9 +12789,13 @@ void CvPlayer::setCommercePercent(CommerceTypes eIndex, int iNewValue)
 					iTotalCommercePercent -= iAdjustment;
 
 					// Shwedagon Paya effect: gold rate added to great people rate modifier
-					if (iI == COMMERCE_GOLD && isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+					if (iI == COMMERCE_GOLD)
 					{
-						changeGreatPeopleRateModifier(-iAdjustment);
+						CvCity* pWonderCity = findBuildingCity((BuildingTypes)SHWEDAGON_PAYA);
+						if (pWonderCity)
+						{
+							pWonderCity->changeGreatPeopleRateModifier(-iAdjustment);
+						}
 					}
 				}
 				else
@@ -12807,6 +12806,16 @@ void CvPlayer::setCommercePercent(CommerceTypes eIndex, int iNewValue)
 		}
 
 		FAssert(100 == iTotalCommercePercent);
+
+		// Shwedagon Paya effect: gold rate added to great people rate modifier
+		if (eIndex == COMMERCE_GOLD && isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+		{
+			CvCity* pWonderCity = findBuildingCity((BuildingTypes)SHWEDAGON_PAYA);
+			if (pWonderCity)
+			{
+				pWonderCity->changeGreatPeopleRateModifier(getCommerceRate(eIndex) - iOldValue);
+			}
+		}
 
 		updateCommerce();
 
@@ -14716,6 +14725,26 @@ void CvPlayer::deleteSelectionGroup(int iID)
 	bool bRemoved = m_selectionGroups.removeAt(iID);
 
 	FAssertMsg(bRemoved, "could not find group, delete failed");
+}
+
+void CvPlayer::separateAttackCitySelectionGroups()
+{
+	int iLoop;
+	for (CvSelectionGroup* pGroup = firstSelectionGroup(&iLoop); pGroup != NULL; pGroup = nextSelectionGroup(&iLoop))
+	{
+		if (pGroup->getHeadUnit() != NULL)
+		{
+			switch (pGroup->getHeadUnit()->AI_getUnitAIType())
+			{
+			case UNITAI_ATTACK_CITY:
+			case UNITAI_ATTACK_CITY_LEMMING:
+				pGroup->AI_makeForceSeparate();
+				break;
+			default:
+				;
+			}
+		}
+	}
 }
 
 EventTriggeredData* CvPlayer::firstEventTriggered(int *pIterIdx, bool bRev) const
@@ -25345,7 +25374,16 @@ PeriodTypes CvPlayer::getPeriod() const
 
 void CvPlayer::setBirthProtected(bool bNewValue)
 {
-	m_bBirthProtected = bNewValue;
+	if (isBirthProtected() != bNewValue)
+	{
+		m_bBirthProtected = bNewValue;
+
+		if (!isBirthProtected())
+		{
+			separateAttackCitySelectionGroups();
+			AI_unitUpdate();
+		}
+	}
 }
 
 bool CvPlayer::isBirthProtected() const
@@ -25489,4 +25527,28 @@ int CvPlayer::getShrineIncomeLimit() const
 	}
 
 	return iShrineIncomeLimit;
+}
+
+CvCity* CvPlayer::findBuildingCity(BuildingTypes eBuilding, bool bEffect) const
+{
+	if (bEffect && !isHasBuildingEffect(eBuilding))
+	{
+		return NULL;
+	}
+
+	if (!bEffect && !isHasBuilding(eBuilding))
+	{
+		return NULL;
+	}
+
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		if (pCity->hasBuilding(eBuilding))
+		{
+			return pCity;
+		}
+	}
+
+	return NULL;
 }

@@ -2309,7 +2309,7 @@ void CvUnitAI::AI_attackCityMove()
 	bool bHuntBarbs = false;
 	if (area()->getCitiesPerPlayer(BARBARIAN_PLAYER) > 0)
 	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
+		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE && area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE) || GET_TEAM(getTeam()).getAtWarCount(true) == 0)
 		{
 			bHuntBarbs = true;
 		}
@@ -2317,6 +2317,7 @@ void CvUnitAI::AI_attackCityMove()
 
 	// Leoreth: slightly more dynamic minor target selection
 	bool* bHuntPlayer = new bool[MAX_CIV_PLAYERS];
+	bool bHuntAny = bHuntBarbs;
 
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
@@ -2326,15 +2327,20 @@ void CvUnitAI::AI_attackCityMove()
 		{
 			if (area()->getCitiesPerPlayer((PlayerTypes)iI) > 0)
 			{
-				if (area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE && area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE)
+				if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE && area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE) || GET_TEAM(getTeam()).getAtWarCount(true) == 0)
 				{
 					bHuntPlayer[iI] = true;
+					
+					if (GET_PLAYER((PlayerTypes)iI).isNative())
+					{
+						bHuntAny = true;
+					}
 				}
 			}
 		}
 	}
 
-	bool bReadyToAttack = ((getGroup()->getNumUnits() >= (bHuntBarbs ? 3 : AI_stackOfDoomExtra())));
+	bool bReadyToAttack = ((getGroup()->getNumUnits() >= (bHuntAny ? 3 : AI_stackOfDoomExtra())));
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
 	{
 		if (!bLandWar)

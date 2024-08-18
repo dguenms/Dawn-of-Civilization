@@ -250,6 +250,10 @@ def setupGoals(iCiv, goals):
 		goals[1].requirements[0].accumulate(500)
 
 
+def updateData():
+	data.dFirstContactConquerors = {iMaya: True, iAztecs: True, iInca: True}
+
+
 scenario1700AD = Scenario(
 	iStartYear = 1700,
 	fileName = "RFC_1700AD",
@@ -350,6 +354,8 @@ scenario1700AD = Scenario(
 	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
+	
+	updateData = updateData,
 	
 	greatWall = GreatWall(
 		tGraphicsTL = (118, 54),

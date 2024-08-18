@@ -27,6 +27,10 @@ def add_city_buildings(tile, iCiv):
 			city(tile).setHasRealBuilding(iDefensiveBuilding, True)
 
 
+def is_new_world_discovered():
+	return True in data.dFirstContactConquerors.values()
+
+
 class MinorCity(object):
 
 	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
@@ -187,7 +191,7 @@ class Barbarians(object):
 		PIRATES: "TXT_KEY_BARBARIAN_NOTIFICATION_PIRATES"
 	}
 
-	def __init__(self, iStart, iEnd, units, area, iInterval, pattern, iOwner=iBarbarian, target_area=None, adjective=None, iAlternativeCiv=None, promotions=None):
+	def __init__(self, iStart, iEnd, units, area, iInterval, pattern, iOwner=iBarbarian, target_area=None, adjective=None, iAlternativeCiv=None, promotions=None, condition=None):
 		self.iStart = iStart
 		self.iEnd = iEnd
 		self.units = units
@@ -199,6 +203,7 @@ class Barbarians(object):
 		self.adjective = adjective
 		self.iAlternativeCiv = iAlternativeCiv
 		self.promotions = promotions
+		self.condition = condition
 		
 		if self.target_area is None:
 			self.target_area = area
@@ -216,29 +221,14 @@ class Barbarians(object):
 		return data
 	
 	def check(self):
-		if self.can_notify():
-			self.notify()
-	
 		if self.can_spawn():
 			self.spawn()
 	
-	def can_notify(self):
-		if self.iStart == turn():
-			affected_area = plots.rectangle(self.area) + plots.rectangle(self.area)
-			if affected_area.expand(3).owner(active()):
-				return True
-		
-		return False
-	
-	def notify(self):
-		adjective_text = text_if_exists(self.adjective, otherwise="TXT_KEY_ADJECTIVE_BARBARIAN")
-		unit = infos.unit(self.units.items()[0][0])
-		location = plots.rectangle(self.area).closest(capital(active()))
-		
-		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=location)
-	
 	def can_spawn(self):
 		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
+			return False
+		
+		if self.condition is not None and not self.condition():
 			return False
 	
 		if not (year(self.iStart) <= year() <= year(self.iEnd)):
@@ -264,7 +254,9 @@ class Barbarians(object):
 		return periodic(self.iInterval, self)
 	
 	def spawn(self):
-		for iUnit, plot in zip(self.get_spawn_units(), self.get_spawn_plots()):
+		lSpawnPlots = self.get_spawn_plots()
+		
+		for iUnit, plot in zip(self.get_spawn_units(), lSpawnPlots):
 			unit = makeUnit(self.get_owner(), iUnit, plot, self.get_unit_ai(iUnit, plot))
 			
 			data.units[unit].spawn_data = self.spawn_data()
@@ -275,6 +267,10 @@ class Barbarians(object):
 			if self.promotions:
 				for iPromotion in self.promotions:
 					unit.setHasPromotion(iPromotion, True)
+		
+		for plot in lSpawnPlots:
+			if self.can_notify(plot):
+				self.notify(plot)
 	
 	def get_owner(self):
 		if self.pattern == MINORS:
@@ -380,8 +376,11 @@ class Barbarians(object):
 		
 		if units.at(plot).notowner(self.get_owner()):
 			return False
-		
-		if self.pattern != CLOSE_INVADERS and cities.surrounding(plot):
+			
+		if self.pattern == CLOSE_INVADERS:
+			if plot.isCity():
+				return False
+		elif cities.surrounding(plot):
 			return False
 		
 		if self.pattern in [ANIMALS, NOMADS, MINORS, PIRATES]:
@@ -397,6 +396,21 @@ class Barbarians(object):
 				return False
 		
 		return True
+	
+	def can_notify(self, plot):
+		if turn() <= self.iStart + turns(self.iInterval):
+			if plot.isVisible(player().getTeam(), False):
+				closest = closestCity(plot, owner=active(), same_continent=not plot.isWater(), coastal_only=plot.isWater())
+				if closest and distance(plot, closest) <= 5:
+					return True
+		
+		return False
+	
+	def notify(self, plot):
+		adjective_text = text_if_exists(self.adjective, otherwise="TXT_KEY_ADJECTIVE_BARBARIAN")
+		unit = infos.unit(self.units.items()[0][0])
+		
+		message(active(), self.SPAWN_NOTIFICATIONS[self.pattern], adjective_text, iColor=iRed, button=unit.getButton(), location=plot)
 
 
 minor_cities = [
@@ -429,8 +443,8 @@ minor_cities = [
 	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iCiv=iFrance, units={iDefend: 2, iCounter: 1}, buildings=[iWalls], adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
 	MinorCity(840, iIndependent, (54, 65), u"Áth Cliath", iPopulation=1, iCiv=iCelts, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_IRISH"),
 	MinorCity(880, iIndependent2, (74, 59), "Buda", iPopulation=3, iCiv=iHolyRome, units={iHarass: 5}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
-	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iCiv=iInca, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
-	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iCiv=iInca, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
+	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
+	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
 	MinorCity(900, iIndependent, (87, 29), "Muqdisho", iPopulation=3, iCiv=iSwahili, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
 	MinorCity(900, iNative, (79, 18), "Zimbabwe", iPopulation=2, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SHONA"),
 	MinorCity(1000, iBarbarian, (92, 66), "Qazan", iPopulation=2, iCiv=iTurks, units={iHarass: 3}, adjective="TXT_KEY_ADJECTIVE_BULGAR"),
@@ -553,7 +567,7 @@ barbarians = [
 	Barbarians(1400, 1550, {iLongbowman: 2}, ((21, 49), (27, 54)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MUSCOGEE"),
 	Barbarians(1450, 1600, {iSkirmisher: 1}, ((33, 12), (34, 16)), 15, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MAPUCHE"),
 	Barbarians(1450, 1700, {iGalleass: 2}, ((125, 44), (134, 57)), 12, PIRATES, adjective="TXT_KEY_ADJECTIVE_WOKOU"),
-	Barbarians(1450, 1850, {iMohawk: 1}, ((23, 55), (32, 61)), 8, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_IROQUOIS"),
+	Barbarians(1450, 1850, {iMohawk: 1}, ((23, 55), (32, 61)), 8, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_IROQUOIS", condition=is_new_world_discovered),
 	Barbarians(1500, 1650, {iGalleass: 1}, ((114, 27), (128, 35)), 8, PIRATES),
 	Barbarians(1500, 1700, {iOromoWarrior: 2}, ((82, 29), (88, 32)), 10, PIRATES),
 	Barbarians(1500, 1750, {iCuirassier: 2}, ((85, 57), (95, 67)), 12, NOMADS, target_area=((80, 59), (95, 70)), adjective="TXT_KEY_ADJECTIVE_TATAR", promotions=(iSteppeAdaptation,)),
@@ -561,16 +575,16 @@ barbarians = [
 	Barbarians(1500, 1800, {iCamelGunner: 1}, ((56, 39), (76, 44)), 9, NOMADS, target_area=((54, 34), (76, 48)), adjective="TXT_KEY_ADJECTIVE_BERBER"),
 	Barbarians(1500, 1800, {iCamelGunner: 1}, ((86, 38), (91, 45)), 10, NOMADS, target_area=((77, 39), (91, 50)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
 	Barbarians(1550, 1800, {iCuirassier: 1}, ((96, 62), (108, 69)), 10, NOMADS, target_area=((80, 59), (95, 70)), adjective="TXT_KEY_ADJECTIVE_TATAR", promotions=(iSteppeAdaptation,)),
-	Barbarians(1550, 1850, {iArquebusier: 2}, ((21, 49), (27, 54)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MUSCOGEE"),
+	Barbarians(1550, 1850, {iArquebusier: 2}, ((21, 49), (27, 54)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MUSCOGEE", condition=is_new_world_discovered),
 	Barbarians(1500, 1850, {iCuirassier: 2}, ((92, 57), (109, 64)), 10, NOMADS, target_area=((92, 60), (113, 70)), adjective="TXT_KEY_ADJECTIVE_KAZAKH", promotions=(iSteppeAdaptation,)),
 	Barbarians(1550, 1900, {iArquebusier: 2}, ((58, 31), (64, 35)), 10, NATIVES, adjective="TXT_KEY_ADJECTIVE_ASHANTI"),
 	Barbarians(1550, 1750, {iCuirassier: 2}, ((124, 58), (132, 64)), 8, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_MANCHU"),
 	Barbarians(1600, 1800, {iPombos: 2}, ((70, 20), (77, 25)), 10, INVADERS, iOwner=iNative, target_area=((69, 21), (77, 30)), adjective="TXT_KEY_ADJECTIVE_CHOKWE"),
 	Barbarians(1600, 1800, {iPrivateer: 1}, ((23, 39), (38, 47)), 5, PIRATES),
 	Barbarians(1600, 1850, {iCorsair: 1}, ((54, 42), (69, 50)), 8, PIRATES, adjective="TXT_KEY_ADJECTIVE_BARBARY"),
-	Barbarians(1600, 1900, {iPistolier: 1}, ((32, 10), (37, 15)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MAPUCHE"),
+	Barbarians(1600, 1900, {iPistolier: 1}, ((32, 10), (37, 15)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MAPUCHE", condition=is_new_world_discovered),
 	Barbarians(1650, 1900, {iPrivateer: 1}, ((114, 27), (128, 35)), 8, PIRATES),
-	Barbarians(1700, 1900, {iMountedBrave: 1}, ((14, 56), (23, 62)), 12, NOMADS, iOwner=iNative, target_area=((15, 51), (26, 62)), adjective="TXT_KEY_ADJECTIVE_SIOUX"),
+	Barbarians(1700, 1900, {iMountedBrave: 1}, ((14, 56), (23, 62)), 12, NOMADS, iOwner=iNative, target_area=((15, 51), (26, 62)), adjective="TXT_KEY_ADJECTIVE_SIOUX", condition=is_new_world_discovered),
 	Barbarians(1720, 1850, {iCuirassier: 2}, ((58, 33), (69, 38)), 8, INVADERS, adjective="TXT_KEY_ADJECTIVE_FULA"),
 	Barbarians(1800, 1900, {iPikeman: 2}, ((71, 11), (81, 17)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_ZULU"),
 	Barbarians(1800, 1900, {iMountedBrave: 1}, ((12, 62), (22, 65)), 12, NOMADS, iOwner=iNative, target_area=((15, 57), (26, 66)), adjective="TXT_KEY_ADJECTIVE_CREE"),
@@ -614,8 +628,9 @@ def maintainFallenCivilizations():
 				if slot(iTechCiv) < 0:
 					continue
 				
-				iNumDesiredUnits = 2 + player(iTechCiv).getCurrentEra()
-				iDefender, iDefenseAI = getUnitForRole(iTechCiv, iDefend)
+				iNumDesiredUnits = 2 + player(iTechCiv).getCurrentEra() / 2
+				bUnique = iFallenCiv == iTechCiv
+				iDefender, iDefenseAI = getUnitForRole(iTechCiv, iDefend, bUnique=bUnique)
 				
 				for city in fallen_cities:
 					add_city_buildings(city, iTechCiv)

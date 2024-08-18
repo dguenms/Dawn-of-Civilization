@@ -44,13 +44,13 @@ class BrokeredPeace(TrackRequirement):
 # Third Vedic URV goal
 class CelebrateTurns(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_CELEBRATE_TURNS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CELEBRATE_TURNS"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, turns(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.accumulate_celebrate_turns)
 		
@@ -336,13 +336,13 @@ class GreatGenerals(TrackRequirement):
 # Second Buddhist URV goal
 class HappiestTurns(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_HAPPIEST_TURNS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_HAPPIEST_TURNS"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, turns(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.increment_happiest)
 		
@@ -364,13 +364,13 @@ class HappiestTurns(TrackRequirement):
 # First Taoist URV goal
 class HealthiestTurns(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_HEALTHIEST_TURNS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_HEALTHIEST_TURNS"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, turns(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.increment_healthiest)
 	
@@ -391,7 +391,7 @@ class HealthiestTurns(TrackRequirement):
 
 class ImportCount(TrackRequirement):
 
-	TYPES = (RESOURCE, COUNT)
+	TYPES = (RESOURCE, TURNS)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_IMPORT_RESOURCES"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
@@ -414,14 +414,14 @@ class ImportCount(TrackRequirement):
 # First Buddhist URV goal
 class PeaceTurns(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_PEACE_TURNS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_PEACE_TURNS"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, turns(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.increment_peace_turns)
 		
@@ -466,14 +466,14 @@ class PiracyGold(TrackRequirement):
 # First Catholic URV goal
 class PopeTurns(TrackRequirement):
 
-	TYPES = (COUNT,)
+	TYPES = (TURNS,)
 	
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPE_TURNS"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPE_TURNS"
 	
 	def __init__(self, iRequired, **options):
-		TrackRequirement.__init__(self, turns(iRequired), **options)
+		TrackRequirement.__init__(self, iRequired, **options)
 		
 		self.handle("BeginPlayerTurn", self.increment_pope)
 	
@@ -562,6 +562,7 @@ class ReligionSpreadCount(TrackRequirement):
 	def increment_religion_spread(self, goal, iReligion, unit):
 		if self.iReligion == iReligion:
 			self.increment()
+			goal.check()
 
 
 class ReligionSpreadPopulationCount(TrackRequirement):
@@ -582,6 +583,7 @@ class ReligionSpreadPopulationCount(TrackRequirement):
 	def accumulate_religion_spread_population(self, goal, iReligion, unit):
 		if self.iReligion == iReligion and city(unit):
 			self.accumulate(city(unit).getPopulation())
+			goal.check()
 	
 
 

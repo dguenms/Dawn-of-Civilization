@@ -900,11 +900,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BARBARIAN_NOTIFICATION_MINORS</Tag>
-		<English>%s1 states have been founded near our civilization.</English>
-		<French>%s1 states have been founded near our civilization.</French>
-		<German>%s1 states have been founded near our civilization.</German>
-		<Italian>%s1 states have been founded near our civilization.</Italian>
-		<Spanish>%s1 states have been founded near our civilization.</Spanish>
+		<English>The nearby %s1 peoples are growing in strength.</English>
+		<French>The nearby %s1 peoples are growing in strength.</French>
+		<German>The nearby %s1 peoples are growing in strength.</German>
+		<Italian>The nearby %s1 peoples are growing in strength.</Italian>
+		<Spanish>The nearby %s1 peoples are growing in strength.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BARBARIAN_NOTIFICATION_INVADERS</Tag>

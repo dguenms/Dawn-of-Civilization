@@ -26,8 +26,10 @@ class CvTechChooser:
 
 		self.nWidgetCount = 0
 		self.aiCurrentState = []
+		self.aiFirstDiscovered = []
 		for i in xrange(gc.getNumTechInfos()):
 			self.aiCurrentState.append(-1)
+			self.aiFirstDiscovered.append(-1)
 
 		# Filters
 		self.bResearched = False
@@ -204,8 +206,10 @@ class CvTechChooser:
 
 		self.nWidgetCount = 0
 		self.aiCurrentState = []
+		self.aiFirstDiscovered = []
 		for i in xrange(gc.getNumTechInfos()):
 			self.aiCurrentState.append(-1)
+			self.aiFirstDiscovered.append(-1)
 
 		screen.setPersistent(True)
 
@@ -785,7 +789,18 @@ class CvTechChooser:
 				if self.aiCurrentState[tech] != CIV_NO_RESEARCH or bForce:
 					self.aiCurrentState[tech] = CIV_NO_RESEARCH
 					ChangedList.append(tech)
-
+			
+			iFirstDiscovered = -1
+			if game.isDebugMode():
+				iFirstDiscovered = game.getFirstDiscovered(tech)
+			
+			if game.isDebugMode():
+				if self.aiFirstDiscovered:
+					if self.aiFirstDiscovered[tech] != iFirstDiscovered:
+						self.aiFirstDiscovered[tech] = iFirstDiscovered
+						if tech not in ChangedList:
+							ChangedList.append(tech)
+			
 		for tech in ChangedList:
 			TechInfo = gc.getTechInfo(tech)
 			iX = (gc.getTechInfo(tech).getGridX() - self.iMinX) * (self.BOX_X_SPACING + self.BOX_WIDTH)
@@ -845,8 +860,24 @@ class CvTechChooser:
 				screen.setBarPercentage(szProgress, InfoBarTypes.INFOBAR_RATE, 0.0)
 				if iThreshold > (iProgress + iOverflow):
 					screen.setBarPercentage(szProgress, InfoBarTypes.INFOBAR_RATE, float(iRate) / (iThreshold - iProgress - iOverflow))
+					
+			if game.getFirstDiscovered(tech) != -1:
+				fX = self.BOX_WIDTH - (self.PIXEL_INCREMENT * 2)
 
+				for j in xrange(gc.getNUM_OR_TECH_PREREQS()):
+					iPrereq = TechInfo.getPrereqOrTechs(j)
+					if iPrereq == -1:
+						break
 
+					fX -= self.X_INCREMENT
+		
+				fX -= self.X_INCREMENT
+				szFirstDiscoveredID = "FirstDiscoveredID" + str(tech)
+				screen.addDDSGFCAt(szFirstDiscoveredID, szTechBox, gc.getCivilizationInfo(game.getFirstDiscovered(tech)).getButton(), 6 + fX, 6 + 5, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_FIRST_DISCOVERED, tech, -1, False)
+				screen.hide(szFirstDiscoveredID)
+				
+				if game.isDebugMode():
+					screen.show(szFirstDiscoveredID)
 
 	def updateSelectedTech(self):
 		''

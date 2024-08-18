@@ -175,7 +175,7 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 	iPowerRatioThreshold = player(iAttacker).isHuman() and 80 or 50
 	iPowerRatio = 100 * iDefenderPower / iAttackerPower
 	
-	iMaxAdditionalPower = 200
+	iMaxAdditionalPower = 50
 	
 	if iPowerRatio < iPowerRatioThreshold:
 		iPowerRatioDifference = iPowerRatioThreshold - iPowerRatio
@@ -1027,6 +1027,9 @@ class Birth(object):
 		
 		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.land())
 		convertSurroundingPlotCulture(self.iPlayer, flippedPlots.water().where(lambda p: p.getPlayerCityRadiusCount(self.iPlayer) > 0))
+		
+		if self.player.getCurrentEra() <= iRenaissance:
+			downgradeAreaCottages(self.iPlayer, flippedPlots.land())
 		
 		for iOwner, cityNames in flippedPlayerCities.items():
 			self.warOnFlip(iOwner, cityNames)

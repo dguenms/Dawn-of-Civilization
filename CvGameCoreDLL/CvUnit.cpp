@@ -1236,6 +1236,11 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	int iDefenderDamage;
 	int iDefenderOdds;
 
+	if (getCivilizationType() == PORTUGAL)
+	{
+		log("portugal");
+	}
+
 	getDefenderCombatValues(*pDefender, pPlot, iAttackerStrength, iAttackerFirepower, iDefenderOdds, iDefenderStrength, iAttackerDamage, iDefenderDamage, &cdDefenderDetails);
 	int iAttackerKillOdds = iDefenderOdds * (100 - withdrawalProbability()) / 100;
 
@@ -14870,6 +14875,9 @@ bool CvUnit::greatMission()
 		if (pSpreadPlot == NULL || !pSpreadPlot->isCity()) break;
 
 		pSpreadPlot->getPlotCity()->spreadReligion(eReligion, false);
+
+		// Python Event
+		CvEventReporter::getInstance().unitSpreadReligionAttempt(this, eReligion, true);
 	}
 
 	// remove from eligible cities

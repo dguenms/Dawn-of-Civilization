@@ -1370,3 +1370,13 @@ int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTur
 {
 	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
 }
+
+int CyGame::getFirstDiscovered(int iTech)
+{
+	return m_pGame ? m_pGame->getFirstDiscovered((TechTypes)iTech) : -1;
+}
+
+int CyGame::getFirstDiscoveredTurn(int iTech)
+{
+	return m_pGame ? m_pGame->getFirstDiscoveredTurn((TechTypes)iTech) : -1;
+}

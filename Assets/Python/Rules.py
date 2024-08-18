@@ -65,6 +65,12 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 				convertPlotCulture(plot, iPlayer, 15, False)
 
 
+@handler("cityAcquired")
+def downgradeCottages(iOwner, iPlayer, city, bConquest, bTrade):
+	if bConquest and player(iPlayer).getCurrentEra() <= iRenaissance:
+		downgradeCityCottages(city)
+
+
 ### CITY ACQUIRED AND KEPT ###
 	
 @handler("cityAcquiredAndKept")
@@ -146,7 +152,7 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 		iWinner = winningUnit.getOwner()
 		if player(iWinner).getNumCities() > 0:
 			city = closestCity(winningUnit, iWinner)
-			if city:
+			if city and distance(winningUnit, city) <= 10:
 				iFood = scale(5)
 				city.changeFood(iFood)
 				

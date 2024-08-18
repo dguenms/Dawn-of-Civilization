@@ -180,7 +180,7 @@ class GoalDescription(Describable):
 		return (self.requirements, self.desc_key, self.options) == (other.requirements, other.desc_key, other.options)
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
+		return DESCRIPTION.format([(req, self.desc_key, [], [], None) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -309,7 +309,7 @@ class Goal(Describable):
 		return not team(self.iPlayer).isHasTech(iCalendar) or not AdvisorOpt.isUHVFinishDateNone()
 		
 	def format_description(self):
-		return DESCRIPTION.format([(req, self.desc_key, [], []) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.required < len(self.requirements) and self.required or None)
+		return DESCRIPTION.format([(req, self.desc_key, [], [], None) for req in self.requirements], self.desc_args, self.create_date_suffixes(), self.required < len(self.requirements) and self.required or None)
 	
 	def description(self):
 		return capitalize(self.format_description())
@@ -436,9 +436,9 @@ class AllGoal(Goal):
 		date_suffixes = list(self.create_date_suffixes())
 		
 		if date_suffixes:
-			requirement_entries = [(req, goal.desc_key, goal.desc_args, []) for goal in self.requirements for req in goal.requirements]
+			requirement_entries = [(req, goal.desc_key, goal.desc_args, [], goal.required < len(goal.requirements) and goal.required or None) for goal in self.requirements for req in goal.requirements]
 		else:
-			requirement_entries = [(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements]
+			requirement_entries = [(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes(), goal.required < len(goal.requirements) and goal.required or None) for goal in self.requirements for req in goal.requirements]
 		
 		return DESCRIPTION.format(requirement_entries, self.desc_args, date_suffixes)
 	
@@ -507,7 +507,7 @@ class DifferentCitiesGoal(Goal):
 		return all(goal.succeeded() for goal in self.requirements) and self.unique_records()
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes()) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
+		return DESCRIPTION.format([(req, goal.desc_key, goal.desc_args, goal.create_date_suffixes(), goal.required < len(goal.requirements) and goal.required or None) for goal in self.requirements for req in goal.requirements], self.desc_args, self.create_date_suffixes())
 		
 	def progress_entries(self):
 		for subgoal in self.requirements:
@@ -555,7 +555,7 @@ class Combined(Describable):
 		return self.descriptions == other.descriptions
 	
 	def format_description(self):
-		return DESCRIPTION.format([(req, description.desc_key, description.desc_args, description.create_date_suffixes()) for description in self.descriptions for req in description.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
+		return DESCRIPTION.format([(req, description.desc_key, description.desc_args, description.create_date_suffixes(), description.options.get("required")) for description in self.descriptions for req in description.requirements], self.desc_args, self.create_date_suffixes(), self.options.get("required"))
 	
 	def description(self):
 		return capitalize(self.format_description())

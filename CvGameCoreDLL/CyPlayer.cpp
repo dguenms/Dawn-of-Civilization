@@ -2756,3 +2756,13 @@ void CyPlayer::changeBonusImport(int eBonus, int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeBonusImport((BonusTypes)eBonus, iChange);
 }
+
+void CyPlayer::AI_unitUpdate()
+{
+	if (m_pPlayer) m_pPlayer->AI_unitUpdate();
+}
+
+void CyPlayer::separateAttackCitySelectionGroups()
+{
+	if (m_pPlayer) m_pPlayer->separateAttackCitySelectionGroups();
+}

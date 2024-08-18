@@ -715,6 +715,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 	// Leoreth
 	case WIDGET_HELP_SATELLITE_LIMIT:
 		parseSatelliteLimitHelp(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_FIRST_DISCOVERED:
+		parseFirstDiscoveredHelp(widgetDataStruct, szBuffer);
+		break;
 
 	}
 }
@@ -4293,7 +4298,6 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 	if (pHeadSelectedCity != NULL)
 	{
 		int iTotalCulture = 0;
-		int iCulture;
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
@@ -5498,4 +5502,11 @@ void CvDLLWidgetData::parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStru
 	{
 		GAMETEXT.setSatelliteLimitHelp(szBuffer, *pHeadSelectedCity);
 	}
+}
+
+void CvDLLWidgetData::parseFirstDiscoveredHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	int iFirstDiscoveredTurn = GC.getGameINLINE().getFirstDiscoveredTurn((TechTypes)widgetDataStruct.m_iData1);
+	int iFirstDiscoveredYear = GC.getGameINLINE().getTurnYear(iFirstDiscoveredTurn);
+	szBuffer.append(gDLL->getText("TXT_KEY_WIDGET_FIRST_DISCOVERED", GC.getCivilizationInfo(GC.getGameINLINE().getFirstDiscovered((TechTypes)widgetDataStruct.m_iData1)).getShortDescription(), abs(iFirstDiscoveredYear), iFirstDiscoveredYear >= 0 ? gDLL->getText("TXT_KEY_AD").c_str() : gDLL->getText("TXT_KEY_BC").c_str()));
 }

@@ -1023,6 +1023,8 @@ public:
 	CvSelectionGroup* addSelectionGroup();
 	void deleteSelectionGroup(int iID);
 
+	void separateAttackCitySelectionGroups();
+
 	// pending triggers iteration
 	EventTriggeredData* firstEventTriggered(int *pIterIdx, bool bRev=false) const;
 	EventTriggeredData* nextEventTriggered(int *pIterIdx, bool bRev=false) const;
@@ -1346,6 +1348,8 @@ public:
 	int getTechnologyHistory(int iTurn) const;
 	int getPopulationHistory(int iTurn) const;
 	int getLandHistory(int iTurn) const;
+
+	CvCity* findBuildingCity(BuildingTypes eBuilding, bool bEffect = true) const;
 
 	bool m_bTurnPlayed;
 

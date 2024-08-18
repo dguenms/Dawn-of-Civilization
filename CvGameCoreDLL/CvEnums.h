@@ -595,6 +595,7 @@ enum WidgetTypes					// Exposed to Python
 
 	WIDGET_HELP_WONDER_LIMIT, // Merijn
 	WIDGET_HELP_SATELLITE_LIMIT, // Leoreth
+	WIDGET_FIRST_DISCOVERED, // Leoreth
 
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES

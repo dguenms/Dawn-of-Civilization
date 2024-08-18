@@ -265,7 +265,7 @@ def log(func):
 	def logged_func(*args, **kwargs):
 		print "Begin %s" % signature(func, *args, **kwargs)
 		result = func(*args, **kwargs)
-		print "Complete %s" % func.__name__
+		print "Complete %s: %s" % (func.__name__, result)
 		return result
 	
 	return logged_func
@@ -1092,6 +1092,10 @@ class EntityCollection(object):
 	
 	def set(self):
 		return set(self._keys)
+	
+	# TODO: test
+	def map(self, func):
+		return self.copy([self._keyify(mapped) for mapped in self.get(func)])
 	
 	def format(self, separator=",", final_separator=None, formatter=lambda x: x):
 		if final_separator is None:

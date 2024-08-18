@@ -8950,30 +8950,33 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 
 	bFirst = true;
 
-	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
+	if (GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_LAND)
 	{
-		if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA || iI == TERRAIN_SNOW)
+		for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 		{
-			if (!GC.getUnitInfo(eUnit).getTerrainImpassable(iI))
+			if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA || iI == TERRAIN_SNOW)
 			{
-				CvWString szTerrain;
-				szTerrain.Format(L"<link=literal>%s</link>", GC.getTerrainInfo((TerrainTypes)iI).getDescription());
-				setListHelp(szBuffer, szTempBuffer, szTerrain, L", ", bFirst);
-				bFirst = false;
+				if (!GC.getUnitInfo(eUnit).getTerrainImpassable(iI))
+				{
+					CvWString szTerrain;
+					szTerrain.Format(L"<link=literal>%s</link>", GC.getTerrainInfo((TerrainTypes)iI).getDescription());
+					setListHelp(szBuffer, szTempBuffer, szTerrain, L", ", bFirst);
+					bFirst = false;
+				}
 			}
 		}
-	}
 
-	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
-	{
-		if (iI == FEATURE_JUNGLE || iI == FEATURE_RAINFOREST || iI == FEATURE_MARSH)
+		for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
 		{
-			if (!GC.getUnitInfo(eUnit).getFeatureImpassable(iI))
+			if (iI == FEATURE_JUNGLE || iI == FEATURE_RAINFOREST || iI == FEATURE_MARSH)
 			{
-				CvWString szFeature;
-				szFeature.Format(L"<link=literal>%s</link>", GC.getFeatureInfo((FeatureTypes)iI).getDescription());
-				setListHelp(szBuffer, szTempBuffer, szFeature, L", ", bFirst);
-				bFirst = false;
+				if (!GC.getUnitInfo(eUnit).getFeatureImpassable(iI))
+				{
+					CvWString szFeature;
+					szFeature.Format(L"<link=literal>%s</link>", GC.getFeatureInfo((FeatureTypes)iI).getDescription());
+					setListHelp(szBuffer, szTempBuffer, szFeature, L", ", bFirst);
+					bFirst = false;
+				}
 			}
 		}
 	}

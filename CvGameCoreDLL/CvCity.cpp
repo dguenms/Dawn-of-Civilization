@@ -2195,7 +2195,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 		bool bException = false;
 
-		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_BALKANS) && (iCityContinent == 0 || iCityContinent == 1))
+		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_GREECE) && (iCityContinent == 0 || iCityContinent == 1))
 		{
 			bException = true;
 		}
@@ -2428,9 +2428,15 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		int iNumDesertTiles = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT)
+			switch (getCityIndexPlot(iI)->getTerrainType())
 			{
+			case TERRAIN_DESERT:
+			case TERRAIN_SEMIDESERT:
+			case TERRAIN_SALTFLAT:
 				iNumDesertTiles++;
+				break;
+			default:
+				;
 			}
 		}
 
@@ -4678,6 +4684,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
+		// Shwedagon Paya
+		if (eBuilding == SHWEDAGON_PAYA)
+		{
+			changeGreatPeopleRateModifier(GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD) * iChange);
+		}
+
 		// Louvre
 		if (eBuilding == LOUVRE)
 		{
@@ -6105,7 +6117,7 @@ int CvCity::getHurryCost(bool bExtra, int iProductionLeft, int iHurryModifier, i
 		int iExtraProduction = getExtraProductionDifference(iProduction, iModifier);
 		if (iExtraProduction > 0)
 		{
-			int iAdjustedProd = iProduction * iProduction;
+			uint iAdjustedProd = iProduction * iProduction;
 
 			// round up
 			iProduction = (iAdjustedProd + (iExtraProduction - 1)) / iExtraProduction;

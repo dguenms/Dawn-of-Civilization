@@ -475,7 +475,7 @@ class OpenBorderCount(ThresholdRequirement):
 		if self.civs and civ(iOther) not in self.civs:
 			return False
 		
-		return team(iPlayer).isOpenBorders(player(iOther).getTeam())
+		return team(iPlayer).canContact(player(iOther).getTeam()) and team(iPlayer).isOpenBorders(player(iOther).getTeam())
 	
 	def additional_formats(self):
 		civilizations = text("TXT_KEY_VICTORY_CIVILIZATIONS")

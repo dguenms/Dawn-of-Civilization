@@ -103,6 +103,7 @@ dCivGroups = {
 iCivGroupEurope : [iGreece, iRome, iCelts, iByzantium, iFrance, iNorse, iSpain, iEngland, iHolyRome, iRus, iItaly, iPoland, iPortugal, iSweden, iRussia, iNetherlands, iGermany],
 iCivGroupAsia : [iIndia, iChina, iHarappa, iPolynesia, iPersia, iJapan, iDravidia, iKushans, iKorea, iKhmer, iMalays, iJava, iTibet, iBurma, iVietnam, iMongols, iMughals, iThailand, iRussia, iTurks],
 iCivGroupMiddleEast : [iEgypt, iBabylonia, iAssyria, iHittites, iPersia, iKushans, iByzantium, iArabia, iMoors, iSwahili, iOttomans, iCarthage, iTurks, iIran],
+iCivGroupMediterranean : [iEgypt, iGreece, iPhoenicia, iRome, iByzantium, iFrance, iArabia, iMoors, iSpain, iPortugal, iItaly, iOttomans],
 iCivGroupAfrica : [iEgypt, iNubia, iCarthage, iEthiopia, iMali, iMoors, iSwahili, iCongo],
 iCivGroupAmerica : [iMaya, iToltecs, iInca, iAztecs, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
 }
@@ -538,7 +539,7 @@ iGreece : [(1800, 2020)],
 iIndia : [(1600, 1800), (1900, 2020)],
 iPhoenicia : [(-1000, -150)],
 iPersia : [(220, 580)],
-iCelts : [(400, 1150)],
+iCelts : [(400, 1150), (1850, 2020)],
 iRome : [(-750, 450)],
 iMaya : [(0, 800)],
 iDravidia : [(-300, 600), (1300, 1650)],
@@ -1166,7 +1167,7 @@ iNumImpacts = 5
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 lLateColonyCivs = lTradingCompanyCivs + [iGermany]
 
-lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRussia]
+lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRus]
 
 (i3000BC, i600AD, i1700AD) = range(3)
 

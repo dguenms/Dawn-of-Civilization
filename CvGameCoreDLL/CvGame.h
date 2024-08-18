@@ -607,6 +607,12 @@ public:
 	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const;
 	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue);
 
+	CivilizationTypes getFirstDiscovered(TechTypes eTech) const;
+	void setFirstDiscovered(TechTypes eTech, CivilizationTypes eCiv);
+
+	int getFirstDiscoveredTurn(TechTypes eTech) const;
+	void setFirstDiscoveredTurn(TechTypes eTech, int iTurn);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -670,6 +676,8 @@ protected:
 	// Leoreth
 	int* m_aiTechRankTeam;
 	char* m_aiCivPeriod;
+	char* m_aiFirstDiscovered;
+	int* m_aiFirstDiscoveredTurn;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;

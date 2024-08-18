@@ -26,7 +26,7 @@ def checkAvailableSlots():
 
 def freeSlotFor(iCiv):
 	iCivImpact = getImpact(iCiv)
-	availableSlots = players.major().alive().where(lambda p: getImpact(civ(p)) <= iCivImpact)
+	availableSlots = players.major().ai().alive().where(lambda p: getImpact(civ(p)) <= iCivImpact)
 	metric = lambda iPlayer: (getImpact(civ(iPlayer)), until(year(dFall[iPlayer])))
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityCollapsing).minimum(metric)
@@ -51,8 +51,8 @@ def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
 	
 def completeCollapse(iPlayer):
-	# before cities are seceded, downgrade their cottages
-	downgradeCottages(iPlayer)
+	# before cities are seceded, downgrade their improvements
+	downgradeImprovements(iPlayer)
 	
 	# secede all cities, destroy close and less important ones
 	bRazeMinorCities = (player(iPlayer).getCurrentEra() <= iMedieval)
@@ -68,8 +68,21 @@ def completeCollapse(iPlayer):
 	
 	events.fireEvent("collapse", iPlayer)
 		
-def downgradeCottages(iPlayer):
-	for plot in plots.all().owner(iPlayer):
+def downgradeImprovements(iPlayer):
+	lAlwaysDowngrade = [iCottage, iHamlet, iVillage, iTown]
+	bPlayerDowngrade = civ(iPlayer) in [iHarappa, iToltecs] and not player(iPlayer).isHuman()
+	
+	improvementPlots = plots.owner(iPlayer).where(lambda p: p.getImprovementType() >= 0)
+	alwaysDowngrade, potentialDowngrade = improvementPlots.split(lambda p: p.getImprovementType() in lAlwaysDowngrade or bPlayerDowngrade)
+	
+	if player(iPlayer).getCurrentEra() <= iRenaissance:
+		iFraction = 4
+		if player(iPlayer).getCurrentEra() <= iClassical:
+			iFraction = 2
+		
+		alwaysDowngrade += potentialDowngrade.shuffle().fraction(iFraction)
+	
+	for plot in alwaysDowngrade:
 		iImprovement = plot.getImprovementType()
 		
 		if iImprovement == iTown: 
@@ -78,7 +91,7 @@ def downgradeCottages(iPlayer):
 			plot.setImprovementType(iCottage)
 		elif iImprovement == iHamlet: 
 			plot.setImprovementType(iCottage)
-		elif iImprovement == iCottage: 
+		else:
 			plot.setImprovementType(-1)
 		
 		# Destroy all Harappan and Toltec improvements
@@ -86,7 +99,7 @@ def downgradeCottages(iPlayer):
 			if iImprovement >= 0:
 				plot.setImprovementType(-1)
 				
-	message(iPlayer, 'TXT_KEY_STABILITY_DOWNGRADE_COTTAGES', color=iRed)
+	message(iPlayer, 'TXT_KEY_STABILITY_DOWNGRADE_IMPROVEMENTS', color=iRed)
 		
 def collapseToCore(iPlayer):
 	nonCoreCities = cities.owner(iPlayer).where(lambda city: not city.isPlayerCore(iPlayer))
