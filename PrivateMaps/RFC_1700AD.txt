@@ -9225,6 +9225,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_VIJAYA_STAMBHA
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		BeginCulture
