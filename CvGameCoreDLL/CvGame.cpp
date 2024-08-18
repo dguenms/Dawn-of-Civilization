@@ -8093,7 +8093,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			PlayerTypes ePlayer = kData.kVoteOption.ePlayer;
 			PlayerTypes eOtherPlayer = kData.kVoteOption.eOtherPlayer;
 
-			if (ePlayer != NULL && eOtherPlayer != NULL)
+			if (ePlayer != NO_PLAYER && eOtherPlayer != NO_PLAYER)
 			{
 				GET_TEAM(GET_PLAYER(ePlayer).getTeam()).changeEspionagePointsAgainstTeam(GET_PLAYER(eOtherPlayer).getTeam(), kVote.getEspionage() * GET_PLAYER(ePlayer).getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource)));
 			}
