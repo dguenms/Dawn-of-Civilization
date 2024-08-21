@@ -375,7 +375,7 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	if bEmpty:
 		nearbyCityPlots, settlePlots = emptyPlots.split(lambda p: plots.surrounding(p).any(CyPlot.isCity))
 		
-		targetPlots = settlePlots.sample(iNumCities - len(targetCities))
+		targetPlots = settlePlots.where(lambda p: p.getSettlerValue(iCiv) > 0).sample(iNumCities - len(targetCities))
 		targetPlots += nearbyCityPlots.expand(1).where(lambda p: p.isCity() and p.getOwner() != iPlayer).sample(iNumCities - len(targetCities) - len(targetPlots))
 		
 		return targetCities + targetPlots

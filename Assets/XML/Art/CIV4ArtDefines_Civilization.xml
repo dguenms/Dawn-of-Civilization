@@ -176,7 +176,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_PORTUGAL</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Portugal.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Portugal.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Escudo.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
