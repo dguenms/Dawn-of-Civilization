@@ -69,7 +69,7 @@ dGoals = {
 		StateReligionPercent(iProtestantism, 50, bSecular=True),
 	),
 	iPaganVictory: (
-		BuildingCount(iPaganTemple, 15, subject=WORLD),
+		BuildingCount(iPaganTemple, 25, subject=WORLD),
 		NoReligionPercent(50),
 	),
 	iSecularVictory: (
