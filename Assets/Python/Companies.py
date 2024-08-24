@@ -86,6 +86,16 @@ def checkCompany(iCompany, iGameTurn):
 		city = companyCities.minimum(lambda city: getCityValue(city, iCompany) * 10 + rand(10))
 		if city:
 			city.setHasCorporation(iCompany, False, True, True)
+	
+	# if at maximum, remove from the least attractive city and spread it to the most attractive city if their difference is large enough
+	else:
+		removeCity = companyCities.minimum(lambda city: getCityValue(city, iCompany))
+		spreadCity = availableCities.maximum(lambda city: getCityValue(city, iCompany))
+		if removeCity and spreadCity:
+			if getCityValue(spreadCity, iCompany) > getCityValue(removeCity, iCompany) + 5:
+				removeCity.setHasCorporation(iCompany, False, True, True)
+				spreadCity.setHasCorporation(iCompany, True, True, True)
+				
 
 
 def getCityValue(city, iCompany):
