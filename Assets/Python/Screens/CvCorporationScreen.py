@@ -7,7 +7,6 @@ import ScreenInput
 import CvScreenEnums
 
 from Core import *
-import companies
 
 PyPlayer = PyHelpers.PyPlayer
 
