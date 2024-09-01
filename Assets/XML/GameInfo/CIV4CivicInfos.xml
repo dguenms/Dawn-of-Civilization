@@ -268,18 +268,11 @@
 			<Button>,Art/Interface/Buttons/Civics/Bureaucracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iCapitalBuildingProductionModifier>25</iCapitalBuildingProductionModifier>
 			<CapitalYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>50</iYield>
 				<iYield>50</iYield>
 			</CapitalYieldModifiers>
-			<Hurrys>
-				<Hurry>
-					<HurryType>HURRY_GOLD_BUILDINGS</HurryType>
-					<bHurry>1</bHurry>
-				</Hurry>
-			</Hurrys>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
