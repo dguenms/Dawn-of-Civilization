@@ -502,6 +502,13 @@ def flipMoorishMaghreb(iPlayer):
 			makeUnit(iPlayer, iWorker, city)
 
 
+@handler("flip")
+def stabilizeRomeAfterByzantium(iPlayer):
+	if civ(iPlayer) == iByzantium:
+		if player(iRome).isExisting():
+			data.players[iRome].iNumPreviousCities = player(iRome).getNumCities()
+
+
 ### PERIOD CHANGE ###
 
 
