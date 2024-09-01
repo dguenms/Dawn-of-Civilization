@@ -7721,7 +7721,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST").GetCString(), GC.getCivicInfo(eCivic).getSpecialistExtraYieldArray());
 
 	// Leoreth: specialist type extra yield
+	CvWString szSpecialistTypeYieldsBySpecialist;
+	YieldTypes eLastSpecialistYield = NO_YIELD;
+	int iLastSpecialistYield = -1;
 	int iSpecialistTypeExtraYield;
+
+	bool bFormatByYield = true;
+
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		bFound = false;
@@ -7735,10 +7741,25 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 				if (bFound)
 				{
 					szYields.append(L", ");
+					bFormatByYield = false;
 				}
 
 				szYields.append(CvWString::format(L"+%d%c", iSpecialistTypeExtraYield, GC.getYieldInfo((YieldTypes)iJ).getChar()));
 				bFound = true;
+
+				if (bFormatByYield)
+				{
+					if (eLastSpecialistYield != NO_YIELD)
+					{
+						if (eLastSpecialistYield != iJ || iLastSpecialistYield != iSpecialistTypeExtraYield)
+						{
+							bFormatByYield = false;
+						}
+					}
+
+					eLastSpecialistYield = (YieldTypes)iJ;
+					iLastSpecialistYield = iSpecialistTypeExtraYield;
+				}
 			}
 		}
 
@@ -7747,9 +7768,49 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			CvWString szSpecialist;
 			szSpecialist.Format(L"<link=literal>%s</link>", GC.getSpecialistInfo((SpecialistTypes)iI).getDescription());
 
-			szHelpText.append(NEWLINE);
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_TYPE_EXTRA_YIELD", szYields.GetCString(), szSpecialist.GetCString()));
+			szSpecialistTypeYieldsBySpecialist.append(NEWLINE);
+			szSpecialistTypeYieldsBySpecialist.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_TYPE_EXTRA_YIELD", szYields.GetCString(), szSpecialist.GetCString()));
 		}
+	}
+
+	if (bFormatByYield)
+	{
+		CvWString szYield;
+		CvWString szSpecialists;
+
+		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+		{
+			bFound = false;
+
+			for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+			{
+				iSpecialistTypeExtraYield = GC.getCivicInfo(eCivic).getSpecialistTypeExtraYield(iJ, iI);
+				if (iSpecialistTypeExtraYield != 0)
+				{
+					if (bFound)
+					{
+						szSpecialists.append(L", ");
+					}
+					else
+					{
+						szYield.Format(L"+%d%c", iSpecialistTypeExtraYield, GC.getYieldInfo((YieldTypes)iI).getChar());
+					}
+
+					szSpecialists.append(CvWString::format(L"<link=literal>%s</link>", GC.getSpecialistInfo((SpecialistTypes)iJ).getDescription()));
+					bFound = true;
+				}
+			}
+
+			if (bFound)
+			{
+				szHelpText.append(NEWLINE);
+				szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_TYPE_EXTRA_YIELD", szYield.GetCString(), szSpecialists.GetCString()));
+			}
+		}
+	}
+	else
+	{
+		szHelpText.append(szSpecialistTypeYieldsBySpecialist);
 	}
 
 	// Valid Specialists...

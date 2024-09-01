@@ -84,8 +84,6 @@ class CvPediaSpecialist:
 
 		szEffects = CyGameTextMgr().getSpecialistHelp(self.iSpecialist, True)[1:]
 		szEffects = szEffects.replace("Birth Rate", szGP)
-		if iGPClass == gc.getInfoTypeForString('UNITCLASS_PROPHET'):
-			szEffects = szEffects.replace(u"%c" % CyGame().getSymbolID(FontSymbols.GREAT_PEOPLE_CHAR), u"%c" % CyGame().getSymbolID(FontSymbols.RELIGION_CHAR))
 
 		screen.addMultilineText(text, szEffects, self.X_EFFECTS + 10, self.Y_EFFECTS + 30, self.W_EFFECTS - 10, self.H_EFFECTS - 30, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
