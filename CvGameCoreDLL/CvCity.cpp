@@ -1344,6 +1344,17 @@ void CvCity::doTurn()
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
 
+	/*if (headOrderQueueNode() != NULL)
+	{
+		if (headOrderQueueNode()->m_data.eOrderType == ORDER_MAINTAIN)
+		{
+			if (headOrderQueueNode()->m_data.iData1 == PROCESS_RESEARCH)
+			{
+				log(CvWString::format(L"Build research in %s (%s)", getName().c_str(), GET_PLAYER(getOwnerINLINE()).getCivilizationShortDescription()));
+			}
+		}
+	}*/
+
 	// ONEVENT - Do turn
 /*************************************************************************************************/
 /**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
