@@ -978,15 +978,32 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<bNoForeignTrade>1</bNoForeignTrade>
-			<SpecialistExtraYields>
-				<iYield>1</iYield>
-			</SpecialistExtraYields>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<SpecialistTypeExtraYields>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+				<SpecialistTypeExtraYield>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistTypeExtraYield>
+			</SpecialistTypeExtraYields>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
