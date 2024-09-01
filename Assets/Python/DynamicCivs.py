@@ -443,7 +443,7 @@ lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali] # TODO: this should be 
 lVassalNameChanges = [iInca, iAztecs, iMughals] # TODO: this should be covered by period
 lChristianityNameChanges = [iInca, iAztecs] # TODO: this should be covered by period
 
-lColonies = [iMali, iEthiopia, iCongo, iAztecs, iInca, iMaya] # TODO: could be covered by more granular continental regions
+lColonies = [iMali, iEthiopia, iCongo, iSwahili, iToltecs, iAztecs, iInca, iMaya] # TODO: could be covered by more granular continental regions
 
 dNameChanges = { # TODO: this should be covered by period
 	iPhoenicia : "TXT_KEY_CIV_CARTHAGE_SHORT_DESC",
@@ -1507,7 +1507,7 @@ def vassalTitle(iPlayer, iMaster):
 	sMasterTitle = dMasterTitles.get(iMasterCiv)
 	if sMasterTitle: return sMasterTitle
 		
-	if iCiv in lColonies:
+	if iCiv in lColonies and iMasterCiv not in lColonies:
 		return "TXT_KEY_COLONY_OF"
 	
 	return "TXT_KEY_PROTECTORATE_OF"
