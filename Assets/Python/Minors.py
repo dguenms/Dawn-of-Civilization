@@ -27,8 +27,15 @@ def add_city_buildings(tile, iCiv):
 			city(tile).setHasRealBuilding(iDefensiveBuilding, True)
 
 
-def is_new_world_discovered():
+def is_new_world_discovered(_):
 	return True in data.dFirstContactConquerors.values()
+
+
+def is_free_of_civ(iCiv):
+	def func(barbarians):
+		return iCiv not in cities.rectangle(barbarians.area).owners()
+	
+	return func
 
 
 class MinorCity(object):
@@ -228,7 +235,7 @@ class Barbarians(object):
 		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
 			return False
 		
-		if self.condition is not None and not self.condition():
+		if self.condition is not None and not self.condition(self):
 			return False
 	
 		if not (year(self.iStart) <= year() <= year(self.iEnd)):
@@ -557,7 +564,7 @@ barbarians = [
 	Barbarians(700, 1700, {iHeavyGalley: 1}, ((84, 22), (95, 37)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
 	Barbarians(750, 950, {iLongship: 1, iAxeman: 2}, ((53, 48), (63, 72)), 6, SEA_INVADERS, adjective="TXT_KEY_ADJECTIVE_VIKING"),
 	Barbarians(800, 1200, {iLongbowman: 2, iWarElephant: 1}, ((116, 37), (119, 43)), 8, INVADERS, target_area=((118, 34), (124, 39)), adjective="TXT_KEY_ADJECTIVE_TAI"),
-	Barbarians(800, 1100, {iHeavySwordsman: 1}, ((113, 50), (120, 56)), 8, INVADERS, target_area=((112, 57), (123, 56)), adjective="TXT_KEY_ADJECTIVE_TANGUT"),
+	Barbarians(800, 1100, {iHeavySwordsman: 1}, ((113, 50), (120, 56)), 8, INVADERS, target_area=((112, 57), (123, 56)), adjective="TXT_KEY_ADJECTIVE_TANGUT", condition=is_free_of_civ(iTibet)),
 	Barbarians(850, 1000, {iHorseArcher: 3}, ((65, 57), (77, 61)), 5, INVADERS, target_area=((64, 56), (72, 65)), adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
 	Barbarians(850, 1100, {iHorseArcher: 3}, ((79, 58), (88, 62)), 6, NOMADS, target_area=((73, 49), (84, 66)), adjective="TXT_KEY_ADJECTIVE_PECHENEG"),
 	Barbarians(900, 1100, {iKeshik: 3}, ((117, 56), (131, 63)), 6, INVADERS, target_area=((118, 49), (129, 61)), adjective="TXT_KEY_ADJECTIVE_JURCHEN", promotions=(iDesertAdaptation,)),
@@ -565,7 +572,7 @@ barbarians = [
 	Barbarians(900, 1150, {iOghuz: 3}, ((92, 53), (112, 65)), 6, NOMADS, target_area=((91, 45), (102, 58)), adjective="TXT_KEY_ADJECTIVE_TURKIC", promotions=(iSteppeAdaptation,)),
 	Barbarians(900, 1150, {iSkirmisher: 1}, ((25, 24), (29, 29)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
 	Barbarians(900, 1100, {iJaguar: 4}, ((11, 44), (19, 51)), 5, INVADERS, iOwner=iNative, target_area=((14, 40), (23, 45)), adjective="TXT_KEY_ADJECTIVE_NAHUA"),
-	Barbarians(900, 1200, {iKeshik: 2, iHorseArcher: 2}, ((105, 53), (119, 59)), 8, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_KHITAN", promotions=(iDesertAdaptation, iSteppeAdaptation)),
+	Barbarians(900, 1200, {iKeshik: 2, iHorseArcher: 2}, ((105, 53), (119, 59)), 8, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_KHITAN", promotions=(iDesertAdaptation, iSteppeAdaptation), condition=is_free_of_civ(iTibet)),
 	Barbarians(950, 1100, {iLongship: 1, iHuscarl: 2}, ((53, 48), (63, 72)), 8, SEA_INVADERS, adjective="TXT_KEY_ADJECTIVE_VIKING"),
 	Barbarians(1000, 1200, {iHorseArcher: 2}, ((101, 41), (105, 46)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_RAJPUT"),
 	Barbarians(1000, 1300, {iAxeman: 2}, ((74, 64), (80, 69)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_BALTIC"),
