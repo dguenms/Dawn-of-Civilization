@@ -707,7 +707,6 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
-			<iProcessModifier>100</iProcessModifier>
 			<SpecialistExtraYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -722,6 +721,12 @@
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
 			</SpecialistTypeExtraYields>
+			<Hurrys>
+				<Hurry>
+					<HurryType>HURRY_GOLD_BUILDINGS</HurryType>
+					<bHurry>1</bHurry>
+				</Hurry>
+			</Hurrys>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
