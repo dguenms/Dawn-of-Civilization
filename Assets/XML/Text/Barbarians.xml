@@ -418,6 +418,14 @@
 		<Spanish>Khazar</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_KHITAN</Tag>
+		<English>Khitan</English>
+		<French>Khitan</French>
+		<German>Khitan</German>
+		<Italian>Khitan</Italian>
+		<Spanish>Khitan</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KOMI</Tag>
 		<English>Komi</English>
 		<French>Komi</French>
@@ -720,6 +728,14 @@
 		<German>Tai</German>
 		<Italian>Tai</Italian>
 		<Spanish>Tai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TANGUT</Tag>
+		<English>Tangut</English>
+		<French>Tangut</French>
+		<German>Tangut</German>
+		<Italian>Tangut</Italian>
+		<Spanish>Tangut</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TATAR</Tag>
