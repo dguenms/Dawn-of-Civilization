@@ -70,7 +70,7 @@
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_BUILDING</Description>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>10</iDifficultyMod>
+			<iDifficultyMod>25</iDifficultyMod>
 			<iDestroyBuildingCostFactor>500</iDestroyBuildingCostFactor>
 			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
@@ -79,7 +79,7 @@
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_PROJECT</Description>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>25</iDifficultyMod>
+			<iDifficultyMod>150</iDifficultyMod>
 			<iDestroyProjectCostFactor>500</iDestroyProjectCostFactor>
 			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
@@ -87,6 +87,7 @@
 			<Type>ESPIONAGEMISSION_DESTROY_PRODUCTION</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_PRODUCTION</Description>
 			<bTargetsCity>1</bTargetsCity>
+			<iDifficultyMod>100</iDifficultyMod>
 			<iDestroyProductionCostFactor>500</iDestroyProductionCostFactor>
 			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
@@ -95,7 +96,7 @@
 			<Description>TXT_KEY_ESPIONAGE_STEAL_TREASURY</Description>
 			<iCost>300</iCost>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>25</iDifficultyMod>
+			<iDifficultyMod>75</iDifficultyMod>
 			<iStealTreasuryTypes>100</iStealTreasuryTypes>
 			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>
@@ -111,7 +112,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_POISON_WATER</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_POISON_WATER</Description>
-			<iCost>120</iCost>
+			<iCost>250</iCost>
 			<bTargetsCity>1</bTargetsCity>
 			<iDifficultyMod>-50</iDifficultyMod>
 			<iCityPoisonWaterCounter>5</iCityPoisonWaterCounter>
@@ -120,9 +121,9 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_UNHAPPINESS</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_UNHAPPINESS</Description>
-			<iCost>120</iCost>
+			<iCost>600</iCost>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>-50</iDifficultyMod>
+			<iDifficultyMod>-25</iDifficultyMod>
 			<iCityUnhappinessCounter>8</iCityUnhappinessCounter>
 			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
@@ -131,6 +132,7 @@
 			<Description>TXT_KEY_ESPIONAGE_CITY_REVOLT</Description>
 			<iCost>750</iCost> <!-- Default: 650 -->
 			<bTargetsCity>1</bTargetsCity>
+			<iDifficultyMod>100</iDifficultyMod>
 			<iCityRevoltCounter>1</iCityRevoltCounter>
 			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
@@ -139,7 +141,7 @@
 			<Description>TXT_KEY_ESPIONAGE_BUY_TECH</Description>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>25</iDifficultyMod>
+			<iDifficultyMod>50</iDifficultyMod>
 			<iBuyTechCostFactor>50</iBuyTechCostFactor>
 			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
@@ -148,7 +150,7 @@
 			<Description>TXT_KEY_ESPIONAGE_SWITCH_CIVIC</Description>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>50</iDifficultyMod>
+			<iDifficultyMod>100</iDifficultyMod>
 			<iSwitchCivicCostFactor>200000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
 			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
@@ -157,7 +159,7 @@
 			<Description>TXT_KEY_ESPIONAGE_SWITCH_RELIGION</Description>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>50</iDifficultyMod>
+			<iDifficultyMod>100</iDifficultyMod>
 			<iSwitchReligionCostFactor>250000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
 			<iBaseExperience>3</iBaseExperience>
 		</EspionageMissionInfo>
@@ -174,18 +176,18 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_ASSASSINATE</Type>
 			<Description>TXT_KEY_MISSION_ASSASSIN</Description>
-			<iCost>500</iCost>
+			<iCost>2500</iCost>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<iDifficultyMod>50</iDifficultyMod>
+			<iDifficultyMod>200</iDifficultyMod>
 			<iDestroyUnitCostFactor>1</iDestroyUnitCostFactor>
 			<iBaseExperience>2</iBaseExperience>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BRIBE</Type>
 			<Description>TXT_KEY_MISSION_BRIBE</Description>
-			<iCost>250</iCost>
-			<iDifficultyMod>25</iDifficultyMod>
+			<iCost>500</iCost>
+			<iDifficultyMod>50</iDifficultyMod>
 			<iBuyUnitCostFactor>1</iBuyUnitCostFactor>
 			<iBaseExperience>1</iBaseExperience>
 		</EspionageMissionInfo>

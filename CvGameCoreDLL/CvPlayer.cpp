@@ -15722,9 +15722,15 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	{
 		FAssert(NULL != pCity);
 		// Cannot poison a city's water supply if it's already poisoned (value is negative when active)
-		if (NULL != pCity && pCity->getEspionageHealthCounter() <= 0)
+		if (NULL != pCity)
 		{
-			iMissionCost = iBaseMissionCost;
+			if (pCity->getEspionageHealthCounter() <= 0)
+			{
+				iMissionCost = iBaseMissionCost;
+			}
+
+			iMissionCost *= (9 + pCity->getPopulation());
+			iMissionCost /= 10;
 		}
 	}
 
@@ -15733,9 +15739,15 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	{
 		FAssert(NULL != pCity);
 		// Cannot make a city unhappy if you've already done it (value is negative when active)
-		if (NULL != pCity && pCity->getEspionageHappinessCounter() <= 0)
+		if (NULL != pCity)
 		{
-			iMissionCost = iBaseMissionCost;
+			if (pCity->getEspionageHappinessCounter() <= 0)
+			{
+				iMissionCost = iBaseMissionCost;
+			}
+
+			iMissionCost *= (9 + pCity->getPopulation());
+			iMissionCost /= 10;
 		}
 	}
 
@@ -15744,9 +15756,15 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	{
 		FAssert(NULL != pCity);
 		// Cannot make a city revolt if it's already revolting
-		if (NULL != pCity && pCity->getOccupationTimer() == 0)
+		if (NULL != pCity)
 		{
-			iMissionCost = iBaseMissionCost;
+			if (pCity->getOccupationTimer() == 0)
+			{
+				iMissionCost = iBaseMissionCost;
+			}
+
+			iMissionCost *= (4 + pCity->getPopulation());
+			iMissionCost /= 5;
 		}
 	}
 	else if (kMission.getCounterespionageMod() > 0)
