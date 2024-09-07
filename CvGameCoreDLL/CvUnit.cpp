@@ -15007,7 +15007,7 @@ bool CvUnit::canRebuild(const CvPlot* pPlot) const
 			{
 				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
 				{
-					if (!pCity->isHasRealBuilding(eBuilding) && pCity->canConstruct(eBuilding))
+					if (!pCity->isHasRealBuilding(eBuilding) && pCity->canConstruct(eBuilding, true))
 					{
 						return true;
 					}
