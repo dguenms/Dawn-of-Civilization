@@ -2578,6 +2578,14 @@
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_SAVANNA</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
 			</FeatureMakesValids>
 			<BonusTypeStructs>
 				<BonusTypeStruct>
