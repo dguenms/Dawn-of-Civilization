@@ -3323,7 +3323,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=62
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=63,y=63
