@@ -2092,11 +2092,9 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		BuildingType=BUILDING_HINDU_SHRINE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_SHRINE
 		ReligionType=RELIGION_HINDUISM
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
-		HolyCityReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture
@@ -2173,9 +2171,11 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_BUDDHIST_SHRINE
 		BuildingType=BUILDING_NALANDA
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
+		HolyCityReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture
