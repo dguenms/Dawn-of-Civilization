@@ -25,7 +25,6 @@ import WBInfoScreen
 import WBTradeScreen
 import CvEventManager
 import Popup
-import WBStoredDataScreen
 
 import MapEditorTools as met
 import DynamicCivs as dc
@@ -2550,9 +2549,6 @@ class CvWorldBuilderScreen:
 
 		elif inputClass.getFunctionName() == "EditUnitsCities":
 			WBPlayerUnits.WBPlayerUnits().interfaceScreen(self.m_iCurrentPlayer)
-
-		elif inputClass.getFunctionName() == "StoredDataScreen":
-			WBStoredDataScreen.WBStoredDataScreen(self).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "WorldBuilderPlayerChoice":
 			bDeleteOverlay = False

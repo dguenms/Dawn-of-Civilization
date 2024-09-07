@@ -6,7 +6,6 @@ import Popup
 import WBReligionScreen
 import WBCorporationScreen
 import WBInfoScreen
-import WBStoredDataScreen
 gc = CyGlobalContext()
 
 from CvPlatyBuilderSettings import *
@@ -56,7 +55,6 @@ class WBGameDataScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_CONCEPT_CORPORATIONS", ()), 9, 9, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS", ()), 10, 10, True)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
-		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ()), 12, 12, False)
 
 		self.placeStats()
 		self.placeGameOptions()
@@ -323,8 +321,6 @@ class WBGameDataScreen:
 				WBCorporationScreen.WBCorporationScreen().interfaceScreen(self.top.m_iCurrentPlayer)
 			elif iIndex == 11:
 				WBInfoScreen.WBInfoScreen().interfaceScreen(self.top.m_iCurrentPlayer)
-			elif iIndex == 12:
-				WBStoredDataScreen.WBStoredDataScreen(self.top).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
 			if bRemove:

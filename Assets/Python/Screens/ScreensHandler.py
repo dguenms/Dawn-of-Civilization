@@ -25,7 +25,6 @@ import WBUnitScreen
 import WBPlayerScreen
 import WBGameDataScreen
 import WBPlotScreen
-import WBStoredDataScreen
 ## Ultrapack ##
 
 from CvMainInterface import g_mainInterface as mainInterface
@@ -865,18 +864,6 @@ def __eventWBPlotScriptPopupApply(playerID, userData, popupReturn):
 	WBPlotScreen.WBPlotScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
 	return
 
-def __eventWBStoredDataValuePopupApply(playerID, userData, popupReturn):
-	sScript = popupReturn.getEditBoxString(0)
-	try:
-		int(sScript)
-		bInt = True
-	except ValueError:
-		bInt = False
-	if bInt:
-		iValue = int(sScript)
-		WBStoredDataScreen.WBStoredDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).changeListTableValue(userData[0], iValue)
-	return
-
 def __eventWBLandmarkPopupApply(playerID, userData, popupReturn):
 	sScript = popupReturn.getEditBoxString(0)
 	pPlot = CyMap().plot(userData[0], userData[1])
@@ -910,5 +897,4 @@ events.setPopupHandlers(2222, 'WBCityScript', __eventWBScriptPopupBegin, __event
 events.setPopupHandlers(3333, 'WBUnitScript', __eventWBScriptPopupBegin, __eventWBUnitScriptPopupApply)
 events.setPopupHandlers(4444, 'WBGameScript', __eventWBScriptPopupBegin, __eventWBGameScriptPopupApply)
 events.setPopupHandlers(5555, 'WBPlotScript', __eventWBScriptPopupBegin, __eventWBPlotScriptPopupApply)
-events.setPopupHandlers(7777, 'WBStoredDataValue', __eventWBScriptPopupBegin, __eventWBStoredDataValuePopupApply),
 ## Platy Builder ##
