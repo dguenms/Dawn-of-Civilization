@@ -6726,7 +6726,7 @@ bool CvUnit::canInfiltrate(const CvPlot* pPlot, bool bTestVisible) const
 	}
 
 	CvCity* pCity = pPlot->getPlotCity();
-	if (pCity == NULL || pCity->isBarbarian()) //Rhye - add minors here?
+	if (pCity == NULL || pCity->isBarbarian() || GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv())
 	{
 		return false;
 	}
