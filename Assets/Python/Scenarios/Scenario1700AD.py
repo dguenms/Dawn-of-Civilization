@@ -351,7 +351,7 @@ scenario1700AD = Scenario(
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
 	
-	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iOttomans, iThailand],
+	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iRussia, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
 	
