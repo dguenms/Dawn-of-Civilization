@@ -17182,13 +17182,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GALLEASS</Class>
-			<Type>UNIT_ITALIAN_LANTERNAS</Type>
+			<Type>UNIT_ITALIAN_LANTERNA</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Description>
-			<Civilopedia>TXT_KEY_UNIT_ITALIAN_LANTERNAS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ITALIAN_LANTERNAS_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_ITALIAN_LANTERNA</Description>
+			<Civilopedia>TXT_KEY_UNIT_ITALIAN_LANTERNA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_ITALIAN_LANTERNA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -17270,7 +17270,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ITALIAN_LANTERNAS</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ITALIAN_LANTERNA</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>

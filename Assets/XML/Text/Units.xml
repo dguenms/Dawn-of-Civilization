@@ -3122,24 +3122,24 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Tag>
-		<English>Lanternas</English>
+		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNA</Tag>
+		<English>Lanterna</English>
 		<French>
-			<Text>Lanternas</Text>
+			<Text>Lanterna</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Lanternas</German>
-		<Italian>Lanternas</Italian>
-		<Spanish>Lanternas</Spanish>
+		<German>Lanterna</German>
+		<Italian>Lanterna</Italian>
+		<Spanish>Lanterna</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</English>
-		<French>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</French>
-		<German>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Spanish>
+		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Lanterna[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</English>
+		<French>The [COLOR_UNIT_TEXT]Lanterna[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</French>
+		<German>The [COLOR_UNIT_TEXT]Lanterna[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Lanterna[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Lanterna[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ITALIAN_BALESTRIERE</Tag>

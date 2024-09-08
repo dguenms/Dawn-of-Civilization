@@ -2962,7 +2962,7 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
-					<UnitType>UNIT_ITALIAN_LANTERNAS</UnitType>
+					<UnitType>UNIT_ITALIAN_LANTERNA</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
