@@ -334,6 +334,10 @@ def checkMinorTechs():
 	iMinor = players.civs(iIndependent, iIndependent2, iNative).existing().periodic(8)
 	if iMinor:
 		updateMinorTechs(iMinor, barbarian())
+
+
+def getBirth(iCiv):
+	return next(birth for birth in data.births if birth.iCiv == iCiv)
 	
 
 class Birth(object):
@@ -351,6 +355,8 @@ class Birth(object):
 		
 		self.protectionEnd = None
 		self.canceled = until(self.iTurn) < 0
+		
+		self.bSwitch = False
 		
 		self.iExpansionDelay = 0
 		self.iExpansionTurns = 0
@@ -386,7 +392,7 @@ class Birth(object):
 	
 	@property
 	def switchPopup(self):
-		return popup.text("TXT_KEY_POPUP_SWITCH").option(self.noSwitch, "TXT_KEY_POPUP_NO").option(self.switch, "TXT_KEY_POPUP_YES").build()
+		return popup.text("TXT_KEY_POPUP_SWITCH").option(self.noSwitch, "TXT_KEY_POPUP_NO").option(self.yesSwitch, "TXT_KEY_POPUP_YES").build()
 	
 	def isHuman(self):
 		if self.iPlayer is None:
@@ -665,7 +671,9 @@ class Birth(object):
 			self.protect()
 			self.expansion()
 			self.announce()
-			
+		
+		elif iUntilBirth == 2:
+			self.askSwitch()
 		elif iUntilBirth == 1:
 			self.birth()
 			self.checkSwitch()
@@ -866,12 +874,12 @@ class Birth(object):
 		if turn() == year(dFall[iClearedCiv]).deviate(10, data.iSeed):
 			completeCollapse(slot(iClearedCiv))
 	
-	def checkSwitch(self):
+	def askSwitch(self):
 		if not self.canSwitch():
 			self.assignAdditionalTechs()
 			return
 
-		self.switchPopup.text(adjective(self.iPlayer)).noSwitch().switch().launch()
+		self.switchPopup.text(adjective(self.iPlayer)).noSwitch().yesSwitch().launch()
 	
 	def canSwitch(self):
 		if not MainOpt.isSwitchPopup():
@@ -885,12 +893,22 @@ class Birth(object):
 	
 		return True
 	
+	def yesSwitch(self):
+		self.bSwitch = True
+		
+		game.doControl(ControlTypes.CONTROL_FORCEENDTURN)
+	
 	def noSwitch(self):
 		if not self.isHuman():
 			self.assignAdditionalTechs()
 			createRoleUnits(self.iPlayer, self.location, getAIStartingUnits(self.iPlayer))
 		
 		createSpecificUnits(self.iPlayer, self.location)
+	
+	def checkSwitch(self):
+		if self.bSwitch:
+			self.bSwitch = False
+			self.switch()
 	
 	def switch(self):
 		iPreviousPlayer = active()
