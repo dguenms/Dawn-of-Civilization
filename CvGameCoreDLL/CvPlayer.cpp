@@ -14042,8 +14042,11 @@ int CvPlayer::getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex
 			return 0;
 		}
 
-		// for all other specialists extra food is limited to +1
-		return std::min(1, m_ppaaiSpecialistExtraYield[eIndex1][eIndex2]);
+		// for normal specialists extra food is limited to +1
+		if (GC.getSpecialistInfo(eIndex1).getGreatPeopleRateChange() > 0)
+		{
+			return std::min(1, m_ppaaiSpecialistExtraYield[eIndex1][eIndex2]);
+		}
 	}
 
 	return m_ppaaiSpecialistExtraYield[eIndex1][eIndex2];
