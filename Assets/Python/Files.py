@@ -76,12 +76,15 @@ class FileMap(object):
 		file.close()
 	
 	@staticmethod
-	def write(rows, file_path):
+	def write(rows, file_path, bReverse=True):
 		file = open(getPath(file_path), "wb")
 		writer = UnicodeWriter(file)
 		
+		if bReverse:
+			rows = reversed(rows)
+		
 		try:
-			for row in reversed(rows):
+			for row in rows:
 				row = [cell and cell or u"" for cell in row]
 				writer.writerow(row)
 		finally:
