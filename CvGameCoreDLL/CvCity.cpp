@@ -1252,6 +1252,10 @@ void CvCity::doTurn()
 					{
 						pLoopPlot->doImprovement();
 					}
+					else if (GET_PLAYER(getOwnerINLINE()).isFreeImprovementUpgrade())
+					{
+						pLoopPlot->doImprovementUpgrade();
+					}
 				}
 			}
 		}

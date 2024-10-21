@@ -514,6 +514,8 @@ public:
 
 	bool isEspionageCounterSpy(TeamTypes eTeam) const;
 
+	void doImprovementUpgrade();
+
 	DllExport int getAreaIdForGreatWall() const;
 	DllExport int getSoundScriptId() const;
 	DllExport int get3DAudioScriptFootstepIndex(int iFootstepTag) const;
@@ -700,7 +702,6 @@ protected:
 	void doCulture();
 
 	void processArea(CvArea* pArea, int iChange);
-	void doImprovementUpgrade();
 
 	ColorTypes plotMinimapColor();
 
