@@ -239,6 +239,15 @@ def markCityNames():
 		createLandmark((x, y), name)
 
 
+def markInvalidCityNames():
+	for tile, name in city_names:
+		try:
+			name.encode("latin-1")
+		except:
+			createLandmark(tile, name)
+			print name
+
+
 def markResource(iResource):
 	name = infos.bonus(iResource).getText()
 	
