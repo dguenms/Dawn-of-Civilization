@@ -2353,6 +2353,12 @@ name_changes = {
 		iGerman: "Banjo",
 		iLocal: _,
 	},
+	"Baoding": {
+		iChinese: (
+			found("Xiadu", iBefore=iAncient),
+			_,
+		),
+	},
 	"Baranavichi": {
 		iEnglish: "Baranavichy",
 		iGerman: "Baranawitschy",
@@ -17123,6 +17129,18 @@ name_changes = {
 			_,
 		),
 	},
+	"Tong'an": {
+		iChinese: (
+			translate("Xiamen", iAfter=iRenaissance),
+			_,
+		),
+		iEnglish: "Amoy",
+		iJapanese: "Amoi",
+		iKorean: "Hamun",
+		iRussian: "Amoj",
+		iThai: u"Siamœn",
+		iVietnamese: "Ha Mon",
+	},
 	"Tongjiang": {
 		iChinese: _,
 		iKorean: "Dalju",
@@ -18692,12 +18710,36 @@ name_changes = {
 		iSpanish: "Wurzburgo",
 	},
 	
+	### X ###
 	
-	
-	
+	"Xaafuun": {
+		iArabic: "Hafun",
+		iEgyptian: found("Pwnt"),
+		iGreek: "Opone",
+		iItalian: "Dante",
+		iSomali: _,
+	},
 	"Xai-Xai": {  # founded on Mandlakazi
 		iLocal: _,
 		iPortuguese: u"João Belo",
+	},
+	"Xaintes": {
+		iFrench: (
+			translate("Saintes", iAfter=iRenaissance),
+			_,
+		),
+		iLatin: "Mediolanum Santonum",
+	},
+	"Xainza": {
+		iChinese: "Shenzha",
+		iTibetan: _,
+	},
+	"Xalixko": {
+		iNahuatl: _,
+		iSpanish: (
+			found("Tepic"),
+			"Xalisco",
+		),
 	},
 	"Xangogo": {  # founded on Opuwo
 		iLocal: _,
@@ -18717,6 +18759,16 @@ name_changes = {
 	"Xicalango": {  # founded on Ox Te' Tuun
 		iNahuatl: _,
 		iSpanish: "Ciudad del Carmen",
+	},
+	"Xicheng": {
+		iChinese: (
+			translate("Ankang", iAfter=iMedieval),
+			_,
+		),
+	},
+	"Xicuahua": {
+		iNahuatl: _,
+		iSpanish: "Chihuahua",
 	},
 	u"Xigazê": {
 		iChinese: (
@@ -18739,14 +18791,28 @@ name_changes = {
 			_,
 		),
 	},
+	"Xiva": {
+		iArabic: "Khawarzum",
+		iPersian: "Kharzam",
+		iRussian: "Khiva",
+		iTurkish: _,
+	},
 	"Xoconochco": {  # founded on Kaminaljuyu
 		iNahuatl: _,
 		iSpanish: "Soconusco",
 	},
+	
+	
+	
+	
 	"Yabelo": {
 		iEthiopian: _,
 		iItalian: "Javello",
 		iSomali: "Yaabeelloo",
+	},
+	"Yakeshi": {
+		iChinese: _,
+		iMongol: "Yakoshih",
 	},
 	"Yanam": {  # founded on Rajamahendravaram
 		iDravidian: _,
