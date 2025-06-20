@@ -551,6 +551,10 @@ name_changes = {
 		),
 		iLatin: relocate("Ptolemais Hermiou"),
 	},
+	u"Åbo": {
+		iLocal: "Turku", # Finnish
+		iSwedish: _,
+	},
 	"Aborepi": {
 		iArabic: "Al-Musawarat Al-Sufra",
 		iEgyptian: "Jbrp",
@@ -2003,6 +2007,15 @@ name_changes = {
 		iRussian: "Avin'on",
 		iSpanish: u"Aviñón",
 	},
+	u"Ávila": {
+		iArabic: "Abila",
+		iCeltic: "Obila",
+		iLatin: (
+			found("Caesarobriga"),
+			"Abila",
+		),
+		iSpanish: _,
+	},
 	"Awa": {
 		iBurmese: (
 			translate("Inwa", iAfter=iGlobal),
@@ -2631,6 +2644,11 @@ name_changes = {
 	"Beizimiao": {
 		iChinese: _,
 		iMongol: "Xilinhot",
+	},
+	"Beja": {  # founded on Évora
+		iArabic: "Baja",
+		iLatin: "Pax Augusta",
+		iPortuguese: _,
 	},
 	"Bejjamwada": {  # relocated from Dhanyakataka
 		iIndian: (
@@ -3627,6 +3645,12 @@ name_changes = {
 			found("Canovium"),
 			"Seguntium",
 		),
+	},
+	"Caesarobriga": {  # founded on Ávila
+		iArabic: "Talabayra",
+		iCeltic: "Aebura",
+		iLatin: _,
+		iSpanish: "Talavera de la Reina",
 	},
 	"Cahors": {
 		iCelts: "Divona",
@@ -5323,6 +5347,11 @@ name_changes = {
 		iLocal: "Aasiaat", # Greenlandic
 		iNorse: _,
 	},
+	u"Èkó": {
+		iEnglish: "Lagos",
+		iLocal: _, # Yoruba
+		iPortuguese: "Lagos",
+	},
 	"El Picacho": {
 		iSpanish: (
 			translate(u"Puerto Carreño", iAfter=iGlobal),
@@ -5485,6 +5514,17 @@ name_changes = {
 		iEnglish: _,
 		iFrench: found("Vincennes"),
 		iGerman: found("Harmonie"),
+	},
+	u"Évora": {
+		iArabic: "Yabura",
+		iCeltic: "Ebora",
+		iGreek: "Eborakon",
+		iLatin: (
+			found("Beja"),
+			"Liberalitas Iulia",
+		),
+		iPortuguese: _,
+		iSpanish: u"Ébora",
 	},
 	"Eyl": {
 		iArabic: "Illig",
@@ -19495,7 +19535,7 @@ name_changes = {
 		iSpanish: "Zuara",
 	},
 	
-	
+	### OTHER ###
 	
 	"'t Landt Van Quiri": {  # founded on Hervey Bay
 		iDutch: _,
