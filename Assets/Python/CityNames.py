@@ -5238,6 +5238,10 @@ name_changes = {
 		iGreek: "Tamiathis",
 		iTurkish: "Dimyat",
 	},
+	"Dundalk": {
+		iCeltic: u"Dún Dealgan",
+		iEnglish: _,
+	},
 	"Dunedin": {  # relocated from Karitane and Pukekura
 		iEnglish: _,
 		iPolynesian: "Otepoti",
@@ -10339,12 +10343,6 @@ name_changes = {
 		iCongolese: "M'banza-Loango",
 		iFrench: "Loango",
 		iPortuguese: "Loango",
-	},
-	"Loch Garman": {
-		iCeltic: _,
-		iEnglish: "Wexford",
-		iGreek: "Manapia",
-		iNorse: u"Veisafjorðr",
 	},
 	u"Lödöse": {
 		iSwedish: (
@@ -18406,7 +18404,10 @@ name_changes = {
 		iArabic: "Balad al-Walid",
 		iCeltic: found("Segovia"),
 		iLatin: found("Segovia"),
-		iSpanish: _,
+		iSpanish: (
+			found("Tole"), # because it is the capital location
+			_,
+		),
 	},
 	u"Valladolid, Yucatán": {  # relocated from Uuc Yabnal
 		iMayan: "Saki",
