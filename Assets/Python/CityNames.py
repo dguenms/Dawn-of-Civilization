@@ -1,86 +1,24 @@
 # coding: utf-8
 
-from Core import *
-from Files import *
-
+from Consts import iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iGlobal, iDigital
+from Consts import iHinduism, iZoroastrianism, iBuddhism, iConfucianism, iTaoism, iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam
+from Consts import iPeriodDenmark, iPeriodNorway
+from Core import player, is_minor
+from Files import FileMap
 from Events import handler
 
 
 ### CONSTANTS ###
 
-iNumLanguages = 43
-(iLangAmerican, iLangArabic, iLangBabylonian, iLangBurmese, iLangByzantine, 
-iLangCeltic, iLangChinese, iLangCongolese, iLangDutch, iLangEgyptian, 
-iLangEgyptianArabic, iLangEnglish, iLangEthiopian, iLangFrench, iLangGerman, 
-iLangGreek, iLangHittite, iLangIndian, iLangIndonesian, iLangItalian, 
-iLangJapanese, iLangKhmer, iLangKorean, iLangLatin, iLangMande, 
-iLangMayan, iLangMongolian, iLangNahuatl, iLangNorse, iLangNubian, 
-iLangPersian, iLangPhoenician, iLangPolish, iLangPolynesian, iLangPortuguese, 
-iLangQuechua, iLangRussian, iLangSpanish, iLangSwedish, iLangThai, 
-iLangTibetan, iLangTurkish, iLangVietnamese) = range(iNumLanguages)
-
-dLanguages = CivDict({
-	iEgypt:	[iLangEgyptian],
-	iBabylonia: [iLangBabylonian],
-	iHarappa: [iLangIndian],
-	iAssyria: [iLangBabylonian],
-	iChina: [iLangChinese],
-	iHittites: [iLangHittite, iLangBabylonian],
-	iNubia: [iLangNubian, iLangEgyptian],
-	iGreece: [iLangGreek],
-	iIndia: [iLangIndian],
-	iPhoenicia: [iLangPhoenician],
-	iPolynesia: [iLangPolynesian],
-	iPersia: [iLangPersian],
-	iRome: [iLangLatin],
-	iCelts: [iLangCeltic],
-	iMaya: [iLangMayan, iLangNahuatl],
-	iDravidia: [iLangIndian],
-	iEthiopia: [iLangEthiopian],
-	iToltecs: [iLangNahuatl],
-	iKushans: [iLangIndian, iLangGreek, iLangTurkish],
-	iKorea: [iLangKorean, iLangChinese],
-	iByzantium: [iLangByzantine],
-	iMalays: [iLangIndonesian, iLangKhmer],
-	iJapan: [iLangJapanese],
-	iNorse: [iLangNorse],
-	iTurks: [iLangTurkish, iLangPersian, iLangArabic],
-	iArabia: [iLangArabic],
-	iTibet: [iLangTibetan, iLangChinese],
-	iKhmer: [iLangKhmer, iLangIndonesian],
-	iMoors: [iLangArabic],
-	iJava: [iLangIndonesian, iLangKhmer],
-	iSpain: [iLangSpanish],
-	iFrance: [iLangFrench],
-	iEngland: [iLangEnglish],
-	iHolyRome: [iLangGerman],
-	iBurma: [iLangBurmese, iLangIndian],
-	iVietnam: [iLangVietnamese, iLangChinese],
-	iRus: [iLangRussian],
-	iSwahili: [iLangArabic],
-	iMali: [iLangMande],
-	iPoland: [iLangPolish, iLangRussian], 
-	iPortugal: [iLangPortuguese, iLangSpanish],
-	iInca: [iLangQuechua],
-	iItaly: [iLangItalian],
-	iMongols: [iLangMongolian, iLangTurkish, iLangChinese],
-	iAztecs: [iLangNahuatl],
-	iMughals: [iLangPersian, iLangArabic, iLangIndian],
-	iThailand: [iLangThai, iLangKhmer, iLangIndonesian],
-	iSweden: [iLangSwedish, iLangNorse],
-	iRussia: [iLangRussian],
-	iOttomans: [iLangTurkish, iLangArabic],
-	iCongo: [iLangCongolese],
-	iIran: [iLangArabic, iLangPersian],
-	iNetherlands: [iLangDutch],
-	iGermany: [iLangGerman],
-	iAmerica: [iLangAmerican, iLangEnglish],
-	iArgentina: [iLangSpanish],
-	iMexico: [iLangSpanish],
-	iColombia: [iLangSpanish],
-	iBrazil: [iLangPortuguese, iLangSpanish],
-	iCanada: [iLangAmerican, iLangEnglish, iLangFrench],
-}, [])
+iNumLanguages = 60
+lLanguages = (
+	iAmerican, iArabic, iArgentinian, iBabylonian, iBerber, iBrazilian, iBurmese, iByzantine, iCeltic, iChinese, 
+	iCongolese, iCoptic, iDravidian, iDutch, iEgyptian, iEgyptianArabic, iEnglish, iEthiopian, iFrench, iGerman, 
+	iGreek, iHarappan, iHittite, iIndian, iItalian, iJapanese, iJavanese, iKhmerian, iKiswahili, iKorean, 
+	iKushan, iLatin, iLocal, iMalay, iManchu, iMande, iMayan, iMexican, iModernGreek, iMongol, 
+	iNahuatl, iNorse, iNubian, iOttoman, iPersian, iPhoenician, iPolish, iPolynesian, iPortuguese, iQuechua, 
+	iUkrainian, iRussian, iSomali, iSpanish, iSwedish, iThai, iTibetan, iToltec, iTurkish, iVietnamese,
+) = range(iNumLanguages)
 
 
 ### CSV CITY NAME MAP ###
@@ -88,106 +26,10 @@ dLanguages = CivDict({
 city_names = FileMap("Cities.csv")
 
 
-### TRANSLATION DICTIONARIES ###
-
-dLanguageNames = {
-	iLangAmerican: "American",
-	iLangArabic: "Arabic",
-	iLangBabylonian: "Babylonian",
-	iLangBurmese: "Burmese",
-	iLangByzantine: "Byzantine",
-	iLangCeltic: "Celtic",
-	iLangChinese: "Chinese",
-	iLangCongolese: "Congolese",
-	iLangDutch: "Dutch",
-	iLangEgyptian: "Egyptian",
-	iLangEgyptianArabic: "EgyptianArabic",
-	iLangEnglish: "English",
-	iLangEthiopian: "Ethiopian",
-	iLangFrench: "French",
-	iLangGerman: "German",
-	iLangGreek: "Greek",
-	iLangHittite: "Hittite",
-	iLangIndian: "Indian",
-	iLangIndonesian: "Indonesian",
-	iLangItalian: "Italian",
-	iLangJapanese: "Japanese",
-	iLangKhmer: "Khmer",
-	iLangKorean: "Korean",
-	iLangLatin: "Latin",
-	iLangMande: "Mande",
-	iLangMayan: "Mayan",
-	iLangMongolian: "Mongolian",
-	iLangNahuatl: "Nahuatl",
-	iLangNorse: "Norse",
-	iLangNubian: "Nubian",
-	iLangPersian: "Persian",
-	iLangPhoenician: "Phoenician",
-	iLangPolish: "Polish",
-	iLangPolynesian: "Polynesian",
-	iLangPortuguese: "Portuguese",
-	iLangQuechua: "Quechua",
-	iLangRussian: "Russian",
-	iLangSpanish: "Spanish",
-	iLangSwedish: "Swedish",
-	iLangThai: "Thai",
-	iLangTibetan: "Tibetan",
-	iLangTurkish: "Turkish",
-	iLangVietnamese: "Vietnamese",
-}
-
-dTranslations = dict((iLanguage, FileDict("Translations/%s.csv" % dLanguageNames[iLanguage])) for iLanguage in range(iNumLanguages))
-
-
 ### EVENT HANDLERS ###
 
-@handler("cityBuilt")
-def onCityBuilt(city):
-	updateName(city, bFound=True)
 
-
-@handler("cityAcquired")
-def onCityAcquired(iOwner, iNewOwner, city):
-	updateName(city)
-	
-	# how do we handle fallback languages in case the new owner has no translation
-	# and potentially keeps a non-local translation in place
-
-
-@handler("birth")
-def onBirth(iPlayer):
-	# update some colonial to Mexican city names
-	
-	pass
-	
-
-@handler("periodChange")
-def onPeriodChange(iCiv, iPeriod):
-	# Prey Nokor becomes Saigon
-	
-	updateNames(iCiv)
-
-
-@handler("religionSpread")
-def onReligionSpread(iReligion, iPlayer, city):
-	# Yogyakarta changes to Mataram with Islam
-	# Budapest is renamed to Buddhapest with Buddhism
-	
-	updateName(city)
-
-
-@handler("revolution")
-def onRevolution(iPlayer):
-	# civic names are handled by a different function, not persistence
-	
-	updateNames(iPlayer)
-
-
-@handler("greatPersonBorn")
-def onGreatPersonBorn(unit, iPlayer):
-	# Pitic changes to Hermosillo when a great general is born
-	
-	updateNames(iPlayer)
+### IMPLEMENTATION ###
 
 
 ### CLASSES ###
@@ -328,139 +170,7 @@ def found(name, **kwargs):
 _ = object()
 
 
-### MAIN FUNCTIONS ###
-
-def updateNames(identifier):
-	for city in cities.owner(identifier):
-		updateName(city)
-
-
-def updateName(city, bFound=False):
-	if not game.isFinalInitialized():
-		return
-	
-	if not bFound and turn() == scenarioStartTurn():
-		return
-
-	if is_minor(city):
-		return
-
-	iCiv = civ(city)
-	name = determineName(iCiv, city, bFound=bFound)
-	
-	applyName(city, name)
-
-
-def applyName(city, name):
-	if not name:
-		return
-	
-	if name.bRelocation:
-		relocateCity(city, name)
-	elif name.bRenaming:
-		renameCity(city, name)
-	
-	if city.getName() != name.getName():
-		city.setName(name.getName(), False)
-
-
-def getName(iPlayer, tile):
-	return city_names[tile]
-		
-		
-def determineName(identifier, tile, bFound=False):
-	iCiv = civ(identifier)
-	
-	base_name = city_names[tile]
-	
-	base_name = data.dRelocatedCities.get(base_name, base_name)
-	base_name = data.dRenamedCities.get(base_name, base_name)
-	
-	for name in getCityNames(iCiv, base_name):
-		if name.isValid(identifier, bFound=bFound):
-			return name
-
-
-def getCityNames(iCiv, name):
-	if name not in dRenamings:
-		return
-	
-	city_renamings = dRenamings[name]
-	for iLanguage in getLanguages(identifier):
-		if iLanguage in city_renamings:
-			renaming = city_renamings[iLanguage] # we need to deal with receiving a tuple of renamings here
-			
-			if renaming is _:
-				renaming = translate(name)
-			elif isinstance(renaming, str):
-				renaming = translate(renaming)
-			
-			yield renaming
-
-
-def getLanguages(identifier):
-	return getSpecialLanguages(identifier) or dLanguages[identifier]
-
-
-def getSpecialLanguages(identifier):
-	iCiv = civ(identifier)
-	if player(identifier).getID() < 0:
-		return None
-	
-	if iCiv == iEgypt:
-		if player(identifier).getStateReligion() == iIslam:
-			return [iLangEgyptianArabic, iLangArabic]
-	
-	elif iCiv == iInca:
-		if data.civs[iCiv].iResurrections > 0:
-			return [iLangSpanish]
-	
-	return None
-
-
-def findLocations(name):
-	return plots.all().land().where(lambda p: city_names[p] == name)
-	
-	
-def getCivicRenames(iCiv):
-	iPlayer = slot(iCiv)
-	if iPlayer < 0:
-		return {}
-	
-	return {}
-
-
-def renameCity(city, name):
-	base_name = city_names[city] # what if we rename a relocated city
-	data.dRenamedCities[base_name] = newName
-	
-	# how do we announce when a city name has changed for someone who owns the city
-
-
-def relocateCity(city, name):
-	base_name = city_names[city]
-	data.dRelocatedCities[base_name] = newCity
-	
-	# how do we announce when a city has moved for someone who owns the city
-
-
 ### NAME CHANGES ###
-
-iNumLanguages = 60
-lLanguages = (
-	iAmerican, iArabic, iArgentinian, iBabylonian, iBerber, 
-	iBrazilian, iBurmese, iByzantine, iCeltic, iChinese, 
-	iCongolese, iCoptic, iDravidian, iDutch, iEgyptian, 
-	iEgyptianArabic, iEnglish, iEthiopian, iFrench, iGerman, 
-	iGreek, iHarappan, iHittite, iIndian, iItalian, 
-	iJapanese, iJavanese, iLangKhmer, iKiswahili, iKorean, 
-	iKushan, iLatin, iLocal, iMalay, iManchu, 
-	iMande, iMayan, iMexican, iModernGreek, iMongol, 
-	iNahuatl, iNorse, iNubian, iOttoman, iPersian, 
-	iPhoenician, iPolish, iPolynesian, iPortuguese, iQuechua, 
-	iUkrainian, iRussian, iSomali, iSpanish, iSwedish, 
-	iThai, iTibetan, iToltec, iTurkish, iVietnamese,
-) = range(iNumLanguages)
 
 name_changes = {
 
@@ -528,7 +238,7 @@ name_changes = {
 		iLocal: _,
 	},
 	"Abalessa": {
-		iLangArabic: (
+		iArabic: (
 			relocate("Tamanrasset", iAfter=iRenaissance),
 			_,
 		),
@@ -579,7 +289,7 @@ name_changes = {
 	},
 	"Addis Abeba": {  # renamed from Barara
 		iEnglish: "Addis Ababa",
-		iEthiopia: _,
+		iEthiopian: _,
 		iItalian: _,
 	},
 	"Adjabiya": {
@@ -1390,7 +1100,7 @@ name_changes = {
 		iLatin: "Iuliomagus",
 	},
 	"Angkor Borei": {
-		iLangKhmer: (
+		iKhmerian: (
 			relocate("Phnom Penh", iAfter=iIndustrial),
 			_,
 		),
@@ -1613,7 +1323,7 @@ name_changes = {
 		iSpanish: "Aquilea",
 	},
 	"Ar-Ribat": {  # relocated from Sala
-		iArabia: _,
+		iArabic: _,
 		iFrench: "Rabat",
 		iSpanish: "Rabat",
 		iTurkish: "Rabat",
@@ -1719,7 +1429,7 @@ name_changes = {
 	},
 	"Arsinoe": {
 		iGreek: (
-			# rename("Kleopatris", iPeriod=iPtolemaic), # TODO: Ptolemaic period
+			# rename("Kleopatris", iPeriod=iPeriodPtolemaic), # TODO: Ptolemaic period
 			_,
 		),
 	},
@@ -1737,7 +1447,7 @@ name_changes = {
 			relocate("Dvin", iAfter=iMedieval),
 			_,
 		),
-		iPersia: (
+		iPersian: (
 			relocate("Yerevan", iAfter=iMedieval),
 			"Artaxshas-shat",
 		),
@@ -2126,7 +1836,7 @@ name_changes = {
 	},
 	"Ayutthaya": {
 		iIndian: "Ayodhya",
-		iLangKhmer: "Preah Nakhon",
+		iKhmerian: "Preah Nakhon",
 		iThai: (
 			relocate("Bangkok", iAfter=iIndustrial),
 			_,
@@ -2413,7 +2123,7 @@ name_changes = {
 		iGreek: u"Bangóg",
 		iIndian: "Byankak",
 		iJapanese: "Bankoku",
-		iLangKhmer: "Bang Makok",
+		iKhmerian: "Bang Makok",
 		iKorean: "Bangkog",
 		iPortuguese: "Banguecoque",
 		iThai: _,
@@ -2574,7 +2284,7 @@ name_changes = {
 	},
 	"Batdambang": {  # founded on Chanthaburi
 		iFrench: "Battambang",
-		iLangKhmer: _,
+		iKhmerian: _,
 	},
 	"Bathurst": {  # founded on Siggcoor
 		iEnglish: _,
@@ -3502,7 +3212,7 @@ name_changes = {
 	"Bukavu": {  # relocated from Rusuzi
 		iDutch: "Costermansstad",
 		iFrench: "Costermansville",
-		iSwahili: _,
+		iKiswahili: _,
 	},
 	"Bukhara": {
 		iArabic: _,
@@ -3737,7 +3447,7 @@ name_changes = {
 		iSpanish: "Talavera de la Reina",
 	},
 	"Cahors": {
-		iCelts: "Divona",
+		iCeltic: "Divona",
 		iFrench: _,
 		iLatin: "Divona Cadurcorum",
 	},
@@ -4002,7 +3712,7 @@ name_changes = {
 	},
 	"Champassak": {
 		iFrench: rename("Pakse"),
-		iLangKhmer: (
+		iKhmerian: (
 			rename("Pakse", iAfter=iIndustrial),
 			_,
 		),
@@ -4037,7 +3747,7 @@ name_changes = {
 		iTurkish: "Kandiye",
 	},
 	"Chandka": {
-		iHarappa: found("Mohenjo-Daro"),
+		iHarappan: found("Mohenjo-Daro"),
 		iIndian: (
 			translate("Larkana", iAfter=iMedieval),
 			_,
@@ -4055,7 +3765,7 @@ name_changes = {
 		iArabic: found("Karwar"),
 		iDutch: found("Vengurla"),
 		iEnglish: found("Karwar"),
-		iIndia: (
+		iIndian: (
 			relocate("Govapuri", iAfter=iMedieval),
 			_,
 		),
@@ -4103,7 +3813,7 @@ name_changes = {
 		iTurkish: "Hanya",
 	},
 	"Chanthaburi": {
-		iLangKhmer: found("Batdambang"),
+		iKhmerian: found("Batdambang"),
 		iThai: _,
 	},
 	"Chaozhou": {
@@ -5293,7 +5003,7 @@ name_changes = {
 		iGreek: u"Duvlíno",
 		iItalian: "Dublino",
 		iJapanese: "Daburin",
-		iKorea: "Deobeullin",
+		iKorean: "Deobeullin",
 		iNorse: "Dyflin",
 		iPortuguese: "Dublim",
 		iSpanish: u"Dublín",
@@ -5364,7 +5074,7 @@ name_changes = {
 	},
 	"Duzdab": {
 		iArabic: "Zahidan",
-		iLangKhmer: "Hsaadan",
+		iKhmerian: "Hsaadan",
 		iPersian: (
 			translate("Zahedan", iAfter=iGlobal),
 			_,
@@ -6141,7 +5851,7 @@ name_changes = {
 		iPhoenician: _,
 	},
 	"Gaillimh": {
-		iCelts: _,
+		iCeltic: _,
 		iEnglish: "Galway",
 		iGreek: "Rhaeba",
 		iKorean: "Golwei",
@@ -7174,7 +6884,7 @@ name_changes = {
 		iSomali: _,
 	},
 	"Hariharalaya": {
-		iLangKhmer: (
+		iKhmerian: (
 			translate("Roluos", iAfter=iIndustrial),
 			_,
 		),
@@ -7753,7 +7463,7 @@ name_changes = {
 			found("Luebo"),
 			"Francquihaven",
 		),
-		iFrance: "Port-Francqui",
+		iFrench: "Port-Francqui",
 	},
 	"Iletsk": {
 		iRussian: (
@@ -10084,7 +9794,7 @@ name_changes = {
 	},
 	"Lavapura": {
 		iIndian: _,
-		iKhmer: "Lavo",
+		iKhmerian: "Lavo",
 		iThai: "Lop Buri",
 	},
 	"Lavapuri": {
@@ -10541,7 +10251,7 @@ name_changes = {
 	},
 	"Luang Prabang": {
 		iFrench: "Louangphrabang",
-		iLangKhmer: "Luangphabang",
+		iKhmerian: "Luangphabang",
 		iLocal: _, # Lao
 		iVietnamese: "Xieng Thong",
 	},
@@ -10964,7 +10674,7 @@ name_changes = {
 		iJapanese: "Makassaru",
 		iLocal: "Mangkasara",
 		iMalay: _,
-		iPersia: "Maks Sar",
+		iPersian: "Maks Sar",
 		iPolish: "Makasar",
 		iPortuguese: u"Macáçar",
 	},
@@ -11088,7 +10798,7 @@ name_changes = {
 		iPortuguese: found("Xai-Xai"),
 	},
 	"Mandore": {
-		iHarappa: found("Gilund"),
+		iHarappan: found("Gilund"),
 		iIndian: (
 			translate("Jodhpur", iAfter=iRenaissance),
 			_,
@@ -11762,7 +11472,7 @@ name_changes = {
 		iPersian: "Mosko",
 		iPolish: "Moskwa",
 		iPolynesian: "Mosekao",
-		iPortugal: "Moscovo",
+		iPortuguese: "Moscovo",
 		iRussian: _,
 		iTurkish: "Moskova",
 		iVietnamese: "Mac Tu Khoa",
@@ -12375,7 +12085,7 @@ name_changes = {
 		iTurkish: "Napoli",
 	},
 	"Neemrana": {
-		iHarappa: found("Siswal"),
+		iHarappan: found("Siswal"),
 		iIndian: (
 			relocate("Rewari", iAfter=iMedieval),
 			_,
@@ -12950,7 +12660,7 @@ name_changes = {
 		iGreek: "Kattigara",
 		iIndian: "Kirtinagara",
 		iLatin: "Cattigara",
-		iLangKhmer: _,
+		iKhmerian: _,
 		iVietnamese: u"Óc Eo",
 	},
 	"O'okiep": {
@@ -13416,7 +13126,7 @@ name_changes = {
 	},
 	"Pakse": {  # renamed from Champassak
 		iFrench: u"Paksé",
-		iKhmer: _,
+		iKhmerian: _,
 	},
 	"Pakuan Pajajaran": {
 		iDutch: "Buitenzorg",
@@ -13484,14 +13194,14 @@ name_changes = {
 		iChinese: "Han Ro",
 		iIndian: _,
 		iJapanese: "Fan Ran",
-		iLangKhmer: "Bandoureanhka",
+		iKhmerian: "Bandoureanhka",
 		iLocal: "Panraun", # Cham
 		iRussian: "Fanrang",
 		iThai: "Panthurangka",
 		iVietnamese: "Phan Rang",
 	},
 	"Pannai": {
-		iJava: (
+		iJavanese: (
 			relocate("Dumai", iAfter=iDigital),
 			_,
 		),
@@ -13926,7 +13636,7 @@ name_changes = {
 		iSwedish: found(u"Nya Göteborg"),
 	},
 	"Phitsanulok": {
-		iKhmer: "Song Khwae",
+		iKhmerian: "Song Khwae",
 		iThai: (
 			relocate("Sukhotai", bCapital=True),
 			_,
@@ -13937,7 +13647,7 @@ name_changes = {
 		iChinese: "Jinbian",
 		iGreek: "Pnom Pench",
 		iJapanese: "Punonpen",
-		iLangKhmer: _,
+		iKhmerian: _,
 		iKorean: "Peunompen",
 		iPersian: "Pnom Pen",
 		iSpanish: "Nom Pen",
@@ -14340,7 +14050,7 @@ name_changes = {
 		iEnglish: "Saigon",
 		iFrench: "Saigon",
 		iJapanese: "Katei",
-		iLangKhmer: _,
+		iKhmerian: _,
 		iKorean: "Gajeong",
 		iLocal: "Baigaur", # Cham
 		iSpanish: u"Saigón",
@@ -14729,7 +14439,7 @@ name_changes = {
 	"Quelimane": {
 		iJapanese: "Kerimane",
 		iPortuguese: _,
-		iSwahili: "Mkalimani",
+		iKiswahili: "Mkalimani",
 	},
 	"Quetzaltenango": {  # founded on Q'umarkaj
 		iMayan: u"Xelajú",
@@ -15030,7 +14740,7 @@ name_changes = {
 		iDutch: relocate("Ubundu"),
 		iFrench: relocate("Ubundu"),
 		iLocal: _,
-		iSwahili: "Lokandu",
+		iKiswahili: "Lokandu",
 	},
 	"Ribe": {
 		iNorse: (
@@ -15204,7 +14914,7 @@ name_changes = {
 	"Rusuzi": {
 		iDutch: relocate("Bukavu"),
 		iFrench: relocate("Bukavu"),
-		iSwahili: _,
+		iKiswahili: _,
 	},
 	"Ruyin": {
 		iChinese: (
@@ -15242,7 +14952,7 @@ name_changes = {
 			translate("Sadiya", iAfter=iRenaissance),
 			_,
 		),
-		iItaly: relocate("Margherita"),
+		iItalian: relocate("Margherita"),
 	},
 	"Safaqis": {  # founded and relocated from Tayinat
 		iArabic: _,
@@ -15295,7 +15005,7 @@ name_changes = {
 	},
 	"Saidpur": {
 		iGreek: "Alexandreia Nikaia",
-		iHarappa: found("Harappa"),
+		iHarappan: found("Harappa"),
 		iIndian: _,
 		iPersian: (
 			relocate("Gujranwala", iAfter=iIndustrial),
@@ -15747,7 +15457,7 @@ name_changes = {
 	},
 	"Satingpra": {  # founded on Tambralinga
 		iIndian: "Singhapura",
-		iLangKhmer: _,
+		iKhmerian: _,
 		iMalay: "Singgor",
 		iThai: "Songkhla",
 	},
@@ -16288,7 +15998,7 @@ name_changes = {
 			"Shingapouru",
 		),
 		iKorean: "Singgaporeu",
-		iLangKhmer: "Sernghakborey",
+		iKhmerian: "Sernghakborey",
 		iLatin: "Calipolis",
 		iMalay: _,
 		iModernGreek: u"Singapoúri",
@@ -16781,7 +16491,7 @@ name_changes = {
 		),
 	},
 	"Sukhotai": {  # relocated from Phitsanulok
-		iKhmer: "Sokhaoty",
+		iKhmerian: "Sokhaoty",
 		iThai: _,
 	},
 	"Sukhumi": {
@@ -17014,7 +16724,7 @@ name_changes = {
 		iGreek: u"Taïpéi",
 		iIndian: "Taipe",
 		iJapanese: "Taihoku",
-		iLangKhmer: "Daibi",
+		iKhmerian: "Daibi",
 		iKorean: "Daebuk",
 		iLatin: "Taipeia",
 		iLocal: _, # Taiwanese
@@ -17109,7 +16819,7 @@ name_changes = {
 	"Tambralinga": {
 		iChinese: "Tanmaling",
 		iDutch: "Ligor",
-		iLangKhmer: found("Satingpra"),
+		iKhmerian: found("Satingpra"),
 		iMalay: _,
 		iPortuguese: "Ligor",
 		iThai: "Nakhon Si Thammarat",
@@ -18257,7 +17967,7 @@ name_changes = {
 	"Ubundu": {  # relocated from Riba Riba
 		iDutch: "Ponthierstad",
 		iFrench: "Ponthierville",
-		iSwahili: _,
+		iKiswahili: _,
 	},
 	"Udinsk": {
 		iRussian: (
@@ -18301,7 +18011,7 @@ name_changes = {
 		iLocal: "Kariega",
 	},
 	"Ujiji": {
-		iSwahili: _,
+		iKiswahili: _,
 		iLocal: "Kigoma",
 	},
 	"Ujjain": {
@@ -18874,7 +18584,7 @@ name_changes = {
 		iPersian: relocate("Agra", iAfter=iRenaissance),
 	},
 	"Vyadhapura": {
-		iLangKhmer: (
+		iKhmerian: (
 			relocate("Prey Veng", iAfter=iIndustrial),
 			_,
 		),
@@ -19167,7 +18877,7 @@ name_changes = {
 		iJapanese: "Bienchan",
 		iKorean: "Bientian",
 		iFrench: "Vientiane",
-		iLangKhmer: "Vieng Chan",
+		iKhmerian: "Vieng Chan",
 		iLocal: _, # Lao
 		iPolish: "Wientian",
 		iPortuguese: "Vienciana",
@@ -19528,7 +19238,7 @@ name_changes = {
 		iTurkish: found("Atil"),
 	},
 	"Yashodharapura": {
-		iLangKhmer: (
+		iKhmerian: (
 			relocate("Siem Reap", iAfter=iRenaissance),
 			_,
 		),
@@ -19939,7 +19649,7 @@ name_changes = {
 	"Zhoushan": {  # relocated from Mingzhou
 		iChinese: _,
 		iEnglish: "Chusan",
-		iLangKhmer: "Hsaausan",
+		iKhmerian: "Hsaausan",
 	},
 	"Zhytomyr": {
 		iFrench: "Jytomyr",
