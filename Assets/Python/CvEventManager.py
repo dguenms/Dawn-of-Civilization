@@ -612,7 +612,7 @@ class CvEventManager(object):
 		iPlayer, iReleasedPlayer = argsList
 		
 	def onBlockade(self, argsList):
-		iPlayer, iGold = argsList
+		iPlayer, city, iGold = argsList
 		
 	def onPeaceBrokered(self, argsList):
 		iBroker, iPlayer1, iPlayer2 = argsList
