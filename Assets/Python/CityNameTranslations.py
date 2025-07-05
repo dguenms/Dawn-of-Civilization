@@ -167,8 +167,12 @@ class Translation(object):
 				return False
 		
 		if self.bCapital:
-			if (city is None and cities.owner(iCiv).count() > 0) or not city.isCapital():
-				return False
+			if city is None:
+				if cities.owner(iCiv).count() > 0:
+					return False
+			else:
+				if not city.isCapital():
+					return False
 			
 		return True
 
