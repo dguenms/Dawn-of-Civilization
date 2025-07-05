@@ -692,7 +692,7 @@ class CvTopCivs:
 	def printList(self):
 		for iRank, iPlayer in enumerate(self.topPlayers.limit(8)):
 			if iPlayer == active() or team().isHasMet(player(iPlayer).getTeam()):
-				szCivText = name(iPlayer)
+				szCivText = fullname(iPlayer)
 			else:
 				szCivText = text("TXT_KEY_TOPCIVS_UNKNOWN")
 			
@@ -710,8 +710,6 @@ class CvTopCivs:
 		tHistorianNames = self.getHistorianNames(iHistorianPlayer)
 		if not tHistorianNames:
 			return "TXT_KEY_HISTORIAN_GENERIC"
-		
-		print "historian names are %s" % (tHistorianNames,)
 		
 		return random_entry(tHistorianNames)
 	
