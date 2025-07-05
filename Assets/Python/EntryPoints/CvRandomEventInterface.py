@@ -4337,7 +4337,7 @@ def getTradingCompanyConquerors1HelpText(argsList):
 				
 			targetNames.append(city.getName())
 		else:
-			targetNames.append(cn.getName(iPlayer, plot))
+			targetNames.append(cn.getDisplayName(iPlayer, plot))
 	
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
 	sTargetNames = ', '.join(targetNames)

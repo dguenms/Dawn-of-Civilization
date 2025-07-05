@@ -1421,7 +1421,7 @@ class CvCityDesc:
 			return
 		
 		self.city = player(iCiv).initCity(self.plotX, self.plotY)
-
+		
 		if self.name:
 			self.city.setName(self.name, False)
 
@@ -1520,9 +1520,10 @@ class CvCityDesc:
 				self.city.setOriginalCiv(iOriginalOwnerCiv)
 				self.city.setEverOwned(iOriginalOwnerCiv, True)
 		for previousOwner in self.lPreviousOwners:
-			iPreviousOwnerCiv = CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivicOptionInfos(), previousOwner)
+			iPreviousOwnerCiv = CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), previousOwner)
 			if iPreviousOwnerCiv >= 0:
 				self.city.setEverOwned(iPreviousOwnerCiv, True)
+
 
 ###########
 class CvPlotDesc:

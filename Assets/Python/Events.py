@@ -75,6 +75,7 @@ events.addEvent("prepareBirth")
 events.addEvent("flip")
 events.addEvent("conquerors")
 events.addEvent("tribute")
+events.addEvent("playerCityRenamed")
 
 
 @handler("buildingBuilt")

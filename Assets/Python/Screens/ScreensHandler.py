@@ -752,9 +752,12 @@ def __eventEditCityNameApply(playerID, userData, popupReturn):
 	player = gc.getPlayer(playerID)
 	city = player.getCity(iCityID)
 	cityName = popupReturn.getEditBoxString(0)
+	
 	if (len(cityName) > 30):
 		cityName = cityName[:30]
 	city.setName(cityName, not bRename)
+	
+	events.fireEvent("playerCityRename", city, cityName)
 
 def __eventEditCityBegin(argsList):
 	'Edit City Event'
@@ -811,22 +814,6 @@ def __eventEditUnitNameApply(playerID, userData, popupReturn):
 	if CyGame().GetWorldBuilderMode():
 		WBUnitScreen.WBUnitScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeStats()
 		WBUnitScreen.WBUnitScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeCurrentUnit()	
-			
-def __eventEditCityNameBegin(city, bRename):
-	popup = PyPopup.PyPopup(CvUtil.EventEditCityName, EventContextTypes.EVENTCONTEXT_ALL)
-	popup.setUserData((city.getID(), bRename, CyGame().getActivePlayer()))
-	popup.setHeaderString(localText.getText("TXT_KEY_NAME_CITY", ()))
-	popup.setBodyString(localText.getText("TXT_KEY_SETTLE_NEW_CITY_NAME", ()))
-	popup.createEditBox(city.getName())
-	popup.setEditBoxMaxCharCount(15)
-	popup.launch()
-
-def __eventEditCityNameApply(playerID, userData, popupReturn):
-	city = gc.getPlayer(userData[2]).getCity(userData[0])
-	cityName = popupReturn.getEditBoxString(0)
-	city.setName(cityName, not userData[1])
-	if CyGame().GetWorldBuilderMode() and not CyGame().isInAdvancedStart():
-		WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeStats()
 
 def __eventWBPlayerScriptPopupApply(playerID, userData, popupReturn):
 	sScript = popupReturn.getEditBoxString(0)

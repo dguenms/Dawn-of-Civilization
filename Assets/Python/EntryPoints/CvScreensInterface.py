@@ -905,12 +905,7 @@ def getHistoricalVictoryDescriptions(argsList):
 def getCityName(argsList):
 	iPlayer, x, y = argsList
 	
-	name = cn.getName(iPlayer, (x, y))
-	
-	if not name:
-		return ""
-	
-	return name
+	return cn.getNameEvolution(iPlayer, (x, y))
 		
 def canRespawn(argsList):
 	iCiv = argsList[0]

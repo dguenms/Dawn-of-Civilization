@@ -154,7 +154,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CELT
-		CityName=Áth Cliath
+		CityName=Duibhlinn
 		CityPopulation=2
 		BuildingType=BUILDING_PALACE
 		ReligionType=RELIGION_CATHOLICISM
@@ -201,7 +201,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MALI
-		CityName=Djenné
+		CityName=Djoboro
 		CityPopulation=2
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -222,7 +222,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
-		CityName=Burdigala
+		CityName=Bordeaux
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -394,7 +394,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Mediolanum
+		CityName=Milan
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -560,7 +560,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
-		CityName=Nidaróss
+		CityName=Niðaróss
 		CityPopulation=2
 		BuildingType=BUILDING_PALACE
 		YearFounded=550
@@ -630,7 +630,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Venexia
+		CityName=Venesia
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -654,7 +654,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_BYZANTIUM
-		CityName=Syrákousai
+		CityName=Syrakousai
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -713,7 +713,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Hesperides
+		CityName=Euesperides
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
@@ -764,7 +764,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_BYZANTIUM
-		CityName=Athinai
+		CityName=Athenai
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
@@ -795,7 +795,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_BYZANTIUM
-		CityName=Thessaloníkeia
+		CityName=Thessalonikeia
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
@@ -1118,7 +1118,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=55
+	BonusType=NONE
 	RouteType=ROUTE_ROMAN_ROAD
+	BeginUnit
+		UnitType=UNIT_ARCHER
+		UnitOwner=CIVILIZATION_BYZANTIUM
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_BYZANTIUM
+		CityName=Sinope
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_ORTHODOXY
+		BeginCulture
+			Civilization=CIVILIZATION_BYZANTIUM, Culture=50
+		EndCulture
+		YearFounded=-600
+		YearAcquired=330
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+	EndCity
 EndPlot
 BeginPlot
 	x=84,y=33
@@ -1195,25 +1214,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=55
-	RouteType=ROUTE_ROMAN_ROAD
-	BeginUnit
-		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_BYZANTIUM
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_BYZANTIUM
-		CityName=Sinope
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		ReligionType=RELIGION_ORTHODOXY
-		BeginCulture
-			Civilization=CIVILIZATION_BYZANTIUM, Culture=50
-		EndCulture
-		YearFounded=-600
-		YearAcquired=330
-		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_ROME
-	EndCity
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 EndPlot
 BeginPlot
 	x=85,y=44
@@ -1296,10 +1299,6 @@ EndPlot
 BeginPlot
 	x=86,y=54
 	RouteType=ROUTE_ROMAN_ROAD
-EndPlot
-BeginPlot
-	x=87,y=54
-	RouteType=ROUTE_ROMAN_ROAD
 	BeginUnit
 		UnitType=UNIT_ARCHER
 		UnitOwner=CIVILIZATION_BYZANTIUM
@@ -1371,7 +1370,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Sana'a
+		CityName=Sanaa
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -1395,7 +1394,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Tisfun
+		CityName=Tysfwn
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
@@ -1548,7 +1547,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Sirajis
+		CityName=Estakhr
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -1587,7 +1586,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Herat
+		CityName=Artacoana
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -1612,7 +1611,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_TURKS
-		CityName=Merv
+		CityName=Margu
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_STABLE
@@ -1738,7 +1737,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Takkasila
+		CityName=Takshashila
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -1797,7 +1796,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Avantika
+		CityName=Ujjayni
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -1946,7 +1945,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_TURKS
-		CityName=Kashgar
+		CityName=Qeshqer
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_JEWELLER
@@ -2113,7 +2112,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
-		CityName=Varanasi
+		CityName=Kashi
 		CityPopulation=4
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
@@ -2272,7 +2271,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
-		CityName=Gauda
+		CityName=Lakshmanavati
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
@@ -2426,7 +2425,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MALAYS
-		CityName=Singapura
+		CityName=Tumasik
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_BUDDHISM
@@ -2470,7 +2469,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KHMER
-		CityName=Yasodharapura
+		CityName=Yashodharapura
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -2499,7 +2498,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Co Loa
+		CityName=Dai La
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -2623,7 +2622,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Sunda Kelapa
+		CityName=Sundapura
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -2707,7 +2706,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Kaifeng
+		CityName=Bianliang
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -2746,7 +2745,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Zhuojun
+		CityName=Yuzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -2799,7 +2798,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Ye
+		CityName=Fuzhou
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -2867,7 +2866,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KOREA
-		CityName=Pyongyang
+		CityName=Pyeongyang
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -2904,7 +2903,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KOREA
-		CityName=Hanseong
+		CityName=Namgyeong
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -2929,7 +2928,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_JAPAN
-		CityName=Kumamoto
+		CityName=Nagasaki
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -2973,7 +2972,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_JAPAN
-		CityName=Kyouto
+		CityName=Heian-kyou
 		CityPopulation=4
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY

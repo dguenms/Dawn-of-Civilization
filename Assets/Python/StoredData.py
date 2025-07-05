@@ -304,8 +304,9 @@ class GameData:
 		
 		# City Names
 		
-		self.dChangedCities = {}
+		self.dRelocatedCities = {}
 		self.dRenamedCities = {}
+		self.playerRenamed = set()
 		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))

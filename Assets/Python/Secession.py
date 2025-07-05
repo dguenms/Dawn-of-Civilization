@@ -3,6 +3,8 @@ from RFCUtils import *
 from Locations import *
 from Resurrection import *
 
+import CityNames as cn
+
 	
 def secession(iPlayer, secedingCities):
 	data.setSecedingCities(iPlayer, secedingCities)
@@ -28,6 +30,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	for city in destroyedCities:
 		player(iBarbarian).disband(city)
 		plot(city).setCulture(iPlayer, 0, True)
+		cn.clearChanges(city)
 	
 	# determine who has the best claim on each city
 	dClaimedCities = appenddict()

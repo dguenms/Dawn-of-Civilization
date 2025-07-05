@@ -765,10 +765,10 @@ def desc(iPlayer, sTextKey=str("%s1")):
 
 def capitalName(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
-	if capital: 
-		sCapitalName = cn.translateName(iEngland, capital.getName())
-		if sCapitalName: 
-			return sCapitalName
+	if capital:
+		translatedCapital = cn.getTranslation(iEngland, capital)
+		if translatedCapital:
+			return translatedCapital.name
 		
 		return capital.getName()
 	

@@ -244,7 +244,7 @@ class Congress:
 			if city:
 				event.applyClaimCity(city.getName(), button=infos.civ(city).getButton())
 			else:
-				event.applyClaimCity(cn.getName(civ(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
+				event.applyClaimCity(cn.getDisplayName(civ(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
 				
 		event.noClaim().launch()
 
@@ -264,11 +264,11 @@ class Congress:
 		if plot.isCity():
 			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_CITY", name(iClaimant), adjective(plot), city(plot).getName())
 		elif plot.getOwner() == iClaimant:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cn.getName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cn.getDisplayName(iClaimant, (x, y)))
 		elif plot.isOwned():
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cn.getName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cn.getDisplayName(iClaimant, (x, y)))
 		else:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cn.getName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cn.getDisplayName(iClaimant, (x, y)))
 			
 		event.approveClaim().abstainClaim().denyClaim().launch(iClaimant, plot.getOwner())
 		
@@ -631,7 +631,7 @@ class Congress:
 				else:
 					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				self.lColonies.append((cn.getName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				self.lColonies.append((cn.getDisplayName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
 				if bCanRefuse:
 					self.lHumanAssignments.append((iClaimant, (x, y)))
 				else:
@@ -1168,7 +1168,7 @@ class Congress:
 			for plot in plots.all().notowner(iPlayer).regions(*(lSubSaharanAfrica + lOceania)).where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater() and pPlayer.canFound(p.getX(), p.getY())):
 				if pPlayer.isHuman() and not plot.isRevealed(iPlayer, False): continue
 				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
-				if iSettlerMapValue > 0 and cn.getName(iPlayer, plot):
+				if iSettlerMapValue > 0 and cn.getDisplayName(iPlayer, plot):
 					iFoundValue = pPlayer.AI_foundValue(plot.getX(), plot.getY(), -1, False)
 					lPlots.append((plot.getX(), plot.getY(), max(1, min(5, iFoundValue / 2500 - 1))))
 		
@@ -1176,10 +1176,34 @@ class Congress:
 		lPlots = sort(lPlots, lambda p: p[2] + rand(3), True)
 		
 		# remove settled plots with the same name
-		lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cn.getName(iPlayer, (x, y)) not in [cn.getName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
+		#lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cn.getDisplayName(iPlayer, (x, y)) not in [cn.getDisplayName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
+		lPlots = self.filterSettledPlots(iPlayer, lPlots)
 		
 		return lPlots[:10]
+	
+	def filterSettledPlots(self, iPlayer, lPlots):
+		lFiltered = []
+		for index, (x, y, value) in enumerate(lPlots):
+			if city_(x, y):
+				lFiltered.append((x, y, value))
+				continue
+				
+			lOtherNames =  []
+			for ix, iy, ivalue in lPlots[:index]:
+				try:
+					lOtherNames.append(cn.getDisplayName(iPlayer, (ix, iy)))
+				except Exception, e:
+					raise Exception("Encountered exception for %s on %s: %s" % (name(iPlayer), (ix, iy), e))
+			
+			try:
+				if cn.getDisplayName(iPlayer, (x, y)) not in lOtherNames:
+					lFiltered.append((x, y, value))
+					continue
+			except Exception, e:
+				raise Exception("Encountered exception for %s on %s: %s" % (name(iPlayer), (x, y), e))
 		
+		return lFiltered
+				
 	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
 		return players.of(lPlayers).highest(iNumPlayers, game.getPlayerRank)
 		
