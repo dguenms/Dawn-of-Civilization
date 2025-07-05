@@ -284,6 +284,10 @@ def getTileNames(tile):
 	return relocated_name, renamed_name
 
 
+def getBaseName(tile):
+	return city_names[tile]
+
+
 def getTranslations(identifier, tile):
 	tile_names = getTileNames(tile)
 	return getNameTranslations(identifier, tile, tile_name)

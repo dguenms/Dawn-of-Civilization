@@ -773,6 +773,12 @@ def capitalName(iPlayer):
 		return capital.getName()
 	
 	return short(iPlayer)
+
+def isCurrentCapital(iPlayer, *names):
+	capital = player(iPlayer).getCapitalCity()
+	if not capital: return False
+	
+	return cn.getBaseName(capital) in names
 	
 def checkNameChange(iPlayer):
 	iCiv = civ(iPlayer)
@@ -939,13 +945,13 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_GREECE_MACEDONIA"
 			
 	elif iCiv == iPolynesia:
-		if isCurrentCapital(iPlayer, "Kaua'i", "O'ahu", "Maui"):
+		if isCurrentCapital(iPlayer, "Lihu'e", "Honolulu", "Hilo"):
 			return "TXT_KEY_CIV_POLYNESIA_HAWAII"
 			
-		if isCurrentCapital(iPlayer, "Manu'a"):
+		if isCurrentCapital(iPlayer, "Ta'u"):
 			return "TXT_KEY_CIV_POLYNESIA_SAMOA"
 			
-		if isCurrentCapital(iPlayer, "Niue"):
+		if isCurrentCapital(iPlayer, "Alofi"):
 			return "TXT_KEY_CIV_POLYNESIA_NIUE"
 			
 		return "TXT_KEY_CIV_POLYNESIA_TONGA"
@@ -976,17 +982,17 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_BYZANTIUM_RUM"
 	
 		if not bEmpire:
-			if isCurrentCapital(iPlayer, "Dyrrachion"):
+			if isCurrentCapital(iPlayer, "Epidamnos", "Apollonia"):
 				return "TXT_KEY_CIV_BYZANTIUM_EPIRUS"
 			
-			if isCurrentCapital(iPlayer, "Athena"):
+			if isCurrentCapital(iPlayer, "Athenai"):
 				return "TXT_KEY_CIV_BYZANTIUM_MOREA"
 	
-			if not isCurrentCapital(iPlayer, "Konstantinoupolis"):
+			if not isCurrentCapital(iPlayer, "Byzantion"):
 				return capitalName(iPlayer)
 			
 	elif iCiv == iNorse:	
-		if isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
+		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
 			return "TXT_KEY_CIV_NORSE_NORWAY"
 			
 		if isCurrentCapital(iPlayer, "Roskilde"):
@@ -1012,12 +1018,6 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_ARABIA_SAUDI"
 			
 	elif iCiv == iKhmer:
-		if isCurrentCapital(iPlayer, "Pagan"):
-			return "TXT_KEY_CIV_KHMER_BURMA"
-			
-		if isCurrentCapital(iPlayer, "Dali"):
-			return "TXT_KEY_CIV_KHMER_NANZHAO"
-		
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_KHMER_CAMBODIA"
 			
@@ -1045,10 +1045,10 @@ def specificName(iPlayer):
 			if not player(iPortugal).isExisting() or not player(iPortugal).getCapitalCity() in plots.region(rIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
-		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
+		if isCurrentCapital(iPlayer, "Barcelona", "Tarragona", "Valencia", "Zaragoza"):
 			return "TXT_KEY_CIV_SPAIN_ARAGON"
 		
-		if isCurrentCapital(iPlayer, "Oviedo"):
+		if isCurrentCapital(iPlayer, "Oviedo", "Santander"):
 			return "TXT_KEY_CIV_SPAIN_ASTURIAS"
 			
 		if not bSpain:
@@ -1063,18 +1063,18 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iCiv == iHolyRome:
-		if isCurrentCapital(iPlayer, "Buda"):
+		if isCurrentCapital(iPlayer, "Buda", "Pest"):
 			return "TXT_KEY_CIV_HOLY_ROME_HUNGARY"
 	
 		if not bEmpire:
-			if year() < year(dBirth[iGermany]):
+			if until(year(dBirth[iGermany])) > 0:
 				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
 			else:
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
 			
 	elif iCiv == iInca:
 		if bResurrected:
-			if isCurrentCapital(iPlayer, "La Paz"):
+			if isCurrentCapital(iPlayer, "Tiwanaku"):
 				return "TXT_KEY_CIV_INCA_BOLIVIA"
 				
 		else:
@@ -1083,7 +1083,7 @@ def specificName(iPlayer):
 			
 	elif iCiv == iItaly:
 		if not bResurrected and not bEmpire and not bCityStates:
-			if isCurrentCapital(iPlayer, "Fiorenza"):
+			if isCurrentCapital(iPlayer, "Florentia"):
 				return "TXT_KEY_CIV_ITALY_TUSCANY"
 				
 			return capitalName(iPlayer)
@@ -1103,7 +1103,7 @@ def specificName(iPlayer):
 		if bCityStates:
 			return short(iPlayer)
 			
-		if isCurrentCapital(iPlayer, "Brussels", "Antwerpen"):
+		if isCurrentCapital(iPlayer, "Bruges", "Antwerpen", "Gent", "Bruxelles"):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
 			
 	elif iCiv == iGermany:
@@ -1224,9 +1224,6 @@ def specificAdjective(iPlayer):
 		if bCityStates and not bEmpire:
 			return "TXT_KEY_CIV_BABYLONIA_MESOPOTAMIAN"
 			
-		if isCurrentCapital(iPlayer, "Ninua", "Kalhu"):
-			return "TXT_KEY_CIV_BABYLONIA_ASSYRIAN"
-		
 		if getColumn(iPlayer) == 1:
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
 			
@@ -1286,10 +1283,10 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_DRAVIDIA_BAHMANI"
 	
 		if iEra <= iClassical:
-			if isCurrentCapital(iPlayer, "Madurai", "Thiruvananthapuram"):
+			if isCurrentCapital(iPlayer, "Madurai", "Vizhinjam", "Yapanaya"):
 				return "TXT_KEY_CIV_DRAVIDIA_PANDYAN"
 				
-			if isCurrentCapital(iPlayer, "Cochin", "Kozhikode"):
+			if isCurrentCapital(iPlayer, "Desinganadu", "Kallikkottai", "Mangalapuram"):
 				return "TXT_KEY_CIV_DRAVIDIA_CHERA"
 				
 			return "TXT_KEY_CIV_DRAVIDIA_CHOLA"
@@ -1341,7 +1338,7 @@ def specificAdjective(iPlayer):
 			if not bEmpire:
 				return "TXT_KEY_CIV_ARABIA_RASHIDUN"
 				
-			if isCurrentCapital(iPlayer, "Dimashq"):
+			if capital in plots.region(rLevant):
 				return "TXT_KEY_CIV_ARABIA_UMMAYAD"
 				
 			return "TXT_KEY_CIV_ARABIA_ABBASID"
@@ -1367,10 +1364,10 @@ def specificAdjective(iPlayer):
 			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.region(rIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
-		if isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
+		if isCurrentCapital(iPlayer, "Barcelona", "Tarragon", "Valencia", "Zaragoza"):
 			return "TXT_KEY_CIV_SPAIN_ARAGONESE"
 		
-		if isCurrentCapital(iPlayer, "Oviedo"):
+		if isCurrentCapital(iPlayer, "Oviedo", "Santander"):
 			return "TXT_KEY_CIV_SPAIN_ASTURIAN"
 			
 		if not bSpain:
@@ -1389,7 +1386,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iCiv == iHolyRome:
-		if isCurrentCapital(iPlayer, "Buda"):
+		if isCurrentCapital(iPlayer, "Buda", "Pest"):
 			return "TXT_KEY_CIV_HOLY_ROME_HUNGARIAN"
 	
 		if player(iGermany).isExisting() and civic.iLegitimacy == iConstitution:
@@ -1408,12 +1405,12 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
 			
 	elif iCiv == iMali:
-		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gao"):
+		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
 			return "TXT_KEY_CIV_MALI_SONGHAI"
 			
 	elif iCiv == iInca:
 		if bResurrected:
-			if isCurrentCapital(iPlayer, "La Paz"):
+			if isCurrentCapital(iPlayer, "Tiwanaku"):
 				return "TXT_KEY_CIV_INCA_BOLIVIAN"
 				
 	elif iCiv == iItaly:
@@ -1443,7 +1440,7 @@ def specificAdjective(iPlayer):
 		return "TXT_KEY_CIV_OTTOMANS_OTTOMAN"
 			
 	elif iCiv == iNetherlands:
-		if isCurrentCapital(iPlayer, "Brussels", "Antwerpen"):
+		if isCurrentCapital(iPlayer, "Bruges", "Antwerpen", "Gent", "Bruxelles"):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIAN"
 			
 	elif iCiv == iGermany:
@@ -1672,7 +1669,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"
 			
 	elif iCiv == iPolynesia:
-		if isCurrentCapital(iPlayer, "Kaua'i", "O'ahu", "Maui"):
+		if isCurrentCapital(iPlayer, "Lihu'e", "Honolulu", "Hilo"):
 			return "TXT_KEY_KINGDOM_OF"
 			
 		if bEmpire:
@@ -1801,14 +1798,11 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iKhmer:
-		if iEra <= iRenaissance and isCurrentCapital(iPlayer, "Angkor"):
+		if iEra <= iRenaissance and isCurrentCapital(iPlayer, "Yashodharapura"):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if iEra >= iIndustrial:
 			return "TXT_KEY_KINGDOM_OF"
-			
-		if isCurrentCapital(iPlayer, "Dai La"):
-			return "TXT_KEY_CIV_KHMER_DAI_VIET"
 			
 	elif iCiv == iMoors:
 		if bCityStates:
@@ -1837,7 +1831,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire and iEra > iMedieval:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if iEra == iMedieval and isCurrentCapital(iPlayer, "Barcelona", "Valencia"):
+		if iEra == iMedieval and isCurrentCapital(iPlayer, "Barcelona", "Tarragona", "Valencia", "Zaragoza"):
 			return "TXT_KEY_CIV_SPAIN_CROWN_OF"
 			
 	elif iCiv == iFrance:
@@ -1874,7 +1868,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if isCurrentCapital(iPlayer, "Buda"):
+		if isCurrentCapital(iPlayer, "Buda", "Pest"):
 			return "TXT_KEY_KINGDOM_OF"
 			
 		if player(iGermany).isExisting():
@@ -1889,7 +1883,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if scenario() == i1700AD and turn() < year(1790):
 			return "TXT_KEY_CIV_POLAND_COMMONWEALTH"
 			
-		if isCurrentCapital(iPlayer, "Kowno", "Medvegalis", "Wilno", "Ryga"):
+		if isCurrentCapital(iPlayer, "Kaunas", "Klaipeda", "Vilnius", "Riga"):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
 	elif iCiv == iPortugal:
@@ -1966,16 +1960,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if (civic.iGovernment == iRepublic and civic.iLegitimacy in [iVassalage, iCitizenship]) or (civic.iGovernment == iElective and civic.iLegitimacy == iCitizenship):
 				return "TXT_KEY_CIV_RUSSIA_MEDIEVAL_REPUBLIC"
 			
-			if civic.iGovernment == iElective:
-				if isCurrentCapital(iPlayer, "Kiev"):
-					return "TXT_KEY_CIV_RUSSIA_KIEVAN_RUS"
-				
-				return "TXT_KEY_CIV_RUSSIA_RUS"
-			
 		if isControlled(iPlayer, plots.regions(rRuthenia, rPonticSteppe, rEuropeanArctic), 5):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
 		
-		if isCurrentCapital(iPlayer, "Kiev"):
+		if isCurrentCapital(iPlayer, "Kyiv"):
 			return "TXT_KEY_CIV_RUSSIA_GRAND_PRINCIPALITY"
 			
 	elif iCiv == iOttomans:

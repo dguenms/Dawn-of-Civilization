@@ -1,7 +1,9 @@
 from Core import *
 from RFCUtils import *
 from Locations import *
+
 from Events import events, handler
+from DynamicCivs import isCurrentCapital
 
 
 dEvacuatePeriods = {
@@ -277,7 +279,7 @@ def getNorsePeriod(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	
 	if capital:
-		if isCurrentCapital(iPlayer, "Oslo", "Nidaros"):
+		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
 			return iPeriodNorway
 		elif isCurrentCapital(iPlayer, "Roskilde"):
 			return iPeriodDenmark
