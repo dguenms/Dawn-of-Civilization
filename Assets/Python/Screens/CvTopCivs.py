@@ -11,8 +11,6 @@ from Core import *
 
 NUM_CIVILIZATIONS = 8
 
-"TXT_KEY_HISTORIAN_"
-
 HISTORIANS = {
 	iEgypt: {
 		iAncient: (
@@ -720,6 +718,9 @@ class CvTopCivs:
 	def getHistorianNames(self, iPlayer):
 		iCiv = civ(iPlayer)
 		iCurrentEra = player(iPlayer).getCurrentEra()
+		
+		if iCiv not in HISTORIANS:
+			return tuple()
 		
 		for iEra in reversed(range(iCurrentEra+1)):
 			if iEra in HISTORIANS[iCiv]:
