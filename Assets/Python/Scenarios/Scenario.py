@@ -9,6 +9,8 @@ from RFCUtils import *
 from Civilizations import *
 from Parsers import *
 
+import CityNames as cn
+
 
 START_HISTORY = -3000
 
@@ -439,6 +441,7 @@ class Scenario(object):
 		
 		self.updateData()
 		self.updateNames()
+		self.updateCityNames()
 		self.updateCityWork()
 	
 	def adjustTerritories(self):
@@ -507,6 +510,10 @@ class Scenario(object):
 	def updateNames(self):
 		for iPlayer in players.major():
 			checkName(iPlayer)
+	
+	def updateCityNames(self):
+		cn.setupScenario()
+		cn.updateAllNames()
 	
 	def updateCityWork(self):
 		for city in cities.all():

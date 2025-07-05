@@ -3,7 +3,9 @@
 from Consts import iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iGlobal, iDigital
 from Consts import iHinduism, iZoroastrianism, iBuddhism, iConfucianism, iTaoism, iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam
 from Consts import iPeriodDenmark, iPeriodNorway
-from Core import player, is_minor
+from Core import player, is_minor, cities, listify, none, game, city_
+from StoredData import data
+from Civics import isCommunist, isFascist, isRepublic, isAutocratic
 
 
 ### CONSTANTS ###
@@ -14,14 +16,14 @@ lLanguages = (
 	iCongolese, iCoptic, iDravidian, iDutch, iEgyptian, iEgyptianArabic, iEnglish, iEthiopian, iFrench, iGerman, 
 	iGreek, iHarappan, iHittite, iIndian, iItalian, iJapanese, iJavanese, iKhmerian, iKiswahili, iKorean, 
 	iKushan, iLatin, iLocal, iMalay, iManchu, iMande, iMayan, iMexican, iModernGreek, iMongol, 
-	iNahuatl, iNorse, iNubian, iOttoman, iPersian, iPhoenician, iPolish, iPolynesian, iPortuguese, iQuechua, 
+	iNahuatl, iNordic, iNubian, iOttoman, iPersian, iPhoenician, iPolish, iPolynesian, iPortuguese, iQuechua, 
 	iUkrainian, iRussian, iSomali, iSpanish, iSwedish, iThai, iTibetan, iToltec, iTurkish, iVietnamese,
 ) = range(iNumLanguages)
 
 
 ### CLASSES ###
 
-class CityName(object):
+class Translation(object):
 	
 	def __init__(self, 
 			name, 
@@ -67,79 +69,168 @@ class CityName(object):
 		self.bRepublican = bRepublican
 		self.bFascist = bFascist
 	
-	def isValid(self, city, bFound=False):
+	def __repr__(self):
+		return "%s(%s)" % (self.__class__.__name__, self.name and self.name.encode("ascii", "xmlcharrefreplace") or "")
+	
+	def isEraSpecific(self, bFound=False):
+		if self.bFound and not bFound:
+			return False
+		
+		properties = (
+			self.iReligion is not None, 
+			self.iPeriod is not None, 
+			self.iGreatGenerals is not None, 
+			self.bSmall,
+			self.bCommunist,
+			self.bOriginal,
+			self.bReconquest,
+			self.bAutocratic,
+			self.bCapital,
+			self.bResurrected,
+			self.bRepublican,
+			self.bFascist
+		)
+		return none(properties)
+		
+	def isApplicable(self, iCiv, tile, bFound=False, bChange=True, bRenaming=True):
+		city = city_(tile)
+		iCurrentEra = is_minor(iCiv) and game.getCurrentEra() or player(iCiv).getCurrentEra()
+		
 		if self.iBefore is not None:
-			if player(city).getCurrentEra() > self.iBefore:
+			if iCurrentEra > self.iBefore:
 				return False
 		
 		if self.iAfter is not None:
-			if player(city).getCurrentEra() < self.iAfter:
+			if iCurrentEra < self.iAfter:
 				return False
-		
+				
 		if self.iReligion is not None:
-			if is_minor(city):
-				if not city.isHasReligion(self.iReligion):
-					return False
-			else:
-				if player(city).getStateReligion() != self.iReligion:
+			if not is_minor(iCiv):
+				if player(iCiv).getStateReligion() != self.iReligion:
 					return False
 		
 		if self.iPeriod is not None:
-			if player(city).getPeriod() != self.iPeriod:
+			if player(iCiv).getPeriod() != self.iPeriod:
 				return False
 		
 		if self.iGreatGenerals is not None:
-			if player(city).getGreatGeneralsCreated() < self.iGreatGenerals:
+			if player(iCiv).getGreatGeneralsCreated() < self.iGreatGenerals:
 				return False
+			
+		if self.bRenaming and not bRenaming:
+			return False
 		
 		if self.bFound and not bFound:
 			return False
 		
-		if self.bSmall:
-			if city.getPopulation() > player(city).getCurrentEra() + 1:
-				return False
-		
 		if self.bCommunist:
-			if not isCommunist(city.getOwner()):
+			if not isCommunist(iCiv):
 				return False
 		
-		if self.bOriginal:
+		if self.bAutocratic:
+			if not isAutocratic(iCiv):
+				return False
+		
+		if self.bResurrected:
+			if data.civs[iCiv].iResurrections == 0:
+				return False
+		
+		if self.bRepublican:
+			if not isRepublic(iCiv):
+				return False
+		
+		if self.bFascist:
+			if not isFascist(iCiv):
+				return False
+		
+		# city specific conditions
+		
+		if self.iReligion is not None:
+			if is_minor(iCiv):
+				if city is None or not city.isHasReligion(self.iReligion):
+					return False
+		
+		if self.bSmall and city is not None:
+			if city.getPopulation() > player(iCiv).getCurrentEra() + 1:
+				return False
+		
+		if self.bOriginal and city is not None:
 			if city.getOriginalCiv() != city.getCivilizationType():
 				return False
 		
 		if self.bConquest:
-			if city.getGameTurnAcquired() == city.getGameTurnFounded():
+			if city is None or city.getGameTurnAcquired() == city.getGameTurnFounded():
 				return False
 		
 		if self.bReconquest:
-			if city.getGameTurnCivLost(city.getCivilizationType()) < 0:
-				return False
-		
-		if self.bAutocratic:
-			if not isAutocratic(city.getOwner()):
+			if city is None or city.getGameTurnCivLost(iCiv) < 0:
 				return False
 		
 		if self.bCapital:
-			if not city.isCapital():
+			if (city is None and cities.owner(iCiv).count() > 0) or not city.isCapital():
 				return False
-		
-		if self.bResurrected:
-			if data.civs[city.getOwner()].iResurrections == 0:
-				return False
-		
-		if self.bRepublican:
-			if not isRepublic(city.getOwner()):
-				return False
-		
-		if self.bFascist:
-			if not isFascist(city.getOwner()):
-				return False
-		
+			
 		return True
 
 
+class Translations(object):
+	
+	@classmethod
+	def of(cls, base_name):
+		return cls(base_name, name_translations.get(base_name, {}))
+	
+	def __init__(self, base_name, translations):
+		self.base_name = base_name
+		self.translations = translations
+	
+	def __getitem__(self, iLanguage):
+		names = listify(self.translations.get(iLanguage, []))
+		
+		if not names:
+			names = [name for names in self.translations.values() for name in listify(names) if self.isRelocatedToLanguage(name, iLanguage)]
+		
+		return tuple(self.createTranslation(name) for name in names)
+	
+	def __contains__(self, iLanguage):
+		return iLanguage in self.translations
+	
+	def isRelocatedToLanguage(self, name, iLanguage):
+		if not name:
+			return False
+		
+		if not isinstance(name, Translation):
+			return False
+		
+		if not name.bRelocation:
+			return False
+		
+		return iLanguage in name_translations.get(name.name, {})
+	
+	def createTranslation(self, name):
+		if name is _:
+			return Translation(self.base_name)
+		
+		if isinstance(name, (str, unicode)):
+			return Translation(name)
+		
+		if name.name is _:
+			name.name = self.base_name
+		
+		return name
+	
+	def isSingle(self):
+		return len(self.translations) <= 1
+	
+	def getSingle(self):
+		if not self.translations:
+			return -1, (Translation(self.base_name),)
+		
+		iLanguage = self.translations.keys()[0]
+		return iLanguage, self[iLanguage]
+
+
 def translate(name, **kwargs):
-	return CityName(name, **kwargs)
+	return Translation(name, **kwargs)
 
 
 def rename(name, **kwargs):
@@ -173,7 +264,7 @@ name_translations = {
 		iItalian: "Aquisgrana",
 		iJapanese: "Ahen",
 		iLatin: "Aquisgranum",
-		iNorse: "Takn",
+		iNordic: "Takn",
 		iPolish: "Akwizgran",
 		iPortuguese: u"Aquisgrão",
 		iRussian: u"Áhen",
@@ -185,7 +276,7 @@ name_translations = {
 		iChinese: "Aobao",
 		iJapanese: "Ourubou",
 		iKorean: "Olboreu",
-		iNorse: _,
+		iNordic: _,
 		iSwedish: u"Ålborg",
 	},
 	"Aalo": {
@@ -199,7 +290,7 @@ name_translations = {
 		iJapanese: "Oufusu",
 		iKorean: "Oreuhuseu",
 		iLatin: "Aros",
-		iNorse: _,
+		iNordic: _,
 		iRussian: "Orhus",
 		iSwedish: u"Århus",
 		iTurkish: "Orhus",
@@ -273,6 +364,10 @@ name_translations = {
 		iArabic: _,
 		iEnglish: "Aden",
 		iGreek: "Eudaimon",
+	},
+	"Adana": {  # relocated from Tarsus
+		iGreek: _,
+		iTurkish: _,
 	},
 	"Addis Abeba": {  # renamed from Barara
 		iEnglish: "Addis Ababa",
@@ -707,6 +802,7 @@ name_translations = {
 		iEnglish: "Mosul",
 		iFrench: "Mossoul",
 		iGerman: "Mossul",
+		iGreek: "Mepsila",
 		iRussian: "Mosul",
 		iPolish: "Mosul",
 		iPortuguese: "Mossul",
@@ -743,7 +839,7 @@ name_translations = {
 		iGreek: "Kairo",
 		iItalian: "Il Cairo",
 		iJapanese: "Kairo",
-		iNorse: "Kairo",
+		iNordic: "Kairo",
 		iPolish: "Kair",
 		iPortuguese: "Cairo",
 		iRussian: "Kair",
@@ -832,7 +928,7 @@ name_translations = {
 	},
 	u"Ålesund": {  # renamed from Borgund
 		iEnglish: "Aalesund",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Alexandreia": {  # renamed from Ra-Kedet
 		iArabic: "Al-Iskandariyah",
@@ -919,6 +1015,7 @@ name_translations = {
 		iLocal: "Alacant", # Catalan
 		iModernGreek: "Alikante",
 		iRussian: "Alikante",
+		iSpanish: _,
 	},
 	"Alkalawa": {
 		iFrench: relocate("Maradi"),
@@ -1065,7 +1162,7 @@ name_translations = {
 	},
 	"Anavik": {
 		iLocal: "Kapisillit", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Anchorage": {
 		iEnglish: _,
@@ -1093,7 +1190,7 @@ name_translations = {
 		),
 	},
 	"Angmagssalik": {
-		iNorse: _,
+		iNordic: _,
 		iLocal: "Tasiilaq", # Greenlandic
 	},
 	"Angostura": {
@@ -1187,7 +1284,7 @@ name_translations = {
 		iLatin: "Antiochia",
 		iMalay: "Antiokia",
 		iMongol: relocate("Alexandria ad Issum", bConquest=True),
-		iNorse: "Antiokia",
+		iNordic: "Antiokia",
 		iPolish: "Antiochia",
 		iPortuguese: u"Antióquia",
 		iSpanish: "Antioquía",
@@ -1636,7 +1733,7 @@ name_translations = {
 		iKorean: "Atene",
 		iLatin: "Athenae",
 		iModernGreek: u"Athína",
-		iNorse: "Athena",
+		iNordic: "Athena",
 		iPolish: "Ateny",
 		iPortuguese: "Atenas",
 		iRussian: "Afiny",
@@ -1681,7 +1778,7 @@ name_translations = {
 		iItalian: "Augusta",
 		iJapanese: "Aukusuburuku",
 		iLatin: "Augusta Vindelicorum",
-		iNorse: u"Ágsborg",
+		iNordic: u"Ágsborg",
 		iPolish: _,
 		iRussian: _,
 		iTurkish: _,
@@ -1918,7 +2015,7 @@ name_translations = {
 		iJapanese: "Bagudaddo",
 		iKorean: "Bageudadeu",
 		iLatin: "Bagdatum",
-		iNorse: "Bagdad",
+		iNordic: "Bagdad",
 		iPolish: "Bagdad",
 		iPortuguese: u"Bagdá",
 		iRussian: "Bagdad",
@@ -2336,7 +2433,7 @@ name_translations = {
 		iKorean: "Beiruteu",
 		iLatin: "Beritus",
 		iPersian: _,
-		iNorse: "Beirut",
+		iNordic: "Beirut",
 		iPolish: "Bejrut",
 		iPortuguese: "Beirute",
 		iRussian: "Bejrut",
@@ -2371,7 +2468,7 @@ name_translations = {
 	u"Béal Feirste": {
 		iCeltic: _,
 		iEnglish: "Belfast",
-		iNorse: found(u"Kerlingfjördr"),
+		iNordic: found(u"Kerlingfjördr"),
 	},
 	"Beaubassin": {  # founded on Moncton
 		iEnglish: relocate("Moncton"),
@@ -2499,9 +2596,12 @@ name_translations = {
 		iJapanese: "Beogurado",
 		iKorean: "Beogeuradeu",
 		iLatin: "Singidunum",
-		iLocal: _, # Serbian
+		iLocal: ( # Serbian
+			translate("Ras", iBefore=iMedieval),
+			_,
+		),
 		iModernGreek: u"Veligrádhi",
-		iNorse: "Beograd",
+		iNordic: "Beograd",
 		iPolish: "Belgrad",
 		iPortuguese: "Belgrado",
 		iRussian: "Belgrad",
@@ -2513,7 +2613,7 @@ name_translations = {
 		iDutch: _,
 		iGerman: _,
 		iLatin: "Berga",
-		iNorse: _,
+		iNordic: _,
 		iSwedish: _,
 		iPortuguese: "Berga",
 		iTurkish: _,
@@ -2531,7 +2631,7 @@ name_translations = {
 		iJapanese: "Berurin",
 		iKorean: "Bereullin",
 		iLatin: "Berolinum",
-		iNorse: _,
+		iNordic: _,
 		iPortuguese: "Berlim",
 		iSpanish: u"Berlín",
 		iTurkish: _,
@@ -2547,7 +2647,7 @@ name_translations = {
 		iJapanese: "Berun",
 		iKorean: "Bereun",
 		iLatin: "Berna",
-		iNorse: _,
+		iNordic: _,
 		iPersian: _,
 		iPolish: "Berno",
 		iPortuguese: "Berna",
@@ -2724,7 +2824,7 @@ name_translations = {
 		),
 	},
 	"Birka": {
-		iNorse: (
+		iNordic: (
 			rename("Stockholm", iAfter=iRenaissance),
 			_,
 		),
@@ -2762,18 +2862,18 @@ name_translations = {
 	},
 	"Bishnupur": {
 		iIndian: _,
-		iNorse: found("Dannemarksnagore"),
+		iNordic: found("Dannemarksnagore"),
 		iPersian: found("Qazimbazar"),
 	},
 	u"Bjørgvin": {
-		iNorse: (
+		iNordic: (
 			rename("Bergen", iAfter=iRenaissance),
 			_,
 		),
 	},
 	u"Bjørnsted": {
 		iLocal: "Nanortalik", # Greenlandic
-		iNorse: (
+		iNordic: (
 			found(u"Herjolfsnæs", iBefore=iMedieval),
 			_,
 		),
@@ -2892,13 +2992,13 @@ name_translations = {
 		iFrench: "Fort Flatters",
 	},
 	"Borg": {
-		iNorse: (
+		iNordic: (
 			translate("Sarpsborg", iAfter=iRenaissance),
 			_,
 		),
 	},
 	"Borgund": {
-		iNorse: (
+		iNordic: (
 			rename(u"Ålesund", iAfter=iIndustrial),
 			_,
 		),
@@ -3008,7 +3108,7 @@ name_translations = {
 	u"Brattahlið": {
 		iEnglish: "Brattahlid",
 		iLocal: "Narsarsuaq",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Bremen": {
 		iChinese: "Bulaimei",
@@ -3020,7 +3120,7 @@ name_translations = {
 		iJapanese: "Buremen",
 		iKorean: "Beuremen",
 		iLatin: "Brema",
-		iNorse: (
+		iNordic: (
 			translate("Brimarborg", iBefore=iMedieval),
 			_,
 		),
@@ -3106,7 +3206,7 @@ name_translations = {
 		iJapanese: "Buryusseru",
 		iKorean: "Beurwisel",
 		iLocal: "Brussele", # Walloon
-		iNorse: "Bryssel",
+		iNordic: "Bryssel",
 		iPolish: "Bruksela",
 		iPortuguese: "Bruxelas",
 		iRussian: "Bryussel",
@@ -3149,7 +3249,7 @@ name_translations = {
 			_, # Romanian
 		),
 		iMalay: "Bucares",
-		iNorse: "Bukarest",
+		iNordic: "Bukarest",
 		iPolish: "Bukareszt",
 		iPortuguese: "Bucareste",
 		iRussian: "Bukharest",
@@ -3381,6 +3481,7 @@ name_translations = {
 	},
 	"Byzantion": {
 		iArabic: "Bizantiya",
+		iByzantine: rename("Constantinopolis"),
 		iChinese: "Baizhanting",
 		iDutch: _,
 		iEnglish: "Byzantium",
@@ -3542,7 +3643,7 @@ name_translations = {
 		iCeltic: "Caerdydd",
 		iEnglish: _,
 		iLatin: found("Caerleon"),
-		iNorse: found("Swansea"),
+		iNordic: found("Swansea"),
 	},
 	"Carnarvon": {
 		iDutch: found("Dirck Hartogs Ree Cap"),
@@ -3746,7 +3847,7 @@ name_translations = {
 			translate("Khulna", iAfter=iMedieval),
 			_,
 		),
-		iNorse: found("Pipli"),
+		iNordic: found("Pipli"),
 	},
 	"Chandrapura": {
 		iArabic: found("Karwar"),
@@ -3919,7 +4020,7 @@ name_translations = {
 			found("Duron"),
 			"Coriallum",
 		),
-		iNorse: "Kjarrborg",
+		iNordic: "Kjarrborg",
 	},
 	"Cherkassk": {
 		iRussian: (
@@ -3940,7 +4041,7 @@ name_translations = {
 	"Chernivtsi": {
 		iGerman: "Tschernowitz",
 		# iHungarian: "Csernyivci",
-		iNorse: "Tsjernivtsi",
+		iNordic: "Tsjernivtsi",
 		iPolish: "Czerniowce",
 		# iRomanian: "Cernauti",
 		iRussian: "Chernovtsy",
@@ -4057,7 +4158,7 @@ name_translations = {
 	},
 	"Christianshaab": {
 		iLocal: "Qasigiannguit", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Chuchura": {  # relocated from Tamralipta
 		iDutch: "Chinsura",
@@ -4236,7 +4337,7 @@ name_translations = {
 		iJapanese: "Konsutantinopuru",
 		iKorean: "Konseutantinopolliseu",
 		iLatin: _,
-		iNorse: u"Miklagarðr",
+		iNordic: u"Miklagarðr",
 		iPersian: (
 			translate("Takht-e Rum", iBefore=iClassical),
 			"Qostantiniye",
@@ -4280,7 +4381,7 @@ name_translations = {
 		iEnglish: "Cork",
 		iKorean: "Koreukeu",
 		iLatin: "Corcagia",
-		iNorse: found("Waterford"),
+		iNordic: found("Waterford"),
 	},
 	"Corfinium": {
 		iGerman: relocate("L'Aquila", iBefore=iRenaissance),
@@ -4358,6 +4459,17 @@ name_translations = {
 		iGerman: found("Pomerode"),
 		iLocal: "Kuri'yty", # Tupi
 		iPortuguese: _,
+	},
+	"Petrovaradin": {
+		iByzantine: "Petrikon",
+		iGerman: "Peterwardein",
+		iLatin: "Cusum",
+		iLocal: ( # Serbian
+			relocate("Novi Sad", iAfter=iRenaissance),
+			_,
+		),
+		iRussian: _,
+		iTurkish: "Petervaradin",
 	},
 	
 	### D ###
@@ -4479,7 +4591,7 @@ name_translations = {
 	},
 	"Dannemarksnagore": {  # founded on Bishnupur
 		iIndian: "Gondalpara",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Dani Baa": {  # relocated from Huaxyacac
 		iLocal: _,
@@ -4646,7 +4758,7 @@ name_translations = {
 			"Derby",
 		),
 		iLatin: _,
-		iNorse: u"Djúrabý"
+		iNordic: u"Djúrabý"
 	},
 	"Desinganadu": {
 		iDutch: "Quilon",
@@ -4804,7 +4916,7 @@ name_translations = {
 		iKorean: "Damaseukuseu",
 		iLatin: "Damascus",
 		iMalay: "Damsyik",
-		iNorse: "Damaskus",
+		iNordic: "Damaskus",
 		iPersian: "Damishq",
 		iPortuguese: "Damasco",
 		iRussian: "Damask",
@@ -4817,14 +4929,14 @@ name_translations = {
 			relocate("Al-Aghwat", iAfter=iIndustrial),
 			"Messaad",
 		),
-		iFrench: "Messaâd",
+		iFrench: u"Messaâd",
 		iLatin: "Castellum Dimmidi",
 		iPhoenician: _,
 	},
 	"Dingwall": {  # founded on Sruighlea
 		iCeltic: "Inbhir Pheofharain",
 		iEnglish: _,
-		iNorse: u"Þingvöllr",
+		iNordic: u"Þingvöllr",
 	},
 	"Dire Dawa": {  # relocated from Harar
 		iArabic: "Diri Dawa",
@@ -4905,7 +5017,7 @@ name_translations = {
 	},
 	"Dorestad": {  # founded on Utrecht
 		iLatin: "Levafanum",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Dori": {
 		iArabic: "Winde",
@@ -4940,7 +5052,7 @@ name_translations = {
 		iItalian: "Dresda",
 		iJapanese: "Doresuden",
 		iKorean: "Deureseuden",
-		iNorse: _,
+		iNordic: _,
 		iPolish: "Drezno",
 		iPortuguese: "Dresda",
 		iRussian: "Drezden",
@@ -4991,7 +5103,7 @@ name_translations = {
 		iItalian: "Dublino",
 		iJapanese: "Daburin",
 		iKorean: "Deobeullin",
-		iNorse: "Dyflin",
+		iNordic: "Dyflin",
 		iPortuguese: "Dublim",
 		iSpanish: u"Dublín",
 	},
@@ -5056,7 +5168,7 @@ name_translations = {
 		iFrench: u"Cantorbéry",
 		iKorean: "Kaenteoberi",
 		iLatin: _,
-		iNorse: "Kantaraborg",
+		iNordic: "Kantaraborg",
 		iPortuguese: u"Cantuária",
 	},
 	"Duzdab": {
@@ -5095,13 +5207,14 @@ name_translations = {
 			relocate("Glasgow", iAfter=iRenaissance),
 			"Dumbarton",
 		),
-		iNorse: found("Iona"),
+		iNordic: found("Iona"),
 	},
 	u"Dùn Èideann": {
 		iArabic: "Idinburah",
 		iCeltic: _,
 		iChinese: "Aidingbao",
 		iDravidian: "Etinparo",
+		iEnglish: "Edinburgh",
 		iFrench: u"Édimbourg",
 		iGerman: "Edinburg",
 		iGreek: u"Edimvoúrgo",
@@ -5163,12 +5276,13 @@ name_translations = {
 		iEnglish: "Yedo",
 		iJapanese: (
 			rename("Toukyou", iAfter=iIndustrial),
+			translate("Fuchuu", iBefore=iClassical),
 			_,
 		),
 	},
 	"Egedesminde": {
 		iLocal: "Aasiaat", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	u"Èkó": {
 		iEnglish: "Lagos",
@@ -5199,7 +5313,7 @@ name_translations = {
 		iDutch: found("Paslek"),
 		iGerman: _,
 		iLocal: "Truso", # Old Prussian
-		iNorse: "Ilfing",
+		iNordic: "Ilfing",
 		iPolish: "Elblag",
 		iRussian: "Elblong",
 	},
@@ -5300,6 +5414,13 @@ name_translations = {
 	"Esperance": {
 		iDutch: found("'t Landt van de Leeuwin"),
 		iEnglish: _,
+	},
+	"Estakhr": {  # relocated from Parsa
+		iArabic: relocate("Sirajis"),
+		iPersian: (
+			relocate("Sirajis", iReligion=iIslam),
+			_,
+		),
 	},
 	"Esutoru": {
 		iJapanese: _,
@@ -5472,7 +5593,7 @@ name_translations = {
 		iJapanese: "Firenshe",
 		iKorean: "Pirenche",
 		iLatin: _,
-		iNorse: "Florens",
+		iNordic: "Florens",
 		iPolish: "Florencja",
 		iPortuguese: u"Florença",
 		iRussian: "Florentsiya",
@@ -5703,12 +5824,12 @@ name_translations = {
 	"Frederiknagore": {  # relocated from Tamralipta
 		iEnglish: "Serampore",
 		iIndian: "Serampur",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Frederiksstad": {  # founded on Haithabu
 		iDutch: "Frederikstad",
 		iGerman: "Friedrichstadt",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Frederikstad": {  # founded on Natal
 		iDutch: _,
@@ -6080,7 +6201,7 @@ name_translations = {
 		iKorean: "Chenoba",
 		iLatin: _,
 		iLocal: "Zena", # Ligurian
-		iNorse: _,
+		iNordic: _,
 		iPolish: _,
 		iPortuguese: u"Génova",
 		iSpanish: u"Génova",
@@ -6293,7 +6414,7 @@ name_translations = {
 	},
 	"Godhavn": {
 		iLocal: "Qeqertarsuaq", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Goeree": {  # founded on Ndakaaru
 		iDutch: _,
@@ -6364,7 +6485,7 @@ name_translations = {
 		iItalian: "Gotemburgo",
 		iJapanese: "Youtebori",
 		iKorean: "Yetebori",
-		iNorse: u"Gøteborg",
+		iNordic: u"Gøteborg",
 		iPolish: "Gotenburg",
 		iPortuguese: "Gotemburgo",
 		iSpanish: "Gotemburgo",
@@ -6569,7 +6690,7 @@ name_translations = {
 		iLatin: relocate("Oraea"),
 		iPersian: _,
 	},
-	"Gwadar": {
+	"Gwandar": {
 		iArabic: "Qundar",
 		iEnglish: "Gondar",
 		iEthiopian: (
@@ -6657,7 +6778,7 @@ name_translations = {
 			found("Kiel", iAfter=iRenaissance),
 			_,
 		),
-		iNorse: (
+		iNordic: (
 			translate("Heithabyr", iBefore=iMedieval),
 			"Hedeby",
 		),
@@ -6702,7 +6823,7 @@ name_translations = {
 		iKorean: "Allepo",
 		iLatin: "Beroea",
 		iModernGreek: u"Chelépion",
-		iNorse: "Aleppo",
+		iNordic: "Aleppo",
 		iPersian: _,
 		iPolish: "Aleppo",
 		iPortuguese: "Alepo",
@@ -6777,7 +6898,7 @@ name_translations = {
 			translate("Treva", bFound=True),
 			"Hammaburgum",
 		),
-		iNorse: "Hamborg",
+		iNordic: "Hamborg",
 		iPolish: _,
 		iPortuguese: "Hamburgo",
 		iRussian: "Gamburg",
@@ -6989,7 +7110,7 @@ name_translations = {
 		iKorean: "Helsingki",
 		iLatin: "Helsingia",
 		iLocal: "Helsinki", # Finnish
-		iNorse: _,
+		iNordic: _,
 		iPortuguese: u"Helsínquia",
 		iRussian: (
 			translate("Khel'sinki", iAfter=iGlobal),
@@ -7127,7 +7248,7 @@ name_translations = {
 	},
 	"Holsteinsborg": {
 		iLocal: "Sisimiut", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	u"Hölzel": {  # founded on La Plata
 		iGerman: _,
@@ -7270,7 +7391,7 @@ name_translations = {
 		iJapanese: "Dushanbe",
 		iKorean: "Dusyanbe",
 		iModernGreek: "Tosambe",
-		iNorse: "Dusjanbe",
+		iNordic: "Dusjanbe",
 		iPersian: _,
 		iPortuguese: u"Duchambé",
 		iRussian: (
@@ -7297,7 +7418,7 @@ name_translations = {
 	},
 	"Hvalsey": {
 		iLocal: "Qaqortoq",
-		iNorse: (
+		iNordic: (
 			translate(u"Julianehåb", iAfter=iRenaissance),
 			_,
 		),
@@ -7491,7 +7612,7 @@ name_translations = {
 		iChinese: "Yinfuneisi",
 		iEnglish: "Inverness",
 		iKorean: "Inbeoneseu",
-		iNorse: found("Kirkwall"),
+		iNordic: found("Kirkwall"),
 	},
 	"Inderborskiy": {
 		iRussian: _,
@@ -7518,7 +7639,7 @@ name_translations = {
 		),
 		iPersian: "Nizamabad",
 	},
-	"Inebu-Hedj": {
+	"Inebu-hedj": {
 		iArabic: relocate("Al-Qahirah"),
 		iCoptic: "Memfi",
 		iEgyptian: (
@@ -7571,7 +7692,7 @@ name_translations = {
 		iCeltic: "Eilean Idhe",
 		iEnglish: "Icolmkill",
 		iLatin: _,
-		iNorse: "Hy",
+		iNordic: "Hy",
 	},
 	"Iritu": {
 		iArabic: relocate("Nasiriyah"),
@@ -7613,7 +7734,7 @@ name_translations = {
 		iKorean: "Sebiya",
 		iLatin: "Hispalis",
 		iModernGreek: u"Sevílli",
-		iNorse: "Sevilla",
+		iNordic: "Sevilla",
 		iPhoenician: "Hisbaal",
 		iPolish: "Sewilla",
 		iPortuguese: "Sevilha",
@@ -7695,7 +7816,7 @@ name_translations = {
 	},
 	"Jakobshavn": {
 		iLocal: "Ilulissat", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Jalu": {
 		iArabic: _,
@@ -7876,7 +7997,7 @@ name_translations = {
 			translate("Bejzhin", iAfter=iIndustrial),
 			"Khanbaliq",
 		),
-		iNorse: "Peking",
+		iNordic: "Peking",
 		iPersian: "Biyijang",
 		iPolish: "Pekin",
 		iPortuguese: "Pequim",
@@ -8301,7 +8422,7 @@ name_translations = {
 		iDravidian: _,
 		iEnglish: "Conjeevaram",
 		iFrench: relocate("Puducherry"),
-		iNorse: relocate("Tharangamba"),
+		iNordic: relocate("Tharangamba"),
 	},
 	"Kandahar": {
 		iArabic: "Qandahar",
@@ -8383,7 +8504,7 @@ name_translations = {
 	},
 	"Kap Dan": {
 		iLocal: "Kulusuk",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Kapingamarangi": {
 		iEnglish: found("Weno"),
@@ -8464,6 +8585,19 @@ name_translations = {
 	"Kashamarka": {
 		iQuechua: _,
 		iSpanish: "Cajamarca",
+	},
+	"Kashgar": {
+		iChinese: (
+			translate("Kashi", iAfter=iGlobal),
+			"Shufu",
+		),
+		iEnglish: _,
+		iGreek: "Kasi",
+		iIndian: "Shrikrirati",
+		iKushan: "Kash",
+		iPersian: "Kashghar",
+		iRussian: _,
+		iTurkish: "Qeshqer",
 	},
 	"Kashi": {
 		iEnglish: "Benares",
@@ -8566,7 +8700,7 @@ name_translations = {
 		iRussian: _,
 	},
 	"Kaupanger": {
-		iNorse: (
+		iNordic: (
 			relocate(u"Florø", iAfter=iIndustrial),
 			_,
 		),
@@ -8673,7 +8807,7 @@ name_translations = {
 	u"Kerlingfjördr": {  # founded on Béal Feirste
 		iCeltic: "Cairlinn",
 		iEnglish: "Carlingford",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Kerma": {
 		iArabic: (
@@ -8712,7 +8846,7 @@ name_translations = {
 	"Keta": {
 		iLocal: "Quittah",
 		iMande: _,
-		iNorse: found("Fort Prinsensten"),
+		iNordic: found("Fort Prinsensten"),
 	},
 	"Kexholm": {
 		iLocal: u"Käkisalmi", # Finnish
@@ -8811,6 +8945,16 @@ name_translations = {
 		iArabic: "Hasab",
 		iEnglish: _,
 		iPortuguese: u"Caçapo",
+	},
+	"Khavakand": {
+		iArabic: "Khoqand",
+		iLocal: "Kath", # Sogdian
+		iPersian: (
+			translate("Khoghand", iAfter=iRenaissance),
+			_,
+		),
+		iRussian: "Kokand",
+		iTurkish: "Qoqon",
 	},
 	"Khem": {
 		iArabic: "Ausim",
@@ -8935,7 +9079,7 @@ name_translations = {
 	"Kirkwall": {  # founded on Inbhir Nis
 		iCeltic: "Kirkwaa",
 		iEnglish: _,
-		iNorse: u"Kirkjuvágr",
+		iNordic: u"Kirkjuvágr",
 	},
 	"Kirthan": {
 		iPhoenician: _,
@@ -9048,7 +9192,7 @@ name_translations = {
 		iJapanese: "Kopenhaagen",
 		iKorean: "Kopenhagen",
 		iLatin: "Hafnia",
-		iNorse: _,
+		iNordic: _,
 		iPolish: "Kopenhaga",
 		iPortuguese: "Copenhaga",
 		iRussian: "Kopengagen",
@@ -9119,7 +9263,7 @@ name_translations = {
 		iJapanese: "Kerun",
 		iKorean: "Koelleun",
 		iLatin: "Colonia Agrippina",
-		iNorse: u"Køln",
+		iNordic: u"Køln",
 		iPolish: "Kolonia",
 		iPortuguese: u"Colónia",
 		iRussian: "Kyol'n",
@@ -9161,7 +9305,7 @@ name_translations = {
 		iIndian: _,
 		iItalian: "Calcutta",
 		iJapanese: "Karukatta",
-		iNorse: "Calcutta",
+		iNordic: "Calcutta",
 		iPolish: "Kalkuta",
 		iPortuguese: u"Calcutá",
 		iRussian: "Kal'kutta",
@@ -9217,7 +9361,7 @@ name_translations = {
 		iGreek: _,
 		iItalian: "Corinto",
 		iLatin: "Corinthus",
-		iNorse: "Korinth",
+		iNordic: "Korinth",
 		iPolish: "Korynt",
 		iPortuguese: "Corinto",
 		iRussian: "Korinf",
@@ -9350,7 +9494,7 @@ name_translations = {
 		iEnglish: _,
 		iJapanese: "Kuararumpuuru",
 		iMalay: _,
-		iNorse: u"Kúala Lúmpúr",
+		iNordic: u"Kúala Lúmpúr",
 		iRussian: "Kuala-Lumpur",
 	},
 	"Kubha": {
@@ -9562,7 +9706,7 @@ name_translations = {
 		iJapanese: "Kiiu",
 		iKorean: "Kiyepeu",
 		iLatin: "Kiovia",
-		iNorse: u"Kænugarður",
+		iNordic: u"Kænugarður",
 		iPolish: u"Kijów",
 		iPortuguese: "Quieve",
 		iRussian: "Kiyev",
@@ -9632,7 +9776,7 @@ name_translations = {
 		iGerman: "Havanna",
 		iGreek: u"Abána",
 		iItalian: "L'Avana",
-		iNorse: "Havana",
+		iNordic: "Havana",
 		iPortuguese: "Havana",
 		iRussian: "Gavana",
 		iSpanish: _,
@@ -9670,7 +9814,7 @@ name_translations = {
 		iPortuguese: "Lagos",
 	},
 	"Ladoga": {
-		iNorse: "Aldeigjuborg",
+		iNordic: "Aldeigjuborg",
 		iRussian: (
 			translate("Staraya Ladoga", iAfter=iRenaissance),
 			_,
@@ -9800,7 +9944,7 @@ name_translations = {
 		iItalian: "Lahore",
 		iJapanese: "Rahouru",
 		iKorean: "Raholleu",
-		iNorse: "Lahore",
+		iNordic: "Lahore",
 		iPersian: "Laahor",
 		iPortuguese: "Laore",
 		iRussian: "Lakhor",
@@ -9986,7 +10130,7 @@ name_translations = {
 		iCeltic: _,
 		iEnglish: "Lincoln",
 		iLatin: "Lindum",
-		iNorse: found("Torksey"),
+		iNordic: found("Torksey"),
 	},
 	"Lindong": {
 		iChinese: (
@@ -10069,7 +10213,7 @@ name_translations = {
 		iKorean: "Riseubon",
 		iLatin: "Felicitas Iulia",
 		iModernGreek: u"Lissavóna",
-		iNorse: "Lissabon",
+		iNordic: "Lissabon",
 		iPersian: "Lasibun",
 		iPhoenician: "Alis-Ubbo",
 		iPolish: "Lizbona",
@@ -10191,7 +10335,7 @@ name_translations = {
 		iJapanese: "Rondon",
 		iKorean: "Reondeon",
 		iLatin: "Londinium",
-		iNorse: u"Lundúnir",
+		iNordic: u"Lundúnir",
 		iPolish: "Londyn",
 		iPortuguese: "Londres",
 		iSpanish: "Londres",
@@ -10255,7 +10399,7 @@ name_translations = {
 		iGreek: u"Lubéke",
 		iItalian: "Lubecca",
 		iKorean: "Rwibekeu",
-		iNorse: u"Lybæk",
+		iNordic: u"Lybæk",
 		iPolish: "Lubeka",
 		iPortuguese: "Lubeque",
 	},
@@ -10308,7 +10452,7 @@ name_translations = {
 		iChinese: "Limolike",
 		iEnglish: "Limerick",
 		iLatin: "Macolicum",
-		iNorse: "Hlymrekr",
+		iNordic: "Hlymrekr",
 	},
 	"Lujenda": {
 		iKiswahili: _,
@@ -10339,7 +10483,7 @@ name_translations = {
 		iFrench: _,
 		iGerman: _,
 		iLatin: "Lunda",
-		iNorse: (
+		iNordic: (
 			found(u"Malmö"),
 			_,
 		),
@@ -10353,7 +10497,7 @@ name_translations = {
 		iGerman: _,
 		iGreek: "Leuphana",
 		iItalian: "Luneburgo",
-		iNorse: "Lyneborg",
+		iNordic: "Lyneborg",
 		iPortuguese: "Luneburgo",
 		iSpanish: "Luneburgo",
 	},
@@ -10392,7 +10536,7 @@ name_translations = {
 		iKorean: "Ruksembureukeu",
 		iLatin: "Luxemburgum",
 		iLocal: u"Lëtzebuerg", # Luxembourgish
-		iNorse: "Luxemborg",
+		iNordic: "Luxemborg",
 		iPersian: "Lakshembarg",
 		iPolish: "Luksemburg",
 		iPortuguese: "Luxemburgo",
@@ -10423,7 +10567,7 @@ name_translations = {
 			translate("Luanda", bReconquest=True),
 			_,
 		),
-		iPortuguese: u"São Paulo de Loanda"
+		iPortuguese: u"São Paulo da Assunção"
 	},
 	"Lwena": {
 		iLocal: _,
@@ -10517,7 +10661,7 @@ name_translations = {
 		iItalian: "Macao",
 		iJapanese: "Makao",
 		iKorean: "Omun",
-		iNorse: _,
+		iNordic: _,
 		iPolish: "Makao",
 		iPortuguese: _,
 		iRussian: "Makao",
@@ -10691,7 +10835,7 @@ name_translations = {
 		iJapanese: "Mekka",
 		iLatin: "Macoraba",
 		iMalay: "Makkah",
-		iNorse: "Mekka",
+		iNordic: "Mekka",
 		iPolish: "Mekka",
 		iPortuguese: "Meca",
 		iRussian: "Mekka",
@@ -10745,7 +10889,7 @@ name_translations = {
 		iJapanese: "Marume",
 		iKorean: "Malmoe",
 		iLatin: "Malmogia",
-		iNorse: u"Malmø",
+		iNordic: u"Malmø",
 		iPortuguese: "Malmo",
 		iSwedish: _,
 	},
@@ -11035,10 +11179,6 @@ name_translations = {
 		iJapanese: _,
 		iKorean: "Masseuyama",
 	},
-	"Maungakiekie": {
-		iEnglish: relocate("Auckland"),
-		iPolynesian: _,
-	},
 	"Mawk'allaqta": {
 		iQuechua: _,
 		iSpanish: u"Camaná",
@@ -11144,7 +11284,7 @@ name_translations = {
 		iLatin: _,
 		iLocal: "Milan", # Milanese
 		iModernGreek: u"Miláno",
-		iNorse: "Mailand",
+		iNordic: "Mailand",
 		iPersian: "Milan",
 		iPolish: "Mediolan",
 		iPortuguese: u"Milão",
@@ -11526,7 +11666,7 @@ name_translations = {
 	"Mthatha": {
 		iEnglish: found("Port Shepstone"),
 		iLocal: _,
-		iNorse: found("Marburg")
+		iNordic: found("Marburg")
 	},
 	"Mtho Lding": {
 		iChinese: "Tuolin",
@@ -11605,7 +11745,7 @@ name_translations = {
 		iItalian: "Monaco",
 		iJapanese: "Myunhen",
 		iKorean: "Mwinhen",
-		iNorse: _,
+		iNordic: _,
 		iPersian: "Monikh",
 		iPolish: u"Mnichów",
 		iPortuguese: "Munique",
@@ -12057,6 +12197,7 @@ name_translations = {
 		iChinese: "Napoli",
 		iDutch: "Napels",
 		iEnglish: "Naples",
+		iFrench: "Naples",
 		iGerman: "Neapel",
 		iGreek: _,
 		iItalian: "Napoli",
@@ -12179,7 +12320,7 @@ name_translations = {
 		iCeltic: "An Caisteal Nuadh",
 		iEnglish: _,
 		iLatin: "Pons Aelius",
-		iNorse: found("Scarborough"),
+		iNordic: found("Scarborough"),
 	},
 	"Newcastle, kwaZulu-Natal": {  # founded on Bulawayo
 		iDutch: "Viljoensdorp",
@@ -12277,7 +12418,7 @@ name_translations = {
 		iTurkish: "Nis",
 	},
 	u"Niðaróss": {
-		iNorse: (
+		iNordic: (
 			rename(u"Þróndheimr", iAfter=iRenaissance),
 			translate("Nidaros", iPeriod=iPeriodDenmark),
 			_,
@@ -12434,7 +12575,7 @@ name_translations = {
 			"Accra",
 		),
 		iLocal: _, # Twi
-		iNorse: (
+		iNordic: (
 			translate("Fort Christiansborg", bSmall=True),
 			"Akra",
 		),
@@ -12509,16 +12650,23 @@ name_translations = {
 	},
 	"Novgorod": {
 		iGerman: "Nowgorod",
-		iNorse: u"Holmgarðr",
+		iNordic: u"Holmgarðr",
 		iPolish: u"Nowogród",
 		iPortuguese: u"Novogárdia",
 		iRussian: _,
 		iSpanish: u"Nóvgorod",
 		iSwedish: u"Holmgård",
 	},
-	"Novi Pazar": {  # relocated from Ras
-		iLocal: _, # Serbian
-		iTurkish: "Yeni Pazar",
+	"Novi Sad": {
+		iGerman: (
+			translate("Neusatz", iAfter=iIndustrial),
+			"Ratzen Stadt",
+		),
+		iKorean: "Nobisadeu",
+		iLatin: "Neoplanta",
+		iLocal: _,
+		iPolish: "Nowy Sad",
+		iRussian: _,
 	},
 	"Novo Hamburgo": {  # founded on Passo Fundo
 		iGerman: "Neu-Hamburg",
@@ -12661,7 +12809,7 @@ name_translations = {
 		iEnglish: "Aberdeen",
 		iJapanese: "Abadiin",
 		iLatin: found("Pinnata Castra"),
-		iNorse: u"Apardjón",
+		iNordic: u"Apardjón",
 		iRussian: "Aberdin",
 		iTurkish: "Aberdin",
 	},
@@ -12678,7 +12826,7 @@ name_translations = {
 		iUkrainian: "Ochakiv",
 	},
 	"Oddernes": {
-		iNorse: (
+		iNordic: (
 			relocate("Kristansand", iAfter=iRenaissance),
 			_,
 		),
@@ -12941,7 +13089,7 @@ name_translations = {
 		iChinese: "Aosilu",
 		iJapanese: "Osuro",
 		iKorean: "Oseullo",
-		iNorse: (
+		iNordic: (
 			rename("Kristiania", iPeriod=iPeriodDenmark, iAfter=iRenaissance, iBefore=iIndustrial),
 			_,
 		),
@@ -12998,7 +13146,7 @@ name_translations = {
 		iJapanese: "Okkusufoodo",
 		iKorean: "Okseupodeu",
 		iLatin: found("Corinium"),
-		iNorse: (
+		iNordic: (
 			found("Tamworth"),
 			u"Uxnafurða",
 		),
@@ -13314,6 +13462,7 @@ name_translations = {
 		iGreek: "Persepolis",
 		iPersian: (
 			relocate("Sirajis", iReligion=iIslam),
+			relocate("Estakhr", bReconquest=True),
 			_,
 		),
 	},
@@ -13629,7 +13778,7 @@ name_translations = {
 			_,
 		),
 	},
-	"Phnom Penh": {
+	"Phnom Penh": {  # relocated from Angkor Borei
 		iArabic: "Bnom Benh",
 		iChinese: "Jinbian",
 		iGreek: "Pnom Pench",
@@ -13680,7 +13829,7 @@ name_translations = {
 	},
 	"Pipli": {  # founded on Chandraketugarh
 		iDutch: "Pipely",
-		iNorse: _,
+		iNordic: _,
 	},
 	"Pisco": {  # relocated from Inkawasi
 		iQuechua: "Pisqu",
@@ -13998,7 +14147,7 @@ name_translations = {
 		iLatin: "Praga",
 		iLocal: _, # Czech
 		iMalay: _,
-		iNorse: "Prag",
+		iNordic: "Prag",
 		iPolish: "Praga",
 		iPortuguese: "Praga",
 		iRussian: "Praga",
@@ -14211,7 +14360,7 @@ name_translations = {
 		iJapanese: "Heijou",
 		iKorean: _,
 		iMalay: "Pyongyang",
-		iNorse: "Pyongyang",
+		iNordic: "Pyongyang",
 		iPolish: "Phenian",
 		iPortuguese: "Pyongyang",
 		iRussian: "Pkhenyan",
@@ -14546,6 +14695,10 @@ name_translations = {
 		iEnglish: "Rachi",
 		iIndian: _,
 	},
+	"Rangiriri": {
+		iEnglish: relocate("Auckland"),
+		iPolynesian: _,
+	},
 	"Ranigat": {
 		iHarappan: found("Aligrama"),
 		iIndian: _,
@@ -14567,14 +14720,6 @@ name_translations = {
 	"Raqch'i": {
 		iQuechua: _,
 		iSpanish: found("Azanqaru"),
-	},
-	"Ras": {
-		iLatin: (
-			found("Viminacium"),
-			_,
-		),
-		iLocal: _, # Serbian
-		iTurkish: relocate("Novi Pazar"),
 	},
 	"Rasa": {
 		iChinese: "Lasa",
@@ -14689,7 +14834,7 @@ name_translations = {
 		iItalian: "Reykjavik",
 		iJapanese: "Reikyabiku",
 		iKorean: "Reikyabikeu",
-		iNorse: (
+		iNordic: (
 			translate(u"Reykjavík", iAfter=iRenaissance),
 			_,
 		),
@@ -14730,7 +14875,7 @@ name_translations = {
 		iKiswahili: "Lokandu",
 	},
 	"Ribe": {
-		iNorse: (
+		iNordic: (
 			relocate("Vejle", iAfter=iIndustrial),
 			_,
 		),
@@ -14748,8 +14893,17 @@ name_translations = {
 	"Riga": {
 		iCeltic: u"Ríge",
 		iChinese: "Lijia",
+		iDutch: _,
+		iFrench: _,
+		iGerman: _,
+		iItalian: _,
 		iLocal: _, # Latvian
 		iPolish: "Ryga",
+		iPortuguese: _,
+		iRussian: _,
+		iSpanish: _,
+		iSwedish: _,
+		iTurkish: _,
 		iUkrainian: "Ryha",
 	},
 	"Rigolet": {  # founded on Makkovik
@@ -14794,13 +14948,17 @@ name_translations = {
 		iArabic: "Rumiya",
 		iCeltic: u"An Róimh",
 		iChinese: "Luoma",
+		iDutch: "Rome",
 		iEnglish: "Rome",
+		iFrench: "Rome",
 		iGerman: "Rom",
 		iGreek: "Rhome",
 		iItalian: _,
+		iJapanese: "Rouma",
+		iKorean: _,
 		iLatin: _,
 		iModernGreek: u"Rómi",
-		iNorse: "Rom",
+		iNordic: "Rom",
 		iPhoenician: "Rwm",
 		iPolish: "Rzym",
 		iPortuguese: _,
@@ -14818,7 +14976,7 @@ name_translations = {
 		iKushan: found("Cadota"),
 	},
 	"Ronneby": {
-		iNorse: u"Rotnæby",
+		iNordic: u"Rotnæby",
 		iSwedish: (
 			relocate("Karlskrona", iAfter=iRenaissance),
 			_,
@@ -14830,7 +14988,7 @@ name_translations = {
 	},
 	"Roskilde": {
 		iDutch: found("Dragør"),
-		iNorse: (
+		iNordic: (
 			relocate(u"København", iAfter=iRenaissance),
 			_,
 		),
@@ -14842,7 +15000,7 @@ name_translations = {
 		iRussian: "Rostok",
 	},
 	"Rostov": {
-		iNorse: u"Raðstofa",
+		iNordic: u"Raðstofa",
 		iPolish: u"Rostów",
 		iRussian: _,
 	},
@@ -14861,7 +15019,7 @@ name_translations = {
 		iGerman: translate("Rudaburg", iBefore=iMedieval),
 		iGreek: "Rouene",
 		iLatin: "Rotomagus",
-		iNorse: translate(u"Ruþaborg", iBefore=iMedieval),
+		iNordic: translate(u"Ruþaborg", iBefore=iMedieval),
 		iPortuguese: u"Ruão",
 		iSpanish: u"Ruán",
 	},
@@ -15166,7 +15324,7 @@ name_translations = {
 		iEnglish: found("Road Town"),
 		iFrench: found("Basseterre"),
 		iGerman: found("Krabbeninsel"),
-		iNorse: found("Charlotte Amalie"),
+		iNordic: found("Charlotte Amalie"),
 		iSpanish: (
 			translate("Ciudad de Puerto Rico", iBefore=iRenaissance),
 			_,
@@ -15194,7 +15352,7 @@ name_translations = {
 	},
 	u"Sandnæs": {
 		iLocal: "Nuuk", # Greenlandic
-		iNorse: (
+		iNordic: (
 			rename(u"Godthåb", iAfter=iRenaissance),
 			_,
 		),
@@ -15219,7 +15377,7 @@ name_translations = {
 		iJapanese: "Sankuto Peteruburuku",
 		iKorean: "Sangteu Petereubureukeu",
 		iLatin: "Petropolis",
-		iNorse: "Sankt-Petersborg",
+		iNordic: "Sankt-Petersborg",
 		iPolish: "Sankt Petersburg",
 		iPortuguese: u"São Petersburgo",
 		iRussian: (
@@ -15283,7 +15441,7 @@ name_translations = {
 		iFrench: "Saint-Jacques-de-Compostelle",
 		iItalian: "San Giacomo di Compostella",
 		iLocal: "Compostela", # Galician
-		iNorse: translate("Jackobsland", iBefore=iMedieval),
+		iNordic: translate("Jackobsland", iBefore=iMedieval),
 		iPortuguese: (
 			found("Braga"),
 			_,
@@ -15493,11 +15651,11 @@ name_translations = {
 	},
 	"Scarborough": {  # founded on Newcastle
 		iEnglish: _,
-		iNorse: u"Skarðaborg",
+		iNordic: u"Skarðaborg",
 	},
 	"Scoresbysund": {
 		iLocal: "Ittoqqortoormiit", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Seattle": {
 		iEnglish: _,
@@ -15855,13 +16013,6 @@ name_translations = {
 		iHarappan: found("Mehrgarh"),
 		iPersian: _,
 	},
-	"Sibipura": {
-		iEnglish: relocate("Lyallpur"),
-		iGreek: relocate("Chiniotis"),
-		iHarappan: found("Jalilpur"),
-		iIndian: _,
-		iPersian: "Shorkot",
-	},
 	"Sibut": {  # founded on Krébédjé
 		iFrench: "Fort-Sibut",
 		iLocal: _,
@@ -16045,7 +16196,11 @@ name_translations = {
 	},
 	"Sirajis": {  # relocated from Parsa
 		iArabic: "Shiraz",
-		iPersian: _,
+		iPersian: (
+			translate("Shiraz", iAfter=iRenaissance),
+			translate("Shiraz", iReligion=iIslam),
+			_,
+		),
 		iTurkish: "Siraz",
 	},
 	"Sirmium": {  # founded on Osijek
@@ -16147,7 +16302,7 @@ name_translations = {
 		iLatin: "Serdica",
 		iLocal: _, # Romanian
 		iModernGreek: u"Sófia",
-		iNorse: _,
+		iNordic: _,
 		iPolish: _,
 		iPortuguese: u"Sófia",
 		iRussian: (
@@ -16173,7 +16328,7 @@ name_translations = {
 		iMongol: _,
 	},
 	"Soltsy": {
-		iNorse: found(u"Álaborg"),
+		iNordic: found(u"Álaborg"),
 		iRussian: (
 			translate("Kirishi", iAfter=iGlobal),
 			_,
@@ -16309,7 +16464,7 @@ name_translations = {
 	"Sruighlea": {
 		iCeltic: _,
 		iEnglish: "Stirling",
-		iNorse: found("Dingwall"),
+		iNordic: found("Dingwall"),
 	},
 	"St. Alban's": {
 		iEnglish: _,
@@ -16331,7 +16486,7 @@ name_translations = {
 	"St. John's": {
 		iEnglish: _,
 		iFrench: found("Placentia"),
-		iNorse: found(u"Straumfjörð"),
+		iNordic: found(u"Straumfjörð"),
 		iPortuguese: u"São João",
 	},
 	"Stanislaviv": {
@@ -16361,7 +16516,7 @@ name_translations = {
 		iGreek: u"Stettíno",
 		iItalian: "Stettino",
 		iKorean: "Syuchechin",
-		iNorse: (
+		iNordic: (
 			found("Jomsborg"),
 			_,
 		),
@@ -16373,7 +16528,7 @@ name_translations = {
 	u"Steòrnabhagh": {
 		iCeltic: _,
 		iEnglish: "Stornoway",
-		iNorse: u"Stjórnavágr",
+		iNordic: u"Stjórnavágr",
 	},
 	"Sthanishvara": {
 		iEnglish: relocate("Meratha"),
@@ -16395,7 +16550,7 @@ name_translations = {
 		iJapanese: "Sutokkuhorumu",
 		iKorean: "Seutokholleum",
 		iLatin: "Holmia",
-		iNorse: _,
+		iNordic: _,
 		iPolish: "Sztokholm",
 		iPortuguese: "Estocolmo",
 		iRussian: "Stokgol'm",
@@ -16489,7 +16644,7 @@ name_translations = {
 	},
 	"Sukkertoppen": {
 		iLocal: "Maniitsoq", # Greenlandic
-		iNorse: _,
+		iNordic: _,
 	},
 	"Sukkur": {
 		iEnglish: "New Sukkur",
@@ -16565,7 +16720,7 @@ name_translations = {
 	},
 	"Swansea": {  # founded on Cardiff
 		iCeltic: "Abertawe",
-		iNorse: "Sveinsaer",
+		iNordic: "Sveinsaer",
 		iEnglish: _,
 	},
 	"Swellendam": {
@@ -16813,7 +16968,7 @@ name_translations = {
 	},
 	"Tammerfors": {
 		iLocal: "Tampere", # Finnish
-		iNorse: _,
+		iNordic: _,
 		iSwedish: _,
 	},
 	"Tampiko": {
@@ -16826,10 +16981,10 @@ name_translations = {
 		iEnglish: relocate("Kolkata"),
 		iFrench: relocate("Chandannagar"),
 		iIndian: (
-			relocate("Saptagram", iAfter=iMedieval),
+			relocate("Saptagram", bReconquest=True),
 			_,
 		),
-		iNorse: relocate("Frederiknagore"),
+		iNordic: relocate("Frederiknagore"),
 		iPersian: relocate("Murshidabad", iAfter=iIndustrial),
 		iPortuguese: relocate("Hugli"),
 	},
@@ -16848,7 +17003,7 @@ name_translations = {
 	},
 	"Tamworth": {  # founded on Oxford
 		iEnglish: _,
-		iNorse: u"Tomworðig",
+		iNordic: u"Tomworðig",
 	},
 	"Tanana": {
 		iEnglish: _,
@@ -16912,7 +17067,10 @@ name_translations = {
 		iGreek: found("Salanrio"),
 		iLatin: "Tarraco",
 		iPhoenician: "Tarkhon",
-		iSpanish: _,
+		iSpanish: (
+			found("Barcelona"),
+			_,
+		),
 	},
 	"Tarsos": {
 		iArabic: "Tarsus",
@@ -16920,7 +17078,10 @@ name_translations = {
 		iGreek: _,
 		iHittite: "Tarsha",
 		iLatin: "Tarsus",
-		iTurkish: "Tarsus",
+		iTurkish: (
+			relocate("Adana"),
+			"Tarsus",
+		)
 	},
 	"Tartessos": {  # founded on Walbah
 		iBabylonian: "Tarshish",
@@ -17057,7 +17218,7 @@ name_translations = {
 		iGreek: u"Teheráni",
 		iItalian: "Teheran",
 		iJapanese: "Teheran",
-		iNorse: "Teheran",
+		iNordic: "Teheran",
 		iPersian: _,
 		iPolish: "Teheran",
 		iPortuguese: u"Teerão",
@@ -17081,7 +17242,10 @@ name_translations = {
 		iPortuguese: u"Cidade do México",
 		iRussian: "Mekhiko",
 		iSpanish: u"Ciudad de México",
-		iToltec: _,
+		iToltec: (
+			translate("Tollan", iAfter=iClassical),
+			_,
+		),
 		iTurkish: "Meksiko",
 	},
 	"Tepecuacuilco": {
@@ -17133,7 +17297,7 @@ name_translations = {
 	"Tharangamba": {  # relocated from Kanchipuram
 		iDravidian: _,
 		iEnglish: "Tranquebar",
-		iNorse: "Trankebar",
+		iNordic: "Trankebar",
 	},
 	"Tharsatica": {  # founded on Pula
 		iCeltic: _,
@@ -17173,7 +17337,7 @@ name_translations = {
 		iItalian: found("Naupaktos"),
 		iLatin: "Thebae",
 		iModernGreek: u"Thíva",
-		iNorse: "Theben",
+		iNordic: "Theben",
 		iPolish: "Teby",
 		iPortuguese: "Tebas",
 		iSpanish: "Tebas",
@@ -17181,7 +17345,7 @@ name_translations = {
 	},
 	"Thessaloniki": {  # relocated from Pella
 		iArabic: "Salonik",
-		iByzantine: "Thessalonika",
+		iByzantine: "Thessalonikeia",
 		iCeltic: u"Teasaloinicé",
 		iEnglish: "Salonica",
 		iFrench: "Thessalonique",
@@ -17445,7 +17609,7 @@ name_translations = {
 	},
 	"Torksey": {  # founded on Lindon
 		iEnglish: _,
-		iNorse: "Thorkilsey",
+		iNordic: "Thorkilsey",
 	},
 	"Toronto": {
 		iEnglish: (
@@ -17494,7 +17658,7 @@ name_translations = {
 		iKorean: "Dokyo",
 		iLatin: "Tocio",
 		iMalay: "Tokyo",
-		iNorse: "Tokyo",
+		iNordic: "Tokyo",
 		iPolish: "Tokio",
 		iPortuguese: u"Tóquio",
 		iRussian: "Tokio",
@@ -17574,7 +17738,7 @@ name_translations = {
 		iKorean: "Teurieo",
 		iLatin: "Augusta Treverorum",
 		iModernGreek: u"Trevíroi",
-		iNorse: _,
+		iNordic: _,
 		iPolish: "Trewir",
 		iPortuguese: u"Tréveris",
 		iRussian: "Trir",
@@ -17616,7 +17780,7 @@ name_translations = {
 		iGreek: "Tripoleis",
 		iItalian: "Tripoli",
 		iLatin: _,
-		iNorse: "Tripoli",
+		iNordic: "Tripoli",
 		iPolish: "Trypolis",
 		iPortuguese: u"Trípoli",
 		iSpanish: u"Trípoli",
@@ -17633,7 +17797,7 @@ name_translations = {
 		iEnglish: translate("Tromsieg", iBefore=iMedieval),
 		iKorean: "Teuromsoe",
 		iLocal: "Romsa", # Sami
-		iNorse: _,
+		iNordic: _,
 		iRussian: u"Tromsë",
 		iSwedish: u"Tromsö",
 		iTurkish: u"Tromsö",
@@ -17799,7 +17963,7 @@ name_translations = {
 		iGerman: "Tunis",
 		iGreek: "Tunida",
 		iItalian: "Tunisi",
-		iNorse: "Tunis",
+		iNordic: "Tunis",
 		iPolish: "Tunis",
 		iPortuguese: "Tunes",
 		iRussian: "Tunis",
@@ -17942,7 +18106,7 @@ name_translations = {
 		iFrench: _,
 	},
 	u"Þróndheimr": {
-		iNorse: (
+		iNordic: (
 			translate("Trondhjem", iPeriod=iPeriodDenmark),
 			translate("Trondheim", iPeriod=iPeriodNorway),
 			_,
@@ -18169,7 +18333,7 @@ name_translations = {
 			"Traiectum",
 		),
 		iModernGreek: u"Utréchti",
-		iNorse: found("Dorestad"),
+		iNordic: found("Dorestad"),
 		iPortuguese: "Utreque",
 		iRussian: "Utrekht",
 	},
@@ -18198,7 +18362,7 @@ name_translations = {
 	},
 	u"Vågan": {
 		iLocal: u"Gábelváhke", # Sami
-		iNorse: (
+		iNordic: (
 			translate(u"Kabelvåg", iAfter=iRenaissance),
 			_,
 		),
@@ -18333,7 +18497,7 @@ name_translations = {
 		iKorean: "Benechia",
 		iLocal: "Venesia", # Venetian
 		iModernGreek: u"Enetía",
-		iNorse: "Venedig",
+		iNordic: "Venedig",
 		iPolish: "Wenecja",
 		iPortuguese: "Veneza",
 		iRussian: "Veneciya",
@@ -18347,7 +18511,7 @@ name_translations = {
 		),
 	},
 	u"Veøy": {
-		iNorse: (
+		iNordic: (
 			translate("Molde", iAfter=iRenaissance),
 			_,
 		),
@@ -18744,7 +18908,7 @@ name_translations = {
 		iFrench: "Dessie",
 		iGerman: "Dese",
 		iItalian: u"Dessiè",
-		iNorse: "Dese",
+		iNordic: "Dese",
 		iSpanish: "Dese",
 	},
 	"Wascana": {
@@ -18781,7 +18945,7 @@ name_translations = {
 	"Waterford": {  # founded on Cork
 		iCeltic: u"Port Láirge",
 		iEnglish: _,
-		iNorse: u"Veðrafjorðr",
+		iNordic: u"Veðrafjorðr",
 	},
 	"Wau": {
 		iArabic: "Waw",
@@ -18851,7 +19015,7 @@ name_translations = {
 	},
 	"Wi": {
 		iGerman: "Wisby",
-		iNorse: (
+		iNordic: (
 			translate("Visborg", iAfter=iRenaissance),
 			translate("Visborg", iReligion=iCatholicism),
 			_,
@@ -18889,7 +19053,7 @@ name_translations = {
 		iLatin: "Vindobona",
 		iMalay: "Wina",
 		iModernGreek: u"Viénni",
-		iNorse: _,
+		iNordic: _,
 		iPersian: "Wyn",
 		iPolish: "Wieden",
 		iPortuguese: "Viena",
@@ -19251,7 +19415,7 @@ name_translations = {
 		iGreek: "Ekaterinoupolis",
 		iItalian: "Ekaterinburg",
 		iJapanese: "Ekaterinburuku",
-		iNorse: "Jekaterinburg",
+		iNordic: "Jekaterinburg",
 		iPolish: "Jekaterynburg",
 		iRussian: (
 			translate("Sverdlovsk", bCommunist=True),
@@ -19284,7 +19448,7 @@ name_translations = {
 		iLocal: _, # Armenian
 		iModernGreek: u"Iereván",
 		iMongol: "Yeryevan",
-		iNorse: "Jerevan",
+		iNordic: "Jerevan",
 		iPersian: "Iravan",
 		iPolish: "Erywan",
 		iPortuguese: "Erevan",
@@ -19327,7 +19491,7 @@ name_translations = {
 		iLatin: "Aelia Capitolina",
 		iLocal: _, # Hebrew
 		iMalay: "Yarusalam",
-		iNorse: (
+		iNordic: (
 			translate(u"Jórsalaborg", iBefore=iMedieval),
 			"Jerusalem",
 		),
@@ -19409,7 +19573,7 @@ name_translations = {
 		iGreek: "Evorakon",
 		iKorean: "Yokeu",
 		iLatin: "Eboracum",
-		iNorse: u"Jórvik",
+		iNordic: u"Jórvik",
 		iPolish: "Jork",
 		iPortuguese: "Iorque",
 	},

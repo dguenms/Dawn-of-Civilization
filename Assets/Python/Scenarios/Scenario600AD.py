@@ -198,6 +198,10 @@ def setupGoals(iCiv, goals):
 		goals[0].requirements[0].succeed()
 
 
+def updateData():
+	data.civs[iChina].iResurrections = 1
+
+
 scenario600AD = Scenario(
 	iStartYear = 600,
 	fileName = "RFC_600AD",
@@ -221,6 +225,8 @@ scenario600AD = Scenario(
 	
 	lAllGoalsFailed = [iNubia, iIndia, iCelts, iDravidia, iToltecs],
 	setupGoals = setupGoals,
+	
+	updateData = updateData,
 	
 	greatWall = GreatWall(
 		tGraphicsTL = (118, 54),

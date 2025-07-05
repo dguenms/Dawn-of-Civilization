@@ -16,7 +16,7 @@ import re
 import types
 
 from sets import Set
-from itertools import groupby
+from itertools import groupby, chain
 from datetime import datetime
 
 from BugEventManager import g_eventManager as events
@@ -420,6 +420,10 @@ def flatten(iterables):
 	for iterable in iterables:
 		for element in iterable:
 			yield element
+
+
+def interleave(*iterables):
+	return chain(*zip(*iterables))
 
 
 def move(unit, destination):
@@ -840,8 +844,8 @@ def period(iCiv):
 	
 def active():
 	return gc.getGame().getActivePlayer()
-	
-	
+
+
 class FindResult(object):
 
 	def __init__(self, result, index, value):
@@ -1887,6 +1891,9 @@ class Civilizations(EntityCollection):
 	
 	def before_fall(self):
 		return self.where(lambda c: year() < year(dFall[c]))
+	
+	def group(self, iGroup):
+		return self.where(lambda c: c in dCivGroups[iGroup])
 	
 
 class CivFactory(object):

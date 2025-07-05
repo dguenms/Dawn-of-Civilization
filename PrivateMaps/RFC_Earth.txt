@@ -48260,18 +48260,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=34
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=107,y=35
-	BonusType=BONUS_SUGAR
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=107,y=35
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=107,y=36
+	BonusType=BONUS_SUGAR
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48279,8 +48280,7 @@ BeginPlot
 	x=107,y=37
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_COW
-	BonusVarietyType=BONUS_COW_BROWN
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48288,7 +48288,8 @@ BeginPlot
 	x=107,y=38
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_COW
+	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

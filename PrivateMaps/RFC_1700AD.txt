@@ -292,7 +292,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
-		CityName=Nouvelle Orléans
+		CityName=La Nouvelle Orléans
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -552,7 +552,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_ENGLAND
-		CityName=Kingston
+		CityName=Port Royal
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -640,7 +640,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Bogotá
+		CityName=Santafé
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -888,7 +888,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
-	x=33,y=14
+	x=33,y=13
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_SPANISH_TERCIO
@@ -896,7 +896,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Santiago de Chile
+		CityName=Santiago
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -1045,7 +1045,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=San Juan
+		CityName=Ciudad de Puerto Rico
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -2029,7 +2029,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Marrakec
+		CityName=Marrakush
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -2489,7 +2489,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Djenne
+		CityName=Djoboro
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -2659,7 +2659,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Timbuktu
+		CityName=Tumbutu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -3016,7 +3016,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NETHERLANDS
-		CityName=Elmina
+		CityName=Ussher Fort
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -3203,7 +3203,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Gao
+		CityName=Gawgaw
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -4105,7 +4105,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
-		CityName=Oslo
+		CityName=Kristiania
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -4147,7 +4147,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
-		CityName=Trondheim
+		CityName=Trondhjem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -4534,6 +4534,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
 		PreviousOwner=CIVILIZATION_BARBARIAN
+		PreviousOwner=CIVILIZATION_ITALY
 	EndCity
 EndPlot
 BeginPlot
@@ -4715,7 +4716,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CONGO
-		CityName=Mbanza Kongo
+		CityName=M'banza-Kongo
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -5293,7 +5294,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_HOLY_ROMAN
-		CityName=Budapest
+		CityName=Pest
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -5515,7 +5516,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Athenai
+		CityName=Atina
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -5999,7 +6000,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=El-Kahire
+		CityName=Kahire
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -6257,7 +6258,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=El-Uqsur
+		CityName=Uksur
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6492,7 +6493,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_RUSSIA
-		CityName=Kiev
+		CityName=Kiyev
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -6633,7 +6634,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Ankara
+		CityName=Enkürü
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -6749,6 +6750,7 @@ BeginPlot
 		YearFounded=900
 		YearAcquired=1698
 		PreviousOwner=CIVILIZATION_NATIVE
+		PreviousOwner=CIVILIZATION_SWAHILI
 		PreviousOwner=CIVILIZATION_PORTUGAL
 	EndCity
 EndPlot
@@ -6765,7 +6767,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Gondar
+		CityName=Gwandar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -7088,7 +7090,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Dimasqu
+		CityName=Sham
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -7307,7 +7309,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Trabzon
+		CityName=Tarbizun
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -7691,7 +7693,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Sana'a
+		CityName=Sanaa
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8162,7 +8164,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_IRAN
-		CityName=Isfahan
+		CityName=Esfahan
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -8471,7 +8473,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_TURKS
-		CityName=Khiva
+		CityName=Urganch
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8568,7 +8570,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_RUSSIA
-		CityName=Ekaterinburg
+		CityName=Yekaterinburg
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8704,34 +8706,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=43
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_MUGHALS
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_MUGHALS
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Thatta
-		CityPopulation=6
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		ReligionType=RELIGION_ISLAM
-		BeginCulture
-			Civilization=CIVILIZATION_MUGHALS, Culture=50
-		EndCulture
-		YearFounded=-300
-		YearAcquired=1590
-		PreviousOwner=CIVILIZATION_INDIA
-		PreviousOwner=CIVILIZATION_ARABIA
-	EndCity
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=99,y=44
@@ -8773,7 +8748,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=43
-	ImprovementType=IMPROVEMENT_COTTAGE
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MUGHALS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MUGHALS
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_MUGHALS
+		CityName=Thatta
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_MUGHALS, Culture=50
+		EndCulture
+		YearFounded=-300
+		YearAcquired=1590
+		PreviousOwner=CIVILIZATION_INDIA
+		PreviousOwner=CIVILIZATION_ARABIA
+	EndCity
 EndPlot
 BeginPlot
 	x=100,y=44
@@ -8907,7 +8909,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_TURKS
-		CityName=Tashkent
+		CityName=Toshkent
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -9215,7 +9217,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
-		CityName=Indore
+		CityName=Dhar
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -9326,7 +9328,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_DRAVIDIA
-		CityName=Mahishuru
+		CityName=Mahisuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -9487,7 +9489,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Kashgar
+		CityName=Qeshqer
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -9609,7 +9611,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
-	x=107,y=34
+	x=107,y=35
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
@@ -9658,11 +9660,11 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=107,y=35
+	x=107,y=36
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
-	x=107,y=37
+	x=107,y=38
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
@@ -9766,7 +9768,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
-		CityName=Nagpur
+		CityName=Rayapura
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_INDIAN_EDICT
@@ -9809,7 +9811,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Varanasi
+		CityName=Banaras
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WEAVER
@@ -10170,7 +10172,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Dhaka
+		CityName=Jahangirnagar
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -10309,6 +10311,7 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=1520
+		PreviousOwner=CIVILIZATION_MALAYS
 	EndCity
 EndPlot
 BeginPlot
@@ -10327,6 +10330,43 @@ EndPlot
 BeginPlot
 	x=116,y=31
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=116,y=39
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_BURMA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_BURMA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_BURMA
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_BURMA
+		CityName=Yangon
+		CityPopulation=8
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_BURMESE_KYAUNG
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		BuildingType=BUILDING_SHWEDAGON_PAYA
+		ReligionType=RELIGION_BUDDHISM
+		BeginCulture
+			Civilization=CIVILIZATION_BURMA, Culture=100
+		EndCulture
+		YearFounded=1030
+		YearAcquired=1030
+	EndCity
 EndPlot
 BeginPlot
 	x=116,y=40
@@ -10366,7 +10406,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Padang
+		CityName=Pagaruyung
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -10403,40 +10443,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=39
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_BURMA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_BURMA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_BURMA
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_BURMA
-		CityName=Yangon
-		CityPopulation=8
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_BURMESE_KYAUNG
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_SHWEDAGON_PAYA
-		ReligionType=RELIGION_BUDDHISM
-		BeginCulture
-			Civilization=CIVILIZATION_BURMA, Culture=100
-		EndCulture
-		YearFounded=1030
-		YearAcquired=1030
-	EndCity
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=117,y=40
@@ -10833,33 +10840,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=119,y=61
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Ikh Khüree
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
-		EndCulture
-		YearFounded=1640
-		PreviousOwner=CIVILIZATION_MONGOL
-	EndCity
-EndPlot
-BeginPlot
 	x=119,y=62
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
@@ -11176,6 +11156,33 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
+	x=121,y=61
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_INDEPENDENT
+		CityName=Ikh Khüree
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_BUDDHISM
+		BeginCulture
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
+		EndCulture
+		YearFounded=1640
+		PreviousOwner=CIVILIZATION_MONGOL
+	EndCity
+EndPlot
+BeginPlot
 	x=122,y=24
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
@@ -11235,7 +11242,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Guiyang
+		CityName=Guilin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WEAVER
@@ -11379,7 +11386,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_VIETNAM
-		CityName=Saigon
+		CityName=Gia Dinh
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -11413,30 +11420,8 @@ EndPlot
 BeginPlot
 	x=123,y=39
 	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_VIETNAM
-		CityName=Da Nang
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_CONFUCIANISM
-		BeginCulture
-			Civilization=CIVILIZATION_VIETNAM, Culture=50
-		EndCulture
-		YearFounded=190
-		YearAcquired=1100
-		PreviousOwner=CIVILIZATION_INDEPENDENT
-	EndCity
+	BonusType=BONUS_IRON
+	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
 	x=123,y=43
@@ -11499,8 +11484,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=124,y=38
-	ImprovementType=IMPROVEMENT_MINE
+	BonusType=NONE
 	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_VIETNAM
+		CityName=Da Nang
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_BUDDHISM
+		ReligionType=RELIGION_CONFUCIANISM
+		BeginCulture
+			Civilization=CIVILIZATION_VIETNAM, Culture=60
+		EndCulture
+		YearFounded=190
+		YearAcquired=1100
+		PreviousOwner=CIVILIZATION_INDEPENDENT
+	EndCity
 EndPlot
 BeginPlot
 	x=124,y=43
@@ -11833,7 +11842,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Surabaya
+		CityName=Trowulan
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WEAVER
@@ -11966,7 +11975,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Badung
+		CityName=Samprangan
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
@@ -12199,7 +12208,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Qiqihar
+		CityName=Bukui
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -12291,7 +12300,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KOREA
-		CityName=Pyongyang
+		CityName=Pyeongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -12470,7 +12479,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NETHERLANDS
-		CityName=Ambon
+		CityName=Amboina
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
