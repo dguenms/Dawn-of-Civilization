@@ -3785,6 +3785,14 @@
 		<Spanish>Significance</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_NAME_CHANGE</Tag>
+		<English>Our city of %s1 has changed its name to %s2.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

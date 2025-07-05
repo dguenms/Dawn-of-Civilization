@@ -3,7 +3,6 @@ from RFCUtils import *
 from Core import *
 from Locations import *
 from Stability import *
-from CityNames import getName
 from Popups import popup
 from Scenarios import SCENARIOS
 

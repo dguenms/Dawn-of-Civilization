@@ -252,6 +252,10 @@ def setupGoals(iCiv, goals):
 
 def updateData():
 	data.dFirstContactConquerors = {iMaya: True, iToltecs: True, iAztecs: True, iInca: True}
+	
+	data.civs[iChina].iResurrections = 2
+	data.civs[iIndia].iResurrections = 1
+	data.civs[iDravidia].iResurrections = 1
 
 
 scenario1700AD = Scenario(

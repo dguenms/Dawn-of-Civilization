@@ -114,3 +114,14 @@ def isCityStates(iPlayer):
 		return True
 	
 	return False
+
+def isAutocratic(iPlayer):
+	civic = civics(iPlayer)
+	
+	if civic.iSociety == iTotalitarianism:
+		return True
+	
+	if civic.iGovernment in [iDespotism, iStateParty]:
+		return True
+	
+	return False
