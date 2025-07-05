@@ -97,6 +97,9 @@ public:
 	int getTurnResearchModifier() const;
 	int getModernizationResearchModifier(TechTypes eTech) const;
 
+	int calculateTechDifferenceModifier() const;
+	void updateTechDifferenceModifier();
+
 	bool hasHolyCity(ReligionTypes eReligion) const;																		// Exposed to Python
 	bool hasHeadquarters(CorporationTypes eCorporation) const;																		// Exposed to Python
 	bool hasBonus(BonusTypes eBonus) const;
@@ -444,6 +447,7 @@ protected:
 	int m_iTotalTechValue; // Leoreth
 	int m_iSatelliteInterceptCount; // Leoreth
 	int m_iSatelliteAttackCount; // Leoreth
+	int m_iTechDifferenceModifier; // Leoreth
 
 	bool m_bMapCentering;
 	bool m_bCapitulated;

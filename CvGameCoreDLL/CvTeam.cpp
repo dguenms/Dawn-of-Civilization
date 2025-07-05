@@ -181,6 +181,7 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 	m_iTotalTechValue = 0; // Leoreth
 	m_iSatelliteInterceptCount = 0; // Leoreth
 	m_iSatelliteAttackCount = 0; // Leoreth
+	m_iTechDifferenceModifier = 0; // Leoreth
 
 	m_bMapCentering = false;
 	m_bCapitulated = false;
@@ -977,6 +978,8 @@ void CvTeam::doTurn()
 		}
 
 	}
+
+	updateTechDifferenceModifier(); // Leoreth
 
 	doWarWeariness();
 
@@ -2883,7 +2886,22 @@ int CvTeam::getTechLeaderModifier() const
 
 int CvTeam::getTechDifferenceModifier() const
 {
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getInitialBirthTurn() + getTurns(20))
+	return m_iTechDifferenceModifier;
+}
+
+void CvTeam::updateTechDifferenceModifier()
+{
+	int iNewModifier = calculateTechDifferenceModifier();
+
+	if (m_iTechDifferenceModifier != iNewModifier)
+	{
+		m_iTechDifferenceModifier = range(iNewModifier, m_iTechDifferenceModifier - 10, m_iTechDifferenceModifier + 10);
+	}
+}
+
+int CvTeam::calculateTechDifferenceModifier() const
+{
+	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= GET_PLAYER(getLeaderID()).getStartingEra())
 	{
 		return 0;
 	}
@@ -2914,10 +2932,10 @@ int CvTeam::getTechDifferenceModifier() const
 	}
 	else if (iRelativeTechValue < 80)
 	{
-		iModifier += (iRelativeTechValue - 80) / 5;
+		iModifier += (iRelativeTechValue - 80) / 10;
 		iModifier *= 10;
 
-		iModifier = std::max(iModifier, -50);
+		iModifier = std::max(iModifier, -lTechBackwardsBonus[GET_PLAYER(getLeaderID()).getCurrentEra()]);
 	}
 
 	return iModifier;
@@ -6863,6 +6881,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTotalTechValue); // Leoreth
 	pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
 	pStream->Read(&m_iSatelliteAttackCount); // Leoreth
+	pStream->Read(&m_iTechDifferenceModifier); // Leoreth
 
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
@@ -6978,6 +6997,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTotalTechValue); // Leoreth
 	pStream->Write(m_iSatelliteInterceptCount); // Leoreth
 	pStream->Write(m_iSatelliteAttackCount); // Leoreth
+	pStream->Write(m_iTechDifferenceModifier); // Leoreth
 
 	pStream->Write(m_bMapCentering);
 	pStream->Write(m_bCapitulated);
