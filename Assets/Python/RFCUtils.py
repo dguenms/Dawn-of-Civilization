@@ -299,21 +299,21 @@ def colonialConquest(iPlayer, tPlot):
 		team(iPlayer).declareWar(target.getID(), True, WarPlanTypes.WARPLAN_TOTAL)
 			
 	targetPlot = plots.surrounding(tPlot).where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater()).random()
+	if not targetPlot:
+		return
 	
 	if iCiv in [iSpain, iPortugal, iNetherlands]:
 		iNumUnits = 2
 	elif iCiv in [iFrance, iEngland]:
 		iNumUnits = 3
 		
-	iExp = 0
-	if not player(iPlayer).isHuman(): iExp = 2
+	iExperience = not player(iPlayer).isHuman() and 2 or 0
 	
-	# TODO: this lacks additional experience
 	dConquerorUnits = {
 		iAttack: 2*iNumUnits,
 		iSiege: iNumUnits,
 	}
-	createRoleUnits(iPlayer, targetPlot, dConquerorUnits.items())
+	createRoleUnits(iPlayer, targetPlot, dConquerorUnits.items(), iExperience=iExperience)
 
 # used: CvRandomEventInterface, History
 # this shouldn't be here
@@ -374,7 +374,7 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	targetPlots = plots.all().coastal().regions(*lColonialRegions)
 	
 	cityPlots, emptyPlots = targetPlots.split(CyPlot.isCity)
-	targetCities = cityPlots.notowner(iPlayer).where(lambda p: p.getWarValue(iCiv) > 1).highest(iNumCities, metric=lambda p: p.getWarValue(iCiv))
+	targetCities = cityPlots.notowner(iPlayer).where(lambda p: not isIsland(p) and p.getWarValue(iCiv) > 1).highest(iNumCities, metric=lambda p: p.getWarValue(iCiv))
 	
 	if bEmpty:
 		nearbyCityPlots, settlePlots = emptyPlots.split(lambda p: plots.surrounding(p).any(CyPlot.isCity))
@@ -1117,7 +1117,7 @@ def breakObserverMode(message = None):
 	if message:
 		show(message)
 
-# used: Congresses
+# used: Congresses, RFCUtils
 def isIsland(tile):
 	return plot(tile).area().getNumTiles() == 1
 
