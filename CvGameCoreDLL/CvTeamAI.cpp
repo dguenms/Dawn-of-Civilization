@@ -1371,7 +1371,7 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
 
 	// Leoreth: Hermitage effect
-	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)HERMITAGE))
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)HERMITAGE))
 	{
 		iValue *= 3;
 		iValue /= 4;
