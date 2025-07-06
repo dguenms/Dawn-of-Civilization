@@ -70,7 +70,16 @@ class Translation(object):
 		self.bFascist = bFascist
 	
 	def __repr__(self):
-		return "%s(%s)" % (self.__class__.__name__, self.name and self.name.encode("ascii", "xmlcharrefreplace") or "")
+		return u"%s(%s)" % (self.__class__.__name__, self.printableName())
+	
+	def printableName(self):
+		if not self.name:
+			return ""
+		
+		if self.name is _:
+			return "_"
+		
+		return self.name.encode("ascii", "xmlcharrefreplace")
 	
 	def isEraSpecific(self, bFound=False):
 		if self.bFound and not bFound:
@@ -361,7 +370,7 @@ name_translations = {
 		iArabic: rename("Aswan"),
 		iCoptic: "Ieb",
 		iEgyptian: _,
-		iGreek: "Elephantíne",
+		iGreek: "Elephantine",
 		iLatin: "Elephantine",
 	},
 	"Adan": {
@@ -14991,7 +15000,7 @@ name_translations = {
 		iFrench: "La Rochelle",
 	},
 	"Roskilde": {
-		iDutch: found("Dragør"),
+		iDutch: found(u"Dragør"),
 		iNordic: (
 			relocate(u"København", iAfter=iRenaissance),
 			_,
