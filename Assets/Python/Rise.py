@@ -379,6 +379,10 @@ class Birth(object):
 		if self.iPlayer is None:
 			return "Unassigned civ: %s" % infos.civ(self.iCiv).getText()
 		return name(self.iPlayer)
+	
+	@property
+	def spawn(self):
+		return plot_(self.location)
 		
 	@property
 	def flipPopup(self):
@@ -814,11 +818,26 @@ class Birth(object):
 		if self.iCiv in lExpansionCivs:
 			capital_continent = plot_(self.location).getContinentArea()
 			
-			for plot in plots.all().without(self.area).where(lambda p: p.getPlayerWarValue(self.iPlayer) >= 5).where(lambda p: p.getContinentArea() == capital_continent or distance(self.location, p) <= 32).land().where(lambda p: not p.isPeak()):
+			for plot in plots.all().without(self.area).land().where(self.isExpansionPlot):
 				plot.setExpansion(self.iPlayer)
 
 			self.iExpansionDelay = rand(turns(5)) + 1
 			self.iExpansionTurns = turns(30)
+	
+	def isExpansionPlot(self, plot):
+		if plot.isPeak():
+			return False
+		
+		if plot.getPlayerWarValue(self.iPlayer) < 5:
+			return False
+		
+		if plot.getContinentArea() == self.spawn.getContinentArea():
+			return True
+		
+		if distance(plot, self.location) > 32:
+			return False
+		
+		return (plot.getRegionID() in lAmerica) == (self.spawn.getRegionID() in lAmerica)
 	
 	def checkExpansion(self):
 		if not self.player.isExisting():
