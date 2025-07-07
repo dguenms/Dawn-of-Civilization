@@ -200,6 +200,9 @@ def getPrimaryLanguages(identifier):
 		
 		elif player(iCiv).getStateReligion() in [iOrthodoxy, iCatholicism]:
 			return iCoptic, iEgyptian
+		
+		elif period(identifier) == iPeriodPtolemaicEgypt:
+			return iGreek, iEgyptian, iNubian
 	
 	elif iCiv == iChina:
 		if period(iCiv) == iPeriodYuan:

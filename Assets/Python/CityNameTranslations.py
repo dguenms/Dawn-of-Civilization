@@ -2,7 +2,7 @@
 
 from Consts import iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iGlobal, iDigital
 from Consts import iHinduism, iZoroastrianism, iBuddhism, iConfucianism, iTaoism, iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam
-from Consts import iPeriodDenmark, iPeriodNorway
+from Consts import iPeriodDenmark, iPeriodNorway, iPeriodPtolemaicEgypt
 from Core import player, is_minor, cities, listify, none, game, city_
 from StoredData import data
 from Civics import isCommunist, isFascist, isRepublic, isAutocratic
@@ -551,10 +551,7 @@ name_translations = {
 	"Akka": {
 		iArabic: _,
 		iBabylonian: _,
-		iEgyptian: (
-			translate(u"Ptolemaïs"), # TODO: introduct Ptolemaic period for Egypt
-			"Aak",
-		),
+		iEgyptian: "Aak",
 		iEnglish: (
 			translate("Saint John of Acre", iBefore=iMedieval),
 			"Acre",
@@ -564,7 +561,10 @@ name_translations = {
 			"Acre",
 		),
 		iGerman: "Akkon",
-		iGreek: u"Antiókheia tês en Ptolemaïdis",
+		iGreek: (
+			translate(u"Ptolemaïs", iPeriod=iPeriodPtolemaicEgypt),
+			u"Antiókheia tês en Ptolemaïdis",
+		),
 		iItalian: (
 			translate("San Giovanni d'Acri", iBefore=iMedieval),
 			"Acri",
@@ -1527,7 +1527,7 @@ name_translations = {
 	},
 	"Arsinoe": {
 		iGreek: (
-			# rename("Kleopatris", iPeriod=iPeriodPtolemaic), # TODO: Ptolemaic period
+			rename("Kleopatris", iPeriod=iPeriodPtolemaicEgypt),
 			_,
 		),
 	},
@@ -15940,7 +15940,7 @@ name_translations = {
 		iEgyptianArabic: "El-Fayyum",
 		iEnglish: "Faiyum",
 		iGreek: (
-			# translate(u"Arsinoë", iPeriod=iPeriodPtolemaic), # TODO: Ptolemaic periodChange
+			translate(u"Arsinoë", iPeriod=iPeriodPtolemaicEgypt),
 			"Krokodiloupolis",
 		),
 		iLatin: "Crocodilopolis",
