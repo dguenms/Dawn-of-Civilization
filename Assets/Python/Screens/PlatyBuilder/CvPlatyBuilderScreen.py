@@ -2305,7 +2305,7 @@ class CvWorldBuilderScreen:
 			if pOldCity:
 				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cn.getName(self.m_iCurrentPlayer, self.m_pCurrentPlot)
+				sName = cn.getDisplayName(self.m_iCurrentPlayer, self.m_pCurrentPlot)
 				if not sName:
 					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
