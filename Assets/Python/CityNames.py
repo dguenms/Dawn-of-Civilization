@@ -32,7 +32,7 @@ dBaseLanguages = {
 	iRome: (iLatin, iGreek),
 	iMaya: (iMayan,),
 	iDravidia: (iDravidian, iIndian),
-	iEthiopia: (iEthiopian,),
+	iEthiopia: (iEthiopian, iArabic),
 	iToltecs: (iToltec, iNahuatl),
 	iKushans: (iKushan, iTurkish, iGreek),
 	iKorea: (iKorean,),

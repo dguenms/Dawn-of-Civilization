@@ -16801,6 +16801,7 @@ name_translations = {
 	
 	"Ta'izz": {
 		iArabic: _,
+		iGreek: found("Okelis"),
 		iTurkish: "Taiz",
 	},
 	"Ta'u": {
