@@ -47029,13 +47029,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=55
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=104,y=56
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=104,y=57

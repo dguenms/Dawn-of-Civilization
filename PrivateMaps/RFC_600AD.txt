@@ -1815,7 +1815,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=104,y=56
+	x=104,y=55
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

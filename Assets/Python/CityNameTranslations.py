@@ -5408,6 +5408,15 @@ name_translations = {
 		iEnglish: _,
 		iFrench: found(u"Fort de la Presqu'île"),
 	},
+	"Erkeshtam": {
+		iChinese: (
+			translate("Simuhana", iAfter=iRenaissance),
+			"Juandu",
+		),
+		iGreek: "Hormeterium",
+		iRussian: "Erkesh-Tam",
+		iTurkish: _,
+	},
 	"Erzurum": {  # relocated from Tushpa
 		iArabic: "Kalikala",
 		iGreek: "Theodosioupolis",
