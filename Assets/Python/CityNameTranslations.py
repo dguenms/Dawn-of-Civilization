@@ -453,10 +453,11 @@ name_translations = {
 		iLatin: _,
 	},
 	"Aghmat": {
-		iArabic: (
-			relocate("Warzazat", iAfter=iRenaissance),
-			_,
-		),
+		iArabic: relocate("Murrakush"),
+		iBerber: _,
+		iGreek: found("Tmdt"),
+		iLatin: found("Tmdt"),
+		iPhoenician: found("Tmdt"),
 	},
 	"Ahikshetra": {
 		iIndian: (
@@ -11819,14 +11820,11 @@ name_translations = {
 		iMongol: relocate("Kasimov"),
 		iRussian: _,
 	},
-	"Murrakush": {
+	"Murrakush": {  # relocated from Aghmat
 		iArabic: _,
 		iEnglish: "Marrakesh",
 		iFrench: "Marrakech",
 		iGerman: "Marrakesch",
-		iGreek: found("Tmdt"),
-		iLatin: found("Tmdt"),
-		iPhoenician: found("Tmdt"),
 		iPortuguese: "Marraquexe",
 		iSpanish: "Marraquech",
 		iTurkish: "Marakesh",
@@ -18901,7 +18899,7 @@ name_translations = {
 		iSpanish: "Varsovia",
 		iTurkish: "Varshova",
 	},
-	"Warzazat": {  # relocated from Aghmat
+	"Warzazat": {
 		iArabic: _,
 		iFrench: "Ouarzazate",
 	},
