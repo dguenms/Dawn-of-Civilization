@@ -12,9 +12,24 @@ EndGame
 
 BeginMap
 EndMap
-
 BeginPlot
 	x=79,y=43
+	BeginUnit
+		UnitType=UNIT_MILITIA
+		UnitOwner=CIVILIZATION_EGYPT
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_EGYPT
+		CityName=Inebu-hedj
+		CityPopulation=1
+		BeginCulture
+			Civilization=CIVILIZATION_EGYPT, Culture=10
+		EndCulture
+		YearFounded=-3500
+	EndCity
+EndPlot
+BeginPlot
+	x=79,y=41
 	BeginUnit
 		UnitType=UNIT_MILITIA
 		UnitOwner=CIVILIZATION_EGYPT
@@ -23,10 +38,13 @@ BeginPlot
 		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_EGYPT
 	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER
-		UnitOwner=CIVILIZATION_EGYPT
-	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_EGYPT
+		CityName=Abdju
+		CityPopulation=1
+		BuildingType=BUILDING_PALACE
+		YearFounded=-4000
+	EndCity
 EndPlot
 BeginPlot
 	x=89,y=47
