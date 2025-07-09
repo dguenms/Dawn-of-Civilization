@@ -25,7 +25,7 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_EGYPT, Culture=10
 		EndCulture
-		YearFounded=-3500
+		YearFounded=-3000
 	EndCity
 EndPlot
 BeginPlot
@@ -43,7 +43,7 @@ BeginPlot
 		CityName=Abdju
 		CityPopulation=1
 		BuildingType=BUILDING_PALACE
-		YearFounded=-4000
+		YearFounded=-3000
 	EndCity
 EndPlot
 BeginPlot

@@ -37,3 +37,6 @@ import Stability
 import UniquePowers
 import Victories
 import Wonders
+
+# History simulation modmod
+import Egypt
