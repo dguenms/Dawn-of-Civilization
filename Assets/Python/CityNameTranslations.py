@@ -4774,18 +4774,6 @@ name_translations = {
 		iLatin: _,
 		iNordic: u"Djúrabý"
 	},
-	"Desinganadu": {
-		iDutch: "Quilon",
-		iDravidian: (
-			translate("Kollam", iAfter=iRenaissance),
-			_,
-		),
-		iEnglish: (
-			relocate("Kochi"),
-			"Quilon",
-		),
-		iPortuguese: "Coulam",
-	},
 	"Desterro": {
 		iFrench: found("Joinville"),
 		iGerman: found("Blumenau"),
@@ -11727,6 +11715,14 @@ name_translations = {
 			translate("Kampala", iAfter=iIndustrial),
 			_,
 		),
+	},
+	"Muciripattanam": {
+		iDravidian: (
+			relocate("Kochi"),
+			_,
+		),
+		iEnglish: "Muziris",
+		iGreek: "Mousiris",
 	},
 	"Mudanjiang": {
 		iChinese: _,
