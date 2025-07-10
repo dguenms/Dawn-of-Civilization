@@ -578,13 +578,6 @@ name_translations = {
 		),
 		iTurkish: _,
 	},
-	"Ako": {
-		iJapanese: _,
-		iRussian: (
-			translate("Alexandrovsk-Sakhalinsky", iAfter=iGlobal),
-			"Alexandrovka",
-		),
-	},
 	"Akordat": {
 		iArabic: relocate("Kassala"),
 		iEnglish: relocate("Keren"),
@@ -625,6 +618,10 @@ name_translations = {
 		iNubian: relocate("Yeha"),
 		iPortuguese: "Axum",
 		iSpanish: "Axum",
+	},
+	"Aktau": {
+		iRussian: _,
+		iUkrainian: translate("Shevchenko", iAfter=iGlobal),
 	},
 	"Aktogay": {
 		iRussian: _,
@@ -7526,6 +7523,7 @@ name_translations = {
 		iMalay: translate("Ulan Bator", bCommunist=True),
 		iMongol: (
 			translate("Ulaanbaatar", bCommunist=True),
+			translate(u"Niislel Khüree", iAfter=iGlobal, bCapital=True),
 			_,
 		),
 		iPolish: translate("Ulan Bator", bCommunist=True),
@@ -13115,6 +13113,16 @@ name_translations = {
 		iLocal: _,
 		iPortuguese: found(u"Vila Pereira d'Eça"),
 	},
+	"Otchishi": {
+		iJapanese: (
+			translate("Ako", bReconquest=True),
+			_,
+		),
+		iRussian: (
+			translate("Alexandrovsk-Sakhalinsky", iAfter=iGlobal),
+			"Alexandrovka",
+		),
+	},
 	"Otjomuise": {
 		iDutch: "Windhoek",
 		iGerman: "Windhuk",
@@ -13580,6 +13588,12 @@ name_translations = {
 			_,
 		),
 		iFrench: u"Rivière-la-Paix",
+	},
+	"Pechenga": {
+		iLocal: "Petsamo", # Finnish
+		iNordic: "Petsjenga",
+		iRussian: _,
+		iSwedish: "Petsamo",
 	},
 	"Pekan": {
 		iMalay: (
@@ -16955,6 +16969,35 @@ name_translations = {
 		iPersian: _,
 		iRussian: relocate("Verny"),
 	},
+	"Tallinn": {
+		iArabic: "Talin",
+		iCeltic: "Taillinn",
+		iChinese: "Talin",
+		iDutch: "Reval",
+		iEnglish: "Reval",
+		iFrench: "Reval",
+		iGerman: "Reval",
+		iGreek: u"Tallíni",
+		iJapanese: "Tarin",
+		iKorean: "Tallin",
+		iLocal: _, # Estonian
+		iNordic: (
+			translate("Lyndanisse", iBefore=iMedieval),
+			"Reval",
+		),
+		iPolish: "Rewel",
+		iPortuguese: "Taline",
+		iRussian: (
+			translate("Kolyvan", iBefore=iMedieval),
+			"Tallin",
+		),
+		iSpanish: "Tallin",
+		iSwedish: (
+			translate(u"Lindanäs", iBefore=iMedieval),
+			"Reval",
+		),
+		iTurkish: "Reval",
+	},
 	"Taloqan": {
 		iGreek: found("Alexandreia Oxiane"),
 		iHarappan: found("Shortugai"),
@@ -17627,6 +17670,10 @@ name_translations = {
 	"Torksey": {  # founded on Lindon
 		iEnglish: _,
 		iNordic: "Thorkilsey",
+	},
+	"Tornio": {
+		iLocal: _, # Finnish
+		iSwedish: u"Torneå",
 	},
 	"Toronto": {
 		iEnglish: (
