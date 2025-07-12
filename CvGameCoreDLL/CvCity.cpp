@@ -335,7 +335,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	{
 		for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
 		{
-			if (plotCity3(getX(), getY(), iI)->getArea() != getArea())
+			if (!plotCity3(getX(), getY(), iI)->isWater() && plotCity3(getX(), getY(), iI)->getArea() != getArea())
 			{
 				changeExtraTradeRoutes(2);
 				break;
