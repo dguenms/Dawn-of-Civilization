@@ -154,6 +154,11 @@ class PyPlayer:
 			return str( gc.getTechInfo( iTech ).getDescription() )
 		# "No Research"
 		return "No Research"
+	
+	def pushResearch(self, iTech, clear = True):
+		' pushes iTech to the players research queue '
+		# void (int /*TechTypes*/ iIndex, bool bClear)
+		self.player.pushResearch(iTech, clear)		
 
 	def isBarbarian(self):
 		return self.player.isBarbarian()
@@ -251,6 +256,10 @@ class PyPlayer:
 	def getCivicUpkeep(self):
 		' int - total Civic Upkeep '
 		return self.player.getCivicUpkeep([], False)	# pass in an empty list
+	
+	def setCivic(self, iCivicOption, iCivic):
+		' sets the players civic to iCivic '
+		self.player.setCivics(iCivicOption, iCivic)
 
 # Players Units
 	def getUnitList(self):

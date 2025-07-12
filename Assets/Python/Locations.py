@@ -54,6 +54,9 @@ iCanadaEasternBorder = 40
 
 
 ### Tiles ###
+# Egyptian locations
+tInebuHedj = (79, 43)
+tThebes = (80, 41)
 
 tAngkor = (121, 37)
 tBabylon = (89, 47)
@@ -71,6 +74,5 @@ tRome = (68, 53)
 tPersepolis = (94, 45)
 tStockholm = (73, 71)
 tTenochtitlan = (17, 43)
-tThebes = (80, 41)
 tTokyo = (140, 54)
 tVienna = (71, 59)

@@ -29,7 +29,7 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=79,y=41
+	x=80,y=41
 	BeginUnit
 		UnitType=UNIT_MILITIA
 		UnitOwner=CIVILIZATION_EGYPT
@@ -40,7 +40,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_EGYPT
-		CityName=Abdju
+		CityName=Waset
 		CityPopulation=1
 		BuildingType=BUILDING_PALACE
 		YearFounded=-3000
