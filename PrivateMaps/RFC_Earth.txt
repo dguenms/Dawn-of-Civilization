@@ -22855,7 +22855,7 @@ BeginPlot
 	x=51,y=37
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=51,y=38
