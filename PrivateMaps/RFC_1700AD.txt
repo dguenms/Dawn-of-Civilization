@@ -4291,6 +4291,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_HOLY_ROMAN
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
+		PreviousOwner=CIVILIZATION_ITALY
 	EndCity
 EndPlot
 BeginPlot
@@ -9964,6 +9965,7 @@ BeginPlot
 		YearFounded=1100
 		YearAcquired=1600
 		PreviousOwner=CIVILIZATION_DRAVIDIA
+		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
 EndPlot
 BeginPlot

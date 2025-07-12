@@ -231,6 +231,9 @@ class Translations(object):
 		
 		return name
 	
+	def getLanguages(self):
+		return set(self.translations.keys())
+	
 	def isSingle(self):
 		return len(self.translations) <= 1
 	

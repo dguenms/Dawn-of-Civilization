@@ -162,6 +162,7 @@ def setupScenario():
 	elif scenario() == i1700AD:
 		dRelocated = {
 			"Anuratapuram": "Colombo",
+			"Chalchihuites": "Guadalajara",
 			"Golkonda": "Hyderabad",
 			"Indrapura": "Cua Han",
 			"Kalhu": "Al-Mawsil",
@@ -195,43 +196,43 @@ def getPrimaryLanguages(identifier):
 	iCiv = civ(identifier)
 	
 	if iCiv == iEgypt:
-		if player(iCiv).getStateReligion() == iIslam:
+		if player(identifier).getStateReligion() == iIslam:
 			return iEgyptianArabic, iArabic
 		
-		elif player(iCiv).getStateReligion() in [iOrthodoxy, iCatholicism]:
+		elif player(identifier).getStateReligion() in [iOrthodoxy, iCatholicism]:
 			return iCoptic, iEgyptian
 		
-		elif period(identifier) == iPeriodPtolemaicEgypt:
+		elif player(identifier).getPeriod() == iPeriodPtolemaicEgypt:
 			return iGreek, iEgyptian, iNubian
 	
 	elif iCiv == iChina:
-		if period(iCiv) == iPeriodYuan:
+		if player(identifier).getPeriod() == iPeriodYuan:
 			return iChinese, iMongol
 		
-		elif player(iCiv).getCurrentEra() == iIndustrial:
+		elif player(identifier).getCurrentEra() == iIndustrial:
 			return iChinese, iManchu
 	
 	elif iCiv == iNubia:
-		if player(iCiv).getStateReligion() in [iOrthodoxy, iCatholicism]:
+		if player(identifier).getStateReligion() in [iOrthodoxy, iCatholicism]:
 			return iNubian, iCoptic
 	
 	elif iCiv == iGreece:
-		if period(iCiv) == iPeriodModernGreece:
+		if player(identifier).getPeriod() == iPeriodModernGreece:
 			return iModernGreek, iGreek
 	
 	elif iCiv == iInca:
-		if period(iCiv) == iPeriodPeru:
+		if player(identifier).getPeriod() == iPeriodPeru:
 			return iSpanish, iQuechua
 	
 	elif iCiv in [iMaya, iToltecs, iAztecs]:
-		if player(iCiv).getStateReligion() in [iOrthodoxy, iCatholicism, iProtestantism] or team(iCiv).isAVassal():
-			return (iSpanish,) + dBaseLanguages[iCiv]
+		if player(identifier).getStateReligion() in [iOrthodoxy, iCatholicism, iProtestantism] or team(identifier).isAVassal():
+			return (iSpanish,) + dBaseLanguages.get(iCiv, tuple())
 	
 	return dBaseLanguages.get(iCiv, tuple())
 
 
 def getLocalLanguages(tile):
-	iRegion = plot(tile).getRegionID()
+	iRegion = plot_(tile).getRegionID()
 	
 	if iRegion == rHornOfAfrica:
 		return iSomali, iLocal
@@ -245,32 +246,95 @@ def getLocalLanguages(tile):
 	return (iLocal,)
 
 
-def getLanguages(identifier, tile):
-	iCiv = civ(identifier)
+class Languages(object):
 	
-	for iLanguage in getPrimaryLanguages(iCiv):
-		yield iLanguage
-	
-	plot = plot_(tile)
-	local_civs = civs.major().past_birth().where(lambda c: plot.getSettlerValue(c) > 1)
-	local_civs = local_civs.where(lambda c: (is_minor(identifier) and plot.getSettlerValue(c) >= 5) or year() < year(dFall[c]) or canEverRespawn(c))
-	
-	if plot.getRegionID() in lAmerica and True not in data.dFirstContactConquerors:
-		local_civs = local_civs.group(iCivGroupAmerica)
-	
-	lGroupCivs = next((lCivs for lCivs in dCivGroups.values() if iCiv in lCivs), [])
-	similar_civs, different_civs = local_civs.split(lambda c: c in lGroupCivs or c in dNeighbours[iCiv] or c in dInfluences[iCiv] or (is_minor(identifier) and plot.isCity() and city_(plot).isEverOwnedCiv(c)))
-	
-	for iCiv in similar_civs.sort(lambda c: (plot.getSettlerValue(c) > 0, c in lGroupCivs, c in dNeighbours[iCiv], plot.getSettlerValue(c)), reverse=True):
-		for iLanguage in getPrimaryLanguages(iCiv):
+	def __init__(self, identifier, tile):
+		self.identifier = identifier
+		self.tile = tile
+		
+	def __iter__(self):
+		for iLanguage in getPrimaryLanguages(self.identifier):
 			yield iLanguage
-	
-	for iLanguage in getLocalLanguages(tile):
-		yield iLanguage
-	
-	for iCiv in different_civs.sort(lambda c: (c in lGroupCivs, c in dNeighbours[iCiv], plot.getSettlerValue(c)), reverse=True):
-		for iLanguage in getPrimaryLanguages(iCiv):
+		
+		local_civs = self.getLocalLanguageCivs()
+		local_civs = local_civs.where(self.isValid)
+		
+		if self.plot.getRegionID() in lAmerica and True not in data.dFirstContactConquerors:
+			local_civs = local_civs.group(iCivGroupAmerica)
+		
+		similar_civs, different_civs = local_civs.split(self.isSimilar)
+		
+		for iSimilarCiv in similar_civs.sort(self.getSortingKey, reverse=True):
+			for iLanguage in getPrimaryLanguages(iSimilarCiv):
+				yield iLanguage
+		
+		for iLanguage in getLocalLanguages(self.tile):
 			yield iLanguage
+		
+		for iDifferentCiv in different_civs.sort(self.getSortingKey, reverse=True):
+			for iLanguage in getPrimaryLanguages(iDifferentCiv):
+				yield iLanguage
+	
+	@property
+	def iCiv(self):
+		return civ(self.identifier)
+	
+	@property
+	def plot(self):
+		return plot_(self.tile)
+	
+	@property
+	def city(self):
+		return city_(self.tile)
+	
+	@property
+	def player(self):
+		return player(identifier)
+	
+	def getLocalLanguageCivs(self):
+		base_name, changed_name = getTileNames(self.tile)
+		
+		tile_languages = Translations.of(changed_name).getLanguages()
+		
+		if base_name != changed_name:
+			tile_languages |= Translations.of(base_name).getLanguages()
+			
+		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if tile_languages & set(tLanguages)]
+		
+		return civs.of(*local_civs).past_birth()
+	
+	def isValidMinor(self, iCiv):
+		return is_minor(self.identifier) and self.plot.getSettlerValue(iCiv) >= 5
+	
+	def isValidCiv(self):
+		return year() < year(dFall[self.iCiv]) or canEverRespawn(self.iCiv)
+	
+	def isValid(self, iCiv):
+		return self.isValidMinor(iCiv) or self.isValidCiv()
+	
+	def isSameGroup(self, iCiv):
+		return any(self.iCiv in group and iCiv in group for group in dCivGroups.values())
+	
+	def isConnected(self, iCiv):
+		return iCiv in dNeighbours[self.iCiv] or iCiv in dInfluences[self.iCiv]
+	
+	def isEverOwned(self, iCiv):
+		return self.city and self.city.isEverOwnedCiv(iCiv)
+	
+	def isSimilar(self, iCiv):
+		return self.isSameGroup(iCiv) or self.isConnected(iCiv) or (is_minor(self.identifier) and self.isEverOwned(iCiv))
+	
+	def isRegionalCivGroup(self, iCiv):
+		return any(iCiv in dCivGroups[iGroup] and self.plot.getRegionID() in dCivGroupRegions[iGroup] for iGroup in range(iNumCivGroups))
+	
+	def getSortingKey(self, iCiv):
+		return (
+			self.plot.getSettlerValue(iCiv) > 0,
+			self.isSameGroup(iCiv),
+			self.isConnected(iCiv),
+			self.isRegionalCivGroup(iCiv),
+			self.plot.getSettlerValue(iCiv),
+		)
 
 
 ### NAMES ###
@@ -320,7 +384,7 @@ def getNameTranslationsForTileByLanguage(identifier, tile, tile_name):
 		yield translations.getSingle()
 		return
 	
-	for iLanguage in getLanguages(iCiv, tile):
+	for iLanguage in Languages(identifier, tile):
 		yield iLanguage, translations[iLanguage]
 
 

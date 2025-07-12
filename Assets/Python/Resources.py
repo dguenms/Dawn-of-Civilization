@@ -325,12 +325,12 @@ dConquerorPlotTypesDict = {
 }
 
 dCivGroupResourcesDict = {
-	(63, 56) : (iCivGroupMediterranean, iOlives, 600),
-	(62, 55) : (iCivGroupMediterranean, iWine, 600),
-	(60, 56) : (iCivGroupMediterranean, iWine, 600),
-	(63, 59) : (iCivGroupMediterranean, iWine, 600),
-	(65, 60) : (iCivGroupMediterranean, iWine, 600),
-	(72, 59) : (iCivGroupMediterranean, iWine, 600),
+	(63, 56) : ((iGreece, iRome, iFrance), iOlives, 600),
+	(62, 55) : ((iGreece, iRome, iFrance), iWine, 600),
+	(60, 56) : ((iGreece, iRome, iFrance), iWine, 600),
+	(63, 59) : ((iGreece, iRome, iFrance), iWine, 600),
+	(65, 60) : ((iGreece, iRome, iFrance), iWine, 600),
+	(72, 59) : ((iGreece, iRome, iFrance), iWine, 600),
 }
 
 
@@ -396,8 +396,8 @@ def spreadCivGroupResourcesOnFounding(city):
 
 
 def spreadCivGroupResources(city):
-	for iCivGroup, lResources in dCivGroupResources:
-		if city.getCivilizationType() in dCivGroups[iCivGroup]:
+	for tCivs, lResources in dCivGroupResources:
+		if city.getCivilizationType() in tCivs:
 			for (x, y), iResource, _ in lResources:
 				if city.getRegionID() == plot(x, y).getRegionID():
 					createResource(x, y, iResource)
