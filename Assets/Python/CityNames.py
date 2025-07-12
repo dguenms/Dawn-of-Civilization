@@ -173,11 +173,13 @@ def setupScenario():
 			"Pushkalavati": "Peshawar",
 			"Raga": "Tehran",
 			"Ravenna": "Venezia",
+			"Santa Isabel": u"São Tomé",
 			"Shurparaka": "Mumbai",
 			"Sukadana": "Pontianak",
 			"Tarragona": "Barcelona",
 			"Tarsus": "Adana",
 			"Ujjain": "Dhar",
+			"Yarghol": "Turpan",
 			"Yashodharapura": "Phnom Penh",
 		}
 		

@@ -133,6 +133,7 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		BuildingType=BUILDING_PYRAMID_OF_THE_SUN
 		BuildingType=BUILDING_FLOATING_GARDENS
@@ -218,7 +219,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Ciudad the Guatemala
+		CityName=Ciudad de Guatemala
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -292,7 +293,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
-		CityName=La Nouvelle Orléans
+		CityName=La Nouvelle-Orléans
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -372,6 +373,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
@@ -521,6 +523,8 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -558,6 +562,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
@@ -728,6 +733,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=50
 		EndCulture
@@ -1053,6 +1059,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
@@ -1113,6 +1120,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
@@ -1136,6 +1144,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=50
 		EndCulture
@@ -1542,6 +1551,34 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
+	x=49,y=28
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_PORTUGAL
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_PORTUGAL
+		CityName=Recife
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
+		BeginCulture
+			Civilization=CIVILIZATION_PORTUGAL, Culture=50
+		EndCulture
+		YearFounded=1550
+	EndCity
+EndPlot
+BeginPlot
+	x=49,y=29
+	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_PLANTATION
+EndPlot
+BeginPlot
 	x=50,y=73
 	ImprovementType=IMPROVEMENT_WHALING_BOATS
 EndPlot
@@ -1558,7 +1595,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
-		CityName=Reykjavik
+		CityName=Reykjavík
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -1680,7 +1717,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
-		CityName=Saint-Louis du Sénégal
+		CityName=Saint-Louis-du-Sénégal
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -1764,6 +1801,7 @@ BeginPlot
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		BuildingType=BUILDING_TORRE_DE_BELEM
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_PORTUGAL, Culture=250
 		EndCulture
@@ -1932,8 +1970,10 @@ BeginPlot
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		BuildingType=BUILDING_LA_MEZQUITA
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_SPAIN, Culture=100
 		EndCulture
@@ -2029,7 +2069,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Marrakush
+		CityName=Murrakush
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -2140,7 +2180,6 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
-		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		BuildingType=BUILDING_ESCORIAL
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -2226,6 +2265,7 @@ BeginPlot
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=100
@@ -2332,6 +2372,8 @@ BeginPlot
 		BuildingType=BUILDING_FRENCH_SALON
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=100
@@ -2441,11 +2483,13 @@ BeginPlot
 		BuildingType=BUILDING_ENGLISH_EXCHEQUER
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_TRADING_COMPANY
 		BuildingType=BUILDING_OXFORD_UNIVERSITY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=250
@@ -2571,6 +2615,7 @@ BeginPlot
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=100
@@ -2956,6 +3001,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_TRADING_COMPANY
 		BuildingType=BUILDING_NOTRE_DAME
@@ -2963,6 +3009,7 @@ BeginPlot
 		BuildingType=BUILDING_LOUVRE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		FreeSpecialistType=SPECIALIST_GREAT_SCIENTIST
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=250
@@ -3021,6 +3068,7 @@ BeginPlot
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
@@ -3162,11 +3210,13 @@ BeginPlot
 		BuildingType=BUILDING_DUTCH_POLDER
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		BuildingType=BUILDING_TRADING_COMPANY
 		BuildingType=BUILDING_BOURSE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		BeginCulture
@@ -3250,6 +3300,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
+	x=63,y=51
+	ImprovementType=IMPROVEMENT_HAMLET
+EndPlot
+BeginPlot
 	x=63,y=52
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -3287,6 +3341,8 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -3376,6 +3432,8 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
 			Civilization=CIVILIZATION_FRANCE, Culture=100
@@ -3568,12 +3626,12 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NATIVE
-		CityName=Edo
+		CityName=Benin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_HARBOR
 		BeginCulture
 			Civilization=CIVILIZATION_NATIVE, Culture=50
 		EndCulture
@@ -3708,6 +3766,7 @@ BeginPlot
 		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_CATHOLICISM
 		ReligionType=RELIGION_PROTESTANTISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
@@ -3751,13 +3810,14 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_PORTUGAL
-		CityName=São Tomé
+		CityName=Santa Isabel
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
@@ -4097,6 +4157,7 @@ BeginPlot
 		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_NORSE, Culture=100
@@ -4147,6 +4208,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_NORSE, Culture=100
@@ -4289,9 +4351,9 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_HOLY_ROMAN
+		PreviousOwner=CIVILIZATION_ITALY
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
-		PreviousOwner=CIVILIZATION_ITALY
 	EndCity
 EndPlot
 BeginPlot
@@ -4454,6 +4516,7 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		BuildingType=BUILDING_PROTESTANT_SHRINE
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_SAINT_THOMAS_CHURCH
@@ -4556,10 +4619,10 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_HOLY_ROMAN
+		PreviousOwner=CIVILIZATION_ITALY
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
 		PreviousOwner=CIVILIZATION_BARBARIAN
-		PreviousOwner=CIVILIZATION_ITALY
 	EndCity
 EndPlot
 BeginPlot
@@ -4654,6 +4717,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
@@ -4936,6 +5000,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
@@ -5011,6 +5076,7 @@ BeginPlot
 		BuildingType=BUILDING_POST_OFFICE
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
@@ -5054,6 +5120,7 @@ BeginPlot
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_SWEDEN, Culture=50
@@ -5093,6 +5160,14 @@ BeginPlot
 	x=73,y=25
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=73,y=43
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=73,y=46
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=73,y=56
@@ -5236,6 +5311,7 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_SWEDEN, Culture=250
@@ -5248,6 +5324,39 @@ BeginPlot
 	x=73,y=73
 	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=74,y=44
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=74,y=45
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_OTTOMAN
+		CityName=Bingazi
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_OTTOMAN, Culture=100
+		EndCulture
+		YearFounded=-705
+		YearAcquired=1550
+		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_BARBARIAN
+	EndCity
 EndPlot
 BeginPlot
 	x=74,y=50
@@ -5433,6 +5542,7 @@ EndPlot
 BeginPlot
 	x=75,y=45
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=75,y=49
@@ -5523,6 +5633,7 @@ EndPlot
 BeginPlot
 	x=76,y=44
 	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=76,y=45
@@ -5738,6 +5849,7 @@ BeginPlot
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		BeginCulture
 			Civilization=CIVILIZATION_GERMANY, Culture=100
@@ -6915,6 +7027,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
@@ -7636,7 +7749,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Mosul
+		CityName=Musul
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -8518,6 +8631,11 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=97,y=47
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=97,y=48
 	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
@@ -8610,6 +8728,37 @@ EndPlot
 BeginPlot
 	x=98,y=42
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=98,y=46
+	ImprovementType=IMPROVEMENT_CAMP
+EndPlot
+BeginPlot
+	x=98,y=48
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH
+		UnitOwner=CIVILIZATION_IRAN
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_IRAN
+		CityName=Kandahar
+		CityPopulation=3
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_IRAN, Culture=50
+		EndCulture
+		YearFounded=-550
+		YearAcquired=1500
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_ARABIA
+	EndCity
 EndPlot
 BeginPlot
 	x=98,y=51
@@ -9005,7 +9154,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Lahore
+		CityName=Laahor
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -9132,7 +9281,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
-		CityName=Mumbai
+		CityName=Mahikavati
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -9573,7 +9722,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Hyderabad
+		CityName=Haidar Abad
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -9675,6 +9824,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
@@ -9758,6 +9908,7 @@ BeginPlot
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
@@ -10084,6 +10235,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
@@ -10525,7 +10677,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_BURMA
-		CityName=Inwa
+		CityName=Awa
 		CityPopulation=4
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -10692,6 +10844,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
@@ -11359,6 +11512,7 @@ BeginPlot
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
@@ -11822,7 +11976,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_CHINA
-		CityName=Beijing
+		CityName=Shuntian
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -12522,6 +12676,7 @@ BeginPlot
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ISLAM
+		CorporationType=CORPORATION_TRADING_COMPANY
 		BeginCulture
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture

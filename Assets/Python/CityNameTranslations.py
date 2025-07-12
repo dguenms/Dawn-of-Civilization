@@ -15456,6 +15456,12 @@ name_translations = {
 		iLocal: u"Yootó",
 		iSpanish: u"Santa Fé",
 	},
+	"Santa Isabel": {
+		iEnglish: "Port Clarence",
+		iLocal: "Malobo",
+		iPortuguese: found(u"São Tomé"),
+		iSpanish: _,
+	},
 	"Santa Luzia": {
 		iPortuguese: (
 			translate(u"Brasília", bCapital=True),
@@ -15550,6 +15556,10 @@ name_translations = {
 		iItalian: "San Paolo",
 		iPortuguese: _,
 		iSpanish: "San Pablo",
+	},
+	u"São Tomé": {  # founded on Santa Isabel
+		iPortuguese: _,
+		iSpanish: u"Santo Tomé",
 	},
 	"Sapporo": {
 		iChinese: "Zhahuang",
@@ -16787,7 +16797,7 @@ name_translations = {
 		iPortuguese: "Siracusa",
 		iSpanish: "Siracusa",
 		iSwedish: "Syrakusa",
-		iTurkish: "Siraküza",
+		iTurkish: u"Siraküza",
 	},
 	"Syracuse": {
 		iEnglish: _,

@@ -315,6 +315,7 @@ dRemovedFeaturesDict = {
 	(97, 57)  : 1600, # Transoxiana
 	(81, 70)  : 1700, # Ingria
 	(80, 69)  : 1700, # Ingria
+	(59, 65)  : 1750, # East Anglia
 }
 
 dConquerorPlotTypesDict = {
