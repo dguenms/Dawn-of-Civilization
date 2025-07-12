@@ -145,6 +145,7 @@ def setupScenario():
 			"Huiji": "Dunhuang",
 			"Ka-ba": "Djoboro",
 			"Kalhu": "Al-Mawsil",
+			"Kandarpapura": "Indrapura",
 			"Mayapan": "Uuc Yabnal",
 			"Messana": "Syracusae",
 			"Parsa": "Estakhr",
@@ -252,8 +253,11 @@ class Languages(object):
 		self.identifier = identifier
 		self.tile = tile
 		
+		print "get languages for %s on %s" % (name(identifier), getBaseName(tile))
+		
 	def __iter__(self):
 		for iLanguage in getPrimaryLanguages(self.identifier):
+			print "yield primary: %s" % iLanguage
 			yield iLanguage
 		
 		local_civs = self.getLocalLanguageCivs()
@@ -264,15 +268,21 @@ class Languages(object):
 		
 		similar_civs, different_civs = local_civs.split(self.isSimilar)
 		
+		print "similar: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in similar_civs.sort(self.getSortingKey, reverse=True)]
+		print "different: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in different_civs.sort(self.getSortingKey, reverse=True)]
+		
 		for iSimilarCiv in similar_civs.sort(self.getSortingKey, reverse=True):
 			for iLanguage in getPrimaryLanguages(iSimilarCiv):
+				print "yield similar for %s: %s" % (infos.civ(iSimilarCiv).getText(), iLanguage)
 				yield iLanguage
 		
 		for iLanguage in getLocalLanguages(self.tile):
+			print "yield local: %s" % iLanguage
 			yield iLanguage
 		
 		for iDifferentCiv in different_civs.sort(self.getSortingKey, reverse=True):
 			for iLanguage in getPrimaryLanguages(iDifferentCiv):
+				print "yield different for %s: %s" % (infos.civ(iDifferentCiv).getText(), iLanguage)
 				yield iLanguage
 	
 	@property
@@ -301,16 +311,22 @@ class Languages(object):
 			
 		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if tile_languages & set(tLanguages)]
 		
-		return civs.of(*local_civs).past_birth()
+		return civs.of(*local_civs)
+	
+	def isPastBirth(self, iCiv):
+		return since(year(dBirth[iCiv])) > 0 or (self.plot.getSettlerValue(iCiv) > 0 and self.isConnected(iCiv))
+	
+	def isBeforeFall(self, iCiv):
+		return until(year(dFall[iCiv])) > 0 or canEverRespawn(iCiv)
 	
 	def isValidMinor(self, iCiv):
 		return is_minor(self.identifier) and self.plot.getSettlerValue(iCiv) >= 5
 	
-	def isValidCiv(self):
-		return year() < year(dFall[self.iCiv]) or canEverRespawn(self.iCiv)
+	def isValidCiv(self, iCiv):
+		return self.isPastBirth(iCiv) and self.isBeforeFall(iCiv)
 	
 	def isValid(self, iCiv):
-		return self.isValidMinor(iCiv) or self.isValidCiv()
+		return self.isValidMinor(iCiv) or self.isValidCiv(iCiv)
 	
 	def isSameGroup(self, iCiv):
 		return any(self.iCiv in group and iCiv in group for group in dCivGroups.values())
@@ -325,7 +341,19 @@ class Languages(object):
 		return self.isSameGroup(iCiv) or self.isConnected(iCiv) or (is_minor(self.identifier) and self.isEverOwned(iCiv))
 	
 	def isRegionalCivGroup(self, iCiv):
-		return any(iCiv in dCivGroups[iGroup] and self.plot.getRegionID() in dCivGroupRegions[iGroup] for iGroup in range(iNumCivGroups))
+		return self.isEverOwned(iCiv) or any(iCiv in dCivGroups[iGroup] and self.plot.getRegionID() in dCivGroupRegions[iGroup] for iGroup in range(iNumCivGroups))
+	
+	def getValue(self, iCiv):
+		if player(iCiv).isExisting():
+			return self.plot.getSettlerValue(iCiv)
+		
+		if data.civs[iCiv].iLastTurnAlive > 0:
+			return until(data.civs[iCiv].iLastTurnAlive)
+		
+		return -until(year(dBirth[iCiv]))
+	
+	def getCulture(self, iCiv):
+		return self.city and self.city.getCivCulture(iCiv) or 0
 	
 	def getSortingKey(self, iCiv):
 		return (
@@ -333,7 +361,9 @@ class Languages(object):
 			self.isSameGroup(iCiv),
 			self.isConnected(iCiv),
 			self.isRegionalCivGroup(iCiv),
-			self.plot.getSettlerValue(iCiv),
+			self.plot.getSettlerValue(iCiv) > 1,
+			self.getValue(iCiv),
+			self.getCulture(iCiv),
 		)
 
 

@@ -4184,6 +4184,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Chuqichaka": {
+		iQuechua: _,
+		iSpanish: "Sucre",
+	},
 	"Churchill": {
 		iEnglish: (
 			translate("Prince of Wales Fort", bSmall=True),
@@ -7642,6 +7646,7 @@ name_translations = {
 	"Indrapura": {
 		iChinese: "Foshicheng",
 		iIndian: _,
+		iLocal: _,
 		iVietnamese: relocate("Cua Han"),
 	},
 	"Induru": {

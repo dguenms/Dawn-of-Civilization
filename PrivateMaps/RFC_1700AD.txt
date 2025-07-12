@@ -6776,7 +6776,6 @@ BeginPlot
 		YearAcquired=1698
 		PreviousOwner=CIVILIZATION_NATIVE
 		PreviousOwner=CIVILIZATION_SWAHILI
-		PreviousOwner=CIVILIZATION_PORTUGAL
 	EndCity
 EndPlot
 BeginPlot
