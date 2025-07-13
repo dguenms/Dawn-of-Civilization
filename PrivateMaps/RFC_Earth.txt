@@ -56673,8 +56673,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=47
-	FeatureType=FEATURE_FOREST, FeatureVariety=3
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -57143,8 +57143,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=47
-	FeatureType=FEATURE_MARSH, FeatureVariety=2
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
