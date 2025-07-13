@@ -155,7 +155,7 @@ dResourcesDict = {
 	(40, 15)  : (1700,  iSheep),    # Uruguay
 	(35, 6)   : (1700,  iSheep),    # Patagonia
 	(18, 52)  : (1700,  iHorse),    # Comanche
-	(20, 55)  : (1700,  iHorse),    # Missouri
+	(19, 55)  : (1700,  iHorse),    # Kansas
 	(15, 59)  : (1700,  iHorse),    # Wyoming
 	(16, 63)  : (1700,  iHorse),    # Alberta
 	(33, 35)  : (1700,  iHorse),    # Venezuela
