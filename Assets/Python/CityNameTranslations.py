@@ -4601,6 +4601,14 @@ name_translations = {
 			_,
 		),
 	},
+	"Danibaan": {
+		iLocal: _, # Zapotec
+		iNahuatl: (
+			relocate("Huaxyacac"),
+			"Atzompan",
+		),
+		iSpanish: u"Monte Albán",
+	},
 	"Danjiangkou": {
 		iChinese: (
 			translate("Shiyan", iAfter=iMedieval),
@@ -4610,11 +4618,6 @@ name_translations = {
 	"Dannemarksnagore": {  # founded on Bishnupur
 		iIndian: "Gondalpara",
 		iNordic: _,
-	},
-	"Dani Baa": {  # relocated from Huaxyacac
-		iLocal: _,
-		iNahuatl: relocate("Huaxyacac"),
-		iSpanish: u"Monte Albán",
 	},
 	"Dantewada": {
 		iDutch: found("Nagula Vancha"),
@@ -7340,7 +7343,7 @@ name_translations = {
 			_,
 		),
 	},
-	"Huaxyacac": {
+	"Huaxyacac": {  # relocated from Danibaan
 		iLocal: "Ndua", # Zapotec
 		iNahuatl: _,
 		iSpanish: "Oaxaca",
