@@ -470,7 +470,7 @@ lCivilizations = [
 		iAdvancedStartPoints=250,
 		iStateReligion=iCatholicism,
 		lCivics=[iRepublic, iCitizenship, iManorialism, iMerchantTrade, iClergy],
-		techs=techs.column(7).including(iCommune, iPaper, iCompass, iDoctrine)
+		techs=techs.column(7).including(iCommune, iPatronage)
 	),
 	Civilization(
 		iMongols,
