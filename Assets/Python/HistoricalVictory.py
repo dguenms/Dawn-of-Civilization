@@ -330,8 +330,8 @@ dGoals = {
 	),
 	iDravidia: (
 		All(
-			CultureAmount(2500, at=600),
 			GoldAmount(5000, at=600),
+			CultureAmount(7500, at=600),
 			TradeGold(7500, by=1200),
 		),
 		Control(
