@@ -231,6 +231,9 @@ class Translations(object):
 		
 		return name
 	
+	def getLanguages(self):
+		return set(self.translations.keys())
+	
 	def isSingle(self):
 		return len(self.translations) <= 1
 	
@@ -578,13 +581,6 @@ name_translations = {
 		),
 		iTurkish: _,
 	},
-	"Ako": {
-		iJapanese: _,
-		iRussian: (
-			translate("Alexandrovsk-Sakhalinsky", iAfter=iGlobal),
-			"Alexandrovka",
-		),
-	},
 	"Akordat": {
 		iArabic: relocate("Kassala"),
 		iEnglish: relocate("Keren"),
@@ -625,6 +621,10 @@ name_translations = {
 		iNubian: relocate("Yeha"),
 		iPortuguese: "Axum",
 		iSpanish: "Axum",
+	},
+	"Aktau": {
+		iRussian: _,
+		iUkrainian: translate("Shevchenko", iAfter=iGlobal),
 	},
 	"Aktogay": {
 		iRussian: _,
@@ -4184,6 +4184,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Chuqichaka": {
+		iQuechua: _,
+		iSpanish: "Sucre",
+	},
 	"Churchill": {
 		iEnglish: (
 			translate("Prince of Wales Fort", bSmall=True),
@@ -4597,6 +4601,14 @@ name_translations = {
 			_,
 		),
 	},
+	"Danibaan": {
+		iLocal: _, # Zapotec
+		iNahuatl: (
+			relocate("Huaxyacac"),
+			"Atzompan",
+		),
+		iSpanish: u"Monte Albán",
+	},
 	"Danjiangkou": {
 		iChinese: (
 			translate("Shiyan", iAfter=iMedieval),
@@ -4606,11 +4618,6 @@ name_translations = {
 	"Dannemarksnagore": {  # founded on Bishnupur
 		iIndian: "Gondalpara",
 		iNordic: _,
-	},
-	"Dani Baa": {  # relocated from Huaxyacac
-		iLocal: _,
-		iNahuatl: relocate("Huaxyacac"),
-		iSpanish: u"Monte Albán",
 	},
 	"Dantewada": {
 		iDutch: found("Nagula Vancha"),
@@ -4773,18 +4780,6 @@ name_translations = {
 		),
 		iLatin: _,
 		iNordic: u"Djúrabý"
-	},
-	"Desinganadu": {
-		iDutch: "Quilon",
-		iDravidian: (
-			translate("Kollam", iAfter=iRenaissance),
-			_,
-		),
-		iEnglish: (
-			relocate("Kochi"),
-			"Quilon",
-		),
-		iPortuguese: "Coulam",
 	},
 	"Desterro": {
 		iFrench: found("Joinville"),
@@ -7348,7 +7343,7 @@ name_translations = {
 			_,
 		),
 	},
-	"Huaxyacac": {
+	"Huaxyacac": {  # relocated from Danibaan
 		iLocal: "Ndua", # Zapotec
 		iNahuatl: _,
 		iSpanish: "Oaxaca",
@@ -7538,6 +7533,7 @@ name_translations = {
 		iMalay: translate("Ulan Bator", bCommunist=True),
 		iMongol: (
 			translate("Ulaanbaatar", bCommunist=True),
+			translate(u"Niislel Khüree", iAfter=iGlobal, bCapital=True),
 			_,
 		),
 		iPolish: translate("Ulan Bator", bCommunist=True),
@@ -7653,6 +7649,7 @@ name_translations = {
 	"Indrapura": {
 		iChinese: "Foshicheng",
 		iIndian: _,
+		iLocal: _,
 		iVietnamese: relocate("Cua Han"),
 	},
 	"Induru": {
@@ -11728,6 +11725,14 @@ name_translations = {
 			_,
 		),
 	},
+	"Muciripattanam": {
+		iDravidian: (
+			relocate("Kochi"),
+			_,
+		),
+		iEnglish: "Muziris",
+		iGreek: "Mousiris",
+	},
 	"Mudanjiang": {
 		iChinese: _,
 		iJapanese: "Butankou",
@@ -13119,6 +13124,16 @@ name_translations = {
 		iLocal: _,
 		iPortuguese: found(u"Vila Pereira d'Eça"),
 	},
+	"Otchishi": {
+		iJapanese: (
+			translate("Ako", bReconquest=True),
+			_,
+		),
+		iRussian: (
+			translate("Alexandrovsk-Sakhalinsky", iAfter=iGlobal),
+			"Alexandrovka",
+		),
+	},
 	"Otjomuise": {
 		iDutch: "Windhoek",
 		iGerman: "Windhuk",
@@ -13584,6 +13599,12 @@ name_translations = {
 			_,
 		),
 		iFrench: u"Rivière-la-Paix",
+	},
+	"Pechenga": {
+		iLocal: "Petsamo", # Finnish
+		iNordic: "Petsjenga",
+		iRussian: _,
+		iSwedish: "Petsamo",
 	},
 	"Pekan": {
 		iMalay: (
@@ -15438,6 +15459,12 @@ name_translations = {
 		iLocal: u"Yootó",
 		iSpanish: u"Santa Fé",
 	},
+	"Santa Isabel": {
+		iEnglish: "Port Clarence",
+		iLocal: "Malobo",
+		iPortuguese: found(u"São Tomé"),
+		iSpanish: _,
+	},
 	"Santa Luzia": {
 		iPortuguese: (
 			translate(u"Brasília", bCapital=True),
@@ -15532,6 +15559,10 @@ name_translations = {
 		iItalian: "San Paolo",
 		iPortuguese: _,
 		iSpanish: "San Pablo",
+	},
+	u"São Tomé": {  # founded on Santa Isabel
+		iPortuguese: _,
+		iSpanish: u"Santo Tomé",
 	},
 	"Sapporo": {
 		iChinese: "Zhahuang",
@@ -16769,7 +16800,7 @@ name_translations = {
 		iPortuguese: "Siracusa",
 		iSpanish: "Siracusa",
 		iSwedish: "Syrakusa",
-		iTurkish: "Siraküza",
+		iTurkish: u"Siraküza",
 	},
 	"Syracuse": {
 		iEnglish: _,
@@ -16958,6 +16989,35 @@ name_translations = {
 		),
 		iPersian: _,
 		iRussian: relocate("Verny"),
+	},
+	"Tallinn": {
+		iArabic: "Talin",
+		iCeltic: "Taillinn",
+		iChinese: "Talin",
+		iDutch: "Reval",
+		iEnglish: "Reval",
+		iFrench: "Reval",
+		iGerman: "Reval",
+		iGreek: u"Tallíni",
+		iJapanese: "Tarin",
+		iKorean: "Tallin",
+		iLocal: _, # Estonian
+		iNordic: (
+			translate("Lyndanisse", iBefore=iMedieval),
+			"Reval",
+		),
+		iPolish: "Rewel",
+		iPortuguese: "Taline",
+		iRussian: (
+			translate("Kolyvan", iBefore=iMedieval),
+			"Tallin",
+		),
+		iSpanish: "Tallin",
+		iSwedish: (
+			translate(u"Lindanäs", iBefore=iMedieval),
+			"Reval",
+		),
+		iTurkish: "Reval",
 	},
 	"Taloqan": {
 		iGreek: found("Alexandreia Oxiane"),
@@ -17631,6 +17691,10 @@ name_translations = {
 	"Torksey": {  # founded on Lindon
 		iEnglish: _,
 		iNordic: "Thorkilsey",
+	},
+	"Tornio": {
+		iLocal: _, # Finnish
+		iSwedish: u"Torneå",
 	},
 	"Toronto": {
 		iEnglish: (

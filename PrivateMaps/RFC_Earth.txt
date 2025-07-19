@@ -9978,6 +9978,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -10433,7 +10434,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=55
-	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -11178,6 +11178,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=33
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11628,6 +11629,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=33
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -22853,7 +22855,7 @@ BeginPlot
 	x=51,y=37
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=51,y=38
@@ -56671,8 +56673,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=47
-	FeatureType=FEATURE_FOREST, FeatureVariety=3
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -57141,8 +57143,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=47
-	FeatureType=FEATURE_MARSH, FeatureVariety=2
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot

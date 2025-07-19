@@ -463,6 +463,7 @@ class Scenario(object):
 		self.restoreLeaders()
 		
 		self.updateData()
+		self.updateLastTurnAlive()
 		self.updateNames()
 		self.updateCityNames()
 		self.updateCityWork()
@@ -529,6 +530,14 @@ class Scenario(object):
 		for iCiv in range(iNumCivs):
 			for iLeader in range(iNumLeaders):
 				infos.civ(iCiv).setLeader(iLeader, infos.civ(iCiv).isOriginalLeader(iLeader))
+	
+	def updateLastTurnAlive(self):
+		for iCiv in lBirthOrder:
+			if self.iStartYear > dBirth[iCiv]:
+				if self.iStartYear <= dFall[iCiv] or any(civ.iCiv == iCiv for civ in self.lCivilizations):
+					data.civs[iCiv].iLastTurnAlive = game.getStartTurn()
+				else:
+					data.civs[iCiv].iLastTurnAlive = year(dFall[iCiv])
 	
 	def updateNames(self):
 		for iPlayer in players.major():

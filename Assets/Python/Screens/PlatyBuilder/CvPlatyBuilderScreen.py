@@ -168,7 +168,7 @@ class CvWorldBuilderScreen:
 				else:
 					# city names and settlervalue
 					if x > -1 and y > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
-						sCityName = cn.getName(iPlayer, (x, y))
+						sCityName = cn.getDisplayName(iPlayer, (x, y))
 						sDoCText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == iModeWarMap:
 						iPlotWarValue = self.m_pCurrentPlot.getPlayerWarValue(iPlayer)
@@ -507,7 +507,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == iModeCity:
 			if self.m_pCurrentPlot.isCity(): return
 			pCity = gc.getPlayer(iPlayer).initCity(x, y)
-			sName = cn.getName(iPlayer, (x, y))
+			sName = cn.getDisplayName(iPlayer, (x, y))
 			if sName:
 				pCity.setName(sName, True)
 			if bPython:
@@ -2329,7 +2329,7 @@ class CvWorldBuilderScreen:
 			if pOldCity:
 				x, y = location(self.m_pCurrentPlot)
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cn.getName(self.m_iCurrentPlayer, (x, y))
+				sName = cn.getDisplayName(self.m_iCurrentPlayer, (x, y))
 				if sName:
 					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)

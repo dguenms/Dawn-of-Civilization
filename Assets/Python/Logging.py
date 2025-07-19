@@ -48,7 +48,8 @@ class TechLog(object):
 
 	GROUP_NAMES = {
 		iCivGroupEurope: "Europe",
-		iCivGroupAsia: "Asia",
+		iCivGroupEastAsia: "East Asia",
+		iCivGroupSouthAsia: "South Asia",
 		iCivGroupMiddleEast: "Middle East", 
 		iCivGroupAfrica: "Africa",
 		iCivGroupAmerica: "America",

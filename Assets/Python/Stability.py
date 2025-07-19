@@ -977,7 +977,7 @@ def getCivicStability(iPlayer, civics=None):
 		if (iStateParty, iDemocracy) in civics: iStability -= 5
 		if iDeification in civics: iStability += 2
 		if iSyncretism in civics: iStability -= 3
-		if iFanaticism in civics: iStability += 5
+		if iFanaticism in civics: iStability += 3
 		if iSecularism in civics: iStability -= 5
 		
 	if iBureaucracy in civics:
