@@ -3739,7 +3739,7 @@
 			<Strategy>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</ArtDefineTag>
-			<PrereqTech>TECH_STATECRAFT</PrereqTech>
+			<PrereqTech>TECH_COMMUNE</PrereqTech>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
 			<iConquestProb>70</iConquestProb>
