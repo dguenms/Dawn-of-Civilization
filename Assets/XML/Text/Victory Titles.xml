@@ -777,6 +777,14 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_MAL1</Tag>
+		<English>Caravans of the Sahara</English>
+		<French>Caravanes du Sahara </French>
+		<German>Karawanen der Sahara</German>
+		<Italian>Caravans of the Sahara</Italian>
+		<Spanish>Caravans of the Sahara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAL2</Tag>
 		<English>The Great Hajj</English>
 		<French>La grand hajj </French>
 		<German>Die gro&#223;e Hadsch</German>
@@ -784,20 +792,12 @@
 		<Spanish>The Great Hajj</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_MAL2</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAL3</Tag>
 		<English>The Madrassah of Timbuktu</English>
 		<French>La madrassa de Tombouctou</French>
 		<German>Die Madrasah von Timbuktu</German>
 		<Italian>The Madrassah of Timbuktu</Italian>
 		<Spanish>The Madrassah of Timbuktu</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_MAL3</Tag>
-		<English>Caravans of the Sahara</English>
-		<French>Caravanes du Sahara </French>
-		<German>Karawanen der Sahara</German>
-		<Italian>Caravans of the Sahara</Italian>
-		<Spanish>Caravans of the Sahara</Spanish>
 	</TEXT>
 	
 	<TEXT>
