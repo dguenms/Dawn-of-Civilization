@@ -33,7 +33,7 @@ tMarquesas = ((14, 26),	(14, 26))
 tEasterIsland = ((20, 18),	(20, 18))
 
 # second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
-tSrivijaya = ((115, 26), (121, 32))
+tSrivijaya = ((115, 26), (121, 34))
 
 # third Byzantine goal: control Greece, the Balkans, Anatolia, the Caucasus, the Levant, Egypt, Africa, Andalusia and Italy in 1450 AD
 tAndalusia = ((54, 48), (60, 50))

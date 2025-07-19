@@ -338,6 +338,7 @@ dGoals = {
 			plots.regions(rDravida, rDeccan, rRajputana).named(DECCAN),
 			plots.region(rBengal),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
+			plots.birth(iBurma),
 			subject=VASSALS,
 			at=1000,
 		),
