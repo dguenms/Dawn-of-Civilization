@@ -622,7 +622,7 @@ def createRoleUnit(iPlayer, location, iRole, iAmount=1, iExperience=0):
 	return created
 	
 # used: Congresses, History, RFCUtils, Rise, Stability
-def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True, bCreateGarrisons = True):
+def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True, bCreateGarrisons = True, UnrestTime = 0):
 	plot = plot_(tPlot)
 	
 	if bPermanentCultureChange:
@@ -642,8 +642,8 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	flippedCity = flipCity(plot, False, False, iPlayer, [iOwner])
 	
 	if flippedCity:
-		flippedCity.setOccupationTimer(0)
-	
+		flippedCity.setOccupationTimer(UnrestTime)
+
 	if bFlipUnits:
 		for iUnit, typeUnits in flippingUnits:
 			makeUnits(iPlayer, iUnit, plot, len(typeUnits))

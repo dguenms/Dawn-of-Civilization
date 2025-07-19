@@ -1593,6 +1593,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				return "TXT_KEY_SULTANATE_ADJECTIVE"
 			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		period = player(iPlayer).getPeriod()
+		if period == iPeriodOldKingdom: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
+		if period == iPeriodMiddleKingdom: return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
 			
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt or slot(iGreece) in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
@@ -1606,10 +1610,8 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
 			return "TXT_KEY_CIV_EGYPT_COPTIC"
 				
-		if iEra == iAncient:
-			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
-			if iAnarchyTurns <= turns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
-			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
+		#if iEra == iAncient:
+		#	return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 		
 		if iEra == iClassical:
 			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"

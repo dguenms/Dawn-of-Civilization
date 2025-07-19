@@ -139,7 +139,7 @@ def getCityClaim(city):
 	
 	return -1
 		
-def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
+def secedeCity(city, iNewOwner, bRelocate, iArmyPercent, iCultureChange=50, UnrestTime=0):
 	if not city: 
 		return
 	
@@ -160,7 +160,7 @@ def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 	else:
 		killUnits(lRelocatedUnits)
 	
-	flipped_city = completeCityFlip(city, iNewOwner, city.getOwner(), 50, False, True, True)
+	flipped_city = completeCityFlip(city, iNewOwner, city.getOwner(), iCultureChange, False, True, True, UnrestTime=UnrestTime)
 	
 	if flipped_city and civ(iOldOwner) == iToltecs:
 		removeBuildings(flipped_city)

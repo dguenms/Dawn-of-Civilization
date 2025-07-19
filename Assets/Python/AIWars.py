@@ -263,7 +263,7 @@ def conquerorWar(iPlayer, iTarget, iWarPlan):
 		declareWar(iPlayer, iTarget, iWarPlan)
 
 	
-def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
+def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL, iExtra = 0):
 	iCiv = civ(iPlayer)
 	
 	if not player(iPlayer).isExisting():
@@ -283,7 +283,6 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		message(iOwner, 'TXT_KEY_UP_CONQUESTS_TARGET', name(iPlayer))
 		
 	for city in targetCities:
-		iExtra = 0
 		if active() not in [iPlayer, city.getOwner()]: 
 			iExtra += 1
 			

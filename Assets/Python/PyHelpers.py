@@ -141,7 +141,7 @@ class PyPlayer:
 	def setHasTech(self, iTech):
 		' gives the player iTech '
 		#int /*TechTypes*/ eIndex, bool bNewValue, int /*PlayerTypes*/ ePlayer, bool bFirst, bool bAnnounce
-		self.getTeam().setHasTech( iTech, True, self.getID(), False, False )
+		self.getTeam().setHasTech( iTech, True, self.getID(), False, True )
 	
 	def getResearchTurnsLeft(self, iTech, bOverflow = 1):
 		' int '

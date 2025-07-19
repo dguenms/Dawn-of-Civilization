@@ -10,6 +10,10 @@ dEvacuatePeriods = {
 	iPhoenicia : iPeriodCarthage,
 }
 
+dPeriods3000BC = {
+	iEgypt : iPeriodOldKingdom,
+}
+
 dPeriods600AD = {
 	iPhoenicia : iPeriodCarthage,
 	iCelts : iPeriodInsularCelts,
@@ -31,14 +35,18 @@ dPeriods1700AD = {
 }
 
 dScenarioPeriods = {
-	-3000: {},
+	-3000: dPeriods3000BC,
 	600: dPeriods600AD,
 	1700: dPeriods1700AD,
 }
 
 
 dPeriodNames = {
+	# Egypt
+	iPeriodOldKingdom:				"Old_Kingdom",
+	iPeriodMiddleKingdom:			"Middle_Kingdom",
 	iPeriodPtolemaicEgypt:			"Ptolemaic_Egypt",
+
 	iPeriodMing:					"Ming",
 	iPeriodMaratha:					"Maratha",
 	iPeriodModernGreece:			"Modern_Greece",
@@ -96,7 +104,6 @@ def evacuate(iPlayer):
 @handler("birth")
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
-
 	if iCiv == iFrance:
 		setPeriod(iCelts, iPeriodInsularCelts)
 	elif iCiv == iGermany:
@@ -164,6 +171,11 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if iOwnerCiv == iEgypt:
 		if iCiv in [iGreece, iRome]:
 			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
+
+	if iOwnerCiv == iIndependent:
+		if iCiv == iEgypt:
+			if player(iEgypt).getNumCities() == 2:
+				setPeriod(iEgypt, iPeriodMiddleKingdom)
 			
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
