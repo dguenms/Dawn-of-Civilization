@@ -6161,6 +6161,7 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 	}
 
 	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getGoldPerProduction());
+	iGold /= 100; // Leoreth: hurry gold is times 100 now
 	
 	return std::max(1, iGold);
 }
