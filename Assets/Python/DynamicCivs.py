@@ -511,7 +511,7 @@ dStartingLeaders = [
 	iBurma : iAnawrahta,
 	iRus : iYaroslav,
 	iSwahili : iDawud,
-	iMali : iMansaMusa,
+	iMali : iDinga,
 	iPoland : iCasimir,
 	iPortugal : iAfonso,
 	iInca : iHuaynaCapac,
@@ -2142,6 +2142,9 @@ def leader(iPlayer):
 		
 	elif iCiv == iByzantium:
 		if year() >= year(1000): return iBasil
+	
+	elif iCiv == iMali:
+		if getColumn(iPlayer) >= 6: return iMansaMusa
 		
 	elif iCiv == iNorse:
 		if iEra >= iGlobal: return iGerhardsen
