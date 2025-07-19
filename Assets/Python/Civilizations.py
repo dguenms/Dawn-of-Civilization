@@ -496,18 +496,18 @@ lCivilizations = [
 	),
 	Civilization(
 		iThailand,
-		iGold=300,
+		iGold=250,
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iThalassocracy],
-		techs=techs.column(8).without(iCompass, iDoctrine)
+		techs=techs.column(7).without(iGuilds, iTheology).including(iCropRotation, iPaper),
 	),
 	Civilization(
 		iSweden,
 		iGold=200,
-		iAdvancedStartPoints=200,
+		iAdvancedStartPoints=400,
 		iStateReligion=iProtestantism,
 		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(8).without(iPatronage).including(iCompanies),
+		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine),
 	),
 	Civilization(
 		iRussia,
@@ -515,7 +515,7 @@ lCivilizations = [
 		iAdvancedStartPoints=200,
 		iStateReligion=iOrthodoxy,
 		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(8)
+		techs=techs.column(7).including(iCropRotation, iPatronage, iDoctrine),
 	),
 	Civilization(
 		iOttomans,
@@ -523,7 +523,7 @@ lCivilizations = [
 		iAdvancedStartPoints=200,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iTheocracy, iSlavery, iMerchantTrade, iSyncretism, iHegemony],
-		techs=techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder)
+		techs=techs.column(7).including(iCommune, iPaper, iDoctrine, iGunpowder)
 	),
 	Civilization(
 		iCongo,
@@ -537,7 +537,7 @@ lCivilizations = [
 		iAdvancedStartPoints=250,
 		iStateReligion=iIslam,
 		lCivics=[iMonarchy, iTheocracy, iSlavery, iMerchantTrade, iFanaticism, iHegemony],
-		techs=techs.column(9).including(iHeritage, iFirearms)
+		techs=techs.column(9).without(iFinance, iCartography, iPrinting).including(iFirearms)
 	),
 	Civilization(
 		iNetherlands,
@@ -545,7 +545,7 @@ lCivilizations = [
 		iAdvancedStartPoints=300,
 		iStateReligion=iProtestantism,
 		lCivics=[iRepublic, iBureaucracy, iManorialism, iMerchantTrade, iClergy],
-		techs=techs.column(10)
+		techs=techs.column(10).without(iHeritage)
 	),
 	Civilization(
 		iGermany,
@@ -553,7 +553,7 @@ lCivilizations = [
 		iAdvancedStartPoints=300,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning)
+		techs=techs.column(11).without(iCivilLiberties, iHorticulture)
 	),
 	Civilization(
 		iAmerica,
@@ -976,7 +976,7 @@ dStartingUnits = CivDict({
 		iWork: 3,
 		iCounter: 3,
 		iDefend: 2,
-		iAttack: 2,
+		iAttack: 3,
 		iMissionary: 2,
 		iSettleSea: 1,
 		iEscort: 2,
@@ -985,7 +985,7 @@ dStartingUnits = CivDict({
 	iRussia: {
 		iSettle: 4,
 		iWork: 3,
-		iDefend: 4,
+		iDefend: 2,
 		iAttack: 3,
 		iCounter: 4,
 		iSiege: 3,
