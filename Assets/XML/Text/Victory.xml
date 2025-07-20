@@ -504,6 +504,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_LIBERATE</Tag>
+		<English>liberate %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -1411,6 +1419,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_LIBERATED_CITIES</Tag>
+		<English>%s3 cities in %s1 from non-%s2 civilizations</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -2209,6 +2225,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_IMPORT_COUNT</Tag>
 		<English>imported %s1 resources</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_LIBERATED_CITIES</Tag>
+		<English>liberated cities in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

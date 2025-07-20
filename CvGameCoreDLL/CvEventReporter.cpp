@@ -218,6 +218,11 @@ void CvEventReporter::cityGifted(CvCity* pCity)
 	m_kPythonEventMgr.reportCityGifted(pCity);
 }
 
+void CvEventReporter::cityLiberated(CvCity* pCity)
+{
+	m_kPythonEventMgr.reportCityLiberated(pCity);
+}
+
 void CvEventReporter::cultureExpansion( CvCity *pCity, PlayerTypes ePlayer )
 {
 	m_kPythonEventMgr.reportCultureExpansion(pCity, ePlayer);

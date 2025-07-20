@@ -353,7 +353,7 @@ dGoals = {
 			by=1200,
 		),
 		All(
-			AllowOnly(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN)),
+			LiberatedCities(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN), 12),
 			AllAttitude(AttitudeTypes.ATTITUDE_FRIENDLY, civs=group(iCivGroupAfrica).named(AFRICAN)),
 			at=1930,
 		),
