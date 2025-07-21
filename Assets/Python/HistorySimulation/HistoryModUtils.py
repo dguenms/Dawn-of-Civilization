@@ -13,11 +13,16 @@ def completeBuildingProduction(cCity, iBuilding):
         return
     cCity.changeBuildingProduction(iBuilding, cCity.getProductionNeeded() - cCity.getProduction())
 
+def pushUnitProduction(cCity, iUnit, append = False):
+    cCity.pushOrder(OrderTypes.ORDER_TRAIN, iUnit, -1, False, False, append, True)
 
-def moveWorkerAndBuild(iUnit, plotX, plotY, iImprovement):
+def completeUnitProduction(cCity, iUnit):
+    cCity.changeUnitProduction(iUnit, cCity.getProductionNeeded() - cCity.getProduction())
+
+def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData = 0):
     gUnit = iUnit.getGroup()
     gUnit.pushMoveToMission(plotX, plotY)
-    gUnit.pushMission(MissionTypes.MISSION_BUILD, iImprovement, 0, 0, True, False, MissionAITypes.MISSIONAI_BUILD, plot(plotX, plotY), iUnit)
+    gUnit.pushMission(MissionType, iData, 0, 0, True, False, MissionAITypes, plot(plotX, plotY), iUnit)
 
 def setImprovement(plotX, plotY, iImprovement):
     pPlot = plot(plotX, plotY)

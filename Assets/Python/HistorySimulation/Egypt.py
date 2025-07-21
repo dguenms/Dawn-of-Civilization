@@ -37,7 +37,7 @@ def EgyptHistory(iGameTurn, iPlayer):
             completeResearch(pEgypt, iMasonry)
             pEgypt.setCivic(iCivicsSociety, iSlavery)
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]                    
-            moveWorkerAndBuild(uWorker, 78, 43, iQuarry)
+            unit_MoveAndMission(uWorker, 78, 43, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iQuarry)
             pushResearch(pEgypt, iSailing)
 
         # 2750BC: Force completion of the quarry and Begin construction of the Pyramids in Inebu-Hedj
@@ -97,6 +97,7 @@ def EgyptHistory(iGameTurn, iPlayer):
         # 2040 BC: End of the first intermediate period, Mentuhotep II reconquers the North
         if iGameTurn == year(-2040):
             spawnConquerors(iEgypt, iIndependent, tInebuHedj, tInebuHedj, 1, -2040, 0, WarPlanTypes.WARPLAN_DOGPILE, 2)
+            # From onCityAcquired_Egypt, Inebu-Hedj will produce a Settler immediately after reconquering
 
         # 1991 BC: Switch 40% of militias to archers
         if iGameTurn == year(-1991):
@@ -109,11 +110,42 @@ def EgyptHistory(iGameTurn, iPlayer):
         if iGameTurn == year(-1971):
             relocateCapital(iEgypt, tInebuHedj)
         
-        # 1925 BC: Start working on the farm on (78, 42)
+        # 1925 BC: Start working on the farm on (78, 42) and complete the Settler in Inebu-Hedj, send it 
+        # towards Nubia with an archer to found Bwhen (settler handled in onUnitBuilt_Egypt)
         if iGameTurn == year(-1925):
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]
-            moveWorkerAndBuild(uWorker, 78, 42, iFarm)
+            unit_MoveAndMission(uWorker, 78, 42, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iFarm)
+            completeUnitProduction(cInebuHedj, iSettler)
+            uArcher = pEgypt.getUnitsOfType(iArcher)
+            for uA in uArcher:
+                if uA.getX() == 79 and uA.getY() == 43: # Inebu-Hedj
+                    uArcher = uA
+                    break
+            unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY) # Tile next to Bwhen because Bwhen is a desert
         
         # 1875 BC: Complete the farm on (78, 42)
         if iGameTurn == year(-1875):
             setImprovement(78, 42, iFarm)
+
+@handler("cityAcquiredAndKept")
+def onCityAcquired_Egypt(iPlayer, iCity):
+    iCiv = civ(iPlayer)
+    if iCiv == iEgypt:
+        cCity = city(iCity)
+
+        # 2040BC: Produce a settler immediately after reconquering Inebu-Hedj
+        if player(iEgypt).getPeriod() == iPeriodMiddleKingdom or player(iEgypt).getPeriod() == iPeriodOldKingdom:
+            print("[Egypt.py] %r.pushOrder(%r, %r, -1, False, False, append, True)" % (cInebuHedj, OrderTypes.ORDER_TRAIN, iSettler))
+            pushUnitProduction(cCity, iSettler)
+
+@handler("unitBuilt")
+def onUnitBuilt_Egypt(iCity, uUnit):
+    cCity = city(iCity)
+    print("[Egypt.py] onUnitBuilt_Egypt: %r" % uUnit)
+
+    # 1925BC: Send the settler towards Nubia with an archer to found Bwhen
+    if cCity.getOwner() == pEgypt.getID():
+        if uUnit.getUnitType() == iSettler:
+            print("[Egypt.py] Founding Bwhen with %r" % uUnit)
+            unit_MoveAndMission(uUnit, 78, 40, MissionTypes.MISSION_FOUND, MissionAITypes.MISSIONAI_FOUND) # Bwhen
+

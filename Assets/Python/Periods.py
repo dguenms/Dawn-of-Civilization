@@ -147,7 +147,17 @@ def onResurrection(iPlayer):
 def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	iCiv = civ(iPlayer)
 	iOwnerCiv = civ(iOwner)
-	
+
+	# Egypt
+	if iOwnerCiv == iIndependent:
+		if iCiv == iEgypt:
+			if player(iEgypt).getNumCities() == 2:
+				setPeriod(iEgypt, iPeriodMiddleKingdom)
+
+	if iOwnerCiv == iEgypt:
+		if iCiv in [iGreece, iRome]:
+			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
+
 	if iCiv == iSpain:
 		if not cities.owner(iMoors).region(rIberia):
 			setPeriod(iSpain, iPeriodSpain)
@@ -167,16 +177,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:
 			setPeriod(iTurks, -1)
-	
-	if iOwnerCiv == iEgypt:
-		if iCiv in [iGreece, iRome]:
-			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
 
-	if iOwnerCiv == iIndependent:
-		if iCiv == iEgypt:
-			if player(iEgypt).getNumCities() == 2:
-				setPeriod(iEgypt, iPeriodMiddleKingdom)
-			
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
