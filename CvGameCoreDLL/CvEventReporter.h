@@ -72,6 +72,7 @@ public:
 	void cityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void cityLost(CvCity *pCity);
 	void cityGifted(CvCity* pCity); // Leoreth
+	void cityLiberated(CvCity* pCity); // Leoreth
 	void cultureExpansion( CvCity *pCity, PlayerTypes ePlayer);
 	void cityGrowth(CvCity *pCity, PlayerTypes ePlayer);
 	void cityDoTurn(CvCity *pCity, PlayerTypes ePlayer);

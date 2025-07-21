@@ -250,6 +250,9 @@ class AreaArgument(NamedArgument):
 	def passable(self, *args, **kwargs):
 		return self.call("passable", args, kwargs)
 	
+	def birth(self, iCiv):
+		return self.call_for_civ("birth", iCiv)
+	
 	def core(self, iCiv):
 		return self.call_for_civ("core", iCiv)
 	

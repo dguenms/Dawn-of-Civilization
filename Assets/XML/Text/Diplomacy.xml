@@ -818,6 +818,70 @@
 		<Spanish>[CT_NAME], it seems you are much weaker than us. Your only reason to exist is to shower [OUR_CIV_SHORT] with vast quantities of tribute. You can start with this.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_DINGA_1</Tag>
+		<English>An moxo, [CT_NAME]? I am [OUR_NAME], great Ghana of the [OUR_EMPIRE].</English>
+		<French>An moxo, [CT_NAME]? I am [OUR_NAME], great Ghana of the [OUR_EMPIRE].</French>
+		<German>An moxo, [CT_NAME]? I am [OUR_NAME], great Ghana of the [OUR_EMPIRE].</German>
+		<Italian>An moxo, [CT_NAME]? I am [OUR_NAME], great Ghana of the [OUR_EMPIRE].</Italian>
+		<Spanish>An moxo, [CT_NAME]? I am [OUR_NAME], great Ghana of the [OUR_EMPIRE].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_DINGA_1</Tag>
+		<English>The Mazarim have heard your pleas. I have heard your pleas. We are unmoved.</English>
+		<French>The Mazarim have heard your pleas. I have heard your pleas. We are unmoved.</French>
+		<German>The Mazarim have heard your pleas. I have heard your pleas. We are unmoved.</German>
+		<Italian>The Mazarim have heard your pleas. I have heard your pleas. We are unmoved.</Italian>
+		<Spanish>The Mazarim have heard your pleas. I have heard your pleas. We are unmoved.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_DINGA_1</Tag>
+		<English>There will be peace when the seven heads of the black snake have devoured the last of the [CT_CIV_ADJ].</English>
+		<French>There will be peace when the seven heads of the black snake have devoured the last of the [CT_CIV_ADJ].</French>
+		<German>There will be peace when the seven heads of the black snake have devoured the last of the [CT_CIV_ADJ].</German>
+		<Italian>There will be peace when the seven heads of the black snake have devoured the last of the [CT_CIV_ADJ].</Italian>
+		<Spanish>There will be peace when the seven heads of the black snake have devoured the last of the [CT_CIV_ADJ].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_DINGA_1</Tag>
+		<English>You have journeyed far, [CT_NAME]. Rest here in the shade and tell me your troubles.</English>
+		<French>You have journeyed far, [CT_NAME]. Rest here in the shade and tell me your troubles.</French>
+		<German>You have journeyed far, [CT_NAME]. Rest here in the shade and tell me your troubles.</German>
+		<Italian>You have journeyed far, [CT_NAME]. Rest here in the shade and tell me your troubles.</Italian>
+		<Spanish>You have journeyed far, [CT_NAME]. Rest here in the shade and tell me your troubles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_DINGA_1</Tag>
+		<English>Like the bleak desert, [CT_NAME] encroaches unwelcome upon my door.</English>
+		<French>Like the bleak desert, [CT_NAME] encroaches unwelcome upon my door.</French>
+		<German>Like the bleak desert, [CT_NAME] encroaches unwelcome upon my door.</German>
+		<Italian>Like the bleak desert, [CT_NAME] encroaches unwelcome upon my door.</Italian>
+		<Spanish>Like the bleak desert, [CT_NAME] encroaches unwelcome upon my door.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_LEADER_DINGA_1</Tag>
+		<English>I pour ash on my head in greetings to you, [CT_NAME]. I pray your generosity is as humble.</English>
+		<French>I pour ash on my head in greetings to you, [CT_NAME]. I pray your generosity is as humble.</French>
+		<German>I pour ash on my head in greetings to you, [CT_NAME]. I pray your generosity is as humble.</German>
+		<Italian>I pour ash on my head in greetings to you, [CT_NAME]. I pray your generosity is as humble.</Italian>
+		<Spanish>I pour ash on my head in greetings to you, [CT_NAME]. I pray your generosity is as humble.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_LEADER_DINGA_1</Tag>
+		<English>Our friendship, [CT_NAME]; will it prove yielding like gold or brittle like salt?</English>
+		<French>Our friendship, [CT_NAME]; will it prove yielding like gold or brittle like salt?</French>
+		<German>Our friendship, [CT_NAME]; will it prove yielding like gold or brittle like salt?</German>
+		<Italian>Our friendship, [CT_NAME]; will it prove yielding like gold or brittle like salt?</Italian>
+		<Spanish>Our friendship, [CT_NAME]; will it prove yielding like gold or brittle like salt?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_LEADER_DINGA_1</Tag>
+		<English>There can be neither rain nor gold without sacrifice, [CT_NAME].</English>
+		<French>There can be neither rain nor gold without sacrifice, [CT_NAME].</French>
+		<German>There can be neither rain nor gold without sacrifice, [CT_NAME].</German>
+		<Italian>There can be neither rain nor gold without sacrifice, [CT_NAME].</Italian>
+		<Spanish>There can be neither rain nor gold without sacrifice, [CT_NAME].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>

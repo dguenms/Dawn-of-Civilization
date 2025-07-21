@@ -3592,6 +3592,10 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
+					<LeaderName>LEADER_DINGA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_MANSA_MUSA</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

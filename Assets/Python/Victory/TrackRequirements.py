@@ -466,6 +466,28 @@ class ImportCount(TrackRequirement):
 		goal.check()
 
 
+class LiberatedCities(TrackRequirement):
+	
+	TYPES = (AREA, CIVS, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_LIBERATE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_LIBERATED_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_LIBERATED_CITIES"
+	
+	def __init__(self, area, civs, required, **options):
+		TrackRequirement.__init__(self, area, civs, required, **options)
+		
+		self.area = area
+		self.civs = civs
+		
+		self.handle("cityLiberated", self.increment_liberated)
+	
+	def increment_liberated(self, goal, city):
+		if city in self.area and city.getPreviousCiv() not in self.civs:
+			self.increment()
+			goal.check()
+
+
 # First Buddhist URV goal
 class PeaceTurns(TrackRequirement):
 

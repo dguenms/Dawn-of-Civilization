@@ -330,14 +330,15 @@ dGoals = {
 	),
 	iDravidia: (
 		All(
-			CultureAmount(2500, at=600),
 			GoldAmount(5000, at=600),
+			CultureAmount(7500, at=600),
 			TradeGold(7500, by=1200),
 		),
 		Control(
 			plots.regions(rDravida, rDeccan, rRajputana).named(DECCAN),
 			plots.region(rBengal),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
+			plots.birth(iBurma),
 			subject=VASSALS,
 			at=1000,
 		),
@@ -352,7 +353,7 @@ dGoals = {
 			by=1200,
 		),
 		All(
-			AllowOnly(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN)),
+			LiberatedCities(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN), 12),
 			AllAttitude(AttitudeTypes.ATTITUDE_FRIENDLY, civs=group(iCivGroupAfrica).named(AFRICAN)),
 			at=1930,
 		),

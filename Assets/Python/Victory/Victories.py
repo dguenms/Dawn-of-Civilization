@@ -193,10 +193,6 @@ class Victory(object):
 		player(self.iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
 		
 		message(self.iPlayer, "TXT_KEY_VICTORY_INTERMEDIATE", color=iPurple)
-		
-		if player(self.iPlayer).isHuman():
-			for iOtherPlayer in players.major().alive().without(self.iPlayer):
-				player(iOtherPlayer).AI_changeAttitudeExtra(self.iPlayer, -2)
 
 
 class HistoricalVictory(Victory):

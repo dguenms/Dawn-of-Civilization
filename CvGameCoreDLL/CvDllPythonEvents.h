@@ -49,6 +49,7 @@ public:
 	void reportCityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void reportCityLost(CvCity *pCity);
 	void reportCityGifted(CvCity* pCity); // Leoreth
+	void reportCityLiberated(CvCity* pCity); // Leoreth
 	void reportCultureExpansion(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityGrowth(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityProduction(CvCity *pCity, PlayerTypes ePlayer);

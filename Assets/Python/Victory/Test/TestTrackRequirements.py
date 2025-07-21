@@ -1853,6 +1853,107 @@ class TestImportCount(ExtendedTestCase):
 			player(self.iPlayer).changeBonusImport(iDye, -1)
 
 
+class TestLiberatedCities(ExtendedTestCase):
+	
+	def setUp(self):
+		self.area = AreaArgumentFactory().of([(57, 35), (59, 35)]).named("Test Area")
+		self.civs = CivsArgument(iEgypt, iHarappa).named("Test Civs")
+		self.requirement = LiberatedCities(self.area, self.civs, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "LiberatedCities(Test Area, Test Civs, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "LiberatedCities(Test Area, Test Civs, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two cities in Test Area from non-Test Civs civilizations")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([(57, 35), (59, 35)])})
+	
+	def test_area_name(self):
+		self.assertEqual(self.requirement.area_name((57, 35)), "Test Area")
+		self.assertEqual(self.requirement.area_name((10, 10)), "")
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_liberate_sufficient(self):
+		city1, city2 = TestCities.owners(1, 1)
+		
+		try:
+			player(0).acquireCity(city1, True, False)
+			player(0).acquireCity(city2, True, False)
+			
+			events.fireEvent("cityLiberated", TestCities.city(0))
+			events.fireEvent("cityLiberated", TestCities.city(1))
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Liberated cities in Test Area: 2 / 2")
+		finally:
+			TestCities.city(0).kill()
+			TestCities.city(1).kill()
+	
+	def test_liberate_insufficient(self):
+		city = TestCities.one(1)
+		
+		try:
+			player(0).acquireCity(city, True, False)
+			
+			events.fireEvent("cityLiberated", TestCities.city(0))
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Liberated cities in Test Area: 1 / 2")
+		finally:
+			TestCities.city(0).kill()
+	
+	def test_liberate_not_in_area(self):
+		unused1, unused2, city1, city2 = TestCities.owners(1, 1, 1, 1)
+		
+		try:
+			player(0).acquireCity(city1, True, False)
+			player(0).acquireCity(city2, True, False)
+			
+			events.fireEvent("cityLiberated", TestCities.city(2))
+			events.fireEvent("cityLiberated", TestCities.city(3))
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Liberated cities in Test Area: 0 / 2")
+		finally:
+			unused1.kill()
+			unused2.kill()
+			TestCities.city(2).kill()
+			TestCities.city(3).kill()
+	
+	def test_liberate_different_previous_owner(self):
+		city1, city2 = cities = TestCities.owners(2, 2)
+		
+		try:
+			events.fireEvent("cityLiberated", city1)
+			events.fireEvent("cityLiberated", city2)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Liberated cities in Test Area: 0 / 2")
+		finally:
+			cities.kill()
+	
+	def test_not_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestPeaceTurns(ExtendedTestCase):
 
 	def setUp(self):
@@ -3538,6 +3639,7 @@ test_cases = [
 	TestHappiestTurns,
 	TestHealthiestTurns,
 	TestImportCount,
+	TestLiberatedCities,
 	TestPeaceTurns,
 	TestPillageCount,
 	TestPiracyGold,

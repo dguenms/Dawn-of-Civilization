@@ -119,6 +119,13 @@ class EventHandlerRegistry(object):
 		
 		return cityCaptureGold
 	
+	def cityLiberated(self, goal, applicable, func):
+		def cityLiberated((city,)):
+			if applicable(goal, city.getOwner()):
+				func(goal, city)
+		
+		return cityLiberated
+	
 	def cityLost(self, goal, applicable, func):
 		def cityLost((city,)):
 			if applicable(goal, city.getOwner()):

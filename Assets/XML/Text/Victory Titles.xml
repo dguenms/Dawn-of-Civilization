@@ -777,6 +777,14 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_MAL1</Tag>
+		<English>Caravans of the Sahara</English>
+		<French>Caravanes du Sahara </French>
+		<German>Karawanen der Sahara</German>
+		<Italian>Caravans of the Sahara</Italian>
+		<Spanish>Caravans of the Sahara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAL2</Tag>
 		<English>The Great Hajj</English>
 		<French>La grand hajj </French>
 		<German>Die gro&#223;e Hadsch</German>
@@ -784,20 +792,12 @@
 		<Spanish>The Great Hajj</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_MAL2</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAL3</Tag>
 		<English>The Madrassah of Timbuktu</English>
 		<French>La madrassa de Tombouctou</French>
 		<German>Die Madrasah von Timbuktu</German>
 		<Italian>The Madrassah of Timbuktu</Italian>
 		<Spanish>The Madrassah of Timbuktu</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_MAL3</Tag>
-		<English>Caravans of the Sahara</English>
-		<French>Caravanes du Sahara </French>
-		<German>Karawanen der Sahara</German>
-		<Italian>Caravans of the Sahara</Italian>
-		<Spanish>Caravans of the Sahara</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -923,6 +923,56 @@
 		<German>Schah Dschahan</German>
 		<Italian>Shah Jahan</Italian>
 		<Spanish>Shah Jahan</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR1</Tag>
+		<English>Norman Conquests</English>
+		<French>Les conqu&#234;tes normandes </French>
+		<German>Normannische Eroberungen</German>
+		<Italian>Norman Conquests</Italian>
+		<Spanish>Norman Conquests</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR2</Tag>
+		<English>Vinland Saga</English>
+		<French>La saga du Vinland </French>
+		<German>Die Vinland-Saga</German>
+		<Italian>Vinland Saga</Italian>
+		<Spanish>Vinland Saga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NOR3</Tag>
+		<English>Danegeld</English>
+		<French>Danegeld </French>
+		<German>Danegeld</German>
+		<Italian>Danegeld</Italian>
+		<Spanish>Danegeld</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NUB1</Tag>
+		<English>Kingdom of Kush</English>
+		<French>Kingdom of Kush</French>
+		<German>Kingdom of Kush</German>
+		<Italian>Kingdom of Kush</Italian>
+		<Spanish>Kingdom of Kush</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NUB2</Tag>
+		<English>The Twenty-Fifth Dynasty</English>
+		<French>The Twenty-Fifth Dynasty</French>
+		<German>The Twenty-Fifth Dynasty</German>
+		<Italian>The Twenty-Fifth Dynasty</Italian>
+		<Spanish>The Twenty-Fifth Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_NUB3</Tag>
+		<English>Coptic Orthodox Patriarchate</English>
+		<French>Coptic Orthodox Patriarchate</French>
+		<German>Coptic Orthodox Patriarchate</German>
+		<Italian>Coptic Orthodox Patriarchate</Italian>
+		<Spanish>Coptic Orthodox Patriarchate</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -1200,30 +1250,6 @@
 		<Spanish>Patronage</Spanish>
 	</TEXT>
 	
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_NOR1</Tag>
-		<English>Norman Conquests</English>
-		<French>Les conqu&#234;tes normandes </French>
-		<German>Normannische Eroberungen</German>
-		<Italian>Norman Conquests</Italian>
-		<Spanish>Norman Conquests</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_NOR2</Tag>
-		<English>Vinland Saga</English>
-		<French>La saga du Vinland </French>
-		<German>Die Vinland-Saga</German>
-		<Italian>Vinland Saga</Italian>
-		<Spanish>Vinland Saga</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_NOR3</Tag>
-		<English>Danegeld</English>
-		<French>Danegeld </French>
-		<German>Danegeld</German>
-		<Italian>Danegeld</Italian>
-		<Spanish>Danegeld</Spanish>
-	</TEXT>
 	
 	<!-- RELIGIOUS GOAL TITLES -->
 	

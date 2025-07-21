@@ -554,6 +554,20 @@ void CvDllPythonEvents::reportCityGifted(CvCity* pCity)
 	}
 }
 
+void CvDllPythonEvents::reportCityLiberated(CvCity* pCity)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("cityLiberated");
+
+		CyCity* pyu = new CyCity(pCity);
+		eventData.add(gDLL->getPythonIFace()->makePythonObject(pyu));
+		postEvent(eventData);
+		delete pyu;
+	}
+}
+
 void CvDllPythonEvents::reportCultureExpansion( CvCity *pCity, PlayerTypes ePlayer )
 {
 	if (preEvent())

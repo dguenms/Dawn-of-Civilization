@@ -1166,5 +1166,13 @@
 			<NoShaderNIF>Art/Leaderheads/Neang Neak/asoka.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Neang Neak/catherine_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DINGA</Type>
+			<Button>Art/Leaderheads/Dinga/Button_Dinga.dds</Button>
+			<NIF>Art/Leaderheads/Dinga/cunhambebe.nif</NIF>
+			<KFM>Art/Leaderheads/Dinga/cunhambebe.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Dinga/cunhambebe.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Dinga/cunhambebe_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
