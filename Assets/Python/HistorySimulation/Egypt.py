@@ -123,9 +123,17 @@ def EgyptHistory(iGameTurn, iPlayer):
                     break
             unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY) # Tile next to Bwhen because Bwhen is a desert
         
-        # 1875 BC: Complete the farm on (78, 42)
+        # 1875 BC: Complete the farm on (78, 42), send the worker to build a mine on (81,43)
         if iGameTurn == year(-1875):
             setImprovement(78, 42, iFarm)
+            uWorker = pEgypt.getUnitsOfType(iWorker)[0]
+            unit_MoveAndMission(uWorker, 81, 43, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iMine)
+
+        # 1850 BC: Bwhen is founded, and the archer is sent to fortify now that the tile is accessible, handled in onCityBuilt_Egypt
+        # 1825 BC: Complete the mine on (81, 43)
+        if iGameTurn == year(-1825):
+            setImprovement(81, 43, iMine)
+
 
 @handler("cityAcquiredAndKept")
 def onCityAcquired_Egypt(iPlayer, iCity):
@@ -135,17 +143,29 @@ def onCityAcquired_Egypt(iPlayer, iCity):
 
         # 2040BC: Produce a settler immediately after reconquering Inebu-Hedj
         if player(iEgypt).getPeriod() == iPeriodMiddleKingdom or player(iEgypt).getPeriod() == iPeriodOldKingdom:
-            print("[Egypt.py] %r.pushOrder(%r, %r, -1, False, False, append, True)" % (cInebuHedj, OrderTypes.ORDER_TRAIN, iSettler))
             pushUnitProduction(cCity, iSettler)
+
 
 @handler("unitBuilt")
 def onUnitBuilt_Egypt(iCity, uUnit):
     cCity = city(iCity)
-    print("[Egypt.py] onUnitBuilt_Egypt: %r" % uUnit)
 
     # 1925BC: Send the settler towards Nubia with an archer to found Bwhen
     if cCity.getOwner() == pEgypt.getID():
         if uUnit.getUnitType() == iSettler:
-            print("[Egypt.py] Founding Bwhen with %r" % uUnit)
             unit_MoveAndMission(uUnit, 78, 40, MissionTypes.MISSION_FOUND, MissionAITypes.MISSIONAI_FOUND) # Bwhen
 
+
+@handler("cityBuilt")
+def onCityBuilt_Egypt(iCity):
+    cCity = city(iCity)
+
+    # 1850 BC: Bwhen is founded, send the archer to fortify now that the tile is accessible
+    if cCity.getName() == "Bwhen":
+        uArcher = pEgypt.getUnitsOfType(iArcher)
+        for uA in uArcher:
+            if uA.getX() == 79 and uA.getY() == 41:
+                uArcher = uA
+                break
+        unit_MoveAndMission(uArcher, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
+    
