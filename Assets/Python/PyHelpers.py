@@ -146,10 +146,13 @@ class PyPlayer:
 	def getResearchTurnsLeft(self, iTech, bOverflow = 1):
 		' int '
 		return self.player.getResearchTurnsLeft( iTech, bOverflow )
+	
+	def getCurrentTech(self):
+		return self.player.getCurrentResearch()
 		
 	def getCurrentTechName(self):
 		' str - Current Research Tech Name '
-		iTech = self.player.getCurrentResearch()
+		iTech = self.getCurrentTech()
 		if ( iTech > 0 and iTech < gc.getNumTechInfos() ):
 			return str( gc.getTechInfo( iTech ).getDescription() )
 		# "No Research"

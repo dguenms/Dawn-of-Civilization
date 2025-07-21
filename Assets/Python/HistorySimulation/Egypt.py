@@ -70,13 +70,16 @@ def EgyptHistory(iGameTurn, iPlayer):
         if iGameTurn == year(-2520):
             pushBuildingProduction(cInebuHedj, unique_building(iEgypt, iPaganTemple))
 
-        # 2350 BC: Complete the research of Seafaring
+        # 2350 BC: Complete the research of Seafaring, beeline for construction
         if iGameTurn == year(-2350):
             completeResearch(pEgypt, iSeafaring)
+            pushResearch(pEgypt, iConstruction)
 
-        # 2250 BC: 2 turns of unrest in Inebu-Hedj
+        # 2250 BC: 2 turns of unrest in Inebu-Hedj, complete one tech if it's not construction
         if iGameTurn == year(-2250):
             cInebuHedj.setOccupationTimer(2)
+            if pEgypt.getCurrentTech() != iConstruction:
+                completeResearch(pEgypt, pEgypt.getCurrentTech())
             
         # 2200 BC: Destroy the farm improvements
         if iGameTurn == year(-2200):
@@ -93,13 +96,23 @@ def EgyptHistory(iGameTurn, iPlayer):
             cThebes.setOccupationTimer(4)
             cThebes.changePopulation(-2)
             cThebes.setCulture(cThebes.getOwner(), 10, True)
-                
-        # 2040 BC: End of the first intermediate period, Mentuhotep II reconquers the North
-        if iGameTurn == year(-2040):
-            spawnConquerors(iEgypt, iIndependent, tInebuHedj, tInebuHedj, 1, -2040, 0, WarPlanTypes.WARPLAN_DOGPILE, 2)
-            # From onCityAcquired_Egypt, Inebu-Hedj will produce a Settler immediately after reconquering
 
-        # 1991 BC: Switch 40% of militias to archers
+        # 2150 BC: Complete another tech if it's not construction
+        if iGameTurn == year(-2150):
+            if pEgypt.getCurrentTech() != iConstruction:
+                completeResearch(pEgypt, pEgypt.getCurrentTech())
+                
+        # 2040 BC: End of the first intermediate period, Mentuhotep II reconquers the North, complete a tech if it's not construction
+        if iGameTurn == year(-2040):
+            if pEgypt.hasResearchedTech(iSmelting):
+                spawnConquerors(iEgypt, iIndependent, tInebuHedj, tInebuHedj, 1, -2040, 0, WarPlanTypes.WARPLAN_DOGPILE, 0) # With smelting they are too op
+            else:
+                spawnConquerors(iEgypt, iIndependent, tInebuHedj, tInebuHedj, 1, -2040, 0, WarPlanTypes.WARPLAN_DOGPILE, 2)
+            # From onCityAcquired_Egypt, Inebu-Hedj will produce a Settler immediately after reconquering
+            if pEgypt.getCurrentTech() != iConstruction:
+                completeResearch(pEgypt, pEgypt.getCurrentTech())
+
+        # 1991 BC: Switch 40% of militias to archers, MIGHT BE REMOVED WITH SMELTING DISCOVERED EARLIER
         if iGameTurn == year(-1991):
             uMilitias = pEgypt.getUnitsOfType(iMilitia)
             iCount = int(len(uMilitias) * 0.4)
@@ -109,6 +122,10 @@ def EgyptHistory(iGameTurn, iPlayer):
         # 1971 BC: Capital is moved back to Inebu-Hedj
         if iGameTurn == year(-1971):
             relocateCapital(iEgypt, tInebuHedj)
+
+        # 1950 BC: Complete the research of Construction
+        if iGameTurn == year(-1950):
+            completeResearch(pEgypt, iConstruction)            
         
         # 1925 BC: Start working on the farm on (78, 42) and complete the Settler in Inebu-Hedj, send it 
         # towards Nubia with an archer to found Bwhen (settler handled in onUnitBuilt_Egypt)
@@ -121,6 +138,8 @@ def EgyptHistory(iGameTurn, iPlayer):
                 if uA.getX() == 79 and uA.getY() == 43: # Inebu-Hedj
                     uArcher = uA
                     break
+            if uArcher is None:
+                uArcher = makeUnit(iEgypt, iArcher, tInebuHedj, UnitAITypes.UNITAI_CITY_DEFENSE)
             unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY) # Tile next to Bwhen because Bwhen is a desert
         
         # 1875 BC: Complete the farm on (78, 42), send the worker to build a mine on (81,43)
@@ -129,7 +148,7 @@ def EgyptHistory(iGameTurn, iPlayer):
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]
             unit_MoveAndMission(uWorker, 81, 43, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iMine)
 
-        # 1850 BC: Bwhen is founded, and the archer is sent to fortify now that the tile is accessible, handled in onCityBuilt_Egypt
+        # 1850 BC: Bwhen is founded with walls, and the archer is sent to fortify now that the tile is accessible, handled in onCityBuilt_Egypt
         # 1825 BC: Complete the mine on (81, 43)
         if iGameTurn == year(-1825):
             setImprovement(81, 43, iMine)
@@ -142,8 +161,14 @@ def onCityAcquired_Egypt(iPlayer, iCity):
         cCity = city(iCity)
 
         # 2040BC: Produce a settler immediately after reconquering Inebu-Hedj
+        # Make a worker unit if there are none
         if player(iEgypt).getPeriod() == iPeriodMiddleKingdom or player(iEgypt).getPeriod() == iPeriodOldKingdom:
             pushUnitProduction(cCity, iSettler)
+        if pEgypt.getUnitsOfType(iWorker) == []:
+            if cThebes.getProductionUnit() == iWorker:
+                completeUnitProduction(cThebes, iWorker)
+            else:
+                makeUnit(iEgypt, iWorker, tInebuHedj, UnitAITypes.UNITAI_WORKER)
 
 
 @handler("unitBuilt")
@@ -160,7 +185,7 @@ def onUnitBuilt_Egypt(iCity, uUnit):
 def onCityBuilt_Egypt(iCity):
     cCity = city(iCity)
 
-    # 1850 BC: Bwhen is founded, send the archer to fortify now that the tile is accessible
+    # 1850 BC: Bwhen is founded and starts with walls, send the archer to fortify now that the tile is accessible
     if cCity.getName() == "Bwhen":
         uArcher = pEgypt.getUnitsOfType(iArcher)
         for uA in uArcher:
@@ -168,4 +193,5 @@ def onCityBuilt_Egypt(iCity):
                 uArcher = uA
                 break
         unit_MoveAndMission(uArcher, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
+        cCity.setHasRealBuilding(iWalls, True)
     
