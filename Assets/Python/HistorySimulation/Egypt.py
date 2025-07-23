@@ -141,6 +141,7 @@ def EgyptHistory(iGameTurn, iPlayer):
                         break
                 if uArcher == []:
                     uArcher = makeUnit(iEgypt, iArcher, tInebuHedj, UnitAITypes.UNITAI_CITY_DEFENSE)
+                unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
         
         # 1875 BC: Complete the farm on (78, 42), send the worker to build a mine on (81,43)
         if iGameTurn == year(-1875):
@@ -149,11 +150,12 @@ def EgyptHistory(iGameTurn, iPlayer):
             unit_MoveAndMission(uWorker, 81, 43, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iMine)
 
         # 1850 BC: Bwhen is founded with walls, and the archer is sent to fortify now that the tile is accessible, handled in onCityBuilt_Egypt
+        if iGameTurn == year(-1850):
+            if not player(iEgypt).isHuman():
+                player(iEgypt).found(78, 40)
+
         # 1825 BC: Complete the mine on (81, 43)
         if iGameTurn == year(-1825):
-            if not player(iEgypt).isHuman():
-                print("AI Egypt is founding Bwhen, this should happen")
-                player(iEgypt).found(78, 40)
             setImprovement(81, 43, iMine)
 
 

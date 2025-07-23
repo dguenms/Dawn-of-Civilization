@@ -11,7 +11,10 @@ def pushBuildingProduction(cCity, iBuilding, append = False):
 def completeBuildingProduction(cCity, iBuilding):
     if cCity.getNumBuilding(iBuilding) > 0:
         return
-    cCity.setHasRealBuilding(iBuilding, True)
+    if iBuilding in range(iFirstWonder, iNumBuildings):
+        cCity.changeBuildingProduction(iBuilding, cCity.getProductionNeeded() - cCity.getProduction())
+    else:
+        cCity.setHasRealBuilding(iBuilding, True)
 
 def pushUnitProduction(cCity, iUnit, append = False):
     cCity.pushOrder(OrderTypes.ORDER_TRAIN, iUnit, -1, False, False, append, True)
@@ -21,7 +24,8 @@ def completeUnitProduction(cCity, iUnit):
 
 def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData = 0):
     gUnit = iUnit.getGroup()
-    iUnit.doCommand(CommandTypes.COMMAND_CANCEL_ALL, -1, -1)
+    if gUnit.getAutomateType() != -1:
+        iUnit.doCommand(CommandTypes.COMMAND_STOP_AUTOMATION, -1, -1)
     if player(iUnit.getOwner()).isHuman():
         gUnit.pushMoveToMission(plotX, plotY)
     else:
