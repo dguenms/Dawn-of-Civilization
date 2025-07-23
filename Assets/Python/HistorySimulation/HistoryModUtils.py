@@ -11,7 +11,7 @@ def pushBuildingProduction(cCity, iBuilding, append = False):
 def completeBuildingProduction(cCity, iBuilding):
     if cCity.getNumBuilding(iBuilding) > 0:
         return
-    cCity.changeBuildingProduction(iBuilding, cCity.getProductionNeeded() - cCity.getProduction())
+    cCity.setHasRealBuilding(iBuilding, True)
 
 def pushUnitProduction(cCity, iUnit, append = False):
     cCity.pushOrder(OrderTypes.ORDER_TRAIN, iUnit, -1, False, False, append, True)
@@ -21,7 +21,11 @@ def completeUnitProduction(cCity, iUnit):
 
 def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData = 0):
     gUnit = iUnit.getGroup()
-    gUnit.pushMoveToMission(plotX, plotY)
+    iUnit.doCommand(CommandTypes.COMMAND_CANCEL_ALL, -1, -1)
+    if player(iUnit.getOwner()).isHuman():
+        gUnit.pushMoveToMission(plotX, plotY)
+    else:
+        move(iUnit, (plotX, plotY))
     gUnit.pushMission(MissionType, iData, 0, 0, True, False, MissionAITypes, plot(plotX, plotY), iUnit)
 
 def setImprovement(plotX, plotY, iImprovement):

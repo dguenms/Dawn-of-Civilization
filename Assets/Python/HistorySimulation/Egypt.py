@@ -37,10 +37,10 @@ def EgyptHistory(iGameTurn, iPlayer):
             completeResearch(pEgypt, iMasonry)
             pEgypt.setCivic(iCivicsSociety, iSlavery)
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]                    
-            unit_MoveAndMission(uWorker, 78, 43, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iQuarry)
+            unit_MoveAndMission(uWorker, 78, 43, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iQuarry)
             pushResearch(pEgypt, iSailing)
 
-        # 2750BC: Force completion of the quarry and Begin construction of the Pyramids in Inebu-Hedj
+        # 2780BC: Force completion of the quarry and Begin construction of the Pyramids in Inebu-Hedj
         if iGameTurn == year(-2780):
             setImprovement(78, 43, iQuarry)
             pushBuildingProduction(cInebuHedj, iPyramids)
@@ -51,8 +51,7 @@ def EgyptHistory(iGameTurn, iPlayer):
             completeResearch(pEgypt, iSailing)
             pushResearch(pEgypt, iTanning)
 
-
-        # 2600 BC: Complete the pyramids and start working on the Great Sphinx
+        # 2600 BC: Complete the pyramids
         if iGameTurn == year(-2600):
             completeBuildingProduction(cInebuHedj, iPyramids)
 
@@ -89,7 +88,7 @@ def EgyptHistory(iGameTurn, iPlayer):
             setImprovement(79, 42, -1)
 
         # 2184 BC: First intermediate period: Inebu-Hedj becomes independent, unrest in both cities during the period and
-        # population and culture decay, forces research of Tanning for archers
+        # population and culture decay
         if iGameTurn == year(-2184):
             secedeCity(cInebuHedj, slot(iIndependent), False, 20, 0, 3)
             team(iEgypt).declareWar(team(iIndependent).getID(), True, -1)
@@ -112,12 +111,12 @@ def EgyptHistory(iGameTurn, iPlayer):
             if pEgypt.getCurrentTech() != iConstruction:
                 completeResearch(pEgypt, pEgypt.getCurrentTech())
 
-        # 1991 BC: Switch 40% of militias to archers, MIGHT BE REMOVED WITH SMELTING DISCOVERED EARLIER
+        # 1991 BC: Switch 40% of melee units to archers
         if iGameTurn == year(-1991):
-            uMilitias = pEgypt.getUnitsOfType(iMilitia)
-            iCount = int(len(uMilitias) * 0.4)
+            uMelee = pEgypt.getUnitsOfType(iMilitia) + pEgypt.getUnitsOfType(iSpearman)
+            iCount = int(len(uMelee) * 0.4)
             for i in range(iCount):
-                replace(uMilitias[i], iArcher)
+                replace(uMelee[i], iArcher)
 
         # 1971 BC: Capital is moved back to Inebu-Hedj
         if iGameTurn == year(-1971):
@@ -129,28 +128,32 @@ def EgyptHistory(iGameTurn, iPlayer):
         
         # 1925 BC: Start working on the farm on (78, 42) and complete the Settler in Inebu-Hedj, send it 
         # towards Nubia with an archer to found Bwhen (settler handled in onUnitBuilt_Egypt)
+        # If AI: City will be directly founded later
         if iGameTurn == year(-1925):
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]
-            unit_MoveAndMission(uWorker, 78, 42, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iFarm)
-            completeUnitProduction(cInebuHedj, iSettler)
-            uArcher = pEgypt.getUnitsOfType(iArcher)
-            for uA in uArcher:
-                if uA.getX() == 79 and uA.getY() == 43: # Inebu-Hedj
-                    uArcher = uA
-                    break
-            if uArcher is None:
-                uArcher = makeUnit(iEgypt, iArcher, tInebuHedj, UnitAITypes.UNITAI_CITY_DEFENSE)
-            unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY) # Tile next to Bwhen because Bwhen is a desert
+            unit_MoveAndMission(uWorker, 78, 42, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iFarm)
+            if player(iEgypt).isHuman():
+                completeUnitProduction(cInebuHedj, iSettler)
+                uArcher = pEgypt.getUnitsOfType(iArcher)
+                for uA in uArcher:
+                    if uA.getX() == 79 and uA.getY() == 43: # Inebu-Hedj
+                        uArcher = uA
+                        break
+                if uArcher == []:
+                    uArcher = makeUnit(iEgypt, iArcher, tInebuHedj, UnitAITypes.UNITAI_CITY_DEFENSE)
         
         # 1875 BC: Complete the farm on (78, 42), send the worker to build a mine on (81,43)
         if iGameTurn == year(-1875):
             setImprovement(78, 42, iFarm)
             uWorker = pEgypt.getUnitsOfType(iWorker)[0]
-            unit_MoveAndMission(uWorker, 81, 43, MissionTypes.MISSION_BUILD, MissionAITypes.MISSIONAI_BUILD, iMine)
+            unit_MoveAndMission(uWorker, 81, 43, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iMine)
 
         # 1850 BC: Bwhen is founded with walls, and the archer is sent to fortify now that the tile is accessible, handled in onCityBuilt_Egypt
         # 1825 BC: Complete the mine on (81, 43)
         if iGameTurn == year(-1825):
+            if not player(iEgypt).isHuman():
+                print("AI Egypt is founding Bwhen, this should happen")
+                player(iEgypt).found(78, 40)
             setImprovement(81, 43, iMine)
 
 
@@ -185,13 +188,13 @@ def onUnitBuilt_Egypt(iCity, uUnit):
 def onCityBuilt_Egypt(iCity):
     cCity = city(iCity)
 
-    # 1850 BC: Bwhen is founded and starts with walls, send the archer to fortify now that the tile is accessible
+    # 1850 BC: Bwhen is founded and starts with walls, if not AI send the archer to fortify now that the tile is accessible 
     if cCity.getName() == "Bwhen":
-        uArcher = pEgypt.getUnitsOfType(iArcher)
-        for uA in uArcher:
-            if uA.getX() == 79 and uA.getY() == 41:
-                uArcher = uA
-                break
-        unit_MoveAndMission(uArcher, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
+        if player(iEgypt).isHuman():
+            uArcher = pEgypt.getUnitsOfType(iArcher)
+            for uA in uArcher:
+                if uA.getX() == 79 and uA.getY() == 41:
+                    uArcher = uA
+                    break
+            unit_MoveAndMission(uArcher, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
         cCity.setHasRealBuilding(iWalls, True)
-    

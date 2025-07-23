@@ -1409,6 +1409,7 @@ dAIAlwaysTrain = CivDict({
 }, [])
 
 dNeverTrain = CivDict({
+	iEgypt: [iSettler],
 	iCongo: [iCrossbowman],
 }, [])
 
@@ -1933,7 +1934,6 @@ dTechPreferences = {
 ### Building Preferences ###
 
 dDefaultWonderPreferences = {
-	iEgypt: -15,
 	iBabylonia: -15,
 	iGreece: -15,
 	iIndia: -15,
@@ -1953,9 +1953,12 @@ dDefaultWonderPreferences = {
 dBuildingPreferences = {
 	iEgypt : {
 		iPyramids: 100,
+		iGreatSphinx: 100,
 		iGreatLibrary: 30,
 		iGreatLighthouse: 30,
-		iGreatSphinx: 30,
+
+		iIshtarGate: -100,
+		iHangingGardens: -100,
 	},
 	iBabylonia : {
 		iHangingGardens: 50,
@@ -1963,19 +1966,18 @@ dBuildingPreferences = {
 		iSpiralMinaret: 20,
 		iGreatMausoleum: 15,
 		
-		iPyramids: 0,
-		iGreatSphinx: 0,
+		iPyramids: -100,
+		iGreatSphinx: -100,
 		
 		iOracle: -60,
 	},
 	iHarappa : {
-		iPyramids: 0,
-		iGreatSphinx: 0,
+		iPyramids: -100,
+		iGreatSphinx: -100,
 	},
 	iAssyria : {
-		iPyramids: 0,
-		iGreatSphinx: 0,
-	},
+
+		},
 	iChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
@@ -1990,10 +1992,7 @@ dBuildingPreferences = {
 		iBorobudur: -30,
 		iBrandenburgGate: -30,
 	},
-	iNubia : {
-		iPyramids: 20,
-		iGreatSphinx: 20,
-		
+	iNubia : {		
 		iHangingGardens: -30,
 	},
 	iGreece : {
@@ -2009,7 +2008,6 @@ dBuildingPreferences = {
 		iGreatLibrary: 15,
 		iGreatLighthouse: 15,
 		
-		iPyramids: -100,
 		iGreatCothon: -100,
 	},
 	iIndia : {
@@ -2035,8 +2033,6 @@ dBuildingPreferences = {
 		iGreatCothon: 30,
 		iGreatLighthouse: 15,
 		iColossus: 15,
-		
-		iPyramids: -50,
 	},
 	iPolynesia : {
 		iMoaiStatues: 30,
