@@ -1168,10 +1168,10 @@ dResurrectionLeaders = CivDict({
 })
 
 # update DLL constants when this changes
-iNumPeriods = 28
+iNumPeriods = 29
 (
     # Egypt
-	iPeriodOldKingdom, iPeriodMiddleKingdom, iPeriodPtolemaicEgypt, 
+	iPeriodOldKingdom, iPeriodMiddleKingdom, iPeriodNewKingdom, iPeriodPtolemaicEgypt, 
     
 iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, 
 iPeriodInsularCelts, iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, 

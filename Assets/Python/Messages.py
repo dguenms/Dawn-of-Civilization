@@ -8,6 +8,8 @@ from Periods import dPeriodNames
 
 @handler("playerPeriodChange")
 def announcePeriodChange(iPlayer, iPeriod):
+	if civ(iPlayer) == iEgypt:
+		return # Historical modmod temporary measure
 	if iPeriod != -1:
 		if FileMap("Settler/Period/%s.csv" % dPeriodNames[iPeriod]) or FileMap("War/Period/%s.csv" % dPeriodNames[iPeriod]) or iPeriod in dPeriodCoreArea:
 			message(iPlayer, "TXT_KEY_MESSAGE_PERIOD_AREA_CHANGE")

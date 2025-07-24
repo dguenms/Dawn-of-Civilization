@@ -57,6 +57,7 @@ iCanadaEasternBorder = 40
 # Egyptian locations
 tInebuHedj = (79, 43)
 tThebes = (80, 41)
+tBwhen = (78, 40)
 
 tAngkor = (121, 37)
 tBabylon = (89, 47)

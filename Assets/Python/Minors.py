@@ -258,10 +258,6 @@ class Barbarians(object):
 		
 		if not self.every():
 			return False
-	
-		if self.pattern in [NOMADS, INVADERS, CLOSE_INVADERS, SEA_INVADERS]:
-			if not self.valid_targets():
-				return False
 		
 		if self.spawn_limit():
 			return False
@@ -269,7 +265,6 @@ class Barbarians(object):
 		if self.pattern == MINORS:
 			if plots.rectangle(self.area).land().all(lambda p: p.isOwned() and not owner(p, self.get_owner())):
 				return False
-	
 		return True
 	
 	def every(self):
@@ -313,9 +308,6 @@ class Barbarians(object):
 				return civ(minor_city.getOwner())
 		
 		return self.iOwner
-	
-	def valid_targets(self):
-		return cities.rectangle(self.target_area).any(lambda city: not is_minor(city.getOwner()))
 	
 	def count_existing(self, iUnit):
 		return units.owner(self.iOwner).type(iUnit).where(lambda unit: data.units[unit].spawn_data == self.spawn_data()).count()
@@ -507,7 +499,8 @@ barbarians = [
 	Barbarians(-2000, -1400, {iChariot: 1}, ((98, 45), (102, 52)), 8, INVADERS, target_area=((99, 42), (104, 50)), adjective="TXT_KEY_ADJECTIVE_INDO_ARYAN"),
 	Barbarians(-2000, -1200, {iWarrior: 2}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(-1800, -1200, {iWarrior: 2}, ((87, 44), (91, 52)), 10, INVADERS, adjective="TXT_KEY_ADJECTIVE_KASSITE"),
-	Barbarians(-1800, -1400, {iAxeman: 1}, ((79, 42), (84, 46)), 8, INVADERS, target_area=((77, 39), (82, 45)), adjective="TXT_KEY_ADJECTIVE_HYKSOS"),
+	Barbarians(-1750, -1750, {iMedjay: 2}, ((79, 39), (79, 39)), 1, CLOSE_INVADERS, target_area=((78,40), (78, 40)), adjective="TXT_KEY_ADJECTIVE_NUBIAN"),
+	Barbarians(-1650, -1650, {iChariot: 4}, ((80, 44), (80, 44)), 1, CLOSE_INVADERS, target_area=((79, 43), (79, 43)), adjective="TXT_KEY_ADJECTIVE_HYKSOS"),
 	#Barbarians(-1600, -1200, {iChariot: 1}, ((85, 50), (90, 54)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_HURRIAN"),
 	Barbarians(-1600, -1000, {iChariot: 1}, ((73, 37), (77, 43)), 9, NOMADS, target_area=((77, 37), (82, 45)), adjective="TXT_KEY_ADJECTIVE_TJEHENU", promotions=(iDesertAdaptation,)),
 	#Barbarians(-1500, -850, {iChariot: 2}, ((79, 56), (103, 62)), 8, NOMADS, target_area=((83, 44), (104, 51)), adjective="TXT_KEY_ADJECTIVE_IRANIAN"),

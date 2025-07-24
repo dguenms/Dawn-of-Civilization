@@ -151,8 +151,11 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	# Egypt
 	if iOwnerCiv == iIndependent:
 		if iCiv == iEgypt:
-			if player(iEgypt).getNumCities() == 2:
-				setPeriod(iEgypt, iPeriodMiddleKingdom)
+			setPeriod(iEgypt, iPeriodMiddleKingdom)
+	
+	if iOwnerCiv == iBarbarian:
+		if iCiv == iEgypt:
+			setPeriod(iEgypt, iPeriodNewKingdom)
 
 	if iOwnerCiv == iEgypt:
 		if iCiv in [iGreece, iRome]:

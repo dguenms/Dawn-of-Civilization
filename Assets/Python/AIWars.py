@@ -291,12 +291,19 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 				iExtra += 1
 		
 		tPlot = findNearestLandPlot(city, iPlayer)
-		
-		dConquestUnits = {
-			iCityAttack: 2 + iExtra + max(0, iExtra-2),
-			iCitySiege: 1 + max(0, iExtra-1),
-			iDefend: 1,
-		}
+
+		# Hyskos reconquest
+		if iCiv == iEgypt and iYear > -1600:
+			dConquestUnits = {
+				iHarass: 2 + iExtra + max(0, iExtra-2),
+				iDefend: 1,
+			}
+		else:
+			dConquestUnits = {
+				iCityAttack: 2 + iExtra + max(0, iExtra-2),
+				iCitySiege: 1 + max(0, iExtra-1),
+				iDefend: 1,
+			}
 		createRoleUnits(iPlayer, tPlot, dConquestUnits.items())
 		
 		if iCiv == iGreece:

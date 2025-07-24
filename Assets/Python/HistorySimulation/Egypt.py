@@ -4,7 +4,7 @@ from RFCUtils import *
 from AIWars import spawnConquerors
 from Secession import secedeCity
 from HistoryModUtils import *
-from Locations import tThebes, tInebuHedj
+from Locations import tThebes, tInebuHedj, tBwhen
 
 pEgypt = None
 cInebuHedj = None
@@ -94,7 +94,7 @@ def EgyptHistory(iGameTurn, iPlayer):
             team(iEgypt).declareWar(team(iIndependent).getID(), True, -1)
             cThebes.setOccupationTimer(4)
             cThebes.changePopulation(-2)
-            cThebes.setCulture(cThebes.getOwner(), 10, True)
+            cThebes.setCulture(pEgypt.getID(), 10, True)
 
         # 2150 BC: Complete another tech if it's not construction
         if iGameTurn == year(-2150):
@@ -134,12 +134,11 @@ def EgyptHistory(iGameTurn, iPlayer):
             unit_MoveAndMission(uWorker, 78, 42, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iFarm)
             if player(iEgypt).isHuman():
                 completeUnitProduction(cInebuHedj, iSettler)
-                uArcher = pEgypt.getUnitsOfType(iArcher)
-                for uA in uArcher:
-                    if uA.getX() == 79 and uA.getY() == 43: # Inebu-Hedj
-                        uArcher = uA
-                        break
-                if uArcher == []:
+                uArcher = None
+                for unit in units.at(tInebuHedj).type(iArcher):
+                    uArcher = unit
+                    break
+                if uArcher == None:
                     uArcher = makeUnit(iEgypt, iArcher, tInebuHedj, UnitAITypes.UNITAI_CITY_DEFENSE)
                 unit_MoveAndMission(uArcher, 79, 41, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
         
@@ -158,9 +157,53 @@ def EgyptHistory(iGameTurn, iPlayer):
         if iGameTurn == year(-1825):
             setImprovement(81, 43, iMine)
 
+        # 1790 BC: Second intermediate period begins, Inebu-Hedj becomes independent, Thebes loses culture and population
+        if iGameTurn == year(-1790):
+            secedeCity(cInebuHedj, slot(iIndependent), False, 20, 0)
+            cThebes.changePopulation(-2)
+            cThebes.setCulture(pEgypt.getID(), 10, True)
+
+
+        # 1750 BC: Destruction of a farm, Bwhen is abandoned and razed by Nubians, handled in Minors.py
+        if iGameTurn == year(-1750):
+            setImprovement(78, 42, -1)
+            for unit in units.at(tBwhen):
+                unit.kill(False, -1)
+
+        # 1700 BC: Destruction of more farms
+        if iGameTurn == year(-1700):
+            setImprovement(79, 44, -1)
+            setImprovement(80, 40, -1)
+            
+        # 1650 BC: The Hyksos invade Egypt, and conquer the independent city of Inebu-Hedj, handled in Minors.py
+        # Egypt learns to make Chariots from them, send a worker to build a pasture on the horse (80, 42) with 
+        # a spearman as escort
+        if iGameTurn == year(-1650):
+            uWorker = pEgypt.getUnitsOfType(iWorker)
+            uSparman = pEgypt.getUnitsOfType(iSpearman)[0]
+            if uWorker == []:
+                uWorker = makeUnit(iEgypt, iWorker, tThebes, UnitAITypes.UNITAI_WORKER)
+            else:
+                uWorker = uWorker[0]
+            unit_MoveAndMission(uWorker, 80, 42, MissionTypes.MISSION_BUILD, MissionAITypes.NO_MISSIONAI, iPasture)
+            unit_MoveAndMission(uSparman, 80, 42, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_BONUS)
+
+        # 1600 BC: Pasture is completed, leader changes to Hatshepsut (handled in DynamicCivs.py)
+        if iGameTurn == year(-1600):
+            setImprovement(80, 42, iPasture)
+
+        # 1580 BC: One turn of unrest in Thebes
+        if iGameTurn == year(-1580):
+            cThebes.setOccupationTimer(1)
+        
+        # 1550 BC: The Hyksos are defeated, civ name becomes New Kingdom og Egypt (handled in DynamicCivs.py)
+        if iGameTurn == year(-1550):
+            spawnConquerors(iEgypt, iBarbarian, tInebuHedj, tInebuHedj, 1, -1550, 0, WarPlanTypes.WARPLAN_DOGPILE)
+
 
 @handler("cityAcquiredAndKept")
 def onCityAcquired_Egypt(iPlayer, iCity):
+    global cInebuHedj
     iCiv = civ(iPlayer)
     if iCiv == iEgypt:
         cCity = city(iCity)
@@ -168,12 +211,13 @@ def onCityAcquired_Egypt(iPlayer, iCity):
         # 2040BC: Produce a settler immediately after reconquering Inebu-Hedj
         # Make a worker unit if there are none
         if player(iEgypt).getPeriod() == iPeriodMiddleKingdom or player(iEgypt).getPeriod() == iPeriodOldKingdom:
+            cInebuHedj = cCity
             pushUnitProduction(cCity, iSettler)
-        if pEgypt.getUnitsOfType(iWorker) == []:
-            if cThebes.getProductionUnit() == iWorker:
-                completeUnitProduction(cThebes, iWorker)
-            else:
-                makeUnit(iEgypt, iWorker, tInebuHedj, UnitAITypes.UNITAI_WORKER)
+            if pEgypt.getUnitsOfType(iWorker) == []:
+                if cThebes.getProductionUnit() == iWorker:
+                    completeUnitProduction(cThebes, iWorker)
+                else:
+                    makeUnit(iEgypt, iWorker, tInebuHedj, UnitAITypes.UNITAI_WORKER)
 
 
 @handler("unitBuilt")
@@ -193,10 +237,6 @@ def onCityBuilt_Egypt(iCity):
     # 1850 BC: Bwhen is founded and starts with walls, if not AI send the archer to fortify now that the tile is accessible 
     if cCity.getName() == "Bwhen":
         if player(iEgypt).isHuman():
-            uArcher = pEgypt.getUnitsOfType(iArcher)
-            for uA in uArcher:
-                if uA.getX() == 79 and uA.getY() == 41:
-                    uArcher = uA
-                    break
-            unit_MoveAndMission(uArcher, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
+            for unit in units.at((79, 41)).type(iArcher):
+                unit_MoveAndMission(unit, 78, 40, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
         cCity.setHasRealBuilding(iWalls, True)

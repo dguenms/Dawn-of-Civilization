@@ -28,4 +28,6 @@ def activate(iPlayer, iCivilization):
 
 @handler("periodChange")
 def updateMapOnPeriodChange(iCivilization, iPeriod):
+	if iCivilization == iEgypt:
+		return # Historical modmod temporary measure
 	applyMap(iCivilization, iPeriod)

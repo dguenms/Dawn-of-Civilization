@@ -22,7 +22,7 @@ def pushUnitProduction(cCity, iUnit, append = False):
 def completeUnitProduction(cCity, iUnit):
     cCity.changeUnitProduction(iUnit, cCity.getProductionNeeded() - cCity.getProduction())
 
-def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData = 0):
+def unit_Move(iUnit, plotX, plotY):
     gUnit = iUnit.getGroup()
     if gUnit.getAutomateType() != -1:
         iUnit.doCommand(CommandTypes.COMMAND_STOP_AUTOMATION, -1, -1)
@@ -30,6 +30,10 @@ def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData 
         gUnit.pushMoveToMission(plotX, plotY)
     else:
         move(iUnit, (plotX, plotY))
+    return gUnit
+
+def unit_MoveAndMission(iUnit, plotX, plotY, MissionType, MissionAITypes, iData = 0):
+    gUnit = unit_Move(iUnit, plotX, plotY)
     gUnit.pushMission(MissionType, iData, 0, 0, True, False, MissionAITypes, plot(plotX, plotY), iUnit)
 
 def setImprovement(plotX, plotY, iImprovement):

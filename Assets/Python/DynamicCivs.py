@@ -720,7 +720,6 @@ def checkName(iPlayer):
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
-	if player(iPlayer).isHuman(): return
 	if not player(iPlayer).isAlive(): return
 	if is_minor(iPlayer): return
 	setLeader(iPlayer, leader(iPlayer))
@@ -742,7 +741,6 @@ def setAdjective(iPlayer, sAdj):
 	
 def setLeader(iPlayer, iLeader):
 	if not iLeader: return
-	if player(iPlayer).isHuman(): return
 	if player(iPlayer).getLeader() == iLeader: return
 	player(iPlayer).setLeader(iLeader)
 	
@@ -1586,6 +1584,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
+	period = player(iPlayer).getPeriod()
 
 	if iCiv == iEgypt:
 		if bResurrected or scenario() >= i600AD:
@@ -1594,9 +1593,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_SULTANATE_ADJECTIVE"
 			return "TXT_KEY_KINGDOM_ADJECTIVE"
 		
-		period = player(iPlayer).getPeriod()
 		if period == iPeriodOldKingdom: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
 		if period == iPeriodMiddleKingdom: return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
+		if period == iPeriodNewKingdom: return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 			
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt or slot(iGreece) in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
@@ -1609,12 +1608,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
 			return "TXT_KEY_CIV_EGYPT_COPTIC"
-				
-		#if iEra == iAncient:
-		#	return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
-		
-		if iEra == iClassical:
-			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 			
 	elif iCiv == iIndia:
 		if iReligion == iIslam:
@@ -1653,7 +1646,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 	
-		if bCityStates and period(iCiv) == -1:				
+		if bCityStates and period == -1:				
 			if bWar:
 				return "TXT_KEY_CIV_GREECE_LEAGUE"
 				
@@ -2044,8 +2037,6 @@ def leader(iPlayer):
 	
 	if not player(iPlayer).isAlive(): return None
 	
-	if player(iPlayer).isHuman(): return None
-	
 	pPlayer = player(iPlayer)
 	tPlayer = team(iPlayer)
 	iReligion = pPlayer.getStateReligion()
@@ -2068,7 +2059,7 @@ def leader(iPlayer):
 		
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt: return iPtolemy
 		
-		if getColumn(iPlayer) >= 3: return iRamesses
+		# if getColumn(iPlayer) >= 3: return iRamesses
 		
 		if year() >= year(-1600): return iHatshepsut
 		
