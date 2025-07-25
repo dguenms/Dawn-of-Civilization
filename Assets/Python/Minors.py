@@ -500,7 +500,7 @@ barbarians = [
 	Barbarians(-2000, -1200, {iWarrior: 2}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(-1800, -1200, {iWarrior: 2}, ((87, 44), (91, 52)), 10, INVADERS, adjective="TXT_KEY_ADJECTIVE_KASSITE"),
 	Barbarians(-1750, -1750, {iMedjay: 2}, ((79, 39), (79, 39)), 1, CLOSE_INVADERS, target_area=((78,40), (78, 40)), adjective="TXT_KEY_ADJECTIVE_NUBIAN"),
-	Barbarians(-1650, -1650, {iChariot: 4}, ((80, 44), (80, 44)), 1, CLOSE_INVADERS, target_area=((79, 43), (79, 43)), adjective="TXT_KEY_ADJECTIVE_HYKSOS"),
+	Barbarians(-1650, -1650, {iChariot: 4}, ((80, 44), (80, 44)), 1, CLOSE_INVADERS, target_area=((79, 43), (79, 43)), adjective="TXT_KEY_ADJECTIVE_HYKSOS", promotions=(iCombatI,)),
 	#Barbarians(-1600, -1200, {iChariot: 1}, ((85, 50), (90, 54)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_HURRIAN"),
 	Barbarians(-1600, -1000, {iChariot: 1}, ((73, 37), (77, 43)), 9, NOMADS, target_area=((77, 37), (82, 45)), adjective="TXT_KEY_ADJECTIVE_TJEHENU", promotions=(iDesertAdaptation,)),
 	#Barbarians(-1500, -850, {iChariot: 2}, ((79, 56), (103, 62)), 8, NOMADS, target_area=((83, 44), (104, 51)), adjective="TXT_KEY_ADJECTIVE_IRANIAN"),

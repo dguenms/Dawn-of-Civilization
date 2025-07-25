@@ -69,6 +69,10 @@ iCanada :		(31, 61), # Montreal
 })
 
 dPeriodCapitals = {
+# Egypt
+iPeriodMiddleKingdom: (80, 41), # Thebes
+iPeriodNewKingdom:	(80, 41), # Thebes
+
 iPeriodMing :			(125, 56), # Beijing
 iPeriodMaratha :		(105, 46),	# Delhi
 iPeriodCarthage : 		(67, 48),	# Carthage
