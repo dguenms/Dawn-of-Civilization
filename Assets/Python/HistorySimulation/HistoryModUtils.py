@@ -11,7 +11,7 @@ def pushBuildingProduction(cCity, iBuilding, append = False):
 def completeBuildingProduction(cCity, iBuilding):
     if cCity.getNumBuilding(iBuilding) > 0:
         return
-    if iBuilding in range(iFirstWonder, iNumBuildings) and player(cCity.getOwner()).isHuman():
+    if isWonder(iBuilding) and player(cCity.getOwner()).isHuman():
         cCity.changeBuildingProduction(iBuilding, cCity.getProductionNeeded() - cCity.getProduction())
     else:
         cCity.setHasRealBuilding(iBuilding, True)

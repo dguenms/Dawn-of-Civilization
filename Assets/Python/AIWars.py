@@ -263,7 +263,7 @@ def conquerorWar(iPlayer, iTarget, iWarPlan):
 		declareWar(iPlayer, iTarget, iWarPlan)
 
 	
-def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL, iExtra = 0):
+def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL, iExtra = 0, dConquestUnits = None):
 	iCiv = civ(iPlayer)
 	
 	if not player(iPlayer).isExisting():
@@ -292,13 +292,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		
 		tPlot = findNearestLandPlot(city, iPlayer)
 
-		# Hyskos reconquest
-		if iCiv == iEgypt and iYear > -1600:
-			dConquestUnits = {
-				iHarass: 2 + iExtra + max(0, iExtra-2),
-				iDefend: 1,
-			}
-		else:
+		if dConquestUnits == None:
 			dConquestUnits = {
 				iCityAttack: 2 + iExtra + max(0, iExtra-2),
 				iCitySiege: 1 + max(0, iExtra-1),

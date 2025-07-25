@@ -58,6 +58,8 @@ iCanadaEasternBorder = 40
 tInebuHedj = (79, 43)
 tThebes = (80, 41)
 tBwhen = (78, 40)
+# Nubian Locations
+tMedewi = (81, 37)
 
 tAngkor = (121, 37)
 tBabylon = (89, 47)

@@ -4,11 +4,21 @@ from RFCUtils import *
 from AIWars import spawnConquerors
 from Secession import secedeCity
 from HistoryModUtils import *
-from Locations import tThebes, tInebuHedj, tBwhen
+from Locations import tThebes, tInebuHedj, tBwhen, tMedewi
 
 pEgypt = None
 cInebuHedj = None
 cThebes = None
+dHyksosConquestUnits = {
+    iHarass: 3,
+    iCityAttack: 1,
+    iDefend: 1,
+}
+dNubianConquestUnits = {
+    iHarass: 3,
+    iCityAttack: 2,
+    iDefend: 1
+}
 
 @handler("GameStart")
 def initializeEgypt():
@@ -197,17 +207,34 @@ def EgyptHistory(iGameTurn, iPlayer):
 
         # 1600 BC: Pasture is completed, leader changes to Hatshepsut (handled in DynamicCivs.py)
         if iGameTurn == year(-1600):
-            if plot(80, 42).getImprovementType() == iPasture:
+            if plot(80, 42).getImprovementType() != iPasture:
                 setImprovement(80, 42, iPasture)
 
         # 1580 BC: One turn of unrest in Thebes
         if iGameTurn == year(-1580):
             cThebes.setOccupationTimer(1)
         
-        # 1550 BC: The Hyksos are defeated, civ name becomes New Kingdom of Egypt (handled in DynamicCivs.py)
-        if iGameTurn == year(-1550):
-            spawnConquerors(iEgypt, iBarbarian, tInebuHedj, tInebuHedj, 1, -1550, 0, WarPlanTypes.WARPLAN_DOGPILE, 1)
+        # 1550 BC: The Hyksos are defeated, civ name becomes New Kingdom of Egypt (handled in DynamicCivs.py), units spawn one turn early
+        if iGameTurn == year(-1575):
+            spawnConquerors(iEgypt, iBarbarian, tInebuHedj, tInebuHedj, 1, -1550, 0, WarPlanTypes.WARPLAN_DOGPILE, 0, dHyksosConquestUnits)
 
+        # 1540 BC: Nubia is settled one again on (78, 39) in 1520BC the city of Para with an archer and a war chariot
+        # Conqueror event against the Nubian capital Medewi
+        if iGameTurn == year(-1540):
+            if player(iEgypt).isHuman():            
+                makeUnit(iEgypt, iSettler, (78, 39), UnitAITypes.UNITAI_SETTLE)
+            makeUnit(iEgypt, iArcher, (78, 39), UnitAITypes.UNITAI_CITY_DEFENSE)
+            uWarChariot = find_min(pEgypt.getUnitsOfType(iWarChariot), lambda u: distance((78, 39), (u.getX(), u.getY()))).result
+            unit_MoveAndMission(uWarChariot, 78, 39, MissionTypes.MISSION_FORTIFY, MissionAITypes.MISSIONAI_GUARD_CITY)
+            spawnConquerors(iEgypt, slot(iNubia), tMedewi, tMedewi, 1, -1520, 0, WarPlanTypes.WARPLAN_DOGPILE, 0, dNubianConquestUnits)
+            plot(tMedewi).resetBirthProtected()
+
+
+        # 1520 BC: Para foundation for AI
+        if iGameTurn == year(-1520):
+            if not player(iEgypt).isHuman():
+                player(iEgypt).found(78, 39)
+                
 
 @handler("cityAcquiredAndKept")
 def onCityAcquired_Egypt(iPlayer, iCity):

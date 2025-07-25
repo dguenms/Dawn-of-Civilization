@@ -15,7 +15,7 @@ bStabilityOverlay = False
 # used: AIWars
 # finds a free adjacent plot to spawn units in, uses capital location as fallback
 def findNearestLandPlot(tPlot, iPlayer):
-	plot = plots.surrounding(tPlot).where(lambda p: not p.isWater() and not p.isPeak() and not p.isUnit()).random()
+	plot = plots.surrounding(tPlot).where(lambda p: not p.isWater() and not p.isPeak() and not p.isUnit() and not p.isRiver()).random()
 	if plot: return plot
 	
 	# if no plot is found, return that player's capital
