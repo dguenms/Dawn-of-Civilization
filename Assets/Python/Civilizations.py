@@ -456,7 +456,7 @@ lCivilizations = [
 		iAdvancedStartPoints=60,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iThalassocracy],
-		techs=techs.column(7).including(iDoctrine)
+		techs=techs.column(7).including(iPatronage)
 	),
 	Civilization(
 		iInca,
