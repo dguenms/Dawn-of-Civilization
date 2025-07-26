@@ -1819,6 +1819,8 @@ dTechPreferences = {
 	},
 	iMughals : {
 		iHumanities: 20,
+		iHorticulture: 20,
+		iUrbanPlanning: 20,
 		iPhilosophy: 15,
 		iEducation: 15,
 		iPaper: 15,
@@ -1829,6 +1831,7 @@ dTechPreferences = {
 		iCombinedArms: -15,
 		iScientificMethod: -30,
 		iExploration: -30,
+		iCivilLiberties: -30,
 	},
 	iMongols : {
 		iGunpowder: 40,
