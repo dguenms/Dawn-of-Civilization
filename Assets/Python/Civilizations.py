@@ -1795,7 +1795,6 @@ dTechPreferences = {
 		iGunpowder: 25,
 		iFirearms: 25,
 		iCompanies: 20,
-		iPatronage: 20,
 	},
 	iInca : {
 		iConstruction: 40,
@@ -2243,6 +2242,8 @@ dBuildingPreferences = {
 		iWembley: 20,
 		iEscorial: 20,
 		iNotreDame: 15,
+		
+		iSantaMariaDelFiore: -30,
 	},
 	iInca : {
 		iMachuPicchu: 40,
