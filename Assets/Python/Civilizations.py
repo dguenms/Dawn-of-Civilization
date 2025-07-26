@@ -507,7 +507,7 @@ lCivilizations = [
 		iAdvancedStartPoints=400,
 		iStateReligion=iProtestantism,
 		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine),
+		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iCompanies),
 	),
 	Civilization(
 		iRussia,
