@@ -16,9 +16,20 @@ TIMER = None
 TECHS = None
 
 
-#@handler("changeWar")
+#@handler("BeginGameTurn")
+def abortObserverMode():
+	breakObserverMode("Loaded Game")
+
+
+@handler("techAcquired")
+def onExploration(iTech, iTeam, iPlayer):
+	if civ(iPlayer) == iPortugal and iTech == iCartography:
+		breakObserverMode("Portugal Cartography")
+
+
+@handler("changeWar")
 def stopOnFrenchSpanishWar(bWar, iTeam, iOtherTeam):
-	if bWar and iFrance in [civ(iTeam), civ(iOtherTeam)] and iSpain in [civ(iTeam), civ(iOtherTeam)]:
+	if bWar and ((civ(iTeam) == iFrance and civ(iOtherTeam) == iSpain) or (civ(iTeam) == iSpain and civ(iOtherTeam) == iFrance)):
 		log_with_trace("%s declares war on %s" % (name(iTeam), name(iOtherTeam)))
 		breakObserverMode("%s declares war on %s" % (name(iTeam), name(iOtherTeam)))
 
