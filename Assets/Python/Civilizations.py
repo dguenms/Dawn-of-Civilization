@@ -953,7 +953,7 @@ dStartingUnits = CivDict({
 		iWork: 2,
 		iAttack: 4,
 		iDefend: 2,
-		iWorkerSea: 2,
+		iWorkerSea: 1,
 	},
 	iMughals: {
 		iSettle: 3,
@@ -1149,6 +1149,17 @@ dExtraAIUnits = CivDict({
 	},
 	iInca: {
 		iCityAttack: 2,
+	},
+	iAztecs: {
+		iAttack: 1,
+		iSkirmish: 1,
+		iDefend: 1,
+	},
+	iCongo: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 1,
+		iAttack: 2,
 	},
 	iIran: {
 		iAttack: 6,
