@@ -504,7 +504,7 @@ lCivilizations = [
 	Civilization(
 		iSweden,
 		iGold=200,
-		iAdvancedStartPoints=400,
+		iAdvancedStartPoints=800,
 		iStateReligion=iProtestantism,
 		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iCompanies),
