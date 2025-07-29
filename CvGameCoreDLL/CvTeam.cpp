@@ -2930,10 +2930,10 @@ int CvTeam::calculateTechDifferenceModifier() const
 		iModifier += (iRelativeTechValue - 125) / 5;
 		iModifier *= 10;
 	}
-	else if (iRelativeTechValue < 80)
+	else if (iRelativeTechValue < 75)
 	{
-		iModifier += (iRelativeTechValue - 80) / 10;
-		iModifier *= 10;
+		iModifier += (iRelativeTechValue - 80) / 5;
+		iModifier *= 5;
 
 		iModifier = std::max(iModifier, -lTechBackwardsBonus[GET_PLAYER(getLeaderID()).getCurrentEra()]);
 	}

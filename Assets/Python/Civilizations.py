@@ -456,7 +456,7 @@ lCivilizations = [
 		iAdvancedStartPoints=60,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iMerchantTrade, iClergy, iThalassocracy],
-		techs=techs.column(7).including(iDoctrine)
+		techs=techs.column(7).including(iPatronage)
 	),
 	Civilization(
 		iInca,
@@ -504,10 +504,10 @@ lCivilizations = [
 	Civilization(
 		iSweden,
 		iGold=200,
-		iAdvancedStartPoints=400,
+		iAdvancedStartPoints=800,
 		iStateReligion=iProtestantism,
 		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine),
+		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iCompanies),
 	),
 	Civilization(
 		iRussia,
@@ -953,7 +953,7 @@ dStartingUnits = CivDict({
 		iWork: 2,
 		iAttack: 4,
 		iDefend: 2,
-		iWorkerSea: 2,
+		iWorkerSea: 1,
 	},
 	iMughals: {
 		iSettle: 3,
@@ -1149,6 +1149,17 @@ dExtraAIUnits = CivDict({
 	},
 	iInca: {
 		iCityAttack: 2,
+	},
+	iAztecs: {
+		iAttack: 1,
+		iSkirmish: 1,
+		iDefend: 1,
+	},
+	iCongo: {
+		iSettle: 1,
+		iWork: 1,
+		iDefend: 1,
+		iAttack: 2,
 	},
 	iIran: {
 		iAttack: 6,
@@ -1796,7 +1807,6 @@ dTechPreferences = {
 		iGunpowder: 25,
 		iFirearms: 25,
 		iCompanies: 20,
-		iPatronage: 20,
 	},
 	iInca : {
 		iConstruction: 40,
@@ -1821,6 +1831,8 @@ dTechPreferences = {
 	},
 	iMughals : {
 		iHumanities: 20,
+		iHorticulture: 20,
+		iUrbanPlanning: 20,
 		iPhilosophy: 15,
 		iEducation: 15,
 		iPaper: 15,
@@ -1831,6 +1843,7 @@ dTechPreferences = {
 		iCombinedArms: -15,
 		iScientificMethod: -30,
 		iExploration: -30,
+		iCivilLiberties: -30,
 	},
 	iMongols : {
 		iGunpowder: 40,
@@ -2239,6 +2252,8 @@ dBuildingPreferences = {
 		iWembley: 20,
 		iEscorial: 20,
 		iNotreDame: 15,
+		
+		iSantaMariaDelFiore: -30,
 	},
 	iInca : {
 		iMachuPicchu: 40,
