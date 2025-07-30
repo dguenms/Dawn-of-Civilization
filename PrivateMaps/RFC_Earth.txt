@@ -37588,6 +37588,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=69
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2

@@ -160,7 +160,6 @@ dResourcesDict = {
 	(16, 63)  : (1700,  iHorse),    # Alberta
 	(33, 35)  : (1700,  iHorse),    # Venezuela
 	(37, 12)  : (1700,  iHorse),    # Argentina
-	(81, 71)  : (1700,  iDeer),     # Ingria
 	(79, 70)  : (1700,  iFish),     # Ingria
 	(21, 40)  : (1700,  iBanana),   # Guatemala
 	(33, 42)  : (1700,  iCoffee),   # Hispaniola
