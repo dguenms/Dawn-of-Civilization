@@ -2327,7 +2327,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
                         if (pLoopPlot->isWater())
                         {
-                            iValue += (bIsCoastal ? 100 : -800);
+                            iValue += (bIsCoastal ? 100 : ((iSettlerMapValue < 10) ? -800 : 0));
                         }
                     }
 				}
