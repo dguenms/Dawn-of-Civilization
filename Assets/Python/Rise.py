@@ -938,7 +938,7 @@ class Birth(object):
 	def checkSwitch(self):
 		if self.bSwitch:
 			self.switch()
-		else:
+		elif not self.isHuman():
 			self.setupWithoutSwitch()
 		
 		self.bSwitch = False
