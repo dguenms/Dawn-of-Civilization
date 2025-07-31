@@ -1507,11 +1507,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] promotion for [COLOR_HIGHLIGHT_TEXT]Melee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] units. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] promotion for [COLOR_HIGHLIGHT_TEXT]Melee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] units. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] promotion for [COLOR_HIGHLIGHT_TEXT]Melee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] units. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] promotion for [COLOR_HIGHLIGHT_TEXT]Melee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] units. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] promotion for [COLOR_HIGHLIGHT_TEXT]Melee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Skirmish[COLOR_REVERT] units. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA_HELP</Tag>
+		<English>[ICON_BULLET]Free [LINK=literal]Skirmish[\LINK] promotion for Melee, Light Cavalry, and Heavy Cavalry units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Skirmish[\LINK] promotion for Melee, Light Cavalry, and Heavy Cavalry units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Skirmish[\LINK] promotion for Melee, Light Cavalry, and Heavy Cavalry units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Skirmish[\LINK] promotion for Melee, Light Cavalry, and Heavy Cavalry units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Skirmish[\LINK] promotion for Melee, Light Cavalry, and Heavy Cavalry units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Tag>

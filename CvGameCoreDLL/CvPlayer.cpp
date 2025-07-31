@@ -7189,6 +7189,26 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		updateYield();
 	}
 
+	// Saint Sophia
+	else if (eBuilding == SAINT_SOPHIA)
+	{
+		setFreePromotion(UNITCOMBAT_MELEE, PROMOTION_SKIRMISH, iChange > 0);
+		setFreePromotion(UNITCOMBAT_LIGHT_CAVALRY, PROMOTION_SKIRMISH, iChange > 0);
+		setFreePromotion(UNITCOMBAT_HEAVY_CAVALRY, PROMOTION_SKIRMISH, iChange > 0);
+
+		if (iChange > 0)
+		{
+			int iLoop;
+			for (CvUnit* pLoopUnit = firstUnit(&iLoop); NULL != pLoopUnit; pLoopUnit = nextUnit(&iLoop))
+			{
+				if (pLoopUnit->getUnitCombatType() == UNITCOMBAT_MELEE || pLoopUnit->getUnitCombatType() == UNITCOMBAT_LIGHT_CAVALRY || pLoopUnit->getUnitCombatType() == UNITCOMBAT_HEAVY_CAVALRY)
+				{
+					pLoopUnit->setHasPromotion(PROMOTION_SKIRMISH, true);
+				}
+			}
+		}
+	}
+
 	// Kremlin
 	else if (eBuilding == KREMLIN)
 	{
