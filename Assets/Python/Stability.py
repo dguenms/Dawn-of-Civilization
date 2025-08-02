@@ -753,7 +753,7 @@ def calculateStability(iPlayer):
 			
 			if iTheocracy in civics:
 				iOnlyStateReligionRatio = 100 * iOnlyStateReligionPopulation / iTotalPopulation
-				iReligionStability += iOnlyStateReligionRatio / 20
+				iReligionStability += (iOnlyStateReligionRatio - iOnlyStateReligionThreshold) / 10
 	
 	lParameters[iParameterReligion] = iReligionStability
 		
