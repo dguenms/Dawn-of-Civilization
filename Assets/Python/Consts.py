@@ -1170,13 +1170,13 @@ dResurrectionLeaders = CivDict({
 })
 
 # update DLL constants when this changes
-iNumPeriods = 26
-(iPeriodPtolemaicEgypt, iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, 
-iPeriodInsularCelts, iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, 
-iPeriodDenmark, iPeriodNorway, iPeriodUzbeks, iPeriodSaudi, iPeriodMorocco, 
-iPeriodSpain, iPeriodAustria, iPeriodUnitedKingdom, iPeriodGreatBritain, iPeriodYuan, 
-iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, iPeriodPakistan, iPeriodOttomanConstantinople, 
-iPeriodModernGermany) = range(iNumPeriods)
+iNumPeriods = 27
+(iPeriodPtolemaicEgypt, iPeriodMakuria, iPeriodMing, iPeriodMaratha, iPeriodModernGreece, 
+iPeriodCarthage, iPeriodInsularCelts, iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodSeljuks, 
+iPeriodMeiji, iPeriodDenmark, iPeriodNorway, iPeriodUzbeks, iPeriodSaudi, 
+iPeriodMorocco, iPeriodSpain, iPeriodAustria, iPeriodUnitedKingdom, iPeriodGreatBritain, 
+iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, iPeriodPakistan, 
+iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
 
 iNumImpacts = 5
 (iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
