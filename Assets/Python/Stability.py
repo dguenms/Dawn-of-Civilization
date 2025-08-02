@@ -102,10 +102,8 @@ def triggerCrisis(iPlayer):
 	
 	changeCrisisCountdown(iPlayer, turns(10))
 	
-	bFall = since(year(dFall[iPlayer])) >= 0
-	
 	# help AI to not immediately collapse
-	if not player(iPlayer).isHuman() and not bFall:
+	if not player(iPlayer).isHuman() and not isDecline(iPlayer):
 		# with no overexpansion at all, just have a domestic crisis (once until back at shaky again)
 		if not data.players[iPlayer].bDomesticCrisis and data.players[iPlayer].lStabilityCategoryValues[0] >= 0:
 			domesticCrisis(iPlayer)
@@ -349,7 +347,6 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = stability(iPlayer)
 	bHuman = player(iPlayer).isHuman()
-	bFall = isDecline(iPlayer)
 	
 	iNewStabilityLevel = determineStabilityLevel(iPlayer, iStabilityLevel, iStability)
 	
@@ -406,7 +403,7 @@ def calculateAdministration(city):
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
-	if city.isCapital():
+	if city.isCapital() and not isDecline(iPlayer):
 		iAdministration += iPopulation
 	
 	return iAdministration
@@ -421,9 +418,8 @@ def getSeparatismModifier(iPlayer, city):
 	
 	bHistorical = plot.getPlayerSettlerValue(iPlayer) > 0
 	bConquest = plot.getPlayerWarValue(iPlayer) > 1
-	bFall = since(year(dFall[iPlayer])) >= 0
 	bTotalitarianism = civic.iSociety == iTotalitarianism
-	bExpansionExceptions = (bHistorical and iCiv == iMongols and not bFall) or bTotalitarianism
+	bExpansionExceptions = (bHistorical and iCiv == iMongols and not isDecline(iPlayer)) or bTotalitarianism
 	
 	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
@@ -516,6 +512,8 @@ def calculateStability(iPlayer):
 	iAdministration = cities.owner(iPlayer).sum(calculateAdministration) + 10
 	iSeparatism = cities.owner(iPlayer).sum(calculateSeparatism)
 	
+	bDecline = isDecline(iPlayer)
+	
 	iRecentConquestTurns = 20
 	if iElective in civics:
 		iRecentConquestTurns = 30
@@ -585,8 +583,9 @@ def calculateStability(iPlayer):
 	if iHegemony in civics: iConquestModifier += 1
 	if iCiv == iPersia: iConquestModifier += 1 # Persian UP
 	
-	iRecentExpansionStability += iRecentlyFounded
-	iRecentExpansionStability += iConquestModifier * iRecentlyConquered
+	if not bDecline:
+		iRecentExpansionStability += iRecentlyFounded
+		iRecentExpansionStability += iConquestModifier * iRecentlyConquered
 		
 	lParameters[iParameterRecentExpansion] = iRecentExpansionStability
 	
