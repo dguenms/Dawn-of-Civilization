@@ -725,9 +725,15 @@ def calculateStability(iPlayer):
 		iHeathenRatio = 100 * iDifferentReligionPopulation / iTotalPopulation
 		iHeathenThreshold = 30
 		iBelieverThreshold = 75
+		iOnlyStateReligionThreshold = 50
 		
 		if iHeathenRatio > iHeathenThreshold:
-			iReligionStability -= (iHeathenRatio - iHeathenThreshold) / 10
+			iHeathenStability = (iHeathenRatio - iHeathenThreshold) / 10
+			
+			if iFanaticism in civics:
+				iHeathenStability *= 2
+			
+			iReligionStability -= iHeathenStability
 			
 		if iStateReligion >= 0:
 			iStateReligionRatio = 100 * iStateReligionPopulation / iTotalPopulation
