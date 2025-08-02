@@ -152,8 +152,8 @@ protected:
 	bool AI_exploreCoasts(); // Leoreth
 	bool AI_exploreCircumnavigate(); // Leoreth
 	bool AI_targetCity(int iFlags = 0);
-	bool AI_targetBarbCity();
-	bool AI_targetMinorCity(int iMinorCiv); //Rhye
+	bool AI_targetBarbCity(bool bTarget = true);
+	bool AI_targetMinorCity(int iMinorCiv, bool bTarget = true); //Rhye
 	bool AI_bombardCity();
 	bool AI_cityAttack(int iRange, int iOddsThreshold, bool bFollow = false);
 	bool AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack = 0, bool bFollow = false);
