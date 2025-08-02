@@ -198,11 +198,11 @@ def balanceMilitary(bWar, iAttacker, iDefender, bFromDefensivePact):
 		iAdditionalUnitsRequired = iUnitsPower > 0 and iPowerRequired / iUnitsPower or 1
 		
 		for _ in range(iAdditionalUnitsRequired):
-			createRoleUnits(iDefender, capital(iDefender), additionalUnits)
+			createRoleUnits(iDefender, capital(iDefender), additionalUnits).promotion(iVolunteer)
 			for iUnit, iAmount in specificAdditionalUnits:
 				lExperiences = [iRoleExperience for iRole, iRoleExperience in dStartingExperience[iDefender].items() if isUnitOfRole(iUnit, iRole)]
 				iExperience = lExperiences and max(lExperiences) or 0
-				makeUnits(iDefender, iUnit, capital(iDefender), iAmount).experience(iExperience)
+				makeUnits(iDefender, iUnit, capital(iDefender), iAmount).experience(iExperience).promotion(iVolunteer)
 
 
 @handler("changeWar")
@@ -272,9 +272,20 @@ def createExpansionUnits(iAttacker, iDefender, tile, closest, iExtraAI, iExtraTa
 			iAttack: 2 + iExtraAI + iExtraTargets,
 			iSiege: 1 + 2*iExtraAI + iExtraTargets,
 		}
-		createRoleUnits(iAttacker, tile, dExpansionUnits.items())
+		createRoleUnits(iAttacker, tile, dExpansionUnits.items()).promotion(iVolunteer)
 		
 		message(iDefender, "TXT_KEY_MESSAGE_EXPANSION_UNITS", player(iAttacker).getCivilizationDescription(0), closest.getName(), color=iRed, location=tile, button=infos.civ(player(iAttacker).getCivilizationType()).getButton())
+
+
+def deleteExpansionUnits(iPlayer):
+	if players.major().existing().any(lambda p: team(player(iPlayer)).isAtWar(player(p).getTeam())):
+		return
+	
+	if players.minor().cities().any(lambda city: plot_(city).getExpansion() == iPlayer):
+		return
+	
+	for unit in units.owner(iPlayer).where(lambda u: u.isHasPromotion(iVolunteer)):
+		unit.kill(False, -1)
 
 
 @handler("changeWar")
@@ -285,6 +296,9 @@ def endExpansionOnPeace(bWar, iPlayer1, iPlayer2):
 		
 		for plot in plots.owner(iPlayer2).where(lambda plot: plot.getExpansion() == iPlayer1):
 			plot.resetExpansion()
+		
+		deleteExpansionUnits(iPlayer1)
+		deleteExpansionUnits(iPlayer2)
 
 
 @handler("collapse")
@@ -858,6 +872,8 @@ class Birth(object):
 		if self.iExpansionTurns == 0:
 			for plot in expansionPlots:
 				plot.resetExpansion()
+				
+				deleteExpansionUnits(self.iPlayer)
 		
 		self.iExpansionDelay -= 1
 		self.iExpansionTurns -= 1

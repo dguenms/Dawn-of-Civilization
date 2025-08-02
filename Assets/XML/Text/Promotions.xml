@@ -173,4 +173,12 @@
 		<Italian>River Combat</Italian>
 		<Spanish>River Combat</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_VOLUNTEER</Tag>
+		<English>Volunteer</English>
+		<French>Volunteer</French>
+		<German>Volunteer</German>
+		<Italian>Volunteer</Italian>
+		<Spanish>Volunteer</Spanish>
+	</TEXT>
 </Civ4GameText>

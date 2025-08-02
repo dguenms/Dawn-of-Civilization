@@ -153,7 +153,16 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	GET_PLAYER(getOwnerINLINE()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), 1);
 
 	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(m_pUnitInfo->getExtraCost());
-	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(getExtraUpkeep()); // Leoreth
+
+	// Leoreth
+	if (getExtraUpkeep() >= 0)
+	{
+		GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(getExtraUpkeep());
+	}
+	else
+	{
+		GET_PLAYER(getOwnerINLINE()).changeBaseFreeMilitaryUnits(-getExtraUpkeep());
+	}
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{
@@ -690,7 +699,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	GET_PLAYER(getOwnerINLINE()).changeUnitClassCount((UnitClassTypes)m_pUnitInfo->getUnitClassType(), -1);
 
 	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-(m_pUnitInfo->getExtraCost()));
-	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-getExtraUpkeep()); // Leoreth
+
+	// Leoreth
+	if (getExtraUpkeep() >= 0)
+	{
+		GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-getExtraUpkeep());
+	}
+	else
+	{
+		GET_PLAYER(getOwnerINLINE()).changeBaseFreeMilitaryUnits(getExtraUpkeep());
+	}
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{

@@ -2233,5 +2233,14 @@
 			</TerrainDoubleMoves>
 			<Button>Art/Interface/Buttons/Promotions/SteppeAdaptation.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_VOLUNTEER</Type>
+			<Description>TXT_KEY_PROMOTION_VOLUNTEER</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<bNoUpgrade>1</bNoUpgrade>
+			<iRevoltProtection>25</iRevoltProtection>
+			<iExtraUpkeep>-1</iExtraUpkeep>
+			<Button>Art/Interface/Buttons/Promotions/Volunteer.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

@@ -290,8 +290,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 							iCitySiege: 2 + iModifier1 + iModifier2,
 							iShockCity: 1 + iModifier1,
 						}
-						units = createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items())
-						units.promotion(infos.type("PROMOTION_MERCENARY"))
+						createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items()).promotion(iMercenary)
 						
 						iStateReligion = player(iOldWorldPlayer).getStateReligion()
 						iMissionary = missionary(iStateReligion)
