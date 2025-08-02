@@ -255,11 +255,11 @@ class Languages(object):
 		self.identifier = identifier
 		self.tile = tile
 		
-		print "get languages for %s on %s" % (name(identifier), getBaseName(tile))
+		#print "get languages for %s on %s" % (name(identifier), getBaseName(tile))
 		
 	def __iter__(self):
 		for iLanguage in getPrimaryLanguages(self.identifier):
-			print "yield primary: %s" % iLanguage
+			#print "yield primary: %s" % iLanguage
 			yield iLanguage
 		
 		local_civs = self.getLocalLanguageCivs()
@@ -270,21 +270,21 @@ class Languages(object):
 		
 		similar_civs, different_civs = local_civs.split(self.isSimilar)
 		
-		print "similar: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in similar_civs.sort(self.getSortingKey, reverse=True)]
-		print "different: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in different_civs.sort(self.getSortingKey, reverse=True)]
+		#print "similar: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in similar_civs.sort(self.getSortingKey, reverse=True)]
+		#print "different: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in different_civs.sort(self.getSortingKey, reverse=True)]
 		
 		for iSimilarCiv in similar_civs.sort(self.getSortingKey, reverse=True):
 			for iLanguage in getPrimaryLanguages(iSimilarCiv):
-				print "yield similar for %s: %s" % (infos.civ(iSimilarCiv).getText(), iLanguage)
+				#print "yield similar for %s: %s" % (infos.civ(iSimilarCiv).getText(), iLanguage)
 				yield iLanguage
 		
 		for iLanguage in getLocalLanguages(self.tile):
-			print "yield local: %s" % iLanguage
+			#print "yield local: %s" % iLanguage
 			yield iLanguage
 		
 		for iDifferentCiv in different_civs.sort(self.getSortingKey, reverse=True):
 			for iLanguage in getPrimaryLanguages(iDifferentCiv):
-				print "yield different for %s: %s" % (infos.civ(iDifferentCiv).getText(), iLanguage)
+				#print "yield different for %s: %s" % (infos.civ(iDifferentCiv).getText(), iLanguage)
 				yield iLanguage
 	
 	@property
