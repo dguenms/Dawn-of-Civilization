@@ -584,7 +584,7 @@ class Birth(object):
 		
 		# for AI, reveal nearby settler and expansion targets to improve settler AI and help with expansion
 		if not self.isHuman():
-			region_plots = plots.all().land().where(lambda p: p.getRegionGroup() == plot_(self.location).getRegionGroup())
+			region_plots = plots.all().land().where(lambda p: (p.getRegionID() in lNewWorld) == (self.spawn.getRegionID in lNewWorld))
 			revealed += region_plots.where(lambda p: p.getSettlerValue(self.iCiv) >= 10).where(lambda p: distance(self.location, p) <= 15).expand(2)
 			revealed += region_plots.where(lambda p: p.getExpansion() == self.iPlayer).expand(1)
 		
@@ -851,7 +851,7 @@ class Birth(object):
 		if distance(plot, self.location) > 32:
 			return False
 		
-		return (plot.getRegionID() in lAmerica) == (self.spawn.getRegionID() in lAmerica)
+		return (plot.getRegionID() in lNewWorld) == (self.spawn.getRegionID() in lNewWorld)
 	
 	def checkExpansion(self):
 		if not self.player.isExisting():
