@@ -689,6 +689,7 @@ def calculateStability(iPlayer):
 	if tPlayer.isHasTech(iStatecraft):
 		if (iPersonalism, iCitizenship, iVassalage) not in civics: iCivicEraTechStability += 5
 	
+	
 	if iStateReligion == iHinduism:
 		if iCasteSystem in civics: iCivicEraTechStability += 3
 		
@@ -704,6 +705,12 @@ def calculateStability(iPlayer):
 		
 	elif iStateReligion == iBuddhism:
 		if iMonasticism in civics: iCivicEraTechStability += 2
+		
+		
+	if iThalassocracy in civics:
+		if cities.owner(iPlayer).coastal().count() * 2 < player(iPlayer).getNumCities():
+			iCivicEraTechStability -= 4
+		
 		
 	if not player(iPlayer).isHuman() and iCivicEraTechStability < 0: iCivicEraTechStability /= 2
 	
@@ -964,7 +971,7 @@ def getCivicStability(iPlayer, civics=None):
 		if iCurrentEra == iMedieval:
 			if iMonarchy in civics: iStability += 2
 			if iElective in civics: iStability += 3
-			if iManorialism in civics: iStability += 3
+			if iManorialism in civics: iStability += 2
 			
 	if iRepublic in civics:
 		if iCitizenship in civics: iStability += 2
@@ -1003,8 +1010,8 @@ def getCivicStability(iPlayer, civics=None):
 		if iEgalitarianism in civics: iStability += 2
 		if iFanaticism in civics: iStability -= 3
 		
-	if iMonarchy in civics:
-		if (iClergy, iMonasticism) in civics: iStability += 2
+	#if iMonarchy in civics:
+	#	if (iClergy, iMonasticism) in civics: iStability += 2
 		
 	if iElective in civics:
 		if iBureaucracy in civics: iStability -= 5
@@ -1026,8 +1033,8 @@ def getCivicStability(iPlayer, civics=None):
 		if iDemocracy in civics: iStability += 2
 		if iSlavery in civics: iStability -= 2
 	
-	if iMerchantTrade in civics:
-		if iThalassocracy in civics: iStability += 2
+	if iThalassocracy in civics:
+		if iMerchantTrade not in civics: iStability -= 2
 	
 	if iHegemony in civics:
 		if iStratocracy in civics: iStability += 2
