@@ -1571,6 +1571,7 @@ dTechPreferences = {
 		iMedicine: 20,
 		iAesthetics: 20,
 		
+		iNobility: -30,
 		iMachinery: -20,
 		iPaper: -20,
 		iPrinting: -20,
