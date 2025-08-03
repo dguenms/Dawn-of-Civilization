@@ -1151,7 +1151,7 @@ def possibleSpawnsBetween(origin, target, iDistance):
 # used: Slots, Collapse
 def resetRevealedOwner(iPlayer):
 	for plot in plots.all():
-		if not plot.isRevealed(game.getActiveTeam(), False) and plot.getRevealedOwner(game.getActiveTeam(), False) == iPlayer:
+		if plot.getRevealedOwner(game.getActiveTeam(), False) == iPlayer:
 			plot.setRevealedOwner(game.getActiveTeam(), slot(iIndependent))
 
 
