@@ -2424,23 +2424,23 @@ void CvUnitAI::AI_attackCityMove()
 		}
 	}
 
-	//XXX more sophisticated logic for attacking is long overdue here
-	if (bReadyToAttack)
+	if (AI_targetBarbCity(bHuntBarbs && bReadyToAttack))
 	{
-		if (AI_targetBarbCity(bHuntBarbs))
+		return;
+	}
+
+	// Leoreth: target minors
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (AI_targetMinorCity(iI, bHuntPlayer[iI] && bReadyToAttack))
 		{
 			return;
 		}
+	}
 
-		// Leoreth: target minors
-		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-		{
-			if (AI_targetMinorCity(iI, bHuntPlayer[iI]))
-			{
-				return;
-			}
-		}
-
+	//XXX more sophisticated logic for attacking is long overdue here
+	if (bReadyToAttack)
+	{
 		if (bLandWar)
 		{
 			if (AI_targetCity())
@@ -11736,6 +11736,11 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv, bool bTarget)
 	int iI;
 
 	if (getID() == (PlayerTypes)iMinorCiv)
+	{
+		return false;
+	}
+
+	if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
 	{
 		return false;
 	}
