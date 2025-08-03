@@ -1249,23 +1249,22 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_PERSIA_MEDIAN"
 	
 		if bEmpire:
-			if iEra <= iClassical:
-				if bResurrected:
-					return "TXT_KEY_CIV_PERSIA_PARTHIAN"
-				
-				if getColumn(iPlayer) < 6:
-					return "TXT_KEY_CIV_PERSIA_ACHAEMENID"
+			if iEra >= iGlobal:
+				return "TXT_KEY_CIV_PERSIA_PAHLAVI"
 			
-			if iEra <= iMedieval: 
-				return "TXT_KEY_CIV_PERSIA_SASSANID"
-				
-			if iEra == iRenaissance:
-				return "TXT_KEY_CIV_PERSIA_SAFAVID"
-	
 			if iEra == iIndustrial:
 				return "TXT_KEY_CIV_PERSIA_QAJAR"
-	
-			return "TXT_KEY_CIV_PERSIA_PAHLAVI"
+			
+			if iEra == iRenaissance:
+				return "TXT_KEY_CIV_PERSIA_SAFAVID"
+				
+			if count(iTech for iTech in infos.techs() if infos.tech(iTech).getGridX() == 6 and tPlayer.isHasTech(iTech)) >= 2:
+				return "TXT_KEY_CIV_PERSIA_SASSANID"
+			
+			if bResurrected:
+				return "TXT_KEY_CIV_PERSIA_PARTHIAN"
+			
+			return "TXT_KEY_CIV_PERSIA_ACHAEMENID"
 				
 	elif iCiv == iPolynesia:
 		if isCurrentCapital(iPlayer, "Manu'a"):
