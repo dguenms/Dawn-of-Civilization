@@ -1575,8 +1575,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=29
-	RouteType=ROUTE_ROAD
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=50,y=73
@@ -3810,7 +3810,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_PORTUGAL
-		CityName=Santa Isabel
+		CityName=São Tomé
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8485,7 +8485,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=49
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=94,y=51
@@ -11610,9 +11610,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=39
-	RouteType=ROUTE_ROAD
+
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=123,y=43
