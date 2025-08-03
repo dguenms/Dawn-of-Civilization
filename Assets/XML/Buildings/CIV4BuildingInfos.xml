@@ -189,6 +189,7 @@
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iHealth>1</iHealth>
 			<iConquestProb>80</iConquestProb>
 			<iFoodKept>25</iFoodKept>
 			<iAsset>3</iAsset>
