@@ -186,7 +186,7 @@ lCivilizations = [
 		iLeader=iMbemba,
 		iGold=300,
 		iStateReligion=iCatholicism,
-		lCivics=[iElective, iVassalage, iSlavery, iRegulatedTrade, iClergy],
+		lCivics=[iElective, iVassalage, iSlavery, iRedistribution, iClergy],
 		techs=techs.column(8).including(iCartography, iJudiciary),
 	),
 	Civilization(
