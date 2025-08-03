@@ -25,7 +25,7 @@ dBaseLanguages = {
 	iNubia: (iNubian, iEgyptian,),
 	iGreece: (iGreek,),
 	iIndia: (iIndian, iDravidian),
-	iPhoenicia: (iPhoenician,),
+	iPhoenicia: (iPhoenician, iBabylonian),
 	iPolynesia: (iPolynesian,),
 	iPersia: (iPersian,),
 	iCelts: (iCeltic,),
