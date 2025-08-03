@@ -1966,6 +1966,9 @@ class CreatedUnits(object):
 		return iter(self._units)
 	
 	def __add__(self, other):
+		if isinstance(other, CyUnit):
+			return CreatedUnits(self._units + [other])
+		
 		return CreatedUnits(self._units + other._units)
 		
 	def adjective(self, adjective):
