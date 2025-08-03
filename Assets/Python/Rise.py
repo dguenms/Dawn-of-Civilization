@@ -269,7 +269,7 @@ def createExpansionArmies(bWar, iAttacker, iDefender):
 
 def createExpansionUnits(iAttacker, iDefender, tile, closest, iExtraAI, iExtraTargets):
 		dExpansionUnits = {
-			iAttack: 2 + iExtraAI + iExtraTargets,
+			iCityAttack: 2 + iExtraAI + iExtraTargets,
 			iSiege: 1 + 2*iExtraAI + iExtraTargets,
 		}
 		createRoleUnits(iAttacker, tile, dExpansionUnits.items()).promotion(iVolunteer)
