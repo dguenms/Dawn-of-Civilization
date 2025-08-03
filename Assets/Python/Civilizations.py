@@ -240,11 +240,11 @@ lCivilizations = [
 	),
 	Civilization(
 		iPersia,
-		iGold=200,
-		iAdvancedStartPoints=200,
+		iGold=100,
+		iAdvancedStartPoints=600,
 		iStateReligion=iZoroastrianism,
 		lCivics=[iMonarchy, iManorialism, iRedistribution, iClergy],
-		techs=techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding)
+		techs=techs.column(3).including(iBloomery, iPriesthood, iMathematics).without(iSeafaring)
 	),
 	Civilization(
 		iCelts,
@@ -670,6 +670,8 @@ dStartingUnits = CivDict({
 		iWork: 3,
 		iDefend: 3,
 		iShock: 2,
+		iSiege: 2,
+		# 6 Immortals
 		# 1 War Elephant
 	},
 	iCelts: {
@@ -1357,6 +1359,9 @@ dAdditionalUnits = CivDict({
 }, {})
 
 dStartingExperience = CivDict({
+	iPersia: {
+		iAttack: 2,
+	},
 	iCelts: {
 		iAttack: 2,
 	},
@@ -1427,7 +1432,7 @@ def createSpecificUnits(iPlayer, tile):
 	bHuman = player(iPlayer).isHuman()
 	
 	if iCiv == iPersia:
-		makeUnits(iPlayer, iImmortal, tile, 4, UnitAITypes.UNITAI_ATTACK)
+		makeUnits(iPlayer, iImmortal, tile, 6, UnitAITypes.UNITAI_ATTACK).experience(2)
 		makeUnit(iPlayer, iWarElephant, tile)
 	if iCiv == iKorea:
 		makeUnit(iPlayer, iConfucianMissionary, tile)
