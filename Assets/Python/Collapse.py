@@ -70,7 +70,7 @@ def completeCollapse(iPlayer):
 		
 def downgradeImprovements(iPlayer):
 	lAlwaysDowngrade = [iCottage, iHamlet, iVillage, iTown]
-	bPlayerDowngrade = civ(iPlayer) in [iHarappa, iToltecs] and not player(iPlayer).isHuman()
+	bPlayerDowngrade = civ(iPlayer) in [iHarappa, iHittites, iToltecs] and not player(iPlayer).isHuman()
 	
 	improvementPlots = plots.owner(iPlayer).where(lambda p: p.getImprovementType() >= 0)
 	alwaysDowngrade, potentialDowngrade = improvementPlots.split(lambda p: p.getImprovementType() in lAlwaysDowngrade or bPlayerDowngrade)

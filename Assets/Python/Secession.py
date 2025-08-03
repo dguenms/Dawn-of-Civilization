@@ -77,7 +77,7 @@ def canBeRazed(city):
 		return False
 
 	# always raze Harappan cities, except holy city
-	if civ(city) == iHarappa and not player(city).isHuman():
+	if civ(city) in [iHarappa, iHittites] and not player(city).isHuman():
 		return True
 	
 	if city.getPopulation() >= 10:
