@@ -184,7 +184,6 @@ MINOR FEATURES
 * Independent cities also benefit from the 80% culture control rule if the civilization the core belongs to is dead
 * Removed base +1 happiness per 10% culture
 * Flip zone and core area are not identical anymore, allowing for larger flips where appropriate
-* The core of a civilisation cannot flip to a spawning civilization, unless the tile is also in their core
 * The culture of dead civilizations remains present in your cities
 * Majority culture instead of owner decides city art style
 * Units on impassable terrain features can still be attacked (but if the attacker wins, they still cannot advance into the tile)
