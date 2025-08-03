@@ -6936,7 +6936,8 @@ name_translations = {
 		iSpanish: u"Bahía Larga",
 	},
 	"Hagmatana": {
-		iGreek: "Ecbatana",
+		iGreek: "Ekbatana",
+		iLatin: "Ecbatana",
 		iPersian: (
 			translate("Hamada", iAfter=iMedieval),
 			_,
