@@ -11740,7 +11740,7 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv, bool bTarget)
 		return false;
 	}
 
-	if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+	if (!GET_PLAYER((PlayerTypes)iMinorCiv).isMinorCiv())
 	{
 		return false;
 	}
