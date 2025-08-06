@@ -202,12 +202,14 @@ class HistoricalVictory(Victory):
 	@classmethod
 	def create(cls, iPlayer):
 		iCiv = civ(iPlayer)
-		return cls(iPlayer, dHistoricalGoals.get(iCiv, []))
+		victory = cls(iPlayer, dHistoricalGoals.get(iCiv, []))
+		
+		getScenario().initGoals(iPlayer, victory.goals)
+		
+		return victory
 	
 	def enable(self):
 		Victory.enable(self)
-		
-		getScenario().initGoals(self.iPlayer, self.goals)
 
 	def check(self):
 		iSucceededGoals = self.succeeded_goals()
