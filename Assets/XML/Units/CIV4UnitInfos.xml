@@ -1262,7 +1262,6 @@
 			<Strategy>TXT_KEY_UNIT_EXPLORER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bNoBadGoodies>1</bNoBadGoodies>
-			<bOnlyDefensive>1</bOnlyDefensive>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bIgnoreTerrainCost>1</bIgnoreTerrainCost>
@@ -1278,10 +1277,30 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
 			<iNukeRange>-1</iNukeRange>
-			<iCombat>4</iCombat>
+			<iCombat>5</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iWithdrawalProb>20</iWithdrawalProb>
+			<iHillsAttack>25</iHillsAttack>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
 			<iAsset>2</iAsset>
 			<iPower>2</iPower>
 			<UnitMeshGroups>
@@ -1298,11 +1317,11 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_GUERILLA1</PromotionType>
+					<PromotionType>PROMOTION_RECONNAISSANCE</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_WOODSMAN1</PromotionType>
+					<PromotionType>PROMOTION_DISENGAGE1</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 			</FreePromotions>
