@@ -2242,5 +2242,19 @@
 			<iExtraUpkeep>-1</iExtraUpkeep>
 			<Button>Art/Interface/Buttons/Promotions/Volunteer.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_RECONNAISSANCE</Type>
+			<Description>TXT_KEY_PROMOTION_RECONNAISSANCE</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<bAlwaysHeal>1</bAlwaysHeal>
+			<iMoveDiscountChange>1</iMoveDiscountChange>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/Reconnaissance.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

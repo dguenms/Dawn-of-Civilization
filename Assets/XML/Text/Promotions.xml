@@ -181,4 +181,12 @@
 		<Italian>Volunteer</Italian>
 		<Spanish>Volunteer</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RECONNAISSANCE</Tag>
+		<English>Reconnaissance</English>
+		<French>Reconnaissance</French>
+		<German>Reconnaissance</German>
+		<Italian>Reconnaissance</Italian>
+		<Spanish>Reconnaissance</Spanish>
+	</TEXT>
 </Civ4GameText>
