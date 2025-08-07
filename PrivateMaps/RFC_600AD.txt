@@ -525,6 +525,10 @@ BeginPlot
 		UnitType=UNIT_ARCHER
 		UnitOwner=CIVILIZATION_NORSE
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORK_BOAT
+		UnitOwner=CIVILIZATION_NORSE
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
 		CityName=Roskilde

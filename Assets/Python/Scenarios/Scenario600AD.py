@@ -190,7 +190,11 @@ def createStartingUnits():
 	# Norse
 	capital = plots.capital(iNorse)
 	createRoleUnit(iNorse, capital, iWorkerSea)
-	createRoleUnit(iNorse, capital, iExploreSea, player(iNorse).isHuman() and 2 or 3)
+	createRoleUnit(iNorse, capital, iAssaultSea, 2)
+	createRoleUnit(iNorse, capital, iAttackSea)
+	
+	if not player(iNorse).isHuman():
+		createRoleUnit(iNorse, capital, iExploreSea)
 
 
 def setupGoals(iCiv, goals):

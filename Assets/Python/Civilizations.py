@@ -793,8 +793,10 @@ dStartingUnits = CivDict({
 		iSettleSea: 2,
 		iDefend: 2,
 		iExplore: 1,
-		iAssaultSea: 2,
+		iAssaultSea: 1,
 		iWorkerSea: 2,
+		# AI: +1 assault sea
+		# human: +2 attack
 	},
 	iTurks: {
 		iSettle: 6,
@@ -1129,6 +1131,7 @@ dExtraAIUnits = CivDict({
 	},
 	iNorse: {
 		iExploreSea: 1,
+		iAssaultSea: 1,
 	},
 	iJava: {
 		iCityAttack: 2,
@@ -1442,6 +1445,9 @@ def createSpecificUnits(iPlayer, tile):
 		makeUnit(iPlayer, iShotelai, tile)
 	elif iCiv == iMalays:
 		makeUnit(iPlayer, iHinduMissionary, tile)
+	elif iCiv == iNorse:
+		if bHuman:
+			makeUnits(iPlayer, iHuscarl, tile, 2)
 	elif iCiv == iMoors:
 		if civ() in [iSpain, iMoors]:
 			makeUnit(iPlayer, iCrossbowman, tile)
