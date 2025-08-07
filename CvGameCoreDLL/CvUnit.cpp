@@ -2503,9 +2503,14 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 		}
 	}
 
-	// Leoreth: civilian and naval units can enter independent territory
+	// Leoreth: explorer, civilian and naval units can enter independent territory
 	if (GET_TEAM(eTeam).isMinorCiv())
 	{
+		if (isNoBadGoodies())
+		{
+			return true;
+		}
+
 		if (!canFight())
 		{
 			return true;
