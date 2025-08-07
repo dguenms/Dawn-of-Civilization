@@ -2163,7 +2163,8 @@
 			<Type>PROMOTION_MORALE</Type>
 			<Description>TXT_KEY_PROMOTION_MORALE</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereq>PROMOTION_LEADER</PromotionPrereq>
+			<PromotionPrereqOr1>PROMOTION_LEADER</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_RECONNAISSANCE</PromotionPrereqOr2>
 			<iMovesChange>1</iMovesChange>
 			<UnitCombats>
 				<UnitCombat>
