@@ -237,6 +237,12 @@
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
+			<UnitCombatFreeExperiences>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+					<iExperience>2</iExperience>
+				</UnitCombatFreeExperience>
+			</UnitCombatFreeExperiences>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
