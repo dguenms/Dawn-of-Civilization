@@ -478,9 +478,9 @@ dStartingLeaders = [
 	iBabylonia : iSargon,
 	iHarappa : iWentAntu,
 	iAssyria : iAshurbanipal,
+	iNubia : iTaharqa,
 	iChina : iQinShiHuang,
 	iHittites : iMursili,
-	iNubia : iTaharqa,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
@@ -927,18 +927,18 @@ def specificName(iPlayer):
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
+	
+	if iCiv == iNubia:
+		if iEra <= iClassical:
+			return "TXT_KEY_CIV_NUBIA_KUSH"
 			
-	if iCiv == iChina:
+	elif iCiv == iChina:
 		if bEmpire:
 			if iEra >= iIndustrial or scenario() == i1700AD:
 				return "TXT_KEY_CIV_CHINA_QING"
 			
 			if iEra == iRenaissance and turn() >= year(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
-	
-	elif iCiv == iNubia:
-		if iEra <= iClassical:
-			return "TXT_KEY_CIV_NUBIA_KUSH"
 			
 	elif iCiv == iGreece:
 		if not bCityStates and bEmpire and iEra <= iClassical:

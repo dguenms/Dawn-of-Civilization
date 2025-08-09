@@ -10,9 +10,9 @@ iEgypt :		(79, 43), # Memphis
 iBabylonia :	(89, 47), # Babylon
 iHarappa :		(102, 47), # Harappa
 iAssyria :		(89, 50), # Ash-shur
+iNubia :		(81, 37), # Meroe
 iChina :		(121, 52), # Chang'an
 iHittites :		(83, 54), # Hattusha
-iNubia :		(81, 37), # Meroe
 iGreece :		(76, 51), # Athens
 iIndia :		(110, 45), # Pataliputra
 iPhoenicia :	(84, 47), # Tyre
@@ -198,9 +198,9 @@ iEgypt :		((78, 41),	(80, 44)),
 iBabylonia :	((88, 45),	(90, 48)),
 iHarappa :		((101, 46),	(102, 47)),
 iAssyria :		((88, 49),	(90, 51)),
+iNubia :		((80, 37),	(81, 39)),
 iChina :		((120, 51),	(126, 56)),
 iHittites :		((82, 52),	(85, 54)),
-iNubia :		((80, 37),	(81, 39)),
 iGreece :		((74, 49),	(80, 53)),
 iIndia :		((107, 44),	(111, 46)),
 iPhoenicia :	((84, 47),	(85, 49)),

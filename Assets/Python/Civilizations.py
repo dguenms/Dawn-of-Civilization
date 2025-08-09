@@ -197,6 +197,12 @@ lCivilizations = [
 		techs=techs.column(1).including(iSmelting)
 	),
 	Civilization(
+		iNubia,
+		iGold=50,
+		lCivics=[iDespotism, iSlavery],
+		techs=techs.column(1).including(iMasonry, iSmelting, iProperty)
+	),
+	Civilization(
 		iChina,
 		iGold=50,
 		lCivics=[iDespotism],
@@ -207,12 +213,6 @@ lCivilizations = [
 		iGold=40,
 		lCivics=[iMonarchy, iSlavery],
 		techs=techs.column(2).without(iRiding, iSeafaring).including(iAlloys)
-	),
-	Civilization(
-		iNubia,
-		iGold=100,
-		lCivics=[iDespotism, iSlavery, iDeification],
-		techs=techs.column(1).including(iMasonry, iSmelting, iProperty, iCeremony, iDivination)
 	),
 	Civilization(
 		iGreece,
@@ -613,6 +613,11 @@ dStartingUnits = CivDict({
 		iWork: 1,
 		iBase: 1,
 	},
+	iNubia: {
+		iSettle: 1,
+		iWork: 1,
+		iBase: 2,
+	},
 	iChina: {
 		iSettle: 1,
 		iWork: 2,
@@ -627,12 +632,6 @@ dStartingUnits = CivDict({
 		iDefend: 1,
 		iAttack: 2,
 		iHarass: 1,
-	},
-	iNubia: {
-		iSettle: 1,
-		iWork: 1,
-		iDefend: 1,
-		iBase: 2,
 	},
 	iGreece: {
 		iSettle: 1,
@@ -1529,6 +1528,11 @@ dTechPreferences = {
 		iRiding: -40,
 		iSeafaring: -20,
 	},
+	iNubia: {
+		iCeremony: 30,
+		iPriesthood: 20,
+		iEthics: 20,
+	},
 	iChina : {
 		iAesthetics: 40,
 		iContract: 40,
@@ -1558,10 +1562,6 @@ dTechPreferences = {
 		iBloomery: 50,
 		iContract: 20,
 		iConstruction: 20,
-	},
-	iNubia: {
-		iPriesthood: 20,
-		iEthics: 20,
 	},
 	iGreece : {
 		iPhilosophy: 50,
@@ -2000,6 +2000,12 @@ dBuildingPreferences = {
 		iPyramids: 0,
 		iGreatSphinx: 0,
 	},
+	iNubia : {
+		iPyramids: 20,
+		iGreatSphinx: 20,
+		
+		iHangingGardens: -30,
+	},
 	iChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
@@ -2013,12 +2019,6 @@ dBuildingPreferences = {
 		iHimejiCastle: -30,
 		iBorobudur: -30,
 		iBrandenburgGate: -30,
-	},
-	iNubia : {
-		iPyramids: 20,
-		iGreatSphinx: 20,
-		
-		iHangingGardens: -30,
 	},
 	iGreece : {
 		iColossus: 30,

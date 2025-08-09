@@ -7,19 +7,19 @@ from Core import *
 
 lCivilizations = [
 	Civilization(
+		iNubia,
+		iGold=50,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iMonarchy, iSlavery, iRedistribution, iMonasticism],
+		techs=techs.column(5).including(iArchitecture, iEthics),
+	),
+	Civilization(
 		iChina, 
 		iLeader=iTaizong, 
 		iGold=300,
 		iStateReligion=iConfucianism,
 		lCivics=[iDespotism, iCitizenship, iManorialism, iMerchantTrade, iSyncretism, iHegemony],
 		techs=techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility)
-	),
-	Civilization(
-		iNubia,
-		iGold=50,
-		iStateReligion=iOrthodoxy,
-		lCivics=[iMonarchy, iSlavery, iRedistribution, iMonasticism],
-		techs=techs.column(5).including(iArchitecture, iEthics),
 	),
 	Civilization(
 		iIndia,
