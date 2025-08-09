@@ -477,7 +477,7 @@ dGoals = {
 	iNorse: (
 		Control(required=2, at=1050, desc_key=FIRST_NORSE_GOAL, *lNorseTargets),
 		FirstSettle(plots.regions(*lAmerica).named(AMERICAS), allowed=dCivGroups[iCivGroupAmerica], by=1100),
-		RaidGold(3000, by=1500),
+		RaidGold(3000, by=1250),
 	),
 	iTurks: (
 		All(
