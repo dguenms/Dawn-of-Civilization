@@ -44,7 +44,7 @@ tSpreadFactors = (
 # Catholicism
 {
 	iCore :		[rFrance, rCentralEurope, rPoland, rIreland, rItaly, rIberia],
-	iHistorical :	[rBritain, rScandinavia, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCongo, rKalahari, rCape, rPhilippines],
+	iHistorical :	[rBritain, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCongo, rKalahari, rCape, rPhilippines],
 	iPeriphery :	[rBalkans, rGreece, rRuthenia, rAmericanArctic, rOntario, rMidwest, rDeepSouth, rGreatPlains, rCalifornia, rAustralia, rOceania, rGuinea, rSwahiliCoast, rMadagascar],
 },
 # Protestantism

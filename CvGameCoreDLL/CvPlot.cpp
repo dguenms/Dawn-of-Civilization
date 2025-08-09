@@ -11801,9 +11801,12 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 	{
 		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
 		{
-			if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
+			if (getRegionID() != REGION_SCANDINAVIA || GC.getGameINLINE().getGameTurnYear() >= 900)
 			{
-				return getSpreadFactor(PROTESTANTISM);
+				if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
+				{
+					return getSpreadFactor(PROTESTANTISM);
+				}
 			}
 		}
 	}
