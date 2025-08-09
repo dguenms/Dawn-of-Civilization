@@ -4452,7 +4452,7 @@
 			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>NUB</Identifier>
-			<StartingYear>-1650</StartingYear>
+			<StartingYear>-2200</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
