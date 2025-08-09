@@ -202,20 +202,10 @@ dGoals = {
 		),
 		CitySpecialistCount(capital().named(CAPITAL), great_people(), 3, by=-600),
 	),
-	iChina: (
-		BuildingCount((iConfucianCathedral, 4), (iTaoistCathedral, 3), by=1000),
-		FirstDiscover(iCompass, iPaper, iGunpowder, iPrinting),
-		GoldenAges(4, by=1800),
-	),
-	iHittites: (
-		ResourceCount(sum(iCopper, iIron), 4, by=-900),
-		Production(1200, by=-800),
-		FirstTribute(),
-	),
 	iNubia: (
 		All(
-			GoldAmount(200),
-			CultureAmount(200),
+			GoldAmount(400),
+			CultureAmount(300),
 			ResourceCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 5),
 			by=-900,
 		),
@@ -225,6 +215,16 @@ dGoals = {
 			BuildingCount(iOrthodoxCathedral, 1),
 			by=600,
 		),
+	),
+	iChina: (
+		BuildingCount((iConfucianCathedral, 4), (iTaoistCathedral, 3), by=1000),
+		FirstDiscover(iCompass, iPaper, iGunpowder, iPrinting),
+		GoldenAges(4, by=1800),
+	),
+	iHittites: (
+		ResourceCount(sum(iCopper, iIron), 4, by=-900),
+		Production(1200, by=-800),
+		FirstTribute(),
 	),
 	iGreece: (
 		FirstDiscover(iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine),
