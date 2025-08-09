@@ -1133,15 +1133,6 @@
 			<bNoSlavery>1</bNoSlavery>
 			<iMaxConscript>3</iMaxConscript>
 			<iCapitalBuildingProductionModifier>25</iCapitalBuildingProductionModifier>
-			<ImprovementYieldChanges>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-			</ImprovementYieldChanges>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_MONUMENT</BuildingType>
