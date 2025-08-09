@@ -26341,7 +26341,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=46
-	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26791,6 +26790,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=46
+	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
