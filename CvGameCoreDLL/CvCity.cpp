@@ -18334,10 +18334,10 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 		//if (pPlot->getOwner() == getOwner()) iCost += 1000;
 
 		// even with Polynesian UP Oceans should still be covered last
-		if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+		/*if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
 		{
 			iExtraCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
-		}
+		}*/
 	}
 
 	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal()))
@@ -18366,10 +18366,10 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	}
 
 	// Leoreth: Polynesian UP
-	if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
+	/*if (getCivilizationType() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN)
 	{
 		iExtraCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
-	}
+	}*/
 
 	// Leoreth: Congolese UP
 	if (getCivilizationType() == CONGO)

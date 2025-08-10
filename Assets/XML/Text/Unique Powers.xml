@@ -835,11 +835,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY</Tag>
-		<English>No penalties for cultural expansion over Ocean tiles</English>
-		<French>Pas de p&#233;nalit&#233; pour l'expansion culturelle sur les cases d'oc&#233;an</French>
-		<German>No penalties for cultural expansion over Ocean tiles</German>
-		<Italian>No penalties for cultural expansion over Ocean tiles</Italian>
-		<Spanish>No penalties for cultural expansion over Ocean tiles</Spanish>
+		<English>Culture can expand to third ring Ocean tiles</English>
+		<French>Culture can expand to third ring Ocean tiles</French>
+		<German>Culture can expand to third ring Ocean tiles</German>
+		<Italian>Culture can expand to third ring Ocean tiles</Italian>
+		<Spanish>Culture can expand to third ring Ocean tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
