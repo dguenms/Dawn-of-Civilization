@@ -16454,6 +16454,7 @@ name_translations = {
 		iLocal: "Talurjuaq", # Inuktitut
 	},
 	"Split": {
+		iByzantine: "Aspalatum",
 		iDutch: _,
 		iEnglish: _,
 		iFrench: _,
