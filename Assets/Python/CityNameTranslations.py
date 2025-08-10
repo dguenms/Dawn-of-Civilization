@@ -432,6 +432,15 @@ name_translations = {
 		iEthiopian: _,
 		iItalian: "Adua",
 	},
+	"Aga'e": {
+		iAmerican: relocate("Pago Pago"),
+		iEnglish: relocate("Apia"),
+		iGerman: relocate("Apia"),
+		iPolynesian: (
+			translate("Fiti'uta", iAfter=iClassical),
+			_,
+		),
+	},
 	"Agadez": {
 		iBerber: _,
 		iFrench: u"Agadès",
@@ -5363,6 +5372,10 @@ name_translations = {
 		iEnglish: _,
 		iIndian: "Malda",
 		iPersian: "Angrezabad",
+	},
+	"English Harbour": {  # founded on Tereitaki
+		iEnglish: _,
+		iPolynesian: "Napia",
 	},
 	"Ensenada": {
 		iLocal: "Pa-tai", # Kumeyaay 
@@ -16837,12 +16850,6 @@ name_translations = {
 		iGreek: found("Okelis"),
 		iTurkish: "Taiz",
 	},
-	"Ta'u": {
-		iAmerican: relocate("Pago Pago"),
-		iEnglish: relocate("Apia"),
-		iGerman: relocate("Apia"),
-		iPolynesian: _,
-	},
 	"Ta-Iht": {
 		iArabic: "Al-Farafra",
 		iEgyptian: _,
@@ -16859,10 +16866,6 @@ name_translations = {
 	"Tabriz": {  # relocated from Gazaka
 		iLocal: "Tavrezh", # Armenian
 		iPersian: _,
-	},
-	"Tabwakea": {
-		iAmerican: found("Millersville"),
-		iPolynesian: _,
 	},
 	"Tadmekka": {
 		iArabic: (
@@ -17341,6 +17344,14 @@ name_translations = {
 		iEgyptian: _,
 		iGreek: "Busiris",
 		iLatin: "Aphroditopolis",
+	},
+	"Tereitaki": {
+		iAmerican: found("Millersville"),
+		iEnglish: found("English Harbour"),
+		iPolynesian: (
+			translate("Tabwakea", iAfter=iIndustrial),
+			_,
+		),
 	},
 	"Termiz": {
 		iArabic: "Tirmidh",

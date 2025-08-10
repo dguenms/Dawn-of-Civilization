@@ -29,7 +29,7 @@ lPhoenicianItalyExceptions = [(65, 48), (66, 48), (67, 48), (72, 55)]
 tHawaii = ((0, 40), (4, 43))
 tNewZealandEast = ((0, 6), (2, 12))
 tNewZealandWest = ((148, 4), (149, 7))
-tMarquesas = ((14, 26),	(14, 26))
+tMarquesas = ((13, 27),	(13, 27))
 tEasterIsland = ((20, 18),	(20, 18))
 
 # second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
