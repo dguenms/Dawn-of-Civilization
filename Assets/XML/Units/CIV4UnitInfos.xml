@@ -16482,7 +16482,7 @@
 				</Build>
 			</Builds>
 			<PrereqTech>TECH_SEAFARING</PrereqTech>
-			<iCost>25</iCost>
+			<iCost>30</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>6</iMoves>
