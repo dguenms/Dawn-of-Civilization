@@ -10767,6 +10767,10 @@ name_translations = {
 		iEnglish: "Mafeking",
 		iLocal: _,
 	},
+	"Mahina": {
+		iFrench: relocate("Pape'ete"),
+		iPolynesian: _,
+	},
 	"Mahishmati": {
 		iIndian: (
 			relocate("Harda", iAfter=iRenaissance),
@@ -13438,6 +13442,13 @@ name_translations = {
 		iEnglish: found("Coxen Hole"),
 		iLocal: _,
 		iSpanish: found("Trujillo"),
+	},
+	"Pape'ete": {  # relocated from Mahina
+		iFrench: _,
+		iPolynesian: (
+			translate("Vai'ete", iBefore=iIndustrial),
+			_,
+		),
 	},
 	"Paquimeh": {
 		iNahuatl: _,
