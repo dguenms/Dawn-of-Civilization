@@ -588,8 +588,8 @@ dGoals = {
 		ReligionPopulationCount(iOrthodoxy, 30, by=1200),
 		DefeatedUnits(civs(iBarbarian), 25, by=1250),
 		All(
-			ResourceCount((iFur, 4), (iSalt, 3)),
-			TradeGold(200),
+			ImprovementCount((iCamp, 6), (iQuarry, 3)),
+			TradeRouteCount(20),
 			by=1450,
 		),
 	),
