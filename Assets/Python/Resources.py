@@ -208,6 +208,7 @@ dResourcesDict = {
 	(1, 8)    : (1800,  iSheep),    # New Zealand
 	(8, 55)   : (1850,  iRice),     # California
 	(137, 62) : (1850,  iCow),      # Hokkaido
+	(84, 61)  : (1850,  iIron),     # Donbas
 	(8, 53)   : (1850,  iCow),      # California
 	(142, 17) : (1850,  iCow),		# Queensland
 	(8, 52)   : (1850,  iSheep),    # California
@@ -258,6 +259,8 @@ dSpawnResourcesDict = {
 	(113, 47) : (iTibet,       iWheat),
 	(115, 49) : (iTibet,       iHorse),
 	(55, 52)  : (iPortugal,    iIron),
+	(85, 64)  : (iRussia,      iIron),
+	(86, 64)  : (iRussia,      iWheat),
 	(61, 66)  : (iNetherlands, iFish),
 	(15, 47)  : (iMexico,      iIron),
 	(48, 21)  : (iBrazil,      iFish),
