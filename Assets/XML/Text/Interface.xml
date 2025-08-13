@@ -3793,6 +3793,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_YOU_DEFENDER_UNIT_WITHDRAW</Tag>
+		<English>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</English>
+		<French>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</French>
+		<German>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</German>
+		<Italian>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</Italian>
+		<Spanish>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

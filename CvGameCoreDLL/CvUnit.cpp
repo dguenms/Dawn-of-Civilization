@@ -1350,9 +1350,12 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 								CvCity* pCapital = GET_PLAYER(pDefender->getOwnerINLINE()).getCapitalCity();
 								if (pCapital != NULL)
 								{
+
 									changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
-									pDefender->setXY(pDefender->getX_INLINE()-1, pDefender->getY_INLINE()-1, true, true, pCapital->plot()->isVisibleToWatchingHuman(), true);
-									CvEventReporter::getInstance().combatRetreat(this, pDefender);
+									//pDefender->setXY(pCapital->getX_INLINE(), pCapital->getY_INLINE(), true, true, pCapital->plot()->isVisibleToWatchingHuman(), true);
+									
+									CvEventReporter::getInstance().combatRetreat(pDefender, this);
+
 									break;
 								}
 							}
@@ -1750,31 +1753,37 @@ void CvUnit::updateCombat(bool bQuick)
 		}
 		else if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KRAK_DES_CHEVALIERS) && pDefender->plot()->isCity() && pDefender->getDomainType() == DOMAIN_LAND && pDefender->maxHitPoints() - pDefender->getDamage() < maxHitPoints() - getDamage())
 		{
-			if (!GET_PLAYER(pDefender->getOwnerINLINE()).isMinorCiv() && !GET_PLAYER(pDefender->getOwnerINLINE()).isBarbarian())
+			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+
+			bool bAdvance = canAdvance(pPlot, ((pDefender->canDefendAgainst(this)) ? 1 : 0));
+
+			CvCity* pCapital = GET_PLAYER(pDefender->getOwnerINLINE()).getCapitalCity();
+			if (pCapital != NULL && !pDefender->atPlot(pCapital->plot()))
 			{
-				szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_DEFENDER_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey(), pCapital->getName().c_str());
+				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, pDefender->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pCapital->getX_INLINE(), pCapital->getY_INLINE());
+
+				pDefender->setXY(pCapital->getX(), pCapital->getY());
+			}
+			else
+			{
 				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
 				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
-
-				bool bAdvance = canAdvance(pPlot, ((pDefender->canDefendAgainst(this) ) ? 1 : 0));
-
-				CvCity* pCapital = GET_PLAYER(pDefender->getOwnerINLINE()).getCapitalCity();
-				pDefender->setXY(pCapital->getX(), pCapital->getY());
-
-				if (!bAdvance)
-				{
-					changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
-					checkRemoveSelectionAfterAttack();
-				}
-
-				if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
-				{
-					getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
-				}
-
-				getGroup()->clearMissionQueue();
 			}
+
+			if (!bAdvance)
+			{
+				changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
+				checkRemoveSelectionAfterAttack();
+			}
+
+			if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
+			{
+				getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
+			}
+
+			getGroup()->clearMissionQueue();
 		}
 		else
 		{
