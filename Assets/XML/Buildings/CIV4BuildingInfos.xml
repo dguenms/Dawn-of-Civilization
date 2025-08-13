@@ -3162,16 +3162,11 @@
 			<iMinAreaSize>15</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
+			<iTradeRoutes>2</iTradeRoutes>
 			<iTradeRouteModifier>50</iTradeRouteModifier>
 			<iAsset>3</iAsset>
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<Flavors>
 				<Flavor>
