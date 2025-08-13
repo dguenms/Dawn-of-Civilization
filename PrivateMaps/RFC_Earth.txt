@@ -2207,7 +2207,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
