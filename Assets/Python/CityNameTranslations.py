@@ -2369,6 +2369,7 @@ name_translations = {
 		iLocal: _,
 	},
 	"Basse-Terre": {
+		iDutch: found("Philipsburg"),
 		iEnglish: found("St. John's"),
 		iFrench: _,
 		iSwedish: found("Gustavia"),
