@@ -161,8 +161,12 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	iCiv = civ(iPlayer)
 	
 	pPlayer.setAlive(True, False)
-		
+	
+	data.players[iPlayer].iStabilityLevel = iStabilityStable
 	data.players[iPlayer].iNumPreviousCities = 0
+	data.players[iPlayer].lEconomyTrend = [0] * 10
+	data.players[iPlayer].lHappinessTrend = [0] * 10
+	
 	data.civs[iPlayer].iResurrections += 1
 
 	for iOtherPlayer in players.major().without(iPlayer):
