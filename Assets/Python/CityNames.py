@@ -265,7 +265,7 @@ class Languages(object):
 		local_civs = self.getLocalLanguageCivs()
 		local_civs = local_civs.where(self.isValid)
 		
-		if self.plot.getRegionID() in lAmerica and True not in data.dFirstContactConquerors:
+		if self.plot.getRegionID() in lAmerica and True not in data.dFirstContactConquerors.values():
 			local_civs = local_civs.group(iCivGroupAmerica)
 		
 		similar_civs, different_civs = local_civs.split(self.isSimilar)
