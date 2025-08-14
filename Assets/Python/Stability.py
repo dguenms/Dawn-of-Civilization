@@ -1252,6 +1252,14 @@ def getAdministrationModifier(iPlayer):
 	return max(100, iModifier)
 	
 def isDecline(iPlayer):
-	return not player(iPlayer).isHuman() and year() >= year(dFall[iPlayer])
-
+	if player(iPlayer).isHuman():
+		return False
+	
+	if year() < year(dFall[iPlayer]):
+		return False
+	
+	if data.civs[iPlayer].iResurrections > 0 and any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
+		return False
+	
+	return True
 		
