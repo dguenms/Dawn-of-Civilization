@@ -522,7 +522,7 @@ def getNameEvolution(identifier, tile):
 	for iLanguage, translations in getNameTranslationsByLanguage(identifier, tile, tile_names):
 		translations = list(translations)
 		for index, translation in enumerate(translations):
-			if translation.isApplicable(identifier, tile):
+			if translation.isApplicable(identifier, tile, bFound=bFound):
 				sequence = [t.name for t in translations[:index] if t.isEraSpecific(bFound=bFound)] + [translation.name]
 				if sequence:
 					return " -> ".join(reversed(sequence))
