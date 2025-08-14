@@ -25132,9 +25132,19 @@ bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscover
 	CvCity* pCity;
 	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
 	{
-		if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL)
+		if (eReligion == ISLAM)
 		{
-			return true;
+			if (pCity->getRegionID() == REGION_ARABIA)
+			{
+				return true;
+			}
+		}
+		else
+		{
+			if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL)
+			{
+				return true;
+			}
 		}
 	}
 
