@@ -57,10 +57,10 @@ def updateTrendScores():
 				updateWarTrend(iPlayer, iEnemy)
 		
 		for iPlayer, iEnemy in players.major().permutations():
-				if team(iPlayer).isAtWar(iEnemy):
-					data.players[iPlayer].lLastWarSuccess[iEnemy] = team(iPlayer).AI_getWarSuccess(iEnemy)
-				else:
-					data.players[iPlayer].lLastWarSuccess[iEnemy] = 0
+			if team(iPlayer).isAtWar(iEnemy):
+				data.players[iPlayer].dLastWarSuccess[iEnemy] = team(iPlayer).AI_getWarSuccess(iEnemy)
+			elif iEnemy in data.players[iPlayer].dLastWarSuccess:
+				del data.players[iPlayer].dLastWarSuccess[iEnemy]
 
 
 @handler("BeginGameTurn")
@@ -162,13 +162,18 @@ def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 @handler("changeWar")
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	if not is_minor(iTeam) and not is_minor(iOtherTeam):
+		if bWar:
+			if not team(iTeam).isAVassal() and not team(iOtherTeam).isAVassal():
+				teamPlayers = players.vassals(iTeam).including(iTeam)
+				otherTeamPlayers = players.vassals(iOtherTeam).including(iOtherTeam)
+				
+				for iAttacker, iDefender in permutations(teamPlayers, otherTeamPlayers):
+					startWar(iAttacker, iDefender)
+					startWar(iDefender, iAttacker)
+
 		checkStability(iTeam, not bWar)
 		checkStability(iOtherTeam, not bWar)
 		
-		if bWar:
-			startWar(iTeam, iOtherTeam)
-			startWar(iOtherTeam, iTeam)
-
 @handler("revolution")
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
@@ -870,43 +875,50 @@ def calculateStability(iPlayer):
 	iWarWearinessStability = 0 # war weariness in comparison to war length
 	iBarbarianLossesStability = 0 # like previously
 	
+	lEnemyWarTrends = []
+	
+	iOurSuccess = 0
+	iTheirSuccess = 0
+	
+	iOurWarWeariness = 0
+	iTheirWarWeariness = 0
+	
+	iDurationModifier = 0
+	
 	# iterate ongoing wars
 	for iEnemy in players.major().existing():
 		pEnemy = player(iEnemy)
 		if tPlayer.isAtWar(iEnemy):
-			iTempWarSuccessStability = calculateTrendScore(data.players[iPlayer].lWarTrend[iEnemy])
+			lEnemyWarTrends.append(data.players[iPlayer].dWarTrend.get(iEnemy, []))
 			
-			iOurSuccess = tPlayer.AI_getWarSuccess(iEnemy)
-			iTheirSuccess = team(iEnemy).AI_getWarSuccess(iPlayer)
+			iOurSuccess += tPlayer.AI_getWarSuccess(iEnemy)
+			iTheirSuccess += team(iEnemy).AI_getWarSuccess(iPlayer)
 			
-			if iTempWarSuccessStability > 0 and iTheirSuccess > iOurSuccess: iTempWarSuccessStability /= 2
-			elif iTempWarSuccessStability < 0 and iOurSuccess > iTheirSuccess: iTempWarSuccessStability /= 2
+			iOurWarWeariness += tPlayer.getWarWeariness(iEnemy)
+			iTheirWarWeariness += team(iEnemy).getWarWeariness(iPlayer)
 			
-			if iTempWarSuccessStability > 0: iTempWarSuccessStability /= 2
-			
-			iWarSuccessStability += iTempWarSuccessStability
-			
-			iOurWarWeariness = tPlayer.getWarWeariness(iEnemy)
-			iTheirWarWeariness = team(iEnemy).getWarWeariness(iPlayer)
-			
-			iWarTurns = turn() - data.players[iPlayer].lWarStartTurn[iEnemy]
-			iDurationModifier = 0
+			iWarTurns = turn() - data.players[iPlayer].dWarStartTurn.get(iEnemy, 0)
 			
 			if iWarTurns > turns(20):
-				iDurationModifier = min(9, (iWarTurns - turns(20)) / turns(10))
-				
-			iTempWarWearinessStability = (iTheirWarWeariness - iOurWarWeariness) / (4000 * (iDurationModifier + 1))
-			if iTempWarWearinessStability > 0: iTempWarWearinessStability = 0
-			
-			iWarWearinessStability += iTempWarWearinessStability
-			
-			debug(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nWar Success Stability: ' + str(iTempWarSuccessStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
+				iDurationModifier = max(iDurationModifier, min(9, (iWarTurns - turns(20)) / turns(10)))
+
+	# war success stability
+	lCombinedWarTrend = combineTrends(lEnemyWarTrends)
+	iBaseWarSuccessStability = calculateTrendScore(lCombinedWarTrend)
 	
-	if iWarSuccessStability > 0:
-		if iElective in civics or iHegemony in civics:
-			iWarSuccessStability *= 2
-			iWarSuccessStability /= 3
+	if iBaseWarSuccessStability > 0 and iTheirSuccess > iOurSuccess: iBaseWarSuccessStability /= 2
+	elif iBaseWarSuccessStability < 0 and iOurSuccess > iTheirSuccess: iBaseWarSuccessStability /= 2
 	
+	if iBaseWarSuccessStability > 0: iBaseWarSuccessStability /= 2
+	
+	iWarSuccessStability += iBaseWarSuccessStability
+			
+	# war weariness stability
+	iBaseWarWearinessStability = (iTheirWarWeariness - iOurWarWeariness) / (4000 * (iDurationModifier + 1))
+	if iBaseWarWearinessStability > 0: iBaseWarWearinessStability = 0
+	
+	iWarWearinessStability += iBaseWarWearinessStability
+			
 	lParameters[iParameterWarSuccess] = iWarSuccessStability
 	lParameters[iParameterWarWeariness] = iWarWearinessStability
 	
@@ -1051,6 +1063,15 @@ def sigmoid(x):
 	
 def count(iterable, function = lambda x: True):
 	return len([element for element in iterable if function(element)])
+
+def combineTrends(lTrends):
+	if not lTrends:
+		return []
+	
+	iMaxTrend = max([len(lTrend) for lTrend in lTrends])
+	iterators = [iter(lTrend) for lTrend in lTrends]
+	
+	return [sum([next(iterator, 0) for iterator in iterators]) for _ in range(iMaxTrend)]
 	
 def calculateTrendScore(lTrend):
 	iPositive = 0
@@ -1144,8 +1165,8 @@ def updateWarTrend(iPlayer, iEnemy):
 	iOurCurrentSuccess = team(iPlayer).AI_getWarSuccess(iEnemy)
 	iTheirCurrentSuccess = team(iEnemy).AI_getWarSuccess(iPlayer)
 	
-	iOurLastSuccess = data.players[iPlayer].lLastWarSuccess[iEnemy]
-	iTheirLastSuccess = data.players[iEnemy].lLastWarSuccess[iPlayer]
+	iOurLastSuccess = data.players[iPlayer].dLastWarSuccess.get(iEnemy, 0)
+	iTheirLastSuccess = data.players[iEnemy].dLastWarSuccess.get(iPlayer, 0)
 	
 	iOurGain = max(0, iOurCurrentSuccess - iOurLastSuccess)
 	iTheirGain = max(0, iTheirCurrentSuccess - iTheirLastSuccess)
@@ -1162,11 +1183,8 @@ def updateWarTrend(iPlayer, iEnemy):
 	data.players[iPlayer].pushWarTrend(iEnemy, iCurrentTrend)
 	
 def startWar(iPlayer, iEnemy):
-	data.players[iPlayer].lWarTrend[iEnemy] = []
-	data.players[iEnemy].lWarTrend[iPlayer] = []
-	
-	data.players[iPlayer].lWarStartTurn[iEnemy] = turn()
-	data.players[iEnemy].lWarStartTurn[iPlayer] = turn()
+	data.players[iPlayer].dWarTrend[iEnemy] = [0] * 5
+	data.players[iPlayer].dWarStartTurn[iEnemy] = turn()
 	
 def calculateCommerceRank(iPlayer, iTurn):
 	return players.major().rank(iPlayer, lambda p: player(p).getEconomyHistory(iTurn))

@@ -147,9 +147,9 @@ class PlayerData:
 		self.lEconomyTrend = []
 		self.lHappinessTrend = []
 		
-		self.lWarTrend = [[]] * gc.getMAX_PLAYERS()		
-		self.lWarStartTurn = [0] * gc.getMAX_PLAYERS()
-		self.lLastWarSuccess = [0] * gc.getMAX_PLAYERS()
+		self.dWarTrend = {}
+		self.dWarStartTurn = {}
+		self.dLastWarSuccess = {}
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
 		
@@ -162,11 +162,10 @@ class PlayerData:
 		self.lHappinessTrend = []
 		
 	def resetWarTrend(self, iEnemy):
-		self.lWarTrend[iEnemy] = []
+		del self.dWarTrend[iEnemy]
 	
 	def resetWarTrends(self):
-		for iEnemy, _ in enumerate(self.lWarTrend):
-			self.resetWarTrend(iEnemy)
+		self.dWarTrend = {}
 	
 	def pushEconomyTrend(self, iValue):
 		self.lEconomyTrend.append(iValue)
@@ -175,22 +174,28 @@ class PlayerData:
 			
 	def pushHappinessTrend(self, iValue):
 		self.lHappinessTrend.append(iValue)
+		
 		if len(self.lHappinessTrend) > 10:
 			self.lHappinessTrend.pop(0)
 			
 	def pushWarTrend(self, iEnemy, iValue):
-		self.lWarTrend[iEnemy].append(iValue)
-		if len(self.lWarTrend[iEnemy]) > 10:
-			self.lWarTrend[iEnemy].pop(10)
+		if iEnemy not in self.dWarTrend:
+			self.dWarTrend[iEnemy] = []
+		
+		self.dWarTrend[iEnemy].append(iValue)
+		
+		if len(self.dWarTrend[iEnemy]) > 10:
+			self.dWarTrend[iEnemy].pop(10)
 			
 	def getLastDifference(self):
 		return -self.iLastDifference
 		
 	def getLastWarTrend(self, iEnemy):
-		lTrend = self.lWarTrend[iEnemy]
-		for i in reversed(range(len(lTrend))):
-			if lTrend[i] != 0: return lTrend[i]
-		return 0
+		lTrend = [x for x in self.dWarTrend[iEnemy] if x != 0]
+		if not lTrend:
+			return 0
+		
+		return lTrend[-1]
 
 
 class UnitData(object):
