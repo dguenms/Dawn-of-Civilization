@@ -475,7 +475,7 @@ def calculateSeparatism(city):
 		return 0
 	
 	iModifier = getSeparatismModifier(iPlayer, city)
-	iPopulation = city.getPopulation()
+	iPopulation = city.getPopulation() + (city.getHurryPercentAnger() + city.getConscriptPercentAnger()) * city.getPopulation() / 1000
 	
 	if city.isOccupation():
 		iPopulation -= city.getTotalPopulationLoss()

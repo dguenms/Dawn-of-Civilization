@@ -612,6 +612,8 @@ public:
 	int getCorporationBadHappiness();
 	int getCorporationCount();
 	void doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned);
+	int getHurryPercentAnger();
+	int getConscriptPercentAnger();
 
 private:
 	CvCity* m_pCity;
