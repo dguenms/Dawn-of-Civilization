@@ -529,7 +529,7 @@ dNeighbours = dictFromEdges(lBirthCivs, lNeighbours)
 dInfluences = dictFromEdges(lBirthCivs, lInfluences)
 
 dResurrections = CivDict({
-iEgypt : [(-3000, -340), (900, 1300), (1800, 2020)],
+iEgypt : [(-3000, -50), (900, 1300), (1800, 2020)],
 iBabylonia : [(-3000, -500)],
 iAssyria : [(-3000, -600)],
 iNubia : [(500, 1500)],

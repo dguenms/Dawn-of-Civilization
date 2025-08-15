@@ -114,6 +114,10 @@ def onCollapse(iPlayer):
 @handler("resurrection")
 def onResurrection(iPlayer):
 	iCiv = civ(iPlayer)
+	
+	if iCiv == iEgypt:
+		if player(iPlayer).getStateReligion() == -1 and cities.owner(iPlayer).any(lambda city: city.getPreviousCiv() == iGreece):
+			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
 
 	if iCiv == iGreece:
 		setPeriod(iGreece, iPeriodModernGreece)
