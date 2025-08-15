@@ -468,7 +468,7 @@ name_translations = {
 		iArabic: relocate("Murrakush"),
 		iBerber: _,
 		iGreek: found("Tmdt"),
-		iLatin: found("Tmdt"),
+		iLatin: found("Iulia Valentia Banasa"),
 		iPhoenician: found("Tmdt"),
 	},
 	"Ahikshetra": {
@@ -862,6 +862,7 @@ name_translations = {
 		iGreek: "Kairo",
 		iItalian: "Il Cairo",
 		iJapanese: "Kairo",
+		iLatin: "Cairo",
 		iNordic: "Kairo",
 		iPolish: "Kair",
 		iPortuguese: "Cairo",
@@ -1991,6 +1992,10 @@ name_translations = {
 		),
 		iIndian: "Baveru",
 		iItalian: "Babilonia",
+		iLatin: (
+			relocate("Tysfwn"),
+			"Babylon",
+		),
 		iPersian: "Babirush",
 		iPortuguese: u"Babilónia",
 		iRussian: "Vavilon",
@@ -2102,8 +2107,10 @@ name_translations = {
 		iDutch: "Bakoe",
 		iDravidian: "Paku",
 		iFrench: "Bakou",
-		iGreek: u"Bakoú",
+		iGreek: "Bakou",
+		iLatin: found("Romana"),
 		iLocal: "Baki", # Azerbaijani
+		iModernGreek: u"Bakoú",
 		iPersian: (
 			translate("Bad-kube", iBefore=iClassical),
 			_,
@@ -3213,6 +3220,29 @@ name_translations = {
 	"Broughton Island": {
 		iEnglish: _,
 		iLocal: "Qikiqtarjuaq", # Inuktitut
+	},
+	"Bruges": {
+		iArabic: "Bruj",
+		iChinese: "Buluri",
+		iDutch: "Brugge",
+		iEnglish: (
+			translate("Brycg", iBefore=iMedieval),
+			_,
+		),
+		iFrench: _,
+		iGerman: u"Brügge",
+		iItalian: "Bruggia",
+		iLatin: (
+			found("Rodanum"),
+			"Brugae",
+		),
+		iModernGreek: "Briz",
+		iNordic: "Brugge",
+		iPolish: "Brugia",
+		iPortuguese: "Brujas",
+		iSpanish: "Brujas",
+		iSwedish: "Brygge",
+		iTurkish: "Bruj",
 	},
 	"Bruxelles": {
 		iArabic: "Bruksel",
@@ -7811,6 +7841,10 @@ name_translations = {
 	"Itchyma": {
 		iQuechua: _,
 		iSpanish: "Lima",
+	},
+	"Iulia Valentia Banasa": {  # founded on Aghmat
+		iArabic: "Sidi Ali Boujnoun",
+		iLatin: _,
 	},
 	"Iuliobriga": {  # founded on Orense
 		iLatin: _,
@@ -15005,6 +15039,10 @@ name_translations = {
 		iDutch: found("Schenectady"),
 		iEnglish: _,
 	},
+	"Rodanum": {  # founded on Bruges
+		iDutch: "Aardenburg",
+		iLatin: _,
+	},
 	"Roha": {
 		iEthiopian: (
 			translate("Lalibela", iAfter=iMedieval),
@@ -15034,6 +15072,10 @@ name_translations = {
 		iTurkish: _,
 		iUkrainian: "Rym",
 		iVietnamese: "La Ma",
+	},
+	"Romana": {  # founded on Baku
+		iLatin: _,
+		iTurkish: "Ramana"
 	},
 	"Ronglu": {
 		iChinese: (
@@ -16117,6 +16159,7 @@ name_translations = {
 	},
 	"Sighisoara": {
 		iGerman: u"Schäßburg",
+		iLatin: found("Arcobara"),
 		iLocal: _,
 		iPolish: "Sigiszoara",
 	},
