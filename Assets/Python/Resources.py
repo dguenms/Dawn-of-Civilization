@@ -309,6 +309,8 @@ dRemovedFeaturesDict = {
 	(89, 45)  : 1050, # Mesopotamia
 	(91, 45)  : 1050, # Mesopotamia
 	(88, 46)  : 1050, # Mesopotamia
+	(79, 38)  : 1200, # Nubia
+	(80, 38)  : 1200, # Nubia
 	(63, 65)  : 1500, # Netherlands
 	(62, 64)  : 1500, # Netherlands
 	(99, 59)  : 1600, # Transoxiana
