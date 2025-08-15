@@ -344,6 +344,9 @@ def getImmigrationValue(city):
 	iFoodDifference = city.foodDifference(False)
 	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 	
+	if iFoodDifference < 0:
+		return iFoodDifference
+	
 	iValue = 0
 	
 	iValue += max(0, iHappinessDifference)
@@ -386,7 +389,7 @@ def immigration():
 	
 	for sourceCity, targetCity in zip(sourceCities, targetCities):
 		iPopulation = 1
-		if sourceCity.getPopulation() >= 9:
+		if sourceCity.getPopulation() >= 9 and targetCity.foodDifference(False) >= 2:
 			iPopulation += 1
 	
 		sourceCity.changePopulation(-iPopulation)
