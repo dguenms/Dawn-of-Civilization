@@ -650,6 +650,14 @@
 		<Spanish>Ostrogothic</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_PASHTUN</Tag>
+		<English>Pashtun</English>
+		<French>Pashtun</French>
+		<German>Pashtun</German>
+		<Italian>Pashtun</Italian>
+		<Spanish>Pashtun</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_PECHENEG</Tag>
 		<English>Pecheneg</English>
 		<French>Pecheneg</French>
@@ -736,6 +744,14 @@
 		<German>Shu</German>
 		<Italian>Shu</Italian>
 		<Spanish>Shu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_SIKH</Tag>
+		<English>Sikh</English>
+		<French>Sikh</French>
+		<German>Sikh</German>
+		<Italian>Sikh</Italian>
+		<Spanish>Sikh</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SIOUX</Tag>
