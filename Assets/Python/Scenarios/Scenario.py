@@ -197,6 +197,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iGondeshapur : (iPersia, 256),
 	iAquaAppia : (iRome, -312),
 	iFlavianAmphitheatre : (iRome, 80),
+	iPantheon : (iRome, 126),
 	iTempleOfKukulkan : (iMaya, 800),
 	iMonolithicChurch : (iEthiopia, 1181),
 	iJetavanaramaya : (iDravidia, 273),
