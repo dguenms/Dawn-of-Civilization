@@ -1309,15 +1309,6 @@
 			<DefaultBuilding>BUILDING_COLOSSUS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_STATUE_OF_ZEUS</Type>
-			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_STATUE_OF_ZEUS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_MAUSOLEUM</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_MAUSOLEUM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1325,6 +1316,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_GREAT_MAUSOLEUM</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AQUA_APPIA</Type>
+			<Description>TXT_KEY_BUILDING_AQUA_APPIA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AQUA_APPIA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PARTHENON</Type>
@@ -1343,6 +1343,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_PYRAMID_OF_THE_SUN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_STATUE_OF_ZEUS</Type>
+			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_STATUE_OF_ZEUS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TEMPLE_OF_ARTEMIS</Type>
@@ -1382,13 +1391,14 @@
 			<DefaultBuilding>BUILDING_FLAVIAN_AMPHITHEATRE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_AQUA_APPIA</Type>
-			<Description>TXT_KEY_BUILDING_AQUA_APPIA</Description>
+			<Type>BUILDINGCLASS_PANTHEON</Type>
+			<Description>TXT_KEY_BUILDING_PANTHEON</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_AQUA_APPIA</DefaultBuilding>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_PANTHEON</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_AL_KHAZNEH</Type>

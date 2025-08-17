@@ -586,6 +586,11 @@ void CvEventReporter::globalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainT
 	m_kPythonEventMgr.reportGlobalWarmingEffect(pPlot, bChanged, ePreviousTerrain, eNewTerrain, ePreviousFeature);
 }
 
+void CvEventReporter::buildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange)
+{
+	m_kPythonEventMgr.reportBuildingProcessed(pCity, eBuilding, iChange);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

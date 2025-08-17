@@ -8910,6 +8910,12 @@ int CvPlayer::getReligionAnarchyLength() const
 		return 0;
 	}
 
+	// Pantheon: no anarchy converting from Pagan Religion
+	if (getStateReligion() == NO_RELIGION && isHasBuildingEffect((BuildingTypes)PANTHEON))
+	{
+		return 0;
+	}
+
 	//Rhye - start comment
 	/*if (isGoldenAge())
 	{

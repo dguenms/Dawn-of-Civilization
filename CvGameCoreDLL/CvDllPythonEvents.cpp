@@ -1596,6 +1596,25 @@ void CvDllPythonEvents::reportGlobalWarmingEffect(CvPlot* pPlot, bool bChanged, 
 	}
 }
 
+void CvDllPythonEvents::reportBuildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("buildingProcessed");					// add key to lookup python handler fxn
+
+		CyCity* pCyCity = new CyCity(pCity);
+		eventData.add(gDLL->getPythonIFace()->makePythonObject(pCyCity));
+
+		eventData.add(eBuilding);
+		eventData.add(iChange);
+
+		postEvent(eventData);
+
+		delete pCyCity;
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

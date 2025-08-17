@@ -699,5 +699,9 @@
 			<Type>ART_DEF_MOVIE_GREAT_ADOBE_MOSQUE</Type>
 			<Path>Art/Movies/Wonders/Great_Adobe_Mosque.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PANTHEON</Type>
+			<Path>Art/Movies/Wonders/Pantheon.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

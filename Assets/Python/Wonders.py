@@ -193,11 +193,11 @@ def nobelPrizeEffect(unit, iPlayer):
 
 
 # Westminster Palace effect: +1 gold per colony
-@handler("buildingBuilt")
-def westminsterPalaceOnBuilt(city, iBuilding):
-	if iBuilding == iWestminsterPalace:
+@handler("buildingProcessed")
+def westminsterPalaceInit(city, iBuilding, iChange):
+	if iBuilding == iWestminsterPalace and iChange > 0:
 		iNumColonies = cities.owner(city.getOwner()).count(CyCity.isColony)
-		city.changeBuildingCommerceChange(infos.building(iBuilding).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iNumColonies)
+		city.setBuildingCommerceChange(infos.building(iBuilding).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iNumColonies)
 
 
 @handler("cityAcquired")
@@ -219,3 +219,19 @@ def westminsterPalaceOnCityLost(city):
 	wonderCity = getBuildingCity(iWestminsterPalace)
 	if wonderCity and wonderCity.getOwner() == city.getOwner() and city.isColony():
 		wonderCity.changeBuildingCommerceChange(infos.building(iWestminsterPalace).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, -1)
+
+
+# Pantheon effect: +1 gold per Pagan Temple
+@handler("buildingProcessed")
+def pantheonInit(city, iBuilding, iChange):
+	if iBuilding == iPantheon and iChange > 0:
+		iNumPaganTemples = player(city).countNumBuildings(unique_building(city.getOwner(), iPaganTemple))
+		city.setBuildingCommerceChange(infos.building(iBuilding).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iNumPaganTemples)
+
+
+@handler("buildingProcessed")
+def pantheonOnPaganTempleChange(city, iBuilding, iChange):
+	if iBuilding == unique_building(city.getOwner(), iPaganTemple):
+		wonderCity = getBuildingCity(iPantheon)
+		if wonderCity and wonderCity.getOwner() == city.getOwner():
+			wonderCity.changeBuildingCommerceChange(infos.building(iPantheon).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iChange)

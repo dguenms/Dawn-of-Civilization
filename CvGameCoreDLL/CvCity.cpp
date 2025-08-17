@@ -3664,15 +3664,6 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		}
 	}
 
-	// Leoreth: Statue of Zeus effect: +25% military production speed in cities with pagan temples
-	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
-	{
-		if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
-		{
-			iMultiplier += 25;
-		}
-	}*/
-
 	return std::max(0, iMultiplier);
 }
 
@@ -4962,6 +4953,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		GET_PLAYER(getOwnerINLINE()).changeBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange);
 
 		GET_PLAYER(getOwnerINLINE()).changeWondersScore(getWonderScore((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) * iChange);
+
+		CvEventReporter::getInstance().buildingProcessed(this, eBuilding, iChange);
 	}
 
 	updateBuildingCommerce();
@@ -18720,31 +18713,6 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 	if (eDisappearingReligion != NO_RELIGION && GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
 	{
 		removeReligion(eDisappearingReligion);
-	}
-
-	if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE)) && !GC.getReligionInfo(eReligion).isLocal())
-	{
-		setHasRealBuilding(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE), false);
-
-		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
-		if (eStateReligion != NO_RELIGION && eStateReligion == eReligion)
-		{
-			for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-			{
-				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
-
-				if (canConstruct(eBuilding) && GC.getBuildingInfo(eBuilding).getReligionType() == eStateReligion && GC.getBuildingInfo(eBuilding).getSpecialBuildingType() == GC.getInfoTypeForString("SPECIALBUILDING_TEMPLE"))
-				{
-					setHasRealBuilding(eBuilding, true);
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", GC.getReligionInfo(eReligion).getText(), getName().GetCString(), GC.getBuildingInfo(eBuilding).getText()), GC.getBuildingInfo(eBuilding).getConstructSound(), MESSAGE_TYPE_MAJOR_EVENT, GC.getBuildingInfo(eBuilding).getArtInfo()->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-					break;
-				}
-			}
-		}
-		else
-		{
-			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", GC.getReligionInfo(eReligion).getText(), getName().GetCString()), "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-		}
 	}
 }
 

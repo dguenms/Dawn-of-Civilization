@@ -3281,4 +3281,44 @@
 		<Italian>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</Italian>
 		<Spanish>University of Sankore produced %d1 [ICON_GOLD] after receiving [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] in trade.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PANTHEON</Tag>
+		<English>The Pantheon</English>
+		<French>The Pantheon</French>
+		<German>The Pantheon</German>
+		<Italian>The Pantheon</Italian>
+		<Spanish>The Pantheon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PANTHEON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pantheon[COLOR_REVERT] provides additional gold for each [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants gold when a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] is removed from a city, and allows converting from a pagan religion to a major religion without anarchy. It also increases the chances of generating a [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Pantheon[COLOR_REVERT] provides additional gold for each [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants gold when a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] is removed from a city, and allows converting from a pagan religion to a major religion without anarchy. It also increases the chances of generating a [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pantheon[COLOR_REVERT] provides additional gold for each [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants gold when a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] is removed from a city, and allows converting from a pagan religion to a major religion without anarchy. It also increases the chances of generating a [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pantheon[COLOR_REVERT] provides additional gold for each [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants gold when a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] is removed from a city, and allows converting from a pagan religion to a major religion without anarchy. It also increases the chances of generating a [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pantheon[COLOR_REVERT] provides additional gold for each [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants gold when a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] is removed from a city, and allows converting from a pagan religion to a major religion without anarchy. It also increases the chances of generating a [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PANTHEON_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</English>
+		<French>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</French>
+		<German>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</German>
+		<Italian>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PANTHEON_EFFECT</Tag>
+		<English>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</English>
+		<French>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</French>
+		<German>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</German>
+		<Italian>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</Italian>
+		<Spanish>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

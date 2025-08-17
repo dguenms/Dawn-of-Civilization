@@ -130,6 +130,7 @@ public:
 	void reportTribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
 	void reportGlobalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // Leoreth
 	void reportGlobalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // Leoreth
+	void reportBuildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

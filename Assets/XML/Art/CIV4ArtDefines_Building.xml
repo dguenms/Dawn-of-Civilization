@@ -3747,5 +3747,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/GreatAdobeMosque/Djenne.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PANTHEON</Type>
+			<LSystem>LSYSTEM_2x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Pantheon/Pantheon.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Pantheon/Pantheon.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

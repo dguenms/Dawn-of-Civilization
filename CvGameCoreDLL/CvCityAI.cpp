@@ -10456,6 +10456,13 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
+	else if (eBuilding == PANTHEON)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).countNumBuildings(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE)) < 3)
+		{
+			return -MAX_INT;
+		}
+	}
 	else if (eBuilding == TEMPLE_OF_KUKULKAN)
 	{
 		int iRainforestCount = 0;

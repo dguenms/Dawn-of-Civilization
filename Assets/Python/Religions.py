@@ -238,6 +238,27 @@ def lateReligionFounding(iTech):
 		checkLateReligionFounding(iReligion, iTech)
 
 
+@handler("religionSpread")
+def replacePaganTemple(iReligion, iPlayer, city):
+	iUniquePaganTemple = unique_building(iPlayer, iPaganTemple)
+	if city.isHasRealBuilding(iUniquePaganTemple):
+		city.setHasRealBuilding(iUniquePaganTemple, False)
+		
+		iStateReligion = player(iPlayer).getStateReligion()
+		iTemple = temple(iReligion)
+		if iStateReligion == iReligion and city.canConstruct(iTemple, False, False, False):
+			city.setHasRealBuilding(iTemple, True)
+			message(iPlayer, "TXT_KEY_PAGAN_TEMPLE_REPLACED", infos.religion(iReligion).getText(), city.getName(), infos.building(iUniquePaganTemple).getText(), infos.building(iTemple).getText(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=infos.building(iTemple).getButton(), sound=infos.building(iTemple).getConstructSound(), location=city)
+		else:
+			message(iPlayer, "TXT_KEY_PAGAN_TEMPLE_REMOVED", infos.religion(iReligion).getText(), city.getName(), infos.building(iUniquePaganTemple).getText(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, location=city)
+		
+		# Pantheon effect: receives gold for removed pagan temples
+		if player(iPlayer).isHasBuildingEffect(iPantheon):
+			iGold = infos.building(iUniquePaganTemple).getProductionCost() / 2
+			player(iPlayer).changeGold(iGold)
+			message(iPlayer, "TXT_KEY_BUILDING_PANTHEON_EFFECT", iGold, infos.building(iUniquePaganTemple).getText(), city.getName(), button=infos.building(iPantheon).getButton(), sound="AS2D_WONDERGOLD", location=city)
+
+
 ## IMPLEMENTATION
 
 
