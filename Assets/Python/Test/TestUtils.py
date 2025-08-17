@@ -1,7 +1,7 @@
 from Core import *
 from unittest import *
 
-from Slots import findSlot, addPlayer
+from Slots import addPlayer
 
 from Pickling import pickle
 

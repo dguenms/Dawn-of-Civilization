@@ -228,8 +228,6 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				
 				iNewWorldCiv = civ(iNewWorldPlayer)
 				
-				#breakObserverMode("%s contacted %s" % (name(iOldWorldPlayer), name(iNewWorldPlayer)))
-				
 				if player(iNewWorldCiv).isBirthProtected():
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					return
@@ -461,6 +459,14 @@ def lateTradingCompany(iTech, iTeam, iPlayer):
 		if iTech in lTechs and all(team(iTeam).isHasTech(iTech) for iTech in lTechs):
 			if not player(iPlayer).isHuman() and not team(iTeam).isAVassal():
 				handleColonialConquest(iPlayer)
+
+
+@handler("techAcquired")
+def minorNativeStates(iTech):
+	if iTech == iNationalism and game.countKnownTechNumTeams(iNationalism) == 6:
+		for iMinor, minorCities in cities.owner(iNative).divide([iIndependent, iIndependent2]):
+			for city in minorCities:
+				completeCityFlip(city, iMinor, iNative, 100, bFlipUnits=True)
 
 
 ### COLLAPSE ###

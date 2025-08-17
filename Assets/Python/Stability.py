@@ -5,7 +5,6 @@ from Resurrection import *
 from Secession import *
 from Collapse import *
 
-from Slots import findSlot
 from Events import handler, events
 
 from operator import itemgetter
