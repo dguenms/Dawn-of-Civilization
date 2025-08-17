@@ -5568,7 +5568,7 @@ int CvCity::getHurryPercentAnger(int iExtra) const
 
 	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
 	{
-		return std::min(iHurryPercentAnger, 100);
+		return std::min(iHurryPercentAnger, GC.getPERCENT_ANGER_DIVISOR());
 	}
 
 	return iHurryPercentAnger;
@@ -5586,7 +5586,7 @@ int CvCity::getConscriptPercentAnger(int iExtra) const
 
 	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
 	{
-		return std::min(iConscriptPercentAnger, 100);
+		return std::min(iConscriptPercentAnger, GC.getPERCENT_ANGER_DIVISOR());
 	}
 
 	return iConscriptPercentAnger;
