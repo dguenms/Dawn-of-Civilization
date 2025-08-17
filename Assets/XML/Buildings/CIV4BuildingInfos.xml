@@ -10085,6 +10085,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_PANTHEON</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<ObsoleteTech>TECH_DOCTRINE</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
