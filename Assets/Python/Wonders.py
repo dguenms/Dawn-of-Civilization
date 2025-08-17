@@ -96,7 +96,7 @@ def spaceElevatorEffect(city, unit):
 			city.changeBuildingYieldChange(infos.building(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
 
 
-# Space Elevator effect: +5 commerce per space projectBuilt
+# Space Elevator effect: +5 commerce per space project built
 @handler("projectBuilt")
 def spaceElevatorProjectEffect(city, iProject):
 	if infos.project(iProject).isSpaceship():
@@ -190,3 +190,32 @@ def nobelPrizeEffect(unit, iPlayer):
 				
 				interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
 				message(city.getOwner(), 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(unit), unit.getName(), city.getName(), iGreatPeoplePoints)
+
+
+# Westminster Palace effect: +1 gold per colony
+@handler("buildingBuilt")
+def westminsterPalaceOnBuilt(city, iBuilding):
+	if iBuilding == iWestminsterPalace:
+		iNumColonies = cities.owner(city.getOwner()).count(CyCity.isColony)
+		city.changeBuildingCommerceChange(infos.building(iBuilding).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iNumColonies)
+
+
+@handler("cityAcquired")
+def westminsterPalaceOnCityAcquired(iOwner, iPlayer, city):
+	wonderCity = getBuildingCity(iWestminsterPalace)
+	if wonderCity and wonderCity.getOwner() == iPlayer and city.isColony():
+		wonderCity.changeBuildingCommerceChange(infos.building(iWestminsterPalace).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, 1)
+
+
+@handler("cityBuilt")
+def westminsterPalaceOnCityBuilt(city):
+	wonderCity = getBuildingCity(iWestminsterPalace)
+	if wonderCity and wonderCity.getOwner() == city.getOwner() and city.isColony():
+		wonderCity.changeBuildingCommerceChange(infos.building(iWestminsterPalace).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, 1)
+
+
+@handler("cityLost")
+def westminsterPalaceOnCityLost(city):
+	wonderCity = getBuildingCity(iWestminsterPalace)
+	if wonderCity and wonderCity.getOwner() == city.getOwner() and city.isColony():
+		wonderCity.changeBuildingCommerceChange(infos.building(iWestminsterPalace).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, -1)

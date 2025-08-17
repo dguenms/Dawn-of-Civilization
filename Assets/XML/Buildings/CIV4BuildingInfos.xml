@@ -14112,16 +14112,17 @@
 			<Description>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WESTMINSTER_PALACE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_WESTMINSTER_PALACE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WESTMINSTER_PALACE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_WESTMINSTER_PALACE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_JOURNALISM</PrereqTech>
-			<FreeBuilding>BUILDINGCLASS_COURTHOUSE</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>250</iAIWeight>
 			<iCost>1000</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -14144,12 +14145,6 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
 			<ConstructSound>AS2D_BUILD_COURTHOUSE</ConstructSound>
 			<Flavors>
 				<Flavor>

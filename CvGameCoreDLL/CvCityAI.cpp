@@ -10550,6 +10550,13 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
+	else if (eBuilding == WESTMINSTER_PALACE)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).countColonies() <= 5)
+		{
+			return -MAX_INT;
+		}
+	}
 	else if (eBuilding == CHANNEL_TUNNEL)
 	{
 		int iFriendlyRelationCount = 0;
