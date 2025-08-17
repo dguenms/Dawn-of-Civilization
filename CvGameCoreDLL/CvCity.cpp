@@ -6881,6 +6881,36 @@ int CvCity::getAdditionalBaseGreatPeopleRateByBuilding(BuildingTypes eBuilding) 
 				iExtraRate += getAdditionalBaseGreatPeopleRateBySpecialist((SpecialistTypes)iI, kBuilding.getFreeSpecialistCount((SpecialistTypes)iI));
 			}
 		}
+
+		// special wonder effects
+		if (eBuilding == PYRAMIDS)
+		{
+			iExtraRate += getBonusGoodHappiness();
+		}
+		else if (eBuilding == PYRAMID_OF_THE_SUN)
+		{
+			iExtraRate += getSpecialistCount(SPECIALIST_CITIZEN) * 3;
+		}
+		else if (eBuilding == ITSUKUSHIMA_SHRINE)
+		{
+			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				if (getCityIndexPlot(iI)->isWater())
+				{
+					iExtraRate += 1;
+				}
+			}
+		}
+		else if (eBuilding == POTALA_PALACE)
+		{
+			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				if (getCityIndexPlot(iI)->isHills())
+				{
+					iExtraRate += 1;
+				}
+			}
+		}
 	}
 
 	return iExtraRate;
@@ -6905,6 +6935,12 @@ int CvCity::getAdditionalGreatPeopleRateModifierByBuilding(BuildingTypes eBuildi
 		iExtraModifier += kBuilding.getGreatPeopleRateModifier();
 		iExtraModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 		iExtraModifier += kBuilding.getGlobalGreatPeopleRateModifier();
+
+		// Special wonder effects
+		if (eBuilding == SHWEDAGON_PAYA)
+		{
+			iExtraModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRate(COMMERCE_GOLD);
+		}
 	}
 
 	return iExtraModifier;
@@ -7539,8 +7575,8 @@ void CvCity::updateFeatureHealth()
 				else
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
-					bool bCongoUP = (getCivilizationType() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH")));
-					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HANGING_GARDENS) && eFeature == GC.getInfoTypeForString("FEATURE_FLOOD_PLAINS"));
+					bool bCongoUP = (getCivilizationType() == CONGO && (eFeature == FEATURE_JUNGLE || eFeature == FEATURE_MARSH));
+					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HANGING_GARDENS) && eFeature == FEATURE_FLOOD_PLAINS);
 
 					if (!bCongoUP && !bHangingGardens)
 					{
@@ -8033,6 +8069,26 @@ int CvCity::getAdditionalHappinessByBuilding(BuildingTypes eBuilding, int& iGood
 		iBad = iStartingBad - unhappyLevel();
 	}
 
+	// Special wonder effects
+	if (eBuilding == SHALIMAR_GARDENS)
+	{
+		iGood += std::max(0, kBuilding.getHealth() + goodHealth() - badHealth());
+	}
+	else if (eBuilding == GARDENS_BY_THE_BAY)
+	{
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			if (isHasRealBuilding((BuildingTypes)iI) && GC.getBuildingInfo((BuildingTypes)iI).getHealth() > 0)
+			{
+				iGood += 1;
+			}
+		}
+	}
+	else if (eBuilding == HARBOUR_OPERA)
+	{
+		iGood += 2 * getCultureLevel();
+	}
+
 	// Effect on Angry Population
 	int iHappy = happyLevel();
 	int iUnhappy = unhappyLevel();
@@ -8181,6 +8237,21 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 				subtractGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
 			}
 		}
+	}
+
+	// Special wonder effects
+	if (eBuilding == HANGING_GARDENS)
+	{
+		int iFloodPlainsCount = 0;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS)
+			{
+				iFloodPlainsCount += 1;
+			}
+		}
+
+		iBad += iFloodPlainsCount * GC.getFeatureInfo(FEATURE_FLOOD_PLAINS).getHealthPercent() / 100;
 	}
 
 	// Effect on Spoiled Food
@@ -9864,6 +9935,88 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 			{
 				iExtraRate += getCultureLevel();
 			}
+			else if (eBuilding == LOTUS_TEMPLE)
+			{
+				iExtraRate += getReligionCount() - ((GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion())) ? 1 : 0);
+			}
+		}
+		else if (eIndex == YIELD_PRODUCTION)
+		{
+			if (eBuilding == MOAI_STATUES)
+			{
+				for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+				{
+					if (getCityIndexPlot(iI)->isWater() && getCityIndexPlot(iI)->getImprovementType() != NO_IMPROVEMENT)
+					{
+						iExtraRate += 2;
+					}
+				}
+			}
+			else if (eBuilding == PRAMBANAN)
+			{
+				iExtraRate += getBonusGoodHappiness();
+			}
+			else if (eBuilding == MOLE_ANTONELLIANA)
+			{
+				for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+				{
+					if (getCityIndexPlot(iI)->isPeak())
+					{
+						iExtraRate += 2;
+					}
+				}
+			}
+		}
+		else if (eIndex == YIELD_COMMERCE)
+		{
+			if (eBuilding == GREAT_ADOBE_MOSQUE)
+			{
+				for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+				{
+					if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_DESERT || getCityIndexPlot(iI)->getTerrainType() == TERRAIN_SEMIDESERT)
+					{
+						iExtraRate += 1;
+					}
+				}
+			}
+			else if (eBuilding == METROPOLITAIN)
+			{
+				for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+				{
+					BuildingClassTypes eBuildingClass = (BuildingClassTypes)iI;
+					if (::isNationalWonderClass(eBuildingClass) || ::isWorldWonderClass(eBuildingClass))
+					{
+						continue;
+					}
+
+					BuildingTypes eCivilizationBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+					if (eCivilizationBuilding != NO_BUILDING)
+					{
+						iExtraRate += (GC.getBuildingInfo(eCivilizationBuilding).getCommerceChange(COMMERCE_CULTURE) + GC.getBuildingInfo(eCivilizationBuilding).getObsoleteSafeCommerceChange(COMMERCE_CULTURE)) / 2;
+					}
+				}
+			}
+			else if (eBuilding == BURJ_KHALIFA)
+			{
+				for (int iI = 0; iI < GC.getNumCorporationInfos(); iI++)
+				{
+					iExtraRate += GC.getGameINLINE().countCorporationLevels((CorporationTypes)iI);
+				}
+			}
+			else if (eBuilding == ITER)
+			{
+				int iNumPowerConsumed = 0;
+				for (int iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					int iLoop;
+					for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+					{
+						iNumPowerConsumed += pLoopCity->getPowerConsumedCount();
+					}
+				}
+
+				iExtraRate += iNumPowerConsumed / 20;
+			}
 		}
 
 		// Trade
@@ -11013,6 +11166,112 @@ int CvCity::getAdditionalBaseCommerceRateByBuildingImpl(CommerceTypes eIndex, Bu
 				iExtraRate += getAdditionalBaseCommerceRateBySpecialistImpl(eIndex, (SpecialistTypes)iI, kBuilding.getFreeSpecialistCount((SpecialistTypes)iI));
 			}
 		}
+
+		// Special wonder effects
+		if (eIndex == COMMERCE_GOLD)
+		{
+			if (eBuilding == PANTHEON)
+			{
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).countNumBuildings(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE));
+			}
+			else if (eBuilding == MACHU_PICCHU)
+			{
+				for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+				{
+					if (getCityIndexPlot(iI)->isPeak())
+					{
+						iExtraRate += 2;
+					}
+				}
+			}
+			else if (eBuilding == OLD_SYNAGOGUE)
+			{
+				for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+				{
+					if (isHasRealBuilding((BuildingTypes)iJ) && GC.getBuildingInfo((BuildingTypes)iJ).getReligionType() == JUDAISM)
+					{
+						iExtraRate += 2;
+					}
+				}
+			}
+			else if (eBuilding == ESCORIAL)
+			{
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_SILVER) * 2;
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_GOLD) * 2;
+			}
+			else if (eBuilding == EMPIRE_STATE_BUILDING)
+			{
+				iExtraRate += getPopulation();
+			}
+			else if (eBuilding == WESTMINSTER_PALACE)
+			{
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).countColonies();
+			}
+		}
+		else if (eIndex == COMMERCE_RESEARCH)
+		{
+			if (eBuilding == ATOMIUM)
+			{
+				iExtraRate += 10 * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_URANIUM);
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_COPPER);
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_IRON);
+				iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_ALUMINUM);
+			}
+			else if (eBuilding == GLOBAL_SEED_VAULT)
+			{
+				for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+				{
+					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+					{
+						CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
+						if (kBuild.isGraphicalOnly())
+						{
+							continue;
+						}
+
+						if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
+						{
+							CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
+							if (kImprovement.isImprovementBonusMakesValid(iI) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
+							{
+								iExtraRate += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses((BonusTypes)iI);
+								break;
+							}
+						}
+					}
+				}
+			}
+			else if (eBuilding == HUBBLE_SPACE_TELESCOPE)
+			{
+				for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+				{
+					if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
+					{
+						iExtraRate += 3 * getSpecialistCount((SpecialistTypes)iI);
+					}
+				}
+			}
+			else if (eBuilding == ORIENTAL_PEARL_TOWER)
+			{
+				iExtraRate += 2 * getPopulation();
+			}
+		}
+		else if (eIndex == COMMERCE_CULTURE)
+		{
+			if (eBuilding == HIMEJI_CASTLE)
+			{
+				CvUnit* pUnit;
+				for (int i = 0; i < plot()->getNumUnits(); i++)
+				{
+					pUnit = plot()->getUnitByIndex(i);
+
+					if (pUnit->getOwner() == getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
+					{
+						iExtraRate += pUnit->getLevel();
+					}
+				}
+			}
+		}
 	}
 	
 	return iExtraRate;
@@ -11082,6 +11341,15 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 		if (isPower())
 		{
 			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
+		}
+
+		// Special wonder effects
+		if (eIndex == COMMERCE_RESEARCH)
+		{
+			if (eBuilding == HERMITAGE)
+			{
+				iExtraModifier += 10 * getCultureLevel();
+			}
 		}
 	}
 	
