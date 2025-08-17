@@ -983,7 +983,7 @@ iNumGreatWonders = 137 # different from DLL constant because that includes natio
 iFirstWonder = iNumBuildings
 iNumBuildings += iNumGreatWonders
 (iGreatSphinx, iPyramids, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, 
-iColossus, iStatueOfZeus, iGreatMausoleum, iParthenon, iPyramidOfTheSun, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iAquaAppia, 
+iColossus, iGreatMausoleum, iAquaAppia, iParthenon, iPyramidOfTheSun, iStatueOfZeus, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, 
 iAlKhazneh, iTempleOfKukulkan, iMachuPicchu, iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, iNalanda, iTheodosianWalls, iHagiaSophia, 
 iBorobudur, iMezquita, iShwedagonPaya, iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, iCheomseongdae, iHimejiCastle, iGrandCanal, 
 iWatPreahPisnulok, iKhajuraho, iGreatAdobeMosque, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iKrakDesChevaliers, iMonolithicChurch, iUniversityOfSankore, iNotreDame, 
