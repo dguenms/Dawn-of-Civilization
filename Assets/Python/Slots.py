@@ -21,6 +21,9 @@ def findMinorSlot(iCiv):
 	return next(iSlot for iSlot in reversed(range(iNumPlayers)) if civ(iSlot) == -1)
 	
 def availableSlot(iSlot):
+	if civ(iSlot) == iNative and since(year(1900)) > 0 and player(iSlot).getNumCities() == 0 and player(iSlot).getNumUnits() == 0:
+		return True
+	
 	if player(iSlot).isAlive():
 		return False
 	
