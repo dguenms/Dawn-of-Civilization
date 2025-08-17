@@ -9629,6 +9629,7 @@
 			<Description>TXT_KEY_BUILDING_AQUA_APPIA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_AQUA_APPIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_AQUA_APPIA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_AQUA_APPIA_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AQUA_APPIA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_AQUA_APPIA</MovieDefineTag>
@@ -9640,14 +9641,13 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
-			<iCost>400</iCost>
+			<iAIWeight>100</iAIWeight>
+			<iCost>350</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iGlobalHealth>2</iGlobalHealth>
 			<iAsset>8</iAsset>
-			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
@@ -9744,6 +9744,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
+			<iAIWeight>100</iAIWeight>
 			<iCost>500</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

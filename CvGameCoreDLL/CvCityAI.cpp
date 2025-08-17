@@ -10456,6 +10456,13 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
+	else if (eBuilding == AQUA_APPIA)
+	{
+		if (getCultureLevel() < 2)
+		{
+			return -MAX_INT;
+		}
+	}
 	else if (eBuilding == PANTHEON)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).countNumBuildings(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE)) < 3)

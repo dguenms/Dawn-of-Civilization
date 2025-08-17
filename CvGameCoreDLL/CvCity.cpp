@@ -4670,6 +4670,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), getBonusGoodHappiness() * iChange);
 		}
 
+		if (eBuilding == AQUA_APPIA)
+		{
+			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_FOOD, iChange * getCultureLevel());
+		}
+
 		// Pyramid of the Sun
 		if (eBuilding == PYRAMID_OF_THE_SUN)
 		{
@@ -9606,6 +9611,11 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 				changeExtraTradeRoutes(eNewValue - eOldValue);
 			}
 
+			if (isHasBuildingEffect((BuildingTypes)AQUA_APPIA))
+			{
+				changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
+			}
+
 			if ((getCultureLevel() > eOldValue) && (getCultureLevel() > 1))
 			{
 				//szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());
@@ -9846,6 +9856,15 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 		}
 		iExtraRate += kBuilding.getYieldChange(eIndex);
 		iExtraRate += getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), eIndex);
+
+		// Special wonder effects
+		if (eIndex == YIELD_FOOD)
+		{
+			if (eBuilding == AQUA_APPIA)
+			{
+				iExtraRate += getCultureLevel();
+			}
+		}
 
 		// Trade
 		int iPlayerTradeYieldModifier = GET_PLAYER(getOwnerINLINE()).getTradeYieldModifier(eIndex);

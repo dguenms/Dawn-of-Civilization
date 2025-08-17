@@ -2823,11 +2823,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUA_APPIA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] improves the health of your cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] improves the health of your cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] improves the health of your cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] improves the health of your cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] improves the health of your cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] provides additional food based on the culture level of its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] provides additional food based on the culture level of its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] provides additional food based on the culture level of its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] provides additional food based on the culture level of its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Aqua Appia[COLOR_REVERT] provides additional food based on the culture level of its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AQUA_APPIA_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] per Culture Level</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] per Culture Level</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] per Culture Level</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] per Culture Level</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] per Culture Level</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMBER_ROOM</Tag>
