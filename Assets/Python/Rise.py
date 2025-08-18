@@ -268,13 +268,13 @@ def createExpansionArmies(bWar, iAttacker, iDefender):
 
 
 def createExpansionUnits(iAttacker, iDefender, tile, closest, iExtraAI, iExtraTargets):
-		dExpansionUnits = {
-			iCityAttack: 2 + iExtraAI + iExtraTargets,
-			iSiege: 1 + 2*iExtraAI + iExtraTargets,
-		}
-		createRoleUnits(iAttacker, tile, dExpansionUnits.items()).promotion(iVolunteer)
-		
-		message(iDefender, "TXT_KEY_MESSAGE_EXPANSION_UNITS", player(iAttacker).getCivilizationDescription(0), closest.getName(), color=iRed, location=tile, button=infos.civ(player(iAttacker).getCivilizationType()).getButton())
+	dExpansionUnits = {
+		iCityAttack: 2 + iExtraAI + iExtraTargets,
+		iSiege: 1 + 2*iExtraAI + iExtraTargets,
+	}
+	createRoleUnits(iAttacker, tile, dExpansionUnits.items()).promotion(iVolunteer)
+	
+	message(iDefender, "TXT_KEY_MESSAGE_EXPANSION_UNITS", player(iAttacker).getCivilizationDescription(0), closest.getName(), color=iRed, location=tile, button=infos.civ(player(iAttacker).getCivilizationType()).getButton())
 
 
 def deleteExpansionUnits(iPlayer):
@@ -902,7 +902,7 @@ class Birth(object):
 				target, attacker_closest = expansionCities.where(is_minor).where_surrounding(lambda city: not units.at(city).owner(self.iPlayer)).where_maximum(lambda city: plot_(city).getPlayerWarValue(self.iPlayer)).closest_pair(cities.owner(self.iPlayer))
 				
 				if target:
-					defender_closest = cities.owner(target.getOwner()).closest(attacker_closest)
+					defender_closest = cities.owner(target.getOwner()).where(lambda city: distance(city, target) <= distance(target, attacker_closest)).closest(attacker_closest)
 					spawn = possibleSpawnsBetween(attacker_closest, defender_closest, 1).closest(defender_closest)
 		
 					createExpansionUnits(self.iPlayer, target.getOwner(), spawn, defender_closest, iExtraAI=0, iExtraTargets=0)
