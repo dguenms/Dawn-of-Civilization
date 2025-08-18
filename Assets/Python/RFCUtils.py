@@ -63,12 +63,18 @@ def restorePeaceAI(iMinorCiv, bOpenBorders):
 	teamMinor = team(iMinorCiv)
 	for iPlayer in players.major().existing().ai():
 		if team(iMinorCiv).isAtWar(player(iPlayer).getTeam()):
-			bInvadingIndependents = checkUnitsInEnemyTerritory(iPlayer, iMinorCiv)
-			bInvadedByIndependents = checkUnitsInEnemyTerritory(iMinorCiv, iPlayer)
-			if not bInvadingIndependents and not bInvadedByIndependents:
-				teamMinor.makePeace(iPlayer)
-				if bOpenBorders:
-					teamMinor.signOpenBorders(iPlayer)
+			if checkUnitsInEnemyTerritory(iPlayer, iMinorCiv):
+				continue
+				
+			if checkUnitsInEnemyTerritory(iMinorCiv, iPlayer):
+				continue
+				
+			if cities.owner(iMinorCiv).any(lambda city: plot(city).getExpansion() == iPlayer):
+				continue
+				
+			teamMinor.makePeace(iPlayer)
+			if bOpenBorders:
+				teamMinor.signOpenBorders(iPlayer)
 
 # used: AIWars
 def restorePeaceHuman(iMinorCiv, bOpenBorders): 
@@ -76,10 +82,13 @@ def restorePeaceHuman(iMinorCiv, bOpenBorders):
 	iHuman = active()
 	if player().isExisting():
 		if teamMinor.isAtWar(iHuman):
-			bInvadingIndependents = checkUnitsInEnemyTerritory(iHuman, iMinorCiv)
-			bInvadedByIndependents = checkUnitsInEnemyTerritory(iMinorCiv, iHuman)
-			if not bInvadingIndependents and not bInvadedByIndependents:
-				teamMinor.makePeace(iHuman)
+			if checkUnitsInEnemyTerritory(iHuman, iMinorCiv):
+				continue
+				
+			if checkUnitsInEnemyTerritory(iMinorCiv, iHuman):
+				continue
+			
+			teamMinor.makePeace(iHuman)
 
 # used: AIWars
 def minorWars(iMinorCiv):
