@@ -83,10 +83,10 @@ def restorePeaceHuman(iMinorCiv, bOpenBorders):
 	if player().isExisting():
 		if teamMinor.isAtWar(iHuman):
 			if checkUnitsInEnemyTerritory(iHuman, iMinorCiv):
-				continue
+				return
 				
 			if checkUnitsInEnemyTerritory(iMinorCiv, iHuman):
-				continue
+				return
 			
 			teamMinor.makePeace(iHuman)
 
