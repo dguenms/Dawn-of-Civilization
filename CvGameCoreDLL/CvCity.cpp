@@ -9677,14 +9677,17 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
-			if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
+			if (eOldValue != NO_CULTURELEVEL && eNewValue != NO_CULTURELEVEL)
 			{
-				changeExtraTradeRoutes(eNewValue - eOldValue);
-			}
+				if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
+				{
+					changeExtraTradeRoutes(eNewValue - eOldValue);
+				}
 
-			if (isHasBuildingEffect((BuildingTypes)AQUA_APPIA))
-			{
-				changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
+				if (isHasBuildingEffect((BuildingTypes)AQUA_APPIA))
+				{
+					changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
+				}
 			}
 
 			if ((getCultureLevel() > eOldValue) && (getCultureLevel() > 1))
