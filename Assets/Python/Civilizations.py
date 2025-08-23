@@ -2077,6 +2077,7 @@ dBuildingPreferences = {
 	iRome : {
 		iFlavianAmphitheatre: 30,
 		iAquaAppia: 30,
+		iPantheon: 30,
 		iSantaMariaDelFiore: 30,
 		iSistineChapel: 30,
 		iSanMarcoBasilica: 30,
