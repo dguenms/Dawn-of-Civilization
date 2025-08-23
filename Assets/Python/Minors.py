@@ -116,7 +116,7 @@ class MinorCity(object):
 		x, y = location(self.tile)
 		
 		convertPlotCulture(self.tile, iOwnerPlayer, 100, bOwner=True)
-		expelUnits(iOwnerPlayer, plots.surrounding(x, y))
+		expelUnits(iOwnerPlayer, plots.surrounding(self.tile).where(lambda p: not p.isOwned()).including(self.tile))
 		
 		player(iOwnerPlayer).found(x, y)
 		founded = city(x, y)
