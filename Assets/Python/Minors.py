@@ -86,6 +86,9 @@ class MinorCity(object):
 		if not self.condition():
 			return False
 		
+		if not player(self.iOwner).canFound(*location(self.tile)):
+			return False
+		
 		if not isFree(self.iOwner, self.tile, bNoCity=True, bNoCulture=True) and not isFree(self.iOwner, self.tile, bNoCity=True, iCityDistance=2):
 			return False
 		
