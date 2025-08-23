@@ -6294,7 +6294,10 @@ name_translations = {
 			translate("Gaunt", iBefore=iMedieval),
 			"Ghent",
 		),
-		iFrench: "Gand",
+		iFrench: (
+			found("Lille"),
+			"Gand",
+		),
 		iGerman: _,
 		iGreek: u"Ghándhi",
 		iItalian: "Guanto",
@@ -10171,6 +10174,15 @@ name_translations = {
 		iFrench: "Jadotville",
 		iCongolese: "Likasi",
 	},
+	"Lille": {  # founded on Gent
+		iChinese: "Li'er",
+		iDutch: "Rijsel",
+		iFrench: _,
+		iGerman: "Ryssel",
+		iItalian: "Lilla",
+		iKorean: "Ril",
+		iPortuguese: "Lila",
+	},
 	"Lilybaeum": {  # founded on Panormus
 		iArabic: "Marsallah",
 		iGreek: "Lilybaion",
@@ -10200,6 +10212,7 @@ name_translations = {
 		iEnglish: "Lincoln",
 		iLatin: "Lindum",
 		iNordic: found("Torksey"),
+		iPolynesian: "Ringikana",
 	},
 	"Lindong": {
 		iChinese: (
