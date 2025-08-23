@@ -26753,7 +26753,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=39
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_DATES
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -27206,7 +27207,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=39
-	BonusType=BONUS_DATES
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -27642,8 +27643,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=39
-	BonusType=BONUS_STONE
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
