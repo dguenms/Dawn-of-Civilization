@@ -2371,11 +2371,8 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=119,y=48
-	ImprovementType=IMPROVEMENT_PASTURE
-EndPlot
-BeginPlot
 	x=119,y=49
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
