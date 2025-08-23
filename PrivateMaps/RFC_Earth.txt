@@ -52898,6 +52898,7 @@ BeginPlot
 	x=117,y=48
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_RICE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -52913,6 +52914,7 @@ BeginPlot
 	x=117,y=50
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -53853,8 +53855,7 @@ BeginPlot
 	x=119,y=48
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_PIG
-	BonusVarietyType=BONUS_PIG_FURRY
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -53862,7 +53863,7 @@ BeginPlot
 	x=119,y=49
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -54320,7 +54321,7 @@ BeginPlot
 	x=120,y=47
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_SALT
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -54328,8 +54329,8 @@ BeginPlot
 	x=120,y=48
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_WHEAT
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -54796,12 +54797,12 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_SALT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=121,y=49
-	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -55267,7 +55268,7 @@ EndPlot
 BeginPlot
 	x=122,y=48
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
