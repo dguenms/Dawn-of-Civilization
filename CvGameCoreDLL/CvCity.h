@@ -1055,6 +1055,14 @@ public:
 	void setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
 	void changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
 
+	// Leoreth
+	void setBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iChange);
+	void setBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iChange);
+	void setBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iChange);
+	void changeBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iChange);
+	void changeBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iChange);
+	void changeBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iChange);
+
 	void updateBuildingYieldChange(BuildingClassTypes eBuildingType, YieldTypes eYield, int iChange);
 	void changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange);
 

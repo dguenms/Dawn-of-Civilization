@@ -1882,6 +1882,8 @@ public:
 	int getImprovementHappinessPercent(int i) const;
 	int getImprovementHealthPercent(int i) const;
 
+	BuildingClassTypes getBuildingClass() const;
+
 	// Other
 
 	const CvArtInfoBuilding* getArtInfo() const;

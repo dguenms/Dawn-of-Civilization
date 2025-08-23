@@ -8665,6 +8665,12 @@ bool CvBuildingInfo::isNoResistance() const
 	return m_bNoResistance;
 }
 
+// Leoreth
+BuildingClassTypes CvBuildingInfo::getBuildingClass() const
+{
+	return (BuildingClassTypes)getBuildingClassType();
+}
+
 const TCHAR* CvBuildingInfo::getButton() const
 {
 	const CvArtInfoBuilding * pBuildingArtInfo;

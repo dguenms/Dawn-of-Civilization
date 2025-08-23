@@ -4660,6 +4660,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		updateExtraBuildingHappiness();
 		updateExtraBuildingHealth();
 
+		// Byzantine UP: +1 espionage in capital per 100 gold in treasury and +1 gold per 100 culture in capital
+		if (getCivilizationType() == BYZANTIUM && eBuilding == 0)
+		{
+			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, std::max(0, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / 100));
+		}
+
 		// Leoreth: special wonder effects
 		CvCity* pLoopCity;
 		int iLoop;
@@ -4667,18 +4673,19 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Pyramids
 		if (eBuilding == PYRAMIDS)
 		{
-			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), getBonusGoodHappiness() * iChange);
+			changeBuildingGreatPeopleRateChange(PYRAMIDS, std::max(0, getBonusGoodHappiness() * iChange));
 		}
 
+		// Aqua Appia
 		if (eBuilding == AQUA_APPIA)
 		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_FOOD, iChange * getCultureLevel());
+			setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, std::max(0, getCultureLevel() * iChange));
 		}
 
 		// Pyramid of the Sun
 		if (eBuilding == PYRAMID_OF_THE_SUN)
 		{
-			changeBaseGreatPeopleRate(getSpecialistCount(SPECIALIST_CITIZEN) * iChange * 3);
+			setBuildingGreatPeopleRateChange(PYRAMID_OF_THE_SUN, std::max(0, getSpecialistCount(SPECIALIST_CITIZEN) * 3 * iChange));
 		}
 
 		// Mount Athos
@@ -4694,7 +4701,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 						iGreatPeopleRate = GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
 						if (iGreatPeopleRate > 0)
 						{
-							pLoopCity->changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType(), iChange * iGreatPeopleRate);
+							pLoopCity->changeBuildingGreatPeopleRateChange(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClass(), iChange * iGreatPeopleRate);
 						}
 					}
 				}
@@ -4704,7 +4711,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Prambanan
 		if (eBuilding == PRAMBANAN)
 		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_PRODUCTION, getBonusGoodHappiness() * iChange);
+			setBuildingYieldChange(PRAMBANAN, YIELD_PRODUCTION, std::max(0, getBonusGoodHappiness() * iChange));
 		}
 
 		// Louvre
@@ -4722,19 +4729,19 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				}
 			}
 
-			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_CULTURE, iChange * iWonderCulture);
-		}
-
-		// Byzantine UP: +1 espionage in capital per 100 gold in treasury and +1 gold per 100 culture in capital
-		if (getCivilizationType() == BYZANTIUM && eBuilding == 0)
-		{
-			changeBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / 100);
+			setBuildingCommerceChange(LOUVRE, COMMERCE_CULTURE, std::max(0, iWonderCulture * iChange));
 		}
 
 		// Temple of Kukulkan
 		if (eBuilding == TEMPLE_OF_KUKULKAN)
 		{
 			updateYield();
+		}
+
+		// Escorial
+		else if (eBuilding == ESCORIAL)
+		{
+			setBuildingCommerceChange(ESCORIAL, COMMERCE_GOLD, std::max(0, (GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_SILVER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_GOLD)) * 2 * iChange));
 		}
 
 		// Potala Palace
@@ -4749,13 +4756,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				}
 			}
 
-			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)POTALA_PALACE).getBuildingClassType(), iChange * iNumHills);
+			setBuildingGreatPeopleRateChange(POTALA_PALACE, std::max(0, iNumHills * iChange));
 		}
 
 		// Image of the World Square
 		else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE)
 		{
-			changeExtraTradeRoutes(iChange * getCultureLevel());
+			changeExtraTradeRoutes(std::max(-getExtraTradeRoutes(), iChange * getCultureLevel()));
 		}
 
 		// Itsukushima Shrine
@@ -4770,7 +4777,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				}
 			}
 
-			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITSUKUSHIMA_SHRINE).getBuildingClassType(), iChange * iNumWater);
+			setBuildingGreatPeopleRateChange(ITSUKUSHIMA_SHRINE, std::max(0, iNumWater * iChange));
 		}
 
 		// Mole Antonelliana
@@ -4785,7 +4792,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				}
 			}
 
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)MOLE_ANTONELLIANA).getBuildingClassType(), YIELD_PRODUCTION, iChange * 2 * iNumPeaks);
+			setBuildingYieldChange(MOLE_ANTONELLIANA, YIELD_PRODUCTION, std::max(0, iNumPeaks * 2 * iChange));
 		}
 
 		// Metropolitain
@@ -4832,32 +4839,42 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		else if (eBuilding == ATOMIUM)
 		{
 			int iAtomiumResearch = 10 * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_URANIUM) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_IRON) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_COPPER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_ALUMINUM);
-			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * iAtomiumResearch);
+			setBuildingCommerceChange(ATOMIUM, COMMERCE_RESEARCH, std::max(0, iAtomiumResearch * iChange));
 		}
 
 		// Global Seed Vault
 		else if (eBuilding == GLOBAL_SEED_VAULT)
 		{
-			for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+			if (iChange > 0)
 			{
-				for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+				int iResearch = 0;
+				for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 				{
-					CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
-					if (kBuild.isGraphicalOnly())
+					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
 					{
-						continue;
-					}
-
-					if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
-					{
-						CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
-						if (kImprovement.isImprovementBonusMakesValid(iI) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
+						CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
+						if (kBuild.isGraphicalOnly())
 						{
-							changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses((BonusTypes)iI));
-							break;
+							continue;
+						}
+
+						if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
+						{
+							CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
+							if (kImprovement.isImprovementBonusMakesValid(iI) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
+							{
+								iResearch += GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses((BonusTypes)iI);
+								break;
+							}
 						}
 					}
 				}
+
+				setBuildingCommerceChange(GLOBAL_SEED_VAULT, COMMERCE_RESEARCH, iResearch * iChange);
+			}
+			else
+			{
+				setBuildingCommerceChange(GLOBAL_SEED_VAULT, COMMERCE_RESEARCH, 0);
 			}
 		}
 
@@ -4873,13 +4890,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				}
 			}
 
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
-		}
-
-		// Escorial
-		else if (eBuilding == ESCORIAL)
-		{
-			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_GOLD, iChange * 2 * (GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_SILVER) + GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses(BONUS_GOLD)));
+			setBuildingYieldChange(ITER, YIELD_COMMERCE, std::max(0, iPowerConsumed * iChange));
 		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -8439,16 +8450,19 @@ void CvCity::changeBonusGoodHappiness(int iChange)
 
 		AI_setAssignWorkDirty(true);
 
-		// Leoreth: Pyramids effect
-		if (isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+		if (getBonusGoodHappiness() >= 0)
 		{
-			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)PYRAMIDS).getBuildingClassType(), iChange);
-		}
+			// Leoreth: Pyramids effect
+			if (isHasBuildingEffect(PYRAMIDS))
+			{
+				changeBuildingGreatPeopleRateChange(PYRAMIDS, iChange);
+			}
 
-		// Leoreth: Prambanan effect
-		if (isHasBuildingEffect((BuildingTypes)PRAMBANAN))
-		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)PRAMBANAN).getBuildingClassType(), YIELD_PRODUCTION, iChange);
+			// Leoreth: Prambanan effect
+			if (isHasBuildingEffect(PRAMBANAN))
+			{
+				changeBuildingYieldChange(PRAMBANAN, YIELD_PRODUCTION, iChange);
+			}
 		}
 	}
 }
@@ -13774,7 +13788,6 @@ bool CvCity::isHasBuildingEffect(BuildingTypes eBuilding) const
 	return isHasRealBuilding(eBuilding) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(eBuilding);
 }
 
-
 //Rhye - start
 bool CvCity::isHasRealBuilding(BuildingTypes eIndex) const
 {
@@ -17556,6 +17569,11 @@ int CvCity::getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes
 	return 0;
 }
 
+void CvCity::setBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iChange)
+{
+	setBuildingYieldChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), eYield, iChange);
+}
+
 void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
 {
 	if (iChange <= -1000 || iChange >= 1000)
@@ -17596,6 +17614,11 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 
 		updateBuildingYieldChange(eBuildingClass, eYield, iChange);
 	}
+}
+
+void CvCity::changeBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iChange)
+{
+	changeBuildingYieldChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), eYield, iChange);
 }
 
 void CvCity::changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
@@ -17645,6 +17668,11 @@ int CvCity::getBuildingCommerceChange(BuildingClassTypes eBuildingClass, Commerc
 	return 0;
 }
 
+void CvCity::setBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iChange)
+{
+	setBuildingCommerceChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), eCommerce, iChange);
+}
+
 void CvCity::setBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange)
 {
 	for (std::vector<BuildingCommerceChange>::iterator it = m_aBuildingCommerceChange.begin(); it != m_aBuildingCommerceChange.end(); ++it)
@@ -17679,6 +17707,11 @@ void CvCity::setBuildingCommerceChange(BuildingClassTypes eBuildingClass, Commer
 
 		updateBuildingCommerce();
 	}
+}
+
+void CvCity::changeBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iChange)
+{
+	changeBuildingCommerceChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), eCommerce, iChange);
 }
 
 void CvCity::changeBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange)
@@ -17977,6 +18010,11 @@ int CvCity::getBuildingHealthChange(BuildingClassTypes eBuildingClass) const
 	return 0;
 }
 
+void CvCity::setBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iChange)
+{
+	setBuildingGreatPeopleRateChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), iChange);
+}
+
 void CvCity::setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange)
 {
 	for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
@@ -18022,6 +18060,11 @@ void CvCity::setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass,
 			}
 		}
 	}
+}
+
+void CvCity::changeBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iChange)
+{
+	changeBuildingGreatPeopleRateChange(GC.getBuildingInfo(eBuilding).getBuildingClass(), iChange);
 }
 
 void CvCity::changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange)
