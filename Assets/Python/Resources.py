@@ -58,9 +58,7 @@ dResourcesDict = {
 	(129, 47) : (-200,  iCitrus),   # South China
 	(124, 46) : (-200,  iSilk),     # South China
 	(124, 43) : (-200,  iSilk),     # South China
-	(127, 42) : (-200,  iFish),     # South China
-	(129, 45) : (-200,  iClam),     # South China
-	(125, 41) : (-200,  iClam),     # South China
+	(128, 50) : (-200,  iClam),     # South China
 	(85, 51)  : (200,   iCitrus),   # Levant
 	(83, 45)  : (200,   iCitrus),   # Levant
 	(76, 44)  : (200,   iCitrus),   # Egypt
@@ -84,7 +82,10 @@ dResourcesDict = {
 	(89, 46)  : (700,   iSugar),	# Mesopotamia
 	(78, 41)  : (700,   iSugar),	# Egypt
 	(113, 44) : (800,   iOpium),    # Bengal
-	(82, 40)  : (900,   iIron),		# Egypt
+	(127, 42) : (800,   iFish),     # South China
+	(129, 45) : (800,   iClam),     # South China
+	(125, 41) : (800,   iClam),     # South China
+	(82, 40)  : (900,   iIron),     # Egypt
 	(73, 25)  : (1000,  iBanana),   # Congo
 	(70, 30)  : (1000,  iBanana),   # Cameroon
 	(62, 32)  : (1000,  iBanana),   # West Africa
@@ -96,6 +97,7 @@ dResourcesDict = {
 	(121, 47) : (1200,  iOpium),    # Sichuan
 	(52, 44)  : (1400,  iSugar),	# Madeira
 	(112, 43) : (1400,  iCotton),   # Bengal
+	(130, 48) : (1400,  iFish),     # South China
 	(63, 65)  : (1500,  iCow),      # Netherlands
 	(81, 18)  : (1500,  iCitrus),   # Mozambique
 	(70, 48)  : (1500,  iCitrus),   # Sicily
@@ -305,6 +307,7 @@ dRemovedFeaturesDict = {
 	(80, 37)  : 550,  # Nubia
 	(81, 39)  : 550,  # Nubia
 	(81, 38)  : 550,  # Nubia
+	(129, 50) : 800,  # South China
 	(87, 48)  : 1050, # Mesopotamia
 	(89, 45)  : 1050, # Mesopotamia
 	(91, 45)  : 1050, # Mesopotamia

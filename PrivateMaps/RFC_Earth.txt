@@ -58084,7 +58084,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=50
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58546,6 +58545,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=50
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58997,7 +58997,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=48
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
