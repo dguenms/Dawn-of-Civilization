@@ -490,7 +490,7 @@ minor_cities = [
 	MinorCity(900, iNative, (79, 18), "Zimbabwe", iPopulation=2, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SHONA"),
 	MinorCity(1000, iIndependent2, (74, 59), "Buda", iPopulation=3, iCiv=iHolyRome, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_MAGYAR"),
 	MinorCity(1000, iBarbarian, (92, 66), "Qazan", iPopulation=2, units={iHarass: 2}, adjective="TXT_KEY_ADJECTIVE_BULGAR"),
-	MinorCity(1000, iNative, (67, 34), "Kano", iPopulation=2, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_HAUSA"),
+	MinorCity(1000, iNative, (67, 35), "Kano", iPopulation=2, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_HAUSA"),
 	MinorCity(1100, iIndependent, (144, 33), "Nan Madol", iPopulation=1),
 	MinorCity(1150, iNative, (15, 44), "Ts'intsuntsani", iPopulation=3, iCiv=iAztecs, units={iDefend: 3, iAttack:2}, bIgnoreRuins=True, adjective="TXT_KEY_ADJECTIVE_PUREPECHA"),
 	MinorCity(1180, iIndependent, (66, 32), "Edo", iPopulation=3, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_EDO"),

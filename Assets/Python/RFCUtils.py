@@ -801,7 +801,7 @@ def expelUnits(iPlayer, area, excluded_area = None):
 		excluded_area = area
 
 	for plot in area:
-		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(lambda unit: unit.getOwner()):
+		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(CyUnit.getOwner):
 			ownerUnits = ownerUnits.where(lambda unit: not unit.isNone() and not unit.isCargo())
 			landUnits, seaUnits = ownerUnits.split(lambda unit: unit.getDomainType() != DomainTypes.DOMAIN_SEA)
 		
