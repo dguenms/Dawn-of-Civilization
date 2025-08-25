@@ -188,6 +188,8 @@ dGreatPeople = {
 			"fAmat-Mamu", # 18th BC
 			iClassical,
 			"fAdad-guppi", # 6th BC
+			"Nabonidus", # 6th BC
+			"Daniyyel", # 6th BC
 			"Ezra", # 5th BC
 		),
 		iGreatArtist : (
@@ -195,6 +197,7 @@ dGreatPeople = {
 			"Gudea", # 22nd BC
 			"Samsu-ditana", # 17th BC
 			"Sin-leqi-unninni", # 13th BC
+			"Saggil-kinam-ubbib", # 11th BC
 		),
 		iGreatScientist : (
 			"fTapputi", # legendary
@@ -213,27 +216,133 @@ dGreatPeople = {
 			"Kadashman-Enlil", # 14th BC
 			iClassical,
 			"Itti-Marduk-balatu", # 6th BC
+			"fBa'u-asitu", # 6th BC
 		),
 		iGreatEngineer : (
+			"Enmebaragesi", # 30th BC
 			"Naram-Sin", # 22nd BC
 			"Ur-Nammu", # 21st BC
+			"Kurigalzu", # 14th BC
+			"Kudur-Enlil", # 13th BC
 			iClassical,
 			"Nabopolassar", # 7th BC
+			"fNitocris", # 6th BC
 		),
 		iGreatStatesman : (
 			"Urukagina", # 24th BC
-			"Ur-Nammu", # 21st BC
 			"Bilalama", # 20th BC
 			"Lipit-Ishtar", # 19th BC
-			iClassical,
-			"fShammuramat", # 9th BC
+			"Dadusha", # 18th BC
+			"Marduk-shapik-zeri", # 11th BC
 		),
 		iGreatGeneral : (
+			"Enshakushanna", # 25th BC
+			"Eannatum", # 25th BC
+			"Naram-Sin", # 23rd BC
+			iClassical,
+			"Nebukanezar", # 7th BC
+			"Neriglissar", # 6th BC
+		),
+		iGreatSpy : (
+			"Bel-shar-usur", # 6th BC
+		),
+	},
+	iAssyria : {
+		iGreatProphet : (
+			"Tudiya", # legendary
+			"Bel-bani", # 17th BC
+			"Ashurnasirpal", # 11th BC
+			iClassical,
+			"Nahum", # 7th BC
+			"fAdad-guppi", # 6th BC
+			iMedieval,
+			"Babay Rabba", # 7th
+		),
+		iGreatArtist : (
+			"Nabu-zuqup-kena", # 8th BC
+			"Ahiqar", # 7th BC
+			"Tatian", # 2nd
+			iMedieval,
+			"Toma bar Yaqub", # 9th
+		),
+		iGreatScientist : (
+			"Samsi-Addu-tukuld", # 18th BC
+			"Ashur-bel-kala", # 11th BC
+			iClassical,
+			"Gabbu-ilani-eresh", # 9th BC
+			"Bardaisan", # 2nd
+			iMedieval,
+			"Masawaiyh", # 9th
+			"Jabril ibn Bukhtishu", # 9th
+		),
+		iGreatMerchant : (
+			"Erishum", # 20th BC
+			"Ili-pada", # 12th BC
+			iClassical,
+			"Ashur-dan", # 10th BC
+			"Tobias", # 8th BC
+		),
+		iGreatEngineer : (
+			"Shalim-ahum", # 20th BC
+			"Shalmaneser", # 13th BC
+			iClassical,
+			"fNaqi'a", # 7th BC
+			"Esarhaddon", # 7th BC
+		),
+		iGreatStatesman : (
+			"Puzur-Ashur", # 21st BC
+			"Babu-aha-iddina", # 13th BC
 			"Tiglath-Pileser", # 10th BC
 			iClassical,
+			"fShammuramat", # 9th BC
+			"fLibbali-sarrat", # 7th BC
+		),
+		iGreatGeneral : (
+			"Onnes", # legendary
+			"Shamshi-Adad", # 18th BC
+			"Tukulti-Ninurta", # 13th BC
+			"Tiglath-Pileser", # 11th BC
+			iClassical,
+			"Arbaces", # 9th BC
+			"Dayyan-Assur", # 9th BC
+			"Shalmaneser", # 8th BC
+			"Sargon", # 8th BC
+			"Shamshi-ilu", # 8th BC
 			"Sennacherib", # 7th BC
-			"Nebukanezar", # 7th BC
-			"Shalmaneser", # 7th BC
+		),
+		iGreatSpy : (
+			"Arda-Mulissu", # 7th BC
+			"Nabu-shar-usur", # 7th BC
+		),
+	},
+	iNubia : {
+		iGreatProphet : (
+			"Alara", # 8th BC
+			"fAmenirdis", # 8th BC
+			"fShepenupet", # 7th BC
+			iMedieval,
+			"Georgios", # 11th
+			"Timotheos", # 14th
+			iIndustrial,
+			"Muhammad Ahmad", # 19th
+		),
+		iGreatEngineer : (
+			"Aspelta", # 7th-6th BC
+			"Arnekhamani", # 3rd BC
+			iMedieval,
+			"Rafael", # 11th
+		),
+		iGreatStatesman : (
+			"Shabaka", # 7th BC
+			"fAmanitore", # 1st AD
+			"Natakamani", # 1st AD
+		),
+		iGreatGeneral : (
+			"Piye", # 8th BC
+			"Harsiotef", # 5-4th BC
+			"fAmanirenas", # 1st BC
+			iMedieval,
+			"Qalidurut", # 7th
 		),
 	},
 	iChina : {
@@ -410,6 +519,54 @@ dGreatPeople = {
 			"fZheng Pingru", # 20th
 		),
 	},
+	iHittites : {
+		iGreatProphet : (
+			"fHannahanna", # mythological
+			"fArinna", # mythological
+			"Tarhunna", # mythological
+			"Murshili", # 14th BC
+			"fPuduhepa", # 13th BC
+			"fMaathorneferure", # 13th BC
+		),
+		iGreatArtist : (
+			"Hasameli", # mythological
+			"Apaliunas", # mythological
+			"Kikkuli", # 15th BC
+		),
+		iGreatScientist : (
+			"fKamrusepa", # mythological
+			"fHalki", # mythological
+			"Hrpsr", # 13th BC
+		),
+		iGreatMerchant : (
+			"Aruna", # mythological
+			"Appu", # mythological
+			"Zita", # 14th BC
+			"Zannanza", # 14th BC
+		),
+		iGreatEngineer : (
+			"Tudhaliya", # 13th BC
+			"Katuwa", # 9th BC
+			"Astiruwa", # 9th BC
+			"Kamani", # 8th BC
+		),
+		iGreatStatesman : (
+			"Telipinu", # 16th BC
+			"Hattushili", # 13th BC
+		),
+		iGreatGeneral : (
+			"Hattusili", # 17th BC
+			"Tudhaliya", # 14th BC
+			"Kisnapili", # 14th BC
+			"Suppiluliuma", # 14th BC
+			"Madduwatta", # 14th BC
+			"Muwatalli", # 13th BC
+			"Piyamaradu", # 13th BC
+		),
+		iGreatSpy : (
+			"Zidanta", # 16th BC
+		),
+	},
 	iGreece : {
 		iGreatProphet : (
 			"fEritha", # 12th BC
@@ -550,7 +707,6 @@ dGreatPeople = {
 			"Mahakashyapa", # 6th BC
 			"Nagarjuna", # 2nd
 			iMedieval,
-			"Adi Shankara", # 9th
 			"Atisha", # 11th
 			"Ramanuja", # 11th
 			"Basava", # 12th
@@ -573,16 +729,14 @@ dGreatPeople = {
 		iGreatArtist : (
 			"Valmiki", # 4th BC
 			"Asvaghosa", # 1st
-			"Kapilar", # 1st tamil
 			"Kalidasa", # 5th
 			iMedieval, 
 			"Gunadhya", # 6th
-			"fAvvaiyar", # 10th tamil
 			"Abhinavagupta", # 10th
-			"Nakkirar", # medieval tamil
+			"Bilhana", # 11th
+			"Roda", # 12th
 			"fKanhopatra", # 15th
 			iRenaissance,
-			"Purandara Dasa", # 16th
 			"Tansen", # 16th
 			"Nainsukh", # 18th
 			u"Nihâl Chand", # 18th
@@ -610,19 +764,19 @@ dGreatPeople = {
 			"Dignaga", # 6th
 			"Dharmakirti", # 6th or 7th
 			"Brahmagupta", # 7th
+			"Bhoja", # 11th
 			"Bhaskara", # 12th
 			"Madhava", # 14th
 			iRenaissance,
-			"Nilakantha Somayaji", # 15th
+			"Ganesa Daivajna", # 16th
 			"Kamalakara", # 17th
 			iIndustrial,
 			"Jagadish Chandra Bose", # 19th
+			"Indumadhab Mallick", # 19th
 			iGlobal,
-			"Srinivasa Ramanujan", # 20th
-			"Chandrasekhara Venkata Raman", # 20th
+			"Har Gobind Khorana", # 20th
 			"Satyendra Nath Bose", # 20th
 			"fAsima Chatterjee", # 20th
-			"Gopalasamudram Narayanan Ramachandran", # 20th tamil
 		),
 		iGreatMerchant : (
 			"Nattal Sahu", # 12th
@@ -632,7 +786,6 @@ dGreatPeople = {
 			"Jamsetji Tata", # 19th
 			"Ardeshir Godrej", # 19th
 			iGlobal,
-			"Kappalottiya Tamizhan", # 20th
 			"Jehangir Ratanji Dadabhoy Tata", # 20th
 			"Amartya Sen", # 20th
 			"fIndra Nooyi", # 20th
@@ -640,17 +793,14 @@ dGreatPeople = {
 		iGreatEngineer : (
 			"Baudhayana", # 8th BC
 			"Lagadha", # 1st
-			"Mahasena", # 3rd tamil
 			iMedieval, 
 			"Gundan Anivaritachari", # 7th
-			"Parakramabahu", # 12th tamil
 			"Ruvari Malithamma", # 12th
 			iRenaissance, 
 			"Vidyadhar Bhattacharya", # 18th
 			"Ram Singh Malam", # 18th
 			iIndustrial,
 			"Bhai Ram Singh", # 19th
-			"Mokshagundam Visvesvaraya", # 19th
 			"Jamsetji Tata", # 19th
 			iGlobal,
 			"Avul Pakir Jainulabdeen Abdul Kalam", # 20th
@@ -661,13 +811,11 @@ dGreatPeople = {
 		iGreatStatesman : (
 			"Vishnu Sharma", # 12th BC to 3rd AD
 			"Chanakya", # 4th BC
-			"Thiruvalluvar", # 4th BC to 7th AD
 			iMedieval,
-			"Amoghavarsha", # 9th
+			"Harshavardhana", # 7th
+			"Dharmapala", # 8th
 			"Chavundaraya", # 10th
-			"Rajaraja Chola", # 10th
 			iRenaissance,
-			"Ariyanatha Mudaliar", # 16th
 			"Nana Fadnavis", # 18th
 			"fBegum Samru", # 18th
 			iIndustrial,
@@ -688,12 +836,9 @@ dGreatPeople = {
 			iMedieval,
 			"Dhruva Dharavarsha", # 8th
 			"Mihira Bhoja", # 9th
-			"Rajaraja Chola", # 10th
 			iRenaissance,
 			"fRani Durgavati", # 16th
 			"Kanhoji Angre", # 17th
-			"Marthanda Varma", # 18th
-			"Hyder Ali", # 18th
 			iIndustrial,
 			"Nana Sahib", # 19th
 			"fRani Lakshmibai", # 19th
@@ -1093,12 +1238,85 @@ dGreatPeople = {
 			"Paulus Catena", # 4th
 		),
 	},
+	iCelts : {
+		iGreatProphet : (
+			"fCamma", # 1st BC
+			"Diviciacus", # 1st BC
+			"Adiatorix", # 1st BC
+			iMedieval,
+			u"Pádraig", # 5th
+			"Brigit", # 5-6th
+			"Colm Cille", # 6th
+			"Iarlaithe mac Loga", # 6th
+			"Brendan of Clonfert", # 6th
+			"Margaret of Scotland", # 11th
+		),
+		iGreatArtist : (
+			"Calgacus", # 1st
+			"Adna mac Uthidir", # 1st
+			iMedieval,
+			u"Torna Éices", # 5th
+			"Dubthach maccu Lugair", # 5th
+			"Taliesin", # 6th
+			u"Dallán Forgaill", # 7th
+			"Ferdomnach", # 9th
+			"Nennius", # 9th
+		),
+		iGreatScientist : (
+			"Pompeius Trogus", # 1st BC
+			"Catius", # 1st BC
+			"Gnipho", # 1st BC
+			"Agroecius", # 5th
+			iMedieval,
+			"John Scotus Eriugena", # 9th
+		),
+		iGreatMerchant : (
+			"Onomaris", # 4th BC
+			iMedieval,
+			"Madoc ab Owain Gwynedd", # 12th
+		),
+		iGreatEngineer : (
+			"Ternan", # 5th/6th
+			"Colm Cille", # 6th
+			iMedieval,
+			"Roolwer", # 11th
+		),
+		iGreatStatesman : (
+			"Deiotarus", # 1st BC
+			"Gaius Valerius Troucillus", # 1st BC
+			"Cartimandua", # 1st
+			"Cormac mac Airt", # 2nd
+			iMedieval,
+			"Niall Noigiallach", # Disputed
+			u"Adomnán", # 5th/6th
+			"Hywel Dda", # 10th
+			"Brian Boru", # 11th
+			"Llywelyn", # 13th
+			"Robert", # 14th
+		),
+		iGreatGeneral : (
+			"Autaritus" , # 3rd BC
+			"Cassivellaunus", # 1st BC
+			"Vercingetorix", # 1st BC
+			"Ambiorix", # 1st BC
+			"fBoudica", # 1st
+			"Caratacus", # 1st
+			"Ambrosius Aurelianus", # 5th
+			iMedieval,
+			"Owain Glyndwr", # 14th
+		),
+		iGreatSpy : (
+			"Apaturius", # 3rd BC
+			iMedieval,
+			u"Máel Brigte", # 9th
+		),
+	},
 	iMaya : {
 		iGreatProphet : (
 			"Junajpu", # mythological
 			"Xb'alanke", # mythological
+			"Jasaw Chan K'awiil", # 8th
 			"Kukulkan", # 10th, named after the god
-			"Ce Acatl Topiltzin", # 10th toltec
 		),
 		iGreatArtist : (
 			"Uaxaclajuun Ub'aah K'awiil", # 8th
@@ -1107,13 +1325,13 @@ dGreatPeople = {
 			"Asan Winik Tu'ub", # 8th
 			"Chan Ch'ok Wayib Xok", # 8th
 			"Waj Tan Chak", # 8th
+			"K'ak' Tiliw Chan Chaak", # 8th
 			iGlobal,
 			"fMarisol Ceh Moo", # 20th
+			u"Miguel Ángel Asturias", # 20th
 		),
 		iGreatScientist : (
 			"Itzamna", # mythological
-			"Huematzin", # 8th toltec
-			"Papantzin", # 9th toltec
 		),
 		iGreatMerchant : (
 			"Ek Chuaj", # mythological
@@ -1122,27 +1340,152 @@ dGreatPeople = {
 		),
 		iGreatEngineer : (
 			"Chan Imix K'awiil", # 7th
+			"K'inich Kan Bahlam", # 7th
 			"fK'ab'al Xook", # 8th
 			"Ha' K'in Xook", # 8th
 			"Itzam K'an Ahk", # 8th
 			"K'inich Yat Ahk", # 8th
+			"K'inich Ahkal Mo' Nahb", # 8th
+			"Chan Chak K'ak'nal Ajaw", # 10th
 		),
 		iGreatStatesman : (
 			"Yax Ehb Xook", # 1st
 			"fYohl Ik'nal", # 6th
 			"Yuknoom Ch'een", # 7th
 			"Jasaw Chan K'awiil", # 8th
+			"Apoch'waal", # 8th
 			iGlobal,
 			u"fRigoberta Menchú", # 20th
 		),
 		iGreatGeneral : (
-			"Siyaj K'ak'", # 4th teotihuacan
+			"Uneh Chan", # 6th
 			"K'inich Yo'nal Ahk", # 7th
-			"fXochitl", # 9th toltec
+			"Wak Chanil Ajaw", # 8th
 			"Hunac Ceel", # 12th
 			iRenaissance,
 			"Napuc Chi", # 16th
 			"Tecun Uman", # 16th
+		),
+	},
+	iDravidia : {
+		iGreatProphet : (
+			"Iyarpagai Nayanar", # 3rd BC
+			iMedieval,
+			"fKaraikkal Ammaiyar", # 5th
+			"Sambandar", # 7th
+			"Adi Shankara", # 8th (disputed)
+			"Manikkavacakar", # 9th
+			"Ramanuja", # 11th
+			"Jayatirtha", # 14th
+			iRenaissance,
+			"Vallabha", # 15-16th
+			"Nayakanahatti Thipperudra Swamy", # 15-16th
+			"Vyasatirtha", # 15-16th
+			"Raghuttama Tirtha", # 16th
+			"Raghavendra Tirtha", # 17th
+			iIndustrial,
+			"Migettuwatte Gunananda Thera", # 19th
+		),
+		iGreatArtist : (
+			"Kapilar", # 1st
+			"fAvvaiyar", # 1st
+			"Ilango Adigal", # 2nd
+			iMedieval,
+			"Nakkirar", # medieval
+			"Chithalai Chathanar", # 6th
+			"Sambandar", # 7th
+			"fAvvaiyar", # 12th
+			"Raghavanka", # 12-13th
+			"Srinatha", # 14th
+			"Annamacharya", # 15th
+			iRenaissance,
+			"Purandara Dasa", # 16th
+			"Lakshmisa", # 16-17th
+			iIndustrial,
+			"Subramania Bharati", # 19-20th
+			iGlobal,
+			"Kuvempu", # 20th
+		),
+		iGreatScientist : (
+			"Haridatta", # 7th
+			"Mahavira", # 9th
+			"Govinda Bhattathiri", # 13th
+			"Vedanta Desika", # 14th
+			"Parameshvara Nambudiri", # 14-15th
+			"Nilakantha Somayaji", # 15th
+			iRenaissance,
+			"Jyesthadeva", # 16th
+			"Melpathur Narayana Bhattathiri", # 16-17th
+			iGlobal,
+			"Srinivasa Ramanujan", # 20th
+			"Chandrasekhara Venkata Raman", # 20th
+			"Gopalasamudram Narayanan Ramachandran", # 20th
+			"Calyampudi Radhakrishna Rao", # 20th
+		),
+		iGreatMerchant : (
+			"Malayaman", # 6th-3rd BC
+			"Alangudi Vanganar", # 1st
+			iMedieval,
+			"Kulottunga", # 11th
+			"Kunje-setti", # 13th
+			"Kandanambi-setti", # 14th
+			iRenaissance,
+			"fRani Chennabhairadevi", # 16th
+			iIndustrial,
+			"Yele Mallappa Shetty", # 19th	
+			iGlobal,
+			"Kappalottiya Tamizhan", # 20th
+		),
+		iGreatEngineer : (
+			"Karikala", # 2nd
+			"Mahasena", # 3rd
+			iMedieval,
+			"Narasimhavarman", # 6th
+			"Mahendravarman", # 7th
+			"fSembiyan Mahadevi", # 10th
+			"Parakramabahu", # 12th
+			"Kulothunga", # 12-13th
+			"Deva Raya", # 15th
+			iRenaissance,
+			"fMangammal", # 17th
+			iIndustrial,
+			"Mokshagundam Visvesvaraya", # 19th
+			"Ali Nawaz Jung Bahadur", # 19th
+		),
+		iGreatStatesman : (
+			"Thiruvalluvar", # 4th BC to 7th AD	
+			"Ellalan", # 2nd BC
+			"Kharavela", # 1st BC
+			"Athiyaman Neduman Anci", # 1st
+			"Cenkuttuvan", # 3rd
+			iMedieval,
+			"Pulakeshin", # 7th
+			"Amoghavarsha", # 9th
+			"Rajaraja Chola", # 10th
+			"Vikramaditya", # 12th
+			"Jatavarman Sundara Pandyan", # 13th
+			"Deva Raya", # 15th
+			iRenaissance,
+			"Ariyanatha Mudaliar", # 16th	
+		),
+		iGreatGeneral : (
+			"Nedunjeliyan", # 3rd BC
+			iMedieval,
+			"Simhavishnu", # 6th
+			"Narasimhavarman", # 7th
+			"Yenathinatha Nayanar" # 6-8th
+			"Rajaraja Chola", # 10th
+			"Karunakara Tondaiman", # 12th
+			"Rudrama Devi", # 13th
+			iRenaissance,
+			"Abbakka Chowta", # 16th
+			iIndustrial,
+			"Marthanda Varma", # 18th
+			"Hyder Ali", # 18th
+			"Kittur Chennamma", # 19th
+		),
+		iGreatSpy : (
+			"Uttama", # 10th
 		),
 	},
 	iEthiopia : {
@@ -1400,6 +1743,67 @@ dGreatPeople = {
 			"Kim Jae-gyu", # 20th
 		),
 	},
+	iToltecs : {
+		iGreatScientist : (
+			"Huetmatzin", # 8th
+			"Papantzin", # 9th
+		),
+		iGreatStatesman : (
+			"Chalchiuhtlatonac", # legend
+			"fXiuhtlaltzin", # 10th
+			"Huemac", # 11th
+		),
+		iGreatGeneral : (
+			"Siyaj K'ak'", # 4th
+			"Jatz'om Kuy", # 4th-5th
+			"fXochitl", # 9th
+			u"Iya Nacuaa Teyusi Ñaña", # 11th
+			u"fÑuñuu Dzico-Coo-Yodzo", # 11th
+		),
+		iGreatSpy : (
+			"Nauhyotl", # 12th
+		),
+	},
+	iKushans : {
+		iGreatProphet : (
+			"Ashvaghosha", # 1st
+			"Amitabha", # 2nd
+			"Vasudeva", # 3rd
+			"Dronala", # 3rd
+		),
+		iGreatArtist : (
+			"fMadhurika", # 3rd
+			"fVidyamati", # 3rd
+		),
+		iGreatScientist : (
+			"Eiiomano", # 2nd
+			"Mihramano", # 2nd
+		),
+		iGreatMerchant : (
+			"fArdoksho", # mythological
+			"Oesho", # mythological
+			"Vima Takto", # 1st
+		),
+		iGreatEngineer : (
+			"Nokonzoko", # 2nd
+			"Xirgomano", # 2nd
+			"Borzomioro", # 2nd
+			"Dashavhara", # 3rd
+		),
+		iGreatStatesman : (
+			"Kujula Kadphises", # 1st
+			"Huvishka", # 2nd
+		),
+		iGreatGeneral : (
+			"Heraios", # 1st
+			"Vima Kadphises", # 2nd
+			"Grumbates", # 4th
+			"Kidara", # 4th
+		),
+		iGreatSpy : (
+			"Hormizd", # 3rd
+		),
+	},
 	iByzantium : {
 		iGreatProphet : (
 			"Anathasius Alexandrinus", # 4th
@@ -1480,6 +1884,85 @@ dGreatPeople = {
 			"Staurakios", # 8th
 			"Samonas", # 9th
 			"Nikolaos", # 10th
+		),
+	},
+	iMalays : {
+		iGreatProphet : (
+			"Sakyakirti", # 7th
+			"Mudzaffar Shah", # 12th
+			"Sang Nila Utama", # 14th
+			"Sharif Ali", # 15th
+			iRenaissance,
+			"Abdul Kahar", # 16th
+			"Nuruddin al-Raniri", # 17th
+			iIndustrial,
+			"Sisingamangaraja", # 19th
+			"Imam Bonjol", # 19th
+		),
+		iGreatArtist : (
+			"Hamzah Fansuri", # 15th
+			iRenaissance,
+			"Tun Sri Lanang", # 16-17th
+			iIndustrial,
+			"Abdullah Abdul Kadir", # 19th
+			"Raja Ali Haji", # 19th
+			iGlobal,
+			"Sudirman", # 20th
+			"Zainal Abidin Ahmad", # 20th
+		),
+		iGreatScientist : (
+			"Willem Iskander", # 19th
+			"Wu Lien-teh", # 20th
+		),
+		iGreatMerchant : (
+			"Sri Maravijayottunggavarman", # 11th
+			"Muhammad Shah", # 13th
+			"Muhammad Jiwa Zainal Adilin", # 15th
+			"Mansur Shah", # 15th
+			iRenaissance,
+			"Raja Mudaliar", # 16th
+			"Mahmud Shah", # 16th
+			iIndustrial,
+			"Aji Muhammad Alimuddin", # 19th
+		),
+		iGreatEngineer : (
+			"Muhammad Jiwa Zainal Adilin", # 18th
+			"Yap Ah Loy", # 19th
+		),
+		iGreatStatesman : (
+			"Cudamani Warmadewa", # 10-11th
+			"Parmeswara", # 14th
+			"Bolkiah", # 15th
+			iRenaissance,
+			"Muhammad Hasan", # 16th
+			"Muhammad Kudarat", # 17th
+			iIndustrial,
+			"Abu Bakar", # 19th
+			"Mahmud Badaruddin", # 19th
+			iGlobal,
+			"Tunku Abdul Rahman", # 20th
+		),
+		iGreatGeneral : (
+			"Hang Tuah", # 15th
+			iRenaissance,
+			"fMalahayati", # 16th
+			"Ali Mughayat Syah", # 16th
+			"Bendahara Sakam", # 16th
+			"Hang Nadim", # 16th
+			"Siti Wan Kembang", # 17th
+			"Tun Abdul Jamil", # 17th
+			iIndustrial,
+			"Rentap", # 19th
+			"fCut Nyak Dhien", # 19th
+			iGlobal,
+			"Adnan Saidi", # 20th
+		),
+		iGreatSpy : (
+			"Alauddin Riayat Shah", # 15th
+			iIndustrial,
+			"Lela Pandak Lam", # 19th
+			iGlobal,
+			"Rosli Dhobi", # 20th
 		),
 	},
 	iJapan : {
@@ -1659,139 +2142,157 @@ dGreatPeople = {
 		iGreatProphet : (
 			"Ansgar", # 9th swedish
 			u"Haraldr Blátonn", # 10th danish
-			"Erik den Helige", # 11th swedish
-			"fBirgitta Birgersdotter", # 13th swedish
+			u"Óláfr Haraldsson", # 11th Norwegian
+			u"Knútr Sveinsson", # 11th Danish
+			u"Þórlákr Þórhallsson", # 12th Icelandic
+			"Erik Jedvardsson", # 12th Swedish
 			iRenaissance,
-			"Johannes Campanius", # 17th swedish
-			"Emanuel Swedenborg", # 18th swedish
+			"Hans Tausen", # 16th Danish
+			"Peder Palladius", # 16th Danish
+			u"Jón lærði Guðmundsson", # 17th Icelandic
+			"Hans Egede", # 18th Norwegian
 			iIndustrial,
 			"Hans Nielsen Hauge", # 19th norwegian
 			u"Søren Kierkegaard", # 19th danish
 			iGlobal,
+			u"Knud Eljer Løgstrup", # 20th Danish
+			"Kaj Munk", # 20th Danish
 			u"Sveinbjörn Beinteinsson", # 20th icelandic
 		),
 		iGreatArtist : (
 			"Bragi Boddason", # 9th norwegian
 			u"fJórunn skáldmær", # 10th norwegian
+			u"Egill Skallagrímsson", # 10th Icelandic
 			u"Ofæigr Øpir", # 11th swedish
+			"Saxo Grammaticus", # 12th Danish
 			"Snorri Sturluson", # 13th icelandic
-			u"Nils Håkansson", # 14th swedish
+			u"Magnús Þórhallsson", # 14th Icelandic
 			iRenaissance,
-			"Georg Stiernhielm", # 17th swedish
 			"Johan Nordahl Brun", # 18th norwegian
+			"Ludvig Holberg", # 18th Norwegian/Danish
 			iIndustrial,
 			"Hans Christian Andersen", # 19th danish
-			"Olav Duun", # 19th norwegian
-			"Johan Ludvig Runeberg", # 19th finnish
-			"fJohanna Maria Lind", # 19th swedish
 			"Edvard Munch", # 19th norwegian
 			"Edvard Grieg", # 19th norwegian
+			"Henrik Ibsen", # 19th Norwegian
 			iGlobal,
-			u"fSelma Lagerlöf", # 20th swedish
-			"Jean Sibelius", # 20th finnish
 			"fKaren Blixen", # 20th danish
+			"Henrik Pontoppidan", # 20th Danish
+			"Olav Duun", # 20th Norwegian
+			"fSigrid Undset", # 20th Norwegian/Danish
+			u"Einar Jónsson" # 20th Icelandic
 			u"Halldór Laxness", # 20th icelandic
-			"fAstrid Lindgren", # 20th swedish
-			"Ingmar Bergman", # 20th swedish
 		),
 		iGreatScientist : (
-			"Oddi Helgason", # 12th icelandic
+			u"Þorsteinn Surtr", # 10th Icelandic
+			u"Stjörnu-Oddi Helgason", # 12th Icelandic
 			iRenaissance,
 			"Tycho Brahe", # 16th danish
 			"fSophia Brahe", # 16th danish
-			"Mikael Agricola", # 16th finnish
+			"Ole Worm", # 17th Danish
 			u"Ole Rømer", # 17th  danish
-			"Anders Celsius", # 18th swedish
-			u"Carl von Linné", # 18th swedish
 			iIndustrial,
-			u"Jöns Jacob Berzelius", # 19th swedish
-			"Niels Henrik Abel", # 19th norwegian
-			"Johannes Rydberg", # 19th swedish
-			u"Anders Ångström", # 19th swedish
-			"Svante Arrhenius", # 19th swedish
+			"Niels Henrik Abel", # 19th norwegian			
+			"Rasmus Rask", # 19th Danish
+			"Karl Verner", # 19th Danish
 			"Niels Ryberg Finsen", # 19th faroese
 			iGlobal,
 			"Niels Bohr", # 20th danish
+			"Aage Bohr", # 20th Danish
+			"Vilhelm Bjerknes", # 20th Norwegian
+			"Ole-Johan Dahl", # 20th Norwegian
 		),
 		iGreatMerchant : (
 			u"Håkon Sigurdsson", # 10th norwegian
 			u"Eiríkr Rauði", # 10th norwegian
 			u"Leifr Eiríksson", # 10th icelandic
-			u"fGudrid Thorbjarnardóttir", # 10th icelandic
 			iRenaissance,
 			"fSigbrit Willoms", # 16th danish
 			"Magnus Heinason", # 16th faroese
-			"fChristina Piper", # 18th swedish
-			"Niclas Sahlgren", # 18th swedish
-			"Rutger Macklean", # 18th swedish
 			iIndustrial,
-			"Sven Hedin", # 19th swedish
 			"Roald Amundsen", # 20th norwegian
 			iGlobal,
 			"Ole Kirk Christiansen", # 20th danish
 			"Ragnar Frisch", # 20th norwegian
-			"Ingvar Kamprad", # 20th swedish
+			
+			u"Óttarr frá Hálogaland", # 9th Norwegian
+			u"fGuðriðr Þorbjarnardóttir", # 10th Icelandic
+			u"Óláfr pái Höskuldsson", # 10th Icelandic
+			u"Yngvarr Víðförli", # 11th Swedish
+			"Constantin Brun", # 18th
+			"fLaura Aller", # 19th Danish
+			"Jacob Christian Jacobsen", # 19th Danish
+			u"fÞuríður Einarsdóttir", # 19th Icelandic
+			"Thor Heyerdahl", # 20th Norwegian
+			u"Arnold Peter Møller", # 20th Danish
 		),
 		iGreatEngineer : (
+			u"Gøtrik", # 9th Danish
+			iRenaissance,
 			"Hercules von Oberberg", # 16th danish
-			"Nicodemus Tessin", # 17th swedish
-			"Christopher Polhem", # 18th swedish
+			"Hans van Steenwinckel" # 17th Danish
+			"Caspar Frederik Harsdorff", # 18th Danish
 			iIndustrial,
-			"Johan Ericsson", # 19th swedish
-			"Per Georg Scheutz", # 19th swedish
-			"Alfred Nobel", # 19th swedish
-			"Lars Magnus Ericsson", # 19th swedish
+			"fSophy Adolfine Christensen", # 19th Danish
+			"Christian Hansen", # 19th Danish
+			"Peter Andreas Blix", # 19th Norwegian
 			iGlobal,
 			"Arne Jacobsen", # 20th danish
 			u"Jørn Utzon", # 20th danish
 			u"Ivar Giæver", # 20th norwegian
+			u"Rasmus Sørnes", # 20th Norwegian
+			u"Guðjón Samúelsson", # 20th Icelandic
 		),
 		iGreatStatesman : (
-			"Gorm den Gamle", # 10th danish
+			"Awair Strabain", # 9th Gutnish
+			"Gormr Gamli", # 10th Danish
 			u"fGunnhildr Gormsdóttir", # 10th norwegian
-			"Birger Jarl", # 13th swedish
+			u"Njáll Þorgeirsson", # 10th Icelandic
+			u"Jón Loptsson", # 12th Icelandic
 			"fMargrete Valdemarsdatter", # 14th danish
 			iRenaissance,
-			"Gustav Vasa", # 16th swedish
-			"Axel Oxenstierna", # 17th swedish
-			"fKristina", # 17th swedish
-			"Peter Estenberg", # 18th swedish
-			"Arvid Horn", # 18th swedish
+			"Niels Kaas", # 16th Danish
 			iIndustrial,
-			"Gustaf Mauritz Armfelt", # 19th finnish
 			"Nikolaj Frederik Severin Grundtvig", # 19th danish
+			u"Jón Sigurðsson", # 19th Icelandic
 			iGlobal,
 			"Trygve Lie", # 20th norwegian
-			u"Dag Hammarskjöld", # 20th swedish
-			"Olof Palme", # 20th swedish
+			u"Ólafur Thors", # 20th Icelandic
 		),
 		iGreatGeneral : (
 			u"fHlaðgerðr", # 9th danish
+			u"Hásteinn", # 9th Danish
+			u"Ívarr inn Beinlausi", # 9th Swedish
+			u"Haraldr Hárfagri", # 9th Norwegian
 			u"Eiríkr Blóðøx", # 10th norwegian
 			u"Sveinn Tjúguskegg", # 10th danish
+			u"Knútr inn Ríki", # 11th Danish
 			u"Harald Harðráði", # 11th norwegian
 			"Knutr", # 11th danish
+			u"Sigurðr Jórsalafari", # 12th Norwegian
 			iRenaissance,
-			"Gustav Vasa", # 16th swedish
-			"Lennart Torstensson", # 17th swedish
+			"Johan Rantzau", # 16th
 			"Peter Tordenskjold", # 18th norwegian
-			"fIngela Gathenhielm", # 18th swedish
-			iGlobal, 
-			"Carl Gustaf Emil Mannerheim", # 20th finnish
+			iGlobal,
+			"Steen Andersen Bille", # 19th Danish
+			"Hans Henrik Rode", # 19th Norwegian
 			"Carl Gustav Fleischer", # 20th norwegian	
 		),
 		iGreatSpy : (
-			"fBrita Tott", # 15th swedish/danish
-			"fAnna Maria Clodt", # 17th swedish
-			"fCharlotte Eckerman", # 18th swedish
-			u"fEva Löwen", # 18th swedish
+			u"Gísli Súrsson", # 10th Icelandic
+			u"Grettir Ásmundarson", # 11th Icelandic
+			"Niels Ebbesen", # 14th Danish
+			"fBirgitte Olufsdatter Thott", # 15th Danish/Swedish
+			iRenaissance,
+			"Corfitz Ulfeldt", # 17th Danish
+			"fDina Vinhofvers", # 17th Danish
 			iIndustrial,
 			u"Jørgen Jørgensen", # 19th danish
+			"Walter Christmas", # 19th Danish
 			iGlobal,
-			"Carlos Adlercreutz", # 20th swedish
 			"Kai Henning Bothildsen Nielsen", # 20th danish
 			u"fAstrid Døvle", # 20th norwegian
-			"Stig Bergling", # 20th swedish
+			"Arne Treholt", # 20th Norwegian
 		),
 	},
 	iTurks : {
@@ -2046,58 +2547,95 @@ dGreatPeople = {
 	},
 	iJava : {
 		iGreatProphet : (
-			"Maha Rsi Agastya", # 5th
 			"Buddha Pahyien", # 4th
+			"Maha Rsi Agastya", # 5th
+			"Sawerigading", # 6th
 			"Sakyakirti", # 7th
+			"Jayabaya", # 12th
 			"fGayatri Rajapatni", # 14th
+			"Sunan Kalijaga", # 15th
+			"Raden Abdul Jalil", # 15th
 			iRenaissance,
 			"Sunan Giri", # 15th
 			"Sunan Gunung Jati", # 16th
 			iIndustrial, 
 			"Ahmad Dahlan", # 19th
+			"Ranggawarsita", # 19th
 			iGlobal,
 			"Albertus Soegijapranata", # 20th
+			"Idham Chalid", # 20th
+			"Hasyim Asyari", # 20th
 		),
 		iGreatArtist : (
-			"Abdullah Abdul Kadir", # 19th
-			"Raja Ali Haji", # 19th
-			iGlobal,
-			"Amir Hamzah", # 20th
+			"Empu Dharmaja", # 12th			
+			"Mpu Prapanca", # 14th
+			iIndustrial,
+			"Raden Saleh", # 19th
+			"Colliq Pujie", # 19th
+			"Affandi", # 20th
+			"Tengku Amir Hamzah", # 20th
 			"Ismail Marzuki", # 20th
 			"Pramoedya Ananta Toer", # 20th
 			"Asep Sunandar Sunarya", # 20th
 			"I Made Sidia", # 20th
 		),
 		iGreatScientist : (
-			"Jayabaya", # 12th
 			"Empu Tantular", # 14th
-			iGlobal, 
+			iRenaissance,
+			"Karaeng Pattingalloang", # 17th
+			iIndustrial,
+			"Wahidin Soedirohoesodo", # 19th
+			iGlobal,
 			"Herman Johannes", # 20th
+			"Suwardi Suryaningrat", # 20th
+			"Soetomo", # 20th
+			"Wahidin Sudirohusodo", # 20th
+			"Wilhelmus Zakaria Johannes", # 20th
+			"Johannes Leimena", # 20th
 		),
 		iGreatMerchant : (
 			"Dewawarman", # 1st
-			"fCri Kahulunnan", # 9th
-			iRenaissance,
-			"Raja Mudaliar", # 16th
+			"fSri Kahulunnan", # 9th
+			iIndustrial,
 			"Nahkoda Muda", # 18th
+			"Low Lan Pak", # 18th
+			"Oei Tiong Ham", # 19th
+			"Suria Kusumah Adinata", # 19th
+			"Hamengkubuwana", # 19th
+			iGlobal,
+			"Samanhudi", # 20th
+			"Liem Sioe Liong", # 20th
 		),
 		iGreatEngineer : (
 			"Gunadharma", # 9th
 			"Samaratungga", # 9th
 			"Rakai Pikatan", # 9th
+			iRenaissance,
+			"Ageng Tirtayasa", # 17th
 			iGlobal, 
 			"Liem Bwan Tjie", # 20th
 			"Soejoedi Wirjoatmodjo", # 20th
+			"Friedrich Silaban", # 20th
+			"Sedyatmo", # 20th
 		),
 		iGreatStatesman : (
 			"Gajah Mada", # 14th
-			"Parmeswara", # 14th
+			"fTribhuwana Vijayatunggadewi", # 14th
+			"Raden Patah", # 15th
+			iRenaissance,
+			"Siliwangi", # 16th
+			"Baabullah", # 16th
+			"Sultan Agung Anyakrakusuma", # 17th
 			iIndustrial,
+			"Hamengkubuwana", # 18th
 			"Mahmud Badaruddin", # 19th
 			"fRaden Ayu Kartini", # 19th
+			"Suria Atmaja", # 19th
 			iGlobal,
 			"Sukarno", # 20th
 			"Agus Salim", # 20th
+			"Supomo", # 20th
+			"Mohammad Yamin", # 20th
 			"Chep the Magnificent", # Contest Reward
 		),
 		iGreatGeneral : (
@@ -2105,16 +2643,24 @@ dGreatPeople = {
 			"Airlangga", # 11th
 			"Ken Arok", # 12th
 			"Raden Wijaya", # 13th
-			"fTribhuwana Vijayatunggadewi", # 14th
-			iRenaissance,
-			"fMalahayati", # 16th
+			iRenaissance,			
+			"fRatu Kalinyamat", # 16th
+			"Arung Palakka", # 17th
 			"fMartha Christina Tiahahu", # 18th
 			"Pattimura", # 18th
+			"Mangkunegara", # 18th
 			iIndustrial, 
-			"fCut Nyak Dhien", # 19th
+			"Dipanegara", # 19th
 			iGlobal, 
 			"Oerip Soemohardjo", # 20th
 			"Sudirman", # 20th
+		),
+		iGreatSpy : (
+			"fNyimas Utari Sandijayaningsih", # 17th
+			iGlobal,
+			"fMarie Zumariyah", # 20th
+			"Subandrio", # 20th
+			"Tan Malaka", # 20th
 		),
 	},
 	iMoors : {
@@ -2952,6 +3498,356 @@ dGreatPeople = {
 			"fSeh-Dong-Hong-Beh", # 19th
 		),
 	},
+	iBurma : {
+		iGreatProphet : (
+			"Kyiso", # 11th
+			"Shin Arahan", # 11th
+			"Shin Ditha Pamauk", # 13th
+			iIndustrial,
+			"Ledi Sayadaw", # 19th
+			iGlobal,
+			"fMya Nan Nwe", # 20th
+			"U Wisara", # 20th
+		),
+		iGreatArtist : (
+			"Shin Mahasilavamsa", # 15th
+			"Shin Ratthasara", # 15th
+			iGlobal,
+			"San Win", # 20th
+			"Ngwe Gaing", # 20th
+			"Lun Gywe", # 20th
+		),
+		iGreatScientist : (
+			"Shaw Loo", # 19th
+		),
+		iGreatEngineer : (
+			"Nyaung-u Sawrahan", # 10th
+			"fSaw Mon Hla", # 11th
+			"Alaungsithu", # 12th
+			iGlobal,
+			"Sayadaw U Narada", # 20th
+		),
+		iGreatStatesman : (
+			"Pyinbya", # 9th
+			"Kyansittha", # 11th
+			"Narapatisithu", # 12th
+			iRenaissance,
+			"Tabinshwehti", # 16th
+			"Thalun", # 17th
+			"Alaungpaya", # 18th
+			iIndustrial,
+			"Mindon Min", # 19th
+			"Kanaung Mintha", # 19th
+			iGlobal,
+			"U Thant", # 20th
+			"U Nu", # 20th
+			"fAung San Suu Kyi", # 20th
+		),
+		iGreatGeneral : (
+			"Athinkhaya", # 13th
+			"Yazathingyan", # 13th
+			"Thihathu", # 13th
+			"Thilawa", # 14th
+			iRenaissance,
+			"Binnya Dala", # 16th
+			"Hsinbyushin", # 18th
+			iIndustrial,
+			"Maha Bandula", # 18-19th
+			"Saya San", # 19-20th
+		),
+		iGreatSpy : (
+			"Sale Ngahkwe", # 10th
+			"Lagun Ein", # 14th
+		),
+	},
+	iRus : {
+		iGreatProphet : (
+			"fOlga", # 10th
+			"Volodymyr Sviatoslavych", # 10th
+			"Nastas Korsunyanyn", # 10th
+			"Gleb", # 11th
+			"Danyyil Palomnyk", # 11th
+			"Kiryla Turawski", # 12th
+			"Kuksha Pecherskyy", # 12th
+			iRenaissance,
+			"Petro Mohyla", # 17th
+			iGlobal,
+			"Andrii Sheptytsky", # 20th
+			"fKuksha Odeskyy", # 20th
+		),
+		iGreatArtist : (
+			"Boyan", # 11th
+			"Ilarion", # 11th
+			"Alipiy Pecherskyy", # 12th
+			iRenaissance,
+			"Ivan Rutkovych", # 17th
+			"Anton Losenko", # 18th
+			"Ivan Kotliarevsky", # 18th
+			iIndustrial,
+			"Taras Shevchenko", # 19th
+			"Ivan Franko", # 19th
+			"Marko Kropyvnytsky", # 19th
+			iGlobal,
+			"fLesia Ukrainka", # 20th
+			"Mykola Leontovych", # 20th
+			"Oleksandr Dovzhenko", # 20th
+			"Volodymyr Sosiura", # 20th
+			"Vasyl Stus", # 20th
+		),
+		iGreatScientist : (
+			"Kyrylo", # 10th
+			"Mefodiy", # 10th
+			"Nestor Litopysets", # 11th
+			iRenaissance,
+			"Ivan Fedorov", # 16th
+			"Hryhorii Skovoroda", # 18th
+			iIndustrial,
+			"Ivan Pulyuy", # 19th
+			"Illya Mechnykov", # 19th
+			iGlobal,
+			"Volodymyr Vernadsky", # 20th
+			"Mykola Amosov", # 20th
+		),
+		iGreatMerchant : (
+			"Sadko", # legendary
+			iRenaissance,
+			"Kostiantyn Ostrovsky", # 16th
+			"Fedir Symyrenko", # 18th
+			iIndustrial,
+			"Mykola Tereshchenko", # 19th
+			"Bohdan Hanenko", # 19th
+			"Varvara Hanenko", # 19th
+			iGlobal,
+			"Bohdan Havrylyshyn", # 20th
+		),
+		iGreatEngineer : (
+			"Petro Milonih", # 12th
+			"Oleksa", # 13th
+			iRenaissance,
+			"Ivan Hryhorovych-Barsky", # 18th
+			iIndustrial,
+			"Volodymyr Shukhov", # 19th
+			"Vladyslav Horodetsky", # 19th
+			iGlobal,
+			"Serhii Koroliov", # 20th
+			"Ihor Sikorsky", # 20th
+			"Yevhen Paton", # 20th
+			"Borys Paton", # 20th
+			"Oleh Antonov", # 20th
+			"Oleksandr Ivchenko", # 20th
+		),
+		iGreatStatesman : (
+			"Volodymyr Sviatoslavych", # 11th	
+			"Rurik", # 9th
+			"Volodymyr Monomakh", # 12th
+			"Danylo Halytskyy", # 13th
+			iRenaissance,
+			"Petro Sahaydachnyy", # 16th
+			"Bohdan Khmelnytskyy", # 17th
+			"Pylyp Orlyk", # 18th
+			iGlobal,
+			"Mykhailo Hrushevskyi", # 20th
+			"Pavlo Skoropadskyy", # 20th
+			"V'yacheslav Chornovil", # 20th
+		),
+		iGreatGeneral : (
+			"Oleh Vishchyy", # 10th
+			"Svyatoslav Ihorovych", # 10th
+			"Sveneld", # 10th
+			"Ihor Svyatoslavych", # 12th
+			"Oleksandr Nevskyy", # 13th
+			"Evpaty Kolovrat", # 13th
+			iRenaissance,
+			"Dmytro Vyshnevetskyy", # 16th
+			"Ivan Sirko", # 17th
+			"Petro Kalnyshevskyy", # 18th
+			iIndustrial,
+			"Ivan Paskevych", # 19th
+			iGlobal,
+			"Pavlo Skoropadskyy", # 20th
+			"Symon Petlyura", # 20th
+		),
+		iGreatSpy : (
+			"fRoksolana", # 16th
+			"Ivan Mazepa", # 18th
+			"Oleksa Dovbush", # 18th
+			iGlobal,
+			"Nestor Makhno", # 20th
+		),
+	},
+	iVietnam : {
+		iGreatProphet : (
+			u"Tù Dao Hanh", # 11th
+			u"Giác Hài", # 11th
+			u"fDiêu Nhân", # 11th
+			u"Tuê Trung", # 13th
+			u"Lê Quát", # 14th
+			iRenaissance,
+			u"Nguyên Bình Khiêm", # 16th
+			iGlobal,
+			u"Ngô Van Chiêu", # 20th
+			u"Lê Van Trung", # 20th
+			u"Huynh Phú Sô", # 20th
+			u"Thích Nhât Hanh", # 20th
+			"fChing Hai", # 20th
+		),
+		iGreatArtist : (
+			u"Khuông Viêt", # 10th
+			"Dang Dung", # 14th
+			iRenaissance,
+			u"fDoàn Thi Diem", # 18th
+			u"Nguyên Du", # 18th
+			iIndustrial,
+			u"fHó Xuân Huong", # 18-19th
+			u"Nguyên Công Trú", # 19th
+			u"Nguyên Thi Bích", # 19th
+			u"fNguyên Khuyên", # 19th
+			iGlobal,
+			u"Nguyên Phan Chánh", # 20th
+		),
+		iGreatScientist : (
+			u"Lê Van Huu", # 13th
+			"Chu Van An", # 14th
+			"Mac Dinh Chi", # 14th
+			u"Ngô Si Liên", # 15th
+			iRenaissance,
+			u"fNguyên Thi Duê", # 16th
+			u"Lê Quý Dôn", # 18th
+			iGlobal,
+			u"Ngô Bao Châu", # 20th
+		),
+		iGreatMerchant : (
+			u"Vo Van Kiêt", # 20th
+		),
+		iGreatEngineer : (
+			u"Nguyên An", # 15th
+			u"Hô Nguyên Trùng", # 15th
+			iGlobal,
+			u"Trân Dai Nghia", # 20th
+			u"André Truong Trong Thi", # 20th
+		),
+		iGreatStatesman : (
+			u"Lý Dao Thành", # 11th
+			"fY Lan", # 11th
+			u"Lý Nhân Tông", # 11th
+			u"Nguyên Trãi", # 15th
+			iGlobal,
+			u"Hô Chi Minh", # 20th
+			u"Nguyên Van Linh", # 20th
+			u"Lê Ðúc Tho", # 20th
+		),
+		iGreatGeneral : (
+			u"Ngô Quyên", # 10th
+			u"Lý Thuòng Kiêt", # 11th
+			u"Trân Hung Dao", # 13th
+			u"Trân Thánh Tông", # 13th
+			u"Trân Nhán Tông", # 13th
+			iRenaissance,
+			u"fBùi Thi Xuân", # 18th
+			"Gia Long", # 18th
+			"Quang Trung", # 18th
+			iIndustrial,
+			u"Phan Dình Phùng", # 19th
+			iGlobal,
+			u"Vo Nguyên Giáp", # 20th
+			u"Cao Van Viên", # 20th
+		),
+		iGreatSpy : (
+			u"Pham Ngoc Thào", # 20th
+			u"Pham Xuân Ân", # 20th
+		),
+	},
+	iSwahili : {
+		iGreatProphet : (
+			"Mtswa Mwindza", # 7th
+			"Ahmed Bin Abdulrahman Bin Uthman", # 10th or 11th Somali
+			"Sheikh Hussein", # 13th Somali
+			"Shehe Mvita", # 14th
+			iIndustrial,
+			"Maalim Mtondo", # 19th
+			"Uways al-Barawi", # 19th Somali
+			"fDada Masiti", # 19th
+			iGlobal,
+			"Kinjikitile Ngwale", # 20th
+			"Laurean Rugambwa", # 20th
+		),
+		iGreatArtist : (
+			"Fumo Liyongo", # 9-13th
+			iRenaissance,
+			"Bwana Mwengo wa Athman", # 18th
+			iIndustrial,
+			"fMwana Kupona", # 19th
+			iGlobal,
+			"Shaaban bin Robert", # 20th
+			"Muhammed Said Abdulla", # 20th
+			"Michael Enoch", # 20th
+			"Bi Kidude", # 20th
+			iDigital,
+			"Abdulrazak Gurnah", # 21st
+		),
+		iGreatScientist : (
+			"Fakhr al-Din al-Zayla'i", # 14th Somali
+			iRenaissance,
+			"Hassan al-Jabarti", # 18th Somali
+			iIndustrial,
+			"Shaykh Sufi", # 19th Somali
+			iGlobal,
+			"fAdelaida Kleti Semesi", # 20th
+			"fWangari Maathai", # 20th
+		),
+		iGreatMerchant : (
+			"Mohammed wa Joka", # legendary
+			"Zhengjiani", # 11th
+			"Dawud ibn Suleiman", # 12th
+			"Sa'iid min Maqadishu", # 14th Somali
+			"Mussa bin Bique", # 15th
+			iIndustrial,
+			"Sharmarke Ali Saleh", # 18-19th Somali
+			"Tippu Tip", # 19th
+			iGlobal,
+			"Jayantilal Keshavji Chande", # 20th
+			"Ali Mufuruki", # 20th
+		),
+		iGreatEngineer : (
+			"Abu Bakr Fakr ad-Din", # 10th Somali
+			"Al-Hasan ibn Sulaiman", # 14th
+			"Suleiman ibn Muhammad", # 15th
+			iRenaissance,
+			"Fumo Madi ibn Abi Bakr", # 18th
+		),
+		iGreatStatesman : (
+			"Ali ibn al-Hassan Shirazi", # 10th
+			"Ali ibn Dawud", # 11th
+			"Badlay ibn Sa'ad ad-Din", # 15th Somali
+			iRenaissance,
+			"Ahmad ibn Ibrahim al-Ghazi", # 16th Somali
+			"Yusuf Mahamud Ibrahim", # 18th Somali
+			iIndustrial,
+			"Mohammed Abdullah Hassan", # 19th Somali
+			iGlobal,
+			"Abeid Karume", # 20th
+			"Ahmed Abdallah Abderemane", # 20th
+			"Julius Nyerere", # 20th
+		),
+		iGreatGeneral : (
+			"Rubiya", # mythological
+			"fAbanoye", # mythological
+			"Al-Hassan ibn Talut", # 13th
+			"Matan ibn Uthman Al Somali", # 15th Somali
+			iRenaissance,
+			"Ahmed Girri Bin Hussein Al Somali", # 16th Somali
+			"Caaqil Dheryodhoobe", # 17th Somali
+			"fFatuma binti Yusuf al-Alawi", # 18th
+			iGlobal,
+			"Samora Machel", # 20th
+			"Mohammed Siad Barre", # 20th
+		),
+		iGreatSpy : (
+			"Suleiman ibn Suleiman", # 12-13th
+			"Daudi Mringwari", # 14-17th
+			"Emir Muhammad Kiwabi", # 15th
+		),
+	},
 	iPoland : {
 		iGreatProphet : (
 			"Wojciech", # 10th
@@ -3661,16 +4557,18 @@ dGreatPeople = {
 	},
 	iRussia : {
 		iGreatProphet : (
-			"fOlga", # 10th
-			"Sergey Radonezhsky", # 14th
+			"Sergiy Radonezhsky", # 14th
 			"Paisiy Yaroslavov", # 15th
 			iRenaissance,
+			"Silvestr", # 16th
+			"Nikon", # 17th
 			"Feofan Prokopovich", # 18th
 			"Seraphim Sarovsky", # 18th
 			iIndustrial,
 			"fHelena Blavatsky", # 19th
 			"Grigori Rasputin", # 19th
 			"Nikolai Rerikh", # 19th
+			"Ivan Ilyich Sergiyev", # 19th
 			iGlobal,
 			"Nikolai Berdyaev", # 20th
 			"Georges Florovsky", # 20th
@@ -3696,6 +4594,9 @@ dGreatPeople = {
 			"fAnna Pavlova", # 20th
 			"fNatalia Goncharova", # 20th
 			"Dmitri Shostakovich", # 20th
+			"Igor Stravinsky", # 20th
+			"Boris Pasternak", # 20th
+			"Sergei Eisenstein", # 20th
 		),
 		iGreatScientist : (
 			"Mikhail Lomonosov", # 18th
@@ -3709,10 +4610,15 @@ dGreatPeople = {
 			iGlobal,
 			"Pavel Cherenkov", # 20th
 			"Yulii Borisovich Khariton", # 20th
+			"Ivan Pavlov", # 20th
+			"Lev Landau", # 20th
+			"Pyotr Kapitsa", # 20th
 		),
 		iGreatMerchant : (
 			"Afanasiy Nikitin", # 15th
 			iRenaissance,
+			"Anikey Stroganov", # 16th
+			"Akinfiy Nikitich Demidov", # 17th
 			"Vitus Bering", # 18th
 			"Grigory Shelikhov", # 18th
 			"Pavel Lebedev-Lastochkin", # 18th
@@ -3722,6 +4628,7 @@ dGreatPeople = {
 			"Karl Faberzhe", # 19th
 			iGlobal,
 			"Nikolai Kondratiev", # 20th
+			"Leonid Kantorovich", # 20th
 		),
 		iGreatEngineer : (
 			"Lazar Serb", # 15th
@@ -3729,6 +4636,7 @@ dGreatPeople = {
 			"Postnik Yakovlev", # 16th
 			"Vasily Bazhenov", # 18th
 			"Ivan Starov", # 18th
+			"Nikolay Lvov", # 18th
 			iIndustrial,
 			"Vladimir Shukhov", # 19th
 			"Sergey Prokudin-Gorsky", # 19th
@@ -3736,16 +4644,14 @@ dGreatPeople = {
 			"Mikhail Kalashnikov", # 20th
 			"Sergei Korolev", # 20th
 			"Andrey Tupolev", # 20th
-			u"Léon Theremin", # 20th
+			"Lev Termen", # 20th
 			"Vladimir Zvorykin", # 20th
 			"Igor Sikorsky", # 20th
 			"fValentina Tereshkova", # 20th
 		),
 		iGreatStatesman : (
-			"Vladimir Sviatoslavich", # 11th
-			"Yaroslav Mudry", # 11th
+			"Daniil Aleksandrovich", # 13th
 			"fMarfa Posadnitsa", # 15th
-			"Ivan Vasilyevich", # 15th
 			iRenaissance,
 			"Vasily Tatishchev", # 18th
 			"Nikita Panin", # 18th
@@ -3753,16 +4659,17 @@ dGreatPeople = {
 			iIndustrial,
 			"Mikhail Speransky", # 19th
 			"Mikhail Bakunin", # 19th
+			"Pyotr Stolypin", # 19th
 			"Vladimir Lenin", # 19th
 			iGlobal,
 			"Leon Trotsky", # 20th
 			"fAlexandra Kollontai", # 20th
 			"Andrei Sakharov", # 20th
 			"Mikhail Gorbachev", # 20th
+			"Yegor Gaidar", # 20th
 		),
 		iGreatGeneral : (
-			"Alexander Nevsky", # 13th
-			"Ivan Grozny", # 15th
+			"Dmitry Donskoy", # 14th
 			iRenaissance,
 			"Mikhail Romanov", # 17th
 			"Alexander Suvorov", # 18th
@@ -3793,6 +4700,164 @@ dGreatPeople = {
 			u"Sándor Goldberger", # 20th
 			"Lavrentiy Beria", # 20th
 			"Oleg Gordievsky", # 20th
+		),
+	},
+	iSweden : {
+		iGreatProphet : (
+			"fBirgitta Birgersdotter", # 14th
+			"fKatarina av Vadstena", # 14th
+			iRenaissance,
+			"Olaus Petri", # 16th
+			"Mikael Agricola", # 16th Finnish
+			"Johannes Campanius", # 17th
+			"Emanuel Swedenborg", # 18th
+			iIndustrial,
+			u"Lars Levi Læstadius", # 19th Sámi
+			"Carl Olof Rosenius", # 19th
+			"Peter Weiselgren", # 19th
+			iGlobal,
+			u"Nathan Söderblom", # 20th
+			"Lewi Pethrus", # 20th
+			"fElizabeth Hesselblad", # 20th
+			"fMargit Sahlin", # 20th
+		),
+		iGreatArtist : (
+			u"Nils Håkansson", # 14th
+			u"Albert Målare", # 15th
+			iRenaissance,
+			"Georg Stiernhielm", # 17th
+			"Carl Michael Bellman", # 18th
+			iIndustrial,
+			"Johan Ludvig Runeberg", # 19th Finnish
+			u"Elias Lönnrot", # 19th Finnish
+			"fJenny Lind", # 19th
+			"August Strindberg", # 19th
+			"Anders Zorn", # 19th
+			iGlobal,
+			u"fSelma Lagerlöf", # 20th
+			"fHilma af Klint", # 20th
+			"fAstrid Lindgren", # 20th
+			"Ingmar Bergman", # 20th
+			"Erik Axel Karlfeldt", # 20th
+			"fGreta Garbo", # 20th
+			"Jean Sibelius", # 20th Finnish
+			"fTove Jansson", # 20th Finnish
+			u"Frans Eemil Sillanpää", # 20th Finnish
+		),
+		iGreatScientist : (
+			"Nils Ragvaldsson", # 15th
+			iRenaissance,
+			"Olof Rudbeck", # 17th
+			"Anders Celsius", # 18th
+			u"Carl von Linné", # 18th
+			"fEva Ekeblad", # 18th
+			"Carl Wilhelm Scheele", # 18th
+			iIndustrial,
+			u"Jöns Jacob Berzelius", # 19th
+			"Johannes Rydberg", # 19th
+			u"Anders Ångström", # 19th
+			"Svante Arrhenius", # 19th
+			iGlobal,
+			u"Hannes Alfvén", # 20th
+			"Theodor Svedberg", # 20th
+			"Ulf von Euler", # 20th
+			"Lars Ahlfors", # 20th Finnish
+			"Ragnar Granit", # 20th Finnish
+		),
+		iGreatMerchant : (
+			"Bo Jonsson Grip", # 14th
+			iRenaissance,
+			u"Johan Björnsson Printz", # 17th
+			"fChristina Piper", # 18th
+			"Niclas Sahlgren", # 18th
+			"Rutger Macklean", # 18th
+			iIndustrial,
+			u"Adolf Erik Nordenskiöld", # 19th Finnish
+			"Sven Hedin", # 19th
+			"fJohanna Petersson", # 19th
+			"Lars Magnus Ericsson", # 19th
+			u"André Oscar Wallenberg", # 19th
+			iGlobal,
+			"Ingvar Kamprad", # 20th
+			"Ivar Kreuger", # 20th
+			"Assar Gabrielsson", # 20th
+			"Erling Persson", # 20th
+			"Gunnar Myrdal", # 20th
+			"Marcus Wallenberg Jr.", # 20th
+		),
+		iGreatEngineer : (
+			"Englika", # 14th
+			iRenaissance,
+			"Nicodemus Tessin", # 17th
+			"Erik Dahlbergh", # 17th
+			"Christopher Polhem", # 18th
+			iIndustrial,
+			"Johan Ericsson", # 19th
+			"Per Georg Scheutz", # 19th
+			"Gustaf de Laval", # 19th
+			"Carl Edvard Johansson", # 19th
+			"Alfred Nobel", # 19th
+			iGlobal,
+			u"Gustaf Dalén", # 20th
+			"Gunnar Asplund", # 20th
+			"Carl Munters", # 20th
+			"Nils Bohlin", # 20th
+			"Alvar Aalto", # 20th Finnish
+		),
+		iGreatStatesman : (
+			"Birger Jarl", # 13th
+			u"Magnus Ladulås", # 13th
+			"Sten Sture", # 15th
+			iRenaissance,
+			"Axel Oxenstierna", # 17th
+			"fKristina", # 17th
+			"Karl XI", # 17th
+			"Peter Estenberg", # 18th
+			"Arvid Horn", # 18th
+			"Anders Chydenius", # 18th Finnish
+			iIndustrial,
+			"Gustaf Mauritz Armfelt", # 19th Finnish
+			"Louis Gerhard De Geer", # 19th
+			"Oscar II", # 19th
+			"August Palm", # 19th
+			iGlobal,
+			"fElsa Laula Renberg", # 20th Sámi
+			"Folke Bernadotte", # 20th
+			u"Dag Hammarskjöld", # 20th
+			"fAlva Myrdal", # 20th
+			"Olof Palme", # 20th
+		),
+		iGreatGeneral : (
+			"Tyrgils Knutsson", # 13th
+			"Erik Magnusson", # 14th
+			iRenaissance,
+			"Gustav Vasa", # 16th
+			"Gustaf Horn", # 17th Finnish
+			"Lennart Torstensson", # 17th
+			"Carl Gustaf Wrangel", # 17th
+			u"Carl Gustaf Rehnskiöld", # 18th
+			"Karl XII", # 18th
+			"fIngela Gathenhielm", # 18th
+			iIndustrial,
+			"Karl XIV Johan", # 19th
+			iGlobal,
+			"Carl Gustaf Emil Mannerheim", # 20th Finnish
+			"Adolf Ehrnrooth", # 20th Finnish
+		),
+		iGreatSpy : (
+			"Engelbrekt Engelbrektsson", # 15th
+			"fBrita Olovsdotter Tott", # 15th Swedish/Danish
+			iRenaissance,
+			"fAnna Maria Clodt", # 17th
+			"fCharlotte Eckerman", # 18th
+			u"fEva Löwen", # 18th
+			"Jean Grossaint De la Roche-yon", # 18th
+			iIndustrial,
+			"Carl Johan Ingman", # 19th
+			iGlobal,
+			"Carlos Adlercreutz", # 20th
+			u"Stig Wennerström", # 20th
+			"Stig Berglig", # 20th
 		),
 	},
 	iOttomans : {
