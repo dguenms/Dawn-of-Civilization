@@ -58,12 +58,18 @@ def create(iPlayer, iUnit, tile):
 	x, y = location(tile)
 	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
-def getAlias(iCiv, iType, iEra):
-	if iCiv in [iHarappa, iDravidia]: return iIndia
+def getPrimary(iCiv):
+	if iCiv == iHarappa: return iIndia
 	elif iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam: return iArabia
 	elif iCiv == iIran: return iPersia
 	
 	return iCiv
+
+def getNameCivs(iCiv):
+	yield getPrimary(iCiv)
+	
+	for iSimilarCiv in civs.of(*(dNeighbours[iCiv] + dInfluences[iCiv])).sort(lambda c: any(iCiv in group and c in group for group in dCivGroups.values())):
+		yield iSimilarCiv
 	
 def getType(iUnit):
 	iUnitType = base_unit(iUnit)
@@ -73,12 +79,20 @@ def getType(iUnit):
 def getAvailableNames(iPlayer, iType):
 	pPlayer = player(iPlayer)
 	iEra = pPlayer.getCurrentEra()
-	iCiv = getAlias(civ(iPlayer), iType, iEra)
+	iCiv = civ(iPlayer)
 	
-	return getEraNames(iCiv, iType, iEra)
+	for iNameCiv in getNameCivs(iCiv):
+		lNames = getEraNames(iNameCiv, iType, iEra)
+		if lNames:
+			return lNames
+	
+	return []
 
 def getEraNames(iCiv, iType, iEra):
 	lNames = tGreatPeople[iCiv][iType]
+	
+	if all(game.isGreatPersonBorn(sName) or sName in range(iNumEras) for sName in lNames):
+		return []
 	
 	iOffset = tOffsets[iCiv][iType][iEra]
 	iNextOffset = len(lNames)
