@@ -23309,8 +23309,8 @@
 		<ScriptID>AS2D_DIPLO_TAHARQA_EARLY</ScriptID>
 		<SoundID>DIPLO_TAHARQA_EARLY</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>75</iMinVolume>
-		<iMaxVolume>75</iMaxVolume>
+		<iMinVolume>60</iMinVolume>
+		<iMaxVolume>60</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -23332,8 +23332,8 @@
 		<ScriptID>AS2D_DIPLO_TAHARQA_MIDDLE</ScriptID>
 		<SoundID>DIPLO_TAHARQA_MIDDLE</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>75</iMinVolume>
-		<iMaxVolume>75</iMaxVolume>
+		<iMinVolume>60</iMinVolume>
+		<iMaxVolume>60</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -23355,8 +23355,8 @@
 		<ScriptID>AS2D_DIPLO_TAHARQA_LATE</ScriptID>
 		<SoundID>DIPLO_TAHARQA_LATE</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>75</iMinVolume>
-		<iMaxVolume>75</iMaxVolume>
+		<iMinVolume>60</iMinVolume>
+		<iMaxVolume>60</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
