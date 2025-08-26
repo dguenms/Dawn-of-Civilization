@@ -5302,7 +5302,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
-					<BuildingType>BUILDING_RUSSIAN_KATORGA</BuildingType>
+					<BuildingType>BUILDING_RUSSIAN_OSTROG</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

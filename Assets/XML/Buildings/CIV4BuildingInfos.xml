@@ -2395,25 +2395,24 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
-			<Type>BUILDING_RUSSIAN_KATORGA</Type>
-			<Description>TXT_KEY_BUILDING_RUSSIAN_KATORGA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_RUSSIAN_KATORGA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_RUSSIAN_KATORGA_STRATEGY</Strategy>
+			<Type>BUILDING_RUSSIAN_OSTROG</Type>
+			<Description>TXT_KEY_BUILDING_RUSSIAN_OSTROG</Description>
+			<Civilopedia>TXT_KEY_BUILDING_RUSSIAN_OSTROG_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_RUSSIAN_OSTROG_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_RUSSIAN_KATORGA</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_RUSSIAN_OSTROG</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_LAW</PrereqTech>
-			<iCost>120</iCost>
+			<iCost>90</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>50</iConquestProb>
 			<iMaintenanceModifier>-25</iMaintenanceModifier>
-			<iHurryAngerModifier>-50</iHurryAngerModifier>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<YieldChanges>
 				<iYield>0</iYield>
-				<iYield>4</iYield>
+				<iYield>3</iYield>
 			</YieldChanges>
 			<CommerceChanges>
 				<iCommerce>0</iCommerce>
@@ -2428,6 +2427,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>

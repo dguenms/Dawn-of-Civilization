@@ -3090,12 +3090,12 @@
 		<Spanish>Calmecac</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_RUSSIAN_KATORGA</Tag>
-		<English>Katorga</English>
-		<French>Katorga</French>
-		<German>Katorga</German>
-		<Italian>Katorga</Italian>
-		<Spanish>Katorga</Spanish>
+		<Tag>TXT_KEY_BUILDING_RUSSIAN_OSTROG</Tag>
+		<English>Ostrog</English>
+		<French>Ostrog</French>
+		<German>Ostrog</German>
+		<Italian>Ostrog</Italian>
+		<Spanish>Ostrog</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CELTIC_MENHIR</Tag>
