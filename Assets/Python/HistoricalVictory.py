@@ -661,10 +661,9 @@ dGoals = {
 		HappiestTurns(50, by=1980),
 	),
 	iRussia: (
-		BuildingCount(
-			(iOrthodoxCathedral, 3), 
-			(sum(*lOrthodoxWonders).named(ORTHODOX_WONDERS), 3), 
-			by=1550
+		All(
+			BuildingCount(iOrthodoxCathedral, 3, by=1500),
+			BuildingCount(sum(lOrthodoxWonders).named(ORTHODOX_WONDERS), 3, by=1600),
 		),
 		All(
 			SettledCities(10, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
