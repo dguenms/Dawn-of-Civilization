@@ -11,11 +11,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HITTITES_PEOPLES</Tag>
-		<English>Hittite Peoples</English>
-		<French>Hittite Peoples</French>
-		<German>Hittite Peoples</German>
-		<Italian>Hittite Peoples</Italian>
-		<Spanish>Hittite Peoples</Spanish>
+		<English>Neshite Peoples</English>
+		<French>Neshite Peoples</French>
+		<German>Neshite Peoples</German>
+		<Italian>Neshite Peoples</Italian>
+		<Spanish>Neshite Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HITTITES_ADJECTIVE</Tag>
@@ -35,10 +35,26 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HITTITES_DEFAULT</Tag>
-		<English>%s2 Empire</English>
-		<French>%s2 Empire</French>
-		<German>%s2 Empire</German>
-		<Italian>%s2 Empire</Italian>
-		<Spanish>%s2 Empire</Spanish>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_HATTI</Tag>
+		<English>Hatti</English>
+		<French>Hatti</French>
+		<German>Hatti</German>
+		<Italian>Hatti</Italian>
+		<Spanish>Hatti</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>%s2 State</French>
+		<German>%s2 State</German>
+		<Italian>%s2 State</Italian>
+		<Spanish>%s2 State</Spanish>
 	</TEXT>
 </Civ4GameText>

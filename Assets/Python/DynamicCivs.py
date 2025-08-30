@@ -428,10 +428,10 @@ dForeignNames = deepdict({
 })
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
-lRepublicAdj = [iBabylonia, iAssyria, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
-lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
+lSocialistRepublicAdj = [iHittites, iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iDravidia, iByzantium, iMongols]
@@ -441,6 +441,7 @@ lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 dEmpireThreshold = {
 	iBabylonia: 2,
 	iAssyria: 2,
+	iHittites: 2,
 	iPhoenicia : 4,
 	iPolynesia : 3,
 	iDravidia : 3,
@@ -977,6 +978,9 @@ def specificName(iPlayer):
 			
 			if iEra == iRenaissance and turn() >= year(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
+	
+	elif iCiv == iHittites:
+		return "TXT_KEY_CIV_HITTITES_HATTI"
 			
 	elif iCiv == iGreece:
 		if not bCityStates and bEmpire and iEra <= iClassical:
@@ -1306,6 +1310,10 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_NUBIA_MAKURIAN"
 			
 		return "TXT_KEY_CIV_NUBIA_KUSHITE"
+	
+	elif iCiv == iHittites:
+		if bMonarchy and not bEmpire:
+			return capitalName(iPlayer)
 			
 	elif iCiv == iGreece:
 		if iEra == iAncient:
@@ -1743,6 +1751,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_NUBIA_MAHDIYYA"
 			
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
+	
+	elif iCiv == iHittites:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iGreece:
 		if bEmpire:
