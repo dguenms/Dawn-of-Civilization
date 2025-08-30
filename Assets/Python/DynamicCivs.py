@@ -439,6 +439,7 @@ lPeoplesRepublicAdj = [iDravidia, iByzantium, iMongols]
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 
 dEmpireThreshold = {
+	iBabylonia: 2,
 	iAssyria: 2,
 	iPhoenicia : 4,
 	iPolynesia : 3,
@@ -1245,6 +1246,13 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_CHINA_ZHOU"
 			
 	elif iCiv == iBabylonia:
+		if bEmpire:
+			if iEra >= iClassical:
+				return "TXT_KEY_CIV_BABYLONIA_NEO"
+			
+			if getColumn(iPlayer) >= 3:
+				return "TXT_KEY_CIV_BABYLONIA_KASSITE"
+		
 		if bCityStates and not bEmpire:
 			return "TXT_KEY_CIV_BABYLONIA_MESOPOTAMIAN"
 			
@@ -1674,15 +1682,15 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iBabylonia:
-		if bCityStates and not bEmpire:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if bCityStates:
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"
-			
-		if bEmpire and iEra > iAncient:
-			return "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE"
 	
 	elif iCiv == iAssyria:
 		if bEmpire:
-			return "TXT_KEY_CIV_ASSYRIA_EMPIRE"
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
 		if bCityStates:
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"

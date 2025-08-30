@@ -50,30 +50,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DEFAULT</Tag>
-		<English>%s2 Empire</English>
-		<French>
-			<Text>Empire %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Impero %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Imperio %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_FASCIST</Tag>
 		<English>Baathist %s1</English>
 		<French>
@@ -234,11 +210,35 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_DEFAULT</Tag>
+		<English>Land of %s1</English>
+		<French>Land of %s1</French>
+		<German>Land of %s1</German>
+		<Italian>Land of %s1</Italian>
+		<Spanish>Land of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN</Tag>
 		<English>Akkadian</English>
 		<French>Akkadian</French>
 		<German>Akkadian</German>
 		<Italian>Akkadian</Italian>
 		<Spanish>Akkadian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_KASSITE</Tag>
+		<English>Kassite</English>
+		<French>Kassite</French>
+		<German>Kassite</German>
+		<Italian>Kassite</Italian>
+		<Spanish>Kassite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_NEO</Tag>
+		<English>Neo-Babylonian</English>
+		<French>Neo-Babylonian</French>
+		<German>Neo-Babylonian</German>
+		<Italian>Neo-Babylonian</Italian>
+		<Spanish>Neo-Babylonian</Spanish>
 	</TEXT>
 </Civ4GameText>
