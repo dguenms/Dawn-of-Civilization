@@ -85,8 +85,14 @@ dSpecificVassalTitles = deepdict({
 		iSpain : "TXT_KEY_CIV_BYZANTINE_SPAIN",
 	},
 	iNorse : {
+		iCelts : "TXT_KEY_CIV_NORSE_CELTS",
+		iByzantium : "TXT_KEY_CIV_NORSE_BYZANTIUM",
+		iMali : "TXT_KEY_CIV_NORSE_MALI",
+		iTurks : "TXT_KEY_CIV_NORSE_TURKS",
+		iArabia : "TXT_KEY_CIV_NORSE_ARABIA",
+		iMoors : "TXT_KEY_CIV_NORSE_MOORS",
 		iEngland : "TXT_KEY_CIV_NORSE_ENGLAND",
-		iRussia : "TXT_KEY_CIV_NORSE_RUSSIA",
+		iSweden : "TXT_KEY_CIV_NORSE_SWEDEN",
 	},
 	iArabia : {
 		iOttomans : "TXT_KEY_CIV_ARABIAN_OTTOMANS",
@@ -236,6 +242,7 @@ dMasterTitles = {
 	iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL",
 	iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL",
 	iTurks : "TXT_KEY_CIV_TURKIC_VASSAL",
+	iNorse : "TXT_KEY_CIV_NORSE_VASSAL",
 	iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL",
 	iTibet : "TXT_KEY_CIV_TIBETAN_VASSAL",
 	iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL",
@@ -367,6 +374,15 @@ dForeignNames = deepdict({
 		iIndia : "TXT_KEY_CIV_TIBETAN_NAME_INDIA",
 		iTurks : "TXT_KEY_CIV_TIBETAN_NAME_TURKS",
 		iMongols : "TXT_KEY_CIV_TIBETAN_NAME_MONGOLIA",
+	},
+	iNorse : {
+		iFrance: "TXT_KEY_CIV_NORSE_NAME_FRANCE",
+		iSpain: "TXT_KEY_CIV_NORSE_NAME_SPAIN",
+		iHolyRome: "TXT_KEY_CIV_NORSE_NAME_HOLY_ROME",
+		iRus: "TXT_KEY_CIV_NORSE_NAME_RUS",
+		iPoland: "TXT_KEY_CIV_NORSE_NAME_POLAND",
+		iItaly: "TXT_KEY_CIV_NORSE_NAME_ITALY",
+		iRussia: "TXT_KEY_CIV_NORSE_NAME_RUSSIA",
 	},
 	iMoors : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -1757,13 +1773,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if iReligion < 0 and iEra < iRenaissance:
 			return "TXT_KEY_CIV_NORSE_NORSE_KINGDOMS"
-			
-		if bEmpire:
-			if iEra <= iMedieval:
-				return "TXT_KEY_CIV_NORSE_KALMAR_UNION"
-				
-			if iEra == iRenaissance:
-				return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if isControlled(iPlayer, plots.core(iSweden)) or team(iSweden).isVassal(iPlayer):
+			return "TXT_KEY_CIV_NORSE_KALMAR_UNION"
+		
+		if bEmpire and iEra >= iRenaissance:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
 	elif iCiv == iTurks:
 		if bCityStates:

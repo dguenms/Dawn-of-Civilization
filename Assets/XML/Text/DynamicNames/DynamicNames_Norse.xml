@@ -294,18 +294,6 @@
 		<Spanish>North Sea Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NORSE_SWEDISH</Tag>
-		<English>Swedish</English>
-		<French>
-			<Text>su&#233;dois:su&#233;doise:su&#233;dois:su&#233;doises</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>Swedish</German>
-		<Italian>Swedish</Italian>
-		<Spanish>Swedish</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_NORSE_DENMARK_NORWAY</Tag>
 		<English>Denmark-Norway</English>
 		<French>
@@ -328,18 +316,6 @@
 		<German>Norway</German>
 		<Italian>Norway</Italian>
 		<Spanish>Norway</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NORSE_SWEDEN</Tag>
-		<English>Sweden</English>
-		<French>
-			<Text>Su&#232;de</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Sweden</German>
-		<Italian>Sweden</Italian>
-		<Spanish>Sweden</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORSE_DENMARK</Tag>
@@ -390,6 +366,14 @@
 		<Spanish>Scandinavian</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_VASSAL</Tag>
+		<English>Principality of %s1</English>
+		<French>Principality of %s1</French>
+		<German>Principality of %s1</German>
+		<Italian>Principality of %s1</Italian>
+		<Spanish>Principality of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_NORSE_ENGLAND</Tag>
 		<English>Danelaw</English>
 		<French>
@@ -402,16 +386,124 @@
 		<Spanish>Danelaw</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NORSE_RUSSIA</Tag>
-		<English>Varangian Principalities</English>
-		<French>
-			<Text>Principaut&#233;s var&#232;gues</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Varangian Principalities</German>
-		<Italian>Varangian Principalities</Italian>
-		<Spanish>Varangian Principalities</Spanish>
+		<Tag>TXT_KEY_CIV_NORSE_SWEDEN</Tag>
+		<English>Regency of %s1</English>
+		<French>Regency of %s1</French>
+		<German>Regency of %s1</German>
+		<Italian>Regency of %s1</Italian>
+		<Spanish>Regency of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_CELTS</Tag>
+		<English>Kingdom of the Isles</English>
+		<French>Kingdom of the Isles</French>
+		<German>Kingdom of the Isles</German>
+		<Italian>Kingdom of the Isles</Italian>
+		<Spanish>Kingdom of the Isles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_BYZANTIUM</Tag>
+		<English>Kingdom of Miklagard</English>
+		<French>Kingdom of Miklagard</French>
+		<German>Kingdom of Miklagard</German>
+		<Italian>Kingdom of Miklagard</Italian>
+		<Spanish>Kingdom of Miklagard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_ARABIA</Tag>
+		<English>Kingdom of Serkland</English>
+		<French>Kingdom of Serkland</French>
+		<German>Kingdom of Serkland</German>
+		<Italian>Kingdom of Serkland</Italian>
+		<Spanish>Kingdom of Serkland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_MOORS</Tag>
+		<English>Kingdom of Blaland</English>
+		<French>Kingdom of Blaland</French>
+		<German>Kingdom of Blaland</German>
+		<Italian>Kingdom of Blaland</Italian>
+		<Spanish>Kingdom of Blaland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_TURKS</Tag>
+		<English>Kingdom of Tyrkland</English>
+		<French>Kingdom of Tyrkland</French>
+		<German>Kingdom of Tyrkland</German>
+		<Italian>Kingdom of Tyrkland</Italian>
+		<Spanish>Kingdom of Tyrkland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_MALI</Tag>
+		<English>Danish Gold Coast</English>
+		<French>Danish Gold Coast</French>
+		<German>Danish Gold Coast</German>
+		<Italian>Danish Gold Coast</Italian>
+		<Spanish>Danish Gold Coast</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_FRANCE</Tag>
+		<English>Frakkland</English>
+		<French>Frakkland</French>
+		<German>Frakkland</German>
+		<Italian>Frakkland</Italian>
+		<Spanish>Frakkland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_SPAIN</Tag>
+		<English>Spanland</English>
+		<French>Spanland</French>
+		<German>Spanland</German>
+		<Italian>Spanland</Italian>
+		<Spanish>Spanland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_HOLY_ROME</Tag>
+		<English>Saxland</English>
+		<French>Saxland</French>
+		<German>Saxland</German>
+		<Italian>Saxland</Italian>
+		<Spanish>Saxland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_RUS</Tag>
+		<English>Koenugard</English>
+		<French>Koenugard</French>
+		<German>Koenugard</German>
+		<Italian>Koenugard</Italian>
+		<Spanish>Koenugard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_POLAND</Tag>
+		<English>Pulinaland</English>
+		<French>Pulinaland</French>
+		<German>Pulinaland</German>
+		<Italian>Pulinaland</Italian>
+		<Spanish>Pulinaland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_ITALY</Tag>
+		<English>Langbardaland</English>
+		<French>Langbardaland</French>
+		<German>Langbardaland</German>
+		<Italian>Langbardaland</Italian>
+		<Spanish>Langbardaland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_NAME_RUSSIA</Tag>
+		<English>Gardariki</English>
+		<French>Gardariki</French>
+		<German>Gardariki</German>
+		<Italian>Gardariki</Italian>
+		<Spanish>Gardariki</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORSE_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORSE_ADJECTIVE</Tag>
