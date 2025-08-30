@@ -77,4 +77,124 @@
 		<Italian>%s2 Chiefdoms</Italian>
 		<Spanish>%s2 Chiefdoms</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_FASCIST</Tag>
+		<English>%s2 Union</English>
+		<French>%s2 Union</French>
+		<German>%s2 Union</German>
+		<Italian>%s2 Union</Italian>
+		<Spanish>%s2 Union</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_FREE_STATE</Tag>
+		<English>%s2 Free State</English>
+		<French>%s2 Free State</French>
+		<German>%s2 Free State</German>
+		<Italian>%s2 Free State</Italian>
+		<Spanish>%s2 Free State</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_IRISH</Tag>
+		<English>Irish</English>
+		<French>Irish</French>
+		<German>Irish</German>
+		<Italian>Irish</Italian>
+		<Spanish>Irish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_WELSH</Tag>
+		<English>Welsh</English>
+		<French>Welsh</French>
+		<German>Welsh</German>
+		<Italian>Welsh</Italian>
+		<Spanish>Welsh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_GAELIC</Tag>
+		<English>Gaelic</English>
+		<French>Gaelic</French>
+		<German>Gaelic</German>
+		<Italian>Gaelic</Italian>
+		<Spanish>Gaelic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_CELTIBERIAN</Tag>
+		<English>Celtiberian</English>
+		<French>Celtiberian</French>
+		<German>Celtiberian</German>
+		<Italian>Celtiberian</Italian>
+		<Spanish>Celtiberian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_BRITTONIC</Tag>
+		<English>Brittonic</English>
+		<French>Brittonic</French>
+		<German>Brittonic</German>
+		<Italian>Brittonic</Italian>
+		<Spanish>Brittonic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_GALLIC</Tag>
+		<English>Gallic</English>
+		<French>Gallic</French>
+		<German>Gallic</German>
+		<Italian>Gallic</Italian>
+		<Spanish>Gallic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_IRELAND</Tag>
+		<English>Ireland</English>
+		<French>Ireland</French>
+		<German>Ireland</German>
+		<Italian>Ireland</Italian>
+		<Spanish>Ireland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_WALES</Tag>
+		<English>Wales</English>
+		<French>Wales</French>
+		<German>Wales</German>
+		<Italian>Wales</Italian>
+		<Spanish>Wales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_GAELS</Tag>
+		<English>Gaels</English>
+		<French>Gaels</French>
+		<German>Gaels</German>
+		<Italian>Gaels</Italian>
+		<Spanish>Gaels</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_CELTIBERIA</Tag>
+		<English>Celtiberia</English>
+		<French>Celtiberia</French>
+		<German>Celtiberia</German>
+		<Italian>Celtiberia</Italian>
+		<Spanish>Celtiberia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_BRITAIN</Tag>
+		<English>Britain</English>
+		<French>Britain</French>
+		<German>Britain</German>
+		<Italian>Britain</Italian>
+		<Spanish>Britain</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS_GAUL</Tag>
+		<English>Gaul</English>
+		<French>Gaul</French>
+		<German>Gaul</German>
+		<Italian>Gaul</Italian>
+		<Spanish>Gaul</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTS</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

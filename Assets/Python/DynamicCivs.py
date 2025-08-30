@@ -427,10 +427,10 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
+lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
@@ -997,6 +997,25 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_POLYNESIA_NIUE"
 			
 		return "TXT_KEY_CIV_POLYNESIA_TONGA"
+	
+	elif iCiv == iCelts:
+		if player(iPlayer).getPeriod() == iPeriodInsularCelts:
+			if capital in cities.region(rIreland):
+				return "TXT_KEY_CIV_CELTS_IRELAND"
+			
+			if isCurrentCapital(iPlayer, "Cardiff", "Caernarfon"):
+				return "TXT_KEY_CIV_CELTS_WALES"
+			
+			return "TXT_KEY_CIV_CELTS_GAELS"
+		
+		if capital in cities.region(rIberia):
+			return "TXT_KEY_CIV_CELTS_CELTIBERIA"
+		
+		if capital in cities.regions(rBritain, rIreland):
+			return "TXT_KEY_CIV_CELTS_BRITAIN"
+		
+		if cities.owner(iPlayer).count() == cities.owner(iPlayer).region(rFrance).count():
+			return "TXT_KEY_CIV_CELTS_GAUL"
 		
 	elif iCiv == iDravidia:
 		if getColumn(iPlayer) >= 11 or scenario() == i1700AD:
@@ -1359,6 +1378,25 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_POLYNESIA_TUI_MANUA"
 			
 		return "TXT_KEY_CIV_POLYNESIA_TUI_TONGA"
+	
+	elif iCiv == iCelts:
+		if player(iPlayer).getPeriod() == iPeriodInsularCelts:
+			if capital in cities.region(rIreland):
+				return "TXT_KEY_CIV_CELTS_IRISH"
+			
+			if isCurrentCapital(iPlayer, "Cardiff", "Caernarfon"):
+				return "TXT_KEY_CIV_CELTS_WELSH"
+			
+			return "TXT_KEY_CIV_CELTS_GAELIC"
+		
+		if capital in cities.region(rIberia):
+			return "TXT_KEY_CIV_CELTS_CELTIBERIAN"
+		
+		if capital in cities.regions(rBritain, rIreland):
+			return "TXT_KEY_CIV_CELTS_BRITTONIC"
+		
+		if cities.owner(iPlayer).count() == cities.owner(iPlayer).region(rFrance).count():
+			return "TXT_KEY_CIV_CELTS_GALLIC"
 		
 	elif iCiv == iRome:
 		if player(iByzantium).isExisting() and not team(iByzantium).isVassal(team(iCiv).getID()):
@@ -1613,6 +1651,9 @@ def fascistTitle(iPlayer):
 def republicTitle(iPlayer):
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
+	
+	if iCiv == iCelts and pPlayer.getPeriod() == iPeriodInsularCelts and pPlayer.getCurrentEra() <= iIndustrial:
+		return "TXT_KEY_CIV_CELTS_FREE_STATE"
 
 	if iCiv == iHolyRome and pPlayer.getPeriod() == -1:
 		return "TXT_KEY_CIV_HOLY_ROME_CONFEDERATION"
@@ -1783,6 +1824,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+	
+	elif iCiv == iCelts:
+		if player(iPlayer).getPeriod() == iPeriodInsularCelts:
+			if capital in cities.region(rIreland):
+				return "TXT_KEY_KINGDOM_OF"
+			
+			if isCurrentCapital(iPlayer, "Cardiff", "Caernarfon"):
+				return "TXT_KEY_KINGDOM_OF"
+			
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
 			
 	elif iCiv == iRome:
 		if bEmpire:
