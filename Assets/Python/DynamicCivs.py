@@ -950,8 +950,25 @@ def specificName(iPlayer):
 	bWar = isAtWar(iPlayer)
 	
 	if iCiv == iNubia:
-		if iEra <= iClassical:
-			return "TXT_KEY_CIV_NUBIA_KUSH"
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_NUBIA_SUDAN"
+		
+		if iReligion == iIslam:
+			if capital in cities.region(rSahel):
+				return "TXT_KEY_CIV_NUBIA_DARFUR"
+				
+			return "TXT_KEY_CIV_NUBIA_FUNJ"
+		
+		if iEra >= iRenaissance:
+			if isCurrentCapital(iPlayer, "Para"):
+				return "TXT_KEY_CIV_NUBIA_NOBATIA"
+			
+			if isCurrentCapital(iPlayer, "Soba"):
+				return "TXT_KEY_CIV_NUBIA_ALODIA"
+			
+			return "TXT_KEY_CIV_NUBIA_MAKURIA"
+			
+		return "TXT_KEY_CIV_NUBIA_KUSH"
 			
 	elif iCiv == iChina:
 		if bEmpire:
@@ -1268,6 +1285,27 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_ASSYRIA_MIDDLE"
 			
 			return "TXT_KEY_CIV_ASSYRIA_OLD"
+	
+	elif iCiv == iNubia:
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_NUBIA_SUDANESE"
+		
+		if iReligion == iIslam:
+			if capital in cities.region(rSahel):
+				return "TXT_KEY_CIV_NUBIA_DARFUR"
+			
+			return "TXT_KEY_CIV_NUBIA_FUNJ"
+		
+		if iEra >= iRenaissance:
+			if isCurrentCapital(iPlayer, "Para"):
+				return "TXT_KEY_CIV_NUBIA_NOBATIAN"
+			
+			if isCurrentCapital(iPlayer, "Soba"):
+				return "TXT_KEY_CIV_NUBIA_ALODIAN"
+			
+			return "TXT_KEY_CIV_NUBIA_MAKURIAN"
+			
+		return "TXT_KEY_CIV_NUBIA_KUSHITE"
 			
 	elif iCiv == iGreece:
 		if iEra == iAncient:
@@ -1694,6 +1732,17 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if bCityStates:
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+	
+	elif iCiv == iNubia:
+		if bEmpire:
+			if iEra <= iMedieval:
+				return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if iReligion == iIslam:
+			if iEra >= iIndustrial and civic.iReligion == iFanaticism:
+				return "TXT_KEY_CIV_NUBIA_MAHDIYYA"
+			
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
 			
 	elif iCiv == iGreece:
 		if bEmpire:

@@ -42,11 +42,131 @@
 		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_REPUBLIC</Tag>
+		<English>Republic of the Sudan</English>
+		<French>Republic of the Sudan</French>
+		<German>Republic of the Sudan</German>
+		<Italian>Republic of the Sudan</Italian>
+		<Spanish>Republic of the Sudan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_COMMUNIST</Tag>
+		<English>Democratic Republic of the Sudan</English>
+		<French>Democratic Republic of the Sudan</French>
+		<German>Democratic Republic of the Sudan</German>
+		<Italian>Democratic Republic of the Sudan</Italian>
+		<Spanish>Democratic Republic of the Sudan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_FASCIST</Tag>
+		<English>Sudanese State</English>
+		<French>Sudanese State</French>
+		<German>Sudanese State</German>
+		<Italian>Sudanese State</Italian>
+		<Spanish>Sudanese State</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_NUBIA_KUSH</Tag>
 		<English>Kush</English>
 		<French>Kush</French>
 		<German>Kush</German>
 		<Italian>Kush</Italian>
 		<Spanish>Kush</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_KUSHITE</Tag>
+		<English>Kushite</English>
+		<French>Kushite</French>
+		<German>Kushite</German>
+		<Italian>Kushite</Italian>
+		<Spanish>Kushite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_MAHDIYYA</Tag>
+		<English>%s2 Mahdiyya</English>
+		<French>%s2 Mahdiyya</French>
+		<German>%s2 Mahdiyya</German>
+		<Italian>%s2 Mahdiyya</Italian>
+		<Spanish>%s2 Mahdiyya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_MAKURIA</Tag>
+		<English>Makuria</English>
+		<French>Makuria</French>
+		<German>Makuria</German>
+		<Italian>Makuria</Italian>
+		<Spanish>Makuria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_ALODIA</Tag>
+		<English>Alodia</English>
+		<French>Alodia</French>
+		<German>Alodia</German>
+		<Italian>Alodia</Italian>
+		<Spanish>Alodia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_NOBATIA</Tag>
+		<English>Nobatia</English>
+		<French>Nobatia</French>
+		<German>Nobatia</German>
+		<Italian>Nobatia</Italian>
+		<Spanish>Nobatia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_FUNJ</Tag>
+		<English>Funj</English>
+		<French>Funj</French>
+		<German>Funj</German>
+		<Italian>Funj</Italian>
+		<Spanish>Funj</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_DARFUR</Tag>
+		<English>Darfur</English>
+		<French>Darfur</French>
+		<German>Darfur</German>
+		<Italian>Darfur</Italian>
+		<Spanish>Darfur</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_SUDAN</Tag>
+		<English>Sudan</English>
+		<French>Sudan</French>
+		<German>Sudan</German>
+		<Italian>Sudan</Italian>
+		<Spanish>Sudan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_MAKURIAN</Tag>
+		<English>Makurian</English>
+		<French>Makurian</French>
+		<German>Makurian</German>
+		<Italian>Makurian</Italian>
+		<Spanish>Makurian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_ALODIAN</Tag>
+		<English>Alodian</English>
+		<French>Alodian</French>
+		<German>Alodian</German>
+		<Italian>Alodian</Italian>
+		<Spanish>Alodian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_NOBATIAN</Tag>
+		<English>Nobatian</English>
+		<French>Nobatian</French>
+		<German>Nobatian</German>
+		<Italian>Nobatian</Italian>
+		<Spanish>Nobatian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_SUDANESE</Tag>
+		<English>Sudanese</English>
+		<French>Sudanese</French>
+		<German>Sudanese</German>
+		<Italian>Sudanese</Italian>
+		<Spanish>Sudanese</Spanish>
 	</TEXT>
 </Civ4GameText>
