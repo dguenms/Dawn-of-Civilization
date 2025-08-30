@@ -51,6 +51,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_ASS1</Tag>
+		<English>Professional Army</English>
+		<French>Professional Army</French>
+		<German>Professional Army</German>
+		<Italian>Professional Army</Italian>
+		<Spanish>Professional Army</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_ASS2</Tag>
+		<English>Four Corners of the World</English>
+		<French>Four Corners of the World</French>
+		<German>Four Corners of the World</German>
+		<Italian>Four Corners of the World</Italian>
+		<Spanish>Four Corners of the World</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_ASS3</Tag>
+		<English>Library of Ashurbanipal</English>
+		<French>Library of Ashurbanipal</French>
+		<German>Library of Ashurbanipal</German>
+		<Italian>Library of Ashurbanipal</Italian>
+		<Spanish>Library of Ashurbanipal</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_ARG1</Tag>
 		<English>The Argentinian Paradox</English>
 		<French>Le paradoxe argentin </French>
@@ -148,6 +173,31 @@
 		<German>Pindorama</German>
 		<Italian>Pindorama</Italian>
 		<Spanish>Pindorama</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BUR1</Tag>
+		<English>Land of Temples</English>
+		<French>Land of Temples</French>
+		<German>Land of Temples</German>
+		<Italian>Land of Temples</Italian>
+		<Spanish>Land of Temples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BUR2</Tag>
+		<English>Chakravarti</English>
+		<French>Chakravarti</French>
+		<German>Chakravarti</German>
+		<Italian>Chakravarti</Italian>
+		<Spanish>Chakravarti</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BUR3</Tag>
+		<English>Taungoo and Konbaung Empires</English>
+		<French>Taungoo and Konbaung Empires</French>
+		<German>Taungoo and Konbaung Empires</German>
+		<Italian>Taungoo and Konbaung Empires</Italian>
+		<Spanish>Taungoo and Konbaung Empires</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -501,6 +551,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_HIT1</Tag>
+		<English>Metal Monopoly</English>
+		<French>Metal Monopoly</French>
+		<German>Metal Monopoly</German>
+		<Italian>Metal Monopoly</Italian>
+		<Spanish>Metal Monopoly</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_HIT2</Tag>
+		<English>Monumental Architecture</English>
+		<French>Monumental Architecture</French>
+		<German>Monumental Architecture</German>
+		<Italian>Monumental Architecture</Italian>
+		<Spanish>Monumental Architecture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_HIT3</Tag>
+		<English>Treaty of Kadesh</English>
+		<French>Treaty of Kadesh</French>
+		<German>Treaty of Kadesh</German>
+		<Italian>Treaty of Kadesh</Italian>
+		<Spanish>Treaty of Kadesh</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_HOL1</Tag>
 		<English>Financial Center of the World</English>
 		<French>Premi&#232;re place financi&#232;re au monde </French>
@@ -601,31 +676,6 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_INO1</Tag>
-		<English>Prosperous Excellence</English>
-		<French>Excellence prosp&#232;re </French>
-		<German>Florierende Vortrefflichkeit</German>
-		<Italian>Prosperous Excellence</Italian>
-		<Spanish>Prosperous Excellence</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_INO2</Tag>
-		<English>Emerald of the Equator</English>
-		<French>&#201;meraude de l'&#233;quateur </French>
-		<German>Smaragd des &#196;quators</German>
-		<Italian>Emerald of the Equator</Italian>
-		<Spanish>Emerald of the Equator</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_INO3</Tag>
-		<English>National Awakening</English>
-		<French>R&#233;veil national </French>
-		<German>Nationales Erwachen</German>
-		<Italian>National Awakening</Italian>
-		<Spanish>National Awakening</Spanish>
-	</TEXT>
-	
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_IRA1</Tag>
 		<English>European Embassies</English>
 		<French>Ambassades europ&#233;ennes </French>
@@ -701,28 +751,78 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAV1</Tag>
+		<English>Dharmic Temple Compounds</English>
+		<French>Dharmic Temple Compounds</French>
+		<German>Dharmic Temple Compounds</German>
+		<Italian>Dharmic Temple Compounds</Italian>
+		<Spanish>Dharmic Temple Compounds</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAV2</Tag>
+		<English>Emerald of the Equator</English>
+		<French>Emerald of the Equator</French>
+		<German>Emerald of the Equator</German>
+		<Italian>Emerald of the Equator</Italian>
+		<Spanish>Emerald of the Equator</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAV3</Tag>
+		<English>Wali Sanga</English>
+		<French>Wali Sanga</French>
+		<German>Wali Sanga</German>
+		<Italian>Wali Sanga</Italian>
+		<Spanish>Wali Sanga</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_KHM1</Tag>
-		<English>Angkor Wat</English>
-		<French>Angkor Vat </French>
-		<German>Angkor Wat</German>
-		<Italian>Angkor Wat</Italian>
-		<Spanish>Angkor Wat</Spanish>
+		<English>Sculpture and Architecture</English>
+		<French>Sculpture and Architecture</French>
+		<German>Sculpture and Architecture</German>
+		<Italian>Sculpture and Architecture</Italian>
+		<Spanish>Sculpture and Architecture</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_KHM2</Tag>
-		<English>Thom Baray</English>
-		<French>Thom Baray </French>
-		<German>Thom Baray</German>
-		<Italian>Thom Baray</Italian>
-		<Spanish>Thom Baray</Spanish>
+		<English>Devaraja</English>
+		<French>Devaraja</French>
+		<German>Devaraja</German>
+		<Italian>Devaraja</Italian>
+		<Spanish>Devaraja</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_KHM3</Tag>
-		<English>Preah Srei</English>
-		<French>Preah Srei </French>
-		<German>Preah Srei</German>
-		<Italian>Preah Srei</Italian>
-		<Spanish>Preah Srei</Spanish>
+		<English>Hydraulic Engineering</English>
+		<French>Hydraulic Engineering</French>
+		<German>Hydraulic Engineering</German>
+		<Italian>Hydraulic Engineering</Italian>
+		<Spanish>Hydraulic Engineering</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KUS1</Tag>
+		<English>Greco-Buddhist Culture</English>
+		<French>Greco-Buddhist Culture</French>
+		<German>Greco-Buddhist Culture</German>
+		<Italian>Greco-Buddhist Culture</Italian>
+		<Spanish>Greco-Buddhist Culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KUS2</Tag>
+		<English>The Great Vehicle</English>
+		<French>The Great Vehicle</French>
+		<German>The Great Vehicle</German>
+		<Italian>The Great Vehicle</Italian>
+		<Spanish>The Great Vehicle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KUS3</Tag>
+		<English>Pax Kushana</English>
+		<French>Pax Kushana</French>
+		<German>Pax Kushana</German>
+		<Italian>Pax Kushana</Italian>
+		<Spanish>Pax Kushana</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -773,6 +873,31 @@
 		<German>Yi Sun-sin</German>
 		<Italian>Yi Sun-sin</Italian>
 		<Spanish>Yi Sun-sin</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAA1</Tag>
+		<English>The Spice Route</English>
+		<French>The Spice Route</French>
+		<German>The Spice Route</German>
+		<Italian>The Spice Route</Italian>
+		<Spanish>The Spice Route</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAA2</Tag>
+		<English>Prosperous Excellence</English>
+		<French>Prosperous Excellence</French>
+		<German>Prosperous Excellence</German>
+		<Italian>Prosperous Excellence</Italian>
+		<Spanish>Prosperous Excellence</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAA3</Tag>
+		<English>Porch of Mecca</English>
+		<French>Porch of Mecca</French>
+		<German>Porch of Mecca</German>
+		<Italian>Porch of Mecca</Italian>
+		<Spanish>Porch of Mecca</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -1176,6 +1301,56 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWA1</Tag>
+		<English>Middlemen Traders</English>
+		<French>Middlemen Traders</French>
+		<German>Middlemen Traders</German>
+		<Italian>Middlemen Traders</Italian>
+		<Spanish>Middlemen Traders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWA2</Tag>
+		<English>Remote Coasts</English>
+		<French>Remote Coasts</French>
+		<German>Remote Coasts</German>
+		<Italian>Remote Coasts</Italian>
+		<Spanish>Remote Coasts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWA3</Tag>
+		<English>Indian Ocean Trade</English>
+		<French>Indian Ocean Trade</French>
+		<German>Indian Ocean Trade</German>
+		<Italian>Indian Ocean Trade</Italian>
+		<Spanish>Indian Ocean Trade</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWE1</Tag>
+		<English>Lion of the North</English>
+		<French>Lion of the North</French>
+		<German>Lion of the North</German>
+		<Italian>Lion of the North</Italian>
+		<Spanish>Lion of the North</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWE2</Tag>
+		<English>Dominium Maris Baltici</English>
+		<French>Dominium Maris Baltici</French>
+		<German>Dominium Maris Baltici</German>
+		<Italian>Dominium Maris Baltici</Italian>
+		<Spanish>Dominium Maris Baltici</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SWE3</Tag>
+		<English>Nordic Model</English>
+		<French>Nordic Model</French>
+		<German>Nordic Model</German>
+		<Italian>Nordic Model</Italian>
+		<Spanish>Nordic Model</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_THA1</Tag>
 		<English>The King and I</English>
 		<French>Le Roi et moi </French>
@@ -1226,6 +1401,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TOL1</Tag>
+		<English>Place of Reeds</English>
+		<French>Place of Reeds</French>
+		<German>Place of Reeds</German>
+		<Italian>Place of Reeds</Italian>
+		<Spanish>Place of Reeds</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TOL2</Tag>
+		<English>Birthplace of the Gods</English>
+		<French>Birthplace of the Gods</French>
+		<German>Birthplace of the Gods</German>
+		<Italian>Birthplace of the Gods</Italian>
+		<Spanish>Birthplace of the Gods</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TOL3</Tag>
+		<English>Spearthrower Owl</English>
+		<French>Spearthrower Owl</French>
+		<German>Spearthrower Owl</German>
+		<Italian>Spearthrower Owl</Italian>
+		<Spanish>Spearthrower Owl</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_TUR1</Tag>
 		<English>The Khaganate</English>
 		<French>Le khaganat </French>
@@ -1248,6 +1448,56 @@
 		<German>M&#228;zenat</German>
 		<Italian>Patronage</Italian>
 		<Spanish>Patronage</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_UKR1</Tag>
+		<English>Baptism of Rus</English>
+		<French>Baptism of Rus</French>
+		<German>Baptism of Rus</German>
+		<Italian>Baptism of Rus</Italian>
+		<Spanish>Baptism of Rus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_UKR2</Tag>
+		<English>Campaigns of Sviatoslav</English>
+		<French>Campaigns of Sviatoslav</French>
+		<German>Campaigns of Sviatoslav</German>
+		<Italian>Campaigns of Sviatoslav</Italian>
+		<Spanish>Campaigns of Sviatoslav</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_UKR3</Tag>
+		<English>Sovereign Lord Novgorod the Great</English>
+		<French>Sovereign Lord Novgorod the Great</French>
+		<German>Sovereign Lord Novgorod the Great</German>
+		<Italian>Sovereign Lord Novgorod the Great</Italian>
+		<Spanish>Sovereign Lord Novgorod the Great</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_VIE1</Tag>
+		<English>Face to Face with the Enemy</English>
+		<French>Face to Face with the Enemy</French>
+		<German>Face to Face with the Enemy</German>
+		<Italian>Face to Face with the Enemy</Italian>
+		<Spanish>Face to Face with the Enemy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_VIE2</Tag>
+		<English>Nam Tien</English>
+		<French>Nam Tien</French>
+		<German>Nam Tien</German>
+		<Italian>Nam Tien</Italian>
+		<Spanish>Nam Tien</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_VIE3</Tag>
+		<English>Van Hoa Viet Nam</English>
+		<French>Van Hoa Viet Nam</French>
+		<German>Van Hoa Viet Nam</German>
+		<Italian>Van Hoa Viet Nam</Italian>
+		<Spanish>Van Hoa Viet Nam</Spanish>
 	</TEXT>
 	
 	
@@ -1451,5 +1701,30 @@
 		<German>Sola Scriptura</German>
 		<Italian>Sola Scriptura</Italian>
 		<Spanish>Sola Scriptura</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_1</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_2</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_3</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 </Civ4GameText>
