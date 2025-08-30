@@ -146,6 +146,14 @@
 		<Spanish>%s2 Government in Exile</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_ALGARVE</Tag>
+		<English>Portugal and the Algarves</English>
+		<French>Portugal and the Algarves</French>
+		<German>Portugal and the Algarves</German>
+		<Italian>Portugal and the Algarves</Italian>
+		<Spanish>Portugal and the Algarves</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_INDIA</Tag>
 		<English>Viceroyalty of %s2 %s1</English>
 		<French>
@@ -168,6 +176,14 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGUESE_MOORS</Tag>
+		<English>African Algarve</English>
+		<French>African Algarve</French>
+		<German>African Algarve</German>
+		<Italian>African Algarve</Italian>
+		<Spanish>African Algarve</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_JAVA</Tag>

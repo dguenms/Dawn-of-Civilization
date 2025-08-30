@@ -165,6 +165,7 @@ dSpecificVassalTitles = deepdict({
 	iPortugal : {
 		iIndia : "TXT_KEY_CIV_PORTUGUESE_INDIA",
 		iMali : "TXT_KEY_CIV_PORTUGUESE_MALI",
+		iMoors : "TXT_KEY_CIV_PORTUGUESE_MOORS",
 		iCongo : "TXT_KEY_CIV_PORTUGUESE_CONGO",
 		iBrazil : "TXT_KEY_CIV_PORTUGUESE_BRAZIL",
 	},
@@ -1087,6 +1088,10 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_ITALY_TUSCANY"
 				
 			return capitalName(iPlayer)
+	
+	elif iCiv == iPortugal:
+		if isControlled(iPlayer, plots.core(iMoors)):
+			return "TXT_KEY_CIV_PORTUGAL_ALGARVE"
 			
 	elif iCiv == iRussia:
 		if not (bEmpire and iEra >= iRenaissance) and not isControlled(iPlayer, plots.regions(rRuthenia, rPonticSteppe, rEuropeanArctic), 5):
