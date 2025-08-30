@@ -2137,6 +2137,10 @@ def leader(iPlayer):
 		if not bCityStates: return iAugustus
 		
 		if tPlayer.isHasTech(iGeneralship): return iJuliusCaesar
+	
+	elif iCiv == iCelts:
+		if player(iPlayer).getPeriod() == iPeriodInsularCelts:
+			return iBrianBoru
 		
 	elif iCiv == iKorea:		
 		if iEra >= iRenaissance: return iSejong
@@ -2164,6 +2168,9 @@ def leader(iPlayer):
 	
 	elif iCiv == iMali:
 		if getColumn(iPlayer) >= 6: return iMansaMusa
+	
+	elif iCiv == iMalays:
+		if iEra >= iRenaissance: return iTunPerak
 		
 	elif iCiv == iNorse:
 		if iEra >= iGlobal: return iGerhardsen
@@ -2186,8 +2193,6 @@ def leader(iPlayer):
 		
 	elif iCiv == iJava:
 		if iEra >= iGlobal: return iSuharto
-		
-		if bEmpire: return iHayamWuruk
 		
 	elif iCiv == iSpain:
 		if isFascist(iPlayer): return iFranco
@@ -2216,6 +2221,12 @@ def leader(iPlayer):
 		if scenario() == i1700AD: return iFrancis
 		
 		if iEra >= iRenaissance: return iCharles
+	
+	elif iCiv == iBurma:
+		if iEra >= iRenaissance: return iBayinnaung
+	
+	elif iCiv == iVietnam:
+		if isCommunist(iPlayer) or isRepublic(iPlayer): return iHoChiMinh
 			
 	elif iCiv == iPoland:
 		if iEra >= iGlobal: return iWalesa
