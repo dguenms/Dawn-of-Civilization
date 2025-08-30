@@ -321,9 +321,11 @@ dForeignAdjectives = deepdict({
 
 dForeignNames = deepdict({
 	iGreece : {
+		iAssyria : "TXT_KEY_CIV_GREEK_NAME_ASSYRIA",
 		iTurks : "TXT_KEY_CIV_GREEK_NAME_TURKS",
 	},
 	iPersia : {
+		iAssyria : "TXT_KEY_CIV_PERSIAN_NAME_ASSYRIA",
 		iByzantium : "TXT_KEY_CIV_PERSIAN_NAME_BYZANTIUM",
 		iTurks : "TXT_KEY_CIV_PERSIAN_NAME_TURKS",
 	},
@@ -426,7 +428,7 @@ dForeignNames = deepdict({
 })
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
-lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicAdj = [iBabylonia, iAssyria, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iEgypt, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
@@ -437,6 +439,7 @@ lPeoplesRepublicAdj = [iDravidia, iByzantium, iMongols]
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
 
 dEmpireThreshold = {
+	iAssyria: 2,
 	iPhoenicia : 4,
 	iPolynesia : 3,
 	iDravidia : 3,
@@ -1247,6 +1250,16 @@ def specificAdjective(iPlayer):
 			
 		if getColumn(iPlayer) == 1:
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
+	
+	elif iCiv == iAssyria:
+		if bEmpire:
+			if iEra >= iClassical:
+				return "TXT_KEY_CIV_ASSYRIA_NEO"
+			
+			if getColumn(iPlayer) >= 3:
+				return "TXT_KEY_CIV_ASSYRIA_MIDDLE"
+			
+			return "TXT_KEY_CIV_ASSYRIA_OLD"
 			
 	elif iCiv == iGreece:
 		if iEra == iAncient:
@@ -1666,6 +1679,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bEmpire and iEra > iAncient:
 			return "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE"
+	
+	elif iCiv == iAssyria:
+		if bEmpire:
+			return "TXT_KEY_CIV_ASSYRIA_EMPIRE"
+		
+		if bCityStates:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
 			
 	elif iCiv == iGreece:
 		if bEmpire:

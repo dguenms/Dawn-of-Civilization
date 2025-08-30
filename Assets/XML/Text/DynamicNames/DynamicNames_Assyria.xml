@@ -35,10 +35,74 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ASSYRIA_DEFAULT</Tag>
+		<English>Land of %s1</English>
+		<French>Land of %s1</French>
+		<German>Land of %s1</German>
+		<Italian>Land of %s1</Italian>
+		<Spanish>Land of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_FASCIST</Tag>
+		<English>Baathist %s1</English>
+		<French>
+			<Text>%s1 baathiste</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Baathistisches %s1:Baathistische %s1:Baathistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Baathista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Baazista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_COMMUNIST</Tag>
+		<English>Democratic Republic of %s1</English>
+		<French>Democratic Republic of %s1</French>
+		<German>Democratic Republic of %s1</German>
+		<Italian>Democratic Republic of %s1</Italian>
+		<Spanish>Democratic Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_EMPIRE</Tag>
 		<English>%s2 Empire</English>
 		<French>%s2 Empire</French>
 		<German>%s2 Empire</German>
 		<Italian>%s2 Empire</Italian>
 		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_OLD</Tag>
+		<English>Old Assyrian</English>
+		<French>Old Assyrian</French>
+		<German>Old Assyrian</German>
+		<Italian>Old Assyrian</Italian>
+		<Spanish>Old Assyrian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_MIDDLE</Tag>
+		<English>Middle Assyrian</English>
+		<French>Middle Assyrian</French>
+		<German>Middle Assyrian</German>
+		<Italian>Middle Assyrian</Italian>
+		<Spanish>Middle Assyrian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_NEO</Tag>
+		<English>Neo-Assyrian</English>
+		<French>Neo-Assyrian</French>
+		<German>Neo-Assyrian</German>
+		<Italian>Neo-Assyrian</Italian>
+		<Spanish>Neo-Assyrian</Spanish>
 	</TEXT>
 </Civ4GameText>
