@@ -56,6 +56,7 @@ dSpecificVassalTitles = deepdict({
 		iEgypt : "TXT_KEY_CIV_GREEK_EGYPT",
 		iPersia : "TXT_KEY_CIV_GREEK_PERSIA",
 		iRome : "TXT_KEY_CIV_GREEK_ROME",
+		iKushans : "TXT_KEY_CIV_GREEK_KUSHANS",
 	},
 	iIndia : {
 		iAztecs: "TXT_KEY_CIV_INDIAN_AZTECS",
@@ -239,6 +240,7 @@ dMasterTitles = {
 	iIndia : "TXT_KEY_CIV_INDIAN_VASSAL",
 	iPersia : "TXT_KEY_CIV_PERSIAN_VASSAL",
 	iRome : "TXT_KEY_CIV_ROMAN_VASSAL",
+	iKushans : "TXT_KEY_CIV_KUSHAN_VASSAL",
 	iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL",
 	iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL",
 	iTurks : "TXT_KEY_CIV_TURKIC_VASSAL",
@@ -308,6 +310,7 @@ dForeignAdjectives = deepdict({
 		iBabylonia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_BABYLONIA",
 		iPersia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_PERSIA",
 		iRome : "TXT_KEY_CIV_CHINESE_ADJECTIVE_ROME",
+		iKushans : "TXT_KEY_CIV_CHINESE_ADJECTIVE_KUSHANS",
 		iJapan : "TXT_KEY_CIV_CHINESE_ADJECTIVE_JAPAN",
 		iKorea : "TXT_KEY_CIV_CHINESE_ADJECTIVE_KOREA",
 		iByzantium : "TXT_KEY_CIV_CHINESE_ADJECTIVE_BYZANTIUM",
@@ -323,6 +326,9 @@ dForeignNames = deepdict({
 	iGreece : {
 		iAssyria : "TXT_KEY_CIV_GREEK_NAME_ASSYRIA",
 		iTurks : "TXT_KEY_CIV_GREEK_NAME_TURKS",
+	},
+	iIndia : {
+		iKushans : "TXT_KEY_CIV_INDIAN_NAME_KUSHANS",
 	},
 	iPersia : {
 		iAssyria : "TXT_KEY_CIV_PERSIAN_NAME_ASSYRIA",
@@ -1430,6 +1436,10 @@ def specificAdjective(iPlayer):
 	elif iCiv == iToltecs:
 		if iEra == iAncient:
 			return capital.getName()
+	
+	elif iCiv == iKushans:
+		if not cities.regions(*lIndia):
+			return "TXT_KEY_CIV_KUSHANS_TOCHARIAN"
 			
 	elif iCiv == iByzantium:
 		if player(iRome).isExisting() and player(iRome).getNumCities() > 0 and not team(iRome).isVassal(team(iCiv).getID()):
@@ -1896,6 +1906,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if iEra == iAncient:
 			return "TXT_KEY_KINGDOM_OF"
+	
+	elif iCiv == iKushans:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 	
 	elif iCiv == iKorea:
 		if iEra >= iIndustrial:

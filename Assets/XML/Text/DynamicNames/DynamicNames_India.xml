@@ -241,4 +241,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIAN_NAME_KUSHANS</Tag>
+		<English>Turushka</English>
+		<French>Turushka</French>
+		<German>Turushka</German>
+		<Italian>Turushka</Italian>
+		<Spanish>Turushka</Spanish>
+	</TEXT>
 </Civ4GameText>

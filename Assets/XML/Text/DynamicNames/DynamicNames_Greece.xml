@@ -171,15 +171,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
-		<English>Greco-Bactrian Kingdom</English>
-		<French>
-			<Text>Royaume gr&#233;co-bactrien</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Greco-Bactrian Kingdom</German>
-		<Italian>Greco-Bactrian Kingdom</Italian>
-		<Spanish>Greco-Bactrian Kingdom</Spanish>
+		<English>Indo-Greek Kingdom</English>
+		<French>Indo-Greek Kingdom</French>
+		<German>Indo-Greek Kingdom</German>
+		<Italian>Indo-Greek Kingdom</Italian>
+		<Spanish>Indo-Greek Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_ROME</Tag>

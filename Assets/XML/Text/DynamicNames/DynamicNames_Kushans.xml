@@ -35,10 +35,38 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KUSHANS_DEFAULT</Tag>
-		<English>Kushan Empire</English>
-		<French>Kushan Empire</French>
-		<German>Kushan Empire</German>
-		<Italian>Kushan Empire</Italian>
-		<Spanish>Kushan Empire</Spanish>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHAN_VASSAL</Tag>
+		<English>Kshatrapa of %s1</English>
+		<French>Kshatrapa of %s1</French>
+		<German>Kshatrapa of %s1</German>
+		<Italian>Kshatrapa of %s1</Italian>
+		<Spanish>Kshatrapa of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_TOCHARIAN</Tag>
+		<English>Tocharian</English>
+		<French>Tocharian</French>
+		<German>Tocharian</German>
+		<Italian>Tocharian</Italian>
+		<Spanish>Tocharian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREEK_KUSHANS</Tag>
+		<English>Greco-Bactrian Kingdom</English>
+		<French>
+			<Text>Royaume gr&#233;co-bactrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Greco-Bactrian Kingdom</German>
+		<Italian>Greco-Bactrian Kingdom</Italian>
+		<Spanish>Greco-Bactrian Kingdom</Spanish>
 	</TEXT>
 </Civ4GameText>
