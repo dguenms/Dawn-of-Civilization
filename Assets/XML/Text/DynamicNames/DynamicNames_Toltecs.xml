@@ -34,11 +34,35 @@
 		<Spanish>Toltecs</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_SHORT_DESC</Tag>
+		<English>Toltecs</English>
+		<French>Toltecs</French>
+		<German>Toltecs</German>
+		<Italian>Toltecs</Italian>
+		<Spanish>Toltecs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_ALTEPETL</Tag>
+		<English>%s2 Altepetl</English>
+		<French>%s2 Altepetl</French>
+		<German>%s2 Altepetl</German>
+		<Italian>%s2 Altepetl</Italian>
+		<Spanish>%s2 Altepetl</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TOLTECS_DEFAULT</Tag>
-		<English>%s2 Empire</English>
-		<French>%s2 Empire</French>
-		<German>%s2 Empire</German>
-		<Italian>%s2 Empire</Italian>
-		<Spanish>%s2 Empire</Spanish>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TOLTECS_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>%s2 State</French>
+		<German>%s2 State</German>
+		<Italian>%s2 State</Italian>
+		<Spanish>%s2 State</Spanish>
 	</TEXT>
 </Civ4GameText>

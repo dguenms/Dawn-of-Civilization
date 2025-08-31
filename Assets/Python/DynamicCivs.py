@@ -428,10 +428,10 @@ dForeignNames = deepdict({
 })
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
-lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
-lSocialistRepublicAdj = [iHittites, iPersia, iTurks, iItaly, iAztecs, iIran, iArgentina]
+lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iDravidia, iByzantium, iMongols]
@@ -445,6 +445,7 @@ dEmpireThreshold = {
 	iPhoenicia : 4,
 	iPolynesia : 3,
 	iDravidia : 3,
+	iToltecs: 2,
 	iKorea : 4,
 	iTibet : 2,
 	iMoors : 3,
@@ -1027,6 +1028,9 @@ def specificName(iPlayer):
 	elif iCiv == iEthiopia:
 		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
+	
+	elif iCiv == iToltecs:
+		return capital.getName()
 			
 	elif iCiv == iKorea:
 		if iEra == iClassical:
@@ -1422,6 +1426,10 @@ def specificAdjective(iPlayer):
 			
 		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
+	
+	elif iCiv == iToltecs:
+		if iEra == iAncient:
+			return capital.getName()
 			
 	elif iCiv == iByzantium:
 		if player(iRome).isExisting() and player(iRome).getNumCities() > 0 and not team(iRome).isVassal(team(iCiv).getID()):
@@ -1878,6 +1886,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+	
+	elif iCiv == iToltecs:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if bCityStates:
+			return "TXT_KEY_TOLTECS_ALTEPETL"
+			
+		if iEra == iAncient:
+			return "TXT_KEY_KINGDOM_OF"
 	
 	elif iCiv == iKorea:
 		if iEra >= iIndustrial:

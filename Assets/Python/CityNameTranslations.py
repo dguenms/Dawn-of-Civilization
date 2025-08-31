@@ -17384,23 +17384,26 @@ name_translations = {
 		iLocal: "Temeekunga",
 		iSpanish: u"Temécula",
 	},
-	"Teotihuacan": {
+	"Tenochtitlan": {
 		iDutch: "Mexico-Stad",
 		iEnglish: "Mexico City",
 		iFrench: "Mexico",
 		iGerman: "Mexiko-Stadt",
 		iItalian: u"Città del Messico",
-		iMayan: "Puh",
-		iNahuatl: "Tenochtitlan",
+		iNahuatl: _,
 		iPolish: "Meksyk",
 		iPortuguese: u"Cidade do México",
 		iRussian: "Mekhiko",
 		iSpanish: u"Ciudad de México",
+		iTurkish: "Meksiko",
+	},
+	"Teotihuacan": {
+		iMayan: "Puh",
+		iNahuatl: rename("Tenochtitlan"),
 		iToltec: (
 			translate("Tollan", iAfter=iClassical),
 			_,
 		),
-		iTurkish: "Meksiko",
 	},
 	"Tepecuacuilco": {
 		iNahuatl: _,
