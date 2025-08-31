@@ -55,15 +55,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_PEOPLES</Tag>
-		<English>Mandinka Peoples</English>
-		<French>
-			<Text>Peuplades mandingues</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Mandinka Peoples</German>
-		<Italian>Mandinka Peoples</Italian>
-		<Spanish>Mandinka Peoples</Spanish>
+		<English>Mande Peoples</English>
+		<French>Mande Peoples</French>
+		<German>Mande Peoples</German>
+		<Italian>Mande Peoples</Italian>
+		<Spanish>Mande Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DEFAULT</Tag>
@@ -156,5 +152,13 @@
 		<German>Songhai</German>
 		<Italian>Songhai</Italian>
 		<Spanish>Songhai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALI_GHANA</Tag>
+		<English>Ghana</English>
+		<French>Ghana</French>
+		<German>Ghana</German>
+		<Italian>Ghana</Italian>
+		<Spanish>Ghana</Spanish>
 	</TEXT>
 </Civ4GameText>

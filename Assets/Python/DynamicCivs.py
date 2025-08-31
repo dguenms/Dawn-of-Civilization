@@ -1062,6 +1062,13 @@ def specificName(iPlayer):
 	
 			if not isCurrentCapital(iPlayer, "Byzantion"):
 				return capitalName(iPlayer)
+	
+	elif iCiv == iMali:
+		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
+			return "TXT_KEY_CIV_MALI_SONGHAI"
+		
+		if iEra <= iClassical:
+			return "TXT_KEY_CIV_MALI_GHANA"
 			
 	elif iCiv == iNorse:	
 		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
@@ -1567,6 +1574,9 @@ def specificAdjective(iPlayer):
 	elif iCiv == iMali:
 		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
 			return "TXT_KEY_CIV_MALI_SONGHAI"
+		
+		if iEra <= iClassical:
+			return "TXT_KEY_CIV_MALI_GHANA"
 			
 	elif iCiv == iInca:
 		if bResurrected:
