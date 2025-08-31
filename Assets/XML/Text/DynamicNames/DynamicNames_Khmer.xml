@@ -122,78 +122,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_DAI_VIET</Tag>
-		<English>Dai Viet</English>
-		<French>
-			<Text>Dai Vi&#234;t</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Dai Viet</German>
-		<Italian>Dai Viet</Italian>
-		<Spanish>Dai Viet</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_BURMA</Tag>
-		<English>Burma</English>
-		<French>
-			<Text>Birmanie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Burma</German>
-		<Italian>Burma</Italian>
-		<Spanish>Burma</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_NANZHAO</Tag>
-		<English>Nanzhao</English>
-		<French>
-			<Text>Nanzhao</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Nanzhao</German>
-		<Italian>Nanzhao</Italian>
-		<Spanish>Nanzhao</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEA</Tag>
-		<English>Kampuchea</English>
-		<French>
-			<Text>Kampuch&#233;a</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Kampuchea:Kampuchea:Kampuchea</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Kampuchea</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Kampuchea</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEAN</Tag>
-		<English>Kampuchean</English>
-		<French>
-			<Text>cambodgien:cambodgienne:cambodgiens:cambodgiennes</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>Kampuchean</German>
-		<Italian>Kampuchean</Italian>
-		<Spanish>Kampuchean</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_ADJECTIVE</Tag>
 		<English>
 			<Text>Khmer:Khmer</Text>
@@ -228,5 +156,45 @@
 		<German>Cambodia</German>
 		<Italian>Cambodia</Italian>
 		<Spanish>Cambodia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_KAMBUJA</Tag>
+		<English>Kambuja</English>
+		<French>Kambuja</French>
+		<German>Kambuja</German>
+		<Italian>Kambuja</Italian>
+		<Spanish>Kambuja</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_CHENLA</Tag>
+		<English>Chenla</English>
+		<French>Chenla</French>
+		<German>Chenla</German>
+		<Italian>Chenla</Italian>
+		<Spanish>Chenla</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_FUNAN</Tag>
+		<English>Funan</English>
+		<French>Funan</French>
+		<German>Funan</German>
+		<Italian>Funan</Italian>
+		<Spanish>Funan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_CAMBODIAN</Tag>
+		<English>Cambodian</English>
+		<French>Cambodian</French>
+		<German>Cambodian</German>
+		<Italian>Cambodian</Italian>
+		<Spanish>Cambodian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_FUNANESE</Tag>
+		<English>Funanese</English>
+		<French>Funanese</French>
+		<German>Funanese</German>
+		<Italian>Funanese</Italian>
+		<Spanish>Funanese</Spanish>
 	</TEXT>
 </Civ4GameText>

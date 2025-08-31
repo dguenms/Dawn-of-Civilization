@@ -21,7 +21,7 @@ encoding = "utf-8"
 
 dDefaultInsertNames = {
 	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIA",
-	iKhmer : "TXT_KEY_CIV_KHMER_KAMPUCHEA",
+	iKhmer : "TXT_KEY_CIV_KHMER_CAMBODIAN",
 	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARTICLE",
 	iDravidia : "TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU",
 	iMaya : "TXT_KEY_CIV_MAYA_YUCATAN",
@@ -33,7 +33,7 @@ dDefaultInsertNames = {
 
 dDefaultInsertAdjectives = {
 	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIAN",
-	iKhmer : "TXT_KEY_CIV_KHMER_KAMPUCHEAN",
+	iKhmer : "TXT_KEY_CIV_KHMER_CAMBODIAN",
 	iThailand : "TXT_KEY_CIV_THAILAND_SIAMESE",
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCAN",
 }
@@ -453,6 +453,7 @@ dEmpireThreshold = {
 	iDravidia : 3,
 	iToltecs: 2,
 	iKorea : 4,
+	iKhmer : 3,
 	iTibet : 2,
 	iMoors : 3,
 	iHolyRome : 3,
@@ -1091,6 +1092,14 @@ def specificName(iPlayer):
 	elif iCiv == iKhmer:
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_KHMER_CAMBODIA"
+		
+		if iEra >= iMedieval:
+			return "TXT_KEY_CIV_KHMER_KAMBUJA"
+		
+		if getColumn(iPlayer) >= 6:
+			return "TXT_KEY_CIV_KHMER_CHENLA"
+		
+		return "TXT_KEY_CIV_KHMER_FUNAN"
 			
 	elif iCiv == iMoors:	
 		if capital in plots.region(rIberia):
@@ -1521,8 +1530,16 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 	
 	elif iCiv == iKhmer:
-		if bMonarchy:
-			return infos.civ(iKhmer).getAdjective(0)
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_KHMER_CAMBODIAN"
+		
+		if iEra >= iMedieval:
+			return adjective(iPlayer)
+		
+		if getColumn(iPlayer) >= 6:
+			return "TXT_KEY_CIV_KHMER_CHENLA"
+		
+		return "TXT_KEY_CIV_KHMER_FUNANESE"
 			
 	elif iCiv == iEngland:
 		if getColumn(iPlayer) >= 11 and 1 < cities.region(rBritain) <= cities.region(rBritain).owner(iPlayer):
@@ -1989,11 +2006,8 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iKhmer:
-		if iEra <= iRenaissance and isCurrentCapital(iPlayer, "Yashodharapura"):
+		if bEmpire and iEra >= iMedieval:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
-			
-		if iEra >= iIndustrial:
-			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iCiv == iMoors:
 		if bCityStates:
