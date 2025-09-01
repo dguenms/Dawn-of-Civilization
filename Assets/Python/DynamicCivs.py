@@ -1069,6 +1069,33 @@ def specificName(iPlayer):
 		
 		if iEra <= iClassical:
 			return "TXT_KEY_CIV_MALI_GHANA"
+		
+	elif iCiv == iMalays:
+		if iEra >= iGlobal:
+			return name(iPlayer)
+		
+		if iReligion == iIslam:
+			if capital in cities.rectangle(tMalaya):
+				return "TXT_KEY_CIV_MALAYA_MALACCA"
+			
+			if capital in cities.rectangle(tKalimantan):
+				return "TXT_KEY_CIV_MALAYA_BRUNEI"
+			
+			if capital in cities.rectangle(tSulawesi):
+				return "TXT_KEY_CIV_MALAYA_GOWA"
+			
+			return "TXT_KEY_CIV_MALAYA_ACEH"
+		
+		if bEmpire:
+			return "TXT_KEY_CIV_MALAYA_SRIVIJAYA"
+		
+		if capital in cities.region(tMalaya):
+			return "TXT_KEY_CIV_MALAYA_SINGAPURA"
+			
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CIV_MALAYA_PAGARUYUNG"
+		
+		return "TXT_KEY_CIV_MALAYA_MELAYU"
 			
 	elif iCiv == iNorse:	
 		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
@@ -1463,6 +1490,33 @@ def specificAdjective(iPlayer):
 			
 		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
 			return infos.civ(iRome).getAdjective(0)
+		
+	elif iCiv == iMalays:
+		if iEra >= iGlobal:
+			return adjective(iPlayer)
+		
+		if iReligion == iIslam:
+			if capital in cities.rectangle(tMalaya):
+				return "TXT_KEY_CIV_MALAYA_MALACCAN"
+			
+			if capital in cities.rectangle(tKalimantan):
+				return "TXT_KEY_CIV_MALAYA_BRUNEIAN"
+			
+			if capital in cities.rectangle(tSulawesi):
+				return "TXT_KEY_CIV_MALAYA_GOWAN"
+			
+			return "TXT_KEY_CIV_MALAYA_ACEHNESE"
+		
+		if bEmpire:
+			return "TXT_KEY_CIV_MALAYA_SRIVIJAYAN"
+		
+		if capital in cities.region(tMalaya):
+			return "TXT_KEY_CIV_MALAYA_SINGAPURAN"
+			
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CIV_MALAYA_PAGARUYUNG"
+		
+		return "TXT_KEY_CIV_MALAYA_MELAYU"
 			
 	elif iCiv == iTurks:
 		if bResurrected:
@@ -1962,6 +2016,31 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_EMPIRE_OF"
 				
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
+	
+	elif iCiv == iMalays:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_MALAYA_FEDERATION_OF"
+		
+		if iReligion == iIslam:
+			if capital in cities.rectangle(tKalimantan):
+				if bEmpire:
+					return "TXT_KEY_EMPIRE_ADJECTIVE"
+					
+				return "TXT_KEY_SULTANATE_OF"
+			
+			if capital in cities.rectangle(tSulawesi):
+				return "TXT_KEY_SULTANATE_OF"
+			
+			return "TXT_KEY_SULTANATE_NAME"
+			
+		if bEmpire:
+			return "TXT_KEY_KINGDOM_OF"
+		
+		if capital in cities.region(tMalaya):
+			return "TXT_KEY_KINGDOM_OF"
+		
+		if iEra >= iRenaissance:
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
 			
 	elif iCiv == iNorse:
 		if bCityStates:

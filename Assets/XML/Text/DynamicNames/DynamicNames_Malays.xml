@@ -35,10 +35,154 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALAYA_DEFAULT</Tag>
-		<English>Melayu Kingdom</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_COMMUNIST</Tag>
+		<English>Peoples' Democratic Republic of %s1</English>
+		<French>Peoples' Democratic Republic of %s1</French>
+		<German>Peoples' Democratic Republic of %s1</German>
+		<Italian>Peoples' Democratic Republic of %s1</Italian>
+		<Spanish>Peoples' Democratic Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_REPUBLIC</Tag>
+		<English>%s2 Union</English>
+		<French>%s2 Union</French>
+		<German>%s2 Union</German>
+		<Italian>%s2 Union</Italian>
+		<Spanish>%s2 Union</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>%s2 State</French>
+		<German>%s2 State</German>
+		<Italian>%s2 State</Italian>
+		<Spanish>%s2 State</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_FEDERATION_OF</Tag>
+		<English>Federation of %s1</English>
+		<French>Federation of %s1</French>
+		<German>Federation of %s1</German>
+		<Italian>Federation of %s1</Italian>
+		<Spanish>Federation of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_MALACCA</Tag>
+		<English>Malacca</English>
+		<French>Malacca</French>
+		<German>Malacca</German>
+		<Italian>Malacca</Italian>
+		<Spanish>Malacca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_MALACCAN</Tag>
+		<English>Malaccan</English>
+		<French>Malaccan</French>
+		<German>Malaccan</German>
+		<Italian>Malaccan</Italian>
+		<Spanish>Malaccan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_BRUNEI</Tag>
+		<English>Brunei</English>
+		<French>Brunei</French>
+		<German>Brunei</German>
+		<Italian>Brunei</Italian>
+		<Spanish>Brunei</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_BRUNEIAN</Tag>
+		<English>Bruneian</English>
+		<French>Bruneian</French>
+		<German>Bruneian</German>
+		<Italian>Bruneian</Italian>
+		<Spanish>Bruneian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_GOWA</Tag>
+		<English>Gowa</English>
+		<French>Gowa</French>
+		<German>Gowa</German>
+		<Italian>Gowa</Italian>
+		<Spanish>Gowa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_GOWAN</Tag>
+		<English>Gowan</English>
+		<French>Gowan</French>
+		<German>Gowan</German>
+		<Italian>Gowan</Italian>
+		<Spanish>Gowan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_ACEH</Tag>
+		<English>Aceh</English>
+		<French>Aceh</French>
+		<German>Aceh</German>
+		<Italian>Aceh</Italian>
+		<Spanish>Aceh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_ACEHNESE</Tag>
+		<English>Acehnese</English>
+		<French>Acehnese</French>
+		<German>Acehnese</German>
+		<Italian>Acehnese</Italian>
+		<Spanish>Acehnese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_SRIVIJAYA</Tag>
+		<English>Srivijaya</English>
+		<French>Srivijaya</French>
+		<German>Srivijaya</German>
+		<Italian>Srivijaya</Italian>
+		<Spanish>Srivijaya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_SRIVIJAYAN</Tag>
+		<English>Srivijayan</English>
+		<French>Srivijayan</French>
+		<German>Srivijayan</German>
+		<Italian>Srivijayan</Italian>
+		<Spanish>Srivijayan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_SINGAPURA</Tag>
+		<English>Singapura</English>
+		<French>Singapura</French>
+		<German>Singapura</German>
+		<Italian>Singapura</Italian>
+		<Spanish>Singapura</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_SINGAPURAN</Tag>
+		<English>Singapuran</English>
+		<French>Singapuran</French>
+		<German>Singapuran</German>
+		<Italian>Singapuran</Italian>
+		<Spanish>Singapuran</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_PAGARUYUNG</Tag>
+		<English>Pagaruyung</English>
+		<French>Pagaruyung</French>
+		<German>Pagaruyung</German>
+		<Italian>Pagaruyung</Italian>
+		<Spanish>Pagaruyung</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALAYA_MELAYU</Tag>
+		<English>Melayu</English>
+		<French>Melayu</French>
+		<German>Melayu</German>
+		<Italian>Melayu</Italian>
+		<Spanish>Melayu</Spanish>
 	</TEXT>
 </Civ4GameText>
