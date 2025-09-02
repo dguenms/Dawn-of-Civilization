@@ -465,4 +465,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_JAVA</Tag>
+		<English>Shepo</English>
+		<French>Shepo</French>
+		<German>Shepo</German>
+		<Italian>Shepo</Italian>
+		<Spanish>Shepo</Spanish>
+	</TEXT>
 </Civ4GameText>

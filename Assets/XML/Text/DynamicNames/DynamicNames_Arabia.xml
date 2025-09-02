@@ -370,6 +370,14 @@
 		<Spanish>Bilad al-Turk</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_JAVA</Tag>
+		<English>Jawah</English>
+		<French>Jawah</French>
+		<German>Jawah</German>
+		<Italian>Jawah</Italian>
+		<Spanish>Jawah</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_OTTOMANS</Tag>
 		<English>Ottoman Sultanate</English>
 		<French>

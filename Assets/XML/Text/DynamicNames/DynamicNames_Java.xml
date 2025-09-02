@@ -35,10 +35,118 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAVA_DEFAULT</Tag>
-		<English>%s2 Kingdom</English>
-		<French>%s2 Kingdom</French>
-		<German>%s2 Kingdom</German>
-		<Italian>%s2 Kingdom</Italian>
-		<Spanish>%s2 Kingdom</Spanish>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_FASCIST</Tag>
+		<English>%s2 New Order</English>
+		<French>%s2 New Order</French>
+		<German>%s2 New Order</German>
+		<Italian>%s2 New Order</Italian>
+		<Spanish>%s2 New Order</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_NUSANTARA</Tag>
+		<English>Nusantara</English>
+		<French>Nusantara</French>
+		<German>Nusantara</German>
+		<Italian>Nusantara</Italian>
+		<Spanish>Nusantara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_JAVAN</Tag>
+		<English>Javan</English>
+		<French>Javan</French>
+		<German>Javan</German>
+		<Italian>Javan</Italian>
+		<Spanish>Javan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_NUSANTARAN</Tag>
+		<English>Nusantaran</English>
+		<French>Nusantaran</French>
+		<German>Nusantaran</German>
+		<Italian>Nusantaran</Italian>
+		<Spanish>Nusantaran</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_INDONESIA</Tag>
+		<English>Indonesia</English>
+		<French>Indonesia</French>
+		<German>Indonesia</German>
+		<Italian>Indonesia</Italian>
+		<Spanish>Indonesia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_INDONESIAN</Tag>
+		<English>Indonesian</English>
+		<French>Indonesian</French>
+		<German>Indonesian</German>
+		<Italian>Indonesian</Italian>
+		<Spanish>Indonesian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_MATARAM</Tag>
+		<English>Mataram</English>
+		<French>Mataram</French>
+		<German>Mataram</German>
+		<Italian>Mataram</Italian>
+		<Spanish>Mataram</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_MATARAM</Tag>
+		<English>Mataram</English>
+		<French>Mataram</French>
+		<German>Mataram</German>
+		<Italian>Mataram</Italian>
+		<Spanish>Mataram</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_MAJAPAHIT</Tag>
+		<English>Majapahit</English>
+		<French>Majapahit</French>
+		<German>Majapahit</German>
+		<Italian>Majapahit</Italian>
+		<Spanish>Majapahit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_SINGHASARI</Tag>
+		<English>Singhasari</English>
+		<French>Singhasari</French>
+		<German>Singhasari</German>
+		<Italian>Singhasari</Italian>
+		<Spanish>Singhasari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_KEDIRI</Tag>
+		<English>Kediri</English>
+		<French>Kediri</French>
+		<German>Kediri</German>
+		<Italian>Kediri</Italian>
+		<Spanish>Kediri</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVA_KALINGGA</Tag>
+		<English>Kalingga</English>
+		<French>Kalingga</French>
+		<German>Kalingga</German>
+		<Italian>Kalingga</Italian>
+		<Spanish>Kalingga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAVAN_VASSAL</Tag>
+		<English>Kedatuan of %s1</English>
+		<French>
+			<Text>Kedatuan de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kedatuan of %s1</German>
+		<Italian>Kedatuan of %s1</Italian>
+		<Spanish>Kedatuan of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

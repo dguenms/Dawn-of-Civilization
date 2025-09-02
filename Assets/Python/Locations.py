@@ -8,6 +8,7 @@ tNewfoundland = ((38, 62), (40, 64))
 
 iTurkicEastWestBorder = 106
 
+tSumatra = ((115, 26), (121, 31))
 tKalimantan = ((123, 28), (128, 33))
 tSulawesi = ((129, 27), (131, 30))
 

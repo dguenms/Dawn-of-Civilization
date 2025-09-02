@@ -62,6 +62,30 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EMPIRE_NAME</Tag>
+		<English>%s1 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s1 Reich:%s1 Reich:%s1 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_KINGDOM_OF</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
@@ -96,6 +120,18 @@
 		<German>%s2 Kingdom</German>
 		<Italian>%s2 Kingdom</Italian>
 		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KINGDOM_NAME</Tag>
+		<English>%s1 Kingdom</English>
+		<French>
+			<Text>Royaume %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REPUBLIC_OF</Tag>
