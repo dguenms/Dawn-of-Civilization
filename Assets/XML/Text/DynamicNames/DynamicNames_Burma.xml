@@ -35,10 +35,98 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BURMA_DEFAULT</Tag>
-		<English>Bagan Kingdom</English>
-		<French>Bagan Kingdom</French>
-		<German>Bagan Kingdom</German>
-		<Italian>Bagan Kingdom</Italian>
-		<Spanish>Bagan Kingdom</Spanish>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_REPUBLIC</Tag>
+		<English>Republic of the Union of %s1</English>
+		<French>Republic of the Union of %s1</French>
+		<German>Republic of the Union of %s1</German>
+		<Italian>Republic of the Union of %s1</Italian>
+		<Spanish>Republic of the Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_COMMUNIST</Tag>
+		<English>Socialist Republic of the Union of %s1</English>
+		<French>Socialist Republic of the Union of %s1</French>
+		<German>Socialist Republic of the Union of %s1</German>
+		<Italian>Socialist Republic of the Union of %s1</Italian>
+		<Spanish>Socialist Republic of the Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_FASCIST</Tag>
+		<English>Greater %s1</English>
+		<French>Greater %s1</French>
+		<German>Greater %s1</German>
+		<Italian>Greater %s1</Italian>
+		<Spanish>Greater %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_CITY_STATES</Tag>
+		<English>%s1 City States</English>
+		<French>%s1 City States</French>
+		<German>%s1 City States</German>
+		<Italian>%s1 City States</Italian>
+		<Spanish>%s1 City States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_MYANMAR</Tag>
+		<English>Myanmar</English>
+		<French>Myanmar</French>
+		<German>Myanmar</German>
+		<Italian>Myanmar</Italian>
+		<Spanish>Myanmar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_KONBAUNG</Tag>
+		<English>Konbaung</English>
+		<French>Konbaung</French>
+		<German>Konbaung</German>
+		<Italian>Konbaung</Italian>
+		<Spanish>Konbaung</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_TOUNGOO</Tag>
+		<English>Toungoo</English>
+		<French>Toungoo</French>
+		<German>Toungoo</German>
+		<Italian>Toungoo</Italian>
+		<Spanish>Toungoo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_HANTHAWADDY</Tag>
+		<English>Hanthawaddy</English>
+		<French>Hanthawaddy</French>
+		<German>Hanthawaddy</German>
+		<Italian>Hanthawaddy</Italian>
+		<Spanish>Hanthawaddy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_AVA</Tag>
+		<English>Ava</English>
+		<French>Ava</French>
+		<German>Ava</German>
+		<Italian>Ava</Italian>
+		<Spanish>Ava</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_PYU</Tag>
+		<English>Pyu</English>
+		<French>Pyu</French>
+		<German>Pyu</German>
+		<Italian>Pyu</Italian>
+		<Spanish>Pyu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_BAGAN</Tag>
+		<English>Bagan</English>
+		<French>Bagan</French>
+		<German>Bagan</German>
+		<Italian>Bagan</Italian>
+		<Spanish>Bagan</Spanish>
 	</TEXT>
 </Civ4GameText>

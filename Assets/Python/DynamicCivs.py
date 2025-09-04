@@ -1208,6 +1208,33 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
 			else:
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
+	
+	elif iCiv == iBurma:
+		if iEra >= iGlobal:
+			if civic.iSociety == iTotalitarianism or civic.iTerritory == iIsolationism:
+				return "TXT_KEY_CIV_BURMA_MYANMAR"
+			
+			return name(iPlayer)
+		
+		if iEra >= iIndustrial:
+			if bEmpire:
+				return "TXT_KEY_CIV_BURMA_KONBAUNG"
+			
+			return name(iPlayer)
+		
+		if iEra >= iRenaissance:
+			if bEmpire:
+				return "TXT_KEY_CIV_BURMA_TOUNGOO"
+			
+			if capital in cities.region(rBurma).coastal():
+				return "TXT_KEY_CIV_BURMA_HANTHAWADDY"
+			
+			return "TXT_KEY_CIV_BURMA_AVA"
+		
+		if bCityStates:
+			return "TXT_KEY_CIV_BURMA_PYU"
+		
+		return "TXT_KEY_CIV_BURMA_BAGAN"
 			
 	elif iCiv == iInca:
 		if bResurrected:
@@ -1657,6 +1684,15 @@ def specificAdjective(iPlayer):
 			
 		if not bEmpire and year() < year(dBirth[iGermany]):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
+	
+	elif iCiv == iBurma:
+		if iEra >= iGlobal:
+			return adjective(iPlayer)
+		
+		if iEra >= iIndustrial and not bEmpire:
+			return adjective(iPlayer)
+		
+		return specificName(iPlayer)
 			
 	elif iCiv == iMali:
 		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
@@ -2203,6 +2239,22 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if player(iGermany).isExisting():
 			return "TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF"
+	
+	elif iCiv == iBurma:
+		if bCityStates:
+			return "TXT_KEY_CIV_BURMA_CITY_STATES"
+		
+		if iEra >= iRenaissance:
+			if bEmpire:
+				return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+			if capital in cities.region(rBurma).coastal():
+				return "TXT_KEY_KINGDOM_NAME"
+			
+			return "TXT_KEY_KINGDOM_OF"
+		
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_NAME"
 			
 	# Nothing for Mali
 	
