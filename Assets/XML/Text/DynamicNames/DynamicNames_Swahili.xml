@@ -35,10 +35,66 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWAHILI_DEFAULT</Tag>
-		<English>Kilwa Sultanate</English>
-		<French>Kilwa Sultanate</French>
-		<German>Kilwa Sultanate</German>
-		<Italian>Kilwa Sultanate</Italian>
-		<Spanish>Kilwa Sultanate</Spanish>
+		<English>%s1 Sultanate</English>
+		<French>%s1 Sultanate</French>
+		<German>%s1 Sultanate</German>
+		<Italian>%s1 Sultanate</Italian>
+		<Spanish>%s1 Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_DEFAULT</Tag>
+		<English>%s1 Sultanate</English>
+		<French>%s1 Sultanate</French>
+		<German>%s1 Sultanate</German>
+		<Italian>%s1 Sultanate</Italian>
+		<Spanish>%s1 Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_REPUBLIC</Tag>
+		<English>United Republic of %s1</English>
+		<French>United Republic of %s1</French>
+		<German>United Republic of %s1</German>
+		<Italian>United Republic of %s1</Italian>
+		<Spanish>United Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_COMMUNIST</Tag>
+		<English>Revolutionary Government of %s1</English>
+		<French>Revolutionary Government of %s1</French>
+		<German>Revolutionary Government of %s1</German>
+		<Italian>Revolutionary Government of %s1</Italian>
+		<Spanish>Revolutionary Government of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_FASCIST</Tag>
+		<English>State of %s1</English>
+		<French>State of %s1</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_TANZANIA</Tag>
+		<English>Tanzania</English>
+		<French>Tanzania</French>
+		<German>Tanzania</German>
+		<Italian>Tanzania</Italian>
+		<Spanish>Tanzania</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_TANZANIAN</Tag>
+		<English>Tanzanian</English>
+		<French>Tanzanian</French>
+		<German>Tanzanian</German>
+		<Italian>Tanzanian</Italian>
+		<Spanish>Tanzanian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_ZANZIBAR</Tag>
+		<English>Zanzibar</English>
+		<French>Zanzibar</French>
+		<German>Zanzibar</German>
+		<Italian>Zanzibar</Italian>
+		<Spanish>Zanzibar</Spanish>
 	</TEXT>
 </Civ4GameText>

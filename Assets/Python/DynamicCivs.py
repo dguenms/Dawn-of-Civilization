@@ -152,7 +152,6 @@ dSpecificVassalTitles = deepdict({
 		iBabylonia : "TXT_KEY_CIV_ENGLISH_BABYLONIA",
 		iPersia : "TXT_KEY_MANDATE_OF",
 		iPhoenicia : "TXT_KEY_CIV_ENGLISH_PHOENICIA",
-		iEthiopia : "TXT_KEY_CIV_ENGLISH_ETHIOPIA",
 		iMaya : "TXT_KEY_CIV_ENGLISH_MAYA",
 		iByzantium : "TXT_KEY_CIV_ENGLISH_BYZANTIUM",
 		iNorse : "TXT_KEY_CIV_ENGLISH_NORSE",
@@ -160,6 +159,7 @@ dSpecificVassalTitles = deepdict({
 		iFrance : "TXT_KEY_CIV_ENGLISH_FRANCE",
 		iHolyRome : "TXT_KEY_CIV_ENGLISH_HOLY_ROME",
 		iGermany : "TXT_KEY_CIV_ENGLISH_GERMANY",
+		iSwahili: "TXT_KEY_CIV_ENGLISH_SWAHILI",
 		iNetherlands : "TXT_KEY_CIV_ENGLISH_NETHERLANDS",
 		iMali : "TXT_KEY_CIV_ENGLISH_MALI",
 		iOttomans : "TXT_KEY_MANDATE_OF",
@@ -176,6 +176,7 @@ dSpecificVassalTitles = deepdict({
 		iIndia : "TXT_KEY_CIV_PORTUGUESE_INDIA",
 		iMali : "TXT_KEY_CIV_PORTUGUESE_MALI",
 		iMoors : "TXT_KEY_CIV_PORTUGUESE_MOORS",
+		iSwahili : "TXT_KEY_CIV_PORTUGUESE_SWAHILI",
 		iCongo : "TXT_KEY_CIV_PORTUGUESE_CONGO",
 		iBrazil : "TXT_KEY_CIV_PORTUGUESE_BRAZIL",
 	},
@@ -225,7 +226,7 @@ dSpecificVassalTitles = deepdict({
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
 		iMali : "TXT_KEY_CIV_GERMAN_MALI",
-		iEthiopia : "TXT_KEY_CIV_GERMAN_ETHIOPIA",
+		iSwahili : "TXT_KEY_CIV_GERMAN_SWAHILI",
 		iPoland : "TXT_KEY_CIV_GERMAN_POLAND",
 	},
 	iAmerica : {
@@ -1260,9 +1261,14 @@ def specificName(iPlayer):
 		
 		return capitalName(iPlayer)
 	
-	elif iCiv == iVietnam:
+	elif iCiv == iSwahili:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_SWAHILI_TANZANIA"
+			
 		if iEra >= iIndustrial:
-			return "TXT_KEY_CIV_VIETNAM_DAI_NAM"
+			return "TXT_KEY_CIV_SWAHILI_ZANZIBAR"
+		
+		return capitalName(iPlayer)
 			
 	elif iCiv == iInca:
 		if bResurrected:
@@ -1736,6 +1742,10 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_RUS_MUSCOVITE"
 		
 		return capitalName(iPlayer)
+	
+	elif iCiv == iSwahili:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_RUS_TANZANIAN"
 			
 	elif iCiv == iMali:
 		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
@@ -2301,6 +2311,37 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_NAME"
+		
+	elif iCiv == iRus:
+		if bResurrected:
+			return "TXT_KEY_CIV_RUS_COSSACK_HETMANATE"
+		
+		if iReligion == -1:
+			return "TXT_KEY_CIV_RUS_RUS"
+		
+		if iEra <= iMedieval:
+			if (civic.iGovernment == iRepublic and civic.iLegitimacy in [iVassalage, iCitizenship]) or (civic.iGovernment == iElective and civic.iLegitimacy == iCitizenship):
+				if isCurrentCapital(iPlayer, "Novgorod"):
+					return "TXT_KEY_CIV_RUS_NOVGOROD"
+				
+				return "TXT_KEY_REPUBLIC_NAME"
+		
+		if isCurrentCapital(iPlayer, "Drohiczyn", "Lviv", "Stanislaviv"):
+			return "TXT_KEY_KINGDOM_OF"
+	
+	elif iCiv == iVietnam:
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_VIETNAM_DAI_NAM"
+	
+	elif iCiv == iSwahili:
+		if civic.iGovernment == iRepublic:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+		
+		if iReligion != iIslam:
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		if iEra >= iIndustrial:
+			return "TXT_KEY_SULTANATE_OF"
 			
 	# Nothing for Mali
 	
@@ -2379,23 +2420,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if not bEmpire and not tPlayer.isHasTech(iFirearms):
 			return "TXT_KEY_SULTANATE_OF"
-		
-	elif iCiv == iRus:
-		if bResurrected:
-			return "TXT_KEY_CIV_RUS_COSSACK_HETMANATE"
-		
-		if iReligion == -1:
-			return "TXT_KEY_CIV_RUS_RUS"
-		
-		if iEra <= iMedieval:
-			if (civic.iGovernment == iRepublic and civic.iLegitimacy in [iVassalage, iCitizenship]) or (civic.iGovernment == iElective and civic.iLegitimacy == iCitizenship):
-				if isCurrentCapital(iPlayer, "Novgorod"):
-					return "TXT_KEY_CIV_RUS_NOVGOROD"
-				
-				return "TXT_KEY_REPUBLIC_NAME"
-		
-		if isCurrentCapital(iPlayer, "Drohiczyn", "Lviv", "Stanislaviv"):
-			return "TXT_KEY_KINGDOM_OF"
 		
 	elif iCiv == iRussia:
 		if bEmpire and iEra >= iRenaissance:
