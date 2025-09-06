@@ -450,10 +450,10 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iOttomans, iThailand, iIran]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iBrazil, iNorse, iColombia]
+lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iBrazil, iNorse, iSweden, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
@@ -2420,6 +2420,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if not bEmpire and not tPlayer.isHasTech(iFirearms):
 			return "TXT_KEY_SULTANATE_OF"
+		
+	elif iCiv == iSweden:
+		if cities.owner(iPlayer).any(lambda city: plot(city).getRegionID() != rScandinavia):
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if cities.rectangle(tNorway).all(lambda city: city.getOwner() == iPlayer):
+			return "TXT_KEY_SWEDEN_SWEDEN_NORWAY"
 		
 	elif iCiv == iRussia:
 		if bEmpire and iEra >= iRenaissance:

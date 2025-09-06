@@ -41,4 +41,20 @@
 		<Italian>Kingdom of %s1</Italian>
 		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_SWEDEN_NORWAY</Tag>
+		<English>United Kingdoms of Sweden and Norway</English>
+		<French>United Kingdoms of Sweden and Norway</French>
+		<German>United Kingdoms of Sweden and Norway</German>
+		<Italian>United Kingdoms of Sweden and Norway</Italian>
+		<Spanish>United Kingdoms of Sweden and Norway</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_FASCIST</Tag>
+		<English>%s2 Empire</English>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
 </Civ4GameText>
