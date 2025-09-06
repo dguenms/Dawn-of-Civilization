@@ -508,6 +508,9 @@ def getDisplayNameForName(identifier, tile, tile_names):
 	if not translation:
 		return ""
 	
+	if translation.name == "?":
+		return ""
+	
 	if translation.bRenaming or translation.bRelocation:
 		if translation.name != tile_name:
 			return getDisplayNameForName(identifier, tile, (translation.name, translation.name))
@@ -525,7 +528,7 @@ def getNameEvolution(identifier, tile):
 			if translation.isApplicable(identifier, tile, bFound=bFound):
 				sequence = [t.name for t in translations[:index] if t.isEraSpecific(bFound=bFound)] + [translation.name]
 				if sequence:
-					return " -> ".join(reversed(sequence))
+					return " -> ".join(reversed([entry for entry in sequence if entry != "?"]))
 	
 	return getDisplayName(identifier, tile)
 
