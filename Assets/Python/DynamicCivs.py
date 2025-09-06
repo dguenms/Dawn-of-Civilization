@@ -49,6 +49,7 @@ dSpecificVassalTitles = deepdict({
 	iChina : {
 		iKorea : "TXT_KEY_CIV_CHINESE_KOREA",
 		iTurks : "TXT_KEY_CIV_CHINESE_TURKS",
+		iVietnam : "TXT_KEY_CIV_CHINESE_VIETNAM",
 		iMongols : "TXT_KEY_CIV_CHINESE_MONGOLIA",
 	},
 	iGreece : {
@@ -74,6 +75,7 @@ dSpecificVassalTitles = deepdict({
 		iChina : "TXT_KEY_CIV_JAPANESE_CHINA",
 		iIndia : "TXT_KEY_CIV_JAPANESE_INDIA",
 		iKorea : "TXT_KEY_CIV_JAPANESE_KOREA",
+		iVietnam : "TXT_KEY_CIV_JAPANESE_VIETNAM",
 		iMongols : "TXT_KEY_CIV_JAPANESE_MONGOLIA",
 	},
 	iByzantium : {
@@ -131,6 +133,7 @@ dSpecificVassalTitles = deepdict({
 		iEngland : "TXT_KEY_CIV_FRENCH_ENGLAND",
 		iSpain : "TXT_KEY_CIV_FRENCH_SPAIN",
 		iHolyRome : "TXT_KEY_CIV_FRENCH_HOLY_ROME",
+		iVietnam : "TXT_KEY_CIV_FRENCH_VIETNAM",
 		iPoland : "TXT_KEY_CIV_FRENCH_POLAND",
 		iNetherlands : "TXT_KEY_CIV_FRENCH_NETHERLANDS",
 		iMali : "TXT_KEY_CIV_FRENCH_MALI",
@@ -446,10 +449,10 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iIran]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iBrazil, iNorse, iColombia]
+lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iBrazil, iNorse, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
@@ -1256,6 +1259,10 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_RUS_VLADIMIR_SUZDAL"
 		
 		return capitalName(iPlayer)
+	
+	elif iCiv == iVietnam:
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_VIETNAM_DAI_NAM"
 			
 	elif iCiv == iInca:
 		if bResurrected:
@@ -1841,6 +1848,9 @@ def vassalTitle(iPlayer, iMaster):
 	
 def communistTitle(iPlayer):
 	iCiv = civ(iPlayer)
+	
+	if iCiv == iVietnam and player(iPlayer).getCurrentEra() <= iGlobal:
+		return "TXT_KEY_CIV_VIETNAM_DEMOCRATIC_REPUBLIC"
 
 	if iCiv in lSocialistRepublicOf: return "TXT_KEY_SOCIALIST_REPUBLIC_OF"
 	if iCiv in lSocialistRepublicAdj: return "TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE"
@@ -2200,7 +2210,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iKhmer:
-		if bEmpire and iEra >= iMedieval:
+		if bEmpire and getColumn(iPlayer) >= 6:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iMoors:

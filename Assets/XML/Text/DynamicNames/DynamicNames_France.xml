@@ -482,6 +482,14 @@
 		<Spanish>%s2 Equatorial Africa</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_VIETNAM</Tag>
+		<English>Indochinese Union</English>
+		<French>Indochinese Union</French>
+		<German>Indochinese Union</German>
+		<Italian>Indochinese Union</Italian>
+		<Spanish>Indochinese Union</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>
 		<English>French</English>
 		<French>

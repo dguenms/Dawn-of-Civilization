@@ -41,4 +41,28 @@
 		<Italian>Dai Viet</Italian>
 		<Spanish>Dai Viet</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_DAI_NAM</Tag>
+		<English>Dai Nam</English>
+		<French>Dai Nam</French>
+		<German>Dai Nam</German>
+		<Italian>Dai Nam</Italian>
+		<Spanish>Dai Nam</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_FASCIST</Tag>
+		<English>State of %s1</English>
+		<French>State of %s1</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_DEMOCRATIC_REPUBLIC</Tag>
+		<English>Democratic Republic of %s1</English>
+		<French>Democratic Republic of %s1</French>
+		<German>Democratic Republic of %s1</German>
+		<Italian>Democratic Republic of %s1</Italian>
+		<Spanish>Democratic Republic of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

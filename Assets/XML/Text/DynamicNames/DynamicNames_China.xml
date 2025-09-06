@@ -210,6 +210,18 @@
 		<Spanish>Protectorate General to Pacify the North</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_VIETNAM</Tag>
+		<English>Protectorate General to Pacify the South</English>
+		<French>
+			<Text>Protectorat g&#233;n&#233;ral pour pacifier le Sud</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Protectorate General to Pacify the South</German>
+		<Italian>Protectorate General to Pacify the South</Italian>
+		<Spanish>Protectorate General to Pacify the South</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT</Tag>
 		<English>Haixi</English>
 		<French>Haixi</French>
