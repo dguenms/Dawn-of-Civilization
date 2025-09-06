@@ -1306,6 +1306,9 @@ def specificName(iPlayer):
 			return capitalName(iPlayer)
 			
 	elif iCiv == iThailand:
+		if getColumn(iPlayer) < 9:
+			return "TXT_KEY_CIV_THAILAND_SUKHOTHAI"
+		
 		if iEra <= iRenaissance:
 			return "TXT_KEY_CIV_THAILAND_AYUTTHAYA"
 			

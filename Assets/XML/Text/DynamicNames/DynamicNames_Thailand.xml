@@ -27,27 +27,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_DEFAULT</Tag>
-		<English>Kingdom of %s1</English>
-		<French>
-			<Text>Royaume de %s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Regno del %s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Reino de %s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_FASCIST</Tag>
@@ -72,6 +56,14 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SUKHOTHAI</Tag>
+		<English>Sukhothai</English>
+		<French>Sukhothai</French>
+		<German>Sukhothai</German>
+		<Italian>Sukhothai</Italian>
+		<Spanish>Sukhothai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_AYUTTHAYA</Tag>
