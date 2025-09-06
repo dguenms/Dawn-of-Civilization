@@ -1582,7 +1582,7 @@ def specificAdjective(iPlayer):
 		
 	elif iCiv == iMalays:
 		if iEra >= iGlobal:
-			return adjective(iPlayer)
+			return civAdjective(iPlayer)
 		
 		if iReligion == iIslam:
 			if capital in cities.rectangle(tMalaya):
@@ -1694,7 +1694,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_KHMER_CAMBODIAN"
 		
 		if iEra >= iMedieval:
-			return adjective(iPlayer)
+			return civAdjective(iPlayer)
 		
 		if getColumn(iPlayer) >= 6:
 			return "TXT_KEY_CIV_KHMER_CHENLA"
@@ -1726,10 +1726,10 @@ def specificAdjective(iPlayer):
 	
 	elif iCiv == iBurma:
 		if iEra >= iGlobal:
-			return adjective(iPlayer)
+			return civAdjective(iPlayer)
 		
 		if iEra >= iIndustrial and not bEmpire:
-			return adjective(iPlayer)
+			return civAdjective(iPlayer)
 		
 		return specificName(iPlayer)
 	
