@@ -35,10 +35,106 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUTHENIA_DEFAULT</Tag>
-		<English>Kievan Rus</English>
-		<French>Kievan Rus</French>
-		<German>Kievan Rus</German>
-		<Italian>Kievan Rus</Italian>
-		<Spanish>Kievan Rus</Spanish>
+		<English>Grand Principality of %s1</English>
+		<French>Grand Principality of %s1</French>
+		<German>Grand Principality of %s1</German>
+		<Italian>Grand Principality of %s1</Italian>
+		<Spanish>Grand Principality of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUTHENIA_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>%s2 State</French>
+		<German>%s2 State</German>
+		<Italian>%s2 State</Italian>
+		<Spanish>%s2 State</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_VASSAL</Tag>
+		<English>Principality of %s1</English>
+		<French>Principality of %s1</French>
+		<German>Principality of %s1</German>
+		<Italian>Principality of %s1</Italian>
+		<Spanish>Principality of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_COSSACK_HETMANATE</Tag>
+		<English>Cossack Hetmanate</English>
+		<French>Cossack Hetmanate</French>
+		<German>Cossack Hetmanate</German>
+		<Italian>Cossack Hetmanate</Italian>
+		<Spanish>Cossack Hetmanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_RUS</Tag>
+		<English>%s2 Rus</English>
+		<French>%s2 Rus</French>
+		<German>%s2 Rus</German>
+		<Italian>%s2 Rus</Italian>
+		<Spanish>%s2 Rus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_NOVGOROD</Tag>
+		<English>Sovereign Lord Novgorod the Great</English>
+		<French>Sovereign Lord Novgorod the Great</French>
+		<German>Sovereign Lord Novgorod the Great</German>
+		<Italian>Sovereign Lord Novgorod the Great</Italian>
+		<Spanish>Sovereign Lord Novgorod the Great</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_UKRAINE</Tag>
+		<English>Ukraine</English>
+		<French>Ukraine</French>
+		<German>Ukraine</German>
+		<Italian>Ukraine</Italian>
+		<Spanish>Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_GALICIA_VOLHYNIA</Tag>
+		<English>Galicia-Volhynia</English>
+		<French>Galicia-Volhynia</French>
+		<German>Galicia-Volhynia</German>
+		<Italian>Galicia-Volhynia</Italian>
+		<Spanish>Galicia-Volhynia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_VLADIMIR_SUZDAL</Tag>
+		<English>Vladimir-Suzdal</English>
+		<French>Vladimir-Suzdal</French>
+		<German>Vladimir-Suzdal</German>
+		<Italian>Vladimir-Suzdal</Italian>
+		<Spanish>Vladimir-Suzdal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_UKRAINIAN</Tag>
+		<English>Ukrainian</English>
+		<French>Ukrainian</French>
+		<German>Ukrainian</German>
+		<Italian>Ukrainian</Italian>
+		<Spanish>Ukrainian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_GALICIAN</Tag>
+		<English>Galician</English>
+		<French>Galician</French>
+		<German>Galician</German>
+		<Italian>Galician</Italian>
+		<Spanish>Galician</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_KIEVAN</Tag>
+		<English>Kievan</English>
+		<French>Kievan</French>
+		<German>Kievan</German>
+		<Italian>Kievan</Italian>
+		<Spanish>Kievan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS_MUSCOVITE</Tag>
+		<English>Muscovite</English>
+		<French>Muscovite</French>
+		<German>Muscovite</German>
+		<Italian>Muscovite</Italian>
+		<Spanish>Muscovite</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -182,6 +182,30 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_NAME</Tag>
+		<English>%s1 Republic</English>
+		<French>
+			<Text>R&#233;publique %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s1-Republik:%s1-Republik:%s1-Republik</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_OF</Tag>
 		<English>Socialist Republic of %s1</English>
 		<French>

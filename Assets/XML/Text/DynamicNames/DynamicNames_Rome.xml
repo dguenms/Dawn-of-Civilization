@@ -478,7 +478,7 @@
 		<Spanish>Transoxiana</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUS</Tag>
 		<English>Sarmatia</English>
 		<French>
 			<Text>Sarmatie</Text>
@@ -500,6 +500,14 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
+		<English>Moscovia</English>
+		<French>Moscovia</French>
+		<German>Moscovia</German>
+		<Italian>Moscovia</Italian>
+		<Spanish>Moscovia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_NETHERLANDS</Tag>

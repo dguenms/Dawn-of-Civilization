@@ -117,4 +117,12 @@
 		<Italian>Voivodeship of %s1</Italian>
 		<Spanish>Voivodeship of %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLISH_RUS</Tag>
+		<English>Ruthenian Voivodeship</English>
+		<French>Ruthenian Voivodeship</French>
+		<German>Ruthenian Voivodeship</German>
+		<Italian>Ruthenian Voivodeship</Italian>
+		<Spanish>Ruthenian Voivodeship</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -5110,7 +5110,10 @@ name_translations = {
 	},
 	"Drohiczyn": {
 		iPolish: _,
-		iUkrainian: "Dorohochyn",
+		iUkrainian: (
+			found("Volodymyr"),
+			"Dorohochyn",
+		),
 	},
 	"Dryden": {
 		iEnglish: _,
@@ -9772,6 +9775,7 @@ name_translations = {
 		iCeltic: u"Cív",
 		iChinese: "Jifu",
 		iDutch: u"Kiëv",
+		iEnglish: "Kiev",
 		iGerman: "Kiew",
 		iGreek: u"Kíevo",
 		iItalian: "Kiev",
@@ -18894,6 +18898,14 @@ name_translations = {
 	"Volodarskoye": {
 		iRussian: _,
 		iTurkish: u"Saumalköl",
+	},
+	"Volodymyr": {  # founded on Drohiczyn
+		iGerman: "Wolodymyr",
+		iLatin: "Lodomeria",
+		iPolish: "Wlodzimierz",
+		iRussian: "Vladimir-Volynsk",
+		iTurkish: "Volodimir",
+		iUkrainian: _,
 	},
 	"Volzhsky": {
 		iMongol: found("Sarai Berke"),

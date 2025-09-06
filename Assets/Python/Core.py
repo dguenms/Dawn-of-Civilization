@@ -598,6 +598,10 @@ def encode(text):
 	return text
 
 
+def latin1(text):
+	return text.encode("latin-1", "xmlcharrefreplace")
+
+
 def text(key, *format):
 	return translator.getText(str(key), tuple(format))
 	

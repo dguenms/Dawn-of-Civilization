@@ -374,6 +374,14 @@
 		<Spanish>Ostmark</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_RUS</Tag>
+		<English>Reichskommissariat Ukraine</English>
+		<French>Reichskommissariat Ukraine</French>
+		<German>Reichskommissariat Ukraine</German>
+		<Italian>Reichskommissariat Ukraine</Italian>
+		<Spanish>Reichskommissariat Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_RUSSIA</Tag>
 		<English>Reichskommissariat Moskowien</English>
 		<French>

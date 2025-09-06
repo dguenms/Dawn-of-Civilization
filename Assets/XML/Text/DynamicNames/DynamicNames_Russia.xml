@@ -27,27 +27,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_PEOPLES</Tag>
-		<English>Rus' Peoples</English>
-		<French>
-			<Text>Peuplades de la Rus'</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Rus' Peoples</German>
-		<Italian>Rus' Peoples</Italian>
-		<Spanish>Rus' Peoples</Spanish>
+		<English>Muscovite Peoples</English>
+		<French>Muscovite Peoples</French>
+		<German>Muscovite Peoples</German>
+		<Italian>Muscovite Peoples</Italian>
+		<Spanish>Muscovite Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_DEFAULT</Tag>
-		<English>Grand Duchy of %s1</English>
+		<English>Grand Principality of %s1</English>
 		<French>
 			<Text>Grande-principaut&#233; de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Grand Duchy of %s1</German>
-		<Italian>Grand Duchy of %s1</Italian>
-		<Spanish>Grand Duchy of %s1</Spanish>
+		<German>Grand Principality of %s1</German>
+		<Italian>Grand Principality of %s1</Italian>
+		<Spanish>Grand Principality of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_GRAND_PRINCIPALITY</Tag>
@@ -162,30 +158,6 @@
 		<Spanish>Muscovy</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_KIEVAN_RUS</Tag>
-		<English>Kievan Rus</English>
-		<French>
-			<Text>Rus' de Kiev</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Kievan Rus</German>
-		<Italian>Kievan Rus</Italian>
-		<Spanish>Kievan Rus</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_RUS</Tag>
-		<English>Rus of %s1</English>
-		<French>
-			<Text>Rus' de %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Rus of %s1</German>
-		<Italian>Rus of %s1</Italian>
-		<Spanish>Rus of %s1</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_VASSAL</Tag>
 		<English>%s1 Krai</English>
 		<French>
@@ -208,6 +180,14 @@
 		<German>Congress %s1</German>
 		<Italian>Congress %s1</Italian>
 		<Spanish>Congress %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIAN_RUS</Tag>
+		<English>Novorossiya Governorate</English>
+		<French>Novorossiya Governorate</French>
+		<German>Novorossiya Governorate</German>
+		<Italian>Novorossiya Governorate</Italian>
+		<Spanish>Novorossiya Governorate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
