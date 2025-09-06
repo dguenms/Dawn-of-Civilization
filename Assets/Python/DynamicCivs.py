@@ -1247,7 +1247,7 @@ def specificName(iPlayer):
 			if bEmpire:
 				return "TXT_KEY_CIV_BURMA_TOUNGOO"
 			
-			if capital in cities.region(rBurma).coastal():
+			if capital in cities.birth(iBurma).coastal():
 				return "TXT_KEY_CIV_BURMA_HANTHAWADDY"
 			
 			return "TXT_KEY_CIV_BURMA_AVA"
@@ -2312,7 +2312,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-			if capital in cities.region(rBurma).coastal():
+			if capital in cities.birth(iBurma).coastal():
 				return "TXT_KEY_KINGDOM_NAME"
 			
 			return "TXT_KEY_KINGDOM_OF"
