@@ -242,6 +242,14 @@
 		<Spanish>Kingdom of Punt</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_NAME_NUBIA</Tag>
+		<English>Ta-Seti</English>
+		<French>Ta-Seti</French>
+		<German>Ta-Seti</German>
+		<Italian>Ta-Seti</Italian>
+		<Spanish>Ta-Seti</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_ADJECTIVE</Tag>
 		<English>Egyptian</English>
 		<French>

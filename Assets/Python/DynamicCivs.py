@@ -335,6 +335,9 @@ dForeignAdjectives = deepdict({
 })
 
 dForeignNames = deepdict({
+	iEgypt : {
+		iNubia : "TXT_KEY_CIV_EGYPTIAN_NAME_NUBIA",
+	},
 	iGreece : {
 		iAssyria : "TXT_KEY_CIV_GREEK_NAME_ASSYRIA",
 		iTurks : "TXT_KEY_CIV_GREEK_NAME_TURKS",
