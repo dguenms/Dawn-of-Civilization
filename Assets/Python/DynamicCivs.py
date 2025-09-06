@@ -683,6 +683,11 @@ def onRevolution(iPlayer):
 	
 	for iLoopPlayer in players.vassals(iPlayer):
 		checkName(iLoopPlayer)
+
+@handler("setPlayerAlive")
+def onSetPlayerAlive(iPlayer, bAlive):
+	if bAlive:
+		checkName(iPlayer)
 	
 @handler("cityAcquired")
 def onCityAcquired(iPreviousOwner, iNewOwner):
