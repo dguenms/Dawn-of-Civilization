@@ -1149,6 +1149,9 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_KHMER_FUNAN"
 			
 	elif iCiv == iMoors:	
+		if isCurrentCapital(iPlayer, "Qurtubah"):
+			return "TXT_KEY_CIV_MOORS_CORDOBA"
+		
 		if capital in plots.region(rIberia):
 			return capitalName(iPlayer)
 			

@@ -146,6 +146,14 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_CORDOBA</Tag>
+		<English>Cordoba</English>
+		<French>Cordoba</French>
+		<German>Cordoba</German>
+		<Italian>Cordoba</Italian>
+		<Spanish>Cordoba</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD</Tag>
 		<English>Almohad</English>
 		<French>almohade</French>
