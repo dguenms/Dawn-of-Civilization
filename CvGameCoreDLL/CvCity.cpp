@@ -9086,7 +9086,7 @@ int CvCity::getFreeSpecialist() const
 	}
 
 	// Leoreth: most cultured cities free specialists civic effect
-	if (getCultureRank() < GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities()-1)
+	if (isConnectedToCapital() && getCultureRank() < GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities()-1)
 	{
 		iTotalFreeSpecialists += GET_PLAYER(getOwnerINLINE()).getCulturedCityFreeSpecialists();
 	}

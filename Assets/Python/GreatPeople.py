@@ -1285,7 +1285,7 @@ dGreatPeople = {
 			"John Scotus Eriugena", # 9th
 		),
 		iGreatMerchant : (
-			"Onomaris", # 4th BC
+			"fOnomaris", # 4th BC
 			iMedieval,
 			"Madoc ab Owain Gwynedd", # 12th
 		),
@@ -1298,7 +1298,7 @@ dGreatPeople = {
 		iGreatStatesman : (
 			"Deiotarus", # 1st BC
 			"Gaius Valerius Troucillus", # 1st BC
-			"Cartimandua", # 1st
+			"fCartimandua", # 1st
 			"Cormac mac Airt", # 2nd
 			iMedieval,
 			"Niall Noigiallach", # Disputed
@@ -3795,7 +3795,7 @@ dGreatPeople = {
 			"Shaaban bin Robert", # 20th
 			"Muhammed Said Abdulla", # 20th
 			"Michael Enoch", # 20th
-			"Bi Kidude", # 20th
+			"fBi Kidude", # 20th
 			iDigital,
 			"Abdulrazak Gurnah", # 21st
 		),
@@ -4369,7 +4369,7 @@ dGreatPeople = {
 			"Mu'ayyad al-Din al-Urdi", # 13th
 			"Jamal ad-Din Bukhari", # 13th
 			"Guo Shoujing", # 13th
-			"fZhu Shijie", # 13th
+			"Zhu Shijie", # 13th
 			iRenaissance,
 			"Minggatu", # 18th
 			iGlobal, 
