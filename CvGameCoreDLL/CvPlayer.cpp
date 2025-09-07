@@ -7316,7 +7316,7 @@ void CvPlayer::processBuildingForCity(BuildingTypes eBuilding, CvCity* pCity, in
 			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iJ);
 			if (kBuilding.getReligionType() == JUDAISM)
 			{
-				pCity->changeBuildingCommerceChange((BuildingClassTypes)kBuilding.getBuildingClassType(), COMMERCE_GOLD, 2 * iChange);
+				pCity->changeBuildingCommerceChange((BuildingTypes)iJ, COMMERCE_GOLD, 2 * iChange);
 			}
 		}
 	}

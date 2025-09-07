@@ -344,14 +344,14 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 
 	// Leoreth: Old Synagogue effect: +2 gold for Jewish religious buildings
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)OLD_SYNAGOGUE))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(OLD_SYNAGOGUE))
 	{
 		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 		{
 			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
 			if (kBuilding.getReligionType() == JUDAISM)
 			{
-				changeBuildingCommerceChange((BuildingClassTypes)kBuilding.getBuildingClassType(), COMMERCE_GOLD, 2);
+				changeBuildingCommerceChange((BuildingTypes)iI, COMMERCE_GOLD, 2);
 			}
 		}
 	}
@@ -4664,6 +4664,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (getCivilizationType() == BYZANTIUM && eBuilding == 0)
 		{
 			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, std::max(0, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / 100));
+			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_GOLD, std::max(0, iChange * getCulture(getOwnerINLINE()) / 100));
 		}
 
 		// Leoreth: special wonder effects
@@ -4940,13 +4941,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		int iLoop;
 		if (::isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
 		{
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOUVRE) && eBuilding != LOUVRE)
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(LOUVRE) && eBuilding != LOUVRE)
 			{
 				for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 				{
-					if (pLoopCity->isHasRealBuilding((BuildingTypes)LOUVRE))
+					if (pLoopCity->isHasRealBuilding(LOUVRE))
 					{
-						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)LOUVRE).getBuildingClassType(), COMMERCE_CULTURE, 2 * iChange);
+						pLoopCity->changeBuildingCommerceChange(LOUVRE, COMMERCE_CULTURE, 2 * iChange);
 						break;
 					}
 				}
@@ -14210,7 +14211,7 @@ void CvCity::processVoteSourceBonus(VoteSourceTypes eVoteSource, bool bActive)
 					{
 						if (GC.getBuildingInfo((BuildingTypes)iBuilding).getReligionType() == eReligion)
 						{
-							changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iBuilding).getBuildingClassType(), (CommerceTypes)iCommerce, iChange);
+							changeBuildingCommerceChange((BuildingTypes)iBuilding, (CommerceTypes)iCommerce, iChange);
 						}
 					}
 				}
@@ -17576,6 +17577,11 @@ void CvCity::setBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, 
 
 void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
 {
+	if (iChange <= 0)
+	{
+		iChange = 0;
+	}
+
 	if (iChange <= -1000 || iChange >= 1000)
 	{
 		logMajorError(CvWString::format(L"Unexpected value - setBuildingYieldChange(%s, %s, %d) - %s (%d, %d)", GC.getBuildingClassInfo(eBuildingClass).getText(), GC.getYieldInfo(eYield).getText(), iChange, getNameKey(), getX(), getY()), getX(), getY());
@@ -17675,6 +17681,11 @@ void CvCity::setBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eC
 
 void CvCity::setBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange)
 {
+	if (iChange <= 0)
+	{
+		iChange = 0;
+	}
+
 	for (std::vector<BuildingCommerceChange>::iterator it = m_aBuildingCommerceChange.begin(); it != m_aBuildingCommerceChange.end(); ++it)
 	{
 		if ((*it).eBuildingClass == eBuildingClass && (*it).eCommerce == eCommerce)

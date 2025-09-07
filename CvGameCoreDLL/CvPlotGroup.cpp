@@ -249,9 +249,9 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 				int iLoop;
 				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 				{
-					if (pLoopCity->isHasRealBuilding((BuildingTypes)ESCORIAL))
+					if (pLoopCity->isHasRealBuilding(ESCORIAL))
 					{
-						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ESCORIAL).getBuildingClassType(), COMMERCE_GOLD, 2 * iChange);
+						pLoopCity->changeBuildingCommerceChange(ESCORIAL, COMMERCE_GOLD, 2 * iChange);
 						break;
 					}
 				}
@@ -266,18 +266,18 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 				int iLoop;
 				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 				{
-					pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ATOMIUM).getBuildingClassType(), COMMERCE_RESEARCH, (eBonus == BONUS_URANIUM ? 10 : 1) * iChange);
+					pLoopCity->changeBuildingCommerceChange(ATOMIUM, COMMERCE_RESEARCH, (eBonus == BONUS_URANIUM ? 10 : 1) * iChange);
 				}
 			}
 		}
 
 		// Leoreth: Global Seed Vault
-		if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)GLOBAL_SEED_VAULT))
+		if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).isHasBuildingEffect(GLOBAL_SEED_VAULT))
 		{
 			int iLoop;
 			for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
 			{
-				if (pLoopCity->isHasRealBuilding((BuildingTypes)GLOBAL_SEED_VAULT))
+				if (pLoopCity->isHasRealBuilding(GLOBAL_SEED_VAULT))
 				{
 					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
 					{

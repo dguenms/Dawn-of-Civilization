@@ -9891,6 +9891,9 @@ void CvCityAI::AI_updateSpecialYieldMultiplier()
 			}
 		}
 
+		FAssert(kPlayer.getCommerceRate(COMMERCE_GOLD) >= 0);
+		FAssert(kPlayer.getCommerceRate(COMMERCE_RESEARCH) >= 0);
+
 		int iIncome = 1 + kPlayer.getCommerceRate(COMMERCE_GOLD) + kPlayer.getCommerceRate(COMMERCE_RESEARCH) + std::max(0, kPlayer.getGoldPerTurn());
 		int iExpenses = 1 + kPlayer.calculateInflatedCosts() - std::min(0, kPlayer.getGoldPerTurn());
 		FAssert(iIncome > 0);
