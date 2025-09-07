@@ -28,9 +28,9 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	destroyedCities, cededCities = secedingCities.split(lambda city: bRazeMinorCities and canBeRazed(city))
 	
 	for city in destroyedCities:
+		cn.clearChanges(city)
 		player(iBarbarian).disband(city)
 		plot(city).setCulture(iPlayer, 0, True)
-		cn.clearChanges(city)
 	
 	# determine who has the best claim on each city
 	dClaimedCities = appenddict()
