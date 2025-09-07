@@ -39,6 +39,11 @@ def is_free_of_civ(iCiv):
 	return func
 
 
+def is_other_civ(iCiv):
+	def func(barbarians):
+		return cities.rectangle(barbarians.target_area).owners().without(iCiv).any()
+
+
 class MinorCity(object):
 
 	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
@@ -595,6 +600,7 @@ barbarians = [
 	Barbarians(900, 1100, {iJaguar: 4}, ((11, 44), (19, 51)), 5, INVADERS, iOwner=iNative, target_area=((14, 40), (23, 45)), adjective="TXT_KEY_ADJECTIVE_NAHUA"),
 	Barbarians(900, 1200, {iKeshik: 2, iHorseArcher: 2}, ((105, 53), (119, 59)), 6, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_KHITAN", promotions=(iDesertAdaptation, iSteppeAdaptation), condition=is_free_of_civ(iTibet)),
 	Barbarians(900, 1500, {iCamelArcher: 1}, ((74, 36), (77, 42)), 9, NOMADS, target_area=((78, 35), (81, 40)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
+	Barbarians(900, 1250, {iLongship: 1}, ((70, 66), (77, 74)), 10, PIRATES, adjective="TXT_KEY_ADJECTIVE_VIKING", condition=is_other_civ(iNorse)),
 	Barbarians(950, 1100, {iLongship: 1, iHuscarl: 2}, ((53, 48), (63, 72)), 8, SEA_INVADERS, adjective="TXT_KEY_ADJECTIVE_VIKING"),
 	Barbarians(1000, 1200, {iHorseArcher: 2}, ((101, 41), (105, 46)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_RAJPUT"),
 	Barbarians(1000, 1280, {iAxeman: 2}, ((74, 64), (80, 69)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_BALTIC"),
