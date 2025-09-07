@@ -239,11 +239,11 @@ def onCombatLogHit(argsList):
 	iDamage = genericArgs[3]
 	
 	if cdDefender.eOwner == cdDefender.eVisualOwner:
-		szDefenderName = gc.getPlayer(cdDefender.eOwner).getNameKey()
+		szDefenderName = gc.getPlayer(cdDefender.eOwner).getCivilizationDescriptionKey()
 	else:
 		szDefenderName = localText.getText("TXT_KEY_TRAIT_PLAYER_UNKNOWN", ())
 	if cdAttacker.eOwner == cdAttacker.eVisualOwner:
-		szAttackerName = gc.getPlayer(cdAttacker.eOwner).getNameKey()
+		szAttackerName = gc.getPlayer(cdAttacker.eOwner).getCivilizationDescriptionKey()
 	else:
 		szAttackerName = localText.getText("TXT_KEY_TRAIT_PLAYER_UNKNOWN", ())
 
