@@ -18648,7 +18648,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 
 	if (bOrdering)
 	{
-		if (pPlot->getBonusType() == NO_BONUS && iCost >= 15)
+		if (pPlot->getBonusType() == NO_BONUS && iCost >= getTurns(15))
 		{
 			iExtraCost += 100;
 		}
