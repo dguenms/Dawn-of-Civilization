@@ -1097,7 +1097,7 @@ def specificName(iPlayer):
 		
 	elif iCiv == iMalays:
 		if iEra >= iGlobal:
-			return name(iPlayer)
+			return short(iPlayer)
 		
 		if iReligion == iIslam:
 			if capital in cities.rectangle(tMalaya):
@@ -1235,13 +1235,13 @@ def specificName(iPlayer):
 			if civic.iSociety == iTotalitarianism or civic.iTerritory == iIsolationism:
 				return "TXT_KEY_CIV_BURMA_MYANMAR"
 			
-			return name(iPlayer)
+			return short(iPlayer)
 		
 		if iEra >= iIndustrial:
 			if bEmpire:
 				return "TXT_KEY_CIV_BURMA_KONBAUNG"
 			
-			return name(iPlayer)
+			return short(iPlayer)
 		
 		if iEra >= iRenaissance:
 			if bEmpire:
