@@ -138,7 +138,7 @@ dResourcesDict = {
 	(17, 53)  : (1700,  iWheat),    # Nebraska
 	(19, 63)  : (1700,  iWheat),    # Manitoba
 	(14, 64)  : (1700,  iWheat),    # Alberta
-	(20, 57)  : (1700,  iWheat),    # Iowa
+	(20, 56)  : (1700,  iWheat),    # Iowa
 	(37, 13)  : (1700,  iWheat),    # Argentina
 	(126, 52) : (1700,  iCorn),     # China
 	(104, 41) : (1700,  iCorn),     # Rajasthan

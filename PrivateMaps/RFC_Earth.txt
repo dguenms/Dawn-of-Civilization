@@ -7732,6 +7732,7 @@ BeginPlot
 	x=17,y=54
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -8195,7 +8196,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=56
-	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -9573,7 +9573,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=62
-	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10001,13 +10000,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=59
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=60
-	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
