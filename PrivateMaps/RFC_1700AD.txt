@@ -3732,7 +3732,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=63
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_LUMBERMILL
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -4442,7 +4442,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=62
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=69,y=63

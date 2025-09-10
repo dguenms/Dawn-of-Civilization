@@ -29549,7 +29549,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=63
-	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -30894,6 +30893,7 @@ BeginPlot
 	x=69,y=62
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
