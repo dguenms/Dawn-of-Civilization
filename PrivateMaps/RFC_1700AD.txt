@@ -5179,7 +5179,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=58
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=73,y=59
@@ -5412,6 +5412,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=57
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

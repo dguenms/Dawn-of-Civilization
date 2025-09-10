@@ -142,6 +142,7 @@ dResourcesDict = {
 	(37, 13)  : (1700,  iWheat),    # Argentina
 	(126, 52) : (1700,  iCorn),     # China
 	(104, 41) : (1700,  iCorn),     # Rajasthan
+	(74, 57)  : (1700,  iCorn),		# Hungary
 	(78, 57)  : (1700,  iCorn),     # Romania
 	(60, 58)  : (1700,  iCorn),     # France
 	(64, 32)  : (1700,  iCorn),     # West Africa

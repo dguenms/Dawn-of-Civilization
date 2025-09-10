@@ -32733,6 +32733,7 @@ BeginPlot
 	x=73,y=58
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -33210,7 +33211,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=58
-	BonusType=BONUS_HORSE
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
