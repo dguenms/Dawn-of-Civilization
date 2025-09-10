@@ -288,6 +288,7 @@ dRemovedResourcesDict = {
 	(94, 43)  :  550, # Ivory in Persia
 	(69, 49)  :  550, # Wheat in Sicily
 	(100, 50) : 1100, # Silver in Bactria
+	(97, 54)  : 1100, # Millet in Transoxiana
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
 	(75, 58)  : 1400, # Gold in Transylvania

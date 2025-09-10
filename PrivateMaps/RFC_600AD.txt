@@ -1607,6 +1607,10 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=97,y=52
+	ImprovementType=IMPROVEMENT_ORCHARD
+EndPlot
+BeginPlot
 	x=97,y=53
 	RouteType=ROUTE_ROAD
 	BeginUnit

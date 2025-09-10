@@ -8692,7 +8692,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=52
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

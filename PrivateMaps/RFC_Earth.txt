@@ -43829,6 +43829,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=52
+	BonusType=BONUS_DATES
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -43842,6 +43843,7 @@ BeginPlot
 	x=97,y=54
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
