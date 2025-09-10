@@ -27293,7 +27293,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=55
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27729,11 +27728,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=55
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=62,y=56
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28167,7 +28168,6 @@ BeginPlot
 	x=63,y=55
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -29039,6 +29039,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=54
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

@@ -334,7 +334,7 @@ dConquerorPlotTypesDict = {
 
 dCivGroupResourcesDict = {
 	(63, 56) : ((iGreece, iRome, iFrance), iOlives, 600),
-	(62, 55) : ((iGreece, iRome, iFrance), iWine, 600),
+	(63, 55) : ((iGreece, iRome, iFrance), iWine, 600),
 	(60, 56) : ((iGreece, iRome, iFrance), iWine, 600),
 	(63, 59) : ((iGreece, iRome, iFrance), iWine, 600),
 	(65, 60) : ((iGreece, iRome, iFrance), iWine, 600),
