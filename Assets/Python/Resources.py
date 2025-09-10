@@ -285,6 +285,7 @@ dRemovedResourcesDict = {
 	(66, 46)  :  550, # Ivory in Tunisia
 	(58, 45)  :  550, # Ivory in Morocco
 	(94, 43)  :  550, # Ivory in Persia
+	(69, 49)  :  550, # Wheat in Sicily
 	(100, 50) : 1100, # Silver in Bactria
 	(79, 39)  : 1200, # Cotton in Nubia
 	(78, 56)  : 1300, # Silk in Thrace
@@ -296,10 +297,13 @@ dRemovedResourcesDict = {
 }
 
 dFeaturesDict = {
-	(8, 55) : (1850, iFloodPlains), # California
-	(8, 54) : (1850, iFloodPlains), # California
-	(8, 53) : (1850, iFloodPlains), # California
-	(9, 52) : (1850, iFloodPlains), # California
+	(66, 57) : (1100, iFloodPlains), # Lombardy
+	(68, 57) : (1100, iFloodPlains), # Lombardy
+	(67, 55) : (1100, iFloodPlains), # Tuscany
+	(8, 55)  : (1850, iFloodPlains), # California
+	(8, 54)  : (1850, iFloodPlains), # California
+	(8, 53)  : (1850, iFloodPlains), # California
+	(9, 52)  : (1850, iFloodPlains), # California
 }
 
 dRemovedFeaturesDict = {

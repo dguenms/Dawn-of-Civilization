@@ -4582,8 +4582,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=49
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
