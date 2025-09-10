@@ -101,7 +101,7 @@ def initBirths():
 
 @handler("GameStart")
 def initCamera():
-	plot(dCapitals[active()]).cameraLookAt()
+	plots.capital(active()).cameraLookAt()
 
 
 @handler("GameStart")
