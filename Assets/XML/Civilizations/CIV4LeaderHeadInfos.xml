@@ -34419,10 +34419,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_RAGNAR</Type>
-			<Description>TXT_KEY_LEADER_RAGNAR</Description>
-			<Civilopedia>TXT_KEY_LEADER_RAGNAR_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_RAGNAR</ArtDefineTag>
+			<Type>LEADER_CANUTE</Type>
+			<Description>TXT_KEY_LEADER_CANUTE</Description>
+			<Civilopedia>TXT_KEY_LEADER_CANUTE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_CANUTE</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
@@ -34851,12 +34851,7 @@
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
-			<ImprovementWeightModifiers>
-				<ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iWeightModifier>20</iWeightModifier>
-				</ImprovementWeightModifier>
-			</ImprovementWeightModifiers>
+			<ImprovementWeightModifiers/>
 			<DiplomacyIntroMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
@@ -35042,7 +35037,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ELECTIVE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>

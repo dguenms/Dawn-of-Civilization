@@ -1190,5 +1190,13 @@
 			<NoShaderNIF>Art/Leaderheads/Haakon/Haakonson.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Haakon/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CANUTE</Type>
+			<Button>Art/Leaderheads/Canute/Knut.dds</Button>
+			<NIF>Art/Leaderheads/Canute/ragnar_lodbrok.nif</NIF>
+			<KFM>Art/Leaderheads/Canute/ragnar_lodbrok.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Canute/ragnar_lodbrok_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Canute/brennus_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

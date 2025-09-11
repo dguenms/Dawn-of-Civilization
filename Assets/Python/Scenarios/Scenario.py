@@ -70,7 +70,7 @@ LEADER_DATES = {
 	iKammu: 790,
 	iOdaNobunaga: 1580,
 	iMeiji: 1870,
-	iRagnar: 800,
+	iCanute: 990,
 	iHaakon: 1200,
 	iChristian: 1620,
 	iGerhardsen: 1950,

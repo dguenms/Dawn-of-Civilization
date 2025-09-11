@@ -547,7 +547,7 @@ dStartingLeaders = [
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iMalays : iSriJayanasa,
-	iNorse : iRagnar,
+	iNorse : iCanute,
 	iTurks : iBumin,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
@@ -2645,7 +2645,7 @@ def leader(iPlayer):
 		
 		if iEra >= iRenaissance: return iChristian
 		
-		if capital in cities.rectangle(tNorway): return iHaakon
+		if getColumn(iPlayer) >= 8 and capital in cities.rectangle(tNorway): return iHaakon
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
