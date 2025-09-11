@@ -348,7 +348,8 @@ class Barbarians(object):
 			yield iUnit, iNumUnits
 		
 	def get_spawn_units(self):
-		return sum(([iUnit] * iNumUnits for iUnit, iNumUnits in self.get_units()), [])
+		units = sum(([iUnit] * iNumUnits for iUnit, iNumUnits in self.get_units()), [])
+		return sorted(units, key=lambda iUnit: infos.unit(iUnit).getDomainType())
 	
 	def get_spawn_plots(self):
 		spawn_area = plots.rectangle(self.area).passable().where(self.valid_spawn)
