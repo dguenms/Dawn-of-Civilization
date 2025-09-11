@@ -6813,7 +6813,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=62
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -6984,7 +6984,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=62
-	ImprovementType=IMPROVEMENT_PASTURE
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=83,y=63
