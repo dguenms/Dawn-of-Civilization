@@ -8,6 +8,7 @@ from Core import *
 lCivilizations = [
 	Civilization(
 		iNubia,
+		iLeader=iAmanirena,
 		iGold=50,
 		iStateReligion=iOrthodoxy,
 		lCivics=[iMonarchy, iSlavery, iRedistribution, iMonasticism],

@@ -37,6 +37,7 @@ LEADER_DATES = {
 	iHiram: -980,
 	iHannibal: -210,
 	iTaharqa: -690,
+	iAmanirena: -100,
 	iAhoeitu: 900,
 	iCyrus: -550,
 	iDarius: -520,

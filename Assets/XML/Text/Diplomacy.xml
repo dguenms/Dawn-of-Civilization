@@ -881,6 +881,71 @@
 		<Italian>There can be neither rain nor gold without sacrifice, [CT_NAME].</Italian>
 		<Spanish>There can be neither rain nor gold without sacrifice, [CT_NAME].</Spanish>
 	</TEXT>
+
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AMANIRENA_1</Tag>
+		<English>Greetings, [CT_NAME] of the [CT_EMPIRE]. Welcome to the land of riches and prosperity! We are pleased to serve you... to the degree that serves us.</English>
+		<French>Greetings, [CT_NAME] of the [CT_EMPIRE]. Welcome to the land of riches and prosperity! We are pleased to serve you... to the degree that serves us.</French>
+		<German>Greetings, [CT_NAME] of the [CT_EMPIRE]. Welcome to the land of riches and prosperity! We are pleased to serve you... to the degree that serves us.</German>
+		<Italian>Greetings, [CT_NAME] of the [CT_EMPIRE]. Welcome to the land of riches and prosperity! We are pleased to serve you... to the degree that serves us.</Italian>
+		<Spanish>Greetings, [CT_NAME] of the [CT_EMPIRE]. Welcome to the land of riches and prosperity! We are pleased to serve you... to the degree that serves us.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_AMANIRENA_1</Tag>
+		<English>Begone, [CT_NAME]! May the gods rain innumerable misfortunes upon you!</English>
+		<French>Begone, [CT_NAME]! May the gods rain innumerable misfortunes upon you!</French>
+		<German>Begone, [CT_NAME]! May the gods rain innumerable misfortunes upon you!</German>
+		<Italian>Begone, [CT_NAME]! May the gods rain innumerable misfortunes upon you!</Italian>
+		<Spanish>Begone, [CT_NAME]! May the gods rain innumerable misfortunes upon you!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_AMANIRENA_1</Tag>
+		<English>Peace with you? Ha! Anubis will be seeing you very soon. I guarantee you that!</English>
+		<French>Peace with you? Ha! Anubis will be seeing you very soon. I guarantee you that!</French>
+		<German>Peace with you? Ha! Anubis will be seeing you very soon. I guarantee you that!</German>
+		<Italian>Peace with you? Ha! Anubis will be seeing you very soon. I guarantee you that!</Italian>
+		<Spanish>Peace with you? Ha! Anubis will be seeing you very soon. I guarantee you that!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AMANIRENA_1</Tag>
+		<English>I am glad to have you in my palace, [CT_NAME]. Take some of my royal jewelry home... well, take just one piece!</English>
+		<French>I am glad to have you in my palace, [CT_NAME]. Take some of my royal jewelry home... well, take just one piece!</French>
+		<German>I am glad to have you in my palace, [CT_NAME]. Take some of my royal jewelry home... well, take just one piece!</German>
+		<Italian>I am glad to have you in my palace, [CT_NAME]. Take some of my royal jewelry home... well, take just one piece!</Italian>
+		<Spanish>I am glad to have you in my palace, [CT_NAME]. Take some of my royal jewelry home... well, take just one piece!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AMANIRENA_1</Tag>
+		<English>Oh, it's [CT_NAME] again... Don't touch the royal jewelry with your greasy little hands! What do you want?</English>
+		<French>Oh, it's [CT_NAME] again... Don't touch the royal jewelry with your greasy little hands! What do you want?</French>
+		<German>Oh, it's [CT_NAME] again... Don't touch the royal jewelry with your greasy little hands! What do you want?</German>
+		<Italian>Oh, it's [CT_NAME] again... Don't touch the royal jewelry with your greasy little hands! What do you want?</Italian>
+		<Spanish>Oh, it's [CT_NAME] again... Don't touch the royal jewelry with your greasy little hands! What do you want?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_LEADER_AMANIRENA_1</Tag>
+		<English>If you want to be friends with [OUR_CIV_SHORT], you must learn to esteem her ruler properly. Give me this now.</English>
+		<French>If you want to be friends with [OUR_CIV_SHORT], you must learn to esteem her ruler properly. Give me this now.</French>
+		<German>If you want to be friends with [OUR_CIV_SHORT], you must learn to esteem her ruler properly. Give me this now.</German>
+		<Italian>If you want to be friends with [OUR_CIV_SHORT], you must learn to esteem her ruler properly. Give me this now.</Italian>
+		<Spanish>If you want to be friends with [OUR_CIV_SHORT], you must learn to esteem her ruler properly. Give me this now.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_LEADER_AMANIRENA_1</Tag>
+		<English>Do you know how I got all these trinkets? I stole them from other rulers after I slayed them. Hand this over and you shall live.</English>
+		<French>Do you know how I got all these trinkets? I stole them from other rulers after I slayed them. Hand this over and you shall live.</French>
+		<German>Do you know how I got all these trinkets? I stole them from other rulers after I slayed them. Hand this over and you shall live.</German>
+		<Italian>Do you know how I got all these trinkets? I stole them from other rulers after I slayed them. Hand this over and you shall live.</Italian>
+		<Spanish>Do you know how I got all these trinkets? I stole them from other rulers after I slayed them. Hand this over and you shall live.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_LEADER_AMANIRENA_1</Tag>
+		<English>Hand this over or you will be drowned in the Nile and become crocodile chow!</English>
+		<French>Hand this over or you will be drowned in the Nile and become crocodile chow!</French>
+		<German>Hand this over or you will be drowned in the Nile and become crocodile chow!</German>
+		<Italian>Hand this over or you will be drowned in the Nile and become crocodile chow!</Italian>
+		<Spanish>Hand this over or you will be drowned in the Nile and become crocodile chow!</Spanish>
+	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>

@@ -7008,6 +7008,10 @@ Your stability level can change during a stability check. As long it is higher t
 		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_AMANIRENA_PEDIA</Tag>
+		<English>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING__PEDIA</Tag>
 		<English></English>
 		<French></French>

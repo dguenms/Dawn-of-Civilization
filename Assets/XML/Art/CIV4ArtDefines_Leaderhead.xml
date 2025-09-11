@@ -1174,5 +1174,13 @@
 			<NoShaderNIF>Art/Leaderheads/Dinga/cunhambebe.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Dinga/cunhambebe_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_AMANIRENA</Type>
+			<Button>Art/Leaderheads/Amanirena/Button_Aminatu.dds</Button>
+			<NIF>Art/Leaderheads/Amanirena/aminah.nif</NIF>
+			<KFM>Art/Leaderheads/Amanirena/catherine.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Amanirena/aminah.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Amanirena/suleiman_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -2560,6 +2560,9 @@ def leader(iPlayer):
 		if iEra >= iRenaissance: return iShivaji
 		
 		if getColumn(iPlayer) >= 5: return iChandragupta
+	
+	elif iCiv == iNubia:
+		if getColumn(iPlayer) >= 5: return iAmanirena
 		
 	elif iCiv == iChina:
 		if isCommunist(iPlayer) or isRepublic(iPlayer) and iEra >= iIndustrial: return iMao
