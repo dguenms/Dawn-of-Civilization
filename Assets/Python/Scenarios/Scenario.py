@@ -71,6 +71,7 @@ LEADER_DATES = {
 	iOdaNobunaga: 1580,
 	iMeiji: 1870,
 	iRagnar: 800,
+	iHaakon: 1200,
 	iChristian: 1620,
 	iGerhardsen: 1950,
 	iBumin: 550,

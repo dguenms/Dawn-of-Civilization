@@ -7010,6 +7010,18 @@ Your stability level can change during a stability check. As long it is higher t
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_AMANIRENA_PEDIA</Tag>
 		<English>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</English>
+		<French>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</French>
+		<German>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</German>
+		<Italian>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</Italian>
+		<Spanish>[H1]Amanirena[\H1][NEWLINE][BOLD]Kandake of Kush[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c.40 - 10 BCE[NEWLINE][NEWLINE][NEWLINE]Needs to be written.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HAAKON_PEDIA</Tag>
+		<English>[H1]Haakon IV Haakonson[\H1][NEWLINE][BOLD]King of Norway[\BOLD][NEWLINE][BOLD]Lived:[\BOLD] 1204 - 1263[NEWLINE][NEWLINE][BOLD]Background:[\BOLD][PARAGRAPH:1]Haakon was born into the troubled civil war era in Norway, but his reign eventually managed to put an end to the internal conflicts. At the start of his reign, during his minority, Earl Skule B&#229;rdsson served as regent. As a king of the Birkebeiner faction, Haakon defeated the uprising of the final Bagler royal pretender, Sigurd Ribbung, in 1227. He put a definitive end to the civil war era when he had Skule B&#229;rdsson killed in 1240, a year after Skule had himself proclaimed king in opposition to Haakon. Haakon thereafter formally appointed his own eldest son, Haakon the Young, as his co-regent.[PARAGRAPH:2]Under Haakon's rule, medieval Norway is considered to have reached its zenith or golden age. His reputation and formidable naval fleet allowed him to maintain friendships with both the pope and the Holy Roman Emperor, despite their conflict. He was at different points offered the imperial crown by the pope, the High Kingship of Ireland by a delegation of Irish kings, and the command of the French crusader fleet by the French king. He amplified the influence of European culture in Norway by importing and translating contemporary European literature into Old Norse, and by constructing monumental European-style stone buildings. In conjunction with this he employed an active and aggressive foreign policy, and at the end of his rule added Iceland and the Norse Greenland community to his kingdom, leaving the Norwegian realm at its territorial height.[PARAGRAPH:2]Although he for the moment managed to secure Norwegian control of the islands off the northern and western shores of Scotland, plus the Isle of Man, he fell ill and died when wintering in Orkney following some military engagements with the expanding Kingdom of Scotland. He was succeeded by his second son, Magnus VI.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING__PEDIA</Tag>

@@ -4427,6 +4427,10 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
+					<LeaderName>LEADER_HAAKON</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_CHRISTIAN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

@@ -1288,5 +1288,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_AMANIRENA</Tag>
 		<English>Amanirena</English>
+		<French>Amanirena</French>
+		<German>Amanirena</German>
+		<Italian>Amanirena</Italian>
+		<Spanish>Amanirena</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HAAKON</Tag>
+		<English>Haakon</English>
+		<French>Haakon</French>
+		<German>Haakon</German>
+		<Italian>Haakon</Italian>
+		<Spanish>Haakon</Spanish>
 	</TEXT>
 </Civ4GameText>

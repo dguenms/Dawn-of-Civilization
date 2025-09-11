@@ -2643,6 +2643,10 @@ def leader(iPlayer):
 	elif iCiv == iNorse:
 		if iEra >= iGlobal: return iGerhardsen
 		
+		if iEra >= iRenaissance: return iChristian
+		
+		if capital in cities.rectangle(tNorway): return iHaakon
+		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
 		
