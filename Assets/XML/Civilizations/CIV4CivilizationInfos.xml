@@ -1142,6 +1142,10 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
+					<LeaderName>LEADER_BOUDICA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_BRIAN_BORU</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

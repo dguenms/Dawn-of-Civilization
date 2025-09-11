@@ -2610,6 +2610,9 @@ def leader(iPlayer):
 		if player(iPlayer).getPeriod() == iPeriodInsularCelts:
 			return iBrianBoru
 		
+		if capital.getRegionID() == rBritain:
+			return iBoudica
+		
 	elif iCiv == iKorea:		
 		if iEra >= iRenaissance: return iSejong
 		

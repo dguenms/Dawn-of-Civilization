@@ -43,6 +43,7 @@ LEADER_DATES = {
 	iDarius: -520,
 	iShapur: 300,
 	iBrennus: -380,
+	iBoudica: 60,
 	iBrianBoru: 1000,
 	iScipio: -200,
 	iJuliusCaesar: -50,
