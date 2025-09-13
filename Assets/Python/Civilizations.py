@@ -2011,6 +2011,7 @@ dBuildingPreferences = {
 		iForbiddenPalace: 40,
 		iGrandCanal: 40,
 		iOrientalPearlTower: 40,
+		iTiananmenSquare: 40,
 		iDujiangyan: 30,
 		iTerracottaArmy: 30,
 		iPorcelainTower: 30,
@@ -2295,6 +2296,7 @@ dBuildingPreferences = {
 		iSaintSophia: 30,
 		iMountAthos: 20,
 		iMetropolitain: 20,
+		iTiananmenSquare: 20,
 	},
 	iOttomans : {
 		iTopkapiPalace: 60,
@@ -2380,6 +2382,7 @@ dBuildingPreferences = {
 		iLasLajasSanctuary: 20,
 	},
 	iArgentina : {
+		iFloralisGenerica: 40,
 		iGuadalupeBasilica: 30,
 		iLasLajasSanctuary: 30,
 		iWembley: 20,
