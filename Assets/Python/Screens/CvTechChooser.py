@@ -562,6 +562,7 @@ class CvTechChooser:
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_BONUS_REVEAL, tech, item, False)
 
 				elif type == "ObsoleteResource":
+					continue
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
 					screen.addDDSGFCAt(szObsolete, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
 
