@@ -2229,6 +2229,15 @@
 			<DefaultBuilding>BUILDING_SAGRADA_FAMILIA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_TIANANMEN_SQUARE</Type>
+			<Description>TXT_KEY_BUILDING_TIANANMEN_SQUARE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_TIANANMEN_SQUARE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CERN_RESEARCH_COMPLEX</Type>
 			<Description>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>

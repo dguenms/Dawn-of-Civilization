@@ -3322,6 +3322,22 @@
 		<Spanish>We received %d1 [ICON_GOLD] from the dissolution of our %s2 in %s3.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIANANMEN_SQUARE</Tag>
+		<English>Tiananmen Square</English>
+		<French>Tiananmen Square</French>
+		<German>Tiananmen Square</German>
+		<Italian>Tiananmen Square</Italian>
+		<Spanish>Tiananmen Square</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIANANMEN_SQUARE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</English>
+		<French>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</French>
+		<German>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
