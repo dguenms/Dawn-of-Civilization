@@ -9673,7 +9673,7 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 	int iPercentWasted = 0;
 
 	// House of Wisdom: attempt settling instead and do it that way
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM) && AI_join())
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HOUSE_OF_WISDOM) && AI_join())
 	{
 		return true;
 	}

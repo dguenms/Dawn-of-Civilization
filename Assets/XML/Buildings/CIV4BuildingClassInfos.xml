@@ -2364,6 +2364,15 @@
 			<DefaultBuilding>BUILDING_LOTUS_TEMPLE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FLORALIS_GENERICA</Type>
+			<Description>TXT_KEY_BUILDING_FLORALIS_GENERICA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FLORALIS_GENERICA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GLOBAL_SEED_VAULT</Type>
 			<Description>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>

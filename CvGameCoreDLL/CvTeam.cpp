@@ -4159,7 +4159,7 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 	}
 
 	// Leoreth: Salsal Buddha effect
-	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA))
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA))
 	{
 		if (!GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).isMinorCiv())
 		{
@@ -4173,7 +4173,7 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 	}
 
 	// Porcelain Tower effect: no open borders required for trade
-	if (!GET_TEAM(eIndex).isMinorCiv() && GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
+	if (!GET_TEAM(eIndex).isMinorCiv() && GET_PLAYER(getLeaderID()).isHasBuildingEffect(PORCELAIN_TOWER))
 	{
 		return true;
 	}
@@ -4261,12 +4261,12 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 		}
 
 		// Leoreth: Berlaymont effect
-		if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)BERLAYMONT))
+		if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(BERLAYMONT))
 		{
 			int iLoop;
 			for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
 			{
-				if (pLoopCity->isHasRealBuilding((BuildingTypes)BERLAYMONT))
+				if (pLoopCity->isHasRealBuilding(BERLAYMONT))
 				{
 					pLoopCity->changeFreeSpecialist(bNewValue ? 1 : -1);
 					break;

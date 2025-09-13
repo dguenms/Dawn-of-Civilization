@@ -242,7 +242,7 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 		}
 
 		// Leoreth: Escorial
-		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)ESCORIAL))
+		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(ESCORIAL))
 		{
 			if (eBonus == BONUS_SILVER || eBonus == BONUS_GOLD)
 			{
@@ -259,7 +259,7 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 		}
 
 		// Leoreth: Atomium
-		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)ATOMIUM))
+		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(ATOMIUM))
 		{
 			if (eBonus == BONUS_URANIUM || eBonus == BONUS_IRON || eBonus == BONUS_COPPER || eBonus == BONUS_ALUMINUM)
 			{

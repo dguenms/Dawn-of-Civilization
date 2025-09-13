@@ -1017,7 +1017,7 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 		case MISSION_DISCOVER:
 			if (pLoopUnit->canDiscover(pPlot))
 			{
-				if (!GET_PLAYER(pLoopUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+				if (!GET_PLAYER(pLoopUnit->getOwnerINLINE()).isHasBuildingEffect(HOUSE_OF_WISDOM))
 				{
 					return true;
 				}

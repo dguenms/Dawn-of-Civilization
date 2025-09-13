@@ -752,7 +752,7 @@ void CvPlot::doTurn()
 	// Leoreth: Great Wall effect
 	if (isWithinGreatWall() && isOwned())
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL))
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(GREAT_WALL))
 		{
 			for (int iI = 0; iI < getNumUnits(); iI++)
 			{
@@ -3279,7 +3279,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
 	if (isWithinGreatWall() && isOwned())
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
 		{
 			iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
 		}
@@ -4220,7 +4220,7 @@ bool CvPlot::isTradeNetwork(TeamTypes eTeam) const
 		return false;
 	}
 
-	if (atWar(eTeam, getTeam()) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
+	if (atWar(eTeam, getTeam()) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
 	{
 		return false;
 	}
@@ -4251,7 +4251,7 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 
-	if ((atWar(eTeam, getTeam()) || atWar(eTeam, pPlot->getTeam())) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
+	if ((atWar(eTeam, getTeam()) || atWar(eTeam, pPlot->getTeam())) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
 	{
 		return false;
 	}
@@ -7241,7 +7241,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			
 			if (pWorkingCity != NULL)
 			{
-				if (pWorkingCity->isHasBuildingEffect((BuildingTypes)TEMPLE_OF_KUKULKAN))
+				if (pWorkingCity->isHasBuildingEffect(TEMPLE_OF_KUKULKAN))
 				{
 					if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 					{
@@ -7252,7 +7252,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Leoreth: Great Adobe Mosque effect
-		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)GREAT_ADOBE_MOSQUE))
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect(GREAT_ADOBE_MOSQUE))
 		{
 			if ((getTerrainType() == TERRAIN_DESERT || getTerrainType() == TERRAIN_SEMIDESERT) && eYield == YIELD_COMMERCE)
 			{
@@ -7292,6 +7292,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (iYield >= GC.getYieldInfo(eYield).getGoldenAgeYieldThreshold())
 			{
 				iYield += GC.getYieldInfo(eYield).getGoldenAgeYield();
+
+				// Leoreth: Floralis Generica effect
+				if (eYield == YIELD_COMMERCE && GET_PLAYER(ePlayer).isHasBuildingEffect(FLORALIS_GENERICA))
+				{
+					iYield += 1;
+				}
 			}
 		}
 	}

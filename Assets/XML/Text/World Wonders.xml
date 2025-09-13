@@ -3338,6 +3338,30 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants a free [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT] in every city and reduces hurry costs by 33%.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLORALIS_GENERICA</Tag>
+		<English>Floralis Generica</English>
+		<French>Floralis Generica</French>
+		<German>Floralis Generica</German>
+		<Italian>Floralis Generica</Italian>
+		<Spanish>Floralis Generica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLORALIS_GENERICA_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants additional commerce during a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants additional commerce during a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants additional commerce during a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants additional commerce during a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Tiananmen Square[COLOR_REVERT] grants additional commerce during a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLORALIS_GENERICA_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

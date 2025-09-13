@@ -9740,7 +9740,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 				}
 			}
 
-			if (kUnit.getCombat() > 0 && pCity->isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+			if (kUnit.getCombat() > 0 && pCity->isHasBuildingEffect(CHAPULTEPEC_CASTLE))
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_EXPERIENCE", pCity->getCultureLevel(), GC.getBuildingInfo((BuildingTypes)CHAPULTEPEC_CASTLE).getText()));
@@ -13461,7 +13461,7 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		iHappy = city.isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS) ? city.goodHealth() - city.badHealth() : 0;
+		iHappy = city.isHasBuildingEffect(SHALIMAR_GARDENS) ? city.goodHealth() - city.badHealth() : 0;
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
@@ -17136,7 +17136,7 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 	// Lotus Temple effect
 	int iNonStateReligionFood = 0;
-	if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
+	if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect(LOTUS_TEMPLE))
 	{
 		iNonStateReligionFood += city.getReligionCount() - (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()) ? 1 : 0);
 	}
@@ -17446,14 +17446,6 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 					}
 				}
 			}
-
-			// Leoreth: Statue of Zeus effect
-			/*if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)STATUE_OF_ZEUS) && city.isHasRealBuilding(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
-			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT", 25, GC.getBuildingInfo(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)).getTextKeyWide()));
-				szBuffer.append(NEWLINE);
-				iBaseModifier += 25;
-			}*/
 		}
 
 		BuildingTypes eBuilding = city.getProductionBuilding();
@@ -18066,7 +18058,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 
 	// Leoreth: Himeji Castle effect
 	int iUnitCulture = 0;
-	if (eCommerceType == COMMERCE_CULTURE && city.isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(city.getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	if (eCommerceType == COMMERCE_CULTURE && city.isHasRealBuilding(HIMEJI_CASTLE) && GET_PLAYER(city.getOwner()).isHasBuildingEffect(HIMEJI_CASTLE))
 	{
 		CvUnit* pUnit;
 		for (int i = 0; i < city.plot()->getNumUnits(); i++)
@@ -18114,7 +18106,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 			}
 
 			// Leoreth: Himeji Castle effect: defense modifier counts as culture modifier
-			if (eCommerceType == COMMERCE_CULTURE && GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+			if (eCommerceType == COMMERCE_CULTURE && GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect(HIMEJI_CASTLE))
 			{
 				iBuildingMod += infoBuilding.getDefenseModifier();
 			}
@@ -18331,7 +18323,7 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 		}
 
 		// Lotus Temple effect
-		if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
+		if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect(LOTUS_TEMPLE))
 		{
 			iBaseProduction += city.getReligionCount() - (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()) ? 1 : 0);
 		}
@@ -18814,7 +18806,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 	}
 
 	// Leoreth: Shwedagon Paya effect
-	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect(SHWEDAGON_PAYA))
 	{
 		if (GET_PLAYER(city.getOwner()).getCommercePercent(COMMERCE_GOLD) > 0)
 		{
@@ -20157,7 +20149,7 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					}
 
 					// Leoreth: Channel Tunnel effect
-					if (GET_PLAYER(pCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
+					if (GET_PLAYER(pCity->getOwnerINLINE()).isHasBuildingEffect(CHANNEL_TUNNEL))
 					{
 						if (GET_PLAYER(pOtherCity->getOwnerINLINE()).AI_getAttitude(pCity->getOwnerINLINE()) >= ATTITUDE_FRIENDLY)
 						{

@@ -1339,7 +1339,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 				// Leoreth: Krak des Chevaliers effect
 				if (pDefender->getDamage() + iDefenderDamage >= pDefender->maxHitPoints())
 				{
-					if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KRAK_DES_CHEVALIERS))
+					if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect(KRAK_DES_CHEVALIERS))
 					{
 						if (pPlot->isCity())
 						{
@@ -1751,7 +1751,7 @@ void CvUnit::updateCombat(bool bQuick)
 			// to the square that they came from, before advancing.
 			getGroup()->clearMissionQueue();
 		}
-		else if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KRAK_DES_CHEVALIERS) && pDefender->plot()->isCity() && pDefender->getDomainType() == DOMAIN_LAND && pDefender->maxHitPoints() - pDefender->getDamage() < maxHitPoints() - getDamage())
+		else if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect(KRAK_DES_CHEVALIERS) && pDefender->plot()->isCity() && pDefender->getDomainType() == DOMAIN_LAND && pDefender->maxHitPoints() - pDefender->getDamage() < maxHitPoints() - getDamage())
 		{
 			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
 			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
@@ -6259,7 +6259,7 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 		pCity->changeFreeSpecialistCount(eSpecialist, 1);
 
 		// Leoreth: Neuschwanstein Castle effect
-		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)NEUSCHWANSTEIN))
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(NEUSCHWANSTEIN))
 		{
 			if (!GC.getSpecialistInfo(eSpecialist).isNoGlobalEffects())
 			{
@@ -6268,7 +6268,7 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 		}
 
 		// House of Wisdom
-		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HOUSE_OF_WISDOM))
 		{
 			discover();
 		}
@@ -6642,7 +6642,7 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture /= 100;
 
 	// Harbour Opera effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HARBOUR_OPERA))
 	{
 		iCulture *= 2;
 	}
@@ -7094,12 +7094,12 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 	}
 
 	// Leoreth: Bletchley Park effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BLETCHLEY_PARK))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(BLETCHLEY_PARK))
 	{
 		iModifier += 50;
 	}
 
-	if (GET_PLAYER(eTargetPlayer).isHasBuildingEffect((BuildingTypes)BLETCHLEY_PARK))
+	if (GET_PLAYER(eTargetPlayer).isHasBuildingEffect(BLETCHLEY_PARK))
 	{
 		iModifier -= 50;
 	}
@@ -7363,7 +7363,7 @@ bool CvUnit::build(BuildTypes eBuild)
 	int iWorkRate = workRate(false);
 
 	// Leoreth: Chateau Frontenac effect
-	if (eBuild != NO_BUILD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
+	if (eBuild != NO_BUILD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(FRONTENAC))
 	{
 		if (GC.getBuildInfo(eBuild).getTechPrereq() == RAILROAD)
 		{
@@ -7474,7 +7474,7 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 		changeLevel(1);
 
 		// Leoreth: Triumphal Arch effect
-		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)TRIUMPHAL_ARCH) ? getDamage() * 3 / 4 : getDamage() / 2;
+		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(TRIUMPHAL_ARCH) ? getDamage() * 3 / 4 : getDamage() / 2;
 		changeDamage(-iDamageHealed);
 	}
 
@@ -9794,7 +9794,7 @@ int CvUnit::currInterceptionProbability() const
 		int iInterceptProbability = maxInterceptionProbability();
 
 		// Leoreth: Iron Dome effect
-		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)IRON_DOME))
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(IRON_DOME))
 		{
 			if (plot()->getOwner() == getOwnerINLINE())
 			{
@@ -11124,7 +11124,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 	int iUnitExperience = iChange;
 
 	// Leoreth: Terracotta Army effect
-	if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
+	if (GET_PLAYER(getOwner()).isHasBuildingEffect(TERRACOTTA_ARMY) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
 	{
 		iMax = MAX_INT;
 	}
@@ -11142,7 +11142,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 		}
 
 		// Leoreth: Terracotta Army effect
-		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY))
+		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect(TERRACOTTA_ARMY))
 		{
 			kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
 		}

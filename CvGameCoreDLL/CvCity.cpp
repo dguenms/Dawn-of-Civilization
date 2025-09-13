@@ -357,7 +357,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 
 	// Leoreth: Las Lajas Sanctuary effect: +10% heal rate in all cities
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LAS_LAJAS_SANCTUARY))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(LAS_LAJAS_SANCTUARY))
 	{
 		changeHealRate(10);
 	}
@@ -1262,7 +1262,7 @@ void CvCity::doTurn()
 	}
 
 	// Leoreth: ITER effect
-	if (isHasBuildingEffect((BuildingTypes)ITER))
+	if (isHasBuildingEffect(ITER))
 	{
 		int iOldCommerce = getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITER).getBuildingClassType(), YIELD_COMMERCE);
 
@@ -2907,7 +2907,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 	// Leoreth: Chapultepec Castle
 	if (eUnit != NO_UNIT)
 	{
-		if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+		if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect(CHAPULTEPEC_CASTLE))
 		{
 			iExperience += getCultureLevel();
 		}
@@ -4922,7 +4922,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeBuildingUnignorableBombardDefense(GC.getBuildingInfo(eBuilding).getUnignorableBombardDefenseModifier() * iChange);
 
 		// Leoreth: Himeji Castle effect: defense modifiers affect culture
-		if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+		if (GET_PLAYER(getOwner()).isHasBuildingEffect(HIMEJI_CASTLE))
 		{
 			changeCommerceRateModifier(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
 		}
@@ -4930,7 +4930,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Leoreth: Mount Athos effect
 		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
 		{
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
 			{
 				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
 			}
@@ -5576,7 +5576,7 @@ int CvCity::getHurryPercentAnger(int iExtra) const
 
 	int iHurryPercentAnger = (((((getHurryAngerTimer() - 1) / flatHurryAngerLength()) + 1) * GC.getDefineINT("HURRY_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
 
-	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	if (isHasBuildingEffect(BLUE_MOSQUE))
 	{
 		return std::min(iHurryPercentAnger, GC.getPERCENT_ANGER_DIVISOR());
 	}
@@ -5594,7 +5594,7 @@ int CvCity::getConscriptPercentAnger(int iExtra) const
 
 	int iConscriptPercentAnger = (((((getConscriptAngerTimer() - 1) / flatConscriptAngerLength()) + 1) * GC.getDefineINT("CONSCRIPT_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
 
-	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	if (isHasBuildingEffect(BLUE_MOSQUE))
 	{
 		return std::min(iConscriptPercentAnger, GC.getPERCENT_ANGER_DIVISOR());
 	}
@@ -5611,7 +5611,7 @@ int CvCity::getDefyResolutionPercentAnger(int iExtra) const
 
 	int iDefyResolutionPercentAnger = (((((getDefyResolutionAngerTimer() - 1) / flatDefyResolutionAngerLength()) + 1) * GC.getDefineINT("DEFY_RESOLUTION_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
 
-	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	if (isHasBuildingEffect(BLUE_MOSQUE))
 	{
 		return std::min(iDefyResolutionPercentAnger, 100);
 	}
@@ -5760,7 +5760,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getTempHappiness()); // Leoreth: more than +1 temporary happiness
 
 	// Leoreth: Shalimar Gardens effect
-	if (isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
+	if (isHasBuildingEffect(SHALIMAR_GARDENS))
 	{
 		iHappiness += std::max(0, goodHealth() - badHealth());
 	}
@@ -6027,7 +6027,7 @@ int CvCity::foodDifference(bool bBottom) const
 		return 0;
 	}
 
-	if (isFoodProduction() /*&& !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS)*/)
+	if (isFoodProduction())
 	{
 		iDifference = std::min(0, (getYieldRate(YIELD_FOOD) - foodConsumption()));
 	}
@@ -6821,7 +6821,7 @@ void CvCity::changeBaseGreatPeopleRate(int iChange)
 
 int CvCity::getGreatPeopleRateModifier() const
 {
-	if (isHasBuildingEffect((BuildingTypes)SHWEDAGON_PAYA))
+	if (isHasBuildingEffect(SHWEDAGON_PAYA))
 	{
 		return m_iGreatPeopleRateModifier + GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD);
 	}
@@ -7588,7 +7588,7 @@ void CvCity::updateFeatureHealth()
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
 					bool bCongoUP = (getCivilizationType() == CONGO && (eFeature == FEATURE_JUNGLE || eFeature == FEATURE_MARSH));
-					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HANGING_GARDENS) && eFeature == FEATURE_FLOOD_PLAINS);
+					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HANGING_GARDENS) && eFeature == FEATURE_FLOOD_PLAINS);
 
 					if (!bCongoUP && !bHangingGardens)
 					{
@@ -9694,14 +9694,14 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 		{
 			if (eOldValue != NO_CULTURELEVEL && eNewValue != NO_CULTURELEVEL)
 			{
-				if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
+				if (isHasBuildingEffect(IMAGE_OF_THE_WORLD_SQUARE))
 				{
 					changeExtraTradeRoutes(eNewValue - eOldValue);
 				}
 
-				if (isHasBuildingEffect((BuildingTypes)AQUA_APPIA))
+				if (isHasBuildingEffect(AQUA_APPIA))
 				{
-					changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
+					changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
 				}
 			}
 
@@ -10242,7 +10242,7 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 	}
 
 	// Lotus Temple effect
-	if (eIndex == YIELD_FOOD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
+	if (eIndex == YIELD_FOOD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(LOTUS_TEMPLE))
 	{
 		iBaseYieldRate += (getReligionCount() - (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) ? 1 : 0));
 	}
@@ -10481,7 +10481,7 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			}
 
 			// Leoreth: Channel Tunnel effect
-			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(CHANNEL_TUNNEL))
 			{
 				if (GET_PLAYER(pOtherCity->getOwnerINLINE()).AI_getAttitude(getOwnerINLINE()) >= ATTITUDE_FRIENDLY)
 				{
@@ -10884,7 +10884,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 	iBaseCommerceRate += 100 * countSatellites() * GET_PLAYER(getOwnerINLINE()).getSatelliteExtraCommerce(eIndex);
 
 	// Leoreth: Himeji Castle effect
-	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect(HIMEJI_CASTLE))
 	{
 		CvUnit* pUnit;
 		for (int i = 0; i < plot()->getNumUnits(); i++)
@@ -19509,7 +19509,7 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 	// Pyramid of the Sun: +3 great people rate per citizen
 	if (eSpecialist == SPECIALIST_CITIZEN)
 	{
-		if (isHasBuildingEffect((BuildingTypes)PYRAMID_OF_THE_SUN))
+		if (isHasBuildingEffect(PYRAMID_OF_THE_SUN))
 		{
 			iGreatPeopleRate += 3;
 		}

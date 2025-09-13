@@ -1981,7 +1981,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
 	// Topkapi Palace effect: initial production in conquered cities
-	if (bConquest && isHasBuildingEffect((BuildingTypes)TOPKAPI_PALACE))
+	if (bConquest && isHasBuildingEffect(TOPKAPI_PALACE))
 	{
 		pNewCity->changeOverflowProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2, pNewCity->getProductionModifier());
 	}
@@ -7297,6 +7297,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			}
 		}
 	}
+
+	// Floralis Generica
+	else if (eBuilding == FLORALIS_GENERICA)
+	{
+		updateYield();
+	}
 }
 
 
@@ -8911,7 +8917,7 @@ int CvPlayer::getReligionAnarchyLength() const
 	}
 
 	// Pantheon: no anarchy converting from Pagan Religion
-	if (getStateReligion() == NO_RELIGION && isHasBuildingEffect((BuildingTypes)PANTHEON))
+	if (getStateReligion() == NO_RELIGION && isHasBuildingEffect(PANTHEON))
 	{
 		return 0;
 	}
@@ -8950,7 +8956,7 @@ int CvPlayer::unitsRequiredForGoldenAge() const
 	int iNumUnitGoldenAges = getNumUnitGoldenAges();
 
 	// Leoreth: Eiffel Tower effect: golden age requires one fewer great person
-	if (isHasBuildingEffect((BuildingTypes)EIFFEL_TOWER))
+	if (isHasBuildingEffect(EIFFEL_TOWER))
 	{
 		iNumUnitGoldenAges = std::max(0, iNumUnitGoldenAges - 1);
 	}
@@ -9466,7 +9472,7 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 		// Leoreth: Amber Room effect
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isHasBuildingEffect((BuildingTypes)AMBER_ROOM))
+			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isHasBuildingEffect(AMBER_ROOM))
 			{
 				if (GET_TEAM(getTeam()).isDefensivePact(GET_PLAYER((PlayerTypes)iI).getTeam()))
 				{
@@ -10854,7 +10860,7 @@ int CvPlayer::getNoForeignTradeCount() const
 
 bool CvPlayer::isNoForeignTrade() const
 {
-	return (getNoForeignTradeCount() > 0 && !isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER));
+	return (getNoForeignTradeCount() > 0 && !isHasBuildingEffect(PORCELAIN_TOWER));
 }
 
 
@@ -14034,7 +14040,7 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	}
 
 	// Leoreth: Forbidden Palace effect
-	if (isHasBuildingEffect((BuildingTypes)FORBIDDEN_PALACE))
+	if (isHasBuildingEffect(FORBIDDEN_PALACE))
 	{
 		iTotalUpkeep *= 2;
 		iTotalUpkeep /= 3;
@@ -15570,7 +15576,7 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 				iMissionCost = iBaseMissionCost + ((100 + kMission.getBuyTechCostFactor()) * iProdCost) / 100;
 
 				// Leoreth: Hermitage effect
-				if (isHasBuildingEffect((BuildingTypes)HERMITAGE))
+				if (isHasBuildingEffect(HERMITAGE))
 				{
 					iMissionCost *= 3;
 					iMissionCost /= 4;
@@ -25422,7 +25428,7 @@ int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
 
 	if (eCommerce == COMMERCE_RESEARCH)
 	{
-		if (isHasBuildingEffect((BuildingTypes)HUBBLE_SPACE_TELESCOPE))
+		if (isHasBuildingEffect(HUBBLE_SPACE_TELESCOPE))
 		{
 			iCommerce += 3;
 		}
@@ -25673,7 +25679,7 @@ int CvPlayer::getShrineIncomeLimit() const
 
 	iShrineIncomeLimit += getShrineIncomeLimitChange();
 
-	if (isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK))
+	if (isHasBuildingEffect(DOME_OF_THE_ROCK))
 	{
 		iShrineIncomeLimit *= 2;
 	}

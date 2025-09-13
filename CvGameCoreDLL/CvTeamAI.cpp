@@ -1371,7 +1371,7 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
 
 	// Leoreth: Hermitage effect
-	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)HERMITAGE))
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(HERMITAGE))
 	{
 		iValue *= 3;
 		iValue /= 4;
@@ -2556,7 +2556,7 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	int iNumCities = getNumCities() + GET_TEAM(eTeam).getNumCities();
 
 	// Leoreth: Amber Room effect
-	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)AMBER_ROOM))
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(AMBER_ROOM))
 	{
 		iModifier -= 60;
 
@@ -2638,7 +2638,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 			iMaxEra = iCurrentEra;
 		}
 
-		if (GET_PLAYER(GET_TEAM(*it).getLeaderID()).isHasBuildingEffect((BuildingTypes)BERLAYMONT))
+		if (GET_PLAYER(GET_TEAM(*it).getLeaderID()).isHasBuildingEffect(BERLAYMONT))
 		{
 			bBerlaymont = true;
 		}
