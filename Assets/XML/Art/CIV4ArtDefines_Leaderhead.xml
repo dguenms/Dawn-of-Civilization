@@ -1206,5 +1206,13 @@
 			<NoShaderNIF>Art/Leaderheads/Khmelnytsky/bismarck.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Khmelnytsky/bismarck_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ERLANDER</Type>
+			<Button>Art/Leaderheads/Erlander/Erlander.dds</Button>
+			<NIF>Art/Leaderheads/Erlander/fdr.nif</NIF>
+			<KFM>Art/Leaderheads/Erlander/fdr.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Erlander/fdr_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Erlander/fdr_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

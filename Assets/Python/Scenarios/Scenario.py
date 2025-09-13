@@ -122,6 +122,7 @@ LEADER_DATES = {
 	iNaresuan: 1590,
 	iMongkut: 1860,
 	iGustav: 1620,
+	iErlander: 1945,
 	iIvan: 1540,
 	iPeter: 1690,
 	iCatherine: 1770,

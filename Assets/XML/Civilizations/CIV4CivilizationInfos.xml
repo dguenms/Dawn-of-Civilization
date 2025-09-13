@@ -5708,6 +5708,10 @@
 					<LeaderName>LEADER_GUSTAV</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
+				<Leader>
+					<LeaderName>LEADER_ERLANDER</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_NORSE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_NORSE_SELECT</CivilizationSelectionSound>

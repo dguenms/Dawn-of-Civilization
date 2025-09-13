@@ -1147,7 +1147,7 @@ iVictorySecularism = 11
 
 
 #leaders
-iNumLeaders = 147
+iNumLeaders = 148
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iDjoser, iHatshepsut, iRamesses, iPtolemy, iBaibars, iNasser, iSargon, 
 iHammurabi, iWentAntu, iAshurbanipal, iQinShiHuang, iTaizong, iHongwu, iMao, iMursili, iPericles, iAlexanderTheGreat, 
 iGeorge, iAsoka, iChandragupta, iShivaji, iGandhi, iHiram, iHannibal, iTaharqa, iAmanirena, iAhoeitu, 
@@ -1159,10 +1159,10 @@ iTamerlane, iHarun, iSaladin, iSongtsen, iLobsangGyatso, iRahman, iYaqub, iHayam
 iPhilip, iFranco, iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa, iCharles, iFrancis, iAnawrahta, 
 iBayinnaung, iYaroslav, iKhmelnytsky, iLeLoi, iHoChiMinh, iDawud, iCasimir, iSobieski, iPilsudski, iWalesa, 
 iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, iCavour, iMussolini, iGenghisKhan, iKublaiKhan, 
-iMontezuma, iTughluq, iAkbar, iBhutto, iNaresuan, iMongkut, iGustav, iIvan, iPeter, iCatherine, 
-iAlexanderI, iStalin, iMehmed, iSuleiman, iAtaturk, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, 
-iFrederick, iBismarck, iHitler, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, 
-iCardenas, iBolivar, iPedro, iVargas, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
+iMontezuma, iTughluq, iAkbar, iBhutto, iNaresuan, iMongkut, iGustav, iErlander, iIvan, iPeter, 
+iCatherine, iAlexanderI, iStalin, iMehmed, iSuleiman, iAtaturk, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, 
+iWilliam, iFrederick, iBismarck, iHitler, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, 
+iSantaAnna, iCardenas, iBolivar, iPedro, iVargas, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
 
 dResurrectionLeaders = CivDict({
 	iChina : iHongwu,

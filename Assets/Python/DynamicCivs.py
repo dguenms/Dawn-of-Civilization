@@ -2744,6 +2744,9 @@ def leader(iPlayer):
 		if iEra >= iGlobal: return iBhutto
 	
 		if getColumn(iPlayer) >= 10: return iAkbar
+	
+	elif iCiv == iSweden:
+		if iEra >= iGlobal: return iErlander
 		
 	elif iCiv == iRussia:
 		if iEra >= iIndustrial:

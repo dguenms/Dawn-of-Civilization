@@ -1412,6 +1412,10 @@
 							<LeaderType>LEADER_DAWUD</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_ERLANDER</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
