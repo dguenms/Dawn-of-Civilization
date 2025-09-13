@@ -947,6 +947,14 @@
 		<Spanish>Hand this over or you will be drowned in the Nile and become crocodile chow!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHMELNYTSKY_1</Tag>
+		<English>Greetings, pan! I - [OUR_NAME], Ataman of the Zaporozhian army! What are looking for on the green Ukraine?</English>
+		<French>Greetings, pan! I - [OUR_NAME], Ataman of the Zaporozhian army! What are looking for on the green Ukraine?</French>
+		<German>Greetings, pan! I - [OUR_NAME], Ataman of the Zaporozhian army! What are looking for on the green Ukraine?</German>
+		<Italian>Greetings, pan! I - [OUR_NAME], Ataman of the Zaporozhian army! What are looking for on the green Ukraine?</Italian>
+		<Spanish>Greetings, pan! I - [OUR_NAME], Ataman of the Zaporozhian army! What are looking for on the green Ukraine?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>

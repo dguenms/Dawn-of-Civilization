@@ -102,6 +102,7 @@ LEADER_DATES = {
 	iAnawrahta: 1050,
 	iBayinnaung: 1550,
 	iYaroslav: 1050,
+	iKhmelnytsky: 1600,
 	iDawud: 1300,
 	iCasimir: 1340,
 	iSobieski: 1680,

@@ -1198,5 +1198,13 @@
 			<NoShaderNIF>Art/Leaderheads/Canute/ragnar_lodbrok_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Canute/brennus_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KHMELNYTSKY</Type>
+			<Button>Art/Leaderheads/Khmelnytsky/Khmelnytsky.dds</Button>
+			<NIF>Art/Leaderheads/Khmelnytsky/bismarck.nif</NIF>
+			<KFM>Art/LeaderHeads/Bismarck/bismarck.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Khmelnytsky/bismarck.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Khmelnytsky/bismarck_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

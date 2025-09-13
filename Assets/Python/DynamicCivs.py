@@ -2700,6 +2700,9 @@ def leader(iPlayer):
 	elif iCiv == iBurma:
 		if iEra >= iRenaissance: return iBayinnaung
 	
+	elif iCiv == iRus:
+		if iEra >= iRenaissance: return iKhmelnytsky
+	
 	elif iCiv == iVietnam:
 		if isCommunist(iPlayer) or isRepublic(iPlayer): return iHoChiMinh
 			
