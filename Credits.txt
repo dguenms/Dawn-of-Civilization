@@ -26,7 +26,7 @@ LEADERHEADS
 * The Capo: Cavour, Charles V, Nasser, Yaroslav, Mongkut, Afonso, Hitler, Chandragupta, George I (Stambolov), Tun Perak (Askia), Ptolemy
 * IgorS: Charles V, Nasser, Yaroslav, Mongkut, Afonso, Brian Boru, Tun Perak (Askia)
 * Amra: Naresuan (Ramkhamhaeng), Hiram, Akbar, Basil, Francis
-* Ekmek: Meiji, Ataturk, Khomeini, Mussolini, Akbar, Basil, Hitler, Pilsudski, Castilla (O'Higgins)
+* Ekmek: Meiji, Ataturk, Khomeini, Mussolini, Akbar, Basil, Hitler, Pilsudski, Castilla (O'Higgins), Amanirena (Amina)
 * cfkane: Afonso, Le Loi (Liu Bei)
 * Methyl Orange: Kammu (Jimmu), Ashurbanipal
 * mechaerik: Franco
@@ -45,14 +45,15 @@ LEADERHEADS
 * Smeagolheart: Hitler
 * Chuggi: Hitler
 * Firaxis: Qin Shi Huang, Taizong (Chinese release)
-* Novator: Lorenzo de' Medici (Simone Boccanegra), Casimir III, Gerhardsen, Vargas, Murshili (Mursilis), Taharqa
-* Xyth: Aho'eitu (Tu'itatui)
+* Novator: Casimir III, Gerhardsen, Vargas, Murshili (Mursilis), Taharqa
+* Xyth: Aho'eitu (Tu'itatui), Erlander (Lester B. Pearson), Sri Jayanasa (Dharmasetu), Lorenzo
 * cybrxkhan: Kanishka, Bayinnaung, Suleiman ibn Dawud (Abd el-Krim)
-* ramzay1945: Casimir III, Gustavus Adolphus, MacDonald
+* ramzay1945: Casimir III, Gustavus Adolphus, MacDonald, Khmelnytsky
 * Civciv5: Krishna Deva Raya (Dharmapala)
 * AbsintheRed: Topiltzin
 * il marchese: Anawrahta (Ramkhamhaeng)
 * Refar: Ho Chi Minh
+* Wonderblunder: Haakon
 * Bautos42: texture and background changes for various included leaders
 
 From mods, without explicit mention of the original creators
