@@ -3762,7 +3762,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>12.0</fScale>
-			<fInterfaceScale>10.0</fInterfaceScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Tiananmen/tiananmen.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Tiananmen/tiananmen.dds</Button>
