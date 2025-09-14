@@ -6,18 +6,19 @@ from Events import handler
 
 
 dCompanyTechs = {
-	iSilkRoute        : [iCurrency],
-	iTradingCompany   : [iExploration],
-	iCerealIndustry   : [iEconomics, iBiology],
-	iFishingIndustry  : [iEconomics, iRefrigeration],
-	iTextileIndustry  : [iEconomics, iThermodynamics],
-	iSteelIndustry    : [iEconomics, iMetallurgy],
-	iOilIndustry      : [iEconomics, iRefining],
-	iLuxuryIndustry   : [iEconomics, iConsumerism],
-	iComputerIndustry : [iEconomics, iComputers],
+	iSilkRoute          : (iCurrency,),
+	iTradingCompany     : (iExploration,),
+	iCerealIndustry     : (iEconomics, iBiology),
+	iFishingIndustry    : (iEconomics, iRefrigeration),
+	iTextileIndustry    : (iEconomics, iThermodynamics),
+	iSteelIndustry      : (iEconomics, iMetallurgy),
+	iOilIndustry        : (iEconomics, iRefining),
+	iLuxuryIndustry     : (iEconomics, iConsumerism),
+	iAutomobileIndustry : (iEconomics, iInfrastructure),
+	iComputerIndustry   : (iEconomics, iComputers),
 }
 
-tCompaniesLimit = (16, 20, 24, 16, 20, 20, 10, 16, 20) # kind of arbitrary currently, see how this plays out
+tCompaniesLimit = (16, 20, 24, 16, 20, 20, 10, 16, 16, 20) # kind of arbitrary currently, see how this plays out
 
 dCompanyExpiry = defaultdict({
 	iSilkRoute : 1500,
@@ -48,7 +49,9 @@ def getCompanyLimit(iCompany):
 	if not isCompanyValid(iCompany):
 		return 0
 	
-	return tCompaniesLimit[iCompany]
+	iEnabledCount = players.major().existing().count(lambda p: canHaveCompany(iCompany, p))
+	
+	return min(3 * iEnabledCount, tCompaniesLimit[iCompany])
 	
 	
 def canHaveCompany(iCompany, iPlayer):
@@ -157,6 +160,11 @@ def getCityValue(city, iCompany):
 		if not city.isCoastal(20):
 			return -1
 	
+	# automobile industry - only with oil
+	if iCompany == iAutomobileIndustry:
+		if city.getNumBonuses(iOil) == 0:
+			return -1
+	
 	# penalty for silk route if coastal (mitigatable by harbor)
 	if iCompany == iSilkRoute:
 		if city.isCoastal(20):
@@ -223,6 +231,14 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iDepartmentStore)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHotel)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iNationalGallery)): iValue += 3
+	
+	elif iCompany == iAutomobileIndustry:
+		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 2
+		if city.hasBuilding(iAssemblyPlant): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iPublicTransportation)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iAutomatedFactory)): iValue += 2
+		if city.hasBuilding(unique_building(iOwner, iIronworks)): iValue += 3
 
 	elif iCompany == iComputerIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
@@ -240,46 +256,58 @@ def getCityValue(city, iCompany):
 	iValue += city.getTradeRoutes() - 1
 	
 	# resources
-	iTempValue = 0
-	bFound = False
+	iResourceValue = 0
 	for i in range(6):
 		iBonus = infos.corporation(iCompany).getPrereqBonus(i)
 		if iBonus > -1:
 			if city.getNumBonuses(iBonus) > 0: 
-				bFound = True
 				if iCompany in [iFishingIndustry, iCerealIndustry, iTextileIndustry]:
-					iTempValue += city.getNumBonuses(iBonus)
+					iResourceValue += city.getNumBonuses(iBonus)
 				elif iCompany == iOilIndustry:
-					iTempValue += city.getNumBonuses(iBonus) * 4
+					iResourceValue += city.getNumBonuses(iBonus) * 4
 				elif iCompany == iSilkRoute:
 					if iBonus == iSilk:
-						iTempValue += city.getNumBonuses(iBonus) * 4
+						iResourceValue += city.getNumBonuses(iBonus) * 4
 					else:
-						iTempValue += city.getNumBonuses(iBonus) * 2
+						iResourceValue += city.getNumBonuses(iBonus) * 2
+				elif iCompany == iAutomobileIndustry:
+					if iBonus == iRubber:
+						iResourceValue += city.getNumBonuses(iBonus) * 4
+					else:
+						iResourceValue += city.getNumBonuses(iBonus) * 2
 				else:
-					iTempValue += city.getNumBonuses(iBonus) * 2
+					iResourceValue += city.getNumBonuses(iBonus) * 2
+	
+	if iCompany == iAutomobileIndustry:
+		iResourceValue += city.getNumBonuses(iOil)
 				
-	if not bFound: 
-		return -1
-	
-	iValue += iTempValue
-	
-	# competition
-	if iCompany == iCerealIndustry and city.isHasCorporation(iFishingIndustry): iValue /= 2
-	elif iCompany == iFishingIndustry and city.isHasCorporation(iCerealIndustry): iValue /= 2
-	elif iCompany == iSteelIndustry and city.isHasCorporation(iTextileIndustry): iValue /= 2
-	elif iCompany == iTextileIndustry and city.isHasCorporation(iSteelIndustry): iValue /= 2
-	elif iCompany == iOilIndustry and city.isHasCorporation(iComputerIndustry): iValue /= 2
-	elif iCompany == iComputerIndustry and city.isHasCorporation(iOilIndustry): iValue /= 2
-	
-	# threshold
-	if iValue < 4:
+	if iResourceValue == 0: 
 		return -1
 		
 	iCompanyCount = player(iOwner).countCorporations(iCompany)
 	iCompanyLimit = getCompanyLimit(iCompany)
 	
-	if iCompanyCount > iCompanyLimit / 4: iValue -= 1
-	if iCompanyCount > iCompanyLimit / 2: iValue -= 1
+	iResourceValue /= (1 + iCompanyCount)
 	
+	iValue += iResourceValue
+	
+	# competition
+	if iCompany == iCerealIndustry and city.isHasCorporation(iFishingIndustry): iValue /= 2
+	elif iCompany == iFishingIndustry and city.isHasCorporation(iCerealIndustry): iValue /= 2
+	elif iCompany == iSteelIndustry and (city.isHasCorporation(iTextileIndustry) or city.isHasCorporation(iAutomobileIndustry)): iValue /= 2
+	elif iCompany == iTextileIndustry and city.isHasCorporation(iSteelIndustry): iValue /= 2
+	elif iCompany == iOilIndustry and (city.isHasCorporation(iComputerIndustry) or city.isHasCorporation(iAutomobileIndustry)): iValue /= 2
+	elif iCompany == iAutomobileIndustry and (city.isHasCorporation(iSteelIndustry) or city.isHasCorporation(iOilIndustry)): iValue /= 2
+	elif iCompany == iComputerIndustry and city.isHasCorporation(iOilIndustry): iValue /= 2
+	
+	# threshold
+	if iValue < 4:
+		return -1
+	
+	if iCompanyCount > iCompanyLimit / 2: 
+		iValue /= 2
+	elif iCompanyCount > iCompanyLimit / 4: 
+		iValue *= 2
+		iValue /= 3
+		
 	return iValue

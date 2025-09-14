@@ -50,20 +50,20 @@ class CvCorporationScreen:
 		self.X_EXIT = 994
 		self.Y_EXIT = 726
 
+		self.X_CORPORATION_AREA = 45
+		self.Y_CORPORATION_AREA = 84
+		self.W_CORPORATION_AREA = 934
+		self.H_CORPORATION_AREA = 180
+
 		self.LEFT_EDGE_TEXT = 10
-		self.X_CORPORATION_START = 65 # edead (155) # Leoreth (70)
-		self.DX_CORPORATION = 100 # edead (116) # Leoreth (113)
+		self.X_CORPORATION_START = self.BUTTON_SIZE # edead (155) # Leoreth (70)
+		#self.DX_CORPORATION = 100 # edead (116) # Leoreth (113)
 		self.Y_CORPORATION = 70 # edead (35)
 		self.Y_GREAT_PERSON = 90
 		self.Y_BONUSES = 112 # edead (77)
 		self.Y_FOUNDED = 112
 		self.Y_HEADQUARTERS = 142
 		self.Y_CORPORATION_NAME = 58
-
-		self.X_CORPORATION_AREA = 45
-		self.Y_CORPORATION_AREA = 84
-		self.W_CORPORATION_AREA = 934
-		self.H_CORPORATION_AREA = 180
 
 		self.X_CITY1_AREA = 45
 		self.X_CITY2_AREA = 522
@@ -101,6 +101,10 @@ class CvCorporationScreen:
 		self.W_INFLUENCES_AREA = self.X_CITY2_AREA + self.W_CITY_AREA - self.X_INFLUENCES_AREA
 		self.H_INFLUENCES_AREA = self.H_REQUIREMENTS_AREA
 		self.INFLUENCES_ID =  "InfluencessAreaWidget"
+	
+	@property
+	def DX_CORPORATION(self):
+		return (self.W_CORPORATION_AREA - 2*self.X_CORPORATION_START) / (gc.getNumCorporationInfos() - 1)
 			
 	def getScreen(self):
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.CORPORATION_SCREEN)
@@ -194,7 +198,7 @@ class CvCorporationScreen:
 					iNum += 1
 					szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 					
-					if iNum > 3:
+					if iNum > 2:
 						iNum = 0
 						szListLabels.append(szList)
 						szList = u""

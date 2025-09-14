@@ -854,8 +854,8 @@ iPaganVictory = iNumReligions
 iSecularVictory = iNumReligions + 1
 
 # corporations
-iNumCorporations = 9
-(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCorporations)
+iNumCorporations = 10
+(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iAutomobileIndustry, iComputerIndustry) = range(iNumCorporations)
 
 # initialise tech variables to unit indices from XML
 

@@ -108,7 +108,7 @@
 			<Button>Art/Interface/Buttons/Corporations/Cereal.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_GRANARY</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_FISHING_INDUSTRY</Type>
@@ -146,7 +146,7 @@
 			<Button>Art/Interface/Buttons/Corporations/Fishing.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_LIGHTHOUSE</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_TEXTILE_INDUSTRY</Type>
@@ -184,7 +184,7 @@
 			<Button>Art/Interface/Buttons/Corporations/Textile.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_FACTORY</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_STEEL_INDUSTRY</Type>
@@ -199,7 +199,6 @@
 			<iHealth>-2</iHealth>
 			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
 			<PrereqBonuses>
-				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
@@ -222,7 +221,7 @@
 			<Button>Art/Interface/Buttons/Corporations/Steel.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_IRONWORKS</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_OIL_INDUSTRY</Type>
@@ -255,7 +254,7 @@
 			<Button>Art/Interface/Buttons/Corporations/Oil.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_DRYDOCK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_LUXURY_INDUSTRY</Type>
@@ -295,7 +294,45 @@
 			<Button>Art/Interface/Buttons/Corporations/Luxury.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_OBSERVATORY</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_AUTOMOBILE_INDUSTRY</Type>
+			<Description>TXT_KEY_CORPORATION_AUTOMOBILE_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_AUTOMOBILE_INDUSTRY_PEDIA</Civilopedia>
+			<TechPrereq>TECH_INFRASTRUCTURE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>0</iMaintenance>
+			<iHappiness>-2</iHappiness>
+			<iHealth>-2</iHealth>
+			<iMaxConsumableBonuses>12</iMaxConsumableBonuses>
+			<PrereqBonuses>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_ALUMINUM</BonusType>
+				<BonusType>BONUS_RUBBER</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>200</iCommerceProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+				<iYieldProduced>75</iYieldProduced>
+				<iYieldProduced>0</iYieldProduced>
+			</YieldsProduced>
+			<Button>Art/Interface/Buttons/Corporations/Automobiles.dds</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_RECYCLING_CENTER</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_COMPUTER_INDUSTRY</Type>
@@ -333,7 +370,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,2</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_LABORATORY</Sound>
 		</CorporationInfo>
 	</CorporationInfos>
 </Civ4CorporationInfo>
