@@ -182,27 +182,54 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iStable)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iPostOffice)): iValue += 1
+		
+		if city.isHasBuildingEffect(iSalsalBuddha): iValue += 2
+		
+		if owner.isHasBuildingEffect(iSalsalBuddha): iValue += 1
+		if owner.isHasBuildingEffect(iSanMarcoBasilica): iValue += 1
+		if owner.isHasBuildingEffect(iSilverTreeFountain): iValue += 1
 
 	elif iCompany == iTradingCompany:
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCoffeehouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iCustomsHouse)): iValue += 1
+		if city.hasBuilding(iFeitoria): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iWarehouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iTradingCompanyBuilding)): iValue += 2
+		
+		if city.isHasBuildingEffect(iBourse): iValue += 2
+		if city.isHasBuildingEffect(iTorreDeBelem): iValue += 2
+		
+		if owner.isHasBuildingEffect(iBourse): iValue += 1
+		if owner.isHasBuildingEffect(iTorreDeBelem): iValue += 1
 
 	elif iCompany == iCerealIndustry:
 		if city.hasBuilding(unique_building(iOwner, iGranary)): iValue += 1
-		if city.hasBuilding(unique_building(iOwner, iSewer)): iValue += 1
-		if city.hasBuilding(unique_building(iOwner, iEstate)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iGrocer)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iGrainSilo)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iVerticalFarm)): iValue += 1
+		
+		if city.isHasBuildingEffect(iFloralisGenerica): iValue += 2
+		if city.isHasBuildingEffect(iGlobalSeedVault): iValue += 2
+		
+		if owner.isHasBuildingEffect(iFloralisGenerica): iValue += 1
+		if owner.isHasBuildingEffect(iGlobalSeedVault): iValue += 1
 
 	elif iCompany == iFishingIndustry:
 		if city.hasBuilding(unique_building(iOwner, iLighthouse)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iWharf)): iValue += 1
+		if city.hasBuilding(unique_building(iOwner, iAbattoir)): iValue += 1
+		if city.hasBuilding(iColdStoragePlant): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
+		
+		if city.isHasBuildingEffect(iBellRockLighthouse): iValue += 2
+		if city.isHasBuildingEffect(iTsukijiFishMarket): iValue += 2
+		
+		if owner.isHasBuildingEffect(iBellRockLighthouse): iValue += 1
+		if owner.isHasBuildingEffect(iTsukijiFishMarket): iValue += 1
 		
 	elif iCompany == iTextileIndustry:
 		if city.hasBuilding(unique_building(iOwner, iMarket)): iValue += 1
@@ -217,6 +244,14 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iRailwayStation)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIronworks)): iValue += 3
+		
+		if city.isHasBuildingEffect(iEiffelTower): iValue += 2
+		if city.isHasBuildingEffect(iCrystalPalace): iValue += 2
+		if city.isHasBuildingEffect(iAtomium): iValue += 2
+		
+		if owner.isHasBuildingEffect(iEiffelTower): iValue += 1
+		if owner.isHasBuildingEffect(iCrystalPalace): iValue += 1
+		if owner.isHasBuildingEffect(iAtomium): iValue += 1
 
 	elif iCompany == iOilIndustry:
 		if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
@@ -224,11 +259,17 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iContainerTerminal)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iStockExchange)): iValue += 3
+		
+		if city.isHasBuildingEffect(iBurjKhalifa): iValue += 2
+		
+		if owner.isHasBuildingEffect(iBurjKhalifa): iValue += 1
 
 	elif iCompany == iLuxuryIndustry:
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iJeweller)): iValue += 1
+		if city.hasBuilding(iArtStudio): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iDepartmentStore)): iValue += 1
+		if city.hasBuilding(iMall): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iHotel)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iNationalGallery)): iValue += 3
 	
@@ -236,6 +277,7 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 2
 		if city.hasBuilding(iAssemblyPlant): iValue += 1
+		if city.hasBuilding(iZaibatsu): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iPublicTransportation)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iAutomatedFactory)): iValue += 2
 		if city.hasBuilding(unique_building(iOwner, iIronworks)): iValue += 3
@@ -246,7 +288,21 @@ def getCityValue(city, iCompany):
 		if city.hasBuilding(unique_building(iOwner, iUniversity)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iSupercomputer)): iValue += 1
 		if city.hasBuilding(unique_building(iOwner, iFiberNetwork)): iValue += 1
-		if city.hasBuilding(unique_building(iOwner, iCERN)): iValue += 3
+		
+		if city.isHasBuildingEffect(iMenloPark): iValue += 2
+		if city.isHasBuildingEffect(iCERN): iValue += 2
+		if city.isHasBuildingEffect(iGoldenGateBridge): iValue += 2
+		if city.isHasBuildingEffect(iOrientalPearlTower): iValue += 2
+		if city.isHasBuildingEffect(iSkytree): iValue += 2
+		
+		if owner.isHasBuildingEffect(iMenloPark): iValue += 1
+		if owner.isHasBuildingEffect(iCERN): iValue += 1
+		if owner.isHasBuildingEffect(iGoldenGateBridge): iValue += 1
+		if owner.isHasBuildingEffect(iOrientalPearlTower): iValue += 1
+		if owner.isHasBuildingEffect(iSkytree): iValue += 1
+	
+	if city.isHasBuildingEffect(iWorldTradeCenter): iValue += 2
+	if owner.isHasBuildingEffect(iWorldTradeCenter): iValue += 1
 	
 	# needs at least a few requirements
 	if iValue <= 0:
