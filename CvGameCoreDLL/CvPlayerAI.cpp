@@ -7085,7 +7085,7 @@ int CvPlayerAI::AI_bonusVal(BonusTypes eBonus, int iChange) const
 	int iValue = 0;
 
 	iValue += AI_baseBonusVal(eBonus, iChange);
-	iValue += AI_corporationBonusVal(eBonus);
+	iValue += AI_corporationBonusVal(eBonus, iChange);
 
 	return iValue;
 }
@@ -7607,8 +7607,14 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 	return m_aiBonusValue[eBonus];
 }
 
-int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
+int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus, int iChange) const
 {
+	// Leoreth: corporation impact limited to 12 resources
+	if (getNumAvailableBonuses(eBonus) + iChange > 12)
+	{
+		return 0;
+	}
+	
 	int iValue = 0;
 	int iCityCount = getNumCities();
 	iCityCount += iCityCount / 6 + 1;
@@ -7732,7 +7738,7 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		return DENIAL_JOKING;
 	}*/
 
-	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > AI_corporationBonusVal(eBonus) * 2)
+	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > AI_corporationBonusVal(eBonus))
 	{
 		return DENIAL_JOKING;
 	}

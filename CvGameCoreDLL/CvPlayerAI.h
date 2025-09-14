@@ -147,7 +147,7 @@ public:
 	int AI_baseBonusVal(BonusTypes eBonus, int iChange = 1) const;
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
-	int AI_corporationBonusVal(BonusTypes eBonus) const;
+	int AI_corporationBonusVal(BonusTypes eBonus, int iChange = 1) const;
 
 	// Leoreth: determine value provided by additional resource instances
 	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
