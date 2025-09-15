@@ -1395,7 +1395,7 @@ void CvCityAI::AI_chooseProduction()
 		{
 			int iTotalCities = kPlayer.getNumCities();
 			int iSettlerSeaNeeded = std::min(iNumWaterAreaCitySites, ((iTotalCities + 4) / 8) + 1);
-			if (kPlayer.getCapitalCity() != NULL)
+			/*if (kPlayer.getCapitalCity() != NULL)
 			{
 				int iOverSeasColonies = iTotalCities - kPlayer.getCapitalCity()->area()->getCitiesPerPlayer(getOwnerINLINE());;
 				int iLoop = 2;
@@ -1406,16 +1406,10 @@ void CvCityAI::AI_chooseProduction()
 					iLoop += iLoop + 2;
 				}
 				iSettlerSeaNeeded += std::min(kPlayer.AI_totalUnitAIs(UNITAI_WORKER) / 4, iExtras);
-			}
+			}*/
 			if (bAssault)
 			{
 				iSettlerSeaNeeded = std::min(1, iSettlerSeaNeeded);
-			}
-
-			// Leoreth: more settlers for important overseas colonies
-			if (iWaterAreaBestSettlerValue >= 20)
-			{
-				iSettlerSeaNeeded += 1;
 			}
 
 			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) < iSettlerSeaNeeded)
