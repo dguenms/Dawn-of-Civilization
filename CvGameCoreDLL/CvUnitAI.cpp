@@ -5404,20 +5404,16 @@ void CvUnitAI::AI_settlerSeaMove()
 		{
 			if (AI_settlerSeaFerry())
 			{
-				if (bLog) log("settler sea ferry");
 				return;
 			}
 		}
 	}
-
-	if (bLog) log(CvWString::format(L"settler count %d, worker count %d, current cargo %d, max cargo %d", iSettlerCount, iWorkerCount, getCargo(), cargoSpace()));
 
 	// Leoreth: if we have a settler, pick up a worker - but only if enough space for a defender
 	if (iSettlerCount > 0 && iWorkerCount == 0 && cargoSpaceAvailable() > 1)
 	{
 		if (AI_pickup(UNITAI_WORKER))
 		{
-			if (bLog) log("pickup worker");
 			return;
 		}
 	}
