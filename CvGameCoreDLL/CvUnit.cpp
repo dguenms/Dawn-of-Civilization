@@ -546,7 +546,7 @@ void CvUnit::convert(CvUnit* pUnit)
 */
 		// From Mongoose SDK
 		// Check cargo types and capacity when upgrading transports
-		if (cargoSpaceAvailable(aCargoUnits[i]->getSpecialUnitType(), aCargoUnits[i]->getDomainType()) > 0)
+		if (AI_getUnitAIType() != UNITAI_EXPLORE_SEA && cargoSpaceAvailable(aCargoUnits[i]->getSpecialUnitType(), aCargoUnits[i]->getDomainType()) > 0)
 		{
 			aCargoUnits[i]->setTransportUnit(this);
 		}
@@ -8037,7 +8037,7 @@ void CvUnit::upgrade(UnitTypes eUnit)
 	UnitAITypes eUnitAIType = AI_getUnitAIType();
 
 	// Leoreth: make sure that upgrading to sea explore units actually makes a sea explore unit
-	if (GC.getUnitInfo(eUnit).getDefaultUnitAIType() == UNITAI_EXPLORE_SEA)
+	if (!isHuman() && GC.getUnitInfo(eUnit).getDefaultUnitAIType() == UNITAI_EXPLORE_SEA && GET_PLAYER(getOwnerINLINE()).AI_totalUnitAIs(UNITAI_EXPLORE_SEA) == 0)
 	{
 		eUnitAIType = UNITAI_EXPLORE_SEA;
 	}
