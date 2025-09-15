@@ -8004,6 +8004,9 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 
 			if (pEjectedUnit != NULL)
 			{
+				// Leoreth: this unit should become a defender
+				pEjectedUnit->AI_setUnitAIType(UNITAI_CITY_DEFENSE);
+
 				pEjectedUnit->getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				if (pEjectedUnit->getGroup() == pOldGroup || pEjectedUnit == this)
 				{
