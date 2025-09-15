@@ -327,6 +327,7 @@ public:
 	
 	void AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int iOuterRadius) const;
 	
+	bool AI_canUpdateCitySites() const;
 	void AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) const;
 	void AI_invalidateCitySites(int iMinFoundValueThreshold) const;
 	bool AI_isPlotCitySite(CvPlot* pPlot) const;

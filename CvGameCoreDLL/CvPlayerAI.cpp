@@ -907,7 +907,7 @@ void CvPlayerAI::AI_updateFoundValues(bool bStartingLoc) const
 			GC.getMapINLINE().plotByIndexINLINE(iI)->setFoundValue(getID(), -1);
 		}
 	}
-	else
+	else if (AI_canUpdateCitySites())
 	{
 		if (!isBarbarian())
 		{
@@ -18427,6 +18427,21 @@ int CvPlayerAI::AI_getMinFoundValue() const
 	}
 
 	return iValue;
+}
+
+bool CvPlayerAI::AI_canUpdateCitySites() const
+{
+	CvPlot* pCitySitePlot;
+	for (int iI = 0; iI < AI_getNumCitySites(); iI++)
+	{
+		pCitySitePlot = AI_getCitySite(iI);
+		if (AI_plotTargetMissionAIs(pCitySitePlot, MISSIONAI_FOUND) > 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
 }
 
 void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) const
