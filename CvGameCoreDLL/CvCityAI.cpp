@@ -3228,7 +3228,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 	BuildingClassTypes eBuildingClass = (BuildingClassTypes) kBuilding.getBuildingClassType();
 	int iLimitedWonderLimit = limitedWonderClassLimit(eBuildingClass);
-	bool bIsLimitedWonder = (iLimitedWonderLimit >= 0);
+	bool bIsLimitedWonder = iLimitedWonderLimit >= 0 && kBuilding.getProductionCost() >= 0; // Leoreth: not for unbuildable buildings - selection of GP action targets should not be impacted
 
 	int iBuildingWeight = AI_buildingWeight(eBuilding);
 
@@ -4440,8 +4440,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 						{
 							aiCommerceRank[iI] = findCommerceRateRank((CommerceTypes) iI);
 						}
-						if (bIsLimitedWonder && ((aiCommerceRank[iI] > (3 + iLimitedWonderLimit)))
-							|| (bCulturalVictory1 && (iI == COMMERCE_CULTURE) && (aiCommerceRank[iI] == 1)))
+
+						if (bIsLimitedWonder && ((aiCommerceRank[iI] > (3 + iLimitedWonderLimit))) || (bCulturalVictory1 && (iI == COMMERCE_CULTURE) && (aiCommerceRank[iI] == 1)))
 						{
 							iTempValue *= -1;
 
