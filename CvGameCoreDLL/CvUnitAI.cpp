@@ -5383,8 +5383,7 @@ void CvUnitAI::AI_settlerSeaMove()
 	int iSettlerCount = getUnitAICargo(UNITAI_SETTLE);
 	int iWorkerCount = getUnitAICargo(UNITAI_WORKER);
 
-	if ((iSettlerCount > 0) && (isFull() ||
-			 (GET_PLAYER(getOwnerINLINE()).AI_unitTargetMissionAIs(this, MISSIONAI_LOAD_SETTLER) == 0)))
+	if ((iSettlerCount > 0) && (isFull() || (GET_PLAYER(getOwnerINLINE()).AI_unitTargetMissionAIs(this, MISSIONAI_LOAD_SETTLER) == 0)))
 	{
 		if (AI_settlerSeaTransport())
 		{
@@ -5399,37 +5398,27 @@ void CvUnitAI::AI_settlerSeaMove()
 		}
 	}
 
-	if (plot()->isCity() && !hasCargo())
-	{
-		AreaAITypes eAreaAI = area()->getAreaAIType(getTeam());
-		if ((eAreaAI == AREAAI_ASSAULT) || (eAreaAI == AREAAI_ASSAULT_MASSING))
-		{
-			CvArea* pWaterArea = plot()->waterArea();
-			FAssert(pWaterArea != NULL);
-			if (pWaterArea != NULL)
-			{
-				if (GET_PLAYER(getOwnerINLINE()).AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) > 1)
-				{
-					if (GET_PLAYER(getOwnerINLINE()).AI_unitValue(getUnitType(), UNITAI_ASSAULT_SEA, pWaterArea) > 0)
-					{
-						AI_setUnitAIType(UNITAI_ASSAULT_SEA);
-						AI_assaultSeaMove();
-						return;
-					}
-				}
-			}
-		}
-	}
-
-	if ((iWorkerCount > 0)
-		&& GET_PLAYER(getOwnerINLINE()).AI_unitTargetMissionAIs(this, MISSIONAI_LOAD_SETTLER) == 0)
+	if ((iWorkerCount > 0) && GET_PLAYER(getOwnerINLINE()).AI_unitTargetMissionAIs(this, MISSIONAI_LOAD_SETTLER) == 0)
 	{
 		if (isFull() || (iSettlerCount == 0))
 		{
 			if (AI_settlerSeaFerry())
 			{
+				if (bLog) log("settler sea ferry");
 				return;
 			}
+		}
+	}
+
+	if (bLog) log(CvWString::format(L"settler count %d, worker count %d, current cargo %d, max cargo %d", iSettlerCount, iWorkerCount, getCargo(), cargoSpace()));
+
+	// Leoreth: if we have a settler, pick up a worker - but only if enough space for a defender
+	if (iSettlerCount > 0 && iWorkerCount == 0 && cargoSpaceAvailable() > 1)
+	{
+		if (AI_pickup(UNITAI_WORKER))
+		{
+			if (bLog) log("pickup worker");
+			return;
 		}
 	}
 
@@ -5458,10 +5447,33 @@ void CvUnitAI::AI_settlerSeaMove()
 		}
 	}
 
-
 	if (AI_pickup(UNITAI_WORKER))
 	{
 		return;
+	}
+
+	if (plot()->isCity() && !hasCargo())
+	{
+		AreaAITypes eAreaAI = area()->getAreaAIType(getTeam());
+		if ((eAreaAI == AREAAI_ASSAULT) || (eAreaAI == AREAAI_ASSAULT_MASSING))
+		{
+			CvArea* pWaterArea = plot()->waterArea();
+			FAssert(pWaterArea != NULL);
+			if (pWaterArea != NULL)
+			{
+				int iSettlerSeaNeeded = std::max(1, GET_PLAYER(getOwnerINLINE()).AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLE));
+
+				if (GET_PLAYER(getOwnerINLINE()).AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) > iSettlerSeaNeeded)
+				{
+					if (GET_PLAYER(getOwnerINLINE()).AI_unitValue(getUnitType(), UNITAI_ASSAULT_SEA, pWaterArea) > 0)
+					{
+						AI_setUnitAIType(UNITAI_ASSAULT_SEA);
+						AI_assaultSeaMove();
+						return;
+					}
+				}
+			}
+		}
 	}
 
 	if (AI_retreatToCity(true))
