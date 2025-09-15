@@ -1699,7 +1699,7 @@ def specificAdjective(iPlayer):
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_KHMER_CAMBODIAN"
 		
-		if iEra >= iMedieval:
+		if iEra >= iMedieval or bEmpire:
 			return civAdjective(iPlayer)
 		
 		if getColumn(iPlayer) >= 6:

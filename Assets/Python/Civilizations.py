@@ -2377,8 +2377,8 @@ dBuildingPreferences = {
 		iMetropolitain: 20,
 	},
 	iMexico : {
-		iGuadalupeBasilica: 40,
-		iChapultepecCastle: 40,
+		iGuadalupeBasilica: 50,
+		iChapultepecCastle: 50,
 		iLasLajasSanctuary: 20,
 	},
 	iArgentina : {
