@@ -678,11 +678,14 @@ def giveColonists(iPlayer):
 			
 			# help England with settling Canada and Australia
 			if iCiv == iEngland:
-				colonialCities = cities.regions(rOntario, rMaritimes, rAustralia).owner(iPlayer)
-				if colonialCities:
-					sourceCities = colonialCities
+				sourceCities += cities.regions(rOntario, rMaritimes, rAustralia).owner(iPlayer)
+			
+			sites = plots.sites(iPlayer).coastal() or plots.sites(iPlayer)
+			if sites:
+				city = sourceCities.coastal().closest(sites.first())
+			else:
+				city = sourceCities.coastal().minimum(lambda city: abs(city.getX() - iMiddleAtlantic))
 					
-			city = sourceCities.coastal().minimum(lambda city: abs(city.getX() - iMiddleAtlantic))
 			if city:
 				tSeaPlot = findSeaPlots(city, 1, iCiv)
 				if not tSeaPlot: tSeaPlot = city
