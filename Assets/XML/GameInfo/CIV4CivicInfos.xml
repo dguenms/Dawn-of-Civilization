@@ -1100,7 +1100,7 @@
 			<TechPrereq>TECH_GENERALSHIP</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Hegemony.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iCaptureGoldModifier>25</iCaptureGoldModifier>
 			<iOccupationTimeChange>-1</iOccupationTimeChange>
 			<BuildingProductionModifiers>
