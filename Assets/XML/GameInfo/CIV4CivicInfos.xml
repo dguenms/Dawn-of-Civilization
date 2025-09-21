@@ -1150,7 +1150,7 @@
 			<Description>TXT_KEY_CIVIC_COLONIALISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_COLONIALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_COLONIALISM_STRATEGY</Strategy>
-			<TechPrereq>TECH_GEOGRAPHY</TechPrereq>
+			<TechPrereq>TECH_EXPLORATION</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Colonialism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
