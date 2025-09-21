@@ -311,8 +311,8 @@
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<CapitalYieldModifiers>
 				<iYield>0</iYield>
-				<iYield>50</iYield>
-				<iYield>50</iYield>
+				<iYield>35</iYield>
+				<iYield>35</iYield>
 			</CapitalYieldModifiers>
 		</CivicInfo>
 		<CivicInfo>
