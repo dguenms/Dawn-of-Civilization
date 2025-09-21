@@ -298,6 +298,12 @@ def markResourceSpawns(iResource):
 def markAllResourceSpawns():
 	for iResource in range(iNumBonuses):
 		markResourceSpawns(iResource)
+	
+	for tile, (tCivs, iResource, iYear) in dCivGroupResourcesDict.items():
+		createLandmark(tile, "%s %s %s" % (infos.bonus(iResource).getText(), " ".join([infos.civ(iCiv).getDescription() for iCiv in tCivs]), iYear))
+	
+	for tile, (iCiv, iResource) in dSpawnResourcesDict.items():
+		createLandmark(tile, "%s %s" % (infos.bonus(iResource).getText(), infos.civ(iCiv).getDescription()))
 
 
 def markTerrainSpawns():
