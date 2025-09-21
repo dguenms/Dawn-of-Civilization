@@ -10287,11 +10287,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getDomesticGreatGeneralRateModifier() * getNumMilitaryUnits()) / 100);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
-	iValue += -((kCivic.getColonyMaintenanceModifier() * std::max(0, (countColonies() - 3))) / 8);
+	iValue += -((kCivic.getColonyMaintenanceModifier() * std::max(0, (countColonies() - 3))) / 15);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * calculateDistanceMaintenance()) / 100);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
-	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 15);
+	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 12);
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
 	iValue += (kCivic.getMilitaryProductionModifier() * getNumCities() * iWarmongerPercent) / (bWarPlan ? 300 : 500 );
 	iValue += (kCivic.getBaseFreeUnits() / 2);
@@ -10319,7 +10319,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
-	iValue += kCivic.getCulturedCityFreeSpecialists() * std::min(getNumCities(), GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities() - 1) * 12; // Leoreth
+	iValue += kCivic.getCulturedCityFreeSpecialists() * std::min(getNumCities(), GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities() - 1) * std::min(8, getAveragePopulation() / 2); // Leoreth
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
@@ -10332,7 +10332,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			{
 				if (canConstruct((BuildingTypes)iI) || (canConstruct((BuildingTypes)iI, false, false, false, true) && canResearch((TechTypes)kBuilding.getPrereqAndTech())))
 				{
-					iValue += iTempValue * 40 / 100;
+					iValue += iTempValue * 25 / 100;
 				}
 			}
 		}
@@ -10340,7 +10340,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	iTradeCommerceModifier = (AI_averageTradeMultiplier()) * std::max(AI_averageCommerceMultiplier(COMMERCE_GOLD), AI_averageCommerceMultiplier(COMMERCE_RESEARCH)) / 100;
 
-	iValue += kCivic.getTradeRoutes() * (std::max(0, iConnectedForeignCities - getNumCities() * 3) + getNumCities() * 2) * 3 * iTradeCommerceModifier / 100;
+	iValue += kCivic.getTradeRoutes() * (std::max(0, iConnectedForeignCities - getNumCities() * 3) + getNumCities() * 2) * 2 * iTradeCommerceModifier / 100;
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * /*3*/ 4) : 0);
 	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
 	iValue += (100 + kCivic.getDefensivePactTradeModifier()) * std::min(getNumCities(), iConnectedForeignCities) * iTradeCommerceModifier * 2 / 100 / 100 / 100; // Leoreth
@@ -10404,7 +10404,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 /* orginal bts code
 		iValue += (getNumCities() * 6 * AI_getHealthWeight(isCivic(eCivic) ? -kCivic.getExtraHealth() : kCivic.getExtraHealth(), 1)) / 100;
 */
-		iValue += (getNumCities() * 3 * AI_getHealthWeight(kCivic.getExtraHealth(), 1)) / 100;
+		iValue += (getNumCities() * 4 * AI_getHealthWeight(kCivic.getExtraHealth(), 1)) / 100;
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -10497,10 +10497,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			iValue += AI_getHappinessWeight(kCivic.getStateReligionHappiness(), 1) * iHighestReligionCount / getNumCities() / 30;
 		}
-		iValue += ((kCivic.getStateReligionGreatPeopleRateModifier() * iHighestReligionCount) / 20);
+		iValue += ((kCivic.getStateReligionGreatPeopleRateModifier() * iHighestReligionCount) / 16);
 		iValue += (kCivic.getStateReligionGreatPeopleRateModifier() / 4);
 		iValue += ((kCivic.getStateReligionUnitProductionModifier() * iHighestReligionCount) / 4);
-		iValue += ((kCivic.getStateReligionBuildingProductionModifier() * iHighestReligionCount) / 3);
+		iValue += ((kCivic.getStateReligionBuildingProductionModifier() * iHighestReligionCount * 2) / 5);
 		iValue += (kCivic.getStateReligionFreeExperience() * iHighestReligionCount * ((bWarPlan) ? 6 : 2));
 	}
 
@@ -10677,7 +10677,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			if (getNumCities() > 0 && canConstruct(eBuilding))
 			{
-				iValue += (kBuilding.getAdvisorType() == ADVISOR_ECONOMY || kBuilding.getAdvisorType() == ADVISOR_SCIENCE ? 2 : 1) * kBuilding.getProductionCost() * kCivic.getBuildingProductionModifier(iI) * std::max(0, (kBuilding.isWater() ? iNumCoastalCities : getNumCities()) - getBuildingClassCount((BuildingClassTypes)iI)) / (getNumCities()) / 100 / 120;
+				iValue += (kBuilding.getAdvisorType() == ADVISOR_ECONOMY || kBuilding.getAdvisorType() == ADVISOR_SCIENCE ? 2 : 1) * kBuilding.getProductionCost() * kCivic.getBuildingProductionModifier(iI) * std::max(0, (kBuilding.isWater() ? iNumCoastalCities : getNumCities()) - getBuildingClassCount((BuildingClassTypes)iI)) / (getNumCities()) / 100 / 200;
 			}
 		}
 
@@ -10686,7 +10686,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			if (kBuilding.getGlobalReligionCommerce() != NO_RELIGION && isHasBuilding(eBuilding))
 			{
-				iValue += std::max(0, std::min(kCivic.getShrineIncomeLimitChange(), GC.getGameINLINE().countReligionLevels((ReligionTypes)kBuilding.getGlobalReligionCommerce()) - MAX_COM_SHRINE)) * AI_commerceWeight(COMMERCE_GOLD);
+				iValue += std::max(0, std::min(kCivic.getShrineIncomeLimitChange(), GC.getGameINLINE().countReligionLevels((ReligionTypes)kBuilding.getGlobalReligionCommerce()) - MAX_COM_SHRINE)) * AI_commerceWeight(COMMERCE_GOLD) / 100;
 			}
 		}
 	}
@@ -10717,11 +10717,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				{
 					// Leoreth: gold per production is times 100 now
 					//iTempValue += AI_yieldWeight(YIELD_PRODUCTION) * (GC.getHurryInfo((HurryTypes)iI).isUnits() && bWarPlan ? 2 : 1) * iGoldRate / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction() / 100;
-					iTempValue += AI_yieldWeight(YIELD_PRODUCTION) * (GC.getHurryInfo((HurryTypes)iI).isUnits() && bWarPlan ? 2 : 1) * iGoldRate / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction();
+					iTempValue += AI_yieldWeight(YIELD_PRODUCTION) * (GC.getHurryInfo((HurryTypes)iI).isUnits() && bWarPlan ? 2 : 1) * iGoldRate / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction() / 2;
 				}
 			}
 			//iTempValue += (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() * getNumCities() * (bWarPlan ? 2 : 1)) / 5;
-			iTempValue += (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() * getNumCities() * (bWarPlan ? 2 : 1)) / 4;
+			iTempValue += (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() * getNumCities() * (bWarPlan ? 2 : 1)) / 3;
 			iValue += iTempValue;
 			
 		}
@@ -10747,20 +10747,14 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth: domain experience
-	int iDomainDivisor;
-	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
-	{
-		if (iI == DOMAIN_LAND) iDomainDivisor = 1;
-		else if (iI == DOMAIN_SEA) iDomainDivisor = 2;
-		else iDomainDivisor = 5;
-
-		iValue += (kCivic.getDomainExperienceModifier(iI) * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / (iDomainDivisor * 100);
-	}
+	iValue += kCivic.getDomainExperienceModifier(DOMAIN_LAND) * (2 * getNumCities() - iNumCoastalCities) * (bWarPlan ? 2 : 1) * iWarmongerPercent / 100;
+	iValue += kCivic.getDomainExperienceModifier(DOMAIN_SEA) * std::max(0, 2 * iNumCoastalCities - getNumCities()) * (bWarPlan ? 3 : 2) * iWarmongerPercent / 3 / 100;
+	iValue += kCivic.getDomainExperienceModifier(DOMAIN_AIR) * getNumCities() * (AI_isDoStrategy(AI_STRATEGY_AIR_BLITZ) ? 2 : 1) * (bWarPlan ? 3 : 2) * iWarmongerPercent / 5 / 100;
 
 	// Leoreth: capture workers
 	if (kCivic.isSlavery())
 	{
-		iValue += AI_neededWorkers() * iWarmongerPercent / 15;
+		iValue += (bWarPlan ? 5 : 3) * AI_neededWorkers() * iWarmongerPercent / 100;
 	}
 
 	// Leoreth: enabled wonders with civic prereq
@@ -10806,28 +10800,28 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (getStabilityParameter(PARAMETER_RELIGION) < 0)
 		{
-			iValue += 15 * -getStabilityParameter(PARAMETER_RELIGION);
+			iValue += 2 * getNumCities() * -getStabilityParameter(PARAMETER_RELIGION);
 		}
 	}
 	else if (eCivic == CIVIC_CENTRAL_PLANNING)
 	{
 		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 15)
 		{
-			iValue += 200;
+			iValue += 6 * getNumCities();
 		}
 	}
 	else if (eCivic == CIVIC_ISOLATIONISM)
 	{
 		if (getStabilityParameter(PARAMETER_RELATIONS) < -10)
 		{
-			iValue += -20 * getStabilityParameter(PARAMETER_RELATIONS);
+			iValue += -4 * getNumCities() * getStabilityParameter(PARAMETER_RELATIONS);
 		}
 	}
 	else if (eCivic == CIVIC_PUBLIC_WELFARE)
 	{
 		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 0)
 		{
-			iValue += 5 * -getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
+			iValue += getNumCities() * -getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
 		}
 	}
 	else if (eCivic == CIVIC_VASSALAGE)
@@ -10918,14 +10912,23 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue /= 2;
 	}
 
+	// Leoreth: colonialism without colonies
+	if (kCivic.getColonyMaintenanceModifier() < 0 && countColonies() == 0)
+	{
+		iValue /= 3;
+	}
+
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))
 	{
 	    iValue /= 10;
 	}
 
-	if (eCivic == CIVIC_MONARCHY && getCivilizationType() == NETHERLANDS)
+	if (eCivic == CIVIC_MONARCHY)
 	{
-		iValue /= 2;
+		if (getCivilizationType() == NETHERLANDS || getCivilizationType() == AMERICA)
+		{
+			iValue /= 2;
+		}
 	}
 
 	return iValue;
