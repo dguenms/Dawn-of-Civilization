@@ -743,6 +743,7 @@
 			<Button>,Art/Interface/Buttons/Civics/State_Property.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iProcessModifier>50</iProcessModifier>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_FACTORY</BuildingType>
@@ -789,12 +790,14 @@
 				<SpecialistTypeExtraYield>
 					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 					<YieldChanges>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
 				<SpecialistTypeExtraYield>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
 					<YieldChanges>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
