@@ -2546,7 +2546,7 @@ def leader(iPlayer):
 	if iCiv == iEgypt:
 		if not bMonarchy and iEra >= iGlobal: return iNasser
 		
-		if bResurrected or scenario() >= i600AD: return iBaibars
+		if iEra >= iMedieval and (bResurrected or scenario() >= i600AD): return iBaibars
 		
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt: return iPtolemy
 		
