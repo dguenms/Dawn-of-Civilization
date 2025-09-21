@@ -242,6 +242,7 @@ dResourcesDict = {
 	(10, 54)  : (1850,  iSilver),   # Nevada
 	(16, 54)  : (1860,  iGold),     # Colorado
 	(12, 60)  : (1860,  iSilver),   # Idaho
+	(90, 61)  : (1900,  iPotato),	# Volga
 	(11, 52)  : (1900,  iCow),		# Arizona
 	(138, 9)  : (1900,  iWheat),    # Victoria
 	(26, 49)  : (1900,  iCitrus),   # Florida
@@ -263,7 +264,7 @@ dSpawnResourcesDict = {
 	(115, 49) : (iTibet,       iHorse),
 	(55, 52)  : (iPortugal,    iIron),
 	(85, 64)  : (iRussia,      iIron),
-	(86, 64)  : (iRussia,      iWheat),
+	(86, 65)  : (iRussia,      iWheat),
 	(61, 66)  : (iNetherlands, iFish),
 	(15, 47)  : (iMexico,      iIron),
 	(48, 21)  : (iBrazil,      iFish),
