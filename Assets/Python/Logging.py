@@ -228,6 +228,28 @@ def log_civic_category(iCategory):
 	civics("%s\n%s\n\n", gc.getCivicOptionInfo(iCategory).getText().upper(), itemize(civic_counts, item_char="", linebreak_char="\n"))
 
 
+#@handler("revolution")
+def onRevolution(iPlayer):
+	if is_minor(iPlayer):
+		return
+	
+	civics("REVOLUTION: %s in %s", name(iPlayer).upper(), format_date(game.getGameTurnYear()))
+	civics("")
+	
+	for iCategory in range(6):
+		civics(gc.getCivicOptionInfo(iCategory).getText().upper())
+		
+		for iCivic in infos.civics():
+			if infos.civic(iCivic).getCivicOptionType() == iCategory and player(iPlayer).canDoCivics(iCivic):
+				civics("%s %s: %d", player(iPlayer).getCivics(iCategory) == iCivic and "X" or "O", infos.civic(iCivic).getText(), player(iPlayer).AI_civicValue(iCivic))
+		
+		#if iCategory == iCivicsTerritory and player(iPlayer).canDoCivics(iColonialism):
+		#	civics("")
+		#	civics("Colony maintenance for %d colonies: %d ", cities.owner(iPlayer).count(CyCity.isColony), cities.owner(iPlayer).sum(CyCity.calculateColonyMaintenance))
+			
+		civics("")
+
+
 def log(file, message, *format):
 	fileLog(file, str(message % format))
 
