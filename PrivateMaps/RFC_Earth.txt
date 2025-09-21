@@ -31830,7 +31830,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=65
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32764,7 +32765,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=4
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -33242,7 +33243,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=63
-	BonusType=BONUS_COW
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -33731,7 +33732,7 @@ BeginPlot
 	x=75,y=63
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_WHEAT
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
