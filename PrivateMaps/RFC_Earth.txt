@@ -9478,7 +9478,7 @@ BeginPlot
 	x=21,y=49
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
