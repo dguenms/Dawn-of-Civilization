@@ -902,10 +902,9 @@ class Birth(object):
 				target, attacker_closest = expansionCities.where(is_minor).where_surrounding(lambda city: not units.at(city).owner(self.iPlayer)).where_maximum(lambda city: plot_(city).getPlayerWarValue(self.iPlayer)).closest_pair(cities.owner(self.iPlayer))
 				
 				if target:
-					defender_closest = cities.owner(target.getOwner()).where(lambda city: distance(city, target) <= distance(target, attacker_closest)).closest(attacker_closest)
-					spawn = possibleSpawnsBetween(attacker_closest, defender_closest, 1).closest(defender_closest)
+					spawn = possibleSpawnsBetween(attacker_closest, target, 1).closest(target)
 		
-					createExpansionUnits(self.iPlayer, target.getOwner(), spawn, defender_closest, iExtraAI=0, iExtraTargets=0)
+					createExpansionUnits(self.iPlayer, target.getOwner(), spawn, target, iExtraAI=0, iExtraTargets=0)
 				
 					self.iExpansionDelay = 2
 				
