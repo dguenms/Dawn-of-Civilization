@@ -274,6 +274,7 @@ dRemovedResourcesDict = {
 	(75, 51)  :  -50, # Silver in Greece
 	(74, 44)  :  200, # Spices (silphium) in Cyrenaica
 	(87, 49)  :  200, # Horses in Syria
+	(125, 53) :  200, # Copper in North China
 	(55, 53)  :  400, # Gold in Spain
 	(59, 51)  :  400, # Silver in Spain
 	(83, 48)  :  500, # Clams in Phoenicia
