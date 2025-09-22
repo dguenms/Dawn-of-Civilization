@@ -940,6 +940,9 @@ class Birth(object):
 		if game.getAIAutoPlay() > 0:
 			return False
 		
+		if scenarioStart():
+			return False
+		
 		if civ() in dNeighbours[self.iPlayer] and since(year(dBirth[active()])) < turns(25):
 			return False
 	
