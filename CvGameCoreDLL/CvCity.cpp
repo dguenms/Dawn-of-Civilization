@@ -14123,7 +14123,7 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		{
 			if (isHuman())
 			{
-				if (getScenarioStartTurn() != GC.getGame().getGameTurn())
+				if (GC.getGameINLINE().isFinalInitialized() && getScenarioStartTurn() != GC.getGame().getGameTurn())
 				{
 					if (GET_PLAYER(getOwnerINLINE()).getHasReligionCount(eIndex) == 1)
 					{
