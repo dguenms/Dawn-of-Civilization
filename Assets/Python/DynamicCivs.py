@@ -2102,7 +2102,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_KINGDOM_OF"
 		
 		if bEmpire:
-			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			return "TXT_KEY_EMPIRE_NAME"
 			
 	elif iCiv == iEthiopia:
 		if bCityStates:
