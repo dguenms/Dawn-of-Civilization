@@ -4063,7 +4063,7 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		}
 		else
 		{
-			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
+			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()) && getScenarioStartTurn() != GC.getGameINLINE().getGameTurn())
 			{
 				if (bNewDiplo)
 				{
