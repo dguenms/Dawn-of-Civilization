@@ -9126,6 +9126,7 @@ name_translations = {
 		iTurkish: _,
 	},
 	"Kilwa": {
+		iEnglish: _,
 		iKiswahili: _,
 		iPortuguese: "Quiloa",
 	},
