@@ -192,7 +192,7 @@ dSpecificVassalTitles = deepdict({
 		iPhoenicia : "TXT_KEY_CIV_MONGOL_PHOENICIA",
 		iRome : "TXT_KEY_CIV_MONGOL_ILKHANATE",
 		iByzantium : "TXT_KEY_CIV_MONGOL_BYZANTIUM",
-		iRus : "TXT_KEY_CIV_MONGOL_RUSSIA",
+		iRus : "TXT_KEY_CIV_MONGOL_RUS",
 		iOttomans : "TXT_KEY_CIV_MONGOL_OTTOMANS",
 		iMughals : "TXT_KEY_CIV_MONGOL_MUGHALS",
 	},
@@ -442,7 +442,8 @@ dForeignNames = deepdict({
 		iPersia : "TXT_KEY_CIV_RUSSIAN_NAME_PERSIA",
 	},
 	iMongols : {
-		iTurks : "TXT_KEY_CIV_MONGOL_NAME_TURKS"
+		iTurks : "TXT_KEY_CIV_MONGOL_NAME_TURKS",
+		iRussia : "TXT_KEY_CIV_MONGOL_NAME_RUSSIA",
 	},
 	iOttomans : {
 		iPoland : "TXT_KEY_CIV_OTTOMAN_NAME_POLAND",
@@ -1858,6 +1859,10 @@ def vassalTitle(iPlayer, iMaster):
 	
 	if iMasterCiv == iEgypt and player(iMasterCiv).getStateReligion() == iIslam:
 		return dMasterTitles[iArabia]
+	
+	if iMasterCiv == iMongols and iCiv == iRussia:
+		if not player(iRus).isExisting():
+			return dSpecificVassalTitles[iMongols][iRus]
 
 	sSpecificTitle = dSpecificVassalTitles[iMasterCiv].get(iCiv)
 	if sSpecificTitle: return sSpecificTitle
