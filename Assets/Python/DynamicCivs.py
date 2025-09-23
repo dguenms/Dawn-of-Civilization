@@ -1391,7 +1391,7 @@ def specificAdjective(iPlayer):
 	
 	if iCiv == iEgypt:
 		if bMonarchy:
-			if bResurrected:
+			if iReligion == iIslam:
 				if tPlayer.isHasTech(iGunpowder):
 					return "TXT_KEY_CIV_EGYPT_MAMLUK"
 		
@@ -1399,6 +1399,9 @@ def specificAdjective(iPlayer):
 					return "TXT_KEY_CIV_EGYPT_FATIMID"
 			
 				return "TXT_KEY_CIV_EGYPT_AYYUBID"
+			
+			if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
+				return "TXT_KEY_CIV_EGYPT_COPTIC"
 			
 	elif iCiv == iIndia:
 		if bMonarchy and not bCityStates and (iEra >= iMedieval or bEmpire):
@@ -1951,23 +1954,23 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bWar = isAtWar(iPlayer)
 
 	if iCiv == iEgypt:
-		if bResurrected or scenario() >= i600AD:
-			if iReligion == iIslam:
-				if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
-				return "TXT_KEY_SULTANATE_ADJECTIVE"
-			return "TXT_KEY_KINGDOM_ADJECTIVE"
-			
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt or slot(iGreece) in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
 			
-		if bCityStates:
+		if bCityStates and not bResurrected:
 			return "TXT_KEY_CIV_EGYPT_NOMES"
 		
 		if iReligion == iIslam:
-			return "TXT_KEY_SULTANATE_OF"
+			if bTheocracy:
+				return "TXT_KEY_CALIPHATE_ADJECTIVE"
+				
+			if not bResurrected:
+				return "TXT_KEY_SULTANATE_OF"
+			
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
 		
-		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
-			return "TXT_KEY_CIV_EGYPT_COPTIC"
+		if iEra >= iMedieval or scenario() >= i600AD or iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
 				
 		if iEra == iAncient:
 			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
