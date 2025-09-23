@@ -54,6 +54,10 @@ tWestAfrica = ((54, 31), (65, 40))
 # first Inca goal: build a road along the Andean coast by 1550 AD
 lAndeanRoadExceptions = [(28, 33), (21, 32)]
 
+# second German goal: control Scandinavia in 1940 AD
+tScandinavia = ((65, 67),	(73, 77))
+lScandinaviaExceptions = [(69, 70), (69, 71), (70, 68), (70, 69), (70, 70), (70, 72), (70, 73), (71, 68), (71, 69), (71, 71), (71, 72), (71, 73), (71, 74), (72, 69), (72, 70), (72, 71), (72, 72), (72, 73), (72, 74), (72, 75), (73, 71), (73, 73), (73, 74), (73, 75)]
+
 # second Canadian goal: control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
 iCanadaSouthernBorder = 62
 iCanadaWesternBorder = 8

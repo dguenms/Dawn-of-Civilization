@@ -723,7 +723,7 @@ dGoals = {
 			plots.region(rCentralEurope),
 			plots.region(rFrance),
 			plots.region(rBritain),
-			plots.region(rScandinavia),
+			plots.rectangle(tScandinavia).without(lScandinaviaExceptions).named(SCANDINAVIA),
 			plots.regions(rPoland, rBaltics, rRuthenia, rRussia).named(EASTERN_EUROPE),
 			at=1940,
 		),
