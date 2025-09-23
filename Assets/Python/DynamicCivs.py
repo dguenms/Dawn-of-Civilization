@@ -1559,7 +1559,7 @@ def specificAdjective(iPlayer):
 			if iEra in [iMedieval, iRenaissance]:
 				return "TXT_KEY_CIV_DRAVIDIA_BAHMANI"
 	
-		if iEra <= iClassical:
+		if iEra <= iMedieval:
 			if isCurrentCapital(iPlayer, "Madurai", "Vizhinjam", "Yapanaya"):
 				return "TXT_KEY_CIV_DRAVIDIA_PANDYAN"
 				
@@ -2107,10 +2107,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	
 		if getColumn(iPlayer) >= 9:
+			if bEmpire:
+				return "TXT_KEY_EMPIRE_NAME"
+			
 			return "TXT_KEY_KINGDOM_OF"
 		
 		if bEmpire:
-			return "TXT_KEY_EMPIRE_NAME"
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iEthiopia:
 		if bCityStates:
