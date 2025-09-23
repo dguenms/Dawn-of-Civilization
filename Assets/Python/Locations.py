@@ -1,6 +1,7 @@
 ### Areas ###
 
 # Congresses
+
 tAmericanClaims = ((17, 48), (25, 60))
 tNewfoundland = ((38, 62), (40, 64))
 
