@@ -482,10 +482,10 @@ dEmpireThreshold = {
 	iInca : 3,
 	iMongols : 8,
 	iMughals : 6,
-	iItaly : 4,
+	iItaly : 7,
 	iRussia : 8,
 	iIran : 4,
-	iGermany : 4,
+	iGermany : 5,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
