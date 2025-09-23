@@ -218,6 +218,14 @@
 		<Spanish>Cuman</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_DINKA</Tag>
+		<English>Dinka</English>
+		<French>Dinka</French>
+		<German>Dinka</German>
+		<Italian>Dinka</Italian>
+		<Spanish>Dinka</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_DZUNGAR</Tag>
 		<English>Dzungar</English>
 		<French>Dzungar</French>
@@ -272,6 +280,14 @@
 		<German>Funj</German>
 		<Italian>Funj</Italian>
 		<Spanish>Funj</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_FUR</Tag>
+		<English>Fur</English>
+		<French>Fur</French>
+		<German>Fur</German>
+		<Italian>Fur</Italian>
+		<Spanish>Fur</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GALATIAN</Tag>
