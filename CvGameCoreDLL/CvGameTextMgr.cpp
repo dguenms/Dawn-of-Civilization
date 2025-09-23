@@ -3299,7 +3299,8 @@ It is fine for a human player mouse-over (which is what it is used for).
                             szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getFeatureInfo(pPlot->getFeatureType()).getTextKeyWide()));
                         }
                     }
-                    else
+                    
+					if (pPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pPlot->getFeatureType()).getDefenseModifier() == 0)
                     {
                         iModifier = pDefender->terrainDefenseModifier(pPlot->getTerrainType());
 
@@ -3403,7 +3404,8 @@ It is fine for a human player mouse-over (which is what it is used for).
                             szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", -iModifier, GC.getFeatureInfo(pPlot->getFeatureType()).getTextKeyWide()));
                         }
                     }
-                    else
+                    
+					if (pPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pPlot->getFeatureType()).getDefenseModifier() == 0)
                     {
                         iModifier = pAttacker->terrainAttackModifier(pPlot->getTerrainType());
 
@@ -3480,7 +3482,8 @@ It is fine for a human player mouse-over (which is what it is used for).
 								szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", -iModifier, GC.getFeatureInfo(pAttacker->plot()->getFeatureType()).getTextKeyWide()));
 							}
 						}
-						else
+						
+						if (pAttacker->plot()->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pAttacker->plot()->getFeatureType()).getDefenseModifier() == 0)
 						{
 							iModifier = pAttacker->terrainDefenseModifier(pAttacker->plot()->getTerrainType());
 
@@ -3871,7 +3874,8 @@ It is fine for a human player mouse-over (which is what it is used for).
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getFeatureInfo(pPlot->getFeatureType()).getTextKeyWide()));
 				}
 			}
-			else
+			
+			if (pPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pPlot->getFeatureType()).getDefenseModifier() == 0)
 			{
 				iModifier = pDefender->terrainDefenseModifier(pPlot->getTerrainType());
 

@@ -8798,7 +8798,8 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 				pCombatDetails->iFeatureDefenseModifier = iExtraModifier;
 			}
 		}
-		else
+		
+		if (pPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pPlot->getFeatureType()).getDefenseModifier() == 0)
 		{
 			iExtraModifier = terrainDefenseModifier(pPlot->getTerrainType());
 			iModifier += iExtraModifier;
@@ -8892,7 +8893,9 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 				pCombatDetails->iFeatureAttackModifier = iExtraModifier;
 			}
 		}
-		else
+		
+		// Leoreth: also if the feature has no defense modifier
+		if (pAttackedPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pAttackedPlot->getFeatureType()).getDefenseModifier() == 0)
 		{
 			iExtraModifier = -pAttacker->terrainAttackModifier(pAttackedPlot->getTerrainType());
 			iTempModifier += iExtraModifier;
@@ -8963,7 +8966,8 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 					pCombatDetails->iFeatureDefenseModifier = iExtraModifier;
 				}
 			}
-			else
+			
+			if (pAttacker->plot()->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pAttacker->plot()->getFeatureType()).getDefenseModifier() == 0)
 			{
 				iExtraModifier = -pAttacker->terrainDefenseModifier(pAttacker->plot()->getTerrainType());
 				iTempModifier += iExtraModifier;
