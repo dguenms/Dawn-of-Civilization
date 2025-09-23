@@ -632,7 +632,7 @@ dGoals = {
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore, by=1500),
-		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1600),
+		CultureLevelCityCount(iCultureLevelInfluential, 4, by=1600),
 		AreaPercent(plots.all().adjacent_region(rMediterraneanSea).named(MEDITERRANEAN), 65, by=1930),
 	),
 	iMongols: (
