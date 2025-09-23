@@ -12745,6 +12745,7 @@ name_translations = {
 		iPortuguese: _,
 	},
 	"Novgorod": {
+		iEnglish: "Novgorod",
 		iGerman: "Nowgorod",
 		iNordic: u"Holmgarðr",
 		iPolish: u"Nowogród",
