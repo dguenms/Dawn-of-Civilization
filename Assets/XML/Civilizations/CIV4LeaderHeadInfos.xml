@@ -14573,7 +14573,7 @@
 			<Description>TXT_KEY_LEADER_TAHARQA</Description>
 			<Civilopedia>TXT_KEY_LEADER_TAHARQA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_TAHARQA</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>15</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -15114,7 +15114,7 @@
 			<Description>TXT_KEY_LEADER_AMANIRENA</Description>
 			<Civilopedia>TXT_KEY_LEADER_AMANIRENA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_AMANIRENA</ArtDefineTag>
-			<iWonderConstructRand>20</iWonderConstructRand>
+			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>5</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>

@@ -1536,6 +1536,8 @@ dTechPreferences = {
 		iCeremony: 30,
 		iPriesthood: 20,
 		iEthics: 20,
+		
+		iGeneralship: -50,
 	},
 	iChina : {
 		iAesthetics: 40,
@@ -2007,7 +2009,10 @@ dBuildingPreferences = {
 	iNubia : {
 		iPyramids: 20,
 		iGreatSphinx: 20,
-		
+
+		iAquaAppia: -40,
+		iFlavianAmphitheatre: -40,
+		iParthenon: -30,
 		iHangingGardens: -30,
 	},
 	iChina : {
