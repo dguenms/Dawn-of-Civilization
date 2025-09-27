@@ -499,6 +499,7 @@ def calculateStability(iPlayer):
 	iCurrentEra = pPlayer.getCurrentEra()
 	iTotalPopulation = pPlayer.getTotalPopulation()
 	iPlayerScore = pPlayer.getScoreHistory(turn())
+	iNumCities = pPlayer.getNumCities()
 	
 	civics = Civics.player(iPlayer)
 	
@@ -758,6 +759,8 @@ def calculateStability(iPlayer):
 			if iTheocracy in civics:
 				iOnlyStateReligionRatio = 100 * iOnlyStateReligionPopulation / iTotalPopulation
 				iReligionStability += (iOnlyStateReligionRatio - iOnlyStateReligionThreshold) / 10
+	
+	iReligionStability = max(-iNumCities, min(iNumCities, iReligionStability))
 	
 	lParameters[iParameterReligion] = iReligionStability
 		
