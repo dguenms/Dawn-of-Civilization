@@ -262,8 +262,12 @@ class Languages(object):
 			# print "yield primary: %s" % iLanguage
 			yield iLanguage
 		
-		local_civs = self.getLocalLanguageCivs()
-		local_civs = local_civs.where(self.isValid)
+		local_languages = self.getLocalLanguages()
+		local_civs = self.getValidLanguageCivs(local_languages)
+		
+		if self.plot.getSettlerValue(self.iCiv) > 0:
+			for iLanguage in getLocalLanguages(self.tile):
+				yield iLanguage
 		
 		if self.plot.getRegionID() in lAmerica and civ(self.identifier) in dCivGroups[iCivGroupAmerica] and True not in data.dFirstContactConquerors.values():
 			local_civs = local_civs.group(iCivGroupAmerica)
@@ -303,17 +307,20 @@ class Languages(object):
 	def player(self):
 		return player(identifier)
 	
-	def getLocalLanguageCivs(self):
+	def getLocalLanguages(self):
 		base_name, changed_name = getTileNames(self.tile)
 		
 		tile_languages = Translations.of(changed_name).getLanguages()
 		
 		if base_name != changed_name:
 			tile_languages |= Translations.of(base_name).getLanguages()
-			
-		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if tile_languages & set(tLanguages)]
 		
-		return civs.of(*local_civs)
+		return tile_languages
+	
+	def getValidLanguageCivs(self, localLanguages):
+		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if localLanguages & set(tLanguages)]
+		
+		return civs.of(*local_civs).where(self.isValid)
 	
 	def isPastBirth(self, iCiv):
 		return since(year(dBirth[iCiv])) > 0 or (self.plot.getSettlerValue(iCiv) > 0 and self.isConnected(iCiv))
