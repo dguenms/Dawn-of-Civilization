@@ -273,6 +273,7 @@ dSpawnResourcesDict = {
 dRemovedResourcesDict = {
 	(88, 51)  : -200, # Olives in Assyria
 	(75, 51)  :  -50, # Silver in Greece
+	(82, 39)  :  -50, # Gold in Nubia
 	(74, 44)  :  200, # Spices (silphium) in Cyrenaica
 	(87, 49)  :  200, # Horses in Syria
 	(125, 53) :  200, # Copper in North China
@@ -287,6 +288,8 @@ dRemovedResourcesDict = {
 	(58, 47)  :  500, # Dye (murex) in Morocco
 	(66, 46)  :  550, # Ivory in Tunisia
 	(58, 45)  :  550, # Ivory in Morocco
+	(78, 37)  :  550, # Ivory in Nubia
+	(81, 36)  :  550, # Ivory in Nubia
 	(94, 43)  :  550, # Ivory in Persia
 	(69, 49)  :  550, # Wheat in Sicily
 	(100, 50) : 1100, # Silver in Bactria

@@ -37403,7 +37403,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
