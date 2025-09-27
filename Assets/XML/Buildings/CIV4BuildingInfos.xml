@@ -11985,7 +11985,7 @@
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
-			<PrereqBonuses>BONUS_DEER</PrereqBonuses>
+			<PrereqBonuses>BONUS_FUR</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
