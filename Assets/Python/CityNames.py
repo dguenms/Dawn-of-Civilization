@@ -265,7 +265,7 @@ class Languages(object):
 		local_languages = self.getLocalLanguages()
 		local_civs = self.getValidLanguageCivs(local_languages)
 		
-		if self.plot.getSettlerValue(self.iCiv) > 0:
+		if self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv):
 			for iLanguage in getLocalLanguages(self.tile):
 				yield iLanguage
 		
