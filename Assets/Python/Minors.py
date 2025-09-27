@@ -501,7 +501,7 @@ minor_cities = [
 	MinorCity(1150, iNative, (15, 44), "Ts'intsuntsani", iPopulation=3, iCiv=iAztecs, units={iDefend: 3, iAttack:2}, bIgnoreRuins=True, adjective="TXT_KEY_ADJECTIVE_PUREPECHA"),
 	MinorCity(1180, iIndependent, (66, 32), "Edo", iPopulation=3, iCiv=iMali, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_EDO"),
 	MinorCity(1350, iIndependent2, (81, 32), "Bonga", iPopulation=3, iCiv=iEthiopia, units={iDefend: 3}),
-	MinorCity(1585, iNative, (74, 23), "Mwimbele", iPopulation=1, units={iSkirmish: 2}, adjective="TXT_KEY_ADJECTIVE_LUBA"),
+	MinorCity(1585, iNative, (76, 24), "Mwimbele", iPopulation=1, units={iSkirmish: 2}, adjective="TXT_KEY_ADJECTIVE_LUBA"),
 	MinorCity(1610, iNative, (89, 18), "Antananarivo", iPopulation=1, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_MALAGASY"),
 	MinorCity(1635, iBarbarian, (109, 58), "Ghulja", iPopulation=3, iCiv=iTurks, units={iDefend: 2, iHarass: 3}, condition=lambda: not player(iMongols).isExisting(), adjective="TXT_KEY_ADJECTIVE_DZUNGAR"),
 ]
