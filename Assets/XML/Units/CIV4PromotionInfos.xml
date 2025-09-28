@@ -1549,6 +1549,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_DISENGAGE1</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_COMBAT3</PromotionPrereqOr2>
+			<TechPrereq>TECH_OPTICS</TechPrereq>
 			<iVisibilityChange>1</iVisibilityChange>
 			<UnitCombats>
 				<UnitCombat>
