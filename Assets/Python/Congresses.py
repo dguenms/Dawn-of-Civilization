@@ -242,9 +242,9 @@ class Congress:
 		for x, y, _ in self.dPossibleClaims[active()]:
 			city = city_(x, y)
 			if city:
-				event.applyClaimCity(city.getName(), button=infos.civ(city).getButton())
+				event.applyClaimCity("%s (%s)" % (city.getName(), plot(x, y).getRegionName()), button=infos.civ(city).getButton())
 			else:
-				event.applyClaimCity(cn.getDisplayName(civ(), (x, y)), button='Art/Interface/Buttons/Actions/FoundCity.dds')
+				event.applyClaimCity("%s (%s)" % (cn.getDisplayName(civ(), (x, y)), plot(x, y).getRegionName()), button='Art/Interface/Buttons/Actions/FoundCity.dds')
 				
 		event.noClaim().launch()
 
@@ -264,11 +264,11 @@ class Congress:
 		if plot.isCity():
 			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_CITY", name(iClaimant), adjective(plot), city(plot).getName())
 		elif plot.getOwner() == iClaimant:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cn.getDisplayName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", name(iClaimant), cn.getDisplayName(iClaimant, (x, y)), plot.getRegionName())
 		elif plot.isOwned():
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), cn.getDisplayName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", name(iClaimant), adjective(plot), plot.getRegionName(), cn.getDisplayName(iClaimant, (x, y)))
 		else:
-			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), cn.getDisplayName(iClaimant, (x, y)))
+			event = self.vote_claim.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", name(iClaimant), plot.getRegionName(), cn.getDisplayName(iClaimant, (x, y)))
 			
 		event.approveClaim().abstainClaim().denyClaim().launch(iClaimant, plot.getOwner())
 		
@@ -312,12 +312,12 @@ class Congress:
 			if bCity:
 				event = self.bribe_other_city.text(adjective(iBribedPlayer), adjective(plot), city(plot).getName())
 			else:
-				event = self.bribe_other_plot.text(adjective(iBribedPlayer), adjective(plot), closestCity(plot, iBribedPlayer, same_continent=True).getName())
+				event = self.bribe_other_plot.text(adjective(iBribedPlayer), adjective(plot), plot.getRegionName(), closestCity(plot, iBribedPlayer, same_continent=True).getName())
 		else:	
 			if bCity:
 				event = self.bribe_own_city.text(adjective(iBribedPlayer), adjective(iClaimant), city(plot).getName())
 			else:
-				event = self.bribe_own_territory.text(adjective(iBribedPlayer), adjective(iClaimant), closestCity(plot, active(), same_continent=True).getName())
+				event = self.bribe_own_territory.text(adjective(iBribedPlayer), adjective(iClaimant), plot.getRegionName(), closestCity(plot, active(), same_continent=True).getName())
 		
 		iCost = iDifference * player(iBribedPlayer).calculateTotalCommerce() / 5
 		
@@ -446,7 +446,7 @@ class Congress:
 		if city:
 			event = self.demand_city.text(name(iClaimant), city.getName(), itemize(voted_yes, fullname))
 		else:
-			event = self.demand_plot.text(name(iClaimant), closestCity(plot, active(), same_continent=True).getName(), itemize(voted_yes, fullname))
+			event = self.demand_plot.text(name(iClaimant), plot.getRegionName(), closestCity(plot, active(), same_continent=True).getName(), itemize(voted_yes, fullname))
 		
 		event.acceptDemand().refuseDemand().launch(iClaimant, x, y)
 		
@@ -631,7 +631,7 @@ class Congress:
 				else:
 					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				self.lColonies.append((cn.getDisplayName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				self.lColonies.append(("%s %s" % (cn.getDisplayName(iClaimant, (x, y)), plot.getRegionName()), plot.getOwner(), iClaimant))
 				if bCanRefuse:
 					self.lHumanAssignments.append((iClaimant, (x, y)))
 				else:
@@ -1176,7 +1176,6 @@ class Congress:
 		lPlots = sort(lPlots, lambda p: p[2] + rand(3), True)
 		
 		# remove settled plots with the same name
-		#lPlots = [(x, y, value) for index, (x, y, value) in enumerate(lPlots) if city_(x, y) or cn.getDisplayName(iPlayer, (x, y)) not in [cn.getDisplayName(iPlayer, (ix, iy)) for (ix, iy, ivalue) in lPlots[:index]]]
 		lPlots = self.filterSettledPlots(iPlayer, lPlots)
 		
 		return lPlots[:10]
@@ -1190,17 +1189,11 @@ class Congress:
 				
 			lOtherNames =  []
 			for ix, iy, ivalue in lPlots[:index]:
-				try:
-					lOtherNames.append(cn.getDisplayName(iPlayer, (ix, iy)))
-				except Exception, e:
-					raise Exception("Encountered exception for %s on %s: %s" % (name(iPlayer), (ix, iy), e))
+				lOtherNames.append(cn.getDisplayName(iPlayer, (ix, iy)))
 			
-			try:
-				if cn.getDisplayName(iPlayer, (x, y)) not in lOtherNames:
-					lFiltered.append((x, y, value))
-					continue
-			except Exception, e:
-				raise Exception("Encountered exception for %s on %s: %s" % (name(iPlayer), (x, y), e))
+			if cn.getDisplayName(iPlayer, (x, y)) not in lOtherNames:
+				lFiltered.append((x, y, value))
+				continue
 		
 		return lFiltered
 				
