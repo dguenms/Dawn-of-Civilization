@@ -2159,8 +2159,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_BYZANTIUM</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_GREECE_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_GREECE_ORDER</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_BYZANTIUM_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_BYZANTIUM_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_HARAPPANS</Type>
