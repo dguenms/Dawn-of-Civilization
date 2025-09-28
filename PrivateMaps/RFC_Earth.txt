@@ -43917,12 +43917,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=66
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=67
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -44361,7 +44364,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -44377,7 +44382,6 @@ BeginPlot
 	x=98,y=68
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
@@ -44803,8 +44807,10 @@ EndPlot
 BeginPlot
 	x=99,y=66
 	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_MILLET
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

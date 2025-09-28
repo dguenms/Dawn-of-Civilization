@@ -8731,6 +8731,10 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=97,y=67
+	ImprovementType=IMPROVEMENT_CAMP
+EndPlot
+BeginPlot
 	x=98,y=42
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -8874,12 +8878,15 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
+	x=98,y=66
+	ImprovementType=IMPROVEMENT_FARM
+EndPlot
+BeginPlot
 	x=98,y=67
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=98,y=68
-	ImprovementType=IMPROVEMENT_CAMP
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -8906,10 +8913,6 @@ EndPlot
 BeginPlot
 	x=99,y=55
 	ImprovementType=IMPROVEMENT_PASTURE
-EndPlot
-BeginPlot
-	x=99,y=66
-	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=99,y=67
