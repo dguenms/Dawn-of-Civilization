@@ -40,6 +40,14 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 	buildCapitalInfrastructure(iPlayer, city)
 
 
+@handler("cityAcquired")
+def openGibraltar(iOwner, iPlayer, city):
+	if at(city, plots.capital(iMoors)) and civ(iPlayer) in dCivGroups[iCivGroupEurope] and civ(iOwner) == iMoors:
+		for tile in lStraitOfGibraltar:
+			if cities.surrounding(tile, radius=2).owner(iPlayer):
+				convertPlotCulture(tile, slot(iSpain), 100, True) 
+
+
 ### FIRST CITY ###
 
 @handler("firstCity")
@@ -580,7 +588,6 @@ def removeBarbariansForMongols(iPlayer):
 
 
 ### PERIOD CHANGE ###
-
 
 @handler("playerPeriodChange")
 def relocateCelts(iPlayer, iPeriod):
