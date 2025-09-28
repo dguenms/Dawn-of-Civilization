@@ -666,7 +666,7 @@ dGoals = {
 			BuildingCount(sum(lOrthodoxWonders).named(ORTHODOX_WONDERS), 3, by=1600),
 		),
 		All(
-			SettledCities(10, area=plots.regions(rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
+			SettledCities(12, area=plots.regions(rUrals, rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
 			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
 		),
 		All(
