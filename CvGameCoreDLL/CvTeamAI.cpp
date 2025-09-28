@@ -1713,7 +1713,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
-		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID() /**/ && !kLoopTeam.isMinorCiv()) // Leoreth: exclude wars with minor civs from vassal considerations
+		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID() && !kLoopTeam.isMinorCiv()) // Leoreth: exclude wars with minor civs from vassal considerations
 		{
 			if (!kLoopTeam.isAtWar(kMasterTeam.getID()) && kLoopTeam.isAtWar(getID()))
 			{
@@ -2058,7 +2058,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			}
             // edead: do not allow far away vassals
             // Leoreth: only before Exploration
-			if (!kMasterTeam.isHasTech((TechTypes)EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
+			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
 			{
 				return DENIAL_TOO_FAR;
 			}

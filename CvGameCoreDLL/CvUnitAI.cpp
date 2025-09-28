@@ -2452,7 +2452,8 @@ void CvUnitAI::AI_attackCityMove()
 			{
 				CvCity* pTargetCity = area()->getTargetCity(getOwnerINLINE());
 
-				if (pTargetCity != NULL)
+				// Leoreth: prevent wars just from targeting minor cities
+				if (pTargetCity != NULL && !GET_PLAYER(pTargetCity->getOwnerINLINE()).isMinorCiv())
 				{
 					if (AI_solveBlockageProblem(pTargetCity->plot(), (kTeam.getAtWarCount(true) == 0)))
 					{
