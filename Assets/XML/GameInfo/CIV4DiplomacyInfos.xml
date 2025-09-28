@@ -1413,6 +1413,10 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
+							<LeaderType>LEADER_HAAKON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
 							<LeaderType>LEADER_ERLANDER</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
