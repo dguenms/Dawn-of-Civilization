@@ -19107,7 +19107,7 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 		eReligion = (ReligionTypes)iI;
 		if (eReligion != eNewReligion && GET_PLAYER(getOwnerINLINE()).isStateReligion() && GET_PLAYER(getOwnerINLINE()).getStateReligion() != eReligion)
 		{
-			if (isHasReligion(eReligion) && !isHolyCity(eReligion) && GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion, false, true) == RELIGION_SPREAD_NONE)
+			if (isHasReligion(eReligion) && !isHolyCity(eReligion) && getStateReligionHappiness(eReligion) > 0 && GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion, false, true) == RELIGION_SPREAD_NONE)
 			{
 				religions.push_back(eReligion);
 			}
