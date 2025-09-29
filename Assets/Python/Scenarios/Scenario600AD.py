@@ -193,6 +193,7 @@ def createStartingUnits():
 	createRoleUnit(iNorse, capital, iWorkerSea)
 	createRoleUnit(iNorse, capital, iAssaultSea, 2)
 	createRoleUnit(iNorse, capital, iAttackSea)
+	createRoleUnit(iNorse, capital, iWork, 2)
 	
 	if not player(iNorse).isHuman():
 		createRoleUnit(iNorse, capital, iExploreSea)
