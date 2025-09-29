@@ -42,6 +42,14 @@
 		<Spanish>[H2]Ha nacido una nueva civilizaci&#243;n[\H2][NEWLINE]&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_GENERIC</Tag>
 		<English>We are receiving reports that the rise of the %s1 civilization is imminent.</English>
 		<French></French>
@@ -74,6 +82,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_ASS</Tag>
+		<English>The city of Ash-shur is consolidating power in northern Mesopotamia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_AZT</Tag>
 		<English>Nahua speaking peoples are migrating into the Valley of Mexico looking for their prophesied new homeland.</English>
 		<French></French>
@@ -84,6 +100,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_BRA</Tag>
 		<English>The colonial royal family is establishing an independent branch in Brazil.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_BUR</Tag>
+		<English>Burman peoples are migrating into the Irrawaddy valley around the city of Bagan.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -114,6 +138,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_CEL</Tag>
+		<English>Celtic people around the western Alps are beginning to form their first chiefdoms.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_CHI</Tag>
 		<English>First kingdoms are starting to develop along the Yellow River.</English>
 		<French></French>
@@ -124,6 +156,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_COL</Tag>
 		<English>Sim&#243;n Bol&#237;var is rallying pro-independence forces in the colony of New Granada.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_DRA</Tag>
+		<English>The Dravidians are forming mercantile kingdoms along the southern coast of India.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -154,8 +194,8 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_RISE_HRE</Tag>
-		<English>Succession conflicts are making a unified Frankish Empire untenable, and its German parts are looking for their own ruler.</English>
+		<Tag>TXT_KEY_MESSAGE_RISE_GER</Tag>
+		<English>Unifying its Prussian and Brandenburgian holdings, the Kingdom of Prussia is about to become a new European great power.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -170,8 +210,16 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_RISE_GER</Tag>
-		<English>Unifying its Prussian and Brandenburgian holdings, the Kingdom of Prussia is about to become a new European great power.</English>
+		<Tag>TXT_KEY_MESSAGE_RISE_HIT</Tag>
+		<English>A Hittite kingdom is beginning to emerge in central Anatolia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_HRE</Tag>
+		<English>Succession conflicts are making a unified Frankish Empire untenable, and its German parts are looking for their own ruler.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -218,6 +266,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_JAV</Tag>
+		<English>Various Hindu-Buddhist kingdoms are being founded on the island of Java.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_KHM</Tag>
 		<English>The ruler of Chenla is building the new capital of Angkor to found the Khmer Empire.</English>
 		<French></French>
@@ -236,6 +292,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_KOR</Tag>
 		<English>The three kingdoms of Silla, Baekje, and Goguryeo are growing on the Korean peninsula.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_KUS</Tag>
+		<English>Tocharians from the Tarim Basin are gathering to conquer Bactria and Gandhara.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MAA</Tag>
+		<English>Trade routes are beginning to foster the growth of Malay kingdoms on both sides of the Strait of Malacca.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -292,6 +364,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_HOL</Tag>
 		<English>The Dutch people are fighting to establish their own republic in the Netherlands.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_NOR</Tag>
+		<English>Norse raiders are beginning to venture out of Scandinavia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_NUB</Tag>
+		<English>With its wealth in gold and ivory, the Nubian kingdom rises to the south of Egypt.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -362,8 +450,16 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_RISE_DRA</Tag>
-		<English>The Dravidians are forming mercantile kingdoms along the southern coast of India.</English>
+		<Tag>TXT_KEY_MESSAGE_RISE_SWA</Tag>
+		<English>Indian Ocean trade is enriching the cities along the Swahili coast.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_SWE</Tag>
+		<English>Swedish rulers are asserting their independence from the kingdoms of Denmark and Norway.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -386,6 +482,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_TOL</Tag>
+		<English>The city of Teotihuacan is being built in the Valley of Mexico.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_TUR</Tag>
 		<English>The Gokturks are rebelling against the Rouran Khaganate.</English>
 		<French></French>
@@ -394,8 +498,16 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_RISE_NOR</Tag>
-		<English>Norse raiders are beginning to venture out of Scandinavia.</English>
+		<Tag>TXT_KEY_MESSAGE_RISE_UKR</Tag>
+		<English>Varangian traders are founding permanent principalities along the rivers of Russia.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_VIE</Tag>
+		<English>Rulers in Vietnam are beginning to resist Chinese suzerainty and establish their own dynasty.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
