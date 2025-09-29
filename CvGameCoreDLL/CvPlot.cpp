@@ -12152,6 +12152,7 @@ int CvPlot::getRegionGroupForRegion(int iRegion)
 	case REGION_VOLGA:
 	case REGION_PONTIC_STEPPE:
 	case REGION_URALS:
+	case REGION_EUROPEAN_ARCTIC:
 		return REGION_GROUP_EUROPE;
 	case REGION_ANATOLIA:
 	case REGION_CAUCASUS:
