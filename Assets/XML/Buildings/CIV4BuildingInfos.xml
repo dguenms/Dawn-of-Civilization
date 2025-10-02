@@ -13215,7 +13215,10 @@
 			<MovieDefineTag>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<PrereqTech>TECH_FIREARMS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_STATECRAFT</PrereqTech>
+			</TechTypes>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
