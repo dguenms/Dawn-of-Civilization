@@ -1,49 +1,27 @@
-# Rhye's and Fall of Civilization - Historical Victory Goals
-
-
-from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-from Consts import *
-from StoredData import data #edead
 from RFCUtils import *
-import random
-from Events import handler
-
 from Core import *
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
+from Events import handler
+
+import Logging as log
+
 
 iDuration = 6
+
+tPlagueDates = (170, 500, 1350, 1650, 1850)
+
 
 @handler("GameStart")
 def setup():
 	for iPlayer in players.major():
 		data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
 		
-	data.lGenericPlagueDates[0] = 80
-	data.lGenericPlagueDates[2] = 300 # safe value to prevent plague at start of 1700 AD scenario
+	data.lGenericPlagueTurns = [iYear > scenarioStartYear() and year(iYear + rand(-50, 50)) or -1 for iYear in tPlagueDates]
 	
-	if scenario() == i3000BC:
-		data.lGenericPlagueDates[0] = year(400).deviate(20)
-		
-	data.lGenericPlagueDates[1] = year(1300).deviate(20)
+	undoPlague = rand(5)
+	if undoPlague in (0, 3):
+		data.lGenericPlagueTurns[undoPlague] = -1
 	
-	# Avoid interfering with the Indian UHV
-	if player(iIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
-		data.lGenericPlagueDates[1] = year(1200) + 1
-	
-	if scenario() != i1700AD:
-		data.lGenericPlagueDates[2] = year(1650).deviate(20)
-		
-	data.lGenericPlagueDates[3] = year(1850).deviate(20)
-
-	undoPlague = rand(8)
-	if undoPlague <= 3:
-		data.lGenericPlagueDates[undoPlague] = -1
-
 
 @handler("cityAcquired")
 def clearOrSpreadPlague(iOwner, iPlayer, city):
@@ -84,11 +62,11 @@ def startPlagues(iGameTurn):
 	if data.bNoPlagues:
 		return
 
-	for iPlague, iPlagueDate in enumerate(data.lGenericPlagueDates):
+	for iPlague, iPlagueDate in enumerate(data.lGenericPlagueTurns):
 		if iGameTurn == iPlagueDate:
 			startPlague(iPlague)
 
-		if iPlague >= 1:
+		if iPlague >= 2:
 			#retry if the epidemic is dead too quickly
 			if iGameTurn == iPlagueDate + 4:
 				iInfectedCounter = 0
@@ -98,7 +76,7 @@ def startPlagues(iGameTurn):
 				if iInfectedCounter == 1:
 					startPlague(iPlague)
 
-		if iPlague == 2 or iPlague == 3:
+		if iPlague == 3 or iPlague == 4:
 			if iGameTurn == iPlagueDate + 8:
 				iInfectedCounter = 0
 				for iPlayer in players.all().barbarian():
@@ -190,6 +168,9 @@ def calculateTotalPlagueHealth(iPlayer, iPlague):
 	if player(iPlayer).calculateTotalCityHealthiness() > 0:
 		iHealth += rand(40)
 		
+		if iPlague == 1: # plague of Justinian
+			if civ(iPlayer) in dCivGroups[iCivGroupEurope] + dCivGroups[iCivGroupMiddleEast]:
+				iHealth -= 10
 		if iPlague == 2: # medieval Black Death
 			if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
 				iHealth -= 5
@@ -198,12 +179,13 @@ def calculateTotalPlagueHealth(iPlayer, iPlague):
 
 
 def startPlague(iPlague):
-	iPlayer = players.major().existing().where(isVulnerable).minimum(lambda iPlayer: calculateTotalPlagueHealth(iPlayer, iPlague))
-	
-	if iPlayer and calculateTotalPlagueHealth(iPlayer, iPlague) <= 200:
-		city = cities.owner(iPlayer).random()
+	for iCivGroup, lRegions in dCivGroupRegions.items():
+		if iCivGroup == iCivGroupAmerica and True not in data.dFirstContactConquerors.values():
+			continue
+		
+		city = cities.regions(*lRegions).where(lambda city: not is_minor(city.getOwner()) and isVulnerable(city.getOwner()) and calculateTotalPlagueHealth(city.getOwner(), iPlague) <= 200).random()
 		if city:
-			spreadPlague(iPlayer)
+			spreadPlague(city.getOwner())
 			infectCity(city)
 			announceForeignPlagueSpread(city)
 
@@ -249,18 +231,21 @@ def infectCity(city):
 	city.setHasRealBuilding(iPlague, True)
 	message(city.getOwner(), 'TXT_KEY_PLAGUE_SPREAD_CITY', city.getName(), sound='AS2D_PLAGUE', color=iLime)
 	
-	for plot in plots.surrounding(city, radius=2):
-		if plot.getUpgradeProgress() > 0:
-			plot.setUpgradeProgress(0)
-			iImprovement = plot.getImprovementType()
-			if iImprovement == iTown:
-				plot.setImprovementType(iVillage)
+	dImprovementDowngrade = dict((infos.improvement(iImprovement).getImprovementUpgrade(), iImprovement) for iImprovement in infos.improvements() if infos.improvement(iImprovement).getImprovementUpgrade() >= 0)
+	
+	for plot in plots.city_radius(city):
+		iImprovement = plot.getImprovementType()
+		if iImprovement >= 0:
+			iUpgradeTime = infos.improvement(iImprovement).getUpgradeTime()
+			if plot.getUpgradeProgress() > iUpgradeTime / 2:
+				plot.setUpgradeProgress(0)
+			elif iImprovement in dImprovementDowngrade:
+				plot.setImprovementType(dImprovementDowngrade[iImprovement])
 			
-			if at(plot, city):
-				killUnitsByPlague(city, pPlot, 0, 100, 0)
+	killUnitsByPlague(city, plot_(city), 0, 100, 0)
 
 
-def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
+def killUnitsByPlague(city, plot, baseValue, iDamage, iPreserveDefenders):
 	iOwner = city.getOwner()
 	pOwner = player(city)
 	teamOwner = team(city)
@@ -279,12 +264,12 @@ def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
 				iPreserveDefenders += 1
 						
 	# TODO: look from overlap
-	for unit in units.at(pPlot):
+	for unit in units.at(plot):
 		if player(unit).isHuman():
 			if iPreserveHumanDefenders > 0:
 				if isDefenderUnit(unit):
 					iPreserveHumanDefenders -= 1
-					if pPlot.getNumUnits() <= iPreserveDefenders:
+					if plot.getNumUnits() <= iPreserveDefenders:
 						iMaxDamage = 50
 						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
 						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), barbarian())
@@ -293,7 +278,7 @@ def killUnitsByPlague(city, pPlot, baseValue, iDamage, iPreserveDefenders):
 		elif iPreserveDefenders > 0:
 			if isDefenderUnit(unit):
 				iPreserveDefenders -= 1
-				if pPlot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(active()):
+				if plot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(active()):
 					iMaxDamage = 50
 					if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
 					unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), barbarian())

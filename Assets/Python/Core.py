@@ -85,7 +85,10 @@ def getPlayerExperience(unit):
 	return iExperience
 	
 	
-def format_date(year):
+def format_date(year = None):
+	if year is None:
+		year = game.getGameTurnYear()
+	
 	return text(year >= 0 and "TXT_KEY_YEAR_AD" or "TXT_KEY_YEAR_BC", abs(year))
 
 
