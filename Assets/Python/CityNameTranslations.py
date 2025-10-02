@@ -360,14 +360,25 @@ name_translations = {
 		iSwedish: _,
 	},
 	"Aborepi": {
-		iArabic: "Al-Musawarat Al-Sufra",
+		iArabic: (
+			relocate("Al-Saniyya", iAfter=iRenaissance),
+			"Al-Musawarat Al-Sufra",
+		),
 		iEgyptian: "Jbrp",
 		iEgyptianArabic: "Musawwarat Es-Sufra",
+		iGreek: "Eser",
+		iLatin: "Sape",
 		iNubian: _,
 	},
 	"Absha": {  # relocated from Tajuwa
 		iArabic: _,
 		iFrench: u"Abéché",
+	},
+	"Abu Hamad": {  # relocated from Deraheib
+		iArabic: _,
+		iEgyptianArabic: "Abu Hamed",
+		iEnglish: _,
+		iTurkish: "Abu Hamed",
 	},
 	"Abw": {
 		iArabic: rename("Aswan"),
@@ -753,9 +764,22 @@ name_translations = {
 			_,
 		),
 	},
-	"Al-Khartum Bahri": {  # relocated from Kerri
-		iArabic: _,
+	"Al-Khartum Bahri": {  # relocated from Iribikrwb
+		iArabic: (
+			translate("Khartum al-Bahriyya", iBefore=iIndustrial),
+			_,
+		),
+		iDutch: "Khartoem-Noord",
+		iEgyptianArabic: "El-Khurtum Bahari",
 		iEnglish: "Khartoum North",
+		iFrench: "Khartoum Nord",
+		iGerman: "Chartum-Nord",
+		iPolish: u"Chartum Pólnocny",
+		iPortuguese: "Cartum do Norte",
+		iRussian: "Severny Khartum",
+		iSpanish: "Jartum Norte",
+		iSwedish: "Norra Khartoum",
+		iTurkish: "Kuzey Hartum",
 	},
 	"Al-Kufah": {  # relocated from Dilbat
 		iArabic: (
@@ -896,6 +920,16 @@ name_translations = {
 	"Al-Rutbah": {
 		iArabic: _,
 		iEnglish: "Rutbah Wells",
+	},
+	"Al-Saniyya": {  # relocated from Aborepi
+		iArabic: (
+			translate("Kassala", iAfter=iIndustrial),
+			_,
+		),
+		iEnglish: "Kassala",
+		iEthiopian: u"Kasäla",
+		iItalian: "Cassala",
+		iTurkish: "Kassala",
 	},
 	"Al-Wadi": {
 		iArabic: _,
@@ -2265,6 +2299,11 @@ name_translations = {
 			found("Xiadu", iBefore=iAncient),
 			_,
 		),
+	},
+	"Barah": {  # relocated from Zankor
+		iArabic: _,
+		iEnglish: "Bara",
+		iTurkish: "Bara",
 	},
 	"Baranavichi": {
 		iEnglish: "Baranavichy",
@@ -4732,10 +4771,12 @@ name_translations = {
 		iPolish: "Karaczi",
 		iTurkish: "Karachi",
 	},
-	"Debba": {
-		iArabic: "Al Dabbah",
+	"Debba": {  # relocated from Kerkis and Tari
+		iArabic: "Al-Dabbah",
 		iEgyptianArabic: "El Debbah",
+		iEnglish: _,
 		iNubian: _,
+		iTurkish: "Ed Debbe",
 	},
 	"Debre Birhan": {  # relocated from Walale
 		iArabic: "Dibra Birhan",
@@ -4790,10 +4831,16 @@ name_translations = {
 		iPersian: translate("Madharaya", iReligion=iZoroastrianism),
 	},
 	"Deraheib": {
-		iArabic: "Jebel Alaqi",
+		iArabic: (
+			relocate("Abu Hamad", iAfter=iRenaissance),
+			"Jebel Alaqi",
+		),
 		iGreek: "Berenike Panchrysos",
 		iLatin: "Berenice Panchrysos",
-		iNubian: _,
+		iNubian: (
+			found("Kurgus"),
+			_,
+		),
 	},
 	"Derawar": {
 		iPersian: (
@@ -4850,7 +4897,7 @@ name_translations = {
 		),
 		iPersian: relocate("Dinajpur"),
 	},
-	"Dewaim": {
+	"Dewaim": {  # relocated from Waylula
 		iArabic: "Ad-Duwaym",
 		iEgyptianArabic: "Ed Dueim",
 		iEnglish: (
@@ -5341,6 +5388,13 @@ name_translations = {
 		iLocal: _, # Yoruba
 		iPortuguese: "Lagos",
 	},
+	"El Atrun": {
+		iEgyptian: found("Zae"),
+		iArabic: "Al-Atrun",
+		iEgyptianArabic: _,
+		iGreek: found("Zae"),
+		iNubian: found("Zae"),
+	},
 	"El Picacho": {
 		iSpanish: (
 			translate(u"Puerto Carreño", iAfter=iGlobal),
@@ -5442,9 +5496,10 @@ name_translations = {
 		iPortuguese: "Durazo",
 		iTurkish: u"Diraç",
 	},
-	"Er-Roseires": {
+	"Er-Roseires": {  # relocated from Fazogli
 		iArabic: "Al-Rusayris",
 		iEgyptianArabic: _,
+		iEnglish: "Roseires",
 	},
 	"Erie": {
 		iEnglish: _,
@@ -5614,6 +5669,15 @@ name_translations = {
 	"Faya": {
 		iArabic: _,
 		iFrench: "Largeau",
+	},
+	"Fazogli": {
+		iArabic: (
+			relocate("Er-Roseires", iAfter=iIndustrial),
+			"Fazughli",
+		),
+		iEthiopian: "Fazugli",
+		iNubian: _,
+		iPortuguese: "Fascalo",
 	},
 	"Finke": {
 		iEnglish: _,
@@ -6046,10 +6110,6 @@ name_translations = {
 	"Galena": {
 		iEnglish: _,
 		iLocal: "Notaale Denh", # Koyukon
-	},
-	"Gallabat": {  # founded on Gorgora
-		iArabic: _,
-		iEnglish: "Hor-Cacamoot",
 	},
 	"Galuuta Nuur": {
 		iLocal: _, # Buryat
@@ -6514,9 +6574,10 @@ name_translations = {
 		iLocal: "Gordum",
 	},
 	"Gorgora": {
-		iArabic: found("Gallabat"),
+		iArabic: "Gallabat",
+		iEnglish: "Hor-Cacamoot",
 		iEthiopian: (
-			relocate("Metemma", iAfter=iIndustrial),
+			translate("Metemma", iAfter=iIndustrial),
 			_,
 		),
 	},
@@ -6533,6 +6594,11 @@ name_translations = {
 			translate("Kasimov", iAfter=iRenaissance),
 			_,
 		),
+	},
+	"Gori": {  # relocated from Iribikrwb
+		iArabic: "Qarri",
+		iEgyptianArabic: "Qerri",
+		iNubian: _,
 	},
 	u"Gorzów": {
 		iGerman: "Landsberg",
@@ -7765,6 +7831,18 @@ name_translations = {
 		iLatin: _,
 		iNordic: "Hy",
 	},
+	"Iribikrwb": {
+		iArabic: (
+			relocate("Al-Khartum Bahri", iAfter=iIndustrial),
+			"Wad ben Naqa",
+		),
+		iEgyptian: _,
+		iEnglish: relocate("Al-Khartum Bahri"),
+		iNubian: (
+			relocate("Gori", iAfter=iMedieval),
+			_,
+		),
+	},
 	"Iritu": {
 		iArabic: relocate("Nasiriyah"),
 		iBabylonian: _,
@@ -8790,6 +8868,12 @@ name_translations = {
 		iIndian: _,
 		iVietnamese: "Nha Trang",
 	},
+	"Kawa": {
+		iEgyptian: "Gem-Aton",
+		iGreek: "Pataita",
+		iLatin: "Patigga",
+		iNubian: _,
+	},
 	"Kayes": {  # relocated from Diakaba
 		iFrench: _,
 		iMande: "Kayi",
@@ -8869,6 +8953,12 @@ name_translations = {
 		),
 		iLocal: "Wazhashk-Onigam", # Ojibwe
 	},
+	"Keraia": {
+		iArabic: (
+			relocate("Kaduqli", iAfter=iGlobal),
+			_,
+		),
+	},
 	"Kerder": {
 		iPersian: "Nukas",
 		iRussian: "Nukus",
@@ -8878,6 +8968,17 @@ name_translations = {
 		iEnglish: _,
 		iEthiopian: "Sanhit",
 		iItalian: "Cheren",
+	},
+	"Kerkis": {
+		iArabic: relocate("Debba"),
+		iEgyptian: "Trgb",
+		iGreek: "Tergis",
+		iLatin: "Tergedum",
+		iNubian: (
+			relocate("Tari", iAfter=iMedieval),
+			_,
+		),
+		iTurkish: relocate("Debba"),
 	},
 	u"Kerlingfjördr": {  # founded on Béal Feirste
 		iCeltic: "Cairlinn",
@@ -8891,7 +8992,10 @@ name_translations = {
 		),
 		iEgyptian: "Inbw",
 		iGreek: "Pnoyps",
-		iNubian: _,
+		iNubian: (
+			relocate("Kawa", iAfter=iClassical),
+			_,
+		),
 	},
 	"Kermanshah": {  # relocated from Khalmanu
 		iDravidian: "Kermanca",
@@ -8903,12 +9007,11 @@ name_translations = {
 		),
 		iTurkish: "Kirmanshah",
 	},
-	"Kerri": {
+	"Kersa": {
 		iArabic: (
-			relocate("Al-Khartum Bahri", iAfter=iIndustrial),
-			"Qarri",
+			relocate("Sannar", iAfter=iRenaissance),
+			"Gezira",
 		),
-		iEnglish: relocate("Al-Khartum Bahri"),
 		iNubian: _,
 	},
 	"Kesh": {
@@ -9011,9 +9114,18 @@ name_translations = {
 	},
 	"Khartoum": {  # relocated from Soba
 		iArabic: "Al-Khurtum",
+		iDutch: "Khartoem",
 		iEgyptianArabic: "El-Hartum",
 		iEnglish: _,
+		iFrench: _,
+		iGerman: "Chartum",
+		iItalian: "Khartum",
 		iNubian: "Kaartuom",
+		iPersian: "Khartum",
+		iPolish: "Chartum",
+		iPortuguese: "Cartum",
+		iRussian: "Khartum",
+		iSwedish: _,
 		iTurkish: "Hartum",
 	},
 	"Khasab": {  # founded on Sohar
@@ -9251,6 +9363,10 @@ name_translations = {
 		iNahuatl: _,
 		iSpanish: "Coatzacoalcos",
 	},
+	"Kobbei": {  # relocated from Uri
+		iArabic: "Kubayh",
+		iNubian: _,
+	},
 	u"København": {  # relocated from Roskilde
 		iArabic: "Kubinhagin",
 		iBrazilian: "Copenhague",
@@ -9447,6 +9563,15 @@ name_translations = {
 	"Koror": {
 		iJapanese: "Kororu",
 		iPolynesian: _,
+	},
+	"Korti": {
+		iArabic: "Qurti",
+		iEgyptian: "Krtn",
+		iEnglish: _,
+		iGreek: "Kadata",
+		iLatin: "Coetum",
+		iNubian: _,
+		iTurkish: _,
 	},
 	"Krtn": {
 		iArabic: "Kurti",
@@ -9653,6 +9778,10 @@ name_translations = {
 		iLocal: _, # Estonian
 		iRussian: translate("Kingissepa", bCommunist=True),
 		iSwedish: "Arensburg",
+	},
+	"Kurgus": {  # founded on Deraheib
+		iEthiopian: "Tabito",
+		iNubian: _,
 	},
 	"Kurshaura": {
 		iByzantine: "Koloneia",
@@ -11355,11 +11484,17 @@ name_translations = {
 		),
 	},
 	"Medewi": {
-		iArabic: "Meruwah",
+		iArabic: (
+			relocate("Shendi"),
+			"Meruwah",
+		),
 		iEgyptian: "Mjrwjw",
 		iEnglish: u"Meroë",
 		iGreek: "Meroe",
-		iNubian: _,
+		iNubian: (
+			relocate("Shendi", iAfter=iMedieval),
+			_,
+		),
 	},
 	"Mediolanum": {
 		iArabic: "Milanu",
@@ -12141,8 +12276,12 @@ name_translations = {
 		iRussian: _,
 	},
 	"Nalote": {  # founded on Nekhen
+		iEgyptian: relocate("Talmos", iAfter=iClassical),
 		iArabic: "Karanog",
-		iNubian: _,
+		iNubian: (
+			relocate("Talmos", iAfter=iClassical),
+			_,
+		),
 	},
 	"Nalut": {
 		iArabic: _,
@@ -13513,11 +13652,14 @@ name_translations = {
 	},
 	"Para": {
 		iArabic: "Faras",
-		iEgyptian: _,
+		iEgyptian: "Ibshek",
 		iCoptic: "Pharas",
 		iGreek: "Pakhoras",
 		iLatin: "Pachoras",
-		iNubian: "Pakhoras",
+		iNubian: (
+			translate("Pakhoras", iAfter=iMedieval),
+			_,
+		),
 	},
 	u"Paraná": {
 		iGerman: found("Spatzenkutter"),
@@ -14772,7 +14914,7 @@ name_translations = {
 	},
 	"Rahad Tendelti": {
 		iArabic: (
-			rename("Al-Fashir", iAfter=iRenaissance),
+			relocate("Al-Fashir", iAfter=iRenaissance),
 			_,
 		),
 	},
@@ -15518,7 +15660,7 @@ name_translations = {
 		iTurkish: _,
 		iVietnamese: "Xanh Pe-tec-bua",
 	},
-	"Sannar": {
+	"Sannar": {  # relocated from Kersa
 		iArabic: _,
 		iEnglish: "Sennar",
 		iTurkish: "Sennar",
@@ -15955,6 +16097,10 @@ name_translations = {
 		iRussian: _,
 		iTurkish: "Aiagöz",
 	},
+	"Seringeti": {  # relocated from Zankor
+		iArabic: "Kerker",
+		iNubian: _,
+	},
 	"Sevastopol": {  # founded on Kersonesos
 		iDutch: "Sebastopol",
 		iEnglish: "Sebastopol",
@@ -16067,6 +16213,17 @@ name_translations = {
 	"Shelek": {
 		iChinese: "Chigu",
 		iTurkish: _,
+	},
+	"Shendi": {  # relocated from Medewi
+		iArabic: _,
+		iEnglish: _,
+		iFrench: "Chendi",
+		iGerman: "Schandi",
+		iLatin: "Summarum",
+		iNubian: "Sobore",
+		iPolish: "Szandi",
+		iPortuguese: "Xendi",
+		iTurkish: "Shendy",
 	},
 	"Shigan": {
 		iArabic: relocate("Wahran"),
@@ -17019,6 +17176,10 @@ name_translations = {
 		iFrench: "Ouara",
 		iLocal: _,
 	},
+	"Taka": {
+		iArabic: "Al-Takah",
+		iNubian: _,
+	},
 	"Takamatsu": {
 		iChinese: "Gaosong",
 		iJapanese: _,
@@ -17097,6 +17258,14 @@ name_translations = {
 			"Reval",
 		),
 		iTurkish: "Reval",
+	},
+	"Talmos": {
+		iArabic: "Kalabsha",
+		iCoptic: _,
+		iEgyptian: "Teset",
+		iGreek: "Talmis",
+		iLatin: "Talmis",
+		iNubian: _,
 	},
 	"Taloqan": {
 		iGreek: found("Alexandreia Oxiane"),
@@ -17213,6 +17382,13 @@ name_translations = {
 	"Targhu": {  # relocated from Samandar
 		iRussian: "Tarki",
 		iTurkish: _,
+	},
+	"Tari": {  # relocated from Kerkis
+		iArabic: (
+			relocate("Debba", iAfter=iRenaissance),
+			"Tahi",
+		),
+		iNubian: _,
 	},
 	"Tarnovo": {
 		iGreek: found("Kabyle"),
@@ -17713,6 +17889,7 @@ name_translations = {
 	"Tolkte": {
 		iArabic: "Naqa",
 		iEgyptian: "Twjlkt",
+		iEthiopian: "Daro",
 		iGreek: "Daron",
 		iLatin: "Diaron",
 		iNubian: (
@@ -18205,6 +18382,13 @@ name_translations = {
 		iPersian: _,
 		iTurkish: relocate("Erzurum"),
 	},
+	"Tuti": {
+		iArabic: (
+			relocate("Umm Durman", iAfter=iRenaissance),
+			"Tutiy",
+		),
+		iNubian: _,
+	},
 	"Tututepec": {
 		iNahuatl: _,
 		iLocal: "Yucu Dzaa", # Mixtec
@@ -18371,9 +18555,12 @@ name_translations = {
 		iGerman: _,
 		iItalian: "Ulma",
 	},
-	"Umm Durman": {
+	"Umm Durman": {  # relocated from Tuti
 		iArabic: _,
 		iEnglish: "Omdurman",
+		iFrench: "Omdourman",
+		iPortuguese: u"Ondurmã",
+		iSpanish: u"Omdurmán",
 		iTurkish: "Omdurman",
 	},
 	"Umtali": {  # founded on Chimoio
@@ -18421,9 +18608,11 @@ name_translations = {
 		iTurkish: _,
 	},
 	"Uri": {
-		iArabic: "Kubayh",
 		iLocal: _,
-		iNubian: "Kobbei",
+		iNubian: (
+			relocate("Kobbei", iAfter=iRenaissance),
+			_,
+		),
 	},
 	"Uroteppa": {
 		iRussian: "Ura-Tyube",
@@ -19143,6 +19332,13 @@ name_translations = {
 		iEnglish: _,
 		iFrench: "Michipicoten",
 	},
+	"Waylula": {
+		iArabic: (
+			relocate("Dewaim", iAfter=iRenaissance),
+			_,
+		),
+		iNubian: _,
+	},
 	"Weihaiwei": {  # relocated from Penglai
 		iChinese: (
 			translate("Weihai", bCommunist=True),
@@ -19827,6 +20023,18 @@ name_translations = {
 			_,
 		),
 	},
+	"Zae": {  # founded on El Atrun
+		iArabic: (
+			translate("Qalat Say", iAfter=iMedieval),
+			"Say",
+		),
+		iCoptic: _,
+		iEgyptian: "Shaat",
+		iGreek: _,
+		iLatin: "Sai",
+		iNubian: _,
+		iTurkish: "Kalat Sai",
+	},
 	"Zafar": {
 		iArabic: _,
 		iGreek: "Sapphar",
@@ -19885,6 +20093,13 @@ name_translations = {
 			_,
 		),
 		iMongol: relocate("Soltaniyeh"),
+	},
+	"Zankor": {
+		iArabic: relocate("Barah"),
+		iNubian: (
+			relocate("Seringeti", iAfter=iMedieval),
+			_,
+		),
 	},
 	"Zanzibar": {
 		iGerman: "Sansibar",
