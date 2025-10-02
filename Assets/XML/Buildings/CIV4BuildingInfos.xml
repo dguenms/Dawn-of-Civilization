@@ -13492,7 +13492,7 @@
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
-			<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
 			<ObsoleteTech>TECH_RADIO</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
