@@ -486,10 +486,6 @@ class Birth(object):
 			self.area += additionalPlots
 			self.area = self.area.unique()
 		
-		if self.iCiv == iRussia:
-			if player(iRussia).isHuman() or player(iRus).isHuman():
-				self.area = self.area.without(plots.rectangle(tNovgorod))
-		
 		if self.iCiv == iMexico:
 			self.area = self.area.where(lambda p: p.isPlayerCore(self.iPlayer) or not owner(p, iAmerica))
 		
