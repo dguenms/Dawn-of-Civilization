@@ -625,7 +625,7 @@ barbarians = [
 	Barbarians(1300, 1600, {iChangSuek: 1}, ((118, 38), (121, 41)), 10, INVADERS, target_area=((118, 35), (122, 39)), adjective="TXT_KEY_ADJECTIVE_LAO"),
 	Barbarians(1300, 1800, {iHeavySwordsman: 1}, ((54, 33), (58, 38)), 12, NATIVES, adjective="TXT_KEY_ADJECTIVE_WOLOF"),
 	Barbarians(1400, 1550, {iKeshik: 1}, ((96, 62), (108, 69)), 14, NOMADS, target_area=((80, 59), (95, 70)), adjective="TXT_KEY_ADJECTIVE_TATAR"),
-	Barbarians(1400, 1600, {iArquebusier: 3}, ((76, 33), (81, 36)), 10, INVADERS, target_area=((78, 35), (81, 40)), adjective="TXT_KEY_ADJECTIVE_FUNJ", promotions=(iDesertAdaptation,)),
+	Barbarians(1400, 1600, {iLancer: 3}, ((76, 33), (81, 36)), 10, INVADERS, target_area=((78, 35), (81, 40)), adjective="TXT_KEY_ADJECTIVE_FUNJ", promotions=(iDesertAdaptation,)),
 	Barbarians(1400, 1700, {iHeavySwordsman: 1}, ((75, 17), (80, 23)), 10, MINORS, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_SHONA"),
 	Barbarians(1400, 1800, {iNativeRaider: 1}, ((71, 11), (81, 17)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_NGUNI"),
 	#Barbarians(1400, 1550, {iLongbowman: 2}, ((21, 49), (27, 54)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MUSCOGEE"),
