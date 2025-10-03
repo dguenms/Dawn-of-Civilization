@@ -71,7 +71,6 @@ dResourcesDict = {
 	(73, 46)  : (500,	iClam), 	# Cyrenaica
 	(78, 56)  : (550,   iSilk),     # Thrace
 	(92, 47)  : (600,   iCitrus),   # Persia
-	(81, 30)  : (600,   iBanana),   # Central Africa
 	(76, 27)  : (600,   iBanana),   # Central Africa
 	(75, 31)  : (600,   iBanana),   # Central Africa
 	(0, 43)   : (600,   iSugar),	# Hawaii
@@ -164,6 +163,7 @@ dResourcesDict = {
 	(33, 35)  : (1700,  iHorse),    # Venezuela
 	(37, 12)  : (1700,  iHorse),    # Argentina
 	(79, 70)  : (1700,  iFish),     # Ingria
+	(81, 30)  : (1700,  iBanana),   # Central Africa
 	(21, 40)  : (1700,  iBanana),   # Guatemala
 	(33, 42)  : (1700,  iCoffee),   # Hispaniola
 	(46, 25)  : (1700,  iCoffee),	# Eastern Brazil

@@ -35963,6 +35963,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -38311,7 +38312,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=36
-	BonusType=BONUS_FISH
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
