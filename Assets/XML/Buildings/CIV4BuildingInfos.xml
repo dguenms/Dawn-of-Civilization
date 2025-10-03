@@ -3574,7 +3574,7 @@
 			<Strategy>TXT_KEY_BUILDING_KOREAN_SEOWON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_KOREAN_SEOWON</ArtDefineTag>
-			<PrereqTech>TECH_PAPER</PrereqTech>
+			<PrereqTech>TECH_EDUCATION</PrereqTech>
 			<iCost>200</iCost>
 			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3596,6 +3596,12 @@
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
 			<ConstructSound>AS2D_BUILD_UNIVERSITY</ConstructSound>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
