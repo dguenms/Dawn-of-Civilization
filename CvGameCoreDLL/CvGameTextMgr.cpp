@@ -12750,13 +12750,6 @@ void CvGameTextMgr::setProcessHelp(CvWStringBuffer &szBuffer, ProcessTypes eProc
 			szBuffer.append(gDLL->getText("TXT_KEY_PROCESS_CONVERTS", iProductionToCommerceModifier, GC.getYieldInfo(YIELD_PRODUCTION).getChar(), GC.getCommerceInfo((CommerceTypes) iI).getChar()));
 		}
 	}
-
-	// Leoreth: Khmer UP: Canals: can convert production to food in capital
-	if (eProcess == PROCESS_FOOD)
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROCESS_CONVERTS", 25, GC.getYieldInfo(YIELD_PRODUCTION).getChar(), GC.getYieldInfo(YIELD_FOOD).getChar()));
-	}
 }
 
 void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
@@ -17125,15 +17118,15 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
-	// Khmer UP: Canals (can convert production to food in the capital)
-	if (city.getProductionProcess() == PROCESS_FOOD)
+	// Khmer UP: Hydraulic Engineering (building production generates food in capital)
+	if (city.getCivilizationType() == KHMER && city.isCapital() && city.isProductionBuilding() && !city.isFoodProduction())
 	{
-		int iProcessFood = city.getYieldRate(YIELD_PRODUCTION) / 4;
-		if (iProcessFood != 0)
+		int iBuildingProductionFood = city.getYieldRate(YIELD_PRODUCTION) * (100 + city.getProductionModifier(city.getProductionBuilding())) / 100 / 5;
+		if (iBuildingProductionFood != 0)
 		{
 			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_PROCESS", iProcessFood, info.getChar()));
-			iBaseRate += iProcessFood;
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_BUILDING_PRODUCTION", iBuildingProductionFood, info.getChar()));
+			iBaseRate += iBuildingProductionFood;
 			bNeedSubtotal = true;
 		}
 	}
@@ -18320,10 +18313,10 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 			}
 		}
 
-		// Khmer UP: Canals (can convert production to food in the capital)
-		if (city.getProductionProcess() == PROCESS_FOOD)
+		// Khmer UP: Hydraulic Engineering (extra food from building production in capital)
+		if (city.getCivilizationType() == KHMER && city.isCapital() && city.isProductionBuilding() && !city.isFoodProduction())
 		{
-			iBaseProduction += city.getYieldRate(YIELD_PRODUCTION) / 4;
+			iBaseProduction += city.getYieldRate(YIELD_PRODUCTION) * (100 + city.getProductionModifier(city.getProductionBuilding())) / 100 / 5;
 		}
 
 		// Lotus Temple effect

@@ -1842,7 +1842,6 @@ enum ProcessTypes				// Exposed to Python
 	PROCESS_WEALTH,
 	PROCESS_RESEARCH,
 	PROCESS_CULTURE,
-	PROCESS_FOOD,
 };
 
 enum VoteTypes					// Exposed to Python

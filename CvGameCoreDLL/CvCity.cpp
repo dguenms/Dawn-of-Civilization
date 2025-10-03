@@ -2708,12 +2708,6 @@ bool CvCity::canCreate(ProjectTypes eProject, bool bContinue, bool bTestVisible)
 
 bool CvCity::canMaintain(ProcessTypes eProcess, bool bContinue) const
 {
-	// Leoreth: Khmer UP: can convert 25% production into food in capital
-	if (getCivilizationType() == KHMER && isCapital() && eProcess == PROCESS_FOOD)
-	{
-		return true;
-	}
-
 	if (!(GET_PLAYER(getOwnerINLINE()).canMaintain(eProcess, bContinue)))
 	{
 		return false;
@@ -10236,10 +10230,10 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 		}
 	}
 
-	// Khmer UP: Canals: can convert 25% production into food in capital
-	if (eIndex == YIELD_FOOD && getProductionProcess() == PROCESS_FOOD)
+	// Khmer UP: Hydraulic Engineering: +1 food per 5 building production in capital
+	if (eIndex == YIELD_FOOD && getCivilizationType() == KHMER && isCapital() && isProductionBuilding() && !isFoodProduction())
 	{
-		iBaseYieldRate += getYieldRate(YIELD_PRODUCTION) / 4;
+		iBaseYieldRate += getYieldRate(YIELD_PRODUCTION) * (100 + getProductionModifier(getProductionBuilding())) / 100 / 5;
 	}
 
 	// Lotus Temple effect
