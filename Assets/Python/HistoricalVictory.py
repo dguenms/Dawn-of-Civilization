@@ -390,7 +390,7 @@ dGoals = {
 		),
 	),
 	iKorea: (
-		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1200),
+		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1000),
 		FirstDiscover(iPrinting),
 		SunkShips(20),
 	),
