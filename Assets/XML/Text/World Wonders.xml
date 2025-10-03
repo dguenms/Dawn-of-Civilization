@@ -1487,19 +1487,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Tag>
-		<English>[ICON_BULLET]Trade routes remain connected even during war</English>
-		<French>[ICON_BULLET]Les routes commerciales demeurent connect&#233;es en temps de guerre</French>
-		<German>[ICON_BULLET]Trade routes remain connected even during war</German>
-		<Italian>[ICON_BULLET]Trade routes remain connected even during war</Italian>
-		<Spanish>[ICON_BULLET]Trade routes remain connected even during war</Spanish>
+		<English>[ICON_BULLET]+50% Commerce from Corporations</English>
+		<French>[ICON_BULLET]+50% de [ICON_COMMERCE] des soci&#233;t&#233;s commerciales</French>
+		<German>[ICON_BULLET]+50% Commerce from Corporations</German>
+		<Italian>[ICON_BULLET]+50% Commerce from Corporations</Italian>
+		<Spanish>[ICON_BULLET]+50% Commerce from Corporations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] allows trade routes to be connected during war. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] allows trade routes to be connected during war. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] allows trade routes to be connected during war. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] allows trade routes to be connected during war. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] allows trade routes to be connected during war. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] increases the commerce from Corporations in all cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] increases the commerce from Corporations in all cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] increases the commerce from Corporations in all cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] increases the commerce from Corporations in all cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Salsal Buddha[COLOR_REVERT] increases the commerce from Corporations in all cities. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA</Tag>

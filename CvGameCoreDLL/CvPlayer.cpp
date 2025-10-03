@@ -7178,10 +7178,10 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	}
 
 	// Salsal Buddha
-	if (eBuilding == SALSAL_BUDDHA)
+	/*if (eBuilding == SALSAL_BUDDHA)
 	{
 		updatePlotGroups();
-	}
+	}*/
 
 	// Great Adobe Mosque
 	else if (eBuilding == GREAT_ADOBE_MOSQUE)
@@ -7243,7 +7243,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	}
 
 	// World Trade Center
-	else if (eBuilding == WORLD_TRADE_CENTER)
+	else if (eBuilding == WORLD_TRADE_CENTER || eBuilding == SALSAL_BUDDHA)
 	{
 		changeCorporationCommerceModifier(iChange * 50);
 	}

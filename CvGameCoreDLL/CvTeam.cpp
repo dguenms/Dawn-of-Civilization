@@ -4159,13 +4159,13 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 	}
 
 	// Leoreth: Salsal Buddha effect
-	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA))
+	/*if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA))
 	{
 		if (!GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).isMinorCiv())
 		{
 			return true;
 		}
-	}
+	}*/
 	
 	if (isAtWar(eIndex))
 	{
