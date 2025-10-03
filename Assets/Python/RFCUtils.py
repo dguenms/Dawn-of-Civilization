@@ -1216,3 +1216,10 @@ def downgradeCityCottages(city):
 					plot.setImprovementType(-1)
 				
 				plot.setUpgradeProgress(0)
+
+
+# used: DynamicCivs, Periods
+def getColumn(iPlayer):
+	lTechs = [infos.tech(iTech).getGridX() for iTech in range(iNumTechs) if team(iPlayer).isHasTech(iTech)]
+	if not lTechs: return 0
+	return max(lTechs)

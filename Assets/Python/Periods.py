@@ -236,6 +236,7 @@ def onCapitalMoved(city):
 def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
 	iEra = infos.tech(iTech).getEra()
+	iColumn = getColumn(iPlayer)
 	
 	if iCiv == iNubia:
 		if iEra == iMedieval:
@@ -255,7 +256,7 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 				setPeriod(iMoors, iPeriodMorocco)
 
 	if iCiv == iJapan:
-		if iEra == iIndustrial:
+		if iColumn == 13:
 			setPeriod(iJapan, iPeriodMeiji)
 	
 	if iCiv == iEngland:

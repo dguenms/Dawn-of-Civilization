@@ -857,11 +857,6 @@ def revertAdjectiveChange(iPlayer):
 	if iCiv in dAdjectiveChanges:
 		setAdjective(iPlayer, infos.civ(iCiv).getAdjective(0))
 	
-def getColumn(iPlayer):
-	lTechs = [infos.tech(iTech).getGridX() for iTech in range(iNumTechs) if team(iPlayer).isHasTech(iTech)]
-	if not lTechs: return 0
-	return max(lTechs)
-	
 ### Utility methods for civilization status ###
 	
 def isCapitulated(iPlayer):
