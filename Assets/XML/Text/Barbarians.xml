@@ -330,6 +330,14 @@
 		<Spanish>Hausa</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_HEPHTHALITE</Tag>
+		<English>Hephthalite</English>
+		<French>Hephthalite</French>
+		<German>Hephthalite</German>
+		<Italian>Hephthalite</Italian>
+		<Spanish>Hephthalite</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_HINDI</Tag>
 		<English>Hindi</English>
 		<French>Hindi</French>
@@ -704,6 +712,14 @@
 		<German>Rajput</German>
 		<Italian>Rajput</Italian>
 		<Spanish>Rajput</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_SAKA</Tag>
+		<English>Saka</English>
+		<French>Saka</French>
+		<German>Saka</German>
+		<Italian>Saka</Italian>
+		<Spanish>Saka</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SARMATIAN</Tag>
