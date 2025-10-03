@@ -2104,6 +2104,12 @@ dBuildingPreferences = {
 	},
 	iEthiopia : {
 		iMonolithicChurch: 40,
+		
+		iTheodosianWalls: -30,
+		iHagiaSophia: -20,
+		iSaintBasilsCathedral: -20,
+		iSaintSophia: -20,
+		iKremlin: -20,
 	},
 	iToltecs : {
 		iPyramidOfTheSun: 30,
