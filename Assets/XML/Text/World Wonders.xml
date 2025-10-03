@@ -26,20 +26,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Tag>
-		<English>[ICON_BULLET]Artists can also be hired using Priest slots</English>
-		<French>[ICON_BULLET]Vous pouvez transformer des citoyens en artistes &#224; la place des pr&#234;tres</French>
-		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden</German>
-		<Italian>[ICON_BULLET]Artists can also be hired using Priest slots</Italian>
-		<Spanish>[ICON_BULLET]Artists can also be hired using Priest slots</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
@@ -535,11 +527,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds additional food to all buildings of your state religion. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Tag>
