@@ -1068,9 +1068,6 @@ class Birth(object):
 			area = plots.birth(self.iPlayer) + plots.region(rBritain).where(lambda p: not p.isOwned() or is_minor(p.getOwner()))
 			return area.unique()
 		
-		if self.iCiv == iRussia and (player(iRussia).isHuman() or player(iRus).isHuman()):
-			return plots.birth(self.iPlayer).without(plots.rectangle(tNovgorod))
-	
 		return self.isIndependence() and self.area or plots.birth(self.iPlayer)
 	
 	def flip(self):
