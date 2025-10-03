@@ -391,7 +391,7 @@ dGoals = {
 	),
 	iKorea: (
 		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1000),
-		FirstDiscover(iPrinting),
+		FirstDiscover(iEducation, Printing, iFirearms, iStatecraft),
 		SunkShips(20),
 	),
 	iKhmer: (
