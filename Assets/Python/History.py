@@ -48,6 +48,13 @@ def openGibraltar(iOwner, iPlayer, city):
 				convertPlotCulture(tile, slot(iSpain), 100, True) 
 
 
+@handler("cityAcquired")
+def conquistadorCapital(iOwner, iPlayer, city):
+	if city.getRegionID() in lAmerica and civ(iOwner) in lBioNewWorld and civ(iPlayer) not in lBioNewWorld and data.dFirstContactConquerors[civ(iOwner)]:
+		if cities.regions(*lAmerica).none(lambda c: c.isHasRealBuilding(iAdministrativeCenter)):
+			city.setHasRealBuilding(iAdministrativeCenter, True)
+
+
 ### FIRST CITY ###
 
 @handler("firstCity")
@@ -297,6 +304,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 							iShockCity: 1 + iModifier1,
 						}
 						createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items()).promotion(iMercenary)
+						createRoleUnit(iOldWorldPlayer, arrivalPlot, iWork, iTargetCities-1)
 						
 						iStateReligion = player(iOldWorldPlayer).getStateReligion()
 						iMissionary = missionary(iStateReligion)
