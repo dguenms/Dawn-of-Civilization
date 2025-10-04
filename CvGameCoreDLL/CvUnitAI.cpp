@@ -1230,9 +1230,12 @@ void CvUnitAI::AI_settleMove()
 	// Rhye: restored Warlords settings
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
 	{
-		if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
+		if (iOtherBestFoundValue > iAreaBestFoundValue)
 		{
-			return;
+			if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
+			{
+				return;
+			}
 		}
 	}
 
@@ -5411,13 +5414,13 @@ void CvUnitAI::AI_settlerSeaMove()
 	}
 
 	// Leoreth: if we have a settler, pick up a worker - but only if enough space for a defender
-	if (iSettlerCount > 0 && iWorkerCount == 0 && cargoSpaceAvailable() > 1)
+	/*if (iSettlerCount > 0 && iWorkerCount == 0 && cargoSpaceAvailable() > 1 && plot()->plotCount(PUF_isUnitAIType, UNITAI_WORKER, -1, getOwnerINLINE(), NO_TEAM, PUF_isFiniteRange) > 0)
 	{
 		if (AI_pickup(UNITAI_WORKER))
 		{
 			return;
 		}
-	}
+	}*/
 
 	// Leoreth: if we have a settler, pick up a defender - not America because Pioneer can defend itself
 	if (iSettlerCount > 0 && getCivilizationType() != AMERICA)
@@ -15878,7 +15881,6 @@ bool CvUnitAI::AI_pickup(UnitAITypes eUnitAI)
 	{
 		if (AI_plotValid(pLoopCity->plot()))
 		{
-
 			if ((AI_getUnitAIType() != UNITAI_ASSAULT_SEA) || pLoopCity->AI_isDefended(-1))
 			{
 				int iCount = pLoopCity->plot()->plotCount(PUF_isUnitAIType, eUnitAI, -1, getOwnerINLINE(), NO_TEAM, PUF_isFiniteRange);

@@ -470,3 +470,13 @@ def markCitySites(identifier):
 		
 		createLandmark(plot, "%s (%d): %d" % (name(identifier), index, plot.getFoundValue(player(identifier).getID())))
 		index += 1
+
+
+def markExpansion(identifier):
+	for unit in units.owner(identifier).where(lambda u: u.canFound()):
+		createLandmark(unit, "%s (%s)" % (unit.getName(), unit.getID()))
+		
+		if unit.getGroup().getMissionType(0) == MissionTypes.MISSION_MOVE_TO:
+			createLandmark((unit.getMissionData1(0), unit.getMissionData2(0)), "Move To (%s)" % unit.getID())
+			
+	markCitySites(identifier)

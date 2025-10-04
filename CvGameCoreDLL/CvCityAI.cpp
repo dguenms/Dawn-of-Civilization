@@ -771,8 +771,8 @@ void CvCityAI::AI_chooseProduction()
 		//iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 2) / 3, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
      	if ((bLandWar || bAssault) && bMajorWar)
      	{
-     		//iMaxSettlers = (iMaxSettlers + 2) / 3;
-			iMaxSettlers = std::min(1, iMaxSettlers); // Leoreth
+     		iMaxSettlers = (iMaxSettlers + 2) / 3;
+			//iMaxSettlers = std::min(1, iMaxSettlers); // Leoreth
      	}
     }
 

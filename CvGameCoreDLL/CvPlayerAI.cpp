@@ -1909,7 +1909,30 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
             {
                 iOwnedTiles++;
             }
+
+			if (pLoopPlot->isCity())
+			{
+				if (pLoopPlot->getTeam() == getTeam())
+				{
+					if (iSettlerMapValue <= 5)
+					{
+						return 0;
+					}
+				}
+				else
+				{
+					if (iSettlerMapValue < 10)
+					{
+						return 0;
+					}
+				}
+			}
         }
+	}
+
+	if (iOwnedTiles > 7 && iSettlerMapValue < 5)
+	{
+		return 0;
 	}
 
 	if (iOwnedTiles > 14 && iSettlerMapValue < 10)
@@ -1920,7 +1943,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	// Leoreth: prevent Europeans from expanding into the Americas again
 	if (getCivilizationType() == SPAIN || getCivilizationType() == FRANCE)
 	{
-		if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(1800) && (pPlot->getRegionGroup() == REGION_GROUP_NORTH_AMERICA || pPlot->getRegionGroup() == REGION_GROUP_SOUTH_AMERICA))
+		if ((GC.getGameINLINE().getGameTurn() >= getTurnForYear(1800) || getScenarioStartYear() >= 1700) && (pPlot->getRegionGroup() == REGION_GROUP_NORTH_AMERICA || pPlot->getRegionGroup() == REGION_GROUP_SOUTH_AMERICA))
 		{
 			return 0;
 		}
