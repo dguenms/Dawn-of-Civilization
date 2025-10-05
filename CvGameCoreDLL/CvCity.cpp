@@ -4981,7 +4981,12 @@ void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
-		iProductionToCommerceModifier = GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) + GET_PLAYER(getOwnerINLINE()).getProcessModifier();
+		iProductionToCommerceModifier = GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI);
+
+		if (iProductionToCommerceModifier > 0)
+		{
+			iProductionToCommerceModifier += GET_PLAYER(getOwnerINLINE()).getProcessModifier();
+		}
 
 		// Mexican UP: +50% production converted to research
 		if (getCivilizationType() == MEXICO && iI == COMMERCE_RESEARCH)
