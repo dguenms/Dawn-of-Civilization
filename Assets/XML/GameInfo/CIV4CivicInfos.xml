@@ -130,6 +130,14 @@
 			</UnimprovedTileYields>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
