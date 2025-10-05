@@ -13232,6 +13232,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_STATECRAFT</PrereqTech>
 			</TechTypes>
+			<ObsoleteTech>TECH_LABOUR_UNIONS</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
