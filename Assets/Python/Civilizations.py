@@ -275,7 +275,7 @@ lCivilizations = [
 	Civilization(
 		iEthiopia,
 		iGold=100,
-		lCivics=[iMonarchy, iSlavery, iClergy],
+		lCivics=[iMonarchy, iSlavery, iDeification],
 		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
 	),
 	Civilization(
