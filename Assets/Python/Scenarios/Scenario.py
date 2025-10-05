@@ -24,7 +24,7 @@ LEADER_DATES = {
 	iHammurabi: -1800,
 	iWentAntu: -2000,
 	iAshurbanipal: -660,
-	iQinShiHuang: -220,
+	iWu: -100,
 	iTaizong: 630,
 	iHongwu: 1370,
 	iMursili: -1600,

@@ -530,7 +530,7 @@ dStartingLeaders = [
 	iHarappa : iWentAntu,
 	iAssyria : iAshurbanipal,
 	iNubia : iTaharqa,
-	iChina : iQinShiHuang,
+	iChina : iWu,
 	iHittites : iMursili,
 	iGreece : iPericles,
 	iPersia : iCyrus,
