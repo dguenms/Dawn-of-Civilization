@@ -42,6 +42,15 @@ def is_free_of_civ(iCiv):
 def is_other_civ(iCiv):
 	def func(barbarians):
 		return cities.rectangle(barbarians.target_area).owners().without(iCiv).any()
+	
+	return func
+
+
+def is_target_existing(iCiv):
+	def func(_):
+		return iCiv in players.major().existing()
+	
+	return func
 
 
 class MinorCity(object):
@@ -251,17 +260,23 @@ class Barbarians(object):
 		return data
 	
 	def check(self):
+		if not self.is_active():
+			return
+		
 		if self.can_spawn():
 			self.spawn()
+		
+		elif self.condition and not self.condition(self):
+			self.cleanup()
+	
+	def is_active(self):
+		return year(self.iStart) <= year() <= year(self.iEnd)
 	
 	def can_spawn(self):
 		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
 			return False
 		
 		if self.condition is not None and not self.condition(self):
-			return False
-	
-		if not (year(self.iStart) <= year() <= year(self.iEnd)):
 			return False
 		
 		if not self.every():
@@ -313,6 +328,10 @@ class Barbarians(object):
 		for plot in lSpawnPlots:
 			if self.can_notify(plot):
 				self.notify(plot)
+	
+	def cleanup(self):
+		for unit in units.owner(self.iOwner).where(lambda unit: data.units[unit].spawn_data == self.spawn_data()):
+			unit.kill(False, -1)
 	
 	def get_owner(self):
 		if self.pattern == MINORS:
@@ -554,7 +573,7 @@ barbarians = [
 	Barbarians(-200, 700, {iWarElephant: 1}, ((103, 37), (118, 42)), 10, MINORS, adjective="TXT_KEY_ADJECTIVE_HINDI"),
 	Barbarians(-200, 700, {iWarGalley: 1}, ((84, 22), (95, 37)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
 	Barbarians(-100, 400, {iHorseArcher: 2}, ((79, 58), (88, 63)), 8, NOMADS, target_area=((65, 50), (84, 58)), adjective="TXT_KEY_ADJECTIVE_SARMATIAN"),
-	Barbarians(-100, 400, {iHorseArcher: 3}, ((86, 56), (100, 62)), 8, INVADERS, target_area=((84, 45), (99, 54)), adjective="TXT_KEY_ADJECTIVE_SAKA"),
+	Barbarians(-100, 400, {iHorseArcher: 3}, ((86, 56), (100, 62)), 8, INVADERS, target_area=((84, 45), (99, 54)), adjective="TXT_KEY_ADJECTIVE_SAKA", promotions=(iDesertAdaptation, iSteppeAdaptation)),
 	Barbarians(-50, 700, {iWarGalley: 1}, ((54, 42), (69, 50)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_BARBARY"),
 	Barbarians(0, 200, {iAxeman: 2}, ((101, 37), (112, 45)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_HINDI"),
 	Barbarians(0, 800, {iPendekar: 2}, ((116, 37), (119, 43)), 10, NATIVES, target_area=((64, 56), (72, 65)), adjective="TXT_KEY_ADJECTIVE_MON"),
@@ -574,7 +593,7 @@ barbarians = [
 	Barbarians(350, 450, {iHorseArcher: 5}, ((61, 57), (77, 62)), 2, INVADERS, target_area=((57, 51), (79, 61)), adjective="TXT_KEY_ADJECTIVE_HUNNIC"),
 	Barbarians(350, 600, {iDogSoldier: 1}, ((11, 44), (19, 51)), 10, NOMADS, iOwner=iNative, target_area=((14, 40), (23, 45)), adjective="TXT_KEY_ADJECTIVE_NAHUA"),
 	Barbarians(400, 550, {iGalley: 1, iSwordsman: 2}, ((62, 46), (71, 50)), 6, SEA_INVADERS, target_area=((62, 46), (71, 55)), adjective="TXT_KEY_ADJECTIVE_VANDAL"),
-	Barbarians(400, 550, {iHorseArcher: 4}, ((94, 53), (102, 60)), 7, INVADERS, target_area=((84, 45), (99, 54)), adjective="TXT_KEY_ADJECTIVE_HEPHTHALITE"),
+	Barbarians(400, 550, {iHorseArcher: 4}, ((94, 53), (102, 60)), 7, INVADERS, target_area=((84, 45), (99, 54)), adjective="TXT_KEY_ADJECTIVE_HEPHTHALITE", promotions=(iDesertAdaptation, iSteppeAdaptation)),
 	Barbarians(400, 1000, {iSkirmisher: 1, iSwordsman: 1}, ((120, 42), (129, 50)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_YUE"),
 	Barbarians(400, 1200, {iSwordsman: 1}, ((118, 43), (122, 47)), 8, MINORS, adjective="TXT_KEY_ADJECTIVE_BAI"),
 	Barbarians(500, 800, {iHorseArcher: 2}, ((105, 54), (123, 61)), 10, NOMADS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_UIGHUR", promotions=(iDesertAdaptation, iSteppeAdaptation)),
@@ -590,7 +609,7 @@ barbarians = [
 	Barbarians(600, 1100, {iSkirmisher: 1}, ((54, 33), (57, 38)), 12, NATIVES, iOwner=iNative, target_area=((57, 32), (64, 39)), adjective="TXT_KEY_ADJECTIVE_FULA"),
 	Barbarians(650, 1100, {iHorseArcher: 2, iLancer: 1}, ((74, 54), (81, 60)), 12, INVADERS, target_area=((73, 49), (79, 57)), adjective="TXT_KEY_ADJECTIVE_BULGARIAN"),
 	Barbarians(650, 950, {iHorseArcher: 2}, ((85, 57), (92, 63)), 9, MINORS, adjective="TXT_KEY_ADJECTIVE_KHAZAR"),
-	Barbarians(700, 1400, {iHeavySwordsman: 3}, ((76, 33), (81, 36)), 8, INVADERS, target_area=((78, 35), (81, 40)), adjective="TXT_KEY_ADJECTIVE_DINKA", promotions=(iDesertAdaptation,)),
+	Barbarians(700, 1400, {iHeavySwordsman: 3}, ((76, 33), (81, 36)), 8, INVADERS, target_area=((78, 35), (81, 40)), adjective="TXT_KEY_ADJECTIVE_DINKA", promotions=(iDesertAdaptation,), condition=is_target_existing(iNubia)),
 	Barbarians(700, 1500, {iCamelArcher: 1}, ((75, 36), (83, 44)), 9, NOMADS, adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
 	Barbarians(700, 1600, {iHeavyGalley: 1}, ((54, 42), (69, 50)), 8, PIRATES, adjective="TXT_KEY_ADJECTIVE_BARBARY"),
 	Barbarians(700, 1700, {iHeavyGalley: 1}, ((84, 22), (95, 37)), 18, PIRATES, adjective="TXT_KEY_ADJECTIVE_SOMALI"),
