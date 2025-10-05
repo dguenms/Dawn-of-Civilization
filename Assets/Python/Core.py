@@ -1140,6 +1140,10 @@ class EntityCollection(object):
 	def map(self, func):
 		return self.copy([self._keyify(mapped) for mapped in self.get(func)])
 	
+	# TODO: test
+	def proportion(self, func):
+		return 1.0 * self.count(func) / self.count()
+	
 	def format(self, separator=",", final_separator=None, formatter=lambda x: x):
 		if final_separator is None:
 			final_separator = text("TXT_KEY_AND")

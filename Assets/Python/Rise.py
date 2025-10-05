@@ -736,9 +736,12 @@ class Birth(object):
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
-		# Italy requires Rome to be dead
+		# Italy requires Rome to be dead and sufficient minor cities in Italy
 		if self.iCiv == iItaly:
 			if player(iRome).isExisting():
+				return False
+			
+			if cities.region(rItaly).proportion(is_minor) < 0.5:
 				return False
 		
 		# Aztecs require Toltecs to be dead
