@@ -9,7 +9,7 @@ from Events import handler, popup_handler
 
 lJudaismFoundRegions = [rEgypt, rLevant, rMesopotamia]
 lJudaismEuropeRegions = [rIberia, rFrance, rLowerGermany, rCentralEurope, rPoland, rItaly, rBritain, rRuthenia, rBalkans]
-lJudaismMiddleEastRegions = [rLevant, rMesopotamia, rAnatolia, rEgypt]
+lJudaismMiddleEastRegions = [rLevant, rMesopotamia, rAnatolia, rEgypt, rEthiopia]
 lJudaismNewWorldRegions = [rOntario, rMaritimes, rAtlanticSeaboard, rMidwest, rCalifornia]
 
 dCatholicPreference = CivDict({
@@ -146,7 +146,7 @@ def checkSchism(iGameTurn):
 @handler("BeginGameTurn")
 def spreadJudaism():
 	spreadReligionToRegion(iJudaism, lJudaismEuropeRegions, 1000, 10)
-	spreadReligionToRegion(iJudaism, lJudaismMiddleEastRegions, 600, 20)
+	spreadReligionToRegion(iJudaism, lJudaismMiddleEastRegions, 600, 10)
 	spreadReligionToRegion(iJudaism, lJudaismNewWorldRegions, 1850, 10)
 
 
