@@ -310,7 +310,7 @@ lCivilizations = [
 		iMali,
 		iGold=200,
 		lCivics=[iDespotism, iSlavery, iMerchantTrade],
-		techs=techs.column(3).including(iMathematics, iContract, iCurrency, iLiterature, iPriesthood)
+		techs=techs.column(4).without(iNavigation).including(iAesthetics, iCurrency),
 	),
 	Civilization(
 		iByzantium,
@@ -325,7 +325,7 @@ lCivilizations = [
 		iGold=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(5).including(iNobility, iPolitics).without(iMedicine, iPhilosophy)
+		techs=techs.column(6).without(iArchitecture, iArtisanry, iEthics)
 	),
 	Civilization(
 		iMalays,
@@ -1129,6 +1129,9 @@ dExtraAIUnits = CivDict({
 		iCounter: 2,
 		iDefend: 2,
 	},
+	iMali: {
+		iSkirmish: 2,
+	},
 	iMalays: {
 		iDefend: 2,
 	},
@@ -1446,6 +1449,9 @@ def createSpecificUnits(iPlayer, tile):
 		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
+	elif iCiv == iMali:
+		if not bHuman:
+			makeUnit(iPlayer, iCamelRider, tile)
 	elif iCiv == iMalays:
 		makeUnit(iPlayer, iHinduMissionary, tile)
 	elif iCiv == iNorse:
@@ -1684,6 +1690,9 @@ dTechPreferences = {
 	iMali : {
 		iScholarship: 40,
 		iDoctrine: 30,
+		iPolitics: 30,
+		iFeudalism: 20,
+		iTheology: 20,
 	},
 	iFrance : {
 		iReplaceableParts: 15,

@@ -67,7 +67,7 @@ lCivilizations = [
 		iMali,
 		iGold=200,
 		lCivics=[iDespotism, iSlavery, iRedistribution],
-		techs=techs.column(4).without(iNavigation).including(iAesthetics, iCurrency),
+		techs=techs.column(4).without(iNavigation).including(iAesthetics, iCurrency, iPhilosophy, iMedicine),
 	),
 	Civilization(
 		iByzantium,
@@ -81,7 +81,7 @@ lCivilizations = [
 		iGold=150,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(6).without(iSteel, iArtisanry, iPolitics)
+		techs=techs.column(6).including(iFeudalism)
 	),
 	Civilization(
 		iMalays,
@@ -197,6 +197,12 @@ def createStartingUnits():
 	
 	if not player(iNorse).isHuman():
 		createRoleUnit(iNorse, capital, iExploreSea)
+	
+	# Mali
+	if not player(iMali).isHuman():
+		capital = plots.capital(iMali)
+		makeUnits(iMali, iKelebolo, capital, 2)
+		makeUnit(iMali, iCamelRider, capital)
 
 
 def setupGoals(iCiv, goals):
