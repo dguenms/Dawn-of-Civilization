@@ -851,15 +851,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TAIZONG</Tag>
-		<English>Tang Taizong</English>
+		<English>Taizong</English>
 		<French>
-			<Text>Tang Taizong</Text>
+			<Text>Taizong</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Tang Taizong</German>
-		<Italian>Tang Taizong</Italian>
-		<Spanish>Tang Taizong</Spanish>
+		<German>Taizong</German>
+		<Italian>Taizong</Italian>
+		<Spanish>Taizong</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ODA_NOBUNAGA</Tag>
@@ -1324,5 +1324,13 @@
 		<German>Erlander</German>
 		<Italian>Erlander</Italian>
 		<Spanish>Erlander</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_WU</Tag>
+		<English>Wu</English>
+		<French>Wu</French>
+		<German>Wu</German>
+		<Italian>Wu</Italian>
+		<Spanish>Wu</Spanish>
 	</TEXT>
 </Civ4GameText>

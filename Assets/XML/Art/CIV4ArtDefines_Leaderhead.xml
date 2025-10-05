@@ -191,7 +191,7 @@
 			<BackgroundKFM>art/LeaderHeads/Peter_the_Great/peter_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_QIN_SHI_HUANG</Type>
+			<Type>ART_DEF_LEADER_WU</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_Mongol_Kublai.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,13</Button>
 			<NIF>art/LeaderHeads/Kublai_Khan/kublai_khan.nif</NIF>
 			<KFM>art/LeaderHeads/Kublai_Khan/kublai_khan.kfm</KFM>

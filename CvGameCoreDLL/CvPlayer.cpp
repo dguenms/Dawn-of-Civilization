@@ -8004,12 +8004,6 @@ bool CvPlayer::canEverResearch(TechTypes eTech) const
 		}
 	}
 
-	// Leoreth: give human Ethiopia some time before Orthodoxy is founded
-	if (getCivilizationType() != ETHIOPIA && GC.getGame().getActiveCivilizationType() == ETHIOPIA && GC.getReligionInfo(ORTHODOXY).getTechPrereq() == eTech && GC.getGame().getGameTurn() < getTurns(GC.getCivilizationInfo(ETHIOPIA).getStartingYear()))
-	{
-		return false;
-	}
-
 	return true;
 }
 
