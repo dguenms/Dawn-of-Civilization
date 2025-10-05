@@ -1810,7 +1810,7 @@ dTechPreferences = {
 		iPrinting: 20,
 		iHeritage: 20,
 		iStatecraft: 20,
-		iLabourUnions: 20,
+		iCollectivism: 20,
 	},
 	iSwahili : {
 		iCompass: 30,
@@ -1900,6 +1900,7 @@ dTechPreferences = {
 	},
 	iRussia : {
 		iMacroeconomics: 30,
+		iCollectivism: 30,
 		iCombinedArms: 20,
 		iReplaceableParts: 15,
 		iHeritage: 20,
@@ -1946,6 +1947,7 @@ dTechPreferences = {
 		iPsychology: 20,
 		iSociology: 20,
 		iSynthetics: 20,
+		iCollectivism: 20,
 		iFission: 12,
 	},
 	iAmerica : {

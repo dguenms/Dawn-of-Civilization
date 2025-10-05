@@ -4958,7 +4958,7 @@
 			<Strategy>TXT_KEY_BUILDING_GRAIN_SILO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GRAIN_SILO</ArtDefineTag>
-			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+			<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -10702,7 +10702,7 @@
 			<GlobalReligionCommerce>RELIGION_ORTHODOXY</GlobalReligionCommerce>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
-			<ObsoleteTech>TECH_LABOUR_UNIONS</ObsoleteTech>
+			<ObsoleteTech>TECH_COLLECTIVISM</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -13232,7 +13232,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_STATECRAFT</PrereqTech>
 			</TechTypes>
-			<ObsoleteTech>TECH_LABOUR_UNIONS</ObsoleteTech>
+			<ObsoleteTech>TECH_COLLECTIVISM</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -14484,7 +14484,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BROOKLYN_BRIDGE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BROOKLYN_BRIDGE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
-			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+			<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_LEVEE</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>

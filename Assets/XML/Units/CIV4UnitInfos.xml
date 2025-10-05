@@ -883,7 +883,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+			<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
@@ -1042,7 +1042,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+			<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>

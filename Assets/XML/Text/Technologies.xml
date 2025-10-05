@@ -2517,19 +2517,15 @@
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_LABOUR_UNIONS</Tag>
-		<English>Labour Unions</English>
-		<French>
-			<Text>Syndicats</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Labour Unions</German>
-		<Italian>Labour Unions</Italian>
-		<Spanish>Labour Unions</Spanish>
+		<Tag>TXT_KEY_TECH_COLLECTIVISM</Tag>
+		<English>Collectivism</English>
+		<French>Collectivism</French>
+		<German>Collectivism</German>
+		<Italian>Collectivism</Italian>
+		<Spanish>Collectivism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_COLLECTIVISM_QUOTE</Tag>
 		<English>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</English>
 		<French>"Que les ouvriers s'organisent, que les travailleurs s'assemblent ! Que leur voix cristallis&#233;e d&#233;nonce l'injustice et exige des privil&#232;ges ! Que chaque citoyen charitable les soutienne !"[PARAGRAPH:2]- John L. Lewis</French>
 		<German>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</German>
@@ -2537,7 +2533,7 @@
 		<Spanish>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_COLLECTIVISM_PEDIA</Tag>
 		<English>Labour unions arose in the 18th and 19th century in response to the poor working conditions brought on by an intense competition for jobs, and the increasing dependence of the working class on their employers created by the move toward industrialization. Early labour unions, formed by skilled labourers in specific fields, met with opposition from both employers and the government. In the 19th century, laws were passed legalizing labour unions, and by the 20th century unions were formed in semi- or unskilled fields such as mining, transportation, and dock working. Binding their interests together and bargaining collectively, labour unions forced factory and business owners to provide better working conditions and economic status for their workers.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>

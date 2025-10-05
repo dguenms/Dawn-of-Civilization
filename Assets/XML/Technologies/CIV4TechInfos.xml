@@ -3663,9 +3663,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_LABOUR_UNIONS</Type>
-			<Description>TXT_KEY_TECH_LABOUR_UNIONS</Description>
-			<Civilopedia>TXT_KEY_TECH_LABOUR_UNIONS_PEDIA</Civilopedia>
+			<Type>TECH_COLLECTIVISM</Type>
+			<Description>TXT_KEY_TECH_COLLECTIVISM</Description>
+			<Civilopedia>TXT_KEY_TECH_COLLECTIVISM_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>4200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3697,7 +3697,7 @@
 				<PrereqTech>TECH_BIOLOGY</PrereqTech>
 				<PrereqTech>TECH_REPRESENTATION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_COLLECTIVISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Labour_Unions.dds</Button>
@@ -3956,7 +3956,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_REFRIGERATION</PrereqTech>
-				<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+				<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_CONSUMERISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -3996,7 +3996,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+				<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 				<PrereqTech>TECH_JOURNALISM</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_CIVIL_RIGHTS_QUOTE</Quote>

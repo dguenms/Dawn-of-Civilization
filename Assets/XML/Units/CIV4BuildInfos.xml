@@ -388,7 +388,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_TAIGA</FeatureType>
-					<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
+					<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>0</bRemove>
