@@ -590,6 +590,14 @@
 		<Spanish>Tengri</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAGAN_RELIGION_BIDAISM</Tag>
+		<English>Bidaism</English>
+		<French>Bidaism</French>
+		<German>Bidaism</German>
+		<Italian>Bidaism</Italian>
+		<Spanish>Bidaism</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAGAN_RELIGION_BON</Tag>
 		<English>Bon</English>
 		<French>
@@ -600,6 +608,14 @@
 		<German>Bon</German>
 		<Italian>Bon</Italian>
 		<Spanish>Bon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAGAN_RELIGION_BUKONGO</Tag>
+		<English>Bukongo</English>
+		<French>Bukongo</French>
+		<German>Bukongo</German>
+		<Italian>Bukongo</Italian>
+		<Spanish>Bukongo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAGAN_RELIGION_MUGYO</Tag>

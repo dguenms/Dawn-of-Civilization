@@ -3149,7 +3149,7 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
+			<PaganReligion>PAGAN_RELIGION_BUKONGO</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CON</Identifier>
 			<StartingYear>1390</StartingYear>
@@ -3195,7 +3195,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+					<BuildingType>BUILDING_BUKONGO_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3503,7 +3503,7 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
+			<PaganReligion>PAGAN_RELIGION_BIDAISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAL</Identifier>
 			<StartingYear>300</StartingYear>
@@ -3559,7 +3559,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+					<BuildingType>BUILDING_BIDAIST_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5575,7 +5575,7 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SWAHILI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
-			<PaganReligion>PAGAN_RELIGION_YORUBA</PaganReligion>
+			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>SWA</Identifier>
 			<StartingYear>957</StartingYear>
@@ -5596,7 +5596,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

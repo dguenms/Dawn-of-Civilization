@@ -31,10 +31,22 @@
 			<Button>Art/Interface/Buttons/Religions/Baalism.dds</Button>
 		</PaganReligionInfo>
 		<PaganReligionInfo>
+			<Type>PAGAN_RELIGION_BIDAISM</Type>
+			<Description>TXT_KEY_PAGAN_RELIGION_BIDAISM</Description>
+			<Civilopedia>TXT_KEY_PAGAN_RELIGION_BIDAISM_PEDIA</Civilopedia>
+			<Button>Art/Interface/Buttons/Religions/Bidaism.dds</Button>
+		</PaganReligionInfo>
+		<PaganReligionInfo>
 			<Type>PAGAN_RELIGION_BON</Type>
 			<Description>TXT_KEY_PAGAN_RELIGION_BON</Description>
 			<Civilopedia>TXT_KEY_PAGAN_RELIGION_BON_PEDIA</Civilopedia>
 			<Button>Art/Interface/Buttons/Religions/Bon.dds</Button>
+		</PaganReligionInfo>
+		<PaganReligionInfo>
+			<Type>PAGAN_RELIGION_BUKONGO</Type>
+			<Description>TXT_KEY_PAGAN_RELIGION_BUKONGO</Description>
+			<Civilopedia>TXT_KEY_PAGAN_RELIGION_BUKONGO_PEDIA</Civilopedia>
+			<Button>Art/Interface/Buttons/Religions/Bukongo.dds</Button>
 		</PaganReligionInfo>
 		<PaganReligionInfo>
 			<Type>PAGAN_RELIGION_DRUIDISM</Type>

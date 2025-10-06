@@ -2730,6 +2730,38 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT] national wonder.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BIDAIST_TEMPLE</Tag>
+		<English>Bidaist Temple</English>
+		<French>Bidaist Temple</French>
+		<German>Bidaist Temple</German>
+		<Italian>Bidaist Temple</Italian>
+		<Spanish>Bidaist Temple</Spanish>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BIDAIST_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Bidaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bidaism[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Bidaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bidaism[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Bidaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bidaism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Bidaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bidaism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Bidaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bidaism[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUKONGO_TEMPLE</Tag>
+		<English>Bukongo Temple</English>
+		<French>Bukongo Temple</French>
+		<German>Bukongo Temple</German>
+		<Italian>Bukongo Temple</Italian>
+		<Spanish>Bukongo Temple</Spanish>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUKONGO_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Bukongo Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bukongo[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Bukongo Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bukongo[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Bukongo Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bukongo[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Bukongo Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bukongo[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Bukongo Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Bukongo[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN</Tag>
 		<English>Divan</English>
 		<French>
