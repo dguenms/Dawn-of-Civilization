@@ -25,6 +25,19 @@ class BestCultureCity(BestCityRequirement):
 	
 	def metric(self, city):
 		return city.getCulture(city.getOwner())
+
+
+# TODO: test
+class BestHappinessCities(BestCitiesRequirement):
+	
+	TYPES = (COUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_HAPPINESS_CITIES"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_HAPPINESS"
+	
+	def metric(self, city):
+		return city.happyLevel()
 	
 
 # Third Hindu URV goal

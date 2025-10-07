@@ -133,6 +133,17 @@ class CountAggregate(Aggregate):
 		return count(items)
 
 
+# TODO: test
+class MaximumAggregate(Aggregate):
+
+	def __init__(self, *items):
+		Aggregate.__init__(self, *items)
+		self.separator = "TXT_KEY_OR"
+	
+	def aggregate(self, items):
+		return max(items)
+
+
 class AreaArgumentFactory(object):
 
 	def __getattr__(self, name):

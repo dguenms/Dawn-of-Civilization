@@ -17,6 +17,7 @@ ShrineIncome = GoalDefinition(req.ShrineIncome)
 
 BestCultureCities = GoalDefinition(req.BestCultureCities)
 BestCultureCity = GoalDefinition(req.BestCultureCity)
+BestHappinessCities = GoalDefinition(req.BestHappinessCities)
 BestPopulationCities = GoalDefinition(req.BestPopulationCities)
 BestPopulationCity = GoalDefinition(req.BestPopulationCity)
 BestPopulationPlayer = GoalDefinition(req.BestPopulationPlayer)
@@ -38,6 +39,7 @@ CitySpecialistCount = GoalDefinition(req.CitySpecialistCount)
 
 ### COUNT REQUIREMENTS ###
 
+AnyCitySpecialistCount = GoalDefinition(req.AnyCitySpecialistCount)
 AttitudeCount = GoalDefinition(req.AttitudeCount)
 AveragePopulation = GoalDefinition(req.AveragePopulation)
 BuildingCount = GoalDefinition(req.BuildingCount)
@@ -58,6 +60,7 @@ PopulationCity = GoalDefinition(req.PopulationCity)
 PopulationCityCount = GoalDefinition(req.PopulationCityCount)
 PopulationCount = GoalDefinition(req.PopulationCount)
 ReligionPopulationCount = GoalDefinition(req.ReligionPopulationCount)
+ReligionCityCount = GoalDefinition(req.ReligionCityCount)
 ResourceCount = GoalDefinition(req.ResourceCount)
 SpecialistCount = GoalDefinition(req.SpecialistCount)
 StateReligionCount = GoalDefinition(req.StateReligionCount)
@@ -178,4 +181,5 @@ capital = CapitalCityArgument
 
 different = CountAggregate
 sum = SumAggregate
+max = MaximumAggregate
 

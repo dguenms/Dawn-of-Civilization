@@ -41,9 +41,9 @@ dGoals = {
 		CityCultureLevel(holy_city(iTaoism), iCultureLevelLegendary),
 	),
 	iBuddhism: (
-		PeaceTurns(100),
-		HappiestTurns(100),
-		AllAttitude(AttitudeTypes.ATTITUDE_CAUTIOUS),
+		AnyCitySpecialistCount(max(iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatStatesman), 5),
+		BestHappinessCities(5),
+		ReligionCityCount(iBuddhism, 50, subject=WORLD),
 	),
 	iOrthodoxy: (
 		BuildingCount(iOrthodoxCathedral, 4),

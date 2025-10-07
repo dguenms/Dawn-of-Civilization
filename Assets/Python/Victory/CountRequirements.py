@@ -148,6 +148,49 @@ class BuildingCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
 
 
+# TODO: test
+class AnyCitySpecialistCount(ThresholdRequirement):
+	
+	TYPES = (SPECIALIST, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ANY_CITY_SPECIALIST_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ANY_CITY_SPECIALIST_COUNT"
+	
+	def __init__(self, iSpecialist, iRequired, **options):
+		ThresholdRequirement.__init__(self, iSpecialist, iRequired, **options)
+		
+		self.iSpecialist = iSpecialist
+		self.iRequired = iRequired
+	
+	def city_value(self, city):
+		if isinstance(self.iSpecialist, Aggregate):
+			return self.iSpecialist.evaluate(city.getFreeSpecialistCount)
+		
+		return city.getFreeSpecialistCount(self.iSpecialist)
+	
+	def best_city(self, evaluator):
+		return cities.all().where(lambda city: city.getOwner() in evaluator).maximum(self.city_value)
+	
+	def evaluate(self, evaluator):
+		city = self.best_city(evaluator)
+		if not city:
+			return 0
+		
+		return self.city_value(city)
+	
+	def get_description(self):
+		return Requirement.get_description(self, bPlural=self.bPlural)
+	
+	def progress(self, evaluator, **options):
+		city = self.best_city(evaluator)
+		if not city:
+			return text("TXT_KEY_VICTORY_NO_CITY")
+		
+		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
+		
+
+
 # First Phoenician UHV goal
 # First Ottoman UHV goal
 # Third Brazilian UHV goal
@@ -592,6 +635,29 @@ class ReligionPopulationCount(ThresholdRequirement):
 	
 	def value(self, iPlayer, iReligion):
 		return player(iPlayer).getReligionPopulation(iReligion)
+
+
+# TODO: test
+class ReligionCityCount(ThresholdRequirement):
+	
+	TYPES = (RELIGION_ADJECTIVE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_CITY_COUNT"
+	
+	SUBJECT_DESC_KEYS = {
+		WORLD: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD"
+	}
+	
+	def __init__(self, *parameters, **options):
+		ThresholdRequirement.__init__(self, *parameters, **options)
+		
+		self.handle("cityBuilt", self.check)
+		self.handle("cityAcquiredAndKept", self.check)
+	
+	def value(self, iPlayer, iReligion):
+		return cities.owner(iPlayer).religion(iReligion).count()
 
 
 # First Ethiopian UHV goal

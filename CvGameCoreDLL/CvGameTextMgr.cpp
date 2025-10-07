@@ -18953,7 +18953,7 @@ void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvC
 			}
 		}
 
-		if (pCity->isHasRealBuilding((BuildingTypes)BUILDING_PLAGUE))
+		if (pCity->isHasRealBuilding(BUILDING_PLAGUE))
 		{
 			szBuffer.append(CvWString::format(L"%c", gDLL->getSymbolID(PLAGUE_CHAR)));
 		}
