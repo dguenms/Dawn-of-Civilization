@@ -512,6 +512,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE_IN_TRADE_NETWORK</Tag>
+		<English>have %s1 in your trade network</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 
 <!-- REQUIREMENT DESCRIPTIONS -->
 	
@@ -1451,6 +1459,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRADE_NETWORK_RELIGION_CITY_COUNT</Tag>
+		<English>%s2 %s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 <!-- REQUIREMENT PROGRESS -->
 	
@@ -2346,6 +2362,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RELIGION_CITY_COUNT</Tag>
 		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_NETWORK_RELIGION_CITY_COUNT</Tag>
+		<English>connected %s1 cities</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

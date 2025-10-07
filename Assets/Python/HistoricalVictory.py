@@ -211,9 +211,8 @@ dGoals = {
 		),
 		HappyCityPopulation(40, by=-300),
 		All(
-			Found(iOrthodoxy),
-			BuildingCount(iOrthodoxCathedral, 1),
-			by=600,
+			TradeNetworkReligionCityCount(iOrthodoxy, 12, by=600),
+			TradeNetworkReligionCityCount(iOrthodoxy, 24, by=1200),
 		),
 	),
 	iChina: (

@@ -188,7 +188,6 @@ class AnyCitySpecialistCount(ThresholdRequirement):
 			return text("TXT_KEY_VICTORY_NO_CITY")
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
-		
 
 
 # First Phoenician UHV goal
@@ -740,6 +739,19 @@ class TerrainCount(ThresholdRequirement):
 	
 	def value(self, iPlayer, iTerrain):
 		return plots.owner(iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
+
+
+# TODO: test
+class TradeNetworkReligionCityCount(ThresholdRequirement):
+	
+	TYPES = (RELIGION_ADJECTIVE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE_IN_TRADE_NETWORK"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRADE_NETWORK_RELIGION_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRADE_NETWORK_RELIGION_CITY_COUNT"
+	
+	def value(self, iPlayer, iReligion):
+		return players.all().existing().where(lambda p: player(iPlayer).canHaveTradeRoutesWith(p)).including(iPlayer).cities().religion(iReligion).where(lambda city: city.isConnectedToCapital(iPlayer)).count()
 
 
 class TradeRouteCount(ThresholdRequirement):
