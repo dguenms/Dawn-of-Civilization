@@ -572,7 +572,7 @@ dGoals = {
 		All(
 			CitySpecialistCount(city(tVienna).named(VIENNA), sum(iSpecialistGreatArtist, iSpecialistGreatStatesman), 10),
 			AttitudeCount(AttitudeTypes.ATTITUDE_PLEASED, 8, civs=group(iCivGroupEurope).named(EUROPE), bIndependent=True),
-			by=1850,
+			at=1850,
 		),
 	),
 	iBurma: (
