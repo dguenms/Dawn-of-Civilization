@@ -7237,12 +7237,12 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 
 	// Leoreth: apply large empire penalty here
 	int iSizeThreshold = 6 + 3 * GET_PLAYER(getOwnerINLINE()).getCurrentEra();
-	int iMultiplier = 5; //(GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
+	int iMultiplier = 3; //(GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
 	int iNumCities = std::min(GET_PLAYER(getOwnerINLINE()).getNumCities(), GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / iSizeThreshold);
 
-	if (iNumCities > 10)
+	if (iNumCities > 16)
 	{
-		iNumCitiesMaintenance *= 100 + iMultiplier * (iNumCities - 10);
+		iNumCitiesMaintenance *= 100 + iMultiplier * (iNumCities - 16);
 		iNumCitiesMaintenance /= 100;
 	}
 
