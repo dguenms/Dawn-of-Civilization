@@ -81,7 +81,7 @@ lCivilizations = [
 		iGold=150,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(6).including(iFeudalism)
+		techs=techs.column(6).without(iEthics)
 	),
 	Civilization(
 		iMalays,
