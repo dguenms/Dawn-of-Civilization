@@ -178,7 +178,7 @@
 			<Button>,Art/Interface/Buttons/Civics/State Party.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iNumCitiesMaintenanceModifier>-100</iNumCitiesMaintenanceModifier>
+			<iNumCitiesMaintenanceModifier>-75</iNumCitiesMaintenanceModifier>
 			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
