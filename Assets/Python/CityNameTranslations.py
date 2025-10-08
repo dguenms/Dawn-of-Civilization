@@ -1085,6 +1085,7 @@ name_translations = {
 	},
 	"Almeirim": {
 		iDutch: translate("Adriaansz Fort", bFound=True),
+		iEnglish: translate("English Fort", bFound=True),
 		iPortuguese: _,
 	},
 	"Alor Setar": {  # relocated from Kedah
@@ -1097,11 +1098,13 @@ name_translations = {
 		iSpanish: "Amaya",
 	},
 	"Amapá": {
+		iDutch: found("Iayes"),
+		iEnglish: found("Wiapoco"),
+		iFrench: found("Counani"),
 		iPortuguese: (
 			relocate(u"Calçoene", iAfter=iGlobal),
 			_,
 		),
-		iFrench: found("Counani"),
 	},
 	"Amarkot": {  # relocated from Balotra
 		iPersian: (
@@ -2619,6 +2622,7 @@ name_translations = {
 		iTurkish: "Kyzyl",
 	},
 	u"Belém": {
+		iFrench: "Mair",
 		iPortuguese: _,
 		iLocal: "Mairi", # Tupinamba
 	},
@@ -3222,6 +3226,15 @@ name_translations = {
 		iRussian: _,
 		iUkrainian: "Berestia",
 	},
+	"Breves": {
+		iDutch: found("Fort Mariocay"),
+		iEnglish: found("Sapanapoco"),
+		iFrench: found(u"Île de Joannes"),
+		iPortuguese: (
+			translate(u"Forte de Santo Antônio de Gurupá", iBefore=iRenaissance),
+			_,
+		),
+	},
 	"Bridgetown": {
 		iDutch: found("Fort Vlissingen"),
 		iEnglish: _,
@@ -3596,6 +3609,12 @@ name_translations = {
 	
 	### C ###
 	
+	"Caamuta": {  # founded on Portel
+		iBrazilian: u"Cametá",
+		iFrench: _,
+		iLocal: "Ka'a Muta",
+		iPortuguese: u"Santa Cruz de Camutá",
+	},
 	"Cacheu": {  # founded on Koldaa
 		iLocal: "Caticheu", # Banyun
 		iPortuguese: _,
@@ -3647,6 +3666,10 @@ name_translations = {
 			_,
 		),	
 	},
+	"Californie": {  # founded on Castro
+		iFrench: _,
+		iPortuguese: u"Califórnia",
+	},
 	"Calixtlahuaca": {
 		iNahuatl: _,
 		iSpanish: "Toluca",
@@ -3675,6 +3698,18 @@ name_translations = {
 	"Campeche": {  # relocated from Uxmal
 		iMayan: u"Ahk'ìin Pech",
 		iSpanish: _,
+	},
+	"Campina Grande": {
+		iDutch: found("Iwypanim"),
+		iPortuguese: (
+			translate("Upanema", iBefore=iRenaissance),
+			_,
+		),
+	},
+	"Camucym": {  # founded on Parnaíba
+		iBrazilian: "Camocim",
+		iDutch: _,
+		iPortuguese: "Porto do Pote",
 	},
 	"Can Tho": {  # relocated from O Keo
 		iEnglish: "Cantho",
@@ -3771,6 +3806,14 @@ name_translations = {
 			_,
 		),
 	},
+	"Caruaru": {
+		iFrench: found(u"Île Saint-Alexis"),
+		iPortuguese: _,
+	},
+	"Castanhal": {
+		iFrench: found("Meron"),
+		iPortuguese: _,
+	},
 	"Castelo Branco": {
 		iArabic: "Bur Al-Agrah",
 		iCeltic: "Kataleukos",
@@ -3786,6 +3829,7 @@ name_translations = {
 	},
 	"Castro": {
 		iDutch: "Castrolanda",
+		iFrench: found("Californie"),
 		iPortuguese: (
 			relocate("Londrina", iAfter=iGlobal),
 			_,
@@ -4553,6 +4597,7 @@ name_translations = {
 		iTurkish: "Qumul",
 	},
 	"Curitiba": {
+		iFrench: found(u"Rivière"),
 		iGerman: found("Pomerode"),
 		iLocal: "Kuri'yty", # Tupi
 		iPortuguese: _,
@@ -4872,7 +4917,7 @@ name_translations = {
 		iFrench: found("Joinville"),
 		iGerman: found("Blumenau"),
 		iPortuguese: (
-			translate(u"Florianópolis", iAfter=iIndustrial),
+			rename(u"Florianópolis", iAfter=iIndustrial, bRepublican=True),
 			_,
 		),
 	},
@@ -5860,6 +5905,10 @@ name_translations = {
 		iEnglish: _,
 		iLocal: u"Líídlii Kúé", # Slavey
 	},
+	"Fort Torege": {  # founded on Santana
+		iDutch: _,
+		iEnglish: "Fort Tauregue",
+	},
 	"Fort Victoria": { # founded on Zimbabwe
 		iEnglish: _,
 		iLocal: "Masvingo",
@@ -5914,6 +5963,7 @@ name_translations = {
 		),
 	},
 	u"Forte São Sebastião": {
+		iFrench: found("Morcourout"),
 		iDutch: "Fort Schoonenborch",
 		iPortuguese: (
 			translate(_, bSmall=True),
@@ -5959,6 +6009,8 @@ name_translations = {
 		iDutch: "Frederikstad",
 		iGerman: "Friedrichstadt",
 		iNordic: _,
+		iSpanish: "Filipeia",
+		iPortuguese: "Parahyba",
 	},
 	"Frederikstad": {  # founded on Natal
 		iDutch: _,
@@ -6738,6 +6790,7 @@ name_translations = {
 		iSpanish: u"Guantánamo",
 	},
 	"Guarapuava": {
+		iEnglish: found("Kittoland"),
 		iLocal: u"Agûarápuaba",
 		iPolish: found("Morska Wola"),
 		iPortuguese: _,
@@ -7694,6 +7747,11 @@ name_translations = {
 			translate("Panfilov", bCommunist=True),
 			_,
 		),
+	},
+	u"Île Saint-Alexis": {  # founded on Caruaru
+		iFrench: _,
+		iPortuguese: "Ilha de Santo Aleixo",
+		iSpanish: "Isla de Santo Aleixo",
 	},
 	u"Ilé-Ifè": {
 		iLocal: (
@@ -9319,6 +9377,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Kittoland": {  # founded on Guarapuava
+		iEnglish: _,
+		iPortuguese: u"São Mateus do Sul",
+	},
 	"Kitu": {
 		iQuechua: _,
 		iSpanish: "Quito",
@@ -10219,6 +10281,7 @@ name_translations = {
 	},
 	"Lethem": {
 		iEnglish: _,
+		iFrench: found("Normandie"),
 		iPortuguese: found("Bonfim"),
 	},
 	"Leticia": {
@@ -10864,6 +10927,9 @@ name_translations = {
 		iMande: _,
 	},
 	u"Macapá": {
+		iDutch: found("Roohoek"),
+		iEnglish: found("Pattacue"),
+		iFrench: found("Sapenou"),
 		iLocal: "Macapaba",
 		iPortuguese: _,
 		iSpanish: "Adelantado de Nueva Andaluzia",
@@ -11761,6 +11827,11 @@ name_translations = {
 		iEnglish: _,
 		iFrench: "Fort Saint-Louis",
 	},
+	"Morcourout": {  # founded on Forte São Sebastião
+		iDutch: "Mockeroe",
+		iFrench: _,
+		iPortuguese: "Mucuripe",
+	},
 	"Morelia": {  # relocated from Tzintzuntzan
 		iLocal: u"Mänxuni", # Otomi
 		iSpanish: (
@@ -11829,6 +11900,10 @@ name_translations = {
 		iRussian: _,
 		iTurkish: "Moskova",
 		iVietnamese: "Mac Tu Khoa",
+	},
+	u"Mossoró": {
+		iDutch: found("Nieuw Amsterdam"),
+		iPortuguese: _,
 	},
 	"Moxomatsi": {
 		iDutch: (
@@ -12382,6 +12457,7 @@ name_translations = {
 			found("Frederikstad"),
 			"Fort Keulen",
 		),
+		iFrench: found("Port Riffault"),
 		iPortuguese: _,
 	},
 	"Natchitoches": {  # founded on Shreveport
@@ -12861,6 +12937,10 @@ name_translations = {
 	"Norman Wells": {
 		iEnglish: _,
 		iLocal: u"Tlegóhl", # Slavey
+	},
+	"Normandie": {  # founded on Lethem
+		iFrench: _,
+		iPortuguese: "Normandia",
 	},
 	"North West River": {
 		iEnglish: _,
@@ -13713,6 +13793,11 @@ name_translations = {
 			"Paria",
 		),
 	},
+	u"Parnaíba": {
+		iDutch: found("Camucym"),
+		iFrench: found("Fort Saint-Alexis"),
+		iPortuguese: _,
+	},
 	"Parsa": {
 		iArabic: relocate("Sirajis"),
 		iGreek: "Persepolis",
@@ -14270,6 +14355,10 @@ name_translations = {
 		iEnglish: _,
 		iSpanish: u"Puerto España",
 	},
+	"Port Riffault": {  # founded on Natal
+		iFrench: _,
+		iPortuguese: "Refoles",
+	},
 	"Port Royal": {
 		iEnglish: (
 			translate("Kingston", iAfter=iIndustrial),
@@ -14313,8 +14402,14 @@ name_translations = {
 		iLocal: "Nme'juaqnek", # Mi'kmaq
 	},
 	"Portel": {
-		iDutch: found("Fort Oranje"),
-		iPortuguese: _,
+		iDutch: found("Fort Orange"),
+		iEnglish: translate("Corpokery", bFound=True),
+		iFrench: found("Caamuta"),
+		iLocal: "Muturu",
+		iPortuguese: (
+			translate("Porto de Moz", iBefore=iRenaissance),
+			_,
+		),
 	},
 	"Porth Madryn": {  # founded on Las Grutas
 		iCeltic: _,
@@ -15252,6 +15347,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Roohoek": {  # founded on Macapá
+		iDutch: _,
+		iEnglish: "Hoohoek",
+	},
 	"Roscella": {
 		iLatin: _,
 		iFrench: "La Rochelle",
@@ -15431,6 +15530,12 @@ name_translations = {
 		iArabic: found("Dina Morgabin"),
 		iFrench: _,
 		iPortuguese: found(u"Santa Apolónia"),
+	},
+	"Saint-Georges-de-l'Oyapock": {
+		iDutch: "Fort Orange",
+		iEnglish: found("Oliveleighe"),
+		iFrench: _,
+		iPortuguese: u"São Jorge do Oiapoque",
 	},
 	"Saint-Jean-sur-Richelieu": {
 		iEnglish: "St. Johns",
@@ -15674,14 +15779,14 @@ name_translations = {
 		),
 		iRussian: relocate("Dalian"),
 	},
+	"San Felipe": {
+		iLocal: "Juwiy mja'",
+		iSpanish: _,
+	},
 	"Santa Barbara": {
 		iEnglish: _,
 		iLocal: "Syukhtun",
 		iSpanish: u"Santa Bárbara",
-	},
-	"San Felipe": {
-		iLocal: "Juwiy mja'",
-		iSpanish: _,
 	},
 	"Santa Fe": {
 		iEnglish: _,
@@ -15705,6 +15810,11 @@ name_translations = {
 		iEnglish: _,
 		iRussian: found("Krepost Ross"),
 		iSpanish: _,
+	},
+	"Santana": {
+		iDutch: found("Fort Torege"),
+		iEnglish: found("Tilletille"),
+		iPortuguese: _,
 	},
 	"Santander": {
 		iCeltic: found("Amaia"),
@@ -15785,6 +15895,7 @@ name_translations = {
 	},
 	u"São Paulo": {
 		iDutch: found("Holambra"),
+		iEnglish: found("Paranapiacaba"),
 		iItalian: "San Paolo",
 		iPortuguese: _,
 		iSpanish: "San Pablo",
