@@ -137,6 +137,10 @@ def getCityClaim(city):
 	if resurrections:
 		return resurrections.maximum(lambda c: (city.isCore(c), plot(city).getSettlerValue(c)))
 	
+	# holy cities are always assigned to independents
+	if city.isHolyCity():
+		return iIndependent
+	
 	return -1
 		
 def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
