@@ -56568,8 +56568,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=27
-	BonusType=BONUS_CRAB
-	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57968,6 +57966,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=27
+	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
