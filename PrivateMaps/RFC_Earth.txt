@@ -12140,11 +12140,12 @@ EndPlot
 BeginPlot
 	x=27,y=45
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=27,y=46
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12593,7 +12594,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=47
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13033,7 +13033,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=43
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13041,7 +13040,7 @@ BeginPlot
 	x=29,y=44
 	BonusType=BONUS_IRON
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
@@ -13492,6 +13491,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=42
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
