@@ -10591,10 +10591,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iUnimprovedWorkedTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumImprovedPlots());
+				iUnimprovedWorkedTiles += std::max(0, std::min(pLoopCity->getWorkingPopulation(), pLoopCity->happyLevel()) - pLoopCity->countNumImprovedPlots() - pLoopCity->countNumWaterPlots());
 			}
 
-			iTempValue += std::max(0, iUnimprovedWorkedTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getUnimprovedTileYield(iI) / 100;
+			iTempValue += std::max(0, iUnimprovedWorkedTiles - AI_getNumAIUnits(UNITAI_WORKER)) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getUnimprovedTileYield(iI) / 100;
 		}
 
 		// Leoreth: specialist extra yield
