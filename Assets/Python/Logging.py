@@ -17,13 +17,6 @@ TIMER = None
 TECHS = None
 
 
-#@handler("changeWar")
-def stopOnFrenchSpanishWar(bWar, iTeam, iOtherTeam):
-	if bWar and ((civ(iTeam) == iFrance and civ(iOtherTeam) == iSpain) or (civ(iTeam) == iSpain and civ(iOtherTeam) == iFrance)):
-		log_with_trace("%s declares war on %s" % (name(iTeam), name(iOtherTeam)))
-		breakObserverMode("%s declares war on %s" % (name(iTeam), name(iOtherTeam)))
-
-
 #@handler("globalWarming")
 def logGlobalWarming(iValue, iDefense):
 	global_warming("Turn = %d, Year = %d, Value = %d, Defense = %d", turn(), game.getGameTurnYear(), iValue, iDefense)
