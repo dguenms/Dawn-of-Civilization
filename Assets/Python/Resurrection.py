@@ -133,6 +133,10 @@ def isPartOfResurrection(iCiv, city, bOnlyOne):
 	return False
 
 def canResurrectFromCities(iCiv, resurrectionCities):
+	# minors cannot resurrect
+	if is_minor(iCiv):
+		return False
+	
 	# cannot resurrect without cities
 	if not resurrectionCities:
 		return False
