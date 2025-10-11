@@ -18803,7 +18803,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 	}
 
 	// Leoreth: Shwedagon Paya effect
-	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect(SHWEDAGON_PAYA))
+	if (city.isHasBuildingEffect(SHWEDAGON_PAYA))
 	{
 		if (GET_PLAYER(city.getOwner()).getCommercePercent(COMMERCE_GOLD) > 0)
 		{
