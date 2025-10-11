@@ -258,7 +258,12 @@ class Languages(object):
 		# print "get languages for %s on %s" % (name(identifier), getBaseName(tile))
 		
 	def __iter__(self):
-		for iLanguage in getPrimaryLanguages(self.identifier):
+		iPrimaryIdentifier = self.identifier
+		if self.city and is_minor(self.identifier):
+			if self.city.getPreviousCiv() >= 0:
+				iPrimaryIdentifier = Civ(self.city.getPreviousCiv())
+		
+		for iLanguage in getPrimaryLanguages(iPrimaryIdentifier):
 			# print "yield primary: %s" % iLanguage
 			yield iLanguage
 		
