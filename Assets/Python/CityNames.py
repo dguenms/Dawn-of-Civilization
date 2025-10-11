@@ -19,6 +19,7 @@ dBaseLanguages = {
 	iEgypt: (iEgyptian,),
 	iBabylonia: (iBabylonian,),
 	iHarappa: (iHarappan, iIndian),
+	iNative: (iLocal,)
 	iAssyria: (iBabylonian,),
 	iChina: (iChinese,),
 	iHittites: (iHittite,),
