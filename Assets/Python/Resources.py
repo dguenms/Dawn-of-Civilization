@@ -344,12 +344,12 @@ dConquerorPlotTypesDict = {
 }
 
 dCivGroupResourcesDict = {
-	(63, 56) : ((iGreece, iRome, iFrance), iOlives, 600),
-	(63, 55) : ((iGreece, iRome, iFrance), iWine, 600),
-	(60, 56) : ((iGreece, iRome, iFrance), iWine, 600),
-	(63, 59) : ((iGreece, iRome, iFrance), iWine, 600),
-	(65, 60) : ((iGreece, iRome, iFrance), iWine, 600),
-	(72, 59) : ((iGreece, iRome, iFrance), iWine, 600),
+	(63, 56) : ((iGreece, iRome, iFrance), iOlives, 490),
+	(63, 55) : ((iGreece, iRome, iFrance), iWine, 490),
+	(60, 56) : ((iGreece, iRome, iFrance), iWine, 490),
+	(63, 59) : ((iGreece, iRome, iFrance), iWine, 490),
+	(65, 60) : ((iGreece, iRome, iFrance), iWine, 490),
+	(72, 59) : ((iGreece, iRome, iFrance), iWine, 490),
 }
 
 
@@ -363,6 +363,14 @@ def removeResources():
 def createResources():
 	for (x, y), iResource in dResources[game.getGameTurn()]:
 		createResource(x, y, iResource)
+
+
+@handler("BeginGameTurn")
+def createCivGroupResources():
+	for _, lResources in dCivGroupResources:
+		for (x, y), iResource, iYear in lResources:
+			if year(iYear) == game.getGameTurn():
+				createResource(x, y, iResource)
 
 
 @handler("prepareBirth")
