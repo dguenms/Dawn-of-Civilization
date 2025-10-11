@@ -4000,6 +4000,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STAR_FORT</ArtDefineTag>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<ObsoleteTech>TECH_SYNTHETICS</ObsoleteTech>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
 			<iConquestProb>100</iConquestProb>
@@ -4009,6 +4010,12 @@
 			<iAsset>2</iAsset>
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<UnitCombatFreeExperiences>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iExperience>2</iExperience>
+				</UnitCombatFreeExperience>
+			</UnitCombatFreeExperiences>
 			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
 			<Flavors>
 				<Flavor>
