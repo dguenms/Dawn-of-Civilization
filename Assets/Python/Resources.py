@@ -146,7 +146,6 @@ dResourcesDict = {
 	(60, 58)  : (1700,  iCorn),     # France
 	(64, 32)  : (1700,  iCorn),     # West Africa
 	(77, 16)  : (1700,  iCorn),     # South Africa
-	(53, 66)  : (1700,  iPotato),   # Ireland
 	(57, 63)  : (1700,  iPotato),   # England
 	(17, 51)  : (1700,  iCow),      # Texas
 	(18, 50)  : (1700,  iCow),      # Texas
@@ -300,7 +299,6 @@ dRemovedResourcesDict = {
 	(92, 60)  : 1600, # Silk in the Volga Delta
 	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
-	(53, 66)  : 1850, # Potato in Ireland
 }
 
 dFeaturesDict = {
