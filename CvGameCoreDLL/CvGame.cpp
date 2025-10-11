@@ -3592,6 +3592,8 @@ void CvGame::reviveActivePlayer()
 
 		// Leoreth
 		GET_PLAYER(getActivePlayer()).verifyAlive();
+
+		GET_PLAYER(getActivePlayer()).m_bTurnPlayed = false;
 	}
 }
 
