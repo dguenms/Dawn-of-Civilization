@@ -284,6 +284,15 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	if iPlayer == iGermany:
 		if iEra == iDigital:
 			setPeriod(iGermany, iPeriodModernGermany)
+
+
+@handler("playerChangeStateReligion")
+def onPlayerChangeStateReligion(iPlayer, iReligion):
+	iCiv = civ(iPlayer)
+	
+	if iCiv == iEgypt and iReligion >= 0:
+		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt:
+			setPeriod(iEgypt, -1)
 			
 			
 def getNorsePeriod(iPlayer):
