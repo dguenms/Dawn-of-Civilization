@@ -5542,11 +5542,12 @@
 			<PrereqTech>TECH_ROCKETRY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>150</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAirModifier>-50</iAirModifier>
-			<iAsset>1</iAsset>
+			<iUnignorableBombardDefense>90</iUnignorableBombardDefense>
+			<iAsset>3</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<Flavors>
 				<Flavor>
