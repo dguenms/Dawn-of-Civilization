@@ -10852,6 +10852,17 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 		{
 			return false;
 		}
+
+		// Leoreth: split old and new world
+		if (GET_PLAYER(ePlayer).getNumCities() == 0 || GET_PLAYER(ePlayer).isMinorCiv())
+		{
+			return false;
+		}
+
+		if (GET_PLAYER(ePlayer).getCapitalCity()->plot()->isNewWorld() != isNewWorld())
+		{
+			return false;
+		}
 	}
 
 	if (kTrigger.getNumFeaturesRequired() > 0)
@@ -12109,6 +12120,19 @@ int CvPlot::getContinentID() const
 int CvPlot::getRegionGroup() const
 {
 	return getRegionGroupForRegion(getRegionID());
+}
+
+bool CvPlot::isNewWorld() const
+{
+	switch (getRegionGroup())
+	{
+	case REGION_GROUP_NORTH_AMERICA:
+	case REGION_GROUP_SOUTH_AMERICA:
+	case REGION_GROUP_OCEANIA:
+		return true;
+	default:
+		return false;
+	}
 }
 
 int CvPlot::getRegionGroupForRegion(int iRegion)
