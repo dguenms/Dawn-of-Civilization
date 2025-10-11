@@ -6009,12 +6009,14 @@ name_translations = {
 		iDutch: "Frederikstad",
 		iGerman: "Friedrichstadt",
 		iNordic: _,
-		iSpanish: "Filipeia",
-		iPortuguese: "Parahyba",
 	},
 	"Frederikstad": {  # founded on Natal
 		iDutch: _,
-		iPortuguese: u"João Pessoa",
+		iPortuguese: (
+			translate(u"João Pessoa", iAfter=iGlobal),
+			"Parahyba",
+		),
+		iSpanish: "Filipeia",
 	},
 	"Freiburg": {
 		iFrench: "Fribourg",
