@@ -665,11 +665,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=55
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=30,y=56
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=30,y=57
@@ -783,7 +783,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -953,7 +953,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=59
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=33,y=62
@@ -1694,7 +1694,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=64
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=53,y=65
@@ -1702,7 +1702,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=66
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=53,y=67
@@ -1846,7 +1846,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=54
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=54,y=65
@@ -1887,7 +1887,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=67
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=55,y=45
@@ -1999,7 +1999,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=53
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=56,y=54
@@ -2030,11 +2030,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=60
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=56,y=63
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=56,y=64
@@ -2046,7 +2046,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=68
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=56,y=70
@@ -2054,7 +2054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=71
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=57,y=44
@@ -2206,7 +2206,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=60
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=57,y=63
@@ -2222,7 +2222,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=66
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2277,7 +2277,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=70
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=58,y=44
@@ -2386,15 +2386,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=60
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=58,y=61
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=58,y=63
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=58,y=64
@@ -2506,11 +2506,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=66
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=58,y=67
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=59,y=34
@@ -2637,12 +2637,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=59
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=59,y=60
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=59,y=61
@@ -2669,7 +2669,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=64
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=59,y=68
@@ -2761,7 +2761,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=55
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=60,y=56
@@ -2779,20 +2779,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=59
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=60,y=60
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=60,y=61
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=60,y=62
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=60,y=65
@@ -2859,15 +2859,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=53
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=61,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=61,y=56
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=61,y=57
@@ -2879,7 +2879,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=59
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3025,7 +3025,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=62
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=61,y=63
@@ -3101,12 +3101,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=53
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=62,y=54
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3123,12 +3123,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=58
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=62,y=59
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=62,y=60
@@ -3136,7 +3136,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=61
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3146,7 +3146,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=63
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=62,y=64
@@ -3367,7 +3367,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=60
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=63,y=61
@@ -3376,11 +3376,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=62
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=63,y=63
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3461,7 +3461,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=60
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=64,y=61
@@ -3469,16 +3469,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=62
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=64,y=63
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=64,y=64
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=65,y=33
@@ -3495,12 +3495,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=56
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=65,y=57
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=65,y=60
@@ -3556,11 +3556,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=64
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=65,y=65
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=65,y=66
@@ -3728,7 +3728,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=62
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=66,y=63
@@ -3785,7 +3785,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=66
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3897,7 +3897,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=60
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3910,7 +3910,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=63
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -3919,7 +3919,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=65
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=67,y=68
@@ -4100,11 +4100,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=64
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=68,y=65
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=68,y=67
@@ -4434,11 +4434,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=60
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=69,y=61
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=69,y=62
@@ -4661,7 +4661,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=62
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=70,y=63
@@ -4670,11 +4670,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=64
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=70,y=65
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=70,y=68
@@ -5036,7 +5036,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=72,y=58
@@ -5134,12 +5134,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=70
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=72,y=71
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=72,y=72
@@ -5188,7 +5188,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=61
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -5595,7 +5595,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=65
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=75,y=67
@@ -5723,7 +5723,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=59
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=76,y=61
@@ -5866,7 +5866,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=66
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=76,y=67
@@ -5878,7 +5878,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=71
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=76,y=72
@@ -6105,11 +6105,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=68
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=78,y=69
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=78,y=71
@@ -6487,7 +6487,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=63
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -6534,12 +6534,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=69
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=80,y=71
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -6547,7 +6547,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
-	x=81,y=31
+	x=81,y=32
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
@@ -6662,7 +6662,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=63
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=81,y=64
@@ -6682,7 +6682,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=68
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=81,y=70
@@ -6830,7 +6830,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=69
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -6980,11 +6980,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=61
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=83,y=62
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=83,y=63
@@ -7005,7 +7005,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=69
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
 	x=83,y=70
@@ -7510,12 +7510,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=64
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=86,y=65
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -7524,7 +7524,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=67
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -7647,7 +7647,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=66
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=87,y=67
@@ -7803,7 +7803,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=65
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=88,y=66
@@ -7811,7 +7811,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=67
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -8183,7 +8183,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=60
-	ImprovementType=IMPROVEMENT_COTTAGE
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=92,y=63
@@ -8191,7 +8191,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=65
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=92,y=66
@@ -8220,7 +8220,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=67
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=93,y=44
@@ -9189,7 +9189,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=49
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=102,y=55
@@ -9333,7 +9333,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=48
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=103,y=49
@@ -9437,16 +9437,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=46
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=104,y=47
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=104,y=48
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=104,y=55
@@ -9568,7 +9568,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=105,y=46
@@ -9764,7 +9764,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=45
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -9868,7 +9868,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=44
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -9877,7 +9877,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=46
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=107,y=47
@@ -10024,7 +10024,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=108,y=56
@@ -10137,7 +10137,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=44
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=110,y=45
@@ -10252,11 +10252,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=43
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=111,y=44
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=111,y=45
@@ -10302,7 +10302,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -10628,7 +10628,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=39
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 EndPlot
 BeginPlot
 	x=117,y=40
@@ -10757,7 +10757,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=36
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -11072,7 +11072,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=30
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=120,y=31
@@ -11402,7 +11402,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=34
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=122,y=35
@@ -12556,7 +12556,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=53
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=131,y=54
@@ -12637,7 +12637,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=131,y=56
@@ -12664,7 +12664,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=54
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=132,y=55
