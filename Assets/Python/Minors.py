@@ -266,7 +266,7 @@ class Barbarians(object):
 		if self.can_spawn():
 			self.spawn()
 		
-		elif self.condition and not self.condition(self):
+		elif self.can_cleanup():
 			self.cleanup()
 	
 	def is_active(self):
@@ -328,6 +328,15 @@ class Barbarians(object):
 		for plot in lSpawnPlots:
 			if self.can_notify(plot):
 				self.notify(plot)
+	
+	def can_cleanup(self):
+		if self.condition and not self.condition(self):
+			return True
+		
+		if self.iAlternativeCiv is not None and player(self.iAlternativeCiv).isExisting():
+			return True
+		
+		return False
 	
 	def cleanup(self):
 		for unit in units.owner(self.iOwner).where(lambda unit: data.units[unit].spawn_data == self.spawn_data()):
