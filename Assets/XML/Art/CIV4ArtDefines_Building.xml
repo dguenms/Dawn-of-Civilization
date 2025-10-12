@@ -820,10 +820,10 @@
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PROTESTANT_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.20</fScale>
-			<fInterfaceScale>0.42</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.46</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Protestant_Church/church.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/ProtestantTemple.dds</Button>
 		</BuildingArtInfo>
@@ -831,9 +831,9 @@
 			<Type>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.00</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
+			<fScale>2.2</fScale>
+			<fInterfaceScale>0.38</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Protestant_Cathedral/cathedral.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/ProtestantCathedral.dds</Button>
 		</BuildingArtInfo>
