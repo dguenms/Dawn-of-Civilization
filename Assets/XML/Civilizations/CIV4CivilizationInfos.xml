@@ -14,8 +14,8 @@
 			<Civilopedia>TXT_KEY_CIV_AMERICA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_VERYDARK_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AMERICA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ANGLO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AMERICA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>AME</Identifier>
@@ -115,8 +115,8 @@
 			<Civilopedia>TXT_KEY_CIV_ARABIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARABIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ARABIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ARABIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ARA</Identifier>
@@ -204,8 +204,8 @@
 			<Civilopedia>TXT_KEY_CIV_ARGENTINA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GREYISH_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARGENTINA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SPAIN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>ARG</Identifier>
@@ -295,8 +295,8 @@
 			<Civilopedia>TXT_KEY_CIV_ASSYRIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_EBONY_CLAY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ASSYRIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_BABYLON</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ASS</Identifier>
@@ -371,8 +371,8 @@
 			<Civilopedia>TXT_KEY_CIV_AZTEC_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AZTEC</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_MESO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AZTEC</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TEOTL_AZTEC</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>AZT</Identifier>
@@ -482,8 +482,8 @@
 			<Civilopedia>TXT_KEY_CIV_BABYLONIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_BABYLON</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>BAB</Identifier>
@@ -577,8 +577,8 @@
 			<Civilopedia>TXT_KEY_CIV_BRAZIL_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BRAZIL</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_PORTUGAL</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BRA</Identifier>
@@ -664,8 +664,8 @@
 			<Civilopedia>TXT_KEY_CIV_BURMA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_EMERALD</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BURMA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_THAILAND</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BUR</Identifier>
@@ -745,7 +745,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BYZANTIUM</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_BYZANTIUM</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BYZ</Identifier>
@@ -844,8 +844,8 @@
 			<Civilopedia>TXT_KEY_CIV_CANADA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_CANADA_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CANADA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ANGLO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_CANADA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CAN</Identifier>
@@ -948,7 +948,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PHOENICIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_PHOENICIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_BAALISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>CAR</Identifier>
@@ -1050,8 +1050,8 @@
 			<Civilopedia>TXT_KEY_CIV_CELT_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BROWNISH_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CELT</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_CELT</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CEL</Identifier>
@@ -1162,8 +1162,8 @@
 			<Civilopedia>TXT_KEY_CIV_CHINA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CHINA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_CHINA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>CHI</Identifier>
@@ -1277,8 +1277,8 @@
 			<Civilopedia>TXT_KEY_CIV_COLOMBIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SPAIN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>COL</Identifier>
@@ -1360,8 +1360,8 @@
 			<Civilopedia>TXT_KEY_CIV_DRAVIDIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_DRAVIDIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_INDIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_TAMILS</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>DRA</Identifier>
@@ -1467,8 +1467,8 @@
 			<Civilopedia>TXT_KEY_CIV_EGYPT_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_EGYPT</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EGYPT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EGYPT</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>EGY</Identifier>
@@ -1596,8 +1596,8 @@
 			<Civilopedia>TXT_KEY_CIV_ENGLAND_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ENGLAND</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ANGLO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ENGLAND</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ENG</Identifier>
@@ -1703,8 +1703,8 @@
 			<Civilopedia>TXT_KEY_CIV_ETHIOPIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIME</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ETHIOPIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ETHIOPIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ETH</Identifier>
@@ -1818,8 +1818,8 @@
 			<Civilopedia>TXT_KEY_CIV_FRANCE_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_FRANCE</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_FRANCE</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>FRA</Identifier>
@@ -1922,8 +1922,8 @@
 			<Civilopedia>TXT_KEY_CIV_GERMANY_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GRAY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GERMANY</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_GERMANY</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>GER</Identifier>
@@ -2044,7 +2044,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_SILVER</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GREECE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_GREECE</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>GRE</Identifier>
@@ -2170,8 +2170,8 @@
 			<Civilopedia>TXT_KEY_CIV_HARAPPANS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_APPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_INDIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_INDIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>HAR</Identifier>
@@ -2266,8 +2266,8 @@
 			<Civilopedia>TXT_KEY_CIV_HITTITES_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_CRIMSON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HITTITES</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_TURKIC</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>HIT</Identifier>
@@ -2338,8 +2338,8 @@
 			<Civilopedia>TXT_KEY_CIV_HOLY_ROMAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_LEMON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HOLY_ROMAN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_HOLY_ROMAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>HRE</Identifier>
@@ -2442,7 +2442,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_OCHRE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INCA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_INCA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_INTI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>INC</Identifier>
@@ -2527,8 +2527,8 @@
 			<Civilopedia>TXT_KEY_CIV_INDIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_PALE_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_INDIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_INDIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>IND</Identifier>
@@ -2639,8 +2639,8 @@
 			<Civilopedia>TXT_KEY_CIV_IRAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_IRAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>IRA</Identifier>
@@ -2741,8 +2741,8 @@
 			<Civilopedia>TXT_KEY_CIV_ITALY_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_PALE_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ITALY</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ITALY</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ITA</Identifier>
@@ -2841,8 +2841,8 @@
 			<Civilopedia>TXT_KEY_CIV_JAPAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_WHITE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JAPAN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_JAPAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_JAPAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_SHINTO</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>JAP</Identifier>
@@ -2947,8 +2947,8 @@
 			<Civilopedia>TXT_KEY_CIV_JAVA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_HIBISCUS</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JAVA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_INDONESIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>JAV</Identifier>
@@ -3042,8 +3042,8 @@
 			<Civilopedia>TXT_KEY_CIV_KHMER_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KHMER</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_KHMER</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KHM</Identifier>
@@ -3147,8 +3147,8 @@
 			<Civilopedia>TXT_KEY_CIV_CONGO_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_KHAKI</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_CONGO</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_BUKONGO</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>CON</Identifier>
@@ -3244,8 +3244,8 @@
 			<Civilopedia>TXT_KEY_CIV_KOREA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BLUEISH_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KOREA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_JAPAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_KOREA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_MUGYO</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>KOR</Identifier>
@@ -3343,8 +3343,8 @@
 			<Civilopedia>TXT_KEY_CIV_KUSHANS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_EMERALD</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KUSHANS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_TURKIC</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KUS</Identifier>
@@ -3410,8 +3410,8 @@
 			<Civilopedia>TXT_KEY_CIV_MALAYS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BRIGHT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALAYS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_INDONESIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAA</Identifier>
@@ -3501,8 +3501,8 @@
 			<Civilopedia>TXT_KEY_CIV_MALI_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_PEACH</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MALI</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_BIDAISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAL</Identifier>
@@ -3616,8 +3616,8 @@
 			<Civilopedia>TXT_KEY_CIV_MAYA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_VERY_DARK_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MAYA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_MESO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MAYA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TEOTL_MAYA</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MAY</Identifier>
@@ -3725,8 +3725,8 @@
 			<Civilopedia>TXT_KEY_CIV_MEXICO_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MEXICO</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SPAIN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TEOTL_AZTEC</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>MEX</Identifier>
@@ -3815,8 +3815,8 @@
 			<Civilopedia>TXT_KEY_CIV_MONGOL_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BROWN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MONGOL</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_MONGOLIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MONGOL</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MON</Identifier>
@@ -3911,8 +3911,8 @@
 			<Civilopedia>TXT_KEY_CIV_MOORS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BROWN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MOORS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ARABIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ARABIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MOO</Identifier>
@@ -4021,8 +4021,8 @@
 			<Civilopedia>TXT_KEY_CIV_MUGHALS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_ROT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MUGHALS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MUGHAL</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>MUG</Identifier>
@@ -4129,8 +4129,8 @@
 			<Civilopedia>TXT_KEY_CIV_NATIVE_AMERICA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BROWN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NATIVE_AMERICA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_NATIVE_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_NATIVE_AMERICA</UnitArtStyleType>
 			<Identifier>NAT</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -4234,8 +4234,8 @@
 			<Civilopedia>TXT_KEY_CIV_NETHERLANDS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NETHERLANDS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_NETHERLANDS</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>HOL</Identifier>
@@ -4346,8 +4346,8 @@
 			<Civilopedia>TXT_KEY_CIV_NORSE_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NORSE</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_NORSE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_VIKING</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>NOR</Identifier>
@@ -4531,8 +4531,8 @@
 			<Civilopedia>TXT_KEY_CIV_OTTOMAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_DARK_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_OTTOMAN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_OTTOMAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>OTT</Identifier>
@@ -4631,8 +4631,8 @@
 			<Civilopedia>TXT_KEY_CIV_PERSIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_OCHRE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PERSIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_PERSIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>PER</Identifier>
@@ -4751,8 +4751,8 @@
 			<Civilopedia>TXT_KEY_CIV_POLAND_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PINK</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLAND</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_POLAND</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>POL</Identifier>
@@ -4870,8 +4870,8 @@
 			<Civilopedia>TXT_KEY_CIV_POLYNESIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_POLYNESIA</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_PACIFIC</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_POLYNESIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ATUA</PaganReligion>
 			<Impact>IMPACT_MARGINAL</Impact>
 			<Identifier>PLY</Identifier>
@@ -4978,8 +4978,8 @@
 			<Civilopedia>TXT_KEY_CIV_PORTUGAL_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_VERY_LIGHT_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PORTUGAL</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_PORTUGAL</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>POR</Identifier>
@@ -5097,7 +5097,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ROME</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ROME</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>ROM</Identifier>
@@ -5215,8 +5215,8 @@
 			<Civilopedia>TXT_KEY_CIV_RUS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_RUS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_RUSSIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_RUSSIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>UKR</Identifier>
@@ -5295,8 +5295,8 @@
 			<Civilopedia>TXT_KEY_CIV_RUSSIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_VERYDARK_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_RUSSIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_RUSSIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_RUSSIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_RODNOVERY</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>RUS</Identifier>
@@ -5391,8 +5391,8 @@
 			<Civilopedia>TXT_KEY_CIV_SPAIN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SPAIN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_IBERIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SPAIN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_DRUIDISM</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>SPA</Identifier>
@@ -5492,8 +5492,8 @@
 			<Civilopedia>TXT_KEY_CIV_SUMERIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SUMERIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SUMERIA</UnitArtStyleType>
 			<Identifier>SUM</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -5573,8 +5573,8 @@
 			<Civilopedia>TXT_KEY_CIV_SWAHILI_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_CREAM</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SWAHILI</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ARABIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ETHIOPIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>SWA</Identifier>
@@ -5645,8 +5645,8 @@
 			<Civilopedia>TXT_KEY_CIV_SWEDEN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SWEDEN</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_NORSE</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_VIKING</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ASATRU</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>SWE</Identifier>
@@ -5725,8 +5725,8 @@
 			<Civilopedia>TXT_KEY_CIV_THAILAND_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BRIGHT_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_THAILAND</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_THAILAND</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>THA</Identifier>
@@ -5830,8 +5830,8 @@
 			<Civilopedia>TXT_KEY_CIV_TIBET_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_MAROON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_TIBET</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_BON</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>TIB</Identifier>
@@ -5955,8 +5955,8 @@
 			<Civilopedia>TXT_KEY_CIV_TOLTECS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_CARMINE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TOLTECS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_MESO_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MAYA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TEOTL_TOLTEC</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>TOL</Identifier>
@@ -6027,8 +6027,8 @@
 			<Civilopedia>TXT_KEY_CIV_TURKS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GREYISH_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TURKS</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_TURKIC</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TENGRI</PaganReligion>
 			<Impact>IMPACT_CRITICAL</Impact>
 			<Identifier>TUR</Identifier>
@@ -6118,8 +6118,8 @@
 			<Civilopedia>TXT_KEY_CIV_VIETNAM_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LEMON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_VIETNAM</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_ASIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_CHINA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>VIE</Identifier>
@@ -6198,8 +6198,8 @@
 			<Civilopedia>TXT_KEY_CIV_ZULU_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ZULU</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ZULU</UnitArtStyleType>
 			<Identifier>ZUL</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -6732,7 +6732,7 @@
 			<Civilopedia>TXT_KEY_CIV_NATIVE_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_GRAY_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NATIVE</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
 			<Identifier>NAT</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
