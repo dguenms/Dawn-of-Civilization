@@ -3619,18 +3619,18 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_NATIVE
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_NATIVE
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_NATIVE
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_NATIVE
+		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Benin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -3638,7 +3638,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		BeginCulture
-			Civilization=CIVILIZATION_NATIVE, Culture=50
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
 		EndCulture
 		YearFounded=1300
 	EndCity
