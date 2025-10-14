@@ -10723,7 +10723,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=48
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
