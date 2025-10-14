@@ -119,33 +119,64 @@
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::1x1x1_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x1x1_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x1x2_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x1x2_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x1x2_03">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
+		</ArtRef>
+		<!-- SOUTH ASIAN -->
+		<ArtRef Name="generic:India_Ancient.nif::1x1_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Ancient.nif::1x2_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Ancient.nif::1x2_03">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Medieval.nif::1x1_02">
+			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Scale>0.7</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Medieval.nif::1x1_04">
+			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Scale>0.5</Scale>
 		</ArtRef>
 		<!-- RENAISSANCE -->
 		<ArtRef Name="generic:ren_eu.nif::park_1x1">
@@ -297,27 +328,27 @@
 		<!-- Asian -->
 		<ArtRef Name="generic:asian.nif::1x1_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x1_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x1_03">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x1_04">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x1_05">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<!-- Roman -->
@@ -477,66 +508,94 @@
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::1x2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_03">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_05">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::2x1x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::2x1x2_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::2x1x2_03">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::2x1x2_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
+		</ArtRef>
+		<!-- SOUTH ASIAN -->
+		<ArtRef Name="generic:India_Ancient.nif::2x2_01">
+			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Ancient.nif::2x2_01">
+			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Rotate>270</Rotate>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Ancient.nif::2x2_04">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Medieval.nif::2x2_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Scale>0.7</Scale>
 		</ArtRef>
 		<!-- RENAISSANCE -->
 		<ArtRef Name="generic:ren_eu.nif::park_2x1">
@@ -747,14 +806,14 @@
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:Oriental.nif::1x2x2_05">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
@@ -859,49 +918,49 @@
 		<!-- Asian -->
 		<ArtRef Name="generic:asian.nif::2x1_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x1_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x1_03">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x1_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x2_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x2_03">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x2_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
@@ -996,25 +1055,25 @@
 		<!-- Asian -->
 		<ArtRef Name="generic:asian.nif::3x1_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::3x1_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x3_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::1x3_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
@@ -1071,7 +1130,7 @@
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::2x2x2_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
@@ -1079,6 +1138,31 @@
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_ANGLO_AMERICA,ARTSTYLE_IBERIA,ARTSTYLE_EUROPE,ARTSTYLE_NORSE,ARTSTYLE_RUSSIA,ARTSTYLE_BARBARIAN,ARTSTYLE_SOUTH_PACIFIC</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+		</ArtRef>
+		<!-- SOUTH ASIAN -->
+		<ArtRef Name="generic:India_Ancient.nif::2x2_03">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Ancient.nif::1x2_04">
+			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Medieval.nif::1x2_01">
+			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:India_Medieval.nif::1x2_03">
+			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_INDIA,ARTSTYLE_SOUTH_EAST_ASIA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Scale>0.8</Scale>
 		</ArtRef>
 		<!-- MEDIEVAL -->
 		<ArtRef Name="generic:med_eu.nif::2x2x2_02">
@@ -1090,7 +1174,7 @@
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::2x2x2_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_INDIA,ARTSTYLE_EGYPT</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ARABIA,ARTSTYLE_CRESCENT,ARTSTYLE_EGYPT</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
@@ -1173,22 +1257,22 @@
 		<!-- Asian -->
 		<ArtRef Name="generic:asian.nif::2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x2_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x2_03">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:asian.nif::2x2_04">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_EAST_ASIA,ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_ASIA,ARTSTYLE_JAPAN,ARTSTYLE_MONGOLIA</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
 		<!-- Roman -->
