@@ -14455,21 +14455,23 @@ int CvUnit::getOriginalArtStyle() const
 	case REGION_CENTRAL_AMERICA:
 		return GC.getCivilizationInfo(AZTECS).getUnitArtStyleType();
 	case REGION_NUBIA:
-		return GC.getCivilizationInfo(NATIVE).getUnitArtStyleType();
+		return GC.getCivilizationInfo(NUBIA).getUnitArtStyleType();
 	case REGION_IBERIA:
 		return GC.getCivilizationInfo(SPAIN).getUnitArtStyleType();
 	case REGION_ITALY:
 	case REGION_BALKANS:
+		if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(ITALY).getStartingYear())
+		{
+			return GC.getCivilizationInfo(ITALY).getUnitArtStyleType();
+		}
 		return GC.getCivilizationInfo(ROME).getUnitArtStyleType();
 	case REGION_MAGHREB:
+	case REGION_SAHARA:
 		if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(ARABIA).getStartingYear())
 		{
 			return GC.getCivilizationInfo(ARABIA).getUnitArtStyleType();
 		}
-		else
-		{
-			return GC.getCivilizationInfo(CARTHAGE).getUnitArtStyleType();
-		}
+		return GC.getCivilizationInfo(CARTHAGE).getUnitArtStyleType();
 	case REGION_FRANCE:
 	case REGION_QUEBEC:
 		return GC.getCivilizationInfo(FRANCE).getUnitArtStyleType();
@@ -14487,13 +14489,34 @@ int CvUnit::getOriginalArtStyle() const
 	case REGION_URALS:
 	case REGION_SIBERIA:
 		return GC.getCivilizationInfo(RUSSIA).getUnitArtStyleType();
+	case REGION_GREECE:
+		return GC.getCivilizationInfo(GREECE).getUnitArtStyleType();
+	case REGION_ANATOLIA:
+	case REGION_CAUCASUS:
+		if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(OTTOMANS).getStartingYear())
+		{
+			return GC.getCivilizationInfo(OTTOMANS).getUnitArtStyleType();
+		} 
+		else if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(BYZANTIUM).getStartingYear())
+		{
+			return GC.getCivilizationInfo(BYZANTIUM).getUnitArtStyleType();
+		}
+		return GC.getCivilizationInfo(HITTITES).getUnitArtStyleType();
 	case REGION_PERSIA:
 	case REGION_KHORASAN:
 	case REGION_TRANSOXIANA:
 		return GC.getCivilizationInfo(PERSIA).getUnitArtStyleType();
 	case REGION_MESOPOTAMIA:
+		if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(ARABIA).getStartingYear())
+		{
+			return GC.getCivilizationInfo(ARABIA).getUnitArtStyleType();
+		}
 		return GC.getCivilizationInfo(BABYLONIA).getUnitArtStyleType();
 	case REGION_LEVANT:
+		if (GC.getGameINLINE().getGameTurnYear() > GC.getCivilizationInfo(ARABIA).getStartingYear())
+		{
+			return GC.getCivilizationInfo(ARABIA).getUnitArtStyleType();
+		}
 		return GC.getCivilizationInfo(CARTHAGE).getUnitArtStyleType();
 	case REGION_ARABIA:
 		return GC.getCivilizationInfo(ARABIA).getUnitArtStyleType();
@@ -14515,8 +14538,9 @@ int CvUnit::getOriginalArtStyle() const
 		}
 		return GC.getCivilizationInfo(INDIA).getUnitArtStyleType();
 	case REGION_DECCAN:
-	case REGION_DRAVIDA:
 		return GC.getCivilizationInfo(INDIA).getUnitArtStyleType();
+	case REGION_DRAVIDA:
+		return GC.getCivilizationInfo(DRAVIDIA).getUnitArtStyleType();
 	case REGION_INDOCHINA:
 		return GC.getCivilizationInfo(KHMER).getUnitArtStyleType();
 	case REGION_INDONESIA:
@@ -14536,6 +14560,22 @@ int CvUnit::getOriginalArtStyle() const
 	case REGION_AMUR:
 	case REGION_CENTRAL_ASIAN_STEPPE:
 		return GC.getCivilizationInfo(MONGOLS).getUnitArtStyleType();
+	case REGION_ETHIOPIA:
+		return GC.getCivilizationInfo(ETHIOPIA).getUnitArtStyleType();
+	case REGION_HORN_OF_AFRICA:
+	case REGION_SWAHILI_COAST:
+	case REGION_GREAT_LAKES:
+	case REGION_ZAMBEZI:
+		return GC.getCivilizationInfo(SWAHILI).getUnitArtStyleType();
+	case REGION_MADAGASCAR:
+		return GC.getCivilizationInfo(POLYNESIA).getUnitArtStyleType();
+	case REGION_CAPE:
+	case REGION_KALAHARI:
+	case REGION_CONGO:
+		return GC.getCivilizationInfo(CONGO).getUnitArtStyleType();
+	case REGION_GUINEA:
+	case REGION_SAHEL:
+		return GC.getCivilizationInfo(MALI).getUnitArtStyleType();
 	}
 
 	switch (CvPlot::getRegionGroupForRegion(getOriginalRegion()))
@@ -14546,6 +14586,8 @@ int CvUnit::getOriginalArtStyle() const
 		return GC.getCivilizationInfo(INCA).getUnitArtStyleType();
 	case REGION_GROUP_SUB_SAHARAN_AFRICA:
 		return GC.getCivilizationInfo(NATIVE).getUnitArtStyleType();
+	case REGION_GROUP_OCEANIA:
+		return GC.getCivilizationInfo(POLYNESIA).getUnitArtStyleType();
 	}
 
 	return GC.getCivilizationInfo(INDEPENDENT).getUnitArtStyleType();
