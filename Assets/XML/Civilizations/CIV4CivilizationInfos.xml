@@ -296,7 +296,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_EBONY_CLAY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ASSYRIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_BABYLON</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASSYRIA</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ASS</Identifier>
@@ -665,7 +665,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_EMERALD</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BURMA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_THAILAND</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_BURMESE</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>BUR</Identifier>
@@ -2267,7 +2267,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_CRIMSON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HITTITES</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_TURKIC</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_HITTITE</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>HIT</Identifier>
@@ -2948,7 +2948,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_HIBISCUS</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JAVA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_INDONESIA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_JAVAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>JAV</Identifier>
@@ -3411,7 +3411,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_BRIGHT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALAYS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_EAST_ASIA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_INDONESIA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MALAY</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_VEDISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>MAA</Identifier>
@@ -4456,7 +4456,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LILAC</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NUBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_NUBIAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>NUB</Identifier>
@@ -5574,7 +5574,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_CREAM</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SWAHILI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ARABIA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ETHIOPIA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SWAHILI</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_MAZDAISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>SWA</Identifier>
@@ -5956,7 +5956,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_CARMINE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TOLTECS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MESO_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MAYA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AZTEC</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_TEOTL_TOLTEC</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>TOL</Identifier>
@@ -6119,7 +6119,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LEMON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_VIETNAM</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_CHINA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_VIET</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_SHENDAO</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
 			<Identifier>VIE</Identifier>
