@@ -18329,7 +18329,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=68
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18345,7 +18345,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=71
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -18790,6 +18789,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=69
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -22228,6 +22228,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=74
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -22628,7 +22629,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=73
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
