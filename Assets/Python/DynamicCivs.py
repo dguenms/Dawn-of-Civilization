@@ -2554,6 +2554,8 @@ def leader(iPlayer):
 		
 		if iEra >= iMedieval and (bResurrected or scenario() >= i600AD): return iBaibars
 		
+		if iReligion == iIslam: return iBaibars
+		
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt: return iPtolemy
 		
 		if getColumn(iPlayer) >= 3: return iRamesses
