@@ -1229,7 +1229,8 @@ int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 	CvUnitInfo& kUnitInfo = GC.getUnitInfo(eUnit);
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
-	iResearch = (kUnitInfo.getBaseDiscover() + (kUnitInfo.getDiscoverMultiplier() * GET_TEAM(kPlayer.getTeam()).getTotalPopulation()));
+	// Leoreth: slight base discover scaling
+	iResearch = (kUnitInfo.getBaseDiscover() + (std::max(0, kPlayer.getCurrentEra()-1) * kUnitInfo.getBaseDiscover() / 2) + (kUnitInfo.getDiscoverMultiplier() * GET_TEAM(kPlayer.getTeam()).getTotalPopulation()));
 
 	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
 	iResearch /= 100;
