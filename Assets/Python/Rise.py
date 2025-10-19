@@ -723,7 +723,7 @@ class Birth(object):
 			return False
 		
 		if autoplay():
-			if infos.civ(self.iCiv).getImpact() <= iImpactLimited:
+			if getImpact(self.iCiv) <= iImpactLimited:
 				if year(dBirth[active()]) > year(dFall[self.iCiv]) + turns(20):
 					return False
 		
