@@ -4960,10 +4960,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_LUMBERMILL
 EndPlot
 BeginPlot
-	x=71,y=65
-	ImprovementType=IMPROVEMENT_FORT
-EndPlot
-BeginPlot
 	x=71,y=68
 	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
@@ -5197,6 +5193,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=63
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -5510,7 +5507,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=63
-	ImprovementType=IMPROVEMENT_PASTURE
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
