@@ -296,7 +296,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_EBONY_CLAY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ASSYRIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_ASSYRIA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASSYRIAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>ASS</Identifier>
@@ -3344,7 +3344,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_EMERALD</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KUSHANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_CRESCENT</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_TURKIC</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_KUSHAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_OLYMPIANISM</PaganReligion>
 			<Impact>IMPACT_SIGNIFICANT</Impact>
 			<Identifier>KUS</Identifier>
@@ -4455,7 +4455,7 @@
 			<Civilopedia>TXT_KEY_CIV_NUBIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LILAC</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NUBIA</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<ArtStyleType>ARTSTYLE_EGYPT</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_NUBIAN</UnitArtStyleType>
 			<PaganReligion>PAGAN_RELIGION_PESEDJET</PaganReligion>
 			<Impact>IMPACT_LIMITED</Impact>
