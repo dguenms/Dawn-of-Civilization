@@ -205,7 +205,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MANDE_WANGARA
-		BuildingType=BUILDING_YORUBA_TEMPLE
+		BuildingType=BUILDING_BIDAIST_TEMPLE
 		BeginCulture
 			Civilization=CIVILIZATION_MALI, Culture=10
 		EndCulture
@@ -248,7 +248,7 @@ BeginPlot
 		CityName=Tumbutu
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_YORUBA_TEMPLE
+		BuildingType=BUILDING_BIDAIST_TEMPLE
 		BeginCulture
 			Civilization=CIVILIZATION_MALI, Culture=10
 		EndCulture
