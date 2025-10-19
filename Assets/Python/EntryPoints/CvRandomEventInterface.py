@@ -4135,6 +4135,11 @@ def canDoSpyDiscovered3(argsList):
 	
 	if player.getCapitalCity().isNone():
 		return false
+		
+	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TANK')
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+	if not player.canTrain(iUnitType, False, False):
+		return false
 				
 	return true
 
