@@ -7235,6 +7235,7 @@ name_translations = {
 	},
 	"Hattusha": {  # founded on Gangra
 		iBabylonian: "Haattusa",
+		iEnglish: "Hattusa",
 		iHittite: _,
 	},
 	"Hatunqulla": {
