@@ -1223,3 +1223,21 @@ def getColumn(iPlayer):
 	lTechs = [infos.tech(iTech).getGridX() for iTech in range(iNumTechs) if team(iPlayer).isHasTech(iTech)]
 	if not lTechs: return 0
 	return max(lTechs)
+
+
+def placeArtStyleUnits(iCiv):
+	lUnits = [
+		iAntiTank, iArcher, iArquebusier, iArtillery, iAxeman, iBombard, iCannon, iCaravel, iCatapult, iCavalry, 
+		iChariot, iCog, iCrossbowman, iCuirassier, iDragoon, iExplorer, iFrigate, iGalleass, iGalleon, iGalley, 
+		iGreatArtist,iGreatEngineer, iGreatGeneral, iGreatMerchant, iGreatProphet, iGreatScientist, iGreatSpy, iGreatStatesman, iGrenadier, iHeavyGalley, 
+		iHeavySpearman, iHeavySwordsman, iHorseArcher, iHorseman, iHussar, iInfantry, iLabourer, iLancer, iLightSwordsman, iLongbowman, 
+		iMachineGun, iMarine, iMilitia, iMusketeer, iParatrooper, iPikeman, iPistolier, iRifleman, iSamInfantry, iScout, 
+		iSettler, iShipOfTheLine, iSkirmisher, iSpearman, iSpy, iSwordsman, iWarElephant, iWarGalley, iWarrior, iWorker
+	]
+	
+	tile = (105, 17)
+	
+	for index, iUnit in enumerate(lUnits):
+		x, y = tile
+		print "Place art style unit: %s" % infos.unit(iUnit).getText()
+		makeUnit(iCiv, iUnit, (x + index % 8, y + index / 8))
