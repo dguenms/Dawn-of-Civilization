@@ -1253,7 +1253,7 @@ class PlotFactory:
 		return self.core(identifier)
 
 	def core(self, identifier):
-		iPeriod = player(identifier).getPeriod()
+		iPeriod = game.getPeriod(identifier)
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.area(dCoreArea, dCoreAreaExceptions, identifier)
@@ -1269,7 +1269,7 @@ class PlotFactory:
 		return self.birth(identifier)
 	
 	def capital(self, identifier):
-		iPeriod = player(identifier).getPeriod()
+		iPeriod = game.getPeriod(identifier);
 		if iPeriod in dPeriodCapitals:
 			return plot(dPeriodCapitals[iPeriod])
 		return plot(dCapitals[identifier])
