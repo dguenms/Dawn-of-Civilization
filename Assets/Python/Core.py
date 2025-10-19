@@ -1252,8 +1252,10 @@ class PlotFactory:
 		
 		return self.core(identifier)
 
-	def core(self, identifier):
-		iPeriod = player(identifier).getPeriod()
+	# TODO: test iPeriod argument
+	def core(self, identifier, iPeriod=None):
+		if iPeriod is None:
+			iPeriod = player(identifier).getPeriod()
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.area(dCoreArea, dCoreAreaExceptions, identifier)

@@ -8,7 +8,7 @@ lHappinessResources = [iResource for iResource in infos.bonuses() if infos.bonus
 lAfricanCoastRegions = [rRegion for rRegion in lAfrica if rRegion != rMadagascar]
 
 # first Norse goal: control a European core in 1050 AD
-lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv != iNorse and dBirth[iCiv] <= 1050]
+lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv not in (iCelts, iNorse) and dBirth[iCiv] <= 1050] + [plots.core(iCelts, iPeriod=iPeriodInsularCelts)]
 
 # first Portuguese goal
 lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rDravida, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]

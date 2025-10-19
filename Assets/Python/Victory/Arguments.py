@@ -264,8 +264,10 @@ class AreaArgument(NamedArgument):
 	def birth(self, iCiv):
 		return self.call_for_civ("birth", iCiv)
 	
-	def core(self, iCiv):
-		return self.call_for_civ("core", iCiv)
+	def core(self, iCiv, iPeriod=None):
+		self.call("core", (iCiv,), {"iPeriod": iPeriod})
+		self.named(infos.civ(iCiv).getShortDescription(0))
+		return self
 	
 	def normal(self, iCiv):
 		return self.call_for_civ("normal", iCiv)
