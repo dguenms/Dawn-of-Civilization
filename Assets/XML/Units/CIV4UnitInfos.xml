@@ -20334,7 +20334,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iBaseDiscover>500</iBaseDiscover>
+			<iBaseDiscover>750</iBaseDiscover>
 			<iDiscoverMultiplier>3</iDiscoverMultiplier>
 			<iAsset>5</iAsset>
 			<UnitMeshGroups>
@@ -21084,7 +21084,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<iBaseDiscover>500</iBaseDiscover>
+			<iBaseDiscover>750</iBaseDiscover>
 			<iDiscoverMultiplier>3</iDiscoverMultiplier>
 			<iAsset>5</iAsset>
 			<UnitMeshGroups>
