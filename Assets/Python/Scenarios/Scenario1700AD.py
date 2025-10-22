@@ -58,7 +58,7 @@ lCivilizations = [
 		iGold=150,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy],
-		techs=techs.column(10)
+		techs=techs.column(10).including(iCombinedArms)
 	),
 	Civilization(
 		iTurks, # Uzbeks
@@ -152,7 +152,7 @@ lCivilizations = [
 		iGold=250,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(11).without(iEconomics, iHorticulture),
+		techs=techs.column(10).including(iCombinedArms, iScientificMethod, iUrbanPlanning),
 		dAttitudes={iRussia: -2, iPoland: -2}
 	),
 	Civilization(
@@ -204,7 +204,7 @@ lCivilizations = [
 		iGold=800,
 		iStateReligion=iProtestantism,
 		lCivics=[iRepublic, iBureaucracy, iIndividualism, iFreeEnterprise, iSyncretism, iColonialism],
-		techs=techs.column(11).without(iHorticulture),
+		techs=techs.column(10).including(iCombinedArms, iEconomics, iGeography, iScientificMethod, iCivilLiberties),
 		dAttitudes={iFrance: 2, iPortugal: -2, iOttomans: -2}
 	),
 	Civilization(
@@ -213,7 +213,7 @@ lCivilizations = [
 		iGold=800,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iSyncretism, iHegemony],
-		techs=techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
+		techs=techs.column(10).without(iGeography, iCivilLiberties, iHorticulture),
 	),
 	Civilization(
 		iNative,
