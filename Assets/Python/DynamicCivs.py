@@ -2577,8 +2577,6 @@ def leader(iPlayer):
 			
 		if iEra >= iRenaissance and year() >= year(1400): return iHongwu
 	
-		if bResurrected: return iHongwu
-		
 		if scenario() >= i1700AD: return iHongwu
 		
 		if iEra >= iMedieval: return iTaizong
