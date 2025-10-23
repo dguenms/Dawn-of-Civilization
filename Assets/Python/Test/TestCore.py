@@ -446,7 +446,7 @@ class TestInfos(TestCase):
 	def test_leader_player(self):
 		# given
 		player = gc.getPlayer(0)
-		expected_leaderheadinfo = gc.getLeaderHeadInfo(iRamesses)
+		expected_leaderheadinfo = gc.getLeaderHeadInfo(iDjoser)
 		
 		# then
 		actual_leaderheadinfo = self.infos.leader(player)
@@ -790,19 +790,19 @@ class TestPlayers(TestCase):
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_barbarian(self):
-		expected_players = [0, 1, 2, 32]
+		expected_players = [0, 1, 2, 36]
 		actual_players = self.players.barbarian()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 		
 	def test_independent(self):
-		expected_players = [0, 1, 2, 5, 6]
+		expected_players = [0, 1, 2, 33, 34]
 		actual_players = self.players.independent()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
 	def test_native(self):
-		expected_players = [0, 1, 2, 4]
+		expected_players = [0, 1, 2, 35]
 		actual_players = self.players.native()
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
@@ -923,7 +923,7 @@ class TestPlayerFactory(TestCase):
 	def test_all(self):
 		players = self.factory.all()
 		assertType(self, players, Players)
-		self.assertEqual(len(players), 14)
+		self.assertEqual(len(players), 13)
 		
 	def test_major(self):
 		players = self.factory.major()
@@ -1082,7 +1082,7 @@ class TestUnits(TestCase):
 		self.assertRaises(TypeError, self.units.__contains__, 0)
 		
 	def test_string(self):
-		expected_string = "Settler (Chinese) at (0, 0), Settler (Chinese) at (0, 1), Settler (Chinese) at (0, 2), Settler (Chinese) at (0, 3)"
+		expected_string = "Settler (Greek) at (0, 0), Settler (Greek) at (0, 1), Settler (Greek) at (0, 2), Settler (Greek) at (0, 3)"
 		self.assertEqual(str(self.units), expected_string)
 		
 	def test_owner(self):
@@ -1215,27 +1215,27 @@ class TestUnitFactory(TestCase):
 
 	def test_owner_id(self):
 		# when
-		chinese_units = self.factory.owner(7)
+		greek_units = self.factory.owner(7)
 		
 		# then
-		assertType(self, chinese_units, Units)
-		self.assertEqual(len(chinese_units), 4)
+		assertType(self, greek_units, Units)
+		self.assertEqual(len(greek_units), 4)
 	
 	def test_owner_civ(self):
 		# when
-		chinese_units = self.factory.owner(iChina)
+		greek_units = self.factory.owner(iGreece)
 		
 		# then
-		assertType(self, chinese_units, Units)
-		self.assertEqual(len(chinese_units), 4)
+		assertType(self, greek_units, Units)
+		self.assertEqual(len(greek_units), 4)
 		
 	def test_owner_player(self):
 		# when
-		chinese_units = self.factory.owner(gc.getPlayer(7))
+		greek_units = self.factory.owner(gc.getPlayer(7))
 		
 		# then
-		assertType(self, chinese_units, Units)
-		self.assertEqual(len(chinese_units), 4)
+		assertType(self, greek_units, Units)
+		self.assertEqual(len(greek_units), 4)
 		
 	def test_at_coordinates(self):
 		# when
@@ -2010,7 +2010,7 @@ class TestPlots(TestCase):
 		expectedOdd = [(0, 1), (1, 0), (1, 2), (2, 1)]
 		
 		self.assertEqual(len(grouped), 2)
-		evenGroup, oddGroup = grouped
+		oddGroup, evenGroup = grouped
 		
 		evenKey, evenValues = evenGroup
 		self.assertEqual(evenKey, 0)
@@ -2573,7 +2573,7 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_owner_civ(self):
-		cities = self.cities.owner(iChina)
+		cities = self.cities.owner(iGreece)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -2700,7 +2700,7 @@ class TestCities(TestCase):
 	def test_notowner_civ(self):
 		expected_tiles = [(2, 0)]
 		
-		cities = self.cities.notowner(iChina)
+		cities = self.cities.notowner(iGreece)
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
 		
 		self.assertEqual(actual_tiles, expected_tiles)
@@ -2742,7 +2742,7 @@ class TestCityFactory(TestCase):
 		self.assertEqual(set(actual_tiles), set(expected_tiles))
 		
 	def test_owner_civ(self):
-		cities = self.factory.owner(iChina)
+		cities = self.factory.owner(iGreece)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]

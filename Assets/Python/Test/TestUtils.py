@@ -14,9 +14,9 @@ def setup():
 	if bSetupComplete:
 		return
 		
-	for iSlot, iCiv in enumerate([iAssyria, iChina, iHittites, iGreece, iIndia, iPhoenicia]):
+	for iSlot, iCiv in enumerate([iAssyria, iNubia, iChina, iHittites, iGreece, iIndia]):
 		addPlayer(3 + iSlot, iCiv, bAlive=True)
-		data.dSlots[iCiv] = 6 + iSlot
+		data.dSlots[iCiv] = 3 + iSlot
 	
 	for i in [33, 34, 35]:
 		unit = makeUnit(i, iMilitia, (i, 0))

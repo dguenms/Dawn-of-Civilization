@@ -176,16 +176,16 @@ class TestReligiousVictory(ExtendedTestCase):
 			cities.kill()
 		
 	def test_create(self):
-		player(0).setLastStateReligion(iBuddhism)
+		player(0).setLastStateReligion(iZoroastrianism)
 		
 		victory = ReligiousVictory.create(0)
 		
 		try:
 			self.assertEqual(victory.iPlayer, 0)
 			self.assertEqual(victory.goals, (
-				Goal([req.PeaceTurns(100)], req.PeaceTurns.GOAL_DESC_KEY, 0), 
-				Goal([req.HappiestTurns(100)], req.HappiestTurns.GOAL_DESC_KEY, 0), 
-				Goal([req.AllAttitude(AttitudeTypes.ATTITUDE_CAUTIOUS)], req.AllAttitude.GOAL_DESC_KEY, 0)
+				Goal([req.ResourceCount(iIncense, 6)], req.PeaceTurns.GOAL_DESC_KEY, 0),
+				Goal([req.ReligionSpreadPercent(iZoroastrianism, 10)], req.ReligionSpreadPercent.GOAL_DESC_KEY, 0),
+				Goal([req.CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelLegendary)], req.CityCultureLevel.GOAL_DESC_KEY, 0),
 			))
 		finally:
 			player(0).setLastStateReligion(-1)
