@@ -111,7 +111,6 @@ def variadic(*items):
 def listify(item):
 	if isinstance(item, list):
 		return item
-	# TODO: test info collection
 	if isinstance(item, (tuple, set, InfoCollection)):
 		return list(item)
 	if isinstance(item, types.GeneratorType):
@@ -847,11 +846,15 @@ def civ(identifier = None):
 	return Civ(player(identifier).getCivilizationType())
 
 
-def period(iCiv):
-	iPlayer = slot(iCiv)
-	if iPlayer >= 0:
-		return player(iPlayer).getPeriod()
-	return -1
+def period(identifier):
+	if isinstance(identifier, Civ):
+		iPlayer = slot(identifier)
+		if iPlayer < 0:
+			return -1
+		
+		return period(iPlayer)
+	
+	return player(identifier).getPeriod()
 	
 	
 def active():
@@ -1136,11 +1139,9 @@ class EntityCollection(object):
 	def set(self):
 		return set(self._keys)
 	
-	# TODO: test
 	def map(self, func):
 		return self.copy([self._keyify(mapped) for mapped in self.get(func)])
 	
-	# TODO: test
 	def proportion(self, func):
 		return 1.0 * self.count(func) / self.count()
 	
@@ -1252,10 +1253,9 @@ class PlotFactory:
 		
 		return self.core(identifier)
 
-	# TODO: test iPeriod argument
 	def core(self, identifier, iPeriod=None):
 		if iPeriod is None:
-			iPeriod = player(identifier).getPeriod()
+			iPeriod = period(identifier)
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.area(dCoreArea, dCoreAreaExceptions, identifier)
@@ -1386,7 +1386,6 @@ class Locations(EntityCollection):
 	def intersect(self, locations):
 		return any(loc in locations for loc in self)
 	
-	# TODO: test
 	def revealed(self, identifier):
 		return self.where(lambda loc: plot(loc).isRevealed(player(identifier).getTeam(), False))
 
@@ -1923,11 +1922,9 @@ class Civilizations(EntityCollection):
 	def __str__(self):
 		return ",".join([infos.civ(item).getText() for item in self.entities()])
 	
-	# TODO: test
 	def alive(self):
 		return self.where(lambda c: player(c).isAlive())
 	
-	# TODO: test
 	def notalive(self):
 		return self.where(lambda c: not player(c).isAlive())
 		
@@ -1936,7 +1933,6 @@ class Civilizations(EntityCollection):
 			exceptions = [exceptions]
 		return self.where(lambda c: c not in [civ(e) for e in exceptions])
 	
-	# TODO: test
 	def past_birth(self):
 		return self.where(lambda c: year() >= year(dBirth[c]))
 	
@@ -2151,7 +2147,7 @@ class Infos:
 	def commerce(self, identifier):
 		return gc.getCommerceInfo(identifier)
 	
-	def commerces(self, identifier):
+	def commerces(self):
 		return InfoCollection.type(gc.getCommerceInfo, CommerceTypes.NUM_COMMERCE_TYPES)
 		
 	def corporation(self, identifier):

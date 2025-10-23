@@ -1939,6 +1939,22 @@ class TestPlots(TestCase):
 		self.assert_((1, 0) in enriched)
 		self.assert_((2, 0) in enriched)
 	
+	def test_map(self):
+		mapped = self.plots.map(lambda p: (p.getX()+1, p.getY()+1))
+		
+		expected = plots.of([(x, y) for x in range(1, 4) for y in range(1, 4)])
+		
+		self.assertEqual(mapped, expected)
+	
+	def test_proportion_all(self):
+		self.assertEqual(self.plots.proportion(lambda p: True), 1.0)
+	
+	def test_proportion_some(self):
+		self.assertEqual(self.plots.proportion(lambda p: p.getX() <= 1), 6.0 / 9.0)
+	
+	def test_proportion_none(self):
+		self.assertEqual(self.plots.proportion(lambda p: False), 0.0)
+	
 	def test_no_name(self):
 		self.assertEqual(self.plots.name(), "")
 	
@@ -2247,7 +2263,35 @@ class TestPlots(TestCase):
 		
 		self.assertEqual(left.intersect(right), True)
 		self.assertEqual(right.intersect(left), True)
-
+	
+	def test_revealed(self):
+		plots = PlotFactory().of([(10, 10), (10, 11)])
+		
+		plot(10, 10).setRevealed(0, True, False, 0)
+		
+		revealed = plots.revealed(0)
+		expected = PlotFactory().of([(10, 10)])
+		
+		print "revealed: %s, expected: %s" % (revealed, expected)
+		
+		try:
+			self.assertEqual(revealed, expected)
+		finally:
+			plot(10, 10).setRevealed(0, False, False, 0)
+	
+	def test_revealed_civ(self):
+		plots = PlotFactory().of([(10, 10), (10, 11)])
+		
+		plot(10, 10).setRevealed(0, True, False, 0)
+		
+		revealed = plots.revealed(iEgypt)
+		expected = PlotFactory().of([(10, 10)])
+		
+		try:
+			self.assertEqual(revealed, expected)
+		finally:
+			plot(10, 10).setRevealed(0, False, False, 0)
+		
 
 class TestPlotFactory(TestCase):
 
@@ -2396,7 +2440,12 @@ class TestPlotFactory(TestCase):
 	def test_core(self):
 		plots = self.factory.core(iEgypt)
 		assertType(self, plots, Plots)
-		
+	
+	def test_core_period(self):
+		self.assertEqual(period(iCelts), -1)
+		self.assertEqual((52, 64) in self.factory.core(iCelts), False)
+		self.assertEqual((52, 64) in self.factory.core(iCelts, iPeriodInsularCelts), True)
+	
 	def test_capital(self):
 		plot = self.factory.capital(iEgypt)
 		assertType(self, plot, CyPlot)
@@ -4210,6 +4259,10 @@ class TestConcat(TestCase):
 	def test_listify_none(self):
 		self.assertEqual(listify(None), [])
 	
+	def test_listify_info_collection(self):
+		commerces = infos.commerces()
+		self.assertEqual(listify(commerces), list(commerces))
+	
 	def test_concat_lists(self):
 		self.assertEqual(concat([1, 2], [3, 4]), [1, 2, 3, 4])
 	
@@ -4230,6 +4283,10 @@ class TestConcat(TestCase):
 	
 	def test_concat_with_none(self):
 		self.assertEqual(concat([1, 2], None), [1, 2])
+	
+	def test_concat_with_info_collection(self):
+		commerces = infos.commerces()
+		self.assertEqual(concat([1, 2], commerces), [1, 2] + list(commerces))
 
 
 class TestCount(TestCase):
@@ -4487,6 +4544,23 @@ class TestCivilizations(TestCase):
 		expected_names = "The Egyptians,The Babylonians,The Harappans"
 		actual_names = str(self.civs)
 		self.assertEqual(actual_names, expected_names)
+		
+	def test_alive(self):
+		civs = Civilizations([iEgypt, iBabylonia, iHarappa, iRome])
+		self.assertEqual(iRome in civs, True)
+		
+		civs = civs.alive()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(iRome in civs, False)
+	
+	def test_notalive(self):
+		civs = Civilizations([iEgypt, iRome])
+		self.assertEqual(iEgypt in civs, True)
+		
+		civs = civs.notalive()
+		assertType(self, civs, Civilizations)
+		self.assertEqual(iRome in civs, True)
+		self.assertEqual(iEgypt in civs, False)
 	
 	def test_without_civ_id(self):
 		civs = self.civs.without(iEgypt)
