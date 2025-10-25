@@ -87,7 +87,7 @@ class LandPercent(PercentRequirement):
 
 
 # Third Indian UHV goal
-# Third Indonesian UHV goal
+# Second Persian UHV goal
 # Third Shendao URV goal
 class PopulationPercent(PercentRequirement):
 
@@ -122,7 +122,6 @@ class PowerPercent(PercentRequirement):
 
 
 # Third Arabian UHV goal
-# Second Tibetan UHV goal
 # Third Spanish UHV goal
 # Second Zoroastrian URV goal
 # First Islamic URV goal
@@ -143,7 +142,7 @@ class ReligionSpreadPercent(PercentRequirement):
 		return game.calculateReligionPercent(self.iReligion)
 
 
-# First Congolese UHV goal
+# Second Congolese UHV goal
 class ReligiousVotePercent(PercentRequirement):
 
 	TYPES = (PERCENTAGE,)
@@ -156,6 +155,8 @@ class ReligiousVotePercent(PercentRequirement):
 		return player(iPlayer).getVotes(16, 1)
 
 
+# Third Phoenician UHV goal
+# Second Swahili UHV goal
 class RevealedPercent(PercentRequirement):
 
 	TYPES = (AREA, PERCENTAGE)
@@ -188,6 +189,7 @@ class RevealedPercent(PercentRequirement):
 		return self.area.count()
 
 
+# First Portuguese UHV goal
 class WaterAreaPercent(PercentRequirement):
 
 	TYPES = (AREA, PERCENTAGE)

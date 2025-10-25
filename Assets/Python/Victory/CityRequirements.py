@@ -25,8 +25,8 @@ class CityCulture(CityRequirement):
 	
 
 # Third Babylonian UHV goal
-# Third Turkic UHV goal
 # First French UHV goal
+# Third Turkic UHV goal
 # Second Argentine UHV goal
 # Third Zoroastrian URV goal
 # Second Jewish URV goal
@@ -88,6 +88,7 @@ class CityDifferentGreatPeopleCount(CityRequirement):
 
 
 # Third Babylonian UHV goal
+# First Toltecs UHV goal
 class CityPopulation(CityRequirement):
 
 	GLOBAL_TYPES = (CITY,)
@@ -109,10 +110,11 @@ class CityPopulation(CityRequirement):
 		return "%d / %d" % (city.getPopulation(), self.iRequired)
 
 
+# Third Assyrian UHV goal
+# Third Mande UHV goal
 # Third Tibetan UHV goal
 # Second Moorish UHV goal
 # Third Holy Roman UHV goal
-# Second Mandinka UHV goal
 # First Dutch UHV goal
 # First German UHV goal
 # Second Islamic URV goal

@@ -27,6 +27,7 @@ class BestCultureCity(BestCityRequirement):
 		return city.getCulture(city.getOwner())
 
 
+# Second Buddhist URV goal
 class BestHappinessCities(BestCitiesRequirement):
 	
 	TYPES = (COUNT,)
@@ -52,6 +53,7 @@ class BestPopulationCities(BestCitiesRequirement):
 
 
 # Second Babylonian UHV goal
+# Third Khmer UHV goal
 # Second Byzantine UHV goal
 # First Aztec UHV goal
 # Second Thai UHV goal
@@ -66,7 +68,6 @@ class BestPopulationCity(BestCityRequirement):
 		return city.getPopulation()
 	
 
-# First Indonesian UHV goal
 class BestPopulationPlayer(BestPlayersRequirement):
 
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"
@@ -97,7 +98,6 @@ class BestSpecialistCity(BestCityRequirement):
 		return city.getFreeSpecialistCount(self.iSpecialist)
 
 
-# First Arabian UHV goal
 class BestTechPlayer(BestPlayersRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"

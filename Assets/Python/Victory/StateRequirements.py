@@ -29,7 +29,6 @@ class ContactBeforeRevealed(StateRequirement):
 			goal.final_check()
 
 
-# Second Ethiopian UHV goal
 class ConvertAfterFounding(StateRequirement):
 
 	TYPES = (RELIGION, TURNS)
@@ -217,6 +216,7 @@ class FirstSettle(StateRequirement):
 				goal.expire()
 
 
+# Third Hittite UHV goal
 class FirstTribute(StateRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"
@@ -288,7 +288,6 @@ class NoCityConquered(StateRequirement):
 		return self.state != FAILURE
 
 
-# First Japanese UHV goal
 class NoCityLost(StateRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SIMPLE"
@@ -314,6 +313,7 @@ class NoCityLost(StateRequirement):
 
 # First Polynesian UHV goal
 # Second Polynesian UHV goal
+# Second Celtic UHV goal
 class Settle(StateRequirement):
 
 	TYPES = (AREA,)

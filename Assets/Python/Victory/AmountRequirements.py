@@ -2,7 +2,6 @@ from Core import *
 from BaseRequirements import *
 
 
-# First Japanese UHV goal
 class AverageCultureAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)
@@ -23,8 +22,11 @@ class AverageCultureAmount(ThresholdRequirement):
 
 # First Egyption UHV goal
 # Third Egyptian UHV goal
+# First Nubian UHV goal
 # First Dravidian UHV goal
-# Third Khmer UHV goal
+# Third Toltec UHV goal
+# Third Kushan UHV goal
+# First Khmer UHV goal
 # Third Mughal UHV goal
 class CultureAmount(ThresholdRequirement):
 
@@ -55,10 +57,12 @@ class FoundedCultureAmount(ThresholdRequirement):
 		return cities.owner(iPlayer).where(lambda city: city.getOriginalCiv() == civ(iPlayer)).sum(lambda city: city.getCulture(iPlayer))
 	
 
-# Third Phoenician UHV goal
+# First Nubian UHV goal
 # First Dravidian UHV goal
+# Third Kushan UHV goal
+# First Mande UHV goal
 # First Byzantine UHV goal
-# Third Mandinka UHV goal
+# First Burmese UHV goal
 # Second Inca UHV goal
 class GoldAmount(ThresholdRequirement):
 

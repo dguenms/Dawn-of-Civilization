@@ -67,7 +67,7 @@ class AttitudeCount(ThresholdRequirement):
 		return [civilizations]
 
 
-# Second Khmer UHV goal
+# Third Khmer UHV goal
 class AveragePopulation(ThresholdRequirement):
 
 	TYPES = (COUNT,)
@@ -90,21 +90,22 @@ class AveragePopulation(ThresholdRequirement):
 # Second Persian UHV goal
 # Third Persian UHV goal
 # First Roman UHV goal
-# Second Ethiopian UHV goal
 # First Korean UHV goal
-# First Khmer UHV goal
+# Second Khmer UHV goal
+# Third Javanese UHV goal
 # First Holy Roman UHV goal
+# Second Vietnamese UHV goal
 # Third Polish UHV goal
 # First Inca UHV goal
-# Second Aztec UHV goal
 # First Mughal UHV goal
+# First Russian UHV goal
 # First Mexican UHV goal
 # First Orthodox URV goal
 # Second Catholic URV goal
 # Third Islamic URV goal
+# First Pagan URV goal
 # First Secular URV goal
 # Second Secular URV goal
-# First Pagan URV goal
 # Third Olympian URV goal
 class BuildingCount(ThresholdRequirement):
 
@@ -148,6 +149,7 @@ class BuildingCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
 
 
+# First Buddhist URV goal
 class AnyCitySpecialistCount(ThresholdRequirement):
 	
 	TYPES = (SPECIALIST, COUNT)
@@ -189,9 +191,9 @@ class AnyCitySpecialistCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
 
 
-# First Phoenician UHV goal
+# Second Babylonian UHV goal
+# Second Phoenician UHV goal
 # First Ottoman UHV goal
-# Third Brazilian UHV goal
 # Second Confucian URV goal
 class CityBuildingCount(ThresholdRequirement):
 
@@ -253,6 +255,10 @@ class CityBuildingCount(ThresholdRequirement):
 		return "%s %s" % (self.indicator(evaluator), text(progress_key, self.progress_text(**options), city.getName(), name(city.getOwner())))
 
 
+# Second Phoenician UHV goal
+# Third French UHV goal
+# Third Malay UHV goal
+# Third Toltec Teotl URV goal
 class CityBuilding(CityBuildingCount):
 
 	GLOBAL_TYPES = (CITY,)
@@ -264,11 +270,12 @@ class CityBuilding(CityBuildingCount):
 		CityBuildingCount.__init__(self, city, iBuilding, 1, **options)
 
 
+# Second Celtic UHV goal
 # Second Roman UHV goal
-# Third Byzantine UHV goal
 # First Moorish UHV goal
 # First English UHV goal
-# Third Portuguese UHV goal
+# Second English UHV goal
+# Second Ottoman UHV goal
 class CityCount(ThresholdRequirement):
 
 	TYPES = (AREA, COUNT)
@@ -295,7 +302,9 @@ class CityCount(ThresholdRequirement):
 		return area.cities().owner(iPlayer).count()
 
 
+# First Phoenician UHV goal
 # Second Spanish UHV goal
+# First American UHV goal
 class ControlledResourceCount(ThresholdRequirement):
 
 	TYPES = (RESOURCE, COUNT)
@@ -311,6 +320,7 @@ class ControlledResourceCount(ThresholdRequirement):
 		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource) + player(iPlayer).getBonusExport(iResource)
 
 
+# Second Kushan UHV goal
 # Second Turkic UHV goal
 class CorporationCount(ThresholdRequirement):
 
@@ -366,6 +376,8 @@ class CultureCity(ThresholdRequirement):
 		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, best_city.getName()), self.value_func(best_city), scale(self.iRequired))
 
 
+# Third Persian UHV goal
+# Third Vietnamese UHV goal
 # Second Italian UHV goal
 class CultureLevelCityCount(ThresholdRequirement):
 
@@ -421,6 +433,7 @@ class FeatureCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(lambda plot: plot.getFeatureType() == iFeature).count()
 
 
+# Third Brazilian UHV goal
 class FreeSpecialistCity(ThresholdRequirement):
 
 	TYPES = (COUNT,)
@@ -452,6 +465,8 @@ class FreeSpecialistCity(ThresholdRequirement):
 		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, best_city.getName()), self.value_func(best_city), self.iRequired)
 
 
+# Second Nubian UHV goal
+# Second Javanese UHV goal
 class HappyCityPopulation(ThresholdRequirement):
 
 	TYPES = (COUNT,)
@@ -463,6 +478,7 @@ class HappyCityPopulation(ThresholdRequirement):
 		return cities.owner(iPlayer).where(lambda city: city.angryPopulation(0) <= 0).sum(CyCity.getPopulation)
 
 
+# Third Rus UHV goal
 # First Brazilian UHV goal
 # Third Brazilian UHV goal
 class ImprovementCount(ThresholdRequirement):
@@ -497,7 +513,6 @@ class ImprovementCount(ThresholdRequirement):
 		
 		
 
-# First Portuguese UHV goal
 # First Thai UHV goal
 # First Iranian UHV goal
 class OpenBorderCount(ThresholdRequirement):
@@ -613,6 +628,7 @@ class PopulationCityCount(ThresholdRequirement):
 
 
 # Third Harappan UHV goal
+# Third Toltec UHV goal
 class PopulationCount(ThresholdRequirement):
 
 	TYPES = (COUNT,)
@@ -624,6 +640,7 @@ class PopulationCount(ThresholdRequirement):
 		return player(iPlayer).getTotalPopulation()
 
 
+# First Rus UHV goal
 class ReligionPopulationCount(ThresholdRequirement):
 
 	TYPES = (RELIGION_ADJECTIVE, COUNT)
@@ -635,6 +652,7 @@ class ReligionPopulationCount(ThresholdRequirement):
 		return player(iPlayer).getReligionPopulation(iReligion)
 
 
+# Third Buddhist URV goal
 class ReligionCityCount(ThresholdRequirement):
 	
 	TYPES = (RELIGION_ADJECTIVE, COUNT)
@@ -658,12 +676,16 @@ class ReligionCityCount(ThresholdRequirement):
 		return cities.owner(iPlayer).religion(iReligion).count()
 
 
+# First Nubian UHV goal
+# First Hittite UHV goal
 # First Ethiopian UHV goal
-# Second Indonesian UHV goal
-# Second Portuguese UHV goal
+# Second Malay UHV goal
+# Third Portuguese UHV goal
 # Third Dutch UHV goal
 # First Zoroastrian URV goal
 # Third Atua URV goal
+# Third Bidaist URV goal
+# Third Bukongo URV goal
 # Third Mazdaist URV goal
 # Third Rodnovery URV goal
 # Third Tengri URV goal
@@ -681,6 +703,7 @@ class ResourceCount(ThresholdRequirement):
 
 
 # Second Ethiopian UHV goal
+# Third Ottoman UHV goal
 # First Jewish URV goal
 # Second Catholic URV goal
 # Second Protestant URV goal
@@ -715,6 +738,7 @@ class SpecialistCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, SPECIALIST.format(self.iSpecialist, bPlural=True)), self.progress_value(evaluator))
 
 
+# First Swedish UHV goal
 class StateReligionCount(ThresholdRequirement):
 
 	TYPES = (CIVS, RELIGION_ADJECTIVE, COUNT)
@@ -740,6 +764,7 @@ class TerrainCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
 
 
+# Third Nubian UHV goal
 class TradeNetworkReligionCityCount(ThresholdRequirement):
 	
 	TYPES = (RELIGION_ADJECTIVE, COUNT)
@@ -752,6 +777,9 @@ class TradeNetworkReligionCityCount(ThresholdRequirement):
 		return players.all().existing().where(lambda p: player(iPlayer).canHaveTradeRoutesWith(p)).including(iPlayer).cities().religion(iReligion).where(lambda city: city.isConnectedToCapital(iPlayer)).count()
 
 
+# First Phoenician UHV goal
+# Third Rus UHV goal
+# Third Swahili UHV goal
 class TradeRouteCount(ThresholdRequirement):
 
 	TYPES = (COUNT,)
@@ -784,6 +812,7 @@ class UnitCombatCount(ThresholdRequirement):
 		return units.owner(iPlayer).combat(iUnitCombat).where(lambda unit: capital(iPlayer).allUpgradesAvailable(unit.getUnitType(), 0) < 0).count()
 
 
+# First English UHV goal
 class UnitCombatLevelCount(ThresholdRequirement):
 
 	TYPES = (UNITCOMBAT, COUNT, COUNT)
@@ -802,6 +831,7 @@ class UnitCombatLevelCount(ThresholdRequirement):
 	
 
 # Second English UHV goal
+# Third Russian UHV goal
 class UnitCount(ThresholdRequirement):
 
 	TYPES = (UNIT, COUNT)
@@ -824,6 +854,7 @@ class UnitCount(ThresholdRequirement):
 		return Requirement.progress_text(self, bPlural=self.bPlural, **options)
 
 
+# First Assyrian UHV goal
 # Third Asatru URV goal
 class UnitLevelCount(ThresholdRequirement):
 

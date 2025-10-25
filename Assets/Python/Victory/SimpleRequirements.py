@@ -7,7 +7,6 @@ import heapq
 
 
 # Third Ethiopian UHV goal
-# Third Buddhist URV goal
 class AllAttitude(Requirement):
 
 	TYPES = (ATTITUDE,)
@@ -141,6 +140,7 @@ class Communist(Requirement):
 		return evaluator.any(lambda p: isCommunist(p))
 
 
+# First Arabian UHV goal
 class CompleteEra(ThresholdRequirement):
 
 	TYPES = (ERA,)
@@ -161,17 +161,21 @@ class CompleteEra(ThresholdRequirement):
 		return infos.techs().count(lambda iTech: infos.tech(iTech).getEra() == self.iEra)
 	
 
+# Second Egyptian UHV goal
+# Second Assyrian UHV goal
 # Second Greek UHV goal
 # Second Phoenician UHV goal
 # Second Dravidian UHV goal
+# Third Byzantine UHV goal
 # Second Japanese UHV goal
 # First Norse UHV goal
 # Second Arabian UHV goal
+# Third Burmese UHV goal
 # First Mongol UHV goal
+# Third Aztec UHV goal
 # Second Ottoman UHV goal
 # Second Iranian UHV goal
 # Second German UHV goal
-# First American UHV goal
 # Second Colombian UHV goal
 # Second Canadian UHV goal
 class Control(Requirement):
@@ -193,7 +197,7 @@ class Control(Requirement):
 		return self.area.cities().all_if_any(lambda city: city.getOwner() in evaluator)
 
 
-# Second Ottoman UHV goal
+# Second Swedish UHV goal
 class CultureCover(Requirement):
 
 	TYPES = (AREA,)
@@ -235,7 +239,6 @@ class GoldPercent(Requirement):
 		return "%s %s: %d / %d" % (self.indicator(evaluator), text(self.PROGR_KEY, *self.format_parameters()), self.value(evaluator), self.required(evaluator))
 
 
-# Third Ottoman UHV goal
 class MoreCulture(Requirement):
 
 	TYPES = (CIVS,)
@@ -261,7 +264,6 @@ class MoreCulture(Requirement):
 		return "%s %s: %d / %s" % (self.indicator(evaluator), text(self.PROGR_KEY), self.value(evaluator), self.required())
 
 
-# Third Ethiopian UHV goal
 class MoreReligion(Requirement):
 
 	TYPES = (AREA, RELIGION_ADJECTIVE, RELIGION_ADJECTIVE)
@@ -341,7 +343,6 @@ class NoStateReligion(Requirement):
 		return "%s: %d" % (text(self.PROGR_KEY, *self.format_parameters()), self.value())
 
 
-# Second Russian UHV goal
 class Project(Requirement):
 
 	TYPES = (PROJECT,)
@@ -387,8 +388,10 @@ class Route(Requirement):
 		return self.area.all(lambda p: p.getOwner() in evaluator and p.getRouteType() in self.routes)
 
 
+# First Persian UHV goal
 # Second Turkic UHV goal
-# First Russian UHV goal
+# Second English UHV goal
+# Second Russian UHV goal
 # First Canadian UHV goal
 class RouteConnection(Requirement):
 
@@ -470,6 +473,7 @@ class RouteConnection(Requirement):
 		return self.valid_owner(plot, evaluator) and (plot.isCity() or plot.getRouteType() in self.routes)
 
 
+# Second Ethiopian UHV goal
 class StateReligion(Requirement):
 	
 	TYPES = (RELIGION,)
@@ -539,14 +543,15 @@ class TradeConnection(Requirement):
 		return evaluator.any(lambda iPlayer: other_players.any(lambda iOtherPlayer: player(iPlayer).canContact(iOtherPlayer) and player(iPlayer).canTradeNetworkWith(iOtherPlayer)))
 
 
-# Second Egyptian UHV goal
+# First Egyptian UHV goal
+# Third Egyptian UHV goal
 # Third Greek UHV goal
 # Third Polynesian UHV goal
 # Second Mayan UHV goal
+# Second Khmer UHV goal
+# Third Mande UHV goal
 # Second Moorish UHV goal
-# Third French UHV goal
-# First Khmer UHV goal
-# Second Mandinka UHV goal
+# First Javanese UHV goal
 # First Italian UHV goal
 # Second Mughal UHV goal
 # Second American UHV goal
