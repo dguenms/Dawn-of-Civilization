@@ -3,7 +3,7 @@ from RFCUtils import *
 from Parsers import *
 from Scenarios import *
 
-import SettlerMaps, WarMaps, RegionMap
+import Rise, RegionMap
 
 
 lStartingDates = [
@@ -95,8 +95,7 @@ def addGoodies():
 	return
 
 def initRiseAndFall():
-	SettlerMaps.init()
-	WarMaps.init()
+	Rise.initMaps()
 	RegionMap.init()
 	
 def afterGeneration():

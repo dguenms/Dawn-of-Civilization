@@ -1,8 +1,6 @@
 import StoredData
 import Setup
 
-import SettlerMaps
-import WarMaps
 import RegionMap
 import CityNames
 import Civilizations

@@ -31,8 +31,6 @@ import DynamicCivs as dc
 import GreatPeople as gp
 import CityNames as cn
 
-import SettlerMaps
-import WarMaps
 import RegionMap
 
 from CvPlatyBuilderSettings import *

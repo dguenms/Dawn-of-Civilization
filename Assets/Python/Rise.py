@@ -5,6 +5,8 @@ from Locations import *
 from RFCUtils import *
 from Slots import *
 from Scenarios import *
+from Files import *
+from Periods import *
 
 from Events import events, handler
 from Collapse import completeCollapse
@@ -113,6 +115,17 @@ def cleanupGreatWall():
 def checkBirths():
 	for birth in data.births:
 		birth.check()
+
+
+@handler("playerCivAssigned")
+def updateMapsOnActive(iPlayer, iCivilization):
+	if iCivilization in lBirthOrder:
+		applyMaps(iCivilization)
+
+
+@handler("periodChange")
+def updateMapsOnPeriodChange(iCivilization, iPeriod):
+	applyMaps(iCivilization, iPeriod)
 
 
 @handler("changeWar")
@@ -341,6 +354,39 @@ def preserveCivilizationAttributes(iPlayer):
 	data.civs[iPlayer].iGreatPeopleCreated = player(iPlayer).getGreatPeopleCreated()
 	data.civs[iPlayer].iGreatSpiesCreated = player(iPlayer).getGreatSpiesCreated()
 	data.civs[iPlayer].iNumUnitGoldenAges = player(iPlayer).getNumUnitGoldenAges()
+
+
+### MAPS ###
+
+
+def applyMaps(iCivilization, iPeriod=-1):
+	for p in plots.all().land():
+		p.setSettlerValue(iCivilization, 0)
+		p.setWarValue(iCivilization, 0)
+
+	for (x, y), iValue in FileMap.read("Settler/%s.csv" % civ_name(iCivilization)):
+		if iValue and not plot(x, y).isWater():
+			plot(x, y).setSettlerValue(iCivilization, iValue)
+
+	for (x, y), iValue in FileMap.read("War/%s.csv" % civ_name(iCivilization)):
+		if iValue and not plot(x, y).isWater():
+			plot(x, y).setWarValue(iCivilization, iValue)
+	
+	if iPeriod != -1:
+		for (x, y), iValue in FileMap.read("Settler/Period/%s.csv" % dPeriodNames[iPeriod], bIgnoreMissing=True):
+			if not plot(x, y).isWater():
+				plot(x, y).setSettlerValue(iCivilization, iValue)
+				
+		for (x, y), iValue in FileMap.read("War/Period/%s.csv" % dPeriodNames[iPeriod], bIgnoreMissing=True):
+			if not plot(x, y).isWater():
+				plot(x, y).setWarValue(iCivilization, iValue)
+		
+def initMaps():
+	for iCivilization in lBirthOrder:
+		applyMaps(iCivilization)
+
+
+### BIRTH ###
 
 
 def getBirth(iCiv):
