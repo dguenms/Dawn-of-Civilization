@@ -3,10 +3,10 @@ from CountRequirements import *
 from TestVictoryCommon import *
 
 
-class TestAttitudeCount(ExtendedTestCase):
-
+class TestAnyCitySpecialistCount(ExtendedTestCase):
+	
 	def setUp(self):
-		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2).create()
+		self.requirement = AnyCitySpecialistCount(iSpecialistGreatScientist, 3).create()
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
@@ -14,6 +14,151 @@ class TestAttitudeCount(ExtendedTestCase):
 	def tearDown(self):
 		self.requirement.deregister_handlers()
 	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AnyCitySpecialistCount(Great Scientist, 3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AnyCitySpecialistCount(Great Scientist, 3)")
+	
+	def test_equals(self):
+		identical_requirement = AnyCitySpecialistCount(iSpecialistGreatScientist, 3)
+		different_specialist = AnyCitySpecialistCount(iSpecialistGreatArtist, 3)
+		different_count = AnyCitySpecialistCount(iSpecialistGreatScientist, 2)
+	
+		self.assertEqual(self.requirement, identical_requirement)
+		self.assertNotEqual(self.requirement, different_specialist)
+		self.assertNotEqual(self.requirement, different_count)
+		
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three Great Scientists in one of your cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "No city")
+	
+	def test_some(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Great Scientists in First: 2 / 3")
+		finally:
+			cities.kill()
+	
+	def test_all(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 2)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Great Scientists in First: 3 / 3")
+		finally:
+			cities.kill()
+	
+	def test_more(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		city1.setName("First", False)
+		city1.setFreeSpecialistCount(iSpecialistGreatScientist, 4)
+		
+		city2.setName("Second", False)
+		city2.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 4)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Great Scientists in First: 4 / 3")
+		finally:
+			cities.kill()
+	
+	def test_sum(self):
+		requirement = AnyCitySpecialistCount(SumAggregate(iSpecialistGreatArtist, iSpecialistGreatScientist), 3)
+		
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setFreeSpecialistCount(iSpecialistGreatArtist, 2)
+		city.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Great Artists and Scientists in First: 3 / 3")
+		finally:
+			city.kill()
+	
+	def test_max(self):
+		requirement = AnyCitySpecialistCount(MaximumAggregate(iSpecialistGreatArtist, iSpecialistGreatScientist), 3)
+		
+		city = TestCities.one()
+		
+		city.setName("First", False)
+		city.setFreeSpecialistCount(iSpecialistGreatArtist, 3)
+		city.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+		
+		try:
+			self.assertEqual(requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(requirement.progress(self.evaluator), self.SUCCESS + "Great Artists or Scientists in First: 3 / 3")
+		finally:
+			city.kill()
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		city = TestCities.one(1)
+		
+		city.setName("First", False)
+		city.setFreeSpecialistCount(iSpecialistGreatScientist, 3)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Great Scientists in First: 3 / 3")
+		finally:
+			city.kill()
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestAttitudeCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "AttitudeCount(Friendly, 2)")
 	
@@ -38,7 +183,7 @@ class TestAttitudeCount(ExtendedTestCase):
 		players = [1, 2]
 		for iPlayer in players:
 			team(iPlayer).meet(0, False)
-		
+			
 		try:
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
@@ -219,6 +364,9 @@ class TestAttitudeCountIndependent(ExtendedTestCase):
 			for iPlayer in players:
 				team(iPlayer).cutContact(0)
 				player(iPlayer).AI_setAttitudeExtra(0, 0)
+			
+			team(1).setVassal(0, False, False)
+			team(2).setVassal(7, False, False)
 
 
 class TestAttitudeCountReligion(ExtendedTestCase):
@@ -957,6 +1105,7 @@ class TestCityBuildingCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Granary in %s" % city.getName())
 		finally:
 			city.kill()
+			team(1).setVassal(0, False, False)
 	
 	def test_check_city_acquired(self):
 		city = TestCities.one()
@@ -1131,6 +1280,8 @@ class TestCityCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Cities in Test Area: 3 / 2")
 		finally:
 			cities.kill()
+			
+			team(1).setVassal(0, False, False)
 	
 	def test_city_built(self):
 		city = TestCities.one()
@@ -1314,6 +1465,8 @@ class TestCorporationCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Trading Company: 3 / 3")
 		finally:
 			cities.kill()
+			
+			team(1).setVassal(0, False, False)
 	
 	def test_check_corporation_spread(self):
 		city = TestCities.one()
@@ -1522,7 +1675,7 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 		city1, city2, city3 = cities = TestCities.num(3)
 		
 		city1.setName("First", False)
-		city1.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential), True)
+		city1.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential)+1, True)
 		
 		city2.setName("Second", False)
 		city2.setCulture(0, game.getCultureThreshold(iCultureLevelInfluential), True)
@@ -1534,7 +1687,7 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Culture in First: 5000 / 1000",
+				self.SUCCESS + "Culture in First: 5001 / 1000",
 				self.SUCCESS + "Culture in Second: 5000 / 1000",
 				self.SUCCESS + "Culture in Third: 1000 / 1000",
 			])
@@ -2453,6 +2606,142 @@ class TestPopulationCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestReligionCityCount(ExtendedTestCase):
+	
+	def setUp(self):
+		self.requirement = ReligionCityCount(iBuddhism, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "ReligionCityCount(Buddhism, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "ReligionCityCount(Buddhism, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Buddhist cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_city(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhist cities: 0 / 2")
+	
+	def test_sufficient(self):
+		cities = TestCities.num(2)
+		
+		for city in cities:
+			city.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Buddhist cities: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_no_religion(self):
+		city, _ = cities = TestCities.num(2)
+		
+		city.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhist cities: 1 / 2")
+		finally:
+			cities.kill()
+	
+	def test_different_religion(self):
+		cities = TestCities.num(2)
+		
+		for city in cities:
+			city.setHasReligion(iHinduism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhist cities: 0 / 2")
+		finally:
+			cities.kill()
+	
+	def test_different_owner(self):
+		cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Buddhist cities: 1 / 2")
+		finally:
+			cities.kill()
+	
+	def test_different_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iBuddhism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Buddhist cities: 2 / 2")
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_city_acquired(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityAcquiredAndKept", self.iPlayer, city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_city_built(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("cityBuilt", city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_religion_spread(self):
+		city = TestCities.one()
+		
+		try:
+			events.fireEvent("religionSpread", iBuddhism, self.iPlayer, city)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			city.kill()
+	
+	def test_check_not_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestReligionPopulationCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2748,82 +3037,6 @@ class TestSpecialistCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
-class TestTerrainCount(ExtendedTestCase):
-
-	def setUp(self):
-		self.requirement = TerrainCount(iOcean, 50).create()
-		self.goal = TestGoal()
-		
-		self.requirement.register_handlers(self.goal)
-	
-	def tearDown(self):
-		self.requirement.deregister_handlers()
-	
-	def test_str(self):
-		self.assertEqual(str(self.requirement), "TerrainCount(Ocean, 50)")
-	
-	def test_repr(self):
-		self.assertEqual(repr(self.requirement), "TerrainCount(Ocean, 50)")
-	
-	def test_description(self):
-		self.assertEqual(self.requirement.description(), "50 Ocean tiles")
-	
-	def test_areas(self):
-		self.assertEqual(self.requirement.areas(), {})
-	
-	def test_pickle(self):
-		self.assertPickleable(self.requirement)
-	
-	def test_fewer(self):
-		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(40) + plots.all().land().limit(60)
-		for plot in controlled:
-			plot.setOwner(0)
-		
-		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 40)
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Ocean tiles: 40 / 50")
-		finally:
-			for plot in controlled:
-				plot.setOwner(-1)
-	
-	def test_more(self):
-		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
-		for plot in controlled:
-			plot.setOwner(0)
-		
-		try:
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 60)
-			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
-		finally:
-			for plot in controlled:
-				plot.setOwner(-1)
-	
-	def test_other_evaluator(self):
-		evaluator = VassalsEvaluator(self.iPlayer)
-		team(1).setVassal(0, True, False)
-		
-		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
-		for plot in controlled:
-			plot.setOwner(1)
-		
-		try:
-			self.assertEqual(self.requirement.evaluate(evaluator), 60)
-			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
-		finally:
-			for plot in controlled:
-				plot.setOwner(-1)
-			
-			team(1).setVassal(0, False, False)
-	
-	def test_check_turnly(self):
-		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
-		
-		self.assertEqual(self.goal.checked, True)
-
-
 class TestStateReligionCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -2904,6 +3117,224 @@ class TestStateReligionCount(ExtendedTestCase):
 	
 	def test_check_turnly(self):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestTerrainCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = TerrainCount(iOcean, 50).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "TerrainCount(Ocean, 50)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "TerrainCount(Ocean, 50)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "50 Ocean tiles")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_fewer(self):
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(40) + plots.all().land().limit(60)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 40)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Ocean tiles: 40 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_more(self):
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
+		for plot in controlled:
+			plot.setOwner(0)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 60)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		team(1).setVassal(0, True, False)
+		
+		controlled = plots.all().where(lambda plot: plot.getTerrainType() == iOcean).limit(60) + plots.all().land().limit(40)
+		for plot in controlled:
+			plot.setOwner(1)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(evaluator), 60)
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Ocean tiles: 60 / 50")
+		finally:
+			for plot in controlled:
+				plot.setOwner(-1)
+			
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
+class TestTradeNetworkReligionCityCount(ExtendedTestCase):
+	
+	def setUp(self):
+		self.requirement = TradeNetworkReligionCityCount(iConfucianism, 2)
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "TradeNetworkReligionCityCount(Confucianism, 2)")
+		
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "TradeNetworkReligionCityCount(Confucianism, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Confucian cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Connected Confucian cities: 0 / 2")
+	
+	def test_own_cities(self):
+		cities = TestCities.num(2)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Connected Confucian cities: 2 / 2")
+		finally:
+			cities.kill()
+	
+	def test_trade_cities(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+		
+		team(0).meet(1, False)
+		team(0).setOpenBorders(1, True)
+		
+		for plot in plots.rectangle(our_city, their_city):
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Connected Confucian cities: 2 / 2")
+		finally:
+			for plot in plots.rectangle(our_city, their_city):
+				plot.setRouteType(-1)
+			
+			team(0).cutContact(1)
+			team(0).setOpenBorders(1, False)
+			
+			cities.kill()
+	
+	def test_no_connection(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+		
+		team(0).meet(1, False)
+		team(0).setOpenBorders(1, True)
+		
+		for plot in plots.rectangle(our_city, their_city):
+			plot.setRouteType(-1)
+		
+		try:
+			self.assertEqual(our_city.isConnectedTo(their_city), False)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Connected Confucian cities: 1 / 2")
+		finally:
+			team(0).cutContact(1)
+			team(0).setOpenBorders(1, False)
+			
+			cities.kill()
+	
+	def test_no_open_borders(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		for city in cities:
+			city.setHasReligion(iConfucianism, True, False, False)
+		
+		team(0).meet(1, False)
+		
+		for plot in plots.rectangle(our_city, their_city):
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Connected Confucian cities: 1 / 2")
+		finally:
+			for plot in plots.rectangle(our_city, their_city):
+				plot.setRouteType(-1)
+			
+			team(0).cutContact(1)
+			
+			cities.kill()
+	
+	def test_trade_but_no_religion(self):
+		our_city, their_city = cities = TestCities.owners(0, 1)
+		
+		our_city.setHasReligion(iConfucianism, True, False, False)
+		
+		team(0).meet(1, False)
+		team(0).setOpenBorders(1, True)
+		
+		for plot in plots.rectangle(our_city, their_city):
+			plot.setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Connected Confucian cities: 1 / 2")
+		finally:
+			for plot in plots.rectangle(our_city, their_city):
+				plot.setRouteType(-1)
+			
+			team(0).setOpenBorders(1, False)
+			team(0).cutContact(1)
+			
+			cities.kill()
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
 		
 		self.assertEqual(self.goal.checked, True)
 
@@ -3666,6 +4097,7 @@ class TestVassalCountStateReligion(ExtendedTestCase):
 
 
 test_cases = [
+	TestAnyCitySpecialistCount,
 	TestAttitudeCount,
 	TestAttitudeCountCivs,
 	TestAttitudeCountCommunist,
@@ -3690,11 +4122,13 @@ test_cases = [
 	TestPopulationCity,
 	TestPopulationCityCount,
 	TestPopulationCount,
+	TestReligionCityCount,
 	TestReligionPopulationCount,
 	TestResourceCount,
 	TestSpecialistCount,
 	TestStateReligionCount,
 	TestTerrainCount,
+	TestTradeNetworkReligionCityCount,
 	TestTradeRouteCount,
 	TestUnitCombatCount,
 	TestUnitCombatLevelCount,

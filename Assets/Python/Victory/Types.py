@@ -234,7 +234,6 @@ class CivsType(Type):
 		return argument.name()
 
 
-# TODO: test
 class CivsAdjectiveType(Type):
 
 	def validate_func(self, argument):

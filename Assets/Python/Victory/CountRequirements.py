@@ -148,7 +148,6 @@ class BuildingCount(ThresholdRequirement):
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
 
 
-# TODO: test
 class AnyCitySpecialistCount(ThresholdRequirement):
 	
 	TYPES = (SPECIALIST, COUNT)
@@ -185,7 +184,7 @@ class AnyCitySpecialistCount(ThresholdRequirement):
 	def progress(self, evaluator, **options):
 		city = self.best_city(evaluator)
 		if not city:
-			return text("TXT_KEY_VICTORY_NO_CITY")
+			return "%s %s" % (self.indicator(evaluator), text("TXT_KEY_VICTORY_NO_CITY"))
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
 
@@ -636,7 +635,6 @@ class ReligionPopulationCount(ThresholdRequirement):
 		return player(iPlayer).getReligionPopulation(iReligion)
 
 
-# TODO: test
 class ReligionCityCount(ThresholdRequirement):
 	
 	TYPES = (RELIGION_ADJECTIVE, COUNT)
@@ -652,8 +650,9 @@ class ReligionCityCount(ThresholdRequirement):
 	def __init__(self, *parameters, **options):
 		ThresholdRequirement.__init__(self, *parameters, **options)
 		
-		self.handle("cityBuilt", self.check)
-		self.handle("cityAcquiredAndKept", self.check)
+		self.checked("cityBuilt")
+		self.checked("cityAcquiredAndKept")
+		self.checked("religionSpread")
 	
 	def value(self, iPlayer, iReligion):
 		return cities.owner(iPlayer).religion(iReligion).count()
@@ -741,7 +740,6 @@ class TerrainCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(lambda plot: plot.getTerrainType() == iTerrain).count()
 
 
-# TODO: test
 class TradeNetworkReligionCityCount(ThresholdRequirement):
 	
 	TYPES = (RELIGION_ADJECTIVE, COUNT)

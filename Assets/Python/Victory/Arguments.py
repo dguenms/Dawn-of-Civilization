@@ -133,7 +133,6 @@ class CountAggregate(Aggregate):
 		return count(items)
 
 
-# TODO: test
 class MaximumAggregate(Aggregate):
 
 	def __init__(self, *items):
@@ -345,7 +344,6 @@ class LocationCityArgument(CityArgument):
 		return plots.of([self.tile])
 
 
-# TODO: test
 class AreaCityArgument(CityArgument):
 
 	def __init__(self, plots):
@@ -354,7 +352,7 @@ class AreaCityArgument(CityArgument):
 		self.plots = plots
 	
 	def __repr__(self):
-		return "AreaCityArgument%s" % (self.plots,)
+		return "AreaCityArgument(%s)" % (self.plots,)
 	
 	def __eq__(self, other):
 		if not isinstance(other, AreaCityArgument):

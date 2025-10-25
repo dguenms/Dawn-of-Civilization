@@ -27,7 +27,6 @@ class BestCultureCity(BestCityRequirement):
 		return city.getCulture(city.getOwner())
 
 
-# TODO: test
 class BestHappinessCities(BestCitiesRequirement):
 	
 	TYPES = (COUNT,)

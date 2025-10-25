@@ -470,7 +470,6 @@ class RouteConnection(Requirement):
 		return self.valid_owner(plot, evaluator) and (plot.isCity() or plot.getRouteType() in self.routes)
 
 
-# TODO: test
 class StateReligion(Requirement):
 	
 	TYPES = (RELIGION,)

@@ -295,6 +295,38 @@ class TestCivs(ExtendedTestCase):
 		self.assertEqual(CIVS.area(self.civs), None)
 
 
+class TestCivsAdjective(ExtendedTestCase):
+
+	def setUp(self):
+		self.civs = CivsArgument(iEgypt, iBabylonia, iHarappa)
+	
+	def test_str(self):
+		self.assertEqual(str(CIVS_ADJECTIVE), "CivsAdjective")
+	
+	def test_repr(self):
+		self.assertEqual(repr(CIVS_ADJECTIVE), "CivsAdjective")
+	
+	def test_equal(self):
+		self.assertEqual(CIVS_ADJECTIVE, CivsAdjectiveType("CivsAdjective"))
+	
+	def test_pickle(self):
+		self.assertPickleable(CIVS_ADJECTIVE)
+	
+	def test_create(self):
+		self.assertEqual(CIVS_ADJECTIVE.create(self.civs), self.civs)
+	
+	def test_validate(self):
+		self.assertEqual(CIVS_ADJECTIVE.validate(self.civs), True)
+		self.assertEqual(CIVS_ADJECTIVE.validate(1), False)
+	
+	def test_format(self):
+		self.assertEqual(CIVS_ADJECTIVE.format(self.civs), "Egyptian, Babylonian and Harappan")
+		self.assertEqual(CIVS_ADJECTIVE.format_repr(self.civs), "Egypt, Babylonia and Harappa")
+	
+	def test_area(self):
+		self.assertEqual(CIVS_ADJECTIVE.area(self.civs), None)
+
+
 class TestCorporation(ExtendedTestCase):
 
 	def test_str(self):
@@ -850,6 +882,7 @@ test_cases = [
 	TestBuilding,
 	TestCity,
 	TestCivs,
+	TestCivsAdjective,
 	TestCorporation,
 	TestCount,
 	TestCultureLevel,

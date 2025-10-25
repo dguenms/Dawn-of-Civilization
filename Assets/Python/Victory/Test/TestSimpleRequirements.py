@@ -1785,6 +1785,69 @@ class TestRouteConnection(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestStateReligion(ExtendedTestCase):
+	
+	def setUp(self):
+		self.requirement = StateReligion(iIslam).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "StateReligion(Islam)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "StateReligion(Islam)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "Islam")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_no_state_religion(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Islam")
+	
+	def test_state_religion(self):
+		player(self.iPlayer).setLastStateReligion(iIslam)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Islam")
+		finally:
+			player(self.iPlayer).setLastStateReligion(-1)
+	
+	def test_other_state_religion(self):
+		player(self.iPlayer).setLastStateReligion(iProtestantism)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Islam")
+		finally:
+			player(self.iPlayer).setLastStateReligion(-1)
+	
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		player(1).setLastStateReligion(iIslam)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Islam")
+		finally:
+			player(1).setLastStateReligion(-1)
+			team(1).setVassal(0, False, False)
+
+
 class TestStateReligionPercent(ExtendedTestCase):
 
 	def setUp(self):
@@ -2089,6 +2152,7 @@ test_cases = [
 	TestProject,
 	TestRoute,
 	TestRouteConnection,
+	TestStateReligion,
 	TestStateReligionPercent,
 	TestStateReligionPercentSecular,
 	TestTradeConnection,

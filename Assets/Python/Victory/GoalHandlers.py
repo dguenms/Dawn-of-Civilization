@@ -245,6 +245,13 @@ class EventHandlerRegistry(object):
 		
 		return religionFounded
 	
+	def religionSpread(self, goal, applicable, func):
+		def religionSpread((iReligion, iPlayer, city)):
+			if applicable(goal, iPlayer):
+				func(goal, city, iReligion)
+		
+		return religionSpread
+	
 	def sacrificeGoldenAge(self, goal, applicable, func):
 		def sacrificeGoldenAge((iPlayer, city)):
 			if applicable(goal, iPlayer):

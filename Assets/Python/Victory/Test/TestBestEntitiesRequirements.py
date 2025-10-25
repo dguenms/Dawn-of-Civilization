@@ -332,6 +332,194 @@ class TestBestCultureCity(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
 		
 		self.assertEqual(self.goal.checked, True)
+		
+
+class TestBestHappinessCities(ExtendedTestCase):
+	
+	def setUp(self):
+		self.requirement = BestHappinessCities(3).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "BestHappinessCities(3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "BestHappinessCities(3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "the three happiest cities in the world")
+	
+	def test_aras(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_all(self):
+		city1, city2, city3, city4 = cities = TestCities.owners(0, 0, 0, 1)
+		
+		city1.setName("First", False)
+		city1.changeExtraHappiness(10)
+		
+		city2.setName("Second", False)
+		city2.changeExtraHappiness(9)
+		
+		city3.setName("Third", False)
+		city3.changeExtraHappiness(8)
+		
+		city4.setName("Fourth", False)
+		city4.changeExtraHappiness(5)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Happiest: First (14)",
+				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Third happiest: Third (11)",
+				"Next happiest: Fourth (10)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_all_and_next(self):
+		city1, city2, city3, city4 = cities = TestCities.owners(0, 0, 0, 0)
+		
+		city1.setName("First", False)
+		city1.changeExtraHappiness(10)
+		
+		city2.setName("Second", False)
+		city2.changeExtraHappiness(9)
+		
+		city3.setName("Third", False)
+		city3.changeExtraHappiness(8)
+		
+		city4.setName("Fourth", False)
+		city4.changeExtraHappiness(7)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Happiest: First (14)",
+				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Third happiest: Third (11)",
+				"Our next happiest: Fourth (10)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_some(self):
+		city1, city2, city3, city4, city5 = cities = TestCities.owners(0, 0, 1, 1, 0)
+		
+		city1.setName("First", False)
+		city1.changeExtraHappiness(10)
+		
+		city2.setName("Second", False)
+		city2.changeExtraHappiness(9)
+		
+		city3.setName("Third", False)
+		city3.changeExtraHappiness(6)
+		
+		city4.setName("Fourth", False)
+		city4.changeExtraHappiness(5)
+		
+		city5.setName("Fifth", False)
+		city5.changeExtraHappiness(4)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Happiest: First (14)",
+				self.SUCCESS + "Second happiest: Second (12)",
+				self.FAILURE + "Third happiest: Third (11)",
+				"Our next happiest: Fifth (7)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_some_no_next(self):
+		city1, city2, city3 = cities = TestCities.owners(0, 0, 1)
+		
+		city1.setName("First", False)
+		city1.changeExtraHappiness(10)
+		
+		city2.setName("Second", False)
+		city2.changeExtraHappiness(9)
+		
+		city3.setName("Third", False)
+		city3.changeExtraHappiness(6)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Happiest: First (14)",
+				self.SUCCESS + "Second happiest: Second (12)",
+				self.FAILURE + "Third happiest: Third (11)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_missing_cities(self):
+		city1, city2 = cities = TestCities.owners(0, 0)
+		
+		city1.setName("First", False)
+		city1.changeExtraHappiness(10)
+		
+		city2.setName("Second", False)
+		city2.changeExtraHappiness(9)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), [
+				self.SUCCESS + "Happiest: First (14)",
+				self.SUCCESS + "Second happiest: Second (12)",
+			])
+		finally:
+			cities.kill()
+	
+	def test_no_cities(self):
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), [self.FAILURE + "Happiest: No city (0)"])
+
+	def test_other_evaluator(self):
+		evaluator = VassalsEvaluator(self.iPlayer)
+		
+		team(1).setVassal(0, True, False)
+		
+		our_city1, our_city2, vassal_city, other_city = cities = TestCities.owners(0, 0, 1, 2)
+		
+		our_city1.setName("First", False)
+		our_city1.changeExtraHappiness(10)
+		
+		our_city2.setName("Second", False)
+		our_city2.changeExtraHappiness(8)
+		
+		vassal_city.setName("Third", False)
+		vassal_city.changeExtraHappiness(5)
+		
+		other_city.setName("Fourth", False)
+		other_city.changeExtraHappiness(4)
+		
+		try:
+			self.assertEqual(self.requirement.fulfilled(evaluator), True)
+			self.assertEqual(self.requirement.progress(evaluator), [
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Third happiest: Third (10)",
+				"Next happiest: Fourth (9)"
+			])
+		finally:
+			cities.kill()
+			team(1).setVassal(0, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+		
+		self.assertEqual(self.goal.checked, True)
 
 
 class TestBestPopulationCities(ExtendedTestCase):
@@ -1303,6 +1491,7 @@ class TestBestWonderCity(ExtendedTestCase):
 test_cases = [
 	TestBestCultureCities,
 	TestBestCultureCity,
+	TestBestHappinessCities,
 	TestBestPopulationCities,
 	TestBestPopulationPlayer,
 	TestBestPopulationCity,

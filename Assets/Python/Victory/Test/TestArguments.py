@@ -95,6 +95,12 @@ class TestAggregate(ExtendedTestCase):
 		self.assertEqual(count_aggregate.evaluate(lambda x: x), 3)
 		self.assertEqual(count_aggregate.evaluate(lambda x: x % 2), 2)
 	
+	def test_maximum_evaluate(self):
+		max_aggregate = MaximumAggregate([1, 2, 3])
+		
+		self.assertEqual(max_aggregate.evaluate(lambda x: x), 3)
+		self.assertEqual(max_aggregate.evaluate(lambda x: -x), -1)
+	
 	def test_varargs(self):
 		aggregate = SumAggregate(1, 2, 3)
 		
@@ -230,6 +236,64 @@ class TestLocationCityArgument(ExtendedTestCase):
 			self.assertEqual(location(self.argument.get(0)), location(city))
 		finally:
 			city.kill()
+	
+	def test_get_no_city(self):
+		self.assertEqual(self.argument.get(0), NON_EXISTING)
+
+
+class TestAreaCityArgument(ExtendedTestCase):
+	
+	def setUp(self):
+		self.area = plots.of(TestCities.CITY_LOCATIONS[:2])
+		self.argument = AreaCityArgument(self.area)
+	
+	def test_str(self):
+		self.assertEqual(str(self.argument), "AreaCityArgument([(57, 35), (59, 35)])")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.argument), "AreaCityArgument([(57, 35), (59, 35)])")
+	
+	def test_hash(self):
+		same_area = AreaCityArgument(self.area)
+		different_area = AreaCityArgument(plots.of([(25, 25)]))
+		
+		self.assertEqual(hash(self.argument), hash(same_area))
+		self.assertNotEqual(hash(self.argument), hash(different_area))
+	
+	def test_pickle(self):
+		self.assertPickleable(self.argument)
+	
+	def test_equal_definition(self):
+		identical = AreaCityArgument(self.area)
+		different = AreaCityArgument([(25, 25)])
+		
+		self.assertEqual(self.argument, identical)
+		self.assertNotEqual(self.argument, different)
+	
+	def test_equal_city(self):
+		inside, _, outside = cities = TestCities.num(3)
+		
+		try:
+			self.assertEqual(self.argument, inside)
+			self.assertNotEqual(self.argument, outside)
+		finally:
+			cities.kill()
+	
+	def test_get(self):
+		city = TestCities.one()
+		
+		try:
+			self.assertEqual(location(self.argument.get(0)), location(city))
+		finally:
+			city.kill()
+	
+	def test_get_multiple(self):
+		first, second = cities = TestCities.num(2)
+		
+		try:
+			self.assertEqual(location(self.argument.get(0)), location(first))
+		finally:
+			cities.kill()
 	
 	def test_get_no_city(self):
 		self.assertEqual(self.argument.get(0), NON_EXISTING)
@@ -542,6 +606,7 @@ test_cases = [
 	TestAggregate,
 	TestAreaArgument,
 	TestLocationCityArgument,
+	TestAreaCityArgument,
 	TestCapitalCityArgument,
 	TestReligionHolyCityArgument,
 	TestStateReligionHolyCityArgument,
