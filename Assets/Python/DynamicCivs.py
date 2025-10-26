@@ -1269,13 +1269,8 @@ def specificName(iPlayer):
 		return capitalName(iPlayer)
 			
 	elif iCiv == iInca:
-		if bResurrected:
-			if isCurrentCapital(iPlayer, "Tiwanaku"):
-				return "TXT_KEY_CIV_INCA_BOLIVIA"
-				
-		else:
-			if not bEmpire:
-				return capitalName(iPlayer)
+		if not bEmpire:
+			return capitalName(iPlayer)
 			
 	elif iCiv == iItaly:
 		if not bResurrected and not bEmpire and not bCityStates:
@@ -1762,11 +1757,6 @@ def specificAdjective(iPlayer):
 		if iEra <= iClassical:
 			return "TXT_KEY_CIV_MALI_GHANA"
 			
-	elif iCiv == iInca:
-		if bResurrected:
-			if isCurrentCapital(iPlayer, "Tiwanaku"):
-				return "TXT_KEY_CIV_INCA_BOLIVIAN"
-				
 	elif iCiv == iItaly:
 		if bCityStates and bWar:
 			if not bEmpire:
