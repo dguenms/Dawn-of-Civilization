@@ -1411,7 +1411,7 @@ dAlwaysTrain = CivDict({
 	iGreece: [iHoplite, iCatapult],
 	iPhoenicia: [iNumidianCavalry],
 	iDravidia: [iWarElephant],
-	iByzantium: [iLegion],
+	iByzantium: [iLegion, iDromon],
 	iArabia: [iMobileGuard, iGhazi],
 	iVietnam: [iRattanArcher],
 	iAztecs: [iJaguar],
