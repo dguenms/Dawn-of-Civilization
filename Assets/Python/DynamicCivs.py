@@ -32,7 +32,6 @@ dDefaultInsertNames = {
 }
 
 dDefaultInsertAdjectives = {
-	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIAN",
 	iKhmer : "TXT_KEY_CIV_KHMER_CAMBODIAN",
 	iThailand : "TXT_KEY_CIV_THAILAND_SIAMESE",
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCAN",
@@ -1118,15 +1117,10 @@ def specificName(iPlayer):
 		
 		return "TXT_KEY_CIV_MALAYA_MELAYU"
 			
-	elif iCiv == iNorse:	
-		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
-			return "TXT_KEY_CIV_NORSE_NORWAY"
+	elif iCiv == iNorse:
+		if iEra >= iIndustrial and bEmpire and (not player(iSweden).isAlive() or team(iSweden).isVassal(iPlayer)):
+			return "TXT_KEY_CIV_NORSE_SCANDINAVIA"
 			
-		if isCurrentCapital(iPlayer, "Roskilde"):
-			return "TXT_KEY_CIV_NORSE_DENMARK"
-			
-		return "TXT_KEY_CIV_NORSE_SCANDINAVIA"
-		
 	elif iCiv == iTurks:
 		if capital in plots.regions(rCaucasus, rPonticSteppe):
 			return "TXT_KEY_CIV_TURKS_KHAZARIA"
@@ -1611,6 +1605,10 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_MALAYA_PAGARUYUNG"
 		
 		return "TXT_KEY_CIV_MALAYA_MELAYU"
+			
+	elif iCiv == iNorse:
+		if iEra >= iIndustrial and bEmpire and (not player(iSweden).isAlive() or team(iSweden).isVassal(iPlayer)):
+			return "TXT_KEY_CIV_NORSE_SCANDINAVIAN"
 			
 	elif iCiv == iTurks:
 		if bResurrected:
@@ -2186,7 +2184,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iCiv == iNorse:
 		if bCityStates:
-			return "TXT_KEY_CIV_NORSE_ALTHINGS"
+			return "TXT_KEY_CIV_NORSE_THINGS"
 		
 		if isControlled(iPlayer, plots.region(rBritain)):
 			return "TXT_KEY_CIV_NORSE_NORTH_SEA_EMPIRE"

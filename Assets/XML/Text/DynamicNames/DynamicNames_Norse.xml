@@ -270,16 +270,16 @@
 		<Spanish>Kalmar Union</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NORSE_ALTHINGS</Tag>
-		<English>%s2 Althings</English>
+		<Tag>TXT_KEY_CIV_NORSE_THINGS</Tag>
+		<English>%s2 Things</English>
 		<French>
-			<Text>Althings %s2</Text>
+			<Text>Things %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>%s2 Althings</German>
-		<Italian>%s2 Althings</Italian>
-		<Spanish>%s2 Althings</Spanish>
+		<German>%s2 Things</German>
+		<Italian>%s2 Things</Italian>
+		<Spanish>%s2 Things</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORSE_NORTH_SEA_EMPIRE</Tag>
