@@ -4077,7 +4077,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_BALLISTICS</PrereqTech>
+				<PrereqTech>TECH_PNEUMATICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
