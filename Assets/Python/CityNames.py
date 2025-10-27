@@ -271,7 +271,7 @@ class Languages(object):
 		local_languages = self.getLocalLanguages()
 		local_civs = self.getValidLanguageCivs(local_languages)
 		
-		if self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv):
+		if not is_minor(self.identifier) and self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv):
 			for iLanguage in getLocalLanguages(self.tile):
 				yield iLanguage
 		
@@ -324,7 +324,7 @@ class Languages(object):
 		return tile_languages
 	
 	def getValidLanguageCivs(self, localLanguages):
-		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if localLanguages & set(tLanguages)]
+		local_civs = [iCiv for iCiv, tLanguages in dBaseLanguages.items() if not is_minor(iCiv) and localLanguages & set(tLanguages)]
 		
 		return civs.of(*local_civs).where(self.isValid)
 	

@@ -11853,8 +11853,25 @@ int CvUnit::getExtraUpkeep() const
 
 void CvUnit::changeExtraUpkeep(int iChange)
 {
+	if (m_iExtraUpkeep > 0)
+	{
+		GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-m_iExtraUpkeep);
+	}
+	else
+	{
+		GET_PLAYER(getOwnerINLINE()).changeBaseFreeMilitaryUnits(m_iExtraUpkeep);
+	}
+
 	m_iExtraUpkeep += iChange;
-	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(iChange);
+
+	if (m_iExtraUpkeep > 0)
+	{
+		GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(m_iExtraUpkeep);
+	}
+	else
+	{
+		GET_PLAYER(getOwnerINLINE()).changeBaseFreeMilitaryUnits(-m_iExtraUpkeep);
+	}
 }
 
 

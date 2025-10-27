@@ -116,7 +116,7 @@ class CvGameDesc:
 		if self.maxTurns > 0:
 			gc.getGame().setMaxTurns(turns(self.maxTurns))
 		else:
-			gc.getGame().changeMaxTurns(-turns(self.gameTurn))
+			gc.getGame().changeMaxTurns(-turns(self.maxTurns))
 			
 		for option in self.options:
 			optionType = gc.getInfoTypeForString(option)
