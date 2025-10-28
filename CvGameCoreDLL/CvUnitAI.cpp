@@ -13201,11 +13201,11 @@ bool CvUnitAI::AI_assaultSeaTransport(bool bBarbarian)
 	{
 		CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (pLoopPlot->isCoastalLand())
+		if (pLoopPlot->isCoastalLand() && pLoopPlot->getWarValue(getOwnerINLINE()) > 1)
 		{
 			if (pLoopPlot->isOwned())
 			{
-				if (((bBarbarian || !pLoopPlot->isBarbarian())) || GET_PLAYER(getOwnerINLINE()).isMinorCiv())
+				if (bBarbarian || (!pLoopPlot->isBarbarian() && !GET_PLAYER(pLoopPlot->getOwnerINLINE()).isMinorCiv()))
 				{
 					if (isPotentialEnemy(pLoopPlot->getTeam(), pLoopPlot))
 					{
