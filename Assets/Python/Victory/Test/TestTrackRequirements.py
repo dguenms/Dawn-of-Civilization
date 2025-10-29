@@ -3548,7 +3548,36 @@ class TestTradeRouteCommerce(ExtendedTestCase):
 			self.assertEqual(city1.getTradeYield(YieldTypes.YIELD_COMMERCE) > 0, True)
 			self.assertEqual(city2.getTradeYield(YieldTypes.YIELD_COMMERCE) > 0, True)
 			
-			iExpectedCommerce = city1.getTradeYield(YieldTypes.YIELD_COMMERCE) + city2.getTradeYield(YieldTypes.YIELD_COMMERCE)
+			iExpectedCommerce = city1.getTradeYield(YieldTypes.YIELD_COMMERCE) * city1.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0) / 100 + city2.getTradeYield(YieldTypes.YIELD_COMMERCE) * city2.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0) / 100
+			
+			self.assertEqual(iExpectedCommerce > 0, True)
+			
+			events.fireEvent("BeginPlayerTurn", self.iPlayer, 0)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), iExpectedCommerce)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Commerce from city trade routes: %d / 100" % iExpectedCommerce)
+			
+			self.assertEqual(self.goal.checked, True)
+		finally:
+			player(0).setCivics(iCivicsEconomy, iReciprocity)
+			
+			plot(62, 31).setRouteType(-1)
+			
+			cities.kill()
+	
+	def test_trade_route_commerce_modifier(self):
+		city1, city2 = cities = TestCities.num(2)
+		
+		plot(58, 35).setRouteType(iRouteRoad)
+		
+		player(0).setCivics(iCivicsEconomy, iRegulatedTrade)
+		
+		try:
+			self.assertEqual(city1.getTradeYield(YieldTypes.YIELD_COMMERCE) > 0, True)
+			self.assertEqual(city2.getTradeYield(YieldTypes.YIELD_COMMERCE) > 0, True)
+			
+			iExpectedCommerce = city1.getTradeYield(YieldTypes.YIELD_COMMERCE) * city1.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0) / 100 + city2.getTradeYield(YieldTypes.YIELD_COMMERCE) * city2.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0) / 100
 			
 			self.assertEqual(iExpectedCommerce > 0, True)
 			

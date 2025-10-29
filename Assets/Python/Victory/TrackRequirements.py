@@ -863,6 +863,6 @@ class TradeRouteCommerce(TrackRequirement):
 		self.handle("BeginPlayerTurn", self.accumulate_trade_route_commerce)
 	
 	def accumulate_trade_route_commerce(self, goal, iGameTurn, iPlayer):
-		iGold = cities.owner(iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE))
+		iGold = cities.owner(iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE) * city.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0)) / 100
 		self.accumulate(iGold)
 		goal.check()
