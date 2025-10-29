@@ -877,7 +877,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_AREA_BLOCKADE_GOLD</Tag>
-		<English>%s2 gold through blockading, pillaging, and capturing cities in %s1</English>
+		<English>%s2 gold through blockading and pillaging in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1768,7 +1768,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_AREA_BLOCKADE_GOLD</Tag>
-		<English>Gold from blockading, pillaging, and capturing cities in %s1</English>
+		<English>Gold from blockading and pillaging in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

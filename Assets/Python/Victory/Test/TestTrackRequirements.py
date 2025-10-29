@@ -34,7 +34,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		self.assertEqual(repr(self.requirement), "AreaBlockadeGold(Test Area, 100)")
 
 	def test_description(self):
-		self.assertEqual(self.requirement.description(), "100 gold through blockading, pillaging, and capturing cities in Test Area")
+		self.assertEqual(self.requirement.description(), "100 gold through blockading and pillaging in Test Area")
 	
 	def test_areas(self):
 		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of(TestCities.CITY_LOCATIONS[:1])})
@@ -47,7 +47,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from blockading, pillaging, and capturing cities in Test Area: 100 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from blockading and pillaging in Test Area: 100 / 100")
 		self.assertEqual(self.goal.checked, True)
 	
 	def test_unit_pillage_outside(self):
@@ -55,7 +55,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading and pillaging in Test Area: 0 / 100")
 		self.assertEqual(self.goal.checked, False)
 	
 	def test_unit_pillage_other(self):
@@ -63,7 +63,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading and pillaging in Test Area: 0 / 100")
 		self.assertEqual(self.goal.checked, False)
 	
 	def test_blockade(self):
@@ -71,7 +71,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from blockading, pillaging, and capturing cities in Test Area: 100 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from blockading and pillaging in Test Area: 100 / 100")
 		self.assertEqual(self.goal.checked, True)
 	
 	def test_blockade_outside(self):
@@ -79,7 +79,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading and pillaging in Test Area: 0 / 100")
 		self.assertEqual(self.goal.checked, False)
 	
 	def test_blockade_other(self):
@@ -87,31 +87,7 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		
 		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
 		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
-		self.assertEqual(self.goal.checked, False)
-	
-	def test_conquest(self):
-		events.fireEvent("cityCaptureGold", self.inside_city, self.iPlayer, 100)
-		
-		self.assertEqual(self.requirement.evaluate(self.evaluator), 100)
-		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Gold from blockading, pillaging, and capturing cities in Test Area: 100 / 100")
-		self.assertEqual(self.goal.checked, True)
-	
-	def test_conquest_outside(self):
-		events.fireEvent("cityCaptureGold", self.outside_city, self.iPlayer, 100)
-		
-		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
-		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
-		self.assertEqual(self.goal.checked, False)
-	
-	def test_conquest_other(self):
-		events.fireEvent("cityCaptureGold", self.inside_city, 1, 100)
-		
-		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
-		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading, pillaging, and capturing cities in Test Area: 0 / 100")
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Gold from blockading and pillaging in Test Area: 0 / 100")
 		self.assertEqual(self.goal.checked, False)
 	
 	def test_other_evaluator(self):
@@ -121,11 +97,11 @@ class TestAreaBlockadeGold(ExtendedTestCase):
 		team(2).setVassal(0, True, False)
 		
 		try:
-			events.fireEvent("cityCaptureGold", self.inside_city, 2, 100)
+			events.fireEvent("blockade", 0, self.inside_city, 100)
 			
 			self.assertEqual(self.requirement.evaluate(evaluator), 100)
 			self.assertEqual(self.requirement.fulfilled(evaluator), True)
-			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold from blockading, pillaging, and capturing cities in Test Area: 100 / 100")
+			self.assertEqual(self.requirement.progress(evaluator), self.SUCCESS + "Gold from blockading and pillaging in Test Area: 100 / 100")
 		finally:
 			team(2).setVassal(0, False, False)
 	

@@ -610,7 +610,7 @@ dGoals = {
 	iPortugal: (
 		WaterAreaPercent(plots.regions(*lIndianTradeRegions).expand(1).regions(rAtlanticOcean, rIndianOcean, rArabianSea).named(INDIAN_TRADE_ROUTE), 35, by=1550),
 		All(
-			AreaBlockadeGold(plots.regions(*lAsia).named(ASIA), 2000),
+			AreaBlockadeGold(plots.regions(*lAsia).named(ASIA), 500),
 			AreaReligionSpreadCount(plots.regions(*lAsia).named(ASIA), iCatholicism, 8),
 			by=1650,
 		),

@@ -18,7 +18,6 @@ class AreaBlockadeGold(TrackRequirement):
 		
 		self.handle("blockade", self.accumulate_blockade_gold)
 		self.handle("unitPillage", self.accumulate_pillage_gold)
-		self.handle("cityCaptureGold", self.accumulate_city_capture_gold)
 		
 	def accumulate_blockade_gold(self, goal, iGold, city):
 		if city in self.area:
@@ -30,11 +29,6 @@ class AreaBlockadeGold(TrackRequirement):
 			self.accumulate(iGold)
 			goal.check()
 	
-	def accumulate_city_capture_gold(self, goal, iGold, city):
-		if city in self.area:
-			self.accumulate(iGold)
-			goal.check()
-
 
 # Second Portuguese UHV goal
 class AreaReligionSpreadCount(TrackRequirement):
