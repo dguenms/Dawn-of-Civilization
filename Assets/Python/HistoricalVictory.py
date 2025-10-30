@@ -762,6 +762,7 @@ dGoals = {
 		),
 		Control(
 			plots.regions(*lSouthAmerica).named(SOUTH_AMERICA),
+			subject=ALLIES,
 			at=1920,
 		),
 		ResourceTradeGold(3000, by=1950),
