@@ -754,9 +754,9 @@ dGoals = {
 		BestPopulationCity(start(iMexico).named(MEXICO_CITY), at=1960),
 	),
 	iColombia: (
-		AllowNone(
-			group(iCivGroupEurope).named(EUROPEAN),
+		Control(
 			plots.region(rNewGranada).named(GRAN_COLOMBIA),
+			plots.region(rCentralAmerica),
 			plots.region(rAndes).named(ANDES),
 			at=1870,
 		),

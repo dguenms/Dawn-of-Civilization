@@ -49,8 +49,6 @@ class AllAttitude(Requirement):
 		return [civilizations]
 
 
-# First American UHV goal
-# First Colombian UHV goal
 class AllowNone(Requirement):
 
 	GLOBAL_TYPES = (CIVS,)
@@ -176,6 +174,7 @@ class CompleteEra(ThresholdRequirement):
 # Second Ottoman UHV goal
 # Second Iranian UHV goal
 # Second German UHV goal
+# First Colombian UHV goal
 # Second Colombian UHV goal
 # Second Canadian UHV goal
 class Control(Requirement):
