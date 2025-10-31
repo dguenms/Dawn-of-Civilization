@@ -28,7 +28,6 @@ def init():
 		updateReligionSpread(iReligion)
 				
 
-# TODO: revisit
 tSpreadFactors = (
 # Judaism
 {
