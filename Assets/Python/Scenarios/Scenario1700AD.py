@@ -24,7 +24,10 @@ lCivilizations = [
 		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iTheocracy, iCasteSystem, iRegulatedTrade, iMonasticism, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration),
-		dAttitudes={iMughals: -2}
+		dAttitudes={iMughals: -2},
+		dMemories={
+			iMughals: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
 	),
 	Civilization(
 		iDravidia,
@@ -58,7 +61,10 @@ lCivilizations = [
 		iGold=150,
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy],
-		techs=techs.column(10).including(iCombinedArms)
+		techs=techs.column(10).including(iCombinedArms),
+		dMemories={
+			iSweden: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+		},
 	),
 	Civilization(
 		iTurks, # Uzbeks
@@ -75,7 +81,7 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iTheocracy, iManorialism, iRegulatedTrade, iClergy, iColonialism],
 		techs=techs.column(10).including(iCombinedArms, iGeography, iHorticulture),
-		dAttitudes={iPortugal: 2}
+		dAttitudes={iPortugal: 2},
 	),
 	Civilization(
 		iFrance,
@@ -84,7 +90,12 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iColonialism],
 		techs=techs.column(11).without(iUrbanPlanning, iEconomics),
-		dAttitudes={iEngland: -4, iHolyRome: -2, iOttomans: -2, iNetherlands: 2}
+		dAttitudes={iEngland: -4, iHolyRome: -2, iOttomans: -2, iNetherlands: 2},
+		dMemories={
+			iEngland: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iHolyRome: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+			iOttomans: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+		},
 	),
 	Civilization(
 		iEngland,
@@ -93,7 +104,12 @@ lCivilizations = [
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iIndividualism, iFreeEnterprise, iClergy, iColonialism],
 		techs=techs.column(11).without(iUrbanPlanning, iHorticulture),
-		dAttitudes={iFrance: -4, iPortugal: 2, iMughals: -2, iOttomans: -2}
+		dAttitudes={iFrance: -4, iPortugal: 2, iMughals: -2, iOttomans: -2},
+		dMemories={
+			iFrance: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iMughals: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iNetherlands: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
 	),
 	Civilization(
 		iHolyRome, # Austria
@@ -102,7 +118,12 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning, iHorticulture).without(iExploration),
-		dAttitudes={iFrance: -2, iOttomans: -4}
+		dAttitudes={iFrance: -2, iOttomans: -4},
+		dMemories={
+			iFrance: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+			iOttomans: {MemoryTypes.MEMORY_DECLARED_WAR: 4},
+			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 1},
+		},
 	),
 	Civilization(
 		iBurma,
@@ -127,6 +148,11 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iVassalage, iManorialism, iRegulatedTrade, iSyncretism],
 		techs=techs.column(11).without(iEconomics, iGeography, iHorticulture, iUrbanPlanning),
+		dMemories={
+			iHolyRome: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iRussia: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iOttomans: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
 	),
 	Civilization(
 		iPortugal,
@@ -135,7 +161,10 @@ lCivilizations = [
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iColonialism],
 		techs=techs.column(10).including(iGeography, iHorticulture),
-		dAttitudes={iSpain: 2, iEngland: 2, iNetherlands: -2}
+		dAttitudes={iSpain: 2, iEngland: 2, iNetherlands: -2},
+		dMemories={
+			iNetherlands: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
 	),
 	Civilization(
 		iMughals,
@@ -144,7 +173,11 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iSyncretism, iHegemony],
 		techs=techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
-		dAttitudes={iEngland: -2, iIndia: -2, iIran: -2}
+		dAttitudes={iEngland: -2, iIndia: -2, iIran: -2},
+		dMemories={
+			iEngland: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iIndia: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
 	),
 	Civilization(
 		iSweden,
@@ -153,7 +186,12 @@ lCivilizations = [
 		iStateReligion=iProtestantism,
 		lCivics=[iMonarchy, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iScientificMethod, iUrbanPlanning),
-		dAttitudes={iRussia: -2, iPoland: -2}
+		dAttitudes={iRussia: -2, iPoland: -2},
+		dMemories={
+			iRussia: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iNorse: {MemoryTypes.MEMORY_DECLARED_WAR: 1},
+		},
 	),
 	Civilization(
 		iRussia,
@@ -162,7 +200,12 @@ lCivilizations = [
 		iStateReligion=iOrthodoxy,
 		lCivics=[iDespotism, iTheocracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
-		dAttitudes={iSweden: -2, iOttomans: -4}
+		dAttitudes={iSweden: -2, iOttomans: -4},
+		dMemories={
+			iSweden: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iOttomans: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+		},
 	),
 	Civilization(
 		iOttomans,
@@ -171,7 +214,14 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iBureaucracy, iSlavery, iRegulatedTrade, iSyncretism, iHegemony],
 		techs=techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration),
-		dAttitudes={iIran: -4, iHolyRome: -4, iRussia: -4, iPoland: -2, iFrance: -2, iEngland: -2, iNetherlands: -2}
+		dAttitudes={iIran: -4, iHolyRome: -4, iRussia: -4, iPoland: -2, iFrance: -2, iEngland: -2, iNetherlands: -2},
+		dMemories={
+			iIran: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+			iHolyRome: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iRussia: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iPoland: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iFrance: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+		},
 	),
 	Civilization(
 		iThailand,
@@ -196,7 +246,10 @@ lCivilizations = [
 		iStateReligion=iIslam,
 		lCivics=[iMonarchy, iTheocracy, iSlavery, iMerchantTrade, iFanaticism, iHegemony],
 		techs=techs.column(10).including(iCombinedArms, iGeography, iUrbanPlanning, iHorticulture),
-		dAttitudes={iMughals: -2, iOttomans: -4}
+		dAttitudes={iMughals: -2, iOttomans: -4},
+		dMemories={
+			iOttomans: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
+		},
 	),
 	Civilization(
 		iNetherlands,
@@ -205,7 +258,10 @@ lCivilizations = [
 		iStateReligion=iProtestantism,
 		lCivics=[iRepublic, iBureaucracy, iIndividualism, iFreeEnterprise, iSyncretism, iColonialism],
 		techs=techs.column(10).including(iCombinedArms, iEconomics, iGeography, iScientificMethod, iCivilLiberties),
-		dAttitudes={iFrance: 2, iPortugal: -2, iOttomans: -2}
+		dAttitudes={iFrance: 2, iPortugal: -2, iOttomans: -2},
+		dMemories={
+			iEngland: {MemoryTypes.MEMORY_DECLARED_WAR: 1},
+		},
 	),
 	Civilization(
 		iGermany,

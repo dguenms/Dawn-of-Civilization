@@ -106,6 +106,7 @@ class Civilization(object):
 		self.lEnemies = kwargs.get("lEnemies", []) + [iNative, iBarbarian]
 		
 		self.dAttitudes = kwargs.get("dAttitudes", {})
+		self.dMemories = kwargs.get("dMemories", {})
 		
 		self.sLeaderName = kwargs.get("sLeaderName")
 		
@@ -167,6 +168,10 @@ class Civilization(object):
 		
 		for iCiv, iAttitude in self.dAttitudes.items():
 			self.player.AI_changeAttitudeExtra(slot(iCiv), iAttitude)
+		
+		for iCiv, entries in self.dMemories.items():
+			for iMemory, iChange in entries.items():
+				self.player.AI_changeMemoryCount(slot(iCiv), iMemory, iChange)
 	
 	def canFoundReligion(self, iReligion):
 		return infos.religion(iReligion).getTechPrereq() in self.techs
