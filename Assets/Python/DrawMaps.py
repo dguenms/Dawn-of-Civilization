@@ -276,7 +276,7 @@ iGermany :		((65, 62),	(76, 66)),
 iAmerica :		((25, 54),	(32, 58)),
 iArgentina :	((35, 13),	(38, 16)),
 iMexico :		((14, 41),	(19, 44)),
-iColombia :		((26, 31),	(35, 38)),
+iColombia :		((26, 34),	(35, 38)),
 iBrazil :		((42, 19),	(47, 25)),
 iCanada :		((26, 59),	(37, 62)),
 })
@@ -311,7 +311,7 @@ iCongo :	[(71, 26), (71, 27), (72, 27)],
 iIran :		[(91, 48)],
 iGermany :	[(72, 64), (73, 62), (73, 63), (73, 64), (74, 62), (74, 63), (74, 64), (75, 62), (75, 63), (75, 64), (76, 62), (76, 63), (76, 64)],
 iAmerica :	[(25, 54), (26, 54)],
-iColombia :	[(26, 36), (27, 31), (27, 37), (28, 31), (28, 32), (29, 31), (29, 32), (29, 33), (30, 31), (30, 32), (30, 33), (31, 31), (31, 32), (31, 33), (31, 34), (31, 35), (32, 31), (32, 32), (32, 33), (32, 34), (32, 35), (33, 31), (33, 32), (33, 33), (33, 34), (33, 35), (34, 31), (34, 32), (34, 33), (34, 34), (34, 35), (35, 31), (35, 32), (35, 33), (35, 34), (35, 35)],
+iColombia :	[(26, 36), (27, 37), (31, 34), (31, 35), (32, 34), (32, 35), (33, 34), (33, 35), (34, 34), (34, 35), (35, 34), (35, 35)],
 iCanada :	[(26, 62), (27, 62), (28, 62), (29, 62), (30, 59), (30, 62), (31, 59), (32, 59), (33, 59), (33, 60)],
 }, [])
 
@@ -525,6 +525,8 @@ def iterate_plot_types(identifier, settler_values, war_values, core_func):
 
 
 def draw_stability_map(name, values):
+	print(name)
+	
 	image = Image.new("RGB", (iWorldX, iWorldY), "white")
 	pixels = image.load()
 
@@ -596,6 +598,8 @@ def iterate_religion_spread_factors(iReligion):
 
 
 def draw_religion_map(iReligion):
+	print(dReligionNames[iReligion])
+	
 	image = Image.new("RGB", (iWorldX, iWorldY), "white")
 	pixels = image.load()
 	
