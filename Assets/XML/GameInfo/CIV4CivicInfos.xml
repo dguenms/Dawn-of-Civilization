@@ -681,11 +681,10 @@
 			<Button>,Art/Interface/Buttons/Civics/Regulated Trade.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<CapitalYieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>35</iYield>
-			</CapitalYieldModifiers>
+			<CapitalCommerceModifiers>
+				<iCommerce>35</iCommerce>
+				<iCommerce>35</iCommerce>
+			</CapitalCommerceModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
