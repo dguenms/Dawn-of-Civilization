@@ -11766,7 +11766,7 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv, bool bTarget)
 	{
 		if (AI_plotValid(pLoopCity->plot()))
 		{
-			if (pLoopCity->isRevealed(getTeam(), false))
+			if (pLoopCity->isRevealed(getTeam(), false) && AI_isTargetableCity(pLoopCity))
 			{
 				if (bTarget || pLoopCity->plot()->getExpansion() == getOwnerINLINE())
 				{
@@ -11854,6 +11854,22 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv, bool bTarget)
 //Rhye - end
 
 
+bool CvUnitAI::AI_isTargetableCity(CvCity* pCity)
+{
+	if (plot()->area()->getTargetCity(getOwnerINLINE()) == pCity)
+	{
+		return true;
+	}
+
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() && pCity->plot()->getWarValue(getOwnerINLINE()) == 0)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+
 // Returns true if a mission was pushed...
 bool CvUnitAI::AI_bombardCity()
 {
@@ -11863,6 +11879,11 @@ bool CvUnitAI::AI_bombardCity()
 	{
 		pBombardCity = bombardTarget(plot());
 		FAssertMsg(pBombardCity != NULL, "BombardCity is not assigned a valid value");
+
+		if (!AI_isTargetableCity(pBombardCity))
+		{
+			return false;
+		}
 
 		// do not bombard cities with no defenders
 		int iDefenderStrength = pBombardCity->plot()->AI_sumStrength(NO_PLAYER, getOwnerINLINE(), DOMAIN_LAND, /*bDefensiveBonuses*/ true, /*bTestAtWar*/ true, false);
@@ -12034,19 +12055,22 @@ bool CvUnitAI::AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack, bool 
 				{
 					if (pLoopPlot->isVisibleEnemyUnit(this) || (pLoopPlot->isCity() && AI_potentialEnemy(pLoopPlot->getTeam())))
 					{
-						if (!atPlot(pLoopPlot) && ((bFollow) ? canMoveInto(pLoopPlot, true) : (generatePath(pLoopPlot, 0, true, &iPathTurns) && (iPathTurns <= iRange))))
+						if (!pLoopPlot->isCity() || AI_isTargetableCity(pLoopPlot->getPlotCity()))
 						{
-							if (pLoopPlot->getNumVisibleEnemyDefenders(this) >= iMinStack)
+							if (!atPlot(pLoopPlot) && ((bFollow) ? canMoveInto(pLoopPlot, true) : (generatePath(pLoopPlot, 0, true, &iPathTurns) && (iPathTurns <= iRange))))
 							{
-								iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
-
-								if (iValue >= AI_finalOddsThreshold(pLoopPlot, iOddsThreshold))
+								if (pLoopPlot->getNumVisibleEnemyDefenders(this) >= iMinStack)
 								{
-									if (iValue > iBestValue)
+									iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
+
+									if (iValue >= AI_finalOddsThreshold(pLoopPlot, iOddsThreshold))
 									{
-										iBestValue = iValue;
-										pBestPlot = ((bFollow) ? pLoopPlot : getPathEndTurnPlot());
-										FAssert(!atPlot(pBestPlot));
+										if (iValue > iBestValue)
+										{
+											iBestValue = iValue;
+											pBestPlot = ((bFollow) ? pLoopPlot : getPathEndTurnPlot());
+											FAssert(!atPlot(pBestPlot));
+										}
 									}
 								}
 							}
@@ -17948,17 +17972,20 @@ bool CvUnitAI::AI_stackAttackCity(int iRange, int iPowerThreshold, bool bFollow)
 					{
 						if (AI_potentialEnemy(pLoopPlot->getTeam(), pLoopPlot))
 						{
-							if (!atPlot(pLoopPlot) && ((bFollow) ? canMoveInto(pLoopPlot, /*bAttack*/ true, /*bDeclareWar*/ true) : (generatePath(pLoopPlot, 0, true, &iPathTurns) && (iPathTurns <= iRange))))
+							if (!pLoopPlot->isCity() || AI_isTargetableCity(pLoopPlot->getPlotCity()))
 							{
-								iValue = getGroup()->AI_compareStacks(pLoopPlot, /*bPotentialEnemy*/ true, /*bCheckCanAttack*/ true, /*bCheckCanMove*/ true);
-
-								if (iValue >= iPowerThreshold)
+								if (!atPlot(pLoopPlot) && ((bFollow) ? canMoveInto(pLoopPlot, /*bAttack*/ true, /*bDeclareWar*/ true) : (generatePath(pLoopPlot, 0, true, &iPathTurns) && (iPathTurns <= iRange))))
 								{
-									if (iValue > iBestValue)
+									iValue = getGroup()->AI_compareStacks(pLoopPlot, /*bPotentialEnemy*/ true, /*bCheckCanAttack*/ true, /*bCheckCanMove*/ true);
+
+									if (iValue >= iPowerThreshold)
 									{
-										iBestValue = iValue;
-										pBestPlot = ((bFollow) ? pLoopPlot : getPathEndTurnPlot());
-										FAssert(!atPlot(pBestPlot));
+										if (iValue > iBestValue)
+										{
+											iBestValue = iValue;
+											pBestPlot = ((bFollow) ? pLoopPlot : getPathEndTurnPlot());
+											FAssert(!atPlot(pBestPlot));
+										}
 									}
 								}
 							}
