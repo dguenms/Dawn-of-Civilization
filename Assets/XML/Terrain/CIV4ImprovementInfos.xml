@@ -2307,7 +2307,7 @@
 			<iTilesPerGoody>0</iTilesPerGoody>
 			<iGoodyRange>0</iGoodyRange>
 			<iFeatureGrowth>0</iFeatureGrowth>
-			<iUpgradeTime>20</iUpgradeTime>
+			<iUpgradeTime>30</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
@@ -2368,7 +2368,7 @@
 			<iTilesPerGoody>0</iTilesPerGoody>
 			<iGoodyRange>0</iGoodyRange>
 			<iFeatureGrowth>0</iFeatureGrowth>
-			<iUpgradeTime>40</iUpgradeTime>
+			<iUpgradeTime>60</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
