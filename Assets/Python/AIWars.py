@@ -303,8 +303,8 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if iCiv == iGreece:
 			units += makeUnit(iPlayer, iCompanion, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 		
-		if iCiv in [iSpain, iEngland]:
-			units += createRoleUnit(iPlayer, tPlot, iShockCity, 2*iExtra)
+		if iCiv in [iEngland]:
+			units += createRoleUnit(iPlayer, tPlot, iShockCity, iExtra)
 			
 		if iCiv == iTurks:
 			units += createRoleUnit(iPlayer, tPlot, iShockCity, 2+iExtra)
