@@ -69,7 +69,7 @@ def restorePeaceAI(iMinorCiv, bOpenBorders):
 			if checkUnitsInEnemyTerritory(iMinorCiv, iPlayer):
 				continue
 				
-			if cities.owner(iMinorCiv).any(lambda city: plot(city).getExpansion() == iPlayer):
+			if cities.owner(iMinorCiv).any(lambda city: plot(city).getExpansion() == iPlayer or plot(city).getPlayerWarValue(iPlayer) >= 2):
 				continue
 				
 			teamMinor.makePeace(iPlayer)
@@ -95,7 +95,7 @@ def minorWars(iMinorCiv):
 	teamMinor = team(iMinorCiv)
 	for city in cities.owner(iMinorCiv):
 		for iPlayer in players.major().existing().ai():
-			if plot(city).getPlayerSettlerValue(iPlayer) > 0 or plot(city).getPlayerSettlerValue(iPlayer) >= 3:
+			if plot(city).getPlayerSettlerValue(iPlayer) > 0 or plot(city).getPlayerWarValue(iPlayer) >= 3:
 				if not teamMinor.isAtWar(iPlayer):
 					team(iPlayer).declareWar(player(iMinorCiv).getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
 
