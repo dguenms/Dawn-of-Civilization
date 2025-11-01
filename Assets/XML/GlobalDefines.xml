@@ -1411,7 +1411,7 @@
 	</Define>
 	<Define>
 		<DefineName>VASSAL_HAPPINESS</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>FREE_VASSAL_LAND_PERCENT</DefineName>
