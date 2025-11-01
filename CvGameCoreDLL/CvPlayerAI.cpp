@@ -2981,6 +2981,22 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	{
 		iValue += iWarMapValue;
 
+		// Europeans target African cities more
+		if (iWarMapValue > 0)
+		{
+			if (getID() == ENGLAND || getID() == FRANCE || getID() == GERMANY || getID() == PORTUGAL || getID() == NETHERLANDS || getID() == ITALY)
+			{
+				if (pCity->plot()->getRegionGroup() == REGION_GROUP_SUB_SAHARAN_AFRICA)
+				{
+					iValue += 5;
+				}
+				else if (pCity->plot()->getRegionGroup() == REGION_GROUP_NORTH_AFRICA)
+				{
+					iValue += 3;
+				}
+			}
+		}
+
 		if (iWarMapValue == 0)
 		{
 			iValue /= 3;
