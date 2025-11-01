@@ -5437,16 +5437,18 @@ bool CvCity::isHeadquarters() const
 
 int CvCity::getOvercrowdingPercentAnger(int iExtra) const
 {
+	int iPopulation;
 	int iOvercrowding;
 	int iAnger;
 
 	iAnger = 0;
+	iPopulation = getPopulation() + iExtra;
 
-	iOvercrowding = (getPopulation() + iExtra);
+	iOvercrowding = iPopulation + std::max(0, iPopulation-10);
 
 	if (iOvercrowding > 0)
 	{
-		iAnger += (((iOvercrowding * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, (getPopulation() + iExtra))) + 1);
+		iAnger += (((iOvercrowding * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, iPopulation)) + 1);
 	}
 
 	return iAnger;
@@ -5830,7 +5832,10 @@ int CvCity::unhealthyPopulation(bool bNoAngry, int iExtra) const
 		return 0;
 	}
 
-	return std::max(0, ((getPopulation() + iExtra - ((bNoAngry) ? angryPopulation(iExtra) : 0))));
+	int iPopulation = getPopulation() + iExtra - (bNoAngry ? angryPopulation(iExtra) : 0);
+	int iUnhealthy = iPopulation + std::max(0, iPopulation - 10);
+
+	return std::max(0, iUnhealthy);
 }
 
 
