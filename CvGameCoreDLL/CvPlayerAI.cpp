@@ -2986,13 +2986,16 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		{
 			if (getID() == ENGLAND || getID() == FRANCE || getID() == GERMANY || getID() == PORTUGAL || getID() == NETHERLANDS || getID() == ITALY)
 			{
-				if (pCity->plot()->getRegionGroup() == REGION_GROUP_SUB_SAHARAN_AFRICA)
+				if (getCurrentEra() == ERA_INDUSTRIAL)
 				{
-					iValue += 5;
-				}
-				else if (pCity->plot()->getRegionGroup() == REGION_GROUP_NORTH_AFRICA)
-				{
-					iValue += 3;
+					if (pCity->plot()->getRegionGroup() == REGION_GROUP_SUB_SAHARAN_AFRICA)
+					{
+						iValue += 5;
+					}
+					else if (pCity->plot()->getRegionGroup() == REGION_GROUP_NORTH_AFRICA)
+					{
+						iValue += 3;
+					}
 				}
 			}
 		}
