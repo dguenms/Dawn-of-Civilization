@@ -49,6 +49,7 @@ dPeriodNames = {
 	iPeriodVijayanagara:			"Vijayanagara",
 	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
 	iPeriodSeljuks:					"Seljuks",
+	iPeriodNationalFrance:			"National_France",
 	iPeriodMeiji:					"Meiji",
 	iPeriodDenmark:					"Denmark",
 	iPeriodNorway:					"Norway",
@@ -254,6 +255,10 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 		if iEra == iIndustrial:
 			if player(iPlayer).getCapitalCity().getRegionID() != rIberia:
 				setPeriod(iMoors, iPeriodMorocco)
+	
+	if iCiv == iFrance:
+		if iEra == iIndustrial:
+			setPeriod(iFrance, iPeriodNationalFrance)
 
 	if iCiv == iJapan:
 		if iColumn == 13:
