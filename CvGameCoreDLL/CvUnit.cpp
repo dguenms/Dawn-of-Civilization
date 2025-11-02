@@ -14220,7 +14220,7 @@ void CvUnit::applyEvent(EventTypes eEvent)
 
 const CvArtInfoUnit* CvUnit::getArtInfo(int i, EraTypes eEra) const
 {
-	if (GET_PLAYER(getOwnerINLINE()).isIndependent() || isBarbarian())
+	if (GET_PLAYER(getOwnerINLINE()).isIndependent() || GET_PLAYER(getOwnerINLINE()).isNative() || isBarbarian())
 	{
 		return m_pUnitInfo->getArtInfo(i, eEra, (UnitArtStyleTypes)getOriginalArtStyle());
 	}
@@ -14598,11 +14598,15 @@ int CvUnit::getOriginalArtStyle() const
 	switch (CvPlot::getRegionGroupForRegion(getOriginalRegion()))
 	{
 	case REGION_GROUP_NORTH_AMERICA:
+		if (GET_PLAYER(getOwnerINLINE()).isNative())
+		{
+			return GC.getCivilizationInfo(NATIVE).getUnitArtStyleType();
+		}
 		return GC.getCivilizationInfo(ENGLAND).getUnitArtStyleType();
 	case REGION_GROUP_SOUTH_AMERICA:
 		return GC.getCivilizationInfo(INCA).getUnitArtStyleType();
 	case REGION_GROUP_SUB_SAHARAN_AFRICA:
-		return GC.getCivilizationInfo(NATIVE).getUnitArtStyleType();
+		return GC.getCivilizationInfo(ZULU).getUnitArtStyleType();
 	case REGION_GROUP_OCEANIA:
 		return GC.getCivilizationInfo(POLYNESIA).getUnitArtStyleType();
 	}

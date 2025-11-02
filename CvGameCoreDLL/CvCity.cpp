@@ -5094,7 +5094,7 @@ int CvCity::determineArtStyleType() const
 
 		if (eRegionGroup == REGION_GROUP_NORTH_AMERICA)
 		{
-			return GC.getCivilizationInfo(NATIVE_AMERICANS).getArtStyleType();
+			return GC.getCivilizationInfo(NATIVE).getArtStyleType();
 		}
 		else if (eRegionGroup == REGION_GROUP_SOUTH_AMERICA)
 		{
