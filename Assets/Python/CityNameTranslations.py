@@ -10,14 +10,15 @@ from Civics import isCommunist, isFascist, isRepublic, isAutocratic
 
 ### CONSTANTS ###
 
-iNumLanguages = 60
+iNumLanguages = 61
 lLanguages = (
-	iAmerican, iArabic, iArgentinian, iBabylonian, iBerber, iBrazilian, iBurmese, iByzantine, iCeltic, iChinese, 
-	iCongolese, iCoptic, iDravidian, iDutch, iEgyptian, iEgyptianArabic, iEnglish, iEthiopian, iFrench, iGerman, 
-	iGreek, iHarappan, iHittite, iIndian, iItalian, iJapanese, iJavanese, iKhmerian, iKiswahili, iKorean, 
-	iKushan, iLatin, iLocal, iMalay, iManchu, iMande, iMayan, iMexican, iModernGreek, iMongol, 
-	iNahuatl, iNordic, iNubian, iOttoman, iPersian, iPhoenician, iPolish, iPolynesian, iPortuguese, iQuechua, 
-	iUkrainian, iRussian, iSomali, iSpanish, iSwedish, iThai, iTibetan, iToltec, iTurkish, iVietnamese,
+	iAmerican, iArabic, iArgentinian, iAssyrian, iBabylonian, iBerber, iBrazilian, iBurmese, iByzantine, iCeltic, 
+	iChinese, iCongolese, iCoptic, iDravidian, iDutch, iEgyptian, iEgyptianArabic, iEnglish, iEthiopian, iFrench, 
+	iGerman, iGreek, iHarappan, iHittite, iIndian, iItalian, iJapanese, iJavanese, iKhmerian, iKiswahili, 
+	iKorean, iKushan, iLatin, iLocal, iMalay, iManchu, iMande, iMayan, iMexican, iModernGreek, 
+	iMongol, iNahuatl, iNordic, iNubian, iOttoman, iPersian, iPhoenician, iPolish, iPolynesian, iPortuguese, 
+	iQuechua, iUkrainian, iRussian, iSomali, iSpanish, iSwedish, iThai, iTibetan, iToltec, iTurkish, 
+	iVietnamese,
 ) = range(iNumLanguages)
 
 
@@ -574,7 +575,10 @@ name_translations = {
 	"Akka": {
 		iArabic: _,
 		iBabylonian: _,
-		iEgyptian: "Aak",
+		iEgyptian: (
+			found("Maketi"),
+			"Aak",
+		),
 		iEnglish: (
 			translate("Saint John of Acre", iBefore=iMedieval),
 			"Acre",
@@ -592,9 +596,16 @@ name_translations = {
 			translate("San Giovanni d'Acri", iBefore=iMedieval),
 			"Acri",
 		),
-		iLatin: "Colonia Ptolemais",
+		iLatin: (
+			relocate("Caesarea Maritima", iBefore=iClassical),
+			"Colonia Ptolemais",
+		),
 		iPhoenician: "Ak",
 		iPolish: _,
+		iPortuguese: (
+			translate(u"São João de Acre", iBefore=iMedieval),
+			"Acre",
+		),
 		iSpanish: (
 			translate("San Juan de Acre", iBefore=iMedieval),
 			"Acre",
@@ -914,6 +925,7 @@ name_translations = {
 			_,
 		),
 		iCoptic: "Peklousma",
+		iEgyptian: found("Rpwhw"),
 		iGreek: "Klysma",
 		iLatin: "Clysma",
 	},
@@ -1012,6 +1024,7 @@ name_translations = {
 		iEnglish: "Scanderoon",
 		iFrench: "Alexandrette",
 		iGerman: "Alexandretta",
+		iGreek: "Alexandreia bei Issos",
 		iItalian: "Alessandretta",
 		iJapanese: "Isukenderun",
 		iLatin: (
@@ -1162,6 +1175,7 @@ name_translations = {
 		iGreek: "Philadelpheia",
 		iIndian: "Ammana",
 		iLatin: "Philadelphia",
+		iPhoenician: "Rabbat Ammon",
 		iPortuguese: u"Amã",
 		iSpanish: u"Ammán",
 	},
@@ -1329,7 +1343,7 @@ name_translations = {
 	},
 	"Antiokheia": {
 		iArabic: "Antakiyah",
-		iBabylonian: found("Alalakh"),
+		iBabylonian: found("Ebla"),
 		iChinese: "Antia",
 		iDutch: u"Antiochië",
 		iDravidian: "Antiyoccu",
@@ -1346,10 +1360,17 @@ name_translations = {
 		iMalay: "Antiokia",
 		iMongol: relocate("Alexandria ad Issum", bConquest=True),
 		iNordic: "Antiokia",
+		iPhoenician: found("Murianda"),
 		iPolish: "Antiochia",
 		iPortuguese: u"Antióquia",
 		iSpanish: "Antioquía",
 		iTurkish: "Antakya",
+	},
+	"Antiokheia Hippos": {  # relocated from Gerasa
+		iArabic: "Qalat al-Hisn",
+		iGreek: _,
+		iLatin: "Antiochia ad Hippum",
+		iLocal: "Sussita", # Aramaic
 	},
 	"Antipyrgos": {
 		iArabic: "Tubruq",
@@ -1578,6 +1599,15 @@ name_translations = {
 			_,
 		),
 	},
+	"Arsuf": {  # founded on Yafo
+		iArabic: _,
+		iByzantine: "Sozousa",
+		iFrench: "Arsur",
+		iGreek: "Apollonia",
+		iLatin: "Apollonia",
+		iPersian: "Arshoph",
+		iTurkish: _,
+	},
 	"Artacoana": {
 		iGreek: rename("Herat"),
 		iPersian: (
@@ -1616,6 +1646,7 @@ name_translations = {
 	},
 	"Arwad": {  # founded on Ugaritu
 		iArabic: relocate("Tartus"),
+		iAssyrian: "Arwada",
 		iBabylonian: "Irtu",
 		iEgyptian: "Jrtw",
 		iGreek: "Arados",
@@ -2014,6 +2045,15 @@ name_translations = {
 	
 	### B ###
 	
+	"Ba'al Nebeq": {  # founded on Homs
+		iArabic: "Ba'labakk",
+		iEnglish: "Baalbek",
+		iFrench: "Balbec",
+		iGreek: "Helioupolis",
+		iLatin: "Heliopolis Syriaca",
+		iPhoenician: _,
+		iTurkish: "Baalbek",
+	},
 	u"Babilû": {
 		iArabic: (
 			relocate("Baghdad"),
@@ -2537,6 +2577,20 @@ name_translations = {
 		iGreek: "Abdera",
 		iPhoenician: _,
 		iSpanish: "Adra",
+	},
+	"Be'er Sheva": {
+		iArabic: "Bi'r as-Sab",
+		iEgyptian: found("Per-Hwt-Hr"),
+		iEnglish: "Beersheba",
+		iFrench: "Beer-Sheva",
+		iGreek: (
+			found("Oboda"),
+			"Bersabe",
+		),
+		iItalian: "Bersabea",
+		iLatin: "Birosaba",
+		iLocal: _, # Hebrew
+		iTurkish: u"Birüssebi",
 	},
 	u"Béal Feirste": {
 		iCeltic: _,
@@ -3089,6 +3143,7 @@ name_translations = {
 	},
 	"Bosra": {
 		iArabic: "Busra",
+		iBabylonian: "Busruna",
 		iGreek: (
 			found("Kanatha"),
 			"Bostra",
@@ -3639,6 +3694,11 @@ name_translations = {
 			found("Canovium"),
 			"Seguntium",
 		),
+	},
+	"Caesarea Maritima": {  # relocated from Yafo
+		iArabic: "Qisarya",
+		iGreek: "Sebastos Paralios",
+		iLatin: _,
 	},
 	"Caesarobriga": {  # founded on Ávila
 		iArabic: "Talabayra",
@@ -5041,6 +5101,7 @@ name_translations = {
 	},
 	"Dimashq": {
 		iArabic: _,
+		iAssyrian: "Sh'imerishu",
 		iBabylonian: u"Imerishú",
 		iCeltic: "Damaisc",
 		iChinese: "Damashige",
@@ -5059,6 +5120,7 @@ name_translations = {
 		iMalay: "Damsyik",
 		iNordic: "Damaskus",
 		iPersian: "Damishq",
+		iPhoenician: found("Sidun"),
 		iPortuguese: "Damasco",
 		iRussian: "Damask",
 		iSomali: "Dimshek",
@@ -5451,14 +5513,20 @@ name_translations = {
 		iEgyptianArabic: _,
 	},
 	"Elath": {
-		iArabic: "Al-Aqabah",
+		iArabic: (
+			"Aylah",
+			translate("Al-Aqabah", iAfter=iRenaissance),
+		),
+		iEnglish: "Aqaba",
+		iFrench: "Elyn",
+		iGerman: "Akaba",
 		iGreek: (
 			translate("Aila", iAfter=iMedieval),
 			"Berenike",
 		),
 		iLatin: "Aela",
 		iLocal: _,
-		iTurkish: "Aqaba",
+		iTurkish: "Akabe",
 	},
 	"Elbing": {
 		iDutch: found("Paslek"),
@@ -5489,6 +5557,14 @@ name_translations = {
 		iFrench: u"Éauze",
 		iLatin: _,
 		iLocal: "Euso", # Gascon
+	},
+	"Emar": {  # founded on Hamath
+		iArabic: "Qalat Balis",
+		iBabylonian: _,
+		iGreek: "Barbalissos",
+		iLatin: "Barbalissus",
+		iLocal: "Bales",
+		iPersian: "Bayat Bala",
 	},
 	"Emerita Augusta": {  # founded on Batalyaws
 		iArabic: "Marida",
@@ -6328,6 +6404,7 @@ name_translations = {
 			relocate("Bayrut", iAfter=iRenaissance),
 			"Jubayl",
 		),
+		iAssyrian: "Gubil",
 		iBabylonian: "Gubla",
 		iEgyptian: "Kebny",
 		iEnglish: "Byblos",
@@ -6452,10 +6529,14 @@ name_translations = {
 	},
 	"Gerasa": {
 		iArabic: "Gharash",
+		iEgyptian: found("Hwdr"),
 		iEnglish: "Jerash",
-		iGreek: "Antiokheia Hippos",
+		iGreek: relocate("Antiokheia Hippos"),
 		iLatin: _,
-		iTurkish: "Jaras",
+		iTurkish: (
+			relocate("Irbid", iAfter=iIndustrial),
+			"Jaras",
+		),
 	},
 	"Getembe": {
 		iGerman: found("Musoma"),
@@ -6997,6 +7078,7 @@ name_translations = {
 	},
 	"Halab": {
 		iArabic: _,
+		iAssyrian: "Halba",
 		iBabylonian: _,
 		iChinese: "Alepo",
 		iDravidian: "Aleppo",
@@ -7058,9 +7140,13 @@ name_translations = {
 		iUkrainian: _,
 	},
 	"Hamath": {
-		iArabic: "Hama",
+		iArabic: "Hamah",
+		iBabylonian: (
+			found("Emar"),
+			"Hamata",
+		),
 		iByzantine: u"Emathoùs",
-		iBabylonian: "Amat",
+		iAssyrian: "Amat",
 		iGreek: (
 			found("Apameia"),
 			"Epiphaneia",
@@ -7071,7 +7157,12 @@ name_translations = {
 			"Hama",
 		),
 		iLocal: translate(_, iBefore=iClassical), # Aramean
-		iPhoenician: found("Sopute"),
+		iPersian: "Agbatana",
+		iPhoenician: (
+			found("Sopute"),
+			"Hmt",
+		),
+		iTurkish: "Hama",
 	},
 	"Hamburg": {
 		iArabic: _,
@@ -7457,11 +7548,17 @@ name_translations = {
 		iPortuguese: u"Comorão",
 	},
 	"Homs": {  # relocated from Kadesh
-		iArabic: _,
+		iArabic: "Hims",
 		iByzantine: "Khemps",
-		iFrench: "La Chamelle",
+		iEnglish: _,
+		iFrench: (
+			translate("La Chamelle", iBefore=iMedieval),
+			"Homs",
+		),
 		iGreek: "Emesa",
 		iLatin: "Emesus",
+		iPhoenician: found("Ba'al Nebeq"),
+		iTurkish: "Humus",
 	},
 	"Hong Kong": {  # relocated from Nantou
 		iCeltic: "Hong Cong",
@@ -7613,6 +7710,12 @@ name_translations = {
 			translate(u"Julianehåb", iAfter=iRenaissance),
 			_,
 		),
+	},
+	"Hwdr": {  # founded on Gerasa
+		iBabylonian: "Hasura",
+		iEgyptian: _,
+		iGreek: "Hasor",
+		iLocal: "Hazor", # Hebrew
 	},
 	"Hyderabad": {  # relocated from Kahu-jo-darro and Golkonda
 		iDravidian: "Aitarapattu",
@@ -7891,6 +7994,12 @@ name_translations = {
 		iEnglish: "Icolmkill",
 		iLatin: _,
 		iNordic: "Hy",
+	},
+	"Irbid": {  # relocated from Gerasa
+		iArabic: _,
+		iGreek: "Arabella",
+		iLatin: "Arabella",
+		iTurkish: _,
 	},
 	"Iribikrwb": {
 		iArabic: (
@@ -8399,13 +8508,18 @@ name_translations = {
 	},
 	"Kadesh": {
 		iArabic: relocate("Homs"),
+		iAssyrian: "Qadisu",
 		iBabylonian: (
 			found("Qatanim"),
 			"Kidsha",
 		),
 		iEgyptian: "Qadeshu",
-		iGreek: relocate("Homs"),
-		iHittite: _,
+		iEnglish: _,
+		iGreek: (
+			relocate("Homs"),
+			"Kadytis",
+		),
+		iHittite: "Kinza",
 	},
 	"Kaditshwene": {
 		iDutch: "Zeerust",
@@ -8624,6 +8738,8 @@ name_translations = {
 	},
 	"Kanatha": {  # founded on Bosra
 		iArabic: "Qanawat",
+		iBabylonian: "Qanu",
+		iEgyptian: "Qanu",
 		iGreek: _,
 		iLatin: "Canatha",
 	},
@@ -10179,7 +10295,12 @@ name_translations = {
 		iEnglish: _,
 		iFrench: u"Lattaquié",
 		iGreek: "Laodikeia e Paralos",
+		iItalian: "Laodicea",
 		iLatin: "Laodicea ad Mare",
+		iPersian: "Latakiya",
+		iPhoenician: "Ramitha",
+		iPortuguese: "Lataquia",
+		iRussian: _,
 		iTurkish: "Lazkiye",
 	},
 	"Launceston": {
@@ -11080,6 +11201,14 @@ name_translations = {
 		iCongolese: _,
 		iDutch: "Nieuw-Antwerpen",
 		iFrench: "Nouvelle-Anvers",
+	},
+	"Maketi": {  # founded on Akka
+		iBabylonian: "Megiddu",
+		iEgyptian: _,
+		iGreek: "Mageddon",
+		iLatin: "Mageddo",
+		iLocal: "Megiddo",
+		iPhoenician: "Magidda",
 	},
 	"Marwa": {
 		iFrench: "Maroua",
@@ -12114,6 +12243,11 @@ name_translations = {
 			_,
 		),
 	},
+	"Murianda": {  # founded on Antiokheia
+		iGreek: "Myriandros",
+		iLatin: "Myriandrus",
+		iPhoenician: _,
+	},
 	"Murom": {
 		iMongol: relocate("Kasimov"),
 		iRussian: _,
@@ -13138,6 +13272,12 @@ name_translations = {
 			_,
 		),
 	},
+	"Oboda": {  # relocated from Be'er Sheva and Per-Hwt-Hr
+		iArabic: "Abdah",
+		iGreek: _,
+		iLatin: "Eboda",
+		iLocal: "Avdat", # Hebrew
+	},
 	"Ochakov": {  # founded on Mykolaiv
 		iGreek: "Alektor",
 		iRussian: _,
@@ -13630,8 +13770,13 @@ name_translations = {
 	},
 	"Palmyra": {
 		iArabic: "Tadmur",
+		iAssyrian: "Tadmar",
+		iBabylonian: "Tadmor",
 		iGreek: _,
+		iHittite: "Tadmir",
 		iLatin: _,
+		iLocal: "Tadmor",
+		iPersian: "Tedmurta",
 	},
 	"Palu": {
 		iDutch: "Paloe",
@@ -13992,6 +14137,10 @@ name_translations = {
 		iFrench: "Port Said",
 		iGreek: "Pelousion",
 		iLatin: "Pelusium",
+	},
+	"Per-Hwt-Hr": {  # founded on Be'er Sheva
+		iEgyptian: _,
+		iGreek: relocate("Oboda"),
 	},
 	"Per-Medjed": {  # founded on Henen-Nesut
 		iArabic: relocate("Al-Minya"),
@@ -15395,6 +15544,16 @@ name_translations = {
 		iPortuguese: u"Ruão",
 		iSpanish: u"Ruán",
 	},
+	"Rpwhw": {  # founded on Al-Qulzum
+		iArabic: "Rafah",
+		iBabylonian: "Rapihu",
+		iEgyptian: _,
+		iEnglish: "Rafa",
+		iGreek: "Raphia",
+		iItalian: "Rafia",
+		iLatin: "Raphia",
+		iTurkish: "Refah",
+	},
 	"Rudny": {
 		iRussian: _,
 		iTurkish: "Rudnyi",
@@ -16105,10 +16264,15 @@ name_translations = {
 		iTurkish: "Siwa",
 	},
 	"Sela": {
-		iArabic: "Al-Battra",
+		iArabic: (
+			found("Man'an"),
+			"Al-Battra",
+		),
 		iEgyptian: _,
 		iGreek: "Petra",
+		iLatin: "Hadriane Petra",
 		iLocal: "Raqmu",
+		iTurkish: found("Man'an"),
 	},
 	"Seleukeia": {  # relocated from Babilû
 		iArabic: (
@@ -16425,6 +16589,18 @@ name_translations = {
 	"Sibut": {  # founded on Krébédjé
 		iFrench: "Fort-Sibut",
 		iLocal: _,
+	},
+	"Sidun": {  # founded on Dimashq
+		iArabic: relocate("Dimashq"),
+		iBabylonian: "Sidunnu",
+		iEgyptian: "Diduna",
+		iGreek: "Sidon",
+		iLatin: (
+			translate("Sagittus", iAfter=iMedieval),
+			_,
+		),
+		iPersian: _,
+		iPhoenician: _,
 	},
 	"Siena": {  # founded on Populonium
 		iEnglish: "Sienna",
@@ -16750,6 +16926,7 @@ name_translations = {
 	},
 	"Sopute": {  # founded on Hamath
 		iArabic: "Safita",
+		iBabylonian: "Sumur",
 		iPhoenician: _,
 	},
 	"Soria": {  # founded on Calatayud
@@ -16851,6 +17028,29 @@ name_translations = {
 		iChinese: "Burang",
 		iIndian: "Taklakot",
 		iTibetan: _,
+	},
+	"Sqln": {  # founded on Yafo
+		iArabic: (
+			translate("Al-Jura", iAfter=iRenaissance),
+			"Asqalan",
+		),
+		iAssyrian: "Isqalluna",
+		iBabylonian: "Asqaluna",
+		iDutch: "Asjkelon",
+		iEgyptian: "Asqulanu",
+		iEnglish: "Ascalon",
+		iFrench: "Ascalon",
+		iGerman: "Aschkelon",
+		iGreek: "Askalon",
+		iLatin: "Ascalum",
+		iLocal: "Ashqelon",
+		iPhoenician: _,
+		iPortuguese: u"Ascalão",
+		iSpanish: u"Ascalón",
+		iTurkish: (
+			translate("El-Jurah", iAfter=iRenaissance),
+			"Askalan",
+		),
 	},
 	"Srihatta": {
 		iEnglish: "Sylhet",
@@ -17112,16 +17312,18 @@ name_translations = {
 	"Surru": {
 		iArabic: "Sur",
 		iBabylonian: _,
+		iEgyptian: "Tsurri",
 		iEnglish: "Tyre",
 		iFrench: "Tyr",
 		iGerman: "Tyrus",
 		iGreek: "Tyros",
 		iItalian: "Tiro",
 		iLatin: "Tyrus",
+		iPersian: "Sur",
 		iPhoenician: "Sur",
 		iPolish: "Tyr",
 		iPortuguese: "Tiro",
-		iRussian: "Sur",
+		iRussian: "Tir",
 		iSpanish: "Tiro",
 		iTurkish: "Sur",
 	},
@@ -18604,9 +18806,14 @@ name_translations = {
 	"Ugaritu": {
 		iArabic: relocate("Latakia"),
 		iBabylonian: _,
-		iEgyptian: found("Arwad"),
+		iEgyptian: (
+			found("Arwad"),
+			"Ikat",
+		),
 		iGreek: relocate("Latakia"),
+		iHittite: _,
 		iLatin: relocate("Latakia"),
+		iLocal: _,
 		iPhoenician: found("Arwad"),
 	},
 	"Uigandes": {
@@ -19810,12 +20017,29 @@ name_translations = {
 	},
 	"Yafo": {
 		iArabic: "Yaffa",
+		iBabylonian: "Yappu",
 		iEgyptian: "Yapu",
-		iEnglish: "Jaffa",
-		iGreek: "Apollonia",
+		iEnglish: (
+			translate("Japho", iBefore=iRenaissance),
+			"Jaffa",
+		),
+		iFrench: (
+			translate(u"Jophé", iBefore=iRenaissance),
+			"Jaffa",
+		),
+		iGreek: (
+			found("Arsuf"),
+			"Iope",
+		),
 		iItalian: "Giaffa",
-		iLatin: "Caesarea Maritima",
+		iLatin: relocate("Caesarea Maritima"),
 		iLocal: _, # Hebrew
+		iPhoenician: (
+			found("Sqln"),
+			"Ypy",
+		),
+		iPortuguese: "Jafa",
+		iSpanish: "Jafa",
 		iTurkish: "Yafa",
 	},
 	"Yagbum": {
@@ -19965,7 +20189,9 @@ name_translations = {
 	},
 	"Yerushalayim": {
 		iArabic: "Al-Quds",
+		iAssyrian: "Ursalimmu",
 		iBabylonian: "Urusalim",
+		iBurmese: "Jerryusalin",
 		iByzantine: "Hierosolyma",
 		iCeltic: u"Iarúsailéim",
 		iChinese: "Yelusaleng",
@@ -19974,16 +20200,22 @@ name_translations = {
 		iEnglish: "Jerusalem",
 		iEgyptian: "Rwshalim",
 		iEthiopian: "Iyerusalemi",
-		iFrench: u"Jérusalem",
+		iFrench: (
+			translate(u"Hiérosolyme", iBefore=iMedieval),
+			u"Jérusalem",
+		),
 		iGerman: "Jerusalem",
 		iGreek: "Hierousalem",
 		iIndian: "Yarushalem",
 		iItalian: "Gerusalemme",
 		iJapanese: "Erusaremu",
+		iKiswahili: "Yerusalemu",
 		iKorean: "Yerusallem",
+		iKushan: "Urshlem",
 		iLatin: "Aelia Capitolina",
 		iLocal: _, # Hebrew
 		iMalay: "Yarusalam",
+		iMongol: "Iyerusalim",
 		iNordic: (
 			translate(u"Jórsalaborg", iBefore=iMedieval),
 			"Jerusalem",
