@@ -50,7 +50,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CONTROL_DIRECTLY_OR_THROUGH_ALLIES</Tag>
-		<English>control %s1 between you and your allies</English>
+		<English>control %s1 directly or through allies</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
