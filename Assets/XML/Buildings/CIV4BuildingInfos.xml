@@ -11587,7 +11587,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>100</iAIWeight>
-			<iCost>200</iCost>
+			<iCost>100</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -11616,12 +11616,6 @@
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_GOLD</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_JEWISH_SHRINE</BuildingClassType>
