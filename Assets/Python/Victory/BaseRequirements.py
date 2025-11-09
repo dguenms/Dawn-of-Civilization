@@ -146,7 +146,7 @@ class ThresholdRequirement(Requirement):
 class PercentRequirement(ThresholdRequirement):
 
 	def total(self):
-		return players.major().alive().sum(self.value)
+		return players.major().existing().sum(self.value)
 	
 	def percentage(self, evaluator):
 		iTotal = self.total()
