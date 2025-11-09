@@ -890,7 +890,7 @@ CIVICS
 	* Reciprocity (low)
 	* Redistribution (Arithmetics, high): +25% food in capital, -50% trade route yield, double production for Granary
 	* Merchant Trade (Currency, low): +1 trade route, +1 commerce from Merchant, double production for Lighthouse, Market
-	* Regulated Trade (Guilds, high): +35% gold and research in capital, +1 commerce from Workshop, Plantation, Slave Plantation, double production for Customs House
+	* Regulated Trade (Guilds, high): +50% commerce in capital, +1 commerce from Workshop, Plantation, Slave Plantation, double production for Customs House
 	* Free Enterprise (Economics, low): +50% corporation commerce, +50% trade route yield, double merchant slots
 	* Central Planning (Labour Unions, medium): +50% production converted to commerce, +1 production per scientist, engineer, +1 food from Workshop, +1 commerce from Mine, Watermill
 	* Public Welfare (Social Services, high): +1 food from scientist, engineer, statesman, -50% corporation unhappiness, can hurry buildings with gold
