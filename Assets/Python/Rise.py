@@ -798,7 +798,7 @@ class Birth(object):
 		
 		# Ottomans require that the Turks managed to conquer at least one city in the Near East
 		if self.iCiv == iOttomans:
-			if cities.birth(iOttomans).none(CyCity.isHuman) and cities.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).none(lambda city: iTurks in [city.getCivilizationType(), city.getPreviousCiv()]):
+			if cities.birth(iOttomans).none(CyCity.isHuman) and not cities.regions(rAnatolia, rCaucasus, rLevant, rMesopotamia).ever_owned(iTurks):
 				return False
 		
 		# Iran requires Persia to be dead
@@ -806,9 +806,27 @@ class Birth(object):
 			if player(iPersia).isExisting():
 				return False
 		
-		# Mexico requires Aztecs to be dead
+		# Argentina requires any Old World civilization in Andes or Southern Cone
+		if self.iCiv == iArgentina:
+			if not cities.regions(rAndes, rSouthernCone).ever_owned(lBioOldWorld):
+				return False
+		
+		# Mexico requires Aztecs to be dead and any Old World civilization in Mesoamerica or Central America
 		if self.iCiv == iMexico:
 			if player(iAztecs).isExisting():
+				return False
+		
+			if not cities.regions(rMesoamerica, rCentralAmerica).ever_owned(lBioOldWorld):
+				return False
+		
+		# Colombia requires any Old World civilization in New Grenada or Andes
+		if self.iCiv == iColombia:
+			if not cities.regions(rNewGrenada, rAndes).ever_owned(lBioOldWorld):
+				return False
+		
+		# Brazil requires any Old World civilization in Brazil or Amazonia
+		if self.iCiv == iBrazil:
+			if not cities.regions(rBrazil, rAmazonia).ever_owned(lBioOldWorld):
 				return False
 	
 		# independence civs require all players controlling cities in their area to be stable or worse

@@ -2759,13 +2759,50 @@ class TestCities(TestCase):
 		
 		cities = CityFactory().of([(4, 4)])
 		
-		self.assertEqual(len(cities), 1)
-		self.assertEqual(len(cities.existing()), 1)
-		
-		city.kill()
+		try:
+			self.assertEqual(len(cities), 1)
+			self.assertEqual(len(cities.existing()), 1)
+		finally:
+			city.kill()
 		
 		self.assertEqual(len(cities), 1)
 		self.assertEqual(len(cities.existing()), 0)
+	
+	def test_ever_owned_current(self):
+		city = self.cities[0]
+		
+		self.assertEqual(city.getCivilizationType(), iGreece)
+		self.assertEqual(self.cities.ever_owned(iGreece), True)
+	
+	def test_not_ever_owned(self):
+		city = self.cities[0]
+		
+		self.assertEqual(city.getCivilizationType(), iGreece)
+		self.assertEqual(self.cities.ever_owned(iEgypt), False)
+	
+	def test_ever_owned_previous(self):
+		city = gc.getPlayer(0).initCity(4, 4)
+		gc.getPlayer(7).acquireCity(city, False, True)
+		city = city_(4, 4)
+		
+		cities = CityFactory().of([(4, 4)])
+		
+		try:
+			self.assertEqual(city.getPreviousCiv(), iEgypt)
+			self.assertEqual(city.getCivilizationType(), iGreece)
+			self.assertEqual(cities.ever_owned(iEgypt), True)
+			self.assertEqual(cities.ever_owned(iGreece), True)
+		finally:
+			city.kill()
+	
+	def test_ever_owned_multiple(self):
+		self.assertEqual(self.cities.ever_owned(iGreece, iIndia), True)
+	
+	def test_not_ever_owned_multiple(self):
+		self.assertEqual(self.cities.ever_owned(iEgypt, iBabylonia), False)
+	
+	def test_ever_owned_multiple_list(self):
+		self.assertEqual(self.cities.ever_owned([iGreece, iIndia]), True)
 		
 		
 class TestCityFactory(TestCase):

@@ -121,6 +121,7 @@ iTechGroupNativeAmerica : [iPolynesia, iMaya, iToltecs, iInca, iAztecs],
 }
 
 lBioNewWorld = [iMaya, iToltecs, iInca, iAztecs]
+lBioOldWorld = [iCiv for iCiv in lBirthOrder if iCiv not in lBioNewWorld]
 
 #for messages
 iDuration = 14

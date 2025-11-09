@@ -1631,6 +1631,11 @@ class Cities(Locations):
 	def plots(self):
 		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
 	
+	def ever_owned(self, *civs):
+		civs = set(variadic(*civs))
+		previous_owners = set([city.getCivilizationType() for city in self] + [city.getPreviousCiv() for city in self if city.getPreviousCiv() != -1])
+		return civs <= previous_owners
+	
 		
 class UnitFactory:
 
