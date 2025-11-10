@@ -772,7 +772,7 @@ def calculateStability(iPlayer):
 	iDefensivePactStability = 0
 	iRelationStability = 0
 	iNationhoodStability = 0
-	iTheocracyStability = 0
+	iFanaticismStability = 0
 	iMultilateralismStability = 0
 	
 	iNumContacts = 0
@@ -822,9 +822,9 @@ def calculateStability(iPlayer):
 			if game.isNeighbors(iPlayer, iLoopPlayer):
 				if iNationhood in civics: iNationhoodStability += 2
 				
-				if iTheocracy in civics:
-					if pLoopPlayer.getStateReligion() != iStateReligion: iTheocracyStability += 3
-					else: iTheocracyStability -= 2
+				if iFanaticism in civics:
+					if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
+					else: iFanaticismStability -= 2
 		
 	# attitude stability
 	lStrongerAttitudes, lEqualAttitudes, lWeakerAttitudes = calculateRankedAttitudes(iPlayer, lContacts)
@@ -860,10 +860,10 @@ def calculateStability(iPlayer):
 	lParameters[iParameterDefensivePacts] = iDefensivePactStability
 	lParameters[iParameterRelations] = iRelationStability
 	lParameters[iParameterNationhood] = iNationhoodStability
-	lParameters[iParameterTheocracy] = iTheocracyStability
+	lParameters[iParameterFanaticism] = iFanaticismStability
 	lParameters[iParameterMultilateralism] = iMultilateralismStability
 			
-	iForeignStability += iVassalStability + iDefensivePactStability + iRelationStability + iNationhoodStability + iTheocracyStability + iMultilateralismStability
+	iForeignStability += iVassalStability + iDefensivePactStability + iRelationStability + iNationhoodStability + iFanaticismStability + iMultilateralismStability
 	
 	# MILITARY
 	

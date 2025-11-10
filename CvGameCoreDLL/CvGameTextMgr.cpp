@@ -16860,10 +16860,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterDefensivePacts = player.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
 		int iParameterRelations = player.getStabilityParameter(PARAMETER_RELATIONS);
 		int iParameterNationhood = player.getStabilityParameter(PARAMETER_NATIONHOOD);
-		int iParameterTheocracy = player.getStabilityParameter(PARAMETER_THEOCRACY);
+		int iParameterFanaticism = player.getStabilityParameter(PARAMETER_FANATICISM);
 		int iParameterMultilateralism = player.getStabilityParameter(PARAMETER_MULTILATERALISM);
 
-		iTotalStability = iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterNationhood + iParameterTheocracy + iParameterMultilateralism;
+		iTotalStability = iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterNationhood + iParameterFanaticism + iParameterMultilateralism;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN");
 
@@ -16898,10 +16898,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterTheocracy > 0)
+		if (iParameterFanaticism > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterTheocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_HEATHENS").GetCString());
+			szTemp.Format(L"+%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_HEATHENS").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -16922,10 +16922,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterTheocracy < 0)
+		if (iParameterFanaticism < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterTheocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
+			szTemp.Format(L"%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
