@@ -3475,7 +3475,7 @@ void CvUnitAI::AI_prophetMove()
 {
 	PROFILE_FUNC();
 
-	if (AI_construct(1))
+	if (AI_construct(100))
 	{
 		return;
 	}
@@ -3490,10 +3490,10 @@ void CvUnitAI::AI_prophetMove()
 		return;
 	}
 
-	if (AI_construct(3))
+	/*if (AI_construct(3))
 	{
 		return;
-	}
+	}*/
 
 	if (AI_greatMission(70))
 	{
