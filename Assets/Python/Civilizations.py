@@ -2208,6 +2208,7 @@ dBuildingPreferences = {
 		iGurEAmir: 40,
 		iSalsalBuddha: 20,
 		iImageOfTheWorldSquare: 20,
+		iAlamut: 20,
 		
 		iShwedagonPaya: -30,
 	},
@@ -2217,11 +2218,11 @@ dBuildingPreferences = {
 		iCERN: 15,
 	},
 	iArabia: {
-		iSpiralMinaret: 40,
-		iDomeOfTheRock: 40,
-		iHouseOfWisdom: 40,
-		iBurjKhalifa: 40,
-		iAlamut: 30,
+		iSpiralMinaret: 100,
+		iDomeOfTheRock: 100,
+		iHouseOfWisdom: 100,
+		iBurjKhalifa: 50,
+		iAlamut: 50,
 	
 		iTopkapiPalace: -80,
 		iMezquita: -50,
