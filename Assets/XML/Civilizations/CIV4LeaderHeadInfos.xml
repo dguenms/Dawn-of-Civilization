@@ -38814,7 +38814,7 @@
 			<Description>TXT_KEY_LEADER_HARUN</Description>
 			<Civilopedia>TXT_KEY_LEADER_HARUN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_HARUN</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>50</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>4</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -38837,7 +38837,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>10</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>25</iBuildUnitProb>
+			<iBuildUnitProb>20</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
@@ -39370,7 +39370,7 @@
 			<Description>TXT_KEY_LEADER_SALADIN</Description>
 			<Civilopedia>TXT_KEY_LEADER_SALADIN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SALADIN</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>50</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>4</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -39393,7 +39393,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>25</iBuildUnitProb>
+			<iBuildUnitProb>20</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
