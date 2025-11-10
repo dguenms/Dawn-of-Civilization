@@ -1057,6 +1057,7 @@ AI BEHAVIOUR
 * Improved AI exploration of Oceans and discovering new continents
 * Improved AI selection of city defenders
 * AI is more willing to trade corporation resources
+* Improved AI to create a Great Prophet to build a shrine
 
 IMPLEMENTATION
 * Settler, war, religion, and city name maps are accessed as CSV files and edited as ODS files for ease of editing
@@ -1070,3 +1071,4 @@ BUGFIXES
 * Fixed a bug preventing the AI from founding on tile with high found values
 * Fixed a bug causing corporations to spread twice each turn
 * City conquest gold scales with game speed
+* Fixed an AI bug preventing Great Prophets from building shrines
