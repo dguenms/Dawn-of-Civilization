@@ -3,6 +3,8 @@
 from Core import *
 from Core import periodic as core_periodic
 from RFCUtils import *
+from Locations import *
+from CityNames import applyRelocation
 from Events import handler
 
 
@@ -55,11 +57,12 @@ def is_target_existing(iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, tileName=None, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
 		self.name = name
+		self.tileName = tileName
 		self.iPopulation = iPopulation
 		self.iCiv = iCiv
 		self.iCulture = iCulture
@@ -146,6 +149,9 @@ class MinorCity(object):
 			
 			self.add_buildings()
 			self.create_units()
+			
+			if self.tileName:
+				applyRelocation(founded, self.tileName)
 			
 	def every(self, iTurns):
 		return periodic(iTurns, self)
@@ -495,7 +501,7 @@ minor_cities = [
 	MinorCity(-2000, iBarbarian, (118, 49), "Sanxingdui", iPopulation=2, iCiv=iChina, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SHU"),
 	MinorCity(-1600, iIndependent, (84, 45), "Yerushalayim", iPopulation=2, iCiv=iBabylonia, units={iDefend: 3}, adjective="TXT_KEY_ADJECTIVE_ISRAELITE"),
 	MinorCity(-1300, iIndependent2, (105, 46), "Indraprastha", iPopulation=1, iCiv=iIndia, units={iDefend: 1, iAttack: 1}, bIgnoreRuins=True, condition=lambda: player(iIndia).isHuman(), adjective="TXT_KEY_ADJECTIVE_VEDIC"),
-	MinorCity(-1200, iIndependent2, (81, 53), "Sfard", iPopulation=2, iCiv=iGreece, units={iDefend: 2}, condition=lambda: not player(iHittites).isExisting(), adjective="TXT_KEY_ADJECTIVE_LYDIAN"),
+	MinorCity(-1200, iIndependent2, (81, 53), "Sfard", tileName="Sparda", iPopulation=2, iCiv=iGreece, units={iDefend: 2}, condition=lambda: not player(iHittites).isExisting() and not cities.rectangle(tIonia).owner(iGreece), adjective="TXT_KEY_ADJECTIVE_LYDIAN"),
 	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=2, iCiv=iAssyria, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
 	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iCiv=iPersia, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
 	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),

@@ -470,11 +470,11 @@ def applyName(city, translation, bNotify=False):
 		return
 	
 	if translation.bRelocation:
-		applyRelocation(city, translation)
+		applyRelocation(city, translation.name)
 		return
 	
 	if translation.bRenaming:
-		applyRenaming(city, translation)
+		applyRenaming(city, translation.name)
 		return
 		
 	city.setName(translation.name, False)
@@ -483,27 +483,27 @@ def applyName(city, translation, bNotify=False):
 		message(city.getOwner(), "TXT_KEY_MESSAGE_CITY_NAME_CHANGE", current_name, translation.name, location=city, button='Art/Interface/Buttons/Actions/FoundCity.dds')
 
 
-def applyRelocation(city, translation):
+def applyRelocation(city, name):
 	tile_name = city_names[city]
-	if tile_name == translation.name:
+	if tile_name == name:
 		return
 	
 	current_relocated_name = data.dRelocatedCities.get(tile_name, tile_name)
 	if current_relocated_name in data.dRenamedCities:
 		del data.dRenamedCities[current_relocated_name]
 	
-	data.dRelocatedCities[tile_name] = translation.name
+	data.dRelocatedCities[tile_name] = name
 	checkName(city)
 
 
-def applyRenaming(city, translation):
+def applyRenaming(city, name):
 	tile_name = city_names[city]
 	tile_name = data.dRelocatedCities.get(tile_name, tile_name)
 	
-	if tile_name == translation.name:
+	if tile_name == name:
 		return
 	
-	data.dRenamedCities[tile_name] = translation.name
+	data.dRenamedCities[tile_name] = name
 	checkName(city)
 
 
