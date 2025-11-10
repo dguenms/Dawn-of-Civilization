@@ -292,14 +292,6 @@ BeginPlot
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
 		UnitType=UNIT_SWORDSMAN
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit

@@ -182,6 +182,12 @@ def createStartingUnits():
 	createRoleUnit(iMalays, capital, iEscort, 1)
 	createRoleUnit(iMalays, capital, iWorkerSea, 2)
 	
+	# France
+	capital = plots.capital(iFrance)
+	createRoleUnit(iFrance, capital, iCounter, 2)
+	if not player(iFrance).isHuman():
+		createRoleUnit(iFrance, capital, iDefend, 2)
+	
 	# Japan
 	capital = plots.capital(iJapan)
 	if not player(iJapan).isHuman():
