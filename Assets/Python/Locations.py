@@ -23,6 +23,10 @@ lKushanRoad = [(99, 51), (100, 50), (101, 49)]
 lHejazRoad = [(84, 44), (84, 43), (85, 42), (85, 41), (86, 40)]
 lStraitOfGibraltar = [(56, 47), (57, 47), (58, 47), (59, 48), (60, 49)]
 
+# Minors
+
+tIonia = ((79, 51), (84, 55))
+
 ## Victory
 
 # second Phoenician goal: control Iberia and Italy by 150 BC
