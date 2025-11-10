@@ -513,7 +513,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 			}
 		}
 
-        if (!isHuman() && (iCurrentEra <= ((iTotalEras * 2) / 3)) && getGreatPeopleRateModifier() > 0)
+        if (!isHuman() && (iCurrentEra <= ((iTotalEras * 2) / 3)) /* && getGreatPeopleRateModifier() > 0*/)
         {
             // try to spawn a prophet for any shrines we have yet to build
             bool bNeedProphet = false;
@@ -524,7 +524,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
             {
                 ReligionTypes eReligion = (ReligionTypes) iJ;
 
-                if (isHolyCity(eReligion) && !hasShrine(eReligion)
+                if (GET_PLAYER(getOwnerINLINE()).hasHolyCity(eReligion) && !GET_PLAYER(getOwnerINLINE()).hasShrine(eReligion)
                 	&& ((iCurrentEra < iTotalEras / 2) || GC.getGameINLINE().countReligionLevels(eReligion) >= 10))
                 {
 					CvCivilizationInfo* pCivilizationInfo = &GC.getCivilizationInfo(getCivilizationType());
@@ -555,7 +555,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 			if (bNeedProphet)
             {
-                iTempValue += ((iGreatPeopleRate * iBestSpreadValue));
+                iTempValue += ((iGreatPeopleRate * iBestSpreadValue)) * getMaxSpecialistCount(eSpecialist);
             }
 		}
 
