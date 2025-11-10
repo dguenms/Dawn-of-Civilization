@@ -3,6 +3,7 @@ from RFCUtils import *
 from Core import *
 from Locations import *
 from Stability import *
+from AIWars import iAlexanderYear
 from Popups import popup
 from Scenarios import SCENARIOS
 
@@ -208,6 +209,13 @@ def checkRaiders():
 def createSilkRoute():
 	if year() == year(-75):
 		for plot in plots.of(lSilkRoute):
+			plot.setRouteType(iRouteRoad)
+
+
+@handler("BeginGameTurn")
+def createMacedonianRoad():
+	if year() == year(iAlexanderYear) and not player(iGreece).isHuman():
+		for plot in plots.of(lMacedonianRoad):
 			plot.setRouteType(iRouteRoad)
 
 
