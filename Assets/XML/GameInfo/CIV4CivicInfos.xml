@@ -590,11 +590,11 @@
 			<TechPrereq>TECH_CIVIL_RIGHTS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Egalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<bNoSlavery>1</bNoSlavery>
 			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</SpecialistExtraCommerces>
 			<SpecialistValids>
 				<SpecialistValid>
