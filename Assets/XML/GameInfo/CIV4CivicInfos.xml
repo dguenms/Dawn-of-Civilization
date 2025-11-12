@@ -555,7 +555,6 @@
 			<Button>,Art/Interface/Buttons/Civics/Totalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>NONE</Upkeep>
-			<iFreeExperience>3</iFreeExperience>
 			<iWarWearinessModifier>-100</iWarWearinessModifier>
 			<SpecialistTypeExtraYields>
 				<SpecialistTypeExtraYield>
@@ -575,6 +574,12 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
+			<DomainExperienceModifiers>
+				<DomainExperienceModifier>
+					<DomainType>DOMAIN_LAND</DomainType>
+					<iExperienceModifier>3</iExperienceModifier>
+				</DomainExperienceModifier>
+			</DomainExperienceModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_SOCIETY</CivicOptionType>
