@@ -154,12 +154,6 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<DomainExperienceModifiers>
-				<DomainExperienceModifier>
-					<DomainType>DOMAIN_LAND</DomainType>
-					<iExperienceModifier>1</iExperienceModifier>
-				</DomainExperienceModifier>
-			</DomainExperienceModifiers>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
