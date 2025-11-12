@@ -10366,7 +10366,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += ((kCivic.getExpInBorderModifier() * getNumMilitaryUnits()) / 200);
 	}
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
-	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
+	iValue += AI_getHappinessWeight(-kCivic.getWarWearinessModifier() * (getWarWearinessPercentAnger() / GC.getPERCENT_ANGER_DIVISOR() + bWarPlan ? 1 : 0), 1) * getNumCities() / 100;
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
 	iValue += kCivic.getCulturedCityFreeSpecialists() * std::min(getNumCities(), GC.getWorldInfo(GC.getMap().getWorldSize()).getTargetNumCities() - 1) * std::min(8, getAveragePopulation() / 2); // Leoreth
 
@@ -10676,7 +10676,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue *= AI_getEspionageWeight();
 			iTempValue /= 500;
 		}
-		iTempValue += ((kCivic.getSpecialistExtraCommerce(iI) * getTotalPopulation()) / 15);
+		iTempValue += ((kCivic.getSpecialistExtraCommerce(iI) * getTotalPopulation()) / 9);
 
 		// Leoreth: corporation commerce modifier
 		if (kCivic.getCorporationCommerceModifier() != 0)
@@ -10690,6 +10690,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 
 		iTempValue *= AI_commerceWeight((CommerceTypes)iI);
+
+		iTempValue *= AI_averageCommerceMultiplier((CommerceTypes)iI);
+		iTempValue /= 100;
 
 		if ((iI == COMMERCE_CULTURE) && bCultureVictory2)
 		{
@@ -10796,7 +10799,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth: domain experience
-	iValue += kCivic.getDomainExperienceModifier(DOMAIN_LAND) * (2 * getNumCities() - iNumCoastalCities) * (bWarPlan ? 2 : 1) * iWarmongerPercent / 100;
+
+	iValue += kCivic.getDomainExperienceModifier(DOMAIN_LAND) * (2 * getNumCities() - iNumCoastalCities) * (bWarPlan ? 2 : 1) * iWarmongerPercent / 2 / 100;
 	iValue += kCivic.getDomainExperienceModifier(DOMAIN_SEA) * std::max(0, 2 * iNumCoastalCities - getNumCities()) * (bWarPlan ? 3 : 2) * iWarmongerPercent / 3 / 100;
 	iValue += kCivic.getDomainExperienceModifier(DOMAIN_AIR) * getNumCities() * (AI_isDoStrategy(AI_STRATEGY_AIR_BLITZ) ? 2 : 1) * (bWarPlan ? 3 : 2) * iWarmongerPercent / 5 / 100;
 
