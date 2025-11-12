@@ -1590,7 +1590,7 @@ CIVICS
 	* Despotism (Property, medium): can hurry using population
 	* Monarchy (Ceremony, medium): +1 happiness per military unit, -25% city distance maintenance, +50% food converted to production
 	* Republic (Writing, high): +1 free specialist in 3 most cultured cities, +1 artist, merchant, scientist, statesman slot, -1 food from Farm, Paddy Field, Plantation, Slave Plantation, +1 food from Fishing Boats
-	* Elective (Politics, none): +1 land unit experience, +2 commerce from Camp, Pasture, +1 commerce from unimproved tiles, +1 commerce from Cottage, double production for Palace
+	* Elective (Politics, none): +2 commerce from Camp, Pasture, +1 commerce from unimproved tiles, +1 commerce from Cottage, double production for Palace
 	* State Property (Macroeconomics, high): -75% number of cities maintenance, +2 espionage per specialist
 	* Democracy (Representation, medium): +100% great people birth rate, +3 happiness in 4 largest cities
 * Legitimacy
@@ -1607,8 +1607,8 @@ CIVICS
 	* Manorialism (Calendar, low): +50% improvement construction speed, +1 production from Pasture, +1 commerce from Farm, Paddy Field
 	* Caste System (Literature, medium): +1 food from Plantation, +2 health, +1 production from priest, artist, double production for Weaver, Jeweller, Pharmacy, Grocer
 	* Individualism (Civil Liberties, medium): +2 commerce from Village, Town, improvements upgrade without being worked
-	* Totalitarianism (Psychology, none): +3 unit experience, no war weariness, +1 production from Town, +2 production from Citizen
-	* Egalitarianism (Sociology, high): +2 research per specialist, double artist slots, cannot use slaves
+	* Totalitarianism (Psychology, none): +3 land unit experience, no war weariness, +1 production from Town, +2 production from Citizen
+	* Egalitarianism (Civil Rights, medium): +3 research per specialist, double artist slots, cannot use slaves
 * Economy
 	* Reciprocity (low)
 	* Redistribution (Arithmetics, high): +25% food in capital, -50% trade route yield, double production for Granary
