@@ -819,9 +819,9 @@ class Birth(object):
 			if not cities.regions(rMesoamerica, rCentralAmerica).ever_owned(lBioOldWorld):
 				return False
 		
-		# Colombia requires any Old World civilization in New Grenada or Andes
+		# Colombia requires any Old World civilization in New Granada or Andes
 		if self.iCiv == iColombia:
-			if not cities.regions(rNewGrenada, rAndes).ever_owned(lBioOldWorld):
+			if not cities.regions(rNewGranada, rAndes).ever_owned(lBioOldWorld):
 				return False
 		
 		# Brazil requires any Old World civilization in Brazil or Amazonia
