@@ -241,7 +241,7 @@ def lateReligionFounding(iTech):
 @handler("religionSpread")
 def replacePaganTemple(iReligion, iPlayer, city):
 	iUniquePaganTemple = unique_building(iPlayer, iPaganTemple)
-	if city.isHasRealBuilding(iUniquePaganTemple):
+	if iReligion != iJudaism and city.isHasRealBuilding(iUniquePaganTemple):
 		city.setHasRealBuilding(iUniquePaganTemple, False)
 		
 		iStateReligion = player(iPlayer).getStateReligion()
