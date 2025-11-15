@@ -802,7 +802,7 @@ CIVILISATIONS
 	* Coat of Arms: Trident, blue/yellow
 	* Leader: Yaroslav, Khmelnytsky
 	* Unique Unit: Druzhina (Heavy Swordsman): requires Steel, +1 movement, starts with Woodsman I, Flanking I, and River Combat
-	* Unique Building: Volok (Wharf): requires Navigation, does not require coast, requires river, +2 trade routes
+	* Unique Building: Volok (Lighthouse): does not require coast, requires river, reduced cost, +1 trade route
 	* Unique Power: Varangians: +1 commerce on unimproved tiles in your trade network
 	* Unique Historical Victory:
 		* Have an Orthodox population of 30 by 1200 AD

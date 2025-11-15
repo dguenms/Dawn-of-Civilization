@@ -5237,7 +5237,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_WHARF</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_RUS_VOLOK</BuildingType>
 				</Building>
 				<Building>
