@@ -15866,7 +15866,7 @@ name_translations = {
 		),
 	},
 	"San Juan": {
-		iDutch: found("Philipsburg"),
+		iDutch: found("Oranjestad"),
 		iEnglish: found("Road Town"),
 		iFrench: found("Basseterre"),
 		iGerman: found("Krabbeninsel"),
