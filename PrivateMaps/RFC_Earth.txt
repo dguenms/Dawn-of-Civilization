@@ -18334,7 +18334,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=69
-	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -18754,6 +18753,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=62
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18795,6 +18795,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=70
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
