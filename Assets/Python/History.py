@@ -237,7 +237,7 @@ def earlyArmies(iGameTurn, iPlayer):
 ### FIRST CONTACT ###
 
 @handler("firstContact")
-def conquistadors(iTeamX, iHasMetTeamY):
+def firstContactConquistadors(iTeamX, iHasMetTeamY):
 		if is_minor(iTeamX) or is_minor(iHasMetTeamY):
 			return
 		
@@ -251,7 +251,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				
 				iNewWorldCiv = civ(iNewWorldPlayer)
 				
-				if player(iNewWorldCiv).isBirthProtected():
+				if player(iNewWorldPlayer).isBirthProtected():
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					return
 				
@@ -259,81 +259,89 @@ def conquistadors(iTeamX, iHasMetTeamY):
 					
 				if not bAlreadyContacted:
 					if iNewWorldCiv in [iMaya, iToltecs, iAztecs]:
-						tContactZoneTL = (11, 36)
-						tContactZoneBR = (38, 49)
+						tContactZone = tMesoamericanContactZone
 					elif iNewWorldCiv == iInca:
-						tContactZoneTL = (21, 13)
-						tContactZoneBR = (35, 40)
+						tContactZone = tAndeanContactZone
 
-					lArrivalExceptions = [(27, 47), (27, 48), (26, 48), (26, 49), (22, 49), (21, 49), (20, 49), (25, 37), (26, 36), (27, 37)]
-						
 					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
 					if iNewWorldCiv in [iToltecs, iAztecs]:
 						data.dFirstContactConquerors[iToltecs] = True
 						data.dFirstContactConquerors[iAztecs] = True
 					
-					events.fireEvent("conquerors", iOldWorldPlayer, iNewWorldPlayer)
+					newWorldPlots = plots.rectangle(tContactZone).without(lContactZoneExceptions)
 					
-					newWorldPlots = plots.start(tContactZoneTL).end(tContactZoneBR).without(lArrivalExceptions)
-					contactPlots = newWorldPlots.where(lambda p: p.isVisible(iNewWorldPlayer, False) and p.isVisible(iOldWorldPlayer, False))
-					arrivalPlots = plots.core(iNewWorldPlayer).expand(1).coastal().where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and map.getArea(p.getArea()).getCitiesPerPlayer(iNewWorldPlayer) > 0)
-					
-					if contactPlots and arrivalPlots:
-						contactPlot = contactPlots.random()
-						arrivalPlot = arrivalPlots.closest(contactPlot)
-						
-						iModifier1 = 0
-						iModifier2 = 0
-						
-						iTargetCities = player(iNewWorldPlayer).getNumCities()
-						
-						if player(iNewWorldPlayer).isHuman() and iTargetCities > 6:
-							iModifier1 = 1
-						else:
-							if iNewWorldCiv == iInca or iTargetCities > 4:
-								iModifier1 = 1
-							if not player(iNewWorldPlayer).isHuman():
-								iModifier2 = 1
-								
-						if year() < year(dBirth[active()]):
-							iModifier1 += 1
-							iModifier2 += 1
-							
-						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
-						
-						if not player(iOldWorldPlayer).isHuman():
-							player(iOldWorldPlayer).AI_changeMemoryCount(iNewWorldPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10))
-						
-						dConquerorUnits = {
-							iCityAttack: 3 + iModifier2,
-							iDefend: max(1, iTargetCities-2),
-							iCitySiege: 2 + iModifier1 + iModifier2,
-							iShockCity: 1 + iModifier1,
-						}
-						createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items()).promotion(iMercenary)
-						createRoleUnit(iOldWorldPlayer, arrivalPlot, iWork, iTargetCities-1)
-						
-						iStateReligion = player(iOldWorldPlayer).getStateReligion()
-						iMissionary = missionary(iStateReligion)
-						
-						if iMissionary:
-							makeUnit(iOldWorldPlayer, iMissionary, arrivalPlot)
-							
-						if iNewWorldCiv == iInca:
-							makeUnits(iOldWorldPlayer, iAucac, arrivalPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-						elif iNewWorldCiv == iAztecs:
-							makeUnits(iOldWorldPlayer, iJaguar, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							makeUnit(iOldWorldPlayer, iHolkan, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-						elif iNewWorldCiv == iToltecs:
-							makeUnits(iOldWorldPlayer, iAtlatl, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							makeUnit(iOldWorldPlayer, iHolkan, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-						elif iNewWorldCiv == iMaya:
-							makeUnits(iOldWorldPlayer, iHolkan, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							makeUnit(iOldWorldPlayer, iJaguar, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						message(iNewWorldPlayer, 'TXT_KEY_FIRST_CONTACT_NEWWORLD')
-						message(iOldWorldPlayer, 'TXT_KEY_FIRST_CONTACT_OLDWORLD')
+					conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots)
+
+
+def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
+	iOldWorldCiv = civ(iOldWorldPlayer)
+	iNewWorldCiv = civ(iNewWorldPlayer)
+	
+	contactPlots = newWorldPlots.where(lambda p: p.isVisible(iNewWorldPlayer, False) and p.isVisible(iOldWorldPlayer, False))
+	arrivalPlots = plots.core(iNewWorldPlayer).expand(1).coastal().where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and map.getArea(p.getArea()).getCitiesPerPlayer(iNewWorldPlayer) > 0)
+	
+	if contactPlots and arrivalPlots:
+		contactPlot = contactPlots.random()
+		arrivalPlot = arrivalPlots.closest(contactPlot)
+		
+		iModifier1 = 0
+		iModifier2 = 0
+		
+		iTargetCities = player(iNewWorldPlayer).getNumCities()
+		
+		if player(iNewWorldPlayer).isHuman() and iTargetCities > 6:
+			iModifier1 = 1
+		else:
+			if iNewWorldCiv == iInca or iTargetCities > 4:
+				iModifier1 = 1
+			if not player(iNewWorldPlayer).isHuman():
+				iModifier2 = 1
+				
+		if year() < year(dBirth[active()]):
+			iModifier1 += 1
+			iModifier2 += 1
+			
+		team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
+		
+		if not player(iOldWorldPlayer).isHuman():
+			player(iOldWorldPlayer).AI_changeMemoryCount(iNewWorldPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10))
+		
+		dConquerorUnits = {
+			iCityAttack: 3 + iModifier2,
+			iDefend: max(1, iTargetCities-2),
+			iCitySiege: 2 + iModifier1 + iModifier2,
+			iShockCity: 1 + iModifier1,
+		}
+		createRoleUnits(iOldWorldPlayer, arrivalPlot, dConquerorUnits.items()).promotion(iMercenary)
+		createRoleUnit(iOldWorldPlayer, arrivalPlot, iWork, iTargetCities-1)
+		
+		iStateReligion = player(iOldWorldPlayer).getStateReligion()
+		iMissionary = missionary(iStateReligion)
+		
+		if iMissionary:
+			makeUnit(iOldWorldPlayer, iMissionary, arrivalPlot)
+			
+		if iNewWorldCiv == iInca:
+			makeUnits(iOldWorldPlayer, iAucac, arrivalPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+		elif iNewWorldCiv == iAztecs:
+			makeUnits(iOldWorldPlayer, iJaguar, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnit(iOldWorldPlayer, iHolkan, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+		elif iNewWorldCiv == iToltecs:
+			makeUnits(iOldWorldPlayer, iAtlatl, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnit(iOldWorldPlayer, iHolkan, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+		elif iNewWorldCiv == iMaya:
+			makeUnits(iOldWorldPlayer, iHolkan, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnit(iOldWorldPlayer, iJaguar, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+		
+		for plot in newWorldPlots.land().where(lambda p: p.getOwner() == iNewWorldPlayer or (p.isOwned() and is_minor(p))):
+			if plot.getWarValue(iOldWorldCiv) == 0:
+				plot.setWarValue(iOldWorldCiv, 1)
+				
+		events.fireEvent("conquerors", iOldWorldPlayer, iNewWorldPlayer)
+			
+		message(iNewWorldPlayer, 'TXT_KEY_FIRST_CONTACT_NEWWORLD')
+		message(iOldWorldPlayer, 'TXT_KEY_FIRST_CONTACT_OLDWORLD')
 
 
 @handler("firstContact")
