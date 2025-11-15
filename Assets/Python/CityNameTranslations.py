@@ -466,7 +466,10 @@ name_translations = {
 	},
 	"Agarum": {
 		iBabylonian: _,
-		iArabic: relocate("Al-Kuwayt", iAfter=iIndustrial),
+		iArabic: (
+			relocate("Al-Kuwayt", iAfter=iIndustrial),
+			found("Kazimah"),
+		),
 	},
 	"Agde": {  # founded on Montpellier
 		iFrench: "Agde",
@@ -9074,6 +9077,12 @@ name_translations = {
 	"Kazerun": {
 		iArabic: "Balad al-Atigh",
 		iPersian: _,
+	},
+	"Kazimah": {  # founded on Agarum
+		iArabic: (
+			relocate("Al-Kuwayt", iAfter=iIndustrial),
+			_,
+		),
 	},
 	"Kaztalovka": {
 		iRussian: _,
