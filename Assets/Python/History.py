@@ -234,6 +234,30 @@ def earlyArmies(iGameTurn, iPlayer):
 				createRoleUnit(iPlayer, capital(iPlayer), iSiege)
 
 
+@handler("BeginPlayerTurn")
+def nativeConquerors(iGameTurn, iPlayer):
+	if is_minor(iPlayer):
+		return
+	
+	if none(data.dFirstContactConquerors[iCiv] for iCiv in (iMaya, iToltecs, iAztecs)):
+		if checkNativeConquerors(iPlayer, tMesoamericanContactZone):
+			for iCiv in (iMaya, iToltecs, iAztecs):
+				data.dFirstContactConquerors[iCiv] = True
+	
+	if not data.dFirstContactConquerors[iInca]:
+		if checkNativeConquerors(iPlayer, tAndeanContactZone):
+			data.dFirstContactConquerors[iInca] = True
+	
+
+def checkNativeConquerors(iPlayer, tContactZone):
+	newWorldPlots = plots.rectangle(tContactZone).without(lContactZoneExceptions)
+	
+	if newWorldPlots.owners().major():
+		return
+	
+	return conquistadors(iPlayer, slot(iNative), newWorldPlots)
+
+
 ### FIRST CONTACT ###
 
 @handler("firstContact")
@@ -279,7 +303,8 @@ def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
 	iNewWorldCiv = civ(iNewWorldPlayer)
 	
 	contactPlots = newWorldPlots.where(lambda p: p.isVisible(iNewWorldPlayer, False) and p.isVisible(iOldWorldPlayer, False))
-	arrivalPlots = plots.core(iNewWorldPlayer).expand(1).coastal().where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and map.getArea(p.getArea()).getCitiesPerPlayer(iNewWorldPlayer) > 0)
+	controlPlots = is_minor(iNewWorldPlayer) and newWorldPlots or plots.core(iNewWorldPlayer).expand(1)
+	arrivalPlots = controlPlots.coastal().where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and map.getArea(p.getArea()).getCitiesPerPlayer(iNewWorldPlayer) > 0)
 	
 	if contactPlots and arrivalPlots:
 		contactPlot = contactPlots.random()
@@ -288,7 +313,7 @@ def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
 		iModifier1 = 0
 		iModifier2 = 0
 		
-		iTargetCities = player(iNewWorldPlayer).getNumCities()
+		iTargetCities = not is_minor(iNewWorldPlayer) and player(iNewWorldPlayer).getNumCities() or 0
 		
 		if player(iNewWorldPlayer).isHuman() and iTargetCities > 6:
 			iModifier1 = 1
@@ -301,10 +326,11 @@ def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
 		if year() < year(dBirth[active()]):
 			iModifier1 += 1
 			iModifier2 += 1
-			
-		team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
 		
-		if not player(iOldWorldPlayer).isHuman():
+		if not team(iOldWorldPlayer).isAtWar(iNewWorldPlayer):
+			team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
+		
+		if not player(iOldWorldPlayer).isHuman() and not is_minor(iNewWorldPlayer):
 			player(iOldWorldPlayer).AI_changeMemoryCount(iNewWorldPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, turns(10))
 		
 		dConquerorUnits = {
@@ -342,6 +368,8 @@ def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
 			
 		message(iNewWorldPlayer, 'TXT_KEY_FIRST_CONTACT_NEWWORLD')
 		message(iOldWorldPlayer, 'TXT_KEY_FIRST_CONTACT_OLDWORLD')
+		
+		return True
 
 
 @handler("firstContact")
