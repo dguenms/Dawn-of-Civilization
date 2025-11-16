@@ -987,11 +987,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB</Tag>
-		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
-		<French>Pas de limite de missionnaires ; les missionnaires peuvent entrer en territoire &#233;tranger</French>
-		<German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
-		<Italian>Can train unlimited missionaries; Missionaries can enter foreign territory</Italian>
-		<Spanish>Can train unlimited missionaries; Missionaries can enter foreign territory</Spanish>
+		<English>No unit limit and increased spread chance for missionaries</English>
+		<French>No unit limit and increased spread chance for missionaries</French>
+		<German>No unit limit and increased spread chance for missionaries</German>
+		<Italian>No unit limit and increased spread chance for missionaries</Italian>
+		<Spanish>No unit limit and increased spread chance for missionaries</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TOL_TITLE</Tag>

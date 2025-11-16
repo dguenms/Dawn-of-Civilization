@@ -407,7 +407,7 @@ CIVILIZATIONS
 	* Leaders: Songtsen Gampo, Lobsang Gyatso
 	* Unique Unit: Khampa (Horse Archer): can enter Tundra, +50% city attack, +50% hills attack, starts with Mobility
 	* Unique Building: Gompa (University): requires Paper, -15% research, +25% defense, +1 priest slot, +1 free priest
-	* Unique Power: Missionaries: Can train unlimited missionaries and missionaries can enter foreign territory
+	* Unique Power: Missionaries: No unit limit and increased spread chance for missionaries
 	* Unique Historical Victory:
 		* Acquire six cities by 1000 AD
 		* Spread Buddhism to cities with a total population of 60 by 1400 AD
