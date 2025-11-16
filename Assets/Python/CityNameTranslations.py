@@ -4405,6 +4405,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Chupa": {
+		iLocal: "Chuuppu", # Karelian
+		iRussian: _,
+	},
 	"Chuqichaka": {
 		iQuechua: _,
 		iSpanish: "Sucre",
@@ -8713,6 +8717,10 @@ name_translations = {
 		iChinese: _,
 		iMongol: rename("Shangdu"),
 	},
+	"Kajaani": {
+		iLocal: _, # Finnish
+		iSwedish: "Kajana",
+	},
 	"Kajiado": {
 		iEnglish: relocate("Nairobi"),
 		iLocal: _,
@@ -8885,6 +8893,10 @@ name_translations = {
 		iGreek: "Alexandria Arachosias",
 		iHarappan: found("Mundigak"),
 		iPersian: _,
+	},
+	"Kandalaksha": {
+		iLocal: "Kantalahti", # Finnish
+		iRussian: _,
 	},
 	"Kandarpapura": {
 		iChinese: "Shunhua",
@@ -9849,6 +9861,10 @@ name_translations = {
 		iMande: "Konaakiri",
 		iPortuguese: "Concari",
 	},
+	"Kondopoga": {
+		iLocal: "Kontupohja", # Finnish
+		iRussian: _,
+	},
 	"Kong": {
 		iFrench: relocate("Buna"),
 		iLocal: _,
@@ -9929,6 +9945,10 @@ name_translations = {
 	"Kotzebue": {
 		iEnglish: _,
 		iLocal: "Qikiqtagruk", # Inupiaq
+	},
+	"Kovdor": {
+		iLocal: "Koutero", # Finnish
+		iRussian: _,
 	},
 	"Kovongo": {
 		iCongolese: _,
@@ -10042,6 +10062,12 @@ name_translations = {
 		iPersian: "Kusan",
 		iTibetan: "Gusan",
 		iTurkish: "Kuchar",
+	},
+	"Kuhmoniemi": {
+		iLocal: ( # Finnish
+			translate("Kuhmo", iAfter=iGlobal),
+			_,
+		),
 	},
 	"Kulsary": {
 		iRussian: _,
@@ -12614,6 +12640,10 @@ name_translations = {
 			_,
 		),
 	},
+	"Nadvoitsy": {
+		iLocal: "Vojatsu", # Finnish
+		iRussian: _,
+	},
 	"Naeyn": {
 		iPersian: (
 			translate("Nain", iAfter=iMedieval),
@@ -13575,6 +13605,10 @@ name_translations = {
 			relocate("Kherson", iAfter=iRenaissance),
 			_,
 		),
+	},
+	"Olonets": {
+		iLocal: "Aunus", # Finnish
+		iRussian: _,
 	},
 	"Olsztyn": {
 		iGerman: "Allenstein",
