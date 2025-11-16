@@ -394,7 +394,12 @@ name_translations = {
 		iGreek: "Eudaimon",
 	},
 	"Adana": {  # relocated from Tarsus
+		iAssyrian: "Quwe",
+		iBabylonian: "Huwe",
 		iGreek: _,
+		iHittite: "Adaniya",
+		iLocal: translate("Adanawa", iBefore=iClassical),
+		iPhoenician: "Dn",
 		iTurkish: _,
 	},
 	"Addis Abeba": {  # renamed from Barara
@@ -629,10 +634,15 @@ name_translations = {
 		iLatin: "Agrigentum",
 	},
 	"Akroinon": {  # relocated or founded from Amorion
-		iHittite: "Hapanuwa",
-		iGreek: _,
 		iByzantine: "Nikopolis",
-		iTurkish: "Afyonkarahisar",
+		iGreek: _,
+		iHittite: "Hapanuwa",
+		iLatin: "Acroenus",
+		iTurkish: (
+			translate("Afyonkarahisar", iAfter=iDigital),
+			translate("Afyon", iAfter=iRenaissance),
+			"Kara Hissar",
+		),
 	},
 	"Aksay": {
 		iRussian: _,
@@ -1129,13 +1139,16 @@ name_translations = {
 		),
 	},
 	"Amasia": {
+		iArabic: "Amasiya",
 		iGreek: "Amaseia",
 		iHittite: found("Shapinuwa"),
 		iLatin: _,
 		iTurkish: "Amasya"
 	},
 	"Amastris": {
+		iArabic: "Amasira",
 		iGreek: _,
+		iItalian: "Amastri",
 		iTurkish: "Amasra",
 	},
 	"Ambon": {
@@ -1167,10 +1180,15 @@ name_translations = {
 		),
 	},
 	"Amisos": {
+		iArabic: "Samsun",
 		iByzantine: "Sampsounta",
 		iGreek: _,
+		iHittite: found("Zalpuwa"),
 		iItalian: "Simisso",
 		iLatin: "Pompeiopolis",
+		iLocal: translate("Amissa", iBefore=iClassical), # Luwian
+		iMongol: "Samisun",
+		iPersian: "Samisun",
 		iTurkish: "Samsun",
 	},
 	"Amman": {
@@ -1302,6 +1320,7 @@ name_translations = {
 		iItalian: "Angora",
 		iJapanese: "Ankara",
 		iLatin: "Ancyra",
+		iMongol: "Ankuriye",
 		iPersian: "Angora",
 		iPortuguese: "Ancara",
 		iTurkish: (
@@ -1337,7 +1356,9 @@ name_translations = {
 	"Antep": {  # relocated from Kyrrhus
 		iArabic: "Ayintap",
 		iFrench: u"Aïntab",
+		iGreek: "Antiokheia tou Taurou",
 		iHittite: "Khantab",
+		iLatin: "Antiochia ad Taurum",
 		iLocal: u"Êntab", # Armenian
 		iTurkish: (
 			translate("Gaziantep", iAfter=iGlobal),
@@ -1560,6 +1581,15 @@ name_translations = {
 			"Rimini",
 		),
 		iLatin: _,
+	},
+	"Aripsha": {  # founded on Trapezous
+		iArabic: "Harzanti",
+		iByzantine: "Kerasounta",
+		iGreek: "Kerasous",
+		iHittite: _,
+		iLatin: "Cerasus",
+		iPersian: "Pharnakeia",
+		iTurkish: "Giresun",
 	},
 	"Ariqipaya": {
 		iQuechua: _,
@@ -1852,9 +1882,13 @@ name_translations = {
 	},
 	"Attaleia": {
 		iGreek: _,
+		iHittite: "Parha",
 		iItalian: "Adalia",
 		iLatin: "Attalia",
-		iPersian: relocate("Phaselis"),
+		iPersian: (
+			relocate("Phaselis", iBefore=iMedieval),
+			"Antaliya",
+		),
 		iTurkish: (
 			translate("Antalya", iAfter=iIndustrial),
 			"Adalia",
@@ -3552,6 +3586,7 @@ name_translations = {
 		iEnglish: _,
 	},
 	"Bursa": {  # relocated from Pergamon
+		iArabic: "Brusa",
 		iDutch: "Boersa",
 		iDravidian: "Purca",
 		iFrench: "Brousse",
@@ -4420,9 +4455,12 @@ name_translations = {
 		),
 	},
 	"Claudiopolis": {  # founded on Herakleia
+		iArabic: "Buli",
 		iByzantine: "Hadrianopolis",
 		iGreek: "Bithynion",
 		iLatin: _,
+		iMongol: "Buli",
+		iPersian: "Buli",
 		iTurkish: "Bolu",
 	},
 	"Clermont": {
@@ -4846,6 +4884,12 @@ name_translations = {
 		),
 		iTibetan: _,
 	},
+	"Daskylion": {  # founded on Pergamon
+		iByzantine: "Daskyleion",
+		iGreek: _,
+		iLatin: "Dascylium",
+		iPersian: _,
+	},
 	"Dawei": {
 		iBurmese: _,
 		iEnglish: "Tavoy",
@@ -4932,6 +4976,14 @@ name_translations = {
 		iRussian: "Nyu-Deli",
 		iSpanish: "Nueva Delhi",
 		iTurkish: "Yeni Delhi",
+	},
+	"Denizli": {  # relocated from Laodicea ad Lycum
+		iArabic: "Dun Ghuzluh",
+		iByzantine: "Attouda",
+		iTurkish: (
+			translate("Tonguzlu", iBefore=iMedieval),
+			_,
+		),
 	},
 	"Der": {
 		iArabic: "Al-Kut",
@@ -5234,9 +5286,19 @@ name_translations = {
 		iLatin: "Dura-Europos",
 	},
 	"Dorylaion": {
+		iArabic: "Durlim",
+		iCeltic: found("Pessinous"),
 		iGreek: _,
+		iHittite: found("Lalanda"),
 		iLatin: "Dorylaeum",
-		iTurkish: "Eskishehir",
+		iOttoman: (
+			found(u"Kütahya"),
+			"Eskishehir",
+		),
+		iTurkish: (
+			found(u"Kütahya"),
+			u"Sultanönü",
+		),
 	},
 	"Drakchi": {
 		iChinese: "Lanzhi",
@@ -5271,6 +5333,11 @@ name_translations = {
 			found("Volodymyr"),
 			"Dorohochyn",
 		),
+	},
+	"Drya": {  # founded on Gordion
+		iCeltic: _,
+		iGreek: _,
+		iTurkish: "Kulu",
 	},
 	"Dryden": {
 		iEnglish: _,
@@ -5599,6 +5666,7 @@ name_translations = {
 		iLocal: _,
 	},
 	"Ephesos": {
+		iArabic: "Afsus",
 		iGreek: (
 			relocate("Smyrna", iAfter=iMedieval),
 			_,
@@ -5650,6 +5718,11 @@ name_translations = {
 		iBabylonian: _,
 		iGreek: relocate("Artemita"),
 		iPersian: relocate("Artemita"),
+	},
+	"Eskil": {  # founded on Gordion
+		iArabic: "Askil",
+		iByzantine: "Attaea",
+		iTurkish: _,
 	},
 	"Eskimo Point": {
 		iEnglish: _,
@@ -6265,6 +6338,7 @@ name_translations = {
 		iPortuguese: "Vila Mariano Machado",
 	},
 	"Gangra": {
+		iArabic: "Janaqra",
 		iByzantine: found("Kastamonu"),
 		iCeltic: found("Tavium"),
 		iGreek: _,
@@ -6318,6 +6392,16 @@ name_translations = {
 	"Gardez": {
 		iHarappan: found("Rana Ghundai"),
 		iPersian: _,
+	},
+	"Gargamish": {  # founded on Kyrrhus
+		iBabylonian: _,
+		iEgyptian: "Qarqamesa",
+		iEnglish: "Carchemish",
+		iGreek: "Europos",
+		iHittite: "Kargamish",
+		iLatin: relocate("Kyrrhus"),
+		iLocal: translate("Karkamis", iBefore=iClassical), # Luwian
+		iPersian: relocate("Tapsuhu"),
 	},
 	"Garoowe": {
 		iEthiopian: "Garowe",
@@ -6707,9 +6791,12 @@ name_translations = {
 		iLocal: _,
 	},
 	"Gordion": {
+		iCeltic: found("Drya"),
 		iGreek: _,
+		iHittite: found("Suwatara"),
 		iLatin: "Gordium",
 		iLocal: "Gordum",
+		iTurkish: found("Eskil"),
 	},
 	"Gorgora": {
 		iArabic: "Gallabat",
@@ -7015,6 +7102,12 @@ name_translations = {
 		iSpanish: u"Hanói",
 		iVietnamese: _,
 	},
+	"Habushna": {  # founded on Tuwanuwa
+		iAssyrian: _,
+		iGreek: "Kybistra",
+		iHittite: "Hubishna",
+		iLatin: "Cybistra",
+	},
 	"Hacibey": {  # founded on Odesa
 		iRussian: "Khadjibey",
 		iTurkish: _,
@@ -7117,12 +7210,17 @@ name_translations = {
 	"Halikarnassos": {
 		iGreek: _,
 		iHittite: found("Awarna"),
+		iItalian: "San Pietro di Alicarnasso",
 		iLatin: (
 			translate("Petronium", iAfter=iMedieval),
 			"Halicarnassus",
 		),
 		iLocal: translate("Alos Karnos", iBefore=iClassical), # Carian
-		iTurkish: "Bodrum",
+		iPersian: found("Mylasa"),
+		iTurkish: (
+			found("Mugla"),
+			"Bodrum",
+		),
 	},
 	"Halin": {
 		iBurmese: (
@@ -7329,8 +7427,12 @@ name_translations = {
 	},
 	"Hattusha": {  # founded on Gangra
 		iBabylonian: "Haattusa",
+		iCeltic: relocate("Tavium"),
 		iEnglish: "Hattusa",
+		iGreek: relocate("Tavium"),
 		iHittite: _,
+		iLatin: "Pompeiopolis",
+		iPersian: relocate("Pteria"),
 	},
 	"Hatunqulla": {
 		iQuechua: _,
@@ -7430,6 +7532,7 @@ name_translations = {
 		),
 	},
 	"Herakleia": {
+		iArabic: "Hiraqlah",
 		iByzantine: "Pontoherakleia",
 		iGreek: _,
 		iItalian: "Pontarachia",
@@ -7437,7 +7540,10 @@ name_translations = {
 			found("Claudiopolis"),
 			"Heraclea",
 		),
-		iTurkish: "Eregli",
+		iTurkish: (
+			found("Zonguldak"),
+			"Eregli",
+		),
 	},
 	"Heraklion": {  # renamed from Knossos
 		iArabic: rename("Chandax"),
@@ -7707,6 +7813,13 @@ name_translations = {
 		iArabic: "Al-Ghardaqah",
 		iEnglish: _,
 	},
+	"Huwalusija": {  # founded on Sardis
+		iByzantine: "Khonai",
+		iGreek: "Kolossai",
+		iHittite: _,
+		iLatin: "Colossae",
+		iTurkish: "Honaz",
+	},
 	"Hvalsey": {
 		iLocal: "Qaqortoq",
 		iNordic: (
@@ -7841,9 +7954,18 @@ name_translations = {
 	},
 	"Ikonion": {
 		iArabic: "Quniya",
+		iChinese: "Keniya",
+		iFrench: "Konia",
 		iGreek: _,
-		iHittite: "Ikkuwaniya",
+		iHittite: (
+			found("Tarhuntassa"),
+			"Ikkuwaniya",
+		),
+		iItalian: "Iconio",
 		iLatin: "Iconium",
+		iPortuguese: u"Icónio",
+		iRussian: "Koniya",
+		iSpanish: "Iconio",
 		iTurkish: "Konya",
 	},
 	"Ilanbaliq": {
@@ -8774,6 +8896,7 @@ name_translations = {
 	},
 	"Kanesh": {  # founded on Mazaka
 		iBabylonian: _,
+		iGreek: "Anisa",
 		iHittite: "Nesha",
 	},
 	"Kangla": {
@@ -8848,6 +8971,13 @@ name_translations = {
 		iGreek: "Kapisi",
 		iKushan: _,
 		iPersian: relocate("Bagram", iReligion=iIslam),
+	},
+	"Karaman": {  # founded on Silifke
+		iArabic: "Qarman",
+		iGreek: "Laranda",
+		iHittite: "Landa",
+		iLatin: "Laranda",
+		iTurkish: _,
 	},
 	"Karamea": {
 		iEnglish: relocate("Greymouth"),
@@ -8983,7 +9113,10 @@ name_translations = {
 		iPersian: "Katiq",
 	},
 	"Kastamonu": {  # founded on Gangra
-		iGreek: "Kastamon",
+		iArabic: "Qastamuniya",
+		iByzantine: "Kastamon",
+		iGreek: "Timonion",
+		iLatin: "Timonium",
 		iTurkish: "Kastamonu",
 	},
 	"Kasuela": {
@@ -9974,6 +10107,8 @@ name_translations = {
 		iNubian: _,
 	},
 	"Kurshaura": {
+		iArabic: "Aqsara",
+		iBabylonian: "Nenassa",
 		iByzantine: "Koloneia",
 		iGreek: (
 			found("Nyssa"),
@@ -9981,6 +10116,7 @@ name_translations = {
 		),
 		iHittite: _,
 		iLatin: "Colonia",
+		iPersian: "Gausara",
 		iTurkish: "Aksaray",
 	},
 	"Kurshim": {
@@ -10022,6 +10158,12 @@ name_translations = {
 			relocate("Palangka Raya", iAfter=iIndustrial),
 			_,
 		),
+	},
+	u"Kütahya": {  # founded on Dorylaion
+		iArabic: "Kutahiyya",
+		iGreek: "Kotyaion",
+		iLatin: "Cotyaeum",
+		iTurkish: _,
 	},
 	"Kutai": {
 		iDutch: relocate("Samarinda"),
@@ -10136,10 +10278,13 @@ name_translations = {
 			relocate("Antep"),
 			"Kurus",
 		),
+		iBabylonian: found("Gargamish"),
 		iByzantine: "Hagioupolis",
 		iGreek: _,
 		iHittite: relocate("Antep"),
 		iLatin: "Coricium",
+		iPersian: found("Tapsuhu"),
+		iPhoenician: found("Sissu"),
 		iTurkish: relocate("Antep"),
 	},
 	
@@ -10263,6 +10408,11 @@ name_translations = {
 			"Gaur",
 		),
 	},
+	"Lalanda": {  # founded on Dorylaion
+		iGreek: relocate("Dorylaion"),
+		iHittite: _,
+		iTurkish: relocate("Dorylaion"),
+	},
 	"Lam'an'ain": {
 		iEnglish: found("Belize City"),
 		iMayan: _,
@@ -10289,6 +10439,13 @@ name_translations = {
 		iArabic: "Ladhiqiyya",
 		iGreek: _,
 		iLatin: "Laodicea",
+	},
+	"Laodicea ad Lycum": {
+		iArabic: "Ladhiq",
+		iByzantine: "Laodikeia",
+		iGreek: "Diospolis",
+		iLatin: _,
+		iTurkish: relocate("Denizli"),
 	},
 	"Larnaka": {  # renamed from Kty
 		iGreek: _,
@@ -11091,6 +11248,10 @@ name_translations = {
 		iGerman: "Friedrich-Wilhelmshafen",
 		iLocal: _,
 	},
+	"Maddunassa": {  # founded on Nikaia
+		iGreek: relocate("Nikaia"),
+		iHittite: _,
+	},
 	"Madras": {
 		iChinese: "Qinnai",
 		iEnglish: _,
@@ -11125,9 +11286,12 @@ name_translations = {
 		iMande: _,
 	},
 	"Magida": {  # relocated from Tuwanuwa
+		iArabic: "Nakda",
 		iByzantine: _,
 		iGreek: "Nigde",
 		iHittite: "Nahita",
+		iMongol: "Nigda",
+		iPersian: "Nigda",
 		iTurkish: "Nigde",
 	},
 	"Mahabalipuram": {
@@ -11639,11 +11803,14 @@ name_translations = {
 		iFrench: u"Mahé",
 	},
 	"Mazaka": {
-		iArabic: "Kaisariyah",
+		iArabic: "Qaisariyah",
 		# iArmenian: "Mazhak",
 		iBabylonian: found("Kanesh"),
-		iGreek: "Kaisareia",
+		iByzantine: "Kaisareia",
+		iFrench: u"Césarée",
+		iGreek: "Eusebeia",
 		iHittite: found("Kanesh"),
+		iItalian: "Cesarea di Cappadocia",
 		iLatin: "Caesarea",
 		iPersian: _,
 		iTurkish: "Kayseri",
@@ -12161,6 +12328,14 @@ name_translations = {
 		iKorean: found("Sanggyeong"),
 		iManchu: "Mudan bira",
 	},
+	"Mugla": {  # founded on Halikarnassos
+		iArabic: "Mughla",
+		iByzantine: "Mougla",
+		iGreek: "Mobolla",
+		iLatin: "Mogolla",
+		iModernGreek: "Mougla",
+		iTurkish: _,
+	},
 	"Mukhtuya": {
 		iRussian: (
 			translate("Lensk", iAfter=iGlobal),
@@ -12370,6 +12545,14 @@ name_translations = {
 			"Balaban",
 		),
 		iUkrainian: _,
+	},
+	"Mylasa": {  # founded on Halikarnassos
+		iArabic: "Milas",
+		iGreek: _,
+		iHittite: "Mutamutassa",
+		iLatin: _,
+		iPersian: _,
+		iTurkish: "Milas",
 	},
 	"Mystras": {  # relocated from Sparta
 		iFrench: "Mistra",
@@ -12901,6 +13084,7 @@ name_translations = {
 	"Nikaia": {
 		iArabic: "Nikiye",
 		iGreek: _,
+		iHittite: found("Maddunassa"),
 		iLatin: "Nicaea",
 		iTurkish: "Iznik",
 	},
@@ -12924,6 +13108,7 @@ name_translations = {
 		iRussian: _,
 	},
 	"Nikomedeia": {
+		iArabic: "Niqumudiya",
 		iGreek: _,
 		iLatin: "Nicomedia",
 		iTurkish: "Izmit",
@@ -13921,6 +14106,12 @@ name_translations = {
 			"Kyzyl-Rabat",
 		),
 	},
+	"Parha": {  # founded on Attaleia
+		iArabic: "Perga",
+		iGreek: "Perge",
+		iHittite: _,
+		iLatin: "Perge",
+	},
 	"Paris": {
 		iArabic: "Baris",
 		iCeltic: "Lutetia",
@@ -14179,12 +14370,15 @@ name_translations = {
 		),
 	},
 	"Pergamon": {
+		iArabic: "Barghama",
 		iByzantine: relocate("Bursa"),
 		iGreek: _,
 		iHittite: found("Wilusa"),
 		iLatin: "Pergamus",
 		iModernGreek: "Pergamos",
-		iTurkish: relocate("Bursa"),
+		iOttoman: relocate("Bursa"),
+		iPersian: found("Daskylion"),
+		iTurkish: "Bergama",
 	},
 	"Permskoye": {
 		iRussian: (
@@ -14230,6 +14424,14 @@ name_translations = {
 		),
 		iThai: "Petwa",
 		iTurkish: "Peshaver",
+	},
+	"Pessinous": {  # founded on Dorylaion
+		iArabic: relocate("Dorylaion"),
+		iByzantine: "Iustinianoupolis",
+		iCeltic: _,
+		iGreek: _,
+		iLatin: "Pessinus",
+		iTurkish: relocate("Dorylaion"),
 	},
 	"Pest": {
 		iLocal: ( # Hungarian
@@ -14464,6 +14666,7 @@ name_translations = {
 	"Pompeiopolis": {  # founded on Gangra
 		iGreek: "Pompeioupolis",
 		iLatin: _,
+		iTurkish: relocate("Kastamonu"),
 	},
 	"Pontianak": {  # relocated from Sukadana
 		iChinese: "Kundian",
@@ -15377,12 +15580,14 @@ name_translations = {
 		iSpanish: "Regols",
 	},
 	"Rhizounta": {
+		iByzantine: _,
 		iChinese: "Ruizi",
 		iDravidian: "Heccisi",
 		iEthiopian: "Rizi",
-		iGreek: _,
+		iGreek: "Rhizaion",
 		iIndian: "Raiz",
 		iLatin: "Rhizaeum",
+		iLocal: "Rize", # Armenian
 		iRussian: "Riza",
 		iTurkish: "Rize",
 	},
@@ -16128,10 +16333,18 @@ name_translations = {
 	},
 	"Sardis": {
 		iArabic: relocate("Aydin"),
+		iBabylonian: "Sibartu",
 		iByzantine: relocate("Aydin"),
-		iGreek: _,
-		iLatin: _,
-		iLocal: "Sfard",
+		iGreek: "Sardeis",
+		iHittite: (
+			found("Huwalusija"),
+			"Sarawa",
+		),
+		iLatin: (
+			found("Laodicea ad Lycum"),
+			_,
+		),
+		iLocal: "Sfard", # Lydian
 		iPersian: "Sparda",
 		iTurkish: relocate("Aydin"),
 	},
@@ -16668,10 +16881,18 @@ name_translations = {
 		iPersian: u"Shilchôr",
 	},
 	"Silifke": {
+		iArabic: (
+			found("Karaman"),
+			"Suluqiya",
+		),
 		iGreek: "Seleukeia",
+		iHittite: found("Ura"),
 		iLatin: "Seleucia",
 		iModernGreek: u"Seléfkeia",
-		iTurkish: _,
+		iTurkish: (
+			found("Karaman"),
+			_,
+		),
 	},
 	"Silimi": {  # founded on Pselqet
 		iArabic: "Qasr Ibrim",
@@ -16766,6 +16987,7 @@ name_translations = {
 	"Sinope": {
 		iArabic: "Saynub",
 		iGreek: _,
+		iHittite: found("Nerikka"),
 		iTurkish: "Sinop",
 	},
 	"Sioma": {
@@ -16811,6 +17033,14 @@ name_translations = {
 			_,
 		),
 	},
+	"Sissu": {  # founded on Kyrrhus
+		iGreek: (
+			translate("Nikoupolis", iAfter=iMedieval),
+			"Issos",
+		),
+		iLatin: "Issus",
+		iPhoenician: _,
+	},
 	"Sitka": {  # founded on Juneau
 		iEnglish: _,
 		iLocal: u"Sheet'ká",
@@ -16845,6 +17075,10 @@ name_translations = {
 		iRussian: _,
 	},
 	"Smyrna": {  # relocated from Ephesos
+		iArabic: (
+			translate("Yazmir", iAfter=iRenaissance),
+			"Samirna",
+		),
 		iCeltic: "Smiorna",
 		iChinese: "Yizimier",
 		iDravidian: "Icumir",
@@ -17336,6 +17570,11 @@ name_translations = {
 		iSpanish: "Tiro",
 		iTurkish: "Sur",
 	},
+	"Suwatara": {  # founded on Gordion
+		iGreek: "Savatra",
+		iHittite: _,
+		iLatin: "Soatra",
+	},
 	"Swakopmund": {  # founded on Ezorongondo
 		iGerman: _,
 		iLocal: "Otjozondjii", # Herero
@@ -17679,6 +17918,11 @@ name_translations = {
 			_,
 		),
 	},
+	"Tapsuhu": {  # founded on Kyrrhus
+		iBabylonian: _,
+		iGreek: "Thapsakos",
+		iPersian: _,
+	},
 	"Taputapuatea": {
 		iFrench: relocate("Vaitape"),
 		iPolynesian: _,
@@ -17708,6 +17952,11 @@ name_translations = {
 		iRussian: "Tarki",
 		iTurkish: _,
 	},
+	"Tarhuntassa": {  # founded on Ikonion
+		iArabic: relocate("Ikonion"),
+		iHittite: _,
+		iTurkish: relocate("Ikonion"),
+	},
 	"Tari": {  # relocated from Kerkis
 		iArabic: (
 			relocate("Debba", iAfter=iRenaissance),
@@ -17735,10 +17984,18 @@ name_translations = {
 	},
 	"Tarsos": {
 		iArabic: "Tarsus",
+		iBabylonian: "Tarsisi",
 		# iArmenian: "Tarson",
+		iEnglish: "Tarsus",
+		iFrench: "Tarse",
 		iGreek: _,
 		iHittite: "Tarsha",
+		iItalian: "Tarso",
 		iLatin: "Tarsus",
+		iPersian: "Tarsus",
+		iPhoenician: "Tarshish",
+		iPortuguese: "Tarso",
+		iSpanish: "Tarso",
 		iTurkish: (
 			relocate("Adana"),
 			"Tarsus",
@@ -17776,8 +18033,10 @@ name_translations = {
 		iPortuguese: _,
 	},
 	"Tavium": {  # founded on Gangra
+		iByzantine: "Tabia",
 		iCeltic: _,
 		iGreek: "Taouion",
+		iHittite: "Tawinija",
 		iLatin: _,
 	},
 	"Tawam": {
@@ -18386,6 +18645,7 @@ name_translations = {
 		iFrench: u"Trébizonde",
 		iGerman: "Trapezunt",
 		iGreek: _,
+		iHittite: found("Aripsha"),
 		iItalian: "Trapesunta",
 		iJapanese: "Torabuzon",
 		iLatin: "Trapezus",
@@ -18720,14 +18980,17 @@ name_translations = {
 	},
 	"Tuwanuwa": {
 		iArabic: relocate("Magida"),
+		iAssyrian: found("Habushna"),
 		iBabylonian: "Tuhana",
 		iByzantine: relocate("Magida"),
-		iGreek: "Tuana",
+		iGreek: "Eusebeia",
 		iHittite: (
 			translate("Tuwana", iAfter=iClassical),
 			_,
 		),
 		iLatin: "Tyana",
+		iPersian: "Dana",
+		iPhoenician: "Twn",
 	},
 	"Tver": {
 		iGerman: "Twer",
@@ -18931,6 +19194,13 @@ name_translations = {
 			translate("Lisala", iAfter=iIndustrial),
 			_,
 		),
+	},
+	"Ura": {  # founded on Silifke
+		iGreek: "Soloi",
+		iHittite: _,
+		iLatin: "Pompeiopolis",
+		iPersian: "Soloi",
+		iTurkish: relocate("Silifke"),
 	},
 	"Urganch": {
 		iPersian: "Gurganj",
@@ -19788,7 +20058,7 @@ name_translations = {
 		iGreek: "Ilion",
 		iHittite: _,
 		iLatin: "Troia",
-		iTurkish: relocate("Bursa"),
+		iOttoman: relocate("Bursa"),
 	},
 	"Winchester": {
 		iCeltic: "Caerwynt",
