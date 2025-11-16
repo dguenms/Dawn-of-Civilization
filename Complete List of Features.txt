@@ -72,14 +72,13 @@ CONTRIBUTORS
 MAJOR FEATURES
 * Completely new, enlarged world map of 80x125 tiles including new terrains, features, and resources
 * Completely new tech tree covering 141 technologies over 7 eras (based on and inspired by History Rewritten), see Technologies section for details
-* Included 31 new and changed 20 existing buildings, see Buildings section for details
-* Included 87 new and changed 20 existing wonders, see Wonders and New Wonders sections for details
-* Included 11 new and changed 2 existing projects, see Projects section for details
-* Included 16 new land, 6 new sea and 2 new air units, see Units section for details
+* Selection of 61 playable civilizations, each with their own leaders, unique units, buildings and powers, and unique historical victories, see Civilizations section for details
+* Included 36 new and changed 22 existing buildings, see Buildings section for details
+* Included 104 new and changed 24 existing wonders, see Wonders and New Wonders sections for details
+* Included 12 new and changed 2 existing projects, see Projects section for details
+* Included 16 new land, 6 new sea and 4 new air units, see Units section for details
 * Major changes and redesign of many existing units, see Units section for details
 * Completely new selection of 42 civics from 6 categories, see Civics section for details
-* Created 22 new civilisations (some of them rebirths of existing civilisations), with their own leaders, UU, UB, UP and UHV, see New Civilisations for details
-* Changes to all existing civilisations, affecting any or all of their leaders, UU, UB, UP or UHV
 * Included addtional unique units, acting as second unique units for many civilisations, see Civilisations section for details
 * Extended game length: 100 turns added on Normal game speed
 * Completely new rules for civilization births
@@ -1189,7 +1188,7 @@ NEW UNITS
     * Steamship (Thermodynamics): Strength 12, 25% retreat chance, 3 cargo
     * Torpedo Boat (Ballistics): Strength 18, 50% retreat chance, +50% coast attack
     * Cruiser (Engine, Refining): Strength 28, 25% retreat chance, 16% bombard rate
-* 2 new air units:
+* 4 new air units:
     * Biplane (Flight): Strength 12, range 6, 50% interception chance, 8% bombard rate
     * Nuclear Bomber (Fission): Range 6, can drop a nuclear bomb
     * Satellite (Satellites): invisible to most units, can see Satellites, can explore rival territory, can do recon missions, starts with Sentry, can join city as Research Satellite, Commercial Satellite, Military Satellite
@@ -1201,7 +1200,7 @@ NEW UNITS
 * Included generic African unit art style for African civilisations (thanks to merijn_v1 for the inclusion)
 
 BUILDINGS
-* 35 new buildings:
+* 36 new buildings:
 	* Tannery (Tanning): +1 happiness from Fur, +1 health from Deer, +2 experience for Recon units
     * Pagan Temple (Mythology): +2 culture, requires no state religion, no religion in the city
     * Monument (Ceremony): +2 culture
@@ -1238,7 +1237,7 @@ BUILDINGS
     * Fiber Network (Superconductors, Electrical Grid): requires Rare Earths, +10% commerce with power
     * Vertical Farm (Biotechnology): +10% food with power
     * Automated Factory (Automation, Factory): requires Rare Earths, +25% production with power, +1 engineer slot, +1 unhealth
-* 20 existing buildings have been changed:
+* 22 existing buildings have been changed:
     * Granary (Pottery): retains 25% food after growth, +1 health, +1 health with Salt
     * Theatre (Literature): +25% culture, +1 artist slot
     * Aqueduct (Cement): retains 25% food after growth
@@ -1639,7 +1638,7 @@ RELIGION
     * Judaism (Literature): scripted spawn possible if Jerusalem or nearby city is independent, shrine: Temple of Solomon
     * Orthodoxy (Ethics): scripted spawn possible in a Jewish city, shrine: Church of the Anastasis
     * Catholicism (Doctrine): scripted spawn when more than half of all Christian cities are not controlled by Orthodox civilisations (Great Schism), shrine: Saint Peter's Basilica
-    * Protestantism (Printing): only founded by a Catholic civilisation (Reformation), shrine: All Saint's Church
+    * Protestantism (Academia): only founded by a Catholic civilisation (Reformation), shrine: All Saint's Church
     * Islam (Theology)
     * Hinduism (Calendar): shrine: Vishwanath
     * Buddhism (Philosophy)
@@ -1870,6 +1869,15 @@ INTERFACE
 * Next production is selected when a city comes out of unrest instead of when being captured
 * Notifications for spawning resources are only displayed when the resource is visible (credit to merijn_v1)
 * Autoplay progress bar has the colour of the current civilization
+* Camera is centered at the spawn location during autoplay
+* World builder overlay displays the current tile's city name
+* Notification when another civilization achieves a victory goal before you
+* Civilization and religion switch popups no longer appear at scenario start
+* Improved colour coding of gold income:
+	* Green: positive
+	* Yellow: negative but sufficient to research the current technology with the current treasury
+	* Orange: negative with sufficient treasury
+	* Red: negative with insufficient treasury
 
 HISTORICAL IMMERSION
 * Civilizations are more likely to collapse after a certain historical date

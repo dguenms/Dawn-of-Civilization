@@ -1034,6 +1034,11 @@ INTERFACE
 * World builder overlay displays the current tile's city name
 * Notification when another civilization achieves a victory goal before you
 * Civilization and religion switch popups no longer appear at scenario start
+* Improved colour coding of gold income:
+	* Green: positive
+	* Yellow: negative but sufficient to research the current technology with the current treasury
+	* Orange: negative with sufficient treasury
+	* Red: negative with insufficient treasury
 
 HISTORICAL IMMERSION
 * Removed scripted Dravidian conquerors

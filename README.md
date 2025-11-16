@@ -46,11 +46,13 @@ DoC also isn't a kitchen sink mod - every feature included has to serve a clear 
 The main features of Dawn of Civilization are:
 * Inclusion of Beyond the Sword civilizations that have been left out: Korea, Byzantium, Holy Rome
 * Many new, completely playable civilizations: Harappa, Assyria, Nubia, Hittites, Polynesia, Celts, Dravidia, Toltecs, Kushans, Tibet, Malaysia, Turks, Moors, Java, Burma, Rus, Vietnam, Swahilis, Poland, Italy, Mughals, Thailand, Sweden, Congo, Iran, Argentina, Mexico, Brazil, Colombia, and Canada
-* Completely new, enlarged world map of 80x125 = 10000 tiles
+* Completely new, enlarged world map of 80 x 125 = 10000 tiles
 * Completely new tech tree covering 141 technologies over 7 eras
-* Added 35 new and changed 20 existing buildings
-* Added 24 new and redesigned several existing units
+* Added 36 new and changed 22 existing buildings
+* Added 104 new and changed 24 existing wonders
+* Added 26 new and redesigned several existing units
 * Completely new selection of 42 civics from 6 categories
+* Extended the game length by 100 turns
 * You can play from 1700 AD in a new scenario
 * Improved the interface in various ways by including the BUG mod
 * You can play on Epic or Marathon game speed thanks to embryodead's RFC Epic/Marathon modmod
