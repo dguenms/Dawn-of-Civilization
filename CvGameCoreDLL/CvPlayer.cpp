@@ -25598,7 +25598,7 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 
 	if (eCivic == CIIVC_THALASSOCRACY)
 	{
-		return countCoastalCities() * 2 >= getNumCities();
+		return countCoastalCities() * 2 < getNumCities();
 	}
 
 	return false;
