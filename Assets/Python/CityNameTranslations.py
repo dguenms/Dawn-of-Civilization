@@ -5676,6 +5676,7 @@ name_translations = {
 		iTurkish: relocate("Smyrna"),
 	},
 	"Epidamnos": {
+		iByzantine: "Dyrrhachion",
 		iFrench: "Duras",
 		iGreek: (
 			translate("Dyrrhachion", iAfter=iMedieval),
@@ -13164,6 +13165,7 @@ name_translations = {
 		),
 	},
 	"Nisibis": {
+		iByzantine: _,
 		iArabic: relocate("Amida"),
 		iBabylonian: "Nasibina",
 		iGreek: "Antiokheia tis Mygdonias",
