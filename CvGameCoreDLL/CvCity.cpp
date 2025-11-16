@@ -343,24 +343,8 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
-	// Leoreth: Old Synagogue effect: +2 gold for Jewish religious buildings
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(OLD_SYNAGOGUE))
-	{
-		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-		{
-			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
-			if (kBuilding.getReligionType() == JUDAISM)
-			{
-				changeBuildingCommerceChange((BuildingTypes)iI, COMMERCE_GOLD, 2);
-			}
-		}
-	}
-
-	// Leoreth: Las Lajas Sanctuary effect: +10% heal rate in all cities
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(LAS_LAJAS_SANCTUARY))
-	{
-		changeHealRate(10);
-	}
+	// Leoreth: wonder effects applying to all cities of the owner
+	processPlayerBuildingEffects(1);
 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
@@ -4727,12 +4711,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			setBuildingCommerceChange(LOUVRE, COMMERCE_CULTURE, std::max(0, iWonderCulture * iChange));
 		}
 
-		// Temple of Kukulkan
-		if (eBuilding == TEMPLE_OF_KUKULKAN)
-		{
-			updateYield();
-		}
-
 		// Escorial
 		else if (eBuilding == ESCORIAL)
 		{
@@ -4915,12 +4893,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeBuildingBombardDefense(GC.getBuildingInfo(eBuilding).getBombardDefenseModifier() * iChange);
 		changeBuildingUnignorableBombardDefense(GC.getBuildingInfo(eBuilding).getUnignorableBombardDefenseModifier() * iChange);
 
-		// Leoreth: Himeji Castle effect: defense modifiers affect culture
-		if (GET_PLAYER(getOwner()).isHasBuildingEffect(HIMEJI_CASTLE))
-		{
-			changeCommerceRateModifier(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
-		}
-
 		// Leoreth: Mount Athos effect
 		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
 		{
@@ -4971,6 +4943,59 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 	updateBuildingCommerce();
 
 	setLayoutDirty(true);
+}
+
+
+void CvCity::processPlayerBuilding(BuildingTypes eBuilding, int iChange)
+{
+	// Temple of Kukulkan
+	if (eBuilding == TEMPLE_OF_KUKULKAN)
+	{
+		changeImprovementHappinessPercentChange(IMPROVEMENT_PLANTATION, 100 * iChange);
+	}
+
+	// Himeji Castle
+	else if (eBuilding == HIMEJI_CASTLE)
+	{
+		changeCommerceRateModifier(COMMERCE_CULTURE, getBuildingDefense() * iChange);
+	}
+
+	// Old Synagogue
+	else if (eBuilding == OLD_SYNAGOGUE)
+	{
+		for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iJ);
+			if (kBuilding.getReligionType() == JUDAISM)
+			{
+				changeBuildingCommerceChange((BuildingTypes)iJ, COMMERCE_GOLD, 2 * iChange);
+			}
+		}
+	}
+
+	// Las Lajas Sanctuary
+	else if (eBuilding == LAS_LAJAS_SANCTUARY)
+	{
+		changeHealRate(10 * iChange);
+	}
+}
+
+
+void CvCity::processPlayerBuildingEffect(BuildingTypes eBuilding, int iChange)
+{
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(eBuilding))
+	{
+		processPlayerBuilding(eBuilding, iChange);
+	}
+}
+
+
+void CvCity::processPlayerBuildingEffects(int iChange)
+{
+	processPlayerBuildingEffect(TEMPLE_OF_KUKULKAN, iChange);
+	processPlayerBuildingEffect(HIMEJI_CASTLE, iChange);
+	processPlayerBuildingEffect(OLD_SYNAGOGUE, iChange);
+	processPlayerBuildingEffect(LAS_LAJAS_SANCTUARY, iChange);
 }
 
 

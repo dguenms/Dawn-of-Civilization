@@ -154,8 +154,12 @@ public:
 
 	void processBonus(BonusTypes eBonus, int iChange);
 	void processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete = false);
+	void processPlayerBuilding(BuildingTypes eBuilding, int iChange);
 	void processProcess(ProcessTypes eProcess, int iChange);
 	void processSpecialist(SpecialistTypes eSpecialist, int iChange);
+
+	void processPlayerBuildingEffects(int iChange);
+	void processPlayerBuildingEffect(BuildingTypes eBuilding, int iChange);
 
 	HandicapTypes getHandicapType() const;												// Exposed to Python
 	CivilizationTypes getCivilizationType() const;								// Exposed to Python

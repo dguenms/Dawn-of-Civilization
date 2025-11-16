@@ -10467,22 +10467,6 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return -MAX_INT;
 		}
 	}
-	else if (eBuilding == TEMPLE_OF_KUKULKAN)
-	{
-		int iRainforestCount = 0;
-		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
-		{
-			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_RAINFOREST)
-			{
-				iRainforestCount += 1;
-			}
-		}
-
-		if (iRainforestCount < 4)
-		{
-			return -MAX_INT;
-		}
-	}
 	else if (eBuilding == MACHU_PICCHU || eBuilding == MOLE_ANTONELLIANA)
 	{
 		int iPeakCount = 0;

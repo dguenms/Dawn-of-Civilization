@@ -10234,7 +10234,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Help>
-			<Advisor>ADVISOR_MILITARY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</MovieDefineTag>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>

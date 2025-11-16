@@ -1328,11 +1328,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_IMPROVEMENTS</Tag>
-		<English>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</English>
-		<French>+%d1_Change[ICON_HAPPY] : "Nous appr&#233;cions nos parcs nationaux !"</French>
-		<German>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</German>
-		<Italian>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</Italian>
-		<Spanish>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</Spanish>
+		<English>+%d1_Change[ICON_HAPPY]: "We love our surroundings!"</English>
+		<French>+%d1_Change[ICON_HAPPY]: "We love our surroundings!"</French>
+		<German>+%d1_Change[ICON_HAPPY]: "We love our surroundings!"</German>
+		<Italian>+%d1_Change[ICON_HAPPY]: "We love our surroundings!"</Italian>
+		<Spanish>+%d1_Change[ICON_HAPPY]: "We love our surroundings!"</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>

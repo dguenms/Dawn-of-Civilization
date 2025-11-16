@@ -228,8 +228,6 @@ public:
 	void removeBuildingClass(BuildingClassTypes eBuildingClass);																		// Exposed to Python
 	void processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pArea);
 
-	void processBuildingForCity(BuildingTypes eBuilding, CvCity* pCity, int iChange) const;
-
 	int getBuildCost(const CvPlot* pPlot, BuildTypes eBuild) const;
 	bool canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra = false, bool bTestVisible = false) const;	// Exposed to Python
 	RouteTypes getBestRoute(CvPlot* pPlot = NULL) const;																						// Exposed to Python

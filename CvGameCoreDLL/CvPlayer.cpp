@@ -1584,6 +1584,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iCaptureGold /= 100;
 	}
 
+
 	pabHasReligion = new bool[GC.getNumReligionInfos()];
 	pabHolyCity = new bool[GC.getNumReligionInfos()];
 	pabHasCorporation = new bool[GC.getNumCorporationInfos()];
@@ -1660,14 +1661,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		pOldCity->changeReligionYieldChange(GET_PLAYER(eOldOwner).getStateReligion(),(YieldTypes)iI, -GET_PLAYER(eOldOwner).getReligionYieldChange((YieldTypes)iI));
 	}
 
-	// Leoreth: undo specially coded city specific wonder effects if the previous owner had it, so they do not get copied
-	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-	{
-		if (GET_PLAYER(eOldOwner).isHasBuildingEffect((BuildingTypes)iI))
-		{
-			GET_PLAYER(eOldOwner).processBuildingForCity((BuildingTypes)iI, pOldCity, -1);
-		}
-	}
+	// Leoreth: remove player building effects affecting all cities to avoid carrying them over
+	pOldCity->processPlayerBuildingEffects(-1);
 
 	std::vector<BuildingYieldChange> aBuildingYieldChange;
 	std::vector<BuildingCommerceChange> aBuildingCommerceChange;
@@ -7146,6 +7141,10 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	// Leoreth: special wonder effects
 	CvCity* pLoopCity;
 	int iLoop;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->processPlayerBuilding(eBuilding, iChange);
+	}
 
 	// Moai Statues
 	if (eBuilding == MOAI_STATUES)
@@ -7159,15 +7158,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Himeji Castle
-	if (eBuilding == HIMEJI_CASTLE)
-	{
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			processBuildingForCity(eBuilding, pLoopCity, iChange);
-		}
-	}
-
 	// Hanging Gardens
 	if (eBuilding == HANGING_GARDENS)
 	{
@@ -7176,12 +7166,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->updateFeatureHealth();
 		}
 	}
-
-	// Salsal Buddha
-	/*if (eBuilding == SALSAL_BUDDHA)
-	{
-		updatePlotGroups();
-	}*/
 
 	// Great Adobe Mosque
 	else if (eBuilding == GREAT_ADOBE_MOSQUE)
@@ -7248,24 +7232,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		changeCorporationCommerceModifier(iChange * 50);
 	}
 
-	// Old Synagogue
-	else if (eBuilding == OLD_SYNAGOGUE)
-	{
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			processBuildingForCity(eBuilding, pLoopCity, iChange);
-		}
-	}
-
-	// Las Lajas Sanctuary
-	else if (eBuilding == LAS_LAJAS_SANCTUARY)
-	{
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			processBuildingForCity(eBuilding, pLoopCity, iChange);
-		}
-	}
-
 	// Hubble Space Telescope
 	else if (eBuilding == HUBBLE_SPACE_TELESCOPE)
 	{
@@ -7302,35 +7268,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	else if (eBuilding == FLORALIS_GENERICA)
 	{
 		updateYield();
-	}
-}
-
-
-void CvPlayer::processBuildingForCity(BuildingTypes eBuilding, CvCity* pCity, int iChange) const
-{
-	// Himeji Castle
-	if (eBuilding == HIMEJI_CASTLE)
-	{
-		pCity->changeCommerceRateModifier(COMMERCE_CULTURE, pCity->getBuildingDefense() * iChange);
-	}
-
-	// Old Synagogue
-	else if (eBuilding == OLD_SYNAGOGUE)
-	{
-		for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
-		{
-			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iJ);
-			if (kBuilding.getReligionType() == JUDAISM)
-			{
-				pCity->changeBuildingCommerceChange((BuildingTypes)iJ, COMMERCE_GOLD, 2 * iChange);
-			}
-		}
-	}
-
-	// Las Lajas Sanctuary
-	else if (eBuilding == LAS_LAJAS_SANCTUARY)
-	{
-		pCity->changeHealRate(10 * iChange);
 	}
 }
 

@@ -7234,23 +7234,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// Leoreth: Temple of Kukulkan effect
-		if (getFeatureType() == FEATURE_RAINFOREST && eYield == YIELD_FOOD)
-		{
-			pWorkingCity = getWorkingCity();
-			
-			if (pWorkingCity != NULL)
-			{
-				if (pWorkingCity->isHasBuildingEffect(TEMPLE_OF_KUKULKAN))
-				{
-					if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
-					{
-						iYield += 1;
-					}
-				}
-			}
-		}
-
 		// Leoreth: Great Adobe Mosque effect
 		if (GET_PLAYER(ePlayer).isHasBuildingEffect(GREAT_ADOBE_MOSQUE))
 		{

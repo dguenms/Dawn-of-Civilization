@@ -1309,7 +1309,7 @@ WONDERS
     * The Statue of Zeus (Cement): no city resistance on conquest
 	* The Temple of Artemis (Priesthood): free Harbour in all cities, +1 food from Fish, Clam, Crab
     * The Great Lighthouse (Navigation): +4 trade routes, +100% trade route yield
-    * Temple of Kukulkan (Aesthetics): +1 food on Rainforest
+    * Temple of Kukulkan (Aesthetics): +1 happiness from working Plantations
     * Hagia Sophia (Architecture): +2 espionage per state religion building
     * Shwedagon Paya (Ethics): current gold rate increases great people birth rate in its city
     * Wat Preah Pisnulok (Civil Service): +1 food for Priests, +1 population in all cities

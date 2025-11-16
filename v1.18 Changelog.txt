@@ -842,6 +842,7 @@ WONDERS
 * Aqua Appia: requires Cement, +1 food per culture level
 * Statue of Zeus: requires Literature
 * Temple of Artemis: free Harbour in all cities, +1 food from Fish, Clam, Crab
+* Temple of Kukulkan: +1 happiness from working Plantations
 * Great Lighthouse: +4 trade routes, +100% trade route yield
 * Moai Statues: also requires Construction
 * Machu Picchu: requires Law and Potato

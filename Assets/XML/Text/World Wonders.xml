@@ -211,19 +211,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_FOOD] on Rainforest</English>
-		<French>[ICON_BULLET]+1[ICON_FOOD] sur les cases de for&#234;t tropicale</French>
-		<German>[ICON_BULLET]+1[ICON_FOOD] von Regenwald</German>
-		<Italian>[ICON_BULLET]+1[ICON_FOOD] on Rainforest</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_FOOD] on Rainforest</Spanish>
+		<English>[ICON_BULLET]+1[ICON_HAPPY] from Plantations</English>
+		<French>[ICON_BULLET]+1[ICON_HAPPY] from Plantations</French>
+		<German>[ICON_BULLET]+1[ICON_HAPPY] from Plantations</German>
+		<Italian>[ICON_BULLET]+1[ICON_HAPPY] from Plantations</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_HAPPY] from Plantations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] grants additional happiness to cities working plantations. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] grants additional happiness to cities working plantations. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] grants additional happiness to cities working plantations. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] grants additional happiness to cities working plantations. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] grants additional happiness to cities working plantations. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
