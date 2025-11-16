@@ -41,28 +41,27 @@ This is why perfect historical accuracy isn't the goal of DoC - playing this gam
 So instead of forced or scripted historical events, DoC tries to include events and mechanics that encourage developments along historical lines without making them a certainty. 
 DoC also isn't a kitchen sink mod - every feature included has to serve a clear purpose in improving historicity or gameplay experience.
 
-All of this shows in the following main features of Dawn of Civilization:
+![Dawn of Civilization World Map](Maps/World.jpg)
+
+The main features of Dawn of Civilization are:
 * Inclusion of Beyond the Sword civilizations that have been left out: Korea, Byzantium, Holy Rome
-* Many new, completely playable civilizations: Harappa, Polynesia, Tamils, Tibet, Indonesia, Moors, Poland, Italy, Mughals, Thailand, Congo, Argentina, Brazil and Canada
-* Certain civilizations can be reborn to create a completely new game experience: Persia returns as Iran, the Aztecs return as Mexico and the Maya return as Colombia
+* Many new, completely playable civilizations: Harappa, Assyria, Nubia, Hittites, Polynesia, Celts, Dravidia, Toltecs, Kushans, Tibet, Malaysia, Turks, Moors, Java, Burma, Rus, Vietnam, Swahilis, Poland, Italy, Mughals, Thailand, Sweden, Congo, Iran, Argentina, Mexico, Brazil, Colombia, and Canada
+* Completely new, enlarged world map of 80x125 = 10000 tiles
 * Completely new tech tree covering 141 technologies over 7 eras
-* Added 23 new and changed 17 existing buildings
-* Added 20 new and redesigned several existing units
+* Added 35 new and changed 20 existing buildings
+* Added 24 new and redesigned several existing units
 * Completely new selection of 42 civics from 6 categories
 * You can play from 1700 AD in a new scenario
 * Improved the interface in various ways by including the BUG mod
 * You can play on Epic or Marathon game speed thanks to embryodead's RFC Epic/Marathon modmod
 * Two new difficulty levels featuring stronger AI opponents
-* Almost every already existing RFC civilization will experience an entirely different game due to changes in their UP, new UHV goals or general starting situation and environment
-* Replaced Carthage with Phoenicia, starting in 1200 BC in the Levant
-* Different spawn dates: India (1500 BC), Japan (525 AD), Netherlands (1580 AD) and Germany (1700 AD)
+* Almost every already existing RFC civilization will experience an entirely different game due to changes in their unique power, unit or building, new historical victory goals or general starting situation and environment
 * New stability system with more transparent factors, gradual effects of instability, and improved performance
 * Diplomatic institutions overhaul: new rules and resolutions for the Apostolic Palace and United Nations, extended and optimized Congress mechanics
 * New religions: Zoroastrianism, Orthodoxy, Catholicism and Protestantism. Christianity is founded as the Orthodox faith, with Catholicism and Protestantism branching off through specific events (the Great Schism and the Reformation, respectively)
 * New religious spread rules, with religions gradually spreading around their holy city depending on historical spread in various regions on the map. Owner state religion can influence which religions can appear, and religions can disappear when the owner state religion changes
 * Improved colonization of Africa and Asia: building the Trading Company grants conquerors to certain civilizations, and Congresses can be used to settle empty territory
 * You can win through a new victory type, the Unique Religious Victory. Different victory conditions exist depending on your state religion. Without a state religion, you can still win the Polytheism (Pantheon civic) and Secularism (Secularism civic) victories
-* Various map changes to accomodate other additions. In particular, China, India, Scandinavia and Canada have been completely redone
 * Cultural control spreads gradually to individual tiles
 * Inclusion of the SuperSpies mod: Spies acquire experience and promotions, Great Spies are created from Spy experience in the same way Great Generals are
 * Dynamic soundtrack based on your location and state religion
