@@ -22,6 +22,9 @@ def setup():
 	if undoPlague in (0, 3):
 		data.lGenericPlagueTurns[undoPlague] = -1
 	
+	if civ() == iPoland:
+		data.lGenericPlagueTurns[2] = year(1400)+1
+	
 
 @handler("cityAcquired")
 def clearOrSpreadPlague(iOwner, iPlayer, city):
