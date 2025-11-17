@@ -1394,6 +1394,9 @@ dStartingExperience = CivDict({
 	iMughals: {
 		iAttack: 2,
 	},
+	iRussia: {
+		iExplore: 2,
+	},
 	iGermany: {
 		iAttack: 2,
 		iDefend: 2,
