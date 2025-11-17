@@ -57,7 +57,7 @@ def is_target_existing(iCiv):
 
 class MinorCity(object):
 
-	def __init__(self, iYear, iOwner, tile, name, tileName=None, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
+	def __init__(self, iYear, iOwner, tile, name, tileName=None, iPopulation=1, iCiv=None, iCulture=0, bIgnoreRuins=False, bForce=False, units={}, buildings=[], bUnique=True, adjective=None, condition=lambda: True):
 		self.iYear = iYear
 		self.iOwner = iOwner
 		self.tile = tile
@@ -67,6 +67,7 @@ class MinorCity(object):
 		self.iCiv = iCiv
 		self.iCulture = iCulture
 		self.bIgnoreRuins = bIgnoreRuins
+		self.bForce = bForce
 		self.units = units
 		self.buildings = buildings
 		self.bUnique = bUnique
@@ -102,12 +103,17 @@ class MinorCity(object):
 		
 		if not self.condition():
 			return False
+			
+		if self.bForce:
+			if not isFree(self.iOwner, self.tile, bNoCity=True):
+				return False
 		
-		if not player(self.iOwner).canFound(*location(self.tile)):
-			return False
+		else:
+			if not player(self.iOwner).canFound(*location(self.tile)):
+				return False
 		
-		if not isFree(self.iOwner, self.tile, bNoCity=True, bNoCulture=True) and not isFree(self.iOwner, self.tile, bNoCity=True, iCityDistance=2):
-			return False
+			if not isFree(self.iOwner, self.tile, bNoCity=True, bNoCulture=True) and not isFree(self.iOwner, self.tile, bNoCity=True, iCityDistance=2):
+				return False
 		
 		return True
 		
@@ -503,7 +509,7 @@ minor_cities = [
 	MinorCity(-1300, iIndependent2, (105, 46), "Indraprastha", iPopulation=1, iCiv=iIndia, units={iDefend: 1, iAttack: 1}, bIgnoreRuins=True, condition=lambda: player(iIndia).isHuman(), adjective="TXT_KEY_ADJECTIVE_VEDIC"),
 	MinorCity(-1200, iIndependent2, (81, 53), "Sfard", tileName="Sparda", iPopulation=2, iCiv=iGreece, units={iDefend: 2}, condition=lambda: not player(iHittites).isExisting() and not cities.rectangle(tIonia).owner(iGreece), adjective="TXT_KEY_ADJECTIVE_LYDIAN"),
 	MinorCity(-900, iIndependent2, (89, 53), "Tushpa", iPopulation=2, iCiv=iAssyria, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_ARMENIAN"),
-	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iCiv=iPersia, units={iDefend: 2, iShock: 2}, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
+	MinorCity(-900, iIndependent, (92, 50), "Hagmatana", iPopulation=2, iCiv=iPersia, units={iDefend: 2, iShock: 2}, bForce=True, iCulture=10, adjective="TXT_KEY_ADJECTIVE_MEDIAN"),
 	MinorCity(-800, iIndependent, (100, 54), u"Smárkath", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
 	MinorCity(-600, iIndependent, (97, 53), "Margu", iPopulation=1, iCiv=iPersia, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_SOGDIAN"),
 	MinorCity(-580, iIndependent, (66, 57), "Melpum", iPopulation=1, iCiv=iRome, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CELTIC"),
