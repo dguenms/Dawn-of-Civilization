@@ -6428,7 +6428,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		for (iI = 0; iI < numBuildingClassInfos; iI++)
 		{
-			if (getBuildingClassCount((BuildingClassTypes)iI) < getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI), ((bContinue) ? 0 : getBuildingClassMaking(eBuildingClass))))
+			// Leoreth: workaround in case building class count goes negative
+			if (std::max(0, getBuildingClassCount((BuildingClassTypes)iI)) < getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI), ((bContinue) ? 0 : getBuildingClassMaking(eBuildingClass))))
 			{
 				return false;
 			}
