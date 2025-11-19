@@ -249,7 +249,7 @@ lCivilizations = [
 		iAdvancedStartPoints=600,
 		iStateReligion=iZoroastrianism,
 		lCivics=[iMonarchy, iManorialism, iRedistribution, iClergy],
-		techs=techs.column(3).including(iBloomery, iPriesthood, iMathematics).without(iSeafaring)
+		techs=techs.column(3).including(iBloomery, iPriesthood, iMathematics).without(iSeafaring, iShipbuilding)
 	),
 	Civilization(
 		iCelts,
