@@ -1076,10 +1076,6 @@ class Birth(object):
 		createSpecificUnits(self.iPlayer, self.location)		
 	
 	def birth(self):
-		# initial save
-		if self.isHuman():
-			game.initialSave()
-			
 		# reset AI
 		self.reset()
 		

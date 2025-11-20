@@ -6291,6 +6291,12 @@ void CvGame::doTurn()
 	}
 	// edead: end
 	//gDLL->getEngineIFace()->AutoSave();
+
+	// Leoreth: initial autosave
+	if (getGameTurn() > 0 && GET_PLAYER(getActivePlayer()).getInitialBirthTurn() == getGameTurn())
+	{
+		gDLL->getEngineIFace()->AutoSave(true);
+	}
 }
 
 
