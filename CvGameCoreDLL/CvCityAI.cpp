@@ -519,36 +519,35 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
             bool bNeedProphet = false;
             int iBestSpreadValue = 0;
 
+			CvCivilizationInfo* pCivilizationInfo = &GC.getCivilizationInfo(getCivilizationType());
 
-			for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
-            {
-                ReligionTypes eReligion = (ReligionTypes) iJ;
-
-                if (GET_PLAYER(getOwnerINLINE()).hasHolyCity(eReligion) && !GET_PLAYER(getOwnerINLINE()).hasShrine(eReligion)
-                	&& ((iCurrentEra < iTotalEras / 2) || GC.getGameINLINE().countReligionLevels(eReligion) >= 10))
-                {
-					CvCivilizationInfo* pCivilizationInfo = &GC.getCivilizationInfo(getCivilizationType());
-
-					int iUnitClass = GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass();
-                    FAssert(iUnitClass != NO_UNITCLASS);
-
-					UnitTypes eGreatPeopleUnit = (UnitTypes) pCivilizationInfo->getCivilizationUnits(iUnitClass);
-					if (eGreatPeopleUnit != NO_UNIT)
+			int iUnitClass = GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass();
+			if (iUnitClass != NO_UNITCLASS)
+			{
+				UnitTypes eGreatPeopleUnit = (UnitTypes)pCivilizationInfo->getCivilizationUnits(iUnitClass);
+				if (eGreatPeopleUnit)
+				{
+					for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
 					{
-						// note, for normal XML, this count will be one (there is only 1 shrine building for each religion)
-						int	shrineBuildingCount = GC.getGameINLINE().getShrineBuildingCount(eReligion);
-						for (int iI = 0; iI < shrineBuildingCount; iI++)
-						{
-							int eBuilding = (int) GC.getGameINLINE().getShrineBuilding(iI, eReligion);
+						ReligionTypes eReligion = (ReligionTypes)iJ;
 
-							// if this unit builds or forceBuilds this building
-							if (GC.getUnitInfo(eGreatPeopleUnit).getBuildings(eBuilding) || GC.getUnitInfo(eGreatPeopleUnit).getForceBuildings(eBuilding))
+						if (GET_PLAYER(getOwnerINLINE()).hasHolyCity(eReligion) && !GET_PLAYER(getOwnerINLINE()).hasShrine(eReligion)
+							&& ((iCurrentEra < iTotalEras / 2) || GC.getGameINLINE().countReligionLevels(eReligion) >= 10))
+						{
+							// note, for normal XML, this count will be one (there is only 1 shrine building for each religion)
+							int	shrineBuildingCount = GC.getGameINLINE().getShrineBuildingCount(eReligion);
+							for (int iI = 0; iI < shrineBuildingCount; iI++)
 							{
-								bNeedProphet = true;
-								iBestSpreadValue = std::max(iBestSpreadValue, GC.getGameINLINE().countReligionLevels(eReligion));
+								int eBuilding = (int)GC.getGameINLINE().getShrineBuilding(iI, eReligion);
+
+								// if this unit builds or forceBuilds this building
+								if (GC.getUnitInfo(eGreatPeopleUnit).getBuildings(eBuilding) || GC.getUnitInfo(eGreatPeopleUnit).getForceBuildings(eBuilding))
+								{
+									bNeedProphet = true;
+									iBestSpreadValue = std::max(iBestSpreadValue, GC.getGameINLINE().countReligionLevels(eReligion));
+								}
 							}
 						}
-
 					}
 				}
 			}
