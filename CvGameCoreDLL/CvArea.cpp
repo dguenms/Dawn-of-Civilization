@@ -983,6 +983,12 @@ int CvArea::getClosestAreaSize(int iSize) const
 
 				if (pLoopPlot->getArea() != getID() && !pLoopPlot->isWater() && GC.getMapINLINE().getArea(pLoopPlot->getArea())->getNumTiles() > iSize)
 				{
+					// Leoreth: prevent from using Australia as closest continent unless Oceania
+					if (pLoopPlot->getRegionID() == REGION_AUSTRALIA && pCurrentPlot->getRegionID() != REGION_OCEANIA)
+					{
+						continue;
+					}
+
 					iCurrentDistance = stepDistance(pCurrentPlot->getX(), pCurrentPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 					if (iCurrentDistance < iClosestDistance)
