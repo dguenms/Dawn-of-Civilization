@@ -2431,7 +2431,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
 		if cities.rectangle(tNorway).all(lambda city: city.getOwner() == iPlayer):
-			return "TXT_KEY_SWEDEN_SWEDEN_NORWAY"
+			return "TXT_KEY_CIV_SWEDEN_SWEDEN_NORWAY"
 		
 	elif iCiv == iRussia:
 		if bEmpire and iEra >= iRenaissance:
