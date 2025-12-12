@@ -913,7 +913,7 @@ class CvMilitaryAdvisor:
 				if player.isBarbarian():
 					szButton = "Art/Interface/Buttons/Civilizations/Barbarian.dds"
 				else:
-					szButton = gc.getLeaderHeadInfo(gc.getPlayer(iLoopPlayer).getLeaderType()).getButton()
+					szButton = gc.getCivilizationInfo(gc.getPlayer(iLoopPlayer).getCivilizationType()).getButton()
 	
 				szLeaderButton = self.getLeaderButtonWidget(iLoopPlayer)	#self.getNextWidgetName()
 				screen.addCheckBoxGFC(szLeaderButton, szButton, ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), x, y, iButtonSize, iButtonSize, WidgetTypes.WIDGET_MINIMAP_HIGHLIGHT, 2, iLoopPlayer, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -948,7 +948,7 @@ class CvMilitaryAdvisor:
 					plot = unit.plot()
 					if plot.isNone():
 						continue
-					bVisible = plot.isVisible(iActiveTeam, False) and not unit.isInvisible(iActiveTeam, False)
+					bVisible = (plot.isVisible(iActiveTeam, False) or (plot.isCity() and plot.getPlotCity().canBeSelected())) and not unit.isInvisible(iActiveTeam, False)
 					if not bVisible:
 						continue
 					if unit.getVisualOwner() in self.selectedLeaders:

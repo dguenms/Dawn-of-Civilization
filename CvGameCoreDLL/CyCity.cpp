@@ -2903,3 +2903,8 @@ int CyCity::getConscriptPercentAnger()
 {
 	return m_pCity ? m_pCity->getConscriptPercentAnger() : -1;
 }
+
+bool CyCity::canBeSelected()
+{
+	return m_pCity ? m_pCity->canBeSelected() : false;
+}

@@ -614,6 +614,7 @@ public:
 	void doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned);
 	int getHurryPercentAnger();
 	int getConscriptPercentAnger();
+	bool canBeSelected();
 
 private:
 	CvCity* m_pCity;
