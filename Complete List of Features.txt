@@ -1891,7 +1891,6 @@ HISTORICAL IMMERSION
 * AI Greece and Rome receive conquerors to create their historical empires
 * Constantinople and Amsterdam start with a larger population and more buildings
 * If Buddhism does not exist in 100 AD, it is autofounded instead
-* The existence of the Catholic shrine and the Apostolic Palace is guaranteed by the time of the Holy Roman spawn
 * AI civilizations receive a free worker and defender when founding a colony
 * The capital of AI civilizations automatically relocates under appropriate circumstances
 * AI Mughals spread state religion on city conquest
