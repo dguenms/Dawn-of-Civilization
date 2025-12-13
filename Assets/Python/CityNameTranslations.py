@@ -19081,6 +19081,7 @@ name_translations = {
 		iTurkish: u"Töretam",
 	},
 	"Tzintzuntzan": {
+		iLocal: "Ts'intsuntsani", # Purépecha
 		iNahuatl: _,
 		iSpanish: relocate("Morelia"),
 	},
