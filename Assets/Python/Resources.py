@@ -302,13 +302,14 @@ dRemovedResourcesDict = {
 }
 
 dFeaturesDict = {
-	(66, 57) : (1100, iFloodPlains), # Lombardy
-	(68, 57) : (1100, iFloodPlains), # Lombardy
-	(67, 55) : (1100, iFloodPlains), # Tuscany
-	(8, 55)  : (1850, iFloodPlains), # California
-	(8, 54)  : (1850, iFloodPlains), # California
-	(8, 53)  : (1850, iFloodPlains), # California
-	(9, 52)  : (1850, iFloodPlains), # California
+	(66, 57)  : (1100, iFloodPlains), # Lombardy
+	(68, 57)  : (1100, iFloodPlains), # Lombardy
+	(67, 55)  : (1100, iFloodPlains), # Tuscany
+	(120, 40) : (1700, iRainforest),  # Laos
+	(8, 55)   : (1850, iFloodPlains), # California
+	(8, 54)   : (1850, iFloodPlains), # California
+	(8, 53)   : (1850, iFloodPlains), # California
+	(9, 52)   : (1850, iFloodPlains), # California
 }
 
 dRemovedFeaturesDict = {
