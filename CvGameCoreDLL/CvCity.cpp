@@ -2482,6 +2482,25 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	// Leoreth: Machu Picchu and Mole Antonelliana require peaks
+	if (eBuilding == MACHU_PICCHU || eBuilding == MOLE_ANTONELLIANA)
+	{
+		bool bFound = false;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->isPeak())
+			{
+				bFound = true;
+				break;
+			}
+		}
+
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
