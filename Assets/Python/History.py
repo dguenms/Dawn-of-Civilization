@@ -293,7 +293,7 @@ def firstContactConquistadors(iTeamX, iHasMetTeamY):
 						data.dFirstContactConquerors[iToltecs] = True
 						data.dFirstContactConquerors[iAztecs] = True
 					
-					newWorldPlots = plots.rectangle(tContactZone).without(lContactZoneExceptions)
+					newWorldPlots = plots.rectangle(tContactZone)
 					
 					conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots)
 
