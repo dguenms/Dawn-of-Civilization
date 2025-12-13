@@ -19493,9 +19493,11 @@ name_translations = {
 		iEnglish: "Venice",
 		iFrench: "Venise",
 		iGerman: "Venedig",
+		iGreek: "Venetia",
 		iItalian: _,
 		iJapanese: "Benechia",
 		iKorean: "Benechia",
+		iLatin: "Venetia",
 		iLocal: "Venesia", # Venetian
 		iModernGreek: u"Enetía",
 		iNordic: "Venedig",
