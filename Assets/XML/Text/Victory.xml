@@ -1300,6 +1300,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_LAND_TRADE_ROUTE_COUNT</Tag>
+		<English>%s1 trade routes in landlocked cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_BEST_TRADE_INCOME_CITY</Tag>
 		<English>%s1 the city with the highest trade income in the world</English>
 		<French></French>
@@ -2136,6 +2144,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_ROUTE_COUNT</Tag>
+		<English>trade routes</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_LAND_TRADE_ROUTE_COUNT</Tag>
 		<English>trade routes</English>
 		<French></French>
 		<German></German>

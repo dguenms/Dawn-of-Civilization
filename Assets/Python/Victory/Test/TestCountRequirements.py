@@ -2098,6 +2098,85 @@ class TestImprovementCount(ExtendedTestCase):
 			plot.setImprovementType(-1)
 
 
+class TestLandTradeRouteCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = LandTradeRouteCount(3).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "LandTradeRouteCount(3)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "LandTradeRouteCount(3)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "three trade routes in landlocked cities")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade routes: 0 / 3")
+	
+	def test_fewer(self):
+		cities = TestCities.num(2)
+		
+		plot(58, 35).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade routes: 2 / 3")
+		finally:
+			cities.kill()
+			plot(58, 35).setRouteType(-1)
+	
+	def test_sufficient(self):
+		cities = TestCities.num(3)
+		
+		plot(58, 35).setRouteType(iRouteRoad)
+		plot(60, 35).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Trade routes: 3 / 3")
+		finally:
+			cities.kill()
+			plot(58, 35).setRouteType(-1)
+			plot(60, 35).setRouteType(-1)
+	
+	def test_only_landlocked_cities(self):
+		cities = player(0).initCity(54, 35), player(0).initCity(54, 37)
+		
+		plot(54, 36).setRouteType(iRouteRoad)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Trade routes: 0 / 3")
+		finally:
+			for city in cities:
+				city.kill()
+			plot(54, 36).setRouteType(-1)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestOpenBorderCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -4116,6 +4195,7 @@ test_cases = [
 	TestFreeSpecialistCity,
 	TestHappyCityPopulation,
 	TestImprovementCount,
+	TestLandTradeRouteCount,
 	TestOpenBorderCount,
 	TestOpenBorderCountCivs,
 	TestPeakCount,

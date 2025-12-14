@@ -510,6 +510,21 @@ class ImprovementCount(ThresholdRequirement):
 			return IMPROVEMENT.format(self.iImprovement)
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, IMPROVEMENT.format(self.iImprovement, bPlural=True)), self.progress_value(evaluator))
+
+
+# Third Mongol UHV goal
+class LandTradeRouteCount(ThresholdRequirement):
+	
+	TYPES = (COUNT,)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_LAND_TRADE_ROUTE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_LAND_TRADE_ROUTE_COUNT"
+	
+	def count_trade_routes(self, city):
+		return count(city.getTradeCity(i) and not city.getTradeCity(i).isNone() for i in range(city.getTradeRoutes()))
+	
+	def value(self, iPlayer):
+		return cities.owner(iPlayer).where(lambda city: not city.isCoastal(10)).sum(self.count_trade_routes)
 		
 		
 
