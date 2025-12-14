@@ -8779,7 +8779,7 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 
 			if (getFeatureType() != NO_FEATURE)
 			{
-				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()) && GET_TEAM(eTeam).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(getFeatureType())) && !(GET_PLAYER(getOwnerINLINE()).getCivilizationType() == SWAHILI && isCoastalLand() && GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT))
+				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()) && GET_TEAM(eTeam).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(getFeatureType())) && !(isOwned() && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == SWAHILI && isCoastalLand() && GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT))
 				{
 					FAssertMsg(eTeam != NO_TEAM, "eTeam should be valid");
 
