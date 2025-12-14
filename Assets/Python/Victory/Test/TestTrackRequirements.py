@@ -2213,24 +2213,24 @@ class TestProduction(ExtendedTestCase):
 		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		try:
-			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 2)
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 3)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 2 / 10")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Generated production: 3 / 10")
 		finally:
 			city.kill()
 	
 	def test_sufficient(self):
 		city = TestCities.one()
 		
-		for _ in range(10):
+		for _ in range(5):
 			events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
 		
 		try:
-			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 2)
-			self.assertEqual(self.requirement.evaluate(self.evaluator), 20)
+			self.assertEqual(city.getYieldRate(YieldTypes.YIELD_PRODUCTION), 3)
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 15)
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
-			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 20 / 10")
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Generated production: 15 / 10")
 		finally:
 			city.kill()
 	

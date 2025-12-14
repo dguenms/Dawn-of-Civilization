@@ -3346,10 +3346,10 @@ class TestTradeRouteCount(ExtendedTestCase):
 		self.goal = TestGoal()
 		
 		self.requirement.register_handlers(self.goal)
-	
+		
 	def tearDown(self):
 		self.requirement.deregister_handlers()
-	
+		
 	def test_str(self):
 		self.assertEqual(str(self.requirement), "TradeRouteCount(3)")
 	

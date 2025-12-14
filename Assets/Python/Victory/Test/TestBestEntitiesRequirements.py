@@ -378,9 +378,9 @@ class TestBestHappinessCities(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Happiest: First (14)",
-				self.SUCCESS + "Second happiest: Second (12)",
-				self.SUCCESS + "Third happiest: Third (11)",
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (13)",
+				self.SUCCESS + "Third happiest: Third (12)",
 				"Next happiest: Fourth (10)",
 			])
 		finally:
@@ -404,10 +404,10 @@ class TestBestHappinessCities(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Happiest: First (14)",
-				self.SUCCESS + "Second happiest: Second (12)",
-				self.SUCCESS + "Third happiest: Third (11)",
-				"Our next happiest: Fourth (10)",
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (13)",
+				self.SUCCESS + "Third happiest: Third (12)",
+				"Our next happiest: Fourth (11)",
 			])
 		finally:
 			cities.kill()
@@ -433,10 +433,10 @@ class TestBestHappinessCities(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Happiest: First (14)",
-				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (13)",
 				self.FAILURE + "Third happiest: Third (11)",
-				"Our next happiest: Fifth (7)",
+				"Our next happiest: Fifth (8)",
 			])
 		finally:
 			cities.kill()
@@ -456,8 +456,8 @@ class TestBestHappinessCities(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Happiest: First (14)",
-				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (13)",
 				self.FAILURE + "Third happiest: Third (11)",
 			])
 		finally:
@@ -475,8 +475,8 @@ class TestBestHappinessCities(ExtendedTestCase):
 		try:
 			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
 			self.assertEqual(self.requirement.progress(self.evaluator), [
-				self.SUCCESS + "Happiest: First (14)",
-				self.SUCCESS + "Second happiest: Second (12)",
+				self.SUCCESS + "Happiest: First (15)",
+				self.SUCCESS + "Second happiest: Second (13)",
 			])
 		finally:
 			cities.kill()

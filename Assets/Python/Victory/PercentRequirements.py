@@ -60,7 +60,10 @@ class CommercePercent(PercentRequirement):
 	}
 	
 	def value(self, iPlayer):
-		return max(0, player(iPlayer).calculateTotalCommerce())
+		if player(iPlayer).isExisting():
+			return max(0, player(iPlayer).calculateTotalCommerce())
+		
+		return 0
 
 
 # First Persian UHV goal
@@ -118,7 +121,10 @@ class PowerPercent(PercentRequirement):
 	}
 	
 	def value(self, iPlayer):
-		return player(iPlayer).getPower()
+		if player(iPlayer).isExisting():
+			return player(iPlayer).getPower()
+		
+		return 0
 
 
 # Third Arabian UHV goal
