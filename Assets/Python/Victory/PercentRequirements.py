@@ -68,7 +68,7 @@ class CommercePercent(PercentRequirement):
 
 # First Persian UHV goal
 # First Turkic UHV goal
-# Third Mongol UHV goal
+# Second Mongol UHV goal
 # Third Catholic URV goal
 class LandPercent(PercentRequirement):
 

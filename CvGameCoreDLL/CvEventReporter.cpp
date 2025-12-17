@@ -591,6 +591,11 @@ void CvEventReporter::buildingProcessed(CvCity* pCity, BuildingTypes eBuilding, 
 	m_kPythonEventMgr.reportBuildingProcessed(pCity, eBuilding, iChange);
 }
 
+void CvEventReporter::citySacked(CvCity* pCity)
+{
+	m_kPythonEventMgr.reportCitySacked(pCity);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

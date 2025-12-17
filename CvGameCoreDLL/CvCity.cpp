@@ -19866,6 +19866,8 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 	}
 
 	completeAcquisition(iCaptureGold + iSackGold);
+
+	CvEventReporter::getInstance().citySacked(this);
 }
 
 void CvCity::spare(int iCaptureGold)

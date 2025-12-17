@@ -140,6 +140,13 @@ class EventHandlerRegistry(object):
 		
 		return cityRazed
 	
+	def citySacked(self, goal, applicable, func):
+		def citySacked((city,)):
+			if applicable(goal, city.getOwner()):
+				func(goal)
+		
+		return citySacked
+	
 	def combatFood(self, goal, applicable, func):
 		def combatFood((iPlayer, unit, iFood)):
 			if applicable(goal, iPlayer):

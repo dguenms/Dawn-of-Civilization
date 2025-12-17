@@ -64,6 +64,7 @@ public:
 	void reportCityRename(CvCity *pCity);
 	void reportCityHurry(CvCity *pCity, HurryTypes eHurry);
 	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold);
+	void reportCitySacked(CvCity* pCity);
 
 	void reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 

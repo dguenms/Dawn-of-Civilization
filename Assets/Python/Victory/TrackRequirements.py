@@ -366,8 +366,6 @@ class GoldenAges(TrackRequirement):
 		return [golden_age]
 
 
-# First Vietnamese UHV goal
-# Second Mexican UHV goal
 class GreatGenerals(TrackRequirement):
 
 	TYPES = (COUNT,)
@@ -385,6 +383,36 @@ class GreatGenerals(TrackRequirement):
 		if infos.unit(unit).getGreatPeoples(iSpecialistGreatGeneral):
 			self.increment()
 			goal.check()
+
+
+# First Vietnamese UHV goal
+# Third Mongol UHV goal
+# Second Mexican UHV goal
+class GreatPeople(TrackRequirement):
+	
+	TYPES = (UNIT, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CREATE"
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
+	
+	def __init__(self, iGreatPerson, iRequired, **options):
+		TrackRequirement.__init__(self, iGreatPerson, iRequired, **options)
+		
+		self.iGreatPerson = iGreatPerson
+		
+		self.handle("greatPersonBorn", self.increment_great_people)
+	
+	def increment_great_people(self, goal, unit):
+		if infos.unit(unit).getUnitClassType() == infos.unit(self.iGreatPerson).getUnitClassType():
+			self.increment()
+			goal.check()
+	
+	def get_description(self, **options):
+		return Requirement.get_description(self, bPlural=self.bPlural, **options)
+
+	def progress_text(self, **options):
+		return Requirement.progress_text(self, bPlural=self.bPlural, **options)
 
 
 # Third Swedish UHV goal
@@ -607,7 +635,6 @@ class RaidGold(TrackRequirement):
 		self.accumulated("combatGold")
 
 
-# Second Mongol UHV goal
 class RazeCount(TrackRequirement):
 
 	TYPES = (COUNT,)
@@ -685,6 +712,21 @@ class ResourceTradeGold(TrackRequirement):
 		iGold = players.major().alive().sum(lambda p: player(iPlayer).getGoldPerTurnByPlayer(p))
 		self.accumulate(iGold)
 		goal.check()
+
+
+# Second Mongol UHV goal
+class SackCount(TrackRequirement):
+
+	TYPES = (COUNT,)
+
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SACK"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_SACK_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_SACK_COUNT"
+	
+	def __init__(self, *parameters, **options):
+		TrackRequirement.__init__(self, *parameters, **options)
+		
+		self.incremented("citySacked")
 
 
 # Second Aztec UHV goal

@@ -361,6 +361,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SACK</Tag>
+		<English>sack %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_ENSLAVE</Tag>
 		<English>enslave %s1</English>
 		<French></French>
@@ -997,6 +1005,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_RAZE_COUNT</Tag>
+		<English>%s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_SACK_COUNT</Tag>
 		<English>%s1 cities</English>
 		<French></French>
 		<German></German>
@@ -1881,6 +1897,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_RAZE_COUNT</Tag>
 		<English>Razed cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_SACK_COUNT</Tag>
+		<English>Sacked cities</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

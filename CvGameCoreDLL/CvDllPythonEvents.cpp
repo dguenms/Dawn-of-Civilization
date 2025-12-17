@@ -1615,6 +1615,22 @@ void CvDllPythonEvents::reportBuildingProcessed(CvCity* pCity, BuildingTypes eBu
 	}
 }
 
+void CvDllPythonEvents::reportCitySacked(CvCity* pCity)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("citySacked");
+
+		CyCity* pCyCity = new CyCity(pCity);
+		eventData.add(gDLL->getPythonIFace()->makePythonObject(pCyCity));
+
+		postEvent(eventData);
+
+		delete pCyCity;
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

@@ -593,7 +593,7 @@ dGoals = {
 		),
 	),
 	iVietnam: (
-		GreatGenerals(2, by=1500),
+		GreatPeople(iGreatGeneral, 2, by=1500),
 		BuildingCount(iConfucianCathedral, 1, by=1600),
 		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1700),
 	),
@@ -636,8 +636,16 @@ dGoals = {
 	),
 	iMongols: (
 		Control(plots.regions(rNorthChina, rSouthChina).named(CHINA), at=1350),
-		RazeCount(7),
-		LandPercent(12, by=1500),
+		All(
+			SackCount(20),
+			LandPercent(16),
+			by=1450,
+		),
+		All(
+			LandTradeRouteCount(100),
+			GreatPeople(iGreatStatesman, 4),
+			by=1500,
+		),
 	),
 	iAztecs: (
 		BestPopulationCity(start(iAztecs).named(TENOCHTITLAN), at=1520),
@@ -750,7 +758,7 @@ dGoals = {
 	),
 	iMexico: (
 		BuildingCount(state_religion_building(cathedral).named(STATE_RELIGION_CATHEDRAL), 3, by=1880),
-		GreatGenerals(3, by=1940),
+		GreatPeople(iGreatGeneral, 3, by=1940),
 		BestPopulationCity(start(iMexico).named(MEXICO_CITY), at=1960),
 	),
 	iColombia: (

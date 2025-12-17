@@ -3735,6 +3735,7 @@ class TestUnitCombatLevelCount(ExtendedTestCase):
 			team(0).setHasTech(iMachinery, False, 0, False, False)
 			
 			city.plot().setBonusType(-1)
+			city.setHasRealBuilding(iPalace, False)
 			city.kill()
 	
 	def test_different_owner(self):

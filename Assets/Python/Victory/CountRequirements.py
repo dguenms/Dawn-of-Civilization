@@ -526,7 +526,6 @@ class LandTradeRouteCount(ThresholdRequirement):
 	def value(self, iPlayer):
 		return cities.owner(iPlayer).where(lambda city: not city.isCoastal(10)).sum(self.count_trade_routes)
 		
-		
 
 # First Thai UHV goal
 # First Iranian UHV goal
