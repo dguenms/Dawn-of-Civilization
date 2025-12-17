@@ -582,8 +582,8 @@ CIVILIZATIONS
 	* Unique Power: Terror: Cities threatened by your armies descend into unrest
 	* Unique Historical Victory:
 		* Control China in 1350 AD
-		* Raze seven cities
-		* Control 12% of the world by 1500 AD
+		* Sack 20 cities and control 16% of the world by 1450 AD
+		* Have 100 trade routes in landlocked cities and create four Great Statesmen by 1500 AD
 * Aztecs
 	* Birth: 1200 AD
 	* Coat of Arms: Snake, green/black
