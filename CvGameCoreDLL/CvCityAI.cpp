@@ -525,7 +525,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 			if (iUnitClass != NO_UNITCLASS)
 			{
 				UnitTypes eGreatPeopleUnit = (UnitTypes)pCivilizationInfo->getCivilizationUnits(iUnitClass);
-				if (eGreatPeopleUnit)
+				if (eGreatPeopleUnit != NO_UNIT)
 				{
 					for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
 					{
