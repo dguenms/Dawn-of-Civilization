@@ -87,4 +87,5 @@ void CyGameCoreUtilsPythonInterface()
 
 	python::def("fileLog", cyLog, "void (string logfile, string message)");
 	python::def("setDirty", cySetDirty, "void (int iDirtyBit, bool bNewValue)");
+	python::def("validatePeriodConstant", cyValidatePeriodConstant, "bool (int iPeriod)");
 }

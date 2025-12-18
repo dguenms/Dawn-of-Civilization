@@ -1175,8 +1175,8 @@ dResurrectionLeaders = CivDict({
 # update DLL constants when this changes
 iNumPeriods = 28
 (iPeriodPtolemaicEgypt, iPeriodMakuria, iPeriodMing, iPeriodMaratha, iPeriodModernGreece, 
-iPeriodCarthage, iPeriodInsularCelts, iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodSeljuks,
-iPeriodNationalFrance, iPeriodMeiji, iPeriodDenmark, iPeriodNorway, iPeriodUzbeks, 
+iPeriodCarthage, iPeriodInsularCelts, iPeriodVijayanagara, iPeriodByzantineConstantinople, iPeriodNationalFrance, 
+iPeriodMeiji, iPeriodDenmark, iPeriodNorway, iPeriodSeljuks, iPeriodUzbeks, 
 iPeriodSaudi, iPeriodMorocco, iPeriodSpain, iPeriodAustria, iPeriodUnitedKingdom, 
 iPeriodGreatBritain, iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, 
 iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)

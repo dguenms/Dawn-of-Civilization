@@ -2772,3 +2772,8 @@ bool isCivAlive(CivilizationTypes eCivilization)
 
 	return false;
 }
+
+bool validatePeriodConstant(PeriodTypes ePeriod)
+{
+	return ePeriod == NUM_PERIODS;
+}

@@ -84,6 +84,7 @@ int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ e
 // edead: end
 
 void cyLog(std::string logfile, std::string message);
+bool cyValidatePeriodConstant(int iPeriod);
 
 void cySetDirty(int iDirtyBit, bool bNewValue);
 

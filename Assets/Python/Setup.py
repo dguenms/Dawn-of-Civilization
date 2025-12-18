@@ -12,6 +12,11 @@ def updateCore(iCivilization):
 def init():
 	for iCivilization in civs.major():
 		updateCore(iCivilization)
+
+@handler("GameStart")
+def validatePeriodConstants():
+	if not validatePeriodConstant(iNumPeriods):
+		raise Exception("Invalid DLL period constants")
 		
 @handler("periodChange")
 def updateCoreOnPeriodChange(iCivilization):

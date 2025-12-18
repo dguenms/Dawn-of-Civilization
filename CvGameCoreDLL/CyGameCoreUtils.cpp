@@ -313,3 +313,8 @@ void cySetDirty(int iDirtyBit, bool bNewValue)
 {
 	setDirty((InterfaceDirtyBits)iDirtyBit, bNewValue);
 }
+
+bool cyValidatePeriodConstant(int iPeriod)
+{
+	return validatePeriodConstant((PeriodTypes)iPeriod);
+}
