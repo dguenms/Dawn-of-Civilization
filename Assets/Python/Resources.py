@@ -494,7 +494,7 @@ def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RE
 	if iBonus == -1:
 		iImprovement = plot.getImprovementType()
 		if iImprovement >= 0:
-			if infos.improvement(iImprovement).isImprovementBonusTrade(iRemovedBonus):
+			if not plot.canHaveImprovement(iImprovement, plot.getTeam(), False):
 				plot.setImprovementType(-1)
 		
 	iOwner = plot.getOwner()
