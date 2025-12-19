@@ -2208,6 +2208,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		{
 			bException = true;
 		}
+		else if ((iCapitalContinent == 1 && iCityContinent == 2) || (iCapitalContinent == 2 && iCityContinent == 1)) // East Asia and Middle East
+		{
+			bException = true;
+		}
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
