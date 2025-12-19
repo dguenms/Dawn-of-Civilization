@@ -37,7 +37,7 @@ def verifyCorporations(iOwner, iPlayer, city):
 
 @handler("BeginGameTurn")
 def checkCompanies(iGameTurn):
-	for iCompany in infos.corporations().periodic_iter(iNumCorporations / 2):
+	for iCompany in infos.corporations().periodic_iter(iNumCorporations / 3):
 		checkCompany(iCompany, iGameTurn)
 
 
