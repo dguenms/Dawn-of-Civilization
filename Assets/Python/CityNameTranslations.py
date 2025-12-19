@@ -1387,7 +1387,7 @@ name_translations = {
 		iPhoenician: found("Murianda"),
 		iPolish: "Antiochia",
 		iPortuguese: u"Antióquia",
-		iSpanish: "Antioquía",
+		iSpanish: u"Antioquía",
 		iTurkish: "Antakya",
 	},
 	"Antiokheia Hippos": {  # relocated from Gerasa
@@ -2305,7 +2305,7 @@ name_translations = {
 		iDravidian: "Panta Acce",
 		iDutch: "Banda Atjeh",
 		iIndian: _,
-		iJavanese: "Banda Acèh",
+		iJavanese: u"Banda Acèh",
 		iKorean: "Bandaache",
 		iMalay: _,
 		iPersian: "Banda Achah",
@@ -3453,7 +3453,7 @@ name_translations = {
 		iRussian: "Bukharest",
 		iSpanish: "Bucarest",
 		iSwedish: "Bukarest",
-		iTurkish: "Bükresh",
+		iTurkish: u"Bükresh",
 	},
 	"Buda": {
 		iDutch: "Boeda",
@@ -4287,7 +4287,7 @@ name_translations = {
 		iLocal: "Igluligaarjuk", # Inuktitut
 	},
 	"Chemutal": {  # relocated from Zama
-		iMayan: "Chactemaàl",
+		iMayan: u"Chactemaàl",
 		iSpanish: (
 			translate("Payo Obispo", iBefore=iIndustrial),
 			_,
@@ -5820,7 +5820,7 @@ name_translations = {
 		iGreek: "Bersabora",
 		iLatin: "Pirisapora",
 		iPersian: "Peroz-Shabuhr",
-		iTurkish: "Felluçe",
+		iTurkish: u"Felluçe",
 	},
 	"Famagusta": {  # relocated from Salamis
 		iByzantine: "Nea Ioustiania",
@@ -6024,7 +6024,7 @@ name_translations = {
 		iEnglish: _,
 		iLocal: "Tulita", # Slavey
 	},
-	"Fort Orléans": {
+	u"Fort Orléans": {
 		iEnglish: "Columbia",
 		iFrench: found(_),
 		iGerman: found("Dutzow"),
@@ -15112,7 +15112,7 @@ name_translations = {
 		iChinese: "Pingrang",
 		iEnglish: "Pyongyang",
 		iFrench: "Pyongyang",
-		iGerman: "Pjöngjang",
+		iGerman: u"Pjöngjang",
 		iItalian: "Pyongyang",
 		iJapanese: "Heijou",
 		iKorean: _,
@@ -16292,7 +16292,7 @@ name_translations = {
 		iDutch: "Sint Lodewijk de Maranham",
 		iFrench: "Saint-Louis de Maragnan",
 		iPortuguese: _,
-		iSpanish: "San Luis de Marañón",
+		iSpanish: u"San Luis de Marañón",
 	},
 	u"São Miguel das Missões": {
 		iGerman: found(u"Neu-Württemberg"),
