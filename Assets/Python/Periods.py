@@ -236,7 +236,7 @@ def onCapitalMoved(city):
 @handler("techAcquired")
 def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
-	iEra = infos.tech(iTech).getEra()
+	iEra = player(iPlayer).getCurrentEra()
 	iColumn = getColumn(iPlayer)
 	
 	if iCiv == iNubia:
