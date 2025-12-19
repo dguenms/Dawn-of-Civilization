@@ -15432,7 +15432,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate, 
 											continue;
 										}
 
-										if (pLoopPlot->isCore((PlayerTypes)iI))
+										if (pLoopPlot->isCore((PlayerTypes)iI) && pLoopPlot->getCultureRangeCities((PlayerTypes)iI, iCultureRange) > 0)
 										{
 											if (plot()->isCore((PlayerTypes)iI))
 											{
