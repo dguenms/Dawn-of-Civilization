@@ -3049,8 +3049,8 @@
 			<Identifier>KHM</Identifier>
 			<StartingYear>50</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>2</LoadingTime>
+				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
@@ -5222,8 +5222,8 @@
 			<Identifier>UKR</Identifier>
 			<StartingYear>880</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
@@ -5302,7 +5302,7 @@
 			<Identifier>RUS</Identifier>
 			<StartingYear>1263</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
+				<LoadingTime>12</LoadingTime>
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5580,8 +5580,8 @@
 			<Identifier>SWA</Identifier>
 			<StartingYear>957</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>20</LoadingTime>
-				<LoadingTime>4</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
@@ -6125,8 +6125,8 @@
 			<Identifier>VIE</Identifier>
 			<StartingYear>938</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>15</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>8</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>

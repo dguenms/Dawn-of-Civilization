@@ -134,6 +134,12 @@ def stopTimer(iPlayer):
 	rise(message, name(iPlayer).upper(), TIMER.elapsed())
 
 
+#@handler("birth")
+def autoplayTime(iPlayer):
+	message = "AUTOPLAY TIME UNTIL %s: %s"
+	rise(message, name(iPlayer).upper(), game.getMinutesPlayed())
+
+
 #@handler("BeginGameTurn")
 def logSlotInfo():
 	current = players.all().alive()
