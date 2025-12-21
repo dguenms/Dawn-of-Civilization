@@ -24279,6 +24279,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=72
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -25607,7 +25608,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=75
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
