@@ -314,7 +314,7 @@ def endExpansionOnPeace(bWar, iPlayer1, iPlayer2):
 		deleteExpansionUnits(iPlayer2)
 
 
-@handler("collapse")
+#@handler("collapse")
 def endExpansionOnCollapse(iPlayer):
 	for plot in plots.all().where(lambda plot: plot.getExpansion() == iPlayer):
 		plot.resetExpansion()
