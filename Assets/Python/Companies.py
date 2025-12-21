@@ -343,9 +343,7 @@ def getCityValue(city, iCompany):
 	iCompanyCount = player(iOwner).countCorporations(iCompany)
 	iCompanyLimit = getCompanyLimit(iCompany)
 	
-	iCompanyExcess = max(0, iCompanyCount - iCompanyLimit / 2)
-	
-	iResourceValue /= (1 + iCompanyExcess / 2)
+	iResourceValue -= iCompanyCount
 	
 	iValue += iResourceValue
 	
@@ -362,10 +360,9 @@ def getCityValue(city, iCompany):
 	if iValue < 4:
 		return -1
 	
-	if iCompanyCount > iCompanyLimit / 2: 
-		iValue /= 2
-	elif iCompanyCount > iCompanyLimit / 4: 
-		iValue *= 2
-		iValue /= 3
+	iCompanyExcess = max(0, iCompanyCount - iCompanyLimit / 2)
+	
+	iValue *= 10
+	iValue /= 10 + iCompanyExcess
 		
 	return iValue
