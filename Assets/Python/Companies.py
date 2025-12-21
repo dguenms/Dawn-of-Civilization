@@ -24,7 +24,7 @@ dCompanyExpiry = defaultdict({
 	iSilkRoute : 1500,
 	iTradingCompany : 1800,
 	iTextileIndustry : 1920,
-}, 2020)
+}, 2025)
 					
 	
 @handler("cityAcquired")

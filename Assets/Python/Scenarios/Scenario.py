@@ -398,12 +398,12 @@ class Scenario(object):
 		self.adjustTurns(False)
 	
 		for iCiv in range(iNumCivs):
-			leaders = infos.leaders().where(lambda iLeader: infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in LEADER_DATES).sort(lambda iLeader: LEADER_DATES.get(iLeader, 2020))
+			leaders = infos.leaders().where(lambda iLeader: infos.civ(iCiv).isOriginalLeader(iLeader) and iLeader in LEADER_DATES).sort(lambda iLeader: LEADER_DATES.get(iLeader, 2025))
 			if not leaders:
 				continue
 			
-			before, after = leaders.split(lambda iLeader: LEADER_DATES.get(iLeader, 2020) < self.iStartYear)
-			if not after or (before and since(year(LEADER_DATES.get(before.last(), 2020))) < until(year(LEADER_DATES.get(after.first(), 2020)))):
+			before, after = leaders.split(lambda iLeader: LEADER_DATES.get(iLeader, 2025) < self.iStartYear)
+			if not after or (before and since(year(LEADER_DATES.get(before.last(), 2025))) < until(year(LEADER_DATES.get(after.first(), 2025)))):
 				after = after.including(before.last())
 				
 			for iLeader in range(iNumLeaders):

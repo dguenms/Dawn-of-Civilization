@@ -104,7 +104,7 @@ def isOutdated(iCiv):
 	iFirstResurrectionStart = lResurrections[0][0]
 	iLastResurrectionEnd = lResurrections[-1][1]
 		
-	if iLastResurrectionEnd < 2020:
+	if iLastResurrectionEnd < 2025:
 		return True
 		
 	if iFirstResurrectionStart > dFall[iCiv]:
