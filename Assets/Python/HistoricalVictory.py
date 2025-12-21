@@ -480,7 +480,7 @@ dGoals = {
 	),
 	iTurks: (
 		All(
-			LandPercent(7),
+			LandPercent(6),
 			PillageCount(20),
 			by=900,
 		),
