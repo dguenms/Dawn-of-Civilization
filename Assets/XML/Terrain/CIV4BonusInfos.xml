@@ -2113,6 +2113,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_TOBACCO</ArtDefineTag>
 			<TechCityTrade>TECH_PRIESTHOOD</TechCityTrade>
+			<TechObsolete>TECH_GENETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
