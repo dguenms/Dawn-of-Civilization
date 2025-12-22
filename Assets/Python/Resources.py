@@ -410,6 +410,14 @@ def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
 		plot(tile).setPlotType(type, True, True)
 
 
+@handler("BeginGameTurn")
+def changeConquerorPlotTypesLate(iGameTurn):
+	for iCiv in lBioNewWorld:
+		if not data.dFirstContactConquerors[iCiv]:
+			for tile, type in dConquerorPlotTypes[iCiv]:
+				plot(tile).setPlotType(type, True, True)
+
+
 @handler("cityAcquired")
 def spreadCivGroupResourcesOnConquest(iOwner, iPlayer, city, bConquest):
 	if bConquest:
