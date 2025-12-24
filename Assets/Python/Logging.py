@@ -4,6 +4,7 @@ from RFCUtils import *
 from Events import handler
 
 from datetime import timedelta
+import time
 
 
 RISE_LOG = "Rise.log"
@@ -32,10 +33,17 @@ def stopOnGlobalWarmingEffect(plot, bChanged, iPreviousTerrain, iNewTerrain, iPr
 class Timer(object):
 
 	def __init__(self):
-		self.start = game.getSecondsPlayed()
+		self.start = self.seconds()
+	
+	def seconds(self):
+		return time.clock()
 	
 	def elapsed(self):
-		return timedelta(seconds=game.getSecondsPlayed() - self.start)
+		return timedelta(seconds=self.seconds() - self.start)
+	
+	def log(self, message, *format):
+		formatted = message % format
+		print formatted + ": %s" % self.elapsed()
 
 
 class TechLog(object):
@@ -106,7 +114,7 @@ class TechLog(object):
 		tech("TECH RECEIVED:\n  %s for %s from %s in %d (turn %d)\n  Total %d: %s", infos.tech(iTech).getText(), infos.civ(iToCiv).getShortDescription(0), infos.civ(iFromCiv).getShortDescription(0), game.getGameTurnYear(), game.getGameTurn(), len(self.techs_received[iToCiv]), [infos.tech(iTech).getText() for iTech in self.techs_received[iToCiv]])
 		
 
-def time(func):
+def timed(func):
 	def timed_func(*args, **kwargs):
 		timer = Timer()
 		func(*args)
