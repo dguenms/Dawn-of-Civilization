@@ -2,6 +2,14 @@
 <!-- Barbarians -->
 <Civ4GameText>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_ABORIGINAL</Tag>
+		<English>Aboriginal</English>
+		<French>Aboriginal</French>
+		<German>Aboriginal</German>
+		<Italian>Aboriginal</Italian>
+		<Spanish>Aboriginal</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_AKAN</Tag>
 		<English>Akan</English>
 		<French>Akan</French>

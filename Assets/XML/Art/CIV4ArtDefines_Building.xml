@@ -3797,5 +3797,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Floralis Generica/floralis.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AUSTRALIAN_CSIRO</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/CSIRO/market.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/CSIRO/csiro.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

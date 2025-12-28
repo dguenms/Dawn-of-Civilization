@@ -213,6 +213,7 @@ dResourcesDict = {
 	(84, 61)  : (1850,  iIron),     # Donbas
 	(8, 53)   : (1850,  iCow),      # California
 	(142, 17) : (1850,  iCow),		# Queensland
+	(138, 12) : (1850,  iHorse),	# Australia
 	(8, 52)   : (1850,  iSheep),    # California
 	(8, 54)   : (1850,  iCitrus),   # California
 	(4, 41)   : (1850,  iCitrus),   # Hawaii

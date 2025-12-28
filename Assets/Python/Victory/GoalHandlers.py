@@ -91,6 +91,13 @@ class EventHandlerRegistry(object):
 		
 		return buildingBuilt
 	
+	def changeWar(self, goal, applicable, func):
+		def changeWar((bWar, iTeam, iOtherTeam, bFromDefensivePact)):
+			if applicable(goal, team(iTeam).getLeaderID()):
+				func(goal, iTeam, iOtherTeam, bWar, bFromDefensivePact)
+		
+		return changeWar
+	
 	def cityAcquired(self, goal, applicable, func):
 		def cityAcquired((iOwner, iPlayer, city, bConquest, bTrade)):
 			if applicable(goal, iPlayer):
@@ -174,6 +181,13 @@ class EventHandlerRegistry(object):
 				func(goal, iCorporation)
 		
 		return corporationSpread
+	
+	def endPlayerTurn(self, goal, applicable, func):
+		def endPlayerTurn((iGameTurn, iPlayer)):
+			if applicable(goal, iPlayer):
+				func(goal)
+		
+		return endPlayerTurn
 	
 	def enslave(self, goal, applicable, func):
 		def enslave((iPlayer, losingUnit)):

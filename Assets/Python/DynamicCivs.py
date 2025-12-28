@@ -582,6 +582,7 @@ dStartingLeaders = [
 	iMexico : iJuarez,
 	iColombia : iBolivar,
 	iBrazil : iPedro,
+	iAustralia : iCurtin,
 	iCanada : iMacDonald,
 },
 # 600 AD

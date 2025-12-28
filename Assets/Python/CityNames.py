@@ -76,6 +76,7 @@ dBaseLanguages = {
 	iArgentina: (iArgentinian, iSpanish),
 	iColombia: (iSpanish,),
 	iBrazil: (iBrazilian, iPortuguese),
+	iAustralia: (iEnglish,),
 	iCanada: (iEnglish, iFrench),
 }
 

@@ -1477,5 +1477,19 @@
 			<fBlue>0.17</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_WATTLE</Type>
+			<fRed>1.00</fRed>
+			<fGreen>0.80</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_WATTLE_TEXT</Type>
+			<fRed>0.88</fRed>
+			<fGreen>0.7</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

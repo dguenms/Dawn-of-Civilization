@@ -615,7 +615,7 @@ public:
 	void separateAttackCitySelectionGroups();
 	int getModifiedCommerceRate(CommerceTypes eCommerce);
 	bool canBuySlaves() const;
-
+	
 private:
 	CvPlayer* m_pPlayer;
 };

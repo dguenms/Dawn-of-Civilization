@@ -7038,6 +7038,15 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+	// Leoreth: Australian UP: +3 commerce from Mines on resources
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == AUSTRALIA && eYield == YIELD_COMMERCE)
+	{
+		if (eImprovement == IMPROVEMENT_MINE && getBonusType() != NO_BONUS)
+		{
+			iYield += 3;
+		}
+	}
+
 	return iYield;
 }
 

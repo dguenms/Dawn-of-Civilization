@@ -1214,5 +1214,13 @@
 			<NoShaderNIF>Art/Leaderheads/Erlander/fdr_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Erlander/fdr_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CURTIN</Type>
+			<Button>Art/Leaderheads/Curtin/Btn_LH_Curtin.dds</Button>
+			<NIF>Art/Leaderheads/Curtin/Curtin.nif</NIF>
+			<KFM>Art/Leaderheads/Curtin/Curtin.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Curtin/Curtin.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Curtin/Bismarck_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

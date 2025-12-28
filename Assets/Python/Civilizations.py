@@ -601,6 +601,14 @@ lCivilizations = [
 		techs=techs.column(12).including(iRepresentation, iNationalism, iBiology)
 	),
 	Civilization(
+		iAustralia,
+		iGold=600,
+		iAdvancedStartPoints=200,
+		iStateReligion=iProtestantism,
+		lCivics=[iDemocracy, iConstitution, iIndividualism, iFreeEnterprise, iSecularism, iNationhood],
+		techs=techs.column(13).including(iRailroad)
+	),
+	Civilization(
 		iCanada,
 		iGold=1000,
 		iAdvancedStartPoints=250,
@@ -1096,6 +1104,16 @@ dStartingUnits = CivDict({
 		iFerry: 2,
 		iEscort: 3,
 	},
+	iAustralia: {
+		iSettle: 4,
+		iWork: 3,
+		iDefend: 4,
+		iMissionary: 2,
+		iHarass: 2,
+		iWorkerSea: 2,
+		iFerry: 2,
+		iLightEscort: 1,
+	},
 	iCanada: {
 		iSettle: 5,
 		iWork: 3,
@@ -1371,6 +1389,10 @@ dAdditionalUnits = CivDict({
 		iAttack: 3,
 		iSkirmish: 2,
 		iSiege: 2,
+	},
+	iAustralia: {
+		iAttack: 4,
+		iEscort: 3,
 	},
 	iCanada: {
 		iAttack: 4,
@@ -1978,6 +2000,11 @@ dTechPreferences = {
 		iElectricity: 20,
 		iPsychology: 20,
 	},
+	iAustralia : {
+		iTelevision: 40,
+		iGenetics: 40,
+		iEcology: 20,
+	},
 	iBrazil : {
 		iRadio: 20,
 		iSynthetics: 20,
@@ -2437,6 +2464,9 @@ dBuildingPreferences = {
 		iCristoRedentor: 30,
 		iItaipuDam: 30,
 		iWembley: 20,
+	},
+	iAustralia : {
+		iHarbourOpera: 50,
 	},
 	iCanada : {
 		iFrontenac: 30,

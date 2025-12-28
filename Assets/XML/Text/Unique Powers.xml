@@ -90,6 +90,22 @@
 		<Spanish>No resistance in conquered cities</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_AUS_TITLE</Tag>
+		<English>The Power of Mining:</English>
+		<French>The Power of Mining:</French>
+		<German>The Power of Mining:</German>
+		<Italian>The Power of Mining:</Italian>
+		<Spanish>The Power of Mining:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_AUS</Tag>
+		<English>+3[ICON_COMMERCE] from Mines on resources</English>
+		<French>+3[ICON_COMMERCE] from Mines on resources</French>
+		<German>+3[ICON_COMMERCE] from Mines on resources</German>
+		<Italian>+3[ICON_COMMERCE] from Mines on resources</Italian>
+		<Spanish>+3[ICON_COMMERCE] from Mines on resources</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_AZT_TITLE</Tag>
 		<English>The Power of Flower Wars:</English>
 		<French>Le pouvoir des guerres fleuries :</French>

@@ -3154,6 +3154,22 @@
 		<Spanish>El [COLOR_BUILDING_TEXT]Puesto comercial[COLOR_REVERT], el equivalente vikingo del [COLOR_BUILDING_TEXT]Faro[COLOR_REVERT], mejora la producci&#243;n de alimentos en las casillas de agua y otorga [COLOR_HIGHLIGHT_TEXT]Navegaci&#243;n I[COLOR_REVERT] a los barcos construidos en esa ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_CSIRO</Tag>
+		<English>CSIRO</English>
+		<French>CSIRO</French>
+		<German>CSIRO</German>
+		<Italian>CSIRO</Italian>
+		<Spanish>CSIRO</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_CSIRO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]CSIRO[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], grants an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]CSIRO[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], grants an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]CSIRO[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], grants an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]CSIRO[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], grants an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]CSIRO[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT], grants an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and a free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

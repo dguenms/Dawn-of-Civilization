@@ -3622,6 +3622,38 @@
 		<Spanish>Viet Cong</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER</Tag>
+		<English>Digger</English>
+		<French>Digger</French>
+		<German>Digger</German>
+		<Italian>Digger</Italian>
+		<Spanish>Digger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], receives additional defense on open terrain and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], receives additional defense on open terrain and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], receives additional defense on open terrain and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], receives additional defense on open terrain and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], receives additional defense on open terrain and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_LIGHT_HORSE</Tag>
+		<English>Light Horse</English>
+		<French>Light Horse</French>
+		<German>Light Horse</German>
+		<Italian>Light Horse</Italian>
+		<Spanish>Light Horse</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_LIGHT_HORSE_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

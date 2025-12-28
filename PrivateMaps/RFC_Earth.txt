@@ -63746,6 +63746,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=17
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -63754,7 +63755,6 @@ BeginPlot
 	x=141,y=18
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -64626,7 +64626,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=20
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -65037,6 +65036,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=144,y=18
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

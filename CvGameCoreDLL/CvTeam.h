@@ -20,6 +20,9 @@ public:
 	DllExport void init(TeamTypes eID);
 	DllExport void reset(TeamTypes eID = NO_TEAM, bool bConstructorCall = false);
 
+	__forceinline CvTeamAI* AI() { return (CvTeamAI*)(this); }
+	__forceinline const CvTeamAI* AI() const { return (const CvTeamAI*)(this); }
+
 protected:
 
 	void uninit();

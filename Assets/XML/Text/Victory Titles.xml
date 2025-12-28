@@ -101,6 +101,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_AUS1</Tag>
+		<English>Federation of Australia</English>
+		<French>Federation of Australia</French>
+		<German>Federation of Australia</German>
+		<Italian>Federation of Australia</Italian>
+		<Spanish>Federation of Australia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_AUS2</Tag>
+		<English>ANZAC Spirit</English>
+		<French>ANZAC Spirit</French>
+		<German>ANZAC Spirit</German>
+		<Italian>ANZAC Spirit</Italian>
+		<Spanish>ANZAC Spirit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_AUS3</Tag>
+		<English>Imagine, Collaborate, Innovate</English>
+		<French>Imagine, Collaborate, Innovate</French>
+		<German>Imagine, Collaborate, Innovate</German>
+		<Italian>Imagine, Collaborate, Innovate</Italian>
+		<Spanish>Imagine, Collaborate, Innovate</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_AZT1</Tag>
 		<English>Floating Gardens</English>
 		<French>Jardins flottants </French>

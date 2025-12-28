@@ -7901,7 +7901,10 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
 
 	// Leoreth: help Canada acquire cities
-	if (getCivilizationType() == CANADA) iValue /= 2;
+	if (getCivilizationType() == CANADA)
+	{
+		iValue /= 2;
+	}
 
 	if (isHuman())
 	{

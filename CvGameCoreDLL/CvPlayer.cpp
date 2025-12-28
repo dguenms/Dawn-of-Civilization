@@ -5845,7 +5845,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
-	//Leoreth: prevent AI from settling on food resources
+	// Leoreth: prevent AI from settling on food resources
 	if (!isHuman())
 	{
 		BonusTypes eBonus = pPlot->getBonusType();
@@ -5856,27 +5856,35 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 				return false;
 			}
 		}
-	}
 
-	if (!isHuman() && GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(CANADA).getStartingYear()) + getTurns(5))
-	{
-		if (getCivilizationType() == AMERICA)
+		if (GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(CANADA).getStartingYear()) + getTurns(5))
 		{
-			switch (pPlot->getRegionID())
+			if (getCivilizationType() == AMERICA)
 			{
-			case REGION_MARITIMES:
-			case REGION_QUEBEC:
-			case REGION_ONTARIO:
-			case REGION_AMERICAN_ARCTIC:
-				return false;
+				switch (pPlot->getRegionID())
+				{
+				case REGION_MARITIMES:
+				case REGION_QUEBEC:
+				case REGION_ONTARIO:
+				case REGION_AMERICAN_ARCTIC:
+					return false;
+				}
+			}
+			else if (getCivilizationType() == FRANCE)
+			{
+				switch (pPlot->getRegionID())
+				{
+				case REGION_ONTARIO:
+				case REGION_AMERICAN_ARCTIC:
+					return false;
+				}
 			}
 		}
-		else if (getCivilizationType() == FRANCE)
+
+		if (isCivAlive(AUSTRALIA))
 		{
-			switch (pPlot->getRegionID())
+			if (pPlot->getRegionID() == REGION_AUSTRALIA)
 			{
-			case REGION_ONTARIO:
-			case REGION_AMERICAN_ARCTIC:
 				return false;
 			}
 		}

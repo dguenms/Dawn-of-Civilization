@@ -784,6 +784,15 @@ dGoals = {
 			by=1950,
 		),
 	),
+	iAustralia: (
+		ControlledResourceCount(improvement_resources(iMine), 18, by=1900),
+		UnitCombatLevelCount(UnitCombatTypes.UNITCOMBAT_GUN, 4, 30, by=1940),
+		All(
+			EraFirstDiscover(iGlobal, 5),
+			ImprovementCount((iForestPreserve, 12), (iMarinePreserve, 8)),
+			by=2000,
+		),
+	),
 	iCanada: (
 		All(
 			RouteConnection([iRouteRailroad], capital().named(CAPITAL), plots.regions(rMaritimes, rQuebec).adjacent_region(rAtlanticOcean).named(ATLANTIC_COAST)),

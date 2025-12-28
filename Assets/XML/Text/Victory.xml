@@ -548,6 +548,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_ONLY_DEFENSIVE_WAR</Tag>
+		<English>Have only defensive wars</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_PERCENT</Tag>
 		<English>%s1 of the world's population</English>
 		<French></French>
@@ -2410,6 +2418,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TRADE_NETWORK_RELIGION_CITY_COUNT</Tag>
 		<English>connected %s1 cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_CONTROLLED_RESOURCE_COUNT</Tag>
+		<English>%s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
