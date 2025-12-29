@@ -501,9 +501,9 @@ class CityHappiness(AbstractCityTestAlert):
 
 	def _willPassTest(self, city):
 		if (CityUtil.willGrowThisTurn(city)):
-			iExtra = 1
+			iExtra = city.getPopulation() >= 10 and 2 or 1
 		elif (CityUtil.willShrinkThisTurn(city)):
-			iExtra = -1
+			iExtra = city.getPopulation() > 10 and -2 and -1
 		else:
 			iExtra = 0
 		iHappy = city.happyLevel()
@@ -563,9 +563,9 @@ class CityHealthiness(AbstractCityTestAlert):
 
 	def _willPassTest(self, city):
 		if (CityUtil.willGrowThisTurn(city)):
-			iExtra = 1
+			iExtra = city.getPopulation() >= 10 and 2 or 1
 		elif (CityUtil.willShrinkThisTurn(city)):
-			iExtra = -1
+			iExtra = city.getPopulation() > 10 and -2 or -1
 		else:
 			iExtra = 0
 		# badHealth() doesn't take iExtra!
