@@ -429,6 +429,10 @@ class Barbarians(object):
 	
 	@staticmethod
 	def valid_unit_spawn_terrain(plot, iUnit):
+		return Barbarians.valid_unit_spawn_terrain_plot(plot, iUnit) and plots.ring(plot).any(lambda p: Barbarians.valid_unit_spawn_terrain_plot(p, iUnit))
+	
+	@staticmethod
+	def valid_unit_spawn_terrain_plot(plot, iUnit):
 		if infos.unit(iUnit).getTerrainImpassable(plot.getTerrainType()) and not plot.isOwned():
 			return False
 		
