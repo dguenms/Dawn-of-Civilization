@@ -2249,6 +2249,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_SULTANATE_NAME"
 		
 		if bEmpire:
+			if iEra >= iIndustrial:
+				if isControlled(iPlayer, plots.rectangle(tSumatra).without(plots.rectangle(tMalaya))) and isControlled(iPlayer, plots.rectangle(tKalimantan)):
+					if civic.iSociety == iEgalitarianism:
+						return "TXT_KEY_EMPIRE_OF"
+					
+					return "TXT_KEY_EMPIRE_ADJECTIVE"
+					
 			return "TXT_KEY_EMPIRE_NAME"
 			
 	elif iCiv == iSpain:
