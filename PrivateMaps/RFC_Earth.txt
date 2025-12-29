@@ -2100,7 +2100,7 @@ EndPlot
 BeginPlot
 	x=4,y=76
 	BonusType=BONUS_OIL
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
