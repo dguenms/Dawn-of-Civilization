@@ -18,7 +18,7 @@ tNorway = ((65, 71), (74, 78))
 # History
 
 tMesoamericanContactZone = ((11, 36), (38, 49))
-tAndeanContactZone = ((21, 13), (35, 40))
+tAndeanContactZone = ((21, 13), (34, 33))
 lContactZoneExceptions = [(27, 47), (27, 48), (26, 48), (26, 49), (22, 49), (21, 49), (20, 49), (25, 37), (26, 36), (27, 37)]
 
 lMacedonianRoad = [(80, 54), (81, 53), (82, 52), (83, 52), (84, 51), (85, 50)]
