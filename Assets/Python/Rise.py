@@ -44,6 +44,7 @@ lIndependenceCivs = [
 	iMexico,
 	iColombia,
 	iBrazil,
+	iAustralia,
 	iCanada
 ]
 
@@ -54,6 +55,7 @@ lDynamicReligionCivs = [
 	iMexico,
 	iColombia,
 	iBrazil,
+	iAustralia,
 	iCanada
 ]
 
