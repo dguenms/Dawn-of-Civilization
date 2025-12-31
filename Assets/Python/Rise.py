@@ -828,6 +828,11 @@ class Birth(object):
 		if self.iCiv == iBrazil:
 			if not cities.regions(rBrazil, rAmazonia).ever_owned(lBioOldWorld):
 				return False
+		
+		# Australia requires any cities in Australia
+		if self.iCiv == iAustralia:
+			if not cities.region(rAustralia):
+				return False
 	
 		# independence civs require all players controlling cities in their area to be stable or worse
 		if self.isIndependence():
