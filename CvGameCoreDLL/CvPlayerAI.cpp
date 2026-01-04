@@ -1769,6 +1769,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 
+		// Leoreth: Korea overexpands
+		if (getCivilizationType() == KOREA)
+		{
+			return 0;
+		}
+
 		if (AI_bestCitySiteSettlerValue() >= 10)
 		{
 			return 0;
