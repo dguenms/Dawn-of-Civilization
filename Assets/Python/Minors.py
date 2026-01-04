@@ -757,7 +757,7 @@ def maintainFallenCivilizations():
 	
 	for iFallenCiv in fallen_civs:
 		if periodic(20, iFallenCiv):
-			fallen_cities = cities.respawn(iFallenCiv).where(is_minor)
+			fallen_cities = cities.respawn(iFallenCiv).where(is_minor).where(lambda city: plot(city).getExpansion() == -1)
 			
 			if fallen_cities:
 				iTechCiv = best_civ_of_same_tech_group(iFallenCiv)
