@@ -1793,6 +1793,25 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		return DENIAL_NO_GAIN;
 	}
 
+	// Leoreth: not if any city is expansion target
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+	{
+		PlayerTypes eExpansionPlayer = pLoopCity->plot()->getExpansion();
+		if (eExpansionPlayer != NO_PLAYER)
+		{
+			if (eExpansionPlayer == kMasterTeam.getLeaderID())
+			{
+				return DENIAL_PEACE_NOT_POSSIBLE_YOU;
+			}
+
+			if (!isAtWar(GET_PLAYER(eExpansionPlayer).getTeam()))
+			{
+				return DENIAL_POWER_YOUR_ENEMIES;
+			}
+		}
+	}
+
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
@@ -2204,9 +2223,25 @@ DenialTypes CvTeamAI::AI_makePeaceTrade(TeamTypes ePeaceTeam, TeamTypes eTeam) c
 		return DENIAL_VASSAL;
 	}
 
-	if (AI_endWarVal(ePeaceTeam) > (GET_TEAM(ePeaceTeam).AI_endWarVal(getID()) * 2))
+	int iOurPeaceValue = AI_endWarVal(ePeaceTeam);
+	int iTheirPeaceValue = GET_TEAM(ePeaceTeam).AI_endWarVal(getID());
+
+	if (iOurPeaceValue > iTheirPeaceValue * 2)
 	{
 		return DENIAL_CONTACT_THEM;
+	}
+
+	// Leoreth: no peace if they are an expansion target and we are winning
+	if (iTheirPeaceValue > iOurPeaceValue)
+	{
+		int iLoop;
+		for (CvCity* pLoopCity = GET_PLAYER(GET_TEAM(ePeaceTeam).getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(GET_TEAM(ePeaceTeam).getLeaderID()).nextCity(&iLoop))
+		{
+			if (pLoopCity->plot()->getExpansion() == getLeaderID())
+			{
+				return DENIAL_WORST_ENEMY;
+			}
+		}
 	}
 
     int iLandRatio = ((getTotalLand(true) * 100) / std::max(20, GET_TEAM(eTeam).getTotalLand(true)));
