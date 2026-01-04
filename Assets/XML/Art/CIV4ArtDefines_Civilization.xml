@@ -57,7 +57,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_CHINA</Type>
 			<Button>Art/Interface/Buttons/Civilizations/China.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Dragon3.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Han.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -412,6 +412,12 @@
 			<Type>ART_DEF_CIVILIZATION_AUSTRALIA</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Australia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_CommonwealthStar.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MANCHU</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Manchu.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Dragon3.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>

@@ -674,6 +674,22 @@
 		<Spanish>Double [ICON_TRADE] yield from distance for inland cities, desert provides trade connections</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MAN_TITLE</Tag>
+		<English>The Power of Harmony:</English>
+		<French>The Power of Harmony:</French>
+		<German>The Power of Harmony:</German>
+		<Italian>The Power of Harmony:</Italian>
+		<Spanish>The Power of Harmony:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAN</Tag>
+		<English>Additional [ICON_FOOD] and [ICON_COMMERCE] from improved resources worked by happy cities at peace</English>
+		<French>Additional [ICON_FOOD] and [ICON_COMMERCE] from improved resources worked by happy cities at peace</French>
+		<German>Additional [ICON_FOOD] and [ICON_COMMERCE] from improved resources worked by happy cities at peace</German>
+		<Italian>Additional [ICON_FOOD] and [ICON_COMMERCE] from improved resources worked by happy cities at peace</Italian>
+		<Spanish>Additional [ICON_FOOD] and [ICON_COMMERCE] from improved resources worked by happy cities at peace</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
 		<English>The Power of the Long Count:</English>
 		<French>Le pouvoir du compte long :</French>

@@ -98,6 +98,7 @@ class BestSpecialistCity(BestCityRequirement):
 		return city.getFreeSpecialistCount(self.iSpecialist)
 
 
+# Third Manchu UHV goal
 class BestTechPlayer(BestPlayersRequirement):
 
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_BE"

@@ -951,6 +951,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAN1</Tag>
+		<English>Ten Great Campaigns</English>
+		<French>Ten Great Campaigns</French>
+		<German>Ten Great Campaigns</German>
+		<Italian>Ten Great Campaigns</Italian>
+		<Spanish>Ten Great Campaigns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAN2</Tag>
+		<English>All Under Heaven</English>
+		<French>All Under Heaven</French>
+		<German>All Under Heaven</German>
+		<Italian>All Under Heaven</Italian>
+		<Spanish>All Under Heaven</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MAN3</Tag>
+		<English>Great Resurgence</English>
+		<French>Great Resurgence</French>
+		<German>Great Resurgence</German>
+		<Italian>Great Resurgence</Italian>
+		<Spanish>Great Resurgence</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_MAY1</Tag>
 		<English>The Sun</English>
 		<French>Le soleil </French>

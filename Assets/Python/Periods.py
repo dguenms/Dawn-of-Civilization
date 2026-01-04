@@ -29,6 +29,7 @@ dPeriods1700AD = {
 	iEngland : iPeriodUnitedKingdom,
 	iInca : iPeriodPeru,
 	iOttomans : iPeriodOttomanConstantinople,
+	iManchuria : iPeriodQing,
 }
 
 dScenarioPeriods = {
@@ -66,6 +67,7 @@ dPeriodNames = {
 	iPeriodModernItaly:				"Modern_Italy",
 	iPeriodPakistan:				"Pakistan",
 	iPeriodOttomanConstantinople:	"Ottoman_Constantinople",
+	iPeriodQing:					"Qing",
 	iPeriodModernGermany:			"Modern_Germany",
 }
 
@@ -110,6 +112,9 @@ def onBirth(iPlayer):
 def onCollapse(iPlayer):
 	if civ(iPlayer) == iChina:
 		setPeriod(iMongols, iPeriodYuan)
+		
+		if cities.regions(rNorthChina, rSouthChina).owner(iManchuria).count() > 1:
+			setPeriod(iManchuria, iPeriodQing)
 
 
 @handler("resurrection")
@@ -126,6 +131,8 @@ def onResurrection(iPlayer):
 	if iCiv == iChina:
 		if year() > year(dBirth[iMongols]):
 			setPeriod(iChina, iPeriodMing)
+		
+		setPeriod(iManchuria, -1)
 	
 	if iCiv == iIndia:
 		if year() < year(1900):
@@ -140,6 +147,9 @@ def onResurrection(iPlayer):
 		setPeriod(iArabia, iPeriodSaudi)
 		
 	if iCiv == iMongols:
+		setPeriod(iCiv, -1)
+	
+	if iCiv == iManchuria:
 		setPeriod(iCiv, -1)
 
 
@@ -161,6 +171,11 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	if iCiv == iOttomans:
 		if city.at(*tConstantinople):
 			setPeriod(iOttomans, iPeriodOttomanConstantinople)
+	
+	if iCiv == iManchuria:
+		chineseCities = cities.regions(rNorthChina, rSouthChina)
+		if chineseCities.owner(iManchuria) > 1 and chineseCities.owner(iManchuria) > chineseCities.owner(iChina):
+			setPeriod(iManchuria, iPeriodQing)
 	
 	if iTurks in [iCiv, iOwnerCiv]:
 		if isControlled(iTurks, plots.core(iIran)):

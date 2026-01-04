@@ -36,6 +36,7 @@ lExpansionCivs = [
 	iMongols,
 	iMughals,
 	iOttomans,
+	iManchuria,
 ]
 
 lIndependenceCivs = [
@@ -83,6 +84,7 @@ lBirthWars = [
 	(iArabia, iPersia),
 	(iMongols, iChina),
 	(iOttomans, iByzantium),
+	(iManchuria, iChina),
 ]
 
 
@@ -533,6 +535,10 @@ class Birth(object):
 			
 			self.area += additionalPlots.where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().existing().without(self.iPlayer)))
 			self.area = self.area.unique()
+		
+		if self.iCiv == iManchuria:
+			if player(iChina).isExisting() and player(iChina).isHuman() and stability(iChina) >= iStabilityStable:
+				self.area = self.area.where(lambda p: p not in plots.core(iChina))
 		
 		if self.iCiv == iMexico:
 			self.area = self.area.where(lambda p: p.isPlayerCore(self.iPlayer) or not owner(p, iAmerica))

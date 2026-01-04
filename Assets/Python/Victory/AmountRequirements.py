@@ -28,6 +28,7 @@ class AverageCultureAmount(ThresholdRequirement):
 # Third Kushan UHV goal
 # First Khmer UHV goal
 # Third Mughal UHV goal
+# Second Manchu UHV goal
 class CultureAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)
@@ -64,6 +65,7 @@ class FoundedCultureAmount(ThresholdRequirement):
 # First Byzantine UHV goal
 # First Burmese UHV goal
 # Second Inca UHV goal
+# Second Manchu UHV goal
 class GoldAmount(ThresholdRequirement):
 
 	TYPES = (AMOUNT,)

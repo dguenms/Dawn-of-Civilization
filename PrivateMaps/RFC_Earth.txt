@@ -57728,6 +57728,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=64
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -58623,7 +58624,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=62
-	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -59083,6 +59083,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=60
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -60007,6 +60008,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=61
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2

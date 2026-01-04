@@ -10390,11 +10390,11 @@ BeginPlot
 	x=113,y=48
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -10407,7 +10407,7 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=630
 		PreviousOwner=CIVILIZATION_TIBET
@@ -10794,11 +10794,11 @@ BeginPlot
 	x=118,y=49
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Chengdu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -10809,11 +10809,12 @@ BeginPlot
 		BuildingType=BUILDING_DUJIANGYAN
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=-400
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -10985,11 +10986,11 @@ BeginPlot
 	x=119,y=44
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Kunming
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -10998,11 +10999,12 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=50
+			Civilization=CIVILIZATION_MANCHU, Culture=50
 		EndCulture
 		YearFounded=-280
-		YearAcquired=1400
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11115,11 +11117,11 @@ BeginPlot
 	x=120,y=47
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Chongqing
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -11130,12 +11132,13 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=-1095
-		YearAcquired=-320
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11313,11 +11316,11 @@ BeginPlot
 	x=121,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Xi'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -11340,11 +11343,12 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=300
+			Civilization=CIVILIZATION_MANCHU, Culture=300
 		EndCulture
 		YearFounded=-1095
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11437,11 +11441,11 @@ BeginPlot
 	x=122,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Guilin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -11452,11 +11456,12 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=50
+			Civilization=CIVILIZATION_MANCHU, Culture=50
 		EndCulture
 		YearFounded=700
-		YearAcquired=1430
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11730,11 +11735,11 @@ BeginPlot
 	x=124,y=47
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Changsha
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -11744,11 +11749,12 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=50
+			Civilization=CIVILIZATION_MANCHU, Culture=50
 		EndCulture
 		YearFounded=-500
-		YearAcquired=1400
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11806,11 +11812,11 @@ BeginPlot
 	x=125,y=43
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Guangzhou
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -11826,12 +11832,13 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=-210
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11864,11 +11871,11 @@ BeginPlot
 	x=125,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Kaifeng
 		CityPopulation=9
 		BuildingType=BUILDING_GRANARY
@@ -11890,11 +11897,12 @@ BeginPlot
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=-360
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -11914,79 +11922,79 @@ BeginPlot
 	x=125,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_CHINA
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_CHINA
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_CHINA
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_CHINA
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Shuntian
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
@@ -12010,11 +12018,12 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=150
+			Civilization=CIVILIZATION_MANCHU, Culture=150
 		EndCulture
 		YearFounded=-1050
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -12201,11 +12210,11 @@ BeginPlot
 	x=128,y=46
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Fuzhou
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -12219,11 +12228,12 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=-200
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -12255,15 +12265,15 @@ BeginPlot
 	x=128,y=58
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Shenyang
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -12271,13 +12281,14 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=80
+			Civilization=CIVILIZATION_MANCHU, Culture=80
 		EndCulture
 		YearFounded=-300
-		YearAcquired=1370
+		YearAcquired=1620
 		PreviousOwner=CIVILIZATION_BARBARIAN
 		PreviousOwner=CIVILIZATION_KOREA
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -12349,11 +12360,11 @@ BeginPlot
 	x=129,y=50
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_MANCHU
 		CityName=Shanghai
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -12372,11 +12383,12 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=100
+			Civilization=CIVILIZATION_MANCHU, Culture=100
 		EndCulture
 		YearFounded=500
-		YearAcquired=1370
+		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot
@@ -12400,31 +12412,6 @@ EndPlot
 BeginPlot
 	x=129,y=61
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=129,y=62
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_CHINA
-		CityName=Bukui
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		ReligionType=RELIGION_CONFUCIANISM
-		BeginCulture
-			Civilization=CIVILIZATION_CHINA, Culture=50
-		EndCulture
-		YearFounded=1120
-		YearAcquired=1635
-		PreviousOwner=CIVILIZATION_BARBARIAN
-		PreviousOwner=CIVILIZATION_MONGOL
-	EndCity
 EndPlot
 BeginPlot
 	x=129,y=63
@@ -12535,6 +12522,31 @@ EndPlot
 BeginPlot
 	x=130,y=58
 	ImprovementType=IMPROVEMENT_CAMP
+EndPlot
+BeginPlot
+	x=130,y=61
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_MANCHU
+		CityName=Shangjing
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_CONFUCIANISM
+		BeginCulture
+			Civilization=CIVILIZATION_MANCHU, Culture=50
+		EndCulture
+		YearFounded=1120
+		YearAcquired=1635
+		PreviousOwner=CIVILIZATION_BARBARIAN
+		PreviousOwner=CIVILIZATION_MONGOL
+	EndCity
 EndPlot
 BeginPlot
 	x=131,y=38

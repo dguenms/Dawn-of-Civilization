@@ -1222,5 +1222,13 @@
 			<NoShaderNIF>Art/Leaderheads/Curtin/Curtin.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Curtin/Bismarck_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KANGXI</Type>
+			<Button>Art/Leaderheads/Kangxi/kangxi.dds</Button>
+			<NIF>Art/Leaderheads/Kangxi/qin_shi_huang.nif</NIF>
+			<KFM>Art/Leaderheads/Kangxi/qin_shi_huang.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Kangxi/qin_shi_huang.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Kangxi/genghis_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

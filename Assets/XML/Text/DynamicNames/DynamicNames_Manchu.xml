@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Swahili -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHU_DESC</Tag>
+		<English>The Manchus</English>
+		<French>The Manchus</French>
+		<German>The Manchus</German>
+		<Italian>The Manchus</Italian>
+		<Spanish>The Manchus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_PEOPLES</Tag>
+		<English>Jurchen Peoples</English>
+		<French>Jurchen Peoples</French>
+		<German>Jurchen Peoples</German>
+		<Italian>Jurchen Peoples</Italian>
+		<Spanish>Jurchen Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHU_ADJECTIVE</Tag>
+		<English>Manchu</English>
+		<French>Manchu</French>
+		<German>Manchu</German>
+		<Italian>Manchu</Italian>
+		<Spanish>Manchu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHU_SHORT_DESC</Tag>
+		<English>Manchuria</English>
+		<French>Manchuria</French>
+		<German>Manchuria</German>
+		<Italian>Manchuria</Italian>
+		<Spanish>Manchuria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_DEFAULT</Tag>
+		<English>Khanate of %s1</English>
+		<French>Khanate of %s1</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_HEAVENLY_KINGDOM</Tag>
+		<English>Heavenly Kingdom of Great Peace</English>
+		<French>Heavenly Kingdom of Great Peace</French>
+		<German>Heavenly Kingdom of Great Peace</German>
+		<Italian>Heavenly Kingdom of Great Peace</Italian>
+		<Spanish>Heavenly Kingdom of Great Peace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_GREAT_JIN</Tag>
+		<English>the Great Jin</English>
+		<French>the Great Jin</French>
+		<German>the Great Jin</German>
+		<Italian>the Great Jin</Italian>
+		<Spanish>the Great Jin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_GREAT_QING</Tag>
+		<English>the Great Qing</English>
+		<French>the Great Qing</French>
+		<German>the Great Qing</German>
+		<Italian>the Great Qing</Italian>
+		<Spanish>the Great Qing</Spanish>
+	</TEXT>
+</Civ4GameText>

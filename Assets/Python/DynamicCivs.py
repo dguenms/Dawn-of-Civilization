@@ -495,6 +495,10 @@ lChristianityNameChanges = [iInca, iAztecs] # TODO: this should be covered by pe
 
 lColonies = [iMali, iEthiopia, iCongo, iSwahili, iToltecs, iAztecs, iInca, iMaya] # TODO: could be covered by more granular continental regions
 
+dReplacementCivs = {
+	iManchuria: iChina,
+}
+
 dNameChanges = { # TODO: this should be covered by period
 	iPhoenicia : "TXT_KEY_CIV_CARTHAGE_SHORT_DESC",
 	iAztecs : "TXT_KEY_CIV_MEXICO_SHORT_DESC",
@@ -504,6 +508,7 @@ dNameChanges = { # TODO: this should be covered by period
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iTurks : "TXT_KEY_CIV_UZBEKS_SHORT_DESC",
+	iManchuria: "TXT_KEY_CIV_CHINA_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -515,6 +520,7 @@ dAdjectiveChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iTurks : "TXT_KEY_CIV_UZBEKS_ADJECTIVE",
+	iManchuria : "TXT_KEY_CIV_CHINA_ADJECTIVE",
 }
 
 dStartingLeaders = [
@@ -576,6 +582,7 @@ dStartingLeaders = [
 	iCongo : iMbemba,
 	iIran : iAbbas,
 	iNetherlands : iWillemVanOranje,
+	iManchuria : iKangxi,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
@@ -624,6 +631,8 @@ def setup():
 		
 	elif iScenario == i1700AD:
 		data.civs[iEgypt].iResurrections += 1
+		
+		checkReplacementName(iManchuria)
 	
 @handler("playerCivAssigned")
 def initName(iPlayer):
@@ -697,6 +706,9 @@ def onSetPlayerAlive(iPlayer, bAlive):
 def onCityAcquired(iPreviousOwner, iNewOwner):
 	checkName(iPreviousOwner)
 	checkName(iNewOwner)
+	
+	checkReplacementName(iPreviousOwner)
+	checkReplacementName(iNewOwner)
 
 @handler("cityRazed")
 def onCityRazed(city):
@@ -856,7 +868,20 @@ def revertAdjectiveChange(iPlayer):
 	iCiv = civ(iPlayer)
 	if iCiv in dAdjectiveChanges:
 		setAdjective(iPlayer, infos.civ(iCiv).getAdjective(0))
-	
+
+def checkReplacementName(iPlayer):
+	iCiv = civ(iPlayer)
+	if iCiv in dReplacementCivs:
+		iReplacementCiv = dReplacementCivs[iCiv]
+		
+		if player(iReplacementCiv).isExisting():
+			revertNameChange(iPlayer)
+			revertAdjectiveChange(iPlayer)
+		else:
+			checkNameChange(iPlayer)
+			checkAdjectiveChange(iPlayer)
+		
+
 ### Utility methods for civilization status ###
 	
 def isCapitulated(iPlayer):
@@ -1002,9 +1027,6 @@ def specificName(iPlayer):
 			
 	elif iCiv == iChina:
 		if bEmpire:
-			if iEra >= iIndustrial or scenario() == i1700AD:
-				return "TXT_KEY_CIV_CHINA_QING"
-			
 			if iEra == iRenaissance and turn() >= year(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
 	
@@ -1304,6 +1326,13 @@ def specificName(iPlayer):
 			
 		if isCurrentCapital(iPlayer, "Bruges", "Antwerpen", "Gent", "Bruxelles"):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
+	
+	elif iCiv == iManchuria:
+		if player(iPlayer).getPeriod() == iPeriodQing:
+			return "TXT_KEY_CIV_MANCHURIA_GREAT_QING"
+		
+		if bEmpire:
+			return "TXT_KEY_CIV_MANCHURIA_GREAT_JIN"
 			
 	elif iCiv == iGermany:
 		if getColumn(iPlayer) <= 14 and pPlayer.isExisting() and (not player(iHolyRome).isExisting() or not team(iHolyRome).isVassal(iPlayer)):
@@ -2481,7 +2510,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
 			return "TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM_OF"
-			
+	
+	elif iCiv == iManchuria:
+		if iReligion in (iOrthodoxy, iCatholicism, iProtestantism):
+			return "TXT_KEY_CIV_MANCHURIA_HEAVENLY_KINGDOM"
+		
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_OF"
+		
 	elif iCiv == iGermany:
 		if iEra >= iIndustrial and bEmpire:
 			if player(iHolyRome).isExisting() and team(iHolyRome).isExisting() and civ(master(iHolyRome)) == iGermany:
@@ -2799,12 +2835,7 @@ def leaderName(iPlayer):
 	pPlayer = player(iPlayer)
 	iLeader = pPlayer.getLeader()
 	
-	if iCiv == iChina:
-		if iLeader == iHongwu:
-			if year() >= year(1700):
-				return "TXT_KEY_LEADER_KANGXI"
-				
-	elif iCiv == iDravidia:
+	if iCiv == iDravidia:
 		if iLeader == iKrishnaDevaRaya:
 			if year() >= year(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"

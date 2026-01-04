@@ -171,6 +171,28 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 				events.fireEvent("combatFood", iWinner, winningUnit, iFood)
 
 
+@handler("combatResult")
+def manchuBannermanAbility(winningUnit, losingUnit):
+	if winningUnit.getUnitType() == iBannerman and not is_minor(winningUnit) and losingUnit.canFight():
+		iWinner = winningUnit.getOwner()
+		iLoser = losingUnit.getOwner()
+		
+		if is_minor(iLoser):
+			return
+		
+		if player(iLoser).getPower() < player(iWinner).getPower():
+			losingUnit.setDamage(losingUnit.maxHitPoints() * 8 / 10, iWinner)
+			
+			capturedUnit = makeUnit(iWinner, losingUnit.getUnitType(), winningUnit)
+			capturedUnit.convert(losingUnit)
+			capturedUnit.finishMoves()
+			
+			city = closestCity(losingUnit)
+			
+			message(iWinner, "TXT_KEY_MANCHU_BANNERMAN_EFFECT", adjective(iLoser), losingUnit.getName(), city.getName())
+			message(iLoser, "TXT_KEY_MANCHU_BANNERMAN_EFFECT_TARGET", losingUnit.getName(), adjective(iWinner), city.getName())
+
+
 ### REVOLUTION ###
 
 @handler("revolution")

@@ -3654,6 +3654,22 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Light Horse[COLOR_REVERT], the Australian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is considered a Gunpowder unit, can receive defense bonuses, receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Plains[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] terrain, and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANCHU_BANNERMAN</Tag>
+		<English>Bannerman</English>
+		<French>Bannerman</French>
+		<German>Bannerman</German>
+		<Italian>Bannerman</Italian>
+		<Spanish>Bannerman</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANCHU_BANNERMAN_HELP</Tag>
+		<English>[ICON_BULLET]Captures defeated units of more powerful civilizations</English>
+		<French>[ICON_BULLET]Captures defeated units of more powerful civilizations</French>
+		<German>[ICON_BULLET]Captures defeated units of more powerful civilizations</German>
+		<Italian>[ICON_BULLET]Captures defeated units of more powerful civilizations</Italian>
+		<Spanish>[ICON_BULLET]Captures defeated units of more powerful civilizations</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

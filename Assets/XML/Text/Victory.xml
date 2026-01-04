@@ -1004,8 +1004,16 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT</Tag>
+		<Tag>TXT_KEY_VICTORY_DESC_POPULATION_IN_AREA_PERCENT</Tag>
 		<English>%s2 of the population in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT</Tag>
+		<English>%s2 of the world population in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1897,6 +1905,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_ROUTE</Tag>
 		<English>%s2 along %s1 in your territory</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_POPULATION_IN_AREA_PERCENT</Tag>
+		<English>Population in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3504,6 +3520,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_WEST_AFRICA</Tag>
 		<English>West Africa</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_DZUNGARIA</Tag>
+		<English>Dzungaria</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CHINA_AND_MANCHURIA</Tag>
+		<English>China and Manchuria</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -67,7 +67,9 @@ BRITAIN = "TXT_KEY_VICTORY_NAME_BRITAIN"
 CARIBBEAN = "TXT_KEY_VICTORY_NAME_CARIBBEAN"
 CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
+CHINA_AND_MANCHURIA = "TXT_KEY_VICTORY_NAME_CHINA_AND_MANCHURIA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
+DZUNGARIA = "TXT_KEY_VICTORY_NAME_DZUNGARIA"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
 EASTERN_EUROPE = "TXT_KEY_VICTORY_NAME_EASTERN_EUROPE"
 EGYPT = "TXT_KEY_VICTORY_NAME_EGYPT"
@@ -628,7 +630,7 @@ dGoals = {
 			by=1550,
 		),
 		GoldAmount(2500, by=1550),
-		AreaPopulationPercent(plots.regions(*lSouthAmerica).named(SOUTH_AMERICA), 90, at=1775),
+		PopulationInAreaPercent(plots.regions(*lSouthAmerica).named(SOUTH_AMERICA), 90, at=1775),
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore, by=1500),
@@ -723,6 +725,25 @@ dGoals = {
 		CitySpecialistCount(start(iNetherlands).named(AMSTERDAM), iSpecialistGreatMerchant, 4, at=1745),
 		ConqueredCities(4, civs=group(iCivGroupEurope).named(EUROPEAN), outside=plots.regions(*lEurope).named(EUROPE), by=1745),
 		ResourceCount(iSpices, 10, by=1775),
+	),
+	iManchuria: (
+		Control(
+			plots.region(rMongolia),
+			plots.rectangle(tDzungaria).without(lDzungariaExceptions).named(DZUNGARIA),
+			plots.region(rTibet),
+			plots.birth(iBurma),
+			plots.birth(iVietnam),
+			plots.region(rKorea),
+			subject=VASSALS,
+			by=1750,
+		),
+		All(
+			GoldAmount(25000),
+			CultureAmount(50000),
+			AreaPopulationPercent(plots.regions(rSouthChina, rNorthChina, rManchuria).named(CHINA_AND_MANCHURIA), 12),
+			by=1850,
+		),
+		BestTechPlayer(at=1900),
 	),
 	iGermany: (
 		CitySpecialistCount(start(iGermany).named(BERLIN), great_people(), 9, at=1900),

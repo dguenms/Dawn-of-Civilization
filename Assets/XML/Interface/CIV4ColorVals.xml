@@ -1491,5 +1491,19 @@
 			<fBlue>0</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MIDDLE_OCHRE</Type>
+			<fRed>0.93</fRed>
+			<fGreen>0.78</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MIDDLE_OCHRE_TEXT</Type>
+			<fRed>0.81</fRed>
+			<fGreen>0.67</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

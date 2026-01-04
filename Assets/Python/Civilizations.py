@@ -553,6 +553,14 @@ lCivilizations = [
 		techs=techs.column(10).without(iHeritage)
 	),
 	Civilization(
+		iManchuria,
+		iGold=800,
+		iAdvancedStartPoints=300,
+		iStateReligion=iConfucianism,
+		lCivics=[iDespotism, iBureaucracy, iSlavery, iMerchantTrade, iSyncretism, iIsolationism],
+		techs=techs.column(10).without(iOptics, iExploration, iAcademia).including(iCombinedArms, iHorticulture)
+	),
+	Civilization(
 		iGermany,
 		iGold=800,
 		iAdvancedStartPoints=300,
@@ -1044,6 +1052,15 @@ dStartingUnits = CivDict({
 		iWorkerSea: 2,
 		iExploreSea: 2,
 	},
+	iManchuria: {
+		iSettle: 3,
+		iWork: 4,
+		iDefend: 3,
+		iCityAttack: 6,
+		iCitySiege: 6,
+		iShockCity: 10,
+		iExplore: 1,
+	},
 	iGermany: {
 		iSettle: 4,
 		iWork: 2,
@@ -1205,6 +1222,11 @@ dExtraAIUnits = CivDict({
 		iAttack: 6,
 		iSiege: 3,
 	},
+	iManchuria: {
+		iCityAttack: 4,
+		iCitySiege: 6,
+		iShockCity: 8,
+	},
 	iGermany: {
 		iAttack: 10,
 		iSiege: 5,
@@ -1363,6 +1385,11 @@ dAdditionalUnits = CivDict({
 		iAttack: 3,
 		iCounter: 3,
 	},
+	iManchuria: {
+		iShock: 4,
+		iAttack: 4,
+		iSiege: 3,
+	},
 	iGermany: {
 		iAttack: 5,
 		iSiege: 3,
@@ -1418,6 +1445,10 @@ dStartingExperience = CivDict({
 	},
 	iRussia: {
 		iExplore: 2,
+	},
+	iManchuria: {
+		iShockCity: 3,
+		iShock: 3,
 	},
 	iGermany: {
 		iAttack: 2,
@@ -2421,6 +2452,15 @@ dBuildingPreferences = {
 		iCERN: 20,
 		iPalaceOfNations: 20,
 		iNotreDame: 15,
+	},
+	iManchuria : {
+		iForbiddenPalace: 40,
+		iGrandCanal: 40,
+		iOrientalPearlTower: 40,
+		iTiananmenSquare: 40,
+		iPorcelainTower: 30,
+		
+		iBrandenburgGate: -30,
 	},
 	iGermany : {
 		iBrandenburgGate: 40,

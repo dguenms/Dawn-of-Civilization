@@ -7100,6 +7100,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 	iYield = calculateNatureYield(eYield, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM));
 
+	bool bManchuUP = eCivilization == MANCHU && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWarWithMajorPlayer();
+
 	if (eImprovement != NO_IMPROVEMENT)
 	{
 		iYield += calculateImprovementYieldChange(eImprovement, eYield, ePlayer);
@@ -7180,6 +7182,20 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 						if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 						{
 							iYield += pWorkingCity->getBonusYield(getBonusType(), eYield);
+
+							// Leoreth: Manchu UP: additional food and commerce from improved resources when at peace for happy cities
+							if (bManchuUP && pWorkingCity->angryPopulation() == 0)
+							{
+								if (eYield == YIELD_FOOD && GC.getImprovementInfo(getImprovementType()).getImprovementBonusYield(getBonusType(), eYield) > 0)
+								{
+									iYield += 1;
+								}
+
+								if (eYield == YIELD_COMMERCE && GC.getImprovementInfo(getImprovementType()).getImprovementBonusYield(getBonusType(), eYield) > 0)
+								{
+									iYield += 1;
+								}
+							}
 						}
 					}
 				}

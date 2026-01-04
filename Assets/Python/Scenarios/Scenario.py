@@ -134,6 +134,7 @@ LEADER_DATES = {
 	iAbbas: 1590,
 	iWillemVanOranje: 1570,
 	iWilliam: 1650,
+	iKangxi: 1660,
 	iFrederick: 1740,
 	iBismarck: 1880,
 	iWashington: 1790,

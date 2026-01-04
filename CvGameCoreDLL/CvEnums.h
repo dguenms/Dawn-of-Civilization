@@ -1229,11 +1229,12 @@ enum CivilizationTypes		// Exposed to Python
 	KUSHANS,
 	MALAYS,
 	MALI,
+	MANCHU,
 	MAYA,
 	MEXICO,
 	MONGOLS,
-	MOORS,
 
+	MOORS,
 	MUGHALS,
 	NATIVE_AMERICANS,
 	NETHERLANDS,
@@ -1243,8 +1244,8 @@ enum CivilizationTypes		// Exposed to Python
 	PERSIA,
 	POLAND,
 	POLYNESIA,
-	PORTUGAL,
 
+	PORTUGAL,
 	ROME,
 	RUS,
 	RUSSIA,
@@ -1254,8 +1255,8 @@ enum CivilizationTypes		// Exposed to Python
 	SWEDEN,
 	THAILAND,
 	TIBET,
-	TOLTECS,
 
+	TOLTECS,
 	TURKS,
 	VIETNAM,
 	ZULU,
@@ -1445,6 +1446,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	WILLEM,
 	WILLIAM,
 
+	KANGXI,
+
 	FREDERICK,
 	BISMARCK,
 	HITLER,
@@ -1612,7 +1615,7 @@ enum BuildingClassTypes				// Exposed to Python
 	NO_BUILDINGCLASS = -1,
 };
 
-#define BEGIN_WONDERS				(186) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(187) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+13) // increment if a national wonder is added
 
 enum BuildingTypes						// Exposed to Python
@@ -4019,6 +4022,7 @@ enum PeriodTypes
 	PERIOD_MODERN_ITALY,
 	PERIOD_PAKISTAN,
 	PERIOD_OTTOMAN_CONSTANTINOPLE,
+	PERIOD_QING,
 	PERIOD_MODERN_GERMANY,
 
 	NUM_PERIODS,

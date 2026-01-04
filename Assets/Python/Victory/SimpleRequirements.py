@@ -173,6 +173,7 @@ class CompleteEra(ThresholdRequirement):
 # Third Aztec UHV goal
 # Second Ottoman UHV goal
 # Second Iranian UHV goal
+# First Manchu UHV goal
 # Second German UHV goal
 # First Colombian UHV goal
 # Second Colombian UHV goal

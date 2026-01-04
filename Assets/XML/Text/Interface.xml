@@ -3801,6 +3801,22 @@
 		<Spanish>Your defending %s1_UnitName has withdrawn from combat with a %s2_EnUName to %s3_CityName!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MANCHU_BANNERMAN_EFFECT</Tag>
+		<English>A %s1 %s2 has defected to our side after being defeated by our Bannerman near %s3.</English>
+		<French>A %s1 %s2 has defected to our side after being defeated by our Bannerman near %s3.</French>
+		<German>A %s1 %s2 has defected to our side after being defeated by our Bannerman near %s3.</German>
+		<Italian>A %s1 %s2 has defected to our side after being defeated by our Bannerman near %s3.</Italian>
+		<Spanish>A %s1 %s2 has defected to our side after being defeated by our Bannerman near %s3.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MANCHU_BANNERMAN_EFFECT_TARGET</Tag>
+		<English>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</English>
+		<French>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</French>
+		<German>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</German>
+		<Italian>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</Italian>
+		<Spanish>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

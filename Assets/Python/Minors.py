@@ -693,7 +693,7 @@ barbarians = [
 	#Barbarians(1550, 1850, {iArquebusier: 2}, ((21, 49), (27, 54)), 12, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_MUSCOGEE", condition=is_new_world_discovered),
 	Barbarians(1500, 1850, {iCuirassier: 1}, ((92, 57), (109, 64)), 14, NOMADS, target_area=((92, 60), (113, 70)), adjective="TXT_KEY_ADJECTIVE_KAZAKH"),
 	Barbarians(1550, 1900, {iArquebusier: 2}, ((58, 31), (64, 35)), 10, NATIVES, adjective="TXT_KEY_ADJECTIVE_ASHANTI"),
-	Barbarians(1550, 1750, {iCuirassier: 2}, ((124, 58), (132, 64)), 8, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_MANCHU"),
+	Barbarians(1550, 1750, {iBannerman: 2}, ((124, 58), (132, 64)), 8, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_MANCHU", iAlternativeCiv=iManchuria),
 	Barbarians(1550, 1750, {iArquebusier: 5, iBombard: 2}, ((97, 46), (103, 52)), 8, INVADERS, target_area=((93, 46), (106, 52)), adjective="TXT_KEY_ADJECTIVE_PASHTUN"),
 	Barbarians(1600, 1800, {iPombos: 2}, ((70, 20), (77, 25)), 10, INVADERS, iOwner=iNative, target_area=((69, 21), (77, 30)), adjective="TXT_KEY_ADJECTIVE_CHOKWE"),
 	Barbarians(1600, 1800, {iPrivateer: 1}, ((23, 39), (38, 47)), 5, PIRATES),

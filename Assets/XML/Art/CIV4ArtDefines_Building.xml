@@ -3807,5 +3807,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/CSIRO/csiro.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MANCHU_PIAOHAO</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.10</fScale>
+			<fInterfaceScale>0.70</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Piaohao/tavern_asian.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Piaohao/Piaohao.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

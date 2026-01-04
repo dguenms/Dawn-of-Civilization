@@ -25,12 +25,12 @@ class AreaPercent(PercentRequirement):
 		return self.area.land().count()
 
 
-# Third Inca UHV goal
+# Second Manchu UHV goal
 class AreaPopulationPercent(PercentRequirement):
 
 	TYPES = (AREA, PERCENTAGE)
 	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_HAVE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_POPULATION_PERCENT"
 	
@@ -43,7 +43,7 @@ class AreaPopulationPercent(PercentRequirement):
 		return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
 	
 	def total(self):
-		return self.area.cities().sum(CyCity.getPopulation)
+		return game.getTotalPopulation()
 
 
 # Third American UHV goal
@@ -87,6 +87,27 @@ class LandPercent(PercentRequirement):
 	
 	def total(self):
 		return map.getLandPlots()
+
+
+# Third Inca UHV goal
+class PopulationInAreaPercent(PercentRequirement):
+
+	TYPES = (AREA, PERCENTAGE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_IN_AREA_PERCENT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_IN_AREA_PERCENT"
+	
+	def __init__(self, area, *parameters, **options):
+		PercentRequirement.__init__(self, area, *parameters, **options)
+		
+		self.area = area
+	
+	def value(self, iPlayer, area):
+		return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
+	
+	def total(self):
+		return self.area.cities().sum(CyCity.getPopulation)
 
 
 # Third Indian UHV goal

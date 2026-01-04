@@ -70,6 +70,7 @@ dBaseLanguages = {
 	iCongo: (iCongolese,),
 	iIran: (iPersian,),
 	iNetherlands: (iDutch,),
+	iManchuria: (iManchu, iChinese, iMongol),
 	iGermany: (iGerman,),
 	iAmerica: (iAmerican, iEnglish),
 	iMexico: (iMexican, iSpanish),
@@ -214,9 +215,6 @@ def getPrimaryLanguages(identifier):
 		if player(identifier).getPeriod() == iPeriodYuan:
 			return iChinese, iMongol
 		
-		elif player(identifier).getCurrentEra() == iIndustrial:
-			return iChinese, iManchu
-	
 	elif iCiv == iNubia:
 		if player(identifier).getStateReligion() in [iOrthodoxy, iCatholicism]:
 			return iNubian, iCoptic

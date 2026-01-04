@@ -12499,6 +12499,11 @@ void CvPlayerAI::AI_doCommerce()
 				iIdealPercent = (getCurrentEra() >= ERA_CLASSICAL) ? 50 : 20;
 			}
 
+			if (getCivilizationType() == MANCHU)
+			{
+				iIdealPercent = (getCurrentEra() >= ERA_GLOBAL) ? 30 : 50;
+			}
+
 			if (AI_isDoStrategy(AI_STRATEGY_CULTURE4))
 			{
 			    iIdealPercent = 100;

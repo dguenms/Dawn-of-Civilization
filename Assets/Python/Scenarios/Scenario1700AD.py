@@ -8,16 +8,6 @@ from Core import *
 	
 lCivilizations = [
 	Civilization(
-		iChina,
-		iLeader=iHongwu,
-		sLeaderName="TXT_KEY_LEADER_KANGXI",
-		iGold=300,
-		iStateReligion=iConfucianism,
-		lCivics=[iDespotism, iBureaucracy, iManorialism, iRegulatedTrade, iSyncretism, iIsolationism],
-		techs=techs.column(10).including(iHorticulture, iUrbanPlanning).without(iExploration, iOptics, iAcademia),
-		dAttitudes={iKorea: 2}
-	),
-	Civilization(
 		iIndia,
 		iLeader=iShivaji,
 		iGold=400,
@@ -264,6 +254,15 @@ lCivilizations = [
 		},
 	),
 	Civilization(
+		iManchuria,
+		iLeader=iKangxi,
+		iGold=600,
+		iStateReligion=iConfucianism,
+		lCivics=[iDespotism, iBureaucracy, iManorialism, iRegulatedTrade, iSyncretism, iIsolationism],
+		techs=techs.column(10).including(iCombinedArms, iHorticulture, iUrbanPlanning).without(iExploration, iOptics, iAcademia),
+		dAttitudes={iKorea: 2}
+	),
+	Civilization(
 		iGermany,
 		iLeader=iFrederick,
 		iGold=800,
@@ -326,6 +325,7 @@ scenario1700AD = Scenario(
 		iNorse: "TXT_KEY_CIV_DENMARK_DESC",
 		iHolyRome: "TXT_KEY_CIV_AUSTRIA_DESC",
 		iEngland: "TXT_KEY_CIV_BRITAIN_DESC",
+		iManchuria: "TXT_KEY_CIV_CHINA_DESC",
 		iGermany: "TXT_KEY_CIV_HOLY_ROMAN_DESC",
 	},
 	
