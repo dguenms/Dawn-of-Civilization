@@ -1632,6 +1632,7 @@ class Cities(Locations):
 		return self.transform(Plots, map = lambda key: plot(self._factory(key)))
 	
 	def ever_owned(self, *civs):
+		civs = variadic(*civs)
 		return any(city.isEverOwned(iCiv) for city in self for iCiv in civs)
 	
 		
