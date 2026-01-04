@@ -52,6 +52,15 @@ def onPeriodChange(iPlayer, iPeriod):
 	if iPeriod == iPeriodMeiji:
 		for iModifier in (iModifierResearchCost, iModifierCitiesMaintenance, iModifierCivicUpkeep, iModifierInflationRate):
 			changeModifier(iPlayer, iModifier, -10)
+	
+	if iPeriod == iPeriodMing:
+		for iModifier in (iModifierCitiesMaintenance, iModifierInflationRate):
+			changeModifier(iPlayer, iModifier, -25)
+		
+		for iModifier in (iModifierCivicUpkeep, iModifierUnitCost, iModifierWonderCost):
+			changeModifier(iPlayer, iModifier, -20)
+		
+		changeModifier(iPlayer, iModifierResearchCost, 10)
 
 
 @handler("BeginGameTurn")
