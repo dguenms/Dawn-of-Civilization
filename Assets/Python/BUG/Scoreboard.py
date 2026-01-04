@@ -21,6 +21,7 @@ import re
 import string
 
 from RFCUtils import *
+from Core import *
 
 # Globals
 ScoreOpt = BugCore.game.Scores
@@ -517,7 +518,7 @@ class TeamScores:
 		return self._team
 		
 	def rank(self):
-		if self.isVassal():
+		if self.isVassal() and team().canContact(self._team.getID()):
 			return self._master.rank()
 		else:
 			return self._rank
