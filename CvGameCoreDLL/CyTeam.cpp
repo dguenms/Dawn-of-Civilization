@@ -1037,8 +1037,3 @@ int CyTeam::AI_getWarPlan(int eTeam)
 {
 	return m_pTeam ? m_pTeam->AI_getWarPlan((TeamTypes)eTeam) : -1;
 }
-
-int CyTeam::AI_makePeaceTradeVal(int eTeam)
-{
-	return m_pTeam ? m_pTeam->AI()->AI_makePeaceTradeVal((TeamTypes)eTeam) : -1;
-}
