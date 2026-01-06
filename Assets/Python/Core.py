@@ -1633,7 +1633,7 @@ class Cities(Locations):
 	
 	def ever_owned(self, *civs):
 		civs = variadic(*civs)
-		return any(city.isEverOwned(iCiv) for city in self for iCiv in civs)
+		return any(city.isEverOwnedCiv(iCiv) for city in self for iCiv in civs)
 	
 		
 class UnitFactory:
