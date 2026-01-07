@@ -2636,9 +2636,10 @@ int calculateExperience(int iLevel, PlayerTypes ePlayer)
 	int iExperienceNeeded = iLevel * iLevel + 1;
 
 	int iModifier = GET_PLAYER(ePlayer).getLevelExperienceModifier();
+
 	if (iModifier != 0)
 	{
-		iExperienceNeeded += (iExperienceNeeded * iModifier + 99) / 100; // round up
+		iExperienceNeeded = (iExperienceNeeded * 100 + (iExperienceNeeded * iModifier + 99)) / 100; // round up
 	}
 
 	return iExperienceNeeded;
