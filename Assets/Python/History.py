@@ -247,11 +247,13 @@ def nativeConquerors(iGameTurn, iPlayer):
 			if checkNativeConquerors(iPlayer, tMesoamericanContactZone):
 				for iCiv in (iMaya, iToltecs, iAztecs):
 					data.dFirstContactConquerors[iCiv] = True
+					show("First contact conquerors against: %s", infos.civ(iCiv).getShortDescription(0))
 	
 	if year() >= year(dBirth[iInca]):
 		if not data.dFirstContactConquerors[iInca]:
 			if checkNativeConquerors(iPlayer, tAndeanContactZone):
 				data.dFirstContactConquerors[iInca] = True
+				show("First contact conquerors against: Inca")
 	
 
 def checkNativeConquerors(iPlayer, tContactZone):
@@ -293,6 +295,7 @@ def firstContactConquistadors(iTeamX, iHasMetTeamY):
 						tContactZone = tAndeanContactZone
 
 					data.dFirstContactConquerors[iNewWorldCiv] = True
+					show("First contact conquerors against: %s", infos.civ(iNewWorldCiv).getShortDescription(0))
 					
 					if iNewWorldCiv in [iToltecs, iAztecs]:
 						data.dFirstContactConquerors[iToltecs] = True
