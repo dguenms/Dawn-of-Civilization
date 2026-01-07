@@ -768,7 +768,7 @@ CIVILISATIONS
 	* Unique Power: Indirect Rule: Reduced colony maintenance from number of colonies per continent
 	* Unique Historical Victory:
 		* Control six cities in North America, four cities in South and Central America, three cities in Africa and three cities in India and have 25 level three naval units by 1770 AD
-		* Control twelve cities in Asia, ten cities in Africa and six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
+		* Control twelve cities in Asia and ten cities in Africa, settle six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
 		* Be the first to discover eight Renaissance era technologies and eight Industrial era technologies
 * Holy Rome
 	* Birth: 840 AD

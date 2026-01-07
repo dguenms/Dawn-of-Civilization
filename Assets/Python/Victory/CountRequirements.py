@@ -717,6 +717,32 @@ class ResourceCount(ThresholdRequirement):
 		return player(iPlayer).getNumAvailableBonuses(iResource)
 
 
+# Second English UHV goal
+class SettledCityCount(ThresholdRequirement):
+
+	TYPES = (AREA, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_CITY_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_COUNT"
+	
+	def __init__(self, *parameters, **options):
+		ThresholdRequirement.__init__(self, *parameters, **options)
+		
+		self.bPlural = True
+		
+		self.handle("cityBuilt", self.check)
+	
+	def get_description(self):
+		if self.iRequired == 1:
+			return Description("TXT_KEY_VICTORY_DESC_CITY_COUNT_SINGLE", *self.format_parameters())
+		
+		return ThresholdRequirement.get_description(self)
+		
+	def value(self, iPlayer, area):
+		return area.cities().where(lambda city: city.isOriginalOwner(iPlayer)).count()
+
+
 # Second Ethiopian UHV goal
 # Third Ottoman UHV goal
 # First Jewish URV goal

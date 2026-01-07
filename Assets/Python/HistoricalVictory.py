@@ -555,8 +555,8 @@ dGoals = {
 			CityCount(
 				(plots.regions(*lAsia).named(ASIA), 12),
 				(plots.regions(*lAfrica).named(AFRICA), 10),
-				(plots.regions(*lOceania).named(OCEANIA), 6),
 			),
+			SettledCityCount(plots.regions(*lOceania).named(OCEANIA), 6),
 			RouteConnection([iRouteRailroad], plots.regions(rEgypt, rMaghreb).coastal().named(NORTH_AFRICA), plots.regions(rCape).named(SOUTH_AFRICA)),
 			by=1880,
 		),
