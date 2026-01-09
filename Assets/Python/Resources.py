@@ -207,7 +207,7 @@ dResourcesDict = {
 	(10, 51)  : (1800,  iCotton),   # California
 	(111, 43) : (1800,  iTea),      # West Bengal
 	(149, 4)  : (1800,  iSheep),    # New Zealand
-	(1, 8)    : (1800,  iSheep),    # New Zealand
+	(0, 9)    : (1800,  iSheep),    # New Zealand
 	(8, 55)   : (1850,  iRice),     # California
 	(137, 62) : (1850,  iCow),      # Hokkaido
 	(84, 61)  : (1850,  iIron),     # Donbas
