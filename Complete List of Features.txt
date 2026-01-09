@@ -415,7 +415,7 @@ CIVILISATIONS
 		* Have twelve Orthodox cities in your trade network by 600 AD and have 24 Orthodox cities in your trade network by 1200 AD
 * China
 	* Birth: 2070 BC
-	* Coat of Arms: Dragon, yellow/black
+	* Coat of Arms: Han character, yellow/black
 	* Leaders: Wu, Tang Taizong, Hongwu, Mao Zedong
 	* Unique Units:
 		* Cho-Ko-Nu (Crossbowman): +1 first strike, causes collateral damage
@@ -1001,6 +1001,17 @@ CIVILISATIONS
 		* Settle four Great Merchants in Amsterdam in 1745 AD
 		* Conquer four European cities outside of Europe by 1745 AD
 		* Acquire ten Spice resources by 1775 AD
+* Manchus
+	* Birth: 1586 AD
+	* Coat of Arms: Chinese Dragon, yellow/blue
+	* Leader: Kangxi
+	* Unique Unit: Bannerman (Cuirassier): targets Heavy Cavalry and Light Cavalry units first, starts with Shock, captures defeated units of more powerful civilizations
+	* Unique Building: Piaohao (Bank): +25% food stored after growth, +2 commerce on Rice, Wheat, Millet, Corn, Silk, Tea
+	* Unique Power: Harmony: Additional food and commerce from improved resources worked by happy cities at peace
+	* Unique Historical Victory:
+		* Control or vassalize Mongolia, Dzungaria, Tibet, Burma, Vietnam and Korea by 1750 AD
+		* Have 25000 gold and 50000 culture and have 12% of the world population in China and Manchuria by 1850 AD
+		* Be the most advanced civilization in 1900 AD
 * Germany
 	* Birth: 1700 AD
 	* Coat of Arms: Iron Cross, grey/black

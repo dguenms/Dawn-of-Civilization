@@ -3,9 +3,22 @@ TABLE OF CONTENTS
 * Bugfixes
 
 CIVILIZATIONS
+* China:
+	* Coat of Arms: Han character
 * England
 	* Unique Historical Victory:
 		* Second goal: Control twelve cities in Asia and ten cities in Africa, settle six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
+* Manchus
+	* Birth: 1586 AD
+	* Coat of Arms: Chinese Dragon, yellow/blue
+	* Leader: Kangxi
+	* Unique Unit: Bannerman (Cuirassier): targets Heavy Cavalry and Light Cavalry units first, starts with Shock, captures defeated units of more powerful civilizations
+	* Unique Building: Piaohao (Bank): +25% food stored after growth, +2 commerce on Rice, Wheat, Millet, Corn, Silk, Tea
+	* Unique Power: Harmony: Additional food and commerce from improved resources worked by happy cities at peace
+	* Unique Historical Victory:
+		* Control or vassalize Mongolia, Dzungaria, Tibet, Burma, Vietnam and Korea by 1750 AD
+		* Have 25000 gold and 50000 culture and have 12% of the world population in China and Manchuria by 1850 AD
+		* Be the most advanced civilization in 1900 AD
 * Australia
 	* Birth: 1851 AD
 	* Coat of Arms: Commonwealth Star, yellow/green
