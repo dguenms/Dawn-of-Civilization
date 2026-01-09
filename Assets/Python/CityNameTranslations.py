@@ -4742,22 +4742,15 @@ name_translations = {
 		iMongol: "Qamil",
 		iTurkish: "Qumul",
 	},
+	"Cuper's Cove": {
+		iEnglish: _,
+		iNordic: found(u"Furðustrandir"),
+	},
 	"Curitiba": {
 		iFrench: found(u"Rivière"),
 		iGerman: found("Pomerode"),
 		iLocal: "Kuri'yty", # Tupi
 		iPortuguese: _,
-	},
-	"Petrovaradin": {
-		iByzantine: "Petrikon",
-		iGerman: "Peterwardein",
-		iLatin: "Cusum",
-		iLocal: ( # Serbian
-			relocate("Novi Sad", iAfter=iRenaissance),
-			_,
-		),
-		iRussian: _,
-		iTurkish: "Petervaradin",
 	},
 	
 	### D ###
@@ -10861,6 +10854,13 @@ name_translations = {
 			_,
 		),
 	},
+	"Linhuangfu": {
+		iChinese: (
+			translate("Lindong", iAfter=iRenaissance),
+			"Shangjing",
+		),
+		iManchu: _,
+	},
 	"Linjiang": {
 		iChinese: (
 			translate("Zhongxian", iAfter=iGlobal),
@@ -14626,6 +14626,17 @@ name_translations = {
 		iRussian: "Petropavlovsk",
 		iTurkish: _,
 	},
+	"Petrovaradin": {
+		iByzantine: "Petrikon",
+		iGerman: "Peterwardein",
+		iLatin: "Cusum",
+		iLocal: ( # Serbian
+			relocate("Novi Sad", iAfter=iRenaissance),
+			_,
+		),
+		iRussian: _,
+		iTurkish: "Petervaradin",
+	},
 	"Petrozadovsk": {
 		iLocal: u"Äänislinna", # Finnish
 		iRussian: (
@@ -16855,13 +16866,6 @@ name_translations = {
 		iSpanish: "Harbin",
 		iVietnamese: "Cap Nhi Tan",
 	},
-	"Linhuangfu": {
-		iChinese: (
-			translate("Lindong", iAfter=iRenaissance),
-			"Shangjing",
-		),
-		iManchu: _,
-	},
 	"Shangyang": {
 		iChinese: (
 			translate("Sanmenxia", iAfter=iMedieval),
@@ -17541,6 +17545,7 @@ name_translations = {
 	"St. Anthony": {
 		iEnglish: _,
 		iFrench: found("Port au Choix"),
+		iNordic: found("Kjalarnes"),
 	},
 	"St. Augustine": {
 		iAmerican: relocate("Gainesville"),
