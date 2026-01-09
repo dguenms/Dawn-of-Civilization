@@ -710,7 +710,7 @@ barbarians = [
 	Barbarians(1800, 1900, {iPikeman: 2}, ((71, 11), (81, 17)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_ZULU"),
 	Barbarians(1800, 1900, {iMountedBrave: 1}, ((12, 62), (22, 65)), 12, NOMADS, iOwner=iNative, target_area=((15, 57), (26, 66)), adjective="TXT_KEY_ADJECTIVE_CREE"),
 	Barbarians(1800, 1900, {iMountedBrave: 1}, ((13, 50), (20, 56)), 9, NOMADS, iOwner=iNative, target_area=((15, 51), (26, 62)), adjective="TXT_KEY_ADJECTIVE_COMANCHE"),
-	Barbarians(1850, 1930, {iSpearman: 1, iArcher: 1, iWarrior: 1}, ((120, 18), (143, 24)), 10, NATIVES, iOwner=iNative, target_area=((128, 15), (143, 24)), adjective="TXT_KEY_ADJECTIVE_ABORIGINAL"),
+	Barbarians(1850, 1930, {iSpearman: 1, iArcher: 1, iWarrior: 1}, ((126, 18), (143, 23)), 10, NATIVES, iOwner=iNative, target_area=((128, 15), (143, 24)), adjective="TXT_KEY_ADJECTIVE_ABORIGINAL"),
 ]
 
 
