@@ -53,6 +53,29 @@ class AreaReligionSpreadCount(TrackRequirement):
 			goal.check()
 
 
+# Second Australian UHV goal
+class AreaUnitGiftedCount(TrackRequirement):
+	
+	TYPES = (AREA, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_GIFT"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_UNIT_GIFTED_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_UNIT_GIFTED_COUNT"
+	
+	def __init__(self, area, iCount, **options):
+		TrackRequirement.__init__(self, area, iCount, **options)
+		
+		self.area = area
+		
+		self.handle("unitGifted", self.increment_unit_gifted)
+	
+	def increment_unit_gifted(self, goal, unit, plot):
+		if plot in self.area:
+			if unit.canFight() and capital(unit.getOwner()).allUpgradesAvailable(unit.getUnitType(), 0) < 0:
+				self.increment()
+				goal.check()
+
+
 # First Tibetan UHV goal
 class AcquiredCities(TrackRequirement):
 
@@ -388,6 +411,7 @@ class GreatGenerals(TrackRequirement):
 # First Vietnamese UHV goal
 # Third Mongol UHV goal
 # Second Mexican UHV goal
+# Second Australian UHV goal
 class GreatPeople(TrackRequirement):
 	
 	TYPES = (UNIT, COUNT)

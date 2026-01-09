@@ -136,6 +136,7 @@ Settle = GoalDefinition(req.Settle)
 
 AreaBlockadeGold = GoalDefinition(req.AreaBlockadeGold)
 AreaReligionSpreadCount = GoalDefinition(req.AreaReligionSpreadCount)
+AreaUnitGiftedCount = GoalDefinition(req.AreaUnitGiftedCount)
 AcquiredCities = GoalDefinition(req.AcquiredCities)
 BrokeredPeace = GoalDefinition(req.BrokeredPeace)
 CelebrateTurns = GoalDefinition(req.CelebrateTurns)

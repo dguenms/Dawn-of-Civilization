@@ -72,6 +72,7 @@ EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
 EASTERN_EUROPE = "TXT_KEY_VICTORY_NAME_EASTERN_EUROPE"
 EGYPT = "TXT_KEY_VICTORY_NAME_EGYPT"
 EUROPE = "TXT_KEY_VICTORY_NAME_EUROPE"
+EUROPE_OR_NORTH_AMERICA = "TXT_KEY_VICTORY_NAME_EUROPE_OR_NORTH_AMERICA"
 GAUL = "TXT_KEY_VICTORY_NAME_GAUL"
 GRAN_COLOMBIA = "TXT_KEY_VICTORY_NAME_GRAN_COLOMBIA"
 GUAYANAS = "TXT_KEY_VICTORY_NAME_GUAYANAS"
@@ -786,7 +787,11 @@ dGoals = {
 	),
 	iAustralia: (
 		ControlledResourceCount(improvement_resources(iMine), 18, by=1900),
-		UnitCombatLevelCount(UnitCombatTypes.UNITCOMBAT_GUN, 4, 30, by=1940),
+		All(
+			GreatPeople(iGreatGeneral, 3),
+			AreaUnitGiftedCount(plots.regions(*(lEurope + lNorthAmerica)).named(EUROPE_OR_NORTH_AMERICA), 30),
+			by=1940,
+		),
 		All(
 			EraFirstDiscover(iGlobal, 5),
 			ImprovementCount((iForestPreserve, 12), (iMarinePreserve, 8)),

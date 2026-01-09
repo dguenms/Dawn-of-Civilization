@@ -8,7 +8,7 @@ CIVILIZATIONS
 		* Second goal: Control twelve cities in Asia and ten cities in Africa, settle six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
 * Australia
 	* Birth: 1851 AD
-	* Coat of Arms: Commonwealth Star
+	* Coat of Arms: Commonwealth Star, yellow/green
 	* Leader: Curtin
 	* Unique Units:
 		* Light Horse (Cavalry): treated as Gunpowder unit, can receive defensive bonuses, +25% strength in Plains, Semidesert, Desert, starts with Mobility and Desert Adaptation
@@ -17,7 +17,7 @@ CIVILIZATIONS
 	* Unique Power: Mining: +3 commerce from Mines on resources
 	* Unique Historical Victory:
 		* Control 18 Mine resources by 1900 AD
-		* Have 30 level four gunpowder units by 1940 AD
+		* Create three Great Generals and gift 30 non-obsolete military units in Europe or North America by 1940 AD
 		* Be the first to discover five Global era technologies and have twelve Forest Reserves and eight Marine Reserves by 2000 AD
 
 BUGFIXES

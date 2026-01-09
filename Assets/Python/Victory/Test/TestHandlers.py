@@ -556,6 +556,25 @@ class TestEventHandlerRegistryFunctions(ExtendedTestCase):
 		onTribute((1, self.iPlayer))
 		self.assertEqual(self.argument, (self.goal, self.iPlayer))
 	
+	def test_unit_gifted(self):
+		onUnitGifted = self.get("unitGifted", self.capture)
+		
+		our_plot = plot(20, 20)
+		their_plot = plot(25, 25)
+		
+		our_unit = makeUnit(0, iSwordsman, our_plot)
+		their_unit = makeUnit(0, iSwordsman, their_plot)
+		
+		try:
+			onUnitGifted((their_unit, 1, their_plot))
+			self.assertEqual(self.argument, None)
+			
+			onUnitGifted((our_unit, 0, our_plot))
+			self.assertEqual(self.argument, (self.goal, our_unit, our_plot))
+		finally:
+			our_unit.kill(False, -1)
+			their_unit.kill(False, -1)
+	
 	def test_unit_pillage(self):
 		onUnitPillage = self.get("unitPillage", self.accumulate)
 		

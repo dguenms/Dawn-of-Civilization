@@ -301,6 +301,13 @@ class EventHandlerRegistry(object):
 		
 		return tribute
 	
+	def unitGifted(self, goal, applicable, func):
+		def unitGifted((unit, iPlayer, plot)):
+			if applicable(goal, iPlayer):
+				func(goal, unit, plot)
+		
+		return unitGifted
+	
 	def unitPillage(self, goal, applicable, func):
 		def unitPillage((unit, iImprovement, iRoute, iPlayer, iGold)):
 			if applicable(goal, iPlayer):

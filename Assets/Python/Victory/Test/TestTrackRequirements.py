@@ -214,6 +214,130 @@ class TestAreaReligionSpreadCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, False)
 
 
+class TestAreaUnitGiftedCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.tile = (10, 10)
+		self.plot = plot(self.tile)
+		self.area = AreaArgumentFactory().of([self.tile]).named("Test Area")
+		self.requirement = AreaUnitGiftedCount(self.area, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+		
+		self.city = TestCities.one()
+		self.city.setHasRealBuilding(iPalace, True)
+		self.city.plot().setBonusType(iIron)
+		
+		self.inside_unit = makeUnit(0, iArcher, self.tile)
+		self.outside_unit = makeUnit(0, iArcher, (20, 20))
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+		
+		self.inside_unit.kill(False, -1)
+		self.outside_unit.kill(False, -1)
+		
+		self.city.plot().setBonusType(-1)
+		self.city.kill()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "AreaUnitGiftedCount(Test Area, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "AreaUnitGiftedCount(Test Area, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two non-obsolete military units in Test Area")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {"Test Area": plots.of([self.tile])})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+	
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_insufficient(self):
+		events.fireEvent("unitGifted", self.inside_unit, 0, self.plot)
+			
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 1 / 2")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_sufficient(self):
+		for _ in range(2):
+			events.fireEvent("unitGifted", self.inside_unit, 0, self.plot)
+			
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 2)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Units gifted in Test Area: 2 / 2")
+		self.assertEqual(self.goal.checked, True)
+	
+	def test_outside(self):
+		for _ in range(2):
+			events.fireEvent("unitGifted", self.outside_unit, 0, plot(self.outside_unit))
+		
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 0 / 2")
+		self.assertEqual(self.goal.checked, False)
+	
+	def test_different_owner(self):
+		unit = makeUnit(1, iArcher, self.plot)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("unitGifted", unit, 1, self.plot)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 0 / 2")
+			self.assertEqual(self.goal.checked, False)
+		finally:
+			unit.kill(-1, False)
+	
+	def test_civilian(self):
+		unit = makeUnit(0, iWorker, self.plot)
+		
+		try:
+			for _ in range(2):
+				events.fireEvent("unitGifted", unit, 0, self.plot)
+			
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 0 / 2")
+		finally:
+			unit.kill(-1, False)
+	
+	def test_obsolete(self):
+		team(0).setHasTech(iBloomery, True, 0, True, False)
+		team(0).setHasTech(iMachinery, True, 0, True, False)
+		
+		try:
+			self.assertEqual(self.city.canTrain(iCrossbowman, False, False), True)
+			
+			for _ in range(2):
+				events.fireEvent("unitGifted", self.inside_unit, 0, self.plot)
+				
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Units gifted in Test Area: 0 / 2")
+		finally:
+			team(0).setHasTech(iBloomery, False, 0, True, False)
+			team(0).setHasTech(iMachinery, False, 0, True, False)
+	
+	def test_not_checked_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, False)
+
+
 class TestAcquiredCities(ExtendedTestCase):
 
 	def setUp(self):
@@ -3832,6 +3956,7 @@ test_cases = [
 	TestAreaBlockadeGold,
 	TestAreaReligionSpreadCount,
 	TestAcquiredCities,
+	TestAreaUnitGiftedCount,
 	TestBrokeredPeace,
 	TestCelebrateTurns,
 	TestCityCaptureGold,
