@@ -16855,6 +16855,13 @@ name_translations = {
 		iSpanish: "Harbin",
 		iVietnamese: "Cap Nhi Tan",
 	},
+	"Linhuangfu": {
+		iChinese: (
+			translate("Lindong", iAfter=iRenaissance),
+			"Shangjing",
+		),
+		iManchu: _,
+	},
 	"Shangyang": {
 		iChinese: (
 			translate("Sanmenxia", iAfter=iMedieval),
