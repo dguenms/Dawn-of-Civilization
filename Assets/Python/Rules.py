@@ -180,7 +180,7 @@ def manchuBannermanAbility(winningUnit, losingUnit):
 		if is_minor(iLoser):
 			return
 		
-		if player(iLoser).getPower() < player(iWinner).getPower():
+		if player(iWinner).getPower() < player(iLoser).getPower():
 			losingUnit.setDamage(losingUnit.maxHitPoints() * 8 / 10, iWinner)
 			
 			capturedUnit = makeUnit(iWinner, losingUnit.getUnitType(), winningUnit)
