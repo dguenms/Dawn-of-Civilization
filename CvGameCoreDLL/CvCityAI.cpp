@@ -207,6 +207,12 @@ void CvCityAI::AI_assignWorkingPlots()
 		return;
 	}
 
+	// Manchu UP should be update in case happiness has changed
+	if (getCivilizationType() == MANCHU)
+	{
+		updateYield();
+	}
+
 	// remove all assigned plots if we automated
 	if (!isHuman() || isCitizensAutomated())
 	{

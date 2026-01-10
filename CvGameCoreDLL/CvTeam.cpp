@@ -1242,6 +1242,12 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 			if ((GET_PLAYER((PlayerTypes)iI).getTeam() == getID()) || (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam))
 			{
 				GET_PLAYER((PlayerTypes)iI).updatePlunder(1, false);
+				
+				// Leoreth: Manchu UP yields require peace
+				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MANCHU)
+				{
+					GET_PLAYER((PlayerTypes)iI).updateCityPlotYield();
+				}
 			}
 		}
 
@@ -1675,6 +1681,12 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 			if ((GET_PLAYER((PlayerTypes)iI).getTeam() == getID()) || (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam))
 			{
 				GET_PLAYER((PlayerTypes)iI).updatePlunder(1, false);
+
+				// Leoreth: Manchu UP yields require peace
+				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MANCHU)
+				{
+					GET_PLAYER((PlayerTypes)iI).updateCityPlotYield();
+				}
 			}
 		}
 
