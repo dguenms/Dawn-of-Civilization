@@ -7689,6 +7689,11 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 		iPrice /= 100;
 	}
 
+	if (kUnit.getDomainType() == DOMAIN_SEA)
+	{
+		iPrice *= 2;
+	}
+
 	if (!isHuman() && !isBarbarian())
 	{
 		iPrice *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIUnitUpgradePercent();
