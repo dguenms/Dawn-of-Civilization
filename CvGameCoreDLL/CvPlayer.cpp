@@ -5881,7 +5881,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 			}
 		}
 
-		if (isCivAlive(AUSTRALIA))
+		if (getCivilizationType() != AUSTRALIA && isCivAlive(AUSTRALIA))
 		{
 			if (pPlot->getRegionID() == REGION_AUSTRALIA)
 			{
