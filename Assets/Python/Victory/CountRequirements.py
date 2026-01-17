@@ -5,6 +5,60 @@ from Civics import isCommunist
 from Arguments import base_building
 
 
+# First Buddhist URV goal
+class AnyCitySpecialistCount(ThresholdRequirement):
+	
+	TYPES = (SPECIALIST, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ANY_CITY_SPECIALIST_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ANY_CITY_SPECIALIST_COUNT"
+	
+	def __init__(self, iSpecialist, iRequired, **options):
+		ThresholdRequirement.__init__(self, iSpecialist, iRequired, **options)
+		
+		self.iSpecialist = iSpecialist
+		self.iRequired = iRequired
+	
+	def city_value(self, city):
+		if isinstance(self.iSpecialist, Aggregate):
+			return self.iSpecialist.evaluate(city.getFreeSpecialistCount)
+		
+		return city.getFreeSpecialistCount(self.iSpecialist)
+	
+	def best_city(self, evaluator):
+		return cities.all().where(lambda city: city.getOwner() in evaluator).maximum(self.city_value)
+	
+	def evaluate(self, evaluator):
+		city = self.best_city(evaluator)
+		if not city:
+			return 0
+		
+		return self.city_value(city)
+	
+	def get_description(self):
+		return Requirement.get_description(self, bPlural=self.bPlural)
+	
+	def progress(self, evaluator, **options):
+		city = self.best_city(evaluator)
+		if not city:
+			return "%s %s" % (self.indicator(evaluator), text("TXT_KEY_VICTORY_NO_CITY"))
+		
+		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
+
+
+# Second Masryeen UHV goal
+class AreaPopulationCount(ThresholdRequirement):
+	
+	TYPES = (AREA, COUNT)
+	
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_POPULATION_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_POPULATION_COUNT"
+	
+	def value(self, iPlayer, area):
+		return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
+
+
 # Second Ethiopian UHV goal
 # Third Holy Roman UHV goal
 # Third Russian UHV goal
@@ -148,48 +202,6 @@ class BuildingCount(ThresholdRequirement):
 			return "%s %s" % (self.indicator(evaluator), capitalize(BUILDING.format(self.iBuilding)))
 		
 		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, capitalize(BUILDING.format(self.iBuilding, bPlural=True))), self.progress_value(evaluator))
-
-
-# First Buddhist URV goal
-class AnyCitySpecialistCount(ThresholdRequirement):
-	
-	TYPES = (SPECIALIST, COUNT)
-	
-	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_SETTLE"
-	DESC_KEY = "TXT_KEY_VICTORY_DESC_ANY_CITY_SPECIALIST_COUNT"
-	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ANY_CITY_SPECIALIST_COUNT"
-	
-	def __init__(self, iSpecialist, iRequired, **options):
-		ThresholdRequirement.__init__(self, iSpecialist, iRequired, **options)
-		
-		self.iSpecialist = iSpecialist
-		self.iRequired = iRequired
-	
-	def city_value(self, city):
-		if isinstance(self.iSpecialist, Aggregate):
-			return self.iSpecialist.evaluate(city.getFreeSpecialistCount)
-		
-		return city.getFreeSpecialistCount(self.iSpecialist)
-	
-	def best_city(self, evaluator):
-		return cities.all().where(lambda city: city.getOwner() in evaluator).maximum(self.city_value)
-	
-	def evaluate(self, evaluator):
-		city = self.best_city(evaluator)
-		if not city:
-			return 0
-		
-		return self.city_value(city)
-	
-	def get_description(self):
-		return Requirement.get_description(self, bPlural=self.bPlural)
-	
-	def progress(self, evaluator, **options):
-		city = self.best_city(evaluator)
-		if not city:
-			return "%s %s" % (self.indicator(evaluator), text("TXT_KEY_VICTORY_NO_CITY"))
-		
-		return "%s %s: %s" % (self.indicator(evaluator), text(self.PROGR_KEY, city.getName(), *self.format_parameters(bPlural=self.bPlural, **options)), self.progress_value(evaluator))
 
 
 # Second Babylonian UHV goal

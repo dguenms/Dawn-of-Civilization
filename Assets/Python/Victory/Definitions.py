@@ -39,6 +39,7 @@ CitySpecialistCount = GoalDefinition(req.CitySpecialistCount)
 
 ### COUNT REQUIREMENTS ###
 
+AreaPopulationCount = GoalDefinition(req.AreaPopulationCount)
 AnyCitySpecialistCount = GoalDefinition(req.AnyCitySpecialistCount)
 AttitudeCount = GoalDefinition(req.AttitudeCount)
 AveragePopulation = GoalDefinition(req.AveragePopulation)
