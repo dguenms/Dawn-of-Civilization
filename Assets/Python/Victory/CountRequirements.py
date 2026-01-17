@@ -127,7 +127,8 @@ class BuildingCount(ThresholdRequirement):
 		self.handle("buildingBuilt", self.check_building_built)
 	
 	def check_building_built(self, goal, city, iBuilding):
-		if base_building(iBuilding) == base_building(self.iBuilding):
+		iExpectedBuilding = isinstance(self.iBuilding, DeferredArgument) and self.iBuilding.get(city.getOwner()) or self.iBuilding
+		if base_building(iBuilding) == base_building(iExpectedBuilding):
 			goal.check()
 	
 	def value(self, iPlayer, iBuilding):
