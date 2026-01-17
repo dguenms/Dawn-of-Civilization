@@ -115,6 +115,7 @@ class CityPopulation(CityRequirement):
 # Third Tibetan UHV goal
 # Second Moorish UHV goal
 # Third Holy Roman UHV goal
+# First Masryeen UHV goal
 # First Dutch UHV goal
 # First German UHV goal
 # Second Islamic URV goal

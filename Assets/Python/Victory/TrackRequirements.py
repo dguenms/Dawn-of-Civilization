@@ -914,6 +914,7 @@ class TradeMissionCount(TrackRequirement):
 
 
 # First Malay UHV goal
+# Second Masryeen UHV goal
 # Third Portuguese UHV goal
 class TradeRouteCommerce(TrackRequirement):
 

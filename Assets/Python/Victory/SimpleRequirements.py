@@ -169,6 +169,7 @@ class CompleteEra(ThresholdRequirement):
 # First Norse UHV goal
 # Second Arabian UHV goal
 # Third Burmese UHV goal
+# Third Masryeen UHV goal
 # First Mongol UHV goal
 # Third Aztec UHV goal
 # Second Ottoman UHV goal

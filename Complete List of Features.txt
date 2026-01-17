@@ -831,6 +831,17 @@ CIVILISATIONS
 		* Import a cumulative of 100 happiness resources by 1300 AD
 		* Reveal 35% of the world's coastlines by 1400 AD
 		* Have 25 trade routes by 1500 AD
+* Misr
+	* Birth: 969 AD
+	* Coat of Arms: Triple Moons
+	* Leaders: Saladin, Baibars, Muhammad Ali, Nasser
+	* Unique Unit: Mamluk (Lancer): starts with Skirmish and Formation
+	* Unique Building: Souk (Market): +50% foreign trade route yield
+	* Unique Power: Ghulams: additional commerce on Farms and additional experience for hurried units when running Slavery
+	* Unique Historical Victory:
+		* Control three shrines and settle two Great Prophets in Cairo by 1250 AD
+		* Have a population of 50 in cities along the Nile and generate 5000 commerce from city trade routes by 1500 AD
+		* Discover seven Industrial technologies and control three cities in North Africa, Sudan, Arabia, Syria, Anatolia and Greece in 1840 AD
 * Poland
 	* Birth: 1025 AD
 	* Coat of Arms: Eagle, red/white

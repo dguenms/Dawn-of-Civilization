@@ -149,6 +149,7 @@ class AveragePopulation(ThresholdRequirement):
 # Third Javanese UHV goal
 # First Holy Roman UHV goal
 # Second Vietnamese UHV goal
+# First Masryeen UHV goal
 # Third Polish UHV goal
 # First Inca UHV goal
 # First Mughal UHV goal
