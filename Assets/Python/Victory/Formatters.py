@@ -104,6 +104,11 @@ class CombinedDescription(Description):
 def generate_description(entries, key, arguments, suffixes, required):
 	description = combine_entries(entries)
 	
+	if is_identical_threshold_requirement(entries):
+		first = entries[0]
+		description = WrappedDescription(entries[0].DESC_KEY, combine_descriptions([Description(entry.format_parameters(bPlural=True)[0]) for entry in entries]), first.format_parameters(bPlural=True)[-1])
+		print "DESCRIPTION: key=%s, wrapped=%s, arguments=%s" % (description.key, description.description, description.arguments)
+	
 	if required:
 		description = WrappedDescription("TXT_KEY_VICTORY_REQUIRED_OUT_OF", description, COUNT.format(required))
 	
@@ -114,6 +119,30 @@ def generate_description(entries, key, arguments, suffixes, required):
 		description = WrappedDescription("TXT_KEY_VICTORY_SUFFIX", description, suffix)
 	
 	return description
+
+
+def is_identical_threshold_requirement(entries):
+	if len(entries) < 2:
+		return False
+	
+	first = entries[0]
+	
+	if not hasattr(first.__class__, "TYPES"):
+		return False
+	
+	if len(first.TYPES) != 2:
+		return False
+	
+	if first.TYPES[-1] != COUNT:
+		return False
+	
+	if first.parameters[-1] == 1:
+		return False
+	
+	if first.TYPES[0] == ERA:
+		return False
+	
+	return all(entry.parameters[-1] == first.parameters[-1] for entry in entries)
 
 
 def combine_entries(entries):
