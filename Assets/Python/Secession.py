@@ -123,11 +123,7 @@ def getCityClaim(city):
 		return civ(iCultureClaim)
 	
 	# claim based on war targets: needs to be winning the war based on war success, not available to human player
-	closest = closestCity(city, same_continent=True)
-	warClaims = possibleClaims.without(active()).where(lambda p: team(p).isAtWar(team(iOwner).getID()) and plot(city).getPlayerWarValue(p) >= 4)
-	warClaims = warClaims.where(lambda p: team(p).AI_getAtWarCounter(player(iOwner).getTeam()) >= turns(10) and team(p).AI_getWarSuccess(player(iOwner).getTeam()) - team(iOwner).AI_getWarSuccess(player(p).getTeam()) >= (autoplay() and 0 or team(p).AI_getAtWarCounter(player(iOwner).getTeam())))
-	warClaims = warClaims.where(lambda p: not closest or closest.getOwner() == p or not team(iOwner).isAtWar(closest.getOwner()))
-	warClaims = warClaims.where(lambda p: closestCity(city, owner=p, same_continent=True) and distance(city, closestCity(city, owner=p, same_continent=True)) <= 12)
+	warClaims = possibleClaims.where(lambda p: hasWarClaim(p, city))
 	if warClaims:
 		iWarClaim = warClaims.maximum(lambda p: team(p).AI_getWarSuccess(team(iOwner).getID()) - team(iOwner).AI_getWarSuccess(team(p).getID()))
 		return civ(iWarClaim)
@@ -142,6 +138,43 @@ def getCityClaim(city):
 		return iIndependent
 	
 	return -1
+
+def hasWarClaim(iPlayer, city):
+	pPlayer = player(iPlayer)
+	tPlayer = team(pPlayer.getTeam())
+	
+	iOwner = city.getOwner()
+	pOwner = player(iOwner)
+	tOwner = team(pOwner.getTeam())
+	
+	if pPlayer.isHuman():
+		return False
+	
+	if not tPlayer.isAtWar(pOwner.getTeam()):
+		return False
+	
+	if plot(city).getPlayerWarValue(iPlayer) < 4:
+		return False
+	
+	if tPlayer.AI_getAtWarCounter(pOwner.getTeam()) < turns(10):
+		return False
+	
+	if tPlayer.AI_getWarSuccess(pOwner.getTeam()) - tOwner.AI_getWarSuccess(pPlayer.getTeam()) < (autoplay() and 0 or tPlayer.AI_getAtWarCounter(pOwner.getTeam())):
+		return False
+	
+	closest = closestCity(city, owner=iPlayer)
+	if not closest:
+		return False
+	
+	# if someone else owns a closer city and are also at war, leave it to them
+	if closest.getOwner() != iPlayer and tOwner.isAtWar(closest.getOwner()):
+		return False
+	
+
+	if distance(city, closest) > 12:
+		return False
+		
+	return True
 		
 def secedeCity(city, iNewOwner, bRelocate, iArmyPercent):
 	if not city: 
