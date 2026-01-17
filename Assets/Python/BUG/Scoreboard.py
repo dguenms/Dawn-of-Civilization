@@ -518,7 +518,7 @@ class TeamScores:
 		return self._team
 		
 	def rank(self):
-		if self.isVassal() and team().canContact(self._team.getID()):
+		if self.isVassal() and team().isHasMet(self._team.getID()):
 			return self._master.rank()
 		else:
 			return self._rank
