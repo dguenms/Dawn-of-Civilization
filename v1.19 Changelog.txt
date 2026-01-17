@@ -40,5 +40,11 @@ CIVILIZATIONS
 		* Create three Great Generals and gift 30 non-obsolete military units in Europe or North America by 1940 AD
 		* Be the first to discover five Global era technologies and have twelve Forest Reserves and eight Marine Reserves by 2000 AD
 
+BUILDINGS
+* Granary: +1 health
+* Bath: +1 health
+* Sewer: +1 health
+* Hospital: +1 health
+
 BUGFIXES
 * Fixed calculation of unit experience modifier

@@ -1230,7 +1230,7 @@ BUILDINGS
     * Monument (Ceremony): +2 culture
     * Weaver (Leverage): +1 culture, +1 happiness from Sheep, Cotton, Silk, Dye
 	* Jeweller (Aesthetics): +2 culture, +1 artist slot, +1 happiness from Gems, Pearls, Amber, Jade
-    * Bath (Medicine): +2 health, +2 culture
+    * Bath (Medicine): +3 health, +2 culture
 	* Grocer (Guilds): +1 health from Citrus, Olives, Dates, Banana, Spices
     * Pharmacy (Alchemy): +1 health from Incense, Opium, Wine, +1 scientist slot
     * Coffeehouse (Patronage): +1 happiness from Cocoa, Tea, Coffee, Tobacco
@@ -1238,7 +1238,7 @@ BUILDINGS
     * Wharf (Compass): +50% trade route yield
     * Constabulary (Judiciary): -25% war weariness, +25% espionage, +1 happiness per 20% espionage rate
     * Civic Square (Statecraft): +25% culture, +25% great people birth, +1 statesman slot
-    * Sewer (Urban Planning): +2 health
+    * Sewer (Urban Planning): +3 health
     * Star Fort (Urban Planning): -50% bombard damage, +2 experience for Siege units
     * Estate (Horticulture): +25% culture, +1 artist slot, +1 statesman slot, +1 happiness per 20% culture rate
     * Warehouse (Measurement): +25% gold, +1 merchant slot
@@ -1262,7 +1262,7 @@ BUILDINGS
     * Vertical Farm (Biotechnology): +10% food with power
     * Automated Factory (Automation, Factory): requires Rare Earths, +25% production with power, +1 engineer slot, +1 unhealth
 * 22 existing buildings have been changed:
-    * Granary (Pottery): retains 25% food after growth, +1 health, +1 health with Salt
+    * Granary (Pottery): retains 25% food after growth, +1 health, +1 health from Salt
     * Theatre (Literature): +25% culture, +1 artist slot
     * Aqueduct (Cement): retains 25% food after growth
     * Lighthouse (Navigation): +1 trade route
@@ -1276,7 +1276,7 @@ BUILDINGS
     * Courthouse (Social Contract): -25% maintenance, +1 statesman slot
     * Laboratory (Electricity): +25% research with power, +1 scientist slot, +50% space production
     * Industrial Park (Assembly Line): +10% production with Aluminum, Oil, Rubber, +1 unhealth, +1 unhealth from Aluminum, Oil, Rubber, +2 engineer slots
-    * Hospital (Microbiology): +3 health, +10% heal rate
+    * Hospital (Microbiology): +4 health, +10% heal rate
     * Supermarket (Consumerism): +10% food with power
     * Public Transport (Infrastructure): +1 health, +2 health with Oil
     * Broadcast Tower (Radio): +50% culture with power, +1 artist slot, +1 happiness from Hit Singles, +1 happiness per 10% culture
