@@ -790,6 +790,12 @@ class Birth(object):
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
+		if self.iCiv == iMisr:
+			if player(iEgypt).isExisting():
+				return False
+			if stability(iArabia) >= iStabilityStable:
+				return False
+		
 		# Italy requires Rome to be dead and sufficient minor cities in Italy
 		if self.iCiv == iItaly:
 			if player(iRome).isExisting():
