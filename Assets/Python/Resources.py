@@ -38,6 +38,9 @@ def setup():
 	global dRemovedFeatures
 	dRemovedFeatures = TileDict(dRemovedFeaturesDict, year)
 	
+	global dTerrains
+	dTerrains = TileDict(dTerrainsDict, year)
+	
 	global dConquerorPlotTypes
 	dConquerorPlotTypes = TileDict(dConquerorPlotTypesDict)
 	
@@ -305,6 +308,9 @@ dRemovedResourcesDict = {
 }
 
 dFeaturesDict = {
+	(78, 45)  : (900,  iFloodPlains), # Egypt
+	(79, 45)  : (900,  iFloodPlains), # Egypt
+	(80, 44)  : (900,  iFloodPlains), # Egypt
 	(66, 57)  : (1100, iFloodPlains), # Lombardy
 	(68, 57)  : (1100, iFloodPlains), # Lombardy
 	(67, 55)  : (1100, iFloodPlains), # Tuscany
@@ -336,6 +342,11 @@ dRemovedFeaturesDict = {
 	(81, 70)  : 1700, # Ingria
 	(80, 69)  : 1700, # Ingria
 	(59, 65)  : 1750, # East Anglia
+}
+
+dTerrainsDict = {
+	(78, 45) : (900, iSemidesert), # Egypt
+	(79, 45) : (900, iSemidesert), # Egypt
 }
 
 dConquerorPlotTypesDict = {
@@ -392,6 +403,12 @@ def removeResourcesOnCollapse(iPlayer):
 def removeColombianJungle(iPlayer):
 	if civ(iPlayer) == iColombia:
 		plot(28, 31).setFeatureType(-1, 0)
+
+
+@handler("BeginGameTurn")
+def createTerrains():
+	for tile, iTerrain in dTerrains[game.getGameTurn()]:
+		plot(tile).setTerrainType(iTerrain, True, True)
 
 
 @handler("BeginGameTurn")
