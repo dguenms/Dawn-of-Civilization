@@ -448,6 +448,14 @@ lCivilizations = [
 		techs=techs.column(6).including(iGuilds, iAlchemy)
 	),
 	Civilization(
+		iMisr,
+		iGold=250,
+		iAdvancedStartPoints=150,
+		iStateReligion=iIslam,
+		lCivics=[iMonarchy, iCitizenship, iSlavery, iMerchantTrade, iClergy, iThalassocracy],
+		techs=techs.column(6).including(iGuilds, iAlchemy, iTheology)
+	),
+	Civilization(
 		iPoland,
 		iGold=100,
 		iAdvancedStartPoints=80,
@@ -925,6 +933,19 @@ dStartingUnits = CivDict({
 		iExploreSea: 1,
 		iSettleSea: 1,
 		iFerry: 1,
+		iMissionary: 1,
+	},
+	iMisr: {
+		iSettle: 4,
+		iWork: 3,
+		iWorkerSea: 2,
+		iDefend: 1,
+		iAttack: 3,
+		iCounter: 3,
+		iShock: 2,
+		iFerry: 2,
+		iEscort: 3,
+		iExplore: 2,
 		iMissionary: 1,
 	},
 	iPoland: {
@@ -1534,6 +1555,10 @@ def createSpecificUnits(iPlayer, tile):
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
 			makeUnits(iPlayer, iLancer, tile, 2)
+	elif iCiv == iMisr:
+		redSeaTile = plots.region(rRedSea).where(lambda p: not p.isOwned()).closest(tile)
+		if redSeaTile:
+			makeUnit(iPlayer, iCog, redSeaTile)
 	elif iCiv == iInca:
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)

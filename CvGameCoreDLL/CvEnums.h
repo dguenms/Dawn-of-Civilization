@@ -1232,8 +1232,9 @@ enum CivilizationTypes		// Exposed to Python
 	MANCHU,
 	MAYA,
 	MEXICO,
-	MONGOLS,
+	MISR,
 
+	MONGOLS,
 	MOORS,
 	MUGHALS,
 	NATIVE_AMERICANS,
@@ -1243,8 +1244,8 @@ enum CivilizationTypes		// Exposed to Python
 	OTTOMANS,
 	PERSIA,
 	POLAND,
-	POLYNESIA,
 
+	POLYNESIA,
 	PORTUGAL,
 	ROME,
 	RUS,
@@ -1254,8 +1255,8 @@ enum CivilizationTypes		// Exposed to Python
 	SWAHILI,
 	SWEDEN,
 	THAILAND,
-	TIBET,
 
+	TIBET,
 	TOLTECS,
 	TURKS,
 	VIETNAM,
@@ -1264,6 +1265,7 @@ enum CivilizationTypes		// Exposed to Python
 	INDEPENDENT2,
 	NATIVE,
 	MINOR_CIV,
+
 	BARBARIAN_CIV,
 
 	NUM_TOTAL_CIVILIZATIONS,
@@ -1277,19 +1279,19 @@ enum LeaderHeadTypes			// Exposed to Python
 	LEADER_NATIVE,
 	LEADER_INDEPENDENT,
 
-	RAMESSES,
+	DJOSER,
 	HATSHEPSUT,
-	BAIBARS,
-	NASSER,
+	RAMESSES,
+	PTOLEMY,
 
-	GILGAMESH,
+	SARGON,
 	HAMMURABI,
 
 	WENT_ANTU,
 
 	ASHURBANIPAL,
 
-	QIN_SHI_HUANG,
+	WU,
 	TAIZONG,
 	HONGWU,
 	MAO,
@@ -1365,7 +1367,6 @@ enum LeaderHeadTypes			// Exposed to Python
 	TAMERLANE,
 
 	HARUN,
-	SALADIN,
 
 	SONGTSEN,
 	LOBSANG_GYATSO,
@@ -1397,6 +1398,11 @@ enum LeaderHeadTypes			// Exposed to Python
 	LE_LOI,
 
 	SULEIMAN_IBN_DAWUD,
+
+	SALADIN,
+	BAIBARS,
+	MUHAMMAD_ALI,
+	NASSER,
 
 	CASIMIR,
 	SOBIESKI,
@@ -1615,7 +1621,7 @@ enum BuildingClassTypes				// Exposed to Python
 	NO_BUILDINGCLASS = -1,
 };
 
-#define BEGIN_WONDERS				(187) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(188) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+13) // increment if a national wonder is added
 
 enum BuildingTypes						// Exposed to Python

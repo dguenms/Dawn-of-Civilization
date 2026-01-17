@@ -534,5 +534,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_BLUE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MIDDLE_OCHRE_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_VERY_DARK_OCHRE</Type> <!-- Misr -->
+			<ColorTypePrimary>COLOR_PLAYER_VERY_DARK_OCHRE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_VERY_DARK_OCHRE</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

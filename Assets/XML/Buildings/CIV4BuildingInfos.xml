@@ -2310,6 +2310,40 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
+			<Type>BUILDING_MASRYEEN_SOUK</Type>
+			<Description>TXT_KEY_BUILDING_MASRYEEN_SOUK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MASRYEEN_SOUK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MASRYEEN_SOUK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MASRYEEN_SOUK</ArtDefineTag>
+			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
+			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
 			<Type>BUILDING_THAI_FLOATING_MARKET</Type>
 			<Description>TXT_KEY_BUILDING_THAI_FLOATING_MARKET</Description>
 			<Civilopedia>TXT_KEY_BUILDING_THAI_FLOATING_MARKET_PEDIA</Civilopedia>

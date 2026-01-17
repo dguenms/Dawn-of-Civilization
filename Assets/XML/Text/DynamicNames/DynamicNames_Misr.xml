@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Swahili -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_DESC</Tag>
+		<English>The Masryeen</English>
+		<French>The Masryeen</French>
+		<German>The Masryeen</German>
+		<Italian>The Masryeen</Italian>
+		<Spanish>The Masryeen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_PEOPLES</Tag>
+		<English>Masryeen Peoples</English>
+		<French>Masryeen Peoples</French>
+		<German>Masryeen Peoples</German>
+		<Italian>Masryeen Peoples</Italian>
+		<Spanish>Masryeen Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_ADJECTIVE</Tag>
+		<English>Egyptian</English>
+		<French>Egyptian</French>
+		<German>Egyptian</German>
+		<Italian>Egyptian</Italian>
+		<Spanish>Egyptian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_SHORT_DESC</Tag>
+		<English>Egypt</English>
+		<French>Egypt</French>
+		<German>Egypt</German>
+		<Italian>Egypt</Italian>
+		<Spanish>Egypt</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_DEFAULT</Tag>
+		<English>Sultanate of %s1</English>
+		<French>Sultanate of %s1</French>
+		<German>Sultanate of %s1</German>
+		<Italian>Sultanate of %s1</Italian>
+		<Spanish>Sultanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_REPUBLIC</Tag>
+		<English>Arab Republic of %s1</English>
+		<French>Arab Republic of %s1</French>
+		<German>Arab Republic of %s1</German>
+		<Italian>Arab Republic of %s1</Italian>
+		<Spanish>Arab Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_FASCIST</Tag>
+		<English>Officers' %s1</English>
+		<French>
+			<Text>%s1 des Officiers</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s1 der Offiziere:%s1 der Offiziere:%s1 der Offiziere</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 degli Ufficiali</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 de los Oficiales</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_UNITED_ARAB_STATES</Tag>
+		<English>United Arab States</English>
+		<French>United Arab States</French>
+		<German>United Arab States</German>
+		<Italian>United Arab States</Italian>
+		<Spanish>United Arab States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_UNITED_ARAB_REPUBLIC</Tag>
+		<English>United Arab Republic</English>
+		<French>United Arab Republic</French>
+		<German>United Arab Republic</German>
+		<Italian>United Arab Republic</Italian>
+		<Spanish>United Arab Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_MAMLUK</Tag>
+		<English>Mamluk</English>
+		<French>
+			<Text>mamelouk:mamelouke:mamelouks:mameloukes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Mamluk</German>
+		<Italian>Mamluk</Italian>
+		<Spanish>Mamluk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_FATIMID</Tag>
+		<English>Fatimid</English>
+		<French>
+			<Text>fatimide:fatimide:fatimides:fatimides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Fatimid</German>
+		<Italian>Fatimid</Italian>
+		<Spanish>Fatimid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_AYYUBID</Tag>
+		<English>Ayyubid</English>
+		<French>
+			<Text>ayyoubide:ayyoubide:ayyoubides:ayyoubides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Ayyubid</German>
+		<Italian>Ayyubid</Italian>
+		<Spanish>Ayyubid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISR_COPTIC</Tag>
+		<English>Coptic</English>
+		<French>
+			<Text>copte</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Coptic</German>
+		<Italian>Coptic</Italian>
+		<Spanish>Coptic</Spanish>
+	</TEXT>
+</Civ4GameText>

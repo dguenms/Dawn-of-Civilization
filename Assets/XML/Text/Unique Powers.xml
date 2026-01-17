@@ -722,6 +722,22 @@
 		<Spanish>Converts +50% [ICON_PRODUCTION] to [ICON_RESEARCH]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MIS_TITLE</Tag>
+		<English>The Power of Ghulams:</English>
+		<French>The Power of Ghulams:</French>
+		<German>The Power of Ghulams:</German>
+		<Italian>The Power of Ghulams:</Italian>
+		<Spanish>The Power of Ghulams:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MIS</Tag>
+		<English>Additional [ICON_COMMERCE] on Farms and additional experience for hurried units with Slavery</English>
+		<French>Additional [ICON_COMMERCE] on Farms and additional experience for hurried units with Slavery</French>
+		<German>Additional [ICON_COMMERCE] on Farms and additional experience for hurried units with Slavery</German>
+		<Italian>Additional [ICON_COMMERCE] on Farms and additional experience for hurried units with Slavery</Italian>
+		<Spanish>Additional [ICON_COMMERCE] on Farms and additional experience for hurried units with Slavery</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MON_TITLE</Tag>
 		<English>The Power of Terror:</English>
 		<French>Le pouvoir de la terreur :</French>

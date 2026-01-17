@@ -904,8 +904,8 @@ public:
 	void changeUnitProduction(UnitTypes eIndex, int iChange);								// Exposed to Python
 
 	// Leoreth
-	bool isUnitHurried(UnitTypes eIndex) const;
-	void setUnitHurried(UnitTypes eIndex, bool bNewValue);
+	HurryTypes getUnitHurry(UnitClassTypes eUnitClass) const;
+	void setUnitHurry(UnitClassTypes eUnitClass, HurryTypes eHurry);
 
 	int getUnitProductionTime(UnitTypes eIndex) const;														// Exposed to Python
 	void setUnitProductionTime(UnitTypes eIndex, int iNewValue);						// Exposed to Python
@@ -1503,10 +1503,12 @@ protected:
 	bool* m_pabWorkingPlot;
 	bool* m_pabHasReligion;
 	bool* m_pabHasCorporation;
-	bool* m_pabIsUnitHurried; // Leoreth
 
 	// Leoreth
 	int** m_ppaiBonusYield;
+
+	// Leoreth
+	std::vector< std::pair < UnitClassTypes, HurryTypes > > m_hurriedUnits;
 
 	IDInfo* m_paTradeCities;
 

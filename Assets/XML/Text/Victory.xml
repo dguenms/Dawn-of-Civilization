@@ -2900,6 +2900,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CAIRO</Tag>
+		<English>Cairo</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_CARTHAGE</Tag>
 		<English>Carthage</English>
 		<French></French>
@@ -3510,6 +3518,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SUDAN</Tag>
+		<English>Sudan</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_SYRIA</Tag>
+		<English>Syria</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_TRANSOXIANA</Tag>
 		<English>Transoxiana</English>
 		<French></French>
@@ -3601,6 +3625,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT</Tag>
 		<English>one of your Mediterranean ports</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NILE</Tag>
+		<English>cities along the Nile</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -56,6 +56,7 @@ dBaseLanguages = {
 	iRus: (iUkrainian, iRussian),
 	iVietnam: (iVietnamese, iIndian),
 	iSwahili: (iKiswahili, iArabic),
+	iMisr: (iEgyptianArabic, iArabic),
 	iPoland: (iPolish,),
 	iPortugal: (iPortuguese,),
 	iInca: (iQuechua,),

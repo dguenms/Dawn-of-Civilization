@@ -18393,6 +18393,15 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	{
 		changeDomainExperienceModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainExperienceModifier(iI) * iChange);
 	}
+
+	// Masryeen UP: +1 commerce on Farms with Slavery
+	if (getCivilizationType() == MISR)
+	{
+		if (eCivic == CIVIC_SLAVERY)
+		{
+			changeImprovementYieldChange(IMPROVEMENT_FARM, YIELD_COMMERCE, iChange);
+		}
+	}
 }
 
 void CvPlayer::showMissedMessages()

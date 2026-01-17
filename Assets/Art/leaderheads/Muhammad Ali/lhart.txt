@@ -1,0 +1,8 @@
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_OSMAN</Type>
+			<Button>Art/LeaderHeads/osman/osman.dds</Button>
+			<NIF>art/LeaderHeads/osman/Stuyvesant.nif</NIF>
+			<KFM>art/LeaderHeads/osman/Stuyvesant.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/osman/Stuyvesant.nif</NoShaderNIF>
+			<BackgroundKFM>art/Leaderheads/osman/louis_xiv_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>

@@ -101,7 +101,6 @@ CvCity::CvCity()
 	m_pabWorkingPlot = NULL;
 	m_pabHasReligion = NULL;
 	m_pabHasCorporation = NULL;
-	m_pabIsUnitHurried = NULL;
 
 	// Leoreth
 	m_ppaiBonusYield = NULL;
@@ -449,7 +448,6 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_pabWorkingPlot);
 	SAFE_DELETE_ARRAY(m_pabHasReligion);
 	SAFE_DELETE_ARRAY(m_pabHasCorporation);
-	SAFE_DELETE_ARRAY(m_pabIsUnitHurried); // Leoreth
 
 	// Leoreth
 	if (m_ppaiBonusYield != NULL)
@@ -757,14 +755,12 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_paiUnitProductionTime = new int[GC.getNumUnitInfos()];
 		m_paiGreatPeopleUnitRate = new int[GC.getNumUnitInfos()];
 		m_paiGreatPeopleUnitProgress = new int[GC.getNumUnitInfos()];
-		m_pabIsUnitHurried = new bool[GC.getNumUnitInfos()]; // Leoreth
 		for (iI = 0;iI < GC.getNumUnitInfos();iI++)
 		{
 			m_paiUnitProduction[iI] = 0;
 			m_paiUnitProductionTime[iI] = 0;
 			m_paiGreatPeopleUnitRate[iI] = 0;
 			m_paiGreatPeopleUnitProgress[iI] = 0;
-			m_pabIsUnitHurried[iI] = false; // Leoreth
 		}
 
 		FAssertMsg((0 < GC.getNumSpecialistInfos()),  "GC.getNumSpecialistInfos() is not greater than zero but an array is being allocated in CvCity::reset");
@@ -845,6 +841,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		{
 			m_paTradeCities[iI].reset();
 		}
+
+		m_hurriedUnits.clear();
 
 		m_aEventsOccured.clear();
 		m_aBuildingYieldChange.clear();
@@ -3911,9 +3909,9 @@ void CvCity::hurry(HurryTypes eHurry)
 	changeProduction(hurryProduction(eHurry));
 
 	// Leoreth: remember if a unit is being hurried to apply the mercenary promotion, includes Phoenician UP
-	if (isProductionUnit() && iHurryGold > 0 && getCivilizationType() != CARTHAGE)
+	if (isProductionUnit())
 	{
-		setUnitHurried(getProductionUnit(), true);
+		setUnitHurry((UnitClassTypes)GC.getUnitInfo(getProductionUnit()).getUnitClassType(), eHurry);
 	}
 
 	// Leoreth: amount of sacrificed population increases hurry anger
@@ -13100,20 +13098,35 @@ void CvCity::changeUnitProduction(UnitTypes eIndex, int iChange)
 }
 
 
-// Leoreth
-bool CvCity::isUnitHurried(UnitTypes eIndex) const
+HurryTypes CvCity::getUnitHurry(UnitClassTypes eUnitClass) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
-	return m_pabIsUnitHurried[eIndex];
+	for (std::vector< std::pair < UnitClassTypes, HurryTypes > >::const_iterator it = m_hurriedUnits.begin(); it != m_hurriedUnits.end(); ++it)
+	{
+		if ((*it).first == eUnitClass)
+		{
+			return (*it).second;
+		}
+	}
+
+	return NO_HURRY;
 }
 
 
-void CvCity::setUnitHurried(UnitTypes eIndex, bool bNewValue)
+void CvCity::setUnitHurry(UnitClassTypes eUnitClass, HurryTypes eHurry)
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
-	m_pabIsUnitHurried[eIndex] = bNewValue;
+	if (eHurry == NO_HURRY)
+	{
+		for (std::vector< std::pair < UnitClassTypes, HurryTypes > >::iterator it = m_hurriedUnits.begin(); it != m_hurriedUnits.end(); ++it)
+		{
+			if ((*it).first == eUnitClass)
+			{
+				m_hurriedUnits.erase(it);
+				return;
+			}
+		}
+	}
+
+	m_hurriedUnits.push_back(std::make_pair(eUnitClass, eHurry));
 }
 
 
@@ -14741,6 +14754,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 	BuildingTypes eConstructBuilding;
 	UnitTypes eTrainUnit;
 	UnitAITypes eTrainAIUnit;
+	UnitClassTypes eTrainUnitClass;
 	bool bWasFoodProduction;
 	bool bStart;
 	bool bMessage;
@@ -14793,7 +14807,9 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 		FAssertMsg(eTrainUnit != NO_UNIT, "eTrainUnit is expected to be assigned a valid unit type");
 		FAssertMsg(eTrainAIUnit != NO_UNITAI, "eTrainAIUnit is expected to be assigned a valid unit AI type");
 
-		GET_PLAYER(getOwnerINLINE()).changeUnitClassMaking(((UnitClassTypes)(GC.getUnitInfo(eTrainUnit).getUnitClassType())), -1);
+		eTrainUnitClass = (UnitClassTypes)GC.getUnitInfo(eTrainUnit).getUnitClassType();
+
+		GET_PLAYER(getOwnerINLINE()).changeUnitClassMaking(eTrainUnitClass, -1);
 
 		area()->changeNumTrainAIUnits(getOwnerINLINE(), eTrainAIUnit, -1);
 		GET_PLAYER(getOwnerINLINE()).AI_changeNumTrainAIUnits(eTrainAIUnit, -1);
@@ -14837,10 +14853,28 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			pUnit->finishMoves();
 
 			// Leoreth: if unit was hurried, apply the mercenary promotion, and reset the hurry memory
-			if (isUnitHurried(eTrainUnit))
+			HurryTypes eHurry = getUnitHurry(eTrainUnitClass);
+			if (eHurry != NO_HURRY)
 			{
-				pUnit->setHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY"), true);
-				setUnitHurried(eTrainUnit, false);
+				if (eHurry == HURRY_GOLD_UNITS)
+				{
+					// Phoenician UP: can hurry units without Mercenary promotion
+					if (getCivilizationType() != CARTHAGE)
+					{
+						pUnit->setHasPromotion(PROMOTION_MERCENARY, true);
+					}
+				}
+
+				// Masryeen UP: hurried units receive +3 experience with Slavery
+				if (getCivilizationType() == MISR && GET_PLAYER(getOwnerINLINE()).getCivics(CIVICOPTION_SOCIETY) == CIVIC_SLAVERY)
+				{
+					if (pUnit->canFight() && pUnit->getDomainType() == DOMAIN_LAND)
+					{
+						pUnit->changeExperience(3);
+					}
+				}
+
+				setUnitHurry(eTrainUnitClass, NO_HURRY);
 			}
 
 			addProductionExperience(pUnit);
@@ -16330,7 +16364,6 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_CITY_PLOTS, m_pabWorkingPlot);
 	pStream->Read(GC.getNumReligionInfos(), m_pabHasReligion);
 	pStream->Read(GC.getNumCorporationInfos(), m_pabHasCorporation);
-	pStream->Read(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
 
 	// Leoreth
 	for (int i = 0; i < GC.getNumBonusInfos(); i++)
@@ -16354,6 +16387,17 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_abYieldRankValid);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRank);
 	pStream->Read(NUM_COMMERCE_TYPES, m_abCommerceRankValid);
+
+	pStream->Read(&iNumElts);
+	m_hurriedUnits.clear();
+	for (int i = 0; i < iNumElts; ++i)
+	{
+		UnitClassTypes eUnitClass;
+		HurryTypes eHurry;
+		pStream->Read((int*)&eUnitClass);
+		pStream->Read((char*)&eHurry);
+		m_hurriedUnits.push_back(std::make_pair(eUnitClass, eHurry));
+	}
 
 	pStream->Read(&iNumElts);
 	m_aEventsOccured.clear();
@@ -16630,7 +16674,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_CITY_PLOTS, m_pabWorkingPlot);
 	pStream->Write(GC.getNumReligionInfos(), m_pabHasReligion);
 	pStream->Write(GC.getNumCorporationInfos(), m_pabHasCorporation);
-	pStream->Write(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
 
 	// Leoreth
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
@@ -16654,6 +16697,13 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_abYieldRankValid);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRank);
 	pStream->Write(NUM_COMMERCE_TYPES, m_abCommerceRankValid);
+
+	pStream->Write(m_hurriedUnits.size());
+	for (std::vector< std::pair <UnitClassTypes, HurryTypes> >::iterator it = m_hurriedUnits.begin(); it != m_hurriedUnits.end(); ++it)
+	{
+		pStream->Write((int)(*it).first);
+		pStream->Write((char)(*it).second);
+	}
 
 	pStream->Write(m_aEventsOccured.size());
 	for (std::vector<EventTypes>::iterator it = m_aEventsOccured.begin(); it != m_aEventsOccured.end(); ++it)

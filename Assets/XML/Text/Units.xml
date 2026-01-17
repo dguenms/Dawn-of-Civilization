@@ -3670,6 +3670,14 @@
 		<Spanish>[ICON_BULLET]Captures defeated units of more powerful civilizations</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_MASRYEEN_MAMLUK</Tag>
+		<English>Mamluk</English>
+		<French>Mamluk</French>
+		<German>Mamluk</German>
+		<Italian>Mamluk</Italian>
+		<Spanish>Mamluk</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

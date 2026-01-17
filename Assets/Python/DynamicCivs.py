@@ -205,7 +205,6 @@ dSpecificVassalTitles = deepdict({
 		iAmerica : "TXT_KEY_ADJECTIVE_TITLE",
 	},
 	iOttomans : {
-		iEgypt : "TXT_KEY_CIV_OTTOMAN_EGYPT",
 		iBabylonia : "TXT_KEY_CIV_OTTOMAN_BABYLONIA",
 		iPersia : "TXT_KEY_CIV_OTTOMAN_PERSIA",
 		iGreece : "TXT_KEY_CIV_OTTOMAN_GREECE",
@@ -214,6 +213,7 @@ dSpecificVassalTitles = deepdict({
 		iByzantium : "TXT_KEY_CIV_OTTOMAN_BYZANTIUM",
 		iArabia : "TXT_KEY_CIV_OTTOMAN_ARABIA",
 		iRus : "TXT_KEY_CIV_OTTOMAN_RUS",
+		iMisr : "TXT_KEY_CIV_OTTOMAN_MISR",
 	},
 	iNetherlands : {
 		iMali : "TXT_KEY_CIV_DUTCH_MALI",
@@ -456,7 +456,7 @@ dForeignNames = deepdict({
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran]
 lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iBrazil, iNorse, iSweden, iColombia]
+lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iMisr, iBrazil, iNorse, iSweden, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
@@ -567,6 +567,7 @@ dStartingLeaders = [
 	iBurma : iAnawrahta,
 	iRus : iYaroslav,
 	iSwahili : iDawud,
+	iMisr : iSaladin,
 	iMali : iDinga,
 	iPoland : iCasimir,
 	iPortugal : iAfonso,
@@ -823,7 +824,7 @@ def setLeaderName(iPlayer, sName):
 
 def key(iPlayer, sSuffix):
 	if sSuffix: sSuffix = "_%s" % sSuffix
-	return "TXT_KEY_CIV_%s%s" % (str(short(iPlayer).replace(" ", "_").upper()), sSuffix)
+	return "TXT_KEY_CIV_%s%s" % (civ_name(civ(iPlayer)).upper(), sSuffix)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
 	if team(iPlayer).isAVassal():
@@ -1406,15 +1407,6 @@ def specificAdjective(iPlayer):
 	
 	if iCiv == iEgypt:
 		if bMonarchy:
-			if iReligion == iIslam:
-				if tPlayer.isHasTech(iGunpowder):
-					return "TXT_KEY_CIV_EGYPT_MAMLUK"
-		
-				if player(iArabia).isExisting():
-					return "TXT_KEY_CIV_EGYPT_FATIMID"
-			
-				return "TXT_KEY_CIV_EGYPT_AYYUBID"
-			
 			if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
 				return "TXT_KEY_CIV_EGYPT_COPTIC"
 			
@@ -1779,6 +1771,19 @@ def specificAdjective(iPlayer):
 	elif iCiv == iSwahili:
 		if iEra >= iGlobal:
 			return "TXT_KEY_CIV_RUS_TANZANIAN"
+	
+	elif iCiv == iMisr:
+		if iReligion == iIslam:
+			if tPlayer.isHasTech(iGunpowder):
+				return "TXT_KEY_CIV_MISR_MAMLUK"
+			
+			if cities.regions(rLevant, rArabia, rMesopotamia).owner(iPlayer):
+				return "TXT_KEY_CIV_MISR_AYYUBID"
+	
+			return "TXT_KEY_CIV_MISR_FATIMID"
+		
+		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
+			return "TXT_KEY_CIV_EGYPT_COPTIC"
 			
 	elif iCiv == iMali:
 		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
@@ -1925,6 +1930,13 @@ def republicTitle(iPlayer):
 			
 		if iEra >= iGlobal:
 			return "TXT_KEY_CIV_ENGLAND_UNITED_REPUBLIC"
+	
+	if iCiv == iMisr:
+		if isControlled(iPlayer, plots.regions(rLevant, rArabia)):
+			return "TXT_KEY_CIV_MISR_UNITED_ARAB_STATES"
+		
+		if isControlled(iPlayer, plots.regions(rLevant)):
+			return "TXT_KEY_CIV_MISR_UNITED_ARAB_REPUBLIC"
 	
 	if iCiv == iAmerica:
 		if civics(iPlayer).iSociety in [iManorialism, iSlavery]:
@@ -2384,6 +2396,24 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if iEra >= iIndustrial:
 			return "TXT_KEY_SULTANATE_OF"
+		
+	elif iCiv == iMisr:
+		if iReligion == iIslam:
+			if bTheocracy:
+				return "TXT_KEY_CALIPHATE_ADJECTIVE"
+				
+			if iEra >= iIndustrial:
+				return "TXT_KEY_SULTANATE_OF"
+			
+			if not tPlayer.isHasTech(iGunpowder) and controlsHolyCity(iPlayer, iIslam):
+				return "TXT_KEY_CALIPHATE_ADJECTIVE"
+			
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
+		
+		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		return "TXT_KEY_KINGDOM_OF"
 			
 	# Nothing for Mali
 	
@@ -2582,12 +2612,6 @@ def leader(iPlayer):
 	iGameEra = game.getCurrentEra()
 	
 	if iCiv == iEgypt:
-		if not bMonarchy and iEra >= iGlobal: return iNasser
-		
-		if iEra >= iMedieval and (bResurrected or scenario() >= i600AD): return iBaibars
-		
-		if iReligion == iIslam: return iBaibars
-		
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt: return iPtolemy
 		
 		if getColumn(iPlayer) >= 3: return iRamesses
@@ -2695,9 +2719,6 @@ def leader(iPlayer):
 	
 		if year() >= year(1000) or pPlayer.getPeriod() == iPeriodSeljuks: return iAlpArslan
 		
-	elif iCiv == iArabia:
-		if year() >= year(1000): return iSaladin
-		
 	elif iCiv == iTibet:
 		if year() >= year(1500): return iLobsangGyatso
 		
@@ -2743,6 +2764,13 @@ def leader(iPlayer):
 	
 	elif iCiv == iVietnam:
 		if isCommunist(iPlayer) or isRepublic(iPlayer): return iHoChiMinh
+	
+	elif iCiv == iMisr:
+		if not bMonarchy and iEra >= iGlobal: return iNasser
+		
+		if iEra >= iIndustrial: return iMuhammadAli
+		
+		if tPlayer.isHasTech(iGunpowder): return iBaibars
 			
 	elif iCiv == iPoland:
 		if iEra >= iGlobal: return iWalesa

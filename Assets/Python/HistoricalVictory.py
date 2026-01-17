@@ -33,6 +33,7 @@ AYUTTHAYA = "TXT_KEY_VICTORY_NAME_AYUTTHAYA"
 BABYLON = "TXT_KEY_VICTORY_NAME_BABYLON"
 BERLIN = "TXT_KEY_VICTORY_NAME_BERLIN"
 BUENOS_AIRES = "TXT_KEY_VICTORY_NAME_BUENOS_AIRES"
+CAIRO = "TXT_KEY_VICTORY_NAME_CAIRO"
 CARTHAGE = "TXT_KEY_VICTORY_NAME_CARTHAGE"
 CONSTANTINOPLE = "TXT_KEY_VICTORY_NAME_CONSTANTINOPLE"
 CORDOBA = "TXT_KEY_VICTORY_NAME_CORDOBA"
@@ -113,6 +114,8 @@ SOUTH_AMERICA = "TXT_KEY_VICTORY_NAME_SOUTH_AMERICA"
 SOUTH_ASIA = "TXT_KEY_VICTORY_NAME_SOUTH_ASIA"
 SOUTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_SOUTH_CENTRAL_AMERICA"
 SRIVIJAYA = "TXT_KEY_VICTORY_NAME_SRIVIJAYA"
+SUDAN = "TXT_KEY_VICTORY_NAME_SUDAN"
+SYRIA = "TXT_KEY_VICTORY_NAME_SYRIA"
 TRANSOXIANA = "TXT_KEY_VICTORY_NAME_TRANSOXIANA"
 WEST_AFRICA = "TXT_KEY_VICTORY_NAME_WEST_AFRICA"
 
@@ -125,6 +128,7 @@ CITY_IN_CHINA = "TXT_KEY_VICTORY_NAME_CITY_IN_CHINA"
 COLONIAL = "TXT_KEY_VICTORY_NAME_COLONIAL"
 INDIAN_TRADE_ROUTE = "TXT_KEY_VICTORY_NAME_INDIAN_TRADE_ROUTE"
 MEDITERRANEAN_PORT = "TXT_KEY_VICTORY_NAME_MEDITERRANEAN_PORT"
+NILE = "TXT_KEY_VICTORY_NAME_NILE"
 WORLD_COASTLINES = "TXT_KEY_VICTORY_NAME_WORLD_COASTLINES"
 
 # building descriptors
@@ -604,6 +608,30 @@ dGoals = {
 		ImportCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 100, by=1300),
 		RevealedPercent(plots.all().sea().where(lambda p: p.getTerrainType() in [iCoast, iArcticCoast]).named(WORLD_COASTLINES), 35, by=1400),
 		TradeRouteCount(25, by=1500),
+	),
+	iMisr: (
+		All(
+			BuildingCount(religious_buildings(shrine).named(SHRINES), 3),
+			CitySpecialistCount(start(iMisr).named(CAIRO), iSpecialistGreatProphet, 2),
+			by=1250,
+		),
+		All(
+			AreaPopulationCount(plots.rectangle(tNile).without(lNileExceptions).named(NILE), 50),
+			TradeRouteCommerce(5000),
+			by=1500,
+		),
+		All(
+			EraDiscoverCount(iIndustrial, 7),
+			CityCount(
+				(plots.region(rMaghreb).named(NORTH_AFRICA), 3),
+				(plots.rectangle(tSudan).without(lSudanExceptions).named(SUDAN), 3),
+				(plots.region(rArabia), 3),
+				(plots.region(rLevant).named(SYRIA), 3),
+				(plots.region(rAnatolia), 3),
+				(plots.region(rGreece), 3),
+			),
+			at=1840,
+		),
 	),
 	iPoland: (
 		PopulationCityCount(12, 3, by=1400),

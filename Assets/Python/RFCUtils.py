@@ -1030,7 +1030,7 @@ def ensureDefenders(iPlayer, tPlot, iNumDefenders):
 # used: CvDawnOfMan
 def getDawnOfManText(iPlayer):
 	iScenario = scenario()
-	baseKey = 'TXT_KEY_DOM_%s' % str(name(iPlayer).replace(' ', '_').upper())
+	baseKey = 'TXT_KEY_DOM_%s' % civ_name(civ(iPlayer)).upper()
 	
 	fullKey = baseKey
 	if iScenario == i600AD: fullKey += "_600AD"

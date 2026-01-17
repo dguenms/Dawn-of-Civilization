@@ -57,6 +57,14 @@ tMalaya = ((119, 30), (120, 32))
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tWestAfrica = ((54, 31), (65, 40))
 
+# second Masryeen goal: have a population of 50 along the Nile and generate 5000 commerce from trade by 1500 AD
+tNile = ((77, 38),	(81, 45))
+lNileExceptions = [(77, 38), (77, 39), (77, 40), (77, 41), (77, 42), (80, 43), (81, 40), (81, 41), (81, 42), (81, 43), (81, 44)]
+
+# third Masryeen goal: have three cities in North Africa, Sudan, Arabia, Syria, Anatolia and Greece in 1840 AD
+tSudan = ((76, 31),	(84, 40))
+lSudanExceptions = [(76, 31), (76, 32), (76, 37), (76, 38), (76, 39), (76, 40), (77, 31), (77, 40), (78, 40), (79, 40), (80, 40), (81, 31), (81, 32), (81, 33), (81, 34), (81, 35), (81, 40), (82, 31), (82, 32), (82, 33), (82, 34), (82, 35), (82, 36), (83, 31), (83, 32), (83, 33), (83, 35), (83, 36), (84, 31), (84, 32), (84, 33), (84, 34), (84, 35), (84, 36)]
+
 # first Inca goal: build a road along the Andean coast by 1550 AD
 lAndeanRoadExceptions = [(28, 33), (21, 32)]
 

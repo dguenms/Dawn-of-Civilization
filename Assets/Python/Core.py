@@ -33,6 +33,9 @@ map = gc.getMap()
 
 
 def civ_name(iCiv):
+	if iCiv == iMisr:
+		return "Misr"
+	
 	return infos.civ(iCiv).getShortDescription(0).replace(" ", "_")
 
 

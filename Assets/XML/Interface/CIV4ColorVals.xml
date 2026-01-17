@@ -1505,5 +1505,19 @@
 			<fBlue>0</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_VERY_DARK_OCHRE</Type>
+			<fRed>0.73</fRed>
+			<fGreen>0.58</fGreen>
+			<fBlue>0.06</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_VERY_DARK_OCHRE_TEXT</Type>
+			<fRed>0.62</fRed>
+			<fGreen>0.47</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

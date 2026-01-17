@@ -1230,5 +1230,13 @@
 			<NoShaderNIF>Art/Leaderheads/Kangxi/qin_shi_huang.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Kangxi/genghis_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MUHAMMAD_ALI</Type>
+			<Button>Art/Leaderheads/Muhammad Ali/Muhammad_Ali.dds</Button>
+			<NIF>art/Leaderheads/Muhammad Ali/Stuyvesant.nif</NIF>
+			<KFM>art/Leaderheads/Muhammad Ali/Stuyvesant.kfm</KFM>
+			<NoShaderNIF>art/Leaderheads/Muhammad Ali/Stuyvesant.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/NasserFINAL/fdr_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
