@@ -1800,6 +1800,92 @@ class TestCultureLevelCityCount(ExtendedTestCase):
 		self.assertEqual(self.goal.checked, True)
 
 
+class TestEraDiscoverCount(ExtendedTestCase):
+
+	def setUp(self):
+		self.requirement = EraDiscoverCount(iRenaissance, 2).create()
+		self.goal = TestGoal()
+		
+		self.requirement.register_handlers(self.goal)
+	
+	def tearDown(self):
+		self.requirement.deregister_handlers()
+	
+	def test_str(self):
+		self.assertEqual(str(self.requirement), "EraDiscoverCount(Renaissance, 2)")
+	
+	def test_repr(self):
+		self.assertEqual(repr(self.requirement), "EraDiscoverCount(Renaissance, 2)")
+	
+	def test_description(self):
+		self.assertEqual(self.requirement.description(), "two Renaissance technologies")
+	
+	def test_areas(self):
+		self.assertEqual(self.requirement.areas(), {})
+	
+	def test_pickle(self):
+		self.assertPickleable(self.requirement)
+		
+	def test_none(self):
+		self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+		self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+		self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Renaissance technologies: 0 / 2")
+	
+	def test_fewer(self):
+		team(0).setHasTech(iFirearms, True, 0, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 1)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Renaissance technologies: 1 / 2")
+		finally:
+			team(0).setHasTech(iFirearms, False, 0, False, False)
+	
+	def test_more(self):
+		lTechs = [iFirearms, iExploration, iAcademia]
+		for iTech in lTechs:
+			team(0).setHasTech(iTech, True, 0, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 3)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), True)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.SUCCESS + "Renaissance technologies: 3 / 2")
+		finally:
+			for iTech in lTechs:
+				team(0).setHasTech(iTech, False, 0, False, False)
+	
+	def test_other_era(self):
+		lTechs = [iFeudalism, iGuilds, iCivilService]
+		for iTech in lTechs:
+			team(0).setHasTech(iTech, True, 0, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Renaissance technologies: 0 / 2")
+		finally:
+			for iTech in lTechs:
+				team(0).setHasTech(iTech, False, 0, False, False)
+	
+	def test_other_player(self):
+		lTechs = [iFirearms, iExploration, iAcademia]
+		for iTech in lTechs:
+			team(1).setHasTech(iTech, True, 1, False, False)
+		
+		try:
+			self.assertEqual(self.requirement.evaluate(self.evaluator), 0)
+			self.assertEqual(self.requirement.fulfilled(self.evaluator), False)
+			self.assertEqual(self.requirement.progress(self.evaluator), self.FAILURE + "Renaissance technologies: 0 / 2")
+		finally:
+			for iTech in lTechs:
+				team(1).setHasTech(iTech, False, 1, False, False)
+	
+	def test_check_turnly(self):
+		events.fireEvent("BeginPlayerTurn", 0, self.iPlayer)
+		
+		self.assertEqual(self.goal.checked, True)
+
+
 class TestFeatureCount(ExtendedTestCase):
 
 	def setUp(self):
@@ -4408,6 +4494,7 @@ test_cases = [
 	TestControlledResourceCount,
 	TestCultureCity,
 	TestCultureLevelCityCount,
+	TestEraDiscoverCount,
 	TestFeatureCount,
 	TestFreeSpecialistCity,
 	TestHappyCityPopulation,

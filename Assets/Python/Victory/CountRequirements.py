@@ -434,6 +434,19 @@ class CultureLevelCityCount(ThresholdRequirement):
 		return list(self.progress_entries(evaluator.iPlayer))
 
 
+# Third Masryeen UHV goal
+class EraDiscoverCount(ThresholdRequirement):
+	
+	TYPES = (ERA, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_DISCOVER"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_ERA_DISCOVER_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_ERA_DISCOVER_COUNT"
+	
+	def value(self, iPlayer, iEra):
+		return infos.techs().where(lambda iTech: infos.tech(iTech).getEra() == iEra).count(lambda iTech: team(player(iPlayer).getTeam()).isHasTech(iTech))
+
+
 # Third Druidist URV goal
 class FeatureCount(ThresholdRequirement):
 
