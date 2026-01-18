@@ -229,6 +229,7 @@ dResourcesDict = {
 	(82, 20)  : (1850,  iTobacco),  # Malawi
 	(122, 48) : (1850,  iTobacco),  # Sichuan
 	(128, 61) : (1850,  iTobacco),  # Manchuria
+	(110, 56) : (1850,  iCotton),	# Xinjiang
 	(105, 35) : (1850,  iTea),      # Tamil Nadu
 	(109, 31) : (1850,  iTea),      # Sri Lanka
 	(91, 54)  : (1850,  iTea),      # Azerbaijan

@@ -50268,7 +50268,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=59
-	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -50709,6 +50708,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=58
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -51614,6 +51614,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=61
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -52518,6 +52519,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=60
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -53479,6 +53481,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=62
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
