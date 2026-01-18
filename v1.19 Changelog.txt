@@ -1,10 +1,17 @@
 TABLE OF CONTENTS
+* Map
 * Civilizations
 * Bugfixes
+
+MAP
+* Adjusted terrain in Tibet
 
 CIVILIZATIONS
 * China:
 	* Coat of Arms: Han character
+* Tibet:
+	* Unique Historical Victory:
+		* First goal: Acquire seven cities by 1000 AD
 * England
 	* Unique Historical Victory:
 		* Second goal: Control twelve cities in Asia and ten cities in Africa, settle six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
