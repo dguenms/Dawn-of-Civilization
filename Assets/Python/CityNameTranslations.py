@@ -12124,7 +12124,10 @@ name_translations = {
 	},
 	"Mgolog": {
 		iChinese: "Guoluo",
-		iTibetan: _,
+		iTibetan: (
+			found("Tsongkha", iBefore=iMedieval),
+			_,
+		),
 	},
 	"Mikindani": {
 		iKiswahili: _,

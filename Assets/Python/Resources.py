@@ -261,7 +261,6 @@ dSpawnResourcesDict = {
 	(82, 54)  : (iHittites,    iIron),
 	(107, 61) : (iTurks,       iHorse),
 	(113, 47) : (iTibet,       iWheat),
-	(115, 49) : (iTibet,       iHorse),
 	(55, 52)  : (iPortugal,    iIron),
 	(85, 64)  : (iRussia,      iIron),
 	(86, 65)  : (iRussia,      iWheat),
@@ -301,6 +300,7 @@ dRemovedResourcesDict = {
 	(92, 60)  : 1600, # Silk in the Volga Delta
 	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
+	(110, 49) : 1750, # Gold in Tibet
 }
 
 dFeaturesDict = {

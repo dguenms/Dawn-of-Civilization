@@ -48868,12 +48868,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=51
-	TerrainType=TERRAIN_TUNDRA
+	BonusType=BONUS_CAMEL
+	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=108,y=52
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -49317,17 +49318,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=49
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_SALTLAKE
+	PlotType=3
 EndPlot
 BeginPlot
 	x=109,y=50
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=109,y=51
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -49762,22 +49763,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=49
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=110,y=50
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=110,y=51
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=110,y=52
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -50213,12 +50215,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=49
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=111,y=50
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -50667,12 +50669,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=50
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=112,y=51
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -51115,7 +51117,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=51
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -51571,6 +51573,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=53
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
@@ -51996,7 +51999,7 @@ BeginPlot
 	x=115,y=49
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -52010,6 +52013,7 @@ BeginPlot
 	x=115,y=51
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -52020,8 +52024,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=53
-	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	BonusType=BONUS_SALT
+	TerrainType=TERRAIN_SALTFLAT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=115,y=54
