@@ -270,6 +270,7 @@ dSpawnResourcesDict = {
 	(86, 65)  : (iRussia,      iWheat),
 	(61, 66)  : (iNetherlands, iFish),
 	(128, 57) : (iManchuria,   iIron),
+	(87, 40)  : (iSaudis,	   iCopper),
 	(15, 47)  : (iMexico,      iIron),
 	(48, 21)  : (iBrazil,      iFish),
 }

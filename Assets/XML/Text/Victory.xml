@@ -81,6 +81,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_HAVE_BETWEEN_ALLIES</Tag>
+		<English>have %s1 between you and your allies</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_DISCOVER</Tag>
 		<English>discover %s1</English>
 		<French></French>
@@ -3607,6 +3615,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ARAB_WORLD</Tag>
+		<English>the Arab World</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_BALTIC_SEA_REGION</Tag>
 		<English>the Baltic Sea Region</English>
 		<French></French>
@@ -3790,6 +3806,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ALL_EUROPEAN</Tag>
 		<English>all European</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_ARAB</Tag>
+		<English>Arab</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -12303,6 +12303,13 @@ void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
 	{
 		GET_TEAM(getTeam()).changeTerrainTradeCount(TERRAIN_DESERT, iChange);
 	}
+
+	// Saudi UP: +1 food for Priest and Great Prophet
+	if (eCivilization == SAUDIS)
+	{
+		changeSpecialistExtraYield(SPECIALIST_PRIEST, YIELD_FOOD, iChange);
+		changeSpecialistExtraYield(SPECIALIST_GREAT_PRIEST, YIELD_FOOD, iChange);
+	}
 }
 
 

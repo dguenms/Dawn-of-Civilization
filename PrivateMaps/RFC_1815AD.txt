@@ -10015,6 +10015,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=43
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -10172,14 +10173,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
-	x=86,y=38
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
-	x=86,y=40
-	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
 	x=86,y=41
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
@@ -10188,11 +10181,15 @@ BeginPlot
 	x=86,y=42
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_MILITIA
-		UnitOwner=CIVILIZATION_MISR
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_MISR
+		CityOwner=CIVILIZATION_SAUDI
 		CityName=Madinah
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -10200,18 +10197,19 @@ BeginPlot
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_MASRYEEN_SOUK
+		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_PHARMACY
-		BuildingType=BUILDING_POST_OFFICE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_MISR, Culture=250
+			Civilization=CIVILIZATION_SAUDI, Culture=250
 		EndCulture
 		YearFounded=-900
+		YearAcquired=1803
 		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_OTTOMAN
 	EndCity
 EndPlot
@@ -10384,15 +10382,21 @@ BeginPlot
 	x=87,y=39
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_MILITIA
-		UnitOwner=CIVILIZATION_MISR
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_MISR
+		CityOwner=CIVILIZATION_SAUDI
 		CityName=Makkah
-		CityPopulation=3
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
@@ -10409,14 +10413,20 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		BeginCulture
-			Civilization=CIVILIZATION_MISR, Culture=500
+			Civilization=CIVILIZATION_SAUDI, Culture=500
 		EndCulture
 		YearFounded=520
+		YearAcquired=1803
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_OTTOMAN
 	EndCity
+EndPlot
+BeginPlot
+	x=87,y=40
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=87,y=41
@@ -10552,6 +10562,11 @@ EndPlot
 BeginPlot
 	x=88,y=39
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=88,y=42
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -10698,6 +10713,70 @@ BeginPlot
 		YearAcquired=900
 		PreviousOwner=CIVILIZATION_ARABIA
 	EndCity
+EndPlot
+BeginPlot
+	x=89,y=41
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_GUNNER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_SAUDI
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_SAUDI
+		CityName=Ar-Riyad
+		CityPopulation=4
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_SAUDI, Culture=100
+		EndCulture
+		YearFounded=1590
+	EndCity
+EndPlot
+BeginPlot
+	x=89,y=42
+	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=89,y=46
@@ -10876,6 +10955,11 @@ EndPlot
 BeginPlot
 	x=90,y=37
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=90,y=41
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

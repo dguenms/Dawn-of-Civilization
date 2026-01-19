@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Swahili -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDI_DESC</Tag>
+		<English>The Saudis</English>
+		<French>The Saudis</French>
+		<German>The Saudis</German>
+		<Italian>The Saudis</Italian>
+		<Spanish>The Saudis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_PEOPLES</Tag>
+		<English>Najdi Peoples</English>
+		<French>Najdi Peoples</French>
+		<German>Najdi Peoples</German>
+		<Italian>Najdi Peoples</Italian>
+		<Spanish>Najdi Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDI_ADJECTIVE</Tag>
+		<English>Arabian</English>
+		<French>Arabian</French>
+		<German>Arabian</German>
+		<Italian>Arabian</Italian>
+		<Spanish>Arabian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDI_SHORT_DESC</Tag>
+		<English>Arabia</English>
+		<French>Arabia</French>
+		<German>Arabia</German>
+		<Italian>Arabia</Italian>
+		<Spanish>Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_DEFAULT</Tag>
+		<English>Emirate of %s1</English>
+		<French>Emirate of %s1</French>
+		<German>Emirate of %s1</German>
+		<Italian>Emirate of %s1</Italian>
+		<Spanish>Emirate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_FASCIST</Tag>
+		<English>Officers' %s1</English>
+		<French>
+			<Text>%s1 des Officiers</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s1 der Offiziere:%s1 der Offiziere:%s1 der Offiziere</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 degli Ufficiali</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 de los Oficiales</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_UNITED_ARAB_STATES</Tag>
+		<English>United Arab States</English>
+		<French>United Arab States</French>
+		<German>United Arab States</German>
+		<Italian>United Arab States</Italian>
+		<Spanish>United Arab States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_UNITED_ARAB_REPUBLIC</Tag>
+		<English>United Arab Republic</English>
+		<French>United Arab Republic</French>
+		<German>United Arab Republic</German>
+		<Italian>United Arab Republic</Italian>
+		<Spanish>United Arab Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_SAUDI_ARABIA</Tag>
+		<English>Saudi Arabia</English>
+		<French>Saudi Arabia</French>
+		<German>Saudi Arabia</German>
+		<Italian>Saudi Arabia</Italian>
+		<Spanish>Saudi Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_HASHEMITE_ARABIA</Tag>
+		<English>Hashemite Arabia</English>
+		<French>Hashemite Arabia</French>
+		<German>Hashemite Arabia</German>
+		<Italian>Hashemite Arabia</Italian>
+		<Spanish>Hashemite Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_HEJAZ</Tag>
+		<English>Hejaz</English>
+		<French>Hejaz</French>
+		<German>Hejaz</German>
+		<Italian>Hejaz</Italian>
+		<Spanish>Hejaz</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_NAJD</Tag>
+		<English>Najd</English>
+		<French>Najd</French>
+		<German>Najd</German>
+		<Italian>Najd</Italian>
+		<Spanish>Najd</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SAUDIS_DIRIYAH</Tag>
+		<English>Diriyah</English>
+		<French>Diriyah</French>
+		<German>Diriyah</German>
+		<Italian>Diriyah</Italian>
+		<Spanish>Diriyah</Spanish>
+	</TEXT>
+</Civ4GameText>

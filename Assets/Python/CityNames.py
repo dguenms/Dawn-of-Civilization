@@ -73,6 +73,7 @@ dBaseLanguages = {
 	iNetherlands: (iDutch,),
 	iManchuria: (iManchu, iChinese, iMongol),
 	iGermany: (iGerman,),
+	iSaudis: (iArabic,),
 	iAmerica: (iAmerican, iEnglish),
 	iMexico: (iMexican, iSpanish),
 	iArgentina: (iArgentinian, iSpanish),

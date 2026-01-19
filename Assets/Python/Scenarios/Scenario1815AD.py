@@ -198,6 +198,7 @@ lCivilizations = [
 			iHolyRome: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
 			iRussia: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
 			iFrance: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+			iSaudis: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
 		},
 	),
 	Civilization(
@@ -263,6 +264,15 @@ lCivilizations = [
 		dMemories={
 			iFrance: {MemoryTypes.MEMORY_DECLARED_WAR: 3},
 		},
+	),
+	Civilization(
+		iSaudis,
+		iLeader=iIbnSaud,
+		iGold=200,
+		iStateReligion=iIslam,
+		lCivics=[iMonarchy, iTheocracy, iSlavery, iMerchantTrade, iFanaticism],
+		techs=techs.column(11).without(iScientificMethod, iCivilLiberties),
+		dAttitudes={iOttomans: -2},
 	),
 	Civilization(
 		iAmerica,

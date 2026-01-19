@@ -138,6 +138,7 @@ LEADER_DATES = {
 	iKangxi: 1660,
 	iFrederick: 1740,
 	iBismarck: 1880,
+	iIbnSaud: 1930,
 	iWashington: 1790,
 	iLincoln: 1860,
 	iRoosevelt: 1940,

@@ -1351,6 +1351,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SAU1</Tag>
+		<English>Pan-Arabism</English>
+		<French>Pan-Arabism</French>
+		<German>Pan-Arabism</German>
+		<Italian>Pan-Arabism</Italian>
+		<Spanish>Pan-Arabism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SAU2</Tag>
+		<English>Muwahhidun</English>
+		<French>Muwahhidun</French>
+		<German>Muwahhidun</German>
+		<Italian>Muwahhidun</Italian>
+		<Spanish>Muwahhidun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_SAU3</Tag>
+		<English>OPEC</English>
+		<French>OPEC</French>
+		<German>OPEC</German>
+		<Italian>OPEC</Italian>
+		<Spanish>OPEC</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_SPA1</Tag>
 		<English>Plus Ultra</English>
 		<French>Plus ultra </French>

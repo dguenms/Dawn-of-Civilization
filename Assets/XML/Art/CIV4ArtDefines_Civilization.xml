@@ -426,5 +426,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_ThreeMoons.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_SAUDI</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Saudi.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_PalmTree.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

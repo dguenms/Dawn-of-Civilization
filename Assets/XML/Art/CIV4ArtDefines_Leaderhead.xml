@@ -1238,5 +1238,13 @@
 			<NoShaderNIF>art/Leaderheads/Muhammad Ali/Stuyvesant.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/NasserFINAL/fdr_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_IBN_SAUD</Type>
+			<Button>art/Leaderheads/IbnSaud/IbnSaud_button.dds</Button>
+			<NIF>art/Leaderheads/IbnSaud/IbnSaud.nif</NIF>
+			<KFM>art/Leaderheads/IbnSaud/John II.kfm</KFM>
+			<NoShaderNIF>art/Leaderheads/IbnSaud/IbnSaud.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/IbnSaud/IbnSaud_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -577,6 +577,14 @@ lCivilizations = [
 		techs=techs.column(11).without(iCivilLiberties, iHorticulture)
 	),
 	Civilization(
+		iSaudis,
+		iGold=50,
+		iAdvancedStartPoints=200,
+		iStateReligion=iIslam,
+		lCivics=[iMonarchy, iTheocracy, iSlavery, iMerchantTrade, iFanaticism],
+		techs=techs.column(10).including(iCombinedArms, iGeography, iHorticulture).without(iAcademia)
+	),
+	Civilization(
 		iAmerica,
 		iGold=1500,
 		iAdvancedStartPoints=500,
@@ -1090,6 +1098,13 @@ dStartingUnits = CivDict({
 		iSiege: 3,
 		iMissionary: 2,
 	},
+	iSaudis: {
+		iSettle: 4,
+		iWork: 2,
+		iDefend: 2,
+		iMissionary: 1,
+		# 6 Camel Gunners
+	},
 	iAmerica: {
 		iSettle: 6,
 		iWork: 4,
@@ -1562,6 +1577,8 @@ def createSpecificUnits(iPlayer, tile):
 	elif iCiv == iInca:
 		if not bHuman:
 			makeUnit(iPlayer, iSettler, tile)
+	elif iCiv == iSaudis:
+		makeUnits(iPlayer, iCamelGunner, tile, 6)
 	elif iCiv == iColombia:
 		makeUnits(iPlayer, iAlbionLegion, tile, 5).experience(2)
 
@@ -2043,6 +2060,10 @@ dTechPreferences = {
 		iCollectivism: 20,
 		iFission: 12,
 	},
+	iSaudis: {
+		iEngine: 40,
+		iRefining: 40,
+	},
 	iAmerica : {
 		iRailroad: 30,
 		iRepresentation: 30,
@@ -2494,6 +2515,9 @@ dBuildingPreferences = {
 		iWembley: 20,
 		iCERN: 20,
 		iIronworks: 15,
+	},
+	iSaudis: {
+		iBurjKhalifa: 30,
 	},
 	iAmerica : {
 		iStatueOfLiberty: 30,

@@ -11,7 +11,7 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define NUM_CIVS				(66)
+#define NUM_CIVS				(67)
 
 #define NUM_ERAS				(ERA_DIGITAL+1)
 

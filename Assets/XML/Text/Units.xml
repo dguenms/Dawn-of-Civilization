@@ -3678,6 +3678,22 @@
 		<Spanish>Mamluk</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SAUDI_IKHWAN</Tag>
+		<English>Ikhwan</English>
+		<French>Ikhwan</French>
+		<German>Ikhwan</German>
+		<Italian>Ikhwan</Italian>
+		<Spanish>Ikhwan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SAUDI_IKHWAN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
+		<French>Ikhwan</French>
+		<German>Ikhwan</German>
+		<Italian>Ikhwan</Italian>
+		<Spanish>Ikhwan</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

@@ -452,8 +452,8 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran]
-lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran, iSaudis]
+lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis]
 
 lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iMisr, iBrazil, iNorse, iSweden, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
@@ -461,7 +461,7 @@ lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iDravidia, iByzantium, iRus, iMongols]
 
-lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran]
+lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran, iSaudis]
 
 dEmpireThreshold = {
 	iBabylonia: 2,
@@ -483,6 +483,7 @@ dEmpireThreshold = {
 	iItaly : 7,
 	iRussia : 8,
 	iIran : 4,
+	iSaudis : 6,
 	iGermany : 5,
 }
 
@@ -584,6 +585,7 @@ dStartingLeaders = [
 	iNetherlands : iWillemVanOranje,
 	iManchuria : iKangxi,
 	iGermany : iFrederick,
+	iSaudis : iIbnSaud,
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
 	iMexico : iJuarez,
@@ -1413,6 +1415,21 @@ def specificName(iPlayer):
 		if getColumn(iPlayer) <= 14 and pPlayer.isExisting() and (not player(iHolyRome).isExisting() or not team(iHolyRome).isVassal(iPlayer)):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
+	elif iCiv == iSaudis:	
+		if capital.isHolyCityByType(iIslam):
+			if bEmpire and getColumn(iPlayer) >= 15:
+				return "TXT_KEY_CIV_SAUDIS_HASHEMITE_ARABIA"
+			
+			return "TXT_KEY_CIV_SAUDIS_HEJAZ"
+			
+		if bEmpire and getColumn(iPlayer) >= 15:
+			return "TXT_KEY_CIV_SAUDIS_SAUDI_ARABIA"
+		
+		if getColumn(iPlayer) >= 12:
+			return "TXT_KEY_CIV_SAUDIS_NAJD"
+		
+		return "TXT_KEY_CIV_SAUDIS_DIRIYAH"
+	
 def adjective(iPlayer, bIgnoreVassal = False):
 	iCiv = civ(iPlayer)
 
@@ -2008,6 +2025,13 @@ def republicTitle(iPlayer):
 		
 		if isControlled(iPlayer, plots.regions(rLevant)):
 			return "TXT_KEY_CIV_MISR_UNITED_ARAB_REPUBLIC"
+	
+	if iCiv == iSaudis:
+		if isControlled(iPlayer, plots.regions(rLevant, rEgypt)):
+			return "TXT_KEY_CIV_SAUDIS_UNITED_ARAB_STATES"
+		
+		if isControlled(iPlayer, plots.region(rLevant)):
+			return "TXT_KEY_CIV_SAUDIS_UNITED_ARAB_REPUBLIC"
 	
 	if iCiv == iAmerica:
 		if civics(iPlayer).iSociety in [iManorialism, iSlavery]:
@@ -2628,6 +2652,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE"
 				
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+	
+	elif iCiv == iSaudis:
+		if bEmpire:
+			if getColumn(iPlayer) >= 15:
+				return "TXT_KEY_KINGDOM_OF"
+			
+			return "TXT_KEY_SULTANATE_OF"
 			
 	elif iCiv == iAmerica:
 		if civic.iSociety in [iSlavery, iManorialism]:

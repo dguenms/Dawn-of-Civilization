@@ -740,6 +740,10 @@ class ResourceCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RESOURCE_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RESOURCE_COUNT"
 	
+	SUBJECT_DESC_KEYS = {
+		ALLIES: "TXT_KEY_VICTORY_DESC_HAVE_BETWEEN_ALLIES",
+	}
+	
 	def value(self, iPlayer, iResource):
 		return player(iPlayer).getNumAvailableBonuses(iResource)
 

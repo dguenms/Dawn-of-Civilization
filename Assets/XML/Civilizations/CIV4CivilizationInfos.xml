@@ -5743,6 +5743,87 @@
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_SAUDI</Type>
+			<Description>TXT_KEY_CIV_SAUDI_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_SAUDI_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_SAUDI_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_SAUDI_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DRAB_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_SAUDI</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ARABIA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ARABIA</UnitArtStyleType>
+			<PaganReligion>PAGAN_RELIGION_ANUNNAKI</PaganReligion>
+			<Impact>IMPACT_LIMITED</Impact>
+			<Identifier>SAU</Identifier>
+			<StartingYear>1744</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>2</LoadingTime>
+			</LoadingTimes>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Kufah</City>
+				<City>Khurasan</City>
+				<City>Anjar</City>
+				<City>Yamama</City>
+				<City>Mansura</City>
+				<City>Aydab</City>
+				<City>Bayt Ras</City>
+				<City>Taif</City>
+				<City>Shihr</City>
+				<City>Abu Dhabi</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_INDUSTRIAL_PARK</BuildingClassType>
+					<BuildingType>BUILDING_SAUDI_REFINERY</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
+					<UnitType>UNIT_SAUDI_IKHWAN</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_PERSONALISM</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_KINSHIP</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_IBN_SAUD</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ARABIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_SPAIN</Type>
 			<Description>TXT_KEY_CIV_SPAIN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_SPAIN_SHORT_DESC</ShortDescription>

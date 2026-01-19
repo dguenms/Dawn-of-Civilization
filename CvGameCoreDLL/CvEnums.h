@@ -1250,12 +1250,13 @@ enum CivilizationTypes		// Exposed to Python
 	ROME,
 	RUS,
 	RUSSIA,
+	SAUDIS,
 	SPAIN,
 	SUMERIA,
 	SWAHILI,
 	SWEDEN,
-	THAILAND,
 
+	THAILAND,
 	TIBET,
 	TOLTECS,
 	TURKS,
@@ -1264,8 +1265,8 @@ enum CivilizationTypes		// Exposed to Python
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,
-	MINOR_CIV,
 
+	MINOR_CIV,
 	BARBARIAN_CIV,
 
 	NUM_TOTAL_CIVILIZATIONS,
@@ -1458,6 +1459,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	BISMARCK,
 	HITLER,
 
+	IBN_SAUD,
+
 	WASHINGTON,
 	LINCOLN,
 	ROOSEVELT,
@@ -1621,7 +1624,7 @@ enum BuildingClassTypes				// Exposed to Python
 	NO_BUILDINGCLASS = -1,
 };
 
-#define BEGIN_WONDERS				(188) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(189) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+13) // increment if a national wonder is added
 
 enum BuildingTypes						// Exposed to Python

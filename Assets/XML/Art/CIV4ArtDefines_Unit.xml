@@ -6054,15 +6054,39 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MOORISH_CAMEL_GUNNER</Type>
-			<Button>Art/Units/Camel Gunner/CamelGunner_Btn.dds</Button>
+			<Type>ART_DEF_UNIT_CAMEL_GUNNER</Type>
+			<Button>Art/Units/Camel Gunner/Camel_Gunner.dds</Button>
 			<fScale>0.39</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Camel Gunner/CamelGunner.nif</NIF>
+			<NIF>Art/Units/Camel Gunner/camelgunner.nif</NIF>
 			<KFM>Art/Units/Camel Gunner/CamelGunner.kfm</KFM>
-			<SHADERNIF>Art/Units/Camel Gunner/CamelGunner.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Camel Gunner/camelgunner.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>1</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SAUDI_IKHWAN</Type>
+			<Button>Art/Units/Ikhwan/Ikhwan.dds</Button>
+			<fScale>0.39</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Ikhwan/CamelGunner.nif</NIF>
+			<KFM>Art/Units/Camel Gunner/CamelGunner.kfm</KFM>
+			<SHADERNIF>Art/Units/Ikhwan/CamelGunner.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -8288,7 +8312,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CAMEL_GUNNER</Type>
-			<Button>Art/Units/Camel Gunner/CamelGunner.dds</Button>
+			<Button>Art/Units/Camel Gunner/Camel_Gunner.dds</Button>
 			<fScale>0.39</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

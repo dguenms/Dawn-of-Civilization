@@ -954,6 +954,22 @@
 		<Spanish>Unhappiness from hurrying and drafting is applied to your happiest city</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SAU_TITLE</Tag>
+		<English>The Power of Salafiyyah:</English>
+		<French>The Power of Salafiyyah:</French>
+		<German>The Power of Salafiyyah:</German>
+		<Italian>The Power of Salafiyyah:</Italian>
+		<Spanish>The Power of Salafiyyah:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SAU</Tag>
+		<English>+1 [ICON_FOOD] from Priests and Great Prophets</English>
+		<French>+1 [ICON_FOOD] from Priests and Great Prophets</French>
+		<German>+1 [ICON_FOOD] from Priests and Great Prophets</German>
+		<Italian>+1 [ICON_FOOD] from Priests and Great Prophets</Italian>
+		<Spanish>+1 [ICON_FOOD] from Priests and Great Prophets</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_SPA_TITLE</Tag>
 		<English>The Power of Discovery:</English>
 		<French>Le pouvoir de la d&#233;couverte :</French>

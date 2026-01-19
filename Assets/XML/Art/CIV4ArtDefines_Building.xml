@@ -3827,5 +3827,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Souk/souk.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SAUDI_REFINERY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Refinery/gasplant.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Refinery/refinery_button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -25,6 +25,8 @@ lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, 
 # first Russian goal: control three Orthodox Cathedrals and three Orthodox wonders by 1550 AD
 lOrthodoxWonders = [iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding) and iOrthodoxy in [infos.building(iBuilding).getPrereqReligion(), infos.building(iBuilding).getOrPrereqReligion()]]
 
+# first Saudi goal: allow only Arab civilizations in the Arab World
+lArabCivs = [iArabia, iMoors, iMisr, iSaudis]
 
 # city names
 AMSTERDAM = "TXT_KEY_VICTORY_NAME_AMSTERDAM"
@@ -121,6 +123,7 @@ WEST_AFRICA = "TXT_KEY_VICTORY_NAME_WEST_AFRICA"
 
 # area descriptors
 ANDEAN_COAST = "TXT_KEY_VICTORY_NAME_ANDEAN_COAST"
+ARAB_WORLD = "TXT_KEY_VICTORY_NAME_ARAB_WORLD"
 BALTIC_SEA_REGION = "TXT_KEY_VICTORY_NAME_BALTIC_SEA_REGION"
 CANADIAN_TERRITORY = "TXT_KEY_VICTORY_NAME_CANADIAN_TERRITORY"
 CITIES_IN_CANADA = "TXT_KEY_VICTORY_NAME_CITIES_IN_CANADA"
@@ -149,6 +152,7 @@ LAND_BASED_TRADE = "TXT_KEY_VICTORY_NAME_LAND_BASED_TRADE"
 # civilization descriptors
 AFRICAN = "TXT_KEY_VICTORY_NAME_AFRICAN"
 ALL_EUROPEAN = "TXT_KEY_VICTORY_NAME_ALL_EUROPEAN"
+ARAB = "TXT_KEY_VICTORY_NAME_ARAB"
 CHRISTIAN = "TXT_KEY_VICTORY_NAME_CHRISTIAN"
 EUROPEAN = "TXT_KEY_VICTORY_NAME_EUROPEAN"
 EUROPEAN_CIVILIZATION = "TXT_KEY_VICTORY_NAME_EUROPEAN_CIVILIZATION"
@@ -785,6 +789,16 @@ dGoals = {
 			at=1940,
 		),
 		EraFirstDiscover((iIndustrial, 8), (iGlobal, 8)),
+	),
+	iSaudis: (
+		AllowOnly(plots.regions(rMaghreb, rEgypt, rNubia, rLevant, rMesopotamia, rArabia).named(ARAB_WORLD), civs(*lArabCivs).named(ARAB), at=1920),
+		GreatPeople(iGreatProphet, 7, by=1930),
+		All(
+			ResourceCount(iOil, 8, subject=ALLIES),
+			CorporationCount(iOilIndustry, 4),
+			GoldAmount(25000),
+			by=1970,
+		),
 	),
 	iAmerica: (
 		ControlledResourceCount(
