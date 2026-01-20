@@ -18969,6 +18969,12 @@ void CvPlayer::read(FDataStreamBase* pStream)
 
 	pStream->Read(&m_iPopRushHurryCount);
 	pStream->Read(&m_iInflationModifier);
+
+	// Leoreth: temporary fix for saves with invalid building class counts TODO remove
+	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		m_paiBuildingClassCount[iI] = std::max(0, m_paiBuildingClassCount[iI]);
+	}
 }
 
 //
