@@ -1665,7 +1665,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pOldCity->processPlayerBuildingEffects(-1);
 
 	// Leoreth: Prambanan effect does not carry over
-	pOldCity->processBuilding(PRAMBANAN, -1);
+	//pOldCity->processBuilding(PRAMBANAN, -1);
 
 	std::vector<BuildingYieldChange> aBuildingYieldChange;
 	std::vector<BuildingCommerceChange> aBuildingCommerceChange;
