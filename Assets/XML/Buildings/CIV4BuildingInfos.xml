@@ -2556,7 +2556,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iHealth>2</iHealth>
+			<iHealth>3</iHealth>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
@@ -2595,7 +2595,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iHealth>2</iHealth>
+			<iHealth>3</iHealth>
 			<iHappiness>2</iHappiness>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
