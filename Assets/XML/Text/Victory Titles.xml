@@ -1026,6 +1026,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MIS1</Tag>
+		<English>Commander of the Faithful</English>
+		<French>Commander of the Faithful</French>
+		<German>Commander of the Faithful</German>
+		<Italian>Commander of the Faithful</Italian>
+		<Spanish>Commander of the Faithful</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MIS2</Tag>
+		<English>Wealth of the Nile</English>
+		<French>Wealth of the Nile</French>
+		<German>Wealth of the Nile</German>
+		<Italian>Wealth of the Nile</Italian>
+		<Spanish>Wealth of the Nile</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_MIS3</Tag>
+		<English>Ali the Genie</English>
+		<French>Ali the Genie</French>
+		<German>Ali the Genie</German>
+		<Italian>Ali the Genie</Italian>
+		<Spanish>Ali the Genie</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_MON1</Tag>
 		<English>The Yuan Dynasty</English>
 		<French>La dynastie Yuan </French>
