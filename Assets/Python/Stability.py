@@ -32,6 +32,8 @@ dCivilizationAdministrationModifier = CivDict({
 	iNubia: -100,
 	iChina: -50,
 	iRome: 50,
+	iMisr: -30,
+	iManchuria: -50,
 }, 0)
 
 
