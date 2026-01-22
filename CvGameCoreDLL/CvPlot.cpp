@@ -12051,7 +12051,7 @@ void CvPlot::setContinentArea(int iNewValue)
 
 bool CvPlot::isOverseas(const CvPlot* pPlot) const
 {
-	return getContinentArea() != pPlot->getContinentArea();
+	return getRegionGroup() != pPlot->getRegionGroup() && getContinentArea() != pPlot->getContinentArea();
 }
 
 void CvPlot::setBirthProtected(PlayerTypes ePlayer)
